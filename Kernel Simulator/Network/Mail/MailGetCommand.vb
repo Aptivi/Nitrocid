@@ -53,7 +53,11 @@ Module MailGetCommand
 
         Try
             If cmd = "help" Then
-                IMAPShowHelp()
+                If FullArgsLQ?.Length = 0 Then
+                    IMAPShowHelp()
+                Else
+                    IMAPShowHelp(FullArgsLQ(0))
+                End If
             ElseIf cmd = "cd" Then
                 If RequiredArgsProvided Then
                     MailChangeDirectory(FullArgsLQ(0))
