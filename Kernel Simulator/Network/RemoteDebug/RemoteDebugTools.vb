@@ -147,7 +147,8 @@ Public Module RemoteDebugTools
     ''' <param name="DeviceProperty">Device property</param>
     ''' <returns>Device property if successful; nothing if unsuccessful.</returns>
     Public Function GetDeviceProperty(ByVal DeviceIP As String, ByVal DeviceProperty As DeviceProperty) As Object
-        Dim DeviceNameToken As JObject = JObject.Parse(File.ReadAllText(paths("DebugDevNames")))
+        Dim DeviceJsonContent As String = File.ReadAllText(paths("DebugDevNames"))
+        Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
         Dim DeviceProperties As JObject = TryCast(DeviceNameToken(DeviceIP), JObject)
         If DeviceProperties IsNot Nothing Then
             Select Case DeviceProperty
@@ -172,7 +173,8 @@ Public Module RemoteDebugTools
     ''' <param name="Value">Value</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
     Public Function SetDeviceProperty(ByVal DeviceIP As String, ByVal DeviceProperty As DeviceProperty, ByVal Value As Object) As Boolean
-        Dim DeviceNameToken As JObject = JObject.Parse(File.ReadAllText(paths("DebugDevNames")))
+        Dim DeviceJsonContent As String = File.ReadAllText(paths("DebugDevNames"))
+        Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
         Dim DeviceProperties As JObject = TryCast(DeviceNameToken(DeviceIP), JObject)
         If DeviceProperties IsNot Nothing Then
             Select Case DeviceProperty
