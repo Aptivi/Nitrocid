@@ -296,7 +296,11 @@ Public Module UserManagement
         If setRootPasswd Then
             AddUser("root", RootPasswd)
         ElseIf File.Exists(paths("Users")) Then
-            InitializeUser("root", GetUserProperty("root", UserProperty.Password), False)
+            If GetUserProperty("root", UserProperty.Password) IsNot Nothing Then
+                InitializeUser("root", GetUserProperty("root", UserProperty.Password), False)
+            Else
+                AddUser("root")
+            End If
         Else
             AddUser("root")
         End If
