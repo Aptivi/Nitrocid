@@ -140,7 +140,7 @@ Module RemoteDebugger
                     If Not msg.StartsWith(vbNullChar) Then 'Don't post message if it starts with a null character.
                         If msg.StartsWith("/") Then 'Message is a command
                             Dim cmd As String = msg.Replace("/", "").Replace(vbNullChar, "")
-                            If DebugCmds.Contains(cmd.Split(" ")(0)) Then 'Command is found or not
+                            If DebugCommands.ContainsKey(cmd.Split(" ")(0)) Then 'Command is found or not
                                 'Parsing starts here.
                                 ParseCmd(cmd, dbgConns.Keys(i - 1), ip)
                             ElseIf RemoteDebugAliases.Keys.Contains(cmd.Split(" ")(0)) Then

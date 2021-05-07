@@ -206,8 +206,8 @@ Public Module AliasManager
             If SourceAlias = Destination Then
                 Wdbg("I", "Assertion succeeded: {0} = {1}", SourceAlias, Destination)
                 Throw New Exceptions.AliasInvalidOperationException(DoTranslation("Alias can't be the same name as a command."))
-            ElseIf Not availableCommands.Contains(Destination) And Not DebugCmds.Contains(Destination) And Not availsftpcmds.Contains(Destination) And
-                   Not availftpcmds.Contains(Destination) And Not Mail_AvailableCommands.Contains(Destination) Then
+            ElseIf Not Shell.Commands.ContainsKey(Destination) And Not DebugCommands.ContainsKey(Destination) And Not SFTPCommands.ContainsKey(Destination) And
+                   Not FTPCommands.ContainsKey(Destination) And Not MailCommands.ContainsKey(Destination) Then
                 Wdbg("W", "{0} not found in either list of availableCmds, Mail_AvailableCommands, availftpcmds, availsftpcmds, or DebugCmds", Destination)
                 Throw New Exceptions.AliasNoSuchCommandException(DoTranslation("Command not found to alias to {0}.").FormatString(Destination))
             ElseIf Aliases.ContainsKey(SourceAlias) Or RemoteDebugAliases.ContainsKey(SourceAlias) Or FTPShellAliases.ContainsKey(SourceAlias) Or

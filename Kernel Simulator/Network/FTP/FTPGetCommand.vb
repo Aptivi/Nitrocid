@@ -31,12 +31,17 @@ Public Module FTPGetCommand
     ''' </summary>
     ''' <param name="cmd">A command. It may come with arguments</param>
     Public Sub ExecuteCommand(ByVal cmd As String)
+        'Variables
+        Dim RequiredArgumentsProvided As Boolean = True
 
+        'Get command and arguments
         Dim index As Integer = cmd.IndexOf(" ")
         If index = -1 Then index = cmd.Length
         Dim words = cmd.Split({" "c})
         Dim strArgs As String = cmd.Substring(index)
         If Not index = cmd.Length Then strArgs = strArgs.Substring(1)
+
+        'Parse arguments
         Dim ArgsQ() As String
         Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
         Dim Parser As New TextFieldParser(TStream) With {
@@ -48,12 +53,13 @@ Public Module FTPGetCommand
             For i As Integer = 0 To ArgsQ.Length - 1
                 ArgsQ(i).Replace("""", "")
             Next
+            RequiredArgumentsProvided = ArgsQ?.Length >= FTPCommands(Command).MinimumArguments
         End If
 
         'Command code
         Try
             If words(0) = "connect" Then
-                If ArgsQ?.Count <> 0 Then
+                If RequiredArgumentsProvided Then
                     If ArgsQ(0).StartsWith("ftp://") Or ArgsQ(0).StartsWith("ftps://") Or ArgsQ(0).StartsWith("ftpes://") Then
                         TryToConnect(ArgsQ(0))
                     Else
@@ -67,7 +73,7 @@ Public Module FTPGetCommand
             ElseIf words(0) = "changeremotedir" Or words(0) = "cdr" Then
                 FTPChangeRemoteDir(strArgs)
             ElseIf words(0) = "copy" Or words(0) = "cp" Then
-                If cmd <> "copy" Or cmd <> "cp" Then
+                If RequiredArgumentsProvided Then
                     If connected Then
                         W(DoTranslation("Copying {0} to {1}..."), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
                         If FTPCopyItem(ArgsQ(0), ArgsQ(1)) Then
@@ -90,7 +96,7 @@ Public Module FTPGetCommand
                     W(DoTranslation("You must connect to server before getting current remote directory."), True, ColTypes.Err)
                 End If
             ElseIf words(0) = "delete" Or words(0) = "del" Then
-                If cmd <> "delete" Or cmd <> "del" Then
+                If RequiredArgumentsProvided Then
                     If connected = True Then
                         'Print a message
                         W(DoTranslation("Deleting {0}..."), True, ColTypes.Neutral, strArgs)
@@ -127,7 +133,7 @@ Public Module FTPGetCommand
                     W(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Err)
                 End If
             ElseIf words(0) = "download" Or words(0) = "get" Then
-                If cmd <> "download" Or cmd <> "get" Then
+                If RequiredArgumentsProvided Then
                     W(DoTranslation("Downloading file {0}..."), False, ColTypes.Neutral, strArgs)
                     If FTPGetFile(strArgs) Then
                         Console.WriteLine()
@@ -156,7 +162,7 @@ Public Module FTPGetCommand
                     W(Entry, True, ColTypes.Neutral)
                 Next
             ElseIf words(0) = "move" Or words(0) = "mv" Then
-                If cmd <> "move" Or cmd <> "mv" Then
+                If RequiredArgumentsProvided Then
                     If connected Then
                         W(DoTranslation("Moving {0} to {1}..."), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
                         If FTPMoveItem(ArgsQ(0), ArgsQ(1)) Then
@@ -177,7 +183,7 @@ Public Module FTPGetCommand
                     W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Err)
                 End If
             ElseIf words(0) = "upload" Or words(0) = "put" Then
-                If cmd <> "upload" Or cmd <> "put" Then
+                If RequiredArgumentsProvided Then
                     W(DoTranslation("Uploading file {0}..."), True, ColTypes.Neutral, strArgs)
 
                     'Begin the uploading process

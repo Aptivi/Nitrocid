@@ -33,7 +33,7 @@ Public Module ModParser
         ''' <summary>
         ''' Command shell type for mod
         ''' </summary>
-        Property CmdType As ModType
+        Property CmdType As ShellCommandType
         ''' <summary>
         ''' Command definition for mod
         ''' </summary>
@@ -325,38 +325,38 @@ Public Module ModParser
                 End If
 
                 'See if the command conflicts with pre-existing shell commands
-                If script.CmdType = ModType.Shell Then
-                    If availableCommands.Contains(script.Cmd) Then
+                If script.CmdType = ShellCommandType.Shell Then
+                    If Shell.Commands.ContainsKey(script.Cmd) Then
                         Wdbg("W", "Command {0} conflicts with available shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
                         script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
                     End If
-                ElseIf script.CmdType = ModType.FTPShell Then
-                    If availftpcmds.Contains(script.Cmd) Then
+                ElseIf script.CmdType = ShellCommandType.FTPShell Then
+                    If FTPCommands.ContainsKey(script.Cmd) Then
                         Wdbg("W", "Command {0} conflicts with available FTP shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
                         script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
                     End If
-                ElseIf script.CmdType = ModType.MailShell Then
-                    If Mail_AvailableCommands.Contains(script.Cmd) Then
+                ElseIf script.CmdType = ShellCommandType.MailShell Then
+                    If MailCommands.ContainsKey(script.Cmd) Then
                         Wdbg("W", "Command {0} conflicts with available mail shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
                         script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
                     End If
-                ElseIf script.CmdType = ModType.SFTPShell Then
-                    If availsftpcmds.Contains(script.Cmd) Then
+                ElseIf script.CmdType = ShellCommandType.SFTPShell Then
+                    If SFTPCommands.ContainsKey(script.Cmd) Then
                         Wdbg("W", "Command {0} conflicts with available SFTP shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
                         script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
                     End If
-                ElseIf script.CmdType = ModType.TextShell Then
-                    If TextEdit_Commands.Contains(script.Cmd) Then
+                ElseIf script.CmdType = ShellCommandType.TextShell Then
+                    If TextEdit_Commands.ContainsKey(script.Cmd) Then
                         Wdbg("W", "Command {0} conflicts with available text shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
                         script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
                     End If
-                ElseIf script.CmdType = ModType.RemoteDebugShell Then
-                    If TextEdit_Commands.Contains(script.Cmd) Then
+                ElseIf script.CmdType = ShellCommandType.RemoteDebugShell Then
+                    If DebugCommands.ContainsKey(script.Cmd) Then
                         Wdbg("W", "Command {0} conflicts with available remote debug shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
                         script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
                     End If
-                ElseIf script.CmdType = ModType.ZIPShell Then
-                    If TextEdit_Commands.Contains(script.Cmd) Then
+                ElseIf script.CmdType = ShellCommandType.ZIPShell Then
+                    If ZipShell_Commands.ContainsKey(script.Cmd) Then
                         Wdbg("W", "Command {0} conflicts with available ZIP shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
                         script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
                     End If
@@ -370,31 +370,31 @@ Public Module ModParser
                         script.Def = DoTranslation("Command defined by ") + script.Name + " (" + script.ModPart + ")"
                     End If
                     Wdbg("I", "Command type: {0}", script.CmdType)
-                    If script.CmdType = ModType.Shell Then
+                    If script.CmdType = ShellCommandType.Shell Then
                         Wdbg("I", "Adding command {0} for main shell...", script.Cmd)
                         If Not modcmnds.Contains(script.Cmd) Then modcmnds.Add(script.Cmd)
                         moddefs.AddIfNotFound(script.Cmd, script.Def)
-                    ElseIf script.CmdType = ModType.FTPShell Then
+                    ElseIf script.CmdType = ShellCommandType.FTPShell Then
                         Wdbg("I", "Adding command {0} for FTP shell...", script.Cmd)
                         If Not FTPModCommands.Contains(script.Cmd) Then FTPModCommands.Add(script.Cmd)
                         FTPModDefs.AddIfNotFound(script.Cmd, script.Def)
-                    ElseIf script.CmdType = ModType.MailShell Then
+                    ElseIf script.CmdType = ShellCommandType.MailShell Then
                         Wdbg("I", "Adding command {0} for mail shell...", script.Cmd)
                         If Not MailModCommands.Contains(script.Cmd) Then MailModCommands.Add(script.Cmd)
                         MailModDefs.AddIfNotFound(script.Cmd, script.Def)
-                    ElseIf script.CmdType = ModType.SFTPShell Then
+                    ElseIf script.CmdType = ShellCommandType.SFTPShell Then
                         Wdbg("I", "Adding command {0} for SFTP shell...", script.Cmd)
                         If Not SFTPModCommands.Contains(script.Cmd) Then SFTPModCommands.Add(script.Cmd)
                         SFTPModDefs.AddIfNotFound(script.Cmd, script.Def)
-                    ElseIf script.CmdType = ModType.TextShell Then
+                    ElseIf script.CmdType = ShellCommandType.TextShell Then
                         Wdbg("I", "Adding command {0} for text editor shell...", script.Cmd)
                         If Not TextEdit_ModCommands.Contains(script.Cmd) Then TextEdit_ModCommands.Add(script.Cmd)
                         TextEdit_ModHelpEntries.AddIfNotFound(script.Cmd, script.Def)
-                    ElseIf script.CmdType = ModType.RemoteDebugShell Then
+                    ElseIf script.CmdType = ShellCommandType.RemoteDebugShell Then
                         Wdbg("I", "Adding command {0} for remote debug shell...", script.Cmd)
                         If Not DebugModCmds.Contains(script.Cmd) Then DebugModCmds.Add(script.Cmd)
                         RDebugModDefs.AddIfNotFound(script.Cmd, script.Def)
-                    ElseIf script.CmdType = ModType.ZIPShell Then
+                    ElseIf script.CmdType = ShellCommandType.ZIPShell Then
                         Wdbg("I", "Adding command {0} for ZIP shell...", script.Cmd)
                         If Not ZipShell_ModCommands.Contains(script.Cmd) Then ZipShell_ModCommands.Add(script.Cmd)
                         ZipShell_ModHelpEntries.AddIfNotFound(script.Cmd, script.Def)

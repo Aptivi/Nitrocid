@@ -28,8 +28,8 @@ Public Module TextEditGetCommand
 
     Sub TextEdit_ParseCommand(ByVal CommandText As String)
         Try
-            'Indicator if command finished
-            Dim CommandDone As Boolean
+            'Indicator if required arguments are provided
+            Dim RequiredArgumentsProvided As Boolean = True
 
             'Separate between command and arguments specified
             Dim Command As String = CommandText.Split(" ")(0)
@@ -44,6 +44,7 @@ Public Module TextEditGetCommand
                 For i As Integer = 0 To Arguments.Length - 1
                     Arguments(i).Replace("""", "")
                 Next
+                RequiredArgumentsProvided = Arguments?.Length >= TextEdit_Commands(Command).MinimumArguments
             End If
 
             'Remove first entry from array
@@ -60,16 +61,12 @@ Public Module TextEditGetCommand
                     Wdbg("I", "Requested help for all commands")
                     TextEdit_GetHelp()
                 End If
-                CommandDone = True
             ElseIf Command = "exit" Then
-                CommandDone = True
                 TextEdit_SaveTextFile(True)
                 TextEdit_Exiting = True
             ElseIf Command = "exitnosave" Then
-                CommandDone = True
                 TextEdit_Exiting = True
             ElseIf Command = "save" Then
-                CommandDone = True
                 TextEdit_SaveTextFile(False)
             ElseIf Command = "print" Then
                 Dim LineNumber As Integer = 1
@@ -99,9 +96,8 @@ Public Module TextEditGetCommand
                         LineNumber += 1
                     Next
                 End If
-                CommandDone = True
             ElseIf Command = "addline" Then
-                If Arguments?.Length > 0 Then
+                If RequiredArgumentsProvided Then
                     Dim NewLineContent As String = Arguments.Join(" ")
                     Wdbg("I", "Prototype new line content: {0}", NewLineContent)
                     If NewLineContent.StartsWith("""") And NewLineContent.EndsWith("""") Then
@@ -112,11 +108,9 @@ Public Module TextEditGetCommand
                     End If
                     Wdbg("I", "Final new line content: {0}", NewLineContent)
                     TextEdit_FileLines.Add(NewLineContent)
-                    CommandDone = True
                 End If
             ElseIf Command = "delline" Then
-                If Arguments?.Length > 0 Then
-                    CommandDone = True
+                If RequiredArgumentsProvided Then
                     Wdbg("I", "Is argument numeric: {0}", IsNumeric(Arguments(0)))
                     If IsNumeric(Arguments(0)) Then
                         Dim LineIndex As Integer = Arguments(0) - 1
@@ -135,8 +129,7 @@ Public Module TextEditGetCommand
                     End If
                 End If
             ElseIf Command = "replace" Then
-                If Arguments?.Length > 1 Then
-                    CommandDone = True
+                If RequiredArgumentsProvided Then
                     Wdbg("I", "Source: {0}, Target: {1}", Arguments(0), Arguments(1))
                     For LineIndex As Integer = 0 To TextEdit_FileLines.Count - 1
                         Wdbg("I", "Replacing ""{0}"" with ""{1}"" in line {2}", Arguments(0), Arguments(1), LineIndex + 1)
@@ -144,8 +137,7 @@ Public Module TextEditGetCommand
                     Next
                 End If
             ElseIf Command = "replaceinline" Then
-                If Arguments?.Length > 2 Then
-                    CommandDone = True
+                If RequiredArgumentsProvided Then
                     Wdbg("I", "Source: {0}, Target: {1}, Line Number: {2}", Arguments(0), Arguments(1), Arguments(2))
                     Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
                     If Arguments(2).IsNumeric Then
@@ -162,8 +154,7 @@ Public Module TextEditGetCommand
                     End If
                 End If
             ElseIf Command = "delword" Then
-                If Arguments?.Length > 1 Then
-                    CommandDone = True
+                If RequiredArgumentsProvided Then
                     Wdbg("I", "Word/Phrase: {0}, Line: {1} ({2})", Arguments(0), Arguments(1), IsNumeric(Arguments(1)))
                     If IsNumeric(Arguments(1)) Then
                         Dim LineIndex As Integer = Arguments(1) - 1
@@ -181,8 +172,7 @@ Public Module TextEditGetCommand
                     End If
                 End If
             ElseIf Command = "delcharnum" Then
-                If Arguments?.Length > 1 Then
-                    CommandDone = True
+                If RequiredArgumentsProvided Then
                     Wdbg("I", "Char number: {0} ({1}), Line: {2} ({3})", Arguments(0), IsNumeric(Arguments(0)), Arguments(1), IsNumeric(Arguments(1)))
                     If IsNumeric(Arguments(1)) Then
                         Dim LineIndex As Integer = Arguments(1) - 1
@@ -202,8 +192,7 @@ Public Module TextEditGetCommand
                     End If
                 End If
             ElseIf Command = "querychar" Then
-                If Arguments?.Length > 1 Then
-                    CommandDone = True
+                If RequiredArgumentsProvided Then
                     Wdbg("I", "Char: {0}, Line: {1} ({2})", Arguments(0), Arguments(1), IsNumeric(Arguments(1)))
                     If IsNumeric(Arguments(1)) Then
                         Dim LineIndex As Integer = Arguments(1) - 1
@@ -236,7 +225,7 @@ Public Module TextEditGetCommand
             End If
 
             'See if the command is done (passed all required arguments)
-            If Not CommandDone Then
+            If TextEdit_Commands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Err, Command)
                 Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, Arguments.Length)
                 TextEdit_GetHelp(Command)

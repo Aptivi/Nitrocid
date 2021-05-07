@@ -57,7 +57,7 @@ Public Module SFTPHelpSystem
                     W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, SFTPModDefs(cmd))
                 Next
             Else
-                W(String.Join(", ", availsftpcmds), True, ColTypes.Neutral)
+                W(String.Join(", ", SFTPCommands.Keys), True, ColTypes.Neutral)
             End If
         ElseIf command = ("currlocaldir" Or "pwdl") Then
             W(DoTranslation("Usage:") + " currlocaldir or pwdl", True, ColTypes.Neutral)

@@ -21,9 +21,29 @@ Imports System.Threading
 Public Module SFTPShell
 
     Public sftpstream As FtpWebRequest
-    Public availsftpcmds As String() = {"currlocaldir", "currremotedir", "connect", "changelocaldir", "changeremotedir", "cdl",
-                                       "cdr", "delete", "del", "disconnect", "download", "exit", "get", "help", "listlocal", "lsl",
-                                       "listremote", "lsr", "put", "pwdl", "pwdr", "move", "mv", "copy", "cp", "upload", "quickconnect"}
+    Public SFTPCommands As New Dictionary(Of String, CommandInfo) From {{"currlocaldir", New CommandInfo("currlocaldir", ShellCommandType.SFTPShell, False, 0, False, False, False, False)},
+                                                                        {"currremotedir", New CommandInfo("currremotedir", ShellCommandType.SFTPShell, False, 0, False, False, False, False)},
+                                                                        {"connect", New CommandInfo("connect", ShellCommandType.SFTPShell, True, 1, False, False, False, False)},
+                                                                        {"changelocaldir", New CommandInfo("changelocaldir", ShellCommandType.SFTPShell, True, 1, False, False, False, False)},
+                                                                        {"changeremotedir", New CommandInfo("changeremotedir", ShellCommandType.SFTPShell, True, 1, False, False, False, False)},
+                                                                        {"cdl", New CommandInfo("cdl", ShellCommandType.SFTPShell, True, 1, False, False, False, False)},
+                                                                        {"cdr", New CommandInfo("cdr", ShellCommandType.SFTPShell, True, 1, False, False, False, False)},
+                                                                        {"delete", New CommandInfo("delete", ShellCommandType.SFTPShell, True, 1, False, False, False, False)},
+                                                                        {"del", New CommandInfo("del", ShellCommandType.SFTPShell, True, 2, False, False, False, False)},
+                                                                        {"disconnect", New CommandInfo("disconnect", ShellCommandType.SFTPShell, False, 0, False, False, False, False)},
+                                                                        {"download", New CommandInfo("download", ShellCommandType.SFTPShell, True, 1, False, False, False, False)},
+                                                                        {"exit", New CommandInfo("exit", ShellCommandType.SFTPShell, False, 0, False, False, False, False)},
+                                                                        {"get", New CommandInfo("get", ShellCommandType.SFTPShell, True, 1, False, False, False, False)},
+                                                                        {"help", New CommandInfo("help", ShellCommandType.SFTPShell, False, 0, False, False, False, False)},
+                                                                        {"listlocal", New CommandInfo("listlocal", ShellCommandType.SFTPShell, False, 0, False, False, False, False)},
+                                                                        {"lsl", New CommandInfo("lsl", ShellCommandType.SFTPShell, False, 0, False, False, False, False)},
+                                                                        {"listremote", New CommandInfo("listremote", ShellCommandType.SFTPShell, False, 0, False, False, False, False)},
+                                                                        {"lsr", New CommandInfo("lsr", ShellCommandType.SFTPShell, False, 0, False, False, False, False)},
+                                                                        {"put", New CommandInfo("put", ShellCommandType.SFTPShell, True, 1, False, False, False, False)},
+                                                                        {"pwdl", New CommandInfo("pwdl", ShellCommandType.SFTPShell, False, 0, False, False, False, False)},
+                                                                        {"pwdr", New CommandInfo("pwdr", ShellCommandType.SFTPShell, False, 0, False, False, False, False)},
+                                                                        {"upload", New CommandInfo("upload", ShellCommandType.SFTPShell, True, 1, False, False, False, False)},
+                                                                        {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.SFTPShell, False, 0, False, False, False, False)}}
     Public SFTPConnected As Boolean = False
     Private SFTPInitialized As Boolean = False
     Public sftpsite As String
@@ -136,8 +156,8 @@ Public Module SFTPShell
     Public Sub SFTPGetLine()
         Dim words As String() = SFTPStrCmd.Split({" "c})
         Wdbg("I", "Command: {0}", SFTPStrCmd)
-        Wdbg("I", $"Is the command found? {availsftpcmds.Contains(words(0))}")
-        If availsftpcmds.Contains(words(0)) Then
+        Wdbg("I", $"Is the command found? {SFTPCommands.ContainsKey(words(0))}")
+        If SFTPCommands.ContainsKey(words(0)) Then
             Wdbg("I", "Command found.")
             SFTPStartCommandThread = New Thread(AddressOf SFTPGetCommand.ExecuteCommand)
             SFTPStartCommandThread.Start(SFTPStrCmd)

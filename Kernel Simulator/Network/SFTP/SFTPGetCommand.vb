@@ -32,6 +32,7 @@ Public Module SFTPGetCommand
     ''' <param name="cmd">A command. It may come with arguments</param>
     Public Sub ExecuteCommand(ByVal cmd As String)
 
+        Dim RequiredArgumentsProvided As Boolean = True
         Dim index As Integer = cmd.IndexOf(" ")
         If index = -1 Then index = cmd.Length
         Dim words = cmd.Split({" "c})
@@ -48,12 +49,13 @@ Public Module SFTPGetCommand
             For i As Integer = 0 To ArgsQ.Length - 1
                 ArgsQ(i).Replace("""", "")
             Next
+            RequiredArgumentsProvided = ArgsQ?.Length >= SFTPCommands(words(0)).MinimumArguments
         End If
 
         'Command code
         Try
             If words(0) = "connect" Then
-                If ArgsQ?.Count <> 0 Then
+                If RequiredArgumentsProvided Then
                     If ArgsQ(0).StartsWith("sftp://") Then
                         SFTPTryToConnect(ArgsQ(0))
                     Else
@@ -75,7 +77,7 @@ Public Module SFTPGetCommand
                     W(DoTranslation("You must connect to server before getting current remote directory."), True, ColTypes.Err)
                 End If
             ElseIf words(0) = "delete" Or words(0) = "del" Then
-                If cmd <> "delete" Or cmd <> "del" Then
+                If RequiredArgumentsProvided Then
                     If SFTPConnected = True Then
                         'Print a message
                         W(DoTranslation("Deleting {0}..."), True, ColTypes.Neutral, strArgs)
@@ -112,7 +114,7 @@ Public Module SFTPGetCommand
                     W(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Err)
                 End If
             ElseIf words(0) = "download" Or words(0) = "get" Then
-                If cmd <> "download" Or cmd <> "get" Then
+                If RequiredArgumentsProvided Then
                     W(DoTranslation("Downloading file {0}..."), False, ColTypes.Neutral, strArgs)
                     If SFTPGetFile(strArgs) Then
                         Console.WriteLine()
@@ -147,7 +149,7 @@ Public Module SFTPGetCommand
                     W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Err)
                 End If
             ElseIf words(0) = "upload" Or words(0) = "put" Then
-                If cmd <> "upload" Or cmd <> "put" Then
+                If RequiredArgumentsProvided Then
                     W(DoTranslation("Uploading file {0}..."), True, ColTypes.Neutral, strArgs)
 
                     'Begin the uploading process

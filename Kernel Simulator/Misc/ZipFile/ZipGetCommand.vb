@@ -29,8 +29,8 @@ Public Module ZipGetCommand
 
     Sub ZipShell_ParseCommand(ByVal CommandText As String)
         Try
-            'Indicator if command finished
-            Dim CommandDone As Boolean
+            'Indicator if required arguments are provided
+            Dim RequiredArgumentsProvided As Boolean = True
 
             'Separate between command and arguments specified
             Dim Command As String = CommandText.Split(" ")(0)
@@ -45,6 +45,7 @@ Public Module ZipGetCommand
                 For i As Integer = 0 To Arguments.Length - 1
                     Arguments(i).Replace("""", "")
                 Next
+                RequiredArgumentsProvided = Arguments?.Length >= ZipShell_Commands(Command).MinimumArguments
             End If
 
             'Remove first entry from array
@@ -61,12 +62,9 @@ Public Module ZipGetCommand
                     Wdbg("I", "Requested help for all commands")
                     ZipShell_GetHelp()
                 End If
-                CommandDone = True
             ElseIf Command = "exit" Then
-                CommandDone = True
                 ZipShell_Exiting = True
             ElseIf Command = "list" Then
-                CommandDone = True
                 Dim Entries As List(Of ZipArchiveEntry)
                 If Arguments?.Length > 0 Then
                     Wdbg("I", "Listing entries with {0} as target directory", Arguments(0))
@@ -79,8 +77,7 @@ Public Module ZipGetCommand
                     W("- {0}: ", False, ColTypes.ListEntry, Entry.FullName) : W("{0} ({0})", True, ColTypes.ListValue, Entry.CompressedLength.FileSizeToString, Entry.Length.FileSizeToString)
                 Next
             ElseIf Command = "get" Then
-                If Arguments?.Length > 0 Then
-                    CommandDone = True
+                If RequiredArgumentsProvided Then
                     Dim Where As String = ""
                     Dim Absolute As Boolean
                     If Arguments?.Length > 1 Then
@@ -92,15 +89,13 @@ Public Module ZipGetCommand
                     ExtractZipFileEntry(Arguments(0), Where, Absolute)
                 End If
             ElseIf Command = "chdir" Then
-                If Arguments?.Length > 0 Then
-                    CommandDone = True
+                If RequiredArgumentsProvided Then
                     If Not ChangeWorkingZipLocalDirectory(Arguments(0)) Then
                         W(DoTranslation("Directory {0} doesn't exist"), True, ColTypes.Err, Arguments(0))
                     End If
                 End If
             ElseIf Command = "chadir" Then
-                If Arguments?.Length > 0 Then
-                    CommandDone = True
+                If RequiredArgumentsProvided Then
                     If Not ChangeWorkingArchiveDirectory(Arguments(0)) Then
                         W(DoTranslation("Archive directory {0} doesn't exist"), True, ColTypes.Err, Arguments(0))
                     End If
@@ -108,7 +103,7 @@ Public Module ZipGetCommand
             End If
 
             'See if the command is done (passed all required arguments)
-            If Not CommandDone Then
+            If ZipShell_Commands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Err, Command)
                 Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, Arguments.Length)
                 ZipShell_GetHelp(Command)

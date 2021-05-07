@@ -20,7 +20,11 @@ Imports System.IO
 
 Module RemoteDebugCmd
 
-    Public DebugCmds As String() = {"trace", "username", "register", "help", "exit"}
+    Public DebugCommands As New Dictionary(Of String, CommandInfo) From {{"exit", New CommandInfo("exit", ShellCommandType.RemoteDebugShell, False, 0, False, False, False, False)},
+                                                                         {"help", New CommandInfo("help", ShellCommandType.RemoteDebugShell, False, 0, False, False, False, False)},
+                                                                         {"register", New CommandInfo("register", ShellCommandType.RemoteDebugShell, True, 1, False, False, False, False)},
+                                                                         {"trace", New CommandInfo("trace", ShellCommandType.RemoteDebugShell, True, 1, False, False, False, False)},
+                                                                         {"username", New CommandInfo("username", ShellCommandType.RemoteDebugShell, False, 0, False, False, False, False)}}
     Public DebugModCmds As New ArrayList
 
     ''' <summary>

@@ -21,9 +21,33 @@ Imports System.Threading
 Public Module FTPShell
 
     Public ftpstream As FtpWebRequest
-    Public availftpcmds As String() = {"currlocaldir", "currremotedir", "connect", "changelocaldir", "changeremotedir", "cdl",
-                                       "cdr", "delete", "del", "disconnect", "download", "exit", "get", "help", "listlocal", "lsl",
-                                       "listremote", "lsr", "put", "pwdl", "pwdr", "move", "mv", "copy", "cp", "upload", "quickconnect"}
+    Public FTPCommands As New Dictionary(Of String, CommandInfo) From {{"currlocaldir", New CommandInfo("currlocaldir", ShellCommandType.FTPShell, False, 0, False, False, False, False)},
+                                                                       {"currremotedir", New CommandInfo("currremotedir", ShellCommandType.FTPShell, False, 0, False, False, False, False)},
+                                                                       {"connect", New CommandInfo("connect", ShellCommandType.FTPShell, True, 1, False, False, False, False)},
+                                                                       {"changelocaldir", New CommandInfo("changelocaldir", ShellCommandType.FTPShell, True, 1, False, False, False, False)},
+                                                                       {"changeremotedir", New CommandInfo("changeremotedir", ShellCommandType.FTPShell, True, 1, False, False, False, False)},
+                                                                       {"cdl", New CommandInfo("cdl", ShellCommandType.FTPShell, True, 1, False, False, False, False)},
+                                                                       {"cdr", New CommandInfo("cdr", ShellCommandType.FTPShell, True, 1, False, False, False, False)},
+                                                                       {"delete", New CommandInfo("delete", ShellCommandType.FTPShell, True, 1, False, False, False, False)},
+                                                                       {"del", New CommandInfo("del", ShellCommandType.FTPShell, True, 2, False, False, False, False)},
+                                                                       {"disconnect", New CommandInfo("disconnect", ShellCommandType.FTPShell, False, 0, False, False, False, False)},
+                                                                       {"download", New CommandInfo("download", ShellCommandType.FTPShell, True, 1, False, False, False, False)},
+                                                                       {"exit", New CommandInfo("exit", ShellCommandType.FTPShell, False, 0, False, False, False, False)},
+                                                                       {"get", New CommandInfo("get", ShellCommandType.FTPShell, True, 1, False, False, False, False)},
+                                                                       {"help", New CommandInfo("help", ShellCommandType.FTPShell, False, 0, False, False, False, False)},
+                                                                       {"listlocal", New CommandInfo("listlocal", ShellCommandType.FTPShell, False, 0, False, False, False, False)},
+                                                                       {"lsl", New CommandInfo("lsl", ShellCommandType.FTPShell, False, 0, False, False, False, False)},
+                                                                       {"listremote", New CommandInfo("listremote", ShellCommandType.FTPShell, False, 0, False, False, False, False)},
+                                                                       {"lsr", New CommandInfo("lsr", ShellCommandType.FTPShell, False, 0, False, False, False, False)},
+                                                                       {"put", New CommandInfo("put", ShellCommandType.FTPShell, True, 1, False, False, False, False)},
+                                                                       {"pwdl", New CommandInfo("pwdl", ShellCommandType.FTPShell, False, 0, False, False, False, False)},
+                                                                       {"pwdr", New CommandInfo("pwdr", ShellCommandType.FTPShell, False, 0, False, False, False, False)},
+                                                                       {"move", New CommandInfo("move", ShellCommandType.FTPShell, True, 2, False, False, False, False)},
+                                                                       {"mv", New CommandInfo("mv", ShellCommandType.FTPShell, True, 2, False, False, False, False)},
+                                                                       {"copy", New CommandInfo("copy", ShellCommandType.FTPShell, True, 2, False, False, False, False)},
+                                                                       {"cp", New CommandInfo("cp", ShellCommandType.FTPShell, True, 2, False, False, False, False)},
+                                                                       {"upload", New CommandInfo("upload", ShellCommandType.FTPShell, True, 1, False, False, False, False)},
+                                                                       {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.FTPShell, False, 0, False, False, False, False)}}
     Public connected As Boolean = False
     Private initialized As Boolean = False
     Public ftpsite As String
@@ -139,8 +163,8 @@ Public Module FTPShell
     ''' </summary>
     Public Sub FTPGetLine()
         Dim words As String() = strcmd.Split({" "c})
-        Wdbg("I", $"Is the command found? {availftpcmds.Contains(words(0))}")
-        If availftpcmds.Contains(words(0)) Then
+        Wdbg("I", $"Is the command found? {FTPCommands.ContainsKey(words(0))}")
+        If FTPCommands.ContainsKey(words(0)) Then
             Wdbg("I", "Command found.")
             FTPStartCommandThread = New Thread(AddressOf FTPGetCommand.ExecuteCommand)
             FTPStartCommandThread.Start(strcmd)

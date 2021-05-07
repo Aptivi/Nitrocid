@@ -19,40 +19,6 @@
 Public Module ModExecutor
 
     ''' <summary>
-    ''' Mod command type
-    ''' </summary>
-    Public Enum ModType
-        ''' <summary>
-        ''' Normal UESH shell
-        ''' </summary>
-        Shell
-        ''' <summary>
-        ''' FTP shell
-        ''' </summary>
-        FTPShell
-        ''' <summary>
-        ''' Mail shell
-        ''' </summary>
-        MailShell
-        ''' <summary>
-        ''' SFTP shell
-        ''' </summary>
-        SFTPShell
-        ''' <summary>
-        ''' Text shell
-        ''' </summary>
-        TextShell
-        ''' <summary>
-        ''' Remote debug shell
-        ''' </summary>
-        RemoteDebugShell
-        ''' <summary>
-        ''' ZIP shell
-        ''' </summary>
-        ZIPShell
-    End Enum
-
-    ''' <summary>
     ''' Executes the command provided by a mod
     ''' </summary>
     ''' <param name="cmd">A mod command with arguments</param>

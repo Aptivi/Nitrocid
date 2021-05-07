@@ -33,8 +33,8 @@ Public Module GetCommand
     ''' <param name="requestedCommand">A command. It may contain arguments</param>
     Public Sub ExecuteCommand(ByVal requestedCommand As String)
         'Variables
-        Dim Done As Boolean = False
         Dim Command As String
+        Dim RequiredArgumentsProvided As Boolean = True
 
         '1. Get the index of the first space (Used for step 3)
         Dim index As Integer = requestedCommand.IndexOf(" ")
@@ -54,7 +54,7 @@ Public Module GetCommand
         If Not index = requestedCommand.Length Then strArgs = strArgs.Substring(1)
         Wdbg("I", "Finished strArgs: {0}", strArgs)
 
-        '4. Split the arguments with enclosed quotes
+        '4. Split the arguments with enclosed quotes and set the required boolean variable
         Dim eqargs() As String
         Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
         Dim Parser As New TextFieldParser(TStream) With {
@@ -66,48 +66,45 @@ Public Module GetCommand
             For i As Integer = 0 To eqargs.Length - 1
                 eqargs(i).Replace("""", "")
             Next
+            RequiredArgumentsProvided = eqargs?.Length >= Shell.Commands(Command).MinimumArguments
         End If
 
         '4a. Debug: get all arguments from eqargs()
         If eqargs IsNot Nothing Then Wdbg("I", "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
 
         '5. Check to see if a requested command is obsolete
-        If obsoleteCmds.Contains(Command) Then
+        If Shell.Commands(Command).Obsolete Then
             Wdbg("I", "The command requested {0} is obsolete", Command)
             W(DoTranslation("This command is obsolete and will be removed in a future release."), True, ColTypes.Neutral)
         End If
 
         '6. Execute a command
         Try
-            Select Case words(0)
+            Select Case Command
                 Case "help"
 
                     If requestedCommand = "help" Then
                         ShowHelp()
                     Else
-                        If eqargs?.Length - 1 >= 0 Then
+                        If RequiredArgumentsProvided Then
                             ShowHelp(eqargs(0))
                         Else
-                            ShowHelp(words(0))
+                            ShowHelp(Command)
                         End If
                     End If
-                    Done = True
 
                 Case "adduser"
 
                     If requestedCommand <> "adduser" Then
-                        If eqargs?.Length - 1 = 0 Then
+                        If RequiredArgumentsProvided Then
                             W(DoTranslation("usrmgr: Creating username {0}..."), True, ColTypes.Neutral, eqargs(0))
                             AddUser(eqargs(0))
-                            Done = True
-                        ElseIf eqargs.Count - 1 >= 2 Then
+                        ElseIf RequiredArgumentsProvided Then
                             If eqargs(1) = eqargs(2) Then
                                 W(DoTranslation("usrmgr: Creating username {0}..."), True, ColTypes.Neutral, eqargs(0))
                                 AddUser(eqargs(0), eqargs(1))
-                                Done = True
                             Else
                                 W(DoTranslation("Passwords don't match."), True, ColTypes.Err)
-                                Done = True
                             End If
                         End If
                     End If
@@ -115,17 +112,15 @@ Public Module GetCommand
                 Case "alias"
 
                     If requestedCommand <> "alias" Then
-                        If eqargs?.Length - 1 > 2 Then
+                        If RequiredArgumentsProvided Then
                             If eqargs(0) = "add" And (eqargs(1) = AliasType.Shell Or eqargs(1) = AliasType.RDebug Or eqargs(1) = AliasType.FTPShell Or eqargs(1) = AliasType.SFTPShell Or eqargs(1) = AliasType.MailShell) Then
                                 ManageAlias(eqargs(0), eqargs(1), eqargs(2), eqargs(3))
-                                Done = True
                             Else
                                 W(DoTranslation("Invalid type {0}."), True, ColTypes.Err, eqargs(1))
                             End If
-                        ElseIf eqargs?.Length - 1 = 2 Then
+                        ElseIf RequiredArgumentsProvided Then
                             If eqargs(0) = "rem" And (eqargs(1) = AliasType.Shell Or eqargs(1) = AliasType.RDebug Or eqargs(1) = AliasType.FTPShell Or eqargs(1) = AliasType.SFTPShell Or eqargs(1) = AliasType.MailShell) Then
                                 ManageAlias(eqargs(0), eqargs(1), eqargs(2))
-                                Done = True
                             Else
                                 W(DoTranslation("Invalid type {0}."), True, ColTypes.Err, eqargs(1))
                             End If
@@ -135,7 +130,7 @@ Public Module GetCommand
                 Case "arginj"
 
                     'Argument Injection
-                    If eqargs?.Length - 1 >= 0 Then
+                    If RequiredArgumentsProvided Then
                         Dim FinalArgs As New List(Of String)
                         For Each arg As String In eqargs
                             Wdbg("I", "Parsing argument {0}...", arg)
@@ -146,18 +141,16 @@ Public Module GetCommand
                         Next
                         If FinalArgs.Count = 0 Then
                             W(DoTranslation("No arguments specified. Hint: Specify multiple arguments separated by spaces"), True, ColTypes.Err)
-                            Done = True
                         Else
                             answerargs = String.Join(",", FinalArgs)
                             argsInjected = True
                             W(DoTranslation("Injected arguments, {0}, will be scheduled to run at next reboot."), True, ColTypes.Neutral, answerargs)
-                            Done = True
                         End If
                     End If
 
                 Case "beep"
 
-                    If eqargs?.Length > 1 Then
+                    If RequiredArgumentsProvided Then
                         If eqargs(0).IsNumeric And CInt(eqargs(0)) >= 37 And CInt(eqargs(0)) <= 32767 Then 'Frequency must be numeric, and must be >= 37 and <= 32767
                             If eqargs(1).IsNumeric Then 'Time must be numeric
                                 Console.Beep(eqargs(0), eqargs(1))
@@ -167,12 +160,11 @@ Public Module GetCommand
                         Else
                             W(DoTranslation("Frequency must be numeric. If it's numeric, ensure that it is >= 37 and <= 32767."), True, ColTypes.Err)
                         End If
-                        Done = True
                     End If
 
                 Case "blockdbgdev"
 
-                    If eqargs?.Length - 1 >= 0 Then
+                    If RequiredArgumentsProvided Then
                         If Not RDebugBlocked.Contains(eqargs(0)) Then
                             If AddToBlockList(eqargs(0)) Then
                                 W(DoTranslation("{0} can't join remote debug now."), True, ColTypes.Neutral, eqargs(0))
@@ -182,24 +174,22 @@ Public Module GetCommand
                         Else
                             W(DoTranslation("{0} is already blocked."), True, ColTypes.Neutral, eqargs(0))
                         End If
-                        Done = True
                     End If
 
                 Case "cat"
 
-                    If eqargs?.Length > 0 Then
+                    If RequiredArgumentsProvided Then
                         Try
                             ReadContents(eqargs(0))
                         Catch ex As Exception
                             WStkTrc(ex)
                             W(ex.Message, True, ColTypes.Err)
                         End Try
-                        Done = True
                     End If
 
                 Case "calc"
 
-                    If eqargs?.Length > 0 Then
+                    If RequiredArgumentsProvided Then
                         Try
                             Dim Res As String = Evaluate(strArgs)
                             Wdbg("I", "Res = {0}", Res)
@@ -212,7 +202,6 @@ Public Module GetCommand
                             WStkTrc(ex)
                             W(DoTranslation("Error in calculation."), True, ColTypes.Err)
                         End Try
-                        Done = True
                     End If
 
                 Case "cdbglog"
@@ -229,11 +218,10 @@ Public Module GetCommand
                     Else
                         W(DoTranslation("You must turn on debug mode before you can clear debug log."), True, ColTypes.Neutral)
                     End If
-                    Done = True
 
                 Case "chattr"
 
-                    If eqargs?.Length > 1 Then
+                    If RequiredArgumentsProvided Then
                         Dim NeutralizedFilePath As String = NeutralizePath(eqargs(0))
                         If File.Exists(NeutralizedFilePath) Then
                             If eqargs(1).EndsWith("Normal") Or eqargs(1).EndsWith("ReadOnly") Or eqargs(1).EndsWith("Hidden") Or eqargs(1).EndsWith("Archive") Then
@@ -258,12 +246,11 @@ Public Module GetCommand
                         Else
                             W(DoTranslation("File not found."), True, ColTypes.Err)
                         End If
-                        Done = True
                     End If
 
                 Case "chdir"
 
-                    If eqargs?.Length > 0 Then
+                    If RequiredArgumentsProvided Then
                         Try
                             SetCurrDir(eqargs(0))
                         Catch sex As Security.SecurityException
@@ -278,18 +265,16 @@ Public Module GetCommand
                             W(DoTranslation("Changing directory has failed: {0}"), True, ColTypes.Err, ex.Message)
                             WStkTrc(ex)
                         End Try
-                        Done = True
                     End If
 
                 Case "chhostname"
 
-                    If eqargs?.Length > 0 Then
+                    If RequiredArgumentsProvided Then
                         If eqargs(0) = "" Then
                             W(DoTranslation("Blank host name."), True, ColTypes.Err)
                         ElseIf eqargs(0).IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
                             W(DoTranslation("Special characters are not allowed."), True, ColTypes.Err)
                         Else
-                            Done = True
                             W(DoTranslation("Changing from: {0} to {1}..."), True, ColTypes.Neutral, HName, eqargs(0))
                             ChangeHostname(eqargs(0))
                         End If
@@ -297,55 +282,50 @@ Public Module GetCommand
 
                 Case "chlang"
 
-                    If eqargs?.Length > 0 Then
+                    If RequiredArgumentsProvided Then
                         PromptForSetLang(eqargs(0))
-                        Done = True
                     End If
 
                 Case "chmotd"
 
-                    If eqargs?.Length > 0 Then
+                    If RequiredArgumentsProvided Then
                         If strArgs = "" Then
                             W(DoTranslation("Blank message of the day."), True, ColTypes.Err)
                         Else
                             W(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
                             SetMOTD(strArgs, MessageType.MOTD)
-                            Done = True
                         End If
                     Else
                         InitializeTextShell(paths("Home") + "/MOTD.txt")
                         W(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
                         ReadMOTDFromFile(MessageType.MOTD)
-                        Done = True
+
                     End If
 
                 Case "chmal"
 
-                    If eqargs?.Length > 0 Then
+                    If RequiredArgumentsProvided Then
                         If strArgs = "" Then
                             W(DoTranslation("Blank MAL After Login."), True, ColTypes.Err)
                         Else
                             W(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
                             SetMOTD(strArgs, MessageType.MAL)
-                            Done = True
                         End If
                     Else
                         InitializeTextShell(paths("Home") + "/MAL.txt")
                         W(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
                         ReadMOTDFromFile(MessageType.MAL)
-                        Done = True
                     End If
 
                 Case "choice"
 
-                    If eqargs?.Length > 2 Then
+                    If RequiredArgumentsProvided Then
                         PromptChoice(strArgs, eqargs(0), eqargs(1))
-                        Done = True
                     End If
 
                 Case "chpwd"
 
-                    If eqargs?.Length - 1 >= 3 Then
+                    If RequiredArgumentsProvided Then
                         Try
                             If InStr(eqargs(3), " ") > 0 Then
                                 W(DoTranslation("Spaces are not allowed."), True, ColTypes.Err)
@@ -358,29 +338,26 @@ Public Module GetCommand
                             W(DoTranslation("Failed to change password of username: {0}"), True, ColTypes.Err, ex.Message)
                             WStkTrc(ex)
                         End Try
-                        Done = True
                     End If
 
                 Case "chusrname"
 
-                    If eqargs?.Length - 1 >= 1 Then
+                    If RequiredArgumentsProvided Then
                         ChangeUsername(eqargs(0), eqargs(1))
                         W(DoTranslation("Username has been changed to {0}!"), True, ColTypes.Neutral, eqargs(1))
                         If eqargs(0) = signedinusrnm Then
                             LogoutRequested = True
                         End If
-                        Done = True
                     End If
 
                 Case "cls"
 
-                    Console.Clear() : Done = True
+                    Console.Clear()
 
                 Case "copy"
 
-                    If eqargs?.Length >= 2 Then
+                    If RequiredArgumentsProvided Then
                         CopyFileOrDir(eqargs(0), eqargs(1))
-                        Done = True
                     End If
 
                 Case "debuglog"
@@ -398,11 +375,10 @@ Public Module GetCommand
                         W(DoTranslation("Debug log not found"), True, ColTypes.Err)
                         WStkTrc(ex)
                     End Try
-                    Done = True
 
                 Case "dirinfo"
 
-                    If eqargs?.Length > 0 Then
+                    If RequiredArgumentsProvided Then
                         For Each Dir As String In eqargs
                             Dim DirectoryPath As String = NeutralizePath(Dir)
                             Wdbg("I", "Neutralized directory path: {0} ({1})", DirectoryPath, Directory.Exists(DirectoryPath))
@@ -421,37 +397,33 @@ Public Module GetCommand
                                 W(DoTranslation("Can't get information about nonexistent directory."), True, ColTypes.Err)
                             End If
                         Next
-                        Done = True
                     End If
 
                 Case "disconndbgdev"
 
-                    If eqargs?.Length - 1 >= 0 Then
+                    If RequiredArgumentsProvided Then
                         DisconnectDbgDev(eqargs(0))
                         W(DoTranslation("Device {0} disconnected."), True, ColTypes.Neutral, eqargs(0))
-                        Done = True
                     End If
 
                 Case "dismissnotif"
 
-                    If eqargs?.Length - 1 >= 0 Then
+                    If RequiredArgumentsProvided Then
                         Dim NotifIndex As Integer = eqargs(0) - 1
                         If NotifDismiss(NotifIndex) Then
                             W(DoTranslation("Notification dismissed successfully."), True, ColTypes.Neutral)
                         Else
                             W(DoTranslation("Error trying to dismiss notification."), True, ColTypes.Err)
                         End If
-                        Done = True
                     End If
 
                 Case "echo"
 
                     W(strArgs, True, ColTypes.Neutral)
-                    Done = True
 
                 Case "edit"
 
-                    If eqargs?.Length >= 1 Then
+                    If RequiredArgumentsProvided Then
                         eqargs(0) = NeutralizePath(eqargs(0))
                         Wdbg("I", "File path is {0} and .Exists is {0}", eqargs(0), File.Exists(eqargs(0)))
                         If File.Exists(eqargs(0)) Then
@@ -459,12 +431,11 @@ Public Module GetCommand
                         Else
                             W(DoTranslation("File doesn't exist."), True, ColTypes.Err)
                         End If
-                        Done = True
                     End If
 
                 Case "fileinfo"
 
-                    If eqargs?.Length > 0 Then
+                    If RequiredArgumentsProvided Then
                         For Each FileName As String In eqargs
                             Dim FilePath As String = NeutralizePath(FileName)
                             Wdbg("I", "Neutralized file path: {0} ({1})", FilePath, File.Exists(FilePath))
@@ -483,12 +454,10 @@ Public Module GetCommand
                                 W(DoTranslation("Can't get information about nonexistent file."), True, ColTypes.Err)
                             End If
                         Next
-                        Done = True
                     End If
 
                 Case "firedevents"
 
-                    Done = True
                     WriteList(EventManager.FiredEvents)
 
                 Case "ftp"
@@ -505,11 +474,10 @@ Public Module GetCommand
                         WStkTrc(ex)
                         W(DoTranslation("Unknown FTP shell error:") + " {0}", True, ColTypes.Err, ex.Message)
                     End Try
-                    Done = True
 
                 Case "get"
 #Disable Warning BC42104
-                    If eqargs?.Length <> 0 Then
+                    If RequiredArgumentsProvided Then
                         Dim RetryCount As Integer = 1
                         Dim URL As String = eqargs(0)
                         Wdbg("I", "URL: {0}", URL)
@@ -545,7 +513,6 @@ Public Module GetCommand
                                 WStkTrc(ex)
                             End Try
                         End While
-                        Done = True
                     End If
 #Enable Warning BC42104
                 Case "hwinfo"
@@ -602,19 +569,14 @@ Public Module GetCommand
                     W("  - " + DoTranslation("RAM used:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.RAM.UsedMemory)
                     Console.WriteLine()
 
-                    'We're done.
-                    Done = True
-
                 Case "input"
 
-                    If eqargs?.Length > 1 Then
+                    If RequiredArgumentsProvided Then
                         PromptInput(strArgs.Replace(eqargs(0) + " ", ""), eqargs(0))
-                        Done = True
                     End If
 
                 Case "lockscreen"
 
-                    Done = True
                     LockScreen()
 
                 Case "list"
@@ -622,97 +584,82 @@ Public Module GetCommand
                     'Lists folders and files
                     If eqargs?.Length = 0 Or IsNothing(eqargs) Then
                         List(CurrDir)
-                        Done = True
                     Else
                         For Each Directory As String In eqargs
                             Dim direct As String = NeutralizePath(Directory)
                             List(direct)
-                            Done = True
                         Next
                     End If
 
                 Case "loteresp"
 
-                    Done = True
                     InitializeLoteresp()
 
                 Case "lsmail"
 
                     If KeepAlive Then
                         OpenMailShell(Mail_Authentication.Domain)
-                        Done = True
                     Else
                         If eqargs?.Length = 0 Or IsNothing(eqargs) Then
                             PromptUser()
-                            Done = True
                         ElseIf Not eqargs(0) = "" Then
                             PromptPassword(eqargs(0))
-                            Done = True
                         End If
                     End If
 
                 Case "logout"
 
                     'Logs out of the user
-                    Done = True
                     LogoutRequested = True
 
                 Case "lsdbgdev"
 
-                    Done = True
                     For Each DebugDevice As String In DebugDevices.Values
                         W($"- {DebugDevice}", True, ColTypes.ListEntry)
                     Next
 
                 Case "mathbee"
 
-                    Done = True
                     InitializeSolver()
 
                 Case "md"
 
-                    If eqargs?.Length > 0 Then
+                    If RequiredArgumentsProvided Then
                         'Create directory
                         MakeDirectory(eqargs(0))
-                        Done = True
                     End If
 
                 Case "mkfile"
 
-                    If eqargs?.Length >= 1 Then
+                    If RequiredArgumentsProvided Then
                         MakeFile(eqargs(0))
-                        Done = True
                     End If
 
                 Case "mktheme"
 
-                    If eqargs?.Length >= 1 Then
+                    If RequiredArgumentsProvided Then
                         StartThemeStudio(eqargs(0))
-                        Done = True
                     End If
 
                 Case "move"
 
-                    If eqargs?.Length >= 2 Then
+                    If RequiredArgumentsProvided Then
                         MoveFileOrDir(eqargs(0), eqargs(1))
-                        Done = True
                     End If
 
                 Case "netinfo"
 
                     PrintAdapterProperties()
-                    Done = True
 
                 Case "perm"
 
-                    If eqargs?.Length - 1 >= 2 Then
+                    If RequiredArgumentsProvided Then
                         Permission([Enum].Parse(GetType(PermissionType), eqargs(1)), eqargs(0), [Enum].Parse(GetType(PermissionManagementMode), eqargs(2)))
-                        Done = True
                     End If
 
                 Case "ping"
 
-                    If eqargs?.Length > 0 Then
+                    If RequiredArgumentsProvided Then
                         'If the pinged address is actually a number of times
                         Dim PingTimes As Integer = 4
                         If IsNumeric(eqargs(0)) Then
@@ -739,12 +686,11 @@ Public Module GetCommand
                                 W(DoTranslation("Address may not be empty."), True, ColTypes.Err)
                             End If
                         Next
-                        Done = True
                     End If
 
                 Case "put"
 #Disable Warning BC42104
-                    If eqargs?.Length <> 0 Then
+                    If RequiredArgumentsProvided Then
                         Dim RetryCount As Integer = 1
                         Dim FileName As String = NeutralizePath(eqargs(0))
                         Dim URL As String = eqargs(1)
@@ -781,20 +727,17 @@ Public Module GetCommand
                                 WStkTrc(ex)
                             End Try
                         End While
-                        Done = True
                     End If
 #Enable Warning BC42104
                 Case "reloadconfig"
 
                     'Reload configuration
-                    Done = True
                     ReloadConfig()
                     W(DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect."), True, ColTypes.Neutral)
 
                 Case "reboot"
 
                     'Reboot the simulated system
-                    Done = True
                     If Not eqargs?.Length = 0 Then
                         If eqargs(0) = "safe" Then
                             PowerManage("rebootsafe")
@@ -810,7 +753,6 @@ Public Module GetCommand
                 Case "reloadmods"
 
                     'Reload mods
-                    Done = True
                     If Not SafeMode Then
                         ReloadMods()
                         W(DoTranslation("Mods reloaded."), True, ColTypes.Neutral)
@@ -820,24 +762,21 @@ Public Module GetCommand
 
                 Case "reloadsaver"
 
-                    If eqargs?.Length - 1 >= 0 Then
+                    If RequiredArgumentsProvided Then
                         If Not SafeMode Then
                             CompileCustom(eqargs(0))
                         Else
                             W(DoTranslation("Reloading not allowed in safe mode."), True, ColTypes.Err)
                         End If
-                        Done = True
                     End If
 
                 Case "reportbug"
 
                     PromptForBug()
-                    Done = True
 
                 Case "rexec"
 
-                    If eqargs?.Length > 1 Then
-                        Done = True
+                    If RequiredArgumentsProvided Then
                         SendCommand("<Request:Exec>(" + eqargs(1) + ")", eqargs(0))
                     End If
 
@@ -852,11 +791,10 @@ Public Module GetCommand
                     Else
                         W(DoTranslation("Debugging not enabled."), True, ColTypes.Err)
                     End If
-                    Done = True
 
                 Case "rm"
 
-                    If eqargs?.Length - 1 >= 0 Then
+                    If RequiredArgumentsProvided Then
                         For Each Path As String In eqargs
                             Dim NeutPath As String = NeutralizePath(Path)
                             If File.Exists(NeutPath) Then
@@ -870,21 +808,18 @@ Public Module GetCommand
                                 W(DoTranslation("Can't remove {0} because it doesn't exist."), True, ColTypes.Err, Path)
                             End If
                         Next
-                        Done = True
                     End If
 
                 Case "rmuser"
 
-                    If eqargs?.Length - 1 >= 0 Then
+                    If RequiredArgumentsProvided Then
                         RemoveUser(eqargs(0))
                         W(DoTranslation("User {0} removed."), True, ColTypes.Neutral, eqargs(0))
-                        Done = True
                     End If
 
                 Case "savescreen"
 
-                    Done = True
-                    If eqargs?.Length >= 1 Then
+                    If Not eqargs?.Length = 0 Then
                         ShowSavers(eqargs(0))
                     Else
                         ShowSavers(defSaverName)
@@ -892,18 +827,17 @@ Public Module GetCommand
 
                 Case "search"
 
-                    If eqargs?.Length >= 2 Then
+                    If RequiredArgumentsProvided Then
                         Dim Matches As List(Of String) = SearchFileForString(eqargs(1), eqargs(0))
                         For Each Match As String In Matches
                             W(Match, True, ColTypes.Neutral)
                         Next
-                        Done = True
                     End If
 
                 Case "setsaver"
 
                     Dim modPath As String = paths("Mods")
-                    If eqargs?.Length > 0 Then
+                    If RequiredArgumentsProvided Then
                         If ScrnSvrdb.ContainsKey(strArgs) Then
                             SetDefaultScreensaver(strArgs)
                             If ScrnSvrdb(strArgs) Then
@@ -923,12 +857,11 @@ Public Module GetCommand
                                 W(DoTranslation("Screensaver {0} not found."), True, ColTypes.Err, strArgs)
                             End If
                         End If
-                        Done = True
                     End If
 
                 Case "setthemes"
 
-                    If eqargs?.Length - 1 >= 0 Then
+                    If RequiredArgumentsProvided Then
                         If ColoredShell = True Then
                             Dim ThemePath As String = NeutralizePath(eqargs(0))
                             If File.Exists(ThemePath) Then
@@ -939,18 +872,15 @@ Public Module GetCommand
                         Else
                             W(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."), True, ColTypes.Neutral)
                         End If
-                        Done = True
                     End If
 
                 Case "settings"
 
                     OpenMainPage()
-                    Done = True
 
                 Case "set"
 
-                    If eqargs?.Length >= 2 Then
-                        Done = True
+                    If RequiredArgumentsProvided Then
                         SetVariable(eqargs(0), eqargs(1))
                     End If
 
@@ -968,7 +898,6 @@ Public Module GetCommand
                         WStkTrc(ex)
                         W(DoTranslation("Unknown SFTP shell error:") + " {0}", True, ColTypes.Err, ex.Message)
                     End Try
-                    Done = True
 
                 Case "shownotifs"
 
@@ -983,29 +912,25 @@ Public Module GetCommand
                     Else
                         W(DoTranslation("No recent notifications"), True, ColTypes.Neutral)
                     End If
-                    Done = True
 
                 Case "showtd"
 
                     ShowCurrentTimes()
-                    Done = True
 
                 Case "showtdzone"
 
-                    If eqargs?.Length > 0 Then
+                    If RequiredArgumentsProvided Then
                         InitTimesInZones()
                         Dim DoneFlag As Boolean = False
                         If zoneTimes.Keys.Contains(strArgs) Then
-                            DoneFlag = True : Done = True
+                            DoneFlag = True
                             ShowTimesInZones(strArgs)
                         End If
                         If DoneFlag = False Then
                             If eqargs(0) = "all" Then
                                 ShowTimesInZones()
-                                Done = True
                             Else
                                 W(DoTranslation("Timezone is specified incorrectly."), True, ColTypes.Err)
-                                Done = True
                             End If
                         End If
                     End If
@@ -1013,7 +938,6 @@ Public Module GetCommand
                 Case "shutdown"
 
                     'Shuts down the simulated system
-                    Done = True
                     If Not eqargs?.Length = 0 Then
                         If eqargs(0) <> "" Then
                             PowerManage("remoteshutdown", eqargs(0))
@@ -1024,27 +948,23 @@ Public Module GetCommand
 
                 Case "spellbee"
 
-                    Done = True
                     InitializeWords()
 
                 Case "sshell"
 
-                    If eqargs?.Length >= 3 Then
+                    If RequiredArgumentsProvided Then
                         InitializeSSH(eqargs(0), eqargs(1), eqargs(2), ConnectionType.Shell)
-                        Done = True
                     End If
 
                 Case "sshcmd"
 
-                    If eqargs?.Length >= 3 Then
+                    If RequiredArgumentsProvided Then
                         InitializeSSH(eqargs(0), eqargs(1), eqargs(2), ConnectionType.Command, eqargs(3))
-                        Done = True
                     End If
 
                 Case "sumfile"
 
-                    If eqargs?.Length >= 2 Then
-                        Done = True
+                    If RequiredArgumentsProvided Then
                         Dim file As String = NeutralizePath(eqargs(1))
                         If IO.File.Exists(file) Then
                             If eqargs(0) = "SHA512" Then
@@ -1090,8 +1010,7 @@ Public Module GetCommand
 
                 Case "sumfiles"
 
-                    If eqargs?.Length >= 2 Then
-                        Done = True
+                    If RequiredArgumentsProvided Then
                         Dim folder As String = NeutralizePath(eqargs(1))
                         Dim out As String = ""
                         Dim FileBuilder As New StringBuilder
@@ -1164,7 +1083,6 @@ Public Module GetCommand
                 Case "sysinfo"
 
                     'Shows system information
-                    Done = True
                     W(DoTranslation("[ Kernel settings (Running on {0}) ]"), True, ColTypes.ListEntry, Environment.OSVersion.ToString)
 
                     'Kernel section
@@ -1195,7 +1113,7 @@ Public Module GetCommand
 
                 Case "unblockdbgdev"
 
-                    If eqargs?.Length - 1 >= 0 Then
+                    If RequiredArgumentsProvided Then
                         If RDebugBlocked.Contains(eqargs(0)) Then
                             If RemoveFromBlockList(eqargs(0)) Then
                                 W(DoTranslation("{0} can now join remote debug again."), True, ColTypes.Neutral, eqargs(0))
@@ -1205,17 +1123,14 @@ Public Module GetCommand
                         Else
                             W(DoTranslation("{0} is not blocked yet."), True, ColTypes.Neutral, eqargs(0))
                         End If
-                        Done = True
                     End If
 
                 Case "unzip"
 
-                    If eqargs?.Length = 1 Then
-                        Done = True
+                    If RequiredArgumentsProvided Then
                         Dim ZipArchiveName As String = NeutralizePath(eqargs(0))
                         ZipFile.ExtractToDirectory(ZipArchiveName, CurrDir)
-                    ElseIf eqargs?.Length > 1 Then
-                        Done = True
+                    ElseIf RequiredArgumentsProvided And eqargs?.Length > 1 Then
                         Dim ZipArchiveName As String = NeutralizePath(eqargs(0))
                         Dim Destination As String = If(Not eqargs(1) = "-createdir", NeutralizePath(eqargs(1)), "")
                         If eqargs?.Contains("-createdir") Then
@@ -1227,7 +1142,6 @@ Public Module GetCommand
 
                 Case "update"
 
-                    Done = True
 #If SPECIFIER = "REL" Then
                     CheckKernelUpdates()
 #Else
@@ -1236,13 +1150,11 @@ Public Module GetCommand
 
                 Case "usermanual"
 
-                    Done = True
                     Process.Start("https://github.com/EoflaOE/Kernel-Simulator/wiki")
 
                 Case "verify"
 
-                    If eqargs?.Length >= 4 Then
-                        Done = True
+                    If RequiredArgumentsProvided Then
                         Try
                             Dim HashFile As String = NeutralizePath(eqargs(2))
                             If File.Exists(HashFile) Then
@@ -1272,8 +1184,7 @@ Public Module GetCommand
 
                 Case "weather"
 
-                    If eqargs?.Length >= 0 Then
-                        Done = True
+                    If RequiredArgumentsProvided Then
                         If eqargs(0) = "listcities" Then
                             Dim Cities As Dictionary(Of Long, String) = ListAllCities()
                             WriteList(Cities)
@@ -1289,24 +1200,31 @@ Public Module GetCommand
 
                 Case "wrap"
 
-                    If eqargs?.Length >= 0 Then
-                        Done = True
-                        If WrappableCmds.Contains(eqargs(0).Split(" ")(0)) Then
-                            Dim WrapOutputPath As String = paths("Temp") + "/wrapoutput.txt"
-                            GetLine(False, eqargs(0), False, WrapOutputPath)
-                            Dim WrapOutputStream As New StreamReader(WrapOutputPath)
-                            WriteWrapped(WrapOutputStream.ReadToEnd(), True, ColTypes.Neutral)
-                            WrapOutputStream.Close()
-                            File.Delete(WrapOutputPath)
+                    If RequiredArgumentsProvided Then
+                        Dim CommandToBeWrapped As String = eqargs(0).Split(" ")(0)
+                        If Shell.Commands.ContainsKey(CommandToBeWrapped) Then
+                            If Shell.Commands(CommandToBeWrapped).Wrappable Then
+                                Dim WrapOutputPath As String = paths("Temp") + "/wrapoutput.txt"
+                                GetLine(False, eqargs(0), False, WrapOutputPath)
+                                Dim WrapOutputStream As New StreamReader(WrapOutputPath)
+                                WriteWrapped(WrapOutputStream.ReadToEnd(), True, ColTypes.Neutral)
+                                WrapOutputStream.Close()
+                                File.Delete(WrapOutputPath)
+                            Else
+                                Dim WrappableCmds As New ArrayList
+                                For Each CommandInfo As CommandInfo In Shell.Commands.Values
+                                    If CommandInfo.Wrappable Then WrappableCmds.Add(CommandInfo.Command)
+                                Next
+                                W(DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", True, ColTypes.Err, String.Join(", ", WrappableCmds))
+                            End If
                         Else
-                            W(DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", True, ColTypes.Err, String.Join(", ", WrappableCmds))
+                            W(DoTranslation("The wrappable command is not found."), True, ColTypes.Err)
                         End If
                     End If
 
                 Case "zip"
 
-                    If eqargs?.Length >= 2 Then
-                        Done = True
+                    If RequiredArgumentsProvided Then
                         Dim ZipArchiveName As String = NeutralizePath(eqargs(0))
                         Dim Destination As String = NeutralizePath(eqargs(1))
                         Dim ZipCompression As CompressionLevel = CompressionLevel.Optimal
@@ -1324,7 +1242,7 @@ Public Module GetCommand
 
                 Case "zipshell"
 
-                    If eqargs?.Length >= 1 Then
+                    If RequiredArgumentsProvided Then
                         eqargs(0) = NeutralizePath(eqargs(0))
                         Wdbg("I", "File path is {0} and .Exists is {0}", eqargs(0), File.Exists(eqargs(0)))
                         If File.Exists(eqargs(0)) Then
@@ -1332,17 +1250,18 @@ Public Module GetCommand
                         Else
                             W(DoTranslation("File doesn't exist."), True, ColTypes.Err)
                         End If
-                        Done = True
                     End If
 
             End Select
-            If Done = False Then
+
+            'If not enough arguments, throw exception
+            If Shell.Commands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 Throw New Exceptions.NotEnoughArgumentsException(DoTranslation("There was not enough arguments. See below for usage:"))
             End If
         Catch neaex As Exceptions.NotEnoughArgumentsException
-            Wdbg("W", "User hasn't provided enough arguments for {0}", words(0))
+            Wdbg("W", "User hasn't provided enough arguments for {0}", Command)
             W(neaex.Message, True, ColTypes.Neutral)
-            ShowHelp(words(0))
+            ShowHelp(Command)
         Catch taex As ThreadAbortException
             CancelRequested = False
             Exit Sub
@@ -1350,10 +1269,10 @@ Public Module GetCommand
             EventManager.RaiseCommandError(requestedCommand, ex)
             If DebugMode = True Then
                 W(DoTranslation("Error trying to execute command") + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Err,
-                  Err.Number, ex.Message, ex.StackTrace, words(0))
+                  Err.Number, ex.Message, ex.StackTrace, Command)
                 WStkTrc(ex)
             Else
-                W(DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Err, Err.Number, ex.Message, words(0))
+                W(DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Err, Err.Number, ex.Message, Command)
             End If
         End Try
         StartCommandThread.Abort()

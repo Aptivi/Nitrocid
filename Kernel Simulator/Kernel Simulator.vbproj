@@ -330,6 +330,7 @@
     <Compile Include="Scripting\UESHParse.vb" />
     <Compile Include="Scripting\UESHVariables.vb" />
     <Compile Include="Shell\AliasManager.vb" />
+    <Compile Include="Shell\CommandInfo.vb" />
     <Compile Include="Shell\GetCommand.vb" />
     <Compile Include="Hardware\HardwareProbe.vb" />
     <Compile Include="Kernel\Kernel.vb" />

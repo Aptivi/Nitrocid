@@ -46,35 +46,90 @@ Public Module Shell
     ''' </summary>
     Public modcmnds As New ArrayList
     ''' <summary>
-    ''' All available commands
+    ''' List of commands
     ''' </summary>
-    Public availableCommands() As String = {"help", "logout", "list", "chdir", "cdir", "shutdown", "reboot", "adduser", "chmotd",
-                                            "chhostname", "showtd", "chpwd", "sysinfo", "arginj", "rmuser", "cls", "perm", "chusrname",
-                                            "setthemes", "netinfo", "md", "rm", "debuglog", "reloadconfig", "showtdzone", "alias", "chmal",
-                                            "savescreen", "lockscreen", "setsaver", "reloadsaver", "ftp", "usermanual", "cdbglog", "chlang",
-                                            "reloadmods", "get", "put", "lsdbgdev", "disconndbgdev", "move", "copy", "search", "sumfile", "rdebug", "spellbee",
-                                            "mathbee", "loteresp", "sshell", "shownotifs", "dismissnotif", "rexec", "calc", "update", "sumfiles",
-                                            "lsmail", "echo", "choice", "beep", "input", "mkfile", "edit", "blockdbgdev", "unblockdbgdev", "settings", "weather",
-                                            "fileinfo", "dirinfo", "chattr", "ping", "verify", "sftp", "mktheme", "hwinfo", "cat", "wrap", "zip", "unzip",
-                                            "firedevents", "zipshell", "sshcmd", "set", "reportbug"}
-    ''' <summary>
-    ''' All administrator-only commands
-    ''' </summary>
-    Public strictCmds() As String = {"adduser", "perm", "arginj", "chhostname", "chmotd", "chusrname", "chpwd", "rmuser", "netinfo", "debuglog",
-                                     "reloadconfig", "alias", "chmal", "setsaver", "reloadsaver", "cdbglog", "chlang", "reloadmods", "lsdbgdev", "disconndbgdev",
-                                     "rdebug", "rexec", "update", "blockdbgdev", "unblockdbgdev", "settings"}
-    ''' <summary>
-    ''' All wrappable commands
-    ''' </summary>
-    Public WrappableCmds() As String = {"cat", "hwinfo", "list", "lsdbgdev", "netinfo", "showtdzone"}
-    ''' <summary>
-    ''' All commands that can't be run on maintenance mode
-    ''' </summary>
-    Public NoMaintenanceCmds() As String = {"logout"}
-    ''' <summary>
-    ''' All obsolete commands
-    ''' </summary>
-    Public obsoleteCmds() As String = {"debuglog"}
+    Public Commands As New Dictionary(Of String, CommandInfo) From {{"adduser", New CommandInfo("adduser", ShellCommandType.Shell, True, 1, True, False, False, False)},
+                                                                    {"alias", New CommandInfo("alias", ShellCommandType.Shell, True, 3, True, False, False, False)},
+                                                                    {"arginj", New CommandInfo("arginj", ShellCommandType.Shell, True, 1, True, False, False, False)},
+                                                                    {"beep", New CommandInfo("beep", ShellCommandType.Shell, True, 2, False, False, False, False)},
+                                                                    {"blockdbgdev", New CommandInfo("blockdbgdev", ShellCommandType.Shell, True, 1, True, False, False, False)},
+                                                                    {"calc", New CommandInfo("calc", ShellCommandType.Shell, True, 1, False, False, False, False)},
+                                                                    {"cat", New CommandInfo("cat", ShellCommandType.Shell, True, 1, False, True, False, False)},
+                                                                    {"cdbglog", New CommandInfo("cdbglog", ShellCommandType.Shell, False, 0, True, False, False, False)},
+                                                                    {"chattr", New CommandInfo("chattr", ShellCommandType.Shell, True, 2, False, False, False, False)},
+                                                                    {"chdir", New CommandInfo("chdir", ShellCommandType.Shell, True, 1, False, False, False, False)},
+                                                                    {"chhostname", New CommandInfo("chhostname", ShellCommandType.Shell, True, 1, True, False, False, False)},
+                                                                    {"chlang", New CommandInfo("chlang", ShellCommandType.Shell, True, 1, True, False, False, False)},
+                                                                    {"chmal", New CommandInfo("chmal", ShellCommandType.Shell, False, 0, True, False, False, False)},
+                                                                    {"chmotd", New CommandInfo("chmotd", ShellCommandType.Shell, False, 0, True, False, False, False)},
+                                                                    {"choice", New CommandInfo("choice", ShellCommandType.Shell, True, 3, False, False, False, False)},
+                                                                    {"chpwd", New CommandInfo("chpwd", ShellCommandType.Shell, True, 4, True, False, False, False)},
+                                                                    {"chusrname", New CommandInfo("chusrname", ShellCommandType.Shell, True, 2, True, False, False, False)},
+                                                                    {"cls", New CommandInfo("cls", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"copy", New CommandInfo("copy", ShellCommandType.Shell, True, 2, False, False, False, False)},
+                                                                    {"debuglog", New CommandInfo("debuglog", ShellCommandType.Shell, False, 0, True, False, False, True)},
+                                                                    {"dirinfo", New CommandInfo("dirinfo", ShellCommandType.Shell, True, 1, False, False, False, False)},
+                                                                    {"disconndbgdev", New CommandInfo("disconndbgdev", ShellCommandType.Shell, True, 1, True, False, False, False)},
+                                                                    {"dismissnotif", New CommandInfo("dismissnotif", ShellCommandType.Shell, True, 1, False, False, False, False)},
+                                                                    {"echo", New CommandInfo("echo", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"edit", New CommandInfo("edit", ShellCommandType.Shell, True, 1, False, False, False, False)},
+                                                                    {"fileinfo", New CommandInfo("fileinfo", ShellCommandType.Shell, True, 1, False, False, False, False)},
+                                                                    {"firedevents", New CommandInfo("firedevents", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"ftp", New CommandInfo("ftp", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"get", New CommandInfo("get", ShellCommandType.Shell, True, 1, False, False, False, False)},
+                                                                    {"help", New CommandInfo("help", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"hwinfo", New CommandInfo("hwinfo", ShellCommandType.Shell, False, 0, False, True, False, False)},
+                                                                    {"input", New CommandInfo("input", ShellCommandType.Shell, True, 2, False, False, False, False)},
+                                                                    {"list", New CommandInfo("list", ShellCommandType.Shell, False, 0, False, True, False, False)},
+                                                                    {"lockscreen", New CommandInfo("lockscreen", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"logout", New CommandInfo("logout", ShellCommandType.Shell, False, 0, False, False, True, False)},
+                                                                    {"loteresp", New CommandInfo("loteresp", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"lsdbgdev", New CommandInfo("lsdbgdev", ShellCommandType.Shell, False, 0, True, True, False, False)},
+                                                                    {"lsmail", New CommandInfo("lsmail", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"mathbee", New CommandInfo("mathbee", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"md", New CommandInfo("md", ShellCommandType.Shell, True, 1, False, False, False, False)},
+                                                                    {"mkfile", New CommandInfo("mkfile", ShellCommandType.Shell, True, 1, False, False, False, False)},
+                                                                    {"mktheme", New CommandInfo("mktheme", ShellCommandType.Shell, True, 1, False, False, False, False)},
+                                                                    {"move", New CommandInfo("move", ShellCommandType.Shell, True, 2, False, False, False, False)},
+                                                                    {"netinfo", New CommandInfo("netinfo", ShellCommandType.Shell, False, 0, True, True, False, False)},
+                                                                    {"perm", New CommandInfo("perm", ShellCommandType.Shell, True, 3, True, False, False, False)},
+                                                                    {"ping", New CommandInfo("ping", ShellCommandType.Shell, True, 1, False, False, False, False)},
+                                                                    {"put", New CommandInfo("put", ShellCommandType.Shell, True, 2, False, False, False, False)},
+                                                                    {"reboot", New CommandInfo("reboot", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"reloadconfig", New CommandInfo("reloadconfig", ShellCommandType.Shell, False, 0, True, False, False, False)},
+                                                                    {"reloadmods", New CommandInfo("reloadmods", ShellCommandType.Shell, False, 0, True, False, False, False)},
+                                                                    {"reloadsaver", New CommandInfo("reloadsaver", ShellCommandType.Shell, True, 1, True, False, False, False)},
+                                                                    {"rexec", New CommandInfo("rexec", ShellCommandType.Shell, True, 2, True, False, False, False)},
+                                                                    {"rm", New CommandInfo("rm", ShellCommandType.Shell, True, 1, False, False, False, False)},
+                                                                    {"rdebug", New CommandInfo("rdebug", ShellCommandType.Shell, False, 0, True, False, False, False)},
+                                                                    {"reportbug", New CommandInfo("reportbug", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"rmuser", New CommandInfo("rmuser", ShellCommandType.Shell, True, 1, True, False, False, False)},
+                                                                    {"savescreen", New CommandInfo("savescreen", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"search", New CommandInfo("search", ShellCommandType.Shell, True, 2, False, False, False, False)},
+                                                                    {"setsaver", New CommandInfo("setsaver", ShellCommandType.Shell, True, 1, True, False, False, False)},
+                                                                    {"setthemes", New CommandInfo("setthemes", ShellCommandType.Shell, True, 1, False, False, False, False)},
+                                                                    {"settings", New CommandInfo("settings", ShellCommandType.Shell, False, 0, True, False, False, False)},
+                                                                    {"set", New CommandInfo("set", ShellCommandType.Shell, True, 2, False, False, False, False)},
+                                                                    {"sftp", New CommandInfo("sftp", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"shownotifs", New CommandInfo("shownotifs", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"showtd", New CommandInfo("showtd", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"showtdzone", New CommandInfo("showtdzone", ShellCommandType.Shell, True, 1, False, True, False, False)},
+                                                                    {"shutdown", New CommandInfo("shutdown", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"spellbee", New CommandInfo("spellbee", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"sshell", New CommandInfo("sshell", ShellCommandType.Shell, True, 3, False, False, False, False)},
+                                                                    {"sshcmd", New CommandInfo("sshcmd", ShellCommandType.Shell, True, 4, False, False, False, False)},
+                                                                    {"sumfile", New CommandInfo("sumfile", ShellCommandType.Shell, True, 2, False, False, False, False)},
+                                                                    {"sumfiles", New CommandInfo("sumfiles", ShellCommandType.Shell, True, 2, False, False, False, False)},
+                                                                    {"sysinfo", New CommandInfo("sysinfo", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"unblockdbgdev", New CommandInfo("unblockdbgdev", ShellCommandType.Shell, True, 1, True, False, False, False)},
+                                                                    {"unzip", New CommandInfo("unzip", ShellCommandType.Shell, True, 1, False, False, False, False)},
+                                                                    {"update", New CommandInfo("update", ShellCommandType.Shell, False, 0, True, False, False, False)},
+                                                                    {"usermanual", New CommandInfo("usermanual", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"verify", New CommandInfo("verify", ShellCommandType.Shell, True, 4, False, False, False, False)},
+                                                                    {"weather", New CommandInfo("weather", ShellCommandType.Shell, True, 1, False, False, False, False)},
+                                                                    {"wrap", New CommandInfo("wrap", ShellCommandType.Shell, True, 1, False, False, False, False)},
+                                                                    {"zip", New CommandInfo("zip", ShellCommandType.Shell, True, 2, False, False, False, False)},
+                                                                    {"zipshell", New CommandInfo("zipshell", ShellCommandType.Shell, True, 1, False, False, False, False)}}
 
     ''' <summary>
     ''' Initializes the shell.
@@ -254,57 +309,61 @@ Public Module Shell
                     TargetFileName = Path.GetFileName(TargetFile)
 
                     'Check to see if a user is able to execute a command
-                    If adminList(signedinusrnm) = False And strictCmds.Contains(strcommand) = True Then
-                        Wdbg("W", "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", strcommand)
-                        W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Err, strcommand)
-                    ElseIf maintenance = True And NoMaintenanceCmds.Contains(strcommand) Then
-                        Wdbg("W", "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", strcommand)
-                        W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Err, strcommand)
-                    ElseIf IsInvokedByKernelArgument And (strcommand.StartsWith("logout") Or strcommand.StartsWith("shutdown") Or strcommand.StartsWith("reboot")) Then
-                        Wdbg("W", "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", strcommand)
-                        W(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Err, strcommand)
-                    ElseIf (adminList(signedinusrnm) = True And strictCmds.Contains(strcommand) = True) Or availableCommands.Contains(strcommand) Then
-                        Wdbg("I", "Cmd exec {0} succeeded. Running with {1}", strcommand, cmdArgs)
-                        StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
-                        StartCommandThread.Start(cmdArgs)
-                        StartCommandThread.Join()
-                    ElseIf File.Exists(TargetFile) And Not TargetFile.EndsWith(".uesh") Then
-                        Wdbg("I", "Cmd exec {0} succeeded because file is found.", strcommand)
-                        Try
-                            'Create a new instance of process
-                            cmdArgs = cmdArgs.Replace(TargetFileName, "")
-                            cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning
-                            Wdbg("I", "Command: {0}, Arguments: {1}", TargetFile, cmdArgs)
-                            Dim CommandProcess As New Process
-                            Dim CommandProcessStart As New ProcessStartInfo With {.RedirectStandardInput = True,
-                                                                                  .RedirectStandardOutput = True,
-                                                                                  .RedirectStandardError = True,
-                                                                                  .FileName = TargetFile,
-                                                                                  .Arguments = cmdArgs,
-                                                                                  .CreateNoWindow = True,
-                                                                                  .WindowStyle = ProcessWindowStyle.Hidden,
-                                                                                  .UseShellExecute = False}
-                            CommandProcess.StartInfo = CommandProcessStart
-                            AddHandler CommandProcess.OutputDataReceived, AddressOf ExecutableOutput
-                            AddHandler CommandProcess.ErrorDataReceived, AddressOf ExecutableOutput
-
-                            'Start the process
-                            Wdbg("I", "Starting...")
-                            CommandProcess.Start()
-                            CommandProcess.BeginOutputReadLine()
-                            CommandProcess.BeginErrorReadLine()
-                            CommandProcess.WaitForExit()
-                        Catch ex As Exception
-                            Wdbg("E", "Failed to start process: {0}", ex.Message)
-                            W(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Err, strcommand, ex.Message)
-                            WStkTrc(ex)
-                        End Try
-                    ElseIf File.Exists(TargetFile) And TargetFile.EndsWith(".uesh") Then
-                        Wdbg("I", "Cmd exec {0} succeeded because it's a UESH script.", strcommand)
-                        Execute(TargetFile, scriptArgs.Join(" "))
+                    If Commands.ContainsKey(strcommand) Then
+                        If adminList(signedinusrnm) = False And Commands(strcommand).Strict Then
+                            Wdbg("W", "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", strcommand)
+                            W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Err, strcommand)
+                        ElseIf maintenance = True And Commands(strcommand).NoMaintenance Then
+                            Wdbg("W", "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", strcommand)
+                            W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Err, strcommand)
+                        ElseIf IsInvokedByKernelArgument And (strcommand.StartsWith("logout") Or strcommand.StartsWith("shutdown") Or strcommand.StartsWith("reboot")) Then
+                            Wdbg("W", "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", strcommand)
+                            W(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Err, strcommand)
+                        ElseIf (adminList(signedinusrnm) = True And Commands(strcommand).Strict) Or Commands.ContainsKey(strcommand) Then
+                            Wdbg("I", "Cmd exec {0} succeeded. Running with {1}", strcommand, cmdArgs)
+                            StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
+                            StartCommandThread.Start(cmdArgs)
+                            StartCommandThread.Join()
+                        End If
                     Else
-                        Wdbg("W", "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", strcommand, indexCmd)
-                        W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Err, strcommand)
+                        If File.Exists(TargetFile) And Not TargetFile.EndsWith(".uesh") Then
+                            Wdbg("I", "Cmd exec {0} succeeded because file is found.", strcommand)
+                            Try
+                                'Create a new instance of process
+                                cmdArgs = cmdArgs.Replace(TargetFileName, "")
+                                cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning
+                                Wdbg("I", "Command: {0}, Arguments: {1}", TargetFile, cmdArgs)
+                                Dim CommandProcess As New Process
+                                Dim CommandProcessStart As New ProcessStartInfo With {.RedirectStandardInput = True,
+                                                                                      .RedirectStandardOutput = True,
+                                                                                      .RedirectStandardError = True,
+                                                                                      .FileName = TargetFile,
+                                                                                      .Arguments = cmdArgs,
+                                                                                      .CreateNoWindow = True,
+                                                                                      .WindowStyle = ProcessWindowStyle.Hidden,
+                                                                                      .UseShellExecute = False}
+                                CommandProcess.StartInfo = CommandProcessStart
+                                AddHandler CommandProcess.OutputDataReceived, AddressOf ExecutableOutput
+                                AddHandler CommandProcess.ErrorDataReceived, AddressOf ExecutableOutput
+
+                                'Start the process
+                                Wdbg("I", "Starting...")
+                                CommandProcess.Start()
+                                CommandProcess.BeginOutputReadLine()
+                                CommandProcess.BeginErrorReadLine()
+                                CommandProcess.WaitForExit()
+                            Catch ex As Exception
+                                Wdbg("E", "Failed to start process: {0}", ex.Message)
+                                W(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Err, strcommand, ex.Message)
+                                WStkTrc(ex)
+                            End Try
+                        ElseIf File.Exists(TargetFile) And TargetFile.EndsWith(".uesh") Then
+                            Wdbg("I", "Cmd exec {0} succeeded because it's a UESH script.", strcommand)
+                            Execute(TargetFile, scriptArgs.Join(" "))
+                        Else
+                            Wdbg("W", "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", strcommand, indexCmd)
+                            W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Err, strcommand)
+                        End If
                     End If
                 End If
             ElseIf ArgsMode = True And CommandFlag = True Then

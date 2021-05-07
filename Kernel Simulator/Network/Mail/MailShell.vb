@@ -24,7 +24,22 @@ Imports MailKit.Search
 Module MailShell
 
     'Variables
-    Public Mail_AvailableCommands() As String = {"help", "cd", "lsdirs", "exit", "list", "mkdir", "mv", "mvall", "read", "readenc", "ren", "rm", "rmall", "rmdir", "send", "sendenc"}
+    Public MailCommands As New Dictionary(Of String, CommandInfo) From {{"cd", New CommandInfo("cd", ShellCommandType.MailShell, True, 1, False, False, False, False)},
+                                                                        {"exit", New CommandInfo("exit", ShellCommandType.MailShell, False, 0, False, False, False, False)},
+                                                                        {"help", New CommandInfo("help", ShellCommandType.MailShell, False, 0, False, False, False, False)},
+                                                                        {"lsdirs", New CommandInfo("lsdirs", ShellCommandType.MailShell, False, 0, False, False, False, False)},
+                                                                        {"list", New CommandInfo("list", ShellCommandType.MailShell, False, 0, False, False, False, False)},
+                                                                        {"mkdir", New CommandInfo("mkdir", ShellCommandType.MailShell, True, 1, False, False, False, False)},
+                                                                        {"mv", New CommandInfo("mv", ShellCommandType.MailShell, True, 2, False, False, False, False)},
+                                                                        {"mvall", New CommandInfo("mvall", ShellCommandType.MailShell, True, 2, False, False, False, False)},
+                                                                        {"read", New CommandInfo("read", ShellCommandType.MailShell, True, 1, False, False, False, False)},
+                                                                        {"readenc", New CommandInfo("readenc", ShellCommandType.MailShell, True, 1, False, False, False, False)},
+                                                                        {"ren", New CommandInfo("ren", ShellCommandType.MailShell, True, 2, False, False, False, False)},
+                                                                        {"rm", New CommandInfo("rm", ShellCommandType.MailShell, True, 1, False, False, False, False)},
+                                                                        {"rmall", New CommandInfo("rmall", ShellCommandType.MailShell, True, 1, False, False, False, False)},
+                                                                        {"rmdir", New CommandInfo("rmdir", ShellCommandType.MailShell, True, 1, False, False, False, False)},
+                                                                        {"send", New CommandInfo("send", ShellCommandType.MailShell, False, 0, False, False, False, False)},
+                                                                        {"sendenc", New CommandInfo("sendenc", ShellCommandType.MailShell, False, 0, False, False, False, False)}}
     Public IMAP_Messages As IEnumerable(Of UniqueId)
     Public IMAP_CurrentDirectory As String = "Inbox"
     Friend ExitRequested, KeepAlive As Boolean
@@ -83,7 +98,7 @@ Module MailShell
 
                 'Execute a command
                 Wdbg("I", "Executing command...")
-                If Mail_AvailableCommands.Contains(cmd) Then
+                If MailCommands.ContainsKey(cmd) Then
                     Wdbg("I", "Command found.")
                     MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand)
                     MailStartCommandThread.Start({cmd, args})

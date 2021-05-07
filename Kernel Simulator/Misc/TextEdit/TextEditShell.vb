@@ -23,8 +23,19 @@ Public Module TextEditShell
 
     'Variables
     Public TextEdit_Exiting As Boolean
-    Public TextEdit_Commands As String() = {"help", "exit", "exitnosave", "print", "addline", "delline", "replace", "replaceinline", "delword", "delcharnum", "clear",
-                                            "querychar", "save"}
+    Public TextEdit_Commands As New Dictionary(Of String, CommandInfo) From {{"addline", New CommandInfo("addline", ShellCommandType.TextShell, True, 1, False, False, False, False)},
+                                                                             {"clear", New CommandInfo("clear", ShellCommandType.TextShell, False, 0, False, False, False, False)},
+                                                                             {"delcharnum", New CommandInfo("delcharnum", ShellCommandType.TextShell, True, 2, False, False, False, False)},
+                                                                             {"delline", New CommandInfo("delline", ShellCommandType.TextShell, True, 1, False, False, False, False)},
+                                                                             {"delword", New CommandInfo("delword", ShellCommandType.TextShell, True, 2, False, False, False, False)},
+                                                                             {"exit", New CommandInfo("exit", ShellCommandType.TextShell, False, 0, False, False, False, False)},
+                                                                             {"exitnosave", New CommandInfo("exitnosave", ShellCommandType.TextShell, False, 0, False, False, False, False)},
+                                                                             {"help", New CommandInfo("help", ShellCommandType.TextShell, False, 0, False, False, False, False)},
+                                                                             {"print", New CommandInfo("print", ShellCommandType.TextShell, False, 0, False, False, False, False)},
+                                                                             {"querychar", New CommandInfo("querychar", ShellCommandType.TextShell, True, 2, False, False, False, False)},
+                                                                             {"replace", New CommandInfo("replace", ShellCommandType.TextShell, True, 2, False, False, False, False)},
+                                                                             {"replaceinline", New CommandInfo("replaceinline", ShellCommandType.TextShell, True, 3, False, False, False, False)},
+                                                                             {"save", New CommandInfo("save", ShellCommandType.TextShell, False, 0, False, False, False, False)}}
     Public TextEdit_ModCommands As New ArrayList
     Public TextEdit_FileStream As FileStream
     Public TextEdit_FileLines As List(Of String)
@@ -64,8 +75,8 @@ Public Module TextEditShell
             Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand.StartsWith(" "), IsNothing(WrittenCommand), WrittenCommand = "")
             If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWith(" ") = True) Then
                 Wdbg("I", "Checking command {0} for existence.", WrittenCommand.Split(" ")(0))
-                If TextEdit_Commands.Contains(WrittenCommand.Split(" ")(0)) Then
-                    Wdbg("I", "Command {0} found in the list of {1} commands.", WrittenCommand.Split(" ")(0), TextEdit_Commands.Length)
+                If TextEdit_Commands.ContainsKey(WrittenCommand.Split(" ")(0)) Then
+                    Wdbg("I", "Command {0} found in the list of {1} commands.", WrittenCommand.Split(" ")(0), TextEdit_Commands.Count)
                     TextEdit_CommandThread = New Thread(AddressOf TextEdit_ParseCommand)
                     EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
                     Wdbg("I", "Made new thread. Starting with argument {0}...", WrittenCommand)
@@ -79,7 +90,7 @@ Public Module TextEditShell
                     EventManager.RaiseTextPostExecuteCommand(WrittenCommand)
                 Else
                     W(DoTranslation("The specified text editor command is not found."), True, ColTypes.Err)
-                    Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), TextEdit_Commands.Length)
+                    Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), TextEdit_Commands.Count)
                 End If
             End If
 

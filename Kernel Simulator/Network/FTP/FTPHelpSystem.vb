@@ -59,7 +59,7 @@ Public Module FTPHelpSystem
                     W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, FTPModDefs(cmd))
                 Next
             Else
-                W(String.Join(", ", availftpcmds), True, ColTypes.Neutral)
+                W(String.Join(", ", FTPCommands.Keys), True, ColTypes.Neutral)
             End If
         ElseIf command = ("currlocaldir" Or "pwdl") Then
             W(DoTranslation("Usage:") + " currlocaldir or pwdl", True, ColTypes.Neutral)

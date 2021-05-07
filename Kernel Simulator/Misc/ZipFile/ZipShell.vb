@@ -24,7 +24,12 @@ Module ZipShell
 
     'Variables
     Public ZipShell_Exiting As Boolean
-    Public ZipShell_Commands As String() = {"help", "exit", "list", "get", "chdir", "chadir"}
+    Public ZipShell_Commands As New Dictionary(Of String, CommandInfo) From {{"chdir", New CommandInfo("chdir", ShellCommandType.ZIPShell, True, 1, False, False, False, False)},
+                                                                             {"chadir", New CommandInfo("chadir", ShellCommandType.ZIPShell, True, 1, False, False, False, False)},
+                                                                             {"exit", New CommandInfo("exit", ShellCommandType.ZIPShell, False, 0, False, False, False, False)},
+                                                                             {"get", New CommandInfo("get", ShellCommandType.ZIPShell, True, 1, False, False, False, False)},
+                                                                             {"help", New CommandInfo("help", ShellCommandType.ZIPShell, False, 0, False, False, False, False)},
+                                                                             {"list", New CommandInfo("list", ShellCommandType.ZIPShell, False, 0, False, False, False, False)}}
     Public ZipShell_ModCommands As New ArrayList
     Public ZipShell_FileStream As FileStream
     Public ZipShell_ZipArchive As ZipArchive
@@ -61,8 +66,8 @@ Module ZipShell
             Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand.StartsWith(" "), IsNothing(WrittenCommand), WrittenCommand = "")
             If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWith(" ") = True) Then
                 Wdbg("I", "Checking command {0} for existence.", WrittenCommand.Split(" ")(0))
-                If ZipShell_Commands.Contains(WrittenCommand.Split(" ")(0)) Then
-                    Wdbg("I", "Command {0} found in the list of {1} commands.", WrittenCommand.Split(" ")(0), ZipShell_Commands.Length)
+                If ZipShell_Commands.ContainsKey(WrittenCommand.Split(" ")(0)) Then
+                    Wdbg("I", "Command {0} found in the list of {1} commands.", WrittenCommand.Split(" ")(0), ZipShell_Commands.Count)
                     ZipShell_CommandThread = New Thread(AddressOf ZipShell_ParseCommand)
                     EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
                     Wdbg("I", "Made new thread. Starting with argument {0}...", WrittenCommand)
@@ -76,7 +81,7 @@ Module ZipShell
                     EventManager.RaiseTextPostExecuteCommand(WrittenCommand)
                 Else
                     W(DoTranslation("The specified ZIP shell command is not found."), True, ColTypes.Err)
-                    Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), ZipShell_Commands.Length)
+                    Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), ZipShell_Commands.Count)
                 End If
             End If
 
