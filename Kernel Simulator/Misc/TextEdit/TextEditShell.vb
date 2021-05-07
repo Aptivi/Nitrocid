@@ -33,6 +33,7 @@ Public Module TextEditShell
                                                                              {"help", New CommandInfo("help", ShellCommandType.TextShell, False, 0, False, False, False, False)},
                                                                              {"print", New CommandInfo("print", ShellCommandType.TextShell, False, 0, False, False, False, False)},
                                                                              {"querychar", New CommandInfo("querychar", ShellCommandType.TextShell, True, 2, False, False, False, False)},
+                                                                             {"queryword", New CommandInfo("queryword", ShellCommandType.TextShell, True, 2, False, False, False, False)},
                                                                              {"replace", New CommandInfo("replace", ShellCommandType.TextShell, True, 2, False, False, False, False)},
                                                                              {"replaceinline", New CommandInfo("replaceinline", ShellCommandType.TextShell, True, 3, False, False, False, False)},
                                                                              {"save", New CommandInfo("save", ShellCommandType.TextShell, False, 0, False, False, False, False)}}

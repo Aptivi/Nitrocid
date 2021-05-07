@@ -34,6 +34,7 @@ Public Module TextEditHelpSystem
                                                                        {"delword", DoTranslation("Deletes a word or phrase from line number")},
                                                                        {"delcharnum", DoTranslation("Deletes a character from character number in specified line")},
                                                                        {"querychar", DoTranslation("Queries a character in a specified line or all lines")},
+                                                                       {"queryword", DoTranslation("Queries a word in a specified line or all lines")},
                                                                        {"clear", DoTranslation("Clears the text file")}}
     End Sub
 
@@ -71,6 +72,8 @@ Public Module TextEditHelpSystem
             W(DoTranslation("Usage:") + " delcharnum <charnumber> <linenumber>", True, ColTypes.Neutral)
         ElseIf Command = "querychar" Then
             W(DoTranslation("Usage:") + " querychar <char> <linenumber/all>", True, ColTypes.Neutral)
+        ElseIf Command = "queryword" Then
+            W(DoTranslation("Usage:") + " queryword ""<word/phrase>"" <linenumber/all>", True, ColTypes.Neutral)
         ElseIf Command = "clear" Then
             W(DoTranslation("Usage:") + " clear", True, ColTypes.Neutral)
         End If
