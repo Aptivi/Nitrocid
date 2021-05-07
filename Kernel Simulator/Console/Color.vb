@@ -38,7 +38,7 @@ Public Class Color
     ''' </summary>
     Public ReadOnly Property Type As ColorType
     ''' <summary>
-    ''' Is the color dark? Always false for 255 colors, but will be changed later.
+    ''' Is the color dark?
     ''' </summary>
     Public ReadOnly Property IsDark As Boolean
 
@@ -68,8 +68,7 @@ Public Class Color
             VTSequenceBackground = "<48;5;{0}m>".FormatString(ColorSpecifier)
             VTSequenceBackground.ConvertVTSequences
             Type = ColorType._255Color
-            'TODO: Implement IsDark for 255 colors
-            IsDark = False
+            IsDark = New ConsoleColorsInfo(ColorSpecifier).IsDark
         Else
             Throw New Exceptions.ColorException(DoTranslation("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows:") + " <R>;<G>;<B>")
         End If

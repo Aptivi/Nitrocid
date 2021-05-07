@@ -373,6 +373,7 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="Resources\Data\ConsoleColorsData.json" />
     <None Include="Resources\Themes\AyuDark.json" />
     <None Include="Resources\Themes\AyuLight.json" />
     <None Include="Resources\Themes\AyuMirage.json" />
