@@ -542,14 +542,14 @@ Public Module GetCommand
                         W("  - " + DoTranslation("Drive model:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Model)
                         W("  - " + DoTranslation("Drive vendor:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Vendor)
                         W("  - " + DoTranslation("Drive speed:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Speed)
-                        W("  - " + DoTranslation("Drive size:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Size)
+                        W("  - " + DoTranslation("Drive size:") + " {0}", True, ColTypes.Neutral, If(IsOnUnix(), HardwareInfo.Hardware.HDD(Drive).Size, CLng(HardwareInfo.Hardware.HDD(Drive).Size).FileSizeToString))
                         W("  - " + DoTranslation("Drive serial:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Serial)
                         W("  - " + DoTranslation("Drive ID:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).ID)
                         W("  - " + DoTranslation("Drive partition count:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Partitions.Count)
                         For PartitionIndex As Integer = 0 To HardwareInfo.Hardware.HDD(Drive).Partitions.Count - 1
                             W("    - [{0}] " + DoTranslation("Partition ID:") + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).ID)
                             W("    - [{0}] " + DoTranslation("Partition filesystem:") + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).FileSystem)
-                            W("    - [{0}] " + DoTranslation("Partition size:") + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Size)
+                            W("    - [{0}] " + DoTranslation("Partition size:") + " {1}", True, ColTypes.Neutral, PartitionIndex, If(IsOnUnix(), HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Size, CLng(HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Size).FileSizeToString))
                             W("    - [{0}] " + DoTranslation("Partition used:") + " {1}", True, ColTypes.Neutral, PartitionIndex, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Used)
                         Next
                         Console.WriteLine()
@@ -565,9 +565,9 @@ Public Module GetCommand
 
                     'RAM information
                     W("- " + DoTranslation("RAM information:"), True, ColTypes.Neutral)
-                    W("  - " + DoTranslation("RAM free:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.RAM.FreeMemory)
-                    W("  - " + DoTranslation("RAM total:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.RAM.TotalMemory)
-                    W("  - " + DoTranslation("RAM used:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.RAM.UsedMemory)
+                    W("  - " + DoTranslation("RAM free:") + " {0}", True, ColTypes.Neutral, If(IsOnUnix(), HardwareInfo.Hardware.RAM.FreeMemory, CLng(HardwareInfo.Hardware.RAM.FreeMemory).FileSizeToString))
+                    W("  - " + DoTranslation("RAM total:") + " {0}", True, ColTypes.Neutral, If(IsOnUnix(), HardwareInfo.Hardware.RAM.TotalMemory, CLng(HardwareInfo.Hardware.RAM.TotalMemory).FileSizeToString))
+                    W("  - " + DoTranslation("RAM used:") + " {0}", True, ColTypes.Neutral, If(IsOnUnix(), HardwareInfo.Hardware.RAM.UsedMemory, CLng(HardwareInfo.Hardware.RAM.UsedMemory).FileSizeToString))
                     Console.WriteLine()
 
                 Case "input"
