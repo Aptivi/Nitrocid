@@ -135,8 +135,12 @@ Public Module SFTPGetCommand
             ElseIf cmd = "exit" Then
                 'Set a flag
                 sftpexit = True
-            ElseIf cmd = "help" Then
-                SFTPShowHelp()
+            ElseIf words(0) = "help" Then
+                If cmd = "help" Then
+                    SFTPShowHelp()
+                Else
+                    SFTPShowHelp(strArgs)
+                End If
             ElseIf words(0) = "listlocal" Or words(0) = "lsl" Then
                 If cmd = "listlocal" Or cmd = "lsl" Then
                     List(CurrDir)
