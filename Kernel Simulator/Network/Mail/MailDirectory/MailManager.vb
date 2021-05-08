@@ -108,14 +108,14 @@ Public Module MailManager
                 'Remove message
                 Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
                 Wdbg("I", "Opened {0}. Removing {1}...", IMAP_CurrentDirectory, MsgNumber)
-                Dir.AddFlags(Message, MessageFlags.Deleted, True)
+                Dir.AddFlags(IMAP_Messages(Message), MessageFlags.Deleted, True)
                 Wdbg("I", "Removed.")
                 Dir.Expunge()
             Else
                 'Remove message
                 IMAP_Client.Inbox.Open(FolderAccess.ReadWrite)
                 Wdbg("I", "Removing {0}...", MsgNumber)
-                IMAP_Client.Inbox.AddFlags(Message, MessageFlags.Deleted, True)
+                IMAP_Client.Inbox.AddFlags(IMAP_Messages(Message), MessageFlags.Deleted, True)
                 Wdbg("I", "Removed.")
                 IMAP_Client.Inbox.Expunge()
             End If
@@ -207,14 +207,14 @@ Public Module MailManager
                 Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
                 Dim TargetF As MailFolder = OpenFolder(TargetFolder)
                 Wdbg("I", "Opened {0}. Moving {1}...", IMAP_CurrentDirectory, MsgNumber)
-                Dir.MoveTo(Message, TargetF)
+                Dir.MoveTo(IMAP_Messages(Message), TargetF)
                 Wdbg("I", "Moved.")
             Else
                 'Move message
                 Dim TargetF As MailFolder = OpenFolder(TargetFolder)
                 Wdbg("I", "Moving {0}...", MsgNumber)
                 IMAP_Client.Inbox.Open(FolderAccess.ReadWrite)
-                IMAP_Client.Inbox.MoveTo(Message, TargetF)
+                IMAP_Client.Inbox.MoveTo(IMAP_Messages(Message), TargetF)
                 Wdbg("I", "Moved.")
             End If
         End SyncLock
