@@ -42,9 +42,9 @@ IFCANCEL:
                 Wdbg("I", "All clean. Hacking Simulator for Active Domain users screensaver stopped.")
                 Exit Do
             Else
-                Console.Clear()
                 Console.BackgroundColor = ConsoleColor.Black
                 Console.ForegroundColor = ConsoleColor.Green
+                Console.Clear()
                 Console.WriteLine("Microsoft Windows [Version 10.0.18362.449]" + vbNewLine +
                                   "(c) 2019 Microsoft Corporation. All rights reserved." + vbNewLine)
                 Console.Write(CurrDir + ">")

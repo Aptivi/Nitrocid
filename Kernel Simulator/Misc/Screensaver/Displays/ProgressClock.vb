@@ -27,8 +27,6 @@ Module ProgressClockDisplay
     ''' Handles the code of Progress Clock
     ''' </summary>
     Sub ProgressClock_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles ProgressClock.DoWork
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.ForegroundColor = ConsoleColor.White
         Console.Clear()
         Console.CursorVisible = False
         Dim RandomDriver As New Random()
@@ -41,8 +39,8 @@ Module ProgressClockDisplay
                 e.Cancel = True
                 Console.Clear()
                 Dim esc As Char = GetEsc()
-                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                Console.Write(esc + "[38;5;" + CStr(InputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(BackgroundColor) + "m")
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Progress Clock screensaver stopped.")

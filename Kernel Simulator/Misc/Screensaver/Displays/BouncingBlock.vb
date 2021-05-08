@@ -38,6 +38,8 @@ Module BouncingBlockDisplay
         ColumnBlock = Console.WindowWidth / 2
         Do While True
             Thread.Sleep(BouncingBlockDelay)
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.White
             Console.Clear()
             If BouncingBlock.CancellationPending = True Then
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")

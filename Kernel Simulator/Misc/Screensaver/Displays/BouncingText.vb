@@ -27,8 +27,6 @@ Module BouncingTextDisplay
     ''' Handles the code of Bouncing Text
     ''' </summary>
     Sub BouncingText_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles BouncingText.DoWork
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.ForegroundColor = ConsoleColor.White
         Console.Clear()
         Console.CursorVisible = False
         Dim Direction As String = "BottomRight"
@@ -44,8 +42,8 @@ Module BouncingTextDisplay
                 e.Cancel = True
                 Console.Clear()
                 Dim esc As Char = GetEsc()
-                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                Console.Write(esc + "[38;5;" + CStr(InputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(BackgroundColor) + "m")
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Bouncing Text screensaver stopped.")
