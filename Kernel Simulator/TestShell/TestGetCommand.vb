@@ -32,30 +32,45 @@ Module TestGetCommand
     ''' </summary>
     ''' <param name="FullCmd">A command to be executed. It may come with arguments</param>
     Sub TParseCommand(ByVal FullCmd As String)
-        Dim FullArgsQ As List(Of String)
-        Dim Cmd As String
-        Cmd = FullCmd.Split(" ").ToList(0)
-        Dim TStream As New MemoryStream(Encoding.Default.GetBytes(FullCmd))
+        'Variables
+        Dim RequiredArgumentsProvided As Boolean = True
+
+        'Get command and arguments
+        Dim index As Integer = FullCmd.IndexOf(" ")
+        If index = -1 Then index = FullCmd.Length
+        Dim words = FullCmd.Split({" "c})
+        Dim strArgs As String = FullCmd.Substring(index)
+        If Not index = FullCmd.Length Then strArgs = strArgs.Substring(1)
+        Dim Cmd As String = words(0)
+
+        'Parse arguments
+        Dim FullArgsQ() As String
+        Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
         Dim Parser As New TextFieldParser(TStream) With {
             .Delimiters = {" "},
-            .HasFieldsEnclosedInQuotes = True
+            .HasFieldsEnclosedInQuotes = True,
+            .TrimWhiteSpace = False
         }
-        FullArgsQ = Parser.ReadFields.ToList
+        FullArgsQ = Parser.ReadFields
         If FullArgsQ IsNot Nothing Then
-            For i As Integer = 0 To FullArgsQ.Count - 1
+            For i As Integer = 0 To FullArgsQ.Length - 1
                 FullArgsQ(i).Replace("""", "")
             Next
+            RequiredArgumentsProvided = FullArgsQ?.Length >= Test_Commands(words(0)).MinimumArguments
+        ElseIf Test_Commands(words(0)).ArgumentsRequired And FullArgsQ Is Nothing Then
+            RequiredArgumentsProvided = False
         End If
-        FullArgsQ.Remove(Cmd)
+
+        'Command code
         If Cmd = "print" Then 'Usage: print <Color> <Line> <Message>
-            If FullArgsQ?.Count - 1 >= 2 Then
+            If RequiredArgumentsProvided Then
                 Dim Color As ColTypes = FullArgsQ(0)
                 Dim Line As Boolean = FullArgsQ(1)
                 Dim Text As String = FullArgsQ(2)
                 W(Text, Line, Color)
             End If
         ElseIf Cmd = "printf" Then 'Usage: printf <Color> <Line> <Variable1;Variable2;Variable3;...> <Message>
-            If FullArgsQ?.Count - 1 >= 3 Then
+            If RequiredArgumentsProvided Then
                 Dim Parts As New List(Of String)(FullArgsQ)
                 Dim Color As ColTypes = FullArgsQ(0)
                 Dim Line As Boolean = FullArgsQ(1)
@@ -67,20 +82,19 @@ Module TestGetCommand
                 W(Text, Line, Color, Vars)
             End If
         ElseIf Cmd = "printd" Then 'Usage: printd <Message>
-            If FullArgsQ?.Count - 1 >= 0 Then
+            If RequiredArgumentsProvided Then
                 Wdbg("I", String.Join(" ", FullArgsQ))
             End If
         ElseIf Cmd = "printdf" Then 'Usage: printdf <Variable1;Variable2;Variable3;...> <Message>
-            If FullArgsQ?.Count - 1 >= 1 Then
+            If RequiredArgumentsProvided Then
                 Dim Vars As Object() = FullArgsQ(0).Split(";")
                 For i As Integer = 0 To Vars.Count - 1
                     Vars(i) = Evaluate(Vars(i)).ToString
                 Next
-                FullArgsQ.RemoveAt(0)
-                Wdbg("I", String.Join(" ", FullArgsQ), Vars)
+                Wdbg("I", FullArgsQ(1), Vars)
             End If
         ElseIf Cmd = "testevent" Then 'Usage: testevent <Event>
-            If FullArgsQ?.Count - 1 = 0 Then
+            If RequiredArgumentsProvided Then
                 Try
                     Dim SubName As String = "Raise" + FullArgsQ(0)
                     CallByName(New Events, SubName, CallType.Method)
@@ -93,67 +107,81 @@ Module TestGetCommand
         ElseIf Cmd = "garbage" Then
             DisposeAll()
         ElseIf Cmd = "panic" Then 'Usage: panic <ErrorType> <Reboot> <RebootTime> <Description>
-            Dim EType As Char = FullArgsQ(0)
-            Dim Reboot As Boolean = FullArgsQ(1)
-            Dim RTime As Long = FullArgsQ(2)
-            Dim Exc As New Exception
-            FullArgsQ.RemoveRange(0, 3)
-            Dim Message As String = String.Join(" ", FullArgsQ)
-            KernelError(EType, Reboot, RTime, Message, Exc)
+            If RequiredArgumentsProvided Then
+                Dim EType As Char = FullArgsQ(0)
+                Dim Reboot As Boolean = FullArgsQ(1)
+                Dim RTime As Long = FullArgsQ(2)
+                Dim Exc As New Exception
+                Dim Message As String = FullArgsQ(3)
+                KernelError(EType, Reboot, RTime, Message, Exc)
+            End If
         ElseIf Cmd = "panicf" Then 'Usage: panicf <ErrorType> <Reboot> <RebootTime> <Variable1;Variable2;Variable3;...> <Description>
-            Dim EType As Char = FullArgsQ(0)
-            Dim Reboot As Boolean = FullArgsQ(1)
-            Dim RTime As Long = FullArgsQ(2)
-            Dim Args As String = FullArgsQ(3)
-            Dim Exc As New Exception
-            FullArgsQ.RemoveRange(0, 3)
-            Dim Message As String = String.Join(" ", FullArgsQ)
-            KernelError(EType, Reboot, RTime, Message, Exc, Args)
+            If RequiredArgumentsProvided Then
+                Dim EType As Char = FullArgsQ(0)
+                Dim Reboot As Boolean = FullArgsQ(1)
+                Dim RTime As Long = FullArgsQ(2)
+                Dim Args As String = FullArgsQ(3)
+                Dim Exc As New Exception
+                Dim Message As String = FullArgsQ(4)
+                KernelError(EType, Reboot, RTime, Message, Exc, Args)
+            End If
         ElseIf Cmd = "translate" Then 'Usage: translate <Lang> <Message> | Message: A message that is found on KS lang files
-            Dim Lang As String = FullArgsQ(0)
-            FullArgsQ.RemoveAt(0)
-            Dim Message As String = String.Join(" ", FullArgsQ)
-            W(DoTranslation(Message, Lang), True, ColTypes.Neutral)
+            If RequiredArgumentsProvided Then
+                Dim Lang As String = FullArgsQ(0)
+                Dim Message As String = FullArgsQ(1)
+                W(DoTranslation(Message, Lang), True, ColTypes.Neutral)
+            End If
         ElseIf Cmd = "places" Then 'Usage: places <Message> | Same as print, but with no option to change colors, etc. Only message with placeholder support
-            W(ProbePlaces(FullArgsQ(0)), True, ColTypes.Neutral)
+            If RequiredArgumentsProvided Then
+                W(ProbePlaces(FullArgsQ(0)), True, ColTypes.Neutral)
+            End If
         ElseIf Cmd = "testsha512" Then
-            Dim spent As New Stopwatch
-            spent.Start() 'Time when you're on a breakpoint is counted
-            W(GetEncryptedString(FullArgsQ(0), Algorithms.SHA512), True, ColTypes.Neutral)
-            W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-            spent.Stop()
+            If RequiredArgumentsProvided Then
+                Dim spent As New Stopwatch
+                spent.Start() 'Time when you're on a breakpoint is counted
+                W(GetEncryptedString(FullArgsQ(0), Algorithms.SHA512), True, ColTypes.Neutral)
+                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                spent.Stop()
+            End If
         ElseIf Cmd = "testsha256" Then
-            Dim spent As New Stopwatch
-            spent.Start() 'Time when you're on a breakpoint is counted
-            W(GetEncryptedString(FullArgsQ(0), Algorithms.SHA256), True, ColTypes.Neutral)
-            W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-            spent.Stop()
+            If RequiredArgumentsProvided Then
+                Dim spent As New Stopwatch
+                spent.Start() 'Time when you're on a breakpoint is counted
+                W(GetEncryptedString(FullArgsQ(0), Algorithms.SHA256), True, ColTypes.Neutral)
+                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                spent.Stop()
+            End If
         ElseIf Cmd = "testsha1" Then
-            Dim spent As New Stopwatch
-            spent.Start() 'Time when you're on a breakpoint is counted
-            W(GetEncryptedString(FullArgsQ(0), Algorithms.SHA1), True, ColTypes.Neutral)
-            W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-            spent.Stop()
+            If RequiredArgumentsProvided Then
+                Dim spent As New Stopwatch
+                spent.Start() 'Time when you're on a breakpoint is counted
+                W(GetEncryptedString(FullArgsQ(0), Algorithms.SHA1), True, ColTypes.Neutral)
+                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                spent.Stop()
+            End If
         ElseIf Cmd = "testmd5" Then
-            Dim spent As New Stopwatch
-            spent.Start() 'Time when you're on a breakpoint is counted
-            W(GetEncryptedString(FullArgsQ(0), Algorithms.MD5), True, ColTypes.Neutral)
-            W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-            spent.Stop()
+            If RequiredArgumentsProvided Then
+                Dim spent As New Stopwatch
+                spent.Start() 'Time when you're on a breakpoint is counted
+                W(GetEncryptedString(FullArgsQ(0), Algorithms.MD5), True, ColTypes.Neutral)
+                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                spent.Stop()
+            End If
         ElseIf Cmd = "testregexp" Then 'Usage: testregexp <pattern> <string>
-            Dim Exp As String = FullArgsQ(0)
-            Dim Reg As New Regex(Exp)
-            FullArgsQ.RemoveAt(0)
-            Dim Matches As MatchCollection = Reg.Matches(FullArgsQ(0))
-            Dim MatchNum As Integer = 1
-            For Each Mat As Match In Matches
-                W(DoTranslation("Match {0} ({1}): {2}"), True, ColTypes.Neutral, MatchNum, Exp, Mat)
-                MatchNum += 1
-            Next
+            If RequiredArgumentsProvided Then
+                Dim Exp As String = FullArgsQ(0)
+                Dim Reg As New Regex(Exp)
+                Dim Matches As MatchCollection = Reg.Matches(FullArgsQ(1))
+                Dim MatchNum As Integer = 1
+                For Each Mat As Match In Matches
+                    W(DoTranslation("Match {0} ({1}): {2}"), True, ColTypes.Neutral, MatchNum, Exp, Mat)
+                    MatchNum += 1
+                Next
+            End If
         ElseIf Cmd = "loadmods" Then 'Usage: loadmods <Enable>
-            If FullArgsQ?.Count - 1 = 0 Then ParseMods(FullArgsQ(0))
+            If RequiredArgumentsProvided Then ParseMods(FullArgsQ(0))
         ElseIf Cmd = "debug" Then 'Usage: debug <Enable>
-            If FullArgsQ?.Count - 1 = 0 Then
+            If RequiredArgumentsProvided Then
                 If FullArgsQ(0) = True Then
                     DebugMode = True
                 Else
@@ -163,7 +191,7 @@ Module TestGetCommand
                 End If
             End If
         ElseIf Cmd = "rdebug" Then 'Usage: rdebug <Enable>
-            If FullArgsQ?.Count - 1 = 0 Then
+            If RequiredArgumentsProvided Then
                 If FullArgsQ(0) = True Then
                     StartRDebugThread(True)
                 Else
@@ -171,28 +199,36 @@ Module TestGetCommand
                 End If
             End If
         ElseIf Cmd = "colortest" Then 'Usage: colortest <index>
-            Dim esc As Char = GetEsc()
-            Console.WriteLine(esc + "[38;5;" + FullArgsQ(0) + "mIndex " + FullArgsQ(0))
+            If RequiredArgumentsProvided Then
+                Dim esc As Char = GetEsc()
+                Console.WriteLine(esc + "[38;5;" + FullArgsQ(0) + "mIndex " + FullArgsQ(0))
+            End If
         ElseIf Cmd = "colortruetest" Then 'Usage: colortruetest <R;G;B>
-            Dim esc As Char = GetEsc()
-            Console.WriteLine(esc + "[38;2;" + FullArgsQ(0) + "mIndex " + FullArgsQ(0))
+            If RequiredArgumentsProvided Then
+                Dim esc As Char = GetEsc()
+                Console.WriteLine(esc + "[38;2;" + FullArgsQ(0) + "mIndex " + FullArgsQ(0))
+            End If
         ElseIf Cmd = "sendnot" Then 'Usage: sendnot <Priority> <title> <desc>
-            Dim Notif As New Notification With {.Priority = FullArgsQ(0),
-                                                .Title = FullArgsQ(1),
-                                                .Desc = FullArgsQ(2)}
-            NotifySend(Notif)
+            If RequiredArgumentsProvided Then
+                Dim Notif As New Notification With {.Priority = FullArgsQ(0),
+                                                    .Title = FullArgsQ(1),
+                                                    .Desc = FullArgsQ(2)}
+                NotifySend(Notif)
+            End If
         ElseIf Cmd = "dcalend" Then 'Usage: dcalend <CalendType>
-            If FullArgsQ(0) = "Gregorian" Then
-                W(RenderDate(New CultureInfo("en-US")), True, ColTypes.Neutral)
-            ElseIf FullArgsQ(0) = "Hijri" Then
-                Dim Cult As New CultureInfo("ar") : Cult.DateTimeFormat.Calendar = New HijriCalendar
-                W(RenderDate(Cult), True, ColTypes.Neutral)
-            ElseIf FullArgsQ(0) = "Persian" Then
-                W(RenderDate(New CultureInfo("fa")), True, ColTypes.Neutral)
-            ElseIf FullArgsQ(0) = "Saudi-Hijri" Then
-                W(RenderDate(New CultureInfo("ar-SA")), True, ColTypes.Neutral)
-            ElseIf FullArgsQ(0) = "Thai-Buddhist" Then
-                W(RenderDate(New CultureInfo("th-TH")), True, ColTypes.Neutral)
+            If RequiredArgumentsProvided Then
+                If FullArgsQ(0) = "Gregorian" Then
+                    W(RenderDate(New CultureInfo("en-US")), True, ColTypes.Neutral)
+                ElseIf FullArgsQ(0) = "Hijri" Then
+                    Dim Cult As New CultureInfo("ar") : Cult.DateTimeFormat.Calendar = New HijriCalendar
+                    W(RenderDate(Cult), True, ColTypes.Neutral)
+                ElseIf FullArgsQ(0) = "Persian" Then
+                    W(RenderDate(New CultureInfo("fa")), True, ColTypes.Neutral)
+                ElseIf FullArgsQ(0) = "Saudi-Hijri" Then
+                    W(RenderDate(New CultureInfo("ar-SA")), True, ColTypes.Neutral)
+                ElseIf FullArgsQ(0) = "Thai-Buddhist" Then
+                    W(RenderDate(New CultureInfo("th-TH")), True, ColTypes.Neutral)
+                End If
             End If
         ElseIf Cmd = "listcodepages" Then
             Dim Encodings() As EncodingInfo = Encoding.GetEncodings
