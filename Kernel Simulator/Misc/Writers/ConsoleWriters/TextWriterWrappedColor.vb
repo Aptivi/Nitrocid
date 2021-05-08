@@ -31,7 +31,6 @@ Public Module TextWriterWrappedColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
             Dim LinesMade As Integer
             Dim OldTop As Integer
             Try
@@ -113,7 +112,6 @@ Public Module TextWriterWrappedColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
             Dim LinesMade As Integer
             Dim OldTop As Integer
             Try
@@ -162,7 +160,6 @@ Public Module TextWriterWrappedColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
             Dim LinesMade As Integer
             Dim OldTop As Integer
             Try
@@ -210,7 +207,6 @@ Public Module TextWriterWrappedColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
             Dim LinesMade As Integer
             Dim OldTop As Integer
             Try
@@ -261,7 +257,6 @@ Public Module TextWriterWrappedColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
             Dim LinesMade As Integer
             Dim OldTop As Integer
             Try

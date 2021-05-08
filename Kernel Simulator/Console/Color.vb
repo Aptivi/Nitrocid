@@ -182,7 +182,6 @@ Public Module ColorTools
     Public Sub LoadBack()
         Try
             Wdbg("I", "Filling background with background color")
-            Dim esc As Char = GetEsc()
             Console.Write(New Color(BackgroundColor).VTSequenceBackground)
             Console.Clear()
         Catch ex As Exception
@@ -392,7 +391,6 @@ Public Module ColorTools
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function SetInputColor() As Boolean
-        Dim esc As Char = GetEsc()
         If ColoredShell = True Then
             Console.Write(New Color(InputColor).VTSequenceForeground)
             Console.Write(New Color(BackgroundColor).VTSequenceBackground)

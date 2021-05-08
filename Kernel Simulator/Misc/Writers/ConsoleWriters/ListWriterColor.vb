@@ -86,7 +86,6 @@ Public Module ListWriterColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
             Try
                 'Variables
                 Dim LinesMade As Integer
@@ -136,7 +135,6 @@ Public Module ListWriterColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
             Try
                 'Variables
                 Dim LinesMade As Integer

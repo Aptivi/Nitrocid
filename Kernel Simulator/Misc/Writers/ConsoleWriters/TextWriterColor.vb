@@ -35,7 +35,6 @@ Public Module TextWriterColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
             Try
                 'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
                 If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
@@ -105,7 +104,6 @@ Public Module TextWriterColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
             Try
                 'Try to write to console
                 Console.BackgroundColor = IIf(IsNumeric(New Color(BackgroundColor).PlainSequence), If(BackgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor), ConsoleColor.Black), ConsoleColor.Black)
@@ -142,7 +140,6 @@ Public Module TextWriterColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
             Try
                 'Try to write to console
                 Console.BackgroundColor = BackgroundColor
@@ -178,7 +175,6 @@ Public Module TextWriterColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
             Try
                 'Try to write to console
                 If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
@@ -217,7 +213,6 @@ Public Module TextWriterColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
             Try
                 'Try to write to console
                 If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then

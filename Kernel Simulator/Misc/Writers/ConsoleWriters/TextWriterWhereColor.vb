@@ -33,7 +33,6 @@ Module TextWriterWhereColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
             If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
                 If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
                     Write(New Color(NeutralTextColor).VTSequenceForeground)
@@ -177,7 +176,6 @@ Module TextWriterWhereColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
             If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
                 Write(color.VTSequenceForeground)
                 Write(New Color(BackgroundColor).VTSequenceBackground)
@@ -217,7 +215,6 @@ Module TextWriterWhereColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
             If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
                 Write(ForegroundColor.VTSequenceForeground)
                 Write(BackgroundColor.VTSequenceBackground)
