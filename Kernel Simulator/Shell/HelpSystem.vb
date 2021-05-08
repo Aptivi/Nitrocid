@@ -441,11 +441,11 @@ Public Module HelpSystem
 
         ElseIf command = "sshell" Then
 
-            W(DoTranslation("Usage:") + " sshell <address> <port> <username>: " + DoTranslation("Connects to an SSH server."), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " sshell <address:port> <username>: " + DoTranslation("Connects to an SSH server."), True, ColTypes.Neutral)
 
         ElseIf command = "sshcmd" Then
 
-            W(DoTranslation("Usage:") + " sshcmd <address> <port> <username> ""<command>"": " + DoTranslation("Connects to an SSH server to execute a command."), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " sshcmd <address:port> <username> ""<command>"": " + DoTranslation("Connects to an SSH server to execute a command."), True, ColTypes.Neutral)
 
         ElseIf command = "sumfile" Then
 

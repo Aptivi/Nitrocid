@@ -957,13 +957,27 @@ Public Module GetCommand
                 Case "sshell"
 
                     If RequiredArgumentsProvided Then
-                        InitializeSSH(eqargs(0), eqargs(1), eqargs(2), ConnectionType.Shell)
+                        Dim AddressDelimiter() As String = eqargs(0).Split(":")
+                        Dim Address As String = AddressDelimiter(0)
+                        If AddressDelimiter.Length > 1 Then
+                            Dim Port As Integer = AddressDelimiter(1)
+                            InitializeSSH(Address, Port, eqargs(1), ConnectionType.Shell)
+                        Else
+                            InitializeSSH(Address, 22, eqargs(1), ConnectionType.Shell)
+                        End If
                     End If
 
                 Case "sshcmd"
 
                     If RequiredArgumentsProvided Then
-                        InitializeSSH(eqargs(0), eqargs(1), eqargs(2), ConnectionType.Command, eqargs(3))
+                        Dim AddressDelimiter() As String = eqargs(0).Split(":")
+                        Dim Address As String = AddressDelimiter(0)
+                        If AddressDelimiter.Length > 1 Then
+                            Dim Port As Integer = AddressDelimiter(1)
+                            InitializeSSH(Address, Port, eqargs(1), ConnectionType.Command, eqargs(2))
+                        Else
+                            InitializeSSH(Address, 22, eqargs(1), ConnectionType.Command, eqargs(2))
+                        End If
                     End If
 
                 Case "sumfile"
