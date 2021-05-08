@@ -274,6 +274,8 @@ Public Module KernelTools
         MailModCommands.Clear()
         MailModDefs.Clear()
         RDebugModDefs.Clear()
+        DebugModCmds.Clear()
+        TestModDefs.Clear()
         TextEdit_ModCommands.Clear()
         TextEdit_ModHelpEntries.Clear()
         ZipShell_ModCommands.Clear()
@@ -337,6 +339,7 @@ Public Module KernelTools
         InitSFTPHelp()
         IMAPInitHelp()
         InitRDebugHelp()
+        InitTestHelp()
         TextEdit_UpdateHelp()
         ZipShell_UpdateHelp()
 

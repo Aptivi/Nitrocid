@@ -350,6 +350,7 @@
     <Compile Include="Shell\HelpSystem.vb" />
     <Compile Include="Shell\Shell.vb" />
     <Compile Include="TestShell\TestGetCommand.vb" />
+    <Compile Include="TestShell\TestHelpSystem.vb" />
     <Compile Include="TestShell\TestShell.vb" />
     <Compile Include="TimeDate\TimeDate.vb" />
     <Compile Include="TimeDate\TimeZones.vb" />

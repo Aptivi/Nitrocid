@@ -255,34 +255,23 @@ Module TestGetCommand
             W("- ENABLEIMMEDIATEWINDOWDEBUG", True, ColTypes.Neutral)
 #End If
         ElseIf Cmd = "help" Then
-            W("- print <Color> <Line> <Message>" + vbNewLine +
-              "- printf <Color> <Line> <Variable1;Variable2;Variable3;...> <Message>" + vbNewLine +
-              "- printd <Message>" + vbNewLine +
-              "- printdf <Variable1;Variable2;Variable3;...> <Message>" + vbNewLine +
-              "- panic <ErrorType> <Reboot> <RebootTime> <Description>" + vbNewLine +
-              "- panicf <ErrorType> <Reboot> <RebootTime> <Variable1;Variable2;Variable3;...> <Description>" + vbNewLine +
-              "- translate <Lang> <Message>" + vbNewLine +
-              "- testregexp <Pattern> <Message>" + vbNewLine +
-              "- testsha256 <Message>" + vbNewLine +
-              "- testsha1 <Message>" + vbNewLine +
-              "- testmd5 <Message>" + vbNewLine +
-              "- colortest <index>" + vbNewLine +
-              "- colortruetest <R;G;B>" + vbNewLine +
-              "- sendnot <Priority> <title> <desc>" + vbNewLine +
-              "- debug <Enable>" + vbNewLine +
-              "- rdebug <Enable>" + vbNewLine +
-              "- testevent <Event>" + vbNewLine +
-              "- probehw" + vbNewLine +
-              "- garbage" + vbNewLine +
-              "- listcodepages" + vbNewLine +
-              "- lscompilervars" + vbNewLine +
-              "- exit" + vbNewLine +
-              "- shutdown", True, ColTypes.Neutral)
+            If FullArgsQ?.Length = 0 Or FullArgsQ Is Nothing Then
+                TestShowHelp()
+            Else
+                TestShowHelp(FullArgsQ(0))
+            End If
         ElseIf Cmd = "exit" Then
             TEST_ExitFlag = True
         ElseIf Cmd = "shutdown" Then
             TEST_ShutdownFlag = True
             TEST_ExitFlag = True
+        End If
+
+        'If not enough arguments, show help entry
+        If Test_Commands(Cmd).ArgumentsRequired And Not RequiredArgumentsProvided Then
+            Wdbg("W", "User hasn't provided enough arguments for {0}", Cmd)
+            W(DoTranslation("There was not enough arguments. See below for usage:"), True, ColTypes.Neutral)
+            TestShowHelp(Cmd)
         End If
     End Sub
 
