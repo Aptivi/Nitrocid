@@ -170,7 +170,6 @@ Public Module KernelTools
                 'Write info (Inner exceptions)
                 Dim InnerExc As Exception = Exc.InnerException
                 While InnerExc IsNot Nothing
-                    Count += 1
                     Dump.WriteLine(DoTranslation("> Exception: {0}") + vbNewLine +
                                    DoTranslation("> Description: {1}") + vbNewLine +
                                    DoTranslation("> HRESULT: {2}") + vbNewLine +
@@ -181,9 +180,11 @@ Public Module KernelTools
                     If InnerExc IsNot Nothing Then
                         Dump.WriteLine(DoTranslation(">> Inner exception {0} information <<"), Count)
                     Else
-                        Dump.WriteLine(DoTranslation(">> Exception {0} is the root cause <<") + vbNewLine, Count)
+                        Dump.WriteLine(DoTranslation(">> Exception {0} is the root cause <<"), Count - 1)
                     End If
+                    Count += 1
                 End While
+                Dump.WriteLine()
             Else
                 Dump.WriteLine(DoTranslation(">> No exception; might be a kernel error. <<") + vbNewLine)
             End If
