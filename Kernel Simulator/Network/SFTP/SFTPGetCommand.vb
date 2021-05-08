@@ -46,7 +46,8 @@ Public Module SFTPGetCommand
         Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
         Dim Parser As New TextFieldParser(TStream) With {
             .Delimiters = {" "},
-            .HasFieldsEnclosedInQuotes = True
+            .HasFieldsEnclosedInQuotes = True,
+            .TrimWhiteSpace = False
         }
         ArgsQ = Parser.ReadFields
         If ArgsQ IsNot Nothing Then

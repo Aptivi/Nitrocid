@@ -49,7 +49,8 @@ Public Module ZipGetCommand
             Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
             Dim Parser As New TextFieldParser(TStream) With {
                 .Delimiters = {" "},
-                .HasFieldsEnclosedInQuotes = True
+                .HasFieldsEnclosedInQuotes = True,
+                .TrimWhiteSpace = False
             }
             Arguments = Parser.ReadFields
             If Arguments IsNot Nothing Then

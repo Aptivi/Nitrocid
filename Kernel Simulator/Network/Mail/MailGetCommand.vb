@@ -38,7 +38,8 @@ Module MailGetCommand
         Dim TStream As New MemoryStream(Encoding.Default.GetBytes(args))
         Dim Parser As New TextFieldParser(TStream) With {
             .Delimiters = {" "},
-            .HasFieldsEnclosedInQuotes = True
+            .HasFieldsEnclosedInQuotes = True,
+            .TrimWhiteSpace = False
         }
         FullArgsLQ = Parser.ReadFields
         If FullArgsLQ IsNot Nothing Then

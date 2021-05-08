@@ -59,7 +59,8 @@ Public Module GetCommand
         Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
         Dim Parser As New TextFieldParser(TStream) With {
             .Delimiters = {" "},
-            .HasFieldsEnclosedInQuotes = True
+            .HasFieldsEnclosedInQuotes = True,
+            .TrimWhiteSpace = False
         }
         eqargs = Parser.ReadFields
         If eqargs IsNot Nothing Then
