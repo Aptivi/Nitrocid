@@ -20,6 +20,7 @@ Imports System.Threading
 
 Module TestShell
 
+    Public Test_ModCommands As New ArrayList
     Public Test_Commands As New Dictionary(Of String, CommandInfo) From {{"print", New CommandInfo("print", ShellCommandType.TestShell, True, 3, False, False, False, False)},
                                                                          {"printf", New CommandInfo("printf", ShellCommandType.TestShell, True, 4, False, False, False, False)},
                                                                          {"printd", New CommandInfo("printd", ShellCommandType.TestShell, True, 1, False, False, False, False)},
@@ -71,6 +72,9 @@ Module TestShell
                         TStartCommandThread = New Thread(AddressOf TParseCommand)
                         TStartCommandThread.Start(FullCmd)
                         TStartCommandThread.Join()
+                    ElseIf Test_ModCommands.Contains(FullCmd.Split(" ")(0)) Then
+                        Wdbg("I", "Mod command found.")
+                        ExecuteModCommand(FullCmd)
                     Else
                         W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Err, FullCmd.Split(" ")(0))
                     End If

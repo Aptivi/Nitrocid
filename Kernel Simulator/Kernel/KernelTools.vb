@@ -276,6 +276,7 @@ Public Module KernelTools
         RDebugModDefs.Clear()
         DebugModCmds.Clear()
         TestModDefs.Clear()
+        Test_ModCommands.Clear()
         TextEdit_ModCommands.Clear()
         TextEdit_ModHelpEntries.Clear()
         ZipShell_ModCommands.Clear()

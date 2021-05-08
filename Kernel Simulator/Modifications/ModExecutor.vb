@@ -41,13 +41,19 @@ Public Module ModExecutor
             Wdbg("I", "Command {0} will be run with arguments: {1}", actualCmd, args)
         End If
         For Each ModParts As String In scripts(actualCmd).Keys
-            If scripts(actualCmd)(ModParts).Cmd = parts(0) Then
-                If (scripts(actualCmd)(ModParts).CmdRestricted And adminList(signedinusrnm)) Or Not scripts(actualCmd)(ModParts).CmdRestricted Then
-                    Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModParts)
-                    scripts(actualCmd)(ModParts).PerformCmd(args)
+            Dim Script As IScript = scripts(actualCmd)(ModParts)
+            If Script.Cmd = parts(0) Then
+                If Script.CmdType = ShellCommandType.Shell Then
+                    If (Script.CmdRestricted And adminList(signedinusrnm)) Or Not Script.CmdRestricted Then
+                        Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModParts)
+                        Script.PerformCmd(args)
+                    Else
+                        Wdbg("E", "User {0} doesn't have permission to use {1} from {2}!", signedinusrnm, parts(0), ModParts)
+                        W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Err, parts(0))
+                    End If
                 Else
-                    Wdbg("E", "User {0} doesn't have permission to use {1} from {2}!", signedinusrnm, parts(0), ModParts)
-                    W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Err, parts(0))
+                    Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModParts)
+                    Script.PerformCmd(args)
                 End If
             End If
         Next

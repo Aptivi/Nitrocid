@@ -350,6 +350,11 @@ Public Module ModParser
                         Wdbg("W", "Command {0} conflicts with available text shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
                         script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
                     End If
+                ElseIf script.CmdType = ShellCommandType.TestShell Then
+                    If Test_Commands.ContainsKey(script.Cmd) Then
+                        Wdbg("W", "Command {0} conflicts with available text shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
+                        script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
+                    End If
                 ElseIf script.CmdType = ShellCommandType.RemoteDebugShell Then
                     If DebugCommands.ContainsKey(script.Cmd) Then
                         Wdbg("W", "Command {0} conflicts with available remote debug shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
@@ -390,6 +395,10 @@ Public Module ModParser
                         Wdbg("I", "Adding command {0} for text editor shell...", script.Cmd)
                         If Not TextEdit_ModCommands.Contains(script.Cmd) Then TextEdit_ModCommands.Add(script.Cmd)
                         TextEdit_ModHelpEntries.AddIfNotFound(script.Cmd, script.Def)
+                    ElseIf script.CmdType = ShellCommandType.TestShell Then
+                        Wdbg("I", "Adding command {0} for test shell...", script.Cmd)
+                        If Not Test_ModCommands.Contains(script.Cmd) Then Test_ModCommands.Add(script.Cmd)
+                        TestModDefs.AddIfNotFound(script.Cmd, script.Def)
                     ElseIf script.CmdType = ShellCommandType.RemoteDebugShell Then
                         Wdbg("I", "Adding command {0} for remote debug shell...", script.Cmd)
                         If Not DebugModCmds.Contains(script.Cmd) Then DebugModCmds.Add(script.Cmd)
@@ -434,6 +443,9 @@ Public Module ModParser
         TextEdit_ModCommands.Clear()
         TextEdit_ModHelpEntries.Clear()
         Wdbg("I", "Mod commands for text editor shell cleared.")
+        Test_ModCommands.Clear()
+        TestModDefs.Clear()
+        Wdbg("I", "Mod commands for test shell cleared.")
         DebugModCmds.Clear()
         RDebugModDefs.Clear()
         Wdbg("I", "Mod commands for remote debug shell cleared.")
