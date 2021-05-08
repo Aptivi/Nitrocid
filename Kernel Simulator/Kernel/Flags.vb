@@ -152,7 +152,7 @@ Module Flags
     ''' </summary>
     Public LangChangeCulture As Boolean
     ''' <summary>
-    ''' Shows the progress bar while downloading using "get" command.
+    ''' Shows the progress bar while downloading using the {Down|Up}load{File|String}() API.
     ''' </summary>
     Public ShowProgress As Boolean = True
     ''' <summary>

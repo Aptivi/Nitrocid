@@ -497,8 +497,8 @@ Public Module GetCommand
                                             Console.WriteLine()
                                         End If
                                         W(DoTranslation("Downloading from {0}..."), True, ColTypes.Neutral, URL)
-                                        If DownloadFile(eqargs(0), ShowProgress, Credentials) Then
-                                            W(vbNewLine + DoTranslation("Download has completed."), True, ColTypes.Neutral)
+                                        If DownloadFile(eqargs(0), Credentials) Then
+                                            W(DoTranslation("Download has completed."), True, ColTypes.Neutral)
                                         End If
                                     Else
                                         W(DoTranslation("Specify the address"), True, ColTypes.Err)
@@ -713,8 +713,8 @@ Public Module GetCommand
                                             Console.WriteLine()
                                         End If
                                         W(DoTranslation("Uploading {0} to {1}..."), True, ColTypes.Neutral, FileName, URL)
-                                        If UploadFile(FileName, URL, ShowProgress, Credentials) Then
-                                            W(vbNewLine + DoTranslation("Upload has completed."), True, ColTypes.Neutral)
+                                        If UploadFile(FileName, URL, Credentials) Then
+                                            W(DoTranslation("Upload has completed."), True, ColTypes.Neutral)
                                         End If
                                     Else
                                         W(DoTranslation("Specify the address"), True, ColTypes.Err)
