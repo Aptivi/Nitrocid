@@ -97,6 +97,8 @@ Module ZipShell
         ZipShell_ZipArchive.Dispose()
         ZipShell_CurrentDirectory = ""
         ZipShell_CurrentArchiveDirectory = ""
+        ZipShell_ZipArchive = Nothing
+        ZipShell_FileStream = Nothing
 
         'Remove handler for text editor shell
         AddHandler Console.CancelKeyPress, AddressOf CancelCommand
