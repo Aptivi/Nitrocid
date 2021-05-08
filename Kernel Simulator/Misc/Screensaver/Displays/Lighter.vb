@@ -52,8 +52,6 @@ Module LighterDisplay
                 Console.SetCursorPosition(Left, Top)
                 If LighterTrueColor Then
                     Dim esc As Char = GetEsc()
-                    Console.BackgroundColor = ConsoleColor.Black
-                    Console.Clear()
                     Dim RedColorNum As Integer = RandomDriver.Next(255)
                     Dim GreenColorNum As Integer = RandomDriver.Next(255)
                     Dim BlueColorNum As Integer = RandomDriver.Next(255)

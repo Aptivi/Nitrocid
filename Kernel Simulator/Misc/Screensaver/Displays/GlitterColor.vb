@@ -18,6 +18,7 @@
 
 Imports System.ComponentModel
 Imports System.Threading
+Imports KS.ConsoleExtensions
 
 Module GlitterColorDisplay
 
@@ -52,7 +53,7 @@ Module GlitterColorDisplay
                 If GlitterColorTrueColor Then
                     Dim esc As Char = GetEsc()
                     Console.BackgroundColor = ConsoleColor.Black
-                    Console.Clear()
+                    ClearKeepPosition()
                     Dim RedColorNum As Integer = RandomDriver.Next(255)
                     Dim GreenColorNum As Integer = RandomDriver.Next(255)
                     Dim BlueColorNum As Integer = RandomDriver.Next(255)
