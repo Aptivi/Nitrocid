@@ -377,6 +377,7 @@ Public Module ToolPrompts
         Dim KeyFinished As Boolean
         Dim KeyType As SettingsKeyType
         Dim KeyVar As String = ""
+        Dim KeyValue As Object = ""
         Dim VariantValue As Object = ""
         Dim VariantValueFromExternalPrompt As Boolean
         Dim AnswerString As String = ""
@@ -1111,21 +1112,28 @@ Public Module ToolPrompts
 
             'Add an option to go back.
             If Not KeyType = SettingsKeyType.SVariant Then W("{0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.Option, MaxKeyOptions + 1)
+
+            'Get key value
+            KeyValue = GetConfigValue(KeyVar)
+
+            'Print debugging info
             Wdbg("W", "Key {0} in section {1} has {2} selections.", KeyNumber, Section, MaxKeyOptions)
-            Wdbg("W", "Target variable: {0}, Key Type: {1}, Variant Value: {2}", KeyVar, KeyType, VariantValue)
+            Wdbg("W", "Target variable: {0}, Key Type: {1}, Key value: {2}, Variant Value: {3}", KeyVar, KeyType, KeyValue, VariantValue)
 
             'Prompt user
-            W(If(Section = "4" And KeyNumber = 3, $"[{CurrDir}]", "") + "> ", False, ColTypes.Input)
             If KeyNumber = 2 And Section = "1.3" Then
+                W("> ", False, ColTypes.Input)
                 AnswerString = ReadLineNoInput("*")
                 Console.WriteLine()
             ElseIf KeyType = SettingsKeyType.SVariant And Not VariantValueFromExternalPrompt Then
+                W("> ", False, ColTypes.Input)
                 VariantValue = Console.ReadLine
                 If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString)
                 Wdbg("I", "User answered {0}", VariantValue)
             ElseIf Not KeyType = SettingsKeyType.SVariant Then
                 If KeyType = SettingsKeyType.SList Then
 #Disable Warning BC42104
+                    W("> ", False, ColTypes.Input)
                     Do Until AnswerString = "q"
                         AnswerString = Console.ReadLine
                         If Not AnswerString = "q" Then
@@ -1137,6 +1145,7 @@ Public Module ToolPrompts
                     Loop
 #Enable Warning BC42104
                 Else
+                    W("[{0}] > ", False, ColTypes.Input, KeyValue)
                     AnswerString = Console.ReadLine
                     If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString)
                     Wdbg("I", "User answered {0}", AnswerString)
@@ -1185,11 +1194,9 @@ Public Module ToolPrompts
                 End If
             ElseIf KeyType = SettingsKeyType.SString Then
                 Wdbg("I", "Answer is not numeric and key is of the String type. Setting variable...")
-                If Section = "4" And KeyNumber = 3 Then 'If user is on Shell > Current Directory
-                    If String.IsNullOrWhiteSpace(AnswerString) Then
-                        Wdbg("I", "Answer is nothing but user on Shell > Current Directory. Setting to {0}...", CurrDir)
-                        AnswerString = CurrDir
-                    End If
+                If String.IsNullOrWhiteSpace(AnswerString) Then
+                    Wdbg("I", "Answer is nothing. Setting to {0}...", KeyValue)
+                    AnswerString = KeyValue
                 End If
                 KeyFinished = True
                 SetConfigValue(KeyVar, AnswerString)
