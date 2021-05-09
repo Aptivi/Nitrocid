@@ -124,7 +124,7 @@ Public Module ToolPrompts
                     MaxOptions = 1
                     W("*) " + DoTranslation("Hardware Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section changes hardware probe behavior.") + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Quiet Probe") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(quietProbe)))
+                    W("1) " + DoTranslation("Quiet Probe") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(quietProbe)))
                 Case "3" 'Login
                     MaxOptions = 3
                     W("*) " + DoTranslation("Login Settings...") + vbNewLine, True, ColTypes.Neutral)
