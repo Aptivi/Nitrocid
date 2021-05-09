@@ -45,7 +45,15 @@ Public Module ListWriterColor
                 'Try to write list to console
                 OldTop = CursorTop
                 For Each ListEntry As TKey In List.Keys
-                    W("- {0}: ", False, ColTypes.ListEntry, ListEntry) : W("{0}", True, ColTypes.ListValue, List(ListEntry))
+                    Dim Values As New List(Of Object)
+                    If CType(List(ListEntry), IEnumerable) IsNot Nothing Then
+                        For Each Value In CType(List(ListEntry), IEnumerable)
+                            Values.Add(Value)
+                        Next
+                        W("- {0}: ", False, ColTypes.ListEntry, ListEntry) : W("{0}", True, ColTypes.ListValue, String.Join(", ", Values))
+                    Else
+                        W("- {0}: ", False, ColTypes.ListEntry, ListEntry) : W("{0}", True, ColTypes.ListValue, List(ListEntry))
+                    End If
                     If Wrap Then
                         LinesMade += CursorTop - OldTop
                         OldTop = CursorTop
@@ -94,7 +102,15 @@ Public Module ListWriterColor
                 'Try to write list to console
                 OldTop = CursorTop
                 For Each ListEntry As TKey In List.Keys
-                    WriteC16("- {0}: ", False, ListKeyColor, ListEntry) : WriteC16("{0}", True, ListValueColor, List(ListEntry))
+                    Dim Values As New List(Of Object)
+                    If CType(List(ListEntry), IEnumerable) IsNot Nothing Then
+                        For Each Value In CType(List(ListEntry), IEnumerable)
+                            Values.Add(Value)
+                        Next
+                        WriteC16("- {0}: ", False, ListKeyColor, ListEntry) : WriteC16("{0}", True, ListValueColor, String.Join(", ", Values))
+                    Else
+                        WriteC16("- {0}: ", False, ListKeyColor, ListEntry) : WriteC16("{0}", True, ListValueColor, List(ListEntry))
+                    End If
                     If Wrap Then
                         LinesMade += CursorTop - OldTop
                         OldTop = CursorTop
@@ -143,7 +159,15 @@ Public Module ListWriterColor
                 'Try to write list to console
                 OldTop = CursorTop
                 For Each ListEntry As TKey In List.Keys
-                    WriteC("- {0}: ", False, ListKeyColor, ListEntry) : WriteC("{0}", True, ListValueColor, List(ListEntry))
+                    Dim Values As New List(Of Object)
+                    If CType(List(ListEntry), IEnumerable) IsNot Nothing Then
+                        For Each Value In CType(List(ListEntry), IEnumerable)
+                            Values.Add(Value)
+                        Next
+                        WriteC("- {0}: ", False, ListKeyColor, ListEntry) : WriteC("{0}", True, ListValueColor, String.Join(", ", Values))
+                    Else
+                        WriteC("- {0}: ", False, ListKeyColor, ListEntry) : WriteC("{0}", True, ListValueColor, List(ListEntry))
+                    End If
                     If Wrap Then
                         LinesMade += CursorTop - OldTop
                         OldTop = CursorTop
