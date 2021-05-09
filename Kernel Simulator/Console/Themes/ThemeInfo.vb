@@ -83,7 +83,7 @@ Public Class ThemeInfo
     ''' </summary>
     ''' <param name="ThemeResourceName">Theme name (must match resource name)</param>
     Public Sub New(ByVal ThemeResourceName As String)
-        Dim ThemeResourceJson As JToken = JToken.Parse(Evaluate("KS.My.Resources." + ThemeResourceName))
+        Dim ThemeResourceJson As JToken = JToken.Parse(My.Resources.ResourceManager.GetString(ThemeResourceName))
         ThemeInputColor = New Color(ThemeResourceJson.SelectToken("InputColor").ToString)
         ThemeLicenseColor = New Color(ThemeResourceJson.SelectToken("LicenseColor").ToString)
         ThemeContKernelErrorColor = New Color(ThemeResourceJson.SelectToken("ContKernelErrorColor").ToString)
