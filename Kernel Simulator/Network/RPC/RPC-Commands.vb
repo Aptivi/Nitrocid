@@ -97,10 +97,10 @@ Public Module RPC_Commands
                 EventManager.RaiseRPCCommandReceived(msg)
                 If msg.StartsWith("ShutdownConfirm") Then
                     Wdbg("I", "Shutdown confirmed from remote access.")
-                    PowerManage("shutdown")
+                    RPCPowerListener.Start("shutdown")
                 ElseIf msg.StartsWith("RebootConfirm") Then
                     Wdbg("I", "Reboot confirmed from remote access.")
-                    PowerManage("reboot")
+                    RPCPowerListener.Start("reboot")
                 ElseIf msg.StartsWith("LockConfirm") Then
                     Wdbg("I", "Lock confirmed from remote access.")
                     LockScreen()
