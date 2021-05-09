@@ -79,16 +79,17 @@ Public Class Color
             End If
         ElseIf IsNumeric(ColorSpecifier) Then
             ColorSpecifier = ColorSpecifier.Replace("""", "")
+            Dim ColorsInfo As New ConsoleColorsInfo(ColorSpecifier)
             PlainSequence = ColorSpecifier
             VTSequenceForeground = "<38;5;{0}m>".FormatString(ColorSpecifier)
             VTSequenceForeground.ConvertVTSequences
             VTSequenceBackground = "<48;5;{0}m>".FormatString(ColorSpecifier)
             VTSequenceBackground.ConvertVTSequences
             Type = ColorType._255Color
-            IsDark = New ConsoleColorsInfo(ColorSpecifier).IsDark
-            R = New ConsoleColorsInfo(ColorSpecifier).R
-            G = New ConsoleColorsInfo(ColorSpecifier).G
-            B = New ConsoleColorsInfo(ColorSpecifier).B
+            IsDark = ColorsInfo.IsDark
+            R = ColorsInfo.R
+            G = ColorsInfo.G
+            B = ColorsInfo.B
         Else
             Throw New Exceptions.ColorException(DoTranslation("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows:") + " <R>;<G>;<B>")
         End If
