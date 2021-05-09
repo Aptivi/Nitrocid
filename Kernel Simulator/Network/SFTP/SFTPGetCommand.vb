@@ -149,7 +149,7 @@ Public Module SFTPGetCommand
                     List(ArgsQ(0))
                 End If
             ElseIf words(0) = "listremote" Or words(0) = "lsr" Then
-                Dim Entries As List(Of String) = SFTPListRemote(ArgsQ(0))
+                Dim Entries As List(Of String) = SFTPListRemote(If(ArgsQ IsNot Nothing, ArgsQ(0), ""))
                 For Each Entry As String In Entries
                     W(Entry, True, ColTypes.ListEntry)
                 Next
