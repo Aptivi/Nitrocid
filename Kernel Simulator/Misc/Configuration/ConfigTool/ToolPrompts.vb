@@ -145,7 +145,7 @@ Public Module ToolPrompts
                     W("7) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MailShellPromptStyle)))
                     W("8) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(SFTPShellPromptStyle)))
                     W("9) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.Option)
-                Case "4.8" 'Custom colors...
+                Case "4.9" 'Custom colors...
                     MaxOptions = 14
                     W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Custom colors...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lets you choose what type of color do you want to change.") + vbNewLine, True, ColTypes.Neutral)
