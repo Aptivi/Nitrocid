@@ -657,4 +657,24 @@ Public Module Filesystem
         Return False
     End Function
 
+    ''' <summary>
+    ''' Saves the current directory to configuration
+    ''' </summary>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function SaveCurrDir() As Boolean
+        Try
+            Dim ksconf As New IniFile()
+            Dim pathConfig As String = paths("Configuration")
+            ksconf.Load(pathConfig)
+            ksconf.Sections("Shell").Keys("Current Directory").Value = CurrDir
+            ksconf.Save(pathConfig)
+            Return True
+        Catch ex As Exception
+            WStkTrc(ex)
+            Wdbg("E", "Failed to save current directory: {0}", ex.Message)
+            Throw New Exceptions.FilesystemException(DoTranslation("Failed to change host name: {0}").FormatString(ex.Message), ex)
+        End Try
+        Return False
+    End Function
+
 End Module

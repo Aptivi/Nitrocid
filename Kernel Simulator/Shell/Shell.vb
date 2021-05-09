@@ -104,6 +104,7 @@ Public Module Shell
                                                                     {"rdebug", New CommandInfo("rdebug", ShellCommandType.Shell, False, 0, True, False, False, False)},
                                                                     {"reportbug", New CommandInfo("reportbug", ShellCommandType.Shell, False, 0, False, False, False, False)},
                                                                     {"rmuser", New CommandInfo("rmuser", ShellCommandType.Shell, True, 1, True, False, False, False)},
+                                                                    {"savecurrdir", New CommandInfo("savecurrdir", ShellCommandType.Shell, False, 0, True, False, False, False)},
                                                                     {"savescreen", New CommandInfo("savescreen", ShellCommandType.Shell, False, 0, False, False, False, False)},
                                                                     {"search", New CommandInfo("search", ShellCommandType.Shell, True, 2, False, False, False, False)},
                                                                     {"setsaver", New CommandInfo("setsaver", ShellCommandType.Shell, True, 1, True, False, False, False)},

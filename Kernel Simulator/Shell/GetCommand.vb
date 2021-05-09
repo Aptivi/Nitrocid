@@ -838,6 +838,10 @@ Public Module GetCommand
                         Next
                     End If
 
+                Case "savecurrdir"
+
+                    SaveCurrDir()
+
                 Case "setsaver"
 
                     Dim modPath As String = paths("Mods")
