@@ -30,7 +30,7 @@ Public Module Commands
             Question = Question.Replace(ScriptVariable + " " + AnswersStr + " ", "")
             Dim answers As String()
             Dim answer As String
-            Wdbg("I", "Removed ""{0} {1} "" from strArgs. Result: {2}", ScriptVariable, AnswersStr, Question)
+            Wdbg("I", "Removed ""{0} {1}"" from strArgs. Result: {2}", ScriptVariable, AnswersStr, Question)
 
             'Ask a question
             W(Question, True, ColTypes.Neutral)
