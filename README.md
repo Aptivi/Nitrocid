@@ -113,6 +113,10 @@ This section covers how to build Kernel Simulator on your system. Please scroll 
 
 **OpenWeatherMap:** Weather API
 
+**https://jonasjacek.github.io/colors/:** Console color data
+
+**sindresorhus:** Word list
+
 **All contributors:** Contribution
 
 ## Open Source Libraries
