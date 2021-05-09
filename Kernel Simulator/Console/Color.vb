@@ -34,6 +34,20 @@ Public Class Color
     ''' </summary>
     Public ReadOnly Property VTSequenceBackground As String
     ''' <summary>
+    ''' The red color value
+    ''' </summary>
+    Public ReadOnly Property R As Integer
+    ''' <summary>
+    ''' The green color value
+    ''' </summary>
+    ''' <returns></returns>
+    Public ReadOnly Property G As Integer
+    ''' <summary>
+    ''' The blue color value
+    ''' </summary>
+    ''' <returns></returns>
+    Public ReadOnly Property B As Integer
+    ''' <summary>
     ''' Color type
     ''' </summary>
     Public ReadOnly Property Type As ColorType
@@ -59,6 +73,9 @@ Public Class Color
                 VTSequenceBackground.ConvertVTSequences
                 Type = ColorType.TrueColor
                 IsDark = ColorSpecifierArray(0) + 0.2126 + ColorSpecifierArray(1) + 0.7152 + ColorSpecifierArray(2) + 0.0722 > 255 / 2
+                R = ColorSpecifierArray(0)
+                G = ColorSpecifierArray(1)
+                B = ColorSpecifierArray(2)
             End If
         ElseIf IsNumeric(ColorSpecifier) Then
             ColorSpecifier = ColorSpecifier.Replace("""", "")
@@ -69,6 +86,9 @@ Public Class Color
             VTSequenceBackground.ConvertVTSequences
             Type = ColorType._255Color
             IsDark = New ConsoleColorsInfo(ColorSpecifier).IsDark
+            R = New ConsoleColorsInfo(ColorSpecifier).R
+            G = New ConsoleColorsInfo(ColorSpecifier).G
+            B = New ConsoleColorsInfo(ColorSpecifier).B
         Else
             Throw New Exceptions.ColorException(DoTranslation("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows:") + " <R>;<G>;<B>")
         End If
@@ -402,11 +422,44 @@ Public Module ColorTools
     ''' <summary>
     ''' Initializes color wheel
     ''' </summary>
+    ''' <param name="TrueColor">Whether or not to use true color. It can be changed dynamically during runtime.</param>
     Public Function ColorWheel(ByVal TrueColor As Boolean) As String
-        Dim CurrentColor As ConsoleColors = ConsoleColors.White
-        Dim CurrentColorR As Integer = 0
-        Dim CurrentColorG As Integer = 0
-        Dim CurrentColorB As Integer = 0
+        Return ColorWheel(TrueColor, ConsoleColors.White, 0, 0, 0)
+    End Function
+
+    ''' <summary>
+    ''' Initializes color wheel
+    ''' </summary>
+    ''' <param name="TrueColor">Whether or not to use true color. It can be changed dynamically during runtime.</param>
+    ''' <param name="DefaultColor">The default 255-color to use</param>
+    Public Function ColorWheel(ByVal TrueColor As Boolean, ByVal DefaultColor As ConsoleColors) As String
+        Return ColorWheel(TrueColor, DefaultColor, 0, 0, 0)
+    End Function
+
+    ''' <summary>
+    ''' Initializes color wheel
+    ''' </summary>
+    ''' <param name="TrueColor">Whether or not to use true color. It can be changed dynamically during runtime.</param>
+    ''' <param name="DefaultColorR">The default red color range of 0-255 to use</param>
+    ''' <param name="DefaultColorG">The default green color range of 0-255 to use</param>
+    ''' <param name="DefaultColorB">The default blue color range of 0-255 to use</param>
+    Public Function ColorWheel(ByVal TrueColor As Boolean, ByVal DefaultColorR As Integer, ByVal DefaultColorG As Integer, ByVal DefaultColorB As Integer) As String
+        Return ColorWheel(TrueColor, ConsoleColors.White, DefaultColorR, DefaultColorG, DefaultColorB)
+    End Function
+
+    ''' <summary>
+    ''' Initializes color wheel
+    ''' </summary>
+    ''' <param name="TrueColor">Whether or not to use true color. It can be changed dynamically during runtime.</param>
+    ''' <param name="DefaultColor">The default 255-color to use</param>
+    ''' <param name="DefaultColorR">The default red color range of 0-255 to use</param>
+    ''' <param name="DefaultColorG">The default green color range of 0-255 to use</param>
+    ''' <param name="DefaultColorB">The default blue color range of 0-255 to use</param>
+    Public Function ColorWheel(ByVal TrueColor As Boolean, ByVal DefaultColor As ConsoleColors, ByVal DefaultColorR As Integer, ByVal DefaultColorG As Integer, ByVal DefaultColorB As Integer) As String
+        Dim CurrentColor As ConsoleColors = DefaultColor
+        Dim CurrentColorR As Integer = DefaultColorR
+        Dim CurrentColorG As Integer = DefaultColorG
+        Dim CurrentColorB As Integer = DefaultColorB
         Dim CurrentRange As Char = "R"
         Dim ColorWheelExiting As Boolean
         Console.CursorVisible = False
@@ -497,16 +550,16 @@ Public Module ColorTools
                             CurrentRange = "R"
                     End Select
                 ElseIf ConsoleResponse.Key = ConsoleKey.I Then
-                    Dim DefaultColor As Integer
+                    Dim _DefaultColor As Integer
                     Select Case CurrentRange
                         Case "R"
-                            DefaultColor = CurrentColorR
+                            _DefaultColor = CurrentColorR
                         Case "G"
-                            DefaultColor = CurrentColorG
+                            _DefaultColor = CurrentColorG
                         Case "B"
-                            DefaultColor = CurrentColorB
+                            _DefaultColor = CurrentColorB
                     End Select
-                    WriteWhere(DoTranslation("Enter color number from 0 to 255:") + " [{0}] ", 0, Console.WindowHeight - 1, False, ColTypes.Input, DefaultColor)
+                    WriteWhere(DoTranslation("Enter color number from 0 to 255:") + " [{0}] ", 0, Console.WindowHeight - 1, False, ColTypes.Input, _DefaultColor)
                     Dim ColorNum As String = Console.ReadLine
                     If IsNumeric(ColorNum) Then
                         If ColorNum >= 0 And ColorNum <= 255 Then

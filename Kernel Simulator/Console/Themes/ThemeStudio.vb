@@ -75,46 +75,46 @@ Module ThemeStudio
                     Wdbg("I", "Numeric response {0} is >= 1 and <= {0}.", NumericResponse, MaximumOptions)
                     Select Case NumericResponse
                         Case 1 'Input color
-                            Dim ColorWheelReturn As String = ColorWheel(SelectedInputColor.Type = ColorType.TrueColor)
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedInputColor.Type = ColorType.TrueColor, If(SelectedInputColor.Type = ColorType._255Color, SelectedInputColor.PlainSequence, ConsoleColors.White), SelectedInputColor.R, SelectedInputColor.G, SelectedInputColor.B)
                             SelectedInputColor = New Color(ColorWheelReturn)
                         Case 2 'License color
-                            Dim ColorWheelReturn As String = ColorWheel(SelectedLicenseColor.Type = ColorType.TrueColor)
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedLicenseColor.Type = ColorType.TrueColor, If(SelectedLicenseColor.Type = ColorType._255Color, SelectedLicenseColor.PlainSequence, ConsoleColors.White), SelectedLicenseColor.R, SelectedLicenseColor.G, SelectedLicenseColor.B)
                             SelectedLicenseColor = New Color(ColorWheelReturn)
                         Case 3 'Continuable kernel error color
-                            Dim ColorWheelReturn As String = ColorWheel(SelectedContKernelErrorColor.Type = ColorType.TrueColor)
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedContKernelErrorColor.Type = ColorType.TrueColor, If(SelectedContKernelErrorColor.Type = ColorType._255Color, SelectedContKernelErrorColor.PlainSequence, ConsoleColors.White), SelectedContKernelErrorColor.R, SelectedContKernelErrorColor.G, SelectedContKernelErrorColor.B)
                             SelectedContKernelErrorColor = New Color(ColorWheelReturn)
                         Case 4 'Uncontinuable kernel error color
-                            Dim ColorWheelReturn As String = ColorWheel(SelectedUncontKernelErrorColor.Type = ColorType.TrueColor)
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedUncontKernelErrorColor.Type = ColorType.TrueColor, If(SelectedUncontKernelErrorColor.Type = ColorType._255Color, SelectedUncontKernelErrorColor.PlainSequence, ConsoleColors.White), SelectedUncontKernelErrorColor.R, SelectedUncontKernelErrorColor.G, SelectedUncontKernelErrorColor.B)
                             SelectedUncontKernelErrorColor = New Color(ColorWheelReturn)
                         Case 5 'Host name color
-                            Dim ColorWheelReturn As String = ColorWheel(SelectedHostNameShellColor.Type = ColorType.TrueColor)
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedHostNameShellColor.Type = ColorType.TrueColor, If(SelectedHostNameShellColor.Type = ColorType._255Color, SelectedHostNameShellColor.PlainSequence, ConsoleColors.White), SelectedHostNameShellColor.R, SelectedHostNameShellColor.G, SelectedHostNameShellColor.B)
                             SelectedHostNameShellColor = New Color(ColorWheelReturn)
                         Case 6 'User name color
-                            Dim ColorWheelReturn As String = ColorWheel(SelectedUserNameShellColor.Type = ColorType.TrueColor)
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedUserNameShellColor.Type = ColorType.TrueColor, If(SelectedUserNameShellColor.Type = ColorType._255Color, SelectedUserNameShellColor.PlainSequence, ConsoleColors.White), SelectedUserNameShellColor.R, SelectedUserNameShellColor.G, SelectedUserNameShellColor.B)
                             SelectedUserNameShellColor = New Color(ColorWheelReturn)
                         Case 7 'Background color
-                            Dim ColorWheelReturn As String = ColorWheel(SelectedBackgroundColor.Type = ColorType.TrueColor)
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedBackgroundColor.Type = ColorType.TrueColor, If(SelectedBackgroundColor.Type = ColorType._255Color, SelectedBackgroundColor.PlainSequence, ConsoleColors.White), SelectedBackgroundColor.R, SelectedBackgroundColor.G, SelectedBackgroundColor.B)
                             SelectedBackgroundColor = New Color(ColorWheelReturn)
                         Case 8 'Neutral text color
-                            Dim ColorWheelReturn As String = ColorWheel(SelectedNeutralTextColor.Type = ColorType.TrueColor)
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedNeutralTextColor.Type = ColorType.TrueColor, If(SelectedNeutralTextColor.Type = ColorType._255Color, SelectedNeutralTextColor.PlainSequence, ConsoleColors.White), SelectedNeutralTextColor.R, SelectedNeutralTextColor.G, SelectedNeutralTextColor.B)
                             SelectedNeutralTextColor = New Color(ColorWheelReturn)
                         Case 9 'list entry color
-                            Dim ColorWheelReturn As String = ColorWheel(SelectedListEntryColor.Type = ColorType.TrueColor)
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedListEntryColor.Type = ColorType.TrueColor, If(SelectedListEntryColor.Type = ColorType._255Color, SelectedListEntryColor.PlainSequence, ConsoleColors.White), SelectedListEntryColor.R, SelectedListEntryColor.G, SelectedListEntryColor.B)
                             SelectedListEntryColor = New Color(ColorWheelReturn)
                         Case 10 'list value color
-                            Dim ColorWheelReturn As String = ColorWheel(SelectedListValueColor.Type = ColorType.TrueColor)
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedListValueColor.Type = ColorType.TrueColor, If(SelectedListValueColor.Type = ColorType._255Color, SelectedListValueColor.PlainSequence, ConsoleColors.White), SelectedListValueColor.R, SelectedListValueColor.G, SelectedListValueColor.B)
                             SelectedListValueColor = New Color(ColorWheelReturn)
                         Case 11 'Stage color
-                            Dim ColorWheelReturn As String = ColorWheel(SelectedStageColor.Type = ColorType.TrueColor)
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedStageColor.Type = ColorType.TrueColor, If(SelectedStageColor.Type = ColorType._255Color, SelectedStageColor.PlainSequence, ConsoleColors.White), SelectedStageColor.R, SelectedStageColor.G, SelectedStageColor.B)
                             SelectedStageColor = New Color(ColorWheelReturn)
                         Case 12 'Error color
-                            Dim ColorWheelReturn As String = ColorWheel(SelectedErrorColor.Type = ColorType.TrueColor)
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedErrorColor.Type = ColorType.TrueColor, If(SelectedErrorColor.Type = ColorType._255Color, SelectedErrorColor.PlainSequence, ConsoleColors.White), SelectedErrorColor.R, SelectedErrorColor.G, SelectedErrorColor.B)
                             SelectedErrorColor = New Color(ColorWheelReturn)
                         Case 13 'Warning color
-                            Dim ColorWheelReturn As String = ColorWheel(SelectedWarningColor.Type = ColorType.TrueColor)
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedWarningColor.Type = ColorType.TrueColor, If(SelectedWarningColor.Type = ColorType._255Color, SelectedWarningColor.PlainSequence, ConsoleColors.White), SelectedWarningColor.R, SelectedWarningColor.G, SelectedWarningColor.B)
                             SelectedWarningColor = New Color(ColorWheelReturn)
                         Case 14 'Option color
-                            Dim ColorWheelReturn As String = ColorWheel(SelectedOptionColor.Type = ColorType.TrueColor)
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedOptionColor.Type = ColorType.TrueColor, If(SelectedOptionColor.Type = ColorType._255Color, SelectedOptionColor.PlainSequence, ConsoleColors.White), SelectedOptionColor.R, SelectedOptionColor.G, SelectedOptionColor.B)
                             SelectedOptionColor = New Color(ColorWheelReturn)
                         Case 15 'Save theme to current directory
                             SaveThemeToCurrentDirectory(ThemeName)

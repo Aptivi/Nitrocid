@@ -566,72 +566,72 @@ Public Module ToolPrompts
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(InputColor)
                             VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(InputColor).Type = ColorType.TrueColor)
+                            VariantValue = ColorWheel(New Color(InputColor).Type = ColorType.TrueColor, If(New Color(InputColor).Type = ColorType._255Color, New Color(InputColor).PlainSequence, ConsoleColors.White), New Color(InputColor).R, New Color(InputColor).G, New Color(InputColor).B)
                         Case 2 'License color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(LicenseColor)
                             VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(LicenseColor).Type = ColorType.TrueColor)
+                            VariantValue = ColorWheel(New Color(LicenseColor).Type = ColorType.TrueColor, If(New Color(LicenseColor).Type = ColorType._255Color, New Color(LicenseColor).PlainSequence, ConsoleColors.White), New Color(LicenseColor).R, New Color(LicenseColor).G, New Color(LicenseColor).B)
                         Case 3 'Continuable kernel error color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(ContKernelErrorColor)
                             VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(ContKernelErrorColor).Type = ColorType.TrueColor)
+                            VariantValue = ColorWheel(New Color(ContKernelErrorColor).Type = ColorType.TrueColor, If(New Color(ContKernelErrorColor).Type = ColorType._255Color, New Color(ContKernelErrorColor).PlainSequence, ConsoleColors.White), New Color(ContKernelErrorColor).R, New Color(ContKernelErrorColor).G, New Color(ContKernelErrorColor).B)
                         Case 4 'Uncontinuable kernel error color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(UncontKernelErrorColor)
                             VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(UncontKernelErrorColor).Type = ColorType.TrueColor)
+                            VariantValue = ColorWheel(New Color(UncontKernelErrorColor).Type = ColorType.TrueColor, If(New Color(UncontKernelErrorColor).Type = ColorType._255Color, New Color(UncontKernelErrorColor).PlainSequence, ConsoleColors.White), New Color(UncontKernelErrorColor).R, New Color(UncontKernelErrorColor).G, New Color(UncontKernelErrorColor).B)
                         Case 5 'Host name color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(HostNameShellColor)
                             VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(HostNameShellColor).Type = ColorType.TrueColor)
+                            VariantValue = ColorWheel(New Color(HostNameShellColor).Type = ColorType.TrueColor, If(New Color(HostNameShellColor).Type = ColorType._255Color, New Color(HostNameShellColor).PlainSequence, ConsoleColors.White), New Color(HostNameShellColor).R, New Color(HostNameShellColor).G, New Color(HostNameShellColor).B)
                         Case 6 'User name color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(UserNameShellColor)
                             VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(UserNameShellColor).Type = ColorType.TrueColor)
+                            VariantValue = ColorWheel(New Color(UserNameShellColor).Type = ColorType.TrueColor, If(New Color(UserNameShellColor).Type = ColorType._255Color, New Color(UserNameShellColor).PlainSequence, ConsoleColors.White), New Color(UserNameShellColor).R, New Color(UserNameShellColor).G, New Color(UserNameShellColor).B)
                         Case 7 'Background color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(BackgroundColor)
                             VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(BackgroundColor).Type = ColorType.TrueColor)
+                            VariantValue = ColorWheel(New Color(BackgroundColor).Type = ColorType.TrueColor, If(New Color(BackgroundColor).Type = ColorType._255Color, New Color(BackgroundColor).PlainSequence, ConsoleColors.White), New Color(BackgroundColor).R, New Color(BackgroundColor).G, New Color(BackgroundColor).B)
                         Case 8 'Neutral text color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(NeutralTextColor)
                             VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(NeutralTextColor).Type = ColorType.TrueColor)
+                            VariantValue = ColorWheel(New Color(NeutralTextColor).Type = ColorType.TrueColor, If(New Color(NeutralTextColor).Type = ColorType._255Color, New Color(NeutralTextColor).PlainSequence, ConsoleColors.White), New Color(NeutralTextColor).R, New Color(NeutralTextColor).G, New Color(NeutralTextColor).B)
                         Case 9 'List entry color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(ListEntryColor)
                             VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(ListEntryColor).Type = ColorType.TrueColor)
+                            VariantValue = ColorWheel(New Color(ListEntryColor).Type = ColorType.TrueColor, If(New Color(ListEntryColor).Type = ColorType._255Color, New Color(ListEntryColor).PlainSequence, ConsoleColors.White), New Color(ListEntryColor).R, New Color(ListEntryColor).G, New Color(ListEntryColor).B)
                         Case 10 'List value color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(ListValueColor)
                             VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(ListValueColor).Type = ColorType.TrueColor)
+                            VariantValue = ColorWheel(New Color(ListValueColor).Type = ColorType.TrueColor, If(New Color(ListValueColor).Type = ColorType._255Color, New Color(ListValueColor).PlainSequence, ConsoleColors.White), New Color(ListValueColor).R, New Color(ListValueColor).G, New Color(ListValueColor).B)
                         Case 11 'Stage color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(StageColor)
                             VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(StageColor).Type = ColorType.TrueColor)
+                            VariantValue = ColorWheel(New Color(StageColor).Type = ColorType.TrueColor, If(New Color(StageColor).Type = ColorType._255Color, New Color(StageColor).PlainSequence, ConsoleColors.White), New Color(StageColor).R, New Color(StageColor).G, New Color(StageColor).B)
                         Case 12 'Error color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(ErrorColor)
                             VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(ErrorColor).Type = ColorType.TrueColor)
+                            VariantValue = ColorWheel(New Color(ErrorColor).Type = ColorType.TrueColor, If(New Color(ErrorColor).Type = ColorType._255Color, New Color(ErrorColor).PlainSequence, ConsoleColors.White), New Color(ErrorColor).R, New Color(ErrorColor).G, New Color(ErrorColor).B)
                         Case 13 'Warning color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(WarningColor)
                             VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(WarningColor).Type = ColorType.TrueColor)
+                            VariantValue = ColorWheel(New Color(WarningColor).Type = ColorType.TrueColor, If(New Color(WarningColor).Type = ColorType._255Color, New Color(WarningColor).PlainSequence, ConsoleColors.White), New Color(WarningColor).R, New Color(WarningColor).G, New Color(WarningColor).B)
                         Case 14 'Option color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(OptionColor)
                             VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(OptionColor).Type = ColorType.TrueColor)
+                            VariantValue = ColorWheel(New Color(OptionColor).Type = ColorType.TrueColor, If(New Color(OptionColor).Type = ColorType._255Color, New Color(OptionColor).PlainSequence, ConsoleColors.White), New Color(OptionColor).R, New Color(OptionColor).G, New Color(OptionColor).B)
                     End Select
                 Case "5" 'Network
                     Select Case KeyNumber
