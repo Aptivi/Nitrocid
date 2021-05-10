@@ -746,7 +746,11 @@ Public Module GetCommand
                         If eqargs(0) = "safe" Then
                             PowerManage("rebootsafe")
                         ElseIf eqargs(0) <> "" Then
-                            PowerManage("remoterestart", eqargs(0))
+                            If eqargs?.Length > 1 Then
+                                PowerManage("remoterestart", eqargs(0), eqargs(1))
+                            Else
+                                PowerManage("remoterestart", eqargs(0))
+                            End If
                         Else
                             PowerManage("reboot")
                         End If
@@ -781,7 +785,11 @@ Public Module GetCommand
                 Case "rexec"
 
                     If RequiredArgumentsProvided Then
-                        SendCommand("<Request:Exec>(" + eqargs(1) + ")", eqargs(0))
+                        If eqargs?.Length = 2 Then
+                            SendCommand("<Request:Exec>(" + eqargs(1) + ")", eqargs(0))
+                        Else
+                            SendCommand("<Request:Exec>(" + eqargs(2) + ")", eqargs(0), eqargs(1))
+                        End If
                     End If
 
                 Case "rdebug"
@@ -947,8 +955,10 @@ Public Module GetCommand
 
                     'Shuts down the simulated system
                     If Not eqargs?.Length = 0 Then
-                        If eqargs(0) <> "" Then
+                        If eqargs?.Length = 1 Then
                             PowerManage("remoteshutdown", eqargs(0))
+                        Else
+                            PowerManage("remoteshutdown", eqargs(0), eqargs(1))
                         End If
                     Else
                         PowerManage("shutdown")

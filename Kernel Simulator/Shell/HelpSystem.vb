@@ -362,7 +362,7 @@ Public Module HelpSystem
 
         ElseIf command = "reboot" Then
 
-            W(DoTranslation("Usage:") + " reboot: " + DoTranslation("Restarts your simulated computer.") + vbNewLine +
+            W(DoTranslation("Usage:") + " reboot [ip] [port]: " + DoTranslation("Restarts your simulated computer.") + vbNewLine +
               "       " + DoTranslation("Friends of") + " reboot: shutdown, logout", True, ColTypes.Neutral)
 
         ElseIf command = "reloadmods" Then
@@ -380,7 +380,7 @@ Public Module HelpSystem
 
         ElseIf command = "rexec" Then
 
-            W(DoTranslation("Usage:") + " rexec <address> <command>: " + DoTranslation("Remotely executes a command to remote PC"), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " rexec <address> [port] <command>: " + DoTranslation("Remotely executes a command to remote PC"), True, ColTypes.Neutral)
 
         ElseIf command = "rmuser" Then
 
@@ -437,7 +437,7 @@ Public Module HelpSystem
 
         ElseIf command = "shutdown" Then
 
-            W(DoTranslation("Usage:") + " shutdown: " + DoTranslation("Shuts down your simulated computer.") + vbNewLine +
+            W(DoTranslation("Usage:") + " shutdown [ip] [port]: " + DoTranslation("Shuts down your simulated computer.") + vbNewLine +
               "       " + DoTranslation("Friends of") + " shutdown: reboot, logout", True, ColTypes.Neutral)
 
         ElseIf command = "spellbee" Then

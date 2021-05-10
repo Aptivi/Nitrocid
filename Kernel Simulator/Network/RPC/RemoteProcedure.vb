@@ -24,28 +24,33 @@ Module RemoteProcedure
     Public RPCListen As UdpClient
     Public RPCPort As Integer = 12345
     Public RPCThread As New Thread(AddressOf RecCommand) With {.IsBackground = True}
+    Public RPCEnabled As Boolean
     Public RPCStopping As Boolean
 
     ''' <summary>
     ''' A sub to start the RPC listener
     ''' </summary>
     Sub StartRPC()
-        Try
-            Wdbg("I", "RPC: Starting...")
-            If RPCListen Is Nothing Then
-                RPCListen = New UdpClient(RPCPort)
-                RPCListen.EnableBroadcast = True
-                Wdbg("I", "RPC: Listener started")
-                RPCThread.Start()
-                Wdbg("I", "RPC: Thread started")
-                W(DoTranslation("RPC listening on all addresses using port {0}."), True, ColTypes.Neutral, RPCPort)
-            Else
-                Throw New ThreadStateException()
-            End If
-        Catch ex As ThreadStateException
-            W(DoTranslation("RPC is already running."), True, ColTypes.Err)
-            WStkTrc(ex)
-        End Try
+        If RPCEnabled Then
+            Try
+                Wdbg("I", "RPC: Starting...")
+                If RPCListen Is Nothing Then
+                    RPCListen = New UdpClient(RPCPort)
+                    RPCListen.EnableBroadcast = True
+                    Wdbg("I", "RPC: Listener started")
+                    RPCThread.Start()
+                    Wdbg("I", "RPC: Thread started")
+                    W(DoTranslation("RPC listening on all addresses using port {0}."), True, ColTypes.Neutral, RPCPort)
+                Else
+                    Throw New ThreadStateException()
+                End If
+            Catch ex As ThreadStateException
+                W(DoTranslation("RPC is already running."), True, ColTypes.Err)
+                WStkTrc(ex)
+            End Try
+        Else
+            W(DoTranslation("Not starting RPC because it's disabled."), True, ColTypes.Neutral)
+        End If
     End Sub
 
 End Module

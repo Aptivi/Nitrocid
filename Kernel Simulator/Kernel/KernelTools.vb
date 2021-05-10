@@ -222,7 +222,23 @@ Public Module KernelTools
     ''' Manage computer's (actually, simulated computer) power
     ''' </summary>
     ''' <param name="PowerMode">Whether it would be "shutdown", "rebootsafe", or "reboot"</param>
-    Public Sub PowerManage(ByVal PowerMode As String, Optional ByVal IP As String = "0.0.0.0")
+    Public Sub PowerManage(ByVal PowerMode As String)
+        PowerManage(PowerMode, "0.0.0.0", RPCPort)
+    End Sub
+
+    ''' <summary>
+    ''' Manage computer's (actually, simulated computer) power
+    ''' </summary>
+    ''' <param name="PowerMode">Whether it would be "shutdown", "rebootsafe", or "reboot"</param>
+    Public Sub PowerManage(ByVal PowerMode As String, ByVal IP As String)
+        PowerManage(PowerMode, IP, RPCPort)
+    End Sub
+
+    ''' <summary>
+    ''' Manage computer's (actually, simulated computer) power
+    ''' </summary>
+    ''' <param name="PowerMode">Whether it would be "shutdown", "rebootsafe", or "reboot"</param>
+    Public Sub PowerManage(ByVal PowerMode As String, ByVal IP As String, ByVal Port As Integer)
         Wdbg("I", "Power management has the argument of {0}", PowerMode)
         If PowerMode = "shutdown" Then
             EventManager.RaisePreShutdown()
@@ -249,9 +265,9 @@ Public Module KernelTools
             LogoutRequested = True
             SafeMode = True
         ElseIf PowerMode = "remoteshutdown" Then
-            SendCommand("<Request:Shutdown>(" + IP + ")", IP)
+            SendCommand("<Request:Shutdown>(" + IP + ")", IP, Port)
         ElseIf PowerMode = "remoterestart" Then
-            SendCommand("<Request:Reboot>(" + IP + ")", IP)
+            SendCommand("<Request:Reboot>(" + IP + ")", IP, Port)
         End If
     End Sub
 

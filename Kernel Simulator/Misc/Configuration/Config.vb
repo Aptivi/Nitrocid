@@ -99,7 +99,9 @@ Public Module Config
                         New IniKey(ksconf, "Return only first FTP profile", FTPFirstProfileOnly),
                         New IniKey(ksconf, "Show mail message preview", ShowPreview),
                         New IniKey(ksconf, "Record chat to debug log", RecordChatToDebugLog),
-                        New IniKey(ksconf, "Show SSH banner", SSHBanner)))
+                        New IniKey(ksconf, "Show SSH banner", SSHBanner),
+                        New IniKey(ksconf, "Enable RPC", RPCEnabled),
+                        New IniKey(ksconf, "RPC Port", RPCPort)))
 
                 'The Screensaver Section
                 ksconf.Sections.Add(
@@ -222,7 +224,9 @@ Public Module Config
                         New IniKey(ksconf, "Return only first FTP profile", "False"),
                         New IniKey(ksconf, "Show mail message preview", "False"),
                         New IniKey(ksconf, "Record chat to debug log", "True"),
-                        New IniKey(ksconf, "Show SSH banner", "False")))
+                        New IniKey(ksconf, "Show SSH banner", "False"),
+                        New IniKey(ksconf, "Enable RPC", "True"),
+                        New IniKey(ksconf, "RPC Port", 12345)))
 
                 'The Screensaver Section
                 ksconf.Sections.Add(
@@ -326,6 +330,8 @@ Public Module Config
             ksconf.Sections("Network").Keys("Show mail message preview").TrailingComment.Text = "Whether or not to show mail message preview (body text truncated to 200 characters)."
             ksconf.Sections("Network").Keys("Record chat to debug log").TrailingComment.Text = "Records remote debug chat to debug log."
             ksconf.Sections("Network").Keys("Show SSH banner").TrailingComment.Text = "Shows the SSH server banner on connection."
+            ksconf.Sections("Network").Keys("Enable RPC").TrailingComment.Text = "Whether or not to enable RPC."
+            ksconf.Sections("Network").Keys("RPC Port").TrailingComment.Text = "The RPC port."
 
             'Screensaver
             ksconf.Sections("Screensaver").TrailingComment.Text = "This section is the network settings."
@@ -530,6 +536,8 @@ Public Module Config
             ShowPreview = configReader.Sections("Network").Keys("Show mail message preview").Value
             RecordChatToDebugLog = configReader.Sections("Network").Keys("Record chat to debug log").Value
             SSHBanner = configReader.Sections("Network").Keys("Show SSH banner").Value
+            RPCEnabled = configReader.Sections("Network").Keys("Enable RPC").Value
+            If Integer.TryParse(configReader.Sections("Network").Keys("RPC Port").Value, 0) Then RPCPort = configReader.Sections("Network").Keys("RPC Port").Value
 
             'Screensaver Section
             defSaverName = configReader.Sections("Screensaver").Keys("Screensaver").Value

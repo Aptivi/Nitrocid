@@ -38,6 +38,16 @@ Public Module RPC_Commands
     ''' <param name="Request">A request</param>
     ''' <param name="IP">An IP address which the RPC is hosted</param>
     Public Sub SendCommand(ByVal Request As String, ByVal IP As String)
+        SendCommand(Request, IP, RPCPort)
+    End Sub
+
+    ''' <summary>
+    ''' Send an RPC command to another instance of KS using the specified address
+    ''' </summary>
+    ''' <param name="Request">A request</param>
+    ''' <param name="IP">An IP address which the RPC is hosted</param>
+    ''' <param name="Port">A port which the RPC is hosted</param>
+    Public Sub SendCommand(ByVal Request As String, ByVal IP As String, ByVal Port As Integer)
         Dim Cmd As String = Request.Remove(Request.IndexOf("("))
         Wdbg("I", "Command: {0}", Cmd)
         Dim Arg As String = Request.Substring(Request.IndexOf("(") + 1)
@@ -75,7 +85,7 @@ Public Module RPC_Commands
             End If
             If Not Malformed Then
                 Wdbg("I", "Sending response to device...")
-                RPCListen.Send(ByteMsg, ByteMsg.Length, IP, RPCPort)
+                RPCListen.Send(ByteMsg, ByteMsg.Length, IP, Port)
                 EventManager.RaiseRPCCommandSent(Cmd)
             End If
         End If

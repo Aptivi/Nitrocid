@@ -164,7 +164,7 @@ Public Module ToolPrompts
                     W("13) " + DoTranslation("Warning color") + " [{0}] ", True, ColTypes.Option, WarningColor)
                     W("14) " + DoTranslation("Option color") + " [{0}] " + vbNewLine, True, ColTypes.Option, OptionColor)
                 Case "5" 'Network
-                    MaxOptions = 10
+                    MaxOptions = 12
                     W("*) " + DoTranslation("Network Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Debug Port") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DebugPort)))
@@ -176,7 +176,9 @@ Public Module ToolPrompts
                     W("7) " + DoTranslation("Return only first FTP profile") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FTPFirstProfileOnly)))
                     W("8) " + DoTranslation("Show mail message preview") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ShowPreview)))
                     W("9) " + DoTranslation("Record chat to debug log") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RecordChatToDebugLog)))
-                    W("10) " + DoTranslation("Show SSH banner") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(SSHBanner)))
+                    W("10) " + DoTranslation("Show SSH banner") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(SSHBanner)))
+                    W("11) " + DoTranslation("Enable RPC") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RPCEnabled)))
+                    W("12) " + DoTranslation("RPC Port") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(RPCPort)))
                 Case "6" 'Screensaver
                     MaxOptions = 12
                     W("*) " + DoTranslation("Screensaver Settings...") + vbNewLine, True, ColTypes.Neutral)
@@ -706,6 +708,19 @@ Public Module ToolPrompts
                             W(DoTranslation("Shows the SSH server banner on connection.") + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
                             W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 11 'Enable RPC
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(RPCEnabled)
+                            W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Enable RPC") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Whether or not to enable RPC.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 12 'RPC Port
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RPCPort)
+                            W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("RPC Port") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Write an RPC port. It must be numeric, and must not be already used. Otherwise, RPC will fail to open the port."), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Network Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
