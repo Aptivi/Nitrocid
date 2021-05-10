@@ -46,7 +46,7 @@ Public Module ListWriterColor
                 OldTop = CursorTop
                 For Each ListEntry As TKey In List.Keys
                     Dim Values As New List(Of Object)
-                    If CType(List(ListEntry), IEnumerable) IsNot Nothing And TryCast(List(ListEntry), String) Is Nothing Then
+                    If TryCast(List(ListEntry), IEnumerable) IsNot Nothing And TryCast(List(ListEntry), String) Is Nothing Then
                         For Each Value In CType(List(ListEntry), IEnumerable)
                             Values.Add(Value)
                         Next
@@ -103,7 +103,7 @@ Public Module ListWriterColor
                 OldTop = CursorTop
                 For Each ListEntry As TKey In List.Keys
                     Dim Values As New List(Of Object)
-                    If CType(List(ListEntry), IEnumerable) IsNot Nothing Then
+                    If TryCast(List(ListEntry), IEnumerable) IsNot Nothing And TryCast(List(ListEntry), String) Is Nothing Then
                         For Each Value In CType(List(ListEntry), IEnumerable)
                             Values.Add(Value)
                         Next
@@ -160,7 +160,7 @@ Public Module ListWriterColor
                 OldTop = CursorTop
                 For Each ListEntry As TKey In List.Keys
                     Dim Values As New List(Of Object)
-                    If CType(List(ListEntry), IEnumerable) IsNot Nothing Then
+                    If TryCast(List(ListEntry), IEnumerable) IsNot Nothing And TryCast(List(ListEntry), String) Is Nothing Then
                         For Each Value In CType(List(ListEntry), IEnumerable)
                             Values.Add(Value)
                         Next
