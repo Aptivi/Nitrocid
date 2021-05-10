@@ -145,6 +145,24 @@ Public Module PlaceParse
                 Wdbg("I", "System placeholder found.")
                 text = text.Replace(sysplace, Environment.OSVersion.ToString)
             End If
+            If text.Contains("<f:") Then
+                Wdbg("I", "Foreground color placeholder found.")
+                Do While text.Contains("<f:")
+                    Dim SequenceSubstring As String = text.Substring(text.IndexOf("<f:"), Finish:=text.IndexOf(">"))
+                    Dim PlainSequence As String = SequenceSubstring.Substring(3, SequenceSubstring.Length - 1 - 3)
+                    Dim VTSequence As String = New Color(PlainSequence).VTSequenceForeground
+                    text = text.Replace(SequenceSubstring, VTSequence)
+                Loop
+            End If
+            If text.Contains("<b:") Then
+                Wdbg("I", "Background color placeholder found.")
+                Do While text.Contains("<b:")
+                    Dim SequenceSubstring As String = text.Substring(text.IndexOf("<b:"), Finish:=text.IndexOf(">"))
+                    Dim PlainSequence As String = SequenceSubstring.Substring(3, SequenceSubstring.Length - 1 - 3)
+                    Dim VTSequence As String = New Color(PlainSequence).VTSequenceBackground
+                    text = text.Replace(SequenceSubstring, VTSequence)
+                Loop
+            End If
             EventManager.RaisePlaceholderParsed(text)
         Catch ex As Exception
             WStkTrc(ex)
