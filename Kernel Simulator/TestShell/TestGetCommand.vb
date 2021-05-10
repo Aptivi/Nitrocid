@@ -254,6 +254,27 @@ Module TestGetCommand
 #If ENABLEIMMEDIATEWINDOWDEBUG Then
             W("- ENABLEIMMEDIATEWINDOWDEBUG", True, ColTypes.Neutral)
 #End If
+        ElseIf Cmd = "testlistwriterstr" Then
+            Dim NormalStringList As New Dictionary(Of String, String) From {{"One", "String 1"}, {"Two", "String 2"}, {"Three", "String 3"}}
+            Dim ArrayStringList As New Dictionary(Of String, String()) From {{"One", {"String 1", "String 2", "String 3"}}, {"Two", {"String 1", "String 2", "String 3"}}, {"Three", {"String 1", "String 2", "String 3"}}}
+            W(DoTranslation("Normal string list:"), True, ColTypes.Neutral)
+            WriteList(NormalStringList)
+            W(DoTranslation("Array string list:"), True, ColTypes.Neutral)
+            WriteList(ArrayStringList)
+        ElseIf Cmd = "testlistwriterint" Then
+            Dim NormalIntegerList As New Dictionary(Of String, Integer) From {{"One", 1}, {"Two", 2}, {"Three", 3}}
+            Dim ArrayIntegerList As New Dictionary(Of String, Integer()) From {{"One", {1, 2, 3}}, {"Two", {1, 2, 3}}, {"Three", {1, 2, 3}}}
+            W(DoTranslation("Normal integer list:"), True, ColTypes.Neutral)
+            WriteList(NormalIntegerList)
+            W(DoTranslation("Array integer list:"), True, ColTypes.Neutral)
+            WriteList(ArrayIntegerList)
+        ElseIf Cmd = "testlistwriterchar" Then
+            Dim NormalCharList As New Dictionary(Of String, Char) From {{"One", "1"c}, {"Two", "2"c}, {"Three", "3"c}}
+            Dim ArrayCharList As New Dictionary(Of String, Char()) From {{"One", {"1"c, "2"c, "3"c}}, {"Two", {"1"c, "2"c, "3"c}}, {"Three", {"1"c, "2"c, "3"c}}}
+            W(DoTranslation("Normal char list:"), True, ColTypes.Neutral)
+            WriteList(NormalCharList)
+            W(DoTranslation("Array char list:"), True, ColTypes.Neutral)
+            WriteList(ArrayCharList)
         ElseIf Cmd = "help" Then
             If FullArgsQ?.Length = 0 Or FullArgsQ Is Nothing Then
                 TestShowHelp()

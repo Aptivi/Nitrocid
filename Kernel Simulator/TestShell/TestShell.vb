@@ -46,6 +46,9 @@ Module TestShell
                                                                          {"dcalend", New CommandInfo("dcalend", ShellCommandType.TestShell, True, 1, False, False, False, False)},
                                                                          {"listcodepages", New CommandInfo("listcodepages", ShellCommandType.TestShell, False, 0, False, False, False, False)},
                                                                          {"lscompilervars", New CommandInfo("lscompilervars", ShellCommandType.TestShell, False, 0, False, False, False, False)},
+                                                                         {"testlistwriterstr", New CommandInfo("testlistwriterstr", ShellCommandType.TestShell, False, 0, False, False, False, False)},
+                                                                         {"testlistwriterint", New CommandInfo("testlistwriterint", ShellCommandType.TestShell, False, 0, False, False, False, False)},
+                                                                         {"testlistwriterchar", New CommandInfo("testlistwriterchar", ShellCommandType.TestShell, False, 0, False, False, False, False)},
                                                                          {"help", New CommandInfo("help", ShellCommandType.TestShell, False, 0, False, False, False, False)},
                                                                          {"exit", New CommandInfo("exit", ShellCommandType.TestShell, False, 0, False, False, False, False)},
                                                                          {"shutdown", New CommandInfo("shutdown", ShellCommandType.TestShell, False, 0, False, False, False, False)}}

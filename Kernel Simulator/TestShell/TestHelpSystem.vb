@@ -51,6 +51,9 @@ Module TestHelpSystem
                                                                   {"testevent", DoTranslation("Tests raising the specific event")},
                                                                   {"probehw", DoTranslation("Tests probing the hardware")},
                                                                   {"garbage", DoTranslation("Tests the garbage collector")},
+                                                                  {"testlistwriterstr", DoTranslation("Tests the list writer with the string and string array")},
+                                                                  {"testlistwriterint", DoTranslation("Tests the list writer with the integer and integer array")},
+                                                                  {"testlistwriterchar", DoTranslation("Tests the list writer with the char and char array")},
                                                                   {"help", DoTranslation("Shows help screen")},
                                                                   {"exit", DoTranslation("Exits the test shell and starts the kernel")},
                                                                   {"shutdown", DoTranslation("Exits the test shell and shuts down the kernel")}}
@@ -123,6 +126,12 @@ Module TestHelpSystem
             W(DoTranslation("Usage:") + " listcodepages", True, ColTypes.Neutral)
         ElseIf command = "lscompilervars" Then
             W(DoTranslation("Usage:") + " lscompilervars", True, ColTypes.Neutral)
+        ElseIf command = "testlistwriterstr" Then
+            W(DoTranslation("Usage:") + " testlistwriterstr", True, ColTypes.Neutral)
+        ElseIf command = "testlistwriterint" Then
+            W(DoTranslation("Usage:") + " testlistwriterint", True, ColTypes.Neutral)
+        ElseIf command = "testlistwriterchar" Then
+            W(DoTranslation("Usage:") + " testlistwriterchar", True, ColTypes.Neutral)
         ElseIf command = "help" Then
             W(DoTranslation("Usage:") + " help [command]", True, ColTypes.Neutral)
         ElseIf command = "exit" Then
