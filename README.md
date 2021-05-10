@@ -109,13 +109,15 @@ This section covers how to build Kernel Simulator on your system. Please scroll 
 
 **EoflaOE:** Owner of Kernel Simulator
 
-**Oxygen Team:** Icon creator
-
 **OpenWeatherMap:** Weather API
 
 **https://jonasjacek.github.io/colors/:** Console color data
 
 **sindresorhus:** Word list
+
+**ayu-theme:** Ayu Theme
+
+**Ethan Schoonover:** Solarized Theme
 
 **All contributors:** Contribution
 
