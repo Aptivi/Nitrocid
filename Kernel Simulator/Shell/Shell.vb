@@ -67,7 +67,6 @@ Public Module Shell
                                                                     {"chusrname", New CommandInfo("chusrname", ShellCommandType.Shell, True, 2, True, False, False, False)},
                                                                     {"cls", New CommandInfo("cls", ShellCommandType.Shell, False, 0, False, False, False, False)},
                                                                     {"copy", New CommandInfo("copy", ShellCommandType.Shell, True, 2, False, False, False, False)},
-                                                                    {"debuglog", New CommandInfo("debuglog", ShellCommandType.Shell, False, 0, True, False, False, True)},
                                                                     {"dirinfo", New CommandInfo("dirinfo", ShellCommandType.Shell, True, 1, False, False, False, False)},
                                                                     {"disconndbgdev", New CommandInfo("disconndbgdev", ShellCommandType.Shell, True, 1, True, False, False, False)},
                                                                     {"dismissnotif", New CommandInfo("dismissnotif", ShellCommandType.Shell, True, 1, False, False, False, False)},

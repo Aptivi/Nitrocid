@@ -45,7 +45,6 @@ Public Module HelpSystem
                                                               {"chusrname", DoTranslation("Changes user name")},
                                                               {"cls", DoTranslation("Clears the screen")},
                                                               {"copy", DoTranslation("Creates another copy of a file under different directory or name.")},
-                                                              {"debuglog", DoTranslation("Shows debug logs")},
                                                               {"dirinfo", DoTranslation("Provides information about a directory")},
                                                               {"disconndbgdev", DoTranslation("Disconnect a debug device")},
                                                               {"dismissnotif", DoTranslation("Dismisses a notification")},
@@ -234,10 +233,6 @@ Public Module HelpSystem
         ElseIf command = "copy" Then
 
             W(DoTranslation("Usage:") + " copy <source> <target>: " + DoTranslation("To copy files to another directory or different name"), True, ColTypes.Neutral)
-
-        ElseIf command = "debuglog" Then
-
-            W(DoTranslation("Usage:") + " debuglog: " + DoTranslation("Shows you debug logs so you can send the log to us."), True, ColTypes.Neutral)
 
         ElseIf command = "dirinfo" Then
 
