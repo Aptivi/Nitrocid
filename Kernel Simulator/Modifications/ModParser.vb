@@ -326,7 +326,7 @@ Public Module ModParser
 
                 'See if the command conflicts with pre-existing shell commands
                 If script.CmdType = ShellCommandType.Shell Then
-                    If Shell.Commands.ContainsKey(script.Cmd) Then
+                    If Commands.ContainsKey(script.Cmd) Then
                         Wdbg("W", "Command {0} conflicts with available shell commands. Appending ""-{1}-{2}"" to end of command...", script.Cmd, script.Name, script.ModPart)
                         script.Cmd += "-{0}-{1}".FormatString(script.Name, script.ModPart)
                     End If

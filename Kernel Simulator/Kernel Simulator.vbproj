@@ -327,7 +327,7 @@
     <Compile Include="Network\Mail\MailLogin.vb" />
     <Compile Include="Network\Mail\MailShell.vb" />
     <Compile Include="Network\SSH\SSH.vb" />
-    <Compile Include="Scripting\Interaction\Commands.vb" />
+    <Compile Include="Scripting\Interaction\UESHCommands.vb" />
     <Compile Include="Scripting\UESHParse.vb" />
     <Compile Include="Scripting\UESHVariables.vb" />
     <Compile Include="Shell\AliasManager.vb" />

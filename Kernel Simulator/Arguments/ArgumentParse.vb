@@ -47,7 +47,7 @@ Module ArgumentParse
                         'Command Injector argument
                         If BootArgs(i) = "cmdinject" Then
                             W(DoTranslation("Available commands: {0}") + vbNewLine +
-                              DoTranslation("Write command: "), False, ColTypes.Input, String.Join(", ", Shell.Commands.Keys))
+                              DoTranslation("Write command: "), False, ColTypes.Input, String.Join(", ", Commands.Keys))
                             argcmds = Console.ReadLine().Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
                             argcommands = String.Join(", ", argcmds)
                             If argcommands <> "q" Then

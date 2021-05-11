@@ -67,8 +67,8 @@ Public Module GetCommand
             For i As Integer = 0 To eqargs.Length - 1
                 eqargs(i).Replace("""", "")
             Next
-            RequiredArgumentsProvided = eqargs?.Length >= Shell.Commands(Command).MinimumArguments
-        ElseIf Shell.Commands(Command).ArgumentsRequired And eqargs Is Nothing Then
+            RequiredArgumentsProvided = eqargs?.Length >= Commands(Command).MinimumArguments
+        ElseIf Commands(Command).ArgumentsRequired And eqargs Is Nothing Then
             RequiredArgumentsProvided = False
         End If
 
@@ -76,7 +76,7 @@ Public Module GetCommand
         If eqargs IsNot Nothing Then Wdbg("I", "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
 
         '5. Check to see if a requested command is obsolete
-        If Shell.Commands(Command).Obsolete Then
+        If Commands(Command).Obsolete Then
             Wdbg("I", "The command requested {0} is obsolete", Command)
             W(DoTranslation("This command is obsolete and will be removed in a future release."), True, ColTypes.Neutral)
         End If
@@ -1218,8 +1218,8 @@ Public Module GetCommand
 
                     If RequiredArgumentsProvided Then
                         Dim CommandToBeWrapped As String = eqargs(0).Split(" ")(0)
-                        If Shell.Commands.ContainsKey(CommandToBeWrapped) Then
-                            If Shell.Commands(CommandToBeWrapped).Wrappable Then
+                        If Commands.ContainsKey(CommandToBeWrapped) Then
+                            If Commands(CommandToBeWrapped).Wrappable Then
                                 Dim WrapOutputPath As String = paths("Temp") + "/wrapoutput.txt"
                                 GetLine(False, eqargs(0), False, WrapOutputPath)
                                 Dim WrapOutputStream As New StreamReader(WrapOutputPath)
@@ -1228,7 +1228,7 @@ Public Module GetCommand
                                 File.Delete(WrapOutputPath)
                             Else
                                 Dim WrappableCmds As New ArrayList
-                                For Each CommandInfo As CommandInfo In Shell.Commands.Values
+                                For Each CommandInfo As CommandInfo In Commands.Values
                                     If CommandInfo.Wrappable Then WrappableCmds.Add(CommandInfo.Command)
                                 Next
                                 W(DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", True, ColTypes.Err, String.Join(", ", WrappableCmds))
@@ -1271,7 +1271,7 @@ Public Module GetCommand
             End Select
 
             'If not enough arguments, throw exception
-            If Shell.Commands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
+            If Commands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 Throw New Exceptions.NotEnoughArgumentsException(DoTranslation("There was not enough arguments. See below for usage:"))
             End If
         Catch neaex As Exceptions.NotEnoughArgumentsException
