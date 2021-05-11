@@ -275,6 +275,17 @@ Module TestGetCommand
             WriteList(NormalCharList)
             W(DoTranslation("Array char list:"), True, ColTypes.Neutral)
             WriteList(ArrayCharList)
+        ElseIf Cmd = "lscultures" Then
+            Dim Cults As CultureInfo() = CultureInfo.GetCultures(CultureTypes.AllCultures)
+            For Each Cult As CultureInfo In Cults
+                If FullArgsQ?.Length > 0 Or FullArgsQ IsNot Nothing Then
+                    If Cult.Name.ToLower.Contains(FullArgsQ(0).ToLower) Or Cult.EnglishName.ToLower.Contains(FullArgsQ(0).ToLower) Then
+                        W("{0}: {1}", True, ColTypes.Neutral, Cult.Name, Cult.EnglishName)
+                    End If
+                Else
+                    W("{0}: {1}", True, ColTypes.Neutral, Cult.Name, Cult.EnglishName)
+                End If
+            Next
         ElseIf Cmd = "help" Then
             If FullArgsQ?.Length = 0 Or FullArgsQ Is Nothing Then
                 TestShowHelp()

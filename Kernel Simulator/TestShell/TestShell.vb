@@ -49,6 +49,7 @@ Module TestShell
                                                                          {"testlistwriterstr", New CommandInfo("testlistwriterstr", ShellCommandType.TestShell, False, 0, False, False, False, False)},
                                                                          {"testlistwriterint", New CommandInfo("testlistwriterint", ShellCommandType.TestShell, False, 0, False, False, False, False)},
                                                                          {"testlistwriterchar", New CommandInfo("testlistwriterchar", ShellCommandType.TestShell, False, 0, False, False, False, False)},
+                                                                         {"lscultures", New CommandInfo("lscultures", ShellCommandType.TestShell, False, 0, False, False, False, False)},
                                                                          {"help", New CommandInfo("help", ShellCommandType.TestShell, False, 0, False, False, False, False)},
                                                                          {"exit", New CommandInfo("exit", ShellCommandType.TestShell, False, 0, False, False, False, False)},
                                                                          {"shutdown", New CommandInfo("shutdown", ShellCommandType.TestShell, False, 0, False, False, False, False)}}
