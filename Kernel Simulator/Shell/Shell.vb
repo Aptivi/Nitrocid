@@ -306,6 +306,7 @@ Public Module Shell
                     Dim TargetFile As String = ""
                     Dim TargetFileName As String
                     FileExistsInPath(strcommand, TargetFile)
+                    If String.IsNullOrEmpty(TargetFile) Then TargetFile = NeutralizePath(strcommand)
                     TargetFileName = Path.GetFileName(TargetFile)
 
                     'Check to see if a user is able to execute a command
