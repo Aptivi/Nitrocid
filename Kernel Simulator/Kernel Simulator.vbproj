@@ -460,6 +460,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="OfficialAppIcon-KernelSimulator-256.ico" />
+    <None Include="Resources\hwi.txt" />
     <None Include="Resources\ltn.txt" />
     <None Include="Resources\jvn.txt" />
     <None Include="Resources\csc.txt" />

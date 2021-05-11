@@ -1,0 +1,961 @@
+Nā kauoha i loaʻa: {0}
+Kākau kauoha:
+Ua hoʻopau ʻia ka ʻoki kauoha.
+E hoʻokaʻawale i nā paio puʻupuʻu me nā koma me ka ʻole o nā hakahaka, no ka laʻana, 'motd,gpuprobe'
+E hoʻokaʻawale i nā kauoha ma ka 'cmdinject' me nā kolona me nā hakahaka, no ka laʻana, 'cmdinject setthemes Hacker: beep 1024 0.5'
+E hoʻomaopopo ʻaʻole uhi ka hoʻopaʻapaʻa 'debug' i ka kernel.
+bargs: ʻaʻole i loaʻa ka paio i noi ʻia {0}.
+bargs: hewa hewa ʻole i hoʻopaʻapaʻa ʻia:
+Nā manaʻo hoʻopaʻapaʻa i loaʻa: {0}
+Nā hoʻopaʻapaʻa ('help' no ke kōkua):
+E hoʻonohonoho ʻia nā paio i kuhi ʻia i ka wā hou.
+Ua hoʻopau ʻia ka Input Argument.
+Hewa i ka wā e wehewehe nei i nā paio laina kauoha maoli: {0}
+Hōʻailona kala ʻānō hewa {0}
+Hewa
+Mana Lima
+hwprobe: E hoʻāʻo ʻia kāu lako pono. E ʻoluʻolu e kali ...
+hwprobe: Ua hoʻāʻo ʻia nā lako paʻa.
+hwprobe: ʻAʻole hoʻāʻo ʻia nā lako paʻa pono. E hoʻohana i ka 'hwprobe'
+CPU: Hoʻokahi a ʻoi paha o nā kumu nui CPU i hoʻokolokolo ʻia. Ke hōʻike nei i ka ʻike ...
+RAM: Hoʻokahi a ʻoi aku paha o nā ʻāpana RAM i hoʻokolokolo ʻia. Ke hōʻike nei i ka ʻike ...
+HDD: ʻAʻole i hoʻokolokolo ʻia hoʻokahi a ʻoi aku paha o nā paʻa paʻa. Ke hōʻike nei i ka ʻike ...
+CPU: Huina nui o nā unu lawelawe: {0}
+CPU: {0} {1} MHz
+RAM: {0} MB = {1} MB
+RAM: Kaha i hoʻohana ʻia (e nā inoa): {0}
+RAM: Kaha i hoʻohana ʻia (e nā helu): {0} / {1} ({2}%)
+RAM: Hōʻalo ke kūlana probing a hoʻoneʻe ʻia i ka wā e hiki mai ana.
+HDD: {0} {1} GB {2}
+HDD: {0} {1} {2} GB {3}
+HDD: CHS: {4} nā paukūʻolokaʻa | {5} poʻo | {6} mau ʻāpana
+HDD: CHS: {3} nā paukūʻolokaʻa | {4} poʻo | {5} mau ʻāpana
+hwprobe: ʻAʻole kākoʻo ʻia ka Probing no ka mea ʻaʻole ia i hoʻolālā ʻia e holo i nā mea ʻimi ma Unix.
+E hoʻokomo i ka ʻōlelo huna no ka mālama ʻana.
+ʻAʻohe mea hoʻohana hou i koe i ka papa inoa.
+Kuʻia ʻo Kernel i ke kiʻi ʻana: {0}
+PANI DOUBLE: Hoʻihoʻi i ka manawa hou i ʻoi aku ka nui o ka manawa i ʻae ʻia {0} i ka manawa hou. Ua loaʻa iā ʻoe kahi pā ʻāluna.
+[{0}] hopohopo: Hoʻā hou i ka pae no ka pae hemahema {0}.
+Weliweli [{0}]: Manawa e hoʻi hou: {1} kekona, ʻoi aku 1 hola. Hoʻonohonoho ʻia i 1 minuke.
+PANIKI DOUBLE: hewa hewa ʻAno {0} hewa.
+[{0}] dpanic: {1} - Ke hana hou ʻana i {2} kekona ...
+[{0}] hopohopo: Hoʻopaʻa hou i ka hana hou ma muli o ka pae hemahema {0}.
+[{0}] weliweli: {1} - Kaomi i nā kī no ka hoʻomau ʻana i ka hoʻohana ʻana i ka kernel.
+[{0}] weliweli: {1} - Kaomi i nā kī no ka hoʻopau ʻana.
+[{0}] hopohopo: {1} - Ke hana hou ʻana i {2} kekona ...
+PANIKI DOUBLE: Kernel pilikia: {0}
+Pani iho...
+Hoʻouka hou ...
+---===+++> Welina mai i ka kernel | Mana {0} <+++===---
+Ke holo nei kekahi hanana ʻo Kernel Simulator. Ke pani nei inā hihia.
+Ua hoʻohui ʻia ka mea hoʻohana {0} i ka papa inoa luna.
+Ua hoʻohui ʻia ka mea hoʻohana {0} i ka papa inoa kīnā.
+Ua holo pono ʻole e hoʻohui i ka mea hoʻohana i nā papa inoa ʻae: ʻano kūpono ʻole {0}
+Ua holo pono ʻole e hoʻohui i ka hoʻohana i nā papa inoa ʻae: hoʻohana hewa ʻole {0}
+Ua wehe ʻia ka mea hoʻohana {0} mai ka papa inoa admin.
+Ua wehe ʻia ka mea hoʻohana {0} mai ka papa inoa kīnā.
+Ua holo pono ʻole e hemo i ka mea hoʻohana mai nā papa inoa ʻae: ʻano kūpono ʻole {0}
+Ua ʻeʻe ʻoe.
+Ua holo pono ʻole e hemo i ka mea hoʻohana mai nā papa inoa ʻae: hoʻohana hewa ʻole {0}
+Ua loaʻa iā ʻoe kahi ʻāpiki i ka ʻōnaehana ʻae: ʻano pololei ʻole {0}
+Ua loaʻa paha iā ʻoe kahi ʻāpala, a i ʻole ʻo ka ʻae āu i hoʻāʻo ai e hoʻohui a hemo paha ua pau, a i ʻole nā ​​hewa ʻē aʻe.
+Hewa {0}: {1}
+Ua loaʻa paha iā ʻoe kahi kīpoki, a i ʻole ua ʻae ʻia ka ʻae āu i hoʻāʻo ai e hoʻoponopono no kahi mea hoʻohana hou.
+Nā inoa inoa i loaʻa: {0}
+Inoa mea hoʻohana:
+ʻAʻole ʻae ʻia nā ākea.
+ʻAʻole ʻae ʻia nā huapalapala kūikawā.
+Ka ʻōlelo hunaʻi a {0}:
+Hewa ka ʻōlelo huna.
+Ua pio ka mea hoʻohana.
+Hewa inoa inoa.
+Kuʻia ka hewa e hoʻāʻo i nā wahi. {0} - Hoʻoiho stack:
+Kuʻia ka hewa e hoʻāʻo i nā wahi. {0}
+Hewa e hoʻāʻo nei e hoʻohui i ka inoa mea hoʻohana.
+usrmgr: Ke hana nei i ka inoa inoa {0} ...
+Inoa hakahaka.
+ʻAʻole i loaʻa ka mea hoʻohana {0}.
+ʻAʻole ʻae ʻia e wehe ʻia ka mea hoʻohana {0}.
+Ua komo ʻe ʻo {0} ka mea hoʻohana. E haʻalele a haʻalele ʻia ma ke ʻano he luna ʻē aʻe.
+Wehe ʻia ka mea hoʻohana {0}.
+Kuʻia ka hewa e hoʻoneʻe i ka inoa mea hoʻohana.
+{0} o {1} = {2}
+ʻAʻole ʻae ʻia ka hoʻāʻo e hoʻokaʻawale iā zero.
+Ua hoʻāʻo ʻia ka hoʻāʻo ʻana e helu ana i hopena ai kahi hālana.
+Aia kekahi hemahema i ka helu ʻana: {0}
+ʻAʻole hiki ke hoʻohuli ʻia {0} iā {1}.
+ʻO ke kumuwaiwai paha
+ a i ʻole ka huakaʻi
+ ʻaʻole ma ke kikowaena.
+{0} iā {1}: {2}
+Ua hewa ka hoʻāʻo ʻana e hoʻololi mai {0} a i ka {1}: {2}
+Hewa
+ʻAʻole i loaʻa ka pale lawe pale i noi ʻia {0}.
+Ua hoʻomaka mua ʻia ʻo {0}.
+ʻAʻole i hoʻomaka ʻo {0}. Ua loaʻa paha i kahi kuhi screensaver kahi hemahema i ka hoʻomaka ʻana.
+ʻAʻohe ʻo Screensaver {0}.
+Hoʻonohonoho ʻia ʻo {0} i ka pale paʻamau.
+ʻAʻole i loaʻa ka papakaumaka {0} ma ka pūnaewele. E hōʻoia i ka inoa a hoʻāʻo hou.
+ʻAʻole hiki ke hoʻouka ʻia ka Screensaver ma muli o kēia mau mea:
+Aia kekahi hewa nui i ka paʻi ʻana i ka huaʻōlelo.
+Aia kekahi hewa e hoʻāʻo nei e hoʻokumu i ka hoʻonohonoho.
+Aia kekahi hewa e hoʻāʻo nei e hoʻokumu i ka hoʻonohonoho ʻana: {0}
+Ua ʻike ʻia kahi hoʻomaikaʻi hou mai {0} a i ka {1}. Ke hōʻano hou nei i ka hoʻonohonoho ...
+Aia kekahi hewa e hoʻāʻo nei e hoʻohou i ka hoʻonohonoho hoʻonohonoho: {0}.
+Aia kekahi hewa e hoʻāʻo nei e hoʻohou i ka hoʻonohonoho.
+Aia kekahi hewa e hoʻāʻo nei e heluhelu i ka hoʻonohonoho ʻana.
+Aia kekahi hewa e hoʻāʻo nei e heluhelu i ka hoʻonohonoho ʻana: {0}
+Hewa e ho'āʻo ana e hoʻokuʻu i ka hipa kāne: {0} - Ke hoʻomau nei ...
+ʻAʻole hiki ke hoʻouka ʻia ʻo Mod ma muli o kēia mau mea:
+mod: Hoʻouka nei i nā mods ...
+mod: Ke waiho nei i nā mods ...
+ʻAʻohe o Mod {0} ka inoa. Loiloi i ke code kumu.
+ʻAʻohe mana o Mod {0}.
+Ua hoʻomaka ʻo {0} v {1}
+ʻAʻohe wehewehe ʻana no ke kauoha {0}.
+Kauoha i wehewehe ʻia e
+E hoʻokaʻawale ʻoe i kahi kikowaena ma mua o ka hoʻopili ʻana i kahi kikowaena pūnaewele ʻē aʻe
+Inoa mea hoʻohana no {0}:
+Ka ʻōlelo huna no {0}:
+Hoʻohui ʻia iā {0}
+Hewa i ka wā e hoʻāʻo nei e hoʻohui i {0}: {1}
+Pākuʻi Pūnaewele: {2}
+E hoʻokomo i kahi kikowaena FTP.
+ʻAʻohe o ka waihona kūloko {0}.
+E hoʻokomo i kahi papa kuhikuhi kūloko. ".." e hoʻi.
+ʻAʻole i loaʻa ka papa kuhikuhi {0}.
+E hoʻokomo i kahi papa kuhikuhi mamao. ".." e hoʻi
+Pono ʻoe e hoʻohui i kahi kikowaena ma mua o ka hoʻololi ʻana i ka papa kuhikuhi
+Papa Kuhikuhi kūloko: {0}
+Papa kuhikuhi mamao: {0}
+Pono ʻoe e hoʻohui i ka kikowaena ma mua o ka loaʻa ʻana o kahi papa kuhikuhi mamao o kēia wā.
+Holoi i ka faile {0} ...
+Makemake ʻoe e kāpae i ka faile {0} <y/n>?
+Holoi i ka faile {0}
+Pono ʻoe e hoʻohui i ka kikowaena pūnaewele me nā pono o ka hoʻokele ma mua o ka holoi ʻana.
+E hoʻokomo i kahi faila e hemo ai.
+Pono ʻoe i nā ʻae hoʻomalu i kāu inoa i kau ʻia e hiki ai ke hemo.
+Hoʻokaʻawale ʻia mai {0}
+ʻAʻole ʻoe i pili i kekahi kikowaena pūnaewele
+Ke hoʻoiho nei i ka faile {0} ...
+Hoʻoiho ʻia ka faile {0}.
+Ua holo pono ʻole ka hoʻoiho ʻana no ka faile {0} no ka mea ua maikaʻi ʻole ka faila kūloko.
+Pono ʻoe e hoʻohui i ka kikowaena ma mua o ka hoʻokō ʻana i ka lawe.
+E hoʻokomo i kahi faila e hoʻoiho ai i ka papa kuhikuhi kūloko.
+{0} KB | Hoʻololi ʻia i: {1}
+E hoʻohui ʻoe i ka pūnaewele ma mua o ka helu ʻana i nā faile mamao āpau.
+Kapa hou ʻana i ka inoa o {0} iā {1} ...
+Ua kūleʻa ʻia ka inoa
+E hoʻokomo i kahi faila a me ka inoa faila hou.
+Ke hoʻouka nei i ka faile {0} ...
+Waihona hoʻoili {0}
+E hoʻokomo i kahi faila e hoʻouka i kahi papa kuhikuhi mamao. hoʻouka <file> <directory>
+Hewa e hoʻāʻo ana e hoʻokō FTP kauoha
+(Loko:
+{0} nā waihona, {1} nā faile
+(Hoʻole ʻia ke komo)
+{0} KB, Hana ʻia ma {1} {2}, Hoʻololi ʻia i {3} {4}
+Loaʻa i kahi papa kuhikuhi kūloko o kēia wā
+Loaʻa i kahi papa kuhikuhi mamao o kēia wā
+Pili i kahi kikowaena FTP (pono ia e hoʻomaka me "ftp://" a i ʻole "ftps://")
+Hoʻololi i ka papa kuhikuhi kūloko e hoʻoiho ai hoʻouka ai
+Hoʻololi i kahi papa kuhikuhi mamao e hoʻoiho mai a hoʻouka ai
+Holoi i ka faile mamao mai ke kikowaena pūnaewele
+Hoʻokaʻawale mai ke kikowaena pūnaewele
+Hoʻoiho i kahi faile mamao i ka papa kuhikuhi kūloko me ka hoʻohana ʻana i ka binary a i ʻole ka huaʻōlelo
+Hele i ka pūpū FTP a hoʻi i kernel
+Hōʻike pale kōkua
+Papa inoa o ka papa kuhikuhi kūloko
+Papa inoa o ka papa kuhikuhi mamao
+Kapa hou i nā inoa kikoʻī a papa kuhikuhi paha
+Hoʻouka i kahi faila kūloko i kahi papa kuhikuhi mamao e hoʻohana ana i ka binary a i ʻole ka huaʻōlelo
+Ua loaʻa kahi hemahema i ka pūpū FTP.
+Palapala FTP: ʻaʻole i loaʻa ke kauoha i noi ʻia {0}. E ʻike i ke 'kōkua' no kahi papa inoa o nā kauoha i loaʻa ma FTP shell.
+upena: Loaʻa ka pane mai {0} ma {1} ms
+Pau ka manawa, hemo, a i ʻole kikowaena pūnaewele.
+upena: ʻO kou inoa kamepiula ma ka pūnaewele ʻo {0}
+upena: ʻO kou inoa hoʻokipa ʻo {1}
+upena: ʻIke ʻia aia nā kamepiula i ke kikowaena a i ʻole ka pūʻulu hana:
+upena: Ua hemo ʻo WiFi a Ethernet paha.
+upena: ʻIke ʻia ua pili nā kamepiula ma lalo:
+upena: Address Router: {0}
+ʻAʻole i loaʻa nā waiwai no ka mea hoʻopili {0}
+Helu Adapter:
+Inoa mea hoʻopili:
+Mokuna Hoʻouna Maximum: {2} Units
+Hoʻokele ʻia DHCP:
+Pahu unicast:
+Pahu Unicast:
+Hewa e komo mai / i waho pūʻolo:
+ʻAʻole hiki i ka inoa Alias ​​ke inoa like me ke kauoha.
+ʻAʻole i loaʻa ke kauoha iā alias i {0}.
+Ua kapu loa ka ʻae ʻana iā {0} iā {1}.
+Hiki iā ʻoe ke holo iā "{0}" ma ke ʻano he kauoha: "{1}".
+ʻAʻole hiki iā ʻoe ke hoʻohana hou iā "{0}" ma ke ʻano he kauoha "{1}".
+ʻIke ʻole ua kāpae ʻia ʻo Alias.
+Kūpono kūpono ʻole {0}.
+E hoʻonohonoho ʻia nā manaʻo hoʻopaʻapaʻa i kuhi ʻia, {0} e holo hou aʻe.
+ʻAʻole lawa nā hoʻopaʻapaʻa. E nānā ma lalo no ka hoʻohana ʻana:
+ʻAʻole i loaʻa ka papa kuhikuhi {0}
+Inoa host blank.
+Ke hoʻololi nei mai: {0} a i ka {1} ...
+ʻO ka leka hemahema o ka lā.
+Pāʻina MAL Ma hope o ka ʻeʻe.
+Ke hoʻololi nei iā MAL mai {0} a i {1} ...
+Hewa ka ʻōlelo huna mea hoʻohana.
+ʻAʻole kūlike nā ʻōlelo huna.
+Ua hoʻololi ʻia ka inoa mea hoʻohana iā {0}!
+Ua loaʻa ka inoa hou āu i komo ai.
+ʻAʻole kākoʻo ʻia nā papa inoa PC ma Unix.
+Papa kapu ʻia nā inoa ʻē aʻe: {0}
+ʻAʻole loaʻa ʻo {0}.
+Hoʻouka hou ka hoʻonohonoho ʻana. Pono ʻoe e hoʻouka hou i ke kernel no kekahi mau loli e holo pono.
+Hoʻonohonoho hou ʻia nā mea āpau i nā hoʻonohonoho maʻamau.
+Hoʻokahi a ʻoi paha o nā kala i kūpono ʻole.
+ʻAʻole loaʻa nā kala. E hoʻā i ka pūpū waihoʻoluʻu i ka config kernel.
+ʻAʻole i loaʻa ka papakaumaka {0}.
+[ Nānā Kernel (Ke holo nei ma {0}) ]
+Mana Kernel:
+Hoʻolālā Debug:
+Ka lei kala:
+Nā paio ma Boot:
+Kōkua ʻia ka ʻōlelo kōkua:
+MOTD ma ka ʻeʻe:
+Manawa / Lā ma ke kihi:
+ʻImi ʻia nā lakohana:
+Kumuhana i kēia manawa:
+[ Nā hoʻonohonoho paʻa paʻa paʻa ] {0}
+{0}[ Hoʻonohonoho hoʻohana ]
+Inoa hoʻohana o kēia manawa:
+Inoa host o kēia manawa:
+Nā inoa inoa i loaʻa:
+Ka inoa hoʻokipa kamepiula:
+{0}[ Nānā i nā memo ]
+Hoʻopā'ālua:
+Kuleana kope (c)
+Laikini
+makanaʻi
+Hewa e hoʻāʻo ana e hoʻokō i ke kauoha
+Pākuʻi i nā mea hoʻohana (Hiki i nā admin ke komo i kēia kauoha)
+Hoʻohui i nā ʻae i nā kauoha (Hiki i nā admin ke ʻeʻe i kēia kauoha)
+Nā manaʻo paio i ka kernel (koi hou ʻia, nā admin wale nō)
+Mākau hoʻomaulia
+Papa Kuhikuhi hoʻololi
+Hoʻololi i ka inoa hoʻokipa (Admins wale nō)
+Hoʻololi iā MAL, ka MOTD Ma hope o ke komo ʻana (Admins wale nō)
+Hoʻololi iā MOTD, ka leka o ka lā (Admins wale nō)
+Hoʻololi i ka ʻōlelo huna no ka mea hoʻohana i kēia manawa
+Hoʻololi i ka inoa hoʻohana (Admins Wale)
+Holoi i ka pale
+Hoʻololi kālā
+Hōʻike i nā log debug (Admins Wale)
+E hoʻohana i kahi pūpū FTP e launa pū me nā kikowaena
+ʻAoʻao kōkua
+Hana i ka lakohana me ka lima (hoʻokahi manawa ma ka 'nohwprobe' kernel)
+E papa inoa i nā ʻike faila / waihona ma ka waihona o kēia manawa
+Hoʻouka hou i ka faila screenshver ma %USERPROFILE%\KSMods
+Laka i kou paku me ka password
+Lepe iā ʻoe i waho
+Papa inoa i nā hāmeʻa pūnaewele a pau ma ka pūnaewele (a me ka pūnaewele ma nā kāʻei kapu)
+Papa inoa i nā helu kuhi pūnaewele i ka hoʻokipa
+Papa inoa i nā helu kuhi pūnaewele i ka mea hoʻokipa e hoʻohana ana i ka lāʻau
+Hana i kahi papa kuhikuhi
+Ke papa inoa nei i ka ʻike e pili ana i nā loaʻa āpau i loaʻa
+Hōʻike i ka papa inoa papa ʻia o nā inoa ʻē aʻe
+Mālama i nā ʻae no nā mea hoʻohana (Hiki i nā admin ke ʻeʻe i kēia kauoha)
+E hōʻoia inā ʻike i loaʻa kahi helu kikoʻī
+Kākau i nā ʻike faila i ka console
+Hoʻōho hou i kāu kamepiula (WARNING: ʻAʻohe syncing, no ka mea ʻaʻole ia he kernel hope)
+Hoʻouka hou i kahi faila hoʻonohonoho i hoʻoponopono ʻia.
+Wehe i kahi papa kuhikuhi
+Wehe i kahi mea hoʻohana mai ka papa inoa (Admins Wale)
+Mālama i kou paku mai puhi ahi i waho
+Mākau helu ʻepekema. Hoʻokaʻawale ʻia ka mea hoʻololi anakahi i kahi kauoha ʻē aʻe
+Hoʻonohonoho i nā kala kernel
+Hoʻokū i nā pale kernel
+Hoʻonohonoho i nā poʻomanaʻo kernel
+Hōʻike i nā inoa inoa
+Hōʻike iā MOTD ma hope o ke komo ʻana i hoʻonohonoho ʻia e ka mea hoʻohana a kernel paha
+Hōʻike i nā leka o ka lā i hoʻonohonoho ʻia e ka mea hoʻohana a i ʻole kernel
+Hōʻike i ka lā a me ka manawa
+Hōʻike i ka lā a me ka manawa ma nā wahi
+E pani ʻia ka kernel
+ʻIke ʻōnaehana
+Hoʻokaʻawale mokuna i hoʻokaʻawale ʻia mai scicalc.
+Hōʻike ʻia i nā hilinaʻi kumu wehe
+He manual mea hoʻohana wehewehe loa.
+* Hiki iā ʻoe ke hoʻohana i nā kauoha he nui e hoʻohana ana i ke kolona ma waena o nā kauoha.
+Nā kauoha i loaʻa:
+Nā kauoha mod:
+Nā ʻauhau i nā kauoha:
+Hoʻohana:
+Hoʻokaʻawale nā ​​paio e nā koma
+ma hea nā hoʻopaʻapaʻa ma {0}
+e kiʻi i ka papa kuhikuhi o kēia manawa
+I kahi kumu a me kahi e hele ai kahi 3 UPPERCASE huapalapala o kahi hoʻololi
+Ka papa inoa o nā ID a me nā inoa:
+Hōʻike iā ʻoe i nā log debug i hiki iā ʻoe ke hoʻouna i ka log iā mākou.
+Initializes ka pūpū FTP.
+Lako paʻa (hana wale nō inā ʻaʻole i hoʻokolokolo ʻia nā lako paʻa a hoʻokō ʻole ʻia ʻo hwprobe).
+Papa inoa i ka ʻike pūnaewele, a me kēlā me kēia kamepiula e pili ana i kahi pūnaewele.
+Na hoaloha o
+Papa inoa i ka ʻike pūnaewele, a me kēlā me kēia kamepiula e pili ana i kahi pūnaewele, ma kahi ʻano kumulāʻau.
+Papa inoa i ka ʻike pūnaewele, a me kēlā me kēia kamepiula.
+kahi e noho ai ka modnameSS.m
+Laka i kou paku me ka password.
+Hoʻopau iā ʻoe ma waho o ka mea hoʻohana.
+E kiʻi i kēlā me kēia ʻike pūnaewele
+Hoʻōho hou i kāu kamepiula i hoʻohālikelike ʻia.
+Hoʻouka hou i ka hoʻonohonoho i hoʻololi ʻia e ka mea hoʻohana hope a i ʻole ka mea hana.
+ʻAʻole koi nā kala i kahi hoʻomaka hou, akā ʻo ka hapa nui o nā hoʻonohonoho e koi iā ʻoe e hoʻomaka hou.
+hōʻike iā ʻoe i kahi pale pale i koho ʻia, ʻoiai e pale ana i kāu pale mai nā mea puhi ahi.
+Hōʻike i ka lā a me ka manawa.
+Hōʻike i ka lā a me ka manawa ma nā wahi.
+Hoʻopio i kāu kamepiula i hoʻohālikelike ʻia.
+Hōʻike i ka ʻike ʻōnaehana a me nā mana.
+Hōʻike i nā hale waihona puke wehe i hoʻohana ʻia
+Ua loaʻa kahi hemahema i ka pūpū.
+ʻAʻohe ou ʻae e hoʻohana i {0}
+Ka memo Shell: ʻAʻole ʻae ʻia ke kauoha i noi ʻia {0} e holo i ke ʻano mālama.
+Palapala shell: ʻaʻole i loaʻa ke kauoha i noi ʻia {0}. E ʻike i ke 'kōkua' no nā kauoha i loaʻa.
+ʻ Shelllelo Shell: ʻae ʻia ʻo Command {0} e holo ma ka ʻeʻe.
+Palapala shell: ʻaʻole i loaʻa ke kauoha i noi ʻia {0}.
+Hewa e hoʻāʻo ana e hoʻokō i ke kauoha.
+manawa: ʻo {0} ka manawa
+manawa: ʻo kēia lā {0}
+manawa: manawa manawa: {0}
+- Ka manawa o {0}: {1}
+e hoʻomaʻemaʻe i ka pale.
+Me he mea lā ʻaʻole i loaʻa ka ʻaoʻao manuale {0}.
+Aia kekahi hemahema i ka hoʻāʻo ʻana e hoʻouka i ka ʻaoʻao manuale {0} becuase {1}.
+ʻAʻole piha kēia ʻaoʻao no nā kumu aʻe:
+Kaomi aku i nā kī e hoʻomau ...
+ | {0} mau huaʻōlelo | Hooponopono v{1} | {2} mau ʻāpana
+ʻAʻole kākau ʻia kēia poʻo inoa ʻaoʻao manual
+ʻAʻohe kikokikona kino o kēia ʻaoʻao manual ({0}). Holoi nei i ka ʻaoʻao ...
+ʻAʻohe ʻāpana o kēia ʻaoʻao manual ({0}). Holoi nei i ka ʻaoʻao ...
+Ke holo nei ma {0}
+ʻAʻole ʻae ʻia ʻoe e kiʻi i ka ʻike no {0}.
+Ua pau kēia kauoha a hemo i kahi hoʻokuʻu hou.
+ʻAʻole ʻae ʻia ʻoe e hoʻololi i ka ʻōlelo huna a {0} no ka mea he admin ka pahu hopu.
+Hoʻololi i ka nui o ke kālā mai kahi ʻāina a kahi ʻāina
+Nā kālā:
+usrmgr: ua loaʻa ka inoa mea hoʻohana {0}
+E hoʻokomo i kāu kī API:
+ʻAʻole hiki ke kiʻi i nā kamepiula. Inā ʻoe e holo nei i ka mana hou loa o Windows 10, pono ʻoe e hoʻohana iā SMBv1. ʻAʻole palekana kēia protocol a e hoʻāʻo mākou e hoʻoponopono i kēia pilikia.
+Holoi i nā mea āpau i ka log debug
+Loaʻa nā mana SSE
+ʻVallelo kūpono ʻole
+Hoʻololi i ka ʻōlelo
+ʻAʻohe paha kāu libcpanel-json-xs-perl i kau ʻia ma kāu ʻōnaehana. E nānā i kāu luna pūʻolo no ke kau ʻana. No nā ʻōnaehana Debian (a me nā derivatives), makemake paha ʻoe e holo i "sudo apt install libcpanel-json-xs-perl" i ka emulator maʻi. Nā kikoʻī hou aʻe no kahi hemahema:
+----------------------------- ʻŌpala panern Kernel ------------------------------
+>> ʻIke weliweli <<
+> Hōʻike: {0}
+> ʻAno hemahema: {1}
+> Ka lā a me ka manawa: {2}
+>> ʻIke ʻokoʻa <<
+> ʻOkoʻa: {0}
+> Hōʻike: {1}
+> HRESULT: {2}
+> Kumu: {3}
+> Hoʻoiho <
+>> ʻokoʻa ʻokoʻa {0} ʻike <<
+>> ʻO Exception {0} ke kumu kumu <<
+>> ʻAʻohe mea ʻē aʻe; he hemahema kernel paha. <<
+>> Nā kiʻi, nā faile, nā laina, a me nā pou <<
+> Kiʻi {0}: Waihona: {1} | Laina: {2} | Kolamu: {3}
+> Aia kekahi hemahema i ka hoʻāʻo ʻana e kiʻi i ka ʻike pili. {0}: {1}
+Ua hoʻonohonoho ʻoe i kāu ʻōnaehana ʻolelo i kekahi mea ʻē aʻe ma mua o ka ʻōlelo Pelekania. E kala mai no ka pilikia, akā naʻe he ʻano ʻē paha ʻo Google a me kāna mea unuhi e pili ana i ka unuhi ʻana i nā poloka kuhi no nā ʻōlelo hoʻolālā. ʻOiai mākou e hoʻoponopono i nā poloka āpau no nā ʻaoʻao manual i unuhi ʻia, paipai mākou iā ʻoe e wehe i kahi likiki iā Unuhi Google no ka unuhi ʻana i nā palaka kuhi ʻaʻole pono e unuhi ʻia, a hoʻonohonoho i kāu ʻōnaehana ʻōnaehana i ka ʻōlelo Pelekania inā ʻoe e ʻōlelo iā ia.
+Hoʻohou hou i nā mods.
+Hoʻouka hou ʻo Mods.
+Welina i Kernel!
+Ua ʻeʻe maikaʻi ʻia ma ke ʻano he <user>
+He kūpono ʻo MOTD/MAL, akā ʻaʻole kūpono ka ʻano memo. Ke manaʻo nei iā MOTD ...
+Ua hoʻāʻo e heluhelu i ka MOTD/MAL o ke ʻano memo kūpono ʻole.
+ʻOiai ke mālama nei i ka pilina paʻa, ke hoʻoiho nei iā {0} i {1} ...
+Ua pau ka hoʻoiho.
+ʻAʻole i hiki ka hoʻoiho i ka hoʻāʻo {0}: {1}
+E ʻoluʻolu e hoʻohana iā "ftp" inā ʻoe e hoʻoiho i nā faile mai ka kikowaena FTP.
+Hoʻoiho i kahi faila i ka papa kuhikuhi e hana nei
+E hoʻokaʻaʻike i kahi hāmeʻa debug
+Papa inoa i nā polokalamu debugging i pili
+ʻAʻole i loaʻa ka hāmeʻa debug {0}.
+Ua hemo ka polokalamu {0}.
+Hewa e pili ana: {0}
+Hoʻolohe pepeiao i nā wahi a pau e hoʻohana nei i ka port {0}.
+ʻAʻohe paio i hōʻike ʻia. Kaha ʻlelo: Hoʻākāka i nā paio he nui i hoʻokaʻawale ʻia e nā hakahaka
+Ua loaʻa ʻē i nā inoa ʻē aʻe: {0}
+Ua wehe ʻia ka log debug. E ʻike mau paha nā manaʻo hoʻopono debugging i nā leka.
+Ua holo pono ʻole ka wehe ʻana i ka log debug: {0}
+Ua holo pono ʻole ka papa kuhikuhi: {0}
+Hewa ka inoa inoa
+E kuhikuhi i ka helu wahi
+ʻAʻole hiki ke wehe i ka papa kuhikuhi: {0}
+Kuhi hewa ʻia ʻo Timezone.
+Koho kūpono ʻole.
+Ke hoʻāʻo nei e hoʻopili iā {0} me ka ʻikepili {1} ...
+Hewa i ka hoʻowalewale pūnaewele ʻana: {0}
+ʻAʻole i loaʻa ke kauoha {0}. E ʻike i ke kauoha "kōkua" no ka papa inoa o nā kauoha.
+ʻAʻole i loaʻa nā waiwai IPv6 no ka adapter {0}. Ke hoʻomau nei ...
+ʻIkepili IPv4:
+ʻIkepili IPv6:
+ʻAʻole kākoʻo ʻo Adapter {0} iā IPv6. Ke hoʻomau nei ...
+ʻAʻole kākoʻo ʻo Adapter {0} iā IPv4. Ua kūleʻa ka ʻimi.
+Me he mea lā ke holo nei ʻoe i ka mana hoʻomohala o ka kernel. ʻOiai hiki iā ʻoe ke ʻike i nā hiʻohiʻona, hoʻomaikaʻi pinepine ʻia a hoʻolauna paha i nā ʻūpā. Paipai ʻia ʻoe e noho ma ka mana paʻa.
+ʻO ka ʻōlelo āu i koho ai he ʻelua ʻano ʻokoʻa. Koho i hoʻokahi:
+1. Unuhi ʻia
+2. Unuhiia
+Koho i kāu koho:
+Koho kūpono ʻole. Hana hou.
+ʻAe ʻole ʻoe e hoʻonohonoho i ka papa kuhikuhi i kēia manawa iā {0}: {1}
+ʻAe ʻole {0} ka ʻae
+Lōʻihi loa ke ala āu i kuhikuhi ai.
+ʻAʻole ʻae ʻia ʻoe e papa inoa ma {0}: {1}
+Hewa i ka nānā ʻana iā CPU: {0}
+Hewa i ka nānā ʻana iā RAM: {0}
+Hewa i ka nānā ʻana iā HDD: {0}
+CPU: ARlelo Aʻoaʻo: Koi ʻia ʻo SSE2 i nā hana hoʻomohala e hiki mai ana.
+Ua hina ka ʻohiʻohi ʻōpala i ka hoʻāʻo ʻana e loaʻa ka ʻike e pili ana iā {0}: {1}
+Kuʻia ma ka hoʻāʻo ʻana e kiʻi i ka lā hōʻuluʻulu o ka ʻākoakoa {0}: {1}
+Hewa i ka wā e hoʻāʻo ana e hoʻonohonoho iā MOTD/MAL: {0}
+Hewa i ka hoʻāʻo ʻana e loaʻa iā MOTD/MAL: {0}
+Aia kekahi ʻokoʻa kūmole ma {0}: {1}
+Aia kekahi ʻokoʻa kuhi ʻāpono ma {0}: {1} - Hoʻoiho Stack:
+Hewa i ka hoʻāʻo ʻana e hoʻomaka i ka screensaver, ma muli o kahi hana kūpono ʻole.
+ʻAʻole ʻae ʻia ka hoʻouka hou ʻana i kahi ʻano palekana.
+ʻAʻole ʻae ʻia nā mods parsing i ke ʻano palekana.
+E kaha i ka papa kuhikuhina holoʻokoʻa no ka nui a i ʻole nā ​​faila wale nō i kēia manawa.
+Papa inoa i nā hāmeʻa debugging pili āpau.
+Kuʻia ke kuhi ʻana i ke ʻano parse. E hōʻoia i ka waiwai a hoʻāʻo hou. Inā pololei kēia, e ʻike i ke kumumea puʻu ke hoʻohana ʻia ka kernel debugging.
+Hoʻonohonoho kūleʻa.
+ʻAʻole kahi ala a faila a papa kuhikuhi paha.
+Hana i kahi kope hou o kahi faile ma lalo o ka papa kuhikuhi a i ʻole ka inoa ʻokoʻa.
+E hoʻoneʻe i kahi faila i kahi papa kuhikuhi ʻē aʻe
+E kope i nā faile i kahi papa kuhikuhi a i ʻole inoa ʻokoʻa
+E hoʻoneʻe i nā faila i kahi papa kuhikuhi ʻē aʻe
+Pākuʻi {0} ({1}): {2}
+Pākuʻi {0}: {1}
+Ka manawa i hala: {0} milliseconds
+Mea hana: {0}
+Hoʻohālike: {0}
+Kaha: {0} ({1}, {2}, {3})
+ʻAno Honua: {0}
+Helu Drive: {0}
+Hae kīpaku: {0} ({1})
+Māhele kino: {0}
+Hae kumu mua: {0}
+Nui: {0} GB
+Māhele kūpono: {0}
+Komo ʻia: {0}
+Inoa: {0}
+ʻŌnaehana faile: {0}
+Kaha: {0} GB manuahi o {1} GB
+Ke papa inoa nei i nā paku kūpono āpau ma nā hoʻokele.
+Papa inoa i nā kalaiwa i hoʻāʻo ʻia.
+Papa inoa i nā pākana i hoʻāʻo ʻia ma kahi kalaiwa kikoʻī (a me nā pāhihi kūpono ma nā hoʻokele).
+Hoʻomaulia i nā huina faila.
+Lawe iā ʻoe i kā mākou GitHub Wiki.
+Hewa encryption algorithm.
+Hiki ai a hoʻopau ʻole i ka debugging mamao.
+Ke hoʻomaka nei i nā ʻōnaehana ...
+Hoʻokomo ʻia nā leo
+Hoʻonohonoho i ka leo paʻamau
+ʻAkslelo i kāu aho me ka hoʻohana ʻana i ka leo paʻamau
+Leo {0}: {1} ({2})
+Leo kūpono ʻole.
+Hoʻonohonoho leo
+E ʻike inā hiki iā ʻoe ke pela pololei i nā huaʻōlelo i ka manawa
+E ʻike inā hiki iā ʻoe ke hoʻonā i nā kaulike makemakika i ka manawa
+E pane i ke aloha a i ʻole i nā ʻōlelo hoʻopailua.
+Inā haʻi kekahi i kēia ʻōlelo i kāu wikiō:
+Pehea ʻoe e pane ai?
+Koho kūpono ʻole. Ke hele nei i ka manaʻo aʻe ...
+Ua hōʻike wale aku ʻoe i ka manaʻo aloha!
+Ua pane wale ʻoe i ka manaʻo inaina!
+Nui! E hoʻoneʻe ʻia kā kā {0} manaʻo no kēlā.
+Nui! E mahalo ʻo {0} i kāu mahalo.
+Kākau iā "GetMeOut" e puka aku ai.
+Pela pela!
+Pela pela hewa.
+Hoʻoponopono kūpono!
+Ua hoʻoponopono pololei ʻole ʻia.
+Ua hoʻoiho ʻia ʻo {0} MB o {1} MB.
+Ke holo nei ʻo RPC.
+Ke hoʻolohe nei ʻo RPC i nā helu a pau e hoʻohana nei i ka port {0}.
+Ke hoʻomaka nei ʻo RPC ...
+Hoʻohui i kahi kikowaena SSH.
+E hoʻokomo i ka ʻōlelo huna no {0}:
+Hoʻokaʻawale ʻo SSH.
+Hoʻouka i ka faila synth a pāʻani iā ​​ia.
+ʻAʻohe o ka faila scripted {0}.
+ʻAʻole faila ka file synth scripted.
+ʻAʻole hiki ke ʻimi i kahi laina synth.
+Kuhi hewa ʻia
+ʻAʻole hiki ke hoʻonohonoho codepage. ʻAʻole hiki ke hōʻike kūpono i ka ʻōlelo.
+ʻAʻole ʻāpono ʻia ka Debugging.
+ʻAʻole i hoʻonohonoho hou ʻia ʻo {0} i ka pale paʻamau.
+Mahalo! Hoihoi kēia.
+E kākoʻo kēlā me kēia i kāu wikiō no kēia.
+Ua hāʻawi wau iā ʻoe i ka faile kūikawā i kāu leka uila no kāu wikiō aʻe.
+E hoʻolohe, e ka poʻe inaina, ke hoʻāʻo nei ʻo ia e kōkua iā mākou, ʻaʻole i ka scam.
+ʻAʻole maopopo iaʻu ka nui o koʻu mahalo a me koʻu mau hoaaloha no kēia wikiō.
+Aloha au iā ʻoe no kēia wikiō.
+E hele mau, mai kū.
+E kōkua wau iā ʻoe e kiʻi i nā mea kau inoa 1M!
+Ua hoʻoponopono kaʻu mau hoaaloha i kā lākou kamepiula ma muli ou.
+Kupanaha weliweli! Hoʻopaʻa wau i ka PC o koʻu ʻenemi.
+I ka poʻe inaina: HALE ANA IĀ IA
+I ka poʻe inaina: E HELE E HANA
+ʻAʻohe mea e ʻike i kēia manawa mahalo i kāu alakaʻi huna mea
+E ho'ōki wau i ka nānā ʻana i kāu mau wikiō. Lilo ka mea kākau inoa.
+He aha kēia? Maopopo ʻole kēia.
+ʻO kēia wikiō ʻoi aku ka maikaʻi!
+Hōʻike nā kānaka āpau i kēia wikiō!
+Huhū koʻu mau hoaaloha me ʻoe!
+E inaina nā ipo iā ʻoe no kēia.
+E inaina kou hoaaloha iā ʻoe no kēia.
+Na kēia palaka i hoʻokau inoa ʻole iaʻu.
+Ua kūleʻa ka Misiona, mahalo -, mea kākau inoa -
+Kāohi i ka hana ʻana i kēia ʻano wikiō !!!
+E hoʻi i kāu hana, ʻoi loa ka maikaʻi o kāu mau wikiō!
+Hoʻopilikia mākou i kēia wikiō.
+Pāpā ʻia ka hoʻokahuli aupuni ʻana iā {0} iā {1}.
+Ua hewa ka hoʻāʻo ʻana e hoʻolei i ka leka hoʻomaopopo: {0}
+Hōʻike i nā leka hoʻomaopopo āpau
+Hoʻopau i ka hoʻolaha
+Hoʻokuʻu maikaʻi ʻia ka hoʻolaha ʻana.
+Pūʻolo (komo):
+Pākeke (outbound):
+Nā hewa i loaʻa i nā pūʻolo:
+Nā waiwai IPv6 laulā
+Nā waiwai IPv4 laulā
+Hoʻouna aku kahi mamao i kahi kauoha iā PC mamao
+- Kahua 1: Hoʻomaka pūnaewele
+- Kahua 2: ʻImi nā lako paʻa
+- Kahua 2: ka hoʻoponopono inoa inoa kūloko
+- Kahua 3: ʻIke i nā mod a me nā pale aniani
+- Kahua 4: ʻOhi ʻōpala
+- Kahua 4: ʻeʻe
+Ma mua o ka hōʻiliʻili ʻōpala: {0} bytes
+Ma hope o ka hōʻiliʻili ʻōpala: {0} bytes
+Hewa e hoʻomaka ana i ka RPC: {0}
+Me he mea lā ke holo nei ʻoe i ka mana moho hoʻokuʻu. Paipai ʻia ʻoe e noho ma ka mana paʻa.
+Me he mea lā lōʻihi ka heluna o ka ʻōnaehana faila.
+Hewa ʻaʻano {0}.
+Kaha: {0}
+Helu ʻāpana: {0}
+Nui: {0}
+Hoʻohana ʻia: {0}
+Aia ke kuhikuhina {0}.
+Hewa i ka wā e hoʻāʻo nei e hoʻohui i {0}: Wā hoʻohui a i nalowale paha ka pilina
+Calculator e helu ai i nā ʻōlelo.
+Hewa i ka helu ʻana.
+Kaha: {0} GB ({1}, {2}, {3})
+Me he mea lā ke holo nei ʻoe i ka mana hoʻokokoke e hoʻokuʻu nei. ʻOiai ʻoi aku ka palekana o ka hoʻohana ʻana i kēia manawa, koi ʻia ʻoe e noho ma ka mana paʻa.
+Hoʻohou pūnaewele
+Ke nānā nei no nā hoʻoulu ʻōnaehana ...
+Loaʻa i kahi mana hou:
+Hiki iā ʻoe ke hoʻoiho ma:
+Ua holo ʻole e nānā i nā mea hou: {0}
+ʻAʻole i loaʻa ka log debug
+ʻAʻohe hoʻolaha hou
+Huli no ke aho i kuhikuhi ʻia i ka faile i hāʻawi ʻia
+Hoʻomaulia i nā huina o nā faile ma ka papa kuhikuhi kikoʻī.
+Papa inoa i nā leka uila i ka mea hoʻohana kikoʻī.
+E hoʻokomo i ka inoa mea hoʻohana a leka uila paha:
+E hoʻokomo i ka ʻōlelo huna:
+E hoʻokomo i ka helu kikowaena a me ka port (<address> a i ʻole <address>:[awa]):
+Hewa ma ka hoʻohui ʻana iā {0}: {1}
+Hoʻohui ʻia iā {0} ...
+Ke hōʻoia nei ...
+Hele i ka pūpū IMAP
+Papa inoa o nā kauoha
+Hoʻoiho i nā leka a papa inoa iā lākou
+Wehe i kahi leka
+ʻAʻole maikaʻi a hewa paha ka ʻaoʻao.
+ʻAʻole waiwai ka ʻaoʻao.
+ʻAʻole maikaʻi ʻole a helu ʻole paha ka helu leka.
+ʻAʻole helu helu leka i kahi helu helu.
+- Mai ka {0}
+- Iā {0}
+- Hoʻouna ʻia ma {0} i {1}
+ʻAʻole i loaʻa ka ʻōlelo i hōʻike ʻia.
+ʻAʻole i hoʻomaka ka debug mamao: {0}
+Hewa i ka hoʻokō ʻana i ke kauoha IMAP: {0}
+Ke hoʻomākaukau nei i nā ʻikepili ... Ua hiki ke hala i mau minuke ...
+Inoa Hoʻokipa, Username, ʻAno ʻIkepili, Encoding, Encryption, Protocols
+Hewa e hoʻāʻo ana e hoʻokō i ka script: {0}
+Kākau i ka huaʻōlelo i loko o ka console
+Hana i nā koho a nā mea hoʻohana
+Beep i ka 'n' Hz a me ka manawa ma 'n' milliseconds
+kahi <$variable> kahi ʻano loli e hoʻohana ʻia e mālama i ka pane
+ʻO ka pinepine ka helu. Inā he helu ia, e hōʻoia inā ʻo ia >= 37 a me <= 32767.
+Pono ka manawa i ka helu.
+kahi <answers> nā pane leta hoʻokahi o ka nīnau i hoʻokaʻawale ʻia i nā slash
+Hewa e ho'āʻo ana e hoʻohui i ka kikowaena SSH: {0}
+Blank MOTD ma hope o ka ʻeʻe.
+ʻAe i ka mea hoʻohana e hoʻokomo i ka hoʻokomo
+Hoʻololi i ka papa kuhikuhi leka uila o kēia manawa
+ʻAʻole hiki ke wehe i ka waihona leka uila {0}: {1}
+Nā papa inoa papa inoa i kāu leka uila
+Hoʻohana i ka ʻike mai Speed ​​Dial e hoʻohui i kekahi kikowaena pūnaewele wikiwiki
+Koho i kahi helu wahi e hoʻohui i:
+ʻO ke koho i waho o ka laulā. Koho ma waena o 1- {0}. Hana hou.
+ʻAʻole helu ka koho. Hana hou.
+I ka wā o ka hōʻoia hōʻoia, aia nā hewa palapala. ʻO ia paha ka manawa mua e hoʻohui ai i ka kikowaena a i ʻole ua pau ka palapala. Eia kahi hewa:
+Makemake ʻoe makemake e hoʻohui?
+Pane kūpono ʻole. E ʻoluʻolu e hoʻāʻo hou.
+Hakahaka ka leo wikiwiki E hoʻohui i kahi kikowaena e hoʻohui i kahi leka iā ia.
+ʻAʻohe o ka hōʻike wikiwiki. E hoʻohui i kahi kikowaena e hoʻohui i kahi leka iā ia.
+E hoʻokomo i ka helu kikowaena a me ka port IMAP (<address> a i ʻole <address>:[awa]):
+E hoʻokomo i ka helu kikowaena kikowaena SMTP a me ka awa (<address> a i ʻole <address>:[awa]):
+Nonoi iā ʻoe e hoʻopiha i nā kahua i makemake ʻia e hoʻouna i kahi leka i kahi leka
+Hoʻouna i kahi leka i kahi helu wahi
+E hoʻokomo i ka helu leka uila
+E hoʻokomo i ke kumuhana:
+E hoʻokomo i kāu leka ma lalo. Kākau iā "EOF" e hōʻoia ai.
+Ke hoʻouna nei i ka leka ...
+Hoʻouna ʻia ka leka.
+Hewa i ka hoʻouna ʻana i ka leka: {0}
+Leka uila hewa. E ʻike pono ua kākau pololei ʻoe i ka helu wahi a kūlike ia me ke ʻano o ke ʻano i hōʻike ʻia.
+Wehe i kahi leka
+Wehe i nā leka āpau mai ka mea loaʻa
+Ua holoi ʻia ka leka uila {0} mai {1} mai {2}. {3} mau memo i koe e pākuʻi ʻia.
+Holoi ʻia ka memo {0} mai {1} mai ka pahu komo komo. {2} mau memo i koe e wānana ai.
+Hoʻoponopono i kahi faila faila
+Hana i kahi faila hou
+Aia kekahi faila.
+Hewa e ho'āʻo ana e hana i kahi faile: {0}
+ʻAʻole hiki ke wehe i ka faile. Puka puka ...
+ʻAʻole i loaʻa ke kauoha hoʻoponopono ʻōlelo kikoʻī.
+Papa inoa nā kauoha i loaʻa
+Haʻalele i ka hoʻoponopono huaʻōlelo a mālama i nā hoʻololi i mālama ʻole ʻia
+Paʻi i nā ʻike o ka faile me nā helu laina i ka console
+Hoʻohui i kahi laina hou me ka huaʻōlelo ma ka hope o ka faila
+Wehe i ka helu laina i kuhikuhi ʻia
+Hoʻololi i kahi huaʻōlelo a huaʻōlelo paha i kekahi huaʻōlelo
+Holoi i kahi huaʻōlelo a huaʻōlelo paha mai ka helu laina
+Holoi i kahi huapalapala mai ka helu huapalapala i ka laina i kuhikuhi ʻia
+Lawe hoʻoneʻe ʻia.
+ʻAʻole he helu kūpono ka helu laina i hōʻike ʻia {0}.
+ʻAʻole i hoʻoholo ʻia nā manaʻo paio e kauoha iā {0}
+Hewa e hoʻāʻo ana e holo i ke kauoha: {0}
+Ke holo nei i kahi ʻano palekana. Ke lele nei i ke kahua ...
+>> ʻO Debug mamao a me ke kamaʻilio: mana
+>> ʻO {0} kāu helu wahi.
+>> ʻO {0} kou inoa.
+ʻAʻole i loaʻa ke kauoha {0}. E hoʻohana i "/kōkua" e ʻike ai i ka papa inoa.
+Kūpono ʻole ka papa kuhikuhi {0}. Aia nā {1} hāmeʻa stack. Helu ʻole ʻia ka papa kuhikuhi, no laila e hoʻāʻo e unuhi i ka 1.
+ʻAʻohe wahi kau
+Hōʻike i ka hopena hope loa ma kahi ʻokoʻa
+Hōʻike i ka inoa mea hoʻohana i kēia manawa i ke kau
+Hoʻokaʻawale iā ʻoe mai ka debugger
+E wehe i kahi polokalamu debug e ka IP address
+E ālai i kahi hāmeʻa debug e ka IP address
+Hiki iā {0} ke hoʻohui hou i kahi debug mamao.
+ʻAʻole i ālai ʻia ʻo {0}.
+Ua hewa ka hoʻouka ʻana i nā hoʻonohonoho
+Aia kekahi hemahema i ka hoʻouka ʻana i nā hoʻonohonoho. Pono ʻoe e nānā i ka faila hoʻonohonoho.
+- Kahua 2: ʻIke i nā mod a me nā pale aniani
+- Kahua 3: ʻeʻe
+Koho i ka ʻāpana:
+Koho i koho:
+Nā Koho Nui ...
+Nā Koina Lako paʻa ...
+Nā koho ʻeʻe ...
+Nā Pūnana Leo ...
+Pūnaewele Pūnaewele ...
+Nā Koina Miscellaneous ...
+Mālama i nā koho
+Puka
+He kūpono ʻole i koho ʻia {0}.
+Pono ka pane i ka helu.
+Paipai no nā hoʻopaʻapaʻa ma Boot
+Mālama Hana Hoʻomau
+Hoʻololi i ka ʻōlelo huna lālā ...
+E hōʻoia no nā mea hou ma ka hoʻomaka
+Pākuʻi mālie
+ʻIke i nā kau RAM
+Hōʻike iā MOTD ma ka ʻeʻe
+Wehe i ka pale ma ke komo ʻana
+Hōʻike i nā inoa inoa i loaʻa
+Hōʻoluʻolu kala
+Kauoha Kōkua i hoʻomaʻalahi ʻia
+Awa Debug
+ʻO Remote Debug Default Nick Prefix
+Hoʻoiho i nā manawa hou
+Log FTP inoa inoa
+E kāhea iā FTP IP helu wahi
+E hoʻihoʻi i ka ʻike FTP mua wale nō
+Hōʻike i ka Manawa / Lā ma ke kihi ʻākau ma luna
+Screensaver Manawa o ka manawa ma ms
+ʻO ka quota nui Debug i nā Bytes
+ʻO ka mode parse size
+Marquee i ka hoʻomaka
+Lōʻihi ka manawa a me ka lā
+Hōʻike i nā faile hūnā
+Ua hoʻokomo ʻia ka ʻāpono kūpono ʻole. E hoʻi ʻoe.
+Hoʻi aku...
+Hiki iā
+Hoʻopau ʻole
+Ua hoʻokomo ʻia ka helu kī kūpono ʻole. E hoʻi ʻoe.
+Kākau i ka ʻōlelo huna aʻa e hoʻonohonoho. Mai hopohopo; Hōʻike ʻia ka ʻōlelo huna e like me nā hōkū.
+Hiki iā "Change Root Password" ke hoʻohana i kēia koho. E hoʻi ʻoe.
+Hoʻololi i ka ʻōlelo huna lālā?
+E hoʻonoho i ka ʻōlelo huna lālā ...
+Kākau i kahi awa debugger mamao. Pono e helu, a ʻaʻole pono e hoʻohana ʻia. Inā ʻole, ʻaʻole e wehe ka debugger mamao i ka port.
+Kākau i ka kuhikihi inoa inoa inoa debug mamao mamao.
+Kākau i ehia mau manawa i ke kauoha "loaʻa" e hoʻāʻo hou i nā hoʻoiho maikaʻi ʻole. Pono helu.
+Kākau i ka wā e hoʻolana ai i ka screensaver ma hope o nā milliseconds kikoʻī. Pono helu.
+E kākau i ka nui o nā bytes i hiki ai i ka hale kūʻai log debug. Pono helu.
+ʻAʻole maikaʻi paha ka pane.
+He kūpono ʻole ka pane. E hōʻoia e hōʻoia i ka pane i ka helu no nā config config e pono ai nā helu i mau pane.
+ʻAʻole loaʻa ka loli {0} ma kekahi o nā modula.
+Hoʻololi i ka hoʻonohonoho kernel
+Nānā Screensaver ...
+Hoʻoulu i nā kala 255
+Makemake ʻoe e pili pili?
+Koho kūpono ʻole. Ke manaʻo nei ʻaʻole ...
+ʻAʻohe mods i ʻike ʻia. Ke lele nei i ke kahua ...
+Hoʻololi i ka moʻomeheu ke kuapo ʻana i nā ʻōlelo
+Hōʻike ʻia ke kikokiko
+Kākau i nā huaʻōlelo āu e makemake ai e hōʻike. ʻOi aku ka maikaʻi o Shorter.
+ʻAʻole i hoʻokō ʻia e hoʻouka iā {0}
+ʻAʻole i hiki ka hoʻoiho no ka faile {0}: {1}
+Hewa i ka hoʻokō ʻana i ke kauoha debug mamao {0}: {1}
+Hoʻohui i nā mea hoʻohana
+Pākuʻi i nā ʻauhau i nā kauoha
+Nā manaʻo paio i ka kernel (koi hou ʻia)
+Hoʻololi i ka inoa hoʻokipa
+Hoʻololi iā MAL, ka MOTD Ma hope o ka ʻeʻe
+Hoʻololi iā MOTD, ka leka o ka lā
+Hoʻololi i ka inoa mea hoʻohana
+Hōʻike i nā loiloi debug
+Mālama i nā ʻae no nā mea hoʻohana
+Hoʻouka hou i ka faila screenshver ma KSMods
+Wehe i kahi mea hoʻohana mai ka papa inoa
+Ua kāpae maikaʻi ʻia ka alias {0}.
+ʻAʻole hiki ke nānā i nā mea hou.
+ʻAʻohe mea hoʻohana hou i koe i ka papa inoa.
+ʻAʻole i hoʻokau ʻia ka ʻōlelo.
+Ua hewa ka hoʻāʻo ʻana e kāpae i ka hoʻolaha.
+Kuhi ʻia kahi hoʻomaikaʻi iā {0}. Ke hōʻano hou nei i ka hoʻonohonoho ...
+usrmgr: Ua holopono ʻole ka hana ʻana i ka inoa mea hoʻohana {0}: {1}
+Ua holo ʻole i ka inoa hou o ka mea hoʻohana. {0}
+ʻAʻohe i loko o kekahi papa inoa ʻae i ka inoa inoa {0}.
+ʻAʻole hiki ke hoʻouka i nā ʻae mai ka faile: {0}
+Ua holo ʻole e hoʻololi i ka inoa hoʻokipa: {0}
+ʻAʻole i loaʻa ka mea hoʻohana
+ʻAʻole hiki ke hoʻololi i ka ʻōlelo huna o ka inoa mea hoʻohana: {0}
+ʻAʻole hiki ke kope i ka faile a i ʻole ka papa kuhikuhi: {0}
+ʻAʻole hiki ke hoʻoneʻe i ka faile a i ʻole ka papa kuhikuhina: {0}
+ʻAʻole hiki ke loaʻa ka faile e kūlike i ke aho "{0}": {1}
+ʻAʻole i hiki ka hoʻoiho no ka faile {0}.
+ʻAʻole hiki ke papa inoa i nā faile mamao: {0}
+E hoʻokomo i kahi faile a i ʻole kahi waihona e wehe. Pono ʻoe i nā ʻae hoʻomalu i kāu moʻokāki e hiki ai ke hemo.
+Makemake ʻoe makemake e holoi iā {0} <y/n>?
+Holoi iā {0} ...
+ʻAʻole i loaʻa ʻo {0} i ka kikowaena pūnaewele.
+Ua kāpae maikaʻi ʻia nā leka uila āpau a {0}.
+Ua holo hewa ʻole i ka hemo ʻana o nā leka uila a {0}.
+Hewa i ka hoʻouna leka ʻana.
+Ke neʻe nei iā {0} i {1} ...
+Ua neʻe ʻia
+E hoʻoneʻe i ka faile a i ʻole ka papa kuhikuhina i kahi faila a i ʻole kahi papa kuhikuhi. Hiki iā ʻoe ke hoʻohana i kēlā no ka inoa hou i nā faile.
+ʻAʻole hiki ke neʻe iā {0} i {1}.
+E hoʻokomo i kahi ala kumu a me kahi ala huakaʻi.
+Ke kope ʻana iā {0} iā {1} ...
+Ua hana kope maikaʻi ʻia
+Hana kope i ka faila a i ʻole ka papa kuhikuhina i kahi faila a i ʻole kahi papa kuhikuhi.
+ʻAʻole hiki ke kope iā {0} iā {1}.
+Hoʻoneʻe i kahi leka
+Hoʻoneʻe i nā leka mai ka mea loaʻa
+Ua neʻe maikaʻi ʻia nā leka uila āpau e {0}.
+ʻAʻole hiki ke neʻe i nā leka uila a pau i hana ʻia e {0}.
+Ua neʻe ʻia ka memo {0} mai {1} mai {2}. {3} mau memo i koe e pākuʻi ʻia.
+Ua neʻe ʻia ka ʻōlelo {0} mai {1}. {3} mau memo i koe e pākuʻi ʻia.
+Hōʻike i ka ʻike ikepili no ke kūlanakauhale i kuhikuhi ʻia. Hoʻohana iā OpenWeatherMap.
+- ʻIkepili Ikepili no {0} -
+Kūlana: {0}
+Mahana: {0} ({1} anakahi)
+Nā manaʻo e like me: {0} ({1} anakahi)
+Puʻe: {0}
+Humidity: {0}
+Hiki iā ʻoe ke kiʻi i kāu kī API ponoʻī ma https://home.openweathermap.org/api_keys.
+Hiki iā ʻoe ke nīnau mau iā http://bulk.openweathermap.org/sample/city.list.json.gz no ka papa inoa o nā kūlanakauhale me kā lākou mau ID.
+ʻOihana i makemake ʻia no ka Mahana
+Kelvin
+Imperial (Fahrenheit)
+Metric (Celsius)
+Hoʻonohonoho i ka kernel no laila e hōʻeuʻeu iā ʻoe no ka hoʻopaʻapaʻa ma ka puki.
+Hoʻoulu i ke ʻano mālama. Hoʻopau kēia i nā helu helu he nui.
+ʻO kēlā me kēia hoʻomaka, e nānā ia no nā mea hou.
+Ke hoʻololi nei i nā ʻōlelo, hoʻololi i nā inoa o ka mahina, kalena, a pēlā aku.
+Inā hoʻomaka ka kernel, e hoʻonohonoho i ka ʻōlelo huna kumu.
+E hāmau ka hāmau ʻana i nā leka uila.
+Inā hiki, e hoʻāʻo ia i nā slot RAM me ka RAM.
+Hōʻike i ka leka o ka lā ma mua o ka hōʻike ʻana i ka pale ʻeʻe.
+Holoi i ka pale ma mua o ka hōʻike ʻana i ka pale ʻeʻe.
+Hōʻike i nā mea hoʻohana i loaʻa inā hiki ʻia.
+Hāʻawi i ke kākoʻo kala kernel
+Kauoha kōkua maʻalahi no nā pūpū āpau
+Inā paha e haʻalele iā FTP inoa inoa.
+Inā ʻaʻole paha e kāhea iā FTP IP address.
+Koho i ka pili mua wale nō ke hoʻohui.
+Hoʻoulu i ke kākoʻo kala 255 no ColorMix.
+Hoʻoulu i ke kākoʻo kala 255 no Disco.
+Hoʻoulu i ke kākoʻo kala 255 no GlitterColor.
+Hoʻoulu i ke kākoʻo kala 255 no nā Laina.
+E hōʻike ʻia ka manawa a me ka lā ma ka ʻaoʻao ʻākau i luna o ka pale
+Inā hiki, e parse ka kernel i ka waihona holoʻokoʻa no kona nui a pau. ʻĒ aʻe, e kaha wale i ka ʻili.
+Hiki i ka eyecandy i ka hoʻomaka
+ʻOi aku ka lōʻihi o ka manawa a me ka lā, e hōʻike ana i nā inoa o ka mahina piha, etc.
+Hōʻike i nā faile hūnā ʻia.
+Koho i kāu anakuhi makemake no ka mahana (pili wale kēia i ke kauoha "anilā")
+Ua kū ʻo Mod {0}
+Ua kū ʻo {0} v{1}
+ʻAʻohe o Mod {0} ka inoa ʻāpana. Ua holo pono ka mod Parsing. Loiloi i ke code kumu.
+ʻAʻohe o Mod ke kauoha. Ua holo pono ka mod Parsing. Loiloi i ke code kumu.
+Pono ʻoe e hoʻā i ka mode debug ma mua o ka hoʻomaʻemaʻe ʻana i ka log debug.
+{0} hiki mai nā leka hou i ka pahu leka.
+Wehe i "lsmail" e ʻike iā lākou.
+Pilikua: {2} Bootable: {3} Pāpā paʻa: {4}
+ʻAʻole hiki ke hemo i ka faile: {0}
+Wehe i kahi papa kuhikuhi a i ʻole faila
+ʻAʻole hiki ke wehe iā {0} no ka mea ʻaʻohe ia.
+ʻAʻohe paha kāu inxi i hoʻouka ʻia i kāu ʻōnaehana. E nānā i kāu luna pūʻolo no ke kau ʻana. No nā ʻōnaehana ʻo Debian (a me nā derivatives), makemake paha ʻoe e holo i "sudo apt install inxi libcpanel-json-xs-perl" i ka emulator maʻi.
+Ua hoʻonohonoho maikaʻi ʻia ka ʻōlelo i {0}!
+Kaomi iā CTRL+C e haʻalele.
+Hāʻawi i ka ʻike e pili ana i kahi faile
+Hāʻawi i ka ʻike e pili ana i kahi papa kuhikuhi
+ʻAʻole hiki ke kiʻi i ka ʻike e pili ana i ka papa kuhikuhi ʻole.
+ʻAʻole hiki ke kiʻi i ka ʻike e pili ana i ka faila ʻole.
+Inoa piha: {0}
+Ka manawa hana: {0}
+Ka manawa komo hope loa: {0}
+Ka manawa kākau hope loa: {0}
+ʻAno: {0}
+Papa Kuhikuhi makua: {0}
+Ma hea e loaʻa ai: {0}
+Ka nui o ka faile: {0}
+Hoʻohuli i ka hiʻona o kahi faile
+ʻAʻole loaʻa ka faila.
+kahi <attribut> i kekahi o kēia mau mea:
+He faila maʻamau ka faile
+ʻO kēia faila he waihona heluhelu wale nō
+He faila hūnā ka faila
+He waihona ka waihona. Hoʻohana ʻia no nā kākoʻo papaʻa.
+Hewa ʻole ke ʻano "{0}".
+Ua hoʻohui maikaʻi ʻia ke ʻano
+Ua kāpae maikaʻi ʻia ke ʻano.
+ʻAʻole hiki ke hoʻohui i kaila
+ʻAʻole hiki ke wehe i ka hiʻona
+Hoʻololi i kahi huaʻōlelo a huaʻōlelo paha me kekahi i kekahi laina
+Ua ʻoi aku ka kiʻekiʻe o ka ʻulaʻula. ʻO {0} ia.
+Ua ʻoi aku ka kiʻekiʻe o ke kala ʻōmaʻomaʻo. ʻO {0} ia.
+Ua ʻoi aku ka kiʻekiʻe o ka ʻuli polū. ʻO {0} ia.
+Hoʻā i nā kala maoli
+Hoʻoulu i ke kākoʻo kala maoli no ColorMix.
+Hoʻoulu i ke kākoʻo kala maoli no Disco.
+Hoʻoulu i ke kākoʻo kala maoli no GlitterColor.
+Hoʻoulu i ke kākoʻo kala maoli no nā Laina.
+Ua holo ʻole i ka wehe ʻia {0}.
+Ua ālai ʻia ʻo {0}.
+ʻAʻole hiki iā {0} ke hui pū me nā debug mamao i kēia manawa.
+ʻAʻole i ālai ʻia {0}.
+Nā pōʻaiapuni pōʻaiapuni
+E pōʻaiapuni ʻo Disco i nā kala ke hiki. Inā ʻole, koho i nā waihoʻoluʻu kaulele.
+E hoʻokomo i nā ala faila i nā mea hoʻopili. Kaomi iā ENTER ma kahi ala hakahaka e hōʻoia ai.
+Wehe i kahi leka i hoʻopunipuni ʻia
+Kākau i ka ʻōlelo huna no ka ID nui {0}
+Hoʻouna i kahi leka i hoʻopunipuni ʻia i kahi leka
+Nonoi iā ʻoe e hoʻopihapiha i nā kahua i makemake ʻia e hoʻouna i kahi leka i hoʻopunipuni ʻia i kahi leka
+Ke hoʻoiho nei mai {0} ...
+Hōʻike i ka pae holomua i ka hoʻoiho ʻana a i ka hoʻouka ʻana paha mai ke "kiʻi" a i ʻole ke "kau" kauoha
+Inā he ʻoiaʻiʻo, hana ia "loaʻa" a i ʻole "kau" e hōʻike i ka pā holomua i ka hoʻoiho ʻana a i ka hoʻouka ʻana paha.
+Hoʻouka i kahi faila i kahi pūnaewele i kuhikuhi ʻia
+Pākuʻi i kahi helu wahi
+Ke hoʻouka nei iā {0} iā {1} ...
+Ua pau ka hoʻouka ʻana.
+E ʻoluʻolu e hoʻohana iā "ftp" inā ʻoe e hoʻouka i nā faila i ka kikowaena FTP.
+ʻAʻohe i hoʻouka ʻia e hoʻāʻo {0}: {1}
+{0} MB o {1} MB i hoʻouka ʻia.
+Kākau i ehia mau manawa i ke kauoha "kau" e hoʻāʻo hou i ka hoʻouka ʻana. Pono helu.
+ʻAʻole hakahaka ka helu wahi.
+Ua kūleʻa i ka ping {0}: {1}
+Ua kūleʻa ʻo Ping i {0} ms.
+ʻAʻole paha e ʻoi aku ka helu laina i ʻōlelo ʻia ma mua o ka helu laina faila hope.
+Nā manaʻo e like me: {0}
+Mahana: {0}
+Ka wikiwiki o ka makani: {0}
+ʻAoʻao makani: {0}
+Kumumua: {2} | Bootable: {3} | Pālua pālua: {4}
+Hoʻoulu i ke kākoʻo kala 255 no Dissolve.
+Hoʻoulu i ke kākoʻo kala maoli no Dissolve.
+Kaomi i nā kī a hoʻi i hope.
+ʻAʻole hiki ke hana i nā waihona leka uila {0}: {1}
+Hana i kahi papa kuhikuhi i ka papa kuhikuhi hana o kēia manawa
+Wehe i kahi papa kuhikuhi mai ka papa kuhikuhi e hana nei
+ʻAʻole i loaʻa ka waihona leka uila.
+ʻAʻole hiki ke kāpae i ka waihona leka uila {0}: {1}
+{0}, Hana ʻia ma {1} {2}, Hoʻololi ʻia i {3} {4}
+Hōʻoia i ka maʻemaʻe o ka faila
+Hana maikaʻi ʻole ʻia ʻo Hashes.
+ʻAʻole kūlike ʻo Hashes.
+Pākuʻi ʻo Hashes.
+Kapa inoa hou i kahi waihona
+Kuhi kēia ʻāpana i nā hoʻonohonoho kernel āpau, ka hapanui no ka mālama ʻana i ka kernel.
+Hoʻololi kēia ʻāpana i ka lawena ʻimi lako paʻa.
+Hōʻike kēia ʻāpana i nā hoʻonohonoho ʻeʻe. E haʻalele i kāu moʻokāki no ka loli ʻana o nā loli.
+Kuhi kēia ʻāpana i nā hoʻonohonoho pūpū.
+Kuhi kēia ʻāpana i nā hoʻonohonoho pūnaewele, e like me ka FTP shell, nā hoʻonohonoho kauoha e pili ana i ka pūnaewele, a me nā hoʻonohonoho debug mamao.
+Kuhi kēia ʻāpana i nā screensaver āpau a me kā lākou hoʻonohonoho hoʻonohonoho i loaʻa.
+Aia nā pae hoʻonohonoho i kūpono ʻole i kā lākou ʻāpana kūpono.
+Hōʻaia nā mods i ka hāʻawi ʻana i nā faile mod
+Wehe i ka pūpū hōʻike
+Hiki i ka mode debug
+Paipai no nā paio
+* Kaomi i nā kī no ka hoʻomaka ʻana i ka kernel a i ʻole ESC e haʻalele.
+ʻAʻole i hoʻomaka e hoʻomaka iā "{0}": {1}
+Hōʻike i ka nānā leka uila
+Ke helu nei i nā leka uila, hōʻike i ka nānā mua ʻana o ke kino
+ʻImi paʻa paʻa paʻa pūnaewele. Ke hōʻike nei i ka ʻike ...
+Kaha: {0} GB
+Nā waihoʻoluʻu pilikino ...
+Kākau i kahi kala e like me ka mea i hōʻike ʻia ma lalo:
+Kala komo
+Waihoʻoluʻu laikini
+ʻO ke kala hemahema kernel hoʻomau
+ʻO ke kala hemahema kernel hoʻomau ʻole
+Waihoʻoluʻu inoa hoʻokipa
+Waihoʻoluʻu inoa o ka mea hoʻohana
+Waihoʻoluʻu kāʻei
+Waihoʻoluʻu kūlike ʻole
+Waihoʻoluʻu papa inoa kauoha
+ʻO ke kala wehewehe kauoha
+Waihona pae
+Kala kala
+Nānā maikaʻi paha kēia mau koho kala?
+Pane {0} e hoʻi. Inā ʻole, ʻo kekahi pane he ʻae.
+Kāhua Paipai FTP
+Kāhua Paipai Leka
+Kaila Kipaku SFTP
+Hoʻoulu i ke kākoʻo kala 255 no BouncingBlock.
+Hoʻoulu i ke kākoʻo kala maoli no BouncingBlock.
+Ke hoʻāʻo nei e kiʻi i ke ala kūpono ʻole.
+Holoi i ka faila kikokiko
+Hele i ka hoʻoponopono huaʻōlelo
+Nīnau i kahi huapalapala i ka laina kikoʻī a i ʻole nā lālani āpau
+ʻAʻole helu helu kuhi ʻia {0} he helu kūpono.
+Ua pio ka nānā ʻana i nā mea hou no ka mea ke holo nei ʻoe i kahi mana hoʻomohala.
+Huli a hoʻopau paha i ka hiʻohiʻona autosave hoʻoponopono hoʻoponopono huaʻōlelo.
+Inā hiki i ka autosave, e mālama ʻia ka faile kikokikona no kēlā me kēia "n" kekona.
+Hiki iā autosave hoʻoponopono hoʻoponopono huaʻōlelo
+Kuhi manawa autosave hoʻoponopono hoʻoponopono
+Mālama i ka faile
+E hoʻopaʻa i ke kamaʻilio i ka log debug
+Kākau i nā kamaʻilio debug mamao i ka log debug.
+Hoʻolālā ma Milliseconds
+Ehia mau milliseconds e kali ai ma mua o ka hana ʻana i kahi kākau aʻe?
+E ʻae iā ʻoe e hoʻohana i kahi kikowaena SSH FTP
+ʻAʻohe kōkua no ke kauoha "{0}".

@@ -705,6 +705,24 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Nā kauoha i loaʻa: {0}
+        '''Kākau kauoha:
+        '''Ua hoʻopau ʻia ka ʻoki kauoha.
+        '''E hoʻokaʻawale i nā paio puʻupuʻu me nā koma me ka ʻole o nā hakahaka, no ka laʻana, &apos;motd,gpuprobe&apos;
+        '''E hoʻokaʻawale i nā kauoha ma ka &apos;cmdinject&apos; me nā kolona me nā hakahaka, no ka laʻana, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''E hoʻomaopopo ʻaʻole uhi ka hoʻopaʻapaʻa &apos;debug&apos; i ka kernel.
+        '''bargs: ʻaʻole i loaʻa ka paio i noi ʻia {0}.
+        '''bargs: hewa hewa ʻole i hoʻopaʻapaʻa ʻia:
+        '''Nā manaʻo hoʻopaʻapaʻa i loaʻa: {0}
+        '''Nā hoʻopaʻapaʻa ( [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property hwi() As String
+            Get
+                Return ResourceManager.GetString("hwi", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to upalabdh aadesh: {0}
         '''kamaand likhen: 
         '''kamaand injekshan radd kar diya gaya hai.
