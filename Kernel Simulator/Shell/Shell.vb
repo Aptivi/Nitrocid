@@ -352,7 +352,14 @@ Public Module Shell
                                 CommandProcess.Start()
                                 CommandProcess.BeginOutputReadLine()
                                 CommandProcess.BeginErrorReadLine()
-                                CommandProcess.WaitForExit()
+                                While Not CommandProcess.HasExited Or Not CancelRequested
+                                    If CommandProcess.HasExited Then
+                                        Exit While
+                                    ElseIf CancelRequested Then
+                                        CommandProcess.Kill()
+                                        Exit While
+                                    End If
+                                End While
                             Catch ex As Exception
                                 Wdbg("E", "Failed to start process: {0}", ex.Message)
                                 W(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Err, strcommand, ex.Message)
