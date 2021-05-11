@@ -376,6 +376,8 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="Resources\Themes\BrandingBlue.json" />
+    <None Include="Resources\Themes\BrandingPurple.json" />
     <None Include="Resources\Data\ConsoleColorsData.json" />
     <None Include="Resources\Themes\AyuDark.json" />
     <None Include="Resources\Themes\AyuLight.json" />

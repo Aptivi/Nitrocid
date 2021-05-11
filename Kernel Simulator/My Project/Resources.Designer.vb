@@ -346,6 +346,54 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;InputColor&quot;: &quot;128;0;119&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;128;0;119&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;247;224;23&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;255;0;70&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;128;0;119&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;128;0;119&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;4;0;89&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;255;0;238&quot;,
+        '''  &quot;CmdListColor&quot;: &quot;255;0;238&quot;,
+        '''  &quot;CmdDefColor&quot;: &quot;128;0;119&quot;,
+        '''  &quot;StageColor&quot;: &quot;128;0;119&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;255;0;70&quot;,
+        '''  &quot;WarningColor&quot;: &quot;247;224;23&quot;,
+        '''  &quot;OptionColor&quot;: &quot;255;0;238&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property BrandingBlue() As String
+            Get
+                Return ResourceManager.GetString("BrandingBlue", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;InputColor&quot;: &quot;0;128;119&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;0;128;119&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;247;224;23&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;255;70;0&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;0;128;119&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;0;128;119&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;94;0;63&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;0;255;238&quot;,
+        '''  &quot;CmdListColor&quot;: &quot;0;255;238&quot;,
+        '''  &quot;CmdDefColor&quot;: &quot;0;128;119&quot;,
+        '''  &quot;StageColor&quot;: &quot;0;128;119&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;255;70;0&quot;,
+        '''  &quot;WarningColor&quot;: &quot;247;224;23&quot;,
+        '''  &quot;OptionColor&quot;: &quot;0;255;238&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property BrandingPurple() As String
+            Get
+                Return ResourceManager.GetString("BrandingPurple", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Kěyòng mìnglìng: {0}
         '''Xiě mìnglìng: 
         '''Mìnglìng zhùrù yǐ bèi qǔxiāo.
@@ -396,9 +444,9 @@ Namespace My.Resources
                 Return ResourceManager.GetString("chi_T", resourceCulture)
             End Get
         End Property
-
+        
         '''<summary>
-        '''  Looks up a localized string similar to [{&quot;colorId&quot;:0,&quot;hexString&quot;:&quot;#000000&quot;,&quot;rgb&quot;:{&quot;r&quot;:0,&quot;g&quot;:0,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:0,&quot;s&quot;:0,&quot;l&quot;:0},&quot;name&quot;:&quot;Black&quot;},{&quot;colorId&quot;:1,&quot;hexString&quot;:&quot;#800000&quot;,&quot;rgb&quot;:{&quot;r&quot;:128,&quot;g&quot;:0,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:0,&quot;s&quot;:100,&quot;l&quot;:25},&quot;name&quot;:&quot;Maroon&quot;},{&quot;colorId&quot;:2,&quot;hexString&quot;:&quot;#008000&quot;,&quot;rgb&quot;:{&quot;r&quot;:0,&quot;g&quot;:128,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:120,&quot;s&quot;:100,&quot;l&quot;:25},&quot;name&quot;:&quot;Green&quot;},{&quot;colorId&quot;:3,&quot;hexString&quot;:&quot;#808000&quot;,&quot;rgb&quot;:{&quot;r&quot;:128,&quot;g&quot;:128,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:60,&quot;s&quot;:100,&quot;l&quot;:25},&quot;name&quot;:&quot;Olive&quot;},{&quot;colorId&quot;:4,&quot;hexString&quot;:&quot;#000080&quot;....
+        '''  Looks up a localized string similar to [{&quot;colorId&quot;:0,&quot;hexString&quot;:&quot;#000000&quot;,&quot;rgb&quot;:{&quot;r&quot;:0,&quot;g&quot;:0,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:0,&quot;s&quot;:0,&quot;l&quot;:0},&quot;name&quot;:&quot;Black&quot;},{&quot;colorId&quot;:1,&quot;hexString&quot;:&quot;#800000&quot;,&quot;rgb&quot;:{&quot;r&quot;:128,&quot;g&quot;:0,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:0,&quot;s&quot;:100,&quot;l&quot;:25},&quot;name&quot;:&quot;Maroon&quot;},{&quot;colorId&quot;:2,&quot;hexString&quot;:&quot;#008000&quot;,&quot;rgb&quot;:{&quot;r&quot;:0,&quot;g&quot;:128,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:120,&quot;s&quot;:100,&quot;l&quot;:25},&quot;name&quot;:&quot;Green&quot;},{&quot;colorId&quot;:3,&quot;hexString&quot;:&quot;#808000&quot;,&quot;rgb&quot;:{&quot;r&quot;:128,&quot;g&quot;:128,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:60,&quot;s&quot;:100,&quot;l&quot;:25},&quot;name&quot;:&quot;Olive&quot;},{&quot;colorId&quot;:4,&quot;hexString&quot;:&quot;#000080&quot;,&q....
         '''</summary>
         Public ReadOnly Property ConsoleColorsData() As String
             Get

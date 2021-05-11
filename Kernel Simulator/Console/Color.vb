@@ -157,6 +157,8 @@ Public Module ColorTools
                                                                         {"AyuDark", New ThemeInfo("AyuDark")},
                                                                         {"AyuLight", New ThemeInfo("AyuLight")},
                                                                         {"AyuMirage", New ThemeInfo("AyuMirage")},
+                                                                        {"BrandingBlue", New ThemeInfo("BrandingBlue")},
+                                                                        {"BrandingPurple", New ThemeInfo("BrandingPurple")},
                                                                         {"TrafficLight", New ThemeInfo("TrafficLight")},
                                                                         {"Windows95", New ThemeInfo("Windows95")},
                                                                         {"GTASA", New ThemeInfo("GTASA")},
