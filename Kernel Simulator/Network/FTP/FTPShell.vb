@@ -146,10 +146,9 @@ Public Module FTPShell
                     EventManager.RaiseFTPPostExecuteCommand(strcmd)
                 End If
 
-                'When pressing CTRL+C on shell after command execution, it can generate another prompt without making newline, so fix this.
+                'This is to fix race condition between FTP shell initialization and starting the event handler thread
                 If IsNothing(strcmd) Then
-                    Console.WriteLine()
-                    Thread.Sleep(30) 'This is to fix race condition between FTP shell initialization and starting the event handler thread
+                    Thread.Sleep(30)
                 End If
             Catch ex As Exception
                 WStkTrc(ex)

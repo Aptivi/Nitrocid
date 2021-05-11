@@ -82,7 +82,6 @@ Module TestShell
                         W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Err, FullCmd.Split(" ")(0))
                     End If
                 Else
-                    Console.WriteLine()
                     Thread.Sleep(30) 'This is to fix race condition between test shell initialization and starting the event handler thread
                 End If
             Catch ex As Exception

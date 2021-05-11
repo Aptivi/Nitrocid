@@ -138,10 +138,9 @@ Public Module SFTPShell
                     EventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd)
                 End If
 
-                'When pressing CTRL+C on shell after command execution, it can generate another prompt without making newline, so fix this.
+                'This is to fix race condition between SFTP shell initialization and starting the event handler thread
                 If IsNothing(SFTPStrCmd) Then
-                    Console.WriteLine()
-                    Thread.Sleep(30) 'This is to fix race condition between SFTP shell initialization and starting the event handler thread
+                    Thread.Sleep(30)
                 End If
             Catch ex As Exception
                 WStkTrc(ex)

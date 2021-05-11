@@ -115,7 +115,6 @@ Module MailShell
                 End If
                 EventManager.RaiseIMAPPostExecuteCommand(cmd + " " + args)
             Else
-                Console.WriteLine()
                 Thread.Sleep(30) 'This is to fix race condition between mail shell initialization and starting the event handler thread
             End If
         End While

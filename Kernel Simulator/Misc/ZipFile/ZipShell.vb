@@ -85,11 +85,9 @@ Module ZipShell
                     Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), ZipShell_Commands.Count)
                 End If
             End If
-
-            'When pressing CTRL+C on shell after command execution, it can generate another prompt without making newline, so fix this.
+            'This is to fix race condition between shell initialization and starting the event handler thread
             If IsNothing(strcommand) Then
-                Console.WriteLine()
-                Thread.Sleep(30) 'This is to fix race condition between shell initialization and starting the event handler thread
+                Thread.Sleep(30)
             End If
         End While
 
