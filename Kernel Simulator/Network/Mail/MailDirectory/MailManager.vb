@@ -68,8 +68,8 @@ Public Module MailManager
                     If ShowPreview Then
                         Dim MsgPreview As String = Msg.GetTextBody(Text.TextFormat.Text).Truncate(200)
                         If ColoredShell Then
-                            EntryBuilder.AppendLine($"{GetEsc()}[38;5;{CInt(ListValueColor)}m{MsgPreview}")
-                            EntryBuilder.AppendLine($"{GetEsc()}[38;5;{CInt(neutralTextColor)}m")
+                            EntryBuilder.AppendLine($"{New Color(ListValueColor).VTSequenceForeground}{MsgPreview}")
+                            EntryBuilder.AppendLine($"{New Color(NeutralTextColor).VTSequenceForeground}")
                         Else
                             EntryBuilder.AppendLine(MsgPreview)
                         End If
