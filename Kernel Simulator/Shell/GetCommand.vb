@@ -824,10 +824,31 @@ Public Module GetCommand
                 Case "search"
 
                     If RequiredArgumentsProvided Then
-                        Dim Matches As List(Of String) = SearchFileForString(eqargs(1), eqargs(0))
-                        For Each Match As String In Matches
-                            W(Match, True, ColTypes.Neutral)
-                        Next
+                        Try
+                            Dim Matches As List(Of String) = SearchFileForStringRegexp(eqargs(1), New RegularExpressions.Regex(eqargs(0), RegularExpressions.RegexOptions.IgnoreCase))
+                            For Each Match As String In Matches
+                                W(Match, True, ColTypes.Neutral)
+                            Next
+                        Catch ex As Exception
+                            Wdbg("E", "Error trying to search {0} for {1}", eqargs(0), eqargs(1))
+                            WStkTrc(ex)
+                            W(DoTranslation("Searching {0} for {1} failed.") + " {2}", True, ColTypes.Err, eqargs(0), eqargs(1), ex.Message)
+                        End Try
+                    End If
+
+                Case "searchword"
+
+                    If RequiredArgumentsProvided Then
+                        Try
+                            Dim Matches As List(Of String) = SearchFileForString(eqargs(1), eqargs(0))
+                            For Each Match As String In Matches
+                                W(Match, True, ColTypes.Neutral)
+                            Next
+                        Catch ex As Exception
+                            Wdbg("E", "Error trying to search {0} for {1}", eqargs(0), eqargs(1))
+                            WStkTrc(ex)
+                            W(DoTranslation("Searching {0} for {1} failed.") + " {2}", True, ColTypes.Err, eqargs(0), eqargs(1), ex.Message)
+                        End Try
                     End If
 
                 Case "savecurrdir"

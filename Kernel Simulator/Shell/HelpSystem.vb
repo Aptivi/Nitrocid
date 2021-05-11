@@ -83,7 +83,8 @@ Public Module HelpSystem
                                                               {"rmuser", DoTranslation("Removes a user from the list")},
                                                               {"savecurrdir", DoTranslation("Saves the current directory to kernel configuration file")},
                                                               {"savescreen", DoTranslation("Saves your screen from burn outs")},
-                                                              {"search", DoTranslation("Searches for specified string in the provided file")},
+                                                              {"search", DoTranslation("Searches for specified string in the provided file using regular expressions")},
+                                                              {"searchword", DoTranslation("Searches for specified string in the provided file")},
                                                               {"setsaver", DoTranslation("Sets up kernel screensavers")},
                                                               {"setthemes", DoTranslation("Sets up kernel themes")},
                                                               {"settings", DoTranslation("Changes kernel configuration")},
@@ -391,6 +392,10 @@ Public Module HelpSystem
               "       " + DoTranslation("Friends of") + " savescreen: lockscreen", True, ColTypes.Neutral)
 
         ElseIf command = "search" Then
+
+            W(DoTranslation("Usage:") + " search <Regexp> <File>", True, ColTypes.Neutral)
+
+        ElseIf command = "searchword" Then
 
             W(DoTranslation("Usage:") + " search <StringEnclosedInDoubleQuotes> <File>", True, ColTypes.Neutral)
 

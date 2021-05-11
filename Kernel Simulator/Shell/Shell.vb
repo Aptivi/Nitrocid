@@ -106,6 +106,7 @@ Public Module Shell
                                                                     {"savecurrdir", New CommandInfo("savecurrdir", ShellCommandType.Shell, False, 0, True, False, False, False)},
                                                                     {"savescreen", New CommandInfo("savescreen", ShellCommandType.Shell, False, 0, False, False, False, False)},
                                                                     {"search", New CommandInfo("search", ShellCommandType.Shell, True, 2, False, False, False, False)},
+                                                                    {"searchword", New CommandInfo("searchword", ShellCommandType.Shell, True, 2, False, False, False, False)},
                                                                     {"setsaver", New CommandInfo("setsaver", ShellCommandType.Shell, True, 1, True, False, False, False)},
                                                                     {"setthemes", New CommandInfo("setthemes", ShellCommandType.Shell, True, 1, False, False, False, False)},
                                                                     {"settings", New CommandInfo("settings", ShellCommandType.Shell, False, 0, True, False, False, False)},
