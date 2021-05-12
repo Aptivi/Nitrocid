@@ -443,7 +443,7 @@ Public Module HelpSystem
 
         ElseIf command = "speedpress" Then
 
-            W(DoTranslation("Usage:") + " speedpress <e/m/h>: " + DoTranslation("See if you can spell words correctly on time"), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " speedpress <e/m/h>: " + DoTranslation("See if you can press a key on time"), True, ColTypes.Neutral)
 
         ElseIf command = "spellbee" Then
 
