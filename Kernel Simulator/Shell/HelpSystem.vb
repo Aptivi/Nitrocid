@@ -53,6 +53,7 @@ Public Module HelpSystem
                                                               {"fileinfo", DoTranslation("Provides information about a file")},
                                                               {"firedevents", DoTranslation("Lists all fired events")},
                                                               {"ftp", DoTranslation("Use an FTP shell to interact with servers")},
+                                                              {"gettimeinfo", DoTranslation("Gets the date and time information")},
                                                               {"get", DoTranslation("Downloads a file to current working directory")},
                                                               {"help", DoTranslation("Help page")},
                                                               {"hwinfo", DoTranslation("Prints hardware information")},
@@ -267,6 +268,10 @@ Public Module HelpSystem
         ElseIf command = "ftp" Then
 
             W(DoTranslation("Usage:") + " ftp <server>: " + DoTranslation("Initializes the FTP shell."), True, ColTypes.Neutral)
+
+        ElseIf command = "gettimeinfo" Then
+
+            W(DoTranslation("Usage:") + " gettimeinfo <date>", True, ColTypes.Neutral)
 
         ElseIf command = "get" Then
 

@@ -461,6 +461,33 @@ Public Module GetCommand
                         W(DoTranslation("Unknown FTP shell error:") + " {0}", True, ColTypes.Err, ex.Message)
                     End Try
 
+                Case "gettimeinfo"
+
+                    If RequiredArgumentsProvided Then
+                        Dim DateTimeInfo As Date
+                        Dim UnixEpoch As New Date(1970, 1, 1, 0, 0, 0, 0)
+                        If Date.TryParse(eqargs(0), DateTimeInfo) Then
+                            W("-- " + DoTranslation("Information for") + " {0} --" + vbNewLine, True, ColTypes.Neutral, Render(DateTimeInfo))
+                            W(DoTranslation("Milliseconds:") + " {0}", True, ColTypes.Neutral, DateTimeInfo.Millisecond)
+                            W(DoTranslation("Seconds:") + " {0}", True, ColTypes.Neutral, DateTimeInfo.Second)
+                            W(DoTranslation("Minutes:") + " {0}", True, ColTypes.Neutral, DateTimeInfo.Minute)
+                            W(DoTranslation("Hours:") + " {0}", True, ColTypes.Neutral, DateTimeInfo.Hour)
+                            W(DoTranslation("Days:") + " {0}", True, ColTypes.Neutral, DateTimeInfo.Day)
+                            W(DoTranslation("Months:") + " {0}", True, ColTypes.Neutral, DateTimeInfo.Month)
+                            W(DoTranslation("Year:") + " {0}" + vbNewLine, True, ColTypes.Neutral, DateTimeInfo.Year)
+                            W(DoTranslation("Date:") + " {0}", True, ColTypes.Neutral, RenderDate(DateTimeInfo))
+                            W(DoTranslation("Time:") + " {0}" + vbNewLine, True, ColTypes.Neutral, RenderTime(DateTimeInfo))
+                            W(DoTranslation("Day of Year:") + " {0}", True, ColTypes.Neutral, DateTimeInfo.DayOfYear)
+                            W(DoTranslation("Day of Week:") + " {0}" + vbNewLine, True, ColTypes.Neutral, DateTimeInfo.DayOfWeek.ToString)
+                            W(DoTranslation("Binary:") + " {0}", True, ColTypes.Neutral, DateTimeInfo.ToBinary)
+                            W(DoTranslation("Local Time:") + " {0}", True, ColTypes.Neutral, Render(DateTimeInfo.ToLocalTime))
+                            W(DoTranslation("Universal Time:") + " {0}", True, ColTypes.Neutral, Render(DateTimeInfo.ToUniversalTime))
+                            W(DoTranslation("Unix Time:") + " {0}", True, ColTypes.Neutral, (DateTimeInfo - UnixEpoch).TotalSeconds)
+                        Else
+                            W(DoTranslation("Failed to parse date information for") + " {0}. " + DoTranslation("Ensure that the format is correct."), True, ColTypes.Err, eqargs(0))
+                        End If
+                    End If
+
                 Case "get"
 #Disable Warning BC42104
                     If RequiredArgumentsProvided Then

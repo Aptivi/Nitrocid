@@ -75,6 +75,7 @@ Public Module Shell
                                                                     {"fileinfo", New CommandInfo("fileinfo", ShellCommandType.Shell, True, 1, False, False, False, False)},
                                                                     {"firedevents", New CommandInfo("firedevents", ShellCommandType.Shell, False, 0, False, False, False, False)},
                                                                     {"ftp", New CommandInfo("ftp", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"gettimeinfo", New CommandInfo("gettimeinfo", ShellCommandType.Shell, True, 1, False, False, False, False)},
                                                                     {"get", New CommandInfo("get", ShellCommandType.Shell, True, 1, False, False, False, False)},
                                                                     {"help", New CommandInfo("help", ShellCommandType.Shell, False, 0, False, False, False, False)},
                                                                     {"hwinfo", New CommandInfo("hwinfo", ShellCommandType.Shell, False, 0, False, True, False, False)},
