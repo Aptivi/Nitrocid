@@ -116,6 +116,7 @@ Public Module Shell
                                                                     {"showtd", New CommandInfo("showtd", ShellCommandType.Shell, False, 0, False, False, False, False)},
                                                                     {"showtdzone", New CommandInfo("showtdzone", ShellCommandType.Shell, True, 1, False, True, False, False)},
                                                                     {"shutdown", New CommandInfo("shutdown", ShellCommandType.Shell, False, 0, False, False, False, False)},
+                                                                    {"speedpress", New CommandInfo("speedpress", ShellCommandType.Shell, True, 1, False, False, False, False)},
                                                                     {"spellbee", New CommandInfo("spellbee", ShellCommandType.Shell, False, 0, False, False, False, False)},
                                                                     {"sshell", New CommandInfo("sshell", ShellCommandType.Shell, True, 2, False, False, False, False)},
                                                                     {"sshcmd", New CommandInfo("sshcmd", ShellCommandType.Shell, True, 3, False, False, False, False)},

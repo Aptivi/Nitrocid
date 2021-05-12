@@ -969,6 +969,16 @@ Public Module GetCommand
                         PowerManage("shutdown")
                     End If
 
+                Case "speedpress"
+
+                    If RequiredArgumentsProvided Then
+                        If eqargs(0) = "e" Or eqargs(0) = "m" Or eqargs(0) = "h" Then
+                            InitializeSpeedPress(eqargs(0))
+                        Else
+                            W(DoTranslation("Invalid difficulty") + " {0}", True, ColTypes.Err, eqargs(0))
+                        End If
+                    End If
+
                 Case "spellbee"
 
                     InitializeWords()

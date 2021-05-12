@@ -94,6 +94,7 @@ Public Module HelpSystem
                                                               {"showtd", DoTranslation("Shows date and time")},
                                                               {"showtdzone", DoTranslation("Shows date and time in zones")},
                                                               {"shutdown", DoTranslation("The kernel will be shut down")},
+                                                              {"speedpress", DoTranslation("See if you can press a key on time")},
                                                               {"spellbee", DoTranslation("See if you can spell words correctly on time")},
                                                               {"sshell", DoTranslation("Connects to an SSH server.")},
                                                               {"sshcmd", DoTranslation("Connects to an SSH server to execute a command.")},
@@ -439,6 +440,10 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:") + " shutdown [ip] [port]: " + DoTranslation("Shuts down your simulated computer.") + vbNewLine +
               "       " + DoTranslation("Friends of") + " shutdown: reboot, logout", True, ColTypes.Neutral)
+
+        ElseIf command = "speedpress" Then
+
+            W(DoTranslation("Usage:") + " speedpress <e/m/h>: " + DoTranslation("See if you can spell words correctly on time"), True, ColTypes.Neutral)
 
         ElseIf command = "spellbee" Then
 

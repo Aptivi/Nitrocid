@@ -44,4 +44,23 @@ Public Module Input
         Return Final
     End Function
 
+    ''' <summary>
+    ''' Reads the next key from the console input stream with the timeout
+    ''' </summary>
+    ''' <param name="Intercept"></param>
+    ''' <param name="Timeout"></param>
+    ''' <returns></returns>
+    Public Function ReadKeyTimeout(ByVal Intercept As Boolean, ByVal Timeout As TimeSpan) As ConsoleKeyInfo
+        Dim CurrentMilliseconds As Double
+        While Not Console.KeyAvailable
+            If Not CurrentMilliseconds = Timeout.TotalMilliseconds Then
+                CurrentMilliseconds += 1
+            Else
+                Throw New Exceptions.ConsoleReadTimeoutException(DoTranslation("User didn't provide any input in a timely fashion."))
+            End If
+            Threading.Thread.Sleep(1)
+        End While
+        Return Console.ReadKey(Intercept)
+    End Function
+
 End Module
