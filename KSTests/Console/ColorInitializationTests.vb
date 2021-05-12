@@ -33,12 +33,20 @@ Imports KS
         Assert.IsNotNull(ColorInstance.Type)
         Assert.IsNotNull(ColorInstance.VTSequenceBackground)
         Assert.IsNotNull(ColorInstance.VTSequenceForeground)
+        Assert.IsNotNull(ColorInstance.R)
+        Assert.IsNotNull(ColorInstance.G)
+        Assert.IsNotNull(ColorInstance.B)
+        Assert.IsNotNull(ColorInstance.IsDark)
 
         'Check for property correctness
         Assert.AreEqual("13", ColorInstance.PlainSequence)
         Assert.AreEqual(ColorType._255Color, ColorInstance.Type)
         Assert.AreEqual(ChrW(&H1B) + "[48;5;13m", ColorInstance.VTSequenceBackground)
         Assert.AreEqual(ChrW(&H1B) + "[38;5;13m", ColorInstance.VTSequenceForeground)
+        Assert.AreEqual(255, ColorInstance.R)
+        Assert.AreEqual(0, ColorInstance.G)
+        Assert.AreEqual(255, ColorInstance.B)
+        Assert.AreEqual(True, ColorInstance.IsDark)
     End Sub
 
     ''' <summary>
@@ -54,12 +62,20 @@ Imports KS
         Assert.IsNotNull(ColorInstance.Type)
         Assert.IsNotNull(ColorInstance.VTSequenceBackground)
         Assert.IsNotNull(ColorInstance.VTSequenceForeground)
+        Assert.IsNotNull(ColorInstance.R)
+        Assert.IsNotNull(ColorInstance.G)
+        Assert.IsNotNull(ColorInstance.B)
+        Assert.IsNotNull(ColorInstance.IsDark)
 
         'Check for property correctness
         Assert.AreEqual("94;0;63", ColorInstance.PlainSequence)
         Assert.AreEqual(ColorType.TrueColor, ColorInstance.Type)
         Assert.AreEqual(ChrW(&H1B) + "[48;2;94;0;63m", ColorInstance.VTSequenceBackground)
         Assert.AreEqual(ChrW(&H1B) + "[38;2;94;0;63m", ColorInstance.VTSequenceForeground)
+        Assert.AreEqual(94, ColorInstance.R)
+        Assert.AreEqual(0, ColorInstance.G)
+        Assert.AreEqual(63, ColorInstance.B)
+        Assert.AreEqual(True, ColorInstance.IsDark)
     End Sub
 
 End Class
