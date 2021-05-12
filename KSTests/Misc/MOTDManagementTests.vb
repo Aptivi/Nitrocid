@@ -27,7 +27,7 @@ Imports KS
     <TestMethod()> <TestCategory("Management")> Public Sub TestReadMOTDFromFile()
         InitPaths()
         ReadMOTDFromFile(MessageType.MOTD)
-        Dim MOTDLine As String = File.ReadAllText(paths("Home") + "/MOTD.txt")
+        Dim MOTDLine As String = File.ReadAllText(paths("MOTD"))
         Assert.IsTrue(MOTDLine = MOTDMessage, "Reading MOTD failed. Got:" + vbNewLine + MOTDLine)
     End Sub
 
@@ -37,7 +37,7 @@ Imports KS
     <TestMethod()> <TestCategory("Management")> Public Sub TestReadMALFromFile()
         InitPaths()
         ReadMOTDFromFile(MessageType.MAL)
-        Dim MALLine As String = File.ReadAllText(paths("Home") + "/MAL.txt")
+        Dim MALLine As String = File.ReadAllText(paths("MAL"))
         Assert.IsTrue(MALLine = MAL, "Reading MAL failed. Got:" + vbNewLine + MALLine)
     End Sub
 

@@ -299,7 +299,7 @@ Public Module GetCommand
                             SetMOTD(strArgs, MessageType.MOTD)
                         End If
                     Else
-                        InitializeTextShell(paths("Home") + "/MOTD.txt")
+                        InitializeTextShell(paths("MOTD"))
                         W(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
                         ReadMOTDFromFile(MessageType.MOTD)
                     End If
@@ -314,7 +314,7 @@ Public Module GetCommand
                             SetMOTD(strArgs, MessageType.MAL)
                         End If
                     Else
-                        InitializeTextShell(paths("Home") + "/MAL.txt")
+                        InitializeTextShell(paths("MAL"))
                         W(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
                         ReadMOTDFromFile(MessageType.MAL)
                     End If

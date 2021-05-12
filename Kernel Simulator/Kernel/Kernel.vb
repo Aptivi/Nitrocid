@@ -71,8 +71,8 @@ Public Module Kernel
                 End If
 
                 'If the two files are not found, create two MOTD files with current config.
-                If Not File.Exists(paths("Home") + "/MOTD.txt") Then SetMOTD(DoTranslation("Welcome to Kernel!"), MessageType.MOTD)
-                If Not File.Exists(paths("Home") + "/MAL.txt") Then SetMOTD(DoTranslation("Logged in successfully as <user>"), MessageType.MAL)
+                If Not File.Exists(paths("MOTD")) Then SetMOTD(DoTranslation("Welcome to Kernel!"), MessageType.MOTD)
+                If Not File.Exists(paths("MAL")) Then SetMOTD(DoTranslation("Logged in successfully as <user>"), MessageType.MAL)
 
                 'Initialize stage counter
                 W(vbNewLine + DoTranslation("- Stage 1: System initialization"), True, ColTypes.Stage)

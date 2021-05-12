@@ -38,8 +38,8 @@ Public Module MOTDParse
     ''' <param name="MType">Message type</param>
     Public Sub SetMOTD(ByVal MOTD As String, ByVal MType As MessageType)
         Try
-            MOTDFilePath = paths("Home") + "/MOTD.txt"
-            MALFilePath = paths("Home") + "/MAL.txt"
+            MOTDFilePath = paths("MOTD")
+            MALFilePath = paths("MAL")
             Wdbg("I", "Paths: {0}, {1}", MOTDFilePath, MALFilePath)
             Wdbg("I", "Message type: {0}", MType)
             If MType = 1 Then
@@ -73,8 +73,8 @@ Public Module MOTDParse
     ''' <param name="MType">Message type</param>
     Public Sub ReadMOTDFromFile(ByVal MType As MessageType)
         Try
-            MOTDFilePath = paths("Home") + "/MOTD.txt"
-            MALFilePath = paths("Home") + "/MAL.txt"
+            MOTDFilePath = paths("MOTD")
+            MALFilePath = paths("MAL")
             Wdbg("I", "Paths: {0}, {1}", MOTDFilePath, MALFilePath)
             Wdbg("I", "Message type: {0}", MType)
             Dim MOTDBuilder As New Text.StringBuilder

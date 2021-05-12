@@ -457,6 +457,8 @@ Public Module KernelTools
             paths.AddIfNotFound("FTPSpeedDial", Environ("HOME") + "/FTP_SpeedDial.json")
             paths.AddIfNotFound("SFTPSpeedDial", Environ("HOME") + "/SFTP_SpeedDial.json")
             paths.AddIfNotFound("DebugDevNames", Environ("HOME") + "/DebugDeviceNames.json")
+            paths.AddIfNotFound("MOTD", Environ("HOME") + "/MOTD.txt")
+            paths.AddIfNotFound("MAL", Environ("HOME") + "/MAL.txt")
             paths.AddIfNotFound("Home", Environ("HOME"))
             paths.AddIfNotFound("Temp", "/tmp")
         Else
@@ -468,6 +470,8 @@ Public Module KernelTools
             paths.AddIfNotFound("FTPSpeedDial", Environ("USERPROFILE").Replace("\", "/") + "/FTP_SpeedDial.json")
             paths.AddIfNotFound("SFTPSpeedDial", Environ("USERPROFILE").Replace("\", "/") + "/SFTP_SpeedDial.json")
             paths.AddIfNotFound("DebugDevNames", Environ("USERPROFILE").Replace("\", "/") + "/DebugDeviceNames.json")
+            paths.AddIfNotFound("MOTD", Environ("USERPROFILE").Replace("\", "/") + "/MOTD.txt")
+            paths.AddIfNotFound("MAL", Environ("USERPROFILE").Replace("\", "/") + "/MAL.txt")
             paths.AddIfNotFound("Home", Environ("USERPROFILE").Replace("\", "/"))
             paths.AddIfNotFound("Temp", Environ("TEMP").Replace("\", "/"))
         End If
@@ -614,8 +618,8 @@ Public Module KernelTools
         File.Delete(paths("FTPSpeedDial"))
         File.Delete(paths("SFTPSpeedDial"))
         File.Delete(paths("DebugDevNames"))
-        File.Delete(paths("Home") + "/MOTD.txt")
-        File.Delete(paths("Home") + "/MAL.txt")
+        File.Delete(paths("MOTD"))
+        File.Delete(paths("MAL"))
         Directory.Delete(paths("Mods"))
         Environment.Exit(0)
     End Sub
