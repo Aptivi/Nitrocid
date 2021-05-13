@@ -44,6 +44,7 @@ Module ColorMixDisplay
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Mix Colors screensaver stopped.")
+                SaverAutoReset.Set()
                 Exit Do
             Else
                 If ColorMixTrueColor Then

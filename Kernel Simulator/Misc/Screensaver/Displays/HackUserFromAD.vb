@@ -40,6 +40,7 @@ IFCANCEL:
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Hacking Simulator for Active Domain users screensaver stopped.")
+                SaverAutoReset.Set()
                 Exit Do
             Else
                 Console.BackgroundColor = ConsoleColor.Black

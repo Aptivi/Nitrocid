@@ -47,6 +47,7 @@ Module DiscoDisplay
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Disco screensaver stopped.")
+                SaverAutoReset.Set()
                 Exit Do
             Else
                 If DiscoTrueColor Then

@@ -51,6 +51,7 @@ Module BouncingBlockDisplay
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Bouncing Text screensaver stopped.")
+                SaverAutoReset.Set()
                 Exit Do
             Else
                 If BouncingBlockTrueColor Then

@@ -42,6 +42,7 @@ Module LinesDisplay
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Lines screensaver stopped.")
+                SaverAutoReset.Set()
                 Exit Do
             Else
                 If LinesTrueColor Then

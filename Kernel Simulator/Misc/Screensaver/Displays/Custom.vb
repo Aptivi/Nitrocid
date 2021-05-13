@@ -49,6 +49,7 @@ Public Module CustomDisplay
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Custom screensaver stopped.")
+                SaverAutoReset.Set()
                 Exit Do
             Else
                 finalSaver.ScrnSaver()

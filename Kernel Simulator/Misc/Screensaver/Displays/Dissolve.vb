@@ -45,6 +45,7 @@ Module DissolveDisplay
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Dissolve screensaver stopped.")
+                SaverAutoReset.Set()
                 Exit Do
             Else
                 If ColorFilled Then Thread.Sleep(1)

@@ -44,6 +44,7 @@ Module GlitterColorDisplay
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Glitter Color screensaver stopped.")
+                SaverAutoReset.Set()
                 Exit Do
             Else
                 Thread.Sleep(GlitterColorDelay)

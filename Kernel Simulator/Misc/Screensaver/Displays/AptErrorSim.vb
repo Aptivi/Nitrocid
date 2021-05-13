@@ -41,6 +41,7 @@ IFCANCEL:
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. apt Error Simulator screensaver stopped.")
+                SaverAutoReset.Set()
                 Exit Do
             Else
                 Console.Clear()

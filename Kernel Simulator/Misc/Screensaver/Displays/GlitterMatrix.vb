@@ -44,6 +44,7 @@ Module GlitterMatrixDisplay
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Glitter Matrix screensaver stopped.")
+                SaverAutoReset.Set()
                 Exit Do
             Else
                 Thread.Sleep(GlitterMatrixDelay)

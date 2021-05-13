@@ -36,6 +36,7 @@ Public Module Screensaver
     Public finalSaver As ICustomSaver
     Public colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())        '15 Console Colors
     Public colors255() As ConsoleColors = CType([Enum].GetValues(GetType(ConsoleColors)), ConsoleColors())  '255 Console Colors
+    Friend SaverAutoReset As New AutoResetEvent(False)
     Private execCustomSaver As CompilerResults
     Private DoneFlag As Boolean = False
 
@@ -121,7 +122,6 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 ColorMix.CancelAsync()
-                Thread.Sleep(150)
             ElseIf saver = "matrix" Then
                 Matrix.WorkerSupportsCancellation = True
                 Matrix.RunWorkerAsync()
@@ -129,7 +129,6 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Matrix.CancelAsync()
-                Thread.Sleep(150)
             ElseIf saver = "glitterMatrix" Then
                 GlitterMatrix.WorkerSupportsCancellation = True
                 GlitterMatrix.RunWorkerAsync()
@@ -137,7 +136,6 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 GlitterMatrix.CancelAsync()
-                Thread.Sleep(150)
             ElseIf saver = "disco" Then
                 Disco.WorkerSupportsCancellation = True
                 Disco.RunWorkerAsync()
@@ -145,7 +143,6 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Disco.CancelAsync()
-                Thread.Sleep(150)
             ElseIf saver = "lines" Then
                 Lines.WorkerSupportsCancellation = True
                 Lines.RunWorkerAsync()
@@ -153,7 +150,6 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Lines.CancelAsync()
-                Thread.Sleep(150)
             ElseIf saver = "glitterColor" Then
                 GlitterColor.WorkerSupportsCancellation = True
                 GlitterColor.RunWorkerAsync()
@@ -161,7 +157,6 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 GlitterColor.CancelAsync()
-                Thread.Sleep(150)
             ElseIf saver = "aptErrorSim" Then
                 AptErrorSim.WorkerSupportsCancellation = True
                 AptErrorSim.RunWorkerAsync()
@@ -169,7 +164,6 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 AptErrorSim.CancelAsync()
-                Thread.Sleep(150)
             ElseIf saver = "hackUserFromAD" Then
                 HackUserFromAD.WorkerSupportsCancellation = True
                 HackUserFromAD.RunWorkerAsync()
@@ -177,7 +171,6 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 HackUserFromAD.CancelAsync()
-                Thread.Sleep(150)
             ElseIf saver = "bouncingText" Then
                 BouncingText.WorkerSupportsCancellation = True
                 BouncingText.RunWorkerAsync()
@@ -185,7 +178,6 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 BouncingText.CancelAsync()
-                Thread.Sleep(150)
             ElseIf saver = "dissolve" Then
                 Dissolve.WorkerSupportsCancellation = True
                 Dissolve.RunWorkerAsync()
@@ -193,7 +185,6 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Dissolve.CancelAsync()
-                Thread.Sleep(150)
             ElseIf saver = "bouncingBlock" Then
                 BouncingBlock.WorkerSupportsCancellation = True
                 BouncingBlock.RunWorkerAsync()
@@ -201,7 +192,6 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 BouncingBlock.CancelAsync()
-                Thread.Sleep(150)
             ElseIf saver = "progressClock" Then
                 ProgressClock.WorkerSupportsCancellation = True
                 ProgressClock.RunWorkerAsync()
@@ -209,7 +199,6 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 ProgressClock.CancelAsync()
-                Thread.Sleep(150)
             ElseIf saver = "lighter" Then
                 Lighter.WorkerSupportsCancellation = True
                 Lighter.RunWorkerAsync()
@@ -217,7 +206,6 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Lighter.CancelAsync()
-                Thread.Sleep(150)
             ElseIf ScrnSvrdb.ContainsKey(saver) Then
                 'Only one custom screensaver can be used.
                 finalSaver = CSvrdb(saver)
@@ -227,11 +215,13 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Custom.CancelAsync()
-                Thread.Sleep(150) 'Nothing to do with operation inside screensaver
             Else
                 W(DoTranslation("The requested screensaver {0} is not found."), True, ColTypes.Err, saver)
                 Wdbg("I", "Screensaver {0} not found in the dictionary.", saver)
             End If
+
+            'Wait until screensaver stops
+            SaverAutoReset.WaitOne()
             EventManager.RaisePostShowScreensaver(saver)
             InSaver = False
         Catch ex As InvalidOperationException

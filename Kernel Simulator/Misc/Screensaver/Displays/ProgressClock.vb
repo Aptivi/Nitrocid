@@ -44,6 +44,7 @@ Module ProgressClockDisplay
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Progress Clock screensaver stopped.")
+                SaverAutoReset.Set()
                 Exit Do
             Else
                 If ProgressClockTrueColor Then

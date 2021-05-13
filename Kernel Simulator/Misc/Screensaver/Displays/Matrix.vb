@@ -43,6 +43,7 @@ Module MatrixDisplay
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Matrix screensaver stopped.")
+                SaverAutoReset.Set()
                 Exit Do
             Else
                 Thread.Sleep(MatrixDelay)

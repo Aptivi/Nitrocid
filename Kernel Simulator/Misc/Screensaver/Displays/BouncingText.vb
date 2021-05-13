@@ -47,6 +47,7 @@ Module BouncingTextDisplay
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Bouncing Text screensaver stopped.")
+                SaverAutoReset.Set()
                 Exit Do
             Else
                 WriteWhere(BouncingTextWrite, ColumnFirstLetter, RowText, True, ColTypes.Neutral)

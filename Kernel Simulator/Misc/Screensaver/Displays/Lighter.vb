@@ -44,6 +44,7 @@ Module LighterDisplay
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Lighter screensaver stopped.")
+                SaverAutoReset.Set()
                 Exit Do
             Else
                 Thread.Sleep(LighterDelay)
