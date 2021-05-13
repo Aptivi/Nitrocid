@@ -47,16 +47,7 @@ Module SFTPFilesystem
                     'Check to see if the file that we're dealing with is a symbolic link
                     If DirListSFTP.IsSymbolicLink Then
                         EntryBuilder.Append(" >> ")
-
-                        ' This is cumbersome. AGAIN. GetCanonicalPath was supposed to be public, but it's in a private class called SftpSession. It should be in SftpClient, which is public.
-                        Dim SFTPType As Type = ClientSFTP.GetType
-                        Dim SFTPSessionField As FieldInfo = SFTPType.GetField("_sftpSession", BindingFlags.Instance Or BindingFlags.NonPublic)
-                        Dim SFTPSession As Object = SFTPSessionField.GetValue(ClientSFTP)
-                        Dim SFTPSessionType As Type = SFTPSession.GetType
-                        Dim SFTPSessionCanon As MethodInfo = SFTPSessionType.GetMethod("GetCanonicalPath")
-                        Dim CanonicalPath As String = SFTPSessionCanon.Invoke(SFTPSession, New String() {DirListSFTP.FullName})
-                        Wdbg("I", "Canonical path: {0}", CanonicalPath)
-                        EntryBuilder.Append(CanonicalPath)
+                        EntryBuilder.Append(SFTPGetCanonicalPath(DirListSFTP.FullName))
                     End If
 
                     If DirListSFTP.IsRegularFile Then
@@ -163,6 +154,27 @@ Module SFTPFilesystem
             Throw New ArgumentNullException(Directory, DoTranslation("Enter a local directory. "".."" to go back."))
         End If
         Return False
+    End Function
+
+    ''' <summary>
+    ''' Gets the absolute path for the given path
+    ''' </summary>
+    ''' <param name="Path">The remote path</param>
+    ''' <returns>Absolute path for a remote path</returns>
+    Public Function SFTPGetCanonicalPath(ByVal Path As String) As String
+        If SFTPConnected Then
+            'GetCanonicalPath was supposed to be public, but it's in a private class called SftpSession. It should be in SftpClient, which is public.
+            Dim SFTPType As Type = ClientSFTP.GetType
+            Dim SFTPSessionField As FieldInfo = SFTPType.GetField("_sftpSession", BindingFlags.Instance Or BindingFlags.NonPublic)
+            Dim SFTPSession As Object = SFTPSessionField.GetValue(ClientSFTP)
+            Dim SFTPSessionType As Type = SFTPSession.GetType
+            Dim SFTPSessionCanon As MethodInfo = SFTPSessionType.GetMethod("GetCanonicalPath")
+            Dim CanonicalPath As String = SFTPSessionCanon.Invoke(SFTPSession, New String() {Path})
+            Wdbg("I", "Canonical path: {0}", CanonicalPath)
+            Return CanonicalPath
+        Else
+            Throw New InvalidOperationException(DoTranslation("You must connect to server before performing filesystem operations."))
+        End If
     End Function
 
 End Module
