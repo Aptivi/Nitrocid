@@ -17,8 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.ComponentModel
-Imports System.Threading
-Imports KS.ConsoleExtensions
 
 Module GlitterColorDisplay
 
@@ -39,8 +37,8 @@ Module GlitterColorDisplay
                 e.Cancel = True
                 Console.Clear()
                 Dim esc As Char = GetEsc()
-                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                Console.Write(New Color(InputColor).VTSequenceForeground)
+                Console.Write(New Color(BackgroundColor).VTSequenceBackground)
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Glitter Color screensaver stopped.")

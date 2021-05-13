@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.ComponentModel
-Imports System.Threading
 
 Module HackUserFromADDisplay
 
@@ -35,8 +34,8 @@ IFCANCEL:
                 e.Cancel = True
                 Console.Clear()
                 Dim esc As Char = GetEsc()
-                Console.Write(esc + "[38;5;" + CStr(InputColor) + "m")
-                Console.Write(esc + "[48;5;" + CStr(BackgroundColor) + "m")
+                Console.Write(New Color(InputColor).VTSequenceForeground)
+                Console.Write(New Color(BackgroundColor).VTSequenceBackground)
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Hacking Simulator for Active Domain users screensaver stopped.")
