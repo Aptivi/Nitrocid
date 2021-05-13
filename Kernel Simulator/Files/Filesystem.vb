@@ -31,6 +31,9 @@ Public Module Filesystem
     ''' <returns>True if successful, False if unsuccessful.</returns>
     ''' <exception cref="DirectoryNotFoundException"></exception>
     Public Function SetCurrDir(ByVal dir As String) As Boolean
+#If NTFSCorruptionFix Then
+        ThrowOnInvalidPath(dir)
+#End If
         dir = NeutralizePath(dir)
         Wdbg("I", "Directory exists? {0}", Directory.Exists(dir))
         If Directory.Exists(dir) Then
@@ -52,11 +55,7 @@ Public Module Filesystem
     ''' <param name="filename">Full path to file</param>
     Public Sub ReadContents(ByVal filename As String)
 #If NTFSCorruptionFix Then
-        'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
-        If IsOnWindows() And (filename.Contains("$i30") Or filename.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
-            Wdbg("F", "Trying to access invalid path. Path was {0}", filename)
-            Throw New ArgumentException(DoTranslation("Trying to access invalid path."))
-        End If
+        ThrowOnInvalidPath(filename)
 #End If
 
         'Read the contents
@@ -77,11 +76,7 @@ Public Module Filesystem
         Wdbg("I", "Folder {0} will be listed...", folder)
 
 #If NTFSCorruptionFix Then
-        'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
-        If IsOnWindows() And (folder.Contains("$i30") Or folder.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
-            Wdbg("F", "Trying to access invalid path. Path was {0}", folder)
-            Throw New ArgumentException(DoTranslation("Trying to access invalid path."))
-        End If
+        ThrowOnInvalidPath(folder)
 #End If
 
         'List files and folders
@@ -155,10 +150,7 @@ Public Module Filesystem
     ''' <returns>Absolute path</returns>
     Public Function NeutralizePath(ByVal Path As String, Optional ByVal Strict As Boolean = False) As String
 #If NTFSCorruptionFix Then
-        'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
-        If IsOnWindows() And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
-            Throw New ArgumentException(DoTranslation("Trying to access invalid path."))
-        End If
+        ThrowOnInvalidPath(Path)
 #End If
 
         'Replace backslashes with slashes if any.
@@ -196,11 +188,8 @@ Public Module Filesystem
     ''' <returns>Absolute path</returns>
     Public Function NeutralizePath(ByVal Path As String, ByVal Source As String, Optional ByVal Strict As Boolean = False)
 #If NTFSCorruptionFix Then
-        'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
-        If IsOnWindows() And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect") Or
-                              Source.Contains("$i30") Or Source.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
-            Throw New ArgumentException(DoTranslation("Trying to access invalid path."))
-        End If
+        ThrowOnInvalidPath(Path)
+        ThrowOnInvalidPath(Source)
 #End If
 
         'Replace backslashes with slashes if any.
@@ -240,6 +229,10 @@ Public Module Filesystem
     ''' <exception cref="IOException"></exception>
     Public Function CopyFileOrDir(ByVal Source As String, ByVal Destination As String) As Boolean
         Try
+#If NTFSCorruptionFix Then
+            ThrowOnInvalidPath(Source)
+            ThrowOnInvalidPath(Destination)
+#End If
             Source = NeutralizePath(Source)
             Wdbg("I", "Source directory: {0}", Source)
             Destination = NeutralizePath(Destination)
@@ -308,6 +301,9 @@ Public Module Filesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="IOException"></exception>
     Public Function MakeDirectory(ByVal NewDirectory As String) As Boolean
+#If NTFSCorruptionFix Then
+        ThrowOnInvalidPath(NewDirectory)
+#End If
         NewDirectory = NeutralizePath(NewDirectory)
         Wdbg("I", "New directory: {0} ({1})", NewDirectory, Directory.Exists(NewDirectory))
         If Not Directory.Exists(NewDirectory) Then
@@ -329,6 +325,9 @@ Public Module Filesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="IOException"></exception>
     Public Function MakeFile(ByVal NewFile As String) As Boolean
+#If NTFSCorruptionFix Then
+        ThrowOnInvalidPath(NewFile)
+#End If
         NewFile = NeutralizePath(NewFile)
         Wdbg("I", "File path is {0} and .Exists is {0}", NewFile, File.Exists(NewFile))
         If Not File.Exists(NewFile) Then
@@ -360,6 +359,10 @@ Public Module Filesystem
     ''' <exception cref="IOException"></exception>
     Public Function MoveFileOrDir(ByVal Source As String, ByVal Destination As String) As Boolean
         Try
+#If NTFSCorruptionFix Then
+            ThrowOnInvalidPath(Source)
+            ThrowOnInvalidPath(Destination)
+#End If
             Source = NeutralizePath(Source)
             Wdbg("I", "Source directory: {0}", Source)
             Destination = NeutralizePath(Destination)
@@ -406,6 +409,9 @@ Public Module Filesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function RemoveDirectory(ByVal Target As String) As Boolean
         Try
+#If NTFSCorruptionFix Then
+            ThrowOnInvalidPath(Target)
+#End If
             Dim Dir As String = NeutralizePath(Target)
             Directory.Delete(Dir, True)
 
@@ -426,6 +432,9 @@ Public Module Filesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function RemoveFile(ByVal Target As String) As Boolean
         Try
+#If NTFSCorruptionFix Then
+            ThrowOnInvalidPath(Target)
+#End If
             Dim Dir As String = NeutralizePath(Target)
             File.Delete(Dir)
 
@@ -448,6 +457,9 @@ Public Module Filesystem
     ''' <exception cref="IOException"></exception>
     Public Function SearchFileForString(ByVal FilePath As String, ByVal StringLookup As String) As List(Of String)
         Try
+#If NTFSCorruptionFix Then
+            ThrowOnInvalidPath(FilePath)
+#End If
             FilePath = NeutralizePath(FilePath)
             Dim Matches As New List(Of String)
             Dim Filebyte() As String = File.ReadAllLines(FilePath)
@@ -477,6 +489,9 @@ Public Module Filesystem
     ''' <exception cref="IOException"></exception>
     Public Function SearchFileForStringRegexp(ByVal FilePath As String, ByVal StringLookup As Regex) As List(Of String)
         Try
+#If NTFSCorruptionFix Then
+            ThrowOnInvalidPath(FilePath)
+#End If
             FilePath = NeutralizePath(FilePath)
             Dim Matches As New List(Of String)
             Dim Filebyte() As String = File.ReadAllLines(FilePath)
@@ -516,6 +531,9 @@ Public Module Filesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function AddAttributeToFile(ByVal FilePath As String, ByVal Attributes As FileAttributes) As Boolean
         Try
+#If NTFSCorruptionFix Then
+            ThrowOnInvalidPath(FilePath)
+#End If
             FilePath = NeutralizePath(FilePath)
             Wdbg("I", "Setting file attribute to {0}...", Attributes)
             File.SetAttributes(FilePath, Attributes)
@@ -538,6 +556,9 @@ Public Module Filesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function RemoveAttributeFromFile(ByVal FilePath As String, ByVal Attributes As FileAttributes) As Boolean
         Try
+#If NTFSCorruptionFix Then
+            ThrowOnInvalidPath(FilePath)
+#End If
             FilePath = NeutralizePath(FilePath)
             Dim Attrib As FileAttributes = File.GetAttributes(FilePath)
             Wdbg("I", "File attributes: {0}", Attrib)
@@ -594,11 +615,7 @@ Public Module Filesystem
     ''' <returns>Array of lines</returns>
     Public Function ReadAllLinesNoBlock(ByVal path As String) As String()
 #If NTFSCorruptionFix Then
-        'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
-        If IsOnWindows() And (path.Contains("$i30") Or path.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
-            Wdbg("F", "Trying to access invalid path. Path was {0}", path)
-            Throw New ArgumentException(DoTranslation("Trying to access invalid path."))
-        End If
+        ThrowOnInvalidPath(path)
 #End If
 
         'Read all the lines, bypassing the restrictions.
@@ -623,6 +640,9 @@ Public Module Filesystem
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function AddToPathLookup(ByVal Path As String) As Boolean
+#If NTFSCorruptionFix Then
+        ThrowOnInvalidPath(Path)
+#End If
         Dim LookupPaths As List(Of String) = GetPathList()
         Path = NeutralizePath(Path)
         LookupPaths.Add(Path)
@@ -635,6 +655,10 @@ Public Module Filesystem
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function AddToPathLookup(ByVal Path As String, ByVal RootPath As String) As Boolean
+#If NTFSCorruptionFix Then
+        ThrowOnInvalidPath(Path)
+        ThrowOnInvalidPath(RootPath)
+#End If
         Dim LookupPaths As List(Of String) = GetPathList()
         Path = NeutralizePath(Path, RootPath)
         LookupPaths.Add(Path)
@@ -647,6 +671,9 @@ Public Module Filesystem
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function RemoveFromPathLookup(ByVal Path As String) As Boolean
+#If NTFSCorruptionFix Then
+        ThrowOnInvalidPath(Path)
+#End If
         Dim LookupPaths As List(Of String) = GetPathList()
         Dim Returned As Boolean
         Path = NeutralizePath(Path)
@@ -660,6 +687,10 @@ Public Module Filesystem
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function RemoveFromPathLookup(ByVal Path As String, ByVal RootPath As String) As Boolean
+#If NTFSCorruptionFix Then
+        ThrowOnInvalidPath(Path)
+        ThrowOnInvalidPath(RootPath)
+#End If
         Dim LookupPaths As List(Of String) = GetPathList()
         Dim Returned As Boolean
         Path = NeutralizePath(Path, RootPath)
@@ -675,6 +706,9 @@ Public Module Filesystem
     ''' <param name="Result">The neutralized path</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function FileExistsInPath(ByVal FilePath As String, ByRef Result As String) As Boolean
+#If NTFSCorruptionFix Then
+        ThrowOnInvalidPath(FilePath)
+#End If
         Dim LookupPaths As List(Of String) = GetPathList()
         Dim ResultingPath As String
         For Each LookupPath As String In LookupPaths
@@ -706,5 +740,18 @@ Public Module Filesystem
         End Try
         Return False
     End Function
+
+#If NTFSCorruptionFix Then
+    ''' <summary>
+    ''' Mitigates Windows 10 NTFS corruption or Windows 10 BSOD bug
+    ''' </summary>
+    ''' <param name="Path">Target path</param>
+    Public Sub ThrowOnInvalidPath(ByVal Path As String)
+        If IsOnWindows() And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
+            Wdbg("F", "Trying to access invalid path. Path was {0}", Path)
+            Throw New ArgumentException(DoTranslation("Trying to access invalid path."))
+        End If
+    End Sub
+#End If
 
 End Module
