@@ -22,7 +22,7 @@ Public Module Notifications
 
     'Variables
     Public NotifRecents As New List(Of Notification)
-    Public NotifThread As New Thread(AddressOf NotifListen)
+    Public NotifThread As New Thread(AddressOf NotifListen) With {.Name = "Notification Thread"}
 
     ''' <summary>
     ''' Notification priority

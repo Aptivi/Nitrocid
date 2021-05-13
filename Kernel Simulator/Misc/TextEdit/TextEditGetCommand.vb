@@ -24,7 +24,7 @@ Imports Microsoft.VisualBasic.FileIO
 Public Module TextEditGetCommand
 
     'Variables
-    Public TextEdit_CommandThread As New Thread(AddressOf TextEdit_ParseCommand)
+    Public TextEdit_CommandThread As New Thread(AddressOf TextEdit_ParseCommand) With {.Name = "Text Edit Command Thread"}
 
     Sub TextEdit_ParseCommand(ByVal CommandText As String)
         Try

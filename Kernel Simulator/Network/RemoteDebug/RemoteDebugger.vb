@@ -27,7 +27,7 @@ Module RemoteDebugger
     Public DebugTCP As TcpListener
     Public DebugDevices As New Dictionary(Of Socket, String)
     Public dbgConns As New Dictionary(Of StreamWriter, String)
-    Public RDebugThread As New Thread(AddressOf StartRDebugger) With {.IsBackground = True}
+    Public RDebugThread As New Thread(AddressOf StartRDebugger) With {.IsBackground = True, .Name = "Remote Debug Thread"}
     Public RDebugBlocked As New List(Of String) 'Blocked IP addresses
     Public RDebugStopping As Boolean
 
@@ -41,7 +41,7 @@ Module RemoteDebugger
                 RDebugThread.Start()
             Else
                 RDebugStopping = True
-                RDebugThread = New Thread(AddressOf StartRDebugger) With {.IsBackground = True}
+                RDebugThread = New Thread(AddressOf StartRDebugger) With {.IsBackground = True, .Name = "Remote Debug Thread"}
             End If
         End If
     End Sub
@@ -60,7 +60,7 @@ Module RemoteDebugger
         End Try
 
         'Start the listening thread
-        Dim RStream As New Thread(AddressOf ReadAndBroadcastAsync)
+        Dim RStream As New Thread(AddressOf ReadAndBroadcastAsync) With {.Name = "Remote Debug Listener Thread"}
         RStream.Start()
         W(DoTranslation("Debug listening on all addresses using port {0}."), True, ColTypes.Neutral, DebugPort)
 

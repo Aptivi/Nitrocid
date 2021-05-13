@@ -24,7 +24,7 @@ Public Module SFTPGetCommand
 
     'SFTP Client and thread
     Public ClientSFTP As SftpClient
-    Public SFTPStartCommandThread As New Thread(AddressOf ExecuteCommand)
+    Public SFTPStartCommandThread As New Thread(AddressOf ExecuteCommand) With {.Name = "SFTP Command Thread"}
 
     ''' <summary>
     ''' Parses and executes the SFTP command

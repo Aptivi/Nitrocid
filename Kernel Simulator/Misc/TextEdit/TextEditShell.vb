@@ -41,7 +41,7 @@ Public Module TextEditShell
     Public TextEdit_FileStream As FileStream
     Public TextEdit_FileLines As List(Of String)
     Friend TextEdit_FileLinesOrig As List(Of String)
-    Public TextEdit_AutoSave As New Thread(AddressOf TextEdit_HandleAutoSaveTextFile)
+    Public TextEdit_AutoSave As New Thread(AddressOf TextEdit_HandleAutoSaveTextFile) With {.Name = "Text Edit Autosave Thread"}
     Public TextEdit_AutoSaveFlag As Boolean = True
     Public TextEdit_AutoSaveInterval As Integer = 60
 
@@ -78,7 +78,7 @@ Public Module TextEditShell
                 Wdbg("I", "Checking command {0} for existence.", WrittenCommand.Split(" ")(0))
                 If TextEdit_Commands.ContainsKey(WrittenCommand.Split(" ")(0)) Then
                     Wdbg("I", "Command {0} found in the list of {1} commands.", WrittenCommand.Split(" ")(0), TextEdit_Commands.Count)
-                    TextEdit_CommandThread = New Thread(AddressOf TextEdit_ParseCommand)
+                    TextEdit_CommandThread = New Thread(AddressOf TextEdit_ParseCommand) With {.Name = "Text Edit Command Thread"}
                     EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
                     Wdbg("I", "Made new thread. Starting with argument {0}...", WrittenCommand)
                     TextEdit_CommandThread.Start(WrittenCommand)
@@ -105,7 +105,7 @@ Public Module TextEditShell
         'Close file
         TextEdit_CloseTextFile()
         TextEdit_AutoSave.Abort()
-        TextEdit_AutoSave = New Thread(AddressOf TextEdit_HandleAutoSaveTextFile)
+        TextEdit_AutoSave = New Thread(AddressOf TextEdit_HandleAutoSaveTextFile) With {.Name = "Text Edit Autosave Thread"}
 
         'Remove handler for text editor shell
         AddHandler Console.CancelKeyPress, AddressOf CancelCommand

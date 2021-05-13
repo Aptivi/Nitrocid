@@ -167,7 +167,7 @@ Public Module FTPShell
         Wdbg("I", $"Is the command found? {FTPCommands.ContainsKey(words(0))}")
         If FTPCommands.ContainsKey(words(0)) Then
             Wdbg("I", "Command found.")
-            FTPStartCommandThread = New Thread(AddressOf FTPGetCommand.ExecuteCommand)
+            FTPStartCommandThread = New Thread(AddressOf FTPGetCommand.ExecuteCommand) With {.Name = "FTP Command Thread"}
             FTPStartCommandThread.Start(strcmd)
             FTPStartCommandThread.Join()
         ElseIf FTPModCommands.Contains(words(0)) Then
@@ -190,7 +190,7 @@ Public Module FTPShell
         Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, FTPShellAliases(FirstWordCmd))
         Wdbg("I", "Actual command: {0}", actualCmd)
-        FTPStartCommandThread = New Thread(AddressOf FTPGetCommand.ExecuteCommand)
+        FTPStartCommandThread = New Thread(AddressOf FTPGetCommand.ExecuteCommand) With {.Name = "FTP Command Thread"}
         FTPStartCommandThread.Start(actualCmd)
         FTPStartCommandThread.Join()
     End Sub

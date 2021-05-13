@@ -69,7 +69,7 @@ Module ZipShell
                 Wdbg("I", "Checking command {0} for existence.", WrittenCommand.Split(" ")(0))
                 If ZipShell_Commands.ContainsKey(WrittenCommand.Split(" ")(0)) Then
                     Wdbg("I", "Command {0} found in the list of {1} commands.", WrittenCommand.Split(" ")(0), ZipShell_Commands.Count)
-                    ZipShell_CommandThread = New Thread(AddressOf ZipShell_ParseCommand)
+                    ZipShell_CommandThread = New Thread(AddressOf ZipShell_ParseCommand) With {.Name = "ZIP Shell Command Thread"}
                     EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
                     Wdbg("I", "Made new thread. Starting with argument {0}...", WrittenCommand)
                     ZipShell_CommandThread.Start(WrittenCommand)

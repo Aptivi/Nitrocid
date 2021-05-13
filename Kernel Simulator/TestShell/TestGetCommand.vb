@@ -25,7 +25,7 @@ Imports Microsoft.VisualBasic.FileIO
 
 Module TestGetCommand
 
-    Public TStartCommandThread As New Thread(AddressOf TParseCommand)
+    Public TStartCommandThread As New Thread(AddressOf TParseCommand) With {.Name = "Test Shell Command Thread"}
 
     ''' <summary>
     ''' Parses the specified command and executes it

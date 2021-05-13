@@ -52,10 +52,10 @@ Module MailShell
     ''' <param name="Address">An e-mail address or username. This is used to show address in command input.</param>
     Sub OpenMailShell(Address As String)
         'Send ping to keep the connection alive
-        Dim IMAP_NoOp As New Thread(AddressOf IMAPKeepConnection)
+        Dim IMAP_NoOp As New Thread(AddressOf IMAPKeepConnection) With {.Name = "IMAP Keep Connection"}
         IMAP_NoOp.Start()
         Wdbg("I", "Made new thread about IMAPKeepConnection()")
-        Dim SMTP_NoOp As New Thread(AddressOf SMTPKeepConnection)
+        Dim SMTP_NoOp As New Thread(AddressOf SMTPKeepConnection) With {.Name = "SMTP Keep Connection"}
         SMTP_NoOp.Start()
         Wdbg("I", "Made new thread about SMTPKeepConnection()")
 
@@ -100,7 +100,7 @@ Module MailShell
                 Wdbg("I", "Executing command...")
                 If MailCommands.ContainsKey(cmd) Then
                     Wdbg("I", "Command found.")
-                    MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand)
+                    MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand) With {.Name = "Mail Command Thread"}
                     MailStartCommandThread.Start({cmd, args})
                     MailStartCommandThread.Join()
                 ElseIf MailModCommands.Contains(cmd) Then
@@ -231,7 +231,7 @@ Module MailShell
         Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, MailShellAliases(FirstWordCmd))
         Wdbg("I", "Actual command: {0}", actualCmd)
-        MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand)
+        MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand) With {.Name = "Mail Command Thread"}
         MailStartCommandThread.Start({MailShellAliases(FirstWordCmd), actualCmd.Replace(MailShellAliases(FirstWordCmd), "")})
         MailStartCommandThread.Join()
     End Sub

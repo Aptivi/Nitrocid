@@ -325,7 +325,7 @@ Public Module Shell
                             W(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Err, strcommand)
                         ElseIf (adminList(signedinusrnm) = True And Commands(strcommand).Strict) Or Commands.ContainsKey(strcommand) Then
                             Wdbg("I", "Cmd exec {0} succeeded. Running with {1}", strcommand, cmdArgs)
-                            StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
+                            StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand) With {.Name = "Shell Command Thread"}
                             StartCommandThread.Start(cmdArgs)
                             StartCommandThread.Join()
                         End If
@@ -410,7 +410,7 @@ Public Module Shell
     Sub ExecuteAlias(Base As String, ByVal aliascmd As String)
         Wdbg("I", "Translating alias {0} to {1}...", aliascmd, Aliases(aliascmd))
         Dim actualCmd As String = Base.Replace(aliascmd, Aliases(aliascmd))
-        StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand)
+        StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand) With {.Name = "Shell Command Thread"}
         StartCommandThread.Start(actualCmd)
         StartCommandThread.Join()
     End Sub

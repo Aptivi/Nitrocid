@@ -24,7 +24,7 @@ Imports MimeKit
 
 Module MailGetCommand
 
-    Public MailStartCommandThread As New Thread(AddressOf Mail_ExecuteCommand)
+    Public MailStartCommandThread As New Thread(AddressOf Mail_ExecuteCommand) With {.Name = "Mail Command Thread"}
 
     ''' <summary>
     ''' Parses and executes the specified command with arguments

@@ -27,7 +27,7 @@ Public Module KernelTools
     ' A dictionary for storing paths and files (used for mods, screensavers, etc.)
     Public paths As New Dictionary(Of String, String)
 
-    Friend RPCPowerListener As New Thread(AddressOf PowerManage)
+    Friend RPCPowerListener As New Thread(AddressOf PowerManage) With {.Name = "RPC Power Listener Thread"}
 
     ' ----------------------------------------------- Kernel errors -----------------------------------------------
 
@@ -339,7 +339,7 @@ Public Module KernelTools
         RPCThread.Abort()
         RPCListen?.Close()
         RPCListen = Nothing
-        RPCThread = New Thread(AddressOf RecCommand) With {.IsBackground = True}
+        RPCThread = New Thread(AddressOf RecCommand) With {.IsBackground = True, .Name = "RPC Thread"}
 
         'Disconnect from mail
         IMAP_Client.Disconnect(True)

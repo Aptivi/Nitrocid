@@ -158,7 +158,7 @@ Public Module SFTPShell
         Wdbg("I", $"Is the command found? {SFTPCommands.ContainsKey(words(0))}")
         If SFTPCommands.ContainsKey(words(0)) Then
             Wdbg("I", "Command found.")
-            SFTPStartCommandThread = New Thread(AddressOf SFTPGetCommand.ExecuteCommand)
+            SFTPStartCommandThread = New Thread(AddressOf SFTPGetCommand.ExecuteCommand) With {.Name = "SFTP Command Thread"}
             SFTPStartCommandThread.Start(SFTPStrCmd)
             SFTPStartCommandThread.Join()
         ElseIf SFTPModCommands.Contains(words(0)) Then
@@ -181,7 +181,7 @@ Public Module SFTPShell
         Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, SFTPShellAliases(FirstWordCmd))
         Wdbg("I", "Actual command: {0}", actualCmd)
-        SFTPStartCommandThread = New Thread(AddressOf SFTPGetCommand.ExecuteCommand)
+        SFTPStartCommandThread = New Thread(AddressOf SFTPGetCommand.ExecuteCommand) With {.Name = "SFTP Command Thread"}
         SFTPStartCommandThread.Start(actualCmd)
         SFTPStartCommandThread.Join()
     End Sub

@@ -73,7 +73,7 @@ Module TestShell
                 If Not (FullCmd = Nothing Or FullCmd?.StartsWith(" ") = True) Then
                     Wdbg("I", "Command: {0}", FullCmd)
                     If Test_Commands.ContainsKey(FullCmd.Split(" ")(0)) Then
-                        TStartCommandThread = New Thread(AddressOf TParseCommand)
+                        TStartCommandThread = New Thread(AddressOf TParseCommand) With {.Name = "Test Shell Command Thread"}
                         TStartCommandThread.Start(FullCmd)
                         TStartCommandThread.Join()
                     ElseIf Test_ModCommands.Contains(FullCmd.Split(" ")(0)) Then

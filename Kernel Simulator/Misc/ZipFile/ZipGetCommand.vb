@@ -25,7 +25,7 @@ Imports Microsoft.VisualBasic.FileIO
 Public Module ZipGetCommand
 
     'Variables
-    Public ZipShell_CommandThread As New Thread(AddressOf ZipShell_ParseCommand)
+    Public ZipShell_CommandThread As New Thread(AddressOf ZipShell_ParseCommand) With {.Name = "ZIP Shell Command Thread"}
 
     Sub ZipShell_ParseCommand(ByVal CommandText As String)
         Try

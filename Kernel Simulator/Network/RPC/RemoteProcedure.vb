@@ -23,7 +23,7 @@ Module RemoteProcedure
 
     Public RPCListen As UdpClient
     Public RPCPort As Integer = 12345
-    Public RPCThread As New Thread(AddressOf RecCommand) With {.IsBackground = True}
+    Public RPCThread As New Thread(AddressOf RecCommand) With {.IsBackground = True, .Name = "RPC Thread"}
     Public RPCEnabled As Boolean
     Public RPCStopping As Boolean
 

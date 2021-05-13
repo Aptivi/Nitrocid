@@ -25,7 +25,7 @@ Imports Microsoft.VisualBasic.FileIO
 
 Public Module GetCommand
 
-    Public StartCommandThread As New Thread(AddressOf ExecuteCommand)
+    Public StartCommandThread As New Thread(AddressOf ExecuteCommand) With {.Name = "Shell Command Thread"}
 
     ''' <summary>
     ''' Executes a command
