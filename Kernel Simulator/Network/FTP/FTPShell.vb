@@ -29,7 +29,7 @@ Public Module FTPShell
                                                                        {"cdl", New CommandInfo("cdl", ShellCommandType.FTPShell, True, 1, False, False, False, False)},
                                                                        {"cdr", New CommandInfo("cdr", ShellCommandType.FTPShell, True, 1, False, False, False, False)},
                                                                        {"delete", New CommandInfo("delete", ShellCommandType.FTPShell, True, 1, False, False, False, False)},
-                                                                       {"del", New CommandInfo("del", ShellCommandType.FTPShell, True, 2, False, False, False, False)},
+                                                                       {"del", New CommandInfo("del", ShellCommandType.FTPShell, True, 1, False, False, False, False)},
                                                                        {"disconnect", New CommandInfo("disconnect", ShellCommandType.FTPShell, False, 0, False, False, False, False)},
                                                                        {"download", New CommandInfo("download", ShellCommandType.FTPShell, True, 1, False, False, False, False)},
                                                                        {"exit", New CommandInfo("exit", ShellCommandType.FTPShell, False, 0, False, False, False, False)},
