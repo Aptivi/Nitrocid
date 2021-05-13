@@ -47,6 +47,8 @@ Public Module FTPShell
                                                                        {"copy", New CommandInfo("copy", ShellCommandType.FTPShell, True, 2, False, False, False, False)},
                                                                        {"cp", New CommandInfo("cp", ShellCommandType.FTPShell, True, 2, False, False, False, False)},
                                                                        {"upload", New CommandInfo("upload", ShellCommandType.FTPShell, True, 1, False, False, False, False)},
+                                                                       {"perm", New CommandInfo("perm", ShellCommandType.FTPShell, True, 2, False, False, False, False)},
+                                                                       {"type", New CommandInfo("type", ShellCommandType.FTPShell, True, 1, False, False, False, False)},
                                                                        {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.FTPShell, False, 0, False, False, False, False)}}
     Public connected As Boolean = False
     Private initialized As Boolean = False

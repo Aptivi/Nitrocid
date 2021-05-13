@@ -40,7 +40,9 @@ Public Module FTPHelpSystem
                                                                  {"listlocal (lsl)", DoTranslation("Lists local directory")},
                                                                  {"listremote (lsr)", DoTranslation("Lists remote directory")},
                                                                  {"move (mv)", DoTranslation("Moves file or directory to another file or directory. You can also use that to rename files.")},
+                                                                 {"perm", DoTranslation("Sets file permissions. This is supported only on FTP servers that run Unix.")},
                                                                  {"quickconnect", DoTranslation("Uses information from Speed Dial to connect to any network quickly")},
+                                                                 {"type", DoTranslation("Sets the type for this session")},
                                                                  {"upload (put)", DoTranslation("Uploads local file to remote directory using binary or text")}}
     End Sub
 
@@ -87,6 +89,10 @@ Public Module FTPHelpSystem
             W(DoTranslation("Usage:") + " listremote [dir] or lsr [dir]", True, ColTypes.Neutral)
         ElseIf command = "move" Or command = "mv" Then
             W(DoTranslation("Usage:") + " move <sourcefileordir> <targetfileordir> or ren <sourcefileordir> <targetfileordir>", True, ColTypes.Neutral)
+        ElseIf command = "perm" Then
+            W(DoTranslation("Usage:") + " perm <file> <permnumber>", True, ColTypes.Neutral)
+        ElseIf command = "type" Then
+            W(DoTranslation("Usage:") + " type <a/b>", True, ColTypes.Neutral)
         ElseIf command = "upload" Or command = "put" Then
             W(DoTranslation("Usage:") + " upload <file> or put <file>", True, ColTypes.Neutral)
         ElseIf command = "quickconnect" Then

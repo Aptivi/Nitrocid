@@ -189,6 +189,35 @@ Public Module FTPGetCommand
                 Else
                     W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Err)
                 End If
+            ElseIf words(0) = "perm" Then
+                If RequiredArgumentsProvided Then
+                    If connected Then
+                        If FTPChangePermissions(ArgsQ(0), ArgsQ(1)) Then
+                            W(DoTranslation("Permissions set successfully for file") + " {0}", True, ColTypes.Neutral, ArgsQ(0))
+                        Else
+                            W(DoTranslation("Failed to set permissions of {0} to {1}."), True, ColTypes.Err, ArgsQ(0), ArgsQ(1))
+                        End If
+                    Else
+                        W(DoTranslation("You must connect to server before performing filesystem operations."), True, ColTypes.Err)
+                    End If
+                End If
+            ElseIf words(0) = "type" Then
+                If RequiredArgumentsProvided Then
+                    If ArgsQ(0).ToLower = "a" Then
+                        ClientFTP.DownloadDataType = FtpDataType.ASCII
+                        ClientFTP.ListingDataType = FtpDataType.ASCII
+                        ClientFTP.UploadDataType = FtpDataType.ASCII
+                        W(DoTranslation("Data type set to ASCII!"), True, ColTypes.Neutral)
+                        W(DoTranslation("Beware that most files won't download or upload properly using this mode, so we highly recommend using the Binary mode on most situations."), True, ColTypes.Warning)
+                    ElseIf ArgsQ(0).ToLower = "b" Then
+                        ClientFTP.DownloadDataType = FtpDataType.Binary
+                        ClientFTP.ListingDataType = FtpDataType.Binary
+                        ClientFTP.UploadDataType = FtpDataType.Binary
+                        W(DoTranslation("Data type set to Binary!"), True, ColTypes.Neutral)
+                    Else
+                        W(DoTranslation("Invalid data type."), True, ColTypes.Neutral)
+                    End If
+                End If
             ElseIf words(0) = "upload" Or words(0) = "put" Then
                 If RequiredArgumentsProvided Then
                     W(DoTranslation("Uploading file {0}..."), True, ColTypes.Neutral, ArgsQ(0))

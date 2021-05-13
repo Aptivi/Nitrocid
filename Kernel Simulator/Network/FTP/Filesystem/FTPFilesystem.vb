@@ -237,4 +237,25 @@ Module FTPFilesystem
         Return False
     End Function
 
+    ''' <summary>
+    ''' Changes the permissions of a remote file
+    ''' </summary>
+    ''' <param name="Target">Target file</param>
+    ''' <param name="Chmod">Permissions in CHMOD format. See https://man7.org/linux/man-pages/man2/chmod.2.html chmod(2) for more info.</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function FTPChangePermissions(ByVal Target As String, ByVal Chmod As Integer) As Boolean
+        If connected Then
+            Try
+                ClientFTP.Chmod(Target, Chmod)
+                Return True
+            Catch ex As Exception
+                Wdbg("E", "Error setting permissions ({0}) to file {1}: {2}", Chmod, Target, ex.Message)
+                WStkTrc(ex)
+            End Try
+        Else
+            Throw New InvalidOperationException(DoTranslation("You must connect to server before performing filesystem operations."))
+        End If
+        Return False
+    End Function
+
 End Module
