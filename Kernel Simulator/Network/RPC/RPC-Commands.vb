@@ -47,47 +47,52 @@ Public Module RPC_Commands
     ''' <param name="Request">A request</param>
     ''' <param name="IP">An IP address which the RPC is hosted</param>
     ''' <param name="Port">A port which the RPC is hosted</param>
+    ''' <exception cref="InvalidOperationException"></exception>
     Public Sub SendCommand(ByVal Request As String, ByVal IP As String, ByVal Port As Integer)
-        Dim Cmd As String = Request.Remove(Request.IndexOf("("))
-        Wdbg("I", "Command: {0}", Cmd)
-        Dim Arg As String = Request.Substring(Request.IndexOf("(") + 1)
-        Wdbg("I", "Prototype Arg: {0}", Arg)
-        Arg = Arg.Remove(Arg.Count - 1)
-        Wdbg("I", "Finished Arg: {0}", Arg)
-        Dim Malformed As Boolean
-        If Commands.Contains(Cmd) Then
-            Wdbg("I", "Command found.")
-            Dim ByteMsg() As Byte = {}
-            If Cmd = "<Request:Shutdown>" Then
-                Wdbg("I", "Stream opened for device {0}", Arg)
-                ByteMsg = Text.Encoding.Default.GetBytes("ShutdownConfirm, " + Arg + vbNewLine)
-            ElseIf Cmd = "<Request:Reboot>" Then
-                Wdbg("I", "Stream opened for device {0}", Arg)
-                ByteMsg = Text.Encoding.Default.GetBytes("RebootConfirm, " + Arg + vbNewLine)
-            ElseIf Cmd = "<Request:Lock>" Then
-                Wdbg("I", "Stream opened for device {0}", Arg)
-                ByteMsg = Text.Encoding.Default.GetBytes("LockConfirm, " + Arg + vbNewLine)
-            ElseIf Cmd = "<Request:SaveScr>" Then
-                Wdbg("I", "Stream opened for device {0}", Arg)
-                ByteMsg = Text.Encoding.Default.GetBytes("SaveScrConfirm, " + Arg + vbNewLine)
-            ElseIf Cmd = "<Request:Exec>" Then
-                Wdbg("I", "Stream opened for device {0} to execute ""{1}""", IP, Arg)
-                ByteMsg = Text.Encoding.Default.GetBytes("ExecConfirm, " + Arg + vbNewLine)
-            ElseIf Cmd = "<Request:Acknowledge>" Then
-                Wdbg("I", "Stream opened for device {0}", Arg)
-                ByteMsg = Text.Encoding.Default.GetBytes("AckConfirm, " + Arg + vbNewLine)
-            ElseIf Cmd = "<Request:Ping>" Then
-                Wdbg("I", "Stream opened for device {0}", Arg)
-                ByteMsg = Text.Encoding.Default.GetBytes("PingConfirm, " + Arg + vbNewLine)
-            Else
-                Wdbg("E", "Malformed request. {0}", Cmd)
-                Malformed = True
+        If RPCEnabled Then
+            Dim Cmd As String = Request.Remove(Request.IndexOf("("))
+            Wdbg("I", "Command: {0}", Cmd)
+            Dim Arg As String = Request.Substring(Request.IndexOf("(") + 1)
+            Wdbg("I", "Prototype Arg: {0}", Arg)
+            Arg = Arg.Remove(Arg.Count - 1)
+            Wdbg("I", "Finished Arg: {0}", Arg)
+            Dim Malformed As Boolean
+            If Commands.Contains(Cmd) Then
+                Wdbg("I", "Command found.")
+                Dim ByteMsg() As Byte = {}
+                If Cmd = "<Request:Shutdown>" Then
+                    Wdbg("I", "Stream opened for device {0}", Arg)
+                    ByteMsg = Text.Encoding.Default.GetBytes("ShutdownConfirm, " + Arg + vbNewLine)
+                ElseIf Cmd = "<Request:Reboot>" Then
+                    Wdbg("I", "Stream opened for device {0}", Arg)
+                    ByteMsg = Text.Encoding.Default.GetBytes("RebootConfirm, " + Arg + vbNewLine)
+                ElseIf Cmd = "<Request:Lock>" Then
+                    Wdbg("I", "Stream opened for device {0}", Arg)
+                    ByteMsg = Text.Encoding.Default.GetBytes("LockConfirm, " + Arg + vbNewLine)
+                ElseIf Cmd = "<Request:SaveScr>" Then
+                    Wdbg("I", "Stream opened for device {0}", Arg)
+                    ByteMsg = Text.Encoding.Default.GetBytes("SaveScrConfirm, " + Arg + vbNewLine)
+                ElseIf Cmd = "<Request:Exec>" Then
+                    Wdbg("I", "Stream opened for device {0} to execute ""{1}""", IP, Arg)
+                    ByteMsg = Text.Encoding.Default.GetBytes("ExecConfirm, " + Arg + vbNewLine)
+                ElseIf Cmd = "<Request:Acknowledge>" Then
+                    Wdbg("I", "Stream opened for device {0}", Arg)
+                    ByteMsg = Text.Encoding.Default.GetBytes("AckConfirm, " + Arg + vbNewLine)
+                ElseIf Cmd = "<Request:Ping>" Then
+                    Wdbg("I", "Stream opened for device {0}", Arg)
+                    ByteMsg = Text.Encoding.Default.GetBytes("PingConfirm, " + Arg + vbNewLine)
+                Else
+                    Wdbg("E", "Malformed request. {0}", Cmd)
+                    Malformed = True
+                End If
+                If Not Malformed Then
+                    Wdbg("I", "Sending response to device...")
+                    RPCListen.Send(ByteMsg, ByteMsg.Length, IP, Port)
+                    EventManager.RaiseRPCCommandSent(Cmd)
+                End If
             End If
-            If Not Malformed Then
-                Wdbg("I", "Sending response to device...")
-                RPCListen.Send(ByteMsg, ByteMsg.Length, IP, Port)
-                EventManager.RaiseRPCCommandSent(Cmd)
-            End If
+        Else
+            Throw New InvalidOperationException(DoTranslation("Trying to send an RPC command while RPC didn't start."))
         End If
     End Sub
 
