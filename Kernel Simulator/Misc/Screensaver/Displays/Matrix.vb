@@ -46,7 +46,7 @@ Module MatrixDisplay
                 SaverAutoReset.Set()
                 Exit Do
             Else
-                Thread.Sleep(MatrixDelay)
+                SleepNoBlock(MatrixDelay, Matrix)
                 Console.Write(CStr(random.Next(2)))
             End If
         Loop

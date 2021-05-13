@@ -37,7 +37,7 @@ Module BouncingBlockDisplay
         RowBlock = Console.WindowHeight / 2
         ColumnBlock = Console.WindowWidth / 2
         Do While True
-            Thread.Sleep(BouncingBlockDelay)
+            SleepNoBlock(BouncingBlockDelay, BouncingBlock)
             Console.BackgroundColor = ConsoleColor.Black
             Console.ForegroundColor = ConsoleColor.White
             Console.Clear()

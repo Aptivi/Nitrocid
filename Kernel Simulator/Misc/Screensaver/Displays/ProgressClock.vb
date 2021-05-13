@@ -32,7 +32,7 @@ Module ProgressClockDisplay
         Dim RandomDriver As New Random()
         Dim CurrentTicks As Long = ProgressClockCycleColorsTicks
         Do While True
-            Thread.Sleep(500)
+            SleepNoBlock(500, ProgressClock)
             Console.Clear()
             If ProgressClock.CancellationPending = True Then
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")

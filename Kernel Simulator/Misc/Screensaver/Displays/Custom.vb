@@ -35,7 +35,7 @@ Public Module CustomDisplay
         finalSaver.PreDisplay()
         Do While True
             If Not finalSaver.DelayForEachWrite = Nothing Then
-                Thread.Sleep(finalSaver.DelayForEachWrite)
+                SleepNoBlock(finalSaver.DelayForEachWrite, Custom)
             End If
             If Custom.CancellationPending = True Then
                 Wdbg("W", "Cancellation requested. Showing ending...")

@@ -17,7 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.ComponentModel
-Imports System.Threading
 
 Module LinesDisplay
 
@@ -31,14 +30,14 @@ Module LinesDisplay
         Dim random As New Random()
         Wdbg("I", "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         Do While True
-            Thread.Sleep(LinesDelay)
+            SleepNoBlock(LinesDelay, Lines)
             If Lines.CancellationPending = True Then
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
                 Dim esc As Char = GetEsc()
-                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                Console.Write(esc + "[38;5;" + CStr(InputColor) + "m")
+                Console.Write(esc + "[48;5;" + CStr(BackgroundColor) + "m")
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Lines screensaver stopped.")

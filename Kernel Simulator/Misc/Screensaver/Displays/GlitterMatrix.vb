@@ -47,7 +47,7 @@ Module GlitterMatrixDisplay
                 SaverAutoReset.Set()
                 Exit Do
             Else
-                Thread.Sleep(GlitterMatrixDelay)
+                SleepNoBlock(GlitterMatrixDelay, GlitterMatrix)
                 Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                 Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
                 Console.SetCursorPosition(Left, Top)

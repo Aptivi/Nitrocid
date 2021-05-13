@@ -47,7 +47,7 @@ Module LighterDisplay
                 SaverAutoReset.Set()
                 Exit Do
             Else
-                Thread.Sleep(LighterDelay)
+                SleepNoBlock(LighterDelay, Lighter)
                 Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                 Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
                 Console.SetCursorPosition(Left, Top)
