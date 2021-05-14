@@ -38,7 +38,7 @@ Module RemoteDebugger
     Sub StartRDebugThread(ByVal DebugEnable As Boolean)
         If DebugMode Then
             If DebugEnable Then
-                RDebugThread.Start()
+                If Not RDebugThread.IsAlive Then RDebugThread.Start()
             Else
                 RDebugStopping = True
                 RDebugThread = New Thread(AddressOf StartRDebugger) With {.IsBackground = True, .Name = "Remote Debug Thread"}
