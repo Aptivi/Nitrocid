@@ -32,7 +32,9 @@ Public Module HardwareProbe
         'We will probe hardware
         EventManager.RaiseHardwareProbing()
         Try
+            AddHandler DebugDataReceived, AddressOf WriteInxiDebugData
             HardwareInfo = New Inxi(InxiParseFlags.Processor Or InxiParseFlags.PCMemory Or InxiParseFlags.Graphics Or InxiParseFlags.HardDrive)
+            RemoveHandler DebugDataReceived, AddressOf WriteInxiDebugData
         Catch ex As Exception
             Wdbg("E", "Failed to probe hardware: {0}", ex.Message)
             WStkTrc(ex)
@@ -72,6 +74,13 @@ Public Module HardwareProbe
 
         'Raise event
         EventManager.RaiseHardwareProbed()
+    End Sub
+
+    ''' <summary>
+    ''' Write Inxi.NET debug data to debugger
+    ''' </summary>
+    Private Sub WriteInxiDebugData(Message As String, PlainMessage As String)
+        Wdbg("I", PlainMessage)
     End Sub
 
     '----------> Hardware lists <----------
