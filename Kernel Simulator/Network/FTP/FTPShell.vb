@@ -20,7 +20,6 @@ Imports System.Threading
 
 Public Module FTPShell
 
-    Public ftpstream As FtpWebRequest
     Public FTPCommands As New Dictionary(Of String, CommandInfo) From {{"currlocaldir", New CommandInfo("currlocaldir", ShellCommandType.FTPShell, False, 0, False, False, False, False)},
                                                                        {"currremotedir", New CommandInfo("currremotedir", ShellCommandType.FTPShell, False, 0, False, False, False, False)},
                                                                        {"connect", New CommandInfo("connect", ShellCommandType.FTPShell, True, 1, False, False, False, False)},

@@ -20,7 +20,6 @@ Imports System.Threading
 
 Public Module SFTPShell
 
-    Public sftpstream As FtpWebRequest
     Public SFTPCommands As New Dictionary(Of String, CommandInfo) From {{"currlocaldir", New CommandInfo("currlocaldir", ShellCommandType.SFTPShell, False, 0, False, False, False, False)},
                                                                         {"currremotedir", New CommandInfo("currremotedir", ShellCommandType.SFTPShell, False, 0, False, False, False, False)},
                                                                         {"connect", New CommandInfo("connect", ShellCommandType.SFTPShell, True, 1, False, False, False, False)},
