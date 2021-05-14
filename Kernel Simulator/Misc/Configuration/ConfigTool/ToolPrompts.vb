@@ -74,6 +74,7 @@ Public Module ToolPrompts
                     Catch ex As Exceptions.ConfigException
                         W(ex.Message, True, ColTypes.Err)
                         WStkTrc(ex)
+                        Console.ReadKey()
                     End Try
                 ElseIf AnswerInt = 9 Then 'Exit
                     Wdbg("W", "Exiting...")
