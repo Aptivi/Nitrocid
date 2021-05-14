@@ -103,6 +103,7 @@ Public Module ToolPrompts
         Dim SectionFinished As Boolean
         Dim AnswerString As String
         Dim AnswerInt As Integer
+        Dim BuiltinSavers As Integer = 12
 
         'Section-specific variables
         Dim ConfigurableScreensavers As New List(Of String)
@@ -180,7 +181,7 @@ Public Module ToolPrompts
                     W("11) " + DoTranslation("Enable RPC") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RPCEnabled)))
                     W("12) " + DoTranslation("RPC Port") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(RPCPort)))
                 Case "6" 'Screensaver
-                    MaxOptions = 12
+                    MaxOptions = 13
                     W("*) " + DoTranslation("Screensaver Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all the screensavers and their available settings.") + vbNewLine, True, ColTypes.Neutral)
 
@@ -196,6 +197,7 @@ Public Module ToolPrompts
                     W("9) BouncingBlock...", True, ColTypes.Option)
                     W("10) ProgressClock...", True, ColTypes.Option)
                     W("11) Lighter...", True, ColTypes.Option)
+                    W("12) Fader...", True, ColTypes.Option)
 
                     'Populate custom screensavers
                     For Each CustomSaver As String In CSvrdb.Keys
@@ -286,8 +288,16 @@ Public Module ToolPrompts
                     W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LighterTrueColor)))
                     W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LighterDelay)))
                     W("4) " + DoTranslation("Max Positions Count") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(LighterMaxPositions)))
-                Case "6." + $"{If(SectionParameters.Length <> 0, SectionParameters(0), "12")}" 'Screensaver > a custom saver
-                    Dim SaverIndex As Integer = SectionParameters(0) - 11 - 1
+                Case "6.12" 'Screensaver > Fader
+                    MaxOptions = 4
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > Fader" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " Fader." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderDelay)))
+                    W("2) " + DoTranslation("Fade Out Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderFadeOutDelay)))
+                    W("3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderWrite)))
+                    W("4) " + DoTranslation("Max Fade Steps") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(FaderMaxSteps)))
+                Case "6." + $"{If(SectionParameters.Length <> 0, SectionParameters(0), $"{BuiltinSavers + 1}")}" 'Screensaver > a custom saver
+                    Dim SaverIndex As Integer = SectionParameters(0) - BuiltinSavers - 1
                     Dim Configurables As List(Of String) = SectionParameters(1)
                     Dim OptionNumber As Integer = 1
                     If CSvrdb(Configurables(SaverIndex)).SaverSettings IsNot Nothing Then
@@ -388,6 +398,7 @@ Public Module ToolPrompts
         Dim ListJoinString As String = ""
         Dim TargetList As IEnumerable(Of Object)
         Dim NeutralizePaths As Boolean
+        Dim BuiltinSavers As Integer = 12
 
         While Not KeyFinished
             Console.Clear()
@@ -1026,8 +1037,34 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Lighter > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
                     End Select
-                Case "6." + $"{If(SectionParts.Length > 1, SectionParts(1), "12")}" 'Custom saver
-                    Dim SaverIndex As Integer = SectionParts(1) - 11 - 1
+                Case "6.12" 'Fader
+                    Select Case KeyNumber
+                        Case 1 'Fader: Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FaderDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Fader > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 2 'Fader: Fade Out Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FaderFadeOutDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Fader > " + DoTranslation("Fade Out Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before fading out text?"), True, ColTypes.Neutral)
+                        Case 3 'Fader: Text shown
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(FaderWrite)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Fader > " + DoTranslation("Text shown") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Write any text you want shown. Shorter is better."), True, ColTypes.Neutral)
+                        Case 4 'Fader: Max Fade Steps
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FaderMaxSteps)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Fader > " + DoTranslation("Max Fade Steps") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many fade steps to do?"), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Fader > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                    End Select
+                Case "6." + $"{If(SectionParts.Length > 1, SectionParts(1), $"{BuiltinSavers + 1}")}" 'Custom saver
+                    Dim SaverIndex As Integer = SectionParts(1) - BuiltinSavers - 1
                     Dim SaverSettings As Dictionary(Of String, Object) = CSvrdb.Values(SaverIndex).SaverSettings
                     Dim KeyIndex As Integer = KeyNumber - 1
                     If KeyIndex <= SaverSettings.Count - 1 Then
@@ -1234,8 +1271,8 @@ Public Module ToolPrompts
                     Console.ReadKey()
                 End If
             ElseIf SectionParts.Length > 1 Then
-                If Section = "6." + SectionParts(1) And SectionParts(1) > 11 And KeyType = SettingsKeyType.SVariant Then
-                    Dim SaverIndex As Integer = SectionParts(1) - 11 - 1
+                If Section = "6." + SectionParts(1) And SectionParts(1) > BuiltinSavers And KeyType = SettingsKeyType.SVariant Then
+                    Dim SaverIndex As Integer = SectionParts(1) - BuiltinSavers - 1
                     Dim SaverSettings As Dictionary(Of String, Object) = CSvrdb.Values(SaverIndex).SaverSettings
                     SaverSettings(KeyVar) = VariantValue
                     Wdbg("I", "User requested exit. Returning...")

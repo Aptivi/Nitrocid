@@ -140,8 +140,12 @@ Public Module Config
                         New IniKey(ksconf, "Lines - Delay in Milliseconds", LinesDelay),
                         New IniKey(ksconf, "Matrix - Delay in Milliseconds", MatrixDelay),
                         New IniKey(ksconf, "Lighter - Delay in Milliseconds", LighterDelay),
+                        New IniKey(ksconf, "Fader - Delay in Milliseconds", FaderDelay),
+                        New IniKey(ksconf, "Fader - Fade Out Delay in Milliseconds", FaderFadeOutDelay),
                         New IniKey(ksconf, "BouncingText - Text Shown", BouncingTextWrite),
-                        New IniKey(ksconf, "Lighter - Max Positions Count", LighterMaxPositions)))
+                        New IniKey(ksconf, "Fader - Text Shown", FaderWrite),
+                        New IniKey(ksconf, "Lighter - Max Positions Count", LighterMaxPositions),
+                        New IniKey(ksconf, "Fader - Max Fade Steps", FaderMaxSteps)))
 
                 'Misc Section
                 ksconf.Sections.Add(
@@ -265,8 +269,12 @@ Public Module Config
                         New IniKey(ksconf, "Lines - Delay in Milliseconds", 500),
                         New IniKey(ksconf, "Matrix - Delay in Milliseconds", 1),
                         New IniKey(ksconf, "Lighter - Delay in Milliseconds", 100),
+                        New IniKey(ksconf, "Fader - Delay in Milliseconds", 50),
+                        New IniKey(ksconf, "Fader - Fade Out Delay in Milliseconds", 3000),
                         New IniKey(ksconf, "BouncingText - Text Shown", "Kernel Simulator"),
-                        New IniKey(ksconf, "Lighter - Max Positions Count", 10)))
+                        New IniKey(ksconf, "Fader - Text Shown", "Kernel Simulator"),
+                        New IniKey(ksconf, "Lighter - Max Positions Count", 10),
+                        New IniKey(ksconf, "Fader - Max Fade Steps", 25)))
 
                 'Misc Section
                 ksconf.Sections.Add(
@@ -372,11 +380,15 @@ Public Module Config
             ksconf.Sections("Screensaver").Keys("Lines - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Lines?"
             ksconf.Sections("Screensaver").Keys("Matrix - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Matrix?"
             ksconf.Sections("Screensaver").Keys("Lighter - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Lighter?"
+            ksconf.Sections("Screensaver").Keys("Fader - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Fader?"
+            ksconf.Sections("Screensaver").Keys("Fader - Fade Out Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before fading out text in Fader?"
             ksconf.Sections("Screensaver").Keys("ProgressClock - Ticks to change color").TrailingComment.Text = "If color cycling is enabled, how many ticks before changing colors in ProgressClock? 1 tick = 0.5 seconds"
 
             'Screensaver: Texts
             ksconf.Sections("Screensaver").Keys("BouncingText - Text Shown").TrailingComment.Text = "Any text for BouncingText"
+            ksconf.Sections("Screensaver").Keys("Fader - Text Shown").TrailingComment.Text = "Any text for Fader"
             ksconf.Sections("Screensaver").Keys("Lighter - Max Positions Count").TrailingComment.Text = "How many positions are lit before dimming?"
+            ksconf.Sections("Screensaver").Keys("Fader - Max Fade Steps").TrailingComment.Text = "How many fade steps to do?"
 
             'Misc
             ksconf.Sections("Misc").TrailingComment.Text = "This section is the other settings that are not categorized yet."
@@ -577,11 +589,15 @@ Public Module Config
             If Integer.TryParse(configReader.Sections("Screensaver").Keys("Lines - Delay in Milliseconds").Value, 0) Then LinesDelay = configReader.Sections("Screensaver").Keys("Lines - Delay in Milliseconds").Value
             If Integer.TryParse(configReader.Sections("Screensaver").Keys("Matrix - Delay in Milliseconds").Value, 0) Then MatrixDelay = configReader.Sections("Screensaver").Keys("Matrix - Delay in Milliseconds").Value
             If Integer.TryParse(configReader.Sections("Screensaver").Keys("Lighter - Delay in Milliseconds").Value, 0) Then LighterDelay = configReader.Sections("Screensaver").Keys("Lighter - Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Fader - Delay in Milliseconds").Value, 0) Then FaderDelay = configReader.Sections("Screensaver").Keys("Fader - Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Fader - Fade Out Delay in Milliseconds").Value, 0) Then FaderFadeOutDelay = configReader.Sections("Screensaver").Keys("Fader - Fade Out Delay in Milliseconds").Value
             If Integer.TryParse(configReader.Sections("Screensaver").Keys("ProgressClock - Ticks to change color").Value, 0) Then ProgressClockCycleColorsTicks = configReader.Sections("Screensaver").Keys("ProgressClock - Ticks to change color").Value
 
             'Screensaver: Texts
             BouncingTextWrite = configReader.Sections("Screensaver").Keys("BouncingText - Text Shown").Value
+            FaderWrite = configReader.Sections("Screensaver").Keys("Fader - Text Shown").Value
             If Integer.TryParse(configReader.Sections("Screensaver").Keys("Lighter - Max Positions Count").Value, 0) Then LighterMaxPositions = configReader.Sections("Screensaver").Keys("Lighter - Max Positions Count").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Fader - Max Fade Steps").Value, 0) Then FaderMaxSteps = configReader.Sections("Screensaver").Keys("Fader - Max Fade Steps").Value
 
             'Misc Section
             Wdbg("I", "Parsing misc section...")

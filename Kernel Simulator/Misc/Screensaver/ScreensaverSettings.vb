@@ -64,7 +64,7 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public BouncingBlock255Colors As Boolean
     ''' <summary>
-    ''' [BouncingBlock] Enable truecolor support. Has a higher priority than 16 color support.
+    ''' [BouncingBlock] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
     Public BouncingBlockTrueColor As Boolean
     ''' <summary>
@@ -72,7 +72,7 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public ProgressClock255Colors As Boolean
     ''' <summary>
-    ''' [ProgressClock] Enable truecolor support. Has a higher priority than 16 color support.
+    ''' [ProgressClock] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
     Public ProgressClockTrueColor As Boolean
     ''' <summary>
@@ -80,7 +80,7 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public Lighter255Colors As Boolean
     ''' <summary>
-    ''' [Lighter] Enable truecolor support. Has a higher priority than 16 color support.
+    ''' [Lighter] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
     Public LighterTrueColor As Boolean
     ''' <summary>
@@ -149,17 +149,33 @@ Public Module ScreensaverSettings
     ''' [Lighter] How many milliseconds to wait before making the next write?
     ''' </summary>
     Public LighterDelay As Integer = 100
+    ''' <summary>
+    ''' [Fader] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public FaderDelay As Integer = 50
+    ''' <summary>
+    ''' [Fader] How many milliseconds to wait before fading the text out?
+    ''' </summary>
+    Public FaderFadeOutDelay As Integer = 3000
 
     '-> Texts
     ''' <summary>
     ''' [BouncingText] Text for Bouncing Text
     ''' </summary>
     Public BouncingTextWrite As String = "Kernel Simulator"
+    ''' <summary>
+    ''' [Fader] Text for Fader
+    ''' </summary>
+    Public FaderWrite As String = "Kernel Simulator"
 
     '-> Misc
     ''' <summary>
     ''' [Lighter] How many positions to write before starting to blacken them?
     ''' </summary>
     Public LighterMaxPositions As Integer = 10
+    ''' <summary>
+    ''' [Fader] How many fade steps to do?
+    ''' </summary>
+    Public FaderMaxSteps As Integer = 25
 
 End Module

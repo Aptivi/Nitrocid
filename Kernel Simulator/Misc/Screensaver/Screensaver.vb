@@ -30,7 +30,7 @@ Public Module Screensaver
     Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"matrix", False}, {"glitterMatrix", False}, {"disco", False},
                                                                  {"lines", False}, {"glitterColor", False}, {"aptErrorSim", False}, {"hackUserFromAD", False},
                                                                  {"bouncingText", False}, {"dissolve", False}, {"bouncingBlock", False}, {"progressClock", False},
-                                                                 {"lighter", False}}
+                                                                 {"lighter", False}, {"fader", False}}
     Public CSvrdb As New Dictionary(Of String, ICustomSaver)
     Public WithEvents Timeout As New BackgroundWorker
     Public finalSaver As ICustomSaver
@@ -206,6 +206,13 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Lighter.CancelAsync()
+            ElseIf saver = "fader" Then
+                Fader.WorkerSupportsCancellation = True
+                Fader.RunWorkerAsync()
+                Wdbg("I", "Fader started")
+                Console.ReadKey()
+                ScrnTimeReached = False
+                Fader.CancelAsync()
             ElseIf ScrnSvrdb.ContainsKey(saver) Then
                 'Only one custom screensaver can be used.
                 finalSaver = CSvrdb(saver)
