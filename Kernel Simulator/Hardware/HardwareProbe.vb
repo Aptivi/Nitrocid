@@ -32,7 +32,7 @@ Public Module HardwareProbe
         'We will probe hardware
         EventManager.RaiseHardwareProbing()
         Try
-            HardwareInfo = New Inxi
+            HardwareInfo = New Inxi(InxiParseFlags.Processor Or InxiParseFlags.PCMemory Or InxiParseFlags.Graphics Or InxiParseFlags.HardDrive)
         Catch ex As Exception
             Wdbg("E", "Failed to probe hardware: {0}", ex.Message)
             WStkTrc(ex)
