@@ -301,7 +301,7 @@ Lista la información de la red, así como cada computadora conectada a una red.
 Amigos de
 Enumera la información de la red, así como cada computadora conectada a una red, en forma de árbol.
 Enumera la información de la red, así como cada computadora.
-donde modnameSS.m será
+donde modname.ss.vb será
 Bloquea tu pantalla con la contraseña
 Te desconecta del usuario.
 Obtenga toda la información de la red

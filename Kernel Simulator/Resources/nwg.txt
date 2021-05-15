@@ -301,7 +301,7 @@ Viser nettverksinformasjon, samt hver datamaskin som er koblet til et nettverk.
 Venner av
 Viser nettverksinformasjon, så vel som hver datamaskin som er koblet til et nettverk, i en treform.
 Viser nettverksinformasjon, så vel som alle datamaskiner.
-hvor modnavnSS.m vil være
+hvor modnavn.ss.vb vil være
 Låser skjermen med passordet.
 Logger deg ut av brukeren.
 Få all nettverksinformasjon

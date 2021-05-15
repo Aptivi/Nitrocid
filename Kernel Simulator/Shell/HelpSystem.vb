@@ -119,7 +119,7 @@ Public Module HelpSystem
     ''' <param name="command">A specified command</param>
     Public Sub ShowHelp(Optional ByVal command As String = "")
 
-        Dim wholesslist As String() = IO.Directory.GetFiles(paths("Mods"), "*SS.m", IO.SearchOption.TopDirectoryOnly)
+        Dim wholesslist As String() = IO.Directory.GetFiles(paths("Mods"), "*.ss.vb", IO.SearchOption.TopDirectoryOnly)
         If command = "" Then
 
             If simHelp = False Then
@@ -305,8 +305,8 @@ Public Module HelpSystem
 
         ElseIf command = "reloadsaver" Then
 
-            W(DoTranslation("Usage:") + " reloadsaver <modNameSS.m>" + vbNewLine +
-              "       " + DoTranslation("where modnameSS.m will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", wholesslist))
+            W(DoTranslation("Usage:") + " reloadsaver <modName.ss.vb>" + vbNewLine +
+              "       " + DoTranslation("where modname.ss.vb will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", wholesslist))
 
         ElseIf command = "lockscreen" Then
 
@@ -407,9 +407,9 @@ Public Module HelpSystem
 
         ElseIf command = "setsaver" Then
 
-            W(DoTranslation("Usage:") + " setsaver <modNameSS.m/{0}>", True, ColTypes.Neutral, String.Join("/", ScrnSvrdb.Keys))
+            W(DoTranslation("Usage:") + " setsaver <modName.ss.vb/{0}>", True, ColTypes.Neutral, String.Join("/", ScrnSvrdb.Keys))
             If wholesslist.Length > 0 Then
-                W("       " + DoTranslation("where modnameSS.m will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", wholesslist))
+                W("       " + DoTranslation("where modname.ss.vb will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", wholesslist))
             End If
 
         ElseIf command = "setthemes" Then

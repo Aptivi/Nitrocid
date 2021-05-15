@@ -301,7 +301,7 @@ Listet Netzwerkinformationen auf, sowie jeden Computer, der mit einem Netzwerk v
 Freunde von
 Listet Netzwerkinformationen sowie alle Computer, die mit einem Netzwerk verbunden sind, in einer Baumstruktur auf.
 Listet Netzwerkinformationen sowie jeden Computer auf.
-wo modnameSS.m wird
+wo modname.ss.vb wird
 Sperrt den Bildschirm mit dem Passwort.
 Meldet dich vom Benutzer ab.
 Holen Sie sich alle Netzwerkinformationen

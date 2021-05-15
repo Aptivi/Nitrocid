@@ -301,7 +301,7 @@ Nettowāku jōhō, oyobi nettowāku ni setsuzoku sa rete iru subete no konpyūt�
 No tomodachi
 nettowāku jōhō, oyobi nettowāku ni setsuzoku sa rete iru subete no konpyūtā o tsurī keishiki de risuto shimasu.
 Nettowāku jōhō to subete no konpyūtā o risuto shimasu.
-modnameSS.m wa
+modname.ss.vb wa
 pasuwādo de gamen o rokku shimasu.
 Yūzā kara roguauto shimasu.
 Subete no nettowāku jōhō o shutoku suru

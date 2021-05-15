@@ -301,7 +301,7 @@ Lists network notitia, tum singula quae ad computatrum network.
 amici
 Lists network notitia, tum singula quae ad computatrum network, in arbore formam.
 Lists network notitia, tum omnis computer.
-ibi erit modnameSS.m
+ibi erit modname.ss.vb
 Cum crines tuos screen password.
 Acta publica omnia tibi ex user.
 Get notitia network omnibus

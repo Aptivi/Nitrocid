@@ -301,7 +301,7 @@ Liè chū wǎngluò xìnxī yǐjí liánjiē dào wǎngluò de měi tái jìsuà
 Péngyǒu
 yǐ shù xíngshì liè chū wǎngluò xìnxī yǐjí liánjiē dào wǎngluò de měi tái jìsuànjī.
 Liè chū wǎngluò xìnxī yǐjí měi tái jìsuànjī.
-Qízhōng modnameSS.M jiāng shì
+Qízhōng modname.ss.vb jiāng shì
 shǐyòng mìmǎ suǒdìng píngmù.
 Jiāng nín tuìchū yònghù.
 Huòqǔ měi gè wǎngluò xìnxī

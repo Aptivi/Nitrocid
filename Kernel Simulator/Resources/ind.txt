@@ -301,7 +301,7 @@ netavark kee jaanakaaree soocheebaddh karata hai, saath hee netavark se jude pra
 ke mitr
 ek vrksh roop mein, netavark kee jaanakaaree soocheebaddh karata hai, saath hee netavark se jude pratyek kampyootar ko soocheebaddh karata hai.
 netavark jaanakaaree, saath hee saath har kampyootar soocheebaddh karata hai.
-jahaan modnameSS.m hoga
+jahaan modname.ss.vb hoga
 paasavard ke saath apanee skreen lok karata hai.
 aapako upayogakarta se log aaut karata hai.
 pratyek netavark jaanakaaree praapt karen

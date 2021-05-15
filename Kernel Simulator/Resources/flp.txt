@@ -301,7 +301,7 @@ Naglista ng impormasyon sa network, pati na rin ang bawat computer na nakakonekt
 Mga kaibigan ni
 Naglista ng impormasyon sa network, pati na rin ang bawat computer na konektado sa isang network, sa isang form ng puno.
 Naglista ng impormasyon sa network, pati na rin ang bawat computer.
-kung saan naroon ang modnameSS.m
+kung saan naroon ang modname.ss.vb
 Nilo-lock ang iyong screen gamit ang password.
 Nai-log out ka sa gumagamit.
 Kunin ang bawat impormasyon sa network

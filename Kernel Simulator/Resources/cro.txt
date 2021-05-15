@@ -301,7 +301,7 @@ Navodi podatke o mreži kao i svako računalo spojeno na mrežu.
 Prijatelji od
 U obliku stabla navodi podatke o mreži, kao i svako računalo spojeno na mrežu.
 Navodi podatke o mreži, kao i o svakom računalu.
-gdje će biti modnameSS.m
+gdje će biti modname.ss.vb
 Zaključava zaslon lozinkom.
 Odjava vas od korisnika.
 Dobivajte sve mrežne informacije

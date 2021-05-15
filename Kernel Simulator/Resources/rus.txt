@@ -301,7 +301,7 @@ Perechislyayet informatsiyu o seti, a takzhe o kazhdom komp'yutere, podklyuchenn
 Druz'ya
 Soderzhit informatsiyu o seti, a takzhe o kazhdom komp'yutere, podklyuchennom k seti, v vide dereva.
 Perechislyayet informatsiyu o seti, a takzhe o kazhdom komp'yutere.
-gde budet modnameSS.m
+gde budet modname.ss.vb
 Blokiruyet vash ekran s pomoshch'yu parolya.
 Vykhodit iz pol'zovatelya.
 Poluchit' informatsiyu o kazhdoy seti

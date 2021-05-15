@@ -301,7 +301,7 @@ Lists network information, as well as every computer connected to a network.
 Friends of
 Lists network information, as well as every computer connected to a network, in a tree form.
 Lists network information, as well as every computer.
-where modnameSS.m will be
+where modname.ss.vb will be
 Locks your screen with the password.
 Logs you out of the user.
 Get every network information

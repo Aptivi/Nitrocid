@@ -301,7 +301,7 @@ Luettelee sekä verkkotiedot että kaikki verkkoon liitetyt tietokoneet.
 Ystävät
 Luettelee sekä verkkotiedot että kaikki verkkoon liitetyt tietokoneet puumuodossa.
 Luettelee sekä verkkotiedot että jokainen tietokone.
-missä modnameSS.m on
+missä modname.ss.vb on
 Lukitsee näytön salasanalla.
 Kirjaudu ulos käyttäjältä.
 Hanki kaikki verkkotiedot

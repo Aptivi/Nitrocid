@@ -301,7 +301,7 @@ Navodi podatke o mreži, kao i svaki računar povezan na mrežu.
 Friends of
 U drevnom obliku navodi podatke o mreži, kao i svaki računar povezan na mrežu.
 Navodi podatke o mreži, kao i svaki računar.
-gde će biti modnameSS.m
+gde će biti modname.ss.vb
 Zaključava ekran lozinkom.
 Odjava vas od korisnika.
 Dobijajte sve mrežne informacije

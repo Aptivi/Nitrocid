@@ -211,22 +211,22 @@ Public Module ModParser
     ''' <summary>
     ''' Starts to parse the mod, and configures it so it can be used
     ''' </summary>
-    ''' <param name="modFile">Mod file name with extension. It should end with .m or CS.m</param>
+    ''' <param name="modFile">Mod file name with extension. It should end with .vb or .cs</param>
     ''' <param name="StartStop">Whether to start or stop mods</param>
     Sub StartParse(ByVal modFile As String, Optional ByVal StartStop As Boolean = True)
         modFile = modFile.Replace(modPath, "")
-        If modFile.EndsWith("SS.m") Then
+        If modFile.EndsWith(".ss.vb") Then
             'Mod is a screensaver
             Wdbg("W", "Mod file {0} is a screensaver.", modFile)
             CompileCustom(modFile)
-        ElseIf modFile.EndsWith("CS.m") Then
+        ElseIf modFile.EndsWith(".cs") Then
             'Mod has a language of C#
-            Wdbg("I", "Mod language is C# from extension ""CS.m""")
+            Wdbg("I", "Mod language is C# from extension "".cs""")
             Dim script As IScript = GenMod("C#", IO.File.ReadAllText(modPath + modFile))
             FinalizeMods(script, modFile, StartStop)
-        ElseIf modFile.EndsWith(".m") Then
+        ElseIf modFile.EndsWith(".vb") Then
             'Mod has a language of VB.NET
-            Wdbg("I", "Mod language is VB.NET from extension "".m""")
+            Wdbg("I", "Mod language is VB.NET from extension "".vb""")
             Dim script As IScript = GenMod("VB.NET", IO.File.ReadAllText(modPath + modFile))
             FinalizeMods(script, modFile, StartStop)
         ElseIf modFile.EndsWith(".dll") Then
@@ -245,7 +245,7 @@ Public Module ModParser
                 Next
             End Try
         Else
-            'Ignore all mods that its file name doesn't end with .m
+            'Ignore all mods that its file name doesn't end with .vb
             Wdbg("W", "Unsupported file type for mod file {0}.", modFile)
         End If
     End Sub
@@ -255,7 +255,7 @@ Public Module ModParser
     ''' Configures the mod so it can be used
     ''' </summary>
     ''' <param name="script">Instance of script</param>
-    ''' <param name="modFile">Mod file name with extension. It should end with .m, SS.m, or CS.m</param>
+    ''' <param name="modFile">Mod file name with extension. It should end with .vb, .ss.vb, or .cs</param>
     ''' <param name="StartStop">Whether to start or stop mods</param>
     Sub FinalizeMods(ByVal script As IScript, ByVal modFile As String, Optional ByVal StartStop As Boolean = True)
         Dim ModParts As New Dictionary(Of String, IScript)

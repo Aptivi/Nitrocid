@@ -301,7 +301,7 @@ Liostaítear faisnéis líonra, chomh maith le gach ríomhaire atá ceangailte l
 Cairde
 Liostaítear faisnéis líonra, chomh maith le gach ríomhaire atá ceangailte le líonra, i bhfoirm crainn.
 Liostaítear faisnéis líonra, chomh maith le gach ríomhaire.
-áit a mbeidh modnameSS.m
+áit a mbeidh modname.ss.vb
 Glais do scáileán leis an bhfocal faire.
 Logálann tú as an úsáideoir tú.
 Faigh gach faisnéis líonra

@@ -301,7 +301,7 @@ Liệt kê thông tin mạng, cũng như mọi máy tính được kết nối v
 Bạn của
 Liệt kê thông tin mạng, cũng như mọi máy tính được kết nối với mạng, ở dạng cây.
 Liệt kê thông tin mạng, cũng như mọi máy tính.
-modnameSS.m sẽ ở đâu
+modname.ss.vb sẽ ở đâu
 Khóa màn hình của bạn bằng mật khẩu.
 Đăng xuất bạn ra khỏi người dùng.
 Nhận mọi thông tin mạng

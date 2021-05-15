@@ -301,7 +301,7 @@ Uvádza informácie o sieti, ako aj o všetkých počítačoch pripojených k si
 Priatelia
 Uvádza zoznam sieťových informácií, ako aj všetkých počítačov pripojených k sieti v stromovej forme.
 Uvádza informácie o sieti, ako aj o každom počítači.
-kde bude modnameSS.m
+kde bude modname.ss.vb
 Uzamkne obrazovku pomocou hesla.
 Odhlási vás od používateľa.
 Získajte všetky informácie o sieti

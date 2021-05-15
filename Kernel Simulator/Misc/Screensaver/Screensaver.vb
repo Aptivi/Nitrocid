@@ -275,7 +275,7 @@ Public Module Screensaver
     ''' <summary>
     ''' Compiles the custom screensaver file and configures it so it can be viewed
     ''' </summary>
-    ''' <param name="file">File name with SS.m</param>
+    ''' <param name="file">File name with .ss.vb</param>
     Public Sub CompileCustom(ByVal file As String)
         'Initialize path
         Dim modPath As String = paths("Mods")
@@ -284,9 +284,9 @@ Public Module Screensaver
         'Start parsing screensaver
         If FileIO.FileSystem.FileExists(modPath + file) Then
             Wdbg("I", "Parsing {0}...", file)
-            If file.EndsWith("SS.m") Or file.EndsWith(".dll") Then
+            If file.EndsWith(".ss.vb") Or file.EndsWith(".dll") Then
                 Wdbg("W", "{0} is a valid screensaver. Generating...", file)
-                If file.EndsWith("SS.m") Then
+                If file.EndsWith(".ss.vb") Then
                     finalSaver = GenSaver(IO.File.ReadAllText(modPath + file))
                 ElseIf file.EndsWith(".dll") Then
                     Try
@@ -354,7 +354,7 @@ Public Module Screensaver
                     End If
                 End If
             Else
-                Wdbg("W", "{0} is not a screensaver. A screensaver code should have ""SS.m"" or "".dll"" at the end.", file)
+                Wdbg("W", "{0} is not a screensaver. A screensaver code should have "".ss.vb"" or "".dll"" at the end.", file)
             End If
         Else
             W(DoTranslation("Screensaver {0} does not exist."), True, ColTypes.Err, file)

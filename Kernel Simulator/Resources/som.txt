@@ -301,7 +301,7 @@ Liisaska macluumaadka shabakadda, iyo sidoo kale kombuyuutar kasta oo ku xiran s
 Asxaabta
 Liisaska macluumaadka shabakadda, iyo sidoo kale kombuyuutar kasta oo ku xiran shabakad, qaab geed ah.
 Liisaska macluumaadka shabakadda, iyo sidoo kale kombiyuutar kasta.
-meesha modnameSS.m uu jiri doono
+meesha modname.ss.vb uu jiri doono
 Wuxuu ku xiraa shaashadda lambarka sirta ah.
 Kaa saarey isticmaaleha.
 Hel macluumaad kasta oo shabakad ah

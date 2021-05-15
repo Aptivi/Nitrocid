@@ -301,7 +301,7 @@ Menyenaraikan maklumat rangkaian, serta setiap komputer yang disambungkan ke ran
 Rakan-rakan
 Menyenaraikan maklumat rangkaian, serta setiap komputer yang disambungkan ke rangkaian, dalam bentuk pokok.
 Menyenaraikan maklumat rangkaian, serta setiap komputer.
-di mana modnameSS.m akan berada
+di mana modname.ss.vb akan berada
 Mengunci skrin anda dengan kata laluan.
 Log keluar daripada pengguna.
 Dapatkan setiap maklumat rangkaian

@@ -301,7 +301,7 @@ Elenca l'infurmazioni di rete, è ancu ogni urdinatore cunnessu à una rete.
 Amichi di
 Elenca l'infurmazioni di a rete, è ancu tutti l'urdinatori cunnessi à una rete, in forma d'arburu.
 Elenca l'infurmazioni di rete, è ancu ogni urdinatore.
-induve serà modnameSS.m
+induve serà modname.ss.vb
 Blocca u vostru schermu cù a password.
 Scurdate vi di l'utilizatore.
 Uttenite ogni infurmazione di rete

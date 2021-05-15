@@ -301,7 +301,7 @@ Tarmoqqa ulangan har bir kompyuter singari tarmoq ma'lumotlarini ro'yxatlaydi.
 Do'stlar
 Tarmoqqa ulangan har bir kompyuter singari tarmoq ma'lumotlarini daraxt shaklida beradi.
 Har bir kompyuter singari tarmoq ma'lumotlarini ro'yxatlaydi.
-modnameSS.m qaerda
+modname.ss.vb qaerda
 Parolingizni ekran bilan qulflaydi.
 Sizni foydalanuvchi tizimidan chiqaradi.
 Har bir tarmoq haqida ma'lumot oling

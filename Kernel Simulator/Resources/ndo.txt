@@ -301,7 +301,7 @@ Daftar informasi jaringan, serta setiap komputer yang terhubung ke jaringan.
 Teman dari
 Daftar informasi jaringan, serta setiap komputer yang terhubung ke jaringan, dalam bentuk pohon.
 Daftar informasi jaringan, serta setiap komputer.
-di mana modnameSS.m akan
+di mana modname.ss.vb akan
 Mengunci layar Anda dengan kata sandi.
 Keluar Anda dari pengguna.
 Dapatkan setiap informasi jaringan

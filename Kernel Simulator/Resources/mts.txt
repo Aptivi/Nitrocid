@@ -301,7 +301,7 @@ Listi ta 'informazzjoni dwar in-netwerk, kif ukoll kull kompjuter imqabbad ma' n
 Ħbieb ta '
 Listi ta 'informazzjoni tan-netwerk, kif ukoll kull kompjuter imqabbad ma' netwerk, f'forma ta 'siġra.
 Listi ta 'informazzjoni dwar in-netwerk, kif ukoll kull kompjuter.
-fejn se jkun modnameSS.m
+fejn se jkun modname.ss.vb
 Jillokkja l-iskrin tiegħek bil-password.
 Tilloggja lilek mill-utent.
 Ikseb kull informazzjoni dwar in-netwerk

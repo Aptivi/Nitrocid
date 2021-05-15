@@ -301,7 +301,7 @@ Orodha ya maelezo ya mtandao, na pia kila kompyuta iliyounganishwa kwenye mtanda
 Marafiki wa
 Orodha ya maelezo ya mtandao, pamoja na kila kompyuta iliyounganishwa na mtandao, katika fomu ya mti.
 Orodha ya habari za mtandao, pamoja na kila kompyuta.
-ambapo modnameSS.m itakuwa
+ambapo modname.ss.vb itakuwa
 Inafunga skrini yako na nywila.
 Hukuweka nje ya mtumiaji.
 Pata kila habari ya mtandao

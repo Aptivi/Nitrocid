@@ -301,7 +301,7 @@ Zobrazí informace o síti, stejně jako každý počítač připojený k síti.
 Přátelé uživatele
 Uvádí informace o síti, stejně jako každý počítač připojený k síti, ve stromovém tvaru.
 Vypíše informace o síti, stejně jako každý počítač.
-kde modnameSS.m bude
+kde modname.ss.vb bude
 Uzamkne obrazovku heslem.
 Odhlásí vás z uživatele.
 Získejte všechny informace o síti

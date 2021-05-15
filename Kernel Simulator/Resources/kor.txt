@@ -301,7 +301,7 @@ neteuwokeu jeongbowa neteuwokeue yeongyeoldoen modeun keompyuteoleul nayeolhabni
 chingu
 neteuwokeu jeongbowa neteuwokeue yeongyeoldoen modeun keompyuteoleul teuli hyeongtaelo nayeolhabnida.
 modeun keompyuteoppunman anila neteuwokeu jeongboleul nayeolhabnida.
-yeogiseo modnameSS.meun
+yeogiseo modname.ss.vbeun
 bimilbeonholo hwamyeon-eul jamgeubnida.
 sayongjaleul logeu aushabnida.
 modeun neteuwokeu jeongbo eodgi

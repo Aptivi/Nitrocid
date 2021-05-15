@@ -301,7 +301,7 @@ Wyświetla informacje o sieci, a także każdy komputer podłączony do sieci.
 Przyjaciele
 Wyświetla informacje o sieci, a także każdy komputer podłączony do sieci, w formie drzewa.
 Wyświetla informacje o sieci, a także o każdym komputerze.
-gdzie będzie modnameSS.m
+gdzie będzie modname.ss.vb
 Blokuje ekran hasłem.
 Wylogowuje cię z użytkownika.
 Uzyskaj wszystkie informacje o sieci

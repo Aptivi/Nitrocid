@@ -301,7 +301,7 @@ Nēṭa'ōẏārka tathya, pāśāpāśi ēkaṭi nēṭa'ōẏārkēra sāthē 
 Ēra bandhu
 nēṭa'ōẏārka tathya, pāśāpāśi ēkaṭi nēṭa'ōẏārkēra sāthē sanyukta pratiṭi kampi'uṭārakē ēkaṭi gāchēra ākārē tālikābad'dha karē.
 Nēṭa'ōẏārka tathya pāśāpāśi pratiṭi kampi'uṭārēra tālikābad'dha karē.
-Yēkhānē modnameSS.m habē
+Yēkhānē modname.ss.vb habē
 pāsa'ōẏārḍa diẏē āpanāra pardā laka.
 Āpanākē byabahārakārī thēkē laga ā'uṭa karē.
 Pratiṭi nēṭa'ōẏārkēra tathya pāna

@@ -301,7 +301,7 @@ Naiṭavaraka dī jāṇakārī dē nāla nāla harēka naiṭavaraka nāla ju�
 Dē dōsata
 naiṭavaraka dī jāṇakārī dē nāla nāla harēka kapi computerṭara nū ika ṭrī dē rūpa vica ika naiṭavaraka nāla jōṛi'ā gi'ā hai.
 Naiṭavaraka dī jāṇakārī dē nāla nāla harēka kapi computerṭara dī sūcī baṇā'undā hai.
-Jithē modnameSS.m hōvēgā
+Jithē modname.ss.vb hōvēgā
 tuhāḍē sakarīna nū pāsavaraḍa nāla lāka kara didā hai.
 Tuhānū upabhōgatā tōṁ bāhara bhējadā hai.
 Naiṭavaraka dī hara jāṇakārī prāpata karō

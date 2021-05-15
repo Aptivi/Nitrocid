@@ -301,7 +301,7 @@ Elenca le informazioni di rete, così come ogni computer connesso a una rete.
 Amici di
 Elenca le informazioni di rete, così come ogni computer connesso a una rete, in una struttura ad albero.
 Elenca le informazioni di rete, così come ogni computer.
-dove sarà modnameSS.m
+dove sarà modname.ss.vb
 Blocca lo schermo con la password.
 Ti disconnette dall'utente.
 Ottieni tutte le informazioni di rete

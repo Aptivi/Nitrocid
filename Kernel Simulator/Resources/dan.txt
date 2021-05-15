@@ -301,7 +301,7 @@ Viser netværksinformation såvel som hver computer, der er tilsluttet et netvæ
 Venner af
 Viser netværksinformation såvel som hver computer, der er tilsluttet et netværk, i en træform.
 Viser netværksinformation såvel som hver computer.
-hvor modnavnSS.m vil være
+hvor modnavn.ss.vb vil være
 Låser din skærm med adgangskoden.
 Logger dig ud af brugeren.
 Hent alle netværksoplysninger

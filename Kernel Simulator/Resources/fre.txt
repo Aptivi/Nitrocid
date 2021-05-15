@@ -301,7 +301,7 @@ Répertorie les informations sur le réseau, ainsi que tous les ordinateurs conn
 Les amis de
 Répertorie les informations de réseau, ainsi que chaque ordinateur connecté à un réseau, sous forme d'arborescence.
 Répertorie les informations sur le réseau, ainsi que tous les ordinateurs connectés à un réseau.
-où modnameSS.m sera
+où modname.ss.vb sera
 Verrouille votre écran avec le mot de passe.
 Vous déconnecte de l'utilisateur.
 Obtenir toutes les informations du réseau

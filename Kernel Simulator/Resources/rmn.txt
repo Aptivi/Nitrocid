@@ -301,7 +301,7 @@ Listează informațiile din rețea, precum și fiecare computer conectat la o re
 Prietenii lui
 Listează informațiile din rețea, precum și fiecare computer conectat la o rețea, într-o formă de copac.
 Listează informațiile din rețea, precum și fiecare computer.
-unde va fi modnameSS.m
+unde va fi modname.ss.vb
 Încuie ecranul cu parola.
 Te scoate din uz.
 Obțineți toate informațiile din rețea

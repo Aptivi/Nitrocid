@@ -301,7 +301,7 @@ Lista informações de rede, bem como todos os computadores conectados a uma red
 Amigos de
 Lista informações de rede, bem como todos os computadores conectados a uma rede, em forma de árvore.
 Lista informações de rede, bem como todos os computadores.
-onde modnameSS.m será
+onde modname.ss.vb será
 Bloqueia sua tela com a senha.
 Logs você fora do usuário.
 Obter todas as informações da rede

@@ -301,7 +301,7 @@ Visar nätverksinformation, liksom varje dator som är ansluten till ett nätver
 Vänner av
 Visar nätverksinformation, liksom varje dator som är ansluten till ett nätverk, i en trädform.
 Visar nätverksinformation, liksom varje dator.
-där modnameSS.m kommer att vara
+där modname.ss.vb kommer att vara
 Låser skärmen med lösenordet.
 Loggar dig ur användaren.
 Få varje nätverksinformation

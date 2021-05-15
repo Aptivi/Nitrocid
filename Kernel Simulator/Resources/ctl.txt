@@ -301,7 +301,7 @@ Llista la informació de la xarxa, així com tots els equips connectats a una xa
 Amics de
 Llista la informació de la xarxa, així com tots els equips connectats a una xarxa, en forma d’arbre.
 Llista la informació de la xarxa, així com tots els ordinadors.
-on hi haurà modnameSS.m
+on hi haurà modname.ss.vb
 Bloqueja la pantalla amb la contrasenya.
 Us desconnecta de l’usuari.
 Obteniu tota la informació de la xarxa

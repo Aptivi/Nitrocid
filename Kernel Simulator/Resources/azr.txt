@@ -301,7 +301,7 @@ Prob probları (Yalnızca cihaz yoxlanılmadıqda və hwprobe icra edilmədikdə
 Dostları
 Şəbəkə məlumatlarını, eləcə də şəbəkəyə qoşulmuş hər bir kompüteri ağac şəklində sadalayır.
 Hər kompüterin yanında şəbəkə məlumatlarını da siyahıya alır.
-harada modnameSS.m olacaq
+harada modname.ss.vb olacaq
 Şifrə ilə ekranınızı kilidləyir.
 Sizi istifadəçidən çıxarır.
 Hər şəbəkə məlumatını əldə edin

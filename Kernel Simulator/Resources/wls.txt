@@ -301,7 +301,7 @@ Yn rhestru gwybodaeth rhwydwaith, yn ogystal â phob cyfrifiadur sydd wedi'i gys
 Cyfeillion
 Yn rhestru gwybodaeth rhwydwaith, yn ogystal â phob cyfrifiadur sydd wedi'i gysylltu â rhwydwaith, ar ffurf coeden.
 Yn rhestru gwybodaeth rhwydwaith, yn ogystal â phob cyfrifiadur.
-lle bydd modnameSS.m
+lle bydd modname.ss.vb
 Yn cloi eich sgrin gyda'r cyfrinair.
 Yn eich allgofnodi o'r defnyddiwr.
 Sicrhewch bob gwybodaeth rhwydwaith

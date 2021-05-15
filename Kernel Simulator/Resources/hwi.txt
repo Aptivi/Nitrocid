@@ -301,7 +301,7 @@ Papa inoa i ka ʻike pūnaewele, a me kēlā me kēia kamepiula e pili ana i kah
 Na hoaloha o
 Papa inoa i ka ʻike pūnaewele, a me kēlā me kēia kamepiula e pili ana i kahi pūnaewele, ma kahi ʻano kumulāʻau.
 Papa inoa i ka ʻike pūnaewele, a me kēlā me kēia kamepiula.
-kahi e noho ai ka modnameSS.m
+kahi e noho ai ka modname.ss.vb
 Laka i kou paku me ka password.
 Hoʻopau iā ʻoe ma waho o ka mea hoʻohana.
 E kiʻi i kēlā me kēia ʻike pūnaewele

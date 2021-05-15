@@ -301,7 +301,7 @@ yusarid maelumat alshabakat , wakadhalk klu jihaz kimibyutir mutasil bialshabaka
 'asdiqa'
 yusarid maelumat alshabakat , wakadhalk kla kimibyutir mutasil bishabakat , fi shakl shajaratin.
 yusarid maelumat alshabakat , wakadhalk klu kambiutir.
-hayth sayakun modnameSS.m
+hayth sayakun modname.ss.vb
 'aqfal alshaashat bikalimat almurur.
 yukhrijuk min almustakhdam.
 alhusul ealaa kl maelumat alshabaka

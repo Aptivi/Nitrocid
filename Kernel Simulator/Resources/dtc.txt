@@ -301,7 +301,7 @@ Geeft netwerkinformatie weer, evenals elke computer die op een netwerk is aanges
 Vrienden van
 Toont netwerkinformatie, evenals elke computer die is aangesloten op een netwerk, in een boomstructuur.
 Geeft netwerkinformatie weer, evenals elke computer.
-waar modnameSS.m zal zijn
+waar modname.ss.vb zal zijn
 Vergrendelt uw scherm met het wachtwoord.
 Hiermee meldt u zich af bij de gebruiker.
 Krijg alle netwerkinformatie

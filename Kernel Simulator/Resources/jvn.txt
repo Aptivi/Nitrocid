@@ -301,7 +301,7 @@ Dhaptar informasi jaringan, uga kabeh komputer sing nyambung menyang jaringan.
 Kanca saka
 Dhaptar informasi jaringan, uga kabeh komputer sing nyambung menyang jaringan, ing formulir wit.
 Dhaptar informasi jaringan, uga kabeh komputer.
-ing endi modnameSS.m
+ing endi modname.ss.vb
 Kunci layar nganggo sandhi.
 Log metu saka pangguna.
 Goleki kabeh informasi jaringan
