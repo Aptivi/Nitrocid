@@ -147,6 +147,7 @@ Public Module ModParser
         End If
 
         'Make object type instance
+        Wdbg("I", "Creating instance of type...")
         Return GetModInstance(res.CompiledAssembly)
     End Function
 
@@ -216,8 +217,12 @@ Public Module ModParser
     Sub StartParse(ByVal modFile As String, Optional ByVal StartStop As Boolean = True)
         modFile = modFile.Replace(modPath, "")
         If modFile.EndsWith(".ss.vb") Then
-            'Mod is a screensaver
-            Wdbg("W", "Mod file {0} is a screensaver.", modFile)
+            'Mod is a screensaver that has a language of VB.NET
+            Wdbg("W", "Mod file {0} is a screensaver. Language: VB.NET", modFile)
+            CompileCustom(modFile)
+        ElseIf modFile.EndsWith(".ss.cs") Then
+            'Mod is a screensaver that has a language of C#
+            Wdbg("W", "Mod file {0} is a screensaver. Language: C#", modFile)
             CompileCustom(modFile)
         ElseIf modFile.EndsWith(".cs") Then
             'Mod has a language of C#
@@ -255,7 +260,7 @@ Public Module ModParser
     ''' Configures the mod so it can be used
     ''' </summary>
     ''' <param name="script">Instance of script</param>
-    ''' <param name="modFile">Mod file name with extension. It should end with .vb, .ss.vb, or .cs</param>
+    ''' <param name="modFile">Mod file name with extension. It should end with .vb, .ss.vb, .ss.cs, or .cs</param>
     ''' <param name="StartStop">Whether to start or stop mods</param>
     Sub FinalizeMods(ByVal script As IScript, ByVal modFile As String, Optional ByVal StartStop As Boolean = True)
         Dim ModParts As New Dictionary(Of String, IScript)

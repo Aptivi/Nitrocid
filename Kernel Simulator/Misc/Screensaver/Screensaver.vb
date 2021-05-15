@@ -21,6 +21,7 @@ Imports System.ComponentModel
 Imports System.IO
 Imports System.Reflection
 Imports System.Threading
+Imports Microsoft.CSharp
 Imports Newtonsoft.Json.Linq
 
 Public Module Screensaver
@@ -284,10 +285,12 @@ Public Module Screensaver
         'Start parsing screensaver
         If FileIO.FileSystem.FileExists(modPath + file) Then
             Wdbg("I", "Parsing {0}...", file)
-            If file.EndsWith(".ss.vb") Or file.EndsWith(".dll") Then
+            If file.EndsWith(".ss.vb") Or file.EndsWith(".ss.cs") Or file.EndsWith(".dll") Then
                 Wdbg("W", "{0} is a valid screensaver. Generating...", file)
                 If file.EndsWith(".ss.vb") Then
-                    finalSaver = GenSaver(IO.File.ReadAllText(modPath + file))
+                    finalSaver = GenSaver("VB.NET", IO.File.ReadAllText(modPath + file))
+                ElseIf file.EndsWith(".ss.cs") Then
+                    finalSaver = GenSaver("C#", IO.File.ReadAllText(modPath + file))
                 ElseIf file.EndsWith(".dll") Then
                     Try
                         finalSaver = GetScreensaverInstance(Assembly.LoadFrom(modPath + file))
@@ -365,15 +368,32 @@ Public Module Screensaver
     ''' <summary>
     ''' Compiles the screensaver and returns the instance of custom saver interface
     ''' </summary>
+    ''' <param name="PLang">Specified programming language for scripts (C# or VB.NET)</param>
     ''' <param name="code">Screensaver code</param>
     ''' <returns>Interface of the compiled custom saver</returns>
-    Function GenSaver(ByVal code As String) As ICustomSaver
+    Function GenSaver(ByVal PLang As String, ByVal code As String) As ICustomSaver
         DoneFlag = False
-        Using provider As New VBCodeProvider()
+
+        'Check language
+        Dim provider As CodeDomProvider
+        Wdbg("I", $"Language detected: {PLang}")
+        If PLang = "C#" Then
+            provider = New CSharpCodeProvider
+        ElseIf PLang = "VB.NET" Then
+            provider = New VBCodeProvider
+        Else
+            Exit Function
+        End If
+
+        Using provider
+            'Declare new compiler parameter object
             Dim prm As New CompilerParameters With {
                 .GenerateExecutable = False,
                 .GenerateInMemory = True
             }
+
+            'Add referenced assemblies
+            Wdbg("I", "Referenced assemblies will be added.")
             prm.ReferencedAssemblies.Add(Assembly.GetExecutingAssembly.Location)
             prm.ReferencedAssemblies.Add("System.dll")
             prm.ReferencedAssemblies.Add("System.Core.dll")
@@ -382,10 +402,19 @@ Public Module Screensaver
             prm.ReferencedAssemblies.Add("System.Xml.dll")
             prm.ReferencedAssemblies.Add("System.Xml.Linq.dll")
             Wdbg("I", "All referenced assemblies prepared.")
+
+            'Try to compile
             Dim namespc As String = GetType(ICustomSaver).Namespace
-            Dim modCode() As String = New String() {"Imports " & namespc & vbNewLine & code}
-            Wdbg("I", "Compiling right now...")
+            Dim modCode() As String
+            If PLang = "VB.NET" Then
+                modCode = {$"Imports {namespc}{vbNewLine}{code}"}
+            ElseIf PLang = "C#" Then
+                modCode = {$"using {namespc};{vbNewLine}{code}"}
+            End If
+            Wdbg("I", "Compiling...")
             execCustomSaver = provider.CompileAssemblyFromSource(prm, modCode)
+
+            'Check to see if there are compilation errors
             Wdbg("I", "Compilation results: Errors? {0}, Warnings? {1} | Total: {2}", execCustomSaver.Errors.HasErrors, execCustomSaver.Errors.HasWarnings, execCustomSaver.Errors.Count)
             If execCustomSaver.Errors.HasErrors Then
                 W(DoTranslation("Screensaver can't be loaded because of the following: "), True, ColTypes.Err)
@@ -397,6 +426,8 @@ Public Module Screensaver
             Else
                 DoneFlag = True
             End If
+
+            'Make object type instance
             Wdbg("I", "Creating instance of type...")
             Return GetScreensaverInstance(execCustomSaver.CompiledAssembly)
         End Using
