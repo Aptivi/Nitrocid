@@ -286,6 +286,27 @@ Module TestGetCommand
                     W("{0}: {1}", True, ColTypes.Neutral, Cult.Name, Cult.EnglishName)
                 End If
             Next
+        ElseIf Cmd = "getcustomsaversetting" Then
+            If RequiredArgumentsProvided Then
+                If CSvrdb.ContainsKey(FullArgsQ(0)) Then
+                    W("- {0} -> {1}: ", False, ColTypes.ListEntry, FullArgsQ(0), FullArgsQ(1))
+                    W(GetCustomSaverSettings(FullArgsQ(0), FullArgsQ(1)), True, ColTypes.ListValue)
+                Else
+                    W(DoTranslation("Screensaver {0} not found."), True, ColTypes.Err, FullArgsQ(0))
+                End If
+            End If
+        ElseIf Cmd = "setcustomsaversetting" Then
+            If RequiredArgumentsProvided Then
+                If CSvrdb.ContainsKey(FullArgsQ(0)) Then
+                    If SetCustomSaverSettings(FullArgsQ(0), FullArgsQ(1), FullArgsQ(2)) Then
+                        W(DoTranslation("Settings set successfully for screensaver") + " {0}.", True, ColTypes.Neutral, FullArgsQ(0))
+                    Else
+                        W(DoTranslation("Failed to set a setting for screensaver") + " {0}.", True, ColTypes.Err, FullArgsQ(0))
+                    End If
+                Else
+                    W(DoTranslation("Screensaver {0} not found."), True, ColTypes.Err, FullArgsQ(0))
+                End If
+            End If
         ElseIf Cmd = "help" Then
             If FullArgsQ?.Length = 0 Or FullArgsQ Is Nothing Then
                 TestShowHelp()

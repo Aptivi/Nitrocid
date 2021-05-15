@@ -482,4 +482,20 @@ Public Class Exceptions
         End Sub
     End Class
 
+    ''' <summary>
+    ''' Thrown when the screensaver management fails
+    ''' </summary>
+    Public Class ScreensaverManagementException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(ByVal message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception)
+            MyBase.New(message, e)
+        End Sub
+    End Class
+
 End Class

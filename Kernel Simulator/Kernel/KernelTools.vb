@@ -459,6 +459,7 @@ Public Module KernelTools
             paths.AddIfNotFound("DebugDevNames", Environ("HOME") + "/DebugDeviceNames.json")
             paths.AddIfNotFound("MOTD", Environ("HOME") + "/MOTD.txt")
             paths.AddIfNotFound("MAL", Environ("HOME") + "/MAL.txt")
+            paths.AddIfNotFound("CustomSaverSettings", Environ("HOME") + "/CustomSaverSettings.json")
             paths.AddIfNotFound("Home", Environ("HOME"))
             paths.AddIfNotFound("Temp", "/tmp")
         Else
@@ -472,6 +473,7 @@ Public Module KernelTools
             paths.AddIfNotFound("DebugDevNames", Environ("USERPROFILE").Replace("\", "/") + "/DebugDeviceNames.json")
             paths.AddIfNotFound("MOTD", Environ("USERPROFILE").Replace("\", "/") + "/MOTD.txt")
             paths.AddIfNotFound("MAL", Environ("USERPROFILE").Replace("\", "/") + "/MAL.txt")
+            paths.AddIfNotFound("CustomSaverSettings", Environ("USERPROFILE").Replace("\", "/") + "/CustomSaverSettings.json")
             paths.AddIfNotFound("Home", Environ("USERPROFILE").Replace("\", "/"))
             paths.AddIfNotFound("Temp", Environ("TEMP").Replace("\", "/"))
         End If

@@ -71,7 +71,8 @@ Public Module ToolPrompts
                     Wdbg("I", "Saving settings...")
                     Try
                         CreateConfig(True)
-                    Catch ex As Exceptions.ConfigException
+                        SaveCustomSaverSettings()
+                    Catch ex As Exception
                         W(ex.Message, True, ColTypes.Err)
                         WStkTrc(ex)
                         Console.ReadKey()

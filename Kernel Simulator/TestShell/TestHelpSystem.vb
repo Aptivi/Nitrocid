@@ -55,6 +55,8 @@ Module TestHelpSystem
                                                                   {"testlistwriterint", DoTranslation("Tests the list writer with the integer and integer array")},
                                                                   {"testlistwriterchar", DoTranslation("Tests the list writer with the char and char array")},
                                                                   {"lscultures", DoTranslation("Lists supported cultures")},
+                                                                  {"getcustomsaversetting", DoTranslation("Gets custom saver settings")},
+                                                                  {"setcustomsaversetting", DoTranslation("Sets custom saver settings")},
                                                                   {"help", DoTranslation("Shows help screen")},
                                                                   {"exit", DoTranslation("Exits the test shell and starts the kernel")},
                                                                   {"shutdown", DoTranslation("Exits the test shell and shuts down the kernel")}}
@@ -135,6 +137,10 @@ Module TestHelpSystem
             W(DoTranslation("Usage:") + " testlistwriterchar", True, ColTypes.Neutral)
         ElseIf command = "lscultures" Then
             W(DoTranslation("Usage:") + " lscultures [search]", True, ColTypes.Neutral)
+        ElseIf command = "getcustomsaversetting" Then
+            W(DoTranslation("Usage:") + " getcustomsaversetting <saver> <setting>", True, ColTypes.Neutral)
+        ElseIf command = "setcustomsaversetting" Then
+            W(DoTranslation("Usage:") + " setcustomsaversetting <saver> <setting> <value>", True, ColTypes.Neutral)
         ElseIf command = "help" Then
             W(DoTranslation("Usage:") + " help [command]", True, ColTypes.Neutral)
         ElseIf command = "exit" Then

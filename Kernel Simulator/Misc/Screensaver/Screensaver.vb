@@ -18,8 +18,10 @@
 
 Imports System.CodeDom.Compiler
 Imports System.ComponentModel
+Imports System.IO
 Imports System.Reflection
 Imports System.Threading
+Imports Newtonsoft.Json.Linq
 
 Public Module Screensaver
 
@@ -36,6 +38,7 @@ Public Module Screensaver
     Public finalSaver As ICustomSaver
     Public colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())        '15 Console Colors
     Public colors255() As ConsoleColors = CType([Enum].GetValues(GetType(ConsoleColors)), ConsoleColors())  '255 Console Colors
+    Public CustomSaverSettingsToken As JObject
     Friend SaverAutoReset As New AutoResetEvent(False)
     Private execCustomSaver As CompilerResults
     Private DoneFlag As Boolean = False
@@ -238,6 +241,38 @@ Public Module Screensaver
     End Sub
 
     ''' <summary>
+    ''' Locks the screen. The password will be required when unlocking.
+    ''' </summary>
+    Public Sub LockScreen()
+        LockMode = True
+        ShowSavers(defSaverName)
+        EventManager.RaisePreUnlock(defSaverName)
+        ShowPasswordPrompt(signedinusrnm)
+    End Sub
+
+    ''' <summary>
+    ''' Sets the default screensaver
+    ''' </summary>
+    ''' <param name="saver">Specified screensaver</param>
+    ''' <param name="setDef">Whether or not to set the default screensaver</param>
+    Public Sub SetDefaultScreensaver(ByVal saver As String, Optional ByVal setDef As Boolean = True)
+        If ScrnSvrdb.ContainsKey(saver) Then
+            Wdbg("I", "{0} is found. (Un)Setting it to default...", saver)
+            Dim ksconf As New IniFile()
+            Dim pathConfig As String = paths("Configuration")
+            ksconf.Load(pathConfig)
+            ksconf.Sections("Screensaver").Keys("Screensaver").Value = saver
+            ksconf.Save(pathConfig)
+            ScrnSvrdb(defSaverName) = False
+            defSaverName = saver
+            ScrnSvrdb(saver) = setDef
+        Else
+            Wdbg("W", "{0} is not found.", saver)
+            Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found in database. Check the name and try again.").FormatString(saver))
+        End If
+    End Sub
+
+    ''' <summary>
     ''' Compiles the custom screensaver file and configures it so it can be viewed
     ''' </summary>
     ''' <param name="file">File name with SS.m</param>
@@ -306,6 +341,8 @@ Public Module Screensaver
                                 Exit Sub
                             End If
                         End If
+                        InitializeCustomSaverSettings()
+                        AddCustomSaverToSettings(If(SaverName = "", file, SaverName))
                     Else
                         If Not SaverName = "" Then
                             W(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing."), True, ColTypes.Err, SaverName)
@@ -322,28 +359,6 @@ Public Module Screensaver
         Else
             W(DoTranslation("Screensaver {0} does not exist."), True, ColTypes.Err, file)
             Wdbg("E", "The file {0} does not exist for compilation.", file)
-        End If
-    End Sub
-
-    ''' <summary>
-    ''' Sets the default screensaver
-    ''' </summary>
-    ''' <param name="saver">Specified screensaver</param>
-    ''' <param name="setDef">Whether or not to set the default screensaver</param>
-    Public Sub SetDefaultScreensaver(ByVal saver As String, Optional ByVal setDef As Boolean = True)
-        If ScrnSvrdb.ContainsKey(saver) Then
-            Wdbg("I", "{0} is found. (Un)Setting it to default...", saver)
-            Dim ksconf As New IniFile()
-            Dim pathConfig As String = paths("Configuration")
-            ksconf.Load(pathConfig)
-            ksconf.Sections("Screensaver").Keys("Screensaver").Value = saver
-            ksconf.Save(pathConfig)
-            ScrnSvrdb(defSaverName) = False
-            defSaverName = saver
-            ScrnSvrdb(saver) = setDef
-        Else
-            Wdbg("W", "{0} is not found.", saver)
-            Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found in database. Check the name and try again.").FormatString(saver))
         End If
     End Sub
 
@@ -398,13 +413,103 @@ Public Module Screensaver
     End Function
 
     ''' <summary>
-    ''' Locks the screen. The password will be required when unlocking.
+    ''' Initializes and reads the custom saver settings
     ''' </summary>
-    Public Sub LockScreen()
-        LockMode = True
-        ShowSavers(defSaverName)
-        EventManager.RaisePreUnlock(defSaverName)
-        ShowPasswordPrompt(signedinusrnm)
+    Public Sub InitializeCustomSaverSettings()
+        If Not File.Exists(paths("CustomSaverSettings")) Then MakeFile(paths("CustomSaverSettings"))
+        Dim CustomSaverJsonContent As String = File.ReadAllText(paths("CustomSaverSettings"))
+        Dim CustomSaverToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(CustomSaverJsonContent), CustomSaverJsonContent, "{}"))
+        For Each Saver As String In CSvrdb.Keys
+            Dim CustomSaverSettings As JObject = TryCast(CustomSaverToken(Saver), JObject)
+            If CustomSaverSettings IsNot Nothing Then
+                For Each Setting In CustomSaverSettings
+                    CSvrdb(Saver).SaverSettings(Setting.Key) = Setting.Value.ToString
+                Next
+            End If
+        Next
+        CustomSaverSettingsToken = CustomSaverToken
     End Sub
+
+    ''' <summary>
+    ''' Saves the custom saver settings
+    ''' </summary>
+    Public Sub SaveCustomSaverSettings()
+        For Each Saver As String In CSvrdb.Keys
+            For Each Setting As String In CSvrdb(Saver).SaverSettings.Keys
+                If Not TryCast(CustomSaverSettingsToken(Saver), JObject).ContainsKey(Setting) Then
+                    TryCast(CustomSaverSettingsToken(Saver), JObject).Add(Setting, CSvrdb(Saver).SaverSettings(Setting).ToString)
+                Else
+                    CustomSaverSettingsToken(Saver)(Setting) = CSvrdb(Saver).SaverSettings(Setting).ToString
+                End If
+            Next
+        Next
+        File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
+    End Sub
+
+    ''' <summary>
+    ''' Adds a custom screensaver to settings
+    ''' </summary>
+    ''' <param name="CustomSaver">A custom saver</param>
+    ''' <exception cref="Exceptions.NoSuchScreensaverException"></exception>
+    Public Sub AddCustomSaverToSettings(ByVal CustomSaver As String)
+        If Not CSvrdb.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found.").FormatString(CustomSaver))
+        If Not CustomSaverSettingsToken.ContainsKey(CustomSaver) Then
+            Dim NewCustomSaver As New JObject
+            For Each Setting As String In CSvrdb(CustomSaver).SaverSettings.Keys
+                NewCustomSaver.Add(Setting, CSvrdb(CustomSaver).SaverSettings(Setting).ToString)
+            Next
+            CustomSaverSettingsToken.Add(CustomSaver, NewCustomSaver)
+            File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Removes a custom screensaver from settings
+    ''' </summary>
+    ''' <param name="CustomSaver">A custom saver</param>
+    ''' <exception cref="Exceptions.NoSuchScreensaverException"></exception>
+    ''' <exception cref="Exceptions.ScreensaverManagementException"></exception>
+    Public Sub RemoveCustomSaverFromSettings(ByVal CustomSaver As String)
+        If Not CSvrdb.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found.").FormatString(CustomSaver))
+        If Not CustomSaverSettingsToken.Remove(CustomSaver) Then Throw New Exceptions.ScreensaverManagementException(DoTranslation("Failed to remove screensaver {0} from config.").FormatString(CustomSaver))
+        File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
+    End Sub
+
+    ''' <summary>
+    ''' Gets custom saver settings
+    ''' </summary>
+    ''' <param name="CustomSaver">A custom saver</param>
+    ''' <param name="SaverSetting">A saver setting</param>
+    ''' <returns>Saver setting value if successful; nothing if unsuccessful.</returns>
+    ''' <exception cref="Exceptions.NoSuchScreensaverException"></exception>
+    Public Function GetCustomSaverSettings(ByVal CustomSaver As String, ByVal SaverSetting As String) As Object
+        If Not CustomSaverSettingsToken.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found.").FormatString(CustomSaver))
+        For Each Setting As JProperty In CustomSaverSettingsToken(CustomSaver)
+            If Setting.Name = SaverSetting Then
+                Return Setting.Value.ToObject(GetType(Object))
+            End If
+        Next
+    End Function
+
+    ''' <summary>
+    ''' Sets custom saver settings
+    ''' </summary>
+    ''' <param name="CustomSaver">A custom saver</param>
+    ''' <param name="SaverSetting">A saver setting</param>
+    ''' <param name="Value">Value</param>
+    ''' <returns>True if successful; False if unsuccessful.</returns>
+    ''' <exception cref="Exceptions.NoSuchScreensaverException"></exception>
+    Public Function SetCustomSaverSettings(ByVal CustomSaver As String, ByVal SaverSetting As String, ByVal Value As Object) As Boolean
+        If Not CustomSaverSettingsToken.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found.").FormatString(CustomSaver))
+        Dim SettingFound As Boolean
+        For Each Setting As JProperty In CustomSaverSettingsToken(CustomSaver)
+            If Setting.Name = SaverSetting Then
+                SettingFound = True
+                CustomSaverSettingsToken(CustomSaver)(SaverSetting) = Value.ToString
+            End If
+        Next
+        File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
+        Return SettingFound
+    End Function
 
 End Module
