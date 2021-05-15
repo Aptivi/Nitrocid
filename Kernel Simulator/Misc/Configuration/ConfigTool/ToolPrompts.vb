@@ -1092,7 +1092,7 @@ Public Module ToolPrompts
             If Not KeyType = SettingsKeyType.SVariant Then W("{0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.Option, MaxKeyOptions + 1)
 
             'Get key value
-            KeyValue = GetConfigValue(KeyVar)
+            If Not KeyType = SettingsKeyType.SMenu Then KeyValue = GetConfigValue(KeyVar)
 
             'Print debugging info
             Wdbg("W", "Key {0} in section {1} has {2} selections.", KeyNumber, Section, MaxKeyOptions)
@@ -1123,7 +1123,7 @@ Public Module ToolPrompts
                     Loop
 #Enable Warning BC42104
                 Else
-                    W("[{0}] > ", False, ColTypes.Input, KeyValue)
+                    W(If(KeyType = SettingsKeyType.SMenu, "> ", "[{0}] > "), False, ColTypes.Input, KeyValue)
                     AnswerString = Console.ReadLine
                     If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString)
                     Wdbg("I", "User answered {0}", AnswerString)
