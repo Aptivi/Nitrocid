@@ -65,7 +65,8 @@ Public Module Config
                 'The Hardware Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Hardware",
-                        New IniKey(ksconf, "Quiet Probe", quietProbe)))
+                        New IniKey(ksconf, "Quiet Probe", quietProbe),
+                        New IniKey(ksconf, "Full Probe", FullProbe)))
 
                 'The Login Section
                 ksconf.Sections.Add(
@@ -194,7 +195,8 @@ Public Module Config
                 'The Hardware Section
                 ksconf.Sections.Add(
                     New IniSection(ksconf, "Hardware",
-                        New IniKey(ksconf, "Quiet Probe", "False")))
+                        New IniKey(ksconf, "Quiet Probe", "False"),
+                        New IniKey(ksconf, "Full Probe", "True")))
 
                 'The Login Section
                 ksconf.Sections.Add(
@@ -325,6 +327,7 @@ Public Module Config
             'Hardware
             ksconf.Sections("Hardware").TrailingComment.Text = "This section is the hardware probing settings."
             ksconf.Sections("Hardware").Keys("Quiet Probe").TrailingComment.Text = "Whether or not to quietly probe hardware"
+            ksconf.Sections("Hardware").Keys("Full Probe").TrailingComment.Text = "If true, probes all the hardware; else, will only probe the needed hardware."
 
             'Network
             ksconf.Sections("Network").TrailingComment.Text = "This section is the network settings."
@@ -535,6 +538,7 @@ Public Module Config
             'Hardware Section
             Wdbg("I", "Parsing hardware section...")
             If configReader.Sections("Hardware").Keys("Quiet Probe").Value = "True" Then quietProbe = True Else quietProbe = False
+            If configReader.Sections("Hardware").Keys("Full Probe").Value = "True" Then FullProbe = True Else FullProbe = False
 
             'Network Section
             Wdbg("I", "Parsing network section...")

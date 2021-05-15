@@ -123,10 +123,11 @@ Public Module ToolPrompts
                     W("4) " + DoTranslation("Check for Updates on Startup") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CheckUpdateStart)))
                     W("5) " + DoTranslation("Change Culture when Switching Languages") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(LangChangeCulture)))
                 Case "2" 'Hardware
-                    MaxOptions = 1
+                    MaxOptions = 2
                     W("*) " + DoTranslation("Hardware Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section changes hardware probe behavior.") + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Quiet Probe") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(quietProbe)))
+                    W("1) " + DoTranslation("Quiet Probe") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(quietProbe)))
+                    W("2) " + DoTranslation("Full Probe") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(FullProbe)))
                 Case "3" 'Login
                     MaxOptions = 3
                     W("*) " + DoTranslation("Login Settings...") + vbNewLine, True, ColTypes.Neutral)
@@ -483,6 +484,14 @@ Public Module ToolPrompts
                             KeyVar = NameOf(quietProbe)
                             W("*) " + DoTranslation("Hardware Settings...") + " > " + DoTranslation("Quiet Probe") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Keep hardware probing messages silent.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
+                        Case 2 'Full Probe
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(FullProbe)
+                            W("*) " + DoTranslation("Hardware Settings...") + " > " + DoTranslation("Full Probe") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("If true, probes all the hardware; else, will only probe the needed hardware.") + vbNewLine, True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
                             W("2) " + DoTranslation("Disable") + vbNewLine, True, ColTypes.Option)
                         Case Else

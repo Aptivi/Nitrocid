@@ -163,6 +163,10 @@ Module Flags
     ''' Wraps the list outputs
     ''' </summary>
     Public WrapListOutputs As Boolean
+    ''' <summary>
+    ''' Ensures that all hardware will be probed
+    ''' </summary>
+    Public FullProbe As Boolean = True
 
     'Private flags
     ''' <summary>

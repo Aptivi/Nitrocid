@@ -33,7 +33,11 @@ Public Module HardwareProbe
         EventManager.RaiseHardwareProbing()
         Try
             AddHandler DebugDataReceived, AddressOf WriteInxiDebugData
-            HardwareInfo = New Inxi(InxiParseFlags.Processor Or InxiParseFlags.PCMemory Or InxiParseFlags.Graphics Or InxiParseFlags.HardDrive)
+            If FullProbe Then
+                HardwareInfo = New Inxi()
+            Else
+                HardwareInfo = New Inxi(InxiParseFlags.Processor Or InxiParseFlags.PCMemory Or InxiParseFlags.Graphics Or InxiParseFlags.HardDrive)
+            End If
             RemoveHandler DebugDataReceived, AddressOf WriteInxiDebugData
         Catch ex As Exception
             Wdbg("E", "Failed to probe hardware: {0}", ex.Message)
