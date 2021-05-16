@@ -114,6 +114,10 @@ Public Module CommandType
         ''' ZIP shell
         ''' </summary>
         ZIPShell
+        ''' <summary>
+        ''' RSS Shell
+        ''' </summary>
+        RSSShell
     End Enum
 
 End Module

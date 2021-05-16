@@ -300,6 +300,8 @@ Public Module KernelTools
         TextEdit_ModHelpEntries.Clear()
         ZipShell_ModCommands.Clear()
         ZipShell_ModHelpEntries.Clear()
+        RSSModCommands.Clear()
+        RSSModDefs.Clear()
         scripts.Clear()
         Aliases.Clear()
         RemoteDebugAliases.Clear()
@@ -362,6 +364,7 @@ Public Module KernelTools
         InitTestHelp()
         TextEdit_UpdateHelp()
         ZipShell_UpdateHelp()
+        InitRSSHelp()
 
         'We need to create a file so InitAliases() won't give out an error
         If Not File.Exists(paths("Aliases")) Then

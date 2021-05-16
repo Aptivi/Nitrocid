@@ -302,6 +302,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Network\RemoteDebug\RemoteDebugHelpSystem.vb" />
+    <Compile Include="Network\RSS\Instance\RSSArticle.vb" />
+    <Compile Include="Network\RSS\Instance\RSSFeed.vb" />
+    <Compile Include="Network\RSS\RSSGetCommand.vb" />
+    <Compile Include="Network\RSS\RSSHelpSystem.vb" />
+    <Compile Include="Network\RSS\RSSShell.vb" />
+    <Compile Include="Network\RSS\RSSTools.vb" />
     <Compile Include="Network\SFTP\Filesystem\SFTPFilesystem.vb" />
     <Compile Include="Network\SFTP\SFTPGetCommand.vb" />
     <Compile Include="Network\SFTP\SFTPHelpSystem.vb" />

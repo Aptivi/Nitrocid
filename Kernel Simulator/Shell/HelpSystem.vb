@@ -82,6 +82,7 @@ Public Module HelpSystem
                                                               {"rdebug", DoTranslation("Enables or disables remote debugging.")},
                                                               {"reportbug", DoTranslation("A bug reporting prompt.")},
                                                               {"rmuser", DoTranslation("Removes a user from the list")},
+                                                              {"rss", DoTranslation("Opens an RSS shell to read the feeds")},
                                                               {"savecurrdir", DoTranslation("Saves the current directory to kernel configuration file")},
                                                               {"savescreen", DoTranslation("Saves your screen from burn outs")},
                                                               {"search", DoTranslation("Searches for specified string in the provided file using regular expressions")},
@@ -387,6 +388,10 @@ Public Module HelpSystem
         ElseIf command = "rmuser" Then
 
             W(DoTranslation("Usage:") + " rmuser <Username>", True, ColTypes.Neutral)
+
+        ElseIf command = "rss" Then
+
+            W(DoTranslation("Usage:") + " rss [feedlink]", True, ColTypes.Neutral)
 
         ElseIf command = "savecurrdir" Then
 

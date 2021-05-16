@@ -69,6 +69,10 @@ Public Class Events
     Public Event RPCCommandSent(ByVal Command As String)
     Public Event RPCCommandReceived(ByVal Command As String)
     Public Event RPCCommandError(ByVal Command As String, ByVal Exception As Exception)
+    Public Event RSSShellInitialized(ByVal FeedUrl As String)
+    Public Event RSSPreExecuteCommand(ByVal FeedUrl As String, ByVal Command As String)
+    Public Event RSSPostExecuteCommand(ByVal FeedUrl As String, ByVal Command As String)
+    Public Event RSSCommandError(ByVal FeedUrl As String, ByVal Command As String, ByVal Exception As Exception)
     Public Event SFTPShellInitialized()
     Public Event SFTPPreExecuteCommand(ByVal Command As String)
     Public Event SFTPPostExecuteCommand(ByVal Command As String)
@@ -594,6 +598,50 @@ Public Class Events
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RPCCommandError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("RPCCommandError", Command, Exception)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of RSS shell initialized
+    ''' </summary>
+    Public Sub RespondRSSShellInitialized(ByVal FeedUrl As String) Handles Me.RSSShellInitialized
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event RSSShellInitialized()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("RSSShellInitialized", FeedUrl)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of pre-command execution
+    ''' </summary>
+    Public Sub RespondRSSPreExecuteCommand(ByVal FeedUrl As String, ByVal Command As String) Handles Me.RSSPreExecuteCommand
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event RSSPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("RSSPreExecuteCommand", FeedUrl, Command)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of post-command execution
+    ''' </summary>
+    Public Sub RespondRSSPostExecuteCommand(ByVal FeedUrl As String, ByVal Command As String) Handles Me.RSSPostExecuteCommand
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event RSSPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("RSSPostExecuteCommand", FeedUrl, Command)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of RSS command error
+    ''' </summary>
+    Public Sub RespondRSSCommandError(ByVal FeedUrl As String, ByVal Command As String, ByVal Exception As Exception) Handles Me.RSSCommandError
+        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
+            For Each script As IScript In ModPart.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event RSSCommandError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("RSSCommandError", FeedUrl, Command, Exception)
             Next
         Next
     End Sub
@@ -1649,6 +1697,38 @@ Public Class Events
         Wdbg("I", "Raising event RPCCommandError() and responding in RespondRPCCommandError()...")
         FiredEvents.Add("RPCCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent RPCCommandError(Command, Exception)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of RSS shell initialized
+    ''' </summary>
+    Public Sub RaiseRSSShellInitialized(ByVal FeedUrl As String)
+        Wdbg("I", "Raising event RSSShellInitialized() and responding in RespondRSSShellInitialized()...")
+        FiredEvents.Add("RSSShellInitialized (" + CStr(FiredEvents.Count) + ")", {FeedUrl})
+        RaiseEvent RSSShellInitialized(FeedUrl)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of RSS pre-execute command
+    ''' </summary>
+    Public Sub RaiseRSSPreExecuteCommand(ByVal FeedUrl As String, ByVal Command As String)
+        Wdbg("I", "Raising event RSSPreExecuteCommand() and responding in RespondRSSPreExecuteCommand()...")
+        FiredEvents.Add("RSSPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {FeedUrl, Command})
+        RaiseEvent RSSPreExecuteCommand(FeedUrl, Command)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of RSS post-execute command
+    ''' </summary>
+    Public Sub RaiseRSSPostExecuteCommand(ByVal FeedUrl As String, ByVal Command As String)
+        Wdbg("I", "Raising event RSSPostExecuteCommand() and responding in RespondRSSPostExecuteCommand()...")
+        FiredEvents.Add("RSSPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {FeedUrl, Command})
+        RaiseEvent RSSPostExecuteCommand(FeedUrl, Command)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of RSS command error
+    ''' </summary>
+    Public Sub RaiseRSSCommandError(ByVal FeedUrl As String, ByVal Command As String, ByVal Exception As Exception)
+        Wdbg("I", "Raising event RSSCommandError() and responding in RespondRSSCommandError()...")
+        FiredEvents.Add("RSSCommandError (" + CStr(FiredEvents.Count) + ")", {FeedUrl, Command, Exception})
+        RaiseEvent RSSCommandError(FeedUrl, Command, Exception)
     End Sub
     ''' <summary>
     ''' Raise an event of SFTP shell initialized

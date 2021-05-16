@@ -840,6 +840,14 @@ Public Module GetCommand
                         W(DoTranslation("User {0} removed."), True, ColTypes.Neutral, eqargs(0))
                     End If
 
+                Case "rss"
+
+                    If Not eqargs?.Length = 0 Then
+                        InitiateRSSShell(eqargs(0))
+                    Else
+                        InitiateRSSShell()
+                    End If
+
                 Case "savescreen"
 
                     If Not eqargs?.Length = 0 Then

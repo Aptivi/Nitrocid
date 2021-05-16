@@ -42,7 +42,7 @@ Module ZipShell
     ''' </summary>
     ''' <param name="ZipFile">A ZIP file. We recommend you to use <see cref="NeutralizePath(String, Boolean)"></see> to neutralize path.</param>
     Public Sub InitializeZipShell(ByVal ZipFile As String)
-        'Add handler for text editor shell
+        'Add handler for ZIP shell
         AddHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
         RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
         ZipShell_CurrentDirectory = CurrDir
@@ -85,8 +85,9 @@ Module ZipShell
                     Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), ZipShell_Commands.Count)
                 End If
             End If
+
             'This is to fix race condition between shell initialization and starting the event handler thread
-            If IsNothing(strcommand) Then
+            If IsNothing(WrittenCommand) Then
                 Thread.Sleep(30)
             End If
         End While
@@ -98,7 +99,7 @@ Module ZipShell
         ZipShell_ZipArchive = Nothing
         ZipShell_FileStream = Nothing
 
-        'Remove handler for text editor shell
+        'Remove handler for ZIP shell
         AddHandler Console.CancelKeyPress, AddressOf CancelCommand
         RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
         ZipShell_Exiting = False

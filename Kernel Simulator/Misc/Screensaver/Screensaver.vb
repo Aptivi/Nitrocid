@@ -405,7 +405,7 @@ Public Module Screensaver
 
             'Try to compile
             Dim namespc As String = GetType(ICustomSaver).Namespace
-            Dim modCode() As String
+            Dim modCode() As String = {}
             If PLang = "VB.NET" Then
                 modCode = {$"Imports {namespc}{vbNewLine}{code}"}
             ElseIf PLang = "C#" Then

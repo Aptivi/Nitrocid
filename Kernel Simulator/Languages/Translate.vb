@@ -313,8 +313,11 @@ CHOICE:
                 InitFTPHelp()
                 InitSFTPHelp()
                 IMAPInitHelp()
+                InitRDebugHelp()
+                InitTestHelp()
                 TextEdit_UpdateHelp()
                 ZipShell_UpdateHelp()
+                InitRSSHelp()
                 ReloadGenericDefs(OldModDescGeneric)
 
                 'Update Culture if applicable
