@@ -24,13 +24,13 @@ Public Module ToolPrompts
     ''' Key type for settings entry
     ''' </summary>
     Enum SettingsKeyType
+        SUnknown
         SBoolean
         SInt
         SString
         SSelection
         SList
         SVariant
-        SMenu
     End Enum
 
     ''' <summary>
@@ -123,6 +123,12 @@ Public Module ToolPrompts
                     W("3) " + DoTranslation("Change Root Password..."), True, ColTypes.Option)
                     W("4) " + DoTranslation("Check for Updates on Startup") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CheckUpdateStart)))
                     W("5) " + DoTranslation("Change Culture when Switching Languages") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(LangChangeCulture)))
+                Case "1.3" 'Change Root Password...
+                    MaxOptions = 2
+                    W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password...") + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lets you manage root password creation.") + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Change Root Password?") + " [{0}]", True, ColTypes.Option, GetConfigValue("setRootPasswd"))
+                    W("2) " + DoTranslation("Set Root Password...") + vbNewLine, True, ColTypes.Option)
                 Case "2" 'Hardware
                     MaxOptions = 2
                     W("*) " + DoTranslation("Hardware Settings...") + vbNewLine, True, ColTypes.Neutral)
@@ -346,12 +352,15 @@ Public Module ToolPrompts
                 If AnswerInt >= 1 And AnswerInt <= MaxOptions Then
                     If AnswerInt = 3 And SectionNum = "1" Then
                         Wdbg("I", "Tried to open special section. Opening section 1.3...")
+                        OpenSection("1.3")
+                    ElseIf AnswerInt <> MaxOptions And SectionNum = "1.3" Then
+                        Wdbg("I", "Tried to open special section. Opening key {0} in section 1.3...", AnswerString)
                         OpenKey("1.3", AnswerInt)
                     ElseIf AnswerInt = 9 And SectionNum = "4" Then
                         Wdbg("I", "Tried to open subsection. Opening section 4.9...")
                         OpenSection("4.9")
                     ElseIf AnswerInt <> MaxOptions And SectionNum = "4.9" Then
-                        Wdbg("I", "Tried to open special section. Opening section 4.9...")
+                        Wdbg("I", "Tried to open subsection. Opening key {0} in section 4.9...", AnswerString)
                         OpenKey("4.9", AnswerInt)
                     ElseIf AnswerInt <> MaxOptions And SectionNum = "6" Then
                         Wdbg("I", "Tried to open subsection. Opening section 6.{0}...", AnswerString)
@@ -390,7 +399,7 @@ Public Module ToolPrompts
     Sub OpenKey(ByVal Section As String, ByVal KeyNumber As Integer, ParamArray KeyParameters() As Object)
         Dim MaxKeyOptions As Integer = 0
         Dim KeyFinished As Boolean
-        Dim KeyType As SettingsKeyType
+        Dim KeyType As SettingsKeyType = SettingsKeyType.SUnknown
         Dim KeyVar As String = ""
         Dim KeyValue As Object = ""
         Dim VariantValue As Object = ""
@@ -456,13 +465,6 @@ Public Module ToolPrompts
                             Else
                                 W("X) " + DoTranslation("Enable ""Change Root Password"" to use this option. Please go back.") + vbNewLine, True, ColTypes.Err)
                             End If
-                        Case 3
-                            MaxKeyOptions = 2
-                            KeyType = SettingsKeyType.SMenu
-                            W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password...") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("Select option:") + vbNewLine, True, ColTypes.Neutral)
-                            W("1) " + DoTranslation("Change Root Password?") + " [{0}]", True, ColTypes.Option, GetConfigValue("setRootPasswd"))
-                            W("2) " + DoTranslation("Set Root Password...") + vbNewLine, True, ColTypes.Option)
                         Case Else
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
@@ -1093,14 +1095,14 @@ Public Module ToolPrompts
             If Not KeyType = SettingsKeyType.SVariant Then W("{0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.Option, MaxKeyOptions + 1)
 
             'Get key value
-            If Not KeyType = SettingsKeyType.SMenu Then KeyValue = GetConfigValue(KeyVar)
+            If Not KeyType = SettingsKeyType.SUnknown Then KeyValue = GetConfigValue(KeyVar)
 
             'Print debugging info
             Wdbg("W", "Key {0} in section {1} has {2} selections.", KeyNumber, Section, MaxKeyOptions)
             Wdbg("W", "Target variable: {0}, Key Type: {1}, Key value: {2}, Variant Value: {3}", KeyVar, KeyType, KeyValue, VariantValue)
 
             'Prompt user
-            If KeyNumber = 2 And Section = "1.3" Then
+            If KeyNumber = 2 And Section = "1.3" And Not KeyType = SettingsKeyType.SUnknown Then
                 W("> ", False, ColTypes.Input)
                 AnswerString = ReadLineNoInput("*")
                 Console.WriteLine()
@@ -1124,7 +1126,7 @@ Public Module ToolPrompts
                     Loop
 #Enable Warning BC42104
                 Else
-                    W(If(KeyType = SettingsKeyType.SMenu, "> ", "[{0}] > "), False, ColTypes.Input, KeyValue)
+                    W(If(KeyType = SettingsKeyType.SUnknown, "> ", "[{0}] > "), False, ColTypes.Input, KeyValue)
                     AnswerString = Console.ReadLine
                     If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString)
                     Wdbg("I", "User answered {0}", AnswerString)
@@ -1171,6 +1173,9 @@ Public Module ToolPrompts
                     W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
                     Console.ReadKey()
                 End If
+            ElseIf KeyType = SettingsKeyType.SUnknown Then
+                Wdbg("I", "User requested exit. Returning...")
+                KeyFinished = True
             ElseIf KeyType = SettingsKeyType.SString Then
                 Wdbg("I", "Answer is not numeric and key is of the String type. Setting variable...")
                 If String.IsNullOrWhiteSpace(AnswerString) Then
@@ -1183,20 +1188,6 @@ Public Module ToolPrompts
                 Wdbg("I", "Answer is not numeric and key is of the List type. Adding answers to the list...")
                 KeyFinished = True
                 SetConfigValue(KeyVar, String.Join(ListJoinString, TargetList))
-            ElseIf Section = "1.3" And KeyNumber = 3 Then
-                Wdbg("I", "Answer is not numeric and the user is on the special section.")
-                If AnswerInt >= 1 And AnswerInt <= 2 Then
-                    Wdbg("I", "AnswerInt is {0}. Opening key...", AnswerInt)
-                    OpenKey(Section, AnswerInt)
-                ElseIf AnswerInt = MaxKeyOptions + 1 Then 'Go Back...
-                    Wdbg("I", "User requested exit. Returning...")
-                    KeyFinished = True
-                Else
-                    Wdbg("W", "Option is not valid. Returning...")
-                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Err, AnswerInt)
-                    W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
-                    Console.ReadKey()
-                End If
             ElseIf SectionParts.Length > 1 Then
                 If Section = "6." + SectionParts(1) And SectionParts(1) > BuiltinSavers And KeyType = SettingsKeyType.SVariant Then
                     Dim SaverIndex As Integer = SectionParts(1) - BuiltinSavers - 1
