@@ -70,7 +70,7 @@ Module FaderDisplay
                     Dim CurrentColorRed As Integer = RedColorNum / CurrentStep
                     Dim CurrentColorGreen As Integer = GreenColorNum / CurrentStep
                     Dim CurrentColorBlue As Integer = BlueColorNum / CurrentStep
-                    WriteWhereC(FaderWrite, Left, Top, True, New Color(CurrentColorRed & ";" & CurrentColorGreen & ";" & CurrentColorBlue))
+                    WriteWhereC(FaderWrite, Left, Top, True, New Color(CurrentColorRed & ";" & CurrentColorGreen & ";" & CurrentColorBlue), New Color(ConsoleColors.Black))
                 Next
 
                 'Wait until fade out
@@ -82,7 +82,7 @@ Module FaderDisplay
                     Dim CurrentColorRed As Integer = RedColorNum - ThresholdRed * CurrentStep
                     Dim CurrentColorGreen As Integer = GreenColorNum - ThresholdGreen * CurrentStep
                     Dim CurrentColorBlue As Integer = BlueColorNum - ThresholdBlue * CurrentStep
-                    WriteWhereC(FaderWrite, Left, Top, True, New Color(CurrentColorRed & ";" & CurrentColorGreen & ";" & CurrentColorBlue))
+                    WriteWhereC(FaderWrite, Left, Top, True, New Color(CurrentColorRed & ";" & CurrentColorGreen & ";" & CurrentColorBlue), New Color(ConsoleColors.Black))
                 Next
 
                 'Select new color
