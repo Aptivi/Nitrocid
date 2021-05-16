@@ -41,10 +41,11 @@ Public Module UserManagement
     ''' <param name="uninitUser">A new user</param>
     ''' <param name="unpassword">A password of a user in encrypted form</param>
     ''' <param name="ComputationNeeded">Whether or not a password encryption is needed</param>
+    ''' <param name="ModifyExisting">Changes the password of the existing user</param>
     ''' <returns>True if successful; False if successful</returns>
     ''' <exception cref="InvalidOperationException"></exception>
     ''' <exception cref="Exceptions.UserCreationException"></exception>
-    Function InitializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "", Optional ByVal ComputationNeeded As Boolean = True) As Boolean
+    Function InitializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "", Optional ByVal ComputationNeeded As Boolean = True, Optional ByVal ModifyExisting As Boolean = False) As Boolean
         Try
             'Compute hash of a password
             Dim Regexp As New Regex("^([a-fA-F0-9]{64})$")
@@ -56,21 +57,30 @@ Public Module UserManagement
             End If
 
             'Add user locally
-            If Not userword.ContainsKey(uninitUser) Then userword.Add(uninitUser, unpassword)
+            If Not userword.ContainsKey(uninitUser) Then
+                userword.Add(uninitUser, unpassword)
+            ElseIf userword.ContainsKey(uninitUser) And ModifyExisting Then
+                userword(uninitUser) = unpassword
+            End If
 
             'Add user globally
             If Not UsersToken.Count = 0 Then
                 Dim UserExists As Boolean
+                Dim ExistingIndex As Integer
                 For Each UserToken As JObject In UsersToken
                     If UserToken("username").ToString = uninitUser Then
                         UserExists = True
+                        Exit For
                     End If
+                    ExistingIndex += 1
                 Next
                 If Not UserExists Then
                     Dim NewUser As New JObject(New JProperty("username", uninitUser),
                                                New JProperty("password", unpassword),
                                                New JProperty("permissions", New JArray))
                     UsersToken.Add(NewUser)
+                ElseIf UserExists And ModifyExisting Then
+                    UsersToken(ExistingIndex)("password") = unpassword
                 End If
             Else
                 Dim NewUser As New JObject(New JProperty("username", uninitUser),
@@ -294,15 +304,15 @@ Public Module UserManagement
     ''' </summary>
     Sub InitializeSystemAccount()
         If setRootPasswd Then
-            AddUser("root", RootPasswd)
+            InitializeUser("root", RootPasswd, True, True)
         ElseIf File.Exists(paths("Users")) Then
             If GetUserProperty("root", UserProperty.Password) IsNot Nothing Then
-                InitializeUser("root", GetUserProperty("root", UserProperty.Password), False)
+                InitializeUser("root", GetUserProperty("root", UserProperty.Password), False, True)
             Else
-                AddUser("root")
+                InitializeUser("root", "", True, True)
             End If
         Else
-            AddUser("root")
+            InitializeUser("root", "", True, True)
         End If
         Permission(PermissionType.Administrator, "root", PermissionManagementMode.Allow)
     End Sub
