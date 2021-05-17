@@ -22,9 +22,10 @@ Public Module RSSShell
 
     'Variables
     Public RSSExiting As Boolean
-    Public RSSCommands As New Dictionary(Of String, CommandInfo) From {{"articleinfo", New CommandInfo("list", ShellCommandType.RSSShell, True, 1, False, False, False, False)},
+    Public RSSCommands As New Dictionary(Of String, CommandInfo) From {{"articleinfo", New CommandInfo("articleinfo", ShellCommandType.RSSShell, True, 1, False, False, False, False)},
                                                                        {"chfeed", New CommandInfo("chfeed", ShellCommandType.RSSShell, True, 1, False, False, False, False)},
                                                                        {"exit", New CommandInfo("exit", ShellCommandType.RSSShell, False, 0, False, False, False, False)},
+                                                                       {"feedinfo", New CommandInfo("feedinfo", ShellCommandType.RSSShell, False, 0, False, False, False, False)},
                                                                        {"help", New CommandInfo("help", ShellCommandType.RSSShell, False, 0, False, False, False, False)},
                                                                        {"list", New CommandInfo("list", ShellCommandType.RSSShell, False, 0, False, False, False, False)},
                                                                        {"read", New CommandInfo("read", ShellCommandType.RSSShell, True, 1, False, False, False, False)}}

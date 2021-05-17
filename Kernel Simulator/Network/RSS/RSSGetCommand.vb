@@ -97,6 +97,17 @@ Public Module RSSGetCommand
                 If RequiredArgumentsProvided Then
                     RSSFeedLink = Arguments(0)
                 End If
+            ElseIf Command = "feedinfo" Then
+                W("- " + DoTranslation("Title:") + " ", False, ColTypes.ListEntry)
+                W(RSSFeedInstance.FeedTitle, True, ColTypes.ListValue)
+                W("- " + DoTranslation("Link:") + " ", False, ColTypes.ListEntry)
+                W(RSSFeedInstance.FeedUrl, True, ColTypes.ListValue)
+                W("- " + DoTranslation("Description:") + " ", False, ColTypes.ListEntry)
+                W(RSSFeedInstance.FeedDescription, True, ColTypes.ListValue)
+                W("- " + DoTranslation("Feed type:") + " ", False, ColTypes.ListEntry)
+                W(RSSFeedInstance.FeedType, True, ColTypes.ListValue)
+                W("- " + DoTranslation("Number of articles:") + " ", False, ColTypes.ListEntry)
+                W(RSSFeedInstance.FeedArticles.Count, True, ColTypes.ListValue)
             ElseIf Command = "list" Then
                 For Each Article As RSSArticle In RSSFeedInstance.FeedArticles
                     W("- {0}: ", False, ColTypes.ListEntry, Article.ArticleTitle)

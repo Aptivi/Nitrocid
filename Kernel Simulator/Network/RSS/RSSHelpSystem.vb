@@ -28,6 +28,7 @@ Public Module RSSHelpSystem
     Public Sub InitRSSHelp()
         RSSDefinitions = New Dictionary(Of String, String) From {{"articleinfo", DoTranslation("Gets the article info")},
                                                                  {"chfeed", DoTranslation("Changes the feed link")},
+                                                                 {"feedinfo", DoTranslation("Gets the feed info")},
                                                                  {"list", DoTranslation("Lists all feeds")},
                                                                  {"read", DoTranslation("Reads a feed in a web browser")},
                                                                  {"exit", DoTranslation("Exits RSS shell and returns to kernel")},
@@ -57,6 +58,8 @@ Public Module RSSHelpSystem
             W(DoTranslation("Usage:") + " chfeed <feedurl>", True, ColTypes.Neutral)
         ElseIf command = "exit" Then
             W(DoTranslation("Usage:") + " exit", True, ColTypes.Neutral)
+        ElseIf command = "feedinfo" Then
+            W(DoTranslation("Usage:") + " feedinfo", True, ColTypes.Neutral)
         ElseIf command = "list" Then
             W(DoTranslation("Usage:") + " list", True, ColTypes.Neutral)
         ElseIf command = "read" Then
