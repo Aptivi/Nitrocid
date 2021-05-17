@@ -72,9 +72,76 @@ Public Module Filesystem
     ''' List all files and folders in a specified folder
     ''' </summary>
     ''' <param name="folder">Full path to folder</param>
-    Public Sub List(ByVal folder As String)
+    Sub List(ByVal folder As String)
         Wdbg("I", "Folder {0} will be listed...", folder)
 
+#If NTFSCorruptionFix Then
+        ThrowOnInvalidPath(folder)
+#End If
+
+        'List files and folders
+        folder = NeutralizePath(folder)
+        If Directory.Exists(folder) Then
+            Dim enumeration As List(Of FileSystemInfo)
+            Try
+                enumeration = CreateList(folder)
+            Catch ex As Exception
+                W(DoTranslation("Unknown error while listing in directory: {0}"), True, ColTypes.Err, ex.Message)
+                WStkTrc(ex)
+                Exit Sub
+            End Try
+            W(">> {0}", True, ColTypes.Stage, folder)
+            For Each Entry As FileSystemInfo In enumeration
+                Wdbg("I", "Enumerating {0}...", Entry.FullName)
+                Try
+                    If File.Exists(Entry.FullName) Then
+                        'Print information
+                        If (Entry.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not Entry.Attributes.HasFlag(FileAttributes.Hidden) Then
+                            If (IsOnWindows() And (Not Entry.Name.StartsWith(".") Or (Entry.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
+                                If Entry.Name.EndsWith(".uesh") Then
+                                    W("- " + Entry.Name + ": ", False, ColTypes.Stage)
+                                Else
+                                    W("- " + Entry.Name + ": ", False, ColTypes.ListEntry)
+                                End If
+                                W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), True, ColTypes.ListValue,
+                                  DirectCast(Entry, FileInfo).Length.FileSizeToString, Entry.CreationTime.ToShortDateString, Entry.CreationTime.ToShortTimeString,
+                                                                                       Entry.LastWriteTime.ToShortDateString, Entry.LastWriteTime.ToShortTimeString)
+                            End If
+                        End If
+                    ElseIf Directory.Exists(Entry.FullName) Then
+                        'Get all file sizes in a folder
+                        Dim TotalSize As Long = GetAllSizesInFolder(DirectCast(Entry, DirectoryInfo))
+
+                        'Print information
+                        If (Entry.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not Entry.Attributes.HasFlag(FileAttributes.Hidden) Then
+                            If (IsOnWindows() And (Not Entry.Name.StartsWith(".") Or (Entry.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
+                                W("- " + Entry.Name + "/: ", False, ColTypes.ListEntry)
+                                W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), True, ColTypes.ListValue,
+                                  TotalSize.FileSizeToString, Entry.CreationTime.ToShortDateString, Entry.CreationTime.ToShortTimeString,
+                                                              Entry.LastWriteTime.ToShortDateString, Entry.LastWriteTime.ToShortTimeString)
+                            End If
+                        End If
+                    End If
+                Catch ex As UnauthorizedAccessException 'Error while getting info
+                    W("- " + DoTranslation("You are not authorized to get info for {0}."), True, ColTypes.Err, Entry.Name)
+                    WStkTrc(ex)
+                End Try
+            Next
+        Else
+            W(DoTranslation("Directory {0} not found"), True, ColTypes.Err, folder)
+            Wdbg("I", "IO.Directory.Exists = {0}", Directory.Exists(folder))
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Creates a list of files and directories
+    ''' </summary>
+    ''' <param name="folder">Full path to folder</param>
+    ''' <returns>List of filesystem entries if any. Empty list if folder is not found or is empty.</returns>
+    ''' <exception cref="Exceptions.FilesystemException"></exception>
+    Public Function CreateList(ByVal folder As String) As List(Of FileSystemInfo)
+        Wdbg("I", "Folder {0} will be listed...", folder)
+        Dim FilesystemEntries As New List(Of FileSystemInfo)
 #If NTFSCorruptionFix Then
         ThrowOnInvalidPath(folder)
 #End If
@@ -85,67 +152,31 @@ Public Module Filesystem
             Dim enumeration As IEnumerable(Of String)
             Try
                 enumeration = Directory.EnumerateFileSystemEntries(folder)
-            Catch sex As Security.SecurityException
-                W(DoTranslation("You are unauthorized to list in {0}: {1}"), True, ColTypes.Err, folder, sex.Message)
-                W(DoTranslation("Permission {0} failed"), True, ColTypes.Err, sex.PermissionType)
-                WStkTrc(sex)
-                Exit Sub
-            Catch ptlex As PathTooLongException
-                W(DoTranslation("The path you've specified is too long."), True, ColTypes.Err)
-                WStkTrc(ptlex)
-                Exit Sub
             Catch ex As Exception
-                W(DoTranslation("Unknown error while listing in directory: {0}"), True, ColTypes.Err, ex.Message)
+                Wdbg("E", "Failed to make a list of filesystem entries for directory {0}: {1}", folder, ex.Message)
                 WStkTrc(ex)
-                Exit Sub
+                Throw New Exceptions.FilesystemException(DoTranslation("Failed to make a list of filesystem entries for directory") + " " + folder, ex)
             End Try
-            W(">> {0}", True, ColTypes.Stage, folder)
             For Each Entry As String In enumeration
                 Wdbg("I", "Enumerating {0}...", Entry)
                 Try
                     If File.Exists(Entry) Then
-                        Dim FInfo As New FileInfo(Entry)
-
-                        'Print information
-                        If (FInfo.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not FInfo.Attributes.HasFlag(FileAttributes.Hidden) Then
-                            If (IsOnWindows() And (Not FInfo.Name.StartsWith(".") Or (FInfo.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
-                                If FInfo.Name.EndsWith(".uesh") Then
-                                    W("- " + FInfo.Name + ": ", False, ColTypes.Stage)
-                                Else
-                                    W("- " + FInfo.Name + ": ", False, ColTypes.ListEntry)
-                                End If
-                                W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), True, ColTypes.ListValue,
-                                  FInfo.Length.FileSizeToString, FInfo.CreationTime.ToShortDateString, FInfo.CreationTime.ToShortTimeString,
-                                                                 FInfo.LastWriteTime.ToShortDateString, FInfo.LastWriteTime.ToShortTimeString)
-                            End If
-                        End If
+                        Wdbg("I", "Entry is a file. Adding {0} to list...", Entry)
+                        FilesystemEntries.Add(New FileInfo(Entry))
                     ElseIf Directory.Exists(Entry) Then
-                        Dim DInfo As New DirectoryInfo(Entry)
-
-                        'Get all file sizes in a folder
-                        Dim TotalSize As Long = GetAllSizesInFolder(DInfo)
-
-                        'Print information
-                        If (DInfo.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not DInfo.Attributes.HasFlag(FileAttributes.Hidden) Then
-                            If (IsOnWindows() And (Not DInfo.Name.StartsWith(".") Or (DInfo.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
-                                W("- " + DInfo.Name + "/: ", False, ColTypes.ListEntry)
-                                W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), True, ColTypes.ListValue,
-                                  TotalSize.FileSizeToString, DInfo.CreationTime.ToShortDateString, DInfo.CreationTime.ToShortTimeString,
-                                                              DInfo.LastWriteTime.ToShortDateString, DInfo.LastWriteTime.ToShortTimeString)
-                            End If
-                        End If
+                        Wdbg("I", "Entry is a folder. Adding {0} to list...", Entry)
+                        FilesystemEntries.Add(New DirectoryInfo(Entry))
                     End If
-                Catch ex As UnauthorizedAccessException 'Error while getting info
-                    Dim Directory As String = Entry.Replace("\", "/").Split("/")(Entry.Replace("\", "/").Split("/").Length - 1)
-                    W("- " + DoTranslation("You are not authorized to get info for {0}."), True, ColTypes.Err, Directory)
+                Catch ex As Exception
+                    Wdbg("E", "Failed to enumerate {0} for directory {1}: {2}", Entry, folder, ex.Message)
                     WStkTrc(ex)
                 End Try
             Next
-        Else
-            W(DoTranslation("Directory {0} not found"), True, ColTypes.Err, folder)
-            Wdbg("I", "IO.Directory.Exists = {0}", Directory.Exists(folder))
         End If
-    End Sub
+
+        'Return the resulting list
+        Return FilesystemEntries
+    End Function
 
     ''' <summary>
     ''' Simplifies the path to the correct one. It converts the path format to the unified format.
