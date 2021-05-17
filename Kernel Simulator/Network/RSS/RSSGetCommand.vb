@@ -117,7 +117,18 @@ Public Module RSSGetCommand
             ElseIf Command = "read" Then
                 If RequiredArgumentsProvided Then
                     Dim ArticleIndex As Integer = Arguments(0) - 1
-                    Process.Start(RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
+                    If ArticleIndex > RSSFeedInstance.FeedArticles.Count - 1 Then
+                        W(DoTranslation("Article number couldn't be bigger than the available articles."), True, ColTypes.Err)
+                        Wdbg("E", "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSFeedInstance.FeedArticles.Count - 1)
+                    Else
+                        If Not String.IsNullOrWhiteSpace(RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink) Then
+                            Wdbg("I", "Opening web browser to {0}...", RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
+                            Process.Start(RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
+                        Else
+                            W(DoTranslation("Article doesn't have a link!"), True, ColTypes.Err)
+                            Wdbg("E", "Tried to open a web browser to link of article number {0}, but it's empty. ""{1}""", ArticleIndex, RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
+                        End If
+                    End If
                 End If
             End If
 
