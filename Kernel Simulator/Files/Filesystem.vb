@@ -108,14 +108,16 @@ Public Module Filesystem
 
                         'Print information
                         If (FInfo.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not FInfo.Attributes.HasFlag(FileAttributes.Hidden) Then
-                            If FInfo.Name.EndsWith(".uesh") Then
-                                W("- " + FInfo.Name + ": ", False, ColTypes.Stage)
-                            Else
-                                W("- " + FInfo.Name + ": ", False, ColTypes.ListEntry)
+                            If (IsOnWindows() And (Not FInfo.Name.StartsWith(".") Or (FInfo.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
+                                If FInfo.Name.EndsWith(".uesh") Then
+                                    W("- " + FInfo.Name + ": ", False, ColTypes.Stage)
+                                Else
+                                    W("- " + FInfo.Name + ": ", False, ColTypes.ListEntry)
+                                End If
+                                W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), True, ColTypes.ListValue,
+                                  FInfo.Length.FileSizeToString, FInfo.CreationTime.ToShortDateString, FInfo.CreationTime.ToShortTimeString,
+                                                                 FInfo.LastWriteTime.ToShortDateString, FInfo.LastWriteTime.ToShortTimeString)
                             End If
-                            W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), True, ColTypes.ListValue,
-                              FInfo.Length.FileSizeToString, FInfo.CreationTime.ToShortDateString, FInfo.CreationTime.ToShortTimeString,
-                                                             FInfo.LastWriteTime.ToShortDateString, FInfo.LastWriteTime.ToShortTimeString)
                         End If
                     ElseIf Directory.Exists(Entry) Then
                         Dim DInfo As New DirectoryInfo(Entry)
@@ -125,10 +127,12 @@ Public Module Filesystem
 
                         'Print information
                         If (DInfo.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not DInfo.Attributes.HasFlag(FileAttributes.Hidden) Then
-                            W("- " + DInfo.Name + "/: ", False, ColTypes.ListEntry)
-                            W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), True, ColTypes.ListValue,
-                              TotalSize.FileSizeToString, DInfo.CreationTime.ToShortDateString, DInfo.CreationTime.ToShortTimeString,
-                                                          DInfo.LastWriteTime.ToShortDateString, DInfo.LastWriteTime.ToShortTimeString)
+                            If (IsOnWindows() And (Not DInfo.Name.StartsWith(".") Or (DInfo.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
+                                W("- " + DInfo.Name + "/: ", False, ColTypes.ListEntry)
+                                W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), True, ColTypes.ListValue,
+                                  TotalSize.FileSizeToString, DInfo.CreationTime.ToShortDateString, DInfo.CreationTime.ToShortTimeString,
+                                                              DInfo.LastWriteTime.ToShortDateString, DInfo.LastWriteTime.ToShortTimeString)
+                            End If
                         End If
                     End If
                 Catch ex As UnauthorizedAccessException 'Error while getting info
@@ -601,8 +605,10 @@ Public Module Filesystem
         Dim TotalSize As Long = 0 'In bytes
         For Each DFile As FileInfo In Files
             If (DFile.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not DFile.Attributes.HasFlag(FileAttributes.Hidden) Then
-                Wdbg("I", "File {0}, Size {1} bytes", DFile.Name, DFile.Length)
-                TotalSize += DFile.Length
+                If (IsOnWindows() And (Not DFile.Name.StartsWith(".") Or (DFile.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
+                    Wdbg("I", "File {0}, Size {1} bytes", DFile.Name, DFile.Length)
+                    TotalSize += DFile.Length
+                End If
             End If
         Next
         Return TotalSize
