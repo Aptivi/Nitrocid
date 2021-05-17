@@ -26,7 +26,8 @@ Public Module RSSHelpSystem
     ''' Updates the help definition so it reflects the available commands
     ''' </summary>
     Public Sub InitRSSHelp()
-        RSSDefinitions = New Dictionary(Of String, String) From {{"chfeed", DoTranslation("Changes the feed link")},
+        RSSDefinitions = New Dictionary(Of String, String) From {{"articleinfo", DoTranslation("Gets the article info")},
+                                                                 {"chfeed", DoTranslation("Changes the feed link")},
                                                                  {"list", DoTranslation("Lists all feeds")},
                                                                  {"read", DoTranslation("Reads a feed in a web browser")},
                                                                  {"exit", DoTranslation("Exits RSS shell and returns to kernel")},
@@ -50,6 +51,8 @@ Public Module RSSHelpSystem
             Else
                 W(String.Join(", ", RSSCommands.Keys), True, ColTypes.Neutral)
             End If
+        ElseIf command = "articleinfo" Then
+            W(DoTranslation("Usage:") + " articleinfo <feednum>", True, ColTypes.Neutral)
         ElseIf command = "chfeed" Then
             W(DoTranslation("Usage:") + " chfeed <feedurl>", True, ColTypes.Neutral)
         ElseIf command = "exit" Then

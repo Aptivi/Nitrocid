@@ -72,6 +72,27 @@ Public Module RSSGetCommand
                 End If
             ElseIf Command = "exit" Then
                 RSSExiting = True
+            ElseIf Command = "articleinfo" Then
+                If RequiredArgumentsProvided Then
+                    Dim ArticleIndex As Integer = Arguments(0) - 1
+                    If ArticleIndex > RSSFeedInstance.FeedArticles.Count - 1 Then
+                        W(DoTranslation("Article number couldn't be bigger than the available articles."), True, ColTypes.Err)
+                        Wdbg("E", "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSFeedInstance.FeedArticles.Count - 1)
+                    Else
+                        Dim Article As RSSArticle = RSSFeedInstance.FeedArticles(ArticleIndex)
+                        W("- " + DoTranslation("Title:") + " ", False, ColTypes.ListEntry)
+                        W(Article.ArticleTitle, True, ColTypes.ListValue)
+                        W("- " + DoTranslation("Link:") + " ", False, ColTypes.ListEntry)
+                        W(Article.ArticleLink, True, ColTypes.ListValue)
+                        For Each Variable As String In Article.ArticleVariables.Keys
+                            If Not Variable = "title" And Not Variable = "link" And Not Variable = "summary" And Not Variable = "description" And Not Variable = "content" Then
+                                W("- {0}: ", False, ColTypes.ListEntry, Variable)
+                                W(Article.ArticleVariables(Variable).InnerText, True, ColTypes.ListValue)
+                            End If
+                        Next
+                        W(vbNewLine + Article.ArticleDescription, True, ColTypes.Neutral)
+                    End If
+                End If
             ElseIf Command = "chfeed" Then
                 If RequiredArgumentsProvided Then
                     RSSFeedLink = Arguments(0)

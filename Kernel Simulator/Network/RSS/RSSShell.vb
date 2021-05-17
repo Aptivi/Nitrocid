@@ -22,7 +22,8 @@ Public Module RSSShell
 
     'Variables
     Public RSSExiting As Boolean
-    Public RSSCommands As New Dictionary(Of String, CommandInfo) From {{"chfeed", New CommandInfo("chfeed", ShellCommandType.RSSShell, True, 1, False, False, False, False)},
+    Public RSSCommands As New Dictionary(Of String, CommandInfo) From {{"articleinfo", New CommandInfo("list", ShellCommandType.RSSShell, True, 1, False, False, False, False)},
+                                                                       {"chfeed", New CommandInfo("chfeed", ShellCommandType.RSSShell, True, 1, False, False, False, False)},
                                                                        {"exit", New CommandInfo("exit", ShellCommandType.RSSShell, False, 0, False, False, False, False)},
                                                                        {"help", New CommandInfo("help", ShellCommandType.RSSShell, False, 0, False, False, False, False)},
                                                                        {"list", New CommandInfo("list", ShellCommandType.RSSShell, False, 0, False, False, False, False)},
@@ -39,7 +40,7 @@ Public Module RSSShell
         'Add handler for RSS shell
         AddHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
         RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-        Dim OldRSSFeedLink As String = FeedUrl
+        Dim OldRSSFeedLink As String = ""
         RSSFeedLink = FeedUrl
 
         While Not RSSExiting
