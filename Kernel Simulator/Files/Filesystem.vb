@@ -1,4 +1,5 @@
-﻿'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+﻿
+'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -23,6 +24,8 @@ Public Module Filesystem
 
     'Variables
     Public CurrDir As String = paths("Home")
+    Public SortMode As FilesystemSortOptions = FilesystemSortOptions.FullName
+    Public SortDirection As FilesystemSortDirection = FilesystemSortDirection.Ascending
 
     ''' <summary>
     ''' Sets the current working directory

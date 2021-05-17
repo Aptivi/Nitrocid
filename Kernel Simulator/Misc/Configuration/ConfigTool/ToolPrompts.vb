@@ -320,7 +320,7 @@ Public Module ToolPrompts
                         Console.WriteLine()
                     End If
                 Case "7" 'Misc
-                    MaxOptions = 10
+                    MaxOptions = 12
                     W("*) " + DoTranslation("Miscellaneous Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("Settings that don't fit in their appropriate sections land here.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Show Time/Date on Upper Right Corner") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CornerTD)))
@@ -332,7 +332,9 @@ Public Module ToolPrompts
                     W("7) " + DoTranslation("Preferred Unit for Temperature") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(PreferredUnit)))
                     W("8) " + DoTranslation("Enable text editor autosave") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TextEdit_AutoSaveFlag)))
                     W("9) " + DoTranslation("Text editor autosave interval") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TextEdit_AutoSaveInterval)))
-                    W("10) " + DoTranslation("Wrap list outputs") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(WrapListOutputs)))
+                    W("10) " + DoTranslation("Wrap list outputs") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(WrapListOutputs)))
+                    W("11) " + DoTranslation("Filesystem sort mode") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(SortMode)))
+                    W("12) " + DoTranslation("Filesystem sort direction") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(SortDirection)))
                 Case Else 'Invalid section
                     W("*) ???" + vbNewLine, True, ColTypes.Neutral)
                     W("X) " + DoTranslation("Invalid section entered. Please go back.") + vbNewLine, True, ColTypes.Err)
@@ -1076,6 +1078,25 @@ Public Module ToolPrompts
                             KeyVar = NameOf(WrapListOutputs)
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Wrap list outputs") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Wraps the list outputs if it seems too long for the current console geometry.") + vbNewLine, True, ColTypes.Neutral)
+                        Case 11 'Filesystem sort mode
+                            MaxKeyOptions = 5
+                            KeyType = SettingsKeyType.SSelection
+                            KeyVar = NameOf(SortMode)
+                            W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Filesystem sort mode") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Controls how the files will be sorted.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Full name"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("File size"), True, ColTypes.Option)
+                            W("3) " + DoTranslation("Creation time"), True, ColTypes.Option)
+                            W("4) " + DoTranslation("Last write time"), True, ColTypes.Option)
+                            W("5) " + DoTranslation("Last access time") + vbNewLine, True, ColTypes.Option)
+                        Case 12 'Filesystem sort direction
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SSelection
+                            KeyVar = NameOf(SortDirection)
+                            W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Filesystem sort direction") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Controls the direction of filesystem sorting whether it's ascending or descending.") + vbNewLine, True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Ascending order"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Descending order") + vbNewLine, True, ColTypes.Option)
                         Case Else
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)

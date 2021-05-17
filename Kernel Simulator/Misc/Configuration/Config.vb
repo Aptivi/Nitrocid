@@ -161,6 +161,8 @@ Public Module Config
                         New IniKey(ksconf, "Enable text editor autosave", TextEdit_AutoSaveFlag),
                         New IniKey(ksconf, "Text editor autosave interval", TextEdit_AutoSaveInterval),
                         New IniKey(ksconf, "Wrap list outputs", WrapListOutputs),
+                        New IniKey(ksconf, "Filesystem sort mode", SortMode.ToString),
+                        New IniKey(ksconf, "Filesystem sort direction", SortDirection.ToString),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             Else '----------------------- If [Preserve] value is False, then don't preserve.
                 'The General Section
@@ -291,6 +293,8 @@ Public Module Config
                         New IniKey(ksconf, "Enable text editor autosave", "True"),
                         New IniKey(ksconf, "Text editor autosave interval", "60"),
                         New IniKey(ksconf, "Wrap list outputs", "False"),
+                        New IniKey(ksconf, "Filesystem sort mode", SortMode.ToString),
+                        New IniKey(ksconf, "Filesystem sort direction", SortDirection.ToString),
                         New IniKey(ksconf, "Kernel Version", KernelVersion)))
             End If
 
@@ -404,7 +408,8 @@ Public Module Config
             ksconf.Sections("Misc").Keys("Preferred Unit for Temperature").TrailingComment.Text = "Choose either Kelvin, Celsius, or Fahrenheit for temperature measurement."
             ksconf.Sections("Misc").Keys("Enable text editor autosave").TrailingComment.Text = "Turns on or off the text editor autosave feature."
             ksconf.Sections("Misc").Keys("Text editor autosave interval").TrailingComment.Text = "If autosave is enabled, the text file will be saved for each ""n"" seconds."
-            ksconf.Sections("Misc").Keys("Wrap list outputs").TrailingComment.Text = "Wraps the list outputs if it seems too long for the current console geometry."
+            ksconf.Sections("Misc").Keys("Filesystem sort mode").TrailingComment.Text = "Controls how the files will be sorted."
+            ksconf.Sections("Misc").Keys("Filesystem sort direction").TrailingComment.Text = "Controls the direction of filesystem sorting whether it's ascending or descending."
 
             'Save Config
             ksconf.Save(paths("Configuration"))
@@ -615,6 +620,8 @@ Public Module Config
             If configReader.Sections("Misc").Keys("Enable text editor autosave").Value = "True" Then TextEdit_AutoSaveFlag = True Else TextEdit_AutoSaveFlag = False
             If Integer.TryParse(configReader.Sections("Misc").Keys("Text editor autosave interval").Value, 0) Then TextEdit_AutoSaveInterval = configReader.Sections("Misc").Keys("Text editor autosave interval").Value
             If configReader.Sections("Misc").Keys("Wrap list outputs").Value = "True" Then WrapListOutputs = True Else WrapListOutputs = False
+            SortMode = [Enum].Parse(GetType(FilesystemSortOptions), configReader.Sections("Misc").Keys("Filesystem sort mode").Value)
+            SortDirection = [Enum].Parse(GetType(FilesystemSortDirection), configReader.Sections("Misc").Keys("Filesystem sort direction").Value)
 
             'Raise event and return true
             EventManager.RaiseConfigRead()

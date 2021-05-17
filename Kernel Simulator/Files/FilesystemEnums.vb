@@ -16,24 +16,42 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.ComponentModel
-
-Public Module ThreadManager
-
+''' <summary>
+''' How are the file system entries sorted in list?
+''' </summary>
+Public Enum FilesystemSortOptions
     ''' <summary>
-    ''' Sleeps until either the time specified, or the thread has finished or cancelled.
+    ''' Sort by full name
     ''' </summary>
-    ''' <param name="Time">Time in milliseconds</param>
-    ''' <param name="ThreadWork">The working thread</param>
-    Public Sub SleepNoBlock(ByVal Time As Long, ByVal ThreadWork As BackgroundWorker)
-        Dim WorkFinished As Boolean
-        Dim TimeCount As Long
-        AddHandler ThreadWork.RunWorkerCompleted, Sub() WorkFinished = True
-        Do Until WorkFinished Or TimeCount = Time
-            Threading.Thread.Sleep(1)
-            If ThreadWork.CancellationPending Then WorkFinished = True
-            TimeCount += 1
-        Loop
-    End Sub
+    FullName = 1
+    ''' <summary>
+    ''' Sort by length
+    ''' </summary>
+    Length
+    ''' <summary>
+    ''' Sort by creation time
+    ''' </summary>
+    CreationTime
+    ''' <summary>
+    ''' Sort by last write time
+    ''' </summary>
+    LastWriteTime
+    ''' <summary>
+    ''' Sort by last access time
+    ''' </summary>
+    LastAccessTime
+End Enum
 
-End Module
+''' <summary>
+''' Sort directions
+''' </summary>
+Public Enum FilesystemSortDirection
+    ''' <summary>
+    ''' Ascending order
+    ''' </summary>
+    Ascending = 1
+    ''' <summary>
+    ''' Descending order
+    ''' </summary>
+    Descending
+End Enum

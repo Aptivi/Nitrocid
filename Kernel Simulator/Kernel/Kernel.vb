@@ -1,4 +1,6 @@
 ﻿
+'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+'
 '    This file is part of Kernel Simulator
 '
 '    Kernel Simulator is free software: you can redistribute it and/or modify
