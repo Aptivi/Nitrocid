@@ -44,7 +44,7 @@ Public Class RSSFeed
     Public ReadOnly Property FeedArticles As List(Of RSSArticle)
 
     ''' <summary>
-    ''' makes a new instance of an RSS feed class
+    ''' Makes a new instance of an RSS feed class
     ''' </summary>
     ''' <param name="FeedUrl">A URL to RSS feed</param>
     ''' <param name="FeedType">A feed type to parse. If set to Infer, it will automatically detect the type based on contents.</param>
@@ -81,11 +81,13 @@ Public Class RSSFeed
         End If
 
         'Populate basic feed properties
+#Disable Warning BC42104
         Dim FeedTitle As String = GetFeedProperty("title", FeedNodeList, FeedType)
         Dim FeedDescription As String = GetFeedProperty("description", FeedNodeList, FeedType)
 
         'Populate articles
         Dim Articles As List(Of RSSArticle) = MakeRssArticlesFromFeed(FeedNodeList, FeedType)
+#Enable Warning BC42104
 
         'Install the variables to a new instance
         Me.FeedUrl = FeedUrl

@@ -45,6 +45,7 @@ Public Module RSSShell
         RSSFeedLink = FeedUrl
 
         While Not RSSExiting
+Begin:
             If String.IsNullOrWhiteSpace(RSSFeedLink) Then
                 Do While String.IsNullOrWhiteSpace(RSSFeedLink)
                     Try
@@ -62,11 +63,19 @@ Public Module RSSShell
                 Loop
             Else
                 'Make a new RSS feed instance
-                If OldRSSFeedLink <> RSSFeedLink Then
-                    RSSFeedInstance = New RSSFeed(RSSFeedLink, RSSFeedType.Infer)
-                    RSSFeedLink = RSSFeedInstance.FeedUrl
-                End If
-                OldRSSFeedLink = RSSFeedLink
+                Try
+                    If OldRSSFeedLink <> RSSFeedLink Then
+                        RSSFeedInstance = New RSSFeed(RSSFeedLink, RSSFeedType.Infer)
+                        RSSFeedLink = RSSFeedInstance.FeedUrl
+                    End If
+                    OldRSSFeedLink = RSSFeedLink
+                Catch ex As Exception
+                    Wdbg("E", "Failed to parse RSS feed URL {0}: {1}", RSSFeedLink, ex.Message)
+                    WStkTrc(ex)
+                    W(DoTranslation("Failed to parse feed URL:") + " {0}", True, ColTypes.Err, ex.Message)
+                    RSSFeedLink = ""
+                    GoTo Begin
+                End Try
 
                 'Prepare for prompt
                 If Not IsNothing(DefConsoleOut) Then
