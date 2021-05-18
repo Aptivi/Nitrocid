@@ -128,7 +128,7 @@ Public Module ZipGetCommand
             W(DoTranslation("Error trying to run command: {0}"), True, ColTypes.Err, ex.Message)
             Wdbg("E", "Error running command {0}: {1}", CommandText.Split(" ")(0), ex.Message)
             WStkTrc(ex)
-            EventManager.RaiseTextCommandError(CommandText, ex)
+            EventManager.RaiseZipCommandError(CommandText, ex)
         End Try
     End Sub
 

@@ -70,16 +70,16 @@ Module ZipShell
                 If ZipShell_Commands.ContainsKey(WrittenCommand.Split(" ")(0)) Then
                     Wdbg("I", "Command {0} found in the list of {1} commands.", WrittenCommand.Split(" ")(0), ZipShell_Commands.Count)
                     ZipShell_CommandThread = New Thread(AddressOf ZipShell_ParseCommand) With {.Name = "ZIP Shell Command Thread"}
-                    EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
+                    EventManager.RaiseZipPreExecuteCommand(WrittenCommand)
                     Wdbg("I", "Made new thread. Starting with argument {0}...", WrittenCommand)
                     ZipShell_CommandThread.Start(WrittenCommand)
                     ZipShell_CommandThread.Join()
-                    EventManager.RaiseTextPostExecuteCommand(WrittenCommand)
+                    EventManager.RaiseZipPostExecuteCommand(WrittenCommand)
                 ElseIf ZipShell_ModCommands.Contains(WrittenCommand.Split(" ")(0)) Then
                     Wdbg("I", "Mod command {0} executing...", WrittenCommand.Split(" ")(0))
-                    EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
+                    EventManager.RaiseZipPreExecuteCommand(WrittenCommand)
                     ExecuteModCommand(WrittenCommand)
-                    EventManager.RaiseTextPostExecuteCommand(WrittenCommand)
+                    EventManager.RaiseZipPostExecuteCommand(WrittenCommand)
                 Else
                     W(DoTranslation("The specified ZIP shell command is not found."), True, ColTypes.Err)
                     Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), ZipShell_Commands.Count)
