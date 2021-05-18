@@ -266,4 +266,12 @@ Imports KS
         Assert.IsNotNull(NeutralizedPath)
     End Sub
 
+    ''' <summary>
+    ''' Tests creating filesystem entries list
+    ''' </summary>
+    <TestMethod> <TestCategory("Manipulation")> Public Sub TestCreateList()
+        Dim CreatedList As List(Of FileSystemInfo) = CreateList(paths("Home"))
+        Assert.IsTrue(CreatedList.Count > 0)
+    End Sub
+
 End Class
