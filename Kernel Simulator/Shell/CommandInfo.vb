@@ -63,7 +63,7 @@ Public Class CommandInfo
     ''' <param name="Wrappable">Is the command wrappable?</param>
     ''' <param name="NoMaintenance">If true, the command can't be run in maintenance mode</param>
     ''' <param name="Obsolete">Is the command obsolete?</param>
-    Public Sub New(ByVal Command As String, ByVal Type As ShellCommandType, ByVal ArgumentsRequired As Boolean, ByVal MinimumArguments As Integer, Strict As Boolean, Wrappable As Boolean, NoMaintenance As Boolean, Obsolete As Boolean)
+    Public Sub New(ByVal Command As String, ByVal Type As ShellCommandType, ByVal ArgumentsRequired As Boolean, ByVal MinimumArguments As Integer, Optional Strict As Boolean = False, Optional Wrappable As Boolean = False, Optional NoMaintenance As Boolean = False, Optional Obsolete As Boolean = False)
         Me.Command = Command
         Me.Type = Type
         Me.ArgumentsRequired = ArgumentsRequired

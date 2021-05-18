@@ -24,13 +24,13 @@ Module ZipShell
 
     'Variables
     Public ZipShell_Exiting As Boolean
-    Public ZipShell_Commands As New Dictionary(Of String, CommandInfo) From {{"cdir", New CommandInfo("cdir", ShellCommandType.ZIPShell, False, 0, False, False, False, False)},
-                                                                             {"chdir", New CommandInfo("chdir", ShellCommandType.ZIPShell, True, 1, False, False, False, False)},
-                                                                             {"chadir", New CommandInfo("chadir", ShellCommandType.ZIPShell, True, 1, False, False, False, False)},
-                                                                             {"exit", New CommandInfo("exit", ShellCommandType.ZIPShell, False, 0, False, False, False, False)},
-                                                                             {"get", New CommandInfo("get", ShellCommandType.ZIPShell, True, 1, False, False, False, False)},
-                                                                             {"help", New CommandInfo("help", ShellCommandType.ZIPShell, False, 0, False, False, False, False)},
-                                                                             {"list", New CommandInfo("list", ShellCommandType.ZIPShell, False, 0, False, False, False, False)}}
+    Public ZipShell_Commands As New Dictionary(Of String, CommandInfo) From {{"cdir", New CommandInfo("cdir", ShellCommandType.ZIPShell, False, 0)},
+                                                                             {"chdir", New CommandInfo("chdir", ShellCommandType.ZIPShell, True, 1)},
+                                                                             {"chadir", New CommandInfo("chadir", ShellCommandType.ZIPShell, True, 1)},
+                                                                             {"exit", New CommandInfo("exit", ShellCommandType.ZIPShell, False, 0)},
+                                                                             {"get", New CommandInfo("get", ShellCommandType.ZIPShell, True, 1)},
+                                                                             {"help", New CommandInfo("help", ShellCommandType.ZIPShell, False, 0)},
+                                                                             {"list", New CommandInfo("list", ShellCommandType.ZIPShell, False, 0)}}
     Public ZipShell_ModCommands As New ArrayList
     Public ZipShell_FileStream As FileStream
     Public ZipShell_ZipArchive As ZipArchive
