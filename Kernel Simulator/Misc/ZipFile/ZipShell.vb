@@ -64,7 +64,7 @@ Module ZipShell
             Dim WrittenCommand As String = Console.ReadLine
 
             'Check to see if the command doesn't start with spaces or if the command is nothing
-            Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand.StartsWith(" "), IsNothing(WrittenCommand), WrittenCommand = "")
+            Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand?.StartsWith(" "), IsNothing(WrittenCommand), WrittenCommand = "")
             If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWith(" ") = True) Then
                 Wdbg("I", "Checking command {0} for existence.", WrittenCommand.Split(" ")(0))
                 If ZipShell_Commands.ContainsKey(WrittenCommand.Split(" ")(0)) Then

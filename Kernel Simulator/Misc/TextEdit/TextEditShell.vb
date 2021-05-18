@@ -73,7 +73,7 @@ Public Module TextEditShell
             Dim WrittenCommand As String = Console.ReadLine
 
             'Check to see if the command doesn't start with spaces or if the command is nothing
-            Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand.StartsWith(" "), IsNothing(WrittenCommand), WrittenCommand = "")
+            Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand?.StartsWith(" "), IsNothing(WrittenCommand), WrittenCommand = "")
             If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWith(" ") = True) Then
                 Wdbg("I", "Checking command {0} for existence.", WrittenCommand.Split(" ")(0))
                 If TextEdit_Commands.ContainsKey(WrittenCommand.Split(" ")(0)) Then
@@ -96,8 +96,7 @@ Public Module TextEditShell
             End If
 
             'This is to fix race condition between shell initialization and starting the event handler thread
-            If IsNothing(strcommand) Then
-                Console.WriteLine()
+            If IsNothing(WrittenCommand) Then
                 Thread.Sleep(30)
             End If
         End While
