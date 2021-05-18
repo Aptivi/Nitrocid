@@ -157,6 +157,14 @@ Public Module ScreensaverSettings
     ''' [Fader] How many milliseconds to wait before fading the text out?
     ''' </summary>
     Public FaderFadeOutDelay As Integer = 3000
+    ''' <summary>
+    ''' [Typo] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public TypoDelay As Integer = 50
+    ''' <summary>
+    ''' [Typo] How many milliseconds to wait before writing the text again?
+    ''' </summary>
+    Public TypoWriteAgainDelay As Integer = 3000
 
     '-> Texts
     ''' <summary>
@@ -167,6 +175,10 @@ Public Module ScreensaverSettings
     ''' [Fader] Text for Fader
     ''' </summary>
     Public FaderWrite As String = "Kernel Simulator"
+    ''' <summary>
+    ''' [Typo] Text for Typo
+    ''' </summary>
+    Public TypoWrite As String = "Kernel Simulator"
 
     '-> Misc
     ''' <summary>
@@ -177,5 +189,17 @@ Public Module ScreensaverSettings
     ''' [Fader] How many fade steps to do?
     ''' </summary>
     Public FaderMaxSteps As Integer = 25
+    ''' <summary>
+    ''' [Typo] Minimum writing speed in WPM
+    ''' </summary>
+    Public TypoWritingSpeedMin As Integer = 50
+    ''' <summary>
+    ''' [Typo] Maximum writing speed in WPM
+    ''' </summary>
+    Public TypoWritingSpeedMax As Integer = 80
+    ''' <summary>
+    ''' [Typo] Possibility that the writer made a typo in percent
+    ''' </summary>
+    Public TypoMissStrikePossibility As Integer = 60
 
 End Module

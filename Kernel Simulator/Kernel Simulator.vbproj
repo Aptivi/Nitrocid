@@ -276,6 +276,7 @@
     <Compile Include="Misc\Screensaver\Displays\Disco.vb" />
     <Compile Include="Misc\Screensaver\Displays\Matrix.vb" />
     <Compile Include="Misc\Screensaver\Displays\ColorMix.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Typo.vb" />
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
     <Compile Include="Misc\Screensaver\ScreensaverSettings.vb" />
     <Compile Include="Misc\StringEvaluators.vb" />

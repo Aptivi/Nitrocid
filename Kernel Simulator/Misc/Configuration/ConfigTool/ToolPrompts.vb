@@ -105,7 +105,7 @@ Public Module ToolPrompts
         Dim SectionFinished As Boolean
         Dim AnswerString As String
         Dim AnswerInt As Integer
-        Dim BuiltinSavers As Integer = 12
+        Dim BuiltinSavers As Integer = 13
 
         'Section-specific variables
         Dim ConfigurableScreensavers As New List(Of String)
@@ -190,7 +190,7 @@ Public Module ToolPrompts
                     W("11) " + DoTranslation("Enable RPC") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RPCEnabled)))
                     W("12) " + DoTranslation("RPC Port") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(RPCPort)))
                 Case "6" 'Screensaver
-                    MaxOptions = 13
+                    MaxOptions = 14
                     W("*) " + DoTranslation("Screensaver Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all the screensavers and their available settings.") + vbNewLine, True, ColTypes.Neutral)
 
@@ -207,6 +207,7 @@ Public Module ToolPrompts
                     W("10) ProgressClock...", True, ColTypes.Option)
                     W("11) Lighter...", True, ColTypes.Option)
                     W("12) Fader...", True, ColTypes.Option)
+                    W("13) Typo...", True, ColTypes.Option)
 
                     'Populate custom screensavers
                     For Each CustomSaver As String In CSvrdb.Keys
@@ -305,6 +306,16 @@ Public Module ToolPrompts
                     W("2) " + DoTranslation("Fade Out Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderFadeOutDelay)))
                     W("3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderWrite)))
                     W("4) " + DoTranslation("Max Fade Steps") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(FaderMaxSteps)))
+                Case "6.13" 'Screensaver > Typo
+                    MaxOptions = 6
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > Typo" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " Typo." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoDelay)))
+                    W("2) " + DoTranslation("Write Again Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoWriteAgainDelay)))
+                    W("3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoWrite)))
+                    W("4) " + DoTranslation("Minimum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoWritingSpeedMin)))
+                    W("5) " + DoTranslation("Maximum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoWritingSpeedMax)))
+                    W("6) " + DoTranslation("Probability of typo in percent") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(TypoMissStrikePossibility)))
                 Case "6." + $"{If(SectionParameters.Length <> 0, SectionParameters(0), $"{BuiltinSavers + 1}")}" 'Screensaver > a custom saver
                     Dim SaverIndex As Integer = SectionParameters(0) - BuiltinSavers - 1
                     Dim Configurables As List(Of String) = SectionParameters(1)
@@ -412,7 +423,7 @@ Public Module ToolPrompts
         Dim ListJoinString As String = ""
         Dim TargetList As IEnumerable(Of Object)
         Dim NeutralizePaths As Boolean
-        Dim BuiltinSavers As Integer = 12
+        Dim BuiltinSavers As Integer = 13
 
         While Not KeyFinished
             Console.Clear()
@@ -1000,6 +1011,42 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("How many fade steps to do?"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Fader > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                    End Select
+                Case "6.13" 'Typo
+                    Select Case KeyNumber
+                        Case 1 'Typo: Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(TypoDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Typo > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 2 'Typo: Write Again Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(TypoWriteAgainDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Typo > " + DoTranslation("Write Again Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before writing text again?"), True, ColTypes.Neutral)
+                        Case 3 'Typo: Text shown
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(TypoWrite)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Typo > " + DoTranslation("Text shown") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Write any text you want shown. Longer is better."), True, ColTypes.Neutral)
+                        Case 4 'Typo: Minimum writing speed in WPM
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(TypoWritingSpeedMin)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Typo > " + DoTranslation("Minimum writing speed in WPM") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Minimum writing speed in WPM"), True, ColTypes.Neutral)
+                        Case 5 'Typo: Maximum writing speed in WPM
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(TypoWritingSpeedMax)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Typo > " + DoTranslation("Maximum writing speed in WPM") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Maximum writing speed in WPM"), True, ColTypes.Neutral)
+                        Case 6 'Typo: Probability of typo in percent
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(TypoMissStrikePossibility)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Typo > " + DoTranslation("Probability of typo in percent") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Probability of typo in percent"), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Typo > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
                     End Select
                 Case "6." + $"{If(SectionParts.Length > 1, SectionParts(1), $"{BuiltinSavers + 1}")}" 'Custom saver
