@@ -21,7 +21,7 @@ Imports System.Globalization
 Public Module Translate
 
     'Variables
-    Public availableLangs() As String = {"arb", "arb-T", "azr", "ben", "ben-T", "chi", "chi-T", "cro", "csc", "ctl", "cze", "dan", "dtc", "eng", "fin", "flp", "fre", "ger", "hwi", "ind", "ind-T", "iri", "ita", "jpn", "jpn-T", "jvn", "kor", "kor-T", "ltn", "mal", "mts", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "som", "spa", "srb", "srb-T", "swa", "swe", "uzb", "vtn", "wls"}
+    Public availableLangs() As String = {"arb", "arb-T", "azr", "ben", "ben-T", "bsq", "ccw", "chi", "chi-T", "cro", "csc", "ctl", "cze", "dan", "dtc", "eng", "fin", "flp", "fre", "ger", "hti", "hwi", "ind", "ind-T", "iri", "ita", "jpn", "jpn-T", "jvn", "kor", "kor-T", "ltn", "mal", "mts", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "som", "spa", "srb", "srb-T", "swa", "swe", "uzb", "vtn", "wls", "zul"}
     Public Transliterables() As String = {"arb", "ben", "chi", "ind", "jpn", "kor", "pun", "rus", "srb"}
     Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
@@ -90,6 +90,10 @@ Public Module Translate
                 translated = My.Resources.ben
             Case "ben-T" 'Bengali (translated)
                 translated = My.Resources.ben_T
+            Case "bsq" 'Basque
+                translated = My.Resources.bsq
+            Case "ccw" 'Chichewa
+                translated = My.Resources.ccw
             Case "chi" 'Chinese (transliterated)
                 translated = My.Resources.chi
             Case "chi-T" 'Chinese (translated)
@@ -114,6 +118,8 @@ Public Module Translate
                 translated = My.Resources.fin
             Case "ger" 'Germany
                 translated = My.Resources.ger
+            Case "hti" 'Haitian Creole
+                translated = My.Resources.hti
             Case "hwi" 'Hawaiian
                 translated = My.Resources.hwi
             Case "ind" 'Hindi (transliterated)
@@ -178,6 +184,8 @@ Public Module Translate
                 translated = My.Resources.vtn
             Case "wls" 'Welsh
                 translated = My.Resources.wls
+            Case "zul" 'Zulu
+                translated = My.Resources.zul
         End Select
 
         'Convert translated string list to Dictionary
@@ -366,6 +374,8 @@ CHOICE:
                 Return "Azerbaijani (Cyrillic, Azerbaijan)"
             Case "ben-T", "ben"
                 Return "Bangla (Bangladesh)"
+            Case "bsq"
+                Return "Basque"
             Case "chi-T", "chi"
                 Return "Chinese (Simplified)"
             Case "cro"
@@ -444,6 +454,10 @@ CHOICE:
                 Return "Vietnamese (Vietnam)"
             Case "wls"
                 Return "Welsh (United Kingdom)"
+            Case "zul"
+                Return If(IsOnWindows(), "isiZulu", "Zulu")
+            Case Else
+                Return "English (United States)"
         End Select
     End Function
 

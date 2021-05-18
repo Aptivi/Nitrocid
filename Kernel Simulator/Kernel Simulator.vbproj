@@ -472,6 +472,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="OfficialAppIcon-KernelSimulator-256.ico" />
+    <None Include="Resources\zul.txt" />
+    <None Include="Resources\hti.txt" />
+    <None Include="Resources\ccw.txt" />
+    <None Include="Resources\bsq.txt" />
     <None Include="Resources\hwi.txt" />
     <None Include="Resources\ltn.txt" />
     <None Include="Resources\jvn.txt" />

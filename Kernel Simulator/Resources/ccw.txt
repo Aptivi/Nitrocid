@@ -1,0 +1,961 @@
+Malamulo omwe alipo: {0}
+Lembani lamulo:
+Jekeseni wamalamulo waletsedwa.
+Siyanitsani zotsutsana za boot ndi makasitomala opanda malo, mwachitsanzo, 'motd, gpuprobe'
+Patulani malamulo pa 'cmdinject' okhala ndi ma coloni okhala ndi malo, mwachitsanzo, 'cmdinject setthemes Hacker: beep 1024 0.5'
+Dziwani kuti mkangano wa 'debug' sukuphimba kernel.
+bargs: Mtsutso wopemphedwa {0} sapezeka.
+bargs: Cholakwika chosapezeka pamikangano:
+Zilipo: {0}
+Mikangano ('help' la chithandizo):
+Zoyambitsa jekeseni zidzakonzedwa poyambiranso.
+Kulimbana Kwakukulu Kwaletsedwa.
+Zalakwitsa posanthula mfundo zenizeni za mzere wa lamulo: {0}
+Chizindikiro cha mtundu cholakwika {0}
+Chosintha
+Mwambo
+hwprobe: Ma hardware anu adzafufuzidwa. Chonde dikirani...
+hwprobe: Zida zamagetsi zidafufuzidwa kale.
+hwprobe: Zida sizifufuzidwa. Fufuzani pogwiritsa ntchito 'hwprobe'
+CPU: Mmodzi kapena angapo a CPU cores adalephera kufufuzidwa. Kuwonetsa zambiri komabe ...
+RAM: Chips chimodzi chimodzi kapena zingapo za RAM sizinayesedwe. Kuwonetsa zambiri komabe ...
+HDD: Dalaivala imodzi kapena zingapo zovuta zalephera kufufuzidwa. Kuwonetsa zambiri komabe ...
+CPU: Chiwerengero cha mapurosesa: {0}
+CPU: {0} {1} MHz
+RAM: {0} MB = {1} MB
+RAM: Malo ogwiritsira ntchito (mayina): {0}
+RAM: Malo ogwiritsira ntchito (mwa manambala): {0} / {1} ({2}%)
+RAM: Maudindo oyeserera achotsedweratu ndipo adzachotsedwa mtsogolo.
+HDD: {0} {1} GB {2}
+HDD: {0} {1} {2} GB {3}
+HDD: CHS: {4} zonenepa | {5} mitu | {6} magawo
+HDD: CHS: {3} zonenepa | {4} mitu | {5} magawo
+hwprobe: Kufufuza sikuthandizidwa chifukwa sanapangidwe kuti azitha kugwiritsa ntchito Unix.
+Lowetsani mawu achinsinsi a admin kuti musamalire.
+Palibenso ogwiritsa omwe atsala m'ndandanda.
+Cholakwika cha Kernel potsegula: {0}
+KUKHALA KUKHALA KUKHALA: Nthawi Yoyambiranso idutsa nthawi yololeza {0} yolakwitsa nthawi yoyambiranso. Mudapeza kachilombo ka kernel.
+[{0}] mantha: Kuyambiranso kwathandiza chifukwa cha kuchuluka kolakwika kukhala {0}.
+[{0}] mantha: Nthawi yoyambiranso: {1} masekondi, kupitilira ola limodzi. Iikidwa kuti ikhale mphindi 1.
+PANIC PANIC: Mtundu Wolakwika {0} ndi wosavomerezeka.
+[{0}] dpanic: {1} - Kubwezeretsanso mu {2} masekondi ...
+[{0}] mantha: Kuyambiranso kumayimitsidwa chifukwa kolakwika {0}.
+[{0}] mantha: {1} - Dinani batani lililonse kuti mupitirize kugwiritsa ntchito ngale.
+[{0}] mantha: {1} - Dinani batani lililonse kuti muzimitse.
+[{0}] mantha: {1} - Kubwezeretsanso mu {2} masekondi ...
+PANIC PANIC: Kernel bug: {0}
+Kutseka pansi ...
+Kubwezeretsanso ...
+---===+++> Takulandirani ku kernel | Mtundu {0} <+++===---
+Chochitika china cha Kernel Simulator chikuchitika. Kutseka pansi pakasokonezedwa.
+Wogwiritsa {0} awonjezedwa pamndandanda wa admin.
+Wogwiritsa {0} awonjezedwa pamndandanda wokhudzidwa.
+Takanika kuwonjezera wosuta mu mndandanda wa zilolezo: mtundu wosayenera {0}
+Takanika kuwonjezera wosuta mu mndandanda wa zilolezo: wosagwiritsa ntchito {0}
+Wogwiritsa {0} wachotsedwa pamndandanda wa admin.
+Wogwiritsa {0} wachotsedwa pamndandandanda wa anthu olumala.
+Takanika kuchotsa wosuta pamndandanda wa zilolezo: mtundu wosayenera {0}
+Mwalowa kale.
+Takanika kuchotsa wosuta pamndandanda wa zololeza: wosuta {0}
+Mwapeza kachilombo mu dongosolo lovomerezeka: mawonekedwe osayenera {0}
+Mwinamwake mwapeza kachilombo, kapena chilolezo chomwe munayesa kuwonjezera kapena kuchichotsa chachitika kale, kapena vuto lina.
+Vuto {0}: {1}
+Mwinamwake mwapeza kachilombo, kapena chilolezo chomwe munayesa kusintha kwa wosuta watsopano sichinatheke.
+Maina ogwiritsa akupezeka: {0}
+Lolowera:
+Malo saloledwa.
+Otchulidwa Special saloledwa.
+Mawu achinsinsi a {0}:
+Mawu achinsinsi olakwika.
+Wogwiritsa ntchito ndi wolumala.
+Lolakwika lolowera.
+Cholakwika poyesa kuyesa omwe ali ndi malo. {0} - Chotsatira:
+Cholakwika poyesa kuyesa omwe ali ndi malo. {0}
+Cholakwika kuyesera kuwonjezera dzina.
+usrmgr: Kupanga dzina lolowera {0} ...
+Lolowera Blank.
+Wogwiritsa {0} sanapezeke.
+Wogwiritsa {0} saloledwa kuti achotsedwe.
+Wogwiritsa {0} adalowa kale. Lowani ndikulowetsani ngati admin wina.
+Wogwiritsa {0} wachotsedwa
+Cholakwika poyesa kuchotsa dzina lanu.
+{0} mwa {1} = {2}
+Kuyesera kugawa ndi zero sikuloledwa.
+Pakhala pali zokayikitsa zoyesa kuwerengera zomwe zidabweretsa kusefukira.
+Zolakwika pakuwerengetsa: {0}
+{0} sangasinthidwe kukhala {1}.
+Mwina gwero
+ kapena kopita
+ palibe pa seva.
+{0} ku {1}: {2}
+Vuto poyesa kusintha kuchokera ku {0} kupita ku {1}: {2}
+Cholakwika
+Wosunga zowombelera {0} sakupezeka.
+{0} adayambitsidwa moyenera.
+{0} sanayambitse. Khodi yojambula pazenera mwina idakumana ndi vuto poyambitsa.
+Wopanga zowonera Screen {0} kulibe.
+{0} yakonzedwa kuti izikhala yotchinga.
+Screensaver {0} sapezeka mumndandanda. Chongani dzinalo ndikuyesanso.
+Screensaver sangathe kunyamulidwa chifukwa cha izi:
+Pali vuto lalikulu pakusindikiza mawu.
+Pali vuto poyesa kupanga zosintha.
+Zolakwika poyesa kukhazikitsa: {0}
+Kusintha kuchokera ku {0} kupita ku {1} kwapezeka. Kusintha kasinthidwe ...
+Zolakwika poyesa kusintha zosintha: {0}.
+Pali vuto poyesa kukonza zosintha.
+Pali vuto poyesa kuwerenga kasinthidwe.
+Pali vuto poyesa kuwerenga kasinthidwe: {0}
+Vuto poyesa kumasula RAM: {0} - Kupitilira ...
+Ma mod sangathe kunyamulidwa chifukwa cha izi:
+Mod: Kutsegula ma mods ...
+mod: Kuyimitsa ma mods ...
+Mod {0} alibe dzina. Unikani kachidindo koyambira.
+Mod {0} ilibe mtunduwo.
+{0} v {1} ayamba
+Palibe tanthauzo la lamulo {0}.
+Lamulo lotanthauzidwa ndi
+Muyenera kutuluka pa seva musanalumikizane ndi seva ina
+Lolowera pa {0}:
+Chinsinsi cha {0}:
+Kulumikizidwa ku {0}
+Zalakwika poyesa kulumikizana ndi {0}: {1}
+Zovuta: {2}
+Lowetsani seva ya FTP.
+Zolemba zam'deralo {0} kulibe.
+Lowetsani chikwatu chakomweko. ".." kubwerera.
+Directory {0} sanapezeke.
+Lowetsani chikwatu chakutali. ".." kubwerera
+Muyenera kulumikizana ndi seva musanasinthe chikwatu
+Kalozera wam'deralo: {0}
+Tsamba lakutali: {0}
+Muyenera kulumikizana ndi seva musanapeze chikwatu chakutali.
+Kufufuta fayilo {0} ...
+Mukutsimikiza kuti mukufuna kufufuta fayilo {0} <y/n>?
+Fayilo yochotsedwa {0}
+Muyenera kulumikizana ndi seva ndi mwayi woyang'anira musanachotse.
+Lowetsani fayilo kuti muchotse.
+Muyenera kukhala ndi zilolezo zautumiki pa dzina lanu lolowera kuti muchotse.
+Kuchotsedwa pa {0}
+Simunalumikizane ndi seva iliyonse
+Kutsitsa fayilo {0} ...
+Fayilo yojambulidwa {0}.
+Kutsitsa kwalephera pa fayilo {0} chifukwa fayilo yakomweko ndi yoipa.
+Muyenera kulumikizana ndi seva musanatumize.
+Lowetsani fayilo kuti mutsitse pazosungitsa kwanuko.
+{0} KB | Kusinthidwa mu: {1}
+Muyenera kulumikizana ndi seva musanatchule mafayilo onse akutali.
+Kusintha fayilo {0} kukhala {1} ...
+Yasinthidwa dzina
+Lowetsani fayilo ndi dzina latsopano la fayilo.
+Tikukweza fayilo {0} ...
+Fayilo yojambulidwa {0}
+Lowetsani fayilo kuti muyike pamndandanda wakutali. lowetsani <file> <dongosolo>
+Cholakwika poyesa kuchita lamulo la FTP
+(Mumtima:
+{0} mafoda, {1} mafayilo
+(Mwaletsedwa)
+{0} KB, Yopangidwa mu {1} {2}, Yosinthidwa mu {3} {4}
+Imapeza chikwatu cham'deralo chamakono
+Imapeza chikwatu chakutali chamakono
+Kulumikiza ku seva ya FTP (iyenera kuyamba ndi "ftp://" kapena "ftps://")
+Kusintha chikwatu chakomweko kutsitsa kapena kutsitsa kuchokera
+Kusintha chikwatu chakutali kuti mutsitse kapena kuchotsera ku
+Chotsani fayilo yakutali kuchokera pa seva
+Kuchotsa pa seva
+Tsitsani mafayilo akutali kusungidwe wakomweko pogwiritsa ntchito kanambala kapena mawu
+Imatuluka mu chipolopolo cha FTP ndikubwerera ku kernel
+Onetsani chithunzi chothandizira
+Lembani chikwatu chakomweko
+Lembani chikwatu chakutali
+Amatchulanso fayilo kapena chikwatu
+Ikani mafayilo am'deralo kusanja yakutali pogwiritsa ntchito binary kapena zolemba
+Panali cholakwika mu chipolopolo cha FTP.
+Uthenga wa FTP: Lamulo lofunsidwa {0} silinapezeke. Onani 'chithandizo' pamndandanda wamalamulo omwe atchulidwa pachikopa cha FTP.
+ukonde: Mwayankhidwa kuchokera ku {0} mu {1} ms
+Nthawi yatha, yolumikizidwa, kapena seva yolumikizidwa pa intaneti.
+ukonde: Dzina lanu pamakompyuta ndi {0}
+khoka: Wosunga dzina lanu ndi {1}
+khoka: Zikuwoneka kuti makompyuta ali m'manja kapena gulu logwirira ntchito:
+khoka: WiFi kapena Ethernet yachotsedwa.
+khoka: Zikuwoneka kuti makompyuta amalumikizidwa pansipa:
+ukonde: Adilesi Ya rauta: {0}
+Takanika kupeza katundu wa adaputala {0}
+Nambala ya Adapter:
+Dzina adaputala:
+Zolemba malire Kufala Unit: {2} mayunitsi
+DHCP Yathandiza:
+Mapaketi osavomerezeka:
+Mapaketi a Unicast:
+Zolakwitsa mapaketi olowera / otuluka:
+Zina sizingafanane ndi lamulo.
+Lamulo silinapezeke pa dzina la {0}.
+Kukhazikitsa {0} kwa {1} ndikoletsedwa kwathunthu.
+Tsopano mutha kuyendetsa "{0}" ngati lamulo: "{1}".
+Simungagwiritsenso ntchito "{0}" ngati lamulo "{1}".
+Zina {0} sizikupezeka kuti zachotsedwa.
+Njira yolakwika {0}.
+Zoyambitsa jakisoni, {0}, zizikonzedwa kuti ziyambirenso.
+Panalibe mikangano yokwanira. Onani pansipa kuti mugwiritse ntchito:
+Directory {0} sanapezeke
+Malo osungira malo.
+Kusintha kuchokera: {0} mpaka {1} ...
+Uthenga wopanda tsikulo.
+Malo Osavomerezeka Atalowa.
+Kusintha MAL kuyambira {0} kukhala {1} ...
+Mawu achinsinsi olakwika.
+Mawu achinsinsi sakugwirizana.
+Dzinalo lasinthidwa kukhala {0}!
+Dzina latsopano lomwe mudalowetsa lapezeka kale.
+Kulemba ma PC sikunathandizidwebe pa Unix.
+Zina mwazomwe zaletsedwa: {0}
+{0} sakupezeka.
+Kusintha kumatsitsidwanso. Mungafunike kuyambiranso kernel kuti kusintha kwina kuchitike.
+Chilichonse chimakonzedwanso kuzinthu zachilendo.
+Mtundu umodzi kapena ingapo ndi yosavomerezeka.
+Mitundu palibe. Tsegulani chipolopolo chachikuda mu kernel config.
+Wosunga zojambulajambula {0} sanapezeke.
+[ Makonda a Kernel (Akuyenda pa {0}) ]
+Mtundu wa Kernel:
+Njira Yoyesera:
+Nkhono Yamtundu:
+Mikangano pa Boot:
+Lamulo lothandizira losavuta:
+MOTD pa Malowedwe:
+Nthawi / Tsiku pakona:
+Hardware anayesedwa:
+Mutu wapano:
+[ Zida za Hardware ]{0}
+{0}[ Zikhazikiko za wogwiritsa ]
+Dzinalo lomasulira:
+Dzinalo lenileni:
+Maina ogwiritsa akupezeka:
+Dzina la makompyuta:
+{0}[ Zikhazikiko za Mauthenga ]
+Chizindikiro chachinsinsi:
+Umwini (c)
+Chilolezo
+pompano
+Cholakwika poyesa kuchita lamulo
+Imawonjezera ogwiritsa (Ma Admin okha ndi omwe amatha kupeza lamuloli)
+Ikuwonjezera zovuta pamalamulo (Ma admin okha ndi omwe amatha kufikira lamuloli)
+Imajowina zotsutsana ndi kernel (kuyambiranso kofunikira, ma admins okha)
+Chiwerengero chosavuta
+Sinthani chikwatu
+Kusintha dzina la alendo (Admins okha)
+Kusintha MAL, MOTD Pambuyo Pamalowedwe (Admins okha)
+Kusintha MOTD, the Message Of The Day (Admins okha)
+Kusintha mawu achinsinsi kwa wogwiritsa ntchito pano
+Kusintha dzina laogwiritsa (Admins Only)
+Yeretsani chinsalu
+Sinthani ndalama
+Onetsani zipika zosokoneza (Admins Only)
+Gwiritsani ntchito chipolopolo cha FTP kuti mulumikizane ndi ma seva
+Tsamba lothandizira
+Fufuzani zida zamanja pamanja (Nthawi ina mu 'nohwprobe' kernel)
+Lembani mndandanda wazomwe zili mufoda / chikwatu mufoda yomwe ilipo
+Reloads file yojambulira mu %USERPROFILE%\KSMods
+Imatseka chinsalu chanu ndichinsinsi
+Amakupatsani mwayi
+Imalemba zida zonse zama netiweki omwe ali pa intaneti (komanso osapezeka pa intaneti)
+Lembani ma adilesi onse apa netiweki
+Lembani ma adilesi onse ochezera omwe akugwiritsa ntchito mtengowo
+Pangani chikwatu
+Lembani zambiri zamalo onse olumikizirana omwe alipo
+Ikuwonetsa mndandanda wazoletsedwa
+Sinthani zilolezo za ogwiritsa ntchito (Ma Admin okha ndi omwe angathe kulandira lamuloli)
+Onani ngati adilesi yomwe ilipo ilipo
+Amalemba fayilo pazotonthoza
+Imayambitsanso kompyuta yanu (CHENJEZO: Palibe kulumikizana, chifukwa si kernel yomaliza)
+Reloads kasinthidwe fayilo yomwe yasinthidwa.
+Imachotsa chikwatu
+Imachotsa wogwiritsa ntchito pamndandanda (Admins Only)
+Imapulumutsa zenera lanu pakuwotcha
+Chiwerengero cha sayansi. Chosinthira unit chimasiyanitsidwa ndi lamulo lina
+Ikani mitundu ya kernel
+Ikani zojambula zowonekera za kernel
+Ikani mitu ya kernel
+Amawonetsa zoyipa
+Iwonetsani MOTD mutatha kulowa kosankhidwa ndi kernel
+Ikuwonetsa uthenga wamasiku omwe akhazikitsidwa ndi wogwiritsa ntchito kapena kernel
+Ikuwonetsa tsiku ndi nthawi
+Ikuwonetsa tsiku ndi nthawi m'malo
+Kernel idzatsekedwa
+Zambiri zadongosolo
+Wosintha mayunitsi omwe apatulidwa ndi scicalc.
+Amawonetsa kudalira kogwiritsa ntchito poyambira
+Buku lofotokozera kwambiri.
+* Mutha kugwiritsa ntchito malamulo angapo pogwiritsa ntchito colon pakati pa malamulo.
+Malamulo omwe alipo:
+Malamulo a Mod:
+Zosintha pamalamulo:
+Kagwiritsidwe:
+Mikangano yolekanitsidwa ndi pakati
+kumene mikangano idzakhala {0}
+kuti mupeze chikwatu chamakono
+Komwe komwe ndikupita kuli zilembo 3 za UPPERCASE pamlingo wosinthanitsa
+Mndandanda wa ma ID onse ndi mayina:
+Zimakuwonetsani mitengo yolakwika kuti mutumizireko chipikacho.
+Imayambitsa chipolopolo cha FTP.
+Ma processor a Hardware (Amangogwira ntchito pomwe ma hardware sanayesedwe ndipo hwprobe sakuchitidwa).
+Lembani zidziwitso za netiweki, komanso kompyuta iliyonse yolumikizidwa ndi netiweki.
+Anzanga a
+Lembani zidziwitso za netiweki, komanso kompyuta iliyonse yolumikizidwa ndi netiweki, mumtundu wamtengo.
+Lembani zidziwitso za netiweki, komanso kompyuta iliyonse.
+pomwe modname.ss.vb idzakhala
+Imatseka zenera lanu ndi mawu achinsinsi.
+Amakupatsani mwayi wogwiritsa ntchito.
+Pezani zambiri zama netiweki
+Imayambitsanso kompyuta yanu yoyeserera.
+Imakonzanso zosintha zomwe zimasinthidwa ndi wogwiritsa ntchito kumapeto kapena chida.
+Mitundu siyenera kuyambiranso, koma zosintha zambiri zimafunikira kuti muyambenso.
+imakuwonetsani wojambula pazenera osankhidwa, ndikuteteza zenera lanu kuwotcha.
+Ikuwonetsa tsiku ndi nthawi.
+Ikuwonetsa tsiku ndi nthawi yake m'malo.
+Zimatseka kompyuta yanu yoyerekeza.
+Ikuwonetsa zambiri zamachitidwe ndi matanthauzidwe.
+Iwonetsani malaibulale otseguka omwe agwiritsidwa ntchito
+Panali vuto mu chipolopolocho.
+Mulibe chilolezo chogwiritsa ntchito {0}
+Mauthenga a chipolopolo: Lamulo lofunsidwa {0} sililoledwa kuti lizigwiritsidwa ntchito posamalira.
+Uthengawo: Lamulo lofunsidwa {0} silinapezeke. Onani 'chithandizo' cha malamulo omwe alipo.
+Mauthenga a chipolopolo: Lamulo {0} sililoledwa kuti lilowe pa akaunti yanu.
+Uthengawo: Lamulo lofunsidwa {0} silinapezeke.
+Cholakwika poyesa kuchita lamulo.
+nthawi: Nthawi ndi {0}
+nthawi yamasiku: Lero ndi {0}
+nthawi: Nthawi Yanthawi: {0}
+- Nthawi ya {0}: {1}
+kuchotsa zenera.
+Zikuwoneka kuti tsamba lamankhwala {0} silikupezeka.
+Zalakwitsa mukamayesa kutsegula bukuli {0} beuase {1}.
+Tsamba la bukuli silokwanira pazifukwa izi:
+Dinani batani lililonse kuti mupitirize ...
+ | {0} mawu | Kukonzanso v {1} | {2} magawo
+Mutu wamasamba wabukuli sunalembedwe
+Tsamba ili ({0}) mulibe mawu aliwonse amthupi. Tikufufuta tsamba ...
+Tsamba ili ({0}) mulibe gawo lililonse. Tikufufuta tsamba ...
+Kuthamanga pa {0}
+Simukuloledwa kuti mudziwe zambiri za {0}.
+Lamuloli ndi lotha ntchito ndipo lidzachotsedwa mtsogolo.
+Simukuloledwa kusintha mawu achinsinsi a {0} chifukwa chandamale chake chinali woyang'anira.
+Sinthani kuchuluka kwa ndalama kuchokera kumayiko ena
+Ndalama:
+usrmgr: Lolowera {0} lapezeka kale
+Lowetsani chinsinsi chanu cha API:
+Sitinathe kupeza makompyuta. Ngati mukugwiritsa ntchito mtundu waposachedwa wa Windows 10, muyenera kuloleza SMBv1. Ndondomekoyi ndi yosatetezeka ndipo tidzayesetsa kuthetsa vutoli.
+Chotsani chilichonse pachipika
+Imapeza mitundu ya SSE
+Chilankhulo cholakwika
+Kusintha chilankhulo
+Simungakhale ndi libcpanel-json-xs-perl yoyika pamakina anu. Tchulani woyang'anira phukusi lanu kuti mupange. Kwa machitidwe a Debian (ndi zotumphukira), mungafune kuyendetsa "sudo apt kukhazikitsa libcpanel-json-xs-perl" mu emulator yotsiriza. Zambiri pazolakwika:
+------------------------------ Kutaya kwa mantha kwa maso ------------------------------
+>> Zambiri zamantha <<
+> Kufotokozera: {0}
+> Mtundu wolakwika: {1}
+> Tsiku ndi Nthawi: {2}
+>> Zambiri zapadera <<
+> Kupatula: {0}
+> Kufotokozera: {1}
+> HRESULT: {2}
+> Gwero: {3}
+> Zofufuza <
+>> Kupatula mkati {0} zambiri <<
+>> Kupatula {0} ndiye komwe kumayambitsa <<
+>> Zosiyana; Kungakhale kulakwitsa kernel. <<
+>> Mafelemu, mafayilo, mizere, ndi mizati <<
+> Chimango {0}: Fayilo: {1} | Mzere: {2} | Mzere: {3}
+> Pali cholakwika pamene mukufuna kudziwa zambiri za chimango. {0}: {1}
+Mwayika chilankhulo chanu pamakina ena kupatula Chingerezi. Pepani pazovutazi, koma zikuwoneka kuti Google ndi womasulira wake ndiwodabwitsanso potanthauzira ma block code pachilankhulo chilichonse chamapulogalamu. Pomwe tikukonza ma code onse omwe amasuliridwa pamasamba, tikupangira kuti mutsegule tikiti ku Zomasulira za Google potanthauzira zolembedwa zomwe sizoyenera kumasuliridwa, ndipo ikani chilankhulo chanu ku Chingerezi ngati mungalankhule.
+Reloads mods.
+Ma mods amatsitsidwanso.
+Takulandilani ku Kernel!
+Lowetsani bwino ngati <user>
+MOTD / MAL ndizovomerezeka, koma mtundu wa uthengawo siwothandiza. Kungoganiza kuti MOTD ...
+Ndayesera kuwerenga MOTD / MAL yomwe ili mtundu wamtundu wosavomerezeka.
+Pogwiritsa ntchito kulumikizana kokhazikika, ikutsitsa {0} kupita ku {1} ...
+Kutsitsa kwamaliza.
+Kutsitsa kwalephera poyesa {0}: {1}
+Chonde gwiritsani "ftp" ngati mukufuna kutsitsa mafayilo kuchokera pa seva ya FTP.
+Tsitsani fayilo ku chikwatu chomwe chikugwira ntchito pano
+Chotsani chida cholakwika
+Mndandanda wazinthu zolakwika zolumikizidwa
+Chida chothana ndi vuto {0} sichinapezeke.
+Chipangizo {0} chadulidwa.
+Vuto polumikizira: {0}
+Kumvetsera mwatsatanetsatane pamadilesi onse ogwiritsa ntchito doko {0}.
+Palibe zotsutsana. Malangizo: Tchulani zifukwa zingapo zolekanitsidwa ndi malo
+Zapezeka kale: {0}
+Chipika chothana ndi vuto chachotsedwa. Zida zonse zolumikizira zolakwika zitha kuwona mauthenga.
+Kuchotsa zipika posintha vuto kwalephera: {0}
+Zolemba zosintha zalephera: {0}
+Dzina lolowera ndilolakwika
+Tchulani adilesi
+Takanika kuchotsa chikwatu: {0}
+Nthawi ya nthawi imafotokozedwa molakwika.
+Kusankha mbiri yolakwika.
+Kuyesera kulumikizana ndi {0} ndi mbiri {1} ...
+Cholakwika pakuyesa mayunitsi: {0}
+Lamulo {0} silinapezeke. Onani lamulo "lothandizira" pamndandanda wamalamulo.
+Takanika kupeza katundu wa IPv6 wa adaputala {0}. Kupitilira ...
+Zambiri za IPv4:
+Zambiri za IPv6:
+Adapter {0} sigwirizira IPv6. Kupitilira ...
+Adapter {0} sigwirizira IPv4. Kafukufuku analephera.
+Zikuwoneka ngati mumayendetsa mtundu wa kernel. Ngakhale mutha kuwona mbalizo, zimasinthidwa pafupipafupi ndipo zitha kuyambitsa nsikidzi. Ndikulimbikitsidwa kuti mukhale pamtundu wokhazikika.
+Chinenero chomwe mwasankha chili ndi mitundu iwiri. Sankhani chimodzi:
+1. Kumasuliridwa
+2. Omasuliridwa
+Sankhani kusankha kwanu:
+Kusankha kolakwika. Yesaninso.
+Simukuvomerezeka kuti muyike chikwatu cha {0}: {1}
+Chilolezo {0} chalephera
+Njira yomwe mwatchulayi ndi yayitali kwambiri.
+Simukuloledwa kuti mulembe mu {0}: {1}
+Zalakwika poyang'ana CPU: {0}
+Zalakwika poyang'ana RAM: {0}
+Zalakwika poyang'ana HDD: {0}
+CPU: CHENJEZO: SSE2 idzafunika pakuchita zamtsogolo.
+Wosunga zidziwitso wataya mwangozi poyesa kudziwa zambiri za {0}: {1}
+Zalakwitsa poyesa kusonkhanitsa tsiku la msonkhano {0}: {1}
+Zalakwitsa poyesa kukhazikitsa MOTD / MAL: {0}
+Zalakwitsa poyesa kupeza MOTD / MAL: {0}
+Pali zochepa zopezeka pa {0}: {1}
+Pali mafotokozedwe ena achabe pa {0}: {1} - Stack trace:
+Cholakwika poyesa kuyambitsa zowonera pazenera, chifukwa cha ntchito yosagwira.
+Kubwezeretsanso sikuloledwa pamachitidwe otetezeka.
+Kutengera ma mods sikuloledwa pamachitidwe otetezeka.
+Fotokozerani chikwatu chonse cha kukula kapena mafayilo omwe alipo pakadali pano.
+Lembani zida zonse zolakwika zolumikizidwa.
+Zalakwitsa poyesa kukhazikitsa mawonekedwe. Onani mtengo ndikuyesanso. Ngati izi ndi zolondola, onani tsatanetsatane wa tsokalo kukonzanso kwa kernel kukathandizidwa.
+Khazikitsani bwino.
+Njirayo si fayilo kapena chikwatu.
+Tikupanga mtundu wina wa fayilo pansi pamndandanda kapena dzina lina.
+Imasunthira fayilo kumalo ena
+Kutengera mafayilo kumalo ena kapena dzina lina
+Kusuntha mafayilo kumalo ena
+Masewera {0} ({1}): {2}
+Masewera {0}: {1}
+Nthawi yogwiritsidwa ntchito: {0} milliseconds
+Wopanga: {0}
+Mtundu: {0}
+Mphamvu: {0} ({1}, {2}, {3})
+Mtundu wa Chiyankhulo: {0}
+Nambala Yoyendetsa: {0}
+Mbendera yoyambira: {0} ({1})
+Kugawa thupi: {0}
+Mbendera yoyamba: {0}
+Kukula: {0} GB
+Gawo logwirizana: {0}
+Kupsinjika: {0}
+Dzina: {0}
+Fayilo yamafayilo: {0}
+Mphamvu: {0} GB yopanda {1} GB
+Kutchula magawo onse azomveka pamagalimoto onse.
+Lists onse amafufuza zoyendetsa.
+Lists onse amafufuza magawo pagalimoto inayake (ndi magawo onse omveka pama drive onse).
+Kuwerengetsa kuchuluka kwa mafayilo.
+Zimakutengerani ku GitHub Wiki yathu.
+Ma algorithm osavomerezeka.
+Zimathandizira kapena kulepheretsa kukonza kwakutali.
+Kuyambitsa mafayilo ...
+Amalandira mawu
+Ikani mawu osasintha
+Akulankhula chingwe chanu pogwiritsa ntchito mawu osasintha
+Liwu {0}: {1} ({2})
+Mawu olakwika.
+Kuyika mawu
+Onani ngati mungathe kulemba mawu molondola munthawi yake
+Onani ngati mungathetsere masanjidwewo nthawi
+Yankhani mwachikondi kapena kudana ndi ndemanga.
+Ngati wina wanena izi pavidiyo yanu:
+Kodi mungayankhe bwanji?
+Kusankha kolakwika. Kupita ku ndemanga yotsatira ...
+Mwangofotokoza ndemanga yachikondi!
+Mwangoyankha ndemanga yachidani!
+Zabwino! Ndemanga ya {0} achotsedwa chifukwa cha izi.
+Zabwino! {0} ayamikira zikomo zanu.
+Lembani "GetMeOut" kuti mutuluke.
+Zalembedwa bwino!
+Zalembedwa molakwika.
+Kuthetsedwa mwangwiro!
+Kuthetsedwa molakwika.
+{0} MB ya {1} MB adatsitsa.
+RPC ikuyenda kale.
+RPC akumvera pama adilesi onse ogwiritsa ntchito doko {0}.
+Kuyambira RPC ...
+Kulumikiza ku seva ya SSH.
+Lowetsani mawu achinsinsi a {0}:
+SSH Yasintha.
+Imanyamula fayilo ya synth ndikusewera.
+Fayilo yosindikizidwa {0} palibe.
+Fayiloyi si fayilo ya synth.
+Takanika kufufuza mzere wa synth.
+Chingwe chopanda chotchulidwa
+Takanika kukhazikitsa codepage. Chilankhulo sichingawoneke bwino.
+Zolakwitsa siziyatsidwa.
+{0} sinayikidwenso ngati chotsegulira chokhazikika.
+Zikomo! Izi ndizosangalatsa.
+Aliyense athandizira vidiyo yanu pa izi.
+Ndakupatsani fayilo yapadera mu imelo yanu pavidiyo yanu yotsatira.
+Mverani, odana nanu, akuyesera kutithandiza, osati zachinyengo.
+Sindikudziwa kuti ine ndi anzanga zikomo bwanji chifukwa cha kanemayu.
+Ndimakukondani chifukwa cha kanemayu.
+Pitilizani, musayime.
+Ndikuthandizani kufikira kwa olembetsa a 1M!
+Anzanga adakonza makompyuta awo chifukwa cha inu.
+Prank yochititsa chidwi! Ndatseka PC ya mdani wanga.
+Kwa odana: MULEKE KUMUDANA NDI IYE
+Kwa odana: GWIRANI NTCHITO
+Palibe amene angazindikire izi tsopano chifukwa cha chinthu chanu chobisa
+Ndisiya kuonera makanema anu. Wolembetsa watayika.
+Ichi ndi chiyani? Izi sizikumveka.
+Vidiyo iyi ndi yoipitsitsa!
+Aliyense anene kanemayu!
+Anzanga akukwiya nanu!
+Okonda tsopano adzakuda chifukwa cha ichi.
+Mnzako adzakuda chifukwa cha ichi.
+Izi zidandipangitsa kuti ndisadzitumizire kwa inu.
+Mission yalephera, Ulemu -, Wolembetsa -
+Lekani kupanga vidiyo yamtunduwu !!!
+Bwererani kuntchito yanu, makanema anu ndiye oyipitsitsa!
+Timatsutsa pa kanemayu.
+Kukhazikitsa {0} kwa {1} ndikoletsedwa.
+Cholakwika poyesa kutaya chidziwitso: {0}
+Imawonetsa zidziwitso zonse zomwe zalandilidwa
+Kutaya chidziwitso
+Chidziwitso chachotsedwa bwino.
+Mapaketi (olowetsedwa):
+Mapaketi (otuluka):
+Zolakwitsa m'mapaketi olandila:
+Katundu IPv6 Katundu
+Zambiri za IPv4 katundu
+Kutali kumapereka lamulo ku PC yakutali
+- Gawo 1: Kuyamba kwamachitidwe
+- Gawo 2: Kuzindikira kwa zida
+- Gawo 2: Kusamalira dzina lamkati
+- Gawo 3: Ma mods ndi zowonera pazenera
+- Gawo 4: Kutolera zinyalala
+- Gawo 4: Lowani
+Asanatenge zinyalala: {0} byte
+Pambuyo posonkhanitsa zinyalala: {0} byte
+Cholakwika poyambitsa RPC: {0}
+Zikuwoneka ngati mukugwiritsa ntchito mtundu womasulira. Ndikulimbikitsidwa kuti mukhale pamtundu wokhazikika.
+Zikuwoneka kuti kuchuluka kwamafayilo kumatenga nthawi yayitali.
+Mtundu wolakwika {0}.
+Mphamvu: {0}
+Chiwerengero cha Magawo: {0}
+Kukula: {0}
+Zogwiritsidwa ntchito: {0}
+Directory {0} ilipo kale.
+Zalakwika poyesa kulumikizana ndi {0}: Kutha kwa nthawi yolumikizana kapena kulumikiza
+Calculator kuwerengera mawu.
+Cholakwika pakuwerengera.
+Mphamvu: {0} GB ({1}, {2}, {3})
+Zikuwoneka ngati mukuyendetsa mtundu womwe watsala pang'ono kutulutsidwa. Ngakhale ndizotetezeka kugwiritsa ntchito tsopano, tikulimbikitsidwa kuti musasinthe mtundu wawo.
+Kusintha kwadongosolo
+Kufufuza zosintha zadongosolo ...
+Tapeza mtundu watsopano:
+Mutha kutsitsa pa:
+Takanika kuwona zosintha: {0}
+Chipika chothanirana sichinapezeke
+Palibe zidziwitso zaposachedwa
+Kusaka chingwe chodziwika mu fayilo yomwe yaperekedwa
+Ikuwerengetsa kuchuluka kwamafayilo m'ndandanda yosankhidwa.
+Imalemba maimelo onse muogwiritsa ntchito.
+Lowetsani dzina lolowera kapena imelo adilesi:
+Lowetsani mawu achinsinsi:
+Lowetsani seva ndi doko (<address> kapena <address>:[doko]):
+Vuto polumikiza ku {0}: {1}
+Kulumikiza ku {0} ...
+Kutsimikizira ...
+Imatulutsa chipolopolo cha IMAP
+Mndandanda wa malamulo
+Tsitsani mauthenga ndikuwayika pamndandanda
+Imatsegula uthenga
+Tsamba mwina silikhala negative kapena zero.
+Tsamba silofunika manambala.
+Nambala ya uthenga siyingakhale yachinyengo kapena zero.
+Nambala ya uthenga siyiyimira manambala.
+- Kuchokera {0}
+- Kupita ku {0}
+- Kutumizidwa pa {0} mu {1}
+Uthenga wofotokozedwa sunapezeke.
+Kuthetsa vuto lakumtunda kwalephera kuyamba: {0}
+Cholakwika pakuchita lamulo la IMAP: {0}
+Kukonzekera mbiri ... Zitha kutenga mphindi zingapo ...
+Host Name, Username, Type Data, Encoding, Encryption, Protocol
+Panali vuto poyesa kulemba mawu: {0}
+Amalemba mawu mu kontrakitala
+Amapanga zosankha za ogwiritsa ntchito
+Beep in 'n' Hz and time in 'n' milliseconds
+pomwe <$variable> pali kusintha kulikonse komwe kudzagwiritsidwe ntchito posungira mayankho
+Pafupipafupi ayenera kukhala manambala. Ngati ndi manambala, onetsetsani kuti => 37 ndi <= 32767.
+Nthawi iyenera kukhala yowerengeka.
+pomwe <mayankho> ali mayankho amalemba amodzi a funsolo lomwe lalekanitsidwa
+Cholakwika poyesa kulumikizana ndi seva ya SSH: {0}
+MOTD Yopanda Pambuyo Pakulowa.
+Amalola wosuta kulowa athandizira
+Kusintha chikwatu chamakalata chamakono
+Takanika kutsegula chikwatu cha makalata {0}: {1}
+Lembani zolemba zanu mu adilesi yanu yamakalata
+Gwiritsani ntchito chidziwitso kuchokera ku Speed ​​Dial kuti mugwirizane ndi netiweki iliyonse mwachangu
+Sankhani adilesi yolumikizira ku:
+Kusankhidwa sikungafanane. Sankhani pakati pa 1-{0}. Yesaninso.
+Kusankhidwa si nambala. Yesaninso.
+Pakutsimikizira satifiketi, pamakhala zolakwika pazitifiketi. Kungakhale koyamba kuti mulumikizane ndi seva kapena kuti satifiketi itha. Nayi vuto:
+Mukutsimikiza kuti mukufuna kulumikiza?
+Yankho lolakwika. Chonde yesaninso.
+Kuyimba mwachangu kulibe kanthu. Lumikizani ku seva kuti muwonjezere adilesi.
+Kuyimba mwachangu kulibe. Lumikizani ku seva kuti muwonjezere adilesi.
+Lowetsani adilesi ya seva ya IMAP ndi doko (<address> kapena <address>:[port]):
+Lowetsani adilesi ya seva ya SMTP ndi doko (<address> kapena <address>:[port]):
+Akukufunsani kuti mudzaze magawo omwe mukufuna kuti mutumize uthenga ku adilesi
+Tumizani uthenga ku adiresi
+Lowetsani adilesi yolandila:
+Lowetsani mutuwo:
+Lowetsani uthenga wanu pansipa. Lembani "EOF" kuti mutsimikizire.
+Kutumiza uthenga ...
+Uthenga watumizidwa.
+Panali vuto potumiza uthenga: {0}
+Adilesi ya imelo yolakwika Onetsetsani kuti mwalemba adilesiyo moyenera komanso kuti ikugwirizana ndi mtundu wachitsanzo:
+Amachotsa uthenga
+Imachotsa mauthenga onse kwa wolandila
+Uthenga {0} kuchokera ku {1} wachotsedwa ku {2}. {3} mauthenga otsala kuti adziwe.
+Uthenga {0} kuchokera ku {1} wachotsedwa mu imelo. {2} mauthenga otsala kuti adziwe.
+Sinthani fayilo yolemba
+Imapanga fayilo yatsopano
+Fayilo ilipo kale.
+Cholakwika poyesa kupanga fayilo: {0}
+Takanika kutsegula fayilo. Kutuluka chipolopolo ...
+Lamulo lofotokoza mkonzi silinapezeke.
+Lembani malamulo omwe alipo
+Tulukani pa cholembera mawu ndikusunga zosasintha
+Sindikizani zomwe zili mufayiloyi ndi manambala amizere kutonthoza
+Ikuwonjezera mzere watsopano ndi zolemba kumapeto kwa fayilo
+Imachotsa nambala yomwe yatchulidwa
+M'malo mwa mawu kapena mawu ndi wina
+Chotsani mawu kapena mawu kuchokera pa nambala ya mzere
+Chotsani chilembo kuchokera pamizere yamakhalidwe pamzere wodziwika
+Chachotsedwa mzere.
+Nambala ya mzere {0} si nambala yovomerezeka.
+Zoyenera kutsutsidwa sizidaperekedwa kuti lamulidwe {0}
+Cholakwika poyesa kuyendetsa: {0}
+Kuthamanga mosamala. Kudumpha gawo ...
+>> Kutaya kwakutali ndi Kuyankhulana: mtundu
+>> Adilesi yanu ndi {0}.
+>> Dzina lako ndi {0}.
+Lamulo {0} silinapezeke. Gwiritsani "/help" kuti muwone mndandanda.
+Index {0} ndi yosavomerezeka. Pali {1} zotsalira. Index ndizokhazikika pa zero, chifukwa chake yesani kuchotsa ndi 1.
+Palibe chosungira
+Amawonetsa zotsalira zomaliza kupatula
+Amawonetsa dzina lamasamba pano
+Ikuchotsani pa debugger
+Chotsani chida cholakwika ndi adilesi ya IP
+Dulani chida cholakwika ndi adilesi ya IP
+{0} tsopano akhoza kujowina cholakwika chakutali.
+{0} sanatsekedwebe.
+Panali vuto potsegula zochunira
+Pali vuto pamene potsegula zosintha. Mungafunike kuwunika fayilo yoikamo.
+- Gawo 2: Ma Mods ndi zowonera pazenera
+- Gawo 3: Lowani
+Sankhani gawo:
+Sankhani njira:
+Zikhazikiko ...
+Zida za Hardware ...
+Makonda Olowera ...
+Zikhazikiko za Nkhono ...
+Zokonzera Network ...
+Makonda Osiyana ...
+Sungani Zikhazikiko
+Potulukira
+Njira yosankhidwa {0} ndi yosavomerezeka.
+Yankho liyenera kukhala nambala.
+Limbikitsani Kukangana pa Boot
+Njira Yokonzanso Yoyambira
+Sinthani Chinsinsi Cha Muzu ...
+Fufuzani Zosintha pa Kuyamba
+Kafukufuku Wachete
+Fufuzani RAM Mipata
+Onetsani MOTD pa Log-in
+Chotsani Screen pa Log-in
+Onetsani maina akulembera omwe alipo
+Nkhono Yamtundu
+Lamulo Lothandiza Losavuta
+Doko Losokoneza
+Kutalikirana Kwachinsinsi Kwa Nick Nick
+Tsitsani Kuyesanso Nthawi
+Login lolowera FTP
+Lowetsani adilesi ya IP ya FTP
+Bweretsani mbiri yoyamba ya FTP yokha
+Onetsani Nthawi / Tsiku Pakona Wakumanja Wakumanja
+Screenoutver Kutha ms
+Kukula kwa Debug Size mu Bytes
+Mawonekedwe owerengera kukula
+Marquee poyambira
+Nthawi yayitali ndi Tsiku
+Onetsani Mafayilo Obisika
+Gawo lolowera ndilolakwika. Chonde bwererani.
+Bwererani...
+Yambitsani
+Letsani
+Nambala yolowera yolakwika ikulowetsedwa. Chonde bwererani.
+Lembani mawu achinsinsi kuti akhazikike. Osadandaula; mawu achinsinsi akuwonetsedwa ngati nyenyezi.
+Thandizani "Sinthani Chinsinsi Cha Muzu" kuti mugwiritse ntchito njirayi. Chonde bwererani.
+Kusintha Muzu Achinsinsi?
+Ikani Chinsinsi Cha Muzu ...
+Lembani doko lotsegulira kutali. Iyenera kukhala yowerengeka, ndipo siyiyenera kugwiritsidwa ntchito kale. Kupanda kutero, cholakwika chakutali sichilephera kutsegula doko.
+Lembani dzina loyambirira lakutanthauzira dzina lokwezera dzina lanu.
+Lembani kangapo kuti "pezani" lamulo liyesenso kutsitsa komwe kwalephera. Iyenera kukhala yowerengeka.
+Lembani nthawi yoyambitsa zowonera pazenera patadutsa mamilliseconds. Iyenera kukhala yowerengeka.
+Lembani mabatani angati malo osungira zolakwika. Iyenera kukhala yowerengeka.
+Yankho lake silingakhale loipa.
+Yankho lake ndi losagwira. Onani kuti mutsimikizire kuti yankho lili ndi manambala pazosintha zomwe zimafunikira manambala ngati mayankho.
+Zosintha {0} sizimapezeka pamitundu iliyonse.
+Kusintha kasinthidwe ka kernel
+Zikhazikiko za Screensaver ...
+Yambitsani mitundu 255
+Kodi mukufuna kulumikiza?
+Kusankha kolakwika. Kungoganiza kuti ayi ...
+Palibe ma mod omwe adapezeka. Kudumpha gawo ...
+Sinthani Chikhalidwe Mukamasintha Zinenero
+Mawu awonetsedwa
+Lembani mawu omwe mukufuna kuwonetsedwa. Mfupi ndibwino.
+Takanika kukweza {0}
+Kutsitsa kwalephera pa fayilo {0}: {1}
+Panali vuto polemba mawu akutali {0}: {1}
+Ikuwonjezera ogwiritsa
+Ikuwonjezera magawo pamalamulo
+Ikani mfundo ku kernel (kuyambiranso kofunikira)
+Kusintha dzina la alendo
+Kusintha MAL, MOTD Pambuyo Pamalowedwe
+Kusintha MOTD, Uthenga Watsikulo
+Kusintha dzina la wogwiritsa ntchito
+Amawonetsa mitengo yolakwika
+Sinthani zilolezo za ogwiritsa ntchito
+Reloads fayilo yojambulira mu KSMods
+Amachotsa wosuta pandandanda
+Mayina achotsedwa {0} bwinobwino.
+Takanika kuwona zosintha.
+Palibenso ogwiritsa omwe atsala m'ndandanda.
+Takanika kukhazikitsa chilankhulo.
+Cholakwika poyesa kutaya chidziwitso.
+Kusintha kwa {0} kwapezeka. Kusintha kasinthidwe ...
+usrmgr: Takanika kupanga dzina {0}: {1}
+Yalephera kusinthanso wosuta. {0}
+Mmodzi mwa mindandanda yazilolezo ilibe dzina lolowera {0}.
+Takanika kutsegula zilolezo kuchokera pa fayilo: {0}
+Takanika kusintha dzina la alendo: {0}
+Wosuta sanapezeke
+Takanika kusintha dzina lachinsinsi: {0}
+Takanika kutengera fayilo kapena chikwatu: {0}
+Takanika kusuntha fayilo kapena chikwatu: {0}
+Sitinapeze fayilo yofananira ndi chingwe "{0}": {1}
+Sakanizitsa kutsitsa failo {0}.
+Takanika kulemba mndandanda wamafayilo akutali: {0}
+Lowetsani fayilo kapena chikwatu kuti muchotse. Muyenera kukhala ndi zilolezo zoyendetsera akaunti yanu kuti muzitha kuchotsa.
+Mukutsimikiza kuti mukufuna kufufuta {0} <y/n>?
+Ifufuta {0} ...
+{0} sikupezeka mu seva.
+Makalata onse opangidwa ndi {0} achotsedwa bwino.
+Takanika kuchotsa makalata onse opangidwa ndi {0}.
+Panali vuto potumiza uthenga.
+Kusunthira {0} ku {1} ...
+Zasunthidwa bwino
+Imasuntha fayilo kapena chikwatu kupita ku fayilo ina kapena chikwatu. Muthanso kugwiritsa ntchito izi kusinthanso mafayilo.
+Takanika kusuntha {0} kupita ku {1}.
+Lowetsani njira yoyambira ndi komwe mukupita.
+Kutengera {0} ku {1} ...
+Zatengera bwino
+Amakopera fayilo kapena chikwatu ku fayilo ina kapena chikwatu.
+Takanika kutengera {0} ku {1}.
+Imasuntha uthenga
+Imasuntha mauthenga onse kuchokera kwa wolandira
+Makalata onse opangidwa ndi {0} asunthidwa bwino.
+Takanika kusuntha makalata onse opangidwa ndi {0}.
+Mauthenga {0} ochokera kwa {1} achoka ku {2}. {3} mauthenga otsala kuti adziwe.
+Mauthenga {0} ochokera kwa {1} asunthidwa. {3} mauthenga otsala kuti adziwe.
+Onetsani zambiri zanyengo yamzindawo. Gwiritsani Ntchito OpenWeatherMap.
+- Zokhudza nyengo pa {0} -
+Nyengo: {0}
+Kutentha: {0} ({1} unit)
+Zomverera ngati: {0} ({1} unit)
+Anzanu: {0}
+Chinyezi: {0}
+Mutha kupeza kiyi yanu ya API ku https://home.openweathermap.org/api_keys.
+Mutha kulumikizana ndi http://bulk.openweathermap.org/sample/city.list.json.gz pamndandanda wamizinda yomwe ili ndi ma ID awo.
+Chigawo Chokonda Kutentha
+Kelvin
+Wachifumu (Fahrenheit)
+Miyeso (Celsius)
+Ikani kernel kuti ikuthandizireni kutsutsana pa boot.
+Zimayambitsa mawonekedwe osamalira. Izi zimasokoneza maakaunti angapo.
+Kuyamba kulikonse, kumayang'ana zosintha.
+Mukamasintha zilankhulo, sinthani mayina amwezi, kalendala, ndi zina zambiri.
+Ngati kernel yayambitsidwa, imayika mawu achinsinsi.
+Sungani mauthenga ofufuza za hardware kukhala chete.
+Ngati itathandizidwa, ifufuza malo a RAM limodzi ndi RAM.
+Onetsani Mauthenga Atsikulo musanawonetse mawonekedwe olowera.
+Chotsani chinsalu musanawonetse mawonekedwe olowera.
+Iwonetsani ogwiritsa omwe alipo ngati athandizidwa.
+Amapereka chithandizo chamtundu wa kernel
+Lamulo losavuta lothandizira zipolopolo zonse
+Kaya mulowetse dzina la FTP kapena ayi.
+Kaya mulowetse adilesi ya FTP IP kapena ayi.
+Sankhani mbiri yoyamba pokhapokha mutalumikiza.
+Imathandizira kuthandizira kwamitundu 255 kwa ColorMix.
+Imathandizira kuthandizira kwamitundu 255 kwa Disco.
+Amathandizira mtundu wa 255 wothandizira GlitterColor.
+Imathandizira kuthandizira kwamitundu 255 kwa Mizere.
+Nthawi ndi tsiku zidzawonetsedwa pakona yakumanja pazenera
+Ngati chithandizidwa, kernel idzawonetsa chikwatu chonse kukula kwake kwathunthu. Zina, zidzangowonekera pamwamba.
+Ikuthandizira kuyang'ana poyambira
+Nthawi ndi tsiku zidzakhala zazitali, zikuwonetsa mayina amwezi wathunthu, ndi zina zambiri.
+Amawonetsa mafayilo obisika.
+Sankhani gawo lomwe mumakonda kuti lizitentha (izi zimangogwira ntchito pa lamulo la "nyengo")
+Mod {0} yayimitsidwa
+{0} v {1} adayimitsidwa
+Mod {0} ilibe dzina lachigawo. Kupatula ma Mod kwalephera. Unikani kachidindo koyambira.
+Mod {0} ilibe lamulo. Kupatula ma Mod kwalephera. Unikani kachidindo koyambira.
+Muyenera kuyatsa njira yolakwika musanachotsere chipika.
+{0} mauthenga atsopano afika mu inbox.
+Tsegulani "lsmail" kuti muwawone.
+Zoyambira: {2} Zoyambira: {3} Magawo oyambira: {4}
+Takanika kuchotsa fayilo: {0}
+Imachotsa chikwatu kapena fayilo
+Sangathe kuchotsa {0} chifukwa kulibe.
+Mwina simunakhazikitse inxi pamakina anu. Tchulani woyang'anira phukusi lanu kuti mupange. Kwa machitidwe a Debian (ndi zotumphukira), mungafune kuyendetsa "sudo apt install inxi libcpanel-json-xs-perl" mu emulator yotsiriza.
+Chinenero chayikidwa bwino kukhala {0}!
+Dinani CTRL + C kuti mutuluke.
+Amapereka zambiri za fayilo
+Amapereka chidziwitso chazolemba
+Simungapeze zambiri zamndandanda womwe kulibe.
+Simungapeze zambiri za fayilo yomwe kulibe.
+Dzina lathunthu: {0}
+Nthawi Yolenga: {0}
+Nthawi yomaliza yomaliza: {0}
+Nthawi yomaliza kulemba: {0}
+Zizindikiro: {0}
+Kalozera wa makolo: {0}
+Komwe mungapeze: {0}
+Kukula kwa fayilo: {0}
+Zosintha mtundu wa fayilo
+Fayilo sinapezeke.
+komwe <attrib> ndi chimodzi mwazinthu izi:
+Fayiloyi ndi fayilo yabwinobwino
+Fayiloyi ndi fayilo yowerengeka yokha
+Fayiloyi ndi fayilo yobisika
+Fayiloyi ndi yosunga zakale. Ntchito backups.
+Malingaliro akuti "{0}" ndi osavomerezeka.
+Makhalidwe awonjezedwa bwino.
+Makhalidwe achotsedwa bwino.
+Takanika kuwonjezera chikhumbo.
+Takanika kuchotsa malingaliro.
+M'malo mwa mawu kapena mawu ndi wina mu mzere
+Mulingo wofiira wapyola. Unali {0}.
+Mulingo wamtundu wobiriwira udapitilira. Unali {0}.
+Mulingo wabuluu wapitilira. Unali {0}.
+Yambitsani mitundu yoona
+Imathandizira kuthandizira kwamtundu weniweni kwa ColorMix.
+Imathandizira kuthandizira kwamtundu weniweni kwa Disco.
+Ikuthandizira mtundu wowona wa GlitterColor.
+Imathandizira kuthandizira kwamtundu weniweni kwa Mizere.
+Takanika kutsegula {0}.
+{0} yatsekedwa kale.
+{0} sangayanjane ndi kukonza kwakutali pano.
+Takanika kuletsa {0}.
+Mitundu yoyenda
+Disco idzayendetsa mitundu ikatha. Apo ayi, sankhani mitundu yosasintha.
+Lowetsani mafayilo amitundu. Dinani ENTER panjira yopanda kanthu kuti mutsimikizire.
+Imatsegula uthenga wobisika
+Lembani mawu achinsinsi a ID ya kiyi {0}
+Imatumiza uthenga wobisika ku adilesi
+Akufunsani kuti mudzaze magawo omwe mukufuna kuti mutumize uthenga wobisika ku adilesi
+Kutsitsa kuchokera ku {0} ...
+Onetsani kapamwamba pomwe mukutsitsa kapena kutsitsa kuchokera ku "pezani" kapena "ikani" lamulo
+Ngati ndi zoona, zimapangitsa "kupeza" kapena "kuyika" kuwonetsa kapamwamba pomwe mukutsitsa kapena kutsitsa.
+Ikani fayilo ku tsamba linalake
+Akulemba adilesi
+Tikukweza {0} ku {1} ...
+Kwezani kumaliza.
+Chonde gwiritsani "ftp" ngati mukufuna kukweza mafayilo ku seva ya FTP.
+Kuyika kwalephera poyesa {0}: {1}
+{0} MB ya {1} MB adakwezedwa.
+Lembani kangati lamulo la "kuyika" liyeneranso kuyesanso kukweza zolephera. Iyenera kukhala yowerengeka.
+Adilesi sikungakhale yopanda kanthu.
+Takanika kubwereza {0}: {1}
+Ping yapambana mu {0} ms.
+Nambala ya mzere yomwe yatchulidwa siyingakhale yokulirapo kuposa nambala yomaliza ya fayilo.
+Zikumverera ngati: {0}
+Kutentha: {0}
+Kuthamanga kwa mphepo: {0}
+Kulowera kwa mphepo: {0}
+Zoyambira: {2} | Yoyambira: {3} | Kugawa jombo: {4}
+Imathandizira kuthandizira kwamtundu wa 255 kwa Dissolve.
+Imathandizira kuthandizira kwamtundu weniweni kwa Dissolve.
+Dinani batani lililonse kuti mubwerere.
+Takanika kupanga foda yamakalata {0}: {1}
+Amapanga chikwatu mu chikwatu chomwe chikugwira ntchito pano
+Imachotsa chikwatu kuchokera patsamba lomwe likugwira ntchito pano
+Foda yamakalata {0} sikupezeka.
+Takanika kuchotsa chikwatu cha makalata {0}: {1}
+{0}, Yopangidwa mu {1} {2}, Kusinthidwa mu {3} {4}
+Ikutsimikizira kuti fayilo ili bwino
+Zofukiza sizili bwino.
+Hashes sizikugwirizana.
+Hashes match.
+Sinthani dzina chikwatu
+Gawoli limatchula zoikika zonse za kernel, makamaka posunga kernel.
+Gawoli limasintha machitidwe a kafukufuku wa Hardware.
+Gawo ili likuyimira zosintha zolowera. Tulukani muakaunti yanu kuti kusinthaku kuchitike.
+Gawoli limatchula zoikamo zipolopolo.
+Gawoli limatchulira zosintha ma netiweki, monga chipolopolo cha FTP, zosintha zamalamulo zokhudzana ndi netiweki, ndi zoikidwiratu zakutali.
+Gawoli limatchula zowonera pazenera zonse ndi zosintha zawo.
+Zikhazikiko zomwe sizikukwanira magawo awo oyenera zimakhala pano.
+Amayesa ma mods powapatsa mafayilo amtundu
+Imatsegula chipolopolo choyesera
+Ikuthandizira kutulutsa kolakwika
+Zolimbikitsa zotsutsana
+* Dinani batani lililonse kuti muyambe kernel kapena ESC kuti mutuluke.
+Takanika kuyambitsa "{0}": {1}
+Onetsani kuwonetseratu zamakalata
+Mukamalemba mndandanda wamakalata, onetsani kuwonera thupi.
+Kafukufuku wazida zosungidwa. Kuwonetsa zambiri komabe ...
+Mphamvu: {0} GB
+Mitundu yachikhalidwe ...
+Lembani mtundu monga tafotokozera pansipa:
+Mtundu wolowetsera
+Mtundu wa layisensi
+Mtundu wopitilira wa kernel
+Mtundu wosalephera wa kernel
+Mtundu wa dzina la alendo
+Mtundu wa dzina la munthu
+Mtundu wakumbuyo
+Mtundu wosalowerera ndale
+Mtundu wamndandanda wamalamulo
+Lamula tanthauzo la utoto
+Mtundu wamagawo
+Mtundu wolakwika
+Kodi mitundu yosankhidwayi ikuwoneka bwino?
+Yankhani {0} kuti mubwerere. Kupanda kutero, yankho lililonse limatanthauza inde.
+Maonekedwe a FTP
+Mtundu Wotumizira Mauthenga
+Maonekedwe a SFTP
+Imayambitsa chithandizo chamtundu wa 255 cha BouncingBlock.
+Imathandizira kuthandizira kwamtundu weniweni kwa BouncingBlock.
+Kuyesera kupeza njira yolakwika.
+Amatsitsa fayiloyo
+Atuluka mkonzi
+Kufunsa khalidwe mu mzere wodalirika kapena mizere yonse
+Nambala yotchulidwa {0} si nambala yovomerezeka.
+Kufufuza zosintha ndikulephera chifukwa mukugwiritsa ntchito njira yachitukuko.
+Kuyatsa kapena kutseka mawonekedwe osintha mkonzi.
+Ngati autosave itathandizidwa, fayiloyo imasungidwa pamasekondi "n" aliwonse.
+Yambitsani kusindikiza posintha mawu
+Mkonzi walemba autosave nthawi
+Imasunga fayilo
+Lembani zokambirana kuti mupeze zolakwika
+Amalemba macheza akutali kuti athetse zolakwika.
+Kuchedwa mu Milliseconds
+Ndi ma millisecond angati amene mungadikire musanapange kulemba kotsatira?
+Amakulolani kugwiritsa ntchito seva ya SSH FTP
+Palibe thandizo pamalamulo "{0}".

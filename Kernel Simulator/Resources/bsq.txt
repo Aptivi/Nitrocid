@@ -1,0 +1,961 @@
+Eskuragarri dauden komandoak: {0}
+Idatzi komandoa:
+Komando injekzioa bertan behera utzi da.
+Bereiztu abio-argumentuak komarik zuriunerik gabe, adibidez, 'motd, gpuprobe'
+Bereiztu komandoak 'cmdinject'-en bi zuriunekin, adibidez,' cmdinject setthemes Hacker : beep 1024 0.5 '
+Kontuan izan 'arazketa' argumentuak ez duela kernela guztiz estaltzen.
+bargs: ez da eskatutako {0} argumentua aurkitu.
+bargs: Errorea berreskuraezina argumentuan:
+Argumentu erabilgarriak: {0}
+Argudioak (laguntza 'help'):
+Injektatutako argumentuak hurrengo berrabiaraztean exekutatzeko programatuta egongo da.
+Argudio injekzioa bertan behera utzi da.
+Errorea benetako komando-lerroko argumentuak analizatzean: {0}
+Kolore txantiloia baliogabea {0}
+Lehenetsia
+Pertsonalizatua
+hwprobe: Zure hardwarea probatuko da. Itxaron mesedez...
+hwprobe: dagoeneko probatutako hardwarea.
+hwprobe: Hardwarea ez da aztertzen. Probatu 'hwprobe' erabiliz
+CPU: PUZaren nukleo bat edo gehiago ezin izan dira probatu. Informazioa erakusten hala ere ...
+RAM: RAM txip bat edo gehiago ezin izan dira probatu. Informazioa erakusten hala ere ...
+HDDa: disko gogor bat edo gehiago ezin izan dira probatu. Informazioa erakusten hala ere ...
+CPU: prozesadore kopurua: {0}
+PUZ: {0} {1} MHz
+RAM: {0} MB = {1} MB
+RAM: Erabilitako zirrikituak (izenen arabera): {0}
+RAM: Erabilitako zirrikituak (zenbakien arabera): {0} / {1} (%{2})
+RAM: Zundaketa egoera zaharkituta dago eta hurrengo bertsioan kenduko da.
+Disko gogorra: {0} {1} GB {2}
+Disko gogorra: {0} {1} {2} GB {3}
+Disko gogorra: CHS: {4} zilindro | {5} buruak | {6} sektore
+HDD: CHS: {3} zilindro | {4} buruak | {5} sektore
+hwprobe: Probaketa ez da onartzen, Unix-en probatzaileak exekutatzeko diseinatuta ez dagoelako.
+Idatzi administratzailearen pasahitza mantentze-lanetarako.
+Ez da erabiltzaile gehiago geratzen zerrendan.
+Kernel errorea abiaraztean: {0}
+PANIKA BIKOITZA: Berrabiarazteak baimendutako gehieneko {0} errorea berrabiarazteko denbora gainditzen du. Nukleoaren akats bat aurkitu duzu.
+[{0}] izua: Berrabiarazi gaituta dago errore maila {0} delako.
+[{0}] panic: Berrabiarazteko denbora: {1} segundo, ordu 1 baino gehiago. Minutu 1 ezartzen da.
+PANIKA BIKOITZA: {0} errore mota baliogabea.
+[{0}] dpanic: {1} - Berrabiaraztea {2} segundotan ...
+[{0}] izua: Berrabiaraztea desgaituta dago errore maila {0} delako.
+[{0}] izua: {1} - Sakatu edozein tekla nukleoa erabiltzen jarraitzeko.
+[{0}] izua: {1} - Sakatu edozein tekla itzaltzeko.
+[{0}] izua: {1} - Berrabiaraztea {2} segundotan ...
+PANIKA BIKOITZA: Nukleoaren akatsa: {0}
+Itzaltzen ...
+Berrabiarazten ...
+---===+++> Ongi etorri nukleora | bertsioa {0} <+++===---
+Kernel Simulator-en beste instantzia bat martxan dago. Interferentziaren kasuan itzaltzea.
+{0} erabiltzailea administratzaile zerrendan gehitu da.
+{0} erabiltzailea desgaitutako zerrendan gehitu da.
+Ezin izan da erabiltzailea baimen zerrendetan gehitu: baliogabea {0} mota
+Ezin izan da erabiltzailea baimen zerrendetan gehitu: erabiltzaile baliogabea {0}
+{0} erabiltzailea administratzaile zerrendatik kendu da.
+{0} erabiltzailea desgaitutako zerrendatik kendu da.
+Ezin izan da erabiltzailea baimen zerrendetatik kendu: baliogabea {0} mota
+Saioa hasi duzu.
+Huts egin du erabiltzailea baimen zerrendetatik kentzean: {0} erabiltzaile baliogabea
+Baimen sisteman akats bat aurkitu duzu: modu baliogabea {0}
+Akats bat aurkitu duzu, edo gehitu edo kentzen saiatu zaren baimena dagoeneko eginda dago, edo bestelako akatsa.
+{0} errorea: {1}
+Akats bat aurkitu duzu edo erabiltzaile berri bat editatzen saiatu zaren baimenak huts egin du.
+Erabilgarri dauden erabiltzaile izenak: {0}
+Erabiltzaile izena:
+Espazioak ez dira onartzen.
+Ez dira karaktere bereziak onartzen.
+{0} -ren pasahitza:
+Pasahitz okerra.
+Erabiltzailea desgaituta dago.
+Erabiltzaile izen okerra.
+Errore bat gertatu da leku-markak analizatzen saiatzean. {0} - Pilaren arrastoa:
+Errore bat gertatu da leku-markak analizatzen saiatzean. {0}
+Errorea erabiltzaile izena gehitzen saiatzean.
+usrmgr: {0} erabiltzaile izena sortzen ...
+Erabiltzaile izen hutsa.
+{0} erabiltzailea ez da aurkitu.
+{0} erabiltzailea ezin da kendu.
+{0} erabiltzailea dagoeneko saioa hasi da. Saioa amaitu eta saioa hasi beste administratzaile gisa.
+{0} erabiltzailea kendu da.
+Errorea erabiltzaile izena kentzen saiatzean.
+{0} / {1} = {2}
+Ez da onartzen zeroz zatitzeko saiakera.
+Kalkulatzeko saiakera susmagarria izan da gainezkatzea eragin duena.
+Errorea gertatu da kalkulatzean: {0}
+{0} ezin da {1} bihurtu.
+Bai iturria
+ edo helmuga
+ ez da zerbitzarian existitzen.
+{0} - {1}: {2}
+Errorea {0} -tik {1} -ra bihurtzean: {2}
+Errorea
+Ez da eskatutako pantaila-babeslea {0} aurkitu.
+{0} behar bezala hasieratu da.
+{0} ez da hasieratu. Baliteke pantaila-babeslearen kodeak akats bat izatea hasieratzean.
+{0} pantaila-babeslea ez da existitzen.
+{0} pantaila-babesle lehenetsian ezarrita dago.
+{0} pantaila-babeslea ez da datu basean aurkitu. Egiaztatu izena eta saiatu berriro.
+Pantaila-babeslea ezin da kargatu hau dela eta:
+Testua inprimatzean errore larria dago.
+Errore bat dago konfigurazioa sortu nahian.
+Errore bat dago konfigurazioa sortu nahian: {0}
+{0} tik {1} bertsio berritze bat hauteman da. Konfigurazioa eguneratzen ...
+Errore bat dago konfigurazioa eguneratu nahian: {0}.
+Errore bat dago konfigurazioa eguneratu nahian.
+Errore bat dago konfigurazioa irakurtzen saiatzean.
+Errore bat dago konfigurazioa irakurtzen saiatzean: {0}
+Errorea RAM askatzen saiatzean: {0} - Jarraitzen ...
+Mod ezin da kargatu hau dela eta:
+mod: Mods kargatzen ...
+mod: modak gelditzen ...
+{0} modak ez du izenik. Berrikusi iturburu kodea.
+{0} moduak ez du bertsiorik.
+{0} v {1} hasi zen
+{0} komandoaren definiziorik ez.
+-K definitutako komandoa
+Zerbitzaritik deskonektatu beharko zenuke beste zerbitzari batera konektatu aurretik
+{0} erabiltzailearen izena:
+{0} pasahitza:
+{0} -ra konektatuta
+Errorea {0}-rekin konektatzen saiatzean: {1}
+Pilaren aztarna: {2}
+Sartu FTP zerbitzari bat.
+{0} direktorio lokala ez dago.
+Sartu direktorio lokala. ".." atzera egiteko.
+{0} direktorioa ez da aurkitu.
+Sartu urruneko direktorio bat. ".." atzera egiteko
+Zerbitzari batera konektatu behar duzu direktorioa aldatu aurretik
+Tokiko direktorioa: {0}
+Urruneko direktorioa: {0}
+Zerbitzarira konektatu behar duzu uneko urruneko direktorioa lortu aurretik.
+{0} fitxategia ezabatzen ...
+Ziur {0} <y / n> fitxategia ezabatu nahi duzula?
+Ezabatu da {0} fitxategia
+Ezabatu aurretik, zerbitzarira konektatu behar duzu administrazio pribilegioekin.
+Idatzi kentzeko fitxategi bat.
+Kendu ahal izateko administratzaile baimenak izan behar dituzu saioa hasita duzun erabiltzaile izenean.
+{0} -tik deskonektatuta
+Oraindik ez zara konektatu inongo zerbitzarirekin
+{0} fitxategia deskargatzen ...
+{0} deskargatutako fitxategia.
+Ezin izan da deskargatu {0} fitxategirako, bertako fitxategia hondatuta dagoelako.
+Transmisioa egin aurretik zerbitzarira konektatu behar duzu.
+Sartu fitxategi bat direktorio lokalera deskargatzeko.
+{0} KB | Hemen aldatua: {1}
+Zerbitzarira konektatu beharko zenuke urruneko fitxategi guztiak zerrendatu aurretik.
+{0} fitxategiari {1} izena aldatzen ...
+Izena ongi izendatu da
+Idatzi fitxategi bat eta fitxategi izen berria.
+{0} fitxategia kargatzen ...
+Kargatutako fitxategia {0}
+Sartu fitxategi bat urruneko direktoriora kargatzeko. kargatu <fitxategia> <direktorioa>
+Errorea FTP komandoa exekutatzen saiatzean
+(Barrualdea:
+{0} karpetak, {1} fitxategiak
+(Sarrera debekatua)
+{0} KB, {1} {2} -n sortua, {3} {4} -n aldatua
+Uneko direktorio lokala lortzen du
+Uneko urruneko direktorioa lortzen du
+FTP zerbitzari batera konektatzen da ("ftp://" edo "ftps://" batekin hasi behar du)
+Deskargatu edo kargatzeko direktorio lokala aldatzen du
+Urruneko direktorioa aldatzen du deskargatzeko edo kargatzeko
+Urruneko fitxategia zerbitzaritik ezabatzen du
+Zerbitzaritik deskonektatzen da
+Urruneko fitxategia direktorio lokalera deskargatzen du bitarra edo testua erabiliz
+FTP shell-etik irten eta kernelera itzultzen da
+Laguntza pantaila erakusten du
+Tokiko direktorioa zerrendatzen du
+Urruneko direktorioa zerrendatzen du
+Fitxategi edo direktorio zehatzen izena aldatzen du
+Fitxategi lokala urruneko direktoriora kargatzen du bitarra edo testua erabiliz
+Errorea gertatu da FTP shellean.
+FTP mezua: ez da eskatutako {0} komandoa aurkitu. Ikusi 'laguntza' FTP shellean zehaztutako komando erabilgarrien zerrenda ikusteko.
+net: {0} -ren erantzuna lortu du {1} ms-tan
+Denbora muga, deskonektatu edo zerbitzaria konexiorik gabe.
+net: Sarean zure ordenagailuaren izena {0} da
+net: Zure ostalariaren izena {1} da
+net: Badirudi ordenagailuak domeinuan edo lantaldean daudela:
+net: WiFi edo Ethernet deskonektatuta dago.
+net: Badirudi behean ordenagailuak konektatuta daudela:
+net: Bideratzailearen helbidea: {0}
+Ezin izan da {0} egokitzailearen propietateak lortu.
+Egokitzaile zenbakia:
+Egokitzailearen izena:
+Gehienezko transmisio unitatea: {2} unitate
+DHCP gaituta:
+Unicast ez diren paketeak:
+Unicast paketeak:
+Errorea sarrerako / irteerako paketeak:
+Ezizena ezin da komando baten izen bera izan.
+Ez da aurkitu komandoa {0} ezizena lortzeko.
+Erabat debekatuta dago {0} eta {1} ezartzea.
+"{0}" exekutatu dezakezu komando gisa: "{1}".
+Jada ezin duzu "{0}" erabili "{1}" komando gisa.
+{0} ezizena ez da kendu.
+Modu baliogabea {0}.
+Txertatutako argumentuak, {0}, hurrengo berrabiarazterakoan exekutatuko dira.
+Ez zegoen nahikoa argudio. Ikusi beheko erabilera:
+{0} direktorioa ez da aurkitu
+Ostalariaren izen hutsa.
+{0} {1} ra aldatzen ...
+Eguneko mezu zuria.
+Blank MAL Saioa hasi ondoren.
+MAL {0} -tik {1} -ra aldatzen ...
+Erabiltzaile pasahitz okerra.
+Pasahitzak ez datoz bat.
+Erabiltzaile izena {0} bihurtu da!
+Idatzi duzun izen berria dagoeneko aurkitu da.
+Ordenagailuen zerrendak oraindik ez dira onartzen Unix-en.
+Debekatuta dauden ezizenak: {0}
+{0} ez da aurkitu.
+Konfigurazioa berriro kargatu da. Agian, nukleoa berrabiarazi beharko zenuke aldaketa batzuek eragina izan dezaten.
+Dena ezarpen normaletara berrezarri da.
+Kolore bat edo gehiago baliogabeak dira.
+Koloreak ez daude eskuragarri. Aktibatu koloretako oskola nukleoaren konfigurazioan.
+{0} pantaila-babeslea ez da aurkitu.
+[ Kernel ezarpenak (exekutatzen {0}) ]
+Kernel bertsioa:
+Arazketa modua:
+Koloretako maskorra:
+Abiarazteko argudioak:
+Laguntza komandoa sinplifikatua:
+MOTD Saioa hastean:
+Izkinako ordua / data:
+Hardware probatua:
+Uneko gaia:
+[ Hardwarearen ezarpenak ]{0}
+{0}[ Erabiltzailearen ezarpenak ]
+Uneko erabiltzaile izena:
+Uneko ostalariaren izena:
+Erabilgarri dauden izenak:
+Ordenagailuaren ostalariaren izena:
+{0}[ Mezuen ezarpenak ]
+Iturburu kodea:
+Copyright (c)
+Lizentzia
+oraina
+Errorea komandoa exekutatzen saiatzean
+Erabiltzaileak gehitzen ditu (administratzaileek soilik sar dezakete komando honetara)
+Ezizenak gehitzen dizkie komandoei (administratzaileek soilik sar dezakete komando honetara)
+Argumentuak injektatzen ditu kernelera (berrabiarazi behar da, administratzaileek soilik)
+Kalkulagailu sinplea
+Direktorioa aldatzen da
+Ostalariaren izena aldatzen du (administratzaileek soilik)
+Aldaketak MAL, MOTD saioa hasi ondoren (administratzaileek soilik)
+Aldaketak MOTD, eguneko mezua (administratzaileek soilik)
+Uneko erabiltzailearen pasahitza aldatzen du
+Erabiltzaile izena aldatzen du (administratzaileek soilik)
+Pantaila garbitu
+Moneta bihurtu
+Arazketa erregistroak erakusten ditu (administratzaileek soilik)
+Erabili FTP shell bat zerbitzariekin elkarreragiteko
+Laguntza orria
+Probatu hardwarea eskuz (behin "nohwprobe" nukleoan)
+Zerrendatu fitxategiaren / karpetaren edukia uneko karpetan
+%USERPROFILE%\KSMods-en pantaila-babesle fitxategia birkargatzen du
+Pasahitzarekin pantaila blokeatzen du
+Saioa amaitu egiten zaitu
+Linean (eta domeinuetan lineaz kanpo) dauden sareko gailu guztiak zerrendatzen ditu.
+Ostalariaren sareko helbide guztiak zerrendatzen ditu
+Zuhaitza erabiliz ostalariaren sareko helbide guztiak zerrendatzen ditu
+Direktorio bat sortzen du
+Eskuragarri dauden interfaze guztiei buruzko informazioa zerrendatzen du
+Ezizenen zerrenda debekatua erakusten du
+Kudeatu erabiltzaileentzako baimenak (administratzaileek soilik sar dezakete komando honetara)
+Egiaztatu zehaztutako helbidea eskuragarri dagoen
+Fitxategiaren edukia kontsolan idazten du
+Ordenagailua berrabiarazi (KONTUZ: ez da sinkronizatzen, ez baita azken kernela)
+Editatutako konfigurazio fitxategia birkargatzen du.
+Direktorio bat kentzen du
+Erabiltzaile bat zerrendatik kentzen du (administratzaileak soilik)
+Pantaila grabazioetatik gordetzen du
+Kalkulagailu zientifikoa. Unitate bihurgailua beste komando batekin bereizten da
+Nukleoaren koloreak ezartzen ditu
+Nukleoaren pantaila-babesleak konfiguratzen ditu
+Nukleoaren gaiak konfiguratzen ditu
+Ezizenak erakusten ditu
+Erabiltzaileak edo kernelak ezarritako saioa hasi ondoren MOTD erakusten du
+Erabiltzaileak edo kernelak ezarritako eguneko mezua erakusten du
+Data eta ordua erakusten ditu
+Data eta ordua zonetan erakusten ditu
+Nukleoa itxi egingo da
+Sistemaren informazioa
+Scicalc-etik bereizitako unitate bihurgailua.
+Erabilitako kode irekiko mendekotasunak erakusten ditu
+Erabiltzailearen eskuliburu oso deskribatzailea.
+* Komando anitzak erabil ditzakezu bi puntuak komandoen artean.
+Eskuragarri dauden komandoak:
+Mod komandoak:
+Komandoen ezizenak:
+Erabilera:
+Komaz bereizitako argudioak
+argumentuak non egongo diren {0}
+uneko direktorioa lortzeko
+Zein iturburutan eta helmugatan dauden truke-tasaren 3 MAIUSKULA karaktere
+NAN eta izen guztien zerrenda:
+Arazteko erregistroak erakusten dizkizu erregistroa guri bidali ahal izateko.
+FTP shell hasieratzen du.
+Probes hardwarea (Hardwarea probatzen ez denean eta hwprobe exekutatzen ez denean bakarrik funtzionatzen du).
+Sareko informazioa zerrendatzen du, baita sare batera konektatuta dauden ordenagailu guztiak ere.
+Lagunak
+Sareko informazioa eta sare batera konektatutako ordenagailu guztiak zerrendatzen ditu zuhaitz moduan.
+Sareko informazioa eta ordenagailu guztiak zerrendatzen ditu.
+non egongo da modname.ss.vb
+Pasahitzarekin pantaila blokeatzen du.
+Erabiltzailearen saioa amaitzen du.
+Lortu sareko informazio bakoitza
+Berrabiarazi simulatutako ordenagailua.
+Azken erabiltzaileak edo tresnak aldatzen duen konfigurazioa berriro kargatzen du.
+Koloreek ez dute berrabiarazi behar, baina ezarpen gehienek berrabiaraztea eskatzen dute.
+hautatutako pantaila-babeslea erakusten dizu, pantaila erreduretatik babesten duzun bitartean.
+Data eta ordua erakusten ditu.
+Data eta ordua zonetan erakusten ditu.
+Itxita simulatutako ordenagailua.
+Sistemaren informazioa eta bertsioak erakusten ditu.
+Erabilitako kode irekiko liburutegiak erakusten ditu
+Errore bat gertatu da shellean.
+Ez duzu {0} erabiltzeko baimenik
+Shell mezua: eskatutako {0} komandoak ez du mantenimendu moduan exekutatzea onartzen.
+Shell mezua: ez da eskatutako {0} komandoa aurkitu. Ikusi 'help' eskuragarri dauden komandoak lortzeko.
+Shell mezua: {0} komandoak ezin du saioa hastean exekutatu.
+Shell mezua: ez da eskatutako {0} komandoa aurkitu.
+Errorea komandoa exekutatzen saiatzean.
+datetime: ordua {0} da
+datetime: Gaur {0} da
+datetime: Ordu eremua: {0}
+- {0} ordua: {1}
+pantaila garbitzeko.
+Badirudi {0} eskuzko orria ez dela aurkitu.
+Errorea gertatu da {0} {1} eskuzko orria kargatzen saiatzean.
+Eskuliburu orrialde hau osatu gabe dago arrazoi hauengatik:
+Sakatu edozein tekla jarraitzeko ...
+ | {0} hitzak | V berrikuspena {1} | {2} atal
+Eskuzko orrialdearen izenburua ez dago idatzita
+Eskuliburu orri honek ({0}) ez du gorputzeko testurik. Orrialdea ezabatzen ...
+Eskuliburu orri honek ({0}) ez du atalik. Orrialdea ezabatzen ...
+{0} -n exekutatzen
+Ez duzu baimenik {0} -ri buruzko informazioa lortzeko.
+Komando hau zaharkituta dago eta etorkizuneko bertsio batean kenduko da.
+Ez duzu baimenik {0} pasahitza aldatzeko, helburua administratzailea zelako.
+Bihurtu diru kopurua herrialde batetik bestera
+Monetak:
+usrmgr: {0} erabiltzaile izena dagoeneko aurkitu da
+Idatzi zure API gakoa:
+Ezin izan dira ordenagailuak eskuratu. Windows 10-en azken bertsioa exekutatzen ari bazara, SMBv1 gaitu behar duzu. Protokolo hau ez da segurua eta arazo hau konpontzen saiatuko gara.
+Arazketa erregistroan dagoen guztia ezabatzen du
+SSE bertsioak lortzen ditu
+Hizkuntza baliogabea
+Hizkuntza aldatzen du
+Agian ez duzu libcpanel-json-xs-perl instalatuta zure sisteman. Instalazioetarako, jo pakete kudeatzaileari. Debian (eta deribatuak) sistemetarako, "sudo apt install libcpanel-json-xs-perl" exekutatu nahi duzu terminal emuladorean. Akats baten xehetasun gehiago:
+----------------------------- Nukleoaren izua isuri ------------------------------
+>> Izua informazioa <<
+> Deskribapena: {0}
+> Akats mota: {1}
+> Data eta ordua: {2}
+>> Salbuespeneko informazioa <<
+> Salbuespena: {0}
+> Deskribapena: {1}
+> HRESULT: {2}
+> Iturria: {3}
+> Pilatu aztarna <
+>> Barruko salbuespena {0} informazioa <<
+>> {0} salbuespena da kausa nagusia <<
+>> Salbuespenik ez; kernelaren akatsa izan daiteke. <<
+>> Markoak, fitxategiak, lerroak eta zutabeak <<
+> Markoa {0}: Fitxategia: {1} | Lerroa: {2} | Zutabea: {3}
+> Akats bat dago fotogramen informazioa lortu nahian. {0}: {1}
+Zure sistemaren hizkuntza ingelesa ez den beste edozeinetarako ezarri duzu. Barkatu eragozpenak, baina badirudi Google eta bere itzultzailea oso bitxiak direla edozein programazio lengoaiatarako kode blokeak itzultzean. Itzulitako eskuliburu orrietarako kode bloke guztiak konpontzen ditugun bitartean, Google Translaterako sarrera bat irekitzea gomendatzen dizugu, itzuli nahi ez diren kode blokeak itzultzeko eta zure sistemaren hizkuntza ingelesera jartzea hitz egiten baduzu.
+Mods birkargatzen ditu.
+Modak berriro kargatu dira.
+Ongi etorri Kernelera!
+<Erabiltzailea> bezala hasi duzu saioa
+MOTD / MAL baliozkoa da, baina mezu motak ez du balio. MOTD suposatuz ...
+Mota baliogabeko MOTD / MAL irakurtzen saiatu naiz.
+Konexio egonkorra mantenduz, {0} deskargatzen ari da {1} ...
+Deskarga amaitu da.
+Deskargak huts egin du {0} saiatzean: {1}
+Erabili "ftp" fitxategiak FTP zerbitzaritik deskargatuko badituzu.
+Fitxategia uneko laneko direktoriora deskargatzen du
+Deskonektatu arazketa gailua
+Konektatutako arazketa-zerrendak
+{0} arazketa-gailua ez da aurkitu.
+{0} gailua deskonektatu da.
+Errorea konexioan: {0}
+Araztu helbide guztietan entzutea {0} ataka erabiliz.
+Ez da argudiorik zehaztu. Aholkua: zehaztu zuriunez bereizitako hainbat argumentu
+Ezizena dagoeneko aurkitu da: {0}
+Arazketa erregistroa kendu da. Konektatutako arazketa-gailu guztiek oraindik mezuak ikus ditzakete.
+Arazketa erregistroa kentzeak huts egin du: {0}
+Direktorioa aldatzeak huts egin du: {0}
+Erabiltzaile izena okerra da
+Zehaztu helbidea
+Ezin da direktorioa kendu: {0}
+Ordu-eremua gaizki zehaztuta dago.
+Profil hautaketa baliogabea.
+{0} profilarekin {1} konektatzen saiatzen ...
+Errorea unitateko probetan: {0}
+{0} agindua ez da aurkitu. Ikus "laguntza" komandoa komandoen zerrenda ikusteko.
+Ezin izan da {0} egokitzailearen IPv6 propietateak lortu. Jarraitzen ...
+IPv4 informazioa:
+IPv6 informazioa:
+{0} egokitzaileak ez du IPv6 onartzen. Jarraitzen ...
+{0} egokitzaileak ez du IPv4 onartzen. Probak huts egin du.
+Badirudi kernelaren garapen bertsioa exekutatzen ari zinela. Alderdiak ikusi ditzakezun arren, maiz eguneratzen da eta akatsak sor ditzake. Bertsio egonkorrean jarraitzea gomendatzen da.
+Aukeratu duzun hizkuntzak bi aldaera ditu. Aukeratu bat:
+1. Transliteratua
+2. Itzulia
+Aukeratu zure aukera:
+Aukera baliogabea. Saiatu berriro.
+Ez duzu baimenik uneko direktorioa {0} gisa ezartzeko: {1}
+{0} baimenak huts egin du
+Zehaztu duzun bidea luzeegia da.
+Ez duzu baimenik {0} atalean zerrendatzeko: {1}
+Errorea PUZa egiaztatzean: {0}
+Errorea RAM egiaztatzean: {0}
+Errorea HDDa egiaztatzean: {0}
+CPU: ABISUA: SSE2 beharrezkoa izango da etorkizuneko garapen konpromisoetan.
+Irauli informazio biltzaileak huts egin du {0} -ri buruzko informazioa lortu nahian: {1}
+Errore bat gertatu da bilketa-data {0} biltzeko data lortzen saiatzean: {1}
+Errorea MOTD / MAL ezartzen saiatzean: {0}
+Errorea MOTD / MAL lortzen saiatzean: {0}
+Erreferentzia nulua salbuespen bat da {0} -n: {1}
+Erreferentzia nulua salbuespen bat da {0}: {1} - Pilaren aztarna:
+Errorea pantaila-babeslea abiaraztean, eragiketa baliogabea delako.
+Modu seguruan birkargatzea ez da onartzen.
+Modak aztertzea ez da onartzen modu seguruan.
+Analiza ezazu direktorio osoa tamainaren edo uneko fitxategien arabera.
+Konektatutako arazketa gailu guztiak zerrendatzen ditu.
+Errorea analisi modua ezartzen saiatzean. Egiaztatu balioa eta saiatu berriro. Hori zuzena bada, ikusi pilaren traza nukleoaren arazketa gaituta dagoenean.
+Ezarri ongi.
+Bidea ez da fitxategi bat edo direktorio bat.
+Fitxategiaren beste kopia bat sortzen du direktorio edo izen desberdinekin.
+Fitxategia beste direktorio batera eramaten du
+Fitxategiak beste direktorio batera edo beste izen batera kopiatzeko
+Fitxategiak beste direktorio batera eramateko
+Bat etorri {0} ({1}): {2}
+Partidua {0}: {1}
+Emandako denbora: {0} milisegundo
+Fabrikantea: {0}
+Eredua: {0}
+Edukiera: {0} ({1}, {2}, {3})
+Interfaze mota: {0}
+Unitatearen zenbakia: {0}
+Abiarazte bandera: {0} ({1})
+Partizio fisikoa: {0}
+Bandera nagusia: {0}
+Tamaina: {0} GB
+Partizio logikoa: {0}
+Konprimituta: {0}
+Izena: {0}
+Fitxategi sistema: {0}
+Edukiera: {0} GB {1} GB doan
+Partizio logiko guztiak unitate guztietan zerrendatzea.
+Zundatutako unitate guztiak zerrendatzen ditu.
+Unitate jakin bateko probatutako partizio guztiak (eta unitate guztietako partizio logiko guztiak) zerrendatzen ditu.
+Fitxategien batuketak kalkulatzen ditu.
+Gure GitHub wikira eramaten zaitu.
+Enkriptatze algoritmo baliogabea.
+Urruneko arazketa gaitzen edo desgaitzen du.
+Fitxategi sistema hasieratzen ...
+Instalatutako ahotsak lortzen ditu
+Ahots lehenetsia ezartzen du
+Zure katea mintzo da ahots lehenetsia erabiliz
+{0} ahotsa: {1} ({2})
+Ahots baliogabea.
+Ahots multzoa
+Ea garaiz hitzak zuzen idazten dituzun
+Ea ekuazio matematikoak garaiz konpontzen dituzun
+Erantzun maitasun edo gorroto iruzkinak.
+Norbaitek zure bideoan iruzkin hau egin badu:
+Nola erantzungo zenuke?
+Aukeraketa baliogabea. Hurrengo iruzkinera joaten ...
+Maitasun iruzkinaren berri eman berri duzu!
+Gorrotoaren iruzkinari erantzun berri diozu!
+Primeran! {0} ren iruzkina kenduko da horretarako.
+Primeran! {0}-k eskerrak emango dizkizu.
+Idatzi "GetMeOut" irteteko.
+Primeran idatzita!
+Gaizki idatzita.
+Ezin hobeto konpondu!
+Oker konpondu da.
+{0} MB eta {1} MB deskargatuta.
+RPC dagoeneko martxan dago.
+RPC entzutea helbide guztietan {0} ataka erabiliz.
+RPC abiarazten ...
+SSH zerbitzari batera konektatzen da.
+Idatzi {0} pasahitza:
+SSH Deskonektatuta.
+Synth fitxategia kargatzen du eta erreproduzitzen du.
+{0} script-fitxategia ez dago.
+Fitxategia ez da script bidezko sintetizadorea.
+Ezin izan da sintetizazio lerro bat probatu.
+Kate hutsa zehaztu da
+Ezin da kodeko orria ezarri. Baliteke hizkuntza behar bezala ez bistaratzea.
+Arazketa araztea ez dago gaituta.
+{0} ez dago pantaila-babesle lehenetsian.
+Eskerrik asko! Hau interesgarria da.
+Denek lagunduko dute zure bideoa horretarako.
+Zure posta elektronikoan fitxategi berezia eman dizut zure hurrengo bideorako.
+Entzun, gorrotoak, gu laguntzen saiatzen ari da, ez iruzurra.
+Ez dakit zenbateraino eskertzen dizut nik eta nire lagunek bideo hau.
+Maite zaitut bideo honengatik.
+Segi aurrera, ez gelditu.
+1M harpidedunengana iristen lagunduko dizut.
+Nire lagunek ordenagailua konpondu dute zuregatik.
+Txantxa izugarria! Etsaiaren ordenagailua itxi nuen.
+Gorrotatzaileei: GELDITU HAREKIN
+Gorrotatzaileei: LAN EGIN
+Orain inork ez du ohartuko zure objektua ezkutatzeko gidari esker
+Zure bideoak ikusteari utziko diot. Harpideduna galdu da.
+Zer da hau? Hori ez dago argi.
+Bideo hau okerrena da!
+Denek salatu dute bideo hau!
+Nire lagunak amorruz daude zurekin!
+Maitaleek orain gorrotatuko zaituzte horregatik.
+Zure lagunak gorrotatuko zaitu horregatik.
+Txantxa horrek harpidetza kentzea eragin zidan.
+Misioak huts egin du, errespetatu -, harpideduna -
+Utzi bideo mota hau egiteari !!!
+Itzuli zure lanera, zure bideoak okerrenak dira!
+Bideo honi aurreiritzia egiten diogu.
+Debekatuta dago {0} eta {1} ezartzea.
+Errorea jakinarazpena baztertzen saiatzean: {0}
+Jasotako jakinarazpen guztiak erakusten ditu
+Jakinarazpena baztertzen du
+Jakinarazpena behar bezala baztertu da.
+Paketeak (sarrerakoak):
+Paketeak (irteerakoak):
+Jasotako paketeetako akatsak:
+IPv6 propietate orokorrak
+IPv4 propietate orokorrak
+Urrunetik komando bat exekutatzen du urruneko PCra
+- 1. etapa: sistemaren hasieratzea
+- 2. etapa: Hardwarea hautematea
+- 2. etapa: Barne erabiltzaile izenen kudeaketa
+- 3. etapa: Mods eta pantaila-babesleak hautematea
+- 4. etapa: Zabor bilketa
+- 4. etapa: Hasi saioa
+Zabor bilketaren aurretik: {0} byte
+Zabor bilketaren ondoren: {0} byte
+Errore bat gertatu da RPC abiaraztean: {0}
+Badirudi bertsio hautagaiaren bertsioa exekutatzen ari zinela. Bertsio egonkorrean jarraitzea gomendatzen da.
+Badirudi fitxategi sistemen populazioak luzeegia egiten duela.
+{0} mota baliogabea.
+Edukiera: {0}
+Partizio kopurua: {0}
+Tamaina: {0}
+Erabilitakoa: {0}
+{0} direktorioa dagoeneko badago.
+Errorea {0}-rekin konektatzen saiatzean: konexioaren denbora-muga edo konexio galdua
+Esapideak kalkulatzeko kalkulagailua.
+Errorea kalkuluan.
+Edukiera: {0} GB ({1}, {2}, {3})
+Badirudi bertsio hurbileko bertsioa exekutatzen ari zinela. Orain erabiltzea seguruagoa den arren, bertsio egonkorrean jarraitzea gomendatzen da.
+Sistemaren eguneratzea
+Sistemaren eguneratzeak egiaztatzen ...
+Bertsio berria aurkitu da:
+Deskargatu hemen:
+Ezin izan da eguneratzerik egiaztatu: {0}
+Arazketa erregistroa ez da aurkitu
+Ez dago azken jakinarazpenik
+Emandako fitxategian zehaztutako katea bilatzen du
+Zehaztutako direktorioko fitxategi batuketak kalkulatzen ditu.
+Erabiltzaile zehatzeko mezu guztiak zerrendatzen ditu.
+Idatzi erabiltzaile izena edo posta helbidea:
+Idatzi pasahitza:
+Idatzi zerbitzariaren helbidea eta ataka (<helbidea> edo <helbidea>:[ataka]):
+Errorea {0} konektatzean: {1}
+{0} ra konektatzen ...
+Autentifikatzen ...
+IMAP shell-etik irteten da
+Komandoen zerrenda
+Mezuak deskargatu eta zerrendatzen ditu
+Mezu bat irekitzen du
+Orria agian ez da negatiboa edo nulua izan.
+Orria ez da zenbakizko balioa.
+Baliteke mezu zenbakia negatiboa edo zero ez izatea.
+Mezuaren zenbakia ez da zenbakizko balioa.
+- {0} tik
+- {0} ra
+- {0} helbidean bidali da {1}
+Ez da zehaztutako mezua aurkitu.
+Urruneko arazketa huts egin du abiaraztean: {0}
+Errorea IMAP komandoa exekutatzean: {0}
+Profilak prestatzen ... Zenbait minutu behar izan ditzake ...
+Ostalariaren izena, erabiltzaile izena, datu mota, kodetzea, enkriptatzea, protokoloak
+Errorea scripta exekutatzen saiatzean: {0}
+Testua kontsolan idazten du
+Erabiltzaileen aukerak egiten ditu
+Soinua egin "n" Hz-tan eta denbora "n" milisegundotan
+non <$ aldagaia> erantzuna gordetzeko erabiliko den edozein aldagai den
+Maiztasunak zenbakizkoa izan behar du. Zenbakizkoa bada, ziurtatu >= 37 eta <= 32767 dela.
+Denborak zenbakizkoa izan behar du.
+non <erantzunak> galderaren letra bakarreko erantzunak barratan bereizita dauden
+Errorea SSH zerbitzariarekin konektatzen saiatzean: {0}
+Blank MOTD Saioa hasi ondoren.
+Erabiltzaileari sarrera sartzeko aukera ematen dio
+Uneko posta direktorioa aldatzen du
+Ezin da posta karpeta ireki {0}: {1}
+Zure posta helbideko direktorioak zerrendatzen ditu
+Markatze bizkorraren informazioa erabiltzen du edozein sareetara azkar konektatzeko
+Aukeratu helbide bat konektatzeko:
+Aukeraketa barrutitik kanpo dago. Aukeratu 1-{0} artean. Saiatu berriro.
+Aukeraketa ez da zenbaki bat. Saiatu berriro.
+Ziurtagirien balioztapenean, ziurtagirien akatsak daude. Baliteke zerbitzarira konektatzen zaren lehen aldia izatea edo ziurtagiria iraungita egotea. Hona hemen errore bat:
+Ziur zaude konektatu nahi duzula?
+Erantzun baliogabea. Saiatu berriro mesedez.
+Markatze bizkorra hutsik dago. Konektatu zerbitzari batera helbide bat gehitzeko.
+Markatze bizkorra ez da existitzen. Konektatu zerbitzari batera helbide bat gehitzeko.
+Idatzi IMAP zerbitzariaren helbidea eta ataka (<helbidea> edo <helbidea>:[ataka]):
+Idatzi SMTP zerbitzariaren helbidea eta ataka (<helbidea> edo <helbidea>:[ataka]):
+Helbide batera mezua bidaltzeko beharrezko eremuak betetzeko eskatzen dizu
+Mezu bat helbide batera bidaltzen du
+Idatzi hartzailearen helbide elektronikoa:
+Idatzi gaia:
+Idatzi zure mezua behean. Idatzi "EOF" berresteko.
+Mezua bidaltzen ...
+Mezua bidali da.
+Errorea mezua bidaltzean: {0}
+Helbide elektroniko baliogabea. Ziurtatu helbidea ondo idatzi duzula eta agertzen den adibidearen formatuarekin bat datorrela:
+Mezu bat kentzen du
+Mezu guztiak hartzailetik kentzen ditu
+{1} mezuaren {0} mezua ezabatu da {2} etik. {3} mezu aztertzeko geratzen dira.
+Sarrerako ontzitik ezabatu da {1} {0} mezua. {2} mezu aztertzeko geratzen dira.
+Testu fitxategi bat editatzen du
+Fitxategi berria egiten du
+Fitxategia dagoeneko badago.
+Errorea fitxategi bat sortzen saiatzean: {0}
+Ezin izan da ireki fitxategia. Shell-etik irteten ...
+Ez da zehaztutako testu editorearen komandoa aurkitu.
+Eskuragarri dauden komandoak zerrendatzen ditu
+Testu editoretik irten eta gorde gabeko aldaketak gorde
+Fitxategiaren edukia lerro zenbakiekin inprimatzen du kontsolan
+Fitxategiaren amaieran testuarekin lerro berri bat gehitzen du
+Zehaztutako lerro zenbakia kentzen du
+Hitz edo esaldi bat beste batekin ordezkatzen du
+Hitz edo esaldi bat lerro zenbakitik ezabatzen du
+Karaktere bat ezabatzen du zehaztutako lerroko karaktere zenbakitik
+Linea kendu da.
+Zehaztutako {0} lerro zenbakia ez da baliozko zenbakia.
+Eskatutako argudioak ez dira {0} agindura pasatzen.
+Errorea komandoa exekutatzen saiatzean: {0}
+Modu seguruan exekutatzen. Etapa saltatzen ...
+>> Urruneko arazketa eta txata: bertsioa
+>> Zure helbidea {0} da.
+>> Zure izena {0} da.
+{0} agindua ez da aurkitu. Erabili "/help" zerrenda ikusteko.
+{0} aurkibidea baliogabea da. {1} pila arrastoak daude. Indizea zero oinarritzat hartuta dago, beraz 1 saiatu kentzen.
+Pilaren arrastorik ez
+Salbuespenean azken pila aztarna erakusten du
+Saioan uneko erabiltzaile izena erakusten du
+Arakatzailetik deskonektatzen zaitu
+Desblokeatu arazketa gailua IP helbidearen arabera
+Blokatu arazketa gailua IP helbidearen arabera
+{0} orain urruneko arazketan sar daiteke.
+{0} oraindik ez dago blokeatuta.
+Errorea ezarpenak kargatzean
+Ezarpenak kargatzean errore bat gertatu da. Agian ezarpenen fitxategia egiaztatu beharko duzu.
+- 2. etapa: Mods eta pantaila-babesleak hautematea
+- 3. etapa: Hasi saioa
+Aukeratu atala:
+Aukeratu aukera:
+Ezarpen orokorrak ...
+Hardware ezarpenak ...
+Saioa hasteko ezarpenak ...
+Shell ezarpenak ...
+Sareko ezarpenak ...
+Hainbat ezarpen ...
+Gorde ezarpenak
+Irten
+{0} zehaztutako aukera baliogabea da.
+Erantzunak zenbakizkoa izan behar du.
+Galdetu argudioak abioan
+Mantentze-moduaren abiarazlea
+Aldatu Erro Pasahitza ...
+Begiratu eguneratzeak abiaraztean
+Lasai Probe
+Probatu RAM zirrikituak
+Erakutsi MOTD saio hasieran
+Garbitu pantaila saioa hastean
+Erakutsi erabilgarri dauden izenak
+Koloretako Maskorra
+Laguntza komando sinplifikatua
+Arazketa ataka
+Urruneko arazketa lehenetsitako Nick aurrizkia
+Deskargatu berriro saiatzeko aldiz
+Erregistratu FTP erabiltzaile izena
+Erregistratu FTP IP helbidea
+Itzuli lehen FTP profila soilik
+Erakutsi ordua / data goiko eskuineko izkinan
+Pantaila-babeslea ms-tan
+Arazketa tamainaren kuota byteetan
+Tamaina aztertzeko modua
+Markesina martxan jartzean
+Denbora luzea eta data
+Erakutsi ezkutuko fitxategiak
+Atal baliogabea sartu da. Itzuli mesedez.
+Atzera egin...
+Gaitu
+Desgaitu
+Gako zenbaki baliogabea sartu da. Itzuli mesedez.
+Idatzi ezarri beharreko root pasahitza. Ez kezkatu; pasahitza izar gisa agertzen da.
+Gaitu "Aldatu erro pasahitza" aukera hau erabiltzeko. Itzuli mesedez.
+Erroaren pasahitza aldatu nahi duzu?
+Ezarri root pasahitza ...
+Idatzi urruneko arazketa ataka. Zenbakizkoa izan behar du, eta ez da dagoeneko erabili behar. Bestela, urruneko arazleak huts egingo du ataka irekitzean.
+Idatzi urruneko arazketa ezizenaren aurrizki lehenetsia.
+Idatzi "lortu" komandoak huts egin duen deskarga berriro saiatu behar duen. Zenbakizkoa izan behar du.
+Idatzi pantaila-babeslea noiz abiarazi zehaztutako milisegundoen ondoren. Zenbakizkoa izan behar du.
+Idatzi arazketa-erregistroak zenbat byte gorde ditzakeen. Zenbakizkoa izan behar du.
+Erantzuna ez da negatiboa izango.
+Erantzuna baliogabea da. Egiaztatu erantzuna zenbakizkoa dela erantzun gisa zenbakiak behar dituzten konfigurazio sarreretarako.
+{0} aldagaia ez da moduluetan aurkitzen.
+Nukleoaren konfigurazioa aldatzen du
+Pantaila-babeslearen ezarpenak ...
+Aktibatu 255 kolore
+Nahi al duzu konektatuta egon?
+Aukera baliogabea. Ezetz suposatuz ...
+Ez da modik hauteman. Etapa saltatzen ...
+Aldatu kultura hizkuntza aldatzean
+Testua erakusten da
+Idatzi erakutsi nahi duzun testua. Laburragoa da hobea.
+Ezin izan da kargatu {0}
+Ezin izan da deskargatu {0} fitxategirako: {1}
+Errorea urruneko arazketa komandoa exekutatzean {0}: {1}
+Erabiltzaileak gehitzen ditu
+Ezizenak gehitzen dizkie komandoei
+Argumentuak injektatzen ditu nukleora (berrabiarazi behar da)
+Ostalariaren izena aldatzen du
+Aldaketak MAL, MOTD saioa hasi ondoren
+Aldaketak MOTD, eguneko mezua
+Erabiltzaile izena aldatzen du
+Arazketa erregistroak erakusten ditu
+Kudeatu erabiltzaileentzako baimenak
+KSMods-en pantaila-babesle fitxategia birkargatzen du
+Erabiltzaile bat zerrendatik kentzen du
+{0} ezizena behar bezala kendu da.
+Ezin izan da eguneratzerik egiaztatu.
+Ez da erabiltzaile gehiago geratzen zerrendan.
+Ezin izan da hizkuntza ezarri.
+Errorea jakinarazpena baztertzen saiatzean.
+{0} bertsio berritzea hauteman da. Konfigurazioa eguneratzen ...
+usrmgr: Huts egin du erabiltzaile izena sortzean {0}: {1}
+Ezin izan da erabiltzailea aldatu. {0}
+Baimen zerrendetako batek ez du {0} erabiltzaile izena.
+Ezin izan dira fitxategiko baimenak kargatu: {0}
+Ezin izan da ostalariaren izena aldatu: {0}
+Erabiltzailea ez da aurkitu
+Ezin izan da erabiltzaile izenaren pasahitza aldatu: {0}
+Ezin izan da fitxategia edo direktorioa kopiatu: {0}
+Ezin izan da fitxategia edo direktorioa mugitu: {0}
+Ezin da aurkitu "{0}" katearekin bat datorren fitxategia: {1}
+Ezin izan da deskargatu {0} fitxategian.
+Ezin izan dira urruneko fitxategiak zerrendatu: {0}
+Idatzi kentzeko fitxategi edo karpeta bat. Kendu ahal izateko administrazio baimenak izan behar dituzu kontuan.
+Ziur {0} <y/n> ezabatu nahi duzula?
+{0} ezabatzen ...
+{0} ez da zerbitzarian aurkitu.
+{0} -k egindako mezu guztiak behar bezala kendu dira.
+Ezin izan da {0} -k egindako mezu guztiak kendu.
+Errorea mezua bidaltzean.
+{0} {1} ra mugitzen ...
+Ongi mugitu da
+Fitxategia edo direktorioa beste fitxategi edo direktorio batera mugitzen du. Hori ere erabil dezakezu fitxategiak berrizendatzeko.
+Ezin izan da {0} {1} mugitu.
+Idatzi iturburu bidea eta helmuga bidea.
+{0} {1} kopiatzen ...
+Behar bezala kopiatu da
+Fitxategia edo direktorioa beste fitxategi edo direktorio batera kopiatzen du.
+Ezin izan da {0} {1} kopiatu.
+Mezu bat mugitzen du
+Mezu guztiak hartzailetik mugitzen ditu
+{0} -k egindako mezu guztiak behar bezala mugitu dira.
+Ezin izan da {0} erabiltzaileak bidalitako mezu guztiak mugitu.
+{1} mezuaren {0} mezua {2} etik mugitu da. {3} mezu aztertzeko geratzen dira.
+{1} mezuaren {0} mezua mugitu da. {3} mezu aztertzeko geratzen dira.
+Zehaztutako hiriaren eguraldiaren informazioa erakusten du. OpenWeatherMap erabiltzen du.
+- Eguraldiaren informazioa {0} -
+Eguraldia: {0}
+Tenperatura: {0} ({1} unitate)
+Sentitzen du: {0} ({1} unitatea)
+Presioa: {0}
+Hezetasuna: {0}
+Zure API gakoa lor dezakezu https://home.openweathermap.org/api_keys helbidean.
+Beti kontsulta dezakezu http://bulk.openweathermap.org/sample/city.list.json.gz beren IDak dituzten hirien zerrenda ikusteko.
+Tenperaturarako lehentasunezko unitatea
+Kelvin
+Inperiala (Fahrenheit)
+Metrikoa (Celsius)
+Nukleoa konfiguratzen du abioan argumentua eskatzeko.
+Mantentze-modua aktibatzen du. Hainbat kontu desgaitzen ditu.
+Abiarazte bakoitzean eguneratzeak egiaztatuko ditu.
+Hizkuntzaz aldatzean, aldatu hilabetearen izenak, egutegia eta abar.
+Nukleoa abiarazten bada, root pasahitza ezarriko du.
+Mantendu hardwareak probatzeko mezuak isilik.
+Gaituta badago, RAM zirrikituak aztertuko ditu RAMarekin batera.
+Erakutsi eguneko mezua saio hasiera pantaila erakutsi aurretik.
+Garbitu pantaila saio hasiera pantaila erakutsi aurretik.
+Erabilgarri dauden erabiltzaileak erakusten ditu gaituta badago.
+Nukleoaren kolorearen euskarria ematen du
+Laguntza komando sinplifikatua maskor guztientzat
+FTP erabiltzaile izena erregistratu edo ez.
+FTP IP helbidea erregistratu edo ez.
+Aukeratu lehenengo profila konektatzerakoan soilik.
+ColorMix-en 255 kolore laguntza aktibatzen du.
+255 koloreko euskarria aktibatzen du Disco-rako.
+GlitterColor-en 255 kolore laguntza aktibatzen du.
+Lerroentzako 255 kolore laguntza aktibatzen du.
+Ordua eta data pantailaren goiko eskuineko izkinan erakutsiko dira
+Gaituta badago, nukleoak karpeta osoa aztertuko du bere tamaina osorako. Bestela, gainazala aztertuko du soilik.
+Eyecandy gaitzen du abiaraztean
+Ordua eta data luzeagoak izango dira, hilabete osoko izenak eta abar agertuz.
+Ezkutuko fitxategiak erakusten ditu.
+Aukeratu tenperaturarako nahi duzun unitatea (hau "eguraldia" komandoari bakarrik aplikatzen zaio)
+{0} modua gelditu da
+{0} v {1} gelditu da
+{0} moduak ez du piezaren izena. Mod analisiak huts egin du. Berrikusi iturburu kodea.
+{0} Mod-ek ez du komandoa. Mod analisiak huts egin du. Berrikusi iturburu kodea.
+Arazketa modua aktibatu behar duzu arazketa erregistroa garbitu aurretik.
+{0} mezu berri iritsi dira sarrera-ontzira.
+Ireki "lsmail" ikusteko.
+Nagusia: {2} Abiagarria: {3} Abiarazteko partizioa: {4}
+Ezin da fitxategia kendu: {0}
+Direktorio edo fitxategi bat kentzen du
+Ezin da {0} kendu existitzen ez delako.
+Agian ez duzu inxi instalatuta izan zure sisteman. Instalazioetarako, jo pakete kudeatzaileari. Debian (eta deribatuak) sistemetarako, "sudo apt install inxi libcpanel-json-xs-perl" exekutatu nahi duzu terminal emuladorean.
+Hizkuntza ongi ezarri da {0} gisa!
+Sakatu CTRL + C irteteko.
+Fitxategi bati buruzko informazioa eskaintzen du
+Direktorio bati buruzko informazioa eskaintzen du
+Ezin da direktorio ezari buruzko informazioa eskuratu.
+Ezin da fitxategirik ez dagoenari buruzko informazioa lortu.
+Izen osoa: {0}
+Sortze denbora: {0}
+Azken sarbide ordua: {0}
+Idazteko azken denbora: {0}
+Atributuak: {0}
+Guraso direktorioa: {0}
+Non aurkitu: {0}
+Fitxategiaren tamaina: {0}
+Fitxategi baten atributua aldatzen du
+Fitxategia ez da aurkitu.
+non <atributuak> hauetako bat den:
+Fitxategia fitxategi normala da
+Fitxategia irakurtzeko soilik den fitxategia da
+Fitxategia ezkutuko fitxategia da
+Artxiboa artxiboa da. Babeskopiak egiteko erabiltzen da.
+"{0}" atributua baliogabea da.
+Atributua ondo gehitu da.
+Atributua behar bezala kendu da.
+Ezin izan da atributua gehitu.
+Ezin izan da atributua kendu.
+Hitz edo esaldi bat lerro bateko beste batekin ordezkatzen du
+Kolore gorri maila gainditu da. {0} zen.
+Kolore berde maila gainditu da. {0} zen.
+Kolore urdinaren maila gainditu da. {0} zen.
+Aktibatu benetako koloreak
+ColorMix-en benetako kolorearen laguntza aktibatzen du.
+Diskoaren benetako kolorearen laguntza aktibatzen du.
+GlitterColor-en benetako kolorearen laguntza aktibatzen du.
+Lerroen benetako kolorearen laguntza aktibatzen du.
+Ezin izan da {0} desblokeatu.
+{0} blokeatuta dago dagoeneko.
+{0} ezin da urruneko arazketan sartu orain.
+Ezin izan da {0} blokeatu.
+Zikloko koloreak
+Diskoak koloreak ziklatuko ditu gaituta dagoenean. Bestela, hautatu ausazko koloreak.
+Sartu eranskinetarako fitxategien bideak. Sakatu ENTER bide huts batean berresteko.
+Mezu enkriptatu bat irekitzen du
+Idatzi pasahitza gako IDaren {0}
+Enkriptatutako mezu bat helbide batera bidaltzen du
+Helbide batera enkriptatutako mezu bat bidaltzeko beharrezko eremuak betetzeko eskatzen dizu
+{0} tik deskargatzen ...
+Erakutsi aurrerapen barra "get" edo "put" agindutik deskargatzen edo kargatzen ari zaren bitartean
+Egia bada, "lortu" edo "jarri" erakusten du aurrerapen barra deskargatzean edo kargatzean.
+Fitxategi bat zehaztutako webgunera kargatzen du
+Helbide bat bidali dio
+{0} {1} karpetara kargatzen ...
+Karga amaitu da.
+Mesedez, erabili "ftp" fitxategiak FTP zerbitzarira igotzera zoazenean.
+Ezin izan da kargatu saiatu {0} proban: {1}
+{0} MB {1} MB kargatu dira.
+Idatzi "jarri" komandoak huts egin duten kargak berriro saiatu behar dituen. Zenbakizkoa izan behar du.
+Baliteke helbidea ez izatea hutsik.
+Huts egin du {0} ping egitean: {1}
+Ping-ak arrakasta izan du {0} ms-tan.
+Zehaztutako lerroaren zenbakia ezingo da fitxategiaren azken lerroaren zenbakia baino handiagoa izan.
+Honela sentitzen da: {0}
+Tenperatura: {0}
+Haizearen abiadura: {0}
+Haizearen norabidea: {0}
+Lehen mailakoak: {2} | Abiarazi: {3} | Abioko partizioa: {4}
+Disolbatzeko 255 kolore laguntza aktibatzen du.
+Disolbatzeko benetako kolorearen euskarria aktibatzen du.
+Sakatu edozein tekla atzera egiteko.
+Ezin da posta-karpeta sortu {0}: {1}
+Uneko laneko direktorioan direktorio bat egiten du
+Direktorio bat uneko laneko direktoriotik kentzen du
+{0} posta-karpeta ez da aurkitu.
+Ezin da posta karpeta ezabatu {0}: {1}
+{0}, {1} {2} -n sortua, {3} {4} -n aldatua
+Fitxategiaren zuzentasuna egiaztatzen du
+Hash gaizki eratuta daude.
+Hash-ak ez datoz bat.
+Hash partida.
+Karpeta bati izena aldatu
+Atal honetan nukleoaren ezarpen orokor guztiak agertzen dira, batez ere nukleoa mantentzeko.
+Atal honek hardware zundaketaren portaera aldatzen du.
+Atal honek saio hasierako ezarpenak adierazten ditu. Saioa amaitu zure kontuan aldaketak indarrean jartzeko.
+Atal honetan shell ezarpenak zerrendatzen dira.
+Atal honetan sareko ezarpenak zerrendatzen dira, hala nola FTP shell-a, sareko komando ezarpenak eta urruneko arazketa ezarpenak.
+Atal honetan pantaila-babesle guztiak eta horien ezarpen erabilgarriak zerrendatzen dira.
+Bere atal egokietan sartzen ez diren ezarpenak hemen gelditzen dira.
+Modak probatzen ditu mod fitxategiak eskainiz
+Probako shell bat irekitzen du
+Arazketa modua gaitzen du
+Argudioetarako gonbita
+* Sakatu edozein tekla kernela edo ESC irteteko hasteko.
+Ezin izan da "{0}" abiarazi: {1}
+Erakutsi mezu elektronikoen aurrebista
+Mezu elektronikoak zerrendatzerakoan, erakutsi gorputzaren aurrebista.
+Cacheko hardware zunda. Informazioa erakusten hala ere ...
+Edukiera: {0} GB
+Kolore pertsonalizatuak ...
+Idatzi kolore bat behean zehazten den moduan:
+Sarrerako kolorea
+Lizentziaren kolorea
+Nukleoaren errore kolore jarraitua
+Ezin da kernelaren errore kolorea jarraitu
+Ostalariaren izenaren kolorea
+Erabiltzaile izenaren kolorea
+Atzeko planoaren kolorea
+Testuaren kolore neutroa
+Komando zerrendaren kolorea
+Komandoaren definizioaren kolorea
+Etapa kolorea
+Errorearen kolorea
+Kolore aukera hauek ondo al daude?
+Erantzun {0} atzera egiteko. Bestela, edozein erantzunek baiezkoa esan nahi du.
+FTP gonbita estiloa
+Posta abisuaren estiloa
+SFTP Prompt Style
+255 kolore laguntza aktibatzen du BouncingBlock-erako.
+BouncingBlock-en benetako kolorearen laguntza aktibatzen du.
+Bide baliogabea sartu nahian.
+Testu fitxategia garbitzen du
+Testu editoretik irteten da
+Zehaztutako lerro bateko edo lerro guztietako karaktere bat kontsultatzen du
+Zehaztutako {0} karaktere zenbakia ez da baliozko zenbakia.
+Eguneratzeak egiaztatzea desgaituta dago garapen bertsioa exekutatzen ari zarelako.
+Testu editorea gordetzeko automatikoki eginbidea aktibatu edo desaktibatzen du.
+Gorde automatikoki gaituta badago, testu fitxategia "n" segundo bakoitzeko gordeko da.
+Gaitu testu editorea gorde automatikoki
+Testu editorea gorde automatikoki tartea
+Fitxategia gordetzen du
+Grabatu txata arazketa erregistroan
+Urruneko arazketa txata grabatzen du arazketa erregistroan.
+Atzerapena Milisegundotan
+Zenbat milisegundo itxaron behar da hurrengo idazketa egin aurretik?
+SSH FTP zerbitzari bat erabiltzen uzten dizu
+Ez dago laguntzarik "{0}" komandoan.

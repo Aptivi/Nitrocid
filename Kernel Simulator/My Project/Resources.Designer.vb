@@ -394,6 +394,44 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized string similar to Eskuragarri dauden komandoak: {0}
+        '''Idatzi komandoa:
+        '''Komando injekzioa bertan behera utzi da.
+        '''Bereiztu abio-argumentuak komarik zuriunerik gabe, adibidez, &apos;motd, gpuprobe&apos;
+        '''Bereiztu komandoak &apos;cmdinject&apos;-en bi zuriunekin, adibidez,&apos; cmdinject setthemes Hacker : beep 1024 0.5 &apos;
+        '''Kontuan izan &apos;arazketa&apos; argumentuak ez duela kernela guztiz estaltzen.
+        '''bargs: ez da eskatutako {0} argumentua aurkitu.
+        '''bargs: Errorea berreskuraezina argumentuan:
+        '''Argumentu erabilgarriak: {0}
+        '''Argudioak (laguntza &apos;help&apos;):
+        '''Injekt [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property bsq() As String
+            Get
+                Return ResourceManager.GetString("bsq", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Malamulo omwe alipo: {0}
+        '''Lembani lamulo:
+        '''Jekeseni wamalamulo waletsedwa.
+        '''Siyanitsani zotsutsana za boot ndi makasitomala opanda malo, mwachitsanzo, &apos;motd, gpuprobe&apos;
+        '''Patulani malamulo pa &apos;cmdinject&apos; okhala ndi ma coloni okhala ndi malo, mwachitsanzo, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
+        '''Dziwani kuti mkangano wa &apos;debug&apos; sukuphimba kernel.
+        '''bargs: Mtsutso wopemphedwa {0} sapezeka.
+        '''bargs: Cholakwika chosapezeka pamikangano:
+        '''Zilipo: {0}
+        '''Mikangano (&apos;help&apos; la chithandizo):
+        '''Zoyambitsa jekeseni zidza [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property ccw() As String
+            Get
+                Return ResourceManager.GetString("ccw", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to Kěyòng mìnglìng: {0}
         '''Xiě mìnglìng: 
         '''Mìnglìng zhùrù yǐ bèi qǔxiāo.
@@ -749,6 +787,27 @@ Namespace My.Resources
         Public ReadOnly Property Hacker() As String
             Get
                 Return ResourceManager.GetString("Hacker", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Kòmandman ki disponib: {0}
+        '''Ekri lòd:
+        '''Piki lòd te anile.
+        '''Agiman bòt separe ak vigil san espas, pou egzanp, &apos;motd, gpuprobe&apos;
+        '''Kòmandman apa sou &apos;cmdinject&apos; ak kolon ak espas, pou egzanp, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;
+        '''Remake byen ke agiman an &apos;debug&apos; pa kouvri Kernel la konplètman.
+        '''bargs: Yo pa jwenn agiman yo mande a {0}.
+        '''bargs: Erè irevokabl nan agiman:
+        '''Agiman ki disponib: {0}
+        '''Agiman (&apos;help&apos; pou èd):
+        '''Piki agiman yo pral pwograme yo kouri nan pwochen rdemare.
+        '''Piki Agiman te anile.
+        '''Er [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property hti() As String
+            Get
+                Return ResourceManager.GetString("hti", resourceCulture)
             End Get
         End Property
         
@@ -1695,6 +1754,24 @@ Namespace My.Resources
         Public ReadOnly Property YellowFG() As String
             Get
                 Return ResourceManager.GetString("YellowFG", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to Imiyalo etholakalayo: {0}
+        '''Bhala umyalo:
+        '''Umjovo we-Command ukhanseliwe.
+        '''Hlukanisa izimpikiswano zebhuthi ngamakhoma ngaphandle kwezikhala, isibonelo, &apos;motd, gpuprobe&apos;
+        '''Hlukanisa imiyalo ku-&apos;cmdinject &apos;ngamakholoni anezikhala, ngokwesibonelo, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;
+        '''Qaphela ukuthi impikiswano &apos;yokulungisa iphutha&apos; ayimbozi ngokugcwele i-kernel.
+        '''ama-bargs: Impikiswano eceliwe {0} ayitholakali.
+        '''amabhagi: Iphutha elingatholakali empikiswaneni:
+        '''Izimpikiswano ezitholakalayo: {0}
+        '''Izimpi [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property zul() As String
+            Get
+                Return ResourceManager.GetString("zul", resourceCulture)
             End Get
         End Property
     End Module
