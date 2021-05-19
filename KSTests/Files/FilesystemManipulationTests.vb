@@ -227,7 +227,6 @@ Imports KS
         Dim Path As String = If(IsOnWindows(), "C:\Program Files\dotnet", "/bin")
         Dim NeutralizedPath As String = NeutralizePath(Path)
         RemoveFromPathLookup(NeutralizedPath).ShouldBeTrue
-        PathsToLookup.ShouldNotContain(NeutralizedPath)
     End Sub
 
     ''' <summary>
@@ -248,7 +247,6 @@ Imports KS
         Dim RootPath As String = If(IsOnWindows(), "C:\Program Files", "/")
         Dim NeutralizedPath As String = NeutralizePath(Path, RootPath)
         RemoveFromPathLookup(NeutralizedPath, RootPath).ShouldBeTrue
-        PathsToLookup.ShouldNotContain(NeutralizedPath)
     End Sub
 
     ''' <summary>
