@@ -78,7 +78,7 @@ Public Module PermissionManagement
     ''' <param name="Username">A username to be managed</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="Exceptions.PermissionManagementException"></exception>
-    Public Function AddPermission(ByVal PermType As PermissionType, ByVal Username As String)
+    Public Function AddPermission(ByVal PermType As PermissionType, ByVal Username As String) As Boolean
         'Sets the required permissions to false.
         If userword.Keys.ToArray.Contains(Username) Then
             Wdbg("I", "Type is {0}", PermType)
@@ -121,7 +121,7 @@ Public Module PermissionManagement
     ''' <param name="Username">A username to be managed</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="Exceptions.PermissionManagementException"></exception>
-    Public Function RemovePermission(ByVal PermType As PermissionType, ByVal Username As String)
+    Public Function RemovePermission(ByVal PermType As PermissionType, ByVal Username As String) As Boolean
         'Sets the required permissions to false.
         If userword.Keys.ToArray.Contains(Username) And Username <> signedinusrnm Then
             Wdbg("I", "Type is {0}", PermType)

@@ -29,7 +29,7 @@ Imports KS
         Dim TestPath As String = "Documents"
         Dim ExpectedPath As String = paths("Home") + "/" + TestPath
         Dim NeutPath As String = NeutralizePath(TestPath)
-        Assert.AreEqual(ExpectedPath, NeutPath, "Path is not properly neutralized. Expected {0}, got {1}", ExpectedPath, NeutPath)
+        NeutPath.ShouldBe(ExpectedPath)
     End Sub
 
     ''' <summary>
@@ -39,7 +39,7 @@ Imports KS
         Dim TestPath As String = "sources.list"
         Dim TargetPath As String = "/etc/apt"
         Dim NeutPath As String = NeutralizePath(TestPath, TargetPath)
-        Assert.AreEqual(TargetPath + "/" + TestPath, NeutPath, "Path is not properly neutralized. Expected {0}, got {1}", TargetPath + "/" + TestPath, NeutPath)
+        NeutPath.ShouldBe(TargetPath + "/" + TestPath)
     End Sub
 
 End Class

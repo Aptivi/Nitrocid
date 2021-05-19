@@ -27,7 +27,7 @@ Imports KS
         currentLang = "spa"
         Dim ExpectedCulture As String = "Spanish (Spain, International Sort)"
         UpdateCulture()
-        Assert.AreEqual(ExpectedCulture, CurrentCult.EnglishName, "Culture update test is not done properly. Got {0}", CurrentCult.EnglishName)
+        CurrentCult.EnglishName.ShouldBe(ExpectedCulture)
     End Sub
 
     ''' <summary>
@@ -35,7 +35,7 @@ Imports KS
     ''' </summary>
     <TestMethod> <TestCategory("Setting")> Public Sub TestSetLang()
         InitPaths()
-        Assert.IsTrue(SetLang("spa"), "Setting language failed. Returned False.")
+        SetLang("spa").ShouldBeTrue
     End Sub
 
 End Class

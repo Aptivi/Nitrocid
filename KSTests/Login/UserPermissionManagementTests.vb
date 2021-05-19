@@ -29,8 +29,8 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestAddUserPerm()
         InitPaths()
-        Assert.IsTrue(AddPermission(PermissionType.Administrator, "Account"), "Adding user to admin permission failed. Expected True, got False.")
-        Assert.IsTrue(AddPermission(PermissionType.Disabled, "Account"), "Adding user to disabled permission failed. Expected True, got False.")
+        AddPermission(PermissionType.Administrator, "Account").ShouldBeTrue
+        AddPermission(PermissionType.Disabled, "Account").ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -38,8 +38,8 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestRemoveUserPerm()
         InitPaths()
-        Assert.IsTrue(RemovePermission(PermissionType.Administrator, "Account"), "Removing user from admin permission failed. Expected True, got False.")
-        Assert.IsTrue(RemovePermission(PermissionType.Disabled, "Account"), "Rmoving user from disabled permission failed. Expected True, got False.")
+        RemovePermission(PermissionType.Administrator, "Account").ShouldBeTrue
+        RemovePermission(PermissionType.Disabled, "Account").ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -47,7 +47,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestLoadPermissions()
         InitPaths()
-        Assert.IsTrue(LoadPermissions, "Loading permissions. Expected True, got False.")
+        LoadPermissions.ShouldBeTrue
     End Sub
 
     <ClassCleanup> Public Shared Sub RemoveNecessaryUser()

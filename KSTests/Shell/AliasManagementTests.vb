@@ -24,16 +24,20 @@ Imports KS
     ''' Tests alias addition
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestAddAlias()
-        Assert.IsTrue(AddAlias("ls", "list", AliasType.Shell), "Adding shell alias failed. Returned False.")
-        Assert.IsTrue(AddAlias("trc", "trace", AliasType.RDebug), "Adding remote debug alias failed. Returned False.")
+        AddAlias("ls", "list", AliasType.Shell).ShouldBeTrue
+        AddAlias("trc", "trace", AliasType.RDebug).ShouldBeTrue
+        Aliases.ShouldContainKey("ls")
+        RemoteDebugAliases.ShouldContainKey("trc")
     End Sub
 
     ''' <summary>
     ''' Tests alias removal
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestRemoveAlias()
-        Assert.IsTrue(RemoveAlias("ls", AliasType.Shell), "Removing shell alias failed. Returned False.")
-        Assert.IsTrue(RemoveAlias("trc", AliasType.RDebug), "Removing remote debug alias failed. Returned False.")
+        RemoveAlias("ls", AliasType.Shell).ShouldBeTrue
+        RemoveAlias("trc", AliasType.RDebug).ShouldBeTrue
+        Aliases.ShouldNotContainKey("ls")
+        RemoteDebugAliases.ShouldNotContainKey("trc")
     End Sub
 
 End Class

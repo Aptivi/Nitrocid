@@ -26,7 +26,7 @@ Imports System.Net.NetworkInformation
     ''' Tests pinging
     ''' </summary>
     <TestMethod()> <TestCategory("Action")> Public Sub TestPingAddress()
-        Assert.IsTrue(PingAddress("www.google.com").Status = IPStatus.Success, "Pinging failed.")
+        PingAddress("www.google.com").Status.ShouldBe(IPStatus.Success)
     End Sub
 
 End Class

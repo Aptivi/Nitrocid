@@ -25,7 +25,8 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitFTPHelp()
         InitFTPHelp()
-        Assert.IsNotNull(FTPDefinitions, "Initialization of FTP help failed. Got null.")
+        FTPDefinitions.ShouldNotBeNull
+        FTPDefinitions.ShouldNotBeEmpty
     End Sub
 
     ''' <summary>
@@ -33,7 +34,8 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitMailHelp()
         IMAPInitHelp()
-        Assert.IsNotNull(MailDefinitions, "Initialization of mail help failed. Got null.")
+        MailDefinitions.ShouldNotBeNull
+        MailDefinitions.ShouldNotBeEmpty
     End Sub
 
     ''' <summary>
@@ -41,7 +43,8 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitShellHelp()
         InitHelp()
-        Assert.IsNotNull(definitions, "Initialization of shell help failed. Got null.")
+        definitions.ShouldNotBeNull
+        definitions.ShouldNotBeEmpty
     End Sub
 
     ''' <summary>
@@ -49,7 +52,8 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitTextHelp()
         TextEdit_UpdateHelp()
-        Assert.IsNotNull(TextEdit_HelpEntries, "Initialization of text editor help failed. Got null.")
+        TextEdit_HelpEntries.ShouldNotBeNull
+        TextEdit_HelpEntries.ShouldNotBeEmpty
     End Sub
 
     ''' <summary>
@@ -57,7 +61,8 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitZipHelp()
         ZipShell_UpdateHelp()
-        Assert.IsNotNull(TextEdit_HelpEntries, "Initialization of ZIP help failed. Got null.")
+        ZipShell_HelpEntries.ShouldNotBeNull
+        ZipShell_HelpEntries.ShouldNotBeEmpty
     End Sub
 
     ''' <summary>
@@ -65,7 +70,8 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitSFTPHelp()
         InitSFTPHelp()
-        Assert.IsNotNull(MailDefinitions, "Initialization of SFTP help failed. Got null.")
+        SFTPDefinitions.ShouldNotBeNull
+        SFTPDefinitions.ShouldNotBeEmpty
     End Sub
 
     ''' <summary>
@@ -73,7 +79,8 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitRSSHelp()
         InitRSSHelp()
-        Assert.IsNotNull(definitions, "Initialization of RSS shell help failed. Got null.")
+        RSSDefinitions.ShouldNotBeNull
+        RSSDefinitions.ShouldNotBeEmpty
     End Sub
 
     ''' <summary>
@@ -81,7 +88,8 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitRDebugHelp()
         InitRDebugHelp()
-        Assert.IsNotNull(TextEdit_HelpEntries, "Initialization of remote debug help failed. Got null.")
+        RDebugDefinitions.ShouldNotBeNull
+        RDebugDefinitions.ShouldNotBeEmpty
     End Sub
 
     ''' <summary>
@@ -89,7 +97,8 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitTestHelp()
         InitTestHelp()
-        Assert.IsNotNull(TextEdit_HelpEntries, "Initialization of test help failed. Got null.")
+        TestDefinitions.ShouldNotBeNull
+        TestDefinitions.ShouldNotBeEmpty
     End Sub
 
 End Class

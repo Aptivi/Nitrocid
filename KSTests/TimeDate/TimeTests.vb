@@ -26,7 +26,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> Public Sub TestRenderKernelDate()
         KernelDateTime = Date.Now
-        Assert.IsNotNull(RenderDate, "Rendering date failed. Got null.")
+        RenderDate.ShouldNotBeNullOrEmpty
     End Sub
 
     ''' <summary>
@@ -35,7 +35,7 @@ Imports KS
     <TestMethod()> Public Sub TestRenderKernelDateCult()
         KernelDateTime = Date.Now
         Dim TargetCult As New CultureInfo("es-ES")
-        Assert.IsNotNull(RenderDate(TargetCult), "Rendering date failed. Got null.")
+        RenderDate(TargetCult).ShouldNotBeNullOrEmpty
     End Sub
 
     ''' <summary>
@@ -43,7 +43,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> Public Sub TestRenderCustomDate()
         Dim TargetDate As New DateTime(2018, 2, 22)
-        Assert.IsNotNull(RenderDate(TargetDate), "Rendering date failed. Got null.")
+        RenderDate(TargetDate).ShouldNotBeNullOrEmpty
     End Sub
 
     ''' <summary>
@@ -52,7 +52,7 @@ Imports KS
     <TestMethod()> Public Sub TestRenderCustomDateCult()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Dim TargetCult As New CultureInfo("es-ES")
-        Assert.IsNotNull(RenderDate(TargetDate, TargetCult), "Rendering date failed. Got null.")
+        RenderDate(TargetDate, TargetCult).ShouldNotBeNullOrEmpty
     End Sub
 
     ''' <summary>
@@ -60,7 +60,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> Public Sub TestRenderKernelTime()
         KernelDateTime = Date.Now
-        Assert.IsNotNull(RenderTime, "Rendering time failed. Got null.")
+        RenderTime.ShouldNotBeNullOrEmpty
     End Sub
 
     ''' <summary>
@@ -69,7 +69,7 @@ Imports KS
     <TestMethod()> Public Sub TestRenderKernelTimeCult()
         KernelDateTime = Date.Now
         Dim TargetCult As New CultureInfo("es-ES")
-        Assert.IsNotNull(RenderTime(TargetCult), "Rendering time failed. Got null.")
+        RenderTime(TargetCult).ShouldNotBeNullOrEmpty
     End Sub
 
     ''' <summary>
@@ -77,7 +77,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> Public Sub TestRenderCustomTime()
         Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
-        Assert.IsNotNull(RenderTime(TargetTime), "Rendering time failed. Got null.")
+        RenderTime(TargetTime).ShouldNotBeNullOrEmpty
     End Sub
 
     ''' <summary>
@@ -86,7 +86,7 @@ Imports KS
     <TestMethod()> Public Sub TestRenderCustomTimeCult()
         Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
         Dim TargetCult As New CultureInfo("es-ES")
-        Assert.IsNotNull(RenderTime(TargetTime, TargetCult), "Rendering time failed. Got null.")
+        RenderTime(TargetTime, TargetCult).ShouldNotBeNullOrEmpty
     End Sub
 
     ''' <summary>
@@ -94,7 +94,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> Public Sub TestRenderKernel()
         KernelDateTime = Date.Now
-        Assert.IsNotNull(Render, "Rendering failed. Got null.")
+        Render.ShouldNotBeNullOrEmpty
     End Sub
 
     ''' <summary>
@@ -103,7 +103,7 @@ Imports KS
     <TestMethod()> Public Sub TestRenderKernelCult()
         KernelDateTime = Date.Now
         Dim TargetCult As New CultureInfo("es-ES")
-        Assert.IsNotNull(Render(TargetCult), "Rendering failed. Got null.")
+        Render(TargetCult).ShouldNotBeNullOrEmpty
     End Sub
 
     ''' <summary>
@@ -111,7 +111,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> Public Sub TestRenderCustom()
         Dim TargetDate As New DateTime(2018, 2, 22)
-        Assert.IsNotNull(Render(TargetDate), "Rendering failed. Got null.")
+        Render(TargetDate).ShouldNotBeNullOrEmpty
     End Sub
 
     ''' <summary>
@@ -120,7 +120,7 @@ Imports KS
     <TestMethod()> Public Sub TestRenderCustomCult()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Dim TargetCult As New CultureInfo("es-ES")
-        Assert.IsNotNull(Render(TargetDate, TargetCult), "Rendering failed. Got null.")
+        Render(TargetDate, TargetCult).ShouldNotBeNullOrEmpty
     End Sub
 
     ''' <summary>
@@ -129,7 +129,8 @@ Imports KS
     <TestMethod()> Public Sub TestInitTimesInZones()
         KernelDateTime = Date.Now
         InitTimesInZones()
-        Assert.IsFalse(zoneTimes.Count = 0, "Initialization of current time in zones failed. Got 0.")
+        zoneTimes.ShouldNotBeNull
+        zoneTimes.ShouldNotBeEmpty
     End Sub
 
 End Class

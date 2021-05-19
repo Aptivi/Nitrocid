@@ -26,7 +26,7 @@ Imports KS
     <TestMethod()> <TestCategory("Action")> Public Sub TestTranslate()
         Dim ExpectedTranslation As String = "---===+++> Bienvenido al kernel | Versión {0} <+++===---"
         Dim ActualTranslation As String = DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", "spa")
-        Assert.AreEqual(ExpectedTranslation, ActualTranslation, "Translation test is not done properly. Got {0}", ActualTranslation)
+        ActualTranslation.ShouldBe(ExpectedTranslation)
     End Sub
 
 End Class

@@ -27,8 +27,8 @@ Imports KS
         InitPaths()
         CurrDir = paths("Home")
         Dim Path As String = paths("Home") + "/Documents"
-        Assert.IsTrue(SetCurrDir(Path), "Failed to set current path. Expected True, got False.")
-        Assert.AreEqual(Path, CurrDir, "Current path is not properly set. Expected {0}, got {1}", Path, CurrDir)
+        SetCurrDir(Path).ShouldBeTrue
+        Path.ShouldBe(CurrDir)
     End Sub
 
     ''' <summary>
@@ -36,10 +36,10 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Setting")> Public Sub TestSetSizeParseMode()
         InitPaths()
-        Assert.IsTrue(SetSizeParseMode(True), "Failed to set size parse mode to True. Expected True, got False.")
-        Assert.IsTrue(SetSizeParseMode(False), "Failed to set size parse mode to False. Expected True, got False.")
-        Assert.IsTrue(SetSizeParseMode(1), "Failed to set size parse mode to True using ""1"". Expected True, got False.")
-        Assert.IsTrue(SetSizeParseMode(0), "Failed to set size parse mode to False using ""0"". Expected True, got False.")
+        SetSizeParseMode(True).ShouldBeTrue
+        SetSizeParseMode(False).ShouldBeTrue
+        SetSizeParseMode(1).ShouldBeTrue
+        SetSizeParseMode(0).ShouldBeTrue
     End Sub
 
 End Class

@@ -25,7 +25,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Action")> Public Sub TestEvaluateString()
         Dim Evaluated As String = Evaluate("KS.Kernel.KernelVersion")
-        Assert.IsFalse(Evaluated = "", "String evaluation failed. Got ""{0}"".", Evaluated)
+        Evaluated.ShouldNotBeNullOrEmpty
     End Sub
 
     ''' <summary>
@@ -33,7 +33,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Action")> Public Sub TestEvaluateFastString()
         Dim Evaluated As String = EvaluateFast("KernelVersion", GetType(Kernel))
-        Assert.IsFalse(Evaluated = "", "String evaluation failed. Got ""{0}"".", Evaluated)
+        Evaluated.ShouldNotBeNullOrEmpty
     End Sub
 
 End Class

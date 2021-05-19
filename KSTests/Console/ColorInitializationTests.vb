@@ -28,25 +28,20 @@ Imports KS
         Dim ColorInstance As New Color(13)
 
         'Check for null
-        Assert.IsNotNull(ColorInstance)
-        Assert.IsNotNull(ColorInstance.PlainSequence)
-        Assert.IsNotNull(ColorInstance.Type)
-        Assert.IsNotNull(ColorInstance.VTSequenceBackground)
-        Assert.IsNotNull(ColorInstance.VTSequenceForeground)
-        Assert.IsNotNull(ColorInstance.R)
-        Assert.IsNotNull(ColorInstance.G)
-        Assert.IsNotNull(ColorInstance.B)
-        Assert.IsNotNull(ColorInstance.IsDark)
+        ColorInstance.ShouldNotBeNull
+        ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty
+        ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty
+        ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty
 
         'Check for property correctness
-        Assert.AreEqual("13", ColorInstance.PlainSequence)
-        Assert.AreEqual(ColorType._255Color, ColorInstance.Type)
-        Assert.AreEqual(ChrW(&H1B) + "[48;5;13m", ColorInstance.VTSequenceBackground)
-        Assert.AreEqual(ChrW(&H1B) + "[38;5;13m", ColorInstance.VTSequenceForeground)
-        Assert.AreEqual(255, ColorInstance.R)
-        Assert.AreEqual(0, ColorInstance.G)
-        Assert.AreEqual(255, ColorInstance.B)
-        Assert.AreEqual(True, ColorInstance.IsDark)
+        ColorInstance.PlainSequence.ShouldBe("13")
+        ColorInstance.Type.ShouldBe(ColorType._255Color)
+        ColorInstance.VTSequenceBackground.ShouldBe(ChrW(&H1B) + "[48;5;13m")
+        ColorInstance.VTSequenceForeground.ShouldBe(ChrW(&H1B) + "[38;5;13m")
+        ColorInstance.R.ShouldBe(255)
+        ColorInstance.G.ShouldBe(0)
+        ColorInstance.B.ShouldBe(255)
+        ColorInstance.IsDark.ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -57,25 +52,20 @@ Imports KS
         Dim ColorInstance As New Color("94;0;63")
 
         'Check for null
-        Assert.IsNotNull(ColorInstance)
-        Assert.IsNotNull(ColorInstance.PlainSequence)
-        Assert.IsNotNull(ColorInstance.Type)
-        Assert.IsNotNull(ColorInstance.VTSequenceBackground)
-        Assert.IsNotNull(ColorInstance.VTSequenceForeground)
-        Assert.IsNotNull(ColorInstance.R)
-        Assert.IsNotNull(ColorInstance.G)
-        Assert.IsNotNull(ColorInstance.B)
-        Assert.IsNotNull(ColorInstance.IsDark)
+        ColorInstance.ShouldNotBeNull
+        ColorInstance.PlainSequence.ShouldNotBeNullOrEmpty
+        ColorInstance.VTSequenceBackground.ShouldNotBeNullOrEmpty
+        ColorInstance.VTSequenceForeground.ShouldNotBeNullOrEmpty
 
         'Check for property correctness
-        Assert.AreEqual("94;0;63", ColorInstance.PlainSequence)
-        Assert.AreEqual(ColorType.TrueColor, ColorInstance.Type)
-        Assert.AreEqual(ChrW(&H1B) + "[48;2;94;0;63m", ColorInstance.VTSequenceBackground)
-        Assert.AreEqual(ChrW(&H1B) + "[38;2;94;0;63m", ColorInstance.VTSequenceForeground)
-        Assert.AreEqual(94, ColorInstance.R)
-        Assert.AreEqual(0, ColorInstance.G)
-        Assert.AreEqual(63, ColorInstance.B)
-        Assert.AreEqual(True, ColorInstance.IsDark)
+        ColorInstance.PlainSequence.ShouldBe("94;0;63")
+        ColorInstance.Type.ShouldBe(ColorType.TrueColor)
+        ColorInstance.VTSequenceBackground.ShouldBe(ChrW(&H1B) + "[48;2;94;0;63m")
+        ColorInstance.VTSequenceForeground.ShouldBe(ChrW(&H1B) + "[38;2;94;0;63m")
+        ColorInstance.R.ShouldBe(94)
+        ColorInstance.G.ShouldBe(0)
+        ColorInstance.B.ShouldBe(63)
+        ColorInstance.IsDark.ShouldBeTrue
     End Sub
 
 End Class

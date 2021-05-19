@@ -24,21 +24,21 @@ Imports KS
     ''' Tests adding device to json
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestAddDeviceToJson()
-        Assert.IsTrue(AddDeviceToJson("123.123.123.123"), "Adding device failed.")
+        AddDeviceToJson("123.123.123.123").ShouldBeTrue
     End Sub
 
     ''' <summary>
     ''' Tests setting device property
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestDeviceSetProperty()
-        Assert.IsTrue(SetDeviceProperty("123.123.123.123", DeviceProperty.Name, "TestUser"), "Setting device property failed.")
+        SetDeviceProperty("123.123.123.123", DeviceProperty.Name, "TestUser").ShouldBeTrue
     End Sub
 
     ''' <summary>
     ''' Tests getting device property
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestGetDeviceProperty()
-        Assert.AreEqual("TestUser", GetDeviceProperty("123.123.123.123", DeviceProperty.Name), "Getting device property failed.")
+        CStr(GetDeviceProperty("123.123.123.123", DeviceProperty.Name)).ShouldBe("TestUser")
     End Sub
 
 End Class

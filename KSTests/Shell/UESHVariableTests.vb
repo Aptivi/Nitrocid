@@ -25,11 +25,12 @@ Imports KS
     ''' </summary>
     <TestMethod> <TestCategory("Action")> Public Sub TestVariables()
         InitializeVariable("$test_var")
-        Assert.IsTrue(ShellVariables.Count > 0, "Initializing variable failed. Count is {0}", ShellVariables.Count)
-        Assert.IsTrue(SetVariable("$test_var", "test"), "Setting variable failed.")
+        ShellVariables.ShouldNotBeEmpty
+        SetVariable("$test_var", "test").ShouldBeTrue
+        ShellVariables("$test_var").ShouldBe("test")
         Dim ExpectedCommand As String = "echo test"
         Dim ActualCommand As String = GetVariable("$test_var", "echo $test_var")
-        Assert.AreEqual(ExpectedCommand, ActualCommand, "Getting variable failed ({0})", ActualCommand)
+        ActualCommand.ShouldBe(ExpectedCommand)
     End Sub
 
 End Class

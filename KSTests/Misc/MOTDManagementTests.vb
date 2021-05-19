@@ -28,7 +28,7 @@ Imports KS
         InitPaths()
         ReadMOTDFromFile(MessageType.MOTD)
         Dim MOTDLine As String = File.ReadAllText(paths("MOTD"))
-        Assert.IsTrue(MOTDLine = MOTDMessage, "Reading MOTD failed. Got:" + vbNewLine + MOTDLine)
+        MOTDLine.ShouldBe(MOTDMessage)
     End Sub
 
     ''' <summary>
@@ -38,7 +38,7 @@ Imports KS
         InitPaths()
         ReadMOTDFromFile(MessageType.MAL)
         Dim MALLine As String = File.ReadAllText(paths("MAL"))
-        Assert.IsTrue(MALLine = MAL, "Reading MAL failed. Got:" + vbNewLine + MALLine)
+        MALLine.ShouldBe(MAL)
     End Sub
 
 End Class

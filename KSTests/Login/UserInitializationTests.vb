@@ -26,7 +26,7 @@ Imports KS
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeUsers()
         InitPaths()
         InitializeUsers()
-        Assert.IsTrue(userword.Count > 0, "User initialization failed. Got {0}.", userword.Count)
+        userword.ShouldNotBeEmpty
     End Sub
 
 End Class

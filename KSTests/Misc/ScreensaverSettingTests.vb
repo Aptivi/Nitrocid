@@ -26,7 +26,7 @@ Imports KS
     <TestMethod()> <TestCategory("Setting")> Public Sub TestSetDefaultScreensaver()
         InitPaths()
         SetDefaultScreensaver("matrix")
-        Assert.IsTrue(ScrnSvrdb("matrix"), "Setting screensaver defaults failed. Expected True, got {0}", ScrnSvrdb("matrix"))
+        ScrnSvrdb("matrix").ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -35,7 +35,7 @@ Imports KS
     <TestMethod()> <TestCategory("Setting")> Public Sub TestUnsetDefaultScreensaver()
         InitPaths()
         SetDefaultScreensaver("matrix", False)
-        Assert.IsFalse(ScrnSvrdb("matrix"), "Setting screensaver defaults failed. Expected False, got {0}", ScrnSvrdb("matrix"))
+        ScrnSvrdb("matrix").ShouldBeFalse
     End Sub
 
 End Class

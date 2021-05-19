@@ -19,7 +19,6 @@
 Imports System.IO
 Imports KS
 
-'TODO: Use Shouldly to improve unit test messages
 <TestClass()> Public Class InitTest
 
     ''' <summary>

@@ -28,7 +28,7 @@ Imports KS
         InitPaths()
         SetMOTD(ProbePlaces("Hello, I am on <system>"), MessageType.MOTD)
         Dim MOTDFile As New StreamReader(paths("MOTD"))
-        Assert.IsTrue(MOTDFile.ReadLine = ProbePlaces("Hello, I am on <system>"), "Setting MOTD failed.")
+        MOTDFile.ReadLine.ShouldBe(ProbePlaces("Hello, I am on <system>"))
     End Sub
 
     ''' <summary>
@@ -38,7 +38,7 @@ Imports KS
         InitPaths()
         SetMOTD(ProbePlaces("Hello, I am on <system>"), MessageType.MAL)
         Dim MALFile As New StreamReader(paths("MAL"))
-        Assert.IsTrue(MALFile.ReadLine = ProbePlaces("Hello, I am on <system>"), "Setting MAL failed.")
+        MALFile.ReadLine.ShouldBe(ProbePlaces("Hello, I am on <system>"))
     End Sub
 
 End Class

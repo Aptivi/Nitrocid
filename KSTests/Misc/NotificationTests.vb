@@ -24,7 +24,7 @@ Imports KS
     ''' Tests notification creation
     ''' </summary>
     <TestMethod()> Public Sub TestNotifyCreate()
-        Assert.IsNotNull(NotifyCreate("This is the title.", "This is the description.", NotifPriority.Medium, NotifType.Normal), "Notification creation failed. Got null.")
+        NotifyCreate("This is the title.", "This is the description.", NotifPriority.Medium, NotifType.Normal).ShouldNotBeNull
     End Sub
 
     ''' <summary>
@@ -33,7 +33,7 @@ Imports KS
     <TestMethod> Public Sub TestNotifySend()
         Dim Notif As Notification = NotifyCreate("Notification title", "This is a high priority notification", NotifPriority.High, NotifType.Normal)
         NotifySend(Notif)
-        Assert.IsTrue(NotifRecents.Count > 0, "Notification sending failed. Got {0}", NotifRecents.Count)
+        NotifRecents.ShouldNotBeEmpty
     End Sub
 
     ''' <summary>
@@ -42,7 +42,7 @@ Imports KS
     <TestMethod> Public Sub TestNotifyDismiss()
         Dim Notif As Notification = NotifyCreate("Redundant title", "This is a redundant notification", NotifPriority.Low, NotifType.Normal)
         NotifySend(Notif)
-        Assert.IsTrue(NotifDismiss(NotifRecents.Count - 1), "Notification removal failed. Expected True, got False.")
+        NotifDismiss(NotifRecents.Count - 1).ShouldBeTrue
     End Sub
 
 End Class

@@ -45,8 +45,7 @@ Imports KS
                 UnparsedStrings.Add(ParsedString)
             End If
         Next
-        Assert.IsTrue(UnparsedStrings.Count = 0, "Parsing placeholders failed. Below strings are affected:" + vbNewLine + vbNewLine +
-                                                 "- " + String.Join(vbNewLine + "- ", UnparsedStrings.ToArray))
+        UnparsedStrings.ShouldBeEmpty
     End Sub
 
 End Class

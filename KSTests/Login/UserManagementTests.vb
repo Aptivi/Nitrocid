@@ -25,8 +25,8 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestAddUser()
         InitPaths()
-        Assert.IsTrue(AddUser("Account1"), "User addition without password failed. Expected True, got False.")
-        Assert.IsTrue(AddUser("Account2", "password"), "User addition with password failed. Expected True, got False.")
+        AddUser("Account1").ShouldBeTrue
+        AddUser("Account2", "password").ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -34,7 +34,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestChangeUser()
         InitPaths()
-        Assert.IsTrue(ChangeUsername("Account2", "Account3"), "Username change failed. Expected True, got False.")
+        ChangeUsername("Account2", "Account3").ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -42,8 +42,8 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestRemoveUser()
         InitPaths()
-        Assert.IsTrue(RemoveUser("Account1"), "User removal without password failed. Expected True, got False.")
-        Assert.IsTrue(RemoveUser("Account3"), "User removal with password failed. Expected True, got False.")
+        RemoveUser("Account1").ShouldBeTrue
+        RemoveUser("Account3").ShouldBeTrue
     End Sub
 
 End Class

@@ -26,10 +26,11 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestOpenSaveCloseTextFile()
         Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
-        Assert.IsTrue(TextEdit_OpenTextFile(PathToTestText), "Opening text file failed. Returned False.")
+        TextEdit_OpenTextFile(PathToTestText).ShouldBeTrue
         TextEdit_FileLines.Add("Hello!")
-        Assert.IsTrue(TextEdit_SaveTextFile(False), "Saving text file failed. Returned False.")
-        Assert.IsTrue(TextEdit_CloseTextFile(), "Closing text file failed. Returned False.")
+        TextEdit_SaveTextFile(False).ShouldBeTrue
+        TextEdit_FileLines.ShouldContain("Hello!")
+        TextEdit_CloseTextFile().ShouldBeTrue
     End Sub
 
 End Class

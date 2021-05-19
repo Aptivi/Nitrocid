@@ -25,25 +25,9 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Setting")> Public Sub TestSetColors()
         InitPaths()
-        Assert.IsTrue(SetColors(ConsoleColors.White, ConsoleColors.White, ConsoleColors.Yellow, ConsoleColors.Red, ConsoleColors.DarkGreen, ConsoleColors.Green,
-                                ConsoleColors.Black, ConsoleColors.Gray, ConsoleColors.DarkYellow, ConsoleColors.DarkGray, ConsoleColors.Green, ConsoleColors.Red,
-                                ConsoleColors.Yellow, ConsoleColors.DarkYellow),
-                                "Colors are not set properly. The following colors are applied:" + vbNewLine + vbNewLine +
-                                "- InputC = {0}" + vbNewLine +
-                                "- LicenseC = {1}" + vbNewLine +
-                                "- ContKernelErrorC = {2}" + vbNewLine +
-                                "- UncontKernelErrorC = {3}" + vbNewLine +
-                                "- HostNameC = {4}" + vbNewLine +
-                                "- UserNameC = {5}" + vbNewLine +
-                                "- BackC = {6}" + vbNewLine +
-                                "- NeutralTextC = {7}" + vbNewLine +
-                                "- CmdListC = {8}" + vbNewLine +
-                                "- CmdDefC = {9}" + vbNewLine +
-                                "- StageC = {10}" + vbNewLine +
-                                "- ErrorC = {11}" + vbNewLine +
-                                "- WarningC = {12}" + vbNewLine +
-                                "- OptionC = {13}", InputColor, LicenseColor, ContKernelErrorColor, UncontKernelErrorColor, HostNameShellColor, UserNameShellColor, BackgroundColor,
-                                                    NeutralTextColor, ListEntryColor, ListValueColor, StageColor, ErrorColor, WarningColor, OptionColor)
+        SetColors(ConsoleColors.White, ConsoleColors.White, ConsoleColors.Yellow, ConsoleColors.Red, ConsoleColors.DarkGreen, ConsoleColors.Green,
+                  ConsoleColors.Black, ConsoleColors.Gray, ConsoleColors.DarkYellow, ConsoleColors.DarkGray, ConsoleColors.Green, ConsoleColors.Red,
+                  ConsoleColors.Yellow, ConsoleColors.DarkYellow).ShouldBeTrue
     End Sub
 
 End Class

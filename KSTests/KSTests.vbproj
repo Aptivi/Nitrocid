@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Shouldly" />
     <Import Include="System" />
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
@@ -168,6 +169,9 @@
     </PackageReference>
     <PackageReference Include="MSTest.TestFramework">
       <Version>2.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Shouldly">
+      <Version>4.0.3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

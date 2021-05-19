@@ -26,7 +26,8 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestChangeHostname()
         InitPaths()
-        Assert.IsTrue(ChangeHostname("NewHost"), "Changing hostname failed. Expected True, got False.")
+        ChangeHostname("NewHost").ShouldBeTrue
+        HName.ShouldBe("NewHost")
     End Sub
 
 End Class

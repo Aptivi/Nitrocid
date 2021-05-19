@@ -30,7 +30,7 @@ Imports KS
         IO.Directory.CreateDirectory(paths("Home") + "/TestDir")
         Dim SourcePath As String = "/TestDir"
         Dim TargetPath As String = "/TestDir2"
-        Assert.IsTrue(CopyFileOrDir(SourcePath, TargetPath), "Failed to copy directory ""{0}"" to directory ""{1}"". Expected True, got False.", SourcePath, TargetPath)
+        CopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -41,7 +41,7 @@ Imports KS
         CurrDir = paths("Home")
         Dim SourcePath As String = Path.GetFullPath("TestText.txt")
         Dim TargetPath As String = "/Documents"
-        Assert.IsTrue(CopyFileOrDir(SourcePath, TargetPath), "Failed to copy file ""{0}"" to directory ""{1}"". Expected True, got False.", SourcePath, TargetPath)
+        CopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -52,7 +52,7 @@ Imports KS
         CurrDir = paths("Home")
         Dim SourcePath As String = Path.GetFullPath("TestText.txt")
         Dim TargetPath As String = "/Documents/Text.txt"
-        Assert.IsTrue(CopyFileOrDir(SourcePath, TargetPath), "Failed to copy file ""{0}"" to file ""{1}"". Expected True, got False.", SourcePath, TargetPath)
+        CopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -61,7 +61,7 @@ Imports KS
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMakeDirectory()
         InitPaths()
         CurrDir = paths("Home")
-        Assert.IsTrue(MakeDirectory("/NewDirectory"), "Failed to create new directory. Expected True, got False.")
+        MakeDirectory("/NewDirectory").ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -70,7 +70,7 @@ Imports KS
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMakeFile()
         InitPaths()
         CurrDir = paths("Home")
-        Assert.IsTrue(MakeFile("/NewFile.txt"), "Failed to create new file. Expected True, got False.")
+        MakeFile("/NewFile.txt").ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -82,7 +82,7 @@ Imports KS
         IO.Directory.CreateDirectory(paths("Home") + "/TestMovedDir")
         Dim SourcePath As String = "/TestMovedDir"
         Dim TargetPath As String = "/TestMovedDir2"
-        Assert.IsTrue(MoveFileOrDir(SourcePath, TargetPath), "Failed to move directory ""{0}"" to directory ""{1}"". Expected True, got False.", SourcePath, TargetPath)
+        MoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -93,7 +93,7 @@ Imports KS
         CurrDir = paths("Home")
         Dim SourcePath As String = Path.GetFullPath("TestMove.txt")
         Dim TargetPath As String = "/Documents"
-        Assert.IsTrue(MoveFileOrDir(SourcePath, TargetPath), "Failed to move file ""{0}"" to directory ""{1}"". Expected True, got False.", SourcePath, TargetPath)
+        MoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -104,7 +104,7 @@ Imports KS
         CurrDir = paths("Home")
         Dim SourcePath As String = "/Documents/TestMove.txt"
         Dim TargetPath As String = Path.GetFullPath("TestMove.txt")
-        Assert.IsTrue(MoveFileOrDir(SourcePath, TargetPath), "Failed to move file ""{0}"" to file ""{1}"". Expected True, got False.", SourcePath, TargetPath)
+        MoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -114,7 +114,7 @@ Imports KS
         InitPaths()
         CurrDir = paths("Home")
         Dim TargetPath As String = "/TestDir2"
-        Assert.IsTrue(RemoveDirectory(TargetPath), "Failed to remove directory ""{0}"". Expected True, got False.", TargetPath)
+        RemoveDirectory(TargetPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -124,7 +124,7 @@ Imports KS
         InitPaths()
         CurrDir = paths("Home")
         Dim TargetPath As String = "/Documents/Text.txt"
-        Assert.IsTrue(RemoveFile(TargetPath), "Failed to remove directory ""{0}"". Expected True, got False.", TargetPath)
+        RemoveFile(TargetPath).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -135,8 +135,8 @@ Imports KS
         CurrDir = paths("Home")
         Dim TargetPath As String = Path.GetFullPath("TestText.txt")
         Dim Matches As List(Of String) = SearchFileForString(TargetPath, "test")
-        Assert.IsNotNull(Matches, "Failed to search file for matches.")
-        Assert.IsTrue(Matches.Count = 1, "Expected one instance of ""test"", got {0}", Matches.Count)
+        Matches.ShouldNotBeNull
+        Matches.ShouldNotBeEmpty
     End Sub
 
     ''' <summary>
@@ -146,7 +146,7 @@ Imports KS
         InitPaths()
         CurrDir = paths("Home")
         Dim SourcePath As String = Path.GetFullPath("TestText.txt")
-        Assert.IsTrue(AddAttributeToFile(SourcePath, FileAttributes.Hidden), "Failed to add attrbute ""Hidden"" to file. Got {0}", File.GetAttributes(SourcePath))
+        AddAttributeToFile(SourcePath, FileAttributes.Hidden).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -156,7 +156,7 @@ Imports KS
         InitPaths()
         CurrDir = paths("Home")
         Dim SourcePath As String = Path.GetFullPath("TestText.txt")
-        Assert.IsTrue(RemoveAttributeFromFile(SourcePath, FileAttributes.Hidden), "Failed to remove attrbute ""Hidden"" to file. Got {0}", File.GetAttributes(SourcePath))
+        RemoveAttributeFromFile(SourcePath, FileAttributes.Hidden).ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -165,15 +165,17 @@ Imports KS
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestReadAllLinesNoBlock()
         Dim PathToTestText As String = Path.GetFullPath("TestText.txt")
         Dim LinesTestText As String() = ReadAllLinesNoBlock(PathToTestText)
-        Assert.IsInstanceOfType(LinesTestText, GetType(String()), "Reading all lines failed.")
+        LinesTestText.ShouldBeOfType(GetType(String()))
+        LinesTestText.ShouldNotBeNull
+        LinesTestText.ShouldNotBeEmpty
     End Sub
 
     ''' <summary>
     ''' Tests getting lookup path list
     ''' </summary>
     <TestMethod> <TestCategory("Manipulation")> Public Sub TestGetPathList()
-        Assert.IsNotNull(GetPathList)
-        Assert.IsTrue(GetPathList.Count <> 0)
+        GetPathList.ShouldNotBeNull
+        GetPathList.ShouldNotBeEmpty
     End Sub
 
     ''' <summary>
@@ -182,8 +184,8 @@ Imports KS
     <TestMethod> <TestCategory("Manipulation")> Public Sub TestAddToPathLookupNeutralized()
         Dim Path As String = If(IsOnWindows(), "C:\Program Files\dotnet", "/bin")
         Dim NeutralizedPath As String = NeutralizePath(Path)
-        Assert.IsTrue(AddToPathLookup(NeutralizedPath))
-        Assert.IsTrue(PathsToLookup.Contains(NeutralizedPath))
+        AddToPathLookup(NeutralizedPath).ShouldBeTrue
+        PathsToLookup.ShouldContain(NeutralizedPath)
     End Sub
 
     ''' <summary>
@@ -192,8 +194,8 @@ Imports KS
     <TestMethod> <TestCategory("Manipulation")> Public Sub TestAddToPathLookupNonNeutralized()
         Dim Path As String = If(IsOnWindows(), "dotnet", "bin")
         Dim NeutralizedPath As String = NeutralizePath(Path)
-        Assert.IsTrue(AddToPathLookup(Path))
-        Assert.IsTrue(PathsToLookup.Contains(NeutralizedPath))
+        AddToPathLookup(Path).ShouldBeTrue
+        PathsToLookup.ShouldContain(NeutralizedPath)
     End Sub
 
     ''' <summary>
@@ -203,8 +205,8 @@ Imports KS
         Dim Path As String = If(IsOnWindows(), "C:\Program Files\dotnet", "/bin")
         Dim RootPath As String = If(IsOnWindows(), "C:\Program Files", "/")
         Dim NeutralizedPath As String = NeutralizePath(Path, RootPath)
-        Assert.IsTrue(AddToPathLookup(NeutralizedPath, RootPath))
-        Assert.IsTrue(PathsToLookup.Contains(NeutralizedPath))
+        AddToPathLookup(NeutralizedPath, RootPath).ShouldBeTrue
+        PathsToLookup.ShouldContain(NeutralizedPath)
     End Sub
 
     ''' <summary>
@@ -214,8 +216,8 @@ Imports KS
         Dim Path As String = If(IsOnWindows(), "dotnet", "bin")
         Dim RootPath As String = If(IsOnWindows(), "C:\Program Files", "/")
         Dim NeutralizedPath As String = NeutralizePath(Path, RootPath)
-        Assert.IsTrue(AddToPathLookup(Path, RootPath))
-        Assert.IsTrue(PathsToLookup.Contains(NeutralizedPath))
+        AddToPathLookup(Path, RootPath).ShouldBeTrue
+        PathsToLookup.ShouldContain(NeutralizedPath)
     End Sub
 
     ''' <summary>
@@ -224,7 +226,8 @@ Imports KS
     <TestMethod> <TestCategory("Manipulation")> Public Sub TestRemoveFromPathLookupNeutralized()
         Dim Path As String = If(IsOnWindows(), "C:\Program Files\dotnet", "/bin")
         Dim NeutralizedPath As String = NeutralizePath(Path)
-        Assert.IsTrue(RemoveFromPathLookup(NeutralizedPath))
+        RemoveFromPathLookup(NeutralizedPath).ShouldBeTrue
+        PathsToLookup.ShouldNotContain(NeutralizedPath)
     End Sub
 
     ''' <summary>
@@ -233,7 +236,8 @@ Imports KS
     <TestMethod> <TestCategory("Manipulation")> Public Sub TestRemoveFromPathLookupNonNeutralized()
         Dim Path As String = If(IsOnWindows(), "dotnet", "bin")
         Dim NeutralizedPath As String = NeutralizePath(Path)
-        Assert.IsTrue(RemoveFromPathLookup(Path))
+        RemoveFromPathLookup(Path).ShouldBeTrue
+        PathsToLookup.ShouldNotContain(NeutralizedPath)
     End Sub
 
     ''' <summary>
@@ -243,7 +247,8 @@ Imports KS
         Dim Path As String = If(IsOnWindows(), "C:\Program Files\dotnet", "/bin")
         Dim RootPath As String = If(IsOnWindows(), "C:\Program Files", "/")
         Dim NeutralizedPath As String = NeutralizePath(Path, RootPath)
-        Assert.IsTrue(RemoveFromPathLookup(NeutralizedPath, RootPath))
+        RemoveFromPathLookup(NeutralizedPath, RootPath).ShouldBeTrue
+        PathsToLookup.ShouldNotContain(NeutralizedPath)
     End Sub
 
     ''' <summary>
@@ -253,7 +258,8 @@ Imports KS
         Dim Path As String = If(IsOnWindows(), "dotnet", "bin")
         Dim RootPath As String = If(IsOnWindows(), "C:\Program Files", "/")
         Dim NeutralizedPath As String = NeutralizePath(Path, RootPath)
-        Assert.IsTrue(RemoveFromPathLookup(Path, RootPath))
+        RemoveFromPathLookup(Path, RootPath).ShouldBeTrue
+        PathsToLookup.ShouldNotContain(NeutralizedPath)
     End Sub
 
     ''' <summary>
@@ -262,8 +268,8 @@ Imports KS
     <TestMethod> <TestCategory("Manipulation")> Public Sub TestFileExistsInPath()
         Dim Path As String = If(IsOnWindows(), "netstat.exe", "bash")
         Dim NeutralizedPath As String = ""
-        Assert.IsTrue(FileExistsInPath(Path, NeutralizedPath))
-        Assert.IsNotNull(NeutralizedPath)
+        FileExistsInPath(Path, NeutralizedPath).ShouldBeTrue
+        NeutralizedPath.ShouldNotBeNullOrEmpty
     End Sub
 
     ''' <summary>
@@ -271,7 +277,7 @@ Imports KS
     ''' </summary>
     <TestMethod> <TestCategory("Manipulation")> Public Sub TestCreateList()
         Dim CreatedList As List(Of FileSystemInfo) = CreateList(paths("Home"))
-        Assert.IsTrue(CreatedList.Count > 0)
+        CreatedList.ShouldNotBeEmpty
     End Sub
 
 End Class

@@ -24,7 +24,8 @@ Imports KS
     ''' Tests update fetching
     ''' </summary>
     <TestMethod()> <TestCategory("Misc")> Public Sub TestFetchKernelUpdates()
-        Assert.IsNotNull(FetchKernelUpdates, "Can't fetch kernel updates. Make sure that your Internet connection is available. Returned null.")
+        Dim Updates As List(Of String) = FetchKernelUpdates()
+        Updates.ShouldNotBeNull
     End Sub
 
     ''' <summary>

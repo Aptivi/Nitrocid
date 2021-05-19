@@ -29,20 +29,20 @@ Imports KS
         Dim ThemeInfoInstance As New ThemeInfo("Hacker")
 
         'Check for null
-        Assert.IsNotNull(ThemeInfoInstance.ThemeBackgroundColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeCmdDefColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeCmdListColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeContKernelErrorColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeErrorColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeHostNameShellColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeInputColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeLicenseColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeNeutralTextColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeOptionColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeStageColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeUncontKernelErrorColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeUserNameShellColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeWarningColor)
+        ThemeInfoInstance.ThemeBackgroundColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeCmdDefColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeCmdListColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeContKernelErrorColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeErrorColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeHostNameShellColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeInputColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeLicenseColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeNeutralTextColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeOptionColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeStageColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeUncontKernelErrorColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeUserNameShellColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeWarningColor.ShouldNotBeNull
     End Sub
 
     ''' <summary>
@@ -54,20 +54,20 @@ Imports KS
         Dim ThemeInfoInstance As New ThemeInfo(New StreamReader(SourcePath))
 
         'Check for null
-        Assert.IsNotNull(ThemeInfoInstance.ThemeBackgroundColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeCmdDefColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeCmdListColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeContKernelErrorColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeErrorColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeHostNameShellColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeInputColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeLicenseColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeNeutralTextColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeOptionColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeStageColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeUncontKernelErrorColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeUserNameShellColor)
-        Assert.IsNotNull(ThemeInfoInstance.ThemeWarningColor)
+        ThemeInfoInstance.ThemeBackgroundColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeCmdDefColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeCmdListColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeContKernelErrorColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeErrorColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeHostNameShellColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeInputColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeLicenseColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeNeutralTextColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeOptionColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeStageColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeUncontKernelErrorColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeUserNameShellColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeWarningColor.ShouldNotBeNull
     End Sub
 
 End Class

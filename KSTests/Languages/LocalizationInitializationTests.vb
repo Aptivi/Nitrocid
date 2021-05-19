@@ -26,7 +26,7 @@ Imports KS
     <TestMethod> <TestCategory("Initialization")> Public Sub TestPrepareDict()
         Dim ExpectedLength As Integer = KS.My.Resources.spa.Replace(Chr(13), "").Split(Chr(10)).ToList.Count
         Dim ActualLength As Integer = PrepareDict("spa").Values.Count
-        Assert.AreEqual(ExpectedLength, ActualLength, "Dictionary preparation test is not done properly. Expected {0}, Got {1}", ExpectedLength, ActualLength)
+        ActualLength.ShouldBe(ExpectedLength)
     End Sub
 
 End Class

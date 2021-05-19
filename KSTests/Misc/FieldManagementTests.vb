@@ -26,7 +26,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestGetValue()
         Dim Value As String = GetConfigValue("HiddenFiles")
-        Assert.IsNotNull(Value, "Value of variable HiddenFiles isn't get properly. Got null.")
+        Value.ShouldNotBeNullOrEmpty
     End Sub
 
     ''' <summary>
@@ -35,7 +35,7 @@ Imports KS
     <TestMethod()> <TestCategory("Management")> Public Sub TestSetValue()
         SetConfigValue("HiddenFiles", False)
         Dim Value As String = GetConfigValue("HiddenFiles")
-        Assert.AreEqual(Value, "False", "Value of variable HiddenFiles isn't set properly. Got {0}", Value)
+        Value.ShouldBe("False")
     End Sub
 
     ''' <summary>
@@ -43,7 +43,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestGetConfigField()
         Dim Field As FieldInfo = GetField("HiddenFiles")
-        Assert.IsTrue(Field.Name = "HiddenFiles", "Field HiddenFiles isn't get properly. Name: {0}", Field.Name)
+        Field.Name.ShouldBe("HiddenFiles")
     End Sub
 
 End Class
