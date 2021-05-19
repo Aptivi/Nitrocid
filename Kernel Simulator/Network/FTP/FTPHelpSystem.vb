@@ -19,6 +19,7 @@
 Public Module FTPHelpSystem
 
     'This dictionary is the definitions for commands.
+    'TODO: Remove pre-defined aliases
     Public FTPDefinitions As Dictionary(Of String, String)
     Public FTPModDefs As New Dictionary(Of String, String)
 
@@ -54,17 +55,28 @@ Public Module FTPHelpSystem
 
         If command = "" Then
             If simHelp = False Then
+                W(DoTranslation("General commands:"), True, ColTypes.Neutral)
                 For Each cmd As String In FTPDefinitions.Keys
                     W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, FTPDefinitions(cmd))
                 Next
+                W(vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.Neutral)
+                If FTPModDefs.Count = 0 Then W(DoTranslation("No mod commands."), True, ColTypes.Neutral)
                 For Each cmd As String In FTPModDefs.Keys
                     W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, FTPModDefs(cmd))
                 Next
+                W(vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.Neutral)
+                If FTPShellAliases.Count = 0 Then W(DoTranslation("No alias commands."), True, ColTypes.Neutral)
                 For Each cmd As String In FTPShellAliases.Keys
-                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, FTPDefinitions(FTPShellAliases(cmd)))
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, FTPDefinitions(FTPDefinitions.Select(Function(x) x.Key).Where(Function(x) x.Contains(FTPShellAliases(cmd)))(0)))
                 Next
             Else
-                W(String.Join(", ", FTPCommands.Keys), True, ColTypes.Neutral)
+                For Each cmd As String In FTPCommands.Keys
+                    W("{0}, ", False, ColTypes.ListEntry, cmd)
+                Next
+                For Each cmd As String In FTPModDefs.Keys
+                    W("{0}, ", False, ColTypes.ListEntry, cmd)
+                Next
+                W(String.Join(", ", FTPShellAliases.Keys), True, ColTypes.ListEntry)
             End If
         ElseIf command = "currlocaldir" Or command = "pwdl" Then
             W(DoTranslation("Usage:") + " currlocaldir or pwdl", True, ColTypes.Neutral)

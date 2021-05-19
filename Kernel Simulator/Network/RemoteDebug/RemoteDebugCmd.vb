@@ -71,16 +71,21 @@ Module RemoteDebugCmd
                 If CmdArgs.Count <> 0 Then
                     RDebugShowHelp(CmdArgs(0), SocketStreamWriter)
                 Else
+                    SocketStreamWriter.WriteLine(DoTranslation("General commands:"))
                     For Each cmd As String In RDebugDefinitions.Keys
-                        SocketStreamWriter.WriteLine("- /{0}: {1}", cmd, RDebugDefinitions(cmd))
+                        SocketStreamWriter.WriteLine("- {0}: {1}", cmd, RDebugDefinitions(cmd))
                     Next
+                    SocketStreamWriter.WriteLine(vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.Neutral)
+                    If RDebugModDefs.Count = 0 Then SocketStreamWriter.WriteLine(DoTranslation("No mod commands."))
                     For Each cmd As String In RDebugModDefs.Keys
-                        SocketStreamWriter.WriteLine("- /{0}: {1}", cmd, RDebugModDefs(cmd))
+                        SocketStreamWriter.WriteLine("- {0}: {1}", cmd, RDebugModDefs(cmd))
                     Next
+                    SocketStreamWriter.WriteLine(vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.Neutral)
+                    If RemoteDebugAliases.Count = 0 Then SocketStreamWriter.WriteLine(DoTranslation("No alias commands."))
                     For Each cmd As String In RemoteDebugAliases.Keys
-                        SocketStreamWriter.WriteLine("- /{0}: {1}", cmd, RDebugDefinitions(RemoteDebugAliases(cmd)))
+                        SocketStreamWriter.WriteLine("- {0}: {1}", cmd, RDebugDefinitions(RemoteDebugAliases(cmd)))
                     Next
-                End If
+                    End If
             ElseIf CmdName = "exit" Then
                 'Exit command code
                 DisconnectDbgDev(Address)

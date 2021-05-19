@@ -33,18 +33,30 @@ Public Module ZipHelpSystem
 
     Public Sub ZipShell_GetHelp(Optional ByVal Command As String = "")
         If Command = "" Then
-            For Each HelpKey As String In ZipShell_HelpEntries.Keys
-                W("- {0}: ", False, ColTypes.ListEntry, HelpKey)
-                W(ZipShell_HelpEntries(HelpKey), True, ColTypes.ListValue)
-            Next
-            For Each HelpKey As String In ZipShell_ModHelpEntries.Keys
-                W("- {0}: ", False, ColTypes.ListEntry, HelpKey)
-                W(ZipShell_ModHelpEntries(HelpKey), True, ColTypes.ListValue)
-            Next
-            For Each HelpKey As String In ZIPShellAliases.Keys
-                W("- {0}: ", False, ColTypes.ListEntry, HelpKey)
-                W(ZipShell_HelpEntries(ZIPShellAliases(HelpKey)), True, ColTypes.ListValue)
-            Next
+            If simHelp = False Then
+                W(DoTranslation("General commands:"), True, ColTypes.Neutral)
+                For Each cmd As String In ZipShell_HelpEntries.Keys
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, ZipShell_HelpEntries(cmd))
+                Next
+                W(vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.Neutral)
+                If ZipShell_ModHelpEntries.Count = 0 Then W(DoTranslation("No mod commands."), True, ColTypes.Neutral)
+                For Each cmd As String In ZipShell_ModHelpEntries.Keys
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, ZipShell_ModHelpEntries(cmd))
+                Next
+                W(vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.Neutral)
+                If ZIPShellAliases.Count = 0 Then W(DoTranslation("No alias commands."), True, ColTypes.Neutral)
+                For Each cmd As String In ZIPShellAliases.Keys
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, ZIPShellAliases(MailShellAliases(cmd)))
+                Next
+            Else
+                For Each cmd As String In ZipShell_Commands.Keys
+                    W("{0}, ", False, ColTypes.ListEntry, cmd)
+                Next
+                For Each cmd As String In ZipShell_ModHelpEntries.Keys
+                    W("{0}, ", False, ColTypes.ListEntry, cmd)
+                Next
+                W(String.Join(", ", ZIPShellAliases.Keys), True, ColTypes.ListEntry)
+            End If
         ElseIf Command = "help" Then
             W(DoTranslation("Usage:") + " help [command]", True, ColTypes.Neutral)
         ElseIf Command = "exit" Then

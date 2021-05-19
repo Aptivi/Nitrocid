@@ -40,18 +40,30 @@ Public Module TextEditHelpSystem
 
     Public Sub TextEdit_GetHelp(Optional ByVal Command As String = "")
         If Command = "" Then
-            For Each HelpKey As String In TextEdit_HelpEntries.Keys
-                W("- {0}: ", False, ColTypes.ListEntry, HelpKey)
-                W(TextEdit_HelpEntries(HelpKey), True, ColTypes.ListValue)
-            Next
-            For Each HelpKey As String In TextEdit_ModHelpEntries.Keys
-                W("- {0}: ", False, ColTypes.ListEntry, HelpKey)
-                W(TextEdit_ModHelpEntries(HelpKey), True, ColTypes.ListValue)
-            Next
-            For Each HelpKey As String In TextShellAliases.Keys
-                W("- {0}: ", False, ColTypes.ListEntry, HelpKey)
-                W(TextEdit_HelpEntries(TextShellAliases(HelpKey)), True, ColTypes.ListValue)
-            Next
+            If simHelp = False Then
+                W(DoTranslation("General commands:"), True, ColTypes.Neutral)
+                For Each cmd As String In TextEdit_HelpEntries.Keys
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, TextEdit_HelpEntries(cmd))
+                Next
+                W(vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.Neutral)
+                If TextEdit_ModHelpEntries.Count = 0 Then W(DoTranslation("No mod commands."), True, ColTypes.Neutral)
+                For Each cmd As String In TextEdit_ModHelpEntries.Keys
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, TextEdit_ModHelpEntries(cmd))
+                Next
+                W(vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.Neutral)
+                If TextShellAliases.Count = 0 Then W(DoTranslation("No alias commands."), True, ColTypes.Neutral)
+                For Each cmd As String In TextShellAliases.Keys
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, TextEdit_HelpEntries(TextShellAliases(cmd)))
+                Next
+            Else
+                For Each cmd As String In TextEdit_Commands.Keys
+                    W("{0}, ", False, ColTypes.ListEntry, cmd)
+                Next
+                For Each cmd As String In TextEdit_ModHelpEntries.Keys
+                    W("{0}, ", False, ColTypes.ListEntry, cmd)
+                Next
+                W(String.Join(", ", TextShellAliases.Keys), True, ColTypes.ListEntry)
+            End If
         ElseIf Command = "help" Then
             W(DoTranslation("Usage:") + " help [command]", True, ColTypes.Neutral)
         ElseIf Command = "exit" Then
