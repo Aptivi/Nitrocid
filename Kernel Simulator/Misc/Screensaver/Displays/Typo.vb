@@ -51,6 +51,7 @@ Module TypoDisplay
 
                 'Get struck character and write it
                 For Each StruckChar As Char In TypoWrite
+                    If Typo.CancellationPending Then Exit For
                     'Calculate needed milliseconds from two WPM speeds (minimum and maximum)
                     Dim SelectedCpm As Integer = RandomDriver.Next(CpmSpeedMin, CpmSpeedMax)
                     Dim WriteMs As Integer = (60 / SelectedCpm) * 1000
