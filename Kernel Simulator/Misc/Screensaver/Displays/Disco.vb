@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module DiscoDisplay
 
-    Public WithEvents Disco As New BackgroundWorker
+    Public WithEvents Disco As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Disco

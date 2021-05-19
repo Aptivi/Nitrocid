@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module GlitterColorDisplay
 
-    Public WithEvents GlitterColor As New BackgroundWorker
+    Public WithEvents GlitterColor As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Glitter Colors

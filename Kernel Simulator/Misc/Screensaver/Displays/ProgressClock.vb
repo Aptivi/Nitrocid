@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module ProgressClockDisplay
 
-    Public WithEvents ProgressClock As New BackgroundWorker
+    Public WithEvents ProgressClock As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Progress Clock

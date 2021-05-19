@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module LinesDisplay
 
-    Public WithEvents Lines As New BackgroundWorker
+    Public WithEvents Lines As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Lines

@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module FaderDisplay
 
-    Public WithEvents Fader As New BackgroundWorker
+    Public WithEvents Fader As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Fader

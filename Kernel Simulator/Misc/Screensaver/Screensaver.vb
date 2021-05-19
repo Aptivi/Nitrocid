@@ -120,105 +120,90 @@ Public Module Screensaver
             EventManager.RaisePreShowScreensaver(saver)
             Wdbg("I", "Requested screensaver: {0}", saver)
             If saver = "colorMix" Then
-                ColorMix.WorkerSupportsCancellation = True
                 ColorMix.RunWorkerAsync()
                 Wdbg("I", "ColorMix started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 ColorMix.CancelAsync()
             ElseIf saver = "matrix" Then
-                Matrix.WorkerSupportsCancellation = True
                 Matrix.RunWorkerAsync()
                 Wdbg("I", "Matrix started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Matrix.CancelAsync()
             ElseIf saver = "glitterMatrix" Then
-                GlitterMatrix.WorkerSupportsCancellation = True
                 GlitterMatrix.RunWorkerAsync()
                 Wdbg("I", "Glitter Matrix started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 GlitterMatrix.CancelAsync()
             ElseIf saver = "disco" Then
-                Disco.WorkerSupportsCancellation = True
                 Disco.RunWorkerAsync()
                 Wdbg("I", "Disco started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Disco.CancelAsync()
             ElseIf saver = "lines" Then
-                Lines.WorkerSupportsCancellation = True
                 Lines.RunWorkerAsync()
                 Wdbg("I", "Lines started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Lines.CancelAsync()
             ElseIf saver = "glitterColor" Then
-                GlitterColor.WorkerSupportsCancellation = True
                 GlitterColor.RunWorkerAsync()
                 Wdbg("I", "Glitter Color started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 GlitterColor.CancelAsync()
             ElseIf saver = "aptErrorSim" Then
-                AptErrorSim.WorkerSupportsCancellation = True
                 AptErrorSim.RunWorkerAsync()
                 Wdbg("I", "apt Error Simulator started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 AptErrorSim.CancelAsync()
             ElseIf saver = "hackUserFromAD" Then
-                HackUserFromAD.WorkerSupportsCancellation = True
                 HackUserFromAD.RunWorkerAsync()
                 Wdbg("I", "Hacking Simulator for Active Domain users started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 HackUserFromAD.CancelAsync()
             ElseIf saver = "bouncingText" Then
-                BouncingText.WorkerSupportsCancellation = True
                 BouncingText.RunWorkerAsync()
                 Wdbg("I", "Bouncing Text started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 BouncingText.CancelAsync()
             ElseIf saver = "dissolve" Then
-                Dissolve.WorkerSupportsCancellation = True
                 Dissolve.RunWorkerAsync()
                 Wdbg("I", "Dissolve started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Dissolve.CancelAsync()
             ElseIf saver = "bouncingBlock" Then
-                BouncingBlock.WorkerSupportsCancellation = True
                 BouncingBlock.RunWorkerAsync()
                 Wdbg("I", "Bouncing Block started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 BouncingBlock.CancelAsync()
             ElseIf saver = "progressClock" Then
-                ProgressClock.WorkerSupportsCancellation = True
                 ProgressClock.RunWorkerAsync()
                 Wdbg("I", "Progress Clock started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 ProgressClock.CancelAsync()
             ElseIf saver = "lighter" Then
-                Lighter.WorkerSupportsCancellation = True
                 Lighter.RunWorkerAsync()
                 Wdbg("I", "Lighter started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Lighter.CancelAsync()
             ElseIf saver = "fader" Then
-                Fader.WorkerSupportsCancellation = True
                 Fader.RunWorkerAsync()
                 Wdbg("I", "Fader started")
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Fader.CancelAsync()
             ElseIf saver = "typo" Then
-                Typo.WorkerSupportsCancellation = True
                 Typo.RunWorkerAsync()
                 Wdbg("I", "Typo started")
                 Console.ReadKey()
@@ -227,7 +212,6 @@ Public Module Screensaver
             ElseIf ScrnSvrdb.ContainsKey(saver) Then
                 'Only one custom screensaver can be used.
                 finalSaver = CSvrdb(saver)
-                Custom.WorkerSupportsCancellation = True
                 Custom.RunWorkerAsync()
                 Wdbg("I", "Custom screensaver {0} started", saver)
                 Console.ReadKey()

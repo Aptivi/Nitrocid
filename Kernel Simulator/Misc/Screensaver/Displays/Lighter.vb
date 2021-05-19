@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module LighterDisplay
 
-    Public WithEvents Lighter As New BackgroundWorker
+    Public WithEvents Lighter As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Lighter

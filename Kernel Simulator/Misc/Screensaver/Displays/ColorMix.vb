@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module ColorMixDisplay
 
-    Public WithEvents ColorMix As New BackgroundWorker
+    Public WithEvents ColorMix As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of ColorMix

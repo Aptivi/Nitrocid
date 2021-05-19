@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module HackUserFromADDisplay
 
-    Public WithEvents HackUserFromAD As New BackgroundWorker
+    Public WithEvents HackUserFromAD As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Hack User from AD simulator

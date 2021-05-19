@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module MatrixDisplay
 
-    Public WithEvents Matrix As New BackgroundWorker
+    Public WithEvents Matrix As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Matrix

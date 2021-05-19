@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module GlitterMatrixDisplay
 
-    Public WithEvents GlitterMatrix As New BackgroundWorker
+    Public WithEvents GlitterMatrix As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Glitter Matrix

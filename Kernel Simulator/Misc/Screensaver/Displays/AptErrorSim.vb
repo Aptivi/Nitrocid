@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module AptErrorSimDisplay
 
-    Public WithEvents AptErrorSim As New BackgroundWorker
+    Public WithEvents AptErrorSim As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of APT Error Sim

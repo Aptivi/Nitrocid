@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module BouncingTextDisplay
 
-    Public WithEvents BouncingText As New BackgroundWorker
+    Public WithEvents BouncingText As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Bouncing Text

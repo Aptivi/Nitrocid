@@ -21,7 +21,7 @@ Imports System.Threading
 
 Module DissolveDisplay
 
-    Public WithEvents Dissolve As New BackgroundWorker
+    Public WithEvents Dissolve As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Dissolve
