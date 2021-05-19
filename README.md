@@ -36,6 +36,14 @@ This section covers what you need to run Kernel Simulator. Please scroll down to
 2. Internet Connection
 3. Appropriate console that supports escape sequences and custom monotyped fonts for languages (Konsole, GNOME Terminal, ...)
 
+### MacOS systems
+
+1. Mono Runtime
+2. Internet Connection
+3. Appropriate console that supports escape sequences and custom monotyped fonts for languages (iTerm2)
+
+WARNING: Don't use MacOS' builtin Terminal.app; it has broken support for 255 and true colors.
+
 ## How to install
 
 This section covers how to install Kernel Simulator on your system. Please scroll down to your system below.
