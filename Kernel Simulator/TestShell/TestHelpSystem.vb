@@ -76,6 +76,9 @@ Public Module TestHelpSystem
                 For Each cmd As String In TestModDefs.Keys
                     W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, TestModDefs(cmd))
                 Next
+                For Each cmd As String In TestShellAliases.Keys
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, TestDefinitions(TestShellAliases(cmd)))
+                Next
             Else
                 W(String.Join(", ", Test_Commands.Keys), True, ColTypes.Neutral)
             End If

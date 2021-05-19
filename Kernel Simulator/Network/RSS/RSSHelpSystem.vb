@@ -49,6 +49,9 @@ Public Module RSSHelpSystem
                 For Each cmd As String In RSSModDefs.Keys
                     W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, RSSModDefs(cmd))
                 Next
+                For Each cmd As String In RSSShellAliases.Keys
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, RSSDefinitions(RSSShellAliases(cmd)))
+                Next
             Else
                 W(String.Join(", ", RSSCommands.Keys), True, ColTypes.Neutral)
             End If

@@ -74,15 +74,19 @@ Module TestShell
             Try
                 If Not (FullCmd = Nothing Or FullCmd?.StartsWith(" ") = True) Then
                     Wdbg("I", "Command: {0}", FullCmd)
-                    If Test_Commands.ContainsKey(FullCmd.Split(" ")(0)) Then
+                    Dim Command As String = FullCmd.Split(" ")(0)
+                    If Test_Commands.ContainsKey(Command) Then
                         TStartCommandThread = New Thread(AddressOf TParseCommand) With {.Name = "Test Shell Command Thread"}
                         TStartCommandThread.Start(FullCmd)
                         TStartCommandThread.Join()
-                    ElseIf Test_ModCommands.Contains(FullCmd.Split(" ")(0)) Then
+                    ElseIf Test_ModCommands.Contains(Command) Then
                         Wdbg("I", "Mod command found.")
                         ExecuteModCommand(FullCmd)
+                    ElseIf TestShellAliases.Keys.Contains(Command) Then
+                        Wdbg("I", "Test shell alias command found.")
+                        ExecuteTestAlias(FullCmd)
                     Else
-                        W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Err, FullCmd.Split(" ")(0))
+                        W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Err, Command)
                     End If
                 Else
                     Thread.Sleep(30) 'This is to fix race condition between test shell initialization and starting the event handler thread
@@ -93,6 +97,19 @@ Module TestShell
                 WStkTrc(ex)
             End Try
         End While
+    End Sub
+
+    ''' <summary>
+    ''' Executes the test shell alias
+    ''' </summary>
+    ''' <param name="aliascmd">Aliased command with arguments</param>
+    Sub ExecuteTestAlias(ByVal aliascmd As String)
+        Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
+        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, TestShellAliases(FirstWordCmd))
+        Wdbg("I", "Actual command: {0}", actualCmd)
+        TStartCommandThread = New Thread(AddressOf TParseCommand) With {.Name = "Test Shell Command Thread"}
+        TStartCommandThread.Start(actualCmd)
+        TStartCommandThread.Join()
     End Sub
 
 End Module

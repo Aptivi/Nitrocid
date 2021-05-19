@@ -60,6 +60,9 @@ Public Module FTPHelpSystem
                 For Each cmd As String In FTPModDefs.Keys
                     W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, FTPModDefs(cmd))
                 Next
+                For Each cmd As String In FTPShellAliases.Keys
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, FTPDefinitions(FTPShellAliases(cmd)))
+                Next
             Else
                 W(String.Join(", ", FTPCommands.Keys), True, ColTypes.Neutral)
             End If

@@ -159,7 +159,7 @@ Public Module HelpSystem
 
         ElseIf command = "alias" Then
 
-            W(DoTranslation("Usage:") + " alias <rem/add> <1=Shell/2=RDebug/3=FTPShell/4=SFTPShell/5=MailShell> <alias> <cmd>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " alias <rem/add> <{0}> <alias> <cmd>", True, ColTypes.Neutral, String.Join("/", [Enum].GetNames(GetType(AliasType))))
 
         ElseIf command = "arginj" Then
 

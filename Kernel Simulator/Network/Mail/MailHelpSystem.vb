@@ -56,6 +56,9 @@ Public Module MailHelpSystem
             For Each cmnd As String In MailModDefs.Keys
                 W("- {0}: ", False, ColTypes.ListEntry, cmnd) : W("{0}", True, ColTypes.ListValue, MailModDefs(cmnd))
             Next
+            For Each cmnd As String In MailShellAliases.Keys
+                W("- {0}: ", False, ColTypes.ListEntry, cmnd) : W("{0}", True, ColTypes.ListValue, MailDefinitions(MailShellAliases(cmnd)))
+            Next
         ElseIf cmd = "cd" Then
             W(DoTranslation("Usage:") + " cd <folder>: " + DoTranslation("Changes current mail directory"), True, ColTypes.Neutral)
         ElseIf cmd = "exit" Then

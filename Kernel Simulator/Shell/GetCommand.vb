@@ -116,14 +116,14 @@ Public Module GetCommand
 
                     If RequiredArgumentsProvided Then
                         If eqargs?.Length > 3 Then
-                            If eqargs(0) = "add" And (eqargs(1) = AliasType.Shell Or eqargs(1) = AliasType.RDebug Or eqargs(1) = AliasType.FTPShell Or eqargs(1) = AliasType.SFTPShell Or eqargs(1) = AliasType.MailShell) Then
-                                ManageAlias(eqargs(0), eqargs(1), eqargs(2), eqargs(3))
+                            If eqargs(0) = "add" And [Enum].IsDefined(GetType(AliasType), eqargs(1)) Then
+                                ManageAlias(eqargs(0), Val([Enum].Parse(GetType(AliasType), eqargs(1))), eqargs(2), eqargs(3))
                             Else
                                 W(DoTranslation("Invalid type {0}."), True, ColTypes.Err, eqargs(1))
                             End If
                         ElseIf eqargs?.Length = 3 Then
-                            If eqargs(0) = "rem" And (eqargs(1) = AliasType.Shell Or eqargs(1) = AliasType.RDebug Or eqargs(1) = AliasType.FTPShell Or eqargs(1) = AliasType.SFTPShell Or eqargs(1) = AliasType.MailShell) Then
-                                ManageAlias(eqargs(0), eqargs(1), eqargs(2))
+                            If eqargs(0) = "rem" And [Enum].IsDefined(GetType(AliasType), eqargs(1)) Then
+                                ManageAlias(eqargs(0), Val([Enum].Parse(GetType(AliasType), eqargs(1))), eqargs(2))
                             Else
                                 W(DoTranslation("Invalid type {0}."), True, ColTypes.Err, eqargs(1))
                             End If

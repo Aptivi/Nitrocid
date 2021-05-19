@@ -41,6 +41,10 @@ Public Module ZipHelpSystem
                 W("- {0}: ", False, ColTypes.ListEntry, HelpKey)
                 W(ZipShell_ModHelpEntries(HelpKey), True, ColTypes.ListValue)
             Next
+            For Each HelpKey As String In ZIPShellAliases.Keys
+                W("- {0}: ", False, ColTypes.ListEntry, HelpKey)
+                W(ZipShell_HelpEntries(ZIPShellAliases(HelpKey)), True, ColTypes.ListValue)
+            Next
         ElseIf Command = "help" Then
             W(DoTranslation("Usage:") + " help [command]", True, ColTypes.Neutral)
         ElseIf Command = "exit" Then

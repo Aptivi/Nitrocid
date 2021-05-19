@@ -89,6 +89,9 @@ Public Module TextEditShell
                     EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
                     ExecuteModCommand(WrittenCommand)
                     EventManager.RaiseTextPostExecuteCommand(WrittenCommand)
+                ElseIf TextShellAliases.Keys.Contains(WrittenCommand.Split(" ")(0)) Then
+                    Wdbg("I", "Text shell alias command found.")
+                    ExecuteTextAlias(WrittenCommand)
                 Else
                     W(DoTranslation("The specified text editor command is not found."), True, ColTypes.Err)
                     Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), TextEdit_Commands.Count)
@@ -110,6 +113,19 @@ Public Module TextEditShell
         AddHandler Console.CancelKeyPress, AddressOf CancelCommand
         RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
         TextEdit_Exiting = False
+    End Sub
+
+    ''' <summary>
+    ''' Executes the text editor shell alias
+    ''' </summary>
+    ''' <param name="aliascmd">Aliased command with arguments</param>
+    Sub ExecuteTextAlias(ByVal aliascmd As String)
+        Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
+        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, TextShellAliases(FirstWordCmd))
+        Wdbg("I", "Actual command: {0}", actualCmd)
+        TextEdit_CommandThread = New Thread(AddressOf TextEdit_ParseCommand) With {.Name = "Text Edit Command Thread"}
+        TextEdit_CommandThread.Start(actualCmd)
+        TextEdit_CommandThread.Join()
     End Sub
 
 End Module

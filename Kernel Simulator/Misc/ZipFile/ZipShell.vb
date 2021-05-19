@@ -80,6 +80,9 @@ Module ZipShell
                     EventManager.RaiseZipPreExecuteCommand(WrittenCommand)
                     ExecuteModCommand(WrittenCommand)
                     EventManager.RaiseZipPostExecuteCommand(WrittenCommand)
+                ElseIf ZIPShellAliases.Keys.Contains(WrittenCommand.Split(" ")(0)) Then
+                    Wdbg("I", "ZIP shell alias command found.")
+                    ExecuteZIPAlias(WrittenCommand)
                 Else
                     W(DoTranslation("The specified ZIP shell command is not found."), True, ColTypes.Err)
                     Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), ZipShell_Commands.Count)
@@ -103,6 +106,19 @@ Module ZipShell
         AddHandler Console.CancelKeyPress, AddressOf CancelCommand
         RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
         ZipShell_Exiting = False
+    End Sub
+
+    ''' <summary>
+    ''' Executes the ZIP shell alias
+    ''' </summary>
+    ''' <param name="aliascmd">Aliased command with arguments</param>
+    Sub ExecuteZIPAlias(ByVal aliascmd As String)
+        Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
+        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, ZIPShellAliases(FirstWordCmd))
+        Wdbg("I", "Actual command: {0}", actualCmd)
+        ZipShell_CommandThread = New Thread(AddressOf ZipShell_ParseCommand) With {.Name = "ZIP Shell Command Thread"}
+        ZipShell_CommandThread.Start(actualCmd)
+        ZipShell_CommandThread.Join()
     End Sub
 
 End Module

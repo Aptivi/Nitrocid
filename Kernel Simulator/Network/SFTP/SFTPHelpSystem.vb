@@ -56,6 +56,9 @@ Public Module SFTPHelpSystem
                 For Each cmd As String In SFTPModDefs.Keys
                     W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, SFTPModDefs(cmd))
                 Next
+                For Each cmd As String In SFTPShellAliases.Keys
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, SFTPDefinitions(SFTPShellAliases(cmd)))
+                Next
             Else
                 W(String.Join(", ", SFTPCommands.Keys), True, ColTypes.Neutral)
             End If

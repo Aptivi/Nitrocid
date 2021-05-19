@@ -48,6 +48,10 @@ Public Module TextEditHelpSystem
                 W("- {0}: ", False, ColTypes.ListEntry, HelpKey)
                 W(TextEdit_ModHelpEntries(HelpKey), True, ColTypes.ListValue)
             Next
+            For Each HelpKey As String In TextShellAliases.Keys
+                W("- {0}: ", False, ColTypes.ListEntry, HelpKey)
+                W(TextEdit_HelpEntries(TextShellAliases(HelpKey)), True, ColTypes.ListValue)
+            Next
         ElseIf Command = "help" Then
             W(DoTranslation("Usage:") + " help [command]", True, ColTypes.Neutral)
         ElseIf Command = "exit" Then

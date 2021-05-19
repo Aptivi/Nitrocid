@@ -101,11 +101,14 @@ Begin:
                             RSSCommandThread.Start(WrittenCommand)
                             RSSCommandThread.Join()
                             EventManager.RaiseRSSPostExecuteCommand(RSSFeedLink, WrittenCommand)
-                        ElseIf ZipShell_ModCommands.Contains(WrittenCommand.Split(" ")(0)) Then
+                        ElseIf RSSModCommands.Contains(WrittenCommand.Split(" ")(0)) Then
                             Wdbg("I", "Mod command {0} executing...", WrittenCommand.Split(" ")(0))
                             EventManager.RaiseRSSPreExecuteCommand(RSSFeedLink, WrittenCommand)
                             ExecuteModCommand(WrittenCommand)
                             EventManager.RaiseRSSPostExecuteCommand(RSSFeedLink, WrittenCommand)
+                        ElseIf RSSShellAliases.Keys.Contains(WrittenCommand.Split(" ")(0)) Then
+                            Wdbg("I", "RSS shell alias command found.")
+                            ExecuteRSSAlias(WrittenCommand)
                         Else
                             W(DoTranslation("The specified RSS shell command is not found."), True, ColTypes.Err)
                             Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), RSSCommands.Count)
@@ -128,6 +131,19 @@ Begin:
         AddHandler Console.CancelKeyPress, AddressOf CancelCommand
         RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
         RSSExiting = False
+    End Sub
+
+    ''' <summary>
+    ''' Executes the RSS shell alias
+    ''' </summary>
+    ''' <param name="aliascmd">Aliased command with arguments</param>
+    Sub ExecuteRSSAlias(ByVal aliascmd As String)
+        Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
+        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, RSSShellAliases(FirstWordCmd))
+        Wdbg("I", "Actual command: {0}", actualCmd)
+        RSSCommandThread = New Thread(AddressOf RSSParseCommand) With {.Name = "RSS Shell Command Thread"}
+        RSSCommandThread.Start(actualCmd)
+        RSSCommandThread.Join()
     End Sub
 
 End Module
