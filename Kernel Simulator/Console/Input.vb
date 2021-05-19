@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
+
 Public Module Input
 
     ''' <summary>
@@ -50,7 +52,6 @@ Public Module Input
     ''' </summary>
     ''' <param name="Intercept"></param>
     ''' <param name="Timeout"></param>
-    ''' <returns></returns>
     Public Function ReadKeyTimeout(ByVal Intercept As Boolean, ByVal Timeout As TimeSpan) As ConsoleKeyInfo
         Dim CurrentMilliseconds As Double
         While Not Console.KeyAvailable
@@ -94,6 +95,14 @@ Public Module Input
             End If
         End While
         Return Final
+    End Function
+
+    ''' <summary>
+    ''' Reads the next line of characters that exceed the 256-character limit up to 65536 characters
+    ''' </summary>
+    Public Function ReadLineLong() As String
+        Console.SetIn(New StreamReader(Console.OpenStandardInput(65536), Console.InputEncoding, False, 65536))
+        Return Console.ReadLine()
     End Function
 
 End Module
