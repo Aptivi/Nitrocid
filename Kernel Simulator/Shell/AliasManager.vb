@@ -121,7 +121,7 @@ Public Module AliasManager
                 {"Command", Aliases.Values(i)},
                 {"Type", "Shell"}
             }
-            AliasNameToken.Add(AliasObject)
+            If Not DoesAliasExist(Aliases.Keys(i), AliasType.Shell) Then AliasNameToken.Add(AliasObject)
         Next
 
         'Remote Debug aliases
@@ -132,7 +132,7 @@ Public Module AliasManager
                 {"Command", RemoteDebugAliases.Values(i)},
                 {"Type", "Remote"}
             }
-            AliasNameToken.Add(AliasObject)
+            If Not DoesAliasExist(RemoteDebugAliases.Keys(i), AliasType.RDebug) Then AliasNameToken.Add(AliasObject)
         Next
 
         'FTP shell aliases
@@ -143,7 +143,7 @@ Public Module AliasManager
                 {"Command", FTPShellAliases.Values(i)},
                 {"Type", "FTPShell"}
             }
-            AliasNameToken.Add(AliasObject)
+            If Not DoesAliasExist(FTPShellAliases.Keys(i), AliasType.FTPShell) Then AliasNameToken.Add(AliasObject)
         Next
 
         'SFTP shell aliases
@@ -154,7 +154,7 @@ Public Module AliasManager
                 {"Command", SFTPShellAliases.Values(i)},
                 {"Type", "SFTPShell"}
             }
-            AliasNameToken.Add(AliasObject)
+            If Not DoesAliasExist(SFTPShellAliases.Keys(i), AliasType.SFTPShell) Then AliasNameToken.Add(AliasObject)
         Next
 
         'Mail shell aliases
@@ -165,7 +165,7 @@ Public Module AliasManager
                 {"Command", MailShellAliases.Values(i)},
                 {"Type", "Mail"}
             }
-            AliasNameToken.Add(AliasObject)
+            If Not DoesAliasExist(MailShellAliases.Keys(i), AliasType.MailShell) Then AliasNameToken.Add(AliasObject)
         Next
 
         'Text shell aliases
@@ -176,7 +176,7 @@ Public Module AliasManager
                 {"Command", TextShellAliases.Values(i)},
                 {"Type", "Text"}
             }
-            AliasNameToken.Add(AliasObject)
+            If Not DoesAliasExist(TextShellAliases.Keys(i), AliasType.TextShell) Then AliasNameToken.Add(AliasObject)
         Next
 
         'Test shell aliases
@@ -187,7 +187,7 @@ Public Module AliasManager
                 {"Command", TestShellAliases.Values(i)},
                 {"Type", "Test"}
             }
-            AliasNameToken.Add(AliasObject)
+            If Not DoesAliasExist(TestShellAliases.Keys(i), AliasType.TestShell) Then AliasNameToken.Add(AliasObject)
         Next
 
         'ZIP shell aliases
@@ -198,7 +198,7 @@ Public Module AliasManager
                 {"Command", ZIPShellAliases.Values(i)},
                 {"Type", "ZIP"}
             }
-            AliasNameToken.Add(AliasObject)
+            If Not DoesAliasExist(ZIPShellAliases.Keys(i), AliasType.ZIPShell) Then AliasNameToken.Add(AliasObject)
         Next
 
         'RSS shell aliases
@@ -209,7 +209,7 @@ Public Module AliasManager
                 {"Command", RSSShellAliases.Values(i)},
                 {"Type", "RSS"}
             }
-            AliasNameToken.Add(AliasObject)
+            If Not DoesAliasExist(RSSShellAliases.Keys(i), AliasType.RSSShell) Then AliasNameToken.Add(AliasObject)
         Next
 
         'Save changes
@@ -413,6 +413,62 @@ Public Module AliasManager
                 Wdbg("W", "{0} is not found in RSS shell aliases", TargetAlias)
                 Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed.").FormatString(TargetAlias))
             End If
+        Else
+            Wdbg("E", "Type {0} not found.", Type)
+            Throw New Exceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}.").FormatString(Type))
+        End If
+        Return False
+    End Function
+
+    ''' <summary>
+    ''' Checks to see if the specified alias exists.
+    ''' </summary>
+    ''' <param name="TargetAlias">The existing alias</param>
+    ''' <param name="Type">The alias type</param>
+    ''' <returns>True if it exists; false if it doesn't exist</returns>
+    Public Function DoesAliasExist(ByVal TargetAlias As String, ByVal Type As AliasType) As Boolean
+        'Get all aliases from file
+        If Not File.Exists(paths("Aliases")) Then MakeFile(paths("Aliases"))
+        Dim AliasJsonContent As String = File.ReadAllText(paths("Aliases"))
+        Dim AliasNameToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(AliasJsonContent), AliasJsonContent, "[]"))
+
+        'Check to see if the specified alias exists
+        If Type = AliasType.RDebug Then
+            For Each AliasName As JObject In AliasNameToken
+                If AliasName("Alias") = TargetAlias And AliasName("Type") = "Remote" Then Return True
+            Next
+        ElseIf Type = AliasType.Shell Then
+            For Each AliasName As JObject In AliasNameToken
+                If AliasName("Alias") = TargetAlias And AliasName("Type") = "Shell" Then Return True
+            Next
+        ElseIf Type = AliasType.FTPShell Then
+            For Each AliasName As JObject In AliasNameToken
+                If AliasName("Alias") = TargetAlias And AliasName("Type") = "FTPShell" Then Return True
+            Next
+        ElseIf Type = AliasType.SFTPShell Then
+            For Each AliasName As JObject In AliasNameToken
+                If AliasName("Alias") = TargetAlias And AliasName("Type") = "SFTPShell" Then Return True
+            Next
+        ElseIf Type = AliasType.MailShell Then
+            For Each AliasName As JObject In AliasNameToken
+                If AliasName("Alias") = TargetAlias And AliasName("Type") = "Mail" Then Return True
+            Next
+        ElseIf Type = AliasType.TextShell Then
+            For Each AliasName As JObject In AliasNameToken
+                If AliasName("Alias") = TargetAlias And AliasName("Type") = "Text" Then Return True
+            Next
+        ElseIf Type = AliasType.TestShell Then
+            For Each AliasName As JObject In AliasNameToken
+                If AliasName("Alias") = TargetAlias And AliasName("Type") = "Test" Then Return True
+            Next
+        ElseIf Type = AliasType.ZIPShell Then
+            For Each AliasName As JObject In AliasNameToken
+                If AliasName("Alias") = TargetAlias And AliasName("Type") = "ZIP" Then Return True
+            Next
+        ElseIf Type = AliasType.RSSShell Then
+            For Each AliasName As JObject In AliasNameToken
+                If AliasName("Alias") = TargetAlias And AliasName("Type") = "RSS" Then Return True
+            Next
         Else
             Wdbg("E", "Type {0} not found.", Type)
             Throw New Exceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}.").FormatString(Type))
