@@ -72,11 +72,11 @@ Public Module FTPGetCommand
                 Else
                     W(DoTranslation("Enter an FTP server."), True, ColTypes.Neutral)
                 End If
-            ElseIf words(0) = "changelocaldir" Or words(0) = "cdl" Then
+            ElseIf words(0) = "cdl" Then
                 FTPChangeLocalDir(ArgsQ(0))
-            ElseIf words(0) = "changeremotedir" Or words(0) = "cdr" Then
+            ElseIf words(0) = "cdr" Then
                 FTPChangeRemoteDir(ArgsQ(0))
-            ElseIf words(0) = "copy" Or words(0) = "cp" Then
+            ElseIf words(0) = "cp" Then
                 If RequiredArgumentsProvided Then
                     If connected Then
                         W(DoTranslation("Copying {0} to {1}..."), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
@@ -91,15 +91,15 @@ Public Module FTPGetCommand
                 Else
                     W(DoTranslation("Enter a source path and a destination path."), True, ColTypes.Err)
                 End If
-            ElseIf words(0) = "currlocaldir" Or words(0) = "pwdl" Then
+            ElseIf words(0) = "pwdl" Then
                 W(DoTranslation("Local directory: {0}"), True, ColTypes.Neutral, currDirect)
-            ElseIf words(0) = "currremotedir" Or words(0) = "pwdr" Then
+            ElseIf words(0) = "pwdr" Then
                 If connected = True Then
                     W(DoTranslation("Remote directory: {0}"), True, ColTypes.Neutral, currentremoteDir)
                 Else
                     W(DoTranslation("You must connect to server before getting current remote directory."), True, ColTypes.Err)
                 End If
-            ElseIf words(0) = "delete" Or words(0) = "del" Then
+            ElseIf words(0) = "del" Then
                 If RequiredArgumentsProvided Then
                     If connected = True Then
                         'Print a message
@@ -136,7 +136,7 @@ Public Module FTPGetCommand
                 Else
                     W(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Err)
                 End If
-            ElseIf words(0) = "download" Or words(0) = "get" Then
+            ElseIf words(0) = "get" Then
                 If RequiredArgumentsProvided Then
                     W(DoTranslation("Downloading file {0}..."), False, ColTypes.Neutral, ArgsQ(0))
                     If FTPGetFile(ArgsQ(0)) Then
@@ -158,19 +158,19 @@ Public Module FTPGetCommand
                 Else
                     FTPShowHelp(strArgs)
                 End If
-            ElseIf words(0) = "listlocal" Or words(0) = "lsl" Then
-                If cmd = "listlocal" Or cmd = "lsl" Then
+            ElseIf words(0) = "lsl" Then
+                If cmd = "lsl" Then
                     List(CurrDir)
                 Else
                     List(ArgsQ(0))
                 End If
-            ElseIf words(0) = "listremote" Or words(0) = "lsr" Then
+            ElseIf words(0) = "lsr" Then
                 Dim Entries As List(Of String) = FTPListRemote(If(ArgsQ IsNot Nothing, ArgsQ(0), ""))
                 Entries.Sort()
                 For Each Entry As String In Entries
                     W(Entry, True, ColTypes.ListEntry)
                 Next
-            ElseIf words(0) = "move" Or words(0) = "mv" Then
+            ElseIf words(0) = "mv" Then
                 If RequiredArgumentsProvided Then
                     If connected Then
                         W(DoTranslation("Moving {0} to {1}..."), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
@@ -220,7 +220,7 @@ Public Module FTPGetCommand
                         W(DoTranslation("Invalid data type."), True, ColTypes.Neutral)
                     End If
                 End If
-            ElseIf words(0) = "upload" Or words(0) = "put" Then
+            ElseIf words(0) = "put" Then
                 If RequiredArgumentsProvided Then
                     W(DoTranslation("Uploading file {0}..."), True, ColTypes.Neutral, ArgsQ(0))
 

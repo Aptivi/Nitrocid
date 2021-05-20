@@ -72,19 +72,19 @@ Public Module SFTPGetCommand
                 Else
                     W(DoTranslation("Enter an SFTP server."), True, ColTypes.Neutral)
                 End If
-            ElseIf words(0) = "changelocaldir" Or words(0) = "cdl" Then
+            ElseIf words(0) = "cdl" Then
                 SFTPChangeLocalDir(ArgsQ(0))
-            ElseIf words(0) = "changeremotedir" Or words(0) = "cdr" Then
+            ElseIf words(0) = "cdr" Then
                 SFTPChangeRemoteDir(ArgsQ(0))
-            ElseIf words(0) = "currlocaldir" Or words(0) = "pwdl" Then
+            ElseIf words(0) = "pwdl" Then
                 W(DoTranslation("Local directory: {0}"), True, ColTypes.Neutral, SFTPCurrDirect)
-            ElseIf words(0) = "currremotedir" Or words(0) = "pwdr" Then
+            ElseIf words(0) = "pwdr" Then
                 If SFTPConnected = True Then
                     W(DoTranslation("Remote directory: {0}"), True, ColTypes.Neutral, SFTPCurrentRemoteDir)
                 Else
                     W(DoTranslation("You must connect to server before getting current remote directory."), True, ColTypes.Err)
                 End If
-            ElseIf words(0) = "delete" Or words(0) = "del" Then
+            ElseIf words(0) = "del" Then
                 If RequiredArgumentsProvided Then
                     If SFTPConnected = True Then
                         'Print a message
@@ -121,7 +121,7 @@ Public Module SFTPGetCommand
                 Else
                     W(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Err)
                 End If
-            ElseIf words(0) = "download" Or words(0) = "get" Then
+            ElseIf words(0) = "get" Then
                 If RequiredArgumentsProvided Then
                     W(DoTranslation("Downloading file {0}..."), False, ColTypes.Neutral, ArgsQ(0))
                     If SFTPGetFile(ArgsQ(0)) Then
@@ -143,13 +143,13 @@ Public Module SFTPGetCommand
                 Else
                     SFTPShowHelp(strArgs)
                 End If
-            ElseIf words(0) = "listlocal" Or words(0) = "lsl" Then
+            ElseIf words(0) = "lsl" Then
                 If cmd = "listlocal" Or cmd = "lsl" Then
                     List(CurrDir)
                 Else
                     List(ArgsQ(0))
                 End If
-            ElseIf words(0) = "listremote" Or words(0) = "lsr" Then
+            ElseIf words(0) = "lsr" Then
                 Dim Entries As List(Of String) = SFTPListRemote(If(ArgsQ IsNot Nothing, ArgsQ(0), ""))
                 Entries.Sort()
                 For Each Entry As String In Entries
@@ -161,7 +161,7 @@ Public Module SFTPGetCommand
                 Else
                     W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Err)
                 End If
-            ElseIf words(0) = "upload" Or words(0) = "put" Then
+            ElseIf words(0) = "put" Then
                 If RequiredArgumentsProvided Then
                     W(DoTranslation("Uploading file {0}..."), True, ColTypes.Neutral, ArgsQ(0))
 

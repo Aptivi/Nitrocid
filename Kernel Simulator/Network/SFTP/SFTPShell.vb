@@ -20,28 +20,19 @@ Imports System.Threading
 
 Public Module SFTPShell
 
-    Public SFTPCommands As New Dictionary(Of String, CommandInfo) From {{"currlocaldir", New CommandInfo("currlocaldir", ShellCommandType.SFTPShell, False, 0)},
-                                                                        {"currremotedir", New CommandInfo("currremotedir", ShellCommandType.SFTPShell, False, 0)},
-                                                                        {"connect", New CommandInfo("connect", ShellCommandType.SFTPShell, True, 1)},
-                                                                        {"changelocaldir", New CommandInfo("changelocaldir", ShellCommandType.SFTPShell, True, 1)},
-                                                                        {"changeremotedir", New CommandInfo("changeremotedir", ShellCommandType.SFTPShell, True, 1)},
+    Public SFTPCommands As New Dictionary(Of String, CommandInfo) From {{"connect", New CommandInfo("connect", ShellCommandType.SFTPShell, True, 1)},
                                                                         {"cdl", New CommandInfo("cdl", ShellCommandType.SFTPShell, True, 1)},
                                                                         {"cdr", New CommandInfo("cdr", ShellCommandType.SFTPShell, True, 1)},
-                                                                        {"delete", New CommandInfo("delete", ShellCommandType.SFTPShell, True, 1)},
                                                                         {"del", New CommandInfo("del", ShellCommandType.SFTPShell, True, 1)},
                                                                         {"disconnect", New CommandInfo("disconnect", ShellCommandType.SFTPShell, False, 0)},
-                                                                        {"download", New CommandInfo("download", ShellCommandType.SFTPShell, True, 1)},
                                                                         {"exit", New CommandInfo("exit", ShellCommandType.SFTPShell, False, 0)},
                                                                         {"get", New CommandInfo("get", ShellCommandType.SFTPShell, True, 1)},
                                                                         {"help", New CommandInfo("help", ShellCommandType.SFTPShell, False, 0)},
-                                                                        {"listlocal", New CommandInfo("listlocal", ShellCommandType.SFTPShell, False, 0)},
                                                                         {"lsl", New CommandInfo("lsl", ShellCommandType.SFTPShell, False, 0)},
-                                                                        {"listremote", New CommandInfo("listremote", ShellCommandType.SFTPShell, False, 0)},
                                                                         {"lsr", New CommandInfo("lsr", ShellCommandType.SFTPShell, False, 0)},
                                                                         {"put", New CommandInfo("put", ShellCommandType.SFTPShell, True, 1)},
                                                                         {"pwdl", New CommandInfo("pwdl", ShellCommandType.SFTPShell, False, 0)},
                                                                         {"pwdr", New CommandInfo("pwdr", ShellCommandType.SFTPShell, False, 0)},
-                                                                        {"upload", New CommandInfo("upload", ShellCommandType.SFTPShell, True, 1)},
                                                                         {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.SFTPShell, False, 0)}}
     Public SFTPConnected As Boolean = False
     Private SFTPInitialized As Boolean = False
