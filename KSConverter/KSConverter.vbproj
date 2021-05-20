@@ -123,6 +123,7 @@
     <ProjectReference Include="..\Kernel Simulator\Kernel Simulator.vbproj">
       <Project>{c7b37899-c361-423d-9512-fe0a87a46866}</Project>
       <Name>Kernel Simulator</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

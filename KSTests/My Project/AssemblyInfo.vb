@@ -2,8 +2,8 @@
 Imports System.Reflection
 Imports System.Runtime.InteropServices
 
-<Assembly: AssemblyTitle("Kernel Simulator")>
-<Assembly: AssemblyDescription("Simulates our future kernel.")>
+<Assembly: AssemblyTitle("Kernel Simulator Tests")>
+<Assembly: AssemblyDescription("Unit tests for Kernel Simulator")>
 <Assembly: AssemblyCompany("EoflaOE")>
 <Assembly: AssemblyProduct("Kernel Simulator")>
 <Assembly: AssemblyCopyright("Copyright © EoflaOE 2020-2021")>

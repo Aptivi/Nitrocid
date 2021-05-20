@@ -8,8 +8,8 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("KSConverter")>
-<Assembly: AssemblyDescription("Converts existing Kenel Simulator settings (0.0.15.x or lower) to newer format")>
+<Assembly: AssemblyTitle("KS Locale JSON-ifier")>
+<Assembly: AssemblyDescription("Converts bare text files for KS localizations to a parsable format for KS")>
 <Assembly: AssemblyCompany("EoflaOE")>
 <Assembly: AssemblyProduct("Kernel Simulator")>
 <Assembly: AssemblyCopyright("Copyright © EoflaOE 2021")>
@@ -18,7 +18,7 @@ Imports System.Runtime.InteropServices
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("286f2900-80d1-4c90-941f-ac37639c7a8b")>
+<Assembly: Guid("493f74d5-be9f-43a5-a114-12e3fca246dd")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("0.0.16.0")>
-<Assembly: AssemblyFileVersion("1.0.16.0")>
+<Assembly: AssemblyVersion("1.0.0.0")>
+<Assembly: AssemblyFileVersion("1.0.0.0")>

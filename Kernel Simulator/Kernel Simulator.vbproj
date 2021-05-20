@@ -387,6 +387,56 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="Resources\arb-T.json" />
+    <None Include="Resources\arb.json" />
+    <None Include="Resources\azr.json" />
+    <None Include="Resources\ben-T.json" />
+    <None Include="Resources\ben.json" />
+    <None Include="Resources\bsq.json" />
+    <None Include="Resources\ccw.json" />
+    <None Include="Resources\chi-T.json" />
+    <None Include="Resources\chi.json" />
+    <None Include="Resources\cro.json" />
+    <None Include="Resources\csc.json" />
+    <None Include="Resources\ctl.json" />
+    <None Include="Resources\cze.json" />
+    <None Include="Resources\dan.json" />
+    <None Include="Resources\dtc.json" />
+    <None Include="Resources\eng.json" />
+    <None Include="Resources\fin.json" />
+    <None Include="Resources\flp.json" />
+    <None Include="Resources\fre.json" />
+    <None Include="Resources\ger.json" />
+    <None Include="Resources\hti.json" />
+    <None Include="Resources\hwi.json" />
+    <None Include="Resources\ind-T.json" />
+    <None Include="Resources\ind.json" />
+    <None Include="Resources\iri.json" />
+    <None Include="Resources\ita.json" />
+    <None Include="Resources\jpn-T.json" />
+    <None Include="Resources\jpn.json" />
+    <None Include="Resources\jvn.json" />
+    <None Include="Resources\kor-T.json" />
+    <None Include="Resources\kor.json" />
+    <None Include="Resources\ltn.json" />
+    <None Include="Resources\mal.json" />
+    <None Include="Resources\mts.json" />
+    <None Include="Resources\ndo.json" />
+    <None Include="Resources\nwg.json" />
+    <None Include="Resources\pol.json" />
+    <None Include="Resources\ptg.json" />
+    <None Include="Resources\pun-T.json" />
+    <None Include="Resources\pun.json" />
+    <None Include="Resources\rmn.json" />
+    <None Include="Resources\rus-T.json" />
+    <None Include="Resources\rus.json" />
+    <None Include="Resources\slo.json" />
+    <None Include="Resources\som.json" />
+    <None Include="Resources\spa.json" />
+    <None Include="Resources\srb-T.json" />
+    <None Include="Resources\srb.json" />
+    <None Include="Resources\swa.json" />
+    <None Include="Resources\swe.json" />
     <None Include="Resources\Themes\BrandingBlue.json" />
     <None Include="Resources\Themes\BrandingPurple.json" />
     <None Include="Resources\Data\ConsoleColorsData.json" />
@@ -417,70 +467,18 @@
     <None Include="Resources\Themes\TealerOS.json" />
     <None Include="Resources\Themes\Ubuntu.json" />
     <None Include="Resources\Themes\TrafficLight.json" />
-    <None Include="Resources\vtn.txt" />
-    <None Include="Resources\arb-T.txt" />
-    <None Include="Resources\arb.txt" />
-    <None Include="Resources\chi-T.txt" />
-    <None Include="Resources\ben.txt" />
-    <None Include="Resources\ben-T.txt" />
-    <None Include="Resources\azr.txt" />
-    <None Include="Resources\cro.txt" />
-    <None Include="Resources\jpn.txt" />
-    <None Include="Resources\ind-T.txt" />
-    <None Include="Resources\jpn-T.txt" />
-    <None Include="Resources\dan.txt" />
-    <None Include="Resources\kor.txt" />
-    <None Include="Resources\kor-T.txt" />
-    <None Include="Resources\flp.txt" />
-    <None Include="Resources\ctl.txt" />
-    <None Include="Resources\mts.txt" />
-    <None Include="Resources\ndo.txt" />
-    <None Include="Resources\nwg.txt" />
-    <None Include="Resources\pol.txt" />
-    <None Include="Resources\pun.txt" />
-    <None Include="Resources\pun-T.txt" />
-    <None Include="Resources\rmn.txt" />
-    <None Include="Resources\rus.txt" />
-    <None Include="Resources\rus-T.txt" />
-    <None Include="Resources\slo.txt" />
-    <None Include="Resources\srb.txt" />
-    <None Include="Resources\srb-T.txt" />
-    <None Include="Resources\som.txt" />
-    <None Include="Resources\swa.txt" />
-    <None Include="Resources\uzb.txt" />
-    <None Include="Resources\cze.txt" />
-    <None Include="Resources\swe.txt" />
-    <None Include="Resources\mal.txt" />
-    <None Include="Resources\ita.txt" />
-    <None Include="Resources\fin.txt" />
-    <None Include="Resources\dtc.txt" />
-    <None Include="Resources\eng.txt" />
-    <None Include="Resources\spa.txt" />
-    <None Include="Resources\ptg.txt" />
-    <None Include="Resources\ind.txt" />
-    <None Include="Resources\ger.txt" />
-    <None Include="Resources\fre.txt" />
-    <None Include="Resources\chi.txt" />
+    <None Include="Resources\uzb.json" />
+    <None Include="Resources\vtn.json" />
     <None Include="OfficialAppIcon-KernelSimulator-256.ico" Pack="true" PackagePath="\" />
     <None Include="OfficialAppIcon-KernelSimulator-256.png" Pack="true" PackagePath="\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\iri.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Themes\Windows95.json" />
-    <None Include="Resources\wls.txt" />
+    <None Include="Resources\wls.json" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="OfficialAppIcon-KernelSimulator-256.ico" />
-    <None Include="Resources\zul.txt" />
-    <None Include="Resources\hti.txt" />
-    <None Include="Resources\ccw.txt" />
-    <None Include="Resources\bsq.txt" />
-    <None Include="Resources\hwi.txt" />
-    <None Include="Resources\ltn.txt" />
-    <None Include="Resources\jvn.txt" />
-    <None Include="Resources\csc.txt" />
+    <None Include="Resources\zul.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>

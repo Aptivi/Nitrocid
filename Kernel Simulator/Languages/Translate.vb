@@ -17,16 +17,25 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Globalization
+Imports Newtonsoft.Json.Linq
 
 Public Module Translate
 
     'Variables
     Public availableLangs() As String = {"arb", "arb-T", "azr", "ben", "ben-T", "bsq", "ccw", "chi", "chi-T", "cro", "csc", "ctl", "cze", "dan", "dtc", "eng", "fin", "flp", "fre", "ger", "hti", "hwi", "ind", "ind-T", "iri", "ita", "jpn", "jpn-T", "jvn", "kor", "kor-T", "ltn", "mal", "mts", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "som", "spa", "srb", "srb-T", "swa", "swe", "uzb", "vtn", "wls", "zul"}
     Public Transliterables() As String = {"arb", "ben", "chi", "ind", "jpn", "kor", "pun", "rus", "srb"}
-    Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
     Public currentLang As String = "eng" 'Default to English
     Public CurrentCult As New CultureInfo("en-US")
     Private NotifyCodepageError As Boolean
+
+    ''' <summary>
+    ''' Translates string into current kernel language.
+    ''' </summary>
+    ''' <param name="text">Any string that exists in Kernel Simulator's translation files</param>
+    ''' <returns>Translated string</returns>
+    Public Function DoTranslation(ByVal text As String) As String
+        Return DoTranslation(text, currentLang)
+    End Function
 
     ''' <summary>
     ''' Translates string into another language, or to English if the language wasn't specified or if it's invalid.
@@ -60,15 +69,6 @@ Public Module Translate
             Wdbg("E", "{0} isn't in language list", lang)
             Return text
         End If
-    End Function
-
-    ''' <summary>
-    ''' Translates string into current kernel language.
-    ''' </summary>
-    ''' <param name="text">Any string that exists in Kernel Simulator's translation files</param>
-    ''' <returns>Translated string</returns>
-    Public Function DoTranslation(ByVal text As String) As String
-        Return DoTranslation(text, currentLang)
     End Function
 
     ''' <summary>
@@ -188,12 +188,12 @@ Public Module Translate
                 translated = My.Resources.zul
         End Select
 
-        'Convert translated string list to Dictionary
-        Dim translatedLs As List(Of String) = translated.Replace(Chr(13), "").Split(Chr(10)).ToList
+        'Make an instance of JObject from selected translation resource
+        Dim TranslatedStrings As JObject = JObject.Parse(translated)
 
         'Move final translations to dictionary
-        For ind As Integer = 0 To translatedLs.Count - 1
-            langStrings.Add(engStrings(ind), translatedLs(ind))
+        For Each TranslatedProperty As JProperty In TranslatedStrings.Properties
+            langStrings.Add(TranslatedProperty.Name, TranslatedProperty.Value)
         Next
         Return langStrings
     End Function

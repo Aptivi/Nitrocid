@@ -9,6 +9,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "KSTests", "KSTests\KSTests.
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "KSConverter", "KSConverter\KSConverter.vbproj", "{C1A047FA-2595-45CB-8E4D-1F79B7785A29}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "KSJsonifyLocales", "KSJsonifyLocales\KSJsonifyLocales.vbproj", "{3CFE671F-0079-42F7-8419-CC32329AD46C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C1A047FA-2595-45CB-8E4D-1F79B7785A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1A047FA-2595-45CB-8E4D-1F79B7785A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1A047FA-2595-45CB-8E4D-1F79B7785A29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CFE671F-0079-42F7-8419-CC32329AD46C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CFE671F-0079-42F7-8419-CC32329AD46C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CFE671F-0079-42F7-8419-CC32329AD46C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CFE671F-0079-42F7-8419-CC32329AD46C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
