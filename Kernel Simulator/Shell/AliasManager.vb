@@ -30,6 +30,7 @@ Public Module AliasManager
     Public TestShellAliases As New Dictionary(Of String, String)
     Public ZIPShellAliases As New Dictionary(Of String, String)
     Public RSSShellAliases As New Dictionary(Of String, String)
+    Friend AliasesToBeRemoved As New Dictionary(Of String, AliasType)
 
     ''' <summary>
     ''' Aliases type
@@ -239,6 +240,7 @@ Public Module AliasManager
                 'user tries to remove an alias
                 Try
                     RemoveAlias(AliasCmd, Type)
+                    PurgeAliases()
                     W(DoTranslation("Removed alias {0} successfully."), True, ColTypes.Err, AliasCmd)
                 Catch ex As Exception
                     Wdbg("E", "Failed to remove alias. Stack trace written using WStkTrc().")
@@ -328,6 +330,7 @@ Public Module AliasManager
                 Dim Aliased As String = RemoteDebugAliases(TargetAlias)
                 Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 RemoteDebugAliases.Remove(TargetAlias)
+                AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.RDebug)
                 Return True
             Else
                 Wdbg("W", "{0} is not found in remote debug aliases", TargetAlias)
@@ -338,6 +341,7 @@ Public Module AliasManager
                 Dim Aliased As String = Aliases(TargetAlias)
                 Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 Aliases.Remove(TargetAlias)
+                AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.Shell)
                 Return True
             Else
                 Wdbg("W", "{0} is not found in shell aliases", TargetAlias)
@@ -348,6 +352,7 @@ Public Module AliasManager
                 Dim Aliased As String = FTPShellAliases(TargetAlias)
                 Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 FTPShellAliases.Remove(TargetAlias)
+                AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.FTPShell)
                 Return True
             Else
                 Wdbg("W", "{0} is not found in FTP shell aliases", TargetAlias)
@@ -358,6 +363,7 @@ Public Module AliasManager
                 Dim Aliased As String = SFTPShellAliases(TargetAlias)
                 Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 SFTPShellAliases.Remove(TargetAlias)
+                AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.SFTPShell)
                 Return True
             Else
                 Wdbg("W", "{0} is not found in SFTP shell aliases", TargetAlias)
@@ -368,6 +374,7 @@ Public Module AliasManager
                 Dim Aliased As String = MailShellAliases(TargetAlias)
                 Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 MailShellAliases.Remove(TargetAlias)
+                AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.MailShell)
                 Return True
             Else
                 Wdbg("W", "{0} is not found in mail shell aliases", TargetAlias)
@@ -378,6 +385,7 @@ Public Module AliasManager
                 Dim Aliased As String = TextShellAliases(TargetAlias)
                 Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 TextShellAliases.Remove(TargetAlias)
+                AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.TextShell)
                 Return True
             Else
                 Wdbg("W", "{0} is not found in text shell aliases", TargetAlias)
@@ -388,6 +396,7 @@ Public Module AliasManager
                 Dim Aliased As String = TestShellAliases(TargetAlias)
                 Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 TestShellAliases.Remove(TargetAlias)
+                AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.TestShell)
                 Return True
             Else
                 Wdbg("W", "{0} is not found in test shell aliases", TargetAlias)
@@ -398,6 +407,7 @@ Public Module AliasManager
                 Dim Aliased As String = ZIPShellAliases(TargetAlias)
                 Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 ZIPShellAliases.Remove(TargetAlias)
+                AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.ZIPShell)
                 Return True
             Else
                 Wdbg("W", "{0} is not found in ZIP shell aliases", TargetAlias)
@@ -408,6 +418,7 @@ Public Module AliasManager
                 Dim Aliased As String = RSSShellAliases(TargetAlias)
                 Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 RSSShellAliases.Remove(TargetAlias)
+                AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.RSSShell)
                 Return True
             Else
                 Wdbg("W", "{0} is not found in RSS shell aliases", TargetAlias)
@@ -419,6 +430,49 @@ Public Module AliasManager
         End If
         Return False
     End Function
+
+    ''' <summary>
+    ''' Purge aliases that are removed from config
+    ''' </summary>
+    Public Sub PurgeAliases()
+        'Get all aliases from file
+        If Not File.Exists(paths("Aliases")) Then MakeFile(paths("Aliases"))
+        Dim AliasJsonContent As String = File.ReadAllText(paths("Aliases"))
+        Dim AliasNameToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(AliasJsonContent), AliasJsonContent, "[]"))
+
+        'Purge aliases that are to be removed from config
+        For Each TargetAliasItem As String In AliasesToBeRemoved.Keys
+            For RemovedAliasIndex As Integer = AliasNameToken.Count - 1 To 0 Step -1
+                Dim TargetAliasType As AliasType = AliasesToBeRemoved(TargetAliasItem)
+                Dim TargetAlias As String = TargetAliasItem.Substring(TargetAliasItem.IndexOf("-") + 1)
+                If TargetAliasType = AliasType.RDebug Then
+                    If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "Remote" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
+                ElseIf TargetAliasType = AliasType.Shell Then
+                    If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "Shell" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
+                ElseIf TargetAliasType = AliasType.FTPShell Then
+                    If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "FTPShell" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
+                ElseIf TargetAliasType = AliasType.SFTPShell Then
+                    If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "SFTPShell" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
+                ElseIf TargetAliasType = AliasType.MailShell Then
+                    If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "Mail" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
+                ElseIf TargetAliasType = AliasType.TextShell Then
+                    If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "Text" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
+                ElseIf TargetAliasType = AliasType.TestShell Then
+                    If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "Test" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
+                ElseIf TargetAliasType = AliasType.ZIPShell Then
+                    If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "ZIP" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
+                ElseIf TargetAliasType = AliasType.RSSShell Then
+                    If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "RSS" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
+                End If
+            Next
+        Next
+
+        'Clear the "to be removed" list of aliases
+        AliasesToBeRemoved.Clear()
+
+        'Save the changes
+        File.WriteAllText(paths("Aliases"), JsonConvert.SerializeObject(AliasNameToken, Formatting.Indented))
+    End Sub
 
     ''' <summary>
     ''' Checks to see if the specified alias exists.
