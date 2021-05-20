@@ -24,7 +24,7 @@ Imports KS
     ''' Tests translation dictionary preparation
     ''' </summary>
     <TestMethod> <TestCategory("Initialization")> Public Sub TestPrepareDict()
-        Dim ExpectedLength As Integer = KS.My.Resources.spa.Replace(Chr(13), "").Split(Chr(10)).ToList.Count
+        Dim ExpectedLength As Integer = KS.My.Resources.spa.Replace(Chr(13), "").Split(Chr(10)).ToList.Count - 2
         Dim ActualLength As Integer = PrepareDict("spa").Values.Count
         ActualLength.ShouldBe(ExpectedLength)
     End Sub
