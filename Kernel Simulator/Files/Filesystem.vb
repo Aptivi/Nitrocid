@@ -85,9 +85,9 @@ Public Module Filesystem
         'List files and folders
         folder = NeutralizePath(folder)
         If Directory.Exists(folder) Then
-            Dim enumeration As List(Of FileSystemInfo)
+            Dim enumeration As New List(Of FileSystemInfo)
             Try
-                enumeration = CreateList(folder)
+                enumeration = CreateList(folder, True)
             Catch ex As Exception
                 W(DoTranslation("Unknown error while listing in directory: {0}"), True, ColTypes.Err, ex.Message)
                 WStkTrc(ex)
@@ -140,9 +140,10 @@ Public Module Filesystem
     ''' Creates a list of files and directories
     ''' </summary>
     ''' <param name="folder">Full path to folder</param>
+    ''' <param name="Sorted">Whether the list is sorted or not</param>
     ''' <returns>List of filesystem entries if any. Empty list if folder is not found or is empty.</returns>
     ''' <exception cref="Exceptions.FilesystemException"></exception>
-    Public Function CreateList(ByVal folder As String) As List(Of FileSystemInfo)
+    Public Function CreateList(ByVal folder As String, Optional ByVal Sorted As Boolean = False) As List(Of FileSystemInfo)
         Wdbg("I", "Folder {0} will be listed...", folder)
         Dim FilesystemEntries As New List(Of FileSystemInfo)
 #If NTFSCorruptionFix Then
@@ -177,8 +178,40 @@ Public Module Filesystem
             Next
         End If
 
-        'Return the resulting list
+        'Return the resulting list immediately if not sorted. Otherwise, sort it.
+        If Sorted Then
+            'We define the max string length for the largest size. This is to overcome the limitation of sorting when it comes to numbers.
+            Dim MaxLength As Integer = FilesystemEntries.Max(Function(x) If(TryCast(x, FileInfo) IsNot Nothing, TryCast(x, FileInfo).Length, 0).ToString.Length)
+
+            'Select whether or not to sort descending.
+            Select Case SortDirection
+                Case FilesystemSortDirection.Ascending
+                    FilesystemEntries = FilesystemEntries.OrderBy(Function(x) SortSelector(x, MaxLength), StringComparer.OrdinalIgnoreCase).ToList
+                Case FilesystemSortDirection.Descending
+                    FilesystemEntries = FilesystemEntries.OrderByDescending(Function(x) SortSelector(x, MaxLength), StringComparer.OrdinalIgnoreCase).ToList
+            End Select
+        End If
         Return FilesystemEntries
+    End Function
+
+    ''' <summary>
+    ''' Helper for sorting filesystem entries
+    ''' </summary>
+    ''' <param name="FileSystemEntry">File system entry</param>
+    ''' <param name="MaxLength">For size, how many zeroes to pad the size string to the left?</param>
+    Private Function SortSelector(ByVal FileSystemEntry As FileSystemInfo, ByVal MaxLength As Integer) As String
+        Select Case SortMode
+            Case FilesystemSortOptions.FullName
+                Return FileSystemEntry.FullName
+            Case FilesystemSortOptions.Length
+                Return If(TryCast(FileSystemEntry, FileInfo) IsNot Nothing, TryCast(FileSystemEntry, FileInfo).Length, 0).ToString.PadLeft(MaxLength, "0")
+            Case FilesystemSortOptions.CreationTime
+                Return FileSystemEntry.CreationTime
+            Case FilesystemSortOptions.LastAccessTime
+                Return FileSystemEntry.LastAccessTime
+            Case FilesystemSortOptions.LastWriteTime
+                Return FileSystemEntry.LastWriteTime
+        End Select
     End Function
 
     ''' <summary>
