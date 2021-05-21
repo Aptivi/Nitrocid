@@ -32,6 +32,18 @@ Module Converter
     ''' Main entry point
     ''' </summary>
     Sub Main()
+        'Check for terminal (macOS only). This check is needed because we have the stock Terminal.app (Apple_Terminal according to $TERM_PROGRAM) that
+        'has incompatibilities with VT sequences, causing broken display. It claims it supports XTerm, yet it isn't fully XTerm-compliant, so we exit
+        'the program early when this stock terminal is spotted.
+#If STOCKTERMINALMACOS = False Then
+        If IsOnMacOS() Then
+            If GetTerminalEmulator() = "Apple_Terminal" Then
+                Console.WriteLine("Kernel Simulator makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors. This program can't continue.")
+                Environment.Exit(5)
+            End If
+        End If
+#End If
+
         'Initialize all needed variables
         Dim ListOfOldPaths = GetOldPaths("")
         Dim ListOfBackups = GetOldPaths("KSBackup")

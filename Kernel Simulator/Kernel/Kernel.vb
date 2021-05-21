@@ -40,6 +40,18 @@ Public Module Kernel
                 'A title
                 Console.Title = ConsoleTitle
 
+                'Check for terminal (macOS only). This check is needed because we have the stock Terminal.app (Apple_Terminal according to $TERM_PROGRAM) that
+                'has incompatibilities with VT sequences, causing broken display. It claims it supports XTerm, yet it isn't fully XTerm-compliant, so we exit
+                'the program early when this stock terminal is spotted.
+#If STOCKTERMINALMACOS = False Then
+                If IsOnMacOS() Then
+                    If GetTerminalEmulator() = "Apple_Terminal" Then
+                        Console.WriteLine("Kernel Simulator makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors. This program can't continue.")
+                        Environment.Exit(5)
+                    End If
+                End If
+#End If
+
                 'Initialize crucial things
                 If Not NotifThread.IsAlive Then NotifThread.Start()
                 InitPaths()
@@ -160,15 +172,36 @@ Public Module Kernel
     ''' <summary>
     ''' Is this system a Windows system?
     ''' </summary>
-    Public Function IsOnWindows()
+    Public Function IsOnWindows() As Boolean
         Return Environment.OSVersion.Platform = PlatformID.Win32NT
     End Function
 
     ''' <summary>
     ''' Is this system a Unix system?
     ''' </summary>
-    Public Function IsOnUnix()
+    Public Function IsOnUnix() As Boolean
         Return Environment.OSVersion.Platform = PlatformID.Unix
+    End Function
+
+    ''' <summary>
+    ''' Is this system a macOS system?
+    ''' </summary>
+    Public Function IsOnMacOS() As Boolean
+        If IsOnUnix() Then
+            Dim UnameS As New Process
+            Dim UnameSInfo As New ProcessStartInfo With {.FileName = "/usr/bin/uname", .Arguments = "-s",
+                                                         .CreateNoWindow = True,
+                                                         .UseShellExecute = False,
+                                                         .WindowStyle = ProcessWindowStyle.Hidden,
+                                                         .RedirectStandardOutput = True}
+            UnameS.StartInfo = UnameSInfo
+            UnameS.Start()
+            UnameS.WaitForExit()
+            Dim System As String = UnameS.StandardOutput.ReadToEnd
+            Return System.Contains("Darwin")
+        Else
+            Return False
+        End If
     End Function
 
 End Module

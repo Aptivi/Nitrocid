@@ -629,4 +629,11 @@ Public Module KernelTools
         Environment.Exit(0)
     End Sub
 
+    ''' <summary>
+    ''' Polls $TERM_PROGRAM to get terminal emulator
+    ''' </summary>
+    Public Function GetTerminalEmulator() As String
+        Return Environ("TERM_PROGRAM")
+    End Function
+
 End Module
