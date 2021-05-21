@@ -254,6 +254,9 @@ Module TestGetCommand
 #If ENABLEIMMEDIATEWINDOWDEBUG Then
             W("- ENABLEIMMEDIATEWINDOWDEBUG", True, ColTypes.Neutral)
 #End If
+#If STOCKTERMINALMACOS Then
+            W("- STOCKTERMINALMACOS", True, ColTypes.Neutral)
+#End If
         ElseIf Cmd = "testlistwriterstr" Then
             Dim NormalStringList As New Dictionary(Of String, String) From {{"One", "String 1"}, {"Two", "String 2"}, {"Three", "String 3"}}
             Dim ArrayStringList As New Dictionary(Of String, String()) From {{"One", {"String 1", "String 2", "String 3"}}, {"Two", {"String 1", "String 2", "String 3"}}, {"Three", {"String 1", "String 2", "String 3"}}}
