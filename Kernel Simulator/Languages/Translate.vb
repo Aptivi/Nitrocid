@@ -186,6 +186,8 @@ Public Module Translate
                 translated = My.Resources.wls
             Case "zul" 'Zulu
                 translated = My.Resources.zul
+            Case Else  'English
+                translated = My.Resources.eng
         End Select
 
         'Make an instance of JObject from selected translation resource
