@@ -142,7 +142,7 @@ Public Module FTPShell
                 End If
             Catch ex As Exception
                 WStkTrc(ex)
-                Throw New Exceptions.FTPShellException(DoTranslation("There was an error in the FTP shell:") + " {0}".FormatString(ex.Message), ex)
+                Throw New Exceptions.FTPShellException(DoTranslation("There was an error in the FTP shell:") + " {0}", ex, ex.Message)
             End Try
         End While
     End Sub

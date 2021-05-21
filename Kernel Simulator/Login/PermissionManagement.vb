@@ -93,12 +93,12 @@ Public Module PermissionManagement
                 Wdbg("I", "User {0} allowed (Anonymous): {1}", Username, AnonymousList(Username))
             Else
                 Wdbg("W", "Type is invalid")
-                Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid type {0}").FormatString(PermType))
+                Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid type {0}"), PermType)
                 Return False
             End If
         Else
             Wdbg("W", "User {0} not found on list", Username)
-            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid user {0}").FormatString(Username))
+            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid user {0}"), Username)
             Return False
         End If
 
@@ -136,7 +136,7 @@ Public Module PermissionManagement
                 Wdbg("I", "User {0} allowed (Anonymous): {1}", Username, AnonymousList(Username))
             Else
                 Wdbg("W", "Type is invalid")
-                Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid type {0}").FormatString(PermType))
+                Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid type {0}"), PermType)
                 Return False
             End If
         ElseIf Username = signedinusrnm Then
@@ -144,7 +144,7 @@ Public Module PermissionManagement
             Return False
         Else
             Wdbg("W", "User {0} not found on list", Username)
-            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid user {0}").FormatString(Username))
+            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid user {0}"), Username)
             Return False
         End If
 
@@ -195,10 +195,10 @@ Public Module PermissionManagement
             Catch ex As Exception
                 WStkTrc(ex)
                 Throw New Exceptions.PermissionManagementException(DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.") + vbNewLine +
-                                                                   DoTranslation("Error {0}: {1}").FormatString(Err.Number, ex.Message), ex)
+                                                                   DoTranslation("Error {0}: {1}"), ex, Err.Number, ex.Message)
             End Try
         Else
-            Throw New Exceptions.PermissionManagementException(DoTranslation("One of the permission lists doesn't contain username {0}."))
+            Throw New Exceptions.PermissionManagementException(DoTranslation("One of the permission lists doesn't contain username {0}."), OldName)
         End If
         Return False
     End Function
@@ -218,7 +218,7 @@ Public Module PermissionManagement
             Return True
         Catch ex As Exception
             WStkTrc(ex)
-            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to initialize permissions for user {0}: {1}").FormatString(NewUser, ex.Message), ex)
+            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to initialize permissions for user {0}: {1}"), ex, NewUser, ex.Message)
         End Try
         Return False
     End Function
@@ -249,7 +249,7 @@ Public Module PermissionManagement
             Return True
         Catch ex As Exception
             WStkTrc(ex)
-            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to load permissions from file: {0}").FormatString(ex.Message), ex)
+            Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to load permissions from file: {0}"), ex, ex.Message)
         End Try
         Return False
     End Function

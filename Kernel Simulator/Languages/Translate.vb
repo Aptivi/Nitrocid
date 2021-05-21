@@ -340,7 +340,7 @@ CHOICE:
                 WStkTrc(ex)
             End Try
         Else
-            Throw New Exceptions.NoSuchLanguageException(DoTranslation("Invalid language") + " {0}".FormatString(lang))
+            Throw New Exceptions.NoSuchLanguageException(DoTranslation("Invalid language") + " {0}", lang)
         End If
         Return False
     End Function

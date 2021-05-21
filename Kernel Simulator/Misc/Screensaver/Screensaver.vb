@@ -260,7 +260,7 @@ Public Module Screensaver
             ScrnSvrdb(saver) = setDef
         Else
             Wdbg("W", "{0} is not found.", saver)
-            Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found in database. Check the name and try again.").FormatString(saver))
+            Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found in database. Check the name and try again."), saver)
         End If
     End Sub
 
@@ -474,7 +474,7 @@ Public Module Screensaver
     ''' <param name="CustomSaver">A custom saver</param>
     ''' <exception cref="Exceptions.NoSuchScreensaverException"></exception>
     Public Sub AddCustomSaverToSettings(ByVal CustomSaver As String)
-        If Not CSvrdb.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found.").FormatString(CustomSaver))
+        If Not CSvrdb.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found."), CustomSaver)
         If Not CustomSaverSettingsToken.ContainsKey(CustomSaver) Then
             Dim NewCustomSaver As New JObject
             For Each Setting As String In CSvrdb(CustomSaver).SaverSettings.Keys
@@ -492,8 +492,8 @@ Public Module Screensaver
     ''' <exception cref="Exceptions.NoSuchScreensaverException"></exception>
     ''' <exception cref="Exceptions.ScreensaverManagementException"></exception>
     Public Sub RemoveCustomSaverFromSettings(ByVal CustomSaver As String)
-        If Not CSvrdb.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found.").FormatString(CustomSaver))
-        If Not CustomSaverSettingsToken.Remove(CustomSaver) Then Throw New Exceptions.ScreensaverManagementException(DoTranslation("Failed to remove screensaver {0} from config.").FormatString(CustomSaver))
+        If Not CSvrdb.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found."), CustomSaver)
+        If Not CustomSaverSettingsToken.Remove(CustomSaver) Then Throw New Exceptions.ScreensaverManagementException(DoTranslation("Failed to remove screensaver {0} from config."), CustomSaver)
         File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
     End Sub
 
@@ -505,7 +505,7 @@ Public Module Screensaver
     ''' <returns>Saver setting value if successful; nothing if unsuccessful.</returns>
     ''' <exception cref="Exceptions.NoSuchScreensaverException"></exception>
     Public Function GetCustomSaverSettings(ByVal CustomSaver As String, ByVal SaverSetting As String) As Object
-        If Not CustomSaverSettingsToken.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found.").FormatString(CustomSaver))
+        If Not CustomSaverSettingsToken.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found."), CustomSaver)
         For Each Setting As JProperty In CustomSaverSettingsToken(CustomSaver)
             If Setting.Name = SaverSetting Then
                 Return Setting.Value.ToObject(GetType(Object))
@@ -522,7 +522,7 @@ Public Module Screensaver
     ''' <returns>True if successful; False if unsuccessful.</returns>
     ''' <exception cref="Exceptions.NoSuchScreensaverException"></exception>
     Public Function SetCustomSaverSettings(ByVal CustomSaver As String, ByVal SaverSetting As String, ByVal Value As Object) As Boolean
-        If Not CustomSaverSettingsToken.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found.").FormatString(CustomSaver))
+        If Not CustomSaverSettingsToken.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found."), CustomSaver)
         Dim SettingFound As Boolean
         For Each Setting As JProperty In CustomSaverSettingsToken(CustomSaver)
             If Setting.Name = SaverSetting Then

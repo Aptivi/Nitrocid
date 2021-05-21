@@ -439,7 +439,7 @@ Public Module Config
             EventManager.RaiseConfigSaveError(ex)
             If DebugMode = True Then
                 WStkTrc(ex)
-                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration: {0}.").FormatString(ex.Message), ex)
+                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration: {0}."), ex, ex.Message)
             Else
                 Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration."), ex)
             End If
@@ -468,7 +468,7 @@ Public Module Config
         Catch ex As Exception
             If DebugMode = True Then
                 WStkTrc(ex)
-                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to update configuration: {0}.").FormatString(ex.Message), ex)
+                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to update configuration: {0}."), ex, ex.Message)
             Else
                 Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to update configuration."), ex)
             End If
@@ -654,14 +654,15 @@ Public Module Config
             'Raise event and return true
             EventManager.RaiseConfigRead()
             Return True
-        Catch nre As NullReferenceException 'Old config file being read. It is not appropriate to let KS crash on startup when the old version is read, so convert.
+        Catch nre As NullReferenceException
+            'Old config file being read. It is not appropriate to let KS crash on startup when the old version is read, so convert.
             Wdbg("W", "Detected incompatible/old version of config. Renewing...")
-            UpgradeConfig() 'Upgrades the config if there are any changes.
+            UpgradeConfig()
         Catch ex As Exception
             EventManager.RaiseConfigReadError(ex)
             WStkTrc(ex)
             NotifyConfigError = True
-            Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to read configuration: {0}.").FormatString(ex.Message), ex)
+            Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to read configuration: {0}."), ex, ex.Message)
         End Try
         Return False
     End Function

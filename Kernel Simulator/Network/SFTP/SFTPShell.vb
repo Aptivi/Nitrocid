@@ -134,7 +134,7 @@ Public Module SFTPShell
                 End If
             Catch ex As Exception
                 WStkTrc(ex)
-                Throw New Exceptions.SFTPShellException(DoTranslation("There was an error in the SFTP shell:") + " {0}".FormatString(ex.Message), ex)
+                Throw New Exceptions.SFTPShellException(DoTranslation("There was an error in the SFTP shell:") + " {0}", ex, ex.Message)
             End Try
         End While
     End Sub

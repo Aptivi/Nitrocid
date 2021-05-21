@@ -400,7 +400,7 @@ Public Module ColorTools
             Catch ex As Exception
                 WStkTrc(ex)
                 EventManager.RaiseColorSetError("invalidcolors")
-                Throw New Exceptions.ColorException(DoTranslation("One or more of the colors is invalid.") + " {0}".FormatString(ex.Message), ex)
+                Throw New Exceptions.ColorException(DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message)
             End Try
         Else
             EventManager.RaiseColorSetError("nocolors")

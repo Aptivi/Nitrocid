@@ -61,7 +61,7 @@ Module FTPFilesystem
                 Return Entries
             Catch ex As Exception
                 WStkTrc(ex)
-                Throw New Exceptions.FTPFilesystemException(DoTranslation("Failed to list remote files: {0}").FormatString(ex.Message), ex)
+                Throw New Exceptions.FTPFilesystemException(DoTranslation("Failed to list remote files: {0}"), ex, ex.Message)
             End Try
         Else
             Throw New InvalidOperationException(DoTranslation("You should connect to server before listing all remote files."))
@@ -88,7 +88,7 @@ Module FTPFilesystem
                 ClientFTP.DeleteDirectory(Target)
             Else
                 Wdbg("E", "{0} is not found.", Target)
-                Throw New Exceptions.FTPFilesystemException(DoTranslation("{0} is not found in the server.").FormatString(Target))
+                Throw New Exceptions.FTPFilesystemException(DoTranslation("{0} is not found in the server."), Target)
                 Return False
             End If
             Wdbg("I", "Deleted {0}", Target)
@@ -117,7 +117,7 @@ Module FTPFilesystem
                     Return True
                 Else
                     'Directory doesn't exist, go to the old directory
-                    Throw New Exceptions.FTPFilesystemException(DoTranslation("Directory {0} not found.").FormatString(Directory))
+                    Throw New Exceptions.FTPFilesystemException(DoTranslation("Directory {0} not found."), Directory)
                 End If
             Else
                 Throw New ArgumentNullException(Directory, DoTranslation("Enter a remote directory. "".."" to go back"))
@@ -148,7 +148,7 @@ Module FTPFilesystem
                 currDirect = parser.FullName
                 Return True
             Else
-                Throw New Exceptions.FTPFilesystemException(DoTranslation("Local directory {0} doesn't exist.").FormatString(Directory))
+                Throw New Exceptions.FTPFilesystemException(DoTranslation("Local directory {0} doesn't exist."), Directory)
             End If
         Else
             Throw New ArgumentNullException(Directory, DoTranslation("Enter a local directory. "".."" to go back."))

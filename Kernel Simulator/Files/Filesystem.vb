@@ -159,7 +159,7 @@ Public Module Filesystem
             Catch ex As Exception
                 Wdbg("E", "Failed to make a list of filesystem entries for directory {0}: {1}", folder, ex.Message)
                 WStkTrc(ex)
-                Throw New Exceptions.FilesystemException(DoTranslation("Failed to make a list of filesystem entries for directory") + " " + folder, ex)
+                Throw New Exceptions.FilesystemException(DoTranslation("Failed to make a list of filesystem entries for directory") + " {0}", ex, folder)
             End Try
             For Each Entry As String In enumeration
                 Wdbg("I", "Enumerating {0}...", Entry)
@@ -809,7 +809,7 @@ Public Module Filesystem
         Catch ex As Exception
             WStkTrc(ex)
             Wdbg("E", "Failed to save current directory: {0}", ex.Message)
-            Throw New Exceptions.FilesystemException(DoTranslation("Failed to change host name: {0}").FormatString(ex.Message), ex)
+            Throw New Exceptions.FilesystemException(DoTranslation("Failed to save current directory: {0}"), ex, ex.Message)
         End Try
         Return False
     End Function
