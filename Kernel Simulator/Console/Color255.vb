@@ -40,9 +40,9 @@ Public Class ConsoleColorsInfo
     ''' <returns></returns>
     Public ReadOnly Property B As Integer
     ''' <summary>
-    ''' Is the color dark?
+    ''' Is the color bright?
     ''' </summary>
-    Public ReadOnly Property IsDark As Boolean
+    Public ReadOnly Property IsBright As Boolean
 
     ''' <summary>
     ''' Makes a new instance of 255-color console color information
@@ -56,7 +56,7 @@ Public Class ConsoleColorsInfo
             R = ColorData("rgb")("r")
             G = ColorData("rgb")("g")
             B = ColorData("rgb")("b")
-            IsDark = R + 0.2126 + G + 0.7152 + B + 0.0722 > 255 / 2
+            IsBright = R + 0.2126 + G + 0.7152 + B + 0.0722 > 255 / 2
         Else
             Throw New ArgumentOutOfRangeException(NameOf(ColorValue), ColorValue, DoTranslation("The color value is outside the range of 0-255."))
         End If

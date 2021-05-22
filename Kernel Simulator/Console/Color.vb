@@ -52,9 +52,9 @@ Public Class Color
     ''' </summary>
     Public ReadOnly Property Type As ColorType
     ''' <summary>
-    ''' Is the color dark?
+    ''' Is the color bright?
     ''' </summary>
-    Public ReadOnly Property IsDark As Boolean
+    Public ReadOnly Property IsBright As Boolean
 
     ''' <summary>
     ''' Makes a new instance of color class from specifier.
@@ -72,7 +72,7 @@ Public Class Color
                 VTSequenceBackground = "<48;2;{0}m>".FormatString(PlainSequence)
                 VTSequenceBackground.ConvertVTSequences
                 Type = ColorType.TrueColor
-                IsDark = ColorSpecifierArray(0) + 0.2126 + ColorSpecifierArray(1) + 0.7152 + ColorSpecifierArray(2) + 0.0722 > 255 / 2
+                IsBright = ColorSpecifierArray(0) + 0.2126 + ColorSpecifierArray(1) + 0.7152 + ColorSpecifierArray(2) + 0.0722 > 255 / 2
                 R = ColorSpecifierArray(0)
                 G = ColorSpecifierArray(1)
                 B = ColorSpecifierArray(2)
@@ -86,7 +86,7 @@ Public Class Color
             VTSequenceBackground = "<48;5;{0}m>".FormatString(ColorSpecifier)
             VTSequenceBackground.ConvertVTSequences
             Type = ColorType._255Color
-            IsDark = ColorsInfo.IsDark
+            IsBright = ColorsInfo.IsBright
             R = ColorsInfo.R
             G = ColorsInfo.G
             B = ColorsInfo.B

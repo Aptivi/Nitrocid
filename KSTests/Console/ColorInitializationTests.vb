@@ -41,7 +41,7 @@ Imports KS
         ColorInstance.R.ShouldBe(255)
         ColorInstance.G.ShouldBe(0)
         ColorInstance.B.ShouldBe(255)
-        ColorInstance.IsDark.ShouldBeTrue
+        ColorInstance.IsBright.ShouldBeTrue
     End Sub
 
     ''' <summary>
@@ -65,7 +65,7 @@ Imports KS
         ColorInstance.R.ShouldBe(94)
         ColorInstance.G.ShouldBe(0)
         ColorInstance.B.ShouldBe(63)
-        ColorInstance.IsDark.ShouldBeTrue
+        ColorInstance.IsBright.ShouldBeTrue
     End Sub
 
 End Class
