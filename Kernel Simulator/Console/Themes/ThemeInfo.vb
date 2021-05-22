@@ -77,6 +77,10 @@ Public Class ThemeInfo
     ''' Option color set by theme
     ''' </summary>
     Public ReadOnly Property ThemeOptionColor As Color
+    ''' <summary>
+    ''' Banner color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeBannerColor As Color
 
     ''' <summary>
     ''' Generates a new theme info from KS resources
@@ -98,6 +102,7 @@ Public Class ThemeInfo
         ThemeErrorColor = New Color(ThemeResourceJson.SelectToken("ErrorColor").ToString)
         ThemeWarningColor = New Color(ThemeResourceJson.SelectToken("WarningColor").ToString)
         ThemeOptionColor = New Color(ThemeResourceJson.SelectToken("OptionColor").ToString)
+        ThemeBannerColor = New Color(ThemeResourceJson.SelectToken("BannerColor").ToString)
     End Sub
 
     ''' <summary>
@@ -120,6 +125,7 @@ Public Class ThemeInfo
         ThemeErrorColor = New Color(ThemeResourceJson.SelectToken("ErrorColor").ToString)
         ThemeWarningColor = New Color(ThemeResourceJson.SelectToken("WarningColor").ToString)
         ThemeOptionColor = New Color(ThemeResourceJson.SelectToken("OptionColor").ToString)
+        ThemeBannerColor = New Color(ThemeResourceJson.SelectToken("BannerColor").ToString)
     End Sub
 
 End Class

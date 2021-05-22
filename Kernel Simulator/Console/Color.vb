@@ -159,6 +159,10 @@ Public Module ColorTools
         ''' Option text
         ''' </summary>
         [Option]
+        ''' <summary>
+        ''' Banner text
+        ''' </summary>
+        Banner
     End Enum
 
     ''' <summary>
@@ -190,6 +194,7 @@ Public Module ColorTools
     Public ErrorColor As String = New Color(ConsoleColors.Red).PlainSequence
     Public WarningColor As String = New Color(ConsoleColors.Yellow).PlainSequence
     Public OptionColor As String = New Color(ConsoleColors.DarkYellow).PlainSequence
+    Public BannerColor As String = New Color(ConsoleColors.Green).PlainSequence
 
     'Templates array (available ones)
     Public colorTemplates As New Dictionary(Of String, ThemeInfo) From {{"Default", New ThemeInfo("_Default")},
@@ -241,6 +246,7 @@ Public Module ColorTools
         ErrorColor = DefInfo.ThemeErrorColor.PlainSequence
         WarningColor = DefInfo.ThemeWarningColor.PlainSequence
         OptionColor = DefInfo.ThemeOptionColor.PlainSequence
+        BannerColor = DefInfo.ThemeBannerColor.PlainSequence
         LoadBack()
 
         'Raise event
@@ -290,7 +296,7 @@ Public Module ColorTools
                           ThemeInfo.ThemeUncontKernelErrorColor.PlainSequence, ThemeInfo.ThemeHostNameShellColor.PlainSequence, ThemeInfo.ThemeUserNameShellColor.PlainSequence,
                           ThemeInfo.ThemeBackgroundColor.PlainSequence, ThemeInfo.ThemeNeutralTextColor.PlainSequence, ThemeInfo.ThemeCmdListColor.PlainSequence,
                           ThemeInfo.ThemeCmdDefColor.PlainSequence, ThemeInfo.ThemeStageColor.PlainSequence, ThemeInfo.ThemeErrorColor.PlainSequence,
-                          ThemeInfo.ThemeWarningColor.PlainSequence, ThemeInfo.ThemeOptionColor.PlainSequence)
+                          ThemeInfo.ThemeWarningColor.PlainSequence, ThemeInfo.ThemeOptionColor.PlainSequence, ThemeInfo.ThemeBannerColor.PlainSequence)
 #Enable Warning BC42104
             End If
 
@@ -324,7 +330,7 @@ Public Module ColorTools
                           ThemeInfo.ThemeUncontKernelErrorColor.PlainSequence, ThemeInfo.ThemeHostNameShellColor.PlainSequence, ThemeInfo.ThemeUserNameShellColor.PlainSequence,
                           ThemeInfo.ThemeBackgroundColor.PlainSequence, ThemeInfo.ThemeNeutralTextColor.PlainSequence, ThemeInfo.ThemeCmdListColor.PlainSequence,
                           ThemeInfo.ThemeCmdDefColor.PlainSequence, ThemeInfo.ThemeStageColor.PlainSequence, ThemeInfo.ThemeErrorColor.PlainSequence,
-                          ThemeInfo.ThemeWarningColor.PlainSequence, ThemeInfo.ThemeOptionColor.PlainSequence)
+                          ThemeInfo.ThemeWarningColor.PlainSequence, ThemeInfo.ThemeOptionColor.PlainSequence, ThemeInfo.ThemeBannerColor.PlainSequence)
             End If
 
             'Raise event
@@ -379,12 +385,14 @@ Public Module ColorTools
     ''' <param name="CmdDefColor">Command definition color</param>
     ''' <param name="StageColor">Stage color</param>
     ''' <param name="ErrorColor">Error color</param>
+    ''' <param name="OptionColor">Option color</param>
+    ''' <param name="BannerColor">Banner color</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="InvalidOperationException"></exception>
     ''' <exception cref="Exceptions.ColorException"></exception>
     Public Function SetColors(InputColor As String, LicenseColor As String, ContKernelErrorColor As String, UncontKernelErrorColor As String, HostNameColor As String, UserNameColor As String,
                               BackColor As String, NeutralTextColor As String, CmdListColor As String, CmdDefColor As String, StageColor As String, ErrorColor As String, WarningColor As String,
-                              OptionColor As String) As Boolean
+                              OptionColor As String, BannerColor As String) As Boolean
         'Check colors for null and set them to "def" if found
         If String.IsNullOrEmpty(OptionColor) Then OptionColor = "def"
         If String.IsNullOrEmpty(WarningColor) Then WarningColor = "def"
@@ -400,6 +408,7 @@ Public Module ColorTools
         If String.IsNullOrEmpty(ContKernelErrorColor) Then ContKernelErrorColor = "def"
         If String.IsNullOrEmpty(LicenseColor) Then LicenseColor = "def"
         If String.IsNullOrEmpty(InputColor) Then InputColor = "def"
+        If String.IsNullOrEmpty(BannerColor) Then BannerColor = "def"
 
         'Set colors
         If ColoredShell = True Then
@@ -418,6 +427,7 @@ Public Module ColorTools
             If ErrorColor = "def" Then ErrorColor = New Color(ConsoleColors.Red).PlainSequence
             If WarningColor = "def" Then WarningColor = New Color(ConsoleColors.Yellow).PlainSequence
             If OptionColor = "def" Then OptionColor = New Color(ConsoleColors.DarkYellow).PlainSequence
+            If BannerColor = "def" Then OptionColor = New Color(ConsoleColors.Green).PlainSequence
             If BackColor = "def" Then
                 BackColor = New Color(ConsoleColors.Black).PlainSequence
                 LoadBack()
@@ -439,6 +449,7 @@ Public Module ColorTools
                 ColorTools.ErrorColor = New Color(ErrorColor).PlainSequence
                 ColorTools.WarningColor = New Color(WarningColor).PlainSequence
                 ColorTools.OptionColor = New Color(OptionColor).PlainSequence
+                ColorTools.BannerColor = New Color(BannerColor).PlainSequence
                 LoadBack()
                 MakePermanent()
 

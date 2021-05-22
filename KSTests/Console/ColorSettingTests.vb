@@ -27,7 +27,7 @@ Imports KS
         InitPaths()
         SetColors(ConsoleColors.White, ConsoleColors.White, ConsoleColors.Yellow, ConsoleColors.Red, ConsoleColors.DarkGreen, ConsoleColors.Green,
                   ConsoleColors.Black, ConsoleColors.Gray, ConsoleColors.DarkYellow, ConsoleColors.DarkGray, ConsoleColors.Green, ConsoleColors.Red,
-                  ConsoleColors.Yellow, ConsoleColors.DarkYellow).ShouldBeTrue
+                  ConsoleColors.Yellow, ConsoleColors.DarkYellow, ConsoleColors.Green).ShouldBeTrue
     End Sub
 
 End Class

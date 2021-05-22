@@ -12,5 +12,6 @@
     "StageColor": "0",
     "ErrorColor": "0",
     "WarningColor": "0",
-    "OptionColor": "0"
+    "OptionColor": "0",
+    "BannerColor": "0"
 }

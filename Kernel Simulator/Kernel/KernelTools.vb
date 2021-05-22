@@ -396,9 +396,9 @@ Public Module KernelTools
 
         'Show welcome message.
         If StartScroll Then
-            WriteSlowlyC("      >> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<", True, 10, ColTypes.Neutral, KernelVersion)
+            WriteSlowlyC("      >> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<", True, 10, ColTypes.Banner, KernelVersion)
         Else
-            W("      >> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<", True, ColTypes.Neutral, KernelVersion)
+            W("      >> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<", True, ColTypes.Banner, KernelVersion)
         End If
 
         'Show license

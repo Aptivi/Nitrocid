@@ -59,7 +59,8 @@ Public Module Config
                         New IniKey(ksconf, "Kernel Stage Color", If(New Color(StageColor).Type = ColorType.TrueColor, StageColor.EncloseByDoubleQuotes, StageColor)),
                         New IniKey(ksconf, "Error Text Color", If(New Color(ErrorColor).Type = ColorType.TrueColor, ErrorColor.EncloseByDoubleQuotes, ErrorColor)),
                         New IniKey(ksconf, "Warning Text Color", If(New Color(WarningColor).Type = ColorType.TrueColor, WarningColor.EncloseByDoubleQuotes, WarningColor)),
-                        New IniKey(ksconf, "Option Color", If(New Color(OptionColor).Type = ColorType.TrueColor, OptionColor.EncloseByDoubleQuotes, OptionColor))))
+                        New IniKey(ksconf, "Option Color", If(New Color(OptionColor).Type = ColorType.TrueColor, OptionColor.EncloseByDoubleQuotes, OptionColor)),
+                        New IniKey(ksconf, "Banner Color", If(New Color(BannerColor).Type = ColorType.TrueColor, BannerColor.EncloseByDoubleQuotes, BannerColor))))
 
                 'The Hardware Section
                 ksconf.Sections.Add(
@@ -201,7 +202,8 @@ Public Module Config
                         New IniKey(ksconf, "Kernel Stage Color", If(New Color(StageColor).Type = ColorType.TrueColor, StageColor.EncloseByDoubleQuotes, StageColor)),
                         New IniKey(ksconf, "Error Text Color", If(New Color(ErrorColor).Type = ColorType.TrueColor, ErrorColor.EncloseByDoubleQuotes, ErrorColor)),
                         New IniKey(ksconf, "Warning Text Color", If(New Color(WarningColor).Type = ColorType.TrueColor, WarningColor.EncloseByDoubleQuotes, WarningColor)),
-                        New IniKey(ksconf, "Option Color", If(New Color(OptionColor).Type = ColorType.TrueColor, OptionColor.EncloseByDoubleQuotes, OptionColor))))
+                        New IniKey(ksconf, "Option Color", If(New Color(OptionColor).Type = ColorType.TrueColor, OptionColor.EncloseByDoubleQuotes, OptionColor)),
+                        New IniKey(ksconf, "Banner Color", If(New Color(BannerColor).Type = ColorType.TrueColor, BannerColor.EncloseByDoubleQuotes, BannerColor))))
 
                 'The Hardware Section
                 ksconf.Sections.Add(
@@ -327,7 +329,7 @@ Public Module Config
             ksconf.Sections("General").Keys("Language").TrailingComment.Text = "The three-letter language name should be written. All languages can be found in the chlang command wiki."
 
             'Colors
-            ksconf.Sections("Colors").TrailingComment.Text = "Self-explanatory. You can just write the name of colors as specified in the ConsoleColors enumerator."
+            ksconf.Sections("Colors").TrailingComment.Text = "Self-explanatory. You can just write the name of colors as specified in the ConsoleColors enumerator or a plain VT sequence that contains the RGB levels like this: RRR;GGG;BBB."
 
             'Login
             ksconf.Sections("Login").TrailingComment.Text = "This section is the login settings that lets you control the host name and whether or not it shows MOTD and/or clears screen."
@@ -544,6 +546,7 @@ Public Module Config
                 ErrorColor = New Color(configReader.Sections("Colors").Keys("Error Text Color").Value).PlainSequence
                 WarningColor = New Color(configReader.Sections("Colors").Keys("Warning Text Color").Value).PlainSequence
                 OptionColor = New Color(configReader.Sections("Colors").Keys("Option Color").Value).PlainSequence
+                BannerColor = New Color(configReader.Sections("Colors").Keys("Banner Color").Value).PlainSequence
                 LoadBack()
             End If
 

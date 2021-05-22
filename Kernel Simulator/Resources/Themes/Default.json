@@ -12,5 +12,6 @@
     "StageColor": "10",
     "ErrorColor": "9",
     "WarningColor": "11",
-    "OptionColor": "3"
+    "OptionColor": "3",
+    "BannerColor": "10"
 }

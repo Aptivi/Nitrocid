@@ -77,6 +77,10 @@ Module ThemeStudioTools
     ''' Selected option color for new theme
     ''' </summary>
     Friend SelectedOptionColor As New Color(OptionColor)
+    ''' <summary>
+    ''' Selected banner color for new theme
+    ''' </summary>
+    Friend SelectedBannerColor As New Color(BannerColor)
 
     ''' <summary>
     ''' Saves theme to current directory under "<paramref name="Theme"/>.json."
@@ -131,6 +135,7 @@ Module ThemeStudioTools
         SelectedErrorColor = ThemeInfo.ThemeErrorColor
         SelectedWarningColor = ThemeInfo.ThemeWarningColor
         SelectedOptionColor = ThemeInfo.ThemeOptionColor
+        SelectedBannerColor = ThemeInfo.ThemeBannerColor
     End Sub
 
     ''' <summary>
@@ -156,6 +161,7 @@ Module ThemeStudioTools
         SelectedErrorColor = ThemeInfo.ThemeErrorColor
         SelectedWarningColor = ThemeInfo.ThemeWarningColor
         SelectedOptionColor = ThemeInfo.ThemeOptionColor
+        SelectedBannerColor = ThemeInfo.ThemeBannerColor
     End Sub
 
     ''' <summary>
@@ -176,7 +182,8 @@ Module ThemeStudioTools
                            New JProperty("StageColor", SelectedStageColor.PlainSequence),
                            New JProperty("ErrorColor", SelectedErrorColor.PlainSequence),
                            New JProperty("WarningColor", SelectedWarningColor.PlainSequence),
-                           New JProperty("OptionColor", SelectedOptionColor.PlainSequence))
+                           New JProperty("OptionColor", SelectedOptionColor.PlainSequence),
+                           New JProperty("BannerColor", SelectedBannerColor.PlainSequence))
     End Function
 
 End Module

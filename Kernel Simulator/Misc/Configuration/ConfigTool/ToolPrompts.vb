@@ -156,7 +156,7 @@ Public Module ToolPrompts
                     W("8) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(SFTPShellPromptStyle)))
                     W("9) " + DoTranslation("Custom colors...", currentLang) + vbNewLine, True, ColTypes.Option)
                 Case "4.9" 'Custom colors...
-                    MaxOptions = 14
+                    MaxOptions = 15
                     W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Custom colors...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lets you choose what type of color do you want to change.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Input color") + " [{0}] ", True, ColTypes.Option, InputColor)
@@ -172,7 +172,8 @@ Public Module ToolPrompts
                     W("11) " + DoTranslation("Stage color") + " [{0}] ", True, ColTypes.Option, StageColor)
                     W("12) " + DoTranslation("Error color") + " [{0}] ", True, ColTypes.Option, ErrorColor)
                     W("13) " + DoTranslation("Warning color") + " [{0}] ", True, ColTypes.Option, WarningColor)
-                    W("14) " + DoTranslation("Option color") + " [{0}] " + vbNewLine, True, ColTypes.Option, OptionColor)
+                    W("14) " + DoTranslation("Option color") + " [{0}] ", True, ColTypes.Option, OptionColor)
+                    W("15) " + DoTranslation("Banner color") + " [{0}] " + vbNewLine, True, ColTypes.Option, BannerColor)
                 Case "5" 'Network
                     MaxOptions = 12
                     W("*) " + DoTranslation("Network Settings...") + vbNewLine, True, ColTypes.Neutral)
@@ -656,6 +657,11 @@ Public Module ToolPrompts
                             KeyVar = NameOf(OptionColor)
                             VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(OptionColor).Type = ColorType.TrueColor, If(New Color(OptionColor).Type = ColorType._255Color, New Color(OptionColor).PlainSequence, ConsoleColors.White), New Color(OptionColor).R, New Color(OptionColor).G, New Color(OptionColor).B)
+                        Case 15 'Banner color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(BannerColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(BannerColor).Type = ColorType.TrueColor, If(New Color(BannerColor).Type = ColorType._255Color, New Color(BannerColor).PlainSequence, ConsoleColors.White), New Color(BannerColor).R, New Color(BannerColor).G, New Color(BannerColor).B)
                     End Select
                 Case "5" 'Network
                     Select Case KeyNumber

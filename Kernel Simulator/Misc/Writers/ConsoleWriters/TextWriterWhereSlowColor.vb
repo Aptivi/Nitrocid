@@ -67,6 +67,8 @@ Module TextWriterWhereSlowColor
                     Write(New Color(WarningColor).VTSequenceForeground)
                 ElseIf colorType = ColTypes.Option Then
                     Write(New Color(OptionColor).VTSequenceForeground)
+                ElseIf colorType = ColTypes.Banner Then
+                    Write(New Color(BannerColor).VTSequenceForeground)
                 Else
                     Exit Sub
                 End If

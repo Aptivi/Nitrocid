@@ -68,7 +68,7 @@ Public Module Login
             'Show MOTD once
             Wdbg("I", "showMOTDOnceFlag = {0}, showMOTD = {1}", showMOTDOnceFlag, showMOTD)
             If showMOTDOnceFlag = True And showMOTD = True Then
-                W(vbNewLine + ProbePlaces(MOTDMessage), True, ColTypes.Neutral)
+                W(vbNewLine + ProbePlaces(MOTDMessage), True, ColTypes.Banner)
             End If
             showMOTDOnceFlag = False
 
@@ -195,7 +195,7 @@ Public Module Login
         If LockMode = True Then LockMode = False
         Wdbg("I", "Lock released.")
         showMOTDOnceFlag = True
-        W(ProbePlaces(MAL), True, ColTypes.Neutral)
+        W(ProbePlaces(MAL), True, ColTypes.Banner)
 
         'Fire event PostLogin
         EventManager.RaisePostLogin(signedinusrnm)

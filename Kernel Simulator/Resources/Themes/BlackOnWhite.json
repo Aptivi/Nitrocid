@@ -3,7 +3,7 @@
     "LicenseColor": "0",
     "ContKernelErrorColor": "0",
     "UncontKernelErrorColor": "0",
-    "HostNameShellColor":"0",
+    "HostNameShellColor": "0",
     "UserNameShellColor": "0",
     "BackgroundColor": "15",
     "NeutralTextColor": "0",
@@ -12,5 +12,6 @@
     "StageColor": "0",
     "ErrorColor": "0",
     "WarningColor": "0",
-    "OptionColor": "0"
+    "OptionColor": "0",
+    "BannerColor": "0"
 }
