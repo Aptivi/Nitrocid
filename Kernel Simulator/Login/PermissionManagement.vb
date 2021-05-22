@@ -169,7 +169,7 @@ Public Module PermissionManagement
     ''' <exception cref="Exceptions.PermissionManagementException"></exception>
     Public Function PermissionEditForNewUser(ByVal OldName As String, ByVal Username As String) As Boolean
         'Edit username
-        If adminList.ContainsKey(OldName) = True And disabledList.ContainsKey(OldName) = True Then
+        If adminList.ContainsKey(OldName) And disabledList.ContainsKey(OldName) And AnonymousList.ContainsKey(OldName) Then
             Try
                 'Store permissions
                 Dim AdminAllowed As Boolean = adminList(OldName)
