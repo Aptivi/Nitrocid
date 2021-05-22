@@ -56,6 +56,7 @@ Public Module Kernel
                 If Not NotifThread.IsAlive Then NotifThread.Start()
                 InitPaths()
                 If Not IsOnUnix() Then Initialize255()
+                Dim StageTimer As New Stopwatch
 
                 'Check if factory reset is required
                 If Environment.GetCommandLineArgs.Contains("reset") Then
@@ -75,6 +76,7 @@ Public Module Kernel
 #End If
 
                 'Initialize everything
+                StageTimer.Start()
                 InitEverything()
 
                 'For config
@@ -84,16 +86,17 @@ Public Module Kernel
                     Exit Try
                 End If
 
-                'If the two files are not found, create two MOTD files with current config.
-                If Not File.Exists(paths("MOTD")) Then SetMOTD(DoTranslation("Welcome to Kernel!"), MessageType.MOTD)
-                If Not File.Exists(paths("MAL")) Then SetMOTD(DoTranslation("Logged in successfully as <user>"), MessageType.MAL)
-
-                'Initialize stage counter
-                W(vbNewLine + DoTranslation("- Stage 1: System initialization"), True, ColTypes.Stage)
+                'Stage 1: Initialize the system
+                W(DoTranslation("Internal initialization finished in") + " {0}", True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
+                W(vbNewLine + DoTranslation("- Stage 1: System initialization") + " >>", True, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 1: Initializing system")
                 StartRDebugThread(True)
                 W(DoTranslation("Starting RPC..."), True, ColTypes.Neutral)
                 StartRPC()
+
+                'If the two files are not found, create two MOTD files with current config.
+                If Not File.Exists(paths("MOTD")) Then SetMOTD(DoTranslation("Welcome to Kernel!"), MessageType.MOTD)
+                If Not File.Exists(paths("MAL")) Then SetMOTD(DoTranslation("Logged in successfully as <user>"), MessageType.MAL)
 
                 'Check for kernel updates
 #If SPECIFIER <> "DEV" And SPECIFIER <> "RC" And SPECIFIER <> "NEARING" Then
@@ -102,13 +105,15 @@ Public Module Kernel
                 End If
 #End If
 
-                'Phase 1: Probe hardware
-                W(vbNewLine + DoTranslation("- Stage 2: Hardware detection"), True, ColTypes.Stage)
+                'Phase 2: Probe hardware
+                W(DoTranslation("Stage finished in") + " {0}", True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
+                W(vbNewLine + DoTranslation("- Stage 2: Hardware detection") + " >>", True, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 2: Probing hardware")
                 StartProbing()
 
-                'Phase 2: Parse Mods and Screensavers
-                W(vbNewLine + DoTranslation("- Stage 3: Mods and screensavers detection"), True, ColTypes.Stage)
+                'Phase 3: Parse Mods and Screensavers
+                W(DoTranslation("Stage finished in") + " {0}", True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
+                W(vbNewLine + DoTranslation("- Stage 3: Mods and screensavers detection") + " >>", True, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 3: Parse mods and screensavers")
                 Wdbg("I", "Safe mode flag is set to {0}", SafeMode)
                 If Not SafeMode Then
@@ -118,8 +123,9 @@ Public Module Kernel
                 End If
                 EventManager.RaiseStartKernel()
 
-                'Phase 3: Log-in
-                W(vbNewLine + DoTranslation("- Stage 4: Log in"), True, ColTypes.Stage)
+                'Phase 4: Log-in
+                W(DoTranslation("Stage finished in") + " {0}", True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
+                W(vbNewLine + DoTranslation("- Stage 4: Log in") + " >>", True, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 4: Log in")
                 InitializeSystemAccount()
                 LoginFlag = True
@@ -149,6 +155,7 @@ Public Module Kernel
                 End If
 
                 'Initialize login prompt
+                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Stop()
                 DisposeAll()
                 If LoginFlag = True And maintenance = False Then
                     LoginPrompt()

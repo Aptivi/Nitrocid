@@ -396,9 +396,9 @@ Public Module KernelTools
 
         'Show welcome message.
         If StartScroll Then
-            WriteSlowlyC(">> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<", True, 10, ColTypes.Neutral, KernelVersion)
+            WriteSlowlyC("      >> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<", True, 10, ColTypes.Neutral, KernelVersion)
         Else
-            W(">> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<", True, ColTypes.Neutral, KernelVersion)
+            W("      >> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<", True, ColTypes.Neutral, KernelVersion)
         End If
 
         'Show license
@@ -407,6 +407,9 @@ Public Module KernelTools
                       "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +
                       "    This is free software, and you are welcome to redistribute it" + vbNewLine +
                       "    under certain conditions; See COPYING file in source code." + vbNewLine, True, ColTypes.License)
+
+        'Some cosmetics
+        W("---------------------------------------------------------------------", True, ColTypes.Gray)
         W("OS: " + DoTranslation("Running on {0}"), True, ColTypes.Neutral, Environment.OSVersion.ToString)
         W("KS: " + DoTranslation("Built in {0}"), True, ColTypes.Neutral, Render(GetCompileDate()))
 
