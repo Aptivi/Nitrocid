@@ -258,6 +258,7 @@ Public Module Config
                         New IniKey(ksconf, "BouncingBlock - Activate 255 Color Mode", "False"),
                         New IniKey(ksconf, "ProgressClock - Activate 255 Color Mode", "False"),
                         New IniKey(ksconf, "Lighter - Activate 255 Color Mode", "False"),
+                        New IniKey(ksconf, "Wipe - Activate 255 Color Mode", "False"),
                         New IniKey(ksconf, "ColorMix - Activate True Color Mode", "True"),
                         New IniKey(ksconf, "Disco - Activate True Color Mode", "True"),
                         New IniKey(ksconf, "GlitterColor - Activate True Color Mode", "True"),
@@ -266,6 +267,7 @@ Public Module Config
                         New IniKey(ksconf, "BouncingBlock - Activate True Color Mode", "True"),
                         New IniKey(ksconf, "ProgressClock - Activate True Color Mode", "True"),
                         New IniKey(ksconf, "Lighter - Activate True Color Mode", "True"),
+                        New IniKey(ksconf, "Wipe - Activate True Color Mode", "True"),
                         New IniKey(ksconf, "Disco - Cycle Colors", "False"),
                         New IniKey(ksconf, "ProgressClock - Cycle Colors", "True"),
                         New IniKey(ksconf, "ProgressClock - Ticks to change color", 20),
@@ -286,6 +288,7 @@ Public Module Config
                         New IniKey(ksconf, "Fader - Fade Out Delay in Milliseconds", 3000),
                         New IniKey(ksconf, "Typo - Delay in Milliseconds", 50),
                         New IniKey(ksconf, "Typo - Write Again Delay in Milliseconds", 3000),
+                        New IniKey(ksconf, "Wipe - Delay in Milliseconds", 10),
                         New IniKey(ksconf, "BouncingText - Text Shown", "Kernel Simulator"),
                         New IniKey(ksconf, "Fader - Text Shown", "Kernel Simulator"),
                         New IniKey(ksconf, "Typo - Text Shown", "Kernel Simulator"),
@@ -293,7 +296,8 @@ Public Module Config
                         New IniKey(ksconf, "Fader - Max Fade Steps", 25),
                         New IniKey(ksconf, "Typo - Minimum writing speed in WPM", 50),
                         New IniKey(ksconf, "Typo - Maximum writing speed in WPM", 80),
-                        New IniKey(ksconf, "Typo - Probability of typo in percent", 60)))
+                        New IniKey(ksconf, "Typo - Probability of typo in percent", 60),
+                        New IniKey(ksconf, "Wipe - Wipes to change direction", 10)))
 
                 'Misc Section
                 ksconf.Sections.Add(
