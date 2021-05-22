@@ -146,8 +146,8 @@ Public Module KernelTools
     Sub GeneratePanicDump(ByVal Description As String, ByVal ErrorType As Char, ByVal Exc As Exception)
         Try
             'Open a file stream for dump
-            Dim Dump As New StreamWriter($"{paths("Home")}/dmp_{RenderDate.Replace("/", "-")}_{RenderTime.Replace(":", "-")}.txt")
-            Wdbg("I", "Opened file stream in home directory, saved as dmp_{0}.txt", $"{RenderDate.Replace("/", "-")}_{RenderTime.Replace(":", "-")}")
+            Dim Dump As New StreamWriter($"{paths("Home")}/dmp_{RenderDate(FormatType.Short).Replace("/", "-")}_{RenderTime(FormatType.Short).Replace(":", "-")}.txt")
+            Wdbg("I", "Opened file stream in home directory, saved as dmp_{0}.txt", $"{RenderDate(FormatType.Short).Replace("/", "-")}_{RenderTime(FormatType.Short).Replace(":", "-")}")
 
             'Write info (Header)
             Dump.AutoFlush = True
@@ -155,7 +155,7 @@ Public Module KernelTools
                            DoTranslation(">> Panic information <<") + vbNewLine +
                            DoTranslation("> Description: {0}") + vbNewLine +
                            DoTranslation("> Error type: {1}") + vbNewLine +
-                           DoTranslation("> Date and Time: {2}") + vbNewLine, Description, ErrorType, FormatDateTime(Date.Now, DateFormat.GeneralDate))
+                           DoTranslation("> Date and Time: {2}") + vbNewLine, Description, ErrorType, Render)
 
             'Write Info (Exception)
             If Not IsNothing(Exc) Then
