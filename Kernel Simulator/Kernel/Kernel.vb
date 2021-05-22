@@ -169,7 +169,7 @@ Public Module Kernel
                 End If
             Catch ex As Exception
                 If DebugMode = True Then
-                    W(ex.StackTrace, True, ColTypes.Err) : WStkTrc(ex)
+                    W(ex.StackTrace, True, ColTypes.Error) : WStkTrc(ex)
                 End If
                 KernelError("U", True, 5, DoTranslation("Kernel Error while booting: {0}"), ex, ex.Message)
             End Try

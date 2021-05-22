@@ -518,7 +518,7 @@ Public Module HelpSystem
 
         Else
 
-            W(DoTranslation("No help for command ""{0}""."), True, ColTypes.Err, command)
+            W(DoTranslation("No help for command ""{0}""."), True, ColTypes.Error, command)
 
         End If
 

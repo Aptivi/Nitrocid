@@ -81,7 +81,7 @@ Module MailGetCommand
                     If FullArgsLQ(0).IsNumeric Then
                         W(MailListMessages(FullArgsLQ(0)), False, ColTypes.Neutral)
                     Else
-                        W(DoTranslation("Page is not a numeric value."), True, ColTypes.Err)
+                        W(DoTranslation("Page is not a numeric value."), True, ColTypes.Error)
                     End If
                 Else
                     W(MailListMessages(1), False, ColTypes.Neutral)
@@ -94,7 +94,7 @@ Module MailGetCommand
                     If FullArgsLQ(0).IsNumeric Then
                         MailPrintMessage(FullArgsLQ(0))
                     Else
-                        W(DoTranslation("Message number is not a numeric value."), True, ColTypes.Err)
+                        W(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
                     End If
                 End If
             ElseIf cmd = "readenc" Then
@@ -103,7 +103,7 @@ Module MailGetCommand
                     If FullArgsLQ(0).IsNumeric Then
                         MailPrintMessage(FullArgsLQ(0), True)
                     Else
-                        W(DoTranslation("Message number is not a numeric value."), True, ColTypes.Err)
+                        W(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
                     End If
                 End If
             ElseIf cmd = "send" Or cmd = "sendenc" Then
@@ -158,7 +158,7 @@ Module MailGetCommand
                             W(DoTranslation("Message sent."), True, ColTypes.Neutral)
                         Else
                             Wdbg("E", "See debug output to find what's wrong.")
-                            W(DoTranslation("Error sending message."), True, ColTypes.Err)
+                            W(DoTranslation("Error sending message."), True, ColTypes.Error)
                         End If
                     Else
                         If MailSendMessage(Receiver, Subject, Body.ToMessageBody) Then
@@ -166,12 +166,12 @@ Module MailGetCommand
                             W(DoTranslation("Message sent."), True, ColTypes.Neutral)
                         Else
                             Wdbg("E", "See debug output to find what's wrong.")
-                            W(DoTranslation("Error sending message."), True, ColTypes.Err)
+                            W(DoTranslation("Error sending message."), True, ColTypes.Error)
                         End If
                     End If
                 Else
                     Wdbg("E", "Mail format unsatisfied.")
-                    W(DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:") + " john.s@example.com", True, ColTypes.Err)
+                    W(DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:") + " john.s@example.com", True, ColTypes.Error)
                 End If
             ElseIf cmd = "rm" Then
                 If RequiredArgsProvided Then
@@ -179,7 +179,7 @@ Module MailGetCommand
                     If FullArgsLQ(0).IsNumeric Then
                         MailRemoveMessage(FullArgsLQ(0))
                     Else
-                        W(DoTranslation("Message number is not a numeric value."), True, ColTypes.Err)
+                        W(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
                     End If
                 End If
             ElseIf cmd = "rmall" Then
@@ -196,7 +196,7 @@ Module MailGetCommand
                     If FullArgsLQ(0).IsNumeric Then
                         MailMoveMessage(FullArgsLQ(0), FullArgsLQ(1))
                     Else
-                        W(DoTranslation("Message number is not a numeric value."), True, ColTypes.Err)
+                        W(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
                     End If
                 End If
             ElseIf cmd = "mvall" Then
@@ -222,13 +222,13 @@ Module MailGetCommand
             End If
 
             If MailCommands(cmd).ArgumentsRequired And Not RequiredArgsProvided Then
-                W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Err, cmd)
+                W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Error, cmd)
                 Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", cmd, FullArgsLQ?.Count)
                 IMAPShowHelp(cmd)
             End If
         Catch ex As Exception
             EventManager.RaiseIMAPCommandError(cmd + " " + args, ex)
-            W(DoTranslation("Error executing mail command: {0}"), True, ColTypes.Err, ex.Message)
+            W(DoTranslation("Error executing mail command: {0}"), True, ColTypes.Error, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub

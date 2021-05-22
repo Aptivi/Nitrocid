@@ -62,7 +62,7 @@ Public Module TextWriterColor
                         Write(New Color(ListEntryColor).VTSequenceForeground)
                     ElseIf colorType = ColTypes.Stage Then
                         Write(New Color(StageColor).VTSequenceForeground)
-                    ElseIf colorType = ColTypes.Err Then
+                    ElseIf colorType = ColTypes.Error Then
                         Write(New Color(ErrorColor).VTSequenceForeground)
                     ElseIf colorType = ColTypes.Warning Then
                         Write(New Color(WarningColor).VTSequenceForeground)

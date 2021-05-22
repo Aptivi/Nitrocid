@@ -42,8 +42,8 @@ Module ReportBugPrompt
                     [Step] += 1
                 Case Else '???
                     Wdbg("W", "Option is not valid. Returning...")
-                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Err, AnswerKind)
-                    W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerKind)
+                    W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
             End Select
         End While
@@ -56,8 +56,8 @@ Module ReportBugPrompt
             Wdbg("I", "Answer: {0}", AnswerFeature)
             If String.IsNullOrWhiteSpace(AnswerFeature) Then
                 Wdbg("W", "Text written is not valid. Returning...")
-                W(DoTranslation("You must specify a feature."), True, ColTypes.Err)
-                W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                W(DoTranslation("You must specify a feature."), True, ColTypes.Error)
+                W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
             Else
                 [Step] += 1
@@ -72,8 +72,8 @@ Module ReportBugPrompt
             Wdbg("I", "Answer: {0}", AnswerRequest)
             If String.IsNullOrWhiteSpace(AnswerRequest) Then
                 Wdbg("W", "Text written is not valid. Returning...")
-                W(DoTranslation("You must write your request."), True, ColTypes.Err)
-                W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                W(DoTranslation("You must write your request."), True, ColTypes.Error)
+                W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
             Else
                 Exit While

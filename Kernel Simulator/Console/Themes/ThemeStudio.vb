@@ -162,14 +162,14 @@ Module ThemeStudio
                     End Select
                 Else
                     Wdbg("W", "Option is not valid. Returning...")
-                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Err, NumericResponse)
-                    W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, NumericResponse)
+                    W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
                 End If
             Else
                 Wdbg("W", "Answer is not numeric.")
-                W(DoTranslation("The answer must be numeric."), True, ColTypes.Err)
-                W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
             End If
         End While

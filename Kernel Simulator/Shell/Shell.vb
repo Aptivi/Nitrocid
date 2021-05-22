@@ -213,7 +213,7 @@ Public Module Shell
                     End If
                 Catch ex As Exception
                     WStkTrc(ex)
-                    W(DoTranslation("There was an error in the shell.") + vbNewLine + "Error {0}: {1}", True, ColTypes.Err, Err.Number, ex.Message)
+                    W(DoTranslation("There was an error in the shell.") + vbNewLine + "Error {0}: {1}", True, ColTypes.Error, Err.Number, ex.Message)
                     Continue While
                 End Try
             End If
@@ -317,13 +317,13 @@ Public Module Shell
                     If Commands.ContainsKey(strcommand) Then
                         If adminList(signedinusrnm) = False And Commands(strcommand).Strict Then
                             Wdbg("W", "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", strcommand)
-                            W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Err, strcommand)
+                            W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, strcommand)
                         ElseIf maintenance = True And Commands(strcommand).NoMaintenance Then
                             Wdbg("W", "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", strcommand)
-                            W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Err, strcommand)
+                            W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Error, strcommand)
                         ElseIf IsInvokedByKernelArgument And (strcommand.StartsWith("logout") Or strcommand.StartsWith("shutdown") Or strcommand.StartsWith("reboot")) Then
                             Wdbg("W", "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", strcommand)
-                            W(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Err, strcommand)
+                            W(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Error, strcommand)
                         ElseIf (adminList(signedinusrnm) = True And Commands(strcommand).Strict) Or Commands.ContainsKey(strcommand) Then
                             Wdbg("I", "Cmd exec {0} succeeded. Running with {1}", strcommand, cmdArgs)
                             StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand) With {.Name = "Shell Command Thread"}
@@ -366,7 +366,7 @@ Public Module Shell
                                 End While
                             Catch ex As Exception
                                 Wdbg("E", "Failed to start process: {0}", ex.Message)
-                                W(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Err, strcommand, ex.Message)
+                                W(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Error, strcommand, ex.Message)
                                 WStkTrc(ex)
                             End Try
                         ElseIf File.Exists(TargetFile) And TargetFile.EndsWith(".uesh") Then
@@ -374,7 +374,7 @@ Public Module Shell
                             Execute(TargetFile, scriptArgs.Join(" "))
                         Else
                             Wdbg("W", "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", strcommand, indexCmd)
-                            W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Err, strcommand)
+                            W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Error, strcommand)
                         End If
                     End If
                 End If
@@ -386,11 +386,11 @@ Public Module Shell
             End If
         Catch ex As Exception
             If DebugMode = True Then
-                W(DoTranslation("Error trying to execute command.") + vbNewLine + DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Err,
+                W(DoTranslation("Error trying to execute command.") + vbNewLine + DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Error,
                   Err.Number, ex.Message, ex.StackTrace)
                 WStkTrc(ex)
             Else
-                W(DoTranslation("Error trying to execute command.") + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Err, Err.Number, ex.Message)
+                W(DoTranslation("Error trying to execute command.") + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, Err.Number, ex.Message)
             End If
         End Try
         Console.Title = ConsoleTitle

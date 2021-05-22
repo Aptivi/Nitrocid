@@ -35,11 +35,11 @@ Public Module MailTransfer
         Wdbg("I", "Message number {0}", Message)
         If Message < 0 Then
             Wdbg("E", "Trying to access message 0 or less than 0.")
-            W(DoTranslation("Message number may not be negative or zero."), True, ColTypes.Err)
+            W(DoTranslation("Message number may not be negative or zero."), True, ColTypes.Error)
             Exit Sub
         ElseIf Message > MaxMessagesIndex Then
             Wdbg("E", "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex)
-            W(DoTranslation("Message specified is not found."), True, ColTypes.Err)
+            W(DoTranslation("Message specified is not found."), True, ColTypes.Error)
             Exit Sub
         End If
 

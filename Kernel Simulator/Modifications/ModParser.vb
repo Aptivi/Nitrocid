@@ -138,9 +138,9 @@ Public Module ModParser
         Wdbg("I", "Has errors: {0}", res.Errors.HasErrors)
         Wdbg("I", "Has warnings: {0}", res.Errors.HasWarnings)
         If res.Errors.HasErrors Then
-            W(DoTranslation("Mod can't be loaded because of the following: "), True, ColTypes.Err)
+            W(DoTranslation("Mod can't be loaded because of the following: "), True, ColTypes.Error)
             For Each errorName In res.Errors
-                W(errorName.ToString, True, ColTypes.Err)
+                W(errorName.ToString, True, ColTypes.Error)
                 Wdbg("E", errorName.ToString)
             Next
             Exit Function
@@ -205,7 +205,7 @@ Public Module ModParser
                 W(DoTranslation("mod: No mods detected."), True, ColTypes.Neutral)
             End If
         Else
-            W(DoTranslation("Parsing mods not allowed on safe mode."), True, ColTypes.Err)
+            W(DoTranslation("Parsing mods not allowed on safe mode."), True, ColTypes.Error)
         End If
     End Sub
 
@@ -242,11 +242,11 @@ Public Module ModParser
             Catch ex As ReflectionTypeLoadException
                 Wdbg("E", "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message)
                 WStkTrc(ex)
-                W(DoTranslation("Mod can't be loaded because of the following: "), True, ColTypes.Err)
+                W(DoTranslation("Mod can't be loaded because of the following: "), True, ColTypes.Error)
                 For Each LoaderException As Exception In ex.LoaderExceptions
                     Wdbg("E", "Loader exception: {0}", LoaderException.Message)
                     WStkTrc(LoaderException)
-                    W(LoaderException.Message, True, ColTypes.Err)
+                    W(LoaderException.Message, True, ColTypes.Error)
                 Next
             End Try
         Else
@@ -273,14 +273,14 @@ Public Module ModParser
                 'See if the mod has part name
                 If script.ModPart = "" Then
                     Wdbg("W", "No part name for {0}", modFile)
-                    W(DoTranslation("Mod {0} does not have the part name. Mod parsing failed. Review the source code."), True, ColTypes.Err, modFile)
+                    W(DoTranslation("Mod {0} does not have the part name. Mod parsing failed. Review the source code."), True, ColTypes.Error, modFile)
                     Exit Sub
                 End If
 
                 'See if the mod has command
                 If script.Cmd = "" Then
                     Wdbg("W", "No command for {0}", modFile)
-                    W(DoTranslation("Mod {0} does not have the command. Mod parsing failed. Review the source code."), True, ColTypes.Err, modFile)
+                    W(DoTranslation("Mod {0} does not have the command. Mod parsing failed. Review the source code."), True, ColTypes.Error, modFile)
                     Exit Sub
                 End If
 
@@ -429,7 +429,7 @@ Public Module ModParser
             Catch ex As Exception
                 EventManager.RaiseModFinalizationFailed(modFile, ex.Message)
                 WStkTrc(ex)
-                W(DoTranslation("Failed to finalize mod {0}: {1}"), True, ColTypes.Err, modFile, ex.Message)
+                W(DoTranslation("Failed to finalize mod {0}: {1}"), True, ColTypes.Error, modFile, ex.Message)
             End Try
         Else
             EventManager.RaiseModParseError(modFile)

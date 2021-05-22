@@ -71,8 +71,8 @@ Public Module SSH
                     Exit While
                 Case Else
                     Wdbg("W", "Option is not valid. Returning...")
-                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Err, Answer)
-                    W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, Answer)
+                    W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
             End Select
         End While
@@ -107,12 +107,12 @@ Public Module SSH
                         Catch ex As Exception
                             WStkTrc(ex)
                             Wdbg("E", "Error trying to add private key authentication method: {0}", ex.Message)
-                            W(DoTranslation("Error trying to add private key:") + " {0}", True, ColTypes.Err, ex.Message)
+                            W(DoTranslation("Error trying to add private key:") + " {0}", True, ColTypes.Error, ex.Message)
                         End Try
                     ElseIf PrivateKeyFile.EndsWith("/q") Then
                         Exit While
                     Else
-                        W(DoTranslation("Key file {0} doesn't exist."), True, ColTypes.Err, PrivateKeyFile)
+                        W(DoTranslation("Key file {0} doesn't exist."), True, ColTypes.Error, PrivateKeyFile)
                     End If
                 End While
 
@@ -155,7 +155,7 @@ Public Module SSH
             End If
         Catch ex As Exception
             EventManager.RaiseSSHError(ex)
-            W(DoTranslation("Error trying to connect to SSH server: {0}"), True, ColTypes.Err, ex.Message)
+            W(DoTranslation("Error trying to connect to SSH server: {0}"), True, ColTypes.Error, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub

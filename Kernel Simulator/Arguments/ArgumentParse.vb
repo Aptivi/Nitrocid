@@ -86,7 +86,7 @@ Module ArgumentParse
 
                     End If
                 Else
-                    W(DoTranslation("bargs: The requested argument {0} is not found."), True, ColTypes.Err, BootArgs(i).Substring(0, indexArg))
+                    W(DoTranslation("bargs: The requested argument {0} is not found."), True, ColTypes.Error, BootArgs(i).Substring(0, indexArg))
                 End If
             Next
         Catch ex As Exception

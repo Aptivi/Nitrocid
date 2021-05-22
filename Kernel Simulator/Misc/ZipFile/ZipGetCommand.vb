@@ -105,13 +105,13 @@ Public Module ZipGetCommand
             ElseIf Command = "chdir" Then
                 If RequiredArgumentsProvided Then
                     If Not ChangeWorkingZipLocalDirectory(Arguments(0)) Then
-                        W(DoTranslation("Directory {0} doesn't exist"), True, ColTypes.Err, Arguments(0))
+                        W(DoTranslation("Directory {0} doesn't exist"), True, ColTypes.Error, Arguments(0))
                     End If
                 End If
             ElseIf Command = "chadir" Then
                 If RequiredArgumentsProvided Then
                     If Not ChangeWorkingArchiveDirectory(Arguments(0)) Then
-                        W(DoTranslation("Archive directory {0} doesn't exist"), True, ColTypes.Err, Arguments(0))
+                        W(DoTranslation("Archive directory {0} doesn't exist"), True, ColTypes.Error, Arguments(0))
                     End If
                 End If
             ElseIf Command = "cdir" Then
@@ -120,12 +120,12 @@ Public Module ZipGetCommand
 
             'See if the command is done (passed all required arguments)
             If ZipShell_Commands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
-                W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Err, Command)
+                W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Error, Command)
                 Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, Arguments?.Length)
                 ZipShell_GetHelp(Command)
             End If
         Catch ex As Exception
-            W(DoTranslation("Error trying to run command: {0}"), True, ColTypes.Err, ex.Message)
+            W(DoTranslation("Error trying to run command: {0}"), True, ColTypes.Error, ex.Message)
             Wdbg("E", "Error running command {0}: {1}", CommandText.Split(" ")(0), ex.Message)
             WStkTrc(ex)
             EventManager.RaiseZipCommandError(CommandText, ex)

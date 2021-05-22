@@ -45,7 +45,7 @@ Module RemoteProcedure
                     Throw New ThreadStateException()
                 End If
             Catch ex As ThreadStateException
-                W(DoTranslation("RPC is already running."), True, ColTypes.Err)
+                W(DoTranslation("RPC is already running."), True, ColTypes.Error)
                 WStkTrc(ex)
             End Try
         Else

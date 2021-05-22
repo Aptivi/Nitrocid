@@ -103,27 +103,75 @@ Public Module ColorTools
     ''' Enumeration for color types
     ''' </summary>
     Public Enum ColTypes As Integer
-        Neutral = 1
-        Input = 2
-        Continuable = 3
-        Uncontinuable = 4
-        HostName = 5
-        UserName = 6
-        License = 7
-        Gray = 8
-        ListValue = 9
-        ListEntry = 10
-        Stage = 11
-        Err = 12
-        Warning = 13
-        [Option] = 14
+        ''' <summary>
+        ''' Neutral text (for general purposes)
+        ''' </summary>
+        Neutral
+        ''' <summary>
+        ''' Input text
+        ''' </summary>
+        Input
+        ''' <summary>
+        ''' Continuable kernel panic text (usually sync'd with Warning)
+        ''' </summary>
+        Continuable
+        ''' <summary>
+        ''' Uncontinuable kernel panic text (usually sync'd with Error)
+        ''' </summary>
+        Uncontinuable
+        ''' <summary>
+        ''' Host name color
+        ''' </summary>
+        HostName
+        ''' <summary>
+        ''' User name color
+        ''' </summary>
+        UserName
+        ''' <summary>
+        ''' License color
+        ''' </summary>
+        License
+        ''' <summary>
+        ''' Gray color (for special purposes)
+        ''' </summary>
+        Gray
+        ''' <summary>
+        ''' List value text
+        ''' </summary>
+        ListValue
+        ''' <summary>
+        ''' List entry text
+        ''' </summary>
+        ListEntry
+        ''' <summary>
+        ''' Stage text
+        ''' </summary>
+        Stage
+        ''' <summary>
+        ''' Error text
+        ''' </summary>
+        [Error]
+        ''' <summary>
+        ''' Warning text
+        ''' </summary>
+        Warning
+        ''' <summary>
+        ''' Option text
+        ''' </summary>
+        [Option]
     End Enum
 
     ''' <summary>
     ''' Color type enumeration
     ''' </summary>
     Public Enum ColorType
+        ''' <summary>
+        ''' Color is a true color
+        ''' </summary>
         TrueColor
+        ''' <summary>
+        ''' Color is a 256-bit color
+        ''' </summary>
         _255Color
     End Enum
 
@@ -249,7 +297,7 @@ Public Module ColorTools
             'Raise event
             EventManager.RaiseThemeSet(theme)
         Else
-            W(DoTranslation("Invalid color template {0}"), True, ColTypes.Err, theme)
+            W(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, theme)
             Wdbg("E", "Theme not found.")
 
             'Raise event
@@ -282,7 +330,7 @@ Public Module ColorTools
             'Raise event
             EventManager.RaiseThemeSet(ThemeFile)
         Catch ex As Exception
-            W(DoTranslation("Invalid color template {0}"), True, ColTypes.Err, ThemeFile)
+            W(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, ThemeFile)
             Wdbg("E", "Theme not found.")
 
             'Raise event

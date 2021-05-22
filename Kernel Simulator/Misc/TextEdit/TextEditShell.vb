@@ -55,7 +55,7 @@ Public Module TextEditShell
             If IsNothing(TextEdit_FileStream) Then
                 Wdbg("W", "File not open yet. Trying to open {0}...", FilePath)
                 If Not TextEdit_OpenTextFile(FilePath) Then
-                    W(DoTranslation("Failed to open file. Exiting shell..."), True, ColTypes.Err)
+                    W(DoTranslation("Failed to open file. Exiting shell..."), True, ColTypes.Error)
                     Exit While
                 End If
                 TextEdit_AutoSave.Start()
@@ -93,7 +93,7 @@ Public Module TextEditShell
                     Wdbg("I", "Text shell alias command found.")
                     ExecuteTextAlias(WrittenCommand)
                 Else
-                    W(DoTranslation("The specified text editor command is not found."), True, ColTypes.Err)
+                    W(DoTranslation("The specified text editor command is not found."), True, ColTypes.Error)
                     Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), TextEdit_Commands.Count)
                 End If
             End If

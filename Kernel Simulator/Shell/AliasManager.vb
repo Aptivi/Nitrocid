@@ -234,29 +234,29 @@ Public Module AliasManager
                 Catch ex As Exception
                     Wdbg("E", "Failed to add alias. Stack trace written using WStkTrc().")
                     WStkTrc(ex)
-                    W(ex.Message, True, ColTypes.Err)
+                    W(ex.Message, True, ColTypes.Error)
                 End Try
             ElseIf mode = "rem" Then
                 'user tries to remove an alias
                 Try
                     RemoveAlias(AliasCmd, Type)
                     PurgeAliases()
-                    W(DoTranslation("Removed alias {0} successfully."), True, ColTypes.Err, AliasCmd)
+                    W(DoTranslation("Removed alias {0} successfully."), True, ColTypes.Error, AliasCmd)
                 Catch ex As Exception
                     Wdbg("E", "Failed to remove alias. Stack trace written using WStkTrc().")
                     WStkTrc(ex)
-                    W(ex.Message, True, ColTypes.Err)
+                    W(ex.Message, True, ColTypes.Error)
                 End Try
             Else
                 Wdbg("E", "Mode {0} was neither add nor rem.", mode)
-                W(DoTranslation("Invalid mode {0}."), True, ColTypes.Err, mode)
+                W(DoTranslation("Invalid mode {0}."), True, ColTypes.Error, mode)
             End If
 
             'Save all aliases
             SaveAliases()
         Else
             Wdbg("E", "Type {0} not found.", Type)
-            W(DoTranslation("Invalid type {0}."), True, ColTypes.Err, Type)
+            W(DoTranslation("Invalid type {0}."), True, ColTypes.Error, Type)
         End If
     End Sub
 

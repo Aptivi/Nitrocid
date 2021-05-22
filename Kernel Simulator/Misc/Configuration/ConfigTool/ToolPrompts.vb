@@ -73,7 +73,7 @@ Public Module ToolPrompts
                         CreateConfig(True)
                         SaveCustomSaverSettings()
                     Catch ex As Exception
-                        W(ex.Message, True, ColTypes.Err)
+                        W(ex.Message, True, ColTypes.Error)
                         WStkTrc(ex)
                         Console.ReadKey()
                     End Try
@@ -82,14 +82,14 @@ Public Module ToolPrompts
                     PromptFinished = True
                 Else
                     Wdbg("W", "Option is not valid. Returning...")
-                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Err, AnswerInt)
-                    W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerInt)
+                    W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
                 End If
             Else
                 Wdbg("W", "Answer is not numeric.")
-                W(DoTranslation("The answer must be numeric."), True, ColTypes.Err)
-                W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
             End If
         End While
@@ -357,7 +357,7 @@ Public Module ToolPrompts
                     W("12) " + DoTranslation("Filesystem sort direction") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(SortDirection)))
                 Case Else 'Invalid section
                     W("*) ???" + vbNewLine, True, ColTypes.Neutral)
-                    W("X) " + DoTranslation("Invalid section entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                    W("X) " + DoTranslation("Invalid section entered. Please go back.") + vbNewLine, True, ColTypes.Error)
             End Select
             W("{0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.Option, MaxOptions + 1)
             Wdbg("W", "Section {0} has {1} selections.", SectionNum, MaxOptions)
@@ -400,14 +400,14 @@ Public Module ToolPrompts
                     SectionFinished = True
                 Else
                     Wdbg("W", "Option is not valid. Returning...")
-                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Err, AnswerInt)
-                    W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerInt)
+                    W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
                 End If
             Else
                 Wdbg("W", "Answer is not numeric.")
-                W(DoTranslation("The answer must be numeric."), True, ColTypes.Err)
-                W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
             End If
         End While
@@ -468,7 +468,7 @@ Public Module ToolPrompts
                             W(DoTranslation("When switching languages, change the month names, calendar, etc.") + vbNewLine, True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("General Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "1.3" 'General -> Change Root Password
                     Select Case KeyNumber
@@ -485,11 +485,11 @@ Public Module ToolPrompts
                                 KeyVar = NameOf(RootPasswd)
                                 W("*) " + DoTranslation("Write the root password to be set. Don't worry; the password are shown as stars."), True, ColTypes.Neutral)
                             Else
-                                W("X) " + DoTranslation("Enable ""Change Root Password"" to use this option. Please go back.") + vbNewLine, True, ColTypes.Err)
+                                W("X) " + DoTranslation("Enable ""Change Root Password"" to use this option. Please go back.") + vbNewLine, True, ColTypes.Error)
                             End If
                         Case Else
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "2" 'Hardware
                     Select Case KeyNumber
@@ -507,7 +507,7 @@ Public Module ToolPrompts
                             W(DoTranslation("If true, probes all the hardware; else, will only probe the needed hardware.") + vbNewLine, True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Hardware Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "3" 'Login
                     Select Case KeyNumber
@@ -531,7 +531,7 @@ Public Module ToolPrompts
                             W(DoTranslation("Shows available users if enabled.") + vbNewLine, True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Login Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "4" 'Shell
                     Select Case KeyNumber
@@ -582,7 +582,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Shell Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "4.9" 'Shell -> Custom colors
                     Select Case KeyNumber
@@ -729,7 +729,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Write an RPC port. It must be numeric, and must not be already used. Otherwise, RPC will fail to open the port."), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Network Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "6" 'Screensaver
                     Select Case KeyNumber
@@ -740,7 +740,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Write when to launch screensaver after specified milliseconds. It must be numeric."), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "6.1" 'ColorMix
                     Select Case KeyNumber
@@ -763,7 +763,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > ColorMix > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "6.2" 'Matrix
                     Select Case KeyNumber
@@ -774,7 +774,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Matrix > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "6.3" 'GlitterMatrix
                     Select Case KeyNumber
@@ -785,7 +785,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > GlitterMatrix > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "6.4" 'Disco
                     Select Case KeyNumber
@@ -814,7 +814,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Disco > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "6.5" 'Lines
                     Select Case KeyNumber
@@ -837,7 +837,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Lines > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "6.6" 'GlitterColor
                     Select Case KeyNumber
@@ -860,7 +860,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Lines > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "6.7" 'BouncingText
                     Select Case KeyNumber
@@ -876,7 +876,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Write any text you want shown. Shorter is better."), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingText > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "6.8" 'Dissolve
                     Select Case KeyNumber
@@ -894,7 +894,7 @@ Public Module ToolPrompts
                             W(DoTranslation("Activates true color support for Dissolve.") + vbNewLine, True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Dissolve > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "6.9" 'BouncingBlock
                     Select Case KeyNumber
@@ -917,7 +917,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingBlock > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "6.10" 'ProgressClock
                     Select Case KeyNumber
@@ -966,7 +966,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("If color cycling is enabled, how many ticks before changing colors in ProgressClock? 1 tick = 0.5 seconds"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "6.11" 'Lighter
                     Select Case KeyNumber
@@ -994,7 +994,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("How many positions are lit before dimming?"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Lighter > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "6.12" 'Fader
                     Select Case KeyNumber
@@ -1020,7 +1020,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("How many fade steps to do?"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Fader > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "6.13" 'Typo
                     Select Case KeyNumber
@@ -1056,7 +1056,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Probability of typo in percent"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Typo > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "6.14" 'Wipe
                     Select Case KeyNumber
@@ -1084,7 +1084,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("How many wipes to do before changing direction randomly?"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Wipe > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case "6." + $"{If(SectionParts.Length > 1, SectionParts(1), $"{BuiltinSavers + 1}")}" 'Custom saver
                     Dim SaverIndex As Integer = SectionParts(1) - BuiltinSavers - 1
@@ -1097,7 +1097,7 @@ Public Module ToolPrompts
                         W("*) " + DoTranslation("Consult the screensaver manual or source code for information."), True, ColTypes.Neutral)
                     Else
                         W("*) " + DoTranslation("Screensaver Settings...") + " > {0} > ???" + vbNewLine, True, ColTypes.Neutral, CSvrdb.Keys(SaverIndex))
-                        W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                        W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End If
                 Case "7" 'Misc
                     Select Case KeyNumber
@@ -1183,11 +1183,11 @@ Public Module ToolPrompts
                             W("2) " + DoTranslation("Descending order") + vbNewLine, True, ColTypes.Option)
                         Case Else
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
-                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
                     End Select
                 Case Else
                     W("*) ???" + vbNewLine, True, ColTypes.Neutral)
-                    W("X) " + DoTranslation("Invalid section entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                    W("X) " + DoTranslation("Invalid section entered. Please go back.") + vbNewLine, True, ColTypes.Error)
             End Select
 
             'If the type is boolean, write the two options
@@ -1258,8 +1258,8 @@ Public Module ToolPrompts
                     KeyFinished = True
                 Else
                     Wdbg("W", "Option is not valid. Returning...")
-                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Err, AnswerInt)
-                    W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerInt)
+                    W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
                 End If
             ElseIf (Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SInt) Or
@@ -1274,8 +1274,8 @@ Public Module ToolPrompts
                     KeyFinished = True
                 Else
                     Wdbg("W", "Negative values are disallowed.")
-                    W(DoTranslation("The answer may not be negative."), True, ColTypes.Err)
-                    W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                    W(DoTranslation("The answer may not be negative."), True, ColTypes.Error)
+                    W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
                 End If
             ElseIf KeyType = SettingsKeyType.SUnknown Then
@@ -1311,8 +1311,8 @@ Public Module ToolPrompts
                 KeyFinished = True
             Else
                 Wdbg("W", "Answer is not valid.")
-                W(DoTranslation("The answer is invalid. Check to make sure that the answer is numeric for config entries that need numbers as answers."), True, ColTypes.Err)
-                W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                W(DoTranslation("The answer is invalid. Check to make sure that the answer is numeric for config entries that need numbers as answers."), True, ColTypes.Error)
+                W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
             End If
         End While
@@ -1337,7 +1337,7 @@ Public Module ToolPrompts
         Else
             'Variable not found on any of the "flag" modules.
             Wdbg("I", "Field {0} not found.", Variable)
-            W(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Err, Variable)
+            W(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
         End If
     End Sub
 
@@ -1360,7 +1360,7 @@ Public Module ToolPrompts
         Else
             'Variable not found on any of the "flag" modules.
             Wdbg("I", "Field {0} not found.", Variable)
-            W(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Err, Variable)
+            W(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
             Return Nothing
         End If
     End Function

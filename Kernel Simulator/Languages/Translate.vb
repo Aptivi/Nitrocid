@@ -227,7 +227,7 @@ CHOICE:
                         If cho = "2" Then
                             lang += "-T"
                         ElseIf Not cho = "1" Then
-                            W(DoTranslation("Invalid choice. Try again."), True, ColTypes.Err)
+                            W(DoTranslation("Invalid choice. Try again."), True, ColTypes.Error)
                             GoTo CHOICE
                         End If
                     End If
@@ -236,13 +236,13 @@ CHOICE:
 
             W(DoTranslation("Changing from: {0} to {1}..."), True, ColTypes.Neutral, currentLang, lang)
             If Not SetLang(lang) Then
-                W(DoTranslation("Failed to set language."), True, ColTypes.Err)
+                W(DoTranslation("Failed to set language."), True, ColTypes.Error)
             End If
             If NotifyCodepageError Then
-                W(DoTranslation("Unable to set codepage. The language may not display properly."), True, ColTypes.Err)
+                W(DoTranslation("Unable to set codepage. The language may not display properly."), True, ColTypes.Error)
             End If
         Else
-            W(DoTranslation("Invalid language") + " {0}", True, ColTypes.Err, lang)
+            W(DoTranslation("Invalid language") + " {0}", True, ColTypes.Error, lang)
         End If
     End Sub
 

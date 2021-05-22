@@ -49,7 +49,7 @@ Public Module ModExecutor
                         Script.PerformCmd(args)
                     Else
                         Wdbg("E", "User {0} doesn't have permission to use {1} from {2}!", signedinusrnm, parts(0), ModParts)
-                        W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Err, parts(0))
+                        W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, parts(0))
                     End If
                 Else
                     Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModParts)

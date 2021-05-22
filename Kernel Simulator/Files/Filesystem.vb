@@ -89,7 +89,7 @@ Public Module Filesystem
             Try
                 enumeration = CreateList(folder, True)
             Catch ex As Exception
-                W(DoTranslation("Unknown error while listing in directory: {0}"), True, ColTypes.Err, ex.Message)
+                W(DoTranslation("Unknown error while listing in directory: {0}"), True, ColTypes.Error, ex.Message)
                 WStkTrc(ex)
                 Exit Sub
             End Try
@@ -126,12 +126,12 @@ Public Module Filesystem
                         End If
                     End If
                 Catch ex As UnauthorizedAccessException 'Error while getting info
-                    W("- " + DoTranslation("You are not authorized to get info for {0}."), True, ColTypes.Err, Entry.Name)
+                    W("- " + DoTranslation("You are not authorized to get info for {0}."), True, ColTypes.Error, Entry.Name)
                     WStkTrc(ex)
                 End Try
             Next
         Else
-            W(DoTranslation("Directory {0} not found"), True, ColTypes.Err, folder)
+            W(DoTranslation("Directory {0} not found"), True, ColTypes.Error, folder)
             Wdbg("I", "IO.Directory.Exists = {0}", Directory.Exists(folder))
         End If
     End Sub

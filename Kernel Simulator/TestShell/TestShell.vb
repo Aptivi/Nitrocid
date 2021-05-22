@@ -86,13 +86,13 @@ Module TestShell
                         Wdbg("I", "Test shell alias command found.")
                         ExecuteTestAlias(FullCmd)
                     Else
-                        W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Err, Command)
+                        W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Error, Command)
                     End If
                 Else
                     Thread.Sleep(30) 'This is to fix race condition between test shell initialization and starting the event handler thread
                 End If
             Catch ex As Exception
-                W(DoTranslation("Error in test shell: {0}"), True, ColTypes.Err, ex.Message)
+                W(DoTranslation("Error in test shell: {0}"), True, ColTypes.Error, ex.Message)
                 Wdbg("E", "Error: {0}", ex.Message)
                 WStkTrc(ex)
             End Try

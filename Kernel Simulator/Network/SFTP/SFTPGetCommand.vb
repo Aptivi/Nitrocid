@@ -82,7 +82,7 @@ Public Module SFTPGetCommand
                 If SFTPConnected = True Then
                     W(DoTranslation("Remote directory: {0}"), True, ColTypes.Neutral, SFTPCurrentRemoteDir)
                 Else
-                    W(DoTranslation("You must connect to server before getting current remote directory."), True, ColTypes.Err)
+                    W(DoTranslation("You must connect to server before getting current remote directory."), True, ColTypes.Error)
                 End If
             ElseIf words(0) = "del" Then
                 If RequiredArgumentsProvided Then
@@ -98,13 +98,13 @@ Public Module SFTPGetCommand
                         Try
                             SFTPDeleteRemote(ArgsQ(0))
                         Catch ex As Exception
-                            W(ex.Message, True, ColTypes.Err)
+                            W(ex.Message, True, ColTypes.Error)
                         End Try
                     Else
-                        W(DoTranslation("You must connect to server with administrative privileges before performing the deletion."), True, ColTypes.Err)
+                        W(DoTranslation("You must connect to server with administrative privileges before performing the deletion."), True, ColTypes.Error)
                     End If
                 Else
-                    W(DoTranslation("Enter a file or folder to remove. You must have administrative permissions on your account to be able to remove."), True, ColTypes.Err)
+                    W(DoTranslation("Enter a file or folder to remove. You must have administrative permissions on your account to be able to remove."), True, ColTypes.Error)
                 End If
             ElseIf cmd = "disconnect" Then
                 If SFTPConnected = True Then
@@ -119,7 +119,7 @@ Public Module SFTPGetCommand
                     SFTPUser = ""
                     SFTPPass = ""
                 Else
-                    W(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Err)
+                    W(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Error)
                 End If
             ElseIf words(0) = "get" Then
                 If RequiredArgumentsProvided Then
@@ -129,10 +129,10 @@ Public Module SFTPGetCommand
                         W(DoTranslation("Downloaded file {0}."), True, ColTypes.Neutral, ArgsQ(0))
                     Else
                         Console.WriteLine()
-                        W(DoTranslation("Download failed for file {0}."), True, ColTypes.Err, ArgsQ(0))
+                        W(DoTranslation("Download failed for file {0}."), True, ColTypes.Error, ArgsQ(0))
                     End If
                 Else
-                    W(DoTranslation("Enter a file to download to local directory."), True, ColTypes.Err)
+                    W(DoTranslation("Enter a file to download to local directory."), True, ColTypes.Error)
                 End If
             ElseIf cmd = "exit" Then
                 'Set a flag
@@ -159,7 +159,7 @@ Public Module SFTPGetCommand
                 If Not connected Then
                     SFTPQuickConnect()
                 Else
-                    W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Err)
+                    W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Error)
                 End If
             ElseIf words(0) = "put" Then
                 If RequiredArgumentsProvided Then
@@ -174,26 +174,26 @@ Public Module SFTPGetCommand
                         W(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Neutral, ArgsQ(0))
                     End If
                 Else
-                    W(DoTranslation("Enter a file to upload to remote directory. upload <file> <directory>"), True, ColTypes.Err)
+                    W(DoTranslation("Enter a file to upload to remote directory. upload <file> <directory>"), True, ColTypes.Error)
                 End If
             End If
         Catch ex As Exception 'The InnerException CAN be Nothing
             If DebugMode = True Then
                 If Not IsNothing(ex.InnerException) Then 'This is required to fix NullReferenceException when there is nothing in InnerException, so please don't remove.
                     W(DoTranslation("Error trying to execute SFTP command {3}.") + vbNewLine +
-                      DoTranslation("Error {0}: {1} ") + DoTranslation("(Inner:") + " {4})" + vbNewLine + "{2}", True, ColTypes.Err, Err.Number, ex.Message, ex.StackTrace, words(0), ex.InnerException.Message)
+                      DoTranslation("Error {0}: {1} ") + DoTranslation("(Inner:") + " {4})" + vbNewLine + "{2}", True, ColTypes.Error, Err.Number, ex.Message, ex.StackTrace, words(0), ex.InnerException.Message)
                 Else
                     W(DoTranslation("Error trying to execute SFTP command {3}.") + vbNewLine +
-                      DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Err, Err.Number, ex.Message, ex.StackTrace, words(0))
+                      DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Error, Err.Number, ex.Message, ex.StackTrace, words(0))
                 End If
                 WStkTrc(ex)
             Else
                 If Not IsNothing(ex.InnerException) Then
                     W(DoTranslation("Error trying to execute SFTP command {2}.") + vbNewLine +
-                      DoTranslation("Error {0}: {1} ") + DoTranslation("(Inner:") + "{3})", True, ColTypes.Err, Err.Number, ex.Message, words(0), ex.InnerException.Message)
+                      DoTranslation("Error {0}: {1} ") + DoTranslation("(Inner:") + "{3})", True, ColTypes.Error, Err.Number, ex.Message, words(0), ex.InnerException.Message)
                 Else
                     W(DoTranslation("Error trying to execute SFTP command {2}.") + vbNewLine +
-                      DoTranslation("Error {0}: {1}"), True, ColTypes.Err, Err.Number, ex.Message, words(0))
+                      DoTranslation("Error {0}: {1}"), True, ColTypes.Error, Err.Number, ex.Message, words(0))
                 End If
             End If
             EventManager.RaiseFTPCommandError(cmd, ex)

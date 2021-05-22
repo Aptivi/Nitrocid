@@ -59,14 +59,14 @@ Public Module NetworkTools
             'See if it supports IPv6
             If Not adapter.Supports(NetworkInterfaceComponent.IPv6) Then
                 Wdbg("W", "{0} doesn't support IPv6. Trying to get information about IPv4.", adapter.Description)
-                W(DoTranslation("Adapter {0} doesn't support IPv6. Continuing..."), True, ColTypes.Err, adapter.Description)
+                W(DoTranslation("Adapter {0} doesn't support IPv6. Continuing..."), True, ColTypes.Error, adapter.Description)
                 NoV6 = True
             End If
 
             'See if it supports IPv4
             If Not adapter.Supports(NetworkInterfaceComponent.IPv4) Then
                 Wdbg("E", "{0} doesn't support IPv4.", adapter.Description)
-                W(DoTranslation("Adapter {0} doesn't support IPv4. Probe failed."), True, ColTypes.Err, adapter.Description)
+                W(DoTranslation("Adapter {0} doesn't support IPv4. Probe failed."), True, ColTypes.Error, adapter.Description)
                 NoV4 = True
             End If
 
@@ -85,11 +85,11 @@ Public Module NetworkTools
 #Disable Warning BC42104
                     If p6 Is Nothing Then
                         Wdbg("W", "Failed to get IPv6 properties.")
-                        W(DoTranslation("Failed to get IPv6 properties for adapter {0}. Continuing..."), True, ColTypes.Err, adapter.Description)
+                        W(DoTranslation("Failed to get IPv6 properties for adapter {0}. Continuing..."), True, ColTypes.Error, adapter.Description)
                     End If
                     If p Is Nothing Then
                         Wdbg("E", "Failed to get IPv4 properties.")
-                        W(DoTranslation("Failed to get properties for adapter {0}"), True, ColTypes.Err, adapter.Description)
+                        W(DoTranslation("Failed to get properties for adapter {0}"), True, ColTypes.Error, adapter.Description)
                         Failed = True
                     End If
                     WStkTrc(ex)
@@ -99,7 +99,7 @@ Public Module NetworkTools
                 'Check if statistics is nothing
                 If s Is Nothing Then
                     Wdbg("E", "Failed to get statistics.")
-                    W(DoTranslation("Failed to get statistics for adapter {0}"), True, ColTypes.Err, adapter.Description)
+                    W(DoTranslation("Failed to get statistics for adapter {0}"), True, ColTypes.Error, adapter.Description)
                     Failed = True
                 End If
 

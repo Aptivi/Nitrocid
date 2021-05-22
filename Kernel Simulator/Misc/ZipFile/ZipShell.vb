@@ -84,7 +84,7 @@ Module ZipShell
                     Wdbg("I", "ZIP shell alias command found.")
                     ExecuteZIPAlias(WrittenCommand)
                 Else
-                    W(DoTranslation("The specified ZIP shell command is not found."), True, ColTypes.Err)
+                    W(DoTranslation("The specified ZIP shell command is not found."), True, ColTypes.Error)
                     Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), ZipShell_Commands.Count)
                 End If
             End If

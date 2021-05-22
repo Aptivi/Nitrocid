@@ -99,7 +99,7 @@ Module TestGetCommand
                     Dim SubName As String = "Raise" + FullArgsQ(0)
                     CallByName(New Events, SubName, CallType.Method)
                 Catch ex As Exception
-                    W(DoTranslation("Failure to raise event {0}: {1}"), True, ColTypes.Err, FullArgsQ(0))
+                    W(DoTranslation("Failure to raise event {0}: {1}"), True, ColTypes.Error, FullArgsQ(0))
                 End Try
             End If
         ElseIf Cmd = "probehw" Then
@@ -295,7 +295,7 @@ Module TestGetCommand
                     W("- {0} -> {1}: ", False, ColTypes.ListEntry, FullArgsQ(0), FullArgsQ(1))
                     W(GetCustomSaverSettings(FullArgsQ(0), FullArgsQ(1)), True, ColTypes.ListValue)
                 Else
-                    W(DoTranslation("Screensaver {0} not found."), True, ColTypes.Err, FullArgsQ(0))
+                    W(DoTranslation("Screensaver {0} not found."), True, ColTypes.Error, FullArgsQ(0))
                 End If
             End If
         ElseIf Cmd = "setcustomsaversetting" Then
@@ -304,10 +304,10 @@ Module TestGetCommand
                     If SetCustomSaverSettings(FullArgsQ(0), FullArgsQ(1), FullArgsQ(2)) Then
                         W(DoTranslation("Settings set successfully for screensaver") + " {0}.", True, ColTypes.Neutral, FullArgsQ(0))
                     Else
-                        W(DoTranslation("Failed to set a setting for screensaver") + " {0}.", True, ColTypes.Err, FullArgsQ(0))
+                        W(DoTranslation("Failed to set a setting for screensaver") + " {0}.", True, ColTypes.Error, FullArgsQ(0))
                     End If
                 Else
-                    W(DoTranslation("Screensaver {0} not found."), True, ColTypes.Err, FullArgsQ(0))
+                    W(DoTranslation("Screensaver {0} not found."), True, ColTypes.Error, FullArgsQ(0))
                 End If
             End If
         ElseIf Cmd = "help" Then

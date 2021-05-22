@@ -55,7 +55,7 @@ Module RemoteDebugger
             DebugTCP = New TcpListener(New IPAddress({0, 0, 0, 0}), DebugPort)
             DebugTCP.Start()
         Catch sex As SocketException
-            W(DoTranslation("Remote debug failed to start: {0}"), True, ColTypes.Err, sex.Message)
+            W(DoTranslation("Remote debug failed to start: {0}"), True, ColTypes.Error, sex.Message)
             WStkTrc(sex)
         End Try
 
@@ -105,7 +105,7 @@ Module RemoteDebugger
             Catch ae As ThreadAbortException
                 Exit While
             Catch ex As Exception
-                W(DoTranslation("Error in connection: {0}"), True, ColTypes.Err, ex.Message)
+                W(DoTranslation("Error in connection: {0}"), True, ColTypes.Error, ex.Message)
                 WStkTrc(ex)
             End Try
         End While

@@ -27,7 +27,7 @@ Public Module SFTPTools
     ''' <param name="address">An FTP server. You may specify it like "[address]" or "[address]:[port]"</param>
     Public Sub SFTPTryToConnect(ByVal address As String)
         If connected = True Then
-            W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Err)
+            W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Error)
         Else
             Try
                 'Create an SFTP stream to connect to
@@ -57,9 +57,9 @@ Public Module SFTPTools
                 WStkTrc(ex)
                 If DebugMode = True Then
                     W(DoTranslation("Error when trying to connect to {0}: {1}") + vbNewLine +
-                      DoTranslation("Stack Trace: {2}"), True, ColTypes.Err, address, ex.Message, ex.StackTrace)
+                      DoTranslation("Stack Trace: {2}"), True, ColTypes.Error, address, ex.Message, ex.StackTrace)
                 Else
-                    W(DoTranslation("Error when trying to connect to {0}: {1}"), True, ColTypes.Err, address, ex.Message)
+                    W(DoTranslation("Error when trying to connect to {0}: {1}"), True, ColTypes.Error, address, ex.Message)
                 End If
             End Try
         End If
@@ -138,20 +138,20 @@ Public Module SFTPTools
                             ConnectSFTP()
                         Else
                             Wdbg("I", "Response is out-of-bounds. Retrying...")
-                            W(DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), True, ColTypes.Err, SpeedDialLines.Count)
+                            W(DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), True, ColTypes.Error, SpeedDialLines.Count)
                         End If
                     Else
                         Wdbg("W", "Response isn't numeric. IsNumeric(Answer) returned false.")
-                        W(DoTranslation("The selection is not a number. Try again."), True, ColTypes.Err)
+                        W(DoTranslation("The selection is not a number. Try again."), True, ColTypes.Error)
                     End If
                 End While
             Else
                 Wdbg("E", "Speed dial is empty. Lines count is 0.")
-                W(DoTranslation("Speed dial is empty. Connect to a server to add an address to it."), True, ColTypes.Err)
+                W(DoTranslation("Speed dial is empty. Connect to a server to add an address to it."), True, ColTypes.Error)
             End If
         Else
             Wdbg("E", "File doesn't exist.")
-            W(DoTranslation("Speed dial doesn't exist. Connect to a server to add an address to it."), True, ColTypes.Err)
+            W(DoTranslation("Speed dial doesn't exist. Connect to a server to add an address to it."), True, ColTypes.Error)
         End If
     End Sub
 

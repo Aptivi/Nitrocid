@@ -384,8 +384,8 @@ Public Module UserManagement
             Wdbg("I", "Answer: {0}", AnswerUsername)
             If String.IsNullOrWhiteSpace(AnswerUsername) Then
                 Wdbg("W", "Username is not valid. Returning...")
-                W(DoTranslation("You must write your username."), True, ColTypes.Err)
-                W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                W(DoTranslation("You must write your username."), True, ColTypes.Error)
+                W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
             Else
                 [Step] += 1
@@ -401,8 +401,8 @@ Public Module UserManagement
             Wdbg("I", "Answer: {0}", AnswerPassword)
             If String.IsNullOrWhiteSpace(AnswerPassword) Then
                 Wdbg("W", "Password is not valid. Returning...")
-                W(DoTranslation("You must write your password."), True, ColTypes.Err)
-                W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                W(DoTranslation("You must write your password."), True, ColTypes.Error)
+                W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
             Else
                 [Step] += 1
@@ -423,8 +423,8 @@ Public Module UserManagement
                     [Step] += 1
                 Case Else '???
                     Wdbg("W", "Option is not valid. Returning...")
-                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Err, AnswerType)
-                    W(DoTranslation("Press any key to go back."), True, ColTypes.Err)
+                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerType)
+                    W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
             End Select
         End While

@@ -88,7 +88,7 @@ Module LoveHateRespond
                 Exit Sub
             Else
                 Wdbg("I", "No such selection")
-                W(DoTranslation("Invalid selection. Going to the next comment..."), True, ColTypes.Err)
+                W(DoTranslation("Invalid selection. Going to the next comment..."), True, ColTypes.Error)
             End If
         End While
     End Sub

@@ -111,7 +111,7 @@ Module MailShell
                     ExecuteMailAlias(cmd + " " + args)
                 ElseIf Not cmd.StartsWith(" ") Then
                     Wdbg("E", "Command not found. Reopening shell...")
-                    W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Err, cmd)
+                    W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Error, cmd)
                 End If
                 EventManager.RaiseIMAPPostExecuteCommand(cmd + " " + args)
             Else

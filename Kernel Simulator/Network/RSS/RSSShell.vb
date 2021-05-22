@@ -57,7 +57,7 @@ Begin:
                     Catch ex As Exception
                         Wdbg("E", "Failed to parse RSS feed URL {0}: {1}", FeedUrl, ex.Message)
                         WStkTrc(ex)
-                        W(DoTranslation("Failed to parse feed URL:") + " {0}", True, ColTypes.Err, ex.Message)
+                        W(DoTranslation("Failed to parse feed URL:") + " {0}", True, ColTypes.Error, ex.Message)
                         RSSFeedLink = ""
                     End Try
                 Loop
@@ -72,7 +72,7 @@ Begin:
                 Catch ex As Exception
                     Wdbg("E", "Failed to parse RSS feed URL {0}: {1}", RSSFeedLink, ex.Message)
                     WStkTrc(ex)
-                    W(DoTranslation("Failed to parse feed URL:") + " {0}", True, ColTypes.Err, ex.Message)
+                    W(DoTranslation("Failed to parse feed URL:") + " {0}", True, ColTypes.Error, ex.Message)
                     RSSFeedLink = ""
                     GoTo Begin
                 End Try
@@ -110,14 +110,14 @@ Begin:
                             Wdbg("I", "RSS shell alias command found.")
                             ExecuteRSSAlias(WrittenCommand)
                         Else
-                            W(DoTranslation("The specified RSS shell command is not found."), True, ColTypes.Err)
+                            W(DoTranslation("The specified RSS shell command is not found."), True, ColTypes.Error)
                             Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), RSSCommands.Count)
                         End If
                     End If
                 Catch ex As Exception
                     Wdbg("E", "Unknown RSS shell error: {0}", ex.Message)
                     WStkTrc(ex)
-                    W(DoTranslation("Unknown shell error:") + " {0}", True, ColTypes.Err, ex.Message)
+                    W(DoTranslation("Unknown shell error:") + " {0}", True, ColTypes.Error, ex.Message)
                 End Try
 
                 'This is to fix race condition between shell initialization and starting the event handler thread

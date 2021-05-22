@@ -184,7 +184,7 @@ Module Converter
                             MailShellAliases.Add(AliasCommand, ActualCommand)
                         End If
                     Case Else
-                        W("  - Invalid type {0}", True, ColTypes.Err, AliasType)
+                        W("  - Invalid type {0}", True, ColTypes.Error, AliasType)
                 End Select
             Next
             W("  - Saving aliases to Aliases.json...", True, ColTypes.Neutral)

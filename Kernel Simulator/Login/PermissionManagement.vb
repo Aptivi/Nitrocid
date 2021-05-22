@@ -57,16 +57,16 @@ Public Module PermissionManagement
                 W(DoTranslation("The user {0} has been removed from the ""{1}"" list."), True, ColTypes.Neutral, Username, PermType.ToString)
             Else
                 Wdbg("W", "Mode is invalid")
-                W(DoTranslation("Invalid mode {0}"), True, ColTypes.Err, PermissionMode)
+                W(DoTranslation("Invalid mode {0}"), True, ColTypes.Error, PermissionMode)
             End If
         Catch ex As Exception
             If DebugMode = True Then
                 W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.") + vbNewLine +
-                  DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Err, Err.Number, ex.Message, ex.StackTrace)
+                  DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Error, Err.Number, ex.Message, ex.StackTrace)
                 WStkTrc(ex)
             Else
                 W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.") + vbNewLine +
-                  DoTranslation("Error {0}: {1}"), True, ColTypes.Err, Err.Number, ex.Message)
+                  DoTranslation("Error {0}: {1}"), True, ColTypes.Error, Err.Number, ex.Message)
             End If
         End Try
     End Sub

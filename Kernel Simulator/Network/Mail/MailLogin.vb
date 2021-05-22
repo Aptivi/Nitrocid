@@ -295,7 +295,7 @@ Module MailLogin
             Wdbg("I", "Authentication succeeded. Opening shell...")
             OpenMailShell(Address)
         Catch ex As Exception
-            W(DoTranslation("Error while connecting to {0}: {1}"), True, ColTypes.Err, Address, ex.Message)
+            W(DoTranslation("Error while connecting to {0}: {1}"), True, ColTypes.Error, Address, ex.Message)
             WStkTrc(ex)
             IMAP_Client.Disconnect(True)
             SMTP_Client.Disconnect(True)

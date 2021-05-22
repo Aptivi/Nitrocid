@@ -107,7 +107,7 @@ Public Module GetCommand
                                 W(DoTranslation("usrmgr: Creating username {0}..."), True, ColTypes.Neutral, eqargs(0))
                                 AddUser(eqargs(0), eqargs(1))
                             Else
-                                W(DoTranslation("Passwords don't match."), True, ColTypes.Err)
+                                W(DoTranslation("Passwords don't match."), True, ColTypes.Error)
                             End If
                         End If
                     End If
@@ -119,13 +119,13 @@ Public Module GetCommand
                             If eqargs(0) = "add" And [Enum].IsDefined(GetType(AliasType), eqargs(1)) Then
                                 ManageAlias(eqargs(0), Val([Enum].Parse(GetType(AliasType), eqargs(1))), eqargs(2), eqargs(3))
                             Else
-                                W(DoTranslation("Invalid type {0}."), True, ColTypes.Err, eqargs(1))
+                                W(DoTranslation("Invalid type {0}."), True, ColTypes.Error, eqargs(1))
                             End If
                         ElseIf eqargs?.Length = 3 Then
                             If eqargs(0) = "rem" And [Enum].IsDefined(GetType(AliasType), eqargs(1)) Then
                                 ManageAlias(eqargs(0), Val([Enum].Parse(GetType(AliasType), eqargs(1))), eqargs(2))
                             Else
-                                W(DoTranslation("Invalid type {0}."), True, ColTypes.Err, eqargs(1))
+                                W(DoTranslation("Invalid type {0}."), True, ColTypes.Error, eqargs(1))
                             End If
                         End If
                     End If
@@ -143,7 +143,7 @@ Public Module GetCommand
                             End If
                         Next
                         If FinalArgs.Count = 0 Then
-                            W(DoTranslation("No arguments specified. Hint: Specify multiple arguments separated by spaces"), True, ColTypes.Err)
+                            W(DoTranslation("No arguments specified. Hint: Specify multiple arguments separated by spaces"), True, ColTypes.Error)
                         Else
                             answerargs = String.Join(",", FinalArgs)
                             argsInjected = True
@@ -158,10 +158,10 @@ Public Module GetCommand
                             If eqargs(1).IsNumeric Then 'Time must be numeric
                                 Console.Beep(eqargs(0), eqargs(1))
                             Else
-                                W(DoTranslation("Time must be numeric."), True, ColTypes.Err)
+                                W(DoTranslation("Time must be numeric."), True, ColTypes.Error)
                             End If
                         Else
-                            W(DoTranslation("Frequency must be numeric. If it's numeric, ensure that it is >= 37 and <= 32767."), True, ColTypes.Err)
+                            W(DoTranslation("Frequency must be numeric. If it's numeric, ensure that it is >= 37 and <= 32767."), True, ColTypes.Error)
                         End If
                     End If
 
@@ -186,7 +186,7 @@ Public Module GetCommand
                             ReadContents(eqargs(0))
                         Catch ex As Exception
                             WStkTrc(ex)
-                            W(ex.Message, True, ColTypes.Err)
+                            W(ex.Message, True, ColTypes.Error)
                         End Try
                     End If
 
@@ -197,13 +197,13 @@ Public Module GetCommand
                             Dim Res As String = Evaluate(strArgs)
                             Wdbg("I", "Res = {0}", Res)
                             If Res = "" Then 'If there is an error in calculation
-                                W(DoTranslation("Error in calculation."), True, ColTypes.Err)
+                                W(DoTranslation("Error in calculation."), True, ColTypes.Error)
                             Else 'Calculation done
                                 W(strArgs + " = " + Res, True, ColTypes.Neutral)
                             End If
                         Catch ex As Exception
                             WStkTrc(ex)
-                            W(DoTranslation("Error in calculation."), True, ColTypes.Err)
+                            W(DoTranslation("Error in calculation."), True, ColTypes.Error)
                         End Try
                     End If
 
@@ -215,7 +215,7 @@ Public Module GetCommand
                             dbgWriter = New StreamWriter(paths("Debugging")) With {.AutoFlush = True}
                             W(DoTranslation("Debug log removed. All connected debugging devices may still view messages."), True, ColTypes.Neutral)
                         Catch ex As Exception
-                            W(DoTranslation("Debug log removal failed: {0}"), True, ColTypes.Err, ex.Message)
+                            W(DoTranslation("Debug log removal failed: {0}"), True, ColTypes.Error, ex.Message)
                             WStkTrc(ex)
                         End Try
                     Else
@@ -244,10 +244,10 @@ Public Module GetCommand
                                     End If
                                 End If
                             Else
-                                W(DoTranslation("Attribute ""{0}"" is invalid."), True, ColTypes.Err, eqargs(1))
+                                W(DoTranslation("Attribute ""{0}"" is invalid."), True, ColTypes.Error, eqargs(1))
                             End If
                         Else
-                            W(DoTranslation("File not found."), True, ColTypes.Err)
+                            W(DoTranslation("File not found."), True, ColTypes.Error)
                         End If
                     End If
 
@@ -258,14 +258,14 @@ Public Module GetCommand
                             SetCurrDir(eqargs(0))
                         Catch sex As Security.SecurityException
                             Wdbg("E", "Security error: {0} ({1})", sex.Message, sex.PermissionType)
-                            W(DoTranslation("You are unauthorized to set current directory to {0}: {1}"), True, ColTypes.Err, eqargs(0), sex.Message)
+                            W(DoTranslation("You are unauthorized to set current directory to {0}: {1}"), True, ColTypes.Error, eqargs(0), sex.Message)
                             WStkTrc(sex)
                         Catch ptlex As PathTooLongException
                             Wdbg("I", "Directory length: {0}", NeutralizePath(eqargs(0)).Length)
-                            W(DoTranslation("The path you've specified is too long."), True, ColTypes.Err)
+                            W(DoTranslation("The path you've specified is too long."), True, ColTypes.Error)
                             WStkTrc(ptlex)
                         Catch ex As Exception
-                            W(DoTranslation("Changing directory has failed: {0}"), True, ColTypes.Err, ex.Message)
+                            W(DoTranslation("Changing directory has failed: {0}"), True, ColTypes.Error, ex.Message)
                             WStkTrc(ex)
                         End Try
                     End If
@@ -274,9 +274,9 @@ Public Module GetCommand
 
                     If RequiredArgumentsProvided Then
                         If eqargs(0) = "" Then
-                            W(DoTranslation("Blank host name."), True, ColTypes.Err)
+                            W(DoTranslation("Blank host name."), True, ColTypes.Error)
                         ElseIf eqargs(0).IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
-                            W(DoTranslation("Special characters are not allowed."), True, ColTypes.Err)
+                            W(DoTranslation("Special characters are not allowed."), True, ColTypes.Error)
                         Else
                             W(DoTranslation("Changing from: {0} to {1}..."), True, ColTypes.Neutral, HName, eqargs(0))
                             ChangeHostname(eqargs(0))
@@ -293,7 +293,7 @@ Public Module GetCommand
 
                     If eqargs?.Length > 0 Then
                         If strArgs = "" Then
-                            W(DoTranslation("Blank message of the day."), True, ColTypes.Err)
+                            W(DoTranslation("Blank message of the day."), True, ColTypes.Error)
                         Else
                             W(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
                             SetMOTD(strArgs, MessageType.MOTD)
@@ -308,7 +308,7 @@ Public Module GetCommand
 
                     If eqargs?.Length > 0 Then
                         If strArgs = "" Then
-                            W(DoTranslation("Blank MAL After Login."), True, ColTypes.Err)
+                            W(DoTranslation("Blank MAL After Login."), True, ColTypes.Error)
                         Else
                             W(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
                             SetMOTD(strArgs, MessageType.MAL)
@@ -330,14 +330,14 @@ Public Module GetCommand
                     If RequiredArgumentsProvided Then
                         Try
                             If InStr(eqargs(3), " ") > 0 Then
-                                W(DoTranslation("Spaces are not allowed."), True, ColTypes.Err)
+                                W(DoTranslation("Spaces are not allowed."), True, ColTypes.Error)
                             ElseIf eqargs(3) = eqargs(2) Then
                                 ChangePassword(eqargs(0), eqargs(1), eqargs(2))
                             ElseIf eqargs(3) <> eqargs(2) Then
-                                W(DoTranslation("Passwords doesn't match."), True, ColTypes.Err)
+                                W(DoTranslation("Passwords doesn't match."), True, ColTypes.Error)
                             End If
                         Catch ex As Exception
-                            W(DoTranslation("Failed to change password of username: {0}"), True, ColTypes.Err, ex.Message)
+                            W(DoTranslation("Failed to change password of username: {0}"), True, ColTypes.Error, ex.Message)
                             WStkTrc(ex)
                         End Try
                     End If
@@ -380,7 +380,7 @@ Public Module GetCommand
                                 W(DoTranslation("Attributes: {0}"), True, ColTypes.Neutral, DirInfo.Attributes)
                                 W(DoTranslation("Parent directory: {0}"), True, ColTypes.Neutral, NeutralizePath(DirInfo.Parent.FullName))
                             Else
-                                W(DoTranslation("Can't get information about nonexistent directory."), True, ColTypes.Err)
+                                W(DoTranslation("Can't get information about nonexistent directory."), True, ColTypes.Error)
                             End If
                         Next
                     End If
@@ -399,7 +399,7 @@ Public Module GetCommand
                         If NotifDismiss(NotifIndex) Then
                             W(DoTranslation("Notification dismissed successfully."), True, ColTypes.Neutral)
                         Else
-                            W(DoTranslation("Error trying to dismiss notification."), True, ColTypes.Err)
+                            W(DoTranslation("Error trying to dismiss notification."), True, ColTypes.Error)
                         End If
                     End If
 
@@ -415,7 +415,7 @@ Public Module GetCommand
                         If File.Exists(eqargs(0)) Then
                             InitializeTextShell(eqargs(0))
                         Else
-                            W(DoTranslation("File doesn't exist."), True, ColTypes.Err)
+                            W(DoTranslation("File doesn't exist."), True, ColTypes.Error)
                         End If
                     End If
 
@@ -437,7 +437,7 @@ Public Module GetCommand
                                 W(DoTranslation("Attributes: {0}"), True, ColTypes.Neutral, FileInfo.Attributes)
                                 W(DoTranslation("Where to find: {0}"), True, ColTypes.Neutral, NeutralizePath(FileInfo.DirectoryName))
                             Else
-                                W(DoTranslation("Can't get information about nonexistent file."), True, ColTypes.Err)
+                                W(DoTranslation("Can't get information about nonexistent file."), True, ColTypes.Error)
                             End If
                         Next
                     End If
@@ -455,10 +455,10 @@ Public Module GetCommand
                             InitiateShell(True, eqargs(0))
                         End If
                     Catch ftpex As Exceptions.FTPShellException
-                        W(ftpex.Message, True, ColTypes.Err)
+                        W(ftpex.Message, True, ColTypes.Error)
                     Catch ex As Exception
                         WStkTrc(ex)
-                        W(DoTranslation("Unknown FTP shell error:") + " {0}", True, ColTypes.Err, ex.Message)
+                        W(DoTranslation("Unknown FTP shell error:") + " {0}", True, ColTypes.Error, ex.Message)
                     End Try
 
                 Case "gettimeinfo"
@@ -484,7 +484,7 @@ Public Module GetCommand
                             W(DoTranslation("Universal Time:") + " {0}", True, ColTypes.Neutral, Render(DateTimeInfo.ToUniversalTime))
                             W(DoTranslation("Unix Time:") + " {0}", True, ColTypes.Neutral, (DateTimeInfo - UnixEpoch).TotalSeconds)
                         Else
-                            W(DoTranslation("Failed to parse date information for") + " {0}. " + DoTranslation("Ensure that the format is correct."), True, ColTypes.Err, eqargs(0))
+                            W(DoTranslation("Failed to parse date information for") + " {0}. " + DoTranslation("Ensure that the format is correct."), True, ColTypes.Error, eqargs(0))
                         End If
                     End If
 
@@ -512,15 +512,15 @@ Public Module GetCommand
                                             W(DoTranslation("Download has completed."), True, ColTypes.Neutral)
                                         End If
                                     Else
-                                        W(DoTranslation("Specify the address"), True, ColTypes.Err)
+                                        W(DoTranslation("Specify the address"), True, ColTypes.Error)
                                     End If
                                 Else
-                                    W(DoTranslation("Please use ""ftp"" if you are going to download files from the FTP server."), True, ColTypes.Err)
+                                    W(DoTranslation("Please use ""ftp"" if you are going to download files from the FTP server."), True, ColTypes.Error)
                                 End If
                                 Exit Sub
                             Catch ex As Exception
                                 DFinish = False
-                                W(DoTranslation("Download failed in try {0}: {1}"), True, ColTypes.Err, RetryCount, ex.Message)
+                                W(DoTranslation("Download failed in try {0}: {1}"), True, ColTypes.Error, RetryCount, ex.Message)
                                 RetryCount += 1
                                 Wdbg("I", "Try count: {0}", RetryCount)
                                 WStkTrc(ex)
@@ -690,15 +690,15 @@ Public Module GetCommand
                                         If PingReplied.Status = IPStatus.Success Then
                                             W("[{1}] " + DoTranslation("Ping succeeded in {0} ms."), True, ColTypes.Neutral, PingReplied.RoundtripTime, CurrentTime)
                                         Else
-                                            W("[{2}] " + DoTranslation("Failed to ping {0}: {1}"), True, ColTypes.Err, PingedAddress, PingReplied.Status, CurrentTime)
+                                            W("[{2}] " + DoTranslation("Failed to ping {0}: {1}"), True, ColTypes.Error, PingedAddress, PingReplied.Status, CurrentTime)
                                         End If
                                     Catch ex As Exception
-                                        W("[{2}] " + DoTranslation("Failed to ping {0}: {1}"), True, ColTypes.Err, PingedAddress, ex.Message, CurrentTime)
+                                        W("[{2}] " + DoTranslation("Failed to ping {0}: {1}"), True, ColTypes.Error, PingedAddress, ex.Message, CurrentTime)
                                         WStkTrc(ex)
                                     End Try
                                 Next
                             Else
-                                W(DoTranslation("Address may not be empty."), True, ColTypes.Err)
+                                W(DoTranslation("Address may not be empty."), True, ColTypes.Error)
                             End If
                         Next
                     End If
@@ -728,15 +728,15 @@ Public Module GetCommand
                                             W(DoTranslation("Upload has completed."), True, ColTypes.Neutral)
                                         End If
                                     Else
-                                        W(DoTranslation("Specify the address"), True, ColTypes.Err)
+                                        W(DoTranslation("Specify the address"), True, ColTypes.Error)
                                     End If
                                 Else
-                                    W(DoTranslation("Please use ""ftp"" if you are going to upload files to the FTP server."), True, ColTypes.Err)
+                                    W(DoTranslation("Please use ""ftp"" if you are going to upload files to the FTP server."), True, ColTypes.Error)
                                 End If
                                 Exit Sub
                             Catch ex As Exception
                                 UFinish = False
-                                W(DoTranslation("Upload failed in try {0}: {1}"), True, ColTypes.Err, RetryCount, ex.Message)
+                                W(DoTranslation("Upload failed in try {0}: {1}"), True, ColTypes.Error, RetryCount, ex.Message)
                                 RetryCount += 1
                                 Wdbg("I", "Try count: {0}", RetryCount)
                                 WStkTrc(ex)
@@ -776,7 +776,7 @@ Public Module GetCommand
                         ReloadMods()
                         W(DoTranslation("Mods reloaded."), True, ColTypes.Neutral)
                     Else
-                        W(DoTranslation("Reloading not allowed in safe mode."), True, ColTypes.Err)
+                        W(DoTranslation("Reloading not allowed in safe mode."), True, ColTypes.Error)
                     End If
 
                 Case "reloadsaver"
@@ -785,7 +785,7 @@ Public Module GetCommand
                         If Not SafeMode Then
                             CompileCustom(eqargs(0))
                         Else
-                            W(DoTranslation("Reloading not allowed in safe mode."), True, ColTypes.Err)
+                            W(DoTranslation("Reloading not allowed in safe mode."), True, ColTypes.Error)
                         End If
                     End If
 
@@ -812,7 +812,7 @@ Public Module GetCommand
                             StartRDebugThread(True)
                         End If
                     Else
-                        W(DoTranslation("Debugging not enabled."), True, ColTypes.Err)
+                        W(DoTranslation("Debugging not enabled."), True, ColTypes.Error)
                     End If
 
                 Case "rm"
@@ -828,7 +828,7 @@ Public Module GetCommand
                                 RemoveDirectory(Path)
                             Else
                                 Wdbg("W", "Trying to remove {0} which is not found.", Path)
-                                W(DoTranslation("Can't remove {0} because it doesn't exist."), True, ColTypes.Err, Path)
+                                W(DoTranslation("Can't remove {0} because it doesn't exist."), True, ColTypes.Error, Path)
                             End If
                         Next
                     End If
@@ -867,7 +867,7 @@ Public Module GetCommand
                         Catch ex As Exception
                             Wdbg("E", "Error trying to search {0} for {1}", eqargs(0), eqargs(1))
                             WStkTrc(ex)
-                            W(DoTranslation("Searching {0} for {1} failed.") + " {2}", True, ColTypes.Err, eqargs(0), eqargs(1), ex.Message)
+                            W(DoTranslation("Searching {0} for {1} failed.") + " {2}", True, ColTypes.Error, eqargs(0), eqargs(1), ex.Message)
                         End Try
                     End If
 
@@ -882,7 +882,7 @@ Public Module GetCommand
                         Catch ex As Exception
                             Wdbg("E", "Error trying to search {0} for {1}", eqargs(0), eqargs(1))
                             WStkTrc(ex)
-                            W(DoTranslation("Searching {0} for {1} failed.") + " {2}", True, ColTypes.Err, eqargs(0), eqargs(1), ex.Message)
+                            W(DoTranslation("Searching {0} for {1} failed.") + " {2}", True, ColTypes.Error, eqargs(0), eqargs(1), ex.Message)
                         End Try
                     End If
 
@@ -910,7 +910,7 @@ Public Module GetCommand
                                     W(DoTranslation("{0} is no longer set to default screensaver."), True, ColTypes.Neutral, strArgs)
                                 End If
                             Else
-                                W(DoTranslation("Screensaver {0} not found."), True, ColTypes.Err, strArgs)
+                                W(DoTranslation("Screensaver {0} not found."), True, ColTypes.Error, strArgs)
                             End If
                         End If
                     End If
@@ -949,10 +949,10 @@ Public Module GetCommand
                             SFTPInitiateShell(True, eqargs(0))
                         End If
                     Catch sftpex As Exceptions.SFTPShellException
-                        W(sftpex.Message, True, ColTypes.Err)
+                        W(sftpex.Message, True, ColTypes.Error)
                     Catch ex As Exception
                         WStkTrc(ex)
-                        W(DoTranslation("Unknown SFTP shell error:") + " {0}", True, ColTypes.Err, ex.Message)
+                        W(DoTranslation("Unknown SFTP shell error:") + " {0}", True, ColTypes.Error, ex.Message)
                     End Try
 
                 Case "shownotifs"
@@ -986,7 +986,7 @@ Public Module GetCommand
                             If eqargs(0) = "all" Then
                                 ShowTimesInZones()
                             Else
-                                W(DoTranslation("Timezone is specified incorrectly."), True, ColTypes.Err)
+                                W(DoTranslation("Timezone is specified incorrectly."), True, ColTypes.Error)
                             End If
                         End If
                     End If
@@ -1010,7 +1010,7 @@ Public Module GetCommand
                         If eqargs(0) = "e" Or eqargs(0) = "m" Or eqargs(0) = "h" Then
                             InitializeSpeedPress(eqargs(0))
                         Else
-                            W(DoTranslation("Invalid difficulty") + " {0}", True, ColTypes.Err, eqargs(0))
+                            W(DoTranslation("Invalid difficulty") + " {0}", True, ColTypes.Error, eqargs(0))
                         End If
                     End If
 
@@ -1083,10 +1083,10 @@ Public Module GetCommand
                                     spent.Stop()
                                 Next
                             Else
-                                W(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Err)
+                                W(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
                             End If
                         Else
-                            W(DoTranslation("{0} is not found."), True, ColTypes.Err, file)
+                            W(DoTranslation("{0} is not found."), True, ColTypes.Error, file)
                         End If
                     End If
 
@@ -1147,7 +1147,7 @@ Public Module GetCommand
                                         spent.Stop()
                                     Next
                                 Else
-                                    W(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Err)
+                                    W(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
                                     Exit For
                                 End If
                                 Console.WriteLine()
@@ -1158,7 +1158,7 @@ Public Module GetCommand
                                 FStream.Flush()
                             End If
                         Else
-                            W(DoTranslation("{0} is not found."), True, ColTypes.Err, folder)
+                            W(DoTranslation("{0} is not found."), True, ColTypes.Error, folder)
                         End If
                     End If
 
@@ -1227,7 +1227,7 @@ Public Module GetCommand
 #If SPECIFIER = "REL" Then
                     CheckKernelUpdates()
 #Else
-                    W(DoTranslation("Checking for updates is disabled because you're running a development version."), True, ColTypes.Err)
+                    W(DoTranslation("Checking for updates is disabled because you're running a development version."), True, ColTypes.Error)
 #End If
 
                 Case "usermanual"
@@ -1254,13 +1254,13 @@ Public Module GetCommand
                             End If
                         Catch ihae As Exceptions.InvalidHashAlgorithmException
                             WStkTrc(ihae)
-                            W(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Err)
+                            W(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
                         Catch ihe As Exceptions.InvalidHashException
                             WStkTrc(ihe)
-                            W(DoTranslation("Hashes are malformed."), True, ColTypes.Err)
+                            W(DoTranslation("Hashes are malformed."), True, ColTypes.Error)
                         Catch fnfe As FileNotFoundException
                             WStkTrc(fnfe)
-                            W(DoTranslation("{0} is not found."), True, ColTypes.Err, eqargs(3))
+                            W(DoTranslation("{0} is not found."), True, ColTypes.Error, eqargs(3))
                         End Try
                     End If
 
@@ -1297,10 +1297,10 @@ Public Module GetCommand
                                 For Each CommandInfo As CommandInfo In Commands.Values
                                     If CommandInfo.Wrappable Then WrappableCmds.Add(CommandInfo.Command)
                                 Next
-                                W(DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", True, ColTypes.Err, String.Join(", ", WrappableCmds))
+                                W(DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", True, ColTypes.Error, String.Join(", ", WrappableCmds))
                             End If
                         Else
-                            W(DoTranslation("The wrappable command is not found."), True, ColTypes.Err)
+                            W(DoTranslation("The wrappable command is not found."), True, ColTypes.Error)
                         End If
                     End If
 
@@ -1330,7 +1330,7 @@ Public Module GetCommand
                         If File.Exists(eqargs(0)) Then
                             InitializeZipShell(eqargs(0))
                         Else
-                            W(DoTranslation("File doesn't exist."), True, ColTypes.Err)
+                            W(DoTranslation("File doesn't exist."), True, ColTypes.Error)
                         End If
                     End If
 
@@ -1350,11 +1350,11 @@ Public Module GetCommand
         Catch ex As Exception
             EventManager.RaiseCommandError(requestedCommand, ex)
             If DebugMode = True Then
-                W(DoTranslation("Error trying to execute command") + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Err,
+                W(DoTranslation("Error trying to execute command") + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Error,
                   Err.Number, ex.Message, ex.StackTrace, Command)
                 WStkTrc(ex)
             Else
-                W(DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Err, Err.Number, ex.Message, Command)
+                W(DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, Err.Number, ex.Message, Command)
             End If
         End Try
         StartCommandThread.Abort()

@@ -716,7 +716,7 @@ Public Module Config
             Wdbg("I", "Config loaded with {0} sections", configReader.Sections.Count)
             ReadConfig()
         Catch cex As Exceptions.ConfigException
-            W(cex.Message, True, ColTypes.Err)
+            W(cex.Message, True, ColTypes.Error)
             WStkTrc(cex)
         End Try
 
