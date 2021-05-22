@@ -116,6 +116,7 @@ Public Module Config
                         New IniKey(ksconf, "BouncingBlock - Activate 255 Color Mode", BouncingBlock255Colors),
                         New IniKey(ksconf, "ProgressClock - Activate 255 Color Mode", ProgressClock255Colors),
                         New IniKey(ksconf, "Lighter - Activate 255 Color Mode", Lighter255Colors),
+                        New IniKey(ksconf, "Wipe - Activate 255 Color Mode", Wipe255Colors),
                         New IniKey(ksconf, "ColorMix - Activate True Color Mode", ColorMixTrueColor),
                         New IniKey(ksconf, "Disco - Activate True Color Mode", DiscoTrueColor),
                         New IniKey(ksconf, "GlitterColor - Activate True Color Mode", GlitterColorTrueColor),
@@ -124,6 +125,7 @@ Public Module Config
                         New IniKey(ksconf, "BouncingBlock - Activate True Color Mode", BouncingBlockTrueColor),
                         New IniKey(ksconf, "ProgressClock - Activate True Color Mode", ProgressClockTrueColor),
                         New IniKey(ksconf, "Lighter - Activate True Color Mode", LighterTrueColor),
+                        New IniKey(ksconf, "Wipe - Activate True Color Mode", WipeTrueColor),
                         New IniKey(ksconf, "Disco - Cycle Colors", DiscoCycleColors),
                         New IniKey(ksconf, "ProgressClock - Cycle Colors", ProgressClockCycleColors),
                         New IniKey(ksconf, "ProgressClock - Ticks to change color", ProgressClockCycleColorsTicks),
@@ -144,6 +146,7 @@ Public Module Config
                         New IniKey(ksconf, "Fader - Fade Out Delay in Milliseconds", FaderFadeOutDelay),
                         New IniKey(ksconf, "Typo - Delay in Milliseconds", TypoDelay),
                         New IniKey(ksconf, "Typo - Write Again Delay in Milliseconds", TypoWriteAgainDelay),
+                        New IniKey(ksconf, "Wipe - Delay in Milliseconds", WipeDelay),
                         New IniKey(ksconf, "BouncingText - Text Shown", BouncingTextWrite),
                         New IniKey(ksconf, "Fader - Text Shown", FaderWrite),
                         New IniKey(ksconf, "Typo - Text Shown", TypoWrite),
@@ -151,7 +154,8 @@ Public Module Config
                         New IniKey(ksconf, "Fader - Max Fade Steps", FaderMaxSteps),
                         New IniKey(ksconf, "Typo - Minimum writing speed in WPM", TypoWritingSpeedMin),
                         New IniKey(ksconf, "Typo - Maximum writing speed in WPM", TypoWritingSpeedMax),
-                        New IniKey(ksconf, "Typo - Probability of typo in percent", TypoMissStrikePossibility)))
+                        New IniKey(ksconf, "Typo - Probability of typo in percent", TypoMissStrikePossibility),
+                        New IniKey(ksconf, "Wipe - Wipes to change direction", WipeWipesNeededToChangeDirection)))
 
                 'Misc Section
                 ksconf.Sections.Add(
@@ -373,6 +377,7 @@ Public Module Config
             ksconf.Sections("Screensaver").Keys("BouncingBlock - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for BouncingBlock"
             ksconf.Sections("Screensaver").Keys("ProgressClock - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for ProgressColor"
             ksconf.Sections("Screensaver").Keys("Lighter - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for Lighter"
+            ksconf.Sections("Screensaver").Keys("Wipe - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for Wipe"
             ksconf.Sections("Screensaver").Keys("ColorMix - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for ColorMix"
             ksconf.Sections("Screensaver").Keys("Disco - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for Disco"
             ksconf.Sections("Screensaver").Keys("GlitterColor - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for GlitterColor"
@@ -381,6 +386,7 @@ Public Module Config
             ksconf.Sections("Screensaver").Keys("BouncingBlock - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for BouncingBlock"
             ksconf.Sections("Screensaver").Keys("ProgressClock - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for ProgressColor"
             ksconf.Sections("Screensaver").Keys("Lighter - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for Lighter"
+            ksconf.Sections("Screensaver").Keys("Wipe - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for Wipe"
             ksconf.Sections("Screensaver").Keys("Disco - Cycle Colors").TrailingComment.Text = "Disco will cycle colors if it's enabled. Otherwise, select random colors."
             ksconf.Sections("Screensaver").Keys("ProgressClock - Cycle Colors").TrailingComment.Text = "ProgressClock will select random colors if it's enabled. Otherwise, use colors from config."
             ksconf.Sections("Screensaver").Keys("ProgressClock - Color of Seconds Bar").TrailingComment.Text = "The color of seconds progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."
@@ -403,6 +409,7 @@ Public Module Config
             ksconf.Sections("Screensaver").Keys("ProgressClock - Ticks to change color").TrailingComment.Text = "If color cycling is enabled, how many ticks before changing colors in ProgressClock? 1 tick = 0.5 seconds"
             ksconf.Sections("Screensaver").Keys("Typo - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Fader?"
             ksconf.Sections("Screensaver").Keys("Typo - Write Again Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before writing text again in Fader?"
+            ksconf.Sections("Screensaver").Keys("Wipe - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Wipe?"
 
             'Screensaver: Texts
             ksconf.Sections("Screensaver").Keys("BouncingText - Text Shown").TrailingComment.Text = "Any text for BouncingText"
@@ -415,6 +422,7 @@ Public Module Config
             ksconf.Sections("Screensaver").Keys("Typo - Minimum writing speed in WPM").TrailingComment.Text = "Minimum writing speed in WPM"
             ksconf.Sections("Screensaver").Keys("Typo - Maximum writing speed in WPM").TrailingComment.Text = "Maximum writing speed in WPM"
             ksconf.Sections("Screensaver").Keys("Typo - Probability of typo in percent").TrailingComment.Text = "Probability of typo in percent"
+            ksconf.Sections("Screensaver").Keys("Wipe - Wipes to change direction").TrailingComment.Text = "How many wipes to do before changing direction randomly?"
 
             'Misc
             ksconf.Sections("Misc").TrailingComment.Text = "This section is the other settings that are not categorized yet."
@@ -592,6 +600,7 @@ Public Module Config
             BouncingBlock255Colors = configReader.Sections("Screensaver").Keys("BouncingBlock - Activate 255 Color Mode").Value
             ProgressClock255Colors = configReader.Sections("Screensaver").Keys("ProgressClock - Activate 255 Color Mode").Value
             Lighter255Colors = configReader.Sections("Screensaver").Keys("Lighter - Activate 255 Color Mode").Value
+            Wipe255Colors = configReader.Sections("Screensaver").Keys("Wipe - Activate 255 Color Mode").Value
             ColorMixTrueColor = configReader.Sections("Screensaver").Keys("ColorMix - Activate True Color Mode").Value
             DiscoTrueColor = configReader.Sections("Screensaver").Keys("Disco - Activate True Color Mode").Value
             GlitterColorTrueColor = configReader.Sections("Screensaver").Keys("GlitterColor - Activate True Color Mode").Value
@@ -600,6 +609,7 @@ Public Module Config
             BouncingBlockTrueColor = configReader.Sections("Screensaver").Keys("BouncingBlock - Activate True Color Mode").Value
             ProgressClockTrueColor = configReader.Sections("Screensaver").Keys("ProgressClock - Activate True Color Mode").Value
             LighterTrueColor = configReader.Sections("Screensaver").Keys("Lighter - Activate True Color Mode").Value
+            WipeTrueColor = configReader.Sections("Screensaver").Keys("Wipe - Activate True Color Mode").Value
             DiscoCycleColors = configReader.Sections("Screensaver").Keys("Disco - Cycle Colors").Value
             ProgressClockCycleColors = configReader.Sections("Screensaver").Keys("ProgressClock - Cycle Colors").Value
             ProgressClockSecondsProgressColor = configReader.Sections("Screensaver").Keys("ProgressClock - Color of Seconds Bar").Value
@@ -622,6 +632,7 @@ Public Module Config
             If Integer.TryParse(configReader.Sections("Screensaver").Keys("ProgressClock - Ticks to change color").Value, 0) Then ProgressClockCycleColorsTicks = configReader.Sections("Screensaver").Keys("ProgressClock - Ticks to change color").Value
             If Integer.TryParse(configReader.Sections("Screensaver").Keys("Typo - Delay in Milliseconds").Value, 0) Then TypoDelay = configReader.Sections("Screensaver").Keys("Typo - Delay in Milliseconds").Value
             If Integer.TryParse(configReader.Sections("Screensaver").Keys("Typo - Write Again Delay in Milliseconds").Value, 0) Then TypoWriteAgainDelay = configReader.Sections("Screensaver").Keys("Typo - Write Again Delay in Milliseconds").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Wipe - Delay in Milliseconds").Value, 0) Then WipeDelay = configReader.Sections("Screensaver").Keys("Wipe - Delay in Milliseconds").Value
 
             'Screensaver: Texts
             BouncingTextWrite = configReader.Sections("Screensaver").Keys("BouncingText - Text Shown").Value
@@ -634,6 +645,7 @@ Public Module Config
             If Integer.TryParse(configReader.Sections("Screensaver").Keys("Typo - Minimum writing speed in WPM").Value, 0) Then TypoWritingSpeedMin = configReader.Sections("Screensaver").Keys("Typo - Minimum writing speed in WPM").Value
             If Integer.TryParse(configReader.Sections("Screensaver").Keys("Typo - Maximum writing speed in WPM").Value, 0) Then TypoWritingSpeedMax = configReader.Sections("Screensaver").Keys("Typo - Maximum writing speed in WPM").Value
             If Integer.TryParse(configReader.Sections("Screensaver").Keys("Typo - Probability of typo in percent").Value, 0) Then TypoMissStrikePossibility = configReader.Sections("Screensaver").Keys("Typo - Probability of typo in percent").Value
+            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Wipe - Wipes to change direction").Value, 0) Then WipeWipesNeededToChangeDirection = configReader.Sections("Screensaver").Keys("Wipe - Wipes to change direction").Value
 
             'Misc Section
             Wdbg("I", "Parsing misc section...")

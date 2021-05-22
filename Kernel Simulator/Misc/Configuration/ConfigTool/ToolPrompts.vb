@@ -190,7 +190,7 @@ Public Module ToolPrompts
                     W("11) " + DoTranslation("Enable RPC") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RPCEnabled)))
                     W("12) " + DoTranslation("RPC Port") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(RPCPort)))
                 Case "6" 'Screensaver
-                    MaxOptions = 14
+                    MaxOptions = 15
                     W("*) " + DoTranslation("Screensaver Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all the screensavers and their available settings.") + vbNewLine, True, ColTypes.Neutral)
 
@@ -208,6 +208,7 @@ Public Module ToolPrompts
                     W("11) Lighter...", True, ColTypes.Option)
                     W("12) Fader...", True, ColTypes.Option)
                     W("13) Typo...", True, ColTypes.Option)
+                    W("14) Wipe...", True, ColTypes.Option)
 
                     'Populate custom screensavers
                     For Each CustomSaver As String In CSvrdb.Keys
@@ -316,6 +317,14 @@ Public Module ToolPrompts
                     W("4) " + DoTranslation("Minimum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoWritingSpeedMin)))
                     W("5) " + DoTranslation("Maximum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoWritingSpeedMax)))
                     W("6) " + DoTranslation("Probability of typo in percent") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(TypoMissStrikePossibility)))
+                Case "6.14" 'Screensaver > Wipe
+                    MaxOptions = 4
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > Wipe" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " Wipe." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Wipe255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(WipeTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(WipeDelay)))
+                    W("4) " + DoTranslation("Wipes to change direction") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(WipeWipesNeededToChangeDirection)))
                 Case "6." + $"{If(SectionParameters.Length <> 0, SectionParameters(0), $"{BuiltinSavers + 1}")}" 'Screensaver > a custom saver
                     Dim SaverIndex As Integer = SectionParameters(0) - BuiltinSavers - 1
                     Dim Configurables As List(Of String) = SectionParameters(1)
@@ -1047,6 +1056,34 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Probability of typo in percent"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Typo > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
+                    End Select
+                Case "6.14" 'Wipe
+                    Select Case KeyNumber
+                        Case 1 'Wipe: Activate 255 colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(Wipe255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Wipe > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates 255 color support for Wipe.") + vbNewLine, True, ColTypes.Neutral)
+                        Case 2 'Wipe: Activate true colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(WipeTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Wipe > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates true color support for Wipe.") + vbNewLine, True, ColTypes.Neutral)
+                        Case 3 'Wipe: Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(WipeDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Wipe > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 4 'Wipe: Wipes to change direction
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(WipeWipesNeededToChangeDirection)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Wipe > " + DoTranslation("Wipes to change direction") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many wipes to do before changing direction randomly?"), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Wipe > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Err)
                     End Select
                 Case "6." + $"{If(SectionParts.Length > 1, SectionParts(1), $"{BuiltinSavers + 1}")}" 'Custom saver

@@ -84,6 +84,14 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public LighterTrueColor As Boolean
     ''' <summary>
+    ''' [Wipe] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public Wipe255Colors As Boolean
+    ''' <summary>
+    ''' [Wipe] Enable truecolor support. Has a higher priority than 255 color support.
+    ''' </summary>
+    Public WipeTrueColor As Boolean
+    ''' <summary>
     ''' [Disco] Enable color cycling
     ''' </summary>
     Public DiscoCycleColors As Boolean
@@ -165,6 +173,10 @@ Public Module ScreensaverSettings
     ''' [Typo] How many milliseconds to wait before writing the text again?
     ''' </summary>
     Public TypoWriteAgainDelay As Integer = 3000
+    ''' <summary>
+    ''' [Wipe] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public WipeDelay As Integer = 10
 
     '-> Texts
     ''' <summary>
@@ -201,5 +213,9 @@ Public Module ScreensaverSettings
     ''' [Typo] Possibility that the writer made a typo in percent
     ''' </summary>
     Public TypoMissStrikePossibility As Integer = 60
+    ''' <summary>
+    ''' [Wipe] How many wipes needed to change direction?
+    ''' </summary>
+    Public WipeWipesNeededToChangeDirection As Integer = 10
 
 End Module
