@@ -33,7 +33,7 @@ Imports KS
     ''' Tests translation dictionary preparation for all languages
     ''' </summary>
     <TestMethod> <TestCategory("Initialization")> Public Sub TestPrepareDictForAllLanguages()
-        For Each Lang As String In availableLangs
+        For Each Lang As String In Languages.Keys
             Dim ExpectedLength As Integer = KS.My.Resources.ResourceManager.GetString(Lang.Replace("-", "_")).Replace(Chr(13), "").Split(Chr(10)).ToList.Count - 2
             Dim ActualLength As Integer = PrepareDict(Lang).Values.Count
             ActualLength.ShouldBe(ExpectedLength, $"Lang: {Lang}")

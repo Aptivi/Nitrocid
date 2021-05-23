@@ -220,6 +220,7 @@
     <Compile Include="Kernel\Exceptions.vb" />
     <Compile Include="Kernel\Flags.vb" />
     <Compile Include="Kernel\KernelTools.vb" />
+    <Compile Include="Languages\LanguageInfo.vb" />
     <Compile Include="Languages\Translate.vb" />
     <Compile Include="Login\PermissionManagement.vb" />
     <Compile Include="Misc\Configuration\ConfigTool\ToolPrompts.vb" />
