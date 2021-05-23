@@ -22,7 +22,7 @@ Imports Newtonsoft.Json.Linq
 Public Module Translate
 
     'Variables
-    Public availableLangs() As String = {"arb", "arb-T", "azr", "ben", "ben-T", "bsq", "ccw", "chi", "chi-T", "cro", "csc", "ctl", "cze", "dan", "dtc", "eng", "fin", "flp", "fre", "ger", "hti", "hwi", "ind", "ind-T", "iri", "ita", "jpn", "jpn-T", "jvn", "kor", "kor-T", "ltn", "mal", "mts", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "som", "spa", "srb", "srb-T", "swa", "swe", "uzb", "vtn", "wls", "zul"}
+    Public availableLangs() As String = {"arb", "arb-T", "azr", "ben", "ben-T", "bsq", "ccw", "chi", "chi-T", "cro", "csc", "ctl", "cze", "dan", "dtc", "eng", "fin", "flp", "fre", "ger", "glc", "hti", "hwi", "ind", "ind-T", "iri", "ita", "jpn", "jpn-T", "jvn", "kor", "kor-T", "ltn", "mal", "mts", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "som", "spa", "srb", "srb-T", "swa", "swe", "uzb", "vtn", "wls", "zul"}
     Public Transliterables() As String = {"arb", "ben", "chi", "ind", "jpn", "kor", "pun", "rus", "srb"}
     Public currentLang As String = "eng" 'Default to English
     Public CurrentCult As New CultureInfo("en-US")
@@ -118,6 +118,8 @@ Public Module Translate
                 translated = My.Resources.fin
             Case "ger" 'Germany
                 translated = My.Resources.ger
+            Case "glc" 'Galician
+                translated = My.Resources.glc
             Case "hti" 'Haitian Creole
                 translated = My.Resources.hti
             Case "hwi" 'Hawaiian
@@ -402,6 +404,8 @@ CHOICE:
                 Return "French (France)"
             Case "ger"
                 Return "German (Germany)"
+            Case "glc"
+                Return If(IsOnWindows(), "Galician (Galician)", "Galician (Spain)")
             Case "hwi"
                 Return "Hawaiian (United States)"
             Case "ind-T", "ind"

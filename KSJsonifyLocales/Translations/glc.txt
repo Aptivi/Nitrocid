@@ -1,0 +1,961 @@
+Comandos dispoñibles: {0}
+Escribir comando:
+Cancelouse a inxección de ordes.
+Separe os argumentos de arranque con comas sen espazos, por exemplo, 'motd, gpuprobe'
+Separe os comandos de 'cmdinject' con dous puntos con espazos, por exemplo, 'cmdinject setthemes Hacker : beep 1024 0.5'
+Teña en conta que o argumento "depuración" non cobre completamente o núcleo.
+bargs: non se atopou o argumento solicitado {0}.
+bargs: Erro irrecuperable no argumento:
+Argumentos dispoñibles: {0}
+Argumentos ("help" para obter axuda):
+Os argumentos inxectados programaranse para executarse no seguinte reinicio.
+A inxección de argumentos cancelouse.
+Erro ao analizar argumentos reais de liña de comandos: {0}
+Modelo de cor non válido {0}
+Predeterminado
+Personalizado
+hwprobe: probarase o seu hardware. Agarda ...
+hwprobe: Hardware xa sondado.
+hwprobe: o hardware non está probado. Sonda usando 'hwprobe'
+CPU: fallou ao probar un ou máis núcleos de CPU. Mostrando información de todos os xeitos ...
+RAM: fallou ao probar un ou máis dos chips RAM. Mostrando información de todos os xeitos ...
+Disco duro: non se puido sondar un ou máis discos duros. Mostrando información de todos os xeitos ...
+CPU: número total de procesadores: {0}
+CPU: {0} {1} MHz
+RAM: {0} MB = {1} MB
+RAM: slots usados ​​(por nomes): {0}
+RAM: slots usados ​​(por números): {0} / {1} ({2}%)
+RAM: o estado da proba está obsoleto e eliminarase na versión futura.
+Disco duro: {0} {1} GB {2}
+Disco duro: {0} {1} {2} GB {3}
+Disco duro: CHS: {4} cilindros | {5} cabezas | {6} sectores
+Disco duro: CHS: {3} cilindros | {4} cabezas | {5} sectores
+hwprobe: Non se admite a proba porque non está deseñada para executar probadores en Unix.
+Introduza o contrasinal de administrador para o mantemento.
+Non quedan máis usuarios na lista.
+Erro do núcleo ao arrincar: {0}
+PANICO DOBLE: o tempo de reinicio supera o tempo máximo de reinicio de erro {0} permitido. Atopaches un erro do núcleo.
+[{0}] pánico: reinicio habilitado porque o nivel de erro é {0}.
+[{0}] pánico: tempo de reinicio: {1} segundos, supera a 1 hora. Establécese en 1 minuto.
+PANICO DOBLE: o tipo de erro {0} non é válido.
+[{0}] dpanic: {1} - Reinicio en {2} segundos ...
+[{0}] pánico: o reinicio está desactivado debido a que o nivel de erro é {0}.
+[{0}] pánico: {1} - Prema calquera tecla para continuar usando o núcleo.
+[{0}] pánico: {1} - Prema calquera tecla para apagar.
+[{0}] pánico: {1} - Reinicio en {2} segundos ...
+DOBLE PÁNICO: erro do núcleo: {0}
+Apagando ...
+Reiniciando ...
+---===+++> Benvido ao núcleo | Versión {0} <+++===---
+Outra instancia de Kernel Simulator está en execución. Peche en caso de interferencia.
+O usuario {0} engadiuse á lista de administradores.
+O usuario {0} engadiuse á lista de desactivados.
+Non se puido engadir o usuario ás listas de permisos: tipo inválido {0}
+Non se puido engadir o usuario ás listas de permisos: usuario non válido {0}
+Eliminouse o usuario {0} da lista de administradores.
+Eliminouse o usuario {0} da lista desactivada.
+Produciuse un erro ao eliminar o usuario das listas de permisos: tipo inválido {0}
+Xa iniciaches sesión.
+Erro ao eliminar o usuario das listas de permisos: usuario non válido {0}
+Atopou un erro no sistema de permisos: modo non válido {0}
+Atopou un erro ou o permiso que tentou engadir ou eliminar xa está feito ou outro erro.
+Erro {0}: {1}
+Atopou un erro ou fallou o permiso que intentou editar para un novo usuario.
+Nomes de usuario dispoñibles: {0}
+Nome de usuario:
+Non se permiten espazos.
+Non se permiten caracteres especiais.
+Contrasinal de {0}:
+Contrasinal incorrecto.
+O usuario está desactivado.
+Nome de usuario incorrecto.
+Erro ao intentar analizar os marcadores de posición. {0} - Rastrexo de pila:
+Erro ao intentar analizar os marcadores de posición. {0}
+Erro ao tentar engadir un nome de usuario.
+usrmgr: Creando nome de usuario {0} ...
+Nome de usuario en branco.
+Non se atopou o usuario {0}.
+Non se pode eliminar o usuario {0}.
+O usuario {0} xa está iniciado sesión. Pechar sesión e iniciar sesión como outro administrador.
+Eliminouse o usuario {0}.
+Erro ao tentar eliminar o nome de usuario.
+{0} de {1} = {2}
+Non se permite tentar dividir por cero.
+Sospéitase un intento de cálculo que resultou nun desbordamento.
+Produciuse un erro ao calcular: {0}
+{0} non se pode converter a {1}.
+Ou a fonte
+ ou destino
+ non existe no servidor.
+{0} a {1}: {2}
+Erro ao tentar converter de {0} a {1}: {2}
+Erro
+Non se atopou o protector de pantalla solicitado {0}.
+{0} inicializouse correctamente.
+{0} non se inicializou. É posible que o código do protector de pantalla experimentase un erro durante a inicialización.
+O protector de pantalla {0} non existe.
+{0} está configurado como protector de pantalla predeterminado.
+Non se atopou o protector de pantalla {0} na base de datos. Comproba o nome e téntao de novo.
+Non se pode cargar o protector de pantalla por mor do seguinte:
+Hai un erro grave ao imprimir texto.
+Produciuse un erro ao tentar crear a configuración.
+Produciuse un erro ao tentar crear a configuración: {0}
+Detectouse unha actualización de {0} a {1}. Actualizando configuración ...
+Produciuse un erro ao tentar actualizar a configuración: {0}.
+Produciuse un erro ao actualizar a configuración.
+Produciuse un erro ao tentar ler a configuración.
+Produciuse un erro ao tentar ler a configuración: {0}
+Erro ao tentar liberar a memoria RAM: {0} - Continuando ...
+Non se pode cargar o Mod por mor do seguinte:
+mod: Cargando modificacións ...
+mod: Detendo mods ...
+Mod {0} non ten o nome. Revisa o código fonte.
+Mod {0} non ten a versión.
+{0} v {1} comezou
+Non hai definición para o comando {0}.
+Comando definido por
+Debería desconectarse do servidor antes de conectarse a outro servidor
+Nome de usuario para {0}:
+Contrasinal para {0}:
+Conectado a {0}
+Erro ao tentar conectarse a {0}: {1}
+Rastrexo de pila: {2}
+Introduza un servidor FTP.
+O directorio local {0} non existe.
+Insira un directorio local. ".." para volver.
+Non se atopou o directorio {0}.
+Insira un directorio remoto. ".." para volver
+Debe conectarse a un servidor antes de cambiar de directorio
+Directorio local: {0}
+Directorio remoto: {0}
+Debe conectarse ao servidor antes de obter o directorio remoto actual.
+Eliminando ficheiro {0} ...
+Seguro que queres eliminar o ficheiro {0} <y/n>?
+Ficheiro eliminado {0}
+Debe conectarse ao servidor con privilexios administrativos antes de realizar a eliminación.
+Insira un ficheiro para eliminar.
+Debe ter permisos administrativos no seu nome de usuario rexistrado para poder eliminalo.
+Desconectado de {0}
+Aínda non te conectaches a ningún servidor
+Descargando o ficheiro {0} ...
+Arquivo descargado {0}.
+Fallou a descarga do ficheiro {0} porque o ficheiro local está corrompido.
+Debe conectarse ao servidor antes de realizar a transmisión.
+Insira un ficheiro para descargar no directorio local.
+{0} KB | Modificado en: {1}
+Debería conectarse ao servidor antes de enumerar todos os ficheiros remotos.
+Cambiando o nome do ficheiro {0} a {1} ...
+Cambiouse o nome correctamente
+Insira un ficheiro e o novo nome do ficheiro.
+Cargando ficheiro {0} ...
+Ficheiro cargado {0}
+Insira un ficheiro para cargar no directorio remoto. cargar <ficheiro> <directorio>
+Erro ao tentar executar o comando FTP
+(Interior:
+{0} cartafoles, {1} ficheiros
+(Acceso denegado)
+{0} KB, creado en {1} {2}, modificado en {3} {4}
+Obtén o directorio local actual
+Obtén o directorio remoto actual
+Conéctase a un servidor FTP (debe comezar con "ftp://" ou "ftps://")
+Cambia o directorio local para descargar ou cargar desde
+Cambia o directorio remoto para descargar ou cargar
+Elimina o ficheiro remoto do servidor
+Desconéctase do servidor
+Descarga o ficheiro remoto ao directorio local usando binario ou texto
+Sae do shell FTP e volve ao núcleo
+Mostra a pantalla de axuda
+Lista o directorio local
+Lista o directorio remoto
+Cambia o nome dun ficheiro ou directorio específico
+Carga ficheiro local a directorio remoto usando binario ou texto
+Houbo un erro no shell FTP.
+Mensaxe FTP: non se atopou o comando solicitado {0}. Vexa "axuda" para unha lista de comandos dispoñibles especificados no shell FTP.
+net: obtivo resposta de {0} en {1} ms
+Tempo de espera, desconexión ou servidor sen conexión.
+net: o nome do teu ordenador na rede é {0}
+net: O teu nome de servidor é {1}
+net: Parece que as computadoras están no dominio ou grupo de traballo:
+net: WiFi ou Ethernet están desconectados.
+net: Parece que os ordenadores están conectados a continuación:
+net: Enderezo do enrutador: {0}
+Non se puideron obter as propiedades do adaptador {0}
+Número de adaptador:
+Nome do adaptador:
+Unidade máxima de transmisión: {2} unidades
+DHCP habilitado:
+Paquetes non unicast:
+Paquetes Unicast:
+Erro de paquetes entrantes / saíntes:
+O alias non pode ser o mesmo nome que un comando.
+Non se atopou o comando para alias a {0}.
+Está prohibido completar o alias de {0} a {1}.
+Agora podes executar "{0}" como un comando: "{1}".
+Xa non podes usar "{0}" como comando "{1}".
+Non se eliminou o alias {0}.
+Modo non válido {0}.
+Os argumentos inxectados, {0}, programaranse para executarse no seguinte reinicio.
+Non houbo suficientes argumentos. Vexa a continuación o uso:
+Non se atopou o directorio {0}
+Nome de host en branco.
+Cambiando de: {0} a {1} ...
+Mensaxe en branco do día.
+MAL en branco despois do inicio de sesión.
+Cambiando MAL de {0} a {1} ...
+Contrasinal de usuario incorrecto.
+Os contrasinais non coinciden.
+O nome de usuario cambiouse a {0}.
+O novo nome que introduciches xa se atopou.
+A lista de PC aínda non é compatible con Unix.
+Alias ​​prohibidos: {0}
+{0} non se atopou.
+Configuración recargada. É posible que deba reiniciar o núcleo para que algúns cambios entren en vigor.
+Todo se restablece á configuración normal.
+Unha ou máis das cores non son válidas.
+As cores non están dispoñibles. Activa a cuncha de cores na configuración do núcleo.
+Non se atopou o protector de pantalla {0}.
+[ Configuración do núcleo (executándose en {0}) ]
+Versión do núcleo:
+Modo de depuración:
+Concha de cor:
+Argumentos no arranque:
+Comando de axuda simplificado:
+MOTD ao iniciar sesión:
+Hora / data na esquina:
+Hardware sondeado:
+Tema actual:
+[ Configuración de hardware ]{0}
+{0}[ Configuración do usuario ]
+Nome de usuario actual:
+Nome de host actual:
+Nomes de usuario dispoñibles:
+Nome do host do ordenador:
+{0}[ Configuración de mensaxes ]
+Código fonte:
+Copyright (c)
+Licenza
+presente
+Erro ao tentar executar o comando
+Engade usuarios (só os administradores poden acceder a este comando)
+Engade alias aos comandos (só os administradores poden acceder a este comando)
+Inxecta argumentos ao núcleo (é necesario reiniciar, só administradores)
+Calculadora simple
+Cambia o directorio
+Cambia o nome do host (só administradores)
+Cambia MAL, o MOTD despois do inicio de sesión (só para administradores)
+Cambia MOTD, a mensaxe do día (só para administradores)
+Cambia o contrasinal do usuario actual
+Cambia o nome de usuario (só para administradores)
+Borra a pantalla
+Converter moeda
+Mostra rexistros de depuración (só administradores)
+Use un shell FTP para interactuar cos servidores
+Páxina de axuda
+Probar manualmente o hardware (Unha vez no núcleo 'nohwprobe')
+Lista o contido do ficheiro / cartafol no cartafol actual
+Recarga o ficheiro do protector de pantalla en %USERPROFILE%\KSMods
+Bloquea a pantalla cun contrasinal
+Pecha sesión
+Lista todos os dispositivos de rede que están en liña (e sen conexión en dominios)
+Lista todos os enderezos de rede do host
+Lista todos os enderezos de rede do host usando a árbore
+Crea un directorio
+Lista información sobre todas as interfaces dispoñibles
+Mostra a lista de alias prohibidos
+Xestionar permisos para os usuarios (só os administradores poden acceder a este comando)
+Comprobe se o enderezo especificado está dispoñible
+Escribe o contido do ficheiro na consola
+Reinicia o ordenador (AVISO: Non hai sincronización, porque non é un núcleo final)
+Recarga o ficheiro de configuración que se edita.
+Elimina un directorio
+Elimina un usuario da lista (só administradores)
+Garda a pantalla dos burnouts
+Calculadora científica. O conversor de unidades está separado por outro comando
+Configura as cores do núcleo
+Configura os protectores de pantalla do núcleo
+Configura os temas do núcleo
+Mostra alias
+Mostra MOTD despois do inicio de sesión definido polo usuario ou o núcleo
+Mostra a mensaxe do día definida polo usuario ou o núcleo
+Amosa data e hora
+Amosa data e hora en zonas
+O núcleo pecharase
+Información do sistema
+Conversor de unidades separado de scicalc.
+Mostra dependencias de código aberto usadas
+Un manual de usuario moi descritivo.
+* Podes usar varios comandos usando os dous puntos entre os comandos.
+Comandos dispoñibles:
+Comandos Mod:
+Alias ​​dos comandos:
+Uso:
+Argumentos separados por comas
+onde estarán os argumentos {0}
+para obter o directorio actual
+En que orixe e destino hai 3 caracteres MAIÚSCULOS dun tipo de cambio
+Lista de todos os ID e nomes:
+Amosa os rexistros de depuración para que nos poida enviar o rexistro.
+Inicializa o shell FTP.
+Probas de hardware (só funciona cando o hardware non está probado e hwprobe non se executa).
+Lista a información de rede, así como todos os computadores conectados a unha rede.
+Amigos de
+Lista a información de rede, así como todos os computadores conectados a unha rede, en forma de árbore.
+Lista a información de rede, así como todos os ordenadores.
+onde estará modname.ss.vb
+Bloquea a pantalla co contrasinal.
+Pecha sesión no usuario.
+Obtén toda a información da rede
+Reinicia o ordenador simulado.
+Recarga a configuración que cambia o usuario final ou a ferramenta.
+As cores non requiren un reinicio, pero a maioría das opcións requiren que reinicie.
+móstrache un protector de pantalla seleccionado, ao tempo que protexes a pantalla contra os burnouts.
+Mostra a data e a hora.
+Mostra a data e a hora en zonas.
+Apaga o ordenador simulado.
+Mostra información e versións do sistema.
+Mostra as bibliotecas de código aberto empregadas
+Houbo un erro no intérprete de comandos.
+Non tes permiso para usar {0}
+Mensaxe de shell: o comando solicitado {0} non está autorizado a executarse en modo de mantemento.
+Mensaxe de shell: non se atopou o comando solicitado {0}. Vexa "axuda" para os comandos dispoñibles.
+Mensaxe de shell: o comando {0} non está autorizado a executarse ao iniciar sesión.
+Mensaxe de shell: non se atopou o comando solicitado {0}.
+Erro ao tentar executar o comando.
+datetime: a hora é {0}
+datetime: hoxe é {0}
+datetime: Fuso horario: {0}
+- Hora de {0}: {1}
+para borrar a pantalla.
+Parece que non se atopou a páxina do manual {0}.
+Produciuse un erro ao tentar cargar a páxina do manual {0} porque {1}.
+Esta páxina do manual está incompleta polos seguintes motivos:
+Preme calquera tecla para continuar ...
+ | {0} palabras | Revisión v {1} | {2} seccións
+Este título da páxina do manual non está escrito
+Esta páxina do manual ({0}) non contén ningún texto corporal. Eliminando páxina ...
+Esta páxina do manual ({0}) non contén ningunha sección. Eliminando páxina ...
+Funcionando en {0}
+Non estás autorizado para obter información de {0}.
+Este comando está obsoleto e eliminarase nunha futura versión.
+Non está autorizado a cambiar o contrasinal de {0} porque o destino era un administrador.
+Converter cantidade de diñeiro de país en país
+Moedas:
+usrmgr: o nome de usuario {0} xa se atopou
+Introduce a túa clave API:
+Non se puideron obter ordenadores. Se estás executando a última versión de Windows 10, debes habilitar SMBv1. Non obstante, este protocolo é inseguro e trataremos de solucionar este problema.
+Elimina todo o rexistro de depuración
+Obtén versións SSE
+Idioma non válido
+Cambia de idioma
+É posible que non teñas instalado libcpanel-json-xs-perl no teu sistema. Consulte o xestor de paquetes para a instalación. Para os sistemas Debian (e derivados), pode querer executar "sudo apt install libcpanel-json-xs-perl" no emulador de terminal. Máis detalles dun erro:
+------------------------------ Volcado de pánico no núcleo ------------------------------
+>> Información de pánico <<
+> Descrición: {0}
+> Tipo de erro: {1}
+> Data e hora: {2}
+>> Información de excepción <<
+> Excepción: {0}
+> Descrición: {1}
+> HRESULT: {2}
+> Fonte: {3}
+> Rastrexo de pila <
+>> Información {0} de excepción interna <<
+>> A excepción {0} é a causa principal <<
+>> Sen excepción; pode ser un erro do núcleo. <<
+>> Marcos, ficheiros, liñas e columnas <<
+> Marco {0}: Ficheiro: {1} | Liña: {2} | Columna: {3}
+> Produciuse un erro ao tentar obter información de cadros. {0}: {1}
+Estableceu o idioma do seu sistema en calquera outra cousa que non sexa o inglés. Desculpe as molestias, pero parece que Google e o seu tradutor son moi estraños ao traducir bloques de código para calquera linguaxe de programación. Mentres arranxamos todos os bloques de códigos para páxinas de manual traducidas, suxerímoslle que abra un ticket para o Tradutor de Google para a tradución de bloques de códigos que non están destinados a ser traducidos e que se fale o idioma do sistema en inglés.
+Recarga mods.
+Mods recargados.
+Benvido a Kernel.
+Conectouse correctamente como <usuario>
+MOTD/MAL é válido, pero o tipo de mensaxe non é válido. Supoñendo MOTD ...
+Intentou ler MOTD/MAL do tipo de mensaxe non válido.
+Mentres mantén unha conexión estable, está descargando {0} a {1} ...
+A descarga completouse.
+Fallou a descarga no intento {0}: {1}
+Empregue "ftp" se vai descargar ficheiros do servidor FTP.
+Descarga un ficheiro no directorio de traballo actual
+Desconecta un dispositivo de depuración
+Lista os dispositivos de depuración conectados
+Non se atopou o dispositivo de depuración {0}.
+Dispositivo {0} desconectado.
+Erro na conexión: {0}
+Depurar a audición en todos os enderezos usando o porto {0}.
+Non se especificaron argumentos. Consello: especifique varios argumentos separados por espazos
+Alias ​​xa atopado: {0}
+Eliminouse o rexistro de depuración. Todos os dispositivos de depuración conectados aínda poden ver as mensaxes.
+Fallou a eliminación do rexistro de depuración: {0}
+Fallou o cambio de directorio: {0}
+O nome de usuario é incorrecto
+Especifique o enderezo
+Non se puido eliminar o directorio: {0}
+A zona horaria non se especifica incorrectamente.
+A selección do perfil non é válida.
+Tentando conectarse a {0} co perfil {1} ​​...
+Erro na proba unitaria: {0}
+Non se atopou o comando {0}. Vexa o comando "axuda" para ver a lista de comandos.
+Erro ao obter as propiedades IPv6 do adaptador {0}. Continuando ...
+Información de IPv4:
+Información de IPv6:
+O adaptador {0} non admite IPv6. Continuando ...
+O adaptador {0} non admite IPv4. Fallou a sonda.
+Parece que executabas a versión de desenvolvemento do núcleo. Aínda que podes ver os aspectos, actualízase con frecuencia e pode introducir erros. Recoméndase manter a versión estable.
+O idioma que seleccionou contén dúas variantes. Escolle un:
+1. Transliterado
+2. Traducido
+Selecciona a túa elección:
+Elección non válida. Téntao de novo.
+Non ten autorización para establecer o directorio actual en {0}: {1}
+Fallou o permiso {0}
+O camiño que especificou é demasiado longo.
+Non está autorizado a facer unha lista en {0}: {1}
+Erro ao comprobar a CPU: {0}
+Erro ao comprobar a memoria RAM: {0}
+Erro ao comprobar o disco duro: {0}
+CPU: AVISO: requirirase SSE2 nos futuros compromisos de desenvolvemento.
+O recompilador de información de vertido fallou ao tentar obter información sobre {0}: {1}
+Erro ao tentar obter a data de compilación da montaxe {0}: {1}
+Erro ao tentar configurar MOTD / MAL: {0}
+Erro ao tentar obter MOTD / MAL: {0}
+Hai unha excepción de referencia nula en {0}: {1}
+Hai unha excepción de referencia nula en {0}: {1} - Rastrexo de pila:
+Erro ao intentar iniciar o protector de pantalla por mor dunha operación non válida.
+Non se permite recargar no modo seguro.
+Non se permiten analizar mods en modo seguro.
+Analice o directorio completo por tamaño ou só os ficheiros do actual.
+Lista todos os dispositivos de depuración conectados.
+Erro ao tentar configurar o modo de análise. Comprobe o valor e ténteo de novo. Se isto é correcto, consulte a traza da pila cando a depuración do núcleo estea activada.
+Configurar correctamente.
+O camiño non é un ficheiro nin un directorio.
+Crea outra copia dun ficheiro con directorio ou nome diferente.
+Move un ficheiro a outro directorio
+Para copiar ficheiros a outro directorio ou outro nome
+Para mover ficheiros a outro directorio
+Coincidencia {0} ({1}): {2}
+Coincidencia {0}: {1}
+Tempo empregado: {0} milisegundos
+Fabricante: {0}
+Modelo: {0}
+Capacidade: {0} ({1}, {2}, {3})
+Tipo de interface: {0}
+Número da unidade: {0}
+Bandeira de arranque: {0} ({1})
+Partición física: {0}
+Bandeira principal: {0}
+Tamaño: {0} GB
+Partición lóxica: {0}
+Comprimido: {0}
+Nome: {0}
+Sistema de ficheiros: {0}
+Capacidade: {0} GB gratuíta de {1} GB
+Listando todas as particións lóxicas en todas as unidades.
+Lista todas as unidades sondadas.
+Lista todas as particións sondadas nunha unidade específica (e todas as particións lóxicas de todas as unidades).
+Calcula sumas de ficheiros.
+Lévate ao noso GitHub Wiki.
+Algoritmo de cifrado non válido.
+Activa ou desactiva a depuración remota.
+Inicializando o sistema de ficheiros ...
+Obtén as voces instaladas
+Define a voz predeterminada
+Fala a túa cadea coa voz predeterminada
+Voz {0}: {1} ({2})
+Voz non válida.
+Conxunto de voz
+Vexa se pode deletrear palabras correctamente a tempo
+Vexa se pode resolver ecuacións matemáticas a tempo
+Responde a comentarios de amor ou odio.
+Se alguén fixo este comentario no teu vídeo:
+Como responderías?
+A selección non é válida. Pasando ao seguinte comentario ...
+Acabas de informar do comentario de amor.
+Acabas de responder ao comentario de odio.
+Estupendo! O comentario de {0} eliminarase para iso.
+Estupendo! {0} agradecerá o seu agradecemento.
+Escribe "GetMeOut" para saír.
+Letra perfecta!
+Ortografía incorrecta.
+Resolveuse perfectamente.
+Resolveuse incorrectamente.
+Descargáronse {0} MB de {1} MB.
+RPC xa está en execución.
+Escoita RPC en todos os enderezos mediante o porto {0}.
+Iniciando RPC ...
+Conéctase a un servidor SSH.
+Introduza o contrasinal para {0}:
+SSH desconectado.
+Carga o ficheiro synth e reprodúceo.
+O ficheiro con script {0} non existe.
+O ficheiro non é un ficheiro de sintetizador con script.
+Non se puido sondar unha liña de sintetizador.
+Especificouse a cadea baleira
+Non se puido establecer a páxina de códigos. É posible que o idioma non se amose correctamente.
+A depuración non está habilitada.
+{0} xa non está configurado como protector de pantalla predeterminado.
+Grazas! Isto é interesante.
+Todo o mundo apoiará o teu vídeo para iso.
+Regaleille o ficheiro especial no seu correo electrónico para o seu seguinte vídeo.
+Escoitade, odiadores, está intentando axudarnos, non unha estafa.
+Non sei canto agradezo eu e os meus amigos por este vídeo.
+Quérote por este vídeo.
+Segue adiante, non pares.
+Vou axudarche a chegar a 1 millón de subscritores.
+Os meus amigos arranxaron o ordenador por culpa de ti.
+Unha broma incrible! Apago a PC do meu inimigo.
+Para os odiadores: DEIXA DE SODIAR NEL
+A odiadores: COMEZA A TRABALLAR
+Agora ninguén se decatará diso grazas á súa guía de ocultación de obxectos
+Deixarei de ver os teus vídeos. Perdeuse o subscritor.
+Que é isto? Isto non está claro.
+Este vídeo é o peor!
+Todos informan deste vídeo.
+Os meus amigos están furiosos contigo.
+Os amantes agora odiarán por isto.
+O teu amigo odiará por isto.
+Esta broma fíxome dar de baixa a vostede.
+Misión fallida, Respecto -, Suscriptor -
+Deixa de facer este tipo de vídeo !!!
+Volve ao teu traballo, os teus vídeos son os peores.
+Prexudicamos este vídeo.
+Está prohibido aliñar {0} a {1}.
+Erro ao tentar desestimar a notificación: {0}
+Mostra todas as notificacións recibidas
+Rexeita unha notificación
+A notificación desestimouse correctamente.
+Paquetes (entrantes):
+Paquetes (de saída):
+Erros nos paquetes recibidos:
+Propiedades xerais de IPv6
+Propiedades xerais de IPv4
+Executa un comando remotamente a un PC remoto
+- Etapa 1: inicialización do sistema
+- Etapa 2: detección de hardware
+- Etapa 2: xestión interna do nome de usuario
+- Etapa 3: detección de mods e protectores de pantalla
+- Etapa 4: recollida de lixo
+- Etapa 4: iniciar sesión
+Antes da recollida de lixo: {0} bytes
+Despois da recollida de lixo: {0} bytes
+Erro ao iniciar RPC: {0}
+Parece que estabas executando a versión candidata á versión. Recoméndase manter a versión estable.
+Parece que a poboación do sistema de ficheiros leva demasiado tempo.
+Tipo {0} non válido.
+Capacidade: {0}
+Reconto de particións: {0}
+Tamaño: {0}
+Usado: {0}
+O directorio {0} xa existe.
+Erro ao tentar conectarse a {0}: tempo de espera da conexión ou perdida a conexión
+Calculadora para calcular expresións.
+Erro no cálculo.
+Capacidade: {0} GB ({1}, {2}, {3})
+Parece que estabas executando a versión próxima. Aínda que é máis seguro de usar agora, recoméndase que se manteña na versión estable.
+Actualización do sistema
+Buscando actualizacións do sistema ...
+Nova versión atopada:
+Podes descargalo en:
+Produciuse un erro ao buscar actualizacións: {0}
+Non se atopou o rexistro de depuración
+Non hai notificacións recentes
+Busca a cadea especificada no ficheiro proporcionado
+Calcula sumas de ficheiros no directorio especificado.
+Lista todos os correos do usuario específico.
+Insira o nome de usuario ou o enderezo de correo electrónico:
+Escriba o contrasinal:
+Introduza o enderezo e o porto do servidor (<dirección> ou <dirección>:[porto]):
+Erro ao conectarse a {0}: {1}
+Conectando a {0} ...
+Autenticando ...
+Sae do shell IMAP
+Lista de comandos
+Descarga as mensaxes e enuméraas
+Abre unha mensaxe
+A páxina pode non ser negativa nin cero.
+A páxina non é un valor numérico.
+O número da mensaxe pode non ser negativo ou cero.
+O número da mensaxe non é un valor numérico.
+- De {0}
+- A {0}
+- Enviado ás {0} en {1}
+Non se atopou a mensaxe especificada.
+Non se puido iniciar a depuración remota: {0}
+Erro ao executar o comando IMAP: {0}
+Preparando perfís ... Pode levar varios minutos ...
+Nome de host, nome de usuario, tipo de datos, codificación, cifrado, protocolos
+Erro ao tentar executar o script: {0}
+Escribe texto na consola
+Elixe os usuarios
+Emite un pitido en 'n' Hz e o tempo en 'n' milisegundos
+onde <$variable> é calquera variable que se usará para almacenar a resposta
+A frecuencia debe ser numérica. Se é numérico, asegúrese de que é >= 37 e <= 32767.
+O tempo debe ser numérico.
+onde <respostas> son respostas dunha letra da pregunta separadas por barras
+Erro ao tentar conectarse ao servidor SSH: {0}
+MOTD en branco despois do inicio de sesión.
+Permite ao usuario introducir entrada
+Cambia o directorio de correo actual
+Non se pode abrir o cartafol de correo {0}: {1}
+Lista os directorios do seu enderezo de correo
+Usa a información de Marcación rápida para conectarse a calquera rede rapidamente
+Selecciona un enderezo para conectarte:
+A selección está fóra de alcance. Selecciona entre 1- {0}. Téntao de novo.
+A selección non é un número. Téntao de novo.
+Durante a validación do certificado, hai erros no certificado. Pode ser a primeira vez que te conectas ao servidor ou o certificado caduca. Aquí hai un erro:
+Estás seguro de que queres conectarte?
+Resposta non válida. Por favor intentao de novo.
+A marcación rápida está baleira. Conéctate a un servidor para engadirlle un enderezo.
+A marcación rápida non existe. Conéctate a un servidor para engadirlle un enderezo.
+Introduza o enderezo e o porto do servidor IMAP (<dirección> ou <dirección>:[porto]):
+Introduza o enderezo e o porto do servidor SMTP (<dirección> ou <dirección>:[porto]):
+Pídelle que cubra os campos obrigatorios para enviar unha mensaxe a un enderezo
+Envía unha mensaxe a un enderezo
+Introduza o enderezo de correo electrónico do destinatario:
+Introduce o asunto:
+Escribe a túa mensaxe a continuación. Escribe "EOF" para confirmar.
+Enviando mensaxe ...
+Mensaxe enviada.
+Erro ao enviar a mensaxe: {0}
+Enderezo de correo electrónico non válido. Asegúrese de que escribiu o enderezo correctamente e que coincida co formato do exemplo mostrado:
+Elimina unha mensaxe
+Elimina todas as mensaxes do destinatario
+Eliminouse a mensaxe {0} de {1} de {2}. Quedan {3} mensaxes por analizar.
+Eliminouse a mensaxe {0} de {1} da caixa de entrada. Quedan {2} mensaxes por analizar.
+Edita un ficheiro de texto
+Crea un novo ficheiro
+O ficheiro xa existe.
+Erro ao tentar crear un ficheiro: {0}
+Erro ao abrir o ficheiro. Saíndo da shell ...
+Non se atopou o comando do editor de texto especificado.
+Lista os comandos dispoñibles
+Sae do editor de texto e garda os cambios sen gardar
+Imprime o contido do ficheiro con números de liña na consola
+Engade unha nova liña con texto ao final do ficheiro
+Elimina o número de liña especificado
+Substitúe unha palabra ou frase por outra
+Elimina unha palabra ou frase do número de liña
+Elimina un carácter do número de carácter na liña especificada
+Eliminouse a liña.
+O número de liña especificado {0} non é un número válido.
+Os argumentos necesarios non se pasan ao comando {0}
+Erro ao tentar executar o comando: {0}
+Funcionando en modo seguro. Saltando etapa ...
+>> Depuración e chat remoto: versión
+>> O seu enderezo é {0}.
+>> O teu nome é {0}.
+Non se atopou o comando {0}. Use "/help" para ver a lista.
+O índice {0} non é válido. Hai {1} trazas de pila. O índice está baseado en cero, así que intente restar por 1.
+Non hai rastro de pila
+Mostra a última traza da pila na excepción
+Mostra o nome de usuario actual na sesión
+Desconéctate do depurador
+Desbloquea un dispositivo de depuración por enderezo IP
+Bloquear un dispositivo de depuración por enderezo IP
+{0} agora pode unirse de novo á depuración remota.
+{0} aínda non está bloqueado.
+Erro ao cargar a configuración
+Produciuse un erro ao cargar a configuración. É posible que deba comprobar o ficheiro de configuración.
+- Etapa 2: detección de mods e protectores de pantalla
+- Etapa 3: iniciar sesión
+Selecciona sección:
+Seleccionar opción:
+Configuración xeral...
+Configuración de hardware ...
+Configuración de inicio de sesión ...
+Configuración de shell ...
+Configuración de rede ...
+Axustes varios ...
+Gardar configuración
+Saír
+A opción especificada {0} non é válida.
+A resposta debe ser numérica.
+Solicitude de argumentos no arranque
+Activador do modo de mantemento
+Cambiar contrasinal raíz ...
+Comprobe se hai actualizacións ao iniciar
+Sonda Tranquila
+Probe de ranuras RAM
+Mostrar MOTD ao iniciar sesión
+Borrar pantalla ao iniciar sesión
+Mostrar os nomes de usuario dispoñibles
+Cuncha de cores
+Comando de axuda simplificado
+Porto de depuración
+Prefixo predeterminado de depuración remota
+Descargar tempos de reintento
+Rexistrar nome de usuario FTP
+Rexistrar o enderezo IP FTP
+Devolve só o primeiro perfil FTP
+Mostrar hora / data na esquina superior dereita
+Tempo de espera do protector de pantalla en ms
+Cota de tamaño de depuración en bytes
+Modo de análise de tamaño
+Carpa na posta en marcha
+Longo tempo e data
+Mostrar ficheiros ocultos
+Introduciuse unha sección non válida. Volve atrás.
+Volver atrás ...
+Activar
+Desactivar
+Introduciu un número de chave non válido. Volve atrás.
+Escribe o contrasinal de root que se vai definir. Non te preocupes; o contrasinal móstrase como estrelas.
+Habilite "Cambiar contrasinal raíz" para usar esta opción. Volve atrás.
+Cambiar contrasinal raíz?
+Establecer contrasinal raíz ...
+Escribe un porto de depurador remoto. Debe ser numérico e non debe estar xa usado. Se non, o depurador remoto non poderá abrir o porto.
+Escribe o prefixo de alcume de depuración remota predeterminado.
+Escribe cantas veces o comando "get" debería tentar de novo as descargas erradas. Debe ser numérico.
+Escribe cando lanzar o protector de pantalla despois de milisegundos especificados. Debe ser numérico.
+Escribe cantos bytes pode almacenar o rexistro de depuración. Debe ser numérico.
+A resposta pode non ser negativa.
+A resposta non é válida. Asegúrese de que a resposta é numérica para as entradas de configuración que precisan números como respostas.
+A variable {0} non se atopa en ningún dos módulos.
+Cambia a configuración do núcleo
+Configuración do protector de pantalla ...
+Activa 255 cores
+¿Queres estar conectado?
+Elección non válida. Supoñendo que non ...
+Non se detectaron modificacións. Saltando etapa ...
+Cambia a cultura ao cambiar de idioma
+Amosouse texto
+Escribe o texto que queiras amosar. Máis curto é mellor.
+Produciuse un erro ao cargar {0}
+Fallou a descarga do ficheiro {0}: {1}
+Erro ao executar o comando de depuración remota {0}: {1}
+Engade usuarios
+Engade alias aos comandos
+Inxecta argumentos ao núcleo (é necesario reiniciar)
+Cambia o nome do host
+Cambia MAL, o MOTD despois do inicio de sesión
+Cambios MOTD, a mensaxe do día
+Cambia o nome de usuario
+Mostra rexistros de depuración
+Xestionar permisos para usuarios
+Recarga o ficheiro do protector de pantalla en KSMods
+Elimina un usuario da lista
+Eliminou o alias {0} correctamente.
+Produciuse un erro ao buscar actualizacións.
+Non quedan máis usuarios na lista.
+Non se puido establecer o idioma.
+Erro ao tentar desestimar a notificación.
+Detectouse unha actualización a {0}. Actualizando configuración ...
+usrmgr: Produciuse un erro ao crear o nome de usuario {0}: {1}
+Non se puido cambiar o nome do usuario. {0}
+Unha das listas de permisos non contén o nome de usuario {0}.
+Produciuse un erro ao cargar os permisos do ficheiro: {0}
+Produciuse un erro ao cambiar o nome do host: {0}
+Non se atopou o usuario
+Non se puido cambiar o contrasinal do nome de usuario: {0}
+Non se puido copiar o ficheiro ou directorio: {0}
+Produciuse un erro ao mover o ficheiro ou o directorio: {0}
+Non se puido atopar o ficheiro que coincida coa cadea "{0}": {1}
+Fallou a descarga do ficheiro {0}.
+Produciuse un erro ao listar os ficheiros remotos: {0}
+Insira un ficheiro ou cartafol para eliminar. Debe ter permisos administrativos na súa conta para poder eliminalo.
+Seguro que queres eliminar {0} <y/n>?
+Eliminando {0} ...
+{0} non se atopa no servidor.
+Elimináronse correctamente todos os correos feitos por {0}.
+Produciuse un erro ao eliminar todo o correo enviado por {0}.
+Erro ao enviar a mensaxe.
+Movendo {0} a {1} ...
+Moveuse con éxito
+Move o ficheiro ou directorio a outro ficheiro ou directorio. Tamén pode usalo para renomear ficheiros.
+Produciuse un erro ao mover {0} a {1}.
+Insira un camiño de orixe e outro de destino.
+Copiando {0} a {1} ...
+Copiouse correctamente
+Copia o ficheiro ou directorio a outro ficheiro ou directorio.
+Non se puido copiar {0} a {1}.
+Move unha mensaxe
+Move todas as mensaxes do destinatario
+Todos os correos feitos por {0} movéronse correctamente.
+Produciuse un erro ao mover todo o correo enviado por {0}.
+A mensaxe {0} de {1} moveuse de {2}. Quedan {3} mensaxes por analizar.
+Moveuse a mensaxe {0} de {1}. Quedan {3} mensaxes por analizar.
+Mostra información meteorolóxica para unha cidade especificada. Usa OpenWeatherMap.
+- Información meteorolóxica para {0} -
+Tempo: {0}
+Temperatura: {0} ({1} unidade)
+Parece que: {0} ({1} unidade)
+Presión: {0}
+Humidade: {0}
+Podes obter a túa propia clave API en https://home.openweathermap.org/api_keys.
+Sempre podes consultar http://bulk.openweathermap.org/sample/city.list.json.gz para ver a lista de cidades cos seus ID.
+Unidade preferida de temperatura
+Kelvin
+Imperial (Fahrenheit)
+Métrico (centígrado)
+Configura o núcleo para que lle solicite argumentos no arranque.
+Desencadea o modo de mantemento. Isto desactiva varias contas.
+Cada inicio comprobará se hai actualizacións.
+Ao cambiar de idioma, cambia os nomes do mes, o calendario, etc.
+Se se inicia o núcleo, establecerá o contrasinal de root.
+Mantén as mensaxes de sondaxe de hardware en silencio.
+Se está activado, probará as ranuras da RAM xunto coa RAM.
+Mostrar a mensaxe do día antes de mostrar a pantalla de inicio de sesión.
+Borrar pantalla antes de mostrar a pantalla de inicio de sesión.
+Mostra os usuarios dispoñibles se está activado.
+Ofrece soporte para a cor do núcleo
+Comando de axuda simplificado para todas as cunchas
+Se rexistra ou non o nome de usuario FTP.
+Indica se rexistra ou non o enderezo IP FTP.
+Escolle o primeiro perfil só cando te conectes.
+Activa a compatibilidade con 255 cores para ColorMix.
+Activa a compatibilidade con 255 cores para Disco.
+Activa a compatibilidade con 255 cores para GlitterColor.
+Activa o soporte de 255 cores para as liñas.
+A hora e a data amosaranse na esquina superior dereita da pantalla
+Se está activado, o núcleo analizará todo o cartafol co seu tamaño total. Doutro xeito, só analizará a superficie.
+Habilita o eyecandy ao iniciar
+A hora e data serán máis longas, mostrando os nomes completos do mes, etc.
+Mostra ficheiros ocultos.
+Seleccione a unidade que prefire para a temperatura (isto só se aplica ao comando "tempo")
+Mod {0} detido
+{0} v {1} detido
+Mod {0} non ten o nome da peza. Produciuse un erro ao analizar as modificacións. Revisa o código fonte.
+Mod {0} non ten o comando. Produciuse un erro ao analizar as modificacións. Revisa o código fonte.
+Debe activar o modo de depuración para poder borrar o rexistro de depuración.
+{0} novas mensaxes chegaron á caixa de entrada.
+Abre "lsmail" para velos.
+Principal: {2} Arrancable: {3} Partición de arranque: {4}
+Non se puido eliminar o ficheiro: {0}
+Elimina un directorio ou un ficheiro
+Non se pode eliminar {0} porque non existe.
+É posible que non teñas instalado inxi no teu sistema. Consulte o xestor de paquetes para a instalación. Para os sistemas Debian (e derivados), pode executar "sudo apt install inxi libcpanel-json-xs-perl" no emulador de terminal.
+O idioma configurouse correctamente en {0}.
+Preme CTRL + C para saír.
+Ofrece información sobre un ficheiro
+Ofrece información sobre un directorio
+Non se pode obter información sobre o directorio inexistente.
+Non se pode obter información sobre o ficheiro inexistente.
+Nome completo: {0}
+Tempo de creación: {0}
+Último tempo de acceso: {0}
+Última hora de escritura: {0}
+Atributos: {0}
+Directorio principal: {0}
+Onde atopar: {0}
+Tamaño do ficheiro: {0}
+Cambia o atributo dun ficheiro
+Arquivo non atopado.
+onde <atributos> é un dos seguintes:
+O ficheiro é un ficheiro normal
+O ficheiro é un ficheiro de só lectura
+O ficheiro é un ficheiro oculto
+O ficheiro é un arquivo. Usado para copias de seguridade.
+O atributo "{0}" non é válido.
+O atributo engadiuse correctamente.
+O atributo eliminouse correctamente.
+Non se puido engadir o atributo.
+Erro ao eliminar o atributo.
+Substitúe unha palabra ou frase por outra nunha liña
+Superouse o nivel de cor vermella. Foi {0}.
+Superouse o nivel de cor verde. Foi {0}.
+Superouse o nivel de cor azul. Foi {0}.
+Activa as cores verdadeiras
+Activa a compatibilidade coa cor verdadeira para ColorMix.
+Activa a compatibilidade coa verdadeira cor para Disco.
+Activa o soporte de cor verdadeira para GlitterColor.
+Activa o soporte de cor verdadeira para as liñas.
+Non se puido desbloquear {0}.
+{0} xa está bloqueado.
+{0} agora non se pode unir á depuración remota.
+Non se puido bloquear {0}.
+Ciclo de cores
+Disco circulará as cores cando estea activado. Se non, selecciona cores aleatorias.
+Introduza as rutas dos ficheiros aos anexos. Prema ENTRAR nun camiño en branco para confirmar.
+Abre unha mensaxe cifrada
+Escribe o contrasinal para o ID de chave {0}
+Envía unha mensaxe cifrada a un enderezo
+Pídelle que cubra os campos necesarios para enviar unha mensaxe cifrada a un enderezo
+Descargando desde {0} ...
+Mostrar a barra de progreso mentres se descarga ou carga desde o comando "get" ou "put"
+Se é verdadeiro, fai que "obter" ou "poñer" mostre a barra de progreso mentres se descarga ou carga.
+Carga un ficheiro ao sitio web especificado
+Ping un enderezo
+Cargando {0} a {1} ...
+A carga finalizou.
+Utilice "ftp" se vai cargar ficheiros ao servidor FTP.
+Fallou a carga no intento {0}: {1}
+Cargáronse {0} MB de {1} MB.
+Escribe cantas veces o comando "put" debería reintentar as cargas fallidas. Debe ser numérico.
+O enderezo pode non estar baleiro.
+Non se puido facer ping {0}: {1}
+Ping tivo éxito en {0} ms.
+O número de liña especificado pode non ser maior que o último número de liña de ficheiro.
+Parece que: {0}
+Temperatura: {0}
+Velocidade do vento: {0}
+Dirección do vento: {0}
+Principal: {2} | Arrancable: {3} | Partición de arranque: {4}
+Activa o soporte de 255 cores para Disolver.
+Activa a compatibilidade coa cor verdadeira para disolver.
+Preme calquera tecla para retroceder.
+Non se puido crear o cartafol de correo {0}: {1}
+Crea un directorio no directorio de traballo actual
+Elimina un directorio do directorio de traballo actual
+Non se atopou o cartafol de correo {0}.
+Non se puido eliminar o cartafol de correo {0}: {1}
+{0}, creado en {1} {2}, modificado en {3} {4}
+Verifica a cordura do ficheiro
+Os hash están mal formados.
+Os hash non coinciden.
+Partido de hash.
+Cambia o nome dun cartafol
+Esta sección lista todos os axustes xerais do núcleo, principalmente para manter o núcleo.
+Esta sección cambia o comportamento da sonda de hardware.
+Esta sección representa a configuración de inicio de sesión. Pecha sesión na túa conta para que os cambios entren en vigor.
+Esta sección lista a configuración do intérprete de comandos.
+Esta sección lista a configuración de rede, como o shell FTP, a configuración de comandos relacionados coa rede e a configuración de depuración remota.
+Esta sección lista todos os protectores de pantalla e as súas opcións dispoñibles.
+Aquí atópanse as configuracións que non encaixan nas súas seccións apropiadas.
+Proba os mods proporcionando ficheiros mod
+Abre un shell de proba
+Activa o modo de depuración
+Preguntas para argumentos
+* Prema calquera tecla para iniciar o núcleo ou ESC para saír.
+Non se puido iniciar "{0}": {1}
+Mostrar vista previa da mensaxe de correo
+Ao listar mensaxes de correo electrónico, mostra a vista previa do corpo.
+Sonda de hardware almacenada en caché. Mostrando información de todos os xeitos ...
+Capacidade: {0} GB
+Cores personalizadas ...
+Escribe unha cor como se especifica a continuación:
+Cor de entrada
+Cor da licenza
+Cor de erro do núcleo continuable
+Cor de erro do núcleo incontinuable
+Cor do nome do host
+Cor do nome de usuario
+Cor de fondo
+Cor de texto neutral
+Cor da lista de comandos
+Cor de definición do comando
+Cor do escenario
+Cor de erro
+¿Están ben estas opcións de cor?
+Responde {0} para volver atrás. Se non, calquera resposta significa que si.
+Estilo de solicitude FTP
+Estilo de solicitude de correo
+Estilo de solicitude SFTP
+Activa a compatibilidade con 255 cores para BouncingBlock.
+Activa o soporte de cor verdadeira para BouncingBlock.
+Tentando acceder a un camiño non válido.
+Borra o ficheiro de texto
+Sae do editor de texto
+Consulta un carácter nunha liña especificada ou en todas as liñas
+O número de carácter especificado {0} non é un número válido.
+Está desactivado o control de actualizacións porque está a executar unha versión de desenvolvemento.
+Activa ou desactiva a función de gardado automático do editor de texto.
+Se o gardado automático está activado, o ficheiro de texto gardarase por cada "n" segundos.
+Activar o gardado automático do editor de texto
+Intervalo de gardado automático do editor de texto
+Garda o ficheiro
+Grava o chat para rexistrar a depuración
+Grava o chat de depuración remota para rexistrar a depuración.
+Atraso en milisegundos
+Cantos milisegundos agardar antes de facer a seguinte escritura?
+Permite usar un servidor FTP SSH
+Non hai axuda para o comando "{0}".
