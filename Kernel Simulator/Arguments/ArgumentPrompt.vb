@@ -20,7 +20,7 @@ Module ArgumentPrompt
 
     'Variables
     Public answerargs As String                                                     'Input for arguments
-    Public AvailableArgs() As String = {"quiet", "cmdinject", "debug", "maintenance", "safe", "help"}
+    Public AvailableArgs() As String = {"quiet", "cmdinject", "debug", "maintenance", "safe", "testInteractive", "help"}
 
     ''' <summary>
     ''' Prompts user for arguments

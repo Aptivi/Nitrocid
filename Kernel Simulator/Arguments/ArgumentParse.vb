@@ -73,6 +73,12 @@ Module ArgumentParse
 
                         SafeMode = True
 
+                    ElseIf BootArgs(i) = "testInteractive" Then
+
+                        InitTestHelp()
+                        InitTShell()
+                        If Test_ShutdownFlag Then Environment.Exit(0)
+
                     ElseIf BootArgs(i) = "help" Then
 
                         W(DoTranslation("Separate boot arguments with commas without spaces, for example, 'motd,gpuprobe'") + vbNewLine +
