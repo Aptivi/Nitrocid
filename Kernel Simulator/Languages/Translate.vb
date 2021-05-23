@@ -307,7 +307,7 @@ CHOICE:
         Next
     End Sub
 
-    'TODO: Let the user select a culture on "chlang".
+    'TODO: Let the user select a culture on "settings".
     ''' <summary>
     ''' Gets standard culture from current language
     ''' </summary>
