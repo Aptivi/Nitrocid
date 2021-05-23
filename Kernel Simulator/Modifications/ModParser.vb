@@ -230,6 +230,7 @@ NextEntry:
                     CSvrdb.Clear()
                 Else
                     For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
+                        W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(modFile))
                         StartParse(modFile.Replace("\", "/"), StartStop)
                     Next
                 End If
