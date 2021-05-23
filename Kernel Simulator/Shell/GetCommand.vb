@@ -1297,7 +1297,7 @@ Public Module GetCommand
                                 For Each CommandInfo As CommandInfo In Commands.Values
                                     If CommandInfo.Wrappable Then WrappableCmds.Add(CommandInfo.Command)
                                 Next
-                                W(DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", True, ColTypes.Error, String.Join(", ", WrappableCmds))
+                                W(DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", True, ColTypes.Error, String.Join(", ", WrappableCmds.ToArray))
                             End If
                         Else
                             W(DoTranslation("The wrappable command is not found."), True, ColTypes.Error)
