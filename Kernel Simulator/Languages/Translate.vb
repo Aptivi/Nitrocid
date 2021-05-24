@@ -276,10 +276,10 @@ CHOICE:
     End Function
 
     ''' <summary>
-    ''' Updates current culture based on current language
+    ''' Updates current culture based on current language. If there are no cultures in the curent language, assume current culture.
     ''' </summary>
     Public Sub UpdateCulture()
-        Dim StrCult As String = GetCultureFromLang()
+        Dim StrCult As String = If(Not GetCulturesFromCurrentLang.Count = 0, GetCulturesFromCurrentLang(0).EnglishName, CultureInfo.CurrentCulture.EnglishName)
         Wdbg("I", "Culture for {0} is {1}", currentLang, StrCult)
         Dim Cults As CultureInfo() = CultureInfo.GetCultures(CultureTypes.AllCultures)
         Wdbg("I", "Parsing {0} cultures for {1}", Cults.Length, StrCult)
@@ -287,6 +287,13 @@ CHOICE:
             If Cult.EnglishName = StrCult Then
                 Wdbg("I", "Found. Changing culture...")
                 CurrentCult = Cult
+                'TODO: We need to avoid repetition of this block that is highlighted by an asterisk. Can be done by jsonifying config.
+                Dim ksconf As New IniFile()                                             '*
+                Dim pathConfig As String = paths("Configuration")                       '*
+                ksconf.Load(pathConfig)                                                 '*
+                ksconf.Sections("General").Keys("Culture").Value = CurrentCult.Name     '*
+                ksconf.Save(pathConfig)                                                 '*
+                Wdbg("I", "Saved new culture.")                                         '*
                 Exit For
             End If
         Next
@@ -302,113 +309,17 @@ CHOICE:
             If Cult.EnglishName = Culture Then
                 Wdbg("I", "Found. Changing culture...")
                 CurrentCult = Cult
+                'TODO: We need to avoid repetition of this block that is highlighted by an asterisk. Can be done by jsonifying config.
+                Dim ksconf As New IniFile()                                             '*
+                Dim pathConfig As String = paths("Configuration")                       '*
+                ksconf.Load(pathConfig)                                                 '*
+                ksconf.Sections("General").Keys("Culture").Value = CurrentCult.Name     '*
+                ksconf.Save(pathConfig)                                                 '*
+                Wdbg("I", "Saved new culture.")                                         '*
                 Exit For
             End If
         Next
     End Sub
-
-    'TODO: Let the user select a culture on "settings".
-    ''' <summary>
-    ''' Gets standard culture from current language
-    ''' </summary>
-    ''' <returns>English culture name</returns>
-    <Obsolete("Let the user select a culture on ""settings"". This function chooses only one variant of a culture for the same language.")>
-    Public Function GetCultureFromLang() As String
-        Select Case currentLang
-            Case "arb-T", "arb"
-                Return "Arabic (Saudi Arabia)"
-            Case "azr"
-                Return "Azerbaijani (Cyrillic, Azerbaijan)"
-            Case "ben-T", "ben"
-                Return "Bangla (Bangladesh)"
-            Case "bsq"
-                Return "Basque"
-            Case "chi-T", "chi"
-                Return "Chinese (Simplified)"
-            Case "cro"
-                Return "Croatian (Croatia)"
-            Case "csc"
-                Return "Corsican (France)"
-            Case "ctl"
-                Return "Catalan"
-            Case "cze"
-                Return "Czech (Czech Republic)"
-            Case "dan"
-                Return "Danish (Denmark)"
-            Case "dtc"
-                Return "Dutch (Netherlands)"
-            Case "eng"
-                Return "English (United States)"
-            Case "fin"
-                Return "Finnish (Finland)"
-            Case "flp"
-                Return "Filipino (Philippines)"
-            Case "fre"
-                Return "French (France)"
-            Case "ger"
-                Return "German (Germany)"
-            Case "glc"
-                Return If(IsOnWindows(), "Galician (Galician)", "Galician (Spain)")
-            Case "hwi"
-                Return "Hawaiian (United States)"
-            Case "ind-T", "ind"
-                Return "Hindi (India)"
-            Case "iri"
-                Return "Irish (Ireland)"
-            Case "ita"
-                Return "Italian (Italy)"
-            Case "jpn-T", "jpn"
-                Return "Japanese (Japan)"
-            Case "jvn"
-                Return "Javanese (Latin, Indonesia)"
-            Case "kor-T", "kor"
-                Return "Korean"
-            Case "ltn"
-                Return "Latin"
-            Case "mal"
-                Return "Malay (Malaysia)"
-            Case "mts"
-                Return "Maltese (Malta)"
-            Case "ndo"
-                Return "Indonesian (Indonesia)"
-            Case "nwg"
-                Return "Norwegian Bokmål (Norway)"
-            Case "pol"
-                Return "Polish (Poland)"
-            Case "ptg"
-                Return "Portuguese (Brazil)"
-            Case "pun-T", "pun"
-                Return "Punjabi"
-            Case "rmn"
-                Return "Romanian (Romania)"
-            Case "rus-T", "rus"
-                Return "Russian (Russia)"
-            Case "slo"
-                Return "Slovak (Slovakia)"
-            Case "som"
-                Return "Somali (Somalia)"
-            Case "spa"
-                Return If(IsOnWindows(), "Spanish (Spain, International Sort)", "Spanish (Spain)")
-            Case "srb-T"
-                Return "Serbian (Cyrillic, Serbia)"
-            Case "srb"
-                Return "Serbian (Latin, Serbia)"
-            Case "swa"
-                Return If(IsOnWindows(), "Kiswahili (Kenya)", "Swahili (Kenya)")
-            Case "swe"
-                Return "Swedish (Sweden)"
-            Case "uzb"
-                Return "Uzbek (Cyrillic)"
-            Case "vtn"
-                Return "Vietnamese (Vietnam)"
-            Case "wls"
-                Return "Welsh (United Kingdom)"
-            Case "zul"
-                Return If(IsOnWindows(), "isiZulu", "Zulu")
-            Case Else
-                Return "English (United States)"
-        End Select
-    End Function
 
     ''' <summary>
     ''' Gets all cultures available for the current language

@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Globalization
 Imports System.Reflection
 
 Public Module ToolPrompts
@@ -115,7 +116,7 @@ Public Module ToolPrompts
             'List options
             Select Case SectionNum
                 Case "1" 'General
-                    MaxOptions = 5
+                    MaxOptions = 6
                     W("*) " + DoTranslation("General Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all general kernel settings, mainly for maintaining the kernel.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Prompt for Arguments on Boot") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(argsOnBoot)))
@@ -123,6 +124,7 @@ Public Module ToolPrompts
                     W("3) " + DoTranslation("Change Root Password..."), True, ColTypes.Option)
                     W("4) " + DoTranslation("Check for Updates on Startup") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CheckUpdateStart)))
                     W("5) " + DoTranslation("Change Culture when Switching Languages") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(LangChangeCulture)))
+                    W("6) " + DoTranslation("Culture of") + " {0} [{1}]" + vbNewLine, True, ColTypes.Option, currentLang, CurrentCult.Name)
                 Case "1.3" 'Change Root Password...
                     MaxOptions = 2
                     W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password...") + vbNewLine, True, ColTypes.Neutral)
@@ -432,6 +434,7 @@ Public Module ToolPrompts
         Dim SectionParts() As String = Section.Split(".")
         Dim ListJoinString As String = ""
         Dim TargetList As IEnumerable(Of Object)
+        Dim SelectFrom As IEnumerable(Of Object)
         Dim NeutralizePaths As Boolean
         Dim BuiltinSavers As Integer = 13
 
@@ -467,6 +470,23 @@ Public Module ToolPrompts
                             KeyVar = NameOf(LangChangeCulture)
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Culture when Switching Languages") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("When switching languages, change the month names, calendar, etc.") + vbNewLine, True, ColTypes.Neutral)
+                        Case 6 'Culture of current language
+                            MaxKeyOptions = 0
+                            KeyType = SettingsKeyType.SSelection
+                            KeyVar = NameOf(CurrentCult)
+                            W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Culture of") + " {0}" + vbNewLine, True, ColTypes.Neutral, currentLang)
+                            W(DoTranslation("Which variant of {0} is being used to change the month names, calendar, etc.?") + vbNewLine, True, ColTypes.Neutral, currentLang)
+                            SelectFrom = GetCulturesFromCurrentLang()
+                            If SelectFrom.Count > 0 Then
+                                For Each Cult As CultureInfo In SelectFrom
+                                    MaxKeyOptions += 1
+                                    W("{0}) {1} ({2})", True, ColTypes.Option, MaxKeyOptions, Cult.Name, Cult.EnglishName)
+                                Next
+                            Else
+                                SelectFrom = New List(Of CultureInfo) From {New CultureInfo("en-US")}
+                                MaxKeyOptions = 1
+                                W("1) en-US (English (United States))", True, ColTypes.Option)
+                            End If
                         Case Else
                             W("*) " + DoTranslation("General Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back.") + vbNewLine, True, ColTypes.Error)
@@ -1271,13 +1291,17 @@ Public Module ToolPrompts
             ElseIf (Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SInt) Or
                    (Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SSelection) Then
                 Wdbg("I", "Answer is numeric and key is of the {0} type.", KeyType)
-                If AnswerInt >= 0 Then
+                If AnswerInt = MaxKeyOptions + 1 Then 'Go Back...
+                    Wdbg("I", "User requested exit. Returning...")
+                    KeyFinished = True
+                ElseIf AnswerInt >= 0 And SelectFrom IsNot Nothing Then
+                    Wdbg("I", "Setting variable {0} to item index {1}...", KeyVar, AnswerInt - 1)
+                    KeyFinished = True
+                    SetConfigValue(KeyVar, SelectFrom(AnswerInt - 1))
+                ElseIf AnswerInt >= 0 Then
                     Wdbg("I", "Setting variable {0} to {1}...", KeyVar, AnswerInt)
                     KeyFinished = True
                     SetConfigValue(KeyVar, AnswerInt)
-                ElseIf AnswerInt = MaxKeyOptions + 1 Then 'Go Back...
-                    Wdbg("I", "User requested exit. Returning...")
-                    KeyFinished = True
                 Else
                     Wdbg("W", "Negative values are disallowed.")
                     W(DoTranslation("The answer may not be negative."), True, ColTypes.Error)

@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Globalization
 Imports System.IO
 
 'TODO: Use JSON. Users will have to use our converter. This is to ensure that we can port KS to .NET 5.0
@@ -41,7 +42,8 @@ Public Module Config
                         New IniKey(ksconf, "Set Root Password to", RootPasswd),
                         New IniKey(ksconf, "Check for Updates on Startup", CheckUpdateStart),
                         New IniKey(ksconf, "Change Culture when Switching Languages", LangChangeCulture),
-                        New IniKey(ksconf, "Language")))
+                        New IniKey(ksconf, "Language", currentLang),
+                        New IniKey(ksconf, "Culture", CurrentCult.Name)))
 
                 'The Colors Section
                 ksconf.Sections.Add(
@@ -184,7 +186,8 @@ Public Module Config
                         New IniKey(ksconf, "Set Root Password to", "toor"),
                         New IniKey(ksconf, "Check for Updates on Startup", "True"),
                         New IniKey(ksconf, "Change Culture when Switching Languages", "False"),
-                        New IniKey(ksconf, "Language", "eng")))
+                        New IniKey(ksconf, "Language", "eng"),
+                        New IniKey(ksconf, "Culture", "en-US")))
 
                 'The Colors Section
                 ksconf.Sections.Add(
@@ -327,6 +330,7 @@ Public Module Config
             ksconf.Sections("General").Keys("Check for Updates on Startup").TrailingComment.Text = "If set to True, everytime the kernel boots, it will check for new updates."
             ksconf.Sections("General").Keys("Change Culture when Switching Languages").TrailingComment.Text = "Indicate if the kernel is allowed to localize time and date locally."
             ksconf.Sections("General").Keys("Language").TrailingComment.Text = "The three-letter language name should be written. All languages can be found in the chlang command wiki."
+            ksconf.Sections("General").Keys("Culture").TrailingComment.Text = "The two-letter language and the two-letter country name. This is to specify culture."
 
             'Colors
             ksconf.Sections("Colors").TrailingComment.Text = "Self-explanatory. You can just write the name of colors as specified in the ConsoleColors enumerator or a plain VT sequence that contains the RGB levels like this: RRR;GGG;BBB."
@@ -512,6 +516,7 @@ Public Module Config
             Wdbg("I", "Language is {0}", ConfiguredLang)
             If configReader.Sections("General").Keys("Change Culture when Switching Languages").Value = "True" Then LangChangeCulture = True Else LangChangeCulture = False
             SetLang(If(String.IsNullOrWhiteSpace(ConfiguredLang), "eng", ConfiguredLang))
+            If LangChangeCulture Then CurrentCult = New CultureInfo(configReader.Sections("General").Keys("Culture").Value)
 
             'Colored Shell
             If configReader.Sections("Shell").Keys("Colored Shell").Value = "False" Then
