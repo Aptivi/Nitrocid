@@ -130,7 +130,7 @@ Directorio local: {0}
 Directorio remoto: {0}
 Debe conectarse al servidor antes de obtener el directorio remoto actual.
 Eliminando el archivo {0} ...
-?
+¿Estás seguro de que quieres eliminar el archivo {0} <y/n>?
 Archivo eliminado {0}
 Debe conectarse al servidor con privilegios administrativos antes de realizar la eliminación.
 Introduzca un archivo para eliminar.
@@ -149,7 +149,7 @@ Renombrado exitosamente
 Introduzca un archivo y el nuevo nombre de archivo.
 Subiendo archivo {0} ...
 Archivo subido {0}
-
+Ingrese un archivo para cargar en el directorio remoto. upload <archivo> <directorio>
 Error al intentar ejecutar el comando FTP
 (Interno:
 {0} carpetas, {1} archivos

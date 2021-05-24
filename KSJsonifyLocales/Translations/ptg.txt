@@ -130,7 +130,7 @@ Diretório local: {0}
 Diretório remoto: {0}
 Você deve se conectar ao servidor antes de obter o diretório remoto atual.
 Excluindo o arquivo {0} ...
-?
+Tem certeza que deseja excluir o arquivo {0} <y/n>?
 Arquivo excluído {0}
 Você deve se conectar ao servidor com privilégios administrativos antes de executar a exclusão.
 Digite um arquivo para remover.
@@ -149,7 +149,7 @@ Renomeado com sucesso
 Digite um arquivo e o novo nome de arquivo.
 Fazendo upload do arquivo {0} ...
 Arquivo enviado {0}
-
+Insira um arquivo para carregar no diretório remoto. upload <file> <directory>
 Erro ao tentar executar o comando FTP
 (Interno:
 {0} pastas, {1} arquivos
@@ -157,7 +157,7 @@ Erro ao tentar executar o comando FTP
 {0} KB, Criado em {1} {2}, Modificado em {3} {4}
 Obtém o diretório local atual
 Obtém o diretório remoto atual
-Conecta-se a um servidor FTP (deve começar com "ftp: //" ou "ftps: //")
+Conecta-se a um servidor FTP (deve começar com "ftp://" ou "ftps://")
 Altera o diretório local para download ou upload de
 Altera o diretório remoto para download ou upload para
 Exclui o arquivo remoto do servidor

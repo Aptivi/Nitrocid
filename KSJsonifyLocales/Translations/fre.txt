@@ -130,7 +130,7 @@ Répertoire local: {0}
 Répertoire distant: {0}
 Vous devez vous connecter au serveur avant d’obtenir le répertoire distant actuel.
 Suppression du fichier {0} ...
-?
+Voulez-vous vraiment supprimer le fichier {0} <y / n>?
 Fichier supprimé {0}
 Vous devez vous connecter au serveur avec des privilèges d'administrateur avant de procéder à la suppression.
 Entrez un fichier à supprimer.
@@ -149,7 +149,7 @@ Renommé avec succès
 Entrez un fichier et le nouveau nom de fichier.
 Téléchargement du fichier {0} ...
 Fichier téléchargé {0}
-
+Entrez un fichier à télécharger dans le répertoire distant. upload <file> <directory>
 Erreur lors de la tentative d'exécution de la commande FTP 
 (Interne:
 {0} dossiers, {1} fichiers
