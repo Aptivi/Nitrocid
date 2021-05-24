@@ -31,7 +31,8 @@ Public Module RemoteDebugHelpSystem
         RDebugDefinitions = New Dictionary(Of String, String) From {{"trace", DoTranslation("Shows last stack trace on exception")},
                                                                     {"username", DoTranslation("Shows current username in the session")},
                                                                     {"register", DoTranslation("Sets device username")},
-                                                                    {"exit", DoTranslation("Disconnects you from the debugger")}}
+                                                                    {"exit", DoTranslation("Disconnects you from the debugger")},
+                                                                    {"help", DoTranslation("Shows help screen")}}
     End Sub
 
     ''' <summary>
@@ -40,7 +41,24 @@ Public Module RemoteDebugHelpSystem
     ''' <param name="command">Specified command</param>
     Public Sub RDebugShowHelp(ByVal command As String, ByVal DeviceStream As StreamWriter)
 
-        If command = "trace" Then
+        If command = "" Then
+            DeviceStream.WriteLine(DoTranslation("General commands:"))
+            For Each cmd As String In RDebugDefinitions.Keys
+                DeviceStream.WriteLine("- {0}: {1}", cmd, RDebugDefinitions(cmd))
+            Next
+            DeviceStream.WriteLine(vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.Neutral)
+            If RDebugModDefs.Count = 0 Then DeviceStream.WriteLine(DoTranslation("No mod commands."))
+            For Each cmd As String In RDebugModDefs.Keys
+                DeviceStream.WriteLine("- {0}: {1}", cmd, RDebugModDefs(cmd))
+            Next
+            DeviceStream.WriteLine(vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.Neutral)
+            If RemoteDebugAliases.Count = 0 Then DeviceStream.WriteLine(DoTranslation("No alias commands."))
+            For Each cmd As String In RemoteDebugAliases.Keys
+                DeviceStream.WriteLine("- {0}: {1}", cmd, RDebugDefinitions(RemoteDebugAliases(cmd)))
+            Next
+        ElseIf command = "help" Then
+            DeviceStream.WriteLine(DoTranslation("Usage:") + " /help [command]")
+        ElseIf command = "trace" Then
             DeviceStream.WriteLine(DoTranslation("Usage:") + " /trace <tracenumber>")
         ElseIf command = "username" Then
             DeviceStream.WriteLine(DoTranslation("Usage:") + " /username")
@@ -48,6 +66,8 @@ Public Module RemoteDebugHelpSystem
             DeviceStream.WriteLine(DoTranslation("Usage:") + " /register <username>")
         ElseIf command = "exit" Then
             DeviceStream.WriteLine(DoTranslation("Usage:") + " /exit")
+        Else
+            DeviceStream.WriteLine(DoTranslation("No help for command ""{0}""."), command)
         End If
 
     End Sub

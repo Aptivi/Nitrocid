@@ -62,75 +62,76 @@ Public Module RSSGetCommand
             End If
 
             'Try to parse command
-            If Command = "help" Then
-                If Arguments?.Length > 0 Then
-                    Wdbg("I", "Requested help for {0}", Arguments(0))
-                    RSSShowHelp(Arguments(0))
-                Else
-                    Wdbg("I", "Requested help for all commands")
-                    RSSShowHelp()
-                End If
-            ElseIf Command = "exit" Then
-                RSSExiting = True
-            ElseIf Command = "articleinfo" Then
-                If RequiredArgumentsProvided Then
-                    Dim ArticleIndex As Integer = Arguments(0) - 1
-                    If ArticleIndex > RSSFeedInstance.FeedArticles.Count - 1 Then
-                        W(DoTranslation("Article number couldn't be bigger than the available articles."), True, ColTypes.Error)
-                        Wdbg("E", "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSFeedInstance.FeedArticles.Count - 1)
-                    Else
-                        Dim Article As RSSArticle = RSSFeedInstance.FeedArticles(ArticleIndex)
-                        W("- " + DoTranslation("Title:") + " ", False, ColTypes.ListEntry)
-                        W(Article.ArticleTitle, True, ColTypes.ListValue)
-                        W("- " + DoTranslation("Link:") + " ", False, ColTypes.ListEntry)
-                        W(Article.ArticleLink, True, ColTypes.ListValue)
-                        For Each Variable As String In Article.ArticleVariables.Keys
-                            If Not Variable = "title" And Not Variable = "link" And Not Variable = "summary" And Not Variable = "description" And Not Variable = "content" Then
-                                W("- {0}: ", False, ColTypes.ListEntry, Variable)
-                                W(Article.ArticleVariables(Variable).InnerText, True, ColTypes.ListValue)
-                            End If
-                        Next
-                        W(vbNewLine + Article.ArticleDescription, True, ColTypes.Neutral)
-                    End If
-                End If
-            ElseIf Command = "chfeed" Then
-                If RequiredArgumentsProvided Then
-                    RSSFeedLink = Arguments(0)
-                End If
-            ElseIf Command = "feedinfo" Then
-                W("- " + DoTranslation("Title:") + " ", False, ColTypes.ListEntry)
-                W(RSSFeedInstance.FeedTitle, True, ColTypes.ListValue)
-                W("- " + DoTranslation("Link:") + " ", False, ColTypes.ListEntry)
-                W(RSSFeedInstance.FeedUrl, True, ColTypes.ListValue)
-                W("- " + DoTranslation("Description:") + " ", False, ColTypes.ListEntry)
-                W(RSSFeedInstance.FeedDescription, True, ColTypes.ListValue)
-                W("- " + DoTranslation("Feed type:") + " ", False, ColTypes.ListEntry)
-                W(RSSFeedInstance.FeedType, True, ColTypes.ListValue)
-                W("- " + DoTranslation("Number of articles:") + " ", False, ColTypes.ListEntry)
-                W(RSSFeedInstance.FeedArticles.Count, True, ColTypes.ListValue)
-            ElseIf Command = "list" Then
-                For Each Article As RSSArticle In RSSFeedInstance.FeedArticles
-                    W("- {0}: ", False, ColTypes.ListEntry, Article.ArticleTitle)
-                    W(Article.ArticleLink, True, ColTypes.ListValue)
-                    W("    {0}", True, ColTypes.Neutral, Article.ArticleDescription.Truncate(200))
-                Next
-            ElseIf Command = "read" Then
-                If RequiredArgumentsProvided Then
-                    Dim ArticleIndex As Integer = Arguments(0) - 1
-                    If ArticleIndex > RSSFeedInstance.FeedArticles.Count - 1 Then
-                        W(DoTranslation("Article number couldn't be bigger than the available articles."), True, ColTypes.Error)
-                        Wdbg("E", "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSFeedInstance.FeedArticles.Count - 1)
-                    Else
-                        If Not String.IsNullOrWhiteSpace(RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink) Then
-                            Wdbg("I", "Opening web browser to {0}...", RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
-                            Process.Start(RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
+            Select Case Command
+                Case "articleinfo"
+                    If RequiredArgumentsProvided Then
+                        Dim ArticleIndex As Integer = Arguments(0) - 1
+                        If ArticleIndex > RSSFeedInstance.FeedArticles.Count - 1 Then
+                            W(DoTranslation("Article number couldn't be bigger than the available articles."), True, ColTypes.Error)
+                            Wdbg("E", "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSFeedInstance.FeedArticles.Count - 1)
                         Else
-                            W(DoTranslation("Article doesn't have a link!"), True, ColTypes.Error)
-                            Wdbg("E", "Tried to open a web browser to link of article number {0}, but it's empty. ""{1}""", ArticleIndex, RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
+                            Dim Article As RSSArticle = RSSFeedInstance.FeedArticles(ArticleIndex)
+                            W("- " + DoTranslation("Title:") + " ", False, ColTypes.ListEntry)
+                            W(Article.ArticleTitle, True, ColTypes.ListValue)
+                            W("- " + DoTranslation("Link:") + " ", False, ColTypes.ListEntry)
+                            W(Article.ArticleLink, True, ColTypes.ListValue)
+                            For Each Variable As String In Article.ArticleVariables.Keys
+                                If Not Variable = "title" And Not Variable = "link" And Not Variable = "summary" And Not Variable = "description" And Not Variable = "content" Then
+                                    W("- {0}: ", False, ColTypes.ListEntry, Variable)
+                                    W(Article.ArticleVariables(Variable).InnerText, True, ColTypes.ListValue)
+                                End If
+                            Next
+                            W(vbNewLine + Article.ArticleDescription, True, ColTypes.Neutral)
                         End If
                     End If
-                End If
-            End If
+                Case "chfeed"
+                    If RequiredArgumentsProvided Then
+                        RSSFeedLink = Arguments(0)
+                    End If
+                Case "feedinfo"
+                    W("- " + DoTranslation("Title:") + " ", False, ColTypes.ListEntry)
+                    W(RSSFeedInstance.FeedTitle, True, ColTypes.ListValue)
+                    W("- " + DoTranslation("Link:") + " ", False, ColTypes.ListEntry)
+                    W(RSSFeedInstance.FeedUrl, True, ColTypes.ListValue)
+                    W("- " + DoTranslation("Description:") + " ", False, ColTypes.ListEntry)
+                    W(RSSFeedInstance.FeedDescription, True, ColTypes.ListValue)
+                    W("- " + DoTranslation("Feed type:") + " ", False, ColTypes.ListEntry)
+                    W(RSSFeedInstance.FeedType, True, ColTypes.ListValue)
+                    W("- " + DoTranslation("Number of articles:") + " ", False, ColTypes.ListEntry)
+                    W(RSSFeedInstance.FeedArticles.Count, True, ColTypes.ListValue)
+                Case "list"
+                    For Each Article As RSSArticle In RSSFeedInstance.FeedArticles
+                        W("- {0}: ", False, ColTypes.ListEntry, Article.ArticleTitle)
+                        W(Article.ArticleLink, True, ColTypes.ListValue)
+                        W("    {0}", True, ColTypes.Neutral, Article.ArticleDescription.Truncate(200))
+                    Next
+                Case "read"
+                    If RequiredArgumentsProvided Then
+                        Dim ArticleIndex As Integer = Arguments(0) - 1
+                        If ArticleIndex > RSSFeedInstance.FeedArticles.Count - 1 Then
+                            W(DoTranslation("Article number couldn't be bigger than the available articles."), True, ColTypes.Error)
+                            Wdbg("E", "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSFeedInstance.FeedArticles.Count - 1)
+                        Else
+                            If Not String.IsNullOrWhiteSpace(RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink) Then
+                                Wdbg("I", "Opening web browser to {0}...", RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
+                                Process.Start(RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
+                            Else
+                                W(DoTranslation("Article doesn't have a link!"), True, ColTypes.Error)
+                                Wdbg("E", "Tried to open a web browser to link of article number {0}, but it's empty. ""{1}""", ArticleIndex, RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
+                            End If
+                        End If
+                    End If
+                Case "help"
+                    If Arguments?.Length > 0 Then
+                        Wdbg("I", "Requested help for {0}", Arguments(0))
+                        RSSShowHelp(Arguments(0))
+                    Else
+                        Wdbg("I", "Requested help for all commands")
+                        RSSShowHelp()
+                    End If
+                Case "exit"
+                    RSSExiting = True
+            End Select
 
             'See if the command is done (passed all required arguments)
             If RSSCommands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then

@@ -62,180 +62,181 @@ Public Module FTPGetCommand
 
         'Command code
         Try
-            If words(0) = "connect" Then
-                If RequiredArgumentsProvided Then
-                    If ArgsQ(0).StartsWith("ftp://") Or ArgsQ(0).StartsWith("ftps://") Or ArgsQ(0).StartsWith("ftpes://") Then
-                        TryToConnect(ArgsQ(0))
-                    Else
-                        TryToConnect($"ftp://{ArgsQ(0)}")
-                    End If
-                Else
-                    W(DoTranslation("Enter an FTP server."), True, ColTypes.Neutral)
-                End If
-            ElseIf words(0) = "cdl" Then
-                FTPChangeLocalDir(ArgsQ(0))
-            ElseIf words(0) = "cdr" Then
-                FTPChangeRemoteDir(ArgsQ(0))
-            ElseIf words(0) = "cp" Then
-                If RequiredArgumentsProvided Then
-                    If connected Then
-                        W(DoTranslation("Copying {0} to {1}..."), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
-                        If FTPCopyItem(ArgsQ(0), ArgsQ(1)) Then
-                            W(vbNewLine + DoTranslation("Copied successfully"), True, ColTypes.Neutral)
+            Select Case words(0)
+                Case "connect"
+                    If RequiredArgumentsProvided Then
+                        If ArgsQ(0).StartsWith("ftp://") Or ArgsQ(0).StartsWith("ftps://") Or ArgsQ(0).StartsWith("ftpes://") Then
+                            TryToConnect(ArgsQ(0))
                         Else
-                            W(vbNewLine + DoTranslation("Failed to copy {0} to {1}."), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
+                            TryToConnect($"ftp://{ArgsQ(0)}")
                         End If
                     Else
-                        W(DoTranslation("You must connect to server before performing transmission."), True, ColTypes.Error)
+                        W(DoTranslation("Enter an FTP server."), True, ColTypes.Neutral)
                     End If
-                Else
-                    W(DoTranslation("Enter a source path and a destination path."), True, ColTypes.Error)
-                End If
-            ElseIf words(0) = "pwdl" Then
-                W(DoTranslation("Local directory: {0}"), True, ColTypes.Neutral, currDirect)
-            ElseIf words(0) = "pwdr" Then
-                If connected = True Then
-                    W(DoTranslation("Remote directory: {0}"), True, ColTypes.Neutral, currentremoteDir)
-                Else
-                    W(DoTranslation("You must connect to server before getting current remote directory."), True, ColTypes.Error)
-                End If
-            ElseIf words(0) = "del" Then
-                If RequiredArgumentsProvided Then
+                Case "cdl"
+                    FTPChangeLocalDir(ArgsQ(0))
+                Case "cdr"
+                    FTPChangeRemoteDir(ArgsQ(0))
+                Case "cp"
+                    If RequiredArgumentsProvided Then
+                        If connected Then
+                            W(DoTranslation("Copying {0} to {1}..."), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
+                            If FTPCopyItem(ArgsQ(0), ArgsQ(1)) Then
+                                W(vbNewLine + DoTranslation("Copied successfully"), True, ColTypes.Neutral)
+                            Else
+                                W(vbNewLine + DoTranslation("Failed to copy {0} to {1}."), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
+                            End If
+                        Else
+                            W(DoTranslation("You must connect to server before performing transmission."), True, ColTypes.Error)
+                        End If
+                    Else
+                        W(DoTranslation("Enter a source path and a destination path."), True, ColTypes.Error)
+                    End If
+                Case "pwdl"
+                    W(DoTranslation("Local directory: {0}"), True, ColTypes.Neutral, currDirect)
+                Case "pwdr"
                     If connected = True Then
-                        'Print a message
-                        W(DoTranslation("Deleting {0}..."), True, ColTypes.Neutral, ArgsQ(0))
-
-                        'Make a confirmation message so user will not accidentally delete a file or folder
-                        W(DoTranslation("Are you sure you want to delete {0} <y/n>?"), False, ColTypes.Input, ArgsQ(0))
-                        Dim answer As String = Console.ReadKey.KeyChar
-                        Console.WriteLine()
-
-                        Try
-                            FTPDeleteRemote(ArgsQ(0))
-                        Catch ex As Exception
-                            W(ex.Message, True, ColTypes.Error)
-                        End Try
+                        W(DoTranslation("Remote directory: {0}"), True, ColTypes.Neutral, currentremoteDir)
                     Else
-                        W(DoTranslation("You must connect to server with administrative privileges before performing the deletion."), True, ColTypes.Error)
+                        W(DoTranslation("You must connect to server before getting current remote directory."), True, ColTypes.Error)
                     End If
-                Else
-                    W(DoTranslation("Enter a file or folder to remove. You must have administrative permissions on your account to be able to remove."), True, ColTypes.Error)
-                End If
-            ElseIf cmd = "disconnect" Then
-                If connected = True Then
-                    'Set a connected flag to False
-                    connected = False
-                    ClientFTP.Disconnect()
-                    W(DoTranslation("Disconnected from {0}"), True, ColTypes.Neutral, ftpsite)
+                Case "del"
+                    If RequiredArgumentsProvided Then
+                        If connected = True Then
+                            'Print a message
+                            W(DoTranslation("Deleting {0}..."), True, ColTypes.Neutral, ArgsQ(0))
 
-                    'Clean up everything
-                    ftpsite = ""
-                    currentremoteDir = ""
-                    user = ""
-                    pass = ""
-                Else
-                    W(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Error)
-                End If
-            ElseIf words(0) = "get" Then
-                If RequiredArgumentsProvided Then
-                    W(DoTranslation("Downloading file {0}..."), False, ColTypes.Neutral, ArgsQ(0))
-                    If FTPGetFile(ArgsQ(0)) Then
-                        Console.WriteLine()
-                        W(DoTranslation("Downloaded file {0}."), True, ColTypes.Neutral, ArgsQ(0))
-                    Else
-                        Console.WriteLine()
-                        W(DoTranslation("Download failed for file {0}."), True, ColTypes.Error, ArgsQ(0))
-                    End If
-                Else
-                    W(DoTranslation("Enter a file to download to local directory."), True, ColTypes.Error)
-                End If
-            ElseIf cmd = "exit" Then
-                'Set a flag
-                ftpexit = True
-            ElseIf words(0) = "help" Then
-                If cmd = "help" Then
-                    FTPShowHelp()
-                Else
-                    FTPShowHelp(strArgs)
-                End If
-            ElseIf words(0) = "lsl" Then
-                If cmd = "lsl" Then
-                    List(CurrDir)
-                Else
-                    List(ArgsQ(0))
-                End If
-            ElseIf words(0) = "lsr" Then
-                Dim Entries As List(Of String) = FTPListRemote(If(ArgsQ IsNot Nothing, ArgsQ(0), ""))
-                Entries.Sort()
-                For Each Entry As String In Entries
-                    W(Entry, True, ColTypes.ListEntry)
-                Next
-            ElseIf words(0) = "mv" Then
-                If RequiredArgumentsProvided Then
-                    If connected Then
-                        W(DoTranslation("Moving {0} to {1}..."), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
-                        If FTPMoveItem(ArgsQ(0), ArgsQ(1)) Then
-                            W(vbNewLine + DoTranslation("Moved successfully"), True, ColTypes.Neutral)
+                            'Make a confirmation message so user will not accidentally delete a file or folder
+                            W(DoTranslation("Are you sure you want to delete {0} <y/n>?"), False, ColTypes.Input, ArgsQ(0))
+                            Dim answer As String = Console.ReadKey.KeyChar
+                            Console.WriteLine()
+
+                            Try
+                                FTPDeleteRemote(ArgsQ(0))
+                            Catch ex As Exception
+                                W(ex.Message, True, ColTypes.Error)
+                            End Try
                         Else
-                            W(vbNewLine + DoTranslation("Failed to move {0} to {1}."), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
+                            W(DoTranslation("You must connect to server with administrative privileges before performing the deletion."), True, ColTypes.Error)
                         End If
                     Else
-                        W(DoTranslation("You must connect to server before performing transmission."), True, ColTypes.Error)
+                        W(DoTranslation("Enter a file or folder to remove. You must have administrative permissions on your account to be able to remove."), True, ColTypes.Error)
                     End If
-                Else
-                    W(DoTranslation("Enter a source path and a destination path."), True, ColTypes.Error)
-                End If
-            ElseIf words(0) = "quickconnect" Then
-                If Not connected Then
-                    QuickConnect()
-                Else
-                    W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Error)
-                End If
-            ElseIf words(0) = "perm" Then
-                If RequiredArgumentsProvided Then
-                    If connected Then
-                        If FTPChangePermissions(ArgsQ(0), ArgsQ(1)) Then
-                            W(DoTranslation("Permissions set successfully for file") + " {0}", True, ColTypes.Neutral, ArgsQ(0))
+                Case "disconnect"
+                    If connected = True Then
+                        'Set a connected flag to False
+                        connected = False
+                        ClientFTP.Disconnect()
+                        W(DoTranslation("Disconnected from {0}"), True, ColTypes.Neutral, ftpsite)
+
+                        'Clean up everything
+                        ftpsite = ""
+                        currentremoteDir = ""
+                        user = ""
+                        pass = ""
+                    Else
+                        W(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Error)
+                    End If
+                Case "get"
+                    If RequiredArgumentsProvided Then
+                        W(DoTranslation("Downloading file {0}..."), False, ColTypes.Neutral, ArgsQ(0))
+                        If FTPGetFile(ArgsQ(0)) Then
+                            Console.WriteLine()
+                            W(DoTranslation("Downloaded file {0}."), True, ColTypes.Neutral, ArgsQ(0))
                         Else
-                            W(DoTranslation("Failed to set permissions of {0} to {1}."), True, ColTypes.Error, ArgsQ(0), ArgsQ(1))
+                            Console.WriteLine()
+                            W(DoTranslation("Download failed for file {0}."), True, ColTypes.Error, ArgsQ(0))
                         End If
                     Else
-                        W(DoTranslation("You must connect to server before performing filesystem operations."), True, ColTypes.Error)
+                        W(DoTranslation("Enter a file to download to local directory."), True, ColTypes.Error)
                     End If
-                End If
-            ElseIf words(0) = "type" Then
-                If RequiredArgumentsProvided Then
-                    If ArgsQ(0).ToLower = "a" Then
-                        ClientFTP.DownloadDataType = FtpDataType.ASCII
-                        ClientFTP.ListingDataType = FtpDataType.ASCII
-                        ClientFTP.UploadDataType = FtpDataType.ASCII
-                        W(DoTranslation("Data type set to ASCII!"), True, ColTypes.Neutral)
-                        W(DoTranslation("Beware that most files won't download or upload properly using this mode, so we highly recommend using the Binary mode on most situations."), True, ColTypes.Warning)
-                    ElseIf ArgsQ(0).ToLower = "b" Then
-                        ClientFTP.DownloadDataType = FtpDataType.Binary
-                        ClientFTP.ListingDataType = FtpDataType.Binary
-                        ClientFTP.UploadDataType = FtpDataType.Binary
-                        W(DoTranslation("Data type set to Binary!"), True, ColTypes.Neutral)
+                Case "lsl"
+                    If ArgsQ?.Count > 0 And ArgsQ IsNot Nothing Then
+                        List(ArgsQ(0))
                     Else
-                        W(DoTranslation("Invalid data type."), True, ColTypes.Neutral)
+                        List(CurrDir)
                     End If
-                End If
-            ElseIf words(0) = "put" Then
-                If RequiredArgumentsProvided Then
-                    W(DoTranslation("Uploading file {0}..."), True, ColTypes.Neutral, ArgsQ(0))
+                Case "lsr"
+                    Dim Entries As List(Of String) = FTPListRemote(If(ArgsQ IsNot Nothing, ArgsQ(0), ""))
+                    Entries.Sort()
+                    For Each Entry As String In Entries
+                        W(Entry, True, ColTypes.ListEntry)
+                    Next
+                Case "mv"
+                    If RequiredArgumentsProvided Then
+                        If connected Then
+                            W(DoTranslation("Moving {0} to {1}..."), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
+                            If FTPMoveItem(ArgsQ(0), ArgsQ(1)) Then
+                                W(vbNewLine + DoTranslation("Moved successfully"), True, ColTypes.Neutral)
+                            Else
+                                W(vbNewLine + DoTranslation("Failed to move {0} to {1}."), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
+                            End If
+                        Else
+                            W(DoTranslation("You must connect to server before performing transmission."), True, ColTypes.Error)
+                        End If
+                    Else
+                        W(DoTranslation("Enter a source path and a destination path."), True, ColTypes.Error)
+                    End If
+                Case "quickconnect"
+                    If Not connected Then
+                        QuickConnect()
+                    Else
+                        W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Error)
+                    End If
+                Case "perm"
+                    If RequiredArgumentsProvided Then
+                        If connected Then
+                            If FTPChangePermissions(ArgsQ(0), ArgsQ(1)) Then
+                                W(DoTranslation("Permissions set successfully for file") + " {0}", True, ColTypes.Neutral, ArgsQ(0))
+                            Else
+                                W(DoTranslation("Failed to set permissions of {0} to {1}."), True, ColTypes.Error, ArgsQ(0), ArgsQ(1))
+                            End If
+                        Else
+                            W(DoTranslation("You must connect to server before performing filesystem operations."), True, ColTypes.Error)
+                        End If
+                    End If
+                Case "type"
+                    If RequiredArgumentsProvided Then
+                        If ArgsQ(0).ToLower = "a" Then
+                            ClientFTP.DownloadDataType = FtpDataType.ASCII
+                            ClientFTP.ListingDataType = FtpDataType.ASCII
+                            ClientFTP.UploadDataType = FtpDataType.ASCII
+                            W(DoTranslation("Data type set to ASCII!"), True, ColTypes.Neutral)
+                            W(DoTranslation("Beware that most files won't download or upload properly using this mode, so we highly recommend using the Binary mode on most situations."), True, ColTypes.Warning)
+                        ElseIf ArgsQ(0).ToLower = "b" Then
+                            ClientFTP.DownloadDataType = FtpDataType.Binary
+                            ClientFTP.ListingDataType = FtpDataType.Binary
+                            ClientFTP.UploadDataType = FtpDataType.Binary
+                            W(DoTranslation("Data type set to Binary!"), True, ColTypes.Neutral)
+                        Else
+                            W(DoTranslation("Invalid data type."), True, ColTypes.Neutral)
+                        End If
+                    End If
+                Case "put"
+                    If RequiredArgumentsProvided Then
+                        W(DoTranslation("Uploading file {0}..."), True, ColTypes.Neutral, ArgsQ(0))
 
-                    'Begin the uploading process
-                    If FTPUploadFile(ArgsQ(0)) Then
-                        Console.WriteLine()
-                        W(vbNewLine + DoTranslation("Uploaded file {0}"), True, ColTypes.Neutral, ArgsQ(0))
+                        'Begin the uploading process
+                        If FTPUploadFile(ArgsQ(0)) Then
+                            Console.WriteLine()
+                            W(vbNewLine + DoTranslation("Uploaded file {0}"), True, ColTypes.Neutral, ArgsQ(0))
+                        Else
+                            Console.WriteLine()
+                            W(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Neutral, ArgsQ(0))
+                        End If
                     Else
-                        Console.WriteLine()
-                        W(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Neutral, ArgsQ(0))
+                        W(DoTranslation("Enter a file to upload to remote directory. upload <file> <directory>"), True, ColTypes.Error)
                     End If
-                Else
-                    W(DoTranslation("Enter a file to upload to remote directory. upload <file> <directory>"), True, ColTypes.Error)
-                End If
-            End If
+                Case "exit"
+                    'Set a flag
+                    ftpexit = True
+                Case "help"
+                    If cmd = "help" Then
+                        FTPShowHelp()
+                    Else
+                        FTPShowHelp(strArgs)
+                    End If
+            End Select
         Catch ex As Exception 'The InnerException CAN be Nothing
             If DebugMode = True Then
                 If Not IsNothing(ex.InnerException) Then 'This is required to fix NullReferenceException when there is nothing in InnerException, so please don't remove.

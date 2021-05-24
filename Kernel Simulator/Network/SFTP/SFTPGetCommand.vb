@@ -62,121 +62,122 @@ Public Module SFTPGetCommand
 
         'Command code
         Try
-            If words(0) = "connect" Then
-                If RequiredArgumentsProvided Then
-                    If ArgsQ(0).StartsWith("sftp://") Then
-                        SFTPTryToConnect(ArgsQ(0))
+            Select Case words(0)
+                Case "connect"
+                    If RequiredArgumentsProvided Then
+                        If ArgsQ(0).StartsWith("sftp://") Then
+                            SFTPTryToConnect(ArgsQ(0))
+                        Else
+                            SFTPTryToConnect($"sftp://{ArgsQ(0)}")
+                        End If
                     Else
-                        SFTPTryToConnect($"sftp://{ArgsQ(0)}")
+                        W(DoTranslation("Enter an SFTP server."), True, ColTypes.Neutral)
                     End If
-                Else
-                    W(DoTranslation("Enter an SFTP server."), True, ColTypes.Neutral)
-                End If
-            ElseIf words(0) = "cdl" Then
-                SFTPChangeLocalDir(ArgsQ(0))
-            ElseIf words(0) = "cdr" Then
-                SFTPChangeRemoteDir(ArgsQ(0))
-            ElseIf words(0) = "pwdl" Then
-                W(DoTranslation("Local directory: {0}"), True, ColTypes.Neutral, SFTPCurrDirect)
-            ElseIf words(0) = "pwdr" Then
-                If SFTPConnected = True Then
-                    W(DoTranslation("Remote directory: {0}"), True, ColTypes.Neutral, SFTPCurrentRemoteDir)
-                Else
-                    W(DoTranslation("You must connect to server before getting current remote directory."), True, ColTypes.Error)
-                End If
-            ElseIf words(0) = "del" Then
-                If RequiredArgumentsProvided Then
+                Case "cdl"
+                    SFTPChangeLocalDir(ArgsQ(0))
+                Case "cdr"
+                    SFTPChangeRemoteDir(ArgsQ(0))
+                Case "pwdl"
+                    W(DoTranslation("Local directory: {0}"), True, ColTypes.Neutral, SFTPCurrDirect)
+                Case "pwdr"
                     If SFTPConnected = True Then
-                        'Print a message
-                        W(DoTranslation("Deleting {0}..."), True, ColTypes.Neutral, ArgsQ(0))
-
-                        'Make a confirmation message so user will not accidentally delete a file or folder
-                        W(DoTranslation("Are you sure you want to delete {0} <y/n>?"), False, ColTypes.Input, ArgsQ(0))
-                        Dim answer As String = Console.ReadKey.KeyChar
-                        Console.WriteLine()
-
-                        Try
-                            SFTPDeleteRemote(ArgsQ(0))
-                        Catch ex As Exception
-                            W(ex.Message, True, ColTypes.Error)
-                        End Try
+                        W(DoTranslation("Remote directory: {0}"), True, ColTypes.Neutral, SFTPCurrentRemoteDir)
                     Else
-                        W(DoTranslation("You must connect to server with administrative privileges before performing the deletion."), True, ColTypes.Error)
+                        W(DoTranslation("You must connect to server before getting current remote directory."), True, ColTypes.Error)
                     End If
-                Else
-                    W(DoTranslation("Enter a file or folder to remove. You must have administrative permissions on your account to be able to remove."), True, ColTypes.Error)
-                End If
-            ElseIf cmd = "disconnect" Then
-                If SFTPConnected = True Then
-                    'Set a connected flag to False
-                    SFTPConnected = False
-                    ClientSFTP.Disconnect()
-                    W(DoTranslation("Disconnected from {0}"), True, ColTypes.Neutral, ftpsite)
+                Case "del"
+                    If RequiredArgumentsProvided Then
+                        If SFTPConnected = True Then
+                            'Print a message
+                            W(DoTranslation("Deleting {0}..."), True, ColTypes.Neutral, ArgsQ(0))
 
-                    'Clean up everything
-                    sftpsite = ""
-                    SFTPCurrentRemoteDir = ""
-                    SFTPUser = ""
-                    SFTPPass = ""
-                Else
-                    W(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Error)
-                End If
-            ElseIf words(0) = "get" Then
-                If RequiredArgumentsProvided Then
-                    W(DoTranslation("Downloading file {0}..."), False, ColTypes.Neutral, ArgsQ(0))
-                    If SFTPGetFile(ArgsQ(0)) Then
-                        Console.WriteLine()
-                        W(DoTranslation("Downloaded file {0}."), True, ColTypes.Neutral, ArgsQ(0))
-                    Else
-                        Console.WriteLine()
-                        W(DoTranslation("Download failed for file {0}."), True, ColTypes.Error, ArgsQ(0))
-                    End If
-                Else
-                    W(DoTranslation("Enter a file to download to local directory."), True, ColTypes.Error)
-                End If
-            ElseIf cmd = "exit" Then
-                'Set a flag
-                sftpexit = True
-            ElseIf words(0) = "help" Then
-                If cmd = "help" Then
-                    SFTPShowHelp()
-                Else
-                    SFTPShowHelp(strArgs)
-                End If
-            ElseIf words(0) = "lsl" Then
-                If cmd = "listlocal" Or cmd = "lsl" Then
-                    List(CurrDir)
-                Else
-                    List(ArgsQ(0))
-                End If
-            ElseIf words(0) = "lsr" Then
-                Dim Entries As List(Of String) = SFTPListRemote(If(ArgsQ IsNot Nothing, ArgsQ(0), ""))
-                Entries.Sort()
-                For Each Entry As String In Entries
-                    W(Entry, True, ColTypes.ListEntry)
-                Next
-            ElseIf words(0) = "quickconnect" Then
-                If Not connected Then
-                    SFTPQuickConnect()
-                Else
-                    W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Error)
-                End If
-            ElseIf words(0) = "put" Then
-                If RequiredArgumentsProvided Then
-                    W(DoTranslation("Uploading file {0}..."), True, ColTypes.Neutral, ArgsQ(0))
+                            'Make a confirmation message so user will not accidentally delete a file or folder
+                            W(DoTranslation("Are you sure you want to delete {0} <y/n>?"), False, ColTypes.Input, ArgsQ(0))
+                            Dim answer As String = Console.ReadKey.KeyChar
+                            Console.WriteLine()
 
-                    'Begin the uploading process
-                    If SFTPUploadFile(ArgsQ(0)) Then
-                        Console.WriteLine()
-                        W(vbNewLine + DoTranslation("Uploaded file {0}"), True, ColTypes.Neutral, ArgsQ(0))
+                            Try
+                                SFTPDeleteRemote(ArgsQ(0))
+                            Catch ex As Exception
+                                W(ex.Message, True, ColTypes.Error)
+                            End Try
+                        Else
+                            W(DoTranslation("You must connect to server with administrative privileges before performing the deletion."), True, ColTypes.Error)
+                        End If
                     Else
-                        Console.WriteLine()
-                        W(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Neutral, ArgsQ(0))
+                        W(DoTranslation("Enter a file or folder to remove. You must have administrative permissions on your account to be able to remove."), True, ColTypes.Error)
                     End If
-                Else
-                    W(DoTranslation("Enter a file to upload to remote directory. upload <file> <directory>"), True, ColTypes.Error)
-                End If
-            End If
+                Case "disconnect"
+                    If SFTPConnected = True Then
+                        'Set a connected flag to False
+                        SFTPConnected = False
+                        ClientSFTP.Disconnect()
+                        W(DoTranslation("Disconnected from {0}"), True, ColTypes.Neutral, ftpsite)
+
+                        'Clean up everything
+                        sftpsite = ""
+                        SFTPCurrentRemoteDir = ""
+                        SFTPUser = ""
+                        SFTPPass = ""
+                    Else
+                        W(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Error)
+                    End If
+                Case "get"
+                    If RequiredArgumentsProvided Then
+                        W(DoTranslation("Downloading file {0}..."), False, ColTypes.Neutral, ArgsQ(0))
+                        If SFTPGetFile(ArgsQ(0)) Then
+                            Console.WriteLine()
+                            W(DoTranslation("Downloaded file {0}."), True, ColTypes.Neutral, ArgsQ(0))
+                        Else
+                            Console.WriteLine()
+                            W(DoTranslation("Download failed for file {0}."), True, ColTypes.Error, ArgsQ(0))
+                        End If
+                    Else
+                        W(DoTranslation("Enter a file to download to local directory."), True, ColTypes.Error)
+                    End If
+                Case "lsl"
+                    If ArgsQ?.Count > 0 And ArgsQ IsNot Nothing Then
+                        List(ArgsQ(0))
+                    Else
+                        List(CurrDir)
+                    End If
+                Case "lsr"
+                    Dim Entries As List(Of String) = SFTPListRemote(If(ArgsQ IsNot Nothing, ArgsQ(0), ""))
+                    Entries.Sort()
+                    For Each Entry As String In Entries
+                        W(Entry, True, ColTypes.ListEntry)
+                    Next
+                Case "quickconnect"
+                    If Not connected Then
+                        SFTPQuickConnect()
+                    Else
+                        W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Error)
+                    End If
+                Case "put"
+                    If RequiredArgumentsProvided Then
+                        W(DoTranslation("Uploading file {0}..."), True, ColTypes.Neutral, ArgsQ(0))
+
+                        'Begin the uploading process
+                        If SFTPUploadFile(ArgsQ(0)) Then
+                            Console.WriteLine()
+                            W(vbNewLine + DoTranslation("Uploaded file {0}"), True, ColTypes.Neutral, ArgsQ(0))
+                        Else
+                            Console.WriteLine()
+                            W(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Neutral, ArgsQ(0))
+                        End If
+                    Else
+                        W(DoTranslation("Enter a file to upload to remote directory. upload <file> <directory>"), True, ColTypes.Error)
+                    End If
+                Case "exit"
+                    'Set a flag
+                    sftpexit = True
+                Case "help"
+                    If cmd = "help" Then
+                        SFTPShowHelp()
+                    Else
+                        SFTPShowHelp(strArgs)
+                    End If
+            End Select
         Catch ex As Exception 'The InnerException CAN be Nothing
             If DebugMode = True Then
                 If Not IsNothing(ex.InnerException) Then 'This is required to fix NullReferenceException when there is nothing in InnerException, so please don't remove.

@@ -39,57 +39,45 @@ Module RemoteDebugCmd
         Dim CmdName As String = CmdArgs(0)
         CmdArgs.RemoveAt(0)
         Try
-            If CmdName = "trace" Then
-                'Print stack trace command code
-                If dbgStackTraces.Count <> 0 Then
-                    If CmdArgs.Count <> 0 Then
-                        Try
-                            SocketStreamWriter.WriteLine(dbgStackTraces(CmdArgs(0)))
-                        Catch ex As Exception
-                            SocketStreamWriter.WriteLine(DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1."), CmdArgs(0), dbgStackTraces.Count)
-                        End Try
+            Select Case CmdName
+                Case "trace"
+                    'Print stack trace command code
+                    If dbgStackTraces.Count <> 0 Then
+                        If CmdArgs.Count <> 0 Then
+                            Try
+                                SocketStreamWriter.WriteLine(dbgStackTraces(CmdArgs(0)))
+                            Catch ex As Exception
+                                SocketStreamWriter.WriteLine(DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1."), CmdArgs(0), dbgStackTraces.Count)
+                            End Try
+                        Else
+                            SocketStreamWriter.WriteLine(dbgStackTraces(0))
+                        End If
                     Else
-                        SocketStreamWriter.WriteLine(dbgStackTraces(0))
+                        SocketStreamWriter.WriteLine(DoTranslation("No stack trace"))
                     End If
-                Else
-                    SocketStreamWriter.WriteLine(DoTranslation("No stack trace"))
-                End If
-            ElseIf CmdName = "username" Then
-                'Current username
-                SocketStreamWriter.WriteLine(signedinusrnm)
-            ElseIf CmdName = "register" Then
-                'Register to remote debugger so we can set device name
-                If String.IsNullOrWhiteSpace(GetDeviceProperty(Address, DeviceProperty.Name)) Then
-                    SetDeviceProperty(Address, DeviceProperty.Name, CmdArgs(0))
-                    dbgConns(dbgConns.ElementAt(DebugDevices.GetIndexOfKey(DebugDevices.GetKeyFromValue(Address))).Key) = CmdArgs(0)
-                    SocketStreamWriter.WriteLine(DoTranslation("Hi, {0}!").FormatString(CmdArgs(0)))
-                Else
-                    SocketStreamWriter.WriteLine(DoTranslation("You're already registered."))
-                End If
-            ElseIf CmdName = "help" Then
-                'Help command code
-                If CmdArgs.Count <> 0 Then
-                    RDebugShowHelp(CmdArgs(0), SocketStreamWriter)
-                Else
-                    SocketStreamWriter.WriteLine(DoTranslation("General commands:"))
-                    For Each cmd As String In RDebugDefinitions.Keys
-                        SocketStreamWriter.WriteLine("- {0}: {1}", cmd, RDebugDefinitions(cmd))
-                    Next
-                    SocketStreamWriter.WriteLine(vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.Neutral)
-                    If RDebugModDefs.Count = 0 Then SocketStreamWriter.WriteLine(DoTranslation("No mod commands."))
-                    For Each cmd As String In RDebugModDefs.Keys
-                        SocketStreamWriter.WriteLine("- {0}: {1}", cmd, RDebugModDefs(cmd))
-                    Next
-                    SocketStreamWriter.WriteLine(vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.Neutral)
-                    If RemoteDebugAliases.Count = 0 Then SocketStreamWriter.WriteLine(DoTranslation("No alias commands."))
-                    For Each cmd As String In RemoteDebugAliases.Keys
-                        SocketStreamWriter.WriteLine("- {0}: {1}", cmd, RDebugDefinitions(RemoteDebugAliases(cmd)))
-                    Next
+                Case "username"
+                    'Current username
+                    SocketStreamWriter.WriteLine(signedinusrnm)
+                Case "register"
+                    'Register to remote debugger so we can set device name
+                    If String.IsNullOrWhiteSpace(GetDeviceProperty(Address, DeviceProperty.Name)) Then
+                        SetDeviceProperty(Address, DeviceProperty.Name, CmdArgs(0))
+                        dbgConns(dbgConns.ElementAt(DebugDevices.GetIndexOfKey(DebugDevices.GetKeyFromValue(Address))).Key) = CmdArgs(0)
+                        SocketStreamWriter.WriteLine(DoTranslation("Hi, {0}!").FormatString(CmdArgs(0)))
+                    Else
+                        SocketStreamWriter.WriteLine(DoTranslation("You're already registered."))
                     End If
-            ElseIf CmdName = "exit" Then
-                'Exit command code
-                DisconnectDbgDev(Address)
-            End If
+                Case "help"
+                    'Help command code
+                    If CmdArgs.Count <> 0 Then
+                        RDebugShowHelp(CmdArgs(0), SocketStreamWriter)
+                    Else
+                        RDebugShowHelp("", SocketStreamWriter)
+                    End If
+                Case "exit"
+                    'Exit command code
+                    DisconnectDbgDev(Address)
+            End Select
         Catch ex As Exception
             SocketStreamWriter.WriteLine(DoTranslation("Error executing remote debug command {0}: {1}"), CmdName, ex.Message)
             EventManager.RaiseRemoteDebugCommandError(Address, CmdString, ex)

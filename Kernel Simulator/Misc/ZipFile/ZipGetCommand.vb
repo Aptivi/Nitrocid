@@ -63,60 +63,61 @@ Public Module ZipGetCommand
             End If
 
             'Try to parse command
-            If Command = "help" Then
-                If Arguments?.Length > 0 Then
-                    Wdbg("I", "Requested help for {0}", Arguments(0))
-                    ZipShell_GetHelp(Arguments(0))
-                Else
-                    Wdbg("I", "Requested help for all commands")
-                    ZipShell_GetHelp()
-                End If
-            ElseIf Command = "exit" Then
-                ZipShell_Exiting = True
-            ElseIf Command = "list" Then
-                Dim Entries As List(Of ZipArchiveEntry)
-                If Arguments?.Length > 0 Then
-                    Wdbg("I", "Listing entries with {0} as target directory", Arguments(0))
-                    Entries = ListZipEntries(Arguments(0))
-                Else
-                    Wdbg("I", "Listing entries with current directory as target directory")
-                    Entries = ListZipEntries(ZipShell_CurrentArchiveDirectory)
-                End If
-                For Each Entry As ZipArchiveEntry In Entries
-                    W("- {0}: ", False, ColTypes.ListEntry, Entry.FullName)
-                    If Not Entry.Name = "" Then 'Entry is a file
-                        W("{0} ({1})", True, ColTypes.ListValue, Entry.CompressedLength.FileSizeToString, Entry.Length.FileSizeToString)
+            Select Case Command
+                Case "list"
+                    Dim Entries As List(Of ZipArchiveEntry)
+                    If Arguments?.Length > 0 Then
+                        Wdbg("I", "Listing entries with {0} as target directory", Arguments(0))
+                        Entries = ListZipEntries(Arguments(0))
                     Else
-                        Console.WriteLine()
+                        Wdbg("I", "Listing entries with current directory as target directory")
+                        Entries = ListZipEntries(ZipShell_CurrentArchiveDirectory)
                     End If
-                Next
-            ElseIf Command = "get" Then
-                If RequiredArgumentsProvided Then
-                    Dim Where As String = ""
-                    Dim Absolute As Boolean
-                    If Arguments?.Length > 1 Then
-                        If Not Arguments(1) = "-absolute" Then Where = NeutralizePath(Arguments(1))
-                        If Arguments?.Contains("-absolute") Then
-                            Absolute = True
+                    For Each Entry As ZipArchiveEntry In Entries
+                        W("- {0}: ", False, ColTypes.ListEntry, Entry.FullName)
+                        If Not Entry.Name = "" Then 'Entry is a file
+                            W("{0} ({1})", True, ColTypes.ListValue, Entry.CompressedLength.FileSizeToString, Entry.Length.FileSizeToString)
+                        Else
+                            Console.WriteLine()
+                        End If
+                    Next
+                Case "get"
+                    If RequiredArgumentsProvided Then
+                        Dim Where As String = ""
+                        Dim Absolute As Boolean
+                        If Arguments?.Length > 1 Then
+                            If Not Arguments(1) = "-absolute" Then Where = NeutralizePath(Arguments(1))
+                            If Arguments?.Contains("-absolute") Then
+                                Absolute = True
+                            End If
+                        End If
+                        ExtractZipFileEntry(Arguments(0), Where, Absolute)
+                    End If
+                Case "chdir"
+                    If RequiredArgumentsProvided Then
+                        If Not ChangeWorkingZipLocalDirectory(Arguments(0)) Then
+                            W(DoTranslation("Directory {0} doesn't exist"), True, ColTypes.Error, Arguments(0))
                         End If
                     End If
-                    ExtractZipFileEntry(Arguments(0), Where, Absolute)
-                End If
-            ElseIf Command = "chdir" Then
-                If RequiredArgumentsProvided Then
-                    If Not ChangeWorkingZipLocalDirectory(Arguments(0)) Then
-                        W(DoTranslation("Directory {0} doesn't exist"), True, ColTypes.Error, Arguments(0))
+                Case "chadir"
+                    If RequiredArgumentsProvided Then
+                        If Not ChangeWorkingArchiveDirectory(Arguments(0)) Then
+                            W(DoTranslation("Archive directory {0} doesn't exist"), True, ColTypes.Error, Arguments(0))
+                        End If
                     End If
-                End If
-            ElseIf Command = "chadir" Then
-                If RequiredArgumentsProvided Then
-                    If Not ChangeWorkingArchiveDirectory(Arguments(0)) Then
-                        W(DoTranslation("Archive directory {0} doesn't exist"), True, ColTypes.Error, Arguments(0))
+                Case "cdir"
+                    W(ZipShell_CurrentDirectory, True, ColTypes.Neutral)
+                Case "exit"
+                    ZipShell_Exiting = True
+                Case "help"
+                    If Arguments?.Length > 0 Then
+                        Wdbg("I", "Requested help for {0}", Arguments(0))
+                        ZipShell_GetHelp(Arguments(0))
+                    Else
+                        Wdbg("I", "Requested help for all commands")
+                        ZipShell_GetHelp()
                     End If
-                End If
-            ElseIf Command = "cdir" Then
-                W(ZipShell_CurrentDirectory, True, ColTypes.Neutral)
-            End If
+            End Select
 
             'See if the command is done (passed all required arguments)
             If ZipShell_Commands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then

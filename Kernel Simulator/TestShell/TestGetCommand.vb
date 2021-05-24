@@ -62,266 +62,268 @@ Module TestGetCommand
         End If
 
         'Command code
-        If Cmd = "print" Then 'Usage: print <Color> <Line> <Message>
-            If RequiredArgumentsProvided Then
-                Dim Color As ColTypes = FullArgsQ(0)
-                Dim Line As Boolean = FullArgsQ(1)
-                Dim Text As String = FullArgsQ(2)
-                W(Text, Line, Color)
-            End If
-        ElseIf Cmd = "printf" Then 'Usage: printf <Color> <Line> <Variable1;Variable2;Variable3;...> <Message>
-            If RequiredArgumentsProvided Then
-                Dim Parts As New List(Of String)(FullArgsQ)
-                Dim Color As ColTypes = FullArgsQ(0)
-                Dim Line As Boolean = FullArgsQ(1)
-                Dim Vars As Object() = FullArgsQ(2).Split(";")
-                Dim Text As String = FullArgsQ(3)
-                For i As Integer = 0 To Vars.Count - 1
-                    Vars(i) = Evaluate(Vars(i)).ToString
-                Next
-                W(Text, Line, Color, Vars)
-            End If
-        ElseIf Cmd = "printd" Then 'Usage: printd <Message>
-            If RequiredArgumentsProvided Then
-                Wdbg("I", String.Join(" ", FullArgsQ))
-            End If
-        ElseIf Cmd = "printdf" Then 'Usage: printdf <Variable1;Variable2;Variable3;...> <Message>
-            If RequiredArgumentsProvided Then
-                Dim Vars As Object() = FullArgsQ(0).Split(";")
-                For i As Integer = 0 To Vars.Count - 1
-                    Vars(i) = Evaluate(Vars(i)).ToString
-                Next
-                Wdbg("I", FullArgsQ(1), Vars)
-            End If
-        ElseIf Cmd = "testevent" Then 'Usage: testevent <Event>
-            If RequiredArgumentsProvided Then
-                Try
-                    Dim SubName As String = "Raise" + FullArgsQ(0)
-                    CallByName(New Events, SubName, CallType.Method)
-                Catch ex As Exception
-                    W(DoTranslation("Failure to raise event {0}: {1}"), True, ColTypes.Error, FullArgsQ(0))
-                End Try
-            End If
-        ElseIf Cmd = "probehw" Then
-            StartProbing()
-        ElseIf Cmd = "garbage" Then
-            DisposeAll()
-        ElseIf Cmd = "panic" Then 'Usage: panic <ErrorType> <Reboot> <RebootTime> <Description>
-            If RequiredArgumentsProvided Then
-                Dim EType As Char = FullArgsQ(0)
-                Dim Reboot As Boolean = FullArgsQ(1)
-                Dim RTime As Long = FullArgsQ(2)
-                Dim Exc As New Exception
-                Dim Message As String = FullArgsQ(3)
-                KernelError(EType, Reboot, RTime, Message, Exc)
-            End If
-        ElseIf Cmd = "panicf" Then 'Usage: panicf <ErrorType> <Reboot> <RebootTime> <Variable1;Variable2;Variable3;...> <Description>
-            If RequiredArgumentsProvided Then
-                Dim EType As Char = FullArgsQ(0)
-                Dim Reboot As Boolean = FullArgsQ(1)
-                Dim RTime As Long = FullArgsQ(2)
-                Dim Args As String = FullArgsQ(3)
-                Dim Exc As New Exception
-                Dim Message As String = FullArgsQ(4)
-                KernelError(EType, Reboot, RTime, Message, Exc, Args)
-            End If
-        ElseIf Cmd = "translate" Then 'Usage: translate <Lang> <Message> | Message: A message that is found on KS lang files
-            If RequiredArgumentsProvided Then
-                Dim Lang As String = FullArgsQ(0)
-                Dim Message As String = FullArgsQ(1)
-                W(DoTranslation(Message, Lang), True, ColTypes.Neutral)
-            End If
-        ElseIf Cmd = "places" Then 'Usage: places <Message> | Same as print, but with no option to change colors, etc. Only message with placeholder support
-            If RequiredArgumentsProvided Then
-                W(ProbePlaces(FullArgsQ(0)), True, ColTypes.Neutral)
-            End If
-        ElseIf Cmd = "testsha512" Then
-            If RequiredArgumentsProvided Then
-                Dim spent As New Stopwatch
-                spent.Start() 'Time when you're on a breakpoint is counted
-                W(GetEncryptedString(FullArgsQ(0), Algorithms.SHA512), True, ColTypes.Neutral)
-                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                spent.Stop()
-            End If
-        ElseIf Cmd = "testsha256" Then
-            If RequiredArgumentsProvided Then
-                Dim spent As New Stopwatch
-                spent.Start() 'Time when you're on a breakpoint is counted
-                W(GetEncryptedString(FullArgsQ(0), Algorithms.SHA256), True, ColTypes.Neutral)
-                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                spent.Stop()
-            End If
-        ElseIf Cmd = "testsha1" Then
-            If RequiredArgumentsProvided Then
-                Dim spent As New Stopwatch
-                spent.Start() 'Time when you're on a breakpoint is counted
-                W(GetEncryptedString(FullArgsQ(0), Algorithms.SHA1), True, ColTypes.Neutral)
-                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                spent.Stop()
-            End If
-        ElseIf Cmd = "testmd5" Then
-            If RequiredArgumentsProvided Then
-                Dim spent As New Stopwatch
-                spent.Start() 'Time when you're on a breakpoint is counted
-                W(GetEncryptedString(FullArgsQ(0), Algorithms.MD5), True, ColTypes.Neutral)
-                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                spent.Stop()
-            End If
-        ElseIf Cmd = "testregexp" Then 'Usage: testregexp <pattern> <string>
-            If RequiredArgumentsProvided Then
-                Dim Exp As String = FullArgsQ(0)
-                Dim Reg As New Regex(Exp)
-                Dim Matches As MatchCollection = Reg.Matches(FullArgsQ(1))
-                Dim MatchNum As Integer = 1
-                For Each Mat As Match In Matches
-                    W(DoTranslation("Match {0} ({1}): {2}"), True, ColTypes.Neutral, MatchNum, Exp, Mat)
-                    MatchNum += 1
-                Next
-            End If
-        ElseIf Cmd = "loadmods" Then 'Usage: loadmods <Enable>
-            If RequiredArgumentsProvided Then ParseMods(FullArgsQ(0))
-        ElseIf Cmd = "debug" Then 'Usage: debug <Enable>
-            If RequiredArgumentsProvided Then
-                If FullArgsQ(0) = True Then
-                    DebugMode = True
-                Else
-                    RebootRequested = True 'Abort remote debugger
-                    DebugMode = False
-                    RebootRequested = False
+        Select Case Cmd
+            Case "print"
+                If RequiredArgumentsProvided Then
+                    Dim Color As ColTypes = FullArgsQ(0)
+                    Dim Line As Boolean = FullArgsQ(1)
+                    Dim Text As String = FullArgsQ(2)
+                    W(Text, Line, Color)
                 End If
-            End If
-        ElseIf Cmd = "rdebug" Then 'Usage: rdebug <Enable>
-            If RequiredArgumentsProvided Then
-                If FullArgsQ(0) = True Then
-                    StartRDebugThread(True)
-                Else
-                    StartRDebugThread(False)
+            Case "printf"
+                If RequiredArgumentsProvided Then
+                    Dim Parts As New List(Of String)(FullArgsQ)
+                    Dim Color As ColTypes = FullArgsQ(0)
+                    Dim Line As Boolean = FullArgsQ(1)
+                    Dim Vars As Object() = FullArgsQ(2).Split(";")
+                    Dim Text As String = FullArgsQ(3)
+                    For i As Integer = 0 To Vars.Count - 1
+                        Vars(i) = Evaluate(Vars(i)).ToString
+                    Next
+                    W(Text, Line, Color, Vars)
                 End If
-            End If
-        ElseIf Cmd = "colortest" Then 'Usage: colortest <index>
-            If RequiredArgumentsProvided Then
-                Dim esc As Char = GetEsc()
-                Console.WriteLine(esc + "[38;5;" + FullArgsQ(0) + "mIndex " + FullArgsQ(0))
-            End If
-        ElseIf Cmd = "colortruetest" Then 'Usage: colortruetest <R;G;B>
-            If RequiredArgumentsProvided Then
-                Dim esc As Char = GetEsc()
-                Console.WriteLine(esc + "[38;2;" + FullArgsQ(0) + "mIndex " + FullArgsQ(0))
-            End If
-        ElseIf Cmd = "sendnot" Then 'Usage: sendnot <Priority> <title> <desc>
-            If RequiredArgumentsProvided Then
-                Dim Notif As New Notification With {.Priority = FullArgsQ(0),
-                                                    .Title = FullArgsQ(1),
-                                                    .Desc = FullArgsQ(2)}
-                NotifySend(Notif)
-            End If
-        ElseIf Cmd = "dcalend" Then 'Usage: dcalend <CalendType>
-            If RequiredArgumentsProvided Then
-                If FullArgsQ(0) = "Gregorian" Then
-                    W(RenderDate(New CultureInfo("en-US")), True, ColTypes.Neutral)
-                ElseIf FullArgsQ(0) = "Hijri" Then
-                    Dim Cult As New CultureInfo("ar") : Cult.DateTimeFormat.Calendar = New HijriCalendar
-                    W(RenderDate(Cult), True, ColTypes.Neutral)
-                ElseIf FullArgsQ(0) = "Persian" Then
-                    W(RenderDate(New CultureInfo("fa")), True, ColTypes.Neutral)
-                ElseIf FullArgsQ(0) = "Saudi-Hijri" Then
-                    W(RenderDate(New CultureInfo("ar-SA")), True, ColTypes.Neutral)
-                ElseIf FullArgsQ(0) = "Thai-Buddhist" Then
-                    W(RenderDate(New CultureInfo("th-TH")), True, ColTypes.Neutral)
+            Case "printd"
+                If RequiredArgumentsProvided Then
+                    Wdbg("I", String.Join(" ", FullArgsQ))
                 End If
-            End If
-        ElseIf Cmd = "listcodepages" Then
-            Dim Encodings() As EncodingInfo = Encoding.GetEncodings
-            For Each Encoding As EncodingInfo In Encodings
-                W("{0}: {1} ({2})", True, ColTypes.Neutral, Encoding.CodePage, Encoding.Name, Encoding.DisplayName)
-            Next
-        ElseIf Cmd = "lscompilervars" Then
+            Case "printdf"
+                If RequiredArgumentsProvided Then
+                    Dim Vars As Object() = FullArgsQ(0).Split(";")
+                    For i As Integer = 0 To Vars.Count - 1
+                        Vars(i) = Evaluate(Vars(i)).ToString
+                    Next
+                    Wdbg("I", FullArgsQ(1), Vars)
+                End If
+            Case "testevent"
+                If RequiredArgumentsProvided Then
+                    Try
+                        Dim SubName As String = "Raise" + FullArgsQ(0)
+                        CallByName(New Events, SubName, CallType.Method)
+                    Catch ex As Exception
+                        W(DoTranslation("Failure to raise event {0}: {1}"), True, ColTypes.Error, FullArgsQ(0))
+                    End Try
+                End If
+            Case "probehw"
+                StartProbing()
+            Case "garbage"
+                DisposeAll()
+            Case "panic"
+                If RequiredArgumentsProvided Then
+                    Dim EType As Char = FullArgsQ(0)
+                    Dim Reboot As Boolean = FullArgsQ(1)
+                    Dim RTime As Long = FullArgsQ(2)
+                    Dim Exc As New Exception
+                    Dim Message As String = FullArgsQ(3)
+                    KernelError(EType, Reboot, RTime, Message, Exc)
+                End If
+            Case "panicf"
+                If RequiredArgumentsProvided Then
+                    Dim EType As Char = FullArgsQ(0)
+                    Dim Reboot As Boolean = FullArgsQ(1)
+                    Dim RTime As Long = FullArgsQ(2)
+                    Dim Args As String = FullArgsQ(3)
+                    Dim Exc As New Exception
+                    Dim Message As String = FullArgsQ(4)
+                    KernelError(EType, Reboot, RTime, Message, Exc, Args)
+                End If
+            Case "translate"
+                If RequiredArgumentsProvided Then
+                    Dim Lang As String = FullArgsQ(0)
+                    Dim Message As String = FullArgsQ(1)
+                    W(DoTranslation(Message, Lang), True, ColTypes.Neutral)
+                End If
+            Case "places"
+                If RequiredArgumentsProvided Then
+                    W(ProbePlaces(FullArgsQ(0)), True, ColTypes.Neutral)
+                End If
+            Case "testsha512"
+                If RequiredArgumentsProvided Then
+                    Dim spent As New Stopwatch
+                    spent.Start() 'Time when you're on a breakpoint is counted
+                    W(GetEncryptedString(FullArgsQ(0), Algorithms.SHA512), True, ColTypes.Neutral)
+                    W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                    spent.Stop()
+                End If
+            Case "testsha256"
+                If RequiredArgumentsProvided Then
+                    Dim spent As New Stopwatch
+                    spent.Start() 'Time when you're on a breakpoint is counted
+                    W(GetEncryptedString(FullArgsQ(0), Algorithms.SHA256), True, ColTypes.Neutral)
+                    W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                    spent.Stop()
+                End If
+            Case "testsha1"
+                If RequiredArgumentsProvided Then
+                    Dim spent As New Stopwatch
+                    spent.Start() 'Time when you're on a breakpoint is counted
+                    W(GetEncryptedString(FullArgsQ(0), Algorithms.SHA1), True, ColTypes.Neutral)
+                    W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                    spent.Stop()
+                End If
+            Case "testmd5"
+                If RequiredArgumentsProvided Then
+                    Dim spent As New Stopwatch
+                    spent.Start() 'Time when you're on a breakpoint is counted
+                    W(GetEncryptedString(FullArgsQ(0), Algorithms.MD5), True, ColTypes.Neutral)
+                    W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                    spent.Stop()
+                End If
+            Case "testregexp"
+                If RequiredArgumentsProvided Then
+                    Dim Exp As String = FullArgsQ(0)
+                    Dim Reg As New Regex(Exp)
+                    Dim Matches As MatchCollection = Reg.Matches(FullArgsQ(1))
+                    Dim MatchNum As Integer = 1
+                    For Each Mat As Match In Matches
+                        W(DoTranslation("Match {0} ({1}): {2}"), True, ColTypes.Neutral, MatchNum, Exp, Mat)
+                        MatchNum += 1
+                    Next
+                End If
+            Case "loadmods"
+                If RequiredArgumentsProvided Then ParseMods(FullArgsQ(0))
+            Case "debug"
+                If RequiredArgumentsProvided Then
+                    If FullArgsQ(0) = True Then
+                        DebugMode = True
+                    Else
+                        RebootRequested = True 'Abort remote debugger
+                        DebugMode = False
+                        RebootRequested = False
+                    End If
+                End If
+            Case "rdebug"
+                If RequiredArgumentsProvided Then
+                    If FullArgsQ(0) = True Then
+                        StartRDebugThread(True)
+                    Else
+                        StartRDebugThread(False)
+                    End If
+                End If
+            Case "colortest"
+                If RequiredArgumentsProvided Then
+                    Dim esc As Char = GetEsc()
+                    Console.WriteLine(esc + "[38;5;" + FullArgsQ(0) + "mIndex " + FullArgsQ(0))
+                End If
+            Case "colortruetest"
+                If RequiredArgumentsProvided Then
+                    Dim esc As Char = GetEsc()
+                    Console.WriteLine(esc + "[38;2;" + FullArgsQ(0) + "mIndex " + FullArgsQ(0))
+                End If
+            Case "sendnot"
+                If RequiredArgumentsProvided Then
+                    Dim Notif As New Notification With {.Priority = FullArgsQ(0),
+                                                        .Title = FullArgsQ(1),
+                                                        .Desc = FullArgsQ(2)}
+                    NotifySend(Notif)
+                End If
+            Case "dcalend"
+                If RequiredArgumentsProvided Then
+                    If FullArgsQ(0) = "Gregorian" Then
+                        W(RenderDate(New CultureInfo("en-US")), True, ColTypes.Neutral)
+                    ElseIf FullArgsQ(0) = "Hijri" Then
+                        Dim Cult As New CultureInfo("ar") : Cult.DateTimeFormat.Calendar = New HijriCalendar
+                        W(RenderDate(Cult), True, ColTypes.Neutral)
+                    ElseIf FullArgsQ(0) = "Persian" Then
+                        W(RenderDate(New CultureInfo("fa")), True, ColTypes.Neutral)
+                    ElseIf FullArgsQ(0) = "Saudi-Hijri" Then
+                        W(RenderDate(New CultureInfo("ar-SA")), True, ColTypes.Neutral)
+                    ElseIf FullArgsQ(0) = "Thai-Buddhist" Then
+                        W(RenderDate(New CultureInfo("th-TH")), True, ColTypes.Neutral)
+                    End If
+                End If
+            Case "listcodepages"
+                Dim Encodings() As EncodingInfo = Encoding.GetEncodings
+                For Each Encoding As EncodingInfo In Encodings
+                    W("{0}: {1} ({2})", True, ColTypes.Neutral, Encoding.CodePage, Encoding.Name, Encoding.DisplayName)
+                Next
+            Case "lscompilervars"
+                'TODO: Move this mess somewhere else.
 #If NTFSCorruptionFix Then
-            W("- NTFSCorruptionFix", True, ColTypes.Neutral)
+                W("- NTFSCorruptionFix", True, ColTypes.Neutral)
 #End If
 #If NOWRITELOCK Then
-            W("- NOWRITELOCK", True, ColTypes.Neutral)
+                W("- NOWRITELOCK", True, ColTypes.Neutral)
 #End If
 #If SPECIFIER = "DEV" Then
-            W("- SPECIFIER = ""DEV""", True, ColTypes.Neutral)
+                W("- SPECIFIER = ""DEV""", True, ColTypes.Neutral)
 #ElseIf SPECIFIER = "RC" Then
-            W("- SPECIFIER = ""RC""", True, ColTypes.Neutral)
+                W("- SPECIFIER = ""RC""", True, ColTypes.Neutral)
 #ElseIf SPECIFIER = "NEARING" Then
-            W("- SPECIFIER = ""NEARING""", True, ColTypes.Neutral)
+                W("- SPECIFIER = ""NEARING""", True, ColTypes.Neutral)
 #ElseIf SPECIFIER = "REL" Then
-            W("- SPECIFIER = ""REL""", True, ColTypes.Neutral)
+                W("- SPECIFIER = ""REL""", True, ColTypes.Neutral)
 #End If
 #If ENABLEIMMEDIATEWINDOWDEBUG Then
-            W("- ENABLEIMMEDIATEWINDOWDEBUG", True, ColTypes.Neutral)
+                W("- ENABLEIMMEDIATEWINDOWDEBUG", True, ColTypes.Neutral)
 #End If
 #If STOCKTERMINALMACOS Then
-            W("- STOCKTERMINALMACOS", True, ColTypes.Neutral)
+                W("- STOCKTERMINALMACOS", True, ColTypes.Neutral)
 #End If
-        ElseIf Cmd = "testlistwriterstr" Then
-            Dim NormalStringList As New Dictionary(Of String, String) From {{"One", "String 1"}, {"Two", "String 2"}, {"Three", "String 3"}}
-            Dim ArrayStringList As New Dictionary(Of String, String()) From {{"One", {"String 1", "String 2", "String 3"}}, {"Two", {"String 1", "String 2", "String 3"}}, {"Three", {"String 1", "String 2", "String 3"}}}
-            W(DoTranslation("Normal string list:"), True, ColTypes.Neutral)
-            WriteList(NormalStringList)
-            W(DoTranslation("Array string list:"), True, ColTypes.Neutral)
-            WriteList(ArrayStringList)
-        ElseIf Cmd = "testlistwriterint" Then
-            Dim NormalIntegerList As New Dictionary(Of String, Integer) From {{"One", 1}, {"Two", 2}, {"Three", 3}}
-            Dim ArrayIntegerList As New Dictionary(Of String, Integer()) From {{"One", {1, 2, 3}}, {"Two", {1, 2, 3}}, {"Three", {1, 2, 3}}}
-            W(DoTranslation("Normal integer list:"), True, ColTypes.Neutral)
-            WriteList(NormalIntegerList)
-            W(DoTranslation("Array integer list:"), True, ColTypes.Neutral)
-            WriteList(ArrayIntegerList)
-        ElseIf Cmd = "testlistwriterchar" Then
-            Dim NormalCharList As New Dictionary(Of String, Char) From {{"One", "1"c}, {"Two", "2"c}, {"Three", "3"c}}
-            Dim ArrayCharList As New Dictionary(Of String, Char()) From {{"One", {"1"c, "2"c, "3"c}}, {"Two", {"1"c, "2"c, "3"c}}, {"Three", {"1"c, "2"c, "3"c}}}
-            W(DoTranslation("Normal char list:"), True, ColTypes.Neutral)
-            WriteList(NormalCharList)
-            W(DoTranslation("Array char list:"), True, ColTypes.Neutral)
-            WriteList(ArrayCharList)
-        ElseIf Cmd = "lscultures" Then
-            Dim Cults As CultureInfo() = CultureInfo.GetCultures(CultureTypes.AllCultures)
-            For Each Cult As CultureInfo In Cults
-                If FullArgsQ?.Length > 0 Or FullArgsQ IsNot Nothing Then
-                    If Cult.Name.ToLower.Contains(FullArgsQ(0).ToLower) Or Cult.EnglishName.ToLower.Contains(FullArgsQ(0).ToLower) Then
+            Case "testlistwriterstr"
+                Dim NormalStringList As New Dictionary(Of String, String) From {{"One", "String 1"}, {"Two", "String 2"}, {"Three", "String 3"}}
+                Dim ArrayStringList As New Dictionary(Of String, String()) From {{"One", {"String 1", "String 2", "String 3"}}, {"Two", {"String 1", "String 2", "String 3"}}, {"Three", {"String 1", "String 2", "String 3"}}}
+                W(DoTranslation("Normal string list:"), True, ColTypes.Neutral)
+                WriteList(NormalStringList)
+                W(DoTranslation("Array string list:"), True, ColTypes.Neutral)
+                WriteList(ArrayStringList)
+            Case "testlistwriterint"
+                Dim NormalIntegerList As New Dictionary(Of String, Integer) From {{"One", 1}, {"Two", 2}, {"Three", 3}}
+                Dim ArrayIntegerList As New Dictionary(Of String, Integer()) From {{"One", {1, 2, 3}}, {"Two", {1, 2, 3}}, {"Three", {1, 2, 3}}}
+                W(DoTranslation("Normal integer list:"), True, ColTypes.Neutral)
+                WriteList(NormalIntegerList)
+                W(DoTranslation("Array integer list:"), True, ColTypes.Neutral)
+                WriteList(ArrayIntegerList)
+            Case "testlistwriterchar"
+                Dim NormalCharList As New Dictionary(Of String, Char) From {{"One", "1"c}, {"Two", "2"c}, {"Three", "3"c}}
+                Dim ArrayCharList As New Dictionary(Of String, Char()) From {{"One", {"1"c, "2"c, "3"c}}, {"Two", {"1"c, "2"c, "3"c}}, {"Three", {"1"c, "2"c, "3"c}}}
+                W(DoTranslation("Normal char list:"), True, ColTypes.Neutral)
+                WriteList(NormalCharList)
+                W(DoTranslation("Array char list:"), True, ColTypes.Neutral)
+                WriteList(ArrayCharList)
+            Case "lscultures"
+                Dim Cults As CultureInfo() = CultureInfo.GetCultures(CultureTypes.AllCultures)
+                For Each Cult As CultureInfo In Cults
+                    If FullArgsQ?.Length > 0 Or FullArgsQ IsNot Nothing Then
+                        If Cult.Name.ToLower.Contains(FullArgsQ(0).ToLower) Or Cult.EnglishName.ToLower.Contains(FullArgsQ(0).ToLower) Then
+                            W("{0}: {1}", True, ColTypes.Neutral, Cult.Name, Cult.EnglishName)
+                        End If
+                    Else
                         W("{0}: {1}", True, ColTypes.Neutral, Cult.Name, Cult.EnglishName)
                     End If
-                Else
-                    W("{0}: {1}", True, ColTypes.Neutral, Cult.Name, Cult.EnglishName)
-                End If
-            Next
-        ElseIf Cmd = "getcustomsaversetting" Then
-            If RequiredArgumentsProvided Then
-                If CSvrdb.ContainsKey(FullArgsQ(0)) Then
-                    W("- {0} -> {1}: ", False, ColTypes.ListEntry, FullArgsQ(0), FullArgsQ(1))
-                    W(GetCustomSaverSettings(FullArgsQ(0), FullArgsQ(1)), True, ColTypes.ListValue)
-                Else
-                    W(DoTranslation("Screensaver {0} not found."), True, ColTypes.Error, FullArgsQ(0))
-                End If
-            End If
-        ElseIf Cmd = "setcustomsaversetting" Then
-            If RequiredArgumentsProvided Then
-                If CSvrdb.ContainsKey(FullArgsQ(0)) Then
-                    If SetCustomSaverSettings(FullArgsQ(0), FullArgsQ(1), FullArgsQ(2)) Then
-                        W(DoTranslation("Settings set successfully for screensaver") + " {0}.", True, ColTypes.Neutral, FullArgsQ(0))
+                Next
+            Case "getcustomsaversetting"
+                If RequiredArgumentsProvided Then
+                    If CSvrdb.ContainsKey(FullArgsQ(0)) Then
+                        W("- {0} -> {1}: ", False, ColTypes.ListEntry, FullArgsQ(0), FullArgsQ(1))
+                        W(GetCustomSaverSettings(FullArgsQ(0), FullArgsQ(1)), True, ColTypes.ListValue)
                     Else
-                        W(DoTranslation("Failed to set a setting for screensaver") + " {0}.", True, ColTypes.Error, FullArgsQ(0))
+                        W(DoTranslation("Screensaver {0} not found."), True, ColTypes.Error, FullArgsQ(0))
                     End If
-                Else
-                    W(DoTranslation("Screensaver {0} not found."), True, ColTypes.Error, FullArgsQ(0))
                 End If
-            End If
-        ElseIf Cmd = "help" Then
-            If FullArgsQ?.Length = 0 Or FullArgsQ Is Nothing Then
-                TestShowHelp()
-            Else
-                TestShowHelp(FullArgsQ(0))
-            End If
-        ElseIf Cmd = "exit" Then
-            TEST_ExitFlag = True
-        ElseIf Cmd = "shutdown" Then
-            TEST_ShutdownFlag = True
-            TEST_ExitFlag = True
-        End If
+            Case "setcustomsaversetting"
+                If RequiredArgumentsProvided Then
+                    If CSvrdb.ContainsKey(FullArgsQ(0)) Then
+                        If SetCustomSaverSettings(FullArgsQ(0), FullArgsQ(1), FullArgsQ(2)) Then
+                            W(DoTranslation("Settings set successfully for screensaver") + " {0}.", True, ColTypes.Neutral, FullArgsQ(0))
+                        Else
+                            W(DoTranslation("Failed to set a setting for screensaver") + " {0}.", True, ColTypes.Error, FullArgsQ(0))
+                        End If
+                    Else
+                        W(DoTranslation("Screensaver {0} not found."), True, ColTypes.Error, FullArgsQ(0))
+                    End If
+                End If
+            Case "help"
+                If FullArgsQ?.Length = 0 Or FullArgsQ Is Nothing Then
+                    TestShowHelp()
+                Else
+                    TestShowHelp(FullArgsQ(0))
+                End If
+            Case "exit"
+                Test_ExitFlag = True
+            Case "shutdown"
+                Test_ShutdownFlag = True
+                Test_ExitFlag = True
+        End Select
 
         'If not enough arguments, show help entry
         If Test_Commands(Cmd).ArgumentsRequired And Not RequiredArgumentsProvided Then
