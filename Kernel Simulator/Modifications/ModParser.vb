@@ -82,6 +82,9 @@ Public Module ModParser
     End Interface
 
     'Variables
+    ''' <summary>
+    ''' Mods with their parts and scripts.
+    ''' </summary>
     Public scripts As New Dictionary(Of String, Dictionary(Of String, IScript))
     Private ReadOnly modPath As String = paths("Mods")
 

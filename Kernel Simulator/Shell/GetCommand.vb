@@ -654,6 +654,24 @@ Public Module GetCommand
                         StartThemeStudio(eqargs(0))
                     End If
 
+                Case "modinfo"
+
+                    If RequiredArgumentsProvided Then
+                        If scripts.Keys.Contains(eqargs(0)) Then
+                            W(">> {0}", True, ColTypes.Stage, eqargs(0))
+                            For Each ModPart As String In scripts(eqargs(0)).Keys
+                                W("  > {0}", True, ColTypes.Stage, ModPart)
+                                W("   - " + DoTranslation("Command name:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0))(ModPart).Cmd, True, ColTypes.ListValue)
+                                W("   - " + DoTranslation("Command definition:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0))(ModPart).Def, True, ColTypes.ListValue)
+                                W("   - " + DoTranslation("Command type:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0))(ModPart).CmdType, True, ColTypes.ListValue)
+                                W("   - " + DoTranslation("Strict command?") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0))(ModPart).CmdRestricted, True, ColTypes.ListValue)
+                                W("   - " + DoTranslation("Mod version:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0))(ModPart).Version, True, ColTypes.ListValue)
+                            Next
+                        Else
+                            W(DoTranslation("Mod {0} not found."), True, ColTypes.Error, eqargs(0))
+                        End If
+                    End If
+
                 Case "move"
 
                     If RequiredArgumentsProvided Then

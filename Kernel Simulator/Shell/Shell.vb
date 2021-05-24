@@ -90,6 +90,7 @@ Public Module Shell
                                                                     {"md", New CommandInfo("md", ShellCommandType.Shell, True, 1)},
                                                                     {"mkfile", New CommandInfo("mkfile", ShellCommandType.Shell, True, 1)},
                                                                     {"mktheme", New CommandInfo("mktheme", ShellCommandType.Shell, True, 1)},
+                                                                    {"modinfo", New CommandInfo("modinfo", ShellCommandType.Shell, True, 1)},
                                                                     {"move", New CommandInfo("move", ShellCommandType.Shell, True, 2)},
                                                                     {"netinfo", New CommandInfo("netinfo", ShellCommandType.Shell, False, 0, True, True)},
                                                                     {"perm", New CommandInfo("perm", ShellCommandType.Shell, True, 3, True)},

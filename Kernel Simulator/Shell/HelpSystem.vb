@@ -68,6 +68,7 @@ Public Module HelpSystem
                                                               {"md", DoTranslation("Creates a directory")},
                                                               {"mkfile", DoTranslation("Makes a new file")},
                                                               {"mktheme", DoTranslation("Makes a new theme")},
+                                                              {"modinfo", DoTranslation("Gets mod information")},
                                                               {"move", DoTranslation("Moves a file to another directory")},
                                                               {"netinfo", DoTranslation("Lists information about all available interfaces")},
                                                               {"perm", DoTranslation("Manage permissions for users")},
@@ -334,6 +335,10 @@ Public Module HelpSystem
         ElseIf command = "mktheme" Then
 
             W(DoTranslation("Usage:") + " mktheme <themeName>", True, ColTypes.Neutral)
+
+        ElseIf command = "modinfo" Then
+
+            W(DoTranslation("Usage:") + " modinfo <mod>", True, ColTypes.Neutral)
 
         ElseIf command = "move" Then
 
