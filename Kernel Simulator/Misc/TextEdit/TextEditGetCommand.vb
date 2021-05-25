@@ -62,7 +62,6 @@ Public Module TextEditGetCommand
             End If
 
             'Try to parse command
-            'TODO: Make all these commands API-compatible
             Select Case Command
                 Case "print"
                     Dim LineNumber As Integer = 1
@@ -94,27 +93,13 @@ Public Module TextEditGetCommand
                     End If
                 Case "addline"
                     If RequiredArgumentsProvided Then
-                        Dim NewLineContent As String = Arguments.Join(" ")
-                        Wdbg("I", "Prototype new line content: {0}", NewLineContent)
-                        If NewLineContent.StartsWith("""") And NewLineContent.EndsWith("""") Then
-                            NewLineContent = NewLineContent.Remove(0, 1)
-                            Wdbg("I", "Stage 1 new line content: {0}", NewLineContent)
-                            NewLineContent = NewLineContent.Remove(NewLineContent.Length - 1, 1)
-                            Wdbg("I", "Stage 2 new line content: {0}", NewLineContent)
-                        End If
-                        Wdbg("I", "Final new line content: {0}", NewLineContent)
-                        TextEdit_FileLines.Add(NewLineContent)
+                        TextEdit_AddNewLine(strArgs)
                     End If
                 Case "delline"
                     If RequiredArgumentsProvided Then
-                        Wdbg("I", "Is argument numeric: {0}", IsNumeric(Arguments(0)))
                         If IsNumeric(Arguments(0)) Then
-                            Dim LineIndex As Integer = Arguments(0) - 1
-                            Wdbg("I", "Got line index: {0}", LineIndex)
-                            Wdbg("I", "Old file lines: {0}", TextEdit_FileLines.Count)
                             If CInt(Arguments(0)) <= TextEdit_FileLines.Count Then
-                                TextEdit_FileLines.RemoveAt(LineIndex)
-                                Wdbg("I", "New file lines: {0}", TextEdit_FileLines.Count)
+                                TextEdit_RemoveLine(Arguments(0))
                                 W(DoTranslation("Removed line."), True, ColTypes.Neutral)
                             Else
                                 W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
@@ -126,21 +111,15 @@ Public Module TextEditGetCommand
                     End If
                 Case "replace"
                     If RequiredArgumentsProvided Then
-                        Wdbg("I", "Source: {0}, Target: {1}", Arguments(0), Arguments(1))
-                        For LineIndex As Integer = 0 To TextEdit_FileLines.Count - 1
-                            Wdbg("I", "Replacing ""{0}"" with ""{1}"" in line {2}", Arguments(0), Arguments(1), LineIndex + 1)
-                            TextEdit_FileLines(LineIndex) = TextEdit_FileLines(LineIndex).Replace(Arguments(0), Arguments(1))
-                        Next
+                        TextEdit_Replace(Arguments(0), Arguments(1))
+                        W(DoTranslation("String replaced."), True, ColTypes.Neutral)
                     End If
                 Case "replaceinline"
                     If RequiredArgumentsProvided Then
-                        Wdbg("I", "Source: {0}, Target: {1}, Line Number: {2}", Arguments(0), Arguments(1), Arguments(2))
-                        Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
                         If Arguments(2).IsNumeric Then
-                            Dim LineIndex As Long = Arguments(2) - 1
                             If CInt(Arguments(2)) <= TextEdit_FileLines.Count Then
-                                Wdbg("I", "Replacing ""{0}"" with ""{1}"" in line {2}", Arguments(0), Arguments(1), LineIndex + 1)
-                                TextEdit_FileLines(LineIndex) = TextEdit_FileLines(LineIndex).Replace(Arguments(0), Arguments(1))
+                                TextEdit_Replace(Arguments(0), Arguments(1), Arguments(2))
+                                W(DoTranslation("String replaced."), True, ColTypes.Neutral)
                             Else
                                 W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                             End If
@@ -151,14 +130,10 @@ Public Module TextEditGetCommand
                     End If
                 Case "delword"
                     If RequiredArgumentsProvided Then
-                        Wdbg("I", "Word/Phrase: {0}, Line: {1} ({2})", Arguments(0), Arguments(1), IsNumeric(Arguments(1)))
                         If IsNumeric(Arguments(1)) Then
-                            Dim LineIndex As Integer = Arguments(1) - 1
-                            Wdbg("I", "Got line index: {0}", LineIndex)
-                            Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
                             If CInt(Arguments(1)) <= TextEdit_FileLines.Count Then
-                                TextEdit_FileLines(LineIndex) = TextEdit_FileLines(LineIndex).Replace(Arguments(0), "")
-                                Wdbg("I", "Removed {0}. Result: {1}", LineIndex, TextEdit_FileLines.Count)
+                                TextEdit_DeleteWord(Arguments(0), Arguments(1))
+                                W(DoTranslation("Word deleted."), True, ColTypes.Neutral)
                             Else
                                 W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                             End If
@@ -169,80 +144,58 @@ Public Module TextEditGetCommand
                     End If
                 Case "delcharnum"
                     If RequiredArgumentsProvided Then
-                        Wdbg("I", "Char number: {0} ({1}), Line: {2} ({3})", Arguments(0), IsNumeric(Arguments(0)), Arguments(1), IsNumeric(Arguments(1)))
-                        If IsNumeric(Arguments(1)) Then
-                            Dim LineIndex As Integer = Arguments(1) - 1
-                            Dim CharIndex As Integer = Arguments(0) - 1
-                            Wdbg("I", "Got line index: {0}", LineIndex)
-                            Wdbg("I", "Got char index: {0}", CharIndex)
-                            Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
+                        If IsNumeric(Arguments(1)) And IsNumeric(Arguments(0)) Then
                             If CInt(Arguments(1)) <= TextEdit_FileLines.Count Then
-                                TextEdit_FileLines(LineIndex) = TextEdit_FileLines(LineIndex).Remove(CharIndex, 1)
-                                Wdbg("I", "Removed {0}. Result: {1}", LineIndex, TextEdit_FileLines(LineIndex))
+                                TextEdit_DeleteChar(Arguments(0), Arguments(1))
+                                W(DoTranslation("Character deleted."), True, ColTypes.Neutral)
                             Else
                                 W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                             End If
                         Else
-                            W(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, Arguments(1))
-                            Wdbg("E", "{0} is not a numeric value.", Arguments(1))
+                            W(DoTranslation("One or both of the numbers are not numeric."), True, ColTypes.Error)
+                            Wdbg("E", "{0} and {1} are not numeric values.", Arguments(0), Arguments(1))
                         End If
                     End If
                 Case "querychar"
                     If RequiredArgumentsProvided Then
-                        Wdbg("I", "Char: {0}, Line: {1} ({2})", Arguments(0), Arguments(1), IsNumeric(Arguments(1)))
                         If IsNumeric(Arguments(1)) Then
-                            Dim LineIndex As Integer = Arguments(1) - 1
-                            Wdbg("I", "Got line index: {0}", LineIndex)
-                            Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
                             If CInt(Arguments(1)) <= TextEdit_FileLines.Count Then
-                                For CharIndex As Integer = 0 To TextEdit_FileLines(Arguments(1)).Length - 1
-                                    If TextEdit_FileLines(Arguments(1))(CharIndex) = Arguments(0) Then
-                                        W("- {0}: ", False, ColTypes.ListEntry, CharIndex)
-                                        W("{0} ({1})", True, ColTypes.ListValue, Arguments(0), TextEdit_FileLines(Arguments(1)))
-                                    End If
+                                Dim QueriedChars As Dictionary(Of Integer, String) = TextEdit_QueryChar(Arguments(0), Arguments(1))
+                                For Each CharIndex As Integer In QueriedChars.Keys
+                                    W("- {0}: ", False, ColTypes.ListEntry, CharIndex)
+                                    W("{0} ({1})", True, ColTypes.ListValue, Arguments(0), QueriedChars(CharIndex))
                                 Next
                             Else
                                 W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                             End If
                         ElseIf Arguments(1).ToLower = "all" Then
-                            Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
-                            For LineIndex As Integer = 0 To TextEdit_FileLines.Count - 1
-                                For CharIndex As Integer = 0 To TextEdit_FileLines(LineIndex).Length - 1
-                                    If TextEdit_FileLines(LineIndex)(CharIndex) = Arguments(0) Then
-                                        W("- {0}:{1}: ", False, ColTypes.ListEntry, LineIndex, CharIndex)
-                                        W("{0} ({1})", True, ColTypes.ListValue, Arguments(0), TextEdit_FileLines(LineIndex))
-                                    End If
+                            Dim QueriedChars As Dictionary(Of Integer, Dictionary(Of Integer, String)) = TextEdit_QueryChar(Arguments(0))
+                            For Each LineIndex As Integer In QueriedChars.Keys
+                                For Each CharIndex As Integer In QueriedChars(LineIndex).Keys
+                                    W("- {0}:{1}: ", False, ColTypes.ListEntry, LineIndex, CharIndex)
+                                    W("{0} ({1})", True, ColTypes.ListValue, Arguments(0), TextEdit_FileLines(LineIndex))
                                 Next
                             Next
                         End If
                     End If
                 Case "queryword"
                     If RequiredArgumentsProvided Then
-                        Wdbg("I", "Word: {0}, Line: {1} ({2})", Arguments(0), Arguments(1), IsNumeric(Arguments(1)))
                         If IsNumeric(Arguments(1)) Then
-                            Dim LineIndex As Integer = Arguments(1) - 1
-                            Wdbg("I", "Got line index: {0}", LineIndex)
-                            Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
                             If CInt(Arguments(1)) <= TextEdit_FileLines.Count Then
-                                Dim Words() As String = TextEdit_FileLines(Arguments(1)).Split(" ")
-                                For WordIndex As Integer = 0 To Words.Length - 1
-                                    If Words(WordIndex).ToLower.Contains(Arguments(0).ToLower) Then
-                                        W("- {0}: ", False, ColTypes.ListEntry, WordIndex)
-                                        W("{0} ({1})", True, ColTypes.ListValue, Arguments(0), TextEdit_FileLines(Arguments(1)))
-                                    End If
+                                Dim QueriedChars As Dictionary(Of Integer, String) = TextEdit_QueryWord(Arguments(0), Arguments(1))
+                                For Each WordIndex As Integer In QueriedChars.Keys
+                                    W("- {0}: ", False, ColTypes.ListEntry, WordIndex)
+                                    W("{0} ({1})", True, ColTypes.ListValue, Arguments(0), TextEdit_FileLines(Arguments(1)))
                                 Next
                             Else
                                 W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                             End If
                         ElseIf Arguments(1).ToLower = "all" Then
-                            Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
-                            For LineIndex As Integer = 0 To TextEdit_FileLines.Count - 1
-                                Dim Words() As String = TextEdit_FileLines(LineIndex).Split(" ")
-                                For WordIndex As Integer = 0 To Words.Length - 1
-                                    If Words(WordIndex).ToLower.Contains(Arguments(0).ToLower) Then
-                                        W("- {0}:{1}: ", False, ColTypes.ListEntry, LineIndex, WordIndex)
-                                        W("{0} ({1})", True, ColTypes.ListValue, Arguments(0), TextEdit_FileLines(LineIndex))
-                                    End If
+                            Dim QueriedWords As Dictionary(Of Integer, Dictionary(Of Integer, String)) = TextEdit_QueryWord(Arguments(0))
+                            For Each LineIndex As Integer In QueriedWords.Keys
+                                For Each WordIndex As Integer In QueriedWords(LineIndex).Keys
+                                    W("- {0}:{1}: ", False, ColTypes.ListEntry, LineIndex, WordIndex)
+                                    W("{0} ({1})", True, ColTypes.ListValue, Arguments(0), TextEdit_FileLines(LineIndex))
                                 Next
                             Next
                         End If

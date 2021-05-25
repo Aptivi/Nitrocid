@@ -75,7 +75,7 @@ Public Module TextEditHelpSystem
         ElseIf Command = "print" Then
             W(DoTranslation("Usage:") + " print [linenumber]", True, ColTypes.Neutral)
         ElseIf Command = "addline" Then
-            W(DoTranslation("Usage:") + " addline ""<text>""", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " addline <text>", True, ColTypes.Neutral)
         ElseIf Command = "delline" Then
             W(DoTranslation("Usage:") + " delline <linenumber>", True, ColTypes.Neutral)
         ElseIf Command = "replace" Then
