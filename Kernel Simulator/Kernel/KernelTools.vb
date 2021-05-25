@@ -639,4 +639,42 @@ Public Module KernelTools
         Return Environ("TERM_PROGRAM")
     End Function
 
+    ''' <summary>
+    ''' Gets the used compiler variables for building Kernel Simulator
+    ''' </summary>
+    ''' <returns>An array containing used compiler variables</returns>
+    Public Function GetCompilerVars() As String()
+        Dim CompilerVars As New List(Of String)
+
+        'Determine the compiler vars used to build KS using conditional checks
+#If NTFSCorruptionFix Then
+        CompilerVars.Add("NTFSCorruptionFix")
+#End If
+
+#If NOWRITELOCK Then
+        CompilerVars.Add("NOWRITELOCK")
+#End If
+
+#If SPECIFIER = "DEV" Then
+        CompilerVars.Add("SPECIFIER = ""DEV""")
+#ElseIf SPECIFIER = "RC" Then
+        CompilerVars.Add("SPECIFIER = ""RC""")
+#ElseIf SPECIFIER = "NEARING" Then
+        CompilerVars.Add("SPECIFIER = ""NEARING""")
+#ElseIf SPECIFIER = "REL" Then
+        CompilerVars.Add("SPECIFIER = ""REL""")
+#End If
+
+#If ENABLEIMMEDIATEWINDOWDEBUG Then
+        CompilerVars.Add("ENABLEIMMEDIATEWINDOWDEBUG")
+#End If
+
+#If STOCKTERMINALMACOS Then
+        CompilerVars.Add("STOCKTERMINALMACOS")
+#End If
+
+        'Return the compiler vars
+        Return CompilerVars.ToArray
+    End Function
+
 End Module

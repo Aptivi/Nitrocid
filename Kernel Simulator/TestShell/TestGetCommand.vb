@@ -237,28 +237,9 @@ Module TestGetCommand
                     W("{0}: {1} ({2})", True, ColTypes.Neutral, Encoding.CodePage, Encoding.Name, Encoding.DisplayName)
                 Next
             Case "lscompilervars"
-                'TODO: Move this mess somewhere else.
-#If NTFSCorruptionFix Then
-                W("- NTFSCorruptionFix", True, ColTypes.Neutral)
-#End If
-#If NOWRITELOCK Then
-                W("- NOWRITELOCK", True, ColTypes.Neutral)
-#End If
-#If SPECIFIER = "DEV" Then
-                W("- SPECIFIER = ""DEV""", True, ColTypes.Neutral)
-#ElseIf SPECIFIER = "RC" Then
-                W("- SPECIFIER = ""RC""", True, ColTypes.Neutral)
-#ElseIf SPECIFIER = "NEARING" Then
-                W("- SPECIFIER = ""NEARING""", True, ColTypes.Neutral)
-#ElseIf SPECIFIER = "REL" Then
-                W("- SPECIFIER = ""REL""", True, ColTypes.Neutral)
-#End If
-#If ENABLEIMMEDIATEWINDOWDEBUG Then
-                W("- ENABLEIMMEDIATEWINDOWDEBUG", True, ColTypes.Neutral)
-#End If
-#If STOCKTERMINALMACOS Then
-                W("- STOCKTERMINALMACOS", True, ColTypes.Neutral)
-#End If
+                For Each CompilerVar As String In GetCompilerVars()
+                    W("- {0}", True, ColTypes.ListEntry, CompilerVar)
+                Next
             Case "testlistwriterstr"
                 Dim NormalStringList As New Dictionary(Of String, String) From {{"One", "String 1"}, {"Two", "String 2"}, {"Three", "String 3"}}
                 Dim ArrayStringList As New Dictionary(Of String, String()) From {{"One", {"String 1", "String 2", "String 3"}}, {"Two", {"String 1", "String 2", "String 3"}}, {"Three", {"String 1", "String 2", "String 3"}}}
