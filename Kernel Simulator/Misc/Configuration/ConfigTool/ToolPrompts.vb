@@ -1265,6 +1265,7 @@ Public Module ToolPrompts
             End If
 
             'Check for input
+#Disable Warning BC42104
             Wdbg("I", "Is the answer numeric? {0}", IsNumeric(AnswerString))
             If Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SBoolean Then
                 Wdbg("I", "Answer is numeric and key is of the Boolean type.")
@@ -1345,6 +1346,7 @@ Public Module ToolPrompts
                 W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
             End If
+#Enable Warning BC42104
         End While
     End Sub
 
