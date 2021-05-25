@@ -123,7 +123,7 @@ Public Module ToolPrompts
                     W("2) " + DoTranslation("Maintenance Mode Trigger") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(maintenance)))
                     W("3) " + DoTranslation("Change Root Password..."), True, ColTypes.Option)
                     W("4) " + DoTranslation("Check for Updates on Startup") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CheckUpdateStart)))
-                    W("5) " + DoTranslation("Change Culture when Switching Languages") + " [{0}]" + vbNewLine, True, ColTypes.Option, GetConfigValue(NameOf(LangChangeCulture)))
+                    W("5) " + DoTranslation("Change Culture when Switching Languages") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LangChangeCulture)))
                     W("6) " + DoTranslation("Culture of") + " {0} [{1}]" + vbNewLine, True, ColTypes.Option, currentLang, CurrentCult.Name)
                 Case "1.3" 'Change Root Password...
                     MaxOptions = 2
@@ -1291,7 +1291,7 @@ Public Module ToolPrompts
             ElseIf (Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SInt) Or
                    (Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SSelection) Then
                 Wdbg("I", "Answer is numeric and key is of the {0} type.", KeyType)
-                If AnswerInt = MaxKeyOptions + 1 Then 'Go Back...
+                If AnswerInt = MaxKeyOptions + 1 And KeyType = SettingsKeyType.SSelection Then 'Go Back...
                     Wdbg("I", "User requested exit. Returning...")
                     KeyFinished = True
                 ElseIf AnswerInt >= 0 And SelectFrom IsNot Nothing Then
