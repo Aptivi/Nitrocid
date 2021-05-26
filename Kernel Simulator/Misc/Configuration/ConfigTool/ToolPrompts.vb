@@ -71,7 +71,7 @@ Public Module ToolPrompts
                 ElseIf AnswerInt = 8 Then 'Save Settings
                     Wdbg("I", "Saving settings...")
                     Try
-                        CreateConfig(True)
+                        CreateConfig()
                         SaveCustomSaverSettings()
                     Catch ex As Exception
                         W(ex.Message, True, ColTypes.Error)

@@ -348,26 +348,23 @@ Public Module ColorTools
     ''' Makes the color configuration permanent
     ''' </summary>
     Public Sub MakePermanent()
-        Dim ksconf As New IniFile()
-        Dim configPath As String = paths("Configuration")
-        ksconf.Load(configPath)
-
         'We use New Color() to parse entered color. This is to ensure that the kernel can use the correct VT sequence.
-        ksconf.Sections("Colors").Keys("User Name Shell Color").Value = If(New Color(UserNameShellColor).Type = ColorType.TrueColor, UserNameShellColor.EncloseByDoubleQuotes, UserNameShellColor)
-        ksconf.Sections("Colors").Keys("Host Name Shell Color").Value = If(New Color(HostNameShellColor).Type = ColorType.TrueColor, HostNameShellColor.EncloseByDoubleQuotes, HostNameShellColor)
-        ksconf.Sections("Colors").Keys("Continuable Kernel Error Color").Value = If(New Color(ContKernelErrorColor).Type = ColorType.TrueColor, ContKernelErrorColor.EncloseByDoubleQuotes, ContKernelErrorColor)
-        ksconf.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value = If(New Color(UncontKernelErrorColor).Type = ColorType.TrueColor, UncontKernelErrorColor.EncloseByDoubleQuotes, UncontKernelErrorColor)
-        ksconf.Sections("Colors").Keys("Text Color").Value = If(New Color(NeutralTextColor).Type = ColorType.TrueColor, NeutralTextColor.EncloseByDoubleQuotes, NeutralTextColor)
-        ksconf.Sections("Colors").Keys("License Color").Value = If(New Color(LicenseColor).Type = ColorType.TrueColor, LicenseColor.EncloseByDoubleQuotes, LicenseColor)
-        ksconf.Sections("Colors").Keys("Background Color").Value = If(New Color(BackgroundColor).Type = ColorType.TrueColor, BackgroundColor.EncloseByDoubleQuotes, BackgroundColor)
-        ksconf.Sections("Colors").Keys("Input Color").Value = If(New Color(InputColor).Type = ColorType.TrueColor, InputColor.EncloseByDoubleQuotes, InputColor)
-        ksconf.Sections("Colors").Keys("List Entry Color").Value = If(New Color(ListEntryColor).Type = ColorType.TrueColor, ListEntryColor.EncloseByDoubleQuotes, ListEntryColor)
-        ksconf.Sections("Colors").Keys("List Value Color").Value = If(New Color(ListValueColor).Type = ColorType.TrueColor, ListValueColor.EncloseByDoubleQuotes, ListValueColor)
-        ksconf.Sections("Colors").Keys("Kernel Stage Color").Value = If(New Color(StageColor).Type = ColorType.TrueColor, StageColor.EncloseByDoubleQuotes, StageColor)
-        ksconf.Sections("Colors").Keys("Error Text Color").Value = If(New Color(ErrorColor).Type = ColorType.TrueColor, ErrorColor.EncloseByDoubleQuotes, ErrorColor)
-        ksconf.Sections("Colors").Keys("Warning Text Color").Value = If(New Color(WarningColor).Type = ColorType.TrueColor, WarningColor.EncloseByDoubleQuotes, WarningColor)
-        ksconf.Sections("Colors").Keys("Option Color").Value = If(New Color(OptionColor).Type = ColorType.TrueColor, OptionColor.EncloseByDoubleQuotes, OptionColor)
-        ksconf.Save(configPath)
+        ConfigToken("Colors")("User Name Shell Color") = If(New Color(UserNameShellColor).Type = ColorType.TrueColor, UserNameShellColor.EncloseByDoubleQuotes, UserNameShellColor)
+        ConfigToken("Colors")("Host Name Shell Color") = If(New Color(HostNameShellColor).Type = ColorType.TrueColor, HostNameShellColor.EncloseByDoubleQuotes, HostNameShellColor)
+        ConfigToken("Colors")("Continuable Kernel Error Color") = If(New Color(ContKernelErrorColor).Type = ColorType.TrueColor, ContKernelErrorColor.EncloseByDoubleQuotes, ContKernelErrorColor)
+        ConfigToken("Colors")("Uncontinuable Kernel Error Color") = If(New Color(UncontKernelErrorColor).Type = ColorType.TrueColor, UncontKernelErrorColor.EncloseByDoubleQuotes, UncontKernelErrorColor)
+        ConfigToken("Colors")("Text Color") = If(New Color(NeutralTextColor).Type = ColorType.TrueColor, NeutralTextColor.EncloseByDoubleQuotes, NeutralTextColor)
+        ConfigToken("Colors")("License Color") = If(New Color(LicenseColor).Type = ColorType.TrueColor, LicenseColor.EncloseByDoubleQuotes, LicenseColor)
+        ConfigToken("Colors")("Background Color") = If(New Color(BackgroundColor).Type = ColorType.TrueColor, BackgroundColor.EncloseByDoubleQuotes, BackgroundColor)
+        ConfigToken("Colors")("Input Color") = If(New Color(InputColor).Type = ColorType.TrueColor, InputColor.EncloseByDoubleQuotes, InputColor)
+        ConfigToken("Colors")("List Entry Color") = If(New Color(ListEntryColor).Type = ColorType.TrueColor, ListEntryColor.EncloseByDoubleQuotes, ListEntryColor)
+        ConfigToken("Colors")("List Value Color") = If(New Color(ListValueColor).Type = ColorType.TrueColor, ListValueColor.EncloseByDoubleQuotes, ListValueColor)
+        ConfigToken("Colors")("Kernel Stage Color") = If(New Color(StageColor).Type = ColorType.TrueColor, StageColor.EncloseByDoubleQuotes, StageColor)
+        ConfigToken("Colors")("Error Text Color") = If(New Color(ErrorColor).Type = ColorType.TrueColor, ErrorColor.EncloseByDoubleQuotes, ErrorColor)
+        ConfigToken("Colors")("Warning Text Color") = If(New Color(WarningColor).Type = ColorType.TrueColor, WarningColor.EncloseByDoubleQuotes, WarningColor)
+        ConfigToken("Colors")("Option Color") = If(New Color(OptionColor).Type = ColorType.TrueColor, OptionColor.EncloseByDoubleQuotes, OptionColor)
+        ConfigToken("Colors")("Banner Color") = If(New Color(BannerColor).Type = ColorType.TrueColor, BannerColor.EncloseByDoubleQuotes, BannerColor)
+        File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
     End Sub
 
     ''' <summary>

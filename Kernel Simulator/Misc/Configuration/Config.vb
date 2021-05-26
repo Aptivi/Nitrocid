@@ -18,438 +18,249 @@
 
 Imports System.Globalization
 Imports System.IO
+Imports Newtonsoft.Json.Linq
 
-'TODO: Use JSON. Users will have to use our converter. This is to ensure that we can port KS to .NET 5.0
 Public Module Config
 
     ''' <summary>
     ''' Creates the kernel configuration file
     ''' </summary>
-    ''' <param name="Preserve">Preserves configuration values</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
     ''' <exception cref="Exceptions.ConfigException"></exception>
-    Public Function CreateConfig(ByVal Preserve As Boolean) As Boolean
+    Public Function CreateConfig() As Boolean
         Try
-            Dim ksconf As New IniFile()
-            Wdbg("I", "Preserve: {0}", Preserve)
-            If Preserve Then
-                'The General Section
-                ksconf.Sections.Add(
-                    New IniSection(ksconf, "General",
-                        New IniKey(ksconf, "Prompt for Arguments on Boot", argsOnBoot),
-                        New IniKey(ksconf, "Maintenance Mode", maintenance),
-                        New IniKey(ksconf, "Change Root Password", setRootPasswd),
-                        New IniKey(ksconf, "Set Root Password to", RootPasswd),
-                        New IniKey(ksconf, "Check for Updates on Startup", CheckUpdateStart),
-                        New IniKey(ksconf, "Change Culture when Switching Languages", LangChangeCulture),
-                        New IniKey(ksconf, "Language", currentLang),
-                        New IniKey(ksconf, "Culture", CurrentCult.Name)))
+            Dim ConfigurationObject As New JObject
 
-                'The Colors Section
-                ksconf.Sections.Add(
-                    New IniSection(ksconf, "Colors",
-                        New IniKey(ksconf, "User Name Shell Color", If(New Color(UserNameShellColor).Type = ColorType.TrueColor, UserNameShellColor.EncloseByDoubleQuotes, UserNameShellColor)),
-                        New IniKey(ksconf, "Host Name Shell Color", If(New Color(HostNameShellColor).Type = ColorType.TrueColor, HostNameShellColor.EncloseByDoubleQuotes, HostNameShellColor)),
-                        New IniKey(ksconf, "Continuable Kernel Error Color", If(New Color(ContKernelErrorColor).Type = ColorType.TrueColor, ContKernelErrorColor.EncloseByDoubleQuotes, ContKernelErrorColor)),
-                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", If(New Color(UncontKernelErrorColor).Type = ColorType.TrueColor, UncontKernelErrorColor.EncloseByDoubleQuotes, UncontKernelErrorColor)),
-                        New IniKey(ksconf, "Text Color", If(New Color(NeutralTextColor).Type = ColorType.TrueColor, NeutralTextColor.EncloseByDoubleQuotes, NeutralTextColor)),
-                        New IniKey(ksconf, "License Color", If(New Color(LicenseColor).Type = ColorType.TrueColor, LicenseColor.EncloseByDoubleQuotes, LicenseColor)),
-                        New IniKey(ksconf, "Background Color", If(New Color(BackgroundColor).Type = ColorType.TrueColor, BackgroundColor.EncloseByDoubleQuotes, BackgroundColor)),
-                        New IniKey(ksconf, "Input Color", If(New Color(InputColor).Type = ColorType.TrueColor, InputColor.EncloseByDoubleQuotes, InputColor)),
-                        New IniKey(ksconf, "List Entry Color", If(New Color(ListEntryColor).Type = ColorType.TrueColor, ListEntryColor.EncloseByDoubleQuotes, ListEntryColor)),
-                        New IniKey(ksconf, "List Value Color", If(New Color(ListValueColor).Type = ColorType.TrueColor, ListValueColor.EncloseByDoubleQuotes, ListValueColor)),
-                        New IniKey(ksconf, "Kernel Stage Color", If(New Color(StageColor).Type = ColorType.TrueColor, StageColor.EncloseByDoubleQuotes, StageColor)),
-                        New IniKey(ksconf, "Error Text Color", If(New Color(ErrorColor).Type = ColorType.TrueColor, ErrorColor.EncloseByDoubleQuotes, ErrorColor)),
-                        New IniKey(ksconf, "Warning Text Color", If(New Color(WarningColor).Type = ColorType.TrueColor, WarningColor.EncloseByDoubleQuotes, WarningColor)),
-                        New IniKey(ksconf, "Option Color", If(New Color(OptionColor).Type = ColorType.TrueColor, OptionColor.EncloseByDoubleQuotes, OptionColor)),
-                        New IniKey(ksconf, "Banner Color", If(New Color(BannerColor).Type = ColorType.TrueColor, BannerColor.EncloseByDoubleQuotes, BannerColor))))
+            'The General Section
+            Dim GeneralConfig As New JObject From {
+                    {"Prompt for Arguments on Boot", argsOnBoot},
+                    {"Maintenance Mode", maintenance},
+                    {"Change Root Password", setRootPasswd},
+                    {"Set Root Password to", RootPasswd},
+                    {"Check for Updates on Startup", CheckUpdateStart},
+                    {"Change Culture when Switching Languages", LangChangeCulture},
+                    {"Language", currentLang},
+                    {"Culture", CurrentCult.Name}
+            }
+            ConfigurationObject.Add("General", GeneralConfig)
 
-                'The Hardware Section
-                ksconf.Sections.Add(
-                    New IniSection(ksconf, "Hardware",
-                        New IniKey(ksconf, "Quiet Probe", quietProbe),
-                        New IniKey(ksconf, "Full Probe", FullProbe)))
+            'The Colors Section
+            Dim ColorConfig As New JObject From {
+                    {"User Name Shell Color", If(New Color(UserNameShellColor).Type = ColorType.TrueColor, UserNameShellColor.EncloseByDoubleQuotes, UserNameShellColor)},
+                    {"Host Name Shell Color", If(New Color(HostNameShellColor).Type = ColorType.TrueColor, HostNameShellColor.EncloseByDoubleQuotes, HostNameShellColor)},
+                    {"Continuable Kernel Error Color", If(New Color(ContKernelErrorColor).Type = ColorType.TrueColor, ContKernelErrorColor.EncloseByDoubleQuotes, ContKernelErrorColor)},
+                    {"Uncontinuable Kernel Error Color", If(New Color(UncontKernelErrorColor).Type = ColorType.TrueColor, UncontKernelErrorColor.EncloseByDoubleQuotes, UncontKernelErrorColor)},
+                    {"Text Color", If(New Color(NeutralTextColor).Type = ColorType.TrueColor, NeutralTextColor.EncloseByDoubleQuotes, NeutralTextColor)},
+                    {"License Color", If(New Color(LicenseColor).Type = ColorType.TrueColor, LicenseColor.EncloseByDoubleQuotes, LicenseColor)},
+                    {"Background Color", If(New Color(BackgroundColor).Type = ColorType.TrueColor, BackgroundColor.EncloseByDoubleQuotes, BackgroundColor)},
+                    {"Input Color", If(New Color(InputColor).Type = ColorType.TrueColor, InputColor.EncloseByDoubleQuotes, InputColor)},
+                    {"List Entry Color", If(New Color(ListEntryColor).Type = ColorType.TrueColor, ListEntryColor.EncloseByDoubleQuotes, ListEntryColor)},
+                    {"List Value Color", If(New Color(ListValueColor).Type = ColorType.TrueColor, ListValueColor.EncloseByDoubleQuotes, ListValueColor)},
+                    {"Kernel Stage Color", If(New Color(StageColor).Type = ColorType.TrueColor, StageColor.EncloseByDoubleQuotes, StageColor)},
+                    {"Error Text Color", If(New Color(ErrorColor).Type = ColorType.TrueColor, ErrorColor.EncloseByDoubleQuotes, ErrorColor)},
+                    {"Warning Text Color", If(New Color(WarningColor).Type = ColorType.TrueColor, WarningColor.EncloseByDoubleQuotes, WarningColor)},
+                    {"Option Color", If(New Color(OptionColor).Type = ColorType.TrueColor, OptionColor.EncloseByDoubleQuotes, OptionColor)},
+                    {"Banner Color", If(New Color(BannerColor).Type = ColorType.TrueColor, BannerColor.EncloseByDoubleQuotes, BannerColor)}
+            }
+            ConfigurationObject.Add("Colors", ColorConfig)
 
-                'The Login Section
-                ksconf.Sections.Add(
-                    New IniSection(ksconf, "Login",
-                        New IniKey(ksconf, "Show MOTD on Log-in", showMOTD),
-                        New IniKey(ksconf, "Clear Screen on Log-in", clsOnLogin),
-                        New IniKey(ksconf, "Host Name", HName),
-                        New IniKey(ksconf, "Show available usernames", ShowAvailableUsers)))
+            'The Hardware Section
+            Dim HardwareConfig As New JObject From {
+                    {"Quiet Probe", quietProbe},
+                    {"Full Probe", FullProbe}
+            }
+            ConfigurationObject.Add("Hardware", HardwareConfig)
 
-                'The Shell Section
-                ksconf.Sections.Add(
-                    New IniSection(ksconf, "Shell",
-                        New IniKey(ksconf, "Colored Shell", ColoredShell),
-                        New IniKey(ksconf, "Simplified Help Command", simHelp),
-                        New IniKey(ksconf, "Current Directory", CurrDir),
-                        New IniKey(ksconf, "Lookup Directories", PathsToLookup.EncloseByDoubleQuotes),
-                        New IniKey(ksconf, "Prompt Style", ShellPromptStyle),
-                        New IniKey(ksconf, "FTP Prompt Style", FTPShellPromptStyle),
-                        New IniKey(ksconf, "Mail Prompt Style", MailShellPromptStyle),
-                        New IniKey(ksconf, "SFTP Prompt Style", SFTPShellPromptStyle)))
+            'The Login Section
+            Dim LoginConfig As New JObject From {
+                    {"Show MOTD on Log-in", showMOTD},
+                    {"Clear Screen on Log-in", clsOnLogin},
+                    {"Host Name", HName},
+                    {"Show available usernames", ShowAvailableUsers}
+            }
+            ConfigurationObject.Add("Login", LoginConfig)
 
-                'The Network Section
-                ksconf.Sections.Add(
-                    New IniSection(ksconf, "Network",
-                        New IniKey(ksconf, "Debug Port", DebugPort),
-                        New IniKey(ksconf, "Download Retry Times", DRetries),
-                        New IniKey(ksconf, "Upload Retry Times", URetries),
-                        New IniKey(ksconf, "Show progress bar while downloading or uploading from ""get"" or ""put"" command", ShowProgress),
-                        New IniKey(ksconf, "Log FTP username", FTPLoggerUsername),
-                        New IniKey(ksconf, "Log FTP IP address", FTPLoggerIP),
-                        New IniKey(ksconf, "Return only first FTP profile", FTPFirstProfileOnly),
-                        New IniKey(ksconf, "Show mail message preview", ShowPreview),
-                        New IniKey(ksconf, "Record chat to debug log", RecordChatToDebugLog),
-                        New IniKey(ksconf, "Show SSH banner", SSHBanner),
-                        New IniKey(ksconf, "Enable RPC", RPCEnabled),
-                        New IniKey(ksconf, "RPC Port", RPCPort)))
+            'The Shell Section
+            Dim ShellConfig As New JObject From {
+                    {"Colored Shell", ColoredShell},
+                    {"Simplified Help Command", simHelp},
+                    {"Current Directory", CurrDir},
+                    {"Lookup Directories", PathsToLookup.EncloseByDoubleQuotes},
+                    {"Prompt Style", ShellPromptStyle},
+                    {"FTP Prompt Style", FTPShellPromptStyle},
+                    {"Mail Prompt Style", MailShellPromptStyle},
+                    {"SFTP Prompt Style", SFTPShellPromptStyle}
+            }
+            ConfigurationObject.Add("Shell", ShellConfig)
 
-                'The Screensaver Section
-                ksconf.Sections.Add(
-                    New IniSection(ksconf, "Screensaver",
-                        New IniKey(ksconf, "Screensaver", defSaverName),
-                        New IniKey(ksconf, "Screensaver Timeout in ms", ScrnTimeout),
-                        New IniKey(ksconf, "ColorMix - Activate 255 Color Mode", ColorMix255Colors),
-                        New IniKey(ksconf, "Disco - Activate 255 Color Mode", Disco255Colors),
-                        New IniKey(ksconf, "GlitterColor - Activate 255 Color Mode", GlitterColor255Colors),
-                        New IniKey(ksconf, "Lines - Activate 255 Color Mode", Lines255Colors),
-                        New IniKey(ksconf, "Dissolve - Activate 255 Color Mode", Dissolve255Colors),
-                        New IniKey(ksconf, "BouncingBlock - Activate 255 Color Mode", BouncingBlock255Colors),
-                        New IniKey(ksconf, "ProgressClock - Activate 255 Color Mode", ProgressClock255Colors),
-                        New IniKey(ksconf, "Lighter - Activate 255 Color Mode", Lighter255Colors),
-                        New IniKey(ksconf, "Wipe - Activate 255 Color Mode", Wipe255Colors),
-                        New IniKey(ksconf, "ColorMix - Activate True Color Mode", ColorMixTrueColor),
-                        New IniKey(ksconf, "Disco - Activate True Color Mode", DiscoTrueColor),
-                        New IniKey(ksconf, "GlitterColor - Activate True Color Mode", GlitterColorTrueColor),
-                        New IniKey(ksconf, "Lines - Activate True Color Mode", LinesTrueColor),
-                        New IniKey(ksconf, "Dissolve - Activate True Color Mode", DissolveTrueColor),
-                        New IniKey(ksconf, "BouncingBlock - Activate True Color Mode", BouncingBlockTrueColor),
-                        New IniKey(ksconf, "ProgressClock - Activate True Color Mode", ProgressClockTrueColor),
-                        New IniKey(ksconf, "Lighter - Activate True Color Mode", LighterTrueColor),
-                        New IniKey(ksconf, "Wipe - Activate True Color Mode", WipeTrueColor),
-                        New IniKey(ksconf, "Disco - Cycle Colors", DiscoCycleColors),
-                        New IniKey(ksconf, "ProgressClock - Cycle Colors", ProgressClockCycleColors),
-                        New IniKey(ksconf, "ProgressClock - Ticks to change color", ProgressClockCycleColorsTicks),
-                        New IniKey(ksconf, "ProgressClock - Color of Seconds Bar", ProgressClockSecondsProgressColor),
-                        New IniKey(ksconf, "ProgressClock - Color of Minutes Bar", ProgressClockMinutesProgressColor),
-                        New IniKey(ksconf, "ProgressClock - Color of Hours Bar", ProgressClockHoursProgressColor),
-                        New IniKey(ksconf, "ProgressClock - Color of Information", ProgressClockProgressColor),
-                        New IniKey(ksconf, "BouncingBlock - Delay in Milliseconds", BouncingBlockDelay),
-                        New IniKey(ksconf, "BouncingText - Delay in Milliseconds", BouncingTextDelay),
-                        New IniKey(ksconf, "ColorMix - Delay in Milliseconds", ColorMixDelay),
-                        New IniKey(ksconf, "Disco - Delay in Milliseconds", DiscoDelay),
-                        New IniKey(ksconf, "GlitterColor - Delay in Milliseconds", GlitterColorDelay),
-                        New IniKey(ksconf, "GlitterMatrix - Delay in Milliseconds", GlitterMatrixDelay),
-                        New IniKey(ksconf, "Lines - Delay in Milliseconds", LinesDelay),
-                        New IniKey(ksconf, "Matrix - Delay in Milliseconds", MatrixDelay),
-                        New IniKey(ksconf, "Lighter - Delay in Milliseconds", LighterDelay),
-                        New IniKey(ksconf, "Fader - Delay in Milliseconds", FaderDelay),
-                        New IniKey(ksconf, "Fader - Fade Out Delay in Milliseconds", FaderFadeOutDelay),
-                        New IniKey(ksconf, "Typo - Delay in Milliseconds", TypoDelay),
-                        New IniKey(ksconf, "Typo - Write Again Delay in Milliseconds", TypoWriteAgainDelay),
-                        New IniKey(ksconf, "Wipe - Delay in Milliseconds", WipeDelay),
-                        New IniKey(ksconf, "BouncingText - Text Shown", BouncingTextWrite),
-                        New IniKey(ksconf, "Fader - Text Shown", FaderWrite),
-                        New IniKey(ksconf, "Typo - Text Shown", TypoWrite),
-                        New IniKey(ksconf, "Lighter - Max Positions Count", LighterMaxPositions),
-                        New IniKey(ksconf, "Fader - Max Fade Steps", FaderMaxSteps),
-                        New IniKey(ksconf, "Typo - Minimum writing speed in WPM", TypoWritingSpeedMin),
-                        New IniKey(ksconf, "Typo - Maximum writing speed in WPM", TypoWritingSpeedMax),
-                        New IniKey(ksconf, "Typo - Probability of typo in percent", TypoMissStrikePossibility),
-                        New IniKey(ksconf, "Wipe - Wipes to change direction", WipeWipesNeededToChangeDirection)))
+            'The Filesystem Section
+            Dim FilesystemConfig As New JObject From {
+                    {"Filesystem sort mode", SortMode.ToString},
+                    {"Filesystem sort direction", SortDirection.ToString},
+                    {"Debug Size Quota in Bytes", DebugQuota},
+                    {"Show Hidden Files", HiddenFiles},
+                    {"Size parse mode", FullParseMode}
+            }
+            ConfigurationObject.Add("Filesystem", FilesystemConfig)
 
-                'Misc Section
-                ksconf.Sections.Add(
-                    New IniSection(ksconf, "Misc",
-                        New IniKey(ksconf, "Show Time/Date on Upper Right Corner", CornerTD),
-                        New IniKey(ksconf, "Debug Size Quota in Bytes", DebugQuota),
-                        New IniKey(ksconf, "Size parse mode", FullParseMode),
-                        New IniKey(ksconf, "Marquee on startup", StartScroll),
-                        New IniKey(ksconf, "Long Time and Date", LongTimeDate),
-                        New IniKey(ksconf, "Show Hidden Files", HiddenFiles),
-                        New IniKey(ksconf, "Preferred Unit for Temperature", PreferredUnit),
-                        New IniKey(ksconf, "Enable text editor autosave", TextEdit_AutoSaveFlag),
-                        New IniKey(ksconf, "Text editor autosave interval", TextEdit_AutoSaveInterval),
-                        New IniKey(ksconf, "Wrap list outputs", WrapListOutputs),
-                        New IniKey(ksconf, "Filesystem sort mode", SortMode.ToString),
-                        New IniKey(ksconf, "Filesystem sort direction", SortDirection.ToString),
-                        New IniKey(ksconf, "Kernel Version", KernelVersion)))
-            Else '----------------------- If [Preserve] value is False, then don't preserve.
-                'The General Section
-                ksconf.Sections.Add(
-                    New IniSection(ksconf, "General",
-                        New IniKey(ksconf, "Prompt for Arguments on Boot", "False"),
-                        New IniKey(ksconf, "Maintenance Mode", "False"),
-                        New IniKey(ksconf, "Change Root Password", "False"),
-                        New IniKey(ksconf, "Set Root Password to", "toor"),
-                        New IniKey(ksconf, "Check for Updates on Startup", "True"),
-                        New IniKey(ksconf, "Change Culture when Switching Languages", "False"),
-                        New IniKey(ksconf, "Language", "eng"),
-                        New IniKey(ksconf, "Culture", "en-US")))
+            'The Network Section
+            Dim NetworkConfig As New JObject From {
+                    {"Debug Port", DebugPort},
+                    {"Download Retry Times", DRetries},
+                    {"Upload Retry Times", URetries},
+                    {"Show progress bar while downloading or uploading from ""get"" or ""put"" command", ShowProgress},
+                    {"Log FTP username", FTPLoggerUsername},
+                    {"Log FTP IP address", FTPLoggerIP},
+                    {"Return only first FTP profile", FTPFirstProfileOnly},
+                    {"Show mail message preview", ShowPreview},
+                    {"Record chat to debug log", RecordChatToDebugLog},
+                    {"Show SSH banner", SSHBanner},
+                    {"Enable RPC", RPCEnabled},
+                    {"RPC Port", RPCPort}
+            }
+            ConfigurationObject.Add("Network", NetworkConfig)
 
-                'The Colors Section
-                ksconf.Sections.Add(
-                    New IniSection(ksconf, "Colors",
-                        New IniKey(ksconf, "User Name Shell Color", If(New Color(UserNameShellColor).Type = ColorType.TrueColor, UserNameShellColor.EncloseByDoubleQuotes, UserNameShellColor)),
-                        New IniKey(ksconf, "Host Name Shell Color", If(New Color(HostNameShellColor).Type = ColorType.TrueColor, HostNameShellColor.EncloseByDoubleQuotes, HostNameShellColor)),
-                        New IniKey(ksconf, "Continuable Kernel Error Color", If(New Color(ContKernelErrorColor).Type = ColorType.TrueColor, ContKernelErrorColor.EncloseByDoubleQuotes, ContKernelErrorColor)),
-                        New IniKey(ksconf, "Uncontinuable Kernel Error Color", If(New Color(UncontKernelErrorColor).Type = ColorType.TrueColor, UncontKernelErrorColor.EncloseByDoubleQuotes, UncontKernelErrorColor)),
-                        New IniKey(ksconf, "Text Color", If(New Color(NeutralTextColor).Type = ColorType.TrueColor, NeutralTextColor.EncloseByDoubleQuotes, NeutralTextColor)),
-                        New IniKey(ksconf, "License Color", If(New Color(LicenseColor).Type = ColorType.TrueColor, LicenseColor.EncloseByDoubleQuotes, LicenseColor)),
-                        New IniKey(ksconf, "Background Color", If(New Color(BackgroundColor).Type = ColorType.TrueColor, BackgroundColor.EncloseByDoubleQuotes, BackgroundColor)),
-                        New IniKey(ksconf, "Input Color", If(New Color(InputColor).Type = ColorType.TrueColor, InputColor.EncloseByDoubleQuotes, InputColor)),
-                        New IniKey(ksconf, "List Entry Color", If(New Color(ListEntryColor).Type = ColorType.TrueColor, ListEntryColor.EncloseByDoubleQuotes, ListEntryColor)),
-                        New IniKey(ksconf, "List Value Color", If(New Color(ListValueColor).Type = ColorType.TrueColor, ListValueColor.EncloseByDoubleQuotes, ListValueColor)),
-                        New IniKey(ksconf, "Kernel Stage Color", If(New Color(StageColor).Type = ColorType.TrueColor, StageColor.EncloseByDoubleQuotes, StageColor)),
-                        New IniKey(ksconf, "Error Text Color", If(New Color(ErrorColor).Type = ColorType.TrueColor, ErrorColor.EncloseByDoubleQuotes, ErrorColor)),
-                        New IniKey(ksconf, "Warning Text Color", If(New Color(WarningColor).Type = ColorType.TrueColor, WarningColor.EncloseByDoubleQuotes, WarningColor)),
-                        New IniKey(ksconf, "Option Color", If(New Color(OptionColor).Type = ColorType.TrueColor, OptionColor.EncloseByDoubleQuotes, OptionColor)),
-                        New IniKey(ksconf, "Banner Color", If(New Color(BannerColor).Type = ColorType.TrueColor, BannerColor.EncloseByDoubleQuotes, BannerColor))))
+            'The Screensaver Section
+            Dim ScreensaverConfig As New JObject From {
+                    {"Screensaver", defSaverName},
+                    {"Screensaver Timeout in ms", ScrnTimeout}
+            }
 
-                'The Hardware Section
-                ksconf.Sections.Add(
-                    New IniSection(ksconf, "Hardware",
-                        New IniKey(ksconf, "Quiet Probe", "False"),
-                        New IniKey(ksconf, "Full Probe", "True")))
+            'ColorMix config json object
+            Dim ColorMixConfig As New JObject From {
+                    {"Activate 255 Color Mode", ColorMix255Colors},
+                    {"Activate True Color Mode", ColorMixTrueColor},
+                    {"Delay in Milliseconds", ColorMixDelay}
+            }
+            ScreensaverConfig.Add("ColorMix", ColorMixConfig)
 
-                'The Login Section
-                ksconf.Sections.Add(
-                    New IniSection(ksconf, "Login",
-                        New IniKey(ksconf, "Show MOTD on Log-in", "True"),
-                        New IniKey(ksconf, "Clear Screen on Log-in", "False"),
-                        New IniKey(ksconf, "Host Name", "kernel"),
-                        New IniKey(ksconf, "Show available usernames", "True")))
+            'Disco config json object
+            Dim DiscoConfig As New JObject From {
+                    {"Activate 255 Color Mode", Disco255Colors},
+                    {"Activate True Color Mode", DiscoTrueColor},
+                    {"Delay in Milliseconds", DiscoDelay},
+                    {"Cycle Colors", DiscoCycleColors}
+            }
+            ScreensaverConfig.Add("Disco", DiscoConfig)
 
-                'The Shell Section
-                ksconf.Sections.Add(
-                    New IniSection(ksconf, "Shell",
-                        New IniKey(ksconf, "Colored Shell", "True"),
-                        New IniKey(ksconf, "Simplified Help Command", "False"),
-                        New IniKey(ksconf, "Current Directory", paths("Home")),
-                        New IniKey(ksconf, "Lookup Directories", Environ("PATH").EncloseByDoubleQuotes),
-                        New IniKey(ksconf, "Prompt Style", ""),
-                        New IniKey(ksconf, "FTP Prompt Style", ""),
-                        New IniKey(ksconf, "Mail Prompt Style", ""),
-                        New IniKey(ksconf, "SFTP Prompt Style", "")))
+            'GlitterColor config json object
+            Dim GlitterColorConfig As New JObject From {
+                    {"Activate 255 Color Mode", GlitterColor255Colors},
+                    {"Activate True Color Mode", GlitterColorTrueColor},
+                    {"Delay in Milliseconds", GlitterColorDelay}
+            }
+            ScreensaverConfig.Add("GlitterColor", GlitterColorConfig)
 
-                'The Network Section
-                ksconf.Sections.Add(
-                    New IniSection(ksconf, "Network",
-                        New IniKey(ksconf, "Debug Port", 3014),
-                        New IniKey(ksconf, "Download Retry Times", 3),
-                        New IniKey(ksconf, "Upload Retry Times", 3),
-                        New IniKey(ksconf, "Show progress bar while downloading or uploading from ""get"" or ""put"" command", "True"),
-                        New IniKey(ksconf, "Log FTP username", "False"),
-                        New IniKey(ksconf, "Log FTP IP address", "False"),
-                        New IniKey(ksconf, "Return only first FTP profile", "False"),
-                        New IniKey(ksconf, "Show mail message preview", "False"),
-                        New IniKey(ksconf, "Record chat to debug log", "True"),
-                        New IniKey(ksconf, "Show SSH banner", "False"),
-                        New IniKey(ksconf, "Enable RPC", "True"),
-                        New IniKey(ksconf, "RPC Port", 12345)))
+            'Lines config json object
+            Dim LinesConfig As New JObject From {
+                    {"Activate 255 Color Mode", Lines255Colors},
+                    {"Activate True Color Mode", LinesTrueColor},
+                    {"Delay in Milliseconds", LinesDelay}
+            }
+            ScreensaverConfig.Add("Lines", LinesConfig)
 
-                'The Screensaver Section
-                ksconf.Sections.Add(
-                    New IniSection(ksconf, "Screensaver",
-                        New IniKey(ksconf, "Screensaver", "matrix"),
-                        New IniKey(ksconf, "Screensaver Timeout in ms", 300000),
-                        New IniKey(ksconf, "ColorMix - Activate 255 Color Mode", "False"),
-                        New IniKey(ksconf, "Disco - Activate 255 Color Mode", "False"),
-                        New IniKey(ksconf, "GlitterColor - Activate 255 Color Mode", "False"),
-                        New IniKey(ksconf, "Lines - Activate 255 Color Mode", "False"),
-                        New IniKey(ksconf, "Dissolve - Activate 255 Color Mode", "False"),
-                        New IniKey(ksconf, "BouncingBlock - Activate 255 Color Mode", "False"),
-                        New IniKey(ksconf, "ProgressClock - Activate 255 Color Mode", "False"),
-                        New IniKey(ksconf, "Lighter - Activate 255 Color Mode", "False"),
-                        New IniKey(ksconf, "Wipe - Activate 255 Color Mode", "False"),
-                        New IniKey(ksconf, "ColorMix - Activate True Color Mode", "True"),
-                        New IniKey(ksconf, "Disco - Activate True Color Mode", "True"),
-                        New IniKey(ksconf, "GlitterColor - Activate True Color Mode", "True"),
-                        New IniKey(ksconf, "Lines - Activate True Color Mode", "True"),
-                        New IniKey(ksconf, "Dissolve - Activate True Color Mode", "True"),
-                        New IniKey(ksconf, "BouncingBlock - Activate True Color Mode", "True"),
-                        New IniKey(ksconf, "ProgressClock - Activate True Color Mode", "True"),
-                        New IniKey(ksconf, "Lighter - Activate True Color Mode", "True"),
-                        New IniKey(ksconf, "Wipe - Activate True Color Mode", "True"),
-                        New IniKey(ksconf, "Disco - Cycle Colors", "False"),
-                        New IniKey(ksconf, "ProgressClock - Cycle Colors", "True"),
-                        New IniKey(ksconf, "ProgressClock - Ticks to change color", 20),
-                        New IniKey(ksconf, "ProgressClock - Color of Seconds Bar", 4),
-                        New IniKey(ksconf, "ProgressClock - Color of Minutes Bar", 5),
-                        New IniKey(ksconf, "ProgressClock - Color of Hours Bar", 6),
-                        New IniKey(ksconf, "ProgressClock - Color of Information", 7),
-                        New IniKey(ksconf, "BouncingBlock - Delay in Milliseconds", 10),
-                        New IniKey(ksconf, "BouncingText - Delay in Milliseconds", 10),
-                        New IniKey(ksconf, "ColorMix - Delay in Milliseconds", 1),
-                        New IniKey(ksconf, "Disco - Delay in Milliseconds", 100),
-                        New IniKey(ksconf, "GlitterColor - Delay in Milliseconds", 1),
-                        New IniKey(ksconf, "GlitterMatrix - Delay in Milliseconds", 1),
-                        New IniKey(ksconf, "Lines - Delay in Milliseconds", 500),
-                        New IniKey(ksconf, "Matrix - Delay in Milliseconds", 1),
-                        New IniKey(ksconf, "Lighter - Delay in Milliseconds", 100),
-                        New IniKey(ksconf, "Fader - Delay in Milliseconds", 50),
-                        New IniKey(ksconf, "Fader - Fade Out Delay in Milliseconds", 3000),
-                        New IniKey(ksconf, "Typo - Delay in Milliseconds", 50),
-                        New IniKey(ksconf, "Typo - Write Again Delay in Milliseconds", 3000),
-                        New IniKey(ksconf, "Wipe - Delay in Milliseconds", 10),
-                        New IniKey(ksconf, "BouncingText - Text Shown", "Kernel Simulator"),
-                        New IniKey(ksconf, "Fader - Text Shown", "Kernel Simulator"),
-                        New IniKey(ksconf, "Typo - Text Shown", "Kernel Simulator"),
-                        New IniKey(ksconf, "Lighter - Max Positions Count", 10),
-                        New IniKey(ksconf, "Fader - Max Fade Steps", 25),
-                        New IniKey(ksconf, "Typo - Minimum writing speed in WPM", 50),
-                        New IniKey(ksconf, "Typo - Maximum writing speed in WPM", 80),
-                        New IniKey(ksconf, "Typo - Probability of typo in percent", 60),
-                        New IniKey(ksconf, "Wipe - Wipes to change direction", 10)))
+            'Dissolve config json object
+            Dim DissolveConfig As New JObject From {
+                    {"Activate 255 Color Mode", Dissolve255Colors},
+                    {"Activate True Color Mode", DissolveTrueColor}
+            }
+            ScreensaverConfig.Add("Dissolve", DissolveConfig)
 
-                'Misc Section
-                ksconf.Sections.Add(
-                    New IniSection(ksconf, "Misc",
-                        New IniKey(ksconf, "Show Time/Date on Upper Right Corner", "False"),
-                        New IniKey(ksconf, "Debug Size Quota in Bytes", 1073741824),
-                        New IniKey(ksconf, "Size parse mode", "False"),
-                        New IniKey(ksconf, "Marquee on startup", "True"),
-                        New IniKey(ksconf, "Long Time and Date", "True"),
-                        New IniKey(ksconf, "Show Hidden Files", "False"),
-                        New IniKey(ksconf, "Preferred Unit for Temperature", UnitMeasurement.Metric),
-                        New IniKey(ksconf, "Enable text editor autosave", "True"),
-                        New IniKey(ksconf, "Text editor autosave interval", "60"),
-                        New IniKey(ksconf, "Wrap list outputs", "False"),
-                        New IniKey(ksconf, "Filesystem sort mode", SortMode.ToString),
-                        New IniKey(ksconf, "Filesystem sort direction", SortDirection.ToString),
-                        New IniKey(ksconf, "Kernel Version", KernelVersion)))
-            End If
+            'BouncingBlock config json object
+            Dim BouncingBlockConfig As New JObject From {
+                    {"Activate 255 Color Mode", BouncingBlock255Colors},
+                    {"Activate True Color Mode", BouncingBlockTrueColor},
+                    {"Delay in Milliseconds", BouncingBlockDelay}
+            }
+            ScreensaverConfig.Add("BouncingBlock", BouncingBlockConfig)
 
-            'Put comments before saving. General
-            ksconf.Sections("General").TrailingComment.Text = "This section is the general settings for KS. It controls boot settings and regional settings."
-            ksconf.Sections("General").Keys("Change Root Password").TrailingComment.Text = "Whether or not to change root password. If it is set to True, it will set the password to a password that will be set in the config entry below."
-            ksconf.Sections("General").Keys("Maintenance Mode").TrailingComment.Text = "Whether or not to start the kernel in maintenance mode."
-            ksconf.Sections("General").Keys("Prompt for Arguments on Boot").TrailingComment.Text = "Whether or not to prompt for arguments on boot to let you set arguments on the current boot"
-            ksconf.Sections("General").Keys("Check for Updates on Startup").TrailingComment.Text = "If set to True, everytime the kernel boots, it will check for new updates."
-            ksconf.Sections("General").Keys("Change Culture when Switching Languages").TrailingComment.Text = "Indicate if the kernel is allowed to localize time and date locally."
-            ksconf.Sections("General").Keys("Language").TrailingComment.Text = "The three-letter language name should be written. All languages can be found in the chlang command wiki."
-            ksconf.Sections("General").Keys("Culture").TrailingComment.Text = "The two-letter language and the two-letter country name. This is to specify culture."
+            'ProgressClock config json object
+            Dim ProgressClockConfig As New JObject From {
+                    {"Activate 255 Color Mode", ProgressClock255Colors},
+                    {"Activate True Color Mode", ProgressClockTrueColor},
+                    {"Cycle Colors", ProgressClockCycleColors},
+                    {"Ticks to change color", ProgressClockCycleColorsTicks},
+                    {"Color of Seconds Bar", ProgressClockSecondsProgressColor},
+                    {"Color of Minutes Bar", ProgressClockMinutesProgressColor},
+                    {"Color of Hours Bar", ProgressClockHoursProgressColor},
+                    {"Color of Information", ProgressClockProgressColor}
+            }
+            ScreensaverConfig.Add("ProgressClock", ProgressClockConfig)
 
-            'Colors
-            ksconf.Sections("Colors").TrailingComment.Text = "Self-explanatory. You can just write the name of colors as specified in the ConsoleColors enumerator or a plain VT sequence that contains the RGB levels like this: RRR;GGG;BBB."
+            'Lighter config json object
+            Dim LighterConfig As New JObject From {
+                    {"Activate 255 Color Mode", Lighter255Colors},
+                    {"Activate True Color Mode", LighterTrueColor},
+                    {"Delay in Milliseconds", LighterDelay},
+                    {"Max Positions Count", LighterMaxPositions}
+            }
+            ScreensaverConfig.Add("Lighter", LighterConfig)
 
-            'Login
-            ksconf.Sections("Login").TrailingComment.Text = "This section is the login settings that lets you control the host name and whether or not it shows MOTD and/or clears screen."
-            ksconf.Sections("Login").Keys("Clear Screen on Log-in").TrailingComment.Text = "Whether or not it clears screen on sign-in."
-            ksconf.Sections("Login").Keys("Show MOTD on Log-in").TrailingComment.Text = "Whether or not it shows MOTD on sign-in."
-            ksconf.Sections("Login").Keys("Host Name").TrailingComment.Text = "Custom host name. It will be used in the future for networking references, but is currently here to customize shell prompt."
-            ksconf.Sections("Login").Keys("Show available usernames").TrailingComment.Text = "Whether or not to show available usernames on login"
+            'Wipe config json object
+            Dim WipeConfig As New JObject From {
+                    {"Activate 255 Color Mode", Wipe255Colors},
+                    {"Activate True Color Mode", WipeTrueColor},
+                    {"Delay in Milliseconds", WipeDelay},
+                    {"Wipes to change direction", WipeWipesNeededToChangeDirection}
+            }
+            ScreensaverConfig.Add("Wipe", WipeConfig)
 
-            'Shell
-            ksconf.Sections("Shell").TrailingComment.Text = "This section is the shell settings that lets you control whether or not to enable simplified help command and/or colored shell."
-            ksconf.Sections("Shell").Keys("Simplified Help Command").TrailingComment.Text = "Simplifies the ""help"" command so it only shows available commands."
-            ksconf.Sections("Shell").Keys("Current Directory").TrailingComment.Text = "Sets the shell's current directory."
-            ksconf.Sections("Shell").Keys("Colored Shell").TrailingComment.Text = "Whether or not it supports colored shell."
-            ksconf.Sections("Shell").Keys("Lookup Directories").TrailingComment.Text = "Group of paths separated by the colon. It works the same as PATH."
-            ksconf.Sections("Shell").Keys("Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the main shell. Placeholders here are parsed."
-            ksconf.Sections("Shell").Keys("FTP Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the FTP shell. Placeholders here are parsed."
-            ksconf.Sections("Shell").Keys("Mail Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the mail shell. Placeholders here are parsed."
-            ksconf.Sections("Shell").Keys("SFTP Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the SFTP shell. Placeholders here are parsed."
+            'Matrix config json object
+            Dim MatrixConfig As New JObject From {
+                    {"Delay in Milliseconds", MatrixDelay}
+            }
+            ScreensaverConfig.Add("Matrix", MatrixConfig)
 
-            'Hardware
-            ksconf.Sections("Hardware").TrailingComment.Text = "This section is the hardware probing settings."
-            ksconf.Sections("Hardware").Keys("Quiet Probe").TrailingComment.Text = "Whether or not to quietly probe hardware"
-            ksconf.Sections("Hardware").Keys("Full Probe").TrailingComment.Text = "If true, probes all the hardware; else, will only probe the needed hardware."
+            'GlitterMatrix config json object
+            Dim GlitterMatrixConfig As New JObject From {
+                    {"Delay in Milliseconds", GlitterMatrixDelay}
+            }
+            ScreensaverConfig.Add("GlitterMatrix", GlitterMatrixConfig)
 
-            'Network
-            ksconf.Sections("Network").TrailingComment.Text = "This section is the network settings."
-            ksconf.Sections("Network").Keys("Debug Port").TrailingComment.Text = "Specifies the remote debugger port."
-            ksconf.Sections("Network").Keys("Download Retry Times").TrailingComment.Text = "How many times does the ""get"" command retry the download before assuming failure?"
-            ksconf.Sections("Network").Keys("Upload Retry Times").TrailingComment.Text = "How many times does the ""put"" command retry the upload before assuming failure?"
-            ksconf.Sections("Network").Keys("Show progress bar while downloading or uploading from ""get"" or ""put"" command").TrailingComment.Text = "If true, it makes ""get"" or ""put"" show the progress bar while downloading or uploading."
-            ksconf.Sections("Network").Keys("Log FTP username").TrailingComment.Text = "Whether or not to log FTP username in the debugger log."
-            ksconf.Sections("Network").Keys("Log FTP IP address").TrailingComment.Text = "Whether or not to log FTP IP address in the debugger log."
-            ksconf.Sections("Network").Keys("Return only first FTP profile").TrailingComment.Text = "Whether or not to return only first successful FTP profile when polling for profiles."
-            ksconf.Sections("Network").Keys("Show mail message preview").TrailingComment.Text = "Whether or not to show mail message preview (body text truncated to 200 characters)."
-            ksconf.Sections("Network").Keys("Record chat to debug log").TrailingComment.Text = "Records remote debug chat to debug log."
-            ksconf.Sections("Network").Keys("Show SSH banner").TrailingComment.Text = "Shows the SSH server banner on connection."
-            ksconf.Sections("Network").Keys("Enable RPC").TrailingComment.Text = "Whether or not to enable RPC."
-            ksconf.Sections("Network").Keys("RPC Port").TrailingComment.Text = "The RPC port."
+            'BouncingText config json object
+            Dim BouncingTextConfig As New JObject From {
+                    {"Delay in Milliseconds", BouncingTextDelay},
+                    {"Text Shown", BouncingTextWrite}
+            }
+            ScreensaverConfig.Add("BouncingText", BouncingTextConfig)
 
-            'Screensaver
-            ksconf.Sections("Screensaver").TrailingComment.Text = "This section is the network settings."
-            ksconf.Sections("Screensaver").Keys("Screensaver").TrailingComment.Text = "Specifies the current screensaver."
-            ksconf.Sections("Screensaver").Keys("Screensaver Timeout in ms").TrailingComment.Text = "After specified milliseconds, the screensaver will launch."
+            'Fader config json object
+            Dim FaderConfig As New JObject From {
+                    {"Delay in Milliseconds", FaderDelay},
+                    {"Fade Out Delay in Milliseconds", FaderFadeOutDelay},
+                    {"Text Shown", FaderWrite},
+                    {"Max Fade Steps", FaderMaxSteps}
+            }
+            ScreensaverConfig.Add("Fader", FaderConfig)
 
-            'Screensaver: Colors
-            ksconf.Sections("Screensaver").Keys("ColorMix - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for ColorMix"
-            ksconf.Sections("Screensaver").Keys("Disco - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for Disco"
-            ksconf.Sections("Screensaver").Keys("GlitterColor - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for GlitterColor"
-            ksconf.Sections("Screensaver").Keys("Lines - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for Lines"
-            ksconf.Sections("Screensaver").Keys("Dissolve - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for Dissolve"
-            ksconf.Sections("Screensaver").Keys("BouncingBlock - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for BouncingBlock"
-            ksconf.Sections("Screensaver").Keys("ProgressClock - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for ProgressColor"
-            ksconf.Sections("Screensaver").Keys("Lighter - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for Lighter"
-            ksconf.Sections("Screensaver").Keys("Wipe - Activate 255 Color Mode").TrailingComment.Text = "Activates the 255 color mode for Wipe"
-            ksconf.Sections("Screensaver").Keys("ColorMix - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for ColorMix"
-            ksconf.Sections("Screensaver").Keys("Disco - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for Disco"
-            ksconf.Sections("Screensaver").Keys("GlitterColor - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for GlitterColor"
-            ksconf.Sections("Screensaver").Keys("Lines - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for Lines"
-            ksconf.Sections("Screensaver").Keys("Dissolve - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for Dissolve"
-            ksconf.Sections("Screensaver").Keys("BouncingBlock - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for BouncingBlock"
-            ksconf.Sections("Screensaver").Keys("ProgressClock - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for ProgressColor"
-            ksconf.Sections("Screensaver").Keys("Lighter - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for Lighter"
-            ksconf.Sections("Screensaver").Keys("Wipe - Activate True Color Mode").TrailingComment.Text = "Activates the true color mode for Wipe"
-            ksconf.Sections("Screensaver").Keys("Disco - Cycle Colors").TrailingComment.Text = "Disco will cycle colors if it's enabled. Otherwise, select random colors."
-            ksconf.Sections("Screensaver").Keys("ProgressClock - Cycle Colors").TrailingComment.Text = "ProgressClock will select random colors if it's enabled. Otherwise, use colors from config."
-            ksconf.Sections("Screensaver").Keys("ProgressClock - Color of Seconds Bar").TrailingComment.Text = "The color of seconds progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."
-            ksconf.Sections("Screensaver").Keys("ProgressClock - Color of Minutes Bar").TrailingComment.Text = "The color of minutes progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."
-            ksconf.Sections("Screensaver").Keys("ProgressClock - Color of Hours Bar").TrailingComment.Text = "The color of hours progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."
-            ksconf.Sections("Screensaver").Keys("ProgressClock - Color of Information").TrailingComment.Text = "The color of date information. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."
+            'Typo config json object
+            Dim TypoConfig As New JObject From {
+                    {"Delay in Milliseconds", TypoDelay},
+                    {"Write Again Delay in Milliseconds", TypoWriteAgainDelay},
+                    {"Text Shown", TypoWrite},
+                    {"Minimum writing speed in WPM", TypoWritingSpeedMin},
+                    {"Maximum writing speed in WPM", TypoWritingSpeedMax},
+                    {"Probability of typo in percent", TypoMissStrikePossibility}
+            }
+            ScreensaverConfig.Add("Typo", TypoConfig)
 
-            'Screensaver: Delays
-            ksconf.Sections("Screensaver").Keys("BouncingBlock - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in BouncingBlock?"
-            ksconf.Sections("Screensaver").Keys("BouncingText - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in BouncingText?"
-            ksconf.Sections("Screensaver").Keys("ColorMix - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in ColorMix?"
-            ksconf.Sections("Screensaver").Keys("Disco - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Disco?"
-            ksconf.Sections("Screensaver").Keys("GlitterColor - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in GlitterColor?"
-            ksconf.Sections("Screensaver").Keys("GlitterMatrix - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in GlitterMatrix?"
-            ksconf.Sections("Screensaver").Keys("Lines - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Lines?"
-            ksconf.Sections("Screensaver").Keys("Matrix - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Matrix?"
-            ksconf.Sections("Screensaver").Keys("Lighter - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Lighter?"
-            ksconf.Sections("Screensaver").Keys("Fader - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Fader?"
-            ksconf.Sections("Screensaver").Keys("Fader - Fade Out Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before fading out text in Fader?"
-            ksconf.Sections("Screensaver").Keys("ProgressClock - Ticks to change color").TrailingComment.Text = "If color cycling is enabled, how many ticks before changing colors in ProgressClock? 1 tick = 0.5 seconds"
-            ksconf.Sections("Screensaver").Keys("Typo - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Fader?"
-            ksconf.Sections("Screensaver").Keys("Typo - Write Again Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before writing text again in Fader?"
-            ksconf.Sections("Screensaver").Keys("Wipe - Delay in Milliseconds").TrailingComment.Text = "How many milliseconds to wait before making the next write in Wipe?"
+            'Add a screensaver config json object to Screensaver section
+            ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
-            'Screensaver: Texts
-            ksconf.Sections("Screensaver").Keys("BouncingText - Text Shown").TrailingComment.Text = "Any text for BouncingText"
-            ksconf.Sections("Screensaver").Keys("Fader - Text Shown").TrailingComment.Text = "Any text for Fader"
-            ksconf.Sections("Screensaver").Keys("Typo - Text Shown").TrailingComment.Text = "Any text for Typo"
-
-            'Screensaver: Misc
-            ksconf.Sections("Screensaver").Keys("Lighter - Max Positions Count").TrailingComment.Text = "How many positions are lit before dimming?"
-            ksconf.Sections("Screensaver").Keys("Fader - Max Fade Steps").TrailingComment.Text = "How many fade steps to do?"
-            ksconf.Sections("Screensaver").Keys("Typo - Minimum writing speed in WPM").TrailingComment.Text = "Minimum writing speed in WPM"
-            ksconf.Sections("Screensaver").Keys("Typo - Maximum writing speed in WPM").TrailingComment.Text = "Maximum writing speed in WPM"
-            ksconf.Sections("Screensaver").Keys("Typo - Probability of typo in percent").TrailingComment.Text = "Probability of typo in percent"
-            ksconf.Sections("Screensaver").Keys("Wipe - Wipes to change direction").TrailingComment.Text = "How many wipes to do before changing direction randomly?"
-
-            'Misc
-            ksconf.Sections("Misc").TrailingComment.Text = "This section is the other settings that are not categorized yet."
-            ksconf.Sections("Misc").Keys("Show Time/Date on Upper Right Corner").TrailingComment.Text = "Whether or not it shows time and date on the upper right corner."
-            ksconf.Sections("Misc").Keys("Debug Size Quota in Bytes").TrailingComment.Text = "Specifies the maximum log size in bytes. If this was exceeded, it will remove the first 5 lines from the log to free up some space."
-            ksconf.Sections("Misc").Keys("Size parse mode").TrailingComment.Text = "Parse whole directory for size. If set to False, it will parse just the surface."
-            ksconf.Sections("Misc").Keys("Marquee on startup").TrailingComment.Text = "Whether or not to activate banner animation."
-            ksconf.Sections("Misc").Keys("Long Time and Date").TrailingComment.Text = "Whether or not to render time and date using long."
-            ksconf.Sections("Misc").Keys("Show Hidden Files").TrailingComment.Text = "Whether or not to list hidden files."
-            ksconf.Sections("Misc").Keys("Preferred Unit for Temperature").TrailingComment.Text = "Choose either Kelvin, Celsius, or Fahrenheit for temperature measurement."
-            ksconf.Sections("Misc").Keys("Enable text editor autosave").TrailingComment.Text = "Turns on or off the text editor autosave feature."
-            ksconf.Sections("Misc").Keys("Text editor autosave interval").TrailingComment.Text = "If autosave is enabled, the text file will be saved for each ""n"" seconds."
-            ksconf.Sections("Misc").Keys("Filesystem sort mode").TrailingComment.Text = "Controls how the files will be sorted."
-            ksconf.Sections("Misc").Keys("Filesystem sort direction").TrailingComment.Text = "Controls the direction of filesystem sorting whether it's ascending or descending."
+            'Misc Section
+            Dim MiscConfig As New JObject From {
+                    {"Show Time/Date on Upper Right Corner", CornerTD},
+                    {"Marquee on startup", StartScroll},
+                    {"Long Time and Date", LongTimeDate},
+                    {"Preferred Unit for Temperature", PreferredUnit},
+                    {"Enable text editor autosave", TextEdit_AutoSaveFlag},
+                    {"Text editor autosave interval", TextEdit_AutoSaveInterval},
+                    {"Wrap list outputs", WrapListOutputs}
+            }
+            ConfigurationObject.Add("Misc", MiscConfig)
 
             'Save Config
-            ksconf.Save(paths("Configuration"))
+            File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigurationObject, Formatting.Indented))
             EventManager.RaiseConfigSaved()
             Return True
         Catch ex As Exception
@@ -465,71 +276,28 @@ Public Module Config
     End Function
 
     ''' <summary>
-    ''' Checks the config file for mismatched version and upgrades it
-    ''' </summary>
-    ''' <returns>True if there are updates, False if unsuccessful.</returns>
-    ''' <exception cref="Exceptions.ConfigException"></exception>
-    Public Function CheckForUpgrade() As Boolean
-        Try
-            'Variables
-            Dim configUpdater As New IniFile()
-
-            'Load config
-            configUpdater.Load(paths("Configuration"))
-
-            'Check to see if the kernel is outdated
-            If configUpdater.Sections("Misc").Keys("Kernel Version").Value <> KernelVersion Then
-                Wdbg("W", "Kernel version upgraded from {1} to {0}", KernelVersion, configUpdater.Sections("Misc").Keys("Kernel Version").Value)
-                Return True
-            End If
-        Catch ex As Exception
-            If DebugMode = True Then
-                WStkTrc(ex)
-                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to update configuration: {0}."), ex, ex.Message)
-            Else
-                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to update configuration."), ex)
-            End If
-        End Try
-        Return False
-    End Function
-
-    ''' <summary>
-    ''' Updates the configuration file and reboots the simulated system
-    ''' </summary>
-    Public Sub UpdateConfig()
-
-        CreateConfig(True)
-        PowerManage("reboot")
-
-    End Sub
-
-    ''' <summary>
     ''' Configures the kernel according to the kernel configuration file
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="Exceptions.ConfigException"></exception>
     Public Function ReadConfig() As Boolean
         Try
+            'Parse configuration. NOTE: Question marks between parentheses are for nullable types.
+            ConfigToken = JObject.Parse(File.ReadAllText(paths("Configuration")))
+            Wdbg("I", "Config loaded with {0} sections", ConfigToken.Count)
+
             '----------------------------- Important configuration -----------------------------
             'Language
-            Dim ConfiguredLang As String = configReader.Sections("General").Keys("Language").Value
-            Wdbg("I", "Language is {0}", ConfiguredLang)
-            If configReader.Sections("General").Keys("Change Culture when Switching Languages").Value = "True" Then LangChangeCulture = True Else LangChangeCulture = False
-            SetLang(If(String.IsNullOrWhiteSpace(ConfiguredLang), "eng", ConfiguredLang))
-            If LangChangeCulture Then CurrentCult = New CultureInfo(configReader.Sections("General").Keys("Culture").Value)
+            LangChangeCulture = If(ConfigToken("General")?("Change Culture when Switching Languages"), False)
+            If LangChangeCulture Then CurrentCult = New CultureInfo(If(ConfigToken("General")?("Culture") IsNot Nothing, ConfigToken("General")("Culture").ToString, "en-US"))
+            SetLang(If(ConfigToken("General")?("Language"), "eng"))
 
             'Colored Shell
-            If configReader.Sections("Shell").Keys("Colored Shell").Value = "False" Then
+            Dim UncoloredDetected As Boolean = ConfigToken("Shell")?("Colored Shell") IsNot Nothing AndAlso Not ConfigToken("Shell")("Colored Shell").ToObject(Of Boolean)
+            If UncoloredDetected Then
                 Wdbg("W", "Detected uncolored shell. Removing colors...")
                 ApplyThemeFromResources("LinuxUncolored")
                 ColoredShell = False
-            End If
-
-            'Hostname setting
-            If Not configReader.Sections("Login").Keys("Host Name").Value = "" Then
-                HName = configReader.Sections("Login").Keys("Host Name").Value
-            Else
-                HName = "kernel"
             End If
 
             '----------------------------- General configuration -----------------------------
@@ -537,154 +305,166 @@ Public Module Config
             Wdbg("I", "Loading colors...")
             If ColoredShell Then
                 'We use New Color() to parse entered color. This is to ensure that the kernel can use the correct VT sequence.
-                UserNameShellColor = New Color(configReader.Sections("Colors").Keys("User Name Shell Color").Value).PlainSequence
-                HostNameShellColor = New Color(configReader.Sections("Colors").Keys("Host Name Shell Color").Value).PlainSequence
-                ContKernelErrorColor = New Color(configReader.Sections("Colors").Keys("Continuable Kernel Error Color").Value).PlainSequence
-                UncontKernelErrorColor = New Color(configReader.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value).PlainSequence
-                NeutralTextColor = New Color(configReader.Sections("Colors").Keys("Text Color").Value).PlainSequence
-                LicenseColor = New Color(configReader.Sections("Colors").Keys("License Color").Value).PlainSequence
-                BackgroundColor = New Color(configReader.Sections("Colors").Keys("Background Color").Value).PlainSequence
-                InputColor = New Color(configReader.Sections("Colors").Keys("Input Color").Value).PlainSequence
-                ListEntryColor = New Color(configReader.Sections("Colors").Keys("List Entry Color").Value).PlainSequence
-                ListValueColor = New Color(configReader.Sections("Colors").Keys("List Value Color").Value).PlainSequence
-                StageColor = New Color(configReader.Sections("Colors").Keys("Kernel Stage Color").Value).PlainSequence
-                ErrorColor = New Color(configReader.Sections("Colors").Keys("Error Text Color").Value).PlainSequence
-                WarningColor = New Color(configReader.Sections("Colors").Keys("Warning Text Color").Value).PlainSequence
-                OptionColor = New Color(configReader.Sections("Colors").Keys("Option Color").Value).PlainSequence
-                BannerColor = New Color(configReader.Sections("Colors").Keys("Banner Color").Value).PlainSequence
+                UserNameShellColor = New Color(If(ConfigToken("Colors")?("User Name Shell Color"), ConsoleColors.Green)).PlainSequence
+                HostNameShellColor = New Color(If(ConfigToken("Colors")?("Host Name Shell Color"), ConsoleColors.DarkGreen)).PlainSequence
+                ContKernelErrorColor = New Color(If(ConfigToken("Colors")?("Continuable Kernel Error Color"), ConsoleColors.Yellow)).PlainSequence
+                UncontKernelErrorColor = New Color(If(ConfigToken("Colors")?("Uncontinuable Kernel Error Color"), ConsoleColors.Red)).PlainSequence
+                NeutralTextColor = New Color(If(ConfigToken("Colors")?("Text Color"), ConsoleColors.Gray)).PlainSequence
+                LicenseColor = New Color(If(ConfigToken("Colors")?("License Color"), ConsoleColors.White)).PlainSequence
+                BackgroundColor = New Color(If(ConfigToken("Colors")?("Background Color"), ConsoleColors.Black)).PlainSequence
+                InputColor = New Color(If(ConfigToken("Colors")?("Input Color"), ConsoleColors.White)).PlainSequence
+                ListEntryColor = New Color(If(ConfigToken("Colors")?("List Entry Color"), ConsoleColors.DarkYellow)).PlainSequence
+                ListValueColor = New Color(If(ConfigToken("Colors")?("List Value Color"), ConsoleColors.DarkGray)).PlainSequence
+                StageColor = New Color(If(ConfigToken("Colors")?("Kernel Stage Color"), ConsoleColors.Green)).PlainSequence
+                ErrorColor = New Color(If(ConfigToken("Colors")?("Error Text Color"), ConsoleColors.Red)).PlainSequence
+                WarningColor = New Color(If(ConfigToken("Colors")?("Warning Text Color"), ConsoleColors.Yellow)).PlainSequence
+                OptionColor = New Color(If(ConfigToken("Colors")?("Option Color"), ConsoleColors.DarkYellow)).PlainSequence
+                BannerColor = New Color(If(ConfigToken("Colors")?("Banner Color"), ConsoleColors.Green)).PlainSequence
                 LoadBack()
             End If
 
             'General Section
             Wdbg("I", "Parsing general section...")
-            If configReader.Sections("General").Keys("Change Root Password").Value = "True" Then setRootPasswd = True Else setRootPasswd = False
-            If setRootPasswd = True Then RootPasswd = configReader.Sections("General").Keys("Set Root Password to").Value
-            If configReader.Sections("General").Keys("Maintenance Mode").Value = "True" Then maintenance = True Else maintenance = False
-            If configReader.Sections("General").Keys("Prompt for Arguments on Boot").Value = "True" Then argsOnBoot = True Else argsOnBoot = False
-            If configReader.Sections("General").Keys("Check for Updates on Startup").Value = "True" Then CheckUpdateStart = True Else CheckUpdateStart = False
+            setRootPasswd = If(ConfigToken("General")?("Change Root Password"), False)
+            If setRootPasswd = True Then RootPasswd = ConfigToken("General")?("Set Root Password to")
+            maintenance = If(ConfigToken("General")?("Maintenance Mode"), False)
+            argsOnBoot = If(ConfigToken("General")?("Prompt for Arguments on Boot"), False)
+            CheckUpdateStart = If(ConfigToken("General")?("Check for Updates on Startup"), True)
 
             'Login Section
             Wdbg("I", "Parsing login section...")
-            If configReader.Sections("Login").Keys("Clear Screen on Log-in").Value = "True" Then clsOnLogin = True Else clsOnLogin = False
-            If configReader.Sections("Login").Keys("Show MOTD on Log-in").Value = "True" Then showMOTD = True Else showMOTD = False
-            If configReader.Sections("Login").Keys("Show available usernames").Value = "True" Then ShowAvailableUsers = True Else ShowAvailableUsers = False
+            clsOnLogin = If(ConfigToken("Login")?("Clear Screen on Log-in"), False)
+            showMOTD = If(ConfigToken("Login")?("Show MOTD on Log-in"), True)
+            ShowAvailableUsers = If(ConfigToken("Login")?("Show available usernames"), True)
+            If Not String.IsNullOrWhiteSpace(ConfigToken("Login")?("Host Name")) Then
+                HName = ConfigToken("Login")?("Host Name")
+            Else
+                HName = "kernel"
+            End If
 
             'Shell Section
             Wdbg("I", "Parsing shell section...")
-            If configReader.Sections("Shell").Keys("Simplified Help Command").Value = "True" Then simHelp = True Else simHelp = False
-            CurrDir = configReader.Sections("Shell").Keys("Current Directory").Value
-            PathsToLookup = configReader.Sections("Shell").Keys("Lookup Directories").Value.ReleaseDoubleQuotes
-            ShellPromptStyle = configReader.Sections("Shell").Keys("Prompt Style").Value
-            FTPShellPromptStyle = configReader.Sections("Shell").Keys("FTP Prompt Style").Value
-            MailShellPromptStyle = configReader.Sections("Shell").Keys("Mail Prompt Style").Value
-            SFTPShellPromptStyle = configReader.Sections("Shell").Keys("SFTP Prompt Style").Value
+            simHelp = If(ConfigToken("Shell")?("Simplified Help Command"), False)
+            CurrDir = If(ConfigToken("Shell")?("Current Directory"), paths("Home"))
+            PathsToLookup = If(Not String.IsNullOrEmpty(ConfigToken("Shell")?("Lookup Directories")), ConfigToken("Shell")?("Lookup Directories").ToString.ReleaseDoubleQuotes, Environ("PATH"))
+            ShellPromptStyle = If(ConfigToken("Shell")?("Prompt Style"), "")
+            FTPShellPromptStyle = If(ConfigToken("Shell")?("FTP Prompt Style"), "")
+            MailShellPromptStyle = If(ConfigToken("Shell")?("Mail Prompt Style"), "")
+            SFTPShellPromptStyle = If(ConfigToken("Shell")?("SFTP Prompt Style"), "")
+
+            'Filesystem Section
+            Wdbg("I", "Parsing filesystem section...")
+            DebugQuota = If(Integer.TryParse(ConfigToken("Filesystem")?("Debug Size Quota in Bytes"), 0), ConfigToken("Filesystem")?("Debug Size Quota in Bytes"), 1073741824)
+            FullParseMode = If(ConfigToken("Filesystem")?("Size parse mode"), False)
+            HiddenFiles = If(ConfigToken("Filesystem")?("Show Hidden Files"), False)
+            SortMode = If(ConfigToken("Filesystem")?("Filesystem sort mode") IsNot Nothing, If([Enum].TryParse(ConfigToken("Filesystem")?("Filesystem sort mode"), SortMode), SortMode, FilesystemSortOptions.FullName), FilesystemSortOptions.FullName)
+            SortDirection = If(ConfigToken("Filesystem")?("Filesystem sort direction") IsNot Nothing, If([Enum].TryParse(ConfigToken("Filesystem")?("Filesystem sort direction"), SortDirection), SortDirection, FilesystemSortDirection.Ascending), FilesystemSortDirection.Ascending)
 
             'Hardware Section
             Wdbg("I", "Parsing hardware section...")
-            If configReader.Sections("Hardware").Keys("Quiet Probe").Value = "True" Then quietProbe = True Else quietProbe = False
-            If configReader.Sections("Hardware").Keys("Full Probe").Value = "True" Then FullProbe = True Else FullProbe = False
+            quietProbe = If(ConfigToken("Hardware")?("Quiet Probe"), False)
+            FullProbe = If(ConfigToken("Hardware")?("Full Probe"), True)
 
             'Network Section
             Wdbg("I", "Parsing network section...")
-            If Integer.TryParse(configReader.Sections("Network").Keys("Debug Port").Value, 0) Then DebugPort = configReader.Sections("Network").Keys("Debug Port").Value
-            If Integer.TryParse(configReader.Sections("Network").Keys("Download Retry Times").Value, 0) Then DRetries = configReader.Sections("Network").Keys("Download Retry Times").Value
-            If Integer.TryParse(configReader.Sections("Network").Keys("Upload Retry Times").Value, 0) Then URetries = configReader.Sections("Network").Keys("Upload Retry Times").Value
-            ShowProgress = configReader.Sections("Network").Keys("Show progress bar while downloading or uploading from ""get"" or ""put"" command").Value
-            FTPLoggerUsername = configReader.Sections("Network").Keys("Log FTP username").Value
-            FTPLoggerIP = configReader.Sections("Network").Keys("Log FTP IP address").Value
-            FTPFirstProfileOnly = configReader.Sections("Network").Keys("Return only first FTP profile").Value
-            ShowPreview = configReader.Sections("Network").Keys("Show mail message preview").Value
-            RecordChatToDebugLog = configReader.Sections("Network").Keys("Record chat to debug log").Value
-            SSHBanner = configReader.Sections("Network").Keys("Show SSH banner").Value
-            RPCEnabled = configReader.Sections("Network").Keys("Enable RPC").Value
-            If Integer.TryParse(configReader.Sections("Network").Keys("RPC Port").Value, 0) Then RPCPort = configReader.Sections("Network").Keys("RPC Port").Value
+            DebugPort = If(Integer.TryParse(ConfigToken("Network")?("Debug Port"), 0), ConfigToken("Network")?("Debug Port"), 3014)
+            DRetries = If(Integer.TryParse(ConfigToken("Network")?("Download Retry Times"), 0), ConfigToken("Network")?("Download Retry Times"), 3)
+            URetries = If(Integer.TryParse(ConfigToken("Network")?("Upload Retry Times"), 0), ConfigToken("Network")?("Upload Retry Times"), 3)
+            ShowProgress = If(ConfigToken("Network")?("Show progress bar while downloading or uploading from ""get"" or ""put"" command"), True)
+            FTPLoggerUsername = If(ConfigToken("Network")?("Log FTP username"), False)
+            FTPLoggerIP = If(ConfigToken("Network")?("Log FTP IP address"), False)
+            FTPFirstProfileOnly = If(ConfigToken("Network")?("Return only first FTP profile"), False)
+            ShowPreview = If(ConfigToken("Network")?("Show mail message preview"), False)
+            RecordChatToDebugLog = If(ConfigToken("Network")?("Record chat to debug log"), True)
+            SSHBanner = If(ConfigToken("Network")?("Show SSH banner"), False)
+            RPCEnabled = If(ConfigToken("Network")?("Enable RPC"), True)
+            RPCPort = If(Integer.TryParse(ConfigToken("Network")?("RPC Port"), 0), ConfigToken("Network")?("RPC Port"), 12345)
 
             'Screensaver Section
-            defSaverName = configReader.Sections("Screensaver").Keys("Screensaver").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Screensaver Timeout in ms").Value, 0) Then ScrnTimeout = configReader.Sections("Screensaver").Keys("Screensaver Timeout in ms").Value
+            defSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")
+            ScrnTimeout = If(Integer.TryParse(ConfigToken("Screensaver")?("Screensaver Timeout in ms"), 0), ConfigToken("Screensaver")?("Screensaver Timeout in ms"), 300000)
 
             'Screensaver: Colors
-            ColorMix255Colors = configReader.Sections("Screensaver").Keys("ColorMix - Activate 255 Color Mode").Value
-            Disco255Colors = configReader.Sections("Screensaver").Keys("Disco - Activate 255 Color Mode").Value
-            GlitterColor255Colors = configReader.Sections("Screensaver").Keys("GlitterColor - Activate 255 Color Mode").Value
-            Lines255Colors = configReader.Sections("Screensaver").Keys("Lines - Activate 255 Color Mode").Value
-            Dissolve255Colors = configReader.Sections("Screensaver").Keys("Dissolve - Activate 255 Color Mode").Value
-            BouncingBlock255Colors = configReader.Sections("Screensaver").Keys("BouncingBlock - Activate 255 Color Mode").Value
-            ProgressClock255Colors = configReader.Sections("Screensaver").Keys("ProgressClock - Activate 255 Color Mode").Value
-            Lighter255Colors = configReader.Sections("Screensaver").Keys("Lighter - Activate 255 Color Mode").Value
-            Wipe255Colors = configReader.Sections("Screensaver").Keys("Wipe - Activate 255 Color Mode").Value
-            ColorMixTrueColor = configReader.Sections("Screensaver").Keys("ColorMix - Activate True Color Mode").Value
-            DiscoTrueColor = configReader.Sections("Screensaver").Keys("Disco - Activate True Color Mode").Value
-            GlitterColorTrueColor = configReader.Sections("Screensaver").Keys("GlitterColor - Activate True Color Mode").Value
-            LinesTrueColor = configReader.Sections("Screensaver").Keys("Lines - Activate True Color Mode").Value
-            DissolveTrueColor = configReader.Sections("Screensaver").Keys("Dissolve - Activate True Color Mode").Value
-            BouncingBlockTrueColor = configReader.Sections("Screensaver").Keys("BouncingBlock - Activate True Color Mode").Value
-            ProgressClockTrueColor = configReader.Sections("Screensaver").Keys("ProgressClock - Activate True Color Mode").Value
-            LighterTrueColor = configReader.Sections("Screensaver").Keys("Lighter - Activate True Color Mode").Value
-            WipeTrueColor = configReader.Sections("Screensaver").Keys("Wipe - Activate True Color Mode").Value
-            DiscoCycleColors = configReader.Sections("Screensaver").Keys("Disco - Cycle Colors").Value
-            ProgressClockCycleColors = configReader.Sections("Screensaver").Keys("ProgressClock - Cycle Colors").Value
-            ProgressClockSecondsProgressColor = configReader.Sections("Screensaver").Keys("ProgressClock - Color of Seconds Bar").Value
-            ProgressClockMinutesProgressColor = configReader.Sections("Screensaver").Keys("ProgressClock - Color of Minutes Bar").Value
-            ProgressClockHoursProgressColor = configReader.Sections("Screensaver").Keys("ProgressClock - Color of Hours Bar").Value
-            ProgressClockProgressColor = configReader.Sections("Screensaver").Keys("ProgressClock - Color of Information").Value
+            ColorMix255Colors = If(ConfigToken("Screensaver")?("ColorMix")?("Activate 255 Color Mode"), False)
+            Disco255Colors = If(ConfigToken("Screensaver")?("Disco")?("Activate 255 Color Mode"), False)
+            GlitterColor255Colors = If(ConfigToken("Screensaver")?("GlitterColor")?("Activate 255 Color Mode"), False)
+            Lines255Colors = If(ConfigToken("Screensaver")?("Lines")?("Activate 255 Color Mode"), False)
+            Dissolve255Colors = If(ConfigToken("Screensaver")?("Dissolve")?("Activate 255 Color Mode"), False)
+            BouncingBlock255Colors = If(ConfigToken("Screensaver")?("BouncingBlock")?("Activate 255 Color Mode"), False)
+            ProgressClock255Colors = If(ConfigToken("Screensaver")?("ProgressClock")?("Activate 255 Color Mode"), False)
+            Lighter255Colors = If(ConfigToken("Screensaver")?("Lighter")?("Activate 255 Color Mode"), False)
+            Wipe255Colors = If(ConfigToken("Screensaver")?("Wipe")?("Activate 255 Color Mode"), False)
+            ColorMixTrueColor = If(ConfigToken("Screensaver")?("ColorMix")?("Activate True Color Mode"), True)
+            DiscoTrueColor = If(ConfigToken("Screensaver")?("Disco")?("Activate True Color Mode"), True)
+            GlitterColorTrueColor = If(ConfigToken("Screensaver")?("GlitterColor")?("Activate True Color Mode"), True)
+            LinesTrueColor = If(ConfigToken("Screensaver")?("Lines")?("Activate True Color Mode"), True)
+            DissolveTrueColor = If(ConfigToken("Screensaver")?("Dissolve")?("Activate True Color Mode"), True)
+            BouncingBlockTrueColor = If(ConfigToken("Screensaver")?("BouncingBlock")?("Activate True Color Mode"), True)
+            ProgressClockTrueColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Activate True Color Mode"), True)
+            LighterTrueColor = If(ConfigToken("Screensaver")?("Lighter")?("Activate True Color Mode"), True)
+            WipeTrueColor = If(ConfigToken("Screensaver")?("Wipe")?("Activate True Color Mode"), True)
+            DiscoCycleColors = If(ConfigToken("Screensaver")?("Disco")?("Cycle Colors"), False)
+            ProgressClockCycleColors = If(ConfigToken("Screensaver")?("ProgressClock")?("Cycle Colors"), True)
+            ProgressClockSecondsProgressColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Color of Seconds Bar"), 4)
+            ProgressClockMinutesProgressColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Color of Minutes Bar"), 5)
+            ProgressClockHoursProgressColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Color of Hours Bar"), 6)
+            ProgressClockProgressColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Color of Information"), 7)
 
             'Screensaver: Delays
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("BouncingBlock - Delay in Milliseconds").Value, 0) Then BouncingBlockDelay = configReader.Sections("Screensaver").Keys("BouncingBlock - Delay in Milliseconds").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("BouncingText - Delay in Milliseconds").Value, 0) Then BouncingTextDelay = configReader.Sections("Screensaver").Keys("BouncingText - Delay in Milliseconds").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("ColorMix - Delay in Milliseconds").Value, 0) Then ColorMixDelay = configReader.Sections("Screensaver").Keys("ColorMix - Delay in Milliseconds").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Disco - Delay in Milliseconds").Value, 0) Then DiscoDelay = configReader.Sections("Screensaver").Keys("Disco - Delay in Milliseconds").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("GlitterColor - Delay in Milliseconds").Value, 0) Then GlitterColorDelay = configReader.Sections("Screensaver").Keys("GlitterColor - Delay in Milliseconds").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("GlitterMatrix - Delay in Milliseconds").Value, 0) Then GlitterMatrixDelay = configReader.Sections("Screensaver").Keys("GlitterMatrix - Delay in Milliseconds").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Lines - Delay in Milliseconds").Value, 0) Then LinesDelay = configReader.Sections("Screensaver").Keys("Lines - Delay in Milliseconds").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Matrix - Delay in Milliseconds").Value, 0) Then MatrixDelay = configReader.Sections("Screensaver").Keys("Matrix - Delay in Milliseconds").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Lighter - Delay in Milliseconds").Value, 0) Then LighterDelay = configReader.Sections("Screensaver").Keys("Lighter - Delay in Milliseconds").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Fader - Delay in Milliseconds").Value, 0) Then FaderDelay = configReader.Sections("Screensaver").Keys("Fader - Delay in Milliseconds").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Fader - Fade Out Delay in Milliseconds").Value, 0) Then FaderFadeOutDelay = configReader.Sections("Screensaver").Keys("Fader - Fade Out Delay in Milliseconds").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("ProgressClock - Ticks to change color").Value, 0) Then ProgressClockCycleColorsTicks = configReader.Sections("Screensaver").Keys("ProgressClock - Ticks to change color").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Typo - Delay in Milliseconds").Value, 0) Then TypoDelay = configReader.Sections("Screensaver").Keys("Typo - Delay in Milliseconds").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Typo - Write Again Delay in Milliseconds").Value, 0) Then TypoWriteAgainDelay = configReader.Sections("Screensaver").Keys("Typo - Write Again Delay in Milliseconds").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Wipe - Delay in Milliseconds").Value, 0) Then WipeDelay = configReader.Sections("Screensaver").Keys("Wipe - Delay in Milliseconds").Value
+            BouncingBlockDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingBlock")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("BouncingBlock")?("Delay in Milliseconds"), 10)
+            BouncingTextDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingText")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("BouncingText")?("Delay in Milliseconds"), 10)
+            ColorMixDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("ColorMix")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("ColorMix")?("Delay in Milliseconds"), 1)
+            DiscoDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Disco")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Disco")?("Delay in Milliseconds"), 100)
+            GlitterColorDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterColor")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("GlitterColor")?("Delay in Milliseconds"), 1)
+            GlitterMatrixDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterMatrix")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("GlitterMatrix")?("Delay in Milliseconds"), 1)
+            LinesDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Lines")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Lines")?("Delay in Milliseconds"), 500)
+            MatrixDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Matrix")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Matrix")?("Delay in Milliseconds"), 1)
+            LighterDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Lighter")?("Delay in Milliseconds"), 100)
+            FaderDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Fader")?("Delay in Milliseconds"), 50)
+            FaderFadeOutDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Fade Out Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Fader")?("Fade Out Delay in Milliseconds"), 3000)
+            ProgressClockCycleColorsTicks = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Ticks to change color"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Ticks to change color"), 20)
+            TypoDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Typo")?("Delay in Milliseconds"), 50)
+            TypoWriteAgainDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Write Again Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Typo")?("Write Again Delay in Milliseconds"), 3000)
+            WipeDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Wipe")?("Delay in Milliseconds"), 10)
 
             'Screensaver: Texts
-            BouncingTextWrite = configReader.Sections("Screensaver").Keys("BouncingText - Text Shown").Value
-            FaderWrite = configReader.Sections("Screensaver").Keys("Fader - Text Shown").Value
-            TypoWrite = configReader.Sections("Screensaver").Keys("Typo - Text Shown").Value
+            BouncingTextWrite = If(ConfigToken("Screensaver")?("BouncingText")?("Text Shown"), "Kernel Simulator")
+            FaderWrite = If(ConfigToken("Screensaver")?("Fader")?("Text Shown"), "Kernel Simulator")
+            TypoWrite = If(ConfigToken("Screensaver")?("Typo")?("Text Shown"), "Kernel Simulator")
 
             'Screensaver: Misc
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Lighter - Max Positions Count").Value, 0) Then LighterMaxPositions = configReader.Sections("Screensaver").Keys("Lighter - Max Positions Count").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Fader - Max Fade Steps").Value, 0) Then FaderMaxSteps = configReader.Sections("Screensaver").Keys("Fader - Max Fade Steps").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Typo - Minimum writing speed in WPM").Value, 0) Then TypoWritingSpeedMin = configReader.Sections("Screensaver").Keys("Typo - Minimum writing speed in WPM").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Typo - Maximum writing speed in WPM").Value, 0) Then TypoWritingSpeedMax = configReader.Sections("Screensaver").Keys("Typo - Maximum writing speed in WPM").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Typo - Probability of typo in percent").Value, 0) Then TypoMissStrikePossibility = configReader.Sections("Screensaver").Keys("Typo - Probability of typo in percent").Value
-            If Integer.TryParse(configReader.Sections("Screensaver").Keys("Wipe - Wipes to change direction").Value, 0) Then WipeWipesNeededToChangeDirection = configReader.Sections("Screensaver").Keys("Wipe - Wipes to change direction").Value
+            LighterMaxPositions = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Max Positions Count"), 0), ConfigToken("Screensaver")?("Lighter")?("Max Positions Count"), 10)
+            FaderMaxSteps = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Max Fade Steps"), 0), ConfigToken("Screensaver")?("Fader")?("Max Fade Steps"), 25)
+            TypoWritingSpeedMin = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Minimum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Typo")?("Minimum writing speed in WPM"), 50)
+            TypoWritingSpeedMax = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Maximum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Typo")?("Maximum writing speed in WPM"), 80)
+            TypoMissStrikePossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Probability of typo in percent"), 0), ConfigToken("Screensaver")?("Typo")?("Probability of typo in percent"), 60)
+            WipeWipesNeededToChangeDirection = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Wipes to change direction"), 0), ConfigToken("Screensaver")?("Wipe")?("Wipes to change direction"), 10)
 
             'Misc Section
             Wdbg("I", "Parsing misc section...")
-            If configReader.Sections("Misc").Keys("Show Time/Date on Upper Right Corner").Value = "True" Then CornerTD = True Else CornerTD = False
-            If Integer.TryParse(configReader.Sections("Misc").Keys("Debug Size Quota in Bytes").Value, 0) Then DebugQuota = configReader.Sections("Misc").Keys("Debug Size Quota in Bytes").Value
-            If configReader.Sections("Misc").Keys("Size parse mode").Value = "True" Then FullParseMode = True Else FullParseMode = False
-            If configReader.Sections("Misc").Keys("Marquee on startup").Value = "True" Then StartScroll = True Else StartScroll = False
-            If configReader.Sections("Misc").Keys("Long Time and Date").Value = "True" Then LongTimeDate = True Else LongTimeDate = False
-            If configReader.Sections("Misc").Keys("Show Hidden Files").Value = "True" Then HiddenFiles = True Else HiddenFiles = False
-            PreferredUnit = configReader.Sections("Misc").Keys("Preferred Unit for Temperature").Value
-            If configReader.Sections("Misc").Keys("Enable text editor autosave").Value = "True" Then TextEdit_AutoSaveFlag = True Else TextEdit_AutoSaveFlag = False
-            If Integer.TryParse(configReader.Sections("Misc").Keys("Text editor autosave interval").Value, 0) Then TextEdit_AutoSaveInterval = configReader.Sections("Misc").Keys("Text editor autosave interval").Value
-            If configReader.Sections("Misc").Keys("Wrap list outputs").Value = "True" Then WrapListOutputs = True Else WrapListOutputs = False
-            SortMode = [Enum].Parse(GetType(FilesystemSortOptions), configReader.Sections("Misc").Keys("Filesystem sort mode").Value)
-            SortDirection = [Enum].Parse(GetType(FilesystemSortDirection), configReader.Sections("Misc").Keys("Filesystem sort direction").Value)
+            CornerTD = If(ConfigToken("Misc")?("Show Time/Date on Upper Right Corner"), False)
+            StartScroll = If(ConfigToken("Misc")?("Marquee on startup"), True)
+            LongTimeDate = If(ConfigToken("Misc")?("Long Time and Date"), True)
+            PreferredUnit = If(ConfigToken("Misc")?("Preferred Unit for Temperature") IsNot Nothing, If([Enum].TryParse(ConfigToken("Misc")?("Preferred Unit for Temperature"), PreferredUnit), PreferredUnit, UnitMeasurement.Metric), UnitMeasurement.Metric)
+            TextEdit_AutoSaveFlag = If(ConfigToken("Misc")?("Enable text editor autosave"), True)
+            TextEdit_AutoSaveInterval = If(Integer.TryParse(ConfigToken("Misc")?("Text editor autosave interval"), 0), ConfigToken("Misc")?("Text editor autosave interval"), 60)
+            WrapListOutputs = If(ConfigToken("Misc")?("Wrap list outputs"), False)
+
+            'Check to see if the config needs fixes
+            RepairConfig()
 
             'Raise event and return true
             EventManager.RaiseConfigRead()
             Return True
         Catch nre As NullReferenceException
-            'Old config file being read. It is not appropriate to let KS crash on startup when the old version is read, so convert.
-            Wdbg("W", "Detected incompatible/old version of config. Renewing...")
-            UpgradeConfig()
+            'Rare, but repair config if an NRE is caught.
+            Wdbg("E", "Error trying to read config: {0}", nre.Message)
+            RepairConfig()
         Catch ex As Exception
             EventManager.RaiseConfigReadError(ex)
             WStkTrc(ex)
             NotifyConfigError = True
+            Wdbg("E", "Error trying to read config: {0}", ex.Message)
             Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to read configuration: {0}."), ex, ex.Message)
         End Try
         Return False
@@ -712,27 +492,610 @@ Public Module Config
     ''' </summary>
     Sub InitializeConfig()
         'Make a config file if not found
-        Dim pathConfig As String = paths("Configuration")
-        If Not File.Exists(pathConfig) Then
+        If Not File.Exists(paths("Configuration")) Then
             Wdbg("E", "No config file found. Creating...")
-            CreateConfig(False)
+            CreateConfig()
         End If
 
         'Load and read config
         Try
-            configReader.Load(pathConfig)
-            Wdbg("I", "Config loaded with {0} sections", configReader.Sections.Count)
             ReadConfig()
         Catch cex As Exceptions.ConfigException
             W(cex.Message, True, ColTypes.Error)
             WStkTrc(cex)
         End Try
-
-        'Check for updates for config
-        If CheckForUpgrade() Then
-            W(DoTranslation("An upgrade to {0} is detected. Updating configuration..."), True, ColTypes.Neutral, KernelVersion)
-            UpdateConfig()
-        End If
     End Sub
+
+    ''' <summary>
+    ''' Checks to see if the config needs repair and repairs it as necessary.
+    ''' </summary>
+    ''' <returns>True if the config is repaired; False if no repairs done; Throws exceptions if unsuccessful.</returns>
+    Public Function RepairConfig() As Boolean
+        'Variables
+        Dim FixesNeeded As Boolean
+
+        'Check for missing sections
+        If ConfigToken("General") Is Nothing Then
+            Wdbg("W", "Missing section: General. Config fix needed set to true.")
+            FixesNeeded = True
+        End If
+        If ConfigToken("Colors") Is Nothing Then
+            Wdbg("W", "Missing section: Colors. Config fix needed set to true.")
+            FixesNeeded = True
+        End If
+        If ConfigToken("Hardware") Is Nothing Then
+            Wdbg("W", "Missing section: Hardware. Config fix needed set to true.")
+            FixesNeeded = True
+        End If
+        If ConfigToken("Login") Is Nothing Then
+            Wdbg("W", "Missing section: Login. Config fix needed set to true.")
+            FixesNeeded = True
+        End If
+        If ConfigToken("Shell") Is Nothing Then
+            Wdbg("W", "Missing section: Shell. Config fix needed set to true.")
+            FixesNeeded = True
+        End If
+        If ConfigToken("Filesystem") Is Nothing Then
+            Wdbg("W", "Missing section: Filesystem. Config fix needed set to true.")
+            FixesNeeded = True
+        End If
+        If ConfigToken("Network") Is Nothing Then
+            Wdbg("W", "Missing section: Network. Config fix needed set to true.")
+            FixesNeeded = True
+        End If
+        If ConfigToken("Screensaver") Is Nothing Then
+            Wdbg("W", "Missing section: Screensaver. Config fix needed set to true.")
+            FixesNeeded = True
+        Else
+            If ConfigToken("Screensaver")("ColorMix") Is Nothing Then
+                Wdbg("W", "Missing section: Screensaver > ColorMix. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Screensaver")("Disco") Is Nothing Then
+                Wdbg("W", "Missing section: Screensaver > Disco. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Screensaver")("GlitterColor") Is Nothing Then
+                Wdbg("W", "Missing section: Screensaver > GlitterColor. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Screensaver")("Lines") Is Nothing Then
+                Wdbg("W", "Missing section: Screensaver > Lines. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Screensaver")("Dissolve") Is Nothing Then
+                Wdbg("W", "Missing section: Screensaver > Dissolve. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Screensaver")("BouncingBlock") Is Nothing Then
+                Wdbg("W", "Missing section: Screensaver > BouncingBlock. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Screensaver")("ProgressClock") Is Nothing Then
+                Wdbg("W", "Missing section: Screensaver > ProgressClock. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Screensaver")("Lighter") Is Nothing Then
+                Wdbg("W", "Missing section: Screensaver > Lighter. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Screensaver")("Wipe") Is Nothing Then
+                Wdbg("W", "Missing section: Screensaver > Wipe. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Screensaver")("Matrix") Is Nothing Then
+                Wdbg("W", "Missing section: Screensaver > Matrix. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Screensaver")("GlitterMatrix") Is Nothing Then
+                Wdbg("W", "Missing section: Screensaver > GlitterMatrix. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Screensaver")("BouncingText") Is Nothing Then
+                Wdbg("W", "Missing section: Screensaver > BouncingText. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Screensaver")("Fader") Is Nothing Then
+                Wdbg("W", "Missing section: Screensaver > Fader. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Screensaver")("Typo") Is Nothing Then
+                Wdbg("W", "Missing section: Screensaver > Typo. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+        End If
+        If ConfigToken("Misc") Is Nothing Then
+            Wdbg("W", "Missing section: Misc. Config fix needed set to true.")
+            FixesNeeded = True
+        End If
+
+        'Now, check for missing keys in each section that ARE available. For example, if "General" is not available, and we're calling this:
+        ' ConfigToken("General")("Maintenance Mode") Is Nothing
+        '...we'll get NullReferenceException.
+        If ConfigToken("General") IsNot Nothing Then
+            If ConfigToken("General")("Prompt for Arguments on Boot") Is Nothing Then
+                Wdbg("W", "Missing key: General > Prompt for Arguments on Boot. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("General")("Maintenance Mode") Is Nothing Then
+                Wdbg("W", "Missing key: General > Maintenance Mode. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("General")("Change Root Password") Is Nothing Then
+                Wdbg("W", "Missing key: General > Change Root Password. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("General")("Set Root Password to") Is Nothing Then
+                Wdbg("W", "Missing key: General > Set Root Password to. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("General")("Check for Updates on Startup") Is Nothing Then
+                Wdbg("W", "Missing key: General > Check for Updates on Startup. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("General")("Change Culture when Switching Languages") Is Nothing Then
+                Wdbg("W", "Missing key: General > Change Culture when Switching Languages. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("General")("Language") Is Nothing Then
+                Wdbg("W", "Missing key: General > Language. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("General")("Culture") Is Nothing Then
+                Wdbg("W", "Missing key: General > Culture. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+        End If
+        If ConfigToken("Colors") IsNot Nothing Then
+            If ConfigToken("Colors")("User Name Shell Color") Is Nothing Then
+                Wdbg("W", "Missing key: Colors > User Name Shell Color. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Colors")("Host Name Shell Color") Is Nothing Then
+                Wdbg("W", "Missing key: Colors > Host Name Shell Color. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Colors")("Continuable Kernel Error Color") Is Nothing Then
+                Wdbg("W", "Missing key: Colors > Continuable Kernel Error Color. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Colors")("Uncontinuable Kernel Error Color") Is Nothing Then
+                Wdbg("W", "Missing key: Colors > Uncontinuable Kernel Error Color. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Colors")("Text Color") Is Nothing Then
+                Wdbg("W", "Missing key: Colors > Text Color. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Colors")("License Color") Is Nothing Then
+                Wdbg("W", "Missing key: Colors > License Color. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Colors")("Background Color") Is Nothing Then
+                Wdbg("W", "Missing key: Colors > Background Color. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Colors")("Input Color") Is Nothing Then
+                Wdbg("W", "Missing key: Colors > Input Color. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Colors")("List Entry Color") Is Nothing Then
+                Wdbg("W", "Missing key: Colors > List Entry Color. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Colors")("List Value Color") Is Nothing Then
+                Wdbg("W", "Missing key: Colors > List Value Color. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Colors")("Kernel Stage Color") Is Nothing Then
+                Wdbg("W", "Missing key: Colors > Kernel Stage Color. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Colors")("Error Text Color") Is Nothing Then
+                Wdbg("W", "Missing key: Colors > Error Text Color. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Colors")("Warning Text Color") Is Nothing Then
+                Wdbg("W", "Missing key: Colors > Warning Text Color. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Colors")("Option Color") Is Nothing Then
+                Wdbg("W", "Missing key: Colors > Option Color. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Colors")("Banner Color") Is Nothing Then
+                Wdbg("W", "Missing key: Colors > Banner Color. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+        End If
+        If ConfigToken("Hardware") IsNot Nothing Then
+            If ConfigToken("Hardware")("Quiet Probe") Is Nothing Then
+                Wdbg("W", "Missing key: Hardware > Quiet Probe. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Hardware")("Full Probe") Is Nothing Then
+                Wdbg("W", "Missing key: Hardware > Full Probe. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+        End If
+        If ConfigToken("Login") IsNot Nothing Then
+            If ConfigToken("Login")("Show MOTD on Log-in") Is Nothing Then
+                Wdbg("W", "Missing key: Login > Show MOTD on Log-in. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Login")("Clear Screen on Log-in") Is Nothing Then
+                Wdbg("W", "Missing key: Login > Clear Screen on Log-in. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Login")("Host Name") Is Nothing Then
+                Wdbg("W", "Missing key: Login > Host Name. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Login")("Show available usernames") Is Nothing Then
+                Wdbg("W", "Missing key: Login > Show available usernames. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+        End If
+        If ConfigToken("Shell") IsNot Nothing Then
+            If ConfigToken("Shell")("Colored Shell") Is Nothing Then
+                Wdbg("W", "Missing key: Shell > Colored Shell. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Shell")("Simplified Help Command") Is Nothing Then
+                Wdbg("W", "Missing key: Shell > Simplified Help Command. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Shell")("Current Directory") Is Nothing Then
+                Wdbg("W", "Missing key: Shell > Current Directory. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Shell")("Lookup Directories") Is Nothing Then
+                Wdbg("W", "Missing key: Shell > Lookup Directories. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Shell")("Prompt Style") Is Nothing Then
+                Wdbg("W", "Missing key: Shell > Prompt Style. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Shell")("FTP Prompt Style") Is Nothing Then
+                Wdbg("W", "Missing key: Shell > FTP Prompt Style. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Shell")("Mail Prompt Style") Is Nothing Then
+                Wdbg("W", "Missing key: Shell > Mail Prompt Style. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Shell")("SFTP Prompt Style") Is Nothing Then
+                Wdbg("W", "Missing key: Shell > SFTP Prompt Style. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+        End If
+        If ConfigToken("Filesystem") IsNot Nothing Then
+            If ConfigToken("Filesystem")("Filesystem sort mode") Is Nothing Then
+                Wdbg("W", "Missing key: Filesystem > Filesystem sort mode. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Filesystem")("Filesystem sort direction") Is Nothing Then
+                Wdbg("W", "Missing key: Filesystem > Filesystem sort direction. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Filesystem")("Debug Size Quota in Bytes") Is Nothing Then
+                Wdbg("W", "Missing key: Filesystem > Debug Size Quota in Bytes. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Filesystem")("Show Hidden Files") Is Nothing Then
+                Wdbg("W", "Missing key: Filesystem > Show Hidden Files. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Filesystem")("Size parse mode") Is Nothing Then
+                Wdbg("W", "Missing key: Filesystem > Size parse mode. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+        End If
+        If ConfigToken("Network") IsNot Nothing Then
+            If ConfigToken("Network")("Debug Port") Is Nothing Then
+                Wdbg("W", "Missing key: Network > Debug Port. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Network")("Download Retry Times") Is Nothing Then
+                Wdbg("W", "Missing key: Network > Download Retry Times. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Network")("Upload Retry Times") Is Nothing Then
+                Wdbg("W", "Missing key: Network > Upload Retry Times. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Network")("Show progress bar while downloading or uploading from ""get"" or ""put"" command") Is Nothing Then
+                Wdbg("W", "Missing key: Network > Show progress bar while downloading or uploading from ""get"" or ""put"" command. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Network")("Log FTP username") Is Nothing Then
+                Wdbg("W", "Missing key: Network > Log FTP username. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Network")("Log FTP IP address") Is Nothing Then
+                Wdbg("W", "Missing key: Network > Log FTP IP address. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Network")("Return only first FTP profile") Is Nothing Then
+                Wdbg("W", "Missing key: Network > Return only first FTP profile. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Network")("Show mail message preview") Is Nothing Then
+                Wdbg("W", "Missing key: Network > Show mail message preview. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Network")("Record chat to debug log") Is Nothing Then
+                Wdbg("W", "Missing key: Network > Record chat to debug log. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Network")("Show SSH banner") Is Nothing Then
+                Wdbg("W", "Missing key: Network > Show SSH banner. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Network")("Enable RPC") Is Nothing Then
+                Wdbg("W", "Missing key: Network > Enable RPC. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Network")("RPC Port") Is Nothing Then
+                Wdbg("W", "Missing key: Network > RPC Port. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+        End If
+        If ConfigToken("Screensaver") IsNot Nothing Then
+            If ConfigToken("Screensaver")("Screensaver") Is Nothing Then
+                Wdbg("W", "Missing key: Screensaver > Screensaver. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Screensaver")("Screensaver Timeout in ms") Is Nothing Then
+                Wdbg("W", "Missing key: Screensaver > Screensaver Timeout in ms. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Screensaver")("ColorMix") IsNot Nothing Then
+                If ConfigToken("Screensaver")("ColorMix")("Activate 255 Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > ColorMix > Activate 255 Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("ColorMix")("Activate True Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > ColorMix > Activate True Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("ColorMix")("Delay in Milliseconds") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > ColorMix > Delay in Milliseconds. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("Disco") IsNot Nothing Then
+                If ConfigToken("Screensaver")("Disco")("Activate 255 Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Disco > Activate 255 Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Disco")("Activate True Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Disco > Activate True Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Disco")("Delay in Milliseconds") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Disco > Delay in Milliseconds. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Disco")("Cycle Colors") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Disco > Cycle Colors. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("GlitterColor") IsNot Nothing Then
+                If ConfigToken("Screensaver")("GlitterColor")("Activate 255 Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > GlitterColor > Activate 255 Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("GlitterColor")("Activate True Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > GlitterColor > Activate True Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("GlitterColor")("Delay in Milliseconds") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > GlitterColor > Delay in Milliseconds. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("Lines") IsNot Nothing Then
+                If ConfigToken("Screensaver")("Lines")("Activate 255 Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Lines > Activate 255 Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Lines")("Activate True Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Lines > Activate True Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Lines")("Delay in Milliseconds") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Lines > Delay in Milliseconds. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("Dissolve") IsNot Nothing Then
+                If ConfigToken("Screensaver")("Dissolve")("Activate 255 Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Dissolve > Activate 255 Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Dissolve")("Activate True Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Dissolve > Activate True Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("BouncingBlock") IsNot Nothing Then
+                If ConfigToken("Screensaver")("BouncingBlock")("Activate 255 Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > BouncingBlock > Activate 255 Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("BouncingBlock")("Activate True Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > BouncingBlock > Activate True Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("BouncingBlock")("Delay in Milliseconds") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > BouncingBlock > Delay in Milliseconds. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("ProgressClock") IsNot Nothing Then
+                If ConfigToken("Screensaver")("ProgressClock")("Activate 255 Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > ProgressClock > Activate 255 Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("ProgressClock")("Activate True Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > ProgressClock > Activate True Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("ProgressClock")("Cycle Colors") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > ProgressClock > Cycle Colors. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("ProgressClock")("Ticks to change color") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > ProgressClock > Ticks to change color. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("ProgressClock")("Color of Seconds Bar") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > ProgressClock > Color of Seconds Bar. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("ProgressClock")("Color of Minutes Bar") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > ProgressClock > Color of Minutes Bar. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("ProgressClock")("Color of Hours Bar") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > ProgressClock > Color of Hours Bar. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("ProgressClock")("Color of Information") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > ProgressClock > Color of Information. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("Lighter") IsNot Nothing Then
+                If ConfigToken("Screensaver")("Lighter")("Activate 255 Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Lighter > Activate 255 Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Lighter")("Activate True Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Lighter > Activate True Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Lighter")("Delay in Milliseconds") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Lighter > Delay in Milliseconds. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Lighter")("Max Positions Count") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Lighter > Max Positions Count. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("Wipe") IsNot Nothing Then
+                If ConfigToken("Screensaver")("Wipe")("Activate 255 Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Wipe > Activate 255 Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Wipe")("Activate True Color Mode") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Wipe > Activate True Color Mode. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Wipe")("Delay in Milliseconds") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Wipe > Delay in Milliseconds. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Wipe")("Wipes to change direction") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Wipe > Wipes to change direction. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("Matrix") IsNot Nothing Then
+                If ConfigToken("Screensaver")("Matrix")("Delay in Milliseconds") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Matrix > Delay in Milliseconds. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("GlitterMatrix") IsNot Nothing Then
+                If ConfigToken("Screensaver")("GlitterMatrix")("Delay in Milliseconds") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > GlitterMatrix > Delay in Milliseconds. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("Fader") IsNot Nothing Then
+                If ConfigToken("Screensaver")("Fader")("Delay in Milliseconds") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Fader > Delay in Milliseconds. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Fader")("Fade Out Delay in Milliseconds") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Fader > Fade Out Delay in Milliseconds. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Fader")("Text Shown") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Fader > Text Shown. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Fader")("Max Fade Steps") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Fader > Max Fade Steps. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("Typo") IsNot Nothing Then
+                If ConfigToken("Screensaver")("Typo")("Delay in Milliseconds") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Typo > Delay in Milliseconds. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Typo")("Write Again Delay in Milliseconds") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Typo > Write Again Delay in Milliseconds. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Typo")("Text Shown") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Typo > Text Shown. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Typo")("Minimum writing speed in WPM") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Typo > Minimum writing speed in WPM. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Typo")("Maximum writing speed in WPM") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Typo > Maximum writing speed in WPM. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+                If ConfigToken("Screensaver")("Typo")("Probability of typo in percent") Is Nothing Then
+                    Wdbg("W", "Missing key: Screensaver > Typo > Probability of typo in percent. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+        End If
+        If ConfigToken("Misc") IsNot Nothing Then
+            If ConfigToken("Misc")("Show Time/Date on Upper Right Corner") Is Nothing Then
+                Wdbg("W", "Missing key: Misc > Show Time/Date on Upper Right Corner. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Misc")("Marquee on startup") Is Nothing Then
+                Wdbg("W", "Missing key: Misc > Marquee on startup. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Misc")("Long Time and Date") Is Nothing Then
+                Wdbg("W", "Missing key: Misc > Long Time and Date. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Misc")("Preferred Unit for Temperature") Is Nothing Then
+                Wdbg("W", "Missing key: Misc > Preferred Unit for Temperature. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Misc")("Enable text editor autosave") Is Nothing Then
+                Wdbg("W", "Missing key: Misc > Enable text editor autosave. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Misc")("Text editor autosave interval") Is Nothing Then
+                Wdbg("W", "Missing key: Misc > Text editor autosave interval. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+            If ConfigToken("Misc")("Wrap list outputs") Is Nothing Then
+                Wdbg("W", "Missing key: Misc > Wrap list outputs. Config fix needed set to true.")
+                FixesNeeded = True
+            End If
+        End If
+
+        'If the fixes are needed, try to remake config with parsed values
+        If FixesNeeded Then CreateConfig()
+        Return FixesNeeded
+    End Function
 
 End Module

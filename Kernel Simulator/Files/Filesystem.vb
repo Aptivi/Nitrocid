@@ -352,11 +352,8 @@ Public Module Filesystem
     Public Function SetSizeParseMode(ByVal Enable As Boolean) As Boolean
         Try
             FullParseMode = Enable
-            Dim ksconf As New IniFile()
-            Dim pathConfig As String = paths("Configuration")
-            ksconf.Load(pathConfig)
-            ksconf.Sections("Misc").Keys("Size parse mode").Value = FullParseMode
-            ksconf.Save(pathConfig)
+            ConfigToken("Misc")("Size parse mode") = FullParseMode
+            File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
             Return True
         Catch ex As Exception
             Throw New IOException(DoTranslation("Error when trying to set parse mode. Check the value and try again. If this is correct, see the stack trace when kernel debugging is enabled.") + " " + ex.Message)
@@ -800,11 +797,8 @@ Public Module Filesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function SaveCurrDir() As Boolean
         Try
-            Dim ksconf As New IniFile()
-            Dim pathConfig As String = paths("Configuration")
-            ksconf.Load(pathConfig)
-            ksconf.Sections("Shell").Keys("Current Directory").Value = CurrDir
-            ksconf.Save(pathConfig)
+            ConfigToken("Shell")("Current Directory") = CurrDir
+            File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
             Return True
         Catch ex As Exception
             WStkTrc(ex)

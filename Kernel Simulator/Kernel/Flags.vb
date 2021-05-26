@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module Flags
+Public Module Flags
 
     'Variables: Normal environment
     ''' <summary>
@@ -54,7 +54,7 @@ Module Flags
     ''' <summary>
     ''' Set Root Password to any password
     ''' </summary>
-    Public RootPasswd As String = ""
+    Public RootPasswd As String = "toor"
     ''' <summary>
     ''' Maintenance Mode
     ''' </summary>

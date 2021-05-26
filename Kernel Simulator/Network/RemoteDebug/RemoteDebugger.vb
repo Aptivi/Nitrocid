@@ -20,7 +20,7 @@ Imports System.Net.Sockets
 Imports System.Threading
 Imports System.IO
 
-Module RemoteDebugger
+Public Module RemoteDebugger
 
     Public DebugPort As Integer = 3014
     Public RDebugClient As Socket

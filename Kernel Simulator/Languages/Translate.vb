@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Globalization
+Imports System.IO
 Imports Newtonsoft.Json.Linq
 
 Public Module Translate
@@ -240,11 +241,8 @@ CHOICE:
                 Dim OldModDescGeneric As String = DoTranslation("Command defined by ")
                 Wdbg("I", "Translating kernel to {0}.", lang)
                 currentLang = lang
-                Dim ksconf As New IniFile()
-                Dim pathConfig As String = paths("Configuration")
-                ksconf.Load(pathConfig)
-                ksconf.Sections("General").Keys("Language").Value = currentLang
-                ksconf.Save(pathConfig)
+                ConfigToken("General")("Language") = currentLang
+                File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
                 Wdbg("I", "Saved new language.")
 
                 'Update help list for translated help
@@ -287,13 +285,9 @@ CHOICE:
             If Cult.EnglishName = StrCult Then
                 Wdbg("I", "Found. Changing culture...")
                 CurrentCult = Cult
-                'TODO: We need to avoid repetition of this block that is highlighted by an asterisk. Can be done by jsonifying config.
-                Dim ksconf As New IniFile()                                             '*
-                Dim pathConfig As String = paths("Configuration")                       '*
-                ksconf.Load(pathConfig)                                                 '*
-                ksconf.Sections("General").Keys("Culture").Value = CurrentCult.Name     '*
-                ksconf.Save(pathConfig)                                                 '*
-                Wdbg("I", "Saved new culture.")                                         '*
+                ConfigToken("General")("Culture") = CurrentCult.Name
+                File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
+                Wdbg("I", "Saved new culture.")
                 Exit For
             End If
         Next
@@ -309,13 +303,9 @@ CHOICE:
             If Cult.EnglishName = Culture Then
                 Wdbg("I", "Found. Changing culture...")
                 CurrentCult = Cult
-                'TODO: We need to avoid repetition of this block that is highlighted by an asterisk. Can be done by jsonifying config.
-                Dim ksconf As New IniFile()                                             '*
-                Dim pathConfig As String = paths("Configuration")                       '*
-                ksconf.Load(pathConfig)                                                 '*
-                ksconf.Sections("General").Keys("Culture").Value = CurrentCult.Name     '*
-                ksconf.Save(pathConfig)                                                 '*
-                Wdbg("I", "Saved new culture.")                                         '*
+                ConfigToken("General")("Culture") = CurrentCult.Name
+                File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
+                Wdbg("I", "Saved new culture.")
                 Exit For
             End If
         Next

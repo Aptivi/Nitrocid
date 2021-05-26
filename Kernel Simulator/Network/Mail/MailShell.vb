@@ -21,7 +21,7 @@ Imports MailKit
 Imports MailKit.Net.Imap
 Imports MailKit.Search
 
-Module MailShell
+Public Module MailShell
 
     'Variables
     Public MailCommands As New Dictionary(Of String, CommandInfo) From {{"cd", New CommandInfo("cd", ShellCommandType.MailShell, True, 1)},
@@ -40,7 +40,7 @@ Module MailShell
                                                                         {"rmdir", New CommandInfo("rmdir", ShellCommandType.MailShell, True, 1)},
                                                                         {"send", New CommandInfo("send", ShellCommandType.MailShell, False, 0)},
                                                                         {"sendenc", New CommandInfo("sendenc", ShellCommandType.MailShell, False, 0)}}
-    Public IMAP_Messages As IEnumerable(Of UniqueId)
+    Friend IMAP_Messages As IEnumerable(Of UniqueId)
     Public IMAP_CurrentDirectory As String = "Inbox"
     Friend ExitRequested, KeepAlive As Boolean
     Public MailModCommands As New ArrayList

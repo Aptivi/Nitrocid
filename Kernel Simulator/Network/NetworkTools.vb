@@ -203,11 +203,8 @@ Public Module NetworkTools
     Public Function ChangeHostname(ByVal NewHost As String) As Boolean
         Try
             HName = NewHost
-            Dim ksconf As New IniFile()
-            Dim pathConfig As String = paths("Configuration")
-            ksconf.Load(pathConfig)
-            ksconf.Sections("Login").Keys("Host Name").Value = HName
-            ksconf.Save(pathConfig)
+            ConfigToken("Login")("Host Name") = HName
+            File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
             Return True
         Catch ex As Exception
             WStkTrc(ex)

@@ -19,12 +19,12 @@
 Imports System.Net.Sockets
 Imports System.Threading
 
-Module RemoteProcedure
+Public Module RemoteProcedure
 
     Public RPCListen As UdpClient
     Public RPCPort As Integer = 12345
     Public RPCThread As New Thread(AddressOf RecCommand) With {.IsBackground = True, .Name = "RPC Thread"}
-    Public RPCEnabled As Boolean
+    Public RPCEnabled As Boolean = True
     Public RPCStopping As Boolean
 
     ''' <summary>

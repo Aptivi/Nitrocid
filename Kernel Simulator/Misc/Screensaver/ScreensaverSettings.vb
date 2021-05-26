@@ -26,7 +26,7 @@ Public Module ScreensaverSettings
     ''' <summary>
     ''' [ColorMix] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
-    Public ColorMixTrueColor As Boolean
+    Public ColorMixTrueColor As Boolean = True
     ''' <summary>
     ''' [Disco] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
@@ -34,7 +34,7 @@ Public Module ScreensaverSettings
     ''' <summary>
     ''' [Disco] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
-    Public DiscoTrueColor As Boolean
+    Public DiscoTrueColor As Boolean = True
     ''' <summary>
     ''' [GlitterColor] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
@@ -42,7 +42,7 @@ Public Module ScreensaverSettings
     ''' <summary>
     ''' [GlitterColor] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
-    Public GlitterColorTrueColor As Boolean
+    Public GlitterColorTrueColor As Boolean = True
     ''' <summary>
     ''' [Lines] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
@@ -50,7 +50,7 @@ Public Module ScreensaverSettings
     ''' <summary>
     ''' [Lines] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
-    Public LinesTrueColor As Boolean
+    Public LinesTrueColor As Boolean = True
     ''' <summary>
     ''' [Dissolve] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
@@ -58,7 +58,7 @@ Public Module ScreensaverSettings
     ''' <summary>
     ''' [Dissolve] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
-    Public DissolveTrueColor As Boolean
+    Public DissolveTrueColor As Boolean = True
     ''' <summary>
     ''' [BouncingBlock] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
@@ -66,7 +66,7 @@ Public Module ScreensaverSettings
     ''' <summary>
     ''' [BouncingBlock] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
-    Public BouncingBlockTrueColor As Boolean
+    Public BouncingBlockTrueColor As Boolean = True
     ''' <summary>
     ''' [ProgressClock] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
@@ -74,7 +74,7 @@ Public Module ScreensaverSettings
     ''' <summary>
     ''' [ProgressClock] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
-    Public ProgressClockTrueColor As Boolean
+    Public ProgressClockTrueColor As Boolean = True
     ''' <summary>
     ''' [Lighter] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
@@ -82,7 +82,7 @@ Public Module ScreensaverSettings
     ''' <summary>
     ''' [Lighter] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
-    Public LighterTrueColor As Boolean
+    Public LighterTrueColor As Boolean = True
     ''' <summary>
     ''' [Wipe] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
@@ -90,7 +90,7 @@ Public Module ScreensaverSettings
     ''' <summary>
     ''' [Wipe] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
-    Public WipeTrueColor As Boolean
+    Public WipeTrueColor As Boolean = True
     ''' <summary>
     ''' [Disco] Enable color cycling
     ''' </summary>
@@ -102,19 +102,19 @@ Public Module ScreensaverSettings
     ''' <summary>
     ''' [ProgressClock] The color of seconds progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
     ''' </summary>
-    Public ProgressClockSecondsProgressColor As String
+    Public ProgressClockSecondsProgressColor As String = 4
     ''' <summary>
     ''' [ProgressClock] The color of minutes progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
     ''' </summary>
-    Public ProgressClockMinutesProgressColor As String
+    Public ProgressClockMinutesProgressColor As String = 5
     ''' <summary>
     ''' [ProgressClock] The color of hours progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
     ''' </summary>
-    Public ProgressClockHoursProgressColor As String
+    Public ProgressClockHoursProgressColor As String = 6
     ''' <summary>
     ''' [ProgressClock] The color of date information. It can be 1-16, 1-255, or "1-255;1-255;1-255".
     ''' </summary>
-    Public ProgressClockProgressColor As String
+    Public ProgressClockProgressColor As String = 7
 
     '-> Delays
     ''' <summary>

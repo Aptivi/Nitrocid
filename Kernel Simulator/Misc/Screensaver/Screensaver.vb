@@ -29,7 +29,7 @@ Public Module Screensaver
     'Variables
     Public LockMode As Boolean = False
     Public InSaver As Boolean = False
-    Public defSaverName As String = "glitterMatrix"
+    Public defSaverName As String = "matrix"
     Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"matrix", False}, {"glitterMatrix", False}, {"disco", False},
                                                                  {"lines", False}, {"glitterColor", False}, {"aptErrorSim", False}, {"hackUserFromAD", False},
                                                                  {"bouncingText", False}, {"dissolve", False}, {"bouncingBlock", False}, {"progressClock", False},
@@ -256,11 +256,8 @@ Public Module Screensaver
     Public Sub SetDefaultScreensaver(ByVal saver As String, Optional ByVal setDef As Boolean = True)
         If ScrnSvrdb.ContainsKey(saver) Then
             Wdbg("I", "{0} is found. (Un)Setting it to default...", saver)
-            Dim ksconf As New IniFile()
-            Dim pathConfig As String = paths("Configuration")
-            ksconf.Load(pathConfig)
-            ksconf.Sections("Screensaver").Keys("Screensaver").Value = saver
-            ksconf.Save(pathConfig)
+            ConfigToken("Screensaver")("Screensaver") = saver
+            File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
             ScrnSvrdb(defSaverName) = False
             defSaverName = saver
             ScrnSvrdb(saver) = setDef

@@ -225,7 +225,6 @@
     <Compile Include="Login\PermissionManagement.vb" />
     <Compile Include="Misc\Configuration\ConfigTool\ToolPrompts.vb" />
     <Compile Include="Misc\Encryption\Encryption.vb" />
-    <Compile Include="Misc\Configuration\OldConfigUp.vb" />
     <Compile Include="Misc\Encryption\HashVerifier.vb" />
     <Compile Include="Misc\FieldManager.vb" />
     <Compile Include="Misc\Forecast\Forecast.vb" />

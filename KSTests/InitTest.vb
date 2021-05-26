@@ -27,7 +27,7 @@ Imports KS
     ''' <param name="Context">Test context</param>
     <AssemblyInitialize()> Public Shared Sub ReadyEverything(Context As TestContext)
         InitPaths()
-        CreateConfig(False)
+        CreateConfig()
         LoadUserToken()
     End Sub
 
@@ -41,11 +41,12 @@ Imports KS
         If File.Exists(paths("Home") + "/NewFile.txt") Then File.Delete(paths("Home") + "/NewFile.txt")
         If File.Exists(paths("Home") + "/1mb-test.csv") Then File.Delete(paths("Home") + "/1mb-test.csv")
         If File.Exists(paths("Home") + "/DebugDeviceNames.json") Then File.Delete(paths("Home") + "/DebugDeviceNames.json")
+        If File.Exists(paths("Home") + "/KernelConfig.json") Then File.Delete(paths("Home") + "/KernelConfig.json")
         If Directory.Exists(paths("Home") + "/TestMovedDir2") Then Directory.Delete(paths("Home") + "/TestMovedDir2", True)
         If Directory.Exists(paths("Home") + "/NewDirectory") Then Directory.Delete(paths("Home") + "/NewDirectory", True)
         If Directory.Exists(paths("Home") + "/TestDir") Then Directory.Delete(paths("Home") + "/TestDir", True)
         If Directory.Exists(paths("Home") + "/TestDir2") Then Directory.Delete(paths("Home") + "/TestDir2", True)
-        CreateConfig(False)
+        CreateConfig()
     End Sub
 
 End Class

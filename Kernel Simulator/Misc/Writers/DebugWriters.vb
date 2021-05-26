@@ -18,7 +18,7 @@
 
 Imports System.IO
 
-Module DebugWriters
+Public Module DebugWriters
 
     Public dbgWriter As StreamWriter
     Public DebugQuota As Double = 1073741824 '1073741824 bytes = 1 GiB (1 GB for Windows)

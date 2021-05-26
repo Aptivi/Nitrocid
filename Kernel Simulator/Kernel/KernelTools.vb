@@ -322,10 +322,6 @@ Public Module KernelTools
         StartRDebugThread(False)
         Wdbg("I", "Remote debugger stopped")
 
-        'Close settings
-        configReader = New IniFile()
-        Wdbg("I", "Settings closed")
-
         'Stop all mods
         ParseMods(False)
         Wdbg("I", "Mods stopped")
@@ -456,7 +452,7 @@ Public Module KernelTools
     Sub InitPaths()
         If IsOnUnix() Then
             paths.AddIfNotFound("Mods", Environ("HOME") + "/KSMods/")
-            paths.AddIfNotFound("Configuration", Environ("HOME") + "/kernelConfig.ini")
+            paths.AddIfNotFound("Configuration", Environ("HOME") + "/KernelConfig.json")
             paths.AddIfNotFound("Debugging", Environ("HOME") + "/kernelDbg.log")
             paths.AddIfNotFound("Aliases", Environ("HOME") + "/Aliases.json")
             paths.AddIfNotFound("Users", Environ("HOME") + "/Users.json")
@@ -470,7 +466,7 @@ Public Module KernelTools
             paths.AddIfNotFound("Temp", "/tmp")
         Else
             paths.AddIfNotFound("Mods", Environ("USERPROFILE").Replace("\", "/") + "/KSMods/")
-            paths.AddIfNotFound("Configuration", Environ("USERPROFILE").Replace("\", "/") + "/kernelConfig.ini")
+            paths.AddIfNotFound("Configuration", Environ("USERPROFILE").Replace("\", "/") + "/KernelConfig.json")
             paths.AddIfNotFound("Debugging", Environ("USERPROFILE").Replace("\", "/") + "/kernelDbg.log")
             paths.AddIfNotFound("Aliases", Environ("USERPROFILE").Replace("\", "/") + "/Aliases.json")
             paths.AddIfNotFound("Users", Environ("USERPROFILE").Replace("\", "/") + "/Users.json")

@@ -1,4 +1,6 @@
 ﻿
+'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+'
 '    This file is part of Kernel Simulator
 '
 '    Kernel Simulator is free software: you can redistribute it and/or modify
@@ -23,11 +25,11 @@ Imports KS.NetworkTools
 Imports KS.AliasManager
 Imports KS.UserManagement
 Imports KS.PermissionManagement
+Imports KS.Config
 Imports System.IO
 
 Module Converter
 
-    'FIXME: This program is WIP, so the main entry point looks unfinished.
     ''' <summary>
     ''' Main entry point
     ''' </summary>
@@ -187,6 +189,8 @@ Module Converter
                         W("  - Invalid type {0}", True, ColTypes.Error, AliasType)
                 End Select
             Next
+
+            'Save the changes
             W("  - Saving aliases to Aliases.json...", True, ColTypes.Neutral)
             SaveAliases()
         Else
@@ -195,23 +199,30 @@ Module Converter
         End If
         Console.WriteLine()
 
-#If Not CONFIGNOTDONE Then
         'Import all config to JSON
         W("- Importing all kernel config to KernelConfig.json...", True, ColTypes.Stage)
         If File.Exists(ListOfBackups("Configuration")) Then
             'Read all config from old file
             W("  - Reading config from kernelConfig.ini...", True, ColTypes.Neutral)
-            'TODO: Make config conversion here.
+            If Not ReadPreFivePointFiveConfig(ListOfBackups("Configuration")) Then
+                If Not ReadFivePointFiveConfig(ListOfBackups("Configuration")) Then
+                    W("  - Warning: kernelConfig.ini has incompatible format. Generating new config anyways...", True, ColTypes.Warning)
+                End If
+            End If
+
+            'Save the changes
+            W("  - Saving configuration to KernelConfig.json...", True, ColTypes.Neutral)
+            CreateConfig()
         Else
             'File not found. Skip stage.
             W("  - Warning: kernelConfig.ini not found in home directory.", True, ColTypes.Warning)
         End If
         Console.WriteLine()
 
-        W("- That's far as we got. Enjoy!", True, ColTypes.Stage)
+        'Print this message:
+        W("- Successfully converted all settings to new format! Enjoy!", True, ColTypes.Stage)
         W("- Press any key to exit.", True, ColTypes.Stage)
         Console.ReadKey(True)
-#End If
 
     End Sub
 
@@ -228,17 +239,13 @@ Module Converter
 
         'Populate our dictionary with old paths
         If IsOnUnix() Then
-#If CONFIGNOTDONE = False Then
             OldPaths.Add("Configuration", Environ("HOME") + $"{AppendedPath}/kernelConfig.ini")
-#End If
             OldPaths.Add("Aliases", Environ("HOME") + $"{AppendedPath}/aliases.csv")
             OldPaths.Add("Users", Environ("HOME") + $"{AppendedPath}/users.csv")
             OldPaths.Add("FTPSpeedDial", Environ("HOME") + $"{AppendedPath}/ftp_speeddial.csv")
             OldPaths.Add("BlockedDevices", Environ("HOME") + $"{AppendedPath}/blocked_devices.csv")
         Else
-#If CONFIGNOTDONE = False Then
             OldPaths.Add("Configuration", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/kernelConfig.ini")
-#End If
             OldPaths.Add("Aliases", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/aliases.csv")
             OldPaths.Add("Users", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/users.csv")
             OldPaths.Add("FTPSpeedDial", Environ("USERPROFILE").Replace("\", "/") + $"{AppendedPath}/ftp_speeddial.csv")
@@ -258,17 +265,13 @@ Module Converter
 
         'Populate our dictionary with old paths
         If IsOnUnix() Then
-#If CONFIGNOTDONE = False Then
             NewPaths.Add("Configuration", Environ("HOME") + "/KernelConfig.json")
-#End If
             NewPaths.Add("Aliases", Environ("HOME") + "/Aliases.json")
             NewPaths.Add("Users", Environ("HOME") + "/Users.json")
             NewPaths.Add("FTPSpeedDial", Environ("HOME") + "/FTP_SpeedDial.json")
             NewPaths.Add("DebugDevNames", Environ("USERPROFILE").Replace("\", "/") + "/DebugDeviceNames.json")
         Else
-#If CONFIGNOTDONE = False Then
             NewPaths.Add("Configuration", Environ("USERPROFILE").Replace("\", "/") + "/KernelConfig.json")
-#End If
             NewPaths.Add("Aliases", Environ("USERPROFILE").Replace("\", "/") + "/Aliases.json")
             NewPaths.Add("Users", Environ("USERPROFILE").Replace("\", "/") + "/Users.json")
             NewPaths.Add("FTPSpeedDial", Environ("USERPROFILE").Replace("\", "/") + "/FTP_SpeedDial.json")

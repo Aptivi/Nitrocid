@@ -24,7 +24,8 @@
     <OutputPath>..\Kernel Simulator\KSBuild\</OutputPath>
     <DocumentationFile>KSConverter.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-    <DefineConstants>CONFIGNOTDONE</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,7 +36,8 @@
     <OutputPath>..\Kernel Simulator\KSBuild\</OutputPath>
     <DocumentationFile>KSConverter.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
-    <DefineConstants>CONFIGNOTDONE</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -74,6 +76,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConfigFormats\FivePointFive.vb" />
+    <Compile Include="ConfigFormats\PreFivePointFive.vb" />
     <Compile Include="Converter.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -112,6 +116,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Extensification">
+      <Version>2021.4.2.1</Version>
+    </PackageReference>
     <PackageReference Include="MadMilkman.Ini">
       <Version>1.0.6</Version>
     </PackageReference>
@@ -129,5 +136,6 @@
   <ItemGroup>
     <Content Include="OfficialAppIcon-Generic-256.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
