@@ -131,7 +131,7 @@
     <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIER="DEV",NTFSCorruptionFix</DefineConstants>
+    <DefineConstants>SPECIFIER="RC",NTFSCorruptionFix</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -144,7 +144,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
-    <DefineConstants>SPECIFIER="DEV",NTFSCorruptionFix</DefineConstants>
+    <DefineConstants>SPECIFIER="RC",NTFSCorruptionFix</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Extensification">

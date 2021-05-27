@@ -31,7 +31,7 @@ Public Module Kernel
     Public EventManager As New Events
     Public DefConsoleOut As TextWriter
     Public ScrnTimeout As Integer = 300000
-    Public ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Milestone 7"
+    Public ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Release Candidate 1"
 
     ''' <summary>
     ''' Entry point
