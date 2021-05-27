@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports KS
+Imports Newtonsoft.Json.Linq
 
 <TestClass()> Public Class InitTest
 
@@ -28,6 +29,7 @@ Imports KS
     <AssemblyInitialize()> Public Shared Sub ReadyEverything(Context As TestContext)
         InitPaths()
         CreateConfig()
+        ConfigToken = JObject.Parse(File.ReadAllText(paths("Configuration")))
         LoadUserToken()
     End Sub
 
