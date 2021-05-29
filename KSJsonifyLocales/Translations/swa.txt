@@ -12,27 +12,12 @@ Hoja za sindano zitapangiwa kuanza wakati wa kuwasha tena.
 Sindano ya Hoja imefutwa.
 Hitilafu wakati wa kuchanganua hoja halisi za mstari wa amri: {0}
 Kiolezo batili cha rangi {0}
-Chaguo-msingi
-Desturi
 hwprobe: Vifaa vyako vitachunguzwa. Tafadhali subiri...
-hwprobe: Vifaa tayari vimechunguzwa.
-hwprobe: Vifaa havijachunguzwa. Probe kutumia 'hwprobe'
 CPU: Cores moja au zaidi ya CPU imeshindwa kuchunguzwa. Inaonyesha habari hata hivyo ...
 RAM: Chips moja au zaidi ya RAM ilishindwa kuchunguzwa. Inaonyesha habari hata hivyo ...
 HDD: Moja au zaidi ya diski ngumu ilishindwa kuchunguzwa. Inaonyesha habari hata hivyo ...
 CPU: Jumla ya wasindikaji: {0}
-CPU: {0} {1} MHz
-RAM: {0} MB = {1} MB
-RAM: Nafasi zilizotumiwa (kwa majina): {0}
-RAM: Nafasi zilizotumiwa (kwa nambari): {0} / {1} ({2}%)
-RAM: Hali ya upelelezi imepunguzwa na itaondolewa katika kutolewa baadaye.
-HDD: {0} GB {1} {2}
-HDD: {0} {1} {2} GB {3}
-HDD: CHS: {4} mitungi | {5} vichwa | Sekta {6}
-HDD: CHS: {3} mitungi | {4} vichwa | Sekta {5}
-hwprobe: Upelelezi hauhimiliwi kwa sababu haujatengenezwa kuendesha majaribio kwenye Unix.
 Ingiza nenosiri la msimamizi kwa matengenezo.
-Hakuna watumiaji zaidi waliobaki kwenye orodha.
 Kosa la Kernel wakati wa kuwasha: {0}
 PANIC DOUBLE: Muda wa kuwasha tena unazidi kiwango cha juu cha kuruhusiwa {0} wakati wa kuanza tena Umepata mdudu wa punje.
 [{0}] hofu: Kuwasha upya kumewashwa kwa sababu ya kiwango cha hitilafu kuwa {0}.
@@ -46,18 +31,12 @@ HABARI MBILI: Aina ya Hitilafu {0} ni batili.
 HABARI MBILI: Mdudu wa Kernel: {0}
 Inazima ...
 Inawasha upya ...
----===+++> Karibu kwenye kiini | Toleo la {0} <+++===---
 Mfano mwingine wa Kernel Simulator inaendesha. Kuzima ikiwa kuna kuingiliwa.
-Mtumiaji {0} ameongezwa kwenye orodha ya wasimamizi.
-Mtumiaji {0} ameongezwa kwenye orodha ya walemavu.
 Imeshindwa kuongeza mtumiaji katika orodha za ruhusa: aina batili {0}
 Imeshindwa kuongeza mtumiaji katika orodha za ruhusa: mtumiaji batili {0}
-Mtumiaji {0} ameondolewa kwenye orodha ya wasimamizi.
-Mtumiaji {0} ameondolewa kwenye orodha ya walemavu.
 Imeshindwa kuondoa mtumiaji kwenye orodha za ruhusa: aina batili {0}
 Umeingia tayari.
 Imeshindwa kuondoa mtumiaji kwenye orodha za ruhusa: mtumiaji batili {0}
-Umepata hitilafu katika mfumo wa ruhusa: hali batili {0}
 Umepata hitilafu, au ruhusa uliyojaribu kuongeza au kuondoa tayari imefanywa, au kosa lingine.
 Kosa {0}: {1}
 Umepata hitilafu, au ruhusa uliyojaribu kuhariri kwa mtumiaji mpya imeshindwa.
@@ -79,17 +58,6 @@ Mtumiaji {0} haruhusiwi kuondolewa.
 Mtumiaji {0} tayari ameingia. Ingia na uingie kama msimamizi mwingine.
 Mtumiaji {0} ameondolewa
 Hitilafu wakati wa kujaribu kuondoa jina la mtumiaji.
-{0} kati ya {1} = {2}
-Jaribio la kugawanya kwa sifuri hairuhusiwi.
-Kumekuwa na jaribio linaloshukiwa la kuhesabu ambalo lilisababisha kufurika.
-Kuna hitilafu wakati wa kuhesabu: {0}
-{0} haiwezi kubadilishwa kuwa {1}.
-Ama chanzo
- au marudio
- haipo kwenye seva.
-{0} kwa {1}: {2}
-Hitilafu wakati wa kujaribu kubadilisha kutoka {0} kuwa {1}: {2}
-Kosa
 Kiokoa skrini kilichoombwa {0} haipatikani.
 {0} imeanzishwa vizuri.
 {0} haikuanzisha. Msimbo wa skrini inaweza kuwa na hitilafu wakati wa kuanzisha.
@@ -99,12 +67,6 @@ Bongo {0} haipatikani katika hifadhidata. Angalia jina na ujaribu tena.
 Screensaver haiwezi kupakiwa kwa sababu ya yafuatayo:
 Kuna hitilafu kubwa wakati wa kuchapisha maandishi.
 Kuna hitilafu kujaribu kuunda usanidi.
-Kuna hitilafu kujaribu kuunda usanidi: {0}
-Sasisho kutoka {0} hadi {1} liligunduliwa. Inasasisha usanidi ...
-Kuna hitilafu kujaribu kusasisha usanidi: {0}.
-Kuna hitilafu kujaribu kusasisha usanidi.
-Kuna hitilafu wakati wa kujaribu kusoma usanidi.
-Kuna hitilafu wakati wa kujaribu kusoma usanidi: {0}
 Hitilafu wakati wa kujaribu kuweka RAM: {0} - Inaendelea ...
 Mod haiwezi kupakiwa kwa sababu ya yafuatayo:
 mod: Inapakia mods ...
@@ -129,32 +91,19 @@ Lazima uunganishe kwenye seva kabla ya kubadilisha saraka
 Saraka ya eneo lako: {0}
 Saraka ya mbali: {0}
 Lazima uunganishe kwenye seva kabla ya kupata saraka ya mbali ya sasa.
-Inafuta faili {0} ...
-Je! Una uhakika unataka kufuta faili {0} <y/n>?
-Imefuta faili {0}
 Lazima uunganishe kwenye seva na marupurupu ya kiutawala kabla ya kufanya ufutaji.
-Ingiza faili ili uondoe.
-Lazima uwe na ruhusa za kiutawala kwenye jina lako la mtumiaji ili uweze kuondoa.
 Imetenganishwa kutoka {0}
 Bado hujaunganisha kwenye seva yoyote
 Inapakua faili {0} ...
 Faili iliyopakuliwa {0}.
-Upakuaji umeshindwa kwa faili {0} kwa sababu faili ya karibu imeharibika.
 Lazima uunganishe kwenye seva kabla ya kufanya usambazaji.
 Ingiza faili kupakua kwa saraka ya karibu.
 {0} KB | Imebadilishwa katika: {1}
 Unapaswa kuungana na seva kabla ya kuorodhesha faili zote za mbali.
-Inabadilisha jina la faili {0} kuwa {1} ...
-Imebadilishwa jina tena
-Ingiza faili na jina jipya la faili.
 Inapakia faili {0} ...
 Faili iliyopakiwa {0}
 Ingiza faili ya kupakia kwenye saraka ya mbali. pakia <faili> <kuongoza>
-Hitilafu wakati wa kujaribu kutekeleza amri ya FTP
 (Ndani:
-{0} folda, faili {1}
-(Ufikiaji Umekataliwa)
-{0} KB, Iliundwa katika {1} {2}, Imebadilishwa katika {3} {4}
 Inapata saraka ya sasa ya karibu
 Inapata saraka ya sasa ya mbali
 Inaunganisha kwa seva ya FTP (lazima ianze na "ftp://" au "ftps://")
@@ -167,18 +116,8 @@ Inatoka kwenye ganda la FTP na kurudi kwenye kernel
 Inaonyesha skrini ya msaada
 Orodha saraka ya ndani
 Orodha saraka ya mbali
-Inapeana jina faili au saraka maalum
 Inapakia faili ya ndani kwa saraka ya mbali kwa kutumia binary au maandishi
-Kulikuwa na hitilafu kwenye ganda la FTP.
 Ujumbe wa FTP: Amri iliyoombwa {0} haipatikani. Angalia 'msaada' kwa orodha ya amri zinazopatikana zilizoainishwa kwenye ganda la FTP.
-wavu: Umepata majibu kutoka kwa {0} katika {1} ms
-Imeisha muda, imetengwa, au seva nje ya mtandao.
-wavu: Jina la kompyuta yako kwenye mtandao ni {0}
-wavu: Jina la mwenyeji wako ni {1}
-wavu: Inaonekana kwamba kompyuta ziko kwenye kikoa au kikundi cha kazi:
-wavu: WiFi au Ethernet imekatika.
-wavu: Inaonekana kwamba kompyuta zimeunganishwa hapa chini:
-wavu: Anwani ya Router: {0}
 Imeshindwa kupata mali ya adapta {0}
 Nambari ya adapta:
 Jina la adapta:
@@ -189,9 +128,7 @@ Pakiti za Unicast:
 Hitilafu pakiti zinazoingia / zinazotoka:
 Alias ​​haiwezi kuwa jina sawa na amri.
 Amri haikupatikana kwa majina kwa {0}.
-Kuweka sawa {0} kwa {1} ni marufuku kabisa.
 Sasa unaweza kukimbia "{0}" kama amri: "{1}".
-Hauwezi tena kutumia "{0}" kama amri "{1}".
 Jina {0} halipatikani kuondolewa.
 Hali batili {0}.
 Hoja zilizoingizwa, {0}, zitapangiwa ratiba ya kuanza tena.
@@ -201,16 +138,12 @@ Jina la mwenyeji tupu.
 Inabadilika kutoka: {0} kuwa {1} ...
 Ujumbe mtupu wa siku hiyo.
 MAL Tupu Baada ya Kuingia.
-Inabadilisha MAL kutoka {0} kuwa {1} ...
 Nenosiri lisilofaa la mtumiaji.
 Nywila hazilingani.
 Jina la mtumiaji limebadilishwa kuwa {0}!
 Jina jipya uliloweka tayari limepatikana.
-Kuorodhesha PC hakujatumika bado kwenye Unix.
-Vifupisho ambavyo vimekatazwa: {0}
 {0} haipatikani.
 Usanidi umepakiwa upya. Unaweza kuhitaji kuwasha tena kernel ili mabadiliko mengine yaanze.
-Kila kitu kimewekwa upya kwa mipangilio ya kawaida.
 Rangi moja au zaidi ni batili.
 Rangi hazipatikani. Washa ganda la rangi kwenye usanidi wa kernel.
 Bongo {0} haipatikani.
@@ -222,85 +155,36 @@ Hoja kwenye Boot:
 Amri ya usaidizi imetengenezwa:
 MOTD kwenye Kuingia:
 Saa / Tarehe kwenye kona:
-Vifaa vya uchunguzi:
-Mada ya sasa:
 [ Mipangilio ya vifaa ] {0}
 {0}[ Mipangilio ya Mtumiaji ]
 Jina la mtumiaji la sasa:
 Jina la mwenyeji wa sasa:
 Majina ya watumiaji yanayopatikana:
-Jina la mwenyeji wa kompyuta:
-{0}[ Mipangilio ya Ujumbe ]
-Nambari ya chanzo:
-Hakimiliki (c)
-Leseni
-sasa
 Hitilafu wakati wa kujaribu kutekeleza amri
-Huongeza watumiaji (Admins tu ndio wanaweza kufikia amri hii)
-Huongeza majina kwa amri (Admins tu ndio wanaweza kupata amri hii)
-Inatoa hoja kwa kernel (kuwasha upya inahitajika, admins tu)
-Calculator rahisi
 Inabadilisha saraka
-Inabadilisha jina la mwenyeji (Admins tu)
-Inabadilisha MAL, MOTD Baada ya Kuingia (Admins tu)
-Inabadilisha MOTD, Ujumbe wa Siku (Admins tu)
 Inabadilisha nenosiri kwa mtumiaji wa sasa
-Inabadilisha jina la mtumiaji (Admins tu)
 Inafuta skrini
-Badilisha sarafu
-Inaonyesha kumbukumbu za utatuzi (Admins tu)
 Tumia ganda la FTP kuingiliana na seva
 Ukurasa wa usaidizi
-Vumbua vifaa kwa mikono (Wakati mmoja kwenye kernel ya 'nohwprobe')
 Orodhesha yaliyomo kwenye faili / folda kwenye folda ya sasa
-Inapakia tena faili ya skrini katika %USERPROFILE%\KSMods
 Inafunga skrini yako na nywila
 Magogo wewe nje
-Orodhesha vifaa vyote vya mtandao ambavyo viko mkondoni (na nje ya mtandao katika vikoa)
-Orodhesha anwani zote za mtandao kwenye mwenyeji
-Orodha zote anwani za mtandao juu ya mwenyeji kutumia mti
 Inaunda saraka
 Orodha orodha juu ya njia zote zinazopatikana
-Inaonyesha orodha iliyokatazwa ya majina
-Dhibiti ruhusa kwa watumiaji (Wasimamizi pekee ndio wanaweza kufikia amri hii)
-Angalia kuona ikiwa anwani maalum inapatikana
-Anaandika yaliyomo kwenye faili kwenye koni
 Huanzisha tena kompyuta yako (ONYO: Hakuna usawazishaji, kwa sababu sio punje ya mwisho)
 Inapakia tena faili ya usanidi ambayo imebadilishwa.
-Huondoa saraka
-Huondoa mtumiaji kutoka kwenye orodha (Admins pekee)
 Huokoa skrini yako kutoka kwa kuchoma moto
-Kikokotoo cha kisayansi. Kigeuzi cha kitengo kimejitenga kwa amri nyingine
-Inaweka rangi ya punje
 Inaweka viwambo vya skrini vya kernel
 Inaweka mandhari ya punje
-Inaonyesha majina
-Inaonyesha MOTD baada ya kuingia iliyowekwa na mtumiaji au kernel
-Inaonyesha ujumbe wa siku iliyowekwa na mtumiaji au kernel
 Inaonyesha tarehe na saa
 Inaonyesha tarehe na wakati katika maeneo
 Punje itafungwa
 Habari ya mfumo
-Kigeuzi cha kitengo ambacho kimetenganishwa na scicalc.
-Inaonyesha utegemezi wa chanzo wazi
-Mwongozo wa mtumiaji unaoelezea sana.
 * Unaweza kutumia amri nyingi ukitumia koloni kati ya amri.
-Amri zinazopatikana:
-Amri za Mod:
-Mabadiliko ya amri:
 Matumizi:
-Hoja zilizotengwa na koma
 ambapo hoja zitakuwa {0}
-kupata saraka ya sasa
-Katika chanzo gani na marudio ni herufi 3 za UPPERCASE za kiwango cha ubadilishaji
-Orodha ya vitambulisho na majina yote:
-Inakuonyesha magogo ya utatuzi ili uweze kutuma logi kwetu.
 Inazindua ganda la FTP.
-Inachunguza vifaa (inafanya kazi tu wakati vifaa hazijachunguzwa na hwprobe haijatekelezwa).
-Orodha ya maelezo ya mtandao, na pia kila kompyuta iliyounganishwa kwenye mtandao.
 Marafiki wa
-Orodha ya maelezo ya mtandao, pamoja na kila kompyuta iliyounganishwa na mtandao, katika fomu ya mti.
-Orodha ya habari za mtandao, pamoja na kila kompyuta.
 ambapo modname.ss.vb itakuwa
 Inafunga skrini yako na nywila.
 Hukuweka nje ya mtumiaji.
@@ -313,41 +197,25 @@ Inaonyesha tarehe na saa.
 Inaonyesha tarehe na saa katika maeneo.
 Inazima kompyuta yako iliyoiga.
 Inaonyesha habari za mfumo na matoleo.
-Inaonyesha maktaba ya chanzo wazi iliyotumiwa
 Kulikuwa na hitilafu kwenye ganda.
 Huna ruhusa ya kutumia {0}
 Ujumbe wa Shell: Amri iliyoombwa {0} hairuhusiwi kutekeleza katika hali ya matengenezo.
 Ujumbe wa Shell: Amri iliyoombwa {0} haipatikani. Tazama 'msaada' kwa amri zinazopatikana.
 Ujumbe wa Shell: Amri {0} hairuhusiwi kuingia kwenye akaunti.
-Ujumbe wa Shell: Amri iliyoombwa {0} haipatikani.
 Hitilafu wakati wa kujaribu kutekeleza amri.
 wakati: saa ni {0}
 wakati wa saa: Leo ni {0}
 wakati: Eneo la Wakati: {0}
 - Wakati wa {0}: {1}
 kufuta skrini.
-Inaonekana kuwa ukurasa wa mwongozo {0} haupatikani.
-Kuna hitilafu wakati wa kujaribu kupakia ukurasa wa mwongozo {0} becuase {1}.
-Ukurasa huu wa mwongozo haujakamilika kwa sababu zifuatazo:
-Bonyeza kitufe chochote ili uendelee ...
- | {0} maneno | Marekebisho v {1} | {2} sehemu
-Kichwa hiki cha ukurasa wa mwongozo hakijaandikwa
-Ukurasa huu wa mwongozo ({0}) hauna maandishi yoyote ya mwili. Inafuta ukurasa ...
-Ukurasa huu wa mwongozo ({0}) hauna sehemu yoyote. Inafuta ukurasa ...
 Inaendelea {0}
 Hujaruhusiwa kupata maelezo ya {0}.
 Amri hii imepitwa na wakati na itaondolewa katika toleo lijalo.
 Hujaruhusiwa kubadilisha nenosiri la {0} kwa sababu mlengwa alikuwa msimamizi.
-Badilisha kiasi cha pesa kutoka nchi hadi nchi
-Sarafu:
 usrmgr: Jina la mtumiaji {0} tayari limepatikana
-Ingiza ufunguo wako wa API:
-Haikuweza kupata kompyuta. Ikiwa unatumia toleo la hivi karibuni la Windows 10, unahitaji kuwezesha SMBv1. Itifaki hii hata hivyo haina usalama na tutajaribu kutatua shida hii.
 Inafuta kila kitu kwenye logi ya utatuzi
-Inapata matoleo ya SSE
 Lugha batili
 Inabadilisha lugha
-Labda huwezi kuwa na libcpanel-json-xs-perl iliyosanikishwa kwenye mfumo wako. Rejelea msimamizi wa kifurushi chako kwa usanikishaji. Kwa mifumo ya Debian (na derivatives), unaweza kutaka kuendesha "sudo apt install libcpanel-json-xs-perl" katika emulator ya terminal. Maelezo zaidi ya kosa:
 ----------------------------- Kernel dampo la hofu ------------------------------
 >> Hofu habari <<
 > Maelezo: {0}
@@ -365,14 +233,12 @@ Labda huwezi kuwa na libcpanel-json-xs-perl iliyosanikishwa kwenye mfumo wako. R
 Muafaka, faili, mistari, na nguzo <<
 > Fremu {0}: Faili: {1} | Mstari: {2} | Safu wima: {3}
 > Kuna hitilafu wakati wa kujaribu kupata habari ya sura. {0}: {1}
-Umeweka lugha yako ya mfumo kuwa kitu kingine chochote isipokuwa Kiingereza. Samahani kwa usumbufu, lakini inaonekana kwamba Google na mtafsiri wake ni ajabu sana juu ya kutafsiri vizuizi vya nambari za lugha yoyote ya programu. Wakati tunarekebisha vizuizi vyote vya nambari kwa kurasa za mwongozo zilizotafsiriwa, tunashauri ufungue tikiti kwa Tafsiri ya Google kwa kutafsiri vizuizi vya nambari ambazo hazikusudiwa kutafsiriwa, na weka lugha yako ya mfumo kuwa Kiingereza ukiongea.
 Upakiaji upya mods.
 Mods zimepakiwa tena.
 Karibu Kernel!
 Umeingia kwa mafanikio kama <user>
 MOTD / MAL ni halali, lakini aina ya ujumbe sio halali. Kudhani MOTD ...
 Ilijaribu kusoma MOTD / MAL ambayo ni ya aina ya ujumbe batili.
-Wakati inadumisha muunganisho thabiti, inapakua {0} kwa {1} ...
 Upakuaji umekamilika.
 Imeshindwa kupakua katika kujaribu {0}: {1}
 Tafadhali tumia "ftp" ikiwa utapakua faili kutoka kwa seva ya FTP.
@@ -388,13 +254,11 @@ Jina tayari limepatikana: {0}
 Kumbukumbu ya utatuzi imeondolewa. Vifaa vyote vya utatuaji vilivyounganishwa bado vinaweza kuona ujumbe.
 Utoaji wa kumbukumbu ya utatuzi umeshindwa: {0}
 Saraka ya kubadilisha imeshindwa: {0}
-Jina la mtumiaji si sawa
 Taja anwani
 Imeshindwa kuondoa saraka: {0}
 Saa za eneo zimetajwa vibaya.
 Uteuzi batili wa wasifu.
 Inajaribu kuungana na {0} na wasifu {1} ...
-Hitilafu katika upimaji wa kitengo: {0}
 Amri {0} haipatikani. Tazama amri ya "msaada" kwa orodha ya amri.
 Imeshindwa kupata mali za IPv6 za adapta {0}. Inaendelea ...
 Habari ya IPv4:
@@ -408,26 +272,17 @@ Lugha uliyochagua ina aina mbili. Chagua moja:
 Chagua chaguo lako:
 Chaguo batili. Jaribu tena.
 Hujaruhusiwa kuweka saraka ya sasa kwa {0}: {1}
-Ruhusa {0} imeshindwa
 Njia uliyobainisha ni ndefu sana.
-Hauruhusiwi kuorodhesha katika {0}: {1}
-Hitilafu wakati wa kuangalia CPU: {0}
-Hitilafu wakati wa kuangalia RAM: {0}
-Hitilafu wakati wa kuangalia HDD: {0}
 CPU: ONYO: SSE2 itahitajika katika ahadi za maendeleo zijazo.
 Mkusanyaji wa habari wa dampo ameanguka wakati anajaribu kupata habari kuhusu {0}: {1}
 Hitilafu wakati wa kujaribu kukusanya tarehe ya kusanyiko {0}: {1}
 Hitilafu wakati wa kujaribu kuweka MOTD / MAL: {0}
 Hitilafu wakati wa kujaribu kupata MOTD / MAL: {0}
-Kuna ubaguzi batili wa marejeleo kwenye {0}: {1}
-Kuna ubaguzi batili wa marejeleo kwenye {0}: {1} - Ufuatiliaji wa Stack:
 Hitilafu wakati wa kujaribu kuanzisha kiwambo cha skrini, kwa sababu ya operesheni batili.
 Kupakia upya hakuruhusiwi katika hali salama.
 Kutumia mods hairuhusiwi kwenye hali salama.
-Changanua saraka yote kwa saizi au faili tu katika ile ya sasa.
 Orodhesha vifaa vyote vya utatuaji vilivyounganishwa.
 Hitilafu wakati wa kujaribu kuweka hali ya kuchanganua. Angalia thamani na ujaribu tena. Ikiwa hii ni sahihi, angalia ufuatiliaji wa stack wakati utatuaji wa kernel umewezeshwa.
-Weka vizuri.
 Njia sio faili wala saraka.
 Inaunda nakala nyingine ya faili chini ya saraka tofauti au jina.
 Husogeza faili kwa saraka nyingine
@@ -436,34 +291,11 @@ Kuhamisha faili kwenye saraka nyingine
 Mechi {0} ({1}): {2}
 Mechi {0}: {1}
 Muda uliotumika: {0} milliseconds
-Mtengenezaji: {0}
-Mfano: {0}
-Uwezo: {0} ({1}, {2}, {3})
-Aina ya kiolesura: {0}
-Nambari ya Hifadhi: {0}
-Bendera ya buti: {0} ({1})
-Kizigeu cha mwili: {0}
-Bendera ya msingi: {0}
-Ukubwa: {0} GB
-Kitengo cha kimantiki: {0}
-Imebanwa: {0}
 Jina: {0}
-Mfumo wa faili: {0}
-Uwezo: GB {0} bila GB {1}
-Kuorodhesha sehemu zote za kimantiki kwenye anatoa zote.
-Orodha zote zinazotafutwa.
-Orodha zote zilizochunguzwa kwenye gari maalum (na sehemu zote zenye mantiki kwenye anatoa zote).
 Huhesabu hesabu za faili.
 Inakupeleka kwenye GitHub Wiki yetu.
 Nambari ya usimbuaji batili.
 Huwasha au kulemaza utatuaji wa mbali.
-Inaanzisha mfumo wa faili ...
-Inapata sauti zilizosakinishwa
-Huweka sauti chaguomsingi
-Anaongea kamba yako kwa kutumia sauti chaguomsingi
-Sauti {0}: {1} ({2})
-Sauti batili.
-Sauti imewekwa
 Angalia ikiwa unaweza kutamka maneno kwa usahihi kwa wakati
 Angalia ikiwa unaweza kusuluhisha hesabu za hesabu kwa wakati
 Jibu maoni ya upendo au chuki.
@@ -474,23 +306,16 @@ Umeripoti maoni ya upendo tu!
 Umejibu tu maoni ya chuki!
 Kubwa! Maoni ya {0} yataondolewa kwa hilo.
 Kubwa! {0} itathamini shukrani zako.
-Andika "GetMeOut" kutoka.
 Imeandikwa kikamilifu!
 Imeandikwa vibaya.
 Kutatuliwa kikamilifu!
 Imesuluhishwa vibaya.
-MB {0} ya MB {1} zimepakuliwa.
 RPC tayari inaendesha.
 RPC inasikiliza kwenye anwani zote kwa kutumia bandari {0}.
 Inaanza RPC ...
 Inaunganisha kwa seva ya SSH.
 Ingiza nywila ya {0}:
 SSH Imetenganishwa.
-Inapakia faili ya synth na kuicheza.
-Faili iliyoandikwa {0} haipo.
-Faili sio faili ya maandishi ya maandishi.
-Imeshindwa kuchunguza laini ya synth.
-Kamba tupu imeainishwa
 Imeshindwa kuweka ukodishaji. Lugha inaweza isionyeshwe vizuri.
 Utatuzi haujawashwa.
 {0} haijawekwa tena kuwa kiokoa skrini chaguo-msingi.
@@ -519,8 +344,6 @@ Ujumbe umeshindwa, Heshima -, Msajili -
 Acha kutengeneza video ya aina hii !!!
 Rudi kazini kwako, video zako ndio mbaya zaidi!
 Tunabagua kwenye video hii.
-Kuweka sawa {0} kwa {1} ni marufuku.
-Hitilafu wakati wa kujaribu kuondoa arifa: {0}
 Inaonyesha arifa zote zilizopokelewa
 Inafukuza arifa
 Arifa imeondolewa kwa mafanikio.
@@ -532,39 +355,26 @@ Mali ya jumla ya IPv4
 Kwa mbali hufanya amri kwa PC ya mbali
 - Hatua ya 1: Uanzishaji wa mfumo
 - Hatua ya 2: Kugundua vifaa
-- Hatua ya 2: Usimamizi wa jina la mtumiaji la ndani
 - Hatua ya 3: Kugundua mods na skrini
-- Hatua ya 4: Ukusanyaji wa takataka
 - Hatua ya 4: Ingia
-Kabla ya kukusanya takataka: {0} baiti
-Baada ya kukusanya takataka: {0} baiti
-Hitilafu wakati wa kuanzisha RPC: {0}
 Inaonekana ulikuwa unatumia toleo la mgombea wa toleo. Inashauriwa ukae kwenye toleo thabiti.
-Inaonekana kwamba idadi ya watu wa mfumo wa faili inachukua muda mrefu sana.
 Aina batili {0}.
-Uwezo: {0}
-Hesabu ya kizigeu: {0}
 Ukubwa: {0}
-Imetumika: {0}
 Saraka {0} tayari ipo.
 Hitilafu wakati wa kujaribu kuunganisha kwenye {0}: Muda wa muunganisho umeisha au muunganisho uliopotea
 Calculator kuhesabu maneno.
 Hitilafu katika hesabu.
-Uwezo: {0} GB ({1}, {2}, {3})
 Inaonekana ulikuwa unatumia toleo la kukaribia kutolewa. Ingawa ni salama kutumia sasa, inashauriwa ukae kwenye toleo thabiti.
 Sasisho la mfumo
 Inatafuta sasisho za mfumo ...
 Tumepata toleo jipya:
 Unaweza kuipakua kwa:
-Imeshindwa kuangalia sasisho: {0}
-Kumbukumbu ya utatuzi haipatikani
 Hakuna arifa za hivi majuzi
 Utafutaji wa mfuatano uliobainishwa katika faili iliyotolewa
 Huhesabu hesabu za faili katika saraka maalum.
 Orodha zote barua pepe katika mtumiaji maalum.
 Ingiza jina la mtumiaji au anwani ya barua:
 Ingiza nywila:
-Ingiza anwani ya seva na bandari (<adress> au <adress>:[bandari]):
 Hitilafu wakati wa kuunganisha kwenye {0}: {1}
 Inaunganisha kwa {0} ...
 Inathibitisha ...
@@ -581,7 +391,6 @@ Nambari ya ujumbe sio thamani ya nambari.
 - Imetumwa saa {0} mnamo {1}
 Ujumbe uliobainishwa haupatikani.
 Utatuzi wa mbali umeshindwa kuanza: {0}
-Hitilafu wakati wa kutekeleza amri ya IMAP: {0}
 Kuandaa maelezo mafupi ... Inaweza kuchukua dakika kadhaa ...
 Jina la Mwenyeji, Jina la mtumiaji, Aina ya Takwimu, Usimbuaji, Usimbaji fiche, Itifaki
 Hitilafu wakati wa kujaribu kutekeleza hati: {0}
@@ -593,7 +402,6 @@ Mzunguko lazima uwe wa nambari. Ikiwa ni nambari, hakikisha kuwa ni >= 37 na <= 
 Wakati lazima uwe nambari.
 ambapo <majibu> ni majibu yenye herufi moja ya swali lililotenganishwa kwa mpasuko
 Hitilafu wakati wa kujaribu kuunganisha kwenye seva ya SSH: {0}
-MOTD tupu Baada ya Kuingia.
 Inaruhusu mtumiaji kuingiza ingizo
 Inabadilisha saraka ya barua ya sasa
 Imeshindwa kufungua folda ya barua {0}: {1}
@@ -616,7 +424,6 @@ Ingiza mada:
 Ingiza ujumbe wako hapa chini. Andika "EOF" ili uthibitishe.
 Inatuma ujumbe ...
 Ujumbe umetumwa.
-Hitilafu wakati wa kutuma ujumbe: {0}
 Anwani ya barua pepe si sahihi. Hakikisha umeandika anwani kwa usahihi na inalingana na muundo wa mfano ulioonyeshwa:
 Huondoa ujumbe
 Huondoa ujumbe wote kutoka kwa mpokeaji
@@ -656,10 +463,7 @@ Zuia kifaa cha utatuzi kwa anwani ya IP
 {0} bado haijazuiliwa.
 Hitilafu katika kupakia mipangilio
 Kuna hitilafu wakati wa kupakia mipangilio. Unaweza kuhitaji kukagua faili ya mipangilio.
-- Hatua ya 2: Kugundua mods na skrini
-- Hatua ya 3: Ingia
 Chagua sehemu:
-Chagua chaguo:
 Mipangilio ya Jumla ...
 Mipangilio ya vifaa ...
 Mipangilio ya Kuingia ...
@@ -675,14 +479,12 @@ Njia ya Matengenezo Kusababisha
 Badilisha Nenosiri la Mizizi ...
 Angalia Sasisho kwenye Mwanzo
 Kuchunguza kwa utulivu
-Probe RAM inafaa
 Onyesha MOTD kwenye Ingia
 Futa Screen kwenye Ingia
 Onyesha majina ya watumiaji yanayopatikana
 Rangi ya ganda
 Amri rahisi ya Msaada
 Bandari ya Utatuzi
-Kiambishi awali Chaguo-msingi cha Nick
 Pakua Jaribu tena Nyakati
 Ingia jina la mtumiaji la FTP
 Ingia anwani ya IP ya FTP
@@ -704,7 +506,6 @@ Wezesha "Badilisha Nenosiri la Mizizi" kutumia chaguo hili. Tafadhali rudi nyuma
 Badilisha Nenosiri la Mizizi?
 Weka Nenosiri la Mizizi ...
 Andika bandari ya utatuzi wa mbali. Lazima iwe nambari, na haipaswi kutumiwa tayari. Vinginevyo, mtatuaji wa mbali atashindwa kufungua bandari.
-Andika kiambishi awali cha jina la utani la utatuzi wa kijijini.
 Andika ni mara ngapi amri ya "pata" inapaswa kujaribu upakuaji ulioshindwa. Lazima iwe nambari.
 Andika wakati wa kuzindua kiwambo cha skrini baada ya sekunde maalum za millisekunde. Lazima iwe nambari.
 Andika baiti ngapi zinaweza kuhifadhi duka la utatuzi. Lazima iwe nambari.
@@ -716,12 +517,10 @@ Mipangilio ya Bongo ...
 Amilisha rangi 255
 Je! Unataka kuendelea kushikamana?
 Chaguo batili. Kwa kudhani hapana ...
-Hakuna moduli zilizogunduliwa. Kuruka hatua ...
 Badilisha Utamaduni wakati wa Kubadilisha Lugha
 Maandishi yameonyeshwa
 Andika maandishi yoyote unayotaka kuonyeshwa. Mfupi ni bora.
 Imeshindwa kupakia {0}
-Upakuaji umeshindwa kwa faili {0}: {1}
 Hitilafu wakati wa kutekeleza amri ya utatuzi wa mbali {0}: {1}
 Huongeza watumiaji
 Huongeza majina kwa amri
@@ -730,7 +529,6 @@ Inabadilisha jina la mwenyeji
 Inabadilisha MAL, MOTD Baada ya Kuingia
 Inabadilisha MOTD, Ujumbe Wa Siku
 Inabadilisha jina la mtumiaji
-Inaonyesha magogo ya utatuzi
 Dhibiti ruhusa kwa watumiaji
 Pakia tena faili ya skrini kwenye KSMods
 Huondoa mtumiaji kutoka kwenye orodha
@@ -739,7 +537,6 @@ Imeshindwa kuangalia sasisho.
 Hakuna watumiaji zaidi waliobaki kwenye orodha.
 Imeshindwa kuweka lugha.
 Hitilafu wakati wa kujaribu kuondoa arifa.
-Sasisho la {0} limegunduliwa. Inasasisha usanidi ...
 usrmgr: Imeshindwa kuunda jina la mtumiaji {0}: {1}
 Imeshindwa kubadilisha jina la mtumiaji. {0}
 Moja ya orodha za ruhusa haina jina la mtumiaji {0}.
@@ -773,12 +570,9 @@ Husogeza ujumbe wote kutoka kwa mpokeaji
 Barua zote zilizotengenezwa na {0} zinahamishwa kwa mafanikio.
 Imeshindwa kusogeza barua zote zilizotengenezwa na {0}.
 Ujumbe {0} kutoka {1} umehamishwa kutoka {2}. {3} ujumbe umesalia kuchanganua.
-Ujumbe {0} kutoka {1} umehamishwa. {3} ujumbe umesalia kuchanganua.
 Inaonyesha maelezo ya hali ya hewa kwa jiji maalum. Inatumia OpenWeatherMap.
 - Maelezo ya hali ya hewa ya {0} -
 Hali ya hewa: {0}
-Joto: {0} ({1} kitengo)
-Anahisi kama: {0} ({1} unit)
 Shinikizo: {0}
 Unyevu: {0}
 Unaweza kupata ufunguo wako wa API kwa https://home.openweathermap.org/api_keys.
@@ -793,7 +587,6 @@ Kila kuanza, itakagua visasisho.
 Unapobadilisha lugha, badilisha majina ya mwezi, kalenda, n.k.
 Ikiwa punje imeanzishwa, itaweka nenosiri la mizizi.
 Weka ujumbe wa uchunguzi wa maunzi ukiwa kimya.
-Ikiwa imewezeshwa, itachunguza nafasi za RAM pamoja na RAM.
 Onyesha Ujumbe wa Siku kabla ya kuonyesha skrini ya kuingia.
 Futa skrini kabla ya kuonyesha skrini ya kuingia.
 Inaonyesha watumiaji wanaopatikana ikiwa imewezeshwa.
@@ -819,12 +612,9 @@ Mod {0} haina amri. Uchanganuzi wa Mod umeshindwa. Pitia nambari ya chanzo.
 Lazima uwashe hali ya utatuaji kabla ya kufuta logi ya utatuzi.
 Ujumbe {0} mpya umewasili kwenye kikasha.
 Fungua "lsmail" ili uwaone.
-Ya msingi: {2} Inayoweza kutumika: {3} Kitengo cha kutengeneza
 Imeshindwa kuondoa faili: {0}
 Huondoa saraka au faili
 Imeshindwa kuondoa {0} kwa sababu haipo.
-Huenda usiwe umeweka inxi kwenye mfumo wako. Rejelea msimamizi wa kifurushi chako kwa usanikishaji. Kwa mifumo ya Debian (na derivatives), unaweza kutaka kuendesha "sudo apt install inxi libcpanel-json-xs-perl" katika emulator ya terminal.
-Lugha imewekwa kuwa {0}!
 Bonyeza CTRL + C ili kutoka.
 Hutoa habari kuhusu faili
 Hutoa habari kuhusu saraka
@@ -879,7 +669,6 @@ Inapakia {0} kwa {1} ...
 Upakiaji umekamilika.
 Tafadhali tumia "ftp" ikiwa utapakia faili kwenye seva ya FTP.
 Upakiaji haukufaulu katika jaribu {0}: {1}
-MB {0} ya MB {1} zimepakiwa.
 Andika ni mara ngapi amri ya "weka" inapaswa kujaribu tena upakiaji ulioshindwa. Lazima iwe nambari.
 Anwani inaweza kuwa tupu.
 Imeshindwa kuuliza {0}: {1}
@@ -889,7 +678,6 @@ Anahisi kama: {0}
 Joto: {0}
 Kasi ya upepo: {0}
 Uelekeo wa upepo: {0}
-Ya msingi: {2} | Inayoweza kutumiwa: {3} | Kitengo cha buti: {4}
 Inamsha msaada wa rangi 255 kwa Kufuta.
 Inamsha msaada wa rangi ya kweli kwa Kufuta.
 Bonyeza kitufe chochote kurudi nyuma.
@@ -919,10 +707,7 @@ Vidokezo vya hoja
 Imeshindwa kuanza "{0}": {1}
 Onyesha hakikisho la ujumbe wa barua
 Unapoorodhesha ujumbe wa barua, onyesha hakikisho la mwili.
-Probe ya vifaa vya akiba. Inaonyesha habari hata hivyo ...
-Uwezo: {0} GB
 Rangi maalum ...
-Andika rangi kama ilivyoainishwa hapa chini:
 Rangi ya kuingiza
 Rangi ya leseni
 Rangi ya hitilafu inayoendelea ya punje
@@ -931,12 +716,8 @@ Rangi ya jina la mwenyeji
 Rangi ya jina la mtumiaji
 Rangi ya asili
 Rangi ya maandishi ya upande wowote
-Rangi ya orodha ya Amri
-Rangi ya ufafanuzi wa amri
 Rangi ya hatua
 Rangi ya makosa
-Je! Chaguo hizi za rangi zinaonekana sawa?
-Jibu {0} kurudi nyuma. Vinginevyo, jibu lolote linamaanisha ndiyo.
 Mtindo wa Haraka wa FTP
 Mtindo wa Haraka wa Barua
 Mtindo wa Haraka wa SFTP
@@ -946,7 +727,6 @@ Kujaribu kufikia njia batili.
 Hufuta faili ya maandishi
 Toka kihariri cha maandishi
 Maswali ya mhusika katika laini maalum au mistari yote
-Nambari maalum ya herufi {0} sio nambari halali.
 Kuangalia sasisho kumezimwa kwa sababu unatumia toleo la maendeleo.
 Huwasha au kuzima kihariri cha kiotomatiki kuhifadhi kiotomatiki.
 Ikihifadhiwa kiotomatiki, faili ya maandishi itahifadhiwa kwa kila sekunde "n".

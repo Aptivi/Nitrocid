@@ -12,27 +12,12 @@ Ama-agumenti afakiwe azohlelelwa ukuqaliswa ekuqaleni kabusha okulandelayo.
 Ukujova kokuphikisana kukhanseliwe.
 Iphutha ngenkathi kuhlaziywa izingxabano zangempela zomugqa womyalo: {0}
 Isifanekiso sombala esingavumelekile {0}
-Okuzenzakalelayo
-Ngokwezifiso
 I-hwprobe: I-Hardware yakho izocutshungulwa. Ngicela ulinde...
-hwprobe: Izingxenyekazi zekhompyutha sezihloliwe.
-I-hwprobe: I-Hardware ayihloliwe. Hlola usebenzisa 'hwprobe'
 I-CPU: I-CPU eyodwa noma eziningi zehlulekile ukuhlolwa. Ibonisa imininingwane noma kunjalo ...
 I-RAM: I-RAM eyodwa noma eziningi ze-RAM zehlulekile ukuphenywa. Ibonisa imininingwane noma kunjalo ...
 I-HDD: Idrayivu eyodwa noma eziningi ezihlulekile ukungaphenywa. Ibonisa imininingwane noma kunjalo ...
 I-CPU: Ingqikithi yenombolo yama-processor: {0}
-I-CPU: {0} {1} MHz
-I-RAM: {0} MB = {1} MB
-I-RAM: Izikhala ezisetshenzisiwe (ngamagama): {0}
-I-RAM: Izikhala ezisetshenzisiwe (ngezinombolo): {0} / {1} ({2}%)
-I-RAM: Isimo sokuhlola sehlisiwe futhi sizosuswa ekukhishweni okuzayo.
-I-HDD: {0} {1} GB {2}
-I-HDD: {0} {1} {2} GB {3}
-I-HDD: CHS: {4} amasilinda | {5} amakhanda | {6} imikhakha
-I-HDD: CHS: {3} amasilinda | {4} amakhanda | {5} imikhakha
-hwprobe: Ukuhlola akusekelwa ngoba akudizayinelwe ukusebenzisa ama-probers ku-Unix.
 Faka iphasiwedi yomlawuli yesondlo.
-Abasekho abasebenzisi abasele ohlwini.
 Iphutha le-Kernel ngenkathi ibhutha: {0}
 I-DANIBLE PANIC: Isikhathi sokuqalisa kabusha sidlula isikhathi esivunyelwe {0} sephutha sokuqalisa kabusha isikhathi. Uthole isiphazamisi se-kernel.
 [{0}] ukwethuka: Ukuqalisa kabusha kunikwe amandla ngenxa yokuthi izinga lephutha lingu- {0}.
@@ -46,18 +31,12 @@ I-DANIBLE PANIC: Uhlobo lwephutha {0} aluvumelekile.
 I-DANIBLE PANIC: I-Kernel bug: {0}
 Iyavala ...
 Iqalisa phansi ...
----===+++> Uyemukelwa ku-kernel | Uhlobo {0} <+++===---
 Esinye isibonelo seKernel Simulator siyasebenza. Ukucisha phansi uma kwenzeka kuphazamiseka.
-Umsebenzisi {0} ungeziwe ohlwini lwabaphathi.
-Umsebenzisi {0} ungeziwe kuhlu olukhutshaziwe.
 Yehlulekile ukwengeza umsebenzisi kuhlu lwemvume: uhlobo olungavumelekile {0}
 Yehlulekile ukufaka umsebenzisi kuhlu lwemvume: umsebenzisi ongavumelekile {0}
-Umsebenzisi {0} ususiwe ohlwini lwabaphathi.
-Umsebenzisi {0} ususiwe ohlwini lwabakhubazekile.
 Yehlulekile ukususa umsebenzisi kuhlu lwemvume: uhlobo olungavumelekile {0}
 Usuvele ungene ngemvume.
 Yehlulekile ukususa umsebenzisi kuhlu lwemvume: umsebenzisi ongavumelekile {0}
-Uthole isiphazamisi ohlelweni lwemvume: imodi engavumelekile {0}
 Uthole isiphazamisi, noma imvume ozame ukuyengeza noma ukuyisusa seyenziwe, noma elinye iphutha.
 Iphutha {0}: {1}
 Kungenzeka ukuthi uthole isiphazamisi, noma imvume ozame ukuyihlelela umsebenzisi omusha yehlulekile.
@@ -79,17 +58,6 @@ Umsebenzisi {0} akavunyelwe ukususwa.
 Umsebenzisi {0} usevele ungene ngemvume. Phuma bese ungena ngemvume njengomunye umphathi.
 Umsebenzisi {0} ususiwe.
 Iphutha ukuzama ukususa igama lomsebenzisi.
-{0} kokungu- {1} = {2}
-Ukuzama ukwehlukanisa ngo-zero akuvunyelwe.
-Kube nomzamo osolwayo wokubala oholele ekuchichimeni.
-Kukhona iphutha ngenkathi kubalwa: {0}
-{0} ayikwazi ukuguqulelwa ku- {1}.
-Noma ngabe umthombo
- noma lapho uya khona
- ayikho kuseva.
-{0} ku- {1}: {2}
-Iphutha ukuzama ukuguqula ukusuka ku- {0} kuye ku- {1}: {2}
-Iphutha
 Isilondolozi-skrini esiceliwe {0} asitholakali.
 {0} iqaliswe kahle.
 {0} ayizange iqalise. Ikhodi ye-screensaver kungenzeka ihlangabezane nephutha ngenkathi iqalisa.
@@ -99,12 +67,6 @@ Isilondolozi sesikrini {0} asitholakali ku-database. Hlola igama bese uyazama fu
 I-Screensaver ayikwazi ukulayishwa ngenxa yalokhu okulandelayo:
 Kube nephutha elibi lapho uphrinta umbhalo.
 Kunephutha elizama ukudala ukucushwa.
-Kunephutha ekuzameni ukudala ukumisa: {0}
-Kutholwe ukuthuthuka kusuka ku- {0} kuya ku- {1}. Ibuyekeza ukumiswa ...
-Kunephutha ekuzameni ukubuyekeza ukucushwa: {0}.
-Kunephutha ekuzameni ukubuyekeza ukucushwa.
-Kunephutha ekuzameni ukufunda ukumiswa.
-Kunephutha ekuzameni ukufunda ukumisa: {0}
 Iphutha ukuzama ukukhulula i-RAM: {0} - Iyaqhubeka ...
 I-Mod ayikwazi ukulayishwa ngenxa yalokhu okulandelayo:
 mod: Ilayisha ama-mods ...
@@ -129,32 +91,19 @@ Kufanele uxhume kuseva ngaphambi kokushintsha umkhombandlela
 Uhla lwemibhalo lwasendaweni: {0}
 Inkomba ekude: {0}
 Kufanele uxhume kuseva ngaphambi kokuthola umkhombandlela wesilawuli kude samanje.
-Isusa ifayela {0} ...
-Uqinisekile ukuthi ufuna ukususa ifayela {0} <y/n>?
-Kususwe ifayela {0}
 Kufanele uxhume kuseva ngamalungelo okuphatha ngaphambi kokwenza ukususwa.
-Faka ifayela ozolisusa.
-Kufanele ube nezimvume zokuphatha egameni lakho lomsebenzisi ukuze ungene ukuze ukwazi ukususa.
 Inqanyuliwe ku- {0}
 Awukaxhumi kunoma iyiphi iseva okwamanje
 Ilanda ifayela {0} ...
 Ifayela elilandiwe {0}.
-Ukulanda kwehlulekile kufayela {0} ngoba ifayela lendawo lonakele.
 Kufanele uxhume kuseva ngaphambi kokwenza ukudlulisa.
 Faka ifayela ozolilanda kwisikhombi sendawo.
 {0} KB | Kushintshwe ku: {1}
 Kufanele uxhume kuseva ngaphambi kokufaka kuhlu wonke amafayela akude.
-Iqamba kabusha ifayela {0} laba yi- {1} ...
-Iqanjwe kabusha ngempumelelo
-Faka ifayela negama lefayela elisha.
 Kulayishwa ifayela {0} ...
 Ifayela elilayishiwe {0}
 Faka ifayela ozolilayisha enkombeni ekude. layisha <file> <directory>
-Iphutha ekuzameni ukwenza umyalo we-FTP
 (Ngaphakathi:
-{0} amafolda, {1} amafayela
-(Ukufinyelela kuvinjelwe)
-I- {0} KB, Idalwe ngo- {1} {2}, Ishintshwe ku- {3} {4}
 Ithola umkhombandlela wendawo wendawo
 Ithola umkhombandlela wamanje wesilawuli kude
 Ixhuma kuseva ye-FTP (kufanele iqale ngo- "ftp://" noma "ftps://")
@@ -167,18 +116,8 @@ Iphuma kugobolondo le-FTP ibuyele ku-kernel
 Ibonisa isikrini sosizo
 Uhlu lwemibhalo yendawo
 Uhlu lwemibhalo ekude
-Iqamba kabusha ifayela noma umkhombandlela othile
 Layisha ifayili lasendaweni kwisikhombi kude usebenzisa i-kanambambili noma umbhalo
-Kube nephutha kugobolondo le-FTP.
 Umlayezo we-FTP: Umyalo oceliwe {0} awutholakali. Bona 'usizo' ukuthola uhlu lwemiyalo etholakalayo echazwe kugobolondo le-FTP.
-inetha: Uthole impendulo kusuka ku- {0} ku- {1} ms
-Iphelelwe yisikhathi, inqanyuliwe, noma iseva ayixhunyiwe ku-inthanethi.
-inetha: Igama lekhompyutha yakho kunethiwekhi ngu- {0}
-inetha: Igama lomgcini wakho ngu- {1}
-inetha: Kubonakala sengathi amakhompyutha asesizindeni noma eqenjini lomsebenzi:
-inetha: I-WiFi noma i-Ethernet inqanyuliwe.
-inetha: Kubonakala sengathi amakhompyutha axhunyiwe ngezansi:
-inetha: Ikheli Lomzila: {0}
 Yehlulekile ukuthola izakhiwo ze-adaptha {0}
 Inombolo ye-adaptha:
 Igama le-adaptha:
@@ -189,9 +128,7 @@ Amaphakethe we-Unicast:
 Iphutha lamaphakethe angenayo / aphumayo:
 I-alias ayikwazi ukuba yigama elifanayo njengomyalo.
 Umyalo awutholakali ku-alias ku- {0}.
-Ukuhlukanisa i- {0} ku- {1} kwenqatshelwe ngokuphelele.
 Manje usungaqalisa i - "{0}" njengomyalo: "{1}".
-Awusakwazi ukusebenzisa i - "{0}" njengomyalo "{1}".
 Ama-alias {0} akatholakali ukuthi akhishiwe.
 Imodi engavumelekile {0}.
 Izimpikiswano ezifakiwe, i- {0}, izohlelelwa ukuthi iqalise ekuqaleni kabusha okulandelayo.
@@ -201,16 +138,12 @@ Igama lomgcini ongenalutho.
 Ishintsha kusuka ku-: {0} kuye ku- {1} ...
 Umlayezo ongenalutho wosuku.
 I-MAL engenalutho Ngemuva kokungena ngemvume.
-Ishintsha i-MAL isuke ku- {0} iye ku- {1} ...
 Iphasiwedi yomsebenzisi engalungile.
 Amaphasiwedi awafani.
 Igama lomsebenzisi lishintshelwe ku- {0}!
 Igama elisha olifakile selivele litholakele.
-Ukufakwa kuhlu kwama-PC akusekelwa ku-Unix okwamanje.
-Ama-aliases anqatshelwe: {0}
 I- {0} ayitholakali.
 Ukucushwa kulayishwe kabusha. Ungahle udinge ukuqala kabusha i-kernel ukuze ezinye izinguquko zisebenze.
-Konke kusethwe kabusha kuzilungiselelo ezijwayelekile.
 Umbala owodwa noma eminingi ayivumelekile.
 Imibala ayitholakali. Vula igobolondo elinemibala ku-kernel config.
 Isilondolozi sesikrini {0} asitholakali.
@@ -222,85 +155,36 @@ Izimpikiswano ku-Boot:
 Umyalo wosizo wenziwe lula:
 I-MOTD ekungeneni ngemvume:
 Isikhathi / Usuku ekhoneni:
-I-Hardware ihlolwe:
-Itimu yamanje:
 [ Izilungiselelo ze-Hardware ]{0}
 {0}[ Izilungiselelo zomsebenzisi ]
 Igama lomsebenzisi lamanje:
 Igama lomsingathi wamanje:
 Amagama abasebenzisi atholakalayo:
-Igama lomgcini wekhompyutha:
-{0}[ Izilungiselelo Zemilayezo ]
-Ikhodi yomthombo:
-I-copyright (c)
-Ilayisense
-okwamanje
 Iphutha ukuzama ukufaka umyalo
-Yengeza abasebenzisi (Abaphathi kuphela abangafinyelela lo myalo)
-Yengeza ama-aliases kumiyalo (Abaphathi kuphela abangafinyelela lo myalo)
-Ifaka izimpikiswano ku-kernel (ukuqala kabusha kuyadingeka, ama-admins kuphela)
-Wokubala Simple
 Ishintsha umkhombandlela
-Izinguquko zegama lomethuli (Abaphathi kuphela)
-Ishintsha i-MAL, i-MOTD Ngemuva kokungena ngemvume (Abaphathi kuphela)
-Ishintsha i-MOTD, uMyalezo Wosuku (Abaphathi kuphela)
 Ishintsha iphasiwedi yomsebenzisi wamanje
-Ishintsha igama lomsebenzisi (Abaphathi Kuphela)
 Isula isikrini
-Guqula imali
-Ibonisa izingodo zokususa amaphutha (Abaphathi Kuphela)
 Sebenzisa igobolondo le-FTP ukuxhumana namaseva
 Ikhasi losizo
-Hlolisisa i-hardware ngesandla (Isikhathi esisodwa ku-'nohwprobe 'kernel)
 Faka kuhlu okuqukethwe kwefayela / ifolda kufolda yamanje
-Phinda ulayishe ifayela le-screensaver kuma-%USERPROFILE%\KSMods
 Khiya isikrini sakho nge-password
 Iyakukhipha
-Ifaka kuhlu wonke amadivayisi enethiwekhi aku-inthanethi (futhi angaxhunyiwe ku-inthanethi ezizindeni)
-Ifaka kuhlu wonke amakheli wenethiwekhi kumsingathi
-Ibala wonke amakheli enethiwekhi ekusingatheni esebenzisa isihlahla
 Idala umkhombandlela
 Ibala imininingwane mayelana nakho konke ukuxhumana okutholakalayo
-Ibonisa uhlu olungavunyelwe lwama-aliases
-Phatha izimvume zabasebenzisi (Abaphathi kuphela abangafinyelela lo myalo)
-Bheka ukuze ubone ukuthi ikheli elicacisiwe liyatholakala yini
-Ubhala okuqukethwe kufayela kukhonsoli
 Iqala kabusha ikhompyutha yakho (ISEXWAYISO: Akukho ukuvumelanisa, ngoba akuyona i-kernel yokugcina)
 Iphinda ilayishe ifayela lokumisa elihleliwe.
-Isusa umkhombandlela
-Isusa umsebenzisi ohlwini (Abaphathi Kuphela)
 Ilondoloza isikrini sakho kusuka ekushiseni
-Wokubala Scientific. Isiguquli seyunithi sehlukaniswe komunye umyalo
-Imisa imibala ye-kernel
 Isetha izikrini zesikrini se-kernel
 Isetha izingqikithi ze-kernel
-Ibonisa iziteketiso
-Ibonisa i-MOTD ngemuva kokungena ngemvume okusethwe ngumsebenzisi noma i-kernel
-Ibonisa umlayezo wosuku obekwe ngumsebenzisi noma i-kernel
 Ibonisa usuku nesikhathi
 Ibonisa usuku nesikhathi ezindaweni
 I-kernel izovalwa
 Imininingwane yohlelo
-Isiguquli seyunithi esihlukaniswe ne-scicalc.
-Ibonisa ukuncika komthombo ovulekile osetshenzisiwe
-Incwajana yomsebenzisi echazayo.
 * Ungasebenzisa imiyalo eminingi usebenzisa ikholoni phakathi kwemiyalo.
-Imiyalo etholakalayo:
-Imiyalo ye-Mod:
-Ukuhlukaniswa nemiyalo:
 Ukusetshenziswa:
-Izimpikiswano ezihlukaniswe ngamakhoma
 lapho ukuphikisana kuzoba khona {0}
-ukuthola umkhombandlela wamanje
-Kukuphi lapho umthombo nokuya khona kunezinhlamvu ezi-3 ze-UPPERCASE zesilinganiso sokushintshana
-Uhlu lwawo wonke ama-ID namagama:
-Ikhombisa izingodo zokulungisa amaphutha ukuze ukwazi ukuthumela lelogi kithi.
 Iqala igobolondo le-FTP.
-Ihlola i-Hardware (isebenza kuphela lapho i-Hardware ingaphenywa futhi i-hwprobe ingenziwanga).
-Uhlu imininingwane yenethiwekhi, kanye nayo yonke ikhompyutha exhunywe kunethiwekhi.
 Abangane be
-Uhlu imininingwane yenethiwekhi, kanye nayo yonke ikhompyutha exhunywe kunethiwekhi, ngendlela yesihlahla.
-Uhlu imininingwane yenethiwekhi, kanye nayo yonke ikhompyutha.
 lapho i-modname.ss.vb izoba khona
 Khiya isikrini sakho nge-password.
 Ikufaka kumsebenzisi.
@@ -313,41 +197,25 @@ Ibonisa usuku nesikhathi.
 Ibonisa usuku nesikhathi kuzoni.
 Icisha ikhompyutha yakho eyenziwe.
 Ibonisa imininingwane yesistimu nezinguqulo.
-Ibonisa imitapo yolwazi evulekile esetshenzisiwe
 Kube nephutha kushell.
 Awunayo imvume yokusebenzisa i- {0}
 Umlayezo weShell: Umyalo oceliwe {0} awuvunyelwe ukusebenza kumodi yokulungisa.
 Umlayezo weShell: Umyalo oceliwe {0} awutholakali. Bona 'usizo' ukuze uthole imiyalo etholakalayo.
 Umlayezo weShell: Umyalo {0} awuvunyelwe ukusebenzisa ukungena ngemvume.
-Umlayezo weShell: Umyalo oceliwe {0} awutholakali.
 Iphutha ukuzama ukufaka umyalo.
 isikhathi sedatha: Isikhathi ngu- {0}
 isikhathi sedatha: Namuhla ngu- {0}
 isikhathi sedatha: Izoni Yesikhathi: {0}
 - Isikhathi se- {0}: {1}
 ukusula isikrini.
-Kubonakala sengathi ikhasi elenza imiyalo {0} alitholakali.
-Kukhona iphutha uma uzama ukulayisha ikhasi elenziwa ngesandla {0} becuase {1}.
-Leli khasi lemanuwali aliphelele ngezizathu ezilandelayo:
-Cindezela noma yimuphi ukhiye ukuze uqhubeke ...
- | {0} amagama | Ukubuyekeza v {1} | {2} izigaba
-Lesi sihloko sekhasi lesandla asibhalwanga
-Leli khasi lemanuwali ({0}) aliqukethe umbhalo womzimba. Isusa ikhasi ...
-Leli khasi lemanuwali ({0}) aliqukethe sigaba. Isusa ikhasi ...
 Iqalisa ku- {0}
 Awugunyaziwe ukuthola imininingwane ye- {0}.
 Lo myalo awusasebenzi futhi uzosuswa ekukhishweni okuzayo.
 Awugunyaziwe ukushintsha iphasiwedi ye- {0} ngoba injongo bekungumphathi.
-Guqula inani lemali lisuka ezweni liye ezweni
-Izimali:
 usrmgr: Igama lomsebenzisi {0} selivele litholakele
-Faka ukhiye wakho we-API:
-Ayikwazanga ukuthola amakhompyutha. Uma usebenzisa inguqulo yakamuva ye Windows 10, udinga ukunika amandla i-SMBv1. Le protocol ayiphephile futhi sizozama ukuxazulula le nkinga.
 Isusa yonke into kwilogi yokulungisa iphutha
-Ithola izinhlobo ze-SSE
 Ulimi olungavumelekile
 Ishintsha ulimi
-Ungahle ungabi ne-libcpanel-json-xs-perl efakwe kusistimu yakho. Bheka umphathi wakho wephakeji ukufakwa. Okwezinhlelo ze-Debian (kanye nezisuswayo), ungahle uthande ukusebenzisa i- "sudo apt install libcpanel-json-xs-perl" ku-emulator yokugcina. Imininingwane eminingi yephutha:
 ----------------------------- Indawo yokulahla ukwethuka kweKernel ------------------------------
 >> Imininingwane yokwethuka <<
 > Incazelo: {0}
@@ -365,14 +233,12 @@ Ungahle ungabi ne-libcpanel-json-xs-perl efakwe kusistimu yakho. Bheka umphathi 
 >> Amafreyimu, amafayela, imigqa, namakholomu <<
 > Uzimele {0}: Ifayela: {1} | Ulayini: {2} | Ikholomu: {3}
 > Kukhona iphutha lapho uzama ukuthola imininingwane yohlaka. {0}: {1}
-Usethe ulimi lwakho lohlelo kunoma yini enye ngaphandle kwesiNgisi. Siyaxolisa ngokungalungile, kepha kubonakala sengathi iGoogle nomhumushi wayo baxakeke kakhulu ngokuhumusha amabhulokhi wamakhodi wanoma yiluphi ulimi lohlelo. Ngenkathi silungisa wonke amabhulokhi wamakhodi wamakhasi ahunyushiwe, siphakamisa ukuthi uvule ithikithi ku-Google Translate ngokuhumusha amabhulokhi ekhodi angahloselwe ukuhunyushwa, bese usetha ulimi lwakho lohlelo lwesiNgisi uma ulukhuluma.
 Phinda ulayishe ama-mods.
 Amamodeli alayishwe kabusha.
 Uyemukelwa kwaKernel!
 Ungene ngemvume ngempumelelo njengo- <user>
 I-MOTD / MAL iyasebenza, kepha uhlobo lomlayezo aluvumelekile. Ukuthatha i-MOTD ...
 Izamile ukufunda i-MOTD / MAL engohlobo lomlayezo olungavumelekile.
-Ngenkathi igcina ukuxhumeka okuzinzile, ilanda i- {0} to {1} ...
 Ukulanda kuqediwe.
 Ukulanda kwehlulekile ekuzameni {0}: {1}
 Sicela usebenzise i- "ftp" uma uzolanda amafayela kusuka kuseva ye-FTP.
@@ -388,13 +254,11 @@ I-alias isivele itholakele: {0}
 Igogi lokususa iphutha lisusiwe. Onke amadivayisi wokulungisa amaphutha axhunyiwe angaqhubeka abuke imilayezo.
 Ukususwa kwelogi yokulungisa iphutha kuhlulekile: {0}
 Ukushintsha umkhombandlela kuhlulekile: {0}
-Igama lomsebenzisi alilungile
 Cacisa ikheli
 Ayikwazi ukususa uhla lwemibhalo: {0}
 Izoni yesikhathi icaciswe ngokungalungile.
 Ukukhethwa kwephrofayela okungavumelekile.
 Izama ukuxhuma ku- {0} ngephrofayela {1} ...
-Iphutha ekuhlolweni kweyunithi: {0}
 Umyalo {0} awutholakali. Bona umyalo "wosizo" wohlu lwemiyalo.
 Yehlulekile ukuthola izakhiwo ze-IPv6 ze-adaptha {0}. Iyaqhubeka ...
 Imininingwane ye-IPv4:
@@ -408,26 +272,17 @@ Ulimi olukhethile luqukethe okuhlukile okumbili. Khetha okukodwa:
 Khetha okuthandayo:
 Inketho engavumelekile. Zama futhi.
 Awugunyaziwe ukusetha umkhombandlela wamanje ku- {0}: {1}
-Imvume {0} yehlulekile
 Indlela oyibalulile yinde kakhulu.
-Awugunyaziwe ukufaka kuhlu ku- {0}: {1}
-Iphutha ngenkathi kuhlolwa i-CPU: {0}
-Iphutha ngenkathi kuhlolwa i-RAM: {0}
-Iphutha ngenkathi kuhlolwa i-HDD: {0}
 I-CPU: ISEXWAYISO: I-SSE2 izodingeka kuzithembiso zentuthuko ezizayo.
 Isiqoqi solwazi sokulahla saphahlazeka ngenkathi izama ukuthola ulwazi mayelana ne- {0}: {1}
 Iphutha ngenkathi izama ukuhlanganisa idethi yomhlangano {0}: {1}
 Iphutha lapho izama ukusetha i-MOTD / MAL: {0}
 Iphutha lapho izama ukuthola i-MOTD / MAL: {0}
-Kukhona ukukhishwa okuyisithenjwa okuyize ku- {0}: {1}
-Kukhona okwehlukile okuyisithenjwa ku- {0}: {1} - Stack trace:
 Iphutha lapho izama ukuqala isilondolozi sesikrini, ngenxa yokusebenza okungavumelekile.
 Ukulayisha kabusha akuvunyelwe ngemodi ephephile.
 Amamodeli wokuhlwaya awavunyelwe kumodi ephephile.
-Hlanganisa umkhombandlela wonke ngosayizi noma mane amafayela akwelamanje.
 Ifaka kuhlu wonke amadivayisi okususa iphutha axhunyiwe.
 Iphutha lapho izama ukusetha imodi yokuhlwaya. Hlola inani bese uyazama futhi. Uma lokhu kulungile, bona ukulandelwa kwesitaki lapho ukulungisa iphutha kwe-kernel kunikwe amandla.
-Setha ngempumelelo.
 Indlela akuyona ifayela noma umkhombandlela.
 Idala enye ikhophi yefayela ngaphansi kwesiqondisi noma igama elihlukile.
 Ihambisa ifayela liye kolunye umkhombandlela
@@ -436,34 +291,11 @@ Ukuhambisa amafayela kwenye inkomba
 Fanisa {0} ({1}): {2}
 Fanisa {0}: {1}
 Isikhathi esichithwe: {0} milliseconds
-Umkhiqizi: {0}
-Imodeli: {0}
-Amandla: {0} ({1}, {2}, {3})
-Uhlobo lwesixhumi esibonakalayo: {0}
-Inombolo yeDrayivu: {0}
-Ifulegi le-boot: {0} ({1})
-Ukwahlukanisa ngokomzimba: {0}
-Ifulegi eliyinhloko: {0}
-Usayizi: {0} GB
-Ukwahlukanisa okunengqondo: {0}
-Kucindezelwe: {0}
 Igama: {0}
-Isistimu yefayela: {0}
-Amandla: {0} GB mahhala nge- {1} GB
-Ukufakwa kuhlu konke ukwahlukanisa okunengqondo kuwo wonke amadrayivu.
-Kubala konke ukushayela okuhloliwe.
-Uhlu lonke luhlolisise ukwahlukaniswa kudrayivu ethile (nakho konke ukwahlukanisa okunengqondo kuwo wonke amadrayivu).
 Ibala izibalo zefayela.
 Sikusa eGitHub Wiki yethu.
 I-algorithm yokubethela engavumelekile.
 Inika amandla noma ikhubaza ukulungisa iphutha kude.
-Iqalisa isistimu yefayela ...
-Ithola amazwi afakiwe
-Isetha izwi elizenzakalelayo
-Ukhuluma ngentambo yakho usebenzisa izwi elizenzakalelayo
-Izwi {0}: {1} ({2})
-Izwi elingavumelekile.
-Izwi lisethiwe
 Bona ukuthi ungakwazi yini ukupela amagama kahle ngesikhathi
 Bona ukuthi ungazixazulula yini izibalo zezibalo ngesikhathi
 Phendula kumazwana othando noma enzondo.
@@ -474,23 +306,16 @@ Usanda kubika ukuphawula kothando!
 Uvele uphendule emazwaneni enzondo!
 Kuhle! Amazwana ka- {0} azosuselwa lokho.
 Kuhle! U- {0} uzobonga ukubonga kwakho.
-Bhala i- "GetMeOut" ukuphuma.
 Isipelingi kahle!
 Isipelwe ngokungalungile.
 Ixazululwe ngokuphelele!
 Kuxazululwe ngokungalungile.
-{0} MB ka- {1} MB elandiwe.
 I-RPC isivele isebenza.
 Ukulalela kwe-RPC kuwo wonke amakheli kusetshenziswa imbobo {0}.
 Iqala i-RPC ...
 Ixhuma kuseva ye-SSH.
 Faka iphasiwedi ye- {0}:
 I-SSH inqanyuliwe.
-Ukulayisha ifayela le-synth bese ulidlala.
-Ifayela lombhalo {0} alikho nhlobo.
-Ifayela akulona ifayela le-synth elibhaliwe.
-Yehlulekile ukucwaninga umugqa we-synth.
-Kucacisiwe intambo engenalutho
 Ayikwazi ukusetha i-codepage. Ulimi kungenzeka lungabonisi kahle.
 Ukulungisa amaphutha akunikiwe amandla.
 I- {0} ayisasethelwe kusilondolozi sesikrini esizenzakalelayo.
@@ -519,8 +344,6 @@ Imishini yehlulekile, Inhlonipho -, Obhalisile -
 Yeka ukwenza lolu hlobo lwevidiyo !!!
 Buyela emsebenzini wakho, amavidiyo akho amabi kakhulu!
 Siyacwasa kule vidiyo.
-Ukuhlukanisa i- {0} ku- {1} akuvunyelwe.
-Iphutha lokuzama ukucashisa isaziso: {0}
 Ibonisa zonke izaziso ezitholiwe
 Icashisa isaziso
 Isaziso sichithiwe ngempumelelo.
@@ -532,39 +355,26 @@ Izakhiwo ezijwayelekile ze-IPv4
 Ukude ukhipha umyalo ku-PC eyihlane
 - Isigaba 1: Ukuqalisa kwesistimu
 - Isigaba 2: Ukutholwa kwehadiwe
-- Isigaba 2: Ukuphathwa kwegama lomsebenzisi kwangaphakathi
 - Isigaba 3: Ukutholwa kwama-Mods ne-screensavers
-- Isigaba 4: Ukuqoqwa kukadoti
 - Isigaba 4: Ngena ngemvume
-Ngaphambi kokuqoqwa kukadoti: {0} bytes
-Ngemuva kokuqoqwa kukadoti: {0} bytes
-Iphutha ukuqala i-RPC: {0}
 Kubukeka sengathi ubusebenzisa inguqulo yekhandidethi yokukhishwa. Kunconywa ukuthi uhlale enguqulweni ezinzile.
-Kubukeka sengathi inani lohlelo lwefayela lithatha isikhathi eside kakhulu.
 Uhlobo olungavumelekile {0}.
-Amandla: {0}
-Ukubala ukwahlukanisa: {0}
 Usayizi: {0}
-Kusetshenzisiwe: {0}
 Uhla lwemibhalo {0} seluvele lukhona.
 Iphutha lapho izama ukuxhuma ku- {0}: Isikhathi sokuxhuma noma uxhumano olulahlekile
 Calculator ukubala izinkulumo.
 Iphutha ekubaleni.
-Amandla: {0} GB ({1}, {2}, {3})
 Kubukeka sengathi ubusebenzisa inguqulo yokukhipha esiseduze. Yize kuphephe ukusebenzisa manje, kunconywa ukuthi uhlale kunguqulo ezinzile.
 Ukuvuselelwa kwesistimu
 Ihlolela izibuyekezo zesistimu ...
 Kutholwe inguqulo entsha:
 Ungayilanda ku:
-Yehlulekile ukuhlola izibuyekezo: {0}
-Ilogi yokulungisa iphutha ayitholakali
 Azikho izaziso zakamuva
 Kuseshwa kwentambo ebekiwe kufayela elinikeziwe
 Ibala izibalo zamafayela kumkhombandlela ocacisiwe.
 Ibala wonke amameyili kumsebenzisi othile.
 Faka igama lomsebenzisi noma ikheli lemeyili:
 Faka iphasiwedi:
-Faka ikheli leseva netheku (<adress> noma <address>:[port]):
 Iphutha ngenkathi ixhuma ku- {0}: {1}
 Ixhuma ku- {0} ...
 Iyaqinisekisa ...
@@ -581,7 +391,6 @@ Inombolo yomlayezo ayilona inani lenombolo.
 - Kuthunyelwe ngo- {0} ngo- {1}
 Umlayezo ocacisiwe awutholakali.
 Ukulungisa iphutha lesilawuli kude kwehlulekile ukuqala: {0}
-Iphutha lokusebenzisa umyalo we-IMAP: {0}
 Ilungiselela amaphrofayli ... Kungathatha imizuzu embalwa ...
 Igama Lokubamba, Igama lomsebenzisi, Uhlobo lwedatha, Ukubhala ngekhodi, Ukubethela, Izivumelwano
 Iphutha lokuzama ukwenza iskripthi: {0}
@@ -593,7 +402,6 @@ Imvamisa kufanele ibe yizinombolo. Uma inezinombolo, qiniseka ukuthi ingu> = 37 
 Isikhathi kufanele sibe izinombolo.
 lapho i- <answers> izimpendulo ezinombhalo owodwa zombuzo zihlukaniswe ngama-slashes
 Iphutha ukuzama ukuxhuma kuseva ye-SSH: {0}
-I-MOTD engenalutho Ngemuva kokungena ngemvume.
 Ivumela umsebenzisi ukufaka okokufaka
 Ishintsha isiqondisi samanje seposi
 Ayikwazi ukuvula ifolda yemeyili {0}: {1}
@@ -616,7 +424,6 @@ Faka isihloko:
 Faka umyalezo wakho ngezansi. Bhala u- "EOF" ukuqinisekisa.
 Ithumela umlayezo ...
 Umlayezo uthunyelwe.
-Iphutha ekuthumeleni umlayezo: {0}
 Ikheli le-imeyili elingavumelekile. Qiniseka ukuthi ubhale ikheli kahle nokuthi lifana nefomethi yesibonelo esibonisiwe:
 Isusa umlayezo
 Isusa yonke imilayezo kumemukeli
@@ -656,10 +463,7 @@ U- {0} manje usengajoyina iphutha elikude futhi.
 U- {0} akavinjelwe okwamanje.
 Iphutha lokulayisha izilungiselelo
 Kukhona iphutha ngenkathi kulayishwa izilungiselelo. Ungahle udinge ukuhlola ifayili lezilungiselelo.
-- Isigaba 2: Ukutholwa kwama-Mods ne-screensavers
-- Isigaba 3: Ngena ngemvume
 Khetha isigaba:
-Khetha inketho:
 Izilungiselelo ezijwayelekile ...
 Izilungiselelo ze-Hardware ...
 Izilungiselelo Zokungena ...
@@ -675,14 +479,12 @@ Isimo Semodi Yesondlo
 Shintsha Iphasiwedi Yomsuka ...
 Bheka izibuyekezo ku-Startup
 Uhlolisise ukuthula
-Hlaziya i-RAM Slots
 Khombisa i-MOTD ku-Log-in
 Sula isikrini ku-Log-in
 Khombisa amagama wabasebenzisi atholakalayo
 Igobolondo Elinombala
 Umyalo wosizo owenziwe lula
 Imbobo yokususa iphutha
-Isiqalo Sokuzenzakalelayo Sokususa Iphutha se-Remote
 Landa i-Retry Times
 Log lomsebenzisi FTP
 Ngena ikheli le-IP le-FTP
@@ -704,7 +506,6 @@ Nika amandla "Shintsha Iphasiwedi Yomsuka" ukusebenzisa le nketho. Ngicela ubuye
 Shintsha Iphasiwedi Yomsuka?
 Setha Iphasiwedi Yomsuka ...
 Bhala imbobo yokulungisa iphutha ekude. Kufanele kube inombolo, futhi akumele isetshenziswe vele. Ngaphandle kwalokho, i-debugger eyihlane izokwehluleka ukuvula itheku.
-Bhala isiqalo sesidlaliso sokulungisa iphutha sokuzenzakalelayo.
 Bhala ukuthi umyalo "uthole" kangaki okufanele uphinde uzame ukulanda okuhlulekile. Kufanele kube inombolo.
 Bhala ukuthi uzosethula nini isibuko sesikrini ngemuva kwama-millisecond acacisiwe. Kufanele kube inombolo.
 Bhala ukuthi mangaki ama-byte angalungiswa esitolo se-log debug. Kufanele kube inombolo.
@@ -716,12 +517,10 @@ Izilungiselelo zesikrini ...
 Yenza kusebenze imibala engama-255
 Ingabe ufuna ukugcina uxhumekile?
 Inketho engavumelekile. Ngicabanga ukuthi cha ...
-Awekho ama-mods atholakele. Yeqa isigaba ...
 Shintsha Amasiko lapho Ushintsha Izilimi
 Umbhalo ubonisiwe
 Bhala noma yimuphi umbhalo ofuna ukuboniswa. Okufushane kungcono.
 Yehlulekile ukulayisha {0}
-Ukulanda kwehlulekile kufayela {0}: {1}
 Iphutha lokusebenzisa umyalo wokususa iphutha wesilawuli kude {0}: {1}
 Ingeza abasebenzisi
 Yengeza iziteketiso kumiyalo
@@ -730,7 +529,6 @@ Ishintsha igama lomsingathi
 Ishintsha i-MAL, i-MOTD Ngemuva kokungena ngemvume
 Ishintsha i-MOTD, uMlayezo Wosuku
 Ishintsha igama lomsebenzisi
-Ibonisa izingodo zokususa amaphutha
 Phatha izimvume zabasebenzisi
 Layisha kabusha ifayela le-screensaver kuma-KSMods
 Isusa umsebenzisi ohlwini
@@ -739,7 +537,6 @@ Yehlulekile ukuhlola izibuyekezo.
 Abasekho abasebenzisi abasele ohlwini.
 Yehlulekile ukusetha ulimi.
 Iphutha lokuzama ukucashisa isaziso.
-Ukuthuthukela ku- {0} kutholiwe. Ibuyekeza ukumiswa ...
 usrmgr: Yehlulekile ukudala igama lomsebenzisi {0}: {1}
 Yehlulekile ukuqamba kabusha umsebenzisi. {0}
 Uhlu olulodwa lwemvume alinawo igama lomsebenzisi {0}.
@@ -773,12 +570,9 @@ Ihambisa yonke imilayezo evela kumamukeli
 Yonke imeyili eyenziwe ngu- {0} ihanjiswe ngempumelelo.
 Yehlulekile ukuhambisa yonke imeyili eyenziwe ngu- {0}.
 Umlayezo {0} usuka ku- {1} ususwe ukusuka ku- {2}. {3} imilayezo esele ukuze ihlolwe
-Umlayezo {0} osuka ku- {1} uhanjisiwe. {3} imilayezo esele ukuze ihlolwe
 Ibonisa ulwazi lwesimo sezulu sedolobha elishiwo. Isebenzisa i-OpenWeatherMap.
 - Ulwazi lwesimo sezulu se- {0} -
 Isimo sezulu: {0}
-Ithempelesha: {0} ({1} iyunithi)
-Izwakala ngathi: {0} ({1} iyunithi)
 Ingcindezi: {0}
 Umswakama: {0}
 Ungathola ukhiye wakho we-API ku-https://home.openweathermap.org/api_keys.
@@ -793,7 +587,6 @@ Ukuqalisa ngakunye, kuzohlola izibuyekezo.
 Lapho ushintsha izilimi, shintsha amagama enyanga, ikhalenda, njll.
 Uma i-kernel iqalile, izosetha iphasiwedi yezimpande.
 Gcina imilayezo yokuhlola i-hardware ithule.
-Uma inikwe amandla, izocwaninga izikhala ze-RAM kanye ne-RAM.
 Khombisa Umlayezo Wosuku ngaphambi kokubonisa isikrini sokungena ngemvume.
 Sula isikrini ngaphambi kokubonisa isikrini sokungena ngemvume.
 Ibonisa abasebenzisi abakhona uma inikwe amandla.
@@ -819,12 +612,9 @@ I-Mod {0} ayinayo umyalo. Ukuhlukaniswa kweMod kuhlulekile. Buyekeza ikhodi yomt
 Kufanele uvule imodi yokulungisa iphutha ngaphambi kokuthi usule ilog yokulungisa iphutha.
 {0} imilayezo emisha ifike ebhokisini lokungenayo.
 Vula i- "lsmail" ukuze uzibone.
-Okuyinhloko: {2} Kuyabhuthazeka: {3} Ukuhlukaniswa kwebhuthi: {4}
 Ayikwazi ukususa ifayela: {0}
 Isusa umkhombandlela noma ifayela
 Ayikwazi ukususa i- {0} ngoba ayikho.
-Ungahle ungafaki i-inxi kusistimu yakho. Bheka umphathi wakho wephakeji ukufakwa. Ngezinhlelo ze-Debian (kanye nezisuswayo), ungahle uthande ukusebenzisa i- "sudo apt install inxi libcpanel-json-xs-perl" ku-emulator yokugcina.
-Ulimi lusethwe ngempumelelo lwaya kusi- {0}!
 Cindezela u-CTRL + C ukuze uphume.
 Inikeza imininingwane mayelana nefayela
 Inikeza imininingwane mayelana nesiqondisi
@@ -879,7 +669,6 @@ Ilayisha {0} ku- {1} ...
 Ukulayisha kuqediwe.
 Sicela usebenzise i- "ftp" uma uzolayisha amafayela kuseva ye-FTP.
 Ukulayisha kuhlulekile ekuzameni {0}: {1}
-{0} MB ka- {1} MB alayishiwe.
 Bhala ukuthi umyalo othi "beka" kumele uzame kangaki ukulayishwa okuhlulekile. Kufanele kube inombolo.
 Ikheli kungenzeka lingabi nalutho.
 Yehlulekile ukubamba i- {0}: {1}
@@ -889,7 +678,6 @@ Izwakala njenge: {0}
 Ithempelesha: {0}
 Isivinini somoya: {0}
 Isiqondisi somoya: {0}
-Okuyinhloko: {2} | Ibhuthwa: {3} | Ukuhlukaniswa kwebhuthi: {4}
 Yenza kusebenze ukwesekwa kombala okungama-255 kwe-Dissolve.
 Yenza kusebenze ukwesekwa kombala kweqiniso kwe-Dissolve.
 Cindezela noma yimuphi ukhiye ukubuyela emuva.
@@ -919,10 +707,7 @@ Iziphakamiso zezimpikiswano
 Yehlulekile ukuqala "{0}": {1}
 Khombisa ukubuka kuqala kwemiyalezo yemeyili
 Lapho ufaka kuhlu imilayezo yemeyili, bonisa ukubuka kuqala komzimba.
-Uphenyo lwezingxenyekazi ezilondoloziwe. Ibonisa imininingwane noma kunjalo ...
-Amandla: {0} GB
 Imibala yangokwezifiso ...
-Bhala umbala njengoba kucacisiwe ngezansi:
 Umbala wokufaka
 Umbala welayisense
 Umbala wephutha le-kernel oqhubekayo
@@ -931,12 +716,8 @@ Umbala wegama lesikhungo
 Umbala wegama lomsebenzisi
 Umbala ongemuva
 Umbala wombhalo ongathathi hlangothi
-Umbala wohlu lomyalo
-Umbala wencazelo yomyalo
 Umbala wesiteji
 Umbala wephutha
-Ingabe lokhu kukhethwa kombala kubukeka KULUNGILE?
-Phendula {0} ukubuyela emuva. Ngaphandle kwalokho, noma iyiphi impendulo isho ukuthi yebo.
 Isitayela se-FTP Prompt
 Isitayela Sokususa Imeyili
 Isitayela se-SFTP Prompt
@@ -946,7 +727,6 @@ Izama ukufinyelela indlela engavumelekile.
 Isula ifayela lombhalo
 Iphuma kusihleli sombhalo
 Imibuzo umlingiswa kulayini ocacisiwe noma yonke imigqa
-Inombolo yohlamvu ecacisiwe {0} akuyona inombolo evumelekile.
 Ukuhlolela izibuyekezo kukhutshaziwe ngoba usebenzisa inguqulo yokuthuthukisa.
 Ivula noma ivale isici sokuhlela ngokuzenzakalela sombhalo.
 Uma ukugcina ngokuzenzakalela kunikwe amandla, ifayela lombhalo lizolondolozwa kumasekhondi ngamunye "n".

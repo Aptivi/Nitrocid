@@ -12,27 +12,12 @@ Injektoidut argumentit ajoitetaan seuraavassa uudelleenkäynnistyksessä.
 Argumentin ruiskutus on peruutettu.
 Virhe todellisia komentorivin argumentteja jäsennettäessä: {0}
 Virheellinen värimalli {0}
-oletusarvo
-asiakassuhde
 hwprobe: Laitteesi testataan. Odota...
-hwprobe: Laitteisto on jo testattu.
-hwprobe: Laitteistoa ei testata. Koettele hwprobe
 CPU: Yksi tai useampi CPU-ytimestä ei ole testattu. Näytetään tiedot joka tapauksessa ...
 RAM: Yksi tai useampi RAM-siru epäonnistui. Näytetään tiedot joka tapauksessa ...
 HDD: Yksi tai useampia kiintolevyjä ei voitu testata. Näytetään tiedot joka tapauksessa ...
 CPU: Prosessorien kokonaismäärä: {0}
-CPU: {0} {1} MHz
-RAM: {0} MB = {1} MB
-RAM: Käytetyt lähtöpaikat (nimien mukaan): {0}
-RAM: Käytetyt lähtöpaikat (numeroiden mukaan): {0} / {1} ({2}%)
-RAM: koetuksen tila on vanhentunut ja poistetaan tulevassa versiossa.
-HDD: {0} {1} GB {2}
-HDD: {0} {1} {2} GB {3}
-HDD: CHS: {4} sylinterit | {5} pää | {6} alat
-HDD: CHS: {3} sylinterit | {4} päätä {5} alat
-hwprobe: Koetusta ei tueta, koska sitä ei ole suunniteltu suorittamaan koettimia Unixissa.
 Anna ylläpitäjän admin-salasana.
-Luettelossa ei ole enää käyttäjiä.
 Ytimen virhe käynnistyksen aikana: {0}
 DOUBLE PANIC: Reboot Time ylittää sallitun {0} virheen uudelleenkäynnistysajan. Löysit ytimen virheen.
 [{0}] paniikki: Käynnistä uudelleen käynnistys, koska virhetaso on {0}.
@@ -46,18 +31,12 @@ DOUBLE PANIC: Virhetyyppi {0} on virheellinen.
 DOUBLE PANIC: Kernel-virhe: {0}
 Sammutetaan...
 Uudelleenkäynnistystä ...
----===+++> Tervetuloa ytimeen Versio {0} <+++===---
 Toinen Kernel Simulatorin esiintymä on käynnissä. Sammuta häiriötilanteessa.
-Käyttäjä {0} on lisätty hallintaluetteloon.
-Käyttäjä {0} on lisätty estettyyn luetteloon.
 Käyttäjän lisääminen lupaluetteloon epäonnistui: virheellinen tyyppi {0}
 Käyttäjän lisääminen lupaluetteloon epäonnistui: virheellinen käyttäjä {0}
-Käyttäjä {0} on poistettu hallintaluettelosta.
-Käyttäjä {0} on poistettu käytöstä poistetusta luettelosta.
 Käyttäjien poistaminen lupaluetteloista epäonnistui: virheellinen tyyppi {0}
 Olet jo kirjautunut sisään.
 Käyttäjien poistaminen lupaluetteloista epäonnistui: virheellinen käyttäjä {0}
-Olet löytänyt virheen lupajärjestelmässä: virheellinen tila {0}
 Olet joko löytänyt virheen, tai lupaa, jonka yritit lisätä tai poistaa, on jo tehty, tai muu virhe.
 Virhe {0}: {1}
 Olet löytänyt virheen, tai lupa, jonka yritit muokata uudelle käyttäjälle, on epäonnistunut.
@@ -79,17 +58,6 @@ Käyttäjää {0} ei saa poistaa.
 Käyttäjä {0} on jo kirjautunut sisään. Kirjaudu ulos ja kirjaudu sisään toiseen ylläpitäjään.
 Käyttäjä {0} poistettu.
 Virhe yrittäessäsi poistaa käyttäjätunnuksen.
-{0} {1} = {2}
-Yhteenveto nollaan ei ole sallittua.
-On epäilty yritys yrittää laskea, mikä johti ylivuotoon.
-Laskennassa on virhe: {0}
-{0} ei voi muuntaa {1}.
-Joko lähde
- tai kohde
- ei ole palvelimessa.
-{0} - {1}: {2}
-Virhe yrittäessäsi muuntaa osoitteesta {0} {1}: {2}
-Virhe
 Pyydettyä näytönsäästäjää {0} ei löydy.
 {0} on alustettu oikein.
 {0} ei alustettu. Näytönsäästäjän koodi saattaa olla kokenut virheen alustuksen aikana.
@@ -99,12 +67,6 @@ Näytönsäästäjä {0} ei löydy tietokannasta. Tarkista nimi ja yritä uudell
 Näytönsäästäjää ei voi ladata seuraavista syistä:
 Tulostettaessa tekstiä on vakava virhe.
 Konfigurointia yritettäessä luodaan virhe.
-Konfigurointia yritettäessä luodaan virhe: {0}
-Päivitys {0} - {1} havaittiin. Asetusten päivittäminen ...
-Konfigurointia yritettäessä päivitetään virhe: {0}.
-Konfigurointia yritettäessä päivitetään virhe.
-Konfigurointia yritettäessä luetaan virhe.
-Määrityksiä luettaessa yritetään virhe: {0}
 Virhe RAM-muistia yritettäessä: {0} - jatkuu ...
 Modia ei voi ladata, koska:
 mod: Moduulien lataaminen ...
@@ -129,32 +91,19 @@ Sinun on muodostettava yhteys palvelimeen ennen hakemiston vaihtamista
 Paikallinen hakemisto: {0}
 Etäkansio: {0}
 Sinun on muodostettava yhteys palvelimeen ennen nykyisen etäkansion hakemista.
-Tiedoston {0} poistaminen ...
-Haluatko varmasti poistaa tiedoston {0} <y/n>?
-Poistettu tiedosto {0}
 Sinun täytyy muodostaa yhteys palvelimeen, jolla on järjestelmänvalvojan oikeudet, ennen kuin poistat sen.
-Anna poistettava tiedosto.
-Sinun täytyy olla järjestelmänvalvojan oikeudet kirjautuneessa käyttäjätunnuksessasi, jotta voit poistaa ne.
 Irrotettu osoitteesta {0}
 Et ole vielä liittynyt mihinkään palvelimeen
 Ladataan tiedostoa {0} ...
 Ladattu tiedosto {0}.
-Lataus epäonnistui tiedostoon {0}, koska paikallinen tiedosto on vioittunut.
 Sinun on muodostettava yhteys palvelimeen ennen lähetyksen suorittamista.
 Syötä ladattava tiedosto paikalliseen hakemistoon.
 {0} KB | Muutettu: {1}
 Sinun pitäisi muodostaa yhteys palvelimeen, ennen kuin luet kaikki etätiedostot.
-Tiedoston {0} nimeäminen {1}: ksi ...
-Nimeä uudelleen onnistuneesti
-Anna tiedosto ja uusi tiedostonimi.
 Tiedoston {0} lataaminen ...
 Ladattu tiedosto {0}
 Anna tiedosto, jonka haluat ladata etäkansioon. lataa <tiedosto> <hakemisto>
-Virhe FTP-komentoa suoritettaessa
 (Sisäinen:
-{0} kansioita, {1} tiedostoja
-(Pääsy evätty)
-{0} KB, luotu {1} {2}, muokattu osoitteessa {3} {4}
 Saat nykyisen paikallisen hakemiston
 Saat nykyisen etäkansion
 Yhdistyy FTP-palvelimeen (sen on aloitettava "ftp://" tai "ftps://")
@@ -167,18 +116,8 @@ Poistu FTP-kuoresta ja palaa ytimeen
 Näyttää ohjeenäytön
 Luettelee paikallisen hakemiston
 Luettelee etäkansion
-Nimeää tietyn tiedoston tai hakemiston uudelleen
 Lähettää paikallisen tiedoston etähakemistoon binäärisen tai tekstin avulla
-FTP-kuoressa oli virhe.
 FTP-viesti: Pyydettyä komentoa {0} ei löydy. Katso ohjeet 'FTP-kuoressa määritettyjen käytettävissä olevien komentojen luettelosta.
-net: Vastaa {0} {1} ms: ssa
-Ajastettu, katkaistu tai palvelin offline-tilassa.
-verkko: Tietokoneen nimi verkossa on {0}
-net: Isäntänimesi on {1}
-net: Näyttää siltä, ​​että tietokoneet ovat verkkotunnuksessa tai työryhmässä:
-net: WiFi tai Ethernet on katkaistu.
-net: Näyttää siltä, ​​että tietokoneet on kytketty alla:
-net: Reitittimen osoite: {0}
 Sovittimen {0} ominaisuuksien saaminen epäonnistui
 Sovittimen numero:
 Adapterin nimi:
@@ -189,9 +128,7 @@ Unicast-paketit:
 Virhe saapuvissa / lähtevissä paketeissa:
 Alias ​​ei voi olla sama nimi kuin komennolla.
 Komennosta ei löydy aliasista {0}.
-Aliasing {0} - {1} on kielletty kokonaan.
 Nyt voit suorittaa "{0}" komentona: "{1}".
-Et voi enää käyttää komentoa "{0}" komennona "{1}".
 Alias ​​{0} ei löydy poistetuksi.
 Virheellinen tila {0}.
 Injektoidut argumentit, {0}, ajetaan seuraavan uudelleenkäynnistyksen aikana.
@@ -201,16 +138,12 @@ Tyhjä isäntänimi.
 Vaihtaminen: {0} - {1} ...
 Päivän tyhjä viesti.
 Tyhjä MAL kirjautumisen jälkeen.
-MAL: n muuttaminen {0}: sta {1}: ksi ...
 Väärä käyttäjän salasana.
 Salasanat eivät vastaa.
 Käyttäjätunnus on muutettu {0}!
 Annettu uusi nimi on jo löydetty.
-Tietokoneiden luettelointia ei vielä tueta Unixissa.
-Alias, jotka ovat kiellettyjä: {0}
 {0} ei löydy.
 Konfigurointi ladataan uudelleen. Jotta muutokset voisivat tulla voimaan, saatat joutua käynnistämään ytimen uudelleen.
-Kaikki palautuu normaaleihin asetuksiin.
 Yksi tai useampi väri on virheellinen.
 Värit eivät ole käytettävissä. Kytke värillinen kuori ytimen kokoonpanossa.
 Näytönsäästäjä {0} ei löydy.
@@ -222,85 +155,36 @@ Argumentit käynnistettäessä:
 Ohjekomento yksinkertaistettu:
 MOTD kirjautumisessa:
 Aika / päivä kulmassa:
-Laitteisto on testattu:
-Nykyinen teema:
 [ Laitteiston asetukset ] {0}
 {0}[ Käyttäjän asetukset ]
 Nykyinen käyttäjänimi:
 Nykyinen isäntänimi:
 Käytettävissä olevat käyttäjätunnukset:
-Tietokoneen isäntänimi:
-{0}[ Viestiasetukset ]
-Lähdekoodi:
-Tekijänoikeus (c)
-lisenssi
-esittää
 Virhe komentoa suoritettaessa
-Lisää käyttäjiä (Vain käyttäjät voivat käyttää tätä komentoa)
-Lisää komentoja varten aliaksia (vain pääkäyttäjät voivat käyttää tätä komentoa)
-Injisoi argumentit ytimeen (käynnistä uudelleen, vain järjestelmänvalvojat)
-Yksinkertainen laskin
 Muuttaa hakemistoa
-Muuttaa isäntänimeä (vain ylläpitäjät)
-Muutokset MAL, MOTD kirjautumisen jälkeen (vain ylläpitäjät)
-Muutokset MOTD, päivän viesti (vain ylläpitäjät)
 Muuttaa nykyisen käyttäjän salasanaa
-Muuttaa käyttäjänimeä (vain ylläpitäjät)
 Tyhjentää näytön
-Muunna valuutta
-Näyttää virheenkorjauslokit (vain ylläpitäjät)
 Käytä FTP-kuoria vuorovaikutuksessa palvelimien kanssa
 Ohje-sivu
-Anturin laitteisto manuaalisesti (kerran nohwprobe-ytimessä)
 Luettele tiedoston / kansion sisältö nykyiseen kansioon
-Lataa uudelleen näytönsäästäjän tiedosto %USERPROFILE%\KSMods
 Lukitsee näytön salasanalla
 Kirjaa sinut ulos
-Luettelee kaikki verkkolaitteet, jotka ovat verkossa (ja offline-tilassa)
-Luettelee kaikki isäntänä olevat verkko-osoitteet
-Luettelee kaikki verkko-osoitteet isäntänä puun avulla
 Luo hakemiston
 Luettelee tiedot kaikista käytettävissä olevista rajapinnoista
-Näyttää kielletyn luettelon aliaksista
-Hallinnoi käyttäjien oikeuksia (Vain käyttäjät voivat käyttää tätä komentoa)
-Tarkista, onko määritetty osoite käytettävissä
-Kirjoittaa tiedoston sisällön konsoliin
 Käynnistää tietokoneen uudelleen (VAROITUS: Ei synkronointia, koska se ei ole lopullinen ydin)
 Lataa muokattu kokoonpanotiedosto uudelleen.
-Poistaa hakemiston
-Poistaa käyttäjän luettelosta (vain ylläpitäjät)
 Tallentaa näytön polttovälineistä
-Tieteellinen laskin. Yksikkömuunnin on erotettu toiseen komentoon
-Määrittää ytimen värit
 Määrittää ytimen näytönsäästäjät
 Määrittää ytimen teemat
-Näyttää aliakset
-Näyttää MOTD: n käyttäjän tai ytimen asettaman kirjautumisen jälkeen
-Näyttää käyttäjän tai ytimen asettaman päivän viestin
 Näyttää päivämäärän ja kellonajan
 Näyttää päivämäärän ja kellonajan alueilla
 Ydin suljetaan
 Järjestelmätiedot
-Yksikkömuunnin, joka on erotettu sciccista.
-Näyttää käytettyjen avoimen lähdekoodin riippuvuudet
-Erittäin kuvaileva käyttöohje.
 * Voit käyttää komentoja useiden komentojen avulla kaksoispisteellä.
-Käytettävissä olevat komennot:
-Mod-komennot:
-Alias-komennot:
 Käyttö:
-Argumentit erotetaan pilkulla
 missä argumentit ovat {0}
-saat nykyisen hakemiston
-Missä lähteessä ja määränpäässä on 3 valuuttakurssin YLIMÄÄRÄ-merkkiä
-Luettelo kaikista tunnisteista ja nimistä:
-Näyttää lokitiedostot, jotta voit lähettää lokin meille.
 Alustaa FTP-kuoren.
-Koettimien laitteisto (toimii vain, kun laitteistoa ei ole testattu ja hwprobe ei ole suoritettu).
-Luettelee sekä verkkotiedot että kaikki verkkoon liitetyt tietokoneet.
 Ystävät
-Luettelee sekä verkkotiedot että kaikki verkkoon liitetyt tietokoneet puumuodossa.
-Luettelee sekä verkkotiedot että jokainen tietokone.
 missä modname.ss.vb on
 Lukitsee näytön salasanalla.
 Kirjaudu ulos käyttäjältä.
@@ -313,41 +197,25 @@ Näyttää päivämäärän ja kellonajan.
 Näyttää päivämäärän ja kellonajan alueilla.
 Sammuttaa simuloidun tietokoneen.
 Näyttää järjestelmän tiedot ja versiot.
-Näyttää avoimen lähdekoodin kirjastot
 Kuoressa oli virhe.
 Sinulla ei ole oikeutta käyttää {0}
 Kuorosanoma: Pyydettyä komentoa {0} ei saa käyttää huoltotilassa.
 Shell-viesti: Pyydettyä komentoa {0} ei löydy. Katso käytettävissä olevat komennot ohjeesta.
 Shell-viesti: Komentoa {0} ei saa käyttää kirjautumalla.
-Shell-viesti: Pyydettyä komentoa {0} ei löydy.
 Virhe komentoa suoritettaessa.
 datetime: Aika on {0}
 datetime: Tänään on {0}
 datetime: Aikavyöhyke: {0}
 - {0} aika: {1}
 tyhjentää näytön.
-Näyttää siltä, ​​että manuaalista sivua {0} ei löydy.
-Manuaalisen sivun lataamisessa on virhe {0}, koska {1}.
-Tämä manuaalinen sivu on epätäydellinen seuraavista syistä:
-Paina mitä tahansa näppäintä jatkaaksesi...
- | {0} sanat Versio v {1} | {2} jaksot
-Tätä manuaalista sivun nimeä ei ole kirjoitettu
-Tämä manuaalinen sivu ({0}) ei sisällä kehon tekstiä. Sivun poistaminen ...
-Tämä manuaalinen sivu ({0}) ei sisällä osia. Sivun poistaminen ...
 Käynnissä {0}
 Sinulla ei ole oikeutta saada tietoa {0}.
 Tämä komento on vanhentunut ja se poistetaan tulevassa versiossa.
 Sinulla ei ole oikeutta muuttaa salasanaa {0}, koska kohde oli admin.
-Muunna rahamäärä maasta toiseen
-Valuutat:
 usrmgr: Käyttäjätunnus {0} on jo löydetty
-Anna API-avain: 
-Tietokoneita ei voitu saada. Jos käytössäsi on uusin Windows 10 -versio, sinun on otettava SMBv1 käyttöön. Tämä pöytäkirja on kuitenkin epävarma ja yritämme ratkaista tämän ongelman.
 Poistaa kaiken debug-lokissa
-Saat SSE-versiot
 Virheellinen kieli
 Muuttaa kieltä
-Et ehkä ole asentanut libcpanel-json-xs-perl-järjestelmääsi. Katso asennuksen hallintaoppaasta. Debianin (ja johdannaisten) järjestelmissä saatat haluta suorittaa "sudo apt install libcpanel-json-xs-perl" pääteemulaattorissa. Lisätietoja virheestä:
 ----------------------------- Ytimen paniikkikohta ------------------------------
 >> Paniikkitiedot <<
 > Kuvaus: {0}
@@ -365,14 +233,12 @@ Et ehkä ole asentanut libcpanel-json-xs-perl-järjestelmääsi. Katso asennukse
 >> Kehykset, tiedostot, rivit ja sarakkeet <<
 > Kehys {0}: Tiedosto: {1} | Linja: {2} | Sarake: {3}
 > Kehysinformaatiota yritettäessä on virhe. {0}: {1}
-Olet asettanut järjestelmän kielen muuhun kuin englanniksi. Pahoittelemme häiriötä, mutta näyttää siltä, että Google ja sen kääntäjä ovat erittäin omituisia kääntämällä minkä tahansa ohjelmointikielen koodilohkoja. Korjaaessamme kaikki käännettyjen manuaalisten sivujen koodilohot, suosittelemme, että avaat lipun Google Translate -sovellukseen kääntämään koodilohkoja, joita ei ole tarkoitettu käännettäväksi, ja aseta järjestelmäkieleksi englanti, jos puhut sitä.
 Lataa muutokset uudelleen.
 Modit ladattu uudelleen.
 Tervetuloa Kerneliin!
 Sisäänkirjautunut onnistuneesti nimellä <käyttäjä>
 MOTD / MAL on kelvollinen, mutta viestin tyyppi ei ole kelvollinen. 
 Yritettiin lukea MOTD / MAL, joka on virheellinen viestityyppi.
-Säilyttäen vakaan yhteyden, se lataa {0} kansioon {1} ...
 Lataus on valmis.
 Lataus epäonnistui kokeilussa {0}: {1}
 Käytä "ftp", jos aiot ladata tiedostoja FTP-palvelimelta.
@@ -388,13 +254,11 @@ Alias löytyi jo: {0}
 Virheloki poistettu. Kaikki kytketyt virheenkorjauslaitteet voivat silti tarkastella viestejä.
 Virhelokin poistaminen epäonnistui: {0}
 Hakemiston vaihtaminen epäonnistui: {0}
-Käyttäjätunnus on väärä
 Määritä osoite
 Hakemistoa ei voi poistaa: {0}
 Aikavyöhyke on määritetty väärin.
 Virheellinen profiilivalinta.
 Yritetään muodostaa yhteys kohteeseen {0} profiililla {1} ...
-Virhe yksikkötestauksessa: {0}
 Komentoa {0} ei löytynyt. Katso komentojen luettelo "help" -komennosta.
 Sovittimen {0} IPv6-ominaisuuksien saaminen epäonnistui. Jatkuvat ...
 IPv4-tiedot:
@@ -408,26 +272,17 @@ Valitsemasi kieli sisältää kaksi vaihtoehtoa. Valitse yksi:
 Valitse valintasi:
 Virheellinen valinta. Yritä uudelleen.
 Sinulla ei ole lupaa asettaa nykyisen hakemiston arvoksi {0}: {1}
-Lupa {0} epäonnistui
 Määrittämäsi polku on liian pitkä.
-Sinulla ei ole lupaa luetteloida {0}: {1}
-Virhe tarkistettaessa prosessoria: {0}
-Virhe tarkistettaessa RAM-muistia: {0}
-Virhe tarkistettaessa kiintolevyä: {0}
 CPU: VAROITUS: SSE2 vaaditaan tulevissa kehitysyhteistyötoimissa.
 Tietojen keräilijä kaatui yrittäessään saada tietoa tuotteesta {0}: {1}
 Virhe yritettäessä kääntää kokoamispäivämäärä {0}: {1}
 Virhe yritettäessä asettaa MOTD / MAL: {0}
 Virhe yritettäessä saada MOTD / MAL: {0}
-Kohdassa {0} on nolla viitepoikkeus: {1}
-Kohdassa {0} on nolla viitepoikkeus: {1} - pinon jäljitys:
 Virhe yritettäessä käynnistää näytönsäästäjä virheellisen toiminnan vuoksi.
 Uusinta ei ole sallittu vikasietotilassa.
 Modifikaatioiden jäsentäminen ei ole sallittua vikasietotilassa.
-Jäsentä koko hakemisto kokoa tai vain nykyisen tiedoston tiedostoja varten.
 Luettelee kaikki kytketyt virheenkorjauslaitteet.
 Virhe yritettäessä asettaa jäsentämistilaa. Tarkista arvo ja yritä uudelleen. Jos tämä on oikein, katso pinon jäljitys, kun ytimen virheenkorjaus on käytössä.
-Aseta onnistuneesti.
 Polku ei ole tiedosto eikä hakemisto.
 Luo toisen kopion tiedostosta eri hakemistossa tai nimellä.
 Siirtää tiedoston toiseen hakemistoon
@@ -436,34 +291,11 @@ Tiedostojen siirtäminen toiseen hakemistoon
 Ottelu {0} ({1}): {2}
 Ottelu {0}: {1}
 Käytetty aika: {0} millisekuntia
-Valmistaja: {0}
-Malli: {0}
-Kapasiteetti: {0} ({1}, {2}, {3})
-Rajapinnan tyyppi: {0}
-Aseman numero: {0}
-Käynnistyslippu: {0} ({1})
-Fyysinen osio: {0}
-Ensisijainen lippu: {0}
-Koko: {0} Gt
-Looginen osio: {0}
-Pakattu: {0}
 Nimi: {0}
-Tiedostojärjestelmä: {0}
-Kapasiteetti: {0} Gt ilmaista {1} Gt
-Listataan kaikki loogiset osiot kaikissa asemissa.
-Luettelee kaikki koetut asemat.
-Listaa kaikki tietyn aseman koetut osiot (ja kaikkien asemien kaikki loogiset osiot).
 Laskee tiedostojen summat.
 Vie sinut GitHub-Wikiimme.
 Virheellinen salausalgoritmi.
 Ottaa käyttöön tai poistaa käytöstä etävirheen.
-Alustetaan tiedostojärjestelmää ...
-Saa asennetut äänet
-Asettaa oletusäänen
-Puhuu merkkijono oletusäänellä
-Ääni {0}: {1} ({2})
-Virheellinen ääni.
-Äänisarja
 Katso, pystytkö oikeinkirjoittamaan sanat oikeaan aikaan
 Katso, pystytkö ratkaisemaan matemaattiset yhtälöt ajoissa
 Vastaa rakkauteen tai vihaan kommentteja.
@@ -474,23 +306,16 @@ Kerroit juuri rakkauskommentista!
 Vastatit juuri vihakommenttiin!
 Loistava! Kommentti {0} poistetaan siitä.
 Loistava! {0} arvostaa kiitoksiasi.
-Kirjoita "GetMeOut" poistuaksesi.
 Oikeinkirjoitettu!
 Kirjoitettu väärin.
 Ratkaistu täydellisesti!
 Ratkaistu väärin.
-{0} Mt {1} Mt ladattu.
 RPC on jo käynnissä.
 RPC-kuuntelu kaikissa osoitteissa porttia {0} käyttämällä.
 Käynnistetään RPC ...
 Yhdistetään SSH-palvelimeen.
 Kirjoita {0}: n salasana:
 SSH irti.
-Lataa syntetiedosto ja toistaa sen.
-Komentotiedostoa {0} ei ole.
-Tiedosto ei ole komentosarjainen syntetiedosto.
-Synteettilinjan koettaminen epäonnistui.
-Tyhjä merkkijono määritetty
 Koodisivua ei voi asettaa. Kieli ei välttämättä näy oikein.
 Virheenkorjaus ei ole käytössä.
 {0} ei ole enää asetettu oletusnäytönsäästäjäksi.
@@ -519,8 +344,6 @@ Tehtävä epäonnistui, kunnioita -, tilaaja -
 Lopeta tällaisen videon tekeminen !!!
 Palaa takaisin työhösi, videosi ovat pahimmat!
 Uskomme tämän videon kanssa.
-{0} -kalvonimi {1} on kielletty.
-Virhe yritettäessä hylätä ilmoitus: {0}
 Näyttää kaikki vastaanotetut ilmoitukset
 Hylkää ilmoituksen
 Ilmoitus hylättiin onnistuneesti.
@@ -532,39 +355,26 @@ Yleiset IPv4-ominaisuudet
 Etäkäyttää komennon etätietokoneeseen
 - Vaihe 1: Järjestelmän alustus
 - Vaihe 2: Laitteiden havaitseminen
-- Vaihe 2: Sisäinen käyttäjänimen hallinta
 - Vaihe 3: Modifikaatioiden ja näytönsäästäjien havaitseminen
-- Vaihe 4: Jätehuolto
 - Vaihe 4: Kirjaudu sisään
-Ennen roskien keräystä: {0} tavua
-Jätekeräyksen jälkeen: {0} tavua
-Virhe RPC: n käynnistämisessä: {0}
 Näyttää siltä, että käytit julkaisuehdokasversiota. On suositeltavaa, että pysyt vakaana versiona.
-Näyttää siltä, että tiedostojärjestelmäpopulaatio vie liian kauan.
 Virheellinen tyyppi {0}.
-Kapasiteetti: {0}
-Osioiden lukumäärä: {0}
 Koko: {0}
-Käytetty: {0}
 Hakemisto {0} on jo olemassa.
 Virhe yritettäessä muodostaa yhteyttä {0}: Yhteyden aikakatkaisu tai yhteys katkesi
 Laskin lausekkeiden laskemiseksi.
 Virhe laskelmassa.
-Kapasiteetti: {0} Gt ({1}, {2}, {3})
 Näyttää siltä, että käytit julkaisua lähes julkaisua. Vaikka nyt on turvallisempaa käyttää, on suositeltavaa pysyä vakaana versiona.
 Järjestelmän päivitys
 Tarkistetaan järjestelmäpäivityksiä ...
 Löytyi uusi versio: 
 Voit ladata sen osoitteesta: 
-Päivitysten tarkistaminen epäonnistui: {0}
-Virhelokeja ei löydy
 Ei viimeaikaisia ilmoituksia
 Etsii tarjottua tiedostoa tiettyä merkkijonoa
 Laskee tiedostojen summat määritettyyn hakemistoon.
 Listaa kaikki tietyn käyttäjän viestit.
 Kirjoita käyttäjänimi tai sähköpostiosoite:
 Kirjoita salasana:
-Kirjoita palvelimen osoite ja portti (<osoite> tai <osoite>:[portti]):
 Virhe muodostettaessa yhteyttä verkkoon {0}: {1}
 Yhdistetään kohteeseen {0} ...
 Todennusmoduuli ...
@@ -581,7 +391,6 @@ Viestin numero ei ole numeerinen arvo.
 - Lähetetty {0} {1}
 Määritettyä viestiä ei löydy.
 Etä debug-käynnistys epäonnistui: {0}
-IMAP-komennon suorittamisessa tapahtui virhe: {0}
 Profiilien valmistelu ... Se voi viedä useita minuutteja ...
 Isäntänimi, käyttäjänimi, tietotyyppi, koodaus, salaus, protokollat
 Virhe yritettäessä suorittaa komentosarja: {0}
@@ -593,7 +402,6 @@ Taajuuden on oltava numeerinen. Jos se on numeerinen, varmista, että se on >= 3
 Ajan on oltava numeerinen.
 jossa <vastaukset> ovat yhden kirjaimen vastaukset kysymykseen viivoin erottuna
 Virhe yritettäessä muodostaa yhteys SSH-palvelimeen: {0}
-Tyhjä MOTD kirjautumisen jälkeen.
 Antaa käyttäjän syöttää syötteen
 Vaihtaa nykyisen postihakemiston
 Sähköpostikansiota {0} ei voi avata: {1}
@@ -616,7 +424,6 @@ Kirjoita aihe:
 Kirjoita viestisi alle. Kirjoita "EOF" vahvistaaksesi.
 Lähetetään viestiä ...
 Viesti lähetetty.
-Virhe viestin lähettämisessä: {0}
 Virheellinen sähköpostiosoite. Varmista, että olet kirjoittanut osoitteen oikein ja että se vastaa esitetyn esimerkin muotoa:
 Poistaa viestin
 Poistaa kaikki viestit vastaanottajalta
@@ -656,10 +463,7 @@ Estä vianetsintälaite IP-osoitteen perusteella
 {0} ei ole vielä estetty.
 Virhe asetusten lataamisessa
 Asetusten lataamisessa tapahtui virhe. Saatat joutua tarkistamaan asetustiedoston.
-- Vaihe 2: Modien ja näytönsäästäjien tunnistus
-- Vaihe 3: Kirjaudu sisään
 Valitse osio:
-Valitse vaihtoehto:
 Yleiset asetukset...
 Laitteistoasetukset ...
 Kirjautumisasetukset ...
@@ -675,14 +479,12 @@ Huoltotilan liipaisin
 Vaihda pääsalasana ...
 Tarkista päivitykset käynnistyksen yhteydessä
 Hiljainen koetin
-Koettimen RAM-paikat
 Näytä MOTD sisäänkirjautumisen yhteydessä
 Tyhjennä näyttö kirjautumisen yhteydessä
 Näytä käytettävissä olevat käyttäjänimet
 Värillinen kuori
 Yksinkertaistettu ohjekomento
 Virheenkorjausportti
-Etävianmääritys Oletus Nick-etuliite
 Lataa Retry Times
 Kirjaudu FTP-käyttäjänimi
 Loki FTP: n IP-osoite
@@ -704,7 +506,6 @@ Ota tämä vaihtoehto käyttöön valitsemalla "Vaihda pääsalasana". Palaa tak
 Vaihdetaanko salasana?
 Aseta pääsalasana ...
 Kirjoita virheenkorjausportti. Sen on oltava numeerinen, eikä sitä saa käyttää jo. Muussa tapauksessa etävianetsintäohjelma ei onnistu avaamaan porttia.
-Kirjoita oletusvirheen virheenkorjauksen lempinimen etuliite.
 Kirjoita kuinka monta kertaa "" get "-komennon pitäisi yrittää epäonnistuneita latauksia uudelleen. Sen on oltava numeerinen.
 Kirjoita, milloin näytönsäästäjä käynnistetään tietyn millisekunnin kuluttua. Sen on oltava numeerinen.
 Kirjoita, kuinka monta tavua virheenkorjauslokitiedosto voi tallentaa. Sen on oltava numeerinen.
@@ -716,12 +517,10 @@ Näytönsäästäjän asetukset ...
 Aktivoi 255 väriä
 Haluatko pitää yhteyttä?
 Virheellinen valinta. Olettaen, ettei ...
-Ei modeja havaittu. Ohitetaan vaihe ...
 Vaihda kulttuuria vaihdettaessa kieltä
 Näytetty teksti
 Kirjoita haluamasi teksti. Lyhyempi on parempi.
 {0} lataaminen epäonnistui
-Lataus epäonnistui tiedostolle {0}: {1}
 Virhe etävianetsintäkomennon suorittamisessa {0}: {1}
 Lisää käyttäjiä
 Lisää aliakset komentoihin
@@ -730,7 +529,6 @@ Muuttaa isäntänimeä
 Muuttaa MAL, MOTD kirjautumisen jälkeen
 Muuttaa päivän viestiä MOTD
 Vaihtaa käyttäjänimen
-Näyttää virheenkorjauslokit
 Hallitse käyttäjien käyttöoikeuksia
 Lataa näytönsäästäjätiedosto uudelleen KSMod-tiedostoiksi
 Poistaa käyttäjän luettelosta
@@ -739,7 +537,6 @@ Päivitysten haku epäonnistui.
 Luettelossa ei ole enää käyttäjiä.
 Kielen asettaminen epäonnistui.
 Ilmoitus hylätessä tapahtui virhe.
-Päivitys versioon {0} havaitaan. Päivitetään kokoonpanoa ...
 usrmgr: Käyttäjänimen luominen epäonnistui {0}: {1}
 Käyttäjän nimeäminen uudelleen epäonnistui. {0}
 Yksi käyttöoikeusluetteloista ei sisällä käyttäjänimeä {0}.
@@ -773,12 +570,9 @@ Siirtää kaikki viestit vastaanottajalta
 Kaikki käyttäjän {0} lähettämät viestit on siirretty.
 Kaikkien käyttäjän {0} lähettämien viestien siirtäminen epäonnistui.
 Viesti {0} lähettäjältä {1} siirretty kansiosta {2}. {3} jäsennettävää viestiä jäljellä.
-Viesti {0} lähettäjältä {1} siirretty. {3} jäsennettävää viestiä jäljellä.
 Näyttää tietyn kaupungin säätiedot. Käyttää OpenWeatherMapia.
 - Säätiedot kohteelle {0} -
 Sää: {0}
-Lämpötila: {0} ({1} yksikkö)
-Tuntuu: {0} ({1} yksikkö)
 Paine: {0}
 Kosteus: {0}
 Voit hankkia oman API-avaimen osoitteesta https://home.openweathermap.org/api_keys.
@@ -793,7 +587,6 @@ Jokainen käynnistyksen yhteydessä se tarkistaa päivitykset.
 Kun vaihdat kieltä, vaihda kuukausien nimet, kalenteri jne.
 Jos ydin käynnistetään, se asettaa juurisalasanan.
 Pidä laitteistokokeiluviestit hiljaa.
-Jos se on käytössä, se tutkii RAM-paikat yhdessä RAM-muistin kanssa.
 Näytä päivän viesti ennen kirjautumisnäytön näyttämistä.
 Tyhjennä näyttö ennen kirjautumisnäytön näyttämistä.
 Näyttää käytettävissä olevat käyttäjät, jos se on käytössä.
@@ -819,12 +612,9 @@ Modilla {0} ei ole komentoa. Modin jäsentäminen epäonnistui. Tarkista lähdek
 Virheenkorjaustila on otettava käyttöön, ennen kuin voit tyhjentää virhelokin.
 {0} uutta viestiä saapui postilaatikkoon.
 Avaa "lsmail" nähdäksesi ne.
-Ensisijainen: {2} Käynnistettävä: {3} Käynnistysosio: {4}
 Tiedostoa ei voi poistaa: {0}
 Poistaa hakemiston tai tiedoston
 {0} ei voi poistaa, koska sitä ei ole olemassa.
-Sinulla ei ehkä ole inxiä asennettuna järjestelmääsi. Katso asennusohjeet paketinhallinnasta. Debian (ja johdannaiset) -järjestelmissä saatat haluta suorittaa "" sudo apt install inxi libcpanel-json-xs-perl "" pääteemulaattorissa.
-Kieleksi asetettu {0}!
 Poistu painamalla CTRL + C.
 Antaa tietoja tiedostosta
 Tarjoaa tietoja hakemistosta
@@ -879,7 +669,6 @@ Ladataan {0} kohteeseen {1} ...
 Lataus on valmis.
 Käytä "ftp", jos aiot ladata tiedostoja FTP-palvelimelle.
 Lataus epäonnistui kokeilemalla {0}: {1}
-Ladattu {0} Mt {1} Mt: sta.
 Kirjoita kuinka monta kertaa "put" -komennon pitäisi yrittää epäonnistuneita latauksia uudelleen. Sen on oltava numeerinen.
 Osoite ei voi olla tyhjä.
 Pingata {0} epäonnistui: {1}
@@ -889,7 +678,6 @@ Tuntuu: {0}
 Lämpötila: {0}
 Tuulennopeus: {0}
 Tuulen suunta: {0}
-Ensisijainen: {2} | Käynnistettävä: {3} | Käynnistysosio: {4}
 Aktivoi 255 väritukea liukenemiseen.
 Aktivoi todellisen väritukeen liukenemiseen.
 Paina mitä tahansa näppäintä palataksesi takaisin.
@@ -919,10 +707,7 @@ Pyytää argumentteja
 Kohteen {0} käynnistäminen epäonnistui: {1}
 Näytä sähköpostiviestin esikatselu
 Kun luet postiviestejä, näytä rungon esikatselu.
-Välimuistissa oleva laitteistokoetin. Näytetään tietoja joka tapauksessa ...
-Kapasiteetti: {0} Gt
 Mukautetut värit ...
-Kirjoita väri seuraavalla tavalla:
 Syötteen väri
 Lisenssin väri
 Jatkuva ytimen virheen väri
@@ -931,12 +716,8 @@ Isäntänimen väri
 Käyttäjänimen väri
 Taustaväri
 Neutraali tekstin väri
-Komentoluettelon väri
-Komennon määrityksen väri
 Vaiheen väri
 Virheen väri
-Näyttävätkö nämä värivaihtoehdot OK?
-Vastaa {0} palataksesi takaisin. Muuten mikä tahansa vastaus tarkoittaa kyllä.
 FTP-kehotustyyli
 Postikehotustyyli
 SFTP-kehotustyyli
@@ -946,7 +727,6 @@ Yritetään käyttää virheellistä polkua.
 Tyhjentää tekstitiedoston
 Poistu tekstieditorista
 Kyselee määritetyn rivin tai kaikkien rivien merkkiä
-Määritetty merkinumero {0} ei ole kelvollinen numero.
 Päivitysten etsiminen on poistettu käytöstä, koska käytössäsi on kehitysversio.
 Ottaa tekstieditorin automaattisen tallennuksen käyttöön tai poistaa sen käytöstä.
 Jos automaattinen tallennus on käytössä, tekstitiedosto tallennetaan jokaista "n" sekuntia kohden.

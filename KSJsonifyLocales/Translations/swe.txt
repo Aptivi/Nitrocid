@@ -12,27 +12,12 @@ Injicerade argument kommer att schemaläggas att köras vid nästa omstart.
 Argumentinjektion har avbrutits.
 Ett fel uppstod när man analyserade riktiga kommandoradsargument: {0}
 Ogiltig färgmall {0}
-Standard
-Beställnings
 hwprobe: Din hårdvara kommer att undersökas. Vänta...
-hwprobe: Hårdvara som redan testats.
-hwprobe: Hårdvara är inte probed. Probe med "hwprobe"
 CPU: En eller flera av CPU-kärnorna misslyckades att undersökas. Visar information ändå ...
 RAM: En eller flera av RAM-chipsen kunde inte sonderas. Visar information ändå ...
 HDD: En eller flera hårddiskar kunde inte sonderas. Visar information ändå ...
 CPU: Totalt antal processorer: {0}
-CPU: {0} {1} MHz
-RAM: {0} MB = {1} MB
-RAM: Använda slots (med namn): {0}
-RAM: Använda slots (efter siffror): {0} / {1} ({2}%)
-RAM: Probing status avlägsnas och kommer att tas bort i framtida utgåva.
-HDD: {0} {1} GB {2}
-HDD: {0} {1} {2} GB {3}
-HDD: CHS: {4} cylindrar | {5} huvuden | {6} sektorer
-HDD: CHS: {3} cylindrar | {4} huvuden | {5} sektorer
-hwprobe: Probing stöds inte eftersom den inte är avsedd att köra probers på Unix.
 Ange administratörslösenordet för underhåll.
-Det finns inga fler användare kvar i listan.
 Kärnfel vid uppstart: {0}
 DUBBEL PANIC: Omstartstid överstiger maximalt tillåten {0} felåterställningstid. Du hittade en kärnfel.
 [{0}] panik: Omstart aktiverat på grund av felnivå {0}.
@@ -46,18 +31,12 @@ DUBBEL PANIC: Fel typ {0} ogiltig.
 DOUBLE PANIC: Kernelbug: {0}
 Stänger ner...
 Startar om ...
----===+++> Välkommen till kärnan | Version {0} <+++===---
 En annan instans av Kernel Simulator körs. Stängning vid störning.
-Användaren {0} har lagts till i administratörslistan.
-Användaren {0} har lagts till i funktionslistan.
 Misslyckades att lägga till användare i behörighetslistor: ogiltig typ {0}
 Misslyckades att lägga till användaren i behörighetslistor: ogiltig användare {0}
-Användaren {0} har tagits bort från adminlistan.
-Användaren {0} har tagits bort från funktionslistan.
 Misslyckades med att ta bort användaren från behörighetslistor: ogiltig typ {0}
 Du är redan inloggad.
 Misslyckades med att ta bort användaren från behörighetslistor: ogiltig användare {0}
-Du har hittat ett fel i tillståndssystemet: Ogiltigt läge {0}
 Du har antingen hittat en bugg, eller det tillstånd du försökte lägga till eller ta bort är redan gjort, eller ett annat fel.
 Fel {0}: {1}
 Du har antingen hittat en bugg eller det tillstånd du försökte redigera för en ny användare har misslyckats.
@@ -79,17 +58,6 @@ Användaren {0} får inte tas bort.
 Användaren {0} är redan inloggad. Logga ut och logga in som en annan admin.
 Användaren {0} har tagits bort.
 Ett fel på att försöka ta bort användarnamnet.
-{0} av {1} = {2}
-Försök att dela med noll är inte tillåtet.
-Det har varit ett misstänkt försök att beräkna som resulterade i ett överflöde.
-Det finns ett fel vid beräkningen: {0}
-{0} kan inte konverteras till {1}.
-Antingen källan
- eller destination
- existerar inte på servern.
-{0} till {1}: {2}
-Ett fel på att försöka konvertera från {0} till {1}: {2}
-Fel
 Den begärda skärmsläckaren {0} hittades inte.
 {0} har initialiserats ordentligt.
 {0} inleddes inte. Skärmsläckarkoden kan ha upplevt ett fel vid initiering.
@@ -99,12 +67,6 @@ Skärmsläckare {0} hittades inte i databasen. Kontrollera namnet och försök i
 Skärmsläckaren kan inte laddas på grund av följande:
 Det finns ett allvarligt fel vid utskrift av text.
 Det gick inte att försöka skapa konfiguration.
-Det gick inte att försöka skapa konfiguration: {0}
-En uppgradering från {0} till {1} ​​upptäcktes. Uppdaterar konfiguration ...
-Det gick inte att försöka uppdatera konfigurationen: {0}.
-Det gick inte att försöka uppdatera konfigurationen.
-Det gick inte att försöka läsa konfigurationen.
-Det gick inte att försöka läsa konfigurationen: {0}
 Ett fel på att försöka frigöra RAM: {0} - Fortsättning ...
 Mod kan inte laddas på grund av följande:
 mod: Laddar mods ...
@@ -129,32 +91,19 @@ Du måste ansluta till en server innan du ändrar katalogen
 Lokal katalog: {0}
 Fjärrkatalog: {0}
 Du måste ansluta till servern innan du får den aktuella fjärrkatalogen.
-Tar bort filen {0} ...
-Är du säker på att du vill radera filen {0} <y / n>?
-Raderad fil {0}
 Du måste ansluta till servern med administrativa behörigheter innan du tar bort raderingen.
-Ange en fil att ta bort.
-Du måste ha administrativ behörighet på ditt inloggade användarnamn för att kunna ta bort.
 Avkopplad från {0}
 Du har inte anslutit till någon server än
 Hämtar fil {0} ...
 Nedladdad fil {0}.
-Hämtningen misslyckades för filen {0} eftersom den lokala filen är korrupt.
 Du måste ansluta till servern innan du utför överföring.
 Ange en fil som ska hämtas till den lokala katalogen.
 {0} KB | Ändrad i: {1}
 Du bör ansluta till servern innan du listar alla fjärrfiler.
-Byter namn på filen {0} till {1} ​​...
-Renamed framgångsrikt
-Ange en fil och det nya filnamnet.
 Överför fil {0} ...
 Uppladdad fil {0}
 Ange en fil för att ladda upp till fjärrkatalogen. ladda upp <fil> <katalog>
-Ett fel på att försöka utföra FTP-kommandot
 (Inre:
-{0} mappar, {1} filer
-(Tillträde beviljas ej)
-{0} KB, skapad i {1} {2}, Ändrad i {3} {4}
 Hämtar nuvarande lokala katalog
 Hämtar nuvarande fjärrkatalog
 Ansluter till en FTP-server (den måste börja med "ftp://" eller "ftps://")
@@ -167,18 +116,8 @@ Avslutar FTP-skalet och återgår till kärnan
 Visar hjälpskärm
 Visar lokal katalog
 Listar fjärrkatalog
-Byter namn på specifik fil eller katalog
 Överför lokal fil till fjärrkatalog med binär eller text
-Det uppstod ett fel i FTP-skalet.
 FTP-meddelande: Det begärda kommandot {0} hittades inte. Se "help" för en lista över tillgängliga kommandon som anges på FTP-skalet.
-net: Fick svar från {0} i {1} ms
-Timed out, frånkopplad eller server offline.
-net: Ditt datornamn på nätet är {0}
-net: Ditt värdnamn är {1}
-net: Det verkar som att datorer finns i domänen eller arbetsgruppen:
-nät: WiFi eller Ethernet är avstängt.
-net: Det verkar som att datorer är anslutna nedan:
-nät: Routeradress: {0}
 Misslyckades med att få egenskaper för adapter {0}
 Adapternummer:
 Adapternamn:
@@ -189,9 +128,7 @@ Unicast-paket:
 Fel i inkommande / utgående paket:
 Alias ​​kan inte vara samma namn som ett kommando.
 Kommando hittades inte på alias till {0}.
-Aliasing {0} till {1} ​​är förbjudet helt.
 Du kan nu köra "{0}" som ett kommando: "{1}".
-Du kan inte längre använda "{0}" som ett kommando "{1}".
 Alias ​​{0} kan inte tas bort.
 Ogiltigt läge {0}.
 Injicerade argument, {0}, kommer att schemaläggas att köras vid nästa omstart.
@@ -201,16 +138,12 @@ Blank värdnamn.
 Byter från: {0} till {1} ​​...
 Dagens tomma meddelande.
 Blank MAL efter inloggning.
-Ändrar MAL från {0} till {1} ​​...
 Fel användarlösenord.
 Lösenorden matchar inte.
 Användarnamnet har ändrats till {0}!
 Det nya namnet du skrev in hittades redan.
-Listing PCs stöds inte ännu på Unix.
-Aliaser som är förbjudna: {0}
 {0} hittades inte.
 Konfigurationen laddas om. Det kan hända att du måste starta om kärnan för att vissa ändringar ska träda i kraft.
-Allt återställs till normala inställningar.
 En eller flera av färgerna är ogiltiga.
 Färger är inte tillgängliga. Slå på det färgade skalet i kärnans konfiguration.
 Skärmsläckare {0} hittades inte.
@@ -222,85 +155,36 @@ Argument på Boot:
 Hjälpkommandot förenklat:
 MOTD på inloggning:
 Tid / datum på hörnet:
-Hårdvara probed:
-Aktuellt tema:
 [ Hårdvaruinställningar ] {0}
 {0}[ Användarinställningar ]
 Nuvarande användarnamn:
 Nuvarande värdnamn:
 Tillgängliga användarnamn:
-Dator värdnamn:
-{0}[ Meddelanden Inställningar ]
-Källkod:
-Upphovsrätt (c)
-Licens
-närvarande
 Ett fel på att försöka utföra kommandot
-Lägger till användare (Endast administratörer kan komma åt det här kommandot)
-Lägger till alias till kommandon (endast administratörer kan komma åt det här kommandot)
-Injicerar argument till kärnan (omstart krävs endast administratörer)
-Enkel kalkylator
 Ändringar katalog
-Ändrar värdnamn (endast administratörer)
-Ändringar MAL, MOTD Efter Inloggning (Endast Admins)
-Ändrar MOTD, Dagens Meddelande (endast Admins)
 Ändrar lösenord för nuvarande användare
-Ändrar användarnamn (endast administratörer)
 Rensar skärmen
-Konvertera valuta
-Visar felsökningsloggar (endast Admins)
 Använd ett FTP-skal för att interagera med servrar
 Hjälp sida
-Probe-maskinvara manuellt (en gång i "nohwprobe" -kärnan)
 Lista fil / mapp innehåll i aktuell mapp
-Uppdaterar skärmsläckarefilen i %USERPROFILE%\KSMods
 Låser skärmen med ett lösenord
 Loggar ut dig
-Visar alla nätverksenheter som är online (och offline i domäner)
-Visar alla nätverksadresser på värd
-Visar alla nätverksadresser på värd med hjälp av trädet
 Skapar en katalog
 Visar information om alla tillgängliga gränssnitt
-Visar förbjuden lista över alias
-Hantera behörigheter för användare (Endast administratörer kan komma åt det här kommandot)
-Kontrollera om den angivna adressen är tillgänglig
-Skriver filinnehåll till konsolen
 Startar om datorn (VARNING: Ingen synkronisering, eftersom det inte är en slutkärna)
 Uppdaterar konfigurationsfilen som redigeras.
-Ta bort en katalog
-Ta bort en användare från listan (endast administratörer)
 Sparar din skärm från burn outs
-Vetenskaplig miniräknare. Enhetsomvandlaren är skild från ett annat kommando
-Ställer in kärnfärger
 Ställer in skärmsläckare för kärnan
 Sätter upp kärnämnen
-Visar alias
-Visar MOTD efter inloggning inställd av användare eller kärna
-Visar meddelandet om dagen som anges av användaren eller kärnan
 Visar datum och tid
 Visar datum och tid i zoner
 Kärnan stängs av
 Systeminformation
-Enhetskonverterare som är skild från scicalc.
-Visar bruket av öppen källkod
-En mycket beskrivande användarmanual.
 * Du kan använda flera kommandon med kolon mellan kommandon.
-Tillgängliga kommandon:
-Mod-kommandon:
-Aliaser till kommandon:
 Användande:
-Argumenter åtskilda av kommatecken
 där argument kommer att vara {0}
-för att få aktuell katalog
-I vilken källa och destination är en 3 UPPERCASE tecken på en växelkurs
-Lista över alla ID och namn:
-Visar dig debug-loggar så att du kan skicka loggen till oss.
 Initialiserar FTP-skalet.
-Probes-hårdvara (fungerar bara när hårdvaran inte är probed och hwprobe inte exekveras).
-Visar nätverksinformation, liksom varje dator som är ansluten till ett nätverk.
 Vänner av
-Visar nätverksinformation, liksom varje dator som är ansluten till ett nätverk, i en trädform.
-Visar nätverksinformation, liksom varje dator.
 där modname.ss.vb kommer att vara
 Låser skärmen med lösenordet.
 Loggar dig ur användaren.
@@ -313,41 +197,25 @@ Visar datum och tid.
 Visar datum och tid i zoner.
 Stänger ner din simulerade dator.
 Visar systeminformation och versioner.
-Visar öppna källkataloger som används
 Det uppstod ett fel i skalet.
 Du har inte behörighet att använda {0}
 Shell meddelande: Det begärda kommandot {0} får inte köras i underhållsläge.
 Shell meddelande: Det begärda kommandot {0} hittades inte. Se "hjälp" för tillgängliga kommandon.
 Shell meddelande: Kommandot {0} får inte köra på inloggning.
-Shell meddelande: Det begärda kommandot {0} hittades inte.
 Ett fel på att försöka utföra kommandot.
 datetime: Tiden är {0}
 datetime: Idag är {0}
 datetime: Tidzon: {0}
 - Tid för {0}: {1}
 för att rensa skärmen.
-Det verkar som om manuell sida {0} inte hittades.
-Ett fel uppstod när man försökte ladda manualsidan {0} eftersom {1}.
-Den här handboken är ofullständig av följande skäl:
-Tryck på valfri tangent för att fortsätta...
- | {0} ord | Revision v {1} | {2} sektioner
-Den här manuella sidtiteln är inte skriven
-Den här manuella sidan ({0}) innehåller ingen kroppstext. Raderar sida ...
-Den här handboksidan ({0}) innehåller inga avsnitt. Raderar sida ...
 Kör på {0}
 Du är inte behörig att få information för {0}.
 Detta kommando är föråldrat och kommer att tas bort i en framtida release.
 Du är inte behörig att ändra lösenord för {0} eftersom målet var en admin.
-Konvertera summa pengar från land till land
-Valutor:
 usrmgr: Användarnamn {0} finns redan
-Ange din API-nyckel: 
-Kunde inte hämta datorer. Om du kör den senaste versionen av Windows 10 måste du aktivera SMBv1. Detta protokoll är dock osäkert och vi kommer att försöka lösa detta problem.
 Tar bort allt i felsökningsloggen
-Får SSE-versioner
 Ogiltigt språk
 Ändrar språk
-Du kanske inte har libcpanel-json-xs-perl installerad på ditt system. Se din pakethanterare för installation. För Debian (och derivat) -system kanske du vill köra "sudo apt install libcpanel-json-xs-perl" i terminalemulatorn. Mer detaljer om ett fel:
 ----------------------------- Kärnan panik dump ------------------------------
 >> Panikinformation <<
 > Beskrivning: {0}
@@ -365,14 +233,12 @@ Du kanske inte har libcpanel-json-xs-perl installerad på ditt system. Se din pa
 >> Ramar, filer, linjer och kolumner <<
 > Ram {0}: Fil: {1} | Rad: {2} | Kolumn: {3}
 > Det finns ett fel när du försöker få raminformation. {0}: {1}
-Du har ställt in ditt systemspråk på allt annat än engelska. Ledsen för besväret, men det verkar som om Google och dess översättare är väldigt konstiga med att översätta kodblock för alla programmeringsspråk. Medan vi fixar alla kodblock för översatta manuella sidor, föreslår vi att du öppnar en biljett till Google Translate för att översätta kodblock som inte är tänkt att översättas och ställa in ditt systemspråk på engelska om du talar det.
 Laddar om ändringar.
 Mods laddade om framgångsrikt.
 Välkommen till Kernel!
 Inloggad framgångsrik som <användare>
 MOTD / MAL är giltig, men meddelandetypen är inte giltig. 
 Försökte läsa MOTD / MAL som är av ogiltig meddelandetyp.
-Enquanto mantém a conexão estável, está baixando {0} para {1} ...
 O download foi concluído.
 Falha no download na tentativa {0}: {1}
 Por favor, use "ftp" se você deseja baixar arquivos do servidor FTP.
@@ -388,13 +254,11 @@ Alias redan hittat: {0}
 Felsökningslogg tas bort. Alla anslutna felsökningsenheter kan fortfarande visa meddelanden.
 Avlägsnande av felsökningslogg misslyckades: {0}
 Ändring av katalog misslyckades: {0}
-Användarnamn är fel
 Ange adressen
 Det går inte att ta bort katalogen: {0}
 Tidszon anges felaktigt.
 Ogiltigt profilval.
 Försöker ansluta till {0} med profilen {1} ...
-Fel vid enhetstest: {0}
 Kommando {0} hittades inte. Se kommandot "help" för listan med kommandon.
 Det gick inte att få IPv6-egenskaper för adapter {0}. Fortlöpande...
 IPv4-information:
@@ -408,26 +272,17 @@ Det språk du har valt innehåller två varianter. Välj en:
 Välj ditt val:
 Ogiltigt val. Försök igen.
 Du är obehörig att ställa den aktuella katalogen till {0}: {1}
-Tillstånd {0} misslyckades
 Sökvägen du har angett är för lång.
-Du är obehörig att lista i {0}: {1}
-Fel vid kontroll av CPU: {0}
-Fel vid RAM-kontroll: {0}
-Fel vid kontroll av HDD: {0}
 CPU: VARNING: SSE2 kommer att krävas i framtida utvecklingsåtaganden.
 Dump-informationssamlare kraschade när han försökte få information om {0}: {1}
 Fel vid försök att få sammanställningsdatum för montering {0}: {1}
 Fel vid försök att ställa in MOTD / MAL: {0}
 Fel vid försök att få MOTD / MAL: {0}
-Det finns ett nullreferensundantag på {0}: {1}
-Det finns ett nullreferensundantag för {0}: {1} - Stack trace:
 Fel vid försök att starta skärmsläckare på grund av en ogiltig åtgärd.
 Ladda om inte tillåtet i säkert läge.
 Parsningslägen är inte tillåtna i säkert läge.
-Analysera hela katalogen för storlek eller bara filerna i den nuvarande.
 Listar alla anslutna felsökningsenheter.
 Fel vid försök att ställa in analysläge. Kontrollera värdet och försök igen. Om detta är korrekt, se stapelspåret när felsökning av kärnor är aktiverad.
-Ställ in framgångsrikt.
 Sökvägen är varken en fil eller en katalog.
 Skapar en annan kopia av en fil under annan katalog eller namn.
 Flyttar en fil till en annan katalog
@@ -436,34 +291,11 @@ För att flytta filer till en annan katalog
 Match {0} ({1}): {2}
 Match {0}: {1}
 Tid: {0} millisekunder
-Tillverkare: {0}
-Modell: {0}
-Kapacitet: {0} ({1}, {2}, {3})
-Gränssnitttyp: {0}
-Drive Number: {0}
-Startflagga: {0} ({1})
-Fysisk partition: {0}
-Primär flagga: {0}
-Storlek: {0} GB
-Logisk partition: {0}
-Komprimerad: {0}
 Namn: {0}
-Filsystem: {0}
-Kapacitet: {0} GB utan {1} GB
-Visar alla logiska partitioner på alla enheter.
-Listar alla testade enheter.
-Listar alla testade partitioner på en specifik enhet (och alla logiska partitioner på alla enheter).
 Beräknar filsummor.
 Tar dig till vår GitHub Wiki.
 Ogiltig krypteringsalgoritm.
 Aktiverar eller inaktiverar fjärrfelsökning.
-Initierar filsystem ...
-Få installerade röster
-Ställer in standardröst
-Talar din sträng med standardröst
-Röst {0}: {1} ({2})
-Ogiltig röst.
-Röstuppsättning
 Se om du kan stava ord korrekt i tid
 Se om du kan lösa matematiska ekvationer i tid
 Svara på kommentarer om kärlek eller hat.
@@ -474,23 +306,16 @@ Du rapporterade just kärlekskommentaren!
 Du svarade just på hatkommentaren!
 Bra! {0 }s kommentar kommer att tas bort för det.
 Bra! {0} kommer att uppskatta ditt tack.
-Skriv "GetMeOut" för att avsluta.
 Stava perfekt!
 Stava fel.
 Löst perfekt!
 Löst felaktigt.
-{0} MB av {1} MB laddas ner.
 RPC körs redan.
 RPC lyssnar på alla adresser med port {0}.
 Börjar RPC ...
 Ansluter till en SSH-server.
 Ange lösenordet för {0}:
 SSH frånkopplad.
-Laddar synth-filen och spelar upp den.
-Skriptfil {0} finns inte.
-Filen är inte en skriptad synthfil.
-Det gick inte att undersöka en synth-linje.
-Tom sträng specificerad
 Det går inte att ställa in kodsidan. Språket visas kanske inte korrekt.
 Felsökning inte aktiverad.
 {0} är inte längre inställd på standard skärmsläckare.
@@ -519,8 +344,6 @@ Uppdraget misslyckades, Respekt -, prenumerant -
 Sluta göra den här typen av video !!!
 Gå tillbaka till ditt jobb, dina videor är de värsta!
 Vi fördomar på den här videon.
-Aliasing {0} till {1} ​​är förbjudet.
-Fel vid försök att avvisa avisering: {0}
 Visar alla mottagna aviseringar
 Avvisar ett meddelande
 Meddelandet avvisades framgångsrikt.
@@ -532,39 +355,26 @@ Allmänna IPv4-egenskaper
 Utför fjärr ett kommando till fjärrdatorn
 - Steg 1: Systeminitialisering
 - Steg 2: Hårdvarodetektering
-- Steg 2: Internt användarnamnhantering
 - Steg 3: Detektering av lägen och skärmsläckare
-- Steg 4: Avfallssamling
 - Steg 4: Logga in
-Före skräp: {0} byte
-Efter avfallsuppsamling: {0} byte
-Fel vid start av RPC: {0}
 Det verkar som att du kör versionskandidatversionen. Det rekommenderas att du fortsätter med den stabila versionen.
-Det verkar som att filsystemets befolkning tar för lång tid.
 Ogiltig typ {0}.
-Kapacitet: {0}
-Partitionsantal: {0}
 Storlek: {0}
-Använd: {0}
 Katalog {0} finns redan.
 Fel vid försök att ansluta till {0}: Timeout för anslutning eller förlorad anslutning
 Kalkylator för att beräkna uttryck.
 Fel vid beräkningen.
-Kapacitet: {0} GB ({1}, {2}, {3})
 Det verkar som att du kör versionen för närmande utgåva. Det är säkrare att använda nu, men vi rekommenderar att du håller dig på den stabila versionen.
 Systemuppdatering
 Söker efter systemuppdateringar ...
 Hittade ny version: 
 Du kan ladda ner den på: 
-Det gick inte att leta efter uppdateringar: {0}
-Felsökningslogg hittades inte
 Inga senaste aviseringar
 Söker efter en specifik sträng i den medföljande filen
 Beräknar summan av filer i specificerad katalog.
 Listar alla e-postmeddelanden i den specifika användaren.
 Ange användarnamn eller e-postadress:
 Skriv in lösenord:
-Ange serveradress och port (<adress> eller <adress>:[port]):
 Fel vid anslutning till {0}: {1}
 Ansluter till {0} ...
 Autentiserings ...
@@ -581,7 +391,6 @@ Meddelandenumret är inte ett numeriskt värde.
 - Skickat kl {0} in {1}
 Meddelandet som anges hittades inte.
 Fjärrfelsökning kunde inte starta: {0}
-Fel vid körning av IMAP-kommando: {0}
 Förbereder profiler ... Det kan ta flera minuter ...
 Värdnamn, användarnamn, datatyp, kodning, kryptering, protokoll
 Fel vid försök att köra skript: {0}
@@ -593,7 +402,6 @@ Frekvensen måste vara numerisk. Om det är numeriskt, se till att det är >= 37
 Tiden måste vara numerisk.
 där <svar> är enbokstävera svar på frågan separerade i snedstreck
 Fel vid försök att ansluta till SSH-servern: {0}
-Tom MOTD efter inloggning.
 Tillåter användaren att ange ingång
 Ändrar aktuell postkatalog
 Det går inte att öppna e-postmappen {0}: {1}
@@ -616,7 +424,6 @@ Ange ämnet:
 Ange ditt meddelande nedan. Skriv "EOF" för att bekräfta.
 Skickar meddelande ...
 Meddelande skickat.
-Fel vid skicka meddelande: {0}
 Ogiltig e-postadress. Se till att du har skrivit adressen korrekt och att den matchar formatet i exemplet som visas:
 Tar bort ett meddelande
 Tar bort alla meddelanden från mottagaren
@@ -656,10 +463,7 @@ Blockera en felsökningsenhet med IP-adress
 {0} är inte blockerad ännu.
 Fel vid inläsning av inställningar
 Det finns ett fel när du laddar inställningar. Du kan behöva kontrollera inställningsfilen.
-- Steg 2: Upptäckt av mods och skärmsläckare
-- Steg 3: Logga in
 Välj avsnitt:
-Välj alternativ:
 Allmänna Inställningar...
 Hårdvaruinställningar ...
 Inloggningsinställningar ...
@@ -675,14 +479,12 @@ Trigger för underhållsläge
 Ändra rotlösenord ...
 Sök efter uppdateringar vid start
 Tyst sond
-Probe RAM-kortplatser
 Visa MOTD vid inloggning
 Rensa skärmen vid inloggning
 Visa tillgängliga användarnamn
 Färgat skal
 Förenklat hjälpkommando
 Felsökningsport
-Fjärrfelsökning Nick-prefix
 Ladda ner Retry Times
 Logga in FTP-användarnamn
 Logga FTP IP-adress
@@ -704,7 +506,6 @@ Aktivera "Ändra rotlösenord" för att använda detta alternativ. Snälla gå t
 Ändra rotlösenord?
 Ställ in rotlösenord ...
 Skriv en extern felsökningsport. Det måste vara numeriskt och får inte redan användas. I annat fall kommer fjärrfelsökaren inte att öppna porten.
-Skriv standardprefixet för fjärrfelsökningsnamn.
 Skriv hur många gånger kommandot "" get "" ska försöka misslyckade nedladdningar. Det måste vara numeriskt.
 Skriv när skärmsläckare ska startas efter angivna millisekunder. Det måste vara numeriskt.
 Skriv hur många byte som kan felsöka loggen. Det måste vara numeriskt.
@@ -716,12 +517,10 @@ Skärmsläckarinställningar ...
 Aktivera 255 färger
 Vill du hålla kontakten?
 Ogiltigt val. Antar nej ...
-Inga mods upptäcktes. Hoppar över scenen ...
 Ändra kultur när du byter språk
 Text som visas
 Skriv vilken text du vill visa. Kortare är bättre.
 Det gick inte att ladda upp {0}
-Nedladdningen misslyckades för filen {0}: {1}
 Fel vid körning av fjärrfelsökningskommandot {0}: {1}
 Lägger till användare
 Lägger till alias i kommandon
@@ -730,7 +529,6 @@ Injicerar argument till kärnan (omstart krävs)
 Ändrar MAL, MOTD efter inloggning
 Ändrar MOTD, dagens meddelande
 Ändrar användarnamn
-Visar felsökningsloggar
 Hantera behörigheter för användare
 Ladda om skärmsläckarfilen i KSMods
 Tar bort en användare från listan
@@ -739,7 +537,6 @@ Det gick inte att söka efter uppdateringar.
 Det finns inga fler användare kvar i listan.
 Det gick inte att ställa in språk.
 Fel vid försök att avvisa meddelandet.
-En uppgradering till {0} upptäcks. Uppdaterar konfigurationen ...
 usrmgr: Det gick inte att skapa användarnamn {0}: {1}
 Det gick inte att byta namn på användaren. {0}
 En av behörighetslistorna innehåller inte användarnamn {0}.
@@ -773,12 +570,9 @@ Flyttar alla meddelanden från mottagaren
 All e-post från {0} har flyttats.
 Det gick inte att flytta all e-post från {0}.
 Meddelande {0} från {1} flyttat från {2}. {3} meddelanden återstår att analysera.
-Meddelandet {0} från {1} har flyttats. {3} meddelanden återstår att analysera.
 Visar väderinformation för angiven stad. Använder OpenWeatherMap.
 - Väderinformation för {0} -
 Väder: {0}
-Temperatur: {0} ({1} enhet)
-Känns som: {0} ({1} enhet)
 Tryck: {0}
 Luftfuktighet: {0}
 Du kan få din egen API-nyckel på https://home.openweathermap.org/api_keys.
@@ -793,7 +587,6 @@ Varje start kommer det att söka efter uppdateringar.
 När du byter språk, ändra månadens namn, kalender etc.
 Om kärnan startas ställer den in root-lösenordet.
 Håll meddelanden för maskinvarusondering tysta.
-Om det är aktiverat kommer det att undersöka RAM-kortplatserna tillsammans med RAM-minnet.
 Visa dagens meddelande innan inloggningsskärmen visas.
 Rensa skärmen innan inloggningsskärmen visas.
 Visar tillgängliga användare om de är aktiverade.
@@ -819,12 +612,9 @@ Mod {0} har inte kommandot. Modtolkning misslyckades. Granska källkoden.
 Du måste aktivera felsökningsläget innan du kan rensa felsökningsloggen.
 {0} nya meddelanden kom till inkorgen.
 Öppna "lsmail" för att se dem.
-Primär: {2} Startbar: {3} Startpartition: {4}
 Det gick inte att ta bort filen: {0}
 Tar bort en katalog eller en fil
 Det går inte att ta bort {0} eftersom det inte finns.
-Du kanske inte har inxi installerat på ditt system. Se din pakethanterare för installation. För Debian-system (och derivat) kanske du vill köra "" sudo apt install inxi libcpanel-json-xs-perl "" i terminalemulatorn.
-Språket har ställts in på {0}!
 Tryck på CTRL + C för att avsluta.
 Ger information om en fil
 Ger information om en katalog
@@ -879,7 +669,6 @@ Laddar upp {0} till {1} ​​...
 Uppladdningen är klar.
 Använd "ftp" om du ska ladda upp filer till FTP-servern.
 Uppladdningen misslyckades i försök {0}: {1}
-{0} MB av {1} MB överfört.
 Skriv hur många gånger kommandot "put" ska försöka misslyckade uppladdningar. Det måste vara numeriskt.
 Adressen kanske inte är tom.
 Det gick inte att pinga {0}: {1}
@@ -889,7 +678,6 @@ Känns som: {0}
 Temperatur: {0}
 Vindhastighet: {0}
 Vindriktning: {0}
-Primär: {2} | Startbar: {3} | Startpartition: {4}
 Aktiverar 255 färgstöd för upplösning.
 Aktiverar äkta färgstöd för upplösning.
 Tryck på valfri knapp för att gå tillbaka.
@@ -919,10 +707,7 @@ Uppmanar till argument
 Det gick inte att starta "{0}": {1}
 Visa förhandsgranskning av e-postmeddelande
 Visa kroppsförhandsgranskning när du listar e-postmeddelanden.
-Cachad hårdvarusond. Visar information ändå ...
-Kapacitet: {0} GB
 Anpassade färger ...
-Skriv en färg enligt nedan:
 Inmatningsfärg
 Licensfärg
 Fortsätt kärnfelfärg
@@ -931,12 +716,8 @@ Värdens namnfärg
 Användarnamnsfärg
 Bakgrundsfärg
 Neutral textfärg
-Kommandolistens färg
-Definition färg för kommando
 Scenfärg
 Felfärg
-Ser dessa färgval OK ut?
-Svara {0} för att gå tillbaka. Annars betyder något svar ja.
 FTP-meddelandestil
 E-postmeddelandestil
 SFTP Prompt Style
@@ -946,7 +727,6 @@ Försöker komma åt ogiltig sökväg.
 Rensar textfilen
 Avslutar textredigeraren
 Frågar efter ett tecken i en angiven rad eller alla rader
-Det angivna teckennumret {0} är inte ett giltigt nummer.
 Kontroll av uppdateringar är inaktiverad eftersom du kör en utvecklingsversion.
 Aktiverar eller inaktiverar automatisk redigering av textredigeraren.
 Om autospara är aktiverat sparas textfilen för varje "n" sekund.

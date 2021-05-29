@@ -12,27 +12,12 @@ Các đối số được tiêm sẽ được lên lịch để chạy trong l�
 Đối số tiêm đã bị hủy bỏ.
 Lỗi trong khi phân tích cú pháp đối số dòng lệnh thực: {0}
 Mẫu màu không hợp lệ {0}
-Mặc định
-Tập quán
 hwprobe: Phần cứng của bạn sẽ được thăm dò. Xin vui lòng chờ ...
-hwprobe: Phần cứng đã được thăm dò.
-hwprobe: Phần cứng không được thăm dò. Thăm dò bằng cách sử dụng 'hwprobe'
 CPU: Một hoặc nhiều lõi CPU không được phát hiện. Dù sao cũng hiển thị thông tin ...
 RAM: Một hoặc nhiều chip RAM không được phát hiện. Dù sao cũng hiển thị thông tin ...
 Ổ cứng: Một hoặc nhiều ổ đĩa cứng không bị phát hiện. Dù sao cũng hiển thị thông tin ...
 CPU: Tổng số bộ xử lý: {0}
-CPU: {0} {1} MHz
-RAM: {0} MB = {1} MB
-RAM: Các khe được sử dụng (theo tên): {0}
-RAM: Các khe được sử dụng (theo số): {0} / {1} ({2}%)
-RAM: Trạng thái thăm dò không được dùng nữa và sẽ bị xóa trong bản phát hành trong tương lai.
-Ổ cứng: {0} {1} GB {2}
-Ổ cứng: {0} {1} {2} GB {3}
-Ổ cứng: CHS: {4} xi lanh | {5} đầu | {6} ngành
-Ổ cứng: CHS: {3} xi lanh | {4} đầu | {5} ngành
-hwprobe: Probing không được hỗ trợ vì nó không được thiết kế để chạy probers trên Unix.
 Nhập mật khẩu quản trị để bảo trì.
-Không còn người dùng nào trong danh sách.
 Lỗi hạt nhân khi khởi động: {0}
 NHÂN ĐÔI: Thời gian khởi động lại vượt quá thời gian khởi động lại lỗi tối đa cho phép {0}. Bạn đã tìm thấy một lỗi kernel.
 [{0}] hoảng loạn: Đã bật lại do mức lỗi là {0}.
@@ -46,18 +31,12 @@ NHÂN ĐÔI: Loại lỗi {0} không hợp lệ.
 NHÂN ĐÔI: Lỗi hạt nhân: {0}
 Đang Tắt...
 Khởi động lại ...
----===+++> Chào mừng bạn đến với kernel | Phiên bản {0} <+++===---
 Một phiên bản khác của Kernel Simulator đang chạy. Tắt trong trường hợp can thiệp.
-Người dùng {0} đã được thêm vào danh sách quản trị viên.
-Người dùng {0} đã được thêm vào danh sách bị vô hiệu hóa.
 Không thể thêm người dùng vào danh sách quyền: loại không hợp lệ {0}
 Không thể thêm người dùng vào danh sách quyền: người dùng không hợp lệ {0}
-Người dùng {0} đã bị xóa khỏi danh sách quản trị viên.
-Người dùng {0} đã bị xóa khỏi danh sách bị vô hiệu hóa.
 Không thể xóa người dùng khỏi danh sách quyền: loại không hợp lệ {0}
 Bạn đã đăng nhập.
 Không thể xóa người dùng khỏi danh sách quyền: người dùng không hợp lệ {0}
-Bạn đã tìm thấy một lỗi trong hệ thống cấp phép: chế độ không hợp lệ {0}
 Bạn đã tìm thấy một lỗi, hoặc sự cho phép bạn đã cố gắng thêm hoặc xóa đã được thực hiện hoặc lỗi khác.
 Lỗi {0}: {1}
 Bạn đã tìm thấy một lỗi hoặc sự cho phép mà bạn đã cố gắng chỉnh sửa cho người dùng mới đã thất bại.
@@ -79,17 +58,6 @@ Người dùng {0} không được phép xóa.
 Người dùng {0} đã đăng nhập. Đăng xuất và đăng nhập với tư cách quản trị viên khác.
 Đã xóa người dùng {0}.
 Lỗi khi cố gắng xóa tên người dùng.
-{0} trong số {1} = {2}
-Cố gắng chia cho số 0 là không được phép.
-Đã có một nỗ lực đáng ngờ trong việc tính toán dẫn đến tràn.
-Có lỗi trong khi tính toán: {0}
-{0} không thể được chuyển đổi thành {1}.
-Hoặc là nguồn
- hoặc đích
- không tồn tại trên máy chủ.
-{0} đến {1}: {2}
-Lỗi khi cố gắng chuyển đổi từ {0} sang {1}: {2}
-lỗi
 Không tìm thấy trình bảo vệ màn hình được yêu cầu {0}.
 {0} đã được khởi tạo đúng cách.
 {0} đã không khởi tạo. Mã bảo vệ màn hình có thể đã gặp lỗi trong khi khởi tạo.
@@ -99,12 +67,6 @@ Trình bảo vệ màn hình {0} không tìm thấy trong cơ sở dữ liệu. 
 Trình bảo vệ màn hình không thể được tải vì những điều sau đây:
 Có một lỗi nghiêm trọng khi in văn bản.
 Có lỗi khi cố gắng tạo cấu hình.
-Có lỗi khi cố gắng tạo cấu hình: {0}
-Đã phát hiện nâng cấp từ {0} lên {1}. Đang cập nhật cấu hình ...
-Có lỗi khi cố cập nhật cấu hình: {0}.
-Có lỗi khi cố cập nhật cấu hình.
-Có lỗi khi cố gắng đọc cấu hình.
-Có lỗi khi cố đọc cấu hình: {0}
 Lỗi khi cố gắng giải phóng RAM: {0} - Tiếp tục ...
 Mod không thể được tải vì những điều sau đây:
 mod: Đang tải mod ...
@@ -129,32 +91,19 @@ Bạn phải kết nối với máy chủ trước khi thay đổi thư mục
 Thư mục địa phương: {0}
 Thư mục từ xa: {0}
 Bạn phải kết nối với máy chủ trước khi nhận được thư mục từ xa hiện tại.
-Xóa tệp {0} ...
-Bạn có chắc chắn muốn xóa tệp {0} <y / n> không?
-Đã xóa tệp {0}
 Bạn phải kết nối với máy chủ với các đặc quyền quản trị trước khi thực hiện xóa.
-Nhập một tập tin để loại bỏ.
-Bạn phải có quyền quản trị trên tên người dùng đã đăng nhập để có thể xóa.
 Đã ngắt kết nối từ {0}
 Bạn chưa kết nối với bất kỳ máy chủ nào
 Đang tải xuống tệp {0} ...
 Đã tải xuống tệp {0}.
-Tải xuống không thành công cho tệp {0} vì tệp cục bộ bị hỏng.
 Bạn phải kết nối với máy chủ trước khi thực hiện truyền.
 Nhập một tập tin để tải về thư mục địa phương.
 {0} KB | Được sửa đổi trong: {1}
 Bạn nên kết nối với máy chủ trước khi liệt kê tất cả các tệp từ xa.
-Đổi tên tệp {0} thành {1} ...
-Đổi tên thành công
-Nhập một tệp và tên tệp mới.
 Đang tải lên tệp {0} ...
 Tệp đã tải lên {0}
 Nhập một tập tin để tải lên thư mục từ xa. tải lên <file> <thư mục>
-Lỗi khi cố thực thi lệnh FTP
 (Bên trong:
-Thư mục {0}, tập tin {1}
-(Truy cập bị từ chối)
-{0} KB, Được tạo trong {1} {2}, Được sửa đổi trong {3} {4}
 Nhận thư mục địa phương hiện tại
 Nhận thư mục từ xa hiện tại
 Kết nối với máy chủ FTP (phải bắt đầu bằng "ftp://" hoặc "ftps://")
@@ -167,18 +116,8 @@ Thoát khỏi vỏ FTP và trở về kernel
 Hiển thị màn hình trợ giúp
 Liệt kê thư mục địa phương
 Liệt kê thư mục từ xa
-Đổi tên tập tin hoặc thư mục cụ thể
 Tải tập tin cục bộ lên thư mục từ xa bằng cách sử dụng nhị phân hoặc văn bản
-Có một lỗi trong vỏ FTP.
 Thông báo FTP: Không tìm thấy lệnh được yêu cầu {0}. Xem 'trợ giúp' để biết danh sách các lệnh khả dụng được chỉ định trên vỏ FTP.
-net: Nhận phản hồi từ {0} trong {1} ms
-Đã hết thời gian, ngắt kết nối hoặc máy chủ ngoại tuyến.
-net: Tên máy tính của bạn trên mạng là {0}
-net: Tên máy chủ của bạn là {1}
-net: Có vẻ như các máy tính nằm trong miền hoặc nhóm làm việc:
-net: WiFi hoặc Ethernet bị ngắt kết nối.
-net: Có vẻ như các máy tính được kết nối dưới đây:
-net: Địa chỉ bộ định tuyến: {0}
 Không thể lấy thuộc tính cho bộ điều hợp {0}
 Số bộ điều hợp:
 Tên bộ điều hợp:
@@ -189,9 +128,7 @@ Gói Unicast:
 Lỗi các gói đến / đi:
 Bí danh không thể cùng tên với một lệnh.
 Lệnh không tìm thấy bí danh cho {0}.
-Bí danh {0} đến {1} bị cấm hoàn toàn.
 Bây giờ bạn có thể chạy "{0}" dưới dạng lệnh: "{1}".
-Bạn không còn có thể sử dụng "{0}" làm lệnh "{1}".
 Bí danh {0} không được tìm thấy để xóa.
 Chế độ không hợp lệ {0}.
 Các đối số được chèn, {0}, sẽ được lên lịch để chạy ở lần khởi động lại tiếp theo.
@@ -201,16 +138,12 @@ Tên máy chủ trống.
 Thay đổi từ: {0} thành {1} ...
 Tin nhắn trống trong ngày.
 MAL trống sau khi đăng nhập.
-Thay đổi MAL từ {0} thành {1} ...
 Sai mật khẩu người dùng.
 Mật khẩu không khớp.
 Tên người dùng đã được thay đổi thành {0}!
 Tên mới bạn đã nhập đã được tìm thấy.
-Danh sách PC chưa được hỗ trợ trên Unix.
-Các bí danh bị cấm: {0}
 {0} không được tìm thấy.
 Cấu hình tải lại. Bạn có thể cần phải khởi động lại kernel để một số thay đổi có hiệu lực.
-Tất cả mọi thứ được thiết lập lại để cài đặt bình thường.
 Một hoặc nhiều màu không hợp lệ.
 Màu sắc không có sẵn. Bật vỏ màu trong cấu hình kernel.
 Trình bảo vệ màn hình {0} không tìm thấy.
@@ -222,85 +155,36 @@ Vỏ màu:
 Lệnh trợ giúp được đơn giản hóa:
 MOTD khi đăng nhập:
 Thời gian / Ngày ở góc:
-Phần cứng được thăm dò:
-Chủ đề hiện tại:
 [Cài đặt phần cứng ]{0}
 {0}[ Cài đặt người dùng ]
 Tên người dùng hiện tại:
 Tên máy chủ hiện tại:
 Tên người dùng có sẵn:
-Tên máy chủ
-{0}[ Cài đặt tin nhắn ]
-Mã nguồn:
-Bản quyền (c)
-Giấy phép
-hiện tại
 Lỗi khi cố thực thi lệnh
-Thêm người dùng (Chỉ quản trị viên mới có thể truy cập lệnh này)
-Thêm bí danh vào các lệnh (Chỉ quản trị viên mới có thể truy cập lệnh này)
-Tiêm các đối số vào kernel (yêu cầu khởi động lại, chỉ quản trị viên)
-Máy tính đơn giản
 Thay đổi thư mục
-Thay đổi tên máy chủ (chỉ quản trị viên)
-Thay đổi MAL, MOTD sau khi đăng nhập (chỉ quản trị viên)
-Thay đổi MOTD, Thông điệp trong ngày (Chỉ quản trị viên)
 Thay đổi mật khẩu cho người dùng hiện tại
-Thay đổi tên người dùng (Chỉ quản trị viên)
 Xóa màn hình
-Chuyển tiền tệ
-Hiển thị nhật ký gỡ lỗi (Chỉ quản trị viên)
 Sử dụng vỏ FTP để tương tác với máy chủ
 Trang trợ giúp
-Thăm dò phần cứng thủ công (Một lần trong kernel 'nohwprobe')
 Liệt kê nội dung tập tin / thư mục trong thư mục hiện tại
-Tải lại tệp bảo vệ màn hình trong %USERPROFILE%\KSMods
 Khóa màn hình của bạn bằng mật khẩu
 Đăng xuất bạn
-Liệt kê tất cả các thiết bị mạng đang trực tuyến (và ngoại tuyến trong các miền)
-Liệt kê tất cả các địa chỉ mạng trên máy chủ
-Liệt kê tất cả các địa chỉ mạng trên máy chủ bằng cây
 Tạo một thư mục
 Liệt kê thông tin về tất cả các giao diện có sẵn
-Hiển thị danh sách cấm bí danh
-Quản lý quyền cho người dùng (Chỉ quản trị viên mới có thể truy cập lệnh này)
-Kiểm tra xem địa chỉ được chỉ định có sẵn không
-Ghi nội dung tập tin vào bàn điều khiển
 Khởi động lại máy tính của bạn (CẢNH BÁO: Không đồng bộ hóa, vì đó không phải là hạt nhân cuối cùng)
 Tải lại tập tin cấu hình được chỉnh sửa.
-Xóa một thư mục
-Xóa người dùng khỏi danh sách (Chỉ quản trị viên)
 Lưu màn hình của bạn khỏi bị cháy
-Máy tính khoa học. Bộ chuyển đổi đơn vị được tách sang một lệnh khác
-Thiết lập màu hạt nhân
 Thiết lập trình bảo vệ màn hình kernel
 Thiết lập chủ đề kernel
-Hiển thị bí danh
-Hiển thị MOTD sau khi đăng nhập được đặt bởi người dùng hoặc kernel
-Hiển thị thông báo trong ngày được đặt bởi người dùng hoặc kernel
 Hiển thị ngày giờ
 Hiển thị ngày và giờ trong khu vực
 Nhân sẽ bị tắt
 Thông tin hệ thống
-Bộ chuyển đổi đơn vị được tách ra từ scicalc.
-Hiển thị các phụ thuộc nguồn mở được sử dụng
-Một hướng dẫn sử dụng rất mô tả.
 * Bạn có thể sử dụng nhiều lệnh bằng cách sử dụng dấu hai chấm giữa các lệnh.
-Các lệnh khả dụng:
-Các lệnh Mod:
-Bí danh cho các lệnh:
 Sử dụng:
-Các đối số được phân tách bằng dấu phẩy
 trong đó các đối số sẽ là {0}
-để có được thư mục hiện tại
-Trong đó nguồn và đích là 3 ký tự TĂNG LÊN của tỷ giá hối đoái
-Danh sách tất cả ID và tên:
-Hiển thị nhật ký gỡ lỗi để bạn có thể gửi nhật ký cho chúng tôi.
 Khởi tạo vỏ FTP.
-Phần cứng thăm dò (Chỉ hoạt động khi phần cứng không được thăm dò và hwprobe không được thực thi).
-Liệt kê thông tin mạng, cũng như mọi máy tính được kết nối với mạng.
 Bạn của
-Liệt kê thông tin mạng, cũng như mọi máy tính được kết nối với mạng, ở dạng cây.
-Liệt kê thông tin mạng, cũng như mọi máy tính.
 modname.ss.vb sẽ ở đâu
 Khóa màn hình của bạn bằng mật khẩu.
 Đăng xuất bạn ra khỏi người dùng.
@@ -313,41 +197,25 @@ Hiển thị ngày và thời gian.
 Hiển thị ngày và thời gian trong khu vực.
 Tắt máy tính mô phỏng của bạn.
 Hiển thị thông tin hệ thống và phiên bản.
-Hiển thị các thư viện nguồn mở được sử dụng
 Có một lỗi trong vỏ.
 Bạn không có quyền sử dụng {0}
 Thông báo Shell: Lệnh được yêu cầu {0} không được phép chạy trong chế độ bảo trì.
 Thông báo Shell: Không tìm thấy lệnh được yêu cầu {0}. Xem 'trợ giúp' cho các lệnh có sẵn.
 Thông báo Shell: Lệnh {0} không được phép chạy khi đăng nhập.
-Thông báo Shell: Không tìm thấy lệnh được yêu cầu {0}.
 Lỗi khi cố thực thi lệnh.
 datetime: Thời gian là {0}
 datetime: Hôm nay là {0}
 datetime: Múi giờ: {0}
 - Thời gian của {0}: {1}
 để xóa màn hình.
-Có vẻ như không tìm thấy trang hướng dẫn {0}.
-Có lỗi khi cố tải trang thủ công {0} becuase {1}.
-Trang hướng dẫn này không đầy đủ vì các lý do sau:
-Bấm phím bất kỳ để tiếp tục...
- | {0} từ | Sửa đổi v {1} | {2} phần
-Tiêu đề trang hướng dẫn này không được viết
-Trang hướng dẫn này ({0}) không chứa bất kỳ văn bản cơ thể nào. Đang xóa trang ...
-Trang hướng dẫn này ({0}) không chứa bất kỳ phần nào. Đang xóa trang ...
 Chạy trên {0}
 Bạn không được phép lấy thông tin cho {0}.
 Lệnh này đã lỗi thời và sẽ bị xóa trong phiên bản tương lai.
 Bạn không được phép thay đổi mật khẩu của {0} vì mục tiêu là quản trị viên.
-Chuyển đổi số tiền từ nước này sang nước khác
-Tiền tệ:
 usrmgr: Tên người dùng {0} đã được tìm thấy
-Nhập khóa API của bạn:
-Không thể có được máy tính. Nếu bạn đang chạy phiên bản Windows 10 mới nhất, bạn cần kích hoạt SMBv1. Giao thức này tuy nhiên không an toàn và chúng tôi sẽ cố gắng giải quyết vấn đề này.
 Xóa mọi thứ trong nhật ký gỡ lỗi
-Nhận phiên bản SSE
 Ngôn ngữ không hợp lệ
 Thay đổi ngôn ngữ
-Bạn có thể chưa cài đặt libcpanel-json-xs-perl trên hệ thống của mình. Tham khảo trình quản lý gói của bạn để cài đặt. Đối với các hệ thống Debian (và các dẫn xuất), bạn có thể muốn chạy "sudo apt install libcpanel-json-xs-perl" trong trình giả lập thiết bị đầu cuối. Thêm chi tiết về một lỗi:
 ----------------------------- Hạt nhân hoảng loạn ------------------ -----------
 >> Thông tin hoảng loạn <<
 > Mô tả: {0}
@@ -365,14 +233,12 @@ Bạn có thể chưa cài đặt libcpanel-json-xs-perl trên hệ thống củ
 >> Khung, tệp, dòng và cột <<
 > Khung {0}: Tệp: {1} | Dòng: {2} | Cột: {3}
 > Có lỗi khi cố lấy thông tin khung. {0}: {1}
-Bạn đã đặt ngôn ngữ hệ thống của mình thành bất kỳ thứ gì khác ngoài tiếng Anh. Xin lỗi vì sự bất tiện này, nhưng có vẻ như Google và dịch giả của nó rất kỳ lạ về việc dịch các khối mã cho bất kỳ ngôn ngữ lập trình nào. Mặc dù chúng tôi sửa tất cả các khối mã cho các trang hướng dẫn được dịch, chúng tôi khuyên bạn nên mở một vé cho Google Dịch để dịch các khối mã không có nghĩa là dịch và đặt ngôn ngữ hệ thống của bạn sang tiếng Anh nếu bạn nói nó.
 Tải lại mod.
 Mod tải lại.
 Chào mừng bạn đến với hạt nhân!
 Đăng nhập thành công với tư cách là <user>
 MOTD / MAL là hợp lệ, nhưng loại tin nhắn không hợp lệ. Giả sử ...
 Đã thử đọc MOTD / MAL thuộc loại tin nhắn không hợp lệ.
-Trong khi duy trì kết nối ổn định, nó đang tải xuống {0} đến {1} ...
 Tải về đã hoàn thành.
 Tải xuống thất bại trong thử {0}: {1}
 Vui lòng sử dụng "ftp" nếu bạn định tải xuống các tệp từ máy chủ FTP.
@@ -388,13 +254,11 @@ Bí danh đã được tìm thấy: {0}
 Nhật ký gỡ lỗi được gỡ bỏ. Tất cả các thiết bị gỡ lỗi được kết nối vẫn có thể xem tin nhắn.
 Xóa nhật ký gỡ lỗi không thành công: {0}
 Thay đổi thư mục không thành công: {0}
-Tên đăng nhập sai
 Chỉ định địa chỉ
 Không thể xóa thư mục: {0}
 Múi giờ được chỉ định không chính xác.
 Lựa chọn hồ sơ không hợp lệ.
 Đang cố gắng kết nối với {0} với hồ sơ {1} ...
-Lỗi trong kiểm tra đơn vị: {0}
 Lệnh {0} không tìm thấy. Xem lệnh "trợ giúp" để biết danh sách các lệnh.
 Không thể nhận các thuộc tính IPv6 cho bộ điều hợp {0}. Tiếp tục ...
 Thông tin về IPv4:
@@ -408,26 +272,17 @@ Ngôn ngữ bạn đã chọn chứa hai biến thể. Chọn một:
 Chọn sự lựa chọn của bạn:
 Lựa chọn không hợp lệ. Thử lại.
 Bạn không được phép đặt thư mục hiện tại thành {0}: {1}
-Quyền {0} không thành công
 Đường dẫn bạn đã chỉ định quá dài.
-Bạn không được phép liệt kê trong {0}: {1}
-Lỗi khi kiểm tra CPU: {0}
-Lỗi khi kiểm tra RAM: {0}
-Lỗi khi kiểm tra ổ cứng: {0}
 CPU: CẢNH BÁO: SSE2 sẽ được yêu cầu trong các cam kết phát triển trong tương lai.
 Trình thu thập thông tin kết xuất bị hỏng khi cố gắng lấy thông tin về {0}: {1}
 Lỗi trong khi cố gắng lấy ngày biên dịch lắp ráp {0}: {1}
 Lỗi khi cố gắng đặt MOTD / MAL: {0}
 Lỗi khi cố lấy MOTD / MAL: {0}
-Có một ngoại lệ tham chiếu null trên {0}: {1}
-Có một ngoại lệ tham chiếu null trên {0}: {1} - Theo dõi ngăn xếp:
 Lỗi khi cố gắng khởi động trình bảo vệ màn hình, do hoạt động không hợp lệ.
 Tải lại không được phép trong chế độ an toàn.
 Phân tích cú pháp mod không được phép trên chế độ an toàn.
-Phân tích toàn bộ thư mục cho kích thước hoặc chỉ các tệp trong tệp hiện tại.
 Liệt kê tất cả các thiết bị gỡ lỗi được kết nối.
 Lỗi khi cố gắng đặt chế độ phân tích cú pháp. Kiểm tra giá trị và thử lại. Nếu điều này là chính xác, hãy xem theo dõi ngăn xếp khi gỡ lỗi kernel được kích hoạt.
-Đặt thành công.
 Đường dẫn không phải là một tập tin hay một thư mục.
 Tạo một bản sao khác của một tập tin dưới thư mục hoặc tên khác nhau.
 Di chuyển một tập tin vào thư mục khác
@@ -436,34 +291,11 @@ Di chuyển một tập tin vào thư mục khác
 Khớp {0} ({1}): {2}
 Khớp {0}: {1}
 Thời gian sử dụng: {0} mili giây
-Nhà sản xuất: {0}
-Mô hình: {0}
-Dung lượng: {0} ({1}, {2}, {3})
-Loại giao diện: {0}
-Số ổ đĩa: {0}
-Cờ khởi động: {0} ({1})
-Phân vùng vật lý: {0}
-Cờ chính: {0}
-Kích thước: {0} GB
-Phân vùng logic: {0}
-Được nén: {0}
 Tên: {0}
-Hệ thống tệp: {0}
-Dung lượng: {0} GB miễn phí {1} GB
-Liệt kê tất cả các phân vùng hợp lý trên tất cả các ổ đĩa.
-Liệt kê tất cả các ổ đĩa được thăm dò.
-Liệt kê tất cả các phân vùng được thăm dò trên một ổ đĩa cụ thể (và tất cả các phân vùng hợp lý trên tất cả các ổ đĩa).
 Tính toán tổng số tập tin.
 Đưa bạn đến Wiki GitHub của chúng tôi.
 Thuật toán mã hóa không hợp lệ.
 Cho phép hoặc vô hiệu hóa gỡ lỗi từ xa.
-Đang khởi tạo hệ thống tập tin ...
-Được cài đặt giọng nói
-Đặt giọng nói mặc định
-Nói chuỗi của bạn bằng giọng nói mặc định
-Giọng nói {0}: {1} ({2})
-Giọng nói không hợp lệ.
-Bộ giọng nói
 Xem bạn có thể đánh vần các từ đúng thời gian không
 Xem nếu bạn có thể giải phương trình toán học đúng thời gian
 Trả lời yêu hay ghét bình luận.
@@ -474,23 +306,16 @@ Bạn vừa báo cáo bình luận tình yêu!
 Bạn chỉ trả lời bình luận ghét!
 Tuyệt quá! Nhận xét của {0} sẽ bị xóa vì điều đó.
 Tuyệt quá! {0} sẽ đánh giá cao lời cảm ơn của bạn.
-Viết "GetMeOut" để thoát.
 Đánh vần hoàn hảo!
 Viết sai chính tả.
 Giải quyết hoàn hảo!
 Giải quyết không chính xác.
-{0} MB trong số {1} MB đã tải xuống.
 RPC đã chạy.
 RPC lắng nghe trên tất cả các địa chỉ bằng cổng {0}.
 Bắt đầu RPC ...
 Kết nối với máy chủ SSH.
 Nhập mật khẩu cho {0}:
 SSH bị ngắt kết nối.
-Tải tập tin synth và chơi nó.
-Tệp kịch bản {0} không tồn tại.
-Các tập tin không phải là một tập tin synth kịch bản.
-Không thể thăm dò một dòng synth.
-Chuỗi rỗng được chỉ định
 Không thể đặt codepage. Ngôn ngữ có thể không hiển thị đúng.
 Gỡ lỗi không được kích hoạt.
 {0} không còn được đặt thành trình bảo vệ màn hình mặc định.
@@ -519,8 +344,6 @@ Nhiệm vụ thất bại, Tôn trọng -, Thuê bao -
 Ngừng làm loại video này !!!
 Quay trở lại với công việc của bạn, video của bạn là tồi tệ nhất!
 Chúng tôi định kiến ​​về video này.
-Bí danh {0} đến {1} đều bị cấm.
-Lỗi khi cố gắng loại bỏ thông báo: {0}
 Hiển thị tất cả các thông báo nhận được
 Bỏ thông báo
 Thông báo bác bỏ thành công.
@@ -532,39 +355,26 @@ Thuộc tính chung của IPv4
 Điều khiển từ xa một lệnh đến PC từ xa
 - Giai đoạn 1: Khởi tạo hệ thống
 - Giai đoạn 2: Phát hiện phần cứng
-- Giai đoạn 2: Quản lý tên người dùng nội bộ
 - Giai đoạn 3: Phát hiện mod và trình bảo vệ màn hình
-- Giai đoạn 4: Thu gom rác
 - Giai đoạn 4: Đăng nhập
-Trước khi thu gom rác: {0} byte
-Sau khi thu gom rác: {0} byte
-Lỗi khi bắt đầu RPC: {0}
 Có vẻ như bạn đang chạy phiên bản ứng viên phát hành. Bạn nên ở phiên bản ổn định.
-Có vẻ như dân số hệ thống tập tin mất quá nhiều thời gian.
 Loại không hợp lệ {0}.
-Dung lượng: {0}
-Số lượng phân vùng: {0}
 Kích thước: {0}
-Được sử dụng: {0}
 Thư mục {0} đã tồn tại.
 Lỗi khi cố gắng kết nối với {0}: Hết thời gian kết nối hoặc mất kết nối
 Máy tính để tính biểu thức.
 Lỗi trong tính toán.
-Dung lượng: {0} GB ({1}, {2}, {3})
 Có vẻ như bạn đang chạy phiên bản phát hành gần. Mặc dù hiện tại an toàn hơn để sử dụng, nhưng bạn nên duy trì phiên bản ổn định.
 Cập nhật hệ thống
 Đang kiểm tra cập nhật hệ thống ...
 Tìm thấy phiên bản mới: 
 Bạn có thể tải xuống tại: 
-Không thể kiểm tra cập nhật: {0}
-Không tìm thấy nhật ký gỡ lỗi
 Không có thông báo gần đây
 Tìm kiếm chuỗi cụ thể trong tệp được cung cấp
 Tính tổng các tập tin trong thư mục được chỉ định.
 Liệt kê tất cả các thư trong người dùng cụ thể.
 Nhập tên người dùng hoặc địa chỉ thư:
 Nhập mật khẩu:
-Nhập địa chỉ máy chủ và cổng (<địa chỉ> hoặc <địa chỉ>:[cổng]):
 Lỗi khi kết nối với {0}: {1}
 Đang kết nối với {0} ...
 Xác thực ...
@@ -581,7 +391,6 @@ Số tin nhắn không phải là một giá trị số.
 - Đã gửi tại {0} trong {1}
 Tin nhắn được chỉ định không được tìm thấy.
 Gỡ lỗi từ xa không bắt đầu: {0}
-Lỗi khi thực thi lệnh IMAP: {0}
 Chuẩn bị hồ sơ ... Có thể mất vài phút ...
 Tên máy chủ, tên người dùng, loại dữ liệu, mã hóa, mã hóa, giao thức
 Lỗi khi cố thực thi tập lệnh: {0}
@@ -593,7 +402,6 @@ Tần số phải là số. Nếu là số, hãy đảm bảo rằng đó là >=
 Thời gian phải là số.
 trong đó <answer> là các câu trả lời một chữ cái của câu hỏi được phân tách bằng dấu gạch chéo
 Lỗi khi cố gắng kết nối với máy chủ SSH: {0}
-Trống MOTD sau khi đăng nhập.
 Cho phép người dùng nhập dữ liệu đầu vào
 Thay đổi thư mục thư hiện tại
 Không thể mở thư mục thư {0}: {1}
@@ -616,7 +424,6 @@ Nhập chủ đề:
 Nhập tin nhắn của bạn dưới đây. Viết "" EOF "" để xác nhận.
 Gửi tin nhắn ...
 Tin nhắn đã gửi.
-Lỗi gửi tin nhắn: {0}
 Địa chỉ email không hợp lệ. Hãy chắc chắn rằng bạn đã viết địa chỉ chính xác và nó phù hợp với định dạng của ví dụ được hiển thị:
 Xóa tin nhắn
 Xóa tất cả tin nhắn khỏi người nhận
@@ -656,10 +463,7 @@ Chặn thiết bị gỡ lỗi theo địa chỉ IP
 {0} chưa bị chặn.
 Lỗi tải cài đặt
 Có lỗi trong khi tải cài đặt. Bạn có thể cần kiểm tra tập tin cài đặt.
-- Giai đoạn 2: Phát hiện mod và bảo vệ màn hình
-- Giai đoạn 3: Đăng nhập
 Chọn phần:
-Chọn tùy chọn:
 Cài đặt chung ...
 Cài đặt phần cứng ...
 Cài đặt Đăng nhập ...
@@ -675,14 +479,12 @@ Kích hoạt chế độ bảo trì
 Thay đổi mật khẩu gốc ...
 Kiểm tra các bản cập nhật khi khởi động
 Thăm dò yên lặng
-Thăm dò khe cắm RAM
 Hiển thị MOTD khi đăng nhập
 Xóa màn hình khi đăng nhập
 Hiển thị tên người dùng có sẵn
 Vỏ màu
 Lệnh trợ giúp được đơn giản hóa
 Cổng gỡ lỗi
-Tiền tố Nick mặc định gỡ lỗi từ xa
 Tải xuống thời gian thử lại
 Đăng nhập tên người dùng FTP
 Ghi địa chỉ IP FTP
@@ -704,7 +506,6 @@ Bật "Thay đổi mật khẩu gốc" để sử dụng tùy chọn này. Hãy 
 Thay đổi mật khẩu gốc?
 Đặt mật khẩu gốc ...
 Viết một cổng gỡ lỗi từ xa. Nó phải là số và không được sử dụng. Nếu không, trình gỡ lỗi từ xa sẽ không mở được cổng.
-Viết tiền tố biệt hiệu gỡ lỗi từ xa mặc định.
 Viết số lần lệnh "" get "" sẽ thử lại các lần tải xuống không thành công. Nó phải là số.
 Viết thời điểm khởi chạy trình bảo vệ màn hình sau phần nghìn giây được chỉ định. Nó phải là số.
 Ghi bao nhiêu byte có thể lưu trữ nhật ký gỡ lỗi. Nó phải là số.
@@ -716,12 +517,10 @@ Cài đặt trình bảo vệ màn hình ...
 Kích hoạt 255 màu
 Bạn có muốn giữ kết nối không?
 Lựa chọn không hợp lệ. Giả sử không ...
-Không có mod nào được phát hiện. Đang bỏ qua giai đoạn ...
 Thay đổi văn hóa khi chuyển đổi ngôn ngữ
 Văn bản được hiển thị
 Viết bất kỳ văn bản nào bạn muốn hiển thị. Ngắn hơn là tốt hơn.
 Không tải lên được {0}
-Tải xuống không thành công cho tệp {0}: {1}
 Lỗi khi thực thi lệnh gỡ lỗi từ xa {0}: {1}
 Thêm người dùng
 Thêm bí danh vào lệnh
@@ -730,7 +529,6 @@ Thay đổi tên máy chủ
 Thay đổi MAL, MOTD sau khi đăng nhập
 Thay đổi MOTD, Thông điệp trong ngày
 Thay đổi tên người dùng
-Hiển thị nhật ký gỡ lỗi
 Quản lý quyền cho người dùng
 Tải lại tệp bảo vệ màn hình trong KSMods
 Xóa người dùng khỏi danh sách
@@ -739,7 +537,6 @@ Không thể kiểm tra các bản cập nhật.
 Không có người dùng nào còn lại trong danh sách.
 Không đặt được ngôn ngữ.
 Lỗi khi cố gắng loại bỏ thông báo.
-Đã phát hiện nâng cấp lên {0}. Đang cập nhật cấu hình ...
 usrmgr: Không tạo được tên người dùng {0}: {1}
 Không thể đổi tên người dùng. {0}
 Một trong các danh sách quyền không chứa tên người dùng {0}.
@@ -773,12 +570,9 @@ Di chuyển tất cả tin nhắn từ người nhận
 Tất cả thư do {0} thực hiện đều được chuyển thành công.
 Không chuyển được tất cả thư do {0} gửi.
 Thư {0} từ {1} được chuyển từ {2}. Còn lại {3} tin nhắn để phân tích cú pháp.
-Thư {0} từ {1} đã được chuyển. Còn lại {3} tin nhắn để phân tích cú pháp.
 Hiển thị thông tin thời tiết cho thành phố được chỉ định. Sử dụng OpenWeatherMap.
 - Thông tin thời tiết cho {0} -
 Thời tiết: {0}
-Nhiệt độ: {0} ({1} đơn vị)
-Cảm thấy như: {0} ({1} đơn vị)
 Áp lực: {0}
 Độ ẩm: {0}
 Bạn có thể lấy khóa API của riêng mình tại https://home.openweathermap.org/api_keys.
@@ -793,7 +587,6 @@ Mỗi lần khởi động, nó sẽ kiểm tra các bản cập nhật.
 Khi chuyển đổi ngôn ngữ, hãy thay đổi tên tháng, lịch, v.v.
 Nếu hạt nhân được khởi động, nó sẽ đặt mật khẩu gốc.
 Giữ im lặng các thông báo thăm dò phần cứng.
-Nếu được bật, nó sẽ thăm dò các khe RAM cùng với RAM.
 Hiển thị Thông báo trong ngày trước khi hiển thị màn hình đăng nhập.
 Xóa màn hình trước khi hiển thị màn hình đăng nhập.
 Hiển thị những người dùng hiện có nếu được bật.
@@ -819,12 +612,9 @@ Mod {0} không có lệnh. Phân tích cú pháp mod không thành công. Xem l�
 Bạn phải bật chế độ gỡ lỗi trước khi có thể xóa nhật ký gỡ lỗi.
 {0} thư mới đã đến hộp thư đến.
 Mở "lsmail" để xem chúng.
-Chính: {2} Có thể khởi động: {3} Phân vùng khởi động: {4}
 Không thể xóa tệp: {0}
 Xóa một thư mục hoặc một tệp
 Không thể xóa {0} vì nó không tồn tại.
-Bạn có thể chưa cài đặt inxi trên hệ thống của mình. Tham khảo trình quản lý gói của bạn để cài đặt. Đối với hệ thống Debian (và các hệ thống phái sinh), bạn có thể muốn chạy "" sudo apt install inxi libcpanel-json-xs-perl "" trong trình mô phỏng đầu cuối.
-Đã đặt thành công ngôn ngữ thành {0}!
 Nhấn CTRL + C để thoát.
 Cung cấp thông tin về tệp
 Cung cấp thông tin về một thư mục
@@ -879,7 +669,6 @@ Ping một địa chỉ
 Tải lên đã hoàn tất.
 Vui lòng sử dụng "ftp" nếu bạn định tải tệp lên máy chủ FTP.
 Tải lên không thành công khi thử {0}: {1}
-Đã tải lên {0} MB / {1} MB.
 Viết số lần lệnh "put" sẽ thử lại các lần tải lên không thành công. Nó phải là số.
 Địa chỉ không được để trống.
 Không ping được {0}: {1}
@@ -889,7 +678,6 @@ Cảm thấy như: {0}
 Nhiệt độ: {0}
 Tốc độ gió: {0}
 Hướng gió: {0}
-Chính: {2} | Có thể khởi động: {3} | Phân vùng khởi động: {4}
 Kích hoạt hỗ trợ 255 màu cho Hòa tan.
 Kích hoạt hỗ trợ màu sắc trung thực cho Hòa tan.
 Nhấn phím bất kỳ để quay lại.
@@ -919,10 +707,7 @@ Lời nhắc đối số
 Không khởi động được "{0}": {1}
 Hiển thị bản xem trước thư
 Khi liệt kê các thư, hãy hiển thị phần xem trước nội dung.
-Đầu dò phần cứng được lưu trong bộ nhớ cache. Vẫn hiển thị thông tin ...
-Dung lượng: {0} GB
 Màu sắc tùy chỉnh...
-Viết màu theo quy định dưới đây:
 Màu đầu vào
 Màu giấy phép
 Màu lỗi hạt nhân liên tục
@@ -931,12 +716,8 @@ Màu tên máy chủ
 Màu tên người dùng
 Màu nền
 Màu văn bản trung tính
-Màu danh sách lệnh
-Màu định nghĩa lệnh
 Màu sân khấu
 Màu lỗi
-Các lựa chọn màu này có ổn không?
-Trả lời {0} để quay lại. Nếu không, bất kỳ câu trả lời nào có nghĩa là có.
 Kiểu lời nhắc FTP
 Kiểu Lời nhắc Thư
 Kiểu nhắc SFTP
@@ -946,7 +727,6 @@ Kích hoạt hỗ trợ màu sắc trung thực cho BouncingBlock.
 Xóa tệp văn bản
 Thoát khỏi trình soạn thảo văn bản
 Truy vấn một ký tự trong một dòng cụ thể hoặc tất cả các dòng
-Số ký tự đã chỉ định {0} không phải là số hợp lệ.
 Kiểm tra các bản cập nhật bị tắt vì bạn đang chạy phiên bản phát triển.
 Bật hoặc tắt tính năng tự động lưu của trình soạn thảo văn bản.
 Nếu tính năng lưu tự động được bật, tệp văn bản sẽ được lưu trong mỗi "n" giây.

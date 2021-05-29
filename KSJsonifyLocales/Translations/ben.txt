@@ -12,27 +12,12 @@ Inajēkṭēḍa ārgumēnṭaguli parabartī ribuṭē cālānōra jan'ya nirdh
 Ārgumēnṭa inajēkaśana bātila karā haẏēchē.
 Āsala kamānḍa-lā'ina ārgumēnṭaguli pārsa karāra samaẏa truṭi: {0}
 Abaidha raṅēra ṭēmpalēṭa {0}
-ḍiphalṭa
-prathā
 hwprobe: Āpanāra hārḍa'ōẏyāraṭi anusandhāna karā habē. Anugrahapūrbaka apēkṣā karuna...
-Hwprobe: Hārḍa'ōẏyāra itimadhyē anusandhāna karā haẏēchē.
-Hwprobe: Hārḍa'ōẏyāra anusandhāna karā haẏa nā. 'Hwprobe' byabahāra karē anusandhāna karuna
 sipi'i'u: Ēka bā ēkādhika sipi'i'u anusandhāna karā yāẏani. Yā'ihōka tathya dēkhānō hacchē...
 Ra‌yāma: Ēka bā ēkādhika ra‌yāma cipa anusandhāna karā yāẏani. Yā'ihōka tathya dēkhānō hacchē...
 Ē'icaḍiḍi: Ēka bā ēkādhika hārḍa ḍrā'ibha anusandhāna karā yāẏani. Yā'ihōka tathya dēkhānō hacchē...
 Sipi'i'u: Prasēsarēra mōṭa saṅkhyā: {0}
-Sipi'i'u: {0} {1} Mēgāhārṭaja
-ra‌yāma: {0} Ēmabi = {1} ēmabi
-ra‌yāma: Byabahr̥ta slaṭa (nāma anusārē): {0}
-Ra‌yāma: Byabahr̥ta slaṭa (saṅkhyā anusārē): {0}/ {1} ({2}%)
-Ra‌yāma: Anusandhānēra sthiti abamūlyāẏana karā haẏēchē ēbaṁ bhabiṣyatē prakāśē apasāraṇa karā habē.
-Ē'icaḍiḍi: {0} {1} Jibi {2}
-ē'icaḍiḍi: {0} {1} {2} Jibi {3
-ē'icaḍiḍi: Si'ē'ica'ēsa: {4} Silinḍāra | {5} māthā | {6} sēkṭara
-ē'icaḍiḍi: Si'ē'ica'ēsa: {3} Silinḍāra | {4} māthā | {5} sēkṭara
-ē'icaḍāblubrāba: Prōbasa samarthita naẏa kāraṇa ēṭi i'uniksē prōbāra cālānōra jan'ya ḍijā'ina karā haẏani.
 Rakṣaṇābēkṣaṇēra jan'ya praśāsakēra pāsa'ōẏārḍa likhuna.
-Tālikāẏa āra kōna'ō byabahārakārī nē'i.
 Buṭa karāra samaẏa kārnēla truṭi: {0}
 Ḍābala pyānika: Ribuṭa samaẏaṭi sarbādhika anumōdita {0} truṭi ribuṭa samaẏakē chāṛiẏē yāẏa. Āpani ēkaṭi kārnēla bāga khum̐jē pēẏēchēna.
 [{0}] Ātaṅka: Truṭira stara {0} ha'ōẏāra kāraṇē ribuṭa sakṣama haẏēchē}
@@ -46,18 +31,12 @@ Buṭa karāra samaẏa kārnēla truṭi: {0}
 Ḍābala ātaṅka: Kārnēla bāga: {0}
 Bandha hacchē...
 Punarāẏa cālu habē...
----===+++> Kārnēla ē āpanākē sbāgatama sanskaraṇa {0} <+++===---
 kārnēla simulēṭaraṭira āra ēkaṭi udāharaṇa calachē. Hastakṣēpa kṣētrē bandha karā.
-Byabahārakārī {0} the ayāḍamina tālikāẏa yukta karā haẏēchē.
-Byabahārakārī {0} the akṣama tālikāẏa yukta karā haẏēchē.
 Anumati tālikāẏa byabahārakārī yukta karatē byartha: Abaidha ṭā'ipa {0}
 anumati tālikāẏa byabahārakārī yukta karatē byartha: Abaidha byabahārakārī {0}
-byabahārakārī {0} the praśāsaka tālikā thēkē sarānō haẏēchē.
-Byabahārakārī {0} the akṣama tālikā thēkē sarānō haẏēchē.
 Anumati tālikā thēkē byabahārakārīkē sarātē byartha: Abaidha ṭā'ipa {0}
 āpani itimadhyē ē laga'ina karēchēna.
 Anumati tālikā thēkē byabahārakārīkē sarātē byartha: Abaidha byabahārakārī {0}
-āpani anumati sisṭēmē ēkaṭi bāga khum̐jē pēẏēchēna: Abaidha mōḍa {0}
 haẏa āpani ēkaṭi bāga khum̐jē pēẏēchēna, bā āpani yōga karāra bā apasāraṇēra cēṣṭā karāra anumatiṭi itimadhyē sampanna haẏēchē, bā an'ya kōna'ō truṭi.
 Truṭi {0}: {1}
 Āpani ēkaṭi truṭi khum̐jē pēẏēchēna bā natuna byabahārakārīra jan'ya āpani yē anumatiṭi sampādanā karāra cēṣṭā karēchēna tā byartha haẏēchē.
@@ -79,17 +58,6 @@ Byabahārakārī {0} Sarānōra anumati nē'i.
 Byabahārakārī {0} already itimadhyē laga ina haẏēchē Log laga ā'uṭa ēbaṁ an'ya praśāsaka hisābē laga ina.
 Byabahārakārī {0} Sarānō haẏēchē.
 Byabahārakārīra nāma sarānōra cēṣṭā karāra samaẏa truṭi.
-{1} Ēra {0} = {2}
-śūn'ya dbārā bhāga karāra cēṣṭā anumōdita naẏa.
-Gaṇanā karāra jan'ya sandēhajanaka cēṣṭā karā haẏēchē yāra phalasbarūpa ēkaṭi ōbhāraphlō haẏēchila.
-Gaṇanā karāra samaẏa ēkaṭi truṭi raẏēchē: {0}
-{0} Kē {1} tē rūpāntara karā yāẏa nā
-haẏa utsa
- bā gantabya
- sārbhārē bidyamāna nē'i.
-{0} Thēkē {1}: {2}
-{0} Thēkē {1}: {2} Ē rūpāntara karatē giẏē truṭi
-truṭi
 anurōdha karā skrinasēbhāra {0} not pā'ōẏā yāẏa ni.
 {0} Properly saṭhikabhābē śuru karā haẏēchē.
 {0} Initial ārambha karā haẏani. Skrinasēbhāra kōḍaṭi ārambha karāra samaẏa ēkaṭi truṭi anubhaba karēchē.
@@ -99,12 +67,6 @@ Skrīnasēbhāra {0} database ḍāṭābēsē pā'ōẏā yāẏa ni. Nāmaṭi
 Nimnalikhita kāraṇē skrīnasēbhāra lōḍa karā yāẏa nā:
 Pāṭhya mudraṇēra samaẏa ēkaṭi gurutara truṭi raẏēchē.
 Kanaphigārēśana tairi karāra cēṣṭā karāra samaẏa ēkaṭi truṭi raẏēchē.
-Kanaphigārēśana tairi karāra cēṣṭā karāra samaẏa ēkaṭi truṭi raẏēchē: {0}
-{0} Thēkē {1} ē ēkaṭi āpagrēḍa sanākta haẏēchē. Kanaphigārēśana āpaḍēṭa karā hacchē...
-Kanaphigārēśana āpaḍēṭa karāra cēṣṭā karāra samaẏa ēkaṭi truṭi raẏēchē: {0}}
-Kanaphigārēśana āpaḍēṭa karāra cēṣṭā karāra samaẏa ēkaṭi truṭi raẏēchē.
-Kanaphigārēśanaṭi paṛāra cēṣṭā karāra samaẏa ēkaṭi truṭi raẏēchē.
-Kanaphigārēśanaṭi paṛāra cēṣṭā karāra samaẏa ēkaṭi truṭi raẏēchē: {0}
 Ra‌yāma mukta karāra cēṣṭā karē truṭi: {0} - Abirata...
 Mōḍa nimnalikhita kāraṇē lōḍa karā yāẏa nā:
 Mōḍa: Mōḍaguli lōḍa hacchē...
@@ -129,32 +91,19 @@ Sthānīẏa ḍirēkṭari {0} bidyamāna nē'i.
 sthānīẏa ḍirēkṭari: {0}
 Rimōṭa ḍirēkṭari: {0}
 Bartamāna dūrabartī ḍirēkṭari pā'ōẏāra āgē āpanākē abaśya'i sārbhārēra sāthē sanyōga sthāpana karatē habē.
-Phā'ila {0} mōchā hacchē...
-Āpani ki niścita yē āpani phā'ila delete {0} <y/n> muchatē cāna?
-Mōchā phā'ila {0}
 muchē phēlāra āgē āpanākē praśāsanika subidhāsaha sārbhārēra sāthē sanyōga sthāpana karatē habē.
-Apasāraṇa karatē ēkaṭi phā'ila prabēśa karāna.
-Apasāraṇa karatē sakṣama hatē āpanāra laga ina thākā byabahārakārīra upara praśāsanika anumati thākatē habē.
 {0} Thēkē sanyōga bicchinna
 āpani ēkhana'ō kōna'ō sārbhārēra sāthē sanyukta hana ni
 phā'ila ḍā'unalōḍa karā hacchē {0}...
 Ḍā'unalōḍa phā'ila {0}.
-Ḍā'unalōḍa phā'ilaṭi is 0 file phā'ilēra jan'ya byartha haẏēchē kāraṇa sthānīẏa phā'ilaṭi dūṣita.
 Saṅkramaṇa sañcālanēra āgē āpanākē abaśya'i sārbhārēra sāthē sanyōga sthāpana karatē habē.
 Sthānīẏa ḍirēkṭaritē ḍā'unalōḍa karatē ēkaṭi phā'ila prabēśa karuna.
 {0} Kēbi | ētē paribartita: {1}
 Samasta rimōṭa phā'ila tālikābhukta karāra āgē āpanāra sārbhārēra sāthē sanyōga sthāpana karā ucita.
-Phā'ilēra nāma paribartana karē {0} {1}...
-Saphalabhābē nāmakaraṇa haẏēchē
-ēkaṭi phā'ila ēbaṁ natuna phā'ilēra nāma likhuna.
 Phā'ila āpalōḍa hacchē {0}...
 Phā'ila āpalōḍa karā haẏēchē {0}
 dūrabartī ḍirēkṭaritē āpalōḍa karatē ēkaṭi phā'ila prabēśa karuna. <Phā'ila> <ḍirēkṭari> āpalōḍa karuna
-ēphaṭipi kamānḍa kāryakara karāra cēṣṭā karāra samaẏa truṭi
 (dya ināra:
-{0} Phōlḍāra, {1} phā'ila
-(ayāksēsa asbīkr̥ta)
-{0} KB, {1} {2} ē nirmita, {3} {4} in ē sanśōdhita
 bartamāna sthānīẏa ḍirēkṭari pāna
 bartamāna rimōṭa ḍirēkṭariṭi pāna
 ēkaṭi ēphaṭipi sārbhārēra sāthē sanyōga sthāpana karē (ēṭi abaśya'i"ftp: //" Bā"ftps: //" Diẏē śuru karā ucita)
@@ -167,18 +116,8 @@ bā'ināri bā pāṭhya byabahāra karē sthānīẏa ḍirēkṭaritē rimō�
 sahāẏatā pardā dēkhāẏa
 sthānīẏa ḍirēkṭari tālikābhukta
 dūrabartī ḍirēkṭari tālikābhukta
-nirdiṣṭa phā'ila bā ḍirēkṭariṭira nāma paribartana karē
 bā'ināri bā pāṭhya byabahāra karē dūrabartī ḍirēkṭaritē sthānīẏa phā'ila āpalōḍa karē
-ēphaṭipi śēlaṭitē ēkaṭi truṭi chila.
 Ēphaṭipi bārtā: Anurōdha kamānḍa {0} not pā'ōẏā yāẏa ni. Ēphaṭipi śēla-ē ullikhita upalabdha kamānḍēra tālikāra jan'ya'sahāẏatā' dēkhuna.
-Nēṭa: {1} Ēma'ēsē {0} from thēkē pratikriẏā pēẏēchi
-samaẏasīmā śēṣa, sanyōga bicchinna bā sārbhāra aphalā'ina.
-Nēṭa: Nēṭa'ōẏārkē āpanāra kampi'uṭārēra nāma {0}
-nēṭa: Āpanāra hōsṭēra nāma {1}
-nēṭa: Dēkhā yācchē kampi'uṭāraguli ḍōmēna bā ōẏārkagrupē raẏēchē:
-Nēṭa: Ōẏā'iphā'i bā ithāranēṭa sanyōga bicchinna.
-Nēṭa: Kampi'uṭāraguli nīcē sanyukta raẏēchē balē manē haẏa:
-Nēṭa: Rā'uṭāra ṭhikānā: {0}
 Ayāḍāpṭārēra jan'ya baiśiṣṭya pētē byartha {0}
 ayāḍāpṭāra nambara:
 Ayāḍāpṭārēra nāma:
@@ -189,9 +128,7 @@ I'unikāsṭa pyākēṭa:
 Āgata/ bahirgāmī pyākēṭagulitē truṭi:
 Ālēkhya kamānḍēra matō ēka'i nāma hatē pārē nā.
 Alias {0} ēra sāthē ōraphē kamānḍa pā'ōẏā yāẏa ni}
-Ali {0} thēkē {1} ēyālija karā sampūrṇa niṣid'dha.
 Āpani ēkhana"{0}" kamānḍa hisābē cālātē pārēna: "{1}".
-"{1}" Kamānḍa hisābē āpani āra"{0}" byabahāra karatē pārabēna nā.
 Upanāma {0} sariẏē phēlā yāẏani.
 Abaidha mōḍa {0}
 inajēkṭēḍa ārgumēnṭa, {0} next, parabartī punarāẏa buṭa karāra samaẏa nirdhārita habē.
@@ -201,16 +138,12 @@ phām̐kā hōsṭēra nāma.
 Paribartana hacchē: {0} Thēkē {1}...
 Dinēra khāli bārtā.
 Laga'ina karāra parē phām̐kā MAL.
-Ēma'ē'ēlakē {0} thēkē {1} ē paribartana karā hacchē...
 Bhula byabahārakārīra pāsa'ōẏārḍa.
 Pāsa'ōẏārḍa mēlē nā.
 Byabahārakārīra nāma paribartana karē {0} karā haẏēchē!
 Āpanāra prabēśa karā natuna nāmaṭi itimadhyē pā'ōẏā gēchē.
-Tālikā tairi pisi ēkhana'ō i'uniksē samarthita naẏa.
-Niṣēdhājñāguli: {0}
 {0} Pā'ōẏā yāẏa ni.
 Kanaphigārēśana punarāẏa lōḍa haẏēchē. Kichu paribartana kāryakara ha'ōẏāra jan'ya āpanākē kārnēlaṭi punarāẏa buṭa karatē habē.
-Sabakichu sbābhābika sēṭinsē punarāẏa sēṭa karā āchē.
 Ēka bā ēkādhika raṁ abaidha.
 Raṅa pā'ōẏā yāẏa nā. Kārnēla kanaphigārēśanē raṅina śēlaṭi cālu karuna.
 Skrinasēbhāra {0} pā'ōẏā yāẏa ni.
@@ -222,85 +155,36 @@ Buṭē ārgumēnṭa:
 Sahāẏatā kamānḍa saralīkr̥ta:
 Laga'inē ēma'ōṭiḍi:
 Kōṇē samaẏa/ tārikha:
-Hārḍa'ōẏyāra anusandhāna:
-Bartamāna thima:
 [ Hārḍa'ōẏyāra sēṭinsa ] {0}
 {0}[ Byabahārakārīra sēṭinsa ]
 bartamāna byabahārakārīra nāma:
 Bartamāna hōsṭēra nāma:
 Upalabdha byabahārakārīra nāma:
-Kampi'uṭāra hōsṭēra nāma:
-{0}[ Bārtā sēṭinsa ]
-sōrsa kōḍa:
-Kapirā'iṭa (si)
-lā'isēnsa
-bartamāna
 kamānḍa kāryakara karāra cēṣṭā karāra samaẏa truṭi
-byabahārakārīdēra yōga karuna (kēbala praśāsakarā ē'i ādēśaṭi ayāksēsa karatē pārabēna)
-kamānḍagulitē upanāma yukta karē (kēbala praśāsakarā ē'i ādēśaṭi ayāksēsa karatē pārabēna)
-kārnēlēra sāthē yukti yukta karē (punarāẏa buṭa karā darakāra, kēbala praśāsakarā)
-sādhāraṇa kyālakulēṭara
 ḍirēkṭari paribartana karē
-hōsṭēra nāma paribartana karē (kēbala ayāḍaminaguli)
-ēma'ēla paribartana karē, laga'inēra parē ēma'ōṭiḍi (kēbala praśāsanika)
-ēma'ōṭiḍi paribartana karē, dinēra bārtā (kēbala praśāsanika)
 bartamāna byabahārakārīra jan'ya pāsa'ōẏārḍa paribartana karē
-byabahārakārīra nāma paribartana karē (kēbala ayāḍaminaguli)
 pardā sāpha karē
-rūpāntara karuna
-ḍibāga lagaguli dēkhāẏa (kēbala ayāḍaminaguli)
 sārbhārēra sāthē inṭāra'ayākṭa karatē ēkaṭi ēphaṭipi śēla byabahāra karuna
 sahāẏatā pr̥ṣṭhā
-myānuẏāli hārḍa'ōẏyāra anusandhāna karuna ('nohwprobe' kārnēlēra ēka samaẏa)
 bartamāna phōlḍārē phā'ila/ phōlḍāra sāmagrī tālikābad'dha karuna
-%USERPROFILE%\KSMods gulitē skrīna ōbhāra phā'ilaṭi punarāẏa lōḍa karē
 Ēkaṭi pāsa'ōẏārḍa diẏē āpanāra pardā laka
 āpanākē laga ā'uṭa
-analā'ina (ēbaṁ ḍōmēnagulitē aphalā'ina) samasta nēṭa'ōẏārka ḍibhā'isa tālikābhukta karuna
-hōsṭē samasta nēṭa'ōẏārka ṭhikānā tālikābad'dha karē
-gāchaṭi byabahāra karē hōsṭēra samasta nēṭa'ōẏārka ṭhikānā tālikābad'dha karē
 ēkaṭi ḍirēkṭari tairi karē
 samasta upalabdha inṭāraphēsa samparkē tathya tālikābhukta
-upanāmagulira niṣid'dha tālikā dēkhāẏa
-byabahārakārīdēra jan'ya anumatiguli paricālanā karuna (kēbala praśāsakarā ē'i ādēśaṭi ayāksēsa karatē pārabēna)
-nirdiṣṭa ṭhikānā pā'ōẏā yāẏa kinā tā parīkṣā karē dēkhuna
-kanasōlē phā'ila sāmagrī likhēchē
 āpanāra kampi'uṭāra punarāẏa cālu karuna (satarkatā: Kōna'ō siṅka hacchē nā, kāraṇa ēṭi cūṛānta kārnēla naẏa)
 sampādita kanaphigārēśana phā'ilaṭi punarāẏa lōḍa karē.
-Ēkaṭi ḍirēkṭari sarāẏa
-tālikā thēkē kōna'ō byabahārakārīkē sarāna (kēbala ayāḍaminasa)
 bārna ā'uṭa thēkē āpanāra skrina sanrakṣaṇa karē
-baijñānika kyālakulēṭara. I'uniṭa rūpāntarakārī an'ya kamānḍa pr̥thaka karā haẏa
-kārnēlēra raṁ sēṭa āpa karuna
 kārnēla skrīnasēbhāra sēṭa āpa karuna
 kārnēla thima sēṭa āpa karuna
-upanāma dēkhāẏa
-byabahārakārī bā kārnēla dbārā laga'ina sēṭa ha'ōẏāra parē ēma'ōṭiḍi dēkhāẏa
-byabahārakārī bā kārnēla dbārā sēṭa karā dinēra bārtā dēkhāẏa
 tārikha ēbaṁ samaẏa dēkhāẏa
 añcalagulitē tārikha ēbaṁ samaẏa dēkhāẏa
 kārnēlaṭi bandha haẏē yābē
 pad'dhatigata tathya
-i'uniṭa rūpāntarakārī yā skēlika thēkē pr̥thaka.
-Byabahr̥ta ōpēna sōrsa nirbharatā dēkhāẏa
-ēkaṭi khuba barṇanāmūlaka byabahārakārī myānuẏāla.
 Kamānḍēra madhyē kōlana byabahāra karē āpani ēkādhika kamānḍa byabahāra karatē pārēna.
-Upalabdha kamānḍa:
-Mōḍa kamānḍa:
-Kamānḍēra upādhi:
 Byabahāra:
-Kamā dbārā pr̥thaka yukti
 yēkhānē yuktiguli {0} habē
-bartamāna ḍirēkṭari pētē
-yāra utsa ēbaṁ gantabyaṭi ēkaṭi binimaẏa hārēra 3 ṭi UPPERCASE akṣara
-samasta ā'iḍi ēbaṁ nāmēra tālikā:
-Āpanākē lagaguli ḍibāga dēkhāẏa yātē āpani āmādēra lagaṭi prēraṇa karatē pārēna.
 Ēphaṭipi śēlaṭi śuru karē.
-Prōba hārḍa'ōẏyāra (śudhumātra yakhana hārḍa'ōẏyāraṭi anusandhāna karā haẏa nā ēbaṁ ē'icaḍabrōba cālānō haẏa nā takhana'i kāja karē).
-Nēṭa'ōẏārka tathya, pāśāpāśi ēkaṭi nēṭa'ōẏārkēra sāthē sanyukta pratiṭi kampi'uṭārakē tālikābad'dha karē.
 Ēra bandhu
-nēṭa'ōẏārka tathya, pāśāpāśi ēkaṭi nēṭa'ōẏārkēra sāthē sanyukta pratiṭi kampi'uṭārakē ēkaṭi gāchēra ākārē tālikābad'dha karē.
-Nēṭa'ōẏārka tathya pāśāpāśi pratiṭi kampi'uṭārēra tālikābad'dha karē.
 Yēkhānē modname.ss.vb habē
 pāsa'ōẏārḍa diẏē āpanāra pardā laka.
 Āpanākē byabahārakārī thēkē laga ā'uṭa karē.
@@ -313,41 +197,25 @@ Tārikha ēbaṁ samaẏa dēkhāẏa.
 Añcalagulitē tārikha ēbaṁ samaẏa dēkhāẏa.
 Āpanāra simulēṭēḍa kampi'uṭāra bandha karē dēẏa.
 Sisṭēmēra tathya ēbaṁ sanskaraṇaguli dēkhāẏa.
-Byabahr̥ta ōpēna sōrsa lā'ibrēri dēkhāẏa
 śēlaṭitē ēkaṭi truṭi chila.
 Āpanāra kāchē {0} use byabahārēra anumati nē'i
 śēla bārtā: Anurōdha kamānḍa {0} maintenance rakṣaṇābēkṣaṇa mōḍē cālānōra anumati nē'i.
 Śēla bārtā: Anurōdha kamānḍa {0} not pā'ōẏā yāẏa ni. Upalabdha kamānḍagulira jan'ya'sahāẏatā' dēkhuna.
 Śēla bārtā: Laga ina karatē kamānḍa {0} Anumōdita naẏa.
-Śēla bārtā: Anurōdha kamānḍa {0} not pā'ōẏā yāẏa ni.
 Kamānḍa kāryakara karāra cēṣṭā karāra samaẏa truṭi.
 Tārikha samaẏa: Samaẏa {0}
 tārikha samaẏa: Āja {0}
 tārikha samaẏa: Samaẏa añcala: {0}
 - {0} Samaẏa: {1}
 Pardā sāpha karatē.
-Manē hacchē myānuẏāla pr̥ṣṭhā {0} not pā'ōẏā yāẏa ni.
-Myānuẏāla pr̥ṣṭhā load {0} Becuase {1} lōḍa karāra cēṣṭā karāra samaẏa ēkaṭi truṭi ghaṭēchē}
-ē'i myānuẏāla pr̥ṣṭhāṭi nimnalikhita kāraṇē asampūrṇa:
-Cālu rākhabāra jan'ya yēkōnō bōtāma cāpuna...
- | {0} Śabda | ribhiśana v {1} | {2} bibhāga
-ē'i myānuẏāla pr̥ṣṭhāra śirōnāmaṭi lēkhā nē'i
-ē'i myānuẏāla pr̥ṣṭhātē ({0}) kōna'ō baḍi ṭēksaṭa nē'i. Pr̥ṣṭhā mōchā hacchē...
-Ē'i myānuẏāla pr̥ṣṭhātē ({0}) kōna'ō bibhāga nē'i. Pr̥ṣṭhā mōchā hacchē...
 {0} Ē calachē
 āpani {0} for ēra jan'ya tathya pā'ōẏāra jan'ya anumōdita nana}
 ē'i ādēśaṭi apracalita ēbaṁ bhabiṣyatē prakāśē muchē phēlā habē.
 Āpani {0} of ēra pāsa'ōẏārḍa paribartana karāra jan'ya anumōdita nana kāraṇa lakṣyaṭi praśāsaka chila.
-Dēśa thēkē dēśē arthēra parimāṇa rūpāntara karuna
-mudrā:
 Usrmgr: Byabahārakārīra nāma {0} already itimadhyē pā'ōẏā gēchē
-āpanāra ēpi'ā'i kī likhuna:
-Kampi'uṭāra pā'ōẏā yāẏani. Āpani yadi u'inḍōja 10 ēra sarbaśēṣatama sanskaraṇaṭi cālācchēna tabē āpanāra ēsa'ēmabibhi 1 sakṣama karatē habē. Ē'i prōṭōkalaṭi yadi'ō nirāpada naẏa ēbaṁ āmarā ē'i samasyāṭi samādhāna karāra cēṣṭā karaba.
 Ḍibāga lagē saba muchē dēẏa
-ēsa'ēsa'i sanskaraṇa pāna
 abaidha bhāṣā
 bhāṣā paribartana karē
-āpanāra sisṭēmē libcpanel-json-xs-perl inasṭala nā thākatē pārē. Inasṭalēśanēra jan'ya āpanāra pyākēja paricālakakē dēkhuna. Ḍēbiẏāna (ēbaṁ ḍēribhēṭibhasa) sisṭēmēra jan'ya, āpani ṭārmināla ēmulēṭarē"sudo apt libcpanel-json-xs-perl" cālātē cā'itē pārēna. Truṭira āra'ō biśada:
 ----------------------------- Karnēla pyānika ḍāmpa ------------------ -----------
 >> ātaṅkēra tathya <<
 > barṇanā: {0}
@@ -365,14 +233,12 @@ bhāṣā paribartana karē
 >> Phrēma, phā'ila, lā'ina ēbaṁ kalāma <<
 > phrēma {0}: Phā'ila: {1} | Lā'ina: {2} | Kalāma: {3}
 > Phrēmēra tathya pā'ōẏāra cēṣṭā karāra samaẏa ēkaṭi truṭi ghaṭēchē. {0}: {1}
-Āpani āpanāra sisṭēmēra bhāṣā inrājī byatīta an'ya yē kōna'ō kichutē sēṭa karēchēna. Asubidhāra jan'ya duḥkhita, tabē manē haẏa gugala ēbaṁ ēra anubādaka kōna'ō prōgrāmiṁ bhāṣāra jan'ya kōḍa blaka anubāda karāra biṣaẏē khuba adbhuta. Āmarā anubādakr̥ta myānuẏāla pr̥ṣṭhāgulira jan'ya samasta kōḍa blakaguli ṭhika karāra samaẏa, āmarā āpanākē anubāda karatē cā'i nā ēmana kōḍa blaka anubāda karāra jan'ya gugala ṭrānsalēṭē ēkaṭi ṭikiṭa khōlāra parāmarśa dicchi ēbaṁ yadi āpani ēṭi balatē thākēna tabē āpanāra sisṭēmēra bhāṣā inrājītē sēṭa karuna.
 Mōḍaguli rilōḍa karē.
 Mōḍaguli punarāẏa lōḍa haẏēchē.
 Kārnēla sbāgatama!
 <Byabahārakārī> hisābē saphalabhābē laga ina haẏēchē
 MOTD/MAL baidha, tabē bārtāra prakāraṭi baidha naẏa. Ēma'ōṭiḍi dharē nicchi...
 Abaidha bārtā prakārēra MOTD/MAL paṛāra cēṣṭā karēchila.
-Sthitiśīla sanyōga bajāẏa rākhāra samaẏa, ēṭi {0} thēkē {1} ḍā'unalōḍa hacchē...
 Ḍā'unalōḍa śēṣa haẏēchē.
 Ḍā'unalōḍa cēṣṭā karē byartha haẏēchē {0}: Failed {1}
 āpani yadi ēphaṭipi sārbhāra thēkē phā'ila ḍā'unalōḍa karatē yāna tabē "ftp" byabahāra karuna.
@@ -388,13 +254,11 @@ kōna'ō yukti nirdiṣṭa karā haẏani. Iṅgita: Spēsa dbārā pr̥thaka �
 Ḍibāga laga sarānō haẏēchē. Samasta sanyukta ḍibāgiṁ ḍibhā'isaguli ēkhana'ō bārtā dēkhatē pārē.
 Ḍibāga laga apasāraṇa byartha haẏēchē: {0}
 Ḍirēkṭari paribartana karā byartha haẏēchē: {0}
-Byabahārakārīra nāma bhula
 ṭhikānā ullēkha karuna
 ḍirēkṭari muchē phēlatē akṣama: {0}
 Ṭā'imajōnaṭi bhulabhābē nirdiṣṭa karā haẏēchē.
 Abaidha prōphā'ila nirbācana.
 Prōphā'ila {1} saha {0} to ēra sāthē sanyōga sthāpanēra cēṣṭā karā hacchē...
-I'uniṭa parīkṣāẏa truṭi: {0}
 Kamānḍa {0} pā'ōẏā yāẏa ni. Kamānḍēra tālikāra jan'ya"sahāẏatā" kamānḍaṭi dēkhuna.
 Ayāḍāpṭāra {0} ēra jan'ya ā'ipibhi 6 baiśiṣṭya pētē byartha} abyāhata...
 Ā'ipibhi 4 tathya:
@@ -408,26 +272,17 @@ Dēkhē manē hacchē āpani kārnēlēra bikāśa sanskaraṇa cālācchēna. �
 āpanāra pachanda nirbācana karuna:
 Abaidha pachanda. Ābāra cēṣṭā kara.
 Āpani bartamāna ḍirēkṭariṭi {0}: {1} To ē sēṭa karatē ananumōdita
-anumati {0} byartha haẏēchē
 āpani yē pathaṭi nirdiṣṭa karēchēna tā anēka dīrgha.
-Āpani {0}: {1} Ē tālikātē ananumōdita
-sipi'i'u cēka karāra samaẏa truṭi: {0}
-Ra‌yāma cēka karāra samaẏa truṭi: {0}
-Ē'icaḍiḍi cēka karāra samaẏa truṭi: {0}
 Sipi'i'u: Satarkatā: Ēsa'ēsa'i 2 bhabiṣyatēra unnaẏana kamiṭitē praẏōjanīẏa habē.
 Ump {0}: {1} About samparkē tathya pā'ōẏāra cēṣṭā karāra samaẏa ḍāmpa tathya saṅgrahakārī kryāśa haẏēchē
 samābēśēra saṅkalanēra tārikha {0} pētē cēṣṭā karāra samaẏa truṭi: {1}
 Ēma'ōṭiḍi/ ēma'ēla sēṭa karāra cēṣṭā karāra samaẏa truṭi: {0}
 Ēma'ōṭiḍi/ ēma'ēla pā'ōẏāra cēṣṭā karāra samaẏa truṭi: {0}
-{0} Ē nāla rēphārēnsa byatikrama raẏēchē: {1}
-{0} Ē nāla rēphārēnsa byatikrama raẏēchē: {1} - Sṭyāka ṭrēsa:
 Skrinasēbhāra śuru karāra cēṣṭā karāra samaẏa truṭi, ēkaṭi abaidha kriẏākalāpēra kāraṇē.
 Nirāpada mōḍē punarāẏa lōḍa karāra anumati nē'i.
 Nirāpada mōḍē pārsiṁ mōḍēra anumati nē'i.
-Ākārēra jan'ya purō ḍirēkṭariṭi bā bartamānēra kēbalamātra phā'ilaguli pārsa karuna.
 Sanyukta samasta ḍibāgiṁ ḍibhā'isa tālikābhukta karē.
 Pārsa mōḍa sēṭa karāra cēṣṭā karāra samaẏa truṭi. Mānaṭi parīkṣā karē ābāra cēṣṭā karuna. Ēṭi saṭhika halē, kārnēla ḍibāgiṁ sakṣama thākalē sṭyāka ṭrēsaṭi dēkhuna.
-Saphalabhābē sēṭa karuna.
 Pāthaṭi kōna'ō phā'ila bā ḍirēkṭari naẏa.
 Bibhinna ḍirēkṭari bā nāmēra adhīnē ēkaṭi phā'ilēra an'ya anulipi tairi karē.
 Ēkaṭi phā'ila an'ya ḍirēkṭaritē sariẏē dēẏa
@@ -436,34 +291,11 @@ phā'ilagulikē an'ya ḍirēkṭaritē sthānāntarita karatē
 myāca {0} ({1}): {2}
 Myāca {0}: {1}
 Samaẏa byaẏa karēchē: {0} Milisēkēnḍa
-utpādanakārī: {0}
-Maḍēla: {0}
-Kṣamatā: {0} ({1}, {2}, {3})
-Inṭāraphēsēra dharaṇa: {0}
-Ḍrā'ibha nambara: {0}
-Buṭa patākā: {0} ({1})
-Śārīrika bibhājana: {0}
-Prāthamika patākā: {0}
-Ākāra: {0} Jibi
-lajikyāla pārṭiśana: {0}
-Saṅkucita: {0}
 Nāma: {0}
-Phā'ila sisṭēma: {0}
-Kṣamatā: {1} Jibi bināmūlyē of {0} jibi
-samasta ḍrā'ibhē samasta lajikyāla pārṭiśana tālikābhukta karā hacchē.
-Samasta tadantayukta ḍrā'ibhēra tālikābad'dha karuna.
-Ēkaṭi nirdiṣṭa ḍrā'ibhē samasta anusandhānī pārṭiśana tālikābhukta karē (ēbaṁ samasta ḍrā'ibhē samasta lajikyāla pārṭiśana)
 Phā'ilēra aṅkēra gaṇanā karē.
 Āpanākē āmādēra giṭahāba u'ikitē niẏē yāẏa.
 Abaidha ēnakripaśana ayālagaridama.
 Rimōṭa ḍibāgiṁ sakṣama bā akṣama karē.
-Phā'ila sisṭēma śuru hacchē...
-Inasṭala bhaẏēsa pāẏa
-ḍiphalṭa bhaẏēsa sēṭa karē
-āpanāra sṭriṇṭi ḍiphalṭa bhaẏēsa byabahāra karē kathā balē
-bhaẏēsa {0}: {1} ({2})
-Abaidha bhaẏēsa.
-Bhaẏēsa sēṭa
 āpani samaẏamatō śabdaguli saṭhikabhābē bānāna karatē pārēna kinā tā dēkhuna
 āpani yadi gāṇitika samīkaraṇaguli samaẏamatō samādhāna karatē pārēna kinā dēkhuna
 mantabya bā ghr̥ṇā mantabya pratikriẏā.
@@ -474,23 +306,16 @@ Abaidha nirbācana. Parabartī mantabyē yācchi...
 Āpani sabēmātra ghr̥ṇya mantabyēra jabāba diẏēchēna!
 Grēṭa! Ēra jan'ya {0} ēra mantabya sarānō habē.
 Grēṭa! {0} Your āpanāra dhan'yabāda praśansā karabē.
-Prasthāna karatē"getMeOut" likhuna.
 Purōpuri bānāna!
 Bhula bānāna.
 Nikhum̐tabhābē samādhāna!
 Bhulabhābē samādhāna karā haẏēchē.
-{1} Ēmabi ēra {0} ēmabi ḍā'unalōḍa haẏēchē download
 ārapisi itimadhyē calachē.
 Ārapisi pōrṭa {0} RP byabahāra karē samasta ṭhikānāẏa śunachē}
 ārapisi śuru hacchē...
 Ēkaṭi ēsa'ēsa'ē'ica sārbhārē sanyukta.
 {0} Ēra jan'ya pāsa'ōẏārḍa likhuna:
 Ēsa'ēsa'ē'ica sanyōga bicchinna.
-Sintha phā'ilaṭi lōḍa karē ēbaṁ ēṭi cālāẏa.
-Skripṭa karā phā'ila {0} Bidyamāna nē'i.
-Phā'ilaṭi kōna'ō skripṭayukta sintha phā'ila naẏa.
-Ēkaṭi sintha lā'ina anusandhāna karatē byartha.
-Khāli sṭriṁ nirdiṣṭa karā haẏēchē
 kōḍapēja sēṭa karatē akṣama. Bhāṣāṭi saṭhikabhābē pradarśana karatē pārē nā.
 Ḍibāgiṁ sakṣama naẏa.
 Default {0} āra ḍiphalṭa skrinasēbhārē sēṭa karā nē'i.
@@ -519,8 +344,6 @@ Miśana byartha haẏēchē, śrad'dhā -, grāhaka -
 ē'i dharaṇēra bhiḍi'ō karā bandha karuna!!!
 Āpanāra cākaritē phirē pāna, āpanāra bhiḍi'ōguli sabacēẏē khārāpa!
 Āmarā ē'i bhiḍi'ōtē kusanskāra.
-Ali {0} thēkē {1} ēyālā'ijiṁ niṣid'dha.
-Bijñaptiṭi khārija karāra cēṣṭā karāra samaẏa truṭi: {0}
 Prāpta samasta bijñaptiguli dēkhāẏa
 ēkaṭi bijñapti khārija karē
 bijñapti saphalabhābē barakhāsta.
@@ -532,39 +355,26 @@ sādhāraṇa ā'ipibhi 4 baiśiṣṭya
 dūrabartī pisitē dūrabartībhābē ēkaṭi kamānḍa kāryakara karē
 - paryāẏa 1: Sisṭēma sūcanā
 - mañca 2: Hārḍa'ōẏyāra sanāktakaraṇa
-- paryāẏa 2: Abhyantarīṇa byabahārakārīra paricālanā
 - mañca 3: Mōḍa ēbaṁ skrīnasēbhāra sanāktakaraṇa
-- mañca 4: Ābarjanā saṅgraha
 - mañca 4: Laga ina karuna
-ābarjanā saṅgrahēra āgē: {0} Bā'iṭa
-ābarjanā saṅgrahēra parē: {0} Bā'iṭa
-ārapisi śuru karāra samaẏa truṭi: {0}
 Dēkhē manē hacchē āpani muktira prārthī sanskaraṇaṭi cālācchēna. Āpani sthitiśīla sanskaraṇē thākāra parāmarśa dē'ōẏā hacchē.
-Manē hacchē phā'ila sisṭēmēra janasaṅkhyā khuba bēśi samaẏa nēẏa.
 Abaidha prakāra {0}
-kṣamatā: {0}
-Pārṭiśana gaṇanā: {0}
 Ākāra: {0}
-Byabahr̥ta: {0}
 Ḍirēkṭari {0} itimadhyē bidyamāna.
 {0} Ēra sāthē sanyōga dē'ōẏāra cēṣṭā karāra samaẏa truṭi: Sanyōgēra mēẏāda uttīrṇa haẏēchē bā sanyōga hāriẏēchē
 ēksaprēśana gaṇanā karāra jan'ya kyālakulēṭara.
 Gaṇanāẏa truṭi.
-Kṣamatā: {0} Gigābā'iṭa ({1}, {2}, {3})
 dēkhē manē hacchē āpani nikaṭē-prakāśēra sanskaraṇaṭi cālācchēna. Ēṭi ēkhana byabahāra karā āra'ō nirāpada halē'ō, āpani sthitiśīla sanskaraṇē thākāra parāmarśa dicchēna that
 pad'dhati hālanāgāda karā
 sisṭēma āpaḍēṭēra jan'ya anusandhāna karā hacchē...
 Natuna sanskaraṇa pā'ōẏā gēchē:
 Āpani ēṭi ēkhānē ḍā'unalōḍa karatē pārēna:
-Āpaḍēṭaguli parīkṣā karatē byartha: {0}
-Ḍibāga laga pā'ōẏā yāẏa ni
 sāmpratika kōna'ō bijñapti nē'i
 Pradatta phā'ilē nirdiṣṭa sṭrinẏēra sandhāna karē
 Nirdiṣṭa ḍirēkṭaritē phā'ilēra parimāṇēra gaṇanā karē.
 Nirdiṣṭa byabahārakārīra samasta mēla tālikābhukta karē.
 Byabahārakārīra nāma bā mēla ṭhikānā likhuna:
 Pāsa'ōẏārḍa likhuna:
-Sārbhārēra ṭhikānā ēbaṁ pōrṭa prabēśa karuna (<ṭhikānā> bā <ṭhikānā>:[Pōrṭa]):
 {0} Ēra sāthē sanyōga karāra samaẏa truṭi: {1}
 {0} Ēra sāthē sanyukta hacchē...
 Pramāṇa karā hacchē...
@@ -581,7 +391,6 @@ Bārtā nambara ēkaṭi saṅkhyāgata māna naẏa.
 - {1} ē {0} ē prēraṇa
 nirdiṣṭa bārtā pā'ōẏā yāẏa ni.
 Rimōṭa ḍibāga śuru karatē byartha: {0}
-IMAP kamānḍa kāryakara karatē truṭi: {0}
 Prōphā'ila tairi hacchē... Ēṭi kaẏēka miniṭa samaẏa nitē pārē...
 Hōsṭēra nāma, byabahārakārīra nāma, ḍēṭā ṭā'ipa, ēnakōḍiṁ, ēnakripaśana, prōṭōkala
 skripṭa kāryakara karāra cēṣṭā karāra samaẏa truṭi: {0}
@@ -593,7 +402,6 @@ phrikōẏēnsi abaśya'i saṅkhyāsūcaka hatē habē. Yadi ēṭi saṅkhyās
 Samaẏa abaśya'i saṅkhyāsūcaka hatē habē.
 Yēkhānē <uttara> slyāśē pr̥thaka karā praśnēra ēka-barṇayukta uttara
 ēsa'ēsa'ē'ica sārbhārēra sāthē sanyōgēra cēṣṭā karāra samaẏa truṭi: {0}
-Laga'ina karāra parē phām̐kā MOTD.
 Byabahārakārīkē inapuṭa prabēśēra anumati dēẏa
 bartamāna mēla ḍirēkṭari paribartana karē
 mēla phōlḍāra open {0} khulatē akṣama: {1}
@@ -616,7 +424,6 @@ Biṣaẏa likhuna:
 Nīcē āpanāra bārtā likhuna. Niścita karatē "EOF" likhuna.
 Bārtā prēraṇa karā hacchē...
 Bārtā pāṭhānō.
-Bārtā prēraṇē truṭi: {0}
 Akāryakara imē'ila ṭhikānā. Niścita karuna yē āpani ṭhikānāṭi saṭhikabhābē likhēchēna ēbaṁ ēṭi pradarśita udāharaṇēra bin'yāsēra sāthē mēlē:
 Ēkaṭi bārtā sariẏē dēẏa
 prāpaka thēkē samasta bārtā sariẏē dēẏa
@@ -656,10 +463,7 @@ sēśanē bartamāna byabahārakārīra nāma dēkhāẏa
 {0} Yet ēkhana'ō abarud'dha karā haẏani
 Sēṭinsa lōḍa karāra samaẏa truṭi
 sēṭinsa lōḍa karāra samaẏa ēkaṭi truṭi raẏēchē. Āpanāra sēṭinsa phā'ilaṭi parīkṣā karatē habē.
-- Dbitīẏa paryāẏa: Mōḍasa ēbaṁ skrīnasēbhāra sanāktakaraṇa
-- mañca 3: Laga ina karuna
 bibhāga nirbācana karuna:
-Bikalpa nirbācana:
 Sādhāraṇa sēṭinsa...
 Hārḍa'ōẏyāra sēṭinsa...
 Laga'ina sēṭinsa...
@@ -675,14 +479,12 @@ rakṣaṇābēkṣaṇa mōḍa ṭrigāra
 ruṭa pāsa'ōẏārḍa paribartana karuna...
 Prārambhakālē āpaḍēṭaguli parīkṣā karuna
 cupacāpa tadanta
-ra‌yāma slaṭa anusandhāna karuna
 laga ina ina ēma'ōṭiḍi dēkhāna
 laga-ina-ē skrina sāpha karuna
 upalabdha byabahārakārīra nāma pradarśana karuna
 raṅina śēla
 saralīkr̥ta sahāẏatā kamānḍa
 ḍibāga pōrṭa
-rimōṭa ḍibāga ḍiphalṭa nika priksa
 punarāẏa cēṣṭā ṭā'imasa ḍā'unalōḍa karuna
 laga ēphaṭipi byabahārakārīra nāma
 laga ēphaṭipi ā'ipi ṭhikānā
@@ -704,7 +506,6 @@ sēṭa karatē ruṭa pāsa'ōẏārḍa likhuna. Cintā karabēna nā; pāsa'�
 ruṭa pāsa'ōẏārḍa paribartana karabēna?
 Ruṭa pāsa'ōẏārḍa sēṭa karuna...
 Ēkaṭi rimōṭa ḍibāgāra pōrṭa likhuna. Ēṭi abaśya'i saṅkhyāsūcaka hatē habē ēbaṁ ēṭi itimadhyē byabahāra karā ucita naẏa. An'yathāẏa, dūrabartī ḍibāgāraṭi pōrṭaṭi khulatē byartha habē.
-Ḍiphalṭa rimōṭa ḍibāga ḍākanāma upasarga likhuna.
 "" Pāna"" kamānḍaṭi katabāra byartha ḍā'unalōḍaguli punarāẏa cēṣṭā karabē tā likhuna. Ēṭi abaśya'i saṅkhyāsūcaka hatē habē.
 Nirdiṣṭa milisēkēnḍēra parē skrīnasēbhāra kakhana cālu karabēna tā likhuna. Ēṭi abaśya'i saṅkhyāsūcaka hatē habē.
 Laga sṭōraṭi ḍibāga karatē pārē ēmana kataguli bā'iṭa likhuna. Ēṭi abaśya'i saṅkhyāsūcaka hatē habē.
@@ -716,12 +517,10 @@ skrīnasēbhāra sēṭinsa...
 255 Raṅa sakriẏa karuna
 āpani ki sanyukta rākhatē cāna?
 Abaidha pachanda. Dharē nicchi nā...
-Kōna'ō mōḍa sanākta karā yāẏani. Skipiṁ sṭēja...
 Bhāṣā paribartana karāra samaẏa sanskr̥ti paribartana karuna
 pāṭhya dēkhānō haẏēchē
 āpanāra pradarśita kōna'ō pāṭhya likhuna. Khāṭō āra'ō bhāla.
 {0 Upload āpalōḍa karatē byartha
-ḍā'unalōḍa phā'ilaṭi {0}: {1 For ēra jan'ya byartha haẏēchē
 rimōṭa ḍibāga kamānḍa kāryakara karatē truṭi {0}: {1}
 Byabahārakārīdēra yukta karē
 kamānḍagulitē upādhi yukta karē
@@ -730,7 +529,6 @@ hōsṭēra nāma paribartana karē
 laga'ina karāra parē MAL, MOTD paribartana karē
 ēma'ōṭiḍi, dinēra bārtā paribartana karē
 byabahārakārīra nāma paribartana karē
-ḍibāga lagaguli dēkhāẏa
 byabahārakārīdēra jan'ya anumati paricālanā karuna
 kē'ēsamaḍagulitē skrīnasabhāra phā'ilaṭi punarāẏa lōḍa karē
 tālikā thēkē ēkajana byabahārakārīkē sarāna
@@ -739,7 +537,6 @@ Alias ​​0 alias ulāma saphalabhābē sarānō haẏēchē.
 Tālikāẏa āra kōna'ō byabahārakārī nē'i.
 Bhāṣā sēṭa karatē byartha.
 Bijñapti khārija karāra cēṣṭā karāra samaẏa truṭi.
-{0} Ē ēkaṭi āpagrēḍa sanākta haẏēchē. Kanaphigārēśana āpaḍēṭa karā hacchē...
 Usrmgr: Byabahārakārīra nāma create 0}: {1 Create tairi karatē byartha
 byabahārakārīra nāma paribartana karatē byartha. {0}
 Anumati tālikāra ēkaṭitē byabahārakārīra nāma {0 doesn't nē'i}
@@ -773,12 +570,9 @@ prāpakēra kācha thēkē samasta bārtā sariẏē dēẏa
 {0 by dbārā tairi samasta mēla saphalabhābē sarānō haẏēchē.
 {0 By dbārā tairi samasta mēla sarānō byartha}
 Message 1 {thēkē bārtā {0 {{2} thēkē sarānō haẏēchē} Ars 3} bārtāguli biślēṣaṇē abaśiṣṭa raẏēchē.
-Message 1} thēkē bārtā {0} sarānō haẏēchē. Ars 3} bārtāguli biślēṣaṇē abaśiṣṭa raẏēchē.
 Nirdiṣṭa śaharēra jan'ya ābahā'ōẏāra tathya dēkhāẏa. Ōpēna ōẏēdāramyāpa byabahāra karē.
 - {0} Ēra jan'ya ābahā'ōẏāra tathya -
 ābahā'ōẏā: {0}
-Tāpamātrā: {0} ({1} I'uniṭa)
-manē hacchē: {0} ({1} I'uniṭa)
 cāpa: {0}
 Ārdratā: {0}
 Āpani https://home.openweathermap.org/api_keys ē āpanāra nijasba API kī pētē pārēna.
@@ -793,7 +587,6 @@ Pratiṭi prārambhakālē ēṭi āpaḍēṭaguli parīkṣā karē dēkhabē.
 Bhāṣāguli syu'ica karāra samaẏa, māsēra nāma, kyālēnḍāra ityādi paribartana karuna
 kārnēlaṭi śuru karā halē ēṭi ruṭa pāsa'ōẏārḍa sēṭa karē.
 Hārḍa'ōẏyāra anusandhānakārī bārtāguli nīraba rākhuna
-sakṣama karā thākalē, ēṭi ra‌yāmēra sāthē ra‌yāma slaṭaguli'ō anusandhāna karabē.
 Laga'ina skrina pradarśana karāra āgē dinēra bārtā dēkhāna.
 Laga'ina skrina pradarśana karāra āgē pardā sāpha karuna.
 Sakṣama thākalē upalabdha byabahārakārīdēra dēkhāẏa.
@@ -819,12 +612,9 @@ Mōḍa {0} ēra kamānḍa nē'i. Mōḍa pārsiṁ byartha. Utsa kōḍa pary�
 Āpani ḍibāga laga pariṣkāra karāra āgē āpanākē abaśya'i ḍibāga mōḍaṭi cālu karatē habē.
 Inabaksē messages 0} natuna bārtā ēsēchē.
 Tādēra dēkhatē"lsmail" khuluna.
-Prāthamika: {2} Buṭayōgya: {3} Buṭa bibhājana: {4
 Phā'ila apasāraṇa karatē akṣama: {0}
 Ḍirēkṭari bā ēkaṭi phā'ila sariẏē dēẏa
 {0} sarānō yāẏa nā kāraṇa ēṭi bidyamāna nē'i.
-Āpanāra sisṭēmē āpani inasi inasṭala nā'ō karatē pārēna. Inasṭalēśanēra jan'ya āpanāra pyākēja paricālakakē dēkhuna. Ḍēbiẏāna (ēbaṁ ḍēribhēṭibhasa) sisṭēmēra jan'ya, āpani ṭārmināla ēmulēṭarē"" sudo apt inasṭala inaksi libcpanel-json-xs-perl"" cālātē cā'itē pārēna.
-Bhāṣā saphalabhābē {0} sēṭa karēchē!
 Prasthāna karatē CTRL + C ṭipuna.
 Ēkaṭi phā'ila samparkē tathya sarabarāha karē
 ēkaṭi ḍirēkṭari samparkē tathya sarabarāha karē
@@ -879,7 +669,6 @@ Nirdiṣṭa ōẏēbasā'iṭē ēkaṭi phā'ila āpalōḍa karē
 Āpalōḍa sampanna haẏēchē.
 Āpani yadi FTP sārbhārē phā'ilaguli āpalōḍa karatē yācchēna tabē daẏā karē"ftp" byabahāra karuna.
 Upload 0 try: {1 Try cēṣṭā karē āpalōḍa byartha haẏēchē
-{1} ēmabi ēra 0} ēmabi āpalōḍa haẏēchē.
 "Puṭa" kamānḍaṭi byartha āpalōḍaguli punarāẏa cēṣṭā karatē habē tā likhuna. Ēṭi abaśya'i saṅkhyāsūcaka hatē habē.
 Ṭhikānā khāli nā'ō thākatē pārē.
 {0}: {1 P piṁ karatē byartha
@@ -889,7 +678,6 @@ Manē hacchē: {0}
 Tāpamātrā: {0}
 Bātāsēra gati: {0}
 Bātāsēra dikanirdēśa: {0}
-Prāthamika: {2} | Buṭēbala: {3} | Buṭa pārṭiśana: {4}
 Drabībhūta karāra jan'ya 255 raṅa samarthana sakriẏa karē.
 Drabībhūta karāra jan'ya satya raṅa samarthana sakriẏa karē.
 Phirē yētē kōna'ō kī ṭipuna.
@@ -919,10 +707,7 @@ yuktigulira jan'ya anurōdha jānānō haẏa
 "{0}" Śuru karatē byartha: {1}
 Mēla bārtā pūrbarūpa dēkhāna
 mēla bārtā tālikābhukta karāra samaẏa, baḍi pribhi'u dēkhāna.
-Kyāśēḍa hārḍa'ōẏāra prōba. Yā'ihōka tathya dēkhānō hacchē...
-Kṣamatā: {0} Gigābā'iṭa
 kāsṭama raṁ...
-Nīcē barṇita hisābē ēkaṭi raṅa likhuna:
 Inapuṭa raṅa
 lā'isēnsēra raṅa
 abicchinna kārnēla truṭira raṅa
@@ -931,12 +716,8 @@ hōsṭa nāmēra raṅa
 byabahārakārīra nāma raṅa
 pēchanēra raṅa
 nirapēkṣa pāṭhyēra raṅa
-kamānḍa tālikāra raṅa
-kamānḍa san̄jñā raṅa
 mañcēra raṅa
 truṭira raṅa
-ē'i raṅa pachandaguli ki ṭhika āchē?
-Phirē yētē Answer {0} Answer uttara dina. An'yathāẏa, kōna'ō uttarēra artha hyām̐.
 Ēphaṭipi prampaṭa sṭā'ila
 mēla prampaṭa sṭā'ila
 ēsa'ēphaṭipi prampaṭa sṭā'ila
@@ -946,7 +727,6 @@ Abaidha pathē ayāksēsa karāra cēṣṭā karā hacchē.
 Pāṭhya phā'ila sāpha karē
 pāṭhya sampādaka thēkē prasthāna karuna
 ēkaṭi nirdiṣṭa rēkhā bā samasta lā'inēra ēkaṭi akṣarakē jijñāsā karē
-nirdiṣṭa akṣara saṅkhyā {0 a ēkaṭi baidha saṅkhyā naẏa.
 Āpaḍēṭaguli anusandhāna karā akṣama kāraṇa āpani ēkaṭi unnaẏana sanskaraṇa cālācchēna running
 pāṭhya sampādaka aṭōsōbha baiśiṣṭyaṭi cālu bā bandha karē dēẏa.
 Yadi aṭōsyābha sakṣama karā thākē tabē pratiṭi"ēna" sēkēnḍēra jan'ya pāṭhya phā'ilaṭi sanrakṣaṇa karā habē.

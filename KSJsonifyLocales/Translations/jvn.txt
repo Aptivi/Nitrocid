@@ -12,27 +12,12 @@ Argumentasi sing disuntik bakal dijadwalake mbukak ing sabanjure.
 Injeksi Argumen wis dibatalake.
 Kesalahan nalika ngrampungake argumen baris perintah nyata: {0}
 Cithakan warna ora valid {0}
-Default
-Adat
 hwprobe: Hardware sampeyan bakal ditliti. Tulung enteni ...
-hwprobe: Hardware wis dicoba.
-hwprobe: Hardware ora ditliti. Probe nggunakake 'hwprobe'
 CPU: Siji utawa luwih saka inti CPU gagal dicoba. Nuduhake informasi wae ...
 RAM: Siji utawa luwih Kripik RAM gagal diteliti. Nuduhake informasi wae ...
 HDD: Siji utawa luwih saka hard drive gagal dicoba. Nuduhake informasi wae ...
 CPU: Total prosesor: {0}
-CPU: {0} {1} MHz
-RAM: {0} MB = {1} MB
-RAM: Slot bekas (miturut jeneng): {0}
-RAM: Slot bekas (miturut nomer): {0} / {1} ({2}%)
-RAM: Status prosesor ora digunakake maneh lan bakal dicopot ing mbesuk.
-HDD: {0} {1} GB {2}
-HDD: {0} {1} {2} GB {3}
-HDD: CHS: {4} silinder | {5} sirah | {6} sektor
-HDD: CHS: {3} silinder | {4} sirah | {5} sektor
-hwprobe: Prosedur ora didhukung amarga ora dirancang kanggo mbukak prober ing Unix.
 Ketik sandhi admin kanggo pangopènan.
-Ora ana pangguna sing isih ana ing dhaptar kasebut.
 Kesalahan Kernel nalika boot: {0}
 PANIK DOUBLE: Urip Urip maneh ngluwihi wektu reboot kesalahan sing diidini maksimum. Sampeyan nemokake bug kernel.
 [{0}] gupuh: Urip maneh amarga level kesalahan yaiku {0}.
@@ -46,18 +31,12 @@ PANIK GANDA: Jinis kesalahan {0} ora valid.
 PANIK GANDA: Bug kernel: {0}
 Mateni ...
 Urip maneh ...
----===+++> Sugeng rawuh ing kernel | Versi {0} <+++===---
 Kayata simulator Kernel liyane mlaku. Mateni yen ana gangguan.
-Pangguna {0} wis ditambahake ing dhaptar admin.
-Pangguna {0} wis ditambahake menyang dhaptar sing dipateni.
 Gagal nambahake pangguna menyang dhaptar ijin: jinis ora valid {0}
 Gagal nambah pangguna menyang dhaptar ijin: pangguna ora valid {0}
-Pangguna {0} wis dicopot saka dhaptar admin.
-Pangguna {0} wis dicopot saka dhaptar sing dipateni.
 Gagal mbusak pangguna saka dhaptar ijin: jinis ora valid {0}
 Sampeyan wis mlebu log.
 Gagal mbusak pangguna saka dhaptar ijin: pangguna ora valid {0}
-Sampeyan wis nemokake bug ing sistem ijin: mode ora valid {0}
 Sampeyan wis nemokake bug, utawa ijin sing sampeyan nyoba nambah utawa mbusak wis rampung, utawa kesalahan liyane.
 Kesalahan {0}: {1}
 Sampeyan uga nemokake bug, utawa ijin sing nyoba diowahi kanggo pangguna anyar wis gagal.
@@ -79,17 +58,6 @@ Pangguna {0} ora diidini dicopot.
 Pangguna {0} wis mlebu. Log-out lan log-in minangka admin liyane.
 Pangguna {0} dibusak.
 Kesalahan nyoba mbusak jeneng pangguna.
-{0} saka {1} = {2}
-Nyoba dipérang dadi nol ora diidini.
-Ana upaya seng di tuduh kanggo ngitung sing nyebabake kebanjiran.
-Ana kesalahan nalika ngitung: {0}
-{0} ora bisa diowahi dadi {1}.
-Salah sawijining sumber
- utawa tujuan
- ora ana ing server.
-{0} menyang {1}: {2}
-Kesalahan nyoba ngowahi saka {0} dadi {1}: {2}
-Kesalahan
 Screensaver sing dijaluk {0} ora ditemokake.
 {0} wis diwiwiti kanthi bener.
 {0} ora miwiti. Kode screensaver bisa uga ngalami kesalahan nalika miwiti.
@@ -99,12 +67,6 @@ Screensaver {0} ora ditemokake ing basis data. Priksa jeneng banjur coba maneh.
 Screensaver ora bisa dimuat amarga ing ngisor iki:
 Ana kesalahan serius nalika nyithak teks.
 Ana kesalahan nalika nyoba nggawe konfigurasi.
-Ana kesalahan nalika nyoba nggawe konfigurasi: {0}
-Upgrade saka {0} dadi {1} dideteksi. Nganyari konfigurasi ...
-Ana kesalahan nalika nyoba nganyari konfigurasi: {0}.
-Ana kesalahan nalika nyoba nganyari konfigurasi.
-Ana kesalahan nalika nyoba maca konfigurasi.
-Ana kesalahan nalika nyoba maca konfigurasi: {0}
 Kesalahan nyoba mbebasake RAM: {0} - Terus ...
 Mod ora bisa dimuat amarga ing ngisor iki:
 mod: Memuat mods ...
@@ -129,32 +91,19 @@ Sampeyan kudu nyambung menyang server sadurunge ngganti direktori
 Direktori lokal: {0}
 Direktori jarak jauh: {0}
 Sampeyan kudu nyambung menyang server sadurunge entuk direktori remot saiki.
-Mbusak file {0} ...
-Sampeyan yakin pengin mbusak file {0} <y/n>?
-File sing dibusak {0}
 Sampeyan kudu nyambung menyang server kanthi hak istimewa administrasi sadurunge mbusak pambusakan.
-Ketik file kanggo mbusak.
-Sampeyan kudu duwe idin administratif ing jeneng pangguna sampeyan supaya bisa mbusak.
 Pedhot sambungan saka {0}
 Sampeyan durung nyambung menyang server apa wae
 Ngundhuh file {0} ...
 File sing didownload {0}.
-Download gagal kanggo file {0} amarga file lokal rusak.
 Sampeyan kudu nyambung menyang server sadurunge nindakake transmisi.
 Ketik file sing bakal didownload menyang direktori lokal.
 {0} KB | Diowahi ing: {1}
 Sampeyan kudu nyambung menyang server sadurunge ndhaptar kabeh file remot.
-Ngganti jeneng file {0} menyang {1} ...
-Ganti jeneng sukses
-Ketik file lan jeneng file anyar.
 Ngunggah file {0} ...
 File sing diunggah {0}
 Ketik file kanggo ngunggah menyang direktori adoh. unggah <file> <direktori>
-Kesalahan nalika nyoba nglakokake perintah FTP
 (Batin:
-{0} folder, {1} file
-(Akses Ditolak)
-{0} KB, Digawe ing {1} {2}, Diowahi ing {3} {4}
 Entuk direktori lokal saiki
 Entuk direktori remot saiki
 Nyambung menyang server FTP (kudu diwiwiti karo "ftp://" utawa "ftps://")
@@ -167,18 +116,8 @@ Metu cangkang FTP lan bali menyang kernel
 Nuduhake layar pitulung
 Dhaptar direktori lokal
 Dhaptar direktori remot
-Ganti jeneng file utawa direktori tartamtu
 Ngunggah file lokal menyang direktori jarak jauh nggunakake binar utawa teks
-Ana kesalahan ing cangkang FTP.
 Pesen FTP: Prentah sing dijaluk {0} ora ditemokake. Deleng 'pitulung' kanggo dhaptar perintah sing kasedhiya sing ditemtokake ing cangkang FTP.
-net: Entuk tanggapan saka {0} ing {1} ms
-Wektu entek, pedhot, utawa server offline.
-net: Jeneng komputer ing jaringan yaiku {0}
-net: Jeneng host sampeyan yaiku {1}
-net: Katon yen komputer ana ing domain utawa klompok kerja:
-net: WiFi utawa Ethernet wis pedhot.
-net: Katon yen komputer wis nyambung ing ngisor iki:
-net: Alamat Router: {0}
 Gagal entuk properti kanggo adaptor {0}
 Nomer adaptor:
 Jeneng Adaptor:
@@ -189,9 +128,7 @@ Paket Unicast:
 Kesalahan mlebu / paket metu:
 Alias ​​ora bisa jeneng padha karo prentah.
 Prentah ora ditemokake alias menyang {0}.
-Aliasing {0} menyang {1} dilarang kabeh.
 Sampeyan saiki bisa mbukak "{0}" minangka prentah: "{1}".
-Sampeyan ora bisa nggunakake "{0}" maneh minangka prentah "{1}".
 Alias ​​{0} ora ditemokake bakal dibusak.
 Mode ora valid {0}.
 Argumentasi sing disuntik, {0}, bakal dijadwalake mbukak maneh ing sabanjure.
@@ -201,16 +138,12 @@ Jeneng host kosong.
 Ganti saka: {0} dadi {1} ...
 Pesen kosong dina iki.
 MAL kosong sawise mlebu.
-Ganti MAL saka {0} dadi {1} ...
 Sandi pangguna salah.
 Tembung sandhi ora cocog.
 Jeneng pangguna diganti dadi {0}!
 Jeneng anyar sing sampeyan lebokake wis ditemokake.
-Listing PC durung didhukung ing Unix.
-Alias ​​sing dilarang: {0}
 {0} ora ditemokake
 Konfigurasi dimuat maneh. Sampeyan bisa uga kudu urip maneh kernel supaya sawetara efek ditrapake.
-Kabeh wis disetel maneh menyang setelan normal.
 Siji utawa luwih warna ora valid.
 Werna ora kasedhiya. Nguripake cangkang warna ing config kernel.
 Screensaver {0} ora ditemokake.
@@ -222,85 +155,36 @@ Argumen ing Boot:
 Prentah pitulung disederhanakake:
 MOTD ing Login:
 Wektu / Tanggal ing sudhut:
-Hardware dicoba:
-Tema saiki:
 [ Setelan perangkat keras ]{0}
 {0}[ Setelan pangguna ]
 Jeneng pangguna saiki:
 Jeneng host saiki:
 Jeneng pangguna sing kasedhiya:
-Jeneng host komputer:
-{0}[ Setelan Pesen ]
-Kode sumber:
-Hak Cipta (c)
-Lisensi
-saiki
 Kesalahan nyoba nglakokake perintah
-Nambah pangguna (Mung admin sing bisa ngakses komando iki)
-Nambahake alias menyang perintah (Mung admin sing bisa ngakses perintah iki)
-Argumentasi topik menyang kernel (reboot dibutuhake, mung admin)
-Kalkulator sederhana
 Direktori pangowahan
-Owahi jeneng host (mung Admin)
-Owahi MAL, MOTD Sawise Login (Mung Admin)
-Pangowahan MOTD, Pesen Dina (mung Admin)
 Owahi sandhi kanggo pangguna saiki
-Owahi jeneng pangguna (Mung Admin)
 Mbusak layar
-Ngonversi mata uang
-Nuduhake log debug (Mung Admin)
 Gunakake cangkang FTP kanggo sesambungan karo server
 Kaca pitulung
-Hardware probe kanthi manual (Siji wektu ing kernel 'nohwprobe')
 Dhaptar isi file / folder ing folder saiki
-Muat maneh file screensaver ing %USERPROFILE%\KSMods
 Kunci layar nganggo sandhi
 Log metu
-Dhaptar kabeh piranti jaringan sing online (lan offline ing domain)
-Dhaptar kabeh alamat jaringan ing host
-Dhaptar kabeh alamat jaringan ing host nggunakake wit
 Nggawe direktori
 Dhaptar informasi babagan kabeh antarmuka sing kasedhiya
-Nuduhake dhaptar alias sing dilarang
-Ngatur ijin kanggo pangguna (Mung admin sing bisa ngakses printah iki)
-Priksa manawa kasedhiya alamat sing wis ditemtokake
-Nulis konten file menyang konsol
 Wiwiti maneh komputer (PARNGET: Ora sinkronisasi, amarga dudu inti pungkasan)
 Muat maneh file konfigurasi sing wis diowahi.
-Mbusak direktori
-Mbusak pangguna saka dhaptar (Mung Admin)
 Nyimpen layar saka rusak
-Kalkulator ilmiah. Konverter unit dipisahake karo perintah liyane
-Nyetel warna kernel
 Nyiyapake layar kernel
 Nyiyapake tema kernel
-Nuduhake alias
-Nuduhake MOTD sawise mlebu mlebu dening pangguna utawa kernel
-Nuduhake pesen dina sing disetel dening pangguna utawa kernel
 Nuduhake tanggal lan wektu
 Nuduhake tanggal lan wektu ing zona
 Kernel bakal dipateni
 Informasi sistem
-Konverter unit sing dipisahake karo scicalc.
-Nuduhake katergantungan sumber terbuka sing digunakake
-Manual pangguna sing deskriptif banget.
 * Sampeyan bisa nggunakake macem-macem perintah nggunakake titik ing antarane perintah.
-Prentah sing kasedhiya:
-Prentah mod:
-Jeneng alias kanggo perintah:
 Panggunaan:
-Argumentasi dipisahake karo koma
 ing endi argumen bakal {0}
-kanggo entuk direktori saiki
-Sumber lan tujuane yaiku 3 karakter UPPERCASE kurs
-Dhaptar kabeh ID lan jeneng:
-Nuduhake log debug supaya sampeyan bisa ngirim log menyang kita.
 Initialisasi cangkang FTP.
-Hardware probe (Mung bisa digunakake nalika hardware ora ditliti lan hwprobe ora dieksekusi).
-Dhaptar informasi jaringan, uga kabeh komputer sing nyambung menyang jaringan.
 Kanca saka
-Dhaptar informasi jaringan, uga kabeh komputer sing nyambung menyang jaringan, ing formulir wit.
-Dhaptar informasi jaringan, uga kabeh komputer.
 ing endi modname.ss.vb
 Kunci layar nganggo sandhi.
 Log metu saka pangguna.
@@ -313,41 +197,25 @@ Nuduhake tanggal lan wektu.
 Nuduhake tanggal lan wektu ing zona.
 Mateni komputer simulasi sampeyan.
 Nuduhake informasi sistem lan versi.
-Nuduhake perpustakaan open source sing digunakake
 Ana kesalahan ing cangkang kasebut.
 Sampeyan ora duwe idin kanggo nggunakake {0}
 Pesen cangkang: Prentah sing dijaluk {0} ora diidini mbukak ing mode pangopènan.
 Pesen cangkang: Prentah sing dijaluk {0} ora ditemokake. Deleng 'pitulung' kanggo prentah sing kasedhiya.
 Pesen cangkang: Prentah {0} ora diidini mbukak log in.
-Pesen cangkang: Prentah sing dijaluk {0} ora ditemokake.
 Kesalahan nyoba nglakokake perintah.
 datime: Wayahe {0}
 datime: Dina iki yaiku {0}
 datime: Zona Wektu: {0}
 - Wektu {0}: {1}
 kanggo mbusak layar.
-Kayane kaca manual {0} ora ditemokake.
-Ana kesalahan nalika nyoba mbukak kaca manual {0} becuase {1}.
-Kaca manual iki durung lengkap amarga alasan ing ngisor iki:
-Pencet tombol apa wae kanggo terus ...
- | {0} tembung | Revisi v {1} | Bagean {2}
-Judhul kaca manual iki ora ditulis
-Kaca manual iki ({0}) ora ngemot teks awak. Mbusak kaca ...
-Kaca manual iki ({0}) ora ngemot bagean apa wae. Mbusak kaca ...
 Mlaku ing {0}
 Sampeyan ora sah entuk info kanggo {0}.
 Prentah iki wis entek lan bakal dibuwang ing rilis mbesuk.
 Sampeyan ora sah ngganti tembung sandi saka {0} amarga target yaiku admin.
-Ngonversi jumlah dhuwit saka negara menyang negara
-Mata uang:
 usrmgr: Jeneng pangguna {0} wis ditemokake
-Ketik kunci API sampeyan:
-Ora bisa entuk komputer. Yen sampeyan mbukak versi paling anyar Windows 10, sampeyan kudu ngaktifake SMBv1. Protokol iki ora aman lan kita bakal nyoba ngatasi masalah iki.
 Mbusak kabeh sing ana ing log debug
-Entuk versi SSE
 Basa ora valid
 Owahi basa
-Sampeyan bisa uga ora nginstal libcpanel-json-xs-perl ing sistem sampeyan. Hubungi manajer paket sampeyan kanggo instalasi. Kanggo sistem Debian (lan turunan), sampeyan bisa uga mbukak "sudo apt install libcpanel-json-xs-perl" ing emulator terminal. Detil luwih lengkap babagan kesalahan:
 ---------------------------- Kernel mbucal gupuh ----------------------------
 >> Informasi gupuh <<
 > Katrangan: {0}
@@ -365,14 +233,12 @@ Sampeyan bisa uga ora nginstal libcpanel-json-xs-perl ing sistem sampeyan. Hubun
 >> Bingkai, file, baris, lan kolom <<
 > Bingkai {0}: File: {1} | Baris: {2} | Kolom: {3}
 > Ana kesalahan nalika nyoba entuk informasi bingkai. {0}: {1}
-Sampeyan wis nyetel basa sistem menyang liyane kajaba Inggris. Nuwun sewu amarga ana gangguan, nanging Google lan panjarwa dheweke pancen aneh nalika narjamahake blok kode kanggo basa pamrograman. Nalika mbenakake kabeh blok kode kanggo kaca manual sing wis diterjemahake, disaranake sampeyan mbukak tiket menyang Google Translate kanggo nerjemahake blok kode sing ora bisa diterjemahake, lan atur basa sistem menyang Inggris yen sampeyan ngomong.
 Muat ulang mods.
 Mod dimuat maneh.
 Sugeng rawuh ing Kernel!
 Sukses mlebu minangka <user>
 MOTD / MAL bener, nanging jinis pesen ora valid. Nganggep MOTD ...
 Nyoba maca MOTD / MAL sing kalebu jinis pesen sing ora valid.
-Nalika njaga sambungan sing stabil, ndownload {0} menyang {1} ...
 Download wis rampung.
 Unduhan gagal dicoba {0}: {1}
 Gunakake "ftp" yen sampeyan pengin ndownload file saka server FTP.
@@ -388,13 +254,11 @@ Alias ​​wis ditemokake: {0}
 Log debug dibusak. Kabeh piranti debugging sing disambungake isih bisa ndeleng pesen.
 Gagal ngilangi log debug: {0}
 Ganti direktori wis gagal: {0}
-Jeneng pangguna salah
 Nemtokake alamat kasebut
 Ora bisa mbusak direktori: {0}
 Zona wektu ditemtokake kanthi salah.
 Pilihan profil ora valid.
 Nyoba nyambung menyang {0} karo profil {1} ​​...
-Kesalahan nalika tes unit: {0}
 Prentah {0} ora ditemokake. Deleng prentah "pitulung" kanggo dhaptar perintah.
 Gagal entuk properti IPv6 kanggo adaptor {0}. Terus ...
 Informasi IPv4:
@@ -408,26 +272,17 @@ Basa sing sampeyan pilih ngemot rong jinis. Pilih siji:
 Pilih pilihan sampeyan:
 Pilihan sing salah Coba maneh.
 Sampeyan ora sah kanggo nyetel direktori saiki menyang {0}: {1}
-Idin {0} gagal
 Path sing wis ditemtokake dawa banget.
-Sampeyan ora sah ndhaptar ing {0}: {1}
-Kesalahan nalika mriksa CPU: {0}
-Kesalahan nalika mriksa RAM: {0}
-Kesalahan nalika mriksa HDD: {0}
 CPU: PARNGET: SSE2 dibutuhake ing prekara pangembangan mbesuk.
 Pangumpul informasi sampah nalika nyoba golek informasi babagan {0}: {1}
 Kesalahan nalika nyoba golek tanggal kumpul {0}: {1}
 Kesalahan nalika nyoba nyetel MOTD / MAL: {0}
 Kesalahan nalika nyoba njaluk MOTD / MAL: {0}
-Ana pengecualian referensi batal ing {0}: {1}
-Ana istiméwa referensi batal ing {0}: {1} - Trek tumpukan:
 Kesalahan nalika nyoba miwiti screensaver, amarga operasi ora valid.
 Muat maneh ora diidini ing mode aman.
 Mod Parsing ora diidini ing mode aman.
-Parse direktori kabeh kanggo ukuran utawa mung file ing saiki.
 Dhaptar kabeh piranti debugging sing gegandhengan.
 Kesalahan nalika nyoba nyetel mode parse. Priksa regane banjur coba maneh. Yen bener, deleng tilak tumpukan nalika debug kernel diaktifake.
-Setel kanthi sukses.
 Path kasebut dudu file utawa direktori.
 Nggawe salinan file liyane kanthi direktori utawa jeneng sing beda.
 Pindhah file menyang direktori liyane
@@ -436,34 +291,11 @@ Kanggo mindhah file menyang direktori liyane
 Cocokake {0} ({1}): {2}
 Pertandhingan {0}: {1}
 Wektu sing dienggo: {0} milidetik
-Pabrikan: {0}
-Model: {0}
-Kapasitas: {0} ({1}, {2}, {3})
-Jinis Antarmuka: {0}
-Nomer Drive: {0}
-Gendera boot: {0} ({1})
-Pemisahan fisik: {0}
-Gendera utami: {0}
-Ukuran: {0} GB
-Pemisahan logis: {0}
-Dikompresi: {0}
 Jeneng: {0}
-Sistem file: {0}
-Kapasitas: {0} GB gratis {1} GB
-Ndhaptar kabeh sekat logis ing kabeh drive.
-Dhaptar kabeh drive sing dicoba.
-Dhaptar kabeh partisi sing dicoba ing drive tartamtu (lan kabeh partisi logis ing kabeh drive).
 Ngitung jumlah file.
 Nggawe sampeyan menyang Wiki GitHub.
 Algoritma enkripsi ora valid.
 Ngaktifake utawa mateni debugging jarak jauh.
-Initialisasi filesystem ...
-Entuk swara sing dipasang
-Nyetel swara gawan
-Ngomongake senar nganggo swara standar
-{0} Swara: {1} ({2})
-Swara ora valid.
-Setel swara
 Coba deleng manawa sampeyan bisa ngeja tembung kanthi bener
 Coba deleng manawa sampeyan bisa ngatasi persamaan matematika kanthi tepat wektu
 Nanggepi komentar tresna utawa sengit.
@@ -474,23 +306,16 @@ Sampeyan mung nglaporake komentar katresnan!
 Sampeyan mung mangsuli komentar sengit!
 Apik tenan! Komentar {0} bakal dibusak kanggo ngrampungake.
 Apik tenan! {0} matur nuwun.
-Tulis "GetMeOut" kanggo metu.
 Diulis kanthi sampurna!
 Dieja salah.
 Ditanggulangi kanthi sampurna!
 Ditanggulangi kanthi salah.
-{0} MB {1} MB diunduh.
 RPC wis mlaku.
 RPC ngrungokake kabeh alamat nggunakake port {0}.
 Miwiti RPC ...
 Nyambung menyang server SSH.
 Ketik sandhi kanggo {0}:
 SSH Pedhot.
-Muat file synth banjur mainake.
-File skrip {0} ora ana.
-File kasebut dudu file synth scripted.
-Gagal neliti baris synth.
-String kosong ditemtokake
 Ora bisa nyetel codepage. Basa bisa uga ora ditampilake kanthi bener.
 Debugging ora diaktifake.
 {0} ora disetel maneh menyang screensaver standar.
@@ -519,8 +344,6 @@ Misi gagal, Ngormati -, Pelanggan -
 Aja nggawe video kaya iki !!!
 Bali menyang tugas sampeyan, video sampeyan paling ala!
 We prasangka ing video iki.
-Aliasing {0} menyang {1} dilarang.
-Kesalahan nyoba ngilangi notifikasi: {0}
 Nuduhake kabeh kabar sing ditampa
 Nolak kabar
 Kabar wis sukses dipecat.
@@ -532,39 +355,26 @@ Properti IPv4 umum
 Mbatalake nglakokake perintah menyang PC remot
 - Tahap 1: Inisialisasi sistem
 - Tahap 2: Deteksi perangkat keras
-- Tahap 2: Manajemen jeneng pangguna internal
 - Tahap 3: Deteksi mod lan screensaver
-- Tahap 4: Kumpulan sampah
 - Tahap 4: Mlebu
-Sadurunge nglumpukake sampah: {0} bait
-Sawise koleksi sampah: {0} bait
-Kesalahan nalika miwiti RPC: {0}
 Kayane sampeyan mbukak versi calon rilis. Disaranake sampeyan tetep ing versi stabil.
-Katon yen jumlah file sistem mbutuhake wektu sing suwe.
 Jinis {0} ora valid.
-Kapasitas: {0}
-Cacah pemisahan: {0}
 Ukuran: {0}
-Digunakake: {0}
 Direktori {0} wis ana.
 Kesalahan nalika nyoba nyambung menyang {0}: Koneksi wektu entek utawa sambungan ilang
 Kalkulator kanggo ngetung ekspresi.
 Kesalahan ing pitungan.
-Kapasitas: {0} GB ({1}, {2}, {3})
 Kayane sampeyan lagi mbukak versi rilis. Sanajan luwih aman digunakake saiki, disaranake sampeyan tetep ing versi stabil.
 Nganyari sistem
 Mriksa nganyari sistem ...
 Versi anyar sing ditemokake:
 Sampeyan bisa ndownload ing:
-Gagal mriksa nganyari: {0}
-Log debug ora ditemokake
 Ora ana kabar anyar
 Nggoleki senar sing ditemtokake ing file sing kasedhiya
 Ngitung jumlah file ing direktori sing ditemtokake.
 Dhaptar kabeh mail ing pangguna tartamtu.
 Ketik jeneng pangguna utawa alamat surat:
 Ketik sandhi:
-Ketik alamat server lan port (<address> utawa <address>:[port]):
 Kesalahan nalika nyambung menyang {0}: {1}
 Nyambung menyang {0} ...
 Otentikasi ...
@@ -581,7 +391,6 @@ Nomer pesen dudu angka angka.
 - Dikirim ing {0} ing {1}
 Pesen sing ditemtokake ora ditemokake.
 Debug jarak jauh gagal diwiwiti: {0}
-Kesalahan nalika nglakokake printah IMAP: {0}
 Nyiyapake profil ... Butuh sawetara menit ...
 Jeneng Host, Jeneng Pangguna, Tipe Data, Enkoding, Enkripsi, Protokol
 Kesalahan nyoba nglakokake skrip: {0}
@@ -593,7 +402,6 @@ Frekuensi kudu angka. Yen angka, priksa manawa> = 37 lan <= 32767.
 Wektu kudu angka.
 ing endi <dijawab> ana jawaban siji-huruf saka pitakon sing dipisahake ing garis miring
 Kesalahan nyoba nyambung menyang server SSH: {0}
-MOTD Kosong Sawise Login.
 Ngidini pangguna ngetik input
 Ngganti direktori mail saiki
 Ora bisa mbukak folder mail {0}: {1}
@@ -616,7 +424,6 @@ Ketik subjek:
 Ketik pesen sampeyan ing ngisor iki. Tulis "EOF" kanggo konfirmasi.
 Ngirim pesen ...
 Pesen dikirim
-Kesalahan nalika ngirim pesen: {0}
 Alamat email ora valid. Priksa manawa sampeyan wis nulis alamat kanthi bener lan cocog karo format conto sing ditampilake:
 Mbusak pesen
 Mbusak kabeh pesen saka sing nampa
@@ -656,10 +463,7 @@ Blokir piranti debug nganggo alamat IP
 {0} durung diblokir.
 Kesalahan nalika mbukak setelan
 Ana kesalahan nalika mbukak setelan. Sampeyan bisa uga kudu mriksa file setelan.
-- Tahap 2: Deteksi mod lan screensaver
-- Tahap 3: Mlebu
 Pilih bagean:
-Pilih opsi:
 Setelan Umum ...
 Setelan Hardware ...
 Setelan Login ...
@@ -675,14 +479,12 @@ Pemicu Mode Pangopènan
 Ganti Sandi Root ...
 Priksa Update ing Startup
 Probe Sepi
-Slot RAM Probe
 Tampilake MOTD ing Log-in
 Mbusak Layar ing Log-in
 Tampilake jeneng pangguna sing kasedhiya
 Cangkang Werna
 Prentah Bantuan Sederhana
 Pelabuhan Debug
-Remote Debug Default Nick Remote
 Download Coba maneh Wektu
 Log jeneng panganggo FTP
 Log alamat IP FTP
@@ -704,7 +506,6 @@ Aktifake "Ganti Sandi ROOT" kanggo nggunakake pilihan iki. Tulung baleni.
 Ganti Sandi ROOT?
 Setel Sandi ROOT ...
 Tulis port debugger jarak jauh. Kudu angka, lan kudu ora digunakake. Yen ora, debugger jarak jauh bakal gagal mbukak port.
-Tulis awalan nama panggilan debug remot default.
 Tulis kaping pirang-pirang printah "entuk" kudu nyoba maneh undhuhan sing gagal. Kudu angka.
 Tulis nalika ngluncurake screensaver sawise milidetik sing ditemtokake. Kudu angka.
 Tulis pira bait sing bisa nyimpen log debug. Kudu angka.
@@ -716,12 +517,10 @@ Setelan Screensaver ...
 Aktifake 255 warna
 Apa sampeyan pengin tetep nyambung?
 Pilihan sing salah Nganggep ora ...
-Ora ana mod sing dideteksi. Mundur panggung ...
 Ganti Budaya nalika Ngalih Basa
 Teks ditampilake
 Tulis teks sing pengin ditampilake. Cekak luwih apik.
 Gagal ngunggah {0}
-Download gagal kanggo file {0}: {1}
 Kesalahan nalika nglakokake printah debug jarak jauh {0}: {1}
 Nambah pangguna
 Nambahake alias kanggo printah
@@ -730,7 +529,6 @@ Owahi jeneng host
 Owahi MAL, MOTD Sawise Login
 Owahi MOTD, Pesen Dina iki
 Owahi jeneng pangguna
-Nuduhake log debug
 Ngatur ijin kanggo pangguna
 Muat maneh file screensaver ing KSMods
 Mbusak pangguna saka dhaptar
@@ -739,7 +537,6 @@ Gagal mriksa nganyari.
 Ora ana pangguna sing isih ana ing dhaptar kasebut.
 Gagal nyetel basa.
 Kesalahan nyoba ngilangi notifikasi.
-Nganyarke kanggo {0} dideteksi. Nganyari konfigurasi ...
 usrmgr: Gagal nggawe jeneng pangguna {0}: {1}
 Gagal ngganti jeneng pangguna. {0}
 Salah sawijining dhaptar ijin ora ngemot jeneng pangguna {0}.
@@ -773,12 +570,9 @@ Mindhah kabeh pesen saka panampa
 Kabeh mail sing digawe dening {0} bisa dipindhah kanthi sukses.
 Gagal mindhah kabeh surat sing digawe dening {0}.
 Pesen {0} saka {1} dipindhah saka {2}. {3} pesen sing isih ana kanggo diurai.
-Pesen {0} saka {1} dipindhah. {3} pesen sing isih ana kanggo diurai.
 Nuduhake info cuaca kanggo kutha sing ditemtokake. Nggunakake OpenWeatherMap.
 - Info cuaca kanggo {0} -
 Cuaca: {0}
-Suhu: {0} ({1} unit)
-Rasane kaya: {0} ({1} unit)
 Tekanan: {0}
 Asor: {0}
 Sampeyan bisa entuk kunci API dhewe ing https://home.openweathermap.org/api_keys.
@@ -793,7 +587,6 @@ Saben wiwitan, bakal mriksa nganyari.
 Nalika ngoper basa, ganti jeneng wulan, tanggalan, lsp.
 Yen kernel diwiwiti, sandhi root bakal disetel.
 Tetep menengo pesen hardware mriksa.
-Yen diaktifake, probe slot RAM uga RAM.
 Tampilake Pesen Dina sadurunge nampilake layar login.
 Mbusak layar sadurunge nampilake layar login.
 Nuduhake pangguna sing kasedhiya yen diaktifake.
@@ -819,12 +612,9 @@ Mod {0} ora duwe komando. Parsing mod gagal. Priksa kode sumber.
 Sampeyan kudu nguripake mode debug sadurunge bisa mbusak log debug.
 {0} pesen anyar mlebu ing kothak mlebu.
 Bukak "lsmail" kanggo ndeleng.
-Utama: {2} Bootable: {3} Boot partition: {4}
 Ora bisa mbusak file: {0}
 Mbusak direktori utawa file
 Ora bisa mbusak {0} amarga ora ana.
-Sampeyan bisa uga ora nginstal inxi ing sistem sampeyan. Hubungi manajer paket sampeyan kanggo instalasi. Kanggo sistem Debian (lan turunan), sampeyan bisa uga mbukak "sudo apt install inxi libcpanel-json-xs-perl" ing emulator terminal.
-Basa disetel kanthi sukses dadi {0}!
 Pencet CTRL + C kanggo metu.
 Menehi informasi babagan file
 Nyedhiyakake informasi babagan direktori
@@ -879,7 +669,6 @@ Ngunggah {0} menyang {1} ...
 Upload wis rampung.
 Gunakake "ftp" yen sampeyan bakal ngunggah file menyang server FTP.
 Unggah gagal dicoba {0}: {1}
-{0} MB {1} MB diunggah.
 Tulis kaping pirang-pirang printah "sijine" kudu nyoba maneh unggahan sing gagal. Kudu angka.
 Alamat bisa uga ora kosong.
 Gagal ping {0}: {1}
@@ -889,7 +678,6 @@ Rasane kaya: {0}
 Suhu: {0}
 Kacepetan angin: {0}
 Arah angin: {0}
-Utama: {2} | Bootable: {3} | Pemisahan boot: {4}
 Ngaktifake dhukungan warna 255 kanggo Dissolve.
 Ngaktifake dhukungan warna sejati kanggo Dissolve.
 Pencet tombol apa wae kanggo bali.
@@ -919,10 +707,7 @@ Prompts kanggo bantahan
 Gagal miwiti "{0}": {1}
 Tampilake pratinjau pesen surat
 Nalika ndhaptar pesen mail, tampilake pratinjau awak.
-Probe perangkat keras cache. Nuduhake informasi wae ...
-Kapasitas: {0} GB
 Werna khusus ...
-Tulis warna kaya sing ditemtokake ing ngisor iki:
 Werna input
 Werna lisensi
 Werna kesalahan kernel sing bisa diterusake
@@ -931,12 +716,8 @@ Werna jeneng host
 Werna jeneng pangguna
 Werna latar mburi
 Werna teks sing netral
-Werna dhaptar perintah
-Werna definisi prentah
 Werna panggung
 Werna kesalahan
-Apa pilihan warna kasebut katon OK?
-Wangsulan {0} kanggo bali. Yen ora, wangsulan tegese ya.
 Gaya FTP Prompt
 Gaya Prompt Kirim
 Gaya Prompt SFTP
@@ -946,7 +727,6 @@ Nyoba ngakses jalur sing ora valid.
 Mbusak file teks
 Metu saka editor teks
 Nemokake karakter ing baris sing ditemtokake utawa kabeh baris
-Nomer karakter sing ditemtokake {0} dudu angka sing valid.
 Priksa nganyari ora aktif amarga sampeyan nggunakake versi pangembangan.
 Ngaktifake utawa mateni fitur otomatis editor teks.
 Yen autosave diaktifake, file teks bakal disimpen saben "n" detik.

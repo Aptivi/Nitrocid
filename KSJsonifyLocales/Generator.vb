@@ -54,8 +54,10 @@ Module LocaleGenerator
                 'Make a JSON object for each language entry
                 Dim LocalizedJson As New JObject
                 For i As Integer = 0 To FileLines.Length - 1
-                    Debug.WriteLine("Adding ""{0}, {1}""...", FileLinesEng(i), FileLines(i))
-                    LocalizedJson.Add(FileLinesEng(i), FileLines(i))
+                    If Not String.IsNullOrWhiteSpace(FileLines(i)) And Not String.IsNullOrWhiteSpace(FileLinesEng(i)) Then
+                        Debug.WriteLine("Adding ""{0}, {1}""...", FileLinesEng(i), FileLines(i))
+                        LocalizedJson.Add(FileLinesEng(i), FileLines(i))
+                    End If
                 Next
 
                 'Save changes

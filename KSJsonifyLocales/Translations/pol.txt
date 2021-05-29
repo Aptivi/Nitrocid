@@ -1,961 +1,741 @@
-﻿Dostępne polecenia: {0}
+Dost?pne polecenia: {0}
 Napisz polecenie:
-Wprowadzanie poleceń zostało anulowane.
-Oddziel argumenty rozruchowe przecinkami bez spacji, na przykład „motd, gpuprobe”
-Oddzielne polecenia na „cmdinject” z dwukropkami ze spacjami, na przykład „cmdinject setthemes Hacker: beep 1024 0,5”
-Zauważ, że argument „debugowanie” nie obejmuje w pełni jądra.
-bargs: Żądany argument {0} nie został znaleziony.
-bargs: Nieodwracalny błąd w argumencie:
-Dostępne argumenty: {0}
-Argumenty („pomoc” dla pomocy):
-Wstrzyknięte argumenty zostaną zaplanowane do uruchomienia przy następnym restarcie.
-Wtrysk argumentu został anulowany.
-Błąd podczas analizowania rzeczywistych argumentów wiersza polecenia: {0}
-Nieprawidłowy szablon kolorów {0}
-Domyślna
-Zwyczaj
-hwprobe: Twój sprzęt zostanie przetestowany. Proszę czekać...
-hwprobe: Sprzęt już sondowany.
-hwprobe: Sprzęt nie jest sondowany. Sonda za pomocą „hwprobe”
-Procesor: co najmniej jeden z rdzeni procesora nie został zbadany. Mimo to pokazywanie informacji ...
-RAM: Jeden lub więcej układów RAM nie zostało zbadanych. Mimo to pokazywanie informacji ...
-HDD: Jeden lub więcej dysków twardych nie zostało sondowanych. Mimo to pokazywanie informacji ...
-Procesor: łączna liczba procesorów: {0}
-Procesor: {0} {1} MHz
-RAM: {0} MB = {1} MB
-RAM: używane gniazda (według nazw): {0}
-RAM: używane miejsca (według liczb): {0} / {1} ({2}%)
-RAM: Status próbkowania jest przestarzały i zostanie usunięty w przyszłej wersji.
-HDD: {0} {1} GB {2}
-HDD: {0} {1} {2} GB {3}
-HDD: CHS: {4} cylindry | {5} głów | {6} sektorów
-HDD: CHS: {3} cylindry | {4} głowy | {5} sektorów
-hwprobe: Sondowanie nie jest obsługiwane, ponieważ nie jest przeznaczone do uruchamiania sond w systemie Unix.
-Wprowadź hasło administratora w celu konserwacji.
-Na liście nie ma już użytkowników.
-Błąd jądra podczas uruchamiania: {0}
-DOUBLE PANIC: Czas restartu przekracza maksymalny dozwolony czas restartu błędu {0}. Znalazłeś błąd jądra.
-[{0}] panika: ponowne uruchomienie włączone z powodu poziomu błędu {0}.
-[{0}] panika: czas do ponownego uruchomienia: {1} sekund, przekracza 1 godzinę. Jest ustawiony na 1 minutę.
-DOUBLE PANIC: Niepoprawny typ błędu {0}.
+Wprowadzanie polece? zosta?o anulowane.
+Oddziel argumenty rozruchowe przecinkami bez spacji, na przyk?ad �motd, gpuprobe�
+Oddzielne polecenia na �cmdinject� z dwukropkami ze spacjami, na przyk?ad �cmdinject setthemes Hacker: beep 1024 0,5�
+Zauwa?, ?e argument �debugowanie� nie obejmuje w pe?ni j?dra.
+bargs: ??dany argument {0} nie zosta? znaleziony.
+bargs: Nieodwracalny b??d w argumencie:
+Dost?pne argumenty: {0}
+Argumenty (�pomoc� dla pomocy):
+Wstrzykni?te argumenty zostan? zaplanowane do uruchomienia przy nast?pnym restarcie.
+Wtrysk argumentu zosta? anulowany.
+B??d podczas analizowania rzeczywistych argument?w wiersza polecenia: {0}
+Nieprawid?owy szablon kolor?w {0}
+hwprobe: Tw?j sprz?t zostanie przetestowany. Prosz? czeka?...
+Procesor: co najmniej jeden z rdzeni procesora nie zosta? zbadany. Mimo to pokazywanie informacji ...
+RAM: Jeden lub wi?cej uk?ad?w RAM nie zosta?o zbadanych. Mimo to pokazywanie informacji ...
+HDD: Jeden lub wi?cej dysk?w twardych nie zosta?o sondowanych. Mimo to pokazywanie informacji ...
+Procesor: ??czna liczba procesor?w: {0}
+Wprowad? has?o administratora w celu konserwacji.
+B??d j?dra podczas uruchamiania: {0}
+DOUBLE PANIC: Czas restartu przekracza maksymalny dozwolony czas restartu b??du {0}. Znalaz?e? b??d j?dra.
+[{0}] panika: ponowne uruchomienie w??czone z powodu poziomu b??du {0}.
+[{0}] panika: czas do ponownego uruchomienia: {1} sekund, przekracza 1 godzin?. Jest ustawiony na 1 minut?.
+DOUBLE PANIC: Niepoprawny typ b??du {0}.
 [{0}] dpanic: {1} - Ponowne uruchomienie za {2} sekund ...
-[{0}] panika: Ponowne uruchomienie wyłączone z powodu poziomu błędu {0}.
-[{0}] panic: {1} - Naciśnij dowolny klawisz, aby kontynuować korzystanie z jądra.
-[{0}] panic: {1} - Naciśnij dowolny klawisz, aby zamknąć.
+[{0}] panika: Ponowne uruchomienie wy??czone z powodu poziomu b??du {0}.
+[{0}] panic: {1} - Naci?nij dowolny klawisz, aby kontynuowa? korzystanie z j?dra.
+[{0}] panic: {1} - Naci?nij dowolny klawisz, aby zamkn??.
 [{0}] panika: {1} - Ponowne uruchomienie za {2} sekund ...
-DOUBLE PANIC: Błąd jądra: {0}
-Wyłączanie...
+DOUBLE PANIC: B??d j?dra: {0}
+Wy??czanie...
 Ponowne uruchamianie ...
---- === +++> Witaj w jądrze | Wersja {0} <+++ === ---
-Inna instancja Kernel Simulator jest uruchomiona. Wyłączanie w przypadku zakłóceń.
-Użytkownik {0} został dodany do listy administratorów.
-Użytkownik {0} został dodany do listy wyłączonych.
-Nie udało się dodać użytkownika do list uprawnień: nieprawidłowy typ {0}
-Nie udało się dodać użytkownika do list uprawnień: nieprawidłowy użytkownik {0}
-Użytkownik {0} został usunięty z listy administratorów.
-Użytkownik {0} został usunięty z listy wyłączonych.
-Nie udało się usunąć użytkownika z list uprawnień: nieprawidłowy typ {0}
-Jesteś już zalogowany.
-Nie udało się usunąć użytkownika z list uprawnień: nieprawidłowy użytkownik {0}
-Znalazłeś błąd w systemie uprawnień: tryb nieprawidłowy {0}
-Znalazłeś błąd lub uprawnienia, które próbujesz dodać lub usunąć, zostały już wykonane lub inny błąd.
-Błąd {0}: {1}
-Znalazłeś błąd lub uprawnienia, które próbowałeś edytować dla nowego użytkownika, nie powiodły się.
-Dostępne nazwy użytkowników: {0}
-Nazwa Użytkownika:
-Spacje nie są dozwolone.
-Znaki specjalne nie są dozwolone.
-Hasło {0}:
-Złe hasło.
-Użytkownik jest wyłączony.
-Zła nazwa użytkownika.
-Błąd podczas próby przetworzenia symboli zastępczych. {0} - Ślad stosu:
-Błąd podczas próby przetworzenia symboli zastępczych. {0}
-Błąd podczas próby dodania nazwy użytkownika.
-usrmgr: Tworzenie nazwy użytkownika {0} ...
-Pusta nazwa użytkownika.
-Nie znaleziono użytkownika {0}.
-Użytkownik {0} nie może zostać usunięty.
-Użytkownik {0} jest już zalogowany. Wyloguj się i zaloguj jako inny administrator.
-Usunięto użytkownika {0}.
-Błąd podczas próby usunięcia nazwy użytkownika.
-{0} z {1} = {2}
-Próba podzielenia przez zero jest niedozwolona.
-Podejrzewano próbę obliczenia, która spowodowała przepełnienie.
-Wystąpił błąd podczas obliczania: {0}
-Nie można przekonwertować {0} na {1}.
-Albo źródło
- lub miejsce docelowe
- nie istnieje na serwerze.
-{0} do {1}: {2}
-Błąd podczas próby konwersji z {0} na {1}: {2}
-Błąd
-Żądany wygaszacz ekranu {0} nie został znaleziony.
-{0} został poprawnie zainicjowany.
-{0} nie zainicjował się. Kod wygaszacza ekranu mógł napotkać błąd podczas inicjowania.
+Inna instancja Kernel Simulator jest uruchomiona. Wy??czanie w przypadku zak??ce?.
+Nie uda?o si? doda? u?ytkownika do list uprawnie?: nieprawid?owy typ {0}
+Nie uda?o si? doda? u?ytkownika do list uprawnie?: nieprawid?owy u?ytkownik {0}
+Nie uda?o si? usun?? u?ytkownika z list uprawnie?: nieprawid?owy typ {0}
+Jeste? ju? zalogowany.
+Nie uda?o si? usun?? u?ytkownika z list uprawnie?: nieprawid?owy u?ytkownik {0}
+Znalaz?e? b??d lub uprawnienia, kt?re pr?bujesz doda? lub usun??, zosta?y ju? wykonane lub inny b??d.
+B??d {0}: {1}
+Znalaz?e? b??d lub uprawnienia, kt?re pr?bowa?e? edytowa? dla nowego u?ytkownika, nie powiod?y si?.
+Dost?pne nazwy u?ytkownik?w: {0}
+Nazwa U?ytkownika:
+Spacje nie s? dozwolone.
+Znaki specjalne nie s? dozwolone.
+Has?o {0}:
+Z?e has?o.
+U?ytkownik jest wy??czony.
+Z?a nazwa u?ytkownika.
+B??d podczas pr?by przetworzenia symboli zast?pczych. {0} - ?lad stosu:
+B??d podczas pr?by przetworzenia symboli zast?pczych. {0}
+B??d podczas pr?by dodania nazwy u?ytkownika.
+usrmgr: Tworzenie nazwy u?ytkownika {0} ...
+Pusta nazwa u?ytkownika.
+Nie znaleziono u?ytkownika {0}.
+U?ytkownik {0} nie mo?e zosta? usuni?ty.
+U?ytkownik {0} jest ju? zalogowany. Wyloguj si? i zaloguj jako inny administrator.
+Usuni?to u?ytkownika {0}.
+B??d podczas pr?by usuni?cia nazwy u?ytkownika.
+??dany wygaszacz ekranu {0} nie zosta? znaleziony.
+{0} zosta? poprawnie zainicjowany.
+{0} nie zainicjowa? si?. Kod wygaszacza ekranu m?g? napotka? b??d podczas inicjowania.
 Wygaszacz ekranu {0} nie istnieje.
-{0} jest ustawiony na domyślny wygaszacz ekranu.
-Nie znaleziono wygaszacza ekranu {0} w bazie danych. Sprawdź nazwę i spróbuj ponownie.
-Nie można załadować wygaszacza ekranu z następujących powodów:
-Wystąpił poważny błąd podczas drukowania tekstu.
-Wystąpił błąd podczas próby utworzenia konfiguracji.
-Wystąpił błąd podczas próby utworzenia konfiguracji: {0}
-Wykryto aktualizację z {0} do {1}. Aktualizowanie konfiguracji ...
-Wystąpił błąd podczas próby aktualizacji konfiguracji: {0}.
-Wystąpił błąd podczas próby aktualizacji konfiguracji.
-Wystąpił błąd podczas próby odczytania konfiguracji.
-Wystąpił błąd podczas próby odczytania konfiguracji: {0}
-Błąd podczas próby zwolnienia pamięci RAM: {0} - kontynuowanie ...
-Modu nie można załadować z następujących powodów:
-mod: ładowanie modów ...
-mod: Zatrzymywanie modów ...
-Mod {0} nie ma nazwy. Przejrzyj kod źródłowy.
+{0} jest ustawiony na domy?lny wygaszacz ekranu.
+Nie znaleziono wygaszacza ekranu {0} w bazie danych. Sprawd? nazw? i spr?buj ponownie.
+Nie mo?na za?adowa? wygaszacza ekranu z nast?puj?cych powod?w:
+Wyst?pi? powa?ny b??d podczas drukowania tekstu.
+Wyst?pi? b??d podczas pr?by utworzenia konfiguracji.
+B??d podczas pr?by zwolnienia pami?ci RAM: {0} - kontynuowanie ...
+Modu nie mo?na za?adowa? z nast?puj?cych powod?w:
+mod: ?adowanie mod?w ...
+mod: Zatrzymywanie mod?w ...
+Mod {0} nie ma nazwy. Przejrzyj kod ?r?d?owy.
 Mod {0} nie ma wersji.
 Uruchomiono {0} v {1}
 Brak definicji dla polecenia {0}.
 Polecenie zdefiniowane przez
-Powinieneś rozłączyć się z serwerem przed połączeniem z innym serwerem
-Nazwa użytkownika dla {0}:
-Hasło do {0}:
-Połączono z {0}
-Błąd podczas próby połączenia z {0}: {1}
-Ślad stosu: {2}
-Wprowadź serwer FTP.
+Powiniene? roz??czy? si? z serwerem przed po??czeniem z innym serwerem
+Nazwa u?ytkownika dla {0}:
+Has?o do {0}:
+Po??czono z {0}
+B??d podczas pr?by po??czenia z {0}: {1}
+?lad stosu: {2}
+Wprowad? serwer FTP.
 Katalog lokalny {0} nie istnieje.
-Wprowadź lokalny katalog. ".." wrócić.
-Katalog {0} nie został znaleziony.
-Wprowadź zdalny katalog. ".." wrócić
-Musisz połączyć się z serwerem przed zmianą katalogu
+Wprowad? lokalny katalog. ".." wr?ci?.
+Katalog {0} nie zosta? znaleziony.
+Wprowad? zdalny katalog. ".." wr?ci?
+Musisz po??czy? si? z serwerem przed zmian? katalogu
 Katalog lokalny: {0}
 Zdalny katalog: {0}
-Musisz połączyć się z serwerem przed uzyskaniem bieżącego katalogu zdalnego.
-Usuwanie pliku {0} ...
-Czy na pewno chcesz usunąć plik {0} <t / n>?
-Usunięty plik {0}
-Przed usunięciem należy połączyć się z serwerem z uprawnieniami administratora.
-Wprowadź plik do usunięcia.
-Musisz mieć uprawnienia administracyjne do zalogowanej nazwy użytkownika, aby móc ją usunąć.
-Odłączono od {0}
-Nie masz jeszcze połączenia z żadnym serwerem
+Musisz po??czy? si? z serwerem przed uzyskaniem bie??cego katalogu zdalnego.
+Przed usuni?ciem nale?y po??czy? si? z serwerem z uprawnieniami administratora.
+Od??czono od {0}
+Nie masz jeszcze po??czenia z ?adnym serwerem
 Pobieranie pliku {0} ...
 Pobrany plik {0}.
-Pobieranie nie powiodło się dla pliku {0}, ponieważ plik lokalny jest uszkodzony.
-Musisz połączyć się z serwerem przed wykonaniem transmisji.
-Wprowadź plik do pobrania do lokalnego katalogu.
+Musisz po??czy? si? z serwerem przed wykonaniem transmisji.
+Wprowad? plik do pobrania do lokalnego katalogu.
 {0} KB | Zmodyfikowano w: {1}
-Powinieneś połączyć się z serwerem przed wyświetleniem wszystkich zdalnych plików.
-Zmiana nazwy pliku {0} na {1} ...
-Zmiana nazwy powiodła się
-Wprowadź plik i nową nazwę pliku.
-Przesyłanie pliku {0} ...
-Przesłany plik {0}
-Wprowadź plik do przesłania do zdalnego katalogu. prześlij <plik> <katalog>
-Błąd podczas próby wykonania polecenia FTP
-(Wewnętrzny:
-{0} folderów, {1} plików
-(Brak dostępu)
-{0} KB, utworzono w {1} {2}, zmodyfikowano w {3} {4}
-Pobiera bieżący katalog lokalny
-Pobiera bieżący zdalny katalog
-Łączy się z serwerem FTP (musi zaczynać się od „ftp: //” lub „ftps: //”)
-Zmienia lokalny katalog do pobrania lub przesłania z
-Zmienia zdalny katalog do pobrania lub przesłania do
+Powiniene? po??czy? si? z serwerem przed wy?wietleniem wszystkich zdalnych plik?w.
+Przesy?anie pliku {0} ...
+Przes?any plik {0}
+Wprowad? plik do przes?ania do zdalnego katalogu. prze?lij <plik> <katalog>
+(Wewn?trzny:
+Pobiera bie??cy katalog lokalny
+Pobiera bie??cy zdalny katalog
+??czy si? z serwerem FTP (musi zaczyna? si? od �ftp: //� lub �ftps: //�)
+Zmienia lokalny katalog do pobrania lub przes?ania z
+Zmienia zdalny katalog do pobrania lub przes?ania do
 Usuwa zdalny plik z serwera
-Rozłącza się z serwerem
-Pobiera zdalny plik do katalogu lokalnego za pomocą pliku binarnego lub tekstowego
-Wychodzi z powłoki FTP i wraca do jądra
-Wyświetla ekran pomocy
-Wyświetla lokalny katalog
-Wyświetla zdalny katalog
-Zmienia nazwę określonego pliku lub katalogu
-Przesyła plik lokalny do zdalnego katalogu za pomocą pliku binarnego lub tekstowego
-Wystąpił błąd w powłoce FTP.
-Komunikat FTP: Żądane polecenie {0} nie zostało znalezione. Zobacz „pomoc”, aby uzyskać listę dostępnych poleceń określonych w powłoce FTP.
-net: Otrzymałem odpowiedź od {0} w {1} ms
-Przekroczono limit czasu, odłączono lub serwer offline.
-net: nazwa twojego komputera w sieci to {0}
-net: Twoja nazwa hosta to {1}
-net: Wygląda na to, że komputery znajdują się w domenie lub grupie roboczej:
-net: WiFi lub Ethernet jest odłączony.
-net: Wygląda na to, że komputery są podłączone poniżej:
-net: Adres routera: {0}
-Nie można uzyskać właściwości adaptera {0}
+Roz??cza si? z serwerem
+Pobiera zdalny plik do katalogu lokalnego za pomoc? pliku binarnego lub tekstowego
+Wychodzi z pow?oki FTP i wraca do j?dra
+Wy?wietla ekran pomocy
+Wy?wietla lokalny katalog
+Wy?wietla zdalny katalog
+Przesy?a plik lokalny do zdalnego katalogu za pomoc? pliku binarnego lub tekstowego
+Komunikat FTP: ??dane polecenie {0} nie zosta?o znalezione. Zobacz �pomoc�, aby uzyska? list? dost?pnych polece? okre?lonych w pow?oce FTP.
+Nie mo?na uzyska? w?a?ciwo?ci adaptera {0}
 Numer adaptera:
 Nazwa adaptera:
 Maksymalna jednostka transmisji: {2} jednostek
-DHCP włączone:
+DHCP w??czone:
 Pakiety bez emisji pojedynczej:
 Pakiety Unicast:
-Błąd pakietów przychodzących / wychodzących:
-Alias ​​nie może mieć takiej samej nazwy jak polecenie.
+B??d pakiet?w przychodz?cych / wychodz?cych:
+Alias ??nie mo?e mie? takiej samej nazwy jak polecenie.
 Nie znaleziono polecenia do aliasu do {0}.
-Aliasing {0} do {1} jest całkowicie zabroniony.
-Możesz teraz uruchomić „{0}” jako polecenie: „{1}”.
-Nie można już używać „{0}” jako polecenia „{1}”.
-Alias ​​{0} nie został usunięty.
-Nieprawidłowy tryb {0}.
-Wstrzyknięte argumenty {0} zostaną zaplanowane do uruchomienia przy następnym uruchomieniu.
-Argumentów było za mało. Zobacz poniżej użycie:
-Katalog {0} nie został znaleziony
+Mo?esz teraz uruchomi? �{0}� jako polecenie: �{1}�.
+Alias ??{0} nie zosta? usuni?ty.
+Nieprawid?owy tryb {0}.
+Wstrzykni?te argumenty {0} zostan? zaplanowane do uruchomienia przy nast?pnym uruchomieniu.
+Argument?w by?o za ma?o. Zobacz poni?ej u?ycie:
+Katalog {0} nie zosta? znaleziony
 Pusta nazwa hosta.
 Zmiana z: {0} na {1} ...
-Pusta wiadomość dnia.
+Pusta wiadomo?? dnia.
 Pusty MAL po zalogowaniu.
-Zmiana MAL z {0} na {1} ...
-Błędne hasło użytkownika.
-Hasła się nie zgadzają.
-Nazwa użytkownika została zmieniona na {0}!
-Nowa nazwa, którą wpisałeś, została już znaleziona.
-Komputery z listą nie są jeszcze obsługiwane w systemie Unix.
-Aliasy, które są zabronione: {0}
-{0} nie został znaleziony.
-Konfiguracja została ponownie załadowana. Konieczne może być ponowne uruchomienie jądra, aby niektóre zmiany zaczęły obowiązywać.
-Wszystko jest resetowane do normalnych ustawień.
-Jeden lub więcej kolorów jest nieprawidłowy.
-Kolory nie są dostępne. Włącz kolorową powłokę w konfiguracji jądra.
+B??dne has?o u?ytkownika.
+Has?a si? nie zgadzaj?.
+Nazwa u?ytkownika zosta?a zmieniona na {0}!
+Nowa nazwa, kt?r? wpisa?e?, zosta?a ju? znaleziona.
+{0} nie zosta? znaleziony.
+Konfiguracja zosta?a ponownie za?adowana. Konieczne mo?e by? ponowne uruchomienie j?dra, aby niekt?re zmiany zacz??y obowi?zywa?.
+Jeden lub wi?cej kolor?w jest nieprawid?owy.
+Kolory nie s? dost?pne. W??cz kolorow? pow?ok? w konfiguracji j?dra.
 Nie znaleziono wygaszacza ekranu {0}.
-[ Ustawienia jądra (działające na {0}) ]
-Wersja jądra:
+[ Ustawienia j?dra (dzia?aj?ce na {0}) ]
+Wersja j?dra:
 Tryb debugowania:
 Kolorowa skorupa:
 Argumenty podczas uruchamiania:
 Uproszczone polecenie pomocy:
 MOTD przy logowaniu:
 Czas / data w rogu:
-Sondowany sprzęt:
-Aktualny temat:
-[ Ustawienia sprzętu ] {0}
-{0}[ Ustawienia użytkownika ]
-Obecna nazwa użytkownika:
+[ Ustawienia sprz?tu ] {0}
+{0}[ Ustawienia u?ytkownika ]
+Obecna nazwa u?ytkownika:
 Aktualna nazwa hosta:
-Dostępne nazwy użytkownika:
-Nazwa hosta komputera:
-{0}[ Ustawienia wiadomości ]
-Kod źródłowy:
-Prawo autorskie (c)
-Licencja
-teraźniejszość
-Błąd podczas próby wykonania polecenia
-Dodaje użytkowników (tylko administratorzy mogą uzyskać dostęp do tego polecenia)
-Dodaje aliasy do poleceń (tylko administratorzy mogą uzyskać dostęp do tego polecenia)
-Wstrzykuje argumenty do jądra (wymagane ponowne uruchomienie, tylko administratorzy)
-Prosty kalkulator
+Dost?pne nazwy u?ytkownika:
+B??d podczas pr?by wykonania polecenia
 Zmienia katalog
-Zmienia nazwę hosta (tylko administratorzy)
-Zmienia MAL, MOTD po zalogowaniu (tylko administratorzy)
-Zmienia MOTD, wiadomość dnia (tylko administratorzy)
-Zmienia hasło dla bieżącego użytkownika
-Zmienia nazwę użytkownika (tylko administratorzy)
-Czyści ekran
-Przelicz walutę
-Pokazuje dzienniki debugowania (tylko administratorzy)
-Użyj powłoki FTP do interakcji z serwerami
+Zmienia has?o dla bie??cego u?ytkownika
+Czy?ci ekran
+U?yj pow?oki FTP do interakcji z serwerami
 Strona pomocy
-Sonduj sprzęt ręcznie (jeden raz w jądrze „nohwprobe”)
-Wyświetl zawartość pliku / folderu w bieżącym folderze
-Ponownie ładuje plik wygaszacza ekranu w %USERPROFILE%\KSMods
-Blokuje ekran hasłem
-Wylogowuje cię
-Wyświetla listę wszystkich urządzeń sieciowych, które są online (i offline w domenach)
-Wyświetla wszystkie adresy sieciowe na hoście
-Wyświetla listę wszystkich adresów sieciowych na hoście przy użyciu drzewa
+Wy?wietl zawarto?? pliku / folderu w bie??cym folderze
+Blokuje ekran has?em
+Wylogowuje ci?
 Tworzy katalog
-Wyświetla informacje o wszystkich dostępnych interfejsach
-Pokazuje zabronioną listę aliasów
-Zarządzaj uprawnieniami użytkowników (tylko administratorzy mogą uzyskać dostęp do tego polecenia)
-Sprawdź, czy podany adres jest dostępny
-Zapisuje zawartość pliku do konsoli
-Ponownie uruchamia komputer (OSTRZEŻENIE: Brak synchronizacji, ponieważ nie jest to ostateczne jądro)
-Ponownie ładuje edytowany plik konfiguracyjny.
-Usuwa katalog
-Usuwa użytkownika z listy (tylko administratorzy)
+Wy?wietla informacje o wszystkich dost?pnych interfejsach
+Ponownie uruchamia komputer (OSTRZE?ENIE: Brak synchronizacji, poniewa? nie jest to ostateczne j?dro)
+Ponownie ?aduje edytowany plik konfiguracyjny.
 Zapisuje ekran przed wypaleniem
-Kalkulator naukowy. Konwerter jednostek jest rozdzielony na inne polecenie
-Ustawia kolory jądra
-Konfiguruje wygaszacze ekranu jądra
-Ustawia kompozycje jądra
-Pokazuje aliasy
-Pokazuje MOTD po zalogowaniu ustawionym przez użytkownika lub jądro
-Wyświetla wiadomość dnia ustawioną przez użytkownika lub jądro
-Pokazuje datę i godzinę
-Pokazuje datę i godzinę w strefach
-Jądro zostanie zamknięte
+Konfiguruje wygaszacze ekranu j?dra
+Ustawia kompozycje j?dra
+Pokazuje dat? i godzin?
+Pokazuje dat? i godzin? w strefach
+J?dro zostanie zamkni?te
 Informacje o systemie
-Konwerter jednostek, który jest oddzielony od scicalc.
-Pokazuje używane zależności typu open source
-Bardzo opisowa instrukcja obsługi.
-* Możesz używać wielu poleceń za pomocą dwukropka między poleceniami.
-Dostępne polecenia:
-Polecenia modowe:
-Aliasy do poleceń:
+* Mo?esz u?ywa? wielu polece? za pomoc? dwukropka mi?dzy poleceniami.
 Stosowanie:
-Argumenty oddzielone przecinkami
-gdzie argumentami będzie {0}
-aby uzyskać bieżący katalog
-W którym źródłem i miejscem docelowym są 3 duże litery kursu wymiany
-Lista wszystkich identyfikatorów i nazw:
-Pokazuje dzienniki debugowania, dzięki czemu możesz wysłać dziennik do nas.
-Inicjuje powłokę FTP.
-Sondy sprzętowe (Działa tylko, gdy sprzęt nie jest sondowany, a program hwprobe nie jest wykonywany).
-Wyświetla informacje o sieci, a także każdy komputer podłączony do sieci.
+gdzie argumentami b?dzie {0}
+Inicjuje pow?ok? FTP.
 Przyjaciele
-Wyświetla informacje o sieci, a także każdy komputer podłączony do sieci, w formie drzewa.
-Wyświetla informacje o sieci, a także o każdym komputerze.
-gdzie będzie modname.ss.vb
-Blokuje ekran hasłem.
-Wylogowuje cię z użytkownika.
+gdzie b?dzie modname.ss.vb
+Blokuje ekran has?em.
+Wylogowuje ci? z u?ytkownika.
 Uzyskaj wszystkie informacje o sieci
 Ponownie uruchamia symulowany komputer.
-Ponownie ładuje konfigurację, która została zmieniona przez użytkownika końcowego lub narzędzie.
-Kolory nie wymagają ponownego uruchomienia, ale większość ustawień wymaga ponownego uruchomienia.
-pokazuje wybrany wygaszacz ekranu, jednocześnie chroniąc ekran przed wypaleniem.
-Pokazuje datę i godzinę.
-Pokazuje datę i godzinę w strefach.
+Ponownie ?aduje konfiguracj?, kt?ra zosta?a zmieniona przez u?ytkownika ko?cowego lub narz?dzie.
+Kolory nie wymagaj? ponownego uruchomienia, ale wi?kszo?? ustawie? wymaga ponownego uruchomienia.
+pokazuje wybrany wygaszacz ekranu, jednocze?nie chroni?c ekran przed wypaleniem.
+Pokazuje dat? i godzin?.
+Pokazuje dat? i godzin? w strefach.
 Zamyka symulowany komputer.
 Pokazuje informacje o systemie i wersje.
-Pokazuje używane biblioteki typu open source
-Wystąpił błąd w powłoce.
-Nie masz uprawnień do korzystania z {0}
-Komunikat powłoki: Żądane polecenie {0} nie może działać w trybie konserwacji.
-Komunikat powłoki: Żądane polecenie {0} nie zostało znalezione. Zobacz „pomoc” dla dostępnych poleceń.
-Komunikat powłoki: Komenda {0} nie może być uruchamiana podczas logowania.
-Komunikat powłoki: Żądane polecenie {0} nie zostało znalezione.
-Błąd podczas próby wykonania polecenia.
+Wyst?pi? b??d w pow?oce.
+Nie masz uprawnie? do korzystania z {0}
+Komunikat pow?oki: ??dane polecenie {0} nie mo?e dzia?a? w trybie konserwacji.
+Komunikat pow?oki: ??dane polecenie {0} nie zosta?o znalezione. Zobacz �pomoc� dla dost?pnych polece?.
+Komunikat pow?oki: Komenda {0} nie mo?e by? uruchamiana podczas logowania.
+B??d podczas pr?by wykonania polecenia.
 datetime: czas to {0}
 datetime: Dzisiaj jest {0}
 datetime: Strefa czasowa: {0}
 - Czas {0}: {1}
-wyczyścić ekran.
-Wygląda na to, że nie znaleziono strony podręcznika {0}.
-Wystąpił błąd podczas próby załadowania strony podręcznika {0}, ponieważ {1}.
-Ta strona podręcznika jest niekompletna z następujących powodów:
-Naciśnij dowolny klawisz, aby kontynuować...
- | {0} słów | Wersja v {1} | {2} sekcje
-Ten tytuł strony podręcznika nie został napisany
-Ta strona podręcznika ({0}) nie zawiera tekstu podstawowego. Usuwam stronę ...
-Ta strona podręcznika ({0}) nie zawiera żadnej sekcji. Usuwam stronę ...
-Działa na {0}
-Nie masz uprawnień do uzyskania informacji o {0}.
-To polecenie jest przestarzałe i zostanie usunięte w przyszłej wersji.
-Nie masz uprawnień do zmiany hasła {0}, ponieważ celem był administrator.
-Przeliczaj pieniądze z kraju na kraj
-Waluty:
-usrmgr: nazwa użytkownika {0} została już znaleziona
-Wprowadź swój klucz API:
-Nie można uzyskać komputerów. Jeśli używasz najnowszej wersji systemu Windows 10, musisz włączyć SMBv1. Ten protokół jest jednak niepewny i postaramy się rozwiązać ten problem.
+wyczy?ci? ekran.
+Dzia?a na {0}
+Nie masz uprawnie? do uzyskania informacji o {0}.
+To polecenie jest przestarza?e i zostanie usuni?te w przysz?ej wersji.
+Nie masz uprawnie? do zmiany has?a {0}, poniewa? celem by? administrator.
+usrmgr: nazwa u?ytkownika {0} zosta?a ju? znaleziona
 Usuwa wszystko z dziennika debugowania
-Pobiera wersje SSE
-Niepoprawny język
-Zmienia język
-Być może w systemie nie zainstalowano libcpanel-json-xs-perl. Informacje na temat instalacji można uzyskać od menedżera pakietów. W przypadku systemów Debian (i pochodnych) możesz chcieć uruchomić „sudo apt install libcpanel-json-xs-perl” w emulatorze terminali. Więcej szczegółów błędu:
------------------------------ Zrzut paniki jądra ------------------ -----------
+Niepoprawny j?zyk
+Zmienia j?zyk
+----------------------------- Zrzut paniki j?dra ------------------ -----------
 >> Informacje o panice <<
 > Opis: {0}
-> Typ błędu: {1}
+> Typ b??du: {1}
 > Data i godzina: {2}
->> Informacje o wyjątkach <<
-> Wyjątek: {0}
+>> Informacje o wyj?tkach <<
+> Wyj?tek: {0}
 > Opis: {1}
 > HRESULT: {2}
-> Źródło: {3}
-> Stos śladu <
->> Informacje o wewnętrznym wyjątku {0} <<
->> Wyjątek {0} jest główną przyczyną <<
->> Bez wyjątku; może to być błąd jądra. <<
+> ?r?d?o: {3}
+> Stos ?ladu <
+>> Informacje o wewn?trznym wyj?tku {0} <<
+>> Wyj?tek {0} jest g??wn? przyczyn? <<
+>> Bez wyj?tku; mo?e to by? b??d j?dra. <<
 >> Ramy, pliki, linie i kolumny <<
 > Ramka {0}: Plik: {1} | Wiersz: {2} | Kolumna: {3}
-> Wystąpił błąd podczas próby uzyskania informacji o ramce. {0}: {1}
-Ustawiłeś język systemu na inny niż angielski. Przepraszamy za niedogodności, ale wydaje się, że Google i jego tłumacz bardzo dziwnie tłumaczą bloki kodu dla dowolnego języka programowania. Chociaż naprawiamy wszystkie bloki kodu dla przetłumaczonych stron podręcznika, sugerujemy otworzyć bilet do Tłumacza Google w celu przetłumaczenia bloków kodu, które nie są przeznaczone do przetłumaczenia, i ustaw język systemu na angielski, jeśli to mówisz.
-Przeładowuje mody.
-Mody ponownie załadowane.
-Witaj w jądrze!
-Zalogowano pomyślnie jako <użytkownik>
-MOTD / MAL jest poprawny, ale typ komunikatu jest niepoprawny. Zakładając MOTD ...
-Próbowałem odczytać MOTD / MAL, który jest niepoprawnego typu komunikatu.
-Utrzymując stabilne połączenie, pobiera {0} do {1} ...
-Pobieranie zostało zakończone.
-Pobieranie nie powiodło się w próbie {0}: {1}
-Użyj „ftp”, jeśli zamierzasz pobierać pliki z serwera FTP.
-Pobiera plik do bieżącego katalogu roboczego
-Odłącz urządzenie debugujące
-Wyświetla listę podłączonych urządzeń do debugowania
-Nie znaleziono urządzenia debugującego {0}.
-Urządzenie {0} zostało odłączone.
-Błąd połączenia: {0}
-Debuguj nasłuchiwanie na wszystkich adresach przy użyciu portu {0}.
-Nie podano argumentów. Wskazówka: Podaj wiele argumentów oddzielonych spacjami
-Alias już znaleziony: {0}
-Dziennik debugowania został usunięty. Wszystkie podłączone urządzenia debugujące mogą nadal wyświetlać wiadomości.
-Usunięcie dziennika debugowania nie powiodło się: {0}
-Zmiana katalogu nie powiodła się: {0}
-Nazwa użytkownika jest niepoprawna
+> Wyst?pi? b??d podczas pr?by uzyskania informacji o ramce. {0}: {1}
+Prze?adowuje mody.
+Mody ponownie za?adowane.
+Witaj w j?drze!
+Zalogowano pomy?lnie jako <u?ytkownik>
+MOTD / MAL jest poprawny, ale typ komunikatu jest niepoprawny. Zak?adaj?c MOTD ...
+Pr?bowa?em odczyta? MOTD / MAL, kt?ry jest niepoprawnego typu komunikatu.
+Pobieranie zosta?o zako?czone.
+Pobieranie nie powiod?o si? w pr?bie {0}: {1}
+U?yj �ftp�, je?li zamierzasz pobiera? pliki z serwera FTP.
+Pobiera plik do bie??cego katalogu roboczego
+Od??cz urz?dzenie debuguj?ce
+Wy?wietla list? pod??czonych urz?dze? do debugowania
+Nie znaleziono urz?dzenia debuguj?cego {0}.
+Urz?dzenie {0} zosta?o od??czone.
+B??d po??czenia: {0}
+Debuguj nas?uchiwanie na wszystkich adresach przy u?yciu portu {0}.
+Nie podano argument?w. Wskaz?wka: Podaj wiele argument?w oddzielonych spacjami
+Alias ju? znaleziony: {0}
+Dziennik debugowania zosta? usuni?ty. Wszystkie pod??czone urz?dzenia debuguj?ce mog? nadal wy?wietla? wiadomo?ci.
+Usuni?cie dziennika debugowania nie powiod?o si?: {0}
+Zmiana katalogu nie powiod?a si?: {0}
 Podaj adres
-Nie można usunąć katalogu: {0}
-Strefa czasowa jest niepoprawnie określona.
-Nieprawidłowy wybór profilu.
-Próbuję połączyć się z {0} z profilem {1} ...
-Błąd w testowaniu jednostkowym: {0}
-Nie znaleziono polecenia {0}. Zobacz polecenie „help”, aby uzyskać listę poleceń.
-Nie można pobrać właściwości IPv6 dla adaptera {0}. Kontynuacja ...
+Nie mo?na usun?? katalogu: {0}
+Strefa czasowa jest niepoprawnie okre?lona.
+Nieprawid?owy wyb?r profilu.
+Pr?buj? po??czy? si? z {0} z profilem {1} ...
+Nie znaleziono polecenia {0}. Zobacz polecenie �help�, aby uzyska? list? polece?.
+Nie mo?na pobra? w?a?ciwo?ci IPv6 dla adaptera {0}. Kontynuacja ...
 Informacje o IPv4:
 Informacje o IPv6:
-Adapter {0} nie obsługuje IPv6. Kontynuacja ...
-Adapter {0} nie obsługuje IPv4. Sonda nie powiodła się.
-Wygląda na to, że korzystałeś z wersji rozwojowej jądra. Chociaż widać aspekty, jest często aktualizowane i może wprowadzać błędy. Zaleca się pozostanie w stabilnej wersji.
-Wybrany język zawiera dwa warianty. Wybierz jeden:
+Adapter {0} nie obs?uguje IPv6. Kontynuacja ...
+Adapter {0} nie obs?uguje IPv4. Sonda nie powiod?a si?.
+Wygl?da na to, ?e korzysta?e? z wersji rozwojowej j?dra. Chocia? wida? aspekty, jest cz?sto aktualizowane i mo?e wprowadza? b??dy. Zaleca si? pozostanie w stabilnej wersji.
+Wybrany j?zyk zawiera dwa warianty. Wybierz jeden:
 1. Transliterowane
-2. Przetłumaczone
-Wybierz swój wybór:
-Nieprawidłowy wybór. Spróbuj ponownie.
-Nie masz uprawnień, aby ustawić bieżący katalog na {0}: {1}
-Licencja {0} nie powiodła się
-Podana ścieżka jest za długa.
-Nie masz uprawnień do umieszczenia na liście w {0}: {1}
-Błąd podczas sprawdzania procesora: {0}
-Błąd podczas sprawdzania pamięci RAM: {0}
-Błąd podczas sprawdzania dysku twardego: {0}
-CPU: OSTRZEŻENIE: SSE2 będzie wymagane w przyszłych zatwierdzeniach programistycznych.
-Zbieranie informacji o zrzutach uległo awarii podczas próby uzyskania informacji o {0}: {1}
-Błąd podczas próby uzyskania daty kompilacji zestawu {0}: {1}
-Błąd podczas próby ustawienia MOTD / MAL: {0}
-Błąd podczas próby uzyskania MOTD / MAL: {0}
-Wystąpił wyjątek zerowy w {0}: {1}
-Wystąpił wyjątek odniesienia zerowego w {0}: {1} - ślad stosu:
-Błąd podczas próby uruchomienia wygaszacza ekranu z powodu nieprawidłowej operacji.
-Ponowne ładowanie nie jest dozwolone w trybie awaryjnym.
-Parsowanie modów jest niedozwolone w trybie awaryjnym.
-Analizuj cały katalog pod kątem rozmiaru lub tylko pliki w bieżącym.
-Wyświetla listę wszystkich podłączonych urządzeń debugujących.
-Błąd podczas próby ustawienia trybu analizy. Sprawdź wartość i spróbuj ponownie. Jeśli jest to poprawne, zobacz śledzenie stosu, gdy debugowanie jądra jest włączone.
-Ustawiono pomyślnie.
-Ścieżka nie jest ani plikiem, ani katalogiem.
-Tworzy kolejną kopię pliku w innym katalogu lub nazwie.
+2. Przet?umaczone
+Wybierz sw?j wyb?r:
+Nieprawid?owy wyb?r. Spr?buj ponownie.
+Nie masz uprawnie?, aby ustawi? bie??cy katalog na {0}: {1}
+Podana ?cie?ka jest za d?uga.
+CPU: OSTRZE?ENIE: SSE2 b?dzie wymagane w przysz?ych zatwierdzeniach programistycznych.
+Zbieranie informacji o zrzutach uleg?o awarii podczas pr?by uzyskania informacji o {0}: {1}
+B??d podczas pr?by uzyskania daty kompilacji zestawu {0}: {1}
+B??d podczas pr?by ustawienia MOTD / MAL: {0}
+B??d podczas pr?by uzyskania MOTD / MAL: {0}
+B??d podczas pr?by uruchomienia wygaszacza ekranu z powodu nieprawid?owej operacji.
+Ponowne ?adowanie nie jest dozwolone w trybie awaryjnym.
+Parsowanie mod?w jest niedozwolone w trybie awaryjnym.
+Wy?wietla list? wszystkich pod??czonych urz?dze? debuguj?cych.
+B??d podczas pr?by ustawienia trybu analizy. Sprawd? warto?? i spr?buj ponownie. Je?li jest to poprawne, zobacz ?ledzenie stosu, gdy debugowanie j?dra jest w??czone.
+?cie?ka nie jest ani plikiem, ani katalogiem.
+Tworzy kolejn? kopi? pliku w innym katalogu lub nazwie.
 Przenosi plik do innego katalogu
-Aby skopiować pliki do innego katalogu lub innej nazwy
-Aby przenieść pliki do innego katalogu
+Aby skopiowa? pliki do innego katalogu lub innej nazwy
+Aby przenie?? pliki do innego katalogu
 Dopasuj {0} ({1}): {2}
 Dopasuj {0}: {1}
-Czas spędzony: {0} milisekund
-Producent: {0}
-Model: {0}
-Pojemność: {0} ({1}, {2}, {3})
-Typ interfejsu: {0}
-Numer napędu: {0}
-Flaga rozruchowa: {0} ({1})
-Partycja fizyczna: {0}
-Flaga podstawowa: {0}
-Rozmiar: {0} GB
-Partycja logiczna: {0}
-Skompresowany: {0}
+Czas sp?dzony: {0} milisekund
 Nazwa: {0}
-System plików: {0}
-Pojemność: {0} GB bezpłatnie z {1} GB
-Wyświetlanie wszystkich partycji logicznych na wszystkich dyskach.
-Wyświetla wszystkie sondowane dyski.
-Wyświetla wszystkie sondowane partycje na określonym dysku (i wszystkie partycje logiczne na wszystkich dyskach).
-Oblicza sumy plików.
-Zabierze Cię na naszą GitHub Wiki.
+Oblicza sumy plik?w.
+Zabierze Ci? na nasz? GitHub Wiki.
 Niepoprawny algorytm szyfrowania.
-Włącza lub wyłącza zdalne debugowanie.
-Inicjowanie systemu plików ...
-Pobiera zainstalowane głosy
-Ustawia domyślny głos
-Mówi Twój ciąg przy użyciu domyślnego głosu
-Głos {0}: {1} ({2})
-Niepoprawny głos.
-Zestaw głosowy
-Sprawdź, czy potrafisz poprawnie przeliterować słowa na czas
-Sprawdź, czy potrafisz rozwiązać równania matematyczne na czas
-Odpowiadaj na komentarze miłości i nienawiści.
-Jeśli ktoś skomentował ten film:
-Jak byś zareagował?
-Nieprawidłowy wybór. Przechodzę do następnego komentarza ...
-Właśnie zgłosiłeś komentarz o miłości!
-Właśnie odpowiedziałeś na komentarz do nienawiści!
-Świetny! Komentarz {0} zostanie z tego powodu usunięty.
-Świetny! {0} doceni twoje podziękowania.
-Napisz „GetMeOut”, aby wyjść.
+W??cza lub wy??cza zdalne debugowanie.
+Sprawd?, czy potrafisz poprawnie przeliterowa? s?owa na czas
+Sprawd?, czy potrafisz rozwi?za? r?wnania matematyczne na czas
+Odpowiadaj na komentarze mi?o?ci i nienawi?ci.
+Je?li kto? skomentowa? ten film:
+Jak by? zareagowa??
+Nieprawid?owy wyb?r. Przechodz? do nast?pnego komentarza ...
+W?a?nie zg?osi?e? komentarz o mi?o?ci!
+W?a?nie odpowiedzia?e? na komentarz do nienawi?ci!
+?wietny! Komentarz {0} zostanie z tego powodu usuni?ty.
+?wietny! {0} doceni twoje podzi?kowania.
 Perfekcyjnie napisane!
-Błędnie napisane.
-Rozwiązane idealnie!
-Rozwiązany niepoprawnie.
-Pobrano {0} MB z {1} MB.
-RPC już działa.
-RPC nasłuchuje na wszystkich adresach przy użyciu portu {0}.
+B??dnie napisane.
+Rozwi?zane idealnie!
+Rozwi?zany niepoprawnie.
+RPC ju? dzia?a.
+RPC nas?uchuje na wszystkich adresach przy u?yciu portu {0}.
 Uruchamianie RPC ...
-Łączy się z serwerem SSH.
-Wpisz hasło dla {0}:
+??czy si? z serwerem SSH.
+Wpisz has?o dla {0}:
 SSH Disconnected.
-Ładuje plik syntezatora i odtwarza go.
-Skryptowany plik {0} nie istnieje.
-Plik nie jest skryptowym plikiem syntezatora.
-Nie udało się sondować linii syntezatora.
-Podano pusty ciąg
-Nie można ustawić strony kodowej. Język może być wyświetlany niepoprawnie.
-Debugowanie nie jest włączone.
-{0} nie jest już ustawiony na domyślny wygaszacz ekranu.
-Dzięki! To jest interesujące.
-W tym celu wszyscy będą wspierać Twój film.
-W e-mailu dałem ci specjalny plik do następnego filmu.
-Słuchajcie, hejterzy, on próbuje nam pomóc, a nie przekrętowi.
-Nie wiem, jak bardzo ja i moi przyjaciele dziękuję za ten film.
-Kocham cię za ten film.
-Idź dalej, nie przestawaj.
-Pomogę Ci dotrzeć do subskrybentów 1M!
+Nie mo?na ustawi? strony kodowej. J?zyk mo?e by? wy?wietlany niepoprawnie.
+Debugowanie nie jest w??czone.
+{0} nie jest ju? ustawiony na domy?lny wygaszacz ekranu.
+Dzi?ki! To jest interesuj?ce.
+W tym celu wszyscy b?d? wspiera? Tw?j film.
+W e-mailu da?em ci specjalny plik do nast?pnego filmu.
+S?uchajcie, hejterzy, on pr?buje nam pom?c, a nie przekr?towi.
+Nie wiem, jak bardzo ja i moi przyjaciele dzi?kuj? za ten film.
+Kocham ci? za ten film.
+Id? dalej, nie przestawaj.
+Pomog? Ci dotrze? do subskrybent?w 1M!
 Moi przyjaciele naprawili komputer przez ciebie.
-Niesamowity dowcip! Wyłączam komputer mojego wroga.
-Do hejterów: ZATRZYMAJ SIĘ NA NIM
-Do hejterów: GET TO WORK
-Nikt tego teraz nie zauważy dzięki przewodnikowi ukrywania obiektu
-Przestanę oglądać twoje filmy. Abonent utracił.
+Niesamowity dowcip! Wy??czam komputer mojego wroga.
+Do hejter?w: ZATRZYMAJ SI? NA NIM
+Do hejter?w: GET TO WORK
+Nikt tego teraz nie zauwa?y dzi?ki przewodnikowi ukrywania obiektu
+Przestan? ogl?da? twoje filmy. Abonent utraci?.
 Co to jest? To nie jest jasne.
 Ten film jest najgorszy!
-Wszyscy zgłaszają ten film!
-Moi przyjaciele są na ciebie wściekli!
-Kochankowie będą cię teraz za to nienawidzić.
-Twój przyjaciel będzie cię za to nienawidził.
-Ten dowcip zmusił mnie do rezygnacji z subskrypcji.
+Wszyscy zg?aszaj? ten film!
+Moi przyjaciele s? na ciebie w?ciekli!
+Kochankowie b?d? ci? teraz za to nienawidzi?.
+Tw?j przyjaciel b?dzie ci? za to nienawidzi?.
+Ten dowcip zmusi? mnie do rezygnacji z subskrypcji.
 Misja nieudana, Szacunek -, Subskrybent -
-Przestań robić tego rodzaju wideo !!!
-Wróć do pracy, twoje filmy są najgorsze!
-Przesądzamy o tym filmie.
-Aliasing {0} do {1} jest zabroniony.
-Błąd podczas próby odrzucenia powiadomienia: {0}
+Przesta? robi? tego rodzaju wideo !!!
+Wr?? do pracy, twoje filmy s? najgorsze!
+Przes?dzamy o tym filmie.
 Pokazuje wszystkie otrzymane powiadomienia
 Odrzuca powiadomienie
-Powiadomienie zostało pomyślnie odrzucone.
-Pakiety (przychodzące):
-Pakiety (wychodzące):
-Błędy w odebranych pakietach:
-Ogólne właściwości IPv6
-Ogólne właściwości IPv4
+Powiadomienie zosta?o pomy?lnie odrzucone.
+Pakiety (przychodz?ce):
+Pakiety (wychodz?ce):
+B??dy w odebranych pakietach:
+Og?lne w?a?ciwo?ci IPv6
+Og?lne w?a?ciwo?ci IPv4
 Zdalnie wykonuje polecenie na zdalnym komputerze
 - Etap 1: Inicjalizacja systemu
-- Etap 2: Wykrywanie sprzętu
-- Etap 2: Wewnętrzne zarządzanie nazwą użytkownika
-- Etap 3: Wykrywanie modów i wygaszaczy ekranu
-- Etap 4: wywóz śmieci
-- Etap 4: Zaloguj się
-Przed wyrzucaniem elementów bezużytecznych: {0} bajtów
-Po wyrzuceniu elementów bezużytecznych: {0} bajtów
-Błąd uruchamiania RPC: {0}
-Wygląda na to, że korzystasz z wersji kandydującej do wydania. Zaleca się pozostanie w stabilnej wersji.
-Wygląda na to, że populacja systemu plików trwa zbyt długo.
+- Etap 2: Wykrywanie sprz?tu
+- Etap 3: Wykrywanie mod?w i wygaszaczy ekranu
+- Etap 4: Zaloguj si?
+Wygl?da na to, ?e korzystasz z wersji kandyduj?cej do wydania. Zaleca si? pozostanie w stabilnej wersji.
 Niepoprawny typ {0}.
-Pojemność: {0}
-Liczba partycji: {0}
 Rozmiar: {0}
-Użyto: {0}
-Katalog {0} już istnieje.
-Błąd podczas próby połączenia z {0}: Przekroczono limit czasu połączenia lub utracono połączenie
-Kalkulator do obliczania wyrażeń.
-Błąd w obliczeniach.
-Pojemność: {0} GB ({1}, {2}, {3})
-Wygląda na to, że korzystasz z wersji zbliżającej się do wydania. Chociaż korzystanie z niego jest teraz bezpieczniejsze, zaleca się pozostanie w wersji stabilnej.
+Katalog {0} ju? istnieje.
+B??d podczas pr?by po??czenia z {0}: Przekroczono limit czasu po??czenia lub utracono po??czenie
+Kalkulator do obliczania wyra?e?.
+B??d w obliczeniach.
+Wygl?da na to, ?e korzystasz z wersji zbli?aj?cej si? do wydania. Chocia? korzystanie z niego jest teraz bezpieczniejsze, zaleca si? pozostanie w wersji stabilnej.
 Aktualizacja systemu
 Sprawdzanie aktualizacji systemu ...
-Znaleziono nową wersję: 
-Możesz pobrać go z: 
-Nie można sprawdzić aktualizacji: {0}
-Nie znaleziono dziennika debugowania
-Brak ostatnich powiadomień
-Wyszukuje określony ciąg w podanym pliku
-Oblicza sumy plików w określonym katalogu.
-Wyświetla wszystkie wiadomości e-mail określonego użytkownika.
-Wpisz nazwę użytkownika lub adres e-mail:
-Wprowadź hasło:
-Wprowadź adres i port serwera (<adres> lub <adres>:[port]):
-Błąd podczas łączenia z {0}: {1}
-Łączę z {0} ...
+Znaleziono now? wersj?: 
+Mo?esz pobra? go z: 
+Brak ostatnich powiadomie?
+Wyszukuje okre?lony ci?g w podanym pliku
+Oblicza sumy plik?w w okre?lonym katalogu.
+Wy?wietla wszystkie wiadomo?ci e-mail okre?lonego u?ytkownika.
+Wpisz nazw? u?ytkownika lub adres e-mail:
+Wprowad? has?o:
+B??d podczas ??czenia z {0}: {1}
+??cz? z {0} ...
 Uwierzytelnianie ...
-Wychodzi z powłoki IMAP
-Lista poleceń
-Pobiera wiadomości i wyświetla je
-Otwiera wiadomość
-Strona nie może być ujemna ani zero.
-Strona nie jest wartością liczbową.
-Numer wiadomości nie może być ujemny ani zero.
-Numer wiadomości nie jest wartością liczbową.
+Wychodzi z pow?oki IMAP
+Lista polece?
+Pobiera wiadomo?ci i wy?wietla je
+Otwiera wiadomo??
+Strona nie mo?e by? ujemna ani zero.
+Strona nie jest warto?ci? liczbow?.
+Numer wiadomo?ci nie mo?e by? ujemny ani zero.
+Numer wiadomo?ci nie jest warto?ci? liczbow?.
 - Od {0}
 - Do {0}
-- Wysłano o {0} w {1}
-Określona wiadomość nie została znaleziona.
-Nie można uruchomić zdalnego debugowania: {0}
-Błąd podczas wykonywania polecenia IMAP: {0}
-Przygotowywanie profili ... Może to potrwać kilka minut ...
-Nazwa hosta, nazwa użytkownika, typ danych, kodowanie, szyfrowanie, protokoły
-Błąd podczas próby wykonania skryptu: {0}
+- Wys?ano o {0} w {1}
+Okre?lona wiadomo?? nie zosta?a znaleziona.
+Nie mo?na uruchomi? zdalnego debugowania: {0}
+Przygotowywanie profili ... Mo?e to potrwa? kilka minut ...
+Nazwa hosta, nazwa u?ytkownika, typ danych, kodowanie, szyfrowanie, protoko?y
+B??d podczas pr?by wykonania skryptu: {0}
 Zapisuje tekst w konsoli
-Dokonuje wyborów użytkownika
-Sygnał dźwiękowy w 'n' Hz i czas w 'n' milisekundach
-gdzie <$zmienna> to dowolna zmienna, która zostanie użyta do przechowywania odpowiedzi
-Częstotliwość musi być liczbowa. Jeśli jest liczbowy, upewnij się, że jest >= 37 i <= 32767.
-Czas musi być liczbowy.
-gdzie <odpowiedzi> to jednoliterowe odpowiedzi na pytanie rozdzielone ukośnikami
-Błąd podczas próby połączenia z serwerem SSH: {0}
-Pusty MOTD po zalogowaniu.
-Pozwala użytkownikowi wprowadzić dane wejściowe
-Zmienia bieżący katalog poczty
-Nie można otworzyć folderu poczty {0}: {1}
-Wyświetla katalogi w twoim adresie e-mail
-Wykorzystuje informacje z szybkiego wybierania, aby szybko łączyć się z dowolną siecią
-Wybierz adres, z którym chcesz się połączyć:
-Wybór jest poza zakresem. Wybierz od 1 do {0}. Spróbuj ponownie.
-Wybór nie jest liczbą. Spróbuj ponownie.
-Podczas weryfikacji certyfikatu występują błędy certyfikatu. Może to być pierwsze połączenie z serwerem lub ważność certyfikatu. Oto błąd:
-Czy na pewno chcesz się połączyć?
-Nieprawidłowa odpowiedź. Proszę spróbuj ponownie.
-Szybkie wybieranie jest puste. Połącz się z serwerem, aby dodać do niego adres.
-Szybkie wybieranie nie istnieje. Połącz się z serwerem, aby dodać do niego adres.
-Wprowadź adres i port serwera IMAP (<adres> lub <address>: [port]):
-Wprowadź adres i port serwera SMTP (<adres> lub <address>: [port]):
-Prosi o wypełnienie wymaganych pól, aby wysłać wiadomość na adres
-Wysyła wiadomość na adres
-Wprowadź adres e-mail odbiorcy:
+Dokonuje wybor?w u?ytkownika
+Sygna? d?wi?kowy w 'n' Hz i czas w 'n' milisekundach
+gdzie <$zmienna> to dowolna zmienna, kt?ra zostanie u?yta do przechowywania odpowiedzi
+Cz?stotliwo?? musi by? liczbowa. Je?li jest liczbowy, upewnij si?, ?e jest >= 37 i <= 32767.
+Czas musi by? liczbowy.
+gdzie <odpowiedzi> to jednoliterowe odpowiedzi na pytanie rozdzielone uko?nikami
+B??d podczas pr?by po??czenia z serwerem SSH: {0}
+Pozwala u?ytkownikowi wprowadzi? dane wej?ciowe
+Zmienia bie??cy katalog poczty
+Nie mo?na otworzy? folderu poczty {0}: {1}
+Wy?wietla katalogi w twoim adresie e-mail
+Wykorzystuje informacje z szybkiego wybierania, aby szybko ??czy? si? z dowoln? sieci?
+Wybierz adres, z kt?rym chcesz si? po??czy?:
+Wyb?r jest poza zakresem. Wybierz od 1 do {0}. Spr?buj ponownie.
+Wyb?r nie jest liczb?. Spr?buj ponownie.
+Podczas weryfikacji certyfikatu wyst?puj? b??dy certyfikatu. Mo?e to by? pierwsze po??czenie z serwerem lub wa?no?? certyfikatu. Oto b??d:
+Czy na pewno chcesz si? po??czy??
+Nieprawid?owa odpowied?. Prosz? spr?buj ponownie.
+Szybkie wybieranie jest puste. Po??cz si? z serwerem, aby doda? do niego adres.
+Szybkie wybieranie nie istnieje. Po??cz si? z serwerem, aby doda? do niego adres.
+Wprowad? adres i port serwera IMAP (<adres> lub <address>: [port]):
+Wprowad? adres i port serwera SMTP (<adres> lub <address>: [port]):
+Prosi o wype?nienie wymaganych p?l, aby wys?a? wiadomo?? na adres
+Wysy?a wiadomo?? na adres
+Wprowad? adres e-mail odbiorcy:
 Wpisz temat:
-Wpisz swoją wiadomość poniżej. Wpisz „EOF”, aby potwierdzić.
-Wysyłanie wiadomości...
-Wiadomość wysłana.
-Błąd podczas wysyłania wiadomości: {0}
-Niepoprawny adres email. Upewnij się, że adres został wpisany poprawnie i pasuje do formatu z pokazanego przykładu:
-Usuwa wiadomość
-Usuwa wszystkie wiadomości od odbiorcy
-Wiadomość {0} od {1} została usunięta z {2}. Pozostało {3} wiadomości do przeanalizowania.
-Wiadomość {0} od {1} została usunięta ze skrzynki odbiorczej. Pozostało {2} wiadomości do przeanalizowania.
+Wpisz swoj? wiadomo?? poni?ej. Wpisz �EOF�, aby potwierdzi?.
+Wysy?anie wiadomo?ci...
+Wiadomo?? wys?ana.
+Niepoprawny adres email. Upewnij si?, ?e adres zosta? wpisany poprawnie i pasuje do formatu z pokazanego przyk?adu:
+Usuwa wiadomo??
+Usuwa wszystkie wiadomo?ci od odbiorcy
+Wiadomo?? {0} od {1} zosta?a usuni?ta z {2}. Pozosta?o {3} wiadomo?ci do przeanalizowania.
+Wiadomo?? {0} od {1} zosta?a usuni?ta ze skrzynki odbiorczej. Pozosta?o {2} wiadomo?ci do przeanalizowania.
 Edytuje plik tekstowy
 Tworzy nowy plik
-Plik już istnieje.
-Błąd podczas próby utworzenia pliku: {0}
-Nie udało się otworzyć pliku. Wychodzę z powłoki ...
+Plik ju? istnieje.
+B??d podczas pr?by utworzenia pliku: {0}
+Nie uda?o si? otworzy? pliku. Wychodz? z pow?oki ...
 Nie znaleziono podanego polecenia edytora tekstu.
-Wyświetla dostępne polecenia
+Wy?wietla dost?pne polecenia
 Wychodzi z edytora tekstu i zapisuje niezapisane zmiany
-Wyświetla zawartość pliku z numerami wierszy na konsoli
-Dodaje nową linię z tekstem na końcu pliku
-Usuwa określony numer wiersza
-Zastępuje słowo lub frazę innym
-Usuwa słowo lub frazę z numeru wiersza
-Usuwa znak z numeru znaku w określonej linii
-Usunięta linia.
-Określony numer wiersza {0} nie jest prawidłowym numerem.
-Wymagane argumenty nie są przekazywane do polecenia {0}
-Błąd podczas próby uruchomienia polecenia: {0}
-Działa w trybie awaryjnym. Pomijanie etapu ...
+Wy?wietla zawarto?? pliku z numerami wierszy na konsoli
+Dodaje now? lini? z tekstem na ko?cu pliku
+Usuwa okre?lony numer wiersza
+Zast?puje s?owo lub fraz? innym
+Usuwa s?owo lub fraz? z numeru wiersza
+Usuwa znak z numeru znaku w okre?lonej linii
+Usuni?ta linia.
+Okre?lony numer wiersza {0} nie jest prawid?owym numerem.
+Wymagane argumenty nie s? przekazywane do polecenia {0}
+B??d podczas pr?by uruchomienia polecenia: {0}
+Dzia?a w trybie awaryjnym. Pomijanie etapu ...
 >> Zdalne debugowanie i czat: wersja
->> Twój adres to {0}.
->> Nazywasz się {0}.
-Nie znaleziono polecenia {0}. Użyj „/help”, aby wyświetlić listę.
-Indeks {0} jest nieprawidłowy. Istnieje {1} śladów stosu. Indeks jest liczony od zera, więc spróbuj odjąć go o 1.
-Brak śladu stosu
-Pokazuje ostatni ślad stosu w przypadku wyjątku
-Pokazuje aktualną nazwę użytkownika w sesji
-Odłącza Cię od debugera
-Odblokuj urządzenie do debugowania według adresu IP
-Zablokuj urządzenie do debugowania według adresu IP
-{0} może teraz ponownie dołączyć do zdalnego debugowania.
+>> Tw?j adres to {0}.
+>> Nazywasz si? {0}.
+Nie znaleziono polecenia {0}. U?yj �/help�, aby wy?wietli? list?.
+Indeks {0} jest nieprawid?owy. Istnieje {1} ?lad?w stosu. Indeks jest liczony od zera, wi?c spr?buj odj?? go o 1.
+Brak ?ladu stosu
+Pokazuje ostatni ?lad stosu w przypadku wyj?tku
+Pokazuje aktualn? nazw? u?ytkownika w sesji
+Od??cza Ci? od debugera
+Odblokuj urz?dzenie do debugowania wed?ug adresu IP
+Zablokuj urz?dzenie do debugowania wed?ug adresu IP
+{0} mo?e teraz ponownie do??czy? do zdalnego debugowania.
 Numer {0} nie jest jeszcze zablokowany.
-Błąd podczas ładowania ustawień
-Wystąpił błąd podczas ładowania ustawień. Konieczne może być sprawdzenie pliku ustawień.
-- Etap 2: Wykrywanie modów i wygaszaczy ekranu
-- Etap 3: Zaloguj się
-Wybierz sekcję:
-Wybierz opcję:
-Ustawienia główne...
-Ustawienia sprzętu ...
+B??d podczas ?adowania ustawie?
+Wyst?pi? b??d podczas ?adowania ustawie?. Konieczne mo?e by? sprawdzenie pliku ustawie?.
+Wybierz sekcj?:
+Ustawienia g??wne...
+Ustawienia sprz?tu ...
 Ustawienia logowania ...
-Ustawienia powłoki ...
+Ustawienia pow?oki ...
 Ustawienia sieci...
-Różne ustawienia...
+R??ne ustawienia...
 Zapisz ustawienia
-Wyjście
-Określona opcja {0} jest nieprawidłowa.
-Odpowiedź musi być liczbowa.
+Wyj?cie
+Okre?lona opcja {0} jest nieprawid?owa.
+Odpowied? musi by? liczbowa.
 Monituj o argumenty podczas rozruchu
 Wyzwalacz trybu konserwacji
-Zmień hasło roota ...
-Sprawdź aktualizacje podczas uruchamiania
+Zmie? has?o roota ...
+Sprawd? aktualizacje podczas uruchamiania
 Cicha sonda
-Gniazda RAM sondy
-Pokaż MOTD po zalogowaniu
-Wyczyść ekran po zalogowaniu
-Pokaż dostępne nazwy użytkowników
+Poka? MOTD po zalogowaniu
+Wyczy?? ekran po zalogowaniu
+Poka? dost?pne nazwy u?ytkownik?w
 Kolorowa skorupa
 Uproszczone polecenie pomocy
 Port debugowania
-Domyślny prefiks pseudonimu zdalnego debugowania
-Pobierz czasy ponownych prób
-Zaloguj nazwę użytkownika FTP
+Pobierz czasy ponownych pr?b
+Zaloguj nazw? u?ytkownika FTP
 Zaloguj adres IP FTP
-Zwróć tylko pierwszy profil FTP
-Pokaż godzinę / datę w prawym górnym rogu
+Zwr?? tylko pierwszy profil FTP
+Poka? godzin? / dat? w prawym g?rnym rogu
 Limit czasu wygaszacza ekranu w ms
-Przydział rozmiaru debugowania w bajtach
+Przydzia? rozmiaru debugowania w bajtach
 Tryb analizy rozmiaru
 Markiza przy uruchomieniu
-Długi czas i data
-Pokaż ukryte pliki
-Wprowadzono nieprawidłową sekcję. Wróć, proszę.
-Wróć...
-Włączyć
-Wyłączyć
-Wprowadzono nieprawidłowy numer klucza. Wróć, proszę.
-Wpisz hasło roota, które chcesz ustawić. Nie martw się; hasła są wyświetlane jako gwiazdki.
-Włącz opcję „Zmień hasło roota”, aby użyć tej opcji. Wróć, proszę.
-Zmienić hasło roota?
-Ustaw hasło roota ...
-Napisz port zdalnego debugera. Musi być numeryczny i nie może być już używany. W przeciwnym razie zdalny debugger nie otworzy portu.
-Napisz domyślny prefiks pseudonimu zdalnego debugowania.
-Napisz, ile razy polecenie „„ get ”” powinno ponawiać nieudane pobieranie. Musi być liczbą.
-Napisz, kiedy uruchomić wygaszacz ekranu po określonych milisekundach. Musi być liczbą.
-Napisz, ile bajtów może przechowywać dziennik debugowania. Musi być liczbą.
-Odpowiedź nie może być przecząca.
-Odpowiedź jest nieprawidłowa. Sprawdź, czy odpowiedź jest numeryczna w przypadku wpisów konfiguracji, które wymagają liczb jako odpowiedzi.
-Zmienna {0} nie została znaleziona w żadnym z modułów.
-Zmienia konfigurację jądra
+D?ugi czas i data
+Poka? ukryte pliki
+Wprowadzono nieprawid?ow? sekcj?. Wr??, prosz?.
+Wr??...
+W??czy?
+Wy??czy?
+Wprowadzono nieprawid?owy numer klucza. Wr??, prosz?.
+Wpisz has?o roota, kt?re chcesz ustawi?. Nie martw si?; has?a s? wy?wietlane jako gwiazdki.
+W??cz opcj? �Zmie? has?o roota�, aby u?y? tej opcji. Wr??, prosz?.
+Zmieni? has?o roota?
+Ustaw has?o roota ...
+Napisz port zdalnego debugera. Musi by? numeryczny i nie mo?e by? ju? u?ywany. W przeciwnym razie zdalny debugger nie otworzy portu.
+Napisz, ile razy polecenie �� get �� powinno ponawia? nieudane pobieranie. Musi by? liczb?.
+Napisz, kiedy uruchomi? wygaszacz ekranu po okre?lonych milisekundach. Musi by? liczb?.
+Napisz, ile bajt?w mo?e przechowywa? dziennik debugowania. Musi by? liczb?.
+Odpowied? nie mo?e by? przecz?ca.
+Odpowied? jest nieprawid?owa. Sprawd?, czy odpowied? jest numeryczna w przypadku wpis?w konfiguracji, kt?re wymagaj? liczb jako odpowiedzi.
+Zmienna {0} nie zosta?a znaleziona w ?adnym z modu??w.
+Zmienia konfiguracj? j?dra
 Ustawienia wygaszacza ekranu ...
-Aktywuj 255 kolorów
-Chcesz pozostać w kontakcie?
-Nieprawidłowy wybór. Zakładając, że nie ...
-Nie wykryto żadnych modów. Pomijanie etapu ...
-Zmień kulturę podczas zmiany języka
-Wyświetlany tekst
-Wpisz dowolny tekst, który chcesz wyświetlić. Krótszy znaczy lepszy.
-Nie udało się przesłać {0}
-Pobieranie pliku {0} nie powiodło się: {1}
-Błąd podczas wykonywania polecenia zdalnego debugowania {0}: {1}
-Dodaje użytkowników
-Dodaje aliasy do poleceń
-Wprowadza argumenty do jądra (wymagane ponowne uruchomienie)
-Zmienia nazwę hosta
+Aktywuj 255 kolor?w
+Chcesz pozosta? w kontakcie?
+Nieprawid?owy wyb?r. Zak?adaj?c, ?e nie ...
+Zmie? kultur? podczas zmiany j?zyka
+Wy?wietlany tekst
+Wpisz dowolny tekst, kt?ry chcesz wy?wietli?. Kr?tszy znaczy lepszy.
+Nie uda?o si? przes?a? {0}
+B??d podczas wykonywania polecenia zdalnego debugowania {0}: {1}
+Dodaje u?ytkownik?w
+Dodaje aliasy do polece?
+Wprowadza argumenty do j?dra (wymagane ponowne uruchomienie)
+Zmienia nazw? hosta
 Zmienia MAL, MOTD po zalogowaniu
-Zmienia MOTD, przesłanie dnia
-Zmienia nazwę użytkownika
-Wyświetla dzienniki debugowania
-Zarządzaj uprawnieniami użytkowników
-Ponownie ładuje plik wygaszacza ekranu w KSMods
-Usuwa użytkownika z listy
-Usunięto alias {0} pomyślnie.
-Nie udało się sprawdzić aktualizacji.
-Na liście nie ma więcej użytkowników.
-Nie udało się ustawić języka.
-Błąd podczas próby odrzucenia powiadomienia.
-Wykryto aktualizację do {0}. Aktualizuję konfigurację ...
-usrmgr: nie udało się utworzyć nazwy użytkownika {0}: {1}
-Nie udało się zmienić nazwy użytkownika. {0}
-Jedna z list uprawnień nie zawiera nazwy użytkownika {0}.
-Nie udało się załadować uprawnień z pliku: {0}
-Nie udało się zmienić nazwy hosta: {0}
-Użytkownik nie znaleziony
-Nie udało się zmienić hasła dla nazwy użytkownika: {0}
-Nie udało się skopiować pliku lub katalogu: {0}
-Nie udało się przenieść pliku lub katalogu: {0}
-Nie można znaleźć pliku pasującego do ciągu „{0}”: {1}
-Pobieranie pliku {0} nie powiodło się.
-Nie udało się wyświetlić plików zdalnych: {0}
-Wprowadź plik lub folder do usunięcia. Aby móc usunąć, musisz mieć uprawnienia administracyjne na swoim koncie.
-Czy na pewno chcesz usunąć {0} <y / n>?
+Zmienia MOTD, przes?anie dnia
+Zmienia nazw? u?ytkownika
+Zarz?dzaj uprawnieniami u?ytkownik?w
+Ponownie ?aduje plik wygaszacza ekranu w KSMods
+Usuwa u?ytkownika z listy
+Usuni?to alias {0} pomy?lnie.
+Nie uda?o si? sprawdzi? aktualizacji.
+Na li?cie nie ma wi?cej u?ytkownik?w.
+Nie uda?o si? ustawi? j?zyka.
+B??d podczas pr?by odrzucenia powiadomienia.
+usrmgr: nie uda?o si? utworzy? nazwy u?ytkownika {0}: {1}
+Nie uda?o si? zmieni? nazwy u?ytkownika. {0}
+Jedna z list uprawnie? nie zawiera nazwy u?ytkownika {0}.
+Nie uda?o si? za?adowa? uprawnie? z pliku: {0}
+Nie uda?o si? zmieni? nazwy hosta: {0}
+U?ytkownik nie znaleziony
+Nie uda?o si? zmieni? has?a dla nazwy u?ytkownika: {0}
+Nie uda?o si? skopiowa? pliku lub katalogu: {0}
+Nie uda?o si? przenie?? pliku lub katalogu: {0}
+Nie mo?na znale?? pliku pasuj?cego do ci?gu �{0}�: {1}
+Pobieranie pliku {0} nie powiod?o si?.
+Nie uda?o si? wy?wietli? plik?w zdalnych: {0}
+Wprowad? plik lub folder do usuni?cia. Aby m?c usun??, musisz mie? uprawnienia administracyjne na swoim koncie.
+Czy na pewno chcesz usun?? {0} <y / n>?
 Usuwanie {0} ...
 Nie znaleziono {0} na serwerze.
-Cała poczta wysłana przez {0} została pomyślnie usunięta.
-Nie udało się usunąć całej poczty wysłanej przez {0}.
-Błąd podczas wysyłania wiadomości.
-Przenoszę {0} do {1} ...
-Przeniesiono pomyślnie
-Przenosi plik lub katalog do innego pliku lub katalogu. Możesz także użyć tego do zmiany nazw plików.
-Nie udało się przenieść {0} do {1}.
-Wprowadź ścieżkę źródłową i ścieżkę docelową.
+Ca?a poczta wys?ana przez {0} zosta?a pomy?lnie usuni?ta.
+Nie uda?o si? usun?? ca?ej poczty wys?anej przez {0}.
+B??d podczas wysy?ania wiadomo?ci.
+Przenosz? {0} do {1} ...
+Przeniesiono pomy?lnie
+Przenosi plik lub katalog do innego pliku lub katalogu. Mo?esz tak?e u?y? tego do zmiany nazw plik?w.
+Nie uda?o si? przenie?? {0} do {1}.
+Wprowad? ?cie?k? ?r?d?ow? i ?cie?k? docelow?.
 Kopiowanie {0} do {1} ...
-Skopiowano pomyślnie
+Skopiowano pomy?lnie
 Kopiuje plik lub katalog do innego pliku lub katalogu.
-Nie udało się skopiować {0} do {1}.
-Przenosi wiadomość
-Przenosi wszystkie wiadomości od odbiorcy
-Cała poczta wysłana przez {0} została pomyślnie przeniesiona.
-Nie udało się przenieść całej poczty wysłanej przez {0}.
-Wiadomość {0} od {1} została przeniesiona z {2}. Pozostało {3} wiadomości do przeanalizowania.
-Wiadomość {0} od {1} została przeniesiona. Pozostało {3} wiadomości do przeanalizowania.
-Pokazuje informacje o pogodzie dla określonego miasta. Używa OpenWeatherMap.
+Nie uda?o si? skopiowa? {0} do {1}.
+Przenosi wiadomo??
+Przenosi wszystkie wiadomo?ci od odbiorcy
+Ca?a poczta wys?ana przez {0} zosta?a pomy?lnie przeniesiona.
+Nie uda?o si? przenie?? ca?ej poczty wys?anej przez {0}.
+Wiadomo?? {0} od {1} zosta?a przeniesiona z {2}. Pozosta?o {3} wiadomo?ci do przeanalizowania.
+Pokazuje informacje o pogodzie dla okre?lonego miasta. U?ywa OpenWeatherMap.
 - Informacje o pogodzie dla {0} -
 Pogoda: {0}
-Temperatura: {0} (jednostka {1})
-Wygląda na to: {0} (jednostka {1})
-Ciśnienie: {0}
-Wilgotność: {0}
-Możesz uzyskać własny klucz API na https://home.openweathermap.org/api_keys.
-Zawsze możesz zajrzeć na http://bulk.openweathermap.org/sample/city.list.json.gz, aby uzyskać listę miast wraz z ich identyfikatorami.
+Ci?nienie: {0}
+Wilgotno??: {0}
+Mo?esz uzyska? w?asny klucz API na https://home.openweathermap.org/api_keys.
+Zawsze mo?esz zajrze? na http://bulk.openweathermap.org/sample/city.list.json.gz, aby uzyska? list? miast wraz z ich identyfikatorami.
 Preferowana jednostka temperatury
 kelwin
 Imperialne (Fahrenheit)
 Metryczne (stopnie Celsjusza)
-Ustawia jądro tak, aby wyświetlało monit o podanie argumentu przy starcie.
-Tryb konserwacji wyzwalaczy. To wyłącza wiele kont.
-Przy każdym uruchomieniu będzie sprawdzać dostępność aktualizacji.
-Zmieniając języki, zmień nazwy miesięcy, kalendarza itp.
-Jeśli jądro jest uruchomione, ustawi hasło roota.
-Zachowaj ciszę wiadomości z sondowania sprzętu.
-Jeśli jest włączona, sonduje gniazda RAM wraz z pamięcią RAM.
-Pokaż wiadomość dnia przed wyświetleniem ekranu logowania.
-Wyczyść ekran przed wyświetleniem ekranu logowania.
-Pokazuje dostępnych użytkowników, jeśli są włączone.
-Zapewnia obsługę koloru jądra
-Uproszczone polecenie pomocy dla wszystkich powłok
-Czy rejestrować nazwę użytkownika FTP, czy nie.
-Czy rejestrować adres IP protokołu FTP.
-Wybierz pierwszy profil tylko podczas łączenia.
-Aktywuje obsługę 255 kolorów dla ColorMix.
-Aktywuje obsługę 255 kolorów dla Disco.
-Aktywuje obsługę 255 kolorów dla GlitterColor.
-Włącza obsługę 255 kolorów dla linii.
-Godzina i data zostaną wyświetlone w prawym górnym rogu ekranu
-Jeśli jest włączona, jądro przeanalizuje cały folder pod kątem jego całkowitego rozmiaru. W przeciwnym razie przeanalizuje tylko powierzchnię.
-Włącza lampkę przy uruchomieniu
-Czas i data będą dłuższe, pokazując pełne nazwy miesięcy itp.
+Ustawia j?dro tak, aby wy?wietla?o monit o podanie argumentu przy starcie.
+Tryb konserwacji wyzwalaczy. To wy??cza wiele kont.
+Przy ka?dym uruchomieniu b?dzie sprawdza? dost?pno?? aktualizacji.
+Zmieniaj?c j?zyki, zmie? nazwy miesi?cy, kalendarza itp.
+Je?li j?dro jest uruchomione, ustawi has?o roota.
+Zachowaj cisz? wiadomo?ci z sondowania sprz?tu.
+Poka? wiadomo?? dnia przed wy?wietleniem ekranu logowania.
+Wyczy?? ekran przed wy?wietleniem ekranu logowania.
+Pokazuje dost?pnych u?ytkownik?w, je?li s? w??czone.
+Zapewnia obs?ug? koloru j?dra
+Uproszczone polecenie pomocy dla wszystkich pow?ok
+Czy rejestrowa? nazw? u?ytkownika FTP, czy nie.
+Czy rejestrowa? adres IP protoko?u FTP.
+Wybierz pierwszy profil tylko podczas ??czenia.
+Aktywuje obs?ug? 255 kolor?w dla ColorMix.
+Aktywuje obs?ug? 255 kolor?w dla Disco.
+Aktywuje obs?ug? 255 kolor?w dla GlitterColor.
+W??cza obs?ug? 255 kolor?w dla linii.
+Godzina i data zostan? wy?wietlone w prawym g?rnym rogu ekranu
+Je?li jest w??czona, j?dro przeanalizuje ca?y folder pod k?tem jego ca?kowitego rozmiaru. W przeciwnym razie przeanalizuje tylko powierzchni?.
+W??cza lampk? przy uruchomieniu
+Czas i data b?d? d?u?sze, pokazuj?c pe?ne nazwy miesi?cy itp.
 Pokazuje ukryte pliki.
-Wybierz preferowaną jednostkę temperatury (dotyczy to tylko polecenia „pogoda”)
-Mod {0} został zatrzymany
+Wybierz preferowan? jednostk? temperatury (dotyczy to tylko polecenia �pogoda�)
+Mod {0} zosta? zatrzymany
 Zatrzymano {0} v {1}
-Mod {0} nie ma nazwy części. Analiza modów nie powiodła się. Przejrzyj kod źródłowy.
-Mod {0} nie ma polecenia. Analiza modów nie powiodła się. Przejrzyj kod źródłowy.
-Aby wyczyścić dziennik debugowania, musisz włączyć tryb debugowania.
-Do skrzynki odbiorczej dotarło {0} nowych wiadomości.
-Otwórz „lsmail”, aby je zobaczyć.
-Podstawowa: {2} Rozruchowa: {3} Partycja rozruchowa: {4}
-Nie można usunąć pliku: {0}
+Mod {0} nie ma nazwy cz??ci. Analiza mod?w nie powiod?a si?. Przejrzyj kod ?r?d?owy.
+Mod {0} nie ma polecenia. Analiza mod?w nie powiod?a si?. Przejrzyj kod ?r?d?owy.
+Aby wyczy?ci? dziennik debugowania, musisz w??czy? tryb debugowania.
+Do skrzynki odbiorczej dotar?o {0} nowych wiadomo?ci.
+Otw?rz �lsmail�, aby je zobaczy?.
+Nie mo?na usun?? pliku: {0}
 Usuwa katalog lub plik
-Nie można usunąć {0}, ponieważ nie istnieje.
-Być może nie masz zainstalowanego inxi w swoim systemie. W sprawie instalacji zapoznaj się z menedżerem pakietów. W przypadku systemów Debian (i pochodnych) możesz chcieć uruchomić "" sudo apt install inxi libcpanel-json-xs-perl "" w emulatorze terminala.
-Język został pomyślnie ustawiony na {0}!
-Naciśnij CTRL + C, aby wyjść.
+Nie mo?na usun?? {0}, poniewa? nie istnieje.
+Naci?nij CTRL + C, aby wyj??.
 Zawiera informacje o pliku
 Zawiera informacje o katalogu
-Nie można uzyskać informacji o nieistniejącym katalogu.
-Nie można uzyskać informacji o nieistniejącym pliku.
-Imię i nazwisko: {0}
+Nie mo?na uzyska? informacji o nieistniej?cym katalogu.
+Nie mo?na uzyska? informacji o nieistniej?cym pliku.
+Imi? i nazwisko: {0}
 Czas utworzenia: {0}
-Czas ostatniego dostępu: {0}
+Czas ostatniego dost?pu: {0}
 Czas ostatniego zapisu: {0}
 Atrybuty: {0}
-Katalog nadrzędny: {0}
-Gdzie znaleźć: {0}
+Katalog nadrz?dny: {0}
+Gdzie znale??: {0}
 Rozmiar pliku: {0}
 Zmienia atrybut pliku
 Nie znaleziono pliku.
-gdzie <attributes> jest jednym z następujących:
-Plik jest zwykłym plikiem
+gdzie <attributes> jest jednym z nast?puj?cych:
+Plik jest zwyk?ym plikiem
 Plik jest plikiem tylko do odczytu
 Plik jest plikiem ukrytym
-Plik jest archiwum. Używany do tworzenia kopii zapasowych.
-Atrybut „{0}” jest nieprawidłowy.
-Atrybut został pomyślnie dodany.
-Atrybut został pomyślnie usunięty.
-Nie udało się dodać atrybutu.
-Nie udało się usunąć atrybutu.
-Zastępuje słowo lub frazę innym w wierszu
-Przekroczono poziom koloru czerwonego. To było {0}.
-Przekroczono poziom koloru zielonego. To było {0}.
-Przekroczono poziom koloru niebieskiego. To było {0}.
+Plik jest archiwum. U?ywany do tworzenia kopii zapasowych.
+Atrybut �{0}� jest nieprawid?owy.
+Atrybut zosta? pomy?lnie dodany.
+Atrybut zosta? pomy?lnie usuni?ty.
+Nie uda?o si? doda? atrybutu.
+Nie uda?o si? usun?? atrybutu.
+Zast?puje s?owo lub fraz? innym w wierszu
+Przekroczono poziom koloru czerwonego. To by?o {0}.
+Przekroczono poziom koloru zielonego. To by?o {0}.
+Przekroczono poziom koloru niebieskiego. To by?o {0}.
 Aktywuj prawdziwe kolory
-Aktywuje obsługę prawdziwego koloru dla ColorMix.
-Aktywuje obsługę prawdziwych kolorów dla Disco.
-Aktywuje obsługę prawdziwych kolorów dla GlitterColor.
-Włącza obsługę prawdziwych kolorów dla linii.
-Nie udało się odblokować {0}.
-Numer {0} jest już zablokowany.
-{0} nie może teraz dołączyć do zdalnego debugowania.
-Nie udało się zablokować {0}.
-Cykl kolorów
-Disco zmieni kolory po włączeniu. W przeciwnym razie wybierz losowe kolory.
-Wprowadź ścieżki plików do załączników. Naciśnij klawisz ENTER na pustej ścieżce, aby potwierdzić.
-Otwiera zaszyfrowaną wiadomość
-Wpisz hasło dla identyfikatora klucza {0}
-Wysyła zaszyfrowaną wiadomość na adres
-Prosi o wypełnienie wymaganych pól, aby wysłać zaszyfrowaną wiadomość na adres
+Aktywuje obs?ug? prawdziwego koloru dla ColorMix.
+Aktywuje obs?ug? prawdziwych kolor?w dla Disco.
+Aktywuje obs?ug? prawdziwych kolor?w dla GlitterColor.
+W??cza obs?ug? prawdziwych kolor?w dla linii.
+Nie uda?o si? odblokowa? {0}.
+Numer {0} jest ju? zablokowany.
+{0} nie mo?e teraz do??czy? do zdalnego debugowania.
+Nie uda?o si? zablokowa? {0}.
+Cykl kolor?w
+Disco zmieni kolory po w??czeniu. W przeciwnym razie wybierz losowe kolory.
+Wprowad? ?cie?ki plik?w do za??cznik?w. Naci?nij klawisz ENTER na pustej ?cie?ce, aby potwierdzi?.
+Otwiera zaszyfrowan? wiadomo??
+Wpisz has?o dla identyfikatora klucza {0}
+Wysy?a zaszyfrowan? wiadomo?? na adres
+Prosi o wype?nienie wymaganych p?l, aby wys?a? zaszyfrowan? wiadomo?? na adres
 Pobieranie z {0} ...
-Pokaż pasek postępu podczas pobierania lub wysyłania za pomocą polecenia „pobierz” lub „umieść”
-Jeśli tak, to powoduje, że „pobierz” lub „umieść” wyświetla pasek postępu podczas pobierania lub przesyłania.
-Przesyła plik do określonej witryny internetowej
+Poka? pasek post?pu podczas pobierania lub wysy?ania za pomoc? polecenia �pobierz� lub �umie??�
+Je?li tak, to powoduje, ?e �pobierz� lub �umie??� wy?wietla pasek post?pu podczas pobierania lub przesy?ania.
+Przesy?a plik do okre?lonej witryny internetowej
 Pinguje adres
-Przesyłanie {0} do {1} ...
-Przesyłanie zakończone.
-Użyj "ftp", jeśli zamierzasz przesyłać pliki na serwer FTP.
-Przesyłanie nie powiodło się w próbie {0}: {1}
-Przesłano {0} MB z {1} MB.
-Napisz, ile razy polecenie „put” powinno ponawiać nieudane przesyłanie. Musi być liczbą.
-Adres nie może być pusty.
-Błąd pingowania {0}: {1}
-Ping powiódł się za {0} ms.
-Podany numer linii nie może być większy niż numer linii ostatniego pliku.
-Czuje się jak: {0}
+Przesy?anie {0} do {1} ...
+Przesy?anie zako?czone.
+U?yj "ftp", je?li zamierzasz przesy?a? pliki na serwer FTP.
+Przesy?anie nie powiod?o si? w pr?bie {0}: {1}
+Napisz, ile razy polecenie �put� powinno ponawia? nieudane przesy?anie. Musi by? liczb?.
+Adres nie mo?e by? pusty.
+B??d pingowania {0}: {1}
+Ping powi?d? si? za {0} ms.
+Podany numer linii nie mo?e by? wi?kszy ni? numer linii ostatniego pliku.
+Czuje si? jak: {0}
 Temperatura: {0}
-Prędkość wiatru: {0}
+Pr?dko?? wiatru: {0}
 Kierunek wiatru: {0}
-Główny: {2} | Rozruchowy: {3} | Partycja rozruchowa: {4}
-Aktywuje obsługę 255 kolorów dla Rozpuszczania.
-Aktywuje obsługę prawdziwych kolorów dla funkcji Dissolve.
-Naciśnij dowolny klawisz, aby wrócić.
-Nie można utworzyć folderu poczty {0}: {1}
-Tworzy katalog w bieżącym katalogu roboczym
-Usuwa katalog z bieżącego katalogu roboczego
+Aktywuje obs?ug? 255 kolor?w dla Rozpuszczania.
+Aktywuje obs?ug? prawdziwych kolor?w dla funkcji Dissolve.
+Naci?nij dowolny klawisz, aby wr?ci?.
+Nie mo?na utworzy? folderu poczty {0}: {1}
+Tworzy katalog w bie??cym katalogu roboczym
+Usuwa katalog z bie??cego katalogu roboczego
 Nie znaleziono folderu poczty {0}.
-Nie można usunąć folderu poczty {0}: {1}
+Nie mo?na usun?? folderu poczty {0}: {1}
 {0}, utworzono w {1} {2}, zmodyfikowano w {3} {4}
-Weryfikuje poprawność pliku
-Hashe są zniekształcone.
-Hashe nie pasują.
-Hashe pasują.
-Zmienia nazwę folderu
-Ta sekcja zawiera wszystkie ogólne ustawienia jądra, głównie dotyczące jego obsługi.
-Ta sekcja zmienia zachowanie sondy sprzętowej.
-Ta sekcja przedstawia ustawienia logowania. Wyloguj się ze swojego konta, aby zmiany zaczęły obowiązywać.
-Ta sekcja zawiera listę ustawień powłoki.
-W tej sekcji wymieniono ustawienia sieciowe, takie jak powłoka FTP, ustawienia poleceń związanych z siecią oraz ustawienia zdalnego debugowania.
-Ta sekcja zawiera listę wszystkich wygaszaczy ekranu i ich dostępnych ustawień.
-Znajdują się tutaj ustawienia, które nie pasują do odpowiednich sekcji.
-Testuje mody, dostarczając pliki modów
-Otwiera powłokę testową
-Włącza tryb debugowania
+Weryfikuje poprawno?? pliku
+Hashe s? zniekszta?cone.
+Hashe nie pasuj?.
+Hashe pasuj?.
+Zmienia nazw? folderu
+Ta sekcja zawiera wszystkie og?lne ustawienia j?dra, g??wnie dotycz?ce jego obs?ugi.
+Ta sekcja zmienia zachowanie sondy sprz?towej.
+Ta sekcja przedstawia ustawienia logowania. Wyloguj si? ze swojego konta, aby zmiany zacz??y obowi?zywa?.
+Ta sekcja zawiera list? ustawie? pow?oki.
+W tej sekcji wymieniono ustawienia sieciowe, takie jak pow?oka FTP, ustawienia polece? zwi?zanych z sieci? oraz ustawienia zdalnego debugowania.
+Ta sekcja zawiera list? wszystkich wygaszaczy ekranu i ich dost?pnych ustawie?.
+Znajduj? si? tutaj ustawienia, kt?re nie pasuj? do odpowiednich sekcji.
+Testuje mody, dostarczaj?c pliki mod?w
+Otwiera pow?ok? testow?
+W??cza tryb debugowania
 Monity o argumenty
-* Naciśnij dowolny klawisz, aby uruchomić jądro lub ESC, aby wyjść.
-Nie udało się uruchomić „{0}”: {1}
-Pokaż podgląd wiadomości e-mail
-Wyświetlając wiadomości e-mail, pokaż podgląd treści.
-Sonda sprzętowa w pamięci podręcznej. Mimo to wyświetlam informacje ...
-Pojemność: {0} GB
+* Naci?nij dowolny klawisz, aby uruchomi? j?dro lub ESC, aby wyj??.
+Nie uda?o si? uruchomi? �{0}�: {1}
+Poka? podgl?d wiadomo?ci e-mail
+Wy?wietlaj?c wiadomo?ci e-mail, poka? podgl?d tre?ci.
 Kolory niestandardowe ...
-Napisz kolor, jak określono poniżej:
-Kolor wejściowy
+Kolor wej?ciowy
 Kolor licencji
-Ciągły kolor błędu jądra
-Nieprzerwany kolor błędu jądra
+Ci?g?y kolor b??du j?dra
+Nieprzerwany kolor b??du j?dra
 Kolor nazwy hosta
-Kolor nazwy użytkownika
-Kolor tła
+Kolor nazwy u?ytkownika
+Kolor t?a
 Neutralny kolor tekstu
-Kolor listy poleceń
-Kolor definicji polecenia
 Kolor sceny
-Kolor błędu
-Czy te kolory wyglądają dobrze?
-Odpowiedz {0}, aby wrócić. W przeciwnym razie każda odpowiedź oznacza tak.
+Kolor b??du
 Styl podpowiedzi FTP
-Styl monitów pocztowych
+Styl monit?w pocztowych
 Styl monitu SFTP
-Aktywuje obsługę 255 kolorów dla BouncingBlock.
-Aktywuje obsługę prawdziwego koloru dla BouncingBlock.
-Próbuję uzyskać dostęp do nieprawidłowej ścieżki.
-Czyści plik tekstowy
+Aktywuje obs?ug? 255 kolor?w dla BouncingBlock.
+Aktywuje obs?ug? prawdziwego koloru dla BouncingBlock.
+Pr?buj? uzyska? dost?p do nieprawid?owej ?cie?ki.
+Czy?ci plik tekstowy
 Wychodzi z edytora tekstu
-Zapytanie o znak w określonym wierszu lub we wszystkich wierszach
-Określona liczba znaku {0} nie jest prawidłową liczbą.
-Sprawdzanie dostępności aktualizacji jest wyłączone, ponieważ używasz wersji rozwojowej.
-Włącza lub wyłącza funkcję automatycznego zapisywania w edytorze tekstu.
-Jeśli automatyczne zapisywanie jest włączone, plik tekstowy będzie zapisywany co „n” sekund.
-Włącz automatyczne zapisywanie w edytorze tekstu
-Interwał automatycznego zapisywania w edytorze tekstu
+Zapytanie o znak w okre?lonym wierszu lub we wszystkich wierszach
+Sprawdzanie dost?pno?ci aktualizacji jest wy??czone, poniewa? u?ywasz wersji rozwojowej.
+W??cza lub wy??cza funkcj? automatycznego zapisywania w edytorze tekstu.
+Je?li automatyczne zapisywanie jest w??czone, plik tekstowy b?dzie zapisywany co �n� sekund.
+W??cz automatyczne zapisywanie w edytorze tekstu
+Interwa? automatycznego zapisywania w edytorze tekstu
 Zapisuje plik
 Nagraj czat, aby dziennik debugowania
 Rejestruje zdalny czat debugowania, aby dziennik debugowania.
-Opóźnienie w milisekundach
-Ile milisekund trzeba czekać przed wykonaniem następnego zapisu?
-Umożliwia korzystanie z serwera FTP SSH
-Brak pomocy dla polecenia „{0}”.
+Op??nienie w milisekundach
+Ile milisekund trzeba czeka? przed wykonaniem nast?pnego zapisu?
+Umo?liwia korzystanie z serwera FTP SSH
+Brak pomocy dla polecenia �{0}�.

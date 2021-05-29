@@ -24,8 +24,8 @@ Imports KS
     ''' Tests string translation
     ''' </summary>
     <TestMethod()> <TestCategory("Action")> Public Sub TestTranslate()
-        Dim ExpectedTranslation As String = "---===+++> Bienvenido al kernel | Versión {0} <+++===---"
-        Dim ActualTranslation As String = DoTranslation("---===+++> Welcome to the kernel | Version {0} <+++===---", "spa")
+        Dim ExpectedTranslation As String = "Apagando ..."
+        Dim ActualTranslation As String = DoTranslation("Shutting down...", "spa")
         ActualTranslation.ShouldBe(ExpectedTranslation)
     End Sub
 

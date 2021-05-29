@@ -12,27 +12,12 @@ Argumentos injetados serão agendados para serem executados na próxima reinicia
 Injeção de Argumento foi cancelada.
 Erro ao analisar argumentos de linha de comando reais: {0}
 Modelo de cor inválido {0}
-Padrão
-Personalizado
 hwprobe: Seu hardware será testado. Por favor aguarde ...
-hwprobe: Hardware já testado.
-hwprobe: o hardware não é testado. Teste usando 'hwprobe'
 CPU: Um ou mais núcleos da CPU não puderam ser analisados. Mostrando informações de qualquer maneira ...
 RAM: Um ou mais dos chips de RAM não foram analisados. Mostrando informações de qualquer maneira ...
 HDD: Um ou mais discos rígidos não foram testados. Mostrando informações de qualquer maneira ...
 CPU: Número total de processadores: {0}
-CPU: {0} {1} MHz
-RAM: {0} MB = {1} MB
-RAM: Slots usados ​​(por nomes): {0}
-RAM: Slots usados ​​(por números): {0} / {1} ({2}%)
-RAM: O status da pesquisa está obsoleto e será removido no lançamento futuro.
-HDD: {0} {1} GB {2}
-HDD: {0} {1} {2} GB {3}
-HDD: CHS: {4} cilindros | {5} cabeças | {6} setores
-HDD: CHS: {3} cilindros | {4} cabeças | {5} setores
-hwprobe: A detecção não é suportada porque não foi projetada para executar probers no Unix.
 Digite a senha do administrador para manutenção.
-Não há mais usuários restantes na lista.
 Erro de kernel durante a inicialização: {0}
 PAINEL DUPLO: O tempo de reinicialização excede o tempo máximo permitido de reinicialização do erro {0}. Você encontrou um bug do kernel.
 [{0}] panic: Reinicialização ativada devido ao nível de erro ser {0}.
@@ -46,18 +31,12 @@ PÂNICO DUPLO: Tipo de erro {0} inválido.
 PANIC DUPLO: Bug do Kernel: {0}
 Desligando ...
 Reiniciando ...
----===+++> Bem vindo ao kernel | Versão {0} <+++===---
 Outra instância do Kernel Simulator está sendo executada. Desligando em caso de interferência.
-O usuário {0} foi adicionado à lista de administradores.
-O usuário {0} foi adicionado à lista desativada.
 Falha ao adicionar usuário nas listas de permissão: tipo inválido {0}
 Falha ao adicionar usuário nas listas de permissão: usuário inválido {0}
-O usuário {0} foi removido da lista de administradores.
-O usuário {0} foi removido da lista desativada.
 Falha ao remover o usuário das listas de permissão: tipo inválido {0}
 Você já está logado.
 Falha ao remover o usuário das listas de permissão: usuário inválido {0}
-Você encontrou um bug no sistema de permissões: modo inválido {0}
 Você encontrou um bug ou a permissão que você tentou adicionar ou remover já está concluída ou outro erro.
 Erro {0}: {1}
 Você encontrou um bug ou a permissão que você tentou editar para um novo usuário falhou.
@@ -79,17 +58,6 @@ O usuário {0} não pode ser removido.
 O usuário {0} já está conectado. Efetue logout e login como outro administrador.
 Usuário {0} removido.
 Erro ao tentar remover o nome de usuário.
-{0} de {1} = {2}
-Tentativa de dividir por zero não é permitida.
-Houve uma suspeita de tentativa de cálculo que resultou em um estouro.
-Há um erro ao calcular: {0}
-{0} não pode ser convertido para {1}.
-Ou a fonte 
-ou destino 
-não existe no servidor.
-{0} para {1}: {2}
-Erro ao tentar converter de {0} para {1}: {2}
-Erro
 O protetor de tela solicitado {0} não foi encontrado.
 {0} foi inicializado corretamente.
 {0} não inicializou. O código do protetor de tela pode ter sofrido um erro durante a inicialização.
@@ -99,12 +67,6 @@ Protetor de tela {0} não encontrado no banco de dados. Verifique o nome e tente
 O protetor de tela não pode ser carregado por causa do seguinte: 
 Há um erro sério ao imprimir texto.
 Há um erro ao tentar criar uma configuração.
-Há um erro ao tentar criar uma configuração: {0}
-Uma atualização de {0} para {1} foi detectada. Atualizando a configuração ...
-Há um erro ao tentar atualizar a configuração: {0}.
-Há um erro ao tentar atualizar a configuração.
-Há um erro ao tentar ler a configuração.
-Há um erro ao tentar ler a configuração: {0}
 Erro ao tentar liberar RAM: {0} - continuando ...
 Mod não pode ser carregado por causa do seguinte: 
 mod: Carregando mods ...
@@ -129,32 +91,19 @@ Você deve se conectar a um servidor antes de alterar o diretório
 Diretório local: {0}
 Diretório remoto: {0}
 Você deve se conectar ao servidor antes de obter o diretório remoto atual.
-Excluindo o arquivo {0} ...
-Tem certeza que deseja excluir o arquivo {0} <y/n>?
-Arquivo excluído {0}
 Você deve se conectar ao servidor com privilégios administrativos antes de executar a exclusão.
-Digite um arquivo para remover.
-Você deve ter permissões administrativas no seu nome de usuário logado para poder remover.
 Desconectado de {0}
 Você ainda não se conectou a nenhum servidor
 Fazendo o download do arquivo {0} ...
 Arquivo baixado {0}.
-O download falhou para o arquivo {0} porque o arquivo local está corrompido.
 Você deve se conectar ao servidor antes de realizar a transmissão.
 Digite um arquivo para baixar no diretório local.
 {0} KB | Modificado em: {1}
 Você deve se conectar ao servidor antes de listar todos os arquivos remotos.
-Renomeando o arquivo {0} para {1} ...
-Renomeado com sucesso
-Digite um arquivo e o novo nome de arquivo.
 Fazendo upload do arquivo {0} ...
 Arquivo enviado {0}
 Insira um arquivo para carregar no diretório remoto. upload <file> <directory>
-Erro ao tentar executar o comando FTP
 (Interno:
-{0} pastas, {1} arquivos
-(Acesso Negado)
-{0} KB, Criado em {1} {2}, Modificado em {3} {4}
 Obtém o diretório local atual
 Obtém o diretório remoto atual
 Conecta-se a um servidor FTP (deve começar com "ftp://" ou "ftps://")
@@ -167,18 +116,8 @@ Sai do shell FTP e retorna ao kernel
 Mostra a tela de ajuda
 Lista o diretório local
 Lista o diretório remoto
-Renomeia um arquivo ou diretório específico
 Carrega arquivo local para o diretório remoto usando binário ou texto
-Houve um erro no shell do FTP.
 Mensagem de FTP: O comando solicitado {0} não foi encontrado. Veja 'help' para uma lista de comandos disponíveis especificados no shell do FTP.
-net: Resposta de {0} em {1} ms
-Tempo limite esgotado, desconectado ou servidor off-line.
-net: O nome do seu computador na rede é {0}
-net: Seu nome de host é {1}
-net: Parece que os computadores estão no domínio ou grupo de trabalho:
-net: WiFi ou Ethernet está desconectado.
-net: Parece que os computadores estão conectados abaixo:
-net: Endereço do roteador: {0}
 Falha ao obter propriedades para o adaptador {0}
 Número do Adaptador:
 Nome do Adaptador:
@@ -189,9 +128,7 @@ Pacotes de unicast:
 Erro de entrada/saída de pacotes:
 O alias não pode ser o mesmo nome de um comando.
 Comando não encontrado para alias para {0}.
-Aliasing {0} para {1} é proibido completamente.
 Agora você pode executar "{0}" como um comando: "{1}".
-Você não pode mais usar "{0}" como um comando "{1}".
 O alias {0} não foi encontrado para ser removido
 Modo inválido {0}.
 Argumentos injetados, {0}, serão agendados para serem executados na próxima reinicialização.
@@ -201,16 +138,12 @@ Nome do host em branco.
 Alterando de: {0} para {1} ...
 Mensagem em branco do dia.
 MAL em branco após o login.
-Mudando o MAL de {0} para {1} ...
 Senha incorreta do usuário.
 Senhas não coincidem.
 O nome de usuário foi alterado para {0}!
 O novo nome que você digitou já foi encontrado.
-A listagem de PCs ainda não é suportada no Unix.
-Apelidos que são proibidos: {0}
 {0} não foi encontrado.
 Configuração recarregada. Pode ser necessário reinicializar o kernel para que algumas alterações entrem em vigor.
-Tudo é redefinido para as configurações normais.
 Uma ou mais cores são inválidas.
 Cores não estão disponíveis. Ative o shell colorido na configuração do kernel.
 Protetor de tela {0} não encontrado.
@@ -222,85 +155,36 @@ Argumentos na inicialização:
 Comando de ajuda simplificado:
 MOTD no Login:
 Hora/Data no canto:
-Hardware testado:
-Tema atual:
 [ Configurações de hardware ]{0}
 {0}[ Configurações do usuário ]
 Nome de usuário atual:
 Nome do host atual:
 Usernames disponíveis:
-Nome do host do computador:
-{0}[ Configurações de Mensagens ]
-Código fonte:
-Copyright (c)
-Licença
-presente
 Erro ao tentar executar o comando
-Adiciona usuários (Somente administradores podem acessar este comando)
-Adiciona aliases aos comandos (somente administradores podem acessar este comando)
-Injeta argumentos para o kernel (reinicialização necessária, somente administradores)
-Calculadora simples
 Muda o diretório
-Altera o nome do host (somente administradores)
-MAL muda, o MOTD após o login (somente administradores)
-Muda o MOTD, a mensagem do dia (somente administradores)
 Altera a senha do usuário atual
-Altera o nome de usuário (somente administradores)
 Limpa a tela
-Converter moeda
-Mostra logs de depuração (somente administradores)
 Use um shell de FTP para interagir com os servidores
 Página de ajuda
-Analisar hardware manualmente (uma vez no kernel 'nohwprobe')
 Listar o conteúdo do arquivo / pasta na pasta atual
-Recarrega o arquivo do protetor de tela em %USERPROFILE%\KSMods
 Bloqueia sua tela com uma senha
 Faz o logout
-Lista todos os dispositivos de rede que estão on-line (e off-line em domínios)
-Lista todos os endereços de rede no host
-Lista todos os endereços de rede no host usando a árvore
 Cria um diretório
 Lista informações sobre todas as interfaces disponíveis
-Mostra lista proibida de aliases
-Gerenciar permissões para usuários (somente administradores podem acessar este comando)
-Verifique se o endereço especificado está disponível
-Grava o conteúdo do arquivo no console
 Reinicia o seu computador (ATENÇÃO: Sem sincronização, porque não é um kernel final)
 Recarrega o arquivo de configuração editado.
-Remove um diretório
-Remove um usuário da lista (somente administradores)
 Salva sua tela de queimaduras
-Calculadora científica. O conversor da unidade é separado para outro comando
-Configura as cores do kernel
 Configura screensavers do kernel
 Configura temas do kernel
-Mostra aliases
-Mostra MOTD após o login definido pelo usuário ou kernel
-Mostra a mensagem do dia definida pelo usuário ou kernel
 Mostra data e hora
 Mostra a data e a hora nas zonas
 O kernel será desligado
 Informação do sistema
-Conversor de unidades separado do scicalc.
-Mostra dependências de código aberto usadas
-Um manual do usuário muito descritivo.
 * Você pode usar vários comandos usando os dois pontos entre os comandos.
-Comandos disponíveis: 
-Comandos Mod: 
-Aliases para comandos: 
 Uso:
-Argumentos separados por vírgulas
 onde os argumentos serão {0}
-para obter o diretório atual
-Em qual origem e destino são 3 caracteres maiúsculos de uma taxa de câmbio
-Lista de todos os IDs e nomes:
-Mostra os registros de depuração para que você possa enviar o registro para nós.
 Inicializa o shell do FTP.
-Detecta hardware (funciona apenas quando o hardware não é testado e o hwprobe não é executado).
-Lista informações de rede, bem como todos os computadores conectados a uma rede.
 Amigos de
-Lista informações de rede, bem como todos os computadores conectados a uma rede, em forma de árvore.
-Lista informações de rede, bem como todos os computadores.
 onde modname.ss.vb será
 Bloqueia sua tela com a senha.
 Logs você fora do usuário.
@@ -313,41 +197,25 @@ Mostra a data e a hora.
 Mostra a data e a hora nas zonas.
 Desliga o seu computador simulado.
 Mostra informações e versões do sistema.
-Mostra bibliotecas de código aberto usadas
 Houve um erro no shell.
 Você não tem permissão para usar {0}
 Mensagem do shell: O comando solicitado {0} não pode ser executado no modo de manutenção.
 Mensagem do shell: O comando solicitado {0} não foi encontrado. Veja 'help' para os comandos disponíveis.
 Mensagem do shell: O comando {0} não pode ser executado no log in.
-Mensagem do shell: O comando solicitado {0} não foi encontrado.
 Erro ao tentar executar o comando.
 datetime: o tempo é {0}
 datetime: Hoje é {0}
 datetime: fuso horário: {0}
 - Tempo de {0}: {1}
 para limpar a tela.
-Parece que a página de manual {0} não foi encontrada.
-Há um erro ao tentar carregar a página de manual {0} porque {1}.
-Esta página de manual está incompleta pelos seguintes motivos:
-Pressione qualquer tecla para continuar...
-| {0} palavras | Revisão v{1} | {2} seções
-Este título da página de manual não está escrito
-Esta página de manual ({0}) não contém nenhum texto do corpo. Excluindo a página ...
-Esta página de manual ({0}) não contém nenhuma seção. Excluindo a página ...
 executando em {0}
 Você não está autorizado a obter informações para {0}.
 Este comando é obsoleto e será removido em uma versão futura.
 Você não está autorizado a alterar a senha de {0} porque o alvo era um administrador.
-Converter quantia de dinheiro de país para país
-Moedas:
 usrmgr: O nome de usuário {0} já foi encontrado
-Digite sua chave de API: 
-Não foi possível obter computadores. Se você estiver executando a versão mais recente do Windows 10, precisará ativar o SMBv1. Este protocolo é, no entanto, inseguro e vamos tentar resolver este problema.
 Exclui tudo no log de depuração
-Obtém versões do SSE
 Idioma inválido
 Muda de idioma
-Você pode não ter o libcpanel-json-xs-perl instalado em seu sistema. Consulte o seu gerenciador de pacotes para instalação. Para sistemas Debian (e derivados), você pode querer rodar "sudo apt install libcpanel-json-xs-perl" no emulador de terminal. Mais detalhes de um erro:
 ----------------------------- Kernel panic dump ------------------------------
 >> informação de pânico <<
 > Descrição: {0}
@@ -365,14 +233,12 @@ Você pode não ter o libcpanel-json-xs-perl instalado em seu sistema. Consulte 
 >> Quadros, arquivos, linhas e colunas <<
 > Frame {0}: Arquivo: {1} | Linha: {2} | Coluna: {3}
 > Ocorreu um erro ao tentar obter informações sobre o quadro. {0}: {1}
-Você definiu seu idioma do sistema para algo diferente do inglês. Desculpe pelo inconveniente, mas parece que o Google e seu tradutor são muito estranhos sobre a tradução de blocos de código para qualquer linguagem de programação. Enquanto corrigimos todos os bloqueios de código para páginas de manual traduzidas, sugerimos que você abra um tíquete para o Google Tradutor para traduzir blocos de código que não devem ser traduzidos e defina o idioma do seu sistema para inglês se você o disser.
 Recarrega as modificações.
 Mods recarregados.
 Bem vindo ao Kernel!
 Conectado com sucesso como <user>
 MOTD / MAL é válido, mas o tipo de mensagem não é válido. 
 Tentei ler MOTD / MAL que é do tipo de mensagem inválido.
-Sambil mempertahankan koneksi yang stabil, ia mengunduh {0} ke {1} ...
 Pengunduhan telah selesai.
 Gagal mengunduh dalam percobaan {0}: {1}
 Silakan gunakan "ftp" jika Anda akan mengunduh file dari server FTP.
@@ -388,13 +254,11 @@ Alias já encontrado: {0}
 Log de depuração removido. Todos os dispositivos de depuração conectados ainda podem exibir mensagens.
 Falha na remoção do log de depuração: {0}
 A alteração do diretório falhou: {0}
-Nome de usuário incorreto
 Especifique o endereço
 Não foi possível remover o diretório: {0}
 O fuso horário está especificado incorretamente.
 Seleção de perfil inválida.
 Tentando conectar-se a {0} com o perfil {1} ...
-Erro no teste de unidade: {0}
 Comando {0} não encontrado. Veja o comando "help" para a lista de comandos.
 Falha ao obter propriedades IPv6 para o adaptador {0}. Continuando...
 Informações IPv4:
@@ -408,26 +272,17 @@ O idioma que você selecionou contém duas variantes. Selecione um:
 Seleccione a sua escolha:
 Escolha inválida. Tente novamente.
 Você não está autorizado a definir o diretório atual como {0}: {1}
-Falha na permissão {0}
 O caminho que você especificou é muito longo.
-Você não está autorizado a listar em {0}: {1}
-Erro ao verificar a CPU: {0}
-Erro ao verificar a RAM: {0}
-Erro ao verificar o disco rígido: {0}
 CPU: AVISO: o SSE2 será necessário em confirmações de desenvolvimento futuras.
 O coletor de informações de despejo falhou ao tentar obter informações sobre {0}: {1}
 Erro ao tentar obter a data de compilação do assembly {0}: {1}
 Erro ao tentar definir MOTD / MAL: {0}
 Erro ao tentar obter MOTD / MAL: {0}
-Há uma exceção de referência nula em {0}: {1}
-Há uma exceção de referência nula em {0}: {1} - Rastreamento de pilha:
 Erro ao tentar iniciar o protetor de tela devido a uma operação inválida.
 Recarregar não permitido no modo de segurança.
 Mods de análise não permitidos no modo de segurança.
-Analise o diretório inteiro para obter o tamanho ou apenas os arquivos do atual.
 Lista todos os dispositivos de depuração conectados.
 Erro ao tentar definir o modo de análise. Verifique o valor e tente novamente. Se isso estiver correto, consulte o rastreamento de pilha quando a depuração do kernel estiver ativada.
-Definida com sucesso.
 O caminho não é um arquivo nem um diretório.
 Cria outra cópia de um arquivo em um diretório ou nome diferente.
 Move um arquivo para outro diretório
@@ -436,34 +291,11 @@ Para mover arquivos para outro diretório
 Correspondência {0} ({1}): {2}
 Correspondência {0}: {1}
 Tempo gasto: {0} milissegundos
-Fabricante: {0}
-Modelo: {0}
-Capacidade: {0} ({1}, {2}, {3})
-Tipo de interface: {0}
-Número da unidade: {0}
-Sinalizador de inicialização: {0} ({1})
-Partição física: {0}
-Sinalizador principal: {0}
-Tamanho: {0} GB
-Partição lógica: {0}
-Comprimido: {0}
 Nome: {0}
-Sistema de arquivos: {0}
-Capacidade: {0} GB livre de {1} GB
-Listando todas as partições lógicas em todas as unidades.
-Lista todas as unidades testadas.
-Lista todas as partições detectadas em uma unidade específica (e todas as partições lógicas em todas as unidades).
 Calcula as somas dos arquivos.
 Leva você ao nosso Wiki do GitHub.
 Algoritmo de criptografia inválido.
 Ativa ou desativa a depuração remota.
-Inicializando o sistema de arquivos ...
-Obtém vozes instaladas
-Define a voz padrão
-Fala sua corda usando a voz padrão
-Voz {0}: {1} ({2})
-Voz inválida.
-set voz
 Veja se consegue escrever palavras corretamente a tempo
 Veja se você pode resolver equações matemáticas no prazo
 Responda a comentários de amor ou ódio.
@@ -474,23 +306,16 @@ Você acabou de relatar o comentário de amor!
 Você acabou de responder ao comentário de ódio!
 Ótimo! O comentário de {0} será removido para isso.
 Ótimo! {0} agradecerá seu agradecimento.
-Escreva "GetMeOut" para sair.
 Soletrado perfeitamente!
 Escrito incorretamente.
 Resolvido perfeitamente!
 Resolvido incorretamente.
-{0} MB de {1} MB baixados.
 O RPC já está em execução.
 RPC escutando em todos os endereços usando a porta {0}.
 Começando RPC ...
 Conecta-se a um servidor SSH.
 Digite a senha para {0}:
 SSH desconectado.
-Carrega o arquivo de sintetizador e o reproduz.
-O arquivo com script {0} não existe.
-O arquivo não é um arquivo de sintetizador com script.
-Falha ao analisar uma linha de sintetizador.
-string vazia especificada
 Não foi possível definir a página de código. O idioma pode não ser exibido corretamente.
 Depuração não ativada.
 {0} não está mais definido como protetor de tela padrão.
@@ -519,8 +344,6 @@ Missão falhou, Respeito -, Assinante -
 Pare de fazer esse tipo de vídeo !!!
 Volte ao seu trabalho, seus vídeos são os piores!
 Temos preconceito neste vídeo.
-O alias de {0} a {1} é proibido.
-Erro ao tentar ignorar a notificação: {0}
 Mostra todas as notificações recebidas
 Ignora uma notificação
 Notificação rejeitada com sucesso.
@@ -532,39 +355,26 @@ Propriedades gerais do IPv4
 Executa remotamente um comando para PC remoto
 - Estágio 1: inicialização do sistema
 - Estágio 2: detecção de hardware
-- Estágio 2: gerenciamento interno de nome de usuário
 - Estágio 3: detecção de mods e protetores de tela
-- Estágio 4: coleta de lixo
 - Estágio 4: faça o login
-Antes da coleta de lixo: {0} bytes
-Após a coleta de lixo: {0} bytes
-Erro ao iniciar o RPC: {0}
 Parece que você estava executando a versão do candidato a lançamento. É recomendável que você permaneça na versão estável.
-Parece que a população do sistema de arquivos leva muito tempo.
 Tipo inválido {0}.
-Capacidade: {0}
-Contagem de partições: {0}
 Tamanho: {0}
-Usado: {0}
 O diretório {0} já existe.
 Erro ao tentar se conectar a {0}: Tempo limite da conexão ou conexão perdida
 Calculadora para calcular expressões.
 Erro no cálculo.
-Capacidade: {0} GB ({1}, {2}, {3})
 Parece que você estava executando a versão de lançamento próximo. Embora seja mais seguro usar agora, é recomendável que você permaneça na versão estável.
 Atualização do sistema
 Verificando atualizações do sistema ...
 Nova versão encontrada: 
 Você pode baixá-lo em: 
-Falha ao verificar se há atualizações: {0}
-Log de depuração não encontrado
 Nenhuma notificação recente
 Procura por sequência específica no arquivo fornecido
 Calcula somas de arquivos no diretório especificado.
 Lista todos os emails no usuário específico.
 Digite o nome de usuário ou endereço de email:
 Digite a senha:
-Digite o endereço e a porta do servidor (<endereço> ou <endereço>:[porta]):
 Erro ao conectar-se a {0}: {1}
 Conectando a {0} ...
 Autenticando ...
@@ -581,7 +391,6 @@ O número da mensagem não é um valor numérico.
 - Enviado às {0} em {1}
 A mensagem especificada não foi encontrada.
 A depuração remota falhou ao iniciar: {0}
-Erro ao executar o comando IMAP: {0}
 Preparando perfis ... Pode levar alguns minutos ...
 Nome do host, nome de usuário, tipo de dados, codificação, criptografia, protocolos
 Erro ao tentar executar o script: {0}
@@ -593,7 +402,6 @@ A frequência deve ser numérica. Se for numérico, verifique se é >= 37 e <= 3
 O tempo deve ser numérico.
 onde <respostas> são respostas com uma letra da pergunta separadas em barras
 Erro ao tentar conectar-se ao servidor SSH: {0}
-MOTD em branco após o login.
 Permite que o usuário insira entrada
 Altera o diretório de mensagens atual
 Não foi possível abrir a pasta de correio {0}: {1}
@@ -616,7 +424,6 @@ Digite o assunto:
 Digite sua mensagem abaixo. Escreva "EOF" para confirmar.
 Enviando mensagem...
 Mensagem enviada.
-Erro ao enviar mensagem: {0}
 Endereço de email invalido. Verifique se você escreveu o endereço corretamente e se ele corresponde ao formato do exemplo mostrado:
 Remove uma mensagem
 Remove todas as mensagens do destinatário
@@ -656,10 +463,7 @@ Bloquear um dispositivo de depuração pelo endereço IP
 {0} ainda não está bloqueado.
 Erro ao carregar as configurações
 Ocorreu um erro ao carregar as configurações. Pode ser necessário verificar o arquivo de configurações.
-- Estágio 2: detecção de mods e protetores de tela
-- Estágio 3: Login
 Selecione a seção:
-Selecione a opção:
 Configurações Gerais...
 Configurações de hardware ...
 Configurações de login ...
@@ -675,14 +479,12 @@ Gatilho do modo de manutenção
 Alterar senha de root ...
 Verifique se há atualizações na inicialização
 Quiet Probe
-Probe RAM Slots
 Mostrar MOTD no login
 Limpar tela ao entrar
 Mostrar nomes de usuário disponíveis
 Concha Colorida
 Comando de ajuda simplificado
 Porta de depuração
-Prefixo padrão de Nick para depuração remota
 Tempo de repetição do download
 Log de nome de usuário FTP
 Registrar endereço IP de FTP
@@ -704,7 +506,6 @@ Habilite "Alterar Senha Root" para usar esta opção. Por favor, volte.
 Alterar a senha do root?
 Definir senha raiz ...
 Escreva uma porta de depurador remoto. Deve ser numérico e ainda não deve ser usado. Caso contrário, o depurador remoto não conseguirá abrir a porta.
-Escreva o prefixo do apelido de depuração remota padrão.
 Escreva quantas vezes o comando "" get "" deve tentar downloads com falha. Deve ser numérico.
 Escreva quando iniciar o protetor de tela após milissegundos especificados. Deve ser numérico.
 Escreva quantos bytes o log de depuração pode armazenar. Deve ser numérico.
@@ -716,12 +517,10 @@ Configurações do protetor de tela ...
 Ative 255 cores
 Você quer se manter conectado?
 Escolha inválida. Supondo que não ...
-Nenhum mods detectado. Pulando estágio ...
 Mudança de cultura ao mudar de idioma
 Texto mostrado
 Escreva qualquer texto que você deseja mostrar. Quanto mais curto, melhor.
 Falha ao carregar {0}
-Falha no download do arquivo {0}: {1}
 Erro ao executar o comando de depuração remota {0}: {1}
 Adiciona usuários
 Adiciona aliases aos comandos
@@ -730,7 +529,6 @@ Altera o nome do host
 MAL muda, o MOTD após o login
 Muda MOTD, a mensagem do dia
 Altera o nome do usuário
-Mostra logs de depuração
 Gerenciar permissões para usuários
 Recarrega o arquivo de proteção de tela em KSMods
 Remove um usuário da lista
@@ -739,7 +537,6 @@ Falha ao verificar atualizações.
 Não há mais usuários restantes na lista.
 Falha ao definir o idioma.
 Erro ao tentar dispensar notificação.
-Uma atualização para {0} foi detectada. Atualizando configuração ...
 usrmgr: Falha ao criar nome de usuário {0}: {1}
 Falha ao renomear o usuário. {0}
 Uma das listas de permissão não contém o nome de usuário {0}.
@@ -773,12 +570,9 @@ Move todas as mensagens do destinatário
 Todos os e-mails enviados por {0} foram movidos com sucesso.
 Falha ao mover todo o correio enviado por {0}.
 Mensagem {0} de {1} movida de {2}. {3} mensagens restantes para analisar.
-Mensagem {0} de {1} movida. {3} mensagens restantes para analisar.
 Mostra informações meteorológicas para a cidade especificada. Usa OpenWeatherMap.
 - Informações meteorológicas para {0} -
 Tempo: {0}
-Temperatura: {0} ({1} unidade)
-Parece: {0} (unidade {1})
 Pressão: {0}
 Umidade: {0}
 Você pode obter sua própria chave de API em https://home.openweathermap.org/api_keys.
@@ -793,7 +587,6 @@ A cada inicialização, ele verificará se há atualizações.
 Ao mudar de idioma, altere os nomes dos meses, calendário, etc.
 Se o kernel for iniciado, ele definirá a senha do root.
 Mantenha as mensagens de sondagem de hardware silenciosas.
-Se ativado, ele investigará os slots de RAM junto com a RAM.
 Mostrar mensagem do dia antes de exibir a tela de login.
 Limpe a tela antes de exibir a tela de login.
 Mostra os usuários disponíveis, se habilitado.
@@ -819,12 +612,9 @@ O mod {0} não possui o comando. A análise do mod falhou. Revise o código-font
 Você deve ativar o modo de depuração antes de limpar o log de depuração.
 {0} novas mensagens chegaram à caixa de entrada.
 Abra "lsmail" para vê-los.
-Primário: {2} Inicializável: {3} Partição de inicialização: {4}
 Não foi possível remover o arquivo: {0}
 Remove um diretório ou arquivo
 Não é possível remover {0} porque ele não existe.
-Você pode não ter o inxi instalado em seu sistema. Consulte o seu gerenciador de pacotes para instalação. Para sistemas Debian (e derivados), você pode querer executar "" sudo apt install inxi libcpanel-json-xs-perl "" no emulador de terminal.
-Idioma definido com sucesso para {0}!
 Pressione CTRL + C para sair.
 Fornece informações sobre um arquivo
 Fornece informações sobre um diretório
@@ -879,7 +669,6 @@ Enviando {0} para {1} ...
 O upload foi concluído.
 Use "ftp" se for enviar arquivos para o servidor FTP.
 Falha no upload na tentativa {0}: {1}
-{0} MB de {1} MB enviados.
 Escreva quantas vezes o comando "put" deve repetir uploads com falha. Deve ser numérico.
 O endereço não pode estar vazio.
 Falha ao fazer ping em {0}: {1}
@@ -889,7 +678,6 @@ Parece: {0}
 Temperatura: {0}
 Velocidade do vento: {0}
 Direção do vento: {0}
-Primário: {2} | Inicializável: {3} | Partição de inicialização: {4}
 Ativa o suporte de 255 cores para Dissolver.
 Ativa o suporte true color para Dissolve.
 Pressione qualquer tecla para voltar.
@@ -919,10 +707,7 @@ Solicita argumentos
 Falha ao iniciar "{0}": {1}
 Mostrar visualização da mensagem de e-mail
 Ao listar mensagens de correio, mostre a visualização do corpo.
-Sonda de hardware em cache. Mostrando informações mesmo assim ...
-Capacidade: {0} GB
 Cores personalizadas...
-Escreva uma cor conforme especificado abaixo:
 Cor de entrada
 Cor da licença
 Cor de erro de kernel continuável
@@ -931,12 +716,8 @@ Cor do nome do host
 Cor do nome de usuário
 Cor de fundo
 Cor neutra do texto
-Cor da lista de comandos
-Cor de definição de comando
 Cor do palco
 Cor do erro
-Essas opções de cores parecem corretas?
-Responda {0} para voltar. Caso contrário, qualquer resposta significa sim.
 Estilo de solicitação de FTP
 Estilo do prompt de correio
 Estilo de solicitação de SFTP
@@ -946,7 +727,6 @@ Tentando acessar um caminho inválido.
 Limpa o arquivo de texto
 Sai do editor de texto
 Consulta um caractere em uma linha especificada ou em todas as linhas
-O número do caractere especificado {0} não é um número válido.
 A verificação de atualizações está desativada porque você está executando uma versão de desenvolvimento.
 Ativa ou desativa o recurso de salvamento automático do editor de texto.
 Se o salvamento automático estiver ativado, o arquivo de texto será salvo a cada "n" segundos.
