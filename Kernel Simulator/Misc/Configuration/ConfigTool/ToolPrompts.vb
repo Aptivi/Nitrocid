@@ -46,6 +46,7 @@ Public Module ToolPrompts
         While Not PromptFinished
             Console.Clear()
             'List sections
+            W("*) " + DoTranslation("Welcome to Settings!") + vbNewLine, True, ColTypes.Neutral)
             W(DoTranslation("Select section:") + vbNewLine, True, ColTypes.Neutral)
             W("1) " + DoTranslation("General Settings..."), True, ColTypes.Option)
             W("2) " + DoTranslation("Hardware Settings..."), True, ColTypes.Option)
@@ -109,7 +110,7 @@ Public Module ToolPrompts
         Dim SectionFinished As Boolean
         Dim AnswerString As String
         Dim AnswerInt As Integer
-        Dim BuiltinSavers As Integer = 13
+        Dim BuiltinSavers As Integer = 14
 
         'Section-specific variables
         Dim ConfigurableScreensavers As New List(Of String)
@@ -443,7 +444,7 @@ Public Module ToolPrompts
         Dim TargetList As IEnumerable(Of Object)
         Dim SelectFrom As IEnumerable(Of Object)
         Dim NeutralizePaths As Boolean
-        Dim BuiltinSavers As Integer = 13
+        Dim BuiltinSavers As Integer = 14
 
         While Not KeyFinished
             Console.Clear()
