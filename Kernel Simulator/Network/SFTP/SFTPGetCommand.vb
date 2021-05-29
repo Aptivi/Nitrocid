@@ -197,7 +197,7 @@ Public Module SFTPGetCommand
                       DoTranslation("Error {0}: {1}"), True, ColTypes.Error, Err.Number, ex.Message, words(0))
                 End If
             End If
-            EventManager.RaiseFTPCommandError(cmd, ex)
+            EventManager.RaiseSFTPCommandError(cmd, ex)
         End Try
 
     End Sub

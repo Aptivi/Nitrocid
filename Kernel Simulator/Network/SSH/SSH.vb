@@ -180,31 +180,38 @@ Public Module SSH
     ''' </summary>
     ''' <param name="SSHClient">SSH client instance</param>
     Sub OpenShell(SSHClient As SshClient)
-        'Add handler for SSH
-        AddHandler Console.CancelKeyPress, AddressOf SSHDisconnect
-        RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-        EventManager.RaiseSSHConnected(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port))
+        Try
+            'Add handler for SSH
+            AddHandler Console.CancelKeyPress, AddressOf SSHDisconnect
+            RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+            EventManager.RaiseSSHConnected(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port))
 
-        'Shell creation. Note that $TERM is what kind of terminal being used (vt100, xterm, ...). Always vt100 on Windows.
-        Wdbg("I", "Opening shell...")
-        Dim SSHS As Renci.SshNet.Shell = SSHClient.CreateShell(Console.OpenStandardInput, Console.OpenStandardOutput, Console.OpenStandardError, If(IsOnUnix(), Environ("TERM"), "vt100"), Console.WindowWidth, Console.WindowHeight, Console.BufferWidth, Console.BufferHeight, New Dictionary(Of Common.TerminalModes, UInteger))
-        SSHS.Start()
+            'Shell creation. Note that $TERM is what kind of terminal being used (vt100, xterm, ...). Always vt100 on Windows.
+            Wdbg("I", "Opening shell...")
+            Dim SSHS As Renci.SshNet.Shell = SSHClient.CreateShell(Console.OpenStandardInput, Console.OpenStandardOutput, Console.OpenStandardError, If(IsOnUnix(), Environ("TERM"), "vt100"), Console.WindowWidth, Console.WindowHeight, Console.BufferWidth, Console.BufferHeight, New Dictionary(Of Common.TerminalModes, UInteger))
+            SSHS.Start()
 
-        'Wait until disconnection
-        While SSHClient.IsConnected
-            Threading.Thread.Sleep(1)
-            If DisconnectionRequested Then
-                SSHS.Stop()
-                SSHClient.Disconnect()
-            End If
-        End While
-        Wdbg("I", "Connected: {0}", SSHClient.IsConnected)
-        W(vbNewLine + DoTranslation("SSH Disconnected."), True, ColTypes.Neutral)
-        DisconnectionRequested = False
+            'Wait until disconnection
+            While SSHClient.IsConnected
+                Threading.Thread.Sleep(1)
+                If DisconnectionRequested Then
+                    SSHS.Stop()
+                    SSHClient.Disconnect()
+                End If
+            End While
+        Catch ex As Exception
+            Wdbg("E", "Error on SSH shell in {0}: {1}", SSHClient.ConnectionInfo.Host, ex.Message)
+            WStkTrc(ex)
+            W(DoTranslation("Error on SSH shell") + ": {0}", True, ColTypes.Error, Command, ex.Message)
+        Finally
+            Wdbg("I", "Connected: {0}", SSHClient.IsConnected)
+            W(vbNewLine + DoTranslation("SSH Disconnected."), True, ColTypes.Neutral)
+            DisconnectionRequested = False
 
-        'Remove handler for SSH
-        AddHandler Console.CancelKeyPress, AddressOf CancelCommand
-        RemoveHandler Console.CancelKeyPress, AddressOf SSHDisconnect
+            'Remove handler for SSH
+            AddHandler Console.CancelKeyPress, AddressOf CancelCommand
+            RemoveHandler Console.CancelKeyPress, AddressOf SSHDisconnect
+        End Try
     End Sub
 
     ''' <summary>
@@ -212,40 +219,50 @@ Public Module SSH
     ''' </summary>
     ''' <param name="SSHClient">SSH client instance</param>
     Sub OpenCommand(SSHClient As SshClient, Command As String)
-        'Add handler for SSH
-        AddHandler Console.CancelKeyPress, AddressOf SSHDisconnect
-        RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-        EventManager.RaiseSSHConnected(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port))
+        Try
+            'Add handler for SSH
+            AddHandler Console.CancelKeyPress, AddressOf SSHDisconnect
+            RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+            EventManager.RaiseSSHConnected(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port))
 
-        'Shell creation
-        Wdbg("I", "Opening shell...")
-        Dim SSHC As SshCommand = SSHClient.CreateCommand(Command)
-        Dim SSHCAsyncResult As IAsyncResult = SSHC.BeginExecute()
-        'TODO: SshCommand doesn't have input support.
-        Dim SSHCOutputReader As New StreamReader(SSHC.OutputStream)
-        Dim SSHCErrorReader As New StreamReader(SSHC.ExtendedOutputStream)
+            'Shell creation
+            Wdbg("I", "Opening shell...")
+            EventManager.RaiseSSHPreExecuteCommand(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port), Command)
+            Dim SSHC As SshCommand = SSHClient.CreateCommand(Command)
+            Dim SSHCAsyncResult As IAsyncResult = SSHC.BeginExecute()
+            'TODO: SshCommand doesn't have input support.
+            Dim SSHCOutputReader As New StreamReader(SSHC.OutputStream)
+            Dim SSHCErrorReader As New StreamReader(SSHC.ExtendedOutputStream)
 
-        'Wait until disconnection
-        While Not SSHCAsyncResult.IsCompleted
-            Threading.Thread.Sleep(1)
-            If DisconnectionRequested Then
-                SSHC.CancelAsync()
-                SSHClient.Disconnect()
-            End If
-            While Not SSHCErrorReader.EndOfStream
-                W(SSHCErrorReader.ReadLine(), True, ColTypes.Neutral)
+            'Wait until disconnection
+            While Not SSHCAsyncResult.IsCompleted
+                Threading.Thread.Sleep(1)
+                If DisconnectionRequested Then
+                    SSHC.CancelAsync()
+                    SSHClient.Disconnect()
+                End If
+                While Not SSHCErrorReader.EndOfStream
+                    W(SSHCErrorReader.ReadLine(), True, ColTypes.Neutral)
+                End While
+                While Not SSHCOutputReader.EndOfStream
+                    W(SSHCOutputReader.ReadLine(), True, ColTypes.Neutral)
+                End While
             End While
-            While Not SSHCOutputReader.EndOfStream
-                W(SSHCOutputReader.ReadLine(), True, ColTypes.Neutral)
-            End While
-        End While
-        Wdbg("I", "Connected: {0}", SSHClient.IsConnected)
-        W(vbNewLine + DoTranslation("SSH Disconnected."), True, ColTypes.Neutral)
-        DisconnectionRequested = False
+        Catch ex As Exception
+            Wdbg("E", "Error trying to execute SSH command ""{0}"" to {1}: {2}", Command, SSHClient.ConnectionInfo.Host, ex.Message)
+            WStkTrc(ex)
+            W(DoTranslation("Error executing SSH command") + " {0}: {1}", True, ColTypes.Error, Command, ex.Message)
+            EventManager.RaiseSSHCommandError(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port), Command, ex)
+        Finally
+            Wdbg("I", "Connected: {0}", SSHClient.IsConnected)
+            W(vbNewLine + DoTranslation("SSH Disconnected."), True, ColTypes.Neutral)
+            DisconnectionRequested = False
+            EventManager.RaiseSSHPostExecuteCommand(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port), Command)
 
-        'Remove handler for SSH
-        AddHandler Console.CancelKeyPress, AddressOf CancelCommand
-        RemoveHandler Console.CancelKeyPress, AddressOf SSHDisconnect
+            'Remove handler for SSH
+            AddHandler Console.CancelKeyPress, AddressOf CancelCommand
+            RemoveHandler Console.CancelKeyPress, AddressOf SSHDisconnect
+        End Try
     End Sub
 
     Private Sub SSHDisconnect(sender As Object, e As ConsoleCancelEventArgs)
