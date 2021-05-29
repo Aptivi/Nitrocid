@@ -515,580 +515,143 @@ Public Module Config
         Dim FixesNeeded As Boolean
 
         'Check for missing sections
-        If ConfigToken("General") Is Nothing Then
-            Wdbg("W", "Missing section: General. Config fix needed set to true.")
+        If ConfigToken.Count <> 9 Then
+            Wdbg("W", "Missing sections. Config fix needed set to true.")
             FixesNeeded = True
         End If
-        If ConfigToken("Colors") Is Nothing Then
-            Wdbg("W", "Missing section: Colors. Config fix needed set to true.")
-            FixesNeeded = True
-        End If
-        If ConfigToken("Hardware") Is Nothing Then
-            Wdbg("W", "Missing section: Hardware. Config fix needed set to true.")
-            FixesNeeded = True
-        End If
-        If ConfigToken("Login") Is Nothing Then
-            Wdbg("W", "Missing section: Login. Config fix needed set to true.")
-            FixesNeeded = True
-        End If
-        If ConfigToken("Shell") Is Nothing Then
-            Wdbg("W", "Missing section: Shell. Config fix needed set to true.")
-            FixesNeeded = True
-        End If
-        If ConfigToken("Filesystem") Is Nothing Then
-            Wdbg("W", "Missing section: Filesystem. Config fix needed set to true.")
-            FixesNeeded = True
-        End If
-        If ConfigToken("Network") Is Nothing Then
-            Wdbg("W", "Missing section: Network. Config fix needed set to true.")
-            FixesNeeded = True
-        End If
-        If ConfigToken("Screensaver") Is Nothing Then
-            Wdbg("W", "Missing section: Screensaver. Config fix needed set to true.")
-            FixesNeeded = True
-        Else
-            If ConfigToken("Screensaver")("ColorMix") Is Nothing Then
-                Wdbg("W", "Missing section: Screensaver > ColorMix. Config fix needed set to true.")
+        If ConfigToken("Screensaver") IsNot Nothing Then
+            If ConfigToken("Screensaver").Count <> 14 + 2 Then 'Screensavers + Keys
+                Wdbg("W", "Missing sections and/or keys in Screensaver. Config fix needed set to true.")
                 FixesNeeded = True
             End If
-            If ConfigToken("Screensaver")("Disco") Is Nothing Then
-                Wdbg("W", "Missing section: Screensaver > Disco. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Screensaver")("GlitterColor") Is Nothing Then
-                Wdbg("W", "Missing section: Screensaver > GlitterColor. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Screensaver")("Lines") Is Nothing Then
-                Wdbg("W", "Missing section: Screensaver > Lines. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Screensaver")("Dissolve") Is Nothing Then
-                Wdbg("W", "Missing section: Screensaver > Dissolve. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Screensaver")("BouncingBlock") Is Nothing Then
-                Wdbg("W", "Missing section: Screensaver > BouncingBlock. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Screensaver")("ProgressClock") Is Nothing Then
-                Wdbg("W", "Missing section: Screensaver > ProgressClock. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Screensaver")("Lighter") Is Nothing Then
-                Wdbg("W", "Missing section: Screensaver > Lighter. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Screensaver")("Wipe") Is Nothing Then
-                Wdbg("W", "Missing section: Screensaver > Wipe. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Screensaver")("Matrix") Is Nothing Then
-                Wdbg("W", "Missing section: Screensaver > Matrix. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Screensaver")("GlitterMatrix") Is Nothing Then
-                Wdbg("W", "Missing section: Screensaver > GlitterMatrix. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Screensaver")("BouncingText") Is Nothing Then
-                Wdbg("W", "Missing section: Screensaver > BouncingText. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Screensaver")("Fader") Is Nothing Then
-                Wdbg("W", "Missing section: Screensaver > Fader. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Screensaver")("Typo") Is Nothing Then
-                Wdbg("W", "Missing section: Screensaver > Typo. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-        End If
-        If ConfigToken("Misc") Is Nothing Then
-            Wdbg("W", "Missing section: Misc. Config fix needed set to true.")
-            FixesNeeded = True
         End If
 
-        'Now, check for missing keys in each section that ARE available. For example, if "General" is not available, and we're calling this:
-        ' ConfigToken("General")("Maintenance Mode") Is Nothing
-        '...we'll get NullReferenceException.
+        'Now, check for missing keys in each section that ARE available.
         If ConfigToken("General") IsNot Nothing Then
-            If ConfigToken("General")("Prompt for Arguments on Boot") Is Nothing Then
-                Wdbg("W", "Missing key: General > Prompt for Arguments on Boot. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("General")("Maintenance Mode") Is Nothing Then
-                Wdbg("W", "Missing key: General > Maintenance Mode. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("General")("Change Root Password") Is Nothing Then
-                Wdbg("W", "Missing key: General > Change Root Password. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("General")("Set Root Password to") Is Nothing Then
-                Wdbg("W", "Missing key: General > Set Root Password to. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("General")("Check for Updates on Startup") Is Nothing Then
-                Wdbg("W", "Missing key: General > Check for Updates on Startup. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("General")("Change Culture when Switching Languages") Is Nothing Then
-                Wdbg("W", "Missing key: General > Change Culture when Switching Languages. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("General")("Language") Is Nothing Then
-                Wdbg("W", "Missing key: General > Language. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("General")("Culture") Is Nothing Then
-                Wdbg("W", "Missing key: General > Culture. Config fix needed set to true.")
+            If ConfigToken("General").Count <> 8 Then
+                Wdbg("W", "Missing keys in General. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
         If ConfigToken("Colors") IsNot Nothing Then
-            If ConfigToken("Colors")("User Name Shell Color") Is Nothing Then
-                Wdbg("W", "Missing key: Colors > User Name Shell Color. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Colors")("Host Name Shell Color") Is Nothing Then
-                Wdbg("W", "Missing key: Colors > Host Name Shell Color. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Colors")("Continuable Kernel Error Color") Is Nothing Then
-                Wdbg("W", "Missing key: Colors > Continuable Kernel Error Color. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Colors")("Uncontinuable Kernel Error Color") Is Nothing Then
-                Wdbg("W", "Missing key: Colors > Uncontinuable Kernel Error Color. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Colors")("Text Color") Is Nothing Then
-                Wdbg("W", "Missing key: Colors > Text Color. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Colors")("License Color") Is Nothing Then
-                Wdbg("W", "Missing key: Colors > License Color. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Colors")("Background Color") Is Nothing Then
-                Wdbg("W", "Missing key: Colors > Background Color. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Colors")("Input Color") Is Nothing Then
-                Wdbg("W", "Missing key: Colors > Input Color. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Colors")("List Entry Color") Is Nothing Then
-                Wdbg("W", "Missing key: Colors > List Entry Color. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Colors")("List Value Color") Is Nothing Then
-                Wdbg("W", "Missing key: Colors > List Value Color. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Colors")("Kernel Stage Color") Is Nothing Then
-                Wdbg("W", "Missing key: Colors > Kernel Stage Color. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Colors")("Error Text Color") Is Nothing Then
-                Wdbg("W", "Missing key: Colors > Error Text Color. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Colors")("Warning Text Color") Is Nothing Then
-                Wdbg("W", "Missing key: Colors > Warning Text Color. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Colors")("Option Color") Is Nothing Then
-                Wdbg("W", "Missing key: Colors > Option Color. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Colors")("Banner Color") Is Nothing Then
-                Wdbg("W", "Missing key: Colors > Banner Color. Config fix needed set to true.")
+            If ConfigToken("Colors").Count <> 15 Then
+                Wdbg("W", "Missing keys in Colors. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
         If ConfigToken("Hardware") IsNot Nothing Then
-            If ConfigToken("Hardware")("Quiet Probe") Is Nothing Then
-                Wdbg("W", "Missing key: Hardware > Quiet Probe. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Hardware")("Full Probe") Is Nothing Then
-                Wdbg("W", "Missing key: Hardware > Full Probe. Config fix needed set to true.")
+            If ConfigToken("Hardware").Count <> 2 Then
+                Wdbg("W", "Missing keys in Hardware. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
         If ConfigToken("Login") IsNot Nothing Then
-            If ConfigToken("Login")("Show MOTD on Log-in") Is Nothing Then
-                Wdbg("W", "Missing key: Login > Show MOTD on Log-in. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Login")("Clear Screen on Log-in") Is Nothing Then
-                Wdbg("W", "Missing key: Login > Clear Screen on Log-in. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Login")("Host Name") Is Nothing Then
-                Wdbg("W", "Missing key: Login > Host Name. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Login")("Show available usernames") Is Nothing Then
-                Wdbg("W", "Missing key: Login > Show available usernames. Config fix needed set to true.")
+            If ConfigToken("Login").Count <> 4 Then
+                Wdbg("W", "Missing keys in Login. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
         If ConfigToken("Shell") IsNot Nothing Then
-            If ConfigToken("Shell")("Colored Shell") Is Nothing Then
-                Wdbg("W", "Missing key: Shell > Colored Shell. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Shell")("Simplified Help Command") Is Nothing Then
-                Wdbg("W", "Missing key: Shell > Simplified Help Command. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Shell")("Current Directory") Is Nothing Then
-                Wdbg("W", "Missing key: Shell > Current Directory. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Shell")("Lookup Directories") Is Nothing Then
-                Wdbg("W", "Missing key: Shell > Lookup Directories. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Shell")("Prompt Style") Is Nothing Then
-                Wdbg("W", "Missing key: Shell > Prompt Style. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Shell")("FTP Prompt Style") Is Nothing Then
-                Wdbg("W", "Missing key: Shell > FTP Prompt Style. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Shell")("Mail Prompt Style") Is Nothing Then
-                Wdbg("W", "Missing key: Shell > Mail Prompt Style. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Shell")("SFTP Prompt Style") Is Nothing Then
-                Wdbg("W", "Missing key: Shell > SFTP Prompt Style. Config fix needed set to true.")
+            If ConfigToken("Shell").Count <> 8 Then
+                Wdbg("W", "Missing keys in Shell. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
         If ConfigToken("Filesystem") IsNot Nothing Then
-            If ConfigToken("Filesystem")("Filesystem sort mode") Is Nothing Then
-                Wdbg("W", "Missing key: Filesystem > Filesystem sort mode. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Filesystem")("Filesystem sort direction") Is Nothing Then
-                Wdbg("W", "Missing key: Filesystem > Filesystem sort direction. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Filesystem")("Debug Size Quota in Bytes") Is Nothing Then
-                Wdbg("W", "Missing key: Filesystem > Debug Size Quota in Bytes. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Filesystem")("Show Hidden Files") Is Nothing Then
-                Wdbg("W", "Missing key: Filesystem > Show Hidden Files. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Filesystem")("Size parse mode") Is Nothing Then
-                Wdbg("W", "Missing key: Filesystem > Size parse mode. Config fix needed set to true.")
+            If ConfigToken("Filesystem").Count <> 5 Then
+                Wdbg("W", "Missing keys in Filesystem. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
         If ConfigToken("Network") IsNot Nothing Then
-            If ConfigToken("Network")("Debug Port") Is Nothing Then
-                Wdbg("W", "Missing key: Network > Debug Port. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Network")("Download Retry Times") Is Nothing Then
-                Wdbg("W", "Missing key: Network > Download Retry Times. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Network")("Upload Retry Times") Is Nothing Then
-                Wdbg("W", "Missing key: Network > Upload Retry Times. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Network")("Show progress bar while downloading or uploading from ""get"" or ""put"" command") Is Nothing Then
-                Wdbg("W", "Missing key: Network > Show progress bar while downloading or uploading from ""get"" or ""put"" command. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Network")("Log FTP username") Is Nothing Then
-                Wdbg("W", "Missing key: Network > Log FTP username. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Network")("Log FTP IP address") Is Nothing Then
-                Wdbg("W", "Missing key: Network > Log FTP IP address. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Network")("Return only first FTP profile") Is Nothing Then
-                Wdbg("W", "Missing key: Network > Return only first FTP profile. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Network")("Show mail message preview") Is Nothing Then
-                Wdbg("W", "Missing key: Network > Show mail message preview. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Network")("Record chat to debug log") Is Nothing Then
-                Wdbg("W", "Missing key: Network > Record chat to debug log. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Network")("Show SSH banner") Is Nothing Then
-                Wdbg("W", "Missing key: Network > Show SSH banner. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Network")("Enable RPC") Is Nothing Then
-                Wdbg("W", "Missing key: Network > Enable RPC. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Network")("RPC Port") Is Nothing Then
-                Wdbg("W", "Missing key: Network > RPC Port. Config fix needed set to true.")
+            If ConfigToken("Network").Count <> 12 Then
+                Wdbg("W", "Missing keys in Network. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
         If ConfigToken("Screensaver") IsNot Nothing Then
-            If ConfigToken("Screensaver")("Screensaver") Is Nothing Then
-                Wdbg("W", "Missing key: Screensaver > Screensaver. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Screensaver")("Screensaver Timeout in ms") Is Nothing Then
-                Wdbg("W", "Missing key: Screensaver > Screensaver Timeout in ms. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
             If ConfigToken("Screensaver")("ColorMix") IsNot Nothing Then
-                If ConfigToken("Screensaver")("ColorMix")("Activate 255 Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > ColorMix > Activate 255 Color Mode. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("ColorMix")("Activate True Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > ColorMix > Activate True Color Mode. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("ColorMix")("Delay in Milliseconds") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > ColorMix > Delay in Milliseconds. Config fix needed set to true.")
+                If ConfigToken("Screensaver")("ColorMix").Count <> 3 Then
+                    Wdbg("W", "Missing keys in Screensaver > ColorMix. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Disco") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Disco")("Activate 255 Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Disco > Activate 255 Color Mode. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Disco")("Activate True Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Disco > Activate True Color Mode. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Disco")("Delay in Milliseconds") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Disco > Delay in Milliseconds. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Disco")("Cycle Colors") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Disco > Cycle Colors. Config fix needed set to true.")
+                If ConfigToken("Screensaver")("Disco").Count <> 4 Then
+                    Wdbg("W", "Missing keys in Screensaver > Disco. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("GlitterColor") IsNot Nothing Then
-                If ConfigToken("Screensaver")("GlitterColor")("Activate 255 Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > GlitterColor > Activate 255 Color Mode. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("GlitterColor")("Activate True Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > GlitterColor > Activate True Color Mode. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("GlitterColor")("Delay in Milliseconds") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > GlitterColor > Delay in Milliseconds. Config fix needed set to true.")
+                If ConfigToken("Screensaver")("GlitterColor").Count <> 3 Then
+                    Wdbg("W", "Missing keys in Screensaver > GlitterColor. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Lines") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Lines")("Activate 255 Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Lines > Activate 255 Color Mode. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Lines")("Activate True Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Lines > Activate True Color Mode. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Lines")("Delay in Milliseconds") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Lines > Delay in Milliseconds. Config fix needed set to true.")
+                If ConfigToken("Screensaver")("Lines").Count <> 3 Then
+                    Wdbg("W", "Missing keys in Screensaver > Lines. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Dissolve") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Dissolve")("Activate 255 Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Dissolve > Activate 255 Color Mode. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Dissolve")("Activate True Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Dissolve > Activate True Color Mode. Config fix needed set to true.")
+                If ConfigToken("Screensaver")("Dissolve").Count <> 2 Then
+                    Wdbg("W", "Missing keys in Screensaver > Dissolve. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("BouncingBlock") IsNot Nothing Then
-                If ConfigToken("Screensaver")("BouncingBlock")("Activate 255 Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > BouncingBlock > Activate 255 Color Mode. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("BouncingBlock")("Activate True Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > BouncingBlock > Activate True Color Mode. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("BouncingBlock")("Delay in Milliseconds") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > BouncingBlock > Delay in Milliseconds. Config fix needed set to true.")
+                If ConfigToken("Screensaver")("BouncingBlock").Count <> 3 Then
+                    Wdbg("W", "Missing keys in Screensaver > BouncingBlock. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("ProgressClock") IsNot Nothing Then
-                If ConfigToken("Screensaver")("ProgressClock")("Activate 255 Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > ProgressClock > Activate 255 Color Mode. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("ProgressClock")("Activate True Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > ProgressClock > Activate True Color Mode. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("ProgressClock")("Cycle Colors") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > ProgressClock > Cycle Colors. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("ProgressClock")("Ticks to change color") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > ProgressClock > Ticks to change color. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("ProgressClock")("Color of Seconds Bar") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > ProgressClock > Color of Seconds Bar. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("ProgressClock")("Color of Minutes Bar") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > ProgressClock > Color of Minutes Bar. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("ProgressClock")("Color of Hours Bar") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > ProgressClock > Color of Hours Bar. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("ProgressClock")("Color of Information") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > ProgressClock > Color of Information. Config fix needed set to true.")
+                If ConfigToken("Screensaver")("ProgressClock").Count <> 8 Then
+                    Wdbg("W", "Missing keys in Screensaver > ProgressClock. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Lighter") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Lighter")("Activate 255 Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Lighter > Activate 255 Color Mode. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Lighter")("Activate True Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Lighter > Activate True Color Mode. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Lighter")("Delay in Milliseconds") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Lighter > Delay in Milliseconds. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Lighter")("Max Positions Count") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Lighter > Max Positions Count. Config fix needed set to true.")
+                If ConfigToken("Screensaver")("Lighter").Count <> 4 Then
+                    Wdbg("W", "Missing keys in Screensaver > Lighter. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Wipe") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Wipe")("Activate 255 Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Wipe > Activate 255 Color Mode. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Wipe")("Activate True Color Mode") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Wipe > Activate True Color Mode. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Wipe")("Delay in Milliseconds") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Wipe > Delay in Milliseconds. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Wipe")("Wipes to change direction") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Wipe > Wipes to change direction. Config fix needed set to true.")
+                If ConfigToken("Screensaver")("Wipe").Count <> 4 Then
+                    Wdbg("W", "Missing keys in Screensaver > Wipe. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Matrix") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Matrix")("Delay in Milliseconds") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Matrix > Delay in Milliseconds. Config fix needed set to true.")
+                If ConfigToken("Screensaver")("Matrix").Count <> 1 Then
+                    Wdbg("W", "Missing keys in Screensaver > Matrix. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("GlitterMatrix") IsNot Nothing Then
-                If ConfigToken("Screensaver")("GlitterMatrix")("Delay in Milliseconds") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > GlitterMatrix > Delay in Milliseconds. Config fix needed set to true.")
+                If ConfigToken("Screensaver")("GlitterMatrix").Count <> 1 Then
+                    Wdbg("W", "Missing keys in Screensaver > GlitterMatrix. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Fader") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Fader")("Delay in Milliseconds") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Fader > Delay in Milliseconds. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Fader")("Fade Out Delay in Milliseconds") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Fader > Fade Out Delay in Milliseconds. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Fader")("Text Shown") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Fader > Text Shown. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Fader")("Max Fade Steps") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Fader > Max Fade Steps. Config fix needed set to true.")
+                If ConfigToken("Screensaver")("Fader").Count <> 4 Then
+                    Wdbg("W", "Missing keys in Screensaver > Fader. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Typo") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Typo")("Delay in Milliseconds") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Typo > Delay in Milliseconds. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Typo")("Write Again Delay in Milliseconds") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Typo > Write Again Delay in Milliseconds. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Typo")("Text Shown") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Typo > Text Shown. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Typo")("Minimum writing speed in WPM") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Typo > Minimum writing speed in WPM. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Typo")("Maximum writing speed in WPM") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Typo > Maximum writing speed in WPM. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-                If ConfigToken("Screensaver")("Typo")("Probability of typo in percent") Is Nothing Then
-                    Wdbg("W", "Missing key: Screensaver > Typo > Probability of typo in percent. Config fix needed set to true.")
+                If ConfigToken("Screensaver")("Typo").Count <> 6 Then
+                    Wdbg("W", "Missing keys in Screensaver > Typo. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
         End If
         If ConfigToken("Misc") IsNot Nothing Then
-            If ConfigToken("Misc")("Show Time/Date on Upper Right Corner") Is Nothing Then
-                Wdbg("W", "Missing key: Misc > Show Time/Date on Upper Right Corner. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Misc")("Marquee on startup") Is Nothing Then
-                Wdbg("W", "Missing key: Misc > Marquee on startup. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Misc")("Long Time and Date") Is Nothing Then
-                Wdbg("W", "Missing key: Misc > Long Time and Date. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Misc")("Preferred Unit for Temperature") Is Nothing Then
-                Wdbg("W", "Missing key: Misc > Preferred Unit for Temperature. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Misc")("Enable text editor autosave") Is Nothing Then
-                Wdbg("W", "Missing key: Misc > Enable text editor autosave. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Misc")("Text editor autosave interval") Is Nothing Then
-                Wdbg("W", "Missing key: Misc > Text editor autosave interval. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-            If ConfigToken("Misc")("Wrap list outputs") Is Nothing Then
-                Wdbg("W", "Missing key: Misc > Wrap list outputs. Config fix needed set to true.")
+            If ConfigToken("Misc").Count <> 7 Then
+                Wdbg("W", "Missing keys in Misc. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
