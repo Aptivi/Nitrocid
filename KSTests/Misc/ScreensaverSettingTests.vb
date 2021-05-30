@@ -26,16 +26,7 @@ Imports KS
     <TestMethod()> <TestCategory("Setting")> Public Sub TestSetDefaultScreensaver()
         InitPaths()
         SetDefaultScreensaver("matrix")
-        ScrnSvrdb("matrix").ShouldBeTrue
-    End Sub
-
-    ''' <summary>
-    ''' Tests unsetting default screensaver
-    ''' </summary>
-    <TestMethod()> <TestCategory("Setting")> Public Sub TestUnsetDefaultScreensaver()
-        InitPaths()
-        SetDefaultScreensaver("matrix", False)
-        ScrnSvrdb("matrix").ShouldBeFalse
+        defSaverName.ShouldBe("matrix")
     End Sub
 
 End Class

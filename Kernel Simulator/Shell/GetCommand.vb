@@ -912,21 +912,13 @@ Public Module GetCommand
 
                     Dim modPath As String = paths("Mods")
                     If RequiredArgumentsProvided Then
-                        If ScrnSvrdb.ContainsKey(strArgs) Then
+                        If ScrnSvrdb.ContainsKey(strArgs) Or CSvrdb.ContainsKey(strArgs) Then
                             SetDefaultScreensaver(strArgs)
-                            If ScrnSvrdb(strArgs) Then
-                                W(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, strArgs)
-                            Else
-                                W(DoTranslation("{0} is no longer set to default screensaver."), True, ColTypes.Neutral, strArgs)
-                            End If
+                            W(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, strArgs)
                         Else
                             If FileIO.FileSystem.FileExists($"{modPath}{strArgs}") And Not SafeMode Then
                                 SetDefaultScreensaver(strArgs)
-                                If ScrnSvrdb(strArgs) Then
-                                    W(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, strArgs)
-                                Else
-                                    W(DoTranslation("{0} is no longer set to default screensaver."), True, ColTypes.Neutral, strArgs)
-                                End If
+                                W(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, strArgs)
                             Else
                                 W(DoTranslation("Screensaver {0} not found."), True, ColTypes.Error, strArgs)
                             End If

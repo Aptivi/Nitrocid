@@ -30,10 +30,10 @@ Public Module Screensaver
     Public LockMode As Boolean = False
     Public InSaver As Boolean = False
     Public defSaverName As String = "matrix"
-    Public ScrnSvrdb As New Dictionary(Of String, Boolean) From {{"colorMix", False}, {"matrix", False}, {"glitterMatrix", False}, {"disco", False},
-                                                                 {"lines", False}, {"glitterColor", False}, {"aptErrorSim", False}, {"hackUserFromAD", False},
-                                                                 {"bouncingText", False}, {"dissolve", False}, {"bouncingBlock", False}, {"progressClock", False},
-                                                                 {"lighter", False}, {"fader", False}, {"typo", False}, {"wipe", False}}
+    Public ScrnSvrdb As New Dictionary(Of String, BackgroundWorker) From {{"colorMix", ColorMix}, {"matrix", Matrix}, {"glitterMatrix", GlitterMatrix}, {"disco", Disco},
+                                                                          {"lines", Lines}, {"glitterColor", GlitterColor}, {"aptErrorSim", AptErrorSim}, {"hackUserFromAD", HackUserFromAD},
+                                                                          {"bouncingText", BouncingText}, {"dissolve", Dissolve}, {"bouncingBlock", BouncingBlock}, {"progressClock", ProgressClock},
+                                                                          {"lighter", Lighter}, {"fader", Fader}, {"typo", Typo}, {"wipe", Wipe}}
     Public CSvrdb As New Dictionary(Of String, ICustomSaver)
     Public WithEvents Timeout As New BackgroundWorker
     Public finalSaver As ICustomSaver
@@ -119,103 +119,13 @@ Public Module Screensaver
             ScrnTimeReached = True
             EventManager.RaisePreShowScreensaver(saver)
             Wdbg("I", "Requested screensaver: {0}", saver)
-            If saver = "colorMix" Then
-                ColorMix.RunWorkerAsync()
-                Wdbg("I", "ColorMix started")
+            If ScrnSvrdb.ContainsKey(saver) Then
+                ScrnSvrdb(saver).RunWorkerAsync()
+                Wdbg("I", "{0} started", saver)
                 Console.ReadKey()
                 ScrnTimeReached = False
-                ColorMix.CancelAsync()
-            ElseIf saver = "matrix" Then
-                Matrix.RunWorkerAsync()
-                Wdbg("I", "Matrix started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                Matrix.CancelAsync()
-            ElseIf saver = "glitterMatrix" Then
-                GlitterMatrix.RunWorkerAsync()
-                Wdbg("I", "Glitter Matrix started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                GlitterMatrix.CancelAsync()
-            ElseIf saver = "disco" Then
-                Disco.RunWorkerAsync()
-                Wdbg("I", "Disco started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                Disco.CancelAsync()
-            ElseIf saver = "lines" Then
-                Lines.RunWorkerAsync()
-                Wdbg("I", "Lines started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                Lines.CancelAsync()
-            ElseIf saver = "glitterColor" Then
-                GlitterColor.RunWorkerAsync()
-                Wdbg("I", "Glitter Color started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                GlitterColor.CancelAsync()
-            ElseIf saver = "aptErrorSim" Then
-                AptErrorSim.RunWorkerAsync()
-                Wdbg("I", "apt Error Simulator started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                AptErrorSim.CancelAsync()
-            ElseIf saver = "hackUserFromAD" Then
-                HackUserFromAD.RunWorkerAsync()
-                Wdbg("I", "Hacking Simulator for Active Domain users started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                HackUserFromAD.CancelAsync()
-            ElseIf saver = "bouncingText" Then
-                BouncingText.RunWorkerAsync()
-                Wdbg("I", "Bouncing Text started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                BouncingText.CancelAsync()
-            ElseIf saver = "dissolve" Then
-                Dissolve.RunWorkerAsync()
-                Wdbg("I", "Dissolve started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                Dissolve.CancelAsync()
-            ElseIf saver = "bouncingBlock" Then
-                BouncingBlock.RunWorkerAsync()
-                Wdbg("I", "Bouncing Block started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                BouncingBlock.CancelAsync()
-            ElseIf saver = "progressClock" Then
-                ProgressClock.RunWorkerAsync()
-                Wdbg("I", "Progress Clock started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                ProgressClock.CancelAsync()
-            ElseIf saver = "lighter" Then
-                Lighter.RunWorkerAsync()
-                Wdbg("I", "Lighter started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                Lighter.CancelAsync()
-            ElseIf saver = "fader" Then
-                Fader.RunWorkerAsync()
-                Wdbg("I", "Fader started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                Fader.CancelAsync()
-            ElseIf saver = "typo" Then
-                Typo.RunWorkerAsync()
-                Wdbg("I", "Typo started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                Typo.CancelAsync()
-            ElseIf saver = "wipe" Then
-                Wipe.RunWorkerAsync()
-                Wdbg("I", "Wipe started")
-                Console.ReadKey()
-                ScrnTimeReached = False
-                Wipe.CancelAsync()
-            ElseIf ScrnSvrdb.ContainsKey(saver) Then
+                ScrnSvrdb(saver).CancelAsync()
+            ElseIf CSvrdb.ContainsKey(saver) Then
                 'Only one custom screensaver can be used.
                 finalSaver = CSvrdb(saver)
                 Custom.RunWorkerAsync()
@@ -252,15 +162,12 @@ Public Module Screensaver
     ''' Sets the default screensaver
     ''' </summary>
     ''' <param name="saver">Specified screensaver</param>
-    ''' <param name="setDef">Whether or not to set the default screensaver</param>
-    Public Sub SetDefaultScreensaver(ByVal saver As String, Optional ByVal setDef As Boolean = True)
-        If ScrnSvrdb.ContainsKey(saver) Then
-            Wdbg("I", "{0} is found. (Un)Setting it to default...", saver)
+    Public Sub SetDefaultScreensaver(ByVal saver As String)
+        If ScrnSvrdb.ContainsKey(saver) Or CSvrdb.ContainsKey(saver) Then
+            Wdbg("I", "{0} is found. Setting it to default...", saver)
             ConfigToken("Screensaver")("Screensaver") = saver
             File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
-            ScrnSvrdb(defSaverName) = False
             defSaverName = saver
-            ScrnSvrdb(saver) = setDef
         Else
             Wdbg("W", "{0} is not found.", saver)
             Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found in database. Check the name and try again."), saver)
@@ -306,33 +213,29 @@ Public Module Screensaver
                     If finalSaver.Initialized = True Then
                         Dim IsFound As Boolean
                         If Not SaverName = "" Then
-                            IsFound = ScrnSvrdb.ContainsKey(SaverName)
+                            IsFound = CSvrdb.ContainsKey(SaverName)
                         Else
-                            IsFound = ScrnSvrdb.ContainsKey(file)
+                            IsFound = CSvrdb.ContainsKey(file)
                         End If
                         Wdbg("I", "Is screensaver found? {0}", IsFound)
                         If Not IsFound Then
                             If Not SaverName = "" Then
                                 W(DoTranslation("{0} has been initialized properly."), True, ColTypes.Neutral, SaverName)
                                 Wdbg("I", "{0} ({1}) compiled correctly. Starting...", SaverName, file)
-                                ScrnSvrdb.Add(SaverName, False)
                                 CSvrdb.Add(SaverName, finalSaver)
                             Else
                                 W(DoTranslation("{0} has been initialized properly."), True, ColTypes.Neutral, file)
                                 Wdbg("I", "{0} compiled correctly. Starting...", file)
-                                ScrnSvrdb.Add(file, False)
                                 CSvrdb.Add(file, finalSaver)
                             End If
                         Else
                             If Not SaverName = "" Then
                                 Wdbg("W", "{0} ({1}) already exists. Recompiling...", SaverName, file)
-                                ScrnSvrdb.Remove(SaverName)
                                 CSvrdb.Remove(SaverName)
                                 CompileCustom(file)
                                 Exit Sub
                             Else
                                 Wdbg("W", "{0} already exists. Recompiling...", file)
-                                ScrnSvrdb.Remove(file)
                                 CSvrdb.Remove(file)
                                 CompileCustom(file)
                                 Exit Sub
