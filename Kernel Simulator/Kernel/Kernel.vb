@@ -89,8 +89,8 @@ Public Module Kernel
                 End If
 
                 'Stage 1: Initialize the system
-                W(DoTranslation("Internal initialization finished in") + " {0}", True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
-                W(vbNewLine + DoTranslation("- Stage 1: System initialization") + " >>", True, ColTypes.Stage)
+                W(DoTranslation("Internal initialization finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
+                WriteSeparator(DoTranslation("- Stage 1: System initialization"), False, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 1: Initializing system")
                 StartRDebugThread(True)
                 W(DoTranslation("Starting RPC..."), True, ColTypes.Neutral)
@@ -108,14 +108,14 @@ Public Module Kernel
 #End If
 
                 'Phase 2: Probe hardware
-                W(DoTranslation("Stage finished in") + " {0}", True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
-                W(vbNewLine + DoTranslation("- Stage 2: Hardware detection") + " >>", True, ColTypes.Stage)
+                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
+                WriteSeparator(DoTranslation("- Stage 2: Hardware detection"), False, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 2: Probing hardware")
                 StartProbing()
 
                 'Phase 3: Parse Mods and Screensavers
-                W(DoTranslation("Stage finished in") + " {0}", True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
-                W(vbNewLine + DoTranslation("- Stage 3: Mods and screensavers detection") + " >>", True, ColTypes.Stage)
+                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
+                WriteSeparator(DoTranslation("- Stage 3: Mods and screensavers detection"), False, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 3: Parse mods and screensavers")
                 Wdbg("I", "Safe mode flag is set to {0}", SafeMode)
                 If Not SafeMode Then
@@ -126,8 +126,8 @@ Public Module Kernel
                 EventManager.RaiseStartKernel()
 
                 'Phase 4: Log-in
-                W(DoTranslation("Stage finished in") + " {0}", True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
-                W(vbNewLine + DoTranslation("- Stage 4: Log in") + " >>", True, ColTypes.Stage)
+                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
+                WriteSeparator(DoTranslation("- Stage 4: Log in"), False, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 4: Log in")
                 InitializeSystemAccount()
                 LoginFlag = True

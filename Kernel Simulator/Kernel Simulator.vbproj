@@ -263,6 +263,7 @@
     <Compile Include="Misc\TextEdit\TextEditShell.vb" />
     <Compile Include="Misc\TextEdit\TextEditTools.vb" />
     <Compile Include="Misc\Threading\ThreadManager.vb" />
+    <Compile Include="Misc\Writers\FancyWriters\SeparatorColor.vb" />
     <Compile Include="Misc\Writers\ConsoleWriters\ListWriterColor.vb" />
     <Compile Include="Misc\Writers\ConsoleWriters\TextWriterSlowColor.vb" />
     <Compile Include="Misc\Writers\ConsoleWriters\TextWriterWhereSlowColor.vb" />
