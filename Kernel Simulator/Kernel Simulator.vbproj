@@ -456,7 +456,6 @@
     <None Include="Resources\wls.json" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="OfficialAppIcon-KernelSimulator-256.ico" />
     <None Include="Resources\zul.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
