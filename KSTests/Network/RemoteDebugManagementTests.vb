@@ -20,8 +20,6 @@ Imports KS
 
 <TestClass()> Public Class RemoteDebugManagementTests
 
-    Dim TestMethodsDone As Integer
-
     ''' <summary>
     ''' Tests adding device to json
     ''' </summary>

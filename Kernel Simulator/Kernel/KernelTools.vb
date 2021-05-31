@@ -405,8 +405,7 @@ Public Module KernelTools
                       "    under certain conditions; See COPYING file in source code." + vbNewLine, True, ColTypes.License)
 
         'Some information
-        W(vbNewLine + DoTranslation("- App information") + " ", False, ColTypes.Stage)
-        W("-".Repeat(Console.WindowWidth - Console.CursorLeft), True, ColTypes.Stage)
+        WriteSeparator(DoTranslation("- App information"), False, ColTypes.Stage)
         W("OS: " + DoTranslation("Running on {0}"), True, ColTypes.Neutral, Environment.OSVersion.ToString)
         W("KS: " + DoTranslation("Built in {0}"), True, ColTypes.Neutral, Render(GetCompileDate()))
 

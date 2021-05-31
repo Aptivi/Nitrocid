@@ -22,7 +22,7 @@ Public Module SeparatorColor
     ''' Draw a separator with text
     ''' </summary>
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
-    ''' <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
+    ''' <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
     ''' <param name="ColTypes">A type of colors that will be changed.</param>
     ''' <param name="Vars">Endless amounts of any variables that are separated by commas.</param>
     Public Sub WriteSeparator(ByVal Text As String, ByVal PrintSuffix As Boolean, ByVal ColTypes As ColTypes, ParamArray Vars() As String)
