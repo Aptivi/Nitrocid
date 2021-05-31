@@ -26,6 +26,8 @@ Module BouncingTextDisplay
     ''' Handles the code of Bouncing Text
     ''' </summary>
     Sub BouncingText_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles BouncingText.DoWork
+        Console.BackgroundColor = ConsoleColor.Black
+        Console.ForegroundColor = ConsoleColor.White
         Console.Clear()
         Console.CursorVisible = False
         Dim Direction As String = "BottomRight"
@@ -49,7 +51,8 @@ Module BouncingTextDisplay
                 SaverAutoReset.Set()
                 Exit Do
             Else
-                WriteWhere(BouncingTextWrite, ColumnFirstLetter, RowText, True, ColTypes.Neutral)
+                Console.SetCursorPosition(ColumnFirstLetter, RowText)
+                Console.Write(BouncingTextWrite)
 
                 If Direction = "BottomRight" Then
                     RowText += 1
@@ -71,17 +74,41 @@ Module BouncingTextDisplay
 
                 If RowText = Console.WindowHeight - 2 Then
                     Direction = Direction.Replace("Bottom", "Top")
+                    ChangeBouncingTextColor()
                 ElseIf RowText = 1 Then
                     Direction = Direction.Replace("Top", "Bottom")
+                    ChangeBouncingTextColor()
                 End If
 
                 If ColumnLastLetter = Console.WindowWidth - 1 Then
                     Direction = Direction.Replace("Right", "Left")
+                    ChangeBouncingTextColor()
                 ElseIf ColumnFirstLetter = 1 Then
                     Direction = Direction.Replace("Left", "Right")
+                    ChangeBouncingTextColor()
                 End If
             End If
         Loop
+    End Sub
+
+    ''' <summary>
+    ''' Changes the color of bouncing text
+    ''' </summary>
+    Sub ChangeBouncingTextColor()
+        Dim RandomDriver As New Random
+        If BouncingTextTrueColor Then
+            Dim RedColorNum As Integer = RandomDriver.Next(1, 255)
+            Dim GreenColorNum As Integer = RandomDriver.Next(1, 255)
+            Dim BlueColorNum As Integer = RandomDriver.Next(1, 255)
+            Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
+            Console.Write(ProbePlaces($"<f:{ColorStorage}><b:0;0;0>"))
+        ElseIf BouncingText255Colors Then
+            Dim ColorNum As Integer = RandomDriver.Next(1, 255)
+            Console.Write(ProbePlaces($"<f:{ColorNum}><b:0>"))
+        Else
+            Console.ForegroundColor = colors(RandomDriver.Next(1, colors.Length - 1))
+            Console.BackgroundColor = ConsoleColor.Black
+        End If
     End Sub
 
 End Module

@@ -277,11 +277,13 @@ Public Module ToolPrompts
                     W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(GlitterColorTrueColor)))
                     W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(GlitterColorDelay)))
                 Case "7.7" 'Screensaver > BouncingText
-                    MaxOptions = 2
+                    MaxOptions = 4
                     W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingText" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " BouncingText." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingTextDelay)))
-                    W("2) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingTextWrite)))
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingText255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingTextTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingTextDelay)))
+                    W("4) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingTextWrite)))
                 Case "7.8" 'Screensaver > Dissolve
                     MaxOptions = 2
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Dissolve" + vbNewLine, True, ColTypes.Neutral)
@@ -937,12 +939,24 @@ Public Module ToolPrompts
                     End Select
                 Case "7.7" 'BouncingText
                     Select Case KeyNumber
-                        Case 1 'BouncingText: Delay in Milliseconds
+                        Case 1 'BouncingText: Activate 255 colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(BouncingText255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates 255 color support for BouncingText."), True, ColTypes.Neutral)
+                        Case 2 'BouncingText: Activate true colors
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(BouncingTextTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates true color support for BouncingText."), True, ColTypes.Neutral)
+                        Case 3 'BouncingText: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(BouncingTextDelay)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
-                        Case 2 'BouncingText: Text shown
+                        Case 4 'BouncingText: Text shown
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(BouncingTextWrite)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Text shown") + vbNewLine, True, ColTypes.Neutral)

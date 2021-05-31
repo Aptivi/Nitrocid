@@ -68,6 +68,14 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public BouncingBlockTrueColor As Boolean = True
     ''' <summary>
+    ''' [BouncingText] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public BouncingText255Colors As Boolean
+    ''' <summary>
+    ''' [BouncingText] Enable truecolor support. Has a higher priority than 255 color support.
+    ''' </summary>
+    Public BouncingTextTrueColor As Boolean = True
+    ''' <summary>
     ''' [ProgressClock] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
     Public ProgressClock255Colors As Boolean

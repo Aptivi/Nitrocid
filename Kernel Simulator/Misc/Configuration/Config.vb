@@ -219,6 +219,8 @@ Public Module Config
 
             'BouncingText config json object
             Dim BouncingTextConfig As New JObject From {
+                    {"Activate 255 Color Mode", BouncingText255Colors},
+                    {"Activate True Color Mode", BouncingTextTrueColor},
                     {"Delay in Milliseconds", BouncingTextDelay},
                     {"Text Shown", BouncingTextWrite}
             }
@@ -391,6 +393,7 @@ Public Module Config
             Lines255Colors = If(ConfigToken("Screensaver")?("Lines")?("Activate 255 Color Mode"), False)
             Dissolve255Colors = If(ConfigToken("Screensaver")?("Dissolve")?("Activate 255 Color Mode"), False)
             BouncingBlock255Colors = If(ConfigToken("Screensaver")?("BouncingBlock")?("Activate 255 Color Mode"), False)
+            BouncingText255Colors = If(ConfigToken("Screensaver")?("BouncingText")?("Activate 255 Color Mode"), False)
             ProgressClock255Colors = If(ConfigToken("Screensaver")?("ProgressClock")?("Activate 255 Color Mode"), False)
             Lighter255Colors = If(ConfigToken("Screensaver")?("Lighter")?("Activate 255 Color Mode"), False)
             Wipe255Colors = If(ConfigToken("Screensaver")?("Wipe")?("Activate 255 Color Mode"), False)
@@ -400,6 +403,7 @@ Public Module Config
             LinesTrueColor = If(ConfigToken("Screensaver")?("Lines")?("Activate True Color Mode"), True)
             DissolveTrueColor = If(ConfigToken("Screensaver")?("Dissolve")?("Activate True Color Mode"), True)
             BouncingBlockTrueColor = If(ConfigToken("Screensaver")?("BouncingBlock")?("Activate True Color Mode"), True)
+            BouncingTextTrueColor = If(ConfigToken("Screensaver")?("BouncingText")?("Activate True Color Mode"), True)
             ProgressClockTrueColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Activate True Color Mode"), True)
             LighterTrueColor = If(ConfigToken("Screensaver")?("Lighter")?("Activate True Color Mode"), True)
             WipeTrueColor = If(ConfigToken("Screensaver")?("Wipe")?("Activate True Color Mode"), True)
@@ -603,6 +607,12 @@ Public Module Config
             If ConfigToken("Screensaver")("BouncingBlock") IsNot Nothing Then
                 If ConfigToken("Screensaver")("BouncingBlock").Count <> 3 Then
                     Wdbg("W", "Missing keys in Screensaver > BouncingBlock. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("BouncingText") IsNot Nothing Then
+                If ConfigToken("Screensaver")("BouncingText").Count <> 4 Then
+                    Wdbg("W", "Missing keys in Screensaver > BouncingText. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
