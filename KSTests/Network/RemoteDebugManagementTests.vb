@@ -20,6 +20,8 @@ Imports KS
 
 <TestClass()> Public Class RemoteDebugManagementTests
 
+    Dim TestMethodsDone As Integer
+
     ''' <summary>
     ''' Tests adding device to json
     ''' </summary>
@@ -39,6 +41,13 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestGetDeviceProperty()
         CStr(GetDeviceProperty("123.123.123.123", DeviceProperty.Name)).ShouldBe("TestUser")
+    End Sub
+
+    ''' <summary>
+    ''' Removes a test device created by <see cref="TestAddDeviceToJson()"/>
+    ''' </summary>
+    <ClassCleanup()> Public Shared Sub TestRemoveTestDevice()
+        RemoveDeviceFromJson("123.123.123.123").ShouldBeTrue
     End Sub
 
 End Class

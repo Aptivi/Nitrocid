@@ -48,4 +48,11 @@ Imports KS
         SetLang("spa").ShouldBeTrue
     End Sub
 
+    ''' <summary>
+    ''' Restores the language
+    ''' </summary>
+    <TestCleanup> Public Sub RestoreLanguage()
+        SetLang("eng")
+    End Sub
+
 End Class

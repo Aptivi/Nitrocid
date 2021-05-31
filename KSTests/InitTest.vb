@@ -28,7 +28,12 @@ Imports Newtonsoft.Json.Linq
     ''' <param name="Context">Test context</param>
     <AssemblyInitialize()> Public Shared Sub ReadyEverything(Context As TestContext)
         InitPaths()
-        CreateConfig()
+        If Not File.Exists(paths("Configuration")) Then
+            CreateConfig()
+        Else
+            If Not File.Exists(paths("Configuration") + ".old") Then File.Move(paths("Configuration"), paths("Configuration") + ".old")
+            CreateConfig()
+        End If
         ConfigToken = JObject.Parse(File.ReadAllText(paths("Configuration")))
         LoadUserToken()
     End Sub
@@ -42,13 +47,14 @@ Imports Newtonsoft.Json.Linq
         If File.Exists(paths("Home") + "/Documents/Text.txt") Then File.Delete(paths("Home") + "/Documents/Text.txt")
         If File.Exists(paths("Home") + "/NewFile.txt") Then File.Delete(paths("Home") + "/NewFile.txt")
         If File.Exists(paths("Home") + "/1mb-test.csv") Then File.Delete(paths("Home") + "/1mb-test.csv")
-        If File.Exists(paths("Home") + "/DebugDeviceNames.json") Then File.Delete(paths("Home") + "/DebugDeviceNames.json")
-        If File.Exists(paths("Home") + "/KernelConfig.json") Then File.Delete(paths("Home") + "/KernelConfig.json")
         If Directory.Exists(paths("Home") + "/TestMovedDir2") Then Directory.Delete(paths("Home") + "/TestMovedDir2", True)
         If Directory.Exists(paths("Home") + "/NewDirectory") Then Directory.Delete(paths("Home") + "/NewDirectory", True)
         If Directory.Exists(paths("Home") + "/TestDir") Then Directory.Delete(paths("Home") + "/TestDir", True)
         If Directory.Exists(paths("Home") + "/TestDir2") Then Directory.Delete(paths("Home") + "/TestDir2", True)
-        CreateConfig()
+        If File.Exists(paths("Configuration") + ".old") Then
+            If File.Exists(paths("Configuration")) Then File.Delete(paths("Home") + "/KernelConfig.json")
+            File.Move(paths("Configuration") + ".old", paths("Configuration"))
+        End If
     End Sub
 
 End Class

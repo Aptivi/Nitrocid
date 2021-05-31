@@ -218,6 +218,24 @@ Public Module RemoteDebugTools
     End Function
 
     ''' <summary>
+    ''' Removes a device IP address from JSON
+    ''' </summary>
+    ''' <param name="DeviceIP">Device IP address from remote endpoint address</param>
+    ''' <returns>True if successful; False if unsuccessful.</returns>
+    Public Function RemoveDeviceFromJson(ByVal DeviceIP As String) As Boolean
+        Dim DeviceJsonContent As String = File.ReadAllText(paths("DebugDevNames"))
+        Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
+        If DeviceNameToken(DeviceIP) IsNot Nothing Then
+            DeviceNameToken.Remove(DeviceIP)
+            File.WriteAllText(paths("DebugDevNames"), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented))
+            Return True
+        Else
+            Throw New Exceptions.RemoteDebugDeviceNotFoundException(DoTranslation("No such device."))
+            Return False
+        End If
+    End Function
+
+    ''' <summary>
     ''' Lists all devices and puts them into an array
     ''' </summary>
     Public Function ListDevices() As String()
