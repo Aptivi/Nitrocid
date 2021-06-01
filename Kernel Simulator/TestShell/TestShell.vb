@@ -67,6 +67,8 @@ Module TestShell
     Sub InitTShell()
         Dim FullCmd As String
         AddHandler Console.CancelKeyPress, AddressOf TCancelCommand
+        Console.WriteLine()
+        WriteSeparator(DoTranslation("Welcome to Test Shell!"), True, ColTypes.Stage)
 
         While Not Test_ExitFlag
             If Not IsNothing(DefConsoleOut) Then
