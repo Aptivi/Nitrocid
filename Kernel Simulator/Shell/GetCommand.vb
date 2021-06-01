@@ -916,7 +916,7 @@ Public Module GetCommand
                             SetDefaultScreensaver(strArgs)
                             W(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, strArgs)
                         Else
-                            If FileIO.FileSystem.FileExists($"{modPath}{strArgs}") And Not SafeMode Then
+                            If File.Exists($"{modPath}{strArgs}") And Not SafeMode Then
                                 SetDefaultScreensaver(strArgs)
                                 W(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, strArgs)
                             Else

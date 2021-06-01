@@ -184,7 +184,7 @@ Public Module Screensaver
         file = file.Replace("\", "/").Replace(modPath, "")
 
         'Start parsing screensaver
-        If FileIO.FileSystem.FileExists(modPath + file) Then
+        If IO.File.Exists(modPath + file) Then
             Wdbg("I", "Parsing {0}...", file)
             If file.EndsWith(".ss.vb") Or file.EndsWith(".ss.cs") Or file.EndsWith(".dll") Then
                 Wdbg("W", "{0} is a valid screensaver. Generating...", file)

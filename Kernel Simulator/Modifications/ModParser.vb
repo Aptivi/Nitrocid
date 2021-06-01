@@ -204,8 +204,8 @@ NextEntry:
     Sub ParseMods(ByVal StartStop As Boolean)
         Wdbg("I", "Safe mode: {0}", SafeMode)
         If Not SafeMode Then
-            If Not FileIO.FileSystem.DirectoryExists(modPath) Then FileIO.FileSystem.CreateDirectory(modPath)
-            Dim count As Integer = FileIO.FileSystem.GetFiles(modPath).Count
+            If Not Directory.Exists(modPath) Then Directory.CreateDirectory(modPath)
+            Dim count As Integer = Directory.EnumerateFiles(modPath).Count
             Wdbg("I", "Files count: {0}", count)
             If count <> 0 Then
                 If StartStop Then
@@ -232,7 +232,7 @@ NextEntry:
                     Next
                     CSvrdb.Clear()
                 Else
-                    For Each modFile As String In FileIO.FileSystem.GetFiles(modPath)
+                    For Each modFile As String In Directory.EnumerateFiles(modPath)
                         W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(modFile))
                         StartParse(modFile.Replace("\", "/"), StartStop)
                     Next

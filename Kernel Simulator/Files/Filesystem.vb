@@ -312,7 +312,7 @@ Public Module Filesystem
             Wdbg("I", "Source file name: {0}", FileName)
             If Directory.Exists(Source) Then
                 Wdbg("I", "Source and destination are directories")
-                FileIO.FileSystem.CopyDirectory(Source, Destination, True) 'There is no IO.Directory.Copy yet.
+                CopyDirectory(Source, Destination)
 
                 'Raise event
                 EventManager.RaiseDirectoryCopied(Source, Destination)
@@ -342,6 +342,42 @@ Public Module Filesystem
         End Try
         Return False
     End Function
+
+    ''' <summary>
+    ''' Copies the directory from source to destination
+    ''' </summary>
+    ''' <param name="Source">Source directory</param>
+    ''' <param name="Destination">Target directory</param>
+    Private Sub CopyDirectory(ByVal Source As String, ByVal Destination As String)
+        If Not Directory.Exists(Source) Then Throw New IOException(DoTranslation("Directory {0} not found.").FormatString(Source))
+
+        'Get all source directories and files
+        Dim SourceDirInfo As New DirectoryInfo(Source)
+        Dim SourceDirectories As DirectoryInfo() = SourceDirInfo.GetDirectories
+        Wdbg("I", "Source directories: {0}", SourceDirectories.Length)
+        Dim SourceFiles As FileInfo() = SourceDirInfo.GetFiles
+        Wdbg("I", "Source files: {0}", SourceFiles.Length)
+
+        'Make a destination directory if it doesn't exist
+        If Not Directory.Exists(Destination) Then
+            Wdbg("I", "Destination directory {0} doesn't exist. Creating...", Destination)
+            Directory.CreateDirectory(Destination)
+        End If
+
+        'Iterate through every file and copy them to destination
+        For Each SourceFile As FileInfo In SourceFiles
+            Dim DestinationFilePath As String = Path.Combine(Destination, SourceFile.Name)
+            Wdbg("I", "Copying file {0} to destination...", DestinationFilePath)
+            SourceFile.CopyTo(DestinationFilePath, True)
+        Next
+
+        'Iterate through every subdirectory and copy them to destination
+        For Each SourceDirectory As DirectoryInfo In SourceDirectories
+            Dim DestinationDirectoryPath As String = Path.Combine(Destination, SourceDirectory.Name)
+            Wdbg("I", "Calling CopyDirectory() with destination {0}...", DestinationDirectoryPath)
+            CopyDirectory(SourceDirectory.FullName, DestinationDirectoryPath)
+        Next
+    End Sub
 
     ''' <summary>
     ''' Set size parse mode (whether to enable full size parse for directories or just the surface)
