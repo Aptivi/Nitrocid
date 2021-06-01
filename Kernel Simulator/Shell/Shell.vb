@@ -160,7 +160,7 @@ Public Module Shell
                     Console.CursorVisible = True
 
                     'Write a prompt
-                    If Not IsNothing(DefConsoleOut) Then
+                    If DefConsoleOut IsNot Nothing Then
                         Console.SetOut(DefConsoleOut)
                     End If
                     CommandPromptWrite()
@@ -205,7 +205,7 @@ Public Module Shell
                         End If
 
                         'Fix race condition between shell initialization and starting the event handler thread
-                        If IsNothing(strcommand) Then
+                        If strcommand Is Nothing Then
                             Thread.Sleep(30)
                         End If
 

@@ -63,7 +63,7 @@ Module TextWriterSlowColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
+            If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
                 If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
                     Write(New Color(NeutralTextColor).VTSequenceForeground)
                 ElseIf colorType = ColTypes.Continuable Then
@@ -117,7 +117,7 @@ Module TextWriterSlowColor
                 WriteLine()
             End If
             If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
-            If colorType = ColTypes.Input And ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+            If colorType = ColTypes.Input And ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                 SetInputColor()
             End If
 #If Not NOWRITELOCK Then
@@ -155,7 +155,7 @@ Module TextWriterSlowColor
                 WriteLine()
             End If
             If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
-            If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+            If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                 SetInputColor()
             End If
 #If Not NOWRITELOCK Then
@@ -194,7 +194,7 @@ Module TextWriterSlowColor
                 WriteLine()
             End If
             If BackgroundColor = ConsoleColor.Black Then ResetColor()
-            If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+            If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                 SetInputColor()
             End If
 #If Not NOWRITELOCK Then
@@ -214,7 +214,7 @@ Module TextWriterSlowColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
+            If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
                 Write(color.VTSequenceForeground)
                 Write(New Color(BackgroundColor).VTSequenceBackground)
             End If
@@ -234,7 +234,7 @@ Module TextWriterSlowColor
                 WriteLine()
             End If
             If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
-            If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+            If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                 SetInputColor()
             End If
 #If Not NOWRITELOCK Then
@@ -255,7 +255,7 @@ Module TextWriterSlowColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
+            If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
                 Write(ForegroundColor.VTSequenceForeground)
                 Write(BackgroundColor.VTSequenceBackground)
             End If
@@ -275,7 +275,7 @@ Module TextWriterSlowColor
                 WriteLine()
             End If
             If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then ResetColor()
-            If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+            If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                 SetInputColor()
             End If
 #If Not NOWRITELOCK Then

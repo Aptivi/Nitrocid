@@ -30,7 +30,7 @@ Public Module RPC_Commands
     ''' <br/>&lt;Request:Acknowledge&gt;: Request will be like this: &lt;Request:Acknowledge&gt;(IP)
     ''' <br/>&lt;Request:Ping&gt;: Request will be like this: &lt;Request:Ping&gt;(IP)
     ''' </summary>
-    Dim Commands As New List(Of String) From {"<Request:Shutdown>", "<Request:Reboot>", "<Request:Lock>", "<Request:SaveScr>", "<Request:Exec>", "<Request:Acknowledge>", "<Request:Ping>"}
+    ReadOnly Commands As New List(Of String) From {"<Request:Shutdown>", "<Request:Reboot>", "<Request:Lock>", "<Request:SaveScr>", "<Request:Exec>", "<Request:Acknowledge>", "<Request:Ping>"}
 
     ''' <summary>
     ''' Send an RPC command to another instance of KS using the specified address
@@ -141,7 +141,7 @@ Public Module RPC_Commands
                 End If
             Catch ex As Exception
                 Dim SE As SocketException = CType(ex.InnerException, SocketException)
-                If Not IsNothing(SE) Then
+                If SE IsNot Nothing Then
                     If Not SE.SocketErrorCode = SocketError.TimedOut Then
                         Wdbg("E", "Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
                         WStkTrc(ex)

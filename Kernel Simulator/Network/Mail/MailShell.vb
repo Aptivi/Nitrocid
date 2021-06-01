@@ -70,7 +70,7 @@ Public Module MailShell
             InitializeHandlers()
 
             'Initialize prompt
-            If Not IsNothing(DefConsoleOut) Then
+            If DefConsoleOut IsNot Nothing Then
                 Console.SetOut(DefConsoleOut)
             End If
             Wdbg("I", "MailShellPromptStyle = {0}", MailShellPromptStyle)

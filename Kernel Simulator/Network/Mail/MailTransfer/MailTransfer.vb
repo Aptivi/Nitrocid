@@ -101,8 +101,8 @@ Public Module MailTransfer
                 Wdbg("I", $"Decrypted message type: {If(TypeOf DecryptedEntity Is Multipart, "Multipart", "Singlepart")}")
                 If TypeOf DecryptedEntity Is Multipart Then
                     Dim MultiEntity As Multipart = CType(DecryptedEntity, Multipart)
-                    Wdbg("I", $"Decrypted message entity is {If(Not IsNothing(MultiEntity), "multipart", "nothing")}")
-                    If Not IsNothing(MultiEntity) Then
+                    Wdbg("I", $"Decrypted message entity is {If(MultiEntity IsNot Nothing, "multipart", "nothing")}")
+                    If MultiEntity IsNot Nothing Then
                         For EntityNumber As Integer = 0 To MultiEntity.Count - 1
                             Wdbg("I", $"Entity number {EntityNumber} is {If(MultiEntity(EntityNumber).IsAttachment, "an attachment", "not an attachment")}")
                             If Not MultiEntity(EntityNumber).IsAttachment Then
@@ -145,8 +145,8 @@ Public Module MailTransfer
                             AttachmentEntities.Add(DecryptedMessage.Values(DecryptedEntityNumber))
                         ElseIf DecryptedMessage.Keys(DecryptedEntityNumber) = "Body" And TypeOf DecryptedMessage("Body") Is Multipart Then
                             Dim MultiEntity As Multipart = CType(DecryptedMessage("Body"), Multipart)
-                            Wdbg("I", $"Decrypted message entity is {If(Not IsNothing(MultiEntity), "multipart", "nothing")}")
-                            If Not IsNothing(MultiEntity) Then
+                            Wdbg("I", $"Decrypted message entity is {If(MultiEntity IsNot Nothing, "multipart", "nothing")}")
+                            If MultiEntity IsNot Nothing Then
                                 Wdbg("I", "{0} entities found.", MultiEntity.Count)
                                 For EntityNumber As Integer = 0 To MultiEntity.Count - 1
                                     Wdbg("I", $"Entity number {EntityNumber} is {If(MultiEntity(EntityNumber).IsAttachment, "an attachment", "not an attachment")}")
@@ -187,7 +187,7 @@ Public Module MailTransfer
         Wdbg("I", $"Encrypted message type: {If(TypeOf Text.Body Is MultipartEncrypted, "Multipart", "Singlepart")}")
         If TypeOf Text.Body Is MultipartEncrypted Then
             Dim Encrypted = CType(Text.Body, MultipartEncrypted)
-            Wdbg("I", $"Message type: {If(Not IsNothing(Encrypted), "MultipartEncrypted", "Nothing")}")
+            Wdbg("I", $"Message type: {If(Encrypted IsNot Nothing, "MultipartEncrypted", "Nothing")}")
             Wdbg("I", "Decrypting...")
             EncryptedDict.Add("Body", Encrypted.Decrypt(New PGPContext))
         Else
@@ -200,7 +200,7 @@ Public Module MailTransfer
             Wdbg("I", $"Encrypted attachment type: {If(TypeOf TextAttachment Is MultipartEncrypted, "Multipart", "Singlepart")}")
             If TypeOf TextAttachment Is MultipartEncrypted Then
                 Dim Encrypted = CType(TextAttachment, MultipartEncrypted)
-                Wdbg("I", $"Attachment type: {If(Not IsNothing(Encrypted), "MultipartEncrypted", "Nothing")}")
+                Wdbg("I", $"Attachment type: {If(Encrypted IsNot Nothing, "MultipartEncrypted", "Nothing")}")
                 Wdbg("I", "Decrypting...")
                 EncryptedDict.Add("Attachment " & AttachmentNumber, Encrypted.Decrypt(New PGPContext))
             Else

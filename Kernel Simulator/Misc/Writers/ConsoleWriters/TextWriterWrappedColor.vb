@@ -35,7 +35,7 @@ Public Module TextWriterWrappedColor
             Dim OldTop As Integer
             Try
                 'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
+                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
                     If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
                         Write(New Color(NeutralTextColor).VTSequenceForeground)
                     ElseIf colorType = ColTypes.Continuable Then
@@ -91,7 +91,7 @@ Public Module TextWriterWrappedColor
                 Next
                 If Line Then WriteLine()
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
-                If colorType = ColTypes.Input And ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+                If colorType = ColTypes.Input And ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
                 End If
             Catch ex As Exception
@@ -138,7 +138,7 @@ Public Module TextWriterWrappedColor
                 Next
                 If Line Then WriteLine()
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
-                If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+                If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
                 End If
             Catch ex As Exception
@@ -186,7 +186,7 @@ Public Module TextWriterWrappedColor
                 Next
                 If Line Then WriteLine()
                 If BackgroundColor = ConsoleColor.Black Then ResetColor()
-                If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+                If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
                 End If
             Catch ex As Exception
@@ -213,7 +213,7 @@ Public Module TextWriterWrappedColor
             Dim OldTop As Integer
             Try
                 'Try to write to console
-                If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
+                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
                     Write(color.VTSequenceForeground)
                     Write(New Color(BackgroundColor).VTSequenceBackground)
                 End If
@@ -235,7 +235,7 @@ Public Module TextWriterWrappedColor
                 Next
                 If Line Then WriteLine()
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
-                If ColoredShell And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
                 End If
             Catch ex As Exception
@@ -263,7 +263,7 @@ Public Module TextWriterWrappedColor
             Dim OldTop As Integer
             Try
                 'Try to write to console
-                If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
+                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
                     Write(ForegroundColor.VTSequenceForeground)
                     Write(BackgroundColor.VTSequenceBackground)
                 End If
@@ -285,7 +285,7 @@ Public Module TextWriterWrappedColor
                 Next
                 If Line Then WriteLine()
                 If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then ResetColor()
-                If ColoredShell And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
+                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
                 End If
             Catch ex As Exception

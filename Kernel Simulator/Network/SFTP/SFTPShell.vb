@@ -86,7 +86,7 @@ Public Module SFTPShell
                 End If
 
                 'Prompt for command
-                If Not IsNothing(DefConsoleOut) Then
+                If DefConsoleOut IsNot Nothing Then
                     Console.SetOut(DefConsoleOut)
                 End If
                 If Not Connects Then
@@ -129,7 +129,7 @@ Public Module SFTPShell
                 End If
 
                 'This is to fix race condition between SFTP shell initialization and starting the event handler thread
-                If IsNothing(SFTPStrCmd) Then
+                If SFTPStrCmd Is Nothing Then
                     Thread.Sleep(30)
                 End If
             Catch ex As Exception

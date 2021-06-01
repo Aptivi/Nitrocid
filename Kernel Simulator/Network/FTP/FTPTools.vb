@@ -30,7 +30,7 @@ Public Module FTPTools
     ''' <param name="Port">A port for the address</param>
     Public Sub PromptForPassword(ByVal user As String, Optional ByVal Address As String = "", Optional ByVal Port As Integer = 0, Optional ByVal EncryptionMode As FtpEncryptionMode = FtpEncryptionMode.Explicit)
         'Make a new FTP client object instance (Used in case logging in using speed dial)
-        If IsNothing(ClientFTP) Then
+        If ClientFTP Is Nothing Then
             ClientFTP = New FtpClient With {
                             .Host = Address,
                             .Port = Port,

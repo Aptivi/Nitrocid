@@ -300,7 +300,7 @@ NextEntry:
     ''' <param name="StartStop">Whether to start or stop mods</param>
     Sub FinalizeMods(ByVal script As IScript, ByVal modFile As String, Optional ByVal StartStop As Boolean = True)
         Dim ModParts As New Dictionary(Of String, IScript)
-        If Not IsNothing(script) Then
+        If script IsNot Nothing Then
             EventManager.RaiseModParsed(StartStop, modFile)
             Try
                 script.StartMod()

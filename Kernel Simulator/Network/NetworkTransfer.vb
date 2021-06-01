@@ -57,7 +57,7 @@ Public Module NetworkTransfer
 
         'Download a file
         Wdbg("I", "Directory location: {0}", CurrDir)
-        If Not IsNothing(Credentials) Then
+        If Credentials IsNot Nothing Then
             WClient.Credentials = Credentials
         End If
         If ShowProgress Then AddHandler WClient.DownloadProgressChanged, AddressOf DownloadManager
@@ -102,7 +102,7 @@ Public Module NetworkTransfer
 
         'Upload a file
         Wdbg("I", "Directory location: {0}", CurrDir)
-        If Not IsNothing(Credentials) Then
+        If Credentials IsNot Nothing Then
             WClient.Credentials = Credentials
         End If
         If ShowProgress Then AddHandler WClient.UploadProgressChanged, AddressOf UploadManager
@@ -146,7 +146,7 @@ Public Module NetworkTransfer
 
         'Download a resource
         Wdbg("I", "Resource location: {0}", URL)
-        If Not IsNothing(Credentials) Then
+        If Credentials IsNot Nothing Then
             WClient.Credentials = Credentials
         End If
         If ShowProgress Then AddHandler WClient.DownloadProgressChanged, AddressOf DownloadManager
@@ -191,7 +191,7 @@ Public Module NetworkTransfer
 
         'Download a resource
         Wdbg("I", "Resource location: {0}", URL)
-        If Not IsNothing(Credentials) Then
+        If Credentials IsNot Nothing Then
             WClient.Credentials = Credentials
         End If
         If ShowProgress Then AddHandler WClient.UploadProgressChanged, AddressOf UploadManager
@@ -217,7 +217,7 @@ Public Module NetworkTransfer
     ''' </summary>
     Private Sub DownloadChecker(sender As Object, e As AsyncCompletedEventArgs)
         Wdbg("I", "Download complete. Error: {0}", e.Error?.Message)
-        If Not IsNothing(e.Error) Then
+        If e.Error IsNot Nothing Then
             ReasonError = e.Error
             IsError = True
         End If
@@ -230,7 +230,7 @@ Public Module NetworkTransfer
     Private Sub DownloadStringChecker(sender As Object, e As DownloadStringCompletedEventArgs)
         Wdbg("I", "Download complete. Error: {0}", e.Error?.Message)
         DownloadedString = e.Result
-        If Not IsNothing(e.Error) Then
+        If e.Error IsNot Nothing Then
             ReasonError = e.Error
             IsError = True
         End If
@@ -254,7 +254,7 @@ Public Module NetworkTransfer
     ''' </summary>
     Private Sub UploadChecker(sender As Object, e As AsyncCompletedEventArgs)
         Wdbg("I", "Upload complete. Error: {0}", e.Error?.Message)
-        If Not IsNothing(e.Error) Then
+        If e.Error IsNot Nothing Then
             ReasonError = e.Error
             IsError = True
         End If

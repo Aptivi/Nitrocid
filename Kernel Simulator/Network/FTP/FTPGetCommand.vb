@@ -239,7 +239,7 @@ Public Module FTPGetCommand
             End Select
         Catch ex As Exception 'The InnerException CAN be Nothing
             If DebugMode = True Then
-                If Not IsNothing(ex.InnerException) Then 'This is required to fix NullReferenceException when there is nothing in InnerException, so please don't remove.
+                If ex.InnerException IsNot Nothing Then 'This is required to fix NullReferenceException when there is nothing in InnerException, so please don't remove.
                     W(DoTranslation("Error trying to execute FTP command {3}.") + vbNewLine +
                       DoTranslation("Error {0}: {1} ") + DoTranslation("(Inner:") + " {4})" + vbNewLine + "{2}", True, ColTypes.Error, Err.Number, ex.Message, ex.StackTrace, words(0), ex.InnerException.Message)
                 Else
@@ -248,7 +248,7 @@ Public Module FTPGetCommand
                 End If
                 WStkTrc(ex)
             Else
-                If Not IsNothing(ex.InnerException) Then
+                If ex.InnerException IsNot Nothing Then
                     W(DoTranslation("Error trying to execute FTP command {2}.") + vbNewLine +
                       DoTranslation("Error {0}: {1} ") + DoTranslation("(Inner:") + "{3})", True, ColTypes.Error, Err.Number, ex.Message, words(0), ex.InnerException.Message)
                 Else

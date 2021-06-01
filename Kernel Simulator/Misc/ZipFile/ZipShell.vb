@@ -53,7 +53,7 @@ Module ZipShell
             If ZipShell_ZipArchive Is Nothing Then ZipShell_ZipArchive = New ZipArchive(ZipShell_FileStream, ZipArchiveMode.Update, False)
 
             'Prepare for prompt
-            If Not IsNothing(DefConsoleOut) Then
+            If DefConsoleOut IsNot Nothing Then
                 Console.SetOut(DefConsoleOut)
             End If
             W("[", False, ColTypes.Gray) : W("{0}@{1}", False, ColTypes.UserName, ZipShell_CurrentArchiveDirectory, Path.GetFileName(ZipFile)) : W("] > ", False, ColTypes.Gray)
@@ -64,7 +64,7 @@ Module ZipShell
             Dim WrittenCommand As String = Console.ReadLine
 
             'Check to see if the command doesn't start with spaces or if the command is nothing
-            Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand?.StartsWith(" "), IsNothing(WrittenCommand), WrittenCommand = "")
+            Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand?.StartsWith(" "), WrittenCommand Is Nothing, WrittenCommand = "")
             If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWith(" ") = True) Then
                 Wdbg("I", "Checking command {0} for existence.", WrittenCommand.Split(" ")(0))
                 If ZipShell_Commands.ContainsKey(WrittenCommand.Split(" ")(0)) Then
@@ -90,7 +90,7 @@ Module ZipShell
             End If
 
             'This is to fix race condition between shell initialization and starting the event handler thread
-            If IsNothing(WrittenCommand) Then
+            If WrittenCommand Is Nothing Then
                 Thread.Sleep(30)
             End If
         End While

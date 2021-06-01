@@ -449,7 +449,7 @@ Public Module GetCommand
                 Case "ftp"
 
                     Try
-                        If eqargs?.Length = 0 Or IsNothing(eqargs) Then
+                        If eqargs?.Length = 0 Or eqargs Is Nothing Then
                             InitiateShell()
                         Else
                             InitiateShell(True, eqargs(0))
@@ -595,7 +595,7 @@ Public Module GetCommand
                 Case "list"
 
                     'Lists folders and files
-                    If eqargs?.Length = 0 Or IsNothing(eqargs) Then
+                    If eqargs?.Length = 0 Or eqargs Is Nothing Then
                         List(CurrDir)
                     Else
                         For Each Directory As String In eqargs
@@ -613,7 +613,7 @@ Public Module GetCommand
                     If KeepAlive Then
                         OpenMailShell(Mail_Authentication.Domain)
                     Else
-                        If eqargs?.Length = 0 Or IsNothing(eqargs) Then
+                        If eqargs?.Length = 0 Or eqargs Is Nothing Then
                             PromptUser()
                         ElseIf Not eqargs(0) = "" Then
                             PromptPassword(eqargs(0))
@@ -953,7 +953,7 @@ Public Module GetCommand
                 Case "sftp"
 
                     Try
-                        If eqargs?.Length = 0 Or IsNothing(eqargs) Then
+                        If eqargs?.Length = 0 Or eqargs Is Nothing Then
                             SFTPInitiateShell()
                         Else
                             SFTPInitiateShell(True, eqargs(0))

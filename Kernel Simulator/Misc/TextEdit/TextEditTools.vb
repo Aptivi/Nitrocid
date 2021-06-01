@@ -30,8 +30,8 @@ Public Module TextEditTools
         Try
             Wdbg("I", "Trying to open file {0}...", File)
             TextEdit_FileStream = New FileStream(File, FileMode.Open)
-            If IsNothing(TextEdit_FileLines) Then TextEdit_FileLines = New List(Of String)
-            If IsNothing(TextEdit_FileLinesOrig) Then TextEdit_FileLinesOrig = New List(Of String)
+            If TextEdit_FileLines Is Nothing Then TextEdit_FileLines = New List(Of String)
+            If TextEdit_FileLinesOrig Is Nothing Then TextEdit_FileLinesOrig = New List(Of String)
             Wdbg("I", "File {0} is open. Length: {1}, Pos: {2}", File, TextEdit_FileStream.Length, TextEdit_FileStream.Position)
             Dim TextFileStreamReader As New StreamReader(TextEdit_FileStream)
             Do While Not TextFileStreamReader.EndOfStream
@@ -102,7 +102,7 @@ Public Module TextEditTools
         If TextEdit_AutoSaveFlag Then
             Try
                 Threading.Thread.Sleep(TextEdit_AutoSaveInterval * 1000)
-                If Not IsNothing(TextEdit_FileStream) Then
+                If TextEdit_FileStream IsNot Nothing Then
                     TextEdit_SaveTextFile(False)
                 End If
             Catch ex As Exception

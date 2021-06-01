@@ -158,7 +158,7 @@ Public Module KernelTools
                            DoTranslation("> Date and Time: {2}") + vbNewLine, Description, ErrorType, Render)
 
             'Write Info (Exception)
-            If Not IsNothing(Exc) Then
+            If Exc IsNot Nothing Then
                 Dim Count As Integer = 1
                 Dump.WriteLine(DoTranslation(">> Exception information <<") + vbNewLine +
                                DoTranslation("> Exception: {0}") + vbNewLine +
@@ -524,12 +524,12 @@ Public Module KernelTools
     Sub CheckKernelUpdates()
         W(DoTranslation("Checking for system updates..."), True, ColTypes.Neutral)
         Dim AvailableUpdates As List(Of String) = FetchKernelUpdates()
-        If Not IsNothing(AvailableUpdates) And AvailableUpdates.Count > 0 Then
+        If AvailableUpdates IsNot Nothing And AvailableUpdates.Count > 0 Then
             W(DoTranslation("Found new version: "), False, ColTypes.ListEntry)
             W(AvailableUpdates(0), True, ColTypes.ListValue)
             W(DoTranslation("You can download it at: "), False, ColTypes.ListEntry)
             W(AvailableUpdates(1), True, ColTypes.ListValue)
-        ElseIf IsNothing(AvailableUpdates) Then
+        ElseIf AvailableUpdates Is Nothing Then
             W(DoTranslation("Failed to check for updates."), True, ColTypes.Error)
         End If
     End Sub

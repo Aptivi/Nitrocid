@@ -31,7 +31,7 @@ Public Module FieldManager
         Dim TargetField As FieldInfo = GetField(Variable, VariableType)
 
         'Set the variable if found
-        If Not IsNothing(TargetField) Then
+        If TargetField IsNot Nothing Then
             'The "obj" description says this: "The object whose field value will be set."
             'Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
             'Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
@@ -55,7 +55,7 @@ Public Module FieldManager
         Dim TargetField As FieldInfo = GetField(Variable, VariableType)
 
         'Get the variable if found
-        If Not IsNothing(TargetField) Then
+        If TargetField IsNot Nothing Then
             'The "obj" description says this: "The object whose field value will be returned."
             'Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
             'Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
@@ -80,7 +80,7 @@ Public Module FieldManager
         Dim Field As FieldInfo = Type.GetField(Variable)
 
         'Check if any of them contains the specified variable
-        If Not IsNothing(Field) Then
+        If Field IsNot Nothing Then
             Return Field
         End If
     End Function

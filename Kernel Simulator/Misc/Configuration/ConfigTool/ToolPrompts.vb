@@ -1387,7 +1387,7 @@ Public Module ToolPrompts
         Dim TargetField As FieldInfo = GetField(Variable)
 
         'Set the variable if found
-        If Not IsNothing(TargetField) Then
+        If TargetField IsNot Nothing Then
             'The "obj" description says this: "The object whose field value will be set."
             'Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
             'Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
@@ -1410,7 +1410,7 @@ Public Module ToolPrompts
         Dim TargetField As FieldInfo = GetField(Variable)
 
         'Get the variable if found
-        If Not IsNothing(TargetField) Then
+        If TargetField IsNot Nothing Then
             'The "obj" description says this: "The object whose field value will be returned."
             'Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
             'Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.

@@ -52,7 +52,7 @@ Public Module TextEditShell
 
         While Not TextEdit_Exiting
             'Open file if not open
-            If IsNothing(TextEdit_FileStream) Then
+            If TextEdit_FileStream Is Nothing Then
                 Wdbg("W", "File not open yet. Trying to open {0}...", FilePath)
                 If Not TextEdit_OpenTextFile(FilePath) Then
                     W(DoTranslation("Failed to open file. Exiting shell..."), True, ColTypes.Error)
@@ -62,7 +62,7 @@ Public Module TextEditShell
             End If
 
             'Prepare for prompt
-            If Not IsNothing(DefConsoleOut) Then
+            If DefConsoleOut IsNot Nothing Then
                 Console.SetOut(DefConsoleOut)
             End If
             W("[", False, ColTypes.Gray) : W("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(TextEdit_WasTextEdited(), "*", "")) : W("] > ", False, ColTypes.Gray)
@@ -73,7 +73,7 @@ Public Module TextEditShell
             Dim WrittenCommand As String = Console.ReadLine
 
             'Check to see if the command doesn't start with spaces or if the command is nothing
-            Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand?.StartsWith(" "), IsNothing(WrittenCommand), WrittenCommand = "")
+            Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand?.StartsWith(" "), WrittenCommand Is Nothing, WrittenCommand = "")
             If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWith(" ") = True) Then
                 Wdbg("I", "Checking command {0} for existence.", WrittenCommand.Split(" ")(0))
                 If TextEdit_Commands.ContainsKey(WrittenCommand.Split(" ")(0)) Then
@@ -99,7 +99,7 @@ Public Module TextEditShell
             End If
 
             'This is to fix race condition between shell initialization and starting the event handler thread
-            If IsNothing(WrittenCommand) Then
+            If WrittenCommand Is Nothing Then
                 Thread.Sleep(30)
             End If
         End While

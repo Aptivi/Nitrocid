@@ -94,7 +94,7 @@ Public Module FTPShell
                 End If
 
                 'Prompt for command
-                If Not IsNothing(DefConsoleOut) Then
+                If DefConsoleOut IsNot Nothing Then
                     Console.SetOut(DefConsoleOut)
                 End If
                 If Not Connects Then
@@ -137,7 +137,7 @@ Public Module FTPShell
                 End If
 
                 'This is to fix race condition between FTP shell initialization and starting the event handler thread
-                If IsNothing(strcmd) Then
+                If strcmd Is Nothing Then
                     Thread.Sleep(30)
                 End If
             Catch ex As Exception

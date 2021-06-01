@@ -78,7 +78,7 @@ Begin:
                 End Try
 
                 'Prepare for prompt
-                If Not IsNothing(DefConsoleOut) Then
+                If DefConsoleOut IsNot Nothing Then
                     Console.SetOut(DefConsoleOut)
                 End If
                 W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, New Uri(RSSFeedLink).Host) : W("] > ", False, ColTypes.Gray)
@@ -90,7 +90,7 @@ Begin:
 
                 'Check to see if the command doesn't start with spaces or if the command is nothing
                 Try
-                    Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand.StartsWith(" "), IsNothing(WrittenCommand), WrittenCommand = "")
+                    Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand.StartsWith(" "), WrittenCommand Is Nothing, WrittenCommand = "")
                     If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWith(" ") = True) Then
                         Wdbg("I", "Checking command {0} for existence.", WrittenCommand.Split(" ")(0))
                         If RSSCommands.ContainsKey(WrittenCommand.Split(" ")(0)) Then
@@ -121,7 +121,7 @@ Begin:
                 End Try
 
                 'This is to fix race condition between shell initialization and starting the event handler thread
-                If IsNothing(WrittenCommand) Then
+                If WrittenCommand Is Nothing Then
                     Thread.Sleep(30)
                 End If
             End If

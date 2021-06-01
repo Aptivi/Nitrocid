@@ -71,7 +71,7 @@ Module TestShell
         WriteSeparator(DoTranslation("Welcome to Test Shell!"), True, ColTypes.Stage)
 
         While Not Test_ExitFlag
-            If Not IsNothing(DefConsoleOut) Then
+            If DefConsoleOut IsNot Nothing Then
                 Console.SetOut(DefConsoleOut)
             End If
             W("(t)> ", False, ColTypes.Input)
