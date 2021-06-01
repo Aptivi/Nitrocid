@@ -51,6 +51,9 @@ Public Module TestHelpSystem
                                                                   {"testevent", DoTranslation("Tests raising the specific event")},
                                                                   {"probehw", DoTranslation("Tests probing the hardware")},
                                                                   {"garbage", DoTranslation("Tests the garbage collector")},
+                                                                  {"testdictwriterstr", DoTranslation("Tests the dictionary writer with the string and string array")},
+                                                                  {"testdictwriterint", DoTranslation("Tests the dictionary writer with the integer and integer array")},
+                                                                  {"testdictwriterchar", DoTranslation("Tests the dictionary writer with the char and char array")},
                                                                   {"testlistwriterstr", DoTranslation("Tests the list writer with the string and string array")},
                                                                   {"testlistwriterint", DoTranslation("Tests the list writer with the integer and integer array")},
                                                                   {"testlistwriterchar", DoTranslation("Tests the list writer with the char and char array")},
@@ -143,6 +146,12 @@ Public Module TestHelpSystem
             W(DoTranslation("Usage:") + " listcodepages", True, ColTypes.Neutral)
         ElseIf command = "lscompilervars" Then
             W(DoTranslation("Usage:") + " lscompilervars", True, ColTypes.Neutral)
+        ElseIf command = "testdictwriterstr" Then
+            W(DoTranslation("Usage:") + " testdictwriterstr", True, ColTypes.Neutral)
+        ElseIf command = "testdictwriterint" Then
+            W(DoTranslation("Usage:") + " testdictwriterint", True, ColTypes.Neutral)
+        ElseIf command = "testdictwriterchar" Then
+            W(DoTranslation("Usage:") + " testdictwriterchar", True, ColTypes.Neutral)
         ElseIf command = "testlistwriterstr" Then
             W(DoTranslation("Usage:") + " testlistwriterstr", True, ColTypes.Neutral)
         ElseIf command = "testlistwriterint" Then

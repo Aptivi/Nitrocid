@@ -240,23 +240,44 @@ Module TestGetCommand
                 For Each CompilerVar As String In GetCompilerVars()
                     W("- {0}", True, ColTypes.ListEntry, CompilerVar)
                 Next
+            Case "testdictwriterstr"
+                Dim NormalStringDict As New Dictionary(Of String, String) From {{"One", "String 1"}, {"Two", "String 2"}, {"Three", "String 3"}}
+                Dim ArrayStringDict As New Dictionary(Of String, String()) From {{"One", {"String 1", "String 2", "String 3"}}, {"Two", {"String 1", "String 2", "String 3"}}, {"Three", {"String 1", "String 2", "String 3"}}}
+                W(DoTranslation("Normal string dictionary:"), True, ColTypes.Neutral)
+                WriteList(NormalStringDict)
+                W(DoTranslation("Array string dictionary:"), True, ColTypes.Neutral)
+                WriteList(ArrayStringDict)
+            Case "testdictwriterint"
+                Dim NormalIntegerDict As New Dictionary(Of String, Integer) From {{"One", 1}, {"Two", 2}, {"Three", 3}}
+                Dim ArrayIntegerDict As New Dictionary(Of String, Integer()) From {{"One", {1, 2, 3}}, {"Two", {1, 2, 3}}, {"Three", {1, 2, 3}}}
+                W(DoTranslation("Normal integer dictionary:"), True, ColTypes.Neutral)
+                WriteList(NormalIntegerDict)
+                W(DoTranslation("Array integer dictionary:"), True, ColTypes.Neutral)
+                WriteList(ArrayIntegerDict)
+            Case "testdictwriterchar"
+                Dim NormalCharDict As New Dictionary(Of String, Char) From {{"One", "1"c}, {"Two", "2"c}, {"Three", "3"c}}
+                Dim ArrayCharDict As New Dictionary(Of String, Char()) From {{"One", {"1"c, "2"c, "3"c}}, {"Two", {"1"c, "2"c, "3"c}}, {"Three", {"1"c, "2"c, "3"c}}}
+                W(DoTranslation("Normal char dictionary:"), True, ColTypes.Neutral)
+                WriteList(NormalCharDict)
+                W(DoTranslation("Array char dictionary:"), True, ColTypes.Neutral)
+                WriteList(ArrayCharDict)
             Case "testlistwriterstr"
-                Dim NormalStringList As New Dictionary(Of String, String) From {{"One", "String 1"}, {"Two", "String 2"}, {"Three", "String 3"}}
-                Dim ArrayStringList As New Dictionary(Of String, String()) From {{"One", {"String 1", "String 2", "String 3"}}, {"Two", {"String 1", "String 2", "String 3"}}, {"Three", {"String 1", "String 2", "String 3"}}}
+                Dim NormalStringList As New List(Of String) From {"String 1", "String 2", "String 3"}
+                Dim ArrayStringList As New List(Of String()) From {{{"String 1", "String 2", "String 3"}}, {{"String 1", "String 2", "String 3"}}, {{"String 1", "String 2", "String 3"}}}
                 W(DoTranslation("Normal string list:"), True, ColTypes.Neutral)
                 WriteList(NormalStringList)
                 W(DoTranslation("Array string list:"), True, ColTypes.Neutral)
                 WriteList(ArrayStringList)
             Case "testlistwriterint"
-                Dim NormalIntegerList As New Dictionary(Of String, Integer) From {{"One", 1}, {"Two", 2}, {"Three", 3}}
-                Dim ArrayIntegerList As New Dictionary(Of String, Integer()) From {{"One", {1, 2, 3}}, {"Two", {1, 2, 3}}, {"Three", {1, 2, 3}}}
+                Dim NormalIntegerList As New List(Of Integer) From {1, 2, 3}
+                Dim ArrayIntegerList As New List(Of Integer()) From {{{1, 2, 3}}, {{1, 2, 3}}, {{1, 2, 3}}}
                 W(DoTranslation("Normal integer list:"), True, ColTypes.Neutral)
                 WriteList(NormalIntegerList)
                 W(DoTranslation("Array integer list:"), True, ColTypes.Neutral)
                 WriteList(ArrayIntegerList)
             Case "testlistwriterchar"
-                Dim NormalCharList As New Dictionary(Of String, Char) From {{"One", "1"c}, {"Two", "2"c}, {"Three", "3"c}}
-                Dim ArrayCharList As New Dictionary(Of String, Char()) From {{"One", {"1"c, "2"c, "3"c}}, {"Two", {"1"c, "2"c, "3"c}}, {"Three", {"1"c, "2"c, "3"c}}}
+                Dim NormalCharList As New List(Of Char) From {"1"c, "2"c, "3"c}
+                Dim ArrayCharList As New List(Of Char()) From {{{"1"c, "2"c, "3"c}}, {{"1"c, "2"c, "3"c}}, {{"1"c, "2"c, "3"c}}}
                 W(DoTranslation("Normal char list:"), True, ColTypes.Neutral)
                 WriteList(NormalCharList)
                 W(DoTranslation("Array char list:"), True, ColTypes.Neutral)
