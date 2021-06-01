@@ -39,7 +39,6 @@ Module FaderDisplay
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Dim esc As Char = GetEsc()
                 Console.Write(New Color(InputColor).VTSequenceForeground)
                 Console.Write(New Color(BackgroundColor).VTSequenceBackground)
                 LoadBack()
@@ -55,7 +54,6 @@ Module FaderDisplay
                     Left -= FaderWrite.Length + 1
                 End If
                 Console.SetCursorPosition(Left, Top)
-                Dim esc As Char = GetEsc()
                 Console.BackgroundColor = ConsoleColor.Black
                 ClearKeepPosition()
 

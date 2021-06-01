@@ -37,7 +37,6 @@ Module ColorMixDisplay
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Dim esc As Char = GetEsc()
                 Console.Write(New Color(InputColor).VTSequenceForeground)
                 Console.Write(New Color(BackgroundColor).VTSequenceBackground)
                 LoadBack()
@@ -46,15 +45,14 @@ Module ColorMixDisplay
                 SaverAutoReset.Set()
                 Exit Do
             Else
+                Dim esc As Char = GetEsc()
                 If ColorMixTrueColor Then
-                    Dim esc As Char = GetEsc()
                     Dim RedColorNum As Integer = colorrand.Next(255)
                     Dim GreenColorNum As Integer = colorrand.Next(255)
                     Dim BlueColorNum As Integer = colorrand.Next(255)
                     Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
                     Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
                 ElseIf ColorMix255Colors Then
-                    Dim esc As Char = GetEsc()
                     Dim ColorNum As Integer = colorrand.Next(255)
                     Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
                 Else

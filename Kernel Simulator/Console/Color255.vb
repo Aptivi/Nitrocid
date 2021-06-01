@@ -374,11 +374,11 @@ Public Module Color255
     End Sub
 
     ''' <summary>
-    ''' A simplification for ChrW function to return the ESC character
+    ''' A simplification for <see cref="Convert.ToChar(Integer)"/> function to return the ESC character
     ''' </summary>
     ''' <returns>ESC</returns>
     Public Function GetEsc() As Char
-        Return ChrW(&H1B)
+        Return Convert.ToChar(&H1B)
     End Function
 
 End Module

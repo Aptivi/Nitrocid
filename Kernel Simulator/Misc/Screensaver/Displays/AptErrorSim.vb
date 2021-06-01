@@ -34,7 +34,6 @@ IFCANCEL:
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Dim esc As Char = GetEsc()
                 Console.Write(New Color(InputColor).VTSequenceForeground)
                 Console.Write(New Color(BackgroundColor).VTSequenceBackground)
                 LoadBack()

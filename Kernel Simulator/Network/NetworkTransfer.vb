@@ -245,7 +245,7 @@ Public Module NetworkTransfer
             WClient.CancelAsync()
         End If
         If Not DFinish Then
-            WriteWhere(DoTranslation("{0} of {1} downloaded.") + " | {2}%" + ChrW(&H1B) + "[0K", 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+            WriteWhere(DoTranslation("{0} of {1} downloaded.") + " | {2}%" + GetEsc() + "[0K", 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
         End If
     End Sub
 
@@ -269,7 +269,7 @@ Public Module NetworkTransfer
             WClient.CancelAsync()
         End If
         If Not DFinish Then
-            WriteWhere(DoTranslation("{0} of {1} uploaded.") + " | {2}%" + ChrW(&H1B) + "[0K", 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesSent.FileSizeToString, e.TotalBytesToSend.FileSizeToString, e.ProgressPercentage)
+            WriteWhere(DoTranslation("{0} of {1} uploaded.") + " | {2}%" + GetEsc() + "[0K", 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesSent.FileSizeToString, e.TotalBytesToSend.FileSizeToString, e.ProgressPercentage)
         End If
     End Sub
 

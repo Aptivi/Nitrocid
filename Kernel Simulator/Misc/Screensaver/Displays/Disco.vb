@@ -40,7 +40,6 @@ Module DiscoDisplay
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Dim esc As Char = GetEsc()
                 Console.Write(New Color(InputColor).VTSequenceForeground)
                 Console.Write(New Color(BackgroundColor).VTSequenceBackground)
                 LoadBack()
@@ -49,8 +48,8 @@ Module DiscoDisplay
                 SaverAutoReset.Set()
                 Exit Do
             Else
+                Dim esc As Char = GetEsc()
                 If DiscoTrueColor Then
-                    Dim esc As Char = GetEsc()
                     If Not DiscoCycleColors Then
                         Dim RedColorNum As Integer = random.Next(255)
                         Dim GreenColorNum As Integer = random.Next(255)
@@ -62,7 +61,6 @@ Module DiscoDisplay
                         Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m")
                     End If
                 ElseIf Disco255Colors Then
-                    Dim esc As Char = GetEsc()
                     If Not DiscoCycleColors Then
                         Dim color As Integer = random.Next(255)
                         Console.Write(esc + "[48;5;" + CStr(color) + "m")

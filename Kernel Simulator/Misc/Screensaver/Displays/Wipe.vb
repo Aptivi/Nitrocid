@@ -35,7 +35,6 @@ Module WipeDisplay
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Dim esc As Char = GetEsc()
                 Console.Write(New Color(InputColor).VTSequenceForeground)
                 Console.Write(New Color(BackgroundColor).VTSequenceBackground)
                 LoadBack()
@@ -47,15 +46,14 @@ Module WipeDisplay
                 SleepNoBlock(WipeDelay, Wipe)
 
                 'Select a color
+                Dim esc As Char = GetEsc()
                 If WipeTrueColor Then
-                    Dim esc As Char = GetEsc()
                     Dim RedColorNum As Integer = RandomDriver.Next(255)
                     Dim GreenColorNum As Integer = RandomDriver.Next(255)
                     Dim BlueColorNum As Integer = RandomDriver.Next(255)
                     Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
                     Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m")
                 ElseIf Wipe255Colors Then
-                    Dim esc As Char = GetEsc()
                     Dim ColorNum As Integer = RandomDriver.Next(255)
                     Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m")
                 Else

@@ -35,7 +35,6 @@ Module LinesDisplay
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Dim esc As Char = GetEsc()
                 Console.Write(New Color(InputColor).VTSequenceForeground)
                 Console.Write(New Color(BackgroundColor).VTSequenceBackground)
                 LoadBack()
@@ -44,8 +43,8 @@ Module LinesDisplay
                 SaverAutoReset.Set()
                 Exit Do
             Else
+                Dim esc As Char = GetEsc()
                 If LinesTrueColor Then
-                    Dim esc As Char = GetEsc()
                     Console.BackgroundColor = ConsoleColor.Black
                     Console.Clear()
                     Dim RedColorNum As Integer = random.Next(255)
@@ -54,7 +53,6 @@ Module LinesDisplay
                     Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
                     Console.Write(esc + "[38;2;" + ColorStorage.ToString + "m")
                 ElseIf Lines255Colors Then
-                    Dim esc As Char = GetEsc()
                     Console.BackgroundColor = ConsoleColor.Black
                     Console.Clear()
                     Dim color As Integer = random.Next(255)

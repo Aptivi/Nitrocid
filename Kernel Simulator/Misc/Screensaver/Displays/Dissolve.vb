@@ -39,7 +39,6 @@ Module DissolveDisplay
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Dim esc As Char = GetEsc()
                 Console.Write(New Color(InputColor).VTSequenceForeground)
                 Console.Write(New Color(BackgroundColor).VTSequenceBackground)
                 LoadBack()
@@ -56,15 +55,14 @@ Module DissolveDisplay
                 If Not ColorFilled Then
                     'NOTICE: Mono seems to have a bug in Console.CursorLeft and Console.CursorTop when printing with VT escape sequences.
                     If Not (Console.CursorLeft = EndLeft And Console.CursorTop = EndTop) Then
+                        Dim esc As Char = GetEsc()
                         If DissolveTrueColor Then
-                            Dim esc As Char = GetEsc()
                             Dim RedColorNum As Integer = RandomDriver.Next(255)
                             Dim GreenColorNum As Integer = RandomDriver.Next(255)
                             Dim BlueColorNum As Integer = RandomDriver.Next(255)
                             Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
                             Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
                         ElseIf Dissolve255Colors Then
-                            Dim esc As Char = GetEsc()
                             Dim ColorNum As Integer = RandomDriver.Next(255)
                             Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
                         Else

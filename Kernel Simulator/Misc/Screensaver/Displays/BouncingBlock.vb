@@ -44,7 +44,6 @@ Module BouncingBlockDisplay
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Dim esc As Char = GetEsc()
                 Console.Write(New Color(InputColor).VTSequenceForeground)
                 Console.Write(New Color(BackgroundColor).VTSequenceBackground)
                 LoadBack()
@@ -54,14 +53,12 @@ Module BouncingBlockDisplay
                 Exit Do
             Else
                 If BouncingBlockTrueColor Then
-                    Dim esc As Char = GetEsc()
                     Dim RedColorNum As Integer = RandomDriver.Next(255)
                     Dim GreenColorNum As Integer = RandomDriver.Next(255)
                     Dim BlueColorNum As Integer = RandomDriver.Next(255)
                     Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
                     WriteWhereC(" ", ColumnBlock, RowBlock, True, New Color(New RGB(255, 255, 255).ToString), New Color(ColorStorage.ToString))
                 ElseIf BouncingBlock255Colors Then
-                    Dim esc As Char = GetEsc()
                     Dim ColorNum As Integer = RandomDriver.Next(255)
                     WriteWhereC(" ", ColumnBlock, RowBlock, True, New Color(ConsoleColors.White), BackgroundColor:=New Color([Enum].Parse(GetType(ConsoleColors), ColorNum)))
                 Else

@@ -37,7 +37,6 @@ Module ProgressClockDisplay
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Dim esc As Char = GetEsc()
                 Console.Write(New Color(InputColor).VTSequenceForeground)
                 Console.Write(New Color(BackgroundColor).VTSequenceBackground)
                 LoadBack()
@@ -48,7 +47,6 @@ Module ProgressClockDisplay
             Else
                 If ProgressClockTrueColor Then
                     'Prepare colors
-                    Dim esc As Char = GetEsc()
                     Dim RedColorNumHours, GreenColorNumHours, BlueColorNumHours As Integer
                     Dim RedColorNumMinutes, GreenColorNumMinutes, BlueColorNumMinutes As Integer
                     Dim RedColorNumSeconds, GreenColorNumSeconds, BlueColorNumSeconds As Integer
@@ -118,7 +116,6 @@ Module ProgressClockDisplay
                     'Print date information
                     WriteWhereC(Render, Console.WindowWidth / 2 - Render.Length / 2, Console.WindowHeight - 2, True, New Color(ColorStorageSeconds.ToString))
                 ElseIf ProgressClock255Colors Then
-                    Dim esc As Char = GetEsc()
                     Dim ColorNumHours, ColorNumMinutes, ColorNumSeconds, ColorNum As Integer
                     Dim ProgressFillPositionHours, ProgressFillPositionMinutes, ProgressFillPositionSeconds As Integer
                     Dim InformationPositionHours, InformationPositionMinutes, InformationPositionSeconds As Integer

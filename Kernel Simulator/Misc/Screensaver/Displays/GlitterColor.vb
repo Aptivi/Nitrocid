@@ -36,7 +36,6 @@ Module GlitterColorDisplay
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Dim esc As Char = GetEsc()
                 Console.Write(New Color(InputColor).VTSequenceForeground)
                 Console.Write(New Color(BackgroundColor).VTSequenceBackground)
                 LoadBack()
@@ -49,8 +48,8 @@ Module GlitterColorDisplay
                 Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                 Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
                 Console.SetCursorPosition(Left, Top)
+                Dim esc As Char = GetEsc()
                 If GlitterColorTrueColor Then
-                    Dim esc As Char = GetEsc()
                     Console.BackgroundColor = ConsoleColor.Black
                     ClearKeepPosition()
                     Dim RedColorNum As Integer = RandomDriver.Next(255)
@@ -59,7 +58,6 @@ Module GlitterColorDisplay
                     Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
                     Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
                 ElseIf GlitterColor255Colors Then
-                    Dim esc As Char = GetEsc()
                     Dim ColorNum As Integer = RandomDriver.Next(255)
                     Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
                 Else

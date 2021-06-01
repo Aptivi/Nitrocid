@@ -37,7 +37,6 @@ Module LighterDisplay
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
                 Console.Clear()
-                Dim esc As Char = GetEsc()
                 Console.Write(New Color(InputColor).VTSequenceForeground)
                 Console.Write(New Color(BackgroundColor).VTSequenceBackground)
                 LoadBack()
@@ -50,8 +49,8 @@ Module LighterDisplay
                 Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                 Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
                 Console.SetCursorPosition(Left, Top)
+                Dim esc As Char = GetEsc()
                 If LighterTrueColor Then
-                    Dim esc As Char = GetEsc()
                     Dim RedColorNum As Integer = RandomDriver.Next(255)
                     Dim GreenColorNum As Integer = RandomDriver.Next(255)
                     Dim BlueColorNum As Integer = RandomDriver.Next(255)
@@ -59,7 +58,6 @@ Module LighterDisplay
                     If Not CoveredPositions.Contains(Left & ";" & Top) Then CoveredPositions.Add(Left & ";" & Top)
                     Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
                 ElseIf Lighter255Colors Then
-                    Dim esc As Char = GetEsc()
                     Dim ColorNum As Integer = RandomDriver.Next(255)
                     If Not CoveredPositions.Contains(Left & ";" & Top) Then CoveredPositions.Add(Left & ";" & Top)
                     Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")

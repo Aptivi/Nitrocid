@@ -36,8 +36,8 @@ Imports KS
         'Check for property correctness
         ColorInstance.PlainSequence.ShouldBe("13")
         ColorInstance.Type.ShouldBe(ColorType._255Color)
-        ColorInstance.VTSequenceBackground.ShouldBe(ChrW(&H1B) + "[48;5;13m")
-        ColorInstance.VTSequenceForeground.ShouldBe(ChrW(&H1B) + "[38;5;13m")
+        ColorInstance.VTSequenceBackground.ShouldBe(GetEsc() + "[48;5;13m")
+        ColorInstance.VTSequenceForeground.ShouldBe(GetEsc() + "[38;5;13m")
         ColorInstance.R.ShouldBe(255)
         ColorInstance.G.ShouldBe(0)
         ColorInstance.B.ShouldBe(255)
@@ -60,8 +60,8 @@ Imports KS
         'Check for property correctness
         ColorInstance.PlainSequence.ShouldBe("94;0;63")
         ColorInstance.Type.ShouldBe(ColorType.TrueColor)
-        ColorInstance.VTSequenceBackground.ShouldBe(ChrW(&H1B) + "[48;2;94;0;63m")
-        ColorInstance.VTSequenceForeground.ShouldBe(ChrW(&H1B) + "[38;2;94;0;63m")
+        ColorInstance.VTSequenceBackground.ShouldBe(GetEsc() + "[48;2;94;0;63m")
+        ColorInstance.VTSequenceForeground.ShouldBe(GetEsc() + "[38;2;94;0;63m")
         ColorInstance.R.ShouldBe(94)
         ColorInstance.G.ShouldBe(0)
         ColorInstance.B.ShouldBe(63)
