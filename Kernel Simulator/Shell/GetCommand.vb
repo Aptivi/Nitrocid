@@ -369,7 +369,7 @@ Public Module GetCommand
                         For Each Dir As String In eqargs
                             Dim DirectoryPath As String = NeutralizePath(Dir)
                             Wdbg("I", "Neutralized directory path: {0} ({1})", DirectoryPath, Directory.Exists(DirectoryPath))
-                            W(">> {0}", True, ColTypes.Stage, Dir)
+                            WriteSeparator(Dir, True, ColTypes.Stage)
                             If Directory.Exists(DirectoryPath) Then
                                 Dim DirInfo As New DirectoryInfo(DirectoryPath)
                                 W(DoTranslation("Name: {0}"), True, ColTypes.Neutral, DirInfo.Name)
@@ -426,7 +426,7 @@ Public Module GetCommand
                         For Each FileName As String In eqargs
                             Dim FilePath As String = NeutralizePath(FileName)
                             Wdbg("I", "Neutralized file path: {0} ({1})", FilePath, File.Exists(FilePath))
-                            W(">> {0}", True, ColTypes.Stage, FileName)
+                            WriteSeparator(FileName, True, ColTypes.Stage)
                             If File.Exists(FilePath) Then
                                 Dim FileInfo As New FileInfo(FilePath)
                                 W(DoTranslation("Name: {0}"), True, ColTypes.Neutral, FileInfo.Name)
@@ -611,7 +611,7 @@ Public Module GetCommand
 
                     If RequiredArgumentsProvided Then
                         If scripts.Keys.Contains(eqargs(0)) Then
-                            W(">> {0}", True, ColTypes.Stage, eqargs(0))
+                            WriteSeparator(eqargs(0), True, ColTypes.Stage)
                             For Each ModPart As String In scripts(eqargs(0)).Keys
                                 W("  > {0}", True, ColTypes.Stage, ModPart)
                                 W("   - " + DoTranslation("Command name:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0))(ModPart).Cmd, True, ColTypes.ListValue)
@@ -654,7 +654,7 @@ Public Module GetCommand
                         End If
                         For Each PingedAddress As String In eqargs.Skip(StepsToSkip)
                             If PingedAddress <> "" Then
-                                W(">> {0}", True, ColTypes.Stage, PingedAddress)
+                                WriteSeparator(PingedAddress, True, ColTypes.Stage)
                                 For CurrentTime As Integer = 1 To PingTimes
                                     Try
                                         Dim PingReplied As PingReply = PingAddress(PingedAddress)
@@ -1065,7 +1065,7 @@ Public Module GetCommand
                         If Directory.Exists(folder) Then
                             For Each file As String In Directory.EnumerateFiles(folder, "*", IO.SearchOption.TopDirectoryOnly)
                                 file = NeutralizePath(file)
-                                W(">> {0}", True, ColTypes.Stage, file)
+                                WriteSeparator(file, True, ColTypes.Stage)
                                 If eqargs(0) = "SHA512" Then
                                     Dim spent As New Stopwatch
                                     spent.Start() 'Time when you're on a breakpoint is counted

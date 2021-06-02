@@ -94,7 +94,7 @@ Public Module Filesystem
                 WStkTrc(ex)
                 Exit Sub
             End Try
-            W(">> {0}", True, ColTypes.Stage, folder)
+            WriteSeparator(folder, True, ColTypes.Stage)
             For Each Entry As FileSystemInfo In enumeration
                 Wdbg("I", "Enumerating {0}...", Entry.FullName)
                 Try
