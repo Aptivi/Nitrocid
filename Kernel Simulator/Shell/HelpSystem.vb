@@ -281,7 +281,8 @@ Public Module HelpSystem
 
         ElseIf command = "hwinfo" Then
 
-            W(DoTranslation("Usage:") + " hwinfo: " + DoTranslation("Prints hardware information"), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " hwinfo <HardwareType>: " + DoTranslation("Prints hardware information") + vbNewLine +
+              "       " + DoTranslation("where HardwareType will be") + " HDD, LogicalParts, CPU, GPU, Sound, Network, System, Machine, BIOS, RAM, all.", True, ColTypes.Neutral)
 
         ElseIf command = "input" Then
 

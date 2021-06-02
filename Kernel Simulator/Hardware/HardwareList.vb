@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports System.Reflection
 
 Public Module HardwareList
 
@@ -61,6 +62,68 @@ Public Module HardwareList
                   HardwareInfo.Hardware.HDD(driveinfo).Partitions(PartInfo).FileSystem, If(IsNumeric(HardwareInfo.Hardware.HDD(driveinfo).Partitions(PartInfo).Size), FormatNumber(HardwareInfo.Hardware.HDD(driveinfo).Partitions(PartInfo).Size / 1024 / 1024 / 1024, 2), HardwareInfo.Hardware.HDD(driveinfo).Partitions(PartInfo).Size), HardwareInfo.Hardware.HDD(driveinfo).Partitions(PartInfo).ID)
             Next
         Next
+    End Sub
+
+    ''' <summary>
+    ''' Lists information about hardware
+    ''' </summary>
+    ''' <param name="HardwareType">Hadrware type defined by Inxi.NET. If "all", prints all information.</param>
+    Public Sub ListHardware(ByVal HardwareType As String)
+        Dim HardwareField As FieldInfo = GetField(HardwareType, GetField(NameOf(HardwareInfo.Hardware), GetType(InxiFrontend.Inxi)).FieldType)
+        Wdbg("I", "Got hardware field {0}.", If(HardwareField IsNot Nothing, HardwareField.Name, "unknown"))
+        If HardwareField IsNot Nothing Then
+            ListHardwareProperties(HardwareField)
+        ElseIf HardwareType.ToLower = "all" Then
+            Dim HardwareFields As FieldInfo() = GetField(NameOf(HardwareInfo.Hardware), GetType(InxiFrontend.Inxi)).FieldType.GetFields
+            For Each HardwareFieldType As FieldInfo In HardwareFields
+                ListHardwareProperties(HardwareFieldType)
+            Next
+        Else
+            W(DoTranslation("Either the hardware type {0} is not probed, or is not valid."), True, ColTypes.Error, HardwareType)
+        End If
+    End Sub
+
+    Private Sub ListHardwareProperties(ByVal Field As FieldInfo)
+        Wdbg("I", "Got hardware field {0}.", Field.Name)
+        W(">> {0}", True, ColTypes.Stage, Field.Name)
+        Dim FieldValue As Object = Field.GetValue(HardwareInfo.Hardware)
+        If FieldValue IsNot Nothing Then
+            Dim FieldValueDict As IDictionary = TryCast(FieldValue, IDictionary)
+            If FieldValueDict IsNot Nothing Then
+                For Each HardwareKey As String In FieldValueDict.Keys
+                    W("- {0}: ", True, ColTypes.ListEntry, HardwareKey)
+                    For Each HardwareValueFieldInfo As FieldInfo In FieldValueDict(HardwareKey).GetType.GetFields
+                        W("  - {0}: ", False, ColTypes.ListEntry, HardwareValueFieldInfo.Name)
+                        If Field.Name = "HDD" And HardwareValueFieldInfo.Name = "Partitions" Then
+                            Console.WriteLine()
+                            Dim Partitions As IDictionary = TryCast(HardwareValueFieldInfo.GetValue(FieldValueDict(HardwareKey)), IDictionary)
+                            If Partitions IsNot Nothing Then
+                                For Each PartitionKey As String In Partitions.Keys
+                                    W("    - {0}: ", True, ColTypes.ListEntry, PartitionKey)
+                                    For Each PartitionValueFieldInfo As FieldInfo In Partitions(PartitionKey).GetType.GetFields
+                                        W("      - {0}: ", False, ColTypes.ListEntry, PartitionValueFieldInfo.Name)
+                                        W(PartitionValueFieldInfo.GetValue(Partitions(PartitionKey)), True, ColTypes.ListValue)
+                                    Next
+                                Next
+                            Else
+                                W(DoTranslation("Partitions not parsed to list."), True, ColTypes.Error)
+                            End If
+                        ElseIf Field.Name = "CPU" And HardwareValueFieldInfo.Name = "Flags" Then
+                            W(String.Join(", ", TryCast(HardwareValueFieldInfo.GetValue(FieldValueDict(HardwareKey)), String())), True, ColTypes.ListValue)
+                        Else
+                            W(HardwareValueFieldInfo.GetValue(FieldValueDict(HardwareKey)), True, ColTypes.ListValue)
+                        End If
+                    Next
+                Next
+            Else
+                For Each HardwareFieldInfo As FieldInfo In Field.FieldType.GetFields()
+                    W("- {0}: ", False, ColTypes.ListEntry, HardwareFieldInfo.Name)
+                    W(HardwareFieldInfo.GetValue(FieldValue), True, ColTypes.ListValue)
+                Next
+            End If
+        Else
+            W(DoTranslation("The hardware type {0} is not probed yet. If you're sure that it's probed, restart the kernel with debugging enabled."), True, ColTypes.Error, Field.Name)
+        End If
     End Sub
 
 End Module

@@ -78,7 +78,7 @@ Public Module Shell
                                                                     {"gettimeinfo", New CommandInfo("gettimeinfo", ShellCommandType.Shell, True, 1)},
                                                                     {"get", New CommandInfo("get", ShellCommandType.Shell, True, 1)},
                                                                     {"help", New CommandInfo("help", ShellCommandType.Shell, False, 0)},
-                                                                    {"hwinfo", New CommandInfo("hwinfo", ShellCommandType.Shell, False, 0, False, True)},
+                                                                    {"hwinfo", New CommandInfo("hwinfo", ShellCommandType.Shell, True, 1, False, True)},
                                                                     {"input", New CommandInfo("input", ShellCommandType.Shell, True, 2)},
                                                                     {"list", New CommandInfo("list", ShellCommandType.Shell, False, 0, False, True)},
                                                                     {"lockscreen", New CommandInfo("lockscreen", ShellCommandType.Shell, False, 0)},

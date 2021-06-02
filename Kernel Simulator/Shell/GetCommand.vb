@@ -19,6 +19,7 @@
 Imports System.IO
 Imports System.IO.Compression
 Imports System.Net.NetworkInformation
+Imports System.Reflection
 Imports System.Text
 Imports System.Threading
 Imports Microsoft.VisualBasic.FileIO
@@ -530,57 +531,9 @@ Public Module GetCommand
 #Enable Warning BC42104
                 Case "hwinfo"
 
-                    'CPU information
-                    W("- " + DoTranslation("CPU information:"), True, ColTypes.Neutral)
-                    For Each Processor As String In HardwareInfo.Hardware.CPU.Keys
-                        W("  - " + DoTranslation("Processor name:") + " {0}", True, ColTypes.Neutral, Processor)
-                        W("  - " + DoTranslation("Processor speed:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Speed)
-                        W("  - " + DoTranslation("Processor bits:") + " {0}-bit", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Bits)
-                        W("  - " + DoTranslation("Processor rev:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).CPURev)
-                        W("  - " + DoTranslation("Processor topology:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Topology)
-                        W("  - " + DoTranslation("Processor type:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Type)
-                        W("  - " + DoTranslation("Processor milestone:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).Milestone)
-                        W("  - " + DoTranslation("Processor BogoMips:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).CPUBogoMips)
-                        W("  - " + DoTranslation("Processor L2 cache size:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).L2)
-                        W("  - " + DoTranslation("Processor L3 cache size:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(Processor).L3)
-                        W("  - " + DoTranslation("Processor features:") + " {0}", True, ColTypes.Neutral, Join(HardwareInfo.Hardware.CPU(Processor).Flags))
-                        Console.WriteLine()
-                    Next
-
-                    'HDD information
-                    W("- " + DoTranslation("HDD information:"), True, ColTypes.Neutral)
-                    For Each Drive As String In HardwareInfo.Hardware.HDD.Keys
-                        W("  - " + DoTranslation("Drive name:") + " {0}", True, ColTypes.Neutral, Drive)
-                        W("  - " + DoTranslation("Drive model:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Model)
-                        W("  - " + DoTranslation("Drive vendor:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Vendor)
-                        W("  - " + DoTranslation("Drive speed:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Speed)
-                        W("  - " + DoTranslation("Drive size:") + " {0}", True, ColTypes.Neutral, If(IsOnUnix(), HardwareInfo.Hardware.HDD(Drive).Size, CLng(HardwareInfo.Hardware.HDD(Drive).Size).FileSizeToString))
-                        W("  - " + DoTranslation("Drive serial:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Serial)
-                        W("  - " + DoTranslation("Drive ID:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).ID)
-                        W("  - " + DoTranslation("Drive partition count:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.HDD(Drive).Partitions.Count)
-                        For PartitionIndex As Integer = 0 To HardwareInfo.Hardware.HDD(Drive).Partitions.Count - 1
-                            W("    - [{0}] " + DoTranslation("Partition ID:") + " {1}", True, ColTypes.Neutral, PartitionIndex + 1, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).ID)
-                            W("    - [{0}] " + DoTranslation("Partition filesystem:") + " {1}", True, ColTypes.Neutral, PartitionIndex + 1, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).FileSystem)
-                            W("    - [{0}] " + DoTranslation("Partition size:") + " {1}", True, ColTypes.Neutral, PartitionIndex + 1, If(IsOnUnix(), HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Size, CLng(HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Size).FileSizeToString))
-                            W("    - [{0}] " + DoTranslation("Partition used:") + " {1}", True, ColTypes.Neutral, PartitionIndex + 1, HardwareInfo.Hardware.HDD(Drive).Partitions.Values(PartitionIndex).Used)
-                        Next
-                        Console.WriteLine()
-                    Next
-
-                    'GPU information
-                    W(" - " + DoTranslation("GPU information:"), True, ColTypes.Neutral)
-                    For Each GPU As String In HardwareInfo.Hardware.GPU.Keys
-                        W("  - " + DoTranslation("GPU name:") + " {0}", True, ColTypes.Neutral, GPU)
-                        W("  - " + DoTranslation("GPU driver:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.GPU(GPU).Driver)
-                        W("  - " + DoTranslation("GPU version:") + " {0}", True, ColTypes.Neutral, HardwareInfo.Hardware.GPU(GPU).DriverVersion)
-                    Next
-
-                    'RAM information
-                    W("- " + DoTranslation("RAM information:"), True, ColTypes.Neutral)
-                    W("  - " + DoTranslation("RAM free:") + " {0}", True, ColTypes.Neutral, If(IsOnUnix(), HardwareInfo.Hardware.RAM.FreeMemory, CLng(HardwareInfo.Hardware.RAM.FreeMemory).FileSizeToString))
-                    W("  - " + DoTranslation("RAM total:") + " {0}", True, ColTypes.Neutral, If(IsOnUnix(), HardwareInfo.Hardware.RAM.TotalMemory, CLng(HardwareInfo.Hardware.RAM.TotalMemory).FileSizeToString))
-                    W("  - " + DoTranslation("RAM used:") + " {0}", True, ColTypes.Neutral, If(IsOnUnix(), HardwareInfo.Hardware.RAM.UsedMemory, CLng(HardwareInfo.Hardware.RAM.UsedMemory).FileSizeToString))
-                    Console.WriteLine()
+                    If RequiredArgumentsProvided Then
+                        ListHardware(eqargs(0))
+                    End If
 
                 Case "input"
 
