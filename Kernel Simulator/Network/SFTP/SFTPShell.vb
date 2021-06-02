@@ -20,20 +20,20 @@ Imports System.Threading
 
 Public Module SFTPShell
 
-    Public SFTPCommands As New Dictionary(Of String, CommandInfo) From {{"connect", New CommandInfo("connect", ShellCommandType.SFTPShell, True, 1)},
-                                                                        {"cdl", New CommandInfo("cdl", ShellCommandType.SFTPShell, True, 1)},
-                                                                        {"cdr", New CommandInfo("cdr", ShellCommandType.SFTPShell, True, 1)},
-                                                                        {"del", New CommandInfo("del", ShellCommandType.SFTPShell, True, 1)},
-                                                                        {"disconnect", New CommandInfo("disconnect", ShellCommandType.SFTPShell, False, 0)},
-                                                                        {"exit", New CommandInfo("exit", ShellCommandType.SFTPShell, False, 0)},
-                                                                        {"get", New CommandInfo("get", ShellCommandType.SFTPShell, True, 1)},
-                                                                        {"help", New CommandInfo("help", ShellCommandType.SFTPShell, False, 0)},
-                                                                        {"lsl", New CommandInfo("lsl", ShellCommandType.SFTPShell, False, 0)},
-                                                                        {"lsr", New CommandInfo("lsr", ShellCommandType.SFTPShell, False, 0)},
-                                                                        {"put", New CommandInfo("put", ShellCommandType.SFTPShell, True, 1)},
-                                                                        {"pwdl", New CommandInfo("pwdl", ShellCommandType.SFTPShell, False, 0)},
-                                                                        {"pwdr", New CommandInfo("pwdr", ShellCommandType.SFTPShell, False, 0)},
-                                                                        {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.SFTPShell, False, 0)}}
+    Public ReadOnly SFTPCommands As New Dictionary(Of String, CommandInfo) From {{"connect", New CommandInfo("connect", ShellCommandType.SFTPShell, True, 1)},
+                                                                                 {"cdl", New CommandInfo("cdl", ShellCommandType.SFTPShell, True, 1)},
+                                                                                 {"cdr", New CommandInfo("cdr", ShellCommandType.SFTPShell, True, 1)},
+                                                                                 {"del", New CommandInfo("del", ShellCommandType.SFTPShell, True, 1)},
+                                                                                 {"disconnect", New CommandInfo("disconnect", ShellCommandType.SFTPShell, False, 0)},
+                                                                                 {"exit", New CommandInfo("exit", ShellCommandType.SFTPShell, False, 0)},
+                                                                                 {"get", New CommandInfo("get", ShellCommandType.SFTPShell, True, 1)},
+                                                                                 {"help", New CommandInfo("help", ShellCommandType.SFTPShell, False, 0)},
+                                                                                 {"lsl", New CommandInfo("lsl", ShellCommandType.SFTPShell, False, 0)},
+                                                                                 {"lsr", New CommandInfo("lsr", ShellCommandType.SFTPShell, False, 0)},
+                                                                                 {"put", New CommandInfo("put", ShellCommandType.SFTPShell, True, 1)},
+                                                                                 {"pwdl", New CommandInfo("pwdl", ShellCommandType.SFTPShell, False, 0)},
+                                                                                 {"pwdr", New CommandInfo("pwdr", ShellCommandType.SFTPShell, False, 0)},
+                                                                                 {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.SFTPShell, False, 0)}}
     Public SFTPConnected As Boolean = False
     Private SFTPInitialized As Boolean = False
     Public sftpsite As String

@@ -23,20 +23,20 @@ Public Module TextEditShell
 
     'Variables
     Public TextEdit_Exiting As Boolean
-    Public TextEdit_Commands As New Dictionary(Of String, CommandInfo) From {{"addline", New CommandInfo("addline", ShellCommandType.TextShell, True, 1)},
-                                                                             {"clear", New CommandInfo("clear", ShellCommandType.TextShell, False, 0)},
-                                                                             {"delcharnum", New CommandInfo("delcharnum", ShellCommandType.TextShell, True, 2)},
-                                                                             {"delline", New CommandInfo("delline", ShellCommandType.TextShell, True, 1)},
-                                                                             {"delword", New CommandInfo("delword", ShellCommandType.TextShell, True, 2)},
-                                                                             {"exit", New CommandInfo("exit", ShellCommandType.TextShell, False, 0)},
-                                                                             {"exitnosave", New CommandInfo("exitnosave", ShellCommandType.TextShell, False, 0)},
-                                                                             {"help", New CommandInfo("help", ShellCommandType.TextShell, False, 0)},
-                                                                             {"print", New CommandInfo("print", ShellCommandType.TextShell, False, 0)},
-                                                                             {"querychar", New CommandInfo("querychar", ShellCommandType.TextShell, True, 2)},
-                                                                             {"queryword", New CommandInfo("queryword", ShellCommandType.TextShell, True, 2)},
-                                                                             {"replace", New CommandInfo("replace", ShellCommandType.TextShell, True, 2)},
-                                                                             {"replaceinline", New CommandInfo("replaceinline", ShellCommandType.TextShell, True, 3)},
-                                                                             {"save", New CommandInfo("save", ShellCommandType.TextShell, False, 0)}}
+    Public ReadOnly TextEdit_Commands As New Dictionary(Of String, CommandInfo) From {{"addline", New CommandInfo("addline", ShellCommandType.TextShell, True, 1)},
+                                                                                      {"clear", New CommandInfo("clear", ShellCommandType.TextShell, False, 0)},
+                                                                                      {"delcharnum", New CommandInfo("delcharnum", ShellCommandType.TextShell, True, 2)},
+                                                                                      {"delline", New CommandInfo("delline", ShellCommandType.TextShell, True, 1)},
+                                                                                      {"delword", New CommandInfo("delword", ShellCommandType.TextShell, True, 2)},
+                                                                                      {"exit", New CommandInfo("exit", ShellCommandType.TextShell, False, 0)},
+                                                                                      {"exitnosave", New CommandInfo("exitnosave", ShellCommandType.TextShell, False, 0)},
+                                                                                      {"help", New CommandInfo("help", ShellCommandType.TextShell, False, 0)},
+                                                                                      {"print", New CommandInfo("print", ShellCommandType.TextShell, False, 0)},
+                                                                                      {"querychar", New CommandInfo("querychar", ShellCommandType.TextShell, True, 2)},
+                                                                                      {"queryword", New CommandInfo("queryword", ShellCommandType.TextShell, True, 2)},
+                                                                                      {"replace", New CommandInfo("replace", ShellCommandType.TextShell, True, 2)},
+                                                                                      {"replaceinline", New CommandInfo("replaceinline", ShellCommandType.TextShell, True, 3)},
+                                                                                      {"save", New CommandInfo("save", ShellCommandType.TextShell, False, 0)}}
     Public TextEdit_ModCommands As New ArrayList
     Public TextEdit_FileStream As FileStream
     Public TextEdit_FileLines As List(Of String)

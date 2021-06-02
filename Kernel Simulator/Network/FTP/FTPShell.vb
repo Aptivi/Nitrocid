@@ -20,24 +20,24 @@ Imports System.Threading
 
 Public Module FTPShell
 
-    Public FTPCommands As New Dictionary(Of String, CommandInfo) From {{"connect", New CommandInfo("connect", ShellCommandType.FTPShell, True, 1)},
-                                                                       {"cdl", New CommandInfo("cdl", ShellCommandType.FTPShell, True, 1)},
-                                                                       {"cdr", New CommandInfo("cdr", ShellCommandType.FTPShell, True, 1)},
-                                                                       {"cp", New CommandInfo("cp", ShellCommandType.FTPShell, True, 2)},
-                                                                       {"del", New CommandInfo("del", ShellCommandType.FTPShell, True, 1)},
-                                                                       {"disconnect", New CommandInfo("disconnect", ShellCommandType.FTPShell, False, 0)},
-                                                                       {"exit", New CommandInfo("exit", ShellCommandType.FTPShell, False, 0)},
-                                                                       {"get", New CommandInfo("get", ShellCommandType.FTPShell, True, 1)},
-                                                                       {"help", New CommandInfo("help", ShellCommandType.FTPShell, False, 0)},
-                                                                       {"lsl", New CommandInfo("lsl", ShellCommandType.FTPShell, False, 0)},
-                                                                       {"lsr", New CommandInfo("lsr", ShellCommandType.FTPShell, False, 0)},
-                                                                       {"put", New CommandInfo("put", ShellCommandType.FTPShell, True, 1)},
-                                                                       {"pwdl", New CommandInfo("pwdl", ShellCommandType.FTPShell, False, 0)},
-                                                                       {"pwdr", New CommandInfo("pwdr", ShellCommandType.FTPShell, False, 0)},
-                                                                       {"mv", New CommandInfo("mv", ShellCommandType.FTPShell, True, 2)},
-                                                                       {"perm", New CommandInfo("perm", ShellCommandType.FTPShell, True, 2)},
-                                                                       {"type", New CommandInfo("type", ShellCommandType.FTPShell, True, 1)},
-                                                                       {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.FTPShell, False, 0)}}
+    Public ReadOnly FTPCommands As New Dictionary(Of String, CommandInfo) From {{"connect", New CommandInfo("connect", ShellCommandType.FTPShell, True, 1)},
+                                                                                {"cdl", New CommandInfo("cdl", ShellCommandType.FTPShell, True, 1)},
+                                                                                {"cdr", New CommandInfo("cdr", ShellCommandType.FTPShell, True, 1)},
+                                                                                {"cp", New CommandInfo("cp", ShellCommandType.FTPShell, True, 2)},
+                                                                                {"del", New CommandInfo("del", ShellCommandType.FTPShell, True, 1)},
+                                                                                {"disconnect", New CommandInfo("disconnect", ShellCommandType.FTPShell, False, 0)},
+                                                                                {"exit", New CommandInfo("exit", ShellCommandType.FTPShell, False, 0)},
+                                                                                {"get", New CommandInfo("get", ShellCommandType.FTPShell, True, 1)},
+                                                                                {"help", New CommandInfo("help", ShellCommandType.FTPShell, False, 0)},
+                                                                                {"lsl", New CommandInfo("lsl", ShellCommandType.FTPShell, False, 0)},
+                                                                                {"lsr", New CommandInfo("lsr", ShellCommandType.FTPShell, False, 0)},
+                                                                                {"put", New CommandInfo("put", ShellCommandType.FTPShell, True, 1)},
+                                                                                {"pwdl", New CommandInfo("pwdl", ShellCommandType.FTPShell, False, 0)},
+                                                                                {"pwdr", New CommandInfo("pwdr", ShellCommandType.FTPShell, False, 0)},
+                                                                                {"mv", New CommandInfo("mv", ShellCommandType.FTPShell, True, 2)},
+                                                                                {"perm", New CommandInfo("perm", ShellCommandType.FTPShell, True, 2)},
+                                                                                {"type", New CommandInfo("type", ShellCommandType.FTPShell, True, 1)},
+                                                                                {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.FTPShell, False, 0)}}
     Public connected As Boolean = False
     Private initialized As Boolean = False
     Public ftpsite As String
