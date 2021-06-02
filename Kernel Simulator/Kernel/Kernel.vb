@@ -66,7 +66,7 @@ Public Module Kernel
                 End If
 
                 'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
-#If SPECIFIER <> "DEV" And SPECIFIER <> "RC" And SPECIFIER <> "NEARING" Then
+#If SPECIFIER <> "DEV" And SPECIFIER <> "RC" Then
                 If Not IO.File.Exists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
                     Dim pdbdown As New WebClient
                     Try
@@ -101,7 +101,7 @@ Public Module Kernel
                 If Not File.Exists(paths("MAL")) Then SetMOTD(DoTranslation("Logged in successfully as <user>"), MessageType.MAL)
 
                 'Check for kernel updates
-#If SPECIFIER <> "DEV" And SPECIFIER <> "RC" And SPECIFIER <> "NEARING" Then
+#If SPECIFIER <> "DEV" And SPECIFIER <> "RC" Then
                 If CheckUpdateStart Then
                     CheckKernelUpdates()
                 End If
