@@ -99,7 +99,8 @@ Public Module Config
                     {"Filesystem sort direction", SortDirection.ToString},
                     {"Debug Size Quota in Bytes", DebugQuota},
                     {"Show Hidden Files", HiddenFiles},
-                    {"Size parse mode", FullParseMode}
+                    {"Size parse mode", FullParseMode},
+                    {"Show progress on filesystem operations", ShowFilesystemProgress}
             }
             ConfigurationObject.Add("Filesystem", FilesystemConfig)
 
@@ -361,6 +362,7 @@ Public Module Config
             HiddenFiles = If(ConfigToken("Filesystem")?("Show Hidden Files"), False)
             SortMode = If(ConfigToken("Filesystem")?("Filesystem sort mode") IsNot Nothing, If([Enum].TryParse(ConfigToken("Filesystem")?("Filesystem sort mode"), SortMode), SortMode, FilesystemSortOptions.FullName), FilesystemSortOptions.FullName)
             SortDirection = If(ConfigToken("Filesystem")?("Filesystem sort direction") IsNot Nothing, If([Enum].TryParse(ConfigToken("Filesystem")?("Filesystem sort direction"), SortDirection), SortDirection, FilesystemSortDirection.Ascending), FilesystemSortDirection.Ascending)
+            ShowFilesystemProgress = If(ConfigToken("Filesystem")?("Show progress on filesystem operations"), True)
 
             'Hardware Section
             Wdbg("I", "Parsing hardware section...")
@@ -562,7 +564,7 @@ Public Module Config
             End If
         End If
         If ConfigToken("Filesystem") IsNot Nothing Then
-            If ConfigToken("Filesystem").Count <> 5 Then
+            If ConfigToken("Filesystem").Count <> 6 Then
                 Wdbg("W", "Missing keys in Filesystem. Config fix needed set to true.")
                 FixesNeeded = True
             End If

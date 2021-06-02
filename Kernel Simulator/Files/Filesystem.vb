@@ -24,6 +24,7 @@ Public Module Filesystem
 
     'Variables
     Public CurrDir As String = paths("Home")
+    Public ShowFilesystemProgress As Boolean = True
     Public SortMode As FilesystemSortOptions = FilesystemSortOptions.FullName
     Public SortDirection As FilesystemSortDirection = FilesystemSortDirection.Ascending
 
@@ -349,6 +350,16 @@ Public Module Filesystem
     ''' <param name="Source">Source directory</param>
     ''' <param name="Destination">Target directory</param>
     Private Sub CopyDirectory(ByVal Source As String, ByVal Destination As String)
+        CopyDirectory(Source, Destination, ShowFilesystemProgress)
+    End Sub
+
+    ''' <summary>
+    ''' Copies the directory from source to destination
+    ''' </summary>
+    ''' <param name="Source">Source directory</param>
+    ''' <param name="Destination">Target directory</param>
+    ''' <param name="ShowProgress">Whether or not to show what files are being copied</param>
+    Private Sub CopyDirectory(ByVal Source As String, ByVal Destination As String, ByVal ShowProgress As Boolean)
         If Not Directory.Exists(Source) Then Throw New IOException(DoTranslation("Directory {0} not found.").FormatString(Source))
 
         'Get all source directories and files
@@ -368,6 +379,7 @@ Public Module Filesystem
         For Each SourceFile As FileInfo In SourceFiles
             Dim DestinationFilePath As String = Path.Combine(Destination, SourceFile.Name)
             Wdbg("I", "Copying file {0} to destination...", DestinationFilePath)
+            If ShowProgress Then W("-> {0}", True, ColTypes.Neutral, DestinationFilePath)
             SourceFile.CopyTo(DestinationFilePath, True)
         Next
 

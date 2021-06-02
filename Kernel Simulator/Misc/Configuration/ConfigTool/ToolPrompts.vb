@@ -181,7 +181,7 @@ Public Module ToolPrompts
                     W("14) " + DoTranslation("Option color") + " [{0}]", True, ColTypes.Option, OptionColor)
                     W("15) " + DoTranslation("Banner color") + " [{0}]", True, ColTypes.Option, BannerColor)
                 Case "5" 'Filesystem
-                    MaxOptions = 5
+                    MaxOptions = 6
                     W("*) " + DoTranslation("Filesystem Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the filesystem settings.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Filesystem sort mode") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(SortMode)))
@@ -189,6 +189,7 @@ Public Module ToolPrompts
                     W("3) " + DoTranslation("Debug Size Quota in Bytes") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DebugQuota)))
                     W("4) " + DoTranslation("Show Hidden Files") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(HiddenFiles)))
                     W("5) " + DoTranslation("Size parse mode") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FullParseMode)))
+                    W("6) " + DoTranslation("Show progress on filesystem operations") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ShowFilesystemProgress)))
                 Case "6" 'Network
                     MaxOptions = 12
                     W("*) " + DoTranslation("Network Settings...") + vbNewLine, True, ColTypes.Neutral)
@@ -731,6 +732,12 @@ Public Module ToolPrompts
                             KeyVar = NameOf(FullParseMode)
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Size parse mode") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("If enabled, the kernel will parse the whole folder for its total size. Else, will only parse the surface."), True, ColTypes.Neutral)
+                        Case 6 'Show progress on filesystem operations
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ShowFilesystemProgress)
+                            W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Show progress on filesystem operations") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Shows what file is being processed during the filesystem operations"), True, ColTypes.Neutral)
                     End Select
                 Case "6" 'Network
                     Select Case KeyNumber
