@@ -38,9 +38,7 @@ Module DissolveDisplay
             If Dissolve.CancellationPending = True Then
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
-                Console.Clear()
-                Console.Write(New Color(InputColor).VTSequenceForeground)
-                Console.Write(New Color(BackgroundColor).VTSequenceBackground)
+                SetInputColor()
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Dissolve screensaver stopped.")
@@ -60,11 +58,10 @@ Module DissolveDisplay
                             Dim RedColorNum As Integer = RandomDriver.Next(255)
                             Dim GreenColorNum As Integer = RandomDriver.Next(255)
                             Dim BlueColorNum As Integer = RandomDriver.Next(255)
-                            Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-                            Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
+                            WriteC(" ", False, New Color("0;0;0"), New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"))
                         ElseIf Dissolve255Colors Then
                             Dim ColorNum As Integer = RandomDriver.Next(255)
-                            Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
+                            WriteC(" ", False, New Color("0"), New Color(ColorNum))
                         Else
                             Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
                             Console.Write(" ")

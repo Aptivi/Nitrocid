@@ -36,11 +36,11 @@ Public Module StringEvaluators
         EvalCP.ReferencedAssemblies.Add("System.DirectoryServices.dll")
         EvalCP.ReferencedAssemblies.Add("System.Xml.dll")
         EvalCP.ReferencedAssemblies.Add("System.Xml.Linq.dll")
-        Dim EvalCode As String = "Imports System" & Environment.NewLine &
-                                 "Public Class Eval" & Environment.NewLine &
-                                 "Public Shared Function Evaluate()" & Environment.NewLine &
-                                 "Return " & Var & Environment.NewLine &
-                                 "End Function" & Environment.NewLine &
+        Dim EvalCode As String = "Imports System" & vbNewLine &
+                                 "Public Class Eval" & vbNewLine &
+                                 "Public Shared Function Evaluate()" & vbNewLine &
+                                 "Return " & Var & vbNewLine &
+                                 "End Function" & vbNewLine &
                                  "End Class"
         Dim cr As CompilerResults = EvalP.CompileAssemblyFromSource(EvalCP, EvalCode)
         If cr.Errors.Count > 0 Then

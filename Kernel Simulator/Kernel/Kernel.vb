@@ -32,6 +32,7 @@ Public Module Kernel
     Public DefConsoleOut As TextWriter
     Public ScrnTimeout As Integer = 300000
     Public ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Release Candidate 1"
+    Public ReadOnly vbNewLine As String = Environment.NewLine
 
     ''' <summary>
     ''' Entry point

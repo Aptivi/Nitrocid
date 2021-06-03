@@ -63,43 +63,44 @@ Module TextWriterSlowColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
+            'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
             If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
                 If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
-                    Write(New Color(NeutralTextColor).VTSequenceForeground)
+                    SetConsoleColor(New Color(NeutralTextColor))
                 ElseIf colorType = ColTypes.Continuable Then
-                    Write(New Color(ContKernelErrorColor).VTSequenceForeground)
+                    SetConsoleColor(New Color(ContKernelErrorColor))
                 ElseIf colorType = ColTypes.Uncontinuable Then
-                    Write(New Color(UncontKernelErrorColor).VTSequenceForeground)
+                    SetConsoleColor(New Color(UncontKernelErrorColor))
                 ElseIf colorType = ColTypes.HostName Then
-                    Write(New Color(HostNameShellColor).VTSequenceForeground)
+                    SetConsoleColor(New Color(HostNameShellColor))
                 ElseIf colorType = ColTypes.UserName Then
-                    Write(New Color(UserNameShellColor).VTSequenceForeground)
+                    SetConsoleColor(New Color(UserNameShellColor))
                 ElseIf colorType = ColTypes.License Then
-                    Write(New Color(LicenseColor).VTSequenceForeground)
+                    SetConsoleColor(New Color(LicenseColor))
                 ElseIf colorType = ColTypes.Gray Then
                     If New Color(BackgroundColor).IsBright Then
-                        Write(New Color(NeutralTextColor).VTSequenceForeground)
+                        SetConsoleColor(New Color(NeutralTextColor))
                     Else
-                        Write(New Color(ConsoleColors.Gray).VTSequenceForeground)
+                        SetConsoleColor(New Color(ConsoleColors.Gray))
                     End If
                 ElseIf colorType = ColTypes.ListValue Then
-                    Write(New Color(ListValueColor).VTSequenceForeground)
+                    SetConsoleColor(New Color(ListValueColor))
                 ElseIf colorType = ColTypes.ListEntry Then
-                    Write(New Color(ListEntryColor).VTSequenceForeground)
+                    SetConsoleColor(New Color(ListEntryColor))
                 ElseIf colorType = ColTypes.Stage Then
-                    Write(New Color(StageColor).VTSequenceForeground)
+                    SetConsoleColor(New Color(StageColor))
                 ElseIf colorType = ColTypes.Error Then
-                    Write(New Color(ErrorColor).VTSequenceForeground)
+                    SetConsoleColor(New Color(ErrorColor))
                 ElseIf colorType = ColTypes.Warning Then
-                    Write(New Color(WarningColor).VTSequenceForeground)
+                    SetConsoleColor(New Color(WarningColor))
                 ElseIf colorType = ColTypes.Option Then
-                    Write(New Color(OptionColor).VTSequenceForeground)
+                    SetConsoleColor(New Color(OptionColor))
                 ElseIf colorType = ColTypes.Banner Then
-                    Write(New Color(BannerColor).VTSequenceForeground)
+                    SetConsoleColor(New Color(BannerColor))
                 Else
                     Exit Sub
                 End If
-                Write(New Color(BackgroundColor).VTSequenceBackground)
+                SetConsoleColor(New Color(BackgroundColor), True)
             End If
 
             'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
@@ -215,8 +216,8 @@ Module TextWriterSlowColor
         SyncLock WriteLock
 #End If
             If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
-                Write(color.VTSequenceForeground)
-                Write(New Color(BackgroundColor).VTSequenceBackground)
+                SetConsoleColor(color)
+                SetConsoleColor(New Color(BackgroundColor), True)
             End If
 
             'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
@@ -256,8 +257,8 @@ Module TextWriterSlowColor
         SyncLock WriteLock
 #End If
             If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
-                Write(ForegroundColor.VTSequenceForeground)
-                Write(BackgroundColor.VTSequenceBackground)
+                SetConsoleColor(ForegroundColor)
+                SetConsoleColor(BackgroundColor, True)
             End If
 
             'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)

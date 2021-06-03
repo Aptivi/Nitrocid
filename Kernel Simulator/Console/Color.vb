@@ -259,7 +259,7 @@ Public Module ColorTools
     Public Sub LoadBack()
         Try
             Wdbg("I", "Filling background with background color")
-            Console.Write(New Color(BackgroundColor).VTSequenceBackground)
+            SetConsoleColor(New Color(BackgroundColor), True)
             Console.Clear()
         Catch ex As Exception
             Wdbg("E", "Failed to set background: {0}", ex.Message)
@@ -471,8 +471,37 @@ Public Module ColorTools
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function SetInputColor() As Boolean
         If ColoredShell = True Then
-            Console.Write(New Color(InputColor).VTSequenceForeground)
-            Console.Write(New Color(BackgroundColor).VTSequenceBackground)
+            SetConsoleColor(New Color(InputColor))
+            SetConsoleColor(New Color(BackgroundColor), True)
+            Return True
+        End If
+        Return False
+    End Function
+
+    ''' <summary>
+    ''' Sets the console color
+    ''' </summary>
+    ''' <param name="ColorSequence">The color instance</param>
+    ''' <param name="Background">Whether to set background or not</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function SetConsoleColor(ByVal ColorSequence As Color, Optional ByVal Background As Boolean = False) As Boolean
+        If ColoredShell Then
+            If ColorSequence Is Nothing Then Throw New ArgumentNullException(NameOf(ColorSequence))
+            Dim OldLeft As Integer = Console.CursorLeft
+            Dim OldTop As Integer = Console.CursorTop
+            If Background Then
+                Console.Write(ColorSequence.VTSequenceBackground)
+                If IsOnUnix() Then
+                    'Restore the CursorLeft value to its correct value in Mono. This is a workaround to fix incorrect Console.CursorLeft value.
+                    Console.SetCursorPosition(OldLeft, OldTop)
+                End If
+            Else
+                Console.Write(ColorSequence.VTSequenceForeground)
+                If IsOnUnix() Then
+                    'Restore the CursorLeft value to its correct value in Mono. This is a workaround to fix incorrect Console.CursorLeft value.
+                    Console.SetCursorPosition(OldLeft, OldTop)
+                End If
+            End If
             Return True
         End If
         Return False

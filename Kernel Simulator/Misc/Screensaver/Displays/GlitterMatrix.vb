@@ -36,9 +36,7 @@ Module GlitterMatrixDisplay
             If GlitterMatrix.CancellationPending = True Then
                 Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                 e.Cancel = True
-                Console.Clear()
-                Console.Write(New Color(InputColor).VTSequenceForeground)
-                Console.Write(New Color(BackgroundColor).VTSequenceBackground)
+                SetInputColor()
                 LoadBack()
                 Console.CursorVisible = True
                 Wdbg("I", "All clean. Glitter Matrix screensaver stopped.")
