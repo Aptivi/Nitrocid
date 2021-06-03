@@ -67,10 +67,8 @@ Public Class Color
             Dim ColorSpecifierArray() As String = ColorSpecifier.Split(";")
             If ColorSpecifierArray.Length = 3 Then
                 PlainSequence = "{0};{1};{2}".FormatString(ColorSpecifierArray(0), ColorSpecifierArray(1), ColorSpecifierArray(2))
-                VTSequenceForeground = "<38;2;{0}m>".FormatString(PlainSequence)
-                VTSequenceForeground.ConvertVTSequences
-                VTSequenceBackground = "<48;2;{0}m>".FormatString(PlainSequence)
-                VTSequenceBackground.ConvertVTSequences
+                VTSequenceForeground = GetEsc() + "[38;2;{0}m".FormatString(PlainSequence)
+                VTSequenceBackground = GetEsc() + "[48;2;{0}m".FormatString(PlainSequence)
                 Type = ColorType.TrueColor
                 IsBright = ColorSpecifierArray(0) + 0.2126 + ColorSpecifierArray(1) + 0.7152 + ColorSpecifierArray(2) + 0.0722 > 255 / 2
                 R = ColorSpecifierArray(0)
@@ -81,10 +79,8 @@ Public Class Color
             ColorSpecifier = ColorSpecifier.Replace("""", "")
             Dim ColorsInfo As New ConsoleColorsInfo(ColorSpecifier)
             PlainSequence = ColorSpecifier
-            VTSequenceForeground = "<38;5;{0}m>".FormatString(ColorSpecifier)
-            VTSequenceForeground.ConvertVTSequences
-            VTSequenceBackground = "<48;5;{0}m>".FormatString(ColorSpecifier)
-            VTSequenceBackground.ConvertVTSequences
+            VTSequenceForeground = GetEsc() + "[38;5;{0}m".FormatString(ColorSpecifier)
+            VTSequenceBackground = GetEsc() + "[48;5;{0}m".FormatString(ColorSpecifier)
             Type = ColorType._255Color
             IsBright = ColorsInfo.IsBright
             R = ColorsInfo.R

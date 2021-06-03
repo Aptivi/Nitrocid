@@ -50,7 +50,6 @@ Public Class ConsoleColorsInfo
     ''' <param name="ColorValue">A 255-color console color</param>
     Public Sub New(ByVal ColorValue As ConsoleColors)
         If Not (ColorValue < 0 Or ColorValue > 255) Then
-            Dim ColorDataJson As JToken = JToken.Parse(My.Resources.ConsoleColorsData)
             Dim ColorData As JObject = ColorDataJson(CInt(ColorValue))
             ColorID = ColorData("colorId")
             R = ColorData("rgb")("r")
@@ -94,6 +93,8 @@ Public Module Color255
     <DllImport("kernel32.dll", SetLastError:=True)>
     Public Function GetStdHandle(ByVal handle As Integer) As IntPtr
     End Function
+
+    Public ReadOnly ColorDataJson As JToken = JToken.Parse(My.Resources.ConsoleColorsData)
 
     ''' <summary>
     ''' All 255 console colors
