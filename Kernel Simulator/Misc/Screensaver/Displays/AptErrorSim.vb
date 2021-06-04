@@ -40,16 +40,27 @@ IFCANCEL:
                 SaverAutoReset.Set()
                 Exit Do
             Else
+                Dim Sudo As Boolean
                 If AptErrorSimHackerMode Then
                     Console.BackgroundColor = ConsoleColor.Black
                     Console.ForegroundColor = ConsoleColor.Green
                 End If
                 Console.Clear()
-                Console.Write("{0}@{1}:{2}$ ", HName, signedinusrnm, CurrDir)
+                Console.Write("{0}@{1}:{2}", signedinusrnm, HName, CurrDir)
+                If adminList(signedinusrnm) Then
+                    Console.Write("# ")
+                Else
+                    Sudo = True
+                    Console.Write("$ ")
+                End If
                 If AptErrorSim.CancellationPending Then GoTo IFCANCEL
                 SleepNoBlock(3000, AptErrorSim)
                 If AptErrorSim.CancellationPending Then GoTo IFCANCEL
-                WriteSlowly("sudo apt -y dist-upgrade", False, 100)
+                If Sudo Then
+                    WriteSlowly("sudo apt -y dist-upgrade", False, 100)
+                Else
+                    WriteSlowly("apt -y dist-upgrade", False, 100)
+                End If
                 If AptErrorSim.CancellationPending Then GoTo IFCANCEL
                 SleepNoBlock(200, AptErrorSim)
                 If AptErrorSim.CancellationPending Then GoTo IFCANCEL
@@ -110,7 +121,12 @@ IFCANCEL:
                 If AptErrorSim.CancellationPending Then GoTo IFCANCEL
                 SleepNoBlock(100, AptErrorSim)
                 If AptErrorSim.CancellationPending Then GoTo IFCANCEL
-                Console.Write("{0}@{1}:{2}$ ", HName, signedinusrnm, CurrDir)
+                Console.Write("{0}@{1}:{2}", signedinusrnm, HName, CurrDir)
+                If adminList(signedinusrnm) Then
+                    Console.Write("# ")
+                Else
+                    Console.Write("$ ")
+                End If
                 If AptErrorSim.CancellationPending Then GoTo IFCANCEL
                 SleepNoBlock(5000, AptErrorSim)
                 If AptErrorSim.CancellationPending Then GoTo IFCANCEL
