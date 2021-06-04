@@ -31,6 +31,9 @@ Public Module SeparatorColor
             W(Text + " ", False, ColTypes, Vars)
         End If
         W("-".Repeat(Console.WindowWidth - Console.CursorLeft), True, ColTypes)
+        If IsOnUnix() Then
+            If Not Console.CursorTop = Console.BufferHeight - 1 Then Console.CursorTop -= 1
+        End If
     End Sub
 
     ''' <summary>
@@ -46,6 +49,9 @@ Public Module SeparatorColor
             WriteC16(Text + " ", False, Color, Vars)
         End If
         WriteC16("-".Repeat(Console.WindowWidth - Console.CursorLeft), True, Color)
+        If IsOnUnix() Then
+            If Not Console.CursorTop = Console.BufferHeight - 1 Then Console.CursorTop -= 1
+        End If
     End Sub
 
     ''' <summary>
@@ -62,6 +68,9 @@ Public Module SeparatorColor
             WriteC16(Text + " ", False, ForegroundColor, BackgroundColor, Vars)
         End If
         WriteC16("-".Repeat(Console.WindowWidth - Console.CursorLeft), True, ForegroundColor, BackgroundColor)
+        If IsOnUnix() Then
+            If Not Console.CursorTop = Console.BufferHeight - 1 Then Console.CursorTop -= 1
+        End If
     End Sub
 
     ''' <summary>
@@ -77,6 +86,9 @@ Public Module SeparatorColor
             WriteC(Text + " ", False, Color, Vars)
         End If
         WriteC("-".Repeat(Console.WindowWidth - Console.CursorLeft), True, Color)
+        If IsOnUnix() Then
+            If Not Console.CursorTop = Console.BufferHeight - 1 Then Console.CursorTop -= 1
+        End If
     End Sub
 
     ''' <summary>
@@ -93,6 +105,9 @@ Public Module SeparatorColor
             WriteC(Text + " ", False, ForegroundColor, BackgroundColor, Vars)
         End If
         WriteC("-".Repeat(Console.WindowWidth - Console.CursorLeft), True, ForegroundColor, BackgroundColor)
+        If IsOnUnix() Then
+            If Not Console.CursorTop = Console.BufferHeight - 1 Then Console.CursorTop -= 1
+        End If
     End Sub
 
 End Module
