@@ -110,7 +110,7 @@ Public Module ToolPrompts
         Dim SectionFinished As Boolean
         Dim AnswerString As String
         Dim AnswerInt As Integer
-        Dim BuiltinSavers As Integer = 14
+        Dim BuiltinSavers As Integer = 16
 
         'Section-specific variables
         Dim ConfigurableScreensavers As New List(Of String)
@@ -207,7 +207,7 @@ Public Module ToolPrompts
                     W("11) " + DoTranslation("Enable RPC") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RPCEnabled)))
                     W("12) " + DoTranslation("RPC Port") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RPCPort)))
                 Case "7" 'Screensaver
-                    MaxOptions = 15
+                    MaxOptions = 16 + 1 'Screensavers + Keys
                     W("*) " + DoTranslation("Screensaver Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all the screensavers and their available settings.") + vbNewLine, True, ColTypes.Neutral)
 
@@ -226,6 +226,8 @@ Public Module ToolPrompts
                     W("12) Fader...", True, ColTypes.Option)
                     W("13) Typo...", True, ColTypes.Option)
                     W("14) Wipe...", True, ColTypes.Option)
+                    W("15) HackUserFromAD...", True, ColTypes.Option)
+                    W("16) AptErrorSim...", True, ColTypes.Option)
 
                     'Populate custom screensavers
                     For Each CustomSaver As String In CSvrdb.Keys
@@ -344,6 +346,16 @@ Public Module ToolPrompts
                     W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(WipeTrueColor)))
                     W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(WipeDelay)))
                     W("4) " + DoTranslation("Wipes to change direction") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(WipeWipesNeededToChangeDirection)))
+                Case "7.15" 'Screensaver > HackUserFromAD
+                    MaxOptions = 1
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > HackUserFromAD" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " HackUserFromAD." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Hacker Mode") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(HackUserFromADHackerMode)))
+                Case "7.16" 'Screensaver > AptErrorSim
+                    MaxOptions = 1
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > AptErrorSim" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " AptErrorSim." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Hacker Mode") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(AptErrorSimHackerMode)))
                 Case "7." + $"{If(SectionParameters.Length <> 0, SectionParameters(0), $"{BuiltinSavers + 1}")}" 'Screensaver > a custom saver
                     Dim SaverIndex As Integer = SectionParameters(0) - BuiltinSavers - 1
                     Dim Configurables As List(Of String) = SectionParameters(1)
@@ -447,7 +459,7 @@ Public Module ToolPrompts
         Dim TargetList As IEnumerable(Of Object)
         Dim SelectFrom As IEnumerable(Of Object)
         Dim NeutralizePaths As Boolean
-        Dim BuiltinSavers As Integer = 14
+        Dim BuiltinSavers As Integer = 16
 
         While Not KeyFinished
             Console.Clear()
@@ -1178,6 +1190,30 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("How many wipes to do before changing direction randomly?"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Wipe > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
+                    End Select
+                Case "7.15" 'HackUserFromAD
+                    Select Case KeyNumber
+                        Case 1 'HackUserFromAD: Hacker Mode
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(HackUserFromADHackerMode)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > HackUserFromAD > " + DoTranslation("Hacker Mode") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("If enabled, green console will be enabled.") + " l33t h4x0r!", True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > HackUserFromAD > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
+                    End Select
+                Case "7.16" 'AptErrorSim
+                    Select Case KeyNumber
+                        Case 1 'AptErrorSim: Hacker Mode
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(AptErrorSimHackerMode)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > AptErrorSim > " + DoTranslation("Hacker Mode") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("If enabled, green console will be enabled.") + " l33t h4x0r!", True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > AptErrorSim > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
                 Case "7." + $"{If(SectionParts.Length > 1, SectionParts(1), $"{BuiltinSavers + 1}")}" 'Custom saver

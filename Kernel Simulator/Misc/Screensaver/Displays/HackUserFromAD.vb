@@ -39,8 +39,10 @@ IFCANCEL:
                 SaverAutoReset.Set()
                 Exit Do
             Else
-                Console.BackgroundColor = ConsoleColor.Black
-                Console.ForegroundColor = ConsoleColor.Green
+                If HackUserFromADHackerMode Then
+                    Console.BackgroundColor = ConsoleColor.Black
+                    Console.ForegroundColor = ConsoleColor.Green
+                End If
                 Console.Clear()
                 Console.WriteLine("Microsoft Windows [Version 10.0.18362.449]" + vbNewLine +
                                   "(c) 2019 Microsoft Corporation. All rights reserved." + vbNewLine)

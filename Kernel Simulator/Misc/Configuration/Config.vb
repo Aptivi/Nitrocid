@@ -247,6 +247,18 @@ Public Module Config
             }
             ScreensaverConfig.Add("Typo", TypoConfig)
 
+            'HackUserFromAD config json object
+            Dim HackUserFromADConfig As New JObject From {
+                    {"Hacker Mode", HackUserFromADHackerMode}
+            }
+            ScreensaverConfig.Add("HackUserFromAD", HackUserFromADConfig)
+
+            'AptErrorSim config json object
+            Dim AptErrorSimConfig As New JObject From {
+                    {"Hacker Mode", AptErrorSimHackerMode}
+            }
+            ScreensaverConfig.Add("AptErrorSim", AptErrorSimConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -415,6 +427,8 @@ Public Module Config
             ProgressClockMinutesProgressColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Color of Minutes Bar"), 5)
             ProgressClockHoursProgressColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Color of Hours Bar"), 6)
             ProgressClockProgressColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Color of Information"), 7)
+            HackUserFromADHackerMode = If(ConfigToken("Screensaver")?("HackUserFromAD")?("Hacker Mode"), True)
+            AptErrorSimHackerMode = If(ConfigToken("Screensaver")?("AptErrorSim")?("Hacker Mode"), False)
 
             'Screensaver: Delays
             BouncingBlockDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingBlock")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("BouncingBlock")?("Delay in Milliseconds"), 10)
@@ -526,7 +540,7 @@ Public Module Config
             FixesNeeded = True
         End If
         If ConfigToken("Screensaver") IsNot Nothing Then
-            If ConfigToken("Screensaver").Count <> 14 + 2 Then 'Screensavers + Keys
+            If ConfigToken("Screensaver").Count <> 16 + 2 Then 'Screensavers + Keys
                 Wdbg("W", "Missing sections and/or keys in Screensaver. Config fix needed set to true.")
                 FixesNeeded = True
             End If
@@ -657,6 +671,18 @@ Public Module Config
             If ConfigToken("Screensaver")("Typo") IsNot Nothing Then
                 If ConfigToken("Screensaver")("Typo").Count <> 6 Then
                     Wdbg("W", "Missing keys in Screensaver > Typo. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("HackUserFromAD") IsNot Nothing Then
+                If ConfigToken("Screensaver")("HackUserFromAD").Count <> 1 Then
+                    Wdbg("W", "Missing keys in Screensaver > HackUserFromAD. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("AptErrorSim") IsNot Nothing Then
+                If ConfigToken("Screensaver")("AptErrorSim").Count <> 1 Then
+                    Wdbg("W", "Missing keys in Screensaver > AptErrorSim. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If

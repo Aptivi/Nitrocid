@@ -40,6 +40,10 @@ IFCANCEL:
                 SaverAutoReset.Set()
                 Exit Do
             Else
+                If AptErrorSimHackerMode Then
+                    Console.BackgroundColor = ConsoleColor.Black
+                    Console.ForegroundColor = ConsoleColor.Green
+                End If
                 Console.Clear()
                 Console.Write("{0}@{1}:{2}$ ", HName, signedinusrnm, CurrDir)
                 If AptErrorSim.CancellationPending Then GoTo IFCANCEL

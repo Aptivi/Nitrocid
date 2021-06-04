@@ -123,6 +123,14 @@ Public Module ScreensaverSettings
     ''' [ProgressClock] The color of date information. It can be 1-16, 1-255, or "1-255;1-255;1-255".
     ''' </summary>
     Public ProgressClockProgressColor As String = 7
+    ''' <summary>
+    ''' [HackUserFromAD] Sets the console foreground color to green to represent "Hacker Mode"
+    ''' </summary>
+    Public HackUserFromADHackerMode As Boolean = True
+    ''' <summary>
+    ''' [AptErrorSim] Sets the console foreground color to green to represent "Hacker Mode"
+    ''' </summary>
+    Public AptErrorSimHackerMode As Boolean = False
 
     '-> Delays
     ''' <summary>
