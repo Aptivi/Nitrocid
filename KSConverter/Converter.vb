@@ -71,10 +71,12 @@ Module Converter
         'Make backup of old configuration files in case something goes wrong during conversion.
         W("- Making backup of old configuration files...", True, ColTypes.Stage)
         For Each ConfigEntry As String In ListOfOldPaths.Keys
-            If File.Exists(ListOfOldPaths(ConfigEntry)) Then
+            If File.Exists(ListOfOldPaths(ConfigEntry)) And Not File.Exists(ListOfBackups(ConfigEntry)) Then
                 'Move the old config file to backup
                 W("  - {0}: {1} -> {2}", True, ColTypes.Neutral, ConfigEntry, ListOfOldPaths(ConfigEntry), ListOfBackups(ConfigEntry))
                 File.Move(ListOfOldPaths(ConfigEntry), ListOfBackups(ConfigEntry))
+            ElseIf File.Exists(ListOfBackups(ConfigEntry)) Then
+                W("  - Warning: {0} already exists", True, ColTypes.Warning, ListOfBackups(ConfigEntry))
             Else
                 'File not found. Skip it.
                 W("  - Warning: {0} not found in home directory.", True, ColTypes.Warning, ListOfOldPaths(ConfigEntry))
