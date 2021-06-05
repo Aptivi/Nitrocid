@@ -158,6 +158,7 @@ Public Module FTPTools
         currentremoteDir = ClientFTP.GetWorkingDirectory
         Wdbg("I", "Working directory: {0}", currentremoteDir)
         ftpsite = ClientFTP.Host
+        user = ClientFTP.Credentials.UserName
 
         'Write connection information to Speed Dial file if it doesn't exist there
         Dim SpeedDialEntries As Dictionary(Of String, JToken) = ListSpeedDialEntries(SpeedDialType.FTP)

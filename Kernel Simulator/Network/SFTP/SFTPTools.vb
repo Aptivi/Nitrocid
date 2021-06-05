@@ -41,14 +41,14 @@ Public Module SFTPTools
 
                 'Prompt for username
                 W(DoTranslation("Username for {0}: "), False, ColTypes.Input, address)
-                user = Console.ReadLine()
-                If user = "" Then
+                SFTPUser = Console.ReadLine()
+                If SFTPUser = "" Then
                     Wdbg("W", "User is not provided. Fallback to ""anonymous""")
-                    user = "anonymous"
+                    SFTPUser = "anonymous"
                 End If
 
                 'Make a new instance of SftpClient
-                ClientSFTP = New SftpClient(GetConnectionInfo(SftpHost, SftpPort, user))
+                ClientSFTP = New SftpClient(GetConnectionInfo(SftpHost, SftpPort, SFTPUser))
 
                 'Connect to SFTP
                 ConnectSFTP()
