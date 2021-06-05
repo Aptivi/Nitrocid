@@ -109,17 +109,17 @@ Public Module SFTPTools
             Dim Answer As String
             Dim Answering As Boolean = True
             If Not SpeedDialLines.Count = 0 Then
+                W(DoTranslation("Select an address to connect to:") + vbNewLine, True, ColTypes.Neutral)
                 For Each SpeedDialAddress As String In SpeedDialLines.Keys
                     Wdbg("I", "Speed dial address: {0}", SpeedDialAddress)
-                    W(DoTranslation("Select an address to connect to:"), True, ColTypes.Neutral)
                     W("{0}) {1}, {2}, {3}", True, ColTypes.Option, Counter, SpeedDialAddress, SpeedDialLines(SpeedDialAddress)("Port"), SpeedDialLines(SpeedDialAddress)("User"))
                     Counter += 1
                 Next
+                Console.WriteLine()
                 While Answering
                     W(">> ", False, ColTypes.Input)
                     Answer = Console.ReadLine
                     Wdbg("I", "Response: {0}", Answer)
-                    Console.WriteLine()
                     If IsNumeric(Answer) Then
                         Wdbg("I", "Response is numeric. IsNumeric(Answer) returned true. Checking to see if in-bounds...")
                         Dim AnswerInt As Integer = Answer
