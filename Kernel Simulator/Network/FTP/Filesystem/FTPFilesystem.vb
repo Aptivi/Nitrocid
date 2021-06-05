@@ -38,22 +38,28 @@ Module FTPFilesystem
 
             Try
                 If Path <> "" Then
-                    Listing = ClientFTP.GetListing(Path)
+                    Listing = ClientFTP.GetListing(Path, FtpListOption.DerefLinks)
                 Else
-                    Listing = ClientFTP.GetListing(currentremoteDir)
+                    Listing = ClientFTP.GetListing(currentremoteDir, FtpListOption.DerefLinks)
                 End If
                 For Each DirListFTP As FtpListItem In Listing
                     EntryBuilder.Append($"- {DirListFTP.Name}")
-                    If DirListFTP.Type = FtpFileSystemObjectType.File Then
-                        EntryBuilder.Append(": ")
-                        FileSize = ClientFTP.GetFileSize(DirListFTP.FullName)
-                        ModDate = ClientFTP.GetModifiedTime(DirListFTP.FullName)
-                        EntryBuilder.Append(New Color(ListValueColor).VTSequenceForeground + DoTranslation("{0} KB | Modified in: {1}").FormatString(FormatNumber(FileSize / 1024, 2), ModDate.ToString))
-                    ElseIf DirListFTP.Type = FtpFileSystemObjectType.Directory Then
-                        EntryBuilder.Append("/")
-                    ElseIf DirListFTP.Type = FtpFileSystemObjectType.Link Then
+                    'Check to see if the file that we're dealing with is a symbolic link
+                    If DirListFTP.Type = FtpFileSystemObjectType.Link Then
                         EntryBuilder.Append(" >> ")
                         EntryBuilder.Append(DirListFTP.LinkTarget)
+                        DirListFTP = DirListFTP.LinkObject
+                    End If
+
+                    If DirListFTP IsNot Nothing Then
+                        If DirListFTP.Type = FtpFileSystemObjectType.File Then
+                            EntryBuilder.Append(": ")
+                            FileSize = ClientFTP.GetFileSize(DirListFTP.FullName)
+                            ModDate = ClientFTP.GetModifiedTime(DirListFTP.FullName)
+                            EntryBuilder.Append(New Color(ListValueColor).VTSequenceForeground + DoTranslation("{0} KB | Modified in: {1}").FormatString(FormatNumber(FileSize / 1024, 2), ModDate.ToString))
+                        ElseIf DirListFTP.Type = FtpFileSystemObjectType.Directory Then
+                            EntryBuilder.Append("/")
+                        End If
                     End If
                     Entries.Add(EntryBuilder.ToString)
                     EntryBuilder.Clear()
