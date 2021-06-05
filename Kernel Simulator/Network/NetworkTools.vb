@@ -217,17 +217,29 @@ Public Module NetworkTools
     ''' <summary>
     ''' Adds an entry to speed dial
     ''' </summary>
-    ''' <param name="Entry">A speed dial entry</param>
+    ''' <param name="Address">A speed dial address</param>
+    ''' <param name="Port">A speed dial port</param>
+    ''' <param name="User">A speed dial username</param>
+    ''' <param name="EncryptionMode">A speed dial encryption mode</param>
     ''' <param name="SpeedDialType">Speed dial type</param>
     ''' <param name="ThrowException">Optionally throw exception</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function AddEntryToSpeedDial(ByVal Entry As String, ByVal SpeedDialType As SpeedDialType, Optional ThrowException As Boolean = True) As Boolean
+    Public Function AddEntryToSpeedDial(ByVal Address As String, ByVal Port As Integer, ByVal User As String, ByVal SpeedDialType As SpeedDialType, Optional ByVal EncryptionMode As FtpEncryptionMode = FtpEncryptionMode.None, Optional ThrowException As Boolean = True) As Boolean
         Dim PathName As String = If(SpeedDialType = SpeedDialType.SFTP, "SFTPSpeedDial", "FTPSpeedDial")
         If Not File.Exists(paths(PathName)) Then MakeFile(paths(PathName))
         Dim SpeedDialJsonContent As String = File.ReadAllText(paths(PathName))
-        Dim SpeedDialToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(SpeedDialJsonContent), SpeedDialJsonContent, "[]"))
-        If Not SpeedDialToken.Contains(Entry) Then
-            SpeedDialToken.Add(Entry)
+        If SpeedDialJsonContent.StartsWith("[") Then
+            ConvertSpeedDialEntries(SpeedDialType)
+            SpeedDialJsonContent = File.ReadAllText(paths(PathName))
+        End If
+        Dim SpeedDialToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(SpeedDialJsonContent), SpeedDialJsonContent, "{}"))
+        If SpeedDialToken(Address) Is Nothing Then
+            Dim NewSpeedDial As New JObject(New JProperty("Address", Address),
+                                            New JProperty("Port", Port),
+                                            New JProperty("User", User),
+                                            New JProperty("Type", SpeedDialType),
+                                            New JProperty("FTP Encryption Mode", EncryptionMode))
+            SpeedDialToken.Add(Address, NewSpeedDial)
             File.WriteAllText(paths(PathName), JsonConvert.SerializeObject(SpeedDialToken, Formatting.Indented))
             Return True
         Else
@@ -247,12 +259,39 @@ Public Module NetworkTools
     ''' </summary>
     ''' <param name="SpeedDialType">Speed dial type</param>
     ''' <returns>A list</returns>
-    Public Function ListSpeedDialEntries(ByVal SpeedDialType As SpeedDialType) As List(Of JToken)
+    Public Function ListSpeedDialEntries(ByVal SpeedDialType As SpeedDialType) As Dictionary(Of String, JToken)
         Dim PathName As String = If(SpeedDialType = SpeedDialType.SFTP, "SFTPSpeedDial", "FTPSpeedDial")
         If Not File.Exists(paths(PathName)) Then MakeFile(paths(PathName))
         Dim SpeedDialJsonContent As String = File.ReadAllText(paths(PathName))
-        Dim SpeedDialToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(SpeedDialJsonContent), SpeedDialJsonContent, "[]"))
-        Return SpeedDialToken.ToArray.ToList
+        If SpeedDialJsonContent.StartsWith("[") Then
+            ConvertSpeedDialEntries(SpeedDialType)
+            SpeedDialJsonContent = File.ReadAllText(paths(PathName))
+        End If
+        Dim SpeedDialToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(SpeedDialJsonContent), SpeedDialJsonContent, "{}"))
+        Dim SpeedDialEntries As New Dictionary(Of String, JToken)
+        For Each SpeedDialAddress In SpeedDialToken.Properties
+            SpeedDialEntries.Add(SpeedDialAddress.Name, SpeedDialAddress.Value)
+        Next
+        Return SpeedDialEntries
     End Function
+
+    ''' <summary>
+    ''' Convert speed dial entries from the old jsonified version (pre-0.0.16 RC1) to the new jsonified version
+    ''' </summary>
+    ''' <param name="SpeedDialType">Speed dial type</param>
+    Public Sub ConvertSpeedDialEntries(ByVal SpeedDialType As SpeedDialType)
+        Dim PathName As String = If(SpeedDialType = SpeedDialType.SFTP, "SFTPSpeedDial", "FTPSpeedDial")
+        Dim SpeedDialJsonContent As String = File.ReadAllText(paths(PathName))
+        Dim SpeedDialToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(SpeedDialJsonContent), SpeedDialJsonContent, "[]"))
+        File.Delete(paths(PathName))
+        For Each SpeedDialEntry As String In SpeedDialToken
+            Dim ChosenLineSeparation As String() = SpeedDialEntry.Split(",")
+            Dim Address As String = ChosenLineSeparation(0)
+            Dim Port As String = ChosenLineSeparation(1)
+            Dim Username As String = ChosenLineSeparation(2)
+            Dim Encryption As FtpEncryptionMode = If(SpeedDialType = SpeedDialType.FTP, [Enum].Parse(GetType(FtpEncryptionMode), ChosenLineSeparation(3)), FtpEncryptionMode.None)
+            AddEntryToSpeedDial(Address, Port, Username, SpeedDialType, Encryption, False)
+        Next
+    End Sub
 
 End Module

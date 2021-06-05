@@ -86,16 +86,15 @@ Public Module SFTPTools
         SFTPUser = ClientSFTP.ConnectionInfo.Username
 
         'Write connection information to Speed Dial file if it doesn't exist there
-        Dim SpeedDialEntries As List(Of JToken) = ListSpeedDialEntries(SpeedDialType.SFTP)
-        Dim SpeedDialEntry As String = sftpsite + "," + CStr(ClientSFTP.ConnectionInfo.Port) + "," + SFTPUser
+        Dim SpeedDialEntries As Dictionary(Of String, JToken) = ListSpeedDialEntries(SpeedDialType.SFTP)
         Wdbg("I", "Speed dial length: {0}", SpeedDialEntries.Count)
-        If SpeedDialEntries.Contains(SpeedDialEntry) Then
+        If SpeedDialEntries.ContainsKey(sftpsite) Then
             Wdbg("I", "Site already there.")
             Exit Sub
         Else
             'Speed dial format is below:
             'Site,Port,Username
-            AddEntryToSpeedDial(SpeedDialEntry, SpeedDialType.SFTP)
+            AddEntryToSpeedDial(sftpsite, ClientSFTP.ConnectionInfo.Port, SFTPUser, SpeedDialType.SFTP)
         End If
     End Sub
 
@@ -104,16 +103,16 @@ Public Module SFTPTools
     ''' </summary>
     Sub SFTPQuickConnect()
         If File.Exists(paths("SFTPSpeedDial")) Then
-            Dim SpeedDialLines As List(Of JToken) = ListSpeedDialEntries(SpeedDialType.SFTP)
+            Dim SpeedDialLines As Dictionary(Of String, JToken) = ListSpeedDialEntries(SpeedDialType.SFTP)
             Wdbg("I", "Speed dial length: {0}", SpeedDialLines.Count)
             Dim Counter As Integer = 1
             Dim Answer As String
             Dim Answering As Boolean = True
             If Not SpeedDialLines.Count = 0 Then
-                For Each SpeedDialLine As String In SpeedDialLines
-                    Wdbg("I", "Speed dial line: {0}", SpeedDialLine)
+                For Each SpeedDialAddress As String In SpeedDialLines.Keys
+                    Wdbg("I", "Speed dial address: {0}", SpeedDialAddress)
                     W(DoTranslation("Select an address to connect to:"), True, ColTypes.Neutral)
-                    W("{0}: {1}", True, ColTypes.Neutral, Counter, SpeedDialLine)
+                    W("{0}) {1}, {2}, {3}", True, ColTypes.Option, Counter, SpeedDialAddress, SpeedDialLines(SpeedDialAddress)("Port"), SpeedDialLines(SpeedDialAddress)("User"))
                     Counter += 1
                 Next
                 While Answering
@@ -127,12 +126,11 @@ Public Module SFTPTools
                         If AnswerInt <= SpeedDialLines.Count Then
                             Answering = False
                             Wdbg("I", "Response is in-bounds. Connecting...")
-                            Dim ChosenSpeedDialLine As String = SpeedDialLines(AnswerInt - 1)
-                            Wdbg("I", "Chosen connection: {0}", ChosenSpeedDialLine)
-                            Dim ChosenLineSeparation As String() = ChosenSpeedDialLine.Split(",")
-                            Dim Address As String = ChosenLineSeparation(0)
-                            Dim Port As String = ChosenLineSeparation(1)
-                            Dim Username As String = ChosenLineSeparation(2)
+                            Dim ChosenSpeedDialAddress As String = SpeedDialLines.Keys(AnswerInt - 1)
+                            Wdbg("I", "Chosen connection: {0}", ChosenSpeedDialAddress)
+                            Dim Address As String = ChosenSpeedDialAddress
+                            Dim Port As String = SpeedDialLines(ChosenSpeedDialAddress)("Port")
+                            Dim Username As String = SpeedDialLines(ChosenSpeedDialAddress)("User")
                             Wdbg("I", "Address: {0}, Port: {1}, Username: {2}", Address, Port, Username)
                             ClientSFTP = New SftpClient(GetConnectionInfo(Address, Port, Username))
                             ConnectSFTP()

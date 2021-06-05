@@ -27,6 +27,7 @@ Imports KS.UserManagement
 Imports KS.PermissionManagement
 Imports KS.Config
 Imports System.IO
+Imports FluentFTP
 
 Module Converter
 
@@ -114,8 +115,13 @@ Module Converter
 
             'Add addresses to new format
             For Each SpeedDialLine As String In SpeedDialLines
-                W("  - Adding {0} to FTP_SpeedDial.json...", True, ColTypes.Neutral, SpeedDialLine.Split(",")(0))
-                AddEntryToSpeedDial(SpeedDialLine, SpeedDialType.FTP)
+                Dim ChosenLineSeparation As String() = SpeedDialLine.Split(",")
+                Dim Address As String = ChosenLineSeparation(0)
+                Dim Port As String = ChosenLineSeparation(1)
+                Dim Username As String = ChosenLineSeparation(2)
+                Dim Encryption As FtpEncryptionMode = [Enum].Parse(GetType(FtpEncryptionMode), ChosenLineSeparation(3))
+                W("  - Adding {0} to FTP_SpeedDial.json...", True, ColTypes.Neutral, Address)
+                AddEntryToSpeedDial(Address, Port, Username, SpeedDialType.FTP, Encryption)
             Next
         Else
             'File not found. Skip stage.
