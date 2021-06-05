@@ -54,7 +54,7 @@ Module SFTPFilesystem
                         EntryBuilder.Append(": ")
                         FileSize = DirListSFTP.Length
                         ModDate = DirListSFTP.LastWriteTime
-                        EntryBuilder.Append(DoTranslation("{0} KB | Modified in: {1}").FormatString(FormatNumber(FileSize / 1024, 2), ModDate.ToString))
+                        EntryBuilder.Append(New Color(ListValueColor).VTSequenceForeground + DoTranslation("{0} KB | Modified in: {1}").FormatString(FormatNumber(FileSize / 1024, 2), ModDate.ToString))
                     ElseIf DirListSFTP.IsDirectory Then
                         EntryBuilder.Append("/")
                     End If

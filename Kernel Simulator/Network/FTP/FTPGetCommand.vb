@@ -107,7 +107,7 @@ Public Module FTPGetCommand
                             W(DoTranslation("Deleting {0}..."), True, ColTypes.Neutral, ArgsQ(0))
 
                             'Make a confirmation message so user will not accidentally delete a file or folder
-                            W(DoTranslation("Are you sure you want to delete {0} <y/n>?"), False, ColTypes.Input, ArgsQ(0))
+                            W(DoTranslation("Are you sure you want to delete {0} <y/n>?") + " ", False, ColTypes.Input, ArgsQ(0))
                             Dim answer As String = Console.ReadKey.KeyChar
                             Console.WriteLine()
 
