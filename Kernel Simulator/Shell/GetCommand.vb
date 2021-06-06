@@ -323,7 +323,7 @@ Public Module GetCommand
                 Case "choice"
 
                     If RequiredArgumentsProvided Then
-                        PromptChoice(strArgs, eqargs(0), eqargs(1))
+                        PromptChoice(eqargs(2), eqargs(0), eqargs(1))
                     End If
 
                 Case "chpwd"
