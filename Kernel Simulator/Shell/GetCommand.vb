@@ -1312,10 +1312,10 @@ Public Module GetCommand
             EventManager.RaiseCommandError(requestedCommand, ex)
             If DebugMode = True Then
                 W(DoTranslation("Error trying to execute command") + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Error,
-                  Err.Number, ex.Message, ex.StackTrace, Command)
+                  ex.GetType.FullName, ex.Message, ex.StackTrace, Command)
                 WStkTrc(ex)
             Else
-                W(DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, Err.Number, ex.Message, Command)
+                W(DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message, Command)
             End If
         End Try
         StartCommandThread.Abort()

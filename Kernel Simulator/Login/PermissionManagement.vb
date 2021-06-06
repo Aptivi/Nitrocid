@@ -62,11 +62,11 @@ Public Module PermissionManagement
         Catch ex As Exception
             If DebugMode = True Then
                 W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.") + vbNewLine +
-                  DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Error, Err.Number, ex.Message, ex.StackTrace)
+                  DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Error, ex.GetType.FullName, ex.Message, ex.StackTrace)
                 WStkTrc(ex)
             Else
                 W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.") + vbNewLine +
-                  DoTranslation("Error {0}: {1}"), True, ColTypes.Error, Err.Number, ex.Message)
+                  DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message)
             End If
         End Try
     End Sub
@@ -195,7 +195,7 @@ Public Module PermissionManagement
             Catch ex As Exception
                 WStkTrc(ex)
                 Throw New Exceptions.PermissionManagementException(DoTranslation("You have either found a bug, or the permission you tried to edit for a new user has failed.") + vbNewLine +
-                                                                   DoTranslation("Error {0}: {1}"), ex, Err.Number, ex.Message)
+                                                                   DoTranslation("Error {0}: {1}"), ex, ex.GetType.FullName, ex.Message)
             End Try
         Else
             Throw New Exceptions.PermissionManagementException(DoTranslation("One of the permission lists doesn't contain username {0}."), OldName)

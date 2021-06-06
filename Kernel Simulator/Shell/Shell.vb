@@ -214,7 +214,7 @@ Public Module Shell
                     End If
                 Catch ex As Exception
                     WStkTrc(ex)
-                    W(DoTranslation("There was an error in the shell.") + vbNewLine + "Error {0}: {1}", True, ColTypes.Error, Err.Number, ex.Message)
+                    W(DoTranslation("There was an error in the shell.") + vbNewLine + "Error {0}: {1}", True, ColTypes.Error, ex.GetType.FullName, ex.Message)
                     Continue While
                 End Try
             End If
@@ -388,10 +388,10 @@ Public Module Shell
         Catch ex As Exception
             If DebugMode = True Then
                 W(DoTranslation("Error trying to execute command.") + vbNewLine + DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Error,
-                  Err.Number, ex.Message, ex.StackTrace)
+                  ex.GetType.FullName, ex.Message, ex.StackTrace)
                 WStkTrc(ex)
             Else
-                W(DoTranslation("Error trying to execute command.") + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, Err.Number, ex.Message)
+                W(DoTranslation("Error trying to execute command.") + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message)
             End If
         End Try
         Console.Title = ConsoleTitle

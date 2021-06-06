@@ -363,10 +363,10 @@ Module TestGetCommand
         Catch ex As Exception
             If DebugMode = True Then
                 W(DoTranslation("Error trying to execute command") + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Error,
-                  Err.Number, ex.Message, ex.StackTrace, FullCmd)
+                  ex.GetType.FullName, ex.Message, ex.StackTrace, FullCmd)
                 WStkTrc(ex)
             Else
-                W(DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, Err.Number, ex.Message, FullCmd)
+                W(DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message, FullCmd)
             End If
         End Try
     End Sub

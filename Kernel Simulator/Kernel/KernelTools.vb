@@ -204,7 +204,7 @@ Public Module KernelTools
                 Next
             Catch ex As Exception
                 WStkTrc(ex)
-                Dump.WriteLine(DoTranslation("> There is an error when trying to get frame information. {0}: {1}"), ex.ToString.Substring(0, ex.ToString.IndexOf(":")), ex.Message.Replace(vbNewLine, " | "))
+                Dump.WriteLine(DoTranslation("> There is an error when trying to get frame information. {0}: {1}"), ex.GetType.FullName.Substring(0, ex.GetType.FullName.IndexOf(":")), ex.Message.Replace(vbNewLine, " | "))
             End Try
 
             'Close stream

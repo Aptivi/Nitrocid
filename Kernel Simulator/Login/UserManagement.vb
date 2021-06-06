@@ -96,7 +96,7 @@ Public Module UserManagement
             Return True
         Catch ex As Exception
             Throw New Exceptions.UserCreationException(DoTranslation("Error trying to add username.") + vbNewLine +
-                                                       DoTranslation("Error {0}: {1}"), ex, Err.Number, ex.Message)
+                                                       DoTranslation("Error {0}: {1}"), ex, ex.GetType.FullName, ex.Message)
             WStkTrc(ex)
         End Try
         Return False
