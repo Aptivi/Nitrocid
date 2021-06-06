@@ -43,6 +43,7 @@ Public Class Exceptions
     ''' <summary>
     ''' Not enough command arguments supplied in all shells
     ''' </summary>
+    <Obsolete("Using exceptions is not a good practice, especially when no shell except the main shell is using it.")>
     Public Class NotEnoughArgumentsException
         Inherits Exception
         Public Sub New()

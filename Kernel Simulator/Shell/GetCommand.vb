@@ -1301,12 +1301,10 @@ Public Module GetCommand
 
             'If not enough arguments, throw exception
             If Commands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
-                Throw New Exceptions.NotEnoughArgumentsException(DoTranslation("There was not enough arguments. See below for usage:"))
+                Wdbg("W", "User hasn't provided enough arguments for {0}", Command)
+                W(DoTranslation("There was not enough arguments. See below for usage:"), True, ColTypes.Neutral)
+                ShowHelp(Command)
             End If
-        Catch neaex As Exceptions.NotEnoughArgumentsException
-            Wdbg("W", "User hasn't provided enough arguments for {0}", Command)
-            W(neaex.Message, True, ColTypes.Neutral)
-            ShowHelp(Command)
         Catch taex As ThreadAbortException
             CancelRequested = False
             Exit Sub
