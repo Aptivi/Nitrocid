@@ -125,6 +125,7 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 ScrnSvrdb(saver).CancelAsync()
+                SaverAutoReset.WaitOne()
             ElseIf CSvrdb.ContainsKey(saver) Then
                 'Only one custom screensaver can be used.
                 finalSaver = CSvrdb(saver)
@@ -133,13 +134,13 @@ Public Module Screensaver
                 Console.ReadKey()
                 ScrnTimeReached = False
                 Custom.CancelAsync()
+                SaverAutoReset.WaitOne()
             Else
                 W(DoTranslation("The requested screensaver {0} is not found."), True, ColTypes.Error, saver)
                 Wdbg("I", "Screensaver {0} not found in the dictionary.", saver)
             End If
 
-            'Wait until screensaver stops
-            SaverAutoReset.WaitOne()
+            'Raise event
             EventManager.RaisePostShowScreensaver(saver)
             InSaver = False
         Catch ex As InvalidOperationException
