@@ -202,7 +202,7 @@ Public Module SSH
         Catch ex As Exception
             Wdbg("E", "Error on SSH shell in {0}: {1}", SSHClient.ConnectionInfo.Host, ex.Message)
             WStkTrc(ex)
-            W(DoTranslation("Error on SSH shell") + ": {0}", True, ColTypes.Error, Command, ex.Message)
+            W(DoTranslation("Error on SSH shell") + ": {0}", True, ColTypes.Error, ex.Message)
         Finally
             Wdbg("I", "Connected: {0}", SSHClient.IsConnected)
             W(vbNewLine + DoTranslation("SSH Disconnected."), True, ColTypes.Neutral)
