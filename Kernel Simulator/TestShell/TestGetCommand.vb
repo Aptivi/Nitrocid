@@ -94,6 +94,30 @@ Module TestGetCommand
                     Next
                     Wdbg("I", FullArgsQ(1), Vars)
                 End If
+            Case "printsep"
+                If RequiredArgumentsProvided Then
+                    WriteSeparator(FullArgsQ(0), True, ColTypes.Neutral)
+                End If
+            Case "printsepf"
+                If RequiredArgumentsProvided Then
+                    Dim Vars As Object() = FullArgsQ(0).Split(";")
+                    For i As Integer = 0 To Vars.Count - 1
+                        Vars(i) = Evaluate(Vars(i)).ToString
+                    Next
+                    WriteSeparator(FullArgsQ(1), True, ColTypes.Neutral, Vars)
+                End If
+            Case "printsepcolor"
+                If RequiredArgumentsProvided Then
+                    WriteSeparatorC(FullArgsQ(1), True, New Color(FullArgsQ(0)))
+                End If
+            Case "printsepcolorf"
+                If RequiredArgumentsProvided Then
+                    Dim Vars As Object() = FullArgsQ(1).Split(";")
+                    For i As Integer = 0 To Vars.Count - 1
+                        Vars(i) = Evaluate(Vars(i)).ToString
+                    Next
+                    WriteSeparatorC(FullArgsQ(2), True, New Color(FullArgsQ(0)), Vars)
+                End If
             Case "testevent"
                 If RequiredArgumentsProvided Then
                     Try

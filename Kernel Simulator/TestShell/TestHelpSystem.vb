@@ -30,6 +30,10 @@ Public Module TestHelpSystem
                                                                   {"printf", DoTranslation("Prints a string to console using color type and line print with format support")},
                                                                   {"printd", DoTranslation("Prints a string to debugger")},
                                                                   {"printdf", DoTranslation("Prints a string to debugger with format support")},
+                                                                  {"printsep", DoTranslation("Prints a separator")},
+                                                                  {"printsepf", DoTranslation("Prints a separator with format support")},
+                                                                  {"printsepcolor", DoTranslation("Prints a separator with color support")},
+                                                                  {"printsepcolorf", DoTranslation("Prints a separator with color and format support")},
                                                                   {"panic", DoTranslation("Tests the kernel error facility")},
                                                                   {"panicf", DoTranslation("Tests the kernel error facility with format support")},
                                                                   {"translate", DoTranslation("Tests translating a string that exists in resources to specific language")},
@@ -104,6 +108,14 @@ Public Module TestHelpSystem
             W(DoTranslation("Usage:") + " printd <Message>", True, ColTypes.Neutral)
         ElseIf command = "printdf" Then
             W(DoTranslation("Usage:") + " printdf <Variable1;Variable2;Variable3;...> <Message>", True, ColTypes.Neutral)
+        ElseIf command = "printsep" Then
+            W(DoTranslation("Usage:") + " printsep <Message>", True, ColTypes.Neutral)
+        ElseIf command = "printsepf" Then
+            W(DoTranslation("Usage:") + " printsepf <Variable1;Variable2;Variable3;...> <Message>", True, ColTypes.Neutral)
+        ElseIf command = "printsepcolor" Then
+            W(DoTranslation("Usage:") + " printsepcolor <Color> <Message>", True, ColTypes.Neutral)
+        ElseIf command = "printsepcolorf" Then
+            W(DoTranslation("Usage:") + " printsepcolorf <Color> <Variable1;Variable2;Variable3;...> <Message>", True, ColTypes.Neutral)
         ElseIf command = "testevent" Then
             W(DoTranslation("Usage:") + " testevent <event>", True, ColTypes.Neutral)
         ElseIf command = "probehw" Then

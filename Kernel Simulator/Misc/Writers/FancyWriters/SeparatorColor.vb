@@ -25,10 +25,10 @@ Public Module SeparatorColor
     ''' <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
     ''' <param name="ColTypes">A type of colors that will be changed.</param>
     ''' <param name="Vars">Endless amounts of any variables that are separated by commas.</param>
-    Public Sub WriteSeparator(ByVal Text As String, ByVal PrintSuffix As Boolean, ByVal ColTypes As ColTypes, ParamArray Vars() As String)
+    Public Sub WriteSeparator(ByVal Text As String, ByVal PrintSuffix As Boolean, ByVal ColTypes As ColTypes, ParamArray Vars() As Object)
         If Not String.IsNullOrWhiteSpace(Text) Then
             If PrintSuffix Then Text = "- " + Text
-            W(Text + " ", False, ColTypes, Vars)
+            W(Text.Truncate(Console.WindowWidth - 6) + " ", False, ColTypes, Vars)
         End If
         W("-".Repeat(Console.WindowWidth - Console.CursorLeft), True, ColTypes)
         If IsOnUnix() Then
@@ -43,10 +43,10 @@ Public Module SeparatorColor
     ''' <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
     ''' <param name="Color">A color that will be changed to.</param>
     ''' <param name="Vars">Endless amounts of any variables that are separated by commas.</param>
-    Public Sub WriteSeparatorC16(ByVal Text As String, ByVal PrintSuffix As Boolean, ByVal Color As ConsoleColor, ParamArray Vars() As String)
+    Public Sub WriteSeparatorC16(ByVal Text As String, ByVal PrintSuffix As Boolean, ByVal Color As ConsoleColor, ParamArray Vars() As Object)
         If Not String.IsNullOrWhiteSpace(Text) Then
             If PrintSuffix Then Text = "- " + Text
-            WriteC16(Text + " ", False, Color, Vars)
+            WriteC16(Text.Truncate(Console.WindowWidth - 6) + " ", False, Color, Vars)
         End If
         WriteC16("-".Repeat(Console.WindowWidth - Console.CursorLeft), True, Color)
         If IsOnUnix() Then
@@ -62,10 +62,10 @@ Public Module SeparatorColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="Vars">Endless amounts of any variables that are separated by commas.</param>
-    Public Sub WriteSeparatorC16(ByVal Text As String, ByVal PrintSuffix As Boolean, ByVal ForegroundColor As ConsoleColor, ByVal BackgroundColor As ConsoleColor, ParamArray Vars() As String)
+    Public Sub WriteSeparatorC16(ByVal Text As String, ByVal PrintSuffix As Boolean, ByVal ForegroundColor As ConsoleColor, ByVal BackgroundColor As ConsoleColor, ParamArray Vars() As Object)
         If Not String.IsNullOrWhiteSpace(Text) Then
             If PrintSuffix Then Text = "- " + Text
-            WriteC16(Text + " ", False, ForegroundColor, BackgroundColor, Vars)
+            WriteC16(Text.Truncate(Console.WindowWidth - 6) + " ", False, ForegroundColor, BackgroundColor, Vars)
         End If
         WriteC16("-".Repeat(Console.WindowWidth - Console.CursorLeft), True, ForegroundColor, BackgroundColor)
         If IsOnUnix() Then
@@ -80,10 +80,10 @@ Public Module SeparatorColor
     ''' <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
     ''' <param name="Color">A color that will be changed to.</param>
     ''' <param name="Vars">Endless amounts of any variables that are separated by commas.</param>
-    Public Sub WriteSeparatorC(ByVal Text As String, ByVal PrintSuffix As Boolean, ByVal Color As Color, ParamArray Vars() As String)
+    Public Sub WriteSeparatorC(ByVal Text As String, ByVal PrintSuffix As Boolean, ByVal Color As Color, ParamArray Vars() As Object)
         If Not String.IsNullOrWhiteSpace(Text) Then
             If PrintSuffix Then Text = "- " + Text
-            WriteC(Text + " ", False, Color, Vars)
+            WriteC(Text.Truncate(Console.WindowWidth - 6) + " ", False, Color, Vars)
         End If
         WriteC("-".Repeat(Console.WindowWidth - Console.CursorLeft), True, Color)
         If IsOnUnix() Then
@@ -99,10 +99,10 @@ Public Module SeparatorColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="Vars">Endless amounts of any variables that are separated by commas.</param>
-    Public Sub WriteSeparatorC(ByVal Text As String, ByVal PrintSuffix As Boolean, ByVal ForegroundColor As Color, ByVal BackgroundColor As Color, ParamArray Vars() As String)
+    Public Sub WriteSeparatorC(ByVal Text As String, ByVal PrintSuffix As Boolean, ByVal ForegroundColor As Color, ByVal BackgroundColor As Color, ParamArray Vars() As Object)
         If Not String.IsNullOrWhiteSpace(Text) Then
             If PrintSuffix Then Text = "- " + Text
-            WriteC(Text + " ", False, ForegroundColor, BackgroundColor, Vars)
+            WriteC(Text.Truncate(Console.WindowWidth - 6) + " ", False, ForegroundColor, BackgroundColor, Vars)
         End If
         WriteC("-".Repeat(Console.WindowWidth - Console.CursorLeft), True, ForegroundColor, BackgroundColor)
         If IsOnUnix() Then

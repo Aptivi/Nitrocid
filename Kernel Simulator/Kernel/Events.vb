@@ -23,7 +23,6 @@ Public Class Events
     ''' <summary>
     ''' Recently fired events
     ''' </summary>
-    ''' <returns></returns>
     Public Property FiredEvents As New Dictionary(Of String, Object())
 
     'These events are fired by their Raise<EventName>() subs and are responded by their Respond<EventName>() subs.
