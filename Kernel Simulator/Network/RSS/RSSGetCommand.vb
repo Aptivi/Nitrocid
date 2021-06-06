@@ -139,6 +139,8 @@ Public Module RSSGetCommand
                 Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, Arguments?.Length)
                 RSSShowHelp(Command)
             End If
+        Catch taex As ThreadAbortException
+            Exit Sub
         Catch ex As Exception
             W(DoTranslation("Error trying to run command: {0}"), True, ColTypes.Error, ex.Message)
             Wdbg("E", "Error running command {0}: {1}", CommandText.Split(" ")(0), ex.Message)

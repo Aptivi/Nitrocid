@@ -178,6 +178,8 @@ Public Module SFTPGetCommand
                         SFTPShowHelp(strArgs)
                     End If
             End Select
+        Catch taex As ThreadAbortException
+            Exit Sub
         Catch ex As Exception 'The InnerException CAN be Nothing
             If DebugMode = True Then
                 If ex.InnerException IsNot Nothing Then 'This is required to fix NullReferenceException when there is nothing in InnerException, so please don't remove.

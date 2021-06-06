@@ -227,6 +227,8 @@ Module MailGetCommand
                 Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", cmd, FullArgsLQ?.Count)
                 IMAPShowHelp(cmd)
             End If
+        Catch taex As ThreadAbortException
+            Exit Sub
         Catch ex As Exception
             EventManager.RaiseIMAPCommandError(cmd + " " + args, ex)
             W(DoTranslation("Error executing mail command: {0}"), True, ColTypes.Error, ex.Message)
