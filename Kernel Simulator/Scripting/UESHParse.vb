@@ -63,7 +63,7 @@ Public Module UESHParse
                 Dim SplitWords() As String = Line.Split(" ")
                 For i As Integer = 0 To SplitWords.Count - 1
                     If SplitWords(i).StartsWith("$") Then
-                        Line = GetVariable(SplitWords(i).Replace("""", ""), Line)
+                        Line = GetVariableCommand(SplitWords(i).Replace("""", ""), Line)
                     End If
                 Next
 

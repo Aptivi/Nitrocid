@@ -138,6 +138,14 @@ Public Module PlaceParse
                     text = text.Replace(SequenceSubstring, VTSequence)
                 Loop
             End If
+            If text.Contains("<$") Then
+                Wdbg("I", "UESH variable placeholder found.")
+                Do While text.Contains("<$")
+                    Dim ShellVariableSubstring As String = text.Substring(text.IndexOf("<$"), Finish:=text.IndexOf(">"))
+                    Dim PlainShellVariable As String = ShellVariableSubstring.Substring(1, ShellVariableSubstring.Length - 1 - 1)
+                    text = text.Replace(ShellVariableSubstring, GetVariable(PlainShellVariable))
+                Loop
+            End If
             EventManager.RaisePlaceholderParsed(text)
         Catch ex As Exception
             WStkTrc(ex)

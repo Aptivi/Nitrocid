@@ -32,18 +32,32 @@ Public Module UESHVariables
     End Sub
 
     ''' <summary>
-    ''' Gets a value of a $variable
+    ''' Gets a value of a $variable on command line
     ''' </summary>
     ''' <param name="var">A $variable</param>
     ''' <param name="cmd">A command line in script</param>
     ''' <returns>A command line in script that has a value of $variable</returns>
-    Public Function GetVariable(ByVal var As String, ByVal cmd As String) As String
+    Function GetVariableCommand(ByVal var As String, ByVal cmd As String) As String
         If Not cmd.StartsWith($"choice {var}") And Not cmd.StartsWith($"set {var}") Then
             Dim newcmd As String = cmd.Replace(var, ShellVariables(var))
             Wdbg("I", "Replaced variable {0} with their values. Result: {1}", var, newcmd)
             Return newcmd
         End If
         Return cmd
+    End Function
+
+    ''' <summary>
+    ''' Gets a value of a $variable
+    ''' </summary>
+    ''' <param name="var">A $variable</param>
+    ''' <returns>A value of $variable, or an empty string if not found</returns>
+    Public Function GetVariable(ByVal var As String) As String
+        Try
+            Return ShellVariables(var)
+        Catch ex As Exception
+            Wdbg("E", "Error getting variable {0}: {1}", var, ex.Message)
+        End Try
+        Return ""
     End Function
 
     ''' <summary>

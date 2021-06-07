@@ -406,7 +406,7 @@ Public Module GetCommand
 
                 Case "echo"
 
-                    W(strArgs, True, ColTypes.Neutral)
+                    W(ProbePlaces(strArgs), True, ColTypes.Neutral)
 
                 Case "edit"
 

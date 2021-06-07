@@ -29,8 +29,9 @@ Imports KS
         SetVariable("$test_var", "test").ShouldBeTrue
         ShellVariables("$test_var").ShouldBe("test")
         Dim ExpectedCommand As String = "echo test"
-        Dim ActualCommand As String = GetVariable("$test_var", "echo $test_var")
+        Dim ActualCommand As String = GetVariableCommand("$test_var", "echo $test_var")
         ActualCommand.ShouldBe(ExpectedCommand)
+        GetVariable("$test_var").ShouldBe("test")
     End Sub
 
 End Class
