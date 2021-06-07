@@ -165,10 +165,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MSTest.TestAdapter">
-      <Version>2.2.1</Version>
+      <Version>2.2.4</Version>
     </PackageReference>
     <PackageReference Include="MSTest.TestFramework">
-      <Version>2.2.1</Version>
+      <Version>2.2.4</Version>
     </PackageReference>
     <PackageReference Include="Shouldly">
       <Version>4.0.3</Version>
