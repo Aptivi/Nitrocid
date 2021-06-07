@@ -30,8 +30,8 @@ Imports KS
 
         'Check for null
         ThemeInfoInstance.ThemeBackgroundColor.ShouldNotBeNull
-        ThemeInfoInstance.ThemeCmdDefColor.ShouldNotBeNull
-        ThemeInfoInstance.ThemeCmdListColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeListValueColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeListEntryColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeContKernelErrorColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeErrorColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeHostNameShellColor.ShouldNotBeNull
@@ -55,8 +55,8 @@ Imports KS
 
         'Check for null
         ThemeInfoInstance.ThemeBackgroundColor.ShouldNotBeNull
-        ThemeInfoInstance.ThemeCmdDefColor.ShouldNotBeNull
-        ThemeInfoInstance.ThemeCmdListColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeListValueColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeListEntryColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeContKernelErrorColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeErrorColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeHostNameShellColor.ShouldNotBeNull

@@ -54,13 +54,13 @@ Public Class ThemeInfo
     ''' </summary>
     Public ReadOnly Property ThemeNeutralTextColor As Color
     ''' <summary>
-    ''' Command list color set by theme
+    ''' List entry color set by theme
     ''' </summary>
-    Public ReadOnly Property ThemeCmdListColor As Color
+    Public ReadOnly Property ThemeListEntryColor As Color
     ''' <summary>
-    ''' Command definition color set by theme
+    ''' List value color set by theme
     ''' </summary>
-    Public ReadOnly Property ThemeCmdDefColor As Color
+    Public ReadOnly Property ThemeListValueColor As Color
     ''' <summary>
     ''' Stage color set by theme
     ''' </summary>
@@ -96,8 +96,8 @@ Public Class ThemeInfo
         ThemeUserNameShellColor = New Color(ThemeResourceJson.SelectToken("UserNameShellColor").ToString)
         ThemeBackgroundColor = New Color(ThemeResourceJson.SelectToken("BackgroundColor").ToString)
         ThemeNeutralTextColor = New Color(ThemeResourceJson.SelectToken("NeutralTextColor").ToString)
-        ThemeCmdListColor = New Color(ThemeResourceJson.SelectToken("CmdListColor").ToString)
-        ThemeCmdDefColor = New Color(ThemeResourceJson.SelectToken("CmdDefColor").ToString)
+        ThemeListEntryColor = New Color(ThemeResourceJson.SelectToken("ListEntryColor").ToString)
+        ThemeListValueColor = New Color(ThemeResourceJson.SelectToken("ListValueColor").ToString)
         ThemeStageColor = New Color(ThemeResourceJson.SelectToken("StageColor").ToString)
         ThemeErrorColor = New Color(ThemeResourceJson.SelectToken("ErrorColor").ToString)
         ThemeWarningColor = New Color(ThemeResourceJson.SelectToken("WarningColor").ToString)
@@ -119,8 +119,8 @@ Public Class ThemeInfo
         ThemeUserNameShellColor = New Color(ThemeResourceJson.SelectToken("UserNameShellColor").ToString)
         ThemeBackgroundColor = New Color(ThemeResourceJson.SelectToken("BackgroundColor").ToString)
         ThemeNeutralTextColor = New Color(ThemeResourceJson.SelectToken("NeutralTextColor").ToString)
-        ThemeCmdListColor = New Color(ThemeResourceJson.SelectToken("CmdListColor").ToString)
-        ThemeCmdDefColor = New Color(ThemeResourceJson.SelectToken("CmdDefColor").ToString)
+        ThemeListEntryColor = New Color(ThemeResourceJson.SelectToken("ListEntryColor").ToString)
+        ThemeListValueColor = New Color(ThemeResourceJson.SelectToken("ListValueColor").ToString)
         ThemeStageColor = New Color(ThemeResourceJson.SelectToken("StageColor").ToString)
         ThemeErrorColor = New Color(ThemeResourceJson.SelectToken("ErrorColor").ToString)
         ThemeWarningColor = New Color(ThemeResourceJson.SelectToken("WarningColor").ToString)

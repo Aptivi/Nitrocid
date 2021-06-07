@@ -129,8 +129,8 @@ Module ThemeStudioTools
         SelectedUserNameShellColor = ThemeInfo.ThemeUserNameShellColor
         SelectedBackgroundColor = ThemeInfo.ThemeBackgroundColor
         SelectedNeutralTextColor = ThemeInfo.ThemeNeutralTextColor
-        SelectedListEntryColor = ThemeInfo.ThemeCmdListColor
-        SelectedListValueColor = ThemeInfo.ThemeCmdDefColor
+        SelectedListEntryColor = ThemeInfo.ThemeListEntryColor
+        SelectedListValueColor = ThemeInfo.ThemeListValueColor
         SelectedStageColor = ThemeInfo.ThemeStageColor
         SelectedErrorColor = ThemeInfo.ThemeErrorColor
         SelectedWarningColor = ThemeInfo.ThemeWarningColor
@@ -155,8 +155,8 @@ Module ThemeStudioTools
         SelectedUserNameShellColor = ThemeInfo.ThemeUserNameShellColor
         SelectedBackgroundColor = ThemeInfo.ThemeBackgroundColor
         SelectedNeutralTextColor = ThemeInfo.ThemeNeutralTextColor
-        SelectedListEntryColor = ThemeInfo.ThemeCmdListColor
-        SelectedListValueColor = ThemeInfo.ThemeCmdDefColor
+        SelectedListEntryColor = ThemeInfo.ThemeListEntryColor
+        SelectedListValueColor = ThemeInfo.ThemeListValueColor
         SelectedStageColor = ThemeInfo.ThemeStageColor
         SelectedErrorColor = ThemeInfo.ThemeErrorColor
         SelectedWarningColor = ThemeInfo.ThemeWarningColor
@@ -177,8 +177,8 @@ Module ThemeStudioTools
                            New JProperty("UserNameShellColor", SelectedUserNameShellColor.PlainSequence),
                            New JProperty("BackgroundColor", SelectedBackgroundColor.PlainSequence),
                            New JProperty("NeutralTextColor", SelectedNeutralTextColor.PlainSequence),
-                           New JProperty("CmdListColor", SelectedListEntryColor.PlainSequence),
-                           New JProperty("CmdDefColor", SelectedListValueColor.PlainSequence),
+                           New JProperty("ListEntryColor", SelectedListEntryColor.PlainSequence),
+                           New JProperty("ListValueColor", SelectedListValueColor.PlainSequence),
                            New JProperty("StageColor", SelectedStageColor.PlainSequence),
                            New JProperty("ErrorColor", SelectedErrorColor.PlainSequence),
                            New JProperty("WarningColor", SelectedWarningColor.PlainSequence),

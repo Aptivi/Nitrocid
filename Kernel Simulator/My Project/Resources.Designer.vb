@@ -59,7 +59,7 @@ Namespace My.Resources
                 resourceCulture = value
             End Set
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;60&quot;,
@@ -70,8 +70,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;35&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;113&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;113&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;35&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;113&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;35&quot;,
         '''    &quot;StageColor&quot;: &quot;146&quot;,
         '''    &quot;ErrorColor&quot;: &quot;146&quot;,
         '''    &quot;WarningColor&quot;: &quot;146&quot;,
@@ -84,7 +84,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("_3Y_Diamond", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;15&quot;,
@@ -95,8 +95,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;10&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;7&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;3&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;8&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;3&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;8&quot;,
         '''    &quot;StageColor&quot;: &quot;10&quot;,
         '''    &quot;ErrorColor&quot;: &quot;9&quot;,
         '''    &quot;WarningColor&quot;: &quot;11&quot;,
@@ -109,7 +109,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("_Default", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;al&apos;awamir almtaht: {0}&quot;,
@@ -123,7 +123,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("arb", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;الأوامر المتاحة: {0}&quot;,
@@ -137,7 +137,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("arb_T", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;184;204;82&quot;,
@@ -148,8 +148,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;230;182;115&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;15;20;25&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;230;225;207&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;54;163;217&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;230;182;115&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;54;163;217&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;230;182;115&quot;,
         '''    &quot;StageColor&quot;: &quot;255;180;84&quot;,
         '''    &quot;ErrorColor&quot;: &quot;255;51;51&quot;,
         '''    &quot;WarningColor&quot;: &quot;255;119;51&quot;,
@@ -160,7 +160,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AyuDark", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;134;179;0&quot;,
@@ -171,8 +171,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;230;182;115&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;250;250;250&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;92;103;115&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;54;163;217&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;230;182;115&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;54;163;217&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;230;182;115&quot;,
         '''    &quot;StageColor&quot;: &quot;242;151;24&quot;,
         '''    &quot;ErrorColor&quot;: &quot;255;51;51&quot;,
         '''    &quot;WarningColor&quot;: &quot;255;119;51&quot;,
@@ -183,7 +183,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AyuLight", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;187;230;126&quot;,
@@ -194,8 +194,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;255;196;76&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;33;39;51&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;217;215;206&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;92;207;230&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;255;196;76&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;92;207;230&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;255;196;76&quot;,
         '''    &quot;StageColor&quot;: &quot;255;213;127&quot;,
         '''    &quot;ErrorColor&quot;: &quot;255;51;51&quot;,
         '''    &quot;WarningColor&quot;: &quot;255;174;87&quot;,
@@ -206,7 +206,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("AyuMirage", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Mövcud əmrlər: {0}&quot;,
@@ -220,7 +220,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("azr", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;74&quot;,
@@ -231,8 +231,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;202&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;177&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;12&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;80&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;12&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;80&quot;,
         '''    &quot;StageColor&quot;: &quot;80&quot;,
         '''    &quot;ErrorColor&quot;: &quot;202&quot;,
         '''    &quot;WarningColor&quot;: &quot;202&quot;,
@@ -245,7 +245,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BedOS", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Upalabdha kamānḍa: {0}&quot;,
@@ -259,7 +259,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ben", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;উপলব্ধ কমান্ড: {0}&quot;,
@@ -273,7 +273,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ben_T", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;0&quot;,
@@ -284,8 +284,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;0&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;15&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;0&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;0&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;0&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;0&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;0&quot;,
         '''    &quot;StageColor&quot;: &quot;0&quot;,
         '''    &quot;ErrorColor&quot;: &quot;0&quot;,
         '''    &quot;WarningColor&quot;: &quot;0&quot;,
@@ -298,7 +298,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BlackOnWhite", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;14&quot;,
@@ -309,8 +309,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;12&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;6&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;14&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;14&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;12&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;14&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;12&quot;,
         '''    &quot;StageColor&quot;: &quot;14&quot;,
         '''    &quot;ErrorColor&quot;: &quot;12&quot;,
         '''    &quot;WarningColor&quot;: &quot;12&quot;,
@@ -323,7 +323,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Bluespire", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;128;0;119&quot;,
@@ -334,8 +334,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;128;0;119&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;4;0;89&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;255;0;238&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;255;0;238&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;128;0;119&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;255;0;238&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;128;0;119&quot;,
         '''    &quot;StageColor&quot;: &quot;128;0;119&quot;,
         '''    &quot;ErrorColor&quot;: &quot;255;0;70&quot;,
         '''    &quot;WarningColor&quot;: &quot;247;224;23&quot;,
@@ -347,7 +347,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BrandingBlue", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;0;128;119&quot;,
@@ -358,8 +358,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;0;128;119&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;94;0;63&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;0;255;238&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;0;255;238&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;0;128;119&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;0;255;238&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;0;128;119&quot;,
         '''    &quot;StageColor&quot;: &quot;0;128;119&quot;,
         '''    &quot;ErrorColor&quot;: &quot;255;70;0&quot;,
         '''    &quot;WarningColor&quot;: &quot;247;224;23&quot;,
@@ -371,7 +371,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("BrandingPurple", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Eskuragarri dauden komandoak: {0}&quot;,
@@ -385,7 +385,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("bsq", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Malamulo omwe alipo: {0}&quot;,
@@ -399,7 +399,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ccw", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Kěyòng mìnglìng: {0}&quot;,
@@ -413,7 +413,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("chi", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;可用命令：{0}&quot;,
@@ -428,7 +428,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("chi_T", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to [{&quot;colorId&quot;:0,&quot;hexString&quot;:&quot;#000000&quot;,&quot;rgb&quot;:{&quot;r&quot;:0,&quot;g&quot;:0,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:0,&quot;s&quot;:0,&quot;l&quot;:0},&quot;name&quot;:&quot;Black&quot;},{&quot;colorId&quot;:1,&quot;hexString&quot;:&quot;#800000&quot;,&quot;rgb&quot;:{&quot;r&quot;:128,&quot;g&quot;:0,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:0,&quot;s&quot;:100,&quot;l&quot;:25},&quot;name&quot;:&quot;Maroon&quot;},{&quot;colorId&quot;:2,&quot;hexString&quot;:&quot;#008000&quot;,&quot;rgb&quot;:{&quot;r&quot;:0,&quot;g&quot;:128,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:120,&quot;s&quot;:100,&quot;l&quot;:25},&quot;name&quot;:&quot;Green&quot;},{&quot;colorId&quot;:3,&quot;hexString&quot;:&quot;#808000&quot;,&quot;rgb&quot;:{&quot;r&quot;:128,&quot;g&quot;:128,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:60,&quot;s&quot;:100,&quot;l&quot;:25},&quot;name&quot;:&quot;Olive&quot;},{&quot;colorId&quot;:4,&quot;hexString&quot;:&quot;#000080&quot;,&q....
         '''</summary>
@@ -437,7 +437,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ConsoleColorsData", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Dostupne naredbe: {0}&quot;,
@@ -451,7 +451,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("cro", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Comandi dispunibili: {0}&quot;,
@@ -465,7 +465,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("csc", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Ordres disponibles: {0}&quot;,
@@ -479,7 +479,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ctl", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Dostupné příkazy: {0}&quot;,
@@ -493,7 +493,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("cze", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Tilgængelige kommandoer: {0}&quot;,
@@ -507,7 +507,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("dan", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;15&quot;,
@@ -518,8 +518,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;7&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;161&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;15&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;15&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;15&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;15&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;15&quot;,
         '''    &quot;StageColor&quot;: &quot;15&quot;,
         '''    &quot;ErrorColor&quot;: &quot;7&quot;,
         '''    &quot;WarningColor&quot;: &quot;15&quot;,
@@ -532,7 +532,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Debian", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Beschikbare opdrachten: {0}&quot;,
@@ -546,7 +546,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("dtc", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Available commands: {0}&quot;,
@@ -560,7 +560,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("eng", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Käytettävissä olevat komennot: {0}&quot;,
@@ -574,7 +574,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("fin", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Mga magagamit na utos: {0}&quot;,
@@ -588,7 +588,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("flp", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Commandes disponibles: {0}&quot;,
@@ -602,7 +602,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("fre", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Verfügbare Befehle: {0}&quot;,
@@ -616,7 +616,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ger", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Comandos dispoñibles: {0}&quot;,
@@ -630,7 +630,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("glc", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;7&quot;,
@@ -641,8 +641,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;7&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;3&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;7&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;7&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;7&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;7&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;7&quot;,
         '''    &quot;StageColor&quot;: &quot;7&quot;,
         '''    &quot;ErrorColor&quot;: &quot;7&quot;,
         '''    &quot;WarningColor&quot;: &quot;7&quot;,
@@ -655,7 +655,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GrayOnYellow", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;11&quot;,
@@ -666,8 +666,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;3&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;15&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;11&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;3&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;11&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;3&quot;,
         '''    &quot;StageColor&quot;: &quot;11&quot;,
         '''    &quot;ErrorColor&quot;: &quot;3&quot;,
         '''    &quot;WarningColor&quot;: &quot;3&quot;,
@@ -680,7 +680,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("GTASA", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;10&quot;,
@@ -691,8 +691,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;10&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;8&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;10&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;2&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;10&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;2&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;10&quot;,
         '''    &quot;StageColor&quot;: &quot;2&quot;,
         '''    &quot;ErrorColor&quot;: &quot;2&quot;,
         '''    &quot;WarningColor&quot;: &quot;10&quot;,
@@ -705,7 +705,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Hacker", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Kòmandman ki disponib: {0}&quot;,
@@ -719,7 +719,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("hti", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Nā kauoha i loaʻa: {0}&quot;,
@@ -733,7 +733,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("hwi", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;upalabdh aadesh: {0}&quot;,
@@ -747,7 +747,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ind", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;उपलब्ध आदेश: {0}&quot;,
@@ -761,7 +761,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ind_T", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Orduithe ar fáil: {0}&quot;,
@@ -775,7 +775,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("iri", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Comandi disponibili: {0}&quot;,
@@ -789,7 +789,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ita", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Riyō kanōna komando: {0}&quot;,
@@ -803,7 +803,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("jpn", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;利用可能なコマンド：{0}&quot;,
@@ -818,7 +818,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("jpn_T", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Prentah sing kasedhiya: {0}&quot;,
@@ -832,7 +832,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("jvn", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;sayong ganeunghan myeonglyeong : {0}&quot;,
@@ -846,7 +846,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("kor", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;사용 가능한 명령 : {0}&quot;,
@@ -861,7 +861,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("kor_T", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;7&quot;,
@@ -872,8 +872,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;12&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;7&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;15&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;7&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;15&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;7&quot;,
         '''    &quot;StageColor&quot;: &quot;15&quot;,
         '''    &quot;ErrorColor&quot;: &quot;7&quot;,
         '''    &quot;WarningColor&quot;: &quot;7&quot;,
@@ -886,7 +886,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LinuxColoredDef", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;7&quot;,
@@ -897,8 +897,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;7&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;7&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;7&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;7&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;7&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;7&quot;,
         '''    &quot;StageColor&quot;: &quot;7&quot;,
         '''    &quot;ErrorColor&quot;: &quot;7&quot;,
         '''    &quot;WarningColor&quot;: &quot;7&quot;,
@@ -911,7 +911,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("LinuxUncolored", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Available imperium {0}&quot;,
@@ -925,7 +925,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ltn", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Perintah yang tersedia: {0}&quot;,
@@ -939,7 +939,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("mal", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Kmandi disponibbli: {0}&quot;,
@@ -953,7 +953,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("mts", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Perintah yang tersedia: {0}&quot;,
@@ -967,7 +967,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ndo", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;13&quot;,
@@ -978,8 +978,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;14&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;237&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;14&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;13&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;14&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;13&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;14&quot;,
         '''    &quot;StageColor&quot;: &quot;13&quot;,
         '''    &quot;ErrorColor&quot;: &quot;13&quot;,
         '''    &quot;WarningColor&quot;: &quot;13&quot;,
@@ -992,7 +992,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NeonBreeze", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;9&quot;,
@@ -1003,8 +1003,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;9&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;4&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;4&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;9&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;4&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;9&quot;,
         '''    &quot;StageColor&quot;: &quot;9&quot;,
         '''    &quot;ErrorColor&quot;: &quot;88&quot;,
         '''    &quot;WarningColor&quot;: &quot;4&quot;,
@@ -1017,7 +1017,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NFSHP_Cop", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;15&quot;,
@@ -1028,8 +1028,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;172&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;178&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;94&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;15&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;94&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;15&quot;,
         '''    &quot;StageColor&quot;: &quot;184&quot;,
         '''    &quot;ErrorColor&quot;: &quot;88&quot;,
         '''    &quot;WarningColor&quot;: &quot;94&quot;,
@@ -1042,7 +1042,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("NFSHP_Racer", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Tilgjengelige kommandoer: {0}&quot;,
@@ -1056,7 +1056,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("nwg", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Dostępne polecenia: {0}&quot;,
@@ -1070,7 +1070,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("pol", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Comandos disponíveis: {0}&quot;,
@@ -1084,7 +1084,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("ptg", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Upalabadha kamāṇḍāṁ: {0}&quot;,
@@ -1098,7 +1098,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("pun", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;ਉਪਲਬਧ ਕਮਾਂਡਾਂ: {0}&quot;,
@@ -1112,7 +1112,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("pun_T", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;9&quot;,
@@ -1123,8 +1123,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;9&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;9&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;9&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;1&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;9&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;1&quot;,
         '''    &quot;StageColor&quot;: &quot;9&quot;,
         '''    &quot;ErrorColor&quot;: &quot;1&quot;,
         '''    &quot;WarningColor&quot;: &quot;9&quot;,
@@ -1137,7 +1137,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("RedConsole", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Comenzi disponibile: {0}&quot;,
@@ -1151,7 +1151,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("rmn", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Dostupnyye komandy: {0}&quot;,
@@ -1165,7 +1165,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("rus", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Доступные команды: {0}&quot;,
@@ -1179,7 +1179,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("rus_T", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Dostupné príkazy: {0}&quot;,
@@ -1193,7 +1193,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("slo", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;38;139;210&quot;,
@@ -1204,8 +1204,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;42;161;152&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;0;43;54&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;38;139;210&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;38;139;210&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;42;161;152&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;38;139;210&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;42;161;152&quot;,
         '''    &quot;StageColor&quot;: &quot;133;153;0&quot;,
         '''    &quot;ErrorColor&quot;: &quot;211;1;2&quot;,
         '''    &quot;WarningColor&quot;: &quot;181;137;0&quot;,
@@ -1217,7 +1217,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SolarizedDark", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;38;139;210&quot;,
@@ -1228,8 +1228,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;42;161;152&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;253;246;227&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;38;139;210&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;38;139;210&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;42;161;152&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;38;139;210&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;42;161;152&quot;,
         '''    &quot;StageColor&quot;: &quot;133;153;0&quot;,
         '''    &quot;ErrorColor&quot;: &quot;211;1;2&quot;,
         '''    &quot;WarningColor&quot;: &quot;181;137;0&quot;,
@@ -1240,7 +1240,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("SolarizedLight", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Amarada la heli karo: {0}&quot;,
@@ -1254,7 +1254,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("som", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Comandos disponibles: {0}&quot;,
@@ -1268,7 +1268,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("spa", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Dostupne komande: {0}&quot;,
@@ -1282,7 +1282,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("srb", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Доступне команде: {0}&quot;,
@@ -1296,7 +1296,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("srb_T", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Amri zinazopatikana: {0}&quot;,
@@ -1310,7 +1310,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("swa", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Tillgängliga kommandon: {0}&quot;,
@@ -1324,7 +1324,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("swe", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;74&quot;,
@@ -1335,8 +1335,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;74&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;74&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;23&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;74&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;23&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;74&quot;,
         '''    &quot;StageColor&quot;: &quot;80&quot;,
         '''    &quot;ErrorColor&quot;: &quot;23&quot;,
         '''    &quot;WarningColor&quot;: &quot;23&quot;,
@@ -1349,7 +1349,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TealerOS", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;10&quot;,
@@ -1360,8 +1360,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;10&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;10&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;10&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;10&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;10&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;10&quot;,
         '''    &quot;StageColor&quot;: &quot;226&quot;,
         '''    &quot;ErrorColor&quot;: &quot;9&quot;,
         '''    &quot;WarningColor&quot;: &quot;226&quot;,
@@ -1374,7 +1374,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("TrafficLight", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;15&quot;,
@@ -1385,8 +1385,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;7&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;53&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;15&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;15&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;15&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;15&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;15&quot;,
         '''    &quot;StageColor&quot;: &quot;15&quot;,
         '''    &quot;ErrorColor&quot;: &quot;7&quot;,
         '''    &quot;WarningColor&quot;: &quot;15&quot;,
@@ -1399,7 +1399,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Ubuntu", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Mavjud buyruqlar: {0}&quot;,
@@ -1413,7 +1413,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("uzb", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Các lệnh khả dụng: {0}&quot;,
@@ -1427,7 +1427,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("vtn", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;15&quot;,
@@ -1438,8 +1438,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;15&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;6&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;15&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;15&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;15&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;15&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;15&quot;,
         '''    &quot;StageColor&quot;: &quot;15&quot;,
         '''    &quot;ErrorColor&quot;: &quot;15&quot;,
         '''    &quot;WarningColor&quot;: &quot;15&quot;,
@@ -1452,7 +1452,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("Windows95", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Gorchmynion sydd ar gael: {0}&quot;,
@@ -1466,7 +1466,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("wls", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;0&quot;,
@@ -1477,8 +1477,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;0&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;3&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;0&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;0&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;0&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;0&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;0&quot;,
         '''    &quot;StageColor&quot;: &quot;0&quot;,
         '''    &quot;ErrorColor&quot;: &quot;0&quot;,
         '''    &quot;WarningColor&quot;: &quot;0&quot;,
@@ -1491,7 +1491,7 @@ Namespace My.Resources
                 Return ResourceManager.GetString("YellowBG", resourceCulture)
             End Get
         End Property
-        
+
         '''<summary>
         '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;11&quot;,
@@ -1502,8 +1502,8 @@ Namespace My.Resources
         '''    &quot;UserNameShellColor&quot;: &quot;3&quot;,
         '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
         '''    &quot;NeutralTextColor&quot;: &quot;11&quot;,
-        '''    &quot;CmdListColor&quot;: &quot;11&quot;,
-        '''    &quot;CmdDefColor&quot;: &quot;3&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;11&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;3&quot;,
         '''    &quot;StageColor&quot;: &quot;11&quot;,
         '''    &quot;ErrorColor&quot;: &quot;3&quot;,
         '''    &quot;WarningColor&quot;: &quot;11&quot;,

@@ -236,8 +236,8 @@ Public Module ColorTools
         UserNameShellColor = DefInfo.ThemeUserNameShellColor.PlainSequence
         BackgroundColor = DefInfo.ThemeBackgroundColor.PlainSequence
         NeutralTextColor = DefInfo.ThemeNeutralTextColor.PlainSequence
-        ListEntryColor = DefInfo.ThemeCmdListColor.PlainSequence
-        ListValueColor = DefInfo.ThemeCmdDefColor.PlainSequence
+        ListEntryColor = DefInfo.ThemeListEntryColor.PlainSequence
+        ListValueColor = DefInfo.ThemeListValueColor.PlainSequence
         StageColor = DefInfo.ThemeStageColor.PlainSequence
         ErrorColor = DefInfo.ThemeErrorColor.PlainSequence
         WarningColor = DefInfo.ThemeWarningColor.PlainSequence
@@ -290,8 +290,8 @@ Public Module ColorTools
                 'Set colors as appropriate
                 SetColors(ThemeInfo.ThemeInputColor.PlainSequence, ThemeInfo.ThemeLicenseColor.PlainSequence, ThemeInfo.ThemeContKernelErrorColor.PlainSequence,
                           ThemeInfo.ThemeUncontKernelErrorColor.PlainSequence, ThemeInfo.ThemeHostNameShellColor.PlainSequence, ThemeInfo.ThemeUserNameShellColor.PlainSequence,
-                          ThemeInfo.ThemeBackgroundColor.PlainSequence, ThemeInfo.ThemeNeutralTextColor.PlainSequence, ThemeInfo.ThemeCmdListColor.PlainSequence,
-                          ThemeInfo.ThemeCmdDefColor.PlainSequence, ThemeInfo.ThemeStageColor.PlainSequence, ThemeInfo.ThemeErrorColor.PlainSequence,
+                          ThemeInfo.ThemeBackgroundColor.PlainSequence, ThemeInfo.ThemeNeutralTextColor.PlainSequence, ThemeInfo.ThemeListEntryColor.PlainSequence,
+                          ThemeInfo.ThemeListValueColor.PlainSequence, ThemeInfo.ThemeStageColor.PlainSequence, ThemeInfo.ThemeErrorColor.PlainSequence,
                           ThemeInfo.ThemeWarningColor.PlainSequence, ThemeInfo.ThemeOptionColor.PlainSequence, ThemeInfo.ThemeBannerColor.PlainSequence)
 #Enable Warning BC42104
             End If
@@ -324,8 +324,8 @@ Public Module ColorTools
                 'Set colors as appropriate
                 SetColors(ThemeInfo.ThemeInputColor.PlainSequence, ThemeInfo.ThemeLicenseColor.PlainSequence, ThemeInfo.ThemeContKernelErrorColor.PlainSequence,
                           ThemeInfo.ThemeUncontKernelErrorColor.PlainSequence, ThemeInfo.ThemeHostNameShellColor.PlainSequence, ThemeInfo.ThemeUserNameShellColor.PlainSequence,
-                          ThemeInfo.ThemeBackgroundColor.PlainSequence, ThemeInfo.ThemeNeutralTextColor.PlainSequence, ThemeInfo.ThemeCmdListColor.PlainSequence,
-                          ThemeInfo.ThemeCmdDefColor.PlainSequence, ThemeInfo.ThemeStageColor.PlainSequence, ThemeInfo.ThemeErrorColor.PlainSequence,
+                          ThemeInfo.ThemeBackgroundColor.PlainSequence, ThemeInfo.ThemeNeutralTextColor.PlainSequence, ThemeInfo.ThemeListEntryColor.PlainSequence,
+                          ThemeInfo.ThemeListValueColor.PlainSequence, ThemeInfo.ThemeStageColor.PlainSequence, ThemeInfo.ThemeErrorColor.PlainSequence,
                           ThemeInfo.ThemeWarningColor.PlainSequence, ThemeInfo.ThemeOptionColor.PlainSequence, ThemeInfo.ThemeBannerColor.PlainSequence)
             End If
 
@@ -374,8 +374,8 @@ Public Module ColorTools
     ''' <param name="UserNameColor">User name color</param>
     ''' <param name="BackColor">Background color</param>
     ''' <param name="NeutralTextColor">Neutral text color</param>
-    ''' <param name="CmdListColor">Command list color</param>
-    ''' <param name="CmdDefColor">Command definition color</param>
+    ''' <param name="ListEntryColor">Command list color</param>
+    ''' <param name="ListValueColor">Command definition color</param>
     ''' <param name="StageColor">Stage color</param>
     ''' <param name="ErrorColor">Error color</param>
     ''' <param name="OptionColor">Option color</param>
@@ -384,15 +384,15 @@ Public Module ColorTools
     ''' <exception cref="InvalidOperationException"></exception>
     ''' <exception cref="Exceptions.ColorException"></exception>
     Public Function SetColors(InputColor As String, LicenseColor As String, ContKernelErrorColor As String, UncontKernelErrorColor As String, HostNameColor As String, UserNameColor As String,
-                              BackColor As String, NeutralTextColor As String, CmdListColor As String, CmdDefColor As String, StageColor As String, ErrorColor As String, WarningColor As String,
+                              BackColor As String, NeutralTextColor As String, ListEntryColor As String, ListValueColor As String, StageColor As String, ErrorColor As String, WarningColor As String,
                               OptionColor As String, BannerColor As String) As Boolean
         'Check colors for null and set them to "def" if found
         If String.IsNullOrEmpty(OptionColor) Then OptionColor = "def"
         If String.IsNullOrEmpty(WarningColor) Then WarningColor = "def"
         If String.IsNullOrEmpty(ErrorColor) Then ErrorColor = "def"
         If String.IsNullOrEmpty(StageColor) Then StageColor = "def"
-        If String.IsNullOrEmpty(CmdDefColor) Then CmdDefColor = "def"
-        If String.IsNullOrEmpty(CmdListColor) Then CmdListColor = "def"
+        If String.IsNullOrEmpty(ListValueColor) Then ListValueColor = "def"
+        If String.IsNullOrEmpty(ListEntryColor) Then ListEntryColor = "def"
         If String.IsNullOrEmpty(NeutralTextColor) Then NeutralTextColor = "def"
         If String.IsNullOrEmpty(BackColor) Then BackColor = "def"
         If String.IsNullOrEmpty(UserNameColor) Then UserNameColor = "def"
@@ -414,8 +414,8 @@ Public Module ColorTools
             If HostNameColor = "def" Then HostNameColor = New Color(ConsoleColors.DarkGreen).PlainSequence
             If UserNameColor = "def" Then UserNameColor = New Color(ConsoleColors.Green).PlainSequence
             If NeutralTextColor = "def" Then NeutralTextColor = New Color(ConsoleColors.Gray).PlainSequence
-            If CmdListColor = "def" Then CmdListColor = New Color(ConsoleColors.DarkYellow).PlainSequence
-            If CmdDefColor = "def" Then CmdDefColor = New Color(ConsoleColors.DarkGray).PlainSequence
+            If ListEntryColor = "def" Then ListEntryColor = New Color(ConsoleColors.DarkYellow).PlainSequence
+            If ListValueColor = "def" Then ListValueColor = New Color(ConsoleColors.DarkGray).PlainSequence
             If StageColor = "def" Then StageColor = New Color(ConsoleColors.Green).PlainSequence
             If ErrorColor = "def" Then ErrorColor = New Color(ConsoleColors.Red).PlainSequence
             If WarningColor = "def" Then WarningColor = New Color(ConsoleColors.Yellow).PlainSequence
@@ -436,8 +436,8 @@ Public Module ColorTools
                 ColorTools.UserNameShellColor = New Color(UserNameColor).PlainSequence
                 ColorTools.BackgroundColor = New Color(BackColor).PlainSequence
                 ColorTools.NeutralTextColor = New Color(NeutralTextColor).PlainSequence
-                ColorTools.ListEntryColor = New Color(CmdListColor).PlainSequence
-                ColorTools.ListValueColor = New Color(CmdDefColor).PlainSequence
+                ColorTools.ListEntryColor = New Color(ListEntryColor).PlainSequence
+                ColorTools.ListValueColor = New Color(ListValueColor).PlainSequence
                 ColorTools.StageColor = New Color(StageColor).PlainSequence
                 ColorTools.ErrorColor = New Color(ErrorColor).PlainSequence
                 ColorTools.WarningColor = New Color(WarningColor).PlainSequence
