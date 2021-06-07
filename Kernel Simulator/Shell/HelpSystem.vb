@@ -219,7 +219,7 @@ Public Module HelpSystem
 
         ElseIf command = "choice" Then
 
-            W(DoTranslation("Usage:") + " choice <$variable> <answers> <input>" + vbNewLine +
+            W(DoTranslation("Usage:") + " choice [-o|-t|-m] <$variable> <answers> <input>" + vbNewLine +
               "       " + DoTranslation("where <$variable> is any variable that will be used to store response") + vbNewLine +
               "       " + DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"), True, ColTypes.Neutral)
 

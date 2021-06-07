@@ -323,7 +323,19 @@ Public Module GetCommand
                 Case "choice"
 
                     If RequiredArgumentsProvided Then
-                        PromptChoice(eqargs(2), eqargs(0), eqargs(1))
+                        If eqargs(0).StartsWith("-") Then
+                            Dim OutputType As ChoiceOutputType
+                            If eqargs(0) = "-o" Or eqargs(0) = "-t" Or eqargs(0) = "-m" Then
+                                If eqargs(0) = "-o" Then OutputType = ChoiceOutputType.OneLine
+                                If eqargs(0) = "-t" Then OutputType = ChoiceOutputType.TwoLines
+                                If eqargs(0) = "-m" Then OutputType = ChoiceOutputType.Modern
+                                PromptChoice(eqargs(3), eqargs(1), eqargs(2), OutputType)
+                            Else
+                                RequiredArgumentsProvided = False
+                            End If
+                        Else
+                            PromptChoice(eqargs(2), eqargs(0), eqargs(1))
+                        End If
                     End If
 
                 Case "chpwd"

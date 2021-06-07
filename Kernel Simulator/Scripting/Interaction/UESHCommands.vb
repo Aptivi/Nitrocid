@@ -19,21 +19,54 @@
 Public Module UESHCommands
 
     ''' <summary>
+    ''' The enumeration for the choice command output type
+    ''' </summary>
+    Public Enum ChoiceOutputType
+        ''' <summary>
+        ''' A question and a set of answers in one line
+        ''' </summary>
+        OneLine
+        ''' <summary>
+        ''' A question in a line and a set of answers in another line
+        ''' </summary>
+        TwoLines
+        ''' <summary>
+        ''' The modern way of listing choices
+        ''' </summary>
+        Modern
+    End Enum
+
+    ''' <summary>
     ''' Prompts user for choice
     ''' </summary>
     ''' <param name="Question">A question</param>
     ''' <param name="ScriptVariable">An $variable</param>
     ''' <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
-    Public Sub PromptChoice(ByVal Question As String, ByVal ScriptVariable As String, ByVal AnswersStr As String)
+    ''' <param name="OutputType">Output type of choices</param>
+    Public Sub PromptChoice(ByVal Question As String, ByVal ScriptVariable As String, ByVal AnswersStr As String, Optional OutputType As ChoiceOutputType = ChoiceOutputType.OneLine)
         While True
             'Variables
-            Dim answers As String()
+            Dim answers As String() = {}
             Dim answer As String
 
             'Ask a question
-            W(Question, True, ColTypes.Neutral)
-            W("<{0}> ", False, ColTypes.Input, AnswersStr)
-            answers = AnswersStr.Split("/")
+            Select Case OutputType
+                Case ChoiceOutputType.OneLine
+                    W(Question, False, ColTypes.Neutral)
+                    W(" <{0}> ", False, ColTypes.Input, AnswersStr)
+                    answers = AnswersStr.Split("/")
+                Case ChoiceOutputType.TwoLines
+                    W(Question, True, ColTypes.Neutral)
+                    W("<{0}> ", False, ColTypes.Input, AnswersStr)
+                    answers = AnswersStr.Split("/")
+                Case ChoiceOutputType.Modern
+                    W(Question + vbNewLine, True, ColTypes.Neutral)
+                    answers = AnswersStr.Split("/")
+                    For Each AnswerInstance As String In answers
+                        W($"{AnswerInstance})", True, ColTypes.Option)
+                    Next
+                    W(vbNewLine + ">> ", False, ColTypes.Input)
+            End Select
 
             'Wait for an answer
             answer = Console.ReadKey.KeyChar
