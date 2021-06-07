@@ -114,15 +114,15 @@ Public Module FTPTools
         Dim profsel As New FtpProfile
         Wdbg("I", "Profile count: {0}", profiles.Count)
         If profiles.Count > 1 Then 'More than one profile
-            W(DoTranslation("More than one profile found. Select one:") + vbNewLine +
+            W(DoTranslation("More than one profile found. Select one:") + vbNewLine + vbNewLine +
               "#, " + DoTranslation("Host Name, Username, Data Type, Encoding, Encryption, Protocols"), True, ColTypes.Neutral)
             For i As Integer = 0 To profiles.Count - 1
-                W($"{i + 1}: {profiles(i).Host}, {profiles(i).Credentials.UserName}, {profiles(i).DataConnection}, {profiles(i).Encoding.EncodingName}, {profiles(i).Encryption}, {profiles(i).Protocols}", True, ColTypes.Neutral)
+                W($"{i + 1}) {profiles(i).Host}, {profiles(i).Credentials.UserName}, {profiles(i).DataConnection}, {profiles(i).Encoding.EncodingName}, {profiles(i).Encryption}, {profiles(i).Protocols}", True, ColTypes.Option)
             Next
             Dim profanswer As Char
             Dim profanswered As Boolean
             While Not profanswered
-                W(">> ", False, ColTypes.Input)
+                W(vbNewLine + ">> ", False, ColTypes.Input)
                 profanswer = Console.ReadLine
                 Wdbg("I", "Selection: {0}", profanswer)
                 If IsNumeric(profanswer) Then
