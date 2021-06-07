@@ -43,10 +43,25 @@ Public Module Notifications
     ''' </summary>
     Public Class Notification
         Private _Progress As Integer
+        ''' <summary>
+        ''' Notification title
+        ''' </summary>
         Property Title As String
+        ''' <summary>
+        ''' Notification description
+        ''' </summary>
         Property Desc As String
+        ''' <summary>
+        ''' Notification priority
+        ''' </summary>
         Property Priority As NotifPriority
+        ''' <summary>
+        ''' Notification type
+        ''' </summary>
         Property Type As NotifType
+        ''' <summary>
+        ''' Notification progress
+        ''' </summary>
         Property Progress As Integer
             Get
                 Return _Progress
@@ -61,6 +76,10 @@ Public Module Notifications
                 End If
             End Set
         End Property
+        ''' <summary>
+        ''' Whether the progress failed
+        ''' </summary>
+        ''' <returns></returns>
         Property ProgressFailed As Boolean
     End Class
 
