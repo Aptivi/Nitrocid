@@ -154,6 +154,10 @@ Public Module FTPTools
         Wdbg("I", "Connected.")
         connected = True
 
+        'If MOTD exists, show it
+        Dim WelcomeBytes() As Byte = {}
+        ClientFTP.Download(WelcomeBytes, "welcome.msg")
+
         'Prepare to print current FTP directory
         currentremoteDir = ClientFTP.GetWorkingDirectory
         Wdbg("I", "Working directory: {0}", currentremoteDir)
