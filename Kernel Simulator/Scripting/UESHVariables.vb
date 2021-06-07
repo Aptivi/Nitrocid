@@ -38,7 +38,7 @@ Public Module UESHVariables
     ''' <param name="cmd">A command line in script</param>
     ''' <returns>A command line in script that has a value of $variable</returns>
     Function GetVariableCommand(ByVal var As String, ByVal cmd As String) As String
-        If Not cmd.StartsWith($"choice {var}") And Not cmd.StartsWith($"set {var}") Then
+        If Not Commands(cmd.Split(" ")(0)).SettingVariable Then
             Dim newcmd As String = cmd.Replace(var, ShellVariables(var))
             Wdbg("I", "Replaced variable {0} with their values. Result: {1}", var, newcmd)
             Return newcmd
