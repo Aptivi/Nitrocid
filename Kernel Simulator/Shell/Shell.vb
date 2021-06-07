@@ -292,7 +292,7 @@ Public Module Shell
         'Reads command written by user
         Try
             If ArgsMode = False Then
-                If Not (strcommand = Nothing Or strcommand.StartsWith(" ") = True) Then
+                If Not (strcommand = Nothing Or strcommand.StartsWithAnyOf({" ", "#"}) = True) Then
                     Console.Title = $"{ConsoleTitle} - {strcommand}"
 
                     'Parse script command (if any)

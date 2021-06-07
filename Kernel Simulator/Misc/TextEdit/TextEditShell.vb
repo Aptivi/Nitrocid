@@ -74,7 +74,7 @@ Public Module TextEditShell
 
             'Check to see if the command doesn't start with spaces or if the command is nothing
             Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand?.StartsWith(" "), WrittenCommand Is Nothing, WrittenCommand = "")
-            If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWith(" ") = True) Then
+            If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"}) = True) Then
                 Wdbg("I", "Checking command {0} for existence.", WrittenCommand.Split(" ")(0))
                 If TextEdit_Commands.ContainsKey(WrittenCommand.Split(" ")(0)) Then
                     Wdbg("I", "Command {0} found in the list of {1} commands.", WrittenCommand.Split(" ")(0), TextEdit_Commands.Count)

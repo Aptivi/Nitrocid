@@ -123,7 +123,7 @@ Public Module SFTPShell
                 EventManager.RaiseSFTPPreExecuteCommand(SFTPStrCmd)
 
                 'Parse command
-                If Not (SFTPStrCmd = Nothing Or SFTPStrCmd?.StartsWith(" ")) Then
+                If Not (SFTPStrCmd = Nothing Or SFTPStrCmd?.StartsWithAnyOf({" ", "#"})) Then
                     SFTPGetLine()
                     EventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd)
                 End If

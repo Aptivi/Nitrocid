@@ -131,7 +131,7 @@ Public Module FTPShell
                 EventManager.RaiseFTPPreExecuteCommand(strcmd)
 
                 'Parse command
-                If Not (strcmd = Nothing Or strcmd?.StartsWith(" ")) Then
+                If Not (strcmd = Nothing Or strcmd?.StartsWithAnyOf({" ", "#"})) Then
                     FTPGetLine()
                     EventManager.RaiseFTPPostExecuteCommand(strcmd)
                 End If

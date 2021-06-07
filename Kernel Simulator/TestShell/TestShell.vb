@@ -81,7 +81,7 @@ Module TestShell
             W("(t)> ", False, ColTypes.Input)
             FullCmd = Console.ReadLine
             Try
-                If Not (FullCmd = Nothing Or FullCmd?.StartsWith(" ") = True) Then
+                If Not (FullCmd = Nothing Or FullCmd?.StartsWithAnyOf({" ", "#"}) = True) Then
                     Wdbg("I", "Command: {0}", FullCmd)
                     Dim Command As String = FullCmd.Split(" ")(0)
                     If Test_Commands.ContainsKey(Command) Then
