@@ -72,14 +72,9 @@ Public Module UESHCommands
             answer = Console.ReadKey.KeyChar
             Console.WriteLine()
 
-            'Check if script variable is initialized. If not, exits the program.
-            If ShellVariables.ContainsKey(ScriptVariable) Then
-                'Check if answer if correct.
-                If answers.Contains(answer) Then
-                    SetVariable(ScriptVariable, answer)
-                    Exit While
-                End If
-            Else
+            'Check if answer if correct.
+            If answers.Contains(answer) Then
+                SetVariable(ScriptVariable, answer)
                 Exit While
             End If
         End While
@@ -102,15 +97,9 @@ Public Module UESHCommands
             Answer = Console.ReadLine
             Wdbg("I", "Answer: {0}", Answer)
 
-            'Check if script variable is initialized. If not, exits the program.
-            If ShellVariables.ContainsKey(ScriptVariable) Then
-                Wdbg("I", "Variable found. Setting {0} to {1}...", ScriptVariable, Answer)
-                SetVariable(ScriptVariable, Answer)
-                Exit While
-            Else
-                Wdbg("W", "Variable {0} not found.", ScriptVariable)
-                Exit While
-            End If
+            Wdbg("I", "Setting {0} to {1}...", ScriptVariable, Answer)
+            SetVariable(ScriptVariable, Answer)
+            Exit While
         End While
     End Sub
 
