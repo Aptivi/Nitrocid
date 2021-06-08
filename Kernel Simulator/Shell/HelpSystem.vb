@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
+
 Public Module HelpSystem
 
     'This dictionary is the definitions for commands.
@@ -121,7 +123,9 @@ Public Module HelpSystem
     ''' <param name="command">A specified command</param>
     Public Sub ShowHelp(Optional ByVal command As String = "")
 
-        Dim wholesslist As String() = IO.Directory.GetFiles(paths("Mods"), "*.ss.vb", IO.SearchOption.TopDirectoryOnly)
+        Dim ScreensaverFiles As New List(Of String)
+        ScreensaverFiles.AddRange(Directory.GetFiles(paths("Mods"), "*.ss.vb", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))
+        ScreensaverFiles.AddRange(Directory.GetFiles(paths("Mods"), "*.ss.cs", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))
         If command = "" Then
 
             If simHelp = False Then
@@ -306,11 +310,6 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:") + " lsmail [emailAddress]", True, ColTypes.Neutral)
 
-        ElseIf command = "reloadsaver" Then
-
-            W(DoTranslation("Usage:") + " reloadsaver <modName.ss.vb>" + vbNewLine +
-              "       " + DoTranslation("where modname.ss.vb will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", wholesslist))
-
         ElseIf command = "lockscreen" Then
 
             W(DoTranslation("Usage:") + " lockscreen: " + DoTranslation("Locks your screen with the password.") + vbNewLine +
@@ -382,6 +381,11 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:") + " reloadconfig: " + DoTranslation("Reloads the configuration that is changed by the end-user or by tool.") + vbNewLine +
               "       " + DoTranslation("Colors doesn't require a restart, but most of the settings require you to restart."), True, ColTypes.Neutral)
+
+        ElseIf command = "reloadsaver" Then
+
+            W(DoTranslation("Usage:") + " reloadsaver <modName.ss.vb>" + vbNewLine +
+              "       " + DoTranslation("where modname.ss.vb will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", ScreensaverFiles))
 
         ElseIf command = "reportbug" Then
 
