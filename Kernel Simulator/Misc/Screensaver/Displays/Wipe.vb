@@ -30,74 +30,86 @@ Module WipeDisplay
         Dim RandomDriver As New Random()
         Dim ToDirection As WipeDirections = WipeDirections.Right
         Dim TimesWiped As Integer = 0
-        Do While True
-            If Wipe.CancellationPending = True Then
-                Wdbg("W", "Cancellation is pending. Cleaning everything up...")
-                e.Cancel = True
-                SetInputColor()
-                LoadBack()
-                Console.CursorVisible = True
-                Wdbg("I", "All clean. Wipe screensaver stopped.")
-                SaverAutoReset.Set()
-                Exit Do
-            Else
-                SleepNoBlock(WipeDelay, Wipe)
-
-                'Select a color
-                Dim esc As Char = GetEsc()
-                If WipeTrueColor Then
-                    Dim RedColorNum As Integer = RandomDriver.Next(255)
-                    Dim GreenColorNum As Integer = RandomDriver.Next(255)
-                    Dim BlueColorNum As Integer = RandomDriver.Next(255)
-                    Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-                    Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m")
-                ElseIf Wipe255Colors Then
-                    Dim ColorNum As Integer = RandomDriver.Next(255)
-                    Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m")
+        Try
+            Do While True
+                If Wipe.CancellationPending = True Then
+                    Wdbg("W", "Cancellation is pending. Cleaning everything up...")
+                    e.Cancel = True
+                    SetInputColor()
+                    LoadBack()
+                    Console.CursorVisible = True
+                    Wdbg("I", "All clean. Wipe screensaver stopped.")
+                    SaverAutoReset.Set()
+                    Exit Do
                 Else
-                    Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
-                End If
+                    SleepNoBlock(WipeDelay, Wipe)
 
-                'Print a space {Column} times until the entire screen is wiped.
-                Select Case ToDirection
-                    Case WipeDirections.Right
-                        For Column As Integer = 0 To Console.WindowWidth
-                            For Row As Integer = 0 To Console.WindowHeight
+                    'Select a color
+                    Dim esc As Char = GetEsc()
+                    If WipeTrueColor Then
+                        Dim RedColorNum As Integer = RandomDriver.Next(255)
+                        Dim GreenColorNum As Integer = RandomDriver.Next(255)
+                        Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                        Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
+                        Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m")
+                    ElseIf Wipe255Colors Then
+                        Dim ColorNum As Integer = RandomDriver.Next(255)
+                        Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m")
+                    Else
+                        Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                    End If
+
+                    'Print a space {Column} times until the entire screen is wiped.
+                    Select Case ToDirection
+                        Case WipeDirections.Right
+                            For Column As Integer = 0 To Console.WindowWidth
+                                For Row As Integer = 0 To Console.WindowHeight
+                                    Console.SetCursorPosition(0, Row)
+                                    Console.Write(StrDup(Column, " "))
+                                Next
+                                SleepNoBlock(WipeDelay, Wipe)
+                            Next
+                        Case WipeDirections.Left
+                            For Column As Integer = Console.WindowWidth To 1 Step -1
+                                For Row As Integer = 0 To Console.WindowHeight
+                                    Console.SetCursorPosition(Column - 1, Row)
+                                    Console.Write(StrDup(Console.WindowWidth - Column + 1, " "))
+                                Next
+                                SleepNoBlock(WipeDelay, Wipe)
+                            Next
+                        Case WipeDirections.Top
+                            For Row As Integer = Console.WindowHeight To 0 Step -1
                                 Console.SetCursorPosition(0, Row)
-                                Console.Write(StrDup(Column, " "))
+                                Console.Write(StrDup(Console.WindowWidth, " "))
+                                SleepNoBlock(WipeDelay, Wipe)
                             Next
-                            SleepNoBlock(WipeDelay, Wipe)
-                        Next
-                    Case WipeDirections.Left
-                        For Column As Integer = Console.WindowWidth To 1 Step -1
+                        Case WipeDirections.Bottom
                             For Row As Integer = 0 To Console.WindowHeight
-                                Console.SetCursorPosition(Column - 1, Row)
-                                Console.Write(StrDup(Console.WindowWidth - Column + 1, " "))
+                                Console.Write(StrDup(Console.WindowWidth, " "))
+                                SleepNoBlock(WipeDelay, Wipe)
                             Next
-                            SleepNoBlock(WipeDelay, Wipe)
-                        Next
-                    Case WipeDirections.Top
-                        For Row As Integer = Console.WindowHeight To 0 Step -1
-                            Console.SetCursorPosition(0, Row)
-                            Console.Write(StrDup(Console.WindowWidth, " "))
-                            SleepNoBlock(WipeDelay, Wipe)
-                        Next
-                    Case WipeDirections.Bottom
-                        For Row As Integer = 0 To Console.WindowHeight
-                            Console.Write(StrDup(Console.WindowWidth, " "))
-                            SleepNoBlock(WipeDelay, Wipe)
-                        Next
-                        Console.SetCursorPosition(0, 0)
-                End Select
-                TimesWiped += 1
+                            Console.SetCursorPosition(0, 0)
+                    End Select
+                    TimesWiped += 1
 
-                'Check if the number of times wiped is equal to the number of required times to change wiping direction.
-                If TimesWiped = WipeWipesNeededToChangeDirection Then
-                    TimesWiped = 0
-                    ToDirection = [Enum].Parse(GetType(WipeDirections), RandomDriver.Next(0, 3))
+                    'Check if the number of times wiped is equal to the number of required times to change wiping direction.
+                    If TimesWiped = WipeWipesNeededToChangeDirection Then
+                        TimesWiped = 0
+                        ToDirection = [Enum].Parse(GetType(WipeDirections), RandomDriver.Next(0, 3))
+                    End If
                 End If
-            End If
-        Loop
+            Loop
+        Catch ex As Exception
+            Wdbg("W", "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
+            WStkTrc(ex)
+            e.Cancel = True
+            SetInputColor()
+            LoadBack()
+            Console.CursorVisible = True
+            Wdbg("I", "All clean. Wipe screensaver stopped.")
+            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
+            SaverAutoReset.Set()
+        End Try
     End Sub
 
     ''' <summary>

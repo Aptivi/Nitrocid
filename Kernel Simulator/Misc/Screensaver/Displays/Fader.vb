@@ -34,59 +34,71 @@ Module FaderDisplay
         Dim GreenColorNum As Integer = RandomDriver.Next(255)
         Dim BlueColorNum As Integer = RandomDriver.Next(255)
         Wdbg("I", "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
-        Do While True
-            If Fader.CancellationPending = True Then
-                Wdbg("W", "Cancellation is pending. Cleaning everything up...")
-                e.Cancel = True
-                SetInputColor()
-                LoadBack()
-                Console.CursorVisible = True
-                Wdbg("I", "All clean. Fader screensaver stopped.")
-                SaverAutoReset.Set()
-                Exit Do
-            Else
-                SleepNoBlock(FaderDelay, Fader)
-                Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
-                Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
-                If FaderWrite.Length + Left >= Console.WindowWidth Then
-                    Left -= FaderWrite.Length + 1
+        Try
+            Do While True
+                If Fader.CancellationPending = True Then
+                    Wdbg("W", "Cancellation is pending. Cleaning everything up...")
+                    e.Cancel = True
+                    SetInputColor()
+                    LoadBack()
+                    Console.CursorVisible = True
+                    Wdbg("I", "All clean. Fader screensaver stopped.")
+                    SaverAutoReset.Set()
+                    Exit Do
+                Else
+                    SleepNoBlock(FaderDelay, Fader)
+                    Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
+                    Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+                    If FaderWrite.Length + Left >= Console.WindowWidth Then
+                        Left -= FaderWrite.Length + 1
+                    End If
+                    Console.SetCursorPosition(Left, Top)
+                    Console.BackgroundColor = ConsoleColor.Black
+                    ClearKeepPosition()
+
+                    'Set thresholds
+                    Dim ThresholdRed As Double = RedColorNum / FaderMaxSteps
+                    Dim ThresholdGreen As Double = GreenColorNum / FaderMaxSteps
+                    Dim ThresholdBlue As Double = BlueColorNum / FaderMaxSteps
+
+                    'Fade in
+                    For CurrentStep As Integer = FaderMaxSteps To 1 Step -1
+                        SleepNoBlock(FaderDelay, Fader)
+                        Dim CurrentColorRed As Integer = RedColorNum / CurrentStep
+                        Dim CurrentColorGreen As Integer = GreenColorNum / CurrentStep
+                        Dim CurrentColorBlue As Integer = BlueColorNum / CurrentStep
+                        WriteWhereC(FaderWrite, Left, Top, True, New Color(CurrentColorRed & ";" & CurrentColorGreen & ";" & CurrentColorBlue), New Color(ConsoleColors.Black))
+                    Next
+
+                    'Wait until fade out
+                    SleepNoBlock(FaderFadeOutDelay, Fader)
+
+                    'Fade out
+                    For CurrentStep As Integer = 1 To FaderMaxSteps
+                        SleepNoBlock(FaderDelay, Fader)
+                        Dim CurrentColorRed As Integer = RedColorNum - ThresholdRed * CurrentStep
+                        Dim CurrentColorGreen As Integer = GreenColorNum - ThresholdGreen * CurrentStep
+                        Dim CurrentColorBlue As Integer = BlueColorNum - ThresholdBlue * CurrentStep
+                        WriteWhereC(FaderWrite, Left, Top, True, New Color(CurrentColorRed & ";" & CurrentColorGreen & ";" & CurrentColorBlue), New Color(ConsoleColors.Black))
+                    Next
+
+                    'Select new color
+                    RedColorNum = RandomDriver.Next(255)
+                    GreenColorNum = RandomDriver.Next(255)
+                    BlueColorNum = RandomDriver.Next(255)
                 End If
-                Console.SetCursorPosition(Left, Top)
-                Console.BackgroundColor = ConsoleColor.Black
-                ClearKeepPosition()
-
-                'Set thresholds
-                Dim ThresholdRed As Double = RedColorNum / FaderMaxSteps
-                Dim ThresholdGreen As Double = GreenColorNum / FaderMaxSteps
-                Dim ThresholdBlue As Double = BlueColorNum / FaderMaxSteps
-
-                'Fade in
-                For CurrentStep As Integer = FaderMaxSteps To 1 Step -1
-                    SleepNoBlock(FaderDelay, Fader)
-                    Dim CurrentColorRed As Integer = RedColorNum / CurrentStep
-                    Dim CurrentColorGreen As Integer = GreenColorNum / CurrentStep
-                    Dim CurrentColorBlue As Integer = BlueColorNum / CurrentStep
-                    WriteWhereC(FaderWrite, Left, Top, True, New Color(CurrentColorRed & ";" & CurrentColorGreen & ";" & CurrentColorBlue), New Color(ConsoleColors.Black))
-                Next
-
-                'Wait until fade out
-                SleepNoBlock(FaderFadeOutDelay, Fader)
-
-                'Fade out
-                For CurrentStep As Integer = 1 To FaderMaxSteps
-                    SleepNoBlock(FaderDelay, Fader)
-                    Dim CurrentColorRed As Integer = RedColorNum - ThresholdRed * CurrentStep
-                    Dim CurrentColorGreen As Integer = GreenColorNum - ThresholdGreen * CurrentStep
-                    Dim CurrentColorBlue As Integer = BlueColorNum - ThresholdBlue * CurrentStep
-                    WriteWhereC(FaderWrite, Left, Top, True, New Color(CurrentColorRed & ";" & CurrentColorGreen & ";" & CurrentColorBlue), New Color(ConsoleColors.Black))
-                Next
-
-                'Select new color
-                RedColorNum = RandomDriver.Next(255)
-                GreenColorNum = RandomDriver.Next(255)
-                BlueColorNum = RandomDriver.Next(255)
-            End If
-        Loop
+            Loop
+        Catch ex As Exception
+            Wdbg("W", "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
+            WStkTrc(ex)
+            e.Cancel = True
+            SetInputColor()
+            LoadBack()
+            Console.CursorVisible = True
+            Wdbg("I", "All clean. Fader screensaver stopped.")
+            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
+            SaverAutoReset.Set()
+        End Try
     End Sub
 
 End Module

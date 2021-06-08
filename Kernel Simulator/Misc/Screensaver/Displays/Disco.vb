@@ -34,76 +34,88 @@ Module DiscoDisplay
         Dim CurrentColor As Integer = 0
         Dim CurrentColorR, CurrentColorG, CurrentColorB As Integer
         Dim random As New Random()
-        Do While True
-            SleepNoBlock(DiscoDelay, Disco)
-            If Disco.CancellationPending = True Then
-                Wdbg("W", "Cancellation is pending. Cleaning everything up...")
-                e.Cancel = True
-                SetInputColor()
-                LoadBack()
-                Console.CursorVisible = True
-                Wdbg("I", "All clean. Disco screensaver stopped.")
-                SaverAutoReset.Set()
-                Exit Do
-            Else
-                Dim esc As Char = GetEsc()
-                If DiscoTrueColor Then
-                    If Not DiscoCycleColors Then
-                        Dim RedColorNum As Integer = random.Next(255)
-                        Dim GreenColorNum As Integer = random.Next(255)
-                        Dim BlueColorNum As Integer = random.Next(255)
-                        Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-                        Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m")
-                    Else
-                        Dim ColorStorage As New RGB(CurrentColorR, CurrentColorG, CurrentColorB)
-                        Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m")
-                    End If
-                ElseIf Disco255Colors Then
-                    If Not DiscoCycleColors Then
-                        Dim color As Integer = random.Next(255)
-                        Console.Write(esc + "[48;5;" + CStr(color) + "m")
-                    Else
-                        MaximumColors = 255
-                        Console.Write(esc + "[48;5;" + CStr(CurrentColor) + "m")
-                    End If
+        Try
+            Do While True
+                SleepNoBlock(DiscoDelay, Disco)
+                If Disco.CancellationPending = True Then
+                    Wdbg("W", "Cancellation is pending. Cleaning everything up...")
+                    e.Cancel = True
+                    SetInputColor()
+                    LoadBack()
+                    Console.CursorVisible = True
+                    Wdbg("I", "All clean. Disco screensaver stopped.")
+                    SaverAutoReset.Set()
+                    Exit Do
                 Else
-                    If Not DiscoCycleColors Then
-                        Console.BackgroundColor = colors(random.Next(colors.Length - 1))
+                    Dim esc As Char = GetEsc()
+                    If DiscoTrueColor Then
+                        If Not DiscoCycleColors Then
+                            Dim RedColorNum As Integer = random.Next(255)
+                            Dim GreenColorNum As Integer = random.Next(255)
+                            Dim BlueColorNum As Integer = random.Next(255)
+                            Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
+                            Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m")
+                        Else
+                            Dim ColorStorage As New RGB(CurrentColorR, CurrentColorG, CurrentColorB)
+                            Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m")
+                        End If
+                    ElseIf Disco255Colors Then
+                        If Not DiscoCycleColors Then
+                            Dim color As Integer = random.Next(255)
+                            Console.Write(esc + "[48;5;" + CStr(color) + "m")
+                        Else
+                            MaximumColors = 255
+                            Console.Write(esc + "[48;5;" + CStr(CurrentColor) + "m")
+                        End If
                     Else
-                        Console.BackgroundColor = colors(CurrentColor)
+                        If Not DiscoCycleColors Then
+                            Console.BackgroundColor = colors(random.Next(colors.Length - 1))
+                        Else
+                            Console.BackgroundColor = colors(CurrentColor)
+                        End If
+                    End If
+                    Console.Clear()
+                    If DiscoTrueColor Then
+                        If CurrentColorR >= MaximumColorsR Then
+                            CurrentColorR = 0
+                        Else
+                            CurrentColorR += 1
+                        End If
+                        If CurrentColorG >= MaximumColorsG Then
+                            CurrentColorG = 0
+                        ElseIf CurrentColorR = 0 Then
+                            CurrentColorG += 1
+                        End If
+                        If CurrentColorB >= MaximumColorsB Then
+                            CurrentColorB = 0
+                        ElseIf CurrentColorG = 0 And CurrentColorR = 0 Then
+                            CurrentColorB += 1
+                        End If
+                        If CurrentColorB = 0 And CurrentColorG = 0 And CurrentColorR = 0 Then
+                            CurrentColorB = 0
+                            CurrentColorG = 0
+                            CurrentColorR = 0
+                        End If
+                    Else
+                        If CurrentColor >= MaximumColors Then
+                            CurrentColor = 0
+                        Else
+                            CurrentColor += 1
+                        End If
                     End If
                 End If
-                Console.Clear()
-                If DiscoTrueColor Then
-                    If CurrentColorR >= MaximumColorsR Then
-                        CurrentColorR = 0
-                    Else
-                        CurrentColorR += 1
-                    End If
-                    If CurrentColorG >= MaximumColorsG Then
-                        CurrentColorG = 0
-                    ElseIf CurrentColorR = 0 Then
-                        CurrentColorG += 1
-                    End If
-                    If CurrentColorB >= MaximumColorsB Then
-                        CurrentColorB = 0
-                    ElseIf CurrentColorG = 0 And CurrentColorR = 0 Then
-                        CurrentColorB += 1
-                    End If
-                    If CurrentColorB = 0 And CurrentColorG = 0 And CurrentColorR = 0 Then
-                        CurrentColorB = 0
-                        CurrentColorG = 0
-                        CurrentColorR = 0
-                    End If
-                Else
-                    If CurrentColor >= MaximumColors Then
-                        CurrentColor = 0
-                    Else
-                        CurrentColor += 1
-                    End If
-                End If
-            End If
-        Loop
+            Loop
+        Catch ex As Exception
+            Wdbg("W", "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
+            WStkTrc(ex)
+            e.Cancel = True
+            SetInputColor()
+            LoadBack()
+            Console.CursorVisible = True
+            Wdbg("I", "All clean. Disco screensaver stopped.")
+            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
+            SaverAutoReset.Set()
+        End Try
     End Sub
 
 End Module

@@ -31,33 +31,45 @@ Module ColorMixDisplay
         Console.Clear()
         Console.CursorVisible = False
         Dim colorrand As New Random()
-        Do While True
-            SleepNoBlock(ColorMixDelay, ColorMix)
-            If ColorMix.CancellationPending = True Then
-                Wdbg("W", "Cancellation is pending. Cleaning everything up...")
-                e.Cancel = True
-                SetInputColor()
-                LoadBack()
-                Console.CursorVisible = True
-                Wdbg("I", "All clean. Mix Colors screensaver stopped.")
-                SaverAutoReset.Set()
-                Exit Do
-            Else
-                Dim esc As Char = GetEsc()
-                If ColorMixTrueColor Then
-                    Dim RedColorNum As Integer = colorrand.Next(255)
-                    Dim GreenColorNum As Integer = colorrand.Next(255)
-                    Dim BlueColorNum As Integer = colorrand.Next(255)
-                    Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-                    Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
-                ElseIf ColorMix255Colors Then
-                    Dim ColorNum As Integer = colorrand.Next(255)
-                    Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
+        Try
+            Do While True
+                SleepNoBlock(ColorMixDelay, ColorMix)
+                If ColorMix.CancellationPending = True Then
+                    Wdbg("W", "Cancellation is pending. Cleaning everything up...")
+                    e.Cancel = True
+                    SetInputColor()
+                    LoadBack()
+                    Console.CursorVisible = True
+                    Wdbg("I", "All clean. Mix Colors screensaver stopped.")
+                    SaverAutoReset.Set()
+                    Exit Do
                 Else
-                    Console.BackgroundColor = CType(colorrand.Next(1, 16), ConsoleColor) : Console.Write(" ")
+                    Dim esc As Char = GetEsc()
+                    If ColorMixTrueColor Then
+                        Dim RedColorNum As Integer = colorrand.Next(255)
+                        Dim GreenColorNum As Integer = colorrand.Next(255)
+                        Dim BlueColorNum As Integer = colorrand.Next(255)
+                        Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
+                        Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
+                    ElseIf ColorMix255Colors Then
+                        Dim ColorNum As Integer = colorrand.Next(255)
+                        Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
+                    Else
+                        Console.BackgroundColor = CType(colorrand.Next(1, 16), ConsoleColor) : Console.Write(" ")
+                    End If
                 End If
-            End If
-        Loop
+            Loop
+        Catch ex As Exception
+            Wdbg("W", "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
+            WStkTrc(ex)
+            e.Cancel = True
+            SetInputColor()
+            LoadBack()
+            Console.CursorVisible = True
+            Wdbg("I", "All clean. Mix Colors screensaver stopped.")
+            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
+            SaverAutoReset.Set()
+        End Try
     End Sub
 
 End Module

@@ -32,48 +32,60 @@ Module LighterDisplay
         Dim RandomDriver As New Random()
         Dim CoveredPositions As New ArrayList
         Wdbg("I", "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
-        Do While True
-            If Lighter.CancellationPending = True Then
-                Wdbg("W", "Cancellation is pending. Cleaning everything up...")
-                e.Cancel = True
-                SetInputColor()
-                LoadBack()
-                Console.CursorVisible = True
-                Wdbg("I", "All clean. Lighter screensaver stopped.")
-                SaverAutoReset.Set()
-                Exit Do
-            Else
-                SleepNoBlock(LighterDelay, Lighter)
-                Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
-                Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
-                Console.SetCursorPosition(Left, Top)
-                Dim esc As Char = GetEsc()
-                If LighterTrueColor Then
-                    Dim RedColorNum As Integer = RandomDriver.Next(255)
-                    Dim GreenColorNum As Integer = RandomDriver.Next(255)
-                    Dim BlueColorNum As Integer = RandomDriver.Next(255)
-                    Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-                    If Not CoveredPositions.Contains(Left & ";" & Top) Then CoveredPositions.Add(Left & ";" & Top)
-                    Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
-                ElseIf Lighter255Colors Then
-                    Dim ColorNum As Integer = RandomDriver.Next(255)
-                    If Not CoveredPositions.Contains(Left & ";" & Top) Then CoveredPositions.Add(Left & ";" & Top)
-                    Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
+        Try
+            Do While True
+                If Lighter.CancellationPending = True Then
+                    Wdbg("W", "Cancellation is pending. Cleaning everything up...")
+                    e.Cancel = True
+                    SetInputColor()
+                    LoadBack()
+                    Console.CursorVisible = True
+                    Wdbg("I", "All clean. Lighter screensaver stopped.")
+                    SaverAutoReset.Set()
+                    Exit Do
                 Else
-                    If Not CoveredPositions.Contains(Left & ";" & Top) Then CoveredPositions.Add(Left & ";" & Top)
-                    Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
-                    Console.Write(" ")
+                    SleepNoBlock(LighterDelay, Lighter)
+                    Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
+                    Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+                    Console.SetCursorPosition(Left, Top)
+                    Dim esc As Char = GetEsc()
+                    If LighterTrueColor Then
+                        Dim RedColorNum As Integer = RandomDriver.Next(255)
+                        Dim GreenColorNum As Integer = RandomDriver.Next(255)
+                        Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                        Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
+                        If Not CoveredPositions.Contains(Left & ";" & Top) Then CoveredPositions.Add(Left & ";" & Top)
+                        Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
+                    ElseIf Lighter255Colors Then
+                        Dim ColorNum As Integer = RandomDriver.Next(255)
+                        If Not CoveredPositions.Contains(Left & ";" & Top) Then CoveredPositions.Add(Left & ";" & Top)
+                        Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
+                    Else
+                        If Not CoveredPositions.Contains(Left & ";" & Top) Then CoveredPositions.Add(Left & ";" & Top)
+                        Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                        Console.Write(" ")
+                    End If
+                    If CoveredPositions.Count = LighterMaxPositions Then
+                        Dim WipeLeft As Integer = CoveredPositions(0).ToString.Substring(0, CoveredPositions(0).ToString.IndexOf(";"))
+                        Dim WipeTop As Integer = CoveredPositions(0).ToString.Substring(CoveredPositions(0).ToString.IndexOf(";") + 1)
+                        Console.SetCursorPosition(WipeLeft, WipeTop)
+                        Console.BackgroundColor = ConsoleColor.Black
+                        Console.Write(" ")
+                        CoveredPositions.RemoveAt(0)
+                    End If
                 End If
-                If CoveredPositions.Count = LighterMaxPositions Then
-                    Dim WipeLeft As Integer = CoveredPositions(0).ToString.Substring(0, CoveredPositions(0).ToString.IndexOf(";"))
-                    Dim WipeTop As Integer = CoveredPositions(0).ToString.Substring(CoveredPositions(0).ToString.IndexOf(";") + 1)
-                    Console.SetCursorPosition(WipeLeft, WipeTop)
-                    Console.BackgroundColor = ConsoleColor.Black
-                    Console.Write(" ")
-                    CoveredPositions.RemoveAt(0)
-                End If
-            End If
-        Loop
+            Loop
+        Catch ex As Exception
+            Wdbg("W", "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
+            WStkTrc(ex)
+            e.Cancel = True
+            SetInputColor()
+            LoadBack()
+            Console.CursorVisible = True
+            Wdbg("I", "All clean. Lighter screensaver stopped.")
+            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
+            SaverAutoReset.Set()
+        End Try
     End Sub
 
 End Module

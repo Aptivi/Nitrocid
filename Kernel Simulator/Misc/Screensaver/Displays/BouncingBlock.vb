@@ -30,73 +30,85 @@ Module BouncingBlockDisplay
         Console.ForegroundColor = ConsoleColor.White
         Console.Clear()
         Console.CursorVisible = False
-        Dim RandomDriver As New Random()
-        Dim Direction As String = "BottomRight"
-        Dim RowBlock, ColumnBlock As Integer
-        RowBlock = Console.WindowHeight / 2
-        ColumnBlock = Console.WindowWidth / 2
-        Do While True
-            SleepNoBlock(BouncingBlockDelay, BouncingBlock)
-            Console.BackgroundColor = ConsoleColor.Black
-            Console.ForegroundColor = ConsoleColor.White
-            Console.Clear()
-            If BouncingBlock.CancellationPending = True Then
-                Wdbg("W", "Cancellation is pending. Cleaning everything up...")
-                e.Cancel = True
-                SetInputColor()
-                LoadBack()
-                Console.CursorVisible = True
-                Wdbg("I", "All clean. Bouncing Text screensaver stopped.")
-                SaverAutoReset.Set()
-                Exit Do
-            Else
-                If BouncingBlockTrueColor Then
-                    Dim RedColorNum As Integer = RandomDriver.Next(255)
-                    Dim GreenColorNum As Integer = RandomDriver.Next(255)
-                    Dim BlueColorNum As Integer = RandomDriver.Next(255)
-                    Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-                    WriteWhereC(" ", ColumnBlock, RowBlock, True, New Color(New RGB(255, 255, 255).ToString), New Color(ColorStorage.ToString))
-                ElseIf BouncingBlock255Colors Then
-                    Dim ColorNum As Integer = RandomDriver.Next(255)
-                    WriteWhereC(" ", ColumnBlock, RowBlock, True, New Color(ConsoleColors.White), BackgroundColor:=New Color([Enum].Parse(GetType(ConsoleColors), ColorNum)))
+        Try
+            Dim RandomDriver As New Random()
+            Dim Direction As String = "BottomRight"
+            Dim RowBlock, ColumnBlock As Integer
+            RowBlock = Console.WindowHeight / 2
+            ColumnBlock = Console.WindowWidth / 2
+            Do While True
+                SleepNoBlock(BouncingBlockDelay, BouncingBlock)
+                Console.BackgroundColor = ConsoleColor.Black
+                Console.ForegroundColor = ConsoleColor.White
+                Console.Clear()
+                If BouncingBlock.CancellationPending = True Then
+                    Wdbg("W", "Cancellation is pending. Cleaning everything up...")
+                    e.Cancel = True
+                    SetInputColor()
+                    LoadBack()
+                    Console.CursorVisible = True
+                    Wdbg("I", "All clean. Bouncing Block screensaver stopped.")
+                    SaverAutoReset.Set()
+                    Exit Do
                 Else
-                    Dim OldColumn As Integer = Console.CursorLeft
-                    Dim OldRow As Integer = Console.CursorTop
-                    Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
-                    Console.SetCursorPosition(ColumnBlock, RowBlock)
-                    Console.Write(" ")
-                    Console.SetCursorPosition(OldColumn, OldRow)
-                    Console.BackgroundColor = ConsoleColor.Black
-                    Console.Write(" ")
-                End If
+                    If BouncingBlockTrueColor Then
+                        Dim RedColorNum As Integer = RandomDriver.Next(255)
+                        Dim GreenColorNum As Integer = RandomDriver.Next(255)
+                        Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                        Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
+                        WriteWhereC(" ", ColumnBlock, RowBlock, True, New Color(New RGB(255, 255, 255).ToString), New Color(ColorStorage.ToString))
+                    ElseIf BouncingBlock255Colors Then
+                        Dim ColorNum As Integer = RandomDriver.Next(255)
+                        WriteWhereC(" ", ColumnBlock, RowBlock, True, New Color(ConsoleColors.White), BackgroundColor:=New Color([Enum].Parse(GetType(ConsoleColors), ColorNum)))
+                    Else
+                        Dim OldColumn As Integer = Console.CursorLeft
+                        Dim OldRow As Integer = Console.CursorTop
+                        Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                        Console.SetCursorPosition(ColumnBlock, RowBlock)
+                        Console.Write(" ")
+                        Console.SetCursorPosition(OldColumn, OldRow)
+                        Console.BackgroundColor = ConsoleColor.Black
+                        Console.Write(" ")
+                    End If
 
-                If Direction = "BottomRight" Then
-                    RowBlock += 1
-                    ColumnBlock += 1
-                ElseIf Direction = "BottomLeft" Then
-                    RowBlock += 1
-                    ColumnBlock -= 1
-                ElseIf Direction = "TopRight" Then
-                    RowBlock -= 1
-                    ColumnBlock += 1
-                ElseIf Direction = "TopLeft" Then
-                    RowBlock -= 1
-                    ColumnBlock -= 1
-                End If
+                    If Direction = "BottomRight" Then
+                        RowBlock += 1
+                        ColumnBlock += 1
+                    ElseIf Direction = "BottomLeft" Then
+                        RowBlock += 1
+                        ColumnBlock -= 1
+                    ElseIf Direction = "TopRight" Then
+                        RowBlock -= 1
+                        ColumnBlock += 1
+                    ElseIf Direction = "TopLeft" Then
+                        RowBlock -= 1
+                        ColumnBlock -= 1
+                    End If
 
-                If RowBlock = Console.WindowHeight - 2 Then
-                    Direction = Direction.Replace("Bottom", "Top")
-                ElseIf RowBlock = 1 Then
-                    Direction = Direction.Replace("Top", "Bottom")
-                End If
+                    If RowBlock = Console.WindowHeight - 2 Then
+                        Direction = Direction.Replace("Bottom", "Top")
+                    ElseIf RowBlock = 1 Then
+                        Direction = Direction.Replace("Top", "Bottom")
+                    End If
 
-                If ColumnBlock = Console.WindowWidth - 1 Then
-                    Direction = Direction.Replace("Right", "Left")
-                ElseIf ColumnBlock = 1 Then
-                    Direction = Direction.Replace("Left", "Right")
+                    If ColumnBlock = Console.WindowWidth - 1 Then
+                        Direction = Direction.Replace("Right", "Left")
+                    ElseIf ColumnBlock = 1 Then
+                        Direction = Direction.Replace("Left", "Right")
+                    End If
                 End If
-            End If
-        Loop
+            Loop
+        Catch ex As Exception
+            Wdbg("W", "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
+            WStkTrc(ex)
+            e.Cancel = True
+            SetInputColor()
+            LoadBack()
+            Console.CursorVisible = True
+            Wdbg("I", "All clean. Bouncing Block screensaver stopped.")
+            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
+            SaverAutoReset.Set()
+        End Try
     End Sub
 
 End Module

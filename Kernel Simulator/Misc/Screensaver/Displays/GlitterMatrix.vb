@@ -32,24 +32,36 @@ Module GlitterMatrixDisplay
         Console.CursorVisible = False
         Dim RandomDriver As New Random()
         Wdbg("I", "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
-        Do While True
-            If GlitterMatrix.CancellationPending = True Then
-                Wdbg("W", "Cancellation is pending. Cleaning everything up...")
-                e.Cancel = True
-                SetInputColor()
-                LoadBack()
-                Console.CursorVisible = True
-                Wdbg("I", "All clean. Glitter Matrix screensaver stopped.")
-                SaverAutoReset.Set()
-                Exit Do
-            Else
-                SleepNoBlock(GlitterMatrixDelay, GlitterMatrix)
-                Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
-                Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
-                Console.SetCursorPosition(Left, Top)
-                Console.Write(CStr(RandomDriver.Next(2)))
-            End If
-        Loop
+        Try
+            Do While True
+                If GlitterMatrix.CancellationPending = True Then
+                    Wdbg("W", "Cancellation is pending. Cleaning everything up...")
+                    e.Cancel = True
+                    SetInputColor()
+                    LoadBack()
+                    Console.CursorVisible = True
+                    Wdbg("I", "All clean. Glitter Matrix screensaver stopped.")
+                    SaverAutoReset.Set()
+                    Exit Do
+                Else
+                    SleepNoBlock(GlitterMatrixDelay, GlitterMatrix)
+                    Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
+                    Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+                    Console.SetCursorPosition(Left, Top)
+                    Console.Write(CStr(RandomDriver.Next(2)))
+                End If
+            Loop
+        Catch ex As Exception
+            Wdbg("W", "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
+            WStkTrc(ex)
+            e.Cancel = True
+            SetInputColor()
+            LoadBack()
+            Console.CursorVisible = True
+            Wdbg("I", "All clean. Glitter Matrix screensaver stopped.")
+            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
+            SaverAutoReset.Set()
+        End Try
     End Sub
 
 End Module

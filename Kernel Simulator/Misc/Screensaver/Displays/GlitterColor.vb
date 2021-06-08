@@ -31,39 +31,51 @@ Module GlitterColorDisplay
         Console.CursorVisible = False
         Dim RandomDriver As New Random()
         Wdbg("I", "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
-        Do While True
-            If GlitterColor.CancellationPending = True Then
-                Wdbg("W", "Cancellation is pending. Cleaning everything up...")
-                e.Cancel = True
-                SetInputColor()
-                LoadBack()
-                Console.CursorVisible = True
-                Wdbg("I", "All clean. Glitter Color screensaver stopped.")
-                SaverAutoReset.Set()
-                Exit Do
-            Else
-                SleepNoBlock(GlitterColorDelay, GlitterColor)
-                Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
-                Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
-                Console.SetCursorPosition(Left, Top)
-                Dim esc As Char = GetEsc()
-                If GlitterColorTrueColor Then
-                    Console.BackgroundColor = ConsoleColor.Black
-                    ClearKeepPosition()
-                    Dim RedColorNum As Integer = RandomDriver.Next(255)
-                    Dim GreenColorNum As Integer = RandomDriver.Next(255)
-                    Dim BlueColorNum As Integer = RandomDriver.Next(255)
-                    Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-                    Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
-                ElseIf GlitterColor255Colors Then
-                    Dim ColorNum As Integer = RandomDriver.Next(255)
-                    Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
+        Try
+            Do While True
+                If GlitterColor.CancellationPending = True Then
+                    Wdbg("W", "Cancellation is pending. Cleaning everything up...")
+                    e.Cancel = True
+                    SetInputColor()
+                    LoadBack()
+                    Console.CursorVisible = True
+                    Wdbg("I", "All clean. Glitter Color screensaver stopped.")
+                    SaverAutoReset.Set()
+                    Exit Do
                 Else
-                    Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
-                    Console.Write(" ")
+                    SleepNoBlock(GlitterColorDelay, GlitterColor)
+                    Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
+                    Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+                    Console.SetCursorPosition(Left, Top)
+                    Dim esc As Char = GetEsc()
+                    If GlitterColorTrueColor Then
+                        Console.BackgroundColor = ConsoleColor.Black
+                        ClearKeepPosition()
+                        Dim RedColorNum As Integer = RandomDriver.Next(255)
+                        Dim GreenColorNum As Integer = RandomDriver.Next(255)
+                        Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                        Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
+                        Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
+                    ElseIf GlitterColor255Colors Then
+                        Dim ColorNum As Integer = RandomDriver.Next(255)
+                        Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
+                    Else
+                        Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                        Console.Write(" ")
+                    End If
                 End If
-            End If
-        Loop
+            Loop
+        Catch ex As Exception
+            Wdbg("W", "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
+            WStkTrc(ex)
+            e.Cancel = True
+            SetInputColor()
+            LoadBack()
+            Console.CursorVisible = True
+            Wdbg("I", "All clean. Glitter Color screensaver stopped.")
+            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
+            SaverAutoReset.Set()
+        End Try
     End Sub
 
 End Module

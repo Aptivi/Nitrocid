@@ -30,62 +30,74 @@ Module BouncingTextDisplay
         Console.ForegroundColor = ConsoleColor.White
         Console.Clear()
         Console.CursorVisible = False
-        Dim Direction As String = "BottomRight"
-        Dim RowText, ColumnFirstLetter, ColumnLastLetter As Integer
-        RowText = Console.WindowHeight / 2
-        ColumnFirstLetter = (Console.WindowWidth / 2) - BouncingTextWrite.Length / 2
-        ColumnLastLetter = (Console.WindowWidth / 2) + BouncingTextWrite.Length / 2
-        Do While True
-            SleepNoBlock(BouncingTextDelay, BouncingText)
-            Console.Clear()
-            If BouncingText.CancellationPending = True Then
-                Wdbg("W", "Cancellation is pending. Cleaning everything up...")
-                e.Cancel = True
-                SetInputColor()
-                LoadBack()
-                Console.CursorVisible = True
-                Wdbg("I", "All clean. Bouncing Text screensaver stopped.")
-                SaverAutoReset.Set()
-                Exit Do
-            Else
-                Console.SetCursorPosition(ColumnFirstLetter, RowText)
-                Console.Write(BouncingTextWrite)
+        Try
+            Dim Direction As String = "BottomRight"
+            Dim RowText, ColumnFirstLetter, ColumnLastLetter As Integer
+            RowText = Console.WindowHeight / 2
+            ColumnFirstLetter = (Console.WindowWidth / 2) - BouncingTextWrite.Length / 2
+            ColumnLastLetter = (Console.WindowWidth / 2) + BouncingTextWrite.Length / 2
+            Do While True
+                SleepNoBlock(BouncingTextDelay, BouncingText)
+                Console.Clear()
+                If BouncingText.CancellationPending = True Then
+                    Wdbg("W", "Cancellation is pending. Cleaning everything up...")
+                    e.Cancel = True
+                    SetInputColor()
+                    LoadBack()
+                    Console.CursorVisible = True
+                    Wdbg("I", "All clean. Bouncing Text screensaver stopped.")
+                    SaverAutoReset.Set()
+                    Exit Do
+                Else
+                    Console.SetCursorPosition(ColumnFirstLetter, RowText)
+                    Console.Write(BouncingTextWrite)
 
-                If Direction = "BottomRight" Then
-                    RowText += 1
-                    ColumnFirstLetter += 1
-                    ColumnLastLetter += 1
-                ElseIf Direction = "BottomLeft" Then
-                    RowText += 1
-                    ColumnFirstLetter -= 1
-                    ColumnLastLetter -= 1
-                ElseIf Direction = "TopRight" Then
-                    RowText -= 1
-                    ColumnFirstLetter += 1
-                    ColumnLastLetter += 1
-                ElseIf Direction = "TopLeft" Then
-                    RowText -= 1
-                    ColumnFirstLetter -= 1
-                    ColumnLastLetter -= 1
-                End If
+                    If Direction = "BottomRight" Then
+                        RowText += 1
+                        ColumnFirstLetter += 1
+                        ColumnLastLetter += 1
+                    ElseIf Direction = "BottomLeft" Then
+                        RowText += 1
+                        ColumnFirstLetter -= 1
+                        ColumnLastLetter -= 1
+                    ElseIf Direction = "TopRight" Then
+                        RowText -= 1
+                        ColumnFirstLetter += 1
+                        ColumnLastLetter += 1
+                    ElseIf Direction = "TopLeft" Then
+                        RowText -= 1
+                        ColumnFirstLetter -= 1
+                        ColumnLastLetter -= 1
+                    End If
 
-                If RowText = Console.WindowHeight - 2 Then
-                    Direction = Direction.Replace("Bottom", "Top")
-                    ChangeBouncingTextColor()
-                ElseIf RowText = 1 Then
-                    Direction = Direction.Replace("Top", "Bottom")
-                    ChangeBouncingTextColor()
-                End If
+                    If RowText = Console.WindowHeight - 2 Then
+                        Direction = Direction.Replace("Bottom", "Top")
+                        ChangeBouncingTextColor()
+                    ElseIf RowText = 1 Then
+                        Direction = Direction.Replace("Top", "Bottom")
+                        ChangeBouncingTextColor()
+                    End If
 
-                If ColumnLastLetter = Console.WindowWidth - 1 Then
-                    Direction = Direction.Replace("Right", "Left")
-                    ChangeBouncingTextColor()
-                ElseIf ColumnFirstLetter = 1 Then
-                    Direction = Direction.Replace("Left", "Right")
-                    ChangeBouncingTextColor()
+                    If ColumnLastLetter = Console.WindowWidth - 1 Then
+                        Direction = Direction.Replace("Right", "Left")
+                        ChangeBouncingTextColor()
+                    ElseIf ColumnFirstLetter = 1 Then
+                        Direction = Direction.Replace("Left", "Right")
+                        ChangeBouncingTextColor()
+                    End If
                 End If
-            End If
-        Loop
+            Loop
+        Catch ex As Exception
+            Wdbg("W", "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
+            WStkTrc(ex)
+            e.Cancel = True
+            SetInputColor()
+            LoadBack()
+            Console.CursorVisible = True
+            Wdbg("I", "All clean. Bouncing Text screensaver stopped.")
+            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
+            SaverAutoReset.Set()
+        End Try
     End Sub
 
     ''' <summary>
