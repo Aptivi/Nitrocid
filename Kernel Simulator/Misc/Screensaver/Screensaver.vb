@@ -364,13 +364,15 @@ Public Module Screensaver
     ''' </summary>
     Public Sub SaveCustomSaverSettings()
         For Each Saver As String In CSvrdb.Keys
-            For Each Setting As String In CSvrdb(Saver).SaverSettings.Keys
-                If Not TryCast(CustomSaverSettingsToken(Saver), JObject).ContainsKey(Setting) Then
-                    TryCast(CustomSaverSettingsToken(Saver), JObject).Add(Setting, CSvrdb(Saver).SaverSettings(Setting).ToString)
-                Else
-                    CustomSaverSettingsToken(Saver)(Setting) = CSvrdb(Saver).SaverSettings(Setting).ToString
-                End If
-            Next
+            If CSvrdb(Saver).SaverSettings IsNot Nothing Then
+                For Each Setting As String In CSvrdb(Saver).SaverSettings.Keys
+                    If Not TryCast(CustomSaverSettingsToken(Saver), JObject).ContainsKey(Setting) Then
+                        TryCast(CustomSaverSettingsToken(Saver), JObject).Add(Setting, CSvrdb(Saver).SaverSettings(Setting).ToString)
+                    Else
+                        CustomSaverSettingsToken(Saver)(Setting) = CSvrdb(Saver).SaverSettings(Setting).ToString
+                    End If
+                Next
+            End If
         Next
         File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
     End Sub
@@ -384,11 +386,13 @@ Public Module Screensaver
         If Not CSvrdb.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found."), CustomSaver)
         If Not CustomSaverSettingsToken.ContainsKey(CustomSaver) Then
             Dim NewCustomSaver As New JObject
-            For Each Setting As String In CSvrdb(CustomSaver).SaverSettings.Keys
-                NewCustomSaver.Add(Setting, CSvrdb(CustomSaver).SaverSettings(Setting).ToString)
-            Next
-            CustomSaverSettingsToken.Add(CustomSaver, NewCustomSaver)
-            File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
+            If CSvrdb(CustomSaver).SaverSettings IsNot Nothing Then
+                For Each Setting As String In CSvrdb(CustomSaver).SaverSettings.Keys
+                    NewCustomSaver.Add(Setting, CSvrdb(CustomSaver).SaverSettings(Setting).ToString)
+                Next
+                CustomSaverSettingsToken.Add(CustomSaver, NewCustomSaver)
+                File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
+            End If
         End If
     End Sub
 
