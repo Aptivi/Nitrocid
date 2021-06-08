@@ -155,8 +155,15 @@ Public Module FTPTools
         connected = True
 
         'If MOTD exists, show it
-        Dim WelcomeBytes() As Byte = {}
-        ClientFTP.Download(WelcomeBytes, "welcome.msg")
+        'TODO: A better way of showing MOTD
+        If ClientFTP.FileExists("welcome.msg") Then
+            Dim WelcomeBytes() As Byte = {}
+            ClientFTP.Download(WelcomeBytes, "welcome.msg")
+            For Each WelcomeByte As Byte In WelcomeBytes
+                W(Convert.ToChar(WelcomeByte), False, ColTypes.Banner)
+            Next
+            Console.WriteLine()
+        End If
 
         'Prepare to print current FTP directory
         currentremoteDir = ClientFTP.GetWorkingDirectory
