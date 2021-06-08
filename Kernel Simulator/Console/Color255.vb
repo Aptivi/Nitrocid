@@ -100,88 +100,88 @@ Public Module Color255
     ''' All 255 console colors
     ''' </summary>
     Public Enum ConsoleColors As Integer
-        Black = 0
-        DarkRed = 1
-        DarkGreen = 2
-        DarkYellow = 3
-        DarkBlue = 4
-        DarkMagenta = 5
-        DarkCyan = 6
-        Gray = 7
-        DarkGray = 8
-        Red = 9
-        Green = 10
-        Yellow = 11
-        Blue = 12
-        Magenta = 13
-        Cyan = 14
-        White = 15
-        Grey0 = 16
-        NavyBlue = 17
-        DarkBlue_000087 = 18
-        Blue3 = 19
-        Blue3_d7 = 20
-        Blue1 = 21
-        DarkGreen_005f00 = 22
-        DeepSkyBlue4_005f5f = 23
-        DeepSkyBlue4_005f87 = 24
-        DeepSkyBlue4_005faf = 25
-        DodgerBlue3 = 26
-        DodgerBlue2 = 27
-        Green4 = 28
-        SpringGreen4 = 29
-        Turquoise4 = 30
-        DeepSkyBlue3_0087af = 31
-        DeepSkyBlue3_0087d7 = 32
-        DodgerBlue1 = 33
-        Green3_af00 = 34
-        SpringGreen3_00af5f = 35
-        DarkCyan_00af87 = 36
-        LightSeaGreen = 37
-        DeepSkyBlue2 = 38
-        DeepSkyBlue1 = 39
-        Green3_00d700 = 40
-        SpringGreen3_00d75f = 41
-        SpringGreen2_00d787 = 42
-        Cyan3 = 43
-        DarkTurquoise = 44
-        Turquoise2 = 45
-        Green1 = 46
-        SpringGreen2 = 47
-        SpringGreen1 = 48
-        MediumSpringGreen = 49
-        Cyan2 = 50
-        Cyan1 = 51
-        DarkRed_5f0000 = 52
-        DeepPink4 = 53
-        Purple4_5f0087 = 54
-        Purple4_5f00af = 55
-        Purple3 = 56
-        BlueViolet = 57
-        Orange4 = 58
-        Grey37 = 59
-        MediumPurple4 = 60
-        SlateBlue3_5f5faf = 61
-        SlateBlue3_5f5fd7 = 62
-        RoyalBlue1 = 63
-        Chartreuse4 = 64
-        DarkSeaGreen4 = 65
-        PaleTurquoise4 = 66
-        SteelBlue = 67
-        SteelBlue3 = 68
-        CornflowerBlue = 69
-        Chartreuse3 = 70
-        DarkSeaGreen4_5faf5f = 71
-        CadetBlue_5faf87 = 72
-        CadetBlue_5fafaf = 73
-        SkyBlue3 = 74
-        SteelBlue1_5fafff = 75
-        Chartreuse3_5fd700 = 76
-        PaleGreen3 = 77
-        SeaGreen3 = 78
-        Aquamarine3 = 79
-        MediumTurquoise = 80
-        SteelBlue1_5fd7ff = 81
+        Black
+        DarkRed
+        DarkGreen
+        DarkYellow
+        DarkBlue
+        DarkMagenta
+        DarkCyan
+        Gray
+        DarkGray
+        Red
+        Green
+        Yellow
+        Blue
+        Magenta
+        Cyan
+        White
+        Grey0
+        NavyBlue
+        DarkBlue_000087
+        Blue3
+        Blue3_d7
+        Blue1
+        DarkGreen_005f00
+        DeepSkyBlue4_005f5f
+        DeepSkyBlue4_005f87
+        DeepSkyBlue4_005faf
+        DodgerBlue3
+        DodgerBlue2
+        Green4
+        SpringGreen4
+        Turquoise4
+        DeepSkyBlue3_0087af
+        DeepSkyBlue3_0087d7
+        DodgerBlue1
+        Green3_af00
+        SpringGreen3_00af5f
+        DarkCyan_00af87
+        LightSeaGreen
+        DeepSkyBlue2
+        DeepSkyBlue1
+        Green3_00d700
+        SpringGreen3_00d75f
+        SpringGreen2_00d787
+        Cyan3
+        DarkTurquoise
+        Turquoise2
+        Green1
+        SpringGreen2
+        SpringGreen1
+        MediumSpringGreen
+        Cyan2
+        Cyan1
+        DarkRed_5f0000
+        DeepPink4
+        Purple4_5f0087
+        Purple4_5f00af
+        Purple3
+        BlueViolet
+        Orange4
+        Grey37
+        MediumPurple4
+        SlateBlue3_5f5faf
+        SlateBlue3_5f5fd7
+        RoyalBlue1
+        Chartreuse4
+        DarkSeaGreen4
+        PaleTurquoise4
+        SteelBlue
+        SteelBlue3
+        CornflowerBlue
+        Chartreuse3
+        DarkSeaGreen4_5faf5f
+        CadetBlue_5faf87
+        CadetBlue_5fafaf
+        SkyBlue3
+        SteelBlue1_5fafff
+        Chartreuse3_5fd700
+        PaleGreen3
+        SeaGreen3
+        Aquamarine3
+        MediumTurquoise
+        SteelBlue1_5fd7ff
         Chartreuse2
         SeaGreen2
         SeaGreen1

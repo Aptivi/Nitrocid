@@ -414,7 +414,7 @@ Public Module UserManagement
             W(DoTranslation("Select account type.") + vbNewLine, True, ColTypes.Neutral)
             W("1) " + DoTranslation("Administrator: This account type has the most power in the kernel, allowing you to use system management programs."), True, ColTypes.Option)
             W("2) " + DoTranslation("Normal User: This account type is slightly more restricted than administrators."), True, ColTypes.Option)
-            W(">> ", False, ColTypes.Input)
+            W(vbNewLine + ">> ", False, ColTypes.Input)
             AnswerType = Val(Console.ReadKey(True).KeyChar)
             Console.WriteLine()
             Wdbg("I", "Answer: {0}", AnswerType)
