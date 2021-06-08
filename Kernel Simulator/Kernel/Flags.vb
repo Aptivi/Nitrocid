@@ -40,10 +40,6 @@ Public Module Flags
     ''' </summary>
     Public CommandFlag As Boolean
     ''' <summary>
-    ''' A flag for checking for an argument later
-    ''' </summary>
-    Public argsFlag As Boolean
-    ''' <summary>
     ''' A flag for checking for an argument on reboot
     ''' </summary>
     Public argsInjected As Boolean

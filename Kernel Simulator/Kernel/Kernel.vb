@@ -24,7 +24,6 @@ Public Module Kernel
 
     'Variables
     Public ReadOnly KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
-    Public BootArgs() As String
     Public ConfigToken As JObject
     Public MOTDMessage, MAL As String
     Public HName As String = "kernel"
@@ -132,8 +131,8 @@ Public Module Kernel
                 Wdbg("I", "- Kernel Phase 4: Log in")
                 InitializeSystemAccount()
                 LoginFlag = True
-                If BootArgs IsNot Nothing Then
-                    If BootArgs.Contains("quiet") Then
+                If EnteredArguments IsNot Nothing Then
+                    If EnteredArguments.Contains("quiet") Then
                         Console.SetOut(DefConsoleOut)
                     End If
                 End If

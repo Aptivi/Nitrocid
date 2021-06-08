@@ -141,14 +141,17 @@ Public Module GetCommand
                             If AvailableArgs.Contains(arg) Then
                                 Wdbg("I", "Adding argument {0}...", arg)
                                 FinalArgs.Add(arg)
+                            Else
+                                Wdbg("W", "Argument {0} not found.", arg)
+                                W(DoTranslation("Argument {0} not found to inject."), True, ColTypes.Warning, arg)
                             End If
                         Next
                         If FinalArgs.Count = 0 Then
                             W(DoTranslation("No arguments specified. Hint: Specify multiple arguments separated by spaces"), True, ColTypes.Error)
                         Else
-                            answerargs = String.Join(",", FinalArgs)
+                            EnteredArguments = New List(Of String)(FinalArgs)
                             argsInjected = True
-                            W(DoTranslation("Injected arguments, {0}, will be scheduled to run at next reboot."), True, ColTypes.Neutral, answerargs)
+                            W(DoTranslation("Injected arguments, {0}, will be scheduled to run at next reboot."), True, ColTypes.Neutral, String.Join(", ", EnteredArguments))
                         End If
                     End If
 

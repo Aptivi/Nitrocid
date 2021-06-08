@@ -132,7 +132,7 @@ Public Class Events
     Public Event ColorSetError(ByVal Reason As String)
     Public Event ThemeStudioStarted()
     Public Event ThemeStudioExit()
-    Public Event ArgumentsInjected(ByVal InjectedArguments As String)
+    Public Event ArgumentsInjected(ByVal InjectedArguments As List(Of String))
     Public Event ZipShellInitialized()
     Public Event ZipPreExecuteCommand(ByVal Command As String)
     Public Event ZipPostExecuteCommand(ByVal Command As String)
@@ -1307,7 +1307,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of console colors having problems being set
     ''' </summary>
-    Public Sub RespondArgumentsInjected(ByVal InjectedArguments As String) Handles Me.ArgumentsInjected
+    Public Sub RespondArgumentsInjected(ByVal InjectedArguments As List(Of String)) Handles Me.ArgumentsInjected
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ArgumentsInjected()...", script.ModPart, script.Name, script.Version)
@@ -2210,9 +2210,9 @@ Public Class Events
         RaiseEvent ThemeStudioExit()
     End Sub
     ''' <summary>
-    ''' Raise an event of console colors having problems being set
+    ''' Raise an event of arguments being injected
     ''' </summary>
-    Public Sub RaiseArgumentsInjected(ByVal InjectedArguments As String)
+    Public Sub RaiseArgumentsInjected(ByVal InjectedArguments As List(Of String))
         Wdbg("I", "Raising event ArgumentsInjected() and responding in RespondArgumentsInjected()...")
         FiredEvents.Add("ArgumentsInjected (" + CStr(FiredEvents.Count) + ")", {InjectedArguments})
         RaiseEvent ArgumentsInjected(InjectedArguments)

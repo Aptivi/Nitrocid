@@ -43,8 +43,8 @@ Public Module KernelTools
     Public Sub KernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal ParamArray Variables() As Object)
         Try
             'Unquiet
-            If BootArgs IsNot Nothing Then
-                If BootArgs.Contains("quiet") Then
+            If EnteredArguments IsNot Nothing Then
+                If EnteredArguments.Contains("quiet") Then
                     Wdbg("I", "Removing quiet...")
                     Console.SetOut(DefConsoleOut)
                 End If
@@ -278,10 +278,8 @@ Public Module KernelTools
     Sub ResetEverything()
         'Reset every variable that is resettable
         If argsInjected = False Then
-            answerargs = Nothing
+            EnteredArguments.Clear()
         End If
-        Erase BootArgs
-        argsFlag = False
         StopPanicAndGoToDoublePanic = False
         strcommand = Nothing
         modcmnds.Clear()
@@ -425,13 +423,11 @@ Public Module KernelTools
         If argsOnBoot Then
             StageTimer.Stop()
             PromptArgs()
-            If argsFlag Then ParseArguments()
             StageTimer.Start()
         End If
         If argsInjected Then
-            ParseArguments()
-            answerargs = ""
             argsInjected = False
+            ParseArguments()
         End If
 
         'Write headers for debug

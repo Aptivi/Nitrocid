@@ -19,7 +19,7 @@
 Module ArgumentParse
 
     'Variables
-    Public argcommands As String                'Commands entered
+    Public argcommands As String
     Public argcmds() As String
 
     ''' <summary>
@@ -29,23 +29,22 @@ Module ArgumentParse
 
         'Check for the arguments written by the user
         Try
-            BootArgs = answerargs.Split({","c}, StringSplitOptions.RemoveEmptyEntries)
-            For i As Integer = 0 To BootArgs.Count - 1
-                Dim indexArg As Integer = BootArgs(i).IndexOf(" ")
+            For i As Integer = 0 To EnteredArguments.Count - 1
+                Dim indexArg As Integer = EnteredArguments(i).IndexOf(" ")
                 If indexArg = -1 Then
-                    indexArg = BootArgs(i).Count
-                    BootArgs(i) = BootArgs(i).Substring(0, indexArg)
+                    indexArg = EnteredArguments(i).Count
+                    EnteredArguments(i) = EnteredArguments(i).Substring(0, indexArg)
                 End If
-                If AvailableArgs.Contains(BootArgs(i).Substring(0, indexArg)) Then
-                    If BootArgs(i) = "quiet" Then
+                If AvailableArgs.Contains(EnteredArguments(i).Substring(0, indexArg)) Then
+                    If EnteredArguments(i) = "quiet" Then
 
                         DefConsoleOut = Console.Out
                         Console.SetOut(IO.StreamWriter.Null)
 
-                    ElseIf BootArgs(i).Contains("cmdinject") Then
+                    ElseIf EnteredArguments(i).Contains("cmdinject") Then
 
                         'Command Injector argument
-                        If BootArgs(i) = "cmdinject" Then
+                        If EnteredArguments(i) = "cmdinject" Then
                             W(DoTranslation("Available commands: {0}") + vbNewLine +
                               DoTranslation("Write command: "), False, ColTypes.Input, String.Join(", ", Commands.Keys))
                             argcmds = Console.ReadLine().Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
@@ -56,42 +55,31 @@ Module ArgumentParse
                                 W(DoTranslation("Command injection has been cancelled."), True, ColTypes.Neutral)
                             End If
                         Else
-                            argcmds = BootArgs(i).Substring(10).Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
+                            argcmds = EnteredArguments(i).Substring(10).Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
                             argcommands = String.Join(", ", argcmds)
                             CommandFlag = True
                         End If
 
-                    ElseIf BootArgs(i) = "debug" Then
+                    ElseIf EnteredArguments(i) = "debug" Then
 
                         DebugMode = True
 
-                    ElseIf BootArgs(i) = "maintenance" Then
+                    ElseIf EnteredArguments(i) = "maintenance" Then
 
                         maintenance = True
 
-                    ElseIf BootArgs(i) = "safe" Then
+                    ElseIf EnteredArguments(i) = "safe" Then
 
                         SafeMode = True
 
-                    ElseIf BootArgs(i) = "testInteractive" Then
+                    ElseIf EnteredArguments(i) = "testInteractive" Then
 
                         InitTShell()
                         If Test_ShutdownFlag Then Environment.Exit(0)
 
-                    ElseIf BootArgs(i) = "help" Then
-
-                        W(DoTranslation("Separate boot arguments with commas without spaces, for example, 'motd,gpuprobe'") + vbNewLine +
-                          DoTranslation("Separate commands on 'cmdinject' with colons with spaces, for example, 'cmdinject setthemes Hacker : beep 1024 0.5'") + vbNewLine +
-                          DoTranslation("Note that the 'debug' argument does not fully cover the kernel."), True, ColTypes.Neutral)
-                        answerargs = "" : argsFlag = False : argsInjected = False
-                        PromptArgs()
-                        If argsFlag = True Then
-                            ParseArguments()
-                        End If
-
                     End If
                 Else
-                    W(DoTranslation("bargs: The requested argument {0} is not found."), True, ColTypes.Error, BootArgs(i).Substring(0, indexArg))
+                    W(DoTranslation("bargs: The requested argument {0} is not found."), True, ColTypes.Error, EnteredArguments(i).Substring(0, indexArg))
                 End If
             Next
         Catch ex As Exception
