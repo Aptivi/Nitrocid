@@ -28,13 +28,31 @@ Public Module Notifications
     ''' Notification priority
     ''' </summary>
     Public Enum NotifPriority
+        ''' <summary>
+        ''' Low priority. One beep.
+        ''' </summary>
         Low = 1
+        ''' <summary>
+        ''' Medium priority. Two beeps.
+        ''' </summary>
         Medium = 2
+        ''' <summary>
+        ''' High priority. Three beeps.
+        ''' </summary>
         High = 3
     End Enum
 
+    ''' <summary>
+    ''' Notification type
+    ''' </summary>
     Public Enum NotifType
+        ''' <summary>
+        ''' Normal notification.
+        ''' </summary>
         Normal = 1
+        ''' <summary>
+        ''' A notification with the progress bar. Use if you're going to notify the user while your mod is doing something.
+        ''' </summary>
         Progress = 2
     End Enum
 
