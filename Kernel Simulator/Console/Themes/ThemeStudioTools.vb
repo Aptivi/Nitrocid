@@ -186,4 +186,77 @@ Module ThemeStudioTools
                            New JProperty("BannerColor", SelectedBannerColor.PlainSequence))
     End Function
 
+    ''' <summary>
+    ''' Prepares the preview
+    ''' </summary>
+    Sub PreparePreview()
+        Console.Clear()
+        W(DoTranslation("Here's how your theme will look like:") + vbNewLine, True, ColTypes.Neutral)
+
+        'Print every possibility of color types
+        'Input color
+        W("*) " + DoTranslation("Input color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedInputColor)
+
+        'License color
+        W("*) " + DoTranslation("License color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedLicenseColor)
+
+        'Continuable kernel error color
+        W("*) " + DoTranslation("Continuable kernel error color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedContKernelErrorColor)
+
+        'Uncontinuable kernel error color
+        W("*) " + DoTranslation("Uncontinuable kernel error color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedUncontKernelErrorColor)
+
+        'Host name color
+        W("*) " + DoTranslation("Host name color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedHostNameShellColor)
+
+        'User name color
+        W("*) " + DoTranslation("User name color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedUserNameShellColor)
+
+        'Background color
+        W("*) " + DoTranslation("Background color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedBackgroundColor)
+
+        'Neutral text color
+        W("*) " + DoTranslation("Neutral text color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedNeutralTextColor)
+
+        'List entry color
+        W("*) " + DoTranslation("List entry color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedListEntryColor)
+
+        'List value color
+        W("*) " + DoTranslation("List value color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedListValueColor)
+
+        'Stage color
+        W("*) " + DoTranslation("Stage color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedStageColor)
+
+        'Error color
+        W("*) " + DoTranslation("Error color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedErrorColor)
+
+        'Warning color
+        W("*) " + DoTranslation("Warning color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedWarningColor)
+
+        'Option color
+        W("*) " + DoTranslation("Option color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedOptionColor)
+
+        'Banner color
+        W("*) " + DoTranslation("Banner color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedBannerColor)
+
+        'Pause until a key is pressed
+        W(vbNewLine + DoTranslation("Press any key to go back."), True, ColTypes.Neutral)
+        Console.ReadKey()
+    End Sub
+
 End Module

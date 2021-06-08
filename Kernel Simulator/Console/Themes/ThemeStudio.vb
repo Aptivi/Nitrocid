@@ -27,7 +27,7 @@ Module ThemeStudio
         EventManager.RaiseThemeStudioStarted()
         Wdbg("I", "Starting theme studio with theme name {0}", ThemeName)
         Dim Response As String
-        Dim MaximumOptions As Integer = 22
+        Dim MaximumOptions As Integer = 23
         Dim StudioExiting As Boolean
 
         While Not StudioExiting
@@ -49,7 +49,7 @@ Module ThemeStudio
             W("11) " + DoTranslation("Stage color") + ": [{0}] ", True, ColTypes.Option, SelectedStageColor.PlainSequence)
             W("12) " + DoTranslation("Error color") + ": [{0}] ", True, ColTypes.Option, SelectedErrorColor.PlainSequence)
             W("13) " + DoTranslation("Warning color") + ": [{0}] ", True, ColTypes.Option, SelectedWarningColor.PlainSequence)
-            W("14) " + DoTranslation("Option color") + ": [{0}] " + vbNewLine, True, ColTypes.Option, SelectedOptionColor.PlainSequence)
+            W("14) " + DoTranslation("Option color") + ": [{0}] ", True, ColTypes.Option, SelectedOptionColor.PlainSequence)
             W("15) " + DoTranslation("Banner color") + ": [{0}] " + vbNewLine, True, ColTypes.Option, SelectedBannerColor.PlainSequence)
 
             'List saving and loading options
@@ -59,7 +59,8 @@ Module ThemeStudio
             W("19) " + DoTranslation("Save Theme to Another Directory as..."), True, ColTypes.Option)
             W("20) " + DoTranslation("Load Theme From File..."), True, ColTypes.Option)
             W("21) " + DoTranslation("Load Theme From Prebuilt Themes..."), True, ColTypes.Option)
-            W("22) " + DoTranslation("Exit") + vbNewLine, True, ColTypes.Option)
+            W("22) " + DoTranslation("Preview..."), True, ColTypes.Option)
+            W("23) " + DoTranslation("Exit") + vbNewLine, True, ColTypes.Option)
 
             'Prompt user
             Wdbg("I", "Waiting for user input...")
@@ -160,7 +161,10 @@ Module ThemeStudio
                             Dim AltThemeName As String = Console.ReadLine
                             Wdbg("I", "Got theme name {0}.", AltThemeName)
                             LoadThemeFromResource(AltThemeName)
-                        Case 22 'Exit
+                        Case 22 'Preview...
+                            Wdbg("I", "Printing text with colors of theme...")
+                            PreparePreview()
+                        Case 23 'Exit
                             Wdbg("I", "Exiting studio...")
                             StudioExiting = True
                     End Select
