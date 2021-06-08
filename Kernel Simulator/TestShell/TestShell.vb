@@ -71,6 +71,7 @@ Module TestShell
     Sub InitTShell()
         Dim FullCmd As String
         AddHandler Console.CancelKeyPress, AddressOf TCancelCommand
+        StageTimer.Stop()
         Console.WriteLine()
         WriteSeparator(DoTranslation("Welcome to Test Shell!"), True, ColTypes.Stage)
 
@@ -106,6 +107,8 @@ Module TestShell
                 WStkTrc(ex)
             End Try
         End While
+
+        StageTimer.Start()
     End Sub
 
     ''' <summary>

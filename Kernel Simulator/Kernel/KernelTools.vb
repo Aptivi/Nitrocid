@@ -423,8 +423,10 @@ Public Module KernelTools
 
         'Check arguments
         If argsOnBoot Then
+            StageTimer.Stop()
             PromptArgs()
             If argsFlag Then ParseArguments()
+            StageTimer.Start()
         End If
         If argsInjected Then
             ParseArguments()

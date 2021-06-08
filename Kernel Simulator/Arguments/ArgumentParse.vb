@@ -75,7 +75,6 @@ Module ArgumentParse
 
                     ElseIf BootArgs(i) = "testInteractive" Then
 
-                        InitTestHelp()
                         InitTShell()
                         If Test_ShutdownFlag Then Environment.Exit(0)
 

@@ -38,9 +38,8 @@ Module CommandLineArgsParse
                         Environment.Exit(0)
                     End If
                 ElseIf arg = "testInteractive" Then
-                    InitTestHelp()
                     InitTShell()
-                    If TEST_ShutdownFlag Then Environment.Exit(0)
+                    If Test_ShutdownFlag Then Environment.Exit(0)
                 ElseIf arg = "debug" Then
                     DebugMode = True
                 ElseIf arg = "args" Then

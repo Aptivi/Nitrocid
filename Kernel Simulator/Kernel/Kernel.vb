@@ -33,6 +33,7 @@ Public Module Kernel
     Public ScrnTimeout As Integer = 300000
     Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Release Candidate 1"
     Public ReadOnly vbNewLine As String = Environment.NewLine
+    Friend StageTimer As New Stopwatch
 
     ''' <summary>
     ''' Entry point
@@ -59,7 +60,6 @@ Public Module Kernel
                 If Not NotifThread.IsAlive Then NotifThread.Start()
                 InitPaths()
                 If Not IsOnUnix() Then Initialize255()
-                Dim StageTimer As New Stopwatch
 
                 'Check if factory reset is required
                 If Environment.GetCommandLineArgs.Contains("reset") Then
@@ -158,7 +158,7 @@ Public Module Kernel
                 End If
 
                 'Initialize login prompt
-                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Stop()
+                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Reset()
                 DisposeAll()
                 If LoginFlag = True And maintenance = False Then
                     LoginPrompt()
