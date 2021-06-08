@@ -90,10 +90,10 @@ Public Module GetCommand
                     If requestedCommand = "help" Then
                         ShowHelp()
                     Else
-                        If RequiredArgumentsProvided Then
+                        If eqargs IsNot Nothing Then
                             ShowHelp(eqargs(0))
                         Else
-                            ShowHelp(Command)
+                            ShowHelp()
                         End If
                     End If
 
