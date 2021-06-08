@@ -30,7 +30,7 @@ Module Speller
         W(DoTranslation("Press CTRL+C to exit."), True, ColTypes.Neutral)
         If Words.Count = 0 Then
             Wdbg("I", "Downloading words...")
-            Words.AddRange(DownloadString("https://raw.githubusercontent.com/sindresorhus/word-list/master/words.txt").Replace(Chr(13), "").Split(Chr(10)).ToList)
+            Words.AddRange(DownloadString("https://raw.githubusercontent.com/sindresorhus/word-list/master/words.txt").Split(vbNewLine).ToList)
         End If
         While True
             RandomWord = Words.ElementAt(RandomDriver.Next(Words.Count))

@@ -42,7 +42,7 @@ Module SpeedPress
         W(DoTranslation("Press ESC to exit.") + vbNewLine, True, ColTypes.Neutral)
         While Not WrittenChar.Key = ConsoleKey.Escape Or Not WrittenChar.Modifiers = ConsoleModifiers.Control And WrittenChar.Key = ConsoleKey.C
             'Select a random character
-            SelectedChar = Chr(RandomEngine.Next(97, 122))
+            SelectedChar = Convert.ToChar(RandomEngine.Next(97, 122))
 
             'Prompt user for character
             Try
