@@ -41,29 +41,6 @@ Public Class Exceptions
     End Class
 
     ''' <summary>
-    ''' Not enough command arguments supplied in all shells
-    ''' </summary>
-    <Obsolete("Using exceptions is not a good practice, especially when no shell except the main shell is using it.")>
-    Public Class NotEnoughArgumentsException
-        Inherits Exception
-        Public Sub New()
-            MyBase.New()
-        End Sub
-        Public Sub New(ByVal message As String)
-            MyBase.New(message)
-        End Sub
-        Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
-        End Sub
-        Public Sub New(ByVal message As String, ByVal e As Exception)
-            MyBase.New(message, e)
-        End Sub
-        Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
-        End Sub
-    End Class
-
-    ''' <summary>
     ''' Thrown when alias source and destination have the same name
     ''' </summary>
     Public Class AliasInvalidOperationException
