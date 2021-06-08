@@ -516,7 +516,12 @@ Public Module HelpSystem
 
         ElseIf command = "wrap" Then
 
+            Dim WrappableCmds As New ArrayList
+            For Each CommandInfo As CommandInfo In Commands.Values
+                If CommandInfo.Wrappable Then WrappableCmds.Add(CommandInfo.Command)
+            Next
             W(DoTranslation("Usage:") + " wrap <command>", True, ColTypes.Neutral)
+            W("       " + DoTranslation("Wrappable commands:") + " {0}", True, ColTypes.Neutral, String.Join(", ", WrappableCmds.ToArray))
 
         ElseIf command = "zip" Then
 
