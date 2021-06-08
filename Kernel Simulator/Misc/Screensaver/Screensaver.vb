@@ -33,7 +33,7 @@ Public Module Screensaver
     Public ScrnSvrdb As New Dictionary(Of String, BackgroundWorker) From {{"colorMix", ColorMix}, {"matrix", Matrix}, {"glitterMatrix", GlitterMatrix}, {"disco", Disco},
                                                                           {"lines", Lines}, {"glitterColor", GlitterColor}, {"aptErrorSim", AptErrorSim}, {"hackUserFromAD", HackUserFromAD},
                                                                           {"bouncingText", BouncingText}, {"dissolve", Dissolve}, {"bouncingBlock", BouncingBlock}, {"progressClock", ProgressClock},
-                                                                          {"lighter", Lighter}, {"fader", Fader}, {"typo", Typo}, {"wipe", Wipe}}
+                                                                          {"lighter", Lighter}, {"fader", Fader}, {"typo", Typo}, {"wipe", Wipe}, {"marquee", Marquee}}
     Public CSvrdb As New Dictionary(Of String, ICustomSaver)
     Public WithEvents Timeout As New BackgroundWorker
     Public finalSaver As ICustomSaver

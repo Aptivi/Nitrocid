@@ -130,7 +130,15 @@ Public Module ScreensaverSettings
     ''' <summary>
     ''' [AptErrorSim] Sets the console foreground color to green to represent "Hacker Mode"
     ''' </summary>
-    Public AptErrorSimHackerMode As Boolean = False
+    Public AptErrorSimHackerMode As Boolean
+    ''' <summary>
+    ''' [Marquee] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public Marquee255Colors As Boolean
+    ''' <summary>
+    ''' [Marquee] Enable truecolor support. Has a higher priority than 255 color support.
+    ''' </summary>
+    Public MarqueeTrueColor As Boolean = True
 
     '-> Delays
     ''' <summary>
@@ -193,6 +201,10 @@ Public Module ScreensaverSettings
     ''' [Wipe] How many milliseconds to wait before making the next write?
     ''' </summary>
     Public WipeDelay As Integer = 10
+    ''' <summary>
+    ''' [Marquee] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public MarqueeDelay As Integer = 10
 
     '-> Texts
     ''' <summary>
@@ -207,6 +219,10 @@ Public Module ScreensaverSettings
     ''' [Typo] Text for Typo
     ''' </summary>
     Public TypoWrite As String = "Kernel Simulator"
+    ''' <summary>
+    ''' [Marquee] Text for Marquee
+    ''' </summary>
+    Public MarqueeWrite As String = "Kernel Simulator"
 
     '-> Misc
     ''' <summary>
@@ -233,5 +249,9 @@ Public Module ScreensaverSettings
     ''' [Wipe] How many wipes needed to change direction?
     ''' </summary>
     Public WipeWipesNeededToChangeDirection As Integer = 10
+    ''' <summary>
+    ''' [Marquee] Whether the text is always on center.
+    ''' </summary>
+    Public MarqueeAlwaysCentered As Boolean = True
 
 End Module
