@@ -37,7 +37,7 @@ Public Module Kernel
     ''' <summary>
     ''' Entry point
     ''' </summary>
-    Sub Main()
+    Sub Main(Args() As String)
         While True
             Try
                 'A title
@@ -61,7 +61,7 @@ Public Module Kernel
                 If Not IsOnUnix() Then Initialize255()
 
                 'Check if factory reset is required
-                If Environment.GetCommandLineArgs.Contains("reset") Then
+                If Args.Contains("reset") Then
                     FactoryReset()
                 End If
 
@@ -79,7 +79,7 @@ Public Module Kernel
 
                 'Initialize everything
                 StageTimer.Start()
-                InitEverything()
+                InitEverything(Args)
 
                 'For config
                 If RebootRequested Then

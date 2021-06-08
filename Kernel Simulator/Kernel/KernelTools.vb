@@ -348,7 +348,7 @@ Public Module KernelTools
     ''' <summary>
     ''' Initializes everything
     ''' </summary>
-    Sub InitEverything()
+    Sub InitEverything(Args() As String)
         'Initialize help
         InitHelp()
         InitFTPHelp()
@@ -415,9 +415,7 @@ Public Module KernelTools
 #End If
 
         'Parse real command-line arguments
-        For Each argu In Environment.GetCommandLineArgs
-            ParseCMDArguments(argu)
-        Next
+        ParseCMDArguments(Args)
 
         'Check arguments
         If argsOnBoot Then

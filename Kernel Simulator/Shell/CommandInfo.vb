@@ -124,6 +124,10 @@ Public Module CommandType
         ''' RSS Shell
         ''' </summary>
         RSSShell
+        ''' <summary>
+        ''' Command line arguments
+        ''' </summary>
+        CommandLineArgs
     End Enum
 
 End Module
