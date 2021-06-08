@@ -29,6 +29,7 @@ Public Module ToolPrompts
         SBoolean
         SInt
         SString
+        SLongString
         SSelection
         SList
         SVariant
@@ -986,7 +987,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
                         Case 4 'BouncingText: Text shown
-                            KeyType = SettingsKeyType.SString
+                            KeyType = SettingsKeyType.SLongString
                             KeyVar = NameOf(BouncingTextWrite)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Text shown") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write any text you want shown. Shorter is better."), True, ColTypes.Neutral)
@@ -1125,7 +1126,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Fader > " + DoTranslation("Fade Out Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("How many milliseconds to wait before fading out text?"), True, ColTypes.Neutral)
                         Case 3 'Fader: Text shown
-                            KeyType = SettingsKeyType.SString
+                            KeyType = SettingsKeyType.SLongString
                             KeyVar = NameOf(FaderWrite)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Fader > " + DoTranslation("Text shown") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write any text you want shown. Shorter is better."), True, ColTypes.Neutral)
@@ -1151,7 +1152,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Typo > " + DoTranslation("Write Again Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("How many milliseconds to wait before writing text again?"), True, ColTypes.Neutral)
                         Case 3 'Typo: Text shown
-                            KeyType = SettingsKeyType.SString
+                            KeyType = SettingsKeyType.SLongString
                             KeyVar = NameOf(TypoWrite)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Typo > " + DoTranslation("Text shown") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write any text you want shown. Longer is better."), True, ColTypes.Neutral)
@@ -1246,7 +1247,7 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
                         Case 4 'Marquee: Text shown
-                            KeyType = SettingsKeyType.SString
+                            KeyType = SettingsKeyType.SLongString
                             KeyVar = NameOf(MarqueeWrite)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Text shown") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write any text you want shown."), True, ColTypes.Neutral)
@@ -1372,7 +1373,11 @@ Public Module ToolPrompts
 #Enable Warning BC42104
                 Else
                     W(If(KeyType = SettingsKeyType.SUnknown, "> ", "[{0}] > "), False, ColTypes.Input, KeyValue)
-                    AnswerString = Console.ReadLine
+                    If KeyType = SettingsKeyType.SLongString Then
+                        AnswerString = ReadLineLong()
+                    Else
+                        AnswerString = Console.ReadLine
+                    End If
                     If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString)
                     Wdbg("I", "User answered {0}", AnswerString)
                 End If
@@ -1426,7 +1431,7 @@ Public Module ToolPrompts
             ElseIf KeyType = SettingsKeyType.SUnknown Then
                 Wdbg("I", "User requested exit. Returning...")
                 KeyFinished = True
-            ElseIf KeyType = SettingsKeyType.SString Then
+            ElseIf KeyType = SettingsKeyType.SString Or KeyType = SettingsKeyType.SLongString Then
                 Wdbg("I", "Answer is not numeric and key is of the String type. Setting variable...")
                 If String.IsNullOrWhiteSpace(AnswerString) Then
                     Wdbg("I", "Answer is nothing. Setting to {0}...", KeyValue)
