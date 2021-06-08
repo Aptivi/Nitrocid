@@ -241,7 +241,7 @@ Public Module AliasManager
                 Try
                     RemoveAlias(AliasCmd, Type)
                     PurgeAliases()
-                    W(DoTranslation("Removed alias {0} successfully."), True, ColTypes.Error, AliasCmd)
+                    W(DoTranslation("Removed alias {0} successfully."), True, ColTypes.Neutral, AliasCmd)
                 Catch ex As Exception
                     Wdbg("E", "Failed to remove alias. Stack trace written using WStkTrc().")
                     WStkTrc(ex)
