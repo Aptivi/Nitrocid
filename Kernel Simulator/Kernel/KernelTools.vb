@@ -26,7 +26,6 @@ Public Module KernelTools
 
     ' A dictionary for storing paths and files (used for mods, screensavers, etc.)
     Public paths As New Dictionary(Of String, String)
-
     Friend RPCPowerListener As New Thread(AddressOf PowerManage) With {.Name = "RPC Power Listener Thread"}
 
     ' ----------------------------------------------- Kernel errors -----------------------------------------------
@@ -609,16 +608,15 @@ Public Module KernelTools
     ''' Removes all configuration files
     ''' </summary>
     Sub FactoryReset()
-        File.Delete(paths("Aliases"))
-        File.Delete(paths("Configuration"))
-        File.Delete(paths("Debugging"))
-        File.Delete(paths("Users"))
-        File.Delete(paths("FTPSpeedDial"))
-        File.Delete(paths("SFTPSpeedDial"))
-        File.Delete(paths("DebugDevNames"))
-        File.Delete(paths("MOTD"))
-        File.Delete(paths("MAL"))
-        Directory.Delete(paths("Mods"))
+        For Each PathName As String In paths.Keys
+            If Not PathName = "Home" And Not PathName = "Temp" Then
+                If File.Exists(paths(PathName)) Then
+                    File.Delete(paths(PathName))
+                Else
+                    Directory.Delete(paths(PathName), True)
+                End If
+            End If
+        Next
         Environment.Exit(0)
     End Sub
 
