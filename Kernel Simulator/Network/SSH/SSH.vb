@@ -168,7 +168,7 @@ Public Module SSH
         Wdbg("I", "Banner username: {0}", e.Username)
         Wdbg("I", "Banner length: {0}", e.BannerMessage.Length)
         Wdbg("I", "Banner:")
-        Dim BannerMessageLines() As String = e.BannerMessage.Split(vbNewLine)
+        Dim BannerMessageLines() As String = e.BannerMessage.SplitNewLines
         For Each BannerLine As String In BannerMessageLines
             Wdbg("I", BannerLine)
             W(BannerLine, True, ColTypes.Neutral)

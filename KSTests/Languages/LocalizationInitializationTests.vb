@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports Extensification.StringExts
 Imports KS
 
 <TestClass()> Public Class LocalizationInitializationTests
@@ -24,7 +25,7 @@ Imports KS
     ''' Tests translation dictionary preparation for a language
     ''' </summary>
     <TestMethod> <TestCategory("Initialization")> Public Sub TestPrepareDictForOneLanguage()
-        Dim ExpectedLength As Integer = KS.My.Resources.spa.Split(vbNewLine).ToList.Count - 2
+        Dim ExpectedLength As Integer = KS.My.Resources.spa.SplitNewLines.ToList.Count - 2
         Dim ActualLength As Integer = PrepareDict("spa").Values.Count
         ActualLength.ShouldBe(ExpectedLength)
     End Sub
@@ -34,7 +35,7 @@ Imports KS
     ''' </summary>
     <TestMethod> <TestCategory("Initialization")> Public Sub TestPrepareDictForAllLanguages()
         For Each Lang As String In Languages.Keys
-            Dim ExpectedLength As Integer = KS.My.Resources.ResourceManager.GetString(Lang.Replace("-", "_")).Split(vbNewLine).ToList.Count - 2
+            Dim ExpectedLength As Integer = KS.My.Resources.ResourceManager.GetString(Lang.Replace("-", "_")).SplitNewLines.ToList.Count - 2
             Dim ActualLength As Integer = PrepareDict(Lang).Values.Count
             ActualLength.ShouldBe(ExpectedLength, $"Lang: {Lang}")
         Next

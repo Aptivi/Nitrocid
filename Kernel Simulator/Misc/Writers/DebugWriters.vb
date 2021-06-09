@@ -149,7 +149,7 @@ Public Module DebugWriters
             'Print stack trace to debugger
             Dim StkTrcs As New List(Of String)
             For i As Integer = 0 To dbgStackTraces.Count - 1
-                StkTrcs.AddRange(dbgStackTraces(i).Split(vbNewLine))
+                StkTrcs.AddRange(dbgStackTraces(i).SplitNewLines)
             Next
             For i As Integer = 0 To StkTrcs.Count - 1
                 Wdbg("E", StkTrcs(i))

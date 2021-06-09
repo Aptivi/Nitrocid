@@ -126,7 +126,7 @@ Public Module ModParser
         Wdbg("I", "Referenced assemblies added.")
 
         'Detect referenced assemblies from comments that start with "Reference GAC: <ref>" or "Reference File: <path/to/ref>".
-        Dim References() As String = code.Split(vbNewLine).Select(Function(x) x).Where(Function(x) x.ContainsAnyOf({"Reference GAC: ", "Reference File: "})).ToArray
+        Dim References() As String = code.SplitNewLines.Select(Function(x) x).Where(Function(x) x.ContainsAnyOf({"Reference GAC: ", "Reference File: "})).ToArray
         Wdbg("I", "Found {0} references (matches taken from searching for ""Reference GAC: "" or ""Reference File: "").", References.Length)
         For Each Reference As String In References
             Reference.RemoveNullsOrWhitespacesAtTheBeginning
