@@ -27,9 +27,9 @@ if ($ConfigChoice = 0) {
         Write-Output "<+>  |-> Debug devices...(DebugDeviceNames.json)"
         Remove-Item $userProfile\DebugDeviceNames.json
       }
-      if (Test-Path $userProfile\kernelConfig.ini) {
-        Write-Output "<+>  |-> Configuration...(kernelConfig.ini)"
-        Remove-Item $userProfile\kernelConfig.ini
+      if (Test-Path $userProfile\KernelConfig.json) {
+        Write-Output "<+>  |-> Configuration...(KernelConfig.json)"
+        Remove-Item $userProfile\KernelConfig.json
       }
       if (Test-Path $userProfile\kernelDbg.log) {
         Write-Output "<+>  |-> Debugging logs..(kernelDbg.log)"
@@ -43,9 +43,9 @@ if ($ConfigChoice = 0) {
         Write-Output "<+>  |-> MAL Text........(MAL.txt)"
         Remove-Item $userProfile\MAL.txt
       }
-      if (Test-Path $userProfile\users.csv) {
-        Write-Output "<+>  |-> Users...........(users.csv)"
-        Remove-Item $userProfile\users.csv
+      if (Test-Path $userProfile\Users.json) {
+        Write-Output "<+>  |-> Users...........(Users.json)"
+        Remove-Item $userProfile\Users.json
       }
       if (Test-Path $userProfile\FTP_SpeedDial.json) {
         Write-Output "<+>  |-> FTP speed dial..(FTP_SpeedDial.json)"
@@ -54,6 +54,10 @@ if ($ConfigChoice = 0) {
       if (Test-Path $userProfile\SFTP_SpeedDial.json) {
         Write-Output "<+>  |-> SFTP speed dial.(SFTP_SpeedDial.json)"
         Remove-Item $userProfile\SFTP_SpeedDial.json
+      }
+      if (Test-Path $userProfile\CustomSaverSettings.json) {
+        Write-Output "<+>  |-> SFTP speed dial.(CustomSaverSettings.json)"
+        Remove-Item $userProfile\CustomSaverSettings.json
       }
       Write-Output "<*> Mods are in $userProfile\KSMods"
       if (Test-Path -Path $userProfile\KSMods) {
