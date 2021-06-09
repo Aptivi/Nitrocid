@@ -209,6 +209,8 @@ Public Module ColorTools
                                                                         {"BrandingBlue", New ThemeInfo("BrandingBlue")},
                                                                         {"BrandingPurple", New ThemeInfo("BrandingPurple")},
                                                                         {"TrafficLight", New ThemeInfo("TrafficLight")},
+                                                                        {"BreezeDark", New ThemeInfo("BreezeDark")},
+                                                                        {"Breeze", New ThemeInfo("Breeze")},
                                                                         {"Windows95", New ThemeInfo("Windows95")},
                                                                         {"GTASA", New ThemeInfo("GTASA")},
                                                                         {"GrayOnYellow", New ThemeInfo("GrayOnYellow")},

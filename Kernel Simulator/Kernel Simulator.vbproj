@@ -318,6 +318,8 @@
     <None Include="Resources\azr.json" />
     <None Include="Resources\ben-T.json" />
     <None Include="Resources\ben.json" />
+    <None Include="Resources\Themes\Breeze.json" />
+    <None Include="Resources\Themes\BreezeDark.json" />
     <None Include="Resources\bsq.json" />
     <None Include="Resources\ccw.json" />
     <None Include="Resources\chi-T.json" />

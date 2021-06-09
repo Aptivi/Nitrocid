@@ -136,6 +136,8 @@ This section covers how to build Kernel Simulator on your system. Please scroll 
 
 **Ethan Schoonover:** Solarized Theme
 
+**Fabian Neuschmidt:** https://github.com/fneu/breezy
+
 **All contributors:** Contribution
 
 ## Open Source Libraries
