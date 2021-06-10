@@ -81,14 +81,12 @@ Public Module ModParser
         Sub InitEvents(ByVal ev As String, ParamArray Args() As Object)
     End Interface
 
-    'Variables
     ''' <summary>
     ''' Mods with their parts and scripts.
     ''' </summary>
     Public scripts As New Dictionary(Of String, Dictionary(Of String, IScript))
     Private ReadOnly modPath As String = paths("Mods")
 
-    '------------------------------------------- Generators -------------------------------------------
     ''' <summary>
     ''' Compiles the script and returns the instance of script interface
     ''' </summary>
@@ -196,47 +194,54 @@ NextEntry:
         Next
     End Function
 
-    '------------------------------------------- Parsers -------------------------------------------
     ''' <summary>
-    ''' Loads or stops all mods in KSMods
+    ''' Loads all mods in KSMods
     ''' </summary>
-    ''' <param name="StartStop">If true, the mods start, otherwise, the mod stops.</param>
-    Sub ParseMods(ByVal StartStop As Boolean)
+    Sub StartMods()
         Wdbg("I", "Safe mode: {0}", SafeMode)
         If Not SafeMode Then
             If Not Directory.Exists(modPath) Then Directory.CreateDirectory(modPath)
             Dim count As Integer = Directory.EnumerateFiles(modPath).Count
             Wdbg("I", "Files count: {0}", count)
             If count <> 0 Then
-                If StartStop Then
-                    W(DoTranslation("mod: Loading mods..."), True, ColTypes.Neutral)
-                    Wdbg("I", "Mods are being loaded. Total mods with screensavers = {0}", count)
-                ElseIf Not StartStop Then
-                    W(DoTranslation("mod: Stopping mods..."), True, ColTypes.Neutral)
-                    Wdbg("I", "Mods are being stopped. Total mods with screensavers = {0}", count)
-                End If
-                If Not StartStop Then
-                    For Each script As Dictionary(Of String, IScript) In scripts.Values
-                        Wdbg("I", "Stopping... Mod name: {0}", scripts.GetKeyFromValue(script))
-                        For Each ScriptPart As String In script.Keys
-                            Wdbg("I", "Stopping part {0} v{1}", script(ScriptPart).ModPart, script(ScriptPart).Version)
-                            script(ScriptPart).StopMod()
-                            If script(ScriptPart).Name <> "" And script(ScriptPart).Version <> "" Then
-                                W(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, script(ScriptPart).ModPart, script(ScriptPart).Version)
-                            End If
-                        Next
-                        W(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, scripts.GetKeyFromValue(script))
+                W(DoTranslation("mod: Loading mods..."), True, ColTypes.Neutral)
+                Wdbg("I", "Mods are being loaded. Total mods with screensavers = {0}", count)
+                For Each modFile As String In Directory.EnumerateFiles(modPath)
+                    W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(modFile))
+                    ParseMod(modFile.Replace("\", "/"))
+                Next
+            Else
+                W(DoTranslation("mod: No mods detected."), True, ColTypes.Neutral)
+            End If
+        Else
+            W(DoTranslation("Parsing mods not allowed on safe mode."), True, ColTypes.Error)
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Stops all mods in KSMods
+    ''' </summary>
+    Sub StopMods()
+        Wdbg("I", "Safe mode: {0}", SafeMode)
+        If Not SafeMode Then
+            If Not Directory.Exists(modPath) Then Directory.CreateDirectory(modPath)
+            Dim count As Integer = Directory.EnumerateFiles(modPath).Count
+            Wdbg("I", "Files count: {0}", count)
+            If count <> 0 Then
+                W(DoTranslation("mod: Stopping mods..."), True, ColTypes.Neutral)
+                Wdbg("I", "Mods are being stopped. Total mods with screensavers = {0}", count)
+                For Each script As Dictionary(Of String, IScript) In scripts.Values
+                    Wdbg("I", "Stopping... Mod name: {0}", scripts.GetKeyFromValue(script))
+                    For Each ScriptPart As String In script.Keys
+                        Wdbg("I", "Stopping part {0} v{1}", script(ScriptPart).ModPart, script(ScriptPart).Version)
+                        script(ScriptPart).StopMod()
+                        If script(ScriptPart).Name <> "" And script(ScriptPart).Version <> "" Then
+                            W(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, script(ScriptPart).ModPart, script(ScriptPart).Version)
+                        End If
                     Next
-                    For Each Screensaver As String In CSvrdb.Keys
-                        ScrnSvrdb.Remove(Screensaver)
-                    Next
-                    CSvrdb.Clear()
-                Else
-                    For Each modFile As String In Directory.EnumerateFiles(modPath)
-                        W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(modFile))
-                        StartParse(modFile.Replace("\", "/"), StartStop)
-                    Next
-                End If
+                    W(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, scripts.GetKeyFromValue(script))
+                Next
+                CSvrdb.Clear()
             Else
                 W(DoTranslation("mod: No mods detected."), True, ColTypes.Neutral)
             End If
@@ -249,8 +254,7 @@ NextEntry:
     ''' Starts to parse the mod, and configures it so it can be used
     ''' </summary>
     ''' <param name="modFile">Mod file name with extension. It should end with .vb or .cs</param>
-    ''' <param name="StartStop">Whether to start or stop mods</param>
-    Sub StartParse(ByVal modFile As String, Optional ByVal StartStop As Boolean = True)
+    Sub ParseMod(ByVal modFile As String)
         modFile = modFile.Replace(modPath, "")
         If modFile.EndsWith(".ss.vb") Then
             'Mod is a screensaver that has a language of VB.NET
@@ -264,17 +268,17 @@ NextEntry:
             'Mod has a language of C#
             Wdbg("I", "Mod language is C# from extension "".cs""")
             Dim script As IScript = GenMod("C#", IO.File.ReadAllText(modPath + modFile))
-            FinalizeMods(script, modFile, StartStop)
+            FinalizeMods(script, modFile)
         ElseIf modFile.EndsWith(".vb") Then
             'Mod has a language of VB.NET
             Wdbg("I", "Mod language is VB.NET from extension "".vb""")
             Dim script As IScript = GenMod("VB.NET", IO.File.ReadAllText(modPath + modFile))
-            FinalizeMods(script, modFile, StartStop)
+            FinalizeMods(script, modFile)
         ElseIf modFile.EndsWith(".dll") Then
             'Mod is a dynamic DLL
             Try
                 Dim script As IScript = GetModInstance(Assembly.LoadFrom(modPath + modFile))
-                FinalizeMods(script, modFile, StartStop)
+                FinalizeMods(script, modFile)
             Catch ex As ReflectionTypeLoadException
                 Wdbg("E", "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message)
                 WStkTrc(ex)
@@ -297,11 +301,10 @@ NextEntry:
     ''' </summary>
     ''' <param name="script">Instance of script</param>
     ''' <param name="modFile">Mod file name with extension. It should end with .vb, .ss.vb, .ss.cs, or .cs</param>
-    ''' <param name="StartStop">Whether to start or stop mods</param>
-    Sub FinalizeMods(ByVal script As IScript, ByVal modFile As String, Optional ByVal StartStop As Boolean = True)
+    Sub FinalizeMods(ByVal script As IScript, ByVal modFile As String)
         Dim ModParts As New Dictionary(Of String, IScript)
         If script IsNot Nothing Then
-            EventManager.RaiseModParsed(StartStop, modFile)
+            EventManager.RaiseModParsed(modFile)
             Try
                 script.StartMod()
                 Wdbg("I", "script.StartMod() initialized. Mod name: {0} | Mod part: {1} | Version: {2}", script.Name, script.ModPart, script.Version)
@@ -414,7 +417,7 @@ NextEntry:
                 End If
 
                 'See if mod can be added to command list
-                If script.Cmd <> "" And StartStop = True Then
+                If script.Cmd <> "" Then
                     If script.Def = "" Then
                         W(DoTranslation("No definition for command {0}."), True, ColTypes.Neutral, script.Cmd)
                         Wdbg("W", "{0}.Def = Nothing, {0}.Def = ""Command defined by {1} ({2})""", script.Cmd, script.Name, script.ModPart)
@@ -461,7 +464,7 @@ NextEntry:
                 End If
 
                 'Raise event
-                EventManager.RaiseModFinalized(StartStop, modFile)
+                EventManager.RaiseModFinalized(modFile)
             Catch ex As Exception
                 EventManager.RaiseModFinalizationFailed(modFile, ex.Message)
                 WStkTrc(ex)
@@ -509,11 +512,11 @@ NextEntry:
         Wdbg("I", "Mod scripts cleared.")
 
         'Stop all mods
-        ParseMods(False)
+        StopMods()
         Wdbg("I", "All mods stopped.")
 
         'Start all mods
-        ParseMods(True)
+        StartMods()
         Wdbg("I", "All mods restarted.")
     End Sub
 

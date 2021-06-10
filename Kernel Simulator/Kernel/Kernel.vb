@@ -119,7 +119,7 @@ Public Module Kernel
                 Wdbg("I", "- Kernel Phase 3: Parse mods and screensavers")
                 Wdbg("I", "Safe mode flag is set to {0}", SafeMode)
                 If Not SafeMode Then
-                    ParseMods(True)
+                    StartMods()
                 Else
                     W(DoTranslation("Running in safe mode. Skipping stage..."), True, ColTypes.Neutral)
                 End If

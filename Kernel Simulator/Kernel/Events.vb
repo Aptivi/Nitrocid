@@ -104,9 +104,9 @@ Public Class Events
     Public Event ConfigReadError(ByVal Exception As Exception)
     Public Event PreExecuteModCommand(ByVal Command As String)
     Public Event PostExecuteModCommand(ByVal Command As String)
-    Public Event ModParsed(ByVal Starting As Boolean, ByVal ModFileName As String)
+    Public Event ModParsed(ByVal ModFileName As String)
     Public Event ModParseError(ByVal ModFileName As String)
-    Public Event ModFinalized(ByVal Starting As Boolean, ByVal ModFileName As String)
+    Public Event ModFinalized(ByVal ModFileName As String)
     Public Event ModFinalizationFailed(ByVal ModFileName As String, ByVal Reason As String)
     Public Event UserAdded(ByVal Username As String)
     Public Event UserRemoved(ByVal Username As String)
@@ -999,11 +999,11 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of mod being parsed
     ''' </summary>
-    Public Sub RespondModParsed(ByVal Starting As Boolean, ByVal ModFileName As String) Handles Me.ModParsed
+    Public Sub RespondModParsed(ByVal ModFileName As String) Handles Me.ModParsed
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ModParsed()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ModParsed", Starting, ModFileName)
+                script.InitEvents("ModParsed", ModFileName)
             Next
         Next
     End Sub
@@ -1021,11 +1021,11 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of mod being finalized
     ''' </summary>
-    Public Sub RespondModFinalized(ByVal Starting As Boolean, ByVal ModFileName As String) Handles Me.ModFinalized
+    Public Sub RespondModFinalized(ByVal ModFileName As String) Handles Me.ModFinalized
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ModFinalized()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ModFinalized", Starting, ModFileName)
+                script.InitEvents("ModFinalized", ModFileName)
             Next
         Next
     End Sub
@@ -1988,10 +1988,10 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of mod being parsed
     ''' </summary>
-    Public Sub RaiseModParsed(ByVal Starting As Boolean, ByVal ModFileName As String)
+    Public Sub RaiseModParsed(ByVal ModFileName As String)
         Wdbg("I", "Raising event ModParsed() and responding in RespondModParsed()...")
-        FiredEvents.Add("ModParsed (" + CStr(FiredEvents.Count) + ")", {Starting, ModFileName})
-        RaiseEvent ModParsed(Starting, ModFileName)
+        FiredEvents.Add("ModParsed (" + CStr(FiredEvents.Count) + ")", {ModFileName})
+        RaiseEvent ModParsed(ModFileName)
     End Sub
     ''' <summary>
     ''' Raise an event of mod having problems parsing
@@ -2004,10 +2004,10 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of mod being finalized
     ''' </summary>
-    Public Sub RaiseModFinalized(ByVal Starting As Boolean, ByVal ModFileName As String)
+    Public Sub RaiseModFinalized(ByVal ModFileName As String)
         Wdbg("I", "Raising event ModFinalized() and responding in RespondModFinalized()...")
-        FiredEvents.Add("ModFinalized (" + CStr(FiredEvents.Count) + ")", {Starting, ModFileName})
-        RaiseEvent ModFinalized(Starting, ModFileName)
+        FiredEvents.Add("ModFinalized (" + CStr(FiredEvents.Count) + ")", {ModFileName})
+        RaiseEvent ModFinalized(ModFileName)
     End Sub
     ''' <summary>
     ''' Raise an event of mod having problems finalizing

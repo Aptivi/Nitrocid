@@ -43,7 +43,8 @@ Public Module TestHelpSystem
                                                                   {"testsha256", DoTranslation("Encrypts a string using") + " SHA256"},
                                                                   {"testsha1", DoTranslation("Encrypts a string using") + " SHA1"},
                                                                   {"testmd5", DoTranslation("Encrypts a string using") + " MD5"},
-                                                                  {"loadmods", DoTranslation("Starts or stops all mods")},
+                                                                  {"loadmods", DoTranslation("Starts all mods")},
+                                                                  {"stopmods", DoTranslation("Stops all mods")},
                                                                   {"debug", DoTranslation("Enables or disables debug")},
                                                                   {"rdebug", DoTranslation("Enables or disables remote debug")},
                                                                   {"colortest", DoTranslation("Tests the VT sequence for 255 colors")},
@@ -141,7 +142,9 @@ Public Module TestHelpSystem
         ElseIf command = "testregexp" Then
             W(DoTranslation("Usage:") + " testregexp <pattern> <string>", True, ColTypes.Neutral)
         ElseIf command = "loadmods" Then
-            W(DoTranslation("Usage:") + " loadmods <Enable:True/False>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " loadmods", True, ColTypes.Neutral)
+        ElseIf command = "stopmods" Then
+            W(DoTranslation("Usage:") + " stopmods", True, ColTypes.Neutral)
         ElseIf command = "debug" Then
             W(DoTranslation("Usage:") + " debug <Enable:True/False>", True, ColTypes.Neutral)
         ElseIf command = "rdebug" Then

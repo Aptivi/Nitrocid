@@ -320,7 +320,7 @@ Public Module KernelTools
         Wdbg("I", "Remote debugger stopped")
 
         'Stop all mods
-        ParseMods(False)
+        StopMods()
         Wdbg("I", "Mods stopped")
 
         'Disable Debugger

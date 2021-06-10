@@ -82,7 +82,7 @@ Module CommandLineArgsParse
                         '5. Parse the arguments
                         If Argument = "testMod" Then
                             If RequiredArgumentsProvided Then
-                                StartParse(strArgs)
+                                ParseMod(strArgs)
                                 If scripts.Count = 0 Then
                                     Environment.Exit(1)
                                 Else

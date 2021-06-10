@@ -205,7 +205,9 @@ Module TestGetCommand
                         Next
                     End If
                 Case "loadmods"
-                    If RequiredArgumentsProvided Then ParseMods(FullArgsQ(0))
+                    StartMods()
+                Case "stopmods"
+                    StopMods()
                 Case "debug"
                     If RequiredArgumentsProvided Then
                         If FullArgsQ(0) = True Then
