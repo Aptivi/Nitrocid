@@ -22,11 +22,11 @@ Imports Microsoft.VisualBasic.FileIO
 
 Module CommandLineArgsParse
 
-    Public AvailableCMDLineArgs As New Dictionary(Of String, CommandInfo) From {{"testMod", New CommandInfo("testMod", ShellCommandType.CommandLineArgs, True, 1)},
-                                                                                {"testInteractive", New CommandInfo("testInteractive", ShellCommandType.CommandLineArgs, False, 0)},
-                                                                                {"debug", New CommandInfo("debug", ShellCommandType.CommandLineArgs, False, 0)},
-                                                                                {"args", New CommandInfo("args", ShellCommandType.CommandLineArgs, False, 0)},
-                                                                                {"help", New CommandInfo("help", ShellCommandType.CommandLineArgs, False, 0)}}
+    Public AvailableCMDLineArgs As New Dictionary(Of String, CommandInfo) From {{"testMod", New CommandInfo("testMod", ShellCommandType.CommandLineArgs, DoTranslation("Tests mods by providing mod files"), True, 1)},
+                                                                                {"testInteractive", New CommandInfo("testInteractive", ShellCommandType.CommandLineArgs, DoTranslation("Opens a test shell"), False, 0)},
+                                                                                {"debug", New CommandInfo("debug", ShellCommandType.CommandLineArgs, DoTranslation("Enables debug mode"), False, 0)},
+                                                                                {"args", New CommandInfo("args", ShellCommandType.CommandLineArgs, DoTranslation("Prompts for arguments"), False, 0)},
+                                                                                {"help", New CommandInfo("help", ShellCommandType.CommandLineArgs, DoTranslation("Help page"), False, 0)}}
 
     ''' <summary>
     ''' Parses the command line arguments

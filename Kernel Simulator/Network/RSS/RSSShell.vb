@@ -22,13 +22,13 @@ Public Module RSSShell
 
     'Variables
     Public RSSExiting As Boolean
-    Public ReadOnly RSSCommands As New Dictionary(Of String, CommandInfo) From {{"articleinfo", New CommandInfo("articleinfo", ShellCommandType.RSSShell, True, 1)},
-                                                                                {"chfeed", New CommandInfo("chfeed", ShellCommandType.RSSShell, True, 1)},
-                                                                                {"exit", New CommandInfo("exit", ShellCommandType.RSSShell, False, 0)},
-                                                                                {"feedinfo", New CommandInfo("feedinfo", ShellCommandType.RSSShell, False, 0)},
-                                                                                {"help", New CommandInfo("help", ShellCommandType.RSSShell, False, 0)},
-                                                                                {"list", New CommandInfo("list", ShellCommandType.RSSShell, False, 0)},
-                                                                                {"read", New CommandInfo("read", ShellCommandType.RSSShell, True, 1)}}
+    Public ReadOnly RSSCommands As New Dictionary(Of String, CommandInfo) From {{"articleinfo", New CommandInfo("articleinfo", ShellCommandType.RSSShell, DoTranslation("Gets the article info"), True, 1)},
+                                                                                {"chfeed", New CommandInfo("chfeed", ShellCommandType.RSSShell, DoTranslation("Changes the feed link"), True, 1)},
+                                                                                {"exit", New CommandInfo("exit", ShellCommandType.RSSShell, DoTranslation("Exits RSS shell and returns to kernel"), False, 0)},
+                                                                                {"feedinfo", New CommandInfo("feedinfo", ShellCommandType.RSSShell, DoTranslation("Gets the feed info"), False, 0)},
+                                                                                {"help", New CommandInfo("help", ShellCommandType.RSSShell, DoTranslation("Shows help screen"), False, 0)},
+                                                                                {"list", New CommandInfo("list", ShellCommandType.RSSShell, DoTranslation("Lists all feeds"), False, 0)},
+                                                                                {"read", New CommandInfo("read", ShellCommandType.RSSShell, DoTranslation("Reads a feed in a web browser"), True, 1)}}
     Public RSSModCommands As New ArrayList
     Public RSSFeedInstance As RSSFeed
     Friend RSSFeedLink As String

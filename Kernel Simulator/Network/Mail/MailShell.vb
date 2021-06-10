@@ -24,22 +24,22 @@ Imports MailKit.Search
 Public Module MailShell
 
     'Variables
-    Public ReadOnly MailCommands As New Dictionary(Of String, CommandInfo) From {{"cd", New CommandInfo("cd", ShellCommandType.MailShell, True, 1)},
-                                                                                 {"exit", New CommandInfo("exit", ShellCommandType.MailShell, False, 0)},
-                                                                                 {"help", New CommandInfo("help", ShellCommandType.MailShell, False, 0)},
-                                                                                 {"lsdirs", New CommandInfo("lsdirs", ShellCommandType.MailShell, False, 0)},
-                                                                                 {"list", New CommandInfo("list", ShellCommandType.MailShell, False, 0)},
-                                                                                 {"mkdir", New CommandInfo("mkdir", ShellCommandType.MailShell, True, 1)},
-                                                                                 {"mv", New CommandInfo("mv", ShellCommandType.MailShell, True, 2)},
-                                                                                 {"mvall", New CommandInfo("mvall", ShellCommandType.MailShell, True, 2)},
-                                                                                 {"read", New CommandInfo("read", ShellCommandType.MailShell, True, 1)},
-                                                                                 {"readenc", New CommandInfo("readenc", ShellCommandType.MailShell, True, 1)},
-                                                                                 {"ren", New CommandInfo("ren", ShellCommandType.MailShell, True, 2)},
-                                                                                 {"rm", New CommandInfo("rm", ShellCommandType.MailShell, True, 1)},
-                                                                                 {"rmall", New CommandInfo("rmall", ShellCommandType.MailShell, True, 1)},
-                                                                                 {"rmdir", New CommandInfo("rmdir", ShellCommandType.MailShell, True, 1)},
-                                                                                 {"send", New CommandInfo("send", ShellCommandType.MailShell, False, 0)},
-                                                                                 {"sendenc", New CommandInfo("sendenc", ShellCommandType.MailShell, False, 0)}}
+    Public ReadOnly MailCommands As New Dictionary(Of String, CommandInfo) From {{"cd", New CommandInfo("cd", ShellCommandType.MailShell, DoTranslation("Changes current mail directory"), True, 1)},
+                                                                                 {"exit", New CommandInfo("exit", ShellCommandType.MailShell, DoTranslation("Exits the IMAP shell"), False, 0)},
+                                                                                 {"help", New CommandInfo("help", ShellCommandType.MailShell, DoTranslation("List of commands"), False, 0)},
+                                                                                 {"lsdirs", New CommandInfo("lsdirs", ShellCommandType.MailShell, DoTranslation("Lists directories in your mail address"), False, 0)},
+                                                                                 {"list", New CommandInfo("list", ShellCommandType.MailShell, DoTranslation("Downloads messages and lists them"), False, 0)},
+                                                                                 {"mkdir", New CommandInfo("mkdir", ShellCommandType.MailShell, DoTranslation("Makes a directory in the current working directory"), True, 1)},
+                                                                                 {"mv", New CommandInfo("mv", ShellCommandType.MailShell, DoTranslation("Moves a message"), True, 2)},
+                                                                                 {"mvall", New CommandInfo("mvall", ShellCommandType.MailShell, DoTranslation("Moves all messages from recipient"), True, 2)},
+                                                                                 {"read", New CommandInfo("read", ShellCommandType.MailShell, DoTranslation("Opens a message"), True, 1)},
+                                                                                 {"readenc", New CommandInfo("readenc", ShellCommandType.MailShell, DoTranslation("Opens an encrypted message"), True, 1)},
+                                                                                 {"ren", New CommandInfo("ren", ShellCommandType.MailShell, DoTranslation("Renames a folder"), True, 2)},
+                                                                                 {"rm", New CommandInfo("rm", ShellCommandType.MailShell, DoTranslation("Removes a message"), True, 1)},
+                                                                                 {"rmall", New CommandInfo("rmall", ShellCommandType.MailShell, DoTranslation("Removes all messages from recipient"), True, 1)},
+                                                                                 {"rmdir", New CommandInfo("rmdir", ShellCommandType.MailShell, DoTranslation("Removes a directory from the current working directory"), True, 1)},
+                                                                                 {"send", New CommandInfo("send", ShellCommandType.MailShell, DoTranslation("Sends a message to an address"), False, 0)},
+                                                                                 {"sendenc", New CommandInfo("sendenc", ShellCommandType.MailShell, DoTranslation("Sends an encrypted message to an address"), False, 0)}}
     Friend IMAP_Messages As IEnumerable(Of UniqueId)
     Public IMAP_CurrentDirectory As String = "Inbox"
     Friend ExitRequested, KeepAlive As Boolean

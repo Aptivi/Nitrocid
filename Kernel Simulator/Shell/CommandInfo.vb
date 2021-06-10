@@ -27,13 +27,16 @@ Public Class CommandInfo
     ''' </summary>
     Public ReadOnly Property Type As ShellCommandType
     ''' <summary>
+    ''' The help definition of command
+    ''' </summary>
+    Public Property HelpDefinition As String
+    ''' <summary>
     ''' Does the command require arguments?
     ''' </summary>
     Public ReadOnly Property ArgumentsRequired As Boolean
     ''' <summary>
     ''' User must specify at least this number of arguments
     ''' </summary>
-    ''' <returns></returns>
     Public ReadOnly Property MinimumArguments As Integer
     ''' <summary>
     ''' Is the command admin-only?
@@ -61,6 +64,7 @@ Public Class CommandInfo
     ''' </summary>
     ''' <param name="Command">Command</param>
     ''' <param name="Type">Shell command type</param>
+    ''' <param name="HelpDefinition">Command help definition</param>
     ''' <param name="ArgumentsRequired">Does the command require arguments?</param>
     ''' <param name="MinimumArguments">User must specify at least this number of arguments</param>
     ''' <param name="Strict">Is the command admin-only?</param>
@@ -68,9 +72,10 @@ Public Class CommandInfo
     ''' <param name="NoMaintenance">If true, the command can't be run in maintenance mode</param>
     ''' <param name="Obsolete">Is the command obsolete?</param>
     ''' <param name="SettingVariable">Does the command set a UESH $variable?</param>
-    Public Sub New(ByVal Command As String, ByVal Type As ShellCommandType, ByVal ArgumentsRequired As Boolean, ByVal MinimumArguments As Integer, Optional Strict As Boolean = False, Optional Wrappable As Boolean = False, Optional NoMaintenance As Boolean = False, Optional Obsolete As Boolean = False, Optional SettingVariable As Boolean = False)
+    Public Sub New(ByVal Command As String, ByVal Type As ShellCommandType, ByVal HelpDefinition As String, ByVal ArgumentsRequired As Boolean, ByVal MinimumArguments As Integer, Optional Strict As Boolean = False, Optional Wrappable As Boolean = False, Optional NoMaintenance As Boolean = False, Optional Obsolete As Boolean = False, Optional SettingVariable As Boolean = False)
         Me.Command = Command
         Me.Type = Type
+        Me.HelpDefinition = HelpDefinition
         Me.ArgumentsRequired = ArgumentsRequired
         Me.MinimumArguments = MinimumArguments
         Me.Strict = Strict

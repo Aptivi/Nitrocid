@@ -627,13 +627,19 @@ Public Module GetCommand
                     If RequiredArgumentsProvided Then
                         If scripts.Keys.Contains(eqargs(0)) Then
                             WriteSeparator(eqargs(0), True, ColTypes.Stage)
+                            W("- " + DoTranslation("Mod parts:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0)).Count, True, ColTypes.ListValue)
                             For Each ModPart As String In scripts(eqargs(0)).Keys
-                                W("  > {0}", True, ColTypes.Stage, ModPart)
-                                W("   - " + DoTranslation("Command name:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0))(ModPart).Cmd, True, ColTypes.ListValue)
-                                W("   - " + DoTranslation("Command definition:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0))(ModPart).Def, True, ColTypes.ListValue)
-                                W("   - " + DoTranslation("Command type:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0))(ModPart).CmdType, True, ColTypes.ListValue)
-                                W("   - " + DoTranslation("Strict command?") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0))(ModPart).CmdRestricted, True, ColTypes.ListValue)
-                                W("   - " + DoTranslation("Mod version:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0))(ModPart).Version, True, ColTypes.ListValue)
+                                WriteSeparator("-- {0}", True, ColTypes.Stage, ModPart)
+                                W("- " + DoTranslation("Mod version:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0))(ModPart).Version, True, ColTypes.ListValue)
+                                If scripts(eqargs(0))(ModPart).Commands IsNot Nothing Then
+                                    For Each ModCommand As String In scripts(eqargs(0))(ModPart).Commands.Keys
+                                        WriteSeparator("--- {0}", False, ColTypes.Stage, ModCommand)
+                                        W("- " + DoTranslation("Command name:") + " ", False, ColTypes.ListEntry) : W(ModCommand, True, ColTypes.ListValue)
+                                        W("- " + DoTranslation("Command definition:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0))(ModPart).Commands(ModCommand).HelpDefinition, True, ColTypes.ListValue)
+                                        W("- " + DoTranslation("Command type:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0))(ModPart).Commands(ModCommand).Type, True, ColTypes.ListValue)
+                                        W("- " + DoTranslation("Strict command?") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0))(ModPart).Commands(ModCommand).Strict, True, ColTypes.ListValue)
+                                    Next
+                                End If
                             Next
                         Else
                             W(DoTranslation("Mod {0} not found."), True, ColTypes.Error, eqargs(0))

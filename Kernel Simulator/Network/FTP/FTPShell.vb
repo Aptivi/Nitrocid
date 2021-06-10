@@ -20,24 +20,24 @@ Imports System.Threading
 
 Public Module FTPShell
 
-    Public ReadOnly FTPCommands As New Dictionary(Of String, CommandInfo) From {{"connect", New CommandInfo("connect", ShellCommandType.FTPShell, True, 1)},
-                                                                                {"cdl", New CommandInfo("cdl", ShellCommandType.FTPShell, True, 1)},
-                                                                                {"cdr", New CommandInfo("cdr", ShellCommandType.FTPShell, True, 1)},
-                                                                                {"cp", New CommandInfo("cp", ShellCommandType.FTPShell, True, 2)},
-                                                                                {"del", New CommandInfo("del", ShellCommandType.FTPShell, True, 1)},
-                                                                                {"disconnect", New CommandInfo("disconnect", ShellCommandType.FTPShell, False, 0)},
-                                                                                {"exit", New CommandInfo("exit", ShellCommandType.FTPShell, False, 0)},
-                                                                                {"get", New CommandInfo("get", ShellCommandType.FTPShell, True, 1)},
-                                                                                {"help", New CommandInfo("help", ShellCommandType.FTPShell, False, 0)},
-                                                                                {"lsl", New CommandInfo("lsl", ShellCommandType.FTPShell, False, 0)},
-                                                                                {"lsr", New CommandInfo("lsr", ShellCommandType.FTPShell, False, 0)},
-                                                                                {"put", New CommandInfo("put", ShellCommandType.FTPShell, True, 1)},
-                                                                                {"pwdl", New CommandInfo("pwdl", ShellCommandType.FTPShell, False, 0)},
-                                                                                {"pwdr", New CommandInfo("pwdr", ShellCommandType.FTPShell, False, 0)},
-                                                                                {"mv", New CommandInfo("mv", ShellCommandType.FTPShell, True, 2)},
-                                                                                {"perm", New CommandInfo("perm", ShellCommandType.FTPShell, True, 2)},
-                                                                                {"type", New CommandInfo("type", ShellCommandType.FTPShell, True, 1)},
-                                                                                {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.FTPShell, False, 0)}}
+    Public ReadOnly FTPCommands As New Dictionary(Of String, CommandInfo) From {{"connect", New CommandInfo("connect", ShellCommandType.FTPShell, DoTranslation("Connects to an FTP server (it must start with ""ftp://"" or ""ftps://"")"), True, 1)},
+                                                                                {"cdl", New CommandInfo("cdl", ShellCommandType.FTPShell, DoTranslation("Changes local directory to download to or upload from"), True, 1)},
+                                                                                {"cdr", New CommandInfo("cdr", ShellCommandType.FTPShell, DoTranslation("Changes remote directory to download from or upload to"), True, 1)},
+                                                                                {"cp", New CommandInfo("cp", ShellCommandType.FTPShell, DoTranslation("Copies file or directory to another file or directory."), True, 2)},
+                                                                                {"del", New CommandInfo("del", ShellCommandType.FTPShell, DoTranslation("Deletes remote file from server"), True, 1)},
+                                                                                {"disconnect", New CommandInfo("disconnect", ShellCommandType.FTPShell, DoTranslation("Disconnects from server"), False, 0)},
+                                                                                {"exit", New CommandInfo("exit", ShellCommandType.FTPShell, DoTranslation("Exits FTP shell and returns to kernel"), False, 0)},
+                                                                                {"get", New CommandInfo("get", ShellCommandType.FTPShell, DoTranslation("Downloads remote file to local directory using binary or text"), True, 1)},
+                                                                                {"help", New CommandInfo("help", ShellCommandType.FTPShell, DoTranslation("Shows help screen"), False, 0)},
+                                                                                {"lsl", New CommandInfo("lsl", ShellCommandType.FTPShell, DoTranslation("Lists local directory"), False, 0)},
+                                                                                {"lsr", New CommandInfo("lsr", ShellCommandType.FTPShell, DoTranslation("Lists remote directory"), False, 0)},
+                                                                                {"put", New CommandInfo("put", ShellCommandType.FTPShell, DoTranslation("Uploads local file to remote directory using binary or text"), True, 1)},
+                                                                                {"pwdl", New CommandInfo("pwdl", ShellCommandType.FTPShell, DoTranslation("Gets current local directory"), False, 0)},
+                                                                                {"pwdr", New CommandInfo("pwdr", ShellCommandType.FTPShell, DoTranslation("Gets current remote directory"), False, 0)},
+                                                                                {"mv", New CommandInfo("mv", ShellCommandType.FTPShell, DoTranslation("Moves file or directory to another file or directory. You can also use that to rename files."), True, 2)},
+                                                                                {"perm", New CommandInfo("perm", ShellCommandType.FTPShell, DoTranslation("Sets file permissions. This is supported only on FTP servers that run Unix."), True, 2)},
+                                                                                {"type", New CommandInfo("type", ShellCommandType.FTPShell, DoTranslation("Sets the type for this session"), True, 1)},
+                                                                                {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.FTPShell, DoTranslation("Uses information from Speed Dial to connect to any network quickly"), False, 0)}}
     Public connected As Boolean = False
     Private initialized As Boolean = False
     Public ftpsite As String
