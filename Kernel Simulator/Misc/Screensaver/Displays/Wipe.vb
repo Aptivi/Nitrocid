@@ -45,7 +45,6 @@ Module WipeDisplay
                     SleepNoBlock(WipeDelay, Wipe)
 
                     'Select a color
-                    Dim esc As Char = GetEsc()
                     If WipeTrueColor Then
                         Dim RedColorNum As Integer = RandomDriver.Next(255)
                         Dim GreenColorNum As Integer = RandomDriver.Next(255)
