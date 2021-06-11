@@ -30,7 +30,7 @@ Public Module Kernel
     Public EventManager As New Events
     Public DefConsoleOut As TextWriter
     Public ScrnTimeout As Integer = 300000
-    Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Release Candidate 1"
+    Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion}"
     Public ReadOnly vbNewLine As String = Environment.NewLine
     Friend StageTimer As New Stopwatch
 
