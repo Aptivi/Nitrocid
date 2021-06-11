@@ -739,3 +739,361 @@ Ritardu in Millisecondi
 Quanti millisecondi da aspettà prima di fà a prossima scrittura?
 Permette di aduprà un servitore FTP SSH
 Nisun aiutu per u cumandimu "{0}".
+Sequenza VT invalida per u culore RGB.
+Culore di Seconds Bar
+Culore di Minute Bar
+Bar di Culore di l'ore
+Culore di l'infurmazione
+Ticks per cambià di culore
+Attiva 255 supportu di culore per ProgressClock.
+Attiva u veru sustegnu di culore per ProgressClock.
+U culore di siconda barra di prugressu. Pò esse 1-16, 1-255, o "1-255;1-255;1-255".
+U culore di a barra di prugressu di i minuti. Pò esse 1-16, 1-255, o "1-255;1-255;1-255".
+U culore di l'ora barra di prugressu. Pò esse 1-16, 1-255, o "1-255;1-255;1-255".
+U culore di l'infurmazioni di data. Pò esse 1-16, 1-255, o "1-255;1-255;1-255".
+Se u ciculu di culore hè attivatu, quante zecche prima di cambià i culori in ProgressClock? 1 tick = 0,5 seconde
+ProgressClock selezziunerà culori aleatorii s'ellu hè attivatu. Inutili, utilizate culori da config.
+Face un novu tema
+Facendu un tema novu "{0}".
+Salvà u Tema in u Repertoriu Attuale
+Salvà u Tema in Un altru Directory ...
+Sceglite u culore cù i chjavi "<-" è "->". Press ENTER per surtite. Pulsà "i" per inserisce u numeru di culore manualmente.
+Sceglite u culore cù i chjavi "<-" è "->". Aduprate e frecce in alto è frecce in basso per selezziunà trà e gamme di culori. Press ENTER per surtite. Pulsà "i" per inserisce u numeru di culore manualmente.
+Benvenutu à u kernel! - Versione {0}
+Culore d'avvertimentu
+Culore d'opzione
+Inserite u numeru di culore da 0 à 255:
+Aduprate "hwinfo" per informazioni estese nantu à u hardware.
+Stampa infurmazione di hardware
+Infurmazione CPU:
+Nome di u processatore:
+Velocità di processatore:
+Bit di processatore:
+Rev processatore:
+Topulugia di u processatore:
+Tipu di processatore:
+Milestone di u processatore:
+Processatore BogoMips:
+Dimensione di cache L2 di u processatore:
+Dimensione di cache L3 di u processatore:
+Funzioni di u processatore:
+Infurmazione HDD:
+Nome di l'unità:
+Mudellu di vittura:
+Venditore di unità:
+Velocità di trasmissione:
+Dimensione di l'unità:
+Seriale di unità:
+ID Drive:
+Unità di partizione:
+Partizione ID:
+Sistema di file di partizione:
+Dimensione di partizione:
+Partizione aduprata:
+Infurmazione RAM:
+RAM senza:
+RAM totale:
+RAM aduprata:
+Infurmazione GPU:
+Nome GPU:
+Driver GPU:
+Versione GPU:
+GPU: Una o più di e carte grafiche ùn sò micca state sonde. Mustrà infurmazione quantunque ...
+>> Benvenutu! Questa hè a prima volta chì entri in debug è chat remoti. Aduprate "/ register <name>" per registrà.
+U dispositivu esiste dighjà.
+Nisun dispositivu tali.
+Imposta u nome d'utilizatore di u dispositivu
+Site digià registratu.
+Salute, {0}!
+Stampa u cuntenutu di u fugliale per cunsulà
+Or, passate "listcities" à questu cumandamentu.
+L'entrata esiste dighjà.
+Imballa a pruduzzioni di a cunsola
+U cumandimu ùn hè micca avvolgibile. Questi cumandamenti sò avvolgibili:
+Estrae un archiviu ZIP
+Crea un archiviu ZIP
+Custruitu in {0}
+Errore durante u scaricamentu di i dati di debug
+Ci hè un errore durante u scaricamentu di i dati di debug. Verificate a vostra cunnessione internet.
+Fiascu à finalizà u mod {0}: {1}
+Elenca tutti l'eventi sparati
+Directory attuale
+Imposta u repertoriu attuale di u shell. Scrivite un percorsu assolutu à qualsiasi repertoriu esistente.
+Wrap list outputs
+Imballa i risultati di a lista s'ellu pare troppu longu per a geometria attuale di a console.
+Ping!
+{0} vi hà fattu un ping.
+Salvà u Tema in u Repertoriu Attuale cum'è ...
+Salvà u Tema in Un altru Directory cum'è ...
+Specificà u nome di u tema:
+L'utilizatore {0} hè statu aghjuntu à a lista "{1}".
+L'utilizatore {0} hè statu cacciatu da a lista "{1}".
+Modu invalidu {0}
+L'utilizatore esiste dighjà
+Caricate u Tema Da ...
+Caricate u Tema Da i Temi Prerestruiti ...
+Specificà u nome di u schedariu di tema senza l'estensione .json:
+Apre un archiviu ZIP
+Esce da u shell ZIP
+Elenca tutti i fugliali in l'archiviu
+Estrae un fugliale in un repertoriu specificatu o un repertoriu attuale
+Cambia l'annuariu d'archiviu
+U cumandamentu di cunchiglia ZIP specificatu ùn hè micca truvatu.
+U Directory {0} ùn esiste micca
+L'archiviu {0} ùn esiste micca
+Conti di Posizioni Max
+Quante pusizioni sò illuminate prima di calà?
+Attiva 255 supportu di culore per Lighter.
+Attiva u veru supportu di culore per Lighter.
+Culore d'entrata à a lista
+Culore di valore d'elencu
+Cunnette à un servitore SSH per eseguisce un cumandamentu.
+Questa sezzione elenca i paràmetri di screensaver per
+Specificatore di culore invalidu. Assicuratevi chì sia nantu à u formatu currettu, chì significa un numeru da 0-255 se utilizate 255 culori o una sequenza VT se utilizate u culore veru cumu:
+Errore in u test shell: {0}
+Imposta una variabile per un valore in un script
+Un prompt di segnalazione di bug.
+Grazie per avè arricatu un bigliettu per noi! Sceglite chì tipu di dumanda avete.
+Un prublema
+Una dumanda di funziunalità
+Una dumanda
+Duvete specificà una caratteristica.
+Fate una dumanda, scrivite a vostra idea, o signalate un prublema.
+Duvete scrive a vostra dumanda.
+Ci hè statu un errore in u shell FTP:
+Errore di shell FTP scunnisciutu:
+Ci hè statu un errore in u cunchju SFTP:
+Errore di shell SFTP scunnisciutu:
+Mostra a bandera SSH
+Mostra a bandera di u servitore SSH à a cunnessione.
+Cumu vulete autentificà?
+Schedariu di chjave privata
+Codice
+Intrite a frasa d'accessu per a chjave {0}:
+Intrite u locu di a chjave privata per {0}. Scrivi "q" per finisce di aghjunghje e chjave:
+Neutralizatu un percorsu inesistente.
+U schedariu chjave {0} ùn esiste micca.
+Errore pruvendu à aghjunghje a chjave privata:
+Pulsà "t" per cambià in modu di culore 255.
+Pulsà "t" per cambià à u veru modu di culore.
+Questa sezzione permette di sceglie u tipu di culore chì vulete cambià.
+Sembra chì ùn avete micca un utilizatore eccettu root. Questu hè male. Vi guideremu cumu creà unu.
+Scrivite u vostru nome d'utilizatore.
+Duvete scrive u vostru nome d'utilizatore.
+Scrive a vostra chjave.
+Duvete scrive a vostra password.
+Sceglite u tipu di contu.
+Amministratore: Stu tipu di contu hà u più putere in u kernel, chì vi permette di aduprà prugrammi di gestione di u sistema.
+Utente Normale: Stu tipu di contu hè leggermente più ristrettu di l'amministratori.
+Complimenti! Avete fattu un novu contu! Per finisce questu, cunnettate cum'è u vostru novu contu.
+Cunsultate u manuale di screensaver o u còdice fonte per infurmazione.
+mod: Nisuna mods rilevata.
+Cumandamenti generali:
+Mod cumanda:
+Alias ​​cumanda:
+Modu di Mantenimentu
+Circà Direttori
+Gruppu di chjassi separati da i dui punti. Funziona listessu chè PATH. Scrivite un percorsu sanu à un cartulare o un nome di cartulare. Quandu avete finitu, scrivite "q". Scrivi un segnu menu accantu à u percorsu per caccià un annuariu esistente.
+Nisun cumandamentu mod.
+Nisun cumandamentu alias.
+U valore di culore hè fora di l'intervalu di 0-255.
+U cumandimu avvolgibile ùn si trova.
+Dumanda una parolla in una linea specificata o in tutte e linee
+{0} di {1} scaricatu.
+{0} di {1} caricatu.
+Stampa una stringa per cunsulà cù tippu di culore è stampa di linea
+Stampa una stringa per cunsulà cù tippu di culore è stampa di linea cun supportu di furmatu
+Stampa una stringa per u debugger
+Stampa una stringa per u debugger cù supportu di furmatu
+Testa a facilità di errore di u kernel
+Pruvede a facilità di errore di u kernel cun supportu di furmatu
+Prove traduce una stringa chì esiste in risorse in una lingua specifica
+Stampa una stringa per cunsulà è analizza i segnaposti trovati
+Pruvede a facilità di spressione regulare
+Cifra una stringa aduprendu
+Accumincia tutti i mods
+Ferma tutti i mods
+Attiva o disabilita u debug
+Attiva o disabilita u debug remotu
+Pruvede a sequenza VT per 255 culori
+Pruvede a sequenza VT per u culore veru
+Invia una notificazione per pruvà u ricevitore
+Prove di data di stampa cù calendarii diversi
+Elenca tutte e pagine di codici supportate
+Chì variabili di compilatore sò attivate in l'applicazione?
+Prove chì alzanu l'avvenimentu specificu
+Prove chì sonda u hardware
+Pruvede u cullettore di i rifiuti
+Esce da u shell di prova è avvia u kernel
+Esce da u shell di prova è spegne u kernel
+Salva u cartulare attuale in u schedariu di cunfigurazione di u kernel
+Pruvate u scrittore di a lista cù a stringa è a string array
+Testa u scrittore di a lista cù u numeru interu è u numeru interu
+Pruvate u scrittore di lista cù u char è char array
+Lista di stringe nurmale:
+Lista di stringhe di matrici:
+Lista intera nurmale:
+Lista intera di matrici:
+Lista nurmale di char:
+Lista di matrici char:
+Attivà RPC
+Portu RPC
+S'ellu o micca per attivà RPC.
+Scrivite un portu RPC. Deve esse numericu, è ùn deve esse dighjà adupratu. Altrimenti, RPC ùn puderà micca apre u portu.
+Ùn principia micca RPC perchè hè disattivatu.
+Elenchi supportati culture
+Ricerche per stringa specificata in u fugliale furnitu aduprendu espressioni regulare
+Vede se pudete appughjà una chjave à tempu
+L'utente ùn hà micca furnitu alcun input in una manera puntuale.
+Difficultà invalida
+Caratteru micca pressatu à tempu.
+Avete pressatu u caratteru ghjustu!
+Avete pressatu u caratteru sbagliatu.
+Press ESC per surtite.
+Ottiene l'infurmazioni di data è ora
+Millisecondi:
+Secondi:
+Minuti:
+Stonde:
+Ghjorni:
+Mesi:
+Annu:
+Ghjornu di l'annu:
+Ghjornu di a Settimana:
+Binariu:
+Ora Locale:
+Tempu Universale:
+Tempu Unix:
+Impussibule di analizà l'infurmazioni di data per
+Assicuratevi chì u furmatu sia currettu.
+Data:
+Tempu:
+Imposta permessi di fugliale. Questu hè supportatu solu in i servitori FTP chì gestiscenu Unix.
+Imposta u tippu per sta sessione
+Duvete cunnette vi à u servitore prima di eseguisce l'operazione di u sistema di fugliali.
+Fallimentu à definisce i permessi di {0} à {1}.
+Autorizzazioni stabilite cù successu per u fugliale
+Tipu di dati impostatu à ASCII!
+Tipu di dati impostatu à Binariu!
+Tipu di dati invalidu.
+Attenti chì a maiò parte di i fugliali ùn scaricanu micca o carichi currettamente aduprendu stu modu, dunque vi cunsiglemu vivamente di aduprà u modu Binariu in a maiò parte di e situazioni.
+Pruvendu à invià un cumandamentu RPC mentre RPC ùn hà micca iniziatu.
+Ritardu Fade Out in Millisecondi
+Passi Max Fade
+Quante milliseconde da aspettà prima di smachjà u testu?
+Quanti passi di fade da fà?
+Sonda Piena
+Sì vera, sonda tuttu u hardware; altrimenti, pruvarà solu u hardware necessariu.
+Fallimentu à caccià u screensaver {0} da a cunfigurazione.
+Uttene impostazioni di risparmiu persunalizate
+Piazzà i paràmetri di risparmiu persunalizati
+Impostazioni stabilite cù successu per u screensaver
+Impussibule di definisce un paràmetru per u screensaver
+Questa sezzione permette di gestisce a creazione di password di root.
+Apre un cunchju RSS per leghje i feed
+Esce da u shell RSS è torna à u kernel
+Cambia u ligame di alimentazione
+Elenca tutti i feed
+Leghje un alimentu in un navigatore web
+U cumandariu di cunchiglia RSS specificatu ùn hè micca truvatu.
+Flussu RSS2 invalidu.
+Flussu RSS1 invalidu.
+Feed Atom invalidu.
+Inserite una URL di alimentazione RSS:
+Tipu di alimentazione RSS invalidu.
+Errore di cunchiglia scunnisciutu:
+Ottiene l'infurmazioni nantu à l'articulu
+U numeru d'articulu ùn puderia micca esse più grande di l'articuli dispunibili.
+Titulu:
+Ligame:
+Ottiene l'infurmazioni di alimentazione
+Descrizione:
+Tipu d'alimentazione:
+Numaru d'articuli:
+L'articulu ùn hà micca un ligame!
+Impussibule di fà una lista di l'entrate di u sistema di fugliali per l'annuariu
+Modu di sorte di sistema di fugliali
+Direzzione di sorte di sistema di fugliali
+Cuntrolla cume i file saranu urdinati.
+Cuntrolla a direzzione di l'ordinamentu di u sistema di file sia ascendente sia discendente.
+Ordine crescente
+Ordine discendente
+Nome interu
+Dimensione di u fugliale
+Tempu di creazione
+Ultima ora di scrittura
+Ultimu tempu d'accessu
+Scrivite dinò Ritardu in Millisecondi
+Quantu millisecondi da aspettà prima di scrive torna u testu?
+Scrivite qualsiasi testu chì vulete esse mostratu. Longer hè megliu.
+Velocità minima di scrittura in WPM
+Velocità massima di scrittura in WPM
+Probabilità di typo in percentuale
+Fallimentu à salvà l'annuariu attuale: {0}
+Salviette per cambià di direzzione
+Attiva 255 supportu di culore per asciugà.
+Attiva u veru supportu di culore per Wipe.
+Quante salviette da fà prima di cambià di direzzione à casu?
+Stage finitu in
+Inizializazione interna finita in
+U schedariu riferitu {0} ùn hè micca statu truvatu. Questa mod puderia micca funzionà currettamente senza stu fugliale.
+Principià mod
+Ottiene informazioni mod
+Nome di cumanda:
+Definizione di cumandamentu:
+Tipu di cumandamentu:
+Cumandu strettu?
+Versione Mod:
+Mod {0} micca truvatu.
+Cultura di
+Chì variante di {0} hè aduprata per cambià u nome di u mese, u calendariu, ecc?
+L'editore di testu ùn hà ancu apertu un flussu di fugliale.
+String rimpiazzatu.
+Unu o i dui numeri ùn sò micca numerichi.
+Parolla sguassata.
+Carattere eliminatu.
+Impostazioni di u Sistema di File ...
+Questa sezzione elenca i paràmetri di u sistema di fugliali.
+Benvenutu in Impostazioni!
+Errore durante l'esecuzione di u cumandimu SSH
+Errore nantu à u cunchju SSH
+- infurmazione App
+Attiva 255 supportu di culore per BouncingText.
+Attiva u veru sustegnu di culore per BouncingText.
+Pruvede u scrittore di dizziunariu cù a stringa è a string array
+Pruvede u scrittore di dizziunariu cù u char è char array
+Prova u scrittore di dizziunariu cù u numeru interu è u numeru interu
+Dizziunariu nurmale di stringa:
+Dizionario di stringa di matrici:
+Dizziunariu interu nurmale:
+Dizionario interu di matrici:
+Dizziunariu nurmale char:
+Array dizziunariu char:
+Benvenutu à Test Shell!
+Mostra u prugressu nantu à l'operazioni di u sistema di fugliali
+Mostra ciò chì u fugliale hè trattatu durante l'operazioni di u sistema di fugliali
+induve serà HardwareType
+O u tipu di hardware {0} ùn hè micca pruvatu, o ùn hè micca validu.
+U tippu di hardware {0} ùn hè ancu pruvatu. Sè sicuru chì hè pruvatu, rilancià u kernel cù u debugging attivatu.
+Partizioni micca analizate per elencà.
+Modu Hacker
+S'ellu hè attivatu, a cunsula verde serà attivata.
+Stampa un separatore
+Stampa un separatore cù supportu di furmatu
+Stampa un separatore cù supportu di culore
+Stampa un separatore cù supportu di culore è di furmatu
+Sempre centratu
+Attiva 255 supportu di culore per Marquee.
+Attiva u veru sustegnu di culore per Marquee.
+Scrivite qualsiasi testu chì vulete esse mostratu.
+Sia chì u testu mustratu nantu à u tendone sia sempre centratu.
+'q' per abbandunà.
+Argumentu {0} micca truvatu per injectà.
+Argumentu di linea di cummanda {0} micca truvatu.
+Annulla tutti i paràmetri
+U Screensaver hà cunnisciutu un errore mentre mostrava: {0}. Pulsà qualsiasi chjave per surtite.
+Preview ...
+Eccu cumu serà u vostru tema:
+Comandi avvolgibili:
+Mod {0} hà un cumandamentu invalidu. L'analisi di u Mod hà fiascatu. Verificate u codice fonte.
+Parti Mod:

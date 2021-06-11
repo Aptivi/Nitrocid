@@ -739,3 +739,361 @@ Kucheleweshwa kwa Milisekunde
 Ni millisecond ngapi za kusubiri kabla ya kuandika ijayo?
 Inakuwezesha kutumia seva ya SSH FTP
 Hakuna msaada kwa amri "{0}".
+Mlolongo batili wa VT wa rangi ya RGB.
+Rangi ya Baa ya Sekunde
+Rangi ya Baa ya Dakika
+Rangi ya Baa ya Masaa
+Rangi ya Habari
+Tiketi kubadilisha rangi
+Inamsha msaada wa rangi 255 kwa ProgressClock.
+Inamsha msaada wa kweli wa rangi kwa ProgressClock.
+Rangi ya mwambaa wa maendeleo wa sekunde. Inaweza kuwa 1-16, 1-255, au "1-255;1-255;1-255".
+Rangi ya mwambaa wa maendeleo ya dakika. Inaweza kuwa 1-16, 1-255, au "1-255;1-255;1-255".
+Rangi ya mwambaa wa mwendo wa masaa. Inaweza kuwa 1-16, 1-255, au "1-255;1-255;1-255".
+Rangi ya habari ya tarehe. Inaweza kuwa 1-16, 1-255, au "1-255;1-255;1-255".
+Ikiwa baiskeli ya rangi imewezeshwa, ni kupe ngapi kabla ya kubadilisha rangi kwenye ProgressClock? Jibu 1 = sekunde 0.5
+ProgressClock itachagua rangi bila mpangilio ikiwa imewezeshwa. Vinginevyo, tumia rangi kutoka kwa usanidi.
+Hufanya mandhari mpya
+Kutengeneza mandhari mpya "{0}".
+Hifadhi Mandhari kwenye Saraka ya Sasa
+Hifadhi Mandhari kwenye Saraka Nyingine ...
+Chagua rangi ukitumia vitufe vya "<-" na "->". Bonyeza ENTER ili uache. Bonyeza "i" kuingiza nambari ya rangi kwa mikono.
+Chagua rangi ukitumia vitufe vya "<-" na "->". Tumia funguo za juu na mshale chini kuchagua kati ya safu za rangi. Bonyeza ENTER ili uache. Bonyeza "i" kuingiza nambari ya rangi kwa mikono.
+Karibu kwenye kiini! - Toleo la {0}
+Rangi ya onyo
+Rangi ya chaguo
+Ingiza nambari ya rangi kutoka 0 hadi 255:
+Tumia "hwinfo" kwa habari iliyopanuliwa juu ya vifaa.
+Inachapisha habari ya vifaa
+Habari ya CPU:
+Jina la wasindikaji:
+Kasi ya usindikaji:
+Vipindi vya wasindikaji:
+Msindikaji rev:
+Usindikaji topolojia:
+Aina ya wasindikaji:
+Hatua ya usindikaji:
+Programu ya BogoMips:
+Ukubwa wa kashe ya processor L2:
+Ukubwa wa kashe ya processor L3:
+Vipengele vya processor:
+Maelezo ya HDD:
+Jina la Hifadhi:
+Mfano wa Hifadhi:
+Mwuzaji wa Hifadhi:
+Kasi ya kuendesha:
+Ukubwa wa Hifadhi:
+Gari mfululizo:
+Kitambulisho cha Hifadhi:
+Hesabu ya kizigeu cha Hifadhi:
+Kitambulisho cha kizigeu:
+Mfumo wa faili wa kizigeu:
+Ukubwa wa kizigeu:
+Kitengo kilichotumiwa:
+Habari ya RAM:
+RAM bila malipo:
+Jumla ya RAM:
+RAM imetumika:
+Maelezo ya GPU:
+Jina la GPU:
+Dereva wa GPU:
+Toleo la GPU:
+GPU: Kadi moja au zaidi ya picha imeshindwa kuchunguzwa. Inaonyesha habari hata hivyo ...
+>> Karibu! Hii ni mara yako ya kwanza kuingia utatuzi wa mbali na kupiga gumzo. Tumia "/ kujiandikisha <name>" kujiandikisha.
+Kifaa tayari kipo.
+Hakuna kifaa kama hicho.
+Inaweka jina la mtumiaji wa kifaa
+Umesajiliwa tayari.
+Halo, {0}!
+Kuchapisha yaliyomo kwenye faili ili kufariji
+Au, pitisha "listcities" kwa amri hii.
+Ingizo tayari lipo.
+Hufunga pato la kiweko
+Amri haifungiki. Amri hizi zinafunikwa:
+Inatoa kumbukumbu ya ZIP
+Inaunda kumbukumbu ya ZIP
+Ilijengwa katika {0}
+Hitilafu wakati wa kupakua data ya utatuzi
+Kuna hitilafu wakati wa kupakua data ya utatuzi. Angalia muunganisho wako wa mtandao.
+Imeshindwa kukamilisha mod {0}: {1}
+Orodha zote za matukio yaliyotekelezwa
+Saraka ya Sasa
+Inaweka saraka ya sasa ya ganda. Andika njia kamili kwa saraka yoyote iliyopo.
+Punga matokeo ya orodha
+Hufunga matokeo ya orodha ikiwa inaonekana kuwa ndefu sana kwa jiometri ya kiweko cha sasa.
+Ping!
+{0} alikuchapa.
+Hifadhi Mandhari kwenye Saraka ya Sasa kama ...
+Hifadhi Mandhari kwenye Saraka Nyingine kama ...
+Bainisha jina la mandhari:
+Mtumiaji {0} ameongezwa kwenye orodha ya "{1}".
+Mtumiaji {0} ameondolewa kwenye orodha ya "{1}".
+Hali batili {0}
+Mtumiaji tayari yupo
+Pakia Mada Kutoka ...
+Pakia Mada kutoka kwa Mada zilizojengwa awali ...
+Bainisha jina la faili ya mandhari bila ugani wa .json:
+Hufungua kumbukumbu ya ZIP
+Toka kwenye ganda la ZIP
+Orodhesha faili zote zilizo ndani ya kumbukumbu
+Inatoa faili kwa saraka maalum au saraka ya sasa
+Inabadilisha saraka ya kumbukumbu
+Amri maalum ya ganda la ZIP haipatikani.
+Saraka {0} haipo
+Saraka ya kumbukumbu {0} haipo
+Nafasi za Max Hesabu
+Nafasi ngapi zinawashwa kabla ya kufifia?
+Inamsha msaada wa rangi 255 kwa Nyepesi.
+Inamsha msaada wa kweli wa rangi kwa Nyepesi.
+Rangi ya kuingia kwenye orodha
+Rangi ya thamani ya orodha
+Inaunganisha kwa seva ya SSH kutekeleza amri.
+Sehemu hii inaorodhesha mipangilio ya Bongo
+Kibainishi batili cha rangi. Hakikisha kuwa iko kwenye muundo sahihi, ambayo inamaanisha nambari kutoka 0-255 ikiwa unatumia rangi 255 au mlolongo wa VT ikiwa unatumia rangi ya kweli kama ifuatavyo:
+Hitilafu katika ganda la jaribio: {0}
+Inaweka kutofautisha kwa thamani katika hati
+Kidokezo cha kuripoti mdudu.
+Asante kwa kuongeza tiketi kwetu! Chagua aina gani ya ombi unayo.
+Tatizo
+Ombi la huduma
+Swali
+Lazima ueleze kipengee.
+Uliza swali, weka wazo lako, au ripoti ripoti.
+Lazima uandike ombi lako.
+Kulikuwa na hitilafu kwenye ganda la FTP:
+Hitilafu isiyojulikana ya ganda la FTP:
+Kulikuwa na hitilafu kwenye ganda la SFTP:
+Hitilafu isiyojulikana ya ganda la SFTP:
+Onyesha bango la SSH
+Inaonyesha bendera ya seva ya SSH juu ya unganisho.
+Je! Unataka kuthibitishaje?
+Faili ya ufunguo wa kibinafsi
+Nenosiri
+Ingiza kaulisiri ya ufunguo {0}:
+Ingiza eneo la ufunguo wa faragha wa {0}. Andika "q" ili kumaliza kuongeza vitufe:
+Ilirekebisha njia ambayo haipo.
+Faili muhimu {0} haipo.
+Hitilafu wakati wa kujaribu kuongeza kitufe cha faragha:
+Bonyeza "t" kubadili hali ya rangi 255.
+Bonyeza "t" kubadili hali halisi ya rangi.
+Sehemu hii inakuwezesha kuchagua aina gani ya rangi ambayo unataka kubadilisha.
+Inaonekana hauna mtumiaji isipokuwa mzizi. Hii ni mbaya. Tutakuongoza jinsi ya kuunda moja.
+Andika jina lako la mtumiaji.
+Lazima uandike jina lako la mtumiaji.
+Andika nenosiri lako.
+Lazima uandike nywila yako.
+Chagua aina ya akaunti.
+Msimamizi: Aina hii ya akaunti ina nguvu zaidi katika kernel, hukuruhusu utumie programu za usimamizi wa mfumo.
+Mtumiaji wa Kawaida: Aina hii ya akaunti imezuiliwa kidogo kuliko wasimamizi.
+Hongera! Umeunda akaunti mpya! Ili kumaliza hii, ingia kama akaunti yako mpya.
+Wasiliana na mwongozo wa kiwambo cha skrini au nambari ya chanzo kwa habari.
+mod: Hakuna mods zilizogunduliwa.
+Amri za jumla:
+Amri za Mod:
+Alias ​​amri:
+Njia ya Matengenezo
+Saraka za Kutafuta
+Kikundi cha njia zilizotengwa na koloni. Inafanya kazi sawa na PATH. Andika njia kamili kwa folda au jina la folda. Unapomaliza, andika "q". Andika alama ya kuondoa karibu na njia ya kuondoa saraka iliyopo.
+Hakuna amri za mod.
+Hakuna maagizo ya jina.
+Thamani ya rangi iko nje ya kiwango cha 0-255.
+Amri inayokusudiwa haipatikani.
+Maswali ya neno katika laini maalum au mistari yote
+{0} kati ya {1} imepakuliwa.
+{0} kati ya {1} zimepakiwa.
+Chapa kamba ili kutumia aina ya rangi na uchapishaji wa laini
+Chapa kamba ili kutumia aina ya rangi na chapisho la laini na msaada wa fomati
+Chapa kamba kwa utatuzi
+Chapa kamba kwa utatuzi na msaada wa fomati
+Hujaribu kituo cha hitilafu ya kernel
+Hujaribu kituo cha hitilafu ya kernel na msaada wa muundo
+Inajaribu kutafsiri kamba iliyopo katika rasilimali kwa lugha maalum
+Chapa kamba ili kufariji na kuchanganua vishika nafasi vilivyopatikana
+Hujaribu kituo cha usemi wa kawaida
+Husimba fimbo kwa kutumia
+Inaanza mods zote
+Inasimama mods zote
+Huwasha au kulemaza utatuaji
+Huwasha au kulemaza utatuaji wa mbali
+Hujaribu mlolongo wa VT kwa rangi 255
+Hujaribu mlolongo wa VT kwa rangi ya kweli
+Inatuma arifa ili kujaribu mpokeaji
+Tarehe za uchapishaji wa majaribio kwa kutumia kalenda tofauti
+Orodha zote codepages mkono
+Ni vigeuzi gani vya mkusanyaji vinavyowezeshwa katika programu?
+Vipimo vinavyoinua hafla maalum
+Vipimo vinavyochunguza vifaa
+Hujaribu mtoza takataka
+Inatoka kwenye ganda la mtihani na kuanza punje
+Inatoka kwenye ganda la jaribio na inazima kiini
+Huhifadhi saraka ya sasa kwenye faili ya usanidi wa kernel
+Hujaribu mwandishi wa orodha na safu na safu ya kamba
+Hujaribu mwandishi wa orodha na safu kamili na nambari
+Hujaribu mwandishi wa orodha na safu ya char na char
+Orodha ya kamba ya kawaida:
+Orodha ya kamba ya safu:
+Orodha ya jumla ya nambari:
+Orodha ya nambari kamili:
+Orodha ya kawaida ya char:
+Orodha ya safu ya safu:
+Washa RPC
+Bandari ya RPC
+Iwe au uwezeshe RPC.
+Andika bandari ya RPC. Lazima iwe nambari, na haipaswi kutumiwa tayari. Vinginevyo, RPC itashindwa kufungua bandari.
+Haianzishi RPC kwa sababu imezimwa.
+Orodha ziliunga mkono tamaduni
+Utafutaji wa mfuatano uliobainishwa katika faili iliyotolewa ukitumia misemo ya kawaida
+Angalia ikiwa unaweza kubonyeza kitufe kwa wakati
+Mtumiaji hakutoa mchango wowote kwa wakati unaofaa.
+Ugumu batili
+Tabia haikubanwa kwa wakati.
+Umesisitiza mhusika sahihi!
+Umebonyeza tabia isiyo sahihi.
+Bonyeza ESC ili utoke.
+Inapata habari ya tarehe na wakati
+Milisekunde:
+Sekunde:
+Dakika:
+Masaa:
+Siku:
+Miezi:
+Mwaka:
+Siku ya Mwaka:
+Siku ya Wiki:
+Binary:
+Saa za Mitaa:
+Saa za Ulimwengu:
+Wakati wa Unix:
+Imeshindwa kuchanganua habari ya tarehe ya
+Hakikisha muundo huo ni sahihi.
+Tarehe:
+Wakati:
+Inaweka ruhusa za faili. Hii inasaidiwa tu kwenye seva za FTP zinazoendesha Unix.
+Inaweka aina ya kikao hiki
+Lazima uunganishe kwenye seva kabla ya kufanya shughuli za mfumo wa faili.
+Imeshindwa kuweka ruhusa za {0} kuwa {1}.
+Ruhusa zimewekwa kwa mafanikio kwa faili
+Aina ya data imewekwa ASCII!
+Aina ya data imewekwa kwa Binary!
+Aina batili ya data.
+Jihadharini kuwa faili nyingi hazitapakua au kupakia vizuri kutumia hali hii, kwa hivyo tunapendekeza utumie hali ya Kibinadamu katika hali nyingi.
+Kujaribu kutuma amri ya RPC wakati RPC hakuanza.
+Fifia Kuchelewa kwa Milisekunde
+Hatua za Max Fade
+Ni milisekunde ngapi kusubiri kabla ya kumaliza maandishi?
+Ni hatua ngapi za kufifia za kufanya?
+Probe Kamili
+Ikiwa ni kweli, huchunguza vifaa vyote; vinginevyo, itachunguza tu vifaa vinavyohitajika.
+Imeshindwa kuondoa kiwambo cha skrini {0} kutoka kwa usanidi.
+Inapata mipangilio ya kiokoa desturi
+Inaweka mipangilio ya kiokoa desturi
+Mipangilio imewekwa kwa mafanikio kwa kiokoa skrini
+Imeshindwa kuweka mipangilio ya kiokoa skrini
+Sehemu hii inakuwezesha kudhibiti uundaji wa nywila ya mizizi.
+Hufungua ganda la RSS kusoma milisho
+Inatoka kwenye ganda la RSS na kurudi kwenye kernel
+Inabadilisha kiunga cha kulisha
+Orodha zote zinalisha
+Inasoma malisho kwenye kivinjari cha wavuti
+Amri maalum ya ganda la RSS haipatikani.
+Mlisho batili wa RSS2.
+Mlisho batili wa RSS1.
+Mlisho batili wa Atomu.
+Ingiza URL ya kulisha ya RSS:
+Aina batili ya mlisho wa RSS.
+Hitilafu isiyojulikana ya ganda:
+Inapata maelezo ya kifungu
+Nambari ya kifungu haiwezi kuwa kubwa kuliko nakala zilizopo.
+Kichwa:
+Kiungo:
+Inapata maelezo ya kulisha
+Maelezo:
+Aina ya kulisha:
+Idadi ya nakala:
+Kifungu hakina kiunga!
+Imeshindwa kutengeneza orodha ya maingizo ya mfumo wa faili kwa saraka
+Hali ya mfumo wa faili
+Mfumo wa mfumo wa faili
+Inadhibiti jinsi faili zitakavyopangwa.
+Inadhibiti mwelekeo wa mfumo wa faili kuchagua ikiwa inapanda au inashuka.
+Kupanda kwa utaratibu
+Utaratibu wa kushuka
+Jina kamili
+Ukubwa wa faili
+Wakati wa uumbaji
+Wakati wa mwisho wa kuandika
+Wakati wa kufikia mwisho
+Andika tena Kuchelewesha kwa Milisekunde
+Ni millisecond ngapi kusubiri kabla ya kuandika maandishi tena?
+Andika maandishi yoyote unayotaka kuonyeshwa. Kwa muda mrefu ni bora zaidi.
+Kiwango cha chini cha kuandika katika WPM
+Kiwango cha juu cha kuandika katika WPM
+Uwezekano wa typo kwa asilimia
+Imeshindwa kuhifadhi saraka ya sasa: {0}
+Futa kubadilisha mwelekeo
+Inamsha msaada wa rangi 255 kwa Futa.
+Inamsha msaada wa rangi ya kweli kwa Futa.
+Je! Unafuta vipi kabla ya kubadilisha mwelekeo bila mpangilio?
+Hatua imekamilika
+Uanzishaji wa ndani umemalizika kwa
+Faili inayorejelewa {0} haipatikani. Mod hii inaweza isifanye kazi vizuri bila faili hii.
+Kuanzia mod
+Inapata habari ya mod
+Jina la amri:
+Ufafanuzi wa Amri:
+Aina ya amri:
+Amri kali?
+Toleo la Mod:
+Mod {0} haipatikani.
+Utamaduni wa
+Ni aina gani ya {0} inayotumiwa kubadilisha majina ya mwezi, kalenda, nk?
+Kihariri cha maandishi hakijafungua mtiririko wa faili bado.
+Kamba imebadilishwa.
+Nambari moja au zote mbili sio nambari.
+Neno limefutwa.
+Tabia imefutwa.
+Mipangilio ya Mfumo wa Faili ...
+Sehemu hii inaorodhesha mipangilio ya mfumo wa faili.
+Karibu kwenye Mipangilio!
+Hitilafu wakati wa kutekeleza amri ya SSH
+Hitilafu kwenye ganda la SSH
+- Habari ya programu
+Inamsha msaada wa rangi 255 kwa BouncingText.
+Inamsha msaada wa rangi ya kweli kwa BouncingText.
+Hujaribu mwandishi wa kamusi na safu ya kamba na kamba
+Hujaribu mwandishi wa kamusi na safu ya char na char
+Hujaribu mwandishi wa kamusi na safu kamili na nambari
+Kamusi ya kawaida ya kamba:
+Kamusi ya kamba ya safu:
+Kamusi ya kawaida ya nambari:
+Kamusi ya nambari kamili:
+Kamusi ya kawaida ya char:
+Array char kamusi:
+Karibu kwenye Joka la Mtihani!
+Onyesha maendeleo kwenye shughuli za mfumo wa faili
+Inaonyesha faili gani inachakatwa wakati wa shughuli za mfumo wa faili
+ambapo HardwareType itakuwa
+Aina ya maunzi {0} haijachunguzwa, au sio halali.
+Aina ya maunzi {0} bado haijachunguzwa. Ikiwa una hakika kuwa imechunguzwa, anzisha kiini upya na utatuaji umewezeshwa.
+Sehemu ambazo hazijachanganuliwa kuorodheshwa.
+Njia ya Hacker
+Ikiwa imewezeshwa, dashibodi ya kijani itawezeshwa.
+Kuchapisha kitenganishi
+Chapa kitenganishi na msaada wa fomati
+Printa kitenganishi na msaada wa rangi
+Chapa kitenganishi na msaada wa rangi na muundo
+Inazingatia kila wakati
+Inamsha msaada wa rangi 255 kwa Marquee.
+Inamsha msaada wa kweli wa rangi kwa Marquee.
+Andika maandishi yoyote unayotaka kuonyeshwa.
+Ikiwa maandishi yaliyoonyeshwa kwenye jumba huwekwa katikati kila wakati.
+'q' kuacha.
+Hoja {0} haipatikani kuingiza.
+Hoja ya mstari wa amri {0} haipatikani.
+Hufuta mipangilio yote
+Screensaver ilipata hitilafu wakati wa kuonyesha: {0}. Bonyeza kitufe chochote ili utoke.
+Chungulia kwanza ...
+Hivi ndivyo mada yako itaonekana kama:
+Amri zinazoweza kukumbukwa:
+Mod {0} ina amri batili. Uchanganuzi wa Mod umeshindwa. Pitia nambari ya chanzo.
+Sehemu za mod:

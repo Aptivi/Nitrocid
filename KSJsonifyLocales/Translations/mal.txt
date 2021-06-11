@@ -739,3 +739,361 @@ Kelewatan dalam Milisaat
 Berapa milisaat yang perlu ditunggu sebelum membuat penulisan seterusnya?
 Membolehkan anda menggunakan pelayan SSH FTP
 Tiada bantuan untuk arahan "{0}".
+Urutan VT tidak sah untuk warna RGB.
+Warna Bar Kedua
+Warna Bar Minit
+Warna Bar Jam
+Warna Maklumat
+Kutu untuk menukar warna
+Mengaktifkan sokongan warna 255 untuk ProgressClock.
+Mengaktifkan sokongan warna sebenar untuk ProgressClock.
+Warna bar kemajuan saat. Ini boleh menjadi 1-16, 1-255, atau "1-255;1-255;1-255".
+Warna bar kemajuan minit. Ini boleh menjadi 1-16, 1-255, atau "1-255;1-255;1-255".
+Warna bar kemajuan jam. Ini boleh menjadi 1-16, 1-255, atau "1-255;1-255;1-255".
+Warna maklumat tarikh. Ini boleh menjadi 1-16, 1-255, atau "1-255;1-255;1-255".
+Sekiranya kitaran warna diaktifkan, berapa banyak tanda sebelum menukar warna di ProgressClock? 1 tandakan = 0.5 saat
+ProgressClock akan memilih warna rawak jika diaktifkan. Jika tidak, gunakan warna dari config.
+Menjadikan tema baru
+Membuat tema baru "{0}".
+Simpan Tema ke Direktori Semasa
+Simpan Tema ke Direktori Lain ...
+Pilih warna menggunakan kekunci "<-" dan "->". Tekan ENTER untuk berhenti. Tekan "i" untuk memasukkan nombor warna secara manual.
+Pilih warna menggunakan kekunci "<-" dan "->". Gunakan kekunci anak panah ke atas dan anak panah ke bawah untuk memilih antara julat warna. Tekan ENTER untuk berhenti. Tekan "i" untuk memasukkan nombor warna secara manual.
+Selamat datang ke kernel! - Versi {0}
+Warna amaran
+Warna pilihan
+Masukkan nombor warna dari 0 hingga 255:
+Gunakan "hwinfo" untuk maklumat lanjut mengenai perkakasan.
+Mencetak maklumat perkakasan
+Maklumat CPU:
+Nama pemproses:
+Kelajuan pemproses:
+Bit pemproses:
+Pemprosesan rev:
+Topologi pemproses:
+Jenis pemproses:
+Tonggak pemproses:
+Pemproses BogoMips:
+Saiz cache L2 pemproses:
+Saiz cache pemproses L3:
+Ciri pemproses:
+Maklumat HDD:
+Nama memandu:
+Model pemanduan:
+Penjual pemacu:
+Kelajuan memandu:
+Saiz pemanduan:
+Siri pemacu:
+ID Pemacu:
+Kira partition drive:
+ID partition:
+Sistem fail partition:
+Saiz partition:
+Partition yang digunakan:
+Maklumat RAM:
+RAM percuma:
+Jumlah RAM:
+RAM yang digunakan:
+Maklumat GPU:
+Nama GPU:
+Pemacu GPU:
+Versi GPU:
+GPU: Satu atau lebih kad grafik gagal disiasat. Bagaimanapun, menunjukkan maklumat ...
+>> Selamat Datang! Ini adalah kali pertama anda memasuki debug dan sembang jarak jauh. Gunakan "/ register <name>" untuk mendaftar.
+Peranti sudah ada.
+Tiada peranti sedemikian.
+Menetapkan nama pengguna peranti
+Anda sudah mendaftar.
+Hai, {0}!
+Mencetak kandungan fail untuk konsol
+Atau, hantarkan "listcities" ke arahan ini.
+Kemasukan sudah ada.
+Membungkus output konsol
+Perintah tidak boleh dibungkus. Perintah ini boleh dibungkus:
+Ekstrak arkib ZIP
+Membuat arkib ZIP
+Dibina dalam {0}
+Ralat semasa memuat turun data debug
+Terdapat ralat semasa memuat turun data debug. Periksa sambungan internet anda.
+Gagal menyelesaikan mod {0}: {1}
+Menyenaraikan semua acara yang dipecat
+Direktori Semasa
+Menetapkan direktori shell sekarang. Tulis jalan mutlak ke mana-mana direktori yang ada.
+Balut senarai output
+Membungkus output senarai jika kelihatan terlalu panjang untuk geometri konsol semasa.
+Ping!
+{0} ping anda.
+Simpan Tema ke Direktori Semasa sebagai ...
+Simpan Tema ke Direktori Lain sebagai ...
+Nyatakan nama tema:
+Pengguna {0} telah ditambahkan ke senarai "{1}".
+Pengguna {0} telah dikeluarkan dari senarai "{1}".
+Mod tidak sah {0}
+Pengguna sudah wujud
+Muat Tema Dari ...
+Muat Tema Dari Tema Buatan ...
+Tentukan nama fail tema tanpa pelanjutan .json:
+Membuka arkib ZIP
+Keluar dari shell ZIP
+Menyenaraikan semua fail di dalam arkib
+Ekstrak fail ke direktori tertentu atau direktori semasa
+Menukar direktori arkib
+Perintah shell ZIP yang ditentukan tidak dijumpai.
+Direktori {0} tidak wujud
+Direktori arkib {0} tidak wujud
+Kiraan Posisi Maks
+Berapa banyak kedudukan yang dinyalakan sebelum redup?
+Mengaktifkan sokongan warna 255 untuk Lighter.
+Mengaktifkan sokongan warna sebenar untuk Lighter.
+Senaraikan warna entri
+Menyenaraikan warna nilai
+Menyambung ke pelayan SSH untuk melaksanakan perintah.
+Bahagian ini menyenaraikan tetapan screensaver untuk
+Penentu warna tidak sah. Pastikan formatnya tepat, yang bermaksud angka dari 0-255 jika menggunakan 255 warna atau urutan VT jika menggunakan warna benar seperti berikut:
+Ralat pada shell ujian: {0}
+Menetapkan pemboleh ubah ke nilai dalam skrip
+Permintaan pelaporan pepijat.
+Terima kasih kerana menaikkan tiket kepada kami! Pilih jenis permintaan yang anda ada.
+Masalah
+Permintaan ciri
+Soalan
+Anda mesti menentukan ciri.
+Kemukakan soalan, catat idea anda, atau laporkan masalah.
+Anda mesti menulis permintaan anda.
+Terdapat ralat pada shell FTP:
+Ralat shell FTP tidak diketahui:
+Terdapat ralat pada shell SFTP:
+Ralat shell SFTP tidak diketahui:
+Tunjukkan sepanduk SSH
+Menunjukkan sepanduk pelayan SSH semasa sambungan.
+Bagaimana anda mahu mengesahkan?
+Fail kunci peribadi
+Kata Laluan
+Masukkan frasa laluan untuk kunci {0}:
+Masukkan lokasi kunci peribadi untuk {0}. Tulis "q" untuk menyelesaikan penambahan kunci:
+Meneutralkan jalan yang tidak wujud.
+Fail utama {0} tidak wujud.
+Ralat semasa menambahkan kunci peribadi:
+Tekan "t" untuk beralih ke mod warna 255.
+Tekan "t" untuk beralih ke mod warna sebenar.
+Bahagian ini membolehkan anda memilih jenis warna yang ingin anda ubah.
+Nampaknya anda tidak mempunyai pengguna kecuali root. Ini tidak baik. Kami akan membimbing anda cara membuatnya.
+Tulis nama pengguna anda.
+Anda mesti menulis nama pengguna anda.
+Tulis kata laluan anda.
+Anda mesti menulis kata laluan anda.
+Pilih jenis akaun.
+Pentadbir: Jenis akaun ini memiliki kekuatan paling banyak dalam kernel, yang membolehkan anda menggunakan program pengurusan sistem.
+Pengguna Biasa: Jenis akaun ini sedikit lebih terhad daripada pentadbir.
+Tahniah! Anda telah membuat akaun baru! Untuk menyelesaikannya, log masuk sebagai akaun baru anda.
+Rujuk manual screensaver atau kod sumber untuk maklumat.
+mod: Tidak ada mod yang dikesan.
+Perintah am:
+Perintah mod:
+Alias ​​memerintahkan:
+Mod penyelenggaraan
+Direktori Carian
+Kumpulan jalan yang dipisahkan oleh titik dua. Ia berfungsi sama seperti PATH. Tulis jalan penuh ke folder atau nama folder. Apabila anda selesai, tulis "q". Tulis tanda tolak di sebelah jalan untuk membuang direktori yang ada.
+Tiada arahan mod.
+Tiada arahan alias.
+Nilai warna berada di luar julat 0-255.
+Perintah yang boleh dibungkus tidak dijumpai.
+Pertanyaan perkataan dalam baris yang ditentukan atau semua baris
+{0} daripada {1} dimuat turun.
+{0} daripada {1} dimuat naik.
+Mencetak rentetan untuk konsol menggunakan jenis warna dan cetakan garis
+Mencetak rentetan untuk konsol menggunakan jenis warna dan cetakan garis dengan sokongan format
+Mencetak rentetan ke penyahpepijat
+Mencetak rentetan ke penyahpepijat dengan sokongan format
+Menguji kemudahan ralat kernel
+Menguji kemudahan ralat kernel dengan sokongan format
+Uji menterjemahkan rentetan yang terdapat dalam sumber ke bahasa tertentu
+Mencetak rentetan untuk menghiburkan dan menguraikan tempat letak yang dijumpai
+Menguji kemudahan ungkapan biasa
+Menyulitkan rentetan menggunakan
+Memulakan semua mod
+Menghentikan semua mod
+Mendayakan atau mematikan debug
+Mengaktifkan atau mematikan debug jarak jauh
+Menguji urutan VT untuk 255 warna
+Menguji urutan VT untuk warna sebenar
+Menghantar pemberitahuan untuk menguji penerima
+Tarikh mencetak ujian menggunakan kalendar yang berbeza
+Menyenaraikan semua halaman kod yang disokong
+Pemboleh ubah penyusun apa yang diaktifkan dalam aplikasi?
+Ujian meningkatkan acara tertentu
+Ujian untuk memeriksa perkakasan
+Menguji pengutip sampah
+Keluar dari shell uji dan memulakan kernel
+Keluar dari shell uji dan mematikan kernel
+Menyimpan direktori semasa ke fail konfigurasi kernel
+Menguji penulis senarai dengan rentetan dan rentetan rentetan
+Menguji penulis senarai dengan susunan integer dan integer
+Menguji penulis senarai dengan array char dan char
+Senarai rentetan biasa:
+Senarai rentetan array:
+Senarai bilangan bulat normal:
+Senarai nombor bulat:
+Senarai char biasa:
+Senarai char array:
+Dayakan RPC
+Pelabuhan RPC
+Sama ada mahu mengaktifkan RPC.
+Tulis port RPC. Ia mesti berangka, dan tidak boleh digunakan. Jika tidak, RPC akan gagal membuka port.
+Tidak memulakan RPC kerana dilumpuhkan.
+Menyenaraikan budaya yang disokong
+Mencari rentetan yang ditentukan dalam fail yang disediakan menggunakan ungkapan biasa
+Lihat jika anda boleh menekan kekunci tepat pada waktunya
+Pengguna tidak memberikan input tepat pada masanya.
+Kesukaran tidak sah
+Perwatakan tidak ditekan tepat pada waktunya.
+Anda telah menekan watak yang betul!
+Anda telah menekan watak yang salah.
+Tekan ESC untuk keluar.
+Mendapat maklumat tarikh dan masa
+Milisaat:
+Detik:
+Minit:
+Jam:
+Hari:
+Bulan:
+Tahun:
+Hari Tahun:
+Hari dalam seminggu:
+Perduaan:
+Waktu Tempatan:
+Masa Sejagat:
+Masa Unix:
+Gagal menguraikan maklumat tarikh untuk
+Pastikan formatnya betul.
+Tarikh:
+Masa:
+Menetapkan kebenaran fail. Ini disokong hanya pada pelayan FTP yang menjalankan Unix.
+Menetapkan jenis untuk sesi ini
+Anda mesti menyambung ke pelayan sebelum menjalankan operasi sistem fail.
+Gagal menetapkan izin dari {0} hingga {1}.
+Kebenaran ditetapkan untuk fail
+Jenis data ditetapkan ke ASCII!
+Jenis data ditetapkan kepada Binari!
+Jenis data tidak sah.
+Berhati-hatilah bahawa kebanyakan fail tidak akan memuat turun atau memuat naik dengan betul menggunakan mod ini, jadi kami sangat mengesyorkan menggunakan mod Binari pada kebanyakan situasi.
+Cuba menghantar arahan RPC sementara RPC tidak bermula.
+Kelewatan Pudar dalam Milisaat
+Langkah Pudar Maks
+Berapa milisaat yang perlu ditunggu sebelum memudar teks?
+Berapa banyak langkah pudar yang perlu dilakukan?
+Probe Penuh
+Sekiranya benar, siasat semua perkakasan; jika tidak, hanya akan memeriksa perkakasan yang diperlukan.
+Gagal mengeluarkan screensaver {0} dari config.
+Mendapat tetapan penjimat tersuai
+Menetapkan tetapan penjimat tersuai
+Tetapan berjaya ditetapkan untuk screensaver
+Gagal menetapkan tetapan untuk screensaver
+Bahagian ini membolehkan anda mengurus pembuatan kata laluan root.
+Membuka shell RSS untuk membaca suapan
+Keluar dari shell RSS dan kembali ke kernel
+Menukar pautan suapan
+Menyenaraikan semua suapan
+Membaca suapan dalam penyemak imbas web
+Perintah shell RSS yang ditentukan tidak dijumpai.
+Suapan RSS2 tidak sah.
+Suapan RSS1 tidak sah.
+Suapan Atom tidak sah.
+Masukkan URL suapan RSS:
+Jenis suapan RSS tidak sah.
+Ralat shell tidak diketahui:
+Mendapat maklumat artikel
+Nombor artikel tidak boleh lebih besar daripada artikel yang tersedia.
+Tajuk:
+Pautan:
+Mendapat maklumat suapan
+Penerangan:
+Jenis suapan:
+Bilangan artikel:
+Artikel tidak mempunyai pautan!
+Gagal membuat senarai entri sistem fail untuk direktori
+Mod jenis sistem fail
+Arah jenis sistem fail
+Mengawal bagaimana fail akan disusun.
+Mengawal arah menyusun sistem fail sama ada menaik atau menurun.
+Susunan menaik
+Dalam susunan menurun
+Nama penuh
+Saiz fail
+Masa penciptaan
+Masa menulis terakhir
+Masa akses terakhir
+Tulis Lagi Kelewatan dalam Milisaat
+Berapa milisaat yang perlu ditunggu sebelum menulis teks lagi?
+Tulis teks yang anda mahu ditunjukkan. Lebih lama lebih baik.
+Kelajuan penulisan minimum dalam WPM
+Kelajuan penulisan maksimum dalam WPM
+Kebarangkalian typo dalam peratus
+Gagal menyimpan direktori semasa: {0}
+Lap untuk menukar arah
+Mengaktifkan sokongan warna 255 untuk Lap.
+Mengaktifkan sokongan warna sebenar untuk Lap.
+Berapa banyak tisu yang perlu dilakukan sebelum menukar arah secara rawak?
+Pentas selesai dalam
+Permulaan dalaman selesai pada
+Fail yang dirujuk {0} tidak dijumpai. Mod ini mungkin tidak berfungsi dengan baik tanpa fail ini.
+Memulakan mod
+Mendapat maklumat mod
+Nama arahan:
+Definisi arahan:
+Jenis arahan:
+Perintah tegas?
+Versi mod:
+Mod {0} tidak dijumpai.
+Budaya dari
+Varian {0} mana yang digunakan untuk mengubah nama bulan, kalendar, dll.?
+Penyunting teks belum membuka aliran fail.
+Rentetan diganti.
+Satu atau kedua-dua nombor itu tidak berangka.
+Perkataan dipadamkan.
+Aksara dipadamkan.
+Tetapan Sistem Fail ...
+Bahagian ini menyenaraikan tetapan sistem fail.
+Selamat Datang ke Tetapan!
+Ralat semasa melaksanakan arahan SSH
+Ralat pada shell SSH
+- Maklumat aplikasi
+Mengaktifkan sokongan warna 255 untuk BouncingText.
+Mengaktifkan sokongan warna sebenar untuk BouncingText.
+Menguji penulis kamus dengan rentetan dan rentetan rentetan
+Menguji penulis kamus dengan susunan char dan char
+Menguji penulis kamus dengan susunan integer dan integer
+Kamus tali biasa:
+Kamus rentetan array:
+Kamus integer biasa:
+Kamus nombor bulat:
+Kamus char biasa:
+Kamus Array char:
+Selamat datang ke Test Shell!
+Tunjukkan kemajuan operasi sistem fail
+Menunjukkan fail apa yang sedang diproses semasa operasi sistem fail
+di mana HardwareType akan berada
+Sama ada jenis perkakasan {0} tidak disiasat, atau tidak sah.
+Jenis perkakasan {0} belum disiasat. Sekiranya anda yakin ia disiasat, mulakan semula kernel dengan penyahpepijatan diaktifkan.
+Partition tidak dihuraikan untuk disenaraikan.
+Mod Penggodam
+Sekiranya diaktifkan, konsol hijau akan diaktifkan.
+Mencetak pemisah
+Mencetak pemisah dengan sokongan format
+Mencetak pemisah dengan sokongan warna
+Mencetak pemisah dengan sokongan warna dan format
+Sentiasa berpusat
+Mengaktifkan sokongan warna 255 untuk Marquee.
+Mengaktifkan sokongan warna sebenar untuk Marquee.
+Tulis teks yang anda mahu ditunjukkan.
+Sama ada teks yang ditunjukkan pada tenda sentiasa berpusat.
+'q' untuk berhenti.
+Hujah {0} tidak dijumpai untuk disuntik.
+Argumen baris perintah {0} tidak dijumpai.
+Kosongkan semua tetapan
+Penjaga Skrin mengalami ralat semasa memaparkan: {0}. Tekan sebarang kekunci untuk keluar.
+Pratonton ...
+Begini rupa tema anda:
+Perintah yang boleh dibungkus:
+Mod {0} mempunyai arahan yang tidak betul. Penguraian mod gagal. Semak kod sumber.
+Bahagian mod:

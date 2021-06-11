@@ -739,3 +739,361 @@ Atraso en milisegundos
 Cantos milisegundos agardar antes de facer a seguinte escritura?
 Permite usar un servidor FTP SSH
 Non hai axuda para o comando "{0}".
+Secuencia VT non válida para a cor RGB.
+Barra de cor de segundos
+Barra de cor de minutos
+Barra de cor de horas
+Cor da información
+Ticks para cambiar de cor
+Activa a compatibilidade con 255 cores para ProgressClock.
+Activa a compatibilidade coa cor verdadeira para ProgressClock.
+A barra de progreso da cor dos segundos. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
+A barra de progreso da cor dos minutos. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
+Barra de progreso da cor das horas. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
+A cor da información da data. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
+Se o ciclo de cores está activado, cantas marcas antes de cambiar as cores en ProgressClock? 1 marca = 0,5 segundos
+ProgressClock seleccionará cores aleatorias se está activado. Se non, usa as cores da configuración.
+Crea un novo tema
+Creando un novo tema "{0}".
+Gardar o tema no directorio actual
+Gardar tema noutro directorio ...
+Selecciona a cor usando as teclas "<-" e "->". Preme ENTRAR para saír. Prema "i" para inserir o número de cor manualmente.
+Selecciona a cor usando as teclas "<-" e "->". Use as teclas de frecha cara arriba e frecha cara abaixo para seleccionar entre rangos de cores. Preme ENTRAR para saír. Prema "i" para inserir o número de cor manualmente.
+Benvido ao núcleo. - Versión {0}
+Cor de aviso
+Cor da opción
+Introduza o número de cor de 0 a 255:
+Use "hwinfo" para obter información extensa sobre hardware.
+Imprime información de hardware
+Información da CPU:
+Nome do procesador:
+Velocidade do procesador:
+Bits de procesador:
+Rev. procesador:
+Topoloxía do procesador:
+Tipo de procesador:
+Fito do procesador:
+Procesador BogoMips:
+Tamaño da caché L2 do procesador:
+Tamaño da caché L3 do procesador:
+Características do procesador:
+Información do disco duro:
+Nome da unidade:
+Modelo de unidade:
+Proveedor de unidades:
+Velocidade de condución:
+Tamaño da unidade:
+Serie da unidade:
+ID da unidade:
+Número de particións de Drive:
+ID da partición:
+Sistema de ficheiros de partición:
+Tamaño da partición:
+Partición usada:
+Información RAM:
+RAM libre:
+RAM total:
+RAM empregada:
+Información da GPU:
+Nome da GPU:
+Controlador de GPU:
+Versión da GPU:
+GPU: fallou ao probar unha ou máis tarxetas gráficas. Mostrando información de todos os xeitos ...
+>> Benvido! Esta é a túa primeira vez que entras a depuración e chat remoto. Use "/ register <name>" para rexistrarse.
+O dispositivo xa existe.
+Non existe ese dispositivo.
+Establece o nome de usuario do dispositivo
+Xa estás rexistrado.
+Ola, {0}!
+Imprime contido do ficheiro para consola
+Ou pasa "listcities" a este comando.
+A entrada xa existe.
+Envolve a saída da consola
+O comando non se pode envolver. Estes comandos son envolvibles:
+Extrae un arquivo ZIP
+Crea un arquivo ZIP
+Construído en {0}
+Erro ao descargar datos de depuración
+Produciuse un erro ao descargar os datos de depuración. Comprobe a súa conexión a Internet.
+Non se puido finalizar o mod {0}: {1}
+Lista todos os eventos despedidos
+Directorio actual
+Define o directorio actual do shell. Escribe un camiño absoluto a calquera directorio existente.
+Axustar as saídas da lista
+Envolve as saídas da lista se parece demasiado longa para a xeometría actual da consola.
+Ping!
+{0} fíxolle un ping.
+Gardar o tema no directorio actual como ...
+Gardar tema noutro directorio como ...
+Especifique o nome do tema:
+O usuario {0} engadiuse á lista "{1}".
+Eliminouse o usuario {0} da lista "{1}".
+Modo non válido {0}
+O usuario xa existe
+Cargar tema desde ...
+Cargar tema a partir de temas predefinidos ...
+Especifique o nome do ficheiro de tema sen a extensión .json:
+Abre un arquivo ZIP
+Sae do shell ZIP
+Lista todos os ficheiros dentro do arquivo
+Extrae un ficheiro a un directorio especificado ou a un directorio actual
+Cambia o directorio de arquivo
+Non se atopou o comando de shell ZIP especificado.
+O directorio {0} non existe
+O directorio de arquivo {0} non existe
+Número máximo de posicións
+Cantas posicións están iluminadas antes de atenuar?
+Activa a compatibilidade con 255 cores para Chisqueiro.
+Activa a verdadeira compatibilidade coa cor para máis claro.
+Cor da entrada da lista
+Cor do valor da lista
+Conéctase a un servidor SSH para executar un comando.
+Esta sección lista a configuración do protector de pantalla para
+Especificador de cor non válido. Asegúrese de que está no formato correcto, o que significa un número de 0 a 255 se usa 255 cores ou unha secuencia de TV se usa cor verdadeira do seguinte xeito:
+Erro no intérprete de comandos: {0}
+Establece unha variable nun valor nun script
+Un aviso de notificación de erros.
+Grazas por subirnos unha entrada. Selecciona que tipo de solicitude tes.
+Un problema
+Unha solicitude de función
+Unha pregunta
+Debe especificar unha característica.
+Fai unha pregunta, anota a túa idea ou informa dun problema.
+Debes escribir a túa solicitude.
+Houbo un erro no shell FTP:
+Erro de shell FTP descoñecido:
+Houbo un erro no shell SFTP:
+Erro de shell SFTP descoñecido:
+Mostrar o banner SSH
+Mostra o banner do servidor SSH na conexión.
+Como se quere autenticar?
+Ficheiro de chave privada
+Contrasinal
+Introduza a frase de contrasinal para a clave {0}:
+Introduza a situación da clave privada para {0}. Escribe "q" para rematar de engadir claves:
+Neutralizou un camiño inexistente.
+O ficheiro clave {0} non existe.
+Erro ao tentar engadir unha chave privada:
+Preme "t" para cambiar ao modo de cor 255.
+Preme "t" para cambiar ao modo de cor verdadeira.
+Esta sección permítelle escoller que tipo de cor desexa cambiar.
+Parece que non tes ningún usuario agás root. Isto é malo. Guiarémosche como crear un.
+Escribe o teu nome de usuario.
+Debes escribir o teu nome de usuario.
+Escribe o teu contrasinal.
+Debe escribir o seu contrasinal.
+Selecciona o tipo de conta.
+Administrador: este tipo de conta ten máis potencia no núcleo, o que lle permite usar programas de xestión do sistema.
+Usuario normal: este tipo de conta é un pouco máis restrinxido que os administradores.
+Parabéns! Creaches unha nova conta. Para rematar isto, inicie sesión como a súa nova conta.
+Consulte o manual do protector de pantalla ou o código fonte para obter información.
+mod: Non se detectaron modificacións.
+Comandos xerais:
+Comandos Mod:
+Comandos de alias:
+Modo de mantemento
+Busca de directorios
+Grupo de camiños separados polos dous puntos. Funciona igual que PATH. Escribe un camiño completo a un cartafol ou a un nome de cartafol. Cando remates, escribe "q". Escribe un signo menos xunto ao camiño para eliminar un directorio existente.
+Non hai comandos mod.
+Non hai comandos de alias.
+O valor da cor está fóra do rango de 0-255.
+Non se atopou o comando envolvente.
+Consulta unha palabra nunha liña especificada ou en todas as liñas
+{0} de {1} descargado.
+{0} de {1} cargados.
+Imprime unha cadea para consolar usando o tipo de cor e a impresión en liña
+Imprime unha cadea para consolar usando o tipo de cor e a impresión de liña con soporte de formato
+Imprime unha cadea para depurar
+Imprime unha cadea para depurar con soporte de formato
+Proba a facilidade de erro do núcleo
+Proba a facilidade de erro do núcleo co soporte de formato
+Proba a tradución dunha cadea que existe en recursos a un idioma específico
+Imprime unha cadea para consolar e analiza os marcadores de posición atopados
+Proba a facilidade de expresión regular
+Cifra unha cadea usando
+Inicia todas as modificacións
+Detén todos os mods
+Activa ou desactiva a depuración
+Activa ou desactiva a depuración remota
+Proba a secuencia de TV para 255 cores
+Proba a secuencia de TV para ver a cor verdadeira
+Envía unha notificación para probar o receptor
+Proba a data de impresión mediante diferentes calendarios
+Lista todas as páxinas de código admitidas
+Que variables do compilador están habilitadas na aplicación?
+Probas que levan o evento específico
+Probas que sondan o hardware
+Proba o colector de lixo
+Sae do shell de proba e inicia o núcleo
+Sae do intérprete de proba e apaga o núcleo
+Garda o directorio actual no ficheiro de configuración do núcleo
+Proba o escritor da lista coa cadea e a matriz de cadeas
+Proba o escritor da lista co número enteiro e a matriz enteira
+Proba o escritor da lista coa matriz char e char
+Lista de cadeas normais:
+Lista de cadeas de matrices:
+Lista enteira normal:
+Lista de números enteiros:
+Lista de caracteres normal:
+Lista de caracteres de matriz:
+Activar RPC
+Porto RPC
+Se se habilita ou non RPC.
+Escribe un porto RPC. Debe ser numérico e non debe estar xa usado. Se non, RPC non poderá abrir o porto.
+Non se inicia RPC porque está desactivado.
+As listas apoian as culturas
+Busca a cadea especificada no ficheiro proporcionado usando expresións regulares
+Vexa se pode premer unha tecla a tempo
+O usuario non proporcionou ningunha entrada ao tempo.
+Dificultade non válida
+O personaxe non se preme a tempo.
+Premiches o personaxe correcto.
+Premiches o personaxe incorrecto.
+Preme ESC para saír.
+Obtén a información de data e hora
+Milisegundos:
+Segundos:
+Minutos:
+Horas:
+Días:
+Meses:
+Ano:
+Día do ano:
+Día da semana:
+Binario:
+Hora Local:
+Tempo Universal:
+Tempo Unix:
+Non se puido analizar a información de data para
+Asegúrese de que o formato é correcto.
+Data:
+Tempo:
+Define os permisos do ficheiro. Isto só é compatible con servidores FTP que executan Unix.
+Define o tipo desta sesión
+Debe conectarse ao servidor antes de realizar operacións do sistema de ficheiros.
+Produciuse un erro ao establecer os permisos de {0} a {1}.
+Permisos configurados correctamente para o ficheiro
+Tipo de datos establecido en ASCII.
+Tipo de datos definido como binario.
+Tipo de datos non válido.
+Ten en conta que a maioría dos ficheiros non se descargan nin cargan correctamente usando este modo, polo que recomendamos encarecidamente usar o modo binario na maioría das situacións.
+Tentando enviar un comando RPC mentres RPC non se iniciaba.
+Atraso de esvaecemento en milisegundos
+Max Fade Steps
+Cantos milisegundos agardar antes de esvaecer o texto?
+Cantos pasos desvanecer facer?
+Sonda completa
+Se é certo, sondea todo o hardware; se non, só sondará o hardware necesario.
+Non se puido eliminar o protector de pantalla {0} da configuración.
+Obtén axustes de aforro personalizados
+Define axustes de aforro personalizados
+A configuración configurouse correctamente para o protector de pantalla
+Produciuse un erro ao establecer unha configuración para o protector de pantalla
+Esta sección permítelle xestionar a creación do contrasinal root.
+Abre un shell RSS para ler as fontes
+Sae do shell RSS e volve ao núcleo
+Cambia a ligazón do feed
+Lista todos os feeds
+Le un feed nun navegador web
+Non se atopou o comando de shell RSS especificado.
+Fonte RSS2 non válida.
+Fonte RSS1 non válida.
+Feed Atom non válido.
+Insira un URL de fonte RSS:
+Tipo de fonte RSS non válido.
+Erro de shell descoñecido:
+Obtén a información do artigo
+O número do artigo non pode ser maior que os artigos dispoñibles.
+Título:
+Ligazón:
+Obtén a información do feed
+Descrición:
+Tipo de feed:
+Número de artigos:
+O artigo non ten ligazón.
+Non se puido facer unha lista de entradas do sistema de ficheiros para o directorio
+Modo de ordenación do sistema de ficheiros
+Dirección de ordenación do sistema de ficheiros
+Controla como se ordenarán os ficheiros.
+Controla a dirección da ordenación do sistema de ficheiros se é ascendente ou descendente.
+Orde ascendente
+Orde descendente
+Nome completo
+Tamaño do ficheiro
+Tempo de creación
+Última hora de escritura
+Último acceso
+Escribe de novo atraso en milisegundos
+Cantos milisegundos agardar antes de escribir de novo o texto?
+Escribe o texto que queiras amosar. Máis tempo é mellor.
+Velocidade de escritura mínima en WPM
+Velocidade máxima de escritura en WPM
+Probabilidade de erros tipográficos en porcentaxe
+Non se puido gardar o directorio actual: {0}
+Toallitas para cambiar de dirección
+Activa a compatibilidade con 255 cores para Wipe.
+Activa a verdadeira compatibilidade coa cor para Wipe.
+Cantas toallitas hai que facer antes de cambiar de dirección ao azar?
+Etapa rematada en
+Finalizou a inicialización interna en
+Non se atopou o ficheiro referenciado {0}. É posible que este mod non funcione correctamente sen este ficheiro.
+Mod de inicio
+Obtén información sobre mod
+Nome do comando:
+Definición do comando:
+Tipo de comando:
+Un comando estricto?
+Versión Mod:
+Non se atopou o Mod {0}.
+Cultura de
+Que variante de {0} se usa para cambiar os nomes do mes, o calendario, etc.?
+O editor de texto aínda non abriu un fluxo de ficheiros.
+Cadea substituída.
+Un ou os dous números non son numéricos.
+Eliminouse a palabra.
+Eliminouse o carácter.
+Configuración do sistema de ficheiros ...
+Esta sección lista a configuración do sistema de ficheiros.
+Benvido a Configuración.
+Erro ao executar o comando SSH
+Erro no shell SSH
+- Información da aplicación
+Activa a compatibilidade de 255 cores para BouncingText.
+Activa a compatibilidade coa cor verdadeira para BouncingText.
+Proba o escritor do dicionario coa cadea e a matriz de cadeas
+Proba o escritor do dicionario coa matriz char e char
+Proba o escritor do dicionario co número enteiro e a matriz enteira
+Dicionario de cadeas normal:
+Dicionario de cadeas de matrices:
+Dicionario enteiro normal:
+Diccionario de números enteiros:
+Dicionario de caracteres normais:
+Diccionario de matrices:
+Benvido a Test Shell.
+Amosar o progreso nas operacións do sistema de ficheiros
+Mostra o ficheiro que se está procesando durante as operacións do sistema de ficheiros
+onde estará HardwareType
+Ou o tipo de hardware {0} non está probado ou non é válido.
+Aínda non se probou o tipo de hardware {0}. Se está seguro de que está probado, reinicie o núcleo coa depuración activada.
+Particións non analizadas na lista.
+Modo pirata informático
+Se está activado, habilitarase a consola verde.
+Imprime un separador
+Imprime un separador con soporte de formato
+Imprime un separador con soporte de cor
+Imprime un separador con soporte de cor e formato
+Sempre centrado
+Activa o soporte de 255 cores para Marquee.
+Activa o soporte de cor verdadeira para Marquee.
+Escribe o texto que queiras amosar.
+Se o texto mostrado na marquesiña está sempre centrado.
+'q' para saír.
+Non se atopou o argumento {0} para inxectar.
+Non se atopou o argumento da liña de comandos {0}.
+Borra toda a configuración
+O protector de pantalla experimentou un erro ao amosar: {0}. Preme calquera tecla para saír.
+Vista previa ...
+Así será o teu tema:
+Comandos envolvibles:
+Mod {0} ten un comando non válido. Produciuse un erro ao analizar as modificacións. Revisa o código fonte.
+Partes Mod:

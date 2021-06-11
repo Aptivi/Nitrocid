@@ -739,3 +739,361 @@ mileesekand mein deree
 agala lekhan karane se pahale kitane mileesekand tak prateeksha karanee hogee?
 aapako ssh ftp sarvar ka upayog karane deta hai
 "{0}" kamaand ke lie koee sahaayata nahin।
+rgb rang ke lie amaany vt anukram.
+sekand ka rang baar
+minaton ka rang baar
+ghante ka rang baar
+soochana ka rang
+rang badalane ke lie tiks
+progresaklok ke lie 255 rang samarthan sakriy karata hai.
+progresaklok ke lie sahee rang samarthan sakriy karata hai.
+sekand pragati pattee ka rang. yah 1-16, 1-255, ya "1-255;1-255;1-255" ho sakata hai.
+minat pragati pattee ka rang. yah 1-16, 1-255, ya "1-255;1-255;1-255" ho sakata hai.
+ghante pragati pattee ka rang. yah 1-16, 1-255, ya "1-255;1-255;1-255" ho sakata hai.
+taareekh kee jaanakaaree ka rang. yah 1-16, 1-255, ya "1-255;1-255;1-255" ho sakata hai.
+yadi kalar saikaling saksham hai, to progresaklok mein rang badalane se pahale kitane tik honge? 1 tik = 0.5 sekand
+progresaklok saksham hone par yaadrchchhik rangon ka chayan karega. anyatha, chonfig se rangon ka upayog karen.
+ek naya vishay banaata hai
+ek naee theem "{0}" banaana.
+theem ko vartamaan nirdeshika mein sahejen
+theem ko kisee any nirdeshika mein sahejen...
+"<-" aur "->" kunjiyon ka upayog karake rang chunen. chhodane ke lie aintair dabaen. mainyual roop se rang sankhya daalane ke lie "i" dabaen.
+"<-" aur "->" kunjiyon ka upayog karake rang chunen. rang shreniyon ke beech chayan karane ke lie oopar teer aur neeche teer kunjiyon ka upayog karen. chhodane ke lie aintair dabaen. mainyual roop se rang sankhya daalane ke lie "i" dabaen.
+karnel mein aapaka svaagat hai! - sanskaran {0}
+chetaavanee rang
+vikalp rang
+0 se 255 tak rang sankhya darj karen:
+haardaveyar ke baare mein vistrt jaanakaaree ke lie "hwinfo" ka prayog karen.
+haardaveyar jaanakaaree print karata hai
+seepeeyoo jaanakaaree:
+prosesar ka naam:
+prosesar kee chaal:
+prosesar bits:
+prosesar rev:
+prosesar topolojee:
+prosesar prakaar:
+prosesar meel ka patthar:
+prosesar bogomips:
+prosesar l2 kaish aakaar:
+prosesar l3 kaish aakaar:
+prosesar visheshataen:
+echadeedee jaanakaaree:
+draiv ka naam:
+draiv modal:
+draiv vikreta:
+draiv gati:
+draiv ka aakaar:
+draiv seeriyal:
+draiv aaeedee:
+draiv vibhaajan ganana:
+vibhaajan aaeedee:
+vibhaajan phail sistam:
+vibhaajit aakaar:
+istemaal kiya vibhaajan:
+raim jaanakaaree:
+raim phree:
+raim kul:
+raim ka istemaal kiya:
+jeepeeyoo jaanakaaree:
+jeepeeyoo naam:
+jeepeeyoo chaalak:
+jeepeeyoo sanskaran:
+gpu: ek ya adhik graafiks kaard kee jaanch nahin ho sakee. phir bhee jaanakaaree dikhaee ja rahee hai...
+>> svaagat hai! yah aapaka pahalee baar rimot deebag aur chait mein pravesh kar raha hai. rajistar karane ke lie "/raigistair <namai>" ka prayog karen.
+divais pahale se maujood hai.
+aisa koee upakaran nahin.
+divais upayogakarta naam set karata hai
+aap pahale se panjeekrt hain.
+namaste, {0}!
+fail kee saamagree ko kansol par print karata hai
+ya, is aadesh ke lie "soocheebaddhataen" paas karen.
+pravesh pahale se maujood hai.
+kansol aautaput ko lapetata hai
+aadesh lapetane yogy nahin hai. ye aadesh lapetane yogy hain:
+ek zip sangrah nikaalata hai
+ek zip sangrah banaata hai
+{0} mein nirmit
+dibag deta daunalod karane mein truti
+deebag deta daunalod karate samay ek truti huee hai. apana intaranet sampark jaanche.
+mod ko antim roop dene mein viphal {0}: {1}
+sabhee sakriy ghatanaon ko soocheebaddh karata hai
+vartamaan nirdeshika
+shel kee vartamaan nirdeshika set karata hai. kisee bhee maujooda nirdeshika ke lie ek poorn path likhen.
+raip soochee aautaput
+soochee aautaput ko lapetata hai yadi yah vartamaan kansol jyaamiti ke lie bahut lamba lagata hai.
+ping!
+{0} ne aapako ping kiya.
+theem ko vartamaan nirdeshika mein is roop mein sahejen...
+theem ko any nirdeshika mein is roop mein sahejen...
+vishay ka naam nirdisht karen:
+upayogakarta {0} ko "{1}" soochee mein jod diya gaya hai.
+upayogakarta {0} ko "{1}" soochee se hata diya gaya hai.
+amaany mod {0}
+upayogakarta pahale se maujood hai
+se theem lod karen...
+preebilt theem se theem lod karen...
+.json eksatenshan ke bina theem fail naam nirdisht karen:
+ek zip sangrah kholata hai
+zip shel se baahar nikalata hai
+sangrah ke andar sabhee phailon ko soocheebaddh karata hai
+kisee fail ko kisee nirdisht nirdeshika ya vartamaan nirdeshika mein nikaalata hai
+sangrah nirdeshika badalata hai
+nirdisht zip shel kamaand nahin mila.
+nirdeshika {0} maujood nahin hai
+sangrah nirdeshika {0} maujood nahin hai
+adhikatam padon kee ganana
+diming se pahale kitane pojeeshan jalae jaate hain?
+laitar ke lie 255 rang samarthan sakriy karata hai.
+laitar ke lie vaastavik rang samarthan sakriy karata hai.
+soochee pravishti rang
+soochee mooly rang
+ek kamaand nishpaadit karane ke lie ek ssh sarvar se judata hai.
+yah anubhaag . ke lie skreenasevar setings ko soocheebaddh karata hai
+amaany rang vinirdeshak. sunishchit karen ki yah sahee praaroop par hai, jisaka arth hai 0-255 se ek sankhya yadi 255 rangon ka upayog kar rahe hain ya ek veetee anukram yadi sahee rang ka upayog nimnaanusaar hai:
+pareekshan shel mein truti: {0}
+ek char ko ek skript mein ek maan par set karata hai
+ek bag riporting prompt.
+hamaare lie tikat badhaane ke lie dhanyavaad! chunen ki aapake paas kis prakaar ka anurodh hai.
+ek samasya
+ek suvidha anurodh
+ek prashn
+aapako ek visheshata nirdisht karanee hogee.
+ek prashn poochhen, apana vichaar likhen, ya kisee samasya kee riport karen.
+aapako apana anurodh likhana hoga.
+ftp shel mein ek truti thee:
+agyaat ftp shel truti:
+sftp shel mein ek truti thee:
+agyaat esefateepee shel truti:
+ssh bainar dikhaen
+kanekshan par ssh sarvar bainar dikhaata hai.
+aap kaise pramaanit karana chaahate hain?
+nijee kunjee fail
+kunjika
+kunjee {0} ke lie paasafrez darj karen:
+{0} ke lie nijee kunjee ka sthaan darj karen. kunjiyaan jodana samaapt karane ke lie "q" likhen:
+ek gair-maujood path ko beasar kar diya.
+kunjee fail {0} maujood nahin hai.
+nijee kunjee jodane ka prayaas karane mein truti:
+255 rang mod par svich karane ke lie "t" dabaen.
+troo kalar mod par svich karane ke lie "t" dabaen.
+yah anubhaag aapako yah chunane deta hai ki aap kis prakaar ka rang badalana chaahate hain.
+aisa lagata hai ki aapake paas root ke alaava koee upayogakarta nahin hai. yah to bura hua. ham aapako maargadarshan karenge ki ek kaise banaaya jae.
+apana upayogakarta naam likhen.
+aapako apana upayogakarta naam likhana hoga.
+apana paasavard likhen.
+aapako apana paasavard likhana hoga.
+khaata prakaar chunen.
+vyavasthaapak: is khaate ke prakaar mein karnel mein sabase adhik shakti hai, jisase aap sistam prabandhan kaaryakramon ka upayog kar sakate hain.
+saamaany upayogakarta: yah khaata prakaar vyavasthaapakon kee tulana mein thoda adhik pratibandhit hai.
+badhaee ho! aapane ek naya khaata bana liya hai! ise samaapt karane ke lie, apane nae khaate ke roop mein log in karen.
+jaanakaaree ke lie skreenasevar mainual ya sors kod dekhen.
+mod: koee mod nahin mila.
+saamaany aadesh:
+mod kamaand:
+upanaam aadesh:
+rakharakhaav mod
+lukap nirdeshika
+brhadaantr dvaara alag kie gae pathon ka samooh. yah paath kee tarah hee kaam karata hai. kisee pholdar ya pholdar ke naam ka poora paath likhen. jab aap samaapt kar len, to "q" likhen. maujooda nirdeshika ko hataane ke lie path ke aage ek rn chihn likhen.
+koee mod kamaand nahin.
+koee upanaam aadesh nahin.
+rang maan 0-255 kee seema se baahar hai.
+lapetane yogy aadesh nahin mila hai.
+kisee shabd ko ek nirdisht pankti ya sabhee panktiyon mein kveree karata hai
+{1} mein se {0} daunalod kiya gaya.
+{1} mein se {0} apalod kiya gaya.
+rang prakaar aur lain print ka upayog karake kansol ko string print karata hai
+rang prakaar aur praaroop samarthan ke saath lain print ka upayog karake kansol ke lie ek string print karata hai
+deebagar par ek string print karata hai
+praaroop samarthan ke saath dibagar mein ek string print karata hai
+karnel truti suvidha ka pareekshan karata hai
+svaroop samarthan ke saath karnel truti suvidha ka pareekshan karata hai
+sansaadhanon mein maujood string ka vishisht bhaasha mein anuvaad karane ka pareekshan
+kansol ke lie ek string print karata hai aur pae gae plesaholdars ko paars karata hai
+regular eksapreshan suvidha ka pareekshan karata hai
+string ka upayog karake enkript karata hai
+sabhee mod shuroo karata hai
+sabhee mod band kar deta hai
+deebag ko saksham ya aksham karata hai
+doorasth deebag ko saksham ya aksham karata hai
+255 rangon ke lie vt anukram ka pareekshan karen
+sachche rang ke lie veetee anukram ka pareekshan karen
+riseevar ka pareekshan karane ke lie ek soochana bhejata hai
+vibhinn kailendaron ka upayog karake mudran tithi ka pareekshan karen
+sabhee samarthit kodapej soocheebaddh karata hai
+eplikeshan mein kaun se kampailar vairiebal saksham hain?
+vishisht ghatana ko badhaane vaale pareekshan
+haardaveyar kee jaanch karane vaale pareekshan
+kachara sangrahakarta ka pareekshan karen
+pareekshan shel se baahar nikalata hai aur karnel shuroo karata hai
+pareekshan shel se baahar nikalata hai aur karnel ko band kar deta hai
+vartamaan nirdeshika ko karnel konfigareshan fail mein sahejata hai
+string aur string saranee ke saath soochee lekhak ka pareekshan karen
+poornaank aur poornaank saranee ke saath soochee lekhak ka pareekshan karen
+soochee lekhak ko chaar aur chaar saranee ke saath pareekshan karen
+saamaany string soochee:
+saranee string soochee:
+saamaany poornaank soochee:
+saranee poornaank soochee:
+saamaany chaar soochee:
+saranee chaar soochee:
+aarapeesee saksham karen
+aarapeesee port
+aarapeesee ko saksham karana hai ya nahin.
+ek aarapeesee port likhen. yah sankhyaatmak hona chaahie, aur pahale se upayog nahin kiya jaana chaahie. anyatha, rpch port ko kholane mein viphal ho jaegee.
+rpch praarambh nahin kar raha hai kyonki yah aksham hai.
+samarthit sanskrtiyon ko soocheebaddh karata hai
+regular eksapreshan ka upayog karake pradaan kee gaee fail mein nirdisht string kee khoj karata hai
+dekhen ki kya aap samay par koee kunjee daba sakate hain
+upayogakarta ne samay par koee inaput pradaan nahin kiya.
+amaany kathinaee
+charitr samay par dabaaya nahin gaya.
+aapane sahee charitr ko dabaaya hai!
+aapane galat charitr dabaaya hai.
+baahar nikalane ke lie aisch dabaen.
+dinaank aur samay kee jaanakaaree praapt karata hai
+mileesekand:
+sekand:
+minat:
+ghante:
+din:
+maheene:
+saal:
+varsh ka din:
+saptaah ke din:
+bainaree:
+sthaaneey samay:
+saarvabhaumik samay:
+yooniks samay:
+dinaank jaanakaaree paars karane mein viphal
+sunishchit karen ki praaroop sahee hai.
+taareekh:
+samay:
+fail anumatiyaan set karata hai. yah keval yooniks chalaane vaale ftp sarvar par samarthit hai.
+is satr ke lie prakaar set karata hai
+phail sistam sanchaalan karane se pahale aapako sarvar se kanekt hona chaahie.
+{0} kee anumatiyon ko {1} par set karane mein viphal.
+fail ke lie anumatiyaan saphalataapoorvak set kee gaeen
+deta prakaar aschii par set!
+deta prakaar bainaree par set!
+amaany deta prakaar.
+saavadhaan rahen ki adhikaansh failen is mod ka upayog karake theek se daunalod ya apalod nahin hongee, isalie ham adhikaansh sthitiyon mein bainaree mod ka upayog karane kee atyadhik anushansa karate hain.
+rpch praarambh nahin hone par rpch aadesh bhejane ka prayaas kar raha hai.
+mileesekand mein fed aaut vilamb
+adhikatam pheeka kadam
+tekst fed aaut karane se pahale kitane mileesekand prateeksha karen?
+kitane pheeke kadam karane hain?
+pooree jaanch
+yadi sahee hai, to sabhee haardaveyar kee jaanch karata hai; anyatha, keval aavashyak haardaveyar kee jaanch karega.
+skreenasevar {0} ko konfig se nikaalane mein viphal.
+kastam sevar seting praapt karata hai
+kastam sevar seting set karata hai
+skreenasevar ke lie seting saphalataapoorvak set kee gaeen
+skreenasevar ke lie seting set karane mein viphal
+yah khand aapako root paasavard nirmaan ka prabandhan karane deta hai.
+feed padhane ke lie rss shel kholata hai
+rss shel se baahar nikalata hai aur karnel mein vaapas aata hai
+feed link badalata hai
+sabhee feed soocheebaddh karata hai
+veb brauzar mein feed padhata hai
+nirdisht rss shel kamaand nahin mila.
+amaany rss2 feed.
+amaany rss1 feed.
+amaany etam feed.
+rss feed url darj karen:
+amaany rss feed prakaar.
+agyaat shel truti:
+lekh kee jaanakaaree praapt karata hai
+aalekh sankhya upalabdh lekhon se badee nahin ho sakatee.
+sheershak:
+sampark:
+feed jaanakaaree praapt karata hai
+vivaran:
+feed prakaar:
+lekhon kee sankhya:
+lekh ka link nahin hai!
+nirdeshika ke lie phail sistam pravishtiyon kee soochee banaane mein viphal
+phailasistam sort mod
+phailasistam sort disha
+niyantrit karata hai ki failon ko kaise sort kiya jaega.
+phail sistam kee disha ko niyantrit karata hai ki kya yah aarohee ya avarohee hai.
+aarohee kram
+avarohee kram
+poora naam
+phail ka aakaar
+rachana samay
+antim likhane ka samay
+antim pahunch samay
+mileesekand mein phir se deree likhen
+paath ko dobaara likhane se pahale kitane mileesekand prateeksha karanee hai?
+koee bhee paath likhen jise aap dikhaana chaahate hain. lamba behatar hai.
+wpm mein nyoonatam lekhan gati
+wpm mein adhikatam lekhan gati
+taipo kee praayikata pratishat mein
+vartamaan nirdeshika sahejane mein viphal: {0}
+disha badalane ke lie ponchhe
+vaip ke lie 255 rang samarthan sakriy karata hai.
+vaip ke lie troo kalar saport ko sakriy karata hai.
+betarateeb dhang se disha badalane se pahale kitane vaips karane chaahie?
+stej samaapt
+aantarik aarambheekaran samaapt hua
+sandarbhit fail {0} nahin milee. ho sakata hai ki yah mod is phail ke bina theek se kaam na kare.
+praarambhik mod
+aadhunik jaanakaaree praapt karata hai
+kamaand ka naam:
+kamaand paribhaasha:
+kamaand prakaar:
+sakht aadesh?
+mod sanskaran:
+mod {0} nahin mila.
+kee sanskrti
+maheene ke naam, kailendar aadi ko badalane ke lie {0} ke kis prakaar ka upayog kiya ja raha hai?
+paath sampaadak ne abhee tak koee fail streem nahin kholee hai.
+string badalee gaee.
+ek ya donon sankhyaen saankhyik nahin hain.
+shabd hata diya gaya.
+charitr hata diya gaya.
+phailasistam setings...
+yah khand phail sistam setings ko soocheebaddh karata hai.
+setings mein aapaka svaagat hai!
+ssh kamaand nishpaadit karane mein truti
+ssh shel mein truti
+- aip kee jaanakaaree
+baunsing tekst ke lie 255 rang samarthan sakriy karata hai.
+baunsing tekst ke lie sahee rang samarthan sakriy karata hai.
+string aur string saranee ke saath shabdakosh lekhak ka pareekshan karen
+shabdakosh lekhak ka pareekshan chaar aur chaar saranee ke saath karata hai
+poornaank aur poornaank saranee ke saath shabdakosh lekhak ka pareekshan karen
+saamaany string shabdakosh:
+saranee string shabdakosh:
+saamaany poornaank shabdakosh:
+saranee poornaank shabdakosh:
+saamaany chaar shabdakosh:
+saranee chaar shabdakosh:
+test shel mein aapaka svaagat hai!
+phail sistam sanchaalan par pragati dikhaen
+dikhaata hai ki phail sistam sanchaalan ke dauraan kaun see phail sansaadhit kee ja rahee hai
+jahaan haardaveyar taip hoga
+ya to haardaveyar prakaar {0} kee jaanch nahin kee gaee hai, ya maany nahin hai.
+haardaveyar prakaar {0} kee abhee tak jaanch nahin huee hai. yadi aap sunishchit hain ki isakee jaanch kee gaee hai, to dibaging saksham ke saath karnel ko punaraarambh karen.
+vibhaajan ko soochee mein paars nahin kiya gaya.
+haikar mod
+saksham hone par, hara kansol saksham ho jaega.
+ek vibhaajak print karata hai
+praaroop samarthan ke saath vibhaajak ko print karata hai
+rang samarthan ke saath vibhaajak print karata hai
+rang aur praaroop samarthan ke saath vibhaajak ko print karata hai
+hamesha kendrit
+maarkee ke lie 255 rang samarthan sakriy karata hai.
+maarkee ke lie sahee rang samarthan sakriy karata hai.
+koee bhee paath likhen jise aap dikhaana chaahate hain.
+kya maarkee par dikhaaya gaya tekst hamesha kendrit hota hai.
+kyoo chhodane ke lie.
+tark {0} injekshan lagaane ke lie nahin mila.
+kamaand lain tark {0} nahin mila.
+sabhee setings saaf karata hai
+skreenasevar ko pradarshit karate samay ek truti ka anubhav hua: {0}. baahar nikalane ke lie koee bhee kunjee dabaen.
+poorvaavalokan...
+yahaan bataaya gaya hai ki aapakee theem kaisee dikhegee:
+lapetane yogy aadesh:
+mod {0} mein amaany aadesh hai. mod paarsing viphal. srot kod kee sameeksha karen.
+mod bhaagon:

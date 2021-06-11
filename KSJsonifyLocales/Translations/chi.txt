@@ -739,3 +739,361 @@ Yánchí háomiǎo
 jìnxíng xià yīcì xiě rù zhīqián yào děngdài jǐ háomiǎo?
 Shǐ nín kěyǐ shǐyòng SSH FTP fúwùqì
 Mìnglìng “ {0}” wú bāngzhù.
+RGB yánsè de VT xùliè wúxiào.
+Miǎo tiáo de yánsè
+fēnzhōng lán de yánsè
+yíngyè shíjiān lán de yánsè
+xìnxī yánsè
+gǎibiàn yánsè de pí chóng
+wèi ProgressClock jīhuó 255 sè zhīchí.
+Jīhuó duì ProgressClock de zhēn cǎisè zhīchí.
+Miǎo jìndù tiáo de yánsè. Tā kěyǐ shì 1-16,1-255 huò “1-255;1-255;1-255”.
+Fēnzhōng jìndù tiáo de yánsè. Tā kěyǐ shì 1-16,1-255 huò “1-255;1-255;1-255”.
+Xiǎoshí jìndù tiáo de yánsè. Tā kěyǐ shì 1-16,1-255 huò “1-255;1-255;1-255”.
+Rìqí xìnxī de yánsè. Tā kěyǐ shì 1-16,1-255 huò “1-255;1-255;1-255”.
+Rúguǒ qǐyòng yánsè xúnhuán, zài ProgressClock zhōng gēnggǎi yánsè zhīqián yǒu duōshǎo dīdā shēng? 1 Dīdā = 0.5 Miǎo
+rúguǒ qǐyòng,ProgressClock jiāng xuǎnzé suíjī yánsè. Fǒuzé, qǐng shǐyòng pèizhì zhōng de yánsè.
+Chuàngjiàn yīgè xīn zhǔtí
+zhìzuò xīn zhǔtí “{0}”.
+Jiāng zhǔtí bǎocún dào dāngqián mùlù
+jiāng zhǔtí bǎocún dào lìng yīgè mùlù...
+Shǐyòng “<-” hé “->” jiàn xuǎnzé yánsè. Àn ENTER tuìchū. Àn “i” shǒudòng chārù yánsè biānhào.
+Shǐyòng “<-” hé “->” jiàn xuǎnzé yánsè. Shǐyòng xiàngshàng jiàntóu hé xiàng xià jiàntóu jiàn zài yánsè fànwéi zhī jiān jìnxíng xuǎnzé. Àn ENTER tuìchū. Àn “i” shǒudòng chārù yánsè biānhào.
+Huānyíng lái dào nèihé! - Bǎnběn {0}
+jǐngshì sè
+kě xuǎn yánsè
+shūrù cóng 0 dào 255 de yánsè biānhào:
+Shǐyòng “hwinfo” huòqǔ yǒuguān yìngjiàn de kuòzhǎn xìnxī.
+Dǎyìn yìngjiàn xìnxī
+CPU xìnxī:
+Chǔlǐ qì míngchēng:
+Chǔlǐ qì sùdù:
+Chǔlǐ qì wèi:
+Chǔlǐ qì bǎnběn:
+Chǔlǐ qì tàpū:
+Chǔlǐ qì lèixíng:
+Chǔlǐ qì lǐchéngbēi:
+Chǔlǐ qì BogoMips:
+Chǔlǐ qì L2 huǎncún dàxiǎo:
+Chǔlǐ qì L3 huǎncún dàxiǎo:
+Chǔlǐ qì tèdiǎn:
+Yìngpán xìnxī:
+Qūdòngqì míngchēng:
+Qūdòng xínghào:
+Qūdòngqì gōngyìng shāng:
+Qūdòng sùdù:
+Qūdòngqì chǐcùn:
+Qūdòng xùliè hào:
+Qūdòngqì ID:
+Qūdòngqì fēnqū shù:
+Fēnqū biāozhì:
+Fēnqū wénjiàn xìtǒng:
+Fēnqū dàxiǎo:
+Shǐyòng de fēnqū:
+Nèicún xìnxī:
+Wú nèicún:
+Nèicún zǒng liàng:
+Shǐyòng de nèicún:
+GPU xìnxī:
+Túxíng chǔlǐ qì míngchēng:
+Xiǎnkǎ qūdòng:
+GPU bǎnběn:
+GPU: Jiǎncè dào yī zhāng huò duō zhāng xiǎnkǎ shībài. Fǎnzhèng xiǎnshì xìnxī...
+>> Huānyíng! Zhè shì nín dì yī cì jìnrù yuǎnchéng tiáoshì hé liáotiān. Shǐyòng “/register <name>” jìnxíng zhùcè.
+Shèbèi yǐ cúnzài.
+Wú cǐ shèbèi.
+Shèzhì shèbèi yònghù míng
+nǐ yǐjīng zhùcèle.
+Hāi,{0}!
+Jiāng wénjiàn nèiróng dǎyìn dào kòngzhì tái
+huòzhě, jiāng “listcities” chuándì gěi cǐ mìnglìng.
+Tiáomù yǐ cúnzài.
+Bāozhuāng kòngzhì tái shūchū
+gāi mìnglìng bùkě bāozhuāng. Zhèxiē mìnglìng shì kě bāozhuāng de:
+Tíqǔ ZIP cúndàng
+chuàngjiàn ZIP cúndàng
+nèizhì {0}
+xià zǎi tiáoshì shùjù shí chūcuò
+xià zǎi tiáoshì shùjù shí chūcuò. Jiǎnchá nín de hùliánwǎng liánjiē.
+Wèi néng wánchéng mod {0}:{1}
+Liè chū suǒyǒu chùfā de shìjiàn
+dāngqián mùlù
+shèzhì shell dí dàng qián mùlù. Xiě rù rènhé xiàn yǒu mùlù de juéduì lùjìng.
+Huànháng lièbiǎo shūchū
+rúguǒ dāngqián kòngzhì tái jǐhétǐ kàn qǐlái tài zhǎng, zé bāozhuāng lièbiǎo shūchū.
+Píng!
+{0} Gěi nǐ fāle ping.
+Jiāng zhǔtí bǎocún dào dāngqián mùlù wèi...
+Jiāng zhǔtí lìngcún wèi lìng yīgè mùlù...
+Zhǐdìng zhǔtí míngchēng:
+Yònghù {0} yǐ tiānjiā dào “{1}” lièbiǎo zhōng.
+Yònghù {0} yǐ cóng “{1}” lièbiǎo zhōng shānchú.
+Wúxiào móshì {0}
+yònghù yǐ cúnzài
+cóng... Jiāzài zhǔtí
+cóng yù jiàn zhǔtí jiāzài zhǔtí...
+Zhǐdìng méiyǒu.Json kuòzhǎn míng de zhǔtí wénjiàn míng:
+Dǎkāi ZIP cúndàng
+tuìchū ZIP wàiké
+liè chū cúndàng zhōng de suǒyǒu wénjiàn
+jiāng wénjiàn jiěyā dào zhǐdìng mùlù huò dāngqián mùlù
+gēnggǎi cúndàng mùlù
+wèi zhǎodào zhǐdìng de ZIP shell mìnglìng.
+Mùlù {0} bù cúnzài
+cúndàng mùlù {0} bù cúnzài
+zuìdà zhíwèi shù
+diào guāng qián diǎn liàngle duōshǎo gè wèizhì?
+Wèi dǎhuǒjī jīhuó 255 sè zhīchí.
+Jīhuó duì dǎhuǒjī de zhēn cǎisè zhīchí.
+Lièbiǎo tiáomù yánsè
+lièbiǎo zhí yánsè
+liánjiē dào SSH fúwùqì yǐ zhíxíng mìnglìng.
+Běn jié liè chūle píngmù bǎohù chéngxù shèzhì
+yánsè shuōmíng fú wúxiào. Quèbǎo tā de géshì zhèngquè, rúguǒ shǐyòng 255 sè, zé biǎoshì 0-255 zhī jiān de shùzì, rúguǒ shǐyòng zhēn cǎisè zé biǎoshì VT xùliè, rúxià suǒ shì:
+Cèshì shell zhōng de cuòwù:{0}
+Jiāng biàn liáng shèzhì wèi jiǎoběn zhōng de zhí
+cuòwù bàogào tíshì.
+Gǎnxiè nín wèi wǒmen chóují ménpiào! Xuǎnzé nín yǒu shé me yàng de yāoqiú.
+Yīgè wèntí
+gōngnéng qǐngqiú
+yīgè wèntí
+nín bìxū zhǐdìng yīgè gōngnéng.
+Tíchū wèntí, jì xià nín de xiǎngfǎ huò bàogào wèntí.
+Nín bìxū xiě xià nín de qǐngqiú.
+FTP shell zhòng chūxiàn cuòwù:
+Wèizhī de FTP wàiké cuòwù:
+SFTP shell zhòng chūxiàn cuòwù:
+Wèizhī de SFTP wàiké cuòwù:
+Xiǎnshì SSH héngfú
+zài liánjiē shí xiǎnshì SSH fúwùqì héngfú.
+Nín xiǎng rúhé jìnxíng shēnfèn yànzhèng?
+Sī yào wénjiàn
+mìmǎ
+shūrù mì yào {0} de mìmǎ:
+Shūrù {0} de sī yào wèizhì. Xiě rù “q” yǐ wánchéng tiānjiā jiàn:
+Wúxiào huà yītiáo bù cúnzài de lùjìng.
+Mì yào wénjiàn {0} bù cúnzài.
+Chángshì tiānjiā sī yào shí chūcuò:
+Àn “t” qiēhuàn dào 255 sè móshì.
+Àn “t” qiēhuàn dào zhēn cǎisè móshì.
+Cǐ bùfèn kě ràng nín xuǎnzé yào gēnggǎi de yánsè lèixíng.
+Kàn qǐlái nín chúle root zhī wài méiyǒu qítā yònghù. Zhè bù hǎo. Wǒmen jiàng zhǐdǎo nín rúhé chuàngjiàn yīgè.
+Xiě xià nǐ de yònghù míng.
+Nín bìxū xiě xià nín de yònghù míng.
+Xiě xià nǐ de mìmǎ.
+Nín bìxū xiě xià nín de mìmǎ.
+Xuǎnzé zhànghù lèixíng.
+Guǎnlǐ yuán: Gāi zhànghù lèixíng zài nèihé zhōng yǒngyǒu zuìdà quánlì, yǔnxǔ nín shǐyòng xìtǒng guǎnlǐ chéngxù.
+Pǔtōng yònghù: Cǐ zhànghù lèixíng de xiànzhì bǐ guǎnlǐ yuán lüè duō.
+Gōngxǐ! Nín yǐjīng chuàngjiànle yīgè xīn zhànghù! Yào wánchéng cǐ cāozuò, qǐng yǐ nín de xīn zhànghù dēnglù.
+Yǒuguān xìnxī, qǐng cānyuè píngmù bǎohù chéngxù shǒucè huò yuán dàimǎ.
+Mod: Wèi jiǎncè dào mó zǔ.
+Yībān mìnglìng:
+Mó zǔ zhǐlìng:
+Biémíng mìnglìng:
+Wéihù móshì
+cházhǎo mùlù
+yóu màohào fēngé de yī zǔ lùjìng. Tā de gōngzuò yuánlǐ yǔ PATH xiāngtóng. Xiě rù wénjiàn jiā huò wénjiàn jiā míngchēng de wánzhěng lùjìng. Wánchéng hòu, xiě “q”. Zài lùjìng pángbiānxiě yīgè jiǎn hào yǐ shānchú xiàn yǒu mùlù.
+Méiyǒu mod mìnglìng.
+Méiyǒu biémíng mìnglìng.
+Yánsè zhí zài 0-255 de fànwéi zhī wài.
+Zhǎo bù dào kě bāozhuāng mìnglìng.
+Cháxún zhǐdìng xíng huò suǒyǒu xíng de dāncí
+yǐ xiàzài {0} gè, gòng {1} gè.
+Yǐ shàngchuán {0} gè, gòng {1} gè.
+Shǐyòng yánsè lèixíng hé háng dǎyìn jiāng zìfú chuàn dǎyìn dào kòngzhì tái
+shǐyòng jùyǒu géshì zhīchí de yánsè lèixíng hé háng dǎyìn jiāng zìfú chuàn dǎyìn dào kòngzhì tái
+jiāng zìfú chuàn dǎyìn dào tiáoshì qì
+jiāng zìfú chuàn dǎyìn dào jùyǒu géshì zhīchí de tiáoshì qì
+cèshì nèihé cuòwù gōngjù
+shǐyòng géshì zhīchí cèshì nèihé cuòwù gōngjù
+cèshì jiāng zīyuán zhōng cúnzài de zìfú chuàn fānyì chéng tèdìng yǔyán
+jiāng zìfú chuàn dǎyìn dào kòngzhì tái bìng jiěxī zhǎodào de zhàn wèi fú
+cèshì zhèngzé biǎodá shì gōngjù
+shǐyòng jiāmì zìfú chuàn
+qǐdòng suǒyǒu mó zǔ
+tíngzhǐ suǒyǒu mó zǔ
+qǐyòng huò jìnyòng tiáoshì
+qǐyòng huò jìnyòng yuǎnchéng tiáoshì
+cèshì 255 sè de VT xùliè
+cèshì VT xùliè de zhēn cǎisè
+fāsòng tōngzhī yǐ cèshì jiēshōu qì
+shǐyòng bùtóng de rìlì cèshì dǎyìn rìqí
+liè chū suǒyǒu zhīchí de dàimǎ yè
+yìngyòng chéngxù zhōng qǐyòngle nǎxiē biānyì qì biànliàng?
+Yǐnfā tèdìng shìjiàn de cèshì
+cèshì tàncè yìngjiàn
+cèshì lèsè shōují qì
+tuìchū cèshì wàiké bìng qǐdòng nèihé
+tuìchū cèshì wàiké bìng guānbì nèihé
+jiāng dāngqián mùlù bǎocún dào nèihé pèizhì wénjiàn
+shǐyòng zìfú chuàn hé zìfú chuàn shùzǔ cèshì lièbiǎo biānxiě qì
+shǐyòng zhěngshù hé zhěngshù shùzǔ cèshì lièbiǎo biānxiě qì
+shǐyòng char hé char shùzǔ cèshì lièbiǎo biān xiě qì
+pǔtōng zìfú chuàn lièbiǎo:
+Shùzǔ zìfú chuàn lièbiǎo:
+Pǔtōng zhěngshù lièbiǎo:
+Shùzǔ zhěngshù lièbiǎo:
+Pǔtōng zìfú lièbiǎo:
+Shùzǔ zìfú lièbiǎo:
+Qǐyòng RPC
+RPC duānkǒu
+shìfǒu qǐyòng RPC.
+Xiě yīgè RPC duānkǒu. Tā bìxū shì shùzì, bìngqiě bùdéyǐ bèi shǐyòng. Fǒuzé,RPC jiāng wúfǎ dǎkāi duānkǒu.
+Wèi qǐdòng RPC, yīnwèi tā yǐ bèi jìn yòng.
+Liè chū zhīchí de wénhuà
+shǐyòng zhèngzé biǎodá shì zài tígōng de wénjiàn zhōng sōusuǒ zhǐdìng de zìfú chuàn
+kàn kàn nǐ néng bùnéng ànshí àn yīgè jiàn
+yònghù méiyǒu jíshí tígōng rènhé shūrù.
+Wúxiào nándù
+zìfú méiyǒu ànshí.
+Nǐ àn duìle juésè!
+Nǐ àn cuòle zìfú.
+Àn ESC tuìchū.
+Huòqǔ rìqí hé shíjiān xìnxī
+háomiǎo:
+Miǎo:
+Fēnzhōng:
+Xiǎoshí:
+Tiān:
+Yuèfèn:
+Nián:
+Yī nián zhōng de yītiān:
+Xīngqí jǐ:
+Èrjìnzhì:
+Dāngdì shíjiān:
+Shìjiè shíjiān:
+Unix shíjiān:
+Wúfǎ jiěxī rìqí xìnxī
+quèbǎo géshì zhèngquè.
+Rìqí:
+Shíjiān:
+Shèzhì wénjiàn quánxiàn. Zhè jǐn zài yùnxíng Unix de FTP fúwùqì shàng shòu zhīchí.
+Shèzhì cǐ huìhuà de lèixíng
+zài zhíxíng wénjiàn xìtǒng cāozuò zhīqián, nín bìxū liánjiē dào fúwùqì.
+Wèi néng jiāng {0} de quánxiàn shèzhì wèi {1}.
+Wénjiàn quánxiàn shèzhì chénggōng
+shùjù lèixíng shèzhì wèi ASCII!
+Shùjù lèixíng shèzhì wéi èrjìnzhì!
+Wúxiào de shùjù lèixíng.
+Qǐng zhùyì, shǐyòng cǐ móshì wúfǎ zhèngquè xiàzài huò shàngchuán dà duōshù wénjiàn, yīncǐ wǒmen qiángliè jiànyì zài dà duōshù qíngkuàng xià shǐyòng èrjìnzhì móshì.
+Zài RPC wèi qǐdòng shí chángshì fāsòng RPC mìnglìng.
+Yǐ háomiǎo wèi dānwèi de dànchū yánchí
+zuìdà jiànbiàn bù shù
+zài dànchū wénběn zhīqián yào děngdài duōshǎo háomiǎo?
+Yào zhíxíng duōshǎo gè dànrù dànchū bùzhòu?
+Quán tàn zhēn
+rúguǒ wéi zhēn, zé tàncè suǒyǒu yìngjiàn; fǒuzé, zhǐ huì tàncè suǒ xū de yìngjiàn.
+Wúfǎ cóng pèizhì zhōng shānchú píngmù bǎohù chéngxù {0}.
+Huòqǔ zì dìngyì bǎohù chéngxù shèzhì
+shèzhì zì dìngyì bǎohù chéngxù shèzhì
+píngmù bǎohù chéngxù shèzhì chénggōng
+wúfǎ shèzhì píngmù bǎohù chéngxù
+běn bùfèn ràng nín guǎnlǐ root mìmǎ de chuàngjiàn.
+Dǎkāi RSS shell yǐ dòu qǔ tíyào
+tuìchū RSS shell bìng fǎnhuí nèihé
+gēnggǎi tíyào liànjiē
+liè chū suǒyǒu tíyào
+zài Web liúlǎn qì zhōng dòu qǔ tíyào
+wèi zhǎodào zhǐdìng de RSS shell mìnglìng.
+RSS2 tíyào wúxiào.
+RSS1 tíyào wúxiào.
+Wúxiào de Atom tíyào.
+Shūrù RSS tíyào URL:
+RSS tíyào lèixíng wúxiào.
+Wèizhī de wàiké cuòwù:
+Huòqǔ wénzhāng xìnxī
+wénzhāng biānhào bùnéng dàyú kěyòng wénzhāng.
+Biāotí:
+Guānlián:
+Huòqǔ tíyào xìnxī
+miáoshù:
+Sìliào lèixíng:
+Wénzhāng shù:
+Wénzhāng méiyǒu liànjiē!
+Wúfǎ wèi mùlù chuàngjiàn wénjiàn xìtǒng tiáomù lièbiǎo
+wénjiàn xìtǒng páixù móshì
+wénjiàn xìtǒng páixù fāngxiàng
+kòngzhì wénjiàn de páixù fāngshì.
+Kòngzhì wénjiàn xìtǒng páixù de fāngxiàng shì shēngxù háishì jiàngxù.
+Shēngxù
+jiàngxù páiliè
+quán míng
+wénjiàn dàxiǎo
+chuàngjiàn shíjiān
+shàng cì xiě rù shíjiān
+zuìhòu fǎngwèn shíjiān
+yǐ háomiǎo wèi dānwèi de zàicì xiě rù yánchí
+zài zàicì xiě rù wénběn zhīqián yào děngdài duōshǎo háomiǎo?
+Xiě xià nín xiǎng yào xiǎnshì de rènhé wénběn. Yuè zhǎng yuè hǎo.
+WPM zhōng de zuìdī xiě rù sùdù
+WPM zhōng de zuìdà xiě rù sùdù
+pīnxiě cuòwù de gàilǜ (bǎifēnbǐ)
+wúfǎ bǎocún dāngqián mùlù:{0}
+Cāshì yǐ gǎibiàn fāngxiàng
+wèi Wipe jīhuó 255 sè zhīchí.
+Jīhuó duì Wipe de zhēn cǎisè zhīchí.
+Zài suíjī gǎibiàn fāngxiàng zhīqián yào jìnxíng duōshǎo cì cāshì?
+Jiēduàn jiéshù
+nèibù chūshǐhuà wánchéng
+wèi zhǎodào yǐnyòng de wénjiàn {0}. Rúguǒ méiyǒu zhège wénjiàn, zhège mod kěnéng wúfǎ zhèngcháng gōngzuò.
+Qǐdòng móshì
+huòqǔ mó zǔ xìnxī
+mìnglìng míngchēng:
+Mìnglìng dìngyì:
+Mìnglìng lèixíng:
+Yánlìng?
+Mó zǔ bǎnběn:
+Wèi zhǎodào mó zǔ {0}.
+Wénhuà
+{0} de nǎge biàn tǐ yòng yú gēnggǎi yuèfèn míngchēng, rìlì děng?
+Wénběn biānjí qì shàngwèi dǎkāi wénjiàn liú.
+Zìfú chuàn tìhuàn.
+Qízhōng yīgè huò liǎng gè shùzì bùshì shùzì.
+Zì shānle.
+Zìfú yǐ shānchú.
+Wénjiàn xìtǒng shèzhì...
+Běn jié liè chūle wénjiàn xìtǒng shèzhì.
+Huānyíng lái dào shèzhì!
+Zhíxíng SSH mìnglìng shí chūcuò
+SSH wàiké cuòwù
+- yìngyòng xìnxī
+jīhuó duì BouncingText de 255 sè zhīchí.
+Jīhuó duì BouncingText de zhēn cǎisè zhīchí.
+Shǐyòng zìfú chuàn hé zìfú chuàn shùzǔ cèshì zìdiǎn biānxiě qì
+shǐyòng char hé char shùzǔ cèshì zìdiǎn biānxiě qì
+shǐyòng zhěngshù hé zhěngshù shùzǔ cèshì zìdiǎn biānxiě qì
+pǔtōng zìfú chuàn zìdiǎn:
+Shùzǔ zìfú chuàn zìdiǎn:
+Pǔtōng zhěngshù zìdiǎn:
+Shùzǔ zhěngshù zìdiǎn:
+Pǔtōng zìfú zìdiǎn:
+Shùzǔ zìfú zìdiǎn:
+Huānyíng lái dào cèshì ké!
+Xiǎnshì wénjiàn xìtǒng cāozuò de jìndù
+xiǎnshì wénjiàn xìtǒng cāozuò qíjiān zhèngzài chǔlǐ de wénjiàn
+HardwareType jiàng zài nǎlǐ
+yìngjiàn lèixíng {0} wèi tàncè huò wúxiào.
+Shàngwèi tàncè yìngjiàn lèixíng {0}. Rúguǒ nín quèdìng tā yǐ bèi tàncè, qǐng zài qǐyòng tiáoshì de qíngkuàng xià chóngxīn qǐdòng nèihé.
+Wèi jiěxī wèi lièbiǎo de fēnqū.
+Hēikè móshì
+rúguǒ qǐyòng, jiāng qǐyòng lǜsè kòngzhì tái.
+Dǎyìn fēngé fú
+dǎyìn jùyǒu géshì zhīchí de fēngé fú
+dǎyìn dài yǒu yánsè zhīchí de fēngé fú
+dǎyìn jùyǒu yánsè hé géshì zhīchí de fēngé fú
+shǐzhōng jūzhōng
+wèi Marquee jīhuó 255 sè zhīchí.
+Jīhuó duì Marquee de zhēn cǎisè zhīchí.
+Xiě xià nín xiǎng yào xiǎnshì de rènhé wénběn.
+Xuǎnqǔ kuāng shàng xiǎnshì de wénběn shìfǒu shǐzhōng jūzhōng.
+'Q' tuìchū.
+Wèi zhǎodào yào zhùrù de cānshù {0}.
+Zhǎo bù dào mìnglìng xíng cānshù {0}.
+Qīngchú suǒyǒu shèzhì
+píngmù bǎohù chéngxù zài xiǎnshì:{0} Shí yù dào cuòwù. Àn rènhé yīgè jiàn tuìchū.
+Yùxí...
+Yǐxià shì nín de zhǔtí de wàiguān:
+Kě bāozhuāng mìnglìng:
+Mod {0} de mìnglìng wúxiào. Mod jiěxī shībài. Chákàn yuán dàimǎ.
+Mó zǔ bùfèn:

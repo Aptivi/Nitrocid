@@ -739,3 +739,361 @@ Miri byō tan'i no chien
 ji no kakikomi o okonau made ni nan-miri byō taiki shimasu ka?
 SSH FTP sābā o shiyō dekimasu
 Komando "{0}" no herupu wa arimasen.
+RGB karā no VT shīkensu ga mukōdesu.
+Byō bā no iro.
+Minittsubā no iro.
+-Jikan bā no iro.
+Jōhō no iro.
+-Shoku o henkō suru tikku.
+ProgressClock no 255-shoku sapōto o akutibu ni shimasu.
+ProgressClock no to~urū Color sapōto o akutibu ni shimasu.
+Byō no puroguresubā no iro. 1 - 16, 1 - 255, Matawa `1-255;1-255;1-255' ni suru koto ga dekimasu.
+-Bun no puroguresubā no iro. 1 - 16, 1 - 255, Matawa `1-255;1-255;1-255' ni suru koto ga dekimasu.
+Jikan no puroguresubā no iro. 1 - 16, 1 - 255, Matawa `1-255;1-255;1-255' ni suru koto ga dekimasu.
+Hidzuke jōhō no iro. 1 - 16, 1 - 255, Matawa `1-255;1-255;1-255' ni suru koto ga dekimasu.
+Karā saikuringu ga yūkō ni natte iru baai, ProgressClock de karā o henkō suru made no tikku-sū wa? 1 Tikku = 0. 5-Byō.
+ProgressClock ga yūkō ni natte iru baai, randamuna iro ga sentaku sa remasu. Sore igai no baai wa, kōsei no iro o shiyō shimasu.
+Atarashī tēma o sakusei shimasu.
+Atarashī tēma"{0}" o sakusei shite imasu.
+Tēma o genzai no direkutori ni hozon shimasu.
+Tēma o betsu no direkutori ni hozon...
+`<-' To `->' kī de iro o sentaku shimasu. Enter kī o oshite shūryō shimasu. `I ' o oshite shudō de iro bangō o sōnyū shimasu.
+`<-' To `->' kī de iro o sentaku shimasu.-Jō yajirushi kī to shitayajirushi kī o shiyō shite,-iro no han'i o sentaku shimasu. Enter kī o oshite shūryō shimasu. `I ' o oshite shudō de iro bangō o sōnyū shimasu.
+Kāneru e yōkoso! - Bājon {0}.
+Keikoku-iro.
+Opushonkarā.
+0 Kara 255 made no iro bangō o nyūryoku shite kudasai:
+Hādou~ea ni kansuru shōsai jōhō ni tsuite wa,`hwinfo' o shiyō shite kudasai.
+Hādou~ea jōhō o shutsuryoku shimasu.
+CPU jōhō:
+Purosessā-mei:
+Purosessa sokudo:
+Purosessa bitto:
+Purosessā no kaiten-sū:
+Purosessa toporoji:
+Purosessā no taipu:
+Purosessā no mairusutōn:
+Purosessā BogoMips:
+Purosessa L2 kyasshu saizu:
+Purosessa L3 kyasshu saizu:
+Purosessa no kinō:
+Hado jōhō:
+Doraibu-mei:
+Doraibu moderu:
+Doraibubendā:
+Doraibu sokudo:
+Doraibu saizu:
+Doraibu no shiriaru:
+Doraibu ID:
+Doraibu pātishon-sū:
+Pātishon ID:
+Pātishon fairu shisutemu:
+Pātishonsaizu:
+Shiyō pātishon:
+Ramu jōhō:
+Ramu furī:
+Ramu no gōkei:
+Shiyō sa reta ramu:
+GPU jōhō:
+GPU-mei:
+GPU doraibā: 
+GPU bājon:
+GPU: 1-Tsu ijō no gurafikku kādo no purōbu ni shippai shimashita. Tonikaku jōhō o hyōji...
+>> Yōkoso! Rimōto debaggu to chatto ni sanka suru no wa konkai ga hajimetedesu. `/register <namae>' o shiyō shite tōroku shimasu.
+Debaisu wa sudeni sonzai shimasu.
+So no yōna debaisu wa arimasen.
+Debaisu no yūzā-mei o settei shimasu.
+Anata wa sudeni tōroku sa rete imasu.
+Kon'nichiwa,{0} desu!
+Fairu no naiyō o konsōru ni shutsuryoku shimasu.
+Matawa, kono komando ni `listcities' o watashimasu.
+Entori wa sudeni sonzai shimasu.
+Konsōru shutsuryoku o rappu shimasu.
+Komando wa rappu kanōde wa arimasen. Korera no komando wa rappu kanōdesu:
+ZIP ākaibu o chūshutsu shimasu.
+ZIP ākaibu o sakusei shimasu.
+{0} Ni kumikoma rete imasu.
+Debaggu dēta no daunrōdo-chū ni erā ga hassei shimashita.
+Debaggu dēta no daunrōdo-chū ni erā ga hassei shimashita. Intānetto setsuzoku o kakuninshitekudasai.
+Mod {0} no fainaraizu ni shippai shimashita: {1}
+Hassei shita subete no ibento o risuto shimasu.
+Karentodirekutori.
+Sheru no genzai no direkutori o settei shimasu. Kizon no direkutori e no zettai pasu o kakikomimasu.
+Risuto shutsuryoku o rappu shimasu.
+Genzai no konsōru jiometori ni taishite naga sugiru to omowa reru baai wa, risuto shutsuryoku o rappu shimasu.
+Pin!
+{0} Ga anata ni pingu o sōshin shimashita.
+Tēma o genzai no direkutori ni namaewotsuketehozon...
+Tēma o betsu no direkutori ni hozon...
+Tēma-mei o shitei:
+Yūzā {0} ga "{1}" risuto ni tsuika sa remashita.
+Yūzā {0} wa "{1}" risuto kara sakujosaremashita.
+Mukōna mōdo {0}.
+Kono yūzā wa sudeni sonzai shimasu.
+Tēma o rōdo...
+Kisei no tēma kara tēma o rōdo....
+.json kakuchōshi nashi de tēma fairu-mei o shitei shimasu.
+ZIP ākaibu o hirakimasu.
+ZIP sheru o shūryō shimasu.
+Ākaibu-nai no subetenofairu o risuto shimasu.
+Shitei sa reta direkutori matawa genzai no direkutori ni fairu o chūshutsu shimasu.
+Ākaibu direkutori o henkō shimasu.
+Shitei sa reta ZIP sheru komando ga mitsukarimasen.
+Direkutori {0} wa sonzai shimasen.
+Ākaibu direkutori {0} wa sonzai shimasen.
+Saidai ichi sū.
+Chōkō suru mae ni tentō suru ichi wa ikutsudesu ka?
+Raitā no 255-shoku sapōto o akutibu ni shimasu.
+Lighter no to~urū Color sapōto o akutibu ni shimasu.
+Risuto entori no iro.
+Risuto-chi no iro.
+Komando o jikkō suru tame ni SSH sābā ni setsuzoku shimasu.
+Kono sekushonde wa, sukurīnsēbā no settei o ichiran hyōji shimasu.
+Mukōna iro shitei-kodesu. Tsugi no yō ni, 255-shoku o shiyō suru baai wa 0 ~ 255 no sūchi, to~urū Color o shiyō suru baai wa VT shīkensu o imi suru tadashī keishikidearu koto o kakunin shimasu.
+Tesuto sheru no erā: {0}.
+Sukuriputo-nai no atai ni hensū o settei shimasu.
+Bagu hōkoku puronputo.
+Chiketto o go kōnyū itadaki arigatōgozaimasu. Rikuesuto no shurui o sentaku shite kudasai.
+Mondai.
+Kinō rikuesutodesu.
+Shitsumon.
+Kinō o shitei suru hitsuyō ga arimasu.
+Shitsumon shi tari, aidea o kakikon dari, mondai o hōkoku shi tari dekimasu.
+Rikuesuto o kaku hitsuyō ga arimasu.
+FTP sheru ni erā ga arimashita:
+Fumeina FTP sheru erā:
+SFTP sheru ni erā ga arimashita:
+Fumeina SFTP sheru erā:
+SSH banā o hyōji shimasu.
+Setsuzoku-ji ni SSH sābā banā o hyōji shimasu.
+Dono yō ni ninshō shimasu ka?
+Himitsuken fairu
+Pasuwādo
+Kī {0} no pasufurēzu o nyūryoku shite kudasai:
+{0} No himitsuken no basho o nyūryoku shite kudasai. Kī no tsuika o kanryō suru ni wa,`q' o nyūryoku shimasu.
+Sonzaishinai pasu o muryoku-ka shimashita.
+Kī fairu {0} wa sonzai shimasen.
+Himitsuken no tsuika-chū ni erā ga hassei shimashita:
+`T' o osu to, 255-shoku mōdo ni kirikawarimasu.
+`T' o oshite to~urūkarāmōdo ni kirikaemasu.
+Kono sekushonde wa, henkō suru iro no taipu o sentaku dekimasu.
+Rūto igai no yūzā ga inai yōdesu. Kore wa waruidesu. Sakusei hōhō o go an'nai shimasu.
+Yūzā-mei o kakimasu.
+Yūzā-mei o kaku hitsuyō ga arimasu.
+Pasuwādo o kakimasu.
+Pasuwādo o kaku hitsuyō ga arimasu.
+Akaunto no shurui o sentaku shimasu.
+Kanrisha: Kono akaunto taipu wa, kāneru-nai de mottomo kengen ga ari, shisutemu kanri puroguramu o shiyō dekimasu.
+Tsūjō no yūzā: Kono akaunto no shurui wa, kanrisha yori mo wazuka ni seigen sa rete imasu.
+Omedetō! Atarashī akaunto o sakusei shimashita. Kore o kanryō suru ni wa, atarashī akaunto to shite roguin shimasu.
+Shōsai ni tsuite wa, sukurīnsēbā no manyuaru matawa sōsu kōdo o sanshō shite kudasai.
+Mod: Mod wa kenshutsu sa remasendeshita.
+Ippantekina komando:
+Mod komando:
+Eiriasu komando:
+Mentenansumōdo
+rukkuappu
+direkutori koron de kugira reta pasu no gurūpu. PATH to onajiyōni kinō shimasu. Foruda e no furupasu matawa foruda-mei o kijutsu shimasu. Owattara `q ' to kakimasu. Kizon no direkutori o sakujo suru ni wa, pasu no yoko ni mainasu kigō o nyūryoku shimasu.
+Mod komando wa arimasen.
+Eiriasu komando wa arimasen.
+Iro no atai ga 0 ~ 255 no han'i-gaidesu.
+Wrappable komando ga mitsukarimasen.
+Shitei shita gyō matawa subete no gyō no tango o kueri shimasu
+{1} no {0} ga daunrōdo sa remashita.
+{1} No {0} ga appurōdo sa remashita.
+Karātaipu to rain purinto o shiyō shite mojiretsu o konsōru ni shutsuryoku shimasu
+karā taipu to fōmatto sapōto-tsuki no rain purinto o shiyō shite, mojiretsu o konsōru ni shutsuryoku shimasu.
+Mojiretsu o debagga ni shutsuryoku shimasu
+fōmatto o sapōto suru debaggā ni mojiretsu o shutsuryoku shimasu
+kāneruerā kinō o tesuto shimasu
+fōmatto sapōto o shiyō shite kāneru erā kinō o tesuto shimasu.
+Risōsu ni sonzai suru mojiretsu o tokutei no gengo ni hon'yaku suru tesuto mojiretsu
+o konsōru ni shutsuryoku shi, mitsukatta purēsuhorudā o kaiseki shimasu
+seiki hyōgen kinō o tesuto shimasu
+o shiyō shite mojiretsu o angō-ka shimasu
+subete no Mod o kaishi shimasu.
+Subete no Mod o teishi shimasu.
+Debaggu o yūkō matawa mukō ni shimasu
+rimōto debaggu o yūkō matawa mukō ni shimasu
+255-shoku no VT shīkensu o tesuto shimasu.
+To~urūkarā no VT shīkensu o tesuto shimasu.
+Jushin-sha o tesuto suru tame no tsūchi o sōshin shimasu
+samazamana karendā o shiyō shite hidzuke o insatsu suru koto o tesuto shimasu
+sapōto sa rete iru subete no kōdopēji o risuto shimasu
+apurikēshon de yūkō ni natte iru konpaira hensū wa?
+Tokutei no ibento o hassei sa seru tesuto
+hādou~ea o purōbu suru tesuto
+gabēji korekutā o tesuto shimasu.
+Tesuto sheru o shūryō shi, kāneru o kidō shimasu.
+Tesuto sheru o shūryō shi, kāneru o shattodaun shimasu.
+Genzai no direkutori o kāneru kōsei fairu ni hozon shimasu
+mojiretsu to mojiretsu hairetsu o shiyō shite risuto raitā o tesuto shimasu.
+Seisū to seisū no hairetsu de risuto raitā o tesuto shimasu
+char oyobi char hairetsu o shiyō shite risuto raitā o tesuto shimasu.
+Tsūjō no mojiretsu risuto:
+Hairetsu mojiretsu risuto:
+Tsūjō no seisū risuto:
+Hairetsu seisū risuto:
+Tsūjō no moji risuto:
+Hairetsu moji risuto:
+RPC o yūkōnisuru
+RPC pōto
+RPC o yūkōnisuru ka dō ka.
+RPC pōto o kakikomimasu. Sūchidearu hitsuyō ga ari, sudeni shiyō sa rete ite wa narimasen.-Sō shinai to, RPC wa pōto o hiraku koto ga dekimasen.
+Mukō ni natte iru tame, RPC o kaishi shite imasen.
+Sapōto sa rete iru karucha no risuto
+seiki hyōgen o shiyō shite, teikyō sa reta fairu-nai no shitei sa reta mojiretsu o kensaku shimasu
+jikandōrini kī o osu koto ga dekiru ka dō ka o kakunin shimasu
+yūzā ga taimurī ni nyūryoku o teikyō shimasendeshita.
+Mukōna gaido
+kyarakutā wa jikandōrini osa rete imasen.
+Tadashī moji o oshimashita!
+Anata wa machigatta moji o oshimashita.
+Esc kī o oshite shūryō shimasu.
+Nichiji jōhō o shutoku shimasu
+miri byō:
+Byō:
+Bun:
+Jikan:
+Hibi:
+Tsuki:
+Toshi:
+Nenkan tsūsan-bi:
+Yōbi:
+Bainari:
+Genchi jikan:
+Sekai-ji:
+Unix jikan:
+No hidzuke jōhō no kaiseki ni shippai shimashita
+fōmatto ga tadashī koto o kakuninshitekudasai.
+Hidzuke:
+Jikan:
+Fairu no akusesu kyoka o settei shimasu. Kore wa, Unix o jikkō suru FTP sābā de nomi sapōto sa remasu.
+Kono sesshon no taipu o settei shimasu
+fairu shisutemu sōsa o jikkō suru mae ni sābā ni setsuzoku suru hitsuyō ga arimasu.
+{0} No kengen o {1} ni settei dekimasendeshita.
+Fairu no akusesu kyoka ga seijō ni settei sa remashita
+dēta-gata o asukī ni settei!
+Dēta-gata o bainari ni settei!
+Mukōna dēta-gatadesu.
+Kono mōdo o shiyō suru to, hotondo no fairu ga tadashiku daunrōdo matawa appurōdo sa renai koto ni chūi shite kudasai. Sonotame, hotondo no jōkyō de bainari mōdo o shiyō suru koto o tsuyoku o susume shimasu.
+RPC ga kaishi sa rete inai toki ni RPC komando o sōshin shiyou to shite imasu.
+Miri byō tan'i no fēdoauto chien
+saidai fēdo suteppu tekisuto
+fēdoauto suru made nan-miri byō matsu ka?
+Nandankai fēdo suru ka?
+Furupurōbu
+tsurū no baai, subete no hādou~ea o purōbu shimasu. Sore igai no baai wa, hitsuyōna hādou~ea nomi o purōbu shimasu.
+Kōsei kara sukurīnsēbā {0} o sakujo dekimasendeshita.
+Kasutamu sēbā settei o shutoku shimasu
+kasutamusēbā settei o settei shimasu
+sukurīnsēbā no settei ni seikō shimashita
+sukurīnsēbā no settei ni shippai shimashita
+kono sekushonde wa, rūto pasuwādo no sakusei o kanri dekimasu.
+Fīdo o yomitoru tame ni RSS sheru o hirakimasu
+RSS sheru o shūryō shi, kāneru ni modorimasu
+fīdo rinku o henkō shimasu
+subete no fīdo o risuto shimasu
+u~ebu burauza de fīdo o yomitorimasu
+shitei sa reta RSS sheru komando ga mitsukarimasen.
+Mukōna RSS2 fīdodesu.
+Mukōna RSS1 fīdodesu.
+Mukōna atomu fīdodesu.
+RSS fīdo no URL o nyūryoku shite kudasai:
+RSS fīdo taipu ga mukōdesu.
+Fumeina sheru erā:
+Kiji jōhō o shutoku shimasu
+kiji bangō wa, riyō kanōna kiji yori ōkiku suru koto wa dekimasen.
+Daimei:
+Rinku:
+Fīdo jōhō o shutoku shimasu
+setsumei:
+Fīdo no shurui:
+Kiji-sū:
+Kiji ni rinku ga arimasen!
+Direkutori no fairu shisutemu entori no risuto o sakusei dekimasendeshita
+fairu shisutemu no sōtomōdo
+fairu shisutemu no sōto hōkō
+fairu no sōto hōhō o seigyo shimasu.
+Shōjun ka kōjun ka ni kakawarazu, fairu shisutemu no sōto no hōkō o seigyo shimasu.
+Shōjun
+kōjun
+furunēmu
+fairusaizu
+sakusei jikan
+saishū kakikomi jikan
+saishū akusesu jikan
+miri byō tan'i no sai kakikomi chien
+tekisuto o saido kakikomu mae ni nan-miri byō taiki shimasu ka?
+Hyōji shitai tekisuto o nyūryoku shite kudasai. Nagai kata ga yoidesu.
+WPM de no saitei kakikomi sokudo
+WPM de no saidai kakikomi sokudo
+pāsento de no taipu misu no kakuritsu
+genzai no direkutori o hozon dekimasendeshita: {0}
+Waipu de hōkō tenkan
+waipu no 255-shoku sapōto o akutibu ni shimasu.
+Waipu no to~urū karā sapōto o akutibu ni shimasu.
+Randamu ni hōkōwokaeru mae ni nankai waipu suru hitsuyō ga arimasu ka?
+Sutēji shūryō
+naibu shokka ga shūryō shimashita
+sanshō fairu {0} ga mitsukarimasen. Kono mod wa, kono fairu ga nai to tadashiku dōsa shinai kanōsei ga arimasu.
+Kaishi mod
+mod jōhō o shutoku shimasu
+komando-mei:
+Komando teigi:
+Komando taipu:
+Kibishī meirei?
+Moddobājon:
+Mod {0} ga mitsukarimasen.
+No bunka
+tsuki no namae ya karendā nado o henkō suru tame ni shiyō sa rete iru {0} no barianto wa doredesu ka?
+Tekisuto edita wa mada fairu sutorīmu o aite imasen.
+Gen kōkan-zumi.
+Sūchi no ippō matawa ryōhō ga sūchide wa arimasen.
+Tango o sakujo shimashita.
+Kyara sakujo.
+Fairu shisutemu settei...
+Kono sekushon ni wa, fairu shisutemu no settei ga risuto sa rete imasu.
+Settei e yōkoso!
+SSH komando no jikkō-chū ni erā ga hassei shimashita
+SSH sheru no erā
+- apuri jōhō
+BouncingText no 255-shoku sapōto o akutibu ni shimasu.
+BouncingText no to~urū Color sapōto o akutibu ni shimasu.
+Mojiretsu to mojiretsu hairetsu de jisho raitā o tesuto shimasu
+char oyobi char hairetsu o shiyō shite dikushonari raitā o tesuto shimasu.
+Seisū to seisū no hairetsu de jisho raitā o tesuto shimasu
+tsūjō no mojiretsu jisho:
+Hairetsu mojiretsu jisho:
+Tsūjō no seisū jisho:
+Hairetsu seisū dikushonari:
+Tsūjō no moji jisho:
+Hairetsu moji dikushonari:
+Tesutosheru e yōkoso!
+Fairu shisutemu sōsa no shinkō jōkyō o hyōji
+fairu shisutemu sōsa-chū ni shori sa rete iru fairu o hyōji shimasu
+HardwareType wa
+hādou~ea taipu {0} ga purōbu sa rete inai ka, mukōdesu.
+Hādou~ea taipu {0} wa mada purōbu sa rete imasen. Purōbu sa rete iru koto ga kakujitsuna baai wa, debaggu o yūkō ni shite kāneru o sakidō shimasu.
+Risuto ni kaiseki sa rete inai pātishon.
+Hakkāmōdo
+yūkōnisuru to, midoriiro no konsōru ga yūkō ni narimasu.
+Separētā o insatsu shimasu
+fōmatto o sapōto suru separēta o shutsuryoku shimasu
+karāsapōto-tsuki no separētā o insatsu shimasu
+iro to fōmatto o sapōto suru separētā o insatsu shimasu
+tsuneni chūōsoroe
+mākī no 255-shoku sapōto o akutibu ni shimasu.
+Mākī no to~urū karā sapōto o akutibu ni shimasu.
+Hyōji shitai tekisuto o nyūryoku shite kudasai.
+Mākī ni hyōji sa reru tekisuto o tsuneni chūōsoroe ni suru ka dō ka.
+Shūryō suru ni wa `q'.
+Sōnyū suru hikisū {0} ga mitsukarimasen.
+Komando rain hikisū {0} ga mitsukarimasen.
+Subete no settei o kuria shimasu
+sukurīnsēbā de hyōji-chū ni erā ga hassei shimashita: {0}. Shūryō suru ni wa, nin'i no kī o oshite kudasai.
+Purebyū...
+Tēma wa tsugi no yō ni narimasu.
+Rappu kanōna komando:
+Mod {0} ni wa mukōna komando ga arimasu. Mod no kaiseki ni shippai shimashita. Sōsu kōdo o kakunin shimasu.
+Kaizō pātsu:

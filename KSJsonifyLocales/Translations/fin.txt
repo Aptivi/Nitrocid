@@ -739,3 +739,361 @@ Viive millisekunneissa
 Kuinka monta millisekuntia odottaa ennen seuraavan kirjoituksen kirjoittamista?
 Voit käyttää SSH FTP -palvelinta
 Ei apua komennolle "{0}".
+Virheellinen VT-sekvenssi RGB-väreille.
+Seconds-palkin väri
+Minuuttipalkin väri
+Tunnin palkin väri
+Tietojen väri
+Punkit vaihtaa väriä
+Aktivoi 255 väritukea ProgressClockille.
+Aktivoi todellisen värituen ProgressClockille.
+Sekuntien etenemispalkin väri. Se voi olla 1-16, 1-255 tai "1-255;1-255;1-255".
+Minuuttien etenemispalkin väri. Se voi olla 1-16, 1-255 tai "1-255;1-255;1-255".
+Tunnin edistymispalkin väri. Se voi olla 1-16, 1-255 tai "1-255;1-255;1-255".
+Päivämäärätietojen väri. Se voi olla 1-16, 1-255 tai "1-255;1-255;1-255".
+Jos väripyöräily on käytössä, kuinka monta punkkia ennen kuin vaihdat värejä ProgressClockissa? 1 rasti = 0,5 sekuntia
+ProgressClock valitsee satunnaiset värit, jos se on käytössä. Muussa tapauksessa käytä kokoonpanon värejä.
+Tekee uuden teeman
+Uuden teeman "{0}" tekeminen.
+Tallenna teema nykyiseen hakemistoon
+Tallenna teema toiseen hakemistoon ...
+Valitse väri näppäimillä "<-" ja "->". Lopeta painamalla ENTER. Paina "i" lisätäksesi värinumeron manuaalisesti.
+Valitse väri näppäimillä "<-" ja "->". Käytä nuoli ylös ja nuoli alas -näppäimiä valitaksesi värialueet. Lopeta painamalla ENTER. Paina "i" lisätäksesi värinumeron manuaalisesti.
+Tervetuloa ytimeen! - Versio {0}
+Varoitusväri
+Vaihtoehdon väri
+Syötä värinumero 0-255:
+Käytä "hwinfoa", jos haluat lisätietoja laitteistosta.
+Tulostaa laitteistotiedot
+Suorittimen tiedot:
+Prosessorin nimi:
+Prosessorin nopeus:
+Suorittimen bitit:
+Suorittimen kierros:
+Prosessorin topologia:
+Suorittimen tyyppi:
+Suorittimen virstanpylväs:
+Suorittimen BogoMips:
+Suorittimen L2 välimuistin koko:
+Suorittimen L3 välimuistin koko:
+Suorittimen ominaisuudet:
+HDD-tiedot:
+Aseman nimi:
+Vetomalli:
+Drive-toimittaja:
+Ajonopeus:
+Aseman koko:
+Aseman sarja:
+Aseman tunnus:
+Aseman osioiden määrä:
+Osio ID:
+Osiotiedostojärjestelmä:
+Osion koko:
+Käytetty osio:
+RAM-tiedot:
+RAM-muisti:
+RAM-muistia yhteensä:
+Käytetty RAM:
+GPU-tiedot:
+GPU-nimi:
+GPU-ohjain:
+GPU-versio:
+GPU: Yhtä tai useampaa näytönohjainta ei voitu tutkia. Näytetään tietoja joka tapauksessa ...
+>> Tervetuloa! Tämä on ensimmäinen kerta, kun syötät etäkäynnistystä ja chat-keskustelua. Käytä rekisteröidäksesi "/ register <name>".
+Laite on jo olemassa.
+Ei sellaista laitetta.
+Asettaa laitteen käyttäjänimen
+Olet jo rekisteröitynyt.
+Hei {0}!
+Tulostaa tiedoston sisällön konsoliin
+Tai välitä "listcities" tälle komennolle.
+Merkintä on jo olemassa.
+Kääri konsolin lähdön
+Komento ei ole pakattava. Nämä komennot ovat käärittäviä:
+Poimi ZIP-arkiston
+Luo ZIP-arkiston
+Sisäänrakennettu {0}
+Virhe virheenkorjaustietojen lataamisessa
+Virheenkorjaustietoja ladattaessa tapahtui virhe. Tarkista internetyhteytesi.
+Modin {0} viimeistely epäonnistui: {1}
+Luettelee kaikki potkut
+Nykyinen hakemisto
+Asettaa kuoren nykyisen hakemiston. Kirjoita absoluuttinen polku mihin tahansa olemassa olevaan hakemistoon.
+Kääri luettelolähdöt
+Kääri luettelolähdöt, jos se näyttää liian pitkältä konsolin nykyiselle geometrialle.
+Ping!
+{0} pingisti sinua.
+Tallenna teema nykyiseen hakemistoon nimellä ...
+Tallenna teema toiseen hakemistoon nimellä ...
+Määritä teeman nimi:
+Käyttäjä {0} on lisätty luetteloon {1}.
+Käyttäjä {0} on poistettu luettelosta {1}.
+Virheellinen tila {0}
+Käyttäjä on jo olemassa
+Lataa teema kohteesta ...
+Lataa teema valmiista teemoista ...
+Määritä teematiedoston nimi ilman .json-laajennusta:
+Avaa ZIP-arkiston
+Poistu ZIP-kuoresta
+Luetteloi kaikki arkistossa olevat tiedostot
+Pura tiedosto määritettyyn hakemistoon tai nykyiseen hakemistoon
+Muuttaa arkistohakemistoa
+Määritettyä ZIP-komentoa ei löydy.
+Hakemistoa {0} ei ole olemassa
+Arkistohakemistoa {0} ei ole olemassa
+Paikkojen enimmäismäärä
+Kuinka monta paikkaa valaistaan ​​ennen himmennystä?
+Aktivoi 255 väritukea sytyttimelle.
+Aktivoi sytyttimen todellisen värituen.
+Luettelon merkinnän väri
+Luettelon arvon väri
+Muodostaa yhteyden SSH-palvelimeen komennon suorittamiseksi.
+Tässä osassa luetellaan näytönsäästäjän asetukset
+Virheellinen värimääritin. Varmista, että se on oikeassa muodossa, mikä tarkoittaa lukua 0-255, jos käytät 255 väriä, tai VT-sekvenssiä, jos käytät todellista väriä seuraavasti:
+Virhe testikuoressa: {0}
+Asettaa muuttujan arvoksi komentosarjassa
+Virheilmoituskehote.
+Kiitos lipun nostamisesta meille! Valitse minkälainen pyyntö sinulla on.
+Ongelma
+Ominaisuuspyyntö
+Kysymys
+Sinun on määritettävä ominaisuus.
+Esitä kysymys, kirjoita ideasi tai ilmoita ongelmasta.
+Sinun on kirjoitettava pyyntösi.
+FTP-kuoressa tapahtui virhe:
+Tuntematon FTP-kuorivirhe:
+SFTP-kuoressa tapahtui virhe:
+Tuntematon SFTP-kuorivirhe:
+Näytä SSH-banneri
+Näyttää SSH-palvelimen bannerin yhteyden muodostamisen yhteydessä.
+Kuinka haluat todentaa?
+Yksityisen avaimen tiedosto
+Salasana
+Kirjoita avaimen {0} tunnuslause:
+Anna käyttäjän {0} yksityisen avaimen sijainti. Kirjoita "q" loppuun avainten lisääminen:
+Neutraloi olematon polku.
+Avaintiedostoa {0} ei ole olemassa.
+Virhe yrittäessäsi lisätä yksityistä avainta:
+Paina "t" vaihtaaksesi 255 väritilaan.
+Paina "t" vaihtaaksesi todelliseen väritilaan.
+Tämän osan avulla voit valita, minkä tyyppisen värin haluat muuttaa.
+Näyttää siltä, ​​että sinulla ei ole käyttäjää paitsi root. Tämä on huono. Opastamme sinua luomaan sellaisen.
+Kirjoita käyttäjänimesi.
+Sinun on kirjoitettava käyttäjänimesi.
+Kirjoita salasanasi.
+Sinun on kirjoitettava salasanasi.
+Valitse tilin tyyppi.
+Järjestelmänvalvoja: Tällä tilityypillä on eniten virtaa ytimessä, joten voit käyttää järjestelmänhallintaohjelmia.
+Normaali käyttäjä: Tämä tilityyppi on hieman rajoitetumpi kuin järjestelmänvalvojat.
+Onnittelut! Olet tehnyt uuden tilin! Viimeistele tämä kirjautumalla sisään uutena tilinäsi.
+Katso lisätietoja näytönsäästäjän käyttöoppaasta tai lähdekoodista.
+mod: Ei modeja havaittu.
+Yleiset komennot:
+Mod-komennot:
+Alias-komennot:
+huoltotila
+Hakuhakemistot
+Paksusuolen erottama polkujen ryhmä. Se toimii samalla tavalla kuin PATH. Kirjoita täydellinen polku kansioon tai kansion nimeen. Kun olet valmis, kirjoita "q". Kirjoita miinusmerkki polun viereen olemassa olevan hakemiston poistamiseksi.
+Ei mod-komentoja.
+Ei aliaksen komentoja.
+Väriarvo on alueen 0-255 ulkopuolella.
+Käärittävää komentoa ei löydy.
+Kyselee tietyllä rivillä olevan sanan tai kaikki rivit
+{0} / {1} ladattu.
+{0} / {1} ladattu.
+Tulostaa merkkijonon konsoliin käyttämällä värityyppiä ja viivatulostusta
+Tulostaa merkkijonon konsoliin käyttämällä värityyppiä ja viivatulostusta muodon tuella
+Tulostaa merkkijonon virheenkorjaajalle
+Tulostaa merkkijonon virheenkorjaukseen muodon tuella
+Testaa ytimen virhetoiminnon
+Testaa ytimen virhetoiminnon muodon tuella
+Testaa resursseissa olevan merkkijonon kääntämisen tietylle kielelle
+Tulostaa merkkijonon konsoliin ja jäsentää löydetyt paikkamerkit
+Testaa säännöllisen ilmaisun
+Salaa merkkijonon
+Käynnistää kaikki modit
+Pysäyttää kaikki modit
+Ottaa käyttöön tai poistaa käytöstä virheenkorjauksen
+Ottaa käyttöön tai poistaa käytöstä etävianmäärityksen
+Testaa VT-sekvenssin 255 värille
+Testaa VT-sekvenssin todellisen värin suhteen
+Lähettää ilmoituksen vastaanottimen testaamiseksi
+Testaa tulostuspäivämäärän eri kalentereilla
+Luettelee kaikki tuetut koodisivut
+Mitkä kääntäjän muuttujat ovat käytössä sovelluksessa?
+Testit, jotka herättävät tietyn tapahtuman
+Testaa laitteiston tutkintaa
+Testaa roskien keräilijän
+Poistu testikuoresta ja käynnistää ytimen
+Poistu testikuoresta ja sammuttaa ytimen
+Tallentaa nykyisen hakemiston ytimen kokoonpanotiedostoon
+Testaa luettelon kirjoittajan merkkijonolla ja merkkijonorakenteella
+Testaa luettelon kirjoittajan kokonaisluvulla ja kokonaisluvulla
+Testaa luettelon kirjoittajan char- ja char-taulukolla
+Normaali merkkijonoluettelo:
+Taulukon merkkijonoluettelo:
+Normaali kokonaislukulista:
+Matriisin kokonaislukulista:
+Normaali merkkiluettelo:
+Taulukon merkkiluettelo:
+Ota RPC käyttöön
+RPC-portti
+Otetaanko RPC käyttöön vai ei.
+Kirjoita RPC-portti. Sen on oltava numeerinen, eikä sitä saa käyttää jo. Muussa tapauksessa RPC ei pysty avaamaan porttia.
+RPC ei käynnisty, koska se on poistettu käytöstä.
+Luettelot tukivat kulttuureja
+Hakee määritettyä merkkijonoa toimitetusta tiedostosta säännöllisten lausekkeiden avulla
+Katso, voitko painaa näppäintä ajoissa
+Käyttäjä ei antanut mitään syötettä ajoissa.
+Virheellinen vaikeus
+Merkkiä ei painettu ajoissa.
+Olet painanut oikeaa merkkiä!
+Olet painanut väärää merkkiä.
+Paina ESC poistuaksesi.
+Hakee päivämäärä- ja aikatiedot
+Millisekuntia:
+Sekuntia:
+Pöytäkirja:
+Tunnit:
+Päivät:
+Kuukaudet:
+Vuosi:
+Vuoden päivä:
+Viikonpäivä:
+Binääri:
+Paikallinen aika:
+Maailman aika:
+Unix-aika:
+Päivämäärän tietojen jäsentäminen epäonnistui
+Varmista, että muoto on oikea.
+Päivämäärä:
+Aika:
+Asettaa tiedostojen käyttöoikeudet. Tätä tuetaan vain FTP-palvelimilla, jotka käyttävät Unixia.
+Asettaa tämän istunnon tyypin
+Sinun on muodostettava yhteys palvelimeen ennen tiedostojärjestelmän toimintojen suorittamista.
+Kohteen {0} käyttöoikeuksien asettaminen arvoon {1} epäonnistui.
+Tiedostolle on määritetty käyttöoikeudet
+Tietotyypiksi asetettu ASCII!
+Tietotyypiksi asetettu Binary!
+Virheellinen tietotyyppi.
+Varo, että useimmat tiedostot eivät lataudu tai lataudu oikein tässä tilassa, joten suosittelemme binaaritilan käyttöä useimmissa tilanteissa.
+Yritetään lähettää RPC-komento, kun RPC ei käynnisty.
+Häivytysviive millisekunneissa
+Max haalistuvat vaiheet
+Kuinka monta millisekuntia odottaa ennen kuin teksti häviää?
+Kuinka monta haalistumisvaihetta on tehtävä?
+Täysi koetin
+Jos totta, koettelee kaikki laitteistot; muuten vain tutkia tarvittavat laitteistot.
+Näytönsäästäjän {0} poistaminen kokoonpanosta epäonnistui.
+Noutaa mukautetut säästäjän asetukset
+Asettaa mukautetut säästäjän asetukset
+Asetusten määrittäminen näytönsäästäjälle onnistui
+Näytönsäästäjän asetuksen määrittäminen epäonnistui
+Tämän osan avulla voit hallita pääkäyttäjän salasanan luomista.
+Avaa RSS-kuoren syötteiden lukemista varten
+Poistu RSS-kuoresta ja palaa ytimeen
+Vaihtaa syötelinkin
+Luettelee kaikki syötteet
+Lukee syötteen verkkoselaimessa
+Määritettyä RSS-komentokomentoa ei löydy.
+Virheellinen RSS2-syöte.
+Virheellinen RSS1-syöte.
+Virheellinen Atom-syöte.
+Kirjoita RSS-syötteen URL:
+Virheellinen RSS-syötetyyppi.
+Tuntematon kuorivirhe:
+Noutaa artikkelin tiedot
+Artikkelinumero ei voi olla suurempi kuin käytettävissä olevat artikkelit.
+Otsikko:
+Linkki:
+Noutaa syötteen tiedot
+Kuvaus:
+Syötteen tyyppi:
+Artikkeleiden määrä:
+Artikkelilla ei ole linkkiä!
+Luettelon luominen hakemiston tiedostojärjestelmästä epäonnistui
+Tiedostojärjestelmän lajittelutila
+Tiedostojärjestelmän lajittelusuunta
+Määrittää, miten tiedostot lajitellaan.
+Ohjaa tiedostojärjestelmän lajittelun suuntaa riippumatta siitä, onko se nouseva tai laskeva.
+Nousevassa järjestyksessä
+Laskeva järjestys
+Koko nimi
+Tiedoston koko
+Luomisaika
+Viimeinen kirjoitusaika
+Viimeinen käyttöaika
+Kirjoita uudelleen viive millisekunneissa
+Kuinka monta millisekuntia odottaa ennen kuin kirjoitat tekstiä uudelleen?
+Kirjoita haluamasi teksti. Pidempi on parempi.
+Pienin kirjoitusnopeus WPM: ssä
+Suurin kirjoitusnopeus WPM: ssä
+Virheen todennäköisyys prosentteina
+Nykyisen hakemiston tallentaminen epäonnistui: {0}
+Pyyhkeet vaihtaa suuntaa
+Aktivoi Wipen 255 väritukea.
+Aktivoi pyyhinnän todellisen värituen.
+Kuinka monta pyyhettä on tehtävä ennen suunnan vaihtamista satunnaisesti?
+Vaihe valmis vuonna
+Sisäinen alustus valmis vuonna
+Viitattua tiedostoa {0} ei löydy. Tämä mod ei ehkä toimi oikein ilman tätä tiedostoa.
+Käynnistetään mod
+Hakee mod-tiedot
+Komennon nimi:
+Komennon määritelmä:
+Komentotyyppi:
+Tiukka komento?
+Mod-versio:
+Modia {0} ei löydy.
+Kulttuuri
+Mitä {0} -versiota käytetään kuukausien nimien, kalenterin jne. Muuttamiseen?
+Tekstieditori ei ole vielä avannut tiedostovirtaa.
+Merkkijono vaihdettu.
+Yksi tai molemmat numerot eivät ole numeerisia.
+Sana poistettu.
+Merkki poistettu.
+Tiedostojärjestelmän asetukset ...
+Tässä osassa luetellaan tiedostojärjestelmän asetukset.
+Tervetuloa Asetuksiin!
+Virhe SSH-komennon suorittamisessa
+Virhe SSH-kuoressa
+- Sovellustiedot
+Aktivoi 255 väritukea BouncingTextille.
+Aktivoi todellisen värituen BouncingTextille.
+Testaa sanakirjan kirjoittajan merkkijonolla ja merkkijonoryhmällä
+Testaa sanakirjan kirjoittajan char- ja char-taulukolla
+Testaa sanakirjan kirjoittajan kokonaisluku- ja kokonaislukumatriisillä
+Normaali merkkijonon sanakirja:
+Matriisijonon sanakirja:
+Normaali kokonaislukusanakirja:
+Matriisin kokonaislukusanakirja:
+Normaali char-sanakirja:
+Taulukon char-sanakirja:
+Tervetuloa Test Shelliin!
+Näytä tiedostojärjestelmän toimintojen edistyminen
+Näyttää, mitä tiedostoa käsitellään tiedostojärjestelmän toimintojen aikana
+missä HardwareType tulee olemaan
+Joko laitteistotyyppiä {0} ei tutkita tai se ei ole kelvollinen.
+Laitteistotyyppiä {0} ei ole vielä tutkittu. Jos olet varma, että se on tutkittu, käynnistä ydin uudelleen, kun virheenkorjaus on käytössä.
+Osioita ei jäsennetty luetteloon.
+Hakkeritila
+Jos tämä on käytössä, vihreä konsoli otetaan käyttöön.
+Tulostaa erottimen
+Tulostaa erottimen, jolla on muodon tuki
+Tulostaa erottimen, jossa on värituki
+Tulostaa erottimen, jolla on väri- ja muodotuki
+Aina keskitetty
+Aktivoi Marqueen 255 väritukea.
+Aktivoi Marqueen todellisen värituen.
+Kirjoita haluamasi teksti.
+Onko teltassa näkyvä teksti aina keskitetty.
+"q" lopettaa.
+Argumenttia {0} ei havaittu pistävän.
+Komentoriviargumenttia {0} ei löydy.
+Tyhjentää kaikki asetukset
+Näytönsäästäjässä tapahtui virhe näytettäessä: {0}. Paina mitä tahansa näppäintä poistuaksesi.
+Esikatselu ...
+Teemasi näyttää tältä:
+Kääritettävät komennot:
+Modilla {0} on virheellinen komento. Modin jäsentäminen epäonnistui. Tarkista lähdekoodi.
+Mod-osat:

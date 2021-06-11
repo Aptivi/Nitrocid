@@ -739,3 +739,361 @@ Penundaan dalam Milidetik
 Berapa milidetik untuk menunggu sebelum membuat tulisan berikutnya?
 Memungkinkan Anda menggunakan server FTP SSH
 Tidak ada bantuan untuk perintah "{0}".
+Urutan VT tidak valid untuk warna RGB.
+Warna Bilah Detik
+Warna Bilah Menit
+Warna Jam Bar
+Warna Informasi
+Centang untuk mengubah warna
+Mengaktifkan 255 dukungan warna untuk ProgressClock.
+Mengaktifkan dukungan warna sebenarnya untuk ProgressClock.
+Warna bilah kemajuan detik. Itu bisa 1-16, 1-255, atau "1-255;1-255;1-255".
+Warna bilah kemajuan menit. Itu bisa 1-16, 1-255, atau "1-255;1-255;1-255".
+Warna bilah kemajuan jam. Itu bisa 1-16, 1-255, atau "1-255;1-255;1-255".
+Warna informasi tanggal. Itu bisa 1-16, 1-255, atau "1-255;1-255;1-255".
+Jika siklus warna diaktifkan, berapa banyak centang sebelum mengubah warna di ProgressClock? 1 centang = 0,5 detik
+ProgressClock akan memilih warna acak jika diaktifkan. Jika tidak, gunakan warna dari config.
+Membuat tema baru
+Membuat tema baru "{0}".
+Simpan Tema ke Direktori Saat Ini
+Simpan Tema ke Direktori Lain...
+Pilih warna menggunakan tombol "<-" dan "->". Tekan ENTER untuk keluar. Tekan "i" untuk memasukkan nomor warna secara manual.
+Pilih warna menggunakan tombol "<-" dan "->". Gunakan tombol panah atas dan panah bawah untuk memilih di antara rentang warna. Tekan ENTER untuk keluar. Tekan "i" untuk memasukkan nomor warna secara manual.
+Selamat datang di kernel! - Versi {0}
+Warna peringatan
+Warna pilihan
+Masukkan nomor warna dari 0 hingga 255:
+Gunakan "hwinfo" untuk informasi tambahan tentang perangkat keras.
+Mencetak informasi perangkat keras
+informasi CPU:
+Nama prosesor:
+Kecepatan prosesor:
+Bit prosesor:
+Putaran prosesor:
+Topologi prosesor:
+Jenis prosesor:
+Pencapaian prosesor:
+Prosesor BogoMips:
+Ukuran cache prosesor L2:
+Ukuran cache prosesor L3:
+Fitur prosesor:
+Informasi HDD:
+Nama drive:
+Model penggerak:
+Vendor penggerak:
+Kecepatan berkendara:
+Ukuran drive:
+Seri penggerak:
+ID Drive:
+Jumlah partisi drive:
+ID Partisi:
+Sistem file partisi:
+Ukuran partisi:
+Partisi yang digunakan:
+informasi RAM:
+bebas RAM:
+jumlah RAM:
+RAM yang digunakan:
+informasi GPU:
+nama GPU:
+driver GPU:
+versi GPU:
+GPU: Satu atau beberapa kartu grafis gagal diperiksa. Tetap menampilkan informasi...
+>> Selamat datang! Ini adalah pertama kalinya Anda memasuki debug dan obrolan jarak jauh. Gunakan "/daftar <nama>" untuk mendaftar.
+Perangkat sudah ada.
+Tidak ada perangkat seperti itu.
+Setel nama pengguna perangkat
+Anda sudah terdaftar.
+Hai, {0}!
+Mencetak konten file ke konsol
+Atau, berikan "listcities" ke perintah ini.
+Entri sudah ada.
+Membungkus keluaran konsol
+Perintah tidak dapat dibungkus. Perintah-perintah ini dapat dibungkus:
+Ekstrak arsip ZIP
+Membuat arsip ZIP
+Dibangun di {0}
+Terjadi kesalahan saat mengunduh data debug
+Terjadi kesalahan saat mengunduh data debug. Periksa koneksi internet Anda.
+Gagal menyelesaikan mod {0}: {1}
+Daftar semua acara yang dipecat
+Direktori Saat Ini
+Mengatur direktori shell saat ini. Tulis jalur absolut ke direktori yang ada.
+Bungkus keluaran daftar
+Membungkus keluaran daftar jika tampaknya terlalu panjang untuk geometri konsol saat ini.
+Ping!
+{0} melakukan ping kepada Anda.
+Simpan Tema ke Direktori Saat Ini sebagai...
+Simpan Tema ke Direktori Lain sebagai...
+Tentukan nama tema:
+Pengguna {0} telah ditambahkan ke daftar "{1}".
+Pengguna {0} telah dihapus dari daftar "{1}".
+Mode tidak valid {0}
+Pengguna sudah ada
+Muat Tema Dari...
+Muat Tema Dari Tema Prebuilt...
+Tentukan nama file tema tanpa ekstensi .json:
+Membuka arsip ZIP
+Keluar dari cangkang ZIP
+Daftar semua file di dalam arsip
+Mengekstrak file ke direktori tertentu atau direktori saat ini
+Mengubah direktori arsip
+Perintah shell ZIP yang ditentukan tidak ditemukan.
+Direktori {0} tidak ada
+Direktori arsip {0} tidak ada
+Jumlah Posisi Maks
+Berapa banyak posisi yang menyala sebelum peredupan?
+Mengaktifkan 255 dukungan warna untuk Lighter.
+Mengaktifkan dukungan warna sebenarnya untuk Lighter.
+Warna entri daftar
+Warna daftar nilai
+Terhubung ke server SSH untuk menjalankan perintah.
+Bagian ini mencantumkan pengaturan screensaver untuk
+Penentu warna tidak valid. Pastikan formatnya benar, artinya angka 0-255 jika menggunakan 255 warna atau urutan VT jika menggunakan warna asli sebagai berikut:
+Kesalahan dalam cangkang pengujian: {0}
+Menetapkan variabel ke nilai dalam skrip
+Prompt pelaporan bug.
+Terima kasih telah memberikan tiket kepada kami! Pilih jenis permintaan yang Anda miliki.
+Masalah
+Permintaan fitur
+Pertanyaan
+Anda harus menentukan fitur.
+Ajukan pertanyaan, catat ide Anda, atau laporkan masalah.
+Anda harus menulis permintaan Anda.
+Ada kesalahan di shell FTP:
+Kesalahan shell FTP tidak dikenal:
+Ada kesalahan di shell SFTP:
+Kesalahan shell SFTP tidak diketahui:
+Tampilkan spanduk SSH
+Menampilkan spanduk server SSH saat koneksi.
+Bagaimana Anda ingin mengautentikasi?
+File kunci pribadi
+Kata sandi
+Masukkan frasa sandi untuk kunci {0}:
+Masukkan lokasi kunci pribadi untuk {0}. Tulis "q" untuk menyelesaikan penambahan kunci:
+Menetralisir jalur yang tidak ada.
+File kunci {0} tidak ada.
+Kesalahan saat mencoba menambahkan kunci pribadi:
+Tekan "t" untuk beralih ke 255 mode warna.
+Tekan "t" untuk beralih ke mode warna sebenarnya.
+Bagian ini memungkinkan Anda memilih jenis warna apa yang ingin Anda ubah.
+Sepertinya Anda tidak memiliki pengguna kecuali root. Ini buruk. Kami akan memandu Anda cara membuatnya.
+Tulis nama pengguna Anda.
+Anda harus menulis nama pengguna Anda.
+Tulis kata sandi Anda.
+Anda harus menulis kata sandi Anda.
+Pilih jenis akun.
+Administrator: Jenis akun ini memiliki kekuatan paling besar di kernel, memungkinkan Anda untuk menggunakan program manajemen sistem.
+Pengguna Normal: Jenis akun ini sedikit lebih dibatasi daripada administrator.
+Selamat! Anda telah membuat akun baru! Untuk menyelesaikan ini, masuk sebagai akun baru Anda.
+Lihat manual screensaver atau kode sumber untuk informasi.
+mod: Tidak ada mod yang terdeteksi.
+Perintah umum:
+Perintah mod:
+Perintah Alias:
+Mode Pemeliharaan
+Cari Direktori
+Kumpulan jalur yang dipisahkan oleh titik dua. Ini bekerja sama dengan PATH. Tulis path lengkap ke folder atau nama folder. Setelah selesai, tulis "q". Tulis tanda minus di sebelah jalur untuk menghapus direktori yang ada.
+Tidak ada perintah mod.
+Tidak ada perintah alias.
+Nilai warna berada di luar kisaran 0-255.
+Perintah wrappable tidak ditemukan.
+Kueri kata dalam baris tertentu atau semua baris
+{0} dari {1} diunduh.
+{0} dari {1} diunggah.
+Mencetak string ke konsol menggunakan tipe warna dan cetak garis
+Mencetak string ke konsol menggunakan jenis warna dan cetak garis dengan dukungan format
+Mencetak string ke debugger
+Mencetak string ke debugger dengan dukungan format
+Menguji fasilitas kesalahan kernel
+Menguji fasilitas kesalahan kernel dengan dukungan format
+Tes menerjemahkan string yang ada di sumber daya ke bahasa tertentu
+Mencetak string untuk menghibur dan mem-parsing placeholder yang ditemukan
+Menguji fasilitas ekspresi reguler
+Mengenkripsi string menggunakan
+Mulai semua mod
+Hentikan semua mod
+Mengaktifkan atau menonaktifkan debug
+Mengaktifkan atau menonaktifkan debug jarak jauh
+Menguji urutan VT untuk 255 warna
+Menguji urutan VT untuk warna asli
+Mengirim pemberitahuan untuk menguji penerima
+Menguji tanggal pencetakan menggunakan kalender yang berbeda
+Mencantumkan semua halaman kode yang didukung
+Variabel kompiler apa yang diaktifkan dalam aplikasi?
+Tes meningkatkan acara tertentu
+Tes menyelidiki perangkat keras
+Menguji pengumpul sampah
+Keluar dari shell uji dan mulai kernel
+Keluar dari shell uji dan matikan kernel
+Menyimpan direktori saat ini ke file konfigurasi kernel
+Menguji penulis daftar dengan string dan array string
+Menguji penulis daftar dengan array integer dan integer
+Menguji penulis daftar dengan array char dan char
+Daftar string biasa:
+Daftar string array:
+Daftar bilangan bulat normal:
+Daftar bilangan bulat array:
+Daftar karakter normal:
+Daftar karakter array:
+Aktifkan RPC
+Pelabuhan RPC
+Apakah akan mengaktifkan RPC atau tidak.
+Tulis port RPC. Itu harus numerik, dan tidak boleh sudah digunakan. Jika tidak, RPC akan gagal membuka port.
+Tidak memulai RPC karena dinonaktifkan.
+Daftar budaya yang didukung
+Mencari string yang ditentukan dalam file yang disediakan menggunakan ekspresi reguler
+Lihat apakah Anda dapat menekan tombol tepat waktu
+Pengguna tidak memberikan masukan apa pun secara tepat waktu.
+Kesulitan tidak valid
+Karakter tidak ditekan tepat waktu.
+Anda telah menekan karakter yang tepat!
+Anda telah menekan karakter yang salah.
+Tekan ESC untuk keluar.
+Dapatkan informasi tanggal dan waktu
+Milidetik:
+Detik:
+Menit:
+Jam:
+Hari:
+Bulan:
+Tahun:
+Hari Tahun:
+Hari dalam seminggu:
+Biner:
+Waktu lokal:
+Waktu Universal:
+Waktu Unix:
+Gagal mengurai informasi tanggal untuk
+Pastikan formatnya benar.
+Tanggal:
+Waktu:
+Mengatur izin file. Ini hanya didukung pada server FTP yang menjalankan Unix.
+Tetapkan jenis untuk sesi ini
+Anda harus terhubung ke server sebelum melakukan operasi sistem file.
+Gagal menyetel izin {0} ke {1}.
+Izin berhasil ditetapkan untuk file
+Tipe data disetel ke ASCII!
+Tipe data diatur ke Biner!
+Jenis data tidak valid.
+Berhati-hatilah karena sebagian besar file tidak dapat diunduh atau diunggah dengan benar menggunakan mode ini, jadi kami sangat menyarankan untuk menggunakan mode Biner pada sebagian besar situasi.
+Mencoba mengirim perintah RPC saat RPC tidak dimulai.
+Penundaan Fade Out dalam Milidetik
+Langkah Fade Maks
+Berapa milidetik untuk menunggu sebelum teks memudar?
+Berapa banyak langkah fade yang harus dilakukan?
+Penyelidikan Penuh
+Jika benar, periksa semua perangkat keras; lain, hanya akan menyelidiki perangkat keras yang dibutuhkan.
+Gagal menghapus screensaver {0} dari konfigurasi.
+Dapatkan pengaturan penghemat khusus
+Menyetel pengaturan penghemat khusus
+Pengaturan berhasil diatur untuk screensaver
+Gagal menyetel setelan untuk screensaver
+Bagian ini memungkinkan Anda mengelola pembuatan kata sandi root.
+Buka shell RSS untuk membaca feed
+Keluar dari shell RSS dan kembali ke kernel
+Mengubah tautan umpan
+Daftar semua feed
+Membaca umpan di browser web
+Perintah shell RSS yang ditentukan tidak ditemukan.
+Umpan RSS2 tidak valid.
+Umpan RSS1 tidak valid.
+Umpan Atom tidak valid.
+Masukkan URL umpan RSS:
+Jenis umpan RSS tidak valid.
+Kesalahan shell tidak diketahui:
+Dapatkan info artikel
+Nomor artikel tidak boleh lebih besar dari artikel yang tersedia.
+Judul:
+Tautan:
+Dapatkan info umpan
+Deskripsi:
+Jenis umpan:
+Jumlah artikel:
+Artikel tidak memiliki tautan!
+Gagal membuat daftar entri sistem file untuk direktori
+Mode pengurutan sistem file
+Arah pengurutan sistem file
+Mengontrol bagaimana file akan diurutkan.
+Mengontrol arah penyortiran sistem file apakah itu naik atau turun.
+urutan naik
+Urutan menurun
+Nama lengkap
+Ukuran file
+Waktu penciptaan
+Waktu menulis terakhir
+Waktu akses terakhir
+Tulis Lagi Delay dalam Milidetik
+Berapa milidetik untuk menunggu sebelum menulis teks lagi?
+Tulis teks yang ingin ditampilkan. Lebih lama lebih baik.
+Kecepatan menulis minimum dalam WPM
+Kecepatan menulis maksimum dalam WPM
+Probabilitas salah ketik dalam persen
+Gagal menyimpan direktori saat ini: {0}
+Lap untuk mengubah arah
+Mengaktifkan 255 dukungan warna untuk Hapus.
+Mengaktifkan dukungan warna sebenarnya untuk Hapus.
+Berapa banyak tisu yang harus dilakukan sebelum mengubah arah secara acak?
+Panggung selesai di
+Inisialisasi internal selesai di
+File referensi {0} tidak ditemukan. Mod ini mungkin tidak berfungsi dengan baik tanpa file ini.
+Mulai mod
+Mendapat informasi mod
+Nama perintah:
+Definisi perintah:
+Jenis perintah:
+Perintah yang ketat?
+Versi mod:
+Mod {0} tidak ditemukan.
+budaya dari
+Varian mana dari {0} yang digunakan untuk mengubah nama bulan, kalender, dll.?
+Editor teks belum membuka aliran file.
+Tali diganti.
+Salah satu atau kedua angka tersebut bukan numerik.
+Kata dihapus.
+Karakter dihapus.
+Pengaturan sistem file...
+Bagian ini mencantumkan pengaturan sistem file.
+Selamat datang di Pengaturan!
+Kesalahan menjalankan perintah SSH
+Kesalahan pada shell SSH
+- Informasi aplikasi
+Mengaktifkan 255 dukungan warna untuk BouncingText.
+Mengaktifkan dukungan warna sebenarnya untuk BouncingText.
+Menguji penulis kamus dengan string dan array string
+Menguji penulis kamus dengan array char dan char
+Menguji penulis kamus dengan array integer dan integer
+Kamus string normal:
+Kamus string array:
+Kamus bilangan bulat normal:
+Kamus bilangan bulat array:
+Kamus karakter normal:
+Kamus karakter array:
+Selamat datang di Test Shell!
+Tampilkan kemajuan pada operasi sistem file
+Menunjukkan file apa yang sedang diproses selama operasi sistem file
+di mana HardwareType akan berada
+Jenis perangkat keras {0} tidak diperiksa, atau tidak valid.
+Jenis perangkat keras {0} belum diperiksa. Jika Anda yakin telah diperiksa, mulai ulang kernel dengan debugging diaktifkan.
+Partisi tidak diuraikan ke daftar.
+Modus Peretas
+Jika diaktifkan, konsol hijau akan diaktifkan.
+Mencetak pemisah
+Mencetak pemisah dengan dukungan format
+Mencetak pemisah dengan dukungan warna
+Mencetak pemisah dengan dukungan warna dan format
+Selalu terpusat
+Mengaktifkan 255 dukungan warna untuk Marquee.
+Mengaktifkan dukungan warna sebenarnya untuk Marquee.
+Tulis teks yang ingin ditampilkan.
+Apakah teks yang ditampilkan di tenda selalu berada di tengah.
+'q' untuk berhenti.
+Argumen {0} tidak ditemukan untuk disuntikkan.
+Argumen baris perintah {0} tidak ditemukan.
+Menghapus semua pengaturan
+Screensaver mengalami kesalahan saat menampilkan: {0}. Tekan sembarang tombol untuk keluar.
+Pratinjau...
+Begini tampilan tema Anda:
+Perintah yang dapat dibungkus:
+Mod {0} memiliki perintah yang tidak valid. Penguraian mod gagal. Tinjau kode sumber.
+Bagian mod:

@@ -739,3 +739,361 @@ Fördröjning i millisekunder
 Hur många millisekunder väntar du innan du skriver nästa gång?
 Låter dig använda en SSH FTP-server
 Ingen hjälp för kommandot "{0}".
+Ogiltig VT-sekvens för RGB-färg.
+Color of Seconds Bar
+Color of Minutes Bar
+Color of Hours Bar
+Färg på information
+Fästingar för att ändra färg
+Aktiverar 255 färgstöd för ProgressClock.
+Aktiverar äkta färgstöd för ProgressClock.
+Färgen på sekunders framstegsfält. Det kan vara 1-16, 1-255 eller "1-255;1-255;1-255".
+Färgen på minutens förloppsindikator. Det kan vara 1-16, 1-255 eller "1-255;1-255;1-255".
+Färgen på förloppsindikatorn för timmar. Det kan vara 1-16, 1-255 eller "1-255;1-255;1-255".
+Färgen på datuminformation. Det kan vara 1-16, 1-255 eller "1-255;1-255;1-255".
+Om färgcykling är aktiverad, hur många fästingar innan du byter färg i ProgressClock? 1 bock = 0,5 sekunder
+ProgressClock väljer slumpmässiga färger om den är aktiverad. Använd annars färger från config.
+Gör ett nytt tema
+Skapar ett nytt tema "{0}".
+Spara tema i aktuell katalog
+Spara tema i en annan katalog ...
+Välj färg med knapparna "<-" och "->". Tryck på ENTER för att avsluta. Tryck på "i" för att infoga färgnummer manuellt.
+Välj färg med knapparna "<-" och "->". Använd pil upp och pil ner för att välja mellan färgintervall. Tryck på ENTER för att avsluta. Tryck på "i" för att infoga färgnummer manuellt.
+Välkommen till kärnan! - Version {0}
+Varningsfärg
+Alternativfärg
+Ange färgnummer från 0 till 255:
+Använd "hwinfo" för utökad information om hårdvara.
+Skriver ut maskinvaruinformation
+CPU-information:
+Processornamn:
+Processorhastighet:
+Processorbitar:
+Processor rev:
+Processortopologi:
+Processortyp:
+Processorns milstolpe:
+Processor BogoMips:
+Processor L2-cache-storlek:
+Processor L3 cache-storlek:
+Processorfunktioner:
+HDD-information:
+Enhetsnamn:
+Drivmodell:
+Drive-leverantör:
+Körhastighet:
+Drivstorlek:
+Enhetsserie:
+Drive ID:
+Drive partition count:
+Partitions-ID:
+Partition filsystem:
+Partitionsstorlek:
+Använd partition:
+RAM-information:
+RAM-fri:
+RAM totalt:
+RAM som används:
+GPU-information:
+GPU-namn:
+GPU-drivrutin:
+GPU-version:
+GPU: Ett eller flera av grafikkorten kunde inte sonderas. Visar information ändå ...
+>> Välkommen! Det här är första gången du går in i fjärrfelsökning och chatt. Använd "/ register <name>" för att registrera.
+Enheten finns redan.
+Ingen sådan enhet.
+Ställer in enhetens användarnamn
+Du är redan registrerad.
+Hej {0}!
+Skriver ut filens innehåll till konsolen
+Eller skicka "liststäder" till det här kommandot.
+Post finns redan.
+Slår in konsolutgången
+Kommandot är inte omslutbart. Dessa kommandon är omslutbara:
+Extraherar ett ZIP-arkiv
+Skapar ett ZIP-arkiv
+Inbyggd {0}
+Fel vid nedladdning av felsökningsdata
+Det uppstod ett fel när felsökningsdata hämtades. Kontrollera din internetanslutning.
+Det gick inte att slutföra mod {0}: {1}
+Listar alla avfyrade händelser
+Aktuell katalog
+Ställer in skalets nuvarande katalog. Skriv en absolut sökväg till en befintlig katalog.
+Wrap-listans utgångar
+Slår in listutmatningarna om det verkar för långt för den aktuella konsolgeometrin.
+Ping!
+{0} pingade dig.
+Spara tema i aktuell katalog som ...
+Spara tema i en annan katalog som ...
+Ange temanamn:
+Användaren {0} har lagts till i listan "{1}".
+Användaren {0} har tagits bort från listan "{1}".
+Ogiltigt läge {0}
+Användare finns redan
+Ladda tema från ...
+Ladda tema från förbyggda teman ...
+Ange temafilnamn utan .json-tillägget:
+Öppnar ett ZIP-arkiv
+Avslutar ZIP-skalet
+Listar alla filer i arkivet
+Extraherar en fil till en viss katalog eller en aktuell katalog
+Ändrar arkivkatalogen
+Det angivna ZIP-skalkommandot hittades inte.
+Katalogen {0} finns inte
+Arkivkatalogen {0} finns inte
+Max antal positioner
+Hur många positioner tänds innan de dimras?
+Aktiverar 255 färgstöd för tändare.
+Aktiverar äkta färgstöd för Tändare.
+Listans postfärg
+Listvärdesfärg
+Ansluter till en SSH-server för att utföra ett kommando.
+Detta avsnitt visar skärmsläckarinställningar för
+Ogiltig färgspecifikator. Se till att det har rätt format, vilket betyder ett nummer från 0-255 om du använder 255 färger eller en VT-sekvens om du använder sann färg enligt följande:
+Fel i testskalet: {0}
+Ställer in en variabel till ett värde i ett skript
+En felrapportering.
+Tack för att du höjde en biljett till oss! Välj vilken typ av begäran du har.
+Ett problem
+En funktionsförfrågan
+En fråga
+Du måste ange en funktion.
+Ställ en fråga, skriv din idé eller rapportera ett problem.
+Du måste skriva din begäran.
+Det uppstod ett fel i FTP-skalet:
+Okänt FTP-skalfel:
+Det uppstod ett fel i SFTP-skalet:
+Okänt SFTP-skalfel:
+Visa SSH-banner
+Visar SSH-serverbannern vid anslutning.
+Hur vill du autentisera?
+Privat nyckelfil
+Lösenord
+Ange lösenfrasen för nyckeln {0}:
+Ange platsen för den privata nyckeln för {0}. Skriv "q" för att slutföra tillägget av nycklar:
+Neutraliserade en obefintlig väg.
+Nyckelfilen {0} finns inte.
+Fel vid försök att lägga till privat nyckel:
+Tryck på "t" för att växla till 255 färgläge.
+Tryck på "t" för att växla till sant färgläge.
+I det här avsnittet kan du välja vilken typ av färg du vill ändra.
+Det verkar som om du inte har någon användare utom root. Det här är dåligt. Vi guidar dig hur du skapar en.
+Skriv ditt användarnamn.
+Du måste skriva ditt användarnamn.
+Skriv ditt lösenord.
+Du måste skriva ditt lösenord.
+Välj kontotyp.
+Administratör: Den här kontotypen har mest kraft i kärnan, så att du kan använda systemhanteringsprogram.
+Normal användare: Den här kontotypen är något mer begränsad än administratörer.
+Grattis! Du har skapat ett nytt konto! För att avsluta detta, logga in som ditt nya konto.
+Se skärmsläckarhandboken eller källkoden för information.
+mod: Inga mods upptäcktes.
+Allmänna kommandon:
+Mod-kommandon:
+Alias-kommandon:
+underhållsläge
+Sökningskataloger
+Grupp av vägar åtskilda av kolon. Det fungerar på samma sätt som PATH. Skriv en fullständig sökväg till en mapp eller ett mappnamn. När du är klar skriver du "q". Skriv ett minustecken bredvid sökvägen för att ta bort en befintlig katalog.
+Inga mod-kommandon.
+Inga alias-kommandon.
+Färgvärdet ligger utanför intervallet 0-255.
+Det omslutningsbara kommandot hittades inte.
+Frågar efter ett ord i en angiven rad eller alla rader
+{0} av {1} nedladdade.
+{0} av {1} laddade upp.
+Skriver ut en sträng till konsolen med färgtyp och linjetryck
+Skriver ut en sträng till konsolen med färgtyp och linjetryck med formatstöd
+Skriver ut en sträng till felsökaren
+Skriver ut en sträng till felsökning med formatstöd
+Testar kärnfelfunktionen
+Testar kärnfelfaciliteten med formatstöd
+Tester som översätter en sträng som finns i resurser till specifikt språk
+Skriver ut en sträng för att konsolera och analyserar de platshållare som hittats
+Testar den reguljära uttrycksfaciliteten
+Krypterar en sträng med
+Startar alla mods
+Stoppar alla mods
+Aktiverar eller inaktiverar felsökning
+Aktiverar eller inaktiverar fjärrfelsökning
+Testar VT-sekvensen för 255 färger
+Testar VT-sekvensen för äkta färg
+Skickar ett meddelande för att testa mottagaren
+Testar utskriftsdatum med olika kalendrar
+Listar alla kodsidor som stöds
+Vilka kompilatorvariabler är aktiverade i applikationen?
+Tester som lyfter den specifika händelsen
+Testar sondering av hårdvaran
+Testar sopuppsamlaren
+Avslutar testskalet och startar kärnan
+Avslutar testskalet och stänger av kärnan
+Sparar den aktuella katalogen i kärnkonfigurationsfilen
+Testar listförfattaren med strängen och strängmatrisen
+Testar listförfattaren med heltal och heltal
+Testar listförfattaren med char och char array
+Normal stränglista:
+Lista över strängsträngar:
+Normal heltalslista:
+Array heltalslista:
+Normal rödlista:
+Array char lista:
+Aktivera RPC
+RPC-port
+Huruvida RPC ska aktiveras eller inte.
+Skriv en RPC-port. Det måste vara numeriskt och får inte redan användas. I annat fall kommer inte RPC att öppna porten.
+Startar inte RPC eftersom den är inaktiverad.
+Listar stödda kulturer
+Söker efter angiven sträng i den angivna filen med reguljära uttryck
+Se om du kan trycka på en knapp i tid
+Användaren lämnade inga inmatningar i tid.
+Ogiltig svårighet
+Karaktär trycks inte i tid.
+Du har tryckt på rätt karaktär!
+Du har tryckt på fel karaktär.
+Tryck på ESC för att avsluta.
+Hämtar information om datum och tid
+Millisekunder:
+Sekunder:
+Minuter:
+Öppettider:
+Dagar:
+Månader:
+År:
+Årets dag:
+Dag i veckan:
+Binär:
+Lokal tid:
+Universal Time:
+Unix-tid:
+Det gick inte att analysera datuminformation för
+Se till att formatet är korrekt.
+Datum:
+Tid:
+Ställer in filbehörigheter. Detta stöds endast på FTP-servrar som kör Unix.
+Ställer in typen för den här sessionen
+Du måste ansluta till servern innan du utför filsystemåtgärder.
+Det gick inte att ställa in behörigheterna för {0} till {1}.
+Behörigheter har ställts in för filen
+Datatyp inställd på ASCII!
+Datatyp inställd på Binär!
+Ogiltig datatyp.
+Observera att de flesta filer inte laddas ner eller laddas upp ordentligt med det här läget, så vi rekommenderar starkt att du använder binärt läge i de flesta situationer.
+Försöker skicka ett RPC-kommando medan RPC inte startade.
+Fade Out Delay in Milliseconds
+Max Fade Steps
+Hur många millisekunder väntar du innan texten tappar ut?
+Hur många blekningssteg ska man göra?
+Full sond
+Om det är sant, sonderar all hårdvara; annars kommer bara att sondra den nödvändiga hårdvaran.
+Det gick inte att ta bort skärmsläckaren {0} från konfigurationen.
+Får anpassade spararinställningar
+Ställer in anpassade spararinställningar
+Inställningarna har ställts in för skärmsläckare
+Det gick inte att ställa in en inställning för skärmsläckare
+I det här avsnittet kan du hantera root-lösenordskapande.
+Öppnar ett RSS-skal för att läsa flödena
+Avslutar RSS-skalet och återgår till kärnan
+Ändrar matningslänken
+Listar alla flöden
+Läser ett flöde i en webbläsare
+Det angivna RSS-skalkommandot hittades inte.
+Ogiltigt RSS2-flöde.
+Ogiltigt RSS1-flöde.
+Ogiltigt Atom-flöde.
+Ange en RSS-feed URL:
+Ogiltig RSS-feedtyp.
+Okänt skalfel:
+Få information om artikeln
+Artikelnumret kan inte vara större än de tillgängliga artiklarna.
+Titel:
+Länk:
+Hämtar flödesinformationen
+Beskrivning:
+Matningstyp:
+Antal artiklar:
+Artikel har ingen länk!
+Det gick inte att skapa en lista över filsystemsposter för katalogen
+Filsystem sorteringsläge
+Sorteringsriktning för filsystem
+Styr hur filerna ska sorteras.
+Kontrollerar riktningen för filsystemsortering oavsett om den är stigande eller fallande.
+Stigande ordning
+Fallande ordning
+Fullständiga namn
+Filstorlek
+Skapningstid
+Senaste skrivtid
+Senaste åtkomsttid
+Skriv igen fördröjning i millisekunder
+Hur många millisekunder väntar du innan du skriver text igen?
+Skriv vilken text du vill visa. Längre är bättre.
+Lägsta skrivhastighet i WPM
+Maximal skrivhastighet i WPM
+Sannolikheten för skrivfel i procent
+Det gick inte att spara aktuell katalog: {0}
+Torkar för att ändra riktning
+Aktiverar 255 färgstöd för Wipe.
+Aktiverar äkta färgstöd för Wipe.
+Hur många våtservetter ska du göra innan du slumpmässigt byter riktning?
+Scenen slutade i
+Intern initialisering avslutad år
+Den refererade filen {0} hittades inte. Denna mod fungerar kanske inte ordentligt utan den här filen.
+Startar mod
+Får modinformation
+Kommandonamn:
+Kommando definition:
+Kommandotyp:
+Strikt kommando?
+Mod-version:
+Mod {0} hittades inte.
+Kultur av
+Vilken variant av {0} används för att ändra månadens namn, kalender etc.?
+Textredigeraren har inte öppnat en filström ännu.
+Sträng ersatt.
+Ett eller båda siffrorna är inte numeriska.
+Ordet har tagits bort.
+Tecken borttaget.
+Filsysteminställningar ...
+Detta avsnitt listar filsysteminställningarna.
+Välkommen till Inställningar!
+Fel vid körning av SSH-kommando
+Fel på SSH-skal
+- Appinformation
+Aktiverar 255 färgstöd för BouncingText.
+Aktiverar äkta färgstöd för BouncingText.
+Testar ordboksförfattaren med sträng och strängmatris
+Testar ordboksförfattaren med char och char array
+Testar ordboksförfattaren med heltal och heltal
+Normal strängordbok:
+Ordbok för strängsträngar:
+Normal heltal ordbok:
+Array heltal ordbok:
+Normal char ordbok:
+Array char ordbok:
+Välkommen till Test Shell!
+Visa framsteg i filsystemets åtgärder
+Visar vilken fil som bearbetas under filsystemets operationer
+där HardwareType kommer att vara
+Antingen är hårdvarutypen {0} inte sonderad eller är inte giltig.
+Hårdvarutypen {0} har inte undersökts ännu. Om du är säker på att den är sonderad startar du om kärnan med felsökning aktiverat.
+Partitioner som inte analyseras för att listas.
+Hacker-läge
+Om den är aktiverad kommer den gröna konsolen att aktiveras.
+Skriver ut en separator
+Skriver ut en separator med formatstöd
+Skriver ut en separator med färgstöd
+Skriver ut en separator med stöd för färg och format
+Alltid centrerad
+Aktiverar 255 färgstöd för partytält.
+Aktiverar äkta färgstöd för partytält.
+Skriv vilken text du vill visa.
+Om texten som visas på partytältet alltid är centrerad.
+'q' för att sluta.
+Argumentet {0} hittades inte att injiceras.
+Argumentet för kommandoraden {0} hittades inte.
+Rensar alla inställningar
+Skärmsläckaren upplevde ett fel när den visade: {0}. Tryck på valfri tangent för att avsluta.
+Förhandsvisning...
+Så här ser ditt tema ut:
+Wrappable-kommandon:
+Mod {0} har ogiltigt kommando. Modtolkning misslyckades. Granska källkoden.
+Mod delar:

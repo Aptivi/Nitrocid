@@ -739,3 +739,361 @@ Retard en millisecondes
 Combien de millisecondes attendre avant de faire la prochaine écriture?
 Vous permet d'utiliser un serveur FTP SSH
 Aucune aide pour la commande "{0}".
+Séquence VT non valide pour la couleur RVB.
+Couleur de la barre des secondes
+Couleur de la barre des minutes
+Barre de couleur des heures
+Couleur des informations
+Tiques pour changer de couleur
+Active la prise en charge de 255 couleurs pour ProgressClock.
+Active la prise en charge des couleurs vraies pour ProgressClock.
+La couleur de la barre de progression des secondes. Il peut s'agir de 1-16, 1-255 ou "1-255;1-255;1-255".
+La couleur de la barre de progression des minutes. Il peut s'agir de 1-16, 1-255 ou "1-255;1-255;1-255".
+La couleur de la barre de progression des heures. Il peut s'agir de 1-16, 1-255 ou "1-255;1-255;1-255".
+La couleur des informations de date. Il peut s'agir de 1-16, 1-255 ou "1-255;1-255;1-255".
+Si le cycle des couleurs est activé, combien de ticks avant de changer les couleurs dans ProgressClock ? 1 tick = 0,5 seconde
+ProgressClock sélectionnera des couleurs aléatoires si elle est activée. Sinon, utilisez les couleurs de config.
+Crée un nouveau thème
+Créer un nouveau thème "{0}".
+Enregistrer le thème dans le répertoire actuel
+Enregistrer le thème dans un autre répertoire...
+Sélectionnez la couleur à l'aide des touches "<-" et "->". Appuyez sur ENTER pour quitter. Appuyez sur "i" pour insérer le numéro de couleur manuellement.
+Sélectionnez la couleur à l'aide des touches "<-" et "->". Utilisez les touches fléchées vers le haut et vers le bas pour sélectionner entre les gammes de couleurs. Appuyez sur ENTER pour quitter. Appuyez sur "i" pour insérer le numéro de couleur manuellement.
+Bienvenue dans le noyau ! - Version {0}
+Couleur d'avertissement
+Couleur de l'option
+Entrez le numéro de couleur de 0 à 255 :
+Utilisez "hwinfo" pour des informations détaillées sur le matériel.
+Imprime les informations sur le matériel
+Informations sur le processeur :
+Nom du processeur :
+La vitesse du processeur:
+Bits du processeur :
+Rév du processeur :
+Topologie du processeur :
+Type de processeur :
+Étape du processeur :
+Processeur BogoMips :
+Taille du cache du processeur L2 :
+Taille du cache du processeur L3 :
+Caractéristiques du processeur :
+Informations sur le disque dur :
+Nom du lecteur :
+Modèle d'entraînement :
+Fournisseur d'entraînement :
+Vitesse d'entraînement :
+Taille du lecteur :
+Série du lecteur :
+Identifiant du lecteur :
+Nombre de partitions de lecteur :
+Identifiant de partition :
+Partitionner le système de fichiers :
+Taille de la partition:
+Partition utilisée :
+Informations sur la RAM :
+RAM libre :
+RAM totale :
+RAM utilisée :
+Informations sur le GPU :
+Nom du GPU :
+Pilote GPU :
+Version GPU :
+GPU : une ou plusieurs des cartes graphiques n'ont pas pu être testées. Affichage des informations quand même...
+>> Bienvenue ! C'est la première fois que vous entrez dans le débogage et le chat à distance. Utilisez "/register <nom>" pour vous inscrire.
+L'appareil existe déjà.
+Pas de tel appareil.
+Définit le nom d'utilisateur de l'appareil
+Vous êtes déjà inscrit.
+Salut, {0} !
+Imprime le contenu du fichier sur la console
+Ou passez "listcities" à cette commande.
+L'entrée existe déjà.
+Enveloppe la sortie de la console
+La commande n'est pas enveloppable. Ces commandes sont enveloppables :
+Extrait une archive ZIP
+Crée une archive ZIP
+Intégré {0}
+Erreur lors du téléchargement des données de débogage
+Une erreur s'est produite lors du téléchargement des données de débogage. Vérifiez votre connection internet.
+Échec de la finalisation du module {0} : {1}
+Répertorie tous les événements déclenchés
+Répertoire actuel
+Définit le répertoire courant du shell. Écrivez un chemin absolu vers n'importe quel répertoire existant.
+Sorties de la liste de bouclage
+Encapsule les sorties de la liste si elle semble trop longue pour la géométrie actuelle de la console.
+Ping !
+{0} vous a ping.
+Enregistrer le thème dans le répertoire actuel sous...
+Enregistrer le thème dans un autre répertoire sous...
+Spécifiez le nom du thème :
+L'utilisateur {0} a été ajouté à la liste "{1}".
+L'utilisateur {0} a été supprimé de la liste "{1}".
+Mode invalide {0}
+L'utilisateur existe déjà
+Charger le thème à partir de...
+Charger le thème à partir des thèmes prédéfinis...
+Spécifiez le nom du fichier de thème sans l'extension .json :
+Ouvre une archive ZIP
+Quitte le shell ZIP
+Répertorie tous les fichiers à l'intérieur de l'archive
+Extrait un fichier dans un répertoire spécifié ou un répertoire courant
+Change le répertoire d'archives
+La commande shell ZIP spécifiée est introuvable.
+Le répertoire {0} n'existe pas
+Le répertoire d'archive {0} n'existe pas
+Nombre maximal de positions
+Combien de positions sont allumées avant la gradation ?
+Active la prise en charge de 255 couleurs pour le briquet.
+Active la prise en charge des vraies couleurs pour le briquet.
+Couleur de l'entrée de liste
+Couleur de la valeur de liste
+Se connecte à un serveur SSH pour exécuter une commande.
+Cette section répertorie les paramètres de l'économiseur d'écran pour
+Spécificateur de couleur non valide. Assurez-vous qu'il est au bon format, ce qui signifie un nombre de 0 à 255 si vous utilisez 255 couleurs ou une séquence VT si vous utilisez de vraies couleurs comme suit :
+Erreur dans le shell de test : {0}
+Définit une variable à une valeur dans un script
+Une invite de rapport de bogue.
+Merci d'avoir soulevé un ticket pour nous! Sélectionnez le type de demande que vous avez.
+Un problème
+Une demande de fonctionnalité
+Une question
+Vous devez spécifier une caractéristique.
+Posez une question, notez votre idée ou signalez un problème.
+Vous devez rédiger votre demande.
+Une erreur s'est produite dans le shell FTP :
+Erreur de shell FTP inconnue :
+Une erreur s'est produite dans le shell SFTP :
+Erreur de shell SFTP inconnue :
+Afficher la bannière SSH
+Affiche la bannière du serveur SSH lors de la connexion.
+Comment voulez-vous vous authentifier ?
+Fichier de clé privée
+Mot de passe
+Saisissez la phrase secrète pour la clé {0} :
+Saisissez l'emplacement de la clé privée pour {0}. Écrivez "q" pour terminer l'ajout des clés :
+Neutralisé un chemin inexistant.
+Le fichier de clé {0} n'existe pas.
+Erreur lors de la tentative d'ajout de clé privée :
+Appuyez sur "t" pour passer en mode 255 couleurs.
+Appuyez sur "t" pour passer en mode couleurs vraies.
+Cette section vous permet de choisir le type de couleur que vous souhaitez modifier.
+Il semble que vous n'ayez aucun utilisateur à part root. C'est mauvais. Nous vous expliquerons comment en créer un.
+Écrivez votre nom d'utilisateur.
+Vous devez écrire votre nom d'utilisateur.
+Écrivez votre mot de passe.
+Vous devez écrire votre mot de passe.
+Sélectionnez le type de compte.
+Administrateur : ce type de compte a le plus de puissance dans le noyau, vous permettant d'utiliser des programmes de gestion de système.
+Utilisateur normal : ce type de compte est légèrement plus restreint que les administrateurs.
+Toutes nos félicitations! Vous avez créé un nouveau compte ! Pour terminer, connectez-vous en tant que nouveau compte.
+Consultez le manuel de l'économiseur d'écran ou le code source pour plus d'informations.
+mod : aucun mod détecté.
+Commandes générales :
+Commandes de modules :
+Commandes d'alias :
+Mode de Maintenance
+Répertoires de recherche
+Groupe de chemins séparés par les deux points. Cela fonctionne de la même manière que PATH. Écrivez un chemin complet vers un dossier ou un nom de dossier. Lorsque vous avez terminé, écrivez "q". Écrivez un signe moins à côté du chemin pour supprimer un répertoire existant.
+Aucune commande de mod.
+Aucune commande d'alias.
+La valeur de la couleur est en dehors de la plage de 0-255.
+La commande enveloppable est introuvable.
+Interroge un mot dans une ligne spécifiée ou toutes les lignes
+{0} sur {1} téléchargés.
+{0} sur {1} téléchargés.
+Imprime une chaîne sur la console en utilisant le type de couleur et l'impression de ligne
+Imprime une chaîne sur la console à l'aide du type de couleur et de l'impression de ligne avec prise en charge du format
+Imprime une chaîne au débogueur
+Imprime une chaîne dans le débogueur avec prise en charge du format
+Teste la fonction d'erreur du noyau
+Teste la fonction d'erreur du noyau avec la prise en charge du format
+Teste la traduction d'une chaîne qui existe dans les ressources vers une langue spécifique
+Imprime une chaîne dans la console et analyse les espaces réservés trouvés
+Teste la fonction d'expression régulière
+Chiffre une chaîne en utilisant
+Démarre tous les mods
+Arrête tous les mods
+Active ou désactive le débogage
+Active ou désactive le débogage à distance
+Teste la séquence VT pour 255 couleurs
+Teste la séquence VT pour la vraie couleur
+Envoie une notification pour tester le récepteur
+Teste la date d'impression à l'aide de différents calendriers
+Répertorie toutes les pages de codes prises en charge
+Quelles variables du compilateur sont activées dans l'application ?
+Tests soulevant l'événement spécifique
+Tests sondant le matériel
+Teste le ramasse-miettes
+Quitte le shell de test et démarre le noyau
+Quitte le shell de test et arrête le noyau
+Enregistre le répertoire actuel dans le fichier de configuration du noyau
+Teste le rédacteur de liste avec la chaîne et le tableau de chaînes
+Teste le rédacteur de liste avec l'entier et le tableau d'entiers
+Teste le rédacteur de liste avec le tableau char et char
+Liste de chaînes normale :
+Liste de chaînes de tableau :
+Liste normale d'entiers :
+Liste d'entiers du tableau :
+Liste de caractères normale :
+Liste de caractères du tableau :
+Activer RPC
+Port RPC
+Activer ou non RPC.
+Ecrivez un port RPC. Il doit être numérique et ne doit pas être déjà utilisé. Sinon, RPC ne parviendra pas à ouvrir le port.
+Ne démarre pas RPC car il est désactivé.
+Répertorie les cultures prises en charge
+Recherche la chaîne spécifiée dans le fichier fourni à l'aide d'expressions régulières
+Voyez si vous pouvez appuyer sur une touche à temps
+L'utilisateur n'a fourni aucune entrée en temps opportun.
+Difficulté invalide
+Personnage pas pressé à temps.
+Vous avez appuyé sur le bon caractère !
+Vous avez appuyé sur le mauvais caractère.
+Appuyez sur ESC pour quitter.
+Obtient les informations de date et d'heure
+Millisecondes :
+Secondes :
+Minutes:
+Les heures:
+Journées:
+Mois:
+An:
+Jour de l'année :
+Jour de la semaine:
+Binaire:
+Heure locale:
+Temps universel:
+Temps Unix :
+Échec de l'analyse des informations de date pour
+Assurez-vous que le format est correct.
+Date:
+Temps:
+Définit les autorisations de fichier. Ceci est pris en charge uniquement sur les serveurs FTP qui exécutent Unix.
+Définit le type de cette session
+Vous devez vous connecter au serveur avant d'effectuer des opérations sur le système de fichiers.
+Échec de la définition des autorisations de {0} sur {1}.
+Autorisations définies avec succès pour le fichier
+Type de données défini sur ASCII !
+Type de données défini sur Binaire !
+Type de données non valide.
+Attention, la plupart des fichiers ne seront pas téléchargés ou téléchargés correctement en utilisant ce mode, nous vous recommandons donc fortement d'utiliser le mode binaire dans la plupart des situations.
+Essayer d'envoyer une commande RPC alors que RPC n'a pas démarré.
+Délai de fondu en millisecondes
+Étapes de fondu max.
+Combien de millisecondes attendre avant de faire disparaître le texte ?
+Combien d'étapes de fondu faire ?
+Sonde complète
+Si vrai, sonde tout le matériel ; sinon, ne sondera que le matériel nécessaire.
+Échec de la suppression de l'économiseur d'écran {0} de la configuration.
+Obtient des paramètres d'économiseur personnalisés
+Définit les paramètres d'économiseur personnalisés
+Paramètres définis avec succès pour l'économiseur d'écran
+Échec de la définition d'un paramètre pour l'économiseur d'écran
+Cette section vous permet de gérer la création de mot de passe root.
+Ouvre un shell RSS pour lire les flux
+Quitte le shell RSS et retourne au noyau
+Modifie le lien de flux
+Répertorie tous les flux
+Lit un flux dans un navigateur Web
+La commande shell RSS spécifiée est introuvable.
+Flux RSS2 non valide.
+Flux RSS1 non valide.
+Flux Atom non valide.
+Saisissez une URL de flux RSS :
+Type de flux RSS non valide.
+Erreur de shell inconnue :
+Obtient les informations sur l'article
+Le numéro d'article ne peut pas être plus grand que les articles disponibles.
+Titre:
+Relier:
+Obtient les informations sur le flux
+La description:
+Type de flux :
+Nombre d'articles :
+L'article n'a pas de lien !
+Échec de la création d'une liste des entrées du système de fichiers pour le répertoire
+Mode de tri du système de fichiers
+Sens de tri du système de fichiers
+Contrôle la façon dont les fichiers seront triés.
+Contrôle le sens du tri du système de fichiers, qu'il soit ascendant ou descendant.
+Ordre croissant
+Ordre décroissant
+Nom et prénom
+Taille du fichier
+Temps de creation
+Heure de la dernière écriture
+Heure du dernier accès
+Délai d'écriture à nouveau en millisecondes
+Combien de millisecondes attendre avant de réécrire du texte ?
+Écrivez le texte que vous souhaitez afficher. Plus c'est long, mieux c'est.
+Vitesse d'écriture minimale en WPM
+Vitesse d'écriture maximale en WPM
+Probabilité de faute de frappe en pourcentage
+Échec de l'enregistrement du répertoire actuel : {0}
+Lingettes pour changer de direction
+Active la prise en charge de 255 couleurs pour Wipe.
+Active la prise en charge des vraies couleurs pour Wipe.
+Combien de balayages faire avant de changer de direction au hasard ?
+Étape terminée en
+Initialisation interne terminée en
+Fichier référencé {0} introuvable. Ce mod pourrait ne pas fonctionner correctement sans ce fichier.
+Mode de démarrage
+Obtient des informations sur le mod
+Nom de la commande :
+Définition de la commande :
+Type de commande :
+Commande stricte ?
+Version du module :
+Mod {0} introuvable.
+Culture de
+Quelle variante de {0} est utilisée pour modifier les noms de mois, le calendrier, etc. ?
+L'éditeur de texte n'a pas encore ouvert de flux de fichiers.
+Chaîne remplacée.
+Un ou les deux nombres ne sont pas numériques.
+Mot supprimé.
+Caractère supprimé.
+Paramètres du système de fichiers...
+Cette section répertorie les paramètres du système de fichiers.
+Bienvenue dans Paramètres !
+Erreur lors de l'exécution de la commande SSH
+Erreur sur le shell SSH
+- Informations sur l'application
+Active la prise en charge de 255 couleurs pour BouncingText.
+Active la prise en charge des vraies couleurs pour BouncingText.
+Teste le rédacteur de dictionnaire avec la chaîne et le tableau de chaînes
+Teste le rédacteur de dictionnaire avec le tableau char et char
+Teste le rédacteur de dictionnaire avec l'entier et le tableau d'entiers
+Dictionnaire de chaînes normales :
+Dictionnaire de chaînes de tableau :
+Dictionnaire d'entiers normaux :
+Dictionnaire d'entiers de tableau :
+Dictionnaire de caractères normaux :
+Dictionnaire de caractères de tableau :
+Bienvenue dans Test Shell !
+Afficher la progression des opérations du système de fichiers
+Affiche quel fichier est en cours de traitement pendant les opérations du système de fichiers
+où HardwareType sera
+Soit le type de matériel {0} n'est pas testé, soit il n'est pas valide.
+Le type de matériel {0} n'est pas encore sondé. Si vous êtes sûr qu'il est testé, redémarrez le noyau avec le débogage activé.
+Partitions non analysées pour la liste.
+Mode pirate
+Si activé, la console verte sera activée.
+Imprime un séparateur
+Imprime un séparateur avec prise en charge du format
+Imprime un séparateur avec prise en charge des couleurs
+Imprime un séparateur avec prise en charge des couleurs et des formats
+Toujours centré
+Active la prise en charge de 255 couleurs pour Marquee.
+Active la prise en charge des couleurs vraies pour Marquee.
+Écrivez le texte que vous souhaitez afficher.
+Si le texte affiché sur le rectangle de sélection est toujours centré.
+'q' pour arrêter.
+Argument {0} introuvable pour l'injection.
+Argument de ligne de commande {0} introuvable.
+Efface tous les paramètres
+L'économiseur d'écran a rencontré une erreur lors de l'affichage : {0}. Appuyez sur une touche pour quitter.
+Aperçu...
+Voici à quoi ressemblera votre thème :
+Commandes enveloppables :
+Mod {0} a une commande invalide. Échec de l'analyse du module. Passez en revue le code source.
+Pièces de modules :

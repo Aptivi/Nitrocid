@@ -739,3 +739,361 @@ Retraso en milisegundos
 ¿Cuántos milisegundos esperar antes de realizar la siguiente escritura?
 Le permite utilizar un servidor FTP SSH
 No hay ayuda para el comando "{0}".
+Secuencia VT no válida para color RGB.
+Barra de color de segundos
+Barra de color de minutos
+Barra de color de horas
+Color de la información
+Garrapatas para cambiar de color
+Activa la compatibilidad con 255 colores para ProgressClock.
+Activa el soporte de color verdadero para ProgressClock.
+El color de la barra de progreso de los segundos. Puede ser 1-16, 1-255 o "1-255;1-255;1-255".
+El color de la barra de progreso de los minutos. Puede ser 1-16, 1-255 o "1-255;1-255;1-255".
+El color de la barra de progreso de las horas. Puede ser 1-16, 1-255 o "1-255;1-255;1-255".
+El color de la información de la fecha. Puede ser 1-16, 1-255 o "1-255;1-255;1-255".
+Si el ciclo de color está habilitado, ¿cuántos tics antes de cambiar los colores en ProgressClock? 1 tic = 0,5 segundos
+ProgressClock seleccionará colores aleatorios si está habilitado. De lo contrario, use los colores de config.
+Hace un nuevo tema
+Haciendo un nuevo tema "{0}".
+Guardar tema en el directorio actual
+Guardar tema en otro directorio ...
+Seleccione el color con las teclas "<-" y "->". Presione ENTER para salir. Presione "i" para insertar el número de color manualmente.
+Seleccione el color con las teclas "<-" y "->". Utilice las teclas de flecha hacia arriba y flecha hacia abajo para seleccionar entre los rangos de color. Presione ENTER para salir. Presione "i" para insertar el número de color manualmente.
+¡Bienvenido al kernel! - Versión {0}
+Color de advertencia
+Color de la opción
+Ingrese el número de color de 0 a 255:
+Utilice "hwinfo" para obtener información ampliada sobre el hardware.
+Imprime información de hardware
+Información de la CPU:
+Nombre del procesador:
+Velocidad del procesador:
+Bits del procesador:
+Rev del procesador:
+Topología del procesador:
+Tipo de procesador:
+Hito del procesador:
+Procesador BogoMips:
+Tamaño de la caché del procesador L2:
+Tamaño de la caché del procesador L3:
+Características del procesador:
+Información del disco duro:
+Nombre de la unidad:
+Modelo de unidad:
+Proveedor de unidades:
+Velocidad de conducción:
+Tamaño de la unidad:
+Unidad de serie:
+ID de unidad:
+Recuento de particiones de la unidad:
+ID de partición:
+Sistema de archivos de partición:
+Tamaño de la partición:
+Partición utilizada:
+Información RAM:
+RAM libre:
+Total de RAM:
+RAM utilizada:
+Información de la GPU:
+Nombre de la GPU:
+Controlador de GPU:
+Versión de GPU:
+GPU: no se pudieron probar una o más de las tarjetas gráficas. Mostrando información de todos modos ...
+>> ¡Bienvenidos! Esta es la primera vez que ingresa a la depuración y el chat remotos. Utilice "/ register <nombre>" para registrarse.
+El dispositivo ya existe.
+Hay tal dispositivo.
+Establece el nombre de usuario del dispositivo
+Ya estás registrado.
+¡Hola, {0}!
+Imprime el contenido del archivo en la consola
+O pase "listcities" a este comando.
+La entrada ya existe.
+Envuelve la salida de la consola
+El comando no se puede envolver. Estos comandos se pueden envolver:
+Extrae un archivo ZIP
+Crea un archivo ZIP
+Construido en {0}
+Error al descargar datos de depuración
+Hay un error al descargar los datos de depuración. Comprueba tu conexión a Internet.
+No se pudo finalizar el mod {0}: {1}
+Muestra todos los eventos disparados
+Directorio actual
+Establece el directorio actual del shell. Escriba una ruta absoluta a cualquier directorio existente.
+Envolver salidas de lista
+Envuelve las salidas de la lista si parece demasiado larga para la geometría de la consola actual.
+¡Silbido!
+{0} te hizo ping.
+Guardar tema en el directorio actual como ...
+Guardar tema en otro directorio como ...
+Especifique el nombre del tema:
+El usuario {0} se ha agregado a la lista "{1}".
+El usuario {0} se ha eliminado de la lista "{1}".
+Modo no válido {0}
+El usuario ya existe
+Cargar tema desde ...
+Cargar tema desde temas prediseñados ...
+Especifique el nombre del archivo del tema sin la extensión .json:
+Abre un archivo ZIP
+Sale del caparazón ZIP
+Muestra todos los archivos dentro del archivo.
+Extrae un archivo a un directorio específico o un directorio actual
+Cambia el directorio de archivos
+No se encuentra el comando de shell ZIP especificado.
+El directorio {0} no existe
+El directorio de archivo {0} no existe
+Número máximo de posiciones
+¿Cuántas posiciones se encienden antes de atenuar?
+Activa la compatibilidad con 255 colores para más claro.
+Activa la compatibilidad con colores verdaderos para el encendedor.
+Color de entrada de lista
+Color del valor de lista
+Se conecta a un servidor SSH para ejecutar un comando.
+Esta sección enumera la configuración del protector de pantalla para
+Especificador de color no válido. Asegúrese de que esté en el formato correcto, lo que significa un número de 0 a 255 si usa 255 colores o una secuencia VT si usa color verdadero de la siguiente manera:
+Error en el shell de prueba: {0}
+Establece una variable en un valor en un script
+Un mensaje de notificación de errores.
+¡Gracias por subirnos un boleto! Seleccione qué tipo de solicitud tiene.
+Un problema
+Una solicitud de función
+Una pregunta
+Debe especificar una característica.
+Haga una pregunta, anote su idea o informe un problema.
+Debe escribir su solicitud.
+Hubo un error en el shell de FTP:
+Error de shell de FTP desconocido:
+Hubo un error en el shell SFTP:
+Error de shell SFTP desconocido:
+Mostrar banner SSH
+Muestra el banner del servidor SSH en la conexión.
+¿Cómo quieres autenticarte?
+Archivo de clave privada
+Contraseña
+Ingrese la frase de contraseña para la clave {0}:
+Ingrese la ubicación de la clave privada para {0}. Escribe "q" para terminar de agregar claves:
+Neutralizó un camino inexistente.
+El archivo de clave {0} no existe.
+Error al intentar agregar la clave privada:
+Presione "t" para cambiar al modo de 255 colores.
+Presione "t" para cambiar al modo de color verdadero.
+Esta sección le permite elegir qué tipo de color desea cambiar.
+Parece que no tienes ningún usuario excepto root. Esto es malo. Te guiaremos sobre cómo crear uno.
+Escribe tu nombre de usuario.
+Debes escribir tu nombre de usuario.
+Escribe tu contraseña.
+Debes escribir tu contraseña.
+Seleccione el tipo de cuenta.
+Administrador: este tipo de cuenta tiene la mayor potencia en el kernel, lo que le permite utilizar programas de administración del sistema.
+Usuario normal: este tipo de cuenta está un poco más restringido que los administradores.
+¡Felicidades! ¡Has creado una nueva cuenta! Para finalizar, inicie sesión como su nueva cuenta.
+Consulte el manual del protector de pantalla o el código fuente para obtener información.
+mod: No se detectaron mods.
+Comandos generales:
+Comandos de mod:
+Comandos de alias:
+Modo de mantenimiento
+Directorios de búsqueda
+Grupo de caminos separados por dos puntos. Funciona igual que PATH. Escriba una ruta completa a una carpeta o un nombre de carpeta. Cuando haya terminado, escriba "q". Escriba un signo menos junto a la ruta para eliminar un directorio existente.
+Sin comandos de modificación.
+Sin comandos de alias.
+El valor del color está fuera del rango de 0-255.
+No se encuentra el comando wrappable.
+Consulta una palabra en una línea específica o en todas las líneas.
+{0} de {1} descargado.
+{0} de {1} subidos.
+Imprime una cadena en la consola usando el tipo de color y la impresión de líneas
+Imprime una cadena en la consola usando tipo de color e impresión de línea con soporte de formato
+Imprime una cadena para depurar
+Imprime una cadena para depurar con soporte de formato
+Prueba la facilidad de error del kernel
+Prueba la función de error del kernel con soporte de formato
+Prueba la traducción de una cadena que existe en recursos a un idioma específico
+Imprime una cadena en la consola y analiza los marcadores de posición encontrados
+Prueba la facilidad de expresión regular
+Cifra una cadena usando
+Inicia todas las modificaciones
+Detiene todas las modificaciones
+Habilita o deshabilita la depuración
+Habilita o deshabilita la depuración remota
+Prueba la secuencia VT para 255 colores
+Prueba la secuencia VT para ver el color verdadero
+Envía una notificación para probar el receptor
+Prueba la fecha de impresión usando diferentes calendarios
+Muestra todas las páginas de códigos compatibles
+¿Qué variables del compilador están habilitadas en la aplicación?
+Pruebas que plantean el evento específico
+Pruebas que prueban el hardware
+Prueba el recolector de basura
+Sale del shell de prueba e inicia el kernel.
+Sale del shell de prueba y apaga el kernel.
+Guarda el directorio actual en el archivo de configuración del kernel
+Prueba el escritor de listas con la cadena y la matriz de cadenas
+Prueba el escritor de listas con la matriz de enteros y enteros
+Prueba el escritor de listas con la matriz char y char
+Lista de cadenas normales:
+Lista de cadenas de matriz:
+Lista de enteros normal:
+Lista de enteros de matriz:
+Lista de caracteres normales:
+Lista de caracteres de matriz:
+Habilitar RPC
+Puerto RPC
+Si habilitar o no RPC.
+Escribe un puerto RPC. Debe ser numérico y no debe estar ya utilizado. De lo contrario, RPC no podrá abrir el puerto.
+No inicia RPC porque está deshabilitado.
+Enumera las culturas admitidas
+Busca una cadena especificada en el archivo proporcionado usando expresiones regulares
+Vea si puede presionar una tecla a tiempo
+El usuario no proporcionó ninguna entrada de manera oportuna.
+Dificultad no válida
+Personaje no presionado a tiempo.
+¡Has presionado el personaje correcto!
+Ha pulsado el carácter equivocado.
+Presione ESC para salir.
+Obtiene la información de fecha y hora
+Milisegundos:
+Segundos:
+Minutos:
+Horas:
+Dias:
+Meses:
+Año:
+Día del año:
+Día de la semana:
+Binario:
+Hora local:
+Tiempo Universal:
+Hora de Unix:
+No se pudo analizar la información de la fecha de
+Asegúrese de que el formato sea correcto.
+Fecha:
+Hora:
+Establece permisos de archivo. Esto solo es compatible con servidores FTP que ejecutan Unix.
+Establece el tipo de esta sesión.
+Debe conectarse al servidor antes de realizar operaciones en el sistema de archivos.
+No se pudieron establecer los permisos de {0} a {1}.
+Permisos establecidos correctamente para el archivo
+¡Tipo de datos establecido en ASCII!
+¡Tipo de datos establecido en Binario!
+Tipo de datos no válido.
+Tenga en cuenta que la mayoría de los archivos no se descargarán o cargarán correctamente con este modo, por lo que recomendamos encarecidamente utilizar el modo binario en la mayoría de las situaciones.
+Intentando enviar un comando RPC mientras RPC no se inició.
+Retardo de desvanecimiento en milisegundos
+Pasos máximos de desvanecimiento
+¿Cuántos milisegundos esperar antes de que desaparezca el texto?
+¿Cuántos pasos de desvanecimiento debo hacer?
+Sonda completa
+Si es verdadero, prueba todo el hardware; de lo contrario, solo probará el hardware necesario.
+No se pudo quitar el protector de pantalla {0} de la configuración.
+Obtiene configuraciones de protector personalizadas
+Establece la configuración del protector personalizado
+La configuración se estableció correctamente para el protector de pantalla
+No se pudo establecer una configuración para el protector de pantalla
+Esta sección le permite administrar la creación de contraseñas de root.
+Abre un shell RSS para leer los feeds.
+Sale del shell RSS y vuelve al kernel
+Cambia el enlace del feed
+Muestra todos los feeds
+Lee un feed en un navegador web
+No se encuentra el comando de shell RSS especificado.
+Feed RSS2 no válido.
+Feed RSS1 no válido.
+Feed Atom no válido.
+Ingrese una URL de fuente RSS:
+Tipo de fuente RSS no válido.
+Error de shell desconocido:
+Obtiene la información del artículo
+El número de artículo no puede ser mayor que los artículos disponibles.
+Título:
+Enlace:
+Obtiene la información del feed
+Descripción:
+Tipo de alimentación:
+Número de artículos:
+¡El artículo no tiene enlace!
+No se pudo hacer una lista de entradas del sistema de archivos para el directorio
+Modo de ordenación del sistema de archivos
+Dirección de ordenación del sistema de archivos
+Controla cómo se ordenarán los archivos.
+Controla la dirección de la clasificación del sistema de archivos, ya sea ascendente o descendente.
+Orden ascendente
+Orden descendiente
+Nombre completo
+Tamaño del archivo
+Tiempo de creación
+Hora de la última escritura
+Hora del último acceso
+Retraso de escritura de nuevo en milisegundos
+¿Cuántos milisegundos esperar antes de volver a escribir el texto?
+Escriba el texto que desee que se muestre. Cuanto más largo, mejor.
+Velocidad mínima de escritura en WPM
+Velocidad máxima de escritura en WPM
+Probabilidad de error tipográfico en porcentaje
+No se pudo guardar el directorio actual: {0}
+Toallitas para cambiar de dirección
+Activa la compatibilidad con 255 colores para Wipe.
+Activa el soporte de color verdadero para Wipe.
+¿Cuántas toallitas hacer antes de cambiar de dirección al azar?
+Etapa terminada en
+La inicialización interna finalizó en
+No se encontró el archivo de referencia {0}. Es posible que este mod no funcione correctamente sin este archivo.
+Mod de inicio
+Obtiene información de la modificación
+Nombre del comando:
+Definición de comando:
+Tipo de comando:
+¿Comando estricto?
+Versión mod:
+Mod {0} no encontrado.
+Cultura de
+¿Qué variante de {0} se está utilizando para cambiar los nombres de los meses, el calendario, etc.?
+El editor de texto aún no ha abierto un flujo de archivos.
+Cadena reemplazada.
+Uno o ambos números no son numéricos.
+Palabra eliminada.
+Personaje eliminado.
+Configuración del sistema de archivos ...
+Esta sección enumera la configuración del sistema de archivos.
+¡Bienvenido a Configuración!
+Error al ejecutar el comando SSH
+Error en el shell SSH
+- Información de la aplicación
+Activa la compatibilidad con 255 colores para BouncingText.
+Activa el soporte de color verdadero para BouncingText.
+Prueba el escritor del diccionario con la cadena y la matriz de cadenas
+Prueba el escritor del diccionario con la matriz char y char
+Prueba el escritor del diccionario con la matriz de enteros y enteros
+Diccionario de cadenas normal:
+Diccionario de cadenas de matriz:
+Diccionario de enteros normal:
+Diccionario de enteros de matriz:
+Diccionario char normal:
+Diccionario de caracteres de matriz:
+¡Bienvenido a Test Shell!
+Muestra el progreso en las operaciones del sistema de archivos
+Muestra qué archivo se está procesando durante las operaciones del sistema de archivos
+donde será HardwareType
+El tipo de hardware {0} no está probado o no es válido.
+El tipo de hardware {0} aún no se ha probado. Si está seguro de que está probado, reinicie el kernel con la depuración habilitada.
+Particiones no analizadas para listar.
+Modo hacker
+Si está habilitada, se habilitará la consola verde.
+Imprime un separador
+Imprime un separador con soporte de formato
+Imprime un separador con soporte de color
+Imprime un separador compatible con colores y formatos.
+Siempre centrado
+Activa la compatibilidad con 255 colores para Marquesina.
+Activa el soporte de color verdadero para Marquesina.
+Escriba el texto que desee que se muestre.
+Si el texto que se muestra en el recuadro siempre está centrado.
+'q' para salir.
+No se encontró el argumento {0} para inyectar.
+No se encontró el argumento de la línea de comando {0}.
+Borra todos los ajustes
+El protector de pantalla experimentó un error al mostrar: {0}. Presiona cualquier tecla para salir.
+Avance...
+Así es como se verá su tema:
+Comandos envolventes:
+El mod {0} tiene un comando no válido. Error al analizar el mod. Revise el código fuente.
+Partes mod:

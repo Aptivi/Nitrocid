@@ -739,3 +739,361 @@ Ritardo in millisecondi
 Quanti millisecondi attendere prima di effettuare la successiva scrittura?
 Consente di utilizzare un server FTP SSH
 Nessun aiuto per il comando "{0}".
+Sequenza VT non valida per il colore RGB.
+Colore della barra dei secondi
+Colore della barra dei minuti
+Barra del colore delle ore
+Colore delle informazioni
+Spunta per cambiare colore
+Attiva il supporto di 255 colori per ProgressClock.
+Attiva il supporto del vero colore per ProgressClock.
+Il colore della barra di avanzamento dei secondi. Può essere 1-16, 1-255 o "1-255;1-255;1-255".
+Il colore della barra di avanzamento dei minuti. Può essere 1-16, 1-255 o "1-255;1-255;1-255".
+Il colore della barra di avanzamento delle ore. Può essere 1-16, 1-255 o "1-255;1-255;1-255".
+Il colore delle informazioni sulla data. Può essere 1-16, 1-255 o "1-255;1-255;1-255".
+Se il ciclo dei colori è abilitato, quanti tick prima di cambiare i colori in ProgressClock? 1 segno di spunta = 0,5 secondi
+ProgressClock selezionerà colori casuali se è abilitato. Altrimenti, usa i colori di config.
+Crea un nuovo tema
+Creare un nuovo tema "{0}".
+Salva tema nella directory corrente
+Salva tema in un'altra directory...
+Selezionare il colore utilizzando i tasti "<-" e "->". Premere INVIO per uscire. Premere "i" per inserire manualmente il numero del colore.
+Selezionare il colore utilizzando i tasti "<-" e "->". Utilizzare i tasti freccia su e freccia giù per selezionare tra le gamme di colori. Premere INVIO per uscire. Premere "i" per inserire manualmente il numero del colore.
+Benvenuto nel kernel! - Versione {0}
+Colore di avviso
+Colore opzione
+Inserisci il numero del colore da 0 a 255:
+Utilizzare "hwinfo" per informazioni estese sull'hardware.
+Stampa le informazioni sull'hardware
+Informazioni sulla CPU:
+Nome del processore:
+Velocità del processore:
+Bit del processore:
+Giri del processore:
+Topologia del processore:
+Tipo di processore:
+Pietra miliare del processore:
+Processore BogoMips:
+Dimensione cache L2 del processore:
+Dimensione cache L3 del processore:
+Caratteristiche del processore:
+Informazioni sull'HDD:
+Nome dell'unità:
+Modello di guida:
+Fornitore di unità:
+Velocità di guida:
+Dimensione dell'unità:
+Seriale unità:
+ID unità:
+Conteggio delle partizioni dell'unità:
+ID partizione:
+File system della partizione:
+Dimensione della partizione:
+Partizione utilizzata:
+Informazioni sulla RAM:
+RAM libera:
+RAM totale:
+RAM utilizzata:
+Informazioni sulla GPU:
+Nome GPU:
+Driver GPU:
+Versione GPU:
+GPU: impossibile rilevare una o più schede grafiche. Visualizzazione delle informazioni comunque...
+>> Benvenuto! Questa è la prima volta che accedi al debug e alla chat remoti. Usa "/register <name>" per registrarti.
+Il dispositivo esiste già.
+Nessun apparecchio di questo tipo.
+Imposta il nome utente del dispositivo
+Sei già registrato.
+Ciao, {0}!
+Stampa il contenuto del file sulla console
+Oppure passa "listcities" a questo comando.
+La voce esiste già.
+Avvolge l'output della console
+Il comando non è avvolgente. Questi comandi sono wrappabili:
+Estrae un archivio ZIP
+Crea un archivio ZIP
+Costruito in {0}
+Errore durante il download dei dati di debug
+Si è verificato un errore durante il download dei dati di debug. Controlla la tua connessione Internet.
+Impossibile finalizzare la mod {0}: {1}
+Elenca tutti gli eventi attivati
+Elenco corrente
+Imposta la directory corrente della shell. Scrivi un percorso assoluto per qualsiasi directory esistente.
+Risultati della lista a capo
+Avvolge gli output dell'elenco se sembra troppo lungo per la geometria della console corrente.
+Ping!
+{0} ti ha fatto un ping.
+Salva tema nella directory corrente come...
+Salva tema in un'altra directory come...
+Specifica il nome del tema:
+L'utente {0} è stato aggiunto all'elenco "{1}".
+L'utente {0} è stato rimosso dall'elenco "{1}".
+Modalità non valida {0}
+L'utente esiste già
+Carica tema da...
+Carica tema da temi predefiniti...
+Specifica il nome del file del tema senza l'estensione .json:
+Apre un archivio ZIP
+Esce dalla shell ZIP
+Elenca tutti i file all'interno dell'archivio
+Estrae un file in una directory specificata o in una directory corrente
+Cambia la directory dell'archivio
+Il comando ZIP shell specificato non è stato trovato.
+La directory {0} non esiste
+La directory di archivio {0} non esiste
+Numero massimo di posizioni
+Quante posizioni sono illuminate prima dell'oscuramento?
+Attiva il supporto di 255 colori per Lighter.
+Attiva il supporto del vero colore per Lighter.
+Colore voce elenco
+Colore valore elenco
+Si connette a un server SSH per eseguire un comando.
+Questa sezione elenca le impostazioni del salvaschermo per
+Identificatore di colore non valido. Assicurati che sia nel formato corretto, il che significa un numero compreso tra 0 e 255 se usi 255 colori o una sequenza VT se usi il colore vero come segue:
+Errore nella shell di prova: {0}
+Imposta una variabile su un valore in uno script
+Una richiesta di segnalazione di bug.
+Grazie per aver raccolto un biglietto per noi! Seleziona che tipo di richiesta hai.
+Un problema
+Una richiesta di funzionalità
+Una domanda
+Devi specificare una caratteristica.
+Fai una domanda, annota la tua idea o segnala un problema.
+Devi scrivere la tua richiesta.
+Si è verificato un errore nella shell FTP:
+Errore sconosciuto della shell FTP:
+Si è verificato un errore nella shell SFTP:
+Errore sconosciuto della shell SFTP:
+Mostra banner SSH
+Mostra il banner del server SSH alla connessione.
+Come vuoi autenticarti?
+File chiave privata
+Parola d'ordine
+Inserisci la passphrase per la chiave {0}:
+Inserisci la posizione della chiave privata per {0}. Scrivi "q" per completare l'aggiunta delle chiavi:
+Neutralizzato un percorso inesistente.
+Il file chiave {0} non esiste.
+Errore durante il tentativo di aggiungere la chiave privata:
+Premere "t" per passare alla modalità 255 colori.
+Premere "t" per passare alla modalità True Color.
+Questa sezione ti permette di scegliere quale tipo di colore vuoi cambiare.
+Sembra che tu non abbia utenti tranne root. Questo non va bene. Ti guideremo come crearne uno.
+Scrivi il tuo nome utente.
+Devi scrivere il tuo nome utente.
+Scrivi la tua password.
+Devi scrivere la tua password.
+Seleziona il tipo di conto.
+Amministratore: questo tipo di account ha la massima potenza nel kernel, consentendoti di utilizzare i programmi di gestione del sistema.
+Utente normale: questo tipo di account è leggermente più limitato rispetto agli amministratori.
+Congratulazioni! Hai creato un nuovo account! Per finire, accedi come il tuo nuovo account.
+Consultare il manuale del salvaschermo o il codice sorgente per informazioni.
+mod: nessuna mod rilevata.
+Comandi generali:
+Comandi mod:
+Comandi alias:
+Modalità di manutenzione
+Directory di ricerca
+Gruppo di percorsi separati dai due punti. Funziona come PATH. Scrivi un percorso completo di una cartella o il nome di una cartella. Quando hai finito, scrivi "q". Scrivi un segno meno accanto al percorso per rimuovere una directory esistente.
+Nessun comando mod.
+Nessun comando alias.
+Il valore del colore non è compreso nell'intervallo 0-255.
+Il comando wrappable non è stato trovato.
+Interroga una parola in una riga specificata o in tutte le righe
+{0} di {1} scaricati.
+{0} di {1} caricati.
+Stampa una stringa sulla console utilizzando il tipo di colore e la stampa della linea
+Stampa una stringa sulla console utilizzando il tipo di colore e la stampa a righe con supporto del formato
+Stampa una stringa sul debugger
+Stampa una stringa sul debugger con supporto del formato
+Verifica la funzionalità di errore del kernel
+Verifica la funzione di errore del kernel con il supporto del formato
+Verifica la traduzione di una stringa esistente nelle risorse in una lingua specifica
+Stampa una stringa su console e analizza i segnaposto trovati
+Verifica la funzione di espressione regolare
+Cifra una stringa usando
+Avvia tutte le mod
+Interrompe tutte le modifiche
+Abilita o disabilita il debug
+Abilita o disabilita il debug remoto
+Testa la sequenza VT per 255 colori
+Verifica la sequenza VT per il colore reale
+Invia una notifica per testare il ricevitore
+Prova la data di stampa utilizzando calendari diversi
+Elenca tutte le codepage supportate
+Quali variabili del compilatore sono abilitate nell'applicazione?
+Test che sollevano l'evento specifico
+Test che sondano l'hardware
+Testa il netturbino
+Esce dalla shell di test e avvia il kernel
+Esce dalla shell di test e chiude il kernel
+Salva la directory corrente nel file di configurazione del kernel
+Verifica il writer dell'elenco con la stringa e l'array di stringhe
+Verifica il writer dell'elenco con l'intero e l'array intero
+Verifica il writer dell'elenco con l'array char e char
+Elenco di stringhe normali:
+Elenco delle stringhe di array:
+Elenco di numeri interi normali:
+Elenco di interi array:
+Elenco di caratteri normale:
+Elenco dei caratteri dell'array:
+Abilita RPC
+Porta RPC
+Se abilitare o meno RPC.
+Scrivi una porta RPC. Deve essere numerico e non deve essere già utilizzato. In caso contrario, RPC non riuscirà ad aprire la porta.
+Non avvia RPC perché è disabilitato.
+Elenca le culture supportate
+Cerca la stringa specificata nel file fornito utilizzando le espressioni regolari
+Vedi se riesci a premere un tasto in tempo
+L'utente non ha fornito alcun input in modo tempestivo.
+Difficoltà non valida
+Carattere non premuto in tempo.
+Hai premuto il carattere giusto!
+Hai premuto il carattere sbagliato.
+Premere ESC per uscire.
+Ottiene le informazioni su data e ora
+Millisecondi:
+Secondi:
+Minuti:
+Ore:
+Giorni:
+Mesi:
+Anno:
+Giorno dell'anno:
+Giorno della settimana:
+Binario:
+Ora locale:
+Tempo universale:
+Tempo Unix:
+Impossibile analizzare le informazioni sulla data per
+Assicurati che il formato sia corretto.
+Data:
+Tempo:
+Imposta i permessi dei file. Questo è supportato solo su server FTP che eseguono Unix.
+Imposta il tipo per questa sessione
+È necessario connettersi al server prima di eseguire operazioni sul filesystem.
+Impossibile impostare le autorizzazioni di {0} su {1}.
+Permessi impostati con successo per il file
+Tipo di dati impostato su ASCII!
+Tipo di dati impostato su Binario!
+Tipo di dati non valido.
+Fai attenzione che la maggior parte dei file non verrà scaricata o caricata correttamente utilizzando questa modalità, quindi consigliamo vivamente di utilizzare la modalità binaria nella maggior parte delle situazioni.
+Tentativo di inviare un comando RPC mentre RPC non è stato avviato.
+Ritardo di dissolvenza in uscita in millisecondi
+Passi di dissolvenza massimi
+Quanti millisecondi aspettare prima di dissolvere il testo?
+Quanti passaggi di dissolvenza fare?
+Sonda completa
+Se true, verifica tutto l'hardware; altrimenti, esaminerà solo l'hardware necessario.
+Impossibile rimuovere lo screensaver {0} dalla configurazione.
+Ottiene impostazioni di risparmio personalizzate
+Imposta le impostazioni di risparmio personalizzate
+Impostazioni impostate correttamente per lo screensaver
+Impossibile impostare un'impostazione per il salvaschermo
+Questa sezione ti consente di gestire la creazione della password di root.
+Apre una shell RSS per leggere i feed
+Esce dalla shell RSS e torna al kernel
+Cambia il collegamento al feed
+Elenca tutti i feed
+Legge un feed in un browser web
+Impossibile trovare il comando shell RSS specificato.
+Feed RSS2 non valido.
+Feed RSS1 non valido.
+Feed Atom non valido.
+Inserisci l'URL di un feed RSS:
+Tipo di feed RSS non valido.
+Errore di shell sconosciuto:
+Ottiene le informazioni sull'articolo
+Il numero dell'articolo non può essere più grande degli articoli disponibili.
+Titolo:
+Collegamento:
+Ottiene le informazioni sul feed
+Descrizione:
+Tipo di alimentazione:
+Numero di articoli:
+L'articolo non ha un link!
+Impossibile creare un elenco di voci del filesystem per la directory
+Modalità di ordinamento del file system
+Direzione dell'ordinamento del file system
+Controlla come verranno ordinati i file.
+Controlla la direzione dell'ordinamento del filesystem, ascendente o discendente.
+Ordine ascendente
+Ordine decrescente
+Nome e cognome
+Dimensione del file
+Tempo di creazione
+Ora dell'ultima scrittura
+Ora dell'ultimo accesso
+Ritardo di scrittura di nuovo in millisecondi
+Quanti millisecondi aspettare prima di scrivere di nuovo il testo?
+Scrivi il testo che vuoi mostrare. Più a lungo è meglio.
+Velocità minima di scrittura in WPM
+Massima velocità di scrittura in WPM
+Probabilità di errore di battitura in percentuale
+Impossibile salvare la directory corrente: {0}
+Salviette per cambiare direzione
+Attiva il supporto di 255 colori per Wipe.
+Attiva il supporto del vero colore per Wipe.
+Quante passate da fare prima di cambiare direzione a caso?
+Fase finita tra
+Inizializzazione interna terminata tra
+File di riferimento {0} non trovato. Questa mod potrebbe non funzionare correttamente senza questo file.
+Modalità di avvio
+Ottiene informazioni sulla mod
+Nome del comando:
+Definizione del comando:
+Tipo di comando:
+Comando rigoroso?
+Versione mod:
+Modulo {0} non trovato.
+Cultura di
+Quale variante di {0} viene utilizzata per modificare i nomi dei mesi, il calendario e così via?
+L'editor di testo non ha ancora aperto un flusso di file.
+Stringa sostituita.
+Uno o entrambi i numeri non sono numerici.
+Parola eliminata.
+Personaggio cancellato.
+Impostazioni del file system...
+Questa sezione elenca le impostazioni del filesystem.
+Benvenuto in Impostazioni!
+Errore durante l'esecuzione del comando SSH
+Errore sulla shell SSH
+- Informazioni sull'app
+Attiva il supporto di 255 colori per BouncingText.
+Attiva il supporto del vero colore per BouncingText.
+Verifica il writer del dizionario con la stringa e l'array di stringhe
+Testa lo scrittore del dizionario con l'array char e char
+Testa lo scrittore del dizionario con l'intero e l'array intero
+Dizionario stringa normale:
+Dizionario delle stringhe di array:
+Dizionario intero normale:
+Dizionario intero array:
+Dizionario di caratteri normali:
+Dizionario dei caratteri di matrice:
+Benvenuto in Test Shell!
+Mostra i progressi sulle operazioni del filesystem file
+Mostra quale file viene elaborato durante le operazioni del filesystem
+dove sarà HardwareType
+Il tipo di hardware {0} non è stato verificato o non è valido.
+Il tipo di hardware {0} non è ancora stato verificato. Se sei sicuro che sia stato verificato, riavvia il kernel con il debug abilitato.
+Partizioni non analizzate nell'elenco.
+Modalità hacker
+Se abilitato, verrà abilitata la console verde.
+Stampa un separatore
+Stampa un separatore con supporto formato
+Stampa un separatore con supporto colore
+Stampa un separatore con supporto per colore e formato
+Sempre centrato
+Attiva il supporto di 255 colori per Marquee.
+Attiva il supporto del vero colore per Marquee.
+Scrivi il testo che vuoi mostrare.
+Se il testo mostrato sul riquadro di selezione è sempre centrato.
+'q' per uscire.
+Argomento {0} non trovato da iniettare.
+Argomento della riga di comando {0} non trovato.
+Cancella tutte le impostazioni
+Screensaver ha riscontrato un errore durante la visualizzazione: {0}. Premi qualsiasi tasto per uscire.
+Anteprima...
+Ecco come sarà il tuo tema:
+Comandi a capo:
+Il mod {0} ha un comando non valido. Analisi della mod non riuscita. Rivedere il codice sorgente.
+Parti del modulo:

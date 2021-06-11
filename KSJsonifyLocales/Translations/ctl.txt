@@ -739,3 +739,361 @@ Retard en mil·lisegons
 Quants mil·lisegons cal esperar abans de fer la següent escriptura?
 Us permet utilitzar un servidor FTP SSH
 No hi ha ajuda per a l'ordre "{0}".
+Seqüència VT no vàlida per al color RGB.
+Barra de color de segons
+Barra del color dels minuts
+Barra del color de les hores
+Color de la informació
+Marques per canviar de color
+Activa el suport de 255 colors per a ProgressClock.
+Activa el suport del color real per a ProgressClock.
+La barra de progrés del color dels segons. Pot ser 1-16, 1-255 o "1-255;1-255;1-255".
+Barra de progrés del color dels minuts. Pot ser 1-16, 1-255 o "1-255;1-255;1-255".
+Barra de progrés del color de les hores. Pot ser 1-16, 1-255 o "1-255;1-255;1-255".
+El color de la informació de la data. Pot ser 1-16, 1-255 o "1-255;1-255;1-255".
+Si la funció de ciclisme de colors està habilitada, quantes marques abans de canviar els colors a ProgressClock? 1 tick = 0,5 segons
+ProgressClock seleccionarà colors aleatoris si està activat. En cas contrari, utilitzeu colors de config.
+Crea un tema nou
+S'està creant un tema nou "{0}".
+Deseu el tema al directori actual
+Desa el tema en un altre directori ...
+Seleccioneu el color amb les tecles "<-" i "->". Premeu ENTRAR per sortir. Premeu "i" per inserir el número de color manualment.
+Seleccioneu el color amb les tecles "<-" i "->". Utilitzeu les tecles de fletxa amunt i fletxa avall per seleccionar entre rangs de colors. Premeu ENTRAR per sortir. Premeu "i" per inserir el número de color manualment.
+Benvingut al nucli! - Versió {0}
+Color d'advertència
+Opció de color
+Introduïu el número de color del 0 al 255:
+Utilitzeu "hwinfo" per obtenir informació ampliada sobre el maquinari.
+Imprimeix informació de maquinari
+Informació de la CPU:
+Nom del processador:
+Velocitat del processador:
+Bits de processador:
+Rev. processador:
+Topologia del processador:
+Tipus de processador:
+Fita del processador:
+Processador BogoMips:
+Mida de la memòria cau del processador L2:
+Mida de la memòria cau del processador L3:
+Característiques del processador:
+Informació del disc dur:
+Nom de la unitat:
+Model d'unitat:
+Proveïdor de discos:
+Velocitat de conducció:
+Mida de la unitat:
+Unitat de sèrie:
+Identificador de la unitat:
+Recompte de particions de Drive:
+Identificador de partició:
+Sistema de fitxers de partició:
+Mida de la partició:
+Partició utilitzada:
+Informació de RAM:
+Sense memòria RAM:
+RAM total:
+RAM utilitzada:
+Informació de la GPU:
+Nom de la GPU:
+Controlador de GPU:
+Versió de la GPU:
+GPU: no s'ha pogut examinar una o més de les targetes gràfiques. S'està mostrant informació de totes maneres ...
+>> Benvingut! Aquesta és la primera vegada que introduïu xat i depuració remota. Utilitzeu "/ register <name>" per registrar-vos.
+El dispositiu ja existeix.
+No hi ha cap dispositiu.
+Defineix el nom d'usuari del dispositiu
+Ja esteu registrats.
+Hola, {0}
+Imprimeix el contingut del fitxer a la consola
+O bé, passeu "listcities" a aquesta ordre.
+L’entrada ja existeix.
+Envolta la sortida de la consola
+L'ordre no es pot embolicar. Aquestes ordres es poden embolicar:
+Extreu un arxiu ZIP
+Crea un arxiu ZIP
+Construït a {0}
+Error en baixar les dades de depuració
+Hi ha un error en baixar les dades de depuració. Comproveu la vostra connexió a Internet.
+No s'ha pogut finalitzar la modificació {0}: {1}
+Enumera tots els esdeveniments activats
+Directori actual
+Estableix el directori actual de l'intèrpret d'ordres. Escriviu un camí d'accés absolut a qualsevol directori existent.
+Ajusteu les sortides de la llista
+Ajusta les sortides de la llista si sembla massa llarga per a la geometria actual de la consola.
+Ping!
+{0} us ha fet un ping.
+Desa el tema al directori actual com a ...
+Desa el tema a un altre directori com a ...
+Especifiqueu el nom del tema:
+S'ha afegit l'usuari {0} a la llista "{1}".
+L'usuari {0} s'ha eliminat de la llista "{1}".
+Mode no vàlid {0}
+L'usuari ja existeix
+Carrega el tema des de ...
+Carrega el tema a partir de temes predefinits ...
+Especifiqueu el nom del fitxer de tema sense l'extensió .json:
+Obre un arxiu ZIP
+Surt de l'intèrpret d'ordres ZIP
+Llista tots els fitxers de l'arxiu
+Extreu un fitxer a un directori especificat o a un directori actual
+Canvia el directori d’arxiu
+No s'ha trobat l'ordre de l'intèrpret d'ordres ZIP especificat.
+El directori {0} no existeix
+El directori d'arxiu {0} no existeix
+Nombre màxim de posicions
+Quantes posicions s’il·luminen abans d’enfosquir?
+Activa el suport de 255 colors per a més clar.
+Activa el suport del color real per a més clar.
+Color d'entrada de llista
+Color del valor de llista
+Es connecta a un servidor SSH per executar una ordre.
+Aquesta secció llista els paràmetres del salvapantalles de
+Especificador de color no vàlid. Assegureu-vos que tingui el format correcte, que significa un número de 0 a 255 si utilitzeu 255 colors o una seqüència de TV si utilitzeu el color veritable de la següent manera:
+Error a l'intèrpret d'ordres de prova: {0}
+Estableix una variable en un valor en un script
+Un avís d'informe d'errors.
+Gràcies per aconseguir-nos un bitllet. Seleccioneu quin tipus de sol·licitud teniu.
+Un problema
+Una sol·licitud de funció
+Una pregunta
+Heu d'especificar una característica.
+Feu una pregunta, anoteu la vostra idea o informeu d’un problema.
+Heu d’escriure la vostra sol·licitud.
+S'ha produït un error a l'intèrpret d'ordres FTP:
+Error desconegut de l'intèrpret d'ordres FTP:
+S'ha produït un error a l'intèrpret d'ordres SFTP:
+Error de l'intèrpret d'ordres SFTP desconegut:
+Mostra el bàner SSH
+Mostra el bàner del servidor SSH a la connexió.
+Com voleu autenticar-vos?
+Fitxer de clau privada
+Contrasenya
+Introduïu la contrasenya de la clau {0}:
+Introduïu la ubicació de la clau privada per a {0}. Escriviu "q" per acabar d'afegir claus:
+Neutralitzat un camí inexistent.
+El fitxer clau {0} no existeix.
+Error en provar d'afegir una clau privada:
+Premeu "t" per canviar al mode de color 255.
+Premeu "t" per canviar al mode de color real.
+Aquesta secció us permet triar quin tipus de color voleu canviar.
+Sembla que no teniu cap usuari excepte root. Això és dolent. Us guiarem com crear-ne un.
+Escriviu el vostre nom d’usuari.
+Heu d’escriure el vostre nom d’usuari.
+Escriviu la vostra contrasenya.
+Heu d’escriure la vostra contrasenya.
+Seleccioneu el tipus de compte.
+Administrador: aquest tipus de compte té més potència al nucli, cosa que us permet utilitzar programes de gestió del sistema.
+Usuari normal: aquest tipus de compte és una mica més restringit que els administradors.
+Enhorabona! Ja heu creat un compte nou. Per acabar això, inicieu la sessió com a compte nou.
+Consulteu el manual del protector de pantalla o el codi font per obtenir informació.
+mod: no s'ha detectat cap modificació.
+Ordres generals:
+Ordres de modificació:
+Ordres d'àlies:
+mode de manteniment
+Cerqueu directoris
+Grup de camins separats pels dos punts. Funciona igual que PATH. Escriviu un camí d'accés complet a una carpeta o un nom de carpeta. Quan hàgiu acabat, escriviu "q". Escriviu un signe menys al costat del camí per suprimir un directori existent.
+No hi ha ordres de modificació.
+No hi ha comandes d’àlies.
+El valor del color està fora de l'interval de 0-255.
+No es troba l'ordre embolicable.
+Consulta una paraula en una línia especificada o en totes les línies
+{0} de {1} descarregats.
+{0} de {1} penjats.
+Imprimeix una cadena per consolar mitjançant tipus de color i impressió de línia
+Imprimeix una cadena per consolar mitjançant tipus de color i impressió de línia amb suport de format
+Imprimeix una cadena al depurador
+Imprimeix una cadena per depurar amb suport de format
+Prova la facilitat d'error del nucli
+Prova la facilitat d'errors del nucli amb suport de format
+Prova de traduir una cadena que existeix en recursos a un idioma específic
+Imprimeix una cadena per consolar i analitza els espais reservats trobats
+Prova la instal·lació d’expressió regular
+Xifra una cadena mitjançant
+Inicia totes les modificacions
+Atura totes les modificacions
+Activa o desactiva la depuració
+Activa o desactiva la depuració remota
+Prova la seqüència de TV per a 255 colors
+Comprova la seqüència de TV per obtenir un color real
+Envia una notificació per provar el receptor
+Proves d'impressió de data mitjançant diferents calendaris
+Mostra totes les pàgines de codis compatibles
+Quines variables del compilador estan habilitades a l'aplicació?
+Proves que plantegen l'esdeveniment concret
+Proves de sondeig del maquinari
+Prova el col·lector d'escombraries
+Surt de l'intèrpret d'ordres de prova i inicia el nucli
+Surt del shell de prova i apaga el nucli
+Desa el directori actual al fitxer de configuració del nucli
+Prova l’escriptor de llistes amb la cadena i la matriu de cadenes
+Prova l’escriptor de llistes amb el nombre enter i la matriu sencera
+Prova l’escriptor de llistes amb la matriu char i char
+Llista de cadenes normal:
+Llista de cadenes de matrius:
+Llista sencera normal:
+Llista de nombres enters de matrius:
+Llista de caràcters normal:
+Llista de caràcters de matriu:
+Activa RPC
+Port RPC
+Si s’activa o no RPC.
+Escriviu un port RPC. Ha de ser numèric i no s’ha d’utilitzar ja. En cas contrari, RPC no obrirà el port.
+No s’inicia RPC perquè està desactivat.
+Les llistes admeten cultures
+Cerca la cadena especificada al fitxer proporcionat mitjançant expressions regulars
+Mireu si podeu prémer una tecla a temps
+L'usuari no ha proporcionat cap aportació a temps.
+Dificultat no vàlida
+Caràcter no premut a temps.
+Heu premut el personatge adequat.
+Heu premut el personatge equivocat.
+Premeu ESC per sortir.
+Obté la informació de data i hora
+Mil·lisegons:
+Segons:
+Minuts:
+Horari:
+Dies:
+Mesos:
+Curs:
+Dia de l'any:
+Dia de la setmana:
+Binari:
+Hora local:
+Temps Universal:
+Temps Unix:
+No s'ha pogut analitzar la informació de la data de
+Assegureu-vos que el format sigui correcte.
+Data:
+Temps:
+Estableix els permisos de fitxers. Això només s'admet als servidors FTP que executen Unix.
+Estableix el tipus d'aquesta sessió
+Heu de connectar-vos al servidor abans de realitzar operacions del sistema de fitxers.
+No s'han pogut definir els permisos de {0} a {1}.
+Els permisos s'han definit correctament per al fitxer
+El tipus de dades s'ha definit en ASCII.
+El tipus de dades s'ha definit com a Binari.
+El tipus de dades no és vàlid.
+Tingueu en compte que la majoria de fitxers no es descarregaran ni es carregaran correctament mitjançant aquest mode, de manera que us recomanem que feu servir el mode binari en la majoria de situacions.
+Intentant enviar una ordre RPC mentre RPC no s'iniciava.
+Retard d’esvaïment en mil·lisegons
+Passos de descolorament màxims
+Quants mil·lisegons cal esperar abans d’esvair el text?
+Quants passos d’esvair fer?
+Sonda completa
+Si és cert, analitza tot el maquinari; en cas contrari, només explorarà el maquinari necessari.
+No s'ha pogut eliminar el salvapantalles {0} de la configuració.
+Obté una configuració d'estalvi personalitzada
+Estableix la configuració d'estalvi personalitzada
+La configuració s'ha establert correctament per al salvapantalles
+No s'ha pogut establir una configuració per al salvapantalles
+Aquesta secció us permet gestionar la creació de contrasenyes d’arrel.
+Obre un intèrpret d'ordres RSS per llegir els canals d'informació
+Surt de l'intèrpret d'ordres RSS i torna al nucli
+Canvia l'enllaç del feed
+Mostra tots els feeds
+Llegeix un feed en un navegador web
+No es troba l'ordre de l'intèrpret d'ordres RSS especificat.
+Feed RSS2 no vàlid.
+Feed RSS1 no vàlid.
+Feed Atom no vàlid.
+Introduïu un URL del canal RSS:
+El tipus de canal RSS no és vàlid.
+Error desconegut de l'intèrpret d'ordres:
+Obté la informació de l'article
+El número d'article no pot ser més gran que els articles disponibles.
+Títol:
+Enllaç:
+Obté la informació del feed
+Descripció:
+Tipus de feed:
+Nombre d'articles:
+L'article no té cap enllaç.
+No s'ha pogut crear una llista d'entrades del sistema de fitxers per al directori
+Mode d'ordenació del sistema de fitxers
+Direcció d'ordenació del sistema de fitxers
+Controla com s’ordenaran els fitxers.
+Controla la direcció de l'ordenació del sistema de fitxers, ja sigui ascendent o descendent.
+Ordre ascendent
+Ordre descendent
+Nom complet
+Mida de l'arxiu
+Temps de creació
+Darrera hora d’escriptura
+Darrera hora d'accés
+Torna a escriure Retard en mil·lisegons
+Quants mil·lisegons cal esperar abans de tornar a escriure text?
+Escriviu el text que vulgueu que es mostri. Més llarg és millor.
+Velocitat mínima d’escriptura en WPM
+Velocitat màxima d’escriptura en WPM
+Probabilitat d'error tipogràfic en percentatge
+No s'ha pogut desar el directori actual: {0}
+Tovalloletes per canviar de direcció
+Activa el suport de 255 colors per a Esborrar.
+Activa el suport del color real per a Wipe.
+Quantes tovalloletes per fer abans de canviar de direcció a l'atzar?
+Etapa acabada a
+S'ha acabat la inicialització interna
+No s'ha trobat el fitxer de referència {0}. És possible que aquest mod no funcioni correctament sense aquest fitxer.
+Mod inicial
+Obté informació sobre modificacions
+Nom de l'ordre:
+Definició de l'ordre:
+Tipus d'ordre:
+Comanda estricta?
+Versió Mod:
+No s'ha trobat la modificació {0}.
+Cultura de
+Quina variant de {0} s’utilitza per canviar els noms de mes, calendari, etc.?
+L'editor de text encara no ha obert cap flux de fitxers.
+S'ha substituït la cadena.
+Un o tots dos números no són numèrics.
+Paraula suprimida.
+Caràcter suprimit.
+Configuració del sistema de fitxers ...
+Aquesta secció llista els paràmetres del sistema de fitxers.
+Benvingut a Configuració.
+Error en executar l'ordre SSH
+Error a l'intèrpret d'ordres SSH
+- Informació de l'aplicació
+Activa el suport de 255 colors per a BouncingText.
+Activa el suport del color real per a BouncingText.
+Prova l’escriptor del diccionari amb la cadena i la matriu de cadenes
+Prova l’escriptor del diccionari amb la matriu char i char
+Prova l’escriptor del diccionari amb l’interior i la matriu sencera
+Diccionari de cadenes normals:
+Diccionari de matrius:
+Diccionari sencer normal:
+Diccionari enter de matriu:
+Diccionari normal de caràcters:
+Diccionari de matrius:
+Benvingut a Test Shell.
+Mostra el progrés en les operacions del sistema de fitxers
+Mostra quin fitxer s'està processant durant les operacions del sistema de fitxers
+on hi haurà HardwareType
+El tipus de maquinari {0} no està provat o no és vàlid.
+El tipus de maquinari {0} encara no s'ha investigat. Si esteu segur que està provat, reinicieu el nucli amb la depuració activada.
+Particions no analitzades a la llista.
+Mode pirata informàtic
+Si està activat, s'activarà la consola verda.
+Imprimeix un separador
+Imprimeix un separador amb suport de formats
+Imprimeix un separador amb suport de color
+Imprimeix un separador amb suport de color i format
+Sempre centrat
+Activa el suport de 255 colors per a Carpa.
+Activa el suport del color real per a Carpa.
+Escriviu el text que vulgueu que es mostri.
+Si el text que es mostra a l’envelat està sempre centrat.
+'q' per deixar de fumar.
+No s'ha trobat l'argument {0} per injectar.
+No s'ha trobat l'argument de línia d'ordres {0}.
+Esborra tota la configuració
+El protector de pantalla ha experimentat un error en mostrar: {0}. Premeu qualsevol tecla per sortir.
+Vista prèvia...
+A continuació, es mostrarà el vostre tema:
+Ordres encapsulables:
+El mode {0} té una ordre no vàlida. S'ha produït un error en analitzar les modificacions. Reviseu el codi font.
+Parts del mod:

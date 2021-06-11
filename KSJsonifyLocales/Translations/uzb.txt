@@ -1,4 +1,4 @@
-Mavjud buyruqlar: {0}
+ï»¿Mavjud buyruqlar: {0}
 Yozish buyrug'i:
 Buyruqni kiritish bekor qilindi.
 Bo'sh joylarsiz vergul bilan alohida yuklash argumentlari, masalan, "motd, gpuprobe"
@@ -11,18 +11,18 @@ Dalillar (yordam uchun 'yordam'):
 AOK qilingan argumentlar keyingi qayta ishga tushirishda rejalashtirilishi kerak.
 Argument in'ektsiyasi bekor qilindi.
 Haqiqiy buyruqlar satrlarini tahlil qilishda xato: {0}
-Noto‘g‘ri rang shablonlari {0}
+Notoâ€˜gâ€˜ri rang shablonlari {0}
 hwprobe: Qurilmangiz sinovdan o'tkaziladi. Iltimos kuting...
-CPU: Bir yoki bir nechta protsessor yadrolari tekshirilmadi. Ma’lumotlar baribir ko‘rsatilmoqda ...
-RAM: Bir yoki bir nechta RAM chiplari tekshirilmadi. Ma’lumotlar baribir ko‘rsatilmoqda ...
-HDD: Qattiq disklarning bir yoki bir nechtasini sinab bo'lmadi. Ma’lumotlar baribir ko‘rsatilmoqda ...
+CPU: Bir yoki bir nechta protsessor yadrolari tekshirilmadi. Maâ€™lumotlar baribir koâ€˜rsatilmoqda ...
+RAM: Bir yoki bir nechta RAM chiplari tekshirilmadi. Maâ€™lumotlar baribir koâ€˜rsatilmoqda ...
+HDD: Qattiq disklarning bir yoki bir nechtasini sinab bo'lmadi. Maâ€™lumotlar baribir koâ€˜rsatilmoqda ...
 CPU: Protsessorlarning umumiy soni: {0}
 Xizmat ko'rsatish uchun ma'mur parolini kiriting.
 Yuklashda yadro xatosi: {0}
 DOUBLE PANIC: Qayta ishga tushirish vaqti ruxsat etilgan maksimal ruxsat etilgan {0} vaqtdan oshib ketdi. Siz yadro xatosini topdingiz.
 [{0}] vahima: Xatolik darajasi {0} bo'lganligi sababli qayta yoqildi.
 [{0}] vahima: Qayta boshlash vaqti: {1} soniya, 1 soatdan oshib ketdi. U 1 minutga o'rnatiladi.
-DOUBLE PANIC: {0} xato turi noto‘g‘ri.
+DOUBLE PANIC: {0} xato turi notoâ€˜gâ€˜ri.
 [{0}] dpan: {1} - {2} sekundda qayta yoqilmoqda ...
 [{0}] vahima: Xatolik darajasi {0} tufayli o'chirib qo'yildi.
 [{0}] vahima: {1} - yadroni ishlatishda davom etish uchun biron-bir tugmani bosing.
@@ -30,13 +30,13 @@ DOUBLE PANIC: {0} xato turi noto‘g‘ri.
 [{0}] vahima: {1} - {2} sekundda qayta yoqiladi ...
 QO'ShIMChA PANIKA: Kernel bug: {0}
 O'chirilmoqda ...
-O‘chirib yoqilmoqda ...
+Oâ€˜chirib yoqilmoqda ...
 Kernel simulyatorining yana bir misoli ishlamoqda. Shovqin bo'lsa, uni o'chirish.
 Ruxsatnomalar ro'yxatiga foydalanuvchini qo'shib bo'lmadi: noto'g'ri {0} turi
 Ruxsatnomalar ro'yxatiga foydalanuvchini qo'shib bo'lmadi: noto'g'ri foydalanuvchi {0}
 Ruxsat berish ro'yxatidan foydalanuvchini olib tashlab bo'lmadi: noto'g'ri {0} turi
 Siz allaqachon tizimga kirgansiz.
-Ruxsat berilganlar ro‘yxatidan foydalanuvchilarni olib tashlab bo‘lmadi: noto‘g‘ri foydalanuvchi {0}
+Ruxsat berilganlar roâ€˜yxatidan foydalanuvchilarni olib tashlab boâ€˜lmadi: notoâ€˜gâ€˜ri foydalanuvchi {0}
 Siz xato topdingiz, yoki qo'shishga yoki o'chirishga ruxsat allaqachon qilingan yoki boshqa xato.
 {0} xatosi: {1}
 Siz xato topdingiz yoki yangi foydalanuvchini tahrirlashga urinib ko'rishingiz mumkin bo'lgan ruxsat muvaffaqiyatsiz tugadi.
@@ -45,9 +45,9 @@ Foydalanuvchi ismi:
 Bo'sh joylarga ruxsat berilmaydi.
 Maxsus belgilarga ruxsat berilmaydi.
 {0} parol:
-Parol noto‘g‘ri.
-Foydalanuvchi o‘chirib qo‘yilgan.
-Foydalanuvchi nomi noto‘g‘ri.
+Parol notoâ€˜gâ€˜ri.
+Foydalanuvchi oâ€˜chirib qoâ€˜yilgan.
+Foydalanuvchi nomi notoâ€˜gâ€˜ri.
 To'ldiruvchilarni tahlil qilishda xato. {0} - Stack izi:
 To'ldiruvchilarni tahlil qilishda xato. {0}
 Foydalanuvchi nomini qo'shishda xatolik yuz berdi.
@@ -57,12 +57,12 @@ Bo'sh foydalanuvchi nomi.
 {0} foydalanuvchisini o'chirib bo'lmaydi.
 {0} foydalanuvchi allaqachon tizimga kirgan. Chiqish va boshqa ma'mur sifatida tizimga kirish.
 {0} foydalanuvchi olib tashlandi.
-Foydalanuvchi nomini o‘chirishda xato.
-So‘ralgan {0} ekran saqlovchisi topilmadi.
+Foydalanuvchi nomini oâ€˜chirishda xato.
+Soâ€˜ralgan {0} ekran saqlovchisi topilmadi.
 {0} to'g'ri ishga tushirildi.
 {0} ishga tushmadi. Ekranni saqlash kodini ishga tushirishda xatolik yuz berishi mumkin.
 {0} ekran saqlagich mavjud emas.
-{0} standart ekran saqlovchisi sifatida o‘rnatilgan.
+{0} standart ekran saqlovchisi sifatida oâ€˜rnatilgan.
 {0} ekran tasviri ma'lumotlar bazasida topilmadi. Ismni tekshiring va qaytadan urining.
 Ekran saqlagichini yuklab bo'lmaydi, chunki:
 Matnni chop etishda jiddiy xato mavjud.
@@ -130,7 +130,7 @@ Alias ??buyruq bilan bir xil nom bo'lolmaydi.
 {0} nomiga buyruq topilmadi.
 Endi "{0}" buyruq sifatida ishga tushirishingiz mumkin: "{1}".
 {0} taxallusini olib tashlash topilmadi.
-Noto‘g‘ri rejim {0}.
+Notoâ€˜gâ€˜ri rejim {0}.
 Injil qilingan argumentlar, {0}, keyingi ishga tushirishda ishga tushiriladi.
 Bahslar etarli emas edi. Foydalanish uchun quyida ko'rib chiqing:
 {0} katalog topilmadi
@@ -138,7 +138,7 @@ Bo'sh xost nomi.
 : {0} dan {1} ga o'zgartirilmoqda ...
 Kunning bo'sh xabari.
 Kirishdan keyin bo'sh MAL.
-Foydalanuvchi paroli noto‘g‘ri.
+Foydalanuvchi paroli notoâ€˜gâ€˜ri.
 Parollar bir-biriga mos kelmadi.
 Foydalanuvchi nomi {0} ga o'zgartirildi!
 Siz kiritgan yangi nom allaqachon topilgan.
@@ -214,7 +214,7 @@ Ushbu buyruq eskirgan va kelajakda chiqarilishida olib tashlanadi.
 Sizga {0} parolini o'zgartirish huquqi berilmagan, chunki maqsad ma'mur bo'lgan.
 usrmgr: {0} foydalanuvchi nomi allaqachon topilgan
 Tuzatish jurnalidagi hamma narsani o'chiradi
-Noto‘g‘ri til
+Notoâ€˜gâ€˜ri til
 Tilni o'zgartiradi
 ----------------------------- yadro vahima tashlanadigan joy -----------------------------
 >> Vahima haqida ma'lumot <<
@@ -256,8 +256,8 @@ Nosozliklarni jurnaldan o'chirib bo'lmadi: {0}
 Katalogni o'zgartirish amalga oshmadi: {0}
 Manzilni ko'rsating
 Katalogni olib tashlab bo'lmadi: {0}
-Vaqt zonasi noto‘g‘ri ko‘rsatilgan.
-Profil tanlovi noto‘g‘ri.
+Vaqt zonasi notoâ€˜gâ€˜ri koâ€˜rsatilgan.
+Profil tanlovi notoâ€˜gâ€˜ri.
 {0} profiliga {1} ulanishga harakat qilinmoqda ...
 {0} buyrug'i topilmadi. Buyruqlar ro'yxati uchun "help" buyrug'iga qarang.
 {0} adapteri uchun IPv6 xususiyatlarini olib bo'lmadi. Davomi ...
@@ -270,7 +270,7 @@ Siz tanlagan tilda ikkita variant mavjud. Birini tanlang:
 1. Tarjima qilingan
 2. Tarjima qilingan
 O'zingizning tanlovingizni tanlang:
-Noto‘g‘ri tanlov. Qayta urinib ko'ring.
+Notoâ€˜gâ€˜ri tanlov. Qayta urinib ko'ring.
 Sizda joriy katalogni {0}: {1} ga o'rnatish huquqi mavjud emas.
 Siz ko'rsatgan yo'l juda uzun.
 CPU: DIQQAT: SSE2 kelajakdagi ishlab chiqishda talab qilinadi.
@@ -278,7 +278,7 @@ Axlat yig'ish mashinasi {0}: {1} haqida ma'lumot olish paytida qulab tushdi.
 Jadvalni yig'ish vaqtini olishda xato {0}: {1}
 MOTD / MAL o'rnatishda xato: {0}
 MOTD / MAL olishda xato: {0}
-Noto‘g‘ri operatsiya tufayli ekran saqlagichini ishga tushirishda xatolik yuz berdi.
+Notoâ€˜gâ€˜ri operatsiya tufayli ekran saqlagichini ishga tushirishda xatolik yuz berdi.
 Xavfsiz rejimda qayta yuklashga ruxsat berilmagan.
 Xavfsiz rejimda sintaktik tahlil qilish taqiqlangan.
 Barcha nosozliklarni tuzatish moslamalari ro'yxati.
@@ -294,14 +294,14 @@ Olingan vaqt: {0} millisekundlar
 Ism: {0}
 Fayl yig'indisini hisoblaydi.
 Sizni bizning GitHub Wiki-ga olib boradi.
-Shifrlash algoritmi noto‘g‘ri.
-Masofaviy tuzatish dasturini yoqadi yoki o‘chiradi.
+Shifrlash algoritmi notoâ€˜gâ€˜ri.
+Masofaviy tuzatish dasturini yoqadi yoki oâ€˜chiradi.
 Agar so'zlarni o'z vaqtida yozsangiz, ko'ring
 Matematik tenglamalarni o'z vaqtida echishingiz mumkinligini ko'rib chiqing
 Sevgi yoki nafrat sharhlariga javob bering.
 Agar kimdir sizning videongizga ushbu fikrni bildirgan bo'lsa:
 Siz bunga qanday javob bergan bo'lar edingiz?
-Noto‘g‘ri tanlov. Keyingi sharhga o'tilmoqda ...
+Notoâ€˜gâ€˜ri tanlov. Keyingi sharhga o'tilmoqda ...
 Siz shunchaki sevgi izohini xabar qildingiz!
 Siz shunchaki nafrat sharhiga javob yozdingiz!
 Ajoyib! Buning uchun {0} ning sharhi olib tashlanadi.
@@ -316,13 +316,13 @@ RPC ishga tushirilmoqda ...
 SSH serveriga ulanadi.
 {0} uchun parolni kiriting:
 SSH uzildi.
-Kod sahifasini o‘rnatib bo‘lmadi. Til to'g'ri ko'rsatilmasligi mumkin.
+Kod sahifasini oâ€˜rnatib boâ€˜lmadi. Til to'g'ri ko'rsatilmasligi mumkin.
 Nosozliklarni tuzatish yoqilmagan.
 {0} endi standart ekran saqlagichiga o'rnatilmagan.
 Rahmat! Bu qiziq.
 Buning uchun hamma sizning videongizni qo'llab-quvvatlaydi.
 Men sizga keyingi videongiz uchun elektron pochtangizdagi maxsus faylni berdim.
-Eshiting, nafratlanuvchilar, u hünirini emas, balki bizga yordam berishga harakat qilmoqda.
+Eshiting, nafratlanuvchilar, u hÃ¼nirini emas, balki bizga yordam berishga harakat qilmoqda.
 Men va do'stlarim ushbu video uchun sizga qancha minnatdorman.
 Ushbu video uchun sizni yaxshi ko'raman.
 Davom eting, to'xtamang.
@@ -358,7 +358,7 @@ Masofadan kompyuterga masofadan turib buyruqni bajaradi
 - 3 bosqich: Modlar va ekranni aniqlash
 - 4 bosqich: Kirish
 Siz nomzod versiyasini chiqayotganga o'xshaysiz. Barqaror versiyada qolish tavsiya etiladi.
-Noto‘g‘ri {0} turi.
+Notoâ€˜gâ€˜ri {0} turi.
 Hajmi: {0}
 {0} katalogi allaqachon mavjud.
 {0} ga ulanishda xato: ulanish tugadi yoki ulanish uzilib qoldi
@@ -389,7 +389,7 @@ Xabar raqami raqamli qiymat emas.
 - {0} dan
 - {0} ga
 - {1} ichida {0} yuborilgan
-Ko‘rsatilgan xabar topilmadi.
+Koâ€˜rsatilgan xabar topilmadi.
 Masofaviy nosozliklarni boshlab bo'lmadi: {0}
 Profil tayyorlanmoqda ... Bir necha daqiqa vaqt olishi mumkin ...
 Xost nomi, foydalanuvchi ismi, ma'lumotlar turi, kodlash, shifrlash, protokollar
@@ -412,7 +412,7 @@ Tanlov doirasidan tashqarida. 1- {0} orasida tanlang. Qayta urinib ko'ring.
 Tanlov raqam emas. Qayta urinib ko'ring.
 Sertifikatni tekshirish paytida sertifikat xatolari mavjud. Bu siz birinchi marta serverga ulanganingizda yoki sertifikatning muddati o'tgan bo'lishi mumkin. Xato:
 Haqiqatan ham ulanmoqchimisiz?
-Javob noto‘g‘ri. Iltimos, yana bir bor urinib ko'ring.
+Javob notoâ€˜gâ€˜ri. Iltimos, yana bir bor urinib ko'ring.
 Tez terish bo'sh. Unga manzil qo'shish uchun serverga ulaning.
 Tez terish mavjud emas. Unga manzil qo'shish uchun serverga ulaning.
 IMAP server manzili va portini kiriting (<manzil> yoki <manzil>: [port]):
@@ -452,7 +452,7 @@ Xavfsiz rejimda ishlaydi. Bosib chiqarish bosqichi ...
 >> Sizning manzilingiz {0}.
 >> Sizning ismingiz {0}.
 {0} buyrug'i topilmadi. Ro'yxatni ko'rish uchun "/help" -dan foydalaning.
-{0} indeksi noto‘g‘ri. {1} suyak izlari mavjud. Indeks nolga asoslangan, shuning uchun 1 ni olib tashlashga harakat qiling.
+{0} indeksi notoâ€˜gâ€˜ri. {1} suyak izlari mavjud. Indeks nolga asoslangan, shuning uchun 1 ni olib tashlashga harakat qiling.
 Stack izi yo'q
 Istisno bo'yicha oxirgi izlarni ko'rsatadi
 Seansda joriy foydalanuvchi nomini ko'rsatadi
@@ -551,7 +551,7 @@ Fayl yoki katalog ko'chirilmadi: {0}
 Masofadagi fayllarni ro'yxatlab bo'lmadi: {0}
 O'chirish uchun fayl yoki papkani kiriting. O'chirish uchun hisobingizda ma'muriy ruxsatnomalar bo'lishi kerak.
 Haqiqatan ham {0} <y / n> ni o'chirib tashlamoqchimisiz?
-{0} o‘chirilmoqda ...
+{0} oâ€˜chirilmoqda ...
 {0} serverda topilmadi.
 {0} tomonidan yuborilgan barcha xatlar muvaffaqiyatli o'chirildi.
 {0} tomonidan yuborilgan barcha xatlarni olib tashlab bo'lmadi.
@@ -559,7 +559,7 @@ Xabar yuborishda xatolik yuz berdi.
 {0} {1} ga ko'chirilmoqda ...
 Muvaffaqiyatli ko'chirildi
 Faylni yoki katalogni boshqa faylga yoki katalogga ko'chiradi. Bundan tashqari, fayl nomlarini o'zgartirish uchun foydalanishingiz mumkin.
-{0} ni {1} ga ko‘chirib bo‘lmadi.
+{0} ni {1} ga koâ€˜chirib boâ€˜lmadi.
 Manba yo'lini va boradigan joyni kiriting.
 {0} {1} ga ko'chirilmoqda ...
 Muvaffaqiyatli nusxa ko'chirildi
@@ -727,15 +727,373 @@ Noto'g'ri yo'lga kirishga urinish.
 X?a t?p v?n b?n
 Tho?t kh?i tr?nh so?n th?o v?n b?n
 Truy v?n m?t k? t? trong m?t d?ng c? th? ho?c t?t c? c?c d?ng
-Ki?m tra c?c b?n c?p nh?t b? t?t v? b?n ?ang ch?y phiên b?n ph?t tri?n.
+Ki?m tra c?c b?n c?p nh?t b? t?t v? b?n ?ang ch?y phiÃªn b?n ph?t tri?n.
 B?t ho?c t?t t?nh n?ng t? ??ng l?u c?a tr?nh so?n th?o v?n b?n.
-N?u t?nh n?ng l?u t? ??ng ???c b?t, t?p v?n b?n s? ???c l?u trong m?i "n" giây.
+N?u t?nh n?ng l?u t? ??ng ???c b?t, t?p v?n b?n s? ???c l?u trong m?i "n" giÃ¢y.
 B?t t?nh n?ng t? ??ng l?u c?a tr?nh so?n th?o v?n b?n
 Kho?ng th?i gian t? ??ng l?u c?a tr?nh so?n th?o v?n b?n
 L?u t?p
-Ghi l?i cu?c tr? chuy?n vào nh?t k? g? l?i
-Ghi l?i cu?c tr? chuy?n g? l?i t? xa vào nh?t k? g? l?i.
-?? tr? t?nh b?ng mili giây
-Ph?i ??i bao nhiêu mili giây tr??c khi th?c hi?n l?n vi?t ti?p theo?
-Cho phép b?n s? d?ng m?y ch? SSH FTP
+Ghi l?i cu?c tr? chuy?n vÃ o nh?t k? g? l?i
+Ghi l?i cu?c tr? chuy?n g? l?i t? xa vÃ o nh?t k? g? l?i.
+?? tr? t?nh b?ng mili giÃ¢y
+Ph?i ??i bao nhiÃªu mili giÃ¢y tr??c khi th?c hi?n l?n vi?t ti?p theo?
+Cho phÃ©p b?n s? d?ng m?y ch? SSH FTP
 "{0}" buyrug'i uchun yordam yo'q.
+RGB rangi uchun yaroqsiz VT ketma-ketligi.
+Sekundlar paneli
+Daqiqalar paneli
+Soatlar rangi paneli
+Axborotning rangi
+Rangni o'zgartirish uchun shomil
+ProgressClock uchun 255 rangni qo'llab-quvvatlashni faollashtiradi.
+ProgressClock uchun haqiqiy rangni qo'llab-quvvatlashni faollashtiradi.
+Bir necha soniya davom etish satrining rangi. Bu 1-16, 1-255 yoki "1-255;1-255;1-255" bo'lishi mumkin.
+Daqiqalar taraqqiyot satrining rangi. Bu 1-16, 1-255 yoki "1-255;1-255;1-255" bo'lishi mumkin.
+Soatlar rivoji satrining rangi. Bu 1-16, 1-255 yoki "1-255;1-255;1-255" bo'lishi mumkin.
+Sana ma'lumotining rangi. Bu 1-16, 1-255 yoki "1-255;1-255;1-255" bo'lishi mumkin.
+Rangli velosiped yoqilgan bo'lsa, ProgressClock-da ranglarni o'zgartirishdan oldin qancha belgi bor? 1 belgi = 0,5 soniya
+ProgressClock yoqilgan bo'lsa, tasodifiy ranglarni tanlaydi. Aks holda, config dan ranglardan foydalaning.
+Yangi mavzu yaratadi
+Yangi mavzu "{0}" tayyorlanmoqda.
+Mavzuni joriy katalogga saqlang
+Mavzuni boshqa katalogga saqlash ...
+"<-" va "->" tugmalari yordamida rangni tanlang. Chiqish uchun ENTER tugmasini bosing. Rang raqamini qo'lda kiritish uchun "i" tugmasini bosing.
+"<-" va "->" tugmalari yordamida rangni tanlang. Ranglar oralig'ini tanlash uchun yuqoriga va pastga yo'naltirilgan tugmalaridan foydalaning. Chiqish uchun ENTER tugmasini bosing. Rang raqamini qo'lda kiritish uchun "i" tugmasini bosing.
+Yadroga xush kelibsiz! - versiya {0}
+Ogohlantirish rangi
+Variantning rangi
+0 dan 255 gacha rang raqamini kiriting:
+Uskuna haqida kengaytirilgan ma'lumot uchun "hwinfo" dan foydalaning.
+Uskuna haqidagi ma'lumotlarni chop etadi
+CPU haqida ma'lumot:
+Protsessor nomi:
+Protsessor tezligi:
+Protsessor bitlari:
+Protsessor rev:
+Protsessor topologiyasi:
+Protsessor turi:
+Protsessorning muhim bosqichi:
+BogoMips protsessori:
+Protsessor L2 kesh hajmi:
+L3 protsessor kesh hajmi:
+Protsessor xususiyatlari:
+HDD haqida ma'lumot:
+Drayv nomi:
+Drayv modeli:
+Drayv sotuvchisi:
+Drayv tezligi:
+Drayv hajmi:
+Disk seriyali:
+Drayv identifikatori:
+Drayv bo'limlari soni:
+Bo'lim identifikatori:
+Fayl tizimi bo'limi:
+Bo'lim hajmi:
+Amaldagi bo'lim:
+RAM haqida ma'lumot:
+RAM bepul:
+Jami RAM:
+Amaldagi RAM:
+GPU ma'lumotlari:
+GPU nomi:
+GPU drayveri:
+GPU versiyasi:
+GPU: Bir yoki bir nechta grafik kartalarni tekshirib bo'lmadi. Baribir ma'lumot ko'rsatilmoqda ...
+>> Xush kelibsiz! Siz masofadan disk raskadrovka va suhbatga birinchi marta kirmoqdasiz. Ro'yxatdan o'tish uchun "/ register <name>" dan foydalaning.
+Qurilma allaqachon mavjud.
+Bunday qurilma yo'q.
+Qurilma foydalanuvchi nomini o'rnatadi
+Siz allaqachon ro'yxatdan o'tgansiz.
+Salom, {0}!
+Fayl tarkibini konsolga bosib chiqaradi
+Yoki "listcities" ni ushbu buyruqqa o'tkazing.
+Kirish allaqachon mavjud.
+Konsol chiqishini o'rab oladi
+Buyruqni o'rash mumkin emas. Ushbu buyruqlar o'ralgan:
+ZIP arxivini chiqaradi
+ZIP arxivini yaratadi
+{0} da qurilgan
+Tuzatish ma'lumotlarini yuklab olishda xatolik yuz berdi
+Tuzatish ma'lumotlarini yuklab olishda xatolik yuz berdi. Internetga ulanishni tekshiring.
+{0}: {1} rejimini yakunlab bo'lmadi
+Barcha ishdan bo'shatilgan voqealar ro'yxati
+Joriy katalog
+Qobiqning joriy katalogini o'rnatadi. Mavjud katalogga mutlaq yo'lni yozing.
+Ro'yxat natijalarini saralash
+Joriy konsol geometriyasi uchun juda uzun bo'lsa, ro'yxat natijalarini yopadi.
+Ping!
+{0} sizni ping qildi.
+Mavzuni joriy katalogga quyidagicha saqlang ...
+Mavzuni boshqa katalogga saqlash ...
+Mavzu nomini ko'rsating:
+{0} foydalanuvchisi "{1}" ro'yxatiga qo'shildi.
+{0} foydalanuvchisi "{1}" ro'yxatidan chiqarildi.
+Noto'g'ri rejim: {0}
+Foydalanuvchi allaqachon mavjud
+Mavzuni yuklash ...
+Mavzuni oldindan qurilgan mavzulardan yuklash ...
+.Json kengaytmasi bo'lmagan mavzu nomini ko'rsating:
+ZIP arxivini ochadi
+ZIP qobiqdan chiqadi
+Arxiv ichidagi barcha fayllar ro'yxati
+Belgilangan katalogga yoki joriy katalogga faylni chiqaradi
+Arxiv katalogini o'zgartiradi
+Belgilangan ZIP qobig'i buyrug'i topilmadi.
+{0} katalogi mavjud emas
+{0} arxiv katalogi mavjud emas
+Maksimal pozitsiyalar soni
+Xiralashishdan oldin qancha pozitsiya yonadi?
+Lighter uchun 255 rangni qo'llab-quvvatlashni faollashtiradi.
+Lighter uchun haqiqiy rangni qo'llab-quvvatlashni faollashtiradi.
+Ro'yxat kirish rangi
+Ro'yxat qiymati rangi
+Buyruqni bajarish uchun SSH-serverga ulanadi.
+Ushbu bo'limda ekranni saqlash parametrlari keltirilgan
+Yaroqsiz rang ko'rsatkichi. To'g'ri formatda ekanligiga ishonch hosil qiling, ya'ni 255 rangdan foydalansangiz 0-255 raqamini yoki haqiqiy rangdan quyidagi tarzda VT ketma-ketligini bildiring:
+Sinov qobig'idagi xato: {0}
+O'zgaruvchini skriptdagi qiymatga o'rnatadi
+Xatoliklar haqida xabar berish.
+Bizga chipta ko'targaningiz uchun tashakkur! Qanday so'rovingiz borligini tanlang.
+Muammo
+Xususiyat so'rovi
+Savol
+Siz xususiyatni belgilashingiz kerak.
+Savol bering, fikringizni yozing yoki muammo haqida xabar bering.
+Siz so'rovingizni yozishingiz kerak.
+FTP qobig'ida xatolik yuz berdi:
+Noma'lum FTP qobig'i xatosi:
+SFTP qobig'ida xatolik yuz berdi:
+Noma'lum SFTP qobig'i xatosi:
+SSH bannerini ko'rsatish
+SSH server bannerini ulanishda ko'rsatadi.
+Qanday qilib autentifikatsiya qilishni xohlaysiz?
+Shaxsiy kalit fayli
+Parol
+{0} tugmachasining parolini kiriting:
+{0} uchun shaxsiy kalit joylashgan joyni kiriting. Kalitlarni qo'shishni tugatish uchun "q" yozing:
+Mavjud bo'lmagan yo'lni zararsizlantirdi.
+{0} asosiy fayli mavjud emas.
+Shaxsiy kalitni qo'shishda xato:
+255 rang rejimiga o'tish uchun "t" tugmasini bosing.
+Haqiqiy rang rejimiga o'tish uchun "t" tugmasini bosing.
+Ushbu bo'lim sizga qaysi rang turini o'zgartirishni xohlayotganingizni tanlashga imkon beradi.
+Sizda rootdan boshqa foydalanuvchi yo'q ekan. Bu yomon. Qanday qilib uni yaratish haqida sizga ko'rsatma beramiz.
+Foydalanuvchi ismingizni yozing.
+Siz o'zingizning ismingizni yozishingiz kerak.
+Parolingizni yozing.
+Siz parolingizni yozishingiz kerak.
+Hisob turini tanlang.
+Administrator: Ushbu hisob turi yadroda eng katta quvvatga ega bo'lib, tizimni boshqarish dasturlaridan foydalanishga imkon beradi.
+Oddiy foydalanuvchi: Ushbu hisob turi ma'murlarga qaraganda biroz ko'proq cheklangan.
+Tabriklaymiz! Siz yangi hisob yaratdingiz! Buni tugatish uchun yangi hisob qaydnomangizga kiring.
+Ma'lumot uchun ekranni saqlash qo'llanmasiga yoki manba kodiga murojaat qiling.
+mod: Hech qanday mod aniqlanmadi.
+Umumiy buyruqlar:
+Tartib buyruqlari:
+Taxallus buyruqlar:
+Xizmat ko'rsatish tartibi
+Kataloglarni qidirish
+Yo'g'on ichak bilan ajratilgan yo'llar guruhi. U PATH bilan bir xil ishlaydi. Jildga yoki papka nomiga to'liq yo'lni yozing. Tugatgandan so'ng, "q" yozing. Mavjud katalogni olib tashlash uchun yo'lning yoniga minus belgisini yozing.
+Mod buyruqlari yo'q.
+Takroriy buyruqlar yo'q.
+Rang qiymati 0-255 oralig'idan tashqarida.
+O'rab olinadigan buyruq topilmadi.
+Belgilangan satrda yoki barcha satrlarda so'zni so'raydi
+{0} / {1} yuklab olindi.
+{0} / {1} yuklandi.
+Rang turi va chiziqli nashr yordamida konsol uchun satrni bosib chiqaradi
+Formatni qo'llab-quvvatlagan holda rang turi va chiziqli bosma yordamida konsol uchun satrni bosib chiqaradi
+Nosozliklarni tuzatish uchun qatorni bosib chiqaradi
+Formatni qo'llab-quvvatlash bilan disk raskadrovka uchun qatorni bosib chiqaradi
+Yadro xatolarini tekshiradi
+Yadroda xatoliklarni formatni qo'llab-quvvatlash bilan sinovdan o'tkazadi
+Resurslarda mavjud bo'lgan satrni ma'lum tilga tarjima qilish sinovlari
+Ipni taskinlash uchun bosib chiqaradi va topilgan joy egalarini tahlil qiladi
+Muntazam ekspression vositasini sinovdan o'tkazadi
+Yordamida mag'lubiyatni shifrlaydi
+Barcha rejimlarni boshlaydi
+Barcha rejimlarni to'xtatadi
+Nosozliklarni tuzatishni yoqadi yoki o'chiradi
+Masofadan tuzatishni yoqadi yoki o'chiradi
+VT ketma-ketligini 255 rang uchun sinovdan o'tkazadi
+Haqiqiy rang uchun VT ketma-ketligini sinovdan o'tkazadi
+Qabul qiluvchini sinab ko'rish uchun xabarnoma yuboradi
+Har xil kalendarlar yordamida chop etish sanasini sinovdan o'tkazadi
+Barcha qo'llab-quvvatlanadigan kod sahifalarini ro'yxati
+Ilovada qanday kompilyator o'zgaruvchilari yoqilgan?
+Muayyan hodisani ko'taradigan testlar
+Uskunani tekshiradigan sinovlar
+Axlat yig'uvchini sinovdan o'tkazadi
+Sinov qobig'idan chiqib, yadroni ishga tushiradi
+Sinov qobig'idan chiqib, yadroni o'chiradi
+Joriy katalogni yadro konfiguratsiya faylida saqlaydi
+String va string qatori bilan ro'yxat yozuvchisini sinovdan o'tkazadi
+Ro'yxat yozuvchisini butun va butun qator bilan sinab ko'radi
+Ro'yxat yozuvchisini char va char qatori bilan sinovdan o'tkazadi
+Oddiy qatorlar ro'yxati:
+Array qatorlari ro'yxati:
+Oddiy tamsayÄ±lar ro'yxati:
+Array butun son ro'yxati:
+Oddiy char ro'yxati:
+Array char ro'yxati:
+RPC-ni yoqing
+RPC porti
+RPCni yoqish yoki yoqmaslik.
+RPC portini yozing. Bu raqamli bo'lishi kerak va allaqachon ishlatilmasligi kerak. Aks holda, RPC portni ocha olmaydi.
+RPC ishga tushirilmayapti, chunki u o'chirib qo'yilgan.
+Qo'llab-quvvatlanadigan madaniyatlarning ro'yxatlari
+Oddiy iboralar yordamida taqdim etilgan faylda ko'rsatilgan qatorni izlaydi
+O'z vaqtida tugmachani bosishingiz mumkinligini tekshiring
+Foydalanuvchi o'z vaqtida hech qanday ma'lumot bermadi.
+Noto'g'ri qiyinchilik
+Belgilar vaqtida bosilmagan.
+Siz to'g'ri belgini bosdingiz!
+Siz noto'g'ri belgini bosdingiz.
+Chiqish uchun ESC tugmasini bosing.
+Sana va vaqt haqida ma'lumot oladi
+Milisaniyalar:
+Soniya:
+Daqiqalar:
+Ish vaqti:
+Kunlar:
+Oylar:
+Yil:
+Yil kuni:
+Haftaning kuni:
+Ikkilik:
+Mahalliy vaqt:
+Umumjahon vaqti:
+Unix vaqti:
+Sana to'g'risidagi ma'lumotlarni ajratib bo'lmadi
+Format to'g'ri ekanligiga ishonch hosil qiling.
+Sana:
+Vaqt:
+Fayl ruxsatnomalarini o'rnatadi. Bu faqat Unix ishlaydigan FTP-serverlarda qo'llab-quvvatlanadi.
+Ushbu sessiya turini belgilaydi
+Fayl tizimi operatsiyalarini bajarishdan oldin serverga ulanishingiz kerak.
+{0} ruxsatlari {1} ga o'rnatilmadi.
+Ruxsatlar fayl uchun muvaffaqiyatli o'rnatildi
+Ma'lumot turi ASCII-ga o'rnatildi!
+Ma'lumot turi Binary!
+Ma'lumot turi yaroqsiz.
+Ushbu rejim yordamida aksariyat fayllar to'g'ri yuklab olinmasligi yoki yuklanmasligi uchun ehtiyot bo'ling, shuning uchun ko'p hollarda Ikkilik rejimidan foydalanishni tavsiya etamiz.
+RPC ishga tushmagan paytda RPC buyrug'ini yuborishga urinish.
+Milisaniyadagi kechikishning pasayishi
+Maks Fade qadamlari
+Matn o'chib ketguncha necha millisekundalarni kutish kerak?
+Qancha xira qadamlarni bajarish kerak?
+To'liq tekshiruv
+Agar rost bo'lsa, barcha apparatlarni tekshiradi; aks holda, faqat kerakli uskunani tekshiradi.
+{0} ekran pardasini konfiguratsiyadan o'chirib bo'lmadi.
+Maxsus tejash sozlamalarini oladi
+Maxsus tejash parametrlarini o'rnatadi
+Ekran sozlagichi uchun sozlamalar muvaffaqiyatli o'rnatildi
+Ekran pardasi sozlamasini o'rnatib bo'lmadi
+Ushbu bo'lim sizga root parolini yaratishni boshqarish imkonini beradi.
+Xabarlarni o'qish uchun RSS qobig'ini ochadi
+RSS qobig'idan chiqib, yadroga qaytadi
+Besleme havolasini o'zgartiradi
+Barcha tasmalar ro'yxati
+Veb-brauzerda tasma o'qiydi
+Belgilangan RSS shell buyrug'i topilmadi.
+Noto'g'ri RSS2 tasmasi.
+Noto'g'ri RSS1 tasmasi.
+Yaroqsiz atom tasmasi.
+RSS tasma URL manzilini kiriting:
+Noto'g'ri RSS tasma turi.
+Noma'lum qobiq xatosi:
+Maqola haqida ma'lumot oladi
+Maqola soni mavjud maqolalardan kattaroq bo'lishi mumkin emas.
+Sarlavha:
+Havola:
+Tasma haqida ma'lumot oladi
+Tavsif:
+Feed turi:
+Maqolalar soni:
+Maqolada havola yo'q!
+Katalog uchun fayl tizimi yozuvlari ro'yxati tuzilmadi
+Fayl tizimini saralash rejimi
+Fayl tizimini saralash yo'nalishi
+Fayllar qanday tartiblanishini boshqaradi.
+Fayl tizimining ko'tarilish yoki tushish tartibini saralash yo'nalishini boshqaradi.
+O'sish tartibi
+Kamayish tartibi
+To'liq ism
+Fayl hajmi
+Yaratilish vaqti
+Oxirgi yozish vaqti
+Oxirgi kirish vaqti
+Kechikishni yana millisekundlarda yozing
+Matnni qayta yozishdan oldin necha millisekundalarni kutish kerak?
+Ko'rsatishni istagan har qanday matnni yozing. Uzunroq yaxshiroqdir.
+WPM-da minimal yozuv tezligi
+WPM-da maksimal yozish tezligi
+Xatolarni yozish ehtimoli foizda
+Joriy katalog saqlanmadi: {0}
+Yo'nalishni o'zgartirish uchun salfetkalar
+Wipe uchun 255 rangni qo'llab-quvvatlashni faollashtiradi.
+Wipe uchun haqiqiy rangni qo'llab-quvvatlashni faollashtiradi.
+Yo'nalishni tasodifiy o'zgartirishdan oldin qancha ro'molcha qilish kerak?
+Sahna tugadi
+Ichki ishga tushirish tugadi
+{0} havola qilingan fayl topilmadi. Ushbu fayl ushbu rejimsiz to'g'ri ishlamasligi mumkin.
+Tartibni boshlash
+Mod ma'lumotlarini oladi
+Buyruq nomi:
+Buyruq ta'rifi:
+Buyruq turi:
+Qattiq buyruqmi?
+Tartib versiyasi:
+{0} tartibi topilmadi.
+Madaniyat
+Oy nomlari, taqvim va boshqalarni o'zgartirish uchun {0} ning qaysi variantidan foydalanilmoqda?
+Matn muharriri hali fayllar oqimini ochmadi.
+Ip almashtirildi.
+Raqamlarning bittasi yoki ikkalasi ham raqamli emas.
+So'z o'chirildi.
+Belgilar o'chirildi.
+Fayl tizimi sozlamalari ...
+Ushbu bo'limda fayl tizimi sozlamalari keltirilgan.
+Sozlamalarga xush kelibsiz!
+SSH buyrug'ini bajarishda xato
+SSH qobig'ida xato
+- Ilova haqida ma'lumot
+BouncingText uchun 255 rangni qo'llab-quvvatlashni faollashtiradi.
+BouncingText uchun haqiqiy rangni qo'llab-quvvatlashni faollashtiradi.
+String va string qatori bilan lug'at yozuvchisini sinovdan o'tkazadi
+Lug'at yozuvchisini char va char massivi bilan sinovdan o'tkazadi
+Lug'at yozuvchisini butun va butun qator bilan sinab ko'radi
+Oddiy satr lug'ati:
+Array string lug'ati:
+Oddiy butun lug'at:
+Array butun sonli lug'at:
+Oddiy char lug'ati:
+Array char lug'ati:
+Test Shell-ga xush kelibsiz!
+Fayl tizimidagi ishlarning rivojlanishini ko'rsatish
+Fayl tizimi operatsiyalari paytida qaysi fayl qayta ishlanayotganligini ko'rsatadi
+qaerda HardwareType bo'ladi
+Yoki {0} apparat turi tekshirilmagan yoki yaroqsiz.
+{0} apparat turi hali tekshirilmagan. Agar tekshirilayotganiga amin bo'lsangiz, disk raskadrovka yoqilgan holda yadroni qayta ishga tushiring.
+Ro'yxat uchun qismlar ajratilmagan.
+Hacker rejimi
+Agar yoqilsa, yashil konsol yoqiladi.
+Ajratuvchini bosib chiqaradi
+Format yordami bilan ajratgichni bosib chiqaradi
+Rangni qo'llab-quvvatlovchi ajratgichni bosib chiqaradi
+Rang va formatni qo'llab-quvvatlovchi ajratgichni bosib chiqaradi
+Har doim markazda
+Marquee uchun 255 rangni qo'llab-quvvatlashni faollashtiradi.
+Marquee uchun haqiqiy rangni qo'llab-quvvatlashni faollashtiradi.
+Ko'rsatishni istagan har qanday matnni yozing.
+Martada ko'rsatilgan matn har doim markazda bo'ladimi.
+chiqish uchun 'q'
+{0} argumentini kiritish uchun topilmadi.
+Buyruqning argumenti {0} topilmadi.
+Barcha sozlamalarni tozalaydi
+Ekran himoyachisi quyidagilarni ko'rsatishda xatolikka duch keldi: {0}. Chiqish uchun istalgan tugmani bosing.
+Oldindan koâ€˜rib chiqish ...
+Mana sizning mavzuingiz qanday bo'ladi:
+O'rab olinadigan buyruqlar:
+{0} tartibida yaroqsiz buyruq mavjud. Tartibni tahlil qilib boâ€˜lmadi. Manba kodini ko'rib chiqing.
+Tartibni qismlar:

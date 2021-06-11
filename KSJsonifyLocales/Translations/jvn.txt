@@ -739,3 +739,361 @@ Tundha ing Milidetik
 Pira milidetik sing kudu ditunggu sadurunge nulis sabanjure?
 Ngijini sampeyan nggunakake server SSH FTP
 Ora ana pitulung kanggo printah "{0}".
+Urutan VT ora valid kanggo warna RGB.
+Werna Bar Detik
+Werna Minutes Bar
+Werna Jam Bar
+Werna Informasi
+Kelet kanggo ngganti warna
+Ngaktifake dhukungan warna 255 kanggo ProgressClock.
+Ngaktifake dhukungan warna sejati kanggo ProgressClock.
+Werna garis kemajuan detik. Bisa dadi 1-16, 1-255, utawa "1-255;1-255;1-255".
+Werna garis kemajuan menit. Bisa dadi 1-16, 1-255, utawa "1-255;1-255;1-255".
+Werna garis kemajuan jam. Bisa dadi 1-16, 1-255, utawa "1-255;1-255;1-255".
+Werna informasi tanggal. Bisa dadi 1-16, 1-255, utawa "1-255;1-255;1-255".
+Yen muter warna kanthi warna, pira centhang sadurunge ngganti warna ing ProgressClock? 1 tandhane = 0,5 detik
+ProgressClock bakal milih warna acak yen diaktifake. Yen ora, gunakake warna saka config.
+Nggawe tema anyar
+Nggawe tema anyar "{0}".
+Simpen Tema menyang Direktori Saiki
+Simpen Tema menyang Direktori Liyane ...
+Pilih warna nggunakake tombol "<-" lan "->". Pencet ENTER kanggo mandheg. Pencet "i" kanggo masang nomer warna kanthi manual.
+Pilih warna nggunakake tombol "<-" lan "->". Gunakake tombol panah lan panah mudhun kanggo milih antarane rentang warna. Pencet ENTER kanggo mandheg. Pencet "i" kanggo masang nomer warna kanthi manual.
+Sugeng rawuh ing kernel! - Versi {0}
+Warnane peringatan
+Werna pilihan
+Ketik nomer warna saka 0 nganti 255:
+Gunakake "hwinfo" kanggo informasi lengkap babagan hardware.
+Nyithak informasi hardware
+Informasi CPU:
+Jeneng prosesor:
+Kecepatan prosesor:
+Bit prosesor:
+Rev prosesor:
+Topologi prosesor:
+Jinis prosesor:
+Tonggak prosesor:
+Prosesor BogoMips:
+Ukuran cache prosesor L2:
+Ukuran cache prosesor L3:
+Fitur prosesor:
+Informasi HDD:
+Jeneng drive:
+Model drive:
+Penjual drive:
+Kacepetan drive:
+Ukuran drive:
+Serial drive:
+ID Drive:
+Cacah partisi drive:
+ID pemisahan:
+Sistem file pemisahan:
+Ukuran partisi:
+Pemisahan digunakake:
+Informasi RAM:
+Bebas RAM:
+Total RAM:
+RAM sing digunakake:
+Informasi GPU:
+Jeneng GPU:
+Driver GPU:
+Versi GPU:
+GPU: Siji utawa luwih saka kertu grafis gagal dicoba. Nuduhake informasi wae ...
+>> Sugeng Rawuh! Iki pisanan sampeyan mbukak debug lan ngobrol adoh. Gunakake "/ register <name>" kanggo ndhaptar.
+Piranti wis ana.
+Ora ana piranti kaya ngono.
+Nyetel jeneng pangguna piranti
+Sampeyan wis ndaftar.
+Halo, {0}!
+Nyithak isi file menyang console
+Utawa, pass "listcities" menyang printah iki.
+Entri wis ana.
+Bungkus output console
+Prentah kasebut ora bisa dibungkus. Prentah kasebut bisa dibungkus:
+Ekstrak arsip ZIP
+Nggawe arsip ZIP
+Dibangun ing {0}
+Kesalahan nalika ndownload data debug
+Ana kesalahan nalika ndownload data debug. Priksa sambungan internet sampeyan.
+Gagal ngrampungake mod {0}: {1}
+Dhaptar kabeh acara sing dipecat
+Direktori Saiki
+Nyetel direktori saiki shell. Tulis dalan mutlak menyang direktori sing ana.
+Bungkus dhaptar output
+Bungkus output dhaptar yen katon dawa banget kanggo geometri konsol saiki.
+Ping!
+{0} ping sampeyan.
+Simpen Tema menyang Direktori Saiki minangka ...
+Simpen Tema menyang Direktori Liyane minangka ...
+Nemtokake jeneng tema:
+Pangguna {0} wis ditambahake ing dhaptar "{1}".
+Pangguna {0} wis dicopot saka dhaptar "{1}".
+Mode ora valid {0}
+Pangguna wis ana
+Tema Beban Saka ...
+Tema Muat Saka Tema Prebuilt ...
+Nemtokake jeneng file tema babagan ekstensi .json:
+Mbukak arsip ZIP
+Metu saka cangkang ZIP
+Dhaptar kabeh file ing arsip
+Ngekstrak file menyang direktori sing ditemtokake utawa direktori saiki
+Owahi direktori arsip
+Prentah cangkang ZIP sing ditemtokake ora ditemokake.
+Direktori {0} ora ana
+Direktori arsip {0} ora ana
+Max Positions Count
+Pira jumlahe lampu sadurunge surem?
+Aktifake dhukungan warna 255 kanggo Korek.
+Ngaktifake dhukungan warna sejati kanggo Korek.
+Dhaptar warna entri
+Werna nilai dhaptar
+Nyambung menyang server SSH kanggo nglakokake perintah.
+Bagean iki nampilake setelan screensaver kanggo
+Spesifikasi warna ora valid. Priksa manawa ana ing format sing bener, tegese nomer saka 0-255 yen nggunakake 255 warna utawa urutan VT yen nggunakake warna sejatine kaya ing ngisor iki:
+Kesalahan ing cangkang uji: {0}
+Nyetel variabel dadi nilai ing skrip
+Prentah nglaporake bug.
+Matur nuwun wis ngunggahake tiket kanggo kita! Pilih jinis panjaluk sampeyan.
+Ana masalah
+Panjaluk fitur
+Pitakon
+Sampeyan kudu nemtokake fitur.
+Takokake pitakon, tulis ide sampeyan, utawa laporake masalah.
+Sampeyan kudu nulis panjaluk sampeyan.
+Ana kesalahan ing cangkang FTP:
+Kesalahan cangkang FTP sing ora dingerteni:
+Ana kesalahan ing cangkang SFTP:
+Kesalahan cangkang SFTP sing ora dingerteni:
+Tampilake spanduk SSH
+Nuduhake spanduk server SSH nalika sambungan.
+Kepiye carane sampeyan pengin diotentikasi?
+File kunci pribadi
+Sandhi
+Ketik frasa sandhi kanggo tombol {0}:
+Ketik lokasi tombol pribadi kanggo {0}. Tulis "q" kanggo rampung nambah tombol:
+Netralisir dalan sing ora ana.
+File kunci {0} ora ana.
+Kesalahan nyoba nambah kunci pribadi:
+Pencet "t" kanggo ngalih menyang mode warna 255.
+Pencet "t" kanggo ngalih menyang mode warna sing sejati.
+Bagean iki ngidini sampeyan milih jinis warna sing pengin diganti.
+Kayane sampeyan ora duwe pangguna kajaba root. Iki ala. Kita bakal nuntun sampeyan carane nggawe.
+Tulis jeneng pangguna sampeyan.
+Sampeyan kudu nulis jeneng panganggo.
+Tulis tembung sandhi sampeyan.
+Sampeyan kudu nulis sandhi.
+Pilih jinis akun.
+Administrator: Jinis akun iki nduweni kekuwatan paling gedhe ing kernel, supaya sampeyan bisa nggunakake program manajemen sistem.
+Pangguna Biasa: Jinis akun iki luwih diwatesi tinimbang para administrator.
+Sugeng rawuh! Sampeyan wis nggawe akun anyar! Kanggo ngrampungake, mlebu minangka akun anyar.
+Hubungi manual layar utawa kode sumber kanggo informasi.
+mod: Ora ana mod sing dideteksi.
+Prentah umum:
+Prentah mod:
+Alias ​​printah:
+Mode Pangopènan
+Direktori Goleki
+Klompok dalan sing dipisahake karo usus besar. Kerjane padha karo PATH. Tulis dalan lengkap menyang folder utawa jeneng folder. Yen wis rampung, tulis "q". Tulis tandha minus ing jejere jalur kanggo mbusak direktori sing wis ana.
+Ora prentah mod.
+Ora prentah alias.
+Nilai warna njaba kisaran 0-255.
+Prentah sing bisa dibungkus ora ditemokake.
+Nggoleki tembung ing baris sing ditemtokake utawa kabeh baris
+{0} saka {1} diundhuh.
+{0} saka {1} diunggah.
+Nyithak senar menyang konsol nggunakake jinis warna lan print line
+Nyithak senar menyang konsol nggunakake jinis warna lan print garis kanthi dhukungan format
+Nyithak senar menyang debugger
+Nyithak senar menyang debugger kanthi dhukungan format
+Nguji fasilitas kesalahan kernel
+Nguji fasilitas kesalahan kernel kanthi dhukungan format
+Tes nerjemahake senar sing ana ing sumber daya kanggo basa tartamtu
+Nyithak senar kanggo nyenengake lan nguraikan papan sing ditemokake
+Nyoba fasilitas ekspresi reguler
+Enkripsi string nggunakake
+Miwiti kabeh mod
+Mandhegake kabeh mod
+Ngaktifake utawa mateni debug
+Ngaktifake utawa mateni debug jarak jauh
+Nyoba urutan VT kanggo 255 warna
+Nguji urutan VT kanthi warna sing sejatine
+Ngirim kabar kanggo nyoba panrima
+Tanggal nyithak tes nggunakake tanggalan sing beda
+Dhaptar kabeh codepage sing didhukung
+Apa variabel kompilator sing aktif ing aplikasi kasebut?
+Tes nambah acara tartamtu
+Tes nyoba piranti keras
+Nyoba tukang sampah
+Metu cangkang tes lan miwiti kernel
+Metu cangkang tes lan mateni kernel
+Simpen direktori saiki menyang file konfigurasi kernel
+Nguji panulis dhaptar kanthi susunan senar lan senar
+Nguji panulis dhaptar kanthi bilangan bunder lan ongko
+Nguji panulis dhaptar kanthi larik char lan char
+Dhaptar senar normal:
+Dhaptar senar Array:
+Dhaptar ongko normal:
+Dhaptar wilangan array:
+Dhaptar char normal:
+Dhaptar char Array:
+Aktifake RPC
+Pelabuhan RPC
+Apa ngaktifake RPC utawa ora.
+Tulis port RPC. Kudu angka, lan kudu ora digunakake. Yen ora, RPC bakal gagal mbukak port.
+Ora miwiti RPC amarga dipateni.
+Dhaptar budaya sing didhukung
+Nggoleki senar sing ditemtokake ing file sing kasedhiya nggunakake ekspresi biasa
+Coba deleng manawa sampeyan bisa menet tombol
+Pangguna ora nyedhiyakake input kanthi tepat wektu.
+Kesulitan sing salah
+Karakter ora dipencet tepat wektu.
+Sampeyan wis mencet karakter sing bener!
+Sampeyan salah pencet.
+Pencet ESC kanggo metu.
+Entuk informasi tanggal lan wektu
+Milidetik:
+Detik:
+Menit:
+Jam:
+Dina:
+Wulan:
+Taun:
+Dina Taun:
+Dina Minggu:
+Binar:
+Wayah Lokal:
+Wektu Universal:
+Wektu Unix:
+Gagal ngurai informasi tanggal kanggo
+Priksa manawa format kasebut bener.
+Tanggal:
+Wektu:
+Nyetel ijin file. Iki mung didhukung ing server FTP sing mbukak Unix.
+Nyetel jinis kanggo sesi iki
+Sampeyan kudu nyambung menyang server sadurunge nindakake operasi sistem file.
+Gagal nyetel idin saka {0} menyang {1}.
+Idin disetel kanthi sukses kanggo file
+Jinis data disetel menyang ASCII!
+Tipe data disetel menyang Binary!
+Jinis data ora valid.
+Ati-ati manawa sebagian besar file ora bakal ndownload utawa ngunggah kanthi bener nggunakake mode iki, mula saranake nggunakake mode Binary ing kahanan sing paling akeh.
+Nyoba ngirim komando RPC nalika RPC durung diwiwiti.
+Fade Out Delay ing Milliseconds
+Langkah Max Fade
+Pira milidetik sing kudu ditunggu sadurunge teks ora ana maneh?
+Pira langkah sing kudu ilang?
+Probe Lengkap
+Yen bener, priksa kabeh hardware; liyane, mung bakal mriksa piranti sing dibutuhake.
+Gagal mbusak screensaver {0} saka config.
+Entuk setelan hemat khusus
+Nyetel setelan saver khusus
+Setelan disetel kanthi sukses kanggo screensaver
+Gagal nyetel setelan kanggo screensaver
+Bagean iki ngidini sampeyan ngatur nggawe tembung sandhi.
+Mbukak cangkang RSS kanggo maca feed
+Metu cangkang RSS lan bali menyang kernel
+Ngganti link feed
+Dhaptar kabeh feed
+Maca feed ing browser web
+Prentah cangkang RSS sing ditemtokake ora ditemokake.
+Pakan RSS2 ora valid.
+Pakan RSS1 ora valid.
+Pakan Atom ora valid.
+Ketik URL feed RSS:
+Jinis feed RSS ora valid.
+Kesalahan cangkang sing ora dingerteni:
+Entuk info artikel
+Nomer artikel ora bisa luwih gedhe tinimbang artikel sing kasedhiya.
+Judul:
+Link:
+Entuk info feed
+Katrangan:
+Jinis feed:
+Jumlah artikel:
+Artikel ora duwe link!
+Gagal nggawe dhaptar entri filesystem kanggo direktori
+Mode sortir filesystem
+Arah sortir filesystem
+Kontrol carane file bakal diurutake.
+Ngontrol arah ngurutake sistem file manawa munggah utawa mudhun.
+Urutan munggah
+Urut mudhun
+Jeneng lengkap
+Ukuran file
+Wektu gaweyan
+Wektu nulis pungkasan
+Wektu akses pungkasan
+Tulis Maneh Penundaan ing Milidetik
+Pira milidetik sing kudu ditunggu sadurunge nulis teks maneh?
+Tulis teks sing pengin ditampilake. Luwih suwe luwih becik.
+Kacepetan nulis minimal ing WPM
+Kacepetan nulis maksimum ing WPM
+Kemungkinan typo ing persen
+Gagal nyimpen direktori saiki: {0}
+Ngilangke kanggo ngganti arah
+Nguripake dhukungan warna 255 kanggo Ngilangke.
+Ngaktifake dhukungan warna sejati kanggo Ngilangke.
+Pira tisu sing kudu ditindakake sadurunge ganti arah kanthi acak?
+Tahap rampung ing
+Inisialisasi internal rampung ing
+File sing dirujuk {0} ora ditemokake. Mod iki bisa uga ora bisa mlaku tanpa file iki.
+Miwiti mod
+Entuk informasi mod
+Jeneng prentah:
+Definisi perintah:
+Jinis printah:
+Prentah sing ketat?
+Versi mod:
+Mod {0} ora ditemokake.
+Budaya saka
+Varian {0} sing digunakake kanggo ngganti jeneng wulan, tanggalan, lsp?
+Editor teks durung mbukak stream file.
+String diganti.
+Siji utawa loro nomer kasebut dudu angka.
+Tembung dibusak
+Karakter dibusak
+Setelan Filesystem ...
+Bagean iki nyathet setelan sistem file.
+Sugeng rawuh ing Setelan!
+Kesalahan nalika nglakokake perintah SSH
+Kesalahan ing cangkang SSH
+- Informasi app
+Ngaktifake dhukungan warna 255 kanggo BouncingText.
+Ngaktifake dhukungan warna sejati kanggo BouncingText.
+Nguji panulis kamus nganggo rangkai senar lan senar
+Nguji panulis kamus kanthi susunan char lan char
+Nguji panulis kamus nganggo rangking ongko lan ongko
+Kamus senar normal:
+Kamus senar susunan:
+Kamus integer normal:
+Kamus integer array:
+Kamus char normal:
+Kamus Array char:
+Sugeng Rawuh ing Test Shell!
+Tampilake kemajuan ing operasi sistem file
+Nuduhake file sing lagi diproses sajrone operasi sistem file
+ing endi HardwareType bakal ana
+Salah siji jinis perangkat keras {0} ora ditliti, utawa ora valid.
+Jinis perangkat keras {0} durung ditliti. Yen sampeyan yakin yen dicoba, restart kernel kanthi debugging aktif.
+Partisi ora diurai kanggo dhaptar.
+Mode Peretas
+Yen diaktifake, console ijo bakal diaktifake.
+Nyithak pemisah
+Nyithak pemisah kanthi dhukungan format
+Nyithak pemisah kanthi dhukungan warna
+Nyithak pemisah kanthi dhukungan warna lan format
+Tansah pusaté
+Ngaktifake dhukungan warna 255 kanggo Marquee.
+Ngaktifake dhukungan warna sejati kanggo Marquee.
+Tulis teks sing pengin ditampilake.
+Apa teks sing ditampilake ing marquee mesthi dipusatake.
+'q' kanggo mandheg.
+Argumen {0} ora ditemokake kanggo nyuntikake.
+Argumen baris perintah {0} ora ditemokake.
+Mbusak kabeh setelan
+Screensaver ngalami kesalahan nalika nampilake: {0}. Pencet tombol apa wae kanggo metu.
+Pratinjau ...
+Mangkene carane tema sampeyan bakal katon:
+Prentah sing bisa bungkus:
+Mod {0} nduwe perintah sing ora valid. Parsing mod gagal. Priksa kode sumber.
+Bagéan mod:

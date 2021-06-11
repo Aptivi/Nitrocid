@@ -739,3 +739,361 @@ Atraso em Milissegundos
 Quantos milissegundos esperar antes de fazer a próxima gravação?
 Permite usar um servidor SSH FTP
 Sem ajuda para o comando "{0}".
+Sequência de VT inválida para cor RGB.
+Cor da barra de segundos
+Cor da barra de minutos
+Cor da barra de horas
+Cor da Informação
+Carrapatos para mudar de cor
+Ativa o suporte de 255 cores para ProgressClock.
+Ativa o suporte true color para ProgressClock.
+A cor da barra de progresso dos segundos. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
+A cor da barra de progresso dos minutos. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
+A cor da barra de progresso de horas. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
+A cor das informações de data. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
+Se o ciclo de cores estiver ativado, quantos tiques antes de alterar as cores no ProgressClock? 1 tick = 0,5 segundos
+ProgressClock selecionará cores aleatórias se estiver habilitado. Caso contrário, use as cores da configuração.
+Cria um novo tema
+Fazendo um novo tema "{0}".
+Salvar tema no diretório atual
+Salvar tema em outro diretório ...
+Selecione a cor usando as teclas "<-" e "->". Pressione ENTER para sair. Pressione "i" para inserir o número da cor manualmente.
+Selecione a cor usando as teclas "<-" e "->". Use as teclas de seta para cima e para baixo para selecionar entre as faixas de cores. Pressione ENTER para sair. Pressione "i" para inserir o número da cor manualmente.
+Bem vindo ao kernel! - Versão {0}
+Cor de advertência
+Cor da opção
+Digite o número da cor de 0 a 255:
+Use "hwinfo" para obter informações estendidas sobre hardware.
+Imprime informações de hardware
+Informações da CPU:
+Nome do processador:
+Velocidade do processador:
+Bits do processador:
+Rev do processador:
+Topologia do processador:
+Tipo de processador:
+Marco do processador:
+Processador BogoMips:
+Tamanho do cache L2 do processador:
+Tamanho do cache L3 do processador:
+Recursos do processador:
+Informações de HDD:
+Nome da unidade:
+Modelo de unidade:
+Fornecedor do Drive:
+Velocidade do drive:
+Tamanho da unidade:
+Série da unidade:
+ID da unidade:
+Contagem de partição da unidade:
+ID da partição:
+Sistema de arquivos de partição:
+Tamanho da partição:
+Partição usada:
+Informações de RAM:
+RAM livre:
+RAM total:
+RAM usada:
+Informações de GPU:
+Nome da GPU:
+Driver GPU:
+Versão GPU:
+GPU: uma ou mais placas gráficas não foram sondadas. Mostrando informações mesmo assim ...
+>> Bem-vindo! Esta é a primeira vez que você entra no bate-papo e depuração remota. Use "/ register <nome>" para se registrar.
+O dispositivo já existe.
+Esse dispositivo não existe.
+Define o nome de usuário do dispositivo
+Você já está registrado.
+Olá, {0}!
+Imprime o conteúdo do arquivo para o console
+Ou passe "listcities" para este comando.
+A entrada já existe.
+Envolve a saída do console
+O comando não pode ser encapsulado. Esses comandos podem ser agrupados:
+Extrai um arquivo ZIP
+Cria um arquivo ZIP
+Construído em {0}
+Erro ao baixar dados de depuração
+Ocorreu um erro durante o download dos dados de depuração. Verifique sua conexão com a internet.
+Falha ao finalizar o mod {0}: {1}
+Lista todos os eventos disparados
+Diretório atual
+Define o diretório atual do shell. Grave um caminho absoluto para qualquer diretório existente.
+Saídas da lista de embrulho
+Envolve as saídas da lista se parecer muito longo para a geometria do console atual.
+Ping!
+{0} enviou um ping para você.
+Salvar tema no diretório atual como ...
+Salvar tema em outro diretório como ...
+Especifique o nome do tema:
+O usuário {0} foi adicionado à lista "{1}".
+O usuário {0} foi removido da lista "{1}".
+Modo inválido {0}
+Usuário já existe
+Carregar tema de ...
+Carregar tema de temas pré-construídos ...
+Especifique o nome do arquivo do tema sem a extensão .json:
+Abre um arquivo ZIP
+Sai do shell ZIP
+Lista todos os arquivos dentro do arquivo
+Extrai um arquivo para um diretório especificado ou um diretório atual
+Altera o diretório do arquivo
+O comando do shell ZIP especificado não foi encontrado.
+Diretório {0} não existe
+O diretório de arquivo {0} não existe
+Contagem de posições máximas
+Quantas posições são iluminadas antes do escurecimento?
+Ativa o suporte de 255 cores para o Isqueiro.
+Ativa o suporte para true color para o Isqueiro.
+Cor de entrada da lista
+Cor do valor da lista
+Conecta-se a um servidor SSH para executar um comando.
+Esta seção lista as configurações do protetor de tela para
+Especificador de cor inválido. Certifique-se de que está no formato correto, o que significa um número de 0 a 255 se usar 255 cores ou uma sequência VT se usar true color da seguinte maneira:
+Erro no shell de teste: {0}
+Define uma variável para um valor em um script
+Um prompt de relatório de bug.
+Obrigado por nos enviar um tíquete! Selecione que tipo de solicitação você tem.
+Um problema
+Um pedido de recurso
+Uma pergunta
+Você deve especificar um recurso.
+Faça uma pergunta, escreva sua ideia ou relate um problema.
+Você deve escrever seu pedido.
+Ocorreu um erro no shell do FTP:
+Erro de shell de FTP desconhecido:
+Ocorreu um erro no shell SFTP:
+Erro de shell SFTP desconhecido:
+Mostrar banner SSH
+Mostra o banner do servidor SSH na conexão.
+Como você deseja se autenticar?
+Arquivo de chave privada
+Senha
+Digite a senha longa para a chave {0}:
+Insira a localização da chave privada para {0}. Escreva "q" para terminar de adicionar as chaves:
+Neutralizou um caminho inexistente.
+O arquivo de chave {0} não existe.
+Erro ao tentar adicionar chave privada:
+Pressione "t" para mudar para o modo de 255 cores.
+Pressione "t" para mudar para o modo true color.
+Esta seção permite que você escolha o tipo de cor que deseja alterar.
+Parece que você não tem nenhum usuário, exceto o root. Isto é mau. Iremos guiá-lo como criar um.
+Escreva seu nome de usuário.
+Você deve escrever seu nome de usuário.
+Escreva sua senha.
+Você deve escrever sua senha.
+Selecione o tipo de conta.
+Administrador: este tipo de conta tem mais poder no kernel, permitindo que você use programas de gerenciamento de sistema.
+Usuário normal: este tipo de conta é um pouco mais restrito do que administradores.
+Parabéns! Você fez uma nova conta! Para terminar, faça login como sua nova conta.
+Consulte o manual do protetor de tela ou o código-fonte para obter informações.
+mod: Nenhum mod detectado.
+Comandos gerais:
+Comandos mod:
+Comandos de alias:
+Modo de manutenção
+Consultar diretórios
+Grupo de caminhos separados por dois pontos. Funciona da mesma forma que PATH. Escreva um caminho completo para uma pasta ou um nome de pasta. Quando terminar, escreva "q". Escreva um sinal de menos próximo ao caminho para remover um diretório existente.
+Sem comandos mod.
+Sem comandos de alias.
+O valor da cor está fora do intervalo de 0-255.
+O comando empacotável não foi encontrado.
+Consulta uma palavra em uma linha especificada ou em todas as linhas
+{0} de {1} baixado.
+{0} de {1} enviados.
+Imprime uma string para o console usando tipo de cor e linha de impressão
+Imprime uma string para o console usando tipo de cor e impressão de linha com suporte de formato
+Imprime uma string para o depurador
+Imprime uma string para o depurador com suporte de formato
+Testa o recurso de erro do kernel
+Testa a facilidade de erro do kernel com suporte de formato
+Testa a tradução de uma string existente em recursos para um idioma específico
+Imprime uma string para o console e analisa os marcadores encontrados
+Testa a facilidade de expressão regular
+Criptografa uma string usando
+Inicia todos os mods
+Para todos os mods
+Ativa ou desativa a depuração
+Ativa ou desativa a depuração remota
+Testa a sequência VT para 255 cores
+Testa a sequência VT para a cor verdadeira
+Envia uma notificação para testar o receptor
+Testa a impressão da data usando diferentes calendários
+Lista todas as páginas de código com suporte
+Quais variáveis ​​do compilador estão habilitadas no aplicativo?
+Testes levantando o evento específico
+Testes sondando o hardware
+Testa o coletor de lixo
+Sai do shell de teste e inicia o kernel
+Sai do shell de teste e desliga o kernel
+Salva o diretório atual no arquivo de configuração do kernel
+Testa o escritor da lista com a string e o array de strings
+Testa o gravador de lista com a matriz de inteiros e inteiros
+Testa o gravador da lista com a matriz char e char
+Lista de strings normais:
+Lista de strings de matriz:
+Lista de inteiros normais:
+Lista de inteiros de matriz:
+Lista normal de caracteres:
+Lista de caracteres da matriz:
+Habilitar RPC
+Porta RPC
+Se deve ou não habilitar o RPC.
+Grave uma porta RPC. Deve ser numérico e ainda não deve ser usado. Caso contrário, o RPC não conseguirá abrir a porta.
+Não iniciando RPC porque está desabilitado.
+Lista culturas suportadas
+Pesquisa a string especificada no arquivo fornecido usando expressões regulares
+Veja se você consegue pressionar uma tecla na hora certa
+O usuário não forneceu nenhuma entrada em tempo hábil.
+Dificuldade inválida
+Personagem não pressionado a tempo.
+Você pressionou o personagem certo!
+Você pressionou o caractere errado.
+Pressione ESC para sair.
+Obtém as informações de data e hora
+Milissegundos:
+Segundos:
+Minutos:
+Horas:
+Dias:
+Meses:
+Ano:
+Dia do ano:
+Dia da semana:
+Binário:
+Horário local:
+Tempo Universal:
+Hora Unix:
+Falha ao analisar informações de data para
+Certifique-se de que o formato está correto.
+Data:
+Tempo:
+Define permissões de arquivo. Isso é suportado apenas em servidores FTP que executam Unix.
+Define o tipo para esta sessão
+Você deve se conectar ao servidor antes de executar as operações do sistema de arquivos.
+Falha ao definir permissões de {0} para {1}.
+Permissões definidas com sucesso para o arquivo
+Tipo de dados definido como ASCII!
+Tipo de dados definido como binário!
+Tipo de dados inválido.
+Esteja ciente de que a maioria dos arquivos não será baixada ou carregada corretamente usando este modo, então é altamente recomendável usar o modo Binário na maioria das situações.
+Tentando enviar um comando RPC enquanto o RPC não foi iniciado.
+Fade Out Delay em Milissegundos
+Max Fade Steps
+Quantos milissegundos esperar antes de o texto esmaecer?
+Quantas etapas de fade para fazer?
+Full Probe
+Se verdadeiro, testa todo o hardware; caso contrário, só testará o hardware necessário.
+Falha ao remover protetor de tela {0} da configuração.
+Obtém configurações de proteção personalizadas
+Define configurações de proteção personalizadas
+Configurações definidas com sucesso para o protetor de tela
+Falha ao definir uma configuração para o protetor de tela
+Esta seção permite gerenciar a criação de senha root.
+Abre um shell RSS para ler os feeds
+Sai do shell RSS e retorna ao kernel
+Altera o link do feed
+Lista todos os feeds
+Lê um feed em um navegador da web
+O comando de shell RSS especificado não foi encontrado.
+Feed RSS2 inválido.
+Feed RSS1 inválido.
+Feed Atom inválido.
+Insira um URL de feed RSS:
+Tipo de feed RSS inválido.
+Erro de shell desconhecido:
+Obtém as informações do artigo
+O número do artigo não pode ser maior do que os artigos disponíveis.
+Título:
+Link:
+Obtém as informações do feed
+Descrição:
+Tipo de feed:
+Número de artigos:
+O artigo não tem um link!
+Falha ao fazer uma lista de entradas do sistema de arquivos para o diretório
+Modo de classificação do sistema de arquivos
+Direção de classificação do sistema de arquivos
+Controla como os arquivos serão classificados.
+Controla a direção da classificação do sistema de arquivos, seja crescente ou decrescente.
+Ordem ascendente
+Ordem decrescente
+Nome completo
+Tamanho do arquivo
+Tempo de criação
+Última hora de escrita
+Última hora de acesso
+Atraso de gravação de novo em milissegundos
+Quantos milissegundos esperar antes de escrever o texto novamente?
+Escreva qualquer texto que você deseja mostrar. Quanto mais tempo, melhor.
+Velocidade mínima de gravação em WPM
+Velocidade máxima de gravação em WPM
+Probabilidade de erro de digitação em porcentagem
+Falha ao salvar o diretório atual: {0}
+Limpa para mudar de direção
+Ativa o suporte de 255 cores para Wipe.
+Ativa o suporte true color para Wipe.
+Quantas limpezas a serem feitas antes de mudar de direção aleatoriamente?
+Etapa finalizada em
+A inicialização interna terminou em
+Arquivo referenciado {0} não encontrado. Este mod pode não funcionar corretamente sem este arquivo.
+Mod começando
+Obtém informações sobre mod
+Nome do comando:
+Definição de comando:
+Tipo de comando:
+Comando estrito?
+Versão mod:
+Mod {0} não encontrado.
+Cultura de
+Qual variante de {0} está sendo usada para alterar os nomes dos meses, calendário, etc.?
+O editor de texto ainda não abriu um fluxo de arquivo.
+String substituída.
+Um ou ambos os números não são numéricos.
+Palavra excluída.
+Personagem excluído.
+Configurações do sistema de arquivos ...
+Esta seção lista as configurações do sistema de arquivos.
+Bem-vindo às configurações!
+Erro ao executar o comando SSH
+Erro no shell SSH
+- Informações do aplicativo
+Ativa o suporte de 255 cores para BouncingText.
+Ativa o suporte true color para BouncingText.
+Testa o escritor do dicionário com a string e o array de strings
+Testa o escritor do dicionário com a matriz char e char
+Testa o escritor do dicionário com a matriz de inteiros e inteiros
+Dicionário de string normal:
+Dicionário de string de matriz:
+Dicionário inteiro normal:
+Dicionário inteiro de matriz:
+Dicionário normal de caracteres:
+Dicionário de caracteres de matriz:
+Bem-vindo ao Test Shell!
+Mostra o progresso nas operações do sistema de arquivos
+Mostra qual arquivo está sendo processado durante as operações do sistema de arquivos
+onde HardwareType estará
+O tipo de hardware {0} não foi testado ou não é válido.
+O tipo de hardware {0} ainda não foi testado. Se você tiver certeza de que foi testado, reinicie o kernel com a depuração habilitada.
+Partições não analisadas para a lista.
+Modo Hacker
+Se habilitado, o console verde será habilitado.
+Imprime um separador
+Imprime um separador com suporte de formato
+Imprime um separador com suporte de cor
+Imprime um separador com suporte a cores e formatos
+Sempre centrado
+Ativa o suporte de 255 cores para Marquee.
+Ativa o suporte true color para Marquee.
+Escreva qualquer texto que você deseja mostrar.
+Se o texto mostrado no letreiro está sempre centralizado.
+'q' para sair.
+Argumento {0} não encontrado para injetar.
+Argumento da linha de comando {0} não encontrado.
+Limpa todas as configurações
+O protetor de tela encontrou um erro ao exibir: {0}. Aperte qualquer tecla para sair.
+Pré-visualizar ...
+Veja como será o seu tema:
+Comandos que podem ser embalados:
+O mod {0} possui um comando inválido. A análise do mod falhou. Revise o código-fonte.
+Partes mod:

@@ -739,3 +739,361 @@ Ukubambezeleka kumaMillisecond
 Mangaki ama-millisecond okulinda ngaphambi kokwenza ukubhala okulandelayo?
 Ikuvumela ukuthi usebenzise iseva ye-SSH FTP
 Alukho usizo lomyalo "{0}".
+Ukulandelana okungavumelekile kwe-VT kombala we-RGB.
+Umbala we-Seconds Bar
+Umbala Wemizuzu Yebha
+Umbala Webha Yamahora
+Umbala Wolwazi
+Imikhaza yokushintsha umbala
+Yenza kusebenze ukwesekwa kombala okungama-255 kweProgressClock.
+Yenza kusebenze ukwesekwa kombala kweqiniso kweProgressClock.
+Umbala webha yokuqhubeka yamasekhondi. Kungaba 1-16, 1-255, noma "1-255;1-255;1-255".
+Umbala webha yokuqhubeka yamaminithi. Kungaba 1-16, 1-255, noma "1-255;1-255;1-255".
+Umbala webha yokuqhubeka kwamahora. Kungaba 1-16, 1-255, noma "1-255;1-255;1-255".
+Umbala wolwazi losuku. Kungaba 1-16, 1-255, noma "1-255;1-255;1-255".
+Uma ukuhamba ngebhayisikili kombala kunikwe amandla, mingaki imikhaza ngaphambi kokushintsha imibala kuProgressClock? I-1 tick = 0.5 imizuzwana
+IProgressClock izokhetha imibala engahleliwe uma inikwe amandla. Ngaphandle kwalokho, sebenzisa imibala kusuka ku-config.
+Yenza itimu entsha
+Ukwenza itimu entsha "{0}".
+Gcina ingqikithi kufolda yamanje
+Gcina Itimu Kwenye Inkomba ...
+Khetha umbala usebenzisa okhiye be- "<-" no "->". Cindezela u-ENTER ukuze uyeke. Cindezela "i" ukufaka inombolo yombala ngesandla.
+Khetha umbala usebenzisa okhiye be- "<-" no "->". Sebenzisa okhiye bomcibisholo phezulu nomcibisholo phansi ukukhetha phakathi kwamabanga ombala. Cindezela u-ENTER ukuze uyeke. Cindezela "i" ukufaka inombolo yombala ngesandla.
+Uyemukelwa ku-kernel! Uhlobo {0}
+Umbala oyisixwayiso
+Umbala wenketho
+Faka inombolo yombala kusuka ku-0 kuye ku-255:
+Sebenzisa i- "hwinfo" ukuthola imininingwane enwetshiwe mayelana nezingxenyekazi zekhompuyutha.
+Iphrinta imininingwane yehadiwe
+Imininingwane ye-CPU:
+Igama leprosesa:
+Ijubane leprosesa:
+Amaprosesa ama-bits:
+Iprosesa rev:
+I-processor topology:
+Uhlobo lweprosesa:
+Inqubo yokuqopha:
+Iprosesa iBogoMips:
+Usayizi we-processor L2 cache:
+Usayizi we-processor L3 cache:
+Izici zeprosesa:
+Imininingwane ye-HDD:
+Igama leDrayivu:
+Imodeli yeDrayivu:
+Umthengisi weDrayivu:
+Isivinini seDrayivu:
+Usayizi weDrayivu:
+Shayela serial:
+ID ID:
+Idrayivu yokubala ukwahlukanisa:
+I-ID yokuhlukanisa:
+Isistimu yefayela lokuhlukanisa:
+Usayizi wokuhlukanisa:
+Ukuhlukaniswa okusetshenzisiwe:
+Imininingwane ye-RAM:
+I-RAM mahhala:
+Inani le-RAM:
+I-RAM isetshenzisiwe:
+Imininingwane ye-GPU:
+Igama le-GPU:
+Umshayeli we-GPU:
+Uhlobo lwe-GPU:
+I-GPU: Ikhadi elilodwa noma amaningi emidwebo yehlulekile ukuphenywa. Ibonisa imininingwane noma kunjalo ...
+>> Siyakwamukela! Lesi yisikhathi sakho sokuqala ukufaka iphutha ekude bese uxoxa. Sebenzisa "/ bhalisa <name>" ukubhalisa.
+Idivayisi isivele ikhona.
+Ayikho idivayisi enjalo.
+Isetha igama lomsebenzisi ledivayisi
+Usubhalisile vele.
+Sawubona, {0}!
+Iphrinta okuqukethwe kwefayela ukuze iduduze
+Noma, dlulisa i- "listcities" kulo myalo.
+Ukungena sekuvele kukhona.
+Isonga ukukhishwa kwekhonsoli
+Umyalo awusongelwa. Le miyalo igoqeka:
+Ikhipha ingobo yomlando ye-ZIP
+Idala ingobo yomlando ye-ZIP
+Kwakhiwe e- {0}
+Iphutha ukulanda idatha yokulungisa iphutha
+Kunephutha ngenkathi kulandwa idatha yokulungisa iphutha. Hlola ukuxhumeka kwakho kwe-inthanethi.
+Yehlulekile ukuqedela imod {0}: {1}
+Uhlu yonke imicimbi exoshiwe
+Uhla lwemibhalo yamanje
+Isetha umkhombandlela wamanje weShell. Bhala indlela ephelele kunoma iyiphi inkomba ekhona.
+Qoqa imiphumela yohlu
+Isonga okukhishwa kohlu uma kubonakala kukude kakhulu ku-geometry yekhonsoli yamanje.
+Ping!
+{0} ukukuphine.
+Gcina itimu kusikhombimsebenzisi samanje njenge ...
+Gcina itimu kolunye uhla lwemibhalo njengo ...
+Cacisa igama lengqikithi:
+Umsebenzisi {0} ungeziwe kuhlu lwe - "{1}".
+Umsebenzisi {0} ususiwe ohlwini lwe - "{1}".
+Imodi engavumelekile {0}
+Umsebenzisi usevele ukhona
+Layisha Itimu Kusuka ...
+Layisha Itimu Kusuka Kwezindikimba Ezakhiwe kabusha ...
+Cacisa igama lefayela letimu ngaphandle kwesandiso se-.json:
+Ivula ingobo yomlando ye-ZIP
+Iphuma kugobolondo le-ZIP
+Ibala wonke amafayela angaphakathi kwesilondolozi
+Kukhishwa ifayili kumkhombandlela ocacisiwe noma enkombeni yamanje
+Ishintsha umkhombandlela wengobo yomlando
+Umyalo we-zip shell obaluliwe awutholakali.
+Uhla lwemibhalo {0} alutholakali
+Uhla lwemibhalo lwengobo yomlando {0} alutholakali
+Izikhundla zeMax Bala
+Zingaki izikhundla ezikhanyisiwe ngaphambi kokufiphala?
+Yenza kusebenze ukwesekwa kombala okungama-255 kweLighter.
+Yenza kusebenze ukusekelwa kombala kweqiniso kweLighter.
+Faka umbala wokufaka ohlwini
+Umbala wenani lohlu
+Ixhuma kwiseva ye-SSH ukwenza umyalo.
+Lesi sigaba sibala izilungiselelo ze-screensaver ze-
+Isichazi sombala esingavumelekile. Qiniseka ukuthi ikufomethi efanele, okusho inombolo kusuka ku-0-255 uma usebenzisa imibala engu-255 noma ukulandelana kwe-VT uma usebenzisa umbala weqiniso ngokulandelayo:
+Iphutha kugobolondo lokuhlola: {0}
+Isetha okuguquguqukayo kunani kuskripthi
+Ukwaziswa kokubika kwesiphazamisi.
+Siyabonga ngokusiphakamisela ithikithi! Khetha ukuthi unaluphi uhlobo lwesicelo.
+Inkinga
+Isicelo sesici
+Umbuzo
+Kufanele ucacise isici.
+Buza umbuzo, jotela umbono wakho, noma ubike inkinga.
+Kufanele ubhale isicelo sakho.
+Kube nephutha kugobolondo le-FTP:
+Iphutha elingaziwa le-FTP Shell:
+Kube nephutha kugobolondo le-SFTP:
+Iphutha elingaziwa le-SFTP Shell:
+Bonisa isibhengezo se-SSH
+Ibonisa isibhengezo sesiphakeli se-SSH ekuxhumekeni.
+Ufuna ukugunyaza kanjani?
+Ifayela lokhiye oyimfihlo
+Iphasiwedi
+Faka umushwana wokungena wokhiye {0}:
+Faka indawo yokhiye oyimfihlo ka- {0}. Bhala u- "q" ukuqedela ukungeza okhiye:
+I-neutralized indlela engekho.
+Ifayela elingukhiye {0} alikho nhlobo.
+Iphutha ukuzama ukwengeza ukhiye oyimfihlo:
+Cindezela u- "t" ukushintshela kumodi yombala engama-255.
+Cindezela u "t" ukushintshela kwimodi yombala eyiqiniso.
+Lesi sigaba sikuvumela ukhethe ukuthi ufuna ukushintsha uhlobo luni lombala.
+Kubukeka sengathi awunaye umsebenzisi ngaphandle kwezimpande. Kubi lokhu. Sizokukhombisa ukuthi uyakha kanjani eyodwa.
+Bhala igama lakho lomsebenzisi.
+Kufanele ubhale igama lakho lomsebenzisi.
+Bhala iphasiwedi yakho.
+Kufanele ubhale iphasiwedi yakho.
+Khetha uhlobo lwe-akhawunti.
+Umphathi: Lolu hlobo lwe-akhawunti lunamandla kakhulu ku-kernel, ekuvumela ukuthi usebenzise izinhlelo zokuphatha uhlelo.
+Umsebenzisi Ojwayelekile: Lolu hlobo lwe-akhawunti lukhawulelwe kancane kunabaphathi.
+Halala! Wenze i-akhawunti entsha! Ukuqeda lokhu, ngena ngemvume njenge-akhawunti yakho entsha.
+Bheka imanuwali yesikrini noma ikhodi yomthombo ukuthola imininingwane.
+mod: Awekho ama-mods atholakele.
+Imiyalo ejwayelekile:
+Imiyalo ye-Mod:
+Imiyalo ye-alias:
+Imodi Yesondlo
+Bheka Izincwajana
+Iqembu lezindlela ezihlukaniswe ikholoni. Isebenza ngokufana ne-PATH. Bhala indlela ephelele eya kufolda noma igama lefolda. Uma usuqedile, bhala u- "q". Bhala uphawu lokususa eceleni kwendlela ukususa umkhombandlela okhona.
+Ayikho imiyalo ye-mod.
+Ayikho imiyalo ye-alias.
+Inani lombala lingaphandle kwebanga elingu-0-255.
+Umyalo ogoqekayo awutholakali.
+Ubuza igama emugqeni ocacisiwe noma kuyo yonke imigqa
+{0} koku- {1} okulandiwe.
+{0} kokungu- {1} kulayishiwe.
+Phrinta intambo yokududuza usebenzisa uhlobo lombala nokuphrinta komugqa
+Phrinta intambo yokududuza usebenzisa uhlobo lombala nokuphrinta komugqa ngokusekelwa kwefomethi
+Phrinta intambo ukulungisa iphutha
+Phrinta intambo ukuze ilungise iphutha ngokuxhaswa kwefomethi
+Ihlola indawo yephutha le-kernel
+Ihlola indawo yephutha le-kernel ngokusekelwa kwefomethi
+Ihlola ukuhumusha umucu okhona kwizisetshenziswa kulimi oluthile
+Phrinta intambo ukududuza futhi kudlulise izibambi ndawo ezitholakele
+Ihlola indawo yokuveza okuvamile
+Ibhala ngentambo isebenzisa
+Iqala wonke ama-mods
+Imisa wonke ama-mods
+Inika amandla noma ikhubaza ukulungisa iphutha
+Inika amandla noma ikhubaza ukulungisa iphutha kude
+Ihlola ukulandelana kwe-VT ngemibala engama-255
+Ihlola ukulandelana kwe-VT ngombala weqiniso
+Ithumela isaziso ukuhlola umamukeli
+Kuhlolwa usuku lokuphrinta kusetshenziswa amakhalenda ahlukile
+Uhlu onke ama-codepages asekelwayo
+Yikuphi ukuguquguquka komhlanganisi okunikwe amandla kuhlelo lokusebenza?
+Ukuhlolwa okuphakamisa umcimbi othile
+Ukuhlolwa okuhlola i-hardware
+Uhlola umqoqi kadoti
+Iphuma kugobolondo lokuhlola bese iqala i-kernel
+Iphuma kugobolondo lokuhlola bese ivalela phansi i-kernel
+Ilondoloza umkhombandlela wamanje kufayela lokumiswa kernel
+Ihlola umbhali wohlu ngentambo nentambo
+Ihlola umlobi wohlu ngenombolo ephelele kanye nenamba
+Ihlola umbhali wohlu nge-char ne-char array
+Uhlu lwezintambo olujwayelekile:
+Uhlu lwezintambo ze-Array:
+Uhlu lwamanani ajwayelekile:
+Uhlu lwamanani aphelele:
+Uhlu lwamashadi olujwayelekile:
+Uhlu lwamanani we-char:
+Nika amandla i-RPC
+I-RPC Port
+Ukuthi unike amandla i-RPC noma cha.
+Bhala imbobo ye-RPC. Kufanele kube inombolo, futhi akumele isetshenziswe vele. Ngaphandle kwalokho, i-RPC izokwehluleka ukuvula itheku.
+Ayiqali i-RPC ngoba ikhutshaziwe.
+Uhlu lusekela amasiko
+Isesha intambo ecacisiwe kufayela elinikeziwe kusetshenziswa izinkulumo ezivamile
+Bona ukuthi ungacindezela ukhiye ngesikhathi
+Umsebenzisi akazange anikeze noma ikuphi ukufaka ngesikhathi esifanele.
+Ubunzima obungavumelekile
+Uhlamvu alucindezelwe ngesikhathi.
+Ucindezele uhlamvu olufanele!
+Ucindezele uhlamvu olungalungile.
+Cindezela i-ESC ukuphuma.
+Uthola imininingwane yosuku nesikhathi
+Ama-millisecond:
+Imizuzwana:
+Amaminithi:
+Amahora
+Izinsuku:
+Izinyanga:
+Unyaka:
+Usuku Lonyaka:
+Usuku lweviki:
+Kanambambili:
+Isikhathi Sendawo:
+Isikhathi Sendawo Yonke:
+Isikhathi se-Unix:
+Yehlulekile ukuhlaziya imininingwane yosuku ye-
+Qiniseka ukuthi ifomethi ilungile.
+Usuku:
+Isikhathi:
+Isetha izimvume zefayela. Lokhu kusekelwa kuphela kumaseva we-FTP asebenzisa i-Unix.
+Isetha uhlobo lwalesi sikhathi
+Kufanele uxhume kuseva ngaphambi kokwenza imisebenzi yohlelo lwefayela.
+Yehlulekile ukusetha izimvume ze- {0} ku- {1}.
+Izimvume zisethwe ngempumelelo kufayela
+Uhlobo lwedatha lusethelwe ku-ASCII!
+Uhlobo lwedatha lusethelwe ku-Binary!
+Uhlobo lwedatha olungavumelekile.
+Qaphela ukuthi iningi lamafayela ngeke lilande noma lilayishe kahle lisebenzisa le modi, ngakho-ke sincoma kakhulu ukusebenzisa imodi ye-Binary ezimweni eziningi.
+Izama ukuthumela umyalo we-RPC ngenkathi i-RPC ingaqalanga.
+Ukuphela kokubambezeleka kumaMillisecond
+Izinyathelo zeMax Fade
+Mangaki ama-millisecond okulinda ngaphambi kokuqeda umbhalo?
+Zingaki izinyathelo zokuphela okufanele zenziwe?
+Ukuhlola Okugcwele
+Uma kuyiqiniso, iphenya yonke i-hardware; okunye, kuzophenya kuphela i-hardware edingekayo.
+Yehlulekile ukususa i-screensaver {0} ku-config.
+Ithola izilungiselelo zesilondolozi sangokwezifiso
+Isetha izilungiselelo zesilondolozi sangokwezifiso
+Amasethingi asethwe ngempumelelo kusikrini sesikrini
+Yehlulekile ukusetha isilondolozi sesikrini
+Lesi sigaba sikuvumela ukuthi uphathe ukwenziwa kwephasiwedi yezimpande.
+Ivula igobolondo le-RSS ukuze ifunde okuphakelayo
+Iphuma kugobolondo le-RSS ibuyele ku-kernel
+Ishintsha isixhumanisi sokuphakelayo
+Uhlu konke okuphakelayo
+Ufunda okuphakelayo kusiphequluli sewebhu
+Umyalo weShell we-RSS ocacisiwe awutholakali.
+Okuphakelayo okungavumelekile kwe-RSS2.
+Okuphakelayo okungavumelekile kwe-RSS1.
+Okuphakelayo kwe-Atom okungavumelekile.
+Faka i-RSS feed URL:
+Uhlobo lokuphakelayo lwe-RSS olungavumelekile.
+Iphutha leShell elingaziwa:
+Ithola imininingwane ye-athikili
+Inombolo ye-athikili ayinakuba nkulu kunama-athikili atholakalayo.
+Isihloko:
+Isixhumanisi:
+Ithola ulwazi lokuphakelayo
+Incazelo:
+Uhlobo lokuphakelayo:
+Inani lama-athikili:
+I-athikili ayinaso isixhumanisi!
+Yehlulekile ukwenza uhlu lokufakiwe kohlelo lwefayela lwemibhalo
+Imodi yokuhlelwa kwesistimu yefayela
+Ukuqondiswa kokuhlelwa kwesistimu yefayela
+Kulawula ukuthi amafayela azohlungwa kanjani.
+Ilawula ukuqondiswa kohlelo lwefayela lokuhlunga ukuthi luyenyuka noma luyehla.
+Ukunyuka okunyukayo
+Ukwehla kwe-oda
+Igama eligcwele
+Usayizi wefayela
+Isikhathi sokudala
+Isikhathi sokugcina sokubhala
+Isikhathi sokugcina sokufinyelela
+Bhala futhi ukubambezeleka kumaMillisecond
+Mangaki ama-millisecond okulinda ngaphambi kokubhala umbhalo futhi?
+Bhala noma yimuphi umbhalo ofuna ukuboniswa. Ukude kungcono.
+Isivinini sokubhala esincane ku-WPM
+Isivinini esikhulu sokubhala ku-WPM
+Amathuba we-typo ngamaphesenti
+Yehlulekile ukulondoloza umkhombandlela wamanje: {0}
+Isula ukushintsha indlela
+Yenza kusebenze ukwesekwa kombala okungama-255 kwe-Sula.
+Yenza kusebenze ukwesekwa kombala kwangempela kwe-Sula.
+Mangaki ama-sula okufanele awenze ngaphambi kokushintsha inkomba ngokungahleliwe?
+Isiteji siqedile ukungena
+Ukuqalisa kwangaphakathi kuqedile ku-
+Ifayela eliyisithenjwa {0} alitholakalanga. Le mod ingahle ingasebenzi kahle ngaphandle kwaleli fayela.
+Iqala imod
+Ithola ulwazi lwe-mod
+Igama lomyalo:
+Incazelo yomyalo:
+Uhlobo lomyalo:
+Umyalo oqinile?
+Uhlobo lweMod:
+Imodi {0} ayitholakali.
+Isiko le-
+Yikuphi ukwahluka kwe- {0} okusetshenziswayo ukushintsha amagama enyanga, ikhalenda, njll.?
+Isihleli sombhalo asikavuli ukusakaza kwefayela okwamanje.
+Intambo ishintshiwe.
+Inombolo eyodwa noma zombili azizona izinombolo.
+Igama lisusiwe.
+Uhlamvu lususiwe.
+Izilungiselelo Zesistimu yefayela ...
+Lesi sigaba sibala izilungiselelo zohlelo lwefayela.
+Uyemukelwa kuzilungiselelo!
+Iphutha lokusebenzisa umyalo we-SSH
+Iphutha kugobolondo le-SSH
+- Imininingwane yohlelo lokusebenza
+Yenza kusebenze ukwesekwa kombala okungama-255 kweBouncingText.
+Yenza kusebenze ukwesekwa kombala kweqiniso kwe-BouncingText.
+Ihlola umbhali wesichazamazwi ngentambo nentambo
+Ihlola umbhali wesichazamazwi nge-char ne-char array
+Ihlola umbhali wesichazamazwi nge-integer ne-integer array
+Isichazamazwi sentambo ejwayelekile:
+Uhlelo lwesichazamazwi sentambo:
+Isichazamazwi esijwayelekile senombolo ephelele:
+Amalungu afanayo enamba ephelele:
+Isichazamazwi se-char esijwayelekile:
+Isichazamazwi se-Array char:
+Uyemukelwa ku-Test Shell!
+Khombisa inqubekela phambili ekusebenzeni kohlelo lwefayela
+Ibonisa ukuthi yiliphi ifayela elicutshungulwayo ngesikhathi sokusebenza kwesistimu yefayela
+lapho i-HardwareType izoba khona
+Kuphakathi kokuthi uhlobo lwehadiwe {0} aluphenywa, noma aluvumelekile.
+Uhlobo lwezingxenyekazi zekhompuyutha {0} alukaphenywa okwamanje. Uma uqinisekile ukuthi ihloliwe, qala kabusha i-kernel ngokulungisa iphutha kunikwe amandla.
+Izingxenye azihlukaniselwanga kuhlu.
+Imodi yeHacker
+Uma inikwe amandla, i-green console izonikwa amandla.
+Iphrinta isihlukanisi
+Phrinta isihlukanisi ngokusekelwa kwefomethi
+Iphrinta isihlukanisi ngokusekelwa kombala
+Iphrinta isihlukanisi ngokusekelwa kombala nefomethi
+Kugxile njalo
+Yenza kusebenze ukwesekwa kombala okungu-255 kweMarquee.
+Yenza kusebenze ukwesekwa kombala kwangempela kweMarquee.
+Bhala noma yimuphi umbhalo ofuna ukuboniswa.
+Ukuthi umbhalo oboniswe emakethe uhlala ugxile yini.
+'q' ukuyeka.
+Ukungqubuzana {0} akutholakali ukujova.
+Ukungqubuzana komugqa womyalo {0} akutholakali.
+Isula zonke izilungiselelo
+Isilondolozi sesikrini sihlangabezane nephutha ngenkathi sibonisa: {0}. Cindezela noma yimuphi ukhiye ukuphuma.
+Hlola kuqala ...
+Nakhu ukuthi itimu yakho izobukeka kanjani:
+Imiyalo eguquguqukayo:
+I-Mod {0} inomyalo ongavumelekile. Ukuhlukaniswa kweMod kuhlulekile. Buyekeza ikhodi yomthombo.
+Izingxenye Mod:

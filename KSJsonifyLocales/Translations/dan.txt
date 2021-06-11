@@ -739,3 +739,361 @@ Forsinkelse i millisekunder
 Hvor mange millisekunder skal du vente, før du skriver næste gang?
 Giver dig mulighed for at bruge en SSH FTP-server
 Ingen hjælp til kommandoen "{0}".
+Ongeldige VT-reeks voor RGB-kleur.
+Kleur van secondenbalk
+Kleur van minutenbalk
+Kleur urenbalk
+Kleur van informatie
+Tikken om van kleur te veranderen
+Activeert 255 kleurenondersteuning voor ProgressClock.
+Activeert ondersteuning voor ware kleuren voor ProgressClock.
+De kleur van de voortgangsbalk van de seconden. Dit kan 1-16, 1-255 of "1-255;1-255;1-255" zijn.
+De kleur van de voortgangsbalk van de minuten. Dit kan 1-16, 1-255 of "1-255;1-255;1-255" zijn.
+De kleur van de voortgangsbalk voor uren. Dit kan 1-16, 1-255 of "1-255;1-255;1-255" zijn.
+De kleur van datuminformatie. Dit kan 1-16, 1-255 of "1-255;1-255;1-255" zijn.
+Als kleurcyclus is ingeschakeld, hoeveel vinkjes voordat kleuren worden gewijzigd in ProgressClock? 1 vinkje = 0,5 seconden
+ProgressClock selecteert willekeurige kleuren als dit is ingeschakeld. Gebruik anders kleuren uit config.
+Maakt een nieuw thema
+Een nieuw thema "{0}" maken.
+Thema opslaan in huidige map
+Thema opslaan in een andere map...
+Selecteer kleur met behulp van de toetsen "<-" en "->". Druk op ENTER om te stoppen. Druk op "i" om het kleurnummer handmatig in te voeren.
+Selecteer kleur met behulp van de toetsen "<-" en "->". Gebruik de pijltoetsen omhoog en omlaag om tussen kleurbereiken te kiezen. Druk op ENTER om te stoppen. Druk op "i" om het kleurnummer handmatig in te voeren.
+Welkom in de kern! - Versie {0}
+Waarschuwingskleur
+Optie kleur
+Voer het kleurnummer in van 0 tot 255:
+Gebruik "hwinfo" voor uitgebreide informatie over hardware.
+Drukt hardware-informatie af
+CPU-informatie:
+Naam processor:
+Processor snelheid:
+Processorbits:
+Processor rev:
+Processortopologie:
+Processortype:
+Mijlpaal van processor:
+Verwerker BogoMips:
+Processor L2-cachegrootte:
+Processor L3-cachegrootte:
+Processorfuncties:
+HDD-informatie:
+Schijfnaam:
+Aandrijvingsmodel:
+Drive-leverancier:
+Rijsnelheid:
+Aandrijvingsgrootte:
+Serieel station:
+Drive-ID:
+Aantal schijfpartities:
+Partitie-ID:
+Partitie bestandssysteem:
+partitie grootte:
+Gebruikte partitie:
+RAM-informatie:
+RAM vrij:
+RAM-totaal:
+RAM gebruikt:
+GPU-informatie:
+GPU-naam:
+GPU-stuurprogramma:
+GPU-versie:
+GPU: het testen van een of meer grafische kaarten is mislukt. Toch informatie weergeven...
+>> Welkom! Dit is de eerste keer dat u op afstand debuggen en chatten. Gebruik "/register <naam>" om te registreren.
+Apparaat bestaat al.
+Geen dergelijk apparaat.
+Stelt de gebruikersnaam van het apparaat in
+Je bent al geregistreerd.
+Hallo, {0}!
+Drukt inhoud van bestand af naar console
+Of geef "listcities" door aan dit commando.
+Invoer bestaat al.
+Wikkelt de console-uitvoer
+De opdracht kan niet worden ingepakt. Deze commando's zijn wrappable:
+Pakt een ZIP-archief uit
+Creëert een ZIP-archief
+Ingebouwd {0}
+Fout bij downloaden van foutopsporingsgegevens
+Er is een fout opgetreden bij het downloaden van foutopsporingsgegevens. Controleer je internetverbinding.
+Kan mod {0} niet voltooien: {1}
+Toont alle ontslagen gebeurtenissen
+Huidige directory
+Stelt de huidige directory van de shell in. Schrijf een absoluut pad naar een bestaande map.
+Wikkel lijst uitgangen
+Verpakt de lijstuitvoer als deze te lang lijkt voor de huidige consolegeometrie.
+Ping!
+{0} heeft je gepingd.
+Thema opslaan in huidige map als...
+Thema opslaan in een andere map als...
+Geef themanaam op:
+De gebruiker {0} is toegevoegd aan de lijst "{1}".
+De gebruiker {0} is verwijderd uit de lijst "{1}".
+Ongeldige modus {0}
+Gebruiker bestaat al
+Thema laden van...
+Thema laden vanuit vooraf gemaakte thema's...
+Geef de naam van het themabestand op zonder de .json-extensie:
+Opent een ZIP-archief
+Verlaat de ZIP-shell
+Geeft een overzicht van alle bestanden in het archief
+Extraheert een bestand naar een opgegeven map of een huidige map
+Wijzigingen archiefmap
+De opgegeven ZIP-shellopdracht is niet gevonden.
+Directory {0} bestaat niet
+Archiefmap {0} bestaat niet
+Max aantal posities
+Hoeveel standen branden er voordat er wordt gedimd?
+Activeert 255 kleurenondersteuning voor aansteker.
+Activeert ondersteuning voor ware kleuren voor aansteker.
+Kleur van lijstinvoer
+Lijstwaarde kleur
+Maakt verbinding met een SSH-server om een ​​opdracht uit te voeren.
+In dit gedeelte worden de schermbeveiligingsinstellingen voor
+Ongeldige kleurspecificatie. Zorg ervoor dat het de juiste indeling heeft, wat een getal van 0-255 betekent als u 255 kleuren gebruikt of een VT-reeks als u ware kleuren als volgt gebruikt:
+Fout in testshell: {0}
+Stelt een variabele in op een waarde in een script
+Een prompt voor het melden van fouten.
+Bedankt dat je een kaartje naar ons hebt opgehaald! Selecteer wat voor soort verzoek je hebt.
+Een probleem
+Een functieverzoek
+Een vraag
+U moet een functie opgeven.
+Stel een vraag, noteer uw idee of meld een probleem.
+U moet uw verzoek schrijven.
+Er is een fout opgetreden in de FTP-shell:
+Onbekende FTP-shellfout:
+Er is een fout opgetreden in de SFTP-shell:
+Onbekende SFTP-shellfout:
+SSH-banner weergeven
+Toont de SSH-serverbanner bij verbinding.
+Hoe wil je authenticeren?
+Privé sleutel bestand
+Wachtwoord
+Voer de wachtwoordzin in voor sleutel {0}:
+Voer de locatie van de privésleutel in voor {0}. Schrijf "q" om het toevoegen van sleutels te voltooien:
+Een niet-bestaand pad geneutraliseerd.
+Sleutelbestand {0} bestaat niet.
+Fout bij het toevoegen van een persoonlijke sleutel:
+Druk op "t" om over te schakelen naar de 255 kleurmodus.
+Druk op "t" om over te schakelen naar de modus voor ware kleuren.
+In dit gedeelte kunt u kiezen welk type kleur u wilt wijzigen.
+Het lijkt erop dat je geen gebruiker hebt behalve root. Dit is slecht. We zullen u begeleiden hoe u er een kunt maken.
+Schrijf uw gebruikersnaam.
+U moet uw gebruikersnaam schrijven.
+Schrijf uw wachtwoord.
+U moet uw wachtwoord schrijven.
+Selecteer accounttype.
+Beheerder: Dit accounttype heeft de meeste kracht in de kernel, waardoor je systeembeheerprogramma's kunt gebruiken.
+Normale gebruiker: dit accounttype is iets beperkter dan beheerders.
+Gefeliciteerd! Je hebt een nieuw account gemaakt! Om dit af te ronden, logt u in als uw nieuwe account.
+Raadpleeg de handleiding van de screensaver of de broncode voor informatie.
+mod: Geen mods gedetecteerd.
+Algemene commando's:
+Mod-commando's:
+Alias-opdrachten:
+onderhoudsstand
+Directory's opzoeken
+Groep paden gescheiden door de dubbele punt. Het werkt hetzelfde als PATH. Schrijf een volledig pad naar een map of een mapnaam. Als je klaar bent, schrijf je "q". Schrijf een minteken naast het pad om een ​​bestaande map te verwijderen.
+Geen mod-commando's.
+Geen alias-opdrachten.
+De kleurwaarde ligt buiten het bereik van 0-255.
+De wrappable-opdracht is niet gevonden.
+Vraagt ​​een woord in een opgegeven regel of alle regels
+{0} van {1} gedownload.
+{0} van {1} geüpload.
+Drukt een string af naar console met behulp van kleurtype en lijnafdruk
+Drukt een string af naar console met kleurtype en lijnafdruk met formaatondersteuning with
+Drukt een string af naar debugger
+Drukt een string af naar debugger met formaatondersteuning
+Test de kernelfoutfaciliteit
+Test de kernelfoutfaciliteit met formaatondersteuning
+Tests die een tekenreeks vertalen die in bronnen voorkomt naar een specifieke taal
+Drukt een string af naar console en analyseert de gevonden tijdelijke aanduidingen
+Test de reguliere expressie-faciliteit
+Versleutelt een string met behulp van
+Start alle mods
+Stopt alle mods
+Schakelt foutopsporing in of uit
+Schakelt foutopsporing op afstand in of uit
+Test de VT-reeks voor 255 kleuren
+Test de VT-reeks op ware kleuren
+Stuurt een melding om de ontvanger te testen
+Test de afdrukdatum met verschillende kalenders
+Geeft een overzicht van alle ondersteunde codepagina's
+Welke compilervariabelen zijn ingeschakeld in de toepassing?
+Tests die de specifieke gebeurtenis verhogen
+Tests die de hardware onderzoeken
+Test de vuilnisman
+Sluit de testshell af en start de kernel
+Sluit de testshell af en sluit de kernel af
+Slaat de huidige map op in het kernelconfiguratiebestand
+Test de lijstschrijver met de tekenreeks en tekenreeksarray
+Test de lijstschrijver met de integer en integer array
+Test de lijstschrijver met de char en char array
+Normale stringlijst:
+Lijst met array-tekenreeksen:
+Normale gehele lijst:
+Matrix gehele lijst:
+Normale char lijst:
+Array-tekenlijst:
+RPC inschakelen
+RPC-poort
+Of RPC al dan niet moet worden ingeschakeld.
+Schrijf een RPC-poort. Het moet numeriek zijn en mag niet al worden gebruikt. Anders kan RPC de poort niet openen.
+RPC niet starten omdat het is uitgeschakeld.
+Geeft ondersteunde culturen weer
+Zoekt naar opgegeven tekenreeks in het opgegeven bestand met behulp van reguliere expressies
+Kijk of je op tijd op een toets kunt drukken
+Gebruiker heeft niet tijdig input geleverd.
+Ongeldige moeilijkheid
+Karakter niet op tijd gedrukt.
+Je hebt op het juiste personage gedrukt!
+Je hebt op het verkeerde teken gedrukt.
+Druk op ESC om af te sluiten.
+Krijgt de datum en tijd informatie
+milliseconden:
+seconden:
+Minuten:
+Uren:
+dagen:
+Maanden:
+Jaar:
+Dag van het jaar:
+Dag van de week:
+Binair:
+Lokale tijd:
+Universele tijd:
+Unix-tijd:
+Kan datumgegevens niet parseren voor
+Zorg ervoor dat het formaat correct is.
+Datum:
+Tijd:
+Stelt bestandsrechten in. Dit wordt alleen ondersteund op FTP-servers waarop Unix draait.
+Stelt het type in voor deze sessie
+U moet verbinding maken met de server voordat u bestandssysteembewerkingen uitvoert.
+Kan de rechten van {0} niet instellen op {1}.
+Machtigingen succesvol ingesteld voor bestand
+Gegevenstype ingesteld op ASCII!
+Gegevenstype ingesteld op Binair!
+Ongeldig gegevenstype.
+Houd er rekening mee dat de meeste bestanden niet correct worden gedownload of geüpload in deze modus, dus we raden u ten zeerste aan om in de meeste situaties de binaire modus te gebruiken.
+Proberen een RPC-opdracht te verzenden terwijl RPC niet is gestart.
+Vertraging uitfaden in milliseconden
+Max. fade-stappen
+Hoeveel milliseconden moet ik wachten voordat de tekst vervaagt?
+Hoeveel fade-stappen te doen?
+Volledige sonde
+Indien waar, wordt alle hardware doorzocht; anders zal alleen de benodigde hardware worden onderzocht.
+Kan screensaver {0} niet verwijderen uit config.
+Krijgt aangepaste spaarinstellingen
+Stelt aangepaste spaarinstellingen in
+Instellingen succesvol ingesteld voor screensaver
+Kan geen instelling voor screensaver instellen
+In deze sectie kunt u het aanmaken van root-wachtwoorden beheren.
+Opent een RSS-shell om de feeds te lezen
+Sluit de RSS-shell af en keert terug naar de kernel
+Wijzigt de feedlink
+Geeft alle feeds weer
+Leest een feed in een webbrowser
+De opgegeven RSS-shellopdracht is niet gevonden.
+Ongeldige RSS2-feed.
+Ongeldige RSS1-feed.
+Ongeldige Atom-feed.
+Voer een RSS-feed-URL in:
+Ongeldig RSS-feedtype.
+Onbekende shell-fout:
+Krijgt de artikelinformatie
+Artikelnummer kon niet groter zijn dan de beschikbare artikelen.
+Titel:
+Koppeling:
+Krijgt de feedinfo
+Omschrijving:
+Voertype:
+Aantal artikelen:
+Artikel heeft geen link!
+Kan geen lijst maken van bestandssysteemvermeldingen voor directory
+Sorteermodus bestandssysteem
+Sorteerrichting bestandssysteem
+Bepaalt hoe de bestanden worden gesorteerd.
+Bepaalt de richting van het sorteren van het bestandssysteem, of het nu oplopend of aflopend is.
+Oplopende volgorde
+Aflopende volgorde
+Voor-en achternaam
+Bestandsgrootte
+Aanmaaktijd
+Laatste schrijftijd
+Laatste toegangstijd
+Schrijfvertraging in milliseconden
+Hoeveel milliseconden moet je wachten voordat je weer tekst schrijft?
+Schrijf elke tekst die u wilt laten zien. Langer is beter.
+Minimale schrijfsnelheid in WPM
+Maximale schrijfsnelheid in WPM
+Kans op typefout in procent
+Kan huidige map niet opslaan: {0}
+Doekjes om van richting te veranderen
+Activeert 255 kleurenondersteuning voor Wipe.
+Activeert ondersteuning voor ware kleuren voor Wipe.
+Hoeveel doekjes moet je doen voordat je willekeurig van richting verandert?
+Stage geëindigd in
+Interne initialisatie voltooid in
+Verwezen bestand {0} niet gevonden. Deze mod werkt mogelijk niet goed zonder dit bestand.
+Startmodus
+Krijgt mod-informatie
+Commando naam:
+Commando definitie:
+Opdrachttype:
+Strikte opdracht?
+Mod-versie:
+Mod {0} niet gevonden.
+Cultuur van
+Welke variant van {0} wordt gebruikt om de maandnamen, kalender, enz. te wijzigen?
+De teksteditor heeft nog geen bestandsstream geopend.
+Snaar vervangen.
+Een of beide nummers zijn niet numeriek.
+Woord verwijderd.
+Karakter verwijderd.
+Bestandssysteeminstellingen...
+In deze sectie worden de instellingen van het bestandssysteem vermeld.
+Welkom bij Instellingen!
+Fout bij uitvoeren van SSH-opdracht
+Fout op SSH-shell
+- App-informatie
+Activeert 255 kleurenondersteuning voor BouncingText.
+Activeert ondersteuning voor ware kleuren voor BouncingText.
+Test de woordenboekschrijver met de tekenreeks en tekenreeksarray
+Test de woordenboekschrijver met de char en char array
+Test de woordenboekschrijver met de integer en integer array
+Normaal tekenreekswoordenboek:
+Array string-woordenboek:
+Normaal integer woordenboek:
+Array integer woordenboek:
+Normaal char woordenboek:
+Array char-woordenboek:
+Welkom bij Test Shell!
+Voortgang weergeven op bestandssysteembewerkingen
+Toont welk bestand wordt verwerkt tijdens de bewerkingen van het bestandssysteem
+waar HardwareType zal zijn
+Het hardwaretype {0} is niet onderzocht of is niet geldig.
+Het hardwaretype {0} is nog niet onderzocht. Als je zeker weet dat het wordt onderzocht, herstart dan de kernel met debugging ingeschakeld.
+Partities niet geparseerd naar lijst.
+Hacker-modus
+Indien ingeschakeld, wordt de groene console ingeschakeld.
+Drukt een scheidingsteken af
+Drukt een scheidingsteken af ​​met formaatondersteuning
+Drukt een scheidingsteken af ​​met kleurondersteuning
+Drukt een scheidingsteken af ​​met ondersteuning voor kleur en formaat
+Altijd gecentreerd
+Activeert 255 kleurenondersteuning voor selectiekader.
+Activeert ondersteuning voor ware kleuren voor selectiekader.
+Schrijf elke tekst die u wilt laten zien.
+Of de tekst op het selectiekader altijd gecentreerd is.
+'q' om te stoppen.
+Argument {0} niet gevonden om te injecteren.
+Opdrachtregelargument {0} niet gevonden.
+Wist alle instellingen
+Er is een fout opgetreden in de screensaver bij het weergeven van: {0}. Druk op een willekeurige toets om af te sluiten.
+Voorbeeld...
+Zo ziet je thema eruit:
+Inpakbare commando's:
+Mod {0} heeft een ongeldige opdracht. Mod-parsing is mislukt. Bekijk de broncode.
+Mod-onderdelen:

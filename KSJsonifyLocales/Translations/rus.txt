@@ -739,3 +739,361 @@ Zaderzhka v millisekundakh
 Skol'ko millisekund zhdat' pered sleduyushchey zapis'yu?
 Pozvolyayet ispol'zovat' SSH FTP-server
 Net pomoshchi dlya komandy "{0}".
+Nedopustimaya posledovatel'nost' VT dlya tsveta RGB.
+Tsvet shkaly sekund
+Tsvet shkaly minut
+Tsvet shkaly chasov
+Tsvet informatsii
+Kleshchi, chtoby izmenit' tsvet
+Aktiviruyet podderzhku 255 tsvetov dlya ProgressClock.
+Aktiviruyet podderzhku istinnogo tsveta dlya ProgressClock.
+Tsvet indikatora vypolneniya v sekundakh. Eto mozhet byt' 1-16, 1-255 ili «1-255;1-255;1-255».
+Tsvet indikatora vypolneniya minut. Eto mozhet byt' 1-16, 1-255 ili «1-255;1-255;1-255».
+Tsvet indikatora vypolneniya chasov. Eto mozhet byt' 1-16, 1-255 ili «1-255;1-255;1-255».
+Tsvet informatsii o date. Eto mozhet byt' 1-16, 1-255 ili «1-255;1-255;1-255».
+Yesli cheredovaniye tsvetov vklyucheno, skol'ko tikov pered izmeneniyem tsveta v ProgressClock? 1 tik = 0,5 sekundy
+ProgressClock vyberet sluchaynyye tsveta, yesli on vklyuchen. V protivnom sluchaye ispol'zuyte tsveta iz config.
+Delayet novuyu temu
+Sozdaniye novoy temy "{0}".
+Sokhranit' temu v tekushchiy katalog
+Sokhranit' temu v drugoy katalog ...
+Vyberite tsvet s pomoshch'yu klavish «<-» i «->». Dlya vykhoda nazhmite ENTER. Nazhmite «i», chtoby vvesti nomer tsveta vruchnuyu.
+Vyberite tsvet s pomoshch'yu klavish «<-» i «->». Ispol'zuyte strelki vverkh i vniz dlya vybora tsvetovykh diapazonov. Dlya vykhoda nazhmite ENTER. Nazhmite «i», chtoby vvesti nomer tsveta vruchnuyu.
+Dobro pozhalovat' v yadro! - Versiya {0}
+Tsvet preduprezhdeniya
+Tsvet varianta
+Vvedite nomer tsveta ot 0 do 255:
+Ispol'zuyte "hwinfo" dlya polucheniya rasshirennoy informatsii ob oborudovanii.
+Pechatayet informatsiyu ob oborudovanii
+Informatsiya o protsessore:
+Imya protsessora:
+Skorost' protsessora:
+Bity protsessora:
+Oboz. Protsessora:
+Topologiya protsessora:
+Tip protsessora:
+Vekha protsessora:
+Protsessor BogoMips:
+Razmer kesha L2 protsessora:
+Razmer kesh-pamyati protsessora L3:
+Kharakteristiki protsessora:
+Informatsiya o zhestkom diske:
+Imya diska:
+Model' privoda:
+Proizvoditel' diska:
+Skorost' dvizheniya:
+Razmer diska:
+Seriynyy nomer privoda:
+Identifikator diska:
+Kolichestvo razdelov diska:
+ID razdela:
+Faylovaya sistema razdela:
+Razmer razdela:
+Ispol'zuyemyy razdel:
+Informatsiya ob operativnoy pamyati:
+RAM svobodna:
+Vsego OZU:
+Ispol'zuyemaya operativnaya pamyat':
+Informatsiya o GPU:
+Imya graficheskogo protsessora:
+Drayver graficheskogo protsessora:
+Versiya graficheskogo protsessora:
+Graficheskiy protsessor: ne udalos' proverit' odnu ili neskol'ko videokart. Vse ravno otobrazhayetsya informatsiya ...
+>> Dobro pozhalovat'! Eto vash pervyy vkhod v udalennuyu otladku i chat. Ispol'zuyte "/ register <name>" dlya registratsii.
+Ustroystvo uzhe sushchestvuyet.
+Net takogo ustroystva.
+Ustanavlivayet imya pol'zovatelya ustroystva
+Vy uzhe zaregistrirovany.
+Privet, {0}!
+Vyvodit soderzhimoye fayla na konsol'
+Ili peredayte etoy komande "listcities".
+Zapis' uzhe sushchestvuyet.
+Oborachivayet vyvod konsoli
+Komanda ne oborachivayetsya. Eti komandy mozhno obernut':
+Izvlekayet ZIP-arkhiv
+Sozdayet ZIP-arkhiv
+Vstroyennyy {0}
+Oshibka pri zagruzke dannykh otladki
+Oshibka pri zagruzke dannykh otladki. Prover'te vashe internet-soyedineniye.
+Ne udalos' zavershit' mod {0}: {1}
+Perechislyayet vse zapushchennyye sobytiya
+Tekushchiy katalog
+Ustanavlivayet tekushchiy katalog obolochki. Napishite absolyutnyy put' k lyubomu sushchestvuyushchemu katalogu.
+Vyvod spiska perenosa
+Zavershayet vyvod spiska, yesli on kazhetsya slishkom dlinnym dlya tekushchey geometrii konsoli.
+Ping!
+{0} otpravil vam zapros.
+Sokhranit' temu v tekushchiy katalog kak ...
+Sokhranit' temu v drugoy katalog kak ...
+Ukazhite nazvaniye temy:
+Pol'zovatel' {0} dobavlen v spisok "{1}".
+Pol'zovatel' {0} byl udalen iz spiska "{1}".
+Nedeystvitel'nyy rezhim {0}
+Pol'zovatel' uzhe sushchestvuyet
+Zagruzit' temu iz ...
+Zagruzit' temu iz gotovykh tem ...
+Ukazhite imya fayla temy bez rasshireniya .json:
+Otkryvayet ZIP-arkhiv
+Vykhod iz obolochki ZIP
+Spisok vsekh faylov vnutri arkhiva
+Izvlekayet fayl v ukazannyy katalog ili tekushchiy katalog
+Izmenyayet katalog arkhiva
+Ukazannaya komanda obolochki ZIP ne naydena.
+Katalog {0} ne sushchestvuyet
+Katalog arkhiva {0} ne sushchestvuyet
+Maksimal'noye kolichestvo pozitsiy
+Skol'ko pozitsiy osveshcheno do zatemneniya?
+Aktiviruyet podderzhku 255 tsvetov dlya svetleye.
+Aktiviruyet podderzhku istinnogo tsveta dlya svetleye.
+Tsvet zapisi v spiske
+Tsvet znacheniya spiska
+Podklyuchayetsya k serveru SSH dlya vypolneniya komandy.
+V etom razdele perechisleny nastroyki zastavki dlya
+Nedopustimyy spetsifikator tsveta. Ubedites', chto eto pravil'nyy format, chto oznachayet chislo ot 0 do 255 pri ispol'zovanii 255 tsvetov ili posledovatel'nost' VT pri ispol'zovanii istinnogo tsveta sleduyushchim obrazom:
+Oshibka v testovoy obolochke: {0}
+Ustanavlivayet znacheniye peremennoy v skripte
+Podskazka ob oshibke.
+Spasibo, chto podnyali nam bilet! Vyberite, kakoy u vas zapros.
+Problema
+Zapros funktsii
+Vopros
+Vy dolzhny ukazat' funktsiyu.
+Zadayte vopros, zapishite svoyu ideyu ili soobshchite o probleme.
+Vy dolzhny napisat' svoy zapros.
+Oshibka v obolochke FTP:
+Neizvestnaya oshibka obolochki FTP:
+V obolochke SFTP proizoshla oshibka:
+Neizvestnaya oshibka obolochki SFTP:
+Pokazat' banner SSH
+Pokazyvayet banner SSH-servera pri podklyuchenii.
+Kak vy khotite proyti autentifikatsiyu?
+Fayl zakrytogo klyucha
+Parol'
+Vvedite kodovuyu frazu dlya klyucha {0}:
+Vvedite raspolozheniye zakrytogo klyucha dlya {0}. Napishite «q», chtoby zavershit' dobavleniye klyuchey:
+Neytralizoval nesushchestvuyushchiy put'.
+Klyuchevoy fayl {0} ne sushchestvuyet.
+Oshibka pri popytke dobavit' zakrytyy klyuch:
+Nazhmite «t», chtoby pereklyuchit'sya v rezhim 255 tsvetov.
+Nazhmite «t», chtoby pereklyuchit'sya v rezhim istinnogo tsveta.
+V etom razdele vy mozhete vybrat', kakoy tsvet vy khotite izmenit'.
+Pokhozhe, u vas net pol'zovatelya krome root. Eto plokho. My rasskazhem, kak yego sozdat'.
+Napishite vashe imya pol'zovatelya.
+Vy dolzhny napisat' svoye imya pol'zovatelya.
+Napishite svoy parol'.
+Vy dolzhny napisat' svoy parol'.
+Vyberite tip uchetnoy zapisi.
+Administrator: etot tip uchetnoy zapisi imeyet naibol'shuyu moshchnost' v yadre, pozvolyaya vam ispol'zovat' programmy upravleniya sistemoy.
+Obychnyy pol'zovatel': etot tip uchetnoy zapisi nemnogo boleye ogranichen, chem administratory.
+Pozdravlyayu! Vy sozdali novuyu uchetnuyu zapis'! Chtoby zakonchit' eto, voydite v svoyu novuyu uchetnuyu zapis'.
+Dlya polucheniya informatsii obratites' k rukovodstvu po khraneniyu ekrana ili k iskhodnomu kodu.
+mod: Modifikatsii ne obnaruzheny.
+Obshchiye komandy:
+Komandy moda:
+Komandy psevdonima:
+Rezhim obsluzhivaniya
+Katalogi poiska
+Gruppa putey, razdelennykh dvoyetochiyem. On rabotayet tak zhe, kak PATH. Napishite polnyy put' k papke ili imya papki. Kogda vy zakonchite, napishite «q». Napishite znak minus ryadom s putem, chtoby udalit' sushchestvuyushchiy katalog.
+Nikakikh mod-komand.
+Nikakikh psevdonimov komand.
+Znacheniye tsveta vne diapazona 0–255.
+Oborachivayemaya komanda ne naydena.
+Zaprashivayet slovo v ukazannoy stroke ili vo vsekh strokakh
+Skachano {0} iz {1}.
+Zagruzheno {0} iz {1}.
+Vyvodit stroku na konsol', ispol'zuya tsvetovoy tip i strochnuyu pechat'
+Vyvodit stroku na konsol', ispol'zuya tsvetovoy tip i strochnuyu pechat' s podderzhkoy formata
+Pechatayet stroku v otladchik
+Pechatayet stroku v otladchik s podderzhkoy formata
+Proveryayet sredstvo oshibki yadra
+Testiruyet sredstvo oshibok yadra s podderzhkoy formata
+Testy, perevodyashchiye stroku, kotoraya sushchestvuyet v resursakh, na opredelennyy yazyk
+Vyvodit stroku na konsol' i analiziruyet naydennyye zapolniteli
+Proveryayet sredstvo regulyarnykh vyrazheniy
+Shifruyet stroku s pomoshch'yu
+Zapuskayet vse mody
+Ostanavlivayet vse mody
+Vklyuchayet ili otklyuchayet otladku
+Vklyuchayet ili otklyuchayet udalennuyu otladku
+Proveryayet posledovatel'nost' VT dlya 255 tsvetov
+Proveryayet posledovatel'nost' ZHT na istinnyy tsvet
+Otpravlyayet uvedomleniye dlya proverki priyemnika
+Testy pechati daty s ispol'zovaniyem raznykh kalendarey
+Perechislyayet vse podderzhivayemyye kodovyye stranitsy
+Kakiye peremennyye kompilyatora vklyucheny v prilozhenii?
+Testy, vyzyvayushchiye konkretnoye sobytiye
+Testy, proveryayushchiye oborudovaniye
+Testiruyet sborshchik musora
+Vykhodit iz testovoy obolochki i zapuskayet yadro
+Vykhodit iz testovoy obolochki i vyklyuchayet yadro
+Sokhranyayet tekushchiy katalog v fayl konfiguratsii yadra
+Proveryayet sredstvo zapisi spiska so strokoy i massivom strok
+Proveryayet sredstvo zapisi spiska s tselochislennym i tselochislennym massivami
+Proveryayet sredstvo zapisi spiska s pomoshch'yu massiva char i char
+Obychnyy spisok strok:
+Spisok strok massiva:
+Obychnyy tselochislennyy spisok:
+Tselochislennyy spisok massiva:
+Obychnyy spisok simvolov:
+Spisok simvolov massiva:
+Vklyuchit' RPC
+Port RPC
+Sleduyet li vklyuchat' RPC.
+Napishite port RPC. On dolzhen byt' chislovym, i yego nel'zya uzhe ispol'zovat'. V protivnom sluchaye RPC ne smozhet otkryt' port.
+RPC ne zapuskayetsya, potomu chto on otklyuchen.
+Spiski podderzhivayemykh kul'tur
+Ishchet ukazannuyu stroku v predostavlennom fayle s pomoshch'yu regulyarnykh vyrazheniy
+Posmotrite, smozhete li vy vovremya nazhat' klavishu
+Pol'zovatel' ne predostavil nikakikh dannykh svoyevremenno.
+Nedeystvitel'naya slozhnost'
+Personazh ne otzhat vovremya.
+Vy nazhali nuzhnogo personazha!
+Vy nazhali ne tot simvol.
+Dlya vykhoda nazhmite ESC.
+Poluchayet informatsiyu o date i vremeni
+Millisekundy:
+Sekundy:
+Minuty:
+Chasy:
+Dni:
+Mesyatsy:
+God:
+Den' goda:
+Den' nedeli:
+Dvoichnyy:
+Mestnoye vremya:
+Vsemirnoye vremya:
+Vremya Unix:
+Ne udalos' proanalizirovat' informatsiyu o date dlya
+Ubedites', chto format pravil'nyy.
+Data:
+Vremya:
+Ustanavlivayet prava dostupa k faylam. Eto podderzhivayetsya tol'ko na FTP-serverakh pod upravleniyem Unix.
+Ustanavlivayet tip dlya etogo seansa
+Vy dolzhny podklyuchit'sya k serveru pered vypolneniyem operatsiy s faylovoy sistemoy.
+Ne udalos' ustanovit' razresheniya s {0} na {1}.
+Razresheniya uspeshno ustanovleny dlya fayla
+Ustanovlen tip dannykh ASCII!
+Tip dannykh ustanovlen na Dvoichnyy!
+Nevernyy tip dannykh.
+Pomnite, chto bol'shinstvo faylov ne budut zagruzhat'sya ili vygruzhat'sya dolzhnym obrazom v etom rezhime, poetomu my nastoyatel'no rekomenduyem ispol'zovat' dvoichnyy rezhim v bol'shinstve situatsiy.
+Popytka otpravit' komandu RPC, kogda RPC ne zapuskayetsya.
+Zaderzhka ischeznoveniya v millisekundakh
+Maksimal'noye kolichestvo shagov zatukhaniya
+Skol'ko millisekund zhdat', prezhde chem tekst ischeznet?
+Skol'ko shagov zatukhaniya nuzhno sdelat'?
+Polnyy zond
+Yesli true, proveryayet vse oborudovaniye; v protivnom sluchaye budet proveryat'sya tol'ko neobkhodimoye oborudovaniye.
+Ne udalos' udalit' zastavku {0} iz konfiguratsii.
+Poluchayet pol'zovatel'skiye nastroyki zastavki
+Ustanavlivayet pol'zovatel'skiye nastroyki zastavki
+Nastroyki dlya zastavki uspeshno ustanovleny
+Ne udalos' ustanovit' nastroyki dlya zastavki.
+Etot razdel pozvolyayet vam upravlyat' sozdaniyem parolya root.
+Otkryvayet obolochku RSS dlya chteniya lent
+Vykhodit iz obolochki RSS i vozvrashchayetsya v yadro
+Izmenyayet ssylku na fid
+Perechislyayet vse kanaly
+Chitayet lentu v veb-brauzere
+Ukazannaya komanda obolochki RSS ne naydena.
+Nevernyy kanal RSS2.
+Nevernyy kanal RSS1.
+Nevernyy fid Atom.
+Vvedite URL-adres RSS-kanala:
+Nevernyy tip RSS-kanala.
+Neizvestnaya oshibka obolochki:
+Poluchayet informatsiyu o stat'ye
+Nomer artikula ne mozhet byt' bol'she imeyushchikhsya artikulov.
+Zagolovok:
+Ssylka na sayt:
+Poluchayet informatsiyu o lente
+Opisaniye:
+Tip korma:
+Kolichestvo statey:
+Na stat'yu net ssylki!
+Ne udalos' sozdat' spisok zapisey faylovoy sistemy dlya kataloga
+Rezhim sortirovki faylovoy sistemy
+Napravleniye sortirovki faylovoy sistemy
+Upravlyayet sortirovkoy faylov.
+Upravlyayet napravleniyem sortirovki faylovoy sistemy po vozrastaniyu ili ubyvaniyu.
+Po vozrastaniyu
+V poryadke ubyvaniya
+FIO
+Razmer fayla
+Vremya sozdaniya
+Vremya posledney zapisi
+Vremya poslednego dostupa
+Zaderzhka povtornoy zapisi v millisekundakh
+Skol'ko millisekund zhdat', prezhde chem snova pisat' tekst?
+Napishite lyuboy tekst, kotoryy khotite pokazat'. Chem dol'she, tem luchshe.
+Minimal'naya skorost' zapisi v WPM
+Maksimal'naya skorost' zapisi v slovakh v minutu
+Veroyatnost' opechatki v protsentakh
+Ne udalos' sokhranit' tekushchiy katalog: {0}
+Salfetki dlya izmeneniya napravleniya
+Aktiviruyet podderzhku 255 tsvetov dlya Wipe.
+Aktiviruyet podderzhku istinnogo tsveta dlya Wipe.
+Skol'ko vaypov nuzhno sdelat' pered sluchaynym izmeneniyem napravleniya?
+Etap zavershilsya v
+Vnutrennyaya initsializatsiya zavershena cherez
+Ssylochnyy fayl {0} ne nayden. Bez etogo fayla etot mod mozhet rabotat' nekorrektno.
+Zapusk moda
+Poluchayet informatsiyu o mode
+Imya komandy:
+Opredeleniye komandy:
+Tip komandy:
+Strogiy prikaz?
+Versiya moda:
+Mod {0} ne nayden.
+Kul'tura
+Kakoy variant {0} ispol'zuyetsya dlya izmeneniya nazvaniya mesyatsa, kalendarya i t. D.?
+Tekstovyy redaktor yeshche ne otkryl faylovyy potok.
+Stroka zamenena.
+Odno ili oba chisla ne yavlyayutsya chislovymi.
+Slovo udaleno.
+Personazh udalen.
+Nastroyki faylovoy sistemy ...
+V etom razdele perechisleny nastroyki faylovoy sistemy.
+Dobro pozhalovat' v nastroyki!
+Oshibka pri vypolnenii komandy SSH
+Oshibka v obolochke SSH
+- Informatsiya o prilozhenii
+Aktiviruyet podderzhku 255 tsvetov dlya BouncingText.
+Aktiviruyet podderzhku istinnogo tsveta dlya BouncingText.
+Proveryayet sredstvo zapisi slovarya so strokoy i massivom strok
+Proveryayet sredstvo zapisi slovarya s pomoshch'yu massiva char i char
+Proveryayet sredstvo zapisi slovarya s tselochislennym i tselochislennym massivami
+Slovar' obychnykh strok:
+Slovar' strok massiva:
+Normal'nyy tselochislennyy slovar':
+Tselochislennyy slovar' massiva:
+Obychnyy simvol'nyy slovar':
+Slovar' massivov simvolov:
+Dobro pozhalovat' v Test Shell!
+Pokazat' progress operatsiy s faylovoy sistemoy
+Pokazyvayet, kakoy fayl obrabatyvayetsya vo vremya operatsiy faylovoy sistemy
+gde budet HardwareType
+Libo tip oborudovaniya {0} ne proveryayetsya, libo nedeystvitelen.
+Tip oborudovaniya {0} yeshche ne issledovan. Yesli vy uvereny, chto eto provereno, perezapustite yadro ​​s vklyuchennoy otladkoy.
+Razdely ne pomeshcheny v spisok.
+Khakerskiy rezhim
+Yesli vklyucheno, zelenaya konsol' budet vklyuchena.
+Pechatayet razdelitel'
+Pechatayet razdelitel' s podderzhkoy formata
+Pechatayet razdelitel' s podderzhkoy tsveta
+Pechatayet razdelitel' s podderzhkoy tsveta i formata
+Vsegda po tsentru
+Aktiviruyet podderzhku 255 tsvetov dlya Marquee.
+Aktiviruyet podderzhku istinnogo tsveta dlya Marquee.
+Napishite lyuboy tekst, kotoryy khotite pokazat'.
+Vsegda li tekst, otobrazhayemyy v ramke, nakhoditsya po tsentru.
+'q', chtoby vyyti.
+Ne nayden argument {0} dlya in"yektsii.
+Argument komandnoy stroki {0} ne nayden.
+Ochishchayet vse nastroyki
+V zastavke voznikla oshibka pri otobrazhenii: {0}. Nazhmite lyubuyu klavishu dlya vykhoda.
+Predvaritel'nyy prosmotr ...
+Vot kak budet vyglyadet' vasha tema:
+Oborachivayemyye komandy:
+U moda {0} nedopustimaya komanda. Ne udalos' proanalizirovat' mod. Prosmotrite iskhodnyy kod.
+Detali moda:

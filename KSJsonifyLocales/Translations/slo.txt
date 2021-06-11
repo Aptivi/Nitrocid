@@ -739,3 +739,361 @@ Zamuda v milisekundah
 Koliko milisekund čakati pred naslednjim pisanjem?
 Umožňuje vám používať server SSH FTP
 Žiadna pomoc s príkazom „{0}“.
+Neplatná sekvencia VT pre farbu RGB.
+Farba pruhu sekúnd
+Farba panela minút
+Farba pruhu hodín
+Farba informácií
+Kliešte na zmenu farby
+Aktivuje podporu 255 farieb pre ProgressClock.
+Aktivuje podporu skutočných farieb pre ProgressClock.
+Farba ukazovateľa priebehu sekúnd. Môže to byť 1 - 16, 1 - 255 alebo „1 - 255; 1 - 255; 1 - 255".
+Farba ukazovateľa priebehu minút. Môže to byť 1 - 16, 1 - 255 alebo „1 - 255; 1 - 255; 1 - 255".
+Farba ukazovateľa priebehu hodín. Môže to byť 1 - 16, 1 - 255 alebo „1 - 255; 1 - 255; 1 - 255".
+Farba informácií o dátume. Môže to byť 1 - 16, 1 - 255 alebo „1 - 255; 1 - 255; 1 - 255".
+Ak je povolené cyklovanie farieb, koľko zaškrtne pred zmenou farieb v ProgressClock? 1 zaškrtnutie = 0,5 sekundy
+Ak je to povolené, ProgressClock vyberie náhodné farby. V opačnom prípade použite farby z konfigurácie.
+Vytvorí novú tému
+Vytvára sa nový motív „{0}“.
+Uložiť tému do aktuálneho adresára
+Uložiť tému do iného adresára ...
+Vyberte farbu pomocou klávesov „<-“ a „->“. Ukončite stlačením klávesu ENTER. Stlačením tlačidla „i“ manuálne vložíte číslo farby.
+Vyberte farbu pomocou klávesov „<-“ a „->“. Pomocou klávesov so šípkou hore a šípkou nadol vyberte medzi farebnými rozsahmi. Ukončite stlačením klávesu ENTER. Stlačením tlačidla „i“ manuálne vložíte číslo farby.
+Vitajte v jadre! - Verzia {0}
+Výstražná farba
+Farba možnosti
+Zadajte číslo farby od 0 do 255:
+Pre ďalšie informácie o hardvéri použite „hwinfo“.
+Vypíše informácie o hardvéri
+Informácie o CPU:
+Názov procesora:
+Rýchlosť procesora:
+Bity procesora:
+Otáčky procesora:
+Topológia procesora:
+Typ procesora:
+Míľnik procesora:
+Procesor BogoMips:
+Veľkosť vyrovnávacej pamäte L2 procesora:
+Veľkosť pamäte cache procesora L3:
+Vlastnosti procesora:
+Informácie o HDD:
+Názov disku:
+Model pohonu:
+Predajca diskov:
+Rýchlosť pohonu:
+Veľkosť disku:
+Sériový disk:
+ID jednotky:
+Počet oddielov disku:
+ID oddielu:
+Diskový systém súborov:
+Veľkosť oddielu:
+Použitý oddiel:
+Informácie o RAM:
+RAM zadarmo:
+RAM celkom:
+Použitá RAM:
+Informácie o GPU:
+Názov GPU:
+Ovládač GPU:
+Verzia GPU:
+GPU: Nepodarilo sa sondovať jednu alebo viac grafických kariet. Aj tak sa zobrazujú informácie ...
+>> Vitajte! Toto je vaše prvé zadanie vzdialeného ladenia a rozhovoru. Na registráciu použite „/ register <name>“.
+Zariadenie už existuje.
+Žiadne také zariadenie.
+Nastavuje používateľské meno zariadenia
+Už ste zaregistrovaní.
+Ahoj, {0}!
+Vytlačí obsah súboru do konzoly
+Alebo odovzdajte príkaz „listcities“ tomuto príkazu.
+Záznam už existuje.
+Zabalí výstup z konzoly
+Príkaz nie je možné zabaliť. Tieto príkazy sú zabaliteľné:
+Extrahuje archív ZIP
+Vytvorí archív ZIP
+Zabudované {0}
+Chyba pri sťahovaní údajov ladenia
+Pri sťahovaní údajov ladenia sa vyskytla chyba. Skontrolujte svoje internetové pripojenie.
+Nepodarilo sa dokončiť režim {0}: {1}
+Zoznam všetkých spustených udalostí
+Aktuálny adresár
+Nastaví aktuálny adresár shellu. Napíšte absolútnu cestu k existujúcemu adresáru.
+Zoznamy zabaľovacích zoznamov
+Zbalí výstupy zoznamu, ak sa vám to zdá pre súčasnú geometriu konzoly príliš dlhé.
+Ping!
+{0} na vás ping.
+Uložiť tému do aktuálneho adresára ako ...
+Uložiť tému do iného adresára ako ...
+Zadajte názov témy:
+Používateľ {0} bol pridaný do zoznamu „{1}“.
+Používateľ {0} bol odstránený zo zoznamu „{1}“.
+Neplatný režim {0}
+Používateľ už existuje
+Načítať tému z ...
+Načítať tému z vopred pripravených tém ...
+Zadajte názov súboru témy bez prípony .json:
+Otvorí archív ZIP
+Ukončí schránku ZIP
+Uvádza zoznam všetkých súborov v archíve
+Extrahuje súbor do určeného adresára alebo aktuálneho adresára
+Zmení adresár archívu
+Zadaný príkaz ZIP shell sa nenašiel.
+Adresár {0} neexistuje
+Adresár archívu {0} neexistuje
+Max. Počet pozícií
+Koľko pozícií je osvetlených pred stmievaním?
+Aktivuje podporu 255 farieb pre zapaľovač.
+Aktivuje skutočnú podporu farieb pre zapaľovač.
+Farba položky zoznamu
+Farba hodnoty zoznamu
+Pripojí sa k serveru SSH na vykonanie príkazu.
+V tejto časti je uvedené nastavenie šetriča obrazovky pre
+Neplatný špecifikátor farieb. Uistite sa, že je v správnom formáte, čo znamená číslo od 0 do 255, ak používa 255 farieb, alebo postupnosť VT, ak používa skutočnú farbu nasledovne:
+Chyba v testovacom prostredí: {0}
+Nastaví premennú na hodnotu v skripte
+Výzva na hlásenie chyby.
+Ďakujeme, že ste nám vyzdvihli lístok! Vyberte, aký druh žiadosti máte.
+Problém
+Žiadosť o funkciu
+Otázka
+Musíte určiť funkciu.
+Opýtajte sa, napíšte svoj nápad alebo nahláste problém.
+Musíte napísať svoju požiadavku.
+V prostredí FTP sa vyskytla chyba:
+Neznáma chyba shellu FTP:
+V prostredí SFTP sa vyskytla chyba:
+Neznáma chyba shellu SFTP:
+Zobraziť banner SSH
+Zobrazuje banner SSH servera pri pripojení.
+Ako chcete vykonať autentizáciu?
+Súbor so súkromným kľúčom
+Heslo
+Zadajte prístupovú frázu pre kľúč {0}:
+Zadajte umiestnenie súkromného kľúča pre {0}. Na doplnenie klávesov napíšte „q“:
+Neutralizovaná neexistujúca cesta.
+Súbor kľúčov {0} neexistuje.
+Chyba pri pokuse o pridanie súkromného kľúča:
+Stlačením „t“ prepnete na 255 farebný režim.
+Stlačením klávesu „t“ prepnete do skutočného farebného režimu.
+V tejto časti si môžete zvoliť, aký typ farby chcete zmeniť.
+Zdá sa, že okrem root nemáte žiadneho používateľa. Je to zlé. Poradíme vám, ako ho vytvoriť.
+Napíšte svoje užívateľské meno.
+Musíte napísať svoje užívateľské meno.
+Napíš svoje heslo.
+Musíte napísať svoje heslo.
+Vyberte typ účtu.
+Správca: Tento typ účtu má najväčšiu moc v jadre, čo vám umožňuje používať programy na správu systému.
+Normálny používateľ: Tento typ účtu je o niečo obmedzenejší ako správcovia.
+Blahoželáme! Vytvorili ste si nový účet! Ak to chcete dokončiť, prihláste sa ako nový účet.
+Ďalšie informácie nájdete v príručke k šetriču obrazovky alebo vo zdrojovom kóde.
+mod: Neboli zistené žiadne mody.
+Všeobecné príkazy:
+Príkazy módu:
+Alias ​​príkazy:
+režim údržby
+Vyhľadajte adresáre
+Skupina ciest oddelených dvojbodkou. Funguje to rovnako ako PATH. Napíšte úplnú cestu k priečinku alebo k názvu priečinka. Po dokončení napíšte „q“. Ak chcete odstrániť existujúci adresár, vedľa cesty napíšte znamienko mínus.
+Žiadne príkazy mod.
+Žiadne príkazy aliasov.
+Hodnota farby je mimo rozsahu 0-255.
+Zbaliteľný príkaz sa nenašiel.
+Dopytuje slovo na určený riadok alebo všetky riadky
+Stiahnuté: {0} z {1}.
+Odovzdané: {0} z {1}.
+Vytlačí reťazec do konzoly pomocou farebného typu a riadkovej tlače
+Vytlačí reťazec do konzoly pomocou farebného typu a riadkovej tlače s podporou formátu
+Vytlačí reťazec na ladenie
+Vytlačí reťazec na debugger s podporou formátu
+Testuje funkciu chyby jadra
+Testuje funkciu chyby jadra s podporou formátu
+Testuje preklad reťazca, ktorý existuje v prostriedkoch, do konkrétneho jazyka
+Vytlačí reťazec do konzoly a analyzuje nájdené zástupné symboly
+Testuje regulárny výraz
+Šifruje reťazec pomocou
+Spustí všetky režimy
+Zastaví všetky mody
+Povolí alebo zakáže ladenie
+Povolí alebo zakáže vzdialené ladenie
+Testuje sekvenciu VT na 255 farieb
+Testuje VT sekvenciu na pravú farbu
+Odošle upozornenie na otestovanie prijímača
+Testuje dátum tlače pomocou rôznych kalendárov
+Zoznam všetkých podporovaných kódových stránok
+Aké premenné prekladača sú v aplikácii povolené?
+Testy zvyšujúce konkrétne udalosti
+Testy na hardvér
+Testuje zberača odpadu
+Ukončí testovací shell a spustí jadro
+Opustí testovaciu škrupinu a vypne jadro
+Uloží aktuálny adresár do konfiguračného súboru jadra
+Testuje zapisovač zoznamu s reťazcom a poľom reťazca
+Testuje zapisovač zoznamu na celé číslo a celé číslo
+Testuje zapisovač zoznamu s poľom char a char
+Zoznam normálnych reťazcov:
+Zoznam reťazcov poľa:
+Normálne celé číslo:
+Zoznam celočíselných polí:
+Normálny zoznam znakov:
+Zoznam znakov poľa:
+Povoliť RPC
+Port RPC
+Či povoliť RPC alebo nie.
+Napíšte port RPC. Musí byť číselný a nesmie byť už použitý. V opačnom prípade sa RPC nepodarí otvoriť port.
+Nezačína sa RPC, pretože je zakázané.
+Zoznamy podporovali kultúry
+Vyhľadá zadaný reťazec v poskytnutom súbore pomocou regulárnych výrazov
+Skontrolujte, či môžete stlačiť klávesu včas
+Používateľ neposkytol včas žiadny vstup.
+Neplatná obtiažnosť
+Znak nebol stlačený včas.
+Stlačili ste správnu postavu!
+Stlačili ste nesprávny znak.
+Ukončite stlačením klávesu ESC.
+Získava informácie o dátume a čase
+Milisekundy:
+Sekundy:
+Zápisnice:
+Hodiny:
+Dni:
+Mesiace:
+Rok:
+Deň v roku:
+Deň v týždni:
+Binárne:
+Miestny čas:
+Svetový čas:
+Unixový čas:
+Nepodarilo sa analyzovať informácie o dátume pre
+Skontrolujte správnosť formátu.
+Dátum:
+Čas:
+Nastavuje oprávnenie súboru. Toto je podporované iba na serveroch FTP, na ktorých je spustený systém Unix.
+Nastavuje typ tejto relácie
+Pred vykonaním operácií súborového systému sa musíte pripojiť k serveru.
+Nepodarilo sa nastaviť oprávnenie {0} na {1}.
+Povolenia pre súbor boli úspešne nastavené
+Dátový typ nastavený na ASCII!
+Dátový typ nastavený na binárny!
+Neplatný dátový typ.
+Dajte si pozor, aby sa väčšina súborov pomocou tohto režimu nestiahla alebo neodovzdala správne, takže vo väčšine prípadov dôrazne odporúčame používať binárny režim.
+Pokúšam sa odoslať príkaz RPC, kým sa RPC nespustilo.
+Oneskorenie slabnutia v milisekundách
+Max Fade Steps
+Koľko milisekúnd čakať pred vyblednutím textu?
+Koľko krokov slabnutia musíte urobiť?
+Plná sonda
+Ak je to pravda, sonduje všetok hardvér; inak iba sonduje potrebný hardvér.
+Nepodarilo sa odstrániť šetrič obrazovky {0} z konfigurácie.
+Získava vlastné nastavenia šetriča
+Nastaví vlastné nastavenia šetriča
+Nastavenia pre šetrič obrazovky boli úspešne nastavené
+Nepodarilo sa nastaviť nastavenie šetriča obrazovky
+Táto časť umožňuje spravovať vytváranie hesiel root.
+Otvára shell RSS na čítanie informačných kanálov
+Ukončí RSS shell a vráti sa do jadra
+Zmení odkaz na informačný kanál
+Uvádza zoznam všetkých informačných kanálov
+Číta informačný kanál vo webovom prehliadači
+Zadaný príkaz shellu RSS sa nenašiel.
+Neplatný informačný kanál RSS2.
+Neplatný informačný kanál RSS1.
+Neplatný informačný kanál Atom.
+Zadajte adresu URL informačného kanála RSS:
+Neplatný typ informačného kanála RSS.
+Neznáma chyba prostredia:
+Získa informácie o článku
+Číslo článku nemôže byť väčšie ako dostupné články.
+Názov:
+Odkaz:
+Získa informácie o informačnom kanáli
+Popis:
+Typ krmiva:
+Počet článkov:
+Článok nemá odkaz!
+Nepodarilo sa vytvoriť zoznam položiek súborového systému pre adresár
+Režim triedenia súborového systému
+Smer triedenia súborového systému
+Určuje, ako sa budú súbory triediť.
+Riadi smer triedenia súborového systému bez ohľadu na to, či stúpa alebo klesá.
+Vzostupné poradie
+Zostupne
+Celé meno
+Veľkosť súboru
+Čas stvorenia
+Čas posledného zápisu
+Čas posledného prístupu
+Opätovné zapisovanie s oneskorením v milisekundách
+Koľko milisekúnd čakať pred ďalším napísaním textu?
+Napíšte ľubovoľný text, ktorý chcete zobraziť. Dlhšia je lepšia.
+Minimálna rýchlosť zápisu vo WPM
+Maximálna rýchlosť zápisu vo WPM
+Pravdepodobnosť preklepu v percentách
+Aktuálny adresár sa nepodarilo uložiť: {0}
+Utierky na zmenu smeru
+Aktivuje podporu 255 farieb pre Wipe.
+Aktivuje podporu skutočných farieb pre Wipe.
+Koľko utierok urobiť pred náhodnou zmenou smeru?
+Fáza skončila v
+Interná inicializácia dokončená v
+Odkazovaný súbor {0} sa nenašiel. Bez tohto súboru tento mod nemusí fungovať správne.
+Začína sa mod
+Získava informácie o móde
+Názov príkazu:
+Definícia príkazu:
+Typ príkazu:
+Prísny príkaz?
+Modová verzia:
+Mod {0} sa nenašiel.
+Kultúra
+Ktorý variant kódu {0} sa používa na zmenu názvov mesiacov, kalendára atď.?
+Textový editor zatiaľ neotvoril prúd súborov.
+Reťazec nahradený.
+Jedno alebo obe čísla nie sú číselné.
+Slovo bolo odstránené.
+Znak bol odstránený.
+Nastavenia súborového systému ...
+Táto časť obsahuje zoznam nastavení súborového systému.
+Vitajte v nastaveniach!
+Chyba pri vykonávaní príkazu SSH
+Chyba na prostredí SSH
+- Informácie o aplikácii
+Aktivuje podporu 255 farieb pre BouncingText.
+Aktivuje podporu skutočných farieb pre BouncingText.
+Testuje zapisovač slovníkov s reťazcom a poľom reťazcov
+Testuje slovníka s poľom char a char
+Testuje zapisovač slovníkov s celočíselným a celočíselným poľom
+Normálny slovník reťazcov:
+Slovník reťazcov polí:
+Normálny celočíselný slovník:
+Slovník celočíselných čísel:
+Slovník normálnych znakov:
+Slovník znakov poľa:
+Vitajte v spoločnosti Test Shell!
+Ukážte pokrok v operáciách súborového systému
+Ukazuje, aký súbor sa spracováva počas operácií súborového systému
+kde bude HardwareType
+Buď typ hardvéru {0} nie je sondovaný, alebo je neplatný.
+Typ hardvéru {0} ešte nie je sondovaný. Ak ste si istí, že je to overené, reštartujte jadro s povoleným ladením.
+Skupiny, ktoré nie sú analyzované v zozname.
+Hackerský režim
+Ak je povolená, bude povolená zelená konzola.
+Vytlačí oddeľovač
+Vytlačí oddeľovač s podporou formátu
+Vytlačí oddeľovač s podporou farieb
+Vytlačí oddeľovač s podporou farieb a formátov
+Vždy na stred
+Aktivuje podporu 255 farieb pre Marquee.
+Aktivuje podporu skutočných farieb pre značku.
+Napíšte ľubovoľný text, ktorý chcete zobraziť.
+To, či je text zobrazený na ráme vždy zarovnaný na stred.
+'q' na ukončenie.
+Argument {0} sa nenašiel pre injekciu.
+Argument príkazového riadku {0} sa nenašiel.
+Vymaže všetky nastavenia
+Pri zobrazovaní šetriča obrazovky sa vyskytla chyba: {0}. Stlačte hocaké tlačidlo pre ukončenie.
+Náhľad...
+Takto bude vyzerať vaša téma:
+Zabaliteľné príkazy:
+Mod {0} má neplatný príkaz. Analýza módu zlyhala. Skontrolujte zdrojový kód.
+Časti modov:

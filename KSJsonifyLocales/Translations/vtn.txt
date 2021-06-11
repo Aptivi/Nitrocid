@@ -739,3 +739,361 @@ Ghi lại cuộc trò chuyện gỡ lỗi từ xa vào nhật ký gỡ lỗi.
 Phải đợi bao nhiêu mili giây trước khi thực hiện lần viết tiếp theo?
 Cho phép bạn sử dụng máy chủ SSH FTP
 Không có trợ giúp cho lệnh "{0}".
+Chuỗi VT không hợp lệ cho màu RGB.
+Màu của thanh giây
+Màu của thanh phút
+Màu của thanh giờ
+Màu sắc của thông tin
+Bọ ve để thay đổi màu sắc
+Kích hoạt hỗ trợ 255 màu cho ProgressClock.
+Kích hoạt hỗ trợ màu sắc trung thực cho ProgressClock.
+Màu của thanh tiến trình giây. Nó có thể là 1-16, 1-255 hoặc "1-255;1-255;1-255".
+Màu của thanh tiến trình phút. Nó có thể là 1-16, 1-255 hoặc "1-255;1-255;1-255".
+Màu của thanh tiến trình giờ. Nó có thể là 1-16, 1-255 hoặc "1-255;1-255;1-255".
+Màu của thông tin ngày tháng. Nó có thể là 1-16, 1-255 hoặc "1-255;1-255;1-255".
+Nếu tính năng xoay vòng màu được bật, có bao nhiêu tích tắc trước khi thay đổi màu sắc trong ProgressClock? 1 tích tắc = 0,5 giây
+ProgressClock sẽ chọn các màu ngẫu nhiên nếu nó được bật. Nếu không, hãy sử dụng màu từ cấu hình.
+Tạo chủ đề mới
+Tạo chủ đề mới "{0}".
+Lưu chủ đề vào thư mục hiện tại
+Lưu chủ đề vào một thư mục khác ...
+Chọn màu bằng phím "<-" và "->". Nhấn ENTER để thoát. Nhấn "i" để chèn số màu theo cách thủ công.
+Chọn màu bằng phím "<-" và "->". Sử dụng các phím mũi tên lên và mũi tên xuống để chọn giữa các dải màu. Nhấn ENTER để thoát. Nhấn "i" để chèn số màu theo cách thủ công.
+Chào mừng bạn đến với hạt nhân! - Phiên bản {0}
+Màu cảnh báo
+Màu tùy chọn
+Nhập số màu từ 0 đến 255:
+Sử dụng "hwinfo" để biết thông tin mở rộng về phần cứng.
+In thông tin phần cứng
+Thông tin CPU:
+Tên bộ xử lý:
+Tốc độ bộ xử lý:
+Bộ xử lý bit:
+Phiên bản bộ xử lý:
+Cấu trúc liên kết bộ xử lý:
+Loại bộ xử lý:
+Mốc của bộ xử lý:
+Bộ xử lý BogoMips:
+Kích thước bộ nhớ cache L2 của bộ xử lý:
+Kích thước bộ nhớ cache L3 của bộ xử lý:
+Các tính năng của bộ xử lý:
+Thông tin ổ cứng:
+Tên ổ:
+Mô hình ổ đĩa:
+Nhà cung cấp ổ đĩa:
+Tốc độ truyền động:
+Kích thước ổ đĩa:
+Ổ nối tiếp:
+ID ổ đĩa:
+Số phân vùng ổ đĩa:
+ID phân vùng:
+Hệ thống tệp phân vùng:
+Kích thước phân vùng:
+Phân vùng được sử dụng:
+Thông tin RAM:
+RAM trống:
+Tổng RAM:
+RAM được sử dụng:
+Thông tin GPU:
+Tên GPU:
+Trình điều khiển GPU:
+Phiên bản GPU:
+GPU: Không thể thăm dò một hoặc nhiều cạc đồ họa. Vẫn hiển thị thông tin ...
+>> Chào mừng bạn! Đây là lần đầu tiên bạn vào gỡ lỗi và trò chuyện từ xa. Sử dụng "/ register <name>" để đăng ký.
+Thiết bị đã tồn tại.
+Không có thiết bị như vậy.
+Đặt tên người dùng thiết bị
+Bạn đã đăng ký.
+Xin chào, {0}!
+In nội dung của tệp vào bảng điều khiển
+Hoặc, chuyển "listcities" vào lệnh này.
+Mục nhập đã tồn tại.
+Bao bọc đầu ra bảng điều khiển
+Lệnh không thể kết thúc. Các lệnh này có thể được bao bọc:
+Giải nén một kho lưu trữ ZIP
+Tạo một kho lưu trữ ZIP
+Được xây dựng trong {0}
+Lỗi khi tải xuống dữ liệu gỡ lỗi
+Đã xảy ra lỗi khi tải xuống dữ liệu gỡ lỗi. Kiểm tra kết nối Internet của bạn.
+Không thể hoàn thiện bản sửa đổi {0}: {1}
+Liệt kê tất cả các sự kiện đã kích hoạt
+Thư mục hiện tại
+Đặt thư mục hiện tại của shell. Viết một đường dẫn tuyệt đối đến bất kỳ thư mục hiện có nào.
+Kết quả đầu ra danh sách kết thúc
+Gói kết quả đầu ra của danh sách nếu nó có vẻ quá dài so với hình dạng bảng điều khiển hiện tại.
+Ping!
+{0} đã ping bạn.
+Lưu Chủ đề vào Thư mục Hiện tại dưới dạng ...
+Lưu Chủ đề vào Thư mục Khác dưới dạng ...
+Chỉ định tên chủ đề:
+Người dùng {0} đã được thêm vào danh sách "{1}".
+Người dùng {0} đã bị xóa khỏi danh sách "{1}".
+Chế độ không hợp lệ {0}
+Người dùng đã tồn tại
+Tải chủ đề từ ...
+Tải chủ đề từ chủ đề dựng sẵn ...
+Chỉ định tên tệp chủ đề mà không có phần mở rộng .json:
+Mở kho lưu trữ ZIP
+Thoát khỏi trình bao ZIP
+Liệt kê tất cả các tệp bên trong kho lưu trữ
+Giải nén một tập tin vào một thư mục cụ thể hoặc một thư mục hiện tại
+Thay đổi thư mục lưu trữ
+Không tìm thấy lệnh ZIP shell được chỉ định.
+Thư mục {0} không tồn tại
+Thư mục lưu trữ {0} không tồn tại
+Số lượng vị trí tối đa
+Có bao nhiêu vị trí sáng trước khi mờ?
+Kích hoạt hỗ trợ 255 màu cho Nhẹ hơn.
+Kích hoạt hỗ trợ màu sắc trung thực cho Lighter.
+Màu mục nhập danh sách
+Màu giá trị danh sách
+Kết nối với máy chủ SSH để thực hiện lệnh.
+Phần này liệt kê các cài đặt bảo vệ màn hình cho
+Bộ chỉ định màu không hợp lệ. Đảm bảo rằng nó ở đúng định dạng, có nghĩa là một số từ 0-255 nếu sử dụng 255 màu hoặc chuỗi VT nếu sử dụng màu thực như sau:
+Lỗi trong trình bao thử nghiệm: {0}
+Đặt một biến thành một giá trị trong một tập lệnh
+Lời nhắc báo cáo lỗi.
+Cảm ơn bạn đã tăng một vé cho chúng tôi! Chọn loại yêu cầu bạn có.
+Vấn đề
+Một yêu cầu tính năng
+Một câu hỏi
+Bạn phải chỉ định một tính năng.
+Đặt một câu hỏi, ghi lại ý tưởng của bạn hoặc báo cáo một vấn đề.
+Bạn phải viết yêu cầu của bạn.
+Đã xảy ra lỗi trong FTP shell:
+Lỗi trình bao FTP không xác định:
+Đã xảy ra lỗi trong trình bao SFTP:
+Lỗi khung SFTP không xác định:
+Hiển thị biểu ngữ SSH
+Hiển thị biểu ngữ máy chủ SSH khi kết nối.
+Bạn muốn xác thực như thế nào?
+Tệp khóa cá nhân
+Mật khẩu
+Nhập cụm mật khẩu cho khóa {0}:
+Nhập vị trí của khóa cá nhân cho {0}. Viết "q" để kết thúc việc thêm khóa:
+Đã trung hòa một con đường không tồn tại.
+Tệp khóa {0} không tồn tại.
+Lỗi khi cố thêm khóa cá nhân:
+Nhấn "t" để chuyển sang chế độ 255 màu.
+Nhấn "t" để chuyển sang chế độ màu thực.
+Phần này cho phép bạn chọn loại màu bạn muốn thay đổi.
+Có vẻ như bạn không có người dùng nào ngoại trừ root. Điều này thật tệ. Chúng tôi sẽ hướng dẫn bạn cách tạo một tài khoản.
+Viết tên người dùng của bạn.
+Bạn phải viết tên người dùng của mình.
+Viết mật khẩu của bạn.
+Bạn phải viết mật khẩu của mình.
+Chọn loại tài khoản.
+Quản trị viên: Loại tài khoản này có nhiều quyền lực nhất trong nhân, cho phép bạn sử dụng các chương trình quản lý hệ thống.
+Người dùng bình thường: Loại tài khoản này bị hạn chế hơn một chút so với quản trị viên.
+Xin chúc mừng! Bạn đã tạo một tài khoản mới! Để hoàn tất việc này, hãy đăng nhập bằng tài khoản mới của bạn.
+Tham khảo hướng dẫn sử dụng bảo vệ màn hình hoặc mã nguồn để biết thông tin.
+mod: Không có mod nào được phát hiện.
+Các lệnh chung:
+Lệnh mod:
+Lệnh bí danh:
+Chế độ bảo trì
+Thư mục tra cứu
+Nhóm đường dẫn cách nhau bởi dấu hai chấm. Nó hoạt động giống như PATH. Viết một đường dẫn đầy đủ đến một thư mục hoặc tên thư mục. Khi bạn hoàn thành, hãy viết "q". Viết một dấu trừ bên cạnh đường dẫn để xóa một thư mục hiện có.
+Không có lệnh mod.
+Không có lệnh bí danh.
+Giá trị màu nằm ngoài phạm vi 0-255.
+Không tìm thấy lệnh có thể bao bọc.
+Truy vấn một từ trong một dòng cụ thể hoặc tất cả các dòng
+Đã tải xuống {0} trong tổng số {1}.
+Đã tải lên {0} / {1}.
+In một chuỗi vào bảng điều khiển bằng cách sử dụng loại màu và in dòng
+In một chuỗi vào bảng điều khiển bằng cách sử dụng loại màu và in dòng với hỗ trợ định dạng
+In một chuỗi để gỡ lỗi
+In một chuỗi để gỡ lỗi với hỗ trợ định dạng
+Kiểm tra cơ sở lỗi hạt nhân
+Kiểm tra cơ sở lỗi hạt nhân với hỗ trợ định dạng
+Kiểm tra dịch một chuỗi tồn tại trong tài nguyên sang ngôn ngữ cụ thể
+In một chuỗi vào bảng điều khiển và phân tích cú pháp các trình giữ chỗ được tìm thấy
+Kiểm tra cơ sở biểu thức chính quy
+Mã hóa một chuỗi bằng cách sử dụng
+Bắt đầu tất cả các mod
+Dừng tất cả các mod
+Bật hoặc tắt gỡ lỗi
+Bật hoặc tắt gỡ lỗi từ xa
+Kiểm tra chuỗi VT cho 255 màu
+Kiểm tra chuỗi VT cho màu sắc trung thực
+Gửi thông báo để kiểm tra người nhận
+Kiểm tra ngày in bằng các lịch khác nhau
+Liệt kê tất cả các mã được hỗ trợ
+Những biến trình biên dịch nào được kích hoạt trong ứng dụng?
+Thử nghiệm nâng cao sự kiện cụ thể
+Kiểm tra thăm dò phần cứng
+Kiểm tra bộ thu gom rác
+Thoát khỏi vỏ thử nghiệm và khởi động hạt nhân
+Thoát khỏi vỏ thử nghiệm và tắt hạt nhân
+Lưu thư mục hiện tại vào tệp cấu hình hạt nhân
+Kiểm tra trình ghi danh sách với chuỗi và mảng chuỗi
+Kiểm tra trình ghi danh sách với mảng số nguyên và số nguyên
+Kiểm tra trình viết danh sách với mảng char và mảng char
+Danh sách chuỗi bình thường:
+Danh sách chuỗi mảng:
+Danh sách số nguyên bình thường:
+Danh sách số nguyên mảng:
+Danh sách char bình thường:
+Danh sách mảng mảng:
+Bật RPC
+Cổng RPC
+Có bật RPC hay không.
+Viết một cổng RPC. Nó phải là số và không được sử dụng. Nếu không, RPC sẽ không mở được cổng.
+Không khởi động RPC vì nó bị vô hiệu hóa.
+Liệt kê các nền văn hóa được hỗ trợ
+Tìm kiếm chuỗi được chỉ định trong tệp được cung cấp bằng cách sử dụng biểu thức chính quy
+Xem liệu bạn có thể bấm phím đúng lúc không
+Người dùng đã không cung cấp bất kỳ đầu vào nào kịp thời.
+Khó khăn không hợp lệ
+Nhân vật không được ép đúng thời gian.
+Bạn đã nhấn đúng ký tự!
+Bạn đã nhấn sai ký tự.
+Nhấn ESC để thoát.
+Nhận thông tin ngày và giờ
+Mili giây:
+Giây:
+Phút:
+Giờ:
+Ngày:
+Tháng:
+Năm:
+Ngày trong năm:
+Ngày trong tuần:
+Nhị phân:
+Giờ địa phương:
+Giờ quốc tế:
+Thời gian Unix:
+Không phân tích được thông tin ngày tháng cho
+Đảm bảo rằng định dạng là chính xác.
+Ngày:
+Thời gian:
+Đặt quyền đối với tệp. Điều này chỉ được hỗ trợ trên các máy chủ FTP chạy Unix.
+Đặt loại cho phiên này
+Bạn phải kết nối với máy chủ trước khi thực hiện các hoạt động hệ thống tệp.
+Không đặt được quyền của {0} thành {1}.
+Quyền được đặt thành công cho tệp
+Kiểu dữ liệu được đặt thành ASCII!
+Kiểu dữ liệu được đặt thành Binary!
+Kiểu dữ liệu không hợp lệ.
+Lưu ý rằng hầu hết các tệp sẽ không tải xuống hoặc tải lên đúng cách bằng chế độ này, vì vậy chúng tôi thực sự khuyên bạn nên sử dụng chế độ Nhị phân trong hầu hết các trường hợp.
+Đang cố gắng gửi lệnh RPC trong khi RPC không khởi động.
+Làm mờ dần độ trễ tính bằng mili giây
+Các bước làm mờ tối đa
+Phải đợi bao nhiêu mili giây trước khi xóa mờ văn bản?
+Làm thế nào nhiều bước phai để làm gì?
+Thăm dò đầy đủ
+Nếu đúng, hãy thăm dò tất cả phần cứng; khác, sẽ chỉ thăm dò phần cứng cần thiết.
+Không xóa được trình bảo vệ màn hình {0} khỏi cấu hình.
+Nhận cài đặt trình tiết kiệm tùy chỉnh
+Đặt cài đặt trình tiết kiệm tùy chỉnh
+Đã đặt thành công cài đặt cho trình bảo vệ màn hình
+Không đặt được cài đặt cho trình bảo vệ màn hình
+Phần này cho phép bạn quản lý việc tạo mật khẩu gốc.
+Mở trình bao RSS để đọc nguồn cấp dữ liệu
+Thoát khỏi trình bao RSS và quay trở lại hạt nhân
+Thay đổi liên kết nguồn cấp dữ liệu
+Liệt kê tất cả các nguồn cấp dữ liệu
+Đọc nguồn cấp dữ liệu trong trình duyệt web
+Không tìm thấy lệnh trình bao RSS được chỉ định.
+Nguồn cấp dữ liệu RSS2 không hợp lệ.
+Nguồn cấp dữ liệu RSS1 không hợp lệ.
+Nguồn cấp dữ liệu Atom không hợp lệ.
+Nhập URL nguồn cấp RSS:
+Loại nguồn cấp dữ liệu RSS không hợp lệ.
+Lỗi trình bao không xác định:
+Nhận thông tin bài viết
+Số lượng bài viết không được lớn hơn các bài viết có sẵn.
+Tiêu đề:
+Liên kết:
+Nhận thông tin nguồn cấp dữ liệu
+Sự miêu tả:
+Loại nguồn cấp dữ liệu:
+Số lượng bài báo:
+Bài báo không có liên kết!
+Không tạo được danh sách các mục nhập hệ thống tệp cho thư mục
+Chế độ sắp xếp hệ thống tập tin
+Hướng sắp xếp hệ thống tập tin
+Kiểm soát cách sắp xếp các tệp.
+Kiểm soát hướng sắp xếp hệ thống tệp cho dù nó tăng dần hay giảm dần.
+Thứ tự tăng dần
+Thứ tự giảm dần
+Họ và tên
+Kích thước tập tin
+Thời gian sáng tạo
+Lần viết cuối cùng
+Lần truy cập cuối cùng
+Viết lại độ trễ tính bằng mili giây
+Phải đợi bao nhiêu mili giây trước khi viết lại văn bản?
+Viết bất kỳ văn bản nào bạn muốn hiển thị. Dài hơn là tốt hơn.
+Tốc độ ghi tối thiểu trong WPM
+Tốc độ ghi tối đa trong WPM
+Xác suất lỗi đánh máy tính bằng phần trăm
+Không lưu được thư mục hiện tại: {0}
+Lau để thay đổi hướng
+Kích hoạt hỗ trợ 255 màu cho Wipe.
+Kích hoạt hỗ trợ màu sắc trung thực cho Wipe.
+Có bao nhiêu lần lau phải làm trước khi đổi hướng ngẫu nhiên?
+Giai đoạn kết thúc trong
+Khởi tạo nội bộ đã hoàn thành trong
+Tệp được tham chiếu {0} không được tìm thấy. Bản mod này có thể không hoạt động bình thường nếu không có tệp này.
+Bắt đầu mod
+Nhận thông tin mod
+Tên lệnh:
+Định nghĩa lệnh:
+Loại lệnh:
+Lệnh nghiêm minh?
+Phiên bản mod:
+Không tìm thấy bản mod {0}.
+Văn hóa của
+Biến thể nào của {0} đang được sử dụng để thay đổi tên tháng, lịch, v.v.?
+Trình soạn thảo văn bản chưa mở luồng tệp.
+Đã thay thế chuỗi.
+Một hoặc cả hai số không phải là số.
+Đã xóa từ.
+Ký tự đã bị xóa.
+Cài đặt hệ thống tập tin ...
+Phần này liệt kê các cài đặt hệ thống tệp.
+Chào mừng bạn đến với Cài đặt!
+Lỗi khi thực hiện lệnh SSH
+Lỗi trên SSH shell
+- Thông tin ứng dụng
+Kích hoạt hỗ trợ 255 màu cho BouncingText.
+Kích hoạt hỗ trợ màu thực cho BouncingText.
+Kiểm tra trình viết từ điển với chuỗi và mảng chuỗi
+Kiểm tra trình viết từ điển với mảng char và char
+Kiểm tra trình viết từ điển với mảng số nguyên và số nguyên
+Từ điển chuỗi thông thường:
+Từ điển chuỗi mảng:
+Từ điển số nguyên bình thường:
+Từ điển số nguyên mảng:
+Từ điển char bình thường:
+Từ điển char mảng:
+Chào mừng bạn đến với Test Shell!
+Hiển thị tiến trình hoạt động của hệ thống tệp
+Hiển thị tệp nào đang được xử lý trong các hoạt động của hệ thống tệp
+HardwareType sẽ ở đâu
+Loại phần cứng {0} không được thăm dò hoặc không hợp lệ.
+Loại phần cứng {0} chưa được thăm dò. Nếu bạn chắc chắn rằng nó đã được thăm dò, hãy khởi động lại hạt nhân với tính năng gỡ lỗi được bật.
+Các phần không được phân tích cú pháp thành danh sách.
+Chế độ tin tặc
+Nếu được bật, bảng điều khiển màu xanh lá cây sẽ được bật.
+In dấu phân tách
+In dấu phân tách có hỗ trợ định dạng
+In dấu phân cách với hỗ trợ màu
+In dấu phân tách với hỗ trợ màu và định dạng
+Luôn luôn tập trung
+Kích hoạt hỗ trợ 255 màu cho Marquee.
+Kích hoạt hỗ trợ màu thực cho Marquee.
+Viết bất kỳ văn bản nào bạn muốn hiển thị.
+Cho dù văn bản được hiển thị trên bảng điều khiển luôn được căn giữa.
+'q' để thoát.
+Đối số {0} không được tìm thấy để đưa vào.
+Không tìm thấy đối số dòng lệnh {0}.
+Xóa tất cả các cài đặt
+Trình bảo vệ màn hình gặp lỗi khi hiển thị: {0}. Nhấn bất kì phím nào để thoát.
+Xem trước ...
+Đây là cách chủ đề của bạn sẽ trông như thế nào:
+Các lệnh có thể quấn:
+Mod {0} có lệnh không hợp lệ. Phân tích cú pháp mô-đun không thành công. Xem lại mã nguồn.
+Phần mod:

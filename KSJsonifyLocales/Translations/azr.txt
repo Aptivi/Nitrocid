@@ -739,3 +739,361 @@ Milisaniyədə gecikmə
 Növbəti yazmadan əvvəl neçə milisaniyə gözləmək lazımdır?
 SSH FTP serverindən istifadə etməyə imkan verir
 "{0}" əmri üçün kömək yoxdur.
+RGB rəng üçün etibarsız VT ardıcıllığı.
+Rəng Saniyələr Çubuğu
+Dəqiqələr Çubuğu
+Saatların Rəngi
+Məlumat rəngi
+Rəngi ​​dəyişdirmək üçün gənələr
+ProgressClock üçün 255 rəng dəstəyini aktivləşdirir.
+ProgressClock üçün həqiqi rəng dəstəyini aktivləşdirir.
+Saniyə irəliləyiş çubuğunun rəngi. 1-16, 1-255 və ya "1-255;1-255;1-255" ola bilər.
+Dəqiqə tərəqqi çubuğunun rəngi. 1-16, 1-255 və ya "1-255;1-255;1-255" ola bilər.
+Saat tərəqqi çubuğunun rəngi. 1-16, 1-255 və ya "1-255;1-255;1-255" ola bilər.
+Tarix məlumatının rəngi. 1-16, 1-255 və ya "1-255;1-255;1-255" ola bilər.
+Rəngli velosiped aktivdirsə, ProgressClock-da rəng dəyişdirmədən əvvəl neçə gənə var? 1 gənə = 0,5 saniyə
+ProgressClock effektiv olduğu təqdirdə təsadüfi rəngləri seçəcəkdir. Əks təqdirdə, config-dən rənglərdən istifadə edin.
+Yeni bir mövzu yaradır
+Yeni bir mövzu hazırlayırıq "{0}".
+Mövzunu mövcud qovluğa yazın
+Mövzunu başqa bir qovluğa yazın ...
+"<-" və "->" düymələrindən istifadə edərək rəng seçin. Çıxmaq üçün ENTER düyməsini basın. Rəng nömrəsini əl ilə daxil etmək üçün "i" düyməsinə basın.
+"<-" və "->" düymələrindən istifadə edərək rəng seçin. Rəng araları arasında seçim etmək üçün yuxarı və aşağı ox düymələrindən istifadə edin. Çıxmaq üçün ENTER düyməsini basın. Rəng nömrəsini əl ilə daxil etmək üçün "i" düyməsinə basın.
+Nüvəyə xoş gəlmisiniz! - Versiya {0}
+Xəbərdarlıq rəngi
+Seçim rəngi
+0-dan 255-ə qədər rəng nömrəsini daxil edin:
+Donanım haqqında geniş məlumat üçün "hwinfo" istifadə edin.
+Donanım məlumatlarını çap edir
+CPU haqqında məlumat:
+Prosessor adı:
+Prosessor sürəti:
+Prosessor bitləri:
+Prosessor rev:
+Prosessor topologiyası:
+Prosessor növü:
+Prosessor mərhələsi:
+BogoMips prosessoru:
+Prosessor L2 önbellek ölçüsü:
+İşlemci L3 önbellek ölçüsü:
+Prosessorun xüsusiyyətləri:
+HDD məlumatı:
+Disk adı:
+Sürücü modeli:
+Sürücü satıcı:
+Sürət sürəti:
+Diskin ölçüsü:
+Sürücü serialı:
+Disk nömrəsi:
+Sürücü bölmə sayı:
+Bölmə nömrəsi:
+Bölmə fayl sistemi:
+Bölmə ölçüsü:
+İstifadə olunan bölmə:
+RAM haqqında məlumat:
+RAM pulsuz:
+RAM cəmi:
+İstifadə olunan RAM:
+GPU məlumatları:
+GPU adı:
+GPU sürücüsü:
+GPU versiyası:
+GPU: Qrafik kartlarından biri və ya daha çoxu yoxlanılmadı. Hər halda məlumat göstərilir ...
+>> xoş gəlmisiniz! Uzaqdan debaq və söhbətə ilk dəfə daxil olursunuz. Qeydiyyatdan keçmək üçün "/ register <name>" istifadə edin.
+Cihaz artıq mövcuddur.
+Belə bir cihaz yoxdur.
+Cihaz istifadəçi adını təyin edir
+Artıq qeydiyyatdan keçmisiniz.
+Salam, {0}!
+Konsol üçün sənədin məzmununu yazdırır
+Və ya bu siyahıya "siyahı şəhərlərini" ötürün.
+Giriş artıq mövcuddur.
+Konsol çıxışını sarar
+Komanda sarıla bilməz. Bu əmrlər sarılabilir:
+ZIP arxivini çıxarır
+Poçt arxivi yaradır
+{0} -da tikilib
+Debaq məlumatlarını endirərkən xəta baş verdi
+Debaq məlumatları yüklənərkən bir xəta baş verdi. İnternet bağlantınızı yoxlayın.
+{0}: {1} modu yekunlaşdırmaq alınmadı
+Bütün atəş hadisələrini sadalayır
+Hazırkı kataloq
+Qabığın cari qovluğunu qurur. Mövcud bir qovluğa mütləq bir yol yazın.
+Siyahı nəticələrini sarın
+Mövcud konsol həndəsəsi üçün çox uzun görünürsə, siyahı nəticələrini sarar.
+Ping!
+{0} səni ping etdi.
+Mövzunu indiki qovluğa ...
+Mövzunu başqa bir qovluğa ...
+Mövzu adını göstərin:
+{0} istifadəçisi "{1}" siyahısına əlavə edildi.
+İstifadəçi {0} "{1}" siyahısından çıxarıldı.
+Yanlış rejim {0}
+İstifadəçi artıq mövcuddur
+Mövzunu yükləyin ...
+Mövzunu əvvəlcədən hazırlanmış mövzulardan yükləyin ...
+.Json uzantısı olmadan mövzu fayl adını göstərin:
+Poçt arxivini açır
+ZIP qabığından çıxır
+Arxivdəki bütün faylları siyahıya alır
+Bir faylı müəyyən bir qovluğa və ya cari bir qovluğa çıxarır
+Arxiv qovluğunu dəyişdirir
+Göstərilən ZIP qabığı əmri tapılmadı.
+{0} kataloqu mövcud deyil
+Arxiv kataloqu {0} mövcud deyil
+Maksimum mövqe sayı
+Qaranlıqdan əvvəl neçə mövqe yandırılır?
+Çakmak üçün 255 rəng dəstəyini aktivləşdirir.
+Çakmak üçün həqiqi rəng dəstəyini aktivləşdirir.
+Siyahı giriş rəngi
+Siyahı dəyəri rəngi
+Bir əmri yerinə yetirmək üçün bir SSH serverinə qoşulur.
+Bu bölmə üçün ekran qoruyucu parametrlərini sadalayır
+Yanlış rəng göstəricisi. Düzgün formatda olduğundan əmin olun, yəni 255 rəngdən istifadə edildikdə 0-255 arasında bir rəqəm və ya həqiqi rəngdən istifadə edildikdə bir VT ardıcıllığı aşağıdakı kimidir:
+Test qabığında səhv: {0}
+Dəyişəni skriptdəki bir dəyərə təyin edir
+Bir səhv hesabat istemi.
+Bizə bir bilet qaldırdığınız üçün təşəkkür edirik! İstədiyiniz növü seçin.
+Bir problem
+Xüsusiyyət istəyi
+Bir sual
+Bir xüsusiyyət göstərməlisiniz.
+Bir sual verin, fikrinizi qeyd edin və ya bir problemi bildirin.
+İstəyinizi yazmalısınız.
+FTP qabığında bir səhv oldu:
+Naməlum FTP qabığı xətası:
+SFTP qabığında bir səhv oldu:
+Naməlum SFTP qabığı xətası:
+SSH bannerini göstərin
+Bağlantıda SSH server bannerini göstərir.
+Necə doğrulamaq istəyirsiniz?
+Şəxsi açar faylı
+Şifrə
+{0} açarı üçün parol sözünü daxil edin:
+{0} üçün xüsusi açarın yerini daxil edin. Düymələri əlavə etməyi bitirmək üçün "q" yazın:
+Mövcud olmayan bir yolu neytrallaşdırdı.
+Açar sənəd {0} mövcud deyil.
+Şəxsi açar əlavə etməyə cəhd zamanı xəta baş verdi:
+255 rəng rejiminə keçmək üçün "t" düyməsini basın.
+Həqiqi rəng rejiminə keçmək üçün "t" düyməsini basın.
+Bu bölmə hansı rəng növünü dəyişdirmək istədiyinizi seçməyinizə imkan verir.
+Deyəsən kökdən başqa bir istifadəçiniz yoxdur. Bu pisdir. Birinin necə yaradılacağına rəhbərlik edəcəyik.
+İstifadəçi adınızı yazın.
+İstifadəçi adınızı yazmalısınız.
+Şifrənizi yazın.
+Şifrənizi yazmalısınız.
+Hesab növünü seçin.
+İdarəçi: Bu hesab növü, sistem idarəetmə proqramlarından istifadə etməyə imkan verən nüvədə ən çox gücə malikdir.
+Normal İstifadəçi: Bu hesab növü administratorlardan biraz daha məhduddur.
+Təbrik edirik! Yeni bir hesab yaratdınız! Bunu bitirmək üçün yeni hesabınız kimi daxil olun.
+Məlumat üçün ekran qoruyucu təlimatına və ya mənbə koduna müraciət edin.
+mod: mod tapılmadı.
+Ümumi əmrlər:
+Mod əmrləri:
+Takma ad əmr edir:
+Baxım rejimi
+Axtarış Kataloqları
+İki nöqtə ilə ayrılmış yol qrupu. PATH ilə eyni işləyir. Bir qovluğa və ya bir qovluq adına tam bir yol yazın. İşi bitirdikdən sonra "q" yaz. Mövcud bir qovluğu silmək üçün yolun yanına bir mənfi işarəsi yazın.
+Mod əmrləri yoxdur.
+Takma ad əmri yoxdur.
+Rəng dəyəri 0-255 aralığındadır.
+Sarılabilir əmr tapılmadı.
+Müəyyən edilmiş sətirdə və ya bütün sətirlərdə bir kəlmə sorğu edir
+{0} / {1} endirildi.
+{0} / {1} yükləndi.
+Rəng növü və xətt çapından istifadə edərək konsollaşdırmaq üçün bir simli çap edir
+Format dəstəyi ilə rəng növü və xətt çapı istifadə edərək konsol üçün bir simli çap edir
+Xətanı düzəltmək üçün sətri çap edir
+Format dəstəyi ilə ayıklayıcıya bir sətir yazdırır
+Çekirdek səhv təsisini yoxlayır
+Çekirdek səhv təsisini format dəstəyi ilə sınaqdan keçirir
+Resurslarda mövcud olan bir sətri xüsusi dilə tərcümə edən testlər
+Təsdiqləmək üçün bir simli yazdırır və tapılan yer tutucuları təhlil edir
+Müntəzəm ifadə vasitəsini yoxlayır
+Bir simli istifadə edərək şifrələyir
+Bütün modları başlayır
+Bütün modları dayandırır
+Debaqı aktivləşdirir və ya deaktiv edir
+Uzaqdan debaqı aktivləşdirir və ya aradan qaldırır
+255 rəng üçün VT sırasını yoxlayır
+Həqiqi rəng üçün VT ardıcıllığını yoxlayır
+Alıcını sınamaq üçün bildiriş göndərir
+Müxtəlif təqvimlərdən istifadə edərək çap tarixini sınaqdan keçirir
+Bütün dəstəklənən kod səhifələrini sadalayır
+Tətbiqdə hansı kompilyator dəyişənləri aktivdir?
+Xüsusi hadisəni artıran testlər
+Donanımı yoxlayan testlər
+Zibil toplayıcısını yoxlayır
+Test qabığından çıxır və nüvəni işə salır
+Test qabığından çıxır və nüvəni bağlayır
+Mövcud qovluğu kernel konfiqurasiya sənədinə saxlayır
+Siyahı yazıçısını simli və simli sıra ilə yoxlayır
+Siyahı yazıçısını tam və tam sıra ilə sınayır
+Siyahı yazıçısını char və char massivi ilə yoxlayır
+Normal sətir siyahısı:
+Array simli siyahısı:
+Normal tam siyahı:
+Array tam sayı siyahısı:
+Normal char siyahısı:
+Array char siyahısı:
+RPC-ni aktivləşdirin
+RPC limanı
+RPC-nin işə salınması və ya olmaması.
+Bir RPC portu yazın. Rəqəmsal olmalıdır və artıq istifadə edilməməlidir. Əks təqdirdə, RPC portu aça bilmir.
+Əlil olduğu üçün RPC başlamır.
+Dəstəklənən mədəniyyətlərin siyahıları
+Adi ifadələrdən istifadə edərək verilən faylda müəyyən sətri axtarır
+Bir düyməni vaxtında basa biləcəyinizə baxın
+İstifadəçi vaxtında heç bir giriş təmin etməyib.
+Yanlış çətinlik
+Xarakter vaxtında basılmayıb.
+Doğru xarakterə basmısınız!
+Yanlış xarakterə basmısınız.
+Çıxmaq üçün ESC düyməsini basın.
+Tarix və saat məlumatlarını alır
+Milisaniyələr:
+Saniyə:
+Dəqiqələr:
+İş saatları:
+Günlər:
+Aylar:
+İl:
+İlin günü:
+Həftə günü:
+İkili:
+Yerli vaxt:
+Universal Saat:
+Unix Vaxtı:
+Tarix məlumatlarını təhlil etmək alınmadı
+Formatın düzgün olduğundan əmin olun.
+Tarix:
+Vaxt:
+Fayl icazələrini təyin edir. Bu, yalnız Unix işlədən FTP serverlərində dəstəklənir.
+Bu sessiyanın növünü təyin edir
+Fayl sistemi əməliyyatlarını həyata keçirmədən əvvəl serverə qoşulmalısınız.
+{0} icazələrini {1} olaraq təyin etmək alınmadı.
+İcazələr sənəd üçün uğurla quruldu
+Məlumat növü ASCII olaraq təyin edildi!
+Məlumat növü Binary!
+Yanlış məlumat növü.
+Bu rejimdən istifadə edərək əksər faylların düzgün yükləməyəcəyini və yükləməyindən ehtiyatlanın, buna görə əksər hallarda İkili rejimdən istifadə etməyinizi tövsiyə edirik.
+RPC başlamamışkən bir RPC əmri göndərməyə çalışırıq.
+Milisaniyələrdə gecikmə azaldı
+Max Fade Adımları
+Mətni sönmədən əvvəl neçə milisaniyə gözləmək lazımdır?
+Neçə solma addımları var?
+Tam Probe
+Doğrudursa, bütün aparatları yoxlayır; başqa, yalnız lazım olan cihazı yoxlayacaqdır.
+{0} ekran qoruyucu konfiqurasiyadan silinmədi.
+Xüsusi qoruyucu parametrləri əldə edir
+Xüsusi qoruyucu parametrlərini təyin edir
+Parametrlər ekran qoruyucu üçün uğurla quruldu
+Ekran qoruyucu üçün ayar ayarlanmadı
+Bu bölmə kök şifrə yaradılmasını idarə etməyə imkan verir.
+Feedləri oxumaq üçün RSS qabığını açır
+RSS qabığından çıxır və kernelə qayıdır
+Feed bağlantısını dəyişdirir
+Bütün lentləri sadalayır
+Veb brauzerində bir lent oxuyur
+Göstərilən RSS shell əmri tapılmadı.
+Yanlış RSS2 lent.
+Yanlış RSS1 axını.
+Yanlış Atom yemi.
+RSS lent URL-i daxil edin:
+Yanlış RSS lent növü.
+Naməlum qabıq xətası:
+Məqalə məlumatını alır
+Məqalə nömrəsi mövcud məqalələrdən böyük ola bilməz.
+Başlıq:
+Link:
+Feed məlumatını alır
+Təsvir:
+Yem növü:
+Məqalələrin sayı:
+Məqalədə bir əlaqə yoxdur!
+Kataloq üçün fayl sistemi girişlərinin siyahısı hazırlanmadı
+Fayl sistemi sıralama rejimi
+Fayl sistemi sıralama istiqaməti
+Faylların necə çeşidlənəcəyinə nəzarət edir.
+Artan və ya enən olub-olmadığını sıralayan fayl sisteminə nəzarət edir.
+Artan sifariş
+Azalan sifariş
+Tam ad
+Fayl ölçüsü
+Yaradılış vaxtı
+Son yazma vaxtı
+Son giriş vaxtı
+Yenə də Milisaniyələrdə gecikdirin
+Yenidən mətn yazmazdan əvvəl neçə milisaniyə gözləmək lazımdır?
+Göstərilən istənilən mətni yazın. Daha yaxşıdır.
+WPM-də minimum yazı sürəti
+WPM-də maksimum yazı sürəti
+Yüzdə səhv yazma ehtimalı
+Cari qovluğu saxlamaq alınmadı: {0}
+İstiqamətini dəyişdirmək üçün salfetlər
+Silin üçün 255 rəng dəstəyini aktivləşdirir.
+Silin üçün həqiqi rəng dəstəyini aktivləşdirir.
+İstiqamətini təsadüfi dəyişdirmədən əvvəl nə qədər salfetlər etmək lazımdır?
+Mərhələ bitdi
+Daxili başlatma tamamlandı
+İstinad olunan {0} fayl tapılmadı. Bu fayl bu fayl olmadan düzgün işləməyə bilər.
+Mod başlayır
+Mod məlumatını alır
+Komanda adı:
+Komanda tərifi:
+Komanda növü:
+Sərt əmr?
+Mod versiyası:
+Mod {0} tapılmadı.
+Mədəniyyəti
+Ay adlarını, təqvimini və s. Dəyişdirmək üçün {0} hansı variantından istifadə olunur?
+Mətn redaktoru hələ bir fayl axını açmadı.
+Simli dəyişdirildi.
+Ədədlərdən biri və ya hər ikisi ədədi deyil.
+Söz silindi.
+Xarakter silindi.
+Fayl sistemi parametrləri ...
+Bu bölmə fayl sistemi parametrlərini sadalayır.
+Ayarlara xoş gəlmisiniz!
+SSH əmrini icra edərkən xəta baş verdi
+SSH qabığında səhv
+- Tətbiq məlumatları
+BouncingText üçün 255 rəng dəstəyini aktivləşdirir.
+BouncingText üçün həqiqi rəng dəstəyini aktivləşdirir.
+Lüğət yazıçısını simli və simli sıra ilə sınaqdan keçirir
+Lüğət yazarını char və char massivi ilə sınaqdan keçirir
+Lüğət yazıçısını tam və tam sıra ilə sınayır
+Normal simli lüğət:
+Array simli lüğət:
+Normal tam lüğət:
+Array tam ədədi lüğəti:
+Normal char lüğəti:
+Array char lüğəti:
+Test Shell-ə ​​xoş gəlmisiniz!
+Fayl sistemi əməliyyatlarında irəliləməni göstərin
+Fayl sistemi əməliyyatları zamanı hansı dosyanın işləndiyini göstərir
+harada HardwareType olacaq
+Ya {0} hardware növü yoxlanılmayıb, ya da etibarlı deyil.
+Avadanlıq növü {0} hələ yoxlanılmayıb. Sınaqdan keçirildiyinə əminsəniz, səhv düzəldilməsini aktivləşdirərək nüvəni yenidən başladın.
+Bölmələr siyahıya ayrılmadı.
+Hacker rejimi
+Aktivdirsə, yaşıl konsol effektiv olacaq.
+Bir ayırıcı çap edir
+Format dəstəyi ilə ayırıcı yazdırır
+Rəng dəstəyi ilə ayırıcı çap edir
+Rəng və format dəstəyi ilə bir ayırıcı çap edir
+Həmişə mərkəzlidir
+Marquee üçün 255 rəng dəstəyini aktivləşdirir.
+Marquee üçün həqiqi rəng dəstəyini aktivləşdirir.
+Göstərilən istənilən mətni yazın.
+Zolaqda göstərilən mətnin həmişə mərkəzdə olub-olmaması.
+çıxmaq üçün 'q'.
+{0} mübahisəsi enjekte edilmədi.
+Komanda satırı arqumenti {0} tapılmadı.
+Bütün parametrləri təmizləyir
+Ekran qoruyucusu göstərərkən bir səhv yaşandı: {0}. Çıxmaq üçün istənilən düyməyə basın.
+Önizləmə ...
+Mövzunuz necə olacaq:
+Bükülən əmrlər:
+Mod {0} əmri yanlışdır. Mod təhlili alınmadı. Mənbə kodunu nəzərdən keçirin.
+Mod hissələri:

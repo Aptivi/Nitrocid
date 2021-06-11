@@ -739,3 +739,361 @@ Atzerapena Milisegundotan
 Zenbat milisegundo itxaron behar da hurrengo idazketa egin aurretik?
 SSH FTP zerbitzari bat erabiltzen uzten dizu
 Ez dago laguntzarik "{0}" komandoan.
+RGB kolorearen VT sekuentzia baliogabea.
+Segunduen barra kolorea
+Minutuen barra kolorea
+Orduen kolorea barra
+Informazioaren kolorea
+Kolorea aldatzeko akainak
+255 kolore laguntza aktibatzen du ProgressClock-erako.
+ProgressClock-en benetako kolorearen laguntza aktibatzen du.
+Segundoen aurrerapen barra kolorea. 1-16, 1-255 edo "1-255;1-255;1-255" izan daiteke.
+Minutuen aurrerapen barra kolorea. 1-16, 1-255 edo "1-255;1-255;1-255" izan daiteke.
+Orduen aurrerapen barra. 1-16, 1-255 edo "1-255;1-255;1-255" izan daiteke.
+Dataren informazioaren kolorea. 1-16, 1-255 edo "1-255;1-255;1-255" izan daiteke.
+Koloreen bizikleta gaituta badago, zenbat markatu koloreak aldatu aurretik ProgressClock-en? 1 tick = 0,5 segundo
+ProgressClock-ek ausazko koloreak hautatuko ditu gaituta badago. Bestela, erabili config-eko koloreak.
+Gai berria egiten du
+"{0}" gai berria sortzen.
+Gorde gaia uneko direktorioan
+Gorde gaia beste direktorio batean ...
+Aukeratu kolorea "<-" eta "->" teklak erabiliz. Sakatu ENTER irteteko. Sakatu "i" kolore zenbakia eskuz txertatzeko.
+Aukeratu kolorea "<-" eta "->" teklak erabiliz. Erabili geziak gora eta behera geziak kolore barrutiak aukeratzeko. Sakatu ENTER irteteko. Sakatu "i" kolore zenbakia eskuz txertatzeko.
+Ongi etorri kernelera! - {0} bertsioa
+Abisu kolorea
+Aukeraren kolorea
+Idatzi 0 eta 255 arteko kolore zenbakia:
+Erabili "hwinfo" hardwareari buruzko informazio zabalagoa lortzeko.
+Hardwarearen informazioa inprimatzen du
+PUZaren informazioa:
+Prozesadorearen izena:
+Prozesadorearen abiadura:
+Prozesadorearen bitak:
+Prozesadorearen itzulpena:
+Prozesadorearen topologia:
+Prozesadore mota:
+Prozesadorearen mugarria:
+BogoMips prozesadorea:
+L2 prozesadorearen cache tamaina:
+L3 prozesadorearen cache tamaina:
+Prozesadorearen ezaugarriak:
+HDD informazioa:
+Unitatearen izena:
+Gidatzeko modeloa:
+Drive saltzailea:
+Gidatzeko abiadura:
+Unitatearen tamaina:
+Unitatearen seriea:
+Gidariaren IDa:
+Gidatu partizio kopurua:
+Partizioaren IDa:
+Partizio fitxategi sistema:
+Partizioaren tamaina:
+Erabilitako partizioa:
+RAM informazioa:
+RAM librea:
+RAM guztira:
+Erabilitako RAM memoria:
+GPU informazioa:
+GPU izena:
+GPU kontrolatzailea:
+GPU bertsioa:
+GPU: txartel grafiko bat edo gehiago ezin izan dira probatu. Informazioa erakusten hala ere ...
+>> Ongi etorri! Urruneko arazketa eta berriketan sartzen zaren lehenengo aldia da. Erabili "/ register <name>" izena emateko.
+Gailua lehendik dago.
+Ez dago horrelako gailurik.
+Gailuaren erabiltzaile izena ezartzen du
+Erregistratuta zaude dagoeneko.
+Kaixo, {0}!
+Kontsolatzeko fitxategiaren edukia inprimatzen du
+Edo, pasatu "listcities" komando honi.
+Sarrera dagoeneko badago.
+Kontsolaren irteera biltzen du
+Komandoa ez da biltzeko modukoa. Komando hauek biltzeko modukoak dira:
+ZIP artxiboa ateratzen du
+ZIP artxiboa sortzen du
+{0} urtean eraikia
+Errorea arazketa datuak deskargatzean
+Errore bat gertatu da arazketa datuak deskargatzean. Egiaztatu Interneteko konexioa.
+Ezin izan da {0} modua amaitu: {1}
+Kaleratutako gertaera guztiak zerrendatzen ditu
+Uneko direktorioa
+Shell-en uneko direktorioa ezartzen du. Idatzi bide absolutua lehendik dagoen edozein direktoriora.
+Itzulbiratu zerrendaren irteerak
+Zerrendako irteerak biltzen ditu uneko kontsolaren geometriarentzat luzeegia badirudi.
+Ping!
+{0}-k ping egin dizu.
+Gorde gaia uneko direktorioan honela ...
+Gorde gaia beste direktorio batean honela ...
+Zehaztu gaiaren izena:
+{0} erabiltzailea "{1}" zerrendan gehitu da.
+{0} erabiltzailea "{1}" zerrendatik kendu da.
+Modu baliogabea {0}
+Erabiltzailea existitzen da jada
+Kargatu gaia ...
+Kargatu gaia aurrez eraikitako gaietatik ...
+Zehaztu gaiaren fitxategiaren izena .json luzapenean:
+ZIP artxiboa irekitzen du
+ZIP shell-etik irteten da
+Artxiboaren barruan dauden fitxategi guztiak zerrendatzen ditu
+Fitxategi bat zehaztutako direktorio batera edo uneko direktorio batera ateratzen du
+Artxiboen direktorioa aldatzen du
+Ez da zehaztutako ZIP shell komandoa aurkitu.
+{0} direktorioa ez dago
+Artxiboen direktorioa {0} ez dago
+Gehienezko posizioen kopurua
+Zenbat posizio argitzen dira ilundu aurretik?
+Argiagoentzako 255 koloreen euskarria aktibatzen du.
+Argiagoentzako benetako kolorearen laguntza aktibatzen du.
+Zerrendako sarrera kolorea
+Zerrendaren balioa kolorea
+SSH zerbitzari batera konektatzen da komando bat exekutatzeko.
+Atal honetan pantaila - babeslearen ezarpenak agertzen dira
+Kolore zehaztapen baliogabea. Ziurtatu formatu egokian dagoela, hau da, 0-255 arteko zenbakia 255 kolore erabiltzen badituzu edo LH sekuentzia hau benetako kolorea erabiltzen baduzu honela:
+Errorea probako shellean: {0}
+Gidoi bateko aldagai bat balio gisa ezartzen du
+Akatsen berri emateko gonbita.
+Eskerrik asko guretzako txartela igotzeagatik! Aukeratu zer eskaera mota duzun.
+Arazo bat
+Ezaugarri eskaera
+Galdera bat
+Ezaugarri bat zehaztu behar duzu.
+Egin galdera bat, adierazi zure ideia edo salatu arazoren bat.
+Zure eskaera idatzi behar duzu.
+Errorea gertatu da FTP shellean:
+FTP shell errore ezezaguna:
+Errore bat gertatu da SFTP shellean:
+SFTP shell errore ezezaguna:
+Erakutsi SSH bandera
+Konexioan SSH zerbitzariaren bandera erakusten du.
+Nola autentifikatu nahi duzu?
+Gako pribatuen fitxategia
+Pasahitza
+Idatzi {0} gakoaren pasaesaldia:
+Idatzi {0} gako pribatuaren kokapena. Idatzi "q" teklak gehitzen amaitzeko:
+Existitzen ez zen bide bat neutralizatu zuen.
+{0} gako fitxategia ez dago.
+Errorea gako pribatua gehitzen saiatzean:
+255 kolore modura aldatzeko, sakatu "t".
+Sakatu "t" benetako kolore modura aldatzeko.
+Atal honek zer kolore mota aldatu nahi duzun aukeratzeko aukera ematen dizu.
+Badirudi ez duzula erabiltzailerik root izan ezik. Hau txarra da. Bat nola sortu gidatuko dizugu.
+Idatzi zure erabiltzaile izena.
+Zure erabiltzaile izena idatzi behar duzu.
+Idatzi zure pasahitza.
+Pasahitza idatzi behar duzu.
+Aukeratu kontu mota.
+Administratzailea: kontu mota honek du kerneleko indarrik gehien, sistema kudeatzeko programak erabiltzea ahalbidetuz.
+Erabiltzaile normala: kontu mota hau administratzaileak baino zertxobait mugatuagoa da.
+Zorionak! Kontu berria egin duzu! Hau amaitzeko, hasi saioa zure kontu berri gisa.
+Informazio gehiagorako pantaila-babeslearen eskuliburua edo iturburu kodea kontsultatu.
+mod: Ez da modik hauteman.
+Komando orokorrak:
+Mod komandoak:
+Ezizenak komandoak:
+Mantentze-modua
+Bilaketa-direktorioak
+Bi puntuek bereizitako bide multzoa. PATH-en berdin funtzionatzen du. Idatzi bide osoa karpeta edo karpetaren izen batera. Amaitutakoan, idatzi "q". Idatzi minus ikurra bidearen ondoan dagoen direktorio bat kentzeko.
+Mod komandoak ez.
+Ez du ezizenik agindu.
+Kolore balioa 0-255 tartetik kanpo dago.
+Biltzeko komandoa ez da aurkitu.
+Hitz bat zehaztutako lerro batean edo lerro guztietan kontsultatzen du
+{0} / {1} deskargatuta.
+{0} / {1} kargatu dira.
+Kate bat inprimatzen du kontsolatzeko kolore mota eta lerro inprimaketa erabiliz
+Kate bat inprimatzen du kontsolatzeko kolore mota eta lerro inprimaketa erabiliz formatuaren laguntzarekin
+Katea inprimatzen du araztegira
+Katea inprimatzen du arazketarako formatuarekin
+Nukleoaren errore-instalazioa probatzen du
+Nukleoaren errore instalazioa formatuaren laguntzarekin probatzen du
+Baliabideetan dagoen katea hizkuntza jakin batera itzultzen du
+Kate bat inprimatzen du kontsolatzeko eta aurkitutako leku-markak analizatzen ditu
+Adierazpen erregularraren instalazioa probatzen du
+Kate bat enkriptatzen du
+Mods guztiak hasten ditu
+Mods guztiak gelditzen ditu
+Arazketa gaitzen edo desgaitzen du
+Urruneko arazketa gaitzen edo desgaitzen du
+LH sekuentzia 255 koloretarako probatzen du
+LH sekuentzia benetako kolorea lortzeko probatzen du
+Hartzailea probatzeko jakinarazpena bidaltzen du
+Egutegi desberdinak erabiliz data inprimatzeko probak egiten ditu
+Onartutako kodeko orri guztiak zerrendatzen ditu
+Zer aldagai konpilatzaile gaituta daude aplikazioan?
+Gertaera zehatza planteatzen duten probak
+Hardwarea probatzen duten probak
+Zabor biltzailea probatzen du
+Probako shell-etik irten eta nukleoa abiarazten du
+Probako shell-etik irten eta kernela itzaltzen du
+Uneko direktorioa kernelaren konfigurazio fitxategian gordetzen du
+Zerrenda idazlea katea eta kate-matrizearekin probatzen du
+Zerrenda-idazlea zenbaki oso eta osoko matrizearekin probatzen du
+Zerrenda idazlea char eta char arrayarekin probatzen du
+Kate normalen zerrenda:
+Array kate zerrenda:
+Zenbaki osoen zerrenda normala:
+Matrize zenbaki osoen zerrenda:
+Karaktere zerrenda normala:
+Matrizeen zerrenda:
+Gaitu RPC
+RPC ataka
+RPC gaitu edo ez.
+Idatzi RPC ataka. Zenbakizkoa izan behar du, eta ez da dagoeneko erabili behar. Bestela, RPC-k huts egingo du ataka irekitzean.
+Ez da RPC abiarazten desgaituta dagoelako.
+Zerrendek onartzen zituzten kulturak
+Emandako fitxategian zehaztutako katea bilatzen du adierazpen erregularrak erabiliz
+Ikusi tekla bat garaiz sakatu dezakezun
+Erabiltzaileak ez du sarrera garaiz eman.
+Zailtasun baliogabea
+Pertsonaia ez da garaiz sakatzen.
+Karaktere egokia sakatu duzu!
+Okerreko pertsonaia sakatu duzu.
+Sakatu ESC irteteko.
+Data eta orduari buruzko informazioa lortzen du
+Milisegundo:
+Segundoak:
+Minutu:
+Ordutegia:
+Egunak:
+Hilabeteak:
+Urtea:
+Urteko eguna:
+Asteko eguna:
+Bitarra:
+Tokiko ordua:
+Denbora Unibertsala:
+Unix denbora:
+Ezin izan da dataren informazioa analizatu
+Ziurtatu formatua zuzena dela.
+Eguna:
+Ordua:
+Fitxategiaren baimenak ezartzen ditu. Hau Unix exekutatzen duten FTP zerbitzarietan soilik onartzen da.
+Saio honetako mota ezartzen du
+Zerbitzarira konektatu behar duzu fitxategi sistemaren eragiketak egin aurretik.
+Ezin izan da {0} baimenak {1} ezarri.
+Baimenak ongi ezarri dira fitxategirako
+Datu mota ASCII gisa ezarri da!
+Datu mota Bitarra ezarri da!
+Datu mota baliogabea.
+Kontuz fitxategi gehienek ez dituztela modu egokian deskargatuko edo kargatuko, beraz, egoera gehienetan Bitar modua erabiltzea gomendatzen dugu.
+RPC komando bat bidali nahiean RPC hasi ez zen bitartean.
+Fade Out Atzerapena Milisegundotan
+Max Fade Steps
+Zenbat milisegundo itxaron behar da testua desagertu aurretik?
+Zenbat pauso egin behar dira?
+Sonda osoa
+Egia bada, hardware guztia probatzen du; bestela, beharrezko hardwarea bakarrik aztertuko du.
+Ezin izan da pantaila-babeslea {0} konfiguraziotik kendu.
+Aurrezteko ezarpen pertsonalizatuak lortzen ditu
+Aurrezteko ezarpen pertsonalizatuak ezartzen ditu
+Ezarpenak pantaila-babeserako ongi ezarri dira
+Ezin izan da pantaila-babeslearen ezarpena ezarri
+Atal honek root pasahitzaren sorrera kudeatzea ahalbidetzen du.
+RSS shell bat irekitzen du iturriak irakurtzeko
+RSS shell-etik irten eta kernelera itzultzen da
+Jarioaren esteka aldatzen du
+Jario guztiak zerrendatzen ditu
+Jario bat irakurtzen du web arakatzaile batean
+Zehaztutako RSS shell komandoa ez da aurkitu.
+RSS2 jario baliogabea.
+RSS1 jario baliogabea.
+Atom jario baliogabea.
+Sartu RSS jarioaren URLa:
+RSS jario mota baliogabea.
+Shell errore ezezaguna:
+Artikuluaren informazioa lortzen du
+Artikuluaren zenbakia ezin da eskuragarri dauden artikuluak baino handiagoa izan.
+Izenburua:
+Esteka:
+Jarioaren informazioa lortzen du
+Deskribapena:
+Jario mota:
+Artikulu kopurua:
+Artikuluak ez du estekarik!
+Ezin izan da direktorioko fitxategi-sistemako sarreren zerrenda egin
+Fitxategi sistema ordenatzeko modua
+Fitxategi sistemaren ordenazio norabidea
+Fitxategiak nola ordenatuko diren kontrolatzen du.
+Fitxategi-sistemaren ordenazioaren norabidea kontrolatzen du goranzkoa edo beherakoa den.
+Goranzko ordena
+Beheranzko ordena
+Izen osoa
+Fitxategiaren tamaina
+Sortze denbora
+Azken idazteko denbora
+Azken sarbide denbora
+Idatzi berriro Atzerapena Milisegundotan
+Zenbat milisegundo itxaron behar da berriro testua idatzi aurretik?
+Idatzi erakutsi nahi duzun testua. Luzeagoa hobea da.
+Idazteko gutxieneko abiadura WPM-tan
+Idazteko gehieneko abiadura WPM-tan
+Errota motako probabilitatea ehunekoan
+Ezin izan da uneko direktorioa gorde: {0}
+Norabidea aldatzeko toailatxoak
+255 koloreko euskarria aktibatzen du Garbitzeko.
+Ezabatzeko benetako kolorearen laguntza aktibatzen du.
+Zenbat toailatxo egin behar dira norabidea ausaz aldatu aurretik?
+Etapa amaituta
+Barne hasieraketa amaitu zen
+Ez da {0} aipatutako fitxategia aurkitu. Mod honek agian ez du behar bezala funtzionatuko fitxategi hau gabe.
+Mod hasita
+Moden informazioa lortzen du
+Komandoaren izena:
+Komandoaren definizioa:
+Komando mota:
+Agindu zorrotza?
+Mod bertsioa:
+{0} modua ez da aurkitu.
+Kultura
+{0} ren zein aldaera erabiltzen ari da hilabetearen izenak, egutegia eta abar aldatzeko?
+Testu editoreak oraindik ez du fitxategi korronterik ireki.
+Katea ordezkatu da.
+Zenbaki bat edo biak ez dira zenbakizkoak.
+Ezabatu da hitza.
+Karaktere ezabatu da.
+Fitxategi sistemaren ezarpenak ...
+Atal honetan fitxategi sistemaren ezarpenak zerrendatzen dira.
+Ongi etorri Ezarpenetara!
+Errorea SSH komandoa exekutatzean
+Errorea SSH shellean
+- Aplikazioen informazioa
+Errebote-testurako 255 kolore-laguntza aktibatzen du.
+BouncingText-erako benetako kolorearen laguntza aktibatzen du.
+Hiztegi idazlea katearekin eta kate-arrayarekin probatzen du
+Hiztegi idazlea char eta char arrayarekin probatzen du
+Hiztegi idazlea zenbaki oso eta osoko arrayarekin probatzen du
+Kate hiztegi normala:
+Matrize-kateen hiztegia:
+Zenbaki osoen hiztegi normala:
+Array zenbaki osoaren hiztegia:
+Hiztegi normala:
+Array char hiztegia:
+Ongi etorri Test Shell-era!
+Erakutsi fitxategi sistemaren eragiketen aurrerapena
+Fitxategi sistemaren eragiketetan zehar zer fitxategi prozesatzen ari den erakusten du
+non egongo da HardwareType
+Edo {0} hardware mota ez dago probatuta edo ez du balio.
+{0} hardware mota oraindik ez da probatu. Probatuta dagoela ziur bazaude, berrabiarazi nukleoa arazketa gaituta.
+Zerrendan analizatu gabeko partizioak.
+Hacker modua
+Gaituta badago, kontsola berdea gaituta egongo da.
+Bereizle bat inprimatzen du
+Bereizle bat inprimatzen du formatuaren laguntzarekin
+Kolore euskarria duen bereizgailua inprimatzen du
+Kolore eta formatu euskarriekin bereizle bat inprimatzen du
+Beti zentratuta
+255 koloreko euskarria aktibatzen du Markeserako.
+Markesaren benetako kolorearen euskarria aktibatzen du.
+Idatzi erakutsi nahi duzun testua.
+Markesinean agertzen den testua beti zentratuta dagoen ala ez adierazten du.
+'q' uzteko.
+{0} argumentua ez da injektatzeko aurkitu.
+Ez da aurkitu {0} komando-lerroko argumentua.
+Ezarpen guztiak ezabatzen ditu
+Pantaila-babesleak errore bat izan du bistaratzean: {0}. Sakatu edozein tekla irteteko.
+Aurrebista ...
+Hona hemen itxura izango duen gaia:
+Biltzeko komandoak:
+{0} moduak komando baliogabea du. Mod analisiak huts egin du. Berrikusi iturburu kodea.
+Mod piezak:

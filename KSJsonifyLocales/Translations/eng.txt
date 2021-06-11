@@ -739,3 +739,361 @@ Delay in Milliseconds
 How many milliseconds to wait before making the next write?
 Lets you use an SSH FTP server
 No help for command "{0}".
+Invalid VT sequence for RGB color.
+Color of Seconds Bar
+Color of Minutes Bar
+Color of Hours Bar
+Color of Information
+Ticks to change color
+Activates 255 color support for ProgressClock.
+Activates true color support for ProgressClock.
+The color of seconds progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
+The color of minutes progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
+The color of hours progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
+The color of date information. It can be 1-16, 1-255, or "1-255;1-255;1-255".
+If color cycling is enabled, how many ticks before changing colors in ProgressClock? 1 tick = 0.5 seconds
+ProgressClock will select random colors if it's enabled. Otherwise, use colors from config.
+Makes a new theme
+Making a new theme "{0}".
+Save Theme to Current Directory
+Save Theme to Another Directory...
+Select color using "<-" and "->" keys. Press ENTER to quit. Press "i" to insert color number manually.
+Select color using "<-" and "->" keys. Use arrow up and arrow down keys to select between color ranges. Press ENTER to quit. Press "i" to insert color number manually.
+Welcome to the kernel! - Version {0}
+Warning color
+Option color
+Enter color number from 0 to 255:
+Use "hwinfo" for extended information about hardware.
+Prints hardware information
+CPU information:
+Processor name:
+Processor speed:
+Processor bits:
+Processor rev:
+Processor topology:
+Processor type:
+Processor milestone:
+Processor BogoMips:
+Processor L2 cache size:
+Processor L3 cache size:
+Processor features:
+HDD information:
+Drive name:
+Drive model:
+Drive vendor:
+Drive speed:
+Drive size:
+Drive serial:
+Drive ID:
+Drive partition count:
+Partition ID:
+Partition filesystem:
+Partition size:
+Partition used:
+RAM information:
+RAM free:
+RAM total:
+RAM used:
+GPU information:
+GPU name:
+GPU driver:
+GPU version:
+GPU: One or more of the graphics cards failed to be probed. Showing information anyway...
+>> Welcome! This is your first time entering remote debug and chat. Use "/register <name>" to register.
+Device already exists.
+No such device.
+Sets device username
+You're already registered.
+Hi, {0}!
+Prints content of file to console
+Or, pass "listcities" to this command.
+Entry already exists.
+Wraps the console output
+The command is not wrappable. These commands are wrappable:
+Extracts a ZIP archive
+Creates a ZIP archive
+Built in {0}
+Error downloading debug data
+There is an error while downloading debug data. Check your internet connection.
+Failed to finalize mod {0}: {1}
+Lists all fired events
+Current Directory
+Sets the shell's current directory. Write an absolute path to any existing directory.
+Wrap list outputs
+Wraps the list outputs if it seems too long for the current console geometry.
+Ping!
+{0} pinged you.
+Save Theme to Current Directory as...
+Save Theme to Another Directory as...
+Specify theme name:
+The user {0} has been added to the "{1}" list.
+The user {0} has been removed from the "{1}" list.
+Invalid mode {0}
+User already exists
+Load Theme From...
+Load Theme From Prebuilt Themes...
+Specify theme file name wihout the .json extension:
+Opens a ZIP archive
+Exits the ZIP shell
+Lists all files inside the archive
+Extracts a file to a specified directory or a current directory
+Changes archive directory
+The specified ZIP shell command is not found.
+Directory {0} doesn't exist
+Archive directory {0} doesn't exist
+Max Positions Count
+How many positions are lit before dimming?
+Activates 255 color support for Lighter.
+Activates true color support for Lighter.
+List entry color
+List value color
+Connects to an SSH server to execute a command.
+This section lists screensaver settings for
+Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows:
+Error in test shell: {0}
+Sets a variable to a value in a script
+A bug reporting prompt.
+Thank you for raising a ticket to us! Select what kind of request do you have.
+A problem
+A feature request
+A question
+You must specify a feature.
+Ask a question, jot your idea, or report a problem.
+You must write your request.
+There was an error in the FTP shell:
+Unknown FTP shell error:
+There was an error in the SFTP shell:
+Unknown SFTP shell error:
+Show SSH banner
+Shows the SSH server banner on connection.
+How do you want to authenticate?
+Private key file
+Password
+Enter the passphrase for key {0}: 
+Enter the location of the private key for {0}. Write "q" to finish adding keys:
+Neutralized a non-existent path.
+Key file {0} doesn't exist.
+Error trying to add private key:
+Press "t" to switch to 255 color mode.
+Press "t" to switch to true color mode.
+This section lets you choose what type of color do you want to change.
+It looks like you've got no user except root. This is bad. We'll guide you how to create one.
+Write your username.
+You must write your username.
+Write your password.
+You must write your password.
+Select account type.
+Administrator: This account type has the most power in the kernel, allowing you to use system management programs.
+Normal User: This account type is slightly more restricted than administrators.
+Congratulations! You've made a new account! To finish this off, log in as your new account.
+Consult the screensaver manual or source code for information.
+mod: No mods detected.
+General commands:
+Mod commands:
+Alias commands:
+Maintenance Mode
+Lookup Directories
+Group of paths separated by the colon. It works the same as PATH. Write a full path to a folder or a folder name. When you're finished, write "q". Write a minus sign next to the path to remove an existing directory.
+No mod commands.
+No alias commands.
+The color value is outside the range of 0-255.
+The wrappable command is not found.
+Queries a word in a specified line or all lines
+{0} of {1} downloaded.
+{0} of {1} uploaded.
+Prints a string to console using color type and line print
+Prints a string to console using color type and line print with format support
+Prints a string to debugger
+Prints a string to debugger with format support
+Tests the kernel error facility
+Tests the kernel error facility with format support
+Tests translating a string that exists in resources to specific language
+Prints a string to console and parses the placeholders found
+Tests the regular expression facility
+Encrypts a string using
+Starts all mods
+Stops all mods
+Enables or disables debug
+Enables or disables remote debug
+Tests the VT sequence for 255 colors
+Tests the VT sequence for true color
+Sends a notification to test the receiver
+Tests printing date using different calendars
+Lists all supported codepages
+What compiler variables are enabled in the application?
+Tests raising the specific event
+Tests probing the hardware
+Tests the garbage collector
+Exits the test shell and starts the kernel
+Exits the test shell and shuts down the kernel
+Saves the current directory to kernel configuration file
+Tests the list writer with the string and string array
+Tests the list writer with the integer and integer array
+Tests the list writer with the char and char array
+Normal string list:
+Array string list:
+Normal integer list:
+Array integer list:
+Normal char list:
+Array char list:
+Enable RPC
+RPC Port
+Whether or not to enable RPC.
+Write an RPC port. It must be numeric, and must not be already used. Otherwise, RPC will fail to open the port.
+Not starting RPC because it's disabled.
+Lists supported cultures
+Searches for specified string in the provided file using regular expressions
+See if you can press a key on time
+User didn't provide any input in a timely fashion.
+Invalid difficulty
+Character not pressed on time.
+You've pressed the right character!
+You've pressed the wrong character.
+Press ESC to exit.
+Gets the date and time information
+Milliseconds:
+Seconds:
+Minutes:
+Hours:
+Days:
+Months:
+Year:
+Day of Year:
+Day of Week:
+Binary:
+Local Time:
+Universal Time:
+Unix Time:
+Failed to parse date information for
+Ensure that the format is correct.
+Date:
+Time:
+Sets file permissions. This is supported only on FTP servers that run Unix.
+Sets the type for this session
+You must connect to server before performing filesystem operations.
+Failed to set permissions of {0} to {1}.
+Permissions set successfully for file
+Data type set to ASCII!
+Data type set to Binary!
+Invalid data type.
+Beware that most files won't download or upload properly using this mode, so we highly recommend using the Binary mode on most situations.
+Trying to send an RPC command while RPC didn't start.
+Fade Out Delay in Milliseconds
+Max Fade Steps
+How many milliseconds to wait before fading out text?
+How many fade steps to do?
+Full Probe
+If true, probes all the hardware; else, will only probe the needed hardware.
+Failed to remove screensaver {0} from config.
+Gets custom saver settings
+Sets custom saver settings
+Settings set successfully for screensaver
+Failed to set a setting for screensaver
+This section lets you manage root password creation.
+Opens an RSS shell to read the feeds
+Exits RSS shell and returns to kernel
+Changes the feed link
+Lists all feeds
+Reads a feed in a web browser
+The specified RSS shell command is not found.
+Invalid RSS2 feed.
+Invalid RSS1 feed.
+Invalid Atom feed.
+Enter an RSS feed URL:
+Invalid RSS feed type.
+Unknown shell error:
+Gets the article info
+Article number couldn't be bigger than the available articles.
+Title:
+Link:
+Gets the feed info
+Description:
+Feed type:
+Number of articles:
+Article doesn't have a link!
+Failed to make a list of filesystem entries for directory
+Filesystem sort mode
+Filesystem sort direction
+Controls how the files will be sorted.
+Controls the direction of filesystem sorting whether it's ascending or descending.
+Ascending order
+Descending order
+Full name
+File size
+Creation time
+Last write time
+Last access time
+Write Again Delay in Milliseconds
+How many milliseconds to wait before writing text again?
+Write any text you want shown. Longer is better.
+Minimum writing speed in WPM
+Maximum writing speed in WPM
+Probability of typo in percent
+Failed to save current directory: {0}
+Wipes to change direction
+Activates 255 color support for Wipe.
+Activates true color support for Wipe.
+How many wipes to do before changing direction randomly?
+Stage finished in
+Internal initialization finished in
+Referenced file {0} not found. This mod might not work properly without this file.
+Starting mod
+Gets mod information
+Command name:
+Command definition:
+Command type:
+Strict command?
+Mod version:
+Mod {0} not found.
+Culture of
+Which variant of {0} is being used to change the month names, calendar, etc.?
+The text editor hasn't opened a file stream yet.
+String replaced.
+One or both of the numbers are not numeric.
+Word deleted.
+Character deleted.
+Filesystem Settings...
+This section lists the filesystem settings.
+Welcome to Settings!
+Error executing SSH command
+Error on SSH shell
+- App information
+Activates 255 color support for BouncingText.
+Activates true color support for BouncingText.
+Tests the dictionary writer with the string and string array
+Tests the dictionary writer with the char and char array
+Tests the dictionary writer with the integer and integer array
+Normal string dictionary:
+Array string dictionary:
+Normal integer dictionary:
+Array integer dictionary:
+Normal char dictionary:
+Array char dictionary:
+Welcome to Test Shell!
+Show progress on filesystem operations
+Shows what file is being processed during the filesystem operations
+where HardwareType will be
+Either the hardware type {0} is not probed, or is not valid.
+The hardware type {0} is not probed yet. If you're sure that it's probed, restart the kernel with debugging enabled.
+Partitions not parsed to list.
+Hacker Mode
+If enabled, green console will be enabled.
+Prints a separator
+Prints a separator with format support
+Prints a separator with color support
+Prints a separator with color and format support
+Always centered
+Activates 255 color support for Marquee.
+Activates true color support for Marquee.
+Write any text you want shown.
+Whether the text shown on the marquee is always centered.
+'q' to quit.
+Argument {0} not found to inject.
+Command line argument {0} not found.
+Clears all the settings
+Screensaver experienced an error while displaying: {0}. Press any key to exit.
+Preview...
+Here's how your theme will look like:
+Wrappable commands:
+Mod {0} has invalid command. Mod parsing failed. Review the source code.
+Mod parts:

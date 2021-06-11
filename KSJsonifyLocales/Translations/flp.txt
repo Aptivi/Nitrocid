@@ -739,3 +739,361 @@ Pagkaantala sa Milliseconds
 Ilang milliseconds ang maghihintay bago gawin ang susunod na pagsulat?
 Hinahayaan kang gumamit ng isang SSH FTP server
 Walang tulong para sa utos na "{0}".
+Di-wastong pagkakasunud-sunod ng VT para sa kulay ng RGB.
+Kulay ng Seconds Bar
+Kulay ng Minuto Bar
+Kulay ng Hours Bar
+Kulay ng Impormasyon
+Mga tiktik upang baguhin ang kulay
+Pinapagana ang 255 suporta sa kulay para sa ProgressClock.
+Pinapagana ang totoong suporta sa kulay para sa ProgressClock.
+Ang kulay ng mga segundo na pag-unlad bar. Maaari itong maging 1-16, 1-255, o "1-255;1-255;1-255".
+Ang kulay ng minutong pag-unlad na bar. Maaari itong maging 1-16, 1-255, o "1-255;1-255;1-255".
+Ang kulay ng mga oras ng progreso na bar. Maaari itong maging 1-16, 1-255, o "1-255;1-255;1-255".
+Ang kulay ng impormasyon sa petsa. Maaari itong maging 1-16, 1-255, o "1-255;1-255;1-255".
+Kung pinagana ang pagbibisikleta ng kulay, ilan ang mga ticks bago baguhin ang mga kulay sa ProgressClock? 1 tick = 0.5 segundo
+Pipili ang ProgressClock ng mga random na kulay kung pinagana ito. Kung hindi man, gumamit ng mga kulay mula sa config.
+Gumagawa ng isang bagong tema
+Gumagawa ng isang bagong temang "{0}".
+I-save ang Tema sa Kasalukuyang Direktoryo
+I-save ang Tema sa Ibang Direktoryo ...
+Piliin ang kulay gamit ang mga key na "<-" at "->". Pindutin ang ENTER upang tumigil. Pindutin ang "i" upang ipasok nang manu-mano ang numero ng kulay.
+Piliin ang kulay gamit ang mga key na "<-" at "->". Gumamit ng mga arrow up at arrow down key upang pumili sa pagitan ng mga saklaw ng kulay. Pindutin ang ENTER upang tumigil. Pindutin ang "i" upang ipasok nang manu-mano ang numero ng kulay.
+Maligayang pagdating sa kernel! - Bersyon {0}
+Kulay ng babala
+Kulay ng pagpipilian
+Ipasok ang numero ng kulay mula 0 hanggang 255:
+Gumamit ng "hwinfo" para sa pinalawak na impormasyon tungkol sa hardware.
+Nagpi-print ng impormasyon sa hardware
+Impormasyon sa CPU:
+Pangalan ng processor:
+Bilis ng processor:
+Mga bit ng processor:
+Proseso ng rev:
+Topology ng processor:
+Uri ng processor:
+Milyahe ng processor:
+Mga Proseso ng BogoMips:
+Laki ng cache ng Processor L2:
+Laki ng cache ng Processor L3:
+Mga tampok ng processor:
+Impormasyon ng HDD:
+Pangalan ng drive:
+Modelo ng pagmamaneho:
+Nag-drive ng vendor:
+Bilis ng pagmamaneho:
+Laki ng pagmamaneho:
+Mag-drive ng serial:
+ID ng Drive:
+Bilang ng pagkahati ng drive:
+Partition ID:
+Partition filesystem:
+Laki ng pagkahati:
+Ginamit na pagkahati:
+Impormasyon ng RAM:
+Walang RAM:
+Kabuuan ng RAM:
+Ginamit ang RAM:
+Impormasyon ng GPU:
+Pangalan ng GPU:
+Driver ng GPU:
+Bersyon ng GPU:
+GPU: Ang isa o higit pa sa mga graphics card ay nabigong ma-probed. Ipinapakita pa rin ang impormasyon ...
+>> Maligayang pagdating! Ito ang iyong unang pagkakataon sa pagpasok ng remote debug at chat. Gamitin ang "/ rehistro <name>" upang magparehistro.
+Mayroon nang aparato.
+Walang ganitong aparato.
+Nagtatakda ng username ng aparato
+Nakarehistro ka na
+Kumusta, {0}!
+Nagpi-print ng nilalaman ng file sa console
+O, ipasa ang "listcities" sa utos na ito.
+Umiiral na ang pagpasok.
+Balot ang output ng console
+Ang utos ay hindi maaaring palitan. Ang mga utos na ito ay maaaring balutin:
+Kinukuha ang isang archive ng ZIP
+Lumilikha ng isang archive ng ZIP
+Itinayo sa {0}
+Error sa pag-download ng data ng pag-debug
+Mayroong isang error habang nagda-download ng data ng pag-debug. Suriin ang iyong koneksyon sa internet.
+Nabigong ma-finalize ang mod {0}: {1}
+Listahan ng lahat ng pinaputok na mga kaganapan
+Kasalukuyang Direktoryo
+Itinatakda ang kasalukuyang direktoryo ng shell. Sumulat ng isang ganap na landas sa anumang umiiral na direktoryo.
+Mga output ng listahan ng balot
+Balot ang mga output ng listahan kung tila masyadong mahaba para sa kasalukuyang geometry ng console.
+Ping!
+{0} na-ping mo.
+I-save ang Tema sa Kasalukuyang Direktoryo bilang ...
+I-save ang Tema sa Isa pang Direktoryo bilang ...
+Tukuyin ang pangalan ng tema:
+Ang gumagamit na {0} ay naidagdag sa listahan ng "{1}".
+Ang gumagamit na {0} ay tinanggal mula sa listahan na "{1}".
+Di-wastong mode {0}
+Umiiral na ang gumagamit
+I-load ang Tema Mula sa ...
+I-load ang Tema Mula sa Mga Naunang Paunang Tema ...
+Tukuyin ang pangalan ng file ng tema tungkol sa .json extension:
+Nagbubukas ng isang archive ng ZIP
+Lumabas sa shell ng ZIP
+Inililista ang lahat ng mga file sa loob ng archive
+Kinukuha ang isang file sa isang tinukoy na direktoryo o isang kasalukuyang direktoryo
+Binabago ang direktoryo ng archive
+Hindi natagpuan ang tinukoy na utos ng shell ng ZIP.
+Wala ang direktoryo
+Ang direktoryo ng archive {0} ay wala
+Bilang ng Max Posisyon
+Ilan ang mga posisyon na naiilawan bago lumabo?
+Pinapagana ang 255 suporta sa kulay para sa Lighter.
+Pinapagana ang totoong suporta sa kulay para sa Lighter.
+Listahan ng kulay ng entry
+Listahan ng kulay ng halaga
+Kumokonekta sa isang SSH server upang magpatupad ng isang utos.
+Ang seksyong ito ay naglilista ng mga setting ng screensaver para sa
+Di-wastong tagatukoy ng kulay. Tiyaking nasa tamang format ito, na nangangahulugang isang numero mula 0-255 kung gumagamit ng 255 mga kulay o isang pagkakasunud-sunod ng VT kung gumagamit ng totoong kulay tulad ng sumusunod:
+Error sa test shell: {0}
+Nagtatakda ng isang variable sa isang halaga sa isang script
+Isang prompt ng pag-uulat ng bug.
+Salamat sa pagtataas ng isang tiket sa amin! Piliin kung anong uri ng kahilingan ang mayroon ka.
+Isang problema
+Isang hiling sa tampok
+Isang tanong
+Dapat mong tukuyin ang isang tampok.
+Magtanong ng isang katanungan, itala ang iyong ideya, o mag-ulat ng isang problema.
+Dapat mong isulat ang iyong kahilingan.
+Mayroong isang error sa FTP shell:
+Hindi kilalang FTP shell error:
+Mayroong isang error sa SFTP shell:
+Hindi kilalang error ng shell ng SFTP:
+Ipakita ang banner ng SSH
+Ipinapakita ang SSH server banner sa koneksyon.
+Paano mo nais na patunayan?
+Pribadong key file
+Password
+Ipasok ang passphrase para sa key {0}:
+Ipasok ang lokasyon ng pribadong key para sa {0}. Isulat ang "q" upang tapusin ang pagdaragdag ng mga key:
+Na-neutralize ang isang hindi umiiral na landas.
+Ang pangunahing file na {0} ay wala.
+Error sa pagsubok na magdagdag ng pribadong key:
+Pindutin ang "t" upang lumipat sa 255 color mode.
+Pindutin ang "t" upang lumipat sa totoong mode ng kulay.
+Hinahayaan ka ng seksyong ito na pumili kung anong uri ng kulay ang nais mong baguhin.
+Mukhang wala kang gumagamit maliban sa root. Masama ito. Gagabayan ka namin kung paano lumikha ng isa.
+Isulat ang iyong username.
+Dapat mong isulat ang iyong username.
+Isulat ang iyong password.
+Dapat mong isulat ang iyong password.
+Piliin ang uri ng account.
+Administrator: Ang uri ng account na ito ay may pinakamaraming lakas sa kernel, na nagbibigay-daan sa iyo upang gumamit ng mga programa sa pamamahala ng system.
+Karaniwang Gumagamit: Ang uri ng account na ito ay medyo mas limitado kaysa sa mga administrator.
+Binabati kita! Gumawa ka ng isang bagong account! Upang matapos ito, mag-log in bilang iyong bagong account.
+Kumunsulta sa manwal ng screensaver o source code para sa impormasyon.
+mod: Walang nakitang mods.
+Pangkalahatang utos:
+Mga utos ng mod:
+Utos ni Alias:
+Maintenance Mode
+Mga Direktoryo ng Paghahanap
+Grupo ng mga landas na pinaghiwalay ng colon. Gumagana ito katulad ng PATH. Sumulat ng isang buong landas sa isang folder o isang pangalan ng folder. Kapag tapos ka na, isulat ang "q". Sumulat ng isang minus sign sa tabi ng path upang alisin ang isang mayroon nang direktoryo.
+Walang mga utos na mod.
+Walang utos ni alias.
+Ang halaga ng kulay ay nasa labas ng saklaw na 0-255.
+Hindi natagpuan ang mailalagay na utos.
+Nagtatanong ng isang salita sa isang tinukoy na linya o lahat ng mga linya
+Na-download ang {0} ng {1}.
+Ang {0} ng {1} na-upload.
+Nagpi-print ng isang string upang ma-console gamit ang uri ng kulay at pag-print ng linya
+Nagpi-print ng isang string upang ma-console gamit ang uri ng kulay at pag-print ng linya na may suporta sa format
+Nagpi-print ng isang string sa debugger
+Nagpi-print ng isang string sa debugger na may suporta sa format
+Sinusubukan ang pasilidad ng error ng kernel
+Sinusubukan ang pasilidad ng error ng kernel na may suporta sa format
+Sinusubukan ang pagsasalin ng isang string na umiiral sa mga mapagkukunan sa tukoy na wika
+Nagpi-print ng isang string upang i-console at i-parse ang mga placeholder na natagpuan
+Sinusubukan ang regular na pasilidad sa pagpapahayag
+Nag-e-encrypt ng isang string gamit
+Nagsisimula sa lahat ng mga mod
+Humihinto sa lahat ng mga mod
+Pinapagana o hindi pinagana ang pag-debug
+Pinapagana o hindi pinagana ang remote debug
+Sinusubukan ang pagkakasunud-sunod ng VT para sa 255 na mga kulay
+Sinusubukan ang pagkakasunud-sunod ng VT para sa totoong kulay
+Nagpadala ng isang abiso upang subukan ang tatanggap
+Sinubukan ang petsa ng pag-print gamit ang iba't ibang mga kalendaryo
+Nililista ang lahat ng mga sinusuportahang codepage
+Anong mga variable ng tagatala ang pinagana sa application?
+Mga pagsubok na pagtaas ng tukoy na kaganapan
+Mga pagsubok na sumusubok sa hardware
+Sinusubukan ang maniningil ng basura
+Lumabas sa test shell at sinisimulan ang kernel
+Lumabas sa test shell at pinapatay ang kernel
+Sine-save ang kasalukuyang direktoryo sa kernel config file
+Sinusubukan ang manunulat ng listahan gamit ang string at string array
+Sinusubukan ang manunulat ng listahan gamit ang integer at integer array
+Sinusubukan ang listahan ng manunulat ng char at char array
+Normal na listahan ng string:
+Listahan ng string ng Array:
+Normal na listahan ng integer:
+Listahan ng integer ng Array:
+Normal na listahan ng char:
+Listahan ng char charre:
+Paganahin ang RPC
+RPC Port
+Kung paganahin o hindi ang RPC.
+Sumulat ng isang port ng RPC. Dapat itong bilang, at hindi dapat gamitin. Kung hindi man, mabibigo ang RPC na buksan ang port.
+Hindi nagsisimula sa RPC dahil hindi ito pinagana.
+Ang mga listahan ay suportado ng mga kultura
+Naghahanap ng tinukoy na string sa ibinigay na file gamit ang mga regular na expression
+Tingnan kung maaari mong pindutin ang isang susi sa oras
+Hindi nagbigay ang gumagamit ng anumang input sa isang napapanahong paraan.
+Di-wastong paghihirap
+Ang character na hindi pinindot sa oras.
+Pinindot mo ang tamang character!
+Pinindot mo ang maling character.
+Pindutin ang ESC upang lumabas.
+Nakukuha ang impormasyon sa petsa at oras
+Milliseconds:
+Segundo:
+Minuto:
+Mga oras:
+Araw:
+Buwan:
+Taon:
+Araw ng Taon:
+Araw sa isang linggo:
+Binary:
+Lokal na Oras:
+Pangkalahatang Oras:
+Oras ng Unix:
+Nabigong mai-parse ang impormasyon sa petsa para sa
+Tiyaking tama ang format.
+Petsa:
+Oras:
+Nagtatakda ng mga pahintulot sa file. Sinusuportahan lamang ito sa mga server ng FTP na nagpapatakbo ng Unix.
+Itinakda ang uri para sa session na ito
+Dapat kang kumonekta sa server bago magsagawa ng mga pagpapatakbo ng filesystem.
+Nabigong magtakda ng mga pahintulot ng {0} sa {1}.
+Matagumpay na itinakda ang mga pahintulot para sa file
+Itinatakda ang uri ng data sa ASCII!
+Ang uri ng data na nakatakda sa Binary!
+Di-wastong uri ng data.
+Mag-ingat na ang karamihan sa mga file ay hindi mai-download o maa-upload nang maayos gamit ang mode na ito, kaya lubos naming inirerekumenda ang paggamit ng Binary mode sa karamihan ng mga sitwasyon.
+Sinusubukang magpadala ng isang utos ng RPC habang hindi nagsimula ang RPC.
+Fade Out Delay sa Milliseconds
+Max Fade Steps
+Ilang milliseconds ang maghihintay bago mawala ang teksto?
+Ilan ang mga fade step na dapat gawin?
+Buong Probe
+Kung totoo, iimbestigahan ang lahat ng hardware; kung hindi, mag-iimbestiga lamang ang kinakailangang hardware.
+Nabigong alisin ang screensaver {0} mula sa config.
+Nakakakuha ng mga setting ng pasadyang naka-save
+Nagtatakda ng mga setting ng pasadyang pag-save
+Matagumpay na itinakda ang mga setting para sa screensaver
+Nabigong magtakda ng isang setting para sa screensaver
+Hinahayaan ka ng seksyong ito na pamahalaan ang paggawa ng root password.
+Nagbubukas ng isang RSS shell upang mabasa ang mga feed
+Lumabas sa RSS shell at bumalik sa kernel
+Binabago ang link ng feed
+Listahan ng lahat ng feed
+Nagbabasa ng feed sa isang web browser
+Ang tinukoy na RSS shell command ay hindi natagpuan.
+Di-wastong feed ng RSS2.
+Di-wastong feed ng RSS1.
+Di-wastong feed ng Atom.
+Magpasok ng isang RSS feed URL:
+Di-wastong uri ng RSS feed.
+Hindi kilalang error sa shell:
+Nakukuha ang impormasyon sa artikulo
+Ang bilang ng artikulo ay hindi maaaring maging mas malaki kaysa sa mga magagamit na artikulo.
+Pamagat:
+Link:
+Nakukuha ang impormasyon sa feed
+Paglalarawan:
+Uri ng feed:
+Bilang ng mga artikulo:
+Walang link ang artikulo!
+Nabigong gumawa ng isang listahan ng mga entry ng filesystem para sa direktoryo
+Mode ng pag-uuri ng filesystem
+Direksyon ng pag-uuri ng filesystem
+Kinokontrol kung paano uuri-uriin ang mga file.
+Kinokontrol ang direksyon ng pag-uuri ng filesystem maging paakyat o pababang.
+Pataas ng order
+Pababang order
+Buong pangalan
+Laki ng file
+Oras ng paglikha
+Huling oras ng pagsulat
+Huling oras ng pag-access
+Isulat Muli ang Pag-antala sa Milliseconds
+Ilang milliseconds ang maghihintay bago magsulat muli ng teksto?
+Sumulat ng anumang teksto na nais mong ipakita. Mas mahaba ay mas mahusay.
+Minimum na bilis ng pagsulat sa WPM
+Maximum na bilis ng pagsulat sa WPM
+Ang posibilidad ng typo sa porsyento
+Nabigong i-save ang kasalukuyang direktoryo: {0}
+Punasan upang baguhin ang direksyon
+Pinapagana ang suporta ng 255 na kulay para sa Punasan.
+Pinapagana ang totoong suporta sa kulay para sa Punasan.
+Ilan ang dapat gawin upang punasan bago baguhin ang direksyon nang sapalaran?
+Natapos ang entablado sa
+Natapos ang panloob na pagpapasimula sa
+Ang referensiyang file na {0} ay hindi nahanap. Ang mod na ito ay maaaring hindi gumana nang maayos nang wala ang file na ito.
+Simula mod
+Nakakakuha ng impormasyon sa mod
+Pangalan ng utos:
+Kahulugan ng utos:
+Uri ng utos:
+Mahigpit na utos?
+Bersyon ng mod:
+Hindi nahanap ang mod {0}.
+Kultura ng
+Aling variant ng {0} ang ginagamit upang baguhin ang mga pangalan ng buwan, kalendaryo, atbp?
+Ang text editor ay hindi pa nagbubukas ng isang file stream.
+Pinalitan ang string.
+Ang isa o pareho ng mga numero ay hindi bilang.
+Tinanggal ang salita.
+Tinanggal ang character.
+Mga Setting ng Filesystem ...
+Inililista ng seksyong ito ang mga setting ng filesystem.
+Maligayang pagdating sa Mga Setting!
+Error sa pagpapatupad ng utos ng SSH
+Error sa SSH shell
+- Impormasyon ng app
+Pinapagana ang 255 suporta sa kulay para sa BouncingText.
+Pinapagana ang totoong suporta sa kulay para sa BouncingText.
+Sinusubukan ang manunulat ng diksyonaryo gamit ang string at string array
+Sinusubukan ang manunulat ng diksyonaryo gamit ang char at char array
+Sinusubukan ang manunulat ng diksyunaryo sa integer at integer array
+Karaniwang diksyunaryo ng string:
+Array string dictionary:
+Normal na integer dictionary:
+Array integer diksyunaryo:
+Normal na diksyunaryo ng char:
+Array char dictionary:
+Maligayang pagdating sa Test Shell!
+Ipakita ang pag-usad sa mga pagpapatakbo ng filesystem
+Ipinapakita kung anong file ang pinoproseso sa panahon ng pagpapatakbo ng filesystem
+kung nasaan ang HardwareType
+Alinman sa uri ng hardware na {0} ay hindi na-probed, o hindi wasto.
+Ang uri ng hardware na {0} ay hindi pa napapasyahan. Kung natitiyak mong na-probed ito, i-restart ang kernel na pinagana ang pag-debug.
+Hindi na-parse ang mga partisyon upang ilista.
+Hacker Mode
+Kung pinagana, paganahin ang berdeng console.
+Nagpi-print ng isang separator
+Nagpi-print ng isang separator na may suporta sa format
+Nagpi-print ng isang separator na may suporta sa kulay
+Nagpi-print ng isang separator na may suporta sa kulay at format
+Palaging nakasentro
+Pinapagana ang 255 suporta sa kulay para sa Marquee.
+Pinapagana ang tunay na suporta sa kulay para sa Marquee.
+Sumulat ng anumang teksto na nais mong ipakita.
+Kung ang teksto na ipinapakita sa marquee ay laging nakasentro.
+'q' upang tumigil.
+Ang pangangatwiran {0} ay hindi nahanap upang mag-iniksyon.
+Hindi nakita ang argument ng linya ng utos {0}.
+Nilinaw ang lahat ng mga setting
+Naranasan ng isang error ang Screensaver habang ipinapakita ang: {0}. Pindutin ang anumang key upang lumabas.
+Pag-preview ...
+Narito kung paano magiging hitsura ang iyong tema:
+Mga mailalagay na utos:
+Ang Mod {0} ay may wastong utos. Nabigo ang pag-parse ng mod. Suriin ang source code.
+Mga bahagi ng mod:

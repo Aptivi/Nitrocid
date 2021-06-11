@@ -739,3 +739,361 @@ Verzögerung in Millisekunden
 Wie viele Millisekunden müssen Sie warten, bevor Sie das nächste Mal schreiben?
 Ermöglicht die Verwendung eines SSH-FTP-Servers
 Keine Hilfe für Befehl "{0}".
+Ungültige VT-Sequenz für RGB-Farbe.
+Farbe des Sekundenbalkens
+Farbe des Minutenbalkens
+Farbe der Stundenleiste
+Farbe der Informationen
+Zecken, um die Farbe zu ändern
+Aktiviert die Unterstützung von 255 Farben für ProgressClock.
+Aktiviert die True-Color-Unterstützung für ProgressClock.
+Die Farbe des Sekundenfortschrittsbalkens. Es kann 1-16, 1-255 oder "1-255;1-255;1-255" sein.
+Die Farbe des Minutenfortschrittsbalkens. Es kann 1-16, 1-255 oder "1-255;1-255;1-255" sein.
+Die Farbe des Stundenfortschrittsbalkens. Es kann 1-16, 1-255 oder "1-255;1-255;1-255" sein.
+Die Farbe der Datumsinformationen. Es kann 1-16, 1-255 oder "1-255;1-255;1-255" sein.
+Wenn der Farbwechsel aktiviert ist, wie viele Ticks, bevor die Farben in ProgressClock geändert werden? 1 Tick = 0,5 Sekunden
+ProgressClock wählt zufällige Farben aus, wenn es aktiviert ist. Verwenden Sie andernfalls Farben aus config.
+Macht ein neues Thema
+Erstellen eines neuen Themas "{0}".
+Thema im aktuellen Verzeichnis speichern
+Thema in einem anderen Verzeichnis speichern...
+Wählen Sie die Farbe mit den Tasten "<-" und "->". Drücken Sie zum Beenden ENTER. Drücken Sie "i", um die Farbnummer manuell einzugeben.
+Wählen Sie die Farbe mit den Tasten "<-" und "->". Verwenden Sie die Pfeil-nach-oben- und Pfeil-nach-unten-Tasten, um zwischen den Farbbereichen auszuwählen. Drücken Sie zum Beenden ENTER. Drücken Sie "i", um die Farbnummer manuell einzugeben.
+Willkommen beim Kernel! - Version {0}
+Warnfarbe
+Optionsfarbe
+Farbnummer von 0 bis 255 eingeben:
+Verwenden Sie "hwinfo" für erweiterte Informationen zur Hardware.
+Druckt Hardwareinformationen
+CPU-Informationen:
+Prozessorname:
+Prozessorgeschwindigkeit:
+Prozessorbits:
+Prozessordrehzahl:
+Prozessortopologie:
+Prozessortyp:
+Meilenstein des Prozessors:
+Prozessor BogoMips:
+Prozessor-L2-Cache-Größe:
+Cachegröße des Prozessors L3:
+Prozessoreigenschaften:
+HDD-Informationen:
+Laufwerksname:
+Antriebsmodell:
+Laufwerksanbieter:
+Fahrgeschwindigkeit:
+Laufwerksgröße:
+Laufwerksserie:
+Laufwerk-ID:
+Anzahl der Laufwerkspartitionen:
+Partitions-ID:
+Partitionsdateisystem:
+Partitionsgröße:
+Verwendete Partition:
+RAM-Informationen:
+RAM frei:
+RAM gesamt:
+Verwendeter Arbeitsspeicher:
+GPU-Informationen:
+GPU-Name:
+GPU-Treiber:
+GPU-Version:
+GPU: Eine oder mehrere Grafikkarten konnten nicht überprüft werden. Informationen werden trotzdem angezeigt...
+>> Willkommen! Dies ist das erste Mal, dass Sie Remote-Debugging und -Chat aufrufen. Verwenden Sie "/register <name>", um sich zu registrieren.
+Gerät ist bereits vorhanden.
+Kein solches Gerät.
+Legt den Gerätebenutzernamen fest
+Sie sind bereits registriert.
+Hallo, {0}!
+Druckt den Inhalt der Datei auf die Konsole
+Oder übergeben Sie "listcities" an diesen Befehl.
+Eintrag ist bereits vorhanden.
+Umschließt die Konsolenausgabe
+Der Befehl ist nicht umschließbar. Diese Befehle können verpackt werden:
+Extrahiert ein ZIP-Archiv
+Erstellt ein ZIP-Archiv
+Eingebaut in {0}
+Fehler beim Herunterladen der Debug-Daten
+Beim Herunterladen der Debug-Daten ist ein Fehler aufgetreten. Prüfe deine Internetverbindung.
+Fehler beim Fertigstellen von Mod {0}: {1}
+Listet alle ausgelösten Ereignisse auf
+Aktuelles Verzeichnis
+Legt das aktuelle Verzeichnis der Shell fest. Schreiben Sie einen absoluten Pfad zu einem beliebigen vorhandenen Verzeichnis.
+Listenausgaben umbrechen
+Umbricht die Listenausgaben, wenn sie für die aktuelle Konsolengeometrie zu lang erscheinen.
+Klingeln!
+{0} hat Sie angepingt.
+Thema im aktuellen Verzeichnis speichern unter...
+Thema in einem anderen Verzeichnis speichern unter...
+Geben Sie den Themennamen an:
+Der Benutzer {0} wurde der Liste "{1}" hinzugefügt.
+Der Benutzer {0} wurde aus der Liste "{1}" entfernt.
+Ungültiger Modus {0}
+Benutzer existiert bereits
+Thema laden von...
+Theme aus vorgefertigten Themes laden...
+Geben Sie den Namen der Designdatei ohne die Erweiterung .json an:
+Öffnet ein ZIP-Archiv
+Beendet die ZIP-Shell
+Listet alle Dateien im Archiv auf
+Extrahiert eine Datei in ein angegebenes Verzeichnis oder ein aktuelles Verzeichnis
+Ändert das Archivverzeichnis
+Der angegebene ZIP-Shell-Befehl wurde nicht gefunden.
+Verzeichnis {0} existiert nicht
+Archivverzeichnis {0} existiert nicht
+Anzahl der maximalen Positionen
+Wie viele Positionen werden vor dem Dimmen beleuchtet?
+Aktiviert die Unterstützung von 255 Farben für Lighter.
+Aktiviert die True-Color-Unterstützung für Lighter.
+Farbe des Listeneintrags
+Listenwertfarbe
+Verbindet sich mit einem SSH-Server, um einen Befehl auszuführen.
+Dieser Abschnitt listet Bildschirmschonereinstellungen für
+Ungültiger Farbspezifizierer. Stellen Sie sicher, dass das richtige Format vorliegt, d. h. eine Zahl von 0-255 bei Verwendung von 255 Farben oder eine VT-Sequenz bei Verwendung von True Color wie folgt:
+Fehler in der Test-Shell: {0}
+Setzt eine Variable auf einen Wert in einem Skript
+Eine Aufforderung zur Fehlerberichterstattung.
+Vielen Dank, dass Sie ein Ticket zu uns erhoben haben! Wählen Sie aus, welche Art von Anfrage Sie haben.
+Ein Problem
+Eine Funktionsanfrage
+Eine Frage
+Sie müssen eine Funktion angeben.
+Stellen Sie eine Frage, notieren Sie Ihre Idee oder melden Sie ein Problem.
+Sie müssen Ihre Anfrage schreiben.
+In der FTP-Shell ist ein Fehler aufgetreten:
+Unbekannter FTP-Shell-Fehler:
+In der SFTP-Shell ist ein Fehler aufgetreten:
+Unbekannter SFTP-Shell-Fehler:
+SSH-Banner anzeigen
+Zeigt das SSH-Server-Banner bei der Verbindung an.
+Wie möchten Sie sich authentifizieren?
+Datei mit privatem Schlüssel
+Passwort
+Geben Sie die Passphrase für den Schlüssel {0} ein:
+Geben Sie den Speicherort des privaten Schlüssels für {0} ein. Schreiben Sie "q", um das Hinzufügen von Schlüsseln abzuschließen:
+Neutralisiert einen nicht existierenden Pfad.
+Schlüsseldatei {0} existiert nicht.
+Fehler beim Hinzufügen des privaten Schlüssels:
+Drücken Sie "t", um in den 255-Farbmodus zu wechseln.
+Drücken Sie "t", um in den True Color-Modus zu wechseln.
+In diesem Abschnitt können Sie auswählen, welche Art von Farbe Sie ändern möchten.
+Es sieht so aus, als ob Sie außer root keinen Benutzer haben. Das ist schlecht. Wir zeigen Ihnen, wie Sie einen erstellen.
+Schreiben Sie Ihren Benutzernamen.
+Sie müssen Ihren Benutzernamen schreiben.
+Schreiben Sie Ihr Passwort.
+Sie müssen Ihr Passwort schreiben.
+Kontotyp auswählen.
+Administrator: Dieser Kontotyp hat die meiste Macht im Kernel und ermöglicht Ihnen die Verwendung von Systemverwaltungsprogrammen.
+Normaler Benutzer: Dieser Kontotyp ist etwas eingeschränkter als Administratoren.
+Herzliche Glückwünsche! Sie haben ein neues Konto erstellt! Um dies abzuschließen, melden Sie sich als Ihr neues Konto an.
+Weitere Informationen finden Sie im Handbuch zum Bildschirmschoner oder im Quellcode.
+mod: Keine Mods erkannt.
+Allgemeine Befehle:
+Mod-Befehle:
+Alias-Befehle:
+Wartungsmodus
+Verzeichnisse suchen
+Gruppe von Pfaden, die durch den Doppelpunkt getrennt sind. Es funktioniert genauso wie PATH. Schreiben Sie einen vollständigen Pfad zu einem Ordner oder einen Ordnernamen. Wenn Sie fertig sind, schreiben Sie "q". Schreiben Sie ein Minuszeichen neben den Pfad, um ein vorhandenes Verzeichnis zu entfernen.
+Keine Mod-Befehle.
+Keine Alias-Befehle.
+Der Farbwert liegt außerhalb des Bereichs von 0-255.
+Der Wrapping-Befehl wurde nicht gefunden.
+Fragt ein Wort in einer bestimmten Zeile oder allen Zeilen ab
+{0} von {1} heruntergeladen.
+{0} von {1} hochgeladen.
+Druckt eine Zeichenfolge an die Konsole mit Farbtyp und Liniendruck
+Druckt eine Zeichenfolge an die Konsole mit Farbtyp und Zeilendruck mit Formatunterstützung
+Gibt eine Zeichenfolge an den Debugger aus
+Gibt eine Zeichenfolge an den Debugger mit Formatunterstützung aus
+Testet die Kernel-Fehlerfunktion
+Testet die Kernel-Fehlerfunktion mit Formatunterstützung
+Testet die Übersetzung einer in Ressourcen vorhandenen Zeichenfolge in eine bestimmte Sprache
+Gibt eine Zeichenfolge zur Konsole aus und analysiert die gefundenen Platzhalter
+Testet die Funktion für reguläre Ausdrücke
+Verschlüsselt eine Zeichenfolge mit
+Startet alle Mods
+Stoppt alle Mods
+Aktiviert oder deaktiviert die Fehlersuche
+Aktiviert oder deaktiviert Remote-Debugging
+Testet die VT-Sequenz für 255 Farben
+Testet die VT-Sequenz auf True Color
+Sendet eine Benachrichtigung, um den Empfänger zu testen
+Testet das Druckdatum mit verschiedenen Kalendern
+Listet alle unterstützten Codepages auf
+Welche Compilervariablen sind in der Anwendung aktiviert?
+Tests, die das spezifische Ereignis auslösen
+Tests zur Sondierung der Hardware
+Testet den Garbage Collector
+Beendet die Test-Shell und startet den Kernel
+Beendet die Test-Shell und fährt den Kernel herunter
+Speichert das aktuelle Verzeichnis in der Kernel-Konfigurationsdatei
+Testet den Listenschreiber mit dem String und dem String-Array
+Testet den Listenschreiber mit dem Integer- und Integer-Array
+Testet den Listenschreiber mit dem char- und char-Array
+Normale Stringliste:
+Liste der Array-Strings:
+Normale Integer-Liste:
+Array-Integer-Liste:
+Normale Zeichenliste:
+Liste der Array-Zeichen:
+RPC aktivieren
+RPC-Port
+Ob RPC aktiviert werden soll oder nicht.
+Schreiben Sie einen RPC-Port. Sie muss numerisch sein und darf noch nicht verwendet werden. Andernfalls kann RPC den Port nicht öffnen.
+RPC wird nicht gestartet, da es deaktiviert ist.
+Listet unterstützte Kulturen auf
+Sucht nach der angegebenen Zeichenfolge in der bereitgestellten Datei mit regulären Ausdrücken
+Sehen Sie, ob Sie rechtzeitig eine Taste drücken können
+Der Benutzer hat keine rechtzeitige Eingabe gemacht.
+Ungültiger Schwierigkeitsgrad
+Zeichen nicht rechtzeitig gedrückt.
+Sie haben das richtige Zeichen gedrückt!
+Sie haben das falsche Zeichen gedrückt.
+Drücken Sie zum Beenden ESC.
+Ruft Datums- und Uhrzeitinformationen ab
+Millisekunden:
+Sekunden:
+Protokoll:
+Std:
+Tage:
+Monate:
+Jahr:
+Tag des Jahres:
+Wochentag:
+Binär:
+Ortszeit:
+Weltzeit:
+Unix-Zeit:
+Fehler beim Parsen der Datumsinformationen für
+Stellen Sie sicher, dass das Format korrekt ist.
+Datum:
+Zeit:
+Legt Dateiberechtigungen fest. Dies wird nur auf FTP-Servern unterstützt, auf denen Unix ausgeführt wird.
+Legt den Typ für diese Sitzung fest
+Sie müssen eine Verbindung zum Server herstellen, bevor Sie Dateisystemoperationen ausführen.
+Die Berechtigungen von {0} konnten nicht auf {1} festgelegt werden.
+Berechtigungen für Datei erfolgreich festgelegt
+Datentyp auf ASCII gesetzt!
+Datentyp auf Binär gesetzt!
+Ungültiger Datentyp.
+Beachten Sie, dass die meisten Dateien in diesem Modus nicht richtig heruntergeladen oder hochgeladen werden. Wir empfehlen daher dringend, in den meisten Situationen den Binärmodus zu verwenden.
+Es wird versucht, einen RPC-Befehl zu senden, während RPC nicht gestartet wurde.
+Ausblendverzögerung in Millisekunden
+Max. Fade-Schritte
+Wie viele Millisekunden muss man warten, bevor der Text ausgeblendet wird?
+Wie viele Fade-Schritte sind zu tun?
+Volle Sonde
+Bei true wird die gesamte Hardware überprüft; Sonst wird nur die benötigte Hardware getestet.
+Fehler beim Entfernen des Bildschirmschoners {0} aus der Konfiguration.
+Ruft benutzerdefinierte Spareinstellungen ab
+Legt benutzerdefinierte Spareinstellungen fest
+Einstellungen für Bildschirmschoner erfolgreich eingestellt
+Einstellung für Bildschirmschoner fehlgeschlagen
+In diesem Abschnitt können Sie die Erstellung des Root-Passworts verwalten.
+Öffnet eine RSS-Shell zum Lesen der Feeds
+Beendet die RSS-Shell und kehrt zum Kernel zurück
+Ändert den Feed-Link
+Listet alle Feeds auf
+Liest einen Feed in einem Webbrowser
+Der angegebene RSS-Shell-Befehl wurde nicht gefunden.
+Ungültiger RSS2-Feed.
+Ungültiger RSS1-Feed.
+Ungültiger Atom-Feed.
+Geben Sie eine RSS-Feed-URL ein:
+Ungültiger RSS-Feed-Typ.
+Unbekannter Shell-Fehler:
+Ruft die Artikelinfo ab
+Artikelnummer könnte nicht größer sein als die verfügbaren Artikel.
+Titel:
+Verknüpfung:
+Ruft die Feed-Informationen ab
+Beschreibung:
+Feed-Typ:
+Anzahl Artikel:
+Artikel hat keinen Link!
+Fehler beim Erstellen einer Liste der Dateisystemeinträge für das Verzeichnis
+Sortiermodus des Dateisystems
+Sortierrichtung des Dateisystems
+Steuert, wie die Dateien sortiert werden.
+Steuert die Richtung der Dateisystemsortierung, ob aufsteigend oder absteigend.
+Aufsteigende Reihenfolge
+Absteigende Reihenfolge
+Vollständiger Name
+Dateigröße
+Erstellungszeitpunkt
+Letzte Schreibzeit
+Letzte Zugriffszeit
+Schreibverzögerung in Millisekunden
+Wie viele Millisekunden müssen Sie warten, bevor Sie wieder Text schreiben?
+Schreiben Sie einen beliebigen Text, der angezeigt werden soll. Länger ist besser.
+Minimale Schreibgeschwindigkeit in WPM
+Maximale Schreibgeschwindigkeit in WPM
+Tippfehlerwahrscheinlichkeit in Prozent
+Fehler beim Speichern des aktuellen Verzeichnisses: {0}
+Wischt zum Richtungswechsel
+Aktiviert die Unterstützung von 255 Farben für Wipe.
+Aktiviert die True-Color-Unterstützung für Wipe.
+Wie viele Wischvorgänge müssen durchgeführt werden, bevor die Richtung zufällig geändert wird?
+Etappe fertig in
+Interne Initialisierung abgeschlossen in
+Referenzierte Datei {0} nicht gefunden. Ohne diese Datei funktioniert dieser Mod möglicherweise nicht richtig.
+Startmodus
+Ruft Mod-Informationen ab
+Befehlsname:
+Befehlsdefinition:
+Befehlstyp:
+Strenger Befehl?
+Mod-Version:
+Mod {0} nicht gefunden.
+Kultur von
+Welche Variante von {0} wird verwendet, um die Monatsnamen, den Kalender usw. zu ändern?
+Der Texteditor hat noch keinen Dateistream geöffnet.
+Zeichenfolge ersetzt.
+Eine oder beide Zahlen sind nicht numerisch.
+Wort gelöscht.
+Zeichen gelöscht.
+Dateisystemeinstellungen...
+Dieser Abschnitt listet die Dateisystemeinstellungen auf.
+Willkommen bei den Einstellungen!
+Fehler beim Ausführen des SSH-Befehls
+Fehler in der SSH-Shell
+- App-Informationen
+Aktiviert die Unterstützung von 255 Farben für BouncingText.
+Aktiviert True Color-Unterstützung für BouncingText.
+Testet den Dictionary-Writer mit dem String und dem String-Array
+Testet den Dictionary-Writer mit dem char- und char-Array
+Testet den Wörterbuchschreiber mit dem Integer- und Integer-Array
+Normales String-Wörterbuch:
+Array-String-Wörterbuch:
+Normales Integer-Wörterbuch:
+Array-Integer-Wörterbuch:
+Wörterbuch für normale Zeichen:
+Array-Zeichen-Wörterbuch:
+Willkommen bei Shell-Test!
+Fortschritt bei Dateisystemvorgängen anzeigen
+Zeigt an, welche Datei während der Dateisystemoperationen verarbeitet wird
+wo HardwareType sein wird
+Entweder wird der Hardwaretyp {0} nicht geprüft oder er ist ungültig.
+Der Hardwaretyp {0} wird noch nicht untersucht. Wenn Sie sicher sind, dass es sondiert wurde, starten Sie den Kernel mit aktiviertem Debugging neu.
+Partitionen nicht in die Liste geparst.
+Hacker-Modus
+Wenn aktiviert, wird die grüne Konsole aktiviert.
+Druckt ein Trennzeichen
+Druckt ein Trennzeichen mit Formatunterstützung
+Druckt ein Trennzeichen mit Farbunterstützung
+Druckt ein Trennzeichen mit Farb- und Formatunterstützung
+Immer zentriert
+Aktiviert die 255-Farben-Unterstützung für Marquee.
+Aktiviert True Color-Unterstützung für Marquee.
+Schreiben Sie einen beliebigen Text, der angezeigt werden soll.
+Ob der auf dem Laufschriftrahmen angezeigte Text immer zentriert ist.
+'q' zum Beenden.
+Argument {0} zum Einfügen nicht gefunden.
+Befehlszeilenargument {0} nicht gefunden.
+Löscht alle Einstellungen
+Beim Bildschirmschoner ist bei der Anzeige ein Fehler aufgetreten: {0}. Zum Verlassen eine beliebige Taste drücken.
+Vorschau...
+So sieht Ihr Theme aus:
+Umwickelbare Befehle:
+Mod {0} hat einen ungültigen Befehl. Mod-Parsing fehlgeschlagen. Überprüfen Sie den Quellcode.
+Mod-Teile:

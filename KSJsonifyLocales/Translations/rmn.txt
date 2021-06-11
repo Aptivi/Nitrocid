@@ -1,13 +1,13 @@
-Comenzi disponibile: {0}
+﻿Comenzi disponibile: {0}
 Comanda de scriere:
 Injectarea comenzii a fost anulat?.
 Separa?i argumentele de pornire cu virgule f?r? spa?ii, de exemplu, 'motd, gpuprobe'
-Separa comenzile de pe �cmdinject� cu coloane cu spa?ii, de exemplu, �cmdinject setthemes Hacker: bip 1024 0.5�
-Re?ine?i c? argumentul �debug� nu acoper? complet nucleul.
+Separa comenzile de pe „cmdinject” cu coloane cu spa?ii, de exemplu, „cmdinject setthemes Hacker: bip 1024 0.5”
+Re?ine?i c? argumentul „debug” nu acoper? complet nucleul.
 bargs: Argumentul solicitat {0} nu este g?sit.
-bargs: eroare care nu poate fi recuperat? �n argument:
+bargs: eroare care nu poate fi recuperat? în argument:
 Argumente disponibile: {0}
-Argumente (�ajutor� pentru ajutor):
+Argumente („ajutor” pentru ajutor):
 Argumentele injectate vor fi programate s? ruleze la repornirea urm?toare.
 Injec?ia argumentului a fost anulat?.
 Eroare la analizarea argumentelor reale ale liniei de comand?: {0}
@@ -17,29 +17,29 @@ CPU: Unul sau mai multe nuclee ale procesorului nu au fost probate. Afi?area inf
 RAM: una sau mai multe dintre cipurile RAM nu au fost probate. Afi?area informa?iilor oricum ...
 HDD: Unul sau mai multe dintre hard disk-urile nu au fost probate. Afi?area informa?iilor oricum ...
 CPU: Num?r total de procesoare: {0}
-Introduce?i parola de administrare pentru �ntre?inere.
+Introduce?i parola de administrare pentru între?inere.
 Eroare a nucleului la pornire: {0}
 PANIC DOUBLE: Timpul de repornire dep??e?te durata maxim? permis? {0} de repornire a erorii. A?i g?sit o eroare a kernel-ului.
 [{0}] panic?: Reboot activat din cauza nivelului de eroare {0}.
 [{0}] panic?: timpul de repornire: {1} secunde, dep??e?te 1 or?. Este setat la 1 minut.
 PANIC DOUBLE: Tip de eroare {0} nevalid.
-[{0}] dpanic: {1} - Rebooting �n {2} secunde ...
+[{0}] dpanic: {1} - Rebooting în {2} secunde ...
 [{0}] panic?: Reboot dezactivat din cauza nivelului de eroare {0}.
 [{0}] panic?: {1} - Ap?sa?i orice tast? pentru a continua s? utiliza?i nucleul.
 [{0}] panic?: {1} - Ap?sa?i orice tast? pentru a opri.
-[{0}] panic?: {1} - Repornirea �n {2} secunde ...
+[{0}] panic?: {1} - Repornirea în {2} secunde ...
 DOUBLE PANIC: Bug-ul kernelului: {0}
 Oprirea ...
 Reporne?te ...
-O alt? instan?? a Kernel Simulator ruleaz?. Oprirea �n caz de interferen??.
-Eroare la ad?ugarea utilizatorului �n listele de permisiuni: tip nevalid {0}
-Eroare la ad?ugarea utilizatorului �n listele de permisiuni: utilizator nevalid {0}
+O alt? instan?? a Kernel Simulator ruleaz?. Oprirea în caz de interferen??.
+Eroare la ad?ugarea utilizatorului în listele de permisiuni: tip nevalid {0}
+Eroare la ad?ugarea utilizatorului în listele de permisiuni: utilizator nevalid {0}
 Nu a reu?it s? elimini utilizatorul din listele de permisiuni: tip nevalid {0}
 Sunte?i deja conectat.
 Nu a reu?it s? elimini utilizatorul din listele de permisiuni: utilizator nevalid {0}
-A?i g?sit fie o eroare, fie permisiunea pe care a?i �ncercat s? o ad?uga?i sau s? o elimina?i este deja f?cut?, sau o alt? eroare.
+A?i g?sit fie o eroare, fie permisiunea pe care a?i încercat s? o ad?uga?i sau s? o elimina?i este deja f?cut?, sau o alt? eroare.
 Eroare {0}: {1}
-A?i g?sit fie o eroare, fie permisiunea pe care a?i �ncercat s? o edita?i pentru un utilizator nou a e?uat.
+A?i g?sit fie o eroare, fie permisiunea pe care a?i încercat s? o edita?i pentru un utilizator nou a e?uat.
 Numele de utilizator disponibile: {0}
 Nume de utilizator:
 Spa?iile nu sunt permise.
@@ -50,74 +50,74 @@ Utilizatorul este dezactivat.
 Nume gre?it.
 A ap?rut o eroare la testarea loca?iilor. {0} - Urm?ritul stivei:
 A ap?rut o eroare la testarea loca?iilor. {0}
-Eroare �ncercat s? ad?uga?i nume de utilizator.
+Eroare încercat s? ad?uga?i nume de utilizator.
 usrmgr: Crearea numelui de utilizator {0} ...
 Nume utilizator necompletat
 Utilizatorul {0} nu a fost g?sit.
 Utilizatorul {0} nu are voie s? fie eliminat.
 Utilizatorul {0} este deja conectat. Deconecta?i-v? ?i conecta?i-v? ca un alt administrator.
 Utilizatorul {0} a fost eliminat.
-Eroare la �ncercarea de a elimina numele de utilizator.
+Eroare la încercarea de a elimina numele de utilizator.
 Protectorul de ecran solicitat {0} nu este g?sit.
 {0} a fost ini?ializat corect.
 {0} nu a ini?ializat. Este posibil ca codul de salvare s? fi avut o eroare la ini?ializare.
 Screensaver {0} nu exist?.
 {0} este setat pe screensaver implicit.
-Screensaver {0} nu se g?se?te �n baza de date. Verifica?i numele ?i �ncerca?i din nou.
-Screensaverul nu poate fi �nc?rcat din urm?toarele:
+Screensaver {0} nu se g?se?te în baza de date. Verifica?i numele ?i încerca?i din nou.
+Screensaverul nu poate fi înc?rcat din urm?toarele:
 Exist? o eroare grav? la imprimarea textului.
-Exist? o eroare �ncerc�nd s? creeze configura?ie.
-Eroare la �ncercarea de a elibera RAM: {0} - Continuarea ...
-Modul nu poate fi �nc?rcat din urm?toarele:
+Exist? o eroare încercând s? creeze configura?ie.
+Eroare la încercarea de a elibera RAM: {0} - Continuarea ...
+Modul nu poate fi înc?rcat din urm?toarele:
 mod: Inc?rcarea modurilor ...
 mod: Oprirea modurilor ...
 Mod {0} nu are numele. Examina?i codul surs?.
 Mod {0} nu are versiunea.
-{0} v {1} a �nceput
+{0} v {1} a început
 Nicio defini?ie pentru comanda {0}.
 Comanda definit? de
-Ar trebui s? v? deconecta?i de la server �nainte de a v? conecta la un alt server
+Ar trebui s? v? deconecta?i de la server înainte de a v? conecta la un alt server
 Nume de utilizator pentru {0}:
 Parol? pentru {0}:
 Conectat la {0}
-Eroare c�nd �ncerca?i s? v? conecta?i la {0}: {1}
+Eroare când încerca?i s? v? conecta?i la {0}: {1}
 Urm?rit Stack: {2}
 Introduce?i un server FTP.
 Directorul local {0} nu exist?.
 Introduce?i un director local. ".." pentru a reveni.
 Directory {0} nu a fost g?sit.
 Introduce?i un director la distan??. ".." pentru a reveni
-Trebuie s? v? conecta?i la un server �nainte de a schimba directorul
+Trebuie s? v? conecta?i la un server înainte de a schimba directorul
 Director local: {0}
 Director la distan??: {0}
-Trebuie s? v? conecta?i la server �nainte de a ob?ine directorul la distan?? curent.
+Trebuie s? v? conecta?i la server înainte de a ob?ine directorul la distan?? curent.
 Inainte de a efectua ?tergerea, trebuie s? v? conecta?i la server cu privilegii administrative.
 Deconectat de la {0}
-Nu v-a?i conectat �nc? la niciun server
+Nu v-a?i conectat înc? la niciun server
 Se descarc? fi?ierul {0} ...
 Fi?ier desc?rcat {0}.
-Trebuie s? v? conecta?i la server �nainte de a efectua transmisia.
-Introduce?i un fi?ier pentru a fi desc?rcat �n directorul local.
-{0} KB | Modificat �n: {1}
-Trebuie s? v? conecta?i la server �nainte de a enumera toate fi?ierele la distan??.
-Se �ncarc? fi?ierul {0} ...
-Fi?ier �nc?rcat {0}
-Introduce?i un fi?ier de �nc?rcat �n directorul de la distan??. �nc?rca?i <fi?ier> <director>
+Trebuie s? v? conecta?i la server înainte de a efectua transmisia.
+Introduce?i un fi?ier pentru a fi desc?rcat în directorul local.
+{0} KB | Modificat în: {1}
+Trebuie s? v? conecta?i la server înainte de a enumera toate fi?ierele la distan??.
+Se încarc? fi?ierul {0} ...
+Fi?ier înc?rcat {0}
+Introduce?i un fi?ier de înc?rcat în directorul de la distan??. înc?rca?i <fi?ier> <director>
 (Interior:
 Ob?ine directorul local curent
 Ob?ine directorul la distan?? curent
-Se conecteaz? la un server FTP (trebuie s? �nceap? cu "ftp: //" sau "ftps: //")
-Modific? directorul local pentru a fi desc?rcat sau �nc?rcat din
-Modific? directorul la distan?? pentru a fi desc?rcat sau �nc?rcat �n
+Se conecteaz? la un server FTP (trebuie s? înceap? cu "ftp: //" sau "ftps: //")
+Modific? directorul local pentru a fi desc?rcat sau înc?rcat din
+Modific? directorul la distan?? pentru a fi desc?rcat sau înc?rcat în
 ?terge fi?ierul la distan?? de pe server
 Se deconecteaz? de la server
-Descarc? fi?ierul la distan?? �n directorul local folosind text binar sau text
+Descarc? fi?ierul la distan?? în directorul local folosind text binar sau text
 P?r?se?te shell-ul FTP ?i revine la kernel
 Afi?eaz? ecranul de ajutor
 Listeaz? directorul local
 Listeaz? directorul la distan??
-Incarc? fi?ierul local �ntr-un director de la distan?? folosind text binar sau text
-Mesaj FTP: Comanda solicitat? {0} nu este g?sit?. Consulta?i �ajutor� pentru o list? de comenzi disponibile specificate pe shell-ul FTP.
+Incarc? fi?ierul local într-un director de la distan?? folosind text binar sau text
+Mesaj FTP: Comanda solicitat? {0} nu este g?sit?. Consulta?i „ajutor” pentru o list? de comenzi disponibile specificate pe shell-ul FTP.
 Eroare la ob?inerea propriet??ilor pentru adaptor {0}
 Num?rul adaptorului:
 Nume adaptor:
@@ -128,7 +128,7 @@ Pachete Unicast:
 Eroare pachetele de intrare / ie?ire:
 Alias ??nu poate fi acela?i nume ca o comand?.
 Comanda nu a fost g?sit? pentru alias la {0}.
-Acum pute?i rula �{0}� ca comand?: �{1}�.
+Acum pute?i rula „{0}” ca comand?: „{1}”.
 Alias ??{0} nu a fost eliminat.
 Mod nevalid {0}.
 Argumentele injectate, {0}, vor fi programate s? ruleze la repornirea urm?toare.
@@ -140,12 +140,12 @@ Mesaj gol al zilei.
 Blank MAL dup? autentificare.
 Parola de utilizator gre?it?.
 Parolele nu se potrivesc.
-Numele de utilizator a fost schimbat �n {0}!
+Numele de utilizator a fost schimbat în {0}!
 Noul nume introdus este deja g?sit.
 {0} nu este g?sit.
-Configurarea re�nc?rcat?. Este posibil s? fie nevoie s? reporni?i nucleul pentru ca unele modific?ri s? intre �n vigoare.
+Configurarea reînc?rcat?. Este posibil s? fie nevoie s? reporni?i nucleul pentru ca unele modific?ri s? intre în vigoare.
 Una sau mai multe culori nu sunt valide.
-Culorile nu sunt disponibile. Activa?i coaj? colorat? �n configura?ia kernel-ului.
+Culorile nu sunt disponibile. Activa?i coaj? colorat? în configura?ia kernel-ului.
 Screensaver {0} nu a fost g?sit.
 [ Set?ri ale kernelului (func?ionare pe {0}) ]
 Versiunea nucleului:
@@ -160,24 +160,24 @@ Ora / data la col?:
 Numele de utilizator curent:
 Numele gazdei curente:
 Numele de utilizator disponibile:
-Eroare �ncercat s? execute comanda
+Eroare încercat s? execute comanda
 Modific? directorul
 Schimb? parola pentru utilizatorul curent
 ?terge ecranul
 Utiliza?i un shell FTP pentru a interac?iona cu serverele
 Pagina de ajutor
-Listeaz? con?inutul fi?ierului / folderului �n folderul curent
+Listeaz? con?inutul fi?ierului / folderului în folderul curent
 Incuie ecranul cu o parol?
 Te logheaz?
 Creeaz? un director
 Listeaz? informa?ii despre toate interfe?ele disponibile
 Reporni computerul (AVERTIZARE: F?r? sincronizare, deoarece nu este un nucleu final)
-Re�ncarc? fi?ierul de configurare care este editat.
-Salveaz? ecranul dvs. de la �nregistr?ri
+Reîncarc? fi?ierul de configurare care este editat.
+Salveaz? ecranul dvs. de la înregistr?ri
 Configureaz? protectorii de ecran pentru kernel
 Configureaz? teme de kernel
 Afi?eaz? data ?i ora
-Afi?eaz? data ?i ora �n zone
+Afi?eaz? data ?i ora în zone
 Nucleul va fi oprit
 Informatii despre sistem
 * Pute?i utiliza mai multe comenzi folosind colonul dintre comenzi.
@@ -190,19 +190,19 @@ Incuie ecranul cu parola.
 Te scoate din uz.
 Ob?ine?i toate informa?iile din re?ea
 Reporni computerul dvs. simulat.
-Re�ncarc? configura?ia care este modificat? de utilizatorul final sau de instrument.
+Reîncarc? configura?ia care este modificat? de utilizatorul final sau de instrument.
 Culorile nu necesit? o repornire, dar majoritatea set?rilor necesit? repornirea.
-v? arat? un protector de ecran selectat, �n timp ce v? proteja?i ecranul �mpotriva incendiilor.
+v? arat? un protector de ecran selectat, în timp ce v? proteja?i ecranul împotriva incendiilor.
 Afi?eaz? data ?i ora.
-Afi?eaz? data ?i ora �n zone.
+Afi?eaz? data ?i ora în zone.
 Opri computerul dvs. simulat.
 Arat? informa?iile ?i versiunile sistemului.
-A ap?rut o eroare �n coaj?.
+A ap?rut o eroare în coaj?.
 Nu ave?i permisiunea de a utiliza {0}
-Mesaj Shell: Comanda solicitat? {0} nu are voie s? ruleze �n modul de �ntre?inere.
-Mesaj Shell: Comanda solicitat? {0} nu este g?sit?. Consulta?i �ajutor� pentru comenzile disponibile.
+Mesaj Shell: Comanda solicitat? {0} nu are voie s? ruleze în modul de între?inere.
+Mesaj Shell: Comanda solicitat? {0} nu este g?sit?. Consulta?i „ajutor” pentru comenzile disponibile.
 Mesaj Shell: Comanda {0} nu are voie s? se execute la logare.
-Eroare �ncercat s? execute comanda.
+Eroare încercat s? execute comanda.
 datetime: timpul este {0}
 datetime: Ast?zi este {0}
 datetime: Fus orar: {0}
@@ -210,7 +210,7 @@ datetime: Fus orar: {0}
 pentru a ?terge ecranul.
 Se execut? pe {0}
 Nu sunte?i autorizat s? ob?ine?i informa?ii pentru {0}.
-Aceast? comand? este �nvechit? ?i va fi eliminat? �ntr-o versiune viitoare.
+Aceast? comand? este învechit? ?i va fi eliminat? într-o versiune viitoare.
 Nu sunte?i autorizat s? schimba?i parola de {0}, deoarece ?inta a fost un administrator.
 usrmgr: Numele de utilizator {0} este deja g?sit
 ?terge totul din jurnalul de depanare
@@ -232,26 +232,26 @@ Schimb? limba
 >> F?r? excep?ie; ar putea fi o eroare de nucleu. <<
 >> Cadre, fi?iere, linii ?i coloane <<
 > Cadru {0}: Fi?ier: {1} | Linie: {2} | Coloana: {3}
-> Exist? o eroare c�nd �ncerca?i s? ob?ine?i informa?ii cadru. {0}: {1}
-Re�nc?rcare mods.
-Moduri re�nc?rcate.
+> Exist? o eroare când încerca?i s? ob?ine?i informa?ii cadru. {0}: {1}
+Reînc?rcare mods.
+Moduri reînc?rcate.
 Bine a?i venit la Kernel!
 Autentificat cu succes ca <user>
-MOTD / MAL este valabil, dar tipul mesajului nu este valid. Presupun�nd MOTD ...
-Am �ncercat s? citesc MOTD / MAL care este de tipul de mesaj nevalid.
+MOTD / MAL este valabil, dar tipul mesajului nu este valid. Presupunând MOTD ...
+Am încercat s? citesc MOTD / MAL care este de tipul de mesaj nevalid.
 Desc?rcarea s-a finalizat.
-Desc?rcarea a e?uat �n �ncercarea {0}: {1}
-V? rug?m s? folosi?i �ftp� dac? ve?i desc?rca fi?iere de pe serverul FTP.
-Descarc? un fi?ier �n directorul de lucru curent
+Desc?rcarea a e?uat în încercarea {0}: {1}
+V? rug?m s? folosi?i „ftp” dac? ve?i desc?rca fi?iere de pe serverul FTP.
+Descarc? un fi?ier în directorul de lucru curent
 Deconecta?i un dispozitiv de depanare
 Listeaz? dispozitivele de depanare conectate
 Dispozitivul de depanare {0} nu a fost g?sit.
 Dispozitivul {0} deconectat.
-Eroare �n conexiune: {0}
+Eroare în conexiune: {0}
 Debug asculta?i pe toate adresele folosind portul {0}.
 Nu sunt specificate argumente. Sugestie: specifica?i mai multe argumente separate prin spa?ii
 Alias a fost deja g?sit: {0}
-Jurnalul de depanare a fost eliminat. Toate dispozitivele de depanare conectate pot vizualiza �n continuare mesaje.
+Jurnalul de depanare a fost eliminat. Toate dispozitivele de depanare conectate pot vizualiza în continuare mesaje.
 Eliminarea jurnalului de depanare a e?uat: {0}
 Schimbarea directorului a e?uat: {0}
 Preciza?i adresa
@@ -259,13 +259,13 @@ Imposibil de eliminat directorul: {0}
 Fusul orar este specificat incorect.
 Selectarea nevalid? a profilului.
 Incerca?i s? v? conecta?i la {0} cu profilul {1} ...
-Comanda {0} nu a fost g?sit?. Consulta?i comanda �help� pentru lista comenzilor.
+Comanda {0} nu a fost g?sit?. Consulta?i comanda „help” pentru lista comenzilor.
 Nu a reu?it s? ob?ine?i propriet??i IPv6 pentru adaptor {0}. Continuarea ...
 Informa?ii IPv4:
 Informa?ii IPv6:
 Adaptorul {0} nu accept? IPv6. Continuarea ...
 Adaptorul {0} nu accept? IPv4. Sonda a e?uat.
-Se pare c? a?i rulat versiunea de dezvoltare a kernel-ului. In timp ce pute?i vedea aspectele, acesta este actualizat frecvent ?i poate introduce erori. Este recomandat s? r?m�ne?i pe versiunea stabil?.
+Se pare c? a?i rulat versiunea de dezvoltare a kernel-ului. In timp ce pute?i vedea aspectele, acesta este actualizat frecvent ?i poate introduce erori. Este recomandat s? r?mâne?i pe versiunea stabil?.
 Limba selectat? con?ine dou? variante. Alege unul:
 1. Transliterare
 2. Tradus
@@ -273,21 +273,21 @@ Selecta?i alegerea dvs.:
 Alegere nevalid?. Incearc? din nou.
 Sunte?i neautorizat s? seta?i directorul curent pe {0}: {1}
 Calea pe care ai specificat-o este prea lung?.
-CPU: AVERTISMENT: SSE2 va fi necesar �n viitoarele comisii de dezvoltare.
-Colectorul de informa?ii despre desc?rcare de gunoi s-a blocat c�nd �ncerca?i s? ob?ine?i informa?ii despre {0}: {1}
-Eroare �n timp ce �ncerca?i s? ob?ine?i data de compilare a asambl?rii {0}: {1}
-Eroare c�nd �ncerca?i s? seta?i MOTD / MAL: {0}
-Eroare c�nd �ncerca?i s? ob?ine?i MOTD / MAL: {0}
-Eroare c�nd �ncerca?i s? porni?i screensaver-ul, din cauza unei opera?iuni nevalide.
-Re�nc?rcare nu este permis? �n modul sigur.
-Analizarea modurilor nu este permis? �n modul sigur.
+CPU: AVERTISMENT: SSE2 va fi necesar în viitoarele comisii de dezvoltare.
+Colectorul de informa?ii despre desc?rcare de gunoi s-a blocat când încerca?i s? ob?ine?i informa?ii despre {0}: {1}
+Eroare în timp ce încerca?i s? ob?ine?i data de compilare a asambl?rii {0}: {1}
+Eroare când încerca?i s? seta?i MOTD / MAL: {0}
+Eroare când încerca?i s? ob?ine?i MOTD / MAL: {0}
+Eroare când încerca?i s? porni?i screensaver-ul, din cauza unei opera?iuni nevalide.
+Reînc?rcare nu este permis? în modul sigur.
+Analizarea modurilor nu este permis? în modul sigur.
 Listeaz? toate dispozitivele de depanare conectate.
-Eroare c�nd �ncerca?i s? seta?i modul de analiz?. Verifica?i valoarea ?i �ncerca?i din nou. Dac? acest lucru este corect, consulta?i urmele stivei atunci c�nd este activat? depanarea kernel-ului.
+Eroare când încerca?i s? seta?i modul de analiz?. Verifica?i valoarea ?i încerca?i din nou. Dac? acest lucru este corect, consulta?i urmele stivei atunci când este activat? depanarea kernel-ului.
 Calea nu este nici un fi?ier ?i nici un director.
 Creeaz? o alt? copie a unui fi?ier sub un director sau nume diferit.
-Mut? ??un fi?ier �ntr-un alt director
-Pentru a copia fi?ierele �n alt director sau alt nume
-Pentru a muta fi?ierele �ntr-un alt director
+Mut? ??un fi?ier într-un alt director
+Pentru a copia fi?ierele în alt director sau alt nume
+Pentru a muta fi?ierele într-un alt director
 Potrivire {0} ({1}): {2}
 Potrivire {0}: {1}
 Timpul petrecut: {0} milisecunde
@@ -301,7 +301,7 @@ Vede?i dac? pute?i rezolva ecua?iile matematice la timp
 R?spunde?i la comentarii de dragoste sau ur?.
 Dac? cineva a f?cut acest comentariu videoclipului t?u:
 Cum ai r?spunde?
-Selectare nevalid?. Trec�nd la urm?torul comentariu ...
+Selectare nevalid?. Trecând la urm?torul comentariu ...
 Tocmai ai raportat comentariul de dragoste!
 Tocmai ai r?spuns la comentariul de ur?!
 Grozav! Comentariul {0} va fi eliminat pentru asta.
@@ -311,7 +311,7 @@ Scris incorect.
 Rezolvat perfect!
 Solu?ionat incorect.
 RPC ruleaz? deja.
-RPC ascult�nd toate adresele folosind portul {0}.
+RPC ascultând toate adresele folosind portul {0}.
 Pornirea RPC ...
 Se conecteaz? la un server SSH.
 Introduce?i parola pentru {0}:
@@ -321,24 +321,24 @@ Debugging-ul nu este activat.
 {0} nu mai este setat la screensaver implicit.
 Mul?umiri! Acest lucru este interesant.
 To?i vor sus?ine videoclipul dvs. pentru acest lucru.
-V-am oferit fi?ierul special �n e-mail pentru urm?torul videoclip.
-Ascult?, ur�?i, el �ncearc? s? ne ajute, nu �n?el?torie.
-Nu ?tiu c�t de mul?umesc eu ?i prietenii mei pentru acest videoclip.
+V-am oferit fi?ierul special în e-mail pentru urm?torul videoclip.
+Ascult?, urâ?i, el încearc? s? ne ajute, nu în?el?torie.
+Nu ?tiu cât de mul?umesc eu ?i prietenii mei pentru acest videoclip.
 Te iubesc pentru acest videoclip.
 Continu?, nu te opri.
 Te voi ajuta s? ajungi la abona?ii de 1M!
 Prietenii mei au luat computerul fix din cauza ta.
-Fata minunat?! Am �nchis computerul inamicului meu.
+Fata minunat?! Am închis computerul inamicului meu.
 Pentru haters: STOP HATING ON HIM
 Pentru a ur?ri: GET TO WORK
 Nimeni nu va observa acest lucru acum datorit? ghidului t?u de ascundere a obiectelor
-Voi �nceta s? v? vizionez videoclipurile. Abonatul a pierdut.
+Voi înceta s? v? vizionez videoclipurile. Abonatul a pierdut.
 Ce este asta? Acest lucru nu este clar.
 Acest videoclip este cel mai r?u!
 Toat? lumea raporteaz? acest videoclip!
 Prietenii mei sunt furio?i cu tine!
 Iubitorii te vor ura acum pentru asta.
-Prietenul t?u te va ur� pentru asta.
+Prietenul t?u te va urî pentru asta.
 Aceast? fain? m-a f?cut s? m? dezabonez.
 Misiunea a e?uat, respectul -, abonatul -
 Nu mai face acest gen de videoclipuri !!!
@@ -357,20 +357,20 @@ Execut? de la distan?? o comand? pe un computer de la distan??
 - Etapa 2: Detectare hardware
 - Etapa 3: detectarea de mods ?i screensavere
 - Etapa 4: Autentificare
-Se pare c? a?i rulat versiunea de candidat la lansare. Este recomandat s? r?m�ne?i pe versiunea stabil?.
+Se pare c? a?i rulat versiunea de candidat la lansare. Este recomandat s? r?mâne?i pe versiunea stabil?.
 Tip nevalid {0}.
 Dimensiune: {0}
 Directory {0} exist? deja.
-Eroare c�nd �ncerca?i s? v? conecta?i la {0}: expirarea conexiunii sau pierderea conexiunii
+Eroare când încerca?i s? v? conecta?i la {0}: expirarea conexiunii sau pierderea conexiunii
 Calculator pentru calcularea expresiilor.
 Eroare la calcul.
-Se pare c? a?i rulat versiunea apropiat?. De?i este mai sigur de utilizat acum, este recomandat s? r?m�ne?i pe versiunea stabil?.
+Se pare c? a?i rulat versiunea apropiat?. De?i este mai sigur de utilizat acum, este recomandat s? r?mâne?i pe versiunea stabil?.
 Actualizare de sistem
 Se verific? actualiz?rile sistemului ...
 Nou? versiune g?sit?: 
 Il pute?i desc?rca la: 
 Nu exist? notific?ri recente
-C?ut?ri pentru ?iruri specifice �n fi?ierul furnizat
+C?ut?ri pentru ?iruri specifice în fi?ierul furnizat
 Calculeaz? sumele de fi?iere dintr-un director specificat.
 Listeaz? toate mesajele de e-mail ale utilizatorului specific.
 Introdu numele de utilizator sau adresa de e-mail:
@@ -388,40 +388,40 @@ Num?rul mesajului nu poate fi negativ sau zero.
 Num?rul mesajului nu este o valoare numeric?.
 - De la {0}
 - Pentru {0}
-- Trimis la {0} �n {1}
+- Trimis la {0} în {1}
 Mesajul specificat nu este g?sit.
 Debugul la distan?? nu a reu?it: {0}
-Preg?tirea profilurilor ... Poate dura c�teva minute ...
+Preg?tirea profilurilor ... Poate dura câteva minute ...
 Nume gazd?, nume de utilizator, tip de date, codificare, criptare, protocoale
-Eroare la �ncercarea de a executa scriptul: {0}
-Scrie text �n consol?
+Eroare la încercarea de a executa scriptul: {0}
+Scrie text în consol?
 Face alegeri pentru utilizatori
-Sun? �n 'n' Hz ?i timp �n 'n' milisecunde
+Sun? în 'n' Hz ?i timp în 'n' milisecunde
 unde <$variabil?> este orice variabil? care va fi folosit? pentru stocarea r?spunsului
 Frecven?a trebuie s? fie numeric?. Dac? este numeric?, asigura?i-v? c? este >= 37 ?i <= 32767.
 Timpul trebuie s? fie numeric.
-unde <answers> sunt r?spunsuri cu o singur? liter? a �ntreb?rii, separate �n linii clare
-Eroare la �ncercarea de conectare la serverul SSH: {0}
+unde <answers> sunt r?spunsuri cu o singur? liter? a întreb?rii, separate în linii clare
+Eroare la încercarea de conectare la serverul SSH: {0}
 Permite utilizatorului s? intre
 Modific? directorul de e-mail curent
 Imposibil de deschis folderul de e-mail {0}: {1}
 Listeaz? directoarele din adresa dvs. de e-mail
 Utilizeaz? informa?iile de la Speed ??Dial pentru a v? conecta rapid la orice re?ea
 Selecta?i o adres? pentru a v? conecta la:
-Selec?ia este �n afara domeniului. Selecta?i �ntre 1- {0}. Incearc? din nou.
+Selec?ia este în afara domeniului. Selecta?i între 1- {0}. Incearc? din nou.
 Selec?ia nu este un num?r. Incearc? din nou.
-In timpul valid?rii certificatului, exist? erori de certificat. S-ar putea s? fie prima dat? c�nd v-a?i conectat la server sau s-ar putea ca certificatul s? fi expirat. Iat? o eroare:
+In timpul valid?rii certificatului, exist? erori de certificat. S-ar putea s? fie prima dat? când v-a?i conectat la server sau s-ar putea ca certificatul s? fi expirat. Iat? o eroare:
 E?ti sigur c? vrei s? te conectezi?
-R?spuns nevalid. V? rug?m s? �ncerca?i din nou.
+R?spuns nevalid. V? rug?m s? încerca?i din nou.
 Apelarea rapid? este goal?. Conecta?i-v? la un server pentru a ad?uga o adres? la acesta.
 Apelarea rapid? nu exist?. Conecta?i-v? la un server pentru a ad?uga o adres? la acesta.
 Introdu adresa ?i portul serverului IMAP (<address> sau <address>: [port]):
 Introduce?i adresa ?i portul serverului SMTP (<address> sau <address>: [port]):
-V? solicit? s? completa?i c�mpurile necesare pentru a trimite un mesaj la o adres?
+V? solicit? s? completa?i câmpurile necesare pentru a trimite un mesaj la o adres?
 Trimite un mesaj la o adres?
 Introdu adresa de e-mail a destinatarului:
 Introduce?i subiectul:
-Introdu mesajul t?u mai jos. Scrie?i �EOF� pentru confirmare.
+Introdu mesajul t?u mai jos. Scrie?i „EOF” pentru confirmare.
 Se trimite mesajul ...
 Mesaj trimis.
 Adresa email invalida. Asigura?i-v? c? a?i scris adresa corect ?i c? se potrive?te cu formatul exemplului afi?at:
@@ -432,37 +432,37 @@ Mesajul {0} din {1} ?ters din c?su?a de e-mail. {2} mesaje r?mase pentru a anali
 Editeaz? un fi?ier text
 Creeaz? un nou fi?ier
 Fisierul exist? deja.
-Eroare la �ncercarea de a crea un fi?ier: {0}
+Eroare la încercarea de a crea un fi?ier: {0}
 Deschiderea fi?ierului a e?uat. Ie?ind din coaj? ...
 Comanda editorului de text specificat nu este g?sit?.
 Listeaz? comenzile disponibile
 Ie?e?te editorul de text ?i salveaz? modific?rile nesalvate
-Tip?re?te con?inutul fi?ierului cu numere de linie �n consol?
-Adaug? o nou? linie cu text la sf�r?itul fi?ierului
+Tip?re?te con?inutul fi?ierului cu numere de linie în consol?
+Adaug? o nou? linie cu text la sfâr?itul fi?ierului
 Elimin? num?rul de linie specificat
-Inlocuie?te un cuv�nt sau o fraz? cu altul
-?terge un cuv�nt sau o fraz? din num?rul de linie
+Inlocuie?te un cuvânt sau o fraz? cu altul
+?terge un cuvânt sau o fraz? din num?rul de linie
 ?terge un caracter din num?rul de caractere din linia specificat?
 Linia eliminat?.
 Num?rul de linie specificat {0} nu este un num?r valid.
 Argumentele obligatorii nu sunt transmise la comanda {0}
-Eroare la �ncercarea de a rula comanda: {0}
-Func?ionare �n modul sigur. Etapa de s?rituri ...
+Eroare la încercarea de a rula comanda: {0}
+Func?ionare în modul sigur. Etapa de s?rituri ...
 >> Debug and Chat: versiune
 >> Adresa dvs. este {0}.
 >> Numele t?u este {0}.
-Comanda {0} nu a fost g?sit?. Utiliza?i �/help� pentru a vedea lista.
-Index {0} nevalid. Exist? {1} urme de stiv?. Indicele este bazat pe zero, a?a c? �ncerca?i sc?z�nd cu 1.
+Comanda {0} nu a fost g?sit?. Utiliza?i „/help” pentru a vedea lista.
+Index {0} nevalid. Exist? {1} urme de stiv?. Indicele este bazat pe zero, a?a c? încerca?i sc?zând cu 1.
 F?r? urm? de stiv?
 Afi?eaz? ultima excep?ie de urm?rire a stivei
-Prezint? numele de utilizator curent �n sesiune
+Prezint? numele de utilizator curent în sesiune
 Te deconecteaz? de la depanator
 Debloca?i un dispozitiv de depanare dup? adresa IP
 Bloca?i un dispozitiv de depanare dup? adresa IP
 {0} se poate al?tura din nou la depanare la distan??.
-{0} nu este �nc? blocat.
-Eroare la �nc?rcarea set?rilor
-A ap?rut o eroare la �nc?rcarea set?rilor. Este posibil s? fie nevoie s? verifica?i fi?ierul cu set?ri.
+{0} nu este înc? blocat.
+Eroare la înc?rcarea set?rilor
+A ap?rut o eroare la înc?rcarea set?rilor. Este posibil s? fie nevoie s? verifica?i fi?ierul cu set?ri.
 Selecta?i sec?iunea:
 Setari generale...
 Set?ri hardware ...
@@ -475,7 +475,7 @@ Ie?ire
 Op?iunea specificat? {0} este nevalid?.
 R?spunsul trebuie s? fie numeric.
 Solicita?i argumente la pornire
-Declan?ator mod de �ntre?inere
+Declan?ator mod de între?inere
 Schimba?i parola r?d?cin? ...
 Verifica?i dac? exist? actualiz?ri la pornire
 Sonda lini?tit?
@@ -485,42 +485,42 @@ Afi?a?i numele de utilizator disponibile
 Coaja colorat?
 Comand? de ajutor simplificat?
 Port de depanare
-Desc?rca?i re�ncercarea
+Desc?rca?i reîncercarea
 Inregistra?i numele de utilizator FTP
 Inregistra?i adresa IP FTP
 Returneaz? numai primul profil FTP
-Afi?a?i Ora / Data �n col?ul din dreapta sus
-Screensaver Timeout �n ms
-Cota de dimensiune a depan?rii �n octe?i
+Afi?a?i Ora / Data în col?ul din dreapta sus
+Screensaver Timeout în ms
+Cota de dimensiune a depan?rii în octe?i
 Mod de analiz? a dimensiunii
 Carp? la pornire
 Timp lung ?i dat?
 Arat? fi?ierele ascunse
-S-a introdus o sec?iune nevalid?. V? rog s? v? �ntoarce?i.
+S-a introdus o sec?iune nevalid?. V? rog s? v? întoarce?i.
 Intoarce-te...
 Permite
 Dezactiveaz?
-A fost introdus un num?r de cheie nevalid. V? rog s? v? �ntoarce?i.
+A fost introdus un num?r de cheie nevalid. V? rog s? v? întoarce?i.
 Scrie?i parola de root care trebuie setat?. Nu v? face?i griji; parola sunt afi?ate ca stele.
-Activa?i �Schimba?i parola r?d?cin?� pentru a utiliza aceast? op?iune. V? rog s? v? �ntoarce?i.
+Activa?i „Schimba?i parola r?d?cin?” pentru a utiliza aceast? op?iune. V? rog s? v? întoarce?i.
 Schimba?i parola r?d?cin??
 Seta?i parola r?d?cin? ...
 Scrie?i un port de depanare la distan??. Trebuie s? fie numeric? ?i s? nu fie deja utilizat?. In caz contrar, depanatorul la distan?? nu va reu?i s? deschid? portul.
-Scrie?i de c�te ori comanda �� ob?ine?i �� ar trebui s? re�ncerce desc?rc?rile nereu?ite. Trebuie s? fie numeric?.
-Scrie?i c�nd s? lansa?i screensaver dup? milisecunde specificate. Trebuie s? fie numeric?.
-Scrie?i c�te octe?i poate stoca jurnalul de depanare. Trebuie s? fie numeric?.
+Scrie?i de câte ori comanda „„ ob?ine?i ”„ ar trebui s? reîncerce desc?rc?rile nereu?ite. Trebuie s? fie numeric?.
+Scrie?i când s? lansa?i screensaver dup? milisecunde specificate. Trebuie s? fie numeric?.
+Scrie?i câte octe?i poate stoca jurnalul de depanare. Trebuie s? fie numeric?.
 R?spunsul poate s? nu fie negativ.
 R?spunsul este nevalid. Verifica?i pentru a v? asigura c? r?spunsul este numeric pentru intr?rile de configurare care au nevoie de numere ca r?spunsuri.
 Variabila {0} nu se g?se?te pe niciunul dintre module.
 Modific? configura?ia nucleului
 Set?ri Screensaver ...
 Activa?i 255 de culori
-Dori?i s? r?m�ne?i conectat?
-Alegere nevalid?. Presupun�nd c? nu ...
+Dori?i s? r?mâne?i conectat?
+Alegere nevalid?. Presupunând c? nu ...
 Schimba?i cultura la schimbarea limbii
 Text afi?at
 Scrie?i orice text dori?i s? fie afi?at. Mai scurt este mai bine.
-Nu s-a �nc?rcat {0}
+Nu s-a înc?rcat {0}
 Eroare la executarea comenzii de depanare la distan?? {0}: {1}
 Adaug? utilizatori
 Adaug? aliasuri la comenzi
@@ -530,23 +530,23 @@ Modific? MAL, MOTD dup? autentificare
 Modific? MOTD, Mesajul Zilei
 Schimb? numele de utilizator
 Gestiona?i permisiunile pentru utilizatori
-Re�ncarc? fi?ierul screensaver �n KSMods
+Reîncarc? fi?ierul screensaver în KSMods
 Elimin? un utilizator din list?
 Aliasul a fost eliminat {0} cu succes.
 Nu s-a putut verifica actualiz?rile.
-Nu mai exist? utilizatori �n list?.
+Nu mai exist? utilizatori în list?.
 Setarea limbii nu a reu?it.
-Eroare la �ncercarea de a respinge notificarea.
+Eroare la încercarea de a respinge notificarea.
 usrmgr: Nu s-a putut crea numele de utilizator {0}: {1}
 Nu s-a redenumit utilizatorul. {0}
 Una dintre listele de permisiuni nu con?ine numele de utilizator {0}.
-Nu s-au putut �nc?rca permisiunile din fi?ier: {0}
+Nu s-au putut înc?rca permisiunile din fi?ier: {0}
 Nu s-a putut schimba numele gazdei: {0}
 Utilizator nu a fost g?sit
 Nu s-a putut modifica parola numelui de utilizator: {0}
 Copierea fi?ierului sau a directorului nu a reu?it: {0}
 Nu s-a putut muta fi?ierul sau directorul: {0}
-Imposibil de g?sit fi?ierul care s? corespund? ?irului �{0}�: {1}
+Imposibil de g?sit fi?ierul care s? corespund? ?irului „{0}”: {1}
 Desc?rcarea nu a reu?it pentru fi?ierul {0}.
 Listarea fi?ierelor la distan?? nu a reu?it: {0}
 Introduce?i un fi?ier sau un folder de eliminat. Trebuie s? ave?i permisiuni administrative pentru contul dvs. pentru a putea elimina.
@@ -558,13 +558,13 @@ Nu s-a putut elimina toate mesajele trimise de {0}.
 Eroare la trimiterea mesajului.
 Se mut? {0} la {1} ...
 Mutat cu succes
-Mut? ??fi?ierul sau directorul �n alt fi?ier sau director. Pute?i utiliza acest lucru ?i pentru a redenumi fi?ierele.
-Nu s-a putut muta {0} �n {1}.
+Mut? ??fi?ierul sau directorul în alt fi?ier sau director. Pute?i utiliza acest lucru ?i pentru a redenumi fi?ierele.
+Nu s-a putut muta {0} în {1}.
 Introduce?i o cale surs? ?i o cale de destina?ie.
-Se copiaz? {0} �n {1} ...
+Se copiaz? {0} în {1} ...
 Copiat cu succes
-Copiaz? fi?ierul sau directorul �n alt fi?ier sau director.
-Copierea {0} �n {1} nu a reu?it.
+Copiaz? fi?ierul sau directorul în alt fi?ier sau director.
+Copierea {0} în {1} nu a reu?it.
 Mut? ??un mesaj
 Mut? ??toate mesajele de la destinatar
 Toate mesajele trimise de {0} sunt mutate cu succes.
@@ -576,42 +576,42 @@ Vremea: {0}
 Presiune: {0}
 Umiditate: {0}
 Pute?i ob?ine propria cheie API la https://home.openweathermap.org/api_keys.
-Pute?i consulta oric�nd http://bulk.openweathermap.org/sample/city.list.json.gz pentru lista ora?elor cu ID-urile lor.
+Pute?i consulta oricând http://bulk.openweathermap.org/sample/city.list.json.gz pentru lista ora?elor cu ID-urile lor.
 Unitate preferat? pentru temperatur?
 Kelvin
 Imperial (Fahrenheit)
 Metric? (Celsius)
-Configura?i nucleul astfel �nc�t s? v? solicite argumentul la pornire.
-Declan?eaz? modul de �ntre?inere. Aceasta dezactiveaz? mai multe conturi.
+Configura?i nucleul astfel încât s? v? solicite argumentul la pornire.
+Declan?eaz? modul de între?inere. Aceasta dezactiveaz? mai multe conturi.
 La fiecare pornire, va verifica actualiz?rile.
-C�nd schimba?i limba, modifica?i numele lunii, calendarul etc.
+Când schimba?i limba, modifica?i numele lunii, calendarul etc.
 Dac? nucleul este pornit, acesta va seta parola de root.
 P?stra?i mesajele de sondare hardware t?cute.
-Afi?a?i mesajul zilei �nainte de a afi?a ecranul de conectare.
-?terge?i ecranul �nainte de a afi?a ecranul de conectare.
+Afi?a?i mesajul zilei înainte de a afi?a ecranul de conectare.
+?terge?i ecranul înainte de a afi?a ecranul de conectare.
 Afi?eaz? utilizatorii disponibili, dac? este activat.
 Ofer? suport pentru culoarea nucleului
 Comand? de ajutor simplificat? pentru toate cochilii
-Dac? se �nregistreaz? sau nu numele de utilizator FTP.
-Dac? se �nregistreaz? sau nu adresa IP FTP.
-Alege?i primul profil numai atunci c�nd v? conecta?i.
+Dac? se înregistreaz? sau nu numele de utilizator FTP.
+Dac? se înregistreaz? sau nu adresa IP FTP.
+Alege?i primul profil numai atunci când v? conecta?i.
 Activeaz? 255 de culori pentru ColorMix.
 Activeaz? suportul de 255 culori pentru Disco.
 Activeaz? suportul de 255 de culori pentru GlitterColor.
 Activeaz? 255 de culori pentru linii.
-Ora ?i data vor fi afi?ate �n col?ul din dreapta sus al ecranului
-Dac? este activat, nucleul va analiza �ntregul folder pentru dimensiunea sa total?. Altfel, va analiza doar suprafa?a.
+Ora ?i data vor fi afi?ate în col?ul din dreapta sus al ecranului
+Dac? este activat, nucleul va analiza întregul folder pentru dimensiunea sa total?. Altfel, va analiza doar suprafa?a.
 Activeaz? ocularitatea la pornire
-Ora ?i data vor fi mai lungi, ar?t�nd numele lunii complete etc.
+Ora ?i data vor fi mai lungi, ar?tând numele lunii complete etc.
 Afi?eaz? fi?ierele ascunse.
-Selecta?i unitatea preferat? pentru temperatur? (acest lucru se aplic? numai comenzii �vreme�)
+Selecta?i unitatea preferat? pentru temperatur? (acest lucru se aplic? numai comenzii „vreme”)
 Modul {0} s-a oprit
 {0} v {1} oprit
 Mod {0} nu are numele piesei. Analiza modului a e?uat. Examina?i codul surs?.
 Mod {0} nu are comanda. Analiza modului a e?uat. Examina?i codul surs?.
-Trebuie s? activa?i modul de depanare �nainte de a putea ?terge jurnalul de depanare.
-{0} mesaje noi au sosit �n c?su?a de e-mail.
-Deschide?i �lsmail� pentru a le vedea.
+Trebuie s? activa?i modul de depanare înainte de a putea ?terge jurnalul de depanare.
+{0} mesaje noi au sosit în c?su?a de e-mail.
+Deschide?i „lsmail” pentru a le vedea.
 Imposibil de eliminat fi?ierul: {0}
 Elimin? un director sau un fi?ier
 Nu se poate elimina {0} deoarece nu exist?.
@@ -632,15 +632,15 @@ Modific? atributul unui fi?ier
 Fi?ierul nu a fost g?sit.
 unde <atribute> este una dintre urm?toarele:
 Fi?ierul este un fi?ier normal
-Fi?ierul este un fi?ier numai �n citire
+Fi?ierul este un fi?ier numai în citire
 Fi?ierul este un fi?ier ascuns
 Fi?ierul este o arhiv?. Folosit pentru copii de rezerv?.
-Atributul �{0}� este nevalid.
+Atributul „{0}” este nevalid.
 Atributul a fost ad?ugat cu succes.
 Atributul a fost eliminat cu succes.
 Nu s-a putut ad?uga atributul.
 Eliminarea atributului nu a reu?it.
-Inlocuie?te un cuv�nt sau o fraz? cu altul dintr-o linie
+Inlocuie?te un cuvânt sau o fraz? cu altul dintr-o linie
 Nivelul de culoare ro?ie a fost dep??it. A fost {0}.
 Nivelul de culoare verde a fost dep??it. A fost {0}.
 Nivelul culorii albastru a fost dep??it. A fost {0}.
@@ -654,59 +654,59 @@ Deblocarea {0} nu a reu?it.
 {0} nu se poate al?tura acum depan?rii la distan??.
 Blocarea {0} nu a reu?it.
 Ciclul culorilor
-Discoteca va cicla culorile atunci c�nd este activat?. In caz contrar, selecta?i culorile aleatorii.
+Discoteca va cicla culorile atunci când este activat?. In caz contrar, selecta?i culorile aleatorii.
 Introduce?i c?ile de fi?iere c?tre ata?amente. Ap?sa?i ENTER pe o cale goal? pentru a confirma.
 Deschide un mesaj criptat
 Scrie?i parola pentru ID-ul cheii {0}
 Trimite un mesaj criptat la o adres?
-V? solicit? s? completa?i c�mpurile necesare pentru a trimite un mesaj criptat la o adres?
+V? solicit? s? completa?i câmpurile necesare pentru a trimite un mesaj criptat la o adres?
 Se descarc? din {0} ...
-Afi?a?i bara de progres �n timp ce desc?rca?i sau �nc?rca?i din comanda �ob?ine?i� sau �pune?i�
-Dac? este adev?rat, face ca �ob?ine?i� sau �pune?i� s? afi?eze bara de progres �n timp ce desc?rca?i sau �nc?rca?i.
+Afi?a?i bara de progres în timp ce desc?rca?i sau înc?rca?i din comanda „ob?ine?i” sau „pune?i”
+Dac? este adev?rat, face ca „ob?ine?i” sau „pune?i” s? afi?eze bara de progres în timp ce desc?rca?i sau înc?rca?i.
 Incarc? un fi?ier pe site-ul web specificat
 Pings o adres?
-Se �ncarc? {0} �n {1} ...
+Se încarc? {0} în {1} ...
 Inc?rcarea s-a finalizat.
-V? rug?m s? folosi?i �ftp� dac? urmeaz? s? �nc?rca?i fi?iere pe serverul FTP.
-Inc?rcarea nu a reu?it �n �ncercarea {0}: {1}
-Scrie?i de c�te ori comanda �pune� ar trebui s? re�ncerce �nc?rc?rile nereu?ite. Trebuie s? fie numeric?.
+V? rug?m s? folosi?i „ftp” dac? urmeaz? s? înc?rca?i fi?iere pe serverul FTP.
+Inc?rcarea nu a reu?it în încercarea {0}: {1}
+Scrie?i de câte ori comanda „pune” ar trebui s? reîncerce înc?rc?rile nereu?ite. Trebuie s? fie numeric?.
 Este posibil ca adresa s? nu fie goal?.
 Eroare la ping {0}: {1}
-Ping a reu?it �n {0} ms.
-Num?rul de linie specificat nu poate fi mai mare dec�t ultimul num?r de linie de fi?ier.
+Ping a reu?it în {0} ms.
+Num?rul de linie specificat nu poate fi mai mare decât ultimul num?r de linie de fi?ier.
 Se simte ca: {0}
 Temperatur?: {0}
-Viteza v�ntului: {0}
-Direc?ia v�ntului: {0}
+Viteza vântului: {0}
+Direc?ia vântului: {0}
 Activeaz? suportul de 255 culori pentru Dissolve.
 Activeaz? suportul de culoare adev?rat? pentru Dissolve.
-Ap?sa?i orice tast? pentru a reveni �napoi.
+Ap?sa?i orice tast? pentru a reveni înapoi.
 Imposibil de creat dosarul de po?t? electronic? {0}: {1}
-Realizeaz? un director �n directorul de lucru curent
+Realizeaz? un director în directorul de lucru curent
 Elimin? un director din directorul de lucru curent
 Dosarul de po?t? electronic? {0} nu a fost g?sit.
 Imposibil de ?ters dosarul de e-mail {0}: {1}
-{0}, creat �n {1} {2}, modificat �n {3} {4}
+{0}, creat în {1} {2}, modificat în {3} {4}
 Verific? s?n?tatea fi?ierului
 Hash-urile sunt malformate.
 Hash-urile nu se potrivesc.
 Hash meci.
 Redenume?te un folder
-Aceast? sec?iune listeaz? toate set?rile generale ale nucleului, �n principal pentru �ntre?inerea nucleului.
+Aceast? sec?iune listeaz? toate set?rile generale ale nucleului, în principal pentru între?inerea nucleului.
 Aceast? sec?iune modific? comportamentul sondei hardware.
-Aceast? sec?iune reprezint? set?rile de conectare. Deconecta?i-v? de la cont pentru ca modific?rile s? intre �n vigoare.
+Aceast? sec?iune reprezint? set?rile de conectare. Deconecta?i-v? de la cont pentru ca modific?rile s? intre în vigoare.
 Aceast? sec?iune listeaz? set?rile shell-ului.
 Aceast? sec?iune listeaz? set?rile de re?ea, cum ar fi shell-ul FTP, set?rile de comand? legate de re?ea ?i set?rile de depanare la distan??.
 Aceast? sec?iune listeaz? toate protectorile de ecran ?i set?rile disponibile.
-Set?rile care nu se �ncadreaz? �n sec?iunile lor corespunz?toare ajung aici.
+Set?rile care nu se încadreaz? în sec?iunile lor corespunz?toare ajung aici.
 Testeaz? modurile oferind fi?iere mod
 Deschide un shell de test
 Activeaz? modul de depanare
 Invit?ri pentru argumente
 * Ap?sa?i orice tast? pentru a porni nucleul sau ESC pentru a ie?i.
-Nu a putut porni �{0}�: {1}
+Nu a putut porni „{0}”: {1}
 Afi?a?i previzualizarea mesajului e-mail
-C�nd afi?a?i mesaje de e-mail, afi?a?i previzualizarea corpului.
+Când afi?a?i mesaje de e-mail, afi?a?i previzualizarea corpului.
 Culori personalizate ...
 Culoare de intrare
 Culoarea licen?ei
@@ -723,19 +723,377 @@ Stil de promptare prin e-mail
 Stil de prompt SFTP
 Activeaz? suportul de 255 de culori pentru BouncingBlock.
 Activeaz? suportul de culoare adev?rat? pentru BouncingBlock.
-Se �ncearc? accesarea unei c?i nevalide.
+Se încearc? accesarea unei c?i nevalide.
 ?terge fi?ierul text
 Iese din editorul de text
-Interog? un caracter �ntr-o linie specificat? sau �n toate liniile
+Interog? un caracter într-o linie specificat? sau în toate liniile
 Verificarea actualiz?rilor este dezactivat? deoarece rula?i o versiune de dezvoltare.
 Activeaz? sau dezactiveaz? func?ia de salvare automat? a editorului de text.
-Dac? salvarea automat? este activat?, fi?ierul text va fi salvat pentru fiecare �n� secund?.
+Dac? salvarea automat? este activat?, fi?ierul text va fi salvat pentru fiecare „n” secund?.
 Activa?i salvarea automat? a editorului de text
 Interval de salvare automat? a editorului de text
 Salveaz? fi?ierul
 Inregistra?i chatul pentru jurnalul de depanare
 Inregistreaz? chat-ul de depanare la distan?? pentru jurnalul de depanare.
-Int�rziere �n milisecunde
-C�te milisecunde trebuie s? a?tep?i �nainte de a scrie urm?toarea scriere?
+Intârziere în milisecunde
+Câte milisecunde trebuie s? a?tep?i înainte de a scrie urm?toarea scriere?
 V? permite s? utiliza?i un server FTP SSH
-F?r? ajutor pentru comanda �{0}�.
+F?r? ajutor pentru comanda „{0}”.
+Secvență VT nevalidă pentru culoarea RGB.
+Culoarea secundei
+Bara de culoare a minutelor
+Bara de culoare a orelor
+Culoarea informațiilor
+Bifează pentru a schimba culoarea
+Activează suportul de 255 culori pentru ProgressClock.
+Activează suportul de culoare adevărată pentru ProgressClock.
+Culoarea barei de progres secunde. Poate fi 1-16, 1-255 sau „1-255;1-255;1-255”.
+Bara de progres a culorii minutelor. Poate fi 1-16, 1-255 sau „1-255;1-255;1-255”.
+Bara de progres a culorii orelor. Poate fi 1-16, 1-255 sau „1-255;1-255;1-255”.
+Culoarea informațiilor despre dată. Poate fi 1-16, 1-255 sau „1-255;1-255;1-255”.
+Dacă ciclarea culorilor este activată, câte bifuri înainte de a schimba culorile în ProgressClock? 1 bifă = 0,5 secunde
+ProgressClock va selecta culorile aleatorii dacă este activat. În caz contrar, utilizați culori din config.
+Creează o nouă temă
+Se creează o nouă temă „{0}”.
+Salvați tema în directorul curent
+Salvați tema într-un alt director ...
+Selectați culoarea folosind tastele "<-" și "->". Apăsați ENTER pentru a ieși. Apăsați „i” pentru a insera manual numărul culorii.
+Selectați culoarea folosind tastele "<-" și "->". Utilizați tastele săgeată în sus și săgeată în jos pentru a selecta între gamele de culori. Apăsați ENTER pentru a ieși. Apăsați „i” pentru a insera manual numărul culorii.
+Bine ați venit la kernel! - Versiunea {0}
+Culoare de avertizare
+Culoare opțiune
+Introduceți numărul de culoare de la 0 la 255:
+Utilizați „hwinfo” pentru informații extinse despre hardware.
+Tipărește informații despre hardware
+Informații despre CPU:
+Numele procesorului:
+Viteza procesorului:
+Biti de procesor:
+Rev. procesor:
+Topologia procesorului:
+Tipul procesorului:
+Reper al procesorului:
+Procesor BogoMips:
+Dimensiunea cache-ului procesorului L2:
+Dimensiunea cache-ului procesorului L3:
+Caracteristici ale procesorului:
+Informații despre HDD:
+Numele unității:
+Model de unitate:
+Furnizorul de vehicule:
+Viteza de rulare:
+Dimensiunea unității:
+Seria unității:
+ID-ul unității:
+Număr partiții unitate:
+ID-ul partiției:
+Sistem de fișiere partiție:
+Mărimea partiției:
+Partiție utilizată:
+Informații RAM:
+RAM liber:
+RAM total:
+RAM folosită:
+Informații despre GPU:
+Nume GPU:
+Driver GPU:
+Versiunea GPU:
+GPU: Una sau mai multe dintre plăcile grafice nu au putut fi sondate. Se afișează informații oricum ...
+>> Bine ai venit! Aceasta este prima dată când intrați în depanare și chat la distanță. Folosiți „/ register <name>” pentru a vă înregistra.
+Dispozitivul există deja.
+Nu există un astfel de dispozitiv.
+Setează numele de utilizator al dispozitivului
+Sunteți deja înregistrat.
+Bună ziua, {0}!
+Tipărește conținutul fișierului pe consolă
+Sau, treceți „listcities” la această comandă.
+Intrarea există deja.
+Înfășoară ieșirea consolei
+Comanda nu poate fi împachetată. Aceste comenzi pot fi împachetate:
+Extrage o arhivă ZIP
+Creează o arhivă ZIP
+Încorporat în {0}
+Eroare la descărcarea datelor de depanare
+Există o eroare la descărcarea datelor de depanare. Verificați conexiunea la internet.
+Finalizarea modului {0} nu a reușit: {1}
+Listează toate evenimentele declanșate
+Directorul curent
+Setează directorul curent al shell-ului. Scrieți o cale absolută către orice director existent.
+Înfășurați ieșirile listei
+Înfășoară ieșirile listei dacă pare prea lungă pentru geometria actuală a consolei.
+Ping!
+{0} v-a trimis ping.
+Salvați tema în directorul curent ca ...
+Salvați tema într-un alt director ca ...
+Specificați numele temei:
+Utilizatorul {0} a fost adăugat la lista „{1}”.
+Utilizatorul {0} a fost eliminat din lista „{1}”.
+Mod nevalid {0}
+Utilizatorul deja există
+Încarcă tema din ...
+Încărcați temă din teme pre-construite ...
+Specificați numele fișierului tematic fără extensia .json:
+Deschide o arhivă ZIP
+Iese din shell-ul ZIP
+Listează toate fișierele din arhivă
+Extrage un fișier într-un director specificat sau un director curent
+Schimbă directorul arhivei
+Comanda ZIP shell specificată nu este găsită.
+Directorul {0} nu există
+Directorul de arhivare {0} nu există
+Numărul maxim de poziții
+Câte poziții sunt aprinse înainte de estomparea?
+Activează 255 de culori pentru brichetă.
+Activează suportul adevărat al culorii pentru Lighter.
+Culoarea intrării listei
+Culoarea valorii listei
+Se conectează la un server SSH pentru a executa o comandă.
+Această secțiune listează setările de screensaver pentru
+Specificator de culoare nevalid. Asigurați-vă că are formatul corect, ceea ce înseamnă un număr de la 0 la 255 dacă utilizați 255 de culori sau o secvență VT dacă utilizați culoarea adevărată după cum urmează:
+Eroare în shell-ul de testare: {0}
+Setează o variabilă la o valoare într-un script
+Un prompt de raportare a erorilor.
+Vă mulțumim că ne-ați ridicat un bilet! Selectați ce fel de cerere aveți.
+O problemă
+O cerere de caracteristică
+O intrebare
+Trebuie să specificați o caracteristică.
+Puneți o întrebare, notați-vă ideea sau raportați o problemă.
+Trebuie să scrieți cererea dvs.
+A apărut o eroare în shell-ul FTP:
+Eroare de shell FTP necunoscută:
+A apărut o eroare în shell-ul SFTP:
+Eroare de shell SFTP necunoscută:
+Afișați bannerul SSH
+Afișează bannerul serverului SSH la conexiune.
+Cum vrei să te autentifici?
+Fișier cu cheie privată
+Parola
+Introduceți fraza de acces pentru cheia {0}:
+Introduceți locația cheii private pentru {0}. Scrieți „q” pentru a termina de adăugat chei:
+Neutralizat o cale inexistentă.
+Fișierul cheie {0} nu există.
+Eroare la încercarea de a adăuga cheie privată:
+Apăsați pe „t” pentru a comuta la modul de culoare 255.
+Apăsați „t” pentru a comuta la modul de culoare adevărat.
+Această secțiune vă permite să alegeți ce tip de culoare doriți să modificați.
+Se pare că nu ai niciun utilizator în afară de root. Asta e rău. Vă vom ghida cum să creați unul.
+Scrieți numele dvs. de utilizator.
+Trebuie să vă scrieți numele de utilizator.
+Scrieți parola.
+Trebuie să scrieți parola.
+Selectați tipul de cont.
+Administrator: Acest tip de cont are cea mai mare putere în nucleu, permițându-vă să utilizați programe de gestionare a sistemului.
+Utilizator normal: acest tip de cont este puțin mai restricționat decât administratorii.
+Felicitări! Ați făcut un cont nou! Pentru a termina acest lucru, conectați-vă ca noul dvs. cont.
+Consultați manualul de screensaver sau codul sursă pentru informații.
+mod: Nu s-au detectat modificări.
+Comenzi generale:
+Comenzi Mod:
+Comenzi alias:
+modul de întreținere
+Căutați directoare
+Grup de căi separate de două puncte. Funcționează la fel ca PATH. Scrieți o cale completă către un folder sau un nume de folder. Când ați terminat, scrieți „q”. Scrieți un semn minus lângă cale pentru a elimina un director existent.
+Fără comenzi mod.
+Fără comenzi alias.
+Valoarea culorii este în afara intervalului 0-255.
+Comanda împachetabilă nu este găsită.
+Interogă un cuvânt într-o linie specificată sau în toate liniile
+{0} din {1} descărcate.
+{0} din {1} încărcate.
+Tipărește un șir pentru a consola folosind tipul de culoare și tipărirea pe linie
+Tipărește un șir pentru a consola folosind tipul de culoare și tipărirea pe linie cu suport pentru format
+Tipărește un șir de depanare
+Tipărește un șir pentru depanare cu suport pentru format
+Testează facilitatea de eroare a nucleului
+Testează facilitatea de eroare a nucleului cu suport pentru format
+Testează traducerea unui șir care există în resurse într-un limbaj specific
+Tipărește un șir pentru a consola și analizează substituenții găsiți
+Testează facilitatea de exprimare regulată
+Criptează un șir folosind
+Pornește toate modificările
+Oprește toate modificările
+Activează sau dezactivează depanarea
+Activează sau dezactivează depanarea la distanță
+Testează secvența VT pentru 255 de culori
+Testează secvența VT pentru culoarea adevărată
+Trimite o notificare pentru a testa receptorul
+Testează data de tipărire utilizând diferite calendare
+Listează toate paginile de cod acceptate
+Ce variabile de compilare sunt activate în aplicație?
+Teste care ridică evenimentul specific
+Teste de testare a hardware-ului
+Testează colectorul de gunoi
+Iese din shell-ul de test și pornește nucleul
+Iese din shell-ul de testare și oprește nucleul
+Salvează directorul curent în fișierul de configurare a nucleului
+Testează scriitorul listei cu șirul și matricea de șiruri
+Testează scriitorul listei cu numărul întreg și matricea numerelor întregi
+Testează scriitorul de liste cu matricea char și char
+Lista de șiruri normale:
+Lista de șiruri de matrice:
+Lista numerelor întregi normale:
+Lista numerelor întregi:
+Lista de caractere normale:
+Lista de caractere matrice:
+Activați RPC
+Port RPC
+Dacă se activează sau nu RPC.
+Scrieți un port RPC. Trebuie să fie numerică și să nu fie deja utilizată. În caz contrar, RPC nu va reuși să deschidă portul.
+Nu pornește RPC deoarece este dezactivat.
+Listele susțin culturi
+Căutați șirul specificat în fișierul furnizat folosind expresii regulate
+Vedeți dacă puteți apăsa o tastă la timp
+Utilizatorul nu a furnizat nicio informație în timp util.
+Dificultate nevalidă
+Caracterul nu este apăsat la timp.
+Ați apăsat caracterul potrivit!
+Ați apăsat caracterul greșit.
+Apăsați ESC pentru a ieși.
+Obține informații despre dată și oră
+Milisecunde:
+Secunde:
+Minute:
+Ore:
+Zile:
+Luni:
+An:
+Ziua anului:
+Zi a săptămânii:
+Binar:
+Ora locala:
+Timpul universal:
+Unix Time:
+Nu s-au putut analiza informațiile de dată pentru
+Asigurați-vă că formatul este corect.
+Data:
+Timp:
+Setează permisiunile de fișiere. Acest lucru este acceptat numai pe serverele FTP care rulează Unix.
+Setează tipul pentru această sesiune
+Trebuie să vă conectați la server înainte de a efectua operațiuni cu sistemul de fișiere.
+Nu s-au setat permisiunile de {0} la {1}.
+Permisiuni setate cu succes pentru fișier
+Tipul de date setat la ASCII!
+Tipul de date setat la Binar!
+Tipul de date este nevalid.
+Rețineți că majoritatea fișierelor nu vor fi descărcate sau încărcate în mod corespunzător folosind acest mod, așa că vă recomandăm să folosiți modul binar în majoritatea situațiilor.
+Încercarea de a trimite o comandă RPC în timp ce RPC nu a început.
+Întârziere de decolorare în milisecunde
+Max Fade Steps
+Câte milisecunde trebuie să așteptați înainte de a estompa textul?
+Câți pași de decolorare să faci?
+Sonda completă
+Dacă este adevărat, sondează tot hardware-ul; altfel, va testa doar hardware-ul necesar.
+Eliminarea screensaverului {0} nu a reușit din configurare.
+Obține setări personalizate de economisire
+Setează setările personalizate de economisire
+Setările sunt setate cu succes pentru screensaver
+Nu s-a putut seta o setare pentru screensaver
+Această secțiune vă permite să gestionați crearea parolei root.
+Deschide un shell RSS pentru a citi fluxurile
+Iese din shell-ul RSS și revine la kernel
+Modifică legătura de alimentare
+Listează toate fluxurile
+Citește un flux într-un browser web
+Comanda RSS shell specificată nu este găsită.
+Feed RSS2 nevalid.
+Feed RSS1 nevalid.
+Feed Atom nevalid.
+Introduceți o adresă URL a fluxului RSS:
+Tipul de flux RSS nevalid.
+Eroare shell necunoscută:
+Obține informațiile despre articol
+Numărul articolului nu poate fi mai mare decât articolele disponibile.
+Titlu:
+Legătură:
+Obține informațiile despre feed
+Descriere:
+Tipul de alimentare:
+Număr de articole:
+Articolul nu are o legătură!
+Nu s-a putut face o listă a intrărilor sistemului de fișiere pentru director
+Mod sortare sistem de fișiere
+Direcția de sortare a sistemului de fișiere
+Controlează modul de sortare a fișierelor.
+Controlează direcția sortării sistemului de fișiere, indiferent dacă este ascendent sau descendent.
+Ordine crescătoare
+Ordine descrescatoare
+Numele complet
+Mărime fișier
+Timpul creației
+Ultima oră de scriere
+Ultimul timp de acces
+Scrie din nou întârziere în milisecunde
+Câte milisecunde trebuie să așteptați înainte de a scrie din nou text?
+Scrieți orice text doriți să fie afișat. Mai mult este mai bine.
+Viteza minimă de scriere în WPM
+Viteza maximă de scriere în WPM
+Probabilitatea de greșeală de scriere în procente
+Salvarea directorului curent nu a reușit: {0}
+Șervețele pentru a schimba direcția
+Activează 255 de culori pentru ștergere.
+Activează suportul de culoare adevărată pentru Ștergere.
+Câte șervețele de făcut înainte de a schimba direcția la întâmplare?
+Etapa terminată în
+Inițializarea internă s-a încheiat în
+Fișierul de referință {0} nu a fost găsit. Este posibil ca acest mod să nu funcționeze corect fără acest fișier.
+Începând mod
+Obține informații despre mod
+Numele comenzii:
+Definiția comenzii:
+Tipul comenzii:
+Comandă strictă?
+Versiunea Mod:
+Modul {0} nu a fost găsit.
+Cultura de
+Ce variantă a {0} este utilizată pentru a schimba numele lunii, calendarul etc.?
+Editorul de text nu a deschis încă un flux de fișiere.
+Șirul a fost înlocuit.
+Unul sau ambele numere nu sunt numerice.
+Cuvânt șters.
+Caracter șters.
+Setări sistem de fișiere ...
+Această secțiune listează setările sistemului de fișiere.
+Bun venit la Setări!
+Eroare la executarea comenzii SSH
+Eroare pe shell SSH
+- Informații despre aplicație
+Activează 255 de culori pentru BouncingText.
+Activează suportul de culoare adevărată pentru BouncingText.
+Testează scriitorul dicționarului cu șirul și matricea de șiruri
+Testează scriitorul dicționarului cu matricea char și char
+Testează scriitorul dicționarului cu întreg și matricea întregi
+Dicționar de șiruri normale:
+Dicționar de șiruri de matrice:
+Dicționar întreg întreg:
+Dicționar întreg de matrice:
+Dicționar normal de caractere:
+Dicționar de matrice de caractere:
+Bine ați venit la Test Shell!
+Afișați progresul operațiunilor sistemului de fișiere
+Arată ce fișier este procesat în timpul operațiunilor sistemului de fișiere
+unde va fi HardwareType
+Fie tipul hardware {0} nu este testat, fie nu este valid.
+Tipul de hardware {0} nu este încă testat. Dacă sunteți sigur că este testat, reporniți nucleul cu depanarea activată.
+Partițiile care nu sunt analizate în listă.
+Mod Hacker
+Dacă este activată, consola verde va fi activată.
+Tipărește un separator
+Tipărește un separator cu suport pentru format
+Tipărește un separator cu suport de culoare
+Tipărește un separator cu suport de culoare și format
+Mereu centrat
+Activează suportul de 255 culori pentru Marquee.
+Activează suportul adevărat al culorii pentru Marquee.
+Scrieți orice text doriți să fie afișat.
+Dacă textul afișat pe marcaj este întotdeauna centrat.
+'q' a renunța.
+Argumentul {0} nu a fost găsit pentru a fi injectat.
+Argumentul liniei de comandă {0} nu a fost găsit.
+Șterge toate setările
+Screensaver a întâmpinat o eroare la afișarea: {0}. Apasă orice tastă pentru a ieși.
+Previzualizare...
+Iată cum va arăta tema dvs.:
+Comenzi împachetabile:
+Mod {0} are o comandă nevalidă. Analiza modului a eșuat. Examinați codul sursă.
+Piese mod:

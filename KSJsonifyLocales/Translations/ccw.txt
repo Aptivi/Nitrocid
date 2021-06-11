@@ -739,3 +739,361 @@ Kuchedwa mu Milliseconds
 Ndi ma millisecond angati amene mungadikire musanapange kulemba kotsatira?
 Amakulolani kugwiritsa ntchito seva ya SSH FTP
 Palibe thandizo pamalamulo "{0}".
+Zotsatira zosavomerezeka za VT zamtundu wa RGB.
+Mtundu wa Masekondi Bar
+Mtundu wa Mphindi Bar
+Mtundu wa Maola Bar
+Mtundu wa Zambiri
+Nkhupakupa kusintha mtundu
+Imathandizira kuthandizira kwamitundu 255 kwa ProgressClock.
+Imathandizira kuthandizira kwamtundu weniweni kwa ProgressClock.
+Mtundu wa masekondi opita patsogolo. Itha kukhala 1-16, 1-255, kapena "1-255;1-255;1-255".
+Mtundu wa mphindi yopita patsogolo. Itha kukhala 1-16, 1-255, kapena "1-255;1-255;1-255".
+Mtundu wa bar yopita patsogolo. Itha kukhala 1-16, 1-255, kapena "1-255;1-255;1-255".
+Mtundu wazidziwitso zatsiku. Itha kukhala 1-16, 1-255, kapena "1-255;1-255;1-255".
+Ngati kupalasa njinga ndikotheka, ndi nkhupakupa zingati musanasinthe mitundu mu ProgressClock? Chongani chimodzi = masekondi 0.5
+ProgressClock idzasankha mitundu yosasintha ngati ikuthandizidwa. Apo ayi, gwiritsani ntchito mitundu kuchokera ku config.
+Amapanga mutu watsopano
+Kupanga mutu watsopano "{0}".
+Sungani Mutu ku Directory Yamakono
+Sungani Mutu ku Buku Lina ...
+Sankhani mtundu pogwiritsa ntchito makiyi a "<-" ndi "->". Dinani ENTER kuti musiye. Dinani "i" kuti muyike nambala yamitundu pamanja.
+Sankhani mtundu pogwiritsa ntchito makiyi a "<-" ndi "->". Gwiritsani ntchito mivi ndikukweza pansi mafungulo kuti musankhe pakati pamitundu yamitundu. Dinani ENTER kuti musiye. Dinani "i" kuti muyike nambala yamitundu pamanja.
+Takulandilani ku ngale! - Mtundu {0}
+Mtundu wochenjeza
+Mtundu wosankha
+Lowetsani nambala yautoto kuyambira 0 mpaka 255:
+Gwiritsani ntchito "hwinfo" kuti mumve zambiri za hardware.
+Zolemba za Hardware
+Zambiri za CPU:
+Dzina la purosesa:
+Purosesa liwiro:
+Mapulogalamu oyendetsa:
+Purosesa Rev:
+Mapulogalamu apamwamba:
+Mtundu wama processor:
+Pulojekiti yofunika kwambiri:
+Mapulogalamu a BogoMips:
+Pulosesa L2 posungira kukula:
+Pulosesa L3 posungira kukula:
+Zojambula:
+Zambiri za HDD:
+Dzina la Galimoto:
+Mtundu woyendetsa:
+Wogulitsa pagalimoto:
+Liwiro la drive:
+Kukula kwa galimoto:
+Kuyendetsa siriyo:
+ID Yoyendetsa:
+Chiwerengero cha magawo pagalimoto:
+Chigawo chogawa:
+Gawo logawanika:
+Kukula kwa magawano:
+Kugawa ntchito:
+Zambiri za RAM:
+RAM yaulere:
+Chiwerengero cha RAM:
+RAM imagwiritsidwa ntchito:
+Zambiri za GPU:
+Dzina la GPU:
+Woyendetsa GPU:
+Mtundu wa GPU:
+GPU: Imodzi kapena angapo amakhadi azithunzi adalephera kufufuzidwa. Kuwonetsa zambiri komabe ...
+>> Takulandirani! Ino ndi nthawi yanu yoyamba kulowa kolowera kutali ndikucheza. Gwiritsani "/ kulembetsa <name>" kulembetsa.
+Chipangizo chilipo kale.
+Palibe chida choterocho.
+Ikani dzina lachinsinsi
+Mwalembetsa kale.
+Wawa, {0}!
+Zosindikiza za fayilo kuti zitonthoze
+Kapena, pitani "listcities" ku lamuloli.
+Kulowera kulipo kale.
+Kukutira zotulutsa za console
+Lamuloli silokulunga. Malamulowa ndi okutidwa:
+Imachotsa zosunga zakale za ZIP
+Amapanga zosungira zakale
+Omangidwa mu {0}
+Cholakwika pakutsitsa zosokoneza
+Pali vuto pamene mukutsitsa zosokoneza. Chongani intaneti yanu.
+Takanika kumaliza mtundu wa {0}: {1}
+Lembani zonse zochitika
+Directory Yamakono
+Ikani chikwatu chomwe chilipo. Lembani njira yamtheradi ku chikwatu chilichonse chomwe chilipo.
+Manga mndandanda wazotsatira
+Kukutira mndandanda wazomwe zatuluka ngati zikuwoneka zazitali kwambiri pa geometry ya console yapano.
+Ping!
+{0} adakumenyani.
+Sungani Mutu ku Directory Yamakono monga ...
+Sungani Mutu ku Buku Lina monga ...
+Nenani dzina lamutu:
+Wogwiritsa {0} awonjezedwa pamndandanda wa "{1}".
+Wogwiritsa {0} wachotsedwa pamndandanda wa "{1}".
+Njira yolakwika {0}
+Wosuta alipo kale
+Tengerani Mutu Kuchokera ...
+Tengerani Mutu Wochokera M'mitu Yomangidwanso ...
+Tchulani dzina la fayilo pamtundu wa .json:
+Itsegula zip archive
+Imachoka mu chipolopolo cha ZIP
+Lembani mafayilo onse mkati mwazosungidwa
+Imachotsa fayilo kumalo osungidwira kapena chikwatu chomwe chilipo
+Kusintha chikwatu chachinsinsi
+Lamulo lachipolopolo la ZIP silinapezeke.
+Directory {0} kulibe
+Zolemba zakale {0} kulibe
+Maudindo A Max Kuwerengera
+Ndi malo angati omwe amayatsidwa asanazime?
+Imathandizira kuthandizira kwamitundu 255 kwa Opepuka.
+Imathandizira kuthandizira kwamtundu weniweni kwa Opepuka.
+Lembani mndandanda wolowera
+Mtundu wamndandanda wamndandanda
+Kulumikiza ku seva ya SSH kuti ikwaniritse lamulo.
+Gawoli limatchulira zosintha zowonera pazithunzi za
+Chosatsimikizira mtundu. Onetsetsani kuti ili pamtundu woyenera, zomwe zikutanthauza nambala kuyambira 0-255 ngati mukugwiritsa ntchito mitundu 255 kapena VT motsata ngati mukugwiritsa ntchito mtundu wowona motere:
+Vuto mu chipolopolo choyesera: {0}
+Ikani chosinthika pamtengo mu script
+Chidziwitso cha cholakwika.
+Zikomo potikonzera tikiti! Sankhani mtundu wa pempho womwe muli nawo.
+Vuto
+Pempho lazinthu
+Funso
+Muyenera kutchula mbali.
+Funsani funso, lembani malingaliro anu, kapena nenani vuto.
+Muyenera kulemba pempho lanu.
+Panali cholakwika mu chipolopolo cha FTP:
+Cholakwika chosadziwika cha FTP:
+Panali cholakwika mu chipolopolo cha SFTP:
+Cholakwika cha SFTP chosadziwika:
+Onetsani chikwangwani cha SSH
+Ikuwonetsa chikwangwani cha seva cha SSH pamalumikizidwe.
+Kodi mukufuna kutsimikizira bwanji?
+Fayilo yachinsinsi
+Chinsinsi
+Lowetsani mawu achinsinsi pa fungulo {0}:
+Lowetsani pomwe pali kiyi wachinsinsi wa {0}. Lembani "q" kuti mutsirize kuwonjezera makiyi:
+Neutralized njira yomwe kulibe.
+Fayilo yayikulu {0} kulibe.
+Cholakwika kuyesera kuwonjezera kiyi wachinsinsi:
+Dinani "t" kuti musinthe mawonekedwe 255.
+Dinani "t" kuti musinthe mawonekedwe owona.
+Gawoli limakupatsani mwayi wosankha mtundu wanji womwe mukufuna kusintha.
+Zikuwoneka kuti mulibe wogwiritsa ntchito kupatula muzu. Izi ndi zoipa. Tikuwongolera momwe mungapangire imodzi.
+Lembani dzina lanu lolowera.
+Muyenera kulemba dzina lanu lolowera.
+Lembani mawu anu achinsinsi.
+Muyenera kulemba achinsinsi.
+Sankhani mtundu wa akaunti.
+Woyang'anira: Mtundu wa akauntiyi uli ndi mphamvu kwambiri mu kernel, yomwe imakulolani kugwiritsa ntchito mapulogalamu oyang'anira makina.
+Wogwiritsa Ntchito: Mtundu wa akauntiyi ndi wocheperako pang'ono kuposa oyang'anira.
+Zabwino zonse! Mwapanga akaunti yatsopano! Kuti mumalize izi, lowetsani ngati akaunti yanu yatsopano.
+Onaninso buku lapa screensaver kapena chinsinsi kuti mumve zambiri.
+Mod: Palibe ma mod apezeka.
+Malamulo onse:
+Malamulo a Mod:
+Alias ​​amalamula:
+Njira Yokonzanso
+Fufuzani Zolemba
+Gulu la njira zolekanitsidwa ndi colon. Imagwira chimodzimodzi ndi PATH. Lembani njira yathunthu ku chikwatu kapena dzina la chikwatu. Mukamaliza, lembani "q". Lembani chizindikiro chochepetsera pafupi ndi njira yochotsera chikwatu chomwe chilipo.
+Palibe malamulo amtundu.
+Palibe maulamuliro.
+Mtengo wamtundu uli kunja kwa 0-255.
+Lamulo lokulunga silikupezeka.
+Kufunsa mawu mu mzere kapena mizere yonse
+{0} mwa {1} dawunilodi.
+{0} mwa {1} adakwezedwa.
+Sindikizani chingwe kuti mutonthoze pogwiritsa ntchito mtundu wamtundu ndi kusindikiza kwa mzere
+Sindikizani chingwe kuti mutonthoze pogwiritsa ntchito mtundu wamtundu ndi kusindikiza kwa mzere ndi mawonekedwe amtundu
+Sindikizani chingwe kuti musinthe
+Sindikizani chingwe kuti musinthe pothandizidwa ndi mtundu
+Imayesa malo olakwika a kernel
+Imayesa malo olakwika a kernel ndikuthandizira mawonekedwe
+Kuyesa kutanthauzira chingwe chomwe chilipo muzinthu zaku chilankhulo china
+Sindikizani chingwe kuti mutonthoze ndikusiyanitsa omwe adapeza
+Imayesa malo owonetsera nthawi zonse
+Imalemba chingwe pogwiritsa ntchito
+Iyamba ma mods onse
+Imasiya ma mods onse
+Ikuthandizira kapena kuyimitsa kusokoneza
+Ikuthandizira kapena kuyimitsa kutalikirana kwakutali
+Imayesa mtundu wa VT wa mitundu 255
+Imayesa momwe VT idayendera mtundu wowona
+Imatumiza zidziwitso kuti ziyese wolandila
+Kuyesa kusindikiza tsiku pogwiritsa ntchito makalendala osiyanasiyana
+Ili pamndandanda zonse zodalirika
+Ndi mitundu iti yamakina yosanjikiza yomwe imathandizidwa pakugwiritsa ntchito?
+Kuyesa kukweza mwambowu
+Kuyesa kuyesa hardware
+Amayesa wokhometsa zinyalala
+Imatuluka pachikopa choyesa ndikuyamba khungu
+Atuluka mu chipolopolo ndikuyesa tsinde
+Imasunga chikwatu chomwe chikupezeka pakasinthidwe ka kernel
+Iyesa wolemba mndandanda ndi zingwe ndi zingwe
+Iyesa wolemba mndandandandawo ndi magulu ochulukirapo komanso ochulukirapo
+Iyesa wolemba mndandanda ndi char ndi char array
+Mndandanda wazingwe wamba:
+Mndandanda wazingwe:
+Mndandanda wazinthu zonse:
+Mndandanda wazinthu zonse:
+Mndandanda wamakalata wamba:
+Mndandanda wazithunzi:
+Thandizani RPC
+RPC Port
+Kaya mulowetse RPC kapena ayi.
+Lembani doko la RPC. Iyenera kukhala yowerengeka, ndipo siyiyenera kugwiritsidwa ntchito kale. Kupanda kutero, RPC yalephera kutsegula dokolo.
+Osayamba RPC chifukwa yalemala.
+Mndandanda unathandizira zikhalidwe
+Kusaka kwa chingwe chodziwika mu fayilo yomwe yaperekedwa pogwiritsa ntchito mawu wamba
+Onani ngati mungathe kudina kiyi nthawi
+Wogwiritsa sanapereke chilichonse munthawi yake.
+Vuto lolakwika
+Khalidwe losakakamizidwa pa nthawi.
+Mwasindikiza khalidwe loyenera!
+Mwasindikiza chikhalidwe cholakwika.
+Dinani ESC kuti mutuluke.
+Amapeza chidziwitso cha tsiku ndi nthawi
+Mamiliyoni ambiri:
+Masekondi:
+Mphindi:
+Maola:
+Masiku:
+Miyezi:
+Chaka:
+Tsiku la Chaka:
+Tsiku la Sabata:
+Zosankha:
+Nthawi Yapafupi:
+Nthawi Yonse:
+Nthawi ya Unix:
+Takanika kuwerengera tsiku la
+Onetsetsani kuti mtunduwo ndi wolondola.
+Tsiku:
+Nthawi:
+Ikani zilolezo za fayilo. Izi zimangothandizidwa ndi ma seva a FTP omwe amayendetsa Unix.
+Ikani mtundu wa gawoli
+Muyenera kulumikizana ndi seva musanachite mafayilo amachitidwe.
+Takanika kukhazikitsa zilolezo za {0} mpaka {1}.
+Zilolezo zakonzedwa kuti zikhozedwe
+Mtundu wa data waperekedwa ku ASCII!
+Mtundu wa data wakhazikitsidwa ku Binary!
+Mtundu wolakwika wa data.
+Chenjerani kuti mafayilo ambiri sangatsitse kapena kutsitsa bwino pogwiritsa ntchito njirayi, chifukwa chake timalimbikitsa kugwiritsa ntchito njira ya Binary nthawi zambiri.
+Kuyesera kutumiza lamulo la RPC pomwe RPC sinayambe.
+Kutha Kuchedwa mu Milliseconds
+Masitepe a Max Fade
+Ndi ma millisecond angati oti mudikire musanazimitse mawu?
+Ndi njira zingati zosinthira zoti muchite?
+Kafukufuku Wathunthu
+Ngati ndi zoona, fufuzani zida zonse; Kupatula apo, ingofufuza zida zofunikira zokha.
+Takanika kuchotsa chotsegulira {0} pa config.
+Imapeza zosintha zofananira
+Ikani makonda osungira makonda
+Zikhazikiko zimakhazikitsidwa bwino pojambula
+Takanika kukhazikitsa zochunira zowonera pazenera
+Gawo ili limakupatsani mwayi wogwiritsa ntchito mawu achinsinsi.
+Imatsegula chipolopolo cha RSS kuti muwerenge ma feed
+Imatuluka pachikopa cha RSS ndikubwerera ku kernel
+Kusintha ulalo wazakudya
+Lists zonse zimadyetsa
+Amawerenga chakudya patsamba lanu
+Mwachindunji RSS chipolopolo lamulo sapezeka.
+Zolakwika za RSS2.
+Zolakwika za RSS1.
+Chakudya cha Atomu cholakwika.
+Lowetsani RSS feed URL:
+Mtundu wosavomerezeka wa RSS.
+Cholakwika chosadziwika:
+Amapeza nkhaniyo
+Nambala ya nkhani siyingakhale yayikulu kuposa zomwe zilipo.
+Mutu:
+Lumikizani:
+Amapeza zambiri zamadyedwe
+Kufotokozera:
+Mtundu wodyetsa:
+Chiwerengero cha zolemba:
+Nkhani ilibe ulalo!
+Takanika kupanga mndandanda wazosunga mafayilo m'ndandanda
+Mawonekedwe amtundu wamafayilo
+Njira zoyendetsera mafayilo
+Imayang'anira momwe mafayilo amasankhidwira.
+Imayang'anira mayendedwe amakina osanja kaya akukwera kapena kutsika.
+Kukwera dongosolo
+Kutsika dongosolo
+Dzina lonse
+Kukula kwa fayilo
+Nthawi yolenga
+Nthawi yomaliza yolemba
+Nthawi yomaliza yomaliza
+Lembaninso Kuchedwa mu Milliseconds
+Ndi ma millisecond angati kuti mudikire musanalembe mawu?
+Lembani mawu omwe mukufuna kuwonetsedwa. Kutalika kuli bwino.
+Kuthamanga kochepa kwambiri mu WPM
+Kutalika kolemba kwambiri mu WPM
+Kutheka kwa typo peresenti
+Takanika kusunga chikwatu chamakono: {0}
+Pukutani kuti musinthe njira
+Imathandizira kuthandizira kwamitundu 255 kwa Pukutani.
+Imathandizira kuthandizira kwamtundu weniweni kwa Pukutani.
+Ndi zopukutira zingati zoti achite asanasinthe njira mosintha?
+Gawo linamalizidwa
+Kuyambitsa kwamkati kwatha mu
+Fayilo yotchulidwa {0} sinapezeke. Izi sizingagwire bwino ntchito popanda fayilo iyi.
+Kuyambira mod
+Amapeza zambiri zamtundu
+Dzina lamulo:
+Lamulo tanthauzo:
+Mtundu wa lamulo:
+Lamulo lokhwima?
+Mtundu wa Mod:
+Mod {0} sikupezeka.
+Chikhalidwe cha
+Ndi mitundu iti ya {0} yomwe ikugwiritsidwa ntchito kusintha mayina amwezi, kalendala, ndi zina zambiri?
+Mkonzi wamakalata sanatsegule mafayilo apa.
+Chingwe chinasinthidwa.
+Chiwerengero chimodzi kapena ziwirizi sizochulukirapo.
+Mawu achotsedwa.
+Makhalidwe achotsedwa.
+Zikhazikiko Zamachitidwe ...
+Gawoli limatchula mawonekedwe amachitidwe.
+Takulandirani ku Mapangidwe!
+Panali vuto polemba SSH
+Cholakwika pa chipolopolo cha SSH
+- Zambiri zamapulogalamu
+Imayambitsa chithandizo chamtundu wa 255 cha BouncingText.
+Imayambitsa chithandizo chenicheni cha mtundu wa BouncingText.
+Iyesa wolemba dikishonale ndi zingwe ndi zingwe
+Iyesa wolemba dikishonale ndi gulu la char ndi char
+Iyesa wolemba dikishonale ndi magulu ochuluka komanso ochuluka
+Buku lotanthauzira mawu achingwe:
+Gulu lotanthauzira zingwe:
+Mtanthauzira wabwinobwino:
+Gulu lotanthauzira manambala angapo:
+Dikishonale yachidule:
+Zolemba zofananira za char:
+Takulandirani ku Test Shell!
+Onetsani kupita patsogolo kwa magwiridwe antchito
+Iwonetsani fayilo yomwe ikukonzedwa panthawi yamafayilo
+komwe HardwareType idzakhale
+Mwina mtundu wa hardware {0} sunasanthulidwe, kapena siwothandiza.
+Mtundu wa hardware {0} sunayesedwebe. Ngati mukutsimikiza kuti yafufuzidwa, yambitsaninso kernel ndikuthandizira kukonza.
+Zigawo sizinasanjidwe kuti zilembedwe.
+Njira Yowononga
+Ngati zathandizidwa, green console imathandizidwa.
+Kusindikiza olekanitsa
+Zipsera olekanitsa ndi mtundu thandizo
+Zipsera olekanitsa ndi mtundu thandizo
+Zipsera olekanitsa ndi mtundu ndi mtundu thandizo
+Zokhazikika nthawi zonse
+Imathandizira mtundu wa 255 wothandizira Marquee.
+Imathandizira kuthandizira kwamtundu weniweni kwa Marquee.
+Lembani mawu omwe mukufuna kuwonetsedwa.
+Kaya mawu omwe akuwonetsedwa pamakomo nthawi zonse amakhala ozungulira.
+'q' kusiya.
+Kutsutsana {0} sikupezeka.
+Mtsutso wa mzere wa malamulo {0} sunapezeke.
+Imatsitsa makonda onse
+Screensaver adakumana ndi vuto pamene akuwonetsa: {0}. Dinani batani lililonse kuti mutuluke.
+Onetsani ...
+Umu ndi momwe mutu wanu udzawonekere:
+Malamulo omangika:
+Mod {0} ili ndi lamulo losagwira. Kupatula ma Mod kwalephera. Unikani kachidindo koyambira.
+Mbali zamkati:
