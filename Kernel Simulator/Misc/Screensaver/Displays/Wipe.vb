@@ -50,20 +50,23 @@ Module WipeDisplay
                         Dim RedColorNum As Integer = RandomDriver.Next(255)
                         Dim GreenColorNum As Integer = RandomDriver.Next(255)
                         Dim BlueColorNum As Integer = RandomDriver.Next(255)
-                        Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-                        Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m")
+                        SetConsoleColor(New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), True)
                     ElseIf Wipe255Colors Then
                         Dim ColorNum As Integer = RandomDriver.Next(255)
-                        Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m")
+                        SetConsoleColor(New Color(ColorNum), True)
                     Else
                         Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
                     End If
+
+                    'Set max height according to platform
+                    Dim MaxWindowHeight As Integer = Console.WindowHeight
+                    If IsOnUnix() Then MaxWindowHeight -= 1
 
                     'Print a space {Column} times until the entire screen is wiped.
                     Select Case ToDirection
                         Case WipeDirections.Right
                             For Column As Integer = 0 To Console.WindowWidth
-                                For Row As Integer = 0 To Console.WindowHeight
+                                For Row As Integer = 0 To MaxWindowHeight
                                     Console.SetCursorPosition(0, Row)
                                     Console.Write(StrDup(Column, " "))
                                 Next
@@ -71,20 +74,20 @@ Module WipeDisplay
                             Next
                         Case WipeDirections.Left
                             For Column As Integer = Console.WindowWidth To 1 Step -1
-                                For Row As Integer = 0 To Console.WindowHeight
+                                For Row As Integer = 0 To MaxWindowHeight
                                     Console.SetCursorPosition(Column - 1, Row)
                                     Console.Write(StrDup(Console.WindowWidth - Column + 1, " "))
                                 Next
                                 SleepNoBlock(WipeDelay, Wipe)
                             Next
                         Case WipeDirections.Top
-                            For Row As Integer = Console.WindowHeight To 0 Step -1
+                            For Row As Integer = MaxWindowHeight To 0 Step -1
                                 Console.SetCursorPosition(0, Row)
                                 Console.Write(StrDup(Console.WindowWidth, " "))
                                 SleepNoBlock(WipeDelay, Wipe)
                             Next
                         Case WipeDirections.Bottom
-                            For Row As Integer = 0 To Console.WindowHeight
+                            For Row As Integer = 0 To MaxWindowHeight
                                 Console.Write(StrDup(Console.WindowWidth, " "))
                                 SleepNoBlock(WipeDelay, Wipe)
                             Next
