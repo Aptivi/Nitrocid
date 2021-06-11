@@ -55,8 +55,13 @@ Module LocaleGenerator
                 Dim LocalizedJson As New JObject
                 For i As Integer = 0 To FileLines.Length - 1
                     If Not String.IsNullOrWhiteSpace(FileLines(i)) And Not String.IsNullOrWhiteSpace(FileLinesEng(i)) Then
-                        Debug.WriteLine("Adding ""{0}, {1}""...", FileLinesEng(i), FileLines(i))
-                        LocalizedJson.Add(FileLinesEng(i), FileLines(i))
+                        Try
+                            Debug.WriteLine("Adding ""{0}, {1}""...", FileLinesEng(i), FileLines(i))
+                            LocalizedJson.Add(FileLinesEng(i), FileLines(i))
+                        Catch ex As Exception
+                            Console.WriteLine(ex.Message)
+                            Console.WriteLine($"Malformed line {i + 1}: {FileLinesEng(i)} -> {FileLines(i)}")
+                        End Try
                     End If
                 Next
 
