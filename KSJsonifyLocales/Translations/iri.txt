@@ -185,7 +185,7 @@ Faisnéis chórais
 áit a mbeidh argóintí {0}
 Cuirtear tús leis an mblaosc FTP.
 Cairde
-áit a mbeidh modname.ss.vb
+áit a mbeidh customsaver
 Glais do scáileán leis an bhfocal faire.
 Logálann tú as an úsáideoir tú.
 Faigh gach faisnéis líonra

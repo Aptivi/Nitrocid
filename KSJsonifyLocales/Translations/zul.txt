@@ -185,7 +185,7 @@ Ukusetshenziswa:
 lapho ukuphikisana kuzoba khona {0}
 Iqala igobolondo le-FTP.
 Abangane be
-lapho i-modname.ss.vb izoba khona
+lapho i-customsaver izoba khona
 Khiya isikrini sakho nge-password.
 Ikufaka kumsebenzisi.
 Thola yonke imininingwane yenethiwekhi

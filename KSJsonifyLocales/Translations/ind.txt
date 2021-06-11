@@ -185,7 +185,7 @@ upayog:
 jahaan tark {0} honge
 efateepee khol shuroo karata hai.
 ke mitr
-jahaan modname.ss.vb hoga
+jahaan customsaver hoga
 paasavard ke saath apanee skreen lok karata hai.
 aapako upayogakarta se log aaut karata hai.
 pratyek netavark jaanakaaree praapt karen

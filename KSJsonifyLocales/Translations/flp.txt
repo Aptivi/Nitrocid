@@ -185,7 +185,7 @@ Paggamit:
 kung saan ang mga argumento ay magiging {0}
 Pinasimulan ang FTP shell.
 Mga kaibigan ni
-kung saan naroon ang modname.ss.vb
+kung saan naroon ang customsaver
 Nilo-lock ang iyong screen gamit ang password.
 Nai-log out ka sa gumagamit.
 Kunin ang bawat impormasyon sa network

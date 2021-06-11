@@ -185,7 +185,7 @@ Stosowanie:
 gdzie argumentami b?dzie {0}
 Inicjuje pow?ok? FTP.
 Przyjaciele
-gdzie b?dzie modname.ss.vb
+gdzie b?dzie customsaver
 Blokuje ekran has?em.
 Wylogowuje ci? z u?ytkownika.
 Uzyskaj wszystkie informacje o sieci

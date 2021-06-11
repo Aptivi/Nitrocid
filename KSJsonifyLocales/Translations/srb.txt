@@ -185,7 +185,7 @@ Upotreba:
 gde ?e argumenti biti {0}
 Inicijalizira FTP ?koljku.
 Friends of
-gde ?e biti modname.ss.vb
+gde ?e biti customsaver
 Zaklju?ava ekran lozinkom.
 Odjava vas od korisnika.
 Dobijajte sve mre?ne informacije

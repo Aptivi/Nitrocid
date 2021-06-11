@@ -185,7 +185,7 @@ Defnydd:
 lle bydd dadleuon yn {0}
 Yn cychwyn y gragen FTP.
 Cyfeillion
-lle bydd modname.ss.vb
+lle bydd customsaver
 Yn cloi eich sgrin gyda'r cyfrinair.
 Yn eich allgofnodi o'r defnyddiwr.
 Sicrhewch bob gwybodaeth rhwydwaith

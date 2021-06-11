@@ -185,7 +185,7 @@ Uso:
 dove gli argomenti saranno {0}
 Inizializza la shell FTP.
 Amici di
-dove sarà modname.ss.vb
+dove sarà customsaver
 Blocca lo schermo con la password.
 Ti disconnette dall'utente.
 Ottieni tutte le informazioni di rete

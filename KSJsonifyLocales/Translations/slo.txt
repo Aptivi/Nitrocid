@@ -185,7 +185,7 @@ využitie:
 kde argumenty budú {0}
 Inicializuje shell FTP.
 Priatelia
-kde bude modname.ss.vb
+kde bude customsaver
 Uzamkne obrazovku pomocou hesla.
 Odhlási vás od používateľa.
 Získajte všetky informácie o sieti

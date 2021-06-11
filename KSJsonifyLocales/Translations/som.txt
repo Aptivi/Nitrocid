@@ -185,7 +185,7 @@ Isticmaalka:
 halka doodaha ay noqon doonaan {0}
 Wuxuu bilaabaa qolofka FTP.
 Asxaabta
-meesha modname.ss.vb uu jiri doono
+meesha customsaver uu jiri doono
 Wuxuu ku xiraa shaashadda lambarka sirta ah.
 Kaa saarey isticmaaleha.
 Hel macluumaad kasta oo shabakad ah

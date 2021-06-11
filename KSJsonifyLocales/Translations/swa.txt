@@ -185,7 +185,7 @@ Matumizi:
 ambapo hoja zitakuwa {0}
 Inazindua ganda la FTP.
 Marafiki wa
-ambapo modname.ss.vb itakuwa
+ambapo customsaver itakuwa
 Inafunga skrini yako na nywila.
 Hukuweka nje ya mtumiaji.
 Pata kila habari ya mtandao

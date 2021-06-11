@@ -185,7 +185,7 @@ Panggunaan:
 ing endi argumen bakal {0}
 Initialisasi cangkang FTP.
 Kanca saka
-ing endi modname.ss.vb
+ing endi customsaver
 Kunci layar nganggo sandhi.
 Log metu saka pangguna.
 Goleki kabeh informasi jaringan

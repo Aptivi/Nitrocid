@@ -185,7 +185,7 @@ Shiyō-hō:
 hikisū wa {0} ni narimasu
 FTP sheru o shokka shimasu.
 No tomodachi
-modname.ss.vb wa
+customsaver wa
 pasuwādo de gamen o rokku shimasu.
 Yūzā kara roguauto shimasu.
 Subete no nettowāku jōhō o shutoku suru

@@ -185,7 +185,7 @@ Upayōgatā:
 jithē dalīlāṁ {0} hōṇagī'āṁ
 FTP śaila ārabha karadā hai.
 Dē dōsata
-Jithē modname.ss.vb hōvēgā
+Jithē customsaver hōvēgā
 tuhāḍē sakarīna nū pāsavaraḍa nāla lāka kara didā hai.
 Tuhānū upabhōgatā tōṁ bāhara bhējadā hai.
 Naiṭavaraka dī hara jāṇakārī prāpata karō

@@ -185,7 +185,7 @@ Użu:
 fejn l-argumenti jkunu {0}
 Inizjalizza l-qoxra FTP.
 Ħbieb ta '
-fejn se jkun modname.ss.vb
+fejn se jkun customsaver
 Jillokkja l-iskrin tiegħek bil-password.
 Tilloggja lilek mill-utent.
 Ikseb kull informazzjoni dwar in-netwerk

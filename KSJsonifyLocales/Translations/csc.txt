@@ -185,7 +185,7 @@ Utilizazione:
 induve l'argumenti saranu {0}
 Inizializza u shell FTP.
 Amichi di
-induve serà modname.ss.vb
+induve serà customsaver
 Blocca u vostru schermu cù a password.
 Scurdate vi di l'utilizatore.
 Uttenite ogni infurmazione di rete

@@ -185,7 +185,7 @@ Usage:
 où les arguments seront {0}
 Initialise le shell FTP.
 Les amis de
-où modname.ss.vb sera
+où customsaver sera
 Verrouille votre écran avec le mot de passe.
 Vous déconnecte de l'utilisateur.
 Obtenir toutes les informations du réseau

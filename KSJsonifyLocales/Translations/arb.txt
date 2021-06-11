@@ -185,7 +185,7 @@ alaistiemal:
 hayth satakun alwasitat {0}
 tahyiat shell FTP.
 'asdiqa'
-hayth sayakun modname.ss.vb
+hayth sayakun customsaver
 'aqfal alshaashat bikalimat almurur.
 yukhrijuk min almustakhdam.
 alhusul ealaa kl maelumat alshabaka

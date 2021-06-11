@@ -185,7 +185,7 @@ Yòngfǎ:
 qízhōng cānshù wèi {0}
 Chūshǐhuà FTP shell.
 Péngyǒu
-Qízhōng modname.ss.vb jiāng shì
+Qízhōng customsaver jiāng shì
 shǐyòng mìmǎ suǒdìng píngmù.
 Jiāng nín tuìchū yònghù.
 Huòqǔ měi gè wǎngluò xìnxī

@@ -185,7 +185,7 @@ Verwendung:
 Die Argumente lauten {0}
 Initialisiert die FTP-Shell.
 Freunde von
-wo modname.ss.vb wird
+wo customsaver wird
 Sperrt den Bildschirm mit dem Passwort.
 Meldet dich vom Benutzer ab.
 Holen Sie sich alle Netzwerkinformationen

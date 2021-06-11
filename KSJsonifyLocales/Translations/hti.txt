@@ -185,7 +185,7 @@ Itilizasyon:
 kote agiman yo pral {0}
 Inisyalize kokiy ftp la.
 Zanmi nan
-kote modname.ss.vb pral
+kote customsaver pral
 Locks ekran ou a ak modpas la.
 Logs ou soti nan itilizatè a.
 Jwenn tout enfòmasyon rezo

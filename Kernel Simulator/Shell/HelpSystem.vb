@@ -384,8 +384,8 @@ Public Module HelpSystem
 
         ElseIf command = "reloadsaver" Then
 
-            W(DoTranslation("Usage:") + " reloadsaver <modName.ss.vb>" + vbNewLine +
-              "       " + DoTranslation("where modname.ss.vb will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", ScreensaverFiles))
+            W(DoTranslation("Usage:") + " reloadsaver <customsaver>" + vbNewLine +
+              "       " + DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", ScreensaverFiles))
 
         ElseIf command = "reportbug" Then
 
@@ -422,9 +422,9 @@ Public Module HelpSystem
 
         ElseIf command = "setsaver" Then
 
-            W(DoTranslation("Usage:") + " setsaver <modName.ss.vb/{0}>", True, ColTypes.Neutral, String.Join("/", ScrnSvrdb.Keys))
+            W(DoTranslation("Usage:") + " setsaver <customsaver/{0}>", True, ColTypes.Neutral, String.Join("/", ScrnSvrdb.Keys))
             If CSvrdb.Count > 0 Then
-                W("       " + DoTranslation("where modname.ss.vb will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", CSvrdb.Keys))
+                W("       " + DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", CSvrdb.Keys))
             End If
 
         ElseIf command = "setthemes" Then

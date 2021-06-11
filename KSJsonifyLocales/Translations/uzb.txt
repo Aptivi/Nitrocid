@@ -185,7 +185,7 @@ Foydalanish:
 argumentlar qayerda bo'ladi {0}
 FTP qobig'ini ishga tushiradi.
 Do'stlar
-modname.ss.vb qaerda
+customsaver qaerda
 Parolingizni ekran bilan qulflaydi.
 Sizni foydalanuvchi tizimidan chiqaradi.
 Har bir tarmoq haqida ma'lumot oling

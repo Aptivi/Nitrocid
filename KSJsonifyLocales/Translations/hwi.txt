@@ -185,7 +185,7 @@ Hoʻohana:
 ma hea nā hoʻopaʻapaʻa ma {0}
 Initializes ka pūpū FTP.
 Na hoaloha o
-kahi e noho ai ka modname.ss.vb
+kahi e noho ai ka customsaver
 Laka i kou paku me ka password.
 Hoʻopau iā ʻoe ma waho o ka mea hoʻohana.
 E kiʻi i kēlā me kēia ʻike pūnaewele

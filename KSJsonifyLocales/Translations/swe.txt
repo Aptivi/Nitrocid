@@ -185,7 +185,7 @@ Användande:
 där argument kommer att vara {0}
 Initialiserar FTP-skalet.
 Vänner av
-där modname.ss.vb kommer att vara
+där customsaver kommer att vara
 Låser skärmen med lösenordet.
 Loggar dig ur användaren.
 Få varje nätverksinformation

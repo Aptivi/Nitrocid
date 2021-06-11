@@ -185,7 +185,7 @@ Pemakaian:
 di mana argumen akan menjadi {0}
 Menginisialisasi shell FTP.
 Teman dari
-di mana modname.ss.vb akan
+di mana customsaver akan
 Mengunci layar Anda dengan kata sandi.
 Keluar Anda dari pengguna.
 Dapatkan setiap informasi jaringan

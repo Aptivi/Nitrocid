@@ -185,7 +185,7 @@ Informació del sistema
 on hi haurà arguments {0}
 Inicialitza l'intèrpret d'ordres FTP.
 Amics de
-on hi haurà modname.ss.vb
+on hi haurà customsaver
 Bloqueja la pantalla amb la contrasenya.
 Us desconnecta de l’usuari.
 Obteniu tota la informació de la xarxa

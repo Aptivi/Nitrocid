@@ -185,7 +185,7 @@ Sử dụng:
 trong đó các đối số sẽ là {0}
 Khởi tạo vỏ FTP.
 Bạn của
-modname.ss.vb sẽ ở đâu
+customsaver sẽ ở đâu
 Khóa màn hình của bạn bằng mật khẩu.
 Đăng xuất bạn ra khỏi người dùng.
 Nhận mọi thông tin mạng

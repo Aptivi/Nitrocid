@@ -185,7 +185,7 @@ Byabahāra:
 yēkhānē yuktiguli {0} habē
 Ēphaṭipi śēlaṭi śuru karē.
 Ēra bandhu
-Yēkhānē modname.ss.vb habē
+Yēkhānē customsaver habē
 pāsa'ōẏārḍa diẏē āpanāra pardā laka.
 Āpanākē byabahārakārī thēkē laga ā'uṭa karē.
 Pratiṭi nēṭa'ōẏārkēra tathya pāna

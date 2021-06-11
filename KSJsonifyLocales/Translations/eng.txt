@@ -185,7 +185,7 @@ Usage:
 where arguments will be {0}
 Initializes the FTP shell.
 Friends of
-where modname.ss.vb will be
+where customsaver will be
 Locks your screen with the password.
 Logs you out of the user.
 Get every network information

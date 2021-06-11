@@ -185,7 +185,7 @@ utilizare:
 unde argumentele vor fi {0}
 Ini?ializeaz? shell-ul FTP.
 Prietenii lui
-unde va fi modname.ss.vb
+unde va fi customsaver
 Incuie ecranul cu parola.
 Te scoate din uz.
 Ob?ine?i toate informa?iile din re?ea

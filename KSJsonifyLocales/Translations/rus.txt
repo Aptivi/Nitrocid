@@ -185,7 +185,7 @@ Ispol'zovaniye:
 gde argumenty budut {0}
 Initsializiruyet obolochku FTP.
 Druz'ya
-gde budet modname.ss.vb
+gde budet customsaver
 Blokiruyet vash ekran s pomoshch'yu parolya.
 Vykhodit iz pol'zovatelya.
 Poluchit' informatsiyu o kazhdoy seti

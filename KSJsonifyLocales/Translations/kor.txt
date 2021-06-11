@@ -185,7 +185,7 @@ yongbeob:
 insuneun {0}ibnida.
 FTP swel-eul chogihwahabnida.
 chingu
-yeogiseo modname.ss.vbeun
+yeogiseo customsavereun
 bimilbeonholo hwamyeon-eul jamgeubnida.
 sayongjaleul logeu aushabnida.
 modeun neteuwokeu jeongbo eodgi

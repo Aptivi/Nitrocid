@@ -185,7 +185,7 @@ Kagwiritsidwe:
 kumene mikangano idzakhala {0}
 Imayambitsa chipolopolo cha FTP.
 Anzanga a
-pomwe modname.ss.vb idzakhala
+pomwe customsaver idzakhala
 Imatseka zenera lanu ndi mawu achinsinsi.
 Amakupatsani mwayi wogwiritsa ntchito.
 Pezani zambiri zama netiweki

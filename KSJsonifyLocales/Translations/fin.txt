@@ -185,7 +185,7 @@ Käyttö:
 missä argumentit ovat {0}
 Alustaa FTP-kuoren.
 Ystävät
-missä modname.ss.vb on
+missä customsaver on
 Lukitsee näytön salasanalla.
 Kirjaudu ulos käyttäjältä.
 Hanki kaikki verkkotiedot

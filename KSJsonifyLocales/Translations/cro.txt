@@ -185,7 +185,7 @@ Upotreba:
 gdje će argumenti biti {0}
 Inicijalizira FTP školjku.
 Prijatelji od
-gdje će biti modname.ss.vb
+gdje će biti customsaver
 Zaključava zaslon lozinkom.
 Odjava vas od korisnika.
 Dobivajte sve mrežne informacije

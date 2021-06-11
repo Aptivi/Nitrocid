@@ -185,7 +185,7 @@ Sistem məlumatı
 arqumentlərin olduğu yer: {0}
 FTP qabığını başlatır.
 Dostları
-harada modname.ss.vb olacaq
+harada customsaver olacaq
 Şifrə ilə ekranınızı kilidləyir.
 Sizi istifadəçidən çıxarır.
 Hər şəbəkə məlumatını əldə edin

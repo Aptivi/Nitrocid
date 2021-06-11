@@ -185,7 +185,7 @@ Gebruik:
 waar argumenten zullen zijn {0}
 Initialiseert de FTP-shell.
 Vrienden van
-waar modname.ss.vb zal zijn
+waar customsaver zal zijn
 Vergrendelt uw scherm met het wachtwoord.
 Hiermee meldt u zich af bij de gebruiker.
 Krijg alle netwerkinformatie

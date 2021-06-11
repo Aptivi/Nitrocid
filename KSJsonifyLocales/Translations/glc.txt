@@ -185,7 +185,7 @@ Uso:
 onde estarán os argumentos {0}
 Inicializa o shell FTP.
 Amigos de
-onde estará modname.ss.vb
+onde estará customsaver
 Bloquea a pantalla co contrasinal.
 Pecha sesión no usuario.
 Obtén toda a información da rede

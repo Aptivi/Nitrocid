@@ -185,7 +185,7 @@ Penggunaan:
 di mana argumen akan {0}
 Inisialisasi shell FTP.
 Rakan-rakan
-di mana modname.ss.vb akan berada
+di mana customsaver akan berada
 Mengunci skrin anda dengan kata laluan.
 Log keluar daripada pengguna.
 Dapatkan setiap maklumat rangkaian

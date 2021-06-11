@@ -185,7 +185,7 @@ Erabilera:
 argumentuak non egongo diren {0}
 FTP shell hasieratzen du.
 Lagunak
-non egongo da modname.ss.vb
+non egongo da customsaver
 Pasahitzarekin pantaila blokeatzen du.
 Erabiltzailearen saioa amaitzen du.
 Lortu sareko informazio bakoitza

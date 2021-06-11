@@ -185,7 +185,7 @@ Uso:
 donde los argumentos serán {0}
 Inicializa el shell FTP.
 Amigos de
-donde modname.ss.vb será
+donde customsaver será
 Bloquea tu pantalla con la contraseña
 Te desconecta del usuario.
 Obtenga toda la información de la red

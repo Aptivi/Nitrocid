@@ -185,7 +185,7 @@ Používání:
 kde argumenty budou {0}
 Inicializuje prostředí FTP.
 Přátelé uživatele
-kde modname.ss.vb bude
+kde customsaver bude
 Uzamkne obrazovku heslem.
 Odhlásí vás z uživatele.
 Získejte všechny informace o síti

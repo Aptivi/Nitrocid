@@ -185,7 +185,7 @@ MOTD登录：
 参数将为{0}
 初始化FTP Shell。
 的朋友
-modname.ss.vb将在哪里
+customsaver将在哪里
 使用密码锁定屏幕。
 使您退出用户。
 获取每个网络信息
