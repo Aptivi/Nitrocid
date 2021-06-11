@@ -19,12 +19,12 @@
 Imports System.Globalization
 Imports KS
 
-<TestClass()> Public Class TimeTests
+<TestClass()> Public Class TimeActionTests
 
     ''' <summary>
     ''' Tests rendering kernel date
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderKernelDate()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelDate()
         KernelDateTime = Date.Now
         RenderDate.ShouldNotBeNullOrEmpty
     End Sub
@@ -32,7 +32,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering kernel date with specific format type
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderKernelDateType()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelDateType()
         KernelDateTime = Date.Now
         RenderDate(FormatType.Long).ShouldNotBeNullOrEmpty
         RenderDate(FormatType.Short).ShouldNotBeNullOrEmpty
@@ -41,7 +41,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering kernel date with specified culture
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderKernelDateCult()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelDateCult()
         KernelDateTime = Date.Now
         Dim TargetCult As New CultureInfo("es-ES")
         RenderDate(TargetCult).ShouldNotBeNullOrEmpty
@@ -50,7 +50,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering kernel date with specified culture and format type
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderKernelDateCultType()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelDateCultType()
         KernelDateTime = Date.Now
         Dim TargetCult As New CultureInfo("es-ES")
         RenderDate(TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty
@@ -60,7 +60,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering custom date
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderCustomDate()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomDate()
         Dim TargetDate As New DateTime(2018, 2, 22)
         RenderDate(TargetDate).ShouldNotBeNullOrEmpty
     End Sub
@@ -68,7 +68,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering custom date
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderCustomDateType()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomDateType()
         Dim TargetDate As New DateTime(2018, 2, 22)
         RenderDate(TargetDate, FormatType.Long).ShouldNotBeNullOrEmpty
         RenderDate(TargetDate, FormatType.Short).ShouldNotBeNullOrEmpty
@@ -77,7 +77,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering custom date with specified culture
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderCustomDateCult()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomDateCult()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Dim TargetCult As New CultureInfo("es-ES")
         RenderDate(TargetDate, TargetCult).ShouldNotBeNullOrEmpty
@@ -86,7 +86,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering custom date with specified culture
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderCustomDateCultType()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomDateCultType()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Dim TargetCult As New CultureInfo("es-ES")
         RenderDate(TargetDate, TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty
@@ -96,7 +96,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering kernel time
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderKernelTime()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelTime()
         KernelDateTime = Date.Now
         RenderTime.ShouldNotBeNullOrEmpty
     End Sub
@@ -104,7 +104,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering kernel time
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderKernelTimeType()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelTimeType()
         KernelDateTime = Date.Now
         RenderTime(FormatType.Long).ShouldNotBeNullOrEmpty
         RenderTime(FormatType.Short).ShouldNotBeNullOrEmpty
@@ -113,7 +113,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering kernel time with specified culture
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderKernelTimeCult()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelTimeCult()
         KernelDateTime = Date.Now
         Dim TargetCult As New CultureInfo("es-ES")
         RenderTime(TargetCult).ShouldNotBeNullOrEmpty
@@ -122,7 +122,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering kernel time with specified culture
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderKernelTimeCultType()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelTimeCultType()
         KernelDateTime = Date.Now
         Dim TargetCult As New CultureInfo("es-ES")
         RenderTime(TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty
@@ -132,7 +132,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering custom time
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderCustomTime()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomTime()
         Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
         RenderTime(TargetTime).ShouldNotBeNullOrEmpty
     End Sub
@@ -140,7 +140,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering custom time
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderCustomTimeType()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomTimeType()
         Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
         RenderTime(TargetTime, FormatType.Long).ShouldNotBeNullOrEmpty
         RenderTime(TargetTime, FormatType.Short).ShouldNotBeNullOrEmpty
@@ -149,7 +149,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering custom time with specified culture
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderCustomTimeCult()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomTimeCult()
         Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
         Dim TargetCult As New CultureInfo("es-ES")
         RenderTime(TargetTime, TargetCult).ShouldNotBeNullOrEmpty
@@ -158,7 +158,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering custom time with specified culture
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderCustomTimeCultType()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomTimeCultType()
         Dim TargetTime As New DateTime(2018, 2, 22, 5, 40, 37)
         Dim TargetCult As New CultureInfo("es-ES")
         RenderTime(TargetTime, TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty
@@ -168,7 +168,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering kernel date
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderKernel()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernel()
         KernelDateTime = Date.Now
         Render.ShouldNotBeNullOrEmpty
     End Sub
@@ -176,7 +176,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering kernel date
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderKernelType()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelType()
         KernelDateTime = Date.Now
         Render(FormatType.Long).ShouldNotBeNullOrEmpty
         Render(FormatType.Short).ShouldNotBeNullOrEmpty
@@ -185,7 +185,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering kernel date with specified culture
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderKernelCult()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelCult()
         KernelDateTime = Date.Now
         Dim TargetCult As New CultureInfo("es-ES")
         Render(TargetCult).ShouldNotBeNullOrEmpty
@@ -194,7 +194,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering kernel date with specified culture
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderKernelCultType()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderKernelCultType()
         KernelDateTime = Date.Now
         Dim TargetCult As New CultureInfo("es-ES")
         Render(TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty
@@ -204,7 +204,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering custom date
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderCustom()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustom()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Render(TargetDate).ShouldNotBeNullOrEmpty
     End Sub
@@ -212,7 +212,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering custom date
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderCustomType()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomType()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Render(TargetDate, FormatType.Long).ShouldNotBeNullOrEmpty
         Render(TargetDate, FormatType.Short).ShouldNotBeNullOrEmpty
@@ -221,7 +221,7 @@ Imports KS
     ''' <summary>
     ''' Tests rendering custom date with specified culture
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderCustomCult()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomCult()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Dim TargetCult As New CultureInfo("es-ES")
         Render(TargetDate, TargetCult).ShouldNotBeNullOrEmpty
@@ -230,21 +230,11 @@ Imports KS
     ''' <summary>
     ''' Tests rendering custom date with specified culture
     ''' </summary>
-    <TestMethod()> Public Sub TestRenderCustomCultType()
+    <TestMethod()> <TestCategory("Action")> Public Sub TestRenderCustomCultType()
         Dim TargetDate As New DateTime(2018, 2, 22)
         Dim TargetCult As New CultureInfo("es-ES")
         Render(TargetDate, TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty
         Render(TargetDate, TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty
-    End Sub
-
-    ''' <summary>
-    ''' Tests initializing current times in all timezones
-    ''' </summary>
-    <TestMethod()> Public Sub TestInitTimesInZones()
-        KernelDateTime = Date.Now
-        InitTimesInZones()
-        zoneTimes.ShouldNotBeNull
-        zoneTimes.ShouldNotBeEmpty
     End Sub
 
 End Class

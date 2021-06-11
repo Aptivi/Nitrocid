@@ -113,12 +113,13 @@
     <Compile Include="Shell\AliasManagementTests.vb" />
     <Compile Include="Shell\HelpInitializationTests.vb" />
     <Compile Include="Shell\AliasInitializationTests.vb" />
-    <Compile Include="TimeDate\TimeTests.vb" />
+    <Compile Include="TimeDate\TimeInitializationTests.vb" />
     <Compile Include="Kernel\KernelMiscTests.vb" />
     <Compile Include="Misc\NotificationTests.vb" />
     <Compile Include="Network\NetworkManipulationTests.vb" />
     <Compile Include="InitTest.vb" />
     <Compile Include="Login\UserInitializationTests.vb" />
+    <Compile Include="TimeDate\TimeActionTests.vb" />
     <Content Include="TestMove.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
