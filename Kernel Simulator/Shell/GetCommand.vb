@@ -1339,7 +1339,6 @@ Public Module GetCommand
                 W(DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message, Command)
             End If
         End Try
-        StartCommandThread.Abort()
     End Sub
 
     ''' <summary>
