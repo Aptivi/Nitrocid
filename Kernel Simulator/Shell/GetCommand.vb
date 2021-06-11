@@ -1273,7 +1273,9 @@ Public Module GetCommand
                                 Dim WrapOutputPath As String = paths("Temp") + "/wrapoutput.txt"
                                 GetLine(False, eqargs(0), False, WrapOutputPath)
                                 Dim WrapOutputStream As New StreamReader(WrapOutputPath)
-                                WriteWrapped(WrapOutputStream.ReadToEnd(), True, ColTypes.Neutral)
+                                Dim WrapOutput As String = WrapOutputStream.ReadToEnd
+                                WriteWrapped(WrapOutput, False, ColTypes.Neutral)
+                                If Not WrapOutput.EndsWith(vbNewLine) Then Console.WriteLine()
                                 WrapOutputStream.Close()
                                 File.Delete(WrapOutputPath)
                             Else
