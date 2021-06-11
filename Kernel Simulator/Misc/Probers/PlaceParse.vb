@@ -120,6 +120,14 @@ Public Module PlaceParse
                 Wdbg("I", "System placeholder found.")
                 text = text.Replace("<system>", Environment.OSVersion.ToString)
             End If
+            If text.Contains("<f:reset>") Then
+                Wdbg("I", "Foreground color reset placeholder found.")
+                text = text.Replace("<f:reset>", New Color(NeutralTextColor).VTSequenceForeground)
+            End If
+            If text.Contains("<b:reset>") Then
+                Wdbg("I", "Background color reset placeholder found.")
+                text = text.Replace("<b:reset>", New Color(BackgroundColor).VTSequenceBackground)
+            End If
             If text.Contains("<f:") Then
                 Wdbg("I", "Foreground color placeholder found.")
                 Do While text.Contains("<f:")
