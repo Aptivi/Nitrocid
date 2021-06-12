@@ -58,10 +58,10 @@ Public Module HardwareProbe
                     W(DoTranslation("RAM: One or more of the RAM chips failed to be probed. Showing information anyway..."), True, ColTypes.Neutral)
                 End If
 
-                'and finally HDD
-                If HardwareInfo.Hardware.HDD Is Nothing Or (HardwareInfo.Hardware.HDD IsNot Nothing And HardwareInfo.Hardware.HDD.Count = 0) Then
-                    Wdbg("E", "HDD failed to probe.", KernelVersion)
-                    W(DoTranslation("HDD: One or more of the hard drives failed to be probed. Showing information anyway...", currentLang), True, ColTypes.Neutral)
+                'then GPU
+                If HardwareInfo.Hardware.GPU Is Nothing Then
+                    Wdbg("E", "GPU failed to probe.")
+                    W(DoTranslation("GPU: One or more of the graphics cards failed to be probed. Showing information anyway..."), True, ColTypes.Neutral)
                 End If
 
                 'and finally HDD
@@ -73,11 +73,11 @@ Public Module HardwareProbe
                 'Print information about the probed hardware
                 ListHardware()
             End If
-    End Sub
+        End If
 
-    ''' <summary>
-    ''' Write Inxi.NET debug data to debugger
-    ''' </summary>
+        'Raise event
+        EventManager.RaiseHardwareProbed()
+    End Sub
 
     ''' <summary>
     ''' Write Inxi.NET debug data to debugger

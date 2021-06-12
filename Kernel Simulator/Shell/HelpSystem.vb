@@ -535,10 +535,6 @@ Public Module HelpSystem
 
             W(DoTranslation("No help for command ""{0}""."), True, ColTypes.Error, command)
 
-            Else
-
-            W(DoTranslation("No help for command ""{0}"".", currentLang), True, ColTypes.Err, command)
-
         End If
 
     End Sub

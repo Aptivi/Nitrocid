@@ -160,14 +160,14 @@ Public Module Config
             }
             ScreensaverConfig.Add("Lines", LinesConfig)
 
-            'The Shell Section
-            ksconf.Sections.Add(
-                New IniSection(ksconf, "Shell",
-                    New IniKey(ksconf, "Colored Shell", "True"),
-                    New IniKey(ksconf, "Simplified Help Command", "False"),
-                    New IniKey(ksconf, "Prompt Style", ""),
-                    New IniKey(ksconf, "FTP Prompt Style", ""),
-                    New IniKey(ksconf, "Mail Prompt Style", ""),
+            'Dissolve config json object
+            Dim DissolveConfig As New JObject From {
+                    {"Activate 255 Color Mode", Dissolve255Colors},
+                    {"Activate True Color Mode", DissolveTrueColor}
+            }
+            ScreensaverConfig.Add("Dissolve", DissolveConfig)
+
+            'BouncingBlock config json object
             Dim BouncingBlockConfig As New JObject From {
                     {"Activate 255 Color Mode", BouncingBlock255Colors},
                     {"Activate True Color Mode", BouncingBlockTrueColor},
@@ -218,14 +218,14 @@ Public Module Config
             }
             ScreensaverConfig.Add("GlitterMatrix", GlitterMatrixConfig)
 
-            'Shell
-            ksconf.Sections("Shell").TrailingComment.Text = "This section is the shell settings that lets you control whether or not to enable simplified help command and/or colored shell."
-            ksconf.Sections("Shell").Keys("Simplified Help Command").TrailingComment.Text = "Simplifies the ""help"" command so it only shows available commands."
-            ksconf.Sections("Shell").Keys("Colored Shell").TrailingComment.Text = "Whether or not it supports colored shell."
-            ksconf.Sections("Shell").Keys("Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the main shell. Placeholders here are parsed."
-            ksconf.Sections("Shell").Keys("FTP Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the FTP shell. Placeholders here are parsed."
-            ksconf.Sections("Shell").Keys("Mail Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the mail shell. Placeholders here are parsed."
-            ksconf.Sections("Shell").Keys("SFTP Prompt Style").TrailingComment.Text = "Prompt style. Leave blank to use default style. It only affects the SFTP shell. Placeholders here are parsed."
+            'BouncingText config json object
+            Dim BouncingTextConfig As New JObject From {
+                    {"Activate 255 Color Mode", BouncingText255Colors},
+                    {"Activate True Color Mode", BouncingTextTrueColor},
+                    {"Delay in Milliseconds", BouncingTextDelay},
+                    {"Text Shown", BouncingTextWrite}
+            }
+            ScreensaverConfig.Add("BouncingText", BouncingTextConfig)
 
             'Fader config json object
             Dim FaderConfig As New JObject From {
@@ -369,22 +369,22 @@ Public Module Config
 
             'Shell Section
             Wdbg("I", "Parsing shell section...")
-            If configReader.Sections("Shell").Keys("Simplified Help Command").Value = "True" Then simHelp = True Else simHelp = False
-            ShellPromptStyle = configReader.Sections("Shell").Keys("Prompt Style").Value
-            FTPShellPromptStyle = configReader.Sections("Shell").Keys("FTP Prompt Style").Value
-            MailShellPromptStyle = configReader.Sections("Shell").Keys("Mail Prompt Style").Value
-            SFTPShellPromptStyle = configReader.Sections("Shell").Keys("SFTP Prompt Style").Value
+            simHelp = If(ConfigToken("Shell")?("Simplified Help Command"), False)
+            CurrDir = If(ConfigToken("Shell")?("Current Directory"), paths("Home"))
+            PathsToLookup = If(Not String.IsNullOrEmpty(ConfigToken("Shell")?("Lookup Directories")), ConfigToken("Shell")?("Lookup Directories").ToString.ReleaseDoubleQuotes, Environ("PATH"))
+            ShellPromptStyle = If(ConfigToken("Shell")?("Prompt Style"), "")
+            FTPShellPromptStyle = If(ConfigToken("Shell")?("FTP Prompt Style"), "")
+            MailShellPromptStyle = If(ConfigToken("Shell")?("Mail Prompt Style"), "")
+            SFTPShellPromptStyle = If(ConfigToken("Shell")?("SFTP Prompt Style"), "")
 
-            'Hardware Section
-            Wdbg("I", "Parsing hardware section...")
-            quietProbe = If(ConfigToken("Hardware")?("Quiet Probe"), False)
-            FullProbe = If(ConfigToken("Hardware")?("Full Probe"), True)
-
-            'Network Section
-            Wdbg("I", "Parsing network section...")
-            DebugPort = If(Integer.TryParse(ConfigToken("Network")?("Debug Port"), 0), ConfigToken("Network")?("Debug Port"), 3014)
-            DRetries = If(Integer.TryParse(ConfigToken("Network")?("Download Retry Times"), 0), ConfigToken("Network")?("Download Retry Times"), 3)
-            URetries = If(Integer.TryParse(ConfigToken("Network")?("Upload Retry Times"), 0), ConfigToken("Network")?("Upload Retry Times"), 3)
+            'Filesystem Section
+            Wdbg("I", "Parsing filesystem section...")
+            DebugQuota = If(Integer.TryParse(ConfigToken("Filesystem")?("Debug Size Quota in Bytes"), 0), ConfigToken("Filesystem")?("Debug Size Quota in Bytes"), 1073741824)
+            FullParseMode = If(ConfigToken("Filesystem")?("Size parse mode"), False)
+            HiddenFiles = If(ConfigToken("Filesystem")?("Show Hidden Files"), False)
+            SortMode = If(ConfigToken("Filesystem")?("Filesystem sort mode") IsNot Nothing, If([Enum].TryParse(ConfigToken("Filesystem")?("Filesystem sort mode"), SortMode), SortMode, FilesystemSortOptions.FullName), FilesystemSortOptions.FullName)
+            SortDirection = If(ConfigToken("Filesystem")?("Filesystem sort direction") IsNot Nothing, If([Enum].TryParse(ConfigToken("Filesystem")?("Filesystem sort direction"), SortDirection), SortDirection, FilesystemSortDirection.Ascending), FilesystemSortDirection.Ascending)
+            ShowFilesystemProgress = If(ConfigToken("Filesystem")?("Show progress on filesystem operations"), True)
 
             'Hardware Section
             Wdbg("I", "Parsing hardware section...")
