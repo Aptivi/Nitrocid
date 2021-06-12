@@ -19,7 +19,13 @@
 Imports System.IO
 
 Module RemoteDebugCmd
-    Public DebugCmds As String() = {"trace", "username", "help", "exit"}
+
+    Public ReadOnly DebugCommands As New Dictionary(Of String, CommandInfo) From {{"exit", New CommandInfo("exit", ShellCommandType.RemoteDebugShell, DoTranslation("Disconnects you from the debugger"), False, 0)},
+                                                                                  {"help", New CommandInfo("help", ShellCommandType.RemoteDebugShell, DoTranslation("Shows help screen"), False, 0)},
+                                                                                  {"register", New CommandInfo("register", ShellCommandType.RemoteDebugShell, DoTranslation("Sets device username"), True, 1)},
+                                                                                  {"trace", New CommandInfo("trace", ShellCommandType.RemoteDebugShell, DoTranslation("Shows last stack trace on exception"), True, 1)},
+                                                                                  {"username", New CommandInfo("username", ShellCommandType.RemoteDebugShell, DoTranslation("Shows current username in the session"), False, 0)}}
+    Public DebugModCmds As New ArrayList
 
     ''' <summary>
     ''' Client command parsing.
@@ -33,35 +39,47 @@ Module RemoteDebugCmd
         Dim CmdName As String = CmdArgs(0)
         CmdArgs.RemoveAt(0)
         Try
-            If CmdName = "trace" Then
-                'Print stack trace command code
-                If dbgStackTraces.Count <> 0 Then
-                    If CmdArgs.Count <> 0 Then
-                        Try
-                            SocketStreamWriter.WriteLine(dbgStackTraces(CmdArgs(0)))
-                        Catch ex As Exception
-                            SocketStreamWriter.WriteLine(DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.", currentLang), CmdArgs(0), dbgStackTraces.Count)
-                        End Try
+            Select Case CmdName
+                Case "trace"
+                    'Print stack trace command code
+                    If dbgStackTraces.Count <> 0 Then
+                        If CmdArgs.Count <> 0 Then
+                            Try
+                                SocketStreamWriter.WriteLine(dbgStackTraces(CmdArgs(0)))
+                            Catch ex As Exception
+                                SocketStreamWriter.WriteLine(DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1."), CmdArgs(0), dbgStackTraces.Count)
+                            End Try
+                        Else
+                            SocketStreamWriter.WriteLine(dbgStackTraces(0))
+                        End If
                     Else
-                        SocketStreamWriter.WriteLine(dbgStackTraces(0))
+                        SocketStreamWriter.WriteLine(DoTranslation("No stack trace"))
                     End If
-                Else
-                    SocketStreamWriter.WriteLine(DoTranslation("No stack trace", currentLang))
-                End If
-            ElseIf CmdName = "username" Then
-                'Current username
-                SocketStreamWriter.WriteLine(signedinusrnm)
-            ElseIf CmdName = "help" Then
-                'Help command code
-                SocketStreamWriter.WriteLine("- /trace <TraceNumber>: " + DoTranslation("Shows last stack trace on exception", currentLang) + vbNewLine +
-                                             "- /username: " + DoTranslation("Shows current username in the session", currentLang) + vbNewLine +
-                                             "- /exit: " + DoTranslation("Disconnects you from the debugger", currentLang))
-            ElseIf CmdName = "exit" Then
-                'Exit command code
-                DisconnectDbgDev(Address)
-            End If
+                Case "username"
+                    'Current username
+                    SocketStreamWriter.WriteLine(signedinusrnm)
+                Case "register"
+                    'Register to remote debugger so we can set device name
+                    If String.IsNullOrWhiteSpace(GetDeviceProperty(Address, DeviceProperty.Name)) Then
+                        SetDeviceProperty(Address, DeviceProperty.Name, CmdArgs(0))
+                        dbgConns(dbgConns.ElementAt(DebugDevices.GetIndexOfKey(DebugDevices.GetKeyFromValue(Address))).Key) = CmdArgs(0)
+                        SocketStreamWriter.WriteLine(DoTranslation("Hi, {0}!").FormatString(CmdArgs(0)))
+                    Else
+                        SocketStreamWriter.WriteLine(DoTranslation("You're already registered."))
+                    End If
+                Case "help"
+                    'Help command code
+                    If CmdArgs.Count <> 0 Then
+                        RDebugShowHelp(CmdArgs(0), SocketStreamWriter)
+                    Else
+                        RDebugShowHelp("", SocketStreamWriter)
+                    End If
+                Case "exit"
+                    'Exit command code
+                    DisconnectDbgDev(Address)
+            End Select
         Catch ex As Exception
-            SocketStreamWriter.WriteLine(DoTranslation("Error executing remote debug command {0}: {1}", currentLang), CmdName, ex.Message)
+            SocketStreamWriter.WriteLine(DoTranslation("Error executing remote debug command {0}: {1}"), CmdName, ex.Message)
             EventManager.RaiseRemoteDebugCommandError(Address, CmdString, ex)
         End Try
     End Sub

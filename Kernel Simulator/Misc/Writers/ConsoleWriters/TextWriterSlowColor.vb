@@ -63,38 +63,44 @@ Module TextWriterSlowColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
-            If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
+            'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
+            If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
                 If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
-                    Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
+                    SetConsoleColor(New Color(NeutralTextColor))
                 ElseIf colorType = ColTypes.Continuable Then
-                    Write(esc + "[38;5;" + CStr(contKernelErrorColor) + "m")
+                    SetConsoleColor(New Color(ContKernelErrorColor))
                 ElseIf colorType = ColTypes.Uncontinuable Then
-                    Write(esc + "[38;5;" + CStr(uncontKernelErrorColor) + "m")
+                    SetConsoleColor(New Color(UncontKernelErrorColor))
                 ElseIf colorType = ColTypes.HostName Then
-                    Write(esc + "[38;5;" + CStr(hostNameShellColor) + "m")
+                    SetConsoleColor(New Color(HostNameShellColor))
                 ElseIf colorType = ColTypes.UserName Then
-                    Write(esc + "[38;5;" + CStr(userNameShellColor) + "m")
+                    SetConsoleColor(New Color(UserNameShellColor))
                 ElseIf colorType = ColTypes.License Then
-                    Write(esc + "[38;5;" + CStr(licenseColor) + "m")
+                    SetConsoleColor(New Color(LicenseColor))
                 ElseIf colorType = ColTypes.Gray Then
-                    If backgroundColor = ConsoleColors.DarkYellow Or backgroundColor = ConsoleColors.Yellow Or backgroundColor = ConsoleColors.White Then
-                        Write(esc + "[38;5;" + CStr(neutralTextColor) + "m")
+                    If New Color(BackgroundColor).IsBright Then
+                        SetConsoleColor(New Color(NeutralTextColor))
                     Else
-                        Write(esc + "[38;5;" + CStr(ConsoleColors.Gray) + "m")
+                        SetConsoleColor(New Color(ConsoleColors.Gray))
                     End If
-                ElseIf colorType = ColTypes.HelpDef Then
-                    Write(esc + "[38;5;" + CStr(cmdDefColor) + "m")
-                ElseIf colorType = ColTypes.HelpCmd Then
-                    Write(esc + "[38;5;" + CStr(cmdListColor) + "m")
+                ElseIf colorType = ColTypes.ListValue Then
+                    SetConsoleColor(New Color(ListValueColor))
+                ElseIf colorType = ColTypes.ListEntry Then
+                    SetConsoleColor(New Color(ListEntryColor))
                 ElseIf colorType = ColTypes.Stage Then
-                    Write(esc + "[38;5;" + CStr(stageColor) + "m")
-                ElseIf colorType = ColTypes.Err Then
-                    Write(esc + "[38;5;" + CStr(errorColor) + "m")
+                    SetConsoleColor(New Color(StageColor))
+                ElseIf colorType = ColTypes.Error Then
+                    SetConsoleColor(New Color(ErrorColor))
+                ElseIf colorType = ColTypes.Warning Then
+                    SetConsoleColor(New Color(WarningColor))
+                ElseIf colorType = ColTypes.Option Then
+                    SetConsoleColor(New Color(OptionColor))
+                ElseIf colorType = ColTypes.Banner Then
+                    SetConsoleColor(New Color(BannerColor))
                 Else
                     Exit Sub
                 End If
-                Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+                SetConsoleColor(New Color(BackgroundColor), True)
             End If
 
             'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
@@ -111,10 +117,9 @@ Module TextWriterSlowColor
             If Line Then
                 WriteLine()
             End If
-            If backgroundColor = ConsoleColors.Black Then ResetColor()
-            If colorType = ColTypes.Input And ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+            If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
+            If colorType = ColTypes.Input And ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
+                SetInputColor()
             End If
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -129,15 +134,12 @@ Module TextWriterSlowColor
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteSlowlyC(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal color As ConsoleColors, ParamArray ByVal vars() As Object)
+    Public Sub WriteSlowlyC16(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal color As ConsoleColor, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
-            If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
-                Write(esc + "[38;5;" + CStr(color) + "m")
-                Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-            End If
+            Console.BackgroundColor = IIf(IsNumeric(New Color(BackgroundColor).PlainSequence), If(BackgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor), ConsoleColor.Black), ConsoleColor.Black)
+            Console.ForegroundColor = color
 
             'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
             If msg IsNot Nothing Then
@@ -153,10 +155,9 @@ Module TextWriterSlowColor
             If Line Then
                 WriteLine()
             End If
-            If backgroundColor = ConsoleColors.Black Then ResetColor()
-            If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+            If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
+            If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
+                SetInputColor()
             End If
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -172,15 +173,12 @@ Module TextWriterSlowColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteSlowlyC(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal ForegroundColor As ConsoleColors, ByVal BackgroundColor As ConsoleColors, ParamArray ByVal vars() As Object)
+    Public Sub WriteSlowlyC16(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal ForegroundColor As ConsoleColor, ByVal BackgroundColor As ConsoleColor, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
-            If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
-                Write(esc + "[38;5;" + CStr(ForegroundColor) + "m")
-                Write(esc + "[48;5;" + CStr(BackgroundColor) + "m")
-            End If
+            Console.BackgroundColor = BackgroundColor
+            Console.ForegroundColor = ForegroundColor
 
             'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
             If msg IsNot Nothing Then
@@ -196,10 +194,9 @@ Module TextWriterSlowColor
             If Line Then
                 WriteLine()
             End If
-            If BackgroundColor = ConsoleColors.Black Then ResetColor()
-            If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Write(esc + "[48;5;" + CStr(Color.backgroundColor) + "m")
+            If BackgroundColor = ConsoleColor.Black Then ResetColor()
+            If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
+                SetInputColor()
             End If
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -212,16 +209,15 @@ Module TextWriterSlowColor
     ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
-    ''' <param name="ColorRGB">Color RGB storage</param>
+    ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteSlowlyTrueColor(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal ColorRGB As RGB, ParamArray ByVal vars() As Object)
+    Public Sub WriteSlowlyC(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal color As Color, ParamArray ByVal vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
-            If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
-                Write(esc + "[38;5;" + ColorRGB.ToString + "m")
-                Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+            If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
+                SetConsoleColor(color)
+                SetConsoleColor(New Color(BackgroundColor), True)
             End If
 
             'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
@@ -238,10 +234,9 @@ Module TextWriterSlowColor
             If Line Then
                 WriteLine()
             End If
-            If backgroundColor = ConsoleColors.Black Then ResetColor()
-            If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+            If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
+            If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
+                SetInputColor()
             End If
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -254,17 +249,16 @@ Module TextWriterSlowColor
     ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
-    ''' <param name="ColorRGBFG">Foreground color RGB storage</param>
-    ''' <param name="ColorRGBBG">Background color RGB storage</param>
+    ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
+    ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteSlowlyTrueColor(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal ColorRGBFG As RGB, ByVal ColorRGBBG As RGB, ParamArray ByVal vars() As Object)
+    Public Sub WriteSlowlyC(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal ForegroundColor As Color, ByVal BackgroundColor As Color, ParamArray ByVal vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim esc As Char = GetEsc()
-            If IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out) Then
-                Write(esc + "[38;2;" + ColorRGBFG.ToString + "m")
-                Write(esc + "[48;2;" + ColorRGBBG.ToString + "m")
+            If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
+                SetConsoleColor(ForegroundColor)
+                SetConsoleColor(BackgroundColor, True)
             End If
 
             'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
@@ -281,10 +275,9 @@ Module TextWriterSlowColor
             If Line Then
                 WriteLine()
             End If
-            If backgroundColor = ConsoleColors.Black Then ResetColor()
-            If ColoredShell = True And (IsNothing(DefConsoleOut) Or Equals(DefConsoleOut, Out)) Then
-                Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
+            If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then ResetColor()
+            If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
+                SetInputColor()
             End If
 #If Not NOWRITELOCK Then
         End SyncLock

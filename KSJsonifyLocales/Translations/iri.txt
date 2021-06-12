@@ -1,0 +1,1099 @@
+Orduithe ar fáil: {0}
+Scríobh ordú:
+Tá instealladh ordaithe curtha ar ceal.
+Argóintí tosaithe ar leithligh le camóga gan spásanna, mar shampla, 'motd, gpuprobe'
+Orduithe ar leithligh ar 'cmdinject' le colúin le spásanna, mar shampla, 'cmdinject setthemes Hacker: beep 1024 0.5'
+Tabhair faoi deara nach gclúdaíonn an argóint ‘dífhabhtaithe’ an t-eithne go hiomlán.
+bargs: Ní fhaightear an argóint iarrtha {0}.
+bargs: Earráid neamh-inghnóthaithe san argóint:
+Argóintí atá ar fáil: {0}
+Argóintí ('cabhair' chun cabhair a fháil):
+Beidh argóintí insteallta sceidealta le reáchtáil ag an gcéad atosaigh eile.
+Tá Instealladh Argóinte curtha ar ceal.
+Earráid agus fíor-argóintí líne ordaithe á parsáil: {0}
+Teimpléad dathanna neamhbhailí {0}
+hwprobe: Déanfar do chrua-earraí a phromhadh. Fán le do thoil...
+LAP: Theip ar cheann amháin nó níos mó de na croíthe LAP a phromhadh. Ag taispeáint faisnéise ar aon nós ...
+RAM: Theip ar cheann amháin nó níos mó de na sceallóga RAM a phromhadh. Ag taispeáint faisnéise ar aon nós ...
+HDD: Theip ar cheann amháin nó níos mó de na tiomántáin chrua a phromhadh. Ag taispeáint faisnéise ar aon nós ...
+LAP: Líon iomlán na bpróiseálaithe: {0}
+Iontráil an focal faire admin le haghaidh cothabhála.
+Earráid Eithne agus é ag tosaithe: {0}
+PANIC DUBLE: Sáraíonn an t-am Atosaigh an t-am atosaigh earráide {0} is mó a cheadaítear. Fuair ​​tú fabht eithne.
+[{0}] scaoll: Cumasaíodh atosaigh toisc go bhfuil leibhéal na hearráide {0}.
+[{0}] scaoll: Am chun atosaigh: {1} soicind, níos mó ná 1 uair an chloig. Tá sé socraithe go 1 nóiméad.
+PANIC DUBLE: Cineál Earráide {0} neamhbhailí.
+[{0}] dpanic: {1} - Atosaigh i {2} soicind ...
+[{0}] scaoll: Atosaigh díchumasaithe mar gheall ar an leibhéal earráide a bheith {0}.
+[{0}] scaoll: {1} - Brúigh eochair ar bith chun leanúint ar aghaidh ag úsáid an eithne.
+[{0}] scaoll: {1} - Brúigh aon eochair chun múchadh.
+[{0}] scaoll: {1} - Atosaigh i {2} soicind ...
+PANIC DUBLE: Fabht eithne: {0}
+Shutting síos ...
+Atosaigh ...
+Tá sampla eile de Kernel Simulator ar siúl. Múchadh i gcás cur isteach.
+Theip ar an úsáideoir a chur i liostaí cead: cineál neamhbhailí {0}
+Theip ar an úsáideoir a chur i liostaí cead: úsáideoir neamhbhailí {0}
+Theip ar an úsáideoir a bhaint de liostaí ceada: cineál neamhbhailí {0}
+Tá tú logáilte isteach cheana féin.
+Theip ar an úsáideoir a bhaint de liostaí ceada: úsáideoir neamhbhailí {0}
+Tá fabht aimsithe agat, nó tá an cead a rinne tú iarracht a chur leis nó a bhaint déanta cheana féin, nó earráid eile.
+Earráid {0}: {1}
+Tá fabht aimsithe agat, nó theip ar an gcead a rinne tú iarracht a chur in eagar d’úsáideoir nua.
+Ainmneacha úsáideora atá ar fáil: {0}
+Ainm úsáideora:
+Ní cheadaítear spásanna.
+Ní cheadaítear carachtair speisialta.
+Pasfhocal {0}:
+Focal faire mícheart.
+Tá an t-úsáideoir faoi mhíchumas.
+Ainm úsáideora mícheart.
+Earráid ag iarraidh áititheoirí a pharsáil. {0} - Rian cruachta:
+Earráid ag iarraidh áititheoirí a pharsáil. {0}
+Earráid agus tú ag iarraidh ainm úsáideora a chur leis.
+usrmgr: Ag cruthú ainm úsáideora {0} ...
+Ainm úsáideora bán.
+Níor aimsíodh úsáideoir {0}.
+Ní cheadaítear úsáideoir {0} a bhaint.
+Tá úsáideoir {0} logáilte isteach cheana féin. Logáil amach agus logáil isteach mar admin eile.
+Úsáideoir {0} bainte.
+Earráid agus tú ag iarraidh ainm úsáideora a bhaint.
+Ní aimsítear an spárálaí scáileáin {0} a iarrtar.
+Tá {0} tosaithe i gceart.
+Níor thosaigh {0}. B’fhéidir go raibh botún sa chód spárálaíscáileáin agus é ag tosú.
+Níl Sábhálaí Scáileáin {0} ann.
+Tá {0} socraithe don spárálaí scáileáin réamhshocraithe.
+Sábhálaí scáileáin {0} nach bhfuil le fáil sa bhunachar sonraí. Seiceáil an t-ainm agus bain triail eile as.
+Ní féidir spárálaí scáileáin a luchtú mar gheall ar an méid seo a leanas:
+Tá earráid thromchúiseach ann agus téacs á phriontáil.
+Tá earráid ag iarraidh cumraíocht a chruthú.
+Earráid ag iarraidh RAM a shaoradh: {0} - Leanúnach ...
+Ní féidir Mod a luchtú mar gheall ar an méid seo a leanas:
+mod: Mods á luchtú ...
+mod: Stopadh mods ...
+Níl an t-ainm ag Mod {0}. Déan athbhreithniú ar an gcód foinse.
+Níl an leagan ag Mod {0}.
+Thosaigh {0} v {1}
+Gan sainmhíniú ar ordú {0}.
+Ordú arna shainiú ag
+Ba cheart duit dícheangal ón bhfreastalaí sula nascfaidh tú le freastalaí eile
+Ainm úsáideora do {0}:
+Pasfhocal do {0}:
+Ceangailte le {0}
+Earráid agus tú ag iarraidh nasc a dhéanamh le {0}: {1}
+Rian Stack: {2}
+Iontráil freastalaí FTP.
+Níl eolaire áitiúil {0} ann.
+Iontráil eolaire áitiúil. ".." le dul ar ais.
+Níor aimsíodh eolaire {0}.
+Iontráil eolaire iargúlta. ".." le dul ar ais
+Caithfidh tú ceangal le freastalaí sula n-athraíonn tú eolaire
+Eolaire áitiúil: {0}
+Eolaire cianda: {0}
+Caithfidh tú ceangal leis an bhfreastalaí sula bhfaigheann tú eolaire iargúlta reatha.
+Caithfidh tú ceangal leis an bhfreastalaí le pribhléidí riaracháin sula ndéanann tú an scriosadh.
+Dícheangailte ó {0}
+Níl aon nasc agat le freastalaí ar bith go fóill
+Comhad a íoslódáil {0} ...
+Comhad íoslódáilte {0}.
+Caithfidh tú ceangal leis an bhfreastalaí sula ndéanann tú an tarchur.
+Iontráil comhad le híoslódáil chuig an eolaire áitiúil.
+{0} KB | Athraithe i: {1}
+Ba cheart duit ceangal leis an bhfreastalaí sula ndéanann tú gach comhad iargúlta a liostáil.
+Comhad a uaslódáil {0} ...
+Comhad uaslódáilte {0}
+Iontráil comhad le híoslódáil chuig eolaire iargúlta. uaslódáil <file> <directory>
+(Istigh:
+Faigheann eolaire áitiúil reatha
+Faigheann eolaire iargúlta reatha
+Nascann sé le freastalaí FTP (caithfidh sé tosú le "ftp: //" nó "ftps: //")
+Athraíonn eolaire áitiúil le híoslódáil chuig nó uaslódáil uaidh
+Athraíonn eolaire iargúlta le híoslódáil nó uaslódáil chuig
+Scriosann cianchomhad ón bhfreastalaí
+Dínasc ón bhfreastalaí
+Íoslódáil comhad iargúlta chuig eolaire áitiúil ag úsáid dénártha nó téacs
+Scoir an bhlaosc FTP agus filleann sé ar eithne
+Taispeánann an scáileán cabhrach
+Liostaítear eolaire áitiúil
+Liostaí eolaire iargúlta
+Uaslódáil comhad áitiúil chuig eolaire iargúlta ag úsáid dénártha nó téacs
+Teachtaireacht FTP: Ní fhaightear an t-ordú iarrtha {0}. Féach ‘help’ le haghaidh liosta de na horduithe atá ar fáil a shonraítear ar bhlaosc FTP.
+Theip ar airíonna a fháil don oiriúntóir {0}
+Uimhir Cuibheora:
+Ainm an Cuibheora:
+Uas-Aonad Tarchurtha: {2} Aonad
+Cumasaithe DHCP:
+Paicéid neamh-unicast:
+Paicéid Unicast:
+Earráid paicéid ag teacht isteach / ag dul as oifig:
+Ní féidir ailias a bheith ar an ainm céanna le hordú.
+Ordú nach bhfuarthas ailias go {0}.
+Is féidir leat "{0}" a rith anois mar ordú: "{1}".
+Ní fhaightear amach go bhfuil ailias {0} bainte.
+Modh neamhbhailí {0}.
+Beidh argóintí insteallta, {0}, sceidealta le reáchtáil ag an gcéad atosaigh eile.
+Ní raibh go leor argóintí ann. Féach thíos le haghaidh úsáide:
+Níor aimsíodh eolaire {0}
+Ainm óstach bán.
+Ag athrú ó: {0} go {1} ...
+Teachtaireacht bhán an lae.
+Blank MAL Tar éis Logáil Isteach.
+Pasfhocal úsáideora mícheart.
+Ní hionann pasfhocail.
+Athraíodh ainm úsáideora go {0}!
+Tá an t-ainm nua a chuir tú isteach le fáil cheana féin.
+Ní fhaightear {0}.
+Cumraíocht athluchtaithe. B’fhéidir go mbeidh ort an t-eithne a atosaigh chun go dtiocfaidh roinnt athruithe i bhfeidhm.
+Tá ceann amháin nó níos mó de na dathanna neamhbhailí.
+Níl dathanna ar fáil. Cas ar bhlaosc daite i gcumraíocht an eithne.
+Ní bhfuarthas spárálaíscáileáin {0}.
+[ Socruithe eithne (Ag rith ar {0}) ]
+Leagan Eithne:
+Mód Dífhabhtaithe:
+Sliogán Daite:
+Argóintí ar Tosaithe:
+Ordú cabhrach simplithe:
+MOTD ar Logáil Isteach:
+Am / Dáta ar an choirnéal:
+[ Socruithe crua-earraí ] {0}
+{0}[ Socruithe úsáideora ]
+Ainm úsáideora reatha:
+Ainm óstach reatha:
+Ainmneacha úsáideora atá ar fáil:
+Earráid ag iarraidh ordú a fhorghníomhú
+Eolaire athruithe
+Athraíonn pasfhocal don úsáideoir reatha
+Glanann an scáileán
+Úsáid blaosc FTP chun idirghníomhú le freastalaithe
+Leathanach cabhrach
+Liostaigh ábhar an chomhaid / an fhillteáin san fhillteán reatha
+Glais do scáileán le pasfhocal
+Logs tú amach
+Cruthaíonn eolaire
+Liostaíonn sé faisnéis faoi na comhéadain uile atá ar fáil
+Atosaigh do ríomhaire (RABHADH: Gan sioncrónú, toisc nach eithne deiridh é)
+Athlódáil comhad cumraíochta atá curtha in eagar.
+Sábhálann do scáileán ó dhóiteáin
+Socraíonn sé spárálaíscáileáin eithne
+Téamaí eithne a chur ar bun
+Taispeánann dáta agus am
+Taispeánann dáta agus am i gcriosanna
+Dúnfar an t-eithne
+Faisnéis chórais
+* Is féidir leat il-orduithe a úsáid ag baint úsáide as an colon idir orduithe.
+Úsáid:
+áit a mbeidh argóintí {0}
+Cuirtear tús leis an mblaosc FTP.
+Cairde
+áit a mbeidh customsaver
+Glais do scáileán leis an bhfocal faire.
+Logálann tú as an úsáideoir tú.
+Faigh gach faisnéis líonra
+Atosaigh do ríomhaire insamhalta.
+Athlódáil an chumraíocht a athraíonn an t-úsáideoir deiridh nó uirlis.
+Ní gá atosú a dhéanamh ar dathanna, ach éilíonn an chuid is mó de na socruithe ort atosú.
+taispeánann spárálaí scáileáin roghnaithe duit, agus do scáileán á chosaint ar dhóiteáin.
+Taispeánann an dáta agus an t-am.
+Taispeánann sé an dáta agus an t-am i gcriosanna.
+Scoitear síos do ríomhaire insamhalta.
+Taispeánann sé faisnéis agus leaganacha córais.
+Tharla earráid sa bhlaosc.
+Níl cead agat {0} a úsáid
+Teachtaireacht bhlaosc: Ní cheadaítear an t-ordú iarrtha {0} a reáchtáil i mód cothabhála.
+Teachtaireacht Shell: Ní fhaightear an t-ordú iarrtha {0}. Féach ‘help’ le haghaidh orduithe atá ar fáil.
+Teachtaireacht bhlaosc: Ní cheadaítear Ordú {0} a rith ar logáil isteach.
+Earráid ag iarraidh ordú a fhorghníomhú.
+am dáta: Is é an t-am {0}
+dáta dáta: Inniu {0}
+am dáta: Crios Ama: {0}
+- Am {0}: {1}
+chun an scáileán a ghlanadh.
+Ag rith ar {0}
+Níl tú údaraithe faisnéis a fháil le haghaidh {0}.
+Tá an t-ordú seo i léig agus bainfear é i scaoileadh amach anseo.
+Níl tú údaraithe pasfhocal de {0} a athrú toisc gur admin an sprioc.
+usrmgr: Tá ainm úsáideora {0} le fáil cheana féin
+Scriosann gach rud i log dífhabhtaithe
+Teanga neamhbhailí
+Athraíonn teanga
+----------------------------- Dumpáil scaoll eithne ------------------ -----------
+>> Faisnéis scaoll <<
+> Cur síos: {0}
+> Cineál earráide: {1}
+> Dáta agus Am: {2}
+>> Eolas eisceachtúil <<
+> Eisceacht: {0}
+> Cur síos: {1}
+> HRESULT: {2}
+> Foinse: {3}
+> Rian cruachta <
+>> Eisceacht inmheánach {0} faisnéis <<
+>> Eisceacht {0} an bhunchúis <<
+>> Gan aon eisceacht; botún eithne a d’fhéadfadh a bheith ann. <<
+>> Frámaí, comhaid, línte, agus colúin <<
+> Fráma {0}: Comhad: {1} | Líne: {2} | Colún: {3}
+> Tá earráid ann agus tú ag iarraidh faisnéis fráma a fháil. {0}: {1}
+Athlódáil mods.
+Mods athluchtaithe.
+Fáilte go Eithne!
+Logáilte isteach go rathúil mar <user>
+Tá MOTD / MAL bailí, ach níl an cineál teachtaireachta bailí. Ag glacadh le MOTD ...
+Iarracht MOTD / MAL a léamh atá den chineál teachtaireachta neamhbhailí.
+Tá an íoslódáil críochnaithe.
+Theip ar íoslódáil i dtriail {0}: {1}
+Úsáid "ftp" le do thoil má tá tú chun comhaid a íoslódáil ón bhfreastalaí FTP.
+Íoslódáil comhad chuig an eolaire oibre reatha
+Déan gléas dífhabhtaithe a dhícheangal
+Liostaítear feistí dífhabhtaithe ceangailte
+Gléas dífhabhtaithe {0} gan aimsiú.
+Gléas {0} dícheangailte.
+Earráid i dtaca: {0}
+Éisteacht dífhabhtaithe ar gach seoladh ag úsáid calafort {0}.
+Níor sonraíodh aon argóintí. Leid: Sonraigh argóintí iolracha scartha le spásanna
+Ailias a fuarthas cheana: {0}
+Log dífhabhtaithe bainte. Féadfaidh gach feiste dífhabhtaithe ceangailte teachtaireachtaí a fheiceáil fós.
+Theip ar bhaint lomán dífhabhtaithe: {0}
+Theip ar an eolaire athraithe: {0}
+Sonraigh an seoladh
+Ní féidir eolaire a bhaint: {0}
+Sonraítear crios ama go mícheart.
+Roghnú próifíl neamhbhailí.
+Ag iarraidh nasc a dhéanamh le {0} le próifíl {1} ​​...
+Ordú {0} gan aimsiú. Féach an t-ordú "help" le haghaidh liosta na n-orduithe.
+Theip ar airíonna IPv6 a fháil don adapter {0}. Ag leanúint ar aghaidh ...
+Faisnéis IPv4:
+Faisnéis IPv6:
+Ní thacaíonn Cuibheoir {0} le IPv6. Ag leanúint ar aghaidh ...
+Ní thacaíonn Cuibheoir {0} le IPv4. Theip ar phróifíl.
+Is cosúil go raibh tú ag rith leagan forbartha an eithne. Cé gur féidir leat na gnéithe a fheiceáil, déantar é a nuashonrú go minic agus d’fhéadfadh sé fabhtanna a thabhairt isteach. Moltar duit fanacht ar an leagan cobhsaí.
+Tá dhá leagan sa teanga a roghnaigh tú. Pioc ceann:
+1. Transliterated
+2. Aistrithe
+Roghnaigh do rogha:
+Rogha neamhbhailí. Déan iarracht arís.
+Tá tú neamhúdaraithe eolaire reatha a shocrú go {0}: {1}
+Tá an cosán a shonraigh tú ró-fhada.
+LAP: RABHADH: Beidh SSE2 ag teastáil i ngealltanais forbartha amach anseo.
+Tharla bailitheoir faisnéise dumpála nuair a bhí sé ag iarraidh faisnéis a fháil faoi {0}: {1}
+Earráid agus tú ag iarraidh dáta an tionóil a thiomsú {0}: {1}
+Earráid agus tú ag iarraidh MOTD / MAL a shocrú: {0}
+Earráid agus tú ag iarraidh MOTD / MAL a fháil: {0}
+Earráid agus tú ag iarraidh spárálaíscáileáin a thosú, mar gheall ar oibríocht neamhbhailí.
+Ní cheadaítear athlódáil i mód sábháilte.
+Ní cheadaítear mods parsála ar mhodh sábháilte.
+Liostaítear gach feiste dífhabhtaithe ceangailte.
+Earráid agus tú ag iarraidh mód pharsála a shocrú. Seiceáil an luach agus bain triail eile as. Má tá sé seo ceart, féach rian na cruachta nuair a chumasaítear dífhabhtú eithne.
+Ní comhad ná eolaire an cosán.
+Cruthaítear cóip eile de chomhad faoi eolaire nó ainm difriúil.
+Bogann comhad chuig eolaire eile
+Chun comhaid a chóipeáil chuig eolaire eile nó ainm difriúil
+Chun comhaid a bhogadh chuig eolaire eile
+Meaitseáil {0} ({1}): {2}
+Meaitseáil {0}: {1}
+Am a chaitear: {0} milleasoicind
+Ainm: {0}
+Ríomh suimeanna comhaid.
+Téann tú chuig ár Wiki GitHub.
+Algartam criptithe neamhbhailí.
+Cumasaíonn nó díchumasaíonn dífhabhtú iargúlta.
+Féach an féidir leat focail a litriú i gceart in am
+Féach an féidir leat cothromóidí matamaitice a réiteach in am
+Freagra a thabhairt ar thuairimí grá nó gráin.
+Má rinne duine éigin an trácht seo ar d’fhíseán:
+Conas a thabharfá freagra?
+Roghnú neamhbhailí. Ag dul go dtí an chéad trácht eile ...
+Níor thuairiscigh tú ach an trácht grá!
+Níor fhreagair tú ach an trácht fuatha!
+Go hiontach! Bainfear trácht {0} as sin.
+Go hiontach! Beidh {0} buíoch as do bhuíochas.
+Litrithe go foirfe!
+Litrithe go mícheart.
+Réitithe go foirfe!
+Réitíodh go mícheart.
+Tá RPC ag rith cheana féin.
+Éisteacht RPC ar gach seoladh ag úsáid calafort {0}.
+Ag tosú RPC ...
+Nascann sé le freastalaí SSH.
+Iontráil an focal faire do {0}:
+SSH Dícheangailte.
+Ní féidir leathanach cód a shocrú. B’fhéidir nach dtaispeánfaidh an teanga i gceart.
+Ní chumasófar dífhabhtú.
+Níl {0} socraithe don spárálaí scáileáin réamhshocraithe a thuilleadh.
+Go raibh maith agat! Tá sé seo suimiúil.
+Tacóidh gach duine le d’fhíseán chuige seo.
+Thug mé an comhad speisialta duit i do r-phost le haghaidh do chéad fhíseán eile.
+Éist, is fuath leat, tá sé ag iarraidh cabhrú linn, ní scam.
+Níl a fhios agam cé mhéid a ghabhfaidh mé féin agus mo chairde buíochas leat as an bhfíseán seo.
+Is breá liom tú don fhíseán seo.
+Coinnigh ort, ná stad.
+Cabhróidh mé leat síntiúsóirí 1M a bhaint amach!
+Fuair ​​mo chairde a ríomhaire socraithe mar gheall ort.
+Prank uamhnach! Dhún mé ríomhaire mo namhaid.
+A haoirí: STOP HATING ON HIM
+A haoirí: FAIGH GO OBAIR
+Ní thabharfaidh éinne faoi deara é seo anois a bhuí le do threoir i bhfolach réad
+Stopfaidh mé ag féachaint ar do chuid físeáin. Suibscríobhaí caillte.
+Cad é seo? Níl sé seo soiléir.
+Is é an físeán seo an ceann is measa!
+Tuairiscíonn gach duine an físeán seo!
+Tá fearg ar mo chairde leat!
+Beidh gráin ag lovers ort anois.
+Beidh gráin ag do chara ort as seo.
+Chuir an prank seo díliostáil chugam.
+Theip ar an misean, Meas -, Suibscríobhaí -
+Stop físeán den chineál seo a dhéanamh !!!
+Faigh ar ais chuig do phost, is iad do chuid físeáin an ceann is measa!
+Déanaimid dochar ar an bhfíseán seo.
+Taispeánann sé gach fógra a fuarthas
+Dífhostú fógra
+Díbheadh ​​an fógra go rathúil.
+Paicéid (isteach):
+Paicéid (amach):
+Earráidí sna paicéid a fuarthas:
+Airíonna ginearálta IPv6
+Airíonna ginearálta IPv4
+Forghníomhaíonn cianda ordú go cianda ríomhaire
+- Céim 1: Tosú an chórais
+- Céim 2: Brath crua-earraí
+- Céim 3: Brath mods agus spárálaíscáileáin
+- Céim 4: Logáil isteach
+Is cosúil go raibh an leagan iarrthóra scaoilte á rith agat. Moltar duit fanacht ar an leagan cobhsaí.
+Cineál neamhbhailí {0}.
+Méid: {0}
+Tá eolaire {0} ann cheana.
+Earráid agus tú ag iarraidh nasc a dhéanamh le {0}: Teorainn ama ceangail nó nasc caillte
+Áireamhán chun nathanna a ríomh.
+Earráid agus an ríomh á ríomh.
+Is cosúil go raibh an leagan beagnach scaoilte á rith agat. Cé go bhfuil sé níos sábháilte le húsáid anois, moltar duit fanacht ar an leagan cobhsaí.
+Nuashonrú an chórais
+Seiceáil le haghaidh nuashonruithe córais ...
+Leagan nua aimsithe:
+Is féidir leat é a íoslódáil ag:
+Gan aon fhógraí le déanaí
+Cuardaigh teaghrán sonraithe sa chomhad curtha ar fáil
+Ríomhtar suimeanna comhaid in eolaire sonraithe.
+Liostaítear gach ríomhphost san úsáideoir sonrach.
+Iontráil ainm úsáideora nó seoladh poist:
+Iontráil pasfhocal:
+Earráid agus tú ag nascadh le {0}: {1}
+Ag nascadh le {0} ...
+Fíordheimhniú ...
+Scoir an bhlaosc IMAP
+Liosta orduithe
+Íoslódáil teachtaireachtaí agus liostaítear iad
+Osclaítear teachtaireacht
+Ní fhéadfaidh an leathanach a bheith diúltach nó nialasach.
+Ní luach uimhriúil é Leathanach.
+Ní fhéadfaidh uimhir teachtaireachta a bheith diúltach nó nialasach.
+Ní luach uimhriúil í uimhir na teachtaireachta.
+- Ó {0}
+- Go {0}
+- Seolta ag {0} in {1}
+Ní fhaightear teachtaireacht a shonraítear.
+Níor éirigh le dífhabhtú cianda a thosú: {0}
+Próifílí a ullmhú ... Thógfadh sé cúpla nóiméad ...
+Ainm Óstach, Ainm Úsáideora, Cineál Sonraí, Ionchódú, Criptiú, Prótacail
+Earráid agus tú ag iarraidh script a fhorghníomhú: {0}
+Scríobhann téacs isteach sa chonsól
+Déanann sé roghanna úsáideora
+Bí i 'n' Hz agus am i milleasoicindí 'n'
+áit a bhfuil <$ athróg> aon athróg a úsáidfear chun freagairt a stóráil
+Caithfidh minicíocht a bheith uimhriúil. Má tá sé uimhriúil, déan cinnte go bhfuil sé> = 37 agus <= 32767.
+Caithfidh an t-am a bheith uimhriúil.
+nuair is freagraí aon-litreach iad <answers> ar an gceist atá scartha óna chéile
+Earráid ag iarraidh nasc a dhéanamh le freastalaí SSH: {0}
+Ligeann sé don úsáideoir ionchur a iontráil
+Athraíonn eolaire ríomhphoist reatha
+Ní féidir fillteán ríomhphoist a oscailt {0}: {1}
+Liostaí eolairí i do sheoladh ríomhphoist
+Úsáidtear faisnéis ó Speed ​​Dial chun nasc a dhéanamh le haon líonra go tapa
+Roghnaigh seoladh chun nasc a dhéanamh le:
+Tá an roghnú as raon. Roghnaigh idir 1- {0}. Déan iarracht arís.
+Ní uimhir í an roghnú. Déan iarracht arís.
+Le linn bailíochtú teastais, bíonn earráidí teastais ann. B’fhéidir gurb é seo an chéad uair a rinne tú nasc leis an bhfreastalaí nó b’fhéidir go raibh an deimhniú caite. Seo earráid:
+An bhfuil tú cinnte gur mhaith leat nasc a dhéanamh?
+Freagra neamhbhailí. Arís, le d'thoil.
+Tá dhiailiú luais folamh. Ceangail le freastalaí chun seoladh a chur leis.
+Níl dhiailiú luais ann. Ceangail le freastalaí chun seoladh a chur leis.
+Iontráil seoladh agus calafort freastalaí IMAP (<address> nó <address>: [port]):
+Iontráil seoladh agus calafort freastalaí SMTP (<address> nó <address>: [port]):
+Iarrann ort na réimsí riachtanacha a líonadh chun teachtaireacht a sheoladh chuig seoladh
+Seoltar teachtaireacht chuig seoladh
+Iontráil seoladh ríomhphoist an fhaighteora:
+Iontráil san ábhar:
+Iontráil do theachtaireacht thíos. Scríobh "EOF" chun a dhearbhú.
+Teachtaireacht á sheoladh ...
+Teachtaireacht seolta.
+Sheoladh ríomhphoist neamhbhailí. Déan cinnte gur scríobh tú an seoladh i gceart agus go bhfuil sé comhoiriúnach le formáid an tsampla a thaispeántar:
+Bain teachtaireacht
+Baintear gach teachtaireacht ón bhfaighteoir
+Teachtaireacht {0} ó {1} scriosta ó {2}. {3} teachtaireacht fágtha le pharsáil.
+Teachtaireacht {0} ó {1} scriosta ón mbosca isteach. {2} teachtaireacht fágtha le pharsáil.
+Eagarthóireacht ar chomhad téacs
+Déanann sé comhad nua
+Tá comhad ann cheana.
+Earráid agus tú ag iarraidh comhad a chruthú: {0}
+Theip ar an gcomhad a oscailt. Blaosc ag imeacht ...
+Ní fhaightear an t-ordú sonraithe eagarthóra téacs.
+Liostaí orduithe ar fáil
+Scoir an t-eagarthóir téacs agus sábháil athruithe nár sábháladh
+Priontaí ábhar an chomhaid le huimhreacha líne ar an consól
+Cuireann sé líne nua le téacs ag deireadh an chomhaid
+Bain an uimhir shonraithe líne
+Cuirtear focal nó frása in ionad focal eile
+Scriosann focal nó frása ón uimhir líne
+Scriosann carachtar ó uimhir charachtair i líne shonraithe
+Líne bainte.
+Ní uimhir bhailí uimhir líne shonraithe {0}.
+Ní chuirtear argóintí riachtanacha ar aghaidh chun ordú {0}
+Earráid ag iarraidh ordú a rith: {0}
+Ag rith i mód sábháilte. Céim gan bacadh ...
+>> Dífhabhtaithe agus Comhrá cianda: leagan
+>> Is é do sheoladh {0}.
+>> {0} an t-ainm atá ort.
+Ordú {0} gan aimsiú. Úsáid "/ help" chun an liosta a fheiceáil.
+Innéacs {0} neamhbhailí. Tá {1} rianta cruachta ann. Tá an t-innéacs bunaithe ar nialas, mar sin déan iarracht dealú faoi 1.
+Gan rian cruachta
+Taispeánann an rian deireanach cruachta ar eisceacht
+Taispeánann sé ainm úsáideora reatha sa seisiún
+Dínasc tú ón dífhabhtóir
+Dícheangail feiste dífhabhtaithe de réir seoladh IP
+Cuir bac ar ghléas dífhabhtaithe de réir seoladh IP
+Is féidir le {0} anois dífhabhtaithe iargúlta a cheangal arís.
+Níl {0} blocáilte fós.
+Earráid socruithe luchtú
+Tá earráid ann agus socruithe á luchtú. B’fhéidir go mbeidh ort an comhad socruithe a sheiceáil.
+Roghnaigh roinn:
+Socruithe Ginearálta...
+Socruithe Crua-earraí ...
+Socruithe Logála isteach ...
+Socruithe Shell ...
+Socruithe Líonra ...
+Socruithe Ilghnéitheacha ...
+Sábháil Socruithe
+An slí amach
+Tá rogha sonraithe {0} neamhbhailí.
+Caithfidh an freagra a bheith uimhriúil.
+Pras le haghaidh Argóintí ar Tosaithe
+Truicear Mód Cothabhála
+Athraigh Pasfhocal Fréamh ...
+Seiceáil le haghaidh Nuashonruithe ar Tosaithe
+Tóraigh Ciúin
+Taispeáin MOTD ar Logáil Isteach
+Scáileán Glan ar Logáil Isteach
+Taispeáin ainmneacha úsáideora atá ar fáil
+Sliogán Daite
+Ordú Cabhrach Simplithe
+Port Debug
+Íoslódáil Retry Times
+Logáil ainm úsáideora FTP
+Logáil seoladh IP FTP
+Ná seol ach an chéad phróifíl FTP ar ais
+Taispeáin Am / Dáta ar an gCoirnéal ar Dheis Uachtarach
+Teorainn Ama Scáileáin in ms
+Cuóta Méid Dífhabhtaithe i mbearta
+Mód pharsála méide
+Marquee ar an am tosaithe
+Am agus Dáta Fada
+Taispeáin Comhaid Hidden
+Cuid neamhbhailí iontráilte. Téigh ar ais le do thoil.
+Dul ar ais...
+Cumasaigh
+Díchumasaithe
+Uimhir eochair neamhbhailí iontráilte. Téigh ar ais le do thoil.
+Scríobh an focal faire fréimhe atá le socrú. Ná bíodh imní ort; taispeántar an focal faire mar réaltaí.
+Cumasaigh "Change Root Password" an rogha seo a úsáid. Téigh ar ais le do thoil.
+Athraigh Pasfhocal Fréamh?
+Socraigh Pasfhocal Fréamh ...
+Scríobh calafort dífhabhtaithe iargúlta. Caithfidh sé a bheith uimhriúil, agus ní gá é a úsáid cheana féin. Seachas sin, ní theipfidh ar dhífhabhtóir iargúlta an calafort a oscailt.
+Scríobh cé mhéad uair ba cheart don ordú "faigh" íoslódálacha a theip orthu a atriail. Caithfidh sé a bheith uimhriúil.
+Scríobh cathain is féidir spárálaíscáileáin a sheoladh tar éis milleasoicindí sonraithe. Caithfidh sé a bheith uimhriúil.
+Scríobh cé mhéad beart is féidir leis an stór log dífhabhtaithe. Caithfidh sé a bheith uimhriúil.
+B’fhéidir nach mbeidh an freagra diúltach.
+Tá an freagra neamhbhailí. Seiceáil le cinntiú go bhfuil an freagra uimhriúil d’iontrálacha cumraíochta a bhfuil uimhreacha de dhíth orthu mar fhreagraí.
+Ní fhaightear athróg {0} ar aon cheann de na modúil.
+Athraíonn cumraíocht eithne
+Socruithe Sábhálaí Scáileáin ...
+Gníomhachtaigh 255 dathanna
+Ar mhaith leat ceangal a choinneáil?
+Rogha neamhbhailí. Ag glacadh leis nach ...
+Athraigh Cultúr agus Teangacha á Athrú
+Téacs léirithe
+Scríobh téacs ar bith is mian leat a thaispeántar. Is fearr níos giorra.
+Theip ar uaslódáil {0}
+Earráid agus ordú iargúlta dífhabhtaithe á fhorghníomhú {0}: {1}
+Cuireann úsáideoirí leis
+Cuireann ailiasanna le horduithe
+Instealladh argóintí chuig an eithne (atosaigh ag teastáil)
+Athraíonn ainm óstach
+Athraíonn MAL, an MOTD Tar éis Logáil Isteach
+Athraíonn MOTD, Teachtaireacht an Lae
+Athraíonn ainm úsáideora
+Bainistigh ceadanna d’úsáideoirí
+Athlódáil comhad spárálaíscáileáin i KSMods
+Bain úsáideoir as an liosta
+D'éirigh le ailias {0} a bhaint.
+Theip ar sheiceáil le haghaidh nuashonruithe.
+Níl níos mó úsáideoirí fágtha ar an liosta.
+Theip ar theanga a leagan síos.
+Earráid ag iarraidh fógra a dhíbhe.
+usrmgr: Theip ar ainm úsáideora {0} a chruthú: {1}
+Theip ar an úsáideoir a athainmniú. {0}
+Níl ainm úsáideora {0} ar cheann de na liostaí ceada.
+Theip ar cheadanna a luchtú ón gcomhad: {0}
+Theip ar athrú ainm óstach: {0}
+Níor aimsíodh an t-úsáideoir
+Theip ar phasfhocal ainm úsáideora a athrú: {0}
+Theip ar chóipeáil comhad nó eolaire: {0}
+Theip ar bhogadh comhad nó eolaire: {0}
+Ní féidir an comhad a aimsiú a mheaitseálann an sreangán "{0}": {1}
+Theip ar an íoslódáil le haghaidh comhad {0}.
+Theip ar chomhaid iargúlta a liostáil: {0}
+Iontráil comhad nó fillteán le baint. Caithfidh ceadanna riaracháin a bheith agat ar do chuntas le go mbeidh tú in ann iad a bhaint.
+An bhfuil tú cinnte gur mhaith leat {0} <y / n> a scriosadh?
+Scriosadh {0} ...
+Ní fhaightear {0} sa fhreastalaí.
+Baintear gach post a dhéanann {0} go rathúil.
+Theip ar gach post a rinne {0} a bhaint.
+Earráid agus teachtaireacht á seoladh.
+Ag bogadh {0} go {1} ...
+Ar athraíodh a ionad go rathúil
+Bogann sé comhad nó eolaire chuig comhad nó eolaire eile. Is féidir leat é sin a úsáid freisin chun comhaid a athainmniú.
+Theip ar bhogadh {0} go {1}.
+Iontráil cosán foinse agus cosán ceann scríbe.
+Cóipeáil {0} go {1} ...
+Cóipeáladh go rathúil
+Cóipeáil comhad nó eolaire chuig comhad nó eolaire eile.
+Theip ar chóipeáil {0} go {1}.
+Bog teachtaireacht
+Bogann sé gach teachtaireacht ón bhfaighteoir
+Bogtar gach post a dhéanann {0} go rathúil.
+Theip ar gach post a rinne {0} a bhogadh.
+Bhog teachtaireacht {0} ó {1} ó {2}. {3} teachtaireacht fágtha le pharsáil.
+Taispeánann sé eolas aimsire do chathair shonraithe. Úsáidtear OpenWeatherMap.
+- Eolas aimsire do {0} -
+Aimsir: {0}
+Brú: {0}
+Bogthaise: {0}
+Is féidir leat d’eochair API féin a fháil ag https://home.openweathermap.org/api_keys.
+Is féidir leat dul i gcomhairle i gcónaí le http://bulk.openweathermap.org/sample/city.list.json.gz maidir le liosta na gcathracha a bhfuil a gcuid IDanna acu.
+An tAonad Teochta is Fearr
+Kelvin
+Impiriúil (Fahrenheit)
+Méadrach (Celsius)
+Socraíonn sé an t-eithne ionas go spreagfaidh sé tú chun argóint a dhéanamh ar tosaithe.
+Modh cothabhála truicear. Díchumasaíonn sé seo cuntais iolracha.
+Gach tosaithe, seiceálfaidh sé le haghaidh nuashonruithe.
+Agus teangacha á athrú agat, athraigh ainmneacha na míosa, an fhéilire, srl.
+Má tá an t-eithne tosaithe, socróidh sé pasfhocal fréimhe.
+Coinnigh teachtaireachtaí promhaidh crua-earraí ciúin.
+Taispeáin Teachtaireacht an Lae sula dtaispeánfar an scáileán logála isteach.
+Scáileán soiléir sula dtaispeántar an scáileán logála isteach.
+Taispeánann sé na húsáideoirí atá ar fáil má tá siad cumasaithe.
+Tugann sé tacaíocht dath an eithne
+Ordú cabhrach simplithe do na sliogáin go léir
+Cibé ar cheart ainm úsáideora FTP a logáil.
+Cibé an seoladh IP FTP a logáil nó nach bhfuil.
+Roghnaigh an chéad phróifíl ach agus tú ag nascadh.
+Gníomhaíonn 255 tacaíocht dathanna do ColorMix.
+Gníomhaíonn 255 tacaíocht dathanna don Disco.
+Gníomhaíonn 255 tacaíocht dathanna do GlitterColor.
+Gníomhaíonn 255 tacaíocht dathanna do Línte.
+Taispeánfar an t-am agus an dáta sa chúinne uachtarach ar dheis den scáileán
+Má tá sé cumasaithe, déanfaidh an t-eithne an fillteán iomlán a pharsáil dá mhéid iomlán. Eile, ní dhéanfaidh sé ach an dromchla a pharsáil.
+Cumasaíonn eyecandy ar an am tosaithe
+Beidh an t-am agus an dáta níos faide, ag taispeáint ainmneacha na míosa iomláine, srl.
+Taispeánann comhaid i bhfolach.
+Roghnaigh an t-aonad is fearr leat le haghaidh teochta (ní bhaineann sé seo ach leis an ordú "aimsire")
+Stopadh Mod {0}
+Stopadh {0} v {1}
+Níl an chuid ainm ag Mod {0}. Theip ar pharsáil mod. Déan athbhreithniú ar an gcód foinse.
+Níl an t-ordú ag Mod {0}. Theip ar pharsáil mod. Déan athbhreithniú ar an gcód foinse.
+Caithfidh tú an modh dífhabhtaithe a chasadh air sular féidir leat logáil dífhabhtaithe a ghlanadh.
+Tháinig {0} teachtaireachtaí nua isteach sa bhosca isteach.
+Oscail "lsmail" chun iad a fheiceáil.
+Ní féidir an comhad a bhaint: {0}
+Bain eolaire nó comhad
+Ní féidir {0} a bhaint toisc nach bhfuil sé ann.
+Brúigh CTRL + C chun imeacht.
+Soláthraíonn sé faisnéis faoi chomhad
+Soláthraíonn sé faisnéis faoi eolaire
+Ní féidir faisnéis a fháil faoi eolaire nach bhfuil ann.
+Ní féidir faisnéis a fháil faoi chomhad nach bhfuil ann.
+Ainm iomlán: {0}
+Am cruthaithe: {0}
+Am rochtana deireanach: {0}
+Am scríbhneoireachta deireanach: {0}
+Tréithe: {0}
+Eolaire tuismitheoirí: {0}
+Cá háit a bhfaighidh tú: {0}
+Méid an chomhaid: {0}
+Athraíonn sé tréith comhaid
+Níor aimsíodh comhad.
+áit a bhfuil <attributes> ar cheann de na rudaí seo a leanas:
+Is gnáthchomhad é an comhad
+Is comhad inléite amháin é an comhad
+Is comhad i bhfolach é an comhad
+Is cartlann an comhad. Úsáidtear le haghaidh cúltacaí.
+Tá an tréith "{0}" neamhbhailí.
+Cuireadh le tréith go rathúil.
+Baineadh an tréith go rathúil.
+Theip ar an tréith a chur leis.
+Theip ar an tréith a bhaint.
+Cuirtear focal nó frása in ionad focal eile i líne
+Sáraíodh an leibhéal dath dearg. Bhí sé {0}.
+Sáraíodh an leibhéal dathanna glasa. Bhí sé {0}.
+Sáraíodh leibhéal dath gorm. Bhí sé {0}.
+Gníomhaigh dathanna fíor
+Gníomhaíonn sé fíor-thacaíocht dathanna do ColorMix.
+Gníomhaíonn sé fíor-thacaíocht dathanna don Disco.
+Gníomhaíonn sé fíor-thacaíocht dathanna do GlitterColor.
+Gníomhaíonn sé fíor-thacaíocht dathanna do Línte.
+Theip ar dhíbhlocáil {0}.
+Tá {0} blocáilte cheana féin.
+Ní féidir le {0} a bheith páirteach i ndífhabhtaithe iargúlta anois.
+Theip ar bhac {0}.
+Dathanna rothaíochta
+Rothaíonn dioscó dathanna nuair a chumasófar é. Seachas sin, roghnaigh dathanna randamacha.
+Iontráil cosáin chomhaid chuig ceangaltáin. Brúigh ENTER ar chosán bán chun a dhearbhú.
+Osclaítear teachtaireacht chriptithe
+Scríobh pasfhocal le haghaidh eochair ID {0}
+Seoltar teachtaireacht chriptithe chuig seoladh
+Iarrann ort na réimsí riachtanacha a líonadh chun teachtaireacht chriptithe a sheoladh chuig seoladh
+Íoslódáil ó {0} ...
+Taispeáin barra dul chun cinn agus tú ag íoslódáil nó ag uaslódáil ó ordú “faigh” nó “cuir”
+Más fíor, déanann sé "faigh" nó "cuir" an barra dul chun cinn a thaispeáint agus é á íoslódáil nó á uaslódáil.
+Uaslódáil comhad chuig suíomh Gréasáin sonraithe
+Tugann seoladh
+Uaslódáil {0} go {1} ...
+Tá an t-uaslódáil críochnaithe.
+Úsáid "ftp" le do thoil má tá tú chun comhaid a uaslódáil chuig an bhfreastalaí FTP.
+Theip ar an uaslódáil i dtriail {0}: {1}
+Scríobh cé mhéad uair ba cheart don ordú "put" uaslódálacha teipthe a atriail. Caithfidh sé a bheith uimhriúil.
+Ní fhéadfaidh an seoladh a bheith folamh.
+Theip ar ping {0}: {1}
+D’éirigh le Ping {0} ms.
+Ní fhéadfaidh an uimhir líne shonraithe a bheith níos mó ná an uimhir líne chomhaid dheiridh.
+Mothaíonn sé mar: {0}
+Teocht: {0}
+Luas na gaoithe: {0}
+Treo na gaoithe: {0}
+Gníomhaíonn 255 tacaíocht dathanna do Díscaoileadh.
+Gníomhaíonn sé fíor-thacaíocht dathanna do Díscaoileadh.
+Brúigh eochair ar bith chun dul ar ais.
+Ní féidir fillteán ríomhphoist {0} a chruthú: {1}
+Déanann eolaire san eolaire oibre reatha
+Bain eolaire ón eolaire oibre reatha
+Níor aimsíodh fillteán ríomhphoist {0}.
+Ní féidir fillteán ríomhphoist {0} a scriosadh: {1}
+{0}, Cruthaithe i {1} {2}, Athraithe i {3} {4}
+Fíoraíonn sanity an chomhaid
+Tá hashes mífhoirmithe.
+Ní hionann hashes.
+Meaitseáil Hashes.
+Athainmnigh fillteán
+Liostaíonn an chuid seo gach socrú ginearálta eithne, go príomha chun an t-eithne a chothabháil.
+Athraíonn an chuid seo iompar probe crua-earraí.
+Léiríonn an chuid seo na socruithe logála isteach. Logáil amach as do chuntas chun go dtiocfaidh na hathruithe i bhfeidhm.
+Liostaíonn an chuid seo socruithe an bhlaosc.
+Liostaíonn an chuid seo na socruithe líonra, cosúil leis an mblaosc FTP, na socruithe ordaithe a bhaineann leis an líonra, agus na socruithe iargúlta dífhabhtaithe.
+Liostaíonn an chuid seo na spárálaithe scáileáin agus na socruithe atá ar fáil dóibh.
+Tagann socruithe nach luíonn ina rannáin chuí anseo.
+Tástálacha mods trí chomhaid mod a sholáthar
+Osclaítear blaosc tástála
+Cumasaíonn modh dífhabhtaithe
+Leideanna le haghaidh argóintí
+* Brúigh eochair ar bith chun an t-eithne nó an ESC a thosú chun imeacht.
+Theip ar thosú "{0}": {1}
+Taispeáin réamhamharc ar theachtaireachtaí ríomhphoist
+Agus teachtaireachtaí ríomhphoist á liostú agat, taispeáin réamhamharc an choirp.
+Dathanna saincheaptha ...
+Dath ionchuir
+Dath an cheadúnais
+Dath earráide eithne leanúnach
+Dath earráide eithne neamh-inúsáidte
+Dath ainm óstach
+Dath ainm úsáideora
+Dath cúlra
+Dath an téacs neodrach
+Dath an stáitse
+Dath earráide
+Stíl Pras FTP
+Stíl Pras Ríomhphoist
+Stíl Pras SFTP
+Gníomhaíonn 255 tacaíocht dathanna do BouncingBlock.
+Gníomhaíonn sé fíor-thacaíocht dathanna do BouncingBlock.
+Ag iarraidh rochtain a fháil ar chosán neamhbhailí.
+Glanann an comhad téacs
+Scoir an t-eagarthóir téacs
+Ceistíonn sé carachtar i líne shonraithe nó i ngach líne
+Tá seiceáil le haghaidh nuashonruithe díchumasaithe toisc go bhfuil leagan forbartha á rith agat.
+Casadh ar nó as gné autosave an eagarthóra téacs.
+Má tá autosave cumasaithe, sábhálfar an comhad téacs ar feadh gach soicind "n".
+Cumasaigh autosave eagarthóir téacs
+Eatramh autosave eagarthóir téacs
+Sábhálann an comhad
+Comhrá a thaifeadadh chun logáil dífhabhtaithe
+Déan comhrá iargúlta dífhabhtaithe a thaifeadadh chuig logáil dífhabhtaithe.
+Moill i Milliseconds
+Cé mhéad milleasoicind atá le fanacht sula ndéanfaidh tú an chéad scríbhinn eile?
+Ligeann tú duit freastalaí SSH FTP a úsáid
+Gan aon chabhair don ordú "{0}".
+Seicheamh neamhbhailí VT do dhath RGB.
+Dath Bar na Soicind
+Dath Bar Miontuairiscí
+Dath Barra Uaireanta
+Dath na Faisnéise
+Sceartáin chun dath a athrú
+Gníomhaíonn 255 tacaíocht dathanna do ProgressClock.
+Gníomhaíonn sé fíor-thacaíocht dathanna do ProgressClock.
+Dath dul chun cinn barra dul chun cinn. Is féidir é a bheith 1-16, 1-255, nó "1-255;1-255;1-255".
+Dath barra nóiméad dul chun cinn. Is féidir é a bheith 1-16, 1-255, nó "1-255;1-255;1-255".
+Barra dul chun cinn dath na n-uaireanta. Is féidir é a bheith 1-16, 1-255, nó "1-255;1-255;1-255".
+Dath na faisnéise dáta. Is féidir é a bheith 1-16, 1-255, nó "1-255;1-255;1-255".
+Má tá rothaíocht dathanna cumasaithe, cé mhéad sceartán sula n-athraíonn tú dathanna i ProgressClock? 1 tic = 0.5 soicind
+Roghnóidh ProgressClock dathanna randamacha má tá sé cumasaithe. Seachas sin, bain úsáid as dathanna ón gcumraíocht.
+Téama nua a dhéanamh
+Téama nua a dhéanamh "{0}".
+Sábháil Téama chuig an Eolaire Reatha
+Sábháil Téama chuig Eolaire Eile ...
+Roghnaigh dath ag úsáid eochracha "<-" agus "->". Brúigh ENTER chun scor. Brúigh "i" chun uimhir datha a chur isteach de láimh.
+Roghnaigh dath ag úsáid eochracha "<-" agus "->". Úsáid saigheadeochracha suas agus saigheadeochracha chun roghnú idir raonta dathanna. Brúigh ENTER chun scor. Brúigh "i" chun uimhir datha a chur isteach de láimh.
+Fáilte go dtí an eithne! - Leagan {0}
+Dath rabhaidh
+Dath na rogha
+Iontráil uimhir datha ó 0 go 255:
+Úsáid "hwinfo" chun faisnéis leathnaithe a fháil faoi chrua-earraí.
+Priontaí faisnéis crua-earraí
+Faisnéis LAP:
+Ainm an phróiseálaí:
+Luas an phróiseálaí:
+Giotaí próiseálaí:
+Próiseálaí rev:
+Topology próiseálaí:
+Cineál próiseálaí:
+Cloch mhíle an phróiseálaí:
+BogoMips Próiseálaí:
+Méid taisce Próiseálaí L2:
+Méid taisce Próiseálaí L3:
+Gnéithe an phróiseálaí:
+Faisnéis HDD:
+Ainm tiomána:
+Múnla tiomána:
+Díoltóir tiomána:
+Luas tiomána:
+Méid an tiomána:
+Sraithuimhir tiomána:
+ID Céide:
+Comhaireamh deighilte tiomána:
+Aitheantas Deighilte:
+Córas comhaid deighilte:
+Méid na deighilte:
+Deighilt a úsáideadh:
+Faisnéis RAM:
+RAM saor in aisce:
+RAM iomlán:
+RAM a úsáidtear:
+Faisnéis GPU:
+Ainm GPU:
+Tiománaí GPU:
+Leagan GPU:
+GPU: Theip ar cheann amháin nó níos mó de na cártaí grafaicí a phromhadh. Ag taispeáint faisnéise ar aon nós ...
+>> Fáilte! Is é seo do chéad uair ag dul isteach i ndífhabhtaithe agus comhrá iargúlta. Úsáid "/ register <name>" chun clárú.
+Gléas ann cheana féin.
+Gan aon ghaireas den sórt sin.
+Socraíonn ainm úsáideora an fheiste
+Tá tú cláraithe cheana féin.
+Dia duit, {0}!
+Priontaí ábhar an chomhaid go consól
+Nó, cuir "liostaí" ar aghaidh chuig an ordú seo.
+Tá iontráil ann cheana féin.
+Fillteann aschur an chonsóil
+Níl an t-ordú fillte. Tá na horduithe seo fillte:
+Sleachta cartlann ZIP
+Cruthaíonn cartlann ZIP
+Tógtha i {0}
+Earráid agus sonraí dífhabhtaithe á n-íoslódáil
+Tá earráid ann agus sonraí dífhabhtaithe á n-íoslódáil. Seiceáil do nasc idirlín.
+Theip ar chríochnú mod {0}: {1}
+Liostaítear gach imeacht bréige
+Eolaire Reatha
+Socraíonn eolaire reatha an bhlaosc. Scríobh cosán iomlán chuig aon eolaire atá ann.
+Aschuir liosta fillte
+Fillteann aschuir an liosta más cosúil go bhfuil sé ró-fhada do gheoiméadracht reatha an chonsóil.
+Ping!
+{0} pinged tú.
+Sábháil Téama chuig an Eolaire Reatha mar ...
+Sábháil Téama chuig Eolaire Eile mar ...
+Sonraigh ainm an téama:
+Tá an t-úsáideoir {0} curtha leis an liosta "{1}".
+Baineadh an t-úsáideoir {0} den liosta "{1}".
+Modh neamhbhailí {0}
+Úsáideoir ann cheana
+Téama Luchtaigh Ó ...
+Téama Luchtaigh ó Théamaí Tógtha ...
+Sonraigh ainm comhaid téama leis an síneadh .json:
+Osclaítear cartlann ZIP
+Scoir an bhlaosc ZIP
+Liostaíonn sé gach comhad laistigh den chartlann
+Sliocht comhad chuig eolaire sonraithe nó eolaire reatha
+Athraíonn eolaire cartlainne
+Ní fhaightear an t-ordú sliogáin ZIP sonraithe.
+Níl eolaire {0} ann
+Níl eolaire cartlainne {0} ann
+Líon na bPost Max
+Cé mhéad post a lasadh sula dimming?
+Gníomhaíonn 255 tacaíocht dathanna do Níos éadroime.
+Gníomhaíonn sé fíor-thacaíocht dathanna do Níos éadroime.
+Liostaigh dath iontrála
+Dath luach liosta
+Nascann sé le freastalaí SSH chun ordú a fhorghníomhú.
+Liostaíonn an chuid seo socruithe spárálaíscáileáin do
+Sonraitheoir dath neamhbhailí. Déan cinnte go bhfuil sé ar an bhformáid cheart, rud a chiallaíonn uimhir 0-255 má tá 255 dathanna nó seicheamh VT á n-úsáid agat má tá fíor-dath á úsáid agat mar a leanas:
+Earráid sa bhlaosc tástála: {0}
+Socraíonn sé athróg go luach i script
+Pras tuairiscithe ar fhabht.
+Go raibh maith agat as ticéad a ardú dúinn! Roghnaigh cén cineál iarratais atá agat.
+Fadhb
+Iarraidh gné
+Ceist
+Caithfidh tú gné a shonrú.
+Cuir ceist, breac do smaoineamh, nó tuairisc ar fhadhb.
+Caithfidh tú d’iarratas a scríobh.
+Tharla earráid sa bhlaosc FTP:
+Earráid bhlaosc anaithnid FTP:
+Tharla earráid sa bhlaosc SFTP:
+Earráid bhlaosc anaithnid SFTP:
+Taispeáin meirge SSH
+Taispeánann meirge an fhreastalaí SSH ar nasc.
+Conas is mian leat fíordheimhniú a dhéanamh?
+Comhad eochair phríobháideach
+Pasfhocal
+Iontráil an pasfhocail le haghaidh eochair {0}:
+Iontráil suíomh na heochrach príobháidí do {0}. Scríobh "q" chun eochracha a chur leis:
+Neodrú cosán nach bhfuil ann.
+Níl comhad eochair {0} ann.
+Earráid ag iarraidh eochair phríobháideach a chur leis:
+Brúigh "t" chun athrú go mód datha 255.
+Brúigh "t" chun athrú go mód fíor-datha.
+Ligeann an chuid seo duit an cineál datha is mian leat a athrú a roghnú.
+Tá an chuma air nach bhfuil aon úsáideoir agat seachas fréamh. Tá sé seo go dona. Tabharfaimid treoir duit conas ceann a chruthú.
+Scríobh d’ainm úsáideora.
+Caithfidh tú d’ainm úsáideora a scríobh.
+Scríobh do phasfhocal.
+Caithfidh tú do phasfhocal a scríobh.
+Roghnaigh cineál cuntais.
+Riarthóir: Tá an chumhacht is mó ag an gcineál cuntais seo san eithne, rud a ligeann duit cláir bhainistíochta córais a úsáid.
+Gnáth-Úsáideoir: Tá an cineál cuntais seo beagán níos srianta ná riarthóirí.
+Comhghairdeas! Tá cuntas nua déanta agat! Chun é seo a chríochnú, logáil isteach mar do chuntas nua.
+Téigh i gcomhairle leis an lámhleabhar spárálaíscáileáin nó an cód foinse le haghaidh faisnéise.
+mod: Níor aimsíodh mods.
+Orduithe ginearálta:
+Orduithe mod:
+Orduithe ailias:
+Modh Cothabhála
+Eolaire Cuardaigh
+Grúpa cosán atá scartha ag an colon. Oibríonn sé mar an gcéanna le PATH. Scríobh cosán iomlán chuig fillteán nó ainm fillteáin. Nuair atá tú críochnaithe, scríobh "q". Scríobh comhartha lúide in aice leis an gcosán chun eolaire atá ann cheana a bhaint.
+Uimh orduithe mod.
+Ní ordaíonn ailias.
+Tá an luach datha lasmuigh den raon 0-255.
+Ní fhaightear an t-ordú wrappable.
+Ceistíonn sé focal i líne shonraithe nó i ngach líne
+Íoslódáil {0} de {1}.
+Uaslódáil {0} de {1}.
+Priontaíonn sreangán le consól ag úsáid cineál datha agus cló líne
+Priontaíonn sreangán le consól ag úsáid cineál datha agus cló líne le tacaíocht formáide
+Priontaíonn sreangán chun dífhabhtóra
+Priontaíonn sreangán le dífhabhtóir le tacaíocht formáide
+Tástálacha ar an áis earráide eithne
+Tástálacha ar an áis earráide eithne le tacaíocht formáide
+Tástálacha a aistríonn sreang atá ann in acmhainní go teanga ar leith
+Priontaíonn sreangán chun consól a dhéanamh agus na sealbhóirí áit a aimsítear a pharsáil
+Tástálacha ar an áis léirithe rialta
+Criptíonn sreang ag úsáid
+Tosaíonn gach mod
+Stopann gach mods
+Cumasaíonn nó díchumasaíonn dífhabhtaithe
+Cumasaíonn nó díchumasaíonn dífhabhtaithe iargúlta
+Tástálacha ar an seicheamh VT do 255 dathanna
+Tástálacha ar an seicheamh VT maidir le fíor-dath
+Seolann sé fógra chun an glacadóir a thástáil
+Dáta priontála na dtástálacha ag úsáid féilirí éagsúla
+Liostaítear na leathanaigh chóid uile a fhaigheann tacaíocht
+Cad iad na hathróga tiomsaitheora atá cumasaithe san iarratas?
+Tástálacha ag ardú na hócáide faoi leith
+Tástálacha ag fiosrú na crua-earraí
+Tástálacha ar an mbailitheoir truflais
+Scoir an bhlaosc tástála agus tosaíonn an t-eithne
+Scoir an bhlaosc tástála agus sciorr síos an eithne
+Sábhálann an eolaire reatha go comhad cumraíochta eithne
+Tástálacha ar an scríbhneoir liosta leis an tsraith sreang agus sreang
+Tástálacha ar an scríbhneoir liosta leis an tsraith slánuimhir agus slánuimhir
+Tástálacha ar an scríbhneoir liosta leis an eagar char agus char
+Gnáthliosta teaghrán:
+Liosta teaghrán eagar:
+Gnáthliosta slánuimhir:
+Liosta slánuimhir eagar:
+Gnáthliosta char:
+Liosta charranna eagar:
+Cumasaigh RPC
+Port RPC
+Cibé ar cheart RPC a chumasú nó nach bhfuil.
+Scríobh calafort RPC. Caithfidh sé a bheith uimhriúil, agus ní gá é a úsáid cheana féin. Seachas sin, ní theipfidh ar RPC an calafort a oscailt.
+Gan RPC a thosú toisc go bhfuil sé faoi mhíchumas.
+Thacaigh liostaí le cultúir
+Cuardaigh teaghrán sonraithe sa chomhad a chuirtear ar fáil ag úsáid nathanna rialta
+Féach an féidir leat eochair a bhrú in am
+Níor chuir an t-úsáideoir aon ionchur ar fáil go tráthúil.
+Deacracht neamhbhailí
+Ní brúitear an carachtar in am.
+Tá an carachtar ceart brúite agat!
+Tá an carachtar mícheart brúite agat.
+Brúigh ESC chun imeacht.
+Faigheann tú an fhaisnéis dáta agus ama
+Milliseconds:
+Soicind:
+Miontuairiscí:
+Uaireanta:
+Laethanta:
+Míonna:
+Bliain:
+Lá na Bliana:
+Lá na Seachtaine:
+Dénártha:
+Am Áitiúil:
+Am Uilíoch:
+Am Unix:
+Theip ar dháta a dháileadh ar fhaisnéis le haghaidh
+Déan cinnte go bhfuil an fhormáid ceart.
+Dáta:
+Am:
+Socraíonn sé ceadanna comhaid. Ní thacaítear leis seo ach ar fhreastalaithe FTP a ritheann Unix.
+Socraigh an cineál don seisiún seo
+Caithfidh tú ceangal leis an bhfreastalaí sula ndéanann tú oibríochtaí an chórais comhaid.
+Theip ar cheadanna {0} go {1} a shocrú.
+Socraíodh ceadanna don chomhad go rathúil
+Cineál sonraí socraithe chuig ASCII!
+Cineál sonraí socraithe chuig Dénártha!
+Cineál sonraí neamhbhailí.
+Beware nach ndéanfaidh an chuid is mó de na comhaid an modh seo a íoslódáil nó a uaslódáil i gceart, mar sin molaimid go mór an modh Dénártha a úsáid i bhformhór na gcásanna.
+Ag iarraidh ordú RPC a sheoladh cé nár thosaigh RPC.
+Moill céimnithe i Milliseconds
+Céimeanna Max Fade
+Cé mhéad milleasoicind atá le fanacht sula n-imíonn tú as téacs?
+Cé mhéad céim céimnithe atá le déanamh?
+Tóraigh Iomlán
+Más fíor, déanann sé na crua-earraí go léir a iniúchadh; eile, ní dhéanfaidh sé ach na crua-earraí is gá a iniúchadh.
+Theip ar spárálaí scáileáin {0} a bhaint den chumraíocht.
+Faigheann socruithe sábhálaí saincheaptha
+Socraíonn socruithe sábhálaí saincheaptha
+Socruithe socraithe go rathúil le haghaidh spárálaíscáileáin
+Theip ar shuíomh a shocrú don spárálaí scáileáin
+Ligeann an chuid seo duit cruthú pasfhocal fréimhe a bhainistiú.
+Osclaítear blaosc RSS chun na fothaí a léamh
+Scoir an bhlaosc RSS agus filleann sé ar eithne
+Athraíonn sé an nasc beathaithe
+Liostaítear gach fotha
+Léigh fotha i mbrabhsálaí gréasáin
+Ní fhaightear an t-ordú sliogáin RSS sonraithe.
+Beatha neamhbhailí RSS2.
+Beatha neamhbhailí RSS1.
+Beathú Adamh Neamhbhailí.
+Iontráil URL beatha RSS:
+Cineál beatha neamhbhailí RSS.
+Earráid anaithnid bhlaosc:
+Faigheann an t-eolas alt
+Ní fhéadfadh uimhir an ailt a bheith níos mó ná na hailt atá ar fáil.
+Teideal:
+Nasc:
+Faigheann an t-eolas beatha
+Cur síos:
+Cineál beathaithe:
+Líon na n-alt:
+Níl nasc ag Airteagal!
+Theip ar liosta na n-iontrálacha córais comhaid a dhéanamh don eolaire
+Modh sórtála an chórais chomhaid
+Treorú sórtála an chórais chomhaid
+Rialaíonn sé conas a dhéanfar na comhaid a shórtáil.
+Rialaíonn sé treo sórtáil an chórais comhaid cibé an bhfuil sé ag dul suas nó ag dul síos.
+Ordú ardaitheach
+Ordú íslitheach
+Ainm iomlán
+Méid an chomhaid
+Am cruthaithe
+Am scríbhneoireachta deireanach
+Am rochtana deireanach
+Scríobh Moill Arís i Milliseconds
+Cé mhéad milleasoicind atá le fanacht sula scríobhfaidh tú téacs arís?
+Scríobh téacs ar bith is mian leat a thaispeántar. Is fearr níos faide.
+Luas íosta scríbhneoireachta i WPM
+Luas uasta scríbhneoireachta i WPM
+Dóchúlacht typo faoin gcéad
+Theip ar an eolaire reatha a shábháil: {0}
+Wipes chun treo a athrú
+Gníomhaíonn 255 tacaíocht dathanna do Wipe.
+Gníomhaíonn sé fíor-thacaíocht dathanna do Wipe.
+Cé mhéad wipes le déanamh sula n-athraíonn tú treo go randamach?
+Críochnaithe an stáitse i
+Críochnaíodh tosaithe inmheánach i
+Níor aimsíodh comhad tagartha {0}. B’fhéidir nach n-oibreodh an mod seo i gceart gan an comhad seo.
+Mod ag tosú
+Faigheann faisnéis mod
+Ainm an ordaithe:
+Sainmhíniú ordaithe:
+Cineál ordaithe:
+Ordú docht?
+Leagan mod:
+Níor aimsíodh Mod {0}.
+Cultúr na
+Cén leagan de {0} atá á úsáid chun ainmneacha na míosa, an fhéilire, srl a athrú?
+Níor oscail an t-eagarthóir téacs sruth comhad go fóill.
+Teaghrán curtha ina ionad.
+Níl uimhir amháin nó an dá uimhir uimhriúil.
+Scriosadh focal.
+Carachtar scriosta.
+Socruithe Córas Comhad ...
+Liostaíonn an chuid seo socruithe an chórais comhaid.
+Fáilte go Socruithe!
+Earráid agus ordú SSH á fhorghníomhú
+Earráid ar bhlaosc SSH
+- Faisnéis faoin aip
+Gníomhaíonn 255 tacaíocht datha do BouncingText.
+Gníomhaíonn sé fíor-thacaíocht dathanna do BouncingText.
+Tástálacha ar an scríbhneoir foclóir leis an tsraith sreang agus sreang
+Tástálacha ar scríbhneoir an fhoclóra leis an eagar char agus char
+Tástálacha ar an scríbhneoir foclóir leis an tsraith slánuimhir agus slánuimhir
+Gnáthfhoclóir:
+Foclóir teaghrán eagar:
+Foclóir gnáth slánuimhir:
+Foclóir slánuimhir eagar:
+Gnáthfhoclóir char:
+Foclóir charra eagar:
+Fáilte go Test Shell!
+Taispeáin dul chun cinn maidir le hoibríochtaí an chórais comhaid
+Taispeánann sé an comhad atá á phróiseáil le linn oibríochtaí an chórais comhaid
+áit a mbeidh HardwareType
+Ní dhéantar an cineál crua-earraí {0} a phromhadh, nó níl sé bailí.
+Ní dhéantar an cineál crua-earraí {0} a phromhadh go fóill. Má tá tú cinnte go ndéantar promhadh air, déan an t-eithne a atosú le cumas dífhabhtaithe.
+Deighiltí nach bhfuil parsáilte le liostáil.
+Mód Hacker
+Má tá sé cumasaithe, cumasófar consól glas.
+Priontaí deighilteoir
+Priontaí deighilteoir le tacaíocht formáide
+Priontaí deighilteoir le tacaíocht datha
+Priontaí deighilteoir le tacaíocht datha agus formáide
+I gcónaí dírithe
+Gníomhaíonn 255 tacaíocht dathanna don Marquee.
+Gníomhaíonn sé fíor-thacaíocht datha do Marquee.
+Scríobh téacs ar bith is mian leat a thaispeántar.
+Cibé an bhfuil an téacs a thaispeántar ar an marquee dírithe i gcónaí.
+'q' a scor.
+Ní bhfuarthas argóint {0} mar instealladh.
+Níor aimsíodh argóint líne ordaithe {0}.
+Glanann na socruithe go léir
+Tharla earráid agus sábhálaí scáileáin agus é ag taispeáint: {0}. Brúigh eochair ar bith chun imeacht.
+Réamhamharc ...
+Seo an chuma a bheidh ar do théama:
+Orduithe fillte: Orduithe inúsáidte:
+Tá ordú neamhbhailí ag Mod {0}. Theip ar pharsáil mod. Déan athbhreithniú ar an gcód foinse.
+Páirteanna mod:

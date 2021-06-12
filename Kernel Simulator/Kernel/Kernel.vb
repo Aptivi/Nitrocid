@@ -1,4 +1,6 @@
 ﻿
+'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+'
 '    This file is part of Kernel Simulator
 '
 '    Kernel Simulator is free software: you can redistribute it and/or modify
@@ -16,27 +18,42 @@
 
 Imports System.IO
 Imports System.Reflection.Assembly
+Imports Newtonsoft.Json.Linq
 
 Public Module Kernel
 
     'Variables
     Public ReadOnly KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
-    Public BootArgs() As String
-    Public configReader As New IniFile()
-    Public MOTDMessage, HName, MAL As String
-    Public EventManager As New EventsAndExceptions
+    Public ConfigToken As JObject
+    Public MOTDMessage, MAL As String
+    Public HName As String = "kernel"
+    Public EventManager As New Events
     Public DefConsoleOut As TextWriter
     Public ScrnTimeout As Integer = 300000
-    Public ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Compiled on {GetCompileDate()}"
+    Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion}"
+    Public ReadOnly vbNewLine As String = Environment.NewLine
+    Friend StageTimer As New Stopwatch
 
     ''' <summary>
     ''' Entry point
     ''' </summary>
-    Sub Main()
+    Sub Main(Args() As String)
         While True
             Try
                 'A title
                 Console.Title = ConsoleTitle
+
+                'Check for terminal (macOS only). This check is needed because we have the stock Terminal.app (Apple_Terminal according to $TERM_PROGRAM) that
+                'has incompatibilities with VT sequences, causing broken display. It claims it supports XTerm, yet it isn't fully XTerm-compliant, so we exit
+                'the program early when this stock terminal is spotted.
+#If STOCKTERMINALMACOS = False Then
+                If IsOnMacOS() Then
+                    If GetTerminalEmulator() = "Apple_Terminal" Then
+                        Console.WriteLine("Kernel Simulator makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors. This program can't continue.")
+                        Environment.Exit(5)
+                    End If
+                End If
+#End If
 
                 'Initialize crucial things
                 If Not NotifThread.IsAlive Then NotifThread.Start()
@@ -44,24 +61,25 @@ Public Module Kernel
                 If Not IsOnUnix() Then Initialize255()
 
                 'Check if factory reset is required
-                If Environment.GetCommandLineArgs.Contains("reset") Then
+                If Args.Contains("reset") Then
                     FactoryReset()
                 End If
 
                 'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
-#If SPECIFIER <> "DEV" And SPECIFIER <> "RC" And SPECIFIER <> "NEARING" Then
+#If SPECIFIER <> "DEV" And SPECIFIER <> "RC" Then
                 If Not IO.File.Exists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
                     Dim pdbdown As New WebClient
                     Try
                         pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/raw/archive/dbgsyms/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
                     Catch ex As Exception
-                        'Do nothing, because KS runs fine without debugging symbols
+                        NotifyDebugDownloadError = True
                     End Try
                 End If
 #End If
 
                 'Initialize everything
-                InitEverything()
+                StageTimer.Start()
+                InitEverything(Args)
 
                 'For config
                 If RebootRequested Then
@@ -70,56 +88,51 @@ Public Module Kernel
                     Exit Try
                 End If
 
-                'If the two files are not found, create two MOTD files with current config.
-                If Not File.Exists(paths("Home") + "/MOTD.txt") Then SetMOTD(DoTranslation("Welcome to Kernel!", currentLang), MessageType.MOTD)
-                If Not File.Exists(paths("Home") + "/MAL.txt") Then SetMOTD(DoTranslation("Logged in successfully as <user>", currentLang), MessageType.MAL)
-
-                'Initialize stage counter
-                W(vbNewLine + DoTranslation("- Stage 1: System initialization", currentLang), True, ColTypes.Stage)
+                'Stage 1: Initialize the system
+                W(DoTranslation("Internal initialization finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
+                WriteSeparator(DoTranslation("- Stage 1: System initialization"), False, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 1: Initializing system")
                 StartRDebugThread(True)
-                W(DoTranslation("Starting RPC...", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("Starting RPC..."), True, ColTypes.Neutral)
                 StartRPC()
 
+                'If the two files are not found, create two MOTD files with current config.
+                If Not File.Exists(paths("MOTD")) Then SetMOTD(DoTranslation("Welcome to Kernel!"), MessageType.MOTD)
+                If Not File.Exists(paths("MAL")) Then SetMOTD(DoTranslation("Logged in successfully as <user>"), MessageType.MAL)
+
                 'Check for kernel updates
-#If SPECIFIER <> "DEV" And SPECIFIER <> "RC" And SPECIFIER <> "NEARING" Then
+#If SPECIFIER <> "DEV" And SPECIFIER <> "RC" Then
                 If CheckUpdateStart Then
                     CheckKernelUpdates()
                 End If
 #End If
 
-                'Phase 1: Probe hardware
-                W(vbNewLine + DoTranslation("- Stage 2: Hardware detection", currentLang), True, ColTypes.Stage)
+                'Phase 2: Probe hardware
+                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
+                WriteSeparator(DoTranslation("- Stage 2: Hardware detection"), False, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 2: Probing hardware")
                 StartProbing()
 
-                'Phase 2: Parse Mods and Screensavers
-                W(vbNewLine + DoTranslation("- Stage 3: Mods and screensavers detection", currentLang), True, ColTypes.Stage)
+                'Phase 3: Parse Mods and Screensavers
+                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
+                WriteSeparator(DoTranslation("- Stage 3: Mods and screensavers detection"), False, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 3: Parse mods and screensavers")
                 Wdbg("I", "Safe mode flag is set to {0}", SafeMode)
                 If Not SafeMode Then
-                    ParseMods(True)
-                    Dim modPath As String = paths("Mods")
-                    Dim ModFiles = FileIO.FileSystem.GetFiles(modPath)
-                    If Not ModFiles.Count = 0 Then
-                        For Each modFile As String In ModFiles
-                            CompileCustom(modFile.Replace(modPath, ""))
-                        Next
-                    Else
-                        W(DoTranslation("No mods detected. Skipping stage...", currentLang), True, ColTypes.Neutral)
-                    End If
+                    StartMods()
                 Else
-                    W(DoTranslation("Running in safe mode. Skipping stage...", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Running in safe mode. Skipping stage..."), True, ColTypes.Neutral)
                 End If
                 EventManager.RaiseStartKernel()
 
-                'Phase 3: Log-in
-                W(vbNewLine + DoTranslation("- Stage 4: Log in", currentLang), True, ColTypes.Stage)
+                'Phase 4: Log-in
+                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
+                WriteSeparator(DoTranslation("- Stage 4: Log in"), False, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 4: Log in")
                 InitializeSystemAccount()
                 LoginFlag = True
-                If BootArgs IsNot Nothing Then
-                    If BootArgs.Contains("quiet") Then
+                If EnteredArguments IsNot Nothing Then
+                    If EnteredArguments.Contains("quiet") Then
                         Console.SetOut(DefConsoleOut)
                     End If
                 End If
@@ -129,15 +142,22 @@ Public Module Kernel
                 'Show current time
                 ShowCurrentTimes()
 
-                'Notify user if there is config error
+                'Notify user of errors if appropriate
                 If NotifyConfigError Then
                     NotifyConfigError = False
-                    NotifySend(New Notification With {.Title = DoTranslation("Error loading settings", currentLang),
-                                                      .Desc = DoTranslation("There is an error while loading settings. You may need to check the settings file.", currentLang),
+                    NotifySend(New Notification With {.Title = DoTranslation("Error loading settings"),
+                                                      .Desc = DoTranslation("There is an error while loading settings. You may need to check the settings file."),
+                                                      .Priority = NotifPriority.Medium})
+                End If
+                If NotifyDebugDownloadError Then
+                    NotifyDebugDownloadError = False
+                    NotifySend(New Notification With {.Title = DoTranslation("Error downloading debug data"),
+                                                      .Desc = DoTranslation("There is an error while downloading debug data. Check your internet connection."),
                                                       .Priority = NotifPriority.Medium})
                 End If
 
                 'Initialize login prompt
+                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Reset()
                 DisposeAll()
                 If LoginFlag = True And maintenance = False Then
                     LoginPrompt()
@@ -145,15 +165,15 @@ Public Module Kernel
                     ReadMOTDFromFile(MessageType.MOTD)
                     ReadMOTDFromFile(MessageType.MAL)
                     LoginFlag = False
-                    W(DoTranslation("Enter the admin password for maintenance.", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("Enter the admin password for maintenance."), True, ColTypes.Neutral)
                     answeruser = "root"
                     ShowPasswordPrompt(answeruser)
                 End If
             Catch ex As Exception
                 If DebugMode = True Then
-                    W(ex.StackTrace, True, ColTypes.Err) : WStkTrc(ex)
+                    W(ex.StackTrace, True, ColTypes.Error) : WStkTrc(ex)
                 End If
-                KernelError("U", True, 5, DoTranslation("Kernel Error while booting: {0}", currentLang), ex, ex.Message)
+                KernelError("U", True, 5, DoTranslation("Kernel Error while booting: {0}"), ex, ex.Message)
             End Try
         End While
     End Sub
@@ -161,15 +181,36 @@ Public Module Kernel
     ''' <summary>
     ''' Is this system a Windows system?
     ''' </summary>
-    Function IsOnWindows()
+    Public Function IsOnWindows() As Boolean
         Return Environment.OSVersion.Platform = PlatformID.Win32NT
     End Function
 
     ''' <summary>
     ''' Is this system a Unix system?
     ''' </summary>
-    Function IsOnUnix()
+    Public Function IsOnUnix() As Boolean
         Return Environment.OSVersion.Platform = PlatformID.Unix
+    End Function
+
+    ''' <summary>
+    ''' Is this system a macOS system?
+    ''' </summary>
+    Public Function IsOnMacOS() As Boolean
+        If IsOnUnix() Then
+            Dim UnameS As New Process
+            Dim UnameSInfo As New ProcessStartInfo With {.FileName = "/usr/bin/uname", .Arguments = "-s",
+                                                         .CreateNoWindow = True,
+                                                         .UseShellExecute = False,
+                                                         .WindowStyle = ProcessWindowStyle.Hidden,
+                                                         .RedirectStandardOutput = True}
+            UnameS.StartInfo = UnameSInfo
+            UnameS.Start()
+            UnameS.WaitForExit()
+            Dim System As String = UnameS.StandardOutput.ReadToEnd
+            Return System.Contains("Darwin")
+        Else
+            Return False
+        End If
     End Function
 
 End Module

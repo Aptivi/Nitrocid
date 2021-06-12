@@ -3,11 +3,7 @@
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProductVersion>
-    </ProductVersion>
-    <SchemaVersion>
-    </SchemaVersion>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C7B37899-C361-423D-9512-FE0A87A46866}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <StartupObject>KS.Kernel</StartupObject>
@@ -16,18 +12,16 @@
     <FileAlignment>512</FileAlignment>
     <MyType>Console</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
-    <TargetFrameworkProfile>
-    </TargetFrameworkProfile>
     <!-- KS Nuget Information -->
     <PackageId>KS</PackageId>
-    <Version>0.0.15.8</Version>
+    <Version>0.0.16.1</Version>
     <Authors>EoflaOE</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
     <PackageTags>kernel;simulator;vb.net</PackageTags>
     <!-- URL settings -->
     <PackageProjectUrl>https://github.com/EoflaOE/Kernel-Simulator</PackageProjectUrl>
-    <PackageIcon>iconfinder_applications-utilities_8840.png</PackageIcon>
+    <PackageIcon>OfficialAppIcon-KernelSimulator-256.png</PackageIcon>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageReleaseNotes>https://github.com/EoflaOE/Kernel-Simulator/wiki/History-of-KS</PackageReleaseNotes>
     <!-- MSBuild Tags -->
@@ -40,43 +34,40 @@
     <!-- Dependencies set up -->
     <Dependencies>
       <dependency id="MadMilkman.Ini" version="1.0.6.0" />
-      <dependency id="FluentFTP" version="33.0.3" />
-      <dependency id="Newtonsoft.Json" version="12.0.0" />
+      <dependency id="FluentFTP" version="34.0.0" />
+      <dependency id="Newtonsoft.Json" version="13.0.1" />
       <dependency id="SSH.NET" version="2020.0.1" />
-      <dependency id="MailKit" version="2.10.1" />
-      <dependency id="Extensification" version="2021.1.0" />
-      <dependency id="Inxi.NET" version="2020.2.0.2" />
+      <dependency id="MailKit" version="2.12.0" />
+      <dependency id="Extensification" version="2021.5.0" />
+      <dependency id="Inxi.NET" version="2021.3.0" />
     </Dependencies>
     <!-- KS Nuget Information End -->
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>KSBuild\</OutputPath>
     <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
-    <WarningsAsErrors>
-    </WarningsAsErrors>
-    <Prefer32Bit>false</Prefer32Bit>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
-    <Optimize>true</Optimize>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <Prefer32Bit>true</Prefer32Bit>
+    <Optimize>false</Optimize>
+    <DefineConstants>SPECIFIER="REL",NTFSCorruptionFix</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <PlatformTarget>x86</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <DefineDebug>false</DefineDebug>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
-    <Optimize>true</Optimize>
     <OutputPath>KSBuild\</OutputPath>
     <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
+    <Optimize>true</Optimize>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
-    <WarningsAsErrors>
-    </WarningsAsErrors>
-    <DebugSymbols>true</DebugSymbols>
-    <Prefer32Bit>false</Prefer32Bit>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+    <DefineConstants>SPECIFIER="REL",NTFSCorruptionFix</DefineConstants>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -94,101 +85,31 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetZone>LocalIntranet</TargetZone>
-  </PropertyGroup>
-  <PropertyGroup>
     <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>iconfinder_applications-utilities_8840.ico</ApplicationIcon>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestCertificateThumbprint>F1A42ADA35A42942B5F12BA2CA2FC6F3464C0BDD</ManifestCertificateThumbprint>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestKeyFile>Kernel Simulator_TemporaryKey.pfx</ManifestKeyFile>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignManifests>false</SignManifests>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <DefineDebug>true</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <OutputPath>KSBuild\</OutputPath>
-    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
-    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
-    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <DefineTrace>true</DefineTrace>
-    <OutputPath>KSBuild\</OutputPath>
-    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
-    <Optimize>true</Optimize>
-    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <DefineDebug>true</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <OutputPath>KSBuild\</OutputPath>
-    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
-    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
-    <DebugType>full</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <RunCodeAnalysis>false</RunCodeAnalysis>
-    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-    <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIER="REL",NTFSCorruptionFix</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <DebugSymbols>true</DebugSymbols>
-    <DefineTrace>true</DefineTrace>
-    <OutputPath>KSBuild\</OutputPath>
-    <DocumentationFile>Kernel Simulator.xml</DocumentationFile>
-    <Optimize>true</Optimize>
-    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42105,42106,42107</NoWarn>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>true</Prefer32Bit>
-    <DefineConstants>SPECIFIER="REL",NTFSCorruptionFix</DefineConstants>
+    <ApplicationIcon>OfficialAppIcon-KernelSimulator-256.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Extensification">
-      <Version>2021.1.0</Version>
+      <Version>2021.5.0</Version>
     </PackageReference>
     <PackageReference Include="FluentFTP">
-      <Version>33.0.3</Version>
+      <Version>34.0.0</Version>
     </PackageReference>
     <PackageReference Include="Inxi.NET">
-      <Version>2020.2.0.2</Version>
+      <Version>2021.3.0</Version>
     </PackageReference>
     <PackageReference Include="MadMilkman.Ini">
       <Version>1.0.6</Version>
     </PackageReference>
     <PackageReference Include="MailKit">
-      <Version>2.10.1</Version>
+      <Version>2.12.0</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
-      <Version>12.0.3</Version>
+      <Version>13.0.1</Version>
     </PackageReference>
-    <PackageReference Include="NuGet.Build.Tasks.Pack" Version="5.8.0">
+    <PackageReference Include="NuGet.Build.Tasks.Pack" Version="5.9.1">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
@@ -198,6 +119,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Management" />
     <Reference Include="System.Net" />
     <Reference Include="System.Web" />
@@ -209,6 +132,7 @@
     <Import Include="Extensification.DictionaryExts" />
     <Import Include="Extensification.StringExts" />
     <Import Include="FluentFTP" />
+    <Import Include="FluentFTP.Helpers" />
     <Import Include="MadMilkman.Ini" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="Newtonsoft.Json" />
@@ -228,26 +152,42 @@
     <Compile Include="Arguments\CommandLineArgsParse.vb" />
     <Compile Include="Console\Color.vb" />
     <Compile Include="Console\Color255.vb" />
+    <Compile Include="Console\ConsoleExtensions.vb" />
     <Compile Include="Console\Input.vb" />
     <Compile Include="Console\RGB.vb" />
+    <Compile Include="Console\Themes\ThemeInfo.vb" />
+    <Compile Include="Console\Themes\ThemeStudio.vb" />
+    <Compile Include="Console\Themes\ThemeStudioTools.vb" />
     <Compile Include="Files\Filesystem.vb" />
-    <Compile Include="Kernel\EventsAndExceptions.vb" />
+    <Compile Include="Files\FilesystemEnums.vb" />
+    <Compile Include="Hardware\HardwareList.vb" />
+    <Compile Include="Kernel\Events.vb" />
+    <Compile Include="Kernel\Exceptions.vb" />
     <Compile Include="Kernel\Flags.vb" />
     <Compile Include="Kernel\KernelTools.vb" />
+    <Compile Include="Languages\LanguageInfo.vb" />
     <Compile Include="Languages\Translate.vb" />
     <Compile Include="Login\PermissionManagement.vb" />
     <Compile Include="Misc\Configuration\ConfigTool\ToolPrompts.vb" />
     <Compile Include="Misc\Encryption\Encryption.vb" />
-    <Compile Include="Misc\Configuration\OldConfigUp.vb" />
+    <Compile Include="Misc\Encryption\HashVerifier.vb" />
+    <Compile Include="Misc\FieldManager.vb" />
     <Compile Include="Misc\Forecast\Forecast.vb" />
     <Compile Include="Misc\Forecast\ForecastInfo.vb" />
     <Compile Include="Misc\Games\LoveHateRespond.vb" />
     <Compile Include="Misc\Games\Solver.vb" />
+    <Compile Include="Misc\Games\SpeedPress.vb" />
     <Compile Include="Misc\Games\Speller.vb" />
     <Compile Include="Misc\Notifiers\Notifications.vb" />
     <Compile Include="Misc\Probers\MOTDParse.vb" />
     <Compile Include="Misc\Probers\PlaceParse.vb" />
     <Compile Include="Misc\Configuration\Config.vb" />
+    <Compile Include="Misc\ReportBugPrompt.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Fader.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Lighter.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Marquee.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Plain.vb" />
+    <Compile Include="Misc\Screensaver\Displays\ProgressClock.vb" />
     <Compile Include="Misc\Screensaver\Displays\Dissolve.vb" />
     <Compile Include="Misc\Screensaver\Displays\Custom.vb" />
     <Compile Include="Misc\Screensaver\Displays\BouncingBlock.vb" />
@@ -260,18 +200,28 @@
     <Compile Include="Misc\Screensaver\Displays\Disco.vb" />
     <Compile Include="Misc\Screensaver\Displays\Matrix.vb" />
     <Compile Include="Misc\Screensaver\Displays\ColorMix.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Typo.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Wipe.vb" />
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
     <Compile Include="Misc\Screensaver\ScreensaverSettings.vb" />
-    <Compile Include="Misc\Scripts\BeepSynth.vb" />
     <Compile Include="Misc\StringEvaluators.vb" />
     <Compile Include="Misc\TextEdit\TextEditGetCommand.vb" />
     <Compile Include="Misc\TextEdit\TextEditHelpSystem.vb" />
     <Compile Include="Misc\TextEdit\TextEditShell.vb" />
     <Compile Include="Misc\TextEdit\TextEditTools.vb" />
+    <Compile Include="Misc\Threading\ThreadManager.vb" />
+    <Compile Include="Misc\Writers\FancyWriters\SeparatorColor.vb" />
+    <Compile Include="Misc\Writers\ConsoleWriters\ListWriterColor.vb" />
     <Compile Include="Misc\Writers\ConsoleWriters\TextWriterSlowColor.vb" />
+    <Compile Include="Misc\Writers\ConsoleWriters\TextWriterWhereSlowColor.vb" />
     <Compile Include="Misc\Writers\ConsoleWriters\TextWriterWhereColor.vb" />
+    <Compile Include="Misc\Writers\ConsoleWriters\TextWriterWrappedColor.vb" />
     <Compile Include="Misc\Writers\DebugWriters.vb" />
     <Compile Include="Misc\Writers\ConsoleWriters\TextWriterColor.vb" />
+    <Compile Include="Misc\ZipFile\ZipGetCommand.vb" />
+    <Compile Include="Misc\ZipFile\ZipHelpSystem.vb" />
+    <Compile Include="Misc\ZipFile\ZipTools.vb" />
+    <Compile Include="Misc\ZipFile\ZipShell.vb" />
     <Compile Include="Modifications\ModExecutor.vb" />
     <Compile Include="Modifications\ModParser.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
@@ -279,6 +229,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Network\RemoteDebug\RemoteDebugHelpSystem.vb" />
+    <Compile Include="Network\RSS\Instance\RSSArticle.vb" />
+    <Compile Include="Network\RSS\Instance\RSSFeed.vb" />
+    <Compile Include="Network\RSS\RSSGetCommand.vb" />
+    <Compile Include="Network\RSS\RSSHelpSystem.vb" />
+    <Compile Include="Network\RSS\RSSShell.vb" />
+    <Compile Include="Network\RSS\RSSTools.vb" />
     <Compile Include="Network\SFTP\Filesystem\SFTPFilesystem.vb" />
     <Compile Include="Network\SFTP\SFTPGetCommand.vb" />
     <Compile Include="Network\SFTP\SFTPHelpSystem.vb" />
@@ -307,10 +264,11 @@
     <Compile Include="Network\Mail\MailLogin.vb" />
     <Compile Include="Network\Mail\MailShell.vb" />
     <Compile Include="Network\SSH\SSH.vb" />
-    <Compile Include="Scripting\Interaction\Commands.vb" />
+    <Compile Include="Scripting\Interaction\UESHCommands.vb" />
     <Compile Include="Scripting\UESHParse.vb" />
     <Compile Include="Scripting\UESHVariables.vb" />
     <Compile Include="Shell\AliasManager.vb" />
+    <Compile Include="Shell\CommandInfo.vb" />
     <Compile Include="Shell\GetCommand.vb" />
     <Compile Include="Hardware\HardwareProbe.vb" />
     <Compile Include="Kernel\Kernel.vb" />
@@ -329,6 +287,7 @@
     <Compile Include="Shell\HelpSystem.vb" />
     <Compile Include="Shell\Shell.vb" />
     <Compile Include="TestShell\TestGetCommand.vb" />
+    <Compile Include="TestShell\TestHelpSystem.vb" />
     <Compile Include="TestShell\TestShell.vb" />
     <Compile Include="TimeDate\TimeDate.vb" />
     <Compile Include="TimeDate\TimeZones.vb" />
@@ -354,71 +313,103 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="Resources\arb-T.json" />
+    <None Include="Resources\arb.json" />
+    <None Include="Resources\azr.json" />
+    <None Include="Resources\ben-T.json" />
+    <None Include="Resources\ben.json" />
+    <None Include="Resources\Themes\Breeze.json" />
+    <None Include="Resources\Themes\BreezeDark.json" />
+    <None Include="Resources\bsq.json" />
+    <None Include="Resources\ccw.json" />
+    <None Include="Resources\chi-T.json" />
+    <None Include="Resources\chi.json" />
+    <None Include="Resources\cro.json" />
+    <None Include="Resources\csc.json" />
+    <None Include="Resources\ctl.json" />
+    <None Include="Resources\cze.json" />
+    <None Include="Resources\dan.json" />
+    <None Include="Resources\dtc.json" />
+    <None Include="Resources\eng.json" />
+    <None Include="Resources\fin.json" />
+    <None Include="Resources\flp.json" />
+    <None Include="Resources\fre.json" />
+    <None Include="Resources\ger.json" />
+    <None Include="Resources\glc.json" />
+    <None Include="Resources\hti.json" />
+    <None Include="Resources\hwi.json" />
+    <None Include="Resources\ind-T.json" />
+    <None Include="Resources\ind.json" />
+    <None Include="Resources\iri.json" />
+    <None Include="Resources\ita.json" />
+    <None Include="Resources\jpn-T.json" />
+    <None Include="Resources\jpn.json" />
+    <None Include="Resources\jvn.json" />
+    <None Include="Resources\kor-T.json" />
+    <None Include="Resources\kor.json" />
+    <None Include="Resources\ltn.json" />
+    <None Include="Resources\mal.json" />
+    <None Include="Resources\mts.json" />
+    <None Include="Resources\ndo.json" />
+    <None Include="Resources\nwg.json" />
+    <None Include="Resources\pol.json" />
+    <None Include="Resources\ptg.json" />
+    <None Include="Resources\pun-T.json" />
+    <None Include="Resources\pun.json" />
+    <None Include="Resources\rmn.json" />
+    <None Include="Resources\rus-T.json" />
+    <None Include="Resources\rus.json" />
+    <None Include="Resources\slo.json" />
+    <None Include="Resources\som.json" />
+    <None Include="Resources\spa.json" />
+    <None Include="Resources\srb-T.json" />
+    <None Include="Resources\srb.json" />
+    <None Include="Resources\swa.json" />
+    <None Include="Resources\swe.json" />
+    <None Include="Resources\Themes\BrandingBlue.json" />
+    <None Include="Resources\Themes\BrandingPurple.json" />
+    <None Include="Resources\Data\ConsoleColorsData.json" />
+    <None Include="Resources\Themes\AyuDark.json" />
+    <None Include="Resources\Themes\AyuLight.json" />
+    <None Include="Resources\Themes\AyuMirage.json" />
+    <None Include="Resources\Themes\NeonBreeze.json" />
+    <None Include="Resources\Themes\SolarizedDark.json" />
+    <None Include="Resources\Themes\SolarizedLight.json" />
+    <None Include="Resources\Themes\YellowBG.json" />
+    <None Include="Resources\Themes\YellowFG.json" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\vtn.txt" />
-    <None Include="Resources\arb-T.txt" />
-    <None Include="Resources\arb.txt" />
-    <None Include="Resources\chi-T.txt" />
-    <None Include="Resources\ben.txt" />
-    <None Include="Resources\ben-T.txt" />
-    <None Include="Resources\azr.txt" />
-    <None Include="Resources\cro.txt" />
-    <None Include="Resources\jpn.txt" />
-    <None Include="Resources\ind-T.txt" />
-    <None Include="Resources\jpn-T.txt" />
-    <None Include="Resources\dan.txt" />
-    <None Include="Resources\kor.txt" />
-    <None Include="Resources\kor-T.txt" />
-    <None Include="Resources\flp.txt" />
-    <None Include="Resources\ctl.txt" />
-    <None Include="Resources\mts.txt" />
-    <None Include="Resources\ndo.txt" />
-    <None Include="Resources\nwg.txt" />
-    <None Include="Resources\pol.txt" />
-    <None Include="Resources\pun.txt" />
-    <None Include="Resources\pun-T.txt" />
-    <None Include="Resources\rmn.txt" />
-    <None Include="Resources\rus.txt" />
-    <None Include="Resources\rus-T.txt" />
-    <None Include="Resources\slo.txt" />
-    <None Include="Resources\srb.txt" />
-    <None Include="Resources\srb-T.txt" />
-    <None Include="Resources\som.txt" />
-    <None Include="Resources\swa.txt" />
-    <None Include="Resources\uzb.txt" />
-    <None Include="Resources\cze.txt" />
-    <None Include="Resources\swe.txt" />
-    <None Include="Resources\mal.txt" />
-    <None Include="Resources\ita.txt" />
-    <None Include="Resources\fin.txt" />
-    <None Include="Resources\dtc.txt" />
-    <None Include="Resources\eng.txt" />
-    <None Include="Resources\spa.txt" />
-    <None Include="Resources\ptg.txt" />
-    <None Include="Resources\ind.txt" />
-    <None Include="Resources\ger.txt" />
-    <None Include="Resources\fre.txt" />
-    <None Include="Resources\chi.txt" />
-    <None Include="iconfinder_applications-utilities_8840.ico" Pack="true" PackagePath="\" />
-    <None Include="iconfinder_applications-utilities_8840.png" Pack="true" PackagePath="\" />
+    <None Include="Resources\Themes\3Y-Diamond.json" />
+    <None Include="Resources\Themes\BedOS.json" />
+    <None Include="Resources\Themes\BlackOnWhite.json" />
+    <None Include="Resources\Themes\Bluespire.json" />
+    <None Include="Resources\Themes\Debian.json" />
+    <None Include="Resources\Themes\Default.json" />
+    <None Include="Resources\Themes\GrayOnYellow.json" />
+    <None Include="Resources\Themes\GTASA.json" />
+    <None Include="Resources\Themes\Hacker.json" />
+    <None Include="Resources\Themes\LinuxColoredDef.json" />
+    <None Include="Resources\Themes\LinuxUncolored.json" />
+    <None Include="Resources\Themes\NFSHP-Cop.json" />
+    <None Include="Resources\Themes\NFSHP-Racer.json" />
+    <None Include="Resources\Themes\RedConsole.json" />
+    <None Include="Resources\Themes\TealerOS.json" />
+    <None Include="Resources\Themes\Ubuntu.json" />
+    <None Include="Resources\Themes\TrafficLight.json" />
+    <None Include="Resources\uzb.json" />
+    <None Include="Resources\vtn.json" />
+    <None Include="OfficialAppIcon-KernelSimulator-256.ico" Pack="true" PackagePath="\" />
+    <None Include="OfficialAppIcon-KernelSimulator-256.png" Pack="true" PackagePath="\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\iri.txt" />
+    <None Include="Resources\Themes\Windows95.json" />
+    <None Include="Resources\wls.json" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\wls.txt" />
+    <None Include="Resources\zul.json" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <PropertyGroup>
     <PreBuildEvent>echo "Building $(ProjectName) with config $(ConfigurationName) for $(PlatformName) in $(TargetDir)..."</PreBuildEvent>
   </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

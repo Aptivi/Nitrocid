@@ -1,4 +1,5 @@
-﻿'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+﻿
+'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -16,15 +17,68 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Globalization
+Imports System.IO
+Imports Newtonsoft.Json.Linq
 
 Public Module Translate
 
     'Variables
-    Public availableLangs() As String = {"arb", "arb-T", "azr", "ben", "ben-T", "chi", "chi-T", "cro", "ctl", "cze", "dan", "dtc", "eng", "fin", "flp", "fre", "ger", "ind", "ind-T", "iri", "ita", "jpn", "jpn-T", "kor", "kor-T", "mal", "mts", "ndo", "nwg", "pol", "ptg", "pun", "pun-T", "rmn", "rus", "rus-T", "slo", "som", "spa", "srb", "srb-T", "swa", "swe", "uzb", "vtn", "wls"}
-    Public Transliterables() As String = {"arb", "ben", "chi", "ind", "jpn", "kor", "pun", "rus", "srb"}
-    Public engStrings As List(Of String) = My.Resources.eng.Replace(Chr(13), "").Split(Chr(10)).ToList
+    Public ReadOnly Languages As New Dictionary(Of String, LanguageInfo) From {{"arb", New LanguageInfo("arb", "Arabic", True)}, {"arb-T", New LanguageInfo("arb-T", "Arabic", True)},
+                                                                               {"azr", New LanguageInfo("azr", "Azerbaijani", False)},
+                                                                               {"ben", New LanguageInfo("ben", "Bangla", True)}, {"ben-T", New LanguageInfo("ben-T", "Bangla", True)},
+                                                                               {"bsq", New LanguageInfo("bsq", "Basque", False)},
+                                                                               {"chi", New LanguageInfo("chi", "Chinese", True)}, {"chi-T", New LanguageInfo("chi-T", "Chinese", True)},
+                                                                               {"cro", New LanguageInfo("cro", "Croatian", False)},
+                                                                               {"csc", New LanguageInfo("csc", "Corsican", False)},
+                                                                               {"ctl", New LanguageInfo("ctl", "Catalan", False)},
+                                                                               {"cze", New LanguageInfo("cze", "Czech", False)},
+                                                                               {"dan", New LanguageInfo("dan", "Danish", False)},
+                                                                               {"dtc", New LanguageInfo("dtc", "Dutch", False)},
+                                                                               {"eng", New LanguageInfo("eng", "English", False)},
+                                                                               {"fin", New LanguageInfo("fin", "Finnish", False)},
+                                                                               {"flp", New LanguageInfo("flp", "Filipino", False)},
+                                                                               {"fre", New LanguageInfo("fre", "French", False)},
+                                                                               {"ger", New LanguageInfo("ger", "German", False)},
+                                                                               {"glc", New LanguageInfo("glc", "Galician", False)},
+                                                                               {"hwi", New LanguageInfo("hwi", "Hawaiian", False)},
+                                                                               {"ind", New LanguageInfo("ind", "Hindi", True)}, {"ind-T", New LanguageInfo("ind-T", "Hindi", True)},
+                                                                               {"iri", New LanguageInfo("iri", "Irish", False)},
+                                                                               {"ita", New LanguageInfo("ita", "Italian", False)},
+                                                                               {"jpn", New LanguageInfo("jpn", "Japanese", True)}, {"jpn-T", New LanguageInfo("jpn-T", "Japanese", True)},
+                                                                               {"jvn", New LanguageInfo("jvn", "Javanese", False)},
+                                                                               {"kor", New LanguageInfo("kor", "Korean", True)}, {"kor-T", New LanguageInfo("kor-T", "Korean", True)},
+                                                                               {"ltn", New LanguageInfo("ltn", "Latin", False)},
+                                                                               {"mal", New LanguageInfo("mal", "Malay", False)},
+                                                                               {"mts", New LanguageInfo("mts", "Maltese", False)},
+                                                                               {"ndo", New LanguageInfo("ndo", "Indonesian", False)},
+                                                                               {"nwg", New LanguageInfo("nwg", "Norwegian", False)},
+                                                                               {"pol", New LanguageInfo("pol", "Polish", False)},
+                                                                               {"ptg", New LanguageInfo("ptg", "Portuguese", False)},
+                                                                               {"pun", New LanguageInfo("pun", "Punjabi", True)}, {"pun-T", New LanguageInfo("pun-T", "Punjabi", True)},
+                                                                               {"rmn", New LanguageInfo("rmn", "Romanian", False)},
+                                                                               {"rus", New LanguageInfo("rus", "Russian", True)}, {"rus-T", New LanguageInfo("rus-T", "Russian", True)},
+                                                                               {"slo", New LanguageInfo("slo", "Slovak", False)},
+                                                                               {"som", New LanguageInfo("som", "Somali", False)},
+                                                                               {"spa", New LanguageInfo("spa", "Spanish", False)},
+                                                                               {"srb", New LanguageInfo("srb", "Serbian", True)}, {"srb-T", New LanguageInfo("srb-T", "Serbian", True)},
+                                                                               {"swa", New LanguageInfo("swa", "Swahili", False)}, 'Don't use Kiswahili here. "Swahili" is saner than "Kiswahili".
+                                                                               {"swe", New LanguageInfo("swe", "Swedish", False)},
+                                                                               {"uzb", New LanguageInfo("uzb", "Uzbek", False)},
+                                                                               {"vtn", New LanguageInfo("vtn", "Vietnamese", False)},
+                                                                               {"wls", New LanguageInfo("wls", "Welsh", False)},
+                                                                               {"zul", New LanguageInfo("zul", "Zulu", False)}} 'Don't use isiZulu here. isiZulu? Really? What is "isi" doing here?
     Public currentLang As String = "eng" 'Default to English
     Public CurrentCult As New CultureInfo("en-US")
+    Private NotifyCodepageError As Boolean
+
+    ''' <summary>
+    ''' Translates string into current kernel language.
+    ''' </summary>
+    ''' <param name="text">Any string that exists in Kernel Simulator's translation files</param>
+    ''' <returns>Translated string</returns>
+    Public Function DoTranslation(ByVal text As String) As String
+        Return DoTranslation(text, currentLang)
+    End Function
 
     ''' <summary>
     ''' Translates string into another language, or to English if the language wasn't specified or if it's invalid.
@@ -32,12 +86,13 @@ Public Module Translate
     ''' <param name="text">Any string that exists in Kernel Simulator's translation files</param>
     ''' <param name="lang">3 letter language</param>
     ''' <returns>Translated string</returns>
-    Public Function DoTranslation(ByVal text As String, Optional ByVal lang As String = "eng") As String
+    Public Function DoTranslation(ByVal text As String, ByVal lang As String) As String
+        If String.IsNullOrWhiteSpace(lang) Then lang = "eng"
         'Get language string and translate
         Dim translatedString As Dictionary(Of String, String)
 
         'If the language is available and is not English, translate
-        If availableLangs.Contains(lang) And lang <> "eng" Then
+        If Languages.ContainsKey(lang) And lang <> "eng" Then
             'Prepare dictionary
             translatedString = PrepareDict(lang)
             Wdbg("I", "Dictionary size: {0}", translatedString.Count)
@@ -51,8 +106,7 @@ Public Module Translate
                 text = "(( " + text + " ))"
                 Return text
             End If
-        ElseIf availableLangs.Contains(lang) And lang = "eng" Then 'If the language is available, but is English, don't translate
-            Wdbg("W", "{0} is in language list but it's English", lang)
+        ElseIf Languages.ContainsKey(lang) And lang = "eng" Then 'If the language is available, but is English, don't translate
             Return text
         Else 'If the language is invalid
             Wdbg("E", "{0} isn't in language list", lang)
@@ -67,111 +121,13 @@ Public Module Translate
     ''' <returns>A dictionary of English strings and translated strings</returns>
     Public Function PrepareDict(ByVal lang As String) As Dictionary(Of String, String)
         Dim langStrings As New Dictionary(Of String, String)
-        Dim translated As String = ""
-        Select Case lang
-            Case "arb" 'Arabic (transliterated)
-                translated = My.Resources.arb
-            Case "arb-T" 'Arabic (translated)
-                translated = My.Resources.arb_T
-            Case "azr" 'Azerbaijani
-                translated = My.Resources.azr
-            Case "ben" 'Bengali (transliterated)
-                translated = My.Resources.ben
-            Case "ben-T" 'Bengali (translated)
-                translated = My.Resources.ben_T
-            Case "chi" 'Chinese (transliterated)
-                translated = My.Resources.chi
-            Case "chi-T" 'Chinese (translated)
-                translated = My.Resources.chi_T
-            Case "cro" 'Croatian
-                translated = My.Resources.cro
-            Case "ctl" 'Catalan
-                translated = My.Resources.ctl
-            Case "cze" 'Czech
-                translated = My.Resources.cze
-            Case "dan" 'Danish
-                translated = My.Resources.dan
-            Case "dtc" 'Dutch
-                translated = My.Resources.dtc
-            Case "fre" 'French
-                translated = My.Resources.fre
-            Case "flp" 'Filipino
-                translated = My.Resources.flp
-            Case "fin" 'Finnish
-                translated = My.Resources.fin
-            Case "ger" 'Germany
-                translated = My.Resources.ger
-            Case "ind" 'Hindi (transliterated)
-                translated = My.Resources.ind
-            Case "ind-T" 'Hindi (translated)
-                translated = My.Resources.ind_T
-            Case "iri" 'Irish
-                translated = My.Resources.iri
-            Case "ita" 'Italian
-                translated = My.Resources.ita
-            Case "jpn" 'Japanese (transliterated)
-                translated = My.Resources.jpn
-            Case "jpn-T" 'Japanese (translated)
-                translated = My.Resources.jpn_T
-            Case "kor" 'Korean (transliterated)
-                translated = My.Resources.kor
-            Case "kor-T" 'Korean (translated)
-                translated = My.Resources.kor_T
-            Case "mal" 'Malay (not Malayalam)
-                translated = My.Resources.mal
-            Case "mts" 'Maltese
-                translated = My.Resources.mts
-            Case "ndo" 'Indonesian
-                translated = My.Resources.ndo
-            Case "nwg" 'Norwegian
-                translated = My.Resources.nwg
-            Case "pol" 'Polish
-                translated = My.Resources.pol
-            Case "ptg" 'Portuguese
-                translated = My.Resources.ptg
-            Case "pun" 'Punjabi (transliterated)
-                translated = My.Resources.pun
-            Case "pun-T" 'Punjabi (translated)
-                translated = My.Resources.pun_T
-            Case "rmn" 'Romanian
-                translated = My.Resources.rmn
-            Case "rus" 'Russian (transliterated)
-                translated = My.Resources.rus
-            Case "rus-T" 'Hindi (translated)
-                translated = My.Resources.rus_T
-            Case "slo" 'Slovak
-                translated = My.Resources.slo
-            Case "som" 'Somalia
-                translated = My.Resources.som
-            Case "spa" 'Spanish
-                translated = My.Resources.spa
-            Case "srb" 'Serbian (transliterated)
-                translated = My.Resources.srb
-            Case "srb-T" 'Serbian (translated)
-                translated = My.Resources.srb_T
-            Case "swa" 'Swahili
-                translated = My.Resources.swa
-            Case "swe" 'Swedish
-                translated = My.Resources.swe
-            Case "uzb" 'Uzbekistan
-                translated = My.Resources.uzb
-            Case "vtn" 'Vietnamese
-                translated = My.Resources.vtn
-            Case "wls" 'Welsh
-                translated = My.Resources.wls
-        End Select
-
-        'Convert translated string list to Dictionary
-        Dim translatedLs As List(Of String) = translated.Replace(Chr(13), "").Split(Chr(10)).ToList
 
         'Move final translations to dictionary
-        For ind As Integer = 0 To translatedLs.Count - 1
-            langStrings.Add(engStrings(ind), translatedLs(ind))
+        For Each TranslatedProperty As JProperty In Languages(lang).LanguageResource.Properties
+            langStrings.Add(TranslatedProperty.Name, TranslatedProperty.Value)
         Next
         Return langStrings
     End Function
-
-    Private NotifyCodepageError As Boolean
 
     ''' <summary>
     ''' Prompt for setting language
@@ -179,7 +135,7 @@ Public Module Translate
     ''' <param name="lang">A specified language</param>
     ''' <param name="Force">Force changes</param>
     Sub PromptForSetLang(ByVal lang As String, Optional ByVal Force As Boolean = False)
-        If availableLangs.Contains(lang) Then
+        If Languages.ContainsKey(lang) Then
             Wdbg("I", "Forced {0}", Force)
             If Not Force Then
                 If lang.EndsWith("-T") Then 'The condition prevents tricksters from using "chlang <lang>-T", if not forced.
@@ -187,35 +143,35 @@ Public Module Translate
                     Exit Sub
                 Else
                     'Check to see if the language is transliterable
-                    Wdbg("I", "Transliterable? {0}", Transliterables.Contains(lang))
-                    If Transliterables.Contains(lang) Then
-                        W(DoTranslation("The language you've selected contains two variants. Select one:", currentLang) + vbNewLine, True, ColTypes.Neutral)
+                    Wdbg("I", "Transliterable? {0}", Languages(lang).Transliterable)
+                    If Languages(lang).Transliterable Then
+                        W(DoTranslation("The language you've selected contains two variants. Select one:") + vbNewLine, True, ColTypes.Neutral)
                         W(DoTranslation("1. Transliterated", lang), True, ColTypes.Neutral)
                         W(DoTranslation("2. Translated", lang + "-T") + vbNewLine, True, ColTypes.Neutral)
 CHOICE:
-                        W(DoTranslation("Select your choice:", currentLang), False, ColTypes.Input)
+                        W(DoTranslation("Select your choice:"), False, ColTypes.Input)
                         Dim cho As String = Console.ReadKey(True).KeyChar
                         Console.WriteLine()
                         Wdbg("I", "Choice: {0}", cho)
                         If cho = "2" Then
                             lang += "-T"
                         ElseIf Not cho = "1" Then
-                            W(DoTranslation("Invalid choice. Try again.", currentLang), True, ColTypes.Err)
+                            W(DoTranslation("Invalid choice. Try again."), True, ColTypes.Error)
                             GoTo CHOICE
                         End If
                     End If
                 End If
             End If
 
-            W(DoTranslation("Changing from: {0} to {1}...", currentLang), True, ColTypes.Neutral, currentLang, lang)
+            W(DoTranslation("Changing from: {0} to {1}..."), True, ColTypes.Neutral, currentLang, lang)
             If Not SetLang(lang) Then
-                W(DoTranslation("Failed to set language.", currentLang), True, ColTypes.Err)
+                W(DoTranslation("Failed to set language."), True, ColTypes.Error)
             End If
             If NotifyCodepageError Then
-                W(DoTranslation("Unable to set codepage. The language may not display properly.", currentLang), True, ColTypes.Err)
+                W(DoTranslation("Unable to set codepage. The language may not display properly."), True, ColTypes.Error)
             End If
         Else
-            W(DoTranslation("Invalid language", currentLang) + " {0}", True, ColTypes.Err, lang)
+            W(DoTranslation("Invalid language") + " {0}", True, ColTypes.Error, lang)
         End If
     End Sub
 
@@ -225,7 +181,7 @@ CHOICE:
     ''' <param name="lang">A specified language</param>
     ''' <returns>True if successful, False if unsuccessful.</returns>
     Public Function SetLang(ByVal lang As String) As Boolean
-        If availableLangs.Contains(lang) Then
+        If Languages.ContainsKey(lang) Then
             'Set appropriate codepage for incapable terminals
             Try
                 Select Case lang
@@ -282,14 +238,11 @@ CHOICE:
 
             'Set current language
             Try
-                Dim OldModDescGeneric As String = DoTranslation("Command defined by ", currentLang)
+                Dim OldModDescGeneric As String = DoTranslation("Command defined by ")
                 Wdbg("I", "Translating kernel to {0}.", lang)
                 currentLang = lang
-                Dim ksconf As New IniFile()
-                Dim pathConfig As String = paths("Configuration")
-                ksconf.Load(pathConfig)
-                ksconf.Sections("General").Keys("Language").Value = currentLang
-                ksconf.Save(pathConfig)
+                ConfigToken("General")("Language") = currentLang
+                File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
                 Wdbg("I", "Saved new language.")
 
                 'Update help list for translated help
@@ -297,7 +250,11 @@ CHOICE:
                 InitFTPHelp()
                 InitSFTPHelp()
                 IMAPInitHelp()
+                InitRDebugHelp()
+                InitTestHelp()
                 TextEdit_UpdateHelp()
+                ZipShell_UpdateHelp()
+                InitRSSHelp()
                 ReloadGenericDefs(OldModDescGeneric)
 
                 'Update Culture if applicable
@@ -311,16 +268,16 @@ CHOICE:
                 WStkTrc(ex)
             End Try
         Else
-            Throw New EventsAndExceptions.NoSuchLanguageException(DoTranslation("Invalid language", currentLang) + " {0}".FormatString(lang))
+            Throw New Exceptions.NoSuchLanguageException(DoTranslation("Invalid language") + " {0}", lang)
         End If
         Return False
     End Function
 
     ''' <summary>
-    ''' Updates current culture based on current language
+    ''' Updates current culture based on current language. If there are no cultures in the curent language, assume current culture.
     ''' </summary>
     Public Sub UpdateCulture()
-        Dim StrCult As String = GetCultureFromLang()
+        Dim StrCult As String = If(Not GetCulturesFromCurrentLang.Count = 0, GetCulturesFromCurrentLang(0).EnglishName, CultureInfo.CurrentCulture.EnglishName)
         Wdbg("I", "Culture for {0} is {1}", currentLang, StrCult)
         Dim Cults As CultureInfo() = CultureInfo.GetCultures(CultureTypes.AllCultures)
         Wdbg("I", "Parsing {0} cultures for {1}", Cults.Length, StrCult)
@@ -328,94 +285,37 @@ CHOICE:
             If Cult.EnglishName = StrCult Then
                 Wdbg("I", "Found. Changing culture...")
                 CurrentCult = Cult
+                ConfigToken("General")("Culture") = CurrentCult.Name
+                File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
+                Wdbg("I", "Saved new culture.")
                 Exit For
             End If
         Next
     End Sub
 
     ''' <summary>
-    ''' Get culture from current language
+    ''' Updates current culture based on current language and custom culture
     ''' </summary>
-    ''' <returns>English culture name</returns>
-    Public Function GetCultureFromLang() As String
-        Select Case currentLang
-            Case "arb-T", "arb"
-                Return "Arabic (Saudi Arabia)"
-            Case "azr"
-                Return "Azerbaijani (Cyrillic, Azerbaijan)"
-            Case "ben-T", "ben"
-                Return "Bangla (Bangladesh)"
-            Case "chi-T", "chi"
-                Return "Chinese (Simplified, China)"
-            Case "cro"
-                Return "Croatian (Croatia)"
-            Case "ctl"
-                Return "Catalan (Catalan)"
-            Case "cze"
-                Return "Czech (Czech Republic)"
-            Case "dan"
-                Return "Danish (Denmark)"
-            Case "dtc"
-                Return "Dutch (Netherlands)"
-            Case "eng"
-                Return "English (United States)"
-            Case "fin"
-                Return "Finnish (Finland)"
-            Case "flp"
-                Return "Filipino (Philippines)"
-            Case "fre"
-                Return "French (France)"
-            Case "ger"
-                Return "German (Germany)"
-            Case "ind-T", "ind"
-                Return "Hindi (India)"
-            Case "iri"
-                Return "Irish (Ireland)"
-            Case "ita"
-                Return "Italian (Italy)"
-            Case "jpn-T", "jpn"
-                Return "Japanese (Japan)"
-            Case "kor-T", "kor"
-                Return "Korean (Korea)"
-            Case "mal"
-                Return "Malay (Malaysia)"
-            Case "mts"
-                Return "Maltest (Malta)"
-            Case "ndo"
-                Return "Indonesian (Indonesia)"
-            Case "nwg"
-                Return "Norwegian Bokmål (Norway)"
-            Case "pol"
-                Return "Polish (Poland)"
-            Case "ptg"
-                Return "Portuguese (Brazil)"
-            Case "pun-T", "pun"
-                Return "Punjabi (India)"
-            Case "rmn"
-                Return "Romanian (Romania)"
-            Case "rus-T", "rus"
-                Return "Russian (Russia)"
-            Case "slo"
-                Return "Slovak (Slovakia)"
-            Case "som"
-                Return "Somali (Somalia)"
-            Case "spa"
-                Return "Spanish (Spain, International Sort)"
-            Case "srb-T"
-                Return "Serbian (Cyrillic, Serbia)"
-            Case "srb"
-                Return "Serbian (Latin, Serbia)"
-            Case "swa"
-                Return "Kiswahili (Kenya)"
-            Case "swe"
-                Return "Swedish (Sweden)"
-            Case "uzb"
-                Return "Uzbek (Cyrillic)"
-            Case "vtn"
-                Return "Vietnamese (Vietnam)"
-            Case "wls"
-                Return "Welsh (United Kingdom)"
-        End Select
+    ''' <param name="Culture">Full culture name</param>
+    Public Sub UpdateCulture(ByVal Culture As String)
+        Dim Cultures As List(Of CultureInfo) = GetCulturesFromCurrentLang()
+        For Each Cult As CultureInfo In Cultures
+            If Cult.EnglishName = Culture Then
+                Wdbg("I", "Found. Changing culture...")
+                CurrentCult = Cult
+                ConfigToken("General")("Culture") = CurrentCult.Name
+                File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
+                Wdbg("I", "Saved new culture.")
+                Exit For
+            End If
+        Next
+    End Sub
+
+    ''' <summary>
+    ''' Gets all cultures available for the current language
+    ''' </summary>
+    Public Function GetCulturesFromCurrentLang() As List(Of CultureInfo)
+        Return Languages(currentLang).Cultures
     End Function
 
 End Module

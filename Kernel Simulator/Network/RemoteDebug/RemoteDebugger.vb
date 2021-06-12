@@ -20,14 +20,14 @@ Imports System.Net.Sockets
 Imports System.Threading
 Imports System.IO
 
-Module RemoteDebugger
+Public Module RemoteDebugger
 
     Public DebugPort As Integer = 3014
     Public RDebugClient As Socket
     Public DebugTCP As TcpListener
     Public DebugDevices As New Dictionary(Of Socket, String)
     Public dbgConns As New Dictionary(Of StreamWriter, String)
-    Public RDebugThread As New Thread(AddressOf StartRDebugger) With {.IsBackground = True}
+    Public RDebugThread As New Thread(AddressOf StartRDebugger) With {.IsBackground = True, .Name = "Remote Debug Thread"}
     Public RDebugBlocked As New List(Of String) 'Blocked IP addresses
     Public RDebugStopping As Boolean
 
@@ -38,10 +38,10 @@ Module RemoteDebugger
     Sub StartRDebugThread(ByVal DebugEnable As Boolean)
         If DebugMode Then
             If DebugEnable Then
-                RDebugThread.Start()
+                If Not RDebugThread.IsAlive Then RDebugThread.Start()
             Else
                 RDebugStopping = True
-                RDebugThread = New Thread(AddressOf StartRDebugger) With {.IsBackground = True}
+                RDebugThread = New Thread(AddressOf StartRDebugger) With {.IsBackground = True, .Name = "Remote Debug Thread"}
             End If
         End If
     End Sub
@@ -55,14 +55,14 @@ Module RemoteDebugger
             DebugTCP = New TcpListener(New IPAddress({0, 0, 0, 0}), DebugPort)
             DebugTCP.Start()
         Catch sex As SocketException
-            W(DoTranslation("Remote debug failed to start: {0}", currentLang), True, ColTypes.Err, sex.Message)
+            W(DoTranslation("Remote debug failed to start: {0}"), True, ColTypes.Error, sex.Message)
             WStkTrc(sex)
         End Try
 
         'Start the listening thread
-        Dim RStream As New Thread(AddressOf ReadAndBroadcastAsync)
+        Dim RStream As New Thread(AddressOf ReadAndBroadcastAsync) With {.Name = "Remote Debug Listener Thread"}
         RStream.Start()
-        W(DoTranslation("Debug listening on all addresses using port {0}.", currentLang), True, ColTypes.Neutral, DebugPort)
+        W(DoTranslation("Debug listening on all addresses using port {0}."), True, ColTypes.Neutral, DebugPort)
 
         While Not RDebugStopping
             Thread.Sleep(1)
@@ -71,25 +71,33 @@ Module RemoteDebugger
                 Dim RDebugSWriter As StreamWriter
                 Dim RDebugClient As Socket
                 Dim RDebugIP As String
-                Dim RDebugRandomID As Integer
+                Dim RDebugEndpoint As String
                 Dim RDebugName As String
                 If DebugTCP.Pending Then
                     RDebugClient = DebugTCP.AcceptSocket
                     RDebugStream = New NetworkStream(RDebugClient)
                     RDebugSWriter = New StreamWriter(RDebugStream) With {.AutoFlush = True}
-                    RDebugIP = RDebugClient.RemoteEndPoint.ToString.Remove(RDebugClient.RemoteEndPoint.ToString.IndexOf(":"))
-                    RDebugRandomID = New Random(100000).Next(999999)
-                    RDebugName = RDebugDNP + CStr(RDebugRandomID)
+                    RDebugEndpoint = RDebugClient.RemoteEndPoint.ToString
+                    RDebugIP = RDebugEndpoint.Remove(RDebugClient.RemoteEndPoint.ToString.IndexOf(":"))
+                    AddDeviceToJson(RDebugIP, False)
+                    RDebugName = GetDeviceProperty(RDebugIP, DeviceProperty.Name)
+                    If String.IsNullOrEmpty(RDebugName) Then
+                        Wdbg("W", "Debug device {0} has no name. Prompting for name...", RDebugIP)
+                    End If
                     If RDebugBlocked.Contains(RDebugIP) Then
                         Wdbg("W", "Debug device {0} ({1}) tried to join remote debug, but blocked.", RDebugName, RDebugIP)
                         RDebugClient.Disconnect(True)
                     Else
                         dbgConns.Add(RDebugSWriter, RDebugName)
                         DebugDevices.Add(RDebugClient, RDebugIP)
-                        RDebugSWriter.WriteLine(DoTranslation(">> Remote Debug and Chat: version", currentLang) + " 0.4") 'Increment each minor/major change(s)
-                        RDebugSWriter.WriteLine(DoTranslation(">> Your address is {0}.", currentLang), RDebugIP)
-                        RDebugSWriter.WriteLine(DoTranslation(">> Your name is {0}.", currentLang), RDebugName)
-                        Wdbg("I", "Debug device {0} ({1}) connected.", RDebugName, RDebugIP)
+                        RDebugSWriter.WriteLine(DoTranslation(">> Remote Debug and Chat: version") + " 0.6.2") 'Increment each minor/major change(s)
+                        RDebugSWriter.WriteLine(DoTranslation(">> Your address is {0}."), RDebugIP)
+                        If String.IsNullOrEmpty(RDebugName) Then
+                            RDebugSWriter.WriteLine(DoTranslation(">> Welcome! This is your first time entering remote debug and chat. Use ""/register <name>"" to register.") + " ", RDebugName)
+                        Else
+                            RDebugSWriter.WriteLine(DoTranslation(">> Your name is {0}."), RDebugName)
+                        End If
+                        Wdbg("I", "Debug device ""{0}"" ({1}) connected.", RDebugName, RDebugIP)
                         RDebugSWriter.Flush()
                         EventManager.RaiseRemoteDebugConnectionAccepted(RDebugIP)
                     End If
@@ -97,7 +105,7 @@ Module RemoteDebugger
             Catch ae As ThreadAbortException
                 Exit While
             Catch ex As Exception
-                W(DoTranslation("Error in connection: {0}", currentLang), True, ColTypes.Err, ex.Message)
+                W(DoTranslation("Error in connection: {0}"), True, ColTypes.Error, ex.Message)
                 WStkTrc(ex)
             End Try
         End While
@@ -132,26 +140,29 @@ Module RemoteDebugger
                     If Not msg.StartsWith(vbNullChar) Then 'Don't post message if it starts with a null character.
                         If msg.StartsWith("/") Then 'Message is a command
                             Dim cmd As String = msg.Replace("/", "").Replace(vbNullChar, "")
-                            If DebugCmds.Contains(cmd.Split(" ")(0)) Then 'Command is found or not
+                            If DebugCommands.ContainsKey(cmd.Split(" ")(0)) Then 'Command is found or not
                                 'Parsing starts here.
                                 ParseCmd(cmd, dbgConns.Keys(i - 1), ip)
                             ElseIf RemoteDebugAliases.Keys.Contains(cmd.Split(" ")(0)) Then
                                 'Alias parsing starts here.
                                 ExecuteRDAlias(cmd, dbgConns.Keys(i - 1), ip)
                             Else
-                                dbgConns.Keys(i - 1).WriteLine(DoTranslation("Command {0} not found. Use ""/help"" to see the list.", currentLang), cmd.Split(" ")(0))
+                                dbgConns.Keys(i - 1).WriteLine(DoTranslation("Command {0} not found. Use ""/help"" to see the list."), cmd.Split(" ")(0))
                             End If
                         Else
-                            If RecordChatToDebugLog Then
-                                Wdbg("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))
-                            Else
-                                WdbgDevicesOnly("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))
+                            If Not String.IsNullOrEmpty(name) Then 'Prevent no-name people from chatting
+                                If RecordChatToDebugLog Then
+                                    Wdbg("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))
+                                Else
+                                    WdbgDevicesOnly("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))
+                                End If
+                                SetDeviceProperty(ip, DeviceProperty.ChatHistory, "[" + Render() + "] " + msg.Replace(vbNullChar, ""))
                             End If
                         End If
                     End If
                 Catch ex As Exception
                     Dim SE As SocketException = CType(ex.InnerException, SocketException)
-                    If Not IsNothing(SE) Then
+                    If SE IsNot Nothing Then
                         If Not SE.SocketErrorCode = SocketError.TimedOut And Not SE.SocketErrorCode = SocketError.WouldBlock Then
                             Wdbg("E", "Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
                             WStkTrc(ex)

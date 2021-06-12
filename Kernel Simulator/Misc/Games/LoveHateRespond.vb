@@ -18,31 +18,31 @@
 
 Module LoveHateRespond
 
-    Dim LoveComments As New List(Of String) From {DoTranslation("Thanks! This is interesting.", currentLang),
-                                                  DoTranslation("Everyone will support your video for this.", currentLang),
-                                                  DoTranslation("I gave you the special file in your e-mail for your next video.", currentLang),
-                                                  DoTranslation("Listen, haters, he is trying to help us, not scam.", currentLang),
-                                                  DoTranslation("I don't know how much do I and my friends thank you for this video.", currentLang),
-                                                  DoTranslation("I love you for this video.", currentLang),
-                                                  DoTranslation("Keep going, don't stop.", currentLang),
-                                                  DoTranslation("I will help you reach to 1M subscribers!", currentLang),
-                                                  DoTranslation("My friends got their computer fixed because of you.", currentLang),
-                                                  DoTranslation("Awesome prank! I shut down my enemy's PC.", currentLang),
-                                                  DoTranslation("To haters: STOP HATING ON HIM", currentLang),
-                                                  DoTranslation("To haters: GET TO WORK", currentLang),
-                                                  DoTranslation("Nobody will notice this now thanks to your object hiding guide", currentLang)}
-    Dim HateComments As New List(Of String) From {DoTranslation("I will stop watching your videos. Subscriber lost.", currentLang),
-                                                  DoTranslation("What is this? This is unclear.", currentLang),
-                                                  DoTranslation("This video is the worst!", currentLang),
-                                                  DoTranslation("Everyone report this video!", currentLang),
-                                                  DoTranslation("My friends are furious with you!", currentLang),
-                                                  DoTranslation("Lovers will now hate you for this.", currentLang),
-                                                  DoTranslation("Your friend will hate you for this.", currentLang),
-                                                  DoTranslation("This prank made me unsubscribe to you.", currentLang),
-                                                  DoTranslation("Mission failed, Respect -, Subscriber -", currentLang),
-                                                  DoTranslation("Stop making this kind of video!!!", currentLang),
-                                                  DoTranslation("Get back to your job, your videos are the worst!", currentLang),
-                                                  DoTranslation("We prejudice on this video.", currentLang)}
+    Dim LoveComments As New List(Of String) From {DoTranslation("Thanks! This is interesting."),
+                                                  DoTranslation("Everyone will support your video for this."),
+                                                  DoTranslation("I gave you the special file in your e-mail for your next video."),
+                                                  DoTranslation("Listen, haters, he is trying to help us, not scam."),
+                                                  DoTranslation("I don't know how much do I and my friends thank you for this video."),
+                                                  DoTranslation("I love you for this video."),
+                                                  DoTranslation("Keep going, don't stop."),
+                                                  DoTranslation("I will help you reach to 1M subscribers!"),
+                                                  DoTranslation("My friends got their computer fixed because of you."),
+                                                  DoTranslation("Awesome prank! I shut down my enemy's PC."),
+                                                  DoTranslation("To haters: STOP HATING ON HIM"),
+                                                  DoTranslation("To haters: GET TO WORK"),
+                                                  DoTranslation("Nobody will notice this now thanks to your object hiding guide")}
+    Dim HateComments As New List(Of String) From {DoTranslation("I will stop watching your videos. Subscriber lost."),
+                                                  DoTranslation("What is this? This is unclear."),
+                                                  DoTranslation("This video is the worst!"),
+                                                  DoTranslation("Everyone report this video!"),
+                                                  DoTranslation("My friends are furious with you!"),
+                                                  DoTranslation("Lovers will now hate you for this."),
+                                                  DoTranslation("Your friend will hate you for this."),
+                                                  DoTranslation("This prank made me unsubscribe to you."),
+                                                  DoTranslation("Mission failed, Respect -, Subscriber -"),
+                                                  DoTranslation("Stop making this kind of video!!!"),
+                                                  DoTranslation("Get back to your job, your videos are the worst!"),
+                                                  DoTranslation("We prejudice on this video.")}
     Dim Comments As New Dictionary(Of String, List(Of String)) From {{"Love", LoveComments}, {"Hate", HateComments}}
     Dim Users As New List(Of String) From {"GS4L", "The Eagle", "Vercity", "Losting - Computers, fixes, and more", "WillStrike", "CyberBully #2095", "ProGamer453",
                                            "ExtFS", "Elaine Stretch", "NFSMW2005", "WhatsUp", "BSearch", "Wellington Marks", "CD-OS", "LinuxUser348", "Speculate Ltd.",
@@ -61,34 +61,34 @@ Module LoveHateRespond
             Wdbg("I", "Comment type: {0}", Type)
             Wdbg("I", "Commenter: {0}", RandomUser)
             Wdbg("I", "Comment: {0}", RandomComment)
-            W(DoTranslation("If someone made this comment to your video:", currentLang), True, ColTypes.Neutral)
+            W(DoTranslation("If someone made this comment to your video:"), True, ColTypes.Neutral)
             W("{0}: {1}", True, ColTypes.Neutral, RandomUser, RandomComment)
-            W(DoTranslation("How would you respond?", currentLang) + " <R/T/Q> ", False, ColTypes.Input)
+            W(DoTranslation("How would you respond?") + " <R/T/Q> ", False, ColTypes.Input)
             Response = Console.ReadKey.KeyChar
             Console.WriteLine()
             Wdbg("I", "Response: {0}", Response)
             If Response = "R" Or Response = "r" Then
                 If Type = "Hate" Then
                     Wdbg("I", "Reported hate comment")
-                    W(DoTranslation("Great! {0}'s comment will be removed for that.", currentLang), True, ColTypes.Neutral, RandomUser)
+                    W(DoTranslation("Great! {0}'s comment will be removed for that."), True, ColTypes.Neutral, RandomUser)
                 Else
                     Wdbg("I", "Reported love comment")
-                    W(DoTranslation("You just reported the love comment!", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("You just reported the love comment!"), True, ColTypes.Neutral)
                 End If
             ElseIf Response = "T" Or Response = "t" Then
                 If Type = "Love" Then
                     Wdbg("I", "Thanked love comment")
-                    W(DoTranslation("Great! {0} will appreciate your thanks.", currentLang), True, ColTypes.Neutral, RandomUser)
+                    W(DoTranslation("Great! {0} will appreciate your thanks."), True, ColTypes.Neutral, RandomUser)
                 Else
                     Wdbg("I", "Thanked hate comment")
-                    W(DoTranslation("You just replied to the hate comment!", currentLang), True, ColTypes.Neutral)
+                    W(DoTranslation("You just replied to the hate comment!"), True, ColTypes.Neutral)
                 End If
             ElseIf Response = "Q" Or Response = "q" Then
                 Wdbg("I", "Exit requested")
                 Exit Sub
             Else
                 Wdbg("I", "No such selection")
-                W(DoTranslation("Invalid selection. Going to the next comment...", currentLang), True, ColTypes.Err)
+                W(DoTranslation("Invalid selection. Going to the next comment..."), True, ColTypes.Error)
             End If
         End While
     End Sub

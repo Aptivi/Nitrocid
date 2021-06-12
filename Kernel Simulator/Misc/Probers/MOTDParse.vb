@@ -38,8 +38,8 @@ Public Module MOTDParse
     ''' <param name="MType">Message type</param>
     Public Sub SetMOTD(ByVal MOTD As String, ByVal MType As MessageType)
         Try
-            MOTDFilePath = paths("Home") + "/MOTD.txt"
-            MALFilePath = paths("Home") + "/MAL.txt"
+            MOTDFilePath = paths("MOTD")
+            MALFilePath = paths("MAL")
             Wdbg("I", "Paths: {0}, {1}", MOTDFilePath, MALFilePath)
             Wdbg("I", "Message type: {0}", MType)
             If MType = 1 Then
@@ -53,7 +53,7 @@ Public Module MOTDParse
                 MOTDStreamW.Write(MOTD)
                 MAL = MOTD
             Else
-                W(DoTranslation("MOTD/MAL is valid, but the message type is not valid. Assuming MOTD...", currentLang), True, ColTypes.Err)
+                W(DoTranslation("MOTD/MAL is valid, but the message type is not valid. Assuming MOTD..."), True, ColTypes.Error)
                 MOTDStreamW = New IO.StreamWriter(MOTDFilePath) With {.AutoFlush = True}
                 Wdbg("I", "Opened stream to MOTD path")
                 MOTDStreamW.WriteLine(MOTD)
@@ -62,7 +62,7 @@ Public Module MOTDParse
             MOTDStreamW.Close()
             Wdbg("I", "Stream closed")
         Catch ex As Exception
-            W(DoTranslation("Error when trying to set MOTD/MAL: {0}", currentLang), True, ColTypes.Err, ex.Message)
+            W(DoTranslation("Error when trying to set MOTD/MAL: {0}"), True, ColTypes.Error, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub
@@ -73,8 +73,8 @@ Public Module MOTDParse
     ''' <param name="MType">Message type</param>
     Public Sub ReadMOTDFromFile(ByVal MType As MessageType)
         Try
-            MOTDFilePath = paths("Home") + "/MOTD.txt"
-            MALFilePath = paths("Home") + "/MAL.txt"
+            MOTDFilePath = paths("MOTD")
+            MALFilePath = paths("MAL")
             Wdbg("I", "Paths: {0}, {1}", MOTDFilePath, MALFilePath)
             Wdbg("I", "Message type: {0}", MType)
             Dim MOTDBuilder As New Text.StringBuilder
@@ -89,12 +89,12 @@ Public Module MOTDParse
                 MOTDBuilder.Append(MOTDStreamR.ReadToEnd)
                 MAL = MOTDBuilder.ToString
             Else
-                W(DoTranslation("Tried to read MOTD/MAL that is of the invalid message type.", currentLang), True, ColTypes.Err)
+                W(DoTranslation("Tried to read MOTD/MAL that is of the invalid message type."), True, ColTypes.Error)
             End If
             MOTDStreamR.Close()
             Wdbg("W", "Stream closed")
         Catch ex As Exception
-            W(DoTranslation("Error when trying to get MOTD/MAL: {0}", currentLang), True, ColTypes.Err, ex.Message)
+            W(DoTranslation("Error when trying to get MOTD/MAL: {0}"), True, ColTypes.Error, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub

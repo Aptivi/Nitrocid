@@ -36,7 +36,7 @@ Public Module MailDirectory
         Catch ex As Exception
             Wdbg("E", "Failed to create folder {0}: {1}", Directory, ex.Message)
             WStkTrc(ex)
-            Throw New EventsAndExceptions.MailException(DoTranslation("Unable to create mail folder {0}: {1}", currentLang).FormatString(Directory, ex.Message))
+            Throw New Exceptions.MailException(DoTranslation("Unable to create mail folder {0}: {1}"), ex, Directory, ex.Message)
         End Try
     End Sub
 
@@ -55,7 +55,7 @@ Public Module MailDirectory
         Catch ex As Exception
             Wdbg("E", "Failed to delete folder {0}: {1}", Directory, ex.Message)
             WStkTrc(ex)
-            Throw New EventsAndExceptions.MailException(DoTranslation("Unable to delete mail folder {0}: {1}", currentLang).FormatString(Directory, ex.Message))
+            Throw New Exceptions.MailException(DoTranslation("Unable to delete mail folder {0}: {1}"), ex, Directory, ex.Message)
         End Try
     End Sub
 
@@ -74,7 +74,7 @@ Public Module MailDirectory
         Catch ex As Exception
             Wdbg("E", "Failed to delete folder {0}: {1}", Directory, ex.Message)
             WStkTrc(ex)
-            Throw New EventsAndExceptions.MailException(DoTranslation("Unable to delete mail folder {0}: {1}", currentLang).FormatString(Directory, ex.Message))
+            Throw New Exceptions.MailException(DoTranslation("Unable to delete mail folder {0}: {1}"), ex, Directory, ex.Message)
         End Try
     End Sub
 
@@ -93,7 +93,7 @@ Public Module MailDirectory
         Catch ex As Exception
             Wdbg("E", "Failed to open folder {0}: {1}", Directory, ex.Message)
             WStkTrc(ex)
-            Throw New EventsAndExceptions.MailException(DoTranslation("Unable to open mail folder {0}: {1}", currentLang).FormatString(Directory, ex.Message))
+            Throw New Exceptions.MailException(DoTranslation("Unable to open mail folder {0}: {1}"), ex, Directory, ex.Message)
         End Try
     End Sub
 
@@ -138,10 +138,10 @@ Public Module MailDirectory
         Next
 
 #Disable Warning BC42104
-        If Not Opened Is Nothing Then
+        If Opened IsNot Nothing Then
             Return Opened
         Else
-            Throw New EventsAndExceptions.NoSuchMailDirectoryException(DoTranslation("Mail folder {0} not found.", currentLang).FormatString(FolderString))
+            Throw New Exceptions.NoSuchMailDirectoryException(DoTranslation("Mail folder {0} not found."), FolderString)
         End If
 #Enable Warning BC42104
     End Function

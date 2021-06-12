@@ -1,4 +1,5 @@
-﻿'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+﻿
+'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
 '
 '    This file is part of Kernel Simulator
 '
@@ -61,7 +62,7 @@ Public Module FTPTransfer
                 EventManager.RaiseFTPPostDownload(File, False)
             End Try
         Else
-            Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission.", currentLang))
+            Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
         End If
         Return False
     End Function
@@ -83,7 +84,7 @@ Public Module FTPTransfer
             EventManager.RaiseFTPPostUpload(File, Success)
             Return Success
         Else
-            Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission.", currentLang))
+            Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
         End If
         Return False
     End Function

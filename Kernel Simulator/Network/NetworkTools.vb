@@ -16,8 +16,10 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
 Imports System.Net.NetworkInformation
 Imports System.Text
+Imports Newtonsoft.Json.Linq
 
 Public Module NetworkTools
 
@@ -27,6 +29,17 @@ Public Module NetworkTools
     Public URetries As Integer = 3
     Friend DFinish As Boolean
     Friend UFinish As Boolean
+
+    Public Enum SpeedDialType
+        ''' <summary>
+        ''' FTP speed dial
+        ''' </summary>
+        FTP
+        ''' <summary>
+        ''' SFTP speed dial
+        ''' </summary>
+        SFTP
+    End Enum
 
     ''' <summary>
     ''' Print each of adapters' properties to the console.
@@ -46,14 +59,14 @@ Public Module NetworkTools
             'See if it supports IPv6
             If Not adapter.Supports(NetworkInterfaceComponent.IPv6) Then
                 Wdbg("W", "{0} doesn't support IPv6. Trying to get information about IPv4.", adapter.Description)
-                W(DoTranslation("Adapter {0} doesn't support IPv6. Continuing...", currentLang), True, ColTypes.Err, adapter.Description)
+                W(DoTranslation("Adapter {0} doesn't support IPv6. Continuing..."), True, ColTypes.Error, adapter.Description)
                 NoV6 = True
             End If
 
             'See if it supports IPv4
             If Not adapter.Supports(NetworkInterfaceComponent.IPv4) Then
                 Wdbg("E", "{0} doesn't support IPv4.", adapter.Description)
-                W(DoTranslation("Adapter {0} doesn't support IPv4. Probe failed.", currentLang), True, ColTypes.Err, adapter.Description)
+                W(DoTranslation("Adapter {0} doesn't support IPv4. Probe failed."), True, ColTypes.Error, adapter.Description)
                 NoV4 = True
             End If
 
@@ -72,11 +85,11 @@ Public Module NetworkTools
 #Disable Warning BC42104
                     If p6 Is Nothing Then
                         Wdbg("W", "Failed to get IPv6 properties.")
-                        W(DoTranslation("Failed to get IPv6 properties for adapter {0}. Continuing...", currentLang), True, ColTypes.Err, adapter.Description)
+                        W(DoTranslation("Failed to get IPv6 properties for adapter {0}. Continuing..."), True, ColTypes.Error, adapter.Description)
                     End If
                     If p Is Nothing Then
                         Wdbg("E", "Failed to get IPv4 properties.")
-                        W(DoTranslation("Failed to get properties for adapter {0}", currentLang), True, ColTypes.Err, adapter.Description)
+                        W(DoTranslation("Failed to get properties for adapter {0}"), True, ColTypes.Error, adapter.Description)
                         Failed = True
                     End If
                     WStkTrc(ex)
@@ -86,7 +99,7 @@ Public Module NetworkTools
                 'Check if statistics is nothing
                 If s Is Nothing Then
                     Wdbg("E", "Failed to get statistics.")
-                    W(DoTranslation("Failed to get statistics for adapter {0}", currentLang), True, ColTypes.Err, adapter.Description)
+                    W(DoTranslation("Failed to get statistics for adapter {0}"), True, ColTypes.Error, adapter.Description)
                     Failed = True
                 End If
 
@@ -115,14 +128,14 @@ Public Module NetworkTools
     ''' <param name="Properties">Network properties</param>
     ''' <param name="Statistics">Network statistics</param>
     Sub PrintAdapterIPv4Info(ByVal NInterface As NetworkInterface, ByVal Properties As IPv4InterfaceProperties, ByVal Statistics As IPv4InterfaceStatistics)
-        W(DoTranslation("IPv4 information:", currentLang) + vbNewLine +
-          DoTranslation("Adapter Number:", currentLang) + " {0}" + vbNewLine +
-          DoTranslation("Adapter Name:", currentLang) + " {1}" + vbNewLine +
-          DoTranslation("Maximum Transmission Unit: {2} Units", currentLang) + vbNewLine +
-          DoTranslation("DHCP Enabled:", currentLang) + " {3}" + vbNewLine +
-          DoTranslation("Non-unicast packets:", currentLang) + " {4}/{5}" + vbNewLine +
-          DoTranslation("Unicast packets:", currentLang) + " {6}/{7}" + vbNewLine +
-          DoTranslation("Error incoming/outgoing packets:", currentLang) + " {8}/{9}", True, ColTypes.Neutral,
+        W(DoTranslation("IPv4 information:") + vbNewLine +
+          DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
+          DoTranslation("Adapter Name:") + " {1}" + vbNewLine +
+          DoTranslation("Maximum Transmission Unit: {2} Units") + vbNewLine +
+          DoTranslation("DHCP Enabled:") + " {3}" + vbNewLine +
+          DoTranslation("Non-unicast packets:") + " {4}/{5}" + vbNewLine +
+          DoTranslation("Unicast packets:") + " {6}/{7}" + vbNewLine +
+          DoTranslation("Error incoming/outgoing packets:") + " {8}/{9}", True, ColTypes.Neutral,
           adapterNumber, NInterface.Description, Properties.Mtu, Properties.IsDhcpEnabled, Statistics.NonUnicastPacketsSent, Statistics.NonUnicastPacketsReceived,
           Statistics.UnicastPacketsSent, Statistics.UnicastPacketsReceived, Statistics.IncomingPacketsWithErrors, Statistics.OutgoingPacketsWithErrors)
     End Sub
@@ -133,10 +146,10 @@ Public Module NetworkTools
     ''' <param name="NInterface">A network interface or adapter</param>
     ''' <param name="Properties">Network properties</param>
     Sub PrintAdapterIPv6Info(ByVal NInterface As NetworkInterface, ByVal Properties As IPv6InterfaceProperties)
-        W(DoTranslation("IPv6 information:", currentLang) + vbNewLine +
-          DoTranslation("Adapter Number:", currentLang) + " {0}" + vbNewLine +
-          DoTranslation("Adapter Name:", currentLang) + " {1}" + vbNewLine +
-          DoTranslation("Maximum Transmission Unit: {2} Units", currentLang), True, ColTypes.Neutral,
+        W(DoTranslation("IPv6 information:") + vbNewLine +
+          DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
+          DoTranslation("Adapter Name:") + " {1}" + vbNewLine +
+          DoTranslation("Maximum Transmission Unit: {2} Units"), True, ColTypes.Neutral,
           adapterNumber, NInterface.Description, Properties.Mtu)
     End Sub
 
@@ -146,14 +159,14 @@ Public Module NetworkTools
     ''' <param name="IPv4Stat">IPv4 general statistics</param>
     ''' <param name="IPv6Stat">IPv6 general statistics</param>
     Sub PrintGeneralNetInfo(ByVal IPv4Stat As IPGlobalStatistics, ByVal IPv6Stat As IPGlobalStatistics)
-        W(DoTranslation("General IPv6 properties", currentLang) + vbNewLine +
-          DoTranslation("Packets (inbound):", currentLang) + " {0}/{1}" + vbNewLine +
-          DoTranslation("Packets (outbound):", currentLang) + " {2}/{3}" + vbNewLine +
-          DoTranslation("Errors in received packets:", currentLang) + " {4}/{5}/{6}" + vbNewLine +
-          DoTranslation("General IPv4 properties", currentLang) + vbNewLine +
-          DoTranslation("Packets (inbound):", currentLang) + " {7}/{8}" + vbNewLine +
-          DoTranslation("Packets (outbound):", currentLang) + " {9}/{10}" + vbNewLine +
-          DoTranslation("Errors in received packets:", currentLang) + " {11}/{12}/{13}", True, ColTypes.Neutral,
+        W(DoTranslation("General IPv6 properties") + vbNewLine +
+          DoTranslation("Packets (inbound):") + " {0}/{1}" + vbNewLine +
+          DoTranslation("Packets (outbound):") + " {2}/{3}" + vbNewLine +
+          DoTranslation("Errors in received packets:") + " {4}/{5}/{6}" + vbNewLine +
+          DoTranslation("General IPv4 properties") + vbNewLine +
+          DoTranslation("Packets (inbound):") + " {7}/{8}" + vbNewLine +
+          DoTranslation("Packets (outbound):") + " {9}/{10}" + vbNewLine +
+          DoTranslation("Errors in received packets:") + " {11}/{12}/{13}", True, ColTypes.Neutral,
           IPv6Stat.ReceivedPackets, IPv6Stat.ReceivedPacketsDelivered, IPv6Stat.OutputPacketRequests, IPv6Stat.OutputPacketsDiscarded, IPv6Stat.ReceivedPacketsWithAddressErrors,
           IPv6Stat.ReceivedPacketsWithHeadersErrors, IPv6Stat.ReceivedPacketsWithUnknownProtocol, IPv4Stat.ReceivedPackets, IPv4Stat.ReceivedPacketsDelivered, IPv4Stat.OutputPacketRequests,
           IPv4Stat.OutputPacketsDiscarded, IPv4Stat.ReceivedPacketsWithAddressErrors, IPv4Stat.ReceivedPacketsWithHeadersErrors, IPv4Stat.ReceivedPacketsWithUnknownProtocol)
@@ -190,18 +203,95 @@ Public Module NetworkTools
     Public Function ChangeHostname(ByVal NewHost As String) As Boolean
         Try
             HName = NewHost
-            Dim ksconf As New IniFile()
-            Dim pathConfig As String = paths("Configuration")
-            ksconf.Load(pathConfig)
-            ksconf.Sections("Login").Keys("Host Name").Value = HName
-            ksconf.Save(pathConfig)
+            ConfigToken("Login")("Host Name") = HName
+            File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
             Return True
         Catch ex As Exception
             WStkTrc(ex)
             Wdbg("E", "Failed to change hostname: {0}", ex.Message)
-            Throw New EventsAndExceptions.HostnameException(DoTranslation("Failed to change host name: {0}", currentLang).FormatString(ex.Message))
+            Throw New Exceptions.HostnameException(DoTranslation("Failed to change host name: {0}"), ex, ex.Message)
         End Try
         Return False
     End Function
+
+    ''' <summary>
+    ''' Adds an entry to speed dial
+    ''' </summary>
+    ''' <param name="Address">A speed dial address</param>
+    ''' <param name="Port">A speed dial port</param>
+    ''' <param name="User">A speed dial username</param>
+    ''' <param name="EncryptionMode">A speed dial encryption mode</param>
+    ''' <param name="SpeedDialType">Speed dial type</param>
+    ''' <param name="ThrowException">Optionally throw exception</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function AddEntryToSpeedDial(ByVal Address As String, ByVal Port As Integer, ByVal User As String, ByVal SpeedDialType As SpeedDialType, Optional ByVal EncryptionMode As FtpEncryptionMode = FtpEncryptionMode.None, Optional ThrowException As Boolean = True) As Boolean
+        Dim PathName As String = If(SpeedDialType = SpeedDialType.SFTP, "SFTPSpeedDial", "FTPSpeedDial")
+        If Not File.Exists(paths(PathName)) Then MakeFile(paths(PathName))
+        Dim SpeedDialJsonContent As String = File.ReadAllText(paths(PathName))
+        If SpeedDialJsonContent.StartsWith("[") Then
+            ConvertSpeedDialEntries(SpeedDialType)
+            SpeedDialJsonContent = File.ReadAllText(paths(PathName))
+        End If
+        Dim SpeedDialToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(SpeedDialJsonContent), SpeedDialJsonContent, "{}"))
+        If SpeedDialToken(Address) Is Nothing Then
+            Dim NewSpeedDial As New JObject(New JProperty("Address", Address),
+                                            New JProperty("Port", Port),
+                                            New JProperty("User", User),
+                                            New JProperty("Type", SpeedDialType),
+                                            New JProperty("FTP Encryption Mode", EncryptionMode))
+            SpeedDialToken.Add(Address, NewSpeedDial)
+            File.WriteAllText(paths(PathName), JsonConvert.SerializeObject(SpeedDialToken, Formatting.Indented))
+            Return True
+        Else
+            If ThrowException Then
+                If SpeedDialType = SpeedDialType.FTP Then
+                    Throw New Exceptions.FTPNetworkException(DoTranslation("Entry already exists."))
+                ElseIf SpeedDialType = SpeedDialType.SFTP Then
+                    Throw New Exceptions.SFTPNetworkException(DoTranslation("Entry already exists."))
+                End If
+            End If
+            Return False
+        End If
+    End Function
+
+    ''' <summary>
+    ''' Lists all speed dial entries
+    ''' </summary>
+    ''' <param name="SpeedDialType">Speed dial type</param>
+    ''' <returns>A list</returns>
+    Public Function ListSpeedDialEntries(ByVal SpeedDialType As SpeedDialType) As Dictionary(Of String, JToken)
+        Dim PathName As String = If(SpeedDialType = SpeedDialType.SFTP, "SFTPSpeedDial", "FTPSpeedDial")
+        If Not File.Exists(paths(PathName)) Then MakeFile(paths(PathName))
+        Dim SpeedDialJsonContent As String = File.ReadAllText(paths(PathName))
+        If SpeedDialJsonContent.StartsWith("[") Then
+            ConvertSpeedDialEntries(SpeedDialType)
+            SpeedDialJsonContent = File.ReadAllText(paths(PathName))
+        End If
+        Dim SpeedDialToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(SpeedDialJsonContent), SpeedDialJsonContent, "{}"))
+        Dim SpeedDialEntries As New Dictionary(Of String, JToken)
+        For Each SpeedDialAddress In SpeedDialToken.Properties
+            SpeedDialEntries.Add(SpeedDialAddress.Name, SpeedDialAddress.Value)
+        Next
+        Return SpeedDialEntries
+    End Function
+
+    ''' <summary>
+    ''' Convert speed dial entries from the old jsonified version (pre-0.0.16 RC1) to the new jsonified version
+    ''' </summary>
+    ''' <param name="SpeedDialType">Speed dial type</param>
+    Public Sub ConvertSpeedDialEntries(ByVal SpeedDialType As SpeedDialType)
+        Dim PathName As String = If(SpeedDialType = SpeedDialType.SFTP, "SFTPSpeedDial", "FTPSpeedDial")
+        Dim SpeedDialJsonContent As String = File.ReadAllText(paths(PathName))
+        Dim SpeedDialToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(SpeedDialJsonContent), SpeedDialJsonContent, "[]"))
+        File.Delete(paths(PathName))
+        For Each SpeedDialEntry As String In SpeedDialToken
+            Dim ChosenLineSeparation As String() = SpeedDialEntry.Split(",")
+            Dim Address As String = ChosenLineSeparation(0)
+            Dim Port As String = ChosenLineSeparation(1)
+            Dim Username As String = ChosenLineSeparation(2)
+            Dim Encryption As FtpEncryptionMode = If(SpeedDialType = SpeedDialType.FTP, [Enum].Parse(GetType(FtpEncryptionMode), ChosenLineSeparation(3)), FtpEncryptionMode.None)
+            AddEntryToSpeedDial(Address, Port, Username, SpeedDialType, Encryption, False)
+        Next
+    End Sub
 
 End Module

@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Shouldly" />
     <Import Include="System" />
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
@@ -70,7 +71,24 @@
     <Import Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FilesystemTests.vb" />
+    <Compile Include="Console\ColorInitializationTests.vb" />
+    <Compile Include="Console\RGBInitializationTests.vb" />
+    <Compile Include="Console\ThemeInfoInitializationTests.vb" />
+    <Compile Include="Files\FilesystemNeutralizationTests.vb" />
+    <Compile Include="Files\FilesystemManipulationTests.vb" />
+    <Compile Include="Files\FilesystemSettingTests.vb" />
+    <Compile Include="Languages\LocalizationInitializationTests.vb" />
+    <Compile Include="Languages\LocalizationSettingTests.vb" />
+    <Compile Include="Login\UserPermissionManagementTests.vb" />
+    <Compile Include="Login\UserManagementTests.vb" />
+    <Compile Include="Misc\FieldManagementTests.vb" />
+    <Compile Include="Misc\EncryptionActionTests.vb" />
+    <Compile Include="Misc\MOTDSettingTests.vb" />
+    <Compile Include="Misc\MOTDManagementTests.vb" />
+    <Compile Include="Misc\PlaceholderActionTests.vb" />
+    <Compile Include="Misc\TextEditorInitializationTests.vb" />
+    <Compile Include="Misc\StringEvaluatorActionTests.vb" />
+    <Compile Include="Shell\UESHVariableTests.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -86,28 +104,41 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ColorTests.vb" />
-    <Compile Include="HardwareTests.vb" />
-    <Compile Include="LocalizationTests.vb" />
-    <Compile Include="MiscellaneousTests.vb" />
-    <Compile Include="AliasTests.vb" />
-    <Compile Include="HelpTests.vb" />
-    <Compile Include="TimeTests.vb" />
-    <Compile Include="KernelTests.vb" />
-    <Compile Include="NotificationTests.vb" />
-    <Compile Include="NetworkTests.vb" />
+    <Compile Include="Console\ColorSettingTests.vb" />
+    <Compile Include="Languages\LocalizationActionTests.vb" />
+    <Compile Include="Misc\ScreensaverSettingTests.vb" />
+    <Compile Include="Network\NetworkActionTests.vb" />
+    <Compile Include="Network\RemoteDebugManagementTests.vb" />
+    <Compile Include="Network\SpeedDialManagementTests.vb" />
+    <Compile Include="Shell\AliasManagementTests.vb" />
+    <Compile Include="Shell\HelpInitializationTests.vb" />
+    <Compile Include="Shell\AliasInitializationTests.vb" />
+    <Compile Include="TimeDate\TimeInitializationTests.vb" />
+    <Compile Include="Kernel\KernelMiscTests.vb" />
+    <Compile Include="Misc\NotificationTests.vb" />
+    <Compile Include="Network\NetworkManipulationTests.vb" />
     <Compile Include="InitTest.vb" />
-    <Compile Include="UserTests.vb" />
+    <Compile Include="Login\UserInitializationTests.vb" />
+    <Compile Include="TimeDate\TimeActionTests.vb" />
+    <Content Include="TestMove.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestText.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestAliases.csv">
+    <Content Include="TestAliases.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestConfig.ini">
+    <Content Include="TestVerifyMD5.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="TestSynth.txt">
+    <Content Include="TestVerifySHA1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestVerifySHA256.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="TestVerifySHA512.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -120,6 +151,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Hacker.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -131,14 +165,17 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Inxi.NET">
-      <Version>2020.2.0.2</Version>
+    <PackageReference Include="Extensification">
+      <Version>2021.5.0</Version>
     </PackageReference>
     <PackageReference Include="MSTest.TestAdapter">
-      <Version>2.1.2</Version>
+      <Version>2.2.4</Version>
     </PackageReference>
     <PackageReference Include="MSTest.TestFramework">
-      <Version>2.1.2</Version>
+      <Version>2.2.4</Version>
+    </PackageReference>
+    <PackageReference Include="Shouldly">
+      <Version>4.0.3</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +184,7 @@
       <Name>Kernel Simulator</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

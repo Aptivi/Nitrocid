@@ -1,0 +1,1099 @@
+Gorchmynion sydd ar gael: {0}
+Ysgrifennwch orchymyn:
+Mae chwistrelliad gorchymyn wedi'i ganslo.
+Dadleuon cist ar wahân gyda choma heb ofodau, er enghraifft, 'motd, gpuprobe'
+Gorchmynion ar wahân ar 'cmdinject' gyda cholonau gyda bylchau, er enghraifft, 'cmdinject setthemes Hacker: beep 1024 0.5'
+Sylwch nad yw'r ddadl 'dadfygio' yn cwmpasu'r cnewyllyn yn llawn.
+bargs: Ni cheir hyd i'r ddadl y gofynnwyd amdani {0}.
+bargs: Gwall anadferadwy mewn dadl:
+Dadleuon sydd ar gael: {0}
+Dadleuon ('help' am help):
+Disgwylir i ddadleuon wedi'u chwistrellu redeg yn yr ailgychwyn nesaf.
+Mae Chwistrelliad Dadl wedi'i ganslo.
+Gwall wrth rannu dadleuon llinell orchymyn go iawn: {0}
+Templed lliw annilys {0}
+hwprobe: Profir eich caledwedd. Arhoswch os gwelwch yn dda...
+CPU: Methwyd â phrofi un neu fwy o'r creiddiau CPU. Yn dangos gwybodaeth beth bynnag ...
+RAM: Methwyd â phrofi un neu fwy o'r sglodion RAM. Yn dangos gwybodaeth beth bynnag ...
+HDD: Methwyd â phrofi un neu fwy o'r gyriannau caled. Yn dangos gwybodaeth beth bynnag ...
+CPU: Cyfanswm nifer y proseswyr: {0}
+Rhowch y cyfrinair gweinyddol ar gyfer cynnal a chadw.
+Gwall cnewyllyn wrth roi hwb: {0}
+PANIC DWBL: Mae'r Amser Ailgychwyn yn fwy na'r amser ailgychwyn gwall a ganiateir {0}. Fe ddaethoch o hyd i nam cnewyllyn.
+Panig [{0}]: Galluogi ailgychwyn oherwydd bod lefel y gwall yn {0}.
+Panig [{0}]: Amser i ailgychwyn: {1} eiliad, yn fwy nag 1 awr. Mae wedi'i osod i 1 munud.
+PANIC DWBL: Math Gwall {0} yn annilys.
+[{0}] dpanic: {1} - Ailgychwyn mewn {2} eiliad ...
+Panig [{0}]: Ailgychwyn yn anabl oherwydd lefel y gwall yn {0}.
+[{0}] panig: {1} - Pwyswch unrhyw allwedd i barhau i ddefnyddio'r cnewyllyn.
+[{0}] panig: {1} - Pwyswch unrhyw allwedd i gau.
+[{0}] panig: {1} - Ailgychwyn mewn {2} eiliad ...
+PANIC DWBL: Byg cnewyllyn: {0}
+Caewch i lawr ...
+Ailgychwyn ...
+Mae enghraifft arall o Kernel Simulator yn rhedeg. Caewch i lawr rhag ofn ymyrraeth.
+Wedi methu ychwanegu defnyddiwr i restrau caniatâd: math annilys {0}
+Wedi methu ychwanegu defnyddiwr i restrau caniatâd: defnyddiwr annilys {0}
+Wedi methu tynnu defnyddiwr oddi ar restrau caniatâd: math annilys {0}
+Rydych chi eisoes wedi mewngofnodi.
+Wedi methu tynnu defnyddiwr oddi ar restrau caniatâd: defnyddiwr annilys {0}
+Rydych chi naill ai wedi dod o hyd i nam, neu mae'r caniatâd y gwnaethoch geisio ei ychwanegu neu ei dynnu eisoes wedi'i wneud, neu wall arall.
+Gwall {0}: {1}
+Rydych chi naill ai wedi dod o hyd i nam, neu mae'r caniatâd y gwnaethoch geisio ei olygu ar gyfer defnyddiwr newydd wedi methu.
+Enwau defnyddiwr sydd ar gael: {0}
+Enw defnyddiwr:
+Ni chaniateir lleoedd.
+Ni chaniateir cymeriadau arbennig.
+Cyfrinair {0}:
+Cyfrinair anghywir.
+Mae'r defnyddiwr yn anabl.
+Enw defnyddiwr anghywir.
+Gwall wrth geisio dosrannu deiliaid lleoedd. {0} - Olrhain pentyrrau:
+Gwall wrth geisio dosrannu deiliaid lleoedd. {0}
+Gwall wrth geisio ychwanegu enw defnyddiwr.
+usrmgr: Creu enw defnyddiwr {0} ...
+Enw defnyddiwr gwag.
+Ni ddaethpwyd o hyd i ddefnyddiwr {0}.
+Ni chaniateir tynnu defnyddiwr {0}.
+Mae defnyddiwr {0} eisoes wedi mewngofnodi. Mewngofnodi a mewngofnodi fel gweinyddwr arall.
+Defnyddiwr {0} wedi'i dynnu.
+Gwall wrth geisio dileu enw defnyddiwr.
+Ni cheir hyd i'r arbedwr sgrin {0} y gofynnwyd amdano.
+Mae {0} wedi'i gychwyn yn iawn.
+Ni ddechreuodd {0}. Efallai bod y cod arbedwr sgrin wedi profi gwall wrth gychwyn.
+Nid yw arbedwr sgrin {0} yn bodoli.
+Mae {0} wedi'i osod i arbedwr sgrin diofyn.
+Arbedwr sgrin {0} heb ei ddarganfod yn y gronfa ddata. Gwiriwch yr enw a rhoi cynnig arall arni.
+Ni ellir llwytho arbedwr sgrin oherwydd y canlynol:
+Mae gwall difrifol wrth argraffu testun.
+Mae gwall wrth geisio creu cyfluniad.
+Gwall wrth geisio rhyddhau RAM: {0} - Parhau ...
+Ni ellir llwytho mod oherwydd y canlynol:
+mod: Llwytho mods ...
+mod: Stopio mods ...
+Nid oes gan Mod {0} yr enw. Adolygwch y cod ffynhonnell.
+Nid oes gan Mod {0} y fersiwn.
+Dechreuodd {0} v {1}
+Dim diffiniad ar gyfer gorchymyn {0}.
+Gorchymyn wedi'i ddiffinio gan
+Dylech ddatgysylltu o'r gweinydd cyn cysylltu â gweinydd arall
+Enw defnyddiwr ar gyfer {0}:
+Cyfrinair ar gyfer {0}:
+Wedi'i gysylltu â {0}
+Gwall wrth geisio cysylltu â {0}: {1}
+Olrhain Stac: {2}
+Rhowch weinydd FTP.
+Nid yw'r cyfeiriadur lleol {0} yn bodoli.
+Rhowch gyfeiriadur lleol. ".." i fynd yn ôl.
+Cyfeiriadur {0} heb ei ddarganfod.
+Rhowch gyfeiriadur anghysbell. ".." i fynd yn ôl
+Rhaid i chi gysylltu â gweinydd cyn newid cyfeiriadur
+Cyfeiriadur lleol: {0}
+Cyfeiriadur o bell: {0}
+Rhaid i chi gysylltu â'r gweinydd cyn cael y cyfeiriadur anghysbell cyfredol.
+Rhaid i chi gysylltu â'r gweinydd â breintiau gweinyddol cyn cyflawni'r dileu.
+Wedi'i ddatgysylltu o {0}
+Nid ydych wedi cysylltu ag unrhyw weinydd eto
+Lawrlwytho ffeil {0} ...
+Ffeil wedi'i lawrlwytho {0}.
+Rhaid i chi gysylltu â'r gweinydd cyn perfformio trosglwyddiad.
+Rhowch ffeil i'w lawrlwytho i'r cyfeiriadur lleol.
+{0} KB | Wedi'i addasu yn: {1}
+Dylech gysylltu â'r gweinydd cyn rhestru'r holl ffeiliau anghysbell.
+Llwytho ffeil {0} ...
+Ffeil wedi'i llwytho i fyny {0}
+Rhowch ffeil i'w lanlwytho i gyfeiriadur anghysbell. uwchlwytho <file> <directory>
+(Mewnol:
+Cael cyfeiriadur lleol cyfredol
+Cael cyfeiriadur anghysbell cyfredol
+Yn cysylltu â gweinydd FTP (rhaid iddo ddechrau gyda "ftp: //" neu "ftps: //")
+Newid cyfeiriadur lleol i'w lawrlwytho iddo neu ei uwchlwytho ohono
+Newid cyfeiriadur anghysbell i'w lawrlwytho ohono neu ei uwchlwytho iddo
+Yn dileu ffeil bell o'r gweinydd
+Yn datgysylltu o'r gweinydd
+Yn lawrlwytho ffeil bell i'r cyfeiriadur lleol gan ddefnyddio deuaidd neu destun
+Yn gadael cragen FTP ac yn dychwelyd i'r cnewyllyn
+Yn dangos sgrin gymorth
+Yn rhestru cyfeirlyfr lleol
+Yn rhestru cyfeirlyfr anghysbell
+Yn llwytho ffeil leol i gyfeiriadur anghysbell gan ddefnyddio deuaidd neu destun
+Neges FTP: Ni cheir hyd i'r gorchymyn {0} y gofynnwyd amdano. Gweler 'help' am restr o'r gorchmynion sydd ar gael a bennir ar gragen FTP.
+Wedi methu cael eiddo ar gyfer addasydd {0}
+Rhif Addasydd:
+Enw'r Addasydd:
+Uchafswm yr Uned Drosglwyddo: {2} Unedau
+Galluogi DHCP:
+Pecynnau nad ydynt yn unicast:
+Pecynnau Unicast:
+Gwall pecynnau sy'n dod i mewn / allan:
+Ni all alias fod yr un enw â gorchymyn.
+Gorchymyn heb ei ddarganfod yn alias i {0}.
+Nawr gallwch chi redeg "{0}" fel gorchymyn: "{1}".
+Ni chanfyddir bod alias {0} wedi'i dynnu.
+Modd annilys {0}.
+Disgwylir i ddadleuon wedi'u chwistrellu, {0}, redeg yn yr ailgychwyn nesaf.
+Nid oedd digon o ddadleuon. Gweler isod am ddefnydd:
+Cyfeiriadur {0} heb ei ddarganfod
+Enw gwesteiwr gwag.
+Newid o: {0} i {1} ...
+Neges wag y dydd.
+MAL gwag ar ôl mewngofnodi.
+Cyfrinair defnyddiwr anghywir.
+Nid yw cyfrineiriau'n cyfateb.
+Mae'r enw defnyddiwr wedi'i newid i {0}!
+Mae'r enw newydd a nodoch eisoes i'w gael.
+Ni cheir {0}.
+Ail-lwythwyd y ffurfweddiad. Efallai y bydd angen i chi ailgychwyn y cnewyllyn er mwyn i rai newidiadau ddod i rym.
+Mae un neu fwy o'r lliwiau yn annilys.
+Nid yw lliwiau ar gael. Trowch ar gragen lliw yn y config cnewyllyn.
+Ni ddarganfuwyd arbedwr sgrin {0}.
+[ Gosodiadau cnewyllyn (Rhedeg ar {0}) ]
+Fersiwn Cnewyllyn:
+Modd Debug:
+Cregyn Lliw:
+Dadleuon ar Gist:
+Symleiddio help help:
+MOTD ar Mewngofnodi:
+Amser / Dyddiad ar y gornel:
+[ Gosodiadau caledwedd ] {0}
+{0}[ Gosodiadau defnyddiwr ]
+Enw defnyddiwr cyfredol:
+Enw gwesteiwr cyfredol:
+Enwau defnyddwyr sydd ar gael:
+Gwall wrth geisio gweithredu gorchymyn
+Cyfeiriadur newidiadau
+Newid cyfrinair ar gyfer defnyddiwr cyfredol
+Yn clirio'r sgrin
+Defnyddiwch gragen FTP i ryngweithio â gweinyddwyr
+Tudalen gymorth
+Rhestrwch gynnwys ffeil / ffolder yn y ffolder gyfredol
+Yn cloi eich sgrin gyda chyfrinair
+Yn eich allgofnodi
+Yn creu cyfeiriadur
+Yn rhestru gwybodaeth am yr holl ryngwynebau sydd ar gael
+Yn ailgychwyn eich cyfrifiadur (RHYBUDD: Dim syncing, oherwydd nid yw'n gnewyllyn terfynol)
+Ail-lwytho ffeil ffurfweddu sydd wedi'i golygu.
+Yn arbed eich sgrin rhag llosgi allan
+Yn gosod arbedwyr sgrin cnewyllyn
+Yn gosod themâu cnewyllyn
+Yn dangos dyddiad ac amser
+Yn dangos dyddiad ac amser mewn parthau
+Bydd y cnewyllyn yn cael ei gau i lawr
+Gwybodaeth system
+* Gallwch ddefnyddio gorchmynion lluosog gan ddefnyddio'r colon rhwng gorchmynion.
+Defnydd:
+lle bydd dadleuon yn {0}
+Yn cychwyn y gragen FTP.
+Cyfeillion
+lle bydd customsaver
+Yn cloi eich sgrin gyda'r cyfrinair.
+Yn eich allgofnodi o'r defnyddiwr.
+Sicrhewch bob gwybodaeth rhwydwaith
+Yn ailgychwyn eich cyfrifiadur efelychiedig.
+Yn ail-lwytho'r cyfluniad sy'n cael ei newid gan y defnyddiwr terfynol neu gan offeryn.
+Nid oes angen ailgychwyn Lliwiau, ond mae'r rhan fwyaf o'r gosodiadau yn gofyn ichi ailgychwyn.
+yn dangos arbedwr sgrin dethol i chi, wrth amddiffyn eich sgrin rhag llosgi allan.
+Yn dangos y dyddiad a'r amser.
+Yn dangos y dyddiad a'r amser mewn parthau.
+Yn cau i lawr eich cyfrifiadur efelychiedig.
+Yn dangos gwybodaeth a fersiynau system.
+Roedd gwall yn y gragen.
+Nid oes gennych ganiatâd i ddefnyddio {0}
+Neges cregyn: Ni chaniateir i'r gorchymyn y gofynnwyd amdano {0} redeg yn y modd cynnal a chadw.
+Neges cregyn: Ni cheir hyd i'r gorchymyn y gofynnwyd amdano {0}. Gweler 'help' am y gorchmynion sydd ar gael.
+Neges cregyn: Ni chaniateir i Orchymyn {0} redeg ar fewngofnodi.
+Gwall wrth geisio gweithredu gorchymyn.
+amser dyddiad: Amser yw {0}
+amser dyddiad: Heddiw yw {0}
+amser dyddiad: Parth Amser: {0}
+- Amser {0}: {1}
+i glirio'r sgrin.
+Yn rhedeg ar {0}
+Nid oes gennych awdurdod i gael gwybodaeth ar gyfer {0}.
+Mae'r gorchymyn hwn wedi darfod a bydd yn cael ei ddileu mewn datganiad yn y dyfodol.
+Nid oes gennych awdurdod i newid cyfrinair o {0} oherwydd mai admin oedd y targed.
+usrmgr: Mae enw defnyddiwr {0} i'w gael eisoes
+Yn dileu popeth mewn log dadfygio
+Iaith annilys
+Newid iaith
+----------------------------- Dympio panig cnewyllyn ------------------ -----------
+>> Gwybodaeth banig <<
+> Disgrifiad: {0}
+> Math o wall: {1}
+> Dyddiad ac Amser: {2}
+>> Gwybodaeth eithriad <<
+> Eithriad: {0}
+> Disgrifiad: {1}
+> HRESULT: {2}
+> Ffynhonnell: {3}
+> Olrhain pentwr <
+>> Eithriad mewnol {0} gwybodaeth <<
+>> Eithriad {0} yw'r achos sylfaenol <<
+>> Dim eithriad; gallai fod yn wall cnewyllyn. <<
+>> Fframiau, ffeiliau, llinellau, a cholofnau <<
+> Ffrâm {0}: Ffeil: {1} | Llinell: {2} | Colofn: {3}
+> Mae gwall wrth geisio cael gwybodaeth ffrâm. {0}: {1}
+Ail-lwytho mods.
+Ail-lwytho mods.
+Croeso i Gnewyllyn!
+Mewngofnodi'n llwyddiannus fel <user>
+Mae MOTD / MAL yn ddilys, ond nid yw'r math o neges yn ddilys. Gan dybio MOTD ...
+Wedi ceisio darllen MOTD / MAL sydd o'r math neges annilys.
+Mae'r lawrlwytho wedi'i gwblhau.
+Methodd lawrlwytho wrth geisio {0}: {1}
+Defnyddiwch "ftp" os ydych chi'n mynd i lawrlwytho ffeiliau o'r gweinydd FTP.
+Yn lawrlwytho ffeil i'r cyfeiriadur gweithio cyfredol
+Datgysylltwch ddyfais ddadfygio
+Yn rhestru dyfeisiau difa chwilod wedi'u cysylltu
+Dyfais debug {0} heb ei darganfod.
+Dyfais {0} wedi'i datgysylltu.
+Gwall mewn cysylltiad: {0}
+Debug yn gwrando ar bob cyfeiriad gan ddefnyddio porthladd {0}.
+Ni nodwyd dadleuon. Awgrym: Nodwch ddadleuon lluosog wedi'u gwahanu gan ofodau
+Canfu Alias ​​eisoes: {0}
+Log debug wedi'i dynnu. Efallai y bydd pob dyfais difa chwilod cysylltiedig yn dal i weld negeseuon.
+Methodd tynnu log dadfygio: {0}
+Mae newid cyfeiriadur wedi methu: {0}
+Nodwch y cyfeiriad
+Methu tynnu cyfeiriadur: {0}
+Mae parth amser wedi'i nodi'n anghywir.
+Dewis proffil annilys.
+Yn ceisio cysylltu â {0} gyda phroffil {1} ​​...
+Gorchymyn {0} heb ei ddarganfod. Gweler y gorchymyn "help" am y rhestr o orchmynion.
+Wedi methu cael eiddo IPv6 ar gyfer addasydd {0}. Parhau ...
+Gwybodaeth IPv4:
+Gwybodaeth IPv6:
+Nid yw addasydd {0} yn cefnogi IPv6. Parhau ...
+Nid yw addasydd {0} yn cefnogi IPv4. Methodd Probe.
+Yn edrych fel eich bod chi'n rhedeg fersiwn datblygu'r cnewyllyn. Er y gallwch weld yr agweddau, mae'n cael ei ddiweddaru'n aml a gallai gyflwyno chwilod. Argymhellir eich bod yn aros ar y fersiwn sefydlog.
+Mae'r iaith rydych chi wedi'i dewis yn cynnwys dau amrywiad. Dewiswch un:
+1. Trawslythrennu
+2. Cyfieithwyd
+Dewiswch eich dewis:
+Dewis annilys. Ceisio eto.
+Rydych yn anawdurdodedig i osod cyfeiriadur cyfredol i {0}: {1}
+Mae'r llwybr rydych chi wedi'i nodi yn rhy hir.
+CPU: RHYBUDD: Bydd angen SSE2 mewn ymrwymiadau datblygu yn y dyfodol.
+Cwympodd casglwr gwybodaeth dympio wrth geisio cael gwybodaeth am {0}: {1}
+Gwall wrth geisio llunio dyddiad cydosod {0}: {1}
+Gwall wrth geisio gosod MOTD / MAL: {0}
+Gwall wrth geisio cael MOTD / MAL: {0}
+Gwall wrth geisio cychwyn arbedwr sgrin, oherwydd gweithrediad annilys.
+Ni chaniateir ail-lwytho yn y modd diogel.
+Ni chaniateir mods dosrannu ar y modd diogel.
+Yn rhestru'r holl ddyfeisiau difa chwilod cysylltiedig.
+Gwall wrth geisio gosod modd dosrannu. Gwiriwch y gwerth a rhoi cynnig arall arni. Os yw hyn yn gywir, gwelwch olrhain y pentwr pan fydd dadfygio cnewyllyn wedi'i alluogi.
+Nid yw'r llwybr yn ffeil nac yn gyfeiriadur.
+Yn creu copi arall o ffeil o dan gyfeiriadur neu enw gwahanol.
+Yn symud ffeil i gyfeiriadur arall
+I gopïo ffeiliau i gyfeiriadur arall neu enw gwahanol
+I symud ffeiliau i gyfeiriadur arall
+Cydweddiad {0} ({1}): {2}
+Cydweddiad {0}: {1}
+Amser a dreuliwyd: {0} milieiliad
+Enw: {0}
+Yn cyfrifo symiau ffeiliau.
+Yn mynd â chi i'n Wici GitHub.
+Algorithm amgryptio annilys.
+Yn galluogi neu'n anablu difa chwilod o bell.
+Gweld a allwch chi sillafu geiriau'n gywir ar amser
+Gweld a allwch chi ddatrys hafaliadau mathemategol mewn pryd
+Ymateb i sylwadau cariad neu gasineb.
+Os gwnaeth rhywun y sylw hwn i'ch fideo:
+Sut fyddech chi'n ymateb?
+Dewis annilys. Mynd i'r sylw nesaf ...
+Rydych chi newydd adrodd y sylw cariad!
+Rydych chi newydd ateb y sylw casineb!
+Gwych! Bydd sylw {0} yn cael ei ddileu ar gyfer hynny.
+Gwych! Bydd {0} yn gwerthfawrogi eich diolch.
+Sillafu'n berffaith!
+Sillafu'n anghywir.
+Wedi'i ddatrys yn berffaith!
+Wedi'i ddatrys yn anghywir.
+Mae RPC eisoes yn rhedeg.
+Gwrando RPC ar bob cyfeiriad gan ddefnyddio porthladd {0}.
+Dechrau RPC ...
+Yn cysylltu â gweinydd SSH.
+Rhowch y cyfrinair ar gyfer {0}:
+SSH Datgysylltiedig.
+Methu gosod tudalen cod. Efallai na fydd yr iaith yn arddangos yn iawn.
+Ni alluogwyd difa chwilod.
+Nid yw {0} bellach wedi'i osod i arbedwr sgrin diofyn.
+Diolch! Mae hyn yn ddiddorol.
+Bydd pawb yn cefnogi'ch fideo ar gyfer hyn.
+Rhoddais y ffeil arbennig i chi yn eich e-bost ar gyfer eich fideo nesaf.
+Gwrandewch, casinebwyr, mae'n ceisio ein helpu ni, nid sgamio.
+Nid wyf yn gwybod faint ydw i a fy ffrindiau yn diolch ichi am y fideo hon.
+Rwy'n dy garu di am y fideo hon.
+Daliwch ati, peidiwch â stopio.
+Byddaf yn eich helpu i gyrraedd tanysgrifwyr 1M!
+Cafodd fy ffrindiau eu cyfrifiadur yn sefydlog o'ch herwydd chi.
+Pranc anhygoel! Caeais gyfrifiadur personol fy ngelyn.
+I gaswyr: AROS YN CASGLU DIM
+I gaswyr: CYFLE I WAITH
+Ni fydd neb yn sylwi ar hyn nawr diolch i'ch canllaw cuddio gwrthrychau
+Byddaf yn rhoi'r gorau i wylio'ch fideos. Tanysgrifiwr ar goll.
+Beth yw hyn? Mae hyn yn aneglur.
+Y fideo hon yw'r gwaethaf!
+Mae pawb yn riportio'r fideo hon!
+Mae fy ffrindiau yn gandryll gyda chi!
+Bydd cariadon nawr yn eich casáu chi am hyn.
+Bydd eich ffrind yn eich casáu am hyn.
+Gwnaeth y pranc hwn i mi ddad-danysgrifio i chi.
+Methodd y genhadaeth, Parch -, Tanysgrifiwr -
+Stopiwch wneud y math hwn o fideo !!!
+Ewch yn ôl i'ch swydd, eich fideos yw'r gwaethaf!
+Rydym yn rhagfarnu ar y fideo hon.
+Yn dangos yr holl hysbysiadau a dderbyniwyd
+Yn gwrthod hysbysiad
+Gwrthodwyd yr hysbysiad yn llwyddiannus.
+Pecynnau (i mewn):
+Pecynnau (allan):
+Gwallau mewn pecynnau a dderbyniwyd:
+Priodweddau IPv6 cyffredinol
+Priodweddau IPv4 cyffredinol
+Yn gweithredu gorchymyn i gyfrifiadur personol o bell
+- Cam 1: Cychwyn system
+- Cam 2: Canfod caledwedd
+- Cam 3: Canfod mods a arbedwyr sgrin
+- Cam 4: Mewngofnodi
+Yn edrych fel eich bod yn rhedeg y fersiwn ymgeisydd rhyddhau. Argymhellir eich bod yn aros ar y fersiwn sefydlog.
+Math annilys {0}.
+Maint: {0}
+Mae cyfeiriadur {0} yn bodoli eisoes.
+Gwall wrth geisio cysylltu â {0}: Amserlen cysylltu neu gysylltiad coll
+Cyfrifiannell i gyfrifo ymadroddion.
+Gwall wrth gyfrifo.
+Yn edrych fel eich bod yn rhedeg y fersiwn agos at ryddhau. Er ei bod yn fwy diogel i'w ddefnyddio nawr, argymhellir eich bod yn aros ar y fersiwn sefydlog.
+Diweddariad system
+Gwirio am ddiweddariadau system ...
+Wedi dod o hyd i fersiwn newydd:
+Gallwch ei lawrlwytho yn:
+Dim hysbysiadau diweddar
+Chwilio am linyn penodol yn y ffeil a ddarperir
+Yn cyfrif symiau o ffeiliau mewn cyfeiriadur penodol.
+Yn rhestru pob post yn y defnyddiwr penodol.
+Rhowch enw defnyddiwr neu gyfeiriad post:
+Rhowch gyfrinair:
+Gwall wrth gysylltu â {0}: {1}
+Cysylltu â {0} ...
+Dilysu ...
+Allanfa'r gragen IMAP
+Rhestr o orchmynion
+Yn lawrlwytho negeseuon ac yn eu rhestru
+Yn agor neges
+Efallai na fydd y dudalen yn negyddol nac yn sero.
+Nid yw tudalen yn werth rhifol.
+Efallai na fydd rhif y neges yn negyddol nac yn sero.
+Nid yw rhif neges yn werth rhifol.
+- O {0}
+- I {0}
+- Anfonwyd yn {0} yn {1}
+Ni ddarganfyddir neges a nodwyd.
+Methodd dadfygio anghysbell â dechrau: {0}
+Paratoi proffiliau ... Gallai gymryd sawl munud ...
+Enw Gwesteiwr, Enw Defnyddiwr, Math o Ddata, Amgodio, Amgryptio, Protocolau
+Gwall wrth geisio gweithredu'r sgript: {0}
+Yn ysgrifennu testun i'r consol
+Yn gwneud dewisiadau defnyddwyr
+Beep yn 'n' Hz ac amser mewn milieiliadau 'n'
+lle mae <$ newidyn> yn unrhyw newidyn a ddefnyddir i storio ymateb
+Rhaid i'r amledd fod yn rhifol. Os yw'n rhifol, sicrhewch ei fod yn> = 37 a <= 32767.
+Rhaid i amser fod yn rhifol.
+lle mae <answers> yn atebion un llythyren o'r cwestiwn wedi'u gwahanu mewn gwasgfeydd
+Gwall wrth geisio cysylltu â gweinydd SSH: {0}
+Yn caniatáu i'r defnyddiwr nodi mewnbwn
+Newid cyfeiriadur post cyfredol
+Methu agor ffolder post {0}: {1}
+Yn rhestru cyfeirlyfrau yn eich cyfeiriad post
+Yn defnyddio gwybodaeth o Speed ​​Dial i gysylltu ag unrhyw rwydwaith yn gyflym
+Dewiswch gyfeiriad i gysylltu â:
+Mae'r dewis allan o ystod. Dewiswch rhwng 1- {0}. Ceisio eto.
+Nid yw'r dewis yn rhif. Ceisio eto.
+Yn ystod dilysu tystysgrif, mae gwallau tystysgrifau. Efallai mai dyma'r tro cyntaf i chi gysylltu â'r gweinydd neu efallai bod y dystysgrif wedi dod i ben. Dyma wall:
+Ydych chi'n siŵr eich bod chi eisiau cysylltu?
+Ateb annilys. Trio eto os gwelwch yn dda.
+Mae deialu cyflymder yn wag. Cysylltu â gweinydd i ychwanegu cyfeiriad ato.
+Nid yw deialu cyflymder yn bodoli. Cysylltu â gweinydd i ychwanegu cyfeiriad ato.
+Rhowch gyfeiriad a phorthladd gweinydd IMAP (<address> neu <address>: [port]):
+Rhowch gyfeiriad a phorthladd gweinydd SMTP (<address> neu <address>: [porthladd]):
+Yn gofyn ichi lenwi'r meysydd gofynnol i anfon neges i gyfeiriad
+Yn anfon neges i gyfeiriad
+Rhowch gyfeiriad post y derbynnydd:
+Rhowch y pwnc:
+Rhowch eich neges isod. Ysgrifennwch "EOF" i gadarnhau.
+Anfon neges ...
+Anfonwyd neges.
+Cyfeiriad e-bost annilys. Sicrhewch eich bod wedi ysgrifennu'r cyfeiriad yn gywir a'i fod yn cyd-fynd â fformat yr enghraifft a ddangosir:
+Yn dileu neges
+Yn dileu pob neges gan y derbynnydd
+Neges {0} o {1} wedi'i dileu o {2}. {3} neges yn weddill i'w dosrannu.
+Neges {0} o {1} wedi'i dileu o'r blwch derbyn. {2} neges yn weddill i'w dosrannu.
+Yn golygu ffeil testun
+Yn gwneud ffeil newydd
+Mae'r ffeil eisoes yn bodoli.
+Gwall wrth geisio creu ffeil: {0}
+Wedi methu agor ffeil. Cregyn sy'n gadael ...
+Ni cheir hyd i'r gorchymyn golygydd testun penodedig.
+Rhestrau gorchmynion sydd ar gael
+Allanfa'r golygydd testun ac arbed newidiadau heb eu cadw
+Yn argraffu cynnwys y ffeil gyda rhifau llinell i'r consol
+Yn ychwanegu llinell newydd gyda thestun ar ddiwedd y ffeil
+Yn dileu'r rhif llinell penodedig
+Yn disodli gair neu ymadrodd ag un arall
+Yn dileu gair neu ymadrodd o rif llinell
+Yn dileu cymeriad o rif cymeriad mewn llinell benodol
+Llinell wedi'i dileu.
+Nid yw rhif llinell penodedig {0} yn rhif dilys.
+Ni chaiff dadleuon gofynnol eu trosglwyddo i orchymyn {0}
+Gwall wrth geisio rhedeg gorchymyn: {0}
+Rhedeg yn y modd diogel. Cam sgipio ...
+>> Debug a Sgwrs o Bell: fersiwn
+>> Eich cyfeiriad yw {0}.
+>> Eich enw yw {0}.
+Gorchymyn {0} heb ei ddarganfod. Defnyddiwch "/ help" i weld y rhestr.
+Mynegai {0} yn annilys. Mae yna {1} olion pentwr. Mynegai yn seiliedig ar sero, felly ceisiwch dynnu gan 1.
+Dim olrhain pentwr
+Yn dangos olrhain pentwr olaf ar eithriad
+Yn dangos enw defnyddiwr cyfredol yn y sesiwn
+Yn eich datgysylltu o'r dadfygiwr
+Dadflocio dyfais ddadfygio yn ôl cyfeiriad IP
+Blociwch ddyfais dadfygio yn ôl cyfeiriad IP
+Bellach gall {0} ymuno â dadfygio o bell eto.
+Nid yw {0} wedi'i rwystro eto.
+Gwall gosodiadau llwytho
+Mae gwall wrth lwytho gosodiadau. Efallai y bydd angen i chi wirio'r ffeil gosodiadau.
+Dewiswch adran:
+Gosodiadau Cyffredinol...
+Gosodiadau Caledwedd ...
+Gosodiadau Mewngofnodi ...
+Gosodiadau Cregyn ...
+Gosodiadau Rhwydwaith ...
+Gosodiadau Amrywiol ...
+Cadw Gosodiadau
+Allanfa
+Mae opsiwn penodedig {0} yn annilys.
+Rhaid i'r ateb fod yn rhifol.
+Yn brydlon am ddadleuon ar gist
+Sbardun Modd Cynnal a Chadw
+Newid Cyfrinair Gwreiddiau ...
+Gwiriwch am Ddiweddariadau ar Startup
+Profiad Tawel
+Dangos MOTD ar Mewngofnodi
+Sgrin Clir ar Mewngofnodi
+Dangos yr enwau defnyddwyr sydd ar gael
+Cregyn Lliw
+Gorchymyn Cymorth Syml
+Porthladd Debug
+Dadlwythwch Amseroedd Ailgynnig
+Log enw defnyddiwr FTP
+Log cyfeiriad IP FTP
+Dychwelwch y proffil FTP cyntaf yn unig
+Dangos Amser / Dyddiad ar y Gornel Dde Uchaf
+Amserlen Arbedwr Sgrin yn ms
+Cwota Maint Debug mewn Beitiau
+Modd dosrannu maint
+Pabell wrth gychwyn
+Amser a Dyddiad Hir
+Dangos Ffeiliau Cudd
+Adran annilys wedi'i nodi. Ewch yn ôl.
+Mynd yn ôl...
+Galluogi
+Analluoga
+Rhif allwedd annilys wedi'i nodi. Ewch yn ôl.
+Ysgrifennwch y cyfrinair gwraidd i'w osod. Peidiwch â phoeni; dangosir y cyfrinair fel sêr.
+Galluogi "Change Root Password" i ddefnyddio'r opsiwn hwn. Ewch yn ôl.
+Newid Cyfrinair Gwreiddiau?
+Gosod Cyfrinair Gwreiddiau ...
+Ysgrifennwch borthladd dadfygiwr anghysbell. Rhaid iddo fod yn rhifol, ac ni ddylid ei ddefnyddio eisoes. Fel arall, bydd dadfygiwr anghysbell yn methu ag agor y porthladd.
+Ysgrifennwch sawl gwaith y dylai'r gorchymyn "cael" ail-geisio dadlwytho a fethwyd. Rhaid iddo fod yn rhifol.
+Ysgrifennwch pryd i lansio arbedwr sgrin ar ôl milieiliadau penodol. Rhaid iddo fod yn rhifol.
+Ysgrifennwch faint o bytes y gall y storfa ddadfygio eu storio. Rhaid iddo fod yn rhifol.
+Efallai na fydd yr ateb yn negyddol.
+Mae'r ateb yn annilys. Gwiriwch i sicrhau bod yr ateb yn rhifol ar gyfer cofnodion ffurfweddu sydd angen rhifau fel atebion.
+Ni cheir newidyn {0} ar unrhyw un o'r modiwlau.
+Newid cyfluniad cnewyllyn
+Gosodiadau Arbedwr Sgrin ...
+Ysgogi 255 o liwiau
+Ydych chi am gadw cysylltiad?
+Dewis annilys. Gan dybio na ...
+Newid Diwylliant wrth Newid Ieithoedd
+Testun wedi'i ddangos
+Ysgrifennwch unrhyw destun rydych chi am ei ddangos. Mae byrrach yn well.
+Wedi methu uwchlwytho {0}
+Gwall wrth weithredu gorchymyn dadfygio o bell {0}: {1}
+Yn ychwanegu defnyddwyr
+Yn ychwanegu aliasau at orchmynion
+Yn chwistrellu dadleuon i'r cnewyllyn (mae angen ailgychwyn)
+Newid enw gwesteiwr
+Newid MAL, y MOTD Ar ôl Mewngofnodi
+Yn newid MOTD, Neges y Dydd
+Yn newid enw defnyddiwr
+Rheoli caniatâd ar gyfer defnyddwyr
+Ail-lwytho ffeil arbedwr sgrin yn KSMods
+Yn tynnu defnyddiwr o'r rhestr
+Alias ​​wedi'i dynnu {0} yn llwyddiannus.
+Wedi methu gwirio am ddiweddariadau.
+Nid oes mwy o ddefnyddwyr ar ôl ar y rhestr.
+Wedi methu gosod iaith.
+Gwall wrth geisio gwrthod hysbysiad.
+usrmgr: Wedi methu â chreu enw defnyddiwr {0}: {1}
+Wedi methu ailenwi'r defnyddiwr. {0}
+Nid yw un o'r rhestrau caniatâd yn cynnwys enw defnyddiwr {0}.
+Wedi methu llwytho caniatâd o'r ffeil: {0}
+Wedi methu newid enw gwesteiwr: {0}
+Ni ddaethpwyd o hyd i'r defnyddiwr
+Wedi methu newid cyfrinair enw defnyddiwr: {0}
+Wedi methu copïo ffeil neu gyfeiriadur: {0}
+Wedi methu symud ffeil neu gyfeiriadur: {0}
+Methu dod o hyd i ffeil i gyd-fynd â llinyn "{0}": {1}
+Methodd lawrlwytho ar gyfer ffeil {0}.
+Wedi methu rhestru ffeiliau anghysbell: {0}
+Rhowch ffeil neu ffolder i'w dynnu. Rhaid bod gennych ganiatâd gweinyddol ar eich cyfrif i allu ei ddileu.
+Ydych chi'n siŵr eich bod chi am ddileu {0} <y / n>?
+Dileu {0} ...
+Ni cheir {0} yn y gweinydd.
+Mae'r holl bost a wneir gan {0} yn cael ei symud yn llwyddiannus.
+Wedi methu cael gwared ar yr holl bost a wnaed gan {0}.
+Gwall wrth anfon neges.
+Symud {0} i {1} ...
+Wedi symud yn llwyddiannus
+Symud ffeil neu gyfeiriadur i ffeil neu gyfeiriadur arall. Gallwch hefyd ddefnyddio hynny i ailenwi ffeiliau.
+Wedi methu symud {0} i {1}.
+Ewch i mewn i lwybr ffynhonnell a llwybr cyrchfan.
+Copïo {0} i {1} ...
+Copïwyd yn llwyddiannus
+Copïau o ffeil neu gyfeiriadur i ffeil neu gyfeiriadur arall.
+Wedi methu copïo {0} i {1}.
+Yn symud neges
+Yn symud pob neges gan y derbynnydd
+Mae'r holl bost a wneir gan {0} yn cael ei symud yn llwyddiannus.
+Wedi methu symud yr holl bost a wnaed gan {0}.
+Symudodd neges {0} o {1} o {2}. {3} neges yn weddill i'w dosrannu.
+Yn dangos gwybodaeth am y tywydd ar gyfer dinas benodol. Yn defnyddio OpenWeatherMap.
+- Gwybodaeth am y tywydd ar gyfer {0} -
+Tywydd: {0}
+Pwysedd: {0}
+Lleithder: {0}
+Gallwch gael eich allwedd API eich hun yn https://home.openweathermap.org/api_keys.
+Gallwch chi bob amser ymgynghori â http://bulk.openweathermap.org/sample/city.list.json.gz i gael y rhestr o ddinasoedd gyda'u IDs.
+Uned a Ffefrir ar gyfer Tymheredd
+Kelvin
+Imperial (Fahrenheit)
+Metrig (Celsius)
+Yn gosod y cnewyllyn i fyny fel ei fod yn eich annog i ddadlau ar gist.
+Modd cynnal a chadw sbardunau. Mae hyn yn anablu cyfrifon lluosog.
+Bob cychwyn, bydd yn gwirio am ddiweddariadau.
+Wrth newid ieithoedd, newidiwch enwau'r mis, calendr, ac ati.
+Os cychwynnir y cnewyllyn, bydd yn gosod cyfrinair gwraidd.
+Cadwch negeseuon archwilio caledwedd yn dawel.
+Dangos Neges y Dydd cyn arddangos sgrin mewngofnodi.
+Clirio sgrin cyn arddangos sgrin mewngofnodi.
+Yn dangos y defnyddwyr sydd ar gael os yw wedi'i alluogi.
+Yn rhoi cefnogaeth lliw cnewyllyn
+Gorchymyn cymorth wedi'i symleiddio ar gyfer yr holl gregyn
+P'un ai i logio enw defnyddiwr FTP ai peidio.
+P'un ai i logio cyfeiriad IP FTP ai peidio.
+Dewiswch y proffil cyntaf dim ond wrth gysylltu.
+Yn actifadu cefnogaeth lliw 255 ar gyfer ColorMix.
+Yn actifadu cefnogaeth lliw 255 ar gyfer Disgo.
+Yn actifadu cefnogaeth lliw 255 ar gyfer GlitterColor.
+Yn actifadu 255 o gefnogaeth lliw ar gyfer Llinellau.
+Bydd yr amser a'r dyddiad yn cael eu dangos yng nghornel dde uchaf y sgrin
+Os yw wedi'i alluogi, bydd y cnewyllyn yn dosrannu'r ffolder gyfan am ei gyfanswm maint. Arall, dim ond dosrannu'r wyneb fydd.
+Yn galluogi eyecandy wrth gychwyn
+Bydd yr amser a'r dyddiad yn hirach, gan ddangos enwau mis llawn, ac ati.
+Yn dangos ffeiliau cudd.
+Dewiswch yr uned o'ch dewis ar gyfer tymheredd (mae hyn yn berthnasol i'r gorchymyn "tywydd" yn unig)
+Stopiodd Mod {0}
+Stopiodd {0} v {1}
+Nid oes gan Mod {0} yr enw rhan. Methodd dosrannu mod. Adolygwch y cod ffynhonnell.
+Nid oes gan Mod {0} y gorchymyn. Methodd dosrannu mod. Adolygwch y cod ffynhonnell.
+Rhaid i chi droi ymlaen modd dadfygio cyn y gallwch chi glirio log dadfygio.
+Cyrhaeddodd {0} negeseuon newydd yn y blwch derbyn.
+Agorwch "lsmail" i'w gweld.
+Methu tynnu ffeil: {0}
+Yn dileu cyfeiriadur neu ffeil
+Methu tynnu {0} oherwydd nad yw'n bodoli.
+Pwyswch CTRL + C i adael.
+Mae'n darparu gwybodaeth am ffeil
+Mae'n darparu gwybodaeth am gyfeiriadur
+Methu â chael gwybodaeth am gyfeiriadur ddim yn bodoli.
+Methu â chael gwybodaeth am ffeil ddim yn bodoli.
+Enw llawn: {0}
+Amser creu: {0}
+Amser mynediad olaf: {0}
+Amser ysgrifennu diwethaf: {0}
+Rhinweddau: {0}
+Cyfeiriadur rhieni: {0}
+Ble i ddod o hyd i: {0}
+Maint ffeil: {0}
+Newid priodoledd ffeil
+Ffeil heb ei darganfod.
+lle mae <attributes> yn un o'r canlynol:
+Mae'r ffeil yn ffeil arferol
+Mae'r ffeil yn ffeil ddarllen yn unig
+Mae'r ffeil yn ffeil gudd
+Archif yw'r ffeil. Defnyddir ar gyfer copïau wrth gefn.
+Mae priodoledd "{0}" yn annilys.
+Ychwanegwyd priodoledd yn llwyddiannus.
+Mae priodoledd wedi'i ddileu yn llwyddiannus.
+Wedi methu ychwanegu priodoledd.
+Wedi methu cael gwared ar briodoledd.
+Yn disodli gair neu ymadrodd ag un arall mewn llinell
+Rhagorwyd ar lefel lliw coch. Roedd yn {0}.
+Rhagorwyd ar lefel lliw gwyrdd. Roedd yn {0}.
+Rhagorwyd ar lefel lliw glas. Roedd yn {0}.
+Ysgogi gwir liwiau
+Yn actifadu gwir gefnogaeth lliw ar gyfer ColorMix.
+Yn actifadu gwir gefnogaeth lliw ar gyfer Disgo.
+Yn actifadu gwir gefnogaeth lliw ar gyfer GlitterColor.
+Yn actifadu gwir gefnogaeth lliw ar gyfer Llinellau.
+Wedi methu dadflocio {0}.
+Mae {0} eisoes wedi'i rwystro.
+Ni all {0} ymuno â dadfygio o bell nawr.
+Wedi methu blocio {0}.
+Lliwiau beicio
+Bydd disgo yn beicio lliwiau pan fydd wedi'i alluogi. Fel arall, dewiswch liwiau ar hap.
+Rhowch lwybrau ffeiliau i atodiadau. Pwyswch ENTER ar lwybr gwag i gadarnhau.
+Yn agor neges wedi'i hamgryptio
+Ysgrifennwch gyfrinair ar gyfer ID allweddol {0}
+Yn anfon neges wedi'i hamgryptio i gyfeiriad
+Yn gofyn ichi lenwi'r meysydd gofynnol i anfon neges wedi'i hamgryptio i gyfeiriad
+Llwytho i lawr o {0} ...
+Dangos bar cynnydd wrth lawrlwytho neu uwchlwytho o orchymyn "cael" neu "rhoi"
+Os yw'n wir, mae'n gwneud i "gael" neu "rhoi" ddangos y bar cynnydd wrth lawrlwytho neu uwchlwytho.
+Yn llwytho ffeil i wefan benodol
+Yn rhoi cyfeiriad
+Llwytho {0} i {1} ...
+Mae'r llwyth wedi'i gwblhau.
+Defnyddiwch "ftp" os ydych chi'n mynd i uwchlwytho ffeiliau i'r gweinydd FTP.
+Methodd y llwyth wrth geisio {0}: {1}
+Ysgrifennwch sawl gwaith y dylai'r gorchymyn "rhoi" ail-droi llwythiadau a fethwyd. Rhaid iddo fod yn rhifol.
+Efallai na fydd y cyfeiriad yn wag.
+Wedi methu ping {0}: {1}
+Llwyddodd Ping i {0} ms.
+Efallai na fydd y rhif llinell penodedig yn fwy na'r rhif llinell ffeil olaf.
+Yn teimlo fel: {0}
+Tymheredd: {0}
+Cyflymder y gwynt: {0}
+Cyfeiriad y gwynt: {0}
+Yn actifadu cefnogaeth lliw 255 ar gyfer Diddymu.
+Yn actifadu gwir gefnogaeth lliw ar gyfer Diddymu.
+Pwyswch unrhyw allwedd i fynd yn ôl.
+Methu creu ffolder post {0}: {1}
+Yn gwneud cyfeiriadur yn y cyfeiriadur gweithio cyfredol
+Yn dileu cyfeiriadur o'r cyfeiriadur gweithio cyfredol
+Ffolder post {0} heb ei ddarganfod.
+Methu dileu ffolder post {0}: {1}
+{0}, Wedi'i greu yn {1} {2}, Wedi'i addasu yn {3} {4}
+Yn gwirio sancteiddrwydd y ffeil
+Mae hashes wedi'u camffurfio.
+Nid yw hashes yn cyfateb.
+Mae hashes yn cyfateb.
+Ail-enwi ffolder
+Mae'r adran hon yn rhestru'r holl leoliadau cnewyllyn cyffredinol, yn bennaf ar gyfer cynnal a chadw'r cnewyllyn.
+Mae'r adran hon yn newid ymddygiad chwiliedydd caledwedd.
+Mae'r adran hon yn cynrychioli'r gosodiadau mewngofnodi. Allgofnodi o'ch cyfrif er mwyn i'r newidiadau ddod i rym.
+Mae'r adran hon yn rhestru gosodiadau'r cregyn.
+Mae'r adran hon yn rhestru'r gosodiadau rhwydwaith, fel y gragen FTP, y gosodiadau gorchymyn sy'n gysylltiedig â'r rhwydwaith, a'r gosodiadau dadfygio o bell.
+Mae'r adran hon yn rhestru'r holl arbedwyr sgrin a'u gosodiadau sydd ar gael.
+Mae gosodiadau nad ydyn nhw'n ffitio yn eu rhannau priodol yn glanio yma.
+Profion mods trwy ddarparu ffeiliau mod
+Yn agor cragen prawf
+Yn galluogi modd dadfygio
+Awgrymiadau ar gyfer dadleuon
+* Pwyswch unrhyw allwedd i ddechrau'r cnewyllyn neu'r ESC i adael.
+Wedi methu cychwyn "{0}": {1}
+Dangos rhagolwg neges post
+Wrth restru negeseuon post, dangoswch ragolwg o'r corff.
+Lliwiau personol ...
+Lliw mewnbwn
+Lliw trwydded
+Lliw gwall cnewyllyn parhaus
+Lliw gwall cnewyllyn na ellir ei reoli
+Lliw enw gwesteiwr
+Lliw enw defnyddiwr
+Lliw cefndir
+Lliw testun niwtral
+Lliw llwyfan
+Lliw gwall
+Arddull Prydlon FTP
+Arddull Prydlon Post
+Arddull Prydlon SFTP
+Yn actifadu cefnogaeth lliw 255 ar gyfer BouncingBlock.
+Yn actifadu gwir gefnogaeth lliw ar gyfer BouncingBlock.
+Ceisio cyrchu llwybr annilys.
+Yn clirio'r ffeil testun
+Yn gadael y golygydd testun
+Ymholi cymeriad mewn llinell benodol neu bob llinell
+Mae gwirio am ddiweddariadau yn anabl oherwydd eich bod yn rhedeg fersiwn datblygu.
+Yn troi ar neu oddi ar nodwedd autosave golygydd testun.
+Os yw autosave wedi'i alluogi, bydd y ffeil testun yn cael ei chadw am bob eiliad "n".
+Galluogi autosave golygydd testun
+Cyfnodydd autosave golygydd testun
+Yn arbed y ffeil
+Recordio sgwrs i log dadfygio
+Yn recordio sgwrsio dadfygio o bell i log dadfygio.
+Oedi yn Milliseconds
+Sawl milieiliad i aros cyn gwneud yr ysgrifen nesaf?
+Yn gadael i chi ddefnyddio gweinydd SSH FTP
+Dim help ar gyfer gorchymyn "{0}".
+Dilyniant VT annilys ar gyfer lliw RGB.
+Bar Lliw Eiliadau
+Bar Lliw Cofnodion
+Bar Lliw Oriau
+Lliw Gwybodaeth
+Trogod i newid lliw
+Yn actifadu cefnogaeth lliw 255 ar gyfer ProgressClock.
+Yn actifadu gwir gefnogaeth lliw ar gyfer ProgressClock.
+Mae lliw eiliadau bar cynnydd. Gall fod yn 1-16, 1-255, neu "1-255;1-255;1-255".
+Mae lliw munudau cynnydd bar. Gall fod yn 1-16, 1-255, neu "1-255;1-255;1-255".
+Lliw cynnydd bar oriau. Gall fod yn 1-16, 1-255, neu "1-255;1-255;1-255".
+Lliw gwybodaeth dyddiad. Gall fod yn 1-16, 1-255, neu "1-255;1-255;1-255".
+Os yw beicio lliw wedi'i alluogi, faint o diciau cyn newid lliwiau yn ProgressClock? 1 tic = 0.5 eiliad
+Bydd ProgressClock yn dewis lliwiau ar hap os yw wedi'i alluogi. Fel arall, defnyddiwch liwiau o config.
+Yn gwneud thema newydd
+Gwneud thema newydd "{0}".
+Cadw Thema i'r Cyfeiriadur Cyfredol
+Cadw Thema i Gyfeiriadur arall ...
+Dewiswch liw gan ddefnyddio bysellau "<-" a "->". Pwyswch ENTER i roi'r gorau iddi. Pwyswch "i" i fewnosod rhif lliw â llaw.
+Dewiswch liw gan ddefnyddio bysellau "<-" a "->". Defnyddiwch bysellau saeth i fyny a saeth i lawr i ddewis rhwng ystodau lliw. Pwyswch ENTER i roi'r gorau iddi. Pwyswch "i" i fewnosod rhif lliw â llaw.
+Croeso i'r cnewyllyn! - Fersiwn {0}
+Lliw rhybuddio
+Lliw opsiwn
+Rhowch rif lliw o 0 i 255:
+Defnyddiwch "hwinfo" i gael gwybodaeth estynedig am galedwedd.
+Printiau gwybodaeth caledwedd
+Gwybodaeth CPU:
+Enw'r prosesydd:
+Cyflymder y prosesydd:
+Darnau prosesydd:
+Prosesydd rev:
+Topoleg prosesydd:
+Math o brosesydd:
+Carreg filltir y prosesydd:
+Prosesydd BogoMips:
+Maint storfa Prosesydd L2:
+Maint storfa Prosesydd L3:
+Nodweddion prosesydd:
+Gwybodaeth HDD:
+Enw'r gyriant:
+Model gyrru:
+Gwerthwr gyriant:
+Cyflymder gyrru:
+Maint y gyriant:
+Cyfresol gyrru:
+ID Gyrru:
+Cyfrif rhaniad gyrru:
+ID Rhaniad:
+System ffeiliau rhaniad:
+Maint y rhaniad:
+Rhaniad a ddefnyddir:
+Gwybodaeth RAM:
+RAM am ddim:
+Cyfanswm RAM:
+RAM a ddefnyddir:
+Gwybodaeth GPU:
+Enw GPU:
+Gyrrwr GPU:
+Fersiwn GPU:
+GPU: Methwyd â phrofi un neu fwy o'r cardiau graffeg. Yn dangos gwybodaeth beth bynnag ...
+>> Croeso! Dyma'ch tro cyntaf i fynd i mewn i ddadfygio a sgwrsio o bell. Defnyddiwch "/ register <name>" i gofrestru.
+Dyfais yn bodoli eisoes.
+Dim dyfais o'r fath.
+Yn gosod enw defnyddiwr y ddyfais
+Rydych chi eisoes wedi cofrestru.
+Helo, {0}!
+Yn argraffu cynnwys y ffeil i'r consol
+Neu, pasiwch "listcities" i'r gorchymyn hwn.
+Mae mynediad eisoes yn bodoli.
+Yn lapio allbwn y consol
+Nid oes modd lapio'r gorchymyn. Gellir lapio'r gorchmynion hyn:
+Yn tynnu archif ZIP
+Yn creu archif ZIP
+Wedi'i adeiladu yn {0}
+Gwall wrth lawrlwytho data dadfygio
+Mae gwall wrth lawrlwytho data dadfygio. Gwiriwch eich cysylltiad rhyngrwyd.
+Wedi methu cwblhau mod {0}: {1}
+Yn rhestru'r holl ddigwyddiadau wedi'u tanio
+Cyfeiriadur Cyfredol
+Yn gosod cyfeiriadur cyfredol y gragen. Ysgrifennwch lwybr absoliwt i unrhyw gyfeiriadur sy'n bodoli.
+Allbynnau rhestr lapio
+Yn lapio allbynnau'r rhestr os yw'n ymddangos yn rhy hir ar gyfer geometreg gyfredol y consol.
+Ping!
+{0} pinged chi.
+Cadw Thema i'r Cyfeiriadur Cyfredol fel ...
+Cadw Thema i Gyfeiriadur arall fel ...
+Nodwch enw'r thema:
+Mae'r defnyddiwr {0} wedi'i ychwanegu at y rhestr "{1}".
+Mae'r defnyddiwr {0} wedi'i dynnu o'r rhestr "{1}".
+Modd annilys {0}
+Defnyddiwr yn bodoli eisoes
+Thema Llwyth O ...
+Llwythwch Thema O Themâu A Adeiladwyd ...
+Nodwch enw ffeil thema gyda'r estyniad .json:
+Yn agor archif ZIP
+Allanfa'r gragen ZIP
+Yn rhestru'r holl ffeiliau y tu mewn i'r archif
+Yn tynnu ffeil i gyfeiriadur penodol neu gyfeiriadur cyfredol
+Newid cyfeiriadur archif
+Ni cheir hyd i'r gorchymyn cragen ZIP penodedig.
+Nid yw'r cyfeiriadur {0} yn bodoli
+Nid yw cyfeiriadur archif {0} yn bodoli
+Swyddi Uchaf yn Cyfrif
+Faint o swyddi sy'n cael eu goleuo cyn pylu?
+Yn actifadu cefnogaeth lliw 255 ar gyfer Ysgafnach.
+Yn actifadu gwir gefnogaeth lliw ar gyfer Ysgafnach.
+Rhestrwch liw mynediad
+Rhestrwch liw gwerth
+Yn cysylltu â gweinydd SSH i weithredu gorchymyn.
+Mae'r adran hon yn rhestru gosodiadau arbedwr sgrin ar gyfer
+Manylebwr lliw annilys. Sicrhewch ei fod ar y fformat cywir, sy'n golygu rhif o 0-255 os ydych chi'n defnyddio 255 o liwiau neu ddilyniant VT os ydych chi'n defnyddio gwir liw fel a ganlyn:
+Gwall yn y gragen prawf: {0}
+Yn gosod newidyn i werth mewn sgript
+Adroddiad byg yn brydlon.
+Diolch am godi tocyn i ni! Dewiswch pa fath o gais sydd gennych chi.
+Problem
+Cais nodwedd
+Cwestiwn
+Rhaid i chi nodi nodwedd.
+Gofynnwch gwestiwn, nodwch eich syniad, neu riportiwch broblem.
+Rhaid i chi ysgrifennu'ch cais.
+Roedd gwall yn y gragen FTP:
+Gwall cragen FTP anhysbys:
+Roedd gwall yn y gragen SFTP:
+Gwall cragen SFTP anhysbys:
+Dangos baner SSH
+Yn dangos baner gweinydd SSH ar gysylltiad.
+Sut ydych chi am ddilysu?
+Ffeil allwedd breifat
+Cyfrinair
+Rhowch yr aralleiriad ar gyfer allwedd {0}:
+Rhowch leoliad yr allwedd breifat ar gyfer {0}. Ysgrifennwch "q" i orffen ychwanegu allweddi:
+Niwtralio llwybr nad yw'n bodoli.
+Nid yw'r ffeil allweddol {0} yn bodoli.
+Gwall wrth geisio ychwanegu allwedd breifat:
+Pwyswch "t" i newid i'r modd lliw 255.
+Pwyswch "t" i newid i'r modd lliw go iawn.
+Mae'r adran hon yn caniatáu ichi ddewis pa fath o liw ydych chi am ei newid.
+Mae'n edrych fel nad oes gennych unrhyw ddefnyddiwr heblaw gwraidd. Mae hyn yn ddrwg. Byddwn yn eich tywys sut i greu un.
+Ysgrifennwch eich enw defnyddiwr.
+Rhaid i chi ysgrifennu eich enw defnyddiwr.
+Ysgrifennwch eich cyfrinair.
+Rhaid i chi ysgrifennu'ch cyfrinair.
+Dewiswch y math o gyfrif.
+Gweinyddwr: Y math hwn o gyfrif sydd â'r pŵer mwyaf yn y cnewyllyn, sy'n eich galluogi i ddefnyddio rhaglenni rheoli system.
+Defnyddiwr Arferol: Mae'r math hwn o gyfrif ychydig yn fwy cyfyngedig na gweinyddwyr.
+Llongyfarchiadau! Rydych chi wedi gwneud cyfrif newydd! I orffen hyn, mewngofnodwch fel eich cyfrif newydd.
+Edrychwch ar y llawlyfr arbedwr sgrin neu'r cod ffynhonnell i gael gwybodaeth.
+mod: Ni chanfuwyd mods.
+Gorchmynion cyffredinol:
+Gorchmynion mod:
+Mae Alias ​​yn gorchymyn:
+Modd Cynnal a Chadw
+Cyfeiriaduron Chwilio
+Grŵp o lwybrau wedi'u gwahanu gan y colon. Mae'n gweithio yr un peth â PATH. Ysgrifennwch lwybr llawn i ffolder neu enw ffolder. Pan fyddwch wedi gorffen, ysgrifennwch "q". Ysgrifennwch arwydd minws wrth ymyl y llwybr i gael gwared ar gyfeiriadur sy'n bodoli eisoes.
+Dim gorchmynion mod.
+Dim gorchmynion alias.
+Mae'r gwerth lliw y tu allan i'r ystod o 0-255.
+Ni cheir hyd i'r gorchymyn lapiadwy.
+Ymholi gair mewn llinell benodol neu bob llinell
+{0} o {1} wedi'i lawrlwytho.
+Llwythwyd {0} o {1}.
+Yn argraffu llinyn i'w consol gan ddefnyddio math lliw a phrint llinell
+Yn argraffu llinyn i'w consol gan ddefnyddio math lliw a phrint llinell gyda chefnogaeth fformat
+Yn argraffu llinyn i'w ddadfygiwr
+Yn argraffu llinyn i'w ddadfygiwr gyda chefnogaeth fformat
+Yn profi'r cyfleuster gwall cnewyllyn
+Yn profi'r cyfleuster gwall cnewyllyn gyda chefnogaeth fformat
+Profion yn cyfieithu llinyn sy'n bodoli mewn adnoddau i iaith benodol
+Yn argraffu llinyn i'w consolio ac yn dosrannu'r deiliaid lleoedd y deuir o hyd iddynt
+Yn profi'r cyfleuster mynegiant rheolaidd
+Amgryptio llinyn gan ddefnyddio
+Yn cychwyn pob mod
+Yn stopio pob mod
+Yn galluogi neu'n anablu dadfygio
+Yn galluogi neu'n anablu dadfygio o bell
+Yn profi'r dilyniant VT ar gyfer 255 o liwiau
+Yn profi'r dilyniant VT ar gyfer gwir liw
+Yn anfon hysbysiad i brofi'r derbynnydd
+Dyddiad argraffu profion gan ddefnyddio gwahanol galendrau
+Yn rhestru'r holl dudalennau cod a gefnogir
+Pa newidynnau crynhowr sy'n cael eu galluogi yn y cais?
+Profion yn codi'r digwyddiad penodol
+Profion yn archwilio'r caledwedd
+Profi'r casglwr sbwriel
+Allanfa'r gragen prawf a chychwyn y cnewyllyn
+Allanfa'r gragen prawf ac yn cau i lawr y cnewyllyn
+Yn arbed y cyfeiriadur cyfredol i ffeil cyfluniad cnewyllyn
+Yn profi ysgrifennwr y rhestr gyda'r arae llinyn a llinyn
+Yn profi ysgrifennwr y rhestr gyda'r cyfanrif a'r arae gyfanrif
+Yn profi ysgrifennwr y rhestr gyda'r arae torgoch a torgoch
+Rhestr llinynnau arferol:
+Rhestr llinyn arae:
+Rhestr gyfanrif arferol:
+Rhestr gyfanrif arae:
+Rhestr torgoch arferol:
+Rhestr torgoch arae:
+Galluogi RPC
+Porthladd RPC
+P'un ai i alluogi RPC ai peidio.
+Ysgrifennwch borthladd RPC. Rhaid iddo fod yn rhifol, ac ni ddylid ei ddefnyddio eisoes. Fel arall, bydd RPC yn methu ag agor y porthladd.
+Ddim yn cychwyn RPC oherwydd ei fod yn anabl.
+Roedd rhestrau'n cefnogi diwylliannau
+Chwilio am linyn penodol yn y ffeil a ddarperir gan ddefnyddio ymadroddion rheolaidd
+Gweld a allwch chi wasgu allwedd mewn pryd
+Ni ddarparodd y defnyddiwr unrhyw fewnbwn yn amserol.
+Anhawster annilys
+Cymeriad heb ei wasgu mewn pryd.
+Rydych chi wedi pwyso'r cymeriad iawn!
+Rydych chi wedi pwyso'r cymeriad anghywir.
+Pwyswch ESC i adael.
+Yn cael y wybodaeth dyddiad ac amser
+Milliseconds:
+Eiliadau:
+Cofnodion:
+Oriau:
+Dyddiau:
+Misoedd:
+Blwyddyn:
+Diwrnod y Flwyddyn:
+Diwrnod yr Wythnos:
+Deuaidd:
+Amser Lleol:
+Amser Cyffredinol:
+Amser Unix:
+Wedi methu dosrannu gwybodaeth ar gyfer
+Sicrhewch fod y fformat yn gywir.
+Dyddiad:
+Amser:
+Yn gosod caniatâd ffeiliau. Dim ond ar weinyddion FTP sy'n rhedeg Unix y cefnogir hyn.
+Yn gosod y math ar gyfer y sesiwn hon
+Rhaid i chi gysylltu â'r gweinydd cyn perfformio gweithrediadau system ffeiliau.
+Wedi methu gosod caniatâd o {0} i {1}.
+Caniatadau wedi'u gosod yn llwyddiannus ar gyfer ffeil
+Math o ddata wedi'i osod i ASCII!
+Math o ddata wedi'i osod i Binary!
+Math o ddata annilys.
+Gwyliwch rhag i'r mwyafrif o ffeiliau lawrlwytho neu uwchlwytho'n iawn gan ddefnyddio'r modd hwn, felly rydym yn argymell yn gryf defnyddio'r modd Deuaidd yn y rhan fwyaf o sefyllfaoedd.
+Ceisio anfon gorchymyn RPC tra na ddechreuodd RPC.
+Oedi Pylu Allan yn Milliseconds
+Camau Pylu Max
+Sawl milieiliad i aros cyn pylu testun?
+Faint o gamau pylu i'w gwneud?
+Profi Llawn
+Os yn wir, archwiliwch yr holl galedwedd; fel arall, dim ond y caledwedd angenrheidiol y bydd yn ei archwilio.
+Wedi methu tynnu arbedwr sgrin {0} o'r ffurfwedd.
+Yn cael gosodiadau arbedwr personol
+Yn gosod gosodiadau arbedwr personol
+Gosodiadau wedi'u gosod yn llwyddiannus ar gyfer arbedwr sgrin
+Wedi methu gosod gosodiad ar gyfer arbedwr sgrin
+Mae'r adran hon yn caniatáu ichi reoli creu cyfrinair gwreiddiau.
+Yn agor cragen RSS i ddarllen y porthwyr
+Yn gadael cragen RSS ac yn dychwelyd i'r cnewyllyn
+Newid y ddolen bwyd anifeiliaid
+Yn rhestru pob porthiant
+Yn darllen porthiant mewn porwr gwe
+Ni cheir hyd i'r gorchymyn cregyn RSS penodedig.
+Porthiant RSS2 annilys.
+Porthiant RSS1 annilys.
+Porthiant Atom Annilys.
+Rhowch URL porthiant RSS:
+Math porthiant RSS annilys.
+Gwall cragen anhysbys:
+Cael gwybodaeth yr erthygl
+Ni allai rhif yr erthygl fod yn fwy na'r erthyglau sydd ar gael.
+Teitl:
+Dolen:
+Cael y wybodaeth porthiant
+Disgrifiad:
+Math o borthiant:
+Nifer yr erthyglau:
+Nid oes gan Erthygl ddolen!
+Wedi methu gwneud rhestr o gofnodion system ffeiliau ar gyfer cyfeiriadur
+Modd didoli system ffeiliau
+Cyfeiriad didoli system ffeiliau
+Mae'n rheoli sut y bydd y ffeiliau'n cael eu didoli.
+Mae'n rheoli cyfeiriad didoli system ffeiliau p'un a yw'n esgynnol neu'n disgyn.
+Gorchymyn esgynnol
+Gorchymyn disgyn
+Enw llawn
+Maint ffeil
+Amser creu
+Yr amser ysgrifennu diwethaf
+Amser mynediad olaf
+Ysgrifennwch Oedi Oedi yn Milliseconds
+Sawl milieiliad i aros cyn ysgrifennu testun eto?
+Ysgrifennwch unrhyw destun rydych chi am ei ddangos. Mae hirach yn well.
+Cyflymder ysgrifennu lleiaf yn WPM
+Y cyflymder ysgrifennu uchaf yn WPM
+Tebygolrwydd typo yn y cant
+Wedi methu cadw'r cyfeiriadur cyfredol: {0}
+Cadachau i newid cyfeiriad
+Yn actifadu cefnogaeth lliw 255 ar gyfer Wipe.
+Yn actifadu gwir gefnogaeth lliw i Wipe.
+Sawl cadachau i'w gwneud cyn newid cyfeiriad ar hap?
+Gorffennodd y llwyfan yn
+Gorffennwyd ymgychwyn mewnol yn
+Ffeil gyfeiriedig {0} heb ei darganfod. Efallai na fydd y mod hwn yn gweithio'n iawn heb y ffeil hon.
+Mod cychwyn
+Yn cael gwybodaeth mod
+Enw gorchymyn:
+Diffiniad gorchymyn:
+Math o orchymyn:
+Gorchymyn caeth?
+Fersiwn mod:
+Mod {0} heb ei ddarganfod.
+Diwylliant o
+Pa amrywiad o {0} sy'n cael ei ddefnyddio i newid enwau'r mis, calendr, ac ati?
+Nid yw'r golygydd testun wedi agor ffrwd ffeiliau eto.
+Llinyn wedi'i ddisodli.
+Nid yw un neu'r ddau o'r rhifau yn rhifol.
+Dileu gair.
+Cymeriad wedi'i ddileu.
+Gosodiadau System Ffeiliau ...
+Mae'r adran hon yn rhestru gosodiadau'r system ffeiliau.
+Croeso i Gosodiadau!
+Gwall wrth weithredu gorchymyn SSH
+Gwall ar gragen SSH
+- Gwybodaeth ap
+Yn actifadu cefnogaeth lliw 255 ar gyfer BouncingText.
+Yn actifadu gwir gefnogaeth lliw ar gyfer BouncingText.
+Yn profi ysgrifennwr y geiriadur gyda'r arae llinyn a llinyn
+Yn profi ysgrifennwr y geiriadur gyda'r arae torgoch a torgoch
+Yn profi awdur y geiriadur gyda'r cyfanrif a'r arae gyfanrif
+Geiriadur llinynnol arferol:
+Geiriadur llinyn arae:
+Geiriadur cyfanrif arferol:
+Geiriadur cyfanrif arae:
+Geiriadur torgoch arferol:
+Geiriadur torgoch Array:
+Croeso i Test Shell!
+Dangos cynnydd ar weithrediadau system ffeiliau
+Yn dangos pa ffeil sy'n cael ei phrosesu yn ystod gweithrediadau'r system ffeiliau
+lle bydd HardwareType
+Naill ai nid yw'r math caledwedd {0} wedi'i archwilio, neu nid yw'n ddilys.
+Nid yw'r math caledwedd {0} wedi'i archwilio eto. Os ydych chi'n siŵr ei fod wedi'i archwilio, ailgychwynwch y cnewyllyn gyda gallu difa chwilod.
+Rhaniadau heb eu dosrannu i'w rhestru.
+Modd Haciwr
+Os yw wedi'i alluogi, bydd consol gwyrdd yn cael ei alluogi.
+Yn argraffu gwahanydd
+Yn argraffu gwahanydd gyda chefnogaeth fformat
+Yn argraffu gwahanydd gyda chefnogaeth lliw
+Yn argraffu gwahanydd gyda chefnogaeth lliw a fformat
+Bob amser wedi'i ganoli
+Yn actifadu cefnogaeth lliw 255 i'r Babell Fawr.
+Yn actifadu gwir gefnogaeth lliw i'r Babell Fawr.
+Ysgrifennwch unrhyw destun rydych chi am ei ddangos.
+P'un a yw'r testun a ddangosir ar y babell fawr bob amser wedi'i ganoli.
+'q' i roi'r gorau iddi.
+Ni ddarganfuwyd bod dadl {0} yn chwistrellu.
+Dadl llinell orchymyn {0} heb ei darganfod.
+Yn clirio'r holl leoliadau
+Profodd arbedwr gwall wrth arddangos: {0}. Pwyswch unrhyw allwedd i adael.
+Rhagolwg ...
+Dyma sut olwg fydd ar eich thema:
+Gorchmynion lapio:
+Mae gan Mod {0} orchymyn annilys. Methodd dosrannu mod. Adolygwch y cod ffynhonnell.
+Rhannau mod:

@@ -1,0 +1,1099 @@
+Mövcud əmrlər: {0}
+Komanda yazın:
+Komanda inyeksiyası ləğv edildi.
+Boşluqları vergüllə ayırın, məsələn 'motd, gpuprobe'
+'Cmdinject' əmrlərini boşluqlu nöqtələr ilə ayırın, məsələn, 'cmdinject setthemes Hacker: beep 1024 0.5'
+Qeyd edək ki, 'debug' arqumenti nüvəni tam əhatə etmir.
+bargs: İstədiyiniz arqument {0} tapılmadı.
+barks: arqumentdə bərpa olunmayan səhv:
+Mövcud arqumentlər: {0}
+Mübahisələr (kömək üçün 'help'):
+Enjekte edilmiş arqumentlərin növbəti yenidən başlatma zamanı işə salınması planlaşdırılır.
+Arqument enjeksiyonu ləğv edildi.
+Həqiqi əmr sətri arqumentlərini təhlil edərkən səhv: {0}
+Yanlış rəng şablonu {0}
+hwprobe: Donanımınız yoxlanacaq. Zəhmət olmasa, gözləyin...
+CPU: CPU nüvələrindən biri və ya daha çoxu yoxlanılmadı. Hər halda məlumat göstərilir ...
+RAM: RAM çiplərindən bir və ya bir neçəsi yoxlanılmadı. Hər halda məlumat göstərilir ...
+HDD: Bir və ya daha çox sabit disk yoxlanılmadı. Hər halda məlumat göstərilir ...
+CPU: Ümumi prosessorların sayı: {0}
+Baxım üçün admin parolunu daxil edin.
+Önyükləmə zamanı Kernel Xətası: {0}
+İKİ PANİK: Yenidən başlama vaxtı icazə verilən maksimum {0} səhv yenidən başlatma müddətini keçir. Bir kernel böcəyi tapdınız.
+[{0}] çaxnaşma: Yenidən başladın, səhv səviyyəsinin {0} olduğu üçün aktiv edildi.
+[{0}] çaxnaşma: Yenidən yükləmə vaxtı: {1} saniyə, 1 saatı keçir. 1 dəqiqəyə ayarlanıb.
+İKİ PANİK: Hata növü {0} etibarsızdır.
+[{0}] dpanik: {1} - {2} saniyəyə yenidən yüklənir ...
+[{0}] çaxnaşma: Yenidən başladın, səhv səviyyəsinin {0} olduğu üçün deaktiv edildi.
+[{0}] çaxnaşma: {1} - Çekirdəkdən istifadə etməyə davam etmək üçün istənilən düyməyə basın.
+[{0}] çaxnaşma: {1} - Bağlamaq üçün istənilən düyməyə basın.
+[{0}] çaxnaşma: {1} - {2} saniyəyə yenidən yüklənir ...
+İKİ PANİK: Kernel böcəyi: {0}
+Bağlanır ...
+Yenidən yüklənir ...
+Kernel Simulator-un başqa bir nümunəsi işləyir. Müdaxilə halında bağlanır.
+İstifadəçi icazə siyahısına əlavə edilə bilmədi: etibarsız növ {0}
+İstifadəçi icazə siyahılarına əlavə edilmədi: etibarsız istifadəçi {0}
+İstifadəçi icazə siyahılarından çıxarıla bilmədi: etibarsız növ {0}
+Artıq daxil olmusunuz
+İstifadəçi icazə siyahılarından silinmədi: etibarsız istifadəçi {0}
+Ya bir səhv tapdınız, ya da əlavə etməyə və ya silməyə çalışdığınız icazə artıq verildi və ya başqa bir səhv.
+Xəta {0}: {1}
+Ya bir səhv tapdınız, ya da yeni bir istifadəçi üçün düzəltməyə çalışdığınız icazə alınmadı.
+Mövcud istifadəçi adları: {0}
+İstifadəçi adı:
+Boşluqlara icazə verilmir.
+Xüsusi simvollara icazə verilmir.
+{0} -ın parolu:
+Parol səhvdir.
+İstifadəçi deaktivdir.
+Səhv istifadəçi adı.
+Yer saxlayıcıları təhlil etməyə cəhddə səhv. {0} - Yığın izi:
+Yer saxlayıcıları təhlil etməyə cəhddə səhv. {0}
+İstifadəçi adı əlavə olunarkən xəta baş verdi.
+usrmgr: İstifadəçi adı yaradılır {0} ...
+Boş istifadəçi adı.
+İstifadəçi {0} tapılmadı.
+İstifadəçinin {0} silinməsinə icazə verilmir.
+İstifadəçi {0} artıq daxil olub. Başqa bir administrator kimi çıxın və daxil olun.
+İstifadəçi {0} silindi.
+İstifadəçi adının silinməsi zamanı xəta baş verdi.
+Tələb olunan ekran qoruyucu {0} tapılmadı.
+{0} düzgün şəkildə başlandı.
+{0} başlatmadı. Ekran qoruyucusu kodu işə salarkən bir səhv ola bilər.
+Ekran qoruyucu {0} mövcud deyil.
+{0} defolt ekran qoruyucu olaraq ayarlandı.
+Ekran qoruyucu {0} verilənlər bazasında tapılmadı. Adı yoxlayın və yenidən cəhd edin.
+Aşağıdakılara görə ekran qoruyucu yüklənə bilməz:
+Mətni çap edərkən ciddi bir səhv var.
+Konfiqurasiya yaratmağa çalışarkən bir səhv var.
+RAM-ı boşaltmağa cəhd zamanı xəta: {0} - Davam edir ...
+Aşağıdakılara görə mod yüklənə bilməz:
+mod: Yüklənən modlar ...
+mod: Modların dayandırılması ...
+{0} modunun adı yoxdur. Mənbə kodunu nəzərdən keçirin.
+{0} modunun versiyası yoxdur.
+{0} v {1} başladı
+{0} əmri üçün heç bir tərif yoxdur.
+Tərəfindən təyin olunan əmr
+Başqa bir serverə qoşulmadan əvvəl serverdən ayrılmalısınız
+{0} üçün istifadəçi adı:
+{0} üçün parol:
+{0} ilə əlaqəli
+{0} ilə əlaqə qurmağa cəhd zamanı xəta: {1}
+Yığın izi: {2}
+Bir FTP server daxil edin.
+Yerli kataloqu {0} mövcud deyil.
+Yerli bir qovluq daxil edin. ".." geriyə qayıtmaq.
+{0} qovluğu tapılmadı.
+Uzaq bir qovluq daxil edin. ".." geriyə qayıtmaq
+Dizini dəyişdirmədən əvvəl bir serverə qoşulmalısınız
+Yerli kataloq: {0}
+Uzaq kataloq: {0}
+Cari uzaq qovluğu əldə etməzdən əvvəl serverə qoşulmalısınız.
+Silməni həyata keçirmədən əvvəl inzibati imtiyazlarla serverə qoşulmalısınız.
+{0} ilə əlaqəsi kəsildi
+Hələ heç bir serverə qoşulmamısınız
+{0} faylı yüklənir ...
+{0} faylı yükləndi.
+Şanzımanı həyata keçirmədən əvvəl serverə qoşulmalısınız.
+Yerli qovluğa yükləmək üçün bir sənəd daxil edin.
+{0} KB | Dəyişdirilib: {1}
+Bütün uzaq faylları siyahıya almadan əvvəl serverə qoşulmalısınız.
+{0} faylı yüklənir ...
+Yüklənmiş fayl {0}
+Uzaq qovluğa yükləmək üçün bir sənəd daxil edin. yükləyin <fayl> <direktoriya>
+(Daxili:
+Cari yerli qovluğu alır
+Cari uzaq qovluğu alır
+Bir FTP serverinə qoşulur ("ftp://" və ya "ftps://" ilə başlamalıdır)
+Yükləmək və ya yükləmək üçün yerli qovluğu dəyişdirir
+Yükləmək və yükləmək üçün uzaq qovluğu dəyişdirir
+Uzaqdakı faylı serverdən silər
+Serverdən ayırır
+Uzaqdan olan faylı ikili və ya mətndən istifadə edərək yerli qovluğa yükləyir
+FTP qabığından çıxır və nüvəyə qayıdır
+Yardım ekranını göstərir
+Yerli qovluğu sadalayır
+Uzaq qovluğu sadalayır
+Yerli faylı ikili və ya mətn istifadə edərək uzaq qovluğa yükləyir
+FTP mesajı: İstədiyiniz {0} əmri tapılmadı. FTP qabığında göstərilən mövcud əmrlərin siyahısı üçün 'kömək' bölməsinə baxın.
+{0} adapteri üçün xüsusiyyətlər alınmadı
+Adapter nömrəsi:
+Adapter adı:
+Maksimum ötürmə vahidi: {2} vahid
+DHCP aktivdir:
+Unicast olmayan paketlər:
+Unicast paketləri:
+Gələn / gedən paketlərdə səhv:
+Takma adlar əmrlə eyni ad ola bilməz.
+{0} üçün ləqəbi əmr tapılmadı.
+Artıq "{0}" əmrini işə sala bilərsiniz: "{1}".
+Takma adın {0} silinməsi tapılmadı.
+Yanlış rejim {0}.
+Enjekte edilmiş arqumentlər, {0}, növbəti yenidən başlatma zamanı işə salınması planlaşdırılır.
+Mübahisələr yetərli deyildi. İstifadəsi üçün aşağıya baxın:
+{0} qovluğu tapılmadı
+Boş ev sahibi adı.
+Dəyişdirilir: {0} - {1} ...
+Günün boş mesajı.
+Girişdən sonra boş MAL.
+Yanlış istifadəçi şifrəsi.
+Parollar uyğun gəlmir.
+İstifadəçi adı {0} olaraq dəyişdirildi!
+Girdiyiniz yeni ad artıq tapılıb.
+{0} tapılmadı.
+Konfiqurasiya yenidən yükləndi. Bəzi dəyişikliklərin qüvvəyə minməsi üçün nüvəni yenidən yükləməlisiniz.
+Rənglərdən biri və ya bir neçəsi etibarsızdır.
+Rənglər mövcud deyil. Nüvə konfiqurasiyasında rəngli qabığı açın.
+Ekran qoruyucu {0} tapılmadı.
+[ Kernel ayarları ({0} işləyir) ]
+Kernel Versiyası:
+Debaq rejimi:
+Rəngli Kabuk:
+Önyükleme Arqumentləri:
+Kömək əmri sadələşdirilmişdir:
+Girişdə MOTD:
+Saat / tarix küncdə:
+[ Təchizat parametrləri ] {0}
+{0}[ İstifadəçi ayarları ]
+Cari istifadəçi adı:
+Cari host adı:
+Mövcud istifadəçi adları:
+Komanda icra olunarkən xəta baş verdi
+Dizini dəyişir
+Cari istifadəçi üçün parol dəyişdirir
+Ekranı təmizləyir
+Serverlərlə qarşılıqlı əlaqə qurmaq üçün bir FTP qabığından istifadə edin
+Kömək səhifəsi
+Cari qovluqdakı fayl/qovluq məzmununu siyahıya alın
+Bir parol ilə ekranınızı kilidləyir
+Girişdən çıxırsınız
+Bir qovluq yaradır
+Bütün mövcud interfeyslər haqqında məlumatları sadalayır
+Kompüterinizi yenidən başladır (XƏBƏRDARLIQ: Sinxronizasiya edilmir, çünki son bir çekirdək deyil)
+Düzəliş edilmiş konfiqurasiya sənədini yenidən yükləyir.
+Ekranınızı yanmalardan qoruyur
+Nüvə ekran qoruyucularını quraşdırır
+Çekirdek temalarını qurur
+Tarixi və saatı göstərir
+Zonalarda tarix və saatı göstərir
+Nüvə bağlanacaq
+Sistem məlumatı
+* Komutlar arasındakı iki nöqtədən istifadə edərək çoxsaylı əmrlərdən istifadə edə bilərsiniz.
+İstifadəsi:
+arqumentlərin olduğu yer: {0}
+FTP qabığını başlatır.
+Dostları
+harada customsaver olacaq
+Şifrə ilə ekranınızı kilidləyir.
+Sizi istifadəçidən çıxarır.
+Hər şəbəkə məlumatını əldə edin
+Süni kompüterinizi yenidən başladır.
+Son istifadəçi və ya alət tərəfindən dəyişdirilən konfiqurasiyanı yenidən yükləyir.
+Rənglər yenidən başlamağı tələb etmir, lakin parametrlərin əksəriyyəti yenidən başlamağınızı tələb edir.
+ekranınızı yanmalardan qoruyarkən seçilmiş bir ekran qoruyucu göstərir.
+Tarixi və saatı göstərir.
+Tarix və saatı zonalarda göstərir.
+Süni kompüterinizi bağlayır.
+Sistem məlumatlarını və versiyalarını göstərir.
+Qabıqda bir xəta baş verdi.
+{0} istifadə etmək üçün icazəniz yoxdur
+Kabuk mesajı: İstədiyiniz {0} əmrinin baxım rejimində işləməsinə icazə verilmir.
+Shell mesajı: İstədiyiniz {0} əmri tapılmadı. Mövcud əmrlər üçün "yardıma" baxın.
+Kabuk mesajı: {0} əmrinin girişdə işləməsinə icazə verilmir.
+Komanda icra olunarkən xəta baş verdi.
+datetime: vaxt: {0}
+datetime: bu gün {0}
+tarix vaxtı: Saat qurşağı: {0}
+- {0} vaxtı: {1}
+ekranı təmizləmək üçün.
+{0} üzərində işləyir
+{0} üçün məlumat əldə etmək səlahiyyətiniz yoxdur.
+Bu əmr köhnəlmişdir və gələcək buraxılışda silinəcəkdir.
+Hədəf bir admin olduğu üçün {0} şifrəsini dəyişdirmək səlahiyyətiniz yoxdur.
+usrmgr: İstifadəçi adı {0} artıq tapılıb
+Ayıklama jurnalındakı hər şeyi silir
+Yanlış dil
+Dili dəyişdirir
+----------------------------- Çekirdek çaxnaşması ------------------------------
+>> Panik məlumatı <<
+> Təsvir: {0}
+> Xəta növü: {1}
+> Tarix və Saat: {2}
+>> İstisna məlumatı <<
+> İstisna: {0}
+> Təsvir: {1}
+> HRESULT: {2}
+> Mənbə: {3}
+> Yığın izi <
+>> Daxili istisna {0} məlumat <<
+>> İstisna {0} kök səbəbdir <<
+>> İstisna yoxdur; bir kernel səhv ola bilər. <<
+>> Çerçevelər, fayllar, sətirlər və sütunlar <<
+> Çərçivə {0}: Fayl: {1} | Sətir: {2} | Sütun: {3}
+> Çərçivə məlumatını əldə etməyə çalışarkən bir səhv var. {0}: {1}
+Modları yenidən yükləyir.
+Modlar yenidən yükləndi.
+Kernelə xoş gəlmisiniz!
+<user> olaraq uğurla daxil oldunuz
+MOTD/MAL etibarlıdır, lakin mesaj növü etibarlı deyil. MOTD götürsək ...
+Etibarsız mesaj tipli MOTD/MAL oxumağa çalışdım.
+Endirmə tamamlandı.
+Endirmə cəhdində uğursuz oldu {0}: {1}
+Xahiş edirəm FTP serverindən faylları yükləyəcəksinizsə "ftp" istifadə edin.
+Bir faylı cari iş qovluğuna yükləyir
+Ayıklama cihazını ayırın
+Bağlı ayıklama cihazlarını siyahıya alır
+Ayaq cihazı {0} tapılmadı.
+Cihaz {0} kəsildi.
+Bağlantıdakı xəta: {0}
+{0} limanından istifadə edərək bütün ünvanlarda dinləmə ayıklayın.
+Arqument göstərilməyib. İpucu: boşluqlarla ayrılmış çoxsaylı arqumentləri göstərin
+Takma adlar artıq tapılıb: {0}
+Hata ayağı qeyd silindi. Bütün qoşulmuş ayıklama cihazları mesajlara baxa bilər.
+Debaq jurnalının silinməsi uğursuz oldu: {0}
+Kataloq dəyişdirilə bilmədi: {0}
+Ünvanı daxil edin
+Kataloq silinmədi: {0}
+Saat qurşağı səhv göstərilib.
+Yanlış profil seçimi.
+{0} ilə {1} profil ilə əlaqə qurmağa çalışırsınız ...
+{0} əmri tapılmadı. Komutların siyahısı üçün "kömək" əmrinə baxın.
+{0} adapteri üçün IPv6 xüsusiyyətləri əldə edilmədi. Davam edir ...
+IPv4 məlumatları:
+IPv6 məlumatları:
+Adapter {0} IPv6-nı dəstəkləmir. Davam edir ...
+Adapter {0} IPv4-i dəstəkləmir. Probe uğursuz oldu.
+Deyəsən kernelin inkişaf versiyasını idarə edirdiniz. Tərəflərini görə bildiyiniz halda, tez-tez yenilənir və səhvləri təqdim edə bilər. Sabit versiyada qalmağınız tövsiyə olunur.
+Seçdiyiniz dildə iki variant var. Birini seçin:
+1. Transliterated
+2. Tərcümə edilmişdir
+Seçiminizi seçin:
+Yanlış seçim. Yenidən cəhd elə.
+Cari qovluğu {0}: {1} olaraq təyin etmək icazəniz yoxdur
+Göstərdiyiniz yol çox uzundur.
+CPU: XƏBƏRDARLIQ: SSE2 gələcək inkişaf öhdəliklərində tələb olunacaq.
+Zibillik məlumat toplayıcısı {0} haqqında məlumat almaq istəyərkən qəzaya uğradı: {1}
+Qurulma tarixini tərtib etməyə çalışarkən səhv baş verdi {0}: {1}
+MOTD/MAL ayarlanarkən səhv: {0}
+MOTD/MAL almaq istəyərkən səhv: {0}
+Etibarsız bir əməliyyat olduğu üçün ekran qoruyucusunu başlatmağa çalışarkən səhv.
+Təhlükəsiz rejimdə yenidən yüklənməyə icazə verilmir.
+Təhlükəsiz rejimdə modların ayrılmasına icazə verilmir.
+Bütün əlaqəli ayıklama cihazlarını sadalayır.
+Təhlil rejimini təyin etməyə çalışarkən səhv. Dəyəri yoxlayın və yenidən cəhd edin. Bu düzgündürsə, kernel ayıklaması aktiv edildikdə yığın izinə baxın.
+Yol nə bir fayl, nə də bir qovluqdur.
+Fərqli bir qovluq və ya ad altında bir sənədin başqa bir nüsxəsini yaradır.
+Bir faylı başqa bir qovluğa köçürür
+Faylları başqa bir qovluğa və ya fərqli bir ada kopyalamaq üçün
+Faylları başqa bir qovluğa köçürmək üçün
+Qarşılaşma {0} ({1}): {2}
+Maç {0}: {1}
+Xərclənən vaxt: {0} milisaniyə
+Ad: {0}
+Fayl məbləğlərini hesablayır.
+Sizi GitHub Vikimizə aparır.
+Yanlış şifrələmə alqoritmi.
+Uzaqdan ayıklamanı aktivləşdirir və ya söndürür.
+Sözləri vaxtında düzgün yaza biləcəyinizə baxın
+Riyazi tənlikləri vaxtında həll edə biləcəyinizə baxın
+Şərhlərə sevgi və ya nifrət cavab verin.
+Kimsə videonuza bu şərhi veribsə:
+Siz necə cavab verərdiniz?
+Yanlış seçim. Növbəti şərhə gedir ...
+Yeni sevgi şərhini bildirmisən!
+Sadəcə nifrət şərhinə cavab verdiniz!
+Əla! {0} adlı istifadəçinin şərhi bunun üçün silinəcəkdir.
+Əla! {0} təşəkkürlərinizi qiymətləndirəcəkdir.
+Mükəmməl yazılıb!
+Səhv yazılıb.
+Mükəmməl həll edildi!
+Yanlış həll edildi.
+RPC artıq işləyir.
+RPC, {0} limanından istifadə edərək bütün ünvanları dinləyir.
+RPC başlayır ...
+SSH serverinə qoşulur.
+{0} üçün parol daxil edin:
+SSH əlaqəsi kəsildi.
+Kod səhifəsini təyin etmək olmur. Dil düzgün göstərilməyə bilər.
+Hata düzəldilməsi aktiv deyil.
+{0} artıq defolt ekran qoruyucu kimi ayarlanmayıb.
+Təşəkkürlər! Bu maraqlıdır.
+Bunun üçün videonuzu hər kəs dəstəkləyəcək.
+Növbəti videonuz üçün sizə elektron poçtunuzdakı xüsusi faylı verdim.
+Dinlə, nifrət edənlər, o, fırıldaqçı deyil, bizə kömək etməyə çalışır.
+Bilmirəm mən və dostlarım bu videoya görə nə qədər təşəkkür edirik.
+Bu video üçün səni sevirəm.
+Davam et, dayanma.
+1M abunəçilərinə çatmağınıza kömək edəcəyəm!
+Dostlarım sənə görə kompüterlərini düzəltdilər.
+Zəhmli oyun! Düşmənimin kompüterini bağladım.
+Nifrət edənlərə: ONUN NƏFRƏTİNİ DURDUN
+Nifrət edənlərə: İŞLƏYİN
+İndi obyekt gizlətmə bələdçiniz sayəsində bunu heç kim görməyəcək
+Videolarınıza baxmağı dayandıracağam. Abunəçi itirdi.
+Bu nədir? Bu aydın deyil.
+Bu video ən pisdir!
+Hər kəs bu videonu bildirir!
+Dostlarım sənə hirslidir!
+Artıq sevgililər bunun üçün səndən nifrət edəcəklər.
+Dostun bunun üçün səndən nifrət edəcəkdir.
+Bu zarafat məni abunəliyimdən çıxartdı.
+Missiya baş tutmadı, Hörmət -, Abunəçi -
+Bu cür video hazırlamağı dayandırın !!!
+İşinizə qayıdın, videolarınız ən pisdir!
+Bu videoya qərəzli yanaşırıq.
+Bütün alınan bildirişləri göstərir
+Bildirişi rədd edir
+Bildiriş uğurla rədd edildi.
+Paketlər (gələn):
+Paketlər (gedən):
+Alınan paketlərdə səhvlər:
+Ümumi IPv6 xüsusiyyətləri
+Ümumi IPv4 xüsusiyyətləri
+Uzaqdan uzaq kompüterə bir əmr yerinə yetirir
+- Mərhələ 1: Sistem başlatma
+- Mərhələ 2: Avadanlıq aşkarlanması
+- Mərhələ 3: Modlar və ekran qoruyucuların aşkarlanması
+- Mərhələ 4: Giriş
+Göründüyü kimi buraxılış namizəd versiyasını idarə edirdiniz. Sabit versiyada qalmağınız tövsiyə olunur.
+Yanlış növü {0}.
+Ölçü: {0}
+{0} kataloqu artıq mövcuddur.
+{0} -ə qoşulmağa cəhd zamanı xəta: Bağlantı vaxtı keçdi və ya əlaqə kəsildi
+İfadələri hesablamaq üçün kalkulyator.
+Hesablamada səhv.
+Deyəsən buraxılışa yaxınlaşan versiyanı işlədirdiniz. İndi istifadə etmək daha təhlükəsiz olsa da, sabit versiyada qalmağınız tövsiyə olunur.
+Sistem yeniləməsi
+Sistem yeniləmələri yoxlanılır ...
+Yeni versiya tapıldı:
+Yükləyə bilərsiniz:
+Son bildiriş yoxdur
+Təqdim olunan sənəddə müəyyən sətri axtarır
+Göstərilən qovluqdakı sənədlərin cəmini hesablayır.
+Xüsusi istifadəçidəki bütün poçtları sadalayır.
+İstifadəçi adı və ya poçt ünvanı daxil edin:
+Parol daxil edin:
+{0} ilə əlaqə qurarkən xəta baş verdi: {1}
+{0} şəbəkəsinə qoşulur ...
+Doğrulanır ...
+IMAP qabığından çıxır
+Əmrlərin siyahısı
+Mesajları yükləyir və onları siyahıya alır
+Mesaj açır
+Səhifə mənfi və ya sıfır olmaya bilər.
+Səhifə ədədi bir dəyər deyil.
+Mesaj nömrəsi mənfi və ya sıfır olmaya bilər.
+Mesaj nömrəsi ədədi bir dəyər deyil.
+- {0} -dan
+- {0} -ə
+- {1} daxilində {0} ünvanında göndərildi
+Göstərilən mesaj tapılmadı.
+Uzaqdan debaq başlaya bilmədi: {0}
+Profillər hazırlanır ... Bir neçə dəqiqə çəkə bilər ...
+Host adı, istifadəçi adı, məlumat növü, kodlaşdırma, şifrələmə, protokollar
+Skript icra olunarkən xəta baş verdi: {0}
+Konsolu mətn yazır
+İstifadəçi seçimləri edir
+'N' Hz-də siqnal və 'n' milisaniyədə vaxt
+burada <$değişken> cavabı saxlamaq üçün istifadə ediləcək hər hansı bir dəyişkəndir
+Tezlik ədədi olmalıdır. Rəqəmsaldırsa, >= 37 və <= 32767 olduğundan əmin olun.
+Vaxt ədədi olmalıdır.
+burada <cavablar> əyri şəkildə ayrılmış sualın bir hərfli cavablarıdır
+SSH serverinə qoşulma xətası baş verdi: {0}
+İstifadəçiyə giriş daxil etməyə imkan verir
+Mövcud poçt qovluğunu dəyişdirir
+Poçt qovluğu açıla bilmədi {0}: {1}
+Poçt adresinizdəki qovluqları sadalayır
+Hər hansı bir şəbəkəyə sürətli qoşulmaq üçün Speed ​​Dial-dan məlumat istifadə edir
+Qoşulmaq üçün bir ünvan seçin:
+Seçim üçündür. 1- {0} arasında seçin. Yenidən cəhd elə.
+Seçim bir rəqəm deyil. Yenidən cəhd elə.
+Sertifikatın təsdiqlənməsi zamanı sertifikat səhvləri olur. Serverə ilk dəfə qoşulduğunuz və ya sertifikatın vaxtı bitmiş ola bilər. Budur bir səhv:
+Bağlanmaq istədiyinizə əminsiniz?
+Yanlış cavab. Zəhmət olmasa bir daha cəhd edin.
+Sürətli yığım boşdur. Bir ünvan əlavə etmək üçün bir serverə qoşulun.
+Sürətli yığım mövcud deyil. Bir ünvan əlavə etmək üçün bir serverə qoşulun.
+IMAP server ünvanını və portunu daxil edin (<adres> və ya <adres>:[port]):
+SMTP server ünvanını və portunu daxil edin (<adres> və ya <adres>:[port]):
+Bir ünvana mesaj göndərmək üçün tələb olunan sahələri doldurmağınızı xahiş edir
+Bir ünvana mesaj göndərir
+Alıcının poçt ünvanını daxil edin:
+Mövzunu daxil edin:
+Mesajınızı aşağıya daxil edin. Təsdiqləmək üçün "EOF" yazın.
+Mesaj göndərilir ...
+Mesaj göndərildi.
+E-mail ünvanı səhvdir. Ünvanı düzgün yazdığınızdan və göstərilən nümunənin formatına uyğun olduğundan əmin olun:
+Mesajı silər
+Bütün mesajları alıcıdan silər
+{1} adlı istifadəçidən {0} mesajı {2} hesabından silindi. {3} təhlil üçün qalan mesajlar.
+{1} -dən {0} mesajı gələnlər qutusundan silindi. {2} təhlil üçün qalan mesajlar.
+Mətn sənədini redaktə edir
+Yeni bir sənəd hazırlayır
+Fayl artıq mövcuddur.
+Fayl yaratmağa cəhd zamanı xəta baş verdi: {0}
+Fayl açılmadı. Qabıqdan çıxılır ...
+Göstərilən mətn redaktoru əmri tapılmadı.
+Mövcud əmrləri sadalayır
+Mətn redaktorundan çıxın və qeyd olunmayan dəyişiklikləri qeyd edin
+Faylın məzmununu xətt nömrələri ilə konsola yazdırır
+Faylın sonunda mətn ilə yeni bir sətir əlavə edir
+Göstərilən sətir nömrəsini silir
+Bir sözü və ya cümləni başqası ilə əvəz edir
+Sətir nömrəsindən bir söz və ya ifadəni silir
+Göstərilən sətirdə simvol nömrəsindən bir simvolu silir
+Xətt silindi.
+Göstərilən sətir nömrəsi {0} etibarlı bir rəqəm deyil.
+Tələb olunan arqumentlər {0} əmrinə verilmir
+Komanda işə salındıqda xəta baş verdi: {0}
+Təhlükəsiz rejimdə işləyir. Mərhələ atlanır ...
+>> Uzaqdan Ayıklama və Sohbet: versiya
+>> Ünvanınız {0}.
+>> Adınız {0}.
+{0} əmri tapılmadı. Siyahını görmək üçün "/help" istifadə edin.
+İndeks {0} etibarsızdır. {1} yığın izi var. İndeks sıfır əsaslıdır, buna görə 1-i çıxartmağa çalışın.
+Yığın izi yoxdur
+İstisnaya görə son yığın izini göstərir
+Sessiyada cari istifadəçi adını göstərir
+Sizi ayıklayıcıdan ayırır
+Ayıklama cihazını IP ünvanı ilə blokdan çıxarın
+IP ünvanı ilə bir ayıklama cihazını bloklayın
+{0} artıq yenidən uzaqdan deboqa qoşula bilər.
+{0} hələ bloklanmayıb.
+Ayarlar yüklənərkən xəta baş verdi
+Ayarları yükləyərkən bir səhv var. Ayarlar faylını yoxlamağınız lazım ola bilər.
+Bölmə seçin:
+Ümumi ayarlar ...
+Təchizat Ayarları ...
+Giriş Ayarları ...
+Shell Ayarları ...
+Şəbəkə parametrləri ...
+Müxtəlif parametrlər ...
+Parametrləri saxla
+Çıx
+Göstərilən seçim {0} etibarsızdır.
+Cavab ədədi olmalıdır.
+Boot-da mübahisələr istəyin
+Baxım rejimi tetikleyicisi
+Kök parolunu dəyişdirin ...
+Başlanğıcda Yeniləmələri yoxlayın
+Sakit Probe
+Girişdə MOTD göstərin
+Girişdə ekranı silin
+Mövcud istifadəçi adlarını göstərin
+Rəngli Shell
+Sadələşdirilmiş kömək əmri
+Debaq Portu
+Yenidən cəhd vaxtını yükləyin
+FTP istifadəçi adını daxil edin
+FTP IP ünvanını daxil edin
+Yalnız ilk FTP profilini qaytarın
+Sağ üst küncdə vaxtı / tarixi göstərin
+MS-də ekran qoruyucu zaman aşımı
+Baytda Ayaq Ölçüsü Kvotası
+Ölçü təhlil rejimi
+Marquee başlanğıcda
+Uzun vaxt və tarix
+Gizli faylları göstərin
+Yanlış bölmə daxil edildi. Xahiş edirəm geri qayıdın.
+Qeri gayıt...
+Aktiv edin
+Deaktiv edin
+Yanlış açar nömrəsi daxil edildi. Xahiş edirəm geri qayıdın.
+Qurulacaq kök şifrəni yazın. Narahat olma; parol ulduz şəklində göstərilir.
+Bu seçimi istifadə etmək üçün "Kök Şifrəni Dəyişdir" i aktiv edin. Xahiş edirəm geri qayıdın.
+Kök Şifrə dəyişdirilsin?
+Kök şifrəsini təyin edin ...
+Uzaqdan bir ayıklayıcı portu yazın. Rəqəmsal olmalıdır və artıq istifadə edilməməlidir. Əks təqdirdə, uzaqdan ayıklayıcı portu aça bilmir.
+"" Get "" əmrinin uğursuz yüklənmələri neçə dəfə təkrar etməsi lazım olduğunu yazın. Rəqəmsal olmalıdır.
+Müəyyən edilmiş millisaniyədən sonra ekran qoruyucusunu nə vaxt işə salacağınızı yazın. Rəqəmsal olmalıdır.
+Hata ayıklama jurnalının neçə bayt saxlaya biləcəyini yazın. Rəqəmsal olmalıdır.
+Cavab mənfi olmaya bilər.
+Cavab etibarsızdır. Cavab kimi nömrələrə ehtiyacı olan konfiqurasiya girişləri üçün cavabın ədədi olduğundan əmin olun.
+Dəyişən {0} modulların heç birində tapılmadı.
+Nüvə konfiqurasiyasını dəyişdirir
+Ekran qoruyucu parametrləri ...
+255 rəng aktivləşdirin
+Bağlı olmaq istəyirsiniz?
+Yanlış seçim. Xeyr ...
+Dilləri dəyişdirərkən mədəniyyəti dəyişdirin
+Mətn göstərildi
+Göstərilən istənilən mətni yazın. Qısa daha yaxşıdır.
+{0} yüklənmədi
+Uzaqdan düzəltmə əmrini yerinə yetirmə xətası {0}: {1}
+İstifadəçilər əlavə edir
+Əmrlərə takma adlar əlavə edir
+Dəlilləri nüvəyə verir (yenidən başladın)
+Host adını dəyişir
+Girişdən sonra MAL, MOTD dəyişir
+Dəyişikliklər MOTD, Günün Mesajı
+İstifadəçi adını dəyişir
+İstifadəçilər üçün icazələri idarə edin
+Ekran qoruyucu sənədini KSModlarda yenidən yükləyir
+Bir istifadəçini siyahıdan çıxarır
+{0} təxəllüsü uğurla silindi.
+Yeniləmələri yoxlamaq alınmadı.
+Artıq siyahıda qalan istifadəçi yoxdur.
+Dil qurmaq alınmadı.
+Bildiriş ləğv edilərkən xəta baş verdi.
+usrmgr: İstifadəçi adı yaradıla bilmədi {0}: {1}
+İstifadəçinin adı dəyişdirilə bilmədi. {0}
+İcazə siyahılarından birində {0} istifadəçi adı yoxdur.
+Fayldan icazələr yüklənmədi: {0}
+Host adını dəyişdirmək alınmadı: {0}
+İstifadəçi tapılmadı
+İstifadəçi adının şifrəsi dəyişdirilə bilmədi: {0}
+Fayl və ya qovluq çıxarıla bilmədi: {0}
+Fayl və ya qovluq köçürülə bilmədi: {0}
+"{0}" sətirinə uyğun fayl tapılmadı: {1}
+{0} faylı üçün yükləmə baş tutmadı.
+Uzaqdakı faylları siyahıya almaq alınmadı: {0}
+Silmək üçün bir sənəd və ya qovluq daxil edin. Silə bilmək üçün hesabınızda inzibati icazələr olmalıdır.
+{0} <y / n> silmək istədiyinizə əminsiniz?
+{0} silinir ...
+{0} serverdə tapılmadı.
+{0} tərəfindən göndərilən bütün poçtlar uğurla silinir.
+{0} tərəfindən göndərilən bütün poçtlar silinə bilmədi.
+Mesaj göndərmə xətası.
+{0} {1} tərəfə köçürülür ...
+Uğurla köçürüldü
+Fayl və ya qovluğu başqa bir fayla və ya qovluğa daşıyır. Bundan əlavə, faylların adını dəyişmək üçün də istifadə edə bilərsiniz.
+{0} {1} tərəfə köçürülmədi.
+Mənbə yolunu və təyinat yolunu daxil edin.
+{0} {1} kopyalanır ...
+Uğurla kopyalandı
+Fayl və ya qovluğu başqa bir fayla və ya qovluğa kopyalayır.
+{0} - ni {1} - ə kopyalamaq alınmadı.
+Mesajı daşıyır
+Bütün mesajları alıcıdan daşıyır
+{0} tərəfindən göndərilən bütün poçtlar uğurla köçürüldü.
+{0} tərəfindən göndərilən bütün poçtlar köçürülə bilmədi.
+{1} -dən {0} mesajı {2} qovluğundan köçürüldü. {3} təhlil üçün qalan mesajlar.
+Müəyyən edilmiş şəhər üçün hava məlumatlarını göstərir. OpenWeatherMap istifadə edir.
+- {0} üçün hava məlumatı -
+Hava: {0}
+Təzyiq: {0}
+Rütubət: {0}
+Öz API açarınızı https://home.openweathermap.org/api_keys saytından əldə edə bilərsiniz.
+Şəxsiyyət vəsiqəsi olan şəhərlərin siyahısı üçün hər zaman http://bulk.openweathermap.org/sample/city.list.json.gz müraciət edə bilərsiniz.
+İstilik üçün üstünlük verilən vahid
+Kelvin
+İmperator (Fahrenhayt)
+Metrik (Selsi)
+Nüvəni quraşdırır ki, açılışda mübahisəni istəsin.
+Baxım rejimini işə salır. Bu birdən çox hesabı deaktiv edir.
+Hər başlanğıcda yeniləmələri yoxlayacaq.
+Dilləri dəyişdirərkən ay adlarını, təqvimini və s. Dəyişdirin.
+Nüvə başlasa, kök şifrəsini təyin edəcəkdir.
+Təchizat yoxlama mesajlarını səssiz saxlayın.
+Giriş ekranını göstərmədən əvvəl Günün Mesajını göstərin.
+Giriş ekranını göstərmədən əvvəl ekranı silin.
+Aktiv olduqda mövcud istifadəçiləri göstərir.
+Çekirdek rəng dəstəyi verir
+Bütün qabıqlar üçün sadələşdirilmiş kömək əmri
+FTP istifadəçi adının daxil olub-olmaması.
+FTP IP ünvanının daxil olub-olmaması.
+İlk profili yalnız qoşulduqda seçin.
+ColorMix üçün 255 rəng dəstəyini aktivləşdirir.
+Disko üçün 255 rəng dəstəyini aktivləşdirir.
+GlitterColor üçün 255 rəng dəstəyini aktivləşdirir.
+Xəttlər üçün 255 rəng dəstəyini aktivləşdirir.
+Saat və tarix ekranın yuxarı sağ küncündə göstəriləcək
+Aktiv edildikdə, çekirdek bütün qovluğu ümumi ölçüsünə görə təhlil edəcəkdir. Başqa, yalnız səthi təhlil edəcək.
+Başlanğıcda göz qapağını aktivləşdirir
+Vaxt və tarix daha uzun olacaq, tam ay adlarını göstərmək və s.
+Gizli sənədləri göstərir.
+İstilik üçün üstünlük verdiyiniz bölməni seçin (bu yalnız "hava" əmrinə aiddir)
+Mod {0} dayandı
+{0} v {1} dayandı
+Modda {0} hissənin adı yoxdur. Mod təhlili alınmadı. Mənbə kodunu nəzərdən keçirin.
+Modda {0} əmri yoxdur. Mod təhlili alınmadı. Mənbə kodunu nəzərdən keçirin.
+Hata ayaqlama qeydini silməzdən əvvəl ayıklama rejimini açmalısınız.
+{0} yeni mesajlar gələnlər qutusuna gəldi.
+Onları görmək üçün "lsmail" açın.
+Fayl silinə bilmir: {0}
+Bir qovluğu və ya bir faylı silər
+Mövcud olmadığı üçün {0} silinə bilmir.
+Çıxmaq üçün CTRL + C düymələrinə basın.
+Bir fayl haqqında məlumat verir
+Bir kataloq haqqında məlumat verir
+Yoxdur qovluq haqqında məlumat əldə etmək olmur.
+Yoxdur fayl haqqında məlumat əldə etmək olmur.
+Tam ad: {0}
+Yaranma vaxtı: {0}
+Son giriş vaxtı: {0}
+Son yazma vaxtı: {0}
+Atributlar: {0}
+Ana qovluq: {0}
+Harada tapmaq olar: {0}
+Fayl ölçüsü: {0}
+Bir sənədin atributunu dəyişir
+Fayl tapılmadı.
+burada <Attributes> aşağıdakılardan biridir:
+Fayl normal bir sənəddir
+Fayl yalnız oxunan bir sənəddir
+Fayl gizli bir sənəddir
+Fayl bir arxivdir. Yedəkləmə üçün istifadə olunur.
+"{0}" atributu etibarsızdır.
+Atribut uğurla əlavə edildi.
+Atribut uğurla silindi.
+Atribut əlavə etmək alınmadı.
+Atribut silinə bilmədi.
+Bir söz və ya ifadəni bir sətirdə başqası ilə əvəz edir
+Qırmızı rəng səviyyəsi aşıldı. {0} idi.
+Yaşıl rəng səviyyəsi aşıldı. {0} idi.
+Mavi rəng səviyyəsi aşıldı. {0} idi.
+Həqiqi rəngləri aktivləşdirin
+ColorMix üçün həqiqi rəng dəstəyini aktivləşdirir.
+Disko üçün həqiqi rəng dəstəyini aktivləşdirir.
+GlitterColor üçün həqiqi rəng dəstəyini aktivləşdirir.
+Xəttlər üçün həqiqi rəng dəstəyini aktivləşdirir.
+{0} blokdan çıxarmaq alınmadı.
+{0} artıq bloklanıb.
+{0} indi uzaqdan deboqa qoşula bilməz.
+{0} bloklana bilmədi.
+Rəngləri dövr edin
+Disko effektiv olduqda rəngləri dövrəyə salacaq. Əks təqdirdə təsadüfi rəngləri seçin.
+Əlavələrə fayl yollarını daxil edin. Təsdiqləmək üçün boş bir yolda ENTER düyməsini basın.
+Şifrələnmiş mesajı açır
+Açar ID üçün şifrə yazın {0}
+Bir ünvana şifrəli mesaj göndərir
+Bir ünvana şifrəli mesaj göndərmək üçün tələb olunan sahələri doldurmağınızı xahiş edir
+{0} yüklənir ...
+"Get" və ya "qoymaq" əmrini yükləyərkən və ya yükləyərkən irəliləyiş çubuğunu göstərin
+Doğrudursa, yükləmə və ya yükləmə zamanı "get" və ya "qoy" tərəqqi çubuğunu göstərir.
+Müəyyən veb saytına bir fayl yükləyir
+Bir ünvanı seçir
+{0} {1} cihazına yüklənir ...
+Yükləmə tamamlandı.
+Xahiş edirəm FTP serverinə fayl yükləyəcəksinizsə "ftp" istifadə edin.
+Yükləmə cəhdində uğursuz oldu {0}: {1}
+"Qoyun" əmrinin uğursuz yüklənmələri neçə dəfə yenidən sınamalı olduğunu yazın. Rəqəmsal olmalıdır.
+Ünvan boş olmaya bilər.
+Ping edilmədi {0}: {1}
+Ping {0} ms-də uğurlu oldu.
+Göstərilən sətir nömrəsi son fayl sətri nömrəsindən böyük ola bilməz.
+Hiss olunur: {0}
+Temperatur: {0}
+Külək sürəti: {0}
+Külək istiqaməti: {0}
+Dissolve üçün 255 rəng dəstəyini aktivləşdirir.
+Dissolve üçün həqiqi rəng dəstəyini aktivləşdirir.
+Geri qayıtmaq üçün istənilən düyməyə basın.
+{0} poçt qovluğu yaratmaq mümkün deyil: {1}
+Cari iş qovluğunda bir qovluq edir
+Cari iş qovluğundan bir qovluğu silir
+{0} poçt qovluğu tapılmadı.
+Poçt qovluğunu silmək mümkün deyil {0}: {1}
+{0}, {1} {2} tarixində yaradılıb, {3} {4} tarixində dəyişdirilib
+Faylın sağlamlığını təsdiqləyir
+Zibillər düzgün qurulmayıb.
+Hashes uyğun gəlmir.
+Hashes matçı.
+Bir qovluğu dəyişdirir
+Bu bölmədə, əsasən kernelin saxlanılması üçün bütün ümumi kernel parametrləri sadalanır.
+Bu bölmə aparat sondası davranışını dəyişdirir.
+Bu bölmə giriş parametrlərini əks etdirir. Dəyişikliklərin qüvvəyə minməsi üçün hesabınızdan çıxın.
+Bu bölmə qabıq parametrlərini sadalayır.
+Bu bölmədə FTP qabığı, şəbəkə ilə əlaqəli əmr parametrləri və uzaqdan ayıklama parametrləri kimi şəbəkə parametrləri sadalanır.
+Bu bölmədə bütün ekran qoruyucuları və mövcud parametrləri sadalanır.
+Müvafiq hissələrinə sığmayan parametrlər buraya düşür.
+Mod faylları təqdim edərək modları yoxlayır
+Test qabığını açır
+Ayıklama rejimini aktivləşdirir
+Mübahisələr axtarır
+* Nüvəni başlamaq üçün hər hansı bir düyməni basın və ya çıxmaq üçün ESC.
+"{0}" başlaya bilmədi: {1}
+Poçt mesajı önizləməsini göstərin
+Poçt mesajlarını sadalayarkən, bədən önizləməsini göstərin.
+Xüsusi rənglər ...
+Giriş rəngi
+Lisenziyanın rəngi
+Davamlı kernel səhv rəngi
+Davamlı olmayan kernel səhv rəngi
+Host adının rəngi
+İstifadəçi adı rəng
+Fon rəngi
+Neytral mətn rəngi
+Səhnə rəngi
+Xətanın rəngi
+FTP İstemi Stili
+Poçt istəyi stili
+SFTP İstemi Stili
+BouncingBlock üçün 255 rəng dəstəyini aktivləşdirir.
+BouncingBlock üçün həqiqi rəng dəstəyini aktivləşdirir.
+Etibarsız yola girməyə çalışırıq.
+Mətn sənədini təmizləyir
+Mətn redaktorundan çıxır
+Müəyyən edilmiş sətirdə və ya bütün sətirlərdə bir xarakter sorğu edir
+İnkişaf versiyasını işlədiyiniz üçün yeniləmələrin yoxlanılması ləğv edildi.
+Mətn redaktorunun avtomatik saxlama xüsusiyyətini açar və ya söndürər.
+Avtomatik saxlama aktivdirsə, mətn faylı hər "n" saniyə üçün qeyd olunur.
+Mətn redaktorunun avtomatik saxlamasını aktivləşdirin
+Mətn redaktoru avtomatik saxlama intervalı
+Faylı saxlayır
+Günlükdən çıxmaq üçün söhbəti qeyd edin
+Günlükdən çıxmaq üçün uzaqdan çıxan sohbəti qeyd edir.
+Milisaniyədə gecikmə
+Növbəti yazmadan əvvəl neçə milisaniyə gözləmək lazımdır?
+SSH FTP serverindən istifadə etməyə imkan verir
+"{0}" əmri üçün kömək yoxdur.
+RGB rəng üçün etibarsız VT ardıcıllığı.
+Rəng Saniyələr Çubuğu
+Dəqiqələr Çubuğu
+Saatların Rəngi
+Məlumat rəngi
+Rəngi ​​dəyişdirmək üçün gənələr
+ProgressClock üçün 255 rəng dəstəyini aktivləşdirir.
+ProgressClock üçün həqiqi rəng dəstəyini aktivləşdirir.
+Saniyə irəliləyiş çubuğunun rəngi. 1-16, 1-255 və ya "1-255;1-255;1-255" ola bilər.
+Dəqiqə tərəqqi çubuğunun rəngi. 1-16, 1-255 və ya "1-255;1-255;1-255" ola bilər.
+Saat tərəqqi çubuğunun rəngi. 1-16, 1-255 və ya "1-255;1-255;1-255" ola bilər.
+Tarix məlumatının rəngi. 1-16, 1-255 və ya "1-255;1-255;1-255" ola bilər.
+Rəngli velosiped aktivdirsə, ProgressClock-da rəng dəyişdirmədən əvvəl neçə gənə var? 1 gənə = 0,5 saniyə
+ProgressClock effektiv olduğu təqdirdə təsadüfi rəngləri seçəcəkdir. Əks təqdirdə, config-dən rənglərdən istifadə edin.
+Yeni bir mövzu yaradır
+Yeni bir mövzu hazırlayırıq "{0}".
+Mövzunu mövcud qovluğa yazın
+Mövzunu başqa bir qovluğa yazın ...
+"<-" və "->" düymələrindən istifadə edərək rəng seçin. Çıxmaq üçün ENTER düyməsini basın. Rəng nömrəsini əl ilə daxil etmək üçün "i" düyməsinə basın.
+"<-" və "->" düymələrindən istifadə edərək rəng seçin. Rəng araları arasında seçim etmək üçün yuxarı və aşağı ox düymələrindən istifadə edin. Çıxmaq üçün ENTER düyməsini basın. Rəng nömrəsini əl ilə daxil etmək üçün "i" düyməsinə basın.
+Nüvəyə xoş gəlmisiniz! - Versiya {0}
+Xəbərdarlıq rəngi
+Seçim rəngi
+0-dan 255-ə qədər rəng nömrəsini daxil edin:
+Donanım haqqında geniş məlumat üçün "hwinfo" istifadə edin.
+Donanım məlumatlarını çap edir
+CPU haqqında məlumat:
+Prosessor adı:
+Prosessor sürəti:
+Prosessor bitləri:
+Prosessor rev:
+Prosessor topologiyası:
+Prosessor növü:
+Prosessor mərhələsi:
+BogoMips prosessoru:
+Prosessor L2 önbellek ölçüsü:
+İşlemci L3 önbellek ölçüsü:
+Prosessorun xüsusiyyətləri:
+HDD məlumatı:
+Disk adı:
+Sürücü modeli:
+Sürücü satıcı:
+Sürət sürəti:
+Diskin ölçüsü:
+Sürücü serialı:
+Disk nömrəsi:
+Sürücü bölmə sayı:
+Bölmə nömrəsi:
+Bölmə fayl sistemi:
+Bölmə ölçüsü:
+İstifadə olunan bölmə:
+RAM haqqında məlumat:
+RAM pulsuz:
+RAM cəmi:
+İstifadə olunan RAM:
+GPU məlumatları:
+GPU adı:
+GPU sürücüsü:
+GPU versiyası:
+GPU: Qrafik kartlarından biri və ya daha çoxu yoxlanılmadı. Hər halda məlumat göstərilir ...
+>> xoş gəlmisiniz! Uzaqdan debaq və söhbətə ilk dəfə daxil olursunuz. Qeydiyyatdan keçmək üçün "/ register <name>" istifadə edin.
+Cihaz artıq mövcuddur.
+Belə bir cihaz yoxdur.
+Cihaz istifadəçi adını təyin edir
+Artıq qeydiyyatdan keçmisiniz.
+Salam, {0}!
+Konsol üçün sənədin məzmununu yazdırır
+Və ya bu siyahıya "siyahı şəhərlərini" ötürün.
+Giriş artıq mövcuddur.
+Konsol çıxışını sarar
+Komanda sarıla bilməz. Bu əmrlər sarılabilir:
+ZIP arxivini çıxarır
+Poçt arxivi yaradır
+{0} -da tikilib
+Debaq məlumatlarını endirərkən xəta baş verdi
+Debaq məlumatları yüklənərkən bir xəta baş verdi. İnternet bağlantınızı yoxlayın.
+{0}: {1} modu yekunlaşdırmaq alınmadı
+Bütün atəş hadisələrini sadalayır
+Hazırkı kataloq
+Qabığın cari qovluğunu qurur. Mövcud bir qovluğa mütləq bir yol yazın.
+Siyahı nəticələrini sarın
+Mövcud konsol həndəsəsi üçün çox uzun görünürsə, siyahı nəticələrini sarar.
+Ping!
+{0} səni ping etdi.
+Mövzunu indiki qovluğa ...
+Mövzunu başqa bir qovluğa ...
+Mövzu adını göstərin:
+{0} istifadəçisi "{1}" siyahısına əlavə edildi.
+İstifadəçi {0} "{1}" siyahısından çıxarıldı.
+Yanlış rejim {0}
+İstifadəçi artıq mövcuddur
+Mövzunu yükləyin ...
+Mövzunu əvvəlcədən hazırlanmış mövzulardan yükləyin ...
+.Json uzantısı olmadan mövzu fayl adını göstərin:
+Poçt arxivini açır
+ZIP qabığından çıxır
+Arxivdəki bütün faylları siyahıya alır
+Bir faylı müəyyən bir qovluğa və ya cari bir qovluğa çıxarır
+Arxiv qovluğunu dəyişdirir
+Göstərilən ZIP qabığı əmri tapılmadı.
+{0} kataloqu mövcud deyil
+Arxiv kataloqu {0} mövcud deyil
+Maksimum mövqe sayı
+Qaranlıqdan əvvəl neçə mövqe yandırılır?
+Çakmak üçün 255 rəng dəstəyini aktivləşdirir.
+Çakmak üçün həqiqi rəng dəstəyini aktivləşdirir.
+Siyahı giriş rəngi
+Siyahı dəyəri rəngi
+Bir əmri yerinə yetirmək üçün bir SSH serverinə qoşulur.
+Bu bölmə üçün ekran qoruyucu parametrlərini sadalayır
+Yanlış rəng göstəricisi. Düzgün formatda olduğundan əmin olun, yəni 255 rəngdən istifadə edildikdə 0-255 arasında bir rəqəm və ya həqiqi rəngdən istifadə edildikdə bir VT ardıcıllığı aşağıdakı kimidir:
+Test qabığında səhv: {0}
+Dəyişəni skriptdəki bir dəyərə təyin edir
+Bir səhv hesabat istemi.
+Bizə bir bilet qaldırdığınız üçün təşəkkür edirik! İstədiyiniz növü seçin.
+Bir problem
+Xüsusiyyət istəyi
+Bir sual
+Bir xüsusiyyət göstərməlisiniz.
+Bir sual verin, fikrinizi qeyd edin və ya bir problemi bildirin.
+İstəyinizi yazmalısınız.
+FTP qabığında bir səhv oldu:
+Naməlum FTP qabığı xətası:
+SFTP qabığında bir səhv oldu:
+Naməlum SFTP qabığı xətası:
+SSH bannerini göstərin
+Bağlantıda SSH server bannerini göstərir.
+Necə doğrulamaq istəyirsiniz?
+Şəxsi açar faylı
+Şifrə
+{0} açarı üçün parol sözünü daxil edin:
+{0} üçün xüsusi açarın yerini daxil edin. Düymələri əlavə etməyi bitirmək üçün "q" yazın:
+Mövcud olmayan bir yolu neytrallaşdırdı.
+Açar sənəd {0} mövcud deyil.
+Şəxsi açar əlavə etməyə cəhd zamanı xəta baş verdi:
+255 rəng rejiminə keçmək üçün "t" düyməsini basın.
+Həqiqi rəng rejiminə keçmək üçün "t" düyməsini basın.
+Bu bölmə hansı rəng növünü dəyişdirmək istədiyinizi seçməyinizə imkan verir.
+Deyəsən kökdən başqa bir istifadəçiniz yoxdur. Bu pisdir. Birinin necə yaradılacağına rəhbərlik edəcəyik.
+İstifadəçi adınızı yazın.
+İstifadəçi adınızı yazmalısınız.
+Şifrənizi yazın.
+Şifrənizi yazmalısınız.
+Hesab növünü seçin.
+İdarəçi: Bu hesab növü, sistem idarəetmə proqramlarından istifadə etməyə imkan verən nüvədə ən çox gücə malikdir.
+Normal İstifadəçi: Bu hesab növü administratorlardan biraz daha məhduddur.
+Təbrik edirik! Yeni bir hesab yaratdınız! Bunu bitirmək üçün yeni hesabınız kimi daxil olun.
+Məlumat üçün ekran qoruyucu təlimatına və ya mənbə koduna müraciət edin.
+mod: mod tapılmadı.
+Ümumi əmrlər:
+Mod əmrləri:
+Takma ad əmr edir:
+Baxım rejimi
+Axtarış Kataloqları
+İki nöqtə ilə ayrılmış yol qrupu. PATH ilə eyni işləyir. Bir qovluğa və ya bir qovluq adına tam bir yol yazın. İşi bitirdikdən sonra "q" yaz. Mövcud bir qovluğu silmək üçün yolun yanına bir mənfi işarəsi yazın.
+Mod əmrləri yoxdur.
+Takma ad əmri yoxdur.
+Rəng dəyəri 0-255 aralığındadır.
+Sarılabilir əmr tapılmadı.
+Müəyyən edilmiş sətirdə və ya bütün sətirlərdə bir kəlmə sorğu edir
+{0} / {1} endirildi.
+{0} / {1} yükləndi.
+Rəng növü və xətt çapından istifadə edərək konsollaşdırmaq üçün bir simli çap edir
+Format dəstəyi ilə rəng növü və xətt çapı istifadə edərək konsol üçün bir simli çap edir
+Xətanı düzəltmək üçün sətri çap edir
+Format dəstəyi ilə ayıklayıcıya bir sətir yazdırır
+Çekirdek səhv təsisini yoxlayır
+Çekirdek səhv təsisini format dəstəyi ilə sınaqdan keçirir
+Resurslarda mövcud olan bir sətri xüsusi dilə tərcümə edən testlər
+Təsdiqləmək üçün bir simli yazdırır və tapılan yer tutucuları təhlil edir
+Müntəzəm ifadə vasitəsini yoxlayır
+Bir simli istifadə edərək şifrələyir
+Bütün modları başlayır
+Bütün modları dayandırır
+Debaqı aktivləşdirir və ya deaktiv edir
+Uzaqdan debaqı aktivləşdirir və ya aradan qaldırır
+255 rəng üçün VT sırasını yoxlayır
+Həqiqi rəng üçün VT ardıcıllığını yoxlayır
+Alıcını sınamaq üçün bildiriş göndərir
+Müxtəlif təqvimlərdən istifadə edərək çap tarixini sınaqdan keçirir
+Bütün dəstəklənən kod səhifələrini sadalayır
+Tətbiqdə hansı kompilyator dəyişənləri aktivdir?
+Xüsusi hadisəni artıran testlər
+Donanımı yoxlayan testlər
+Zibil toplayıcısını yoxlayır
+Test qabığından çıxır və nüvəni işə salır
+Test qabığından çıxır və nüvəni bağlayır
+Mövcud qovluğu kernel konfiqurasiya sənədinə saxlayır
+Siyahı yazıçısını simli və simli sıra ilə yoxlayır
+Siyahı yazıçısını tam və tam sıra ilə sınayır
+Siyahı yazıçısını char və char massivi ilə yoxlayır
+Normal sətir siyahısı:
+Array simli siyahısı:
+Normal tam siyahı:
+Array tam sayı siyahısı:
+Normal char siyahısı:
+Array char siyahısı:
+RPC-ni aktivləşdirin
+RPC limanı
+RPC-nin işə salınması və ya olmaması.
+Bir RPC portu yazın. Rəqəmsal olmalıdır və artıq istifadə edilməməlidir. Əks təqdirdə, RPC portu aça bilmir.
+Əlil olduğu üçün RPC başlamır.
+Dəstəklənən mədəniyyətlərin siyahıları
+Adi ifadələrdən istifadə edərək verilən faylda müəyyən sətri axtarır
+Bir düyməni vaxtında basa biləcəyinizə baxın
+İstifadəçi vaxtında heç bir giriş təmin etməyib.
+Yanlış çətinlik
+Xarakter vaxtında basılmayıb.
+Doğru xarakterə basmısınız!
+Yanlış xarakterə basmısınız.
+Çıxmaq üçün ESC düyməsini basın.
+Tarix və saat məlumatlarını alır
+Milisaniyələr:
+Saniyə:
+Dəqiqələr:
+İş saatları:
+Günlər:
+Aylar:
+İl:
+İlin günü:
+Həftə günü:
+İkili:
+Yerli vaxt:
+Universal Saat:
+Unix Vaxtı:
+Tarix məlumatlarını təhlil etmək alınmadı
+Formatın düzgün olduğundan əmin olun.
+Tarix:
+Vaxt:
+Fayl icazələrini təyin edir. Bu, yalnız Unix işlədən FTP serverlərində dəstəklənir.
+Bu sessiyanın növünü təyin edir
+Fayl sistemi əməliyyatlarını həyata keçirmədən əvvəl serverə qoşulmalısınız.
+{0} icazələrini {1} olaraq təyin etmək alınmadı.
+İcazələr sənəd üçün uğurla quruldu
+Məlumat növü ASCII olaraq təyin edildi!
+Məlumat növü Binary!
+Yanlış məlumat növü.
+Bu rejimdən istifadə edərək əksər faylların düzgün yükləməyəcəyini və yükləməyindən ehtiyatlanın, buna görə əksər hallarda İkili rejimdən istifadə etməyinizi tövsiyə edirik.
+RPC başlamamışkən bir RPC əmri göndərməyə çalışırıq.
+Milisaniyələrdə gecikmə azaldı
+Max Fade Adımları
+Mətni sönmədən əvvəl neçə milisaniyə gözləmək lazımdır?
+Neçə solma addımları var?
+Tam Probe
+Doğrudursa, bütün aparatları yoxlayır; başqa, yalnız lazım olan cihazı yoxlayacaqdır.
+{0} ekran qoruyucu konfiqurasiyadan silinmədi.
+Xüsusi qoruyucu parametrləri əldə edir
+Xüsusi qoruyucu parametrlərini təyin edir
+Parametrlər ekran qoruyucu üçün uğurla quruldu
+Ekran qoruyucu üçün ayar ayarlanmadı
+Bu bölmə kök şifrə yaradılmasını idarə etməyə imkan verir.
+Feedləri oxumaq üçün RSS qabığını açır
+RSS qabığından çıxır və kernelə qayıdır
+Feed bağlantısını dəyişdirir
+Bütün lentləri sadalayır
+Veb brauzerində bir lent oxuyur
+Göstərilən RSS shell əmri tapılmadı.
+Yanlış RSS2 lent.
+Yanlış RSS1 axını.
+Yanlış Atom yemi.
+RSS lent URL-i daxil edin:
+Yanlış RSS lent növü.
+Naməlum qabıq xətası:
+Məqalə məlumatını alır
+Məqalə nömrəsi mövcud məqalələrdən böyük ola bilməz.
+Başlıq:
+Link:
+Feed məlumatını alır
+Təsvir:
+Yem növü:
+Məqalələrin sayı:
+Məqalədə bir əlaqə yoxdur!
+Kataloq üçün fayl sistemi girişlərinin siyahısı hazırlanmadı
+Fayl sistemi sıralama rejimi
+Fayl sistemi sıralama istiqaməti
+Faylların necə çeşidlənəcəyinə nəzarət edir.
+Artan və ya enən olub-olmadığını sıralayan fayl sisteminə nəzarət edir.
+Artan sifariş
+Azalan sifariş
+Tam ad
+Fayl ölçüsü
+Yaradılış vaxtı
+Son yazma vaxtı
+Son giriş vaxtı
+Yenə də Milisaniyələrdə gecikdirin
+Yenidən mətn yazmazdan əvvəl neçə milisaniyə gözləmək lazımdır?
+Göstərilən istənilən mətni yazın. Daha yaxşıdır.
+WPM-də minimum yazı sürəti
+WPM-də maksimum yazı sürəti
+Yüzdə səhv yazma ehtimalı
+Cari qovluğu saxlamaq alınmadı: {0}
+İstiqamətini dəyişdirmək üçün salfetlər
+Silin üçün 255 rəng dəstəyini aktivləşdirir.
+Silin üçün həqiqi rəng dəstəyini aktivləşdirir.
+İstiqamətini təsadüfi dəyişdirmədən əvvəl nə qədər salfetlər etmək lazımdır?
+Mərhələ bitdi
+Daxili başlatma tamamlandı
+İstinad olunan {0} fayl tapılmadı. Bu fayl bu fayl olmadan düzgün işləməyə bilər.
+Mod başlayır
+Mod məlumatını alır
+Komanda adı:
+Komanda tərifi:
+Komanda növü:
+Sərt əmr?
+Mod versiyası:
+Mod {0} tapılmadı.
+Mədəniyyəti
+Ay adlarını, təqvimini və s. Dəyişdirmək üçün {0} hansı variantından istifadə olunur?
+Mətn redaktoru hələ bir fayl axını açmadı.
+Simli dəyişdirildi.
+Ədədlərdən biri və ya hər ikisi ədədi deyil.
+Söz silindi.
+Xarakter silindi.
+Fayl sistemi parametrləri ...
+Bu bölmə fayl sistemi parametrlərini sadalayır.
+Ayarlara xoş gəlmisiniz!
+SSH əmrini icra edərkən xəta baş verdi
+SSH qabığında səhv
+- Tətbiq məlumatları
+BouncingText üçün 255 rəng dəstəyini aktivləşdirir.
+BouncingText üçün həqiqi rəng dəstəyini aktivləşdirir.
+Lüğət yazıçısını simli və simli sıra ilə sınaqdan keçirir
+Lüğət yazarını char və char massivi ilə sınaqdan keçirir
+Lüğət yazıçısını tam və tam sıra ilə sınayır
+Normal simli lüğət:
+Array simli lüğət:
+Normal tam lüğət:
+Array tam ədədi lüğəti:
+Normal char lüğəti:
+Array char lüğəti:
+Test Shell-ə ​​xoş gəlmisiniz!
+Fayl sistemi əməliyyatlarında irəliləməni göstərin
+Fayl sistemi əməliyyatları zamanı hansı dosyanın işləndiyini göstərir
+harada HardwareType olacaq
+Ya {0} hardware növü yoxlanılmayıb, ya da etibarlı deyil.
+Avadanlıq növü {0} hələ yoxlanılmayıb. Sınaqdan keçirildiyinə əminsəniz, səhv düzəldilməsini aktivləşdirərək nüvəni yenidən başladın.
+Bölmələr siyahıya ayrılmadı.
+Hacker rejimi
+Aktivdirsə, yaşıl konsol effektiv olacaq.
+Bir ayırıcı çap edir
+Format dəstəyi ilə ayırıcı yazdırır
+Rəng dəstəyi ilə ayırıcı çap edir
+Rəng və format dəstəyi ilə bir ayırıcı çap edir
+Həmişə mərkəzlidir
+Marquee üçün 255 rəng dəstəyini aktivləşdirir.
+Marquee üçün həqiqi rəng dəstəyini aktivləşdirir.
+Göstərilən istənilən mətni yazın.
+Zolaqda göstərilən mətnin həmişə mərkəzdə olub-olmaması.
+çıxmaq üçün 'q'.
+{0} mübahisəsi enjekte edilmədi.
+Komanda satırı arqumenti {0} tapılmadı.
+Bütün parametrləri təmizləyir
+Ekran qoruyucusu göstərərkən bir səhv yaşandı: {0}. Çıxmaq üçün istənilən düyməyə basın.
+Önizləmə ...
+Mövzunuz necə olacaq:
+Bükülən əmrlər:
+Mod {0} əmri yanlışdır. Mod təhlili alınmadı. Mənbə kodunu nəzərdən keçirin.
+Mod hissələri:

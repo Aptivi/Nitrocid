@@ -1,0 +1,17 @@
+{
+    "InputColor": "187;230;126",
+    "LicenseColor": "92;103;115",
+    "ContKernelErrorColor": "255;174;87",
+    "UncontKernelErrorColor": "255;51;51",
+    "HostNameShellColor": "92;207;230",
+    "UserNameShellColor": "255;196;76",
+    "BackgroundColor": "33;39;51",
+    "NeutralTextColor": "217;215;206",
+    "ListEntryColor": "92;207;230",
+    "ListValueColor": "255;196;76",
+    "StageColor": "255;213;127",
+    "ErrorColor": "255;51;51",
+    "WarningColor": "255;174;87",
+    "OptionColor": "149;230;203",
+    "BannerColor": "255;213;127"
+}

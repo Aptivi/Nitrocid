@@ -17,6 +17,10 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports Newtonsoft.Json.Linq
+Imports System.IO
+Imports System.IO.Compression
+Imports Extensification.ArrayExts
+Imports System.Text
 
 Public Module Forecast
 
@@ -96,6 +100,71 @@ Public Module Forecast
         WeatherInfo.WindDirection = WeatherToken.SelectToken("wind").SelectToken("deg").ToObject(GetType(Double))
         WeatherInfo.CityID = WeatherToken.SelectToken("id").ToObject(GetType(Long))
         Return WeatherInfo
+    End Function
+
+    ''' <summary>
+    ''' Prints the weather information to the console
+    ''' </summary>
+    ''' <param name="CityID">City ID or name</param>
+    ''' <param name="APIKey">API Key</param>
+    Public Sub PrintWeatherInfo(ByVal CityID As String, ByVal APIKey As String)
+        Dim WeatherInfo As ForecastInfo
+        Dim WeatherSpecifier As String = "°"
+        Dim WindSpeedSpecifier As String = "m.s"
+        If IsNumeric(CityID) Then
+            WeatherInfo = GetWeatherInfo(CLng(CityID), APIKey, PreferredUnit)
+        Else
+            WeatherInfo = GetWeatherInfo(CityID, APIKey, PreferredUnit)
+        End If
+        Wdbg("I", "City name: {0}, City ID: {1}", WeatherInfo.CityName, WeatherInfo.CityID)
+        W(DoTranslation("-- Weather info for {0} --"), True, ColTypes.Stage, WeatherInfo.CityName)
+        W(DoTranslation("Weather: {0}"), True, ColTypes.Neutral, WeatherInfo.Weather)
+        If WeatherInfo.TemperatureMeasurement = UnitMeasurement.Metric Then
+            WeatherSpecifier += "C"
+        ElseIf WeatherInfo.TemperatureMeasurement = UnitMeasurement.Kelvin Then
+            WeatherSpecifier += "K"
+        ElseIf WeatherInfo.TemperatureMeasurement = UnitMeasurement.Imperial Then
+            WeatherSpecifier += "F"
+            WindSpeedSpecifier = "mph"
+        End If
+        W(DoTranslation("Temperature: {0}") + WeatherSpecifier, True, ColTypes.Neutral, FormatNumber(WeatherInfo.Temperature, 2))
+        W(DoTranslation("Feels like: {0}") + WeatherSpecifier, True, ColTypes.Neutral, FormatNumber(WeatherInfo.FeelsLike, 2))
+        W(DoTranslation("Wind speed: {0}") + " {1}", True, ColTypes.Neutral, FormatNumber(WeatherInfo.WindSpeed, 2), WindSpeedSpecifier)
+        W(DoTranslation("Wind direction: {0}") + "°", True, ColTypes.Neutral, FormatNumber(WeatherInfo.WindDirection, 2))
+        W(DoTranslation("Pressure: {0}") + " hPa", True, ColTypes.Neutral, FormatNumber(WeatherInfo.Pressure, 2))
+        W(DoTranslation("Humidity: {0}") + "%", True, ColTypes.Neutral, FormatNumber(WeatherInfo.Humidity, 2))
+    End Sub
+
+    ''' <summary>
+    ''' Lists all the available cities
+    ''' </summary>
+    Public Function ListAllCities() As Dictionary(Of Long, String)
+        Dim WeatherCityListURL As String = $"http://bulk.openweathermap.org/sample/city.list.json.gz"
+        Dim WeatherCityListDownloader As New WebClient
+        Dim WeatherCityListData As GZipStream
+        Dim WeatherCityListDataStream As Stream
+        Dim WeatherCityListUncompressed As New List(Of Byte)
+        Dim WeatherCityListReadByte As Integer = 0
+        Dim WeatherCityListToken As JToken
+        Dim WeatherCityList As New Dictionary(Of Long, String)
+        Wdbg("I", "Weather City List URL: {0}", WeatherCityListURL)
+
+        'Download and parse JSON data
+        WeatherCityListDataStream = WeatherCityListDownloader.OpenRead(WeatherCityListURL)
+        WeatherCityListData = New GZipStream(WeatherCityListDataStream, CompressionMode.Decompress, False)
+        Do Until WeatherCityListReadByte = -1
+            WeatherCityListReadByte = WeatherCityListData.ReadByte
+            If WeatherCityListReadByte <> -1 Then WeatherCityListUncompressed.Add(WeatherCityListReadByte)
+        Loop
+        WeatherCityListToken = JToken.Parse(Encoding.Default.GetString(WeatherCityListUncompressed.ToArray))
+
+        'Put needed data to the class
+        For Each WeatherCityToken As JToken In WeatherCityListToken
+            WeatherCityList.AddIfNotFound(WeatherCityToken("id"), WeatherCityToken("name"))
+        Next
+
+        'Return list
+        Return WeatherCityList
     End Function
 
 End Module

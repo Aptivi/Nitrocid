@@ -1,0 +1,1099 @@
+Các lệnh khả dụng: {0}
+Viết lệnh:
+Lệnh tiêm đã bị hủy bỏ.
+Các đối số khởi động riêng biệt với dấu phẩy không có dấu cách, ví dụ: 'motd,gpuprobe'
+Các lệnh riêng biệt trên 'cmdinject' với dấu hai chấm có dấu cách, ví dụ: 'cmdinject setthemes Hacker: beep 1024 0.5'
+Lưu ý rằng đối số 'gỡ lỗi' không bao gồm đầy đủ kernel.
+xà lan: Không tìm thấy đối số được yêu cầu {0}.
+xà lan: Lỗi không thể phục hồi trong đối số:
+Đối số khả dụng: {0}
+Đối số ('trợ giúp' để được giúp đỡ):
+Các đối số được tiêm sẽ được lên lịch để chạy trong lần khởi động lại tiếp theo.
+Đối số tiêm đã bị hủy bỏ.
+Lỗi trong khi phân tích cú pháp đối số dòng lệnh thực: {0}
+Mẫu màu không hợp lệ {0}
+hwprobe: Phần cứng của bạn sẽ được thăm dò. Xin vui lòng chờ ...
+CPU: Một hoặc nhiều lõi CPU không được phát hiện. Dù sao cũng hiển thị thông tin ...
+RAM: Một hoặc nhiều chip RAM không được phát hiện. Dù sao cũng hiển thị thông tin ...
+Ổ cứng: Một hoặc nhiều ổ đĩa cứng không bị phát hiện. Dù sao cũng hiển thị thông tin ...
+CPU: Tổng số bộ xử lý: {0}
+Nhập mật khẩu quản trị để bảo trì.
+Lỗi hạt nhân khi khởi động: {0}
+NHÂN ĐÔI: Thời gian khởi động lại vượt quá thời gian khởi động lại lỗi tối đa cho phép {0}. Bạn đã tìm thấy một lỗi kernel.
+[{0}] hoảng loạn: Đã bật lại do mức lỗi là {0}.
+[{0}] hoảng loạn: Thời gian để khởi động lại: {1} giây, vượt quá 1 giờ. Nó được đặt thành 1 phút.
+NHÂN ĐÔI: Loại lỗi {0} không hợp lệ.
+[{0}] dpanic: {1} - Khởi động lại sau {2} giây ...
+[{0}] hoảng loạn: Khởi động lại bị vô hiệu hóa do mức lỗi là {0}.
+[{0}] hoảng loạn: {1} - Nhấn phím bất kỳ để tiếp tục sử dụng kernel.
+[{0}] hoảng loạn: {1} - Nhấn phím bất kỳ để tắt máy.
+[{0}] hoảng loạn: {1} - Khởi động lại sau {2} giây ...
+NHÂN ĐÔI: Lỗi hạt nhân: {0}
+Đang Tắt...
+Khởi động lại ...
+Một phiên bản khác của Kernel Simulator đang chạy. Tắt trong trường hợp can thiệp.
+Không thể thêm người dùng vào danh sách quyền: loại không hợp lệ {0}
+Không thể thêm người dùng vào danh sách quyền: người dùng không hợp lệ {0}
+Không thể xóa người dùng khỏi danh sách quyền: loại không hợp lệ {0}
+Bạn đã đăng nhập.
+Không thể xóa người dùng khỏi danh sách quyền: người dùng không hợp lệ {0}
+Bạn đã tìm thấy một lỗi, hoặc sự cho phép bạn đã cố gắng thêm hoặc xóa đã được thực hiện hoặc lỗi khác.
+Lỗi {0}: {1}
+Bạn đã tìm thấy một lỗi hoặc sự cho phép mà bạn đã cố gắng chỉnh sửa cho người dùng mới đã thất bại.
+Tên người dùng khả dụng: {0}
+Tên tài khoản:
+Không gian không được phép.
+Nhân vật đặc biệt không được phép.
+Mật khẩu của {0}:
+Sai mật khẩu.
+Người dùng bị vô hiệu hóa.
+Tên người dùng sai.
+Lỗi cố gắng phân tích giữ chỗ. {0} - Theo dõi ngăn xếp:
+Lỗi cố gắng phân tích giữ chỗ. {0}
+Lỗi khi cố thêm tên người dùng.
+usrmgr: Tạo tên người dùng {0} ...
+Tên người dùng trống.
+Không tìm thấy người dùng {0}.
+Người dùng {0} không được phép xóa.
+Người dùng {0} đã đăng nhập. Đăng xuất và đăng nhập với tư cách quản trị viên khác.
+Đã xóa người dùng {0}.
+Lỗi khi cố gắng xóa tên người dùng.
+Không tìm thấy trình bảo vệ màn hình được yêu cầu {0}.
+{0} đã được khởi tạo đúng cách.
+{0} đã không khởi tạo. Mã bảo vệ màn hình có thể đã gặp lỗi trong khi khởi tạo.
+Trình bảo vệ màn hình {0} không tồn tại.
+{0} được đặt thành trình bảo vệ màn hình mặc định.
+Trình bảo vệ màn hình {0} không tìm thấy trong cơ sở dữ liệu. Kiểm tra tên và thử lại.
+Trình bảo vệ màn hình không thể được tải vì những điều sau đây:
+Có một lỗi nghiêm trọng khi in văn bản.
+Có lỗi khi cố gắng tạo cấu hình.
+Lỗi khi cố gắng giải phóng RAM: {0} - Tiếp tục ...
+Mod không thể được tải vì những điều sau đây:
+mod: Đang tải mod ...
+mod: Dừng mod ...
+Mod {0} không có tên. Xem lại mã nguồn.
+Mod {0} không có phiên bản.
+{0} v {1} đã bắt đầu
+Không có định nghĩa cho lệnh {0}.
+Lệnh được xác định bởi
+Bạn nên ngắt kết nối với máy chủ trước khi kết nối với máy chủ khác
+Tên người dùng cho {0}:
+Mật khẩu cho {0}:
+Đã kết nối với {0}
+Lỗi khi cố gắng kết nối với {0}: {1}
+Dấu vết ngăn xếp: {2}
+Nhập một máy chủ FTP.
+Thư mục cục bộ {0} không tồn tại.
+Nhập một thư mục địa phương. ".." quay trở lại.
+Không tìm thấy thư mục {0}.
+Nhập một thư mục từ xa. ".." quay trở lại
+Bạn phải kết nối với máy chủ trước khi thay đổi thư mục
+Thư mục địa phương: {0}
+Thư mục từ xa: {0}
+Bạn phải kết nối với máy chủ trước khi nhận được thư mục từ xa hiện tại.
+Bạn phải kết nối với máy chủ với các đặc quyền quản trị trước khi thực hiện xóa.
+Đã ngắt kết nối từ {0}
+Bạn chưa kết nối với bất kỳ máy chủ nào
+Đang tải xuống tệp {0} ...
+Đã tải xuống tệp {0}.
+Bạn phải kết nối với máy chủ trước khi thực hiện truyền.
+Nhập một tập tin để tải về thư mục địa phương.
+{0} KB | Được sửa đổi trong: {1}
+Bạn nên kết nối với máy chủ trước khi liệt kê tất cả các tệp từ xa.
+Đang tải lên tệp {0} ...
+Tệp đã tải lên {0}
+Nhập một tập tin để tải lên thư mục từ xa. tải lên <file> <thư mục>
+(Bên trong:
+Nhận thư mục địa phương hiện tại
+Nhận thư mục từ xa hiện tại
+Kết nối với máy chủ FTP (phải bắt đầu bằng "ftp://" hoặc "ftps://")
+Thay đổi thư mục cục bộ để tải xuống hoặc tải lên từ
+Thay đổi thư mục từ xa để tải xuống từ hoặc tải lên
+Xóa tập tin từ xa khỏi máy chủ
+Ngắt kết nối với máy chủ
+Tải tập tin từ xa vào thư mục cục bộ bằng cách sử dụng nhị phân hoặc văn bản
+Thoát khỏi vỏ FTP và trở về kernel
+Hiển thị màn hình trợ giúp
+Liệt kê thư mục địa phương
+Liệt kê thư mục từ xa
+Tải tập tin cục bộ lên thư mục từ xa bằng cách sử dụng nhị phân hoặc văn bản
+Thông báo FTP: Không tìm thấy lệnh được yêu cầu {0}. Xem 'trợ giúp' để biết danh sách các lệnh khả dụng được chỉ định trên vỏ FTP.
+Không thể lấy thuộc tính cho bộ điều hợp {0}
+Số bộ điều hợp:
+Tên bộ điều hợp:
+Đơn vị truyền tối đa: {2} Đơn vị
+Đã bật DHCP:
+Các gói không unicast:
+Gói Unicast:
+Lỗi các gói đến / đi:
+Bí danh không thể cùng tên với một lệnh.
+Lệnh không tìm thấy bí danh cho {0}.
+Bây giờ bạn có thể chạy "{0}" dưới dạng lệnh: "{1}".
+Bí danh {0} không được tìm thấy để xóa.
+Chế độ không hợp lệ {0}.
+Các đối số được chèn, {0}, sẽ được lên lịch để chạy ở lần khởi động lại tiếp theo.
+Không có đủ lý lẽ. Xem bên dưới để sử dụng:
+Không tìm thấy thư mục {0}
+Tên máy chủ trống.
+Thay đổi từ: {0} thành {1} ...
+Tin nhắn trống trong ngày.
+MAL trống sau khi đăng nhập.
+Sai mật khẩu người dùng.
+Mật khẩu không khớp.
+Tên người dùng đã được thay đổi thành {0}!
+Tên mới bạn đã nhập đã được tìm thấy.
+{0} không được tìm thấy.
+Cấu hình tải lại. Bạn có thể cần phải khởi động lại kernel để một số thay đổi có hiệu lực.
+Một hoặc nhiều màu không hợp lệ.
+Màu sắc không có sẵn. Bật vỏ màu trong cấu hình kernel.
+Trình bảo vệ màn hình {0} không tìm thấy.
+[ Cài đặt kernel (Chạy trên {0}) ]
+Phiên bản hạt nhân:
+Chế độ kiểm tra sửa lỗi:
+Vỏ màu:
+Đối số khi khởi động:
+Lệnh trợ giúp được đơn giản hóa:
+MOTD khi đăng nhập:
+Thời gian / Ngày ở góc:
+[Cài đặt phần cứng ]{0}
+{0}[ Cài đặt người dùng ]
+Tên người dùng hiện tại:
+Tên máy chủ hiện tại:
+Tên người dùng có sẵn:
+Lỗi khi cố thực thi lệnh
+Thay đổi thư mục
+Thay đổi mật khẩu cho người dùng hiện tại
+Xóa màn hình
+Sử dụng vỏ FTP để tương tác với máy chủ
+Trang trợ giúp
+Liệt kê nội dung tập tin / thư mục trong thư mục hiện tại
+Khóa màn hình của bạn bằng mật khẩu
+Đăng xuất bạn
+Tạo một thư mục
+Liệt kê thông tin về tất cả các giao diện có sẵn
+Khởi động lại máy tính của bạn (CẢNH BÁO: Không đồng bộ hóa, vì đó không phải là hạt nhân cuối cùng)
+Tải lại tập tin cấu hình được chỉnh sửa.
+Lưu màn hình của bạn khỏi bị cháy
+Thiết lập trình bảo vệ màn hình kernel
+Thiết lập chủ đề kernel
+Hiển thị ngày giờ
+Hiển thị ngày và giờ trong khu vực
+Nhân sẽ bị tắt
+Thông tin hệ thống
+* Bạn có thể sử dụng nhiều lệnh bằng cách sử dụng dấu hai chấm giữa các lệnh.
+Sử dụng:
+trong đó các đối số sẽ là {0}
+Khởi tạo vỏ FTP.
+Bạn của
+customsaver sẽ ở đâu
+Khóa màn hình của bạn bằng mật khẩu.
+Đăng xuất bạn ra khỏi người dùng.
+Nhận mọi thông tin mạng
+Khởi động lại máy tính mô phỏng của bạn.
+Tải lại cấu hình được thay đổi bởi người dùng cuối hoặc bởi công cụ.
+Màu sắc không yêu cầu khởi động lại, nhưng hầu hết các cài đặt đều yêu cầu bạn khởi động lại.
+hiển thị cho bạn một trình bảo vệ màn hình đã chọn, đồng thời bảo vệ màn hình của bạn khỏi bị cháy.
+Hiển thị ngày và thời gian.
+Hiển thị ngày và thời gian trong khu vực.
+Tắt máy tính mô phỏng của bạn.
+Hiển thị thông tin hệ thống và phiên bản.
+Có một lỗi trong vỏ.
+Bạn không có quyền sử dụng {0}
+Thông báo Shell: Lệnh được yêu cầu {0} không được phép chạy trong chế độ bảo trì.
+Thông báo Shell: Không tìm thấy lệnh được yêu cầu {0}. Xem 'trợ giúp' cho các lệnh có sẵn.
+Thông báo Shell: Lệnh {0} không được phép chạy khi đăng nhập.
+Lỗi khi cố thực thi lệnh.
+datetime: Thời gian là {0}
+datetime: Hôm nay là {0}
+datetime: Múi giờ: {0}
+- Thời gian của {0}: {1}
+để xóa màn hình.
+Chạy trên {0}
+Bạn không được phép lấy thông tin cho {0}.
+Lệnh này đã lỗi thời và sẽ bị xóa trong phiên bản tương lai.
+Bạn không được phép thay đổi mật khẩu của {0} vì mục tiêu là quản trị viên.
+usrmgr: Tên người dùng {0} đã được tìm thấy
+Xóa mọi thứ trong nhật ký gỡ lỗi
+Ngôn ngữ không hợp lệ
+Thay đổi ngôn ngữ
+----------------------------- Hạt nhân hoảng loạn ------------------ -----------
+>> Thông tin hoảng loạn <<
+> Mô tả: {0}
+> Loại lỗi: {1}
+> Ngày và giờ: {2}
+>> Thông tin ngoại lệ <<
+> Ngoại lệ: {0}
+> Mô tả: {1}
+> HRESULT: {2}
+> Nguồn: {3}
+> Dấu vết ngăn xếp <
+>> Thông tin ngoại lệ {0} bên trong <<
+>> Ngoại lệ {0} là nguyên nhân gốc <<
+>> Không có ngoại lệ; có thể là một lỗi kernel. <<
+>> Khung, tệp, dòng và cột <<
+> Khung {0}: Tệp: {1} | Dòng: {2} | Cột: {3}
+> Có lỗi khi cố lấy thông tin khung. {0}: {1}
+Tải lại mod.
+Mod tải lại.
+Chào mừng bạn đến với hạt nhân!
+Đăng nhập thành công với tư cách là <user>
+MOTD / MAL là hợp lệ, nhưng loại tin nhắn không hợp lệ. Giả sử ...
+Đã thử đọc MOTD / MAL thuộc loại tin nhắn không hợp lệ.
+Tải về đã hoàn thành.
+Tải xuống thất bại trong thử {0}: {1}
+Vui lòng sử dụng "ftp" nếu bạn định tải xuống các tệp từ máy chủ FTP.
+Tải một tập tin vào thư mục làm việc hiện tại
+Ngắt kết nối thiết bị gỡ lỗi
+Liệt kê các thiết bị gỡ lỗi được kết nối
+Không tìm thấy thiết bị gỡ lỗi {0}.
+Thiết bị {0} bị ngắt kết nối.
+Lỗi trong kết nối: {0}
+Nghe gỡ lỗi trên tất cả các địa chỉ bằng cổng {0}.
+Không có đối số được chỉ định. Gợi ý: Chỉ định nhiều đối số được phân tách bằng dấu cách
+Bí danh đã được tìm thấy: {0}
+Nhật ký gỡ lỗi được gỡ bỏ. Tất cả các thiết bị gỡ lỗi được kết nối vẫn có thể xem tin nhắn.
+Xóa nhật ký gỡ lỗi không thành công: {0}
+Thay đổi thư mục không thành công: {0}
+Chỉ định địa chỉ
+Không thể xóa thư mục: {0}
+Múi giờ được chỉ định không chính xác.
+Lựa chọn hồ sơ không hợp lệ.
+Đang cố gắng kết nối với {0} với hồ sơ {1} ...
+Lệnh {0} không tìm thấy. Xem lệnh "trợ giúp" để biết danh sách các lệnh.
+Không thể nhận các thuộc tính IPv6 cho bộ điều hợp {0}. Tiếp tục ...
+Thông tin về IPv4:
+Thông tin IPv6:
+Bộ điều hợp {0} không hỗ trợ IPv6. Tiếp tục ...
+Bộ điều hợp {0} không hỗ trợ IPv4. Thăm dò thất bại.
+Có vẻ như bạn đang chạy phiên bản phát triển của kernel. Mặc dù bạn có thể thấy các khía cạnh, nó thường xuyên được cập nhật và có thể giới thiệu các lỗi. Bạn nên ở phiên bản ổn định.
+Ngôn ngữ bạn đã chọn chứa hai biến thể. Chọn một:
+1. Phiên âm
+2. Đã dịch
+Chọn sự lựa chọn của bạn:
+Lựa chọn không hợp lệ. Thử lại.
+Bạn không được phép đặt thư mục hiện tại thành {0}: {1}
+Đường dẫn bạn đã chỉ định quá dài.
+CPU: CẢNH BÁO: SSE2 sẽ được yêu cầu trong các cam kết phát triển trong tương lai.
+Trình thu thập thông tin kết xuất bị hỏng khi cố gắng lấy thông tin về {0}: {1}
+Lỗi trong khi cố gắng lấy ngày biên dịch lắp ráp {0}: {1}
+Lỗi khi cố gắng đặt MOTD / MAL: {0}
+Lỗi khi cố lấy MOTD / MAL: {0}
+Lỗi khi cố gắng khởi động trình bảo vệ màn hình, do hoạt động không hợp lệ.
+Tải lại không được phép trong chế độ an toàn.
+Phân tích cú pháp mod không được phép trên chế độ an toàn.
+Liệt kê tất cả các thiết bị gỡ lỗi được kết nối.
+Lỗi khi cố gắng đặt chế độ phân tích cú pháp. Kiểm tra giá trị và thử lại. Nếu điều này là chính xác, hãy xem theo dõi ngăn xếp khi gỡ lỗi kernel được kích hoạt.
+Đường dẫn không phải là một tập tin hay một thư mục.
+Tạo một bản sao khác của một tập tin dưới thư mục hoặc tên khác nhau.
+Di chuyển một tập tin vào thư mục khác
+Để sao chép tập tin vào thư mục khác hoặc tên khác
+Để di chuyển tập tin sang thư mục khác
+Khớp {0} ({1}): {2}
+Khớp {0}: {1}
+Thời gian sử dụng: {0} mili giây
+Tên: {0}
+Tính toán tổng số tập tin.
+Đưa bạn đến Wiki GitHub của chúng tôi.
+Thuật toán mã hóa không hợp lệ.
+Cho phép hoặc vô hiệu hóa gỡ lỗi từ xa.
+Xem bạn có thể đánh vần các từ đúng thời gian không
+Xem nếu bạn có thể giải phương trình toán học đúng thời gian
+Trả lời yêu hay ghét bình luận.
+Nếu ai đó đưa ra nhận xét này cho video của bạn:
+Làm thế nào bạn sẽ trả lời?
+Lựa chọn không hợp lệ. Đi đến bình luận tiếp theo ...
+Bạn vừa báo cáo bình luận tình yêu!
+Bạn chỉ trả lời bình luận ghét!
+Tuyệt quá! Nhận xét của {0} sẽ bị xóa vì điều đó.
+Tuyệt quá! {0} sẽ đánh giá cao lời cảm ơn của bạn.
+Đánh vần hoàn hảo!
+Viết sai chính tả.
+Giải quyết hoàn hảo!
+Giải quyết không chính xác.
+RPC đã chạy.
+RPC lắng nghe trên tất cả các địa chỉ bằng cổng {0}.
+Bắt đầu RPC ...
+Kết nối với máy chủ SSH.
+Nhập mật khẩu cho {0}:
+SSH bị ngắt kết nối.
+Không thể đặt codepage. Ngôn ngữ có thể không hiển thị đúng.
+Gỡ lỗi không được kích hoạt.
+{0} không còn được đặt thành trình bảo vệ màn hình mặc định.
+Cảm ơn! Hay đấy.
+Mọi người sẽ ủng hộ video của bạn cho việc này.
+Tôi đã đưa cho bạn tệp đặc biệt trong e-mail cho video tiếp theo của bạn.
+Nghe này, ghét, anh ta đang cố giúp chúng tôi, không lừa đảo.
+Tôi không biết tôi và bạn bè của tôi cảm ơn bạn như thế nào về video này.
+Tôi yêu bạn vì video này.
+Tiếp tục đi, đừng dừng lại.
+Tôi sẽ giúp bạn đạt tới 1 triệu người đăng ký!
+Bạn bè của tôi đã sửa máy tính của họ vì bạn.
+Chơi khăm tuyệt vời! Tôi tắt PC của kẻ thù.
+To haters: STOP HATING ON HIM
+Để ghét: NHẬN LÀM VIỆC
+Không ai sẽ nhận thấy điều này bây giờ nhờ vào hướng dẫn ẩn đối tượng của bạn
+Tôi sẽ ngừng xem video của bạn. Thuê bao bị mất.
+Cái này là cái gì? Điều này không rõ ràng.
+Video này là tồi tệ nhất!
+Mọi người báo cáo video này!
+Bạn bè của tôi đang tức giận với bạn!
+Những người yêu bây giờ sẽ ghét bạn vì điều này.
+Bạn của bạn sẽ ghét bạn vì điều này.
+Trò đùa này khiến tôi không đăng ký với bạn.
+Nhiệm vụ thất bại, Tôn trọng -, Thuê bao -
+Ngừng làm loại video này !!!
+Quay trở lại với công việc của bạn, video của bạn là tồi tệ nhất!
+Chúng tôi định kiến ​​về video này.
+Hiển thị tất cả các thông báo nhận được
+Bỏ thông báo
+Thông báo bác bỏ thành công.
+Gói (trong nước):
+Gói (bên ngoài):
+Lỗi trong các gói đã nhận:
+Thuộc tính IPv6 chung
+Thuộc tính chung của IPv4
+Điều khiển từ xa một lệnh đến PC từ xa
+- Giai đoạn 1: Khởi tạo hệ thống
+- Giai đoạn 2: Phát hiện phần cứng
+- Giai đoạn 3: Phát hiện mod và trình bảo vệ màn hình
+- Giai đoạn 4: Đăng nhập
+Có vẻ như bạn đang chạy phiên bản ứng viên phát hành. Bạn nên ở phiên bản ổn định.
+Loại không hợp lệ {0}.
+Kích thước: {0}
+Thư mục {0} đã tồn tại.
+Lỗi khi cố gắng kết nối với {0}: Hết thời gian kết nối hoặc mất kết nối
+Máy tính để tính biểu thức.
+Lỗi trong tính toán.
+Có vẻ như bạn đang chạy phiên bản phát hành gần. Mặc dù hiện tại an toàn hơn để sử dụng, nhưng bạn nên duy trì phiên bản ổn định.
+Cập nhật hệ thống
+Đang kiểm tra cập nhật hệ thống ...
+Tìm thấy phiên bản mới: 
+Bạn có thể tải xuống tại: 
+Không có thông báo gần đây
+Tìm kiếm chuỗi cụ thể trong tệp được cung cấp
+Tính tổng các tập tin trong thư mục được chỉ định.
+Liệt kê tất cả các thư trong người dùng cụ thể.
+Nhập tên người dùng hoặc địa chỉ thư:
+Nhập mật khẩu:
+Lỗi khi kết nối với {0}: {1}
+Đang kết nối với {0} ...
+Xác thực ...
+Thoát khỏi vỏ IMAP
+Danh sách các lệnh
+Tải tin nhắn và liệt kê chúng
+Mở một tin nhắn
+Trang có thể không âm hoặc bằng không.
+Trang không phải là một giá trị số.
+Số tin nhắn có thể không âm hoặc bằng không.
+Số tin nhắn không phải là một giá trị số.
+- Từ {0}
+- Đến {0}
+- Đã gửi tại {0} trong {1}
+Tin nhắn được chỉ định không được tìm thấy.
+Gỡ lỗi từ xa không bắt đầu: {0}
+Chuẩn bị hồ sơ ... Có thể mất vài phút ...
+Tên máy chủ, tên người dùng, loại dữ liệu, mã hóa, mã hóa, giao thức
+Lỗi khi cố thực thi tập lệnh: {0}
+Viết văn bản vào bảng điều khiển
+Làm cho người dùng lựa chọn
+Tiếng bíp trong 'n' Hz và thời gian tính bằng 'n' mili giây
+trong đó <$biến> là bất kỳ biến nào sẽ được sử dụng để lưu trữ phản hồi
+Tần số phải là số. Nếu là số, hãy đảm bảo rằng đó là >= 37 và <= 32767.
+Thời gian phải là số.
+trong đó <answer> là các câu trả lời một chữ cái của câu hỏi được phân tách bằng dấu gạch chéo
+Lỗi khi cố gắng kết nối với máy chủ SSH: {0}
+Cho phép người dùng nhập dữ liệu đầu vào
+Thay đổi thư mục thư hiện tại
+Không thể mở thư mục thư {0}: {1}
+Liệt kê các thư mục trong địa chỉ mail của bạn
+Sử dụng thông tin từ Quay số nhanh để kết nối với bất kỳ mạng nào một cách nhanh chóng
+Chọn một địa chỉ để kết nối với:
+Lựa chọn nằm ngoài phạm vi. Chọn giữa 1- {0}. Thử lại.
+Lựa chọn không phải là một con số. Thử lại.
+Trong quá trình xác nhận chứng chỉ, có lỗi chứng chỉ. Đây có thể là lần đầu tiên bạn kết nối với máy chủ hoặc chứng chỉ có thể đã hết hạn. Đây là một lỗi:
+Bạn có chắc chắn rằng bạn muốn kết nối?
+Câu trả lời không hợp lệ. Vui lòng thử lại.
+Quay số nhanh là trống rỗng. Kết nối với một máy chủ để thêm một địa chỉ cho nó.
+Quay số nhanh không tồn tại. Kết nối với một máy chủ để thêm một địa chỉ cho nó.
+Nhập địa chỉ máy chủ IMAP và cổng (<địa chỉ> hoặc <địa chỉ>: [cổng]):
+Nhập địa chỉ và cổng máy chủ SMTP (<địa chỉ> hoặc <địa chỉ>: [cổng]):
+Yêu cầu bạn điền vào các trường bắt buộc để gửi tin nhắn đến một địa chỉ
+Gửi tin nhắn đến một địa chỉ
+Nhập địa chỉ thư người nhận:
+Nhập chủ đề:
+Nhập tin nhắn của bạn dưới đây. Viết "" EOF "" để xác nhận.
+Gửi tin nhắn ...
+Tin nhắn đã gửi.
+Địa chỉ email không hợp lệ. Hãy chắc chắn rằng bạn đã viết địa chỉ chính xác và nó phù hợp với định dạng của ví dụ được hiển thị:
+Xóa tin nhắn
+Xóa tất cả tin nhắn khỏi người nhận
+Tin nhắn {0} từ {1} đã bị xóa khỏi {2}. {3} tin nhắn còn lại để phân tích.
+Tin nhắn {0} từ {1} đã bị xóa khỏi hộp thư đến. {2} tin nhắn còn lại để phân tích.
+Chỉnh sửa tệp văn bản
+Tạo một tệp mới
+Tập tin đã tồn tại.
+Lỗi khi tạo tệp: {0}
+Không thể mở tập tin. Thoát khỏi vỏ ...
+Lệnh soạn thảo văn bản đã chỉ định không tìm thấy.
+Liệt kê các lệnh có sẵn
+Thoát khỏi trình soạn thảo văn bản và lưu các thay đổi chưa lưu
+In nội dung của tệp với số dòng vào bảng điều khiển
+Thêm một dòng mới với văn bản ở cuối tập tin
+Xóa số dòng được chỉ định
+Thay thế một từ hoặc cụm từ bằng một từ khác
+Xóa một từ hoặc cụm từ từ số dòng
+Xóa một ký tự khỏi số ký tự trong dòng được chỉ định
+Đã xóa dòng.
+Số dòng được chỉ định {0} không phải là số hợp lệ.
+Các đối số bắt buộc không được truyền cho lệnh {0}
+Lỗi khi chạy lệnh: {0}
+Chạy ở chế độ an toàn. Bỏ qua giai đoạn ...
+>> Gỡ lỗi và trò chuyện từ xa: phiên bản
+>> Địa chỉ của bạn là {0}.
+>> Tên của bạn là {0}.
+Lệnh {0} không tìm thấy. Sử dụng "/help" để xem danh sách.
+Chỉ số {0} không hợp lệ. Có {1} dấu vết ngăn xếp. Chỉ số là không dựa trên, vì vậy hãy thử trừ đi 1.
+Không có dấu vết ngăn xếp
+Hiển thị dấu vết ngăn xếp cuối cùng trên ngoại lệ
+Hiển thị tên người dùng hiện tại trong phiên
+Ngắt kết nối bạn khỏi trình gỡ lỗi
+Bỏ chặn một thiết bị gỡ lỗi bằng địa chỉ IP
+Chặn thiết bị gỡ lỗi theo địa chỉ IP
+{0} bây giờ có thể tham gia gỡ lỗi từ xa một lần nữa.
+{0} chưa bị chặn.
+Lỗi tải cài đặt
+Có lỗi trong khi tải cài đặt. Bạn có thể cần kiểm tra tập tin cài đặt.
+Chọn phần:
+Cài đặt chung ...
+Cài đặt phần cứng ...
+Cài đặt Đăng nhập ...
+Cài đặt Shell ...
+Thiết lạp mạng lưới...
+Cài đặt linh tinh...
+Lưu các thiết lập
+Lối ra
+Tùy chọn đã chỉ định {0} không hợp lệ.
+Câu trả lời phải là số.
+Nhắc đối số khi khởi động
+Kích hoạt chế độ bảo trì
+Thay đổi mật khẩu gốc ...
+Kiểm tra các bản cập nhật khi khởi động
+Thăm dò yên lặng
+Hiển thị MOTD khi đăng nhập
+Xóa màn hình khi đăng nhập
+Hiển thị tên người dùng có sẵn
+Vỏ màu
+Lệnh trợ giúp được đơn giản hóa
+Cổng gỡ lỗi
+Tải xuống thời gian thử lại
+Đăng nhập tên người dùng FTP
+Ghi địa chỉ IP FTP
+Chỉ trả lại hồ sơ FTP đầu tiên
+Hiển thị thời gian / ngày ở góc trên bên phải
+Thời gian chờ của trình bảo vệ màn hình tính bằng mili giây
+Hạn ngạch kích thước gỡ lỗi tính bằng byte
+Chế độ phân tích kích thước
+Marquee khi khởi động
+Thời gian và Ngày dài
+Hiển thị cac file bị ẩn
+Đã nhập phần không hợp lệ. Hãy quay lại.
+Quay lại...
+Kích hoạt
+Vô hiệu hóa
+Số khóa đã nhập không hợp lệ. Hãy quay lại.
+Viết mật khẩu gốc cần đặt. Đừng lo lắng; mật khẩu được hiển thị dưới dạng dấu sao.
+Bật "Thay đổi mật khẩu gốc" để sử dụng tùy chọn này. Hãy quay lại.
+Thay đổi mật khẩu gốc?
+Đặt mật khẩu gốc ...
+Viết một cổng gỡ lỗi từ xa. Nó phải là số và không được sử dụng. Nếu không, trình gỡ lỗi từ xa sẽ không mở được cổng.
+Viết số lần lệnh "" get "" sẽ thử lại các lần tải xuống không thành công. Nó phải là số.
+Viết thời điểm khởi chạy trình bảo vệ màn hình sau phần nghìn giây được chỉ định. Nó phải là số.
+Ghi bao nhiêu byte có thể lưu trữ nhật ký gỡ lỗi. Nó phải là số.
+Câu trả lời có thể không phủ định.
+Câu trả lời là không hợp lệ. Kiểm tra để đảm bảo rằng câu trả lời là số cho các mục nhập cấu hình cần số làm câu trả lời.
+Biến {0} không được tìm thấy trên bất kỳ mô-đun nào.
+Thay đổi cấu hình hạt nhân
+Cài đặt trình bảo vệ màn hình ...
+Kích hoạt 255 màu
+Bạn có muốn giữ kết nối không?
+Lựa chọn không hợp lệ. Giả sử không ...
+Thay đổi văn hóa khi chuyển đổi ngôn ngữ
+Văn bản được hiển thị
+Viết bất kỳ văn bản nào bạn muốn hiển thị. Ngắn hơn là tốt hơn.
+Không tải lên được {0}
+Lỗi khi thực thi lệnh gỡ lỗi từ xa {0}: {1}
+Thêm người dùng
+Thêm bí danh vào lệnh
+Chèn đối số vào hạt nhân (yêu cầu khởi động lại)
+Thay đổi tên máy chủ
+Thay đổi MAL, MOTD sau khi đăng nhập
+Thay đổi MOTD, Thông điệp trong ngày
+Thay đổi tên người dùng
+Quản lý quyền cho người dùng
+Tải lại tệp bảo vệ màn hình trong KSMods
+Xóa người dùng khỏi danh sách
+Đã xóa bí danh {0} thành công.
+Không thể kiểm tra các bản cập nhật.
+Không có người dùng nào còn lại trong danh sách.
+Không đặt được ngôn ngữ.
+Lỗi khi cố gắng loại bỏ thông báo.
+usrmgr: Không tạo được tên người dùng {0}: {1}
+Không thể đổi tên người dùng. {0}
+Một trong các danh sách quyền không chứa tên người dùng {0}.
+Không tải được quyền từ tệp: {0}
+Không thay đổi được tên máy chủ: {0}
+Không tìm thấy người dùng
+Không thể thay đổi mật khẩu của tên người dùng: {0}
+Không sao chép được tệp hoặc thư mục: {0}
+Không di chuyển được tệp hoặc thư mục: {0}
+Không thể tìm thấy tệp để khớp với chuỗi "{0}": {1}
+Không tải xuống được tệp {0}.
+Không liệt kê được các tệp từ xa: {0}
+Nhập một tệp hoặc thư mục để xóa. Bạn phải có quyền quản trị trên tài khoản của mình để có thể xóa.
+Bạn có chắc chắn muốn xóa {0} <y / n> không?
+Đang xóa {0} ...
+{0} không được tìm thấy trong máy chủ.
+Tất cả thư do {0} tạo đều được xóa thành công.
+Không xóa được tất cả thư do {0} gửi.
+Lỗi khi gửi tin nhắn.
+Đang di chuyển {0} sang {1} ...
+Đã chuyển thành công
+Di chuyển tệp hoặc thư mục sang tệp hoặc thư mục khác. Bạn cũng có thể sử dụng nó để đổi tên tệp.
+Không chuyển được {0} sang {1}.
+Nhập đường dẫn nguồn và đường dẫn đích.
+Đang sao chép {0} sang {1} ...
+Đã sao chép thành công
+Sao chép tệp hoặc thư mục sang tệp hoặc thư mục khác.
+Không sao chép được {0} sang {1}.
+Chuyển một tin nhắn
+Di chuyển tất cả tin nhắn từ người nhận
+Tất cả thư do {0} thực hiện đều được chuyển thành công.
+Không chuyển được tất cả thư do {0} gửi.
+Thư {0} từ {1} được chuyển từ {2}. Còn lại {3} tin nhắn để phân tích cú pháp.
+Hiển thị thông tin thời tiết cho thành phố được chỉ định. Sử dụng OpenWeatherMap.
+- Thông tin thời tiết cho {0} -
+Thời tiết: {0}
+Áp lực: {0}
+Độ ẩm: {0}
+Bạn có thể lấy khóa API của riêng mình tại https://home.openweathermap.org/api_keys.
+Bạn luôn có thể tham khảo http://bulk.openweathermap.org/sample/city.list.json.gz để biết danh sách các thành phố có ID của họ.
+Đơn vị ưu tiên cho nhiệt độ
+Kelvin
+Imperial (Fahrenheit)
+Hệ mét (độ C)
+Thiết lập hạt nhân để nó nhắc bạn đối số khi khởi động.
+Kích hoạt chế độ bảo trì. Điều này vô hiệu hóa nhiều tài khoản.
+Mỗi lần khởi động, nó sẽ kiểm tra các bản cập nhật.
+Khi chuyển đổi ngôn ngữ, hãy thay đổi tên tháng, lịch, v.v.
+Nếu hạt nhân được khởi động, nó sẽ đặt mật khẩu gốc.
+Giữ im lặng các thông báo thăm dò phần cứng.
+Hiển thị Thông báo trong ngày trước khi hiển thị màn hình đăng nhập.
+Xóa màn hình trước khi hiển thị màn hình đăng nhập.
+Hiển thị những người dùng hiện có nếu được bật.
+Cung cấp hỗ trợ màu hạt nhân
+Lệnh trợ giúp đơn giản hóa cho tất cả các shell
+Có đăng nhập tên người dùng FTP hay không.
+Có đăng nhập địa chỉ IP FTP hay không.
+Chỉ chọn hồ sơ đầu tiên khi kết nối.
+Kích hoạt hỗ trợ 255 màu cho ColorMix.
+Kích hoạt hỗ trợ 255 màu cho Disco.
+Kích hoạt hỗ trợ 255 màu cho GlitterColor.
+Kích hoạt hỗ trợ 255 màu cho Lines.
+Ngày và giờ sẽ được hiển thị ở góc trên bên phải của màn hình
+Nếu được bật, hạt nhân sẽ phân tích cú pháp toàn bộ thư mục cho tổng kích thước của nó. Khác, sẽ chỉ phân tích bề mặt.
+Bật chế độ mỏi mắt khi khởi động
+Ngày và giờ sẽ dài hơn, hiển thị tên tháng đầy đủ, v.v.
+Hiển thị các tệp ẩn.
+Chọn đơn vị ưa thích của bạn cho nhiệt độ (điều này chỉ áp dụng cho lệnh "thời tiết")
+Mod {0} đã dừng
+{0} v {1} đã dừng
+Mod {0} không có tên bộ phận. Phân tích cú pháp mod không thành công. Xem lại mã nguồn.
+Mod {0} không có lệnh. Phân tích cú pháp mod không thành công. Xem lại mã nguồn.
+Bạn phải bật chế độ gỡ lỗi trước khi có thể xóa nhật ký gỡ lỗi.
+{0} thư mới đã đến hộp thư đến.
+Mở "lsmail" để xem chúng.
+Không thể xóa tệp: {0}
+Xóa một thư mục hoặc một tệp
+Không thể xóa {0} vì nó không tồn tại.
+Nhấn CTRL + C để thoát.
+Cung cấp thông tin về tệp
+Cung cấp thông tin về một thư mục
+Không thể lấy thông tin về thư mục không tồn tại.
+Không thể lấy thông tin về tệp không tồn tại.
+Tên đầy đủ: {0}
+Thời gian tạo: {0}
+Lần truy cập cuối cùng: {0}
+Lần viết cuối cùng: {0}
+Các thuộc tính: {0}
+Thư mục chính: {0}
+Tìm ở đâu: {0}
+Kích thước tệp: {0}
+Thay đổi thuộc tính của tệp
+Không tìm thấy tệp.
+trong đó <attributes> là một trong những điều sau:
+Tệp là một tệp bình thường
+Tệp là tệp chỉ đọc
+Tệp là một tệp ẩn
+Tệp là một kho lưu trữ. Được sử dụng để sao lưu.
+Thuộc tính "{0}" không hợp lệ.
+Thuộc tính đã được thêm thành công.
+Thuộc tính đã được xóa thành công.
+Không thêm được thuộc tính.
+Không xóa được thuộc tính.
+Thay thế một từ hoặc cụm từ bằng một từ hoặc cụm từ khác trong một dòng
+Đã vượt quá mức màu đỏ. Đó là {0}.
+Đã vượt quá mức màu xanh lục. Đó là {0}.
+Đã vượt quá mức màu xanh lam. Đó là {0}.
+Kích hoạt màu sắc trung thực
+Kích hoạt hỗ trợ màu thực cho ColorMix.
+Kích hoạt hỗ trợ màu sắc trung thực cho Disco.
+Kích hoạt hỗ trợ màu sắc trung thực cho GlitterColor.
+Kích hoạt hỗ trợ màu thực cho Đường kẻ.
+Không thể bỏ chặn {0}.
+{0} đã bị chặn.
+{0} hiện không thể tham gia gỡ lỗi từ xa.
+Không chặn được {0}.
+Màu chu kỳ
+Disco sẽ chuyển màu khi được bật. Nếu không, hãy chọn màu ngẫu nhiên.
+Nhập đường dẫn tệp đến tệp đính kèm. Nhấn ENTER trên một đường dẫn trống để xác nhận.
+Mở một tin nhắn được mã hóa
+Viết mật khẩu cho ID khóa {0}
+Gửi một tin nhắn được mã hóa đến một địa chỉ
+Yêu cầu bạn điền vào các trường bắt buộc để gửi một tin nhắn được mã hóa đến một địa chỉ
+Đang tải xuống từ {0} ...
+Hiển thị thanh tiến trình trong khi tải xuống hoặc tải lên từ lệnh "get" hoặc "put"
+Nếu đúng, nó làm cho "get" hoặc "put" hiển thị thanh tiến trình trong khi tải xuống hoặc tải lên.
+Tải tệp lên trang web cụ thể
+Ping một địa chỉ
+Đang tải {0} lên {1} ...
+Tải lên đã hoàn tất.
+Vui lòng sử dụng "ftp" nếu bạn định tải tệp lên máy chủ FTP.
+Tải lên không thành công khi thử {0}: {1}
+Viết số lần lệnh "put" sẽ thử lại các lần tải lên không thành công. Nó phải là số.
+Địa chỉ không được để trống.
+Không ping được {0}: {1}
+Ping thành công sau {0} mili giây.
+Số dòng đã chỉ định không được lớn hơn số dòng cuối cùng của tệp.
+Cảm thấy như: {0}
+Nhiệt độ: {0}
+Tốc độ gió: {0}
+Hướng gió: {0}
+Kích hoạt hỗ trợ 255 màu cho Hòa tan.
+Kích hoạt hỗ trợ màu sắc trung thực cho Hòa tan.
+Nhấn phím bất kỳ để quay lại.
+Không thể tạo thư mục thư {0}: {1}
+Tạo một thư mục trong thư mục làm việc hiện tại
+Xóa một thư mục khỏi thư mục làm việc hiện tại
+Thư mục thư {0} không được tìm thấy.
+Không thể xóa thư mục thư {0}: {1}
+{0}, Được tạo vào {1} {2}, Được sửa đổi trong {3} {4}
+Xác minh sự tỉnh táo của tệp
+Hàm băm không đúng định dạng.
+Hàm băm không khớp.
+Kết hợp băm.
+Đổi tên một thư mục
+Phần này liệt kê tất cả các cài đặt hạt nhân chung, chủ yếu để duy trì hạt nhân.
+Phần này thay đổi hành vi thăm dò phần cứng.
+Phần này đại diện cho cài đặt đăng nhập. Đăng xuất khỏi tài khoản của bạn để các thay đổi có hiệu lực.
+Phần này liệt kê các cài đặt shell.
+Phần này liệt kê các cài đặt mạng, như FTP shell, cài đặt lệnh liên quan đến mạng và cài đặt gỡ lỗi từ xa.
+Phần này liệt kê tất cả các trình bảo vệ màn hình và các cài đặt có sẵn của chúng.
+Các cài đặt không phù hợp với các phần thích hợp của chúng sẽ xuất hiện ở đây.
+Thử nghiệm các bản mod bằng cách cung cấp các tập tin mod
+Mở vỏ thử nghiệm
+Bật chế độ gỡ lỗi
+Lời nhắc đối số
+* Nhấn phím bất kỳ để khởi động nhân hoặc phím ESC để thoát.
+Không khởi động được "{0}": {1}
+Hiển thị bản xem trước thư
+Khi liệt kê các thư, hãy hiển thị phần xem trước nội dung.
+Màu sắc tùy chỉnh...
+Màu đầu vào
+Màu giấy phép
+Màu lỗi hạt nhân liên tục
+Màu lỗi hạt nhân không thể kiểm soát
+Màu tên máy chủ
+Màu tên người dùng
+Màu nền
+Màu văn bản trung tính
+Màu sân khấu
+Màu lỗi
+Kiểu lời nhắc FTP
+Kiểu Lời nhắc Thư
+Kiểu nhắc SFTP
+Kích hoạt hỗ trợ 255 màu cho BouncingBlock.
+Kích hoạt hỗ trợ màu sắc trung thực cho BouncingBlock.
+Đang cố gắng truy cập đường dẫn không hợp lệ.
+Xóa tệp văn bản
+Thoát khỏi trình soạn thảo văn bản
+Truy vấn một ký tự trong một dòng cụ thể hoặc tất cả các dòng
+Kiểm tra các bản cập nhật bị tắt vì bạn đang chạy phiên bản phát triển.
+Bật hoặc tắt tính năng tự động lưu của trình soạn thảo văn bản.
+Nếu tính năng lưu tự động được bật, tệp văn bản sẽ được lưu trong mỗi "n" giây.
+Bật tính năng tự động lưu của trình soạn thảo văn bản
+Khoảng thời gian tự động lưu của trình soạn thảo văn bản
+Lưu tệp
+Ghi lại cuộc trò chuyện vào nhật ký gỡ lỗi
+Ghi lại cuộc trò chuyện gỡ lỗi từ xa vào nhật ký gỡ lỗi.
+Độ trễ tính bằng mili giây
+Phải đợi bao nhiêu mili giây trước khi thực hiện lần viết tiếp theo?
+Cho phép bạn sử dụng máy chủ SSH FTP
+Không có trợ giúp cho lệnh "{0}".
+Chuỗi VT không hợp lệ cho màu RGB.
+Màu của thanh giây
+Màu của thanh phút
+Màu của thanh giờ
+Màu sắc của thông tin
+Bọ ve để thay đổi màu sắc
+Kích hoạt hỗ trợ 255 màu cho ProgressClock.
+Kích hoạt hỗ trợ màu sắc trung thực cho ProgressClock.
+Màu của thanh tiến trình giây. Nó có thể là 1-16, 1-255 hoặc "1-255;1-255;1-255".
+Màu của thanh tiến trình phút. Nó có thể là 1-16, 1-255 hoặc "1-255;1-255;1-255".
+Màu của thanh tiến trình giờ. Nó có thể là 1-16, 1-255 hoặc "1-255;1-255;1-255".
+Màu của thông tin ngày tháng. Nó có thể là 1-16, 1-255 hoặc "1-255;1-255;1-255".
+Nếu tính năng xoay vòng màu được bật, có bao nhiêu tích tắc trước khi thay đổi màu sắc trong ProgressClock? 1 tích tắc = 0,5 giây
+ProgressClock sẽ chọn các màu ngẫu nhiên nếu nó được bật. Nếu không, hãy sử dụng màu từ cấu hình.
+Tạo chủ đề mới
+Tạo chủ đề mới "{0}".
+Lưu chủ đề vào thư mục hiện tại
+Lưu chủ đề vào một thư mục khác ...
+Chọn màu bằng phím "<-" và "->". Nhấn ENTER để thoát. Nhấn "i" để chèn số màu theo cách thủ công.
+Chọn màu bằng phím "<-" và "->". Sử dụng các phím mũi tên lên và mũi tên xuống để chọn giữa các dải màu. Nhấn ENTER để thoát. Nhấn "i" để chèn số màu theo cách thủ công.
+Chào mừng bạn đến với hạt nhân! - Phiên bản {0}
+Màu cảnh báo
+Màu tùy chọn
+Nhập số màu từ 0 đến 255:
+Sử dụng "hwinfo" để biết thông tin mở rộng về phần cứng.
+In thông tin phần cứng
+Thông tin CPU:
+Tên bộ xử lý:
+Tốc độ bộ xử lý:
+Bộ xử lý bit:
+Phiên bản bộ xử lý:
+Cấu trúc liên kết bộ xử lý:
+Loại bộ xử lý:
+Mốc của bộ xử lý:
+Bộ xử lý BogoMips:
+Kích thước bộ nhớ cache L2 của bộ xử lý:
+Kích thước bộ nhớ cache L3 của bộ xử lý:
+Các tính năng của bộ xử lý:
+Thông tin ổ cứng:
+Tên ổ:
+Mô hình ổ đĩa:
+Nhà cung cấp ổ đĩa:
+Tốc độ truyền động:
+Kích thước ổ đĩa:
+Ổ nối tiếp:
+ID ổ đĩa:
+Số phân vùng ổ đĩa:
+ID phân vùng:
+Hệ thống tệp phân vùng:
+Kích thước phân vùng:
+Phân vùng được sử dụng:
+Thông tin RAM:
+RAM trống:
+Tổng RAM:
+RAM được sử dụng:
+Thông tin GPU:
+Tên GPU:
+Trình điều khiển GPU:
+Phiên bản GPU:
+GPU: Không thể thăm dò một hoặc nhiều cạc đồ họa. Vẫn hiển thị thông tin ...
+>> Chào mừng bạn! Đây là lần đầu tiên bạn vào gỡ lỗi và trò chuyện từ xa. Sử dụng "/ register <name>" để đăng ký.
+Thiết bị đã tồn tại.
+Không có thiết bị như vậy.
+Đặt tên người dùng thiết bị
+Bạn đã đăng ký.
+Xin chào, {0}!
+In nội dung của tệp vào bảng điều khiển
+Hoặc, chuyển "listcities" vào lệnh này.
+Mục nhập đã tồn tại.
+Bao bọc đầu ra bảng điều khiển
+Lệnh không thể kết thúc. Các lệnh này có thể được bao bọc:
+Giải nén một kho lưu trữ ZIP
+Tạo một kho lưu trữ ZIP
+Được xây dựng trong {0}
+Lỗi khi tải xuống dữ liệu gỡ lỗi
+Đã xảy ra lỗi khi tải xuống dữ liệu gỡ lỗi. Kiểm tra kết nối Internet của bạn.
+Không thể hoàn thiện bản sửa đổi {0}: {1}
+Liệt kê tất cả các sự kiện đã kích hoạt
+Thư mục hiện tại
+Đặt thư mục hiện tại của shell. Viết một đường dẫn tuyệt đối đến bất kỳ thư mục hiện có nào.
+Kết quả đầu ra danh sách kết thúc
+Gói kết quả đầu ra của danh sách nếu nó có vẻ quá dài so với hình dạng bảng điều khiển hiện tại.
+Ping!
+{0} đã ping bạn.
+Lưu Chủ đề vào Thư mục Hiện tại dưới dạng ...
+Lưu Chủ đề vào Thư mục Khác dưới dạng ...
+Chỉ định tên chủ đề:
+Người dùng {0} đã được thêm vào danh sách "{1}".
+Người dùng {0} đã bị xóa khỏi danh sách "{1}".
+Chế độ không hợp lệ {0}
+Người dùng đã tồn tại
+Tải chủ đề từ ...
+Tải chủ đề từ chủ đề dựng sẵn ...
+Chỉ định tên tệp chủ đề mà không có phần mở rộng .json:
+Mở kho lưu trữ ZIP
+Thoát khỏi trình bao ZIP
+Liệt kê tất cả các tệp bên trong kho lưu trữ
+Giải nén một tập tin vào một thư mục cụ thể hoặc một thư mục hiện tại
+Thay đổi thư mục lưu trữ
+Không tìm thấy lệnh ZIP shell được chỉ định.
+Thư mục {0} không tồn tại
+Thư mục lưu trữ {0} không tồn tại
+Số lượng vị trí tối đa
+Có bao nhiêu vị trí sáng trước khi mờ?
+Kích hoạt hỗ trợ 255 màu cho Nhẹ hơn.
+Kích hoạt hỗ trợ màu sắc trung thực cho Lighter.
+Màu mục nhập danh sách
+Màu giá trị danh sách
+Kết nối với máy chủ SSH để thực hiện lệnh.
+Phần này liệt kê các cài đặt bảo vệ màn hình cho
+Bộ chỉ định màu không hợp lệ. Đảm bảo rằng nó ở đúng định dạng, có nghĩa là một số từ 0-255 nếu sử dụng 255 màu hoặc chuỗi VT nếu sử dụng màu thực như sau:
+Lỗi trong trình bao thử nghiệm: {0}
+Đặt một biến thành một giá trị trong một tập lệnh
+Lời nhắc báo cáo lỗi.
+Cảm ơn bạn đã tăng một vé cho chúng tôi! Chọn loại yêu cầu bạn có.
+Vấn đề
+Một yêu cầu tính năng
+Một câu hỏi
+Bạn phải chỉ định một tính năng.
+Đặt một câu hỏi, ghi lại ý tưởng của bạn hoặc báo cáo một vấn đề.
+Bạn phải viết yêu cầu của bạn.
+Đã xảy ra lỗi trong FTP shell:
+Lỗi trình bao FTP không xác định:
+Đã xảy ra lỗi trong trình bao SFTP:
+Lỗi khung SFTP không xác định:
+Hiển thị biểu ngữ SSH
+Hiển thị biểu ngữ máy chủ SSH khi kết nối.
+Bạn muốn xác thực như thế nào?
+Tệp khóa cá nhân
+Mật khẩu
+Nhập cụm mật khẩu cho khóa {0}:
+Nhập vị trí của khóa cá nhân cho {0}. Viết "q" để kết thúc việc thêm khóa:
+Đã trung hòa một con đường không tồn tại.
+Tệp khóa {0} không tồn tại.
+Lỗi khi cố thêm khóa cá nhân:
+Nhấn "t" để chuyển sang chế độ 255 màu.
+Nhấn "t" để chuyển sang chế độ màu thực.
+Phần này cho phép bạn chọn loại màu bạn muốn thay đổi.
+Có vẻ như bạn không có người dùng nào ngoại trừ root. Điều này thật tệ. Chúng tôi sẽ hướng dẫn bạn cách tạo một tài khoản.
+Viết tên người dùng của bạn.
+Bạn phải viết tên người dùng của mình.
+Viết mật khẩu của bạn.
+Bạn phải viết mật khẩu của mình.
+Chọn loại tài khoản.
+Quản trị viên: Loại tài khoản này có nhiều quyền lực nhất trong nhân, cho phép bạn sử dụng các chương trình quản lý hệ thống.
+Người dùng bình thường: Loại tài khoản này bị hạn chế hơn một chút so với quản trị viên.
+Xin chúc mừng! Bạn đã tạo một tài khoản mới! Để hoàn tất việc này, hãy đăng nhập bằng tài khoản mới của bạn.
+Tham khảo hướng dẫn sử dụng bảo vệ màn hình hoặc mã nguồn để biết thông tin.
+mod: Không có mod nào được phát hiện.
+Các lệnh chung:
+Lệnh mod:
+Lệnh bí danh:
+Chế độ bảo trì
+Thư mục tra cứu
+Nhóm đường dẫn cách nhau bởi dấu hai chấm. Nó hoạt động giống như PATH. Viết một đường dẫn đầy đủ đến một thư mục hoặc tên thư mục. Khi bạn hoàn thành, hãy viết "q". Viết một dấu trừ bên cạnh đường dẫn để xóa một thư mục hiện có.
+Không có lệnh mod.
+Không có lệnh bí danh.
+Giá trị màu nằm ngoài phạm vi 0-255.
+Không tìm thấy lệnh có thể bao bọc.
+Truy vấn một từ trong một dòng cụ thể hoặc tất cả các dòng
+Đã tải xuống {0} trong tổng số {1}.
+Đã tải lên {0} / {1}.
+In một chuỗi vào bảng điều khiển bằng cách sử dụng loại màu và in dòng
+In một chuỗi vào bảng điều khiển bằng cách sử dụng loại màu và in dòng với hỗ trợ định dạng
+In một chuỗi để gỡ lỗi
+In một chuỗi để gỡ lỗi với hỗ trợ định dạng
+Kiểm tra cơ sở lỗi hạt nhân
+Kiểm tra cơ sở lỗi hạt nhân với hỗ trợ định dạng
+Kiểm tra dịch một chuỗi tồn tại trong tài nguyên sang ngôn ngữ cụ thể
+In một chuỗi vào bảng điều khiển và phân tích cú pháp các trình giữ chỗ được tìm thấy
+Kiểm tra cơ sở biểu thức chính quy
+Mã hóa một chuỗi bằng cách sử dụng
+Bắt đầu tất cả các mod
+Dừng tất cả các mod
+Bật hoặc tắt gỡ lỗi
+Bật hoặc tắt gỡ lỗi từ xa
+Kiểm tra chuỗi VT cho 255 màu
+Kiểm tra chuỗi VT cho màu sắc trung thực
+Gửi thông báo để kiểm tra người nhận
+Kiểm tra ngày in bằng các lịch khác nhau
+Liệt kê tất cả các mã được hỗ trợ
+Những biến trình biên dịch nào được kích hoạt trong ứng dụng?
+Thử nghiệm nâng cao sự kiện cụ thể
+Kiểm tra thăm dò phần cứng
+Kiểm tra bộ thu gom rác
+Thoát khỏi vỏ thử nghiệm và khởi động hạt nhân
+Thoát khỏi vỏ thử nghiệm và tắt hạt nhân
+Lưu thư mục hiện tại vào tệp cấu hình hạt nhân
+Kiểm tra trình ghi danh sách với chuỗi và mảng chuỗi
+Kiểm tra trình ghi danh sách với mảng số nguyên và số nguyên
+Kiểm tra trình viết danh sách với mảng char và mảng char
+Danh sách chuỗi bình thường:
+Danh sách chuỗi mảng:
+Danh sách số nguyên bình thường:
+Danh sách số nguyên mảng:
+Danh sách char bình thường:
+Danh sách mảng mảng:
+Bật RPC
+Cổng RPC
+Có bật RPC hay không.
+Viết một cổng RPC. Nó phải là số và không được sử dụng. Nếu không, RPC sẽ không mở được cổng.
+Không khởi động RPC vì nó bị vô hiệu hóa.
+Liệt kê các nền văn hóa được hỗ trợ
+Tìm kiếm chuỗi được chỉ định trong tệp được cung cấp bằng cách sử dụng biểu thức chính quy
+Xem liệu bạn có thể bấm phím đúng lúc không
+Người dùng đã không cung cấp bất kỳ đầu vào nào kịp thời.
+Khó khăn không hợp lệ
+Nhân vật không được ép đúng thời gian.
+Bạn đã nhấn đúng ký tự!
+Bạn đã nhấn sai ký tự.
+Nhấn ESC để thoát.
+Nhận thông tin ngày và giờ
+Mili giây:
+Giây:
+Phút:
+Giờ:
+Ngày:
+Tháng:
+Năm:
+Ngày trong năm:
+Ngày trong tuần:
+Nhị phân:
+Giờ địa phương:
+Giờ quốc tế:
+Thời gian Unix:
+Không phân tích được thông tin ngày tháng cho
+Đảm bảo rằng định dạng là chính xác.
+Ngày:
+Thời gian:
+Đặt quyền đối với tệp. Điều này chỉ được hỗ trợ trên các máy chủ FTP chạy Unix.
+Đặt loại cho phiên này
+Bạn phải kết nối với máy chủ trước khi thực hiện các hoạt động hệ thống tệp.
+Không đặt được quyền của {0} thành {1}.
+Quyền được đặt thành công cho tệp
+Kiểu dữ liệu được đặt thành ASCII!
+Kiểu dữ liệu được đặt thành Binary!
+Kiểu dữ liệu không hợp lệ.
+Lưu ý rằng hầu hết các tệp sẽ không tải xuống hoặc tải lên đúng cách bằng chế độ này, vì vậy chúng tôi thực sự khuyên bạn nên sử dụng chế độ Nhị phân trong hầu hết các trường hợp.
+Đang cố gắng gửi lệnh RPC trong khi RPC không khởi động.
+Làm mờ dần độ trễ tính bằng mili giây
+Các bước làm mờ tối đa
+Phải đợi bao nhiêu mili giây trước khi xóa mờ văn bản?
+Làm thế nào nhiều bước phai để làm gì?
+Thăm dò đầy đủ
+Nếu đúng, hãy thăm dò tất cả phần cứng; khác, sẽ chỉ thăm dò phần cứng cần thiết.
+Không xóa được trình bảo vệ màn hình {0} khỏi cấu hình.
+Nhận cài đặt trình tiết kiệm tùy chỉnh
+Đặt cài đặt trình tiết kiệm tùy chỉnh
+Đã đặt thành công cài đặt cho trình bảo vệ màn hình
+Không đặt được cài đặt cho trình bảo vệ màn hình
+Phần này cho phép bạn quản lý việc tạo mật khẩu gốc.
+Mở trình bao RSS để đọc nguồn cấp dữ liệu
+Thoát khỏi trình bao RSS và quay trở lại hạt nhân
+Thay đổi liên kết nguồn cấp dữ liệu
+Liệt kê tất cả các nguồn cấp dữ liệu
+Đọc nguồn cấp dữ liệu trong trình duyệt web
+Không tìm thấy lệnh trình bao RSS được chỉ định.
+Nguồn cấp dữ liệu RSS2 không hợp lệ.
+Nguồn cấp dữ liệu RSS1 không hợp lệ.
+Nguồn cấp dữ liệu Atom không hợp lệ.
+Nhập URL nguồn cấp RSS:
+Loại nguồn cấp dữ liệu RSS không hợp lệ.
+Lỗi trình bao không xác định:
+Nhận thông tin bài viết
+Số lượng bài viết không được lớn hơn các bài viết có sẵn.
+Tiêu đề:
+Liên kết:
+Nhận thông tin nguồn cấp dữ liệu
+Sự miêu tả:
+Loại nguồn cấp dữ liệu:
+Số lượng bài báo:
+Bài báo không có liên kết!
+Không tạo được danh sách các mục nhập hệ thống tệp cho thư mục
+Chế độ sắp xếp hệ thống tập tin
+Hướng sắp xếp hệ thống tập tin
+Kiểm soát cách sắp xếp các tệp.
+Kiểm soát hướng sắp xếp hệ thống tệp cho dù nó tăng dần hay giảm dần.
+Thứ tự tăng dần
+Thứ tự giảm dần
+Họ và tên
+Kích thước tập tin
+Thời gian sáng tạo
+Lần viết cuối cùng
+Lần truy cập cuối cùng
+Viết lại độ trễ tính bằng mili giây
+Phải đợi bao nhiêu mili giây trước khi viết lại văn bản?
+Viết bất kỳ văn bản nào bạn muốn hiển thị. Dài hơn là tốt hơn.
+Tốc độ ghi tối thiểu trong WPM
+Tốc độ ghi tối đa trong WPM
+Xác suất lỗi đánh máy tính bằng phần trăm
+Không lưu được thư mục hiện tại: {0}
+Lau để thay đổi hướng
+Kích hoạt hỗ trợ 255 màu cho Wipe.
+Kích hoạt hỗ trợ màu sắc trung thực cho Wipe.
+Có bao nhiêu lần lau phải làm trước khi đổi hướng ngẫu nhiên?
+Giai đoạn kết thúc trong
+Khởi tạo nội bộ đã hoàn thành trong
+Tệp được tham chiếu {0} không được tìm thấy. Bản mod này có thể không hoạt động bình thường nếu không có tệp này.
+Bắt đầu mod
+Nhận thông tin mod
+Tên lệnh:
+Định nghĩa lệnh:
+Loại lệnh:
+Lệnh nghiêm minh?
+Phiên bản mod:
+Không tìm thấy bản mod {0}.
+Văn hóa của
+Biến thể nào của {0} đang được sử dụng để thay đổi tên tháng, lịch, v.v.?
+Trình soạn thảo văn bản chưa mở luồng tệp.
+Đã thay thế chuỗi.
+Một hoặc cả hai số không phải là số.
+Đã xóa từ.
+Ký tự đã bị xóa.
+Cài đặt hệ thống tập tin ...
+Phần này liệt kê các cài đặt hệ thống tệp.
+Chào mừng bạn đến với Cài đặt!
+Lỗi khi thực hiện lệnh SSH
+Lỗi trên SSH shell
+- Thông tin ứng dụng
+Kích hoạt hỗ trợ 255 màu cho BouncingText.
+Kích hoạt hỗ trợ màu thực cho BouncingText.
+Kiểm tra trình viết từ điển với chuỗi và mảng chuỗi
+Kiểm tra trình viết từ điển với mảng char và char
+Kiểm tra trình viết từ điển với mảng số nguyên và số nguyên
+Từ điển chuỗi thông thường:
+Từ điển chuỗi mảng:
+Từ điển số nguyên bình thường:
+Từ điển số nguyên mảng:
+Từ điển char bình thường:
+Từ điển char mảng:
+Chào mừng bạn đến với Test Shell!
+Hiển thị tiến trình hoạt động của hệ thống tệp
+Hiển thị tệp nào đang được xử lý trong các hoạt động của hệ thống tệp
+HardwareType sẽ ở đâu
+Loại phần cứng {0} không được thăm dò hoặc không hợp lệ.
+Loại phần cứng {0} chưa được thăm dò. Nếu bạn chắc chắn rằng nó đã được thăm dò, hãy khởi động lại hạt nhân với tính năng gỡ lỗi được bật.
+Các phần không được phân tích cú pháp thành danh sách.
+Chế độ tin tặc
+Nếu được bật, bảng điều khiển màu xanh lá cây sẽ được bật.
+In dấu phân tách
+In dấu phân tách có hỗ trợ định dạng
+In dấu phân cách với hỗ trợ màu
+In dấu phân tách với hỗ trợ màu và định dạng
+Luôn luôn tập trung
+Kích hoạt hỗ trợ 255 màu cho Marquee.
+Kích hoạt hỗ trợ màu thực cho Marquee.
+Viết bất kỳ văn bản nào bạn muốn hiển thị.
+Cho dù văn bản được hiển thị trên bảng điều khiển luôn được căn giữa.
+'q' để thoát.
+Đối số {0} không được tìm thấy để đưa vào.
+Không tìm thấy đối số dòng lệnh {0}.
+Xóa tất cả các cài đặt
+Trình bảo vệ màn hình gặp lỗi khi hiển thị: {0}. Nhấn bất kì phím nào để thoát.
+Xem trước ...
+Đây là cách chủ đề của bạn sẽ trông như thế nào:
+Các lệnh có thể quấn:
+Mod {0} có lệnh không hợp lệ. Phân tích cú pháp mô-đun không thành công. Xem lại mã nguồn.
+Phần mod:

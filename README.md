@@ -8,6 +8,8 @@ Kernel Simulator simulates the future of our planned kernel that's coming as soo
 
 Not only it has some basic commands, but it also provides script support, network support, and tons of awesome things.
 
+WARNING: 0.0.16.x or later is not backwards-compatible with 0.0.15.x or below. To remedy this issue, use the KSConverter application supplied within Kernel Simulator.
+
 ## Build Status
 
 Here are all the CI build status for all KS branches.
@@ -30,9 +32,17 @@ This section covers what you need to run Kernel Simulator. Please scroll down to
 
 ### Linux systems
 
-1. Mono 5.10 or higher (6.0 or higher is recommended)
+1. Mono 5.10 or higher (6.0 or higher is recommended) with mono-vbnc installed
 2. Internet Connection
 3. Appropriate console that supports escape sequences and custom monotyped fonts for languages (Konsole, GNOME Terminal, ...)
+
+### MacOS systems
+
+1. Mono Runtime
+2. Internet Connection
+3. Appropriate console that supports escape sequences and custom monotyped fonts for languages (iTerm2)
+
+WARNING: Don't use MacOS' builtin Terminal.app; it has broken support for 255 and true colors.
 
 ## How to install
 
@@ -57,6 +67,8 @@ This section covers how to install Kernel Simulator on your system. Please scrol
 2. Unzip the file to any directory
 3. Install the following programs:
    - Microsoft.VisualBasic.dll 10.0 (Debian and its derivatives: `sudo apt install libmono-microsoft-visualbasic10.0-cil`)
+   - mono-vbnc (Debian and its derivatives: `sudo apt install mono-vbnc`)
+   - libcpanel-json-xs-perl (Debian and its derivatives: `sudo apt install libcpanel-json-xs-perl`)
    - Inxi application (For hard drive probation) (Debian and its derivatives: `sudo apt install inxi libcpanel-json-xs-perl`)
 4. Open terminal to the directory that contains KS, and run it using `mono "Kernel Simulator.exe"`
 
@@ -66,6 +78,15 @@ This section covers how to install Kernel Simulator on your system. Please scrol
 2. Confirm the addition of the PPA. It should update your package cache
 3. Execute `sudo apt install kernel-simulator`
 4. Execute `ks`
+
+### macOS systems
+
+1. Download the Kernel Simulator binary files [here](https://github.com/EoflaOE/Kernel-Simulator/releases).
+2. Unzip the file to any directory
+3. Install the following programs:
+   - [Mono Runtime](https://www.mono-project.com/download/stable/#download-mac)
+   - [iTerm2](https://iterm2.com/downloads.html)
+4. Open terminal to the directory that contains KS, and run it using `mono "Kernel Simulator.exe"`
 
 ## How to Build
 
@@ -105,9 +126,17 @@ This section covers how to build Kernel Simulator on your system. Please scroll 
 
 **EoflaOE:** Owner of Kernel Simulator
 
-**Oxygen Team:** Icon creator
-
 **OpenWeatherMap:** Weather API
+
+**https://jonasjacek.github.io/colors/:** Console color data
+
+**sindresorhus:** Word list
+
+**ayu-theme:** Ayu Theme
+
+**Ethan Schoonover:** Solarized Theme
+
+**Fabian Neuschmidt:** https://github.com/fneu/breezy
 
 **All contributors:** Contribution
 

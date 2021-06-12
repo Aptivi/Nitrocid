@@ -18,11 +18,10 @@
 
 Imports System.IO
 
-Module DebugWriters
+Public Module DebugWriters
 
     Public dbgWriter As StreamWriter
     Public DebugQuota As Double = 1073741824 '1073741824 bytes = 1 GiB (1 GB for Windows)
-    Public RDebugDNP As String = "KSUser" 'Appended with random ID when new session arrives
     Public dbgStackTraces As New List(Of String)
 
     ''' <summary>
@@ -33,7 +32,7 @@ Module DebugWriters
     Public Sub Wdbg(ByVal Level As Char, ByVal text As String, ByVal ParamArray vars() As Object)
         If DebugMode Then
             'Open debugging stream
-            If IsNothing(dbgWriter) Or IsNothing(dbgWriter?.BaseStream) Then dbgWriter = New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
+            If dbgWriter Is Nothing Or dbgWriter?.BaseStream Is Nothing Then dbgWriter = New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
 
             Dim STrace As New StackTrace(True)
             Dim Source As String = Path.GetFileName(STrace.GetFrame(1).GetFileName)
@@ -51,8 +50,8 @@ Module DebugWriters
             'Check for debug quota
             CheckForExceed()
 
-            'For contributors who are testing new code: Uncomment the two Debug.WriteLine lines for immediate debugging (Immediate Window)
-            If Not Source Is Nothing And Not LineNum = 0 Then
+            'For contributors who are testing new code: Define ENABLEIMMEDITEWINDOWDEBUG for immediate debugging (Immediate Window)
+            If Source IsNot Nothing And Not LineNum = 0 Then
                 'Debug to file and all connected debug devices (raw mode)
                 dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
                 For i As Integer = 0 To dbgConns.Count - 1
@@ -63,7 +62,9 @@ Module DebugWriters
                         WStkTrc(ex)
                     End Try
                 Next
-                'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
+#If ENABLEIMMEDIATEWINDOWDEBUG Then
+                Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
+#End If
             Else 'Rare case, unless debug symbol is not found on archives.
                 dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
                 For i As Integer = 0 To dbgConns.Count - 1
@@ -74,7 +75,9 @@ Module DebugWriters
                         WStkTrc(ex)
                     End Try
                 Next
-                'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
+#If ENABLEIMMEDIATEWINDOWDEBUG Then
+                Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
+#End If
             End If
 
             'Disconnect offending clients who are disconnected
@@ -109,7 +112,9 @@ Module DebugWriters
                     WStkTrc(ex)
                 End Try
             Next
-            'Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
+#If ENABLEIMMEDIATEWINDOWDEBUG Then
+            Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString}: [{Level}] {text}", vars)
+#End If
 
             'Disconnect offending clients who are disconnected
             For Each i As Integer In OffendingIndex
@@ -133,10 +138,20 @@ Module DebugWriters
         If DebugMode Then
             'These two vbNewLines are padding for accurate stack tracing.
             dbgStackTraces.Add($"{vbNewLine}{Ex.ToString.Substring(0, Ex.ToString.IndexOf(":"))}: {Ex.Message}{vbNewLine}{Ex.StackTrace}{vbNewLine}")
+            Dim Inner As Exception = Ex.InnerException
+            Dim InnerNumber As Integer = 1
+            Do Until Inner Is Nothing
+                dbgStackTraces.Add($"{vbNewLine}[{InnerNumber}] {Inner.ToString.Substring(0, Inner.ToString.IndexOf(":"))}: {Inner.Message}{vbNewLine}{Inner.StackTrace}{vbNewLine}")
+                InnerNumber += 1
+                Inner = Inner.InnerException
+            Loop
 
             'Print stack trace to debugger
-            Dim StkTrcs As String() = dbgStackTraces(0).Replace(Chr(13), "").Split(Chr(10))
-            For i As Integer = 0 To StkTrcs.Length - 1
+            Dim StkTrcs As New List(Of String)
+            For i As Integer = 0 To dbgStackTraces.Count - 1
+                StkTrcs.AddRange(dbgStackTraces(i).SplitNewLines)
+            Next
+            For i As Integer = 0 To StkTrcs.Count - 1
                 Wdbg("E", StkTrcs(i))
             Next
         End If

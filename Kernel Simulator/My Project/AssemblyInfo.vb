@@ -11,13 +11,13 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("Kernel Simulator")>
-<Assembly: AssemblyDescription("Simulates our future kernel.")>
-<Assembly: AssemblyCompany("EoflaOE")> 
+<Assembly: AssemblyDescription("Simulates our future kernel")>
+<Assembly: AssemblyCompany("EoflaOE")>
 <Assembly: AssemblyProduct("Kernel Simulator")>
 <Assembly: AssemblyCopyright("Copyright © EoflaOE 2018 - 2021")>
-<Assembly: AssemblyTrademark("")> 
+<Assembly: AssemblyTrademark("")>
 
-<Assembly: ComVisible(False)> 
+<Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
 <Assembly: Guid("d2feb7cd-1e12-493a-998a-6366898f6aae")>
@@ -33,7 +33,7 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")> 
 
-<Assembly: AssemblyVersion("0.0.15.8")>
-<Assembly: AssemblyFileVersion("1.0.15.8")>
+<Assembly: AssemblyVersion("0.0.16.0")>
+<Assembly: AssemblyFileVersion("1.0.16.0")>
 
-<Assembly: NeutralResourcesLanguageAttribute("en-US")> 
+<Assembly: NeutralResourcesLanguageAttribute("en-US")>

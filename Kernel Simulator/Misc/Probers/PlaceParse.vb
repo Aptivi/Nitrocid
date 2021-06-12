@@ -18,31 +18,6 @@
 
 Public Module PlaceParse
 
-    'Placeholders (strings)
-    Private ReadOnly userplace As String = "<user>"
-    Private ReadOnly ftpuserplace As String = "<ftpuser>"
-    Private ReadOnly ftpaddrplace As String = "<ftpaddr>"
-    Private ReadOnly mailuserplace As String = "<mailuser>"
-    Private ReadOnly mailaddrplace As String = "<mailaddr>"
-    Private ReadOnly sftpuserplace As String = "<sftpuser>"
-    Private ReadOnly sftpaddrplace As String = "<sftpaddr>"
-    Private ReadOnly hostplace As String = "<host>"
-    Private ReadOnly dirplace As String = "<currentdirectory>"
-    Private ReadOnly ftpdirplace As String = "<currentftpdirectory>"
-    Private ReadOnly ftplocaldirplace As String = "<currentftplocaldirectory>"
-    Private ReadOnly maildirplace As String = "<currentmaildirectory>"
-    Private ReadOnly sftpdirplace As String = "<currentsftpdirectory>"
-    Private ReadOnly sftplocaldirplace As String = "<currentsftplocaldirectory>"
-    Private ReadOnly sdateplace As String = "<shortdate>"
-    Private ReadOnly ldateplace As String = "<longdate>"
-    Private ReadOnly stimeplace As String = "<shorttime>"
-    Private ReadOnly ltimeplace As String = "<longtime>"
-    Private ReadOnly dateplace As String = "<date>"
-    Private ReadOnly timeplace As String = "<time>"
-    Private ReadOnly tzplace As String = "<timezone>"
-    Private ReadOnly stzplace As String = "<summertimezone>"
-    Private ReadOnly sysplace As String = "<system>"
-
     ''' <summary>
     ''' Probes the placeholders found in string
     ''' </summary>
@@ -53,105 +28,139 @@ Public Module PlaceParse
         EventManager.RaisePlaceholderParsing(text)
         Try
             Wdbg("I", "Parsing text for placeholders...")
-            If text.Contains(userplace) Then
+            If text.Contains("<user>") Then
                 Wdbg("I", "Username placeholder found.")
-                text = text.Replace(userplace, signedinusrnm)
+                text = text.Replace("<user>", signedinusrnm)
             End If
-            If text.Contains(ftpuserplace) Then
+            If text.Contains("<ftpuser>") Then
                 Wdbg("I", "FTP username placeholder found.")
-                text = text.Replace(ftpuserplace, user)
+                text = text.Replace("<ftpuser>", user)
             End If
-            If text.Contains(ftpaddrplace) Then
+            If text.Contains("<ftpaddr>") Then
                 Wdbg("I", "FTP address placeholder found.")
-                text = text.Replace(ftpaddrplace, ftpsite)
+                text = text.Replace("<ftpaddr>", ftpsite)
             End If
-            If text.Contains(ftpdirplace) Then
+            If text.Contains("<currentftpdirectory>") Then
                 Wdbg("I", "FTP directory placeholder found.")
-                text = text.Replace(ftpdirplace, currentremoteDir)
+                text = text.Replace("<currentftpdirectory>", currentremoteDir)
             End If
-            If text.Contains(ftplocaldirplace) Then
+            If text.Contains("<currentftplocaldirectory>") Then
                 Wdbg("I", "FTP local directory placeholder found.")
-                text = text.Replace(ftplocaldirplace, currDirect)
+                text = text.Replace("<currentftplocaldirectory>", currDirect)
             End If
-            If text.Contains(sftpuserplace) Then
+            If text.Contains("<sftpuser>") Then
                 Wdbg("I", "SFTP username placeholder found.")
-                text = text.Replace(sftpuserplace, SFTPUser)
+                text = text.Replace("<sftpuser>", SFTPUser)
             End If
-            If text.Contains(sftpaddrplace) Then
+            If text.Contains("<sftpaddr>") Then
                 Wdbg("I", "SFTP address placeholder found.")
-                text = text.Replace(sftpaddrplace, sftpsite)
+                text = text.Replace("<sftpaddr>", sftpsite)
             End If
-            If text.Contains(sftpdirplace) Then
+            If text.Contains("<currentsftpdirectory>") Then
                 Wdbg("I", "SFTP directory placeholder found.")
-                text = text.Replace(sftpdirplace, SFTPCurrentRemoteDir)
+                text = text.Replace("<currentsftpdirectory>", SFTPCurrentRemoteDir)
             End If
-            If text.Contains(sftplocaldirplace) Then
+            If text.Contains("<currentsftplocaldirectory>") Then
                 Wdbg("I", "SFTP local directory placeholder found.")
-                text = text.Replace(sftplocaldirplace, SFTPCurrDirect)
+                text = text.Replace("<currentsftplocaldirectory>", SFTPCurrDirect)
             End If
-            If text.Contains(mailuserplace) Then
+            If text.Contains("<mailuser>") Then
                 Wdbg("I", "Mail username placeholder found.")
-                text = text.Replace(mailuserplace, Mail_Authentication.UserName)
+                text = text.Replace("<mailuser>", Mail_Authentication.UserName)
             End If
-            If text.Contains(mailaddrplace) Then
+            If text.Contains("<mailaddr>") Then
                 Wdbg("I", "Mail address placeholder found.")
-                text = text.Replace(mailaddrplace, Mail_Authentication.Domain)
+                text = text.Replace("<mailaddr>", Mail_Authentication.Domain)
             End If
-            If text.Contains(maildirplace) Then
+            If text.Contains("<currentmaildirectory>") Then
                 Wdbg("I", "Mail directory placeholder found.")
-                text = text.Replace(maildirplace, IMAP_CurrentDirectory)
+                text = text.Replace("<currentmaildirectory>", IMAP_CurrentDirectory)
             End If
-            If text.Contains(hostplace) Then
+            If text.Contains("<host>") Then
                 Wdbg("I", "Hostname placeholder found.")
-                text = text.Replace(hostplace, HName)
+                text = text.Replace("<host>", HName)
             End If
-            If text.Contains(dirplace) Then
+            If text.Contains("<currentdirectory>") Then
                 Wdbg("I", "Current directory placeholder found.")
-                text = text.Replace(dirplace, CurrDir)
+                text = text.Replace("<currentdirectory>", CurrDir)
             End If
-            If text.Contains(sdateplace) Then
+            If text.Contains("<shortdate>") Then
                 Wdbg("I", "Short Date placeholder found.")
-                text = text.Replace(sdateplace, KernelDateTime.ToShortDateString)
+                text = text.Replace("<shortdate>", KernelDateTime.ToShortDateString)
             End If
-            If text.Contains(ldateplace) Then
+            If text.Contains("<longdate>") Then
                 Wdbg("I", "Long Date placeholder found.")
-                text = text.Replace(ldateplace, KernelDateTime.ToLongDateString)
+                text = text.Replace("<longdate>", KernelDateTime.ToLongDateString)
             End If
-            If text.Contains(stimeplace) Then
+            If text.Contains("<shorttime>") Then
                 Wdbg("I", "Short Time placeholder found.")
-                text = text.Replace(stimeplace, KernelDateTime.ToShortTimeString)
+                text = text.Replace("<shorttime>", KernelDateTime.ToShortTimeString)
             End If
-            If text.Contains(ltimeplace) Then
+            If text.Contains("<longtime>") Then
                 Wdbg("I", "Long Time placeholder found.")
-                text = text.Replace(ltimeplace, KernelDateTime.ToShortDateString)
+                text = text.Replace("<longtime>", KernelDateTime.ToShortDateString)
             End If
-            If text.Contains(dateplace) Then
+            If text.Contains("<date>") Then
                 Wdbg("I", "Rendered Date placeholder found.")
-                text = text.Replace(dateplace, RenderDate)
+                text = text.Replace("<date>", RenderDate)
             End If
-            If text.Contains(timeplace) Then
+            If text.Contains("<time>") Then
                 Wdbg("I", "Rendered Time placeholder found.")
-                text = text.Replace(timeplace, RenderTime)
+                text = text.Replace("<time>", RenderTime)
             End If
-            If text.Contains(tzplace) Then
+            If text.Contains("<timezone>") Then
                 Wdbg("I", "Standard Time Zone placeholder found.")
-                text = text.Replace(tzplace, TimeZone.CurrentTimeZone.StandardName)
+                text = text.Replace("<timezone>", TimeZone.CurrentTimeZone.StandardName)
             End If
-            If text.Contains(stzplace) Then
+            If text.Contains("<summertimezone>") Then
                 Wdbg("I", "Summer Time Zone placeholder found.")
-                text = text.Replace(stzplace, TimeZone.CurrentTimeZone.DaylightName)
+                text = text.Replace("<summertimezone>", TimeZone.CurrentTimeZone.DaylightName)
             End If
-            If text.Contains(sysplace) Then
+            If text.Contains("<system>") Then
                 Wdbg("I", "System placeholder found.")
-                text = text.Replace(sysplace, Environment.OSVersion.ToString)
+                text = text.Replace("<system>", Environment.OSVersion.ToString)
+            End If
+            If text.Contains("<f:reset>") Then
+                Wdbg("I", "Foreground color reset placeholder found.")
+                text = text.Replace("<f:reset>", New Color(NeutralTextColor).VTSequenceForeground)
+            End If
+            If text.Contains("<b:reset>") Then
+                Wdbg("I", "Background color reset placeholder found.")
+                text = text.Replace("<b:reset>", New Color(BackgroundColor).VTSequenceBackground)
+            End If
+            If text.Contains("<f:") Then
+                Wdbg("I", "Foreground color placeholder found.")
+                Do While text.Contains("<f:")
+                    Dim SequenceSubstring As String = text.Substring(text.IndexOf("<f:"), Finish:=text.IndexOf(">"))
+                    Dim PlainSequence As String = SequenceSubstring.Substring(3, SequenceSubstring.Length - 1 - 3)
+                    Dim VTSequence As String = New Color(PlainSequence).VTSequenceForeground
+                    text = text.Replace(SequenceSubstring, VTSequence)
+                Loop
+            End If
+            If text.Contains("<b:") Then
+                Wdbg("I", "Background color placeholder found.")
+                Do While text.Contains("<b:")
+                    Dim SequenceSubstring As String = text.Substring(text.IndexOf("<b:"), Finish:=text.IndexOf(">"))
+                    Dim PlainSequence As String = SequenceSubstring.Substring(3, SequenceSubstring.Length - 1 - 3)
+                    Dim VTSequence As String = New Color(PlainSequence).VTSequenceBackground
+                    text = text.Replace(SequenceSubstring, VTSequence)
+                Loop
+            End If
+            If text.Contains("<$") Then
+                Wdbg("I", "UESH variable placeholder found.")
+                Do While text.Contains("<$")
+                    Dim ShellVariableSubstring As String = text.Substring(text.IndexOf("<$"), Finish:=text.IndexOf(">"))
+                    Dim PlainShellVariable As String = ShellVariableSubstring.Substring(1, ShellVariableSubstring.Length - 1 - 1)
+                    text = text.Replace(ShellVariableSubstring, GetVariable(PlainShellVariable))
+                Loop
             End If
             EventManager.RaisePlaceholderParsed(text)
         Catch ex As Exception
             WStkTrc(ex)
             If DebugMode = True Then
-                W(DoTranslation("Error trying to parse placeholders. {0} - Stack trace:", currentLang) + vbNewLine + ex.StackTrace, True, ColTypes.Err, ex.Message)
+                W(DoTranslation("Error trying to parse placeholders. {0} - Stack trace:") + vbNewLine + ex.StackTrace, True, ColTypes.Error, ex.Message)
             Else
-                W(DoTranslation("Error trying to parse placeholders. {0}", currentLang), True, ColTypes.Err, ex.Message)
+                W(DoTranslation("Error trying to parse placeholders. {0}"), True, ColTypes.Error, ex.Message)
             End If
         End Try
         Return text

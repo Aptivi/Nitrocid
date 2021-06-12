@@ -61,16 +61,62 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to al&apos;awamir almtaht: {0}
-        '''aktaba al&apos;amr:
-        '''tam &apos;iilgha&apos; haqn al&apos;awamir.
-        '''aifsil bayn wasaytat altamhid bifawasil bidun masafat , ealaa sabil almithal , &quot;motd ، gpuprobe&quot;
-        '''&apos;awamir munfasilat ealaa &apos;cmdinject&apos; mae colons bimasafat , ealaa sabil almithal , &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''lahaz &apos;ana alwasita &apos;debug&apos; la tughatiy alnawat bialkamil.
-        '''alsafaqat: alwasitat almatluba {0} ghyr mawjudatin.
-        '''alsfqat: khata ghyr qabil lilaistirdad fi alwsytt:
-        '''alwasayit almutahat: {0}
-        '''alhujaj (&quot;almusaedat&quot; lil [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;60&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;113&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;146&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;146&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;60&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;35&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;113&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;113&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;35&quot;,
+        '''    &quot;StageColor&quot;: &quot;146&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;146&quot;,
+        '''    &quot;WarningColor&quot;: &quot;146&quot;,
+        '''    &quot;OptionColor&quot;: &quot;113&quot;,
+        '''    &quot;BannerColor&quot;: &quot;146&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property _3Y_Diamond() As String
+            Get
+                Return ResourceManager.GetString("_3Y_Diamond", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;15&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;15&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;11&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;9&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;2&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;10&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;7&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;3&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;8&quot;,
+        '''    &quot;StageColor&quot;: &quot;10&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;9&quot;,
+        '''    &quot;WarningColor&quot;: &quot;11&quot;,
+        '''    &quot;OptionColor&quot;: &quot;3&quot;,
+        '''    &quot;BannerColor&quot;: &quot;10&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property _Default() As String
+            Get
+                Return ResourceManager.GetString("_Default", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;al&apos;awamir almtaht: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;aktaba al&apos;amr:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;tam &apos;iilgha&apos; haqn al&apos;awamir.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;aifsil bayn wasaytat altamhid bifawasil bidun masafat , ealaa sabil almithal , \&quot;motd � gpuprobe\&quot;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;&apos;awamir munfasilat ealaa &apos; [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property arb() As String
             Get
@@ -79,18 +125,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to الأوامر المتاحة: {0}
-        '''اكتب الأمر:
-        '''تم إلغاء حقن الأوامر.
-        '''افصل بين وسيطات التمهيد بفواصل بدون مسافات ، على سبيل المثال ، &quot;motd ، gpuprobe&quot;
-        '''أوامر منفصلة على &apos;cmdinject&apos; مع colons بمسافات ، على سبيل المثال ، &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''لاحظ أن الوسيطة &apos;debug&apos; لا تغطي النواة بالكامل.
-        '''الصفقات: الوسيطة المطلوبة {0} غير موجودة.
-        '''الصفقات: خطأ غير قابل للاسترداد في الوسيطة:
-        '''الوسائط المتاحة: {0}
-        '''الحجج (&quot;المساعدة&quot; للمساعدة):
-        '''سيتم جدولة الحجج المحقونة لتشغيلها عند إعادة التمهيد التالي.
-        '''تم إلغاء  [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;الأوامر المتاحة: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;اكتب الأمر:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;تم إلغاء حقن الأوامر.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;افصل بين وسيطات التمهيد بفواصل بدون مسافات ، على سبيل المثال ، \&quot;motd ، gpuprobe\&quot;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;أوامر منفصلة على &apos;cmdinject&apos; مع colons بمسافات ، على س [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property arb_T() As String
             Get
@@ -99,17 +139,81 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Mövcud əmrlər: {0}
-        '''Komanda yazın:
-        '''Komanda inyeksiyası ləğv edildi.
-        '''Boşluqları vergüllə ayırın, məsələn &apos;motd, gpuprobe&apos;
-        '''&apos;Cmdinject&apos; əmrlərini boşluqlu nöqtələr ilə ayırın, məsələn, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''Qeyd edək ki, &apos;debug&apos; arqumenti nüvəni tam əhatə etmir.
-        '''bargs: İstədiyiniz arqument {0} tapılmadı.
-        '''barks: arqumentdə bərpa olunmayan səhv:
-        '''Mövcud arqumentlər: {0}
-        '''Mübahisələr (kömək üçün &apos;help&apos;):
-        '''Enjekte edilmiş arqumentlərin növbəti yenidən başlatma zamanı işə salınması planl [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;184;204;82&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;92;103;115&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;255;119;51&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;255;51;51&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;54;163;217&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;230;182;115&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;15;20;25&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;230;225;207&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;54;163;217&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;230;182;115&quot;,
+        '''    &quot;StageColor&quot;: &quot;255;180;84&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;255;51;51&quot;,
+        '''    &quot;WarningColor&quot;: &quot;255;119;51&quot;,
+        '''    &quot;OptionColor&quot;: &quot; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property AyuDark() As String
+            Get
+                Return ResourceManager.GetString("AyuDark", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;134;179;0&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;171;176;182&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;255;119;51&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;255;51;51&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;54;163;217&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;230;182;115&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;250;250;250&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;92;103;115&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;54;163;217&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;230;182;115&quot;,
+        '''    &quot;StageColor&quot;: &quot;242;151;24&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;255;51;51&quot;,
+        '''    &quot;WarningColor&quot;: &quot;255;119;51&quot;,
+        '''    &quot;OptionColor&quot;: [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property AyuLight() As String
+            Get
+                Return ResourceManager.GetString("AyuLight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;187;230;126&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;92;103;115&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;255;174;87&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;255;51;51&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;92;207;230&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;255;196;76&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;33;39;51&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;217;215;206&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;92;207;230&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;255;196;76&quot;,
+        '''    &quot;StageColor&quot;: &quot;255;213;127&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;255;51;51&quot;,
+        '''    &quot;WarningColor&quot;: &quot;255;174;87&quot;,
+        '''    &quot;OptionColor&quot;: &quot; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property AyuMirage() As String
+            Get
+                Return ResourceManager.GetString("AyuMirage", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Mövcud əmrlər: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Komanda yazın:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Komanda inyeksiyası ləğv edildi.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Boşluqları vergüllə ayırın, məsələn &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;&apos;Cmdinject&apos; əmrlərini boşluqlu nöqtələr ilə ayırın, məsələn, &apos;cmdinject  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property azr() As String
             Get
@@ -118,15 +222,37 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Upalabdha kamānḍa: {0}
-        '''Ādēśa likhuna: 
-        '''Kamānḍa iñjēkaśana bātila karā haẏēchē.
-        '''Phām̐kā chāṛā&apos;i kamā diẏē buṭa ārgumēnṭaguli pr̥thaka karuna, udāharaṇasbarūpa, &apos;motd, gpuprobe&apos;
-        '''spēsa saha kōlana saha&apos;sēmiḍinajēkṭa&apos; ēra upara pr̥thaka pr̥thaka kamānḍa, udāharaṇasbarūpa, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''Manē rākhabēna yē&apos;ḍibāga&apos; yuktiṭi kārnēlaṭikē purōpuri kabhāra karē nā.
-        '''Bāragasa: Anurōdha karā ārgumēnṭa {0} not pā&apos;ōẏā yāẏa ni.
-        '''Bāragasa: Yuktitē apasāraṇayōgya truṭi:
-        '''Upalabdha ārgumēnṭa:  [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;74&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;177&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;202&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;202&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;130&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;202&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;177&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;12&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;80&quot;,
+        '''    &quot;StageColor&quot;: &quot;80&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;202&quot;,
+        '''    &quot;WarningColor&quot;: &quot;202&quot;,
+        '''    &quot;OptionColor&quot;: &quot;12&quot;,
+        '''    &quot;BannerColor&quot;: &quot;80&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property BedOS() As String
+            Get
+                Return ResourceManager.GetString("BedOS", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Upalabdha kamānḍa: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Ādēśa likhuna: &quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Kamānḍa iñjēkaśana bātila karā haẏēchē.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Phām̐kā chāṛā&apos;i kamā diẏē buṭa ārgumēnṭaguli pr̥thaka karuna, udāharaṇasbarūpa, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;spēsa saha kōlan [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ben() As String
             Get
@@ -135,17 +261,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to উপলব্ধ কমান্ড: {0}
-        '''আদেশ লিখুন:
-        '''কমান্ড ইঞ্জেকশন বাতিল করা হয়েছে।
-        '''ফাঁকা ছাড়াই কমা দিয়ে বুট আর্গুমেন্টগুলি পৃথক করুন, উদাহরণস্বরূপ, &apos;motd, gpuprobe&apos;
-        '''স্পেস সহ কোলন সহ &apos;সেমিডিনজেক্ট&apos; এর উপর পৃথক পৃথক কমান্ড, উদাহরণস্বরূপ, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''মনে রাখবেন যে &apos;ডিবাগ&apos; যুক্তিটি কার্নেলটিকে পুরোপুরি কভার করে না।
-        '''বারগস: অনুরোধ করা আর্গুমেন্ট {0 not পাওয়া যায় নি।
-        '''বারগস: যুক্তিতে অপসারণযোগ্য ত্রুটি:
-        '''উপলব্ধ আর্গুমেন্ট: {0}
-        '''যুক্তি (সহায়তার জন্য &apos;সহায়তা&apos;):
-        '''ইনজেক্টেড আর্গুমেন্টগুলি পরব [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;উপলব্ধ কমান্ড: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;আদেশ লিখুন:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;কমান্ড ইঞ্জেকশন বাতিল করা হয়েছে।&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;ফাঁকা ছাড়াই কমা দিয়ে বুট আর্গুমেন্টগুলি পৃথক করুন, উদাহরণস্বরূপ, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;স্পেস সহ কোলন সহ &apos;সেমিডিনজেক্ট&apos; এর উপর পৃথক [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ben_T() As String
             Get
@@ -154,17 +275,186 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Kěyòng mìnglìng: {0}
-        '''Xiě mìnglìng: 
-        '''Mìnglìng zhùrù yǐ bèi qǔxiāo.
-        '''Shǐyòng dòuhào fēngé yǐndǎo cānshù, bù dài kònggé, lìrú&apos;motd,gpuprobe&apos;
-        '''&apos;Cmdinject&apos; shàng de mìnglìng yǔ dài kònggé de màohào fēnkāi, lìrú&apos;cmdinject setthemes Hacker:Beep 1024 0.5&apos;
-        '''Qǐng zhùyì,&apos;debug&apos;cānshù bìng bù wánquán fùgài nèihé.
-        '''bargs: Zhǎo bù dào qǐngqiú de cānshù {0}.
-        '''bargs: Cānshù zhōng bùkě huīfù de cuòwù:
-        '''Kěyòng cānshù:{0}
-        '''Cānshù (&apos;bāngzhù&apos;xúnqiú bāngzhù):
-        '''Zhùrù de cānshù jiāng ānpái zàixià cì chóngxīn qǐdòng shí yùnxíng.        ''' [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;0&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;0&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;0&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;0&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;0&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;0&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;15&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;0&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;0&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;0&quot;,
+        '''    &quot;StageColor&quot;: &quot;0&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;0&quot;,
+        '''    &quot;WarningColor&quot;: &quot;0&quot;,
+        '''    &quot;OptionColor&quot;: &quot;0&quot;,
+        '''    &quot;BannerColor&quot;: &quot;0&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property BlackOnWhite() As String
+            Get
+                Return ResourceManager.GetString("BlackOnWhite", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;14&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;14&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;12&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;12&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;12&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;12&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;6&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;14&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;14&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;12&quot;,
+        '''    &quot;StageColor&quot;: &quot;14&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;12&quot;,
+        '''    &quot;WarningColor&quot;: &quot;12&quot;,
+        '''    &quot;OptionColor&quot;: &quot;14&quot;,
+        '''    &quot;BannerColor&quot;: &quot;14&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property Bluespire() As String
+            Get
+                Return ResourceManager.GetString("Bluespire", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;128;0;119&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;128;0;119&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;247;224;23&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;255;0;70&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;128;0;119&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;128;0;119&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;4;0;89&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;255;0;238&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;255;0;238&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;128;0;119&quot;,
+        '''    &quot;StageColor&quot;: &quot;128;0;119&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;255;0;70&quot;,
+        '''    &quot;WarningColor&quot;: &quot;247;224;23&quot;,
+        '''    &quot;OptionColor&quot;: &quot;255;0;238&quot;,
+        '''   [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property BrandingBlue() As String
+            Get
+                Return ResourceManager.GetString("BrandingBlue", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;0;128;119&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;0;128;119&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;247;224;23&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;255;70;0&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;0;128;119&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;0;128;119&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;94;0;63&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;0;255;238&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;0;255;238&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;0;128;119&quot;,
+        '''    &quot;StageColor&quot;: &quot;0;128;119&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;255;70;0&quot;,
+        '''    &quot;WarningColor&quot;: &quot;247;224;23&quot;,
+        '''    &quot;OptionColor&quot;: &quot;0;255;238&quot;,
+        '''  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property BrandingPurple() As String
+            Get
+                Return ResourceManager.GetString("BrandingPurple", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;InputColor&quot;: &quot;244;79;79&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;122;124;125&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;202;146;25&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;77;31;36&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;41;128;185&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;61;174;233&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;35;38;41&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;207;207;194&quot;,
+        '''  &quot;ListEntryColor&quot;: &quot;41;128;185&quot;,
+        '''  &quot;ListValueColor&quot;: &quot;61;174;233&quot;,
+        '''  &quot;StageColor&quot;: &quot;253;188;75&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;77;31;36&quot;,
+        '''  &quot;WarningColor&quot;: &quot;202;146;25&quot;,
+        '''  &quot;OptionColor&quot;: &quot;39;174;174&quot;,
+        '''  &quot;BannerColor&quot;: &quot; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property Breeze() As String
+            Get
+                Return ResourceManager.GetString("Breeze", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;InputColor&quot;: &quot;244;79;79&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;122;124;125&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;202;146;25&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;77;31;36&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;41;128;185&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;61;174;233&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;207;207;194&quot;,
+        '''  &quot;ListEntryColor&quot;: &quot;41;128;185&quot;,
+        '''  &quot;ListValueColor&quot;: &quot;61;174;233&quot;,
+        '''  &quot;StageColor&quot;: &quot;253;188;75&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;77;31;36&quot;,
+        '''  &quot;WarningColor&quot;: &quot;202;146;25&quot;,
+        '''  &quot;OptionColor&quot;: &quot;39;174;174&quot;,
+        '''  &quot;BannerColor&quot;: &quot;253;188 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property BreezeDark() As String
+            Get
+                Return ResourceManager.GetString("BreezeDark", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Eskuragarri dauden komandoak: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Idatzi komandoa:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Komando injekzioa bertan behera utzi da.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Bereiztu abio-argumentuak komarik zuriunerik gabe, adibidez, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Bereiztu komandoak &apos;cm [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property bsq() As String
+            Get
+                Return ResourceManager.GetString("bsq", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Malamulo omwe alipo: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Lembani lamulo:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Jekeseni wamalamulo waletsedwa.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Siyanitsani zotsutsana za boot ndi makasitomala opanda malo, mwachitsanzo, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Patulani malamulo pa &apos;cmdin [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property ccw() As String
+            Get
+                Return ResourceManager.GetString("ccw", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Kěyòng mìnglìng: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Xiě mìnglìng: &quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Mìnglìng zhùrù yǐ bèi qǔxiāo.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Shǐyòng dòuhào fēngé yǐndǎo cānshù, bù dài kònggé, lìrú&apos;motd,gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;&apos;Cmdinject&apos; shàng de mìnglìng yǔ dài kònggé de màohào f [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property chi() As String
             Get
@@ -173,31 +463,13 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 可用命令：{0}
-        '''编写命令：
-        '''命令注入已被取消。
-        '''引导参数之间用逗号分隔，不带空格，例如&apos;motd，gpuprobe&apos;
-        '''在&apos;cmdinject&apos;上用冒号分隔空格的命令，例如&apos;cmdinject setthemes Hacker：beep 1024 0.5&apos;
-        '''请注意，“ debug”参数不能完全覆盖内核。
-        '''bargs：找不到请求的参数{0}。
-        '''bargs：参数中无法恢复的错误：
-        '''可用参数：{0}
-        '''参数（“帮助”以获取帮助）：
-        '''注入的参数将计划在下次重新引导时运行。
-        '''参数注入已被取消。
-        '''解析实际的命令行参数时出错：{0}
-        '''无效的颜色模板{0}
-        '''默认
-        '''自订
-        '''hwprobe：将检测您的硬件。请耐心等待...
-        '''hwprobe：已检测到硬件。
-        '''hwprobe：未检测到硬件。使用“ hwprobe”进行探测
-        '''CPU：一个或多个CPU内核无法探测。仍在显示信息...
-        '''RAM：无法探测一个或多个RAM芯片。仍在显示信息...
-        '''HDD：无法探测一个或多个硬盘驱动器。仍在显示信息...
-        '''CPU：处理器总数：{0}
-        '''CPU：{0} {1} MHz
-        '''RAM：{0} MB = {1} MB [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;可用命令：{0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;编写命令：&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;命令注入已被取消。&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;引导参数之间用逗号分隔，不带空格，例如&apos;motd，gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;在&apos;cmdinject&apos;上用冒号分隔空格的命令，例如&apos;cmdinject setthemes Hacker：beep 1024 0.5&apos;&quot;,
+        '''  &quot;Note that the &apos;debug&apos; argument does not fully cover the k [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property chi_T() As String
             Get
@@ -206,17 +478,21 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Dostupne naredbe: {0}
-        '''Napisati naredbu:
-        '''Ukidanje naredbe je otkazano.
-        '''Argumente pokretanja odvojite zarezima bez razmaka, na primjer, &quot;motd, gpuprobe&quot;
-        '''Odvojite naredbe na &apos;cmdinject&apos; kolonama s razmacima, na primjer, &apos;cmdinject setthemes Hacker: beep 1024 0,5&apos;
-        '''Imajte na umu da argument za uklanjanje pogrešaka ne pokriva u potpunosti kernel.
-        '''bargs: Traženi argument {0} nije pronađen.
-        '''bargs: Nerešiva ​​greška u argumentu:
-        '''Dostupni argumenti: {0}
-        '''Argumenti (&quot;pomoć&quot; za pomoć):
-        '''Injektirani argumenti tr [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to [{&quot;colorId&quot;:0,&quot;hexString&quot;:&quot;#000000&quot;,&quot;rgb&quot;:{&quot;r&quot;:0,&quot;g&quot;:0,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:0,&quot;s&quot;:0,&quot;l&quot;:0},&quot;name&quot;:&quot;Black&quot;},{&quot;colorId&quot;:1,&quot;hexString&quot;:&quot;#800000&quot;,&quot;rgb&quot;:{&quot;r&quot;:128,&quot;g&quot;:0,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:0,&quot;s&quot;:100,&quot;l&quot;:25},&quot;name&quot;:&quot;Maroon&quot;},{&quot;colorId&quot;:2,&quot;hexString&quot;:&quot;#008000&quot;,&quot;rgb&quot;:{&quot;r&quot;:0,&quot;g&quot;:128,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:120,&quot;s&quot;:100,&quot;l&quot;:25},&quot;name&quot;:&quot;Green&quot;},{&quot;colorId&quot;:3,&quot;hexString&quot;:&quot;#808000&quot;,&quot;rgb&quot;:{&quot;r&quot;:128,&quot;g&quot;:128,&quot;b&quot;:0},&quot;hsl&quot;:{&quot;h&quot;:60,&quot;s&quot;:100,&quot;l&quot;:25},&quot;name&quot;:&quot;Olive&quot;},{&quot;colorId&quot;:4,&quot;hexString&quot;:&quot;#000080&quot;,&q....
+        '''</summary>
+        Public ReadOnly Property ConsoleColorsData() As String
+            Get
+                Return ResourceManager.GetString("ConsoleColorsData", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Dostupne naredbe: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Napisati naredbu:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Ukidanje naredbe je otkazano.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Argumente pokretanja odvojite zarezima bez razmaka, na primjer, \&quot;motd, gpuprobe\&quot;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Odvojite naredbe na &apos;cmdinject&apos; kolonam [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property cro() As String
             Get
@@ -225,16 +501,26 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Ordres disponibles: {0}
-        '''Escriu l&apos;ordre:
-        '''La injecció d’ordres s’ha cancel·lat.
-        '''Separeu els arguments d&apos;arrencada amb comes sense espais, per exemple, &apos;motd, gpuprobe&apos;
-        '''Separeu les ordres de &apos;cmdinject&apos; amb dos punts amb espais, per exemple, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''Tingueu en compte que l&apos;argument &quot;depuració&quot; no cobreix completament el nucli.
-        '''bargs: no s&apos;ha trobat l&apos;argument sol·licitat {0}.
-        '''bargs: Error irrecuperable en l&apos;argument:
-        '''Arguments disponibles: {0}
-        '''Arguments (&quot;help&quot; per  [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Comandi dispunibili: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Scrive cumandamentu:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;L&apos;iniezione di cumandamentu hè stata annullata.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separate argumenti di avvio cù virgole senza spazi, per esempiu, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Comandamenti sep [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property csc() As String
+            Get
+                Return ResourceManager.GetString("csc", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Ordres disponibles: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Escriu l&apos;ordre:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;La injecció d’ordres s’ha cancel·lat.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separeu els arguments d&apos;arrencada amb comes sense espais, per exemple, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separeu les ordres de &apos;cmd [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ctl() As String
             Get
@@ -243,17 +529,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Dostupnأ© pإ™أ­kazy: {0}
-        '''Pإ™أ­kaz Write:
-        '''Pإ™أ­kazovأ© injekce byla zruإ،ena.
-        '''Argumenty spouإ،tؤ›nأ­ oddؤ›lte ؤچأ،rkami bez mezer, napإ™أ­klad &apos;motd, gpuprobe&apos;
-        '''Samostatnأ© pإ™أ­kazy na &apos;cmdinject&apos; s dvojteؤچkami s mezerami, napإ™أ­klad &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''Povإ،imnؤ›te si, إ¾e argument &apos;debug&apos; zcela nepokrأ½vأ، jأ،dro.
-        '''bargs: Poإ¾adovanأ½ argument {0} nebyl nalezen.
-        '''bargs: Neodstranitelnأ، chyba v argumentu:
-        '''Dostupnأ© argumenty: {0}
-        '''Argumenty (nأ،povؤ›da â€‍helpâ€œ):
-        '''Vloإ¾enأ [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Dostupné příkazy: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Příkaz Write:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Příkazové injekce byla zrušena.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Argumenty spouštění oddělte čárkami bez mezer, například &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Samostatné příkazy na &apos;cmdinject&apos; s dvojtečkami s  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property cze() As String
             Get
@@ -262,17 +543,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Tilgængelige kommandoer: {0}
-        '''Skriv kommando:
-        '''Kommandoinjektion er annulleret.
-        '''Adskil boot-argumenter med kommaer uden mellemrum, for eksempel &apos;motd, gpuprobe&apos;
-        '''Separate kommandoer på &apos;cmdinject&apos; med kolon med mellemrum, for eksempel &apos;cmdinject setthemes Hacker: bip 1024 0.5&apos;
-        '''Bemærk, at &apos;debug&apos; -argumentet ikke helt dækker kernen.
-        '''bargs: Det anmodede argument {0} findes ikke.
-        '''bargs: Ikke genvindbar fejl i argumentet:
-        '''Tilgængelige argumenter: {0}
-        '''Argumenter (&apos;hjælp&apos; til hjælp):
-        '''Injicerede argumenter  [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Tilgængelige kommandoer: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Skriv kommando:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Kommandoinjektion er annulleret.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Adskil boot-argumenter med kommaer uden mellemrum, for eksempel &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separate kommandoer på &apos;cmdinject [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property dan() As String
             Get
@@ -281,16 +557,37 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Beschikbare opdrachten: {0}
-        '''Schrijf commando:
-        '''Commando-injectie is geannuleerd.
-        '''Aparte opstartargumenten met komma&apos;s zonder spaties, bijvoorbeeld &apos;motd, gpuprobe&apos;
-        '''Afzonderlijke opdrachten op &apos;cmdinject&apos; met dubbele punten met spaties, bijvoorbeeld &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;
-        '''Merk op dat het &apos;debug&apos;-argument de kernel niet volledig dekt.
-        '''bargs: het gevraagde argument {0} is niet gevonden.
-        '''bargs: Onherstelbare fout in argument:
-        '''Beschikbare argumenten: {0}
-        '''Argumenten (&apos;help&apos; voor hulp [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;15&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;15&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;15&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;15&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;7&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;7&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;161&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;15&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;15&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;15&quot;,
+        '''    &quot;StageColor&quot;: &quot;15&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;WarningColor&quot;: &quot;15&quot;,
+        '''    &quot;OptionColor&quot;: &quot;15&quot;,
+        '''    &quot;BannerColor&quot;: &quot;15&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property Debian() As String
+            Get
+                Return ResourceManager.GetString("Debian", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Beschikbare opdrachten: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Schrijf commando:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Commando-injectie is geannuleerd.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Aparte opstartargumenten met komma&apos;s zonder spaties, bijvoorbeeld &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Afzonderlijke opdrachten op &apos; [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property dtc() As String
             Get
@@ -299,17 +596,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Available commands: {0}
-        '''Write command: 
-        '''Command injection has been cancelled.
-        '''Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;
-        '''Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;
-        '''Note that the &apos;debug&apos; argument does not fully cover the kernel.
-        '''bargs: The requested argument {0} is not found.
-        '''bargs: Unrecoverable error in argument: 
-        '''Available arguments: {0}
-        '''Arguments (&apos;help&apos; for help): 
-        '''Injected arguments  [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Available commands: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Write command: &quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Command injection has been cancelled.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separate commands on &apos;cmdinject&apos;  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property eng() As String
             Get
@@ -318,17 +610,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Käytettävissä olevat komennot: {0}
-        '''Kirjoita komento:
-        '''Komentosuihku on peruutettu.
-        '''Erota käynnistysasetukset pilkuilla ilman välilyöntejä, esimerkiksi &quot;motd, gpuprobe&quot;
-        '''Erota komennot &apos;cmdinject&apos;: llä kolonkeilla, joissa on välilyöntejä, esimerkiksi &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''Huomaa, että debug-argumentti ei kata kokonaan ytimiä.
-        '''bargs: Pyydettyä argumenttia {0} ei löydy.
-        '''bargs: Palautumaton virhe argumentissa:
-        '''Saatavilla olevat argumentit: {0}
-        '''Argumentit (&apos;help&apos; en ohje):
-        '''Injektoid [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Käytettävissä olevat komennot: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Kirjoita komento:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Komentosuihku on peruutettu.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Erota käynnistysasetukset pilkuilla ilman välilyöntejä, esimerkiksi \&quot;motd, gpuprobe\&quot;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Erota komennot &apos;cmdinje [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property fin() As String
             Get
@@ -337,15 +624,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Mga magagamit na utos: {0}
-        '''Sumulat ng utos:
-        '''Kinansela ang command injection.
-        '''Paghiwalayin ang mga argumento ng boot sa mga kuwit nang walang puwang, halimbawa, &apos;motd, gpuprobe&apos;
-        '''Paghiwalayin ang mga utos sa &apos;cmdinject&apos; na may mga colon na may puwang, halimbawa, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''Tandaan na ang argumentong &apos;debug&apos; ay hindi kumpletong sumasaklaw sa kernel.
-        '''bargs: Ang hiniling na argumento {0} ay hindi natagpuan.
-        '''bargs: Hindi maibabalik na error sa argument:
-        '''Magagamit na mga ar [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Mga magagamit na utos: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Sumulat ng utos:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Kinansela ang command injection.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Paghiwalayin ang mga argumento ng boot sa mga kuwit nang walang puwang, halimbawa, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Paghiwalayin an [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property flp() As String
             Get
@@ -354,16 +638,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Commandes disponibles: {0}
-        '''Commande d&apos;écriture: 
-        '''L&apos;injection de commande a été annulée.
-        '''Séparez les arguments de démarrage par des virgules sans espaces, par exemple &quot;motd,gpuprobe&quot;
-        '''Séparez les commandes sur &apos;cmdinject&apos; avec les deux points avec des espaces, par exemple, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;
-        '''Notez que l&apos;argument &apos;debug&apos; ne couvre pas complètement le noyau.
-        '''bargs: l&apos;argument demandé {0} est introuvable.
-        '''bargs: erreur irrécupérable dans l&apos;argument:
-        '''Arguments disponibles: {0}
-        '''A [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Commandes disponibles: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Commande d&apos;écriture: &quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;L&apos;injection de commande a été annulée.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Séparez les arguments de démarrage par des virgules sans espaces, par exemple \&quot;motd,gpuprobe\&quot;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Séparez  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property fre() As String
             Get
@@ -372,16 +652,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Verfügbare Befehle: {0}
-        '''Schreibbefehl: 
-        '''Die Befehlsinjektion wurde abgebrochen.
-        '''Trennen Sie Boot-Argumente durch Kommas ohne Leerzeichen, z. B. &quot;motd, gpuprobe&quot;
-        '''Trennen Sie Befehle in &apos;cmdinject&apos; mit Doppelpunkten mit Leerzeichen, z. B. &apos;cmdinject setthemes Hacker: beep 1024 0,5&apos;
-        '''Beachten Sie, dass das Debug-Argument den Kernel nicht vollständig abdeckt.
-        '''bargs: Das angeforderte Argument {0} wurde nicht gefunden.
-        '''bargs: Nicht behebbarer Fehler im Argument:
-        '''Verfügbare Argumente: {0}
-        '''Argumente (&apos;Hilfe [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Verfügbare Befehle: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Schreibbefehl: &quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Die Befehlsinjektion wurde abgebrochen.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Trennen Sie Boot-Argumente durch Kommas ohne Leerzeichen, z. B. \&quot;motd, gpuprobe\&quot;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Trennen Sie Befehle in &apos;cmdin [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ger() As String
             Get
@@ -390,17 +666,129 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to upalabdh aadesh: {0}
-        '''kamaand likhen: 
-        '''kamaand injekshan radd kar diya gaya hai.
-        '''bina spes ke alpaviraam ke saath alag boot tark, udaaharan ke lie, &apos;motd, gpuprobe&apos;
-        '''rikt sthaan vaale kolan ke saath chmdinjaicht par alag-alag aadesh, udaaharan ke lie, &apos;cmdinject setthemes hacker: beep 1024 0.5&apos;
-        '''dhyaan den ki &apos;debug&apos; tark karnel ko pooree tarah se kavar nahin karata hai.
-        '''baarg: anurodhit tark {0} nahin mila hai.
-        '''baarg: tark mein apraapy truti:
-        '''upalabdh tark: {0}
-        '''tark (sahaayata ke lie sahaayata): 
-        '''in [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Comandos dispoñibles: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Escribir comando:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Cancelouse a inxección de ordes.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separe os argumentos de arranque con comas sen espazos, por exemplo, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separe os comandos de &apos;cmdinj [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property glc() As String
+            Get
+                Return ResourceManager.GetString("glc", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;7&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;7&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;7&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;7&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;3&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;7&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;7&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;7&quot;,
+        '''    &quot;StageColor&quot;: &quot;7&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;WarningColor&quot;: &quot;7&quot;,
+        '''    &quot;OptionColor&quot;: &quot;7&quot;,
+        '''    &quot;BannerColor&quot;: &quot;7&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property GrayOnYellow() As String
+            Get
+                Return ResourceManager.GetString("GrayOnYellow", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;11&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;11&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;3&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;3&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;11&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;3&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;15&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;11&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;3&quot;,
+        '''    &quot;StageColor&quot;: &quot;11&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;3&quot;,
+        '''    &quot;WarningColor&quot;: &quot;3&quot;,
+        '''    &quot;OptionColor&quot;: &quot;11&quot;,
+        '''    &quot;BannerColor&quot;: &quot;11&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property GTASA() As String
+            Get
+                Return ResourceManager.GetString("GTASA", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;10&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;10&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;10&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;10&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;10&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;10&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;8&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;10&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;2&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;10&quot;,
+        '''    &quot;StageColor&quot;: &quot;2&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;2&quot;,
+        '''    &quot;WarningColor&quot;: &quot;10&quot;,
+        '''    &quot;OptionColor&quot;: &quot;2&quot;,
+        '''    &quot;BannerColor&quot;: &quot;2&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property Hacker() As String
+            Get
+                Return ResourceManager.GetString("Hacker", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Kòmandman ki disponib: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Ekri lòd:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Piki lòd te anile.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Agiman bòt separe ak vigil san espas, pou egzanp, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Kòmandman apa sou &apos;cmdinject&apos; ak kolon ak espas, pou egzanp, &apos;cmdinje [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property hti() As String
+            Get
+                Return ResourceManager.GetString("hti", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Nā kauoha i loaʻa: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Kākau kauoha:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Ua hoʻopau ʻia ka ʻoki kauoha.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;E hoʻokaʻawale i nā paio puʻupuʻu me nā koma me ka ʻole o nā hakahaka, no ka laʻana, &apos;motd,gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;E hoʻokaʻawale i nā kau [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property hwi() As String
+            Get
+                Return ResourceManager.GetString("hwi", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;upalabdh aadesh: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;kamaand likhen: &quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;kamaand injekshan radd kar diya gaya hai.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;bina spes ke alpaviraam ke saath alag boot tark, udaaharan ke lie, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;rikt sthaan vaale kolan ke s [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ind() As String
             Get
@@ -409,17 +797,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to उपलब्ध आदेश: {0}
-        '''कमांड लिखें:
-        '''कमांड इंजेक्शन रद्द कर दिया गया है।
-        '''रिक्त स्थान के बिना अल्पविराम के साथ अलग बूट तर्क, उदाहरण के लिए, &apos;motd, gpuprobe&apos;
-        '''रिक्त स्थान के साथ कॉलन के साथ &apos;cmdinject&apos; पर अलग-अलग कमांड, उदाहरण के लिए, &apos;cmdinject से हैकर्स को हटाता है: 1024 x 1024&apos;
-        '''ध्यान दें कि &apos;डीबग&apos; तर्क पूरी तरह से कर्नेल को कवर नहीं करता है।
-        '''bargs: अनुरोधित तर्क {0} नहीं मिला है।
-        '''सौदेबाज़ी: तर्क में अपरिवर्तनीय त्रुटि:
-        '''उपलब्ध तर्क: {0}
-        '''तर्क (मदद के लिए &apos;सहायता):
-        '''इंजेक्ट किए गए तर्कों को अगले रिबूट पर चला [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;उपलब्ध आदेश: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;कमांड लिखें:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;कमांड इंजेक्शन रद्द कर दिया गया है।&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;रिक्त स्थान के बिना अल्पविराम के साथ अलग बूट तर्क, उदाहरण के लिए, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;रिक्त स्थान के साथ कॉलन के साथ &apos;cmdinject&apos;  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ind_T() As String
             Get
@@ -428,16 +811,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Orduithe ar fáil: {0}
-        '''Scríobh ordú:
-        '''Tá instealladh ordaithe curtha ar ceal.
-        '''Argóintí tosaithe ar leithligh le camóga gan spásanna, mar shampla, &apos;motd, gpuprobe&apos;
-        '''Orduithe ar leithligh ar &apos;cmdinject&apos; le colúin le spásanna, mar shampla, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''Tabhair faoi deara nach gclúdaíonn an argóint ‘dífhabhtaithe’ an t-eithne go hiomlán.
-        '''bargs: Ní fhaightear an argóint iarrtha {0}.
-        '''bargs: Earráid neamh-inghnóthaithe san argóint:
-        '''Argóintí atá ar fáil: {0}
-        '''Argóintí (&apos;cabhair&apos;  [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Orduithe ar fáil: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Scríobh ordú:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Tá instealladh ordaithe curtha ar ceal.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Argóintí tosaithe ar leithligh le camóga gan spásanna, mar shampla, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Orduithe ar leithligh ar &apos;cmdin [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property iri() As String
             Get
@@ -446,16 +825,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Comandi disponibili: {0}
-        '''Scrivi il comando:
-        '''L&apos;iniezione del comando أ¨ stata annullata.
-        '''Separare gli argomenti di avvio con virgole senza spazi, ad esempio &quot;motd, gpuprobe&quot;
-        '''Comandi separati su &apos;cmdinject&apos; con i due punti con spazi, ad esempio &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''Si noti che l&apos;argomento &apos;debug&apos; non copre completamente il kernel.
-        '''bargs: l&apos;argomento richiesto {0} non أ¨ stato trovato.
-        '''bargs: errore irreversibile nell&apos;argomento:
-        '''Argomenti disponibili: {0}
-        '''Argomenti (&apos;aiuto&apos; per  [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Comandi disponibili: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Scrivi il comando:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;L&apos;iniezione del comando è stata annullata.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separare gli argomenti di avvio con virgole senza spazi, ad esempio \&quot;motd, gpuprobe\&quot;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Comandi separati s [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ita() As String
             Get
@@ -464,16 +839,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Riyō kanōna komando: {0}
-        '''Kakikomi komando: 
-        '''Komandoinjekushon wa kyanseru sa remashita. 
-        '''Būto hikisū o supēsu nashi no kanma de kugirimasu. Tatoeba, `motd, gpuprobe&apos;
-        '''&apos;cmdinject&apos; no komando o supēsu-tsuki no koron de kugirimasu. Tatoeba, &apos; cmdinject setthemes Hacker: beep 1024 0. 5&apos;
-        '''&apos;Debaggu&apos; hikisū wa kāneru o kanzen ni wa kabā shite inai koto ni chūi shite kudasai. 
-        '''Bargs: Yōkyū sa reta hikisū {0} ga mitsukarimasen. 
-        '''Bargs: Hikisū no kaifuku funōna erā: 
-        '''Riyō kanōna hikisū: {0} 
-        '''Hikisū (herupu wa&apos; [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Riyō kanōna komando: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Kakikomi komando: &quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Komandoinjekushon wa kyanseru sa remashita. &quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Būto hikisū o supēsu nashi no kanma de kugirimasu. Tatoeba, `motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;&apos;cmdinject&apos; no komando o s [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property jpn() As String
             Get
@@ -482,25 +853,13 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 利用可能なコマンド：{0}
-        '''書き込みコマンド：
-        '''コマンドインジェクションはキャンセルされました。
-        '''ブート引数をスペースなしのカンマで区切ります。たとえば、「motd、gpuprobe」
-        '''&apos;cmdinject&apos;のコマンドをスペース付きのコロンで区切ります。たとえば、 &apos;cmdinject setthemes Hacker：beep 1024 0.5&apos;
-        '''&apos;debug&apos;引数はカーネルを完全にはカバーしていないことに注意してください。
-        '''bargs：要求された引数{0}が見つかりません。
-        '''bargs：引数の回復不能なエラー：
-        '''利用可能な引数：{0}
-        '''引数（ヘルプは &apos;help&apos;）：
-        '''注入された引数は、次回の再起動時に実行されるようにスケジュールされます。
-        '''引数の挿入はキャンセルされました。
-        '''実際のコマンドライン引数の解析中にエラーが発生しました：{0}
-        '''無効なカラーテンプレート{0}
-        '''デフォルト
-        '''カスタム
-        '''hwprobe：ハードウェアがプローブされます。お待ちください...
-        '''hwprobe：ハードウェアはすでにプローブされています。
-        '''hwprobe：ハードウェアはプローブされません。 [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;利用可能なコマンド：{0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;書き込みコマンド：&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;コマンドインジェクションはキャンセルされました。&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;ブート引数をスペースなしのカンマで区切ります。たとえば、「motd、gpuprobe」&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;&apos;cmdinject&apos;のコマンドをスペース付きのコロンで区切ります。たとえば、 &apos;cmdinject setthemes Hacker：beep 1024 0.5&apos;&quot;,
+        '''  &quot;Note that  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property jpn_T() As String
             Get
@@ -509,16 +868,26 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to sayong ganeunghan myeonglyeong : {0}
-        '''sseugi myeonglyeong :
-        '''myeonglyeong ju-ib-i chwisodoeeossseubnida.
-        '''gongbaeg-eobs-i swimpyolo gubun doen buting insu (ye : &apos;motd, gpuprobe&apos;)
-        '''gongbaeg-iissneun kollon-eulo &apos;cmdinject&apos;myeonglyeong-eul gubunhasibsio (ye : &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;)
-        '''&apos;debug&apos;insuneun keoneol-eul wanjeonhi daluji anhseubnida.
-        '''bargs : yocheonghan insu {0}eul (leul) chaj-eul su eobs-seubnida.
-        '''bargs : insueseo boggu hal sueobsneun olyu :
-        '''sayong ganeunghan insu : {0}
-        '''insu  [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Prentah sing kasedhiya: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Tulis prentah:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Injeksi komando wis dibatalake.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Pisahake argumen boot karo koma tanpa spasi, contone, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Misahake printah &apos;cmdinject&apos; karo colon kanthi [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property jvn() As String
+            Get
+                Return ResourceManager.GetString("jvn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;sayong ganeunghan myeonglyeong : {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;sseugi myeonglyeong :&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;myeonglyeong ju-ib-i chwisodoeeossseubnida.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;gongbaeg-eobs-i swimpyolo gubun doen buting insu (ye : &apos;motd, gpuprobe&apos;)&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;gongbaeg-iissneu [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property kor() As String
             Get
@@ -527,25 +896,13 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to 사용 가능한 명령 : {0}
-        '''쓰기 명령 :
-        '''명령 주입이 취소되었습니다.
-        '''공백없이 쉼표로 구분 된 부팅 인수 (예 : &apos;motd, gpuprobe&apos;)
-        '''공백이있는 콜론으로 &apos;cmdinject&apos;명령을 구분하십시오 (예 : &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;)
-        '''&apos;debug&apos;인수는 커널을 완전히 다루지 않습니다.
-        '''bargs : 요청한 인수 {0}을 (를) 찾을 수 없습니다.
-        '''bargs : 인수에서 복구 할 수없는 오류 :
-        '''사용 가능한 인수 : {0}
-        '''인수 ( &apos;도움말&apos;도움말) :
-        '''주입 된 인수는 다음에 다시 부팅 할 때 실행되도록 예약됩니다.
-        '''인수 주입이 취소되었습니다.
-        '''실제 명령 행 인수를 구문 분석하는 중에 오류가 발생했습니다 : {0}
-        '''잘못된 색상 템플릿 {0}
-        '''기본
-        '''커스텀
-        '''hwprobe : 하드웨어가 검사됩니다. 기다려주세요 ...
-        '''hwprobe : 하드웨어가 이미 검사되었습니다.
-        '''hwprobe : 하드웨어가 검사되지 않았습니다. [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;사용 가능한 명령 : {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;쓰기 명령 :&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;명령 주입이 취소되었습니다.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;공백없이 쉼표로 구분 된 부팅 인수 (예 : &apos;motd, gpuprobe&apos;)&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;공백이있는 콜론으로 &apos;cmdinject&apos;명령을 구분하십시오 (예 : &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;)&quot;,
+        '''  &quot;Note that the &apos;debu [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property kor_T() As String
             Get
@@ -554,16 +911,76 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Perintah yang tersedia: {0}
-        '''Tulis perintah:
-        '''Suntikan arahan telah dibatalkan.
-        '''Hantarkan butiran boot dengan koma tanpa ruang, sebagai contoh, &apos;motd, gpuprobe&apos;
-        '''Perintah berasingan pada &apos;cmdinject&apos; dengan titik-titik dengan ruang, contohnya, &apos;cmdinject setthemes Hacker: bip 1024 0.5&apos;
-        '''Perhatikan bahawa hujah &apos;debug&apos; tidak meliputi kernel sepenuhnya.
-        '''Bargs: Hujah yang diminta {0} tidak dijumpai.
-        '''bargs: Kesalahan yang tidak dapat dipulihkan dalam hujah:
-        '''Hujah yang tersedia: {0}
-        '''Argumen (&apos;help&apos; untuk men [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;7&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;7&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;12&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;12&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;7&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;15&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;7&quot;,
+        '''    &quot;StageColor&quot;: &quot;15&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;WarningColor&quot;: &quot;7&quot;,
+        '''    &quot;OptionColor&quot;: &quot;15&quot;,
+        '''    &quot;BannerColor&quot;: &quot;15&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property LinuxColoredDef() As String
+            Get
+                Return ResourceManager.GetString("LinuxColoredDef", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;7&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;7&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;7&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;7&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;7&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;7&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;7&quot;,
+        '''    &quot;StageColor&quot;: &quot;7&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;WarningColor&quot;: &quot;7&quot;,
+        '''    &quot;OptionColor&quot;: &quot;7&quot;,
+        '''    &quot;BannerColor&quot;: &quot;7&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property LinuxUncolored() As String
+            Get
+                Return ResourceManager.GetString("LinuxUncolored", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Available imperium {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Write mandatum:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Iniectio mandatum irritum est.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Commatibus separatum tabernus sine argumentis per spatia, exempli gratia, &apos;motd,gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separatum praecepisse &apos;cmdinject [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property ltn() As String
+            Get
+                Return ResourceManager.GetString("ltn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Perintah yang tersedia: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Tulis perintah:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Suntikan arahan telah dibatalkan.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Hantarkan butiran boot dengan koma tanpa ruang, sebagai contoh, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Perintah berasingan pada &apos;cmdinje [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property mal() As String
             Get
@@ -572,17 +989,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Kmandi disponibbli: {0}
-        '''Ikteb kmand:
-        '''L-injezzjoni tal-kmand ġiet ikkanċellata.
-        '''Issepara argumenti tal-ibbutjar b&apos;virgoli mingħajr spazji, per eżempju, &apos;motd, gpuprobe&apos;
-        '''Kmandi separati fuq &apos;cmdinject&apos; bi kolonji bi spazji, per eżempju, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''Innota li l-argument &apos;debug&apos; ma jkoprix kompletament il-qalba.
-        '''bargs: L-argument mitlub {0} ma jinstabx.
-        '''bargs: Żball li ma jistax jiġi rkuprat fl-argument:
-        '''Argumenti disponibbli: {0}
-        '''Argumenti (&apos;għajnuna&apos; għall-għajnuna):
-        ''' [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Kmandi disponibbli: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Ikteb kmand:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;L-injezzjoni tal-kmand ġiet ikkanċellata.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Issepara argumenti tal-ibbutjar b&apos;virgoli mingħajr spazji, per eżempju, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Kmandi separati fuq &apos;cmd [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property mts() As String
             Get
@@ -591,16 +1003,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Perintah yang tersedia: {0}
-        '''Tulis perintah:
-        '''Perintah injeksi telah dibatalkan.
-        '''Pisahkan argumen boot dengan koma tanpa spasi, misalnya, &apos;motd, gpuprobe&apos;
-        '''Pisahkan perintah pada &apos;cmdinject&apos; dengan titik dua dengan spasi, misalnya, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''Perhatikan bahwa argumen &apos;debug&apos; tidak sepenuhnya mencakup kernel.
-        '''bargs: Argumen yang diminta {0} tidak ditemukan.
-        '''bargs: Kesalahan yang tidak dapat dipulihkan dalam argumen:
-        '''Argumen yang tersedia: {0}
-        '''Argumen (&apos;bantuan&apos; untuk ba [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Perintah yang tersedia: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Tulis perintah:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Perintah injeksi telah dibatalkan.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Pisahkan argumen boot dengan koma tanpa spasi, misalnya, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Pisahkan perintah pada &apos;cmdinject&apos; deng [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ndo() As String
             Get
@@ -609,17 +1017,87 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Tilgjengelige kommandoer: {0}
-        '''Skriv kommando:
-        '''Kommandoinjeksjon er kansellert.
-        '''Separate startargumenter med komma uten mellomrom, for eksempel &apos;motd, gpuprobe&apos;
-        '''Separate kommandoer på &apos;cmdinject&apos; med kolon med mellomrom, for eksempel &apos;cmdinject setthemes Hacker: pip 1024 0.5&apos;
-        '''Merk at &quot;feilsøking&quot; -argumentet ikke dekker kjernen helt.
-        '''bargs: Det forespurte argumentet {0} ble ikke funnet.
-        '''bargs: Ikke gjenvinnbar argumentasjonsfeil:
-        '''Tilgjengelige argumenter: {0}
-        '''Argumenter (&apos;hjelp&apos; for hjelp):
-        '''Injiser [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;13&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;14&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;13&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;13&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;14&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;14&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;237&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;14&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;13&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;14&quot;,
+        '''    &quot;StageColor&quot;: &quot;13&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;13&quot;,
+        '''    &quot;WarningColor&quot;: &quot;13&quot;,
+        '''    &quot;OptionColor&quot;: &quot;14&quot;,
+        '''    &quot;BannerColor&quot;: &quot;13&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property NeonBreeze() As String
+            Get
+                Return ResourceManager.GetString("NeonBreeze", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;9&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;19&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;4&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;88&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;4&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;9&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;4&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;4&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;9&quot;,
+        '''    &quot;StageColor&quot;: &quot;9&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;88&quot;,
+        '''    &quot;WarningColor&quot;: &quot;4&quot;,
+        '''    &quot;OptionColor&quot;: &quot;4&quot;,
+        '''    &quot;BannerColor&quot;: &quot;9&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property NFSHP_Cop() As String
+            Get
+                Return ResourceManager.GetString("NFSHP_Cop", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;15&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;15&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;94&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;88&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;94&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;172&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;178&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;94&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;15&quot;,
+        '''    &quot;StageColor&quot;: &quot;184&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;88&quot;,
+        '''    &quot;WarningColor&quot;: &quot;94&quot;,
+        '''    &quot;OptionColor&quot;: &quot;94&quot;,
+        '''    &quot;BannerColor&quot;: &quot;184&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property NFSHP_Racer() As String
+            Get
+                Return ResourceManager.GetString("NFSHP_Racer", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Tilgjengelige kommandoer: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Skriv kommando:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Kommandoinjeksjon er kansellert.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separate startargumenter med komma uten mellomrom, for eksempel &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separate kommandoer på &apos;cmdinjec [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property nwg() As String
             Get
@@ -628,17 +1106,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Dostępne polecenia: {0}
-        '''Napisz polecenie:
-        '''Wprowadzanie poleceń zostało anulowane.
-        '''Oddziel argumenty rozruchowe przecinkami bez spacji, na przykład „motd, gpuprobe”
-        '''Oddzielne polecenia na „cmdinject” z dwukropkami ze spacjami, na przykład „cmdinject setthemes Hacker: beep 1024 0,5”
-        '''Zauważ, że argument „debugowanie” nie obejmuje w pełni jądra.
-        '''bargs: Żądany argument {0} nie został znaleziony.
-        '''bargs: Nieodwracalny błąd w argumencie:
-        '''Dostępne argumenty: {0}
-        '''Argumenty („pomoc” dla pomocy):
-        '''Wstrzyknięte [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Dost?pne polecenia: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Napisz polecenie:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Wprowadzanie polece? zosta?o anulowane.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Oddziel argumenty rozruchowe przecinkami bez spacji, na przyk?ad �motd, gpuprobe�&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Oddzielne polecenia na �cmdi [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property pol() As String
             Get
@@ -647,16 +1120,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Comandos disponíveis: {0}
-        '''Comando de gravação: 
-        '''A injeção de comando foi cancelada.
-        '''Separe os argumentos de inicialização com vírgulas sem espaços, por exemplo, &apos;motd, gpuprobe&apos;
-        '''Comandos separados em &apos;cmdinject&apos; com dois-pontos com espaços, por exemplo, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''Note que o argumento &apos;debug&apos; não cobre completamente o kernel.
-        '''bargs: O argumento solicitado {0} não foi encontrado.
-        '''bargs: Erro irrecuperável no argumento:
-        '''Argumentos disponíveis: {0}
-        '''Argumentos (&apos;help&apos; f [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Comandos disponíveis: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Comando de gravação: &quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;A injeção de comando foi cancelada.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separe os argumentos de inicialização com vírgulas sem espaços, por exemplo, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Comandos separ [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property ptg() As String
             Get
@@ -665,15 +1134,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Upalabadha kamāṇḍāṁ: {0}
-        '''Kamāṇḍa likhō:
-        '''Kamāṇḍa ijaikaśana rada kara ditā gi&apos;ā hai.
-        '''Bināṁ sapēsa dē kāmi&apos;āṁ nāla būṭa āragūmaiṇṭāṁ nū vakha karō, udāharaṇa vajōṁ, &apos;mōṭaḍa, jīpīparōba&apos;
-        '''kamāṇḍāṁ nū&apos;saimīḍanījaikaṭa&apos; &apos;tē khālī thānvāṁ nāla vakha karō, udāharaṇa vajōṁ,&apos; saimīḍīnējaikaṭa saiṭīmēsa haikara: Bīpa 1024 0.5&apos;
-        '''Yāda rakhō ki&apos;ḍībaga&apos; āragūmaiṇṭa karanala nū pūrī tar&apos;hāṁ kavara nahīṁ karadā.
-        '''Bāraja: Bēnatī kītī ga&apos;ī dalīla {0} not nahīṁ milī hai.
-        '''Bārāṁ: Dalīla vica aṇajāṇa galatī:
-        '''Upalabadha bahi [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Upalabadha kamāṇḍāṁ: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Kamāṇḍa likhō:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Kamāṇḍa ijaikaśana rada kara ditā gi&apos;ā hai.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Bināṁ sapēsa dē kāmi&apos;āṁ nāla būṭa āragūmaiṇṭāṁ nū vakha karō, udāharaṇa vajōṁ, &apos;mōṭaḍa, jīpīparōba&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;kamāṇḍāṁ [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property pun() As String
             Get
@@ -682,17 +1148,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to ਉਪਲਬਧ ਕਮਾਂਡਾਂ: {0}
-        '''ਕਮਾਂਡ ਲਿਖੋ:
-        '''ਕਮਾਂਡ ਇੰਜੈਕਸ਼ਨ ਰੱਦ ਕਰ ਦਿੱਤਾ ਗਿਆ ਹੈ.
-        '''ਬਿਨਾਂ ਸਪੇਸ ਦੇ ਕਾਮਿਆਂ ਨਾਲ ਬੂਟ ਆਰਗੂਮੈਂਟਾਂ ਨੂੰ ਵੱਖ ਕਰੋ, ਉਦਾਹਰਣ ਵਜੋਂ, &apos;ਮੋਟਡ, ਜੀਪੀਪਰੋਬ&apos;
-        '''ਕਮਾਂਡਾਂ ਨੂੰ &apos;ਸੈਮੀਡਨੀਜੈਕਟ&apos; &apos;ਤੇ ਖਾਲੀ ਥਾਂਵਾਂ ਨਾਲ ਵੱਖ ਕਰੋ, ਉਦਾਹਰਣ ਵਜੋਂ,&apos; ਸੈਮੀਡੀਨੇਜੈਕਟ ਸੈਟੀਮੇਸ ਹੈਕਰ: ਬੀਪ 1024 0.5 &apos;
-        '''ਯਾਦ ਰੱਖੋ ਕਿ &apos;ਡੀਬੱਗ&apos; ਆਰਗੂਮੈਂਟ ਕਰਨਲ ਨੂੰ ਪੂਰੀ ਤਰ੍ਹਾਂ ਕਵਰ ਨਹੀਂ ਕਰਦਾ.
-        '''ਬਾਰਜ: ਬੇਨਤੀ ਕੀਤੀ ਗਈ ਦਲੀਲ {0} not ਨਹੀਂ ਮਿਲੀ ਹੈ.
-        '''ਬਾਰਾਂ: ਦਲੀਲ ਵਿੱਚ ਅਣਜਾਣ ਗਲਤੀ:
-        '''ਉਪਲਬਧ ਬਹਿਸ: {0}
-        '''ਆਰਗੂਮੈਂਟਸ (ਮਦਦ ਲਈ &apos;ਮਦਦ&apos;):
-        '''ਜ਼ਖ਼ਮੀ ਬਹਿਸਾਂ ਨੂੰ ਅਗਲੇ ਰੀਬੂਟ ਤੇ ਚਲਾਉਣ ਲਈ ਤਹਿ ਕੀਤਾ ਜਾਵੇਗਾ.        ''' [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;ਉਪਲਬਧ ਕਮਾਂਡਾਂ: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;ਕਮਾਂਡ ਲਿਖੋ:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;ਕਮਾਂਡ ਇੰਜੈਕਸ਼ਨ ਰੱਦ ਕਰ ਦਿੱਤਾ ਗਿਆ ਹੈ.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;ਬਿਨਾਂ ਸਪੇਸ ਦੇ ਕਾਮਿਆਂ ਨਾਲ ਬੂਟ ਆਰਗੂਮੈਂਟਾਂ ਨੂੰ ਵੱਖ ਕਰੋ, ਉਦਾਹਰਣ ਵਜੋਂ, &apos;ਮੋਟਡ, ਜੀਪੀਪਰੋਬ&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;ਕਮਾਂਡਾਂ ਨੂੰ &apos;ਸੈਮੀਡਨੀਜੈਕਟ&apos; &apos;ਤੇ ਖਾਲੀ ਥਾਂਵਾਂ  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property pun_T() As String
             Get
@@ -701,17 +1162,37 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Comenzi disponibile: {0}
-        '''Comanda de scriere:
-        '''Injectarea comenzii a fost anulată.
-        '''Separați argumentele de pornire cu virgule fără spații, de exemplu, &apos;motd, gpuprobe&apos;
-        '''Separa comenzile de pe „cmdinject” cu coloane cu spații, de exemplu, „cmdinject setthemes Hacker: bip 1024 0.5”
-        '''Rețineți că argumentul „debug” nu acoperă complet nucleul.
-        '''bargs: Argumentul solicitat {0} nu este găsit.
-        '''bargs: eroare care nu poate fi recuperată în argument:
-        '''Argumente disponibile: {0}
-        '''Argumente („ajutor” pentru ajutor):
-        ''' [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;9&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;9&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;9&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;1&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;1&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;9&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;9&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;9&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;1&quot;,
+        '''    &quot;StageColor&quot;: &quot;9&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;1&quot;,
+        '''    &quot;WarningColor&quot;: &quot;9&quot;,
+        '''    &quot;OptionColor&quot;: &quot;9&quot;,
+        '''    &quot;BannerColor&quot;: &quot;9&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property RedConsole() As String
+            Get
+                Return ResourceManager.GetString("RedConsole", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Comenzi disponibile: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Comanda de scriere:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Injectarea comenzii a fost anulat?.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separa?i argumentele de pornire cu virgule f?r? spa?ii, de exemplu, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separa comenzile de pe �cm [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property rmn() As String
             Get
@@ -720,16 +1201,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Dostupnyye komandy: {0}
-        '''Napisat&apos; komandu:
-        '''Komandnaya in&quot;yektsiya byla otmenena.
-        '''Otdel&apos;nyye argumenty zagruzki s zapyatymi bez probelov, naprimer, &apos;motd, gpuprobe&apos;
-        '''Otdel&apos;nyye komandy dlya «cmdinject» s dvoyetochiyami s probelami, naprimer, «cmdinject setthemes Hacker: beep 1024 0.5»
-        '''Obratite vnimaniye, chto argument debug ne polnost&apos;yu pokryvayet yadro.
-        '''bargs: zaproshennyy argument {0} ne nayden.
-        '''bargs: neispravimaya oshibka v argumente:
-        '''Dostupnyye argumenty: {0}
-        '''Argumenty («pomoshch&apos;» dlya pomoshch [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Dostupnyye komandy: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Napisat&apos; komandu:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Komandnaya in\&quot;yektsiya byla otmenena.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Otdel&apos;nyye argumenty zagruzki s zapyatymi bez probelov, naprimer, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Otdel&apos;nyye komandy dlya «cmd [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property rus() As String
             Get
@@ -738,17 +1215,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Доступные команды: {0}
-        '''Написать команду:
-        '''Командная инъекция была отменена.
-        '''Отдельные аргументы загрузки с запятыми без пробелов, например, &apos;motd, gpuprobe&apos;
-        '''Отдельные команды для «cmdinject» с двоеточиями с пробелами, например, «cmdinject setthemes Hacker: beep 1024 0.5»
-        '''Обратите внимание, что аргумент debug не полностью покрывает ядро.
-        '''bargs: запрошенный аргумент {0} не найден.
-        '''bargs: неисправимая ошибка в аргументе:
-        '''Доступные аргументы: {0}
-        '''Аргументы («помощь» для помощи):
-        '''Введенные аргументы буд [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Доступные команды: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Написать команду:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Командная инъекция была отменена.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Отдельные аргументы загрузки с запятыми без пробелов, например, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Отдельные команды для «cmdinject» с  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property rus_T() As String
             Get
@@ -757,17 +1229,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Dostupné príkazy: {0}
-        '''Príkaz na napísanie:
-        '''Injekcia príkazu bola zrušená.
-        '''Oddeľte zavádzacie argumenty čiarkami bez medzier, napríklad „motd, gpuprobe“
-        '''Oddeľte príkazy na &apos;cmdinject&apos; dvojbodkami s medzerami, napríklad &apos;cmdinject setthemes Hacker: pípnutie 1024 0,5&apos;
-        '''Všimnite si, že argument &apos;debug&apos; nepokrýva celé jadro.
-        '''bargs: Požadovaný argument {0} nebol nájdený.
-        '''Bargs: Neopraviteľná chyba v argumente:
-        '''Dostupné argumenty: {0}
-        '''Argumenty („pomoc“ pre pomoc):
-        '''Injektované argumenty budú naplánované n [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Dostupné príkazy: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Príkaz na napísanie:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Injekcia príkazu bola zrušená.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Oddeľte zavádzacie argumenty čiarkami bez medzier, napríklad „motd, gpuprobe“&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Oddeľte príkazy na &apos;cmdinject&apos; dvojbodka [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property slo() As String
             Get
@@ -776,17 +1243,58 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Amarada la heli karo: {0}
-        '''Qor amar:
-        '''Cirbadda taliska waa la joojiyay.
-        '''Kala sooc dooda muranka leh hakad la&apos;aan, tusaale ahaan, &apos;motd, gpuprobe&apos;
-        '''Kala amar gaar ah oo ku saabsan &apos;cmdinject&apos; oo leh xiidmooyin leh meelo bannaan, tusaale ahaan, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''Xusuusnow in doodda &apos;debug&apos; aysan si buuxda u daboolayn firida.
-        '''baararka: Doodda la codsaday {0} lama helin.
-        '''khaladaad: Khalad aan laga soo kaban karin dood ahaan:
-        '''Doodaha la heli karo: {0}
-        '''Doodaha (&apos;help&apos; caawimaad):
-        ''' [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;38;139;210&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;211;54;130&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;181;137;0&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;211;1;2&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;38;139;210&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;42;161;152&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0;43;54&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;38;139;210&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;38;139;210&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;42;161;152&quot;,
+        '''    &quot;StageColor&quot;: &quot;133;153;0&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;211;1;2&quot;,
+        '''    &quot;WarningColor&quot;: &quot;181;137;0&quot;,
+        '''    &quot;OptionColor&quot;: &quot;38;139;210&quot; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property SolarizedDark() As String
+            Get
+                Return ResourceManager.GetString("SolarizedDark", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;38;139;210&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;211;54;130&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;181;137;0&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;211;1;2&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;38;139;210&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;42;161;152&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;253;246;227&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;38;139;210&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;38;139;210&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;42;161;152&quot;,
+        '''    &quot;StageColor&quot;: &quot;133;153;0&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;211;1;2&quot;,
+        '''    &quot;WarningColor&quot;: &quot;181;137;0&quot;,
+        '''    &quot;OptionColor&quot;: &quot;38;139; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property SolarizedLight() As String
+            Get
+                Return ResourceManager.GetString("SolarizedLight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Amarada la heli karo: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Qor amar:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Cirbadda taliska waa la joojiyay.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Kala sooc dooda muranka leh hakad la&apos;aan, tusaale ahaan, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Kala amar gaar ah oo ku saabsan &apos;cmdinject&apos; oo l [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property som() As String
             Get
@@ -795,16 +1303,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Comandos disponibles: {0}
-        '''Comando de escritura: 
-        '''La inyección de comandos ha sido cancelada.
-        '''Separe los argumentos de arranque con comas sin espacios, por ejemplo, &apos;motd, gpuprobe&apos;
-        '''Comandos separados en &apos;cmdinject&apos; con dos puntos con espacios, por ejemplo, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''Tenga en cuenta que el argumento &apos;depurar&apos; no cubre completamente el kernel.
-        '''bargs: el argumento solicitado {0} no se encuentra.
-        '''bargs: error irrecuperable en el argumento: 
-        '''Argumentos disponibles: {0}
-        ''' [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Comandos disponibles: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Comando de escritura: &quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;La inyección de comandos ha sido cancelada.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separe los argumentos de arranque con comas sin espacios, por ejemplo, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Comandos se [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property spa() As String
             Get
@@ -813,17 +1317,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Dostupne komande: {0}
-        '''Vrite command:
-        '''Ubacivanje komande je otkazano.
-        '''Razdvojite argumente za pokretanje zarezima bez razmaka, na primer, „motd, gpuprobe“
-        '''Odvojite komande na &apos;cmdinject&apos; sa kolonama sa razmacima, na primer, &apos;cmdinject setthemes Hacker: biep 1024 0.5&apos;
-        '''Imajte na umu da argument &apos;debug&apos; ne pokriva u potpunosti kernel.
-        '''bargs: Traženi argument {0} nije pronađen.
-        '''bargs: Nerešiva greška u argumentu:
-        '''Dostupni argumenti: {0}
-        '''Argumenti („pomoć“ za pomoć):
-        '''Injektirani argumenti će se zakazati [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Dostupne komande: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Vrite command:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Ubacivanje komande je otkazano.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Razdvojite argumente za pokretanje zarezima bez razmaka, na primer, �motd, gpuprobe�&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Odvojite komande na &apos;cmdinject&apos; sa kol [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property srb() As String
             Get
@@ -832,17 +1331,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Доступне команде: {0}
-        '''Врите цомманд:
-        '''Убацивање команде је отказано.
-        '''Раздвојите аргументе за покретање зарезима без размака, на пример, „мотд, гпупробе“
-        '''Одвојите команде на &apos;цмдињецт&apos; са колонама са размацима, на пример, &apos;цмдињецт сеттхемес Хацкер: биеп 1024 0.5&apos;
-        '''Имајте на уму да аргумент &apos;дебуг&apos; не покрива у потпуности кернел.
-        '''баргс: Тражени аргумент {0} није пронађен.
-        '''баргс: Нерешива грешка у аргументу:
-        '''Доступни аргументи: {0}
-        '''Аргументи („помоћ“ за помоћ):
-        '''Ињектирани аргументи ће се заказати при  [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Доступне команде: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Врите цомманд:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Убацивање команде је отказано.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Раздвојите аргументе за покретање зарезима без размака, на пример, „мотд, гпупробе“&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Одвојите команде на &apos;цмдињецт&apos; са колона [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property srb_T() As String
             Get
@@ -851,17 +1345,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Amri zinazopatikana: {0}
-        '''Andika amri:
-        '''Sindano ya amri imefutwa.
-        '''Tenga hoja za buti na koma bila nafasi, kwa mfano, &apos;motd, gpuprobe&apos;
-        '''Tenga amri kwenye &apos;cmdinject&apos; na koloni zilizo na nafasi, kwa mfano, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''Kumbuka kuwa hoja ya &apos;utatuzi&apos; haifuniki kabisa kernel.
-        '''bargs: Hoja iliyoombwa {0} haipatikani.
-        '''bargs: Hitilafu isiyoweza kupatikana katika hoja:
-        '''Hoja zinazopatikana: {0}
-        '''Hoja (&apos;msaada&apos; kwa msaada):
-        '''Hoja za sindano zitapangiwa kuanza wakati wa kuwasha tena. [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Amri zinazopatikana: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Andika amri:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Sindano ya amri imefutwa.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Tenga hoja za buti na koma bila nafasi, kwa mfano, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Tenga amri kwenye &apos;cmdinject&apos; na koloni zilizo na nafasi, kw [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property swa() As String
             Get
@@ -870,17 +1359,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Tillgأ¤ngliga kommandon: {0}
-        '''Skriv kommando:
-        '''Kommandoinjektion har avbrutits.
-        '''Separata startargument med kommatecken utan mellanslag, till exempel &quot;motd, gpuprobe&quot;
-        '''Separata kommandon pأ¥ &apos;cmdinject&apos; med kolonner med mellanslag, till exempel &apos;cmdinject setthemes Hacker: pip 1024 0.5&apos;
-        '''Observera att argumentet &quot;debug&quot; inte helt tأ¤cker kأ¤rnan.
-        '''prأ¥mar: Det begأ¤rda argumentet {0} hittades inte.
-        '''prأ¥mar: Oأ¥terkalleligt fel i argument:
-        '''Tillgأ¤ngliga argument: {0}
-        '''Argument (&apos;help&apos; fأ¶r hjأ¤lp):
-        '''Injice [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Tillgängliga kommandon: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Skriv kommando:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Kommandoinjektion har avbrutits.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separata startargument med kommatecken utan mellanslag, till exempel \&quot;motd, gpuprobe\&quot;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separata kommandon på &apos;cmdi [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property swe() As String
             Get
@@ -889,16 +1373,87 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Mavjud buyruqlar: {0}
-        '''Yozish buyrug&apos;i:
-        '''Buyruqni kiritish bekor qilindi.
-        '''Bo&apos;sh joylarsiz vergul bilan alohida yuklash argumentlari, masalan, &quot;motd, gpuprobe&quot;
-        '''&quot;Cmdinject&quot; dagi alohida buyruqlar bo&apos;sh joy qoldirilgan ustunlar bilan, masalan, &quot;cmdinject sxemalari Hacker: signal 1024 0.5&quot;
-        '''E&apos;tibor bering, &quot;disk raskadrovka&quot; argumenti yadroni to&apos;liq qamrab olmaydi.
-        '''bargs: Talab qilingan {0} argument topilmadi.
-        '''Bars: argumentda tuzatib bo&apos;lmaydigan xato:
-        '''Mavjud dalillar: {0}
-        '''Dalillar (yordam uchun &apos;yordam&apos; [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;74&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;74&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;23&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;23&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;23&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;74&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;74&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;23&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;74&quot;,
+        '''    &quot;StageColor&quot;: &quot;80&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;23&quot;,
+        '''    &quot;WarningColor&quot;: &quot;23&quot;,
+        '''    &quot;OptionColor&quot;: &quot;23&quot;,
+        '''    &quot;BannerColor&quot;: &quot;80&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property TealerOS() As String
+            Get
+                Return ResourceManager.GetString("TealerOS", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;10&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;10&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;226&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;9&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;10&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;10&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;10&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;10&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;10&quot;,
+        '''    &quot;StageColor&quot;: &quot;226&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;9&quot;,
+        '''    &quot;WarningColor&quot;: &quot;226&quot;,
+        '''    &quot;OptionColor&quot;: &quot;10&quot;,
+        '''    &quot;BannerColor&quot;: &quot;226&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property TrafficLight() As String
+            Get
+                Return ResourceManager.GetString("TrafficLight", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;15&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;15&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;15&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;15&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;7&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;7&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;53&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;15&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;15&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;15&quot;,
+        '''    &quot;StageColor&quot;: &quot;15&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;7&quot;,
+        '''    &quot;WarningColor&quot;: &quot;15&quot;,
+        '''    &quot;OptionColor&quot;: &quot;15&quot;,
+        '''    &quot;BannerColor&quot;: &quot;15&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property Ubuntu() As String
+            Get
+                Return ResourceManager.GetString("Ubuntu", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Mavjud buyruqlar: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Yozish buyrug&apos;i:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Buyruqni kiritish bekor qilindi.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Bo&apos;sh joylarsiz vergul bilan alohida yuklash argumentlari, masalan, \&quot;motd, gpuprobe\&quot;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;\&quot;Cmdinject\&quot; dagi alohida buyruq [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property uzb() As String
             Get
@@ -907,17 +1462,12 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Các lệnh khả dụng: {0}
-        '''Viết lệnh:
-        '''Lệnh tiêm đã bị hủy bỏ.
-        '''Các đối số khởi động riêng biệt với dấu phẩy không có dấu cách, ví dụ: &apos;motd,gpuprobe&apos;
-        '''Các lệnh riêng biệt trên &apos;cmdinject&apos; với dấu hai chấm có dấu cách, ví dụ: &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''Lưu ý rằng đối số &apos;gỡ lỗi&apos; không bao gồm đầy đủ kernel.
-        '''xà lan: Không tìm thấy đối số được yêu cầu {0}.
-        '''xà lan: Lỗi không thể phục hồi trong đối số:
-        '''Đối số khả dụng: {0}
-        '''Đối số (&apos;trợ giúp&apos; để được giúp đỡ):
-        '''Các đối số được tiêm sẽ được lên [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Các lệnh khả dụng: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Viết lệnh:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Lệnh tiêm đã bị hủy bỏ.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Các đối số khởi động riêng biệt với dấu phẩy không có dấu cách, ví dụ: &apos;motd,gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Các lệnh riêng biệt trên &apos;cmdinject&apos; với dấu ha [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property vtn() As String
             Get
@@ -926,20 +1476,105 @@ Namespace My.Resources
         End Property
         
         '''<summary>
-        '''  Looks up a localized string similar to Gorchmynion sydd ar gael: {0}
-        '''Ysgrifennwch orchymyn:
-        '''Mae chwistrelliad gorchymyn wedi&apos;i ganslo.
-        '''Dadleuon cist ar wahân gyda choma heb ofodau, er enghraifft, &apos;motd, gpuprobe&apos;
-        '''Gorchmynion ar wahân ar &apos;cmdinject&apos; gyda cholonau gyda bylchau, er enghraifft, &apos;cmdinject setthemes Hacker: beep 1024 0.5&apos;
-        '''Sylwch nad yw&apos;r ddadl &apos;dadfygio&apos; yn cwmpasu&apos;r cnewyllyn yn llawn.
-        '''bargs: Ni cheir hyd i&apos;r ddadl y gofynnwyd amdani {0}.
-        '''bargs: Gwall anadferadwy mewn dadl:
-        '''Dadleuon sydd ar gael: {0}
-        '''Dadleuon (&apos;help&apos; am hel [rest of string was truncated]&quot;;.
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;15&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;15&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;15&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;15&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;15&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;15&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;6&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;15&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;15&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;15&quot;,
+        '''    &quot;StageColor&quot;: &quot;15&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;15&quot;,
+        '''    &quot;WarningColor&quot;: &quot;15&quot;,
+        '''    &quot;OptionColor&quot;: &quot;15&quot;,
+        '''    &quot;BannerColor&quot;: &quot;15&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property Windows95() As String
+            Get
+                Return ResourceManager.GetString("Windows95", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Gorchmynion sydd ar gael: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Ysgrifennwch orchymyn:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Mae chwistrelliad gorchymyn wedi&apos;i ganslo.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Dadleuon cist ar wahân gyda choma heb ofodau, er enghraifft, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Gorchmynion ar wah [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property wls() As String
             Get
                 Return ResourceManager.GetString("wls", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;0&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;0&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;0&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;0&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;0&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;0&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;3&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;0&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;0&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;0&quot;,
+        '''    &quot;StageColor&quot;: &quot;0&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;0&quot;,
+        '''    &quot;WarningColor&quot;: &quot;0&quot;,
+        '''    &quot;OptionColor&quot;: &quot;0&quot;,
+        '''    &quot;BannerColor&quot;: &quot;0&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property YellowBG() As String
+            Get
+                Return ResourceManager.GetString("YellowBG", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;InputColor&quot;: &quot;11&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;3&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;11&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;11&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;3&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;3&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;11&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;11&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;3&quot;,
+        '''    &quot;StageColor&quot;: &quot;11&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;3&quot;,
+        '''    &quot;WarningColor&quot;: &quot;11&quot;,
+        '''    &quot;OptionColor&quot;: &quot;11&quot;,
+        '''    &quot;BannerColor&quot;: &quot;11&quot;
+        '''}.
+        '''</summary>
+        Public ReadOnly Property YellowFG() As String
+            Get
+                Return ResourceManager.GetString("YellowFG", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Imiyalo etholakalayo: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Bhala umyalo:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Umjovo we-Command ukhanseliwe.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Hlukanisa izimpikiswano zebhuthi ngamakhoma ngaphandle kwezikhala, isibonelo, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Hlukanisa imiyalo ku-&apos;cmdi [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property zul() As String
+            Get
+                Return ResourceManager.GetString("zul", resourceCulture)
             End Get
         End Property
     End Module

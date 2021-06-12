@@ -1,0 +1,1099 @@
+Ordres disponibles: {0}
+Escriu l'ordre:
+La injecció d’ordres s’ha cancel·lat.
+Separeu els arguments d'arrencada amb comes sense espais, per exemple, 'motd, gpuprobe'
+Separeu les ordres de 'cmdinject' amb dos punts amb espais, per exemple, 'cmdinject setthemes Hacker: beep 1024 0.5'
+Tingueu en compte que l'argument "depuració" no cobreix completament el nucli.
+bargs: no s'ha trobat l'argument sol·licitat {0}.
+bargs: Error irrecuperable en l'argument:
+Arguments disponibles: {0}
+Arguments ("help" per obtenir ajuda):
+Els arguments injectats es programaran per executar-se al proper reinici.
+La injecció d'arguments s'ha cancel·lat.
+Error en analitzar arguments de línia de comandes reals: {0}
+Plantilla de color no vàlida {0}
+hwprobe: es revisarà el vostre maquinari. Espera ...
+CPU: un o més dels nuclis de CPU no han pogut ser sondejats. S'està mostrant informació de totes maneres ...
+RAM: un o més dels xips de RAM no han pogut ser sondejats. S'està mostrant informació de totes maneres ...
+Disc dur: no s'ha pogut sondejar un o més dels discs durs. S'està mostrant informació de totes maneres ...
+CPU: nombre total de processadors: {0}
+Introduïu la contrasenya d'administrador per al manteniment.
+Error del nucli en arrencar: {0}
+DOBLE PÀNIC: el temps de reinici supera el temps màxim de reinici d'error permès {0}. Heu trobat un error del nucli.
+[{0}] pànic: reinici habilitat perquè el nivell d'error és {0}.
+[{0}] pànic: temps de reinici: {1} segons, supera 1 hora. Està configurat a 1 minut.
+DOBLE PÀNIC: el tipus d'error {0} no és vàlid.
+[{0}] dpanic: {1}: es reinicia en {2} segons ...
+[{0}] pànic: el reinici està desactivat perquè el nivell d'error és {0}.
+[{0}] pànic: {1}: premeu qualsevol tecla per continuar utilitzant el nucli.
+[{0}] pànic: {1}: premeu qualsevol tecla per apagar.
+[{0}] pànic: {1}: es reinicia en {2} segons ...
+DOBLE PÀNIC: error del nucli: {0}
+Apagant...
+S'està reiniciant ...
+S’està executant una altra instància de Kernel Simulator. Tancament en cas d’interferència.
+No s'ha pogut afegir l'usuari a les llistes de permisos: tipus invàlid {0}
+No s'ha pogut afegir l'usuari a les llistes de permisos: usuari no vàlid {0}
+No s'ha pogut eliminar l'usuari de les llistes de permisos: tipus invàlid {0}
+Ja heu iniciat la sessió.
+No s'ha pogut eliminar l'usuari de les llistes de permisos: usuari no vàlid {0}
+Ja heu trobat un error, o bé el permís que heu intentat afegir o eliminar ja està fet o un altre error.
+Error {0}: {1}
+Ja heu trobat un error o el permís que heu intentat editar per a un usuari nou ha fallat.
+Noms d'usuari disponibles: {0}
+Nom d'usuari:
+No s’admeten espais.
+No es permeten caràcters especials.
+Contrasenya de {0}:
+Contrasenya incorrecta.
+L'usuari està desactivat.
+Nom d'usuari incorrecte.
+Error en intentar analitzar els espais reservats. {0} - Traça de la pila:
+Error en intentar analitzar els espais reservats. {0}
+Error en provar d'afegir un nom d'usuari.
+usrmgr: S'està creant un nom d'usuari {0} ...
+Nom d'usuari en blanc.
+No s'ha trobat l'usuari {0}.
+No es pot eliminar l'usuari {0}.
+L'usuari {0} ja ha iniciat la sessió. Tanqueu la sessió i inicieu la sessió com a administrador més.
+S'ha suprimit l'usuari {0}.
+S'ha produït un error en intentar eliminar el nom d'usuari.
+No s'ha trobat el salvapantalles sol·licitat {0}.
+{0} s'ha inicialitzat correctament.
+{0} no s'ha inicialitzat. És possible que el codi de l'estalvi de pantalla hagi experimentat un error durant la inicialització.
+El salvapantalles {0} no existeix.
+{0} està definit com a estalvi de pantalla predeterminat.
+No s'ha trobat l'estalvi de pantalla {0} a la base de dades. Comproveu el nom i torneu-ho a provar.
+El salvapantalles no es pot carregar a causa dels següents:
+Hi ha un greu error en imprimir text.
+Hi ha un error en intentar crear la configuració.
+Error en intentar alliberar RAM: {0}: continua ...
+No es pot carregar el modificador a causa del següent:
+mod: carregant modificacions ...
+mod: Aturant modificacions ...
+Mod {0} no té el nom. Reviseu el codi font.
+Mod {0} no té la versió.
+{0} v {1} va començar
+No hi ha definició de l'ordre {0}.
+Ordre definit per
+Heu de desconnectar del servidor abans de connectar-vos a un altre servidor
+Nom d'usuari de {0}:
+Contrasenya per a {0}:
+Connectat a {0}
+Error en intentar connectar-vos a {0}: {1}
+Traça de la pila: {2}
+Introduïu un servidor FTP.
+El directori local {0} no existeix.
+Introduïu un directori local. ".." tornar.
+No s'ha trobat el directori {0}.
+Introduïu un directori remot. ".." tornar
+Heu de connectar-vos a un servidor abans de canviar de directori
+Directori local: {0}
+Directori remot: {0}
+Heu de connectar-vos al servidor abans d’obtenir el directori remot actual.
+Heu de connectar-vos al servidor amb privilegis administratius abans de realitzar la supressió.
+Desconnectat de {0}
+Encara no us heu connectat a cap servidor
+S'està baixant el fitxer {0} ...
+Fitxer descarregat {0}.
+Heu de connectar-vos al servidor abans de realitzar la transmissió.
+Introduïu un fitxer per descarregar al directori local.
+{0} KB | Modificat a: {1}
+Heu de connectar-vos al servidor abans d’enumerar tots els fitxers remots.
+S'està carregant el fitxer {0} ...
+Fitxer carregat {0}
+Introduïu un fitxer per penjar-lo al directori remot. pengeu <fitxer> <directori>
+(Interior:
+Obté el directori local actual
+Obté el directori remot actual
+Es connecta a un servidor FTP (ha de començar amb "ftp://" o "ftps://")
+Canvia el directori local per baixar-lo o carregar-lo
+Canvia el directori remot per descarregar-lo o carregar-lo
+Suprimeix el fitxer remot del servidor
+Desconnecta del servidor
+Descarrega el fitxer remot al directori local mitjançant text binari o binari
+Surt de l'intèrpret d'ordres FTP i torna al nucli
+Mostra la pantalla d'ajuda
+Llista el directori local
+Llista el directori remot
+Penja fitxers locals al directori remot mitjançant text binari o binari
+Missatge FTP: l'ordre sol·licitada {0} no s'ha trobat. Vegeu 'ajuda' per obtenir una llista d'ordres disponibles especificades a l'intèrpret d'ordres FTP.
+No s'han pogut obtenir les propietats de l'adaptador {0}
+Número d'adaptador:
+Nom de l'adaptador:
+Unitat màxima de transmissió: {2} unitats
+DHCP activat:
+Paquets no unicast:
+Paquets Unicast:
+Error dels paquets entrants/sortints:
+Àlies no pot ser el mateix nom que una ordre.
+No s'ha trobat l'ordre a l'àlies de {0}.
+Ara podeu executar "{0}" com a ordre: "{1}".
+No s'ha trobat que s'ha eliminat l'àlies {0}.
+Mode no vàlid {0}.
+Els arguments injectats, {0}, es programaran per executar-se al proper reinici.
+No hi havia prou arguments. Vegeu a continuació l’ús:
+No s'ha trobat el directori {0}
+Nom d'amfitrió en blanc.
+S'està canviant de: {0} a {1} ...
+Missatge en blanc del dia.
+MAL en blanc després de l'inici de sessió.
+Contrasenya d'usuari incorrecta.
+Les contrasenyes no coincideixen.
+El nom d'usuari s'ha canviat a {0}.
+El nou nom que heu introduït ja s'ha trobat.
+{0} no s'ha trobat.
+Configuració recarregada. És possible que hàgiu de reiniciar el nucli perquè alguns canvis tinguin efecte.
+Un o més colors no són vàlids.
+Els colors no estan disponibles. Activeu l'intèrpret d'ordres de colors a la configuració del nucli.
+No s'ha trobat l'estalvi de pantalla {0}.
+[ Configuració del nucli (funcionant a {0}) ]
+Versió del nucli:
+Mode de depuració:
+Carcassa de colors:
+Arguments en arrencar:
+Comanda d'ajuda simplificada:
+MOTD en iniciar sessió:
+Hora / data a la cantonada:
+[ Configuració del maquinari ] {0}
+{0}[ Configuració de l'usuari ]
+Nom d'usuari actual:
+Nom d'amfitrió actual:
+Noms d'usuari disponibles:
+Error en intentar executar l'ordre
+Canvia el directori
+Canvia la contrasenya de l'usuari actual
+Esborra la pantalla
+Utilitzeu un intèrpret d’ordres FTP per interactuar amb els servidors
+Pàgina d’ajuda
+Enumereu el contingut del fitxer/carpeta a la carpeta actual
+Bloqueja la pantalla amb una contrasenya
+Tanca la sessió
+Crea un directori
+Llista informació sobre totes les interfícies disponibles
+Reinicia l'ordinador (ADVERTÈNCIA: no hi ha sincronització, perquè no és un nucli final)
+Torna a carregar el fitxer de configuració que s’edita.
+Desa la pantalla dels burnouts
+Configura els estalvis de pantalla del nucli
+Configura els temes del nucli
+Mostra la data i l’hora
+Mostra la data i l'hora en zones
+El nucli es tancarà
+Informació del sistema
+* Podeu utilitzar diverses ordres mitjançant els dos punts entre les ordres.
+Ús:
+on hi haurà arguments {0}
+Inicialitza l'intèrpret d'ordres FTP.
+Amics de
+on hi haurà customsaver
+Bloqueja la pantalla amb la contrasenya.
+Us desconnecta de l’usuari.
+Obteniu tota la informació de la xarxa
+Reinicia l'ordinador simulat.
+Torna a carregar la configuració que l'usuari final o l'eina canvien.
+Els colors no requereixen un reinici, però la majoria de la configuració requereix que reinicieu.
+us mostra un estalvi de pantalla seleccionat, alhora que protegiu la pantalla dels burnouts.
+Mostra la data i l'hora.
+Mostra la data i l'hora en zones.
+Apaga l’ordinador simulat.
+Mostra informació i versions del sistema.
+S'ha produït un error a l'intèrpret d'ordres.
+No teniu permís per utilitzar {0}
+Missatge de l'intèrpret d'ordres: l'ordre sol·licitada {0} no es pot executar en mode de manteniment.
+Missatge de l'intèrpret d'ordres: l'ordre sol·licitada {0} no s'ha trobat. Vegeu 'ajuda' per obtenir ordres disponibles.
+Missatge de l'intèrpret d'ordres: no es pot executar l'ordre {0} en iniciar la sessió.
+Error en intentar executar l'ordre.
+datetime: l'hora és {0}
+datetime: avui és {0}
+datetime: zona horària: {0}
+- Hora de {0}: {1}
+per esborrar la pantalla.
+S'està executant a {0}
+No teniu autorització per obtenir informació sobre {0}.
+Aquesta ordre està obsoleta i s'eliminarà en una versió futura.
+No teniu autorització per canviar la contrasenya de {0} perquè l'objectiu era un administrador.
+usrmgr: El nom d'usuari {0} ja s'ha trobat
+Suprimeix tot el registre de depuració
+Idioma no vàlid
+Canvia l'idioma
+----------------------------- Descàrrega de pànic del nucli ------------------------------
+>> Informació de pànic <<
+> Descripció: {0}
+> Tipus d'error: {1}
+> Data i hora: {2}
+>> Informació d'excepció <<
+> Excepció: {0}
+> Descripció: {1}
+> HRESULT: {2}
+> Font: {3}
+> Traça de la pila <
+>> Informació {0} d'excepció interna <<
+>> L'excepció {0} és la causa principal <<
+>> Cap excepció; pot ser un error del nucli. <<
+>> Marcs, fitxers, línies i columnes <<
+> Marc {0}: fitxer: {1} | Línia: {2} | Columna: {3}
+> Hi ha un error en intentar obtenir informació del marc. {0}: {1}
+Recarrega modificacions.
+Les modificacions es van tornar a carregar.
+Benvingut al nucli!
+Heu iniciat la sessió correctament com a <usuari>
+MOTD / MAL és vàlid, però el tipus de missatge no és vàlid. Suposant MOTD ...
+S'ha intentat llegir MOTD / MAL del tipus de missatge no vàlid.
+La descàrrega s'ha completat.
+La descàrrega ha fallat en provar {0}: {1}
+Si us plau, utilitzeu "ftp" si voleu descarregar fitxers del servidor FTP.
+Descarrega un fitxer al directori de treball actual
+Desconnecteu un dispositiu de depuració
+Llista els dispositius de depuració connectats
+No s'ha trobat el dispositiu de depuració {0}.
+El dispositiu {0} s'ha desconnectat.
+Error de connexió: {0}
+Depuració de l'escolta en totes les adreces mitjançant el port {0}.
+No s'ha especificat cap argument. Consell: especifiqueu diversos arguments separats per espais
+Àlies ja trobat: {0}
+S'ha eliminat el registre de depuració. És possible que tots els dispositius de depuració connectats encara visualitzin missatges.
+S'ha produït un error en eliminar el registre de depuració: {0}
+No s'ha pogut canviar el directori: {0}
+Especifiqueu l'adreça
+No es pot eliminar el directori: {0}
+La zona horària s’especifica incorrectament.
+La selecció del perfil no és vàlida.
+S'està intentant connectar amb {0} amb el perfil {1} ​​...
+No s'ha trobat l'ordre {0}. Consulteu l'ordre "ajuda" per obtenir la llista d'ordres.
+No s'han pogut obtenir les propietats IPv6 de l'adaptador {0}. Continuant ...
+Informació IPv4:
+Informació IPv6:
+L'adaptador {0} no admet IPv6. Continuant ...
+L'adaptador {0} no admet IPv4. La sonda ha fallat.
+Sembla que executaves la versió de desenvolupament del nucli. Tot i que podeu veure els aspectes, sovint s’actualitza i pot introduir errors. Es recomana mantenir la versió estable.
+L'idioma que heu seleccionat conté dues variants. Tria una:
+1. Transliterat
+2. Traduït
+Seleccioneu la vostra opció:
+Elecció no vàlida. Torna-ho a provar.
+No està autoritzat a establir el directori actual a {0}: {1}
+El camí que heu especificat és massa llarg.
+CPU: ADVERTÈNCIA: es requerirà SSE2 en futurs compromisos de desenvolupament.
+El recopilador d'informació d'abocament s'ha bloquejat en intentar obtenir informació sobre {0}: {1}
+Error en intentar obtenir la data de compilació del muntatge {0}: {1}
+Error en intentar configurar MOTD / MAL: {0}
+Error en intentar obtenir MOTD / MAL: {0}
+S'ha produït un error en intentar iniciar l'estalvi de pantalla a causa d'una operació no vàlida.
+No es permet la recàrrega en mode segur.
+No es permet analitzar les modificacions en mode segur.
+Mostra tots els dispositius de depuració connectats.
+S'ha produït un error en intentar configurar el mode d'anàlisi. Comproveu el valor i torneu-ho a provar. Si això és correcte, consulteu la traça de la pila quan la depuració del nucli estigui activada.
+El camí no és ni un fitxer ni un directori.
+Crea una altra còpia d’un fitxer amb un directori o un nom diferents.
+Moveu un fitxer a un altre directori
+Per copiar fitxers a un altre directori o a un altre nom
+Per moure fitxers a un altre directori
+Coincidència {0} ({1}): {2}
+Coincidència {0}: {1}
+Temps dedicat: {0} mil·lisegons
+Nom: {0}
+Calcula les sumes dels fitxers.
+Us porta a la nostra wiki GitHub.
+Algorisme de xifratge no vàlid.
+Activa o desactiva la depuració remota.
+Mireu si podeu lletrejar correctament les paraules a temps
+Mireu si podeu resoldre equacions matemàtiques a temps
+Respondre als comentaris d’amor o odi.
+Si algú ha fet aquest comentari al teu vídeo:
+Com respondríeu?
+La selecció no és vàlida. Anem al següent comentari ...
+Acabes d’informar del comentari d’amor.
+Acabes de respondre al comentari de l’odi.
+Genial! Per a això, se suprimirà el comentari de {0}.
+Genial! {0} agrairé el vostre agraïment.
+Escrit perfectament!
+Ortografia incorrecta.
+Resolt perfectament!
+Resolució incorrecta.
+RPC ja s'està executant.
+Escolta RPC a totes les adreces mitjançant el port {0}.
+S'està iniciant RPC ...
+Es connecta a un servidor SSH.
+Introduïu la contrasenya per a {0}:
+SSH desconnectat.
+No es pot definir la pàgina de codis. És possible que l’idioma no es mostri correctament.
+La depuració no està habilitada.
+{0} ja no està configurat com a estalvi de pantalla predeterminat.
+Gràcies! Això és interessant.
+Tothom donarà suport al vostre vídeo per això.
+Us vaig donar l'arxiu especial al vostre correu electrònic per al vostre proper vídeo.
+Escolta, odiadors, està intentant ajudar-nos, no una estafa.
+No sé quant agraeixo jo i els meus amics per aquest vídeo.
+T'estimo per aquest vídeo.
+Segueix endavant, no paris.
+Us ajudaré a arribar a 1 milió de subscriptors.
+Els meus amics van arreglar l’ordinador per culpa de vosaltres.
+Impressionant broma! Vaig apagar l’ordinador del meu enemic.
+Als odiadors: DEIXEU DE DETEGIR-LO
+Als odiadors: COMENÇA A TREBALLAR
+Ara ningú no ho notarà gràcies a la vostra guia d’amagatall d’objectes
+Deixaré de veure els teus vídeos. S'ha perdut el subscriptor.
+Què és això? Això no està clar.
+Aquest vídeo és el pitjor.
+Tothom denuncia aquest vídeo.
+Els meus amics estan furiosos amb tu!
+Els amants ara us odiaran per això.
+El vostre amic us odiarà per això.
+Aquesta broma em va fer donar-me de baixa.
+Missió fallida, Respecte -, Subscriptor -
+Deixa de fer aquest tipus de vídeo !!!
+Torna a la teva feina, els teus vídeos són els pitjors!
+Prejudiquem aquest vídeo.
+Mostra totes les notificacions rebudes
+Rebutja una notificació
+La notificació s'ha desestimat correctament.
+Paquets (entrants):
+Paquets (de sortida):
+Errors en els paquets rebuts:
+Propietats generals d'IPv6
+Propietats generals d'IPv4
+Executa una ordre remotament a un ordinador remot
+- Etapa 1: inicialització del sistema
+- Etapa 2: detecció de maquinari
+- Etapa 3: detecció de modificacions i protectors de pantalla
+- Etapa 4: Inicieu la sessió
+Sembla que executaves la versió candidata a la versió. Es recomana mantenir la versió estable.
+El tipus {0} no és vàlid.
+Mida: {0}
+El directori {0} ja existeix.
+Error en intentar connectar-vos a {0}: temps d'espera de connexió o connexió perduda
+Calculadora per calcular expressions.
+Error en el càlcul.
+Sembla que executaves la versió de llançament proper. Tot i que ara és més segur d’utilitzar-lo, es recomana mantenir la versió estable.
+Actualització del sistema
+S'està comprovant si hi ha actualitzacions del sistema ...
+S'ha trobat una nova versió:
+El podeu descarregar a:
+No hi ha notificacions recents
+Cerca la cadena especificada al fitxer proporcionat
+Calcula les sumes de fitxers del directori especificat.
+Llista tots els correus de l'usuari específic.
+Introduïu el nom d'usuari o l'adreça de correu electrònic:
+Introduir la contrasenya:
+Error en connectar-se a {0}: {1}
+S'està connectant a {0} ...
+S'està autenticant ...
+Surt de l'intèrpret d'ordres IMAP
+Llista d'ordres
+Descarrega missatges i els llista
+Obre un missatge
+La pàgina pot no ser negativa ni zero.
+La pàgina no és un valor numèric.
+El número del missatge pot no ser negatiu ni zero.
+El número del missatge no és un valor numèric.
+- Des de {0}
+- A {0}
+- Enviat a {0} a {1}
+No s'ha trobat el missatge especificat.
+No s'ha pogut iniciar la depuració remota: {0}
+Preparant perfils ... Podrien trigar uns quants minuts ...
+Nom de l’amfitrió, nom d’usuari, tipus de dades, codificació, xifratge, protocols
+Error en intentar executar l'script: {0}
+Escriu text a la consola
+Pren decisions d’usuari
+Emet un so en 'n' Hz i el temps en 'n' mil·lisegons
+on <$variable> és qualsevol variable que s'utilitzarà per emmagatzemar la resposta
+La freqüència ha de ser numèrica. Si és numèric, assegureu-vos que sigui >= 37 i <= 32767.
+El temps ha de ser numèric.
+on <respostes> són respostes d'una lletra de la pregunta separades per barres incloses
+Error en intentar connectar-se al servidor SSH: {0}
+Permet a l'usuari introduir l'entrada
+Canvia el directori de correu actual
+No es pot obrir la carpeta de correu {0}: {1}
+Llista els directoris de la vostra adreça de correu electrònic
+Utilitza la informació del Marcatge ràpid per connectar-se ràpidament a qualsevol xarxa
+Seleccioneu una adreça per connectar-vos:
+La selecció està fora de rang. Seleccioneu entre 1 i {0}. Torna-ho a provar.
+La selecció no és un número. Torna-ho a provar.
+Durant la validació del certificat, hi ha errors de certificat. Pot ser la primera vegada que us connecteu al servidor o bé el certificat ha caducat. Aquí hi ha un error:
+Esteu segur que us voleu connectar?
+Resposta no vàlida. Siusplau torna-ho a provar.
+El marcatge ràpid està buit. Connecteu-vos a un servidor per afegir-hi una adreça.
+El marcatge ràpid no existeix. Connecteu-vos a un servidor per afegir-hi una adreça.
+Introduïu l'adreça i el port del servidor IMAP (<adreça> o <adreça>:[port]):
+Introduïu l'adreça i el port del servidor SMTP (<adreça> o <adreça>:[port]):
+Us demana que empleneu els camps obligatoris per enviar un missatge a una adreça
+Envia un missatge a una adreça
+Introduïu l'adreça de correu electrònic del destinatari:
+Introduïu l'assumpte:
+Introduïu el missatge a continuació. Escriviu "EOF" per confirmar.
+S'està enviant el missatge ...
+Missatge enviat.
+Adressa de correu invàlida. Assegureu-vos que heu escrit l'adreça correctament i que coincideixi amb el format de l'exemple que es mostra:
+Elimina un missatge
+Elimina tots els missatges del destinatari
+El missatge {0} de {1} s'ha suprimit de {2}. Queden {3} missatges per analitzar.
+El missatge {0} de {1} s'ha suprimit de la safata d'entrada. Queden {2} missatges per analitzar.
+Edita un fitxer de text
+Crea un fitxer nou
+El fitxer ja existeix.
+Error en intentar crear un fitxer: {0}
+No s'ha pogut obrir el fitxer. S'està sortint de l'intèrpret d'ordres ...
+No es troba l'ordre especificada de l'editor de text.
+Llista les ordres disponibles
+Surt de l'editor de text i desa els canvis no desats
+Imprimeix el contingut del fitxer amb números de línia a la consola
+Afegeix una nova línia amb text al final del fitxer
+Elimina el número de línia especificat
+Substitueix una paraula o frase per una altra
+Suprimeix una paraula o frase del número de línia
+Suprimeix un caràcter del número de caràcter de la línia especificada
+Línia eliminada.
+El número de línia especificat {0} no és un número vàlid.
+Els arguments necessaris no es passen a l'ordre {0}
+Error en intentar executar l'ordre: {0}
+S’executa en mode segur. S'està saltant l'etapa ...
+>> Depuració remota i xat: versió
+>> La vostra adreça és {0}.
+>> El vostre nom és {0}.
+No s'ha trobat l'ordre {0}. Utilitzeu "/help" per veure la llista.
+L'índex {0} no és vàlid. Hi ha {1} rastres de pila. L'índex es basa en zero, així que proveu de restar per 1.
+No hi ha rastre de pila
+Mostra l'última traça de pila a l'excepció
+Mostra el nom d'usuari actual a la sessió
+Us desconnecta del depurador
+Desbloqueja un dispositiu de depuració per adreça IP
+Bloqueja un dispositiu de depuració per adreça IP
+{0} ara pot tornar a unir-se a la depuració remota.
+{0} encara no està bloquejat.
+S'ha produït un error en carregar la configuració
+Hi ha un error en carregar la configuració. Pot ser que hagueu de comprovar el fitxer de configuració.
+Seleccioneu la secció:
+Configuració general...
+Configuració del maquinari ...
+Configuració d'inici de sessió ...
+Configuració de l'intèrpret d'ordres ...
+Configuració de xarxa ...
+Paràmetres diversos ...
+Desa la configuració
+Surt
+L'opció especificada {0} no és vàlida.
+La resposta ha de ser numèrica.
+Sol·licitud d'arguments a l'arrencada
+Activador del mode de manteniment
+Canvia la contrasenya arrel ...
+Comproveu si hi ha actualitzacions a l’inici
+Sonda tranquil·la
+Mostra MOTD a l’inici de sessió
+Esborra la pantalla a l'inici de sessió
+Mostra els noms d’usuari disponibles
+Petxina de colors
+Ordre d'ajuda simplificat
+Port de depuració
+Baixeu els temps de reintent
+Registreu el nom d'usuari FTP
+Registre d’adreça IP FTP
+Retorna només el primer perfil FTP
+Mostra l'hora / la data a l'extrem superior dret
+Temps d'espera del salvapantalles en ms
+Quota de mida de depuració en bytes
+Mode d'anàlisi de mida
+Carpa en arrencada
+Llarg temps i data
+Mostra els fitxers ocults
+S'ha introduït una secció no vàlida. Si us plau, torneu enrere.
+Torna...
+Activa
+Desactivar
+S'ha introduït un número de clau no vàlid. Si us plau, torneu enrere.
+Escriviu la contrasenya de root que cal establir. No us preocupeu; la contrasenya es mostra com a estrelles.
+Activeu "Canvia la contrasenya d'arrel" per utilitzar aquesta opció. Si us plau, torneu enrere.
+Voleu canviar la contrasenya arrel?
+Estableix la contrasenya arrel ...
+Escriviu un port de depurador remot. Ha de ser numèric i no s’ha d’utilitzar ja. En cas contrari, el depurador remot no obrirà el port.
+Escriviu quantes vegades l'ordre "" get "" hauria de tornar a provar les baixades fallides. Ha de ser numèric.
+Escriviu quan s'iniciarà el salvapantalles després de mil·lisegons especificats. Ha de ser numèric.
+Escriviu quants bytes pot emmagatzemar el registre de depuració. Ha de ser numèric.
+La resposta pot no ser negativa.
+La resposta no és vàlida. Comproveu que la resposta sigui numèrica per a les entrades de configuració que necessiten números com a respostes.
+La variable {0} no es troba a cap dels mòduls.
+Canvia la configuració del nucli
+Configuració del salvapantalles ...
+Activeu 255 colors
+Vols estar connectat?
+Elecció no vàlida. Suposant que no ...
+Canvieu la cultura en canviar d'idioma
+Es mostra el text
+Escriviu el text que vulgueu que es mostri. Més curt és millor.
+No s'ha pogut penjar {0}
+Error en executar l'ordre de depuració remota {0}: {1}
+Afegeix usuaris
+Afegeix àlies a les ordres
+Injecta arguments al nucli (cal reiniciar-lo)
+Canvia el nom de l'amfitrió
+Canvia MAL, el MOTD després de l'inici de sessió
+Canvia MOTD, el missatge del dia
+Canvia el nom d'usuari
+Gestioneu els permisos dels usuaris
+Recarrega el fitxer de salvapantalles a KSMods
+Elimina un usuari de la llista
+S'ha eliminat l'àlies {0} correctament.
+No s'ha pogut comprovar si hi ha actualitzacions.
+Ja no queden més usuaris a la llista.
+No s'ha pogut definir l'idioma.
+Error en intentar ignorar la notificació.
+usrmgr: No s'ha pogut crear el nom d'usuari {0}: {1}
+No s'ha pogut canviar el nom de l'usuari. {0}
+Una de les llistes de permisos no conté el nom d'usuari {0}.
+No s'han pogut carregar els permisos del fitxer: {0}
+No s'ha pogut canviar el nom de l'amfitrió: {0}
+Usuari no trobat
+No s'ha pogut canviar la contrasenya del nom d'usuari: {0}
+No s'ha pogut copiar el fitxer o el directori: {0}
+No s'ha pogut moure el fitxer o el directori: {0}
+No es pot trobar el fitxer que coincideixi amb la cadena "{0}": {1}
+No s'ha pogut baixar el fitxer {0}.
+No s'ha pogut enumerar els fitxers remots: {0}
+Introduïu un fitxer o carpeta que vulgueu eliminar. Per poder eliminar-lo, heu de tenir permisos administratius al vostre compte.
+Esteu segur que voleu suprimir {0} <y / n>?
+S'està suprimint {0} ...
+{0} no es troba al servidor.
+Tots els correus enviats per {0} s’eliminen correctament.
+No s'ha pogut eliminar tot el correu enviat per {0}.
+Error en enviar el missatge.
+S'està movent {0} a {1} ...
+S'ha mogut correctament
+Moveu el fitxer o el directori a un altre fitxer o directori. També podeu utilitzar-lo per canviar el nom dels fitxers.
+No s'ha pogut moure {0} a {1}.
+Introduïu un camí d'origen i un de destinació.
+S'està copiant {0} a {1} ...
+S'ha copiat correctament
+Copia un fitxer o directori a un altre fitxer o directori.
+No s'ha pogut copiar {0} a {1}.
+Moveu un missatge
+Mou tots els missatges del destinatari
+Tots els correus enviats per {0} es mouen correctament.
+No s'ha pogut moure tot el correu enviat per {0}.
+El missatge {0} de {1} s'ha mogut de {2}. Queden {3} missatges per analitzar.
+Mostra informació meteorològica de la ciutat especificada. Utilitza OpenWeatherMap.
+- Informació meteorològica per a {0} -
+Temps: {0}
+Pressió: {0}
+Humitat: {0}
+Podeu obtenir la vostra pròpia clau API a https://home.openweathermap.org/api_keys.
+Sempre podeu consultar http://bulk.openweathermap.org/sample/city.list.json.gz per obtenir la llista de ciutats amb els seus identificadors.
+Unitat preferida per a la temperatura
+Kelvin
+Imperial (Fahrenheit)
+Mètrica (centígrads)
+Configura el nucli de manera que us demani arguments en arrencar.
+Activa el mode de manteniment. Això desactiva diversos comptes.
+Cada inici, comprovarà si hi ha actualitzacions.
+Quan canvieu d'idioma, canvieu els noms del mes, el calendari, etc.
+Si s'inicia el nucli, definirà la contrasenya de root.
+Manteniu els missatges de sondeig de maquinari silenciosos.
+Mostra el missatge del dia abans de mostrar la pantalla d'inici de sessió.
+Esborreu la pantalla abans de mostrar la pantalla d'inici de sessió.
+Mostra els usuaris disponibles si està activat.
+Dóna suport al color del nucli
+Comanda d'ajuda simplificada per a totes les petxines
+Si es registra o no el nom d’usuari FTP.
+Si es registra o no l'adreça IP FTP.
+Trieu el primer perfil només quan us connecteu.
+Activa el suport de 255 colors per ColorMix.
+Activa el suport de 255 colors per a Disco.
+Activa el suport de 255 colors per a GlitterColor.
+Activa el suport de 255 colors per a les línies.
+L'hora i la data es mostraran a l'extrem superior dret de la pantalla
+Si està activat, el nucli analitzarà tota la carpeta per obtenir la seva mida total. Altrament, només analitzarà la superfície.
+Activa l'ocular a l'inici
+L’hora i la data seran més llargues, mostrant els noms del mes complet, etc.
+Mostra els fitxers ocults.
+Seleccioneu la unitat preferida per a la temperatura (això només s'aplica a l'ordre "temps")
+La modificació {0} s'ha aturat
+{0} v {1} s'ha aturat
+Mod {0} no té el nom de la peça. S'ha produït un error en analitzar les modificacions. Reviseu el codi font.
+Mod {0} no té l'ordre. S'ha produït un error en analitzar les modificacions. Reviseu el codi font.
+Per activar el registre de depuració, heu d'activar el mode de depuració.
+Han arribat {0} missatges nous a la safata d'entrada.
+Obriu "lsmail" per veure'ls.
+No es pot eliminar el fitxer: {0}
+Elimina un directori o un fitxer
+No es pot eliminar {0} perquè no existeix.
+Premeu CTRL + C per sortir.
+Proporciona informació sobre un fitxer
+Proporciona informació sobre un directori
+No es pot obtenir informació sobre el directori inexistent.
+No es pot obtenir informació sobre el fitxer inexistent.
+Nom complet: {0}
+Temps de creació: {0}
+Darrera hora d'accés: {0}
+Darrera hora d'escriptura: {0}
+Atributs: {0}
+Directori principal: {0}
+On trobar: {0}
+Mida del fitxer: {0}
+Canvia l'atribut d'un fitxer
+Arxiu no trobat.
+on <atributs> és un dels següents:
+El fitxer és un fitxer normal
+El fitxer és un fitxer de només lectura
+El fitxer és un fitxer ocult
+El fitxer és un arxiu. S’utilitza per fer còpies de seguretat.
+L'atribut "{0}" no és vàlid.
+L'atribut s'ha afegit correctament.
+L'atribut s'ha eliminat correctament.
+No s'ha pogut afegir l'atribut.
+No s'ha pogut eliminar l'atribut.
+Substitueix una paraula o frase per una altra en una línia
+S'ha superat el nivell de color vermell. Era {0}.
+S'ha superat el nivell de color verd. Era {0}.
+S'ha superat el nivell de color blau. Era {0}.
+Activeu els colors reals
+Activa el suport del color real per a ColorMix.
+Activa el suport del color real per a Disco.
+Activa el suport del color real per a GlitterColor.
+Activa el suport del color real per a les línies.
+No s'ha pogut desbloquejar {0}.
+{0} ja està bloquejat.
+{0} ara no es pot unir a la depuració remota.
+No s'ha pogut bloquejar {0}.
+Cicle de colors
+El disc farà un cicle de colors quan estigui activat. En cas contrari, seleccioneu colors aleatoris.
+Introduïu camins de fitxers als fitxers adjunts. Premeu ENTRAR en un camí en blanc per confirmar.
+Obre un missatge xifrat
+Escriviu una contrasenya per a l'identificador de clau {0}
+Envia un missatge xifrat a una adreça
+Us demana que empleneu els camps obligatoris per enviar un missatge xifrat a una adreça
+S'està baixant de {0} ...
+Mostra la barra de progrés mentre baixeu o pengeu des de l'ordre "get" o "put"
+Si és cert, fa que "obtenir" o "posar" mostri la barra de progrés mentre es descarrega o es penja.
+Penja un fitxer al lloc web especificat
+Ping una adreça
+S'està carregant {0} a {1} ...
+La càrrega s'ha completat.
+Utilitzeu "ftp" si voleu penjar fitxers al servidor FTP.
+La càrrega ha fallat en provar {0}: {1}
+Escriviu quantes vegades l'ordre "put" hauria de tornar a provar les càrregues fallides. Ha de ser numèric.
+És possible que l'adreça no estigui buida.
+No s'ha pogut fer ping {0}: {1}
+Ping ha tingut èxit en {0} ms.
+El número de línia especificat pot no ser més gran que l'últim número de línia de fitxer.
+Se sent com: {0}
+Temperatura: {0}
+Velocitat del vent: {0}
+Direcció del vent: {0}
+Activa el suport de 255 colors per Dissoldre.
+Activa el suport del color real per Dissoldre.
+Premeu qualsevol tecla per tornar enrere.
+No es pot crear la carpeta de correu {0}: {1}
+Crea un directori al directori de treball actual
+Elimina un directori del directori de treball actual
+No s'ha trobat la carpeta de correu {0}.
+No es pot suprimir la carpeta de correu {0}: {1}
+{0}, creat a {1} {2}, modificat a {3} {4}
+Verifica el seny del fitxer
+Els hash estan mal formats.
+Els hash no coincideixen.
+Hash coincideix.
+Canvia el nom d’una carpeta
+Aquesta secció llista tots els paràmetres generals del nucli, principalment per mantenir el nucli.
+Aquesta secció canvia el comportament de la sonda de maquinari.
+Aquesta secció representa la configuració d'inici de sessió. Tanqueu la sessió del compte perquè els canvis entrin en vigor.
+Aquesta secció llista els paràmetres de l'intèrpret d'ordres.
+En aquesta secció s'enumeren els paràmetres de xarxa, com ara l'intèrpret d'ordres FTP, els paràmetres d'ordres relacionats amb la xarxa i els paràmetres de depuració remota.
+En aquesta secció s’enumeren tots els estalvis de pantalla i els seus paràmetres disponibles.
+Aquí apareixen les opcions de configuració que no encaixen a les seccions adequades.
+Prova les modificacions proporcionant fitxers mod
+Obre un intèrpret d'ordres de prova
+Activa el mode de depuració
+Sol·licituds d'arguments
+* Premeu qualsevol tecla per iniciar el nucli o ESC per sortir.
+No s'ha pogut iniciar "{0}": {1}
+Mostra la previsualització del missatge de correu electrònic
+En llistar missatges de correu electrònic, mostreu la previsualització del cos.
+Colors personalitzats ...
+Color d'entrada
+Color de la llicència
+Color d'error del nucli continuable
+Color d'error de nucli incontinuable
+Color del nom de l’amfitrió
+Color del nom d'usuari
+Color de fons
+Color de text neutre
+Color de l’escenari
+Color d'error
+Estil de sol·licitud FTP
+Estil de sol·licitud de correu electrònic
+Estil de sol·licitud SFTP
+Activa el suport de 255 colors per a BouncingBlock.
+Activa el suport del color real per a BouncingBlock.
+S'està intentant accedir a un camí no vàlid.
+Esborra el fitxer de text
+Surt de l'editor de text
+Consulta un caràcter en una línia especificada o en totes les línies
+La comprovació de les actualitzacions està desactivada perquè executeu una versió de desenvolupament.
+Activa o desactiva la funció de desat automàtic de l'editor de text.
+Si el desat automàtic està habilitat, el fitxer de text es desarà cada "n" segons.
+Activa el desat automàtic de l'editor de text
+Interval de desat automàtic de l’editor de text
+Desa el fitxer
+Enregistreu el xat al registre de depuració
+Enregistra el xat de depuració remota al registre de depuració.
+Retard en mil·lisegons
+Quants mil·lisegons cal esperar abans de fer la següent escriptura?
+Us permet utilitzar un servidor FTP SSH
+No hi ha ajuda per a l'ordre "{0}".
+Seqüència VT no vàlida per al color RGB.
+Barra de color de segons
+Barra del color dels minuts
+Barra del color de les hores
+Color de la informació
+Marques per canviar de color
+Activa el suport de 255 colors per a ProgressClock.
+Activa el suport del color real per a ProgressClock.
+La barra de progrés del color dels segons. Pot ser 1-16, 1-255 o "1-255;1-255;1-255".
+Barra de progrés del color dels minuts. Pot ser 1-16, 1-255 o "1-255;1-255;1-255".
+Barra de progrés del color de les hores. Pot ser 1-16, 1-255 o "1-255;1-255;1-255".
+El color de la informació de la data. Pot ser 1-16, 1-255 o "1-255;1-255;1-255".
+Si la funció de ciclisme de colors està habilitada, quantes marques abans de canviar els colors a ProgressClock? 1 tick = 0,5 segons
+ProgressClock seleccionarà colors aleatoris si està activat. En cas contrari, utilitzeu colors de config.
+Crea un tema nou
+S'està creant un tema nou "{0}".
+Deseu el tema al directori actual
+Desa el tema en un altre directori ...
+Seleccioneu el color amb les tecles "<-" i "->". Premeu ENTRAR per sortir. Premeu "i" per inserir el número de color manualment.
+Seleccioneu el color amb les tecles "<-" i "->". Utilitzeu les tecles de fletxa amunt i fletxa avall per seleccionar entre rangs de colors. Premeu ENTRAR per sortir. Premeu "i" per inserir el número de color manualment.
+Benvingut al nucli! - Versió {0}
+Color d'advertència
+Opció de color
+Introduïu el número de color del 0 al 255:
+Utilitzeu "hwinfo" per obtenir informació ampliada sobre el maquinari.
+Imprimeix informació de maquinari
+Informació de la CPU:
+Nom del processador:
+Velocitat del processador:
+Bits de processador:
+Rev. processador:
+Topologia del processador:
+Tipus de processador:
+Fita del processador:
+Processador BogoMips:
+Mida de la memòria cau del processador L2:
+Mida de la memòria cau del processador L3:
+Característiques del processador:
+Informació del disc dur:
+Nom de la unitat:
+Model d'unitat:
+Proveïdor de discos:
+Velocitat de conducció:
+Mida de la unitat:
+Unitat de sèrie:
+Identificador de la unitat:
+Recompte de particions de Drive:
+Identificador de partició:
+Sistema de fitxers de partició:
+Mida de la partició:
+Partició utilitzada:
+Informació de RAM:
+Sense memòria RAM:
+RAM total:
+RAM utilitzada:
+Informació de la GPU:
+Nom de la GPU:
+Controlador de GPU:
+Versió de la GPU:
+GPU: no s'ha pogut examinar una o més de les targetes gràfiques. S'està mostrant informació de totes maneres ...
+>> Benvingut! Aquesta és la primera vegada que introduïu xat i depuració remota. Utilitzeu "/ register <name>" per registrar-vos.
+El dispositiu ja existeix.
+No hi ha cap dispositiu.
+Defineix el nom d'usuari del dispositiu
+Ja esteu registrats.
+Hola, {0}
+Imprimeix el contingut del fitxer a la consola
+O bé, passeu "listcities" a aquesta ordre.
+L’entrada ja existeix.
+Envolta la sortida de la consola
+L'ordre no es pot embolicar. Aquestes ordres es poden embolicar:
+Extreu un arxiu ZIP
+Crea un arxiu ZIP
+Construït a {0}
+Error en baixar les dades de depuració
+Hi ha un error en baixar les dades de depuració. Comproveu la vostra connexió a Internet.
+No s'ha pogut finalitzar la modificació {0}: {1}
+Enumera tots els esdeveniments activats
+Directori actual
+Estableix el directori actual de l'intèrpret d'ordres. Escriviu un camí d'accés absolut a qualsevol directori existent.
+Ajusteu les sortides de la llista
+Ajusta les sortides de la llista si sembla massa llarga per a la geometria actual de la consola.
+Ping!
+{0} us ha fet un ping.
+Desa el tema al directori actual com a ...
+Desa el tema a un altre directori com a ...
+Especifiqueu el nom del tema:
+S'ha afegit l'usuari {0} a la llista "{1}".
+L'usuari {0} s'ha eliminat de la llista "{1}".
+Mode no vàlid {0}
+L'usuari ja existeix
+Carrega el tema des de ...
+Carrega el tema a partir de temes predefinits ...
+Especifiqueu el nom del fitxer de tema sense l'extensió .json:
+Obre un arxiu ZIP
+Surt de l'intèrpret d'ordres ZIP
+Llista tots els fitxers de l'arxiu
+Extreu un fitxer a un directori especificat o a un directori actual
+Canvia el directori d’arxiu
+No s'ha trobat l'ordre de l'intèrpret d'ordres ZIP especificat.
+El directori {0} no existeix
+El directori d'arxiu {0} no existeix
+Nombre màxim de posicions
+Quantes posicions s’il·luminen abans d’enfosquir?
+Activa el suport de 255 colors per a més clar.
+Activa el suport del color real per a més clar.
+Color d'entrada de llista
+Color del valor de llista
+Es connecta a un servidor SSH per executar una ordre.
+Aquesta secció llista els paràmetres del salvapantalles de
+Especificador de color no vàlid. Assegureu-vos que tingui el format correcte, que significa un número de 0 a 255 si utilitzeu 255 colors o una seqüència de TV si utilitzeu el color veritable de la següent manera:
+Error a l'intèrpret d'ordres de prova: {0}
+Estableix una variable en un valor en un script
+Un avís d'informe d'errors.
+Gràcies per aconseguir-nos un bitllet. Seleccioneu quin tipus de sol·licitud teniu.
+Un problema
+Una sol·licitud de funció
+Una pregunta
+Heu d'especificar una característica.
+Feu una pregunta, anoteu la vostra idea o informeu d’un problema.
+Heu d’escriure la vostra sol·licitud.
+S'ha produït un error a l'intèrpret d'ordres FTP:
+Error desconegut de l'intèrpret d'ordres FTP:
+S'ha produït un error a l'intèrpret d'ordres SFTP:
+Error de l'intèrpret d'ordres SFTP desconegut:
+Mostra el bàner SSH
+Mostra el bàner del servidor SSH a la connexió.
+Com voleu autenticar-vos?
+Fitxer de clau privada
+Contrasenya
+Introduïu la contrasenya de la clau {0}:
+Introduïu la ubicació de la clau privada per a {0}. Escriviu "q" per acabar d'afegir claus:
+Neutralitzat un camí inexistent.
+El fitxer clau {0} no existeix.
+Error en provar d'afegir una clau privada:
+Premeu "t" per canviar al mode de color 255.
+Premeu "t" per canviar al mode de color real.
+Aquesta secció us permet triar quin tipus de color voleu canviar.
+Sembla que no teniu cap usuari excepte root. Això és dolent. Us guiarem com crear-ne un.
+Escriviu el vostre nom d’usuari.
+Heu d’escriure el vostre nom d’usuari.
+Escriviu la vostra contrasenya.
+Heu d’escriure la vostra contrasenya.
+Seleccioneu el tipus de compte.
+Administrador: aquest tipus de compte té més potència al nucli, cosa que us permet utilitzar programes de gestió del sistema.
+Usuari normal: aquest tipus de compte és una mica més restringit que els administradors.
+Enhorabona! Ja heu creat un compte nou. Per acabar això, inicieu la sessió com a compte nou.
+Consulteu el manual del protector de pantalla o el codi font per obtenir informació.
+mod: no s'ha detectat cap modificació.
+Ordres generals:
+Ordres de modificació:
+Ordres d'àlies:
+mode de manteniment
+Cerqueu directoris
+Grup de camins separats pels dos punts. Funciona igual que PATH. Escriviu un camí d'accés complet a una carpeta o un nom de carpeta. Quan hàgiu acabat, escriviu "q". Escriviu un signe menys al costat del camí per suprimir un directori existent.
+No hi ha ordres de modificació.
+No hi ha comandes d’àlies.
+El valor del color està fora de l'interval de 0-255.
+No es troba l'ordre embolicable.
+Consulta una paraula en una línia especificada o en totes les línies
+{0} de {1} descarregats.
+{0} de {1} penjats.
+Imprimeix una cadena per consolar mitjançant tipus de color i impressió de línia
+Imprimeix una cadena per consolar mitjançant tipus de color i impressió de línia amb suport de format
+Imprimeix una cadena al depurador
+Imprimeix una cadena per depurar amb suport de format
+Prova la facilitat d'error del nucli
+Prova la facilitat d'errors del nucli amb suport de format
+Prova de traduir una cadena que existeix en recursos a un idioma específic
+Imprimeix una cadena per consolar i analitza els espais reservats trobats
+Prova la instal·lació d’expressió regular
+Xifra una cadena mitjançant
+Inicia totes les modificacions
+Atura totes les modificacions
+Activa o desactiva la depuració
+Activa o desactiva la depuració remota
+Prova la seqüència de TV per a 255 colors
+Comprova la seqüència de TV per obtenir un color real
+Envia una notificació per provar el receptor
+Proves d'impressió de data mitjançant diferents calendaris
+Mostra totes les pàgines de codis compatibles
+Quines variables del compilador estan habilitades a l'aplicació?
+Proves que plantegen l'esdeveniment concret
+Proves de sondeig del maquinari
+Prova el col·lector d'escombraries
+Surt de l'intèrpret d'ordres de prova i inicia el nucli
+Surt del shell de prova i apaga el nucli
+Desa el directori actual al fitxer de configuració del nucli
+Prova l’escriptor de llistes amb la cadena i la matriu de cadenes
+Prova l’escriptor de llistes amb el nombre enter i la matriu sencera
+Prova l’escriptor de llistes amb la matriu char i char
+Llista de cadenes normal:
+Llista de cadenes de matrius:
+Llista sencera normal:
+Llista de nombres enters de matrius:
+Llista de caràcters normal:
+Llista de caràcters de matriu:
+Activa RPC
+Port RPC
+Si s’activa o no RPC.
+Escriviu un port RPC. Ha de ser numèric i no s’ha d’utilitzar ja. En cas contrari, RPC no obrirà el port.
+No s’inicia RPC perquè està desactivat.
+Les llistes admeten cultures
+Cerca la cadena especificada al fitxer proporcionat mitjançant expressions regulars
+Mireu si podeu prémer una tecla a temps
+L'usuari no ha proporcionat cap aportació a temps.
+Dificultat no vàlida
+Caràcter no premut a temps.
+Heu premut el personatge adequat.
+Heu premut el personatge equivocat.
+Premeu ESC per sortir.
+Obté la informació de data i hora
+Mil·lisegons:
+Segons:
+Minuts:
+Horari:
+Dies:
+Mesos:
+Curs:
+Dia de l'any:
+Dia de la setmana:
+Binari:
+Hora local:
+Temps Universal:
+Temps Unix:
+No s'ha pogut analitzar la informació de la data de
+Assegureu-vos que el format sigui correcte.
+Data:
+Temps:
+Estableix els permisos de fitxers. Això només s'admet als servidors FTP que executen Unix.
+Estableix el tipus d'aquesta sessió
+Heu de connectar-vos al servidor abans de realitzar operacions del sistema de fitxers.
+No s'han pogut definir els permisos de {0} a {1}.
+Els permisos s'han definit correctament per al fitxer
+El tipus de dades s'ha definit en ASCII.
+El tipus de dades s'ha definit com a Binari.
+El tipus de dades no és vàlid.
+Tingueu en compte que la majoria de fitxers no es descarregaran ni es carregaran correctament mitjançant aquest mode, de manera que us recomanem que feu servir el mode binari en la majoria de situacions.
+Intentant enviar una ordre RPC mentre RPC no s'iniciava.
+Retard d’esvaïment en mil·lisegons
+Passos de descolorament màxims
+Quants mil·lisegons cal esperar abans d’esvair el text?
+Quants passos d’esvair fer?
+Sonda completa
+Si és cert, analitza tot el maquinari; en cas contrari, només explorarà el maquinari necessari.
+No s'ha pogut eliminar el salvapantalles {0} de la configuració.
+Obté una configuració d'estalvi personalitzada
+Estableix la configuració d'estalvi personalitzada
+La configuració s'ha establert correctament per al salvapantalles
+No s'ha pogut establir una configuració per al salvapantalles
+Aquesta secció us permet gestionar la creació de contrasenyes d’arrel.
+Obre un intèrpret d'ordres RSS per llegir els canals d'informació
+Surt de l'intèrpret d'ordres RSS i torna al nucli
+Canvia l'enllaç del feed
+Mostra tots els feeds
+Llegeix un feed en un navegador web
+No es troba l'ordre de l'intèrpret d'ordres RSS especificat.
+Feed RSS2 no vàlid.
+Feed RSS1 no vàlid.
+Feed Atom no vàlid.
+Introduïu un URL del canal RSS:
+El tipus de canal RSS no és vàlid.
+Error desconegut de l'intèrpret d'ordres:
+Obté la informació de l'article
+El número d'article no pot ser més gran que els articles disponibles.
+Títol:
+Enllaç:
+Obté la informació del feed
+Descripció:
+Tipus de feed:
+Nombre d'articles:
+L'article no té cap enllaç.
+No s'ha pogut crear una llista d'entrades del sistema de fitxers per al directori
+Mode d'ordenació del sistema de fitxers
+Direcció d'ordenació del sistema de fitxers
+Controla com s’ordenaran els fitxers.
+Controla la direcció de l'ordenació del sistema de fitxers, ja sigui ascendent o descendent.
+Ordre ascendent
+Ordre descendent
+Nom complet
+Mida de l'arxiu
+Temps de creació
+Darrera hora d’escriptura
+Darrera hora d'accés
+Torna a escriure Retard en mil·lisegons
+Quants mil·lisegons cal esperar abans de tornar a escriure text?
+Escriviu el text que vulgueu que es mostri. Més llarg és millor.
+Velocitat mínima d’escriptura en WPM
+Velocitat màxima d’escriptura en WPM
+Probabilitat d'error tipogràfic en percentatge
+No s'ha pogut desar el directori actual: {0}
+Tovalloletes per canviar de direcció
+Activa el suport de 255 colors per a Esborrar.
+Activa el suport del color real per a Wipe.
+Quantes tovalloletes per fer abans de canviar de direcció a l'atzar?
+Etapa acabada a
+S'ha acabat la inicialització interna
+No s'ha trobat el fitxer de referència {0}. És possible que aquest mod no funcioni correctament sense aquest fitxer.
+Mod inicial
+Obté informació sobre modificacions
+Nom de l'ordre:
+Definició de l'ordre:
+Tipus d'ordre:
+Comanda estricta?
+Versió Mod:
+No s'ha trobat la modificació {0}.
+Cultura de
+Quina variant de {0} s’utilitza per canviar els noms de mes, calendari, etc.?
+L'editor de text encara no ha obert cap flux de fitxers.
+S'ha substituït la cadena.
+Un o tots dos números no són numèrics.
+Paraula suprimida.
+Caràcter suprimit.
+Configuració del sistema de fitxers ...
+Aquesta secció llista els paràmetres del sistema de fitxers.
+Benvingut a Configuració.
+Error en executar l'ordre SSH
+Error a l'intèrpret d'ordres SSH
+- Informació de l'aplicació
+Activa el suport de 255 colors per a BouncingText.
+Activa el suport del color real per a BouncingText.
+Prova l’escriptor del diccionari amb la cadena i la matriu de cadenes
+Prova l’escriptor del diccionari amb la matriu char i char
+Prova l’escriptor del diccionari amb l’interior i la matriu sencera
+Diccionari de cadenes normals:
+Diccionari de matrius:
+Diccionari sencer normal:
+Diccionari enter de matriu:
+Diccionari normal de caràcters:
+Diccionari de matrius:
+Benvingut a Test Shell.
+Mostra el progrés en les operacions del sistema de fitxers
+Mostra quin fitxer s'està processant durant les operacions del sistema de fitxers
+on hi haurà HardwareType
+El tipus de maquinari {0} no està provat o no és vàlid.
+El tipus de maquinari {0} encara no s'ha investigat. Si esteu segur que està provat, reinicieu el nucli amb la depuració activada.
+Particions no analitzades a la llista.
+Mode pirata informàtic
+Si està activat, s'activarà la consola verda.
+Imprimeix un separador
+Imprimeix un separador amb suport de formats
+Imprimeix un separador amb suport de color
+Imprimeix un separador amb suport de color i format
+Sempre centrat
+Activa el suport de 255 colors per a Carpa.
+Activa el suport del color real per a Carpa.
+Escriviu el text que vulgueu que es mostri.
+Si el text que es mostra a l’envelat està sempre centrat.
+'q' per deixar de fumar.
+No s'ha trobat l'argument {0} per injectar.
+No s'ha trobat l'argument de línia d'ordres {0}.
+Esborra tota la configuració
+El protector de pantalla ha experimentat un error en mostrar: {0}. Premeu qualsevol tecla per sortir.
+Vista prèvia...
+A continuació, es mostrarà el vostre tema:
+Ordres encapsulables:
+El mode {0} té una ordre no vàlida. S'ha produït un error en analitzar les modificacions. Reviseu el codi font.
+Parts del mod:

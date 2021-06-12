@@ -1,4 +1,6 @@
-﻿'
+﻿
+'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+'
 '    This file is part of Kernel Simulator
 '
 '    Kernel Simulator is free software: you can redistribute it and/or modify
@@ -23,7 +25,6 @@ Public Module StringEvaluators
     ''' Evaluates a variable
     ''' </summary>
     ''' <param name="Var">A full path to variable</param>
-    ''' <returns></returns>
     Public Function Evaluate(ByVal Var As String) As Object
         Dim EvalP As New VBCodeProvider
         Dim EvalCP As New CompilerParameters With {.GenerateExecutable = False,
@@ -35,11 +36,11 @@ Public Module StringEvaluators
         EvalCP.ReferencedAssemblies.Add("System.DirectoryServices.dll")
         EvalCP.ReferencedAssemblies.Add("System.Xml.dll")
         EvalCP.ReferencedAssemblies.Add("System.Xml.Linq.dll")
-        Dim EvalCode As String = "Imports System" & Environment.NewLine &
-                                 "Public Class Eval" & Environment.NewLine &
-                                 "Public Shared Function Evaluate()" & Environment.NewLine &
-                                 "Return " & Var & Environment.NewLine &
-                                 "End Function" & Environment.NewLine &
+        Dim EvalCode As String = "Imports System" & vbNewLine &
+                                 "Public Class Eval" & vbNewLine &
+                                 "Public Shared Function Evaluate()" & vbNewLine &
+                                 "Return " & Var & vbNewLine &
+                                 "End Function" & vbNewLine &
                                  "End Class"
         Dim cr As CompilerResults = EvalP.CompileAssemblyFromSource(EvalCP, EvalCode)
         If cr.Errors.Count > 0 Then
@@ -52,6 +53,15 @@ Public Module StringEvaluators
             Dim methInfo As MethodInfo = cr.CompiledAssembly.GetType("Eval").GetMethod("Evaluate")
             Return methInfo.Invoke(Nothing, Nothing)
         End If
+    End Function
+
+    ''' <summary>
+    ''' Evaluates a variable quickly
+    ''' </summary>
+    ''' <param name="Var">A full path to variable</param>
+    ''' <param name="VarType">Variable type</param>
+    Public Function EvaluateFast(ByVal Var As String, ByVal VarType As Type) As Object
+        Return GetValue(Var, VarType)
     End Function
 
 End Module

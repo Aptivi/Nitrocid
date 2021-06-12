@@ -1,0 +1,1099 @@
+Tilgjengelige kommandoer: {0}
+Skriv kommando:
+Kommandoinjeksjon er kansellert.
+Separate startargumenter med komma uten mellomrom, for eksempel 'motd, gpuprobe'
+Separate kommandoer på 'cmdinject' med kolon med mellomrom, for eksempel 'cmdinject setthemes Hacker: pip 1024 0.5'
+Merk at "feilsøking" -argumentet ikke dekker kjernen helt.
+bargs: Det forespurte argumentet {0} ble ikke funnet.
+bargs: Ikke gjenvinnbar argumentasjonsfeil:
+Tilgjengelige argumenter: {0}
+Argumenter ('hjelp' for hjelp):
+Injiserte argumenter vil bli planlagt kjørt ved neste omstart.
+Argumentinjeksjon er kansellert.
+Feil under analyse av ekte kommandolinjeargumenter: {0}
+Ugyldig fargemal {0}
+hwprobe: Din maskinvare blir testet. Vennligst vent...
+CPU: En eller flere av CPU-kjernene kunne ikke sonderes. Viser informasjon uansett ...
+RAM: En eller flere av RAM-brikkene kunne ikke sonderes. Viser informasjon uansett ...
+HDD: En eller flere av harddiskene kunne ikke sonderes. Viser informasjon uansett ...
+CPU: Totalt antall prosessorer: {0}
+Skriv inn administratorpassordet for vedlikehold.
+Kernefeil under oppstart: {0}
+DOBBEL PANIKK: Omstartstid overstiger maksimalt tillatt {0} feil omstartstid. Du fant en kjernefeil.
+[{0}] panikk: Omstart aktivert på grunn av feilnivået som {0}.
+[{0}] panikk: Tid for å starte på nytt: {1} sekunder, overstiger 1 time. Det er satt til 1 minutt.
+DOUBLE PANIC: Feiltype {0} er ugyldig.
+[{0}] dpanic: {1} - Start på nytt om {2} sekunder ...
+[{0}] panikk: Omstart deaktivert på grunn av feilnivået som {0}.
+[{0}] panikk: {1} - Trykk på en vilkårlig tast for å fortsette å bruke kjernen.
+[{0}] panikk: {1} - Trykk på en hvilken som helst tast for å slå av.
+[{0}] panikk: {1} - Start på nytt om {2} sekunder ...
+DOBBELPANIKK: Kernefeil: {0}
+Slår av...
+Omstart ...
+En annen forekomst av Kernel Simulator kjører. Stenger av i tilfelle interferens.
+Kunne ikke legge bruker til i tillatelseslister: ugyldig type {0}
+Kunne ikke legge bruker til i tillatelseslister: ugyldig bruker {0}
+Kunne ikke fjerne brukeren fra tillatelseslistene: ugyldig type {0}
+Du er allerede innlogget.
+Kunne ikke fjerne brukeren fra tillatelseslistene: ugyldig bruker {0}
+Du har enten funnet en feil, eller tillatelsen du prøvde å legge til eller fjerne er allerede gjort, eller andre feil.
+Feil {0}: {1}
+Du har enten funnet en feil, eller tillatelsen du prøvde å redigere for en ny bruker, mislyktes.
+Tilgjengelige brukernavn: {0}
+Brukernavn:
+Mellomrom er ikke tillatt.
+Spesialtegn er ikke tillatt.
+{0} passord:
+Feil passord.
+Brukeren er deaktivert.
+Feil brukernavn.
+Feil ved forsøk på å analysere plassholdere. {0} - Stabelspor:
+Feil ved forsøk på å analysere plassholdere. {0}
+Feil ved forsøk på å legge til brukernavn.
+usrmgr: Oppretter brukernavn {0} ...
+Tomt brukernavn.
+Bruker {0} ikke funnet.
+Bruker {0} har ikke lov til å bli fjernet.
+Bruker {0} er allerede logget inn. Logg ut og logg inn som en annen administrator.
+Bruker {0} fjernet.
+Feil ved forsøk på å fjerne brukernavn.
+Den forespurte skjermspareren {0} ble ikke funnet.
+{0} er initialisert riktig.
+{0} ble ikke initialisert. Skjermsparer-koden kan ha opplevd en feil under initialisering.
+Skjermsparer {0} eksisterer ikke.
+{0} er satt til standard skjermsparer.
+Screensaver {0} ikke funnet i databasen. Sjekk navnet og prøv igjen.
+Skjermsparer kan ikke lastes på grunn av følgende:
+Det er en alvorlig feil når du skriver ut tekst.
+Det oppstod en feil ved å prøve å opprette konfigurasjon.
+Feil ved forsøk på å frigjøre RAM: {0} - Fortsetter ...
+Mod kan ikke lastes på grunn av følgende:
+mod: Laster inn mods ...
+mod: Stopper mods ...
+Mod {0} har ikke navnet. Gå gjennom kildekoden.
+Mod {0} har ikke versjonen.
+{0} v {1} startet
+Ingen definisjon for kommando {0}.
+Kommando definert av
+Du bør koble fra serveren før du kobler til en annen server
+Brukernavn for {0}:
+Passord for {0}:
+Koblet til {0}
+Feil når du prøver å koble til {0}: {1}
+Stack Trace: {2}
+Gå inn på en FTP-server.
+Lokal katalog {0} eksisterer ikke.
+Gå inn i en lokal katalog. ".." å gå tilbake.
+Katalog {0} ikke funnet.
+Gå inn i en ekstern katalog. ".." å gå tilbake
+Du må koble til en server før du endrer katalog
+Lokal katalog: {0}
+Ekstern katalog: {0}
+Du må koble til serveren før du får den gjeldende eksterne katalogen.
+Du må koble til en server med administrative rettigheter før du utfører slettingen.
+Frakoblet fra {0}
+Du har ikke koblet til noen server ennå
+Laster ned fil {0} ...
+Nedlastet fil {0}.
+Du må koble til serveren før du utfører overføring.
+Legg inn en fil du vil laste ned til lokal katalog.
+{0} KB | Endret i: {1}
+Du bør koble til serveren før du lister opp alle eksterne filer.
+Laster opp fil {0} ...
+Opplastet fil {0}
+Legg inn en fil du vil laste opp til ekstern katalog. laste opp <fil> <katalog>
+(Indre:
+Får gjeldende lokal katalog
+Får gjeldende fjernkatalog
+Kobles til en FTP-server (den må starte med "ftp://" eller "ftps://")
+Endrer lokal katalog du vil laste ned til eller laste opp fra
+Endrer ekstern katalog du vil laste ned fra eller laste opp til
+Sletter ekstern fil fra serveren
+Kobler fra serveren
+Last ned ekstern fil til lokal katalog ved bruk av binær eller tekst
+Avslutter FTP-skall og går tilbake til kjernen
+Viser hjelpeskjermbildet
+Viser lokal katalog
+Lister ekstern katalog
+Last opp lokal fil til ekstern katalog ved bruk av binær eller tekst
+FTP-melding: Den forespurte kommandoen {0} ble ikke funnet. Se 'hjelp' for en liste over tilgjengelige kommandoer spesifisert på FTP-shell.
+Kunne ikke få egenskaper for adapter {0}
+Adapternummer:
+Adapternavn:
+Maksimal overføringsenhet: {2} Enheter
+DHCP aktivert:
+Ikke-unicast-pakker:
+Unicast-pakker:
+Feil ved innkommende / utgående pakker:
+Alias ​​kan ikke ha samme navn som en kommando.
+Kommando ikke funnet å alias til {0}.
+Du kan nå kjøre "{0}" som en kommando: "{1}".
+Alias ​​{0} er ikke funnet å bli fjernet.
+Ugyldig modus {0}.
+Injiserte argumenter, {0}, vil bli planlagt kjørt ved neste omstart.
+Det var ikke nok argumenter. Se nedenfor for bruk:
+Katalog {0} ikke funnet
+Tomt vertsnavn.
+Skifter fra: {0} til {1} ​​...
+Dagens blanke melding.
+Blank MAL etter innlogging.
+Feil brukerpassord.
+Passord stemmer ikke overens.
+Brukernavn er endret til {0}!
+Det nye navnet du skrev inn, er allerede funnet.
+{0} ble ikke funnet.
+Konfigurasjonen lastes inn på nytt. Du må kanskje starte kjernen på nytt for at noen endringer skal tre i kraft.
+En eller flere av fargene er ugyldige.
+Farger er ikke tilgjengelige. Slå på farget skall i kjernekonfigurasjonen.
+Screensaver {0} ikke funnet.
+[ Kernelinnstillinger (kjører på {0}) ]
+Kernelversjon:
+Feilsøkingsmodus:
+Farget skall:
+Argumenter om oppstart:
+Hjelpekommandoen forenklet:
+MOTD på innlogging:
+Tid / dato på hjørnet:
+[ Maskinvareinnstillinger ] {0}
+{0}[ Brukerinnstillinger ]
+Gjeldende brukernavn:
+Nåværende vertsnavn:
+Tilgjengelige brukernavn:
+Feil ved forsøk på å utføre kommando
+Endrer katalog
+Endrer passord for gjeldende bruker
+Renser skjermen
+Bruk et FTP-skall for å samhandle med servere
+Hjelpeside
+Liste fil / mappe innhold i gjeldende mappe
+Låser skjermen med et passord
+Logger deg ut
+Oppretter en katalog
+Viser informasjon om alle tilgjengelige grensesnitt
+Start datamaskinen på nytt (ADVARSEL: Ingen synkronisering, fordi den ikke er en endelig kjerne)
+Last inn konfigurasjonsfilen som er redigert på nytt.
+Lagrer skjermen fra utbrente
+Setter opp kjerneskjermsparere
+Setter opp kjernetemaer
+Viser dato og klokkeslett
+Viser dato og tid i soner
+Kjernen blir lagt ned
+Systeminformasjon
+* Du kan bruke flere kommandoer ved å bruke kolon mellom kommandoer.
+bruk:
+der argumenter vil være {0}
+Initialiserer FTP-skallet.
+Venner av
+hvor modnavn.ss.vb vil være
+Låser skjermen med passordet.
+Logger deg ut av brukeren.
+Få all nettverksinformasjon
+Start den simulerte datamaskinen på nytt.
+Last inn konfigurasjonen på nytt som endres av sluttbrukeren eller med verktøyet.
+Farger krever ikke omstart, men de fleste av innstillingene krever at du starter på nytt.
+viser deg en valgt skjermsparer mens du beskytter skjermen mot utbrenthet.
+Viser dato og klokkeslett.
+Viser dato og klokkeslett i soner.
+Slår av din simulerte datamaskin.
+Viser systeminformasjon og versjoner.
+Det oppstod en feil i skallet.
+Du har ikke tillatelse til å bruke {0}
+Shell-melding: Den forespurte kommandoen {0} har ikke lov til å kjøre i vedlikeholdsmodus.
+Shell-melding: Den forespurte kommandoen {0} ble ikke funnet. Se 'hjelp' for tilgjengelige kommandoer.
+Shell-melding: Kommando {0} er ikke tillatt å kjøre på innlogging.
+Feil ved forsøk på å utføre kommando.
+datetime: Klokka er {0}
+datetime: I dag er {0}
+datetime: Tidssone: {0}
+- Tid for {0}: {1}
+å tømme skjermen.
+Kjører på {0}
+Du er ikke autorisert til å få informasjon om {0}.
+Denne kommandoen er foreldet og vil bli fjernet i en fremtidig utgivelse.
+Du har ikke autorisasjon til å endre passord på {0} fordi målet var en administrator.
+usrmgr: Brukernavn {0} er allerede funnet
+Sletter alt i feilsøkingsloggen
+Ugyldig språk
+Endrer språk
+----------------------------- Kernel panic dump ------------------ -----------
+>> Panikkinformasjon <<
+> Beskrivelse: {0}
+> Feiltype: {1}
+> Dato og tid: {2}
+>> Unntaksinformasjon <<
+> Unntak: {0}
+> Beskrivelse: {1}
+> HRESULT: {2}
+> Kilde: {3}
+> Stable spor <
+>> Informasjon om indre unntak {0} <<
+>> Unntak {0} er årsaken <<
+>> Intet unntak; kan være en kjernefeil. <<
+>> Rammer, filer, linjer og kolonner <<
+> Ramme {0}: Fil: {1} | Linje: {2} | Kolonne: {3}
+> Det er en feil når du prøver å få rammeinformasjon. {0}: {1}
+Last inn mods på nytt.
+Mods lastet på nytt.
+Velkommen til Kernel!
+Innlogget vellykket som <bruker>
+MOTD / MAL er gyldig, men meldingstypen er ikke gyldig. Forutsatt MOTD ...
+Forsøkte å lese MOTD / MAL som er av ugyldig meldingstype.
+Nedlastingen er fullført.
+Nedlastingen mislyktes i prøve {0}: {1}
+Bruk "ftp" hvis du skal laste ned filer fra FTP-serveren.
+Last ned en fil til gjeldende arbeidskatalog
+Koble fra en feilsøkingsenhet
+Viser tilkoblede feilsøkingsenheter
+Feilsøkingsenhet {0} ikke funnet.
+Enheten {0} er koblet fra.
+Feil i tilkoblingen: {0}
+Feilsøke lytting på alle adresser ved bruk av port {0}.
+Ingen argumenter er spesifisert. Tips: Angi flere argumenter atskilt med mellomrom
+Alias ​​allerede funnet: {0}
+Feilsøkingsloggen ble fjernet. Alle tilkoblede feilsøkingsenheter kan fremdeles se meldinger.
+Feilsøking av feilsøkingslogg mislyktes: {0}
+Endring av katalog mislyktes: {0}
+Spesifiser adressen
+Kan ikke fjerne katalogen: {0}
+Tidssone er angitt feil.
+Ugyldig profilvalg.
+Prøver å koble til {0} med profilen {1} ...
+Kommando {0} ikke funnet. Se "hjelp" -kommandoen for listen over kommandoer.
+Kunne ikke få IPv6-egenskaper for adapter {0}. Fortsetter ...
+IPv4-informasjon:
+IPv6 informasjon:
+Adapter {0} støtter ikke IPv6. Fortsetter ...
+Adapter {0} støtter ikke IPv4. Proben mislyktes.
+Ser ut som om du kjørte utviklingsversjonen av kjernen. Selv om du kan se aspektene, blir den ofte oppdatert og kan introdusere feil. Det anbefales at du holder deg på den stabile versjonen.
+Språket du har valgt inneholder to varianter. Velg en:
+1. Translitterert
+2. Oversatt
+Velg ditt valg:
+Ugyldig valg. Prøv igjen.
+Du er ikke autorisert til å sette gjeldende katalog til {0}: {1}
+Stien du har spesifisert er for lang.
+CPU: ADVARSEL: SSE2 vil være nødvendig i fremtidige utviklingsforpliktelser.
+Informasjonssamler for dumpe krasjet da han prøvde å få informasjon om {0}: {1}
+Feil under forsøk på å få kompileringsdato {0}: {1}
+Feil når du prøver å sette MOTD / MAL: {0}
+Feil når du prøver å få MOTD / MAL: {0}
+Feil når du prøver å starte skjermsparer, på grunn av en ugyldig operasjon.
+Omlasting ikke tillatt i sikker modus.
+Parsingmodus er ikke tillatt i sikker modus.
+Viser alle tilkoblede feilsøkingsenheter.
+Feil når du prøver å stille inn analysemodus. Sjekk verdien og prøv igjen. Hvis dette er riktig, kan du se stablesporingen når kjernefeiling er aktivert.
+Stien er verken en fil eller en katalog.
+Oppretter en annen kopi av en fil under en annen katalog eller navn.
+Flytter en fil til en annen katalog
+For å kopiere filer til en annen katalog eller et annet navn
+For å flytte filer til en annen katalog
+Kamp {0} ({1}): {2}
+Kamp {0}: {1}
+Tidsbruk: {0} millisekunder
+Navn: {0}
+Beregner filsummer.
+Tar deg til vår GitHub Wiki.
+Ugyldig krypteringsalgoritme.
+Aktiverer eller deaktiverer ekstern feilsøking.
+Se om du kan stave ord riktig i tide
+Se om du kan løse matematiske ligninger i tide
+Svar på kjærlighet eller hater kommentarer.
+Hvis noen kom med denne kommentaren til videoen din:
+Hvordan vil du svare?
+Ugyldig utvalg. Går til neste kommentar ...
+Du har nettopp rapportert kjærlighetskommentaren!
+Du svarte nettopp på hatkommentaren!
+Flott! {0} 's kommentar vil bli fjernet for det.
+Flott! {0} vil sette pris på takken din.
+Stavet perfekt!
+Stavet feil.
+Løst perfekt!
+Løst feil.
+RPC kjører allerede.
+RPC lytter på alle adresser ved bruk av port {0}.
+Starter RPC ...
+Kobles til en SSH-server.
+Skriv inn passordet for {0}:
+SSH koblet ut.
+Kan ikke angi kodesiden. Språket vises kanskje ikke ordentlig.
+Feilsøking er ikke aktivert.
+{0} er ikke lenger satt til standard skjermsparer.
+Takk! Dette er interessant.
+Alle vil støtte videoen din for dette.
+Jeg ga deg den spesielle filen i e-posten din til din neste video.
+Hør, hatere, han prøver å hjelpe oss, ikke svindel.
+Jeg vet ikke hvor mye jeg og vennene mine takker for denne videoen.
+Jeg elsker deg for denne videoen.
+Fortsett, ikke stopp.
+Jeg vil hjelpe deg med å nå 1M-abonnenter!
+Vennene mine fikset datamaskinen sin på grunn av deg.
+Kjempeflott prank! Jeg stenger av fiendens PC.
+Til hatere: STOPP HATING PÅ HIM
+Til hatere: FÅ Å ARBEID
+Ingen vil merke dette nå takket være guiden din om skjul på gjenstander
+Jeg vil slutte å se videoene dine. Abonnenten tapt.
+Hva er dette? Dette er uklart.
+Denne videoen er den verste!
+Alle rapporterer denne videoen!
+Vennene mine er rasende på deg!
+Elskere vil nå hate deg for dette.
+Din venn vil hate deg for dette.
+Denne prank fikk meg til å melde deg av deg.
+Oppdrag mislyktes, respekt -, abonnent -
+Slutt å lage denne typen video !!!
+Gå tilbake til jobben din, videoene dine er de verste!
+Vi tar fordommer for denne videoen.
+Viser alle mottatte varsler
+Avgir varsel
+Varslingen ble avvist.
+Pakker (inngående):
+Pakker (utgående):
+Feil i mottatte pakker:
+Generelle IPv6-egenskaper
+Generelle IPv4-egenskaper
+Ekstern kjører en kommando til ekstern PC
+- Fase 1: Systeminitialisering
+- Fase 2: Melding om maskinvare
+- Fase 3: Oppdagelse av modi og skjermsparere
+- Fase 4: Logg inn
+Det ser ut som om du kjørte versjonskandidatversjonen. Det anbefales at du holder deg på den stabile versjonen.
+Ugyldig type {0}.
+Størrelse: {0}
+Katalog {0} eksisterer allerede.
+Feil når du prøver å koble til {0}: Timeout for tilkobling eller mistet tilkobling
+Kalkulator for å beregne uttrykk.
+Feil i beregningen.
+Ser ut som om du kjørte versjonen til nær utgivelse. Selv om det er tryggere å bruke nå, anbefales det at du holder deg på den stabile versjonen.
+System oppdatering
+Søker etter systemoppdateringer ...
+Fant ny versjon: 
+Du kan laste den ned på: 
+Ingen nylige varsler
+Søker etter spesifikk streng i den medfølgende filen
+Beregner summer av filer i spesifisert katalog.
+Viser alle postene i den spesifikke brukeren.
+Skriv inn brukernavn eller e-postadresse:
+Oppgi passord:
+Feil under tilkobling til {0}: {1}
+Kobler til {0} ...
+Godkjenner ...
+Gå ut av IMAP-skallet
+Liste over kommandoer
+Last ned meldinger og lister dem
+Åpner en melding
+Siden er kanskje ikke negativ eller null.
+Side er ikke en numerisk verdi.
+Meldingsnummeret er kanskje ikke negativt eller null.
+Meldingsnummer er ikke en numerisk verdi.
+- Fra {0}
+- Til {0}
+- Sendt kl {0} om {1}
+Melding angitt er ikke funnet.
+Ekstern debug kunne ikke starte: {0}
+Forbereder profiler ... Det kan ta flere minutter ...
+Vertsnavn, brukernavn, datatype, koding, kryptering, protokoller
+Feil ved forsøk på å utføre skript: {0}
+Skriver tekst inn i konsollen
+Gjør brukervalg
+Pip i 'n' Hz og tid i 'n' millisekunder
+der <$variabel> er en hvilken som helst variabel som vil bli brukt til å lagre respons
+Frekvensen må være numerisk. Hvis den er numerisk, må du forsikre deg om at den er >= 37 og <= 32767.
+Tiden må være numerisk.
+der <svar> er enbokstret svar på spørsmålet atskilt i skråstreker
+Feil ved forsøk på å koble til SSH-serveren: {0}
+Lar brukeren legge inn innspill
+Endrer gjeldende postkatalog
+Kan ikke åpne postmappen {0}: {1}
+Viser kataloger i postadressen din
+Bruker informasjon fra hurtigvalg for å koble deg til ethvert nettverk raskt
+Velg en adresse du vil koble til:
+Utvalget er utenfor rekkevidde. Velg mellom 1- {0}. Prøv igjen.
+Utvalget er ikke et tall. Prøv igjen.
+Under sertifikatvalidering er det sertifikatfeil. Det kan være første gang du kobler deg til serveren, eller sertifikatet kan være utløpt. Her er en feil:
+Er du sikker på at du vil koble til?
+Ugyldig svar. Vær så snill, prøv på nytt.
+Hurtigvalg er tom. Koble til en server for å legge til en adresse til den.
+Hurtigvalg eksisterer ikke. Koble til en server for å legge til en adresse til den.
+Angi IMAP-serveradresse og port (<adresse> eller <adresse>: [port]):
+Skriv inn SMTP-serveradresse og -port (<adresse> eller <adresse>: [port]):
+Ber deg om å fylle de obligatoriske feltene for å sende en melding til en adresse
+Sender en melding til en adresse
+Angi mottakerens e-postadresse:
+Skriv inn emnet:
+Skriv inn meldingen nedenfor. Skriv "EOF" for å bekrefte.
+Sender melding ...
+Melding sendt.
+Ugyldig epostadresse. Forsikre deg om at du har skrevet adressen riktig, og at den samsvarer med formatet på eksemplet som vises:
+Fjerner en melding
+Fjerner alle meldingene fra mottakeren
+Melding {0} fra {1} slettet fra {2}. {3} meldinger som gjenstår for å analysere.
+Melding {0} fra {1} er slettet fra innboksen. {2} meldinger som gjenstår for å analysere.
+Redigerer en tekstfil
+Oppretter en ny fil
+Filen finnes allerede.
+Feil ved forsøk på å lage en fil: {0}
+Kunne ikke åpne filen. Spennende skall ...
+Den spesifiserte tekstredigererkommandoen er ikke funnet.
+Viser tilgjengelige kommandoer
+Gå ut av tekstredigeringsprogrammet og lagre ulagrede endringer
+Skriver ut innholdet i filen med linjenumre til konsollen
+Legger til en ny linje med tekst på slutten av filen
+Fjerner det angitte linjenummeret
+Erstatter et ord eller uttrykk med et annet
+Sletter et ord eller en setning fra linjenummer
+Sletter et tegn fra tegntallet på spesifisert linje
+Fjernet linje.
+Spesifisert linjenummer {0} er ikke et gyldig nummer.
+Nødvendige argumenter sendes ikke til kommandoen {0}
+Feil ved forsøk på å kjøre kommando: {0}
+Kjører i sikker modus. Hopper over scenen ...
+>> Ekstern feilsøking og chat: versjon
+>> Adressen din er {0}.
+>> Ditt navn er {0}.
+Kommando {0} ikke funnet. Bruk "/help" for å se listen.
+Indeks {0} ugyldig. Det er {1} stakkespor. Indeks er nullbasert, så prøv å trekke fra med 1.
+Ingen stabelspor
+Viser siste stack-spor på unntak
+Viser gjeldende brukernavn i økten
+Koble deg fra feilsøkeren
+Fjern blokkering av en feilsøkingsenhet etter IP-adresse
+Blokker en feilsøkingsenhet etter IP-adresse
+{0} kan nå bli med på ekstern feilsøking igjen.
+{0} er ikke blokkert ennå.
+Feil ved lasting av innstillinger
+Det oppstod en feil under innlasting. Du må kanskje sjekke innstillingsfilen.
+Velg seksjon:
+Generelle innstillinger...
+Maskinvareinnstillinger ...
+Påloggingsinnstillinger ...
+Shell-innstillinger ...
+Nettverksinnstillinger...
+Diverse innstillinger ...
+Lagre innstillinger
+Exit
+Det angitte alternativet {0} er ugyldig.
+Svaret må være numerisk.
+Be om argumenter ved oppstart
+Vedlikeholdsmodus utløser
+Endre rotpassord ...
+Se etter oppdateringer ved oppstart
+Quiet Probe
+Vis MOTD ved pålogging
+Tøm skjerm ved pålogging
+Vis tilgjengelige brukernavn
+Farget skall
+Forenklet hjelpekommando
+Feilsøk port
+Last ned Retry Times
+Logg FTP brukernavn
+Logg FTP IP-adresse
+Returner bare første FTP-profil
+Vis tid / dato i øvre høyre hjørne
+Skjermsparer Timeout i ms
+Feilsøkingskvote i byte
+Størrelsesparse-modus
+Telt ved oppstart
+Lang tid og dato
+Vis skjulte filer
+Ugyldig del oppgitt. Vennligst gå tilbake.
+Gå tilbake...
+Muliggjøre
+Deaktiver
+Ugyldig nøkkelnummer er angitt. Vennligst gå tilbake.
+Skriv root-passordet som skal angis. Ikke bekymre deg; passordet vises som stjerner.
+Aktiver "Endre rotpassord" for å bruke dette alternativet. Vennligst gå tilbake.
+Endre rotpassord?
+Angi rotpassord ...
+Skriv en ekstern feilsøkingsport. Den må være numerisk og må ikke allerede brukes. Ellers klarer ikke ekstern feilsøkingsprogram å åpne porten.
+Skriv hvor mange ganger kommandoen "" get "" skal prøve mislykkede nedlastinger på nytt. Det må være numerisk.
+Skriv når du skal starte skjermsparer etter angitte millisekunder. Det må være numerisk.
+Skriv hvor mange byte som kan feilsøke loggen. Det må være numerisk.
+Svaret er kanskje ikke negativt.
+Svaret er ugyldig. Kontroller at svaret er numerisk for konfigurasjonsoppføringer som trenger tall som svar.
+Variabel {0} finnes ikke på noen av modulene.
+Endrer kjernekonfigurasjon
+Skjermsparerinnstillinger ...
+Aktiver 255 farger
+Vil du holde kontakten?
+Ugyldig valg. Forutsatt at nei ...
+Endre kultur når du bytter språk
+Tekst vist
+Skriv hvilken tekst du vil ha vist. Kortere er bedre.
+Kunne ikke laste opp {0}
+Feil ved utføring av ekstern feilsøkingskommando {0}: {1}
+Legger til brukere
+Legger til aliaser i kommandoer
+Injiserer argumenter til kjernen (omstart kreves)
+Endrer vertsnavn
+Endrer MAL, MOTD etter pålogging
+Endrer MOTD, dagens budskap
+Endrer brukernavn
+Administrer tillatelser for brukere
+Last inn skjermsparerfil i KSMods
+Fjerner en bruker fra listen
+Fjernet alias {0}.
+Kunne ikke se etter oppdateringer.
+Det er ikke flere brukere igjen på listen.
+Kunne ikke angi språk.
+Feil ved forsøk på å avvise varselet.
+usrmgr: Kunne ikke opprette brukernavn {0}: {1}
+Kunne ikke gi nytt navn til bruker. {0}
+En av tillatelseslistene inneholder ikke brukernavnet {0}.
+Kunne ikke laste tillatelsene fra filen: {0}
+Kunne ikke endre vertsnavnet: {0}
+Bruker ikke funnet
+Kunne ikke endre passord for brukernavn: {0}
+Kunne ikke kopiere fil eller katalog: {0}
+Kunne ikke flytte filen eller katalogen: {0}
+Kunne ikke finne filen som samsvarer med strengen "{0}": {1}
+Nedlastingen mislyktes for filen {0}.
+Kunne ikke liste opp eksterne filer: {0}
+Skriv inn en fil eller mappe du vil fjerne. Du må ha administrative tillatelser på kontoen din for å kunne fjerne.
+Er du sikker på at du vil slette {0} <y / n>?
+Sletter {0} ...
+{0} ble ikke funnet på serveren.
+All e-post laget av {0} er fjernet.
+Kunne ikke fjerne all e-post laget av {0}.
+Feil ved sending av melding.
+Flytter {0} til {1} ​​...
+Flyttet vellykket
+Flytter fil eller katalog til en annen fil eller katalog. Du kan også bruke det til å gi nytt navn til filer.
+Kunne ikke flytte {0} til {1}.
+Angi en kildebane og en destinasjonssti.
+Kopierer {0} til {1} ​​...
+Kopiert
+Kopierer fil eller katalog til en annen fil eller katalog.
+Kunne ikke kopiere {0} til {1}.
+Flytter en melding
+Flytter alle meldinger fra mottakeren
+All e-post laget av {0} er flyttet.
+Kunne ikke flytte all e-post laget av {0}.
+Melding {0} fra {1} flyttet fra {2}. {3} meldinger gjenstår å analysere.
+Viser værinformasjon for spesifisert by. Bruker OpenWeatherMap.
+- Værinformasjon for {0} -
+Vær: {0}
+Trykk: {0}
+Fuktighet: {0}
+Du kan få din egen API-nøkkel på https://home.openweathermap.org/api_keys.
+Du kan alltid se http://bulk.openweathermap.org/sample/city.list.json.gz for listen over byer med ID-er.
+Foretrukket enhet for temperatur
+Kelvin
+Imperial (Fahrenheit)
+Metrisk (Celsius)
+Setter opp kjernen slik at den ber deg om argument ved oppstart.
+Utløser vedlikeholdsmodus. Dette deaktiverer flere kontoer.
+Hver oppstart vil den se etter oppdateringer.
+Når du bytter språk, endrer du månedens navn, kalender osv.
+Hvis kjernen startes, vil den angi rotpassord.
+Hold maskinvaresonderingsmeldinger stille.
+Vis dagens melding før du viser påloggingsskjermen.
+Tøm skjerm før påloggingsskjerm vises.
+Viser tilgjengelige brukere hvis aktivert.
+Gir kjerne fargestøtte
+Forenklet hjelpekommando for alle skallene
+Hvorvidt du skal logge FTP brukernavn eller ikke.
+Hvorvidt du skal logge FTP IP-adresse eller ikke.
+Velg den første profilen bare når du kobler til.
+Aktiverer 255 fargestøtte for ColorMix.
+Aktiverer 255 fargestøtte for Disco.
+Aktiverer 255 fargestøtte for GlitterColor.
+Aktiverer 255 fargestøtte for linjer.
+Tid og dato vises øverst til høyre på skjermen
+Hvis aktivert, vil kjernen analysere hele mappen for den totale størrelsen. Ellers vil bare analysere overflaten.
+Gjør det mulig å bruke øyenstikk ved oppstart
+Tid og dato vil være lengre, viser navn på hele måneder osv.
+Viser skjulte filer.
+Velg ønsket enhet for temperatur (dette gjelder bare kommandoen "vær")
+Mod {0} stoppet
+{0} v {1} stoppet
+Mod {0} har ikke delenavnet. Mod-parsing mislyktes. Gjennomgå kildekoden.
+Mod {0} har ikke kommandoen. Mod-parsing mislyktes. Gjennomgå kildekoden.
+Du må slå på feilsøkingsmodus før du kan tømme feilsøkingsloggen.
+{0} nye meldinger ankom innboksen.
+Åpne "lsmail" for å se dem.
+Kan ikke fjerne filen: {0}
+Fjerner en katalog eller en fil
+Kan ikke fjerne {0} fordi den ikke eksisterer.
+Trykk CTRL + C for å avslutte.
+Gir informasjon om en fil
+Gir informasjon om en katalog
+Kan ikke få informasjon om ikke-eksisterende katalog.
+Kan ikke få informasjon om ikke-eksisterende fil.
+Fullt navn: {0}
+Opprettingstid: {0}
+Siste tilgangstid: {0}
+Siste skrivetid: {0}
+Attributter: {0}
+Overordnet katalog: {0}
+Hvor finner du: {0}
+Filstørrelse: {0}
+Endrer attributt til en fil
+Fil ikke funnet.
+der <attributter> er ett av følgende:
+Filen er en normal fil
+Filen er en skrivebeskyttet fil
+Filen er en skjult fil
+Filen er et arkiv. Brukes til sikkerhetskopiering.
+Attributtet "{0}" er ugyldig.
+Attributt er lagt til.
+Attributtet er fjernet.
+Kunne ikke legge til attributt.
+Kunne ikke fjerne attributtet.
+Erstatter et ord eller en setning med et annet på en linje
+Rødt fargenivå overskredet. Det var {0}.
+Grønt fargenivå overskredet. Det var {0}.
+Blå fargenivå overskredet. Det var {0}.
+Aktiver ekte farger
+Aktiverer ekte fargestøtte for ColorMix.
+Aktiverer ekte fargestøtte for Disco.
+Aktiverer ekte fargestøtte for GlitterColor.
+Aktiverer ekte fargestøtte for linjer.
+Kunne ikke oppheve blokkeringen av {0}.
+{0} er allerede blokkert.
+{0} kan ikke delta i ekstern feilsøking nå.
+Kunne ikke blokkere {0}.
+Sykle farger
+Disco vil sykle farger når den er aktivert. Ellers velger du tilfeldige farger.
+Angi filstier til vedlegg. Trykk ENTER på en tom bane for å bekrefte.
+Åpner en kryptert melding
+Skriv passord for nøkkel-ID {0}
+Sender en kryptert melding til en adresse
+Ber deg om å fylle de obligatoriske feltene for å sende en kryptert melding til en adresse
+Laster ned fra {0} ...
+Vis fremdriftslinjen mens du laster ned eller laster opp fra "get" eller "put" -kommandoen
+Hvis det er sant, får det "get" eller "put" til å vise fremdriftslinjen mens du laster ned eller laster opp.
+Laster opp en fil til det angitte nettstedet
+Pinger en adresse
+Laster opp {0} til {1} ​​...
+Opplastingen er fullført.
+Bruk "ftp" hvis du skal laste opp filer til FTP-serveren.
+Opplastingen mislyktes i prøve {0}: {1}
+Skriv hvor mange ganger kommandoen "put" skal prøve på nytt mislykkede opplastinger. Det må være numerisk.
+Adressen kan ikke være tom.
+Kunne ikke pinge {0}: {1}
+Ping lyktes i {0} ms.
+Det angitte linjenummeret kan ikke være større enn det siste fillinjenummeret.
+Føles som: {0}
+Temperatur: {0}
+Vindhastighet: {0}
+Vindretning: {0}
+Aktiverer 255 fargestøtte for oppløsning.
+Aktiverer ekte fargestøtte for Dissolve.
+Trykk på hvilken som helst tast for å gå tilbake.
+Kan ikke opprette e-postmappe {0}: {1}
+Lag en katalog i gjeldende arbeidskatalog
+Fjerner en katalog fra gjeldende arbeidskatalog
+E-postmappen {0} ble ikke funnet.
+Kan ikke slette e-postmappen {0}: {1}
+{0}, opprettet i {1} {2}, endret i {3} {4}
+Verifiserer sunn fornuft i filen
+Hash er misdannet.
+Hashes stemmer ikke overens.
+Hashes match.
+Endrer navn på en mappe
+Denne delen viser alle generelle kjerneinnstillinger, hovedsakelig for å opprettholde kjernen.
+Denne delen endrer atferden til maskinvaresonden.
+Denne delen representerer innloggingsinnstillingene. Logg ut av kontoen din for at endringene skal tre i kraft.
+Denne delen viser skallinnstillingene.
+Denne delen viser nettverksinnstillingene, som FTP-skallet, nettverksrelaterte kommandoinnstillinger og eksterne feilsøkingsinnstillinger.
+Denne delen viser alle skjermsparere og deres tilgjengelige innstillinger.
+Innstillinger som ikke passer i de aktuelle delene, lander her.
+Tester mods ved å tilby mod-filer
+Åpner et testskall
+Aktiverer feilsøkingsmodus
+Ber om argumenter
+* Trykk hvilken som helst tast for å starte kjernen eller ESC for å avslutte.
+Kunne ikke starte "{0}": {1}
+Vis forhåndsvisning av e-postmeldinger
+Når du lister opp e-postmeldinger, viser du forhåndsvisning av kroppen.
+Egendefinerte farger ...
+Inngangsfarge
+Lisensfarge
+Fortsatt kjernefeilfarge
+Ikke-fortsettbar kjernefeilfarge
+Vertens fargen
+Brukernavn farge
+Bakgrunnsfarge
+Nøytral tekstfarge
+Scenefarge
+Feilfarge
+FTP Prompt Style
+E-postmeldingsstil
+SFTP Prompt Style
+Aktiverer 255 fargestøtte for BouncingBlock.
+Aktiverer ekte fargestøtte for BouncingBlock.
+Prøver å få tilgang til ugyldig bane.
+Tømmer tekstfilen
+Avslutter teksteditoren
+Spørger et tegn i en spesifisert linje eller alle linjer
+Å se etter oppdateringer er deaktivert fordi du kjører en utviklingsversjon.
+Slår av eller på automatisk lagring av tekstredigeringsfunksjonen.
+Hvis autolagring er aktivert, lagres tekstfilen for hvert "n" sekund.
+Aktiver automatisk lagring av tekstredigerer
+Intervall for automatisk lagring av tekstredigerer
+Lagrer filen
+Ta opp chat til feilsøkingslogg
+Registrerer ekstern feilsøkingschat til feilsøkingslogg.
+Forsinkelse i millisekunder
+Hvor mange millisekunder å vente før du skriver neste gang?
+Lar deg bruke en SSH FTP-server
+Ingen hjelp for kommandoen "{0}".
+Ugyldig VT-sekvens for RGB-farge.
+Color of Seconds Bar
+Color of Minutes Bar
+Color of Hours Bar
+Informasjonens farge
+Flått for å skifte farge
+Aktiverer 255 fargestøtte for ProgressClock.
+Aktiverer ekte fargestøtte for ProgressClock.
+Fargen på sekunders fremdriftslinje. Det kan være 1-16, 1-255 eller "1-255;1-255;1-255".
+Fargen på minutts fremdriftslinje. Det kan være 1-16, 1-255 eller "1-255;1-255;1-255".
+Fargen på timens fremdriftslinje. Det kan være 1-16, 1-255 eller "1-255;1-255;1-255".
+Fargen på datoinformasjon. Det kan være 1-16, 1-255 eller "1-255;1-255;1-255".
+Hvis fargesykling er aktivert, hvor mange flått før du skifter farger i ProgressClock? 1 kryss = 0,5 sekunder
+ProgressClock velger tilfeldige farger hvis den er aktivert. Bruk ellers farger fra config.
+Lag et nytt tema
+Lager et nytt tema "{0}".
+Lagre tema i gjeldende katalog
+Lagre tema i en annen katalog ...
+Velg farge ved hjelp av tastene "<-" og "->". Trykk ENTER for å avslutte. Trykk på "i" for å sette inn fargenummer manuelt.
+Velg farge ved hjelp av tastene "<-" og "->". Bruk pil opp og pil ned for å velge mellom farger. Trykk ENTER for å avslutte. Trykk på "i" for å sette inn fargenummer manuelt.
+Velkommen til kjernen! - Versjon {0}
+Advarsel farge
+Alternativ farge
+Skriv inn fargenummer fra 0 til 255:
+Bruk "hwinfo" for utvidet informasjon om maskinvare.
+Skriver ut maskinvareinformasjon
+CPU-informasjon:
+Prosessornavn:
+Prosessorhastighet:
+Prosessorbiter:
+Prosessor rev:
+Prosessor topologi:
+Prosessortype:
+Prosessor milepæl:
+Prosessor BogoMips:
+Prosessor L2 cache størrelse:
+Prosessor L3 cache størrelse:
+Prosessorfunksjoner:
+HDD-informasjon:
+Stasjonsnavn:
+Kjøremodell:
+Drive-leverandør:
+Kjørehastighet:
+Kjørestørrelse:
+Drivserie:
+Kjøre-ID:
+Antall stasjonspartisjoner:
+Partisjons-ID:
+Partisjon filsystem:
+Skillevegg størrelse:
+Partisjon brukt:
+RAM-informasjon:
+RAM-fri:
+RAM totalt:
+RAM brukt:
+GPU-informasjon:
+GPU-navn:
+GPU-driver:
+GPU-versjon:
+GPU: Ett eller flere av grafikkortene kunne ikke sonderes. Viser allikevel informasjon ...
+>> Velkommen! Dette er første gang du skriver inn ekstern feilsøking og chat. Bruk "/ register <name>" for å registrere.
+Enheten eksisterer allerede.
+Ingen slike enheter.
+Angir brukernavn for enheten
+Du er allerede registrert.
+Hei, {0}!
+Skriver ut innholdet til filen til konsollen
+Eller send "listcities" til denne kommandoen.
+Oppføringen eksisterer allerede.
+Pakk inn konsollutgangen
+Kommandoen kan ikke pakkes inn. Disse kommandoene kan pakkes inn:
+Pakk ut et ZIP-arkiv
+Oppretter et ZIP-arkiv
+Innebygd {0}
+Feil ved nedlasting av feilsøkingsdata
+Det oppstod en feil under nedlasting av feilsøkingsdata. Sjekk internettforbindelsen din.
+Kunne ikke fullføre mod {0}: {1}
+Lister opp alle avfyrte hendelser
+Nåværende katalog
+Angir skallets nåværende katalog. Skriv en absolutt sti til en eksisterende katalog.
+Pakkelisteutganger
+Innpakker listeutgangene hvis det virker for lenge for den nåværende konsollgeometrien.
+Ping!
+{0} pinget deg.
+Lagre tema i gjeldende katalog som ...
+Lagre tema i en annen katalog som ...
+Angi temanavn:
+Brukeren {0} er lagt til "{1}" -listen.
+Brukeren {0} er fjernet fra "{1}" - listen.
+Ugyldig modus {0}
+Bruker eksisterer allerede
+Last inn tema fra ...
+Last inn tema fra forhåndsbygde temaer ...
+Angi temafilnavnet uten .json-utvidelsen:
+Åpner et ZIP-arkiv
+Gå ut av ZIP-skallet
+Lister opp alle filene i arkivet
+Pakk ut en fil til en spesifisert katalog eller en aktuell katalog
+Endrer arkivkatalogen
+Den angitte ZIP shell-kommandoen ble ikke funnet.
+Katalogen {0} eksisterer ikke
+Arkivkatalogen {0} eksisterer ikke
+Maks antall posisjoner
+Hvor mange stillinger lyser opp før demping?
+Aktiverer 255 fargestøtte for lighter.
+Aktiverer ekte fargestøtte for Lighter.
+Listeoppføringsfarge
+Listeverdi farge
+Kobler til en SSH-server for å utføre en kommando.
+Denne delen viser skjermsparerinnstillinger for
+Ugyldig fargespesifikator. Forsikre deg om at det er i riktig format, som betyr et tall fra 0-255 hvis du bruker 255 farger eller en VT-sekvens hvis du bruker ekte farger som følger:
+Feil i testskallet: {0}
+Setter en variabel til en verdi i et skript
+En melding om feilrapportering.
+Takk for at du hev billett til oss! Velg hva slags forespørsel du har.
+Et problem
+En funksjonsforespørsel
+Et spørsmål
+Du må spesifisere en funksjon.
+Still et spørsmål, skriv ideen din, eller rapporter et problem.
+Du må skrive forespørselen din.
+Det oppsto en feil i FTP-skallet:
+Ukjent FTP-skallfeil:
+Det oppsto en feil i SFTP-skallet:
+Ukjent SFTP-skallfeil:
+Vis SSH-banner
+Viser SSH-serverbanneret ved tilkobling.
+Hvordan vil du autentisere?
+Privat nøkkelfil
+Passord
+Skriv inn passordfrasen for nøkkel {0}:
+Angi plasseringen til den private nøkkelen for {0}. Skriv "q" for å fullføre legg til nøkler:
+Neutralisert en ikke-eksisterende sti.
+Nøkkelfilen {0} eksisterer ikke.
+Feil ved forsøk på å legge til privat nøkkel:
+Trykk på "t" for å bytte til 255 fargemodus.
+Trykk på "t" for å bytte til ekte fargemodus.
+Denne delen lar deg velge hvilken type farge du vil endre.
+Det ser ut til at du ikke har noen brukere bortsett fra root. Dette er dårlig. Vi veileder deg hvordan du lager en.
+Skriv brukernavnet ditt.
+Du må skrive brukernavnet ditt.
+Skriv passordet ditt.
+Du må skrive passordet ditt.
+Velg kontotype.
+Administrator: Denne kontotypen har mest kraft i kjernen, slik at du kan bruke systemadministrasjonsprogrammer.
+Normal bruker: Denne kontotypen er litt mer begrenset enn administratorer.
+Gratulerer! Du har opprettet en ny konto! For å fullføre dette, logg inn som din nye konto.
+Se skjermsparerhåndboken eller kildekoden for informasjon.
+mod: Ingen mods oppdaget.
+Generelle kommandoer:
+Mod-kommandoer:
+Alias-kommandoer:
+vedlikeholdsmodus
+Oppslagskataloger
+Gruppe av stier atskilt av kolon. Det fungerer det samme som PATH. Skriv en full bane til en mappe eller et mappenavn. Når du er ferdig, skriv "q". Skriv et minustegn ved siden av banen for å fjerne en eksisterende katalog.
+Ingen mod-kommandoer.
+Ingen alias-kommandoer.
+Fargeverdien er utenfor området 0-255.
+Den innpakningsbare kommandoen ble ikke funnet.
+Spørsmål om et ord i en spesifisert linje eller alle linjer
+{0} av {1} lastet ned.
+{0} av {1} lastet opp.
+Skriver ut en streng til konsollen ved hjelp av fargetype og linjeutskrift
+Skriver ut en streng til konsollen ved hjelp av fargetype og linjeutskrift med formatstøtte
+Skriver ut en streng for feilsøking
+Skriver ut en streng for feilsøking med formatstøtte
+Tester kjernefeilanlegget
+Tester kjernefeilanlegget med formatstøtte
+Tester å oversette en streng som finnes i ressurser til et bestemt språk
+Skriver ut en streng for å konsolere og analyserer plassholderne som ble funnet
+Tester det vanlige uttrykksanlegget
+Krypterer en streng ved hjelp av
+Starter alle mods
+Stopper alle mods
+Aktiverer eller deaktiverer feilsøking
+Aktiverer eller deaktiverer ekstern feilsøking
+Tester VT-sekvensen for 255 farger
+Tester VT-sekvensen for ekte farger
+Sender et varsel for å teste mottakeren
+Tester utskriftsdato ved hjelp av forskjellige kalendere
+Viser alle støttede kodesider
+Hvilke kompilatorvariabler er aktivert i applikasjonen?
+Tester som løfter den spesifikke hendelsen
+Tester sondering av maskinvaren
+Tester søppeloppsamleren
+Avslutter testskallet og starter kjernen
+Gå ut av testskallet og lukker kjernen
+Lagrer den gjeldende katalogen i kjernekonfigurasjonsfilen
+Tester listeforfatteren med streng og strengmatrise
+Tester listeforfatteren med heltall og heltall
+Tester listeforfatteren med røye og røye
+Normal strengliste:
+Liste over arraystrenger:
+Normal heltalliste:
+Liste over heltall:
+Normal røyeliste:
+Array char liste:
+Aktiver RPC
+RPC-port
+Hvorvidt RPC skal aktiveres eller ikke.
+Skriv en RPC-port. Den må være numerisk og må ikke allerede brukes. Ellers klarer ikke RPC å åpne porten.
+Starter ikke RPC fordi den er deaktivert.
+Lister støttede kulturer
+Søker etter spesifisert streng i den angitte filen ved å bruke regulære uttrykk
+Se om du kan trykke på en tast i tide
+Brukeren ga ikke noen innspill i tide.
+Ugyldig vanskelighetsgrad
+Tegn ikke trykket i tide.
+Du har trykket på riktig karakter!
+Du har trykket feil karakter.
+Trykk på ESC for å avslutte.
+Får informasjon om dato og klokkeslett
+Millisekunder:
+Sekunder:
+Minutter:
+Åpningstider:
+Dager:
+Måneder:
+År:
+Årets dag:
+Ukedag:
+Binær:
+Lokal tid:
+Universell tid:
+Unix-tid:
+Kunne ikke analysere datoinformasjon for
+Forsikre deg om at formatet er riktig.
+Dato:
+Tid:
+Angir filtillatelser. Dette støttes bare på FTP-servere som kjører Unix.
+Angir typen for denne økten
+Du må koble til serveren før du utfører filsystemoperasjoner.
+Kunne ikke sette tillatelsene på {0} til {1}.
+Tillatelsene ble angitt for filen
+Datatype satt til ASCII!
+Datatype satt til Binær!
+Ugyldig datatype.
+Vær oppmerksom på at de fleste filer ikke vil lastes ned eller lastes opp riktig i denne modusen, så vi anbefaler sterkt å bruke binærmodus i de fleste situasjoner.
+Prøver å sende en RPC-kommando mens RPC ikke startet.
+Fade Out Delay i Milliseconds
+Max Fade Steps
+Hvor mange millisekunder å vente med å fade ut tekst?
+Hvor mange fade trinn å gjøre?
+Full sonde
+Hvis det er sant, sonderer alt maskinvaren; ellers, vil bare undersøke den nødvendige maskinvaren.
+Kunne ikke fjerne skjermsparer {0} fra konfigurasjonen.
+Får tilpassede sparingsinnstillinger
+Angir egendefinerte sparerinnstillinger
+Innstillingene ble angitt for skjermsparer
+Kunne ikke angi en innstilling for skjermsparer
+Denne delen lar deg administrere oppretting av rotpassord.
+Åpner et RSS-skall for å lese feeds
+Avslutter RSS-skallet og går tilbake til kjernen
+Endrer feedlink
+Viser alle feeder
+Leser en feed i en nettleser
+Den angitte RSS-skallkommandoen ble ikke funnet.
+Ugyldig RSS2-feed.
+Ugyldig RSS1-feed.
+Ugyldig Atom-feed.
+Skriv inn en RSS-feed-URL:
+Ugyldig RSS-feedtype.
+Ukjent skallfeil:
+Får artikkelen info
+Artikkelnummeret kan ikke være større enn tilgjengelige artikler.
+Tittel:
+Lenke:
+Får informasjon om feed
+Beskrivelse:
+Fôringstype:
+Antall artikler:
+Artikkelen har ingen lenke!
+Kunne ikke lage en liste over filsystemoppføringer for katalogen
+Filsystem sorteringsmodus
+Sorteringsretning for filsystem
+Kontrollerer hvordan filene skal sorteres.
+Kontrollerer retningen for filsystemsortering om den er stigende eller synkende.
+Stigende rekkefølge
+Synkende rekkefølge
+Fullt navn
+Filstørrelse
+Opprettelsestid
+Siste skrivetid
+Siste tilgangstid
+Skriv igjen forsinkelse i millisekunder
+Hvor mange millisekunder å vente før du skriver tekst igjen?
+Skriv hvilken tekst du vil ha vist. Lengre er bedre.
+Minimum skrivehastighet i WPM
+Maksimal skrivehastighet i WPM
+Sannsynlighet for skrivefeil i prosent
+Kunne ikke lagre den nåværende katalogen: {0}
+Kluter for å endre retning
+Aktiverer 255 fargestøtte for Tørk.
+Aktiverer ekte fargestøtte for Tørk.
+Hvor mange kluter skal du gjøre før du endrer retning tilfeldig?
+Scenen avsluttet i
+Intern initialisering ferdig i
+Referert fil {0} ikke funnet. Denne moden fungerer kanskje ikke ordentlig uten denne filen.
+Starter mod
+Får modinformasjon
+Kommandonavn:
+Kommando definisjon:
+Kommando type:
+Streng kommando?
+Mod versjon:
+Mod {0} ikke funnet.
+Kultur av
+Hvilken variant av {0} brukes til å endre månedens navn, kalender osv.?
+Teksteditoren har ikke åpnet en filstrøm ennå.
+Streng erstattet.
+Ett eller begge tallene er ikke numeriske.
+Ord slettet.
+Tegn slettet.
+Innstillinger for filsystem ...
+Denne delen viser filsysteminnstillingene.
+Velkommen til Innstillinger!
+Feil ved utførelse av SSH-kommando
+Feil på SSH-skall
+- Appinformasjon
+Aktiverer 255 fargestøtte for BouncingText.
+Aktiverer ekte fargestøtte for BouncingText.
+Tester ordboksforfatteren med streng og strengmatrise
+Tester ordbokforfatteren med røye og røye
+Tester ordboksforfatteren med heltall og heltall
+Normal strengordbok:
+Ordliste strengordbok:
+Normal heltall ordbok:
+Array heltall ordbok:
+Normal røykeordbok:
+Array char ordbok:
+Velkommen til Test Shell!
+Vis fremgang i filsystemoperasjoner
+Viser hvilken fil som behandles under filsystemoperasjonene
+hvor HardwareType vil være
+Enten er ikke maskinvaretypen {0} sonderet eller er ikke gyldig.
+Maskinvaretypen {0} er ikke undersøkt ennå. Hvis du er sikker på at den er testet, start kjernen på nytt med feilsøking aktivert.
+Skillevegger som ikke er analysert for å vises.
+Hacker-modus
+Hvis aktivert, vil den grønne konsollen være aktivert.
+Skriver ut en skilletegn
+Skriver ut en separator med formatstøtte
+Skriver ut en separator med fargestøtte
+Skriver ut en separator med støtte for farger og format
+Alltid sentrert
+Aktiverer 255 fargestøtte for telt.
+Aktiverer ekte fargestøtte for telt.
+Skriv hvilken tekst du vil ha vist.
+Om teksten som vises på teltet alltid er sentrert.
+'q' for å slutte.
+Argumentet {0} ble ikke funnet å injisere.
+Kommandolinjeargumentet {0} ble ikke funnet.
+Fjerner alle innstillingene
+Skjermsparer opplevde en feil under visning: {0}. Trykk hvilken som helst knapp for å avslutte.
+Forhåndsvisning ...
+Slik ser temaet ditt ut:
+Wrappable kommandoer:
+Mod {0} har ugyldig kommando. Mod-parsing mislyktes. Gjennomgå kildekoden.
+Mod deler:

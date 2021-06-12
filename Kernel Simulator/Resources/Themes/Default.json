@@ -1,0 +1,17 @@
+{
+    "InputColor": "15",
+    "LicenseColor": "15",
+    "ContKernelErrorColor": "11",
+    "UncontKernelErrorColor": "9",
+    "HostNameShellColor": "2",
+    "UserNameShellColor": "10",
+    "BackgroundColor": "0",
+    "NeutralTextColor": "7",
+    "ListEntryColor": "3",
+    "ListValueColor": "8",
+    "StageColor": "10",
+    "ErrorColor": "9",
+    "WarningColor": "11",
+    "OptionColor": "3",
+    "BannerColor": "10"
+}

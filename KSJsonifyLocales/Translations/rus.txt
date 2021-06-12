@@ -1,0 +1,1099 @@
+Dostupnyye komandy: {0}
+Napisat' komandu:
+Komandnaya in"yektsiya byla otmenena.
+Otdel'nyye argumenty zagruzki s zapyatymi bez probelov, naprimer, 'motd, gpuprobe'
+Otdel'nyye komandy dlya «cmdinject» s dvoyetochiyami s probelami, naprimer, «cmdinject setthemes Hacker: beep 1024 0.5»
+Obratite vnimaniye, chto argument debug ne polnost'yu pokryvayet yadro.
+bargs: zaproshennyy argument {0} ne nayden.
+bargs: neispravimaya oshibka v argumente:
+Dostupnyye argumenty: {0}
+Argumenty («pomoshch'» dlya pomoshchi):
+Vvedennyye argumenty budut zaplanirovany dlya zapuska pri sleduyushchey perezagruzke.
+Argument In"yektsiya byla otmenena.
+Oshibka pri analize real'nykh argumentov komandnoy stroki: {0}
+Nevernyy tsvetovoy shablon {0}
+hwprobe: Vashe oborudovaniye budet provereno. Pozhaluysta, podozhdite...
+CPU: odno ili neskol'ko yader TSP ne byli provereny. Pokaz informatsii v lyubom sluchaye ...
+OZU: odin ili neskol'ko chipov OZU ne byli provereny. Pokaz informatsii v lyubom sluchaye ...
+Zhestkiy disk: odin ili neskol'ko zhestkikh diskov ne byli provereny. Pokaz informatsii v lyubom sluchaye ...
+CPU: obshcheye kolichestvo protsessorov: {0}
+Vvedite parol' administratora dlya obsluzhivaniya.
+Oshibka yadra pri zagruzke: {0}
+DVOYNAYA PANIKA: Vremya perezagruzki prevyshayet maksimal'no dopustimoye vremya perezagruzki {0}. Vy nashli oshibku v yadre.
+[{0}] panika: perezagruzka vklyuchena iz-za urovnya oshibki {0}.
+[{0}] panika: vremya perezagruzki: {1} sekund, prevyshayet 1 chas. On ustanovlen na 1 minutu.
+DOUBLE PANIC: Oshibka tipa {0} nedopustima.
+[{0}] dpanic: {1} - perezagruzka cherez {2} sekundy ...
+[{0}] panika: perezagruzka otklyuchena iz-za urovnya oshibki {0}.
+[{0}] panika: {1} - nazhmite lyubuyu klavishu, chtoby prodolzhit' ispol'zovaniye yadra.
+[{0}] panika: {1} - nazhmite lyubuyu klavishu dlya vyklyucheniya.
+[{0}] panika: {1} - perezagruzka cherez {2} sekundy ...
+DVOYNAYA PANIKA: Oshibka yadra: {0}
+Vyklyucheniye...
+Rebooting ...
+Yeshche odin ekzemplyar Kernel Simulator rabotayet. Vyklyucheniye v sluchaye pomekh.
+Ne udalos' dobavit' pol'zovatelya v spiski razresheniy: nedopustimyy tip {0}
+Ne udalos' dobavit' pol'zovatelya v spiski razresheniy: nedopustimyy pol'zovatel' {0}
+Ne udalos' udalit' pol'zovatelya iz spiskov razresheniy: nedopustimyy tip {0}
+Vy uzhe voshli v sistemu.
+Ne udalos' udalit' pol'zovatelya iz spiskov razresheniy: nedopustimyy pol'zovatel' {0}
+Vy libo obnaruzhili oshibku, libo razresheniye, kotoroye vy pytalis' dobavit' ili udalit', uzhe sdelano, libo druguyu oshibku.
+Oshibka {0}: {1}
+Vy libo obnaruzhili oshibku, libo ne udalos' poluchit' razresheniye, kotoroye vy pytalis' redaktirovat' dlya novogo pol'zovatelya.
+Dostupnyye imena pol'zovateley: {0}
+Imya pol'zovatelya:
+Probely ne dopuskayutsya.
+Spetssimvoly ne dopustimy.
+Parol' {0}:
+Nepravil'nyy parol'.
+Pol'zovatel' otklyuchen.
+Nepravil'noye imya pol'zovatelya.
+Oshibka pri popytke proanalizirovat' zapolniteli. {0} - trassirovka steka:
+Oshibka pri popytke proanalizirovat' zapolniteli. {0}
+Oshibka pri popytke dobavit' imya pol'zovatelya.
+usrmgr: Sozdaniye imeni pol'zovatelya {0} ...
+Pustoye imya pol'zovatelya.
+Pol'zovatel' {0} ne nayden.
+Pol'zovatel' {0} ne mozhet byt' udalen.
+Pol'zovatel' {0} uzhe voshel v sistemu. Vyydite iz sistemy i voydite kak drugoy administrator.
+Pol'zovatel' {0} udalen.
+Oshibka pri popytke udalit' imya pol'zovatelya.
+Zaproshennaya zastavka {0} ne naydena.
+{0} byl pravil'no initsializirovan.
+{0} ne initsializirovan. V kode zastavki mogla vozniknut' oshibka pri initsializatsii.
+Zastavka {0} ne sushchestvuyet.
+{0} ustanovlen na zastavku po umolchaniyu.
+Zastavka {0} ne naydena v baze dannykh. Prover'te imya i poprobuyte snova.
+Zastavka ne mozhet byt' zagruzhena iz-za sleduyushchego:
+Pri pechati teksta voznikayet ser'yeznaya oshibka.
+Pri popytke sozdat' konfiguratsiyu proizoshla oshibka.
+Oshibka pri popytke osvobodit' OZU: {0} - prodolzheniye ...
+Mod ne mozhet byt' zagruzhen iz-za sleduyushchego:
+mod: zagruzka modov ...
+mod: Ostanovka modov ...
+Mod {0} ne imeyet imeni. Prosmotrite iskhodnyy kod.
+Mod {0} ne imeyet versii.
+{0} v {1} zapushchen
+Net opredeleniya dlya komandy {0}.
+Komanda opredelyayetsya
+Vy dolzhny otklyuchit'sya ot servera pered podklyucheniyem k drugomu serveru
+Imya pol'zovatelya dlya {0}:
+Parol' dlya {0}:
+Podklyucheno k {0}
+Oshibka pri popytke podklyucheniya k {0}: {1}
+Trassirovka steka: {2}
+Vvedite FTP-server.
+Lokal'nyy katalog {0} ne sushchestvuyet.
+Vvedite lokal'nyy katalog. ".." vernut'sya nazad.
+Katalog {0} ne nayden.
+Vvedite udalennyy katalog. ".." vernut'sya nazad
+Vy dolzhny podklyuchit'sya k serveru pered smenoy kataloga
+Lokal'nyy katalog: {0}
+Udalennyy katalog: {0}
+Vy dolzhny podklyuchit'sya k serveru do polucheniya tekushchego udalennogo kataloga.
+Vy dolzhny podklyuchit'sya k serveru s pravami administratora pered vypolneniyem udaleniya.
+Otklyucheno ot {0}
+Vy yeshche ne podklyuchilis' k kakomu-libo serveru
+Zagruzka fayla {0} ...
+Zagruzhennyy fayl {0}.
+Vy dolzhny podklyuchit'sya k serveru pered vypolneniyem peredachi.
+Vvedite fayl dlya zagruzki v lokal'nyy katalog.
+{0} Kb | Izmeneno v: {1}
+Vy dolzhny podklyuchit'sya k serveru, prezhde chem perechislyat' vse udalennyye fayly.
+Zagruzka fayla {0} ...
+Zagruzhennyy fayl {0}
+Vvedite fayl dlya zagruzki v udalennyy katalog. zagruzit' <fayl> <katalog>
+(Inner:
+Poluchayet tekushchiy lokal'nyy katalog
+Poluchayet tekushchiy udalennyy katalog
+Podklyuchayetsya k FTP-serveru (on dolzhen nachinat'sya s «ftp: //» ili «ftps: //»)
+Izmenyayet lokal'nyy katalog dlya zagruzki ili zagruzki s
+Izmenyayet udalennyy katalog dlya zagruzki ili zagruzki v
+Udalyayet udalennyy fayl s servera
+Otklyuchayetsya ot servera
+Zagruzhayet udalennyy fayl v lokal'nyy katalog, ispol'zuya dvoichnyy ili tekstovyy
+Vykhodit iz obolochki FTP i vozvrashchayetsya v yadro
+Pokazyvayet ekran pomoshchi
+Spisok lokal'nykh katalogov
+Perechislyayet udalennyy katalog
+Zagruzhayet lokal'nyy fayl v udalennyy katalog, ispol'zuya dvoichnyy ili tekstovyy
+Soobshcheniye FTP: Zaproshennaya komanda {0} ne naydena. Sm. «Spravku» dlya polucheniya spiska dostupnykh komand, ukazannykh v obolochke FTP.
+Ne udalos' poluchit' svoystva dlya adaptera {0}
+Nomer adaptera:
+Imya adaptera:
+Maksimal'naya yedinitsa peredachi: {2} yedinits
+DHCP vklyuchen:
+Neadresnyye pakety:
+Odnoadresnyye pakety:
+Oshibka vkhodyashchikh / iskhodyashchikh paketov:
+Psevdonim ne mozhet sovpadat' s imenem komandy.
+Komanda ne naydena dlya psevdonima {0}.
+Teper' vy mozhete zapustit' "{0}" kak komandu: "{1}".
+Psevdonim {0} ne nayden dlya udaleniya.
+Nevernyy rezhim {0}.
+Vnedrennyye argumenty {0} budut zaplanirovany dlya zapuska pri sleduyushchey perezagruzke.
+Bylo nedostatochno argumentov. Smotrite nizhe dlya ispol'zovaniya:
+Katalog {0} ne nayden
+Pustoye imya khosta.
+Menyayetsya s: {0} na {1} ...
+Pustoye soobshcheniye dnya.
+Pustoy MAL posle vkhoda v sistemu.
+Nevernyy parol' pol'zovatelya.
+Paroli ne sovpadayut.
+Imya pol'zovatelya bylo izmeneno na {0}!
+Vvedennoye vami novoye imya uzhe naydeno.
+{0} ne nayden.
+Konfiguratsiya perezagruzhena. Vam mozhet potrebovat'sya perezagruzit' yadro, chtoby izmeneniya vstupili v silu.
+Odin ili neskol'ko tsvetov nedopustimy.
+Tsveta ne dostupny. Vklyuchite tsvetnuyu obolochku v konfiguratsii yadra.
+Zastavka {0} ne naydena.
+[ Nastroyki yadra (rabotayet na {0}) ]
+Versiya yadra:
+Rezhim otladki:
+Tsvetnaya obolochka:
+Argumenty na zagruzku:
+Spravka po komande uproshchena:
+MOTD pri vkhode v sistemu:
+Vremya / Data na uglu:
+[ Nastroyki oborudovaniya ] {0}
+{0}[ Nastroyki pol'zovatelya ]
+Tekushcheye imya pol'zovatelya:
+Tekushcheye imya khosta:
+Dostupnyye imena pol'zovateley:
+Oshibka pri popytke vypolnit' komandu
+Katalog izmeneniy
+Menyayet parol' dlya tekushchego pol'zovatelya
+Ochishchayet ekran
+Ispol'zuyte obolochku FTP dlya vzaimodeystviya s serverami
+Stranitsa spravki
+Pokazat' soderzhimoye fayla / papki v tekushchey papke
+Blokiruyet vash ekran s pomoshch'yu parolya
+Vykhodit iz sistemy
+Sozdayet katalog
+Vyvodit informatsiyu obo vsekh dostupnykh interfeysakh
+Perezagruzka komp'yutera (VNIMANIYe: sinkhronizatsiya ne vypolnyayetsya, poskol'ku eto ne okonchatel'noye yadro)
+Perezagruzhayet fayl konfiguratsii, kotoryy otredaktirovan.
+Spasayet vash ekran ot vygoraniya
+Ustanavlivayet zastavki yadra
+Ustanavlivayet temy yadra
+Pokazyvayet datu i vremya
+Pokazyvayet datu i vremya v zonakh
+Yadro budet zakryto
+Sistemnaya informatsiya
+* Vy mozhete ispol'zovat' neskol'ko komand, ispol'zuya dvoyetochiye mezhdu komandami.
+Ispol'zovaniye:
+gde argumenty budut {0}
+Initsializiruyet obolochku FTP.
+Druz'ya
+gde budet customsaver
+Blokiruyet vash ekran s pomoshch'yu parolya.
+Vykhodit iz pol'zovatelya.
+Poluchit' informatsiyu o kazhdoy seti
+Perezagruzka vashego simulirovannogo komp'yutera.
+Perezagruzhayet konfiguratsiyu, kotoraya izmenena konechnym pol'zovatelem ili instrumentom.
+Tsveta ne trebuyut perezagruzki, no bol'shinstvo nastroyek trebuyut perezagruzki.
+pokazyvayet vybrannuyu zastavku, zashchishchaya vash ekran ot vygoraniya.
+Pokazyvayet datu i vremya.
+Pokazyvayet datu i vremya v zonakh.
+Vyklyuchayet vash simulirovannyy komp'yuter.
+Pokazyvayet sistemnuyu informatsiyu i versii.
+Proizoshla oshibka v obolochke.
+U vas net razresheniya na ispol'zovaniye {0}
+Soobshcheniye obolochki: Zaproshennaya komanda {0} ne mozhet byt' zapushchena v rezhime obsluzhivaniya.
+Soobshcheniye obolochki: zaproshennaya komanda {0} ne naydena. Smotrite «pomoshch'» dlya dostupnykh komand.
+Soobshcheniye obolochki: komanda {0} zapreshchena pri vkhode v sistemu.
+Oshibka pri popytke vypolnit' komandu.
+datetime: vremya {0}
+datetime: segodnya {0}
+datetime: chasovoy poyas: {0}
+- Vremya {0}: {1}
+ochistit' ekran.
+Rabotayet na {0}
+U vas net prav na polucheniye informatsii dlya {0}.
+Eta komanda ustarela i budet udalena v sleduyushchem vypuske.
+Vy ne avtorizovany dlya izmeneniya parolya {0}, potomu chto tsel'yu byl administrator.
+usrmgr: imya pol'zovatelya {0} uzhe naydeno
+Udalyayet vse v zhurnale otladki
+Nevernyy yazyk
+Menyayet yazyk
+----------------------------- Panika dampa yadra ------------------------------
+>> Panika informatsiya <<
+> Opisaniye: {0}
+> Tip oshibki: {1}
+> Data i vremya: {2}
+>> Informatsiya ob isklyuchenii <<
+> Isklyucheniye: {0}
+> Opisaniye: {1}
+> HRESULT: {2}
+> Istochnik: {3}
+> Trassirovka steka <
+>> Vnutrennyaya isklyuchitel'naya {0} informatsiya <<
+>> Isklyucheniye {0} yavlyayetsya osnovnoy prichinoy <<
+>> Ne isklyucheniye; mozhet byt' oshibka yadra. <<
+>> Ramki, fayly, stroki i stolbtsy <<
+> Kadr {0}: Fayl: {1} | Stroka: {2} | Kolonka: {3}
+> Oshibka pri popytke poluchit' informatsiyu o kadre. {0}: {1}
+Perezagruzka modov.
+Mody perezagruzheny.
+Dobro pozhalovat' v Kernel!
+Vy uspeshno voshli kak <pol'zovatel'>
+MOTD / MAL deystvitelen, no tip soobshcheniya nedeystvitelen. Predpolagaya MOTD ...
+Popytalsya prochitat' MOTD / MAL, kotoryy imeyet nedopustimyy tip soobshcheniya.
+Zagruzka zavershena.
+Oshibka zagruzki pri popytke {0}: {1}
+Pozhaluysta, ispol'zuyte «ftp», yesli vy sobirayetes' zagruzhat' fayly s FTP-servera.
+Zagruzhayet fayl v tekushchiy rabochiy katalog
+Otklyuchit' otladochnoye ustroystvo
+Spiski ustroystv otladki podklyucheny
+Ustroystvo otladki {0} ne naydeno.
+Ustroystvo {0} otklyucheno.
+Oshibka v soyedinenii: {0}
+Otladka proslushivaniya vsekh adresov s ispol'zovaniyem porta {0}.
+Argumenty ne ukazany. Podskazka: ukazhite neskol'ko argumentov, razdelennykh probelami
+Psevdonim uzhe nayden: {0}
+Zhurnal otladki udalen. Vse podklyuchennyye otladochnyye ustroystva mogut po-prezhnemu prosmatrivat' soobshcheniya.
+Oshibka udaleniya zhurnala otladki: {0}
+Oshibka izmeneniya kataloga: {0}
+Ukazhite adres
+Nevozmozhno udalit' katalog: {0}
+Chasovoy poyas ukazan neverno.
+Nevernyy vybor profilya.
+Popytka podklyuchit'sya k {0} s profilem {1} ...
+Komanda {0} ne naydena. Sm. Komandu «help» dlya polucheniya spiska komand.
+Ne udalos' poluchit' svoystva IPv6 dlya adaptera {0}. Prodolzheniye ...
+Informatsiya IPv4:
+Informatsiya IPv6:
+Adapter {0} ne podderzhivayet IPv6. Prodolzheniye ...
+Adapter {0} ne podderzhivayet IPv4. Zond ne udalsya.
+Pokhozhe, vy rabotali s versiyey razrabotki dlya yadra. Nesmotrya na to, chto vy mozhete videt' aspekty, oni chasto obnovlyayutsya i mogut soderzhat' oshibki. Rekomenduyetsya ostavat'sya na stabil'noy versii.
+Vybrannyy vami yazyk soderzhit dva varianta. Vyberite odin:
+1. Transliterirovannyy
+2. Perevedeno
+Vyberite vash vybor:
+Nevernyy vybor. Poprobuyte yeshche raz.
+Vy ne avtorizovany dlya ustanovki tekushchego kataloga na {0}: {1}
+Ukazannyy vami put' slishkom dlinnyy.
+CPU: PREDUPREZHDENIYe: SSE2 potrebuyetsya v budushchikh kommitakh razrabotki.
+Sboy sborshchika informatsii o sboye pri popytke poluchit' informatsiyu o {0}: {1}
+Oshibka pri popytke poluchit' datu kompilyatsii sborki {0}: {1}
+Oshibka pri popytke ustanovit' MOTD / MAL: {0}
+Oshibka pri popytke poluchit' MOTD / MAL: {0}
+Oshibka pri popytke zapustit' zastavku iz-za nedopustimoy operatsii.
+Perezagruzka zapreshchena v bezopasnom rezhime.
+Parsing modov ne razreshen v bezopasnom rezhime.
+Perechislyayet vse podklyuchennyye ustroystva otladki.
+Oshibka pri popytke ustanovit' rezhim razbora. Prover'te znacheniye i poprobuyte snova. Yesli eto pravil'no, posmotrite trassirovku steka, kogda vklyuchena otladka yadra.
+Put' ne yavlyayetsya ni faylom, ni katalogom.
+Sozdayet druguyu kopiyu fayla v drugom kataloge ili imeni.
+Peremeshchayet fayl v drugoy katalog
+Chtoby skopirovat' fayly v drugoy katalog ili drugoye imya
+Peremestit' fayly v drugoy katalog
+Sootvetstviye {0} ({1}): {2}
+Sootvetstviye {0}: {1}
+Zatrachennoye vremya: {0} millisekund
+Imya: {0}
+Vychislyayet summy faylov.
+Prinimayet vas v nashu GitHub Wiki.
+Nevernyy algoritm shifrovaniya.
+Vklyuchayet ili otklyuchayet udalennuyu otladku.
+Posmotrite, smozhete li vy pravil'no napisat' slova po vremeni
+Posmotrim, smozhete li vy reshit' matematicheskiye uravneniya vovremya
+Otvechat' na lyubov' ili nenavidet' kommentarii.
+Yesli kto-to sdelal etot kommentariy k vashemu video:
+Kak by vy otvetili?
+Nevernyy vybor. Perekhodya k sleduyushchemu kommentariyu ...
+Vy tol'ko chto soobshchili o lyubovnom kommentarii!
+Vy tol'ko chto otvetili na kommentariy nenavisti!
+Bol'shoy! Kommentariy {0} budet udalen za eto.
+Bol'shoy! {0} otsenit vashu blagodarnost'.
+Pishetsya otlichno!
+Napisano nepravil'no.
+Resheno otlichno!
+Resheno nepravil'no.
+RPC uzhe zapushchen.
+RPC proslushivayet vse adresa, ispol'zuya port {0}.
+Zapusk RPC ...
+Podklyuchayetsya k SSH serveru.
+Vvedite parol' dlya {0}:
+SSH otklyuchen.
+Nevozmozhno ustanovit' kodovuyu stranitsu. YAzyk mozhet otobrazhat'sya nepravil'no.
+Otladka ne vklyuchena.
+{0} bol'she ne ustanovlen na zastavku po umolchaniyu.
+Blagodarnost'! Eto interesno.
+Vse budut podderzhivat' vashe video dlya etogo.
+YA dal vam spetsial'nyy fayl v vashem elektronnom pis'me dlya vashego sleduyushchego video.
+Slushay, nenavistniki, on pytayetsya pomoch' nam, a ne afera.
+YA ne znayu, kak ya i moi druz'ya blagodarny za eto video.
+YA lyublyu tebya za eto video.
+Prodolzhay, ne ostanavlivaysya.
+YA pomogu vam dostich' 1M podpischikov!
+Moi druz'ya pochinili svoy komp'yuter iz-za tebya.
+Potryasayushchaya shutka! YA zakryl komp'yuter moyego vraga.
+Dlya nenavistnikov: prekratit' nenavist' k nemu
+Nenavistnikam: NACHAT' RABOTU
+Nikto ne zametit etogo seychas blagodarya vashemu rukovodstvu po skrytiyu ob"yektov
+YA perestanu smotret' tvoi video. Podpischik poteryan.
+Chto eto? Eto neyasno.
+Eto video khudsheye!
+Vse soobshchayut ob etom video!
+Moi druz'ya zlyatsya na tebya!
+Lyubovniki teper' budut nenavidet' tebya za eto.
+Tvoy drug budet nenavidet' tebya za eto.
+Eta shutka zastavila menya otpisat'sya ot vas.
+Missiya provalena, Respekt -, Podpischik -
+Prekratite delat' etot vid video !!!
+Vozvrashchaysya k svoyey rabote, tvoi video khudshiye!
+My predvzyato otnosimsya k etomu video.
+Pokazyvayet vse poluchennyye uvedomleniya
+Otklonit' uvedomleniye
+Uvedomleniye otkloneno uspeshno.
+Pakety (vkhodyashchiye):
+Pakety (iskhodyashchiye):
+Oshibki v poluchennykh paketakh:
+Obshchiye svoystva IPv6
+Obshchiye svoystva IPv4
+Udalenno vypolnyayet komandu na udalennom PK
+- Etap 1: initsializatsiya sistemy
+- Etap 2: obnaruzheniye oborudovaniya
+- Etap 3: obnaruzheniye modov i zastavok
+- Etap 4: Voyti
+Pokhozhe, vy rabotali s versiyey-kandidatom. Rekomenduyetsya ostavat'sya na stabil'noy versii.
+Nevernyy tip {0}.
+Razmer: {0}
+Katalog {0} uzhe sushchestvuyet.
+Oshibka pri popytke podklyucheniya k {0}: taym-aut soyedineniya ili poterya soyedineniya
+Kal'kulyator dlya rascheta vyrazheniy.
+Oshibka v raschete.
+Pokhozhe, vy rabotali nad blizhayshey versiyey. Khotya seychas eto bezopasneye v ispol'zovanii, rekomenduyetsya sokhranit' stabil'nuyu versiyu.
+Sistemnoye obnovleniye
+Proverka obnovleniy sistemy ...
+Naydena novaya versiya: 
+Vy mozhete skachat' yego po adresu: 
+Net nedavnikh uvedomleniy
+Ishchet konkretnuyu stroku v predostavlennom fayle
+Vychislyayet summy faylov v ukazannom kataloge.
+Perechislyayet vse pis'ma opredelennogo pol'zovatelya.
+Vvedite imya pol'zovatelya ili adres elektronnoy pochty:
+Vvedite parol':
+Oshibka pri podklyuchenii k {0}: {1}
+Podklyucheniye k {0} ...
+Proverka podlinnosti ...
+Vykhod iz obolochki IMAP
+Spisok komand
+Zagruzhayet soobshcheniya i perechislyayet ikh
+Otkryvayet soobshcheniye
+Stranitsa ne mozhet byt' otritsatel'noy ili nulevoy.
+Stranitsa ne yavlyayetsya chislovym znacheniyem.
+Nomer soobshcheniya ne mozhet byt' otritsatel'nym ili nulevym.
+Nomer soobshcheniya ne yavlyayetsya chislovym znacheniyem.
+- Ot {0}
+- do {0}
+- Otpravleno v {0} v {1}
+Ukazannoye soobshcheniye ne naydeno.
+Ne udalos' zapustit' udalennuyu otladku: {0}
+Podgotovka profiley ... Eto mozhet zanyat' neskol'ko minut ...
+Imya khosta, imya pol'zovatelya, tip dannykh, kodirovka, shifrovaniye, protokoly
+Oshibka pri popytke vypolnit' skript: {0}
+Pishet tekst v konsol'
+Delayet vybor pol'zovatelya
+Zvukovoy signal v 'n' Gts i vremya v 'n' millisekundakh
+gde <$variable> - lyubaya peremennaya, kotoraya budet ispol'zovat'sya dlya khraneniya otveta
+Chastota dolzhna byt' chislovoy. Yesli on chislovoy, ubedites', chto on >= 37 i <= 32767.
+Vremya dolzhno byt' chislovym.
+gde <otvety> - odnobukvennyye otvety na vopros, razdelennyye kosoy chertoy
+Oshibka pri popytke podklyuchit'sya k serveru SSH: {0}
+Pozvolyayet pol'zovatelyu vvodit' dannyye
+Izmenyayet tekushchiy pochtovyy katalog
+Nevozmozhno otkryt' pochtovuyu papku {0}: {1}
+Spiski katalogov v vashem pochtovom adrese
+Ispol'zuyet informatsiyu iz bystrogo nabora dlya bystrogo podklyucheniya k lyuboy seti
+Vyberite adres dlya podklyucheniya:
+Vybor vne diapazona. Vyberite mezhdu 1- {0}. Poprobuy yeshche raz.
+Vybor ne yavlyayetsya chislom. Poprobuy yeshche raz.
+Vo vremya proverki sertifikata voznikayut oshibki sertifikata. Eto mozhet byt' pervyy raz, kogda vy podklyuchilis' k serveru, ili srok deystviya sertifikata istek. Vot oshibka:
+Vy uvereny, chto khotite podklyuchit'sya?
+Nevernyy otvet. Pozhaluysta, poprobuyte yeshche raz.
+Bystryy nabor pust. Podklyuchites' k serveru, chtoby dobavit' k nemu adres.
+Bystryy nabor ne sushchestvuyet. Podklyuchites' k serveru, chtoby dobavit' k nemu adres.
+Vvedite adres i port servera IMAP (<adres> ili <adres>: [port]):
+Vvedite adres i port SMTP-servera (<adres> ili <adres>: [port]):
+Prosit vas zapolnit' obyazatel'nyye polya dlya otpravki soobshcheniya na adres
+Otpravlyayet soobshcheniye na adres
+Vvedite adres elektronnoy pochty poluchatelya:
+Vvedite temu:
+Vvedite vashe soobshcheniye nizhe. Napishite «EOF» dlya podtverzhdeniya.
+Otpravka soobshcheniya...
+Soobshcheniye otpravleno.
+Nevernyy adres elektronnoy pochty. Ubedites', chto vy pravil'no napisali adres i sootvetstvuyet formatu pokazannogo primera:
+Udalyayet soobshcheniye
+Udalyayet vse soobshcheniya ot poluchatelya
+Soobshcheniye {0} iz {1} udaleno iz {2}. Ostalos' {3} soobshcheniy dlya analiza.
+Soobshcheniye {0} iz {1} udaleno iz papki vkhodyashchikh soobshcheniy. Ostalos' {2} soobshcheniy dlya analiza.
+Redaktiruyet tekstovyy fayl
+Delayet novyy fayl
+Fayl uzhe sushchestvuyet.
+Oshibka pri popytke sozdat' fayl: {0}
+Ne udalos' otkryt' fayl. Vykhod iz obolochki ...
+Ukazannaya komanda tekstovogo redaktora ne naydena.
+Spisok dostupnykh komand
+Vykhod iz tekstovogo redaktora i sokhraneniye nesokhranennykh izmeneniy.
+Vyvodit soderzhimoye fayla s nomerami strok na konsol'
+Dobavlyayet novuyu stroku s tekstom v kontse fayla
+Udalyayet ukazannyy nomer stroki
+Zamenyayet slovo ili frazu drugim
+Udalyayet slovo ili frazu iz nomera stroki
+Udalyayet simvol iz nomera simvola v ukazannoy stroke
+Udalena stroka.
+Ukazannyy nomer stroki {0} ne yavlyayetsya dopustimym nomerom.
+Obyazatel'nyye argumenty ne peredayutsya v komandu {0}
+Oshibka pri popytke vypolnit' komandu: {0}
+Rabotayet v bezopasnom rezhime. Propusk etapa ...
+>> Udalennaya otladka i chat: versiya
+>> Vash adres: {0}.
+>> Vashe imya {0}.
+Komanda {0} ne naydena. Ispol'zuyte "/help", chtoby uvidet' spisok.
+Indeks {0} nedeystvitelen. Yest' {1} sledov steka. Indeks nachinayetsya s nulya, poetomu poprobuyte vychest' 1.
+Net trassirovki steka
+Pokazyvayet poslednyuyu trassirovku steka pri isklyuchenii
+Pokazyvayet tekushcheye imya pol'zovatelya v seanse
+Otklyuchayet vas ot otladchika
+Razblokirovat' otladochnoye ustroystvo po IP-adresu
+Blokirovka ustroystva otladki po IP-adresu
+{0} teper' mozhet snova prisoyedinit'sya k udalennoy otladke.
+{0} yeshche ne zablokirovan.
+Oshibka zagruzki nastroyek
+Pri zagruzke nastroyek proizoshla oshibka. Vozmozhno, vam potrebuyetsya proverit' fayl nastroyek.
+Vyberite razdel:
+Obshchiye nastroyki...
+Parametry oborudovaniya ...
+Nastroyki vkhoda ...
+Nastroyki obolochki ...
+Nastroyki seti...
+Raznyye nastroyki ...
+Sokhranit' nastroyki
+Vykhod
+Ukazannaya optsiya {0} nedeystvitel'na.
+Otvet dolzhen byt' chislovym.
+Zapros argumentov pri zagruzke
+Trigger rezhima obsluzhivaniya
+Izmenit' parol' root ...
+Proveryat' obnovleniya pri zapuske
+Tikhiy zond
+Pokazyvat' MOTD pri vkhode v sistemu
+Ochistit' ekran pri vkhode v sistemu
+Pokazat' dostupnyye imena pol'zovateley
+Tsvetnaya obolochka
+Uproshchennaya komanda spravki
+Port otladki
+Vremya povtora zagruzki
+Login FTP-pol'zovatelya
+Zhurnal IP-adresa FTP
+Vernut' tol'ko pervyy profil' FTP
+Pokazat' vremya / datu v verkhnem pravom uglu
+Taym-aut zastavki v ms
+Kvota razmera otladki v baytakh
+Rezhim analiza razmera
+Vydeleniye pri zapuske
+Dolgoye vremya i data
+Pokazat' skrytyye fayly
+Vveden nevernyy razdel. Pozhaluysta, vernis'.
+Vernites' nazad...
+vklyuchit'
+Otklyuchit'
+Vveden nevernyy klyuchevoy nomer. Pozhaluysta, vernis'.
+Napishite parol' root, kotoryy nuzhno ustanovit'. Ne volnuytes'; parol' pokazan zvezdochkami.
+Vklyuchite «Izmenit' parol' root», chtoby ispol'zovat' etu optsiyu. Pozhaluysta, vernis'.
+Izmenit' parol' root?
+Ustanovit' parol' root ...
+Napishite port udalennogo otladchika. On dolzhen byt' chislovym, i yego nel'zya uzhe ispol'zovat'. V protivnom sluchaye udalennyy otladchik ne smozhet otkryt' port.
+Napishite, skol'ko raz komanda "" get "dolzhna povtoryat' popytki zagruzki posle sboya. On dolzhen byt' chislovym.
+Napishite, kogda zapuskat' zastavku cherez ukazannyye millisekundy. On dolzhen byt' chislovym.
+Napishite, skol'ko baytov mozhet khranit' zhurnal otladki. On dolzhen byt' chislovym.
+Otvet ne mozhet byt' otritsatel'nym.
+Otvet nevernyy. Ubedites', chto otvet yavlyayetsya chislovym dlya zapisey konfiguratsii, kotorym v kachestve otvetov nuzhny chisla.
+Peremennaya {0} ne naydena ni v odnom iz moduley.
+Izmenyayet konfiguratsiyu yadra
+Nastroyki zastavki ...
+Aktivirovat' 255 tsvetov
+Vy khotite ostavat'sya na svyazi?
+Nevernyy vybor. Predpolagaya, chto net ...
+Izmenite kul'turu pri pereklyuchenii yazykov
+Tekst pokazan
+Napishite lyuboy tekst, kotoryy khotite pokazat'. Koroche luchshe.
+Ne udalos' zagruzit' {0}
+Oshibka pri vypolnenii komandy udalennoy otladki {0}: {1}
+Dobavlyayet pol'zovateley
+Dobavlyayet psevdonimy k komandam
+Vvodit argumenty v yadro ​​(trebuyetsya perezagruzka)
+Izmenyayet imya khosta
+Izmenyayet MAL, MOTD posle vkhoda v sistemu
+Izmeneniya MOTD, Soobshcheniye dnya
+Izmenyayet imya pol'zovatelya
+Upravleniye razresheniyami dlya pol'zovateley
+Perezagruzhayet fayl zastavki v KSMods
+Udalyayet pol'zovatelya iz spiska
+Psevdonim {0} uspeshno udalen.
+Ne udalos' proverit' nalichiye obnovleniy.
+V spiske bol'she ne ostalos' pol'zovateley.
+Ne udalos' ustanovit' yazyk.
+Oshibka pri popytke zakryt' uvedomleniye.
+usrmgr: ne udalos' sozdat' imya pol'zovatelya {0}: {1}
+Ne udalos' pereimenovat' pol'zovatelya. {0}
+Odin iz spiskov razresheniy ne soderzhit imeni pol'zovatelya {0}.
+Ne udalos' zagruzit' razresheniya iz fayla: {0}
+Ne udalos' izmenit' imya khosta: {0}
+Pol'zovatel' ne nayden
+Ne udalos' izmenit' parol' imeni pol'zovatelya: {0}
+Ne udalos' skopirovat' fayl ili katalog: {0}
+Ne udalos' peremestit' fayl ili katalog: {0}
+Nevozmozhno nayti fayl, sootvetstvuyushchiy stroke "{0}": {1}
+Ne udalos' skachat' fayl {0}.
+Ne udalos' perechislit' udalennyye fayly: {0}
+Vvedite fayl ili papku dlya udaleniya. U vas dolzhny byt' prava administratora dlya vashey uchetnoy zapisi, chtoby imet' vozmozhnost' udalit'.
+Vy deystvitel'no khotite udalit' {0} <y / n>?
+Udaleniye {0} ...
+{0} ne nayden na servere.
+Vsya pochta, otpravlennaya {0}, uspeshno udalyayetsya.
+Ne udalos' udalit' vsyu pochtu, otpravlennuyu {0}.
+Oshibka otpravki soobshcheniya.
+Peremeshcheniye {0} v {1} ...
+Uspeshno peremeshchen
+Peremeshchayet fayl ili katalog v drugoy fayl ili katalog. Vy takzhe mozhete ispol'zovat' eto dlya pereimenovaniya faylov.
+Ne udalos' peremestit' {0} v {1}.
+Vvedite iskhodnyy put' i put' naznacheniya.
+Kopirovaniye {0} v {1} ...
+Uspeshno skopirovano
+Kopiruyet fayl ili katalog v drugoy fayl ili katalog.
+Ne udalos' skopirovat' {0} v {1}.
+Peremeshchayet soobshcheniye
+Peremeshchayet vse soobshcheniya ot poluchatelya
+Vsya pochta, otpravlennaya {0}, uspeshno peremeshchena.
+Ne udalos' peremestit' vsyu pochtu, otpravlennuyu {0}.
+Soobshcheniye {0} ot {1} peremeshcheno iz {2}. Ostalos' proanalizirovat' {3} soobshcheniy.
+Pokazyvayet informatsiyu o pogode dlya ukazannogo goroda. Ispol'zuyet OpenWeatherMap.
+- Informatsiya o pogode dlya {0} -
+Pogoda: {0}
+Davleniye: {0}
+Vlazhnost': {0}
+Vy mozhete poluchit' svoy sobstvennyy klyuch API na https://home.openweathermap.org/api_keys.
+Vy vsegda mozhete obratit'sya k http://bulk.openweathermap.org/sample/city.list.json.gz dlya polucheniya spiska gorodov s ikh identifikatorami.
+Predpochtitel'naya yedinitsa izmereniya temperatury
+Kel'vin
+Imperatorskiy (Farengeyt)
+Metricheskaya (Tsel'siya)
+Ustanavlivayet yadro ​​tak, chtoby ono zaprashivalo argument pri zagruzke.
+Zapuskayet rezhim obsluzhivaniya. Eto otklyuchayet neskol'ko uchetnykh zapisey.
+Pri kazhdom zapuske on budet proveryat' nalichiye obnovleniy.
+Pri pereklyuchenii yazykov izmenite nazvaniya mesyatsev, kalendar' i t. D.
+Yesli yadro ​​zapushcheno, ono ustanovit parol' root.
+Ne soobshchayte soobshcheniyam o proverke oborudovaniya.
+Pokazat' soobshcheniye dnya pered otobrazheniyem ekrana vkhoda v sistemu.
+Ochistite ekran pered otobrazheniyem ekrana vkhoda v sistemu.
+Pokazyvayet dostupnykh pol'zovateley, yesli on vklyuchen.
+Predostavlyayet podderzhku tsveta yadra
+Uproshchennaya komanda spravki dlya vsekh obolochek
+Nuzhno li registrirovat' imya pol'zovatelya FTP.
+Registrirovat' IP-adres FTP ili net.
+Vybirat' pervyy profil' tol'ko pri podklyuchenii.
+Aktiviruyet podderzhku 255 tsvetov dlya ColorMix.
+Aktiviruyet podderzhku 255 tsvetov dlya Disco.
+Aktiviruyet podderzhku 255 tsvetov dlya GlitterColor.
+Aktiviruyet podderzhku 255 tsvetov dlya liniy.
+Vremya i data budut otobrazhat'sya v pravom verkhnem uglu ekrana.
+Yesli etot parametr vklyuchen, yadro ​​proanaliziruyet vsyu papku na predmet yeye obshchego razmera. V protivnom sluchaye budet analizirovat'sya tol'ko poverkhnost'.
+Vklyuchayet eyecandy pri zapuske
+Vremya i data budut dlinneye, budut otobrazhat'sya polnyye nazvaniya mesyatsev i t. D.
+Pokazyvayet skrytyye fayly.
+Vyberite predpochitayemuyu yedinitsu izmereniya temperatury (eto otnositsya tol'ko k komande «pogoda»).
+Mod {0} ostanovlen
+{0} v {1} ostanovlen
+U moda {0} net nazvaniya detali. Ne udalos' proanalizirovat' mod. Prosmotrite iskhodnyy kod.
+U moda {0} net komandy. Ne udalos' proanalizirovat' mod. Prosmotrite iskhodnyy kod.
+Pered ochistkoy zhurnala otladki neobkhodimo vklyuchit' rezhim otladki.
+Vo vkhodyashchiye postupilo novykh soobshcheniy: {0}.
+Otkroyte «lsmail», chtoby uvidet' ikh.
+Nevozmozhno udalit' fayl: {0}
+Udalyayet katalog ili fayl
+Nevozmozhno udalit' {0}, potomu chto on ne sushchestvuyet.
+Nazhmite CTRL + C, chtoby vyyti.
+Predostavlyayet informatsiyu o fayle
+Predostavlyayet informatsiyu o kataloge
+Ne mogu poluchit' informatsiyu o nesushchestvuyushchem kataloge.
+Ne mogu poluchit' informatsiyu o nesushchestvuyushchem fayle.
+Polnoye imya: {0}
+Vremya sozdaniya: {0}
+Vremya poslednego dostupa: {0}
+Vremya posledney zapisi: {0}
+Atributy: {0}
+Roditel'skiy katalog: {0}
+Gde nayti: {0}
+Razmer fayla: {0}
+Izmenyayet atribut fayla
+Fayl ne nayden.
+gde <atributy> - odno iz sleduyushchikh:
+Fayl obychnyy fayl
+Fayl dostupen tol'ko dlya chteniya
+Fayl yavlyayetsya skrytym
+Fayl predstavlyayet soboy arkhiv. Ispol'zuyetsya dlya rezervnogo kopirovaniya.
+Atribut "{0}" nedeystvitelen.
+Atribut uspeshno dobavlen.
+Atribut uspeshno udalen.
+Ne udalos' dobavit' atribut.
+Ne udalos' udalit' atribut.
+Zamenyayet slovo ili frazu drugim v stroke
+Prevyshen uroven' krasnogo tsveta. Eto bylo {0}.
+Prevyshen uroven' zelenogo tsveta. Eto bylo {0}.
+Prevyshen uroven' sinego tsveta. Eto bylo {0}.
+Aktivirovat' istinnyye tsveta
+Aktiviruyet podderzhku istinnogo tsveta dlya ColorMix.
+Aktiviruyet podderzhku istinnogo tsveta dlya Disco.
+Aktiviruyet podderzhku istinnogo tsveta dlya GlitterColor.
+Aktiviruyet podderzhku istinnogo tsveta dlya liniy.
+Ne udalos' razblokirovat' {0}.
+{0} uzhe zablokirovan.
+{0} seychas ne mozhet prisoyedinit'sya k udalennoy otladke.
+Ne udalos' zablokirovat' {0}.
+Tsveta tsikla
+Pri vklyuchenii Disco budet cheredovat' tsveta. V protivnom sluchaye vyberite sluchaynyye tsveta.
+Vvedite puti k faylam dlya vlozheniy. Nazhmite ENTER na pustom puti dlya podtverzhdeniya.
+Otkryvayet zashifrovannoye soobshcheniye
+Napishite parol' dlya identifikatora klyucha {0}
+Otpravlyayet zashifrovannoye soobshcheniye na adres
+Prosit vas zapolnit' obyazatel'nyye polya dlya otpravki zashifrovannogo soobshcheniya na adres
+Skachivaniye s {0} ...
+Pokazyvat' indikator vypolneniya pri zagruzke ili vygruzke s pomoshch'yu komandy "get" ili "put"
+Yesli eto pravda, eto zastavlyayet "poluchit'" ili "polozhit'" pokazyvat' indikator vypolneniya pri zagruzke ili zagruzke.
+Zagruzhayet fayl na ukazannyy sayt
+Pinguyet adres
+Zagruzka {0} v {1} ...
+Zagruzka zavershena.
+Pozhaluysta, ispol'zuyte "ftp", yesli vy sobirayetes' zagruzhat' fayly na FTP-server.
+Oshibka zagruzki pri popytke {0}: {1}
+Napishite, skol'ko raz komanda «polozhit'» dolzhna povtoryat' neudachnyye zagruzki. On dolzhen byt' chislovym.
+Adres ne mozhet byt' pustym.
+Ne udalos' proverit' svyaz' {0}: {1}
+Ping uspeshno zavershen cherez {0} ms.
+Ukazannyy nomer stroki ne mozhet byt' bol'she, chem nomer stroki poslednego fayla.
+Po oshchushcheniyam: {0}
+Temperatura: {0}
+Skorost' vetra: {0}
+Napravleniye vetra: {0}
+Aktiviruyet podderzhku 255 tsvetov dlya rastvoreniya.
+Aktiviruyet podderzhku istinnogo tsveta dlya Dissolve.
+Nazhmite lyubuyu klavishu, chtoby vernut'sya.
+Nevozmozhno sozdat' pochtovuyu papku {0}: {1}
+Sozdayet katalog v tekushchem rabochem kataloge
+Udalyayet katalog iz tekushchego rabochego kataloga
+Papka pochty {0} ne naydena.
+Nevozmozhno udalit' pochtovuyu papku {0}: {1}
+{0}, sozdano v {1} {2}, izmeneno v {3} {4}
+Proveryayet rabotosposobnost' fayla
+Kheshi iskazheny.
+Kheshi ne sovpadayut.
+Kheshi sovpadayut.
+Pereimenovyvayet papku
+V etom razdele perechisleny vse obshchiye nastroyki yadra, v osnovnom dlya podderzhki yadra.
+Etot razdel izmenyayet povedeniye apparatnogo datchika.
+V etom razdele predstavleny nastroyki vkhoda v sistemu. Vyydite iz svoyey uchetnoy zapisi, chtoby izmeneniya vstupili v silu.
+V etom razdele perechisleny nastroyki obolochki.
+V etom razdele perechisleny parametry seti, takiye kak obolochka FTP, parametry setevykh komand i parametry udalennoy otladki.
+V etom razdele perechisleny vse zastavki i ikh dostupnyye nastroyki.
+Zdes' poyavlyayutsya nastroyki, kotoryye ne pomeshchayutsya v sootvetstvuyushchiye razdely.
+Proveryayet mody, predostavlyaya fayly modov
+Otkryvayet testovuyu obolochku
+Vklyuchayet rezhim otladki
+Zaprosy argumentov
+* Nazhmite lyubuyu klavishu dlya zapuska yadra ili ESC dlya vykhoda.
+Ne udalos' zapustit' "{0}": {1}
+Pokazat' predvaritel'nyy prosmotr pochtovogo soobshcheniya
+Pri perechislenii pochtovykh soobshcheniy pokazyvat' predvaritel'nyy prosmotr tela.
+Pol'zovatel'skiye tsveta ...
+Tsvet vvoda
+Tsvet litsenzii
+Tsvet postoyannoy oshibki yadra
+Nepreryvnyy tsvet oshibki yadra
+Tsvet imeni khosta
+Tsvet imeni pol'zovatelya
+Fonovyy tsvet
+Neytral'nyy tsvet teksta
+Tsvet stseny
+Tsvet oshibki
+Stil' priglasheniya FTP
+Stil' pochtovoy podskazki
+Stil' podskazki SFTP
+Aktiviruyet podderzhku 255 tsvetov dlya BouncingBlock.
+Aktiviruyet podderzhku istinnogo tsveta dlya BouncingBlock.
+Popytka poluchit' dostup k nevernomu puti.
+Ochishchayet tekstovyy fayl
+Vykhod iz tekstovogo redaktora
+Zaprashivayet simvol v ukazannoy stroke ili vo vsekh strokakh
+Proverka obnovleniy otklyuchena, potomu chto vy ispol'zuyete versiyu dlya razrabotki.
+Vklyuchayet ili vyklyuchayet funktsiyu avtosokhraneniya tekstovogo redaktora.
+Yesli avtosokhraneniye vklyucheno, tekstovyy fayl budet sokhranyat'sya kazhdyye «n» sekund.
+Vklyuchit' avtosokhraneniye tekstovogo redaktora
+Interval avtosokhraneniya tekstovogo redaktora
+Sokhranyayet fayl
+Zapisat' chat v zhurnal otladki
+Zapisyvayet udalennyy chat otladki v zhurnal otladki.
+Zaderzhka v millisekundakh
+Skol'ko millisekund zhdat' pered sleduyushchey zapis'yu?
+Pozvolyayet ispol'zovat' SSH FTP-server
+Net pomoshchi dlya komandy "{0}".
+Nedopustimaya posledovatel'nost' VT dlya tsveta RGB.
+Tsvet shkaly sekund
+Tsvet shkaly minut
+Tsvet shkaly chasov
+Tsvet informatsii
+Kleshchi, chtoby izmenit' tsvet
+Aktiviruyet podderzhku 255 tsvetov dlya ProgressClock.
+Aktiviruyet podderzhku istinnogo tsveta dlya ProgressClock.
+Tsvet indikatora vypolneniya v sekundakh. Eto mozhet byt' 1-16, 1-255 ili «1-255;1-255;1-255».
+Tsvet indikatora vypolneniya minut. Eto mozhet byt' 1-16, 1-255 ili «1-255;1-255;1-255».
+Tsvet indikatora vypolneniya chasov. Eto mozhet byt' 1-16, 1-255 ili «1-255;1-255;1-255».
+Tsvet informatsii o date. Eto mozhet byt' 1-16, 1-255 ili «1-255;1-255;1-255».
+Yesli cheredovaniye tsvetov vklyucheno, skol'ko tikov pered izmeneniyem tsveta v ProgressClock? 1 tik = 0,5 sekundy
+ProgressClock vyberet sluchaynyye tsveta, yesli on vklyuchen. V protivnom sluchaye ispol'zuyte tsveta iz config.
+Delayet novuyu temu
+Sozdaniye novoy temy "{0}".
+Sokhranit' temu v tekushchiy katalog
+Sokhranit' temu v drugoy katalog ...
+Vyberite tsvet s pomoshch'yu klavish «<-» i «->». Dlya vykhoda nazhmite ENTER. Nazhmite «i», chtoby vvesti nomer tsveta vruchnuyu.
+Vyberite tsvet s pomoshch'yu klavish «<-» i «->». Ispol'zuyte strelki vverkh i vniz dlya vybora tsvetovykh diapazonov. Dlya vykhoda nazhmite ENTER. Nazhmite «i», chtoby vvesti nomer tsveta vruchnuyu.
+Dobro pozhalovat' v yadro! - Versiya {0}
+Tsvet preduprezhdeniya
+Tsvet varianta
+Vvedite nomer tsveta ot 0 do 255:
+Ispol'zuyte "hwinfo" dlya polucheniya rasshirennoy informatsii ob oborudovanii.
+Pechatayet informatsiyu ob oborudovanii
+Informatsiya o protsessore:
+Imya protsessora:
+Skorost' protsessora:
+Bity protsessora:
+Oboz. Protsessora:
+Topologiya protsessora:
+Tip protsessora:
+Vekha protsessora:
+Protsessor BogoMips:
+Razmer kesha L2 protsessora:
+Razmer kesh-pamyati protsessora L3:
+Kharakteristiki protsessora:
+Informatsiya o zhestkom diske:
+Imya diska:
+Model' privoda:
+Proizvoditel' diska:
+Skorost' dvizheniya:
+Razmer diska:
+Seriynyy nomer privoda:
+Identifikator diska:
+Kolichestvo razdelov diska:
+ID razdela:
+Faylovaya sistema razdela:
+Razmer razdela:
+Ispol'zuyemyy razdel:
+Informatsiya ob operativnoy pamyati:
+RAM svobodna:
+Vsego OZU:
+Ispol'zuyemaya operativnaya pamyat':
+Informatsiya o GPU:
+Imya graficheskogo protsessora:
+Drayver graficheskogo protsessora:
+Versiya graficheskogo protsessora:
+Graficheskiy protsessor: ne udalos' proverit' odnu ili neskol'ko videokart. Vse ravno otobrazhayetsya informatsiya ...
+>> Dobro pozhalovat'! Eto vash pervyy vkhod v udalennuyu otladku i chat. Ispol'zuyte "/ register <name>" dlya registratsii.
+Ustroystvo uzhe sushchestvuyet.
+Net takogo ustroystva.
+Ustanavlivayet imya pol'zovatelya ustroystva
+Vy uzhe zaregistrirovany.
+Privet, {0}!
+Vyvodit soderzhimoye fayla na konsol'
+Ili peredayte etoy komande "listcities".
+Zapis' uzhe sushchestvuyet.
+Oborachivayet vyvod konsoli
+Komanda ne oborachivayetsya. Eti komandy mozhno obernut':
+Izvlekayet ZIP-arkhiv
+Sozdayet ZIP-arkhiv
+Vstroyennyy {0}
+Oshibka pri zagruzke dannykh otladki
+Oshibka pri zagruzke dannykh otladki. Prover'te vashe internet-soyedineniye.
+Ne udalos' zavershit' mod {0}: {1}
+Perechislyayet vse zapushchennyye sobytiya
+Tekushchiy katalog
+Ustanavlivayet tekushchiy katalog obolochki. Napishite absolyutnyy put' k lyubomu sushchestvuyushchemu katalogu.
+Vyvod spiska perenosa
+Zavershayet vyvod spiska, yesli on kazhetsya slishkom dlinnym dlya tekushchey geometrii konsoli.
+Ping!
+{0} otpravil vam zapros.
+Sokhranit' temu v tekushchiy katalog kak ...
+Sokhranit' temu v drugoy katalog kak ...
+Ukazhite nazvaniye temy:
+Pol'zovatel' {0} dobavlen v spisok "{1}".
+Pol'zovatel' {0} byl udalen iz spiska "{1}".
+Nedeystvitel'nyy rezhim {0}
+Pol'zovatel' uzhe sushchestvuyet
+Zagruzit' temu iz ...
+Zagruzit' temu iz gotovykh tem ...
+Ukazhite imya fayla temy bez rasshireniya .json:
+Otkryvayet ZIP-arkhiv
+Vykhod iz obolochki ZIP
+Spisok vsekh faylov vnutri arkhiva
+Izvlekayet fayl v ukazannyy katalog ili tekushchiy katalog
+Izmenyayet katalog arkhiva
+Ukazannaya komanda obolochki ZIP ne naydena.
+Katalog {0} ne sushchestvuyet
+Katalog arkhiva {0} ne sushchestvuyet
+Maksimal'noye kolichestvo pozitsiy
+Skol'ko pozitsiy osveshcheno do zatemneniya?
+Aktiviruyet podderzhku 255 tsvetov dlya svetleye.
+Aktiviruyet podderzhku istinnogo tsveta dlya svetleye.
+Tsvet zapisi v spiske
+Tsvet znacheniya spiska
+Podklyuchayetsya k serveru SSH dlya vypolneniya komandy.
+V etom razdele perechisleny nastroyki zastavki dlya
+Nedopustimyy spetsifikator tsveta. Ubedites', chto eto pravil'nyy format, chto oznachayet chislo ot 0 do 255 pri ispol'zovanii 255 tsvetov ili posledovatel'nost' VT pri ispol'zovanii istinnogo tsveta sleduyushchim obrazom:
+Oshibka v testovoy obolochke: {0}
+Ustanavlivayet znacheniye peremennoy v skripte
+Podskazka ob oshibke.
+Spasibo, chto podnyali nam bilet! Vyberite, kakoy u vas zapros.
+Problema
+Zapros funktsii
+Vopros
+Vy dolzhny ukazat' funktsiyu.
+Zadayte vopros, zapishite svoyu ideyu ili soobshchite o probleme.
+Vy dolzhny napisat' svoy zapros.
+Oshibka v obolochke FTP:
+Neizvestnaya oshibka obolochki FTP:
+V obolochke SFTP proizoshla oshibka:
+Neizvestnaya oshibka obolochki SFTP:
+Pokazat' banner SSH
+Pokazyvayet banner SSH-servera pri podklyuchenii.
+Kak vy khotite proyti autentifikatsiyu?
+Fayl zakrytogo klyucha
+Parol'
+Vvedite kodovuyu frazu dlya klyucha {0}:
+Vvedite raspolozheniye zakrytogo klyucha dlya {0}. Napishite «q», chtoby zavershit' dobavleniye klyuchey:
+Neytralizoval nesushchestvuyushchiy put'.
+Klyuchevoy fayl {0} ne sushchestvuyet.
+Oshibka pri popytke dobavit' zakrytyy klyuch:
+Nazhmite «t», chtoby pereklyuchit'sya v rezhim 255 tsvetov.
+Nazhmite «t», chtoby pereklyuchit'sya v rezhim istinnogo tsveta.
+V etom razdele vy mozhete vybrat', kakoy tsvet vy khotite izmenit'.
+Pokhozhe, u vas net pol'zovatelya krome root. Eto plokho. My rasskazhem, kak yego sozdat'.
+Napishite vashe imya pol'zovatelya.
+Vy dolzhny napisat' svoye imya pol'zovatelya.
+Napishite svoy parol'.
+Vy dolzhny napisat' svoy parol'.
+Vyberite tip uchetnoy zapisi.
+Administrator: etot tip uchetnoy zapisi imeyet naibol'shuyu moshchnost' v yadre, pozvolyaya vam ispol'zovat' programmy upravleniya sistemoy.
+Obychnyy pol'zovatel': etot tip uchetnoy zapisi nemnogo boleye ogranichen, chem administratory.
+Pozdravlyayu! Vy sozdali novuyu uchetnuyu zapis'! Chtoby zakonchit' eto, voydite v svoyu novuyu uchetnuyu zapis'.
+Dlya polucheniya informatsii obratites' k rukovodstvu po khraneniyu ekrana ili k iskhodnomu kodu.
+mod: Modifikatsii ne obnaruzheny.
+Obshchiye komandy:
+Komandy moda:
+Komandy psevdonima:
+Rezhim obsluzhivaniya
+Katalogi poiska
+Gruppa putey, razdelennykh dvoyetochiyem. On rabotayet tak zhe, kak PATH. Napishite polnyy put' k papke ili imya papki. Kogda vy zakonchite, napishite «q». Napishite znak minus ryadom s putem, chtoby udalit' sushchestvuyushchiy katalog.
+Nikakikh mod-komand.
+Nikakikh psevdonimov komand.
+Znacheniye tsveta vne diapazona 0–255.
+Oborachivayemaya komanda ne naydena.
+Zaprashivayet slovo v ukazannoy stroke ili vo vsekh strokakh
+Skachano {0} iz {1}.
+Zagruzheno {0} iz {1}.
+Vyvodit stroku na konsol', ispol'zuya tsvetovoy tip i strochnuyu pechat'
+Vyvodit stroku na konsol', ispol'zuya tsvetovoy tip i strochnuyu pechat' s podderzhkoy formata
+Pechatayet stroku v otladchik
+Pechatayet stroku v otladchik s podderzhkoy formata
+Proveryayet sredstvo oshibki yadra
+Testiruyet sredstvo oshibok yadra s podderzhkoy formata
+Testy, perevodyashchiye stroku, kotoraya sushchestvuyet v resursakh, na opredelennyy yazyk
+Vyvodit stroku na konsol' i analiziruyet naydennyye zapolniteli
+Proveryayet sredstvo regulyarnykh vyrazheniy
+Shifruyet stroku s pomoshch'yu
+Zapuskayet vse mody
+Ostanavlivayet vse mody
+Vklyuchayet ili otklyuchayet otladku
+Vklyuchayet ili otklyuchayet udalennuyu otladku
+Proveryayet posledovatel'nost' VT dlya 255 tsvetov
+Proveryayet posledovatel'nost' ZHT na istinnyy tsvet
+Otpravlyayet uvedomleniye dlya proverki priyemnika
+Testy pechati daty s ispol'zovaniyem raznykh kalendarey
+Perechislyayet vse podderzhivayemyye kodovyye stranitsy
+Kakiye peremennyye kompilyatora vklyucheny v prilozhenii?
+Testy, vyzyvayushchiye konkretnoye sobytiye
+Testy, proveryayushchiye oborudovaniye
+Testiruyet sborshchik musora
+Vykhodit iz testovoy obolochki i zapuskayet yadro
+Vykhodit iz testovoy obolochki i vyklyuchayet yadro
+Sokhranyayet tekushchiy katalog v fayl konfiguratsii yadra
+Proveryayet sredstvo zapisi spiska so strokoy i massivom strok
+Proveryayet sredstvo zapisi spiska s tselochislennym i tselochislennym massivami
+Proveryayet sredstvo zapisi spiska s pomoshch'yu massiva char i char
+Obychnyy spisok strok:
+Spisok strok massiva:
+Obychnyy tselochislennyy spisok:
+Tselochislennyy spisok massiva:
+Obychnyy spisok simvolov:
+Spisok simvolov massiva:
+Vklyuchit' RPC
+Port RPC
+Sleduyet li vklyuchat' RPC.
+Napishite port RPC. On dolzhen byt' chislovym, i yego nel'zya uzhe ispol'zovat'. V protivnom sluchaye RPC ne smozhet otkryt' port.
+RPC ne zapuskayetsya, potomu chto on otklyuchen.
+Spiski podderzhivayemykh kul'tur
+Ishchet ukazannuyu stroku v predostavlennom fayle s pomoshch'yu regulyarnykh vyrazheniy
+Posmotrite, smozhete li vy vovremya nazhat' klavishu
+Pol'zovatel' ne predostavil nikakikh dannykh svoyevremenno.
+Nedeystvitel'naya slozhnost'
+Personazh ne otzhat vovremya.
+Vy nazhali nuzhnogo personazha!
+Vy nazhali ne tot simvol.
+Dlya vykhoda nazhmite ESC.
+Poluchayet informatsiyu o date i vremeni
+Millisekundy:
+Sekundy:
+Minuty:
+Chasy:
+Dni:
+Mesyatsy:
+God:
+Den' goda:
+Den' nedeli:
+Dvoichnyy:
+Mestnoye vremya:
+Vsemirnoye vremya:
+Vremya Unix:
+Ne udalos' proanalizirovat' informatsiyu o date dlya
+Ubedites', chto format pravil'nyy.
+Data:
+Vremya:
+Ustanavlivayet prava dostupa k faylam. Eto podderzhivayetsya tol'ko na FTP-serverakh pod upravleniyem Unix.
+Ustanavlivayet tip dlya etogo seansa
+Vy dolzhny podklyuchit'sya k serveru pered vypolneniyem operatsiy s faylovoy sistemoy.
+Ne udalos' ustanovit' razresheniya s {0} na {1}.
+Razresheniya uspeshno ustanovleny dlya fayla
+Ustanovlen tip dannykh ASCII!
+Tip dannykh ustanovlen na Dvoichnyy!
+Nevernyy tip dannykh.
+Pomnite, chto bol'shinstvo faylov ne budut zagruzhat'sya ili vygruzhat'sya dolzhnym obrazom v etom rezhime, poetomu my nastoyatel'no rekomenduyem ispol'zovat' dvoichnyy rezhim v bol'shinstve situatsiy.
+Popytka otpravit' komandu RPC, kogda RPC ne zapuskayetsya.
+Zaderzhka ischeznoveniya v millisekundakh
+Maksimal'noye kolichestvo shagov zatukhaniya
+Skol'ko millisekund zhdat', prezhde chem tekst ischeznet?
+Skol'ko shagov zatukhaniya nuzhno sdelat'?
+Polnyy zond
+Yesli true, proveryayet vse oborudovaniye; v protivnom sluchaye budet proveryat'sya tol'ko neobkhodimoye oborudovaniye.
+Ne udalos' udalit' zastavku {0} iz konfiguratsii.
+Poluchayet pol'zovatel'skiye nastroyki zastavki
+Ustanavlivayet pol'zovatel'skiye nastroyki zastavki
+Nastroyki dlya zastavki uspeshno ustanovleny
+Ne udalos' ustanovit' nastroyki dlya zastavki.
+Etot razdel pozvolyayet vam upravlyat' sozdaniyem parolya root.
+Otkryvayet obolochku RSS dlya chteniya lent
+Vykhodit iz obolochki RSS i vozvrashchayetsya v yadro
+Izmenyayet ssylku na fid
+Perechislyayet vse kanaly
+Chitayet lentu v veb-brauzere
+Ukazannaya komanda obolochki RSS ne naydena.
+Nevernyy kanal RSS2.
+Nevernyy kanal RSS1.
+Nevernyy fid Atom.
+Vvedite URL-adres RSS-kanala:
+Nevernyy tip RSS-kanala.
+Neizvestnaya oshibka obolochki:
+Poluchayet informatsiyu o stat'ye
+Nomer artikula ne mozhet byt' bol'she imeyushchikhsya artikulov.
+Zagolovok:
+Ssylka na sayt:
+Poluchayet informatsiyu o lente
+Opisaniye:
+Tip korma:
+Kolichestvo statey:
+Na stat'yu net ssylki!
+Ne udalos' sozdat' spisok zapisey faylovoy sistemy dlya kataloga
+Rezhim sortirovki faylovoy sistemy
+Napravleniye sortirovki faylovoy sistemy
+Upravlyayet sortirovkoy faylov.
+Upravlyayet napravleniyem sortirovki faylovoy sistemy po vozrastaniyu ili ubyvaniyu.
+Po vozrastaniyu
+V poryadke ubyvaniya
+FIO
+Razmer fayla
+Vremya sozdaniya
+Vremya posledney zapisi
+Vremya poslednego dostupa
+Zaderzhka povtornoy zapisi v millisekundakh
+Skol'ko millisekund zhdat', prezhde chem snova pisat' tekst?
+Napishite lyuboy tekst, kotoryy khotite pokazat'. Chem dol'she, tem luchshe.
+Minimal'naya skorost' zapisi v WPM
+Maksimal'naya skorost' zapisi v slovakh v minutu
+Veroyatnost' opechatki v protsentakh
+Ne udalos' sokhranit' tekushchiy katalog: {0}
+Salfetki dlya izmeneniya napravleniya
+Aktiviruyet podderzhku 255 tsvetov dlya Wipe.
+Aktiviruyet podderzhku istinnogo tsveta dlya Wipe.
+Skol'ko vaypov nuzhno sdelat' pered sluchaynym izmeneniyem napravleniya?
+Etap zavershilsya v
+Vnutrennyaya initsializatsiya zavershena cherez
+Ssylochnyy fayl {0} ne nayden. Bez etogo fayla etot mod mozhet rabotat' nekorrektno.
+Zapusk moda
+Poluchayet informatsiyu o mode
+Imya komandy:
+Opredeleniye komandy:
+Tip komandy:
+Strogiy prikaz?
+Versiya moda:
+Mod {0} ne nayden.
+Kul'tura
+Kakoy variant {0} ispol'zuyetsya dlya izmeneniya nazvaniya mesyatsa, kalendarya i t. D.?
+Tekstovyy redaktor yeshche ne otkryl faylovyy potok.
+Stroka zamenena.
+Odno ili oba chisla ne yavlyayutsya chislovymi.
+Slovo udaleno.
+Personazh udalen.
+Nastroyki faylovoy sistemy ...
+V etom razdele perechisleny nastroyki faylovoy sistemy.
+Dobro pozhalovat' v nastroyki!
+Oshibka pri vypolnenii komandy SSH
+Oshibka v obolochke SSH
+- Informatsiya o prilozhenii
+Aktiviruyet podderzhku 255 tsvetov dlya BouncingText.
+Aktiviruyet podderzhku istinnogo tsveta dlya BouncingText.
+Proveryayet sredstvo zapisi slovarya so strokoy i massivom strok
+Proveryayet sredstvo zapisi slovarya s pomoshch'yu massiva char i char
+Proveryayet sredstvo zapisi slovarya s tselochislennym i tselochislennym massivami
+Slovar' obychnykh strok:
+Slovar' strok massiva:
+Normal'nyy tselochislennyy slovar':
+Tselochislennyy slovar' massiva:
+Obychnyy simvol'nyy slovar':
+Slovar' massivov simvolov:
+Dobro pozhalovat' v Test Shell!
+Pokazat' progress operatsiy s faylovoy sistemoy
+Pokazyvayet, kakoy fayl obrabatyvayetsya vo vremya operatsiy faylovoy sistemy
+gde budet HardwareType
+Libo tip oborudovaniya {0} ne proveryayetsya, libo nedeystvitelen.
+Tip oborudovaniya {0} yeshche ne issledovan. Yesli vy uvereny, chto eto provereno, perezapustite yadro ​​s vklyuchennoy otladkoy.
+Razdely ne pomeshcheny v spisok.
+Khakerskiy rezhim
+Yesli vklyucheno, zelenaya konsol' budet vklyuchena.
+Pechatayet razdelitel'
+Pechatayet razdelitel' s podderzhkoy formata
+Pechatayet razdelitel' s podderzhkoy tsveta
+Pechatayet razdelitel' s podderzhkoy tsveta i formata
+Vsegda po tsentru
+Aktiviruyet podderzhku 255 tsvetov dlya Marquee.
+Aktiviruyet podderzhku istinnogo tsveta dlya Marquee.
+Napishite lyuboy tekst, kotoryy khotite pokazat'.
+Vsegda li tekst, otobrazhayemyy v ramke, nakhoditsya po tsentru.
+'q', chtoby vyyti.
+Ne nayden argument {0} dlya in"yektsii.
+Argument komandnoy stroki {0} ne nayden.
+Ochishchayet vse nastroyki
+V zastavke voznikla oshibka pri otobrazhenii: {0}. Nazhmite lyubuyu klavishu dlya vykhoda.
+Predvaritel'nyy prosmotr ...
+Vot kak budet vyglyadet' vasha tema:
+Oborachivayemyye komandy:
+U moda {0} nedopustimaya komanda. Ne udalos' proanalizirovat' mod. Prosmotrite iskhodnyy kod.
+Detali moda:

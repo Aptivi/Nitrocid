@@ -23,13 +23,25 @@ Public Module TextEditShell
 
     'Variables
     Public TextEdit_Exiting As Boolean
-    Public TextEdit_Commands As String() = {"help", "exit", "exitnosave", "print", "addline", "delline", "replace", "replaceinline", "delword", "delcharnum", "clear",
-                                            "querychar", "save"}
+    Public ReadOnly TextEdit_Commands As New Dictionary(Of String, CommandInfo) From {{"addline", New CommandInfo("addline", ShellCommandType.TextShell, DoTranslation("Adds a new line with text at the end of the file"), True, 1)},
+                                                                                      {"clear", New CommandInfo("clear", ShellCommandType.TextShell, DoTranslation("Clears the text file"), False, 0)},
+                                                                                      {"delcharnum", New CommandInfo("delcharnum", ShellCommandType.TextShell, DoTranslation("Deletes a character from character number in specified line"), True, 2)},
+                                                                                      {"delline", New CommandInfo("delline", ShellCommandType.TextShell, DoTranslation("Removes the specified line number"), True, 1)},
+                                                                                      {"delword", New CommandInfo("delword", ShellCommandType.TextShell, DoTranslation("Deletes a word or phrase from line number"), True, 2)},
+                                                                                      {"exit", New CommandInfo("exit", ShellCommandType.TextShell, DoTranslation("Exits the text editor and save unsaved changes"), False, 0)},
+                                                                                      {"exitnosave", New CommandInfo("exitnosave", ShellCommandType.TextShell, DoTranslation("Exits the text editor"), False, 0)},
+                                                                                      {"help", New CommandInfo("help", ShellCommandType.TextShell, DoTranslation("Lists available commands"), False, 0)},
+                                                                                      {"print", New CommandInfo("print", ShellCommandType.TextShell, DoTranslation("Prints the contents of the file with line numbers to the console"), False, 0)},
+                                                                                      {"querychar", New CommandInfo("querychar", ShellCommandType.TextShell, DoTranslation("Queries a character in a specified line or all lines"), True, 2)},
+                                                                                      {"queryword", New CommandInfo("queryword", ShellCommandType.TextShell, DoTranslation("Queries a word in a specified line or all lines"), True, 2)},
+                                                                                      {"replace", New CommandInfo("replace", ShellCommandType.TextShell, DoTranslation("Replaces a word or phrase with another one"), True, 2)},
+                                                                                      {"replaceinline", New CommandInfo("replaceinline", ShellCommandType.TextShell, DoTranslation("Replaces a word or phrase with another one in a line"), True, 3)},
+                                                                                      {"save", New CommandInfo("save", ShellCommandType.TextShell, DoTranslation("Saves the file"), False, 0)}}
     Public TextEdit_ModCommands As New ArrayList
     Public TextEdit_FileStream As FileStream
     Public TextEdit_FileLines As List(Of String)
     Friend TextEdit_FileLinesOrig As List(Of String)
-    Public TextEdit_AutoSave As New Thread(AddressOf TextEdit_HandleAutoSaveTextFile)
+    Public TextEdit_AutoSave As New Thread(AddressOf TextEdit_HandleAutoSaveTextFile) With {.Name = "Text Edit Autosave Thread"}
     Public TextEdit_AutoSaveFlag As Boolean = True
     Public TextEdit_AutoSaveInterval As Integer = 60
 
@@ -40,17 +52,17 @@ Public Module TextEditShell
 
         While Not TextEdit_Exiting
             'Open file if not open
-            If IsNothing(TextEdit_FileStream) Then
+            If TextEdit_FileStream Is Nothing Then
                 Wdbg("W", "File not open yet. Trying to open {0}...", FilePath)
                 If Not TextEdit_OpenTextFile(FilePath) Then
-                    W(DoTranslation("Failed to open file. Exiting shell...", currentLang), True, ColTypes.Err)
+                    W(DoTranslation("Failed to open file. Exiting shell..."), True, ColTypes.Error)
                     Exit While
                 End If
                 TextEdit_AutoSave.Start()
             End If
 
             'Prepare for prompt
-            If Not IsNothing(DefConsoleOut) Then
+            If DefConsoleOut IsNot Nothing Then
                 Console.SetOut(DefConsoleOut)
             End If
             W("[", False, ColTypes.Gray) : W("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(TextEdit_WasTextEdited(), "*", "")) : W("] > ", False, ColTypes.Gray)
@@ -61,12 +73,12 @@ Public Module TextEditShell
             Dim WrittenCommand As String = Console.ReadLine
 
             'Check to see if the command doesn't start with spaces or if the command is nothing
-            Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand.StartsWith(" "), IsNothing(WrittenCommand), WrittenCommand = "")
-            If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWith(" ") = True) Then
+            Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand?.StartsWith(" "), WrittenCommand Is Nothing, WrittenCommand = "")
+            If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"}) = True) Then
                 Wdbg("I", "Checking command {0} for existence.", WrittenCommand.Split(" ")(0))
-                If TextEdit_Commands.Contains(WrittenCommand.Split(" ")(0)) Then
-                    Wdbg("I", "Command {0} found in the list of {1} commands.", WrittenCommand.Split(" ")(0), TextEdit_Commands.Length)
-                    TextEdit_CommandThread = New Thread(AddressOf TextEdit_ParseCommand)
+                If TextEdit_Commands.ContainsKey(WrittenCommand.Split(" ")(0)) Then
+                    Wdbg("I", "Command {0} found in the list of {1} commands.", WrittenCommand.Split(" ")(0), TextEdit_Commands.Count)
+                    TextEdit_CommandThread = New Thread(AddressOf TextEdit_ParseCommand) With {.Name = "Text Edit Command Thread"}
                     EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
                     Wdbg("I", "Made new thread. Starting with argument {0}...", WrittenCommand)
                     TextEdit_CommandThread.Start(WrittenCommand)
@@ -77,23 +89,25 @@ Public Module TextEditShell
                     EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
                     ExecuteModCommand(WrittenCommand)
                     EventManager.RaiseTextPostExecuteCommand(WrittenCommand)
+                ElseIf TextShellAliases.Keys.Contains(WrittenCommand.Split(" ")(0)) Then
+                    Wdbg("I", "Text shell alias command found.")
+                    ExecuteTextAlias(WrittenCommand)
                 Else
-                    W(DoTranslation("The specified text editor command is not found.", currentLang), True, ColTypes.Err)
-                    Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), TextEdit_Commands.Length)
+                    W(DoTranslation("The specified text editor command is not found."), True, ColTypes.Error)
+                    Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), TextEdit_Commands.Count)
                 End If
             End If
 
-            'When pressing CTRL+C on shell after command execution, it can generate another prompt without making newline, so fix this.
-            If IsNothing(strcommand) Then
-                Console.WriteLine()
-                Thread.Sleep(30) 'This is to fix race condition between shell initialization and starting the event handler thread
+            'This is to fix race condition between shell initialization and starting the event handler thread
+            If WrittenCommand Is Nothing Then
+                Thread.Sleep(30)
             End If
         End While
 
         'Close file
         TextEdit_CloseTextFile()
         TextEdit_AutoSave.Abort()
-        TextEdit_AutoSave = New Thread(AddressOf TextEdit_HandleAutoSaveTextFile)
+        TextEdit_AutoSave = New Thread(AddressOf TextEdit_HandleAutoSaveTextFile) With {.Name = "Text Edit Autosave Thread"}
 
         'Remove handler for text editor shell
         AddHandler Console.CancelKeyPress, AddressOf CancelCommand
@@ -101,13 +115,17 @@ Public Module TextEditShell
         TextEdit_Exiting = False
     End Sub
 
-    Sub EditorCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-            DefConsoleOut = Console.Out
-            Console.SetOut(StreamWriter.Null)
-            e.Cancel = True
-            TextEdit_CommandThread.Abort()
-        End If
+    ''' <summary>
+    ''' Executes the text editor shell alias
+    ''' </summary>
+    ''' <param name="aliascmd">Aliased command with arguments</param>
+    Sub ExecuteTextAlias(ByVal aliascmd As String)
+        Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
+        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, TextShellAliases(FirstWordCmd))
+        Wdbg("I", "Actual command: {0}", actualCmd)
+        TextEdit_CommandThread = New Thread(AddressOf TextEdit_ParseCommand) With {.Name = "Text Edit Command Thread"}
+        TextEdit_CommandThread.Start(actualCmd)
+        TextEdit_CommandThread.Join()
     End Sub
 
 End Module

@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop';
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
-  zipFileName   = "0.0.15.8-bin.rar"
+  zipFileName   = "0.0.16.0-bin.rar"
 }
 $userProfile = $Env:USERPROFILE
 
@@ -19,17 +19,17 @@ if ($ConfigChoice = 0) {
     Write-Output "<*> Config files are located in $userProfile. What is removed below:"
     Write-Output "<*>  |"
     try{
-      if (Test-Path $userProfile\aliases.csv) {
-        Write-Output "<+>  |-> Aliases.........(aliases.csv)"
-        Remove-Item $userProfile\aliases.csv
+      if (Test-Path $userProfile\Aliases.json) {
+        Write-Output "<+>  |-> Aliases.........(Aliases.json)"
+        Remove-Item $userProfile\Aliases.json
       }
-      if (Test-Path $userProfile\blocked_devices.csv) {
-        Write-Output "<+>  |-> Blocked devices.(blocked_devices.csv)"
-        Remove-Item $userProfile\MAL.txt
+      if (Test-Path $userProfile\DebugDeviceNames.json) {
+        Write-Output "<+>  |-> Debug devices...(DebugDeviceNames.json)"
+        Remove-Item $userProfile\DebugDeviceNames.json
       }
-      if (Test-Path $userProfile\kernelConfig.ini) {
-        Write-Output "<+>  |-> Configuration...(kernelConfig.ini)"
-        Remove-Item $userProfile\kernelConfig.ini
+      if (Test-Path $userProfile\KernelConfig.json) {
+        Write-Output "<+>  |-> Configuration...(KernelConfig.json)"
+        Remove-Item $userProfile\KernelConfig.json
       }
       if (Test-Path $userProfile\kernelDbg.log) {
         Write-Output "<+>  |-> Debugging logs..(kernelDbg.log)"
@@ -43,9 +43,21 @@ if ($ConfigChoice = 0) {
         Write-Output "<+>  |-> MAL Text........(MAL.txt)"
         Remove-Item $userProfile\MAL.txt
       }
-      if (Test-Path $userProfile\users.csv) {
-        Write-Output "<+>  |-> Users...........(users.csv)"
-        Remove-Item $userProfile\MAL.txt
+      if (Test-Path $userProfile\Users.json) {
+        Write-Output "<+>  |-> Users...........(Users.json)"
+        Remove-Item $userProfile\Users.json
+      }
+      if (Test-Path $userProfile\FTP_SpeedDial.json) {
+        Write-Output "<+>  |-> FTP speed dial..(FTP_SpeedDial.json)"
+        Remove-Item $userProfile\FTP_SpeedDial.json
+      }
+      if (Test-Path $userProfile\SFTP_SpeedDial.json) {
+        Write-Output "<+>  |-> SFTP speed dial.(SFTP_SpeedDial.json)"
+        Remove-Item $userProfile\SFTP_SpeedDial.json
+      }
+      if (Test-Path $userProfile\CustomSaverSettings.json) {
+        Write-Output "<+>  |-> SFTP speed dial.(CustomSaverSettings.json)"
+        Remove-Item $userProfile\CustomSaverSettings.json
       }
       Write-Output "<*> Mods are in $userProfile\KSMods"
       if (Test-Path -Path $userProfile\KSMods) {

@@ -1,0 +1,1099 @@
+Comandos disponíveis: {0}
+Comando de gravação: 
+A injeção de comando foi cancelada.
+Separe os argumentos de inicialização com vírgulas sem espaços, por exemplo, 'motd, gpuprobe'
+Comandos separados em 'cmdinject' com dois-pontos com espaços, por exemplo, 'cmdinject setthemes Hacker: beep 1024 0.5'
+Note que o argumento 'debug' não cobre completamente o kernel.
+bargs: O argumento solicitado {0} não foi encontrado.
+bargs: Erro irrecuperável no argumento:
+Argumentos disponíveis: {0}
+Argumentos ('help' for help):
+Argumentos injetados serão agendados para serem executados na próxima reinicialização.
+Injeção de Argumento foi cancelada.
+Erro ao analisar argumentos de linha de comando reais: {0}
+Modelo de cor inválido {0}
+hwprobe: Seu hardware será testado. Por favor aguarde ...
+CPU: Um ou mais núcleos da CPU não puderam ser analisados. Mostrando informações de qualquer maneira ...
+RAM: Um ou mais dos chips de RAM não foram analisados. Mostrando informações de qualquer maneira ...
+HDD: Um ou mais discos rígidos não foram testados. Mostrando informações de qualquer maneira ...
+CPU: Número total de processadores: {0}
+Digite a senha do administrador para manutenção.
+Erro de kernel durante a inicialização: {0}
+PAINEL DUPLO: O tempo de reinicialização excede o tempo máximo permitido de reinicialização do erro {0}. Você encontrou um bug do kernel.
+[{0}] panic: Reinicialização ativada devido ao nível de erro ser {0}.
+[{0}] panic: Hora de reiniciar: {1} segundos, excede 1 hora. Está definido para 1 minuto.
+PÂNICO DUPLO: Tipo de erro {0} inválido.
+[{0}] dpanic: {1} - Reiniciando em {2} segundos ...
+[{0}] pânico: Reinicialização desativada devido ao nível de erro ser {0}.
+[{0}] panic: {1} - Pressione qualquer tecla para continuar usando o kernel.
+[{0}] pânico: {1} - Pressione qualquer tecla para desligar.
+[{0}] panic: {1} - Reiniciando em {2} segundos ...
+PANIC DUPLO: Bug do Kernel: {0}
+Desligando ...
+Reiniciando ...
+Outra instância do Kernel Simulator está sendo executada. Desligando em caso de interferência.
+Falha ao adicionar usuário nas listas de permissão: tipo inválido {0}
+Falha ao adicionar usuário nas listas de permissão: usuário inválido {0}
+Falha ao remover o usuário das listas de permissão: tipo inválido {0}
+Você já está logado.
+Falha ao remover o usuário das listas de permissão: usuário inválido {0}
+Você encontrou um bug ou a permissão que você tentou adicionar ou remover já está concluída ou outro erro.
+Erro {0}: {1}
+Você encontrou um bug ou a permissão que você tentou editar para um novo usuário falhou.
+Usernames disponíveis: {0}
+Nome de usuário: 
+Espaços não são permitidos.
+Caracteres especiais não são permitidos.
+{0} senha: 
+Senha incorreta.
+O usuário está desativado.
+Nome de usuário errado.
+Erro ao tentar analisar marcadores de posição. {0} - rastreamento de pilha:
+Erro ao tentar analisar marcadores de posição. {0}
+Erro ao tentar adicionar o nome de usuário.
+usrmgr: Criando nome de usuário {0} ...
+Nome de usuário em branco.
+Usuário {0} não encontrado.
+O usuário {0} não pode ser removido.
+O usuário {0} já está conectado. Efetue logout e login como outro administrador.
+Usuário {0} removido.
+Erro ao tentar remover o nome de usuário.
+O protetor de tela solicitado {0} não foi encontrado.
+{0} foi inicializado corretamente.
+{0} não inicializou. O código do protetor de tela pode ter sofrido um erro durante a inicialização.
+O protetor de tela {0} não existe.
+{0} está definido como protetor de tela padrão.
+Protetor de tela {0} não encontrado no banco de dados. Verifique o nome e tente novamente.
+O protetor de tela não pode ser carregado por causa do seguinte: 
+Há um erro sério ao imprimir texto.
+Há um erro ao tentar criar uma configuração.
+Erro ao tentar liberar RAM: {0} - continuando ...
+Mod não pode ser carregado por causa do seguinte: 
+mod: Carregando mods ...
+mod: Parando mods ...
+O mod {0} não possui o nome. Revise o código-fonte.
+O mod {0} não possui a versão.
+{0} v {1} iniciado
+Nenhuma definição para o comando {0}.
+Comando definido por
+Você deve desconectar do servidor antes de se conectar a outro servidor
+Nome de usuário para {0}: 
+Senha para {0}: 
+Conectado a {0}
+Erro ao tentar se conectar a {0}: {1}
+Rastreamento de pilha: {2}
+Digite um servidor FTP.
+O diretório local {0} não existe.
+Digite um diretório local. ".." voltar.
+Diretório {0} não encontrado.
+Digite um diretório remoto. ".." para voltar
+Você deve se conectar a um servidor antes de alterar o diretório
+Diretório local: {0}
+Diretório remoto: {0}
+Você deve se conectar ao servidor antes de obter o diretório remoto atual.
+Você deve se conectar ao servidor com privilégios administrativos antes de executar a exclusão.
+Desconectado de {0}
+Você ainda não se conectou a nenhum servidor
+Fazendo o download do arquivo {0} ...
+Arquivo baixado {0}.
+Você deve se conectar ao servidor antes de realizar a transmissão.
+Digite um arquivo para baixar no diretório local.
+{0} KB | Modificado em: {1}
+Você deve se conectar ao servidor antes de listar todos os arquivos remotos.
+Fazendo upload do arquivo {0} ...
+Arquivo enviado {0}
+Insira um arquivo para carregar no diretório remoto. upload <file> <directory>
+(Interno:
+Obtém o diretório local atual
+Obtém o diretório remoto atual
+Conecta-se a um servidor FTP (deve começar com "ftp://" ou "ftps://")
+Altera o diretório local para download ou upload de
+Altera o diretório remoto para download ou upload para
+Exclui o arquivo remoto do servidor
+Desconecta do servidor
+Faz o download do arquivo remoto para o diretório local usando binário ou texto
+Sai do shell FTP e retorna ao kernel
+Mostra a tela de ajuda
+Lista o diretório local
+Lista o diretório remoto
+Carrega arquivo local para o diretório remoto usando binário ou texto
+Mensagem de FTP: O comando solicitado {0} não foi encontrado. Veja 'help' para uma lista de comandos disponíveis especificados no shell do FTP.
+Falha ao obter propriedades para o adaptador {0}
+Número do Adaptador:
+Nome do Adaptador:
+Unidade Máxima de Transmissão: {2} Unidades
+DHCP ativado:
+Pacotes não unicast:
+Pacotes de unicast:
+Erro de entrada/saída de pacotes:
+O alias não pode ser o mesmo nome de um comando.
+Comando não encontrado para alias para {0}.
+Agora você pode executar "{0}" como um comando: "{1}".
+O alias {0} não foi encontrado para ser removido
+Modo inválido {0}.
+Argumentos injetados, {0}, serão agendados para serem executados na próxima reinicialização.
+Não houve argumentos suficientes. Veja abaixo para uso:
+Diretório {0} não encontrado
+Nome do host em branco.
+Alterando de: {0} para {1} ...
+Mensagem em branco do dia.
+MAL em branco após o login.
+Senha incorreta do usuário.
+Senhas não coincidem.
+O nome de usuário foi alterado para {0}!
+O novo nome que você digitou já foi encontrado.
+{0} não foi encontrado.
+Configuração recarregada. Pode ser necessário reinicializar o kernel para que algumas alterações entrem em vigor.
+Uma ou mais cores são inválidas.
+Cores não estão disponíveis. Ative o shell colorido na configuração do kernel.
+Protetor de tela {0} não encontrado.
+[ Configurações do kernel (executando em {0}) ]
+Versão do Kernel:
+Modo de Depuração:
+Concha Colorida:
+Argumentos na inicialização:
+Comando de ajuda simplificado:
+MOTD no Login:
+Hora/Data no canto:
+[ Configurações de hardware ]{0}
+{0}[ Configurações do usuário ]
+Nome de usuário atual:
+Nome do host atual:
+Usernames disponíveis:
+Erro ao tentar executar o comando
+Muda o diretório
+Altera a senha do usuário atual
+Limpa a tela
+Use um shell de FTP para interagir com os servidores
+Página de ajuda
+Listar o conteúdo do arquivo / pasta na pasta atual
+Bloqueia sua tela com uma senha
+Faz o logout
+Cria um diretório
+Lista informações sobre todas as interfaces disponíveis
+Reinicia o seu computador (ATENÇÃO: Sem sincronização, porque não é um kernel final)
+Recarrega o arquivo de configuração editado.
+Salva sua tela de queimaduras
+Configura screensavers do kernel
+Configura temas do kernel
+Mostra data e hora
+Mostra a data e a hora nas zonas
+O kernel será desligado
+Informação do sistema
+* Você pode usar vários comandos usando os dois pontos entre os comandos.
+Uso:
+onde os argumentos serão {0}
+Inicializa o shell do FTP.
+Amigos de
+onde customsaver será
+Bloqueia sua tela com a senha.
+Logs você fora do usuário.
+Obter todas as informações da rede
+Reinicia o seu computador simulado.
+Recarrega a configuração que é alterada pelo usuário final ou pela ferramenta.
+As cores não exigem reinicialização, mas a maioria das configurações exige que você reinicie.
+mostra um protetor de tela selecionado, enquanto protege sua tela contra queimaduras.
+Mostra a data e a hora.
+Mostra a data e a hora nas zonas.
+Desliga o seu computador simulado.
+Mostra informações e versões do sistema.
+Houve um erro no shell.
+Você não tem permissão para usar {0}
+Mensagem do shell: O comando solicitado {0} não pode ser executado no modo de manutenção.
+Mensagem do shell: O comando solicitado {0} não foi encontrado. Veja 'help' para os comandos disponíveis.
+Mensagem do shell: O comando {0} não pode ser executado no log in.
+Erro ao tentar executar o comando.
+datetime: o tempo é {0}
+datetime: Hoje é {0}
+datetime: fuso horário: {0}
+- Tempo de {0}: {1}
+para limpar a tela.
+executando em {0}
+Você não está autorizado a obter informações para {0}.
+Este comando é obsoleto e será removido em uma versão futura.
+Você não está autorizado a alterar a senha de {0} porque o alvo era um administrador.
+usrmgr: O nome de usuário {0} já foi encontrado
+Exclui tudo no log de depuração
+Idioma inválido
+Muda de idioma
+----------------------------- Kernel panic dump ------------------------------
+>> informação de pânico <<
+> Descrição: {0}
+> Tipo de erro: {1}
+> Data e hora: {2}
+>> Informação de exceção <<
+> Exceção: {0}
+> Descrição: {1}
+> HRESULT: {2}
+> Fonte: {3}
+> Rastreio de pilha <
+>> Exceção interna {0} informação <<
+>> Exceção {0} é a causa raiz <<
+>> Nenhuma exceção; pode ser um erro do kernel. << <<
+>> Quadros, arquivos, linhas e colunas <<
+> Frame {0}: Arquivo: {1} | Linha: {2} | Coluna: {3}
+> Ocorreu um erro ao tentar obter informações sobre o quadro. {0}: {1}
+Recarrega as modificações.
+Mods recarregados.
+Bem vindo ao Kernel!
+Conectado com sucesso como <user>
+MOTD / MAL é válido, mas o tipo de mensagem não é válido. 
+Tentei ler MOTD / MAL que é do tipo de mensagem inválido.
+Pengunduhan telah selesai.
+Gagal mengunduh dalam percobaan {0}: {1}
+Silakan gunakan "ftp" jika Anda akan mengunduh file dari server FTP.
+Unduh file ke direktori kerja saat ini
+Desconectar um dispositivo de depuração
+Lista os dispositivos de depuração conectados
+Dispositivo de depuração {0} não encontrado.
+Dispositivo {0} desconectado.
+Erro na conexão: {0}
+Depure a escuta em todos os endereços usando a porta {0}.
+Nenhum argumento especificado. Dica: especifique vários argumentos separados por espaços
+Alias já encontrado: {0}
+Log de depuração removido. Todos os dispositivos de depuração conectados ainda podem exibir mensagens.
+Falha na remoção do log de depuração: {0}
+A alteração do diretório falhou: {0}
+Especifique o endereço
+Não foi possível remover o diretório: {0}
+O fuso horário está especificado incorretamente.
+Seleção de perfil inválida.
+Tentando conectar-se a {0} com o perfil {1} ...
+Comando {0} não encontrado. Veja o comando "help" para a lista de comandos.
+Falha ao obter propriedades IPv6 para o adaptador {0}. Continuando...
+Informações IPv4:
+Informações IPv6:
+O adaptador {0} não suporta IPv6. Continuando...
+O adaptador {0} não suporta IPv4. Falha na análise.
+Parece que você estava executando a versão de desenvolvimento do kernel. Embora você possa ver os aspectos, ele é frequentemente atualizado e pode apresentar bugs. É recomendável que você permaneça na versão estável.
+O idioma que você selecionou contém duas variantes. Selecione um:
+1. transliterado
+2. Traduzido
+Seleccione a sua escolha:
+Escolha inválida. Tente novamente.
+Você não está autorizado a definir o diretório atual como {0}: {1}
+O caminho que você especificou é muito longo.
+CPU: AVISO: o SSE2 será necessário em confirmações de desenvolvimento futuras.
+O coletor de informações de despejo falhou ao tentar obter informações sobre {0}: {1}
+Erro ao tentar obter a data de compilação do assembly {0}: {1}
+Erro ao tentar definir MOTD / MAL: {0}
+Erro ao tentar obter MOTD / MAL: {0}
+Erro ao tentar iniciar o protetor de tela devido a uma operação inválida.
+Recarregar não permitido no modo de segurança.
+Mods de análise não permitidos no modo de segurança.
+Lista todos os dispositivos de depuração conectados.
+Erro ao tentar definir o modo de análise. Verifique o valor e tente novamente. Se isso estiver correto, consulte o rastreamento de pilha quando a depuração do kernel estiver ativada.
+O caminho não é um arquivo nem um diretório.
+Cria outra cópia de um arquivo em um diretório ou nome diferente.
+Move um arquivo para outro diretório
+Para copiar arquivos para outro diretório ou nome diferente
+Para mover arquivos para outro diretório
+Correspondência {0} ({1}): {2}
+Correspondência {0}: {1}
+Tempo gasto: {0} milissegundos
+Nome: {0}
+Calcula as somas dos arquivos.
+Leva você ao nosso Wiki do GitHub.
+Algoritmo de criptografia inválido.
+Ativa ou desativa a depuração remota.
+Veja se consegue escrever palavras corretamente a tempo
+Veja se você pode resolver equações matemáticas no prazo
+Responda a comentários de amor ou ódio.
+Se alguém fez este comentário no seu vídeo:
+Como você responderia?
+Seleção inválida. Indo para o próximo comentário ...
+Você acabou de relatar o comentário de amor!
+Você acabou de responder ao comentário de ódio!
+Ótimo! O comentário de {0} será removido para isso.
+Ótimo! {0} agradecerá seu agradecimento.
+Soletrado perfeitamente!
+Escrito incorretamente.
+Resolvido perfeitamente!
+Resolvido incorretamente.
+O RPC já está em execução.
+RPC escutando em todos os endereços usando a porta {0}.
+Começando RPC ...
+Conecta-se a um servidor SSH.
+Digite a senha para {0}:
+SSH desconectado.
+Não foi possível definir a página de código. O idioma pode não ser exibido corretamente.
+Depuração não ativada.
+{0} não está mais definido como protetor de tela padrão.
+Obrigado! Isto é interessante.
+Todos apoiarão seu vídeo para isso.
+Eu lhe dei o arquivo especial em seu e-mail para o seu próximo vídeo.
+Escute, odiadores, ele está tentando nos ajudar, não farsa.
+Não sei quanto eu e meus amigos agradecemos por este vídeo.
+Eu te amo por este vídeo.
+Continue, não pare.
+Ajudarei você a alcançar 1 milhão de inscritos!
+Meus amigos consertaram o computador por sua causa.
+Brincadeira impressionante! Desliguei o PC do meu inimigo.
+Para quem odeia: PARE DE OBSERVAR
+Para quem odeia: COMEÇA A TRABALHAR
+Ninguém notará isso agora, graças ao seu guia de ocultação de objetos
+Vou parar de assistir seus vídeos. Assinante perdido.
+O que é isso? Isso não está claro.
+Este vídeo é o pior!
+Todos denunciam este vídeo!
+Meus amigos estão furiosos com você!
+Amantes agora vão te odiar por isso.
+Seu amigo vai te odiar por isso.
+Essa brincadeira me fez cancelar sua inscrição.
+Missão falhou, Respeito -, Assinante -
+Pare de fazer esse tipo de vídeo !!!
+Volte ao seu trabalho, seus vídeos são os piores!
+Temos preconceito neste vídeo.
+Mostra todas as notificações recebidas
+Ignora uma notificação
+Notificação rejeitada com sucesso.
+Pacotes (entrada):
+Pacotes (de saída):
+Erros nos pacotes recebidos:
+Propriedades gerais do IPv6
+Propriedades gerais do IPv4
+Executa remotamente um comando para PC remoto
+- Estágio 1: inicialização do sistema
+- Estágio 2: detecção de hardware
+- Estágio 3: detecção de mods e protetores de tela
+- Estágio 4: faça o login
+Parece que você estava executando a versão do candidato a lançamento. É recomendável que você permaneça na versão estável.
+Tipo inválido {0}.
+Tamanho: {0}
+O diretório {0} já existe.
+Erro ao tentar se conectar a {0}: Tempo limite da conexão ou conexão perdida
+Calculadora para calcular expressões.
+Erro no cálculo.
+Parece que você estava executando a versão de lançamento próximo. Embora seja mais seguro usar agora, é recomendável que você permaneça na versão estável.
+Atualização do sistema
+Verificando atualizações do sistema ...
+Nova versão encontrada: 
+Você pode baixá-lo em: 
+Nenhuma notificação recente
+Procura por sequência específica no arquivo fornecido
+Calcula somas de arquivos no diretório especificado.
+Lista todos os emails no usuário específico.
+Digite o nome de usuário ou endereço de email:
+Digite a senha:
+Erro ao conectar-se a {0}: {1}
+Conectando a {0} ...
+Autenticando ...
+Sai do shell IMAP
+Lista de comandos
+Faz o download das mensagens e as lista
+Abre uma mensagem
+A página pode não ser negativa ou zero.
+Página não é um valor numérico.
+O número da mensagem pode não ser negativo ou zero.
+O número da mensagem não é um valor numérico.
+- De {0}
+- para {0}
+- Enviado às {0} em {1}
+A mensagem especificada não foi encontrada.
+A depuração remota falhou ao iniciar: {0}
+Preparando perfis ... Pode levar alguns minutos ...
+Nome do host, nome de usuário, tipo de dados, codificação, criptografia, protocolos
+Erro ao tentar executar o script: {0}
+Grava texto no console
+Faz escolhas do usuário
+Bipe em 'n' Hz e tempo em 'n' milissegundos
+onde <$variable> é qualquer variável que será usada para armazenar a resposta
+A frequência deve ser numérica. Se for numérico, verifique se é >= 37 e <= 32767.
+O tempo deve ser numérico.
+onde <respostas> são respostas com uma letra da pergunta separadas em barras
+Erro ao tentar conectar-se ao servidor SSH: {0}
+Permite que o usuário insira entrada
+Altera o diretório de mensagens atual
+Não foi possível abrir a pasta de correio {0}: {1}
+Lista diretórios no seu endereço de email
+Utiliza informações da Discagem rápida para conectar-se rapidamente a qualquer rede
+Selecione um endereço para se conectar:
+A seleção está fora de alcance. Selecione entre 1- {0}. Tente novamente.
+A seleção não é um número. Tente novamente.
+Durante a validação do certificado, há erros de certificado. Pode ser a primeira vez que você se conecta ao servidor ou o certificado pode ter expirado. Aqui está um erro:
+Tem certeza de que deseja se conectar?
+Resposta inválida. Por favor, tente novamente.
+A discagem rápida está vazia. Conecte-se a um servidor para adicionar um endereço a ele.
+A discagem rápida não existe. Conecte-se a um servidor para adicionar um endereço a ele.
+Digite o endereço e a porta do servidor IMAP (<endereço> ou <endereço>: [porta]):
+Digite o endereço e a porta do servidor SMTP (<endereço> ou <endereço>: [porta]):
+Solicita que você preencha os campos obrigatórios para enviar uma mensagem para um endereço
+Envia uma mensagem para um endereço
+Digite o endereço de e-mail do destinatário:
+Digite o assunto:
+Digite sua mensagem abaixo. Escreva "EOF" para confirmar.
+Enviando mensagem...
+Mensagem enviada.
+Endereço de email invalido. Verifique se você escreveu o endereço corretamente e se ele corresponde ao formato do exemplo mostrado:
+Remove uma mensagem
+Remove todas as mensagens do destinatário
+A mensagem {0} de {1} foi excluída de {2}. {3} mensagens restantes para analisar.
+A mensagem {0} de {1} foi excluída da caixa de entrada. {2} mensagens restantes para analisar.
+Edita um arquivo de texto
+Cria um novo arquivo
+O arquivo já existe.
+Erro ao tentar criar um arquivo: {0}
+Falha ao abrir arquivo. Saindo do shell ...
+O comando do editor de texto especificado não foi encontrado.
+Lista comandos disponíveis
+Sai do editor de texto e salva as alterações não salvas
+Imprime o conteúdo do arquivo com números de linha no console
+Adiciona uma nova linha com texto no final do arquivo
+Remove o número da linha especificado
+Substitui uma palavra ou frase por outra
+Exclui uma palavra ou frase do número da linha
+Exclui um caractere do número de caracteres na linha especificada
+Linha removida.
+O número da linha especificado {0} não é um número válido.
+Os argumentos necessários não são passados ​​para o comando {0}
+Erro ao tentar executar o comando: {0}
+Executando no modo de segurança. Ignorando o estágio ...
+>> Depuração remota e bate-papo: versão
+>> Seu endereço é {0}.
+>> Seu nome é {0}.
+Comando {0} não encontrado. Use "/help" para ver a lista.
+Índice {0} inválido. Existem {1} rastreios de pilha. O índice é baseado em zero; tente subtrair por 1.
+Sem rastreamento de pilha
+Mostra o último rastreamento de pilha na exceção
+Mostra o nome de usuário atual na sessão
+Desconecta você do depurador
+Desbloquear um dispositivo de depuração pelo endereço IP
+Bloquear um dispositivo de depuração pelo endereço IP
+{0} agora pode ingressar na depuração remota novamente.
+{0} ainda não está bloqueado.
+Erro ao carregar as configurações
+Ocorreu um erro ao carregar as configurações. Pode ser necessário verificar o arquivo de configurações.
+Selecione a seção:
+Configurações Gerais...
+Configurações de hardware ...
+Configurações de login ...
+Configurações de Shell ...
+Configurações de rede...
+Configurações Diversas...
+Salvar configurações
+Saída
+A opção especificada {0} é inválida.
+A resposta deve ser numérica.
+Solicitar argumentos na inicialização
+Gatilho do modo de manutenção
+Alterar senha de root ...
+Verifique se há atualizações na inicialização
+Quiet Probe
+Mostrar MOTD no login
+Limpar tela ao entrar
+Mostrar nomes de usuário disponíveis
+Concha Colorida
+Comando de ajuda simplificado
+Porta de depuração
+Tempo de repetição do download
+Log de nome de usuário FTP
+Registrar endereço IP de FTP
+Retorne apenas o primeiro perfil de FTP
+Mostrar hora / data no canto superior direito
+Tempo limite do protetor de tela em ms
+Depurar cota de tamanho em bytes
+Modo de análise de tamanho
+Marquee na inicialização
+Muito tempo e data
+Mostrar arquivos ocultos
+Seção inválida inserida. Por favor, volte.
+Volte...
+Habilitar
+Desabilitar
+Número de chave inválido inserido. Por favor, volte.
+Escreva a senha de root a ser definida. Não se preocupe; as senhas são mostradas como estrelas.
+Habilite "Alterar Senha Root" para usar esta opção. Por favor, volte.
+Alterar a senha do root?
+Definir senha raiz ...
+Escreva uma porta de depurador remoto. Deve ser numérico e ainda não deve ser usado. Caso contrário, o depurador remoto não conseguirá abrir a porta.
+Escreva quantas vezes o comando "" get "" deve tentar downloads com falha. Deve ser numérico.
+Escreva quando iniciar o protetor de tela após milissegundos especificados. Deve ser numérico.
+Escreva quantos bytes o log de depuração pode armazenar. Deve ser numérico.
+A resposta pode não ser negativa.
+A resposta é inválida. Certifique-se de que a resposta seja numérica para entradas de configuração que precisam de números como respostas.
+A variável {0} não foi encontrada em nenhum dos módulos.
+Altera a configuração do kernel
+Configurações do protetor de tela ...
+Ative 255 cores
+Você quer se manter conectado?
+Escolha inválida. Supondo que não ...
+Mudança de cultura ao mudar de idioma
+Texto mostrado
+Escreva qualquer texto que você deseja mostrar. Quanto mais curto, melhor.
+Falha ao carregar {0}
+Erro ao executar o comando de depuração remota {0}: {1}
+Adiciona usuários
+Adiciona aliases aos comandos
+Injeta argumentos para o kernel (reinicialização necessária)
+Altera o nome do host
+MAL muda, o MOTD após o login
+Muda MOTD, a mensagem do dia
+Altera o nome do usuário
+Gerenciar permissões para usuários
+Recarrega o arquivo de proteção de tela em KSMods
+Remove um usuário da lista
+Alias ​​removido {0} com sucesso.
+Falha ao verificar atualizações.
+Não há mais usuários restantes na lista.
+Falha ao definir o idioma.
+Erro ao tentar dispensar notificação.
+usrmgr: Falha ao criar nome de usuário {0}: {1}
+Falha ao renomear o usuário. {0}
+Uma das listas de permissão não contém o nome de usuário {0}.
+Falha ao carregar permissões do arquivo: {0}
+Falha ao alterar o nome do host: {0}
+Usuário não encontrado
+Falha ao alterar a senha do nome de usuário: {0}
+Falha ao copiar arquivo ou diretório: {0}
+Falha ao mover arquivo ou diretório: {0}
+Não foi possível localizar o arquivo para a string "{0}": {1}
+Falha no download do arquivo {0}.
+Falha ao listar arquivos remotos: {0}
+Insira um arquivo ou pasta para remover. Você deve ter permissões administrativas em sua conta para poder remover.
+Tem certeza que deseja excluir {0} <y / n>?
+Excluindo {0} ...
+{0} não foi encontrado no servidor.
+Todos os e-mails enviados por {0} foram removidos com sucesso.
+Falha ao remover todo o correio enviado por {0}.
+Erro ao enviar mensagem.
+Movendo {0} para {1} ...
+Movido com sucesso
+Move o arquivo ou diretório para outro arquivo ou diretório. Você também pode usar isso para renomear arquivos.
+Falha ao mover {0} para {1}.
+Insira um caminho de origem e um caminho de destino.
+Copiando {0} para {1} ...
+Copiado com sucesso
+Copia o arquivo ou diretório para outro arquivo ou diretório.
+Falha ao copiar {0} para {1}.
+Move uma mensagem
+Move todas as mensagens do destinatário
+Todos os e-mails enviados por {0} foram movidos com sucesso.
+Falha ao mover todo o correio enviado por {0}.
+Mensagem {0} de {1} movida de {2}. {3} mensagens restantes para analisar.
+Mostra informações meteorológicas para a cidade especificada. Usa OpenWeatherMap.
+- Informações meteorológicas para {0} -
+Tempo: {0}
+Pressão: {0}
+Umidade: {0}
+Você pode obter sua própria chave de API em https://home.openweathermap.org/api_keys.
+Você sempre pode consultar http://bulk.openweathermap.org/sample/city.list.json.gz para obter a lista de cidades com seus IDs.
+Unidade preferida para temperatura
+Kelvin
+Imperial (Fahrenheit)
+Métrico (Celsius)
+Configura o kernel para que ele solicite argumentos na inicialização.
+Modo de manutenção de gatilhos. Isso desativa várias contas.
+A cada inicialização, ele verificará se há atualizações.
+Ao mudar de idioma, altere os nomes dos meses, calendário, etc.
+Se o kernel for iniciado, ele definirá a senha do root.
+Mantenha as mensagens de sondagem de hardware silenciosas.
+Mostrar mensagem do dia antes de exibir a tela de login.
+Limpe a tela antes de exibir a tela de login.
+Mostra os usuários disponíveis, se habilitado.
+Dá suporte a cores do kernel
+Comando de ajuda simplificado para todos os shells
+Se deve ou não registrar o nome de usuário do FTP.
+Se deve ou não registrar o endereço IP do FTP.
+Escolha o primeiro perfil apenas ao conectar.
+Ativa o suporte de 255 cores para ColorMix.
+Ativa o suporte a 255 cores para Disco.
+Ativa o suporte de 255 cores para GlitterColor.
+Ativa o suporte de 255 cores para linhas.
+A hora e a data serão mostradas no canto superior direito da tela
+Se habilitado, o kernel analisará a pasta inteira para seu tamanho total. Caso contrário, analisará apenas a superfície.
+Ativa o eyecandy na inicialização
+A hora e a data serão mais longas, mostrando os nomes dos meses completos, etc.
+Mostra arquivos ocultos.
+Selecione sua unidade preferida de temperatura (isso se aplica apenas ao comando "clima")
+Mod {0} parou
+{0} v {1} parado
+O mod {0} não tem o nome da peça. A análise do mod falhou. Revise o código-fonte.
+O mod {0} não possui o comando. A análise do mod falhou. Revise o código-fonte.
+Você deve ativar o modo de depuração antes de limpar o log de depuração.
+{0} novas mensagens chegaram à caixa de entrada.
+Abra "lsmail" para vê-los.
+Não foi possível remover o arquivo: {0}
+Remove um diretório ou arquivo
+Não é possível remover {0} porque ele não existe.
+Pressione CTRL + C para sair.
+Fornece informações sobre um arquivo
+Fornece informações sobre um diretório
+Não é possível obter informações sobre o diretório inexistente.
+Não é possível obter informações sobre o arquivo inexistente.
+Nome completo: {0}
+Hora de criação: {0}
+Último tempo de acesso: {0}
+Hora da última gravação: {0}
+Atributos: {0}
+Diretório pai: {0}
+Onde encontrar: {0}
+Tamanho do arquivo: {0}
+Altera o atributo de um arquivo
+Arquivo não encontrado.
+onde <attributes> é um dos seguintes:
+O arquivo é um arquivo normal
+O arquivo é somente leitura
+O arquivo é um arquivo oculto
+O arquivo é um arquivo. Usado para backups.
+O atributo "{0}" é inválido.
+O atributo foi adicionado com sucesso.
+O atributo foi removido com sucesso.
+Falha ao adicionar atributo.
+Falha ao remover atributo.
+Substitui uma palavra ou frase por outra em uma linha
+Nível de cor vermelha excedido. Era {0}.
+Nível de cor verde excedido. Era {0}.
+Nível de cor azul excedido. Era {0}.
+Ative cores verdadeiras
+Ativa o suporte true color para ColorMix.
+Ativa o suporte true color para Disco.
+Ativa o suporte true color para GlitterColor.
+Ativa o suporte true color para linhas.
+Falha ao desbloquear {0}.
+{0} já está bloqueado.
+{0} não pode ingressar na depuração remota agora.
+Falha ao bloquear {0}.
+Cores do ciclo
+Disco irá alternar as cores quando ativado. Caso contrário, selecione cores aleatórias.
+Insira caminhos de arquivo para anexos. Pressione ENTER em um caminho em branco para confirmar.
+Abre uma mensagem criptografada
+Escreva a senha para o ID da chave {0}
+Envia uma mensagem criptografada para um endereço
+Solicita que você preencha os campos obrigatórios para enviar uma mensagem criptografada para um endereço
+Baixando de {0} ...
+Mostra a barra de progresso ao baixar ou enviar do comando "get" ou "put"
+Se verdadeiro, faz "get" ou "put" mostrar a barra de progresso durante o download ou upload.
+Carrega um arquivo para o site especificado
+Pings um endereço
+Enviando {0} para {1} ...
+O upload foi concluído.
+Use "ftp" se for enviar arquivos para o servidor FTP.
+Falha no upload na tentativa {0}: {1}
+Escreva quantas vezes o comando "put" deve repetir uploads com falha. Deve ser numérico.
+O endereço não pode estar vazio.
+Falha ao fazer ping em {0}: {1}
+Ping teve sucesso em {0} ms.
+O número da linha especificado não pode ser maior que o último número da linha do arquivo.
+Parece: {0}
+Temperatura: {0}
+Velocidade do vento: {0}
+Direção do vento: {0}
+Ativa o suporte de 255 cores para Dissolver.
+Ativa o suporte true color para Dissolve.
+Pressione qualquer tecla para voltar.
+Não foi possível criar a pasta de e-mail {0}: {1}
+Cria um diretório no diretório de trabalho atual
+Remove um diretório do diretório de trabalho atual
+Pasta de correio {0} não encontrada.
+Não foi possível excluir a pasta de e-mail {0}: {1}
+{0}, criado em {1} {2}, modificado em {3} {4}
+Verifica a integridade do arquivo
+Hashes estão malformados.
+Hashes não correspondem.
+Hashes correspondem.
+Renomeia uma pasta
+Esta seção lista todas as configurações gerais do kernel, principalmente para manter o kernel.
+Esta seção altera o comportamento da detecção de hardware.
+Esta seção representa as configurações de login. Saia da sua conta para que as alterações tenham efeito.
+Esta seção lista as configurações do shell.
+Esta seção lista as configurações de rede, como o shell do FTP, as configurações de comando relacionadas à rede e as configurações de depuração remota.
+Esta seção lista todos os protetores de tela e suas configurações disponíveis.
+Configurações que não se encaixam em suas seções apropriadas são colocadas aqui.
+Testa mods fornecendo arquivos mod
+Abre um shell de teste
+Ativa o modo de depuração
+Solicita argumentos
+* Pressione qualquer tecla para iniciar o kernel ou ESC para sair.
+Falha ao iniciar "{0}": {1}
+Mostrar visualização da mensagem de e-mail
+Ao listar mensagens de correio, mostre a visualização do corpo.
+Cores personalizadas...
+Cor de entrada
+Cor da licença
+Cor de erro de kernel continuável
+Cor de erro de kernel não continuável
+Cor do nome do host
+Cor do nome de usuário
+Cor de fundo
+Cor neutra do texto
+Cor do palco
+Cor do erro
+Estilo de solicitação de FTP
+Estilo do prompt de correio
+Estilo de solicitação de SFTP
+Ativa o suporte de 255 cores para BouncingBlock.
+Ativa o suporte true color para BouncingBlock.
+Tentando acessar um caminho inválido.
+Limpa o arquivo de texto
+Sai do editor de texto
+Consulta um caractere em uma linha especificada ou em todas as linhas
+A verificação de atualizações está desativada porque você está executando uma versão de desenvolvimento.
+Ativa ou desativa o recurso de salvamento automático do editor de texto.
+Se o salvamento automático estiver ativado, o arquivo de texto será salvo a cada "n" segundos.
+Habilitar salvamento automático do editor de texto
+Intervalo de salvamento automático do editor de texto
+Salva o arquivo
+Grave o bate-papo no registro de depuração
+Grava o bate-papo de depuração remota no log de depuração.
+Atraso em Milissegundos
+Quantos milissegundos esperar antes de fazer a próxima gravação?
+Permite usar um servidor SSH FTP
+Sem ajuda para o comando "{0}".
+Sequência de VT inválida para cor RGB.
+Cor da barra de segundos
+Cor da barra de minutos
+Cor da barra de horas
+Cor da Informação
+Carrapatos para mudar de cor
+Ativa o suporte de 255 cores para ProgressClock.
+Ativa o suporte true color para ProgressClock.
+A cor da barra de progresso dos segundos. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
+A cor da barra de progresso dos minutos. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
+A cor da barra de progresso de horas. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
+A cor das informações de data. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
+Se o ciclo de cores estiver ativado, quantos tiques antes de alterar as cores no ProgressClock? 1 tick = 0,5 segundos
+ProgressClock selecionará cores aleatórias se estiver habilitado. Caso contrário, use as cores da configuração.
+Cria um novo tema
+Fazendo um novo tema "{0}".
+Salvar tema no diretório atual
+Salvar tema em outro diretório ...
+Selecione a cor usando as teclas "<-" e "->". Pressione ENTER para sair. Pressione "i" para inserir o número da cor manualmente.
+Selecione a cor usando as teclas "<-" e "->". Use as teclas de seta para cima e para baixo para selecionar entre as faixas de cores. Pressione ENTER para sair. Pressione "i" para inserir o número da cor manualmente.
+Bem vindo ao kernel! - Versão {0}
+Cor de advertência
+Cor da opção
+Digite o número da cor de 0 a 255:
+Use "hwinfo" para obter informações estendidas sobre hardware.
+Imprime informações de hardware
+Informações da CPU:
+Nome do processador:
+Velocidade do processador:
+Bits do processador:
+Rev do processador:
+Topologia do processador:
+Tipo de processador:
+Marco do processador:
+Processador BogoMips:
+Tamanho do cache L2 do processador:
+Tamanho do cache L3 do processador:
+Recursos do processador:
+Informações de HDD:
+Nome da unidade:
+Modelo de unidade:
+Fornecedor do Drive:
+Velocidade do drive:
+Tamanho da unidade:
+Série da unidade:
+ID da unidade:
+Contagem de partição da unidade:
+ID da partição:
+Sistema de arquivos de partição:
+Tamanho da partição:
+Partição usada:
+Informações de RAM:
+RAM livre:
+RAM total:
+RAM usada:
+Informações de GPU:
+Nome da GPU:
+Driver GPU:
+Versão GPU:
+GPU: uma ou mais placas gráficas não foram sondadas. Mostrando informações mesmo assim ...
+>> Bem-vindo! Esta é a primeira vez que você entra no bate-papo e depuração remota. Use "/ register <nome>" para se registrar.
+O dispositivo já existe.
+Esse dispositivo não existe.
+Define o nome de usuário do dispositivo
+Você já está registrado.
+Olá, {0}!
+Imprime o conteúdo do arquivo para o console
+Ou passe "listcities" para este comando.
+A entrada já existe.
+Envolve a saída do console
+O comando não pode ser encapsulado. Esses comandos podem ser agrupados:
+Extrai um arquivo ZIP
+Cria um arquivo ZIP
+Construído em {0}
+Erro ao baixar dados de depuração
+Ocorreu um erro durante o download dos dados de depuração. Verifique sua conexão com a internet.
+Falha ao finalizar o mod {0}: {1}
+Lista todos os eventos disparados
+Diretório atual
+Define o diretório atual do shell. Grave um caminho absoluto para qualquer diretório existente.
+Saídas da lista de embrulho
+Envolve as saídas da lista se parecer muito longo para a geometria do console atual.
+Ping!
+{0} enviou um ping para você.
+Salvar tema no diretório atual como ...
+Salvar tema em outro diretório como ...
+Especifique o nome do tema:
+O usuário {0} foi adicionado à lista "{1}".
+O usuário {0} foi removido da lista "{1}".
+Modo inválido {0}
+Usuário já existe
+Carregar tema de ...
+Carregar tema de temas pré-construídos ...
+Especifique o nome do arquivo do tema sem a extensão .json:
+Abre um arquivo ZIP
+Sai do shell ZIP
+Lista todos os arquivos dentro do arquivo
+Extrai um arquivo para um diretório especificado ou um diretório atual
+Altera o diretório do arquivo
+O comando do shell ZIP especificado não foi encontrado.
+Diretório {0} não existe
+O diretório de arquivo {0} não existe
+Contagem de posições máximas
+Quantas posições são iluminadas antes do escurecimento?
+Ativa o suporte de 255 cores para o Isqueiro.
+Ativa o suporte para true color para o Isqueiro.
+Cor de entrada da lista
+Cor do valor da lista
+Conecta-se a um servidor SSH para executar um comando.
+Esta seção lista as configurações do protetor de tela para
+Especificador de cor inválido. Certifique-se de que está no formato correto, o que significa um número de 0 a 255 se usar 255 cores ou uma sequência VT se usar true color da seguinte maneira:
+Erro no shell de teste: {0}
+Define uma variável para um valor em um script
+Um prompt de relatório de bug.
+Obrigado por nos enviar um tíquete! Selecione que tipo de solicitação você tem.
+Um problema
+Um pedido de recurso
+Uma pergunta
+Você deve especificar um recurso.
+Faça uma pergunta, escreva sua ideia ou relate um problema.
+Você deve escrever seu pedido.
+Ocorreu um erro no shell do FTP:
+Erro de shell de FTP desconhecido:
+Ocorreu um erro no shell SFTP:
+Erro de shell SFTP desconhecido:
+Mostrar banner SSH
+Mostra o banner do servidor SSH na conexão.
+Como você deseja se autenticar?
+Arquivo de chave privada
+Senha
+Digite a senha longa para a chave {0}:
+Insira a localização da chave privada para {0}. Escreva "q" para terminar de adicionar as chaves:
+Neutralizou um caminho inexistente.
+O arquivo de chave {0} não existe.
+Erro ao tentar adicionar chave privada:
+Pressione "t" para mudar para o modo de 255 cores.
+Pressione "t" para mudar para o modo true color.
+Esta seção permite que você escolha o tipo de cor que deseja alterar.
+Parece que você não tem nenhum usuário, exceto o root. Isto é mau. Iremos guiá-lo como criar um.
+Escreva seu nome de usuário.
+Você deve escrever seu nome de usuário.
+Escreva sua senha.
+Você deve escrever sua senha.
+Selecione o tipo de conta.
+Administrador: este tipo de conta tem mais poder no kernel, permitindo que você use programas de gerenciamento de sistema.
+Usuário normal: este tipo de conta é um pouco mais restrito do que administradores.
+Parabéns! Você fez uma nova conta! Para terminar, faça login como sua nova conta.
+Consulte o manual do protetor de tela ou o código-fonte para obter informações.
+mod: Nenhum mod detectado.
+Comandos gerais:
+Comandos mod:
+Comandos de alias:
+Modo de manutenção
+Consultar diretórios
+Grupo de caminhos separados por dois pontos. Funciona da mesma forma que PATH. Escreva um caminho completo para uma pasta ou um nome de pasta. Quando terminar, escreva "q". Escreva um sinal de menos próximo ao caminho para remover um diretório existente.
+Sem comandos mod.
+Sem comandos de alias.
+O valor da cor está fora do intervalo de 0-255.
+O comando empacotável não foi encontrado.
+Consulta uma palavra em uma linha especificada ou em todas as linhas
+{0} de {1} baixado.
+{0} de {1} enviados.
+Imprime uma string para o console usando tipo de cor e linha de impressão
+Imprime uma string para o console usando tipo de cor e impressão de linha com suporte de formato
+Imprime uma string para o depurador
+Imprime uma string para o depurador com suporte de formato
+Testa o recurso de erro do kernel
+Testa a facilidade de erro do kernel com suporte de formato
+Testa a tradução de uma string existente em recursos para um idioma específico
+Imprime uma string para o console e analisa os marcadores encontrados
+Testa a facilidade de expressão regular
+Criptografa uma string usando
+Inicia todos os mods
+Para todos os mods
+Ativa ou desativa a depuração
+Ativa ou desativa a depuração remota
+Testa a sequência VT para 255 cores
+Testa a sequência VT para a cor verdadeira
+Envia uma notificação para testar o receptor
+Testa a impressão da data usando diferentes calendários
+Lista todas as páginas de código com suporte
+Quais variáveis ​​do compilador estão habilitadas no aplicativo?
+Testes levantando o evento específico
+Testes sondando o hardware
+Testa o coletor de lixo
+Sai do shell de teste e inicia o kernel
+Sai do shell de teste e desliga o kernel
+Salva o diretório atual no arquivo de configuração do kernel
+Testa o escritor da lista com a string e o array de strings
+Testa o gravador de lista com a matriz de inteiros e inteiros
+Testa o gravador da lista com a matriz char e char
+Lista de strings normais:
+Lista de strings de matriz:
+Lista de inteiros normais:
+Lista de inteiros de matriz:
+Lista normal de caracteres:
+Lista de caracteres da matriz:
+Habilitar RPC
+Porta RPC
+Se deve ou não habilitar o RPC.
+Grave uma porta RPC. Deve ser numérico e ainda não deve ser usado. Caso contrário, o RPC não conseguirá abrir a porta.
+Não iniciando RPC porque está desabilitado.
+Lista culturas suportadas
+Pesquisa a string especificada no arquivo fornecido usando expressões regulares
+Veja se você consegue pressionar uma tecla na hora certa
+O usuário não forneceu nenhuma entrada em tempo hábil.
+Dificuldade inválida
+Personagem não pressionado a tempo.
+Você pressionou o personagem certo!
+Você pressionou o caractere errado.
+Pressione ESC para sair.
+Obtém as informações de data e hora
+Milissegundos:
+Segundos:
+Minutos:
+Horas:
+Dias:
+Meses:
+Ano:
+Dia do ano:
+Dia da semana:
+Binário:
+Horário local:
+Tempo Universal:
+Hora Unix:
+Falha ao analisar informações de data para
+Certifique-se de que o formato está correto.
+Data:
+Tempo:
+Define permissões de arquivo. Isso é suportado apenas em servidores FTP que executam Unix.
+Define o tipo para esta sessão
+Você deve se conectar ao servidor antes de executar as operações do sistema de arquivos.
+Falha ao definir permissões de {0} para {1}.
+Permissões definidas com sucesso para o arquivo
+Tipo de dados definido como ASCII!
+Tipo de dados definido como binário!
+Tipo de dados inválido.
+Esteja ciente de que a maioria dos arquivos não será baixada ou carregada corretamente usando este modo, então é altamente recomendável usar o modo Binário na maioria das situações.
+Tentando enviar um comando RPC enquanto o RPC não foi iniciado.
+Fade Out Delay em Milissegundos
+Max Fade Steps
+Quantos milissegundos esperar antes de o texto esmaecer?
+Quantas etapas de fade para fazer?
+Full Probe
+Se verdadeiro, testa todo o hardware; caso contrário, só testará o hardware necessário.
+Falha ao remover protetor de tela {0} da configuração.
+Obtém configurações de proteção personalizadas
+Define configurações de proteção personalizadas
+Configurações definidas com sucesso para o protetor de tela
+Falha ao definir uma configuração para o protetor de tela
+Esta seção permite gerenciar a criação de senha root.
+Abre um shell RSS para ler os feeds
+Sai do shell RSS e retorna ao kernel
+Altera o link do feed
+Lista todos os feeds
+Lê um feed em um navegador da web
+O comando de shell RSS especificado não foi encontrado.
+Feed RSS2 inválido.
+Feed RSS1 inválido.
+Feed Atom inválido.
+Insira um URL de feed RSS:
+Tipo de feed RSS inválido.
+Erro de shell desconhecido:
+Obtém as informações do artigo
+O número do artigo não pode ser maior do que os artigos disponíveis.
+Título:
+Link:
+Obtém as informações do feed
+Descrição:
+Tipo de feed:
+Número de artigos:
+O artigo não tem um link!
+Falha ao fazer uma lista de entradas do sistema de arquivos para o diretório
+Modo de classificação do sistema de arquivos
+Direção de classificação do sistema de arquivos
+Controla como os arquivos serão classificados.
+Controla a direção da classificação do sistema de arquivos, seja crescente ou decrescente.
+Ordem ascendente
+Ordem decrescente
+Nome completo
+Tamanho do arquivo
+Tempo de criação
+Última hora de escrita
+Última hora de acesso
+Atraso de gravação de novo em milissegundos
+Quantos milissegundos esperar antes de escrever o texto novamente?
+Escreva qualquer texto que você deseja mostrar. Quanto mais tempo, melhor.
+Velocidade mínima de gravação em WPM
+Velocidade máxima de gravação em WPM
+Probabilidade de erro de digitação em porcentagem
+Falha ao salvar o diretório atual: {0}
+Limpa para mudar de direção
+Ativa o suporte de 255 cores para Wipe.
+Ativa o suporte true color para Wipe.
+Quantas limpezas a serem feitas antes de mudar de direção aleatoriamente?
+Etapa finalizada em
+A inicialização interna terminou em
+Arquivo referenciado {0} não encontrado. Este mod pode não funcionar corretamente sem este arquivo.
+Mod começando
+Obtém informações sobre mod
+Nome do comando:
+Definição de comando:
+Tipo de comando:
+Comando estrito?
+Versão mod:
+Mod {0} não encontrado.
+Cultura de
+Qual variante de {0} está sendo usada para alterar os nomes dos meses, calendário, etc.?
+O editor de texto ainda não abriu um fluxo de arquivo.
+String substituída.
+Um ou ambos os números não são numéricos.
+Palavra excluída.
+Personagem excluído.
+Configurações do sistema de arquivos ...
+Esta seção lista as configurações do sistema de arquivos.
+Bem-vindo às configurações!
+Erro ao executar o comando SSH
+Erro no shell SSH
+- Informações do aplicativo
+Ativa o suporte de 255 cores para BouncingText.
+Ativa o suporte true color para BouncingText.
+Testa o escritor do dicionário com a string e o array de strings
+Testa o escritor do dicionário com a matriz char e char
+Testa o escritor do dicionário com a matriz de inteiros e inteiros
+Dicionário de string normal:
+Dicionário de string de matriz:
+Dicionário inteiro normal:
+Dicionário inteiro de matriz:
+Dicionário normal de caracteres:
+Dicionário de caracteres de matriz:
+Bem-vindo ao Test Shell!
+Mostra o progresso nas operações do sistema de arquivos
+Mostra qual arquivo está sendo processado durante as operações do sistema de arquivos
+onde HardwareType estará
+O tipo de hardware {0} não foi testado ou não é válido.
+O tipo de hardware {0} ainda não foi testado. Se você tiver certeza de que foi testado, reinicie o kernel com a depuração habilitada.
+Partições não analisadas para a lista.
+Modo Hacker
+Se habilitado, o console verde será habilitado.
+Imprime um separador
+Imprime um separador com suporte de formato
+Imprime um separador com suporte de cor
+Imprime um separador com suporte a cores e formatos
+Sempre centrado
+Ativa o suporte de 255 cores para Marquee.
+Ativa o suporte true color para Marquee.
+Escreva qualquer texto que você deseja mostrar.
+Se o texto mostrado no letreiro está sempre centralizado.
+'q' para sair.
+Argumento {0} não encontrado para injetar.
+Argumento da linha de comando {0} não encontrado.
+Limpa todas as configurações
+O protetor de tela encontrou um erro ao exibir: {0}. Aperte qualquer tecla para sair.
+Pré-visualizar ...
+Veja como será o seu tema:
+Comandos que podem ser embalados:
+O mod {0} possui um comando inválido. A análise do mod falhou. Revise o código-fonte.
+Partes mod:

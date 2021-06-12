@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module Flags
+Public Module Flags
 
     'Variables: Normal environment
     ''' <summary>
@@ -40,10 +40,6 @@ Module Flags
     ''' </summary>
     Public CommandFlag As Boolean
     ''' <summary>
-    ''' A flag for checking for an argument later
-    ''' </summary>
-    Public argsFlag As Boolean
-    ''' <summary>
     ''' A flag for checking for an argument on reboot
     ''' </summary>
     Public argsInjected As Boolean
@@ -54,7 +50,7 @@ Module Flags
     ''' <summary>
     ''' Set Root Password to any password
     ''' </summary>
-    Public RootPasswd As String = ""
+    Public RootPasswd As String = "toor"
     ''' <summary>
     ''' Maintenance Mode
     ''' </summary>
@@ -152,19 +148,31 @@ Module Flags
     ''' </summary>
     Public LangChangeCulture As Boolean
     ''' <summary>
-    ''' Shows the progress bar while downloading using "get" command.
+    ''' Shows the progress bar while downloading using the {Down|Up}load{File|String}() API.
     ''' </summary>
     Public ShowProgress As Boolean = True
     ''' <summary>
     ''' Records remote debug chat to debug log
     ''' </summary>
     Public RecordChatToDebugLog As Boolean = True
+    ''' <summary>
+    ''' Wraps the list outputs
+    ''' </summary>
+    Public WrapListOutputs As Boolean
+    ''' <summary>
+    ''' Ensures that all hardware will be probed
+    ''' </summary>
+    Public FullProbe As Boolean = True
 
     'Private flags
     ''' <summary>
     ''' Notifies user as soon as the kernel finished booting if there is an error reading configuration.
     ''' </summary>
     Friend NotifyConfigError As Boolean
+    ''' <summary>
+    ''' Notifies user as soon as the kernel finished booting if there is an error downloading debugging data.
+    ''' </summary>
+    Friend NotifyDebugDownloadError As Boolean
     ''' <summary>
     ''' When the command cancel is requested
     ''' </summary>

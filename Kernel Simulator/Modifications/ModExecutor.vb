@@ -19,43 +19,18 @@
 Public Module ModExecutor
 
     ''' <summary>
-    ''' Mod command type
-    ''' </summary>
-    Public Enum ModType
-        ''' <summary>
-        ''' Normal UESH shell
-        ''' </summary>
-        Shell
-        ''' <summary>
-        ''' FTP shell
-        ''' </summary>
-        FTPShell
-        ''' <summary>
-        ''' Mail shell
-        ''' </summary>
-        MailShell
-        ''' <summary>
-        ''' SFTP shell
-        ''' </summary>
-        SFTPShell
-        ''' <summary>
-        ''' Text shell
-        ''' </summary>
-        TextShell
-    End Enum
-
-    ''' <summary>
     ''' Executes the command provided by a mod
     ''' </summary>
     ''' <param name="cmd">A mod command with arguments</param>
     Sub ExecuteModCommand(ByVal cmd As String)
+        EventManager.RaisePreExecuteModCommand(cmd)
         Dim parts As String() = cmd.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
         Dim args As String = ""
         Dim actualCmd As String = parts(0)
         Wdbg("I", "Command = {0}", actualCmd)
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
-                If (actualCmd = script.Cmd) And (script.Name <> Nothing) And (actualCmd <> script.Name) Then
+                If script.Commands.ContainsKey(cmd) And (script.Name <> Nothing) And (actualCmd <> script.Name) Then
                     actualCmd = script.Name
                 End If
             Next
@@ -66,11 +41,23 @@ Public Module ModExecutor
             Wdbg("I", "Command {0} will be run with arguments: {1}", actualCmd, args)
         End If
         For Each ModParts As String In scripts(actualCmd).Keys
-            If scripts(actualCmd)(ModParts).Cmd = parts(0) Then
-                Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModParts)
-                scripts(actualCmd)(ModParts).PerformCmd(args)
+            Dim Script As IScript = scripts(actualCmd)(ModParts)
+            If Script.Commands.ContainsKey(parts(0)) Then
+                If Script.Commands(parts(0)).Type = ShellCommandType.Shell Then
+                    If (Script.Commands(parts(0)).Strict And adminList(signedinusrnm)) Or Not Script.Commands(parts(0)).Strict Then
+                        Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModParts)
+                        Script.PerformCmd(Script.Commands(parts(0)), args)
+                    Else
+                        Wdbg("E", "User {0} doesn't have permission to use {1} from {2}!", signedinusrnm, parts(0), ModParts)
+                        W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, parts(0))
+                    End If
+                Else
+                    Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModParts)
+                    Script.PerformCmd(Script.Commands(parts(0)), args)
+                End If
             End If
         Next
+        EventManager.RaisePostExecuteModCommand(cmd)
         Wdbg("I", "Command executed successfully.")
     End Sub
 

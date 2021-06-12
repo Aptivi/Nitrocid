@@ -1,0 +1,1099 @@
+Comandi disponibili: {0}
+Scrivi il comando:
+L'iniezione del comando è stata annullata.
+Separare gli argomenti di avvio con virgole senza spazi, ad esempio "motd, gpuprobe"
+Comandi separati su 'cmdinject' con i due punti con spazi, ad esempio 'cmdinject setthemes Hacker: beep 1024 0.5'
+Si noti che l'argomento 'debug' non copre completamente il kernel.
+bargs: l'argomento richiesto {0} non è stato trovato.
+bargs: errore irreversibile nell'argomento:
+Argomenti disponibili: {0}
+Argomenti ('aiuto' per aiuto):
+Gli argomenti iniettati saranno programmati per essere eseguiti al successivo riavvio.
+L'argomento Injection è stato cancellato.
+Errore durante l'analisi degli argomenti della riga di comando reali: {0}
+Modello di colore non valido {0}
+hwprobe: il tuo hardware verrà verificato. Attendere prego...
+CPU: uno o più core della CPU non sono stati rilevati. Mostrare informazioni comunque ...
+RAM: uno o più chip RAM non sono stati rilevati. Mostrare informazioni comunque ...
+HDD: uno o più dischi rigidi non sono stati rilevati. Mostrare informazioni comunque ...
+CPU: numero totale di processori: {0}
+Immettere la password dell'amministratore per la manutenzione.
+Errore del kernel durante l'avvio: {0}
+DOPPIO PANICO: il tempo di riavvio supera il tempo massimo consentito per il riavvio dell'errore {0}. Hai trovato un bug del kernel.
+[{0}] panico: riavvio attivato a causa del livello di errore {0}.
+[{0}] panico: tempo di riavvio: {1} secondi, superiore a 1 ora. È impostato su 1 minuto.
+DOUBLE PANIC: Tipo di errore {0} non valido.
+[{0}] Dpanic: {1} - Riavvio in {2} secondi ...
+[{0}] panico: riavvio disabilitato a causa del livello di errore {0}.
+[{0}] panico: {1}: premi un tasto qualsiasi per continuare a utilizzare il kernel.
+[{0}] panico: {1}: premi un tasto qualsiasi per chiudere.
+[{0}] panico: {1} - Riavvio in {2} secondi ...
+DOUBLE PANIC: bug del kernel: {0}
+Chiudere...
+Riavvio ...
+È in esecuzione un'altra istanza di Kernel Simulator. Arresto in caso di interferenza.
+Impossibile aggiungere l'utente negli elenchi di autorizzazioni: tipo non valido {0}
+Impossibile aggiungere l'utente negli elenchi di autorizzazioni: utente non valido {0}
+Impossibile rimuovere l'utente dagli elenchi di autorizzazioni: tipo non valido {0}
+Sei già loggato.
+Impossibile rimuovere l'utente dagli elenchi di autorizzazioni: utente non valido {0}
+Hai trovato un bug o il permesso che hai provato ad aggiungere o rimuovere è già stato fatto, o altro errore.
+Errore {0}: {1}
+Hai trovato un bug o il permesso che hai provato a modificare per un nuovo utente non è riuscito.
+Nomi utente disponibili: {0}
+Nome utente:
+Gli spazi non sono ammessi.
+I caratteri speciali non sono ammessi.
+La password di {0}:
+Password errata.
+L'utente è disabilitato
+Username sbagliato.
+Errore durante il tentativo di analizzare i segnaposti. {0} - Traccia stack:
+Errore durante il tentativo di analizzare i segnaposti. {0}
+Errore durante il tentativo di aggiungere il nome utente.
+usrmgr: Creazione del nome utente {0} ...
+Nome utente vuoto
+Utente {0} non trovato.
+L'utente {0} non può essere rimosso.
+L'utente {0} è già connesso. Disconnettersi e accedere come altro amministratore.
+Utente {0} rimosso.
+Errore durante il tentativo di rimuovere il nome utente.
+Lo screensaver richiesto {0} non è stato trovato.
+{0} è stato inizializzato correttamente.
+{0} non inizializzato. Il codice dello screensaver potrebbe aver subito un errore durante l'inizializzazione.
+Il salvaschermo {0} non esiste.
+{0} è impostato sullo screensaver predefinito.
+Screensaver {0} non trovato nel database. Controlla il nome e riprova.
+Il salvaschermo non può essere caricato a causa di quanto segue:
+Si è verificato un errore grave durante la stampa del testo.
+Si è verificato un errore durante il tentativo di creare la configurazione.
+Errore durante il tentativo di liberare la RAM: {0} - Continua ...
+Mod non può essere caricato a causa di quanto segue:
+mod: caricamento mod ...
+mod: interruzione mod ...
+Il mod {0} non ha il nome. Rivedere il codice sorgente
+Il mod {0} non ha la versione.
+{0} v {1} avviato
+Nessuna definizione per il comando {0}.
+Comando definito da
+È necessario disconnettersi dal server prima di connettersi a un altro server
+Nome utente per {0}:
+Password per {0}:
+Connesso a {0}
+Errore durante il tentativo di connessione a {0}: {1}
+Stack Trace: {2}
+Inserisci un server FTP.
+La directory locale {0} non esiste.
+Inserisci una directory locale ".." tornare indietro.
+Directory {0} non trovata.
+Inserisci una directory remota ".." tornare indietro
+È necessario connettersi a un server prima di cambiare directory
+Directory locale: {0}
+Directory remota: {0}
+È necessario connettersi al server prima di ottenere la directory remota corrente.
+È necessario connettersi al server con privilegi amministrativi prima di eseguire l'eliminazione.
+Disconnesso da {0}
+Non sei ancora connesso a nessun server
+Download del file {0} ...
+File scaricato {0}.
+È necessario connettersi al server prima di eseguire la trasmissione.
+Inserisci un file da scaricare nella directory locale.
+{0} KB | Modificato in: {1}
+È necessario connettersi al server prima di elencare tutti i file remoti.
+Caricamento del file {0} ...
+File caricato {0}
+Inserisci un file da caricare nella directory remota. carica <file> <directory>
+(Interno:
+Ottiene la directory locale corrente
+Ottiene la directory remota corrente
+Si collega a un server FTP (deve iniziare con "ftp://" o "ftps://")
+Cambia la directory locale da scaricare o caricare da
+Cambia la directory remota da scaricare o caricare in
+Elimina il file remoto dal server
+Disconnette dal server
+Scarica il file remoto nella directory locale usando binari o testo
+Esce dalla shell FTP e ritorna al kernel
+Mostra la schermata di aiuto
+Elenca la directory locale
+Elenca la directory remota
+Carica il file locale nella directory remota usando binari o testo
+Messaggio FTP: il comando richiesto {0} non è stato trovato. Vedi 'aiuto' per un elenco di comandi disponibili specificati sulla shell FTP.
+Impossibile ottenere le proprietà per la scheda {0}
+Numero di scheda:
+Nome dell'adattatore:
+Unità di trasmissione massima: {2} Unità
+DHCP abilitato:
+Pacchetti non unicast:
+Pacchetti unicast:
+Errore nell'ingresso / uscita dei pacchetti:
+L'alias non può essere lo stesso nome di un comando.
+Comando non trovato per l'alias su {0}.
+Ora puoi eseguire "{0}" come comando: "{1}".
+Alias ​​{0} non è stato trovato per essere rimosso.
+Modalità non valida {0}.
+Gli argomenti iniettati, {0}, saranno programmati per essere eseguiti al prossimo riavvio.
+Non c'erano abbastanza argomenti. Vedi sotto per l'uso:
+Directory {0} non trovata
+Nome host vuoto.
+Passaggio da: {0} a {1} ...
+Messaggio vuoto del giorno.
+MAL vuoto dopo l'accesso.
+Password utente errata.
+Le password non corrispondono.
+Il nome utente è stato cambiato in {0}!
+Il nuovo nome che hai inserito è già stato trovato.
+{0} non trovato.
+Configurazione ricaricata. Potrebbe essere necessario riavviare il kernel affinché alcune modifiche abbiano effetto.
+Uno o più colori non sono validi.
+I colori non sono disponibili. Attiva la shell colorata nella configurazione del kernel.
+Screensaver {0} non trovato.
+[ Impostazioni del kernel (in esecuzione su {0}) ]
+Versione del kernel:
+Modalità di debug:
+Guscio colorato:
+Argomenti all'avvio:
+Aiuta il comando semplificato:
+MOTD on Login:
+Ora / data nell'angolo:
+[ Impostazioni hardware ] {0}
+{0}[ Impostazioni utente ]
+Nome utente corrente:
+Nome host attuale:
+Nomi utente disponibili:
+Errore durante il tentativo di eseguire il comando
+Cambia directory
+Cambia la password per l'utente corrente
+Cancella lo schermo
+Utilizzare una shell FTP per interagire con i server
+Pagina di aiuto
+Elenca il contenuto del file / cartella nella cartella corrente
+Blocca lo schermo con una password
+Esci
+Crea una directory
+Elenca le informazioni su tutte le interfacce disponibili
+Riavvia il computer (ATTENZIONE: nessuna sincronizzazione, perché non è un kernel finale)
+Ricarica il file di configurazione che è stato modificato.
+Salva lo schermo dai burn out
+Imposta gli screensaver del kernel
+Imposta i temi del kernel
+Mostra data e ora
+Mostra data e ora nelle zone
+Il kernel verrà spento
+Informazioni di sistema
+* Puoi usare più comandi usando i due punti tra i comandi.
+Uso:
+dove gli argomenti saranno {0}
+Inizializza la shell FTP.
+Amici di
+dove sarà customsaver
+Blocca lo schermo con la password.
+Ti disconnette dall'utente.
+Ottieni tutte le informazioni di rete
+Riavvia il tuo computer simulato.
+Ricarica la configurazione che viene modificata dall'utente finale o dallo strumento.
+I colori non richiedono il riavvio, ma la maggior parte delle impostazioni richiede il riavvio.
+mostra uno screensaver selezionato, proteggendo allo stesso tempo lo schermo dai burn out.
+Mostra la data e l'ora.
+Mostra la data e l'ora nelle zone.
+Spegne il tuo computer simulato.
+Mostra le informazioni e le versioni del sistema.
+Si è verificato un errore nella shell.
+Non hai il permesso di usare {0}
+Messaggio shell: il comando richiesto {0} non può essere eseguito in modalità di manutenzione.
+Messaggio shell: il comando richiesto {0} non è stato trovato. Vedi 'aiuto' per i comandi disponibili.
+Messaggio shell: il comando {0} non può essere eseguito all'accesso.
+Errore durante il tentativo di eseguire il comando.
+datetime: il tempo è {0}
+datetime: oggi è {0}
+datetime: Fuso orario: {0}
+- Tempo di {0}: {1}
+per pulire lo schermo.
+In esecuzione su {0}
+Non sei autorizzato a ricevere informazioni per {0}.
+Questo comando è obsoleto e verrà rimosso in una versione futura.
+Non sei autorizzato a cambiare la password di {0} perché il target era un amministratore.
+usrmgr: il nome utente {0} è già stato trovato
+Elimina tutto nel registro di debug
+Lingua non valida
+Cambia lingua
+----------------------------- Dump di panico del kernel ------------------------------
+>> Informazioni di panico <<
+> Descrizione: {0}
+> Tipo di errore: {1}
+> Data e ora: {2}
+>> Informazioni sull'eccezione <<
+> Eccezione: {0}
+> Descrizione: {1}
+> HRESULT: {2}
+> Fonte: {3}
+> Traccia stack <
+>> Informazioni sull'eccezione interna {0} <<
+>> L'eccezione {0} è la causa principale <<
+>> Nessuna eccezione; potrebbe essere un errore del kernel. <<
+>> Cornici, file, linee e colonne <<
+> Frame {0}: File: {1} | Riga: {2} | Colonna: {3}
+> Si è verificato un errore durante il tentativo di ottenere informazioni sul frame. {0}: {1}
+Ricarica le modifiche.
+Mod ricaricate.
+Benvenuto in Kernel!
+Accesso eseguito correttamente come <utente>
+MOTD / MAL è valido, ma il tipo di messaggio non è valido. 
+Ho provato a leggere MOTD / MAL che è del tipo di messaggio non valido.
+Download completato.
+Download non riuscito nel tentativo {0}: {1}
+Utilizzare "ftp" se si intende scaricare file dal server FTP.
+Scarica un file nella directory di lavoro corrente
+Disconnetti un dispositivo di debug
+Elenca i dispositivi di debug collegati
+Dispositivo di debug {0} non trovato.
+Dispositivo {0} disconnesso.
+Errore nella connessione: {0}
+Debug in ascolto su tutti gli indirizzi utilizzando la porta {0}.
+Nessun argomento specificato. Suggerimento: specificare più argomenti separati da spazi
+Alias già trovato: {0}
+Registro di debug rimosso. Tutti i dispositivi di debug collegati possono comunque visualizzare i messaggi.
+Rimozione del registro di debug non riuscita: {0}
+Modifica directory non riuscita: {0}
+Specifica l'indirizzo
+Impossibile rimuovere la directory: {0}
+Il fuso orario non è specificato correttamente.
+Selezione profilo non valida.
+Tentativo di connessione a {0} con il profilo {1} ...
+Comando {0} non trovato. Vedi il comando "help" per l'elenco dei comandi.
+Impossibile ottenere le proprietà IPv6 per l'adattatore {0}. Proseguendo ...
+Informazioni IPv4:
+Informazioni IPv6:
+L'adattatore {0} non supporta IPv6. Proseguendo ...
+L'adattatore {0} non supporta IPv4. Sonda non riuscita.
+Sembra che tu stia eseguendo la versione di sviluppo del kernel. Mentre puoi vedere gli aspetti, viene aggiornato frequentemente e potrebbe introdurre bug. Si consiglia di rimanere nella versione stabile.
+La lingua che hai selezionato contiene due varianti. Seleziona uno:
+1. Traslitterato
+2. Tradotto
+Seleziona la tua scelta:
+Scelta non valida. Riprova.
+Non sei autorizzato a impostare la directory corrente su {0}: {1}
+Il percorso che hai specificato è troppo lungo.
+CPU: AVVERTENZA: SSE2 sarà richiesto nei futuri commit di sviluppo.
+Il raccoglitore di informazioni sul dump si è arrestato in modo anomalo durante il tentativo di ottenere informazioni su {0}: {1}
+Errore durante il tentativo di ottenere la data di compilazione dell'assembly {0}: {1}
+Errore durante il tentativo di impostare MOTD / MAL: {0}
+Errore durante il tentativo di ottenere MOTD / MAL: {0}
+Errore durante il tentativo di avvio dello screensaver, a causa di un'operazione non valida.
+Ricarica non consentita in modalità provvisoria.
+Mod di analisi non consentite in modalità provvisoria.
+Elenca tutti i dispositivi di debug collegati.
+Errore durante il tentativo di impostare la modalità di analisi. Verifica il valore e riprova. Se questo è corretto, vedere la traccia dello stack quando il debug del kernel è abilitato.
+Il percorso non è né un file né una directory.
+Crea un'altra copia di un file con directory o nome diversi.
+Sposta un file in un'altra directory
+Per copiare file in un'altra directory o nome diverso
+Per spostare i file in un'altra directory
+Corrispondenza {0} ({1}): {2}
+Corrispondenza {0}: {1}
+Tempo trascorso: {0} millisecondi
+Nome: {0}
+Calcola le somme dei file.
+Ti porta al nostro GitHub Wiki.
+Algoritmo di crittografia non valido.
+Abilita o disabilita il debug remoto.
+Vedi se riesci a pronunciare correttamente le parole in tempo
+Vedi se riesci a risolvere le equazioni matematiche in tempo
+Rispondi ai commenti di amore o odio.
+Se qualcuno ha fatto questo commento al tuo video:
+Come risponderesti?
+Selezione non valida Andando al prossimo commento ...
+Hai appena segnalato il commento d'amore!
+Hai appena risposto al commento di odio!
+Grande! Il commento di {0} verrà rimosso per questo.
+Grande! {0} apprezzerà i tuoi ringraziamenti.
+Scritto perfettamente!
+Ortografia errata.
+Risolto perfettamente!
+Risolto in modo errato
+RPC è già in esecuzione.
+Ascolto RPC su tutti gli indirizzi utilizzando la porta {0}.
+Avvio di RPC ...
+Si collega a un server SSH.
+Inserisci la password per {0}:
+SSH disconnesso.
+Impossibile impostare la tabella codici. La lingua potrebbe non essere visualizzata correttamente.
+Debug non abilitato.
+{0} non è più impostato sullo screensaver predefinito.
+Grazie! Questo è interessante.
+Tutti supporteranno il tuo video per questo.
+Ti ho dato il file speciale nella tua e-mail per il tuo prossimo video.
+Ascolta, odia, sta cercando di aiutarci, non di imbrogliare.
+Non so quanto io e i miei amici vi ringraziamo per questo video.
+Ti amo per questo video.
+Continua, non fermarti.
+Ti aiuterò a raggiungere gli abbonati 1M!
+I miei amici hanno riparato il loro computer grazie a te.
+Fantastico scherzo! Spengo il PC del mio nemico.
+Per gli odiatori: smettere di odiare su di lui
+Per gli odiatori: mettersi al lavoro
+Nessuno lo noterà ora grazie alla guida per nascondere gli oggetti
+Smetterò di guardare i tuoi video. Abbonato perso.
+Cos'è questo? Questo non è chiaro.
+Questo video è il peggiore!
+Tutti segnalano questo video!
+I miei amici sono furiosi con te!
+Gli amanti ora ti odieranno per questo.
+Il tuo amico ti odierà per questo.
+Questo scherzo mi ha fatto annullare l'iscrizione a te.
+Missione fallita, Rispetto -, Abbonato -
+Smetti di fare questo tipo di video !!!
+Torna al tuo lavoro, i tuoi video sono i peggiori!
+Preghiamo per questo video.
+Mostra tutte le notifiche ricevute
+Respinge una notifica
+Notifica respinta correttamente.
+Pacchetti (in entrata):
+Pacchetti (in uscita):
+Errori nei pacchetti ricevuti:
+Proprietà generali IPv6
+Proprietà generali di IPv4
+Esegue da remoto un comando sul PC remoto
+- Fase 1: inizializzazione del sistema
+- Fase 2: rilevamento dell'hardware
+- Fase 3: rilevamento di mod e screensaver
+- Fase 4: accesso
+Sembra che tu stia eseguendo la versione candidata al rilascio. Si consiglia di rimanere nella versione stabile.
+Tipo non valido {0}.
+Dimensione: {0}
+La directory {0} esiste già.
+Errore durante il tentativo di connessione a {0}: timeout della connessione o connessione persa
+Calcolatrice per calcolare le espressioni.
+Errore nel calcolo.
+Sembra che tu stia eseguendo la versione di rilascio prossima. Sebbene sia più sicuro da usare ora, si consiglia di rimanere nella versione stabile.
+Aggiornamento del sistema
+Verifica aggiornamenti del sistema ...
+Trovato nuova versione: 
+Puoi scaricarlo da: 
+Nessuna notifica recente
+Cerca una stringa specifica nel file fornito
+Calcola le somme di file nella directory specificata.
+Elenca tutte le mail dell'utente specifico.
+Inserisci nome utente o indirizzo e-mail:
+Inserire la password:
+Errore durante la connessione a {0}: {1}
+Connessione a {0} ...
+Autenticazione in ...
+Esce dalla shell IMAP
+Elenco dei comandi
+Scarica i messaggi e li elenca
+Apre un messaggio
+La pagina potrebbe non essere negativa o zero.
+La pagina non è un valore numerico.
+Il numero del messaggio potrebbe non essere negativo o zero.
+Il numero del messaggio non è un valore numerico.
+- Da {0}
+- A {0}
+- Inviato a {0} in {1}
+Il messaggio specificato non è stato trovato.
+Impossibile avviare il debug remoto: {0}
+Preparazione dei profili ... Potrebbero essere necessari diversi minuti ...
+Nome host, nome utente, tipo di dati, codifica, crittografia, protocolli
+Errore durante il tentativo di eseguire lo script: {0}
+Scrive il testo nella console
+Fa le scelte dell'utente
+Segnale acustico in 'n' Hz e tempo in 'n' millisecondi
+dove <$ variabile> è qualsiasi variabile che verrà utilizzata per memorizzare la risposta
+La frequenza deve essere numerica. Se è numerico, assicurarsi che sia> = 37 e <= 32767.
+Il tempo deve essere numerico.
+dove <risposte> sono le risposte di una lettera della domanda separate da barre
+Errore durante il tentativo di connessione al server SSH: {0}
+Consente all'utente di inserire input
+Cambia la directory di posta corrente
+Impossibile aprire la cartella di posta {0}: {1}
+Elenca le directory nel tuo indirizzo e-mail
+Utilizza le informazioni di Chiamata veloce per connettersi rapidamente a qualsiasi rete
+Seleziona un indirizzo a cui connetterti:
+La selezione è fuori portata. Selezionare tra 1- {0}. Riprova.
+La selezione non è un numero. Riprova.
+Durante la convalida del certificato, ci sono errori di certificato. Potrebbe essere la prima volta che ti connetti al server o il certificato potrebbe essere scaduto. Ecco un errore:
+Sei sicuro di voler connetterti?
+Risposta non valida Per favore riprova.
+La composizione rapida è vuota. Connettiti a un server per aggiungere un indirizzo ad esso.
+La composizione rapida non esiste. Connettiti a un server per aggiungere un indirizzo ad esso.
+Immettere l'indirizzo e la porta del server IMAP (<indirizzo> o <indirizzo>: [porta]):
+Immettere l'indirizzo e la porta del server SMTP (<indirizzo> o <indirizzo>: [porta]):
+Ti chiede di compilare i campi richiesti per inviare un messaggio a un indirizzo
+Invia un messaggio a un indirizzo
+Inserisci l'indirizzo e-mail del destinatario:
+Inserisci l'oggetto:
+Inserisci il tuo messaggio qui sotto. Scrivi "EOF" per confermare.
+Invio messaggio in corso ...
+Messaggio inviato.
+Indirizzo email non valido. Assicurati di aver scritto correttamente l'indirizzo e che corrisponda al formato dell'esempio mostrato:
+Rimuove un messaggio
+Rimuove tutti i messaggi dal destinatario
+Messaggio {0} da {1} eliminato da {2}. {3} messaggi rimanenti da analizzare.
+Messaggio {0} da {1} eliminato dalla posta in arrivo. {2} messaggi rimanenti da analizzare.
+Modifica un file di testo
+Crea un nuovo file
+Il file esiste già.
+Errore durante il tentativo di creare un file: {0}
+Impossibile aprire il file. Uscita dalla shell ...
+Il comando dell'editor di testo specificato non è stato trovato.
+Elenca i comandi disponibili
+Esce dall'editor di testo e salva le modifiche non salvate
+Stampa il contenuto del file con i numeri di riga sulla console
+Aggiunge una nuova riga con testo alla fine del file
+Rimuove il numero di riga specificato
+Sostituisce una parola o una frase con un'altra
+Elimina una parola o una frase dal numero di riga
+Elimina un carattere dal numero di carattere nella riga specificata
+Linea rimossa.
+Il numero di riga specificato {0} non è un numero valido.
+Gli argomenti richiesti non vengono passati al comando {0}
+Errore durante il tentativo di eseguire il comando: {0}
+In esecuzione in modalità provvisoria. Saltare il palco ...
+>> Debug remoto e chat: versione
+>> Il tuo indirizzo è {0}.
+>> Il tuo nome è {0}.
+Comando {0} non trovato. Utilizzare "/help" per visualizzare l'elenco.
+Indice {0} non valido. Ci sono {1} tracce dello stack. L'indice è a base zero, quindi prova a sottrarre 1.
+Nessuna traccia dello stack
+Mostra l'ultima traccia dello stack su eccezione
+Mostra il nome utente corrente nella sessione
+Ti disconnette dal debugger
+Sblocca un dispositivo di debug in base all'indirizzo IP
+Blocca un dispositivo di debug per indirizzo IP
+{0} ora può ricollegarsi al debug remoto.
+{0} non è ancora bloccato.
+Errore durante il caricamento delle impostazioni
+Si è verificato un errore durante il caricamento delle impostazioni. Potrebbe essere necessario controllare il file delle impostazioni.
+Seleziona sezione:
+Impostazioni generali...
+Impostazioni hardware ...
+Impostazioni di accesso ...
+Impostazioni shell ...
+Impostazioni di rete...
+Impostazioni varie ...
+Salva le impostazioni
+Uscita
+L'opzione specificata {0} non è valida.
+La risposta deve essere numerica.
+Richiedi argomenti all'avvio
+Trigger della modalità di manutenzione
+Modifica password radice ...
+Verifica la disponibilità di aggiornamenti all'avvio
+Sonda silenziosa
+Mostra MOTD all'accesso
+Cancella schermo all'accesso
+Mostra i nomi utente disponibili
+Guscio colorato
+Comando di aiuto semplificato
+Porta di debug
+Scarica i tempi di riprova
+Accedi al nome utente FTP
+Registra indirizzo IP FTP
+Restituisce solo il primo profilo FTP
+Mostra ora / data nell'angolo superiore destro
+Timeout salvaschermo in ms
+Quota dimensione di debug in byte
+Modalità di analisi delle dimensioni
+Marquee all'avvio
+Tempo e data lunghi
+Mostra file nascosti
+Sezione non valida inserita. Per favore torna indietro.
+Torna indietro...
+Abilitare
+disattivare
+Numero di chiave inserito non valido. Per favore torna indietro.
+Scrivi la password di root da impostare. Non preoccuparti; le password vengono visualizzate come stelle.
+Abilita "Modifica password radice" per utilizzare questa opzione. Per favore torna indietro.
+Modificare la password di root?
+Imposta password root ...
+Scrivi una porta del debugger remoto. Deve essere numerico e non deve essere già utilizzato. In caso contrario, il debugger remoto non riuscirà ad aprire la porta.
+Scrivi quante volte il comando "" get "" deve ritentare i download non riusciti. Deve essere numerico.
+Scrivi quando avviare lo screensaver dopo i millisecondi specificati. Deve essere numerico.
+Scrivi quanti byte può memorizzare il log di debug. Deve essere numerico.
+La risposta potrebbe non essere negativa.
+La risposta non è valida. Verificare che la risposta sia numerica per le voci di configurazione che richiedono numeri come risposte.
+La variabile {0} non è stata trovata su nessuno dei moduli.
+Modifica la configurazione del kernel
+Impostazioni salvaschermo ...
+Attiva 255 colori
+Vuoi restare connesso?
+Scelta non valida. Supponendo no ...
+Cambia cultura quando si cambia lingua
+Testo mostrato
+Scrivi il testo che desideri venga mostrato. Più corto è meglio.
+Impossibile caricare {0}
+Errore durante l'esecuzione del comando di debug remoto {0}: {1}
+Aggiunge utenti
+Aggiunge alias ai comandi
+Inserisce argomenti nel kernel (riavvio richiesto)
+Modifica il nome host
+Cambia MAL, il MOTD dopo il login
+Cambia MOTD, il messaggio del giorno
+Modifica il nome utente
+Gestisci le autorizzazioni per gli utenti
+Ricarica il file del salvaschermo in KSMods
+Rimuove un utente dall'elenco
+Alias ​​rimosso {0} correttamente.
+Impossibile controllare gli aggiornamenti.
+Non ci sono più utenti rimasti nell'elenco.
+Impossibile impostare la lingua.
+Errore durante il tentativo di ignorare la notifica.
+usrmgr: impossibile creare il nome utente {0}: {1}
+Impossibile rinominare l'utente. {0}
+Uno degli elenchi di autorizzazioni non contiene il nome utente {0}.
+Impossibile caricare le autorizzazioni dal file: {0}
+Impossibile modificare il nome host: {0}
+Utente non trovato
+Impossibile modificare la password del nome utente: {0}
+Impossibile copiare il file o la directory: {0}
+Impossibile spostare il file o la directory: {0}
+Impossibile trovare il file che corrisponda alla stringa "{0}": {1}
+Download non riuscito per il file {0}.
+Impossibile elencare i file remoti: {0}
+Immettere un file o una cartella da rimuovere. Devi disporre delle autorizzazioni amministrative per il tuo account per poterlo rimuovere.
+Sei sicuro di voler eliminare {0} <y / n>?
+Eliminazione di {0} in corso ...
+{0} non è stato trovato nel server.
+Tutta la posta inviata da {0} viene rimossa correttamente.
+Impossibile rimuovere tutta la posta inviata da {0}.
+Errore durante l'invio del messaggio.
+Spostamento di {0} in {1} ...
+Spostato con successo
+Sposta il file o la directory in un altro file o directory. Puoi anche usarlo per rinominare i file.
+Impossibile spostare {0} in {1}.
+Immettere un percorso di origine e un percorso di destinazione.
+Copia di {0} in {1} ...
+Copiato con successo
+Copia il file o la directory in un altro file o directory.
+Impossibile copiare {0} in {1}.
+Sposta un messaggio
+Sposta tutti i messaggi dal destinatario
+Tutta la posta creata da {0} viene spostata correttamente.
+Impossibile spostare tutta la posta inviata da {0}.
+Messaggio {0} da {1} spostato da {2}. {3} messaggi rimanenti da analizzare.
+Mostra le informazioni meteo per la città specificata. Utilizza OpenWeatherMap.
+- Informazioni meteo per {0} -
+Meteo: {0}
+Pressione: {0}
+Umidità: {0}
+Puoi ottenere la tua chiave API su https://home.openweathermap.org/api_keys.
+Puoi sempre consultare http://bulk.openweathermap.org/sample/city.list.json.gz per l'elenco delle città con i loro ID.
+Unità preferita per la temperatura
+Kelvin
+Imperiale (Fahrenheit)
+Metrico (Celsius)
+Imposta il kernel in modo che richieda un argomento all'avvio.
+Attiva la modalità di manutenzione. Questo disabilita più account.
+Ad ogni avvio, verificherà la presenza di aggiornamenti.
+Quando si cambia lingua, modificare i nomi dei mesi, il calendario, ecc.
+Se il kernel viene avviato, imposterà la password di root.
+Mantieni silenziosi i messaggi di verifica hardware.
+Mostra il messaggio del giorno prima di visualizzare la schermata di accesso.
+Cancella lo schermo prima di visualizzare la schermata di accesso.
+Mostra gli utenti disponibili se abilitati.
+Fornisce il supporto per il colore del kernel
+Comando di aiuto semplificato per tutte le shell
+Se registrare o meno il nome utente FTP.
+Se registrare o meno l'indirizzo IP FTP.
+Scegli il primo profilo solo durante la connessione.
+Attiva il supporto di 255 colori per ColorMix.
+Attiva il supporto di 255 colori per Disco.
+Attiva il supporto di 255 colori per GlitterColor.
+Attiva il supporto di 255 colori per le linee.
+L'ora e la data verranno visualizzate nell'angolo in alto a destra dello schermo
+Se abilitato, il kernel analizzerà l'intera cartella per la sua dimensione totale. Altrimenti, analizzerà solo la superficie.
+Abilita eyecandy all'avvio
+L'ora e la data saranno più lunghe, mostrando i nomi completi dei mesi, ecc.
+Mostra i file nascosti.
+Seleziona la tua unità preferita per la temperatura (questo vale solo per il comando "meteo")
+Mod {0} interrotto
+{0} v {1} interrotto
+La mod {0} non ha il nome della parte. Analisi mod non riuscita. Rivedi il codice sorgente.
+Il mod {0} non ha il comando. Analisi mod non riuscita. Rivedi il codice sorgente.
+È necessario attivare la modalità di debug prima di poter cancellare il registro di debug.
+{0} nuovi messaggi sono arrivati ​​nella Posta in arrivo.
+Apri "lsmail" per vederli.
+Impossibile rimuovere il file: {0}
+Rimuove una directory o un file
+Impossibile rimuovere {0} perché non esiste.
+Premere CTRL + C per uscire.
+Fornisce informazioni su un file
+Fornisce informazioni su una directory
+Impossibile ottenere informazioni su una directory inesistente.
+Impossibile ottenere informazioni su file inesistenti.
+Nome completo: {0}
+Ora di creazione: {0}
+Ora dell'ultimo accesso: {0}
+Ora ultima scrittura: {0}
+Attributi: {0}
+Directory principale: {0}
+Dove trovarlo: {0}
+Dimensioni file: {0}
+Modifica l'attributo di un file
+File non trovato.
+dove <attributes> è uno dei seguenti:
+Il file è un file normale
+Il file è un file di sola lettura
+Il file è un file nascosto
+Il file è un archivio. Utilizzato per i backup.
+L'attributo "{0}" non è valido.
+L'attributo è stato aggiunto con successo.
+L'attributo è stato rimosso con successo.
+Impossibile aggiungere l'attributo.
+Impossibile rimuovere l'attributo.
+Sostituisce una parola o una frase con un'altra in una riga
+Livello di colore rosso superato. Era {0}.
+Livello di colore verde superato. Era {0}.
+Livello di colore blu superato. Era {0}.
+Attiva i veri colori
+Attiva il supporto True Color per ColorMix.
+Attiva il supporto true color per Disco.
+Attiva il supporto True Color per GlitterColor.
+Attiva il supporto per i colori reali per le linee.
+Impossibile sbloccare {0}.
+{0} è già bloccato.
+{0} non può partecipare al debug remoto ora.
+Impossibile bloccare {0}.
+Colori del ciclo
+Disco farà scorrere i colori quando abilitato. Altrimenti, seleziona colori casuali.
+Immettere i percorsi dei file per gli allegati. Premere INVIO su un percorso vuoto per confermare.
+Apre un messaggio crittografato
+Scrivi la password per l'ID chiave {0}
+Invia un messaggio crittografato a un indirizzo
+Ti chiede di compilare i campi obbligatori per inviare un messaggio crittografato a un indirizzo
+Download da {0} ...
+Mostra la barra di avanzamento durante il download o il caricamento dal comando "get" o "put"
+Se è vero, "get" o "put" mostra la barra di avanzamento durante il download o il caricamento.
+Carica un file sul sito web specificato
+Ping un indirizzo
+Caricamento di {0} su {1} ...
+Il caricamento è stato completato.
+Usa "ftp" se intendi caricare file sul server FTP.
+Caricamento non riuscito durante la prova {0}: {1}
+Scrivi quante volte il comando "put" deve ritentare i caricamenti non riusciti. Deve essere numerico.
+L'indirizzo non può essere vuoto.
+Impossibile eseguire il ping {0}: {1}
+Ping riuscito in {0} ms.
+Il numero di riga specificato non può essere maggiore dell'ultimo numero di riga del file.
+Sembra: {0}
+Temperatura: {0}
+Velocità del vento: {0}
+Direzione del vento: {0}
+Attiva il supporto di 255 colori per Dissolve.
+Attiva il supporto True Color per Dissolve.
+Premere un tasto qualsiasi per tornare indietro.
+Impossibile creare la cartella di posta {0}: {1}
+Crea una directory nella directory di lavoro corrente
+Rimuove una directory dalla directory di lavoro corrente
+Cartella di posta {0} non trovata.
+Impossibile eliminare la cartella di posta {0}: {1}
+{0}, creato in {1} {2}, modificato in {3} {4}
+Verifica la sanità mentale del file
+Gli hash non sono corretti.
+Gli hash non corrispondono.
+Corrispondenza hash.
+Rinomina una cartella
+Questa sezione elenca tutte le impostazioni generali del kernel, principalmente per la manutenzione del kernel.
+Questa sezione modifica il comportamento del probe hardware.
+Questa sezione rappresenta le impostazioni di accesso. Esci dal tuo account per rendere effettive le modifiche.
+Questa sezione elenca le impostazioni della shell.
+Questa sezione elenca le impostazioni di rete, come la shell FTP, le impostazioni dei comandi relativi alla rete e le impostazioni di debug remoto.
+Questa sezione elenca tutti gli screensaver e le loro impostazioni disponibili.
+Le impostazioni che non rientrano nelle sezioni appropriate atterrano qui.
+Verifica le mod fornendo file mod
+Apre una shell di prova
+Abilita la modalità di debug
+Richiede argomenti
+* Premere un tasto qualsiasi per avviare il kernel o ESC per uscire.
+Impossibile avviare "{0}": {1}
+Mostra l'anteprima del messaggio di posta
+Quando si elencano i messaggi di posta, mostra l'anteprima del corpo.
+Colori personalizzati ...
+Colore di input
+Colore della licenza
+Colore errore kernel continuativo
+Colore di errore del kernel irreversibile
+Colore del nome host
+Colore nome utente
+Colore di sfondo
+Colore del testo neutro
+Colore del palco
+Colore errore
+Stile prompt FTP
+Stile messaggio di posta
+Stile prompt SFTP
+Attiva il supporto di 255 colori per BouncingBlock.
+Attiva il supporto true color per BouncingBlock.
+Tentativo di accesso a un percorso non valido.
+Cancella il file di testo
+Esce dall'editor di testo
+Interroga un carattere in una riga specificata o in tutte le righe
+Il controllo degli aggiornamenti è disabilitato perché stai eseguendo una versione di sviluppo.
+Attiva o disattiva la funzione di salvataggio automatico dell'editor di testo.
+Se il salvataggio automatico è abilitato, il file di testo verrà salvato per ogni "n" secondi.
+Abilita il salvataggio automatico dell'editor di testo
+Intervallo di salvataggio automatico dell'editor di testo
+Salva il file
+Registra la chat nel registro di debug
+Registra la chat di debug remota nel registro di debug.
+Ritardo in millisecondi
+Quanti millisecondi attendere prima di effettuare la successiva scrittura?
+Consente di utilizzare un server FTP SSH
+Nessun aiuto per il comando "{0}".
+Sequenza VT non valida per il colore RGB.
+Colore della barra dei secondi
+Colore della barra dei minuti
+Barra del colore delle ore
+Colore delle informazioni
+Spunta per cambiare colore
+Attiva il supporto di 255 colori per ProgressClock.
+Attiva il supporto del vero colore per ProgressClock.
+Il colore della barra di avanzamento dei secondi. Può essere 1-16, 1-255 o "1-255;1-255;1-255".
+Il colore della barra di avanzamento dei minuti. Può essere 1-16, 1-255 o "1-255;1-255;1-255".
+Il colore della barra di avanzamento delle ore. Può essere 1-16, 1-255 o "1-255;1-255;1-255".
+Il colore delle informazioni sulla data. Può essere 1-16, 1-255 o "1-255;1-255;1-255".
+Se il ciclo dei colori è abilitato, quanti tick prima di cambiare i colori in ProgressClock? 1 segno di spunta = 0,5 secondi
+ProgressClock selezionerà colori casuali se è abilitato. Altrimenti, usa i colori di config.
+Crea un nuovo tema
+Creare un nuovo tema "{0}".
+Salva tema nella directory corrente
+Salva tema in un'altra directory...
+Selezionare il colore utilizzando i tasti "<-" e "->". Premere INVIO per uscire. Premere "i" per inserire manualmente il numero del colore.
+Selezionare il colore utilizzando i tasti "<-" e "->". Utilizzare i tasti freccia su e freccia giù per selezionare tra le gamme di colori. Premere INVIO per uscire. Premere "i" per inserire manualmente il numero del colore.
+Benvenuto nel kernel! - Versione {0}
+Colore di avviso
+Colore opzione
+Inserisci il numero del colore da 0 a 255:
+Utilizzare "hwinfo" per informazioni estese sull'hardware.
+Stampa le informazioni sull'hardware
+Informazioni sulla CPU:
+Nome del processore:
+Velocità del processore:
+Bit del processore:
+Giri del processore:
+Topologia del processore:
+Tipo di processore:
+Pietra miliare del processore:
+Processore BogoMips:
+Dimensione cache L2 del processore:
+Dimensione cache L3 del processore:
+Caratteristiche del processore:
+Informazioni sull'HDD:
+Nome dell'unità:
+Modello di guida:
+Fornitore di unità:
+Velocità di guida:
+Dimensione dell'unità:
+Seriale unità:
+ID unità:
+Conteggio delle partizioni dell'unità:
+ID partizione:
+File system della partizione:
+Dimensione della partizione:
+Partizione utilizzata:
+Informazioni sulla RAM:
+RAM libera:
+RAM totale:
+RAM utilizzata:
+Informazioni sulla GPU:
+Nome GPU:
+Driver GPU:
+Versione GPU:
+GPU: impossibile rilevare una o più schede grafiche. Visualizzazione delle informazioni comunque...
+>> Benvenuto! Questa è la prima volta che accedi al debug e alla chat remoti. Usa "/register <name>" per registrarti.
+Il dispositivo esiste già.
+Nessun apparecchio di questo tipo.
+Imposta il nome utente del dispositivo
+Sei già registrato.
+Ciao, {0}!
+Stampa il contenuto del file sulla console
+Oppure passa "listcities" a questo comando.
+La voce esiste già.
+Avvolge l'output della console
+Il comando non è avvolgente. Questi comandi sono wrappabili:
+Estrae un archivio ZIP
+Crea un archivio ZIP
+Costruito in {0}
+Errore durante il download dei dati di debug
+Si è verificato un errore durante il download dei dati di debug. Controlla la tua connessione Internet.
+Impossibile finalizzare la mod {0}: {1}
+Elenca tutti gli eventi attivati
+Elenco corrente
+Imposta la directory corrente della shell. Scrivi un percorso assoluto per qualsiasi directory esistente.
+Risultati della lista a capo
+Avvolge gli output dell'elenco se sembra troppo lungo per la geometria della console corrente.
+Ping!
+{0} ti ha fatto un ping.
+Salva tema nella directory corrente come...
+Salva tema in un'altra directory come...
+Specifica il nome del tema:
+L'utente {0} è stato aggiunto all'elenco "{1}".
+L'utente {0} è stato rimosso dall'elenco "{1}".
+Modalità non valida {0}
+L'utente esiste già
+Carica tema da...
+Carica tema da temi predefiniti...
+Specifica il nome del file del tema senza l'estensione .json:
+Apre un archivio ZIP
+Esce dalla shell ZIP
+Elenca tutti i file all'interno dell'archivio
+Estrae un file in una directory specificata o in una directory corrente
+Cambia la directory dell'archivio
+Il comando ZIP shell specificato non è stato trovato.
+La directory {0} non esiste
+La directory di archivio {0} non esiste
+Numero massimo di posizioni
+Quante posizioni sono illuminate prima dell'oscuramento?
+Attiva il supporto di 255 colori per Lighter.
+Attiva il supporto del vero colore per Lighter.
+Colore voce elenco
+Colore valore elenco
+Si connette a un server SSH per eseguire un comando.
+Questa sezione elenca le impostazioni del salvaschermo per
+Identificatore di colore non valido. Assicurati che sia nel formato corretto, il che significa un numero compreso tra 0 e 255 se usi 255 colori o una sequenza VT se usi il colore vero come segue:
+Errore nella shell di prova: {0}
+Imposta una variabile su un valore in uno script
+Una richiesta di segnalazione di bug.
+Grazie per aver raccolto un biglietto per noi! Seleziona che tipo di richiesta hai.
+Un problema
+Una richiesta di funzionalità
+Una domanda
+Devi specificare una caratteristica.
+Fai una domanda, annota la tua idea o segnala un problema.
+Devi scrivere la tua richiesta.
+Si è verificato un errore nella shell FTP:
+Errore sconosciuto della shell FTP:
+Si è verificato un errore nella shell SFTP:
+Errore sconosciuto della shell SFTP:
+Mostra banner SSH
+Mostra il banner del server SSH alla connessione.
+Come vuoi autenticarti?
+File chiave privata
+Parola d'ordine
+Inserisci la passphrase per la chiave {0}:
+Inserisci la posizione della chiave privata per {0}. Scrivi "q" per completare l'aggiunta delle chiavi:
+Neutralizzato un percorso inesistente.
+Il file chiave {0} non esiste.
+Errore durante il tentativo di aggiungere la chiave privata:
+Premere "t" per passare alla modalità 255 colori.
+Premere "t" per passare alla modalità True Color.
+Questa sezione ti permette di scegliere quale tipo di colore vuoi cambiare.
+Sembra che tu non abbia utenti tranne root. Questo non va bene. Ti guideremo come crearne uno.
+Scrivi il tuo nome utente.
+Devi scrivere il tuo nome utente.
+Scrivi la tua password.
+Devi scrivere la tua password.
+Seleziona il tipo di conto.
+Amministratore: questo tipo di account ha la massima potenza nel kernel, consentendoti di utilizzare i programmi di gestione del sistema.
+Utente normale: questo tipo di account è leggermente più limitato rispetto agli amministratori.
+Congratulazioni! Hai creato un nuovo account! Per finire, accedi come il tuo nuovo account.
+Consultare il manuale del salvaschermo o il codice sorgente per informazioni.
+mod: nessuna mod rilevata.
+Comandi generali:
+Comandi mod:
+Comandi alias:
+Modalità di manutenzione
+Directory di ricerca
+Gruppo di percorsi separati dai due punti. Funziona come PATH. Scrivi un percorso completo di una cartella o il nome di una cartella. Quando hai finito, scrivi "q". Scrivi un segno meno accanto al percorso per rimuovere una directory esistente.
+Nessun comando mod.
+Nessun comando alias.
+Il valore del colore non è compreso nell'intervallo 0-255.
+Il comando wrappable non è stato trovato.
+Interroga una parola in una riga specificata o in tutte le righe
+{0} di {1} scaricati.
+{0} di {1} caricati.
+Stampa una stringa sulla console utilizzando il tipo di colore e la stampa della linea
+Stampa una stringa sulla console utilizzando il tipo di colore e la stampa a righe con supporto del formato
+Stampa una stringa sul debugger
+Stampa una stringa sul debugger con supporto del formato
+Verifica la funzionalità di errore del kernel
+Verifica la funzione di errore del kernel con il supporto del formato
+Verifica la traduzione di una stringa esistente nelle risorse in una lingua specifica
+Stampa una stringa su console e analizza i segnaposto trovati
+Verifica la funzione di espressione regolare
+Cifra una stringa usando
+Avvia tutte le mod
+Interrompe tutte le modifiche
+Abilita o disabilita il debug
+Abilita o disabilita il debug remoto
+Testa la sequenza VT per 255 colori
+Verifica la sequenza VT per il colore reale
+Invia una notifica per testare il ricevitore
+Prova la data di stampa utilizzando calendari diversi
+Elenca tutte le codepage supportate
+Quali variabili del compilatore sono abilitate nell'applicazione?
+Test che sollevano l'evento specifico
+Test che sondano l'hardware
+Testa il netturbino
+Esce dalla shell di test e avvia il kernel
+Esce dalla shell di test e chiude il kernel
+Salva la directory corrente nel file di configurazione del kernel
+Verifica il writer dell'elenco con la stringa e l'array di stringhe
+Verifica il writer dell'elenco con l'intero e l'array intero
+Verifica il writer dell'elenco con l'array char e char
+Elenco di stringhe normali:
+Elenco delle stringhe di array:
+Elenco di numeri interi normali:
+Elenco di interi array:
+Elenco di caratteri normale:
+Elenco dei caratteri dell'array:
+Abilita RPC
+Porta RPC
+Se abilitare o meno RPC.
+Scrivi una porta RPC. Deve essere numerico e non deve essere già utilizzato. In caso contrario, RPC non riuscirà ad aprire la porta.
+Non avvia RPC perché è disabilitato.
+Elenca le culture supportate
+Cerca la stringa specificata nel file fornito utilizzando le espressioni regolari
+Vedi se riesci a premere un tasto in tempo
+L'utente non ha fornito alcun input in modo tempestivo.
+Difficoltà non valida
+Carattere non premuto in tempo.
+Hai premuto il carattere giusto!
+Hai premuto il carattere sbagliato.
+Premere ESC per uscire.
+Ottiene le informazioni su data e ora
+Millisecondi:
+Secondi:
+Minuti:
+Ore:
+Giorni:
+Mesi:
+Anno:
+Giorno dell'anno:
+Giorno della settimana:
+Binario:
+Ora locale:
+Tempo universale:
+Tempo Unix:
+Impossibile analizzare le informazioni sulla data per
+Assicurati che il formato sia corretto.
+Data:
+Tempo:
+Imposta i permessi dei file. Questo è supportato solo su server FTP che eseguono Unix.
+Imposta il tipo per questa sessione
+È necessario connettersi al server prima di eseguire operazioni sul filesystem.
+Impossibile impostare le autorizzazioni di {0} su {1}.
+Permessi impostati con successo per il file
+Tipo di dati impostato su ASCII!
+Tipo di dati impostato su Binario!
+Tipo di dati non valido.
+Fai attenzione che la maggior parte dei file non verrà scaricata o caricata correttamente utilizzando questa modalità, quindi consigliamo vivamente di utilizzare la modalità binaria nella maggior parte delle situazioni.
+Tentativo di inviare un comando RPC mentre RPC non è stato avviato.
+Ritardo di dissolvenza in uscita in millisecondi
+Passi di dissolvenza massimi
+Quanti millisecondi aspettare prima di dissolvere il testo?
+Quanti passaggi di dissolvenza fare?
+Sonda completa
+Se true, verifica tutto l'hardware; altrimenti, esaminerà solo l'hardware necessario.
+Impossibile rimuovere lo screensaver {0} dalla configurazione.
+Ottiene impostazioni di risparmio personalizzate
+Imposta le impostazioni di risparmio personalizzate
+Impostazioni impostate correttamente per lo screensaver
+Impossibile impostare un'impostazione per il salvaschermo
+Questa sezione ti consente di gestire la creazione della password di root.
+Apre una shell RSS per leggere i feed
+Esce dalla shell RSS e torna al kernel
+Cambia il collegamento al feed
+Elenca tutti i feed
+Legge un feed in un browser web
+Impossibile trovare il comando shell RSS specificato.
+Feed RSS2 non valido.
+Feed RSS1 non valido.
+Feed Atom non valido.
+Inserisci l'URL di un feed RSS:
+Tipo di feed RSS non valido.
+Errore di shell sconosciuto:
+Ottiene le informazioni sull'articolo
+Il numero dell'articolo non può essere più grande degli articoli disponibili.
+Titolo:
+Collegamento:
+Ottiene le informazioni sul feed
+Descrizione:
+Tipo di alimentazione:
+Numero di articoli:
+L'articolo non ha un link!
+Impossibile creare un elenco di voci del filesystem per la directory
+Modalità di ordinamento del file system
+Direzione dell'ordinamento del file system
+Controlla come verranno ordinati i file.
+Controlla la direzione dell'ordinamento del filesystem, ascendente o discendente.
+Ordine ascendente
+Ordine decrescente
+Nome e cognome
+Dimensione del file
+Tempo di creazione
+Ora dell'ultima scrittura
+Ora dell'ultimo accesso
+Ritardo di scrittura di nuovo in millisecondi
+Quanti millisecondi aspettare prima di scrivere di nuovo il testo?
+Scrivi il testo che vuoi mostrare. Più a lungo è meglio.
+Velocità minima di scrittura in WPM
+Massima velocità di scrittura in WPM
+Probabilità di errore di battitura in percentuale
+Impossibile salvare la directory corrente: {0}
+Salviette per cambiare direzione
+Attiva il supporto di 255 colori per Wipe.
+Attiva il supporto del vero colore per Wipe.
+Quante passate da fare prima di cambiare direzione a caso?
+Fase finita tra
+Inizializzazione interna terminata tra
+File di riferimento {0} non trovato. Questa mod potrebbe non funzionare correttamente senza questo file.
+Modalità di avvio
+Ottiene informazioni sulla mod
+Nome del comando:
+Definizione del comando:
+Tipo di comando:
+Comando rigoroso?
+Versione mod:
+Modulo {0} non trovato.
+Cultura di
+Quale variante di {0} viene utilizzata per modificare i nomi dei mesi, il calendario e così via?
+L'editor di testo non ha ancora aperto un flusso di file.
+Stringa sostituita.
+Uno o entrambi i numeri non sono numerici.
+Parola eliminata.
+Personaggio cancellato.
+Impostazioni del file system...
+Questa sezione elenca le impostazioni del filesystem.
+Benvenuto in Impostazioni!
+Errore durante l'esecuzione del comando SSH
+Errore sulla shell SSH
+- Informazioni sull'app
+Attiva il supporto di 255 colori per BouncingText.
+Attiva il supporto del vero colore per BouncingText.
+Verifica il writer del dizionario con la stringa e l'array di stringhe
+Testa lo scrittore del dizionario con l'array char e char
+Testa lo scrittore del dizionario con l'intero e l'array intero
+Dizionario stringa normale:
+Dizionario delle stringhe di array:
+Dizionario intero normale:
+Dizionario intero array:
+Dizionario di caratteri normali:
+Dizionario dei caratteri di matrice:
+Benvenuto in Test Shell!
+Mostra i progressi sulle operazioni del filesystem file
+Mostra quale file viene elaborato durante le operazioni del filesystem
+dove sarà HardwareType
+Il tipo di hardware {0} non è stato verificato o non è valido.
+Il tipo di hardware {0} non è ancora stato verificato. Se sei sicuro che sia stato verificato, riavvia il kernel con il debug abilitato.
+Partizioni non analizzate nell'elenco.
+Modalità hacker
+Se abilitato, verrà abilitata la console verde.
+Stampa un separatore
+Stampa un separatore con supporto formato
+Stampa un separatore con supporto colore
+Stampa un separatore con supporto per colore e formato
+Sempre centrato
+Attiva il supporto di 255 colori per Marquee.
+Attiva il supporto del vero colore per Marquee.
+Scrivi il testo che vuoi mostrare.
+Se il testo mostrato sul riquadro di selezione è sempre centrato.
+'q' per uscire.
+Argomento {0} non trovato da iniettare.
+Argomento della riga di comando {0} non trovato.
+Cancella tutte le impostazioni
+Screensaver ha riscontrato un errore durante la visualizzazione: {0}. Premi qualsiasi tasto per uscire.
+Anteprima...
+Ecco come sarà il tuo tema:
+Comandi a capo:
+Il mod {0} ha un comando non valido. Analisi della mod non riuscita. Rivedere il codice sorgente.
+Parti del modulo:

@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports KS
+Imports Newtonsoft.Json.Linq
 
 <TestClass()> Public Class InitTest
 
@@ -27,7 +28,14 @@ Imports KS
     ''' <param name="Context">Test context</param>
     <AssemblyInitialize()> Public Shared Sub ReadyEverything(Context As TestContext)
         InitPaths()
-        CreateConfig(False)
+        If Not File.Exists(paths("Configuration")) Then
+            CreateConfig()
+        Else
+            If Not File.Exists(paths("Configuration") + ".old") Then File.Move(paths("Configuration"), paths("Configuration") + ".old")
+            CreateConfig()
+        End If
+        ConfigToken = JObject.Parse(File.ReadAllText(paths("Configuration")))
+        LoadUserToken()
     End Sub
 
     ''' <summary>
@@ -43,7 +51,10 @@ Imports KS
         If Directory.Exists(paths("Home") + "/NewDirectory") Then Directory.Delete(paths("Home") + "/NewDirectory", True)
         If Directory.Exists(paths("Home") + "/TestDir") Then Directory.Delete(paths("Home") + "/TestDir", True)
         If Directory.Exists(paths("Home") + "/TestDir2") Then Directory.Delete(paths("Home") + "/TestDir2", True)
-        CreateConfig(False)
+        If File.Exists(paths("Configuration") + ".old") Then
+            If File.Exists(paths("Configuration")) Then File.Delete(paths("Home") + "/KernelConfig.json")
+            File.Move(paths("Configuration") + ".old", paths("Configuration"))
+        End If
     End Sub
 
 End Class

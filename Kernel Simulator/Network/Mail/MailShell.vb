@@ -21,11 +21,26 @@ Imports MailKit
 Imports MailKit.Net.Imap
 Imports MailKit.Search
 
-Module MailShell
+Public Module MailShell
 
     'Variables
-    Public Mail_AvailableCommands() As String = {"help", "cd", "lsdirs", "exit", "list", "mkdir", "mv", "mvall", "read", "readenc", "ren", "rm", "rmall", "rmdir", "send", "sendenc"}
-    Public IMAP_Messages As IEnumerable(Of UniqueId)
+    Public ReadOnly MailCommands As New Dictionary(Of String, CommandInfo) From {{"cd", New CommandInfo("cd", ShellCommandType.MailShell, DoTranslation("Changes current mail directory"), True, 1)},
+                                                                                 {"exit", New CommandInfo("exit", ShellCommandType.MailShell, DoTranslation("Exits the IMAP shell"), False, 0)},
+                                                                                 {"help", New CommandInfo("help", ShellCommandType.MailShell, DoTranslation("List of commands"), False, 0)},
+                                                                                 {"lsdirs", New CommandInfo("lsdirs", ShellCommandType.MailShell, DoTranslation("Lists directories in your mail address"), False, 0)},
+                                                                                 {"list", New CommandInfo("list", ShellCommandType.MailShell, DoTranslation("Downloads messages and lists them"), False, 0)},
+                                                                                 {"mkdir", New CommandInfo("mkdir", ShellCommandType.MailShell, DoTranslation("Makes a directory in the current working directory"), True, 1)},
+                                                                                 {"mv", New CommandInfo("mv", ShellCommandType.MailShell, DoTranslation("Moves a message"), True, 2)},
+                                                                                 {"mvall", New CommandInfo("mvall", ShellCommandType.MailShell, DoTranslation("Moves all messages from recipient"), True, 2)},
+                                                                                 {"read", New CommandInfo("read", ShellCommandType.MailShell, DoTranslation("Opens a message"), True, 1)},
+                                                                                 {"readenc", New CommandInfo("readenc", ShellCommandType.MailShell, DoTranslation("Opens an encrypted message"), True, 1)},
+                                                                                 {"ren", New CommandInfo("ren", ShellCommandType.MailShell, DoTranslation("Renames a folder"), True, 2)},
+                                                                                 {"rm", New CommandInfo("rm", ShellCommandType.MailShell, DoTranslation("Removes a message"), True, 1)},
+                                                                                 {"rmall", New CommandInfo("rmall", ShellCommandType.MailShell, DoTranslation("Removes all messages from recipient"), True, 1)},
+                                                                                 {"rmdir", New CommandInfo("rmdir", ShellCommandType.MailShell, DoTranslation("Removes a directory from the current working directory"), True, 1)},
+                                                                                 {"send", New CommandInfo("send", ShellCommandType.MailShell, DoTranslation("Sends a message to an address"), False, 0)},
+                                                                                 {"sendenc", New CommandInfo("sendenc", ShellCommandType.MailShell, DoTranslation("Sends an encrypted message to an address"), False, 0)}}
+    Friend IMAP_Messages As IEnumerable(Of UniqueId)
     Public IMAP_CurrentDirectory As String = "Inbox"
     Friend ExitRequested, KeepAlive As Boolean
     Public MailModCommands As New ArrayList
@@ -35,12 +50,12 @@ Module MailShell
     ''' Initializes the shell of the mail client
     ''' </summary>
     ''' <param name="Address">An e-mail address or username. This is used to show address in command input.</param>
-    Sub OpenShell(Address As String)
+    Sub OpenMailShell(Address As String)
         'Send ping to keep the connection alive
-        Dim IMAP_NoOp As New Thread(AddressOf IMAPKeepConnection)
+        Dim IMAP_NoOp As New Thread(AddressOf IMAPKeepConnection) With {.Name = "IMAP Keep Connection"}
         IMAP_NoOp.Start()
         Wdbg("I", "Made new thread about IMAPKeepConnection()")
-        Dim SMTP_NoOp As New Thread(AddressOf SMTPKeepConnection)
+        Dim SMTP_NoOp As New Thread(AddressOf SMTPKeepConnection) With {.Name = "SMTP Keep Connection"}
         SMTP_NoOp.Start()
         Wdbg("I", "Made new thread about SMTPKeepConnection()")
 
@@ -55,7 +70,7 @@ Module MailShell
             InitializeHandlers()
 
             'Initialize prompt
-            If Not IsNothing(DefConsoleOut) Then
+            If DefConsoleOut IsNot Nothing Then
                 Console.SetOut(DefConsoleOut)
             End If
             Wdbg("I", "MailShellPromptStyle = {0}", MailShellPromptStyle)
@@ -71,7 +86,7 @@ Module MailShell
             'Listen for a command
             Dim cmd As String = Console.ReadLine
             Dim args As String = ""
-            If Not (cmd = Nothing Or cmd?.StartsWith(" ") = True) Then
+            If Not (cmd = Nothing Or cmd?.StartsWithAnyOf({" ", "#"}) = True) Then
                 Wdbg("I", "Original command: {0}", cmd)
                 If cmd.Contains(" ") And Not cmd.StartsWith(" ") Then
                     Wdbg("I", "Found arguments in command. Parsing...")
@@ -83,9 +98,9 @@ Module MailShell
 
                 'Execute a command
                 Wdbg("I", "Executing command...")
-                If Mail_AvailableCommands.Contains(cmd) Then
+                If MailCommands.ContainsKey(cmd) Then
                     Wdbg("I", "Command found.")
-                    MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand)
+                    MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand) With {.Name = "Mail Command Thread"}
                     MailStartCommandThread.Start({cmd, args})
                     MailStartCommandThread.Join()
                 ElseIf MailModCommands.Contains(cmd) Then
@@ -96,11 +111,10 @@ Module MailShell
                     ExecuteMailAlias(cmd + " " + args)
                 ElseIf Not cmd.StartsWith(" ") Then
                     Wdbg("E", "Command not found. Reopening shell...")
-                    W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands.", currentLang), True, ColTypes.Err, cmd)
+                    W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Error, cmd)
                 End If
                 EventManager.RaiseIMAPPostExecuteCommand(cmd + " " + args)
             Else
-                Console.WriteLine()
                 Thread.Sleep(30) 'This is to fix race condition between mail shell initialization and starting the event handler thread
             End If
         End While
@@ -189,8 +203,8 @@ Module MailShell
         Dim Folder As ImapFolder = Sender
         If Folder.Count > IMAP_Messages.Count Then
             Dim NewMessagesCount As Integer = Folder.Count - IMAP_Messages.Count
-            NotifySend(New Notification With {.Title = DoTranslation("{0} new messages arrived in inbox.", currentLang).FormatString(NewMessagesCount),
-                                              .Desc = DoTranslation("Open ""lsmail"" to see them.", currentLang),
+            NotifySend(New Notification With {.Title = DoTranslation("{0} new messages arrived in inbox.").FormatString(NewMessagesCount),
+                                              .Desc = DoTranslation("Open ""lsmail"" to see them."),
                                               .Priority = NotifPriority.Medium})
         End If
     End Sub
@@ -217,7 +231,7 @@ Module MailShell
         Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, MailShellAliases(FirstWordCmd))
         Wdbg("I", "Actual command: {0}", actualCmd)
-        MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand)
+        MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand) With {.Name = "Mail Command Thread"}
         MailStartCommandThread.Start({MailShellAliases(FirstWordCmd), actualCmd.Replace(MailShellAliases(FirstWordCmd), "")})
         MailStartCommandThread.Join()
     End Sub

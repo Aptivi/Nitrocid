@@ -17,11 +17,10 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.ComponentModel
-Imports System.Threading
 
-Module CustomDisplay
+Public Module CustomDisplay
 
-    Public WithEvents Custom As New BackgroundWorker
+    Public WithEvents Custom As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles custom screensaver code
@@ -31,29 +30,39 @@ Module CustomDisplay
         '                           Set colors, write welcome message, etc. with the exception of infinite loop and the effect code in preDisplay() sub
         '                           Recommended: Turn off console cursor, and clear the screen in preDisplay() sub.
         '                           Substitute: TextWriterColor.W() with System.Console.WriteLine() or System.Console.Write().
-        Console.CursorVisible = False
-        finalSaver.PreDisplay()
-        Do While True
-            If Not finalSaver.DelayForEachWrite = Nothing Then
-                Thread.Sleep(finalSaver.DelayForEachWrite)
-            End If
-            If Custom.CancellationPending = True Then
-                Wdbg("W", "Cancellation requested. Showing ending...")
-                finalSaver.PostDisplay()
-                Wdbg("W", "Cancellation is pending. Cleaning everything up...")
-                e.Cancel = True
-                Console.Clear()
-                Dim esc As Char = GetEsc()
-                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                LoadBack()
-                Console.CursorVisible = True
-                Wdbg("I", "All clean. Custom screensaver stopped.")
-                Exit Do
-            Else
-                finalSaver.ScrnSaver()
-            End If
-        Loop
+        Try
+            Console.CursorVisible = False
+            finalSaver.PreDisplay()
+            Do While True
+                If Not finalSaver.DelayForEachWrite = Nothing Then
+                    SleepNoBlock(finalSaver.DelayForEachWrite, Custom)
+                End If
+                If Custom.CancellationPending = True Then
+                    Wdbg("W", "Cancellation requested. Showing ending...")
+                    finalSaver.PostDisplay()
+                    Wdbg("W", "Cancellation is pending. Cleaning everything up...")
+                    e.Cancel = True
+                    SetInputColor()
+                    LoadBack()
+                    Console.CursorVisible = True
+                    Wdbg("I", "All clean. Custom screensaver stopped.")
+                    SaverAutoReset.Set()
+                    Exit Do
+                Else
+                    finalSaver.ScrnSaver()
+                End If
+            Loop
+        Catch ex As Exception
+            Wdbg("W", "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
+            WStkTrc(ex)
+            e.Cancel = True
+            SetInputColor()
+            LoadBack()
+            Console.CursorVisible = True
+            Wdbg("I", "All clean. Custom screensaver stopped.")
+            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
+            SaverAutoReset.Set()
+        End Try
     End Sub
 
 End Module

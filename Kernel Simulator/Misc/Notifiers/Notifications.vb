@@ -22,19 +22,37 @@ Public Module Notifications
 
     'Variables
     Public NotifRecents As New List(Of Notification)
-    Public NotifThread As New Thread(AddressOf NotifListen)
+    Public NotifThread As New Thread(AddressOf NotifListen) With {.Name = "Notification Thread"}
 
     ''' <summary>
     ''' Notification priority
     ''' </summary>
     Public Enum NotifPriority
+        ''' <summary>
+        ''' Low priority. One beep.
+        ''' </summary>
         Low = 1
+        ''' <summary>
+        ''' Medium priority. Two beeps.
+        ''' </summary>
         Medium = 2
+        ''' <summary>
+        ''' High priority. Three beeps.
+        ''' </summary>
         High = 3
     End Enum
 
+    ''' <summary>
+    ''' Notification type
+    ''' </summary>
     Public Enum NotifType
+        ''' <summary>
+        ''' Normal notification.
+        ''' </summary>
         Normal = 1
+        ''' <summary>
+        ''' A notification with the progress bar. Use if you're going to notify the user while your mod is doing something.
+        ''' </summary>
         Progress = 2
     End Enum
 
@@ -43,10 +61,25 @@ Public Module Notifications
     ''' </summary>
     Public Class Notification
         Private _Progress As Integer
+        ''' <summary>
+        ''' Notification title
+        ''' </summary>
         Property Title As String
+        ''' <summary>
+        ''' Notification description
+        ''' </summary>
         Property Desc As String
+        ''' <summary>
+        ''' Notification priority
+        ''' </summary>
         Property Priority As NotifPriority
+        ''' <summary>
+        ''' Notification type
+        ''' </summary>
         Property Type As NotifType
+        ''' <summary>
+        ''' Notification progress
+        ''' </summary>
         Property Progress As Integer
             Get
                 Return _Progress
@@ -61,6 +94,10 @@ Public Module Notifications
                 End If
             End Set
         End Property
+        ''' <summary>
+        ''' Whether the progress failed
+        ''' </summary>
+        ''' <returns></returns>
         Property ProgressFailed As Boolean
     End Class
 
@@ -73,6 +110,9 @@ Public Module Notifications
             Thread.Sleep(100)
             If NotifRecents.Count > OldNCount And Not InSaver Then
                 Wdbg("W", "Notification received! Recents count was {0}, Old count was {1}", NotifRecents.Count, OldNCount)
+                EventManager.RaiseNotificationReceived(NotifRecents(NotifRecents.Count - 1))
+
+                'Populate title and description
                 Dim Title, Desc As String
                 Dim TitleLengthToClear As Integer
                 Wdbg("I", "Title: {0}", NotifRecents(NotifRecents.Count - 1).Title)
@@ -82,29 +122,37 @@ Public Module Notifications
                 TitleLengthToClear = Title.Length
                 Wdbg("I", "Truncated title: {0}", Title)
                 Wdbg("I", "Truncated desc: {0}", Desc)
+                Wdbg("I", "Truncated title length: {0}", Title.Length)
+                Wdbg("I", "Truncated desc length: {0}", Desc.Length)
+
+                'Write notification to console
                 Wdbg("I", "Where to store: {0}, Title: {1}, Desc: {2}", Console.WindowWidth - 40, Console.WindowTop + 1, Console.WindowTop + 2)
-                WriteWhere(" ".Repeat(40), Console.WindowWidth - 40, Console.WindowTop, ColTypes.Neutral)
-                WriteWhere(Title + " ".Repeat(40 - Title.Length), Console.WindowWidth - 40, Console.WindowTop + 1, ColTypes.Neutral)
-                WriteWhere(Desc + " ".Repeat(40 - Desc.Length), Console.WindowWidth - 40, Console.WindowTop + 2, ColTypes.Neutral)
+                WriteWhere(" ".Repeat(40), Console.WindowWidth - 40, Console.WindowTop, True, ColTypes.Neutral)
+                WriteWhere(Title + " ".Repeat(40 - Title.Length), Console.WindowWidth - 40, Console.WindowTop + 1, True, ColTypes.Neutral)
+                WriteWhere(Desc + " ".Repeat(40 - Desc.Length), Console.WindowWidth - 40, Console.WindowTop + 2, True, ColTypes.Neutral)
+
+                'Beep according to priority
                 Wdbg("I", "Priority: {0}", NotifRecents(NotifRecents.Count - 1).Priority)
                 For i As Integer = 1 To NotifRecents(NotifRecents.Count - 1).Priority
                     Console.Beep()
                 Next
-                Wdbg("I", "Truncated title length: {0}", Title.Length)
-                Wdbg("I", "Truncated desc length: {0}", Desc.Length)
+
+                'Show progress
                 If NotifRecents(NotifRecents.Count - 1).Type = NotifType.Progress Then
                     Do Until NotifRecents(NotifRecents.Count - 1).Progress >= 100 Or NotifRecents(NotifRecents.Count - 1).ProgressFailed
                         Dim ProgressTitle As String = Title + " (" + CStr(NotifRecents(NotifRecents.Count - 1).Progress) + "%)"
                         Wdbg("I", "Where to store progress: {0}:{1}", Console.WindowWidth - 40, Console.WindowTop + 3)
                         Wdbg("I", "Progress: {0}", NotifRecents(NotifRecents.Count - 1).Progress)
-                        WriteWhere(" ".Repeat(40), Console.WindowWidth - 40, Console.WindowTop, ColTypes.Neutral)
-                        WriteWhere(ProgressTitle + " ".Repeat(40 - ProgressTitle.Length), Console.WindowWidth - 40, Console.WindowTop + 1, ColTypes.Neutral, NotifRecents(NotifRecents.Count - 1).Progress)
-                        WriteWhere(Desc + " ".Repeat(40 - Desc.Length), Console.WindowWidth - 40, Console.WindowTop + 2, ColTypes.Neutral)
-                        WriteWhere("*".Repeat(NotifRecents(NotifRecents.Count - 1).Progress * 100 / 100 * (38 / 100)), Console.WindowWidth - 40, Console.WindowTop + 3, ColTypes.Neutral)
+                        WriteWhere(" ".Repeat(40), Console.WindowWidth - 40, Console.WindowTop, True, ColTypes.Neutral)
+                        WriteWhere(ProgressTitle + " ".Repeat(40 - ProgressTitle.Length), Console.WindowWidth - 40, Console.WindowTop + 1, True, ColTypes.Neutral, NotifRecents(NotifRecents.Count - 1).Progress)
+                        WriteWhere(Desc + " ".Repeat(40 - Desc.Length), Console.WindowWidth - 40, Console.WindowTop + 2, True, ColTypes.Neutral)
+                        WriteWhere("*".Repeat(NotifRecents(NotifRecents.Count - 1).Progress * 100 / 100 * (38 / 100)), Console.WindowWidth - 40, Console.WindowTop + 3, True, ColTypes.Neutral)
                         TitleLengthToClear = ProgressTitle.Length
                         Thread.Sleep(1)
                     Loop
                 End If
+
+                'Clear the area
                 NotifClearArea(TitleLengthToClear, Desc.Length, Console.WindowWidth - 40, Console.WindowTop + 1, Console.WindowTop + 2, Console.WindowTop + 3)
             End If
             OldNCount = NotifRecents.Count
@@ -121,12 +169,12 @@ Public Module Notifications
     ''' <param name="TopDesc">Vertical location of description</param>
     Private Sub NotifClearArea(ByVal LenTitle As Integer, ByVal LenDesc As Integer, ByVal Width As Integer, ByVal TopTitle As Integer, ByVal TopDesc As Integer, ByVal TopProg As Integer)
         Thread.Sleep(5000)
-        WriteWhere(" ".Repeat(LenTitle), Console.WindowWidth - 40, Console.WindowTop + 1, ColTypes.Neutral)
-        WriteWhere(" ".Repeat(LenTitle), Width, TopTitle, ColTypes.Neutral)
-        WriteWhere(" ".Repeat(LenDesc), Console.WindowWidth - 40, Console.WindowTop + 2, ColTypes.Neutral)
-        WriteWhere(" ".Repeat(LenDesc), Width, TopDesc, ColTypes.Neutral)
-        WriteWhere(" ".Repeat(40), Console.WindowWidth - 40, Console.WindowTop + 3, ColTypes.Neutral)
-        WriteWhere(" ".Repeat(40), Width, TopProg, ColTypes.Neutral)
+        WriteWhere(" ".Repeat(LenTitle), Console.WindowWidth - 40, Console.WindowTop + 1, True, ColTypes.Neutral)
+        WriteWhere(" ".Repeat(LenTitle), Width, TopTitle, True, ColTypes.Neutral)
+        WriteWhere(" ".Repeat(LenDesc), Console.WindowWidth - 40, Console.WindowTop + 2, True, ColTypes.Neutral)
+        WriteWhere(" ".Repeat(LenDesc), Width, TopDesc, True, ColTypes.Neutral)
+        WriteWhere(" ".Repeat(40), Console.WindowWidth - 40, Console.WindowTop + 3, True, ColTypes.Neutral)
+        WriteWhere(" ".Repeat(40), Width, TopProg, True, ColTypes.Neutral)
     End Sub
 
     ''' <summary>
@@ -146,7 +194,10 @@ Public Module Notifications
     ''' <param name="notif">Instance of notification holder</param>
     Public Sub NotifySend(ByVal notif As Notification)
         Wdbg("I", "List contains this notification? {0}", NotifRecents.Contains(notif))
-        If Not NotifRecents.Contains(notif) Then NotifRecents.Add(notif)
+        If Not NotifRecents.Contains(notif) Then
+            NotifRecents.Add(notif)
+            EventManager.RaiseNotificationSent(notif)
+        End If
     End Sub
 
     ''' <summary>
@@ -157,6 +208,7 @@ Public Module Notifications
         Try
             NotifRecents.RemoveAt(ind)
             Wdbg("I", "Removed index {0} from notification list", ind)
+            EventManager.RaiseNotificationDismissed()
             Return True
         Catch ex As Exception
             Wdbg("E", "Error trying to dismiss notification: {0}", ex.Message)

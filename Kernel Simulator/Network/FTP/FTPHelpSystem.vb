@@ -26,22 +26,24 @@ Public Module FTPHelpSystem
     ''' Updates the help definition so it reflects the available commands
     ''' </summary>
     Public Sub InitFTPHelp()
-        FTPDefinitions = New Dictionary(Of String, String) From {{"currlocaldir (pwdl)", DoTranslation("Gets current local directory", currentLang)},
-                                                                 {"currremotedir (pwdr)", DoTranslation("Gets current remote directory", currentLang)},
-                                                                 {"connect", DoTranslation("Connects to an FTP server (it must start with ""ftp://"" or ""ftps://"")", currentLang)},
-                                                                 {"changelocaldir (cdl)", DoTranslation("Changes local directory to download to or upload from", currentLang)},
-                                                                 {"changeremotedir (cdr)", DoTranslation("Changes remote directory to download from or upload to", currentLang)},
-                                                                 {"copy (cp)", DoTranslation("Copies file or directory to another file or directory.", currentLang)},
-                                                                 {"delete (del)", DoTranslation("Deletes remote file from server", currentLang)},
-                                                                 {"disconnect", DoTranslation("Disconnects from server", currentLang)},
-                                                                 {"download (get)", DoTranslation("Downloads remote file to local directory using binary or text", currentLang)},
-                                                                 {"exit", DoTranslation("Exits FTP shell and returns to kernel", currentLang)},
-                                                                 {"help", DoTranslation("Shows help screen", currentLang)},
-                                                                 {"listlocal (lsl)", DoTranslation("Lists local directory", currentLang)},
-                                                                 {"listremote (lsr)", DoTranslation("Lists remote directory", currentLang)},
-                                                                 {"move (mv)", DoTranslation("Moves file or directory to another file or directory. You can also use that to rename files.", currentLang)},
-                                                                 {"quickconnect", DoTranslation("Uses information from Speed Dial to connect to any network quickly", currentLang)},
-                                                                 {"upload (put)", DoTranslation("Uploads local file to remote directory using binary or text", currentLang)}}
+        FTPDefinitions = New Dictionary(Of String, String) From {{"connect", DoTranslation("Connects to an FTP server (it must start with ""ftp://"" or ""ftps://"")")},
+                                                                 {"cdl", DoTranslation("Changes local directory to download to or upload from")},
+                                                                 {"cdr", DoTranslation("Changes remote directory to download from or upload to")},
+                                                                 {"cp", DoTranslation("Copies file or directory to another file or directory.")},
+                                                                 {"del", DoTranslation("Deletes remote file from server")},
+                                                                 {"disconnect", DoTranslation("Disconnects from server")},
+                                                                 {"get", DoTranslation("Downloads remote file to local directory using binary or text")},
+                                                                 {"exit", DoTranslation("Exits FTP shell and returns to kernel")},
+                                                                 {"help", DoTranslation("Shows help screen")},
+                                                                 {"lsl", DoTranslation("Lists local directory")},
+                                                                 {"lsr", DoTranslation("Lists remote directory")},
+                                                                 {"mv", DoTranslation("Moves file or directory to another file or directory. You can also use that to rename files.")},
+                                                                 {"perm", DoTranslation("Sets file permissions. This is supported only on FTP servers that run Unix.")},
+                                                                 {"quickconnect", DoTranslation("Uses information from Speed Dial to connect to any network quickly")},
+                                                                 {"put", DoTranslation("Uploads local file to remote directory using binary or text")},
+                                                                 {"pwdl", DoTranslation("Gets current local directory")},
+                                                                 {"pwdr", DoTranslation("Gets current remote directory")},
+                                                                 {"type", DoTranslation("Sets the type for this session")}}
     End Sub
 
     ''' <summary>
@@ -52,43 +54,63 @@ Public Module FTPHelpSystem
 
         If command = "" Then
             If simHelp = False Then
+                W(DoTranslation("General commands:"), True, ColTypes.Neutral)
                 For Each cmd As String In FTPDefinitions.Keys
-                    W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, FTPDefinitions(cmd))
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, FTPDefinitions(cmd))
                 Next
+                W(vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.Neutral)
+                If FTPModDefs.Count = 0 Then W(DoTranslation("No mod commands."), True, ColTypes.Neutral)
                 For Each cmd As String In FTPModDefs.Keys
-                    W("- {0}: ", False, ColTypes.HelpCmd, cmd) : W("{0}", True, ColTypes.HelpDef, FTPModDefs(cmd))
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, FTPModDefs(cmd))
+                Next
+                W(vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.Neutral)
+                If FTPShellAliases.Count = 0 Then W(DoTranslation("No alias commands."), True, ColTypes.Neutral)
+                For Each cmd As String In FTPShellAliases.Keys
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, FTPDefinitions(FTPShellAliases(cmd)))
                 Next
             Else
-                W(String.Join(", ", availftpcmds), True, ColTypes.Neutral)
+                For Each cmd As String In FTPCommands.Keys
+                    W("{0}, ", False, ColTypes.ListEntry, cmd)
+                Next
+                For Each cmd As String In FTPModDefs.Keys
+                    W("{0}, ", False, ColTypes.ListEntry, cmd)
+                Next
+                W(String.Join(", ", FTPShellAliases.Keys), True, ColTypes.ListEntry)
             End If
-        ElseIf command = ("currlocaldir" Or "pwdl") Then
-            W(DoTranslation("Usage:", currentLang) + " currlocaldir or pwdl", True, ColTypes.Neutral)
-        ElseIf command = ("currremotedir" Or "pwdr") Then
-            W(DoTranslation("Usage:", currentLang) + " currremotedir or pwdr", True, ColTypes.Neutral)
+        ElseIf command = "pwdl" Then
+            W(DoTranslation("Usage:") + " currlocaldir or pwdl", True, ColTypes.Neutral)
+        ElseIf command = "pwdr" Then
+            W(DoTranslation("Usage:") + " currremotedir or pwdr", True, ColTypes.Neutral)
         ElseIf command = "connect" Then
-            W(DoTranslation("Usage:", currentLang) + " connect <server>", True, ColTypes.Neutral)
-        ElseIf command = ("changelocaldir" Or "cdl") Then
-            W(DoTranslation("Usage:", currentLang) + " changelocaldir <directory> or cdl <directory>", True, ColTypes.Neutral)
-        ElseIf command = ("changeremotedir" Or "cdr") Then
-            W(DoTranslation("Usage:", currentLang) + " changeremotedir <directory> or cdr <directory>", True, ColTypes.Neutral)
-        ElseIf command = ("copy" Or "cp") Then
-            W(DoTranslation("Usage:", currentLang) + " copy <sourcefileordir> <targetfileordir> or cp <sourcefileordir> <targetfileordir>", True, ColTypes.Neutral)
-        ElseIf command = ("delete" Or "del") Then
-            W(DoTranslation("Usage:", currentLang) + " delete <file> or del <file>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " connect <server>", True, ColTypes.Neutral)
+        ElseIf command = "cdl" Then
+            W(DoTranslation("Usage:") + " cdl <directory>", True, ColTypes.Neutral)
+        ElseIf command = "cdr" Then
+            W(DoTranslation("Usage:") + " cdr <directory>", True, ColTypes.Neutral)
+        ElseIf command = "cp" Then
+            W(DoTranslation("Usage:") + " cp <sourcefileordir> <targetfileordir>", True, ColTypes.Neutral)
+        ElseIf command = "del" Then
+            W(DoTranslation("Usage:") + " del <file>", True, ColTypes.Neutral)
         ElseIf command = "disconnect" Then
-            W(DoTranslation("Usage:", currentLang) + " disconnect", True, ColTypes.Neutral)
-        ElseIf command = ("download" Or "get") Then
-            W(DoTranslation("Usage:", currentLang) + " download <file> or get <file>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " disconnect", True, ColTypes.Neutral)
+        ElseIf command = "get" Then
+            W(DoTranslation("Usage:") + " get <file>", True, ColTypes.Neutral)
         ElseIf command = "exit" Then
-            W(DoTranslation("Usage:", currentLang) + " exit", True, ColTypes.Neutral)
-        ElseIf command = ("listlocal" Or "lsl") Then
-            W(DoTranslation("Usage:", currentLang) + " listlocal [dir] or lsl [dir]", True, ColTypes.Neutral)
-        ElseIf command = ("listremote" Or "ldr") Then
-            W(DoTranslation("Usage:", currentLang) + " listremote [dir] or lsr [dir]", True, ColTypes.Neutral)
-        ElseIf command = ("move" Or "mv") Then
-            W(DoTranslation("Usage:", currentLang) + " move <sourcefileordir> <targetfileordir> or ren <sourcefileordir> <targetfileordir>", True, ColTypes.Neutral)
-        ElseIf command = ("upload" Or "put") Then
-            W(DoTranslation("Usage:", currentLang) + " upload <file> or put <file>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " exit", True, ColTypes.Neutral)
+        ElseIf command = "lsl" Then
+            W(DoTranslation("Usage:") + " lsl [dir]", True, ColTypes.Neutral)
+        ElseIf command = "ldr" Then
+            W(DoTranslation("Usage:") + " lsr [dir]", True, ColTypes.Neutral)
+        ElseIf command = "mv" Then
+            W(DoTranslation("Usage:") + " mv <sourcefileordir> <targetfileordir>", True, ColTypes.Neutral)
+        ElseIf command = "perm" Then
+            W(DoTranslation("Usage:") + " perm <file> <permnumber>", True, ColTypes.Neutral)
+        ElseIf command = "type" Then
+            W(DoTranslation("Usage:") + " type <a/b>", True, ColTypes.Neutral)
+        ElseIf command = "put" Then
+            W(DoTranslation("Usage:") + " put <file>", True, ColTypes.Neutral)
+        ElseIf command = "quickconnect" Then
+            W(DoTranslation("Usage:") + " quickconnect", True, ColTypes.Neutral)
         End If
 
     End Sub

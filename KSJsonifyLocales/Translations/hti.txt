@@ -1,0 +1,1099 @@
+Kòmandman ki disponib: {0}
+Ekri lòd:
+Piki lòd te anile.
+Agiman bòt separe ak vigil san espas, pou egzanp, 'motd, gpuprobe'
+Kòmandman apa sou 'cmdinject' ak kolon ak espas, pou egzanp, 'cmdinject setthemes Hacker : beep 1024 0.5'
+Remake byen ke agiman an 'debug' pa kouvri Kernel la konplètman.
+bargs: Yo pa jwenn agiman yo mande a {0}.
+bargs: Erè irevokabl nan agiman:
+Agiman ki disponib: {0}
+Agiman ('help' pou èd):
+Piki agiman yo pral pwograme yo kouri nan pwochen rdemare.
+Piki Agiman te anile.
+Erè pandan wap analize agiman liy kòmand reyèl la: {0}
+Modèl koulè ki pa valab {0}
+hwprobe: Materyèl ou pral sonde. Souple tann...
+CPU: Youn oswa plis nan am CPU yo echwe pou pou sonde. Montre enfòmasyon de tout fason ...
+RAM: Youn oswa plis nan bato yo RAM echwe pou pou sonde. Montre enfòmasyon de tout fason ...
+HDD: Youn oswa plis nan kondui yo difisil echwe pou pou sonde. Montre enfòmasyon de tout fason ...
+CPU: Total kantite processeurs: {0}
+Antre modpas admin pou antretyen.
+Kernel Erè pandan wap demare: {0}
+DOUBLE PANIK: Rdemare Tan depase maksimòm pèmèt {0} tan rdemare erè. Ou te jwenn yon ensèk Kernel.
+[{0}] panik: Rdemare pèmèt akòz nivo erè ke yo te {0}.
+[{0}] panik: Tan pou rdemare: {1} segonn, depase 1 èdtan. Li se mete nan 1 minit.
+DOUBLE PANIK: Kalite Erè {0} valab.
+[{0}] dpanic: {1} - Rdemare nan {2} segonn ...
+[{0}] panik: Rdemare enfim akòz nivo erè ke yo te {0}.
+[{0}] panik: {1} - Peze nenpòt kle pou kontinye itilize Kernel la.
+[{0}] panik: {1} - Peze nenpòt kle pou fèmen.
+[{0}] panike: {1} - Rdemare nan {2} segonn ...
+PANIK DOUBLE: pinèz Kernel: {0}
+Fèmen ...
+Rekòmanse ...
+Yon lòt egzanp nan Kernel similatè ap kouri. Fèmen nan ka ta gen entèferans.
+Echwe pou ajoute itilizatè nan lis pèmisyon: kalite envalab {0}
+Echwe pou ajoute itilizatè nan lis pèmisyon: itilizatè envalab {0}
+Echwe pou pou retire itilizatè nan lis pèmisyon: kalite envalab {0}
+Ou deja louvri sesyon an.
+Echwe pou retire itilizatè nan lis pèmisyon yo: itilizatè envalab {0}
+Ou te swa jwenn yon ensèk, oswa pèmisyon ou te eseye ajoute oswa retire deja fè, oswa lòt erè.
+Erè {0}: {1}
+Ou te swa jwenn yon ensèk, oswa pèmisyon ou te eseye modifye pou yon nouvo itilizatè echwe.
+Non itilizatè ki disponib: {0}
+Non itilizatè:
+Espas yo pa pèmèt.
+Karaktè espesyal yo pa gen dwa.
+Modpas {0} a:
+Mal modpas.
+Itilizatè a enfim.
+Non itilizatè mal.
+Erè ap eseye analize ranplasman. {0} - Stack tras:
+Erè ap eseye analize ranplasman. {0}
+Erè ap eseye ajoute non itilizatè.
+usrmgr: Kreye non itilizatè {0} ...
+Non itilizatè vid.
+Itilizatè {0} pa jwenn.
+Itilizatè {0} pa pèmèt yo retire li.
+Itilizatè {0} deja louvri sesyon an. Log-out epi ouvri sesyon an kòm yon lòt admin.
+Itilizatè {0} retire.
+Erè ap eseye retire non itilizatè.
+Ekran ki mande {0} la pa jwenn.
+{0} te inisyalize byen.
+{0} pa inisyalize. Ka kòd la ekran te gen eksperyans yon erè pandan y ap inisyalize.
+Ekran {0} pa egziste.
+{0} se mete ekran defo.
+Ekran {0} pa jwenn nan baz done. Tcheke non an epi eseye ankò.
+Ekran pa ka chaje paske nan bagay sa yo:
+Gen yon erè grav lè enprime tèks.
+Gen yon erè ap eseye kreye konfigirasyon.
+Erè ap eseye libere RAM: {0} - Kontinye ...
+Mod pa ka chaje paske nan bagay sa yo:
+mod: Loading mods ...
+mod: Sispann mods ...
+Mod {0} pa gen non an. Revize kòd sous la.
+Mod {0} pa gen vèsyon an.
+{0} v {1} te kòmanse
+Pa gen okenn definisyon pou lòd {0}.
+Kòmandman defini nan
+Ou ta dwe dekonekte soti nan sèvè anvan ou konekte nan yon lòt sèvè
+Non itilizatè pou {0}:
+Modpas pou {0}:
+Konekte ak {0}
+Erè lè w ap eseye konekte nan {0}: {1}
+Stack Trace: {2}
+Mete yon sèvè ftp.
+Anyè lokal {0} pa egziste.
+Antre nan yon anyè lokal yo. ".." pou tounen.
+Anyè {0} pa jwenn.
+Mete yon anyè aleka. ".." pou tounen
+Ou dwe konekte nan yon sèvè anvan ou chanje anyè
+Anyè lokal: {0}
+Anyè aleka: {0}
+Ou dwe konekte nan sèvè anvan ou resevwa aktyèl anyè aleka.
+Ou dwe konekte nan sèvè ak privilèj administratif anvan ou fè efase sipresyon an.
+Dekonekte de {0}
+Ou poko konekte ak okenn sèvè
+Telechaje dosye {0} ...
+Dosye telechaje {0}.
+Ou dwe konekte nan sèvè anvan ou fè transmisyon.
+Mete yon dosye pou telechaje nan anyè lokal la.
+{0} KB | Modifye nan: {1}
+Ou ta dwe konekte nan sèvè anvan lis tout dosye aleka.
+Téléchargez dosye {0} ...
+Uploaded dosye {0}
+Mete yon dosye pou telechaje nan anyè aleka. telechaje <fichye> <repètwa>
+(Inner:
+Jwenn aktyèl anyè lokal yo
+Jwenn aktyèl anyè aleka
+Konekte ak yon sèvè ftp (li dwe kòmanse ak "ftp://" oswa "ftps://")
+Chanje anyè lokal pou telechaje oswa telechaje nan
+Chanje anyè aleka telechaje nan oswa telechaje nan
+Efase dosye aleka nan sèvè
+Dekonekte de sèvè
+Downloads dosye aleka nan anyè lokal lè l sèvi avèk binè oswa tèks
+Sòti ftp kokiy epi retounen nan Kernel
+Montre ekran èd
+Lis anyè lokal yo
+Lis anyè aleka
+Uploads dosye lokal nan anyè aleka lè l sèvi avèk binè oswa tèks
+Mesaj ftp: yo pa jwenn kòmandman yo mande a {0}. Gade 'èd' pou yon lis ki disponib kòmandman espesifye sou koki ftp.
+Echwe pou pou jwenn pwopriyete pou adaptè {0}
+Nimewo adaptè:
+Non adaptè:
+Maksimòm Inite Transmisyon: {2} Inite
+DHCP pèmèt:
+Pake ki pa Peye-unicast:
+Pake Unicast:
+Erè pake fèk ap rantre / sortan:
+Alias ​​pa ka menm non ak yon kòmand.
+Kòmandman yo pa jwenn alyas nan {0}.
+Ou kapab kounye a kouri "{0}" kòm yon lòd: "{1}".
+Alyas {0} pa jwenn yo dwe retire li.
+Mòd ki pa valab {0}.
+Agiman sou fòm piki, {0}, yo pral pwograme yo kouri nan pwochen rdemare.
+Pa te gen ase agiman. Gade anba a pou itilizasyon:
+Anyè {0} pa jwenn
+Non lame vid.
+Chanje de: {0} a {1} ...
+Blank mesaj nan jounen an.
+Blank MAL Apre Login.
+Modpas itilizatè mal.
+Modpas pa matche.
+Non itilizatè te chanje an {0}!
+Nouvo non ou antre a deja jwenn.
+{0} pa jwenn.
+Konfigirasyon rcharje. Ou ta ka bezwen rdemare Kernel la pou kèk chanjman pran efè.
+Youn oswa plis nan koulè yo valab.
+Koulè yo pa disponib. Vire sou kokiy ki gen koulè nan konfig Kernel la.
+Ekran {0} pa jwenn.
+[ Anviwònman Kernel (Kouri sou {0}) ]
+Kernel Version:
+Mode Debug:
+Koulè ki gen koulè pal:
+Agiman sou bòt:
+Ede kòmand senplifye:
+MOTD sou Login:
+Tan / Dat sou kwen:
+[ Anviwònman Materyèl ] {0}
+{0}[ Anviwònman itilizatè ]
+Non itilizatè aktyèl:
+Non lame aktyèl la:
+Non itilizatè ki disponib:
+Erè ap eseye egzekite lòd
+Chanjman anyè
+Chanje modpas pou itilizatè aktyèl la
+Efase ekran an
+Sèvi ak yon kokiy ftp pou kominike avèk serveurs
+Paj Èd
+Lis sa ki nan dosye / katab nan katab aktyèl la
+Locks ekran ou a ak yon modpas
+Logs ou soti
+Kreye yon anyè
+Lis enfòmasyon sou tout interfaces ki disponib
+Rekòmanse òdinatè w lan (AVÈTISMAN: Pa gen senkronizasyon, paske li se pa yon Kernel final la)
+Reloads dosye konfigirasyon ki edite.
+Sove ekran ou soti nan boule retraits
+Mete kanpe Kernel screensavers
+Mete tèm Kernel yo
+Montre dat ak lè
+Montre dat ak lè nan zòn yo
+Kernel la ap fèmen
+Enfòmasyon sou sistèm lan
+* Ou ka itilize plizyè kòmandman lè l sèvi avèk kolon ant kòmandman yo.
+Itilizasyon:
+kote agiman yo pral {0}
+Inisyalize kokiy ftp la.
+Zanmi nan
+kote customsaver pral
+Locks ekran ou a ak modpas la.
+Logs ou soti nan itilizatè a.
+Jwenn tout enfòmasyon rezo
+Rekòmanse òdinatè simulation ou an.
+Reloads konfigirasyon an ki chanje pa itilizatè a fen oswa pa zouti.
+Koulè pa mande pou yon rekòmanse, men pi fò nan anviwònman yo mande pou ou rekòmanse.
+montre w yon ekran sove, pandan y ap pwoteje ekran ou soti nan boule retraits.
+Montre dat ak lè.
+Montre dat ak lè nan zòn yo.
+Fèmen òdinatè simulation ou an.
+Montre enfòmasyon sistèm ak vèsyon.
+Te gen yon erè nan koki an.
+Ou pa gen pèmisyon pou itilize {0}
+Shell mesaj: Kòmandman yo mande a {0} pa pèmèt yo kouri nan mòd antretyen.
+Shell mesaj: Kòmandman yo mande a {0} yo pa jwenn. Gade 'èd' pou kòmandman ki disponib yo.
+Shell mesaj: Kòmandman {0} pa pèmèt yo kouri sou ouvri sesyon an.
+Erè ap eseye egzekite lòd.
+datetime: Tan se {0}
+datetime: Jodi a se {0}
+datetime: Zòn Tan: {0}
+- Tan {0}: {1}
+klè ekran.
+Kouri sou {0}
+Ou pa otorize pou jwenn enfòmasyon pou {0}.
+Kòmandman sa a demode epi yo pral retire li nan yon lage nan lavni.
+Ou pa otorize pou chanje modpas {0} paske sib la se te yon admin.
+usrmgr: Non itilizatè {0} deja jwenn
+Efase tout bagay nan boutèy dbug
+Lang ki pa valab
+Chanje lang
+----------------------------- Kernel panik pil fatra ------------------------------
+>> Panik enfòmasyon <<
+> Deskripsyon: {0}
+> Kalite Erè: {1}
+> Dat ak lè: {2}
+>> Eksepsyon enfòmasyon <<
+> Eksepsyon: {0}
+> Deskripsyon: {1}
+> HRESULT: {2}
+> Sous: {3}
+> Stack tras <
+>> Eksepsyon enteryè {0} enfòmasyon <<
+>> Eksepsyon {0} se kòz la rasin <<
+>> Pa gen eksepsyon; ta ka yon erè Kernel. <<
+>> Ankadreman, dosye, liy, ak kolòn <<
+> Ankadreman {0}: Dosye: {1} | Liy: {2} | Kolòn: {3}
+> Gen yon erè lè w ap eseye jwenn enfòmasyon ankadreman. {0}: {1}
+Reloads mods.
+Mods rechaje.
+Byenveni nan Kernel!
+Konekte avèk siksè kòm <itilizatè>
+MOTD / MAL valab, men kalite mesaj la pa valab. An sipoze MOTD ...
+Yo te eseye li MOTD / MAL ki se kalite mesaj ki pa valab.
+Download te fini.
+Download echwe nan eseye {0}: {1}
+Tanpri itilize "ftp" si ou pral telechaje dosye ki soti nan sèvè ftp.
+Telechaje yon dosye nan aktyèl anyè k ap travay
+Dekonekte yon aparèy debug
+Lis aparèy debogaj konekte
+Aparèy debug {0} pa jwenn.
+Aparèy {0} dekonekte.
+Erè nan koneksyon: {0}
+Debug tande sou tout adrès lè l sèvi avèk pò {0}.
+Pa gen agiman ki espesifye. Men yon tipoul: Espesifye plizyè agiman separe pa espas
+Alyas deja jwenn: {0}
+Depo boutèy demi lit retire li. Tout aparèy debogaj konekte ka toujou wè mesaj yo.
+Retire jounal Debug echwe: {0}
+Chanje anyè echwe: {0}
+Espesifye adrès la
+Pa kapab retire anyè: {0}
+Orè espesifye mal.
+Seleksyon pwofil ki pa valab.
+Ap eseye konekte ak {0} ak pwofil {1} ​​...
+Kòmandman {0} pa jwenn. Gade kòmand "èd la" pou lis kòmandman yo.
+Echwe pou pou jwenn pwopriyete IPv6 pou adaptè {0}. Kontinye ...
+Enfòmasyon IPv4:
+IPv6 enfòmasyon:
+Adaptè {0} pa sipòte IPv6. Kontinye ...
+Adaptè {0} pa sipòte IPv4. Sonde echwe.
+Sanble ou te kouri vèsyon an devlopman nan Kernel la. Pandan ke ou ka wè aspè yo, li souvan mete ajou epi li ka prezante pinèz. Li rekòmande ke ou rete sou vèsyon an ki estab.
+Lang ou chwazi a gen de variantes. Chwazi youn:
+1. Transliterated
+2. Tradui
+Chwazi chwa ou:
+Chwa envalid. Eseye anko.
+Ou pa otorize pou mete anyè aktyèl la sou {0}: {1}
+Chemen ou te presize a twò lontan.
+CPU: AVÈTISMAN: SSE2 yo pral mande nan devlòpman komèt.
+Pil fatra ranmasaj enfòmasyon te fè aksidan lè yo ap eseye jwenn enfòmasyon sou {0}: {1}
+Erè pandan y ap eseye jwenn dat konpile nan asanble {0}: {1}
+Erè lè w ap eseye mete MOTD / MAL: {0}
+Erè lè w ap eseye jwenn MOTD / MAL: {0}
+Erè lè w ap eseye kòmanse ekran, paske nan yon operasyon envalid.
+Reloading pa pèmèt nan mòd ki an sekirite.
+Analiz mods pa pèmèt sou mòd ki an sekirite.
+Lis tout aparèy debogaj konekte.
+Erè lè w ap eseye mete mòd analiz. Tcheke valè a epi eseye ankò. Si sa a kòrèk, gade tras la chemine lè debogaj Kernel pèmèt.
+Chemen an pa ni yon dosye ni yon anyè.
+Kreye yon lòt kopi yon dosye anba diferan anyè oswa non.
+Deplase yon dosye nan yon lòt anyè
+Pou kopye dosye nan yon lòt anyè oswa non diferan
+Pou avanse pou pi dosye nan yon lòt anyè
+Koresponn ak {0} ({1}): {2}
+Match {0}: {1}
+Tan ki pase: {0} milisgond
+Non: {0}
+Kalkile montan dosye.
+Pran ou nan GitHub Wiki nou an.
+Algorit chifreman ki pa valab.
+Pèmèt oswa enfim debogaj aleka.
+Gade si ou ka eple mo kòrèkteman sou tan
+Gade si ou kapab rezoud ekwasyon matematik alè
+Reponn sou renmen oswa kòmantè rayi.
+Si yon moun fè kòmantè sa a nan videyo ou:
+Ki jan ou ta reponn?
+Seleksyon envalid. Ale nan kòmantè kap vini an ...
+Ou jis rapòte kòmantè lanmou an!
+Ou jis reponn a kòmantè a rayi!
+Gran! Kòmantè {0} a pral retire pou sa.
+Gran! {0} ap apresye mèsi ou.
+Eple parfe!
+Eple mal.
+Rezoud parfe!
+Rezoud mal.
+RPC deja kouri.
+RPC koute sou tout adrès lè l sèvi avèk pò {0}.
+Kòmanse RPC ...
+Konekte nan yon sèvè SSH.
+Mete modpas la pou {0}:
+SSH Dekonekte.
+Pa kapab mete codepage. Lang lan pa ka parèt byen.
+Debogaj pa pèmèt.
+{0} pa mete anko defo ekran an.
+Mèsi! Sa a se enteresan.
+Tout moun ap sipòte videyo ou pou sa.
+Mwen te ba ou dosye espesyal la nan e-mail ou a pou pwochen videyo ou.
+Koute, lènmi, li ap eseye ede nou, pa tronpe.
+Mwen pa konnen konbyen mwen menm ak zanmi m 'di ou mèsi pou videyo sa a.
+Mwen renmen ou pou videyo sa a.
+Kontinye ale, pa sispann.
+Mwen pral ede w rive jwenn 1M abonnés!
+Zanmi mwen yo te ranje òdinatè yo poutèt ou.
+Awogan tour! Mwen fèmen PC lènmi mwen an.
+Pou lènmi yo: SISPANN RAYI SOU LI
+Pou moun ki rayi: POU TRAVAY
+Okenn moun pa pral remake sa kounye a gras a gid kache objè ou
+Mwen pral sispann gade videyo ou yo. Abònen pèdi.
+Kisa sa ye? Sa pa klè.
+Videyo sa a se pi move a!
+Tout moun rapòte videyo sa a!
+Zanmi mwen yo fache avèk ou!
+Lovers pral kounye a rayi ou pou sa.
+Zanmi ou pral rayi ou pou sa.
+Sa a tour te fè m 'koupe abònman ou.
+Misyon echwe, Respè -, Abònen -
+Sispann fè kalite videyo sa !!!
+Retounen nan travay ou, videyo ou yo se pi move a!
+Nou prejije sou videyo sa a.
+Montre tout notifikasyon ou resevwa yo
+Anile yon notifikasyon
+Notifikasyon ranvwaye avèk siksè.
+Pake (Anthrax):
+Pake (sortant):
+Erè nan resevwa pake:
+Pwopriyete jeneral IPv6
+Pwopriyete jeneral IPv4
+Adistans egzekite yon lòd pou PC aleka
+- Etap 1: sistèm inisyalizasyon
+- Etap 2: Deteksyon Materyèl
+- Etap 3: Mods ak ekran deteksyon
+- Etap 4: Log in
+Sanble ou te kouri vèsyon an kandida lage. Li rekòmande ke ou rete sou vèsyon an ki estab.
+Kalite ki pa valab {0}.
+Gwosè: {0}
+Anyè {0} deja egziste.
+Erè lè w ap eseye konekte nan {0}: Delè koneksyon oswa koneksyon pèdi
+Kalkilatris pou kalkile ekspresyon.
+Erè nan kalkil.
+Sanble ou te kouri vèsyon an apochan-lage. Pandan ke li pi an sekirite pou itilize kounye a, li rekòmande pou ou rete sou vèsyon ki estab.
+Mizajou sistèm lan
+Tcheke pou dènye enfòmasyon sistèm ...
+Twouve nouvo vèsyon:
+Ou ka telechaje li nan:
+Pa gen notifikasyon resan
+Rechèch pou espesifye fisèl nan dosye yo bay la
+Kalkile montan lajan nan dosye nan anyè espesifye.
+Lis tout may nan itilizatè a espesifik.
+Mete non itilizatè oswa adrès lapòs:
+Antre modpas:
+Erè pandan wap konekte ak {0}: {1}
+Konekte ak {0} ...
+Otantifye ...
+Sòti koki IMAP la
+Lis kòmandman yo
+Downloads mesaj ak lis yo
+Louvri yon mesaj
+Page pa ka negatif oswa zewo.
+Paj se pa yon valè nimerik.
+Nimewo mesaj la ka pa negatif oswa zewo.
+Nimewo mesaj la se pa yon valè nimerik.
+- Soti nan {0}
+- Pou {0}
+- Voye nan {0} nan {1}
+Mesaj espesifye a pa jwenn.
+Remote debug echwe pou pou kòmanse: {0}
+Prepare Des ... Li te kapab pran plizyè minit ...
+Non lame, non itilizatè, kalite done, kodaj, chifreman, pwotokòl
+Erè ap eseye egzekite script: {0}
+Ekri tèks nan konsole a
+Fè chwa itilizatè
+Bip nan 'n' Hz ak tan nan 'n' milisgond
+kote <$ varyab> se nenpòt varyab ke yo pral itilize nan magazen repons lan
+Frekans dwe nimerik. Si li nan nimerik, asire ke li se >= 37 ak <= 32767.
+Tan dwe nimerik.
+kote <repons> se repons yon sèl-lèt nan kesyon an separe an koupe
+Erè ap eseye konekte nan sèvè SSH: {0}
+Pèmèt itilizatè a antre nan opinyon
+Chanje anyè lapòs aktyèl la
+Pa kapab louvri katab lapòs {0}: {1}
+Lis repèrtwar nan adrès lapòs ou
+Sèvi ak enfòmasyon ki soti nan Speed ​​Dial pou konekte avèk nenpòt rezo byen vit
+Chwazi yon adrès pou konekte ak:
+Seleksyon an soti nan ranje. Chwazi ant 1-{0}. Eseye anko.
+Seleksyon an se pa yon nimewo. Eseye anko.
+Pandan validasyon sètifika, gen erè sètifika. Li ta ka premye fwa ou te konekte nan sèvè a oswa sètifika a ta ka ekspire. Isit la nan yon erè:
+Èske ou sèten ke ou vle konekte?
+Repons envalid. Tanpri eseye ankò.
+Vitès rele a vid. Konekte sou yon sèvè pou ajoute yon adrès pou li.
+Vitès rele pa egziste. Konekte sou yon sèvè pou ajoute yon adrès pou li.
+Mete IMAP adrès sèvè ak pò (<adrès> oswa <adrès>:[pò]):
+Mete SMTP adrès sèvè ak pò (<adrès> oswa <adrès>:[pò]):
+Mande ou ranpli jaden yo mande yo voye yon mesaj nan yon adrès
+Voye yon mesaj nan yon adrès
+Mete adrès imèl moun k ap resevwa a:
+Antre nan sijè a:
+Mete mesaj ou anba a. Ekri "EOF" pou konfime.
+Voye mesaj ...
+Mesaj voye.
+Adrès imèl ki pa valab. Asire ou ke ou ekri adrès la kòrèkteman e ke li matche ak fòma egzanp yo montre a:
+Retire yon mesaj
+Retire tout mesaj soti nan moun k ap resevwa
+Mesaj {0} nan {1} efase nan {2}. {3} mesaj ki rete pou analize.
+Mesaj {0} nan {1} efase nan bwat resepsyon an. {2} mesaj ki rete pou analize.
+Edite yon dosye tèks
+Fè yon nouvo dosye
+Dosye deja egziste.
+Erè ap eseye kreye yon dosye: {0}
+Echwe pou louvri dosye a. Sòti koki ...
+Kòmandman editè tèks espesifye a pa jwenn.
+Lis kòmandman ki disponib yo
+Sòti editè tèks la epi sove chanjman ki pa sove yo
+Enprime sa ki nan dosye a ak nimewo liy nan konsole la
+Ajoute yon nouvo liy ak tèks nan fen dosye a
+Retire nimewo liy espesifye a
+Ranplase yon mo oswa yon fraz ak yon lòt
+Efase yon mo oswa yon fraz nan nimewo liy lan
+Efase yon karaktè nan nimewo karaktè nan liy espesifye
+Retire liy lan.
+Nimewo liy espesifye {0} se pa yon nimewo ki valab.
+Agiman obligatwa yo pa pase nan lòd {0}
+Erè ap eseye kouri lòd: {0}
+Kouri nan mòd san danje. Sote etap ...
+>> Remote Debug ak Chat: vèsyon
+>> Adrès ou se {0}.
+>> Non ou se {0}.
+Kòmandman {0} pa jwenn. Sèvi ak "/help" pou wè lis la.
+Endèks {0} valab. Gen {1} tras chemine. Index se zewo ki baze sou, se konsa eseye soustraksyon pa 1.
+Pa gen tras chemine
+Montre dènye tras chemine sou eksepsyon
+Montre non itilizatè aktyèl nan sesyon an
+Dekonekte ou soti nan debogaj la
+Degaje yon aparèy debug pa adrès IP
+Bloke yon aparèy debug pa adrès IP
+{0} kapab kounye a rantre nan debug aleka ankò.
+{0} poko bloke.
+Erè chaje anviwònman
+Gen yon erè pandan wap chaje anviwònman yo. Ou ka bezwen tcheke dosye anviwònman an.
+Chwazi seksyon:
+Anviwònman Jeneral ...
+Anviwònman Materyèl ...
+Anviwònman Login ...
+Anviwònman koki ...
+Anviwònman Rezo ...
+Anviwònman Divè ...
+Sove Anviwònman
+Sòti
+Opsyon espesifye {0} pa valab.
+Repons lan dwe nimerik.
+Èd Memwa pou Agiman sou bòt
+Antretyen Mode Deklanche
+Chanje Modpas Rasin ...
+Tcheke pou Updates sou demaraj
+Trankil sonde
+Montre MOTD sou Log-in
+Klè ekran sou Log-in
+Montre non itilizatè ki disponib yo
+Kolore Shell
+Senplifye Kòmand Èd
+Debug Port
+Download Retry Times
+Log non itilizatè ftp
+Log ftp adrès IP
+Retounen sèlman premye pwofil ftp
+Montre lè / dat sou kwen anwo dwat
+Ekran ekonomiz nan ms
+Debug gwosè kota nan bytes
+Gwosè analiz mòd
+Marquee sou demaraj
+Tan ak dat
+Montre dosye kache
+Seksyon envalid antre. Tanpri tounen.
+Tounen ...
+Pèmèt
+Enfim
+Nimewo kle ki pa valab antre. Tanpri tounen.
+Ekri modpas la rasin yo dwe mete. Pa enkyete ou; modpas la yo montre kòm zetwal yo.
+Pèmèt "Chanje Modpas Rasin" yo sèvi ak opsyon sa a. Tanpri tounen.
+Chanje Modpas Rasin?
+Mete Rasin Modpas ...
+Ekri yon pò debogaj aleka. Li dwe nimerik, epi li pa dwe deja itilize. Sinon, aleka debogaj pral fail louvri pò a.
+Ekri konbyen fwa kòmandman an "jwenn" ta dwe eseye ankò downloads echwe. Li dwe nimerik.
+Ekri lè yo lanse ekran apre milisgond espesifye. Li dwe nimerik.
+Ekri konbyen bytes ka magazen boutèy la debug. Li dwe nimerik.
+Repons lan ka pa negatif.
+Repons lan valab. Tcheke pou asire ke repons lan nimerik pou antre konfigirasyon ki bezwen nimewo kòm repons.
+Varyab {0} pa jwenn sou okenn nan modil yo.
+Chanje konfigirasyon Kernel la
+Anviwònman ekran ...
+Aktive 255 koulè
+Èske ou vle kenbe konekte?
+Chwa envalid. Sipoze non ...
+Chanje Kilti lè chanje lang
+Tèks yo montre
+Ekri nenpòt tèks ou vle montre. Pi kout se pi bon.
+Echwe pou telechaje {0}
+Erè nan egzekite aleka debug lòd {0}: {1}
+Ajoute itilizatè yo
+Ajoute alyas nan kòmandman yo
+Enjekte agiman nan Kernel la (rdemare obligatwa)
+Chanje non lame
+Chanjman MAL, MOTD la Apre Login
+Chanjman MOTD, mesaj la nan jounen an
+Chanje non itilizatè
+Jere otorizasyon pou itilizatè yo
+Reloads dosye ekran nan KSMods
+Retire yon itilizatè nan lis la
+Retire alyas {0} avèk siksè.
+Echwe pou pou tcheke pou dènye enfòmasyon.
+Pa gen plis itilizatè ki rete nan lis la.
+Echwe pou pou mete lang.
+Erè ap eseye ranvwaye notifikasyon.
+usrmgr: Echwe pou kreye non itilizatè {0}: {1}
+Echwe pou chanje non itilizatè a. {0}
+Youn nan lis pèmisyon yo pa gen non itilizatè {0}.
+Echwe pou chaje otorizasyon nan dosye a: {0}
+Echwe pou chanje non lame: {0}
+Itilizatè pa jwenn
+Echwe pou chanje modpas non itilizatè a: {0}
+Echwe pou kopye dosye oswa anyè: {0}
+Echwe pou deplase dosye oswa anyè: {0}
+Kapab jwenn dosye ki matche ak fisèl "{0}": {1}
+Telechaje echwe pou dosye {0}.
+Echwe nan lis dosye aleka: {0}
+Antre nan yon dosye oswa katab yo retire. Ou dwe gen otorizasyon administratif sou kont ou pou kapab retire.
+Èske ou sèten ou vle efase {0} <y/n>?
+Efase {0} ...
+{0} pa jwenn nan sèvè a.
+Tout lapòs ki fèt pa {0} yo retire avèk siksè.
+Echwe pou pou retire tout lapòs ki fèt pa {0}.
+Erè nan voye mesaj.
+Deplase {0} nan {1} ...
+Deplase avèk siksè
+Deplase dosye oswa anyè nan yon lòt dosye oswa anyè. Ou kapab tou itilize ki chanje non dosye.
+Echwe pou avanse pou pi {0} nan {1}.
+Mete yon chemen sous ak yon chemen destinasyon.
+Kopye {0} nan {1} ...
+Kopye avèk siksè
+Kopi dosye oswa anyè nan yon lòt dosye oswa anyè.
+Echwe pou kopye {0} nan {1}.
+Deplase yon mesaj
+Deplase tout mesaj soti nan moun k ap resevwa
+Tout lapòs ki fèt pa {0} deplase avèk siksè.
+Echwe pou avanse pou pi tout lapòs ki fèt pa {0}.
+Mesaj {0} soti nan {1} te deplase soti nan {2}. {3} mesaj ki rete pou analize.
+Montre enfòmasyon sou move tan pou espesifye vil la. Itilize OpenWeatherMap.
+- Enfòmasyon sou move tan pou {0} -
+Tan: {0}
+Presyon: {0}
+Imidite: {0}
+Ou ka jwenn pwòp kle API ou nan https://home.openweathermap.org/api_keys.
+Ou ka toujou konsilte http://bulk.openweathermap.org/sample/city.list.json.gz pou lis vil ki gen ID yo.
+Inite Prefere pou Tanperati
+Kelvin
+Imperial (Farennayt)
+Metrik (Sèlsiyis)
+Mete kanpe Kernel la pou li envit ou pou agiman sou bòt.
+Deklanche mòd antretyen. Sa a enfim kont miltip.
+Chak demaraj, li pral tcheke pou dènye nouvèl.
+Lè w ap chanje lang, chanje non mwa yo, kalandriye, elatriye.
+Si Kernel la te kòmanse, li pral mete modpas rasin.
+Kenbe mesaj sonde pyès ki nan konpitè an silans.
+Montre mesaj nan jounen an anvan ou montre ekran login.
+Klè ekran anvan ou montre ekran login.
+Montre itilizatè ki disponib yo si sa pèmèt.
+Bay sipò nan Kernel koulè
+Senplifye èd lòd pou tout kokiy yo
+Kit ou pa konekte non itilizatè ftp.
+Kit ou pa konekte ftp adrès IP.
+Chwazi premye pwofil la sèlman lè ou konekte.
+Aktive 255 sipò koulè pou ColorMix.
+Aktive 255 sipò koulè pou Disko.
+Aktive 255 sipò koulè pou GlitterColor.
+Aktive 255 sipò koulè pou Liy.
+Lè a ak dat yo pral montre nan kwen anwo dwat nan ekran an
+Si pèmèt, Kernel la pral analize katab la an antye pou gwosè total li yo. Lòt Bagay, pral sèlman analize sifas la.
+Pèmèt eyecandy sou demaraj
+Lè a ak dat yo pral pi long, ki montre non mwa konplè, elatriye.
+Montre dosye kache.
+Chwazi inite ou pi pito pou tanperati (sa a sèlman aplike nan lòd "move tan an")
+Mod {0} sispann
+{0} v {1} sispann
+Mod {0} pa gen non pati a. Mod analiz echwe. Revize kòd sous la.
+Mod {0} pa gen kòmandman an. Mod analiz echwe. Revize kòd sous la.
+Ou dwe vire sou mòd debug anvan ou ka klè boutèy demi lit debug.
+{0} nouvo mesaj yo te rive nan bwat resepsyon an.
+Louvri "lsmail" pou wè yo.
+Kapab retire dosye: {0}
+Retire yon anyè oswa yon dosye
+Pa ka retire {0} paske li pa egziste.
+Peze Ctrl + C sòti.
+Bay enfòmasyon sou yon dosye
+Bay enfòmasyon sou yon anyè
+Pa ka jwenn enfòmasyon sou anyè inègzistan.
+Pa ka jwenn enfòmasyon sou dosye inègzistan.
+Non konplè: {0}
+Tan kreyasyon: {0}
+Dènye tan aksè: {0}
+Dènye tan ekri: {0}
+Atribi: {0}
+Anyè paran: {0}
+Ki kote pou jwenn: {0}
+Gwosè dosye a: {0}
+Chanjman atribi nan yon dosye
+Dosye pa jwenn.
+kote <atribi> se youn nan bagay sa yo:
+Dosye a se yon dosye nòmal
+Dosye a se yon dosye li sèlman
+Dosye a se yon dosye kache
+Dosye a se yon achiv. Itilize pou sovgad.
+Atribi "{0}" pa valab.
+Atribi te ajoute avèk siksè.
+Atribi te retire avèk siksè.
+Echwe pou ajoute atribi.
+Echwe pou pou retire atribi.
+Ranplase yon mo oswa yon fraz ak yon lòt nan yon liy
+Nivo koulè wouj depase. Li te {0}.
+Nivo koulè vèt depase. Li te {0}.
+Nivo koulè ble depase. Li te {0}.
+Aktive koulè vre
+Aktive vrè sipò koulè pou ColorMix.
+Aktive vrè sipò koulè pou Disko.
+Aktive vrè sipò koulè pou GlitterColor.
+Aktive sipò koulè vre pou Liy.
+Echwe pou debloke {0}.
+{0} deja bloke.
+{0} pa ka rantre nan debug aleka kounye a.
+Echwe pou bloke {0}.
+Koulè sik
+Disko pral sik koulè lè pèmèt. Sinon, chwazi koulè o aza.
+Antre nan dosye chemen atachman. Peze ENTER sou yon chemen vid pou konfime.
+Louvri yon mesaj chiffres
+Ekri modpas pou ID kle {0}
+Voye yon mesaj chiffres nan yon adrès
+Mande ou ranpli jaden yo mande yo voye yon mesaj chiffres nan yon adrès
+Telechaje soti nan {0} ...
+Montre ba pwogrè pandan wap telechaje oswa telechaje nan kòmand "jwenn" oswa "mete"
+Si vre, li fè "jwenn" oswa "mete" montre ba pwogrè a pandan wap telechaje oswa telechaje.
+Uploads yon dosye sou sit entènèt espesifye
+Pings yon adrès
+Téléchargez {0} nan {1} ...
+Upload te konplete.
+Tanpri itilize "ftp" si ou pral Upload dosye sou sèvè a ftp.
+Upload echwe nan eseye {0}: {1}
+Ekri konbyen fwa kòmandman "put" la ta dwe rekòmanse echwe téléchargements. Li dwe nimerik.
+Adrès pa ka vid.
+Echwe pou ping {0}: {1}
+Ping te reyisi nan {0} ms.
+Nimewo liy espesifye a pa ka pi gwo pase dènye nimewo liy dosye a.
+Santi tankou: {0}
+Tanperati: {0}
+Vitès van: {0}
+Direksyon van: {0}
+Aktive 255 sipò koulè pou Fonn.
+Aktive vrè sipò koulè pou Fonn.
+Peze nenpòt kle pou tounen.
+Kapab kreye katab lapòs {0}: {1}
+Fè yon anyè nan anyè aktyèl la k ap travay
+Retire yon anyè nan anyè aktyèl la k ap travay
+Katab lapòs {0} pa jwenn.
+Kapab efase katab lapòs {0}: {1}
+{0}, Kreye nan {1} {2}, Modifye nan {3} {4}
+Verifye saniti nan dosye a
+Hash yo malformed.
+Hash pa matche.
+Hash matche ak.
+Chanje non yon katab
+Seksyon sa a bay lis tout anviwònman jeneral Kernel yo, sitou pou kenbe Kernel la.
+Seksyon sa a chanje konpòtman pwofonde pyès ki nan konpitè.
+Seksyon sa a reprezante anviwònman yo login. Dekonekte soti nan kont ou pou chanjman yo pran efè.
+Seksyon sa a bay lis anviwònman koki yo.
+Seksyon sa a bay lis anviwònman rezo yo, tankou koki ftp, anviwònman kòmandman ki gen rapò ak rezo a, ak anviwònman debug aleka yo
+Seksyon sa a bay lis tout ekonomizeur yo ak anviwònman ki disponib yo.
+Anviwònman ki pa anfòm nan seksyon ki apwopriye yo peyi isit la.
+Tès mods lè yo bay dosye mod
+Louvri yon kokiy tès
+Pèmèt mòd debug
+Envit pou agiman
+* Peze nenpòt ki kle yo kòmanse Kernel la oswa ESC sòti.
+Echwe pou kòmanse "{0}": {1}
+Montre preview mesaj lapòs
+Lè lis mesaj lapòs, montre preview kò a.
+Koulè Custom ...
+Koulè Antre
+Koulè lisans
+Koulè kontinyèl erè Kernel
+Koulè erè enkontinuabl
+Koulè non lame
+Non itilizatè koulè
+Koulè background
+Koulè tèks net
+Etap koulè
+Koulè erè
+Ftp Èd Memwa Style
+Mail Èd Memwa Style
+SFTP Èd Memwa Style
+Aktive 255 sipò koulè pou BouncingBlock.
+Aktive vrè sipò koulè pou BouncingBlock.
+Eseye jwenn aksè nan chemen envalid.
+Efase dosye tèks la
+Sòti editè tèks la
+Demann yon karaktè nan yon liy espesifye oswa tout liy
+Tcheke pou dènye nouvèl enfim paske w ap kouri yon vèsyon devlopman.
+Vire sou oswa sou editè tèks karakteristik nan otosove.
+Si otosove pèmèt, dosye tèks la ap sove pou chak "n" segonn.
+Pèmèt editè tèks otosove
+Tèks editè entèval otosove
+Sove dosye a
+Dosye chat debug boutèy demi lit.
+Dosye aleka debug chat debug boutèy demi lit.
+Reta nan milisgond
+Konbyen milisgond pou ret tann anvan ou fè pwochen ekri a?
+Pèmèt ou itilize yon sèvè ftp SSH
+Pa gen èd pou lòd "{0}".
+Sekans VT ki pa valab pou koulè RVB.
+Koulè nan segonn Bar
+Koulè nan Minit Bar
+Koulè nan Orè Bar
+Koulè Enfòmasyon
+Tik pou chanje koulè
+Aktive 255 sipò koulè pou ProgressClock.
+Aktive vrè sipò koulè pou ProgressClock.
+Koulè a ​​nan segonn ba pwogrè. Li kapab 1-16, 1-255, oswa "1-255;1-255;1-255".
+Koulè a ​​nan minit pwogrè ba. Li kapab 1-16, 1-255, oswa "1-255;1-255;1-255".
+Koulè a ​​nan èdtan ba pwogrè. Li kapab 1-16, 1-255, oswa "1-255;1-255;1-255".
+Koulè a ​​nan enfòmasyon dat. Li kapab 1-16, 1-255, oswa "1-255;1-255;1-255".
+Si monte bisiklèt koulè pèmèt, konbyen tik anvan ou chanje koulè nan ProgressClock? 1 tik = 0.5 segonn
+ProgressClock pral chwazi koulè o aza si li pèmèt. Sinon, sèvi ak koulè ki soti nan config.
+Fè yon nouvo tèm
+Fè yon nouvo tèm "{0}".
+Sove Tèm nan Anyè Kouran
+Sove Tèm nan yon lòt Anyè ...
+Chwazi koulè lè l sèvi avèk "<-" ak "->" kle. Peze ENTER kite fimen. Peze "mwen" insert nimewo koulè manyèlman.
+Chwazi koulè lè l sèvi avèk "<-" ak "->" kle. Sèvi ak flèch moute ak flèch desann kle yo chwazi ant chenn koulè. Peze ENTER kite fimen. Peze "mwen" insert nimewo koulè manyèlman.
+Byenveni nan Kernel la! - Vèsyon {0}
+Avètisman koulè
+Opsyon koulè
+Mete nimewo koulè ki ant 0 a 255:
+Sèvi ak "hwinfo" pou enfòmasyon pwolonje sou pyès ki nan konpitè.
+Enprime enfòmasyon kenkayri
+Enfòmasyon sou CPU:
+Non processeur:
+Vitès processeur:
+Bits processeur:
+Rev processeur:
+Topoloji processeur:
+Kalite processeur:
+Pwosesis etap enpòtan:
+Processeur BogoMips:
+Pwosesis L2 gwosè kachèt:
+Gwosè kachèt L3 processeur:
+Karakteristik processeur:
+Enfòmasyon HDD:
+Non kondwi:
+Modèl kondwi:
+Kondwi vandè:
+Kondwi vitès:
+Kondwi gwosè:
+Kondwi seri:
+ID kondwi:
+Kondwi patisyon konte:
+Patisyon ID:
+Fichye patisyon:
+Gwosè patisyon:
+Patisyon yo itilize:
+RAM enfòmasyon:
+RAM gratis:
+RAM total:
+RAM itilize:
+Enfòmasyon GPU:
+Non GPU:
+GPU chofè:
+GPU vèsyon:
+GPU: Youn oswa plis nan kat grafik yo echwe pou pou sonde. Montre enfòmasyon de tout fason ...
+>> Byenveni! Sa a se premye fwa ou k ap antre nan aleka debog ak chat. Sèvi ak "/ register <name>" pou enskri.
+Aparèy deja egziste.
+Pa gen aparèy sa yo.
+Mete non itilizatè aparèy la
+Ou deja anrejistre.
+Bonjou, {0}!
+Enprime kontni nan dosye konsole
+Oswa, pase "listcities" nan lòd sa a.
+Antre deja egziste.
+Vlope pwodiksyon konsole a
+Kòmandman an pa vlope. Kòmandman sa yo vlope:
+Ekstrè yon achiv postal
+Kreye yon achiv postal
+Bati nan {0}
+Erè telechaje done dbug
+Gen yon erè pandan y ap telechaje done dbug. Tcheke koneksyon entènèt ou an.
+Echwe pou pou finalize mod {0}: {1}
+Lis tout evènman revoke
+Anyè aktyèl la
+Mete aktyèl anyè koki an. Ekri yon chemen absoli nan nenpòt ki anyè ki egziste deja.
+Vlope lis rezilta yo
+Vlope rezilta yo lis si li sanble twò lontan pou jeyometri a konsole aktyèl la.
+Ping!
+{0} fè ping ou.
+Sove Tèm nan Anyè Kouran kòm ...
+Sove Tèm nan yon lòt Anyè kòm ...
+Espesifye non tèm:
+Itilizatè {0} la te ajoute nan lis "{1}" la.
+Itilizatè {0} la te retire nan lis "{1}" la.
+Mòd ki pa valab {0}
+Itilizatè deja egziste
+Chaje Tèm Soti nan ...
+Chaje Tèm Soti nan Tèm Pre-bati ...
+Espesifye non dosye tèm san ekstansyon an .json:
+Louvri yon achiv postal
+Sòti koki postal la
+Lis tout dosye andedan achiv la
+Ekstrè yon dosye nan yon anyè espesifye oswa yon anyè aktyèl
+Chanje anyè achiv
+Kòmandman an koki postal espesifye yo pa jwenn.
+Anyè {0} pa egziste
+Anyè achiv {0} pa egziste
+Pozisyon Max Konte
+Konbyen pozisyon ki limen anvan gradyasyon?
+Aktive 255 sipò koulè pou pi lejè.
+Aktive sipò koulè vre pou pi lejè.
+Lis koulè antre
+Lis valè koulè
+Konekte nan yon sèvè SSH egzekite yon lòd.
+Seksyon sa a bay lis anviwònman ekran pou ...
+Spesifikatè koulè ki pa valab. Asire ke li nan fòma ki kòrèk la, ki vle di yon nimewo ki soti nan 0-255 si w ap itilize 255 koulè oswa yon sekans VT si w ap itilize vre koulè jan sa a:
+Erè nan koki tès la: {0}
+Mete yon varyab nan yon valè nan yon script
+Yon èd memwa rapòte ensèk.
+Mèsi pou ogmante yon tikè pou nou! Chwazi ki kalite demann ou genyen.
+Yon pwoblèm
+Yon demann karakteristik
+Yon kesyon
+Ou dwe presize yon karakteristik.
+Poze yon kesyon, ekri lide ou, oswa rapòte yon pwoblèm.
+Ou dwe ekri demann ou an.
+Te gen yon erè nan koki ftp la:
+Enkoni FTP koki erè:
+Te gen yon erè nan kal SFTP a:
+Enkoni SFTP koki erè:
+Montre banyè SSH
+Montre banyè sèvè SSH la sou koneksyon.
+Ki jan ou vle otantifye?
+Prive dosye kle
+Modpas
+Mete pasfraz pou kle {0}:
+Mete kote kle prive a pou {0}. Ekri "q" fini ajoute kle:
+Netralize yon chemen ki pa egziste.
+Fichye kle {0} pa egziste.
+Erè ap eseye ajoute kle prive:
+Peze "t" pou chanje an 255 mòd koulè.
+Peze "t" pou chanje an mòd koulè vre.
+Seksyon sa a pèmèt ou chwazi ki kalite koulè ou vle chanje.
+Li sanble ke ou pa gen okenn itilizatè eksepte rasin. Sa a se move. Nou pral gide ou ki jan yo kreye yon sèl.
+Ekri non itilizatè ou an.
+Ou dwe ekri non itilizatè ou an.
+Ekri modpas ou.
+Ou dwe ekri modpas ou.
+Chwazi kalite kont.
+Administratè: Kalite kont sa a gen plis pouvwa nan Kernel la, sa ki pèmèt ou itilize pwogram jesyon sistèm lan.
+Itilizatè nòmal: Kalite kont sa a yon ti kras plis restriksyon pase administratè yo.
+Konpliman! Ou te fè yon nouvo kont! Pou fini sa a, konekte kòm nouvo kont ou.
+Konsilte manyèl la ekran oswa kòd sous pou enfòmasyon.
+mod: Pa gen mods detekte.
+Kòmandman jeneral:
+Mod kòmandman:
+Alyas kòmandman:
+Mode Antretyen
+Rechèch Anyè
+Gwoup chemen separe pa kolon an. Li travay menm jan ak PATH. Ekri yon chemen konplè nan yon katab oswa yon non katab. Lè w fini, ekri "q". Ekri yon siy mwens akote chemen an pou retire yon anyè ki egziste deja.
+Pa gen kòmandman mod.
+Pa gen kòmandman alyas.
+Valè koulè a ​​andeyò ranje 0-255.
+Kòmandman ki anvlòp la pa jwenn.
+Kesyon yon mo nan yon liy espesifye oswa tout liy
+{0} nan {1} telechaje.
+{0} nan {1} telechaje.
+Enprime yon fisèl konsole lè l sèvi avèk kalite koulè ak liy ekri an lèt detache
+Enprime yon fisèl konsole lè l sèvi avèk kalite koulè ak enprime liy ak sipò fòma
+Enprime yon fisèl debugger
+Enprime yon fisèl deboge ak sipò fòma
+Tès etablisman erè Kernel la
+Tès etablisman an erè Kernel ak sipò fòma
+Tès tradwi yon fisèl ki egziste nan resous nan lang espesifik
+Enprime yon fisèl konsole ak analize ranplasman yo te jwenn
+Tès etablisman ekspresyon regilye a
+Chifre yon fisèl lè l sèvi avèk
+Kòmanse tout mods
+Sispann tout mods
+Pèmèt oswa enfim debug
+Pèmèt oswa enfim debug aleka
+Tès sekans VT pou 255 koulè
+Tès sekans VT pou koulè vre
+Voye yon notifikasyon pou teste reseptè a
+Tès dat enprime lè l sèvi avèk kalandriye diferan
+Lis tout codepages sipòte
+Ki varyab du ki pèmèt nan aplikasyon an?
+Tès ogmante evènman an espesifik
+Tès sonde pyès ki nan konpitè
+Teste pèseptè fatra a
+Sòti kokiy tès la epi li kòmanse Kernel la
+Sòti koki tès la epi li fèmen Kernel la
+Sove anyè aktyèl la nan dosye konfigirasyon Kernel la
+Tès ekriven lis la ak fisèl la ak etalaj fisèl
+Tès ekriven lis la ak etalaj la nonb antye relatif ak nonb antye relatif
+Tès ekriven lis la ak etalaj la Char ak Char
+Lis fisèl nòmal:
+Array lis fisèl:
+Lis nonb antye relatif nòmal:
+Tab nonb antye relatif:
+Nòmal lis char:
+Array lis char:
+Pèmèt RPC
+RPC Port
+Kit ou pa pèmèt RPC.
+Ekri yon pò RPC. Li dwe nimerik, epi li pa dwe deja itilize. Sinon, RPC ap fail louvri pò a.
+Pa kòmanse RPC paske li enfim.
+Lis sipòte kilti
+Rechèch pou fisèl espesifye nan dosye yo bay la lè l sèvi avèk ekspresyon regilye
+Gade si ou ka peze yon kle sou tan
+Itilizatè pa t 'bay okenn opinyon nan yon tan apwopriye.
+Difikilte ki pa valab
+Karaktè pa bourade sou tan.
+Ou te bourade karaktè nan dwa!
+Ou te bourade karaktè a mal.
+Peze ESC pou sòti.
+Jwenn enfòmasyon sou dat ak lè
+Milisgond:
+Segonn:
+Minit:
+Orè:
+Jou:
+Mwa:
+Ane:
+Jou pou Ane:
+Jou nan semèn:
+Binè:
+Lè Lokal:
+Tan inivèsèl:
+Tan Unix:
+Echwe pou pou analize enfòmasyon dat pou
+Asire ke fòma a kòrèk.
+Dat:
+Tan:
+Mete otorizasyon dosye. Sa a se sipòte sèlman sou serveurs ftp ki kouri Unix.
+Mete kalite a pou sesyon sa a
+Ou dwe konekte nan sèvè anvan ou fè operasyon filèsistèm.
+Echwe pou pou mete otorizasyon nan {0} nan {1}.
+Otorizasyon mete avèk siksè pou dosye
+Kalite done mete ASCII!
+Kalite done mete nan binè!
+Kalite done ki pa valab.
+Pran prekosyon nou ke pifò dosye pa pral telechaje oswa Upload byen lè l sèvi avèk mòd sa a, se konsa nou trè rekòmande pou itilize mòd nan binè sou pifò sitiyasyon.
+Eseye voye yon lòd RPC pandan RPC pa t 'kòmanse.
+Fade Out Reta nan milisgond
+Max Fade Etap
+Konbyen milisgond yo rete tann anvan manyak soti tèks?
+Konbyen etap fennen fè?
+Sonde konplè
+Si vre, sond tout pyès ki nan konpitè; lòt bagay, yo pral sèlman pwofonde pyès ki nan konpitè nesesè.
+Echwe pou retire ekran {0} nan konfigirasyon an.
+Vin anviwònman ekonomize koutim
+Mete anviwònman ekonomizeur koutim
+Anviwònman mete avèk siksè pou ekran
+Echwe pou pou mete yon anviwònman pou ekran
+Seksyon sa a pèmèt ou jere kreyasyon modpas rasin.
+Louvri yon kokiy RSS li feeds yo
+Sòti koki RSS epi retounen nan Kernel
+Chanje lyen manje a
+Lis tout manje
+Li yon manje nan yon navigatè entènèt
+Kòmandman koki RSS espesifye a pa jwenn.
+RSS2 ki pa valab.
+RSS1 pa valab.
+Atom ki pa valab.
+Mete yon URL RSS feed:
+Kalite RSS ki pa valab.
+Enkoni koki erè:
+Jwenn enfòmasyon sou atik la
+Nimewo Atik pa ka pi gwo pase atik ki disponib yo.
+Tit:
+Lyen:
+Jwenn enfòmasyon an manje
+Deskripsyon:
+Kalite manje:
+Kantite atik:
+Atik pa gen yon lyen!
+Echwe pou pou fè yon lis nan fichèrsistèm antre pou anyè
+Filesystem sòt mòd
+Filesystem sòt direksyon
+Kontwole kijan dosye yo pral klase.
+Kontwole direksyon klasman fichye si wi ou non li monte oswa desann.
+Moute lòd
+Desandan lòd
+Non konplè
+Gwosè dosye a
+Tan kreyasyon an
+Denye ekri tan
+Dènye tan aksè
+Ekri ankò Reta nan milisgond
+Konbyen milisgond yo rete tann anvan ou ekri tèks ankò?
+Ekri nenpòt tèks ou vle montre. Pi long se pi bon.
+Vitès minimòm ekri nan WPM
+Vitès maksimòm ekri nan WPM
+Pwobabilite pou typo nan pousan
+Echwe pou konsève pou anyè aktyèl la: {0}
+Siye pou chanje direksyon
+Aktive 255 sipò koulè pou Siye.
+Aktive vrè sipò koulè pou Siye.
+Konbyen ti sèvyèt pou fè anvan ou chanje direksyon owaza?
+Etap fini an
+Inisyalizasyon entèn fini an
+Dosye referansye {0} pa jwenn. Mod sa a pa ta ka mache byen san dosye sa a.
+Kòmanse mod
+Jwenn enfòmasyon mod
+Non kòmand:
+Definisyon lòd:
+Kalite lòd:
+Kòmand strik?
+Mod vèsyon:
+Mod {0} pa jwenn.
+Kilti nan
+Ki variante {0} ki itilize pou chanje non mwa, kalandriye, elatriye?
+Editè tèks la poko louvri yon kouran dosye.
+Fisèl ranplase.
+Youn oswa toude chif yo pa nimerik.
+Pawòl efase.
+Karaktè efase.
+Anviwònman Filesystem ...
+Seksyon sa a bay lis anviwònman filsistèm yo.
+Byenveni nan Anviwònman!
+Erè nan egzekite lòd SSH
+Erè sou koki SSH
+- Enfòmasyon App
+Aktive 255 sipò koulè pou BouncingText.
+Aktive vrè sipò koulè pou BouncingText.
+Tès ekriven an diksyonè ak fisèl la ak etalaj fisèl
+Tès ekriven an diksyonè ak etalaj la Char ak Char
+Tès ekriven an diksyonè ak etalaj la antye relatif ak antye relatif
+Diksyonè fisèl nòmal:
+Array fisèl diksyonè:
+Diksyonè antye nòmal:
+Diksyonè antye matris:
+Diksyonè char nòmal:
+Array char diksyonè:
+Byenveni nan Tès Shell!
+Montre pwogrè sou operasyon filesystem
+Montre ki sa dosye yo te trete pandan operasyon yo filèsistèm
+kote HardwareType yo pral
+Swa kalite pyès ki nan konpitè {0} pa sonde, oswa li pa valab.
+Kalite pyès ki nan konpitè {0} poko sonde. Si ou sèten ke li sonde, rekòmanse Kernel la ak debogaj pèmèt.
+Partitions pa analize nan lis la.
+Mòd pirataj
+Si pèmèt, konsole vèt yo pral pèmèt.
+Enprime yon séparation
+Enprime yon séparation ak sipò fòma
+Enprime yon séparation ak sipò koulè
+Enprime yon séparation ak koulè ak fòma sipò
+Toujou santre
+Aktive 255 sipò koulè pou Marquee.
+Aktive sipò koulè vre pou Marquee.
+Ekri nenpòt tèks ou vle montre.
+Kit se tèks yo montre sou chapant lan toujou santre.
+'Q' kite fimen.
+Agiman {0} pa jwenn pou enjekte.
+Liy kòmand agiman {0} pa jwenn.
+Efase tout anviwònman yo
+Ekran sove gen yon erè pandan y ap montre: {0}. Peze nenpòt ki kle sòti.
+Preview ...
+Men ki jan tèm ou pral sanble:
+Kòmandman vlope:
+Mod {0} gen kòmandman ki pa valab. Mod analiz echwe. Revize kòd sous la.
+Pati Mod:

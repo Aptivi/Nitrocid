@@ -28,7 +28,7 @@ Public Class PGPContext
     ''' <param name="key">Target key</param>
     ''' <returns>Entered Password</returns>
     Protected Overrides Function GetPasswordForKey(key As PgpSecretKey) As String
-        W(DoTranslation("Write password for key ID {0}", currentLang) + ": ", False, ColTypes.Input, key.KeyId)
+        W(DoTranslation("Write password for key ID {0}") + ": ", False, ColTypes.Input, key.KeyId)
         Dim Password As String = ReadLineNoInput("*")
         Console.WriteLine()
         Return Password

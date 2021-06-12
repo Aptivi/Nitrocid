@@ -35,11 +35,11 @@ Public Module MailTransfer
         Wdbg("I", "Message number {0}", Message)
         If Message < 0 Then
             Wdbg("E", "Trying to access message 0 or less than 0.")
-            W(DoTranslation("Message number may not be negative or zero.", currentLang), True, ColTypes.Err)
+            W(DoTranslation("Message number may not be negative or zero."), True, ColTypes.Error)
             Exit Sub
         ElseIf Message > MaxMessagesIndex Then
             Wdbg("E", "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex)
-            W(DoTranslation("Message specified is not found.", currentLang), True, ColTypes.Err)
+            W(DoTranslation("Message specified is not found."), True, ColTypes.Error)
             Exit Sub
         End If
 
@@ -61,29 +61,29 @@ Public Module MailTransfer
             Wdbg("I", "{0} senders.", Msg.From.Count)
             For Each Address As InternetAddress In Msg.From
                 Wdbg("I", "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
-                W(DoTranslation("- From {0}", currentLang), True, ColTypes.HelpCmd, Address.ToString)
+                W(DoTranslation("- From {0}"), True, ColTypes.ListEntry, Address.ToString)
             Next
 
             'Print all the addresses that received the mail
             Wdbg("I", "{0} receivers.", Msg.To.Count)
             For Each Address As InternetAddress In Msg.To
                 Wdbg("I", "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
-                W(DoTranslation("- To {0}", currentLang), True, ColTypes.HelpCmd, Address.ToString)
+                W(DoTranslation("- To {0}"), True, ColTypes.ListEntry, Address.ToString)
             Next
 
             'Print the date and time when the user received the mail
             Wdbg("I", "Rendering time and date of {0}.", Msg.Date.DateTime.ToString)
-            W(DoTranslation("- Sent at {0} in {1}", currentLang), True, ColTypes.HelpCmd, RenderTime(Msg.Date.DateTime), RenderDate(Msg.Date.DateTime))
+            W(DoTranslation("- Sent at {0} in {1}"), True, ColTypes.ListEntry, RenderTime(Msg.Date.DateTime), RenderDate(Msg.Date.DateTime))
 
             'Prepare subject
             Console.WriteLine()
             Wdbg("I", "Subject length: {0}, {1}", Msg.Subject.Length, Msg.Subject)
-            W($"- {Msg.Subject}", False, ColTypes.HelpCmd)
+            W($"- {Msg.Subject}", False, ColTypes.ListEntry)
 
             'Write a sign after the subject if attachments are found
             Wdbg("I", "Attachments count: {0}", Msg.Attachments.Count)
             If Msg.Attachments.Count > 0 Then
-                W(" - [*]", True, ColTypes.HelpCmd)
+                W(" - [*]", True, ColTypes.ListEntry)
             Else
                 Console.WriteLine()
             End If
@@ -101,8 +101,8 @@ Public Module MailTransfer
                 Wdbg("I", $"Decrypted message type: {If(TypeOf DecryptedEntity Is Multipart, "Multipart", "Singlepart")}")
                 If TypeOf DecryptedEntity Is Multipart Then
                     Dim MultiEntity As Multipart = CType(DecryptedEntity, Multipart)
-                    Wdbg("I", $"Decrypted message entity is {If(Not IsNothing(MultiEntity), "multipart", "nothing")}")
-                    If Not IsNothing(MultiEntity) Then
+                    Wdbg("I", $"Decrypted message entity is {If(MultiEntity IsNot Nothing, "multipart", "nothing")}")
+                    If MultiEntity IsNot Nothing Then
                         For EntityNumber As Integer = 0 To MultiEntity.Count - 1
                             Wdbg("I", $"Entity number {EntityNumber} is {If(MultiEntity(EntityNumber).IsAttachment, "an attachment", "not an attachment")}")
                             If Not MultiEntity(EntityNumber).IsAttachment Then
@@ -112,7 +112,7 @@ Public Module MailTransfer
                                 Dim DecryptedByte(DecryptedStream.Length) As Byte
                                 DecryptedStream.Read(DecryptedByte, 0, DecryptedStream.Length)
                                 Wdbg("I", "Written {0} bytes to buffer.", DecryptedByte.Length)
-                                W(Encoding.Default.GetString(DecryptedByte), True, ColTypes.HelpDef)
+                                W(Encoding.Default.GetString(DecryptedByte), True, ColTypes.ListValue)
                             End If
                         Next
                     End If
@@ -123,17 +123,17 @@ Public Module MailTransfer
                     Dim DecryptedByte(DecryptedStream.Length) As Byte
                     DecryptedStream.Read(DecryptedByte, 0, DecryptedStream.Length)
                     Wdbg("I", "Written {0} bytes to buffer.", DecryptedByte.Length)
-                    W(Encoding.Default.GetString(DecryptedByte), True, ColTypes.HelpDef)
+                    W(Encoding.Default.GetString(DecryptedByte), True, ColTypes.ListValue)
                 End If
             Else
-                W(Msg.GetTextBody(TextFormat.Plain), True, ColTypes.HelpDef)
+                W(Msg.GetTextBody(TextFormat.Plain), True, ColTypes.ListValue)
             End If
             Console.WriteLine()
 
             'Populate attachments
 #Disable Warning BC42104
             If Msg.Attachments.Count > 0 Then
-                W(DoTranslation("Attachments:", currentLang), True, ColTypes.Neutral)
+                W(DoTranslation("Attachments:"), True, ColTypes.Neutral)
                 Dim AttachmentEntities As New List(Of MimeEntity)
                 If Decrypt Then
                     Wdbg("I", "Parsing attachments...")
@@ -145,8 +145,8 @@ Public Module MailTransfer
                             AttachmentEntities.Add(DecryptedMessage.Values(DecryptedEntityNumber))
                         ElseIf DecryptedMessage.Keys(DecryptedEntityNumber) = "Body" And TypeOf DecryptedMessage("Body") Is Multipart Then
                             Dim MultiEntity As Multipart = CType(DecryptedMessage("Body"), Multipart)
-                            Wdbg("I", $"Decrypted message entity is {If(Not IsNothing(MultiEntity), "multipart", "nothing")}")
-                            If Not IsNothing(MultiEntity) Then
+                            Wdbg("I", $"Decrypted message entity is {If(MultiEntity IsNot Nothing, "multipart", "nothing")}")
+                            If MultiEntity IsNot Nothing Then
                                 Wdbg("I", "{0} entities found.", MultiEntity.Count)
                                 For EntityNumber As Integer = 0 To MultiEntity.Count - 1
                                     Wdbg("I", $"Entity number {EntityNumber} is {If(MultiEntity(EntityNumber).IsAttachment, "an attachment", "not an attachment")}")
@@ -187,7 +187,7 @@ Public Module MailTransfer
         Wdbg("I", $"Encrypted message type: {If(TypeOf Text.Body Is MultipartEncrypted, "Multipart", "Singlepart")}")
         If TypeOf Text.Body Is MultipartEncrypted Then
             Dim Encrypted = CType(Text.Body, MultipartEncrypted)
-            Wdbg("I", $"Message type: {If(Not IsNothing(Encrypted), "MultipartEncrypted", "Nothing")}")
+            Wdbg("I", $"Message type: {If(Encrypted IsNot Nothing, "MultipartEncrypted", "Nothing")}")
             Wdbg("I", "Decrypting...")
             EncryptedDict.Add("Body", Encrypted.Decrypt(New PGPContext))
         Else
@@ -200,7 +200,7 @@ Public Module MailTransfer
             Wdbg("I", $"Encrypted attachment type: {If(TypeOf TextAttachment Is MultipartEncrypted, "Multipart", "Singlepart")}")
             If TypeOf TextAttachment Is MultipartEncrypted Then
                 Dim Encrypted = CType(TextAttachment, MultipartEncrypted)
-                Wdbg("I", $"Attachment type: {If(Not IsNothing(Encrypted), "MultipartEncrypted", "Nothing")}")
+                Wdbg("I", $"Attachment type: {If(Encrypted IsNot Nothing, "MultipartEncrypted", "Nothing")}")
                 Wdbg("I", "Decrypting...")
                 EncryptedDict.Add("Attachment " & AttachmentNumber, Encrypted.Decrypt(New PGPContext))
             Else

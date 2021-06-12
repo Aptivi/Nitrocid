@@ -17,11 +17,10 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.ComponentModel
-Imports System.Threading
 
 Module MatrixDisplay
 
-    Public WithEvents Matrix As New BackgroundWorker
+    Public WithEvents Matrix As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Matrix
@@ -32,23 +31,33 @@ Module MatrixDisplay
         Console.Clear()
         Console.CursorVisible = False
         Dim random As New Random()
-        Do While True
-            If Matrix.CancellationPending = True Then
-                Wdbg("W", "Cancellation is pending. Cleaning everything up...")
-                e.Cancel = True
-                Console.Clear()
-                Dim esc As Char = GetEsc()
-                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                LoadBack()
-                Console.CursorVisible = True
-                Wdbg("I", "All clean. Matrix screensaver stopped.")
-                Exit Do
-            Else
-                Thread.Sleep(MatrixDelay)
-                Console.Write(CStr(random.Next(2)))
-            End If
-        Loop
+        Try
+            Do While True
+                If Matrix.CancellationPending = True Then
+                    Wdbg("W", "Cancellation is pending. Cleaning everything up...")
+                    e.Cancel = True
+                    SetInputColor()
+                    LoadBack()
+                    Console.CursorVisible = True
+                    Wdbg("I", "All clean. Matrix screensaver stopped.")
+                    SaverAutoReset.Set()
+                    Exit Do
+                Else
+                    SleepNoBlock(MatrixDelay, Matrix)
+                    Console.Write(CStr(random.Next(2)))
+                End If
+            Loop
+        Catch ex As Exception
+            Wdbg("W", "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
+            WStkTrc(ex)
+            e.Cancel = True
+            SetInputColor()
+            LoadBack()
+            Console.CursorVisible = True
+            Wdbg("I", "All clean. Matrix screensaver stopped.")
+            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
+            SaverAutoReset.Set()
+        End Try
     End Sub
 
 End Module

@@ -1,0 +1,364 @@
+﻿
+'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+'
+'    This file is part of Kernel Simulator
+'
+'    Kernel Simulator is free software: you can redistribute it and/or modify
+'    it under the terms of the GNU General Public License as published by
+'    the Free Software Foundation, either version 3 of the License, or
+'    (at your option) any later version.
+'
+'    Kernel Simulator is distributed in the hope that it will be useful,
+'    but WITHOUT ANY WARRANTY; without even the implied warranty of
+'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'    GNU General Public License for more details.
+'
+'    You should have received a copy of the GNU General Public License
+'    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+Imports System.Console
+
+Public Module ListWriterColor
+#Region "Dictionary"
+    ''' <summary>
+    ''' Outputs the list entries into the terminal prompt. It wraps output depending on the kernel settings.
+    ''' </summary>
+    ''' <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+    Public Sub WriteList(Of TKey, TValue)(ByVal List As Dictionary(Of TKey, TValue))
+        WriteList(List, WrapListOutputs)
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the list entries into the terminal prompt, and wraps output if needed.
+    ''' </summary>
+    ''' <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+    ''' <param name="Wrap">Wraps the output as needed.</param>
+    Public Sub WriteList(Of TKey, TValue)(ByVal List As Dictionary(Of TKey, TValue), ByVal Wrap As Boolean)
+#If Not NOWRITELOCK Then
+        SyncLock WriteLock
+#End If
+            Try
+                'Variables
+                Dim LinesMade As Integer
+                Dim OldTop As Integer
+
+                'Try to write list to console
+                OldTop = CursorTop
+                For Each ListEntry As TKey In List.Keys
+                    Dim Values As New List(Of Object)
+                    If TryCast(List(ListEntry), IEnumerable) IsNot Nothing And TryCast(List(ListEntry), String) Is Nothing Then
+                        For Each Value In CType(List(ListEntry), IEnumerable)
+                            Values.Add(Value)
+                        Next
+                        W("- {0}: ", False, ColTypes.ListEntry, ListEntry) : W("{0}", True, ColTypes.ListValue, String.Join(", ", Values))
+                    Else
+                        W("- {0}: ", False, ColTypes.ListEntry, ListEntry) : W("{0}", True, ColTypes.ListValue, List(ListEntry))
+                    End If
+                    If Wrap Then
+                        LinesMade += CursorTop - OldTop
+                        OldTop = CursorTop
+                        If LinesMade = WindowHeight - 1 Then
+                            If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
+                            LinesMade = 0
+                        End If
+                    End If
+                Next
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
+            Catch ex As Exception
+                WStkTrc(ex)
+                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
+            End Try
+#If Not NOWRITELOCK Then
+        End SyncLock
+#End If
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt with custom color support.
+    ''' </summary>
+    ''' <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+    ''' <param name="ListKeyColor">A key color.</param>
+    ''' <param name="ListValueColor">A value color.</param>
+    Public Sub WriteList(Of TKey, TValue)(ByVal List As Dictionary(Of TKey, TValue), ByVal ListKeyColor As ConsoleColor, ByVal ListValueColor As ConsoleColor)
+        WriteList(List, ListKeyColor, ListValueColor, WrapListOutputs)
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt with custom color support.
+    ''' </summary>
+    ''' <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+    ''' <param name="ListKeyColor">A key color.</param>
+    ''' <param name="ListValueColor">A value color.</param>
+    ''' <param name="Wrap">Wraps the output as needed.</param>
+    Public Sub WriteList(Of TKey, TValue)(ByVal List As Dictionary(Of TKey, TValue), ByVal ListKeyColor As ConsoleColor, ByVal ListValueColor As ConsoleColor, ByVal Wrap As Boolean)
+#If Not NOWRITELOCK Then
+        SyncLock WriteLock
+#End If
+            Try
+                'Variables
+                Dim LinesMade As Integer
+                Dim OldTop As Integer
+
+                'Try to write list to console
+                OldTop = CursorTop
+                For Each ListEntry As TKey In List.Keys
+                    Dim Values As New List(Of Object)
+                    If TryCast(List(ListEntry), IEnumerable) IsNot Nothing And TryCast(List(ListEntry), String) Is Nothing Then
+                        For Each Value In CType(List(ListEntry), IEnumerable)
+                            Values.Add(Value)
+                        Next
+                        WriteC16("- {0}: ", False, ListKeyColor, ListEntry) : WriteC16("{0}", True, ListValueColor, String.Join(", ", Values))
+                    Else
+                        WriteC16("- {0}: ", False, ListKeyColor, ListEntry) : WriteC16("{0}", True, ListValueColor, List(ListEntry))
+                    End If
+                    If Wrap Then
+                        LinesMade += CursorTop - OldTop
+                        OldTop = CursorTop
+                        If LinesMade = WindowHeight - 1 Then
+                            If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
+                            LinesMade = 0
+                        End If
+                    End If
+                Next
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
+            Catch ex As Exception
+                WStkTrc(ex)
+                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
+            End Try
+#If Not NOWRITELOCK Then
+        End SyncLock
+#End If
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt with custom color support.
+    ''' </summary>
+    ''' <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+    ''' <param name="ListKeyColor">A key color.</param>
+    ''' <param name="ListValueColor">A value color.</param>
+    Public Sub WriteList(Of TKey, TValue)(ByVal List As Dictionary(Of TKey, TValue), ByVal ListKeyColor As Color, ByVal ListValueColor As Color)
+        WriteList(List, ListKeyColor, ListValueColor, WrapListOutputs)
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt with custom color support.
+    ''' </summary>
+    ''' <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+    ''' <param name="ListKeyColor">A key color.</param>
+    ''' <param name="ListValueColor">A value color.</param>
+    ''' <param name="Wrap">Wraps the output as needed.</param>
+    Public Sub WriteList(Of TKey, TValue)(ByVal List As Dictionary(Of TKey, TValue), ByVal ListKeyColor As Color, ByVal ListValueColor As Color, ByVal Wrap As Boolean)
+#If Not NOWRITELOCK Then
+        SyncLock WriteLock
+#End If
+            Try
+                'Variables
+                Dim LinesMade As Integer
+                Dim OldTop As Integer
+
+                'Try to write list to console
+                OldTop = CursorTop
+                For Each ListEntry As TKey In List.Keys
+                    Dim Values As New List(Of Object)
+                    If TryCast(List(ListEntry), IEnumerable) IsNot Nothing And TryCast(List(ListEntry), String) Is Nothing Then
+                        For Each Value In CType(List(ListEntry), IEnumerable)
+                            Values.Add(Value)
+                        Next
+                        WriteC("- {0}: ", False, ListKeyColor, ListEntry) : WriteC("{0}", True, ListValueColor, String.Join(", ", Values))
+                    Else
+                        WriteC("- {0}: ", False, ListKeyColor, ListEntry) : WriteC("{0}", True, ListValueColor, List(ListEntry))
+                    End If
+                    If Wrap Then
+                        LinesMade += CursorTop - OldTop
+                        OldTop = CursorTop
+                        If LinesMade = WindowHeight - 1 Then
+                            If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
+                            LinesMade = 0
+                        End If
+                    End If
+                Next
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
+            Catch ex As Exception
+                WStkTrc(ex)
+                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
+            End Try
+#If Not NOWRITELOCK Then
+        End SyncLock
+#End If
+    End Sub
+#End Region
+#Region "Enumerables"
+    ''' <summary>
+    ''' Outputs the list entries into the terminal prompt. It wraps output depending on the kernel settings.
+    ''' </summary>
+    ''' <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+    Public Sub WriteList(Of T)(ByVal List As IEnumerable(Of T))
+        WriteList(List, WrapListOutputs)
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the list entries into the terminal prompt, and wraps output if needed.
+    ''' </summary>
+    ''' <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+    ''' <param name="Wrap">Wraps the output as needed.</param>
+    Public Sub WriteList(Of T)(ByVal List As IEnumerable(Of T), ByVal Wrap As Boolean)
+#If Not NOWRITELOCK Then
+        SyncLock WriteLock
+#End If
+            Try
+                'Variables
+                Dim LinesMade As Integer
+                Dim OldTop As Integer
+                Dim EntryNumber As Integer = 1
+
+                'Try to write list to console
+                OldTop = CursorTop
+                For Each ListEntry As T In List
+                    Dim Values As New List(Of Object)
+                    If TryCast(ListEntry, IEnumerable) IsNot Nothing And TryCast(ListEntry, String) Is Nothing Then
+                        For Each Value In CType(ListEntry, IEnumerable)
+                            Values.Add(Value)
+                        Next
+                        W("- [{0}] ", False, ColTypes.ListEntry, EntryNumber) : W("{0}", True, ColTypes.ListValue, String.Join(", ", Values))
+                    Else
+                        W("- [{0}] ", False, ColTypes.ListEntry, EntryNumber) : W("{0}", True, ColTypes.ListValue, ListEntry)
+                    End If
+                    EntryNumber += 1
+                    If Wrap Then
+                        LinesMade += CursorTop - OldTop
+                        OldTop = CursorTop
+                        If LinesMade = WindowHeight - 1 Then
+                            If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
+                            LinesMade = 0
+                        End If
+                    End If
+                Next
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
+            Catch ex As Exception
+                WStkTrc(ex)
+                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
+            End Try
+#If Not NOWRITELOCK Then
+        End SyncLock
+#End If
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt with custom color support.
+    ''' </summary>
+    ''' <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+    ''' <param name="ListKeyColor">A key color.</param>
+    ''' <param name="ListValueColor">A value color.</param>
+    Public Sub WriteList(Of T)(ByVal List As IEnumerable(Of T), ByVal ListKeyColor As ConsoleColor, ByVal ListValueColor As ConsoleColor)
+        WriteList(List, ListKeyColor, ListValueColor, WrapListOutputs)
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt with custom color support.
+    ''' </summary>
+    ''' <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+    ''' <param name="ListKeyColor">A key color.</param>
+    ''' <param name="ListValueColor">A value color.</param>
+    ''' <param name="Wrap">Wraps the output as needed.</param>
+    Public Sub WriteList(Of T)(ByVal List As IEnumerable(Of T), ByVal ListKeyColor As ConsoleColor, ByVal ListValueColor As ConsoleColor, ByVal Wrap As Boolean)
+#If Not NOWRITELOCK Then
+        SyncLock WriteLock
+#End If
+            Try
+                'Variables
+                Dim LinesMade As Integer
+                Dim OldTop As Integer
+                Dim EntryNumber As Integer = 1
+
+                'Try to write list to console
+                OldTop = CursorTop
+                For Each ListEntry As T In List
+                    Dim Values As New List(Of Object)
+                    If TryCast(ListEntry, IEnumerable) IsNot Nothing And TryCast(ListEntry, String) Is Nothing Then
+                        For Each Value In CType(ListEntry, IEnumerable)
+                            Values.Add(Value)
+                        Next
+                        WriteC16("- [{0}] ", False, ListKeyColor, EntryNumber) : WriteC16("{0}", True, ListValueColor, String.Join(", ", Values))
+                    Else
+                        WriteC16("- [{0}] ", False, ListKeyColor, EntryNumber) : WriteC16("{0}", True, ListValueColor, ListEntry)
+                    End If
+                    EntryNumber += 1
+                    If Wrap Then
+                        LinesMade += CursorTop - OldTop
+                        OldTop = CursorTop
+                        If LinesMade = WindowHeight - 1 Then
+                            If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
+                            LinesMade = 0
+                        End If
+                    End If
+                Next
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
+            Catch ex As Exception
+                WStkTrc(ex)
+                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
+            End Try
+#If Not NOWRITELOCK Then
+        End SyncLock
+#End If
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt with custom color support.
+    ''' </summary>
+    ''' <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+    ''' <param name="ListKeyColor">A key color.</param>
+    ''' <param name="ListValueColor">A value color.</param>
+    Public Sub WriteList(Of T)(ByVal List As IEnumerable(Of T), ByVal ListKeyColor As Color, ByVal ListValueColor As Color)
+        WriteList(List, ListKeyColor, ListValueColor, WrapListOutputs)
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt with custom color support.
+    ''' </summary>
+    ''' <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+    ''' <param name="ListKeyColor">A key color.</param>
+    ''' <param name="ListValueColor">A value color.</param>
+    ''' <param name="Wrap">Wraps the output as needed.</param>
+    Public Sub WriteList(Of T)(ByVal List As IEnumerable(Of T), ByVal ListKeyColor As Color, ByVal ListValueColor As Color, ByVal Wrap As Boolean)
+#If Not NOWRITELOCK Then
+        SyncLock WriteLock
+#End If
+            Try
+                'Variables
+                Dim LinesMade As Integer
+                Dim OldTop As Integer
+                Dim EntryNumber As Integer = 1
+
+                'Try to write list to console
+                OldTop = CursorTop
+                For Each ListEntry As T In List
+                    Dim Values As New List(Of Object)
+                    If TryCast(ListEntry, IEnumerable) IsNot Nothing And TryCast(ListEntry, String) Is Nothing Then
+                        For Each Value In CType(ListEntry, IEnumerable)
+                            Values.Add(Value)
+                        Next
+                        WriteC("- {0}: ", False, ListKeyColor, EntryNumber) : WriteC("{0}", True, ListValueColor, String.Join(", ", Values))
+                    Else
+                        WriteC("- {0}: ", False, ListKeyColor, EntryNumber) : WriteC("{0}", True, ListValueColor, ListEntry)
+                    End If
+                    EntryNumber += 1
+                    If Wrap Then
+                        LinesMade += CursorTop - OldTop
+                        OldTop = CursorTop
+                        If LinesMade = WindowHeight - 1 Then
+                            If ReadKey(True).Key = ConsoleKey.Escape Then Exit For
+                            LinesMade = 0
+                        End If
+                    End If
+                Next
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Then ResetColor()
+            Catch ex As Exception
+                WStkTrc(ex)
+                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
+            End Try
+#If Not NOWRITELOCK Then
+        End SyncLock
+#End If
+    End Sub
+#End Region
+End Module

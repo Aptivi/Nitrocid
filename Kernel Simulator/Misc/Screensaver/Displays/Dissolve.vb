@@ -21,7 +21,7 @@ Imports System.Threading
 
 Module DissolveDisplay
 
-    Public WithEvents Dissolve As New BackgroundWorker
+    Public WithEvents Dissolve As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Dissolve
@@ -34,59 +34,67 @@ Module DissolveDisplay
         Dim ColorFilled As Boolean
         Dim CoveredPositions As New ArrayList
         Wdbg("I", "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
-        Do While True
-            If Dissolve.CancellationPending = True Then
-                Wdbg("W", "Cancellation is pending. Cleaning everything up...")
-                e.Cancel = True
-                Console.Clear()
-                Dim esc As Char = GetEsc()
-                Console.Write(esc + "[38;5;" + CStr(inputColor) + "m")
-                Console.Write(esc + "[48;5;" + CStr(backgroundColor) + "m")
-                LoadBack()
-                Console.CursorVisible = True
-                Wdbg("I", "All clean. Dissolve screensaver stopped.")
-                Exit Do
-            Else
-                If ColorFilled Then Thread.Sleep(1)
-                Dim EndLeft As Integer = Console.WindowWidth - 1
-                Dim EndTop As Integer = Console.WindowHeight - 1
-                Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
-                Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
-                If Not ColorFilled Then
-                    'NOTICE: Mono seems to have a bug in Console.CursorLeft and Console.CursorTop when printing with VT escape sequences.
-                    If Not (Console.CursorLeft = EndLeft And Console.CursorTop = EndTop) Then
-                        If DissolveTrueColor Then
+        Try
+            Do While True
+                If Dissolve.CancellationPending = True Then
+                    Wdbg("W", "Cancellation is pending. Cleaning everything up...")
+                    e.Cancel = True
+                    SetInputColor()
+                    LoadBack()
+                    Console.CursorVisible = True
+                    Wdbg("I", "All clean. Dissolve screensaver stopped.")
+                    SaverAutoReset.Set()
+                    Exit Do
+                Else
+                    If ColorFilled Then Thread.Sleep(1)
+                    Dim EndLeft As Integer = Console.WindowWidth - 1
+                    Dim EndTop As Integer = Console.WindowHeight - 1
+                    Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
+                    Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+                    If Not ColorFilled Then
+                        'NOTICE: Mono seems to have a bug in Console.CursorLeft and Console.CursorTop when printing with VT escape sequences.
+                        If Not (Console.CursorLeft = EndLeft And Console.CursorTop = EndTop) Then
                             Dim esc As Char = GetEsc()
-                            Dim RedColorNum As Integer = RandomDriver.Next(255)
-                            Dim GreenColorNum As Integer = RandomDriver.Next(255)
-                            Dim BlueColorNum As Integer = RandomDriver.Next(255)
-                            Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-                            Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
-                        ElseIf Dissolve255Colors Then
-                            Dim esc As Char = GetEsc()
-                            Dim ColorNum As Integer = RandomDriver.Next(255)
-                            Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
+                            If DissolveTrueColor Then
+                                Dim RedColorNum As Integer = RandomDriver.Next(255)
+                                Dim GreenColorNum As Integer = RandomDriver.Next(255)
+                                Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                                WriteC(" ", False, New Color("0;0;0"), New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"))
+                            ElseIf Dissolve255Colors Then
+                                Dim ColorNum As Integer = RandomDriver.Next(255)
+                                WriteC(" ", False, New Color("0"), New Color(ColorNum))
+                            Else
+                                Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                                Console.Write(" ")
+                            End If
                         Else
-                            Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
-                            Console.Write(" ")
+                            ColorFilled = True
                         End If
                     Else
-                        ColorFilled = True
-                    End If
-                Else
-                    If Not CoveredPositions.Contains(Left & " - " & Top) Then CoveredPositions.Add(Left & " - " & Top)
-                    Console.SetCursorPosition(Left, Top)
-                    Console.BackgroundColor = ConsoleColor.Black
-                    Console.Write(" ")
-                    If CoveredPositions.Count = (EndLeft + 1) * (EndTop + 1) Then
-                        ColorFilled = False
+                        If Not CoveredPositions.Contains(Left & " - " & Top) Then CoveredPositions.Add(Left & " - " & Top)
+                        Console.SetCursorPosition(Left, Top)
                         Console.BackgroundColor = ConsoleColor.Black
-                        Console.Clear()
-                        CoveredPositions.Clear()
+                        Console.Write(" ")
+                        If CoveredPositions.Count = (EndLeft + 1) * (EndTop + 1) Then
+                            ColorFilled = False
+                            Console.BackgroundColor = ConsoleColor.Black
+                            Console.Clear()
+                            CoveredPositions.Clear()
+                        End If
                     End If
                 End If
-            End If
-        Loop
+            Loop
+        Catch ex As Exception
+            Wdbg("W", "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
+            WStkTrc(ex)
+            e.Cancel = True
+            SetInputColor()
+            LoadBack()
+            Console.CursorVisible = True
+            Wdbg("I", "All clean. Dissolve screensaver stopped.")
+            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
+            SaverAutoReset.Set()
+        End Try
     End Sub
 
 End Module

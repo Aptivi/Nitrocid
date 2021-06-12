@@ -19,36 +19,48 @@
 Module ArgumentPrompt
 
     'Variables
-    Public answerargs As String                                                     'Input for arguments
-    Public AvailableArgs() As String = {"quiet", "cmdinject", "debug", "maintenance", "safe", "help"}
+    Public EnteredArguments As New List(Of String)
+    Public AvailableArgs() As String = {"quiet", "cmdinject", "debug", "maintenance", "safe", "testInteractive"}
 
     ''' <summary>
     ''' Prompts user for arguments
     ''' </summary>
     ''' <param name="InjMode">Argument injection mode (usually by "arginj" command)</param>
     Sub PromptArgs(Optional ByVal InjMode As Boolean = False)
-
         'Checks if the arguments are injected
-        If argsInjected = True Then
-            argsInjected = False
-            ParseArguments()
-        Else
-            'Shows available arguments and prompts for it
-            W(DoTranslation("Available arguments: {0}", currentLang) + vbNewLine +
-              DoTranslation("Arguments ('help' for help): ", currentLang), False, ColTypes.Input, String.Join(", ", AvailableArgs))
-            answerargs = Console.ReadLine()
+        Dim AnswerArgs As String = ""
 
-            'Make a kernel check for arguments later if anything is entered
-            If answerargs <> Nothing And InjMode = False Then
-                argsFlag = True
-            ElseIf answerargs <> Nothing And InjMode = True Then
-                argsInjected = True
-                W(DoTranslation("Injected arguments will be scheduled to run at next reboot.", currentLang), True, ColTypes.Neutral)
-            ElseIf answerargs = "q" And InjMode = True Then
-                W(DoTranslation("Argument Injection has been cancelled.", currentLang), True, ColTypes.Neutral)
+        'Shows available arguments
+        W(DoTranslation("Available arguments: {0}") + vbNewLine +
+          DoTranslation("'q' to quit."), True, ColTypes.Neutral, String.Join(", ", AvailableArgs))
+        While Not AnswerArgs = "q"
+            'Prompts for the arguments
+            W(DoTranslation("Arguments ('help' for help): "), False, ColTypes.Input, String.Join(", ", AvailableArgs))
+            AnswerArgs = Console.ReadLine()
+
+            'Add an argument to the entered arguments list
+            If AnswerArgs <> "q" Then
+                For Each AnswerArg As String In AnswerArgs.Split(","c)
+                    If AnswerArg.Contains("help") Then
+                        W(DoTranslation("Separate boot arguments with commas without spaces, for example, 'motd,gpuprobe'") + vbNewLine +
+                          DoTranslation("Separate commands on 'cmdinject' with colons with spaces, for example, 'cmdinject setthemes Hacker : beep 1024 0.5'") + vbNewLine +
+                          DoTranslation("Note that the 'debug' argument does not fully cover the kernel."), True, ColTypes.Neutral)
+                        Exit For
+                    Else
+                        EnteredArguments.Add(AnswerArg)
+                    End If
+                Next
+            Else
+                If InjMode Then
+                    argsInjected = True
+                    EventManager.RaiseArgumentsInjected(EnteredArguments)
+                    W(DoTranslation("Injected arguments will be scheduled to run at next reboot."), True, ColTypes.Neutral)
+                Else
+                    W(DoTranslation("Starting the kernel with:") + " {0}", True, ColTypes.Neutral, String.Join(", ", EnteredArguments))
+                    ParseArguments()
+                End If
             End If
-        End If
-
+        End While
     End Sub
 
 End Module
