@@ -155,7 +155,6 @@ Public Module FTPTools
         connected = True
 
         'If MOTD exists, show it
-        'TODO: A better way of showing MOTD
         If ClientFTP.FileExists("welcome.msg") Then
             W(FTPDownloadToString("welcome.msg"), True, ColTypes.Banner)
         ElseIf ClientFTP.FileExists(".message") Then

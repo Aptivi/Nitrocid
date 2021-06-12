@@ -65,7 +65,9 @@ Module WipeDisplay
                     Select Case ToDirection
                         Case WipeDirections.Right
                             For Column As Integer = 0 To Console.WindowWidth
+                                If Wipe.CancellationPending Then Exit For
                                 For Row As Integer = 0 To MaxWindowHeight
+                                    If Wipe.CancellationPending Then Exit For
                                     Console.SetCursorPosition(0, Row)
                                     Console.Write(StrDup(Column, " "))
                                 Next
@@ -73,7 +75,9 @@ Module WipeDisplay
                             Next
                         Case WipeDirections.Left
                             For Column As Integer = Console.WindowWidth To 1 Step -1
+                                If Wipe.CancellationPending Then Exit For
                                 For Row As Integer = 0 To MaxWindowHeight
+                                    If Wipe.CancellationPending Then Exit For
                                     Console.SetCursorPosition(Column - 1, Row)
                                     Console.Write(StrDup(Console.WindowWidth - Column + 1, " "))
                                 Next
@@ -81,12 +85,14 @@ Module WipeDisplay
                             Next
                         Case WipeDirections.Top
                             For Row As Integer = MaxWindowHeight To 0 Step -1
+                                If Wipe.CancellationPending Then Exit For
                                 Console.SetCursorPosition(0, Row)
                                 Console.Write(StrDup(Console.WindowWidth, " "))
                                 SleepNoBlock(WipeDelay, Wipe)
                             Next
                         Case WipeDirections.Bottom
                             For Row As Integer = 0 To MaxWindowHeight
+                                If Wipe.CancellationPending Then Exit For
                                 Console.Write(StrDup(Console.WindowWidth, " "))
                                 SleepNoBlock(WipeDelay, Wipe)
                             Next

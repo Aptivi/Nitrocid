@@ -63,6 +63,7 @@ Module FaderDisplay
 
                     'Fade in
                     For CurrentStep As Integer = FaderMaxSteps To 1 Step -1
+                        If Fader.CancellationPending Then Exit For
                         SleepNoBlock(FaderDelay, Fader)
                         Dim CurrentColorRed As Integer = RedColorNum / CurrentStep
                         Dim CurrentColorGreen As Integer = GreenColorNum / CurrentStep
@@ -75,6 +76,7 @@ Module FaderDisplay
 
                     'Fade out
                     For CurrentStep As Integer = 1 To FaderMaxSteps
+                        If Fader.CancellationPending Then Exit For
                         SleepNoBlock(FaderDelay, Fader)
                         Dim CurrentColorRed As Integer = RedColorNum - ThresholdRed * CurrentStep
                         Dim CurrentColorGreen As Integer = GreenColorNum - ThresholdGreen * CurrentStep
