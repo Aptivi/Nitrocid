@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.Text
+
 Public Module FTPTransfer
 
     'Progress Bar Enabled
@@ -87,6 +89,40 @@ Public Module FTPTransfer
             Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
         End If
         Return False
+    End Function
+
+    ''' <summary>
+    ''' Downloads a file to string
+    ''' </summary>
+    ''' <param name="File">A text file.</param>
+    ''' <returns>Contents of the file</returns>
+    Public Function FTPDownloadToString(ByVal File As String) As String
+        If connected Then
+            Try
+                'Show a message to download
+                EventManager.RaiseFTPPreDownload(File)
+                Wdbg("I", "Downloading {0}...", File)
+
+                'Try to download 3 times
+                Dim DownloadedBytes() As Byte = {}
+                Dim DownloadedContent As New StringBuilder
+                Dim Downloaded As Boolean = ClientFTP.Download(DownloadedBytes, File)
+                For Each DownloadedByte As Byte In DownloadedBytes
+                    DownloadedContent.Append(Convert.ToChar(DownloadedByte))
+                Next
+
+                'Show a message that it's downloaded
+                Wdbg("I", "Downloaded {0}.", File)
+                EventManager.RaiseFTPPostDownload(File, Downloaded)
+                Return DownloadedContent.ToString
+            Catch ex As Exception
+                Wdbg("E", "Download failed for {0}: {1}", File, ex.Message)
+                EventManager.RaiseFTPPostDownload(File, False)
+            End Try
+        Else
+            Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
+        End If
+        Return ""
     End Function
 
 End Module
