@@ -14,7 +14,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <!-- KS Nuget Information -->
     <PackageId>KS</PackageId>
-    <Version>0.0.16.1</Version>
+    <Version>0.0.16.2</Version>
     <Authors>EoflaOE</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
@@ -55,7 +55,7 @@
     <RunCodeAnalysis>false</RunCodeAnalysis>
     <Prefer32Bit>true</Prefer32Bit>
     <Optimize>false</Optimize>
-    <DefineConstants>SPECIFIER="REL",NTFSCorruptionFix</DefineConstants>
+    <DefineConstants>SPECIFIER="DEV",NTFSCorruptionFix</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
@@ -67,7 +67,7 @@
     <DebugType>pdbonly</DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <Prefer32Bit>true</Prefer32Bit>
-    <DefineConstants>SPECIFIER="REL",NTFSCorruptionFix</DefineConstants>
+    <DefineConstants>SPECIFIER="DEV",NTFSCorruptionFix</DefineConstants>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
