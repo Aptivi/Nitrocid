@@ -34,18 +34,8 @@ Module MailGetCommand
         Dim cmd As String = Parameters(0)
         Dim args As String = Parameters(1)
         Dim RequiredArgsProvided As Boolean = True
-        Dim FullArgsLQ() As String
-        Dim TStream As New MemoryStream(Encoding.Default.GetBytes(args))
-        Dim Parser As New TextFieldParser(TStream) With {
-            .Delimiters = {" "},
-            .HasFieldsEnclosedInQuotes = True,
-            .TrimWhiteSpace = False
-        }
-        FullArgsLQ = Parser.ReadFields
+        Dim FullArgsLQ() As String = args.SplitEncloseDoubleQuotes(" ")
         If FullArgsLQ IsNot Nothing Then
-            For i As Integer = 0 To FullArgsLQ.Length - 1
-                FullArgsLQ(i).Replace("""", "")
-            Next
             RequiredArgsProvided = FullArgsLQ?.Length >= MailCommands(cmd).MinimumArguments
         ElseIf MailCommands(cmd).ArgumentsRequired And FullArgsLQ Is Nothing Then
             RequiredArgsProvided = False

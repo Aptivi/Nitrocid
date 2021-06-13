@@ -45,18 +45,8 @@ Public Module ZipGetCommand
 
             'Separate between command and arguments specified
             Dim Command As String = CommandText.Split(" ")(0)
-            Dim Arguments() As String
-            Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
-            Dim Parser As New TextFieldParser(TStream) With {
-                .Delimiters = {" "},
-                .HasFieldsEnclosedInQuotes = True,
-                .TrimWhiteSpace = False
-            }
-            Arguments = Parser.ReadFields
+            Dim Arguments() As String = strArgs.SplitEncloseDoubleQuotes(" ")
             If Arguments IsNot Nothing Then
-                For i As Integer = 0 To Arguments.Length - 1
-                    Arguments(i).Replace("""", "")
-                Next
                 RequiredArgumentsProvided = Arguments?.Length >= ZipShell_Commands(Command).MinimumArguments
             ElseIf ZipShell_Commands(Command).ArgumentsRequired And Arguments Is Nothing Then
                 RequiredArgumentsProvided = False

@@ -43,18 +43,8 @@ Public Module SFTPGetCommand
         If Not index = cmd.Length Then strArgs = strArgs.Substring(1)
 
         'Parse arguments
-        Dim ArgsQ() As String
-        Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
-        Dim Parser As New TextFieldParser(TStream) With {
-            .Delimiters = {" "},
-            .HasFieldsEnclosedInQuotes = True,
-            .TrimWhiteSpace = False
-        }
-        ArgsQ = Parser.ReadFields
+        Dim ArgsQ() As String = strArgs.SplitEncloseDoubleQuotes(" ")
         If ArgsQ IsNot Nothing Then
-            For i As Integer = 0 To ArgsQ.Length - 1
-                ArgsQ(i).Replace("""", "")
-            Next
             RequiredArgumentsProvided = ArgsQ?.Length >= FTPCommands(words(0)).MinimumArguments
         ElseIf FTPCommands(words(0)).ArgumentsRequired And ArgsQ Is Nothing Then
             RequiredArgumentsProvided = False

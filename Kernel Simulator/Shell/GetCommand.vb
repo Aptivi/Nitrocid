@@ -56,18 +56,8 @@ Public Module GetCommand
         Wdbg("I", "Finished strArgs: {0}", strArgs)
 
         '4. Split the arguments with enclosed quotes and set the required boolean variable
-        Dim eqargs() As String
-        Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
-        Dim Parser As New TextFieldParser(TStream) With {
-            .Delimiters = {" "},
-            .HasFieldsEnclosedInQuotes = True,
-            .TrimWhiteSpace = False
-        }
-        eqargs = Parser.ReadFields
+        Dim eqargs() As String = strArgs.SplitEncloseDoubleQuotes(" ")
         If eqargs IsNot Nothing Then
-            For i As Integer = 0 To eqargs.Length - 1
-                eqargs(i).Replace("""", "")
-            Next
             RequiredArgumentsProvided = eqargs?.Length >= Commands(Command).MinimumArguments
         ElseIf Commands(Command).ArgumentsRequired And eqargs Is Nothing Then
             RequiredArgumentsProvided = False

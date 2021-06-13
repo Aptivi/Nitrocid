@@ -45,18 +45,8 @@ Module TestGetCommand
             Dim Cmd As String = words(0)
 
             'Parse arguments
-            Dim FullArgsQ() As String
-            Dim TStream As New MemoryStream(Encoding.Default.GetBytes(strArgs))
-            Dim Parser As New TextFieldParser(TStream) With {
-                .Delimiters = {" "},
-                .HasFieldsEnclosedInQuotes = True,
-                .TrimWhiteSpace = False
-            }
-            FullArgsQ = Parser.ReadFields
+            Dim FullArgsQ() As String = strArgs.SplitEncloseDoubleQuotes(" ")
             If FullArgsQ IsNot Nothing Then
-                For i As Integer = 0 To FullArgsQ.Length - 1
-                    FullArgsQ(i).Replace("""", "")
-                Next
                 RequiredArgumentsProvided = FullArgsQ?.Length >= Test_Commands(words(0)).MinimumArguments
             ElseIf Test_Commands(words(0)).ArgumentsRequired And FullArgsQ Is Nothing Then
                 RequiredArgumentsProvided = False
