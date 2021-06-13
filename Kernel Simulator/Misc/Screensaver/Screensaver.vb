@@ -196,6 +196,7 @@ Public Module Screensaver
                 ElseIf file.EndsWith(".dll") Then
                     Try
                         finalSaver = GetScreensaverInstance(Assembly.LoadFrom(modPath + file))
+                        DoneFlag = True
                     Catch ex As ReflectionTypeLoadException
                         Wdbg("E", "Error trying to load dynamic mod {0}: {1}", file, ex.Message)
                         WStkTrc(ex)

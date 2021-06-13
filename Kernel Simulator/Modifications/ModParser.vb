@@ -267,6 +267,7 @@ NextEntry:
             'Mod is a dynamic DLL
             Try
                 Dim script As IScript = GetModInstance(Assembly.LoadFrom(modPath + modFile))
+                If script Is Nothing Then CompileCustom(modPath + modFile)
                 FinalizeMods(script, modFile)
             Catch ex As ReflectionTypeLoadException
                 Wdbg("E", "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message)
