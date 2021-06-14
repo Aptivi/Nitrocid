@@ -359,12 +359,6 @@ Public Module KernelTools
         ZipShell_UpdateHelp()
         InitRSSHelp()
 
-        'We need to create a file so InitAliases() won't give out an error
-        If Not File.Exists(paths("Aliases")) Then
-            Dim fstream As FileStream = File.Create(paths("Aliases"))
-            fstream.Close()
-        End If
-
         'Initialize aliases
         InitAliases()
 
