@@ -345,6 +345,7 @@ Public Module Shell
                                                                                       .RedirectStandardError = True,
                                                                                       .FileName = TargetFile,
                                                                                       .Arguments = cmdArgs,
+                                                                                      .WorkingDirectory = CurrDir,
                                                                                       .CreateNoWindow = True,
                                                                                       .WindowStyle = ProcessWindowStyle.Hidden,
                                                                                       .UseShellExecute = False}
