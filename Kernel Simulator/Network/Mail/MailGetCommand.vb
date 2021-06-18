@@ -17,9 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
-Imports System.Text
 Imports System.Threading
-Imports Microsoft.VisualBasic.FileIO
 Imports MimeKit
 
 Module MailGetCommand
@@ -27,23 +25,30 @@ Module MailGetCommand
     Public MailStartCommandThread As New Thread(AddressOf Mail_ExecuteCommand) With {.Name = "Mail Command Thread"}
 
     ''' <summary>
-    ''' Parses and executes the specified command with arguments
+    ''' Parses and executes the specified mail command
     ''' </summary>
-    ''' <param name="Parameters">Two strings. The first one is the command string, and the other is the arguments string.</param>
-    Sub Mail_ExecuteCommand(ByVal Parameters As String()) 'This is converted to String() to ensure compatibility with Threading.Thread.
-        Dim cmd As String = Parameters(0)
-        Dim args As String = Parameters(1)
+    ''' <param name="cmd">A command. It may come with arguments</param>
+    Sub Mail_ExecuteCommand(ByVal cmd As String)
+        'Variables
         Dim RequiredArgsProvided As Boolean = True
-        Dim FullArgsLQ() As String = args.SplitEncloseDoubleQuotes(" ")
+
+        'Get command and arguments
+        Dim index As Integer = cmd.IndexOf(" ")
+        If index = -1 Then index = cmd.Length
+        Dim words = cmd.Split({" "c})
+        Dim strArgs As String = cmd.Substring(index)
+        If Not index = cmd.Length Then strArgs = strArgs.Substring(1)
+
+        'Parse arguments
+        Dim FullArgsLQ() As String = strArgs.SplitEncloseDoubleQuotes(" ")
         If FullArgsLQ IsNot Nothing Then
-            RequiredArgsProvided = FullArgsLQ?.Length >= MailCommands(cmd).MinimumArguments
-        ElseIf MailCommands(cmd).ArgumentsRequired And FullArgsLQ Is Nothing Then
+            RequiredArgsProvided = FullArgsLQ?.Length >= FTPCommands(words(0)).MinimumArguments
+        ElseIf FTPCommands(words(0)).ArgumentsRequired And FullArgsLQ Is Nothing Then
             RequiredArgsProvided = False
         End If
-        Wdbg("I", "Arguments with enclosed quotes count: {0}", FullArgsLQ?.Count)
 
         Try
-            Select Case cmd
+            Select Case words(0)
                 Case "cd"
                     If RequiredArgsProvided Then
                         MailChangeDirectory(FullArgsLQ(0))
@@ -212,15 +217,15 @@ Module MailGetCommand
                     End If
             End Select
 
-            If MailCommands(cmd).ArgumentsRequired And Not RequiredArgsProvided Then
-                W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Error, cmd)
-                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", cmd, FullArgsLQ?.Count)
-                IMAPShowHelp(cmd)
+            If MailCommands(words(0)).ArgumentsRequired And Not RequiredArgsProvided Then
+                W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Error, words(0))
+                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", words(0), FullArgsLQ?.Count)
+                IMAPShowHelp(words(0))
             End If
         Catch taex As ThreadAbortException
             Exit Sub
         Catch ex As Exception
-            EventManager.RaiseIMAPCommandError(cmd + " " + args, ex)
+            EventManager.RaiseIMAPCommandError(cmd, ex)
             W(DoTranslation("Error executing mail command: {0}"), True, ColTypes.Error, ex.Message)
             WStkTrc(ex)
         End Try

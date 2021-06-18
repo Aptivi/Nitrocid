@@ -24,22 +24,22 @@ Public Module ModExecutor
     ''' <param name="cmd">A mod command with arguments</param>
     Sub ExecuteModCommand(ByVal cmd As String)
         EventManager.RaisePreExecuteModCommand(cmd)
-        Dim parts As String() = cmd.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+        Dim parts As String() = cmd.SplitEncloseDoubleQuotes(" ")
         Dim args As String = ""
         Dim actualCmd As String = parts(0)
         Wdbg("I", "Command = {0}", actualCmd)
         For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
             For Each script As IScript In ModPart.Values
                 If script.Commands IsNot Nothing Then
-                    If script.Commands.ContainsKey(cmd) And (script.Name <> Nothing) And (actualCmd <> script.Name) Then
+                    If script.Commands.ContainsKey(actualCmd) And (script.Name <> Nothing) And (actualCmd <> script.Name) Then
                         actualCmd = script.Name
                     End If
                 End If
             Next
         Next
-        If cmd.StartsWith(parts(0) + " ") Then
+        If cmd.StartsWith(parts(0) + " ") Or cmd.StartsWith("""" + parts(0) + """ ") Then
             'These below will be executed if there are arguments
-            args = cmd.Replace($"{parts(0)} ", "")
+            args = cmd.Replace($"{parts(0)} ", "").Replace($"""{parts(0)}"" ", "")
             Wdbg("I", "Command {0} will be run with arguments: {1}", actualCmd, args)
         End If
         For Each ModParts As String In scripts(actualCmd).Keys

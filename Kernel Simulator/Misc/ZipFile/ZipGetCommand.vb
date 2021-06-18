@@ -18,9 +18,7 @@
 
 Imports System.IO
 Imports System.IO.Compression
-Imports System.Text
 Imports System.Threading
-Imports Microsoft.VisualBasic.FileIO
 
 Public Module ZipGetCommand
 

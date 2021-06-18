@@ -92,22 +92,22 @@ Begin:
                 Try
                     Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand.StartsWith(" "), WrittenCommand Is Nothing, WrittenCommand = "")
                     If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"}) = True) Then
-                        Wdbg("I", "Checking command {0} for existence.", WrittenCommand.Split(" ")(0))
-                        If RSSCommands.ContainsKey(WrittenCommand.Split(" ")(0)) Then
-                            Wdbg("I", "Command {0} found in the list of {1} commands.", WrittenCommand.Split(" ")(0), RSSCommands.Count)
+                        Dim Command As String = WrittenCommand.SplitEncloseDoubleQuotes(" ")(0)
+                        Wdbg("I", "Checking command {0} for existence.", Command)
+                        If RSSCommands.ContainsKey(Command) Then
+                            Wdbg("I", "Command {0} found in the list of {1} commands.", Command, RSSCommands.Count)
                             RSSCommandThread = New Thread(AddressOf RSSParseCommand) With {.Name = "RSS Shell Command Thread"}
                             EventManager.RaiseRSSPreExecuteCommand(RSSFeedLink, WrittenCommand)
                             Wdbg("I", "Made new thread. Starting with argument {0}...", WrittenCommand)
                             RSSCommandThread.Start(WrittenCommand)
                             RSSCommandThread.Join()
                             EventManager.RaiseRSSPostExecuteCommand(RSSFeedLink, WrittenCommand)
-                        ElseIf RSSModCommands.Contains(WrittenCommand.Split(" ")(0)) Then
-                            Wdbg("I", "Mod command {0} executing...", WrittenCommand.Split(" ")(0))
-                            EventManager.RaiseRSSPreExecuteCommand(RSSFeedLink, WrittenCommand)
+                        ElseIf RSSModCommands.Contains(Command) Then
+                            Wdbg("I", "Mod command {0} executing...", Command)
                             ExecuteModCommand(WrittenCommand)
-                            EventManager.RaiseRSSPostExecuteCommand(RSSFeedLink, WrittenCommand)
-                        ElseIf RSSShellAliases.Keys.Contains(WrittenCommand.Split(" ")(0)) Then
+                        ElseIf RSSShellAliases.Keys.Contains(Command) Then
                             Wdbg("I", "RSS shell alias command found.")
+                            WrittenCommand = WrittenCommand.Replace($"""{Command}""", Command)
                             ExecuteRSSAlias(WrittenCommand)
                         Else
                             W(DoTranslation("The specified RSS shell command is not found."), True, ColTypes.Error)
@@ -138,7 +138,7 @@ Begin:
     ''' </summary>
     ''' <param name="aliascmd">Aliased command with arguments</param>
     Sub ExecuteRSSAlias(ByVal aliascmd As String)
-        Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
+        Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, RSSShellAliases(FirstWordCmd))
         Wdbg("I", "Actual command: {0}", actualCmd)
         RSSCommandThread = New Thread(AddressOf RSSParseCommand) With {.Name = "RSS Shell Command Thread"}

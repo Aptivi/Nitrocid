@@ -151,7 +151,7 @@ Public Module FTPShell
     ''' Parses a command line from FTP shell
     ''' </summary>
     Public Sub FTPGetLine()
-        Dim words As String() = strcmd.Split({" "c})
+        Dim words As String() = strcmd.SplitEncloseDoubleQuotes(" ")
         Wdbg("I", $"Is the command found? {FTPCommands.ContainsKey(words(0))}")
         If FTPCommands.ContainsKey(words(0)) Then
             Wdbg("I", "Command found.")
@@ -163,6 +163,7 @@ Public Module FTPShell
             ExecuteModCommand(strcmd)
         ElseIf FTPShellAliases.Keys.Contains(words(0)) Then
             Wdbg("I", "FTP shell alias command found.")
+            strcmd = strcmd.Replace($"""{words(0)}""", words(0))
             ExecuteFTPAlias(strcmd)
         ElseIf Not strcmd.StartsWith(" ") Then
             Wdbg("E", "Command {0} not found.", strcmd)
@@ -175,7 +176,7 @@ Public Module FTPShell
     ''' </summary>
     ''' <param name="aliascmd">Aliased command with arguments</param>
     Sub ExecuteFTPAlias(ByVal aliascmd As String)
-        Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
+        Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, FTPShellAliases(FirstWordCmd))
         Wdbg("I", "Actual command: {0}", actualCmd)
         FTPStartCommandThread = New Thread(AddressOf FTPGetCommand.ExecuteCommand) With {.Name = "FTP Command Thread"}

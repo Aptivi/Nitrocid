@@ -184,7 +184,7 @@ Public Module Shell
                             Dim Done As Boolean = False
                             Dim Commands As String() = strcommand.Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
                             For Each Command As String In Commands
-                                Dim Parts As String() = Command.Split({" "c}, StringSplitOptions.RemoveEmptyEntries)
+                                Dim Parts As String() = Command.SplitEncloseDoubleQuotes(" ")
                                 Wdbg("I", "Mod commands probing started with {0} from {1}", Command, strcommand)
                                 If modcmnds.Contains(Parts(0)) Then
                                     Done = True
@@ -195,6 +195,7 @@ Public Module Shell
                                 If Aliases.Keys.Contains(Parts(0)) Then
                                     Done = True
                                     Wdbg("I", "Alias: {0}", Parts(0))
+                                    Command = Command.Replace($"""{Parts(0)}""", Parts(0))
                                     ExecuteAlias(Command, Parts(0))
                                 End If
                                 If Done = False Then

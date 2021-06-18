@@ -75,26 +75,26 @@ Public Module TextEditShell
             'Check to see if the command doesn't start with spaces or if the command is nothing
             Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand?.StartsWith(" "), WrittenCommand Is Nothing, WrittenCommand = "")
             If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"}) = True) Then
-                Wdbg("I", "Checking command {0} for existence.", WrittenCommand.Split(" ")(0))
-                If TextEdit_Commands.ContainsKey(WrittenCommand.Split(" ")(0)) Then
-                    Wdbg("I", "Command {0} found in the list of {1} commands.", WrittenCommand.Split(" ")(0), TextEdit_Commands.Count)
+                Dim Command As String = WrittenCommand.SplitEncloseDoubleQuotes(" ")(0)
+                Wdbg("I", "Checking command {0} for existence.", Command)
+                If TextEdit_Commands.ContainsKey(Command) Then
+                    Wdbg("I", "Command {0} found in the list of {1} commands.", Command, TextEdit_Commands.Count)
                     TextEdit_CommandThread = New Thread(AddressOf TextEdit_ParseCommand) With {.Name = "Text Edit Command Thread"}
                     EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
                     Wdbg("I", "Made new thread. Starting with argument {0}...", WrittenCommand)
                     TextEdit_CommandThread.Start(WrittenCommand)
                     TextEdit_CommandThread.Join()
                     EventManager.RaiseTextPostExecuteCommand(WrittenCommand)
-                ElseIf TextEdit_ModCommands.Contains(WrittenCommand.Split(" ")(0)) Then
-                    Wdbg("I", "Mod command {0} executing...", WrittenCommand.Split(" ")(0))
-                    EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
+                ElseIf TextEdit_ModCommands.Contains(Command) Then
+                    Wdbg("I", "Mod command {0} executing...", Command)
                     ExecuteModCommand(WrittenCommand)
-                    EventManager.RaiseTextPostExecuteCommand(WrittenCommand)
-                ElseIf TextShellAliases.Keys.Contains(WrittenCommand.Split(" ")(0)) Then
+                ElseIf TextShellAliases.Keys.Contains(Command) Then
                     Wdbg("I", "Text shell alias command found.")
+                    WrittenCommand = WrittenCommand.Replace($"""{Command}""", Command)
                     ExecuteTextAlias(WrittenCommand)
                 Else
                     W(DoTranslation("The specified text editor command is not found."), True, ColTypes.Error)
-                    Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), TextEdit_Commands.Count)
+                    Wdbg("E", "Command {0} not found in the list of {1} commands.", Command, TextEdit_Commands.Count)
                 End If
             End If
 
@@ -120,7 +120,7 @@ Public Module TextEditShell
     ''' </summary>
     ''' <param name="aliascmd">Aliased command with arguments</param>
     Sub ExecuteTextAlias(ByVal aliascmd As String)
-        Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
+        Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, TextShellAliases(FirstWordCmd))
         Wdbg("I", "Actual command: {0}", actualCmd)
         TextEdit_CommandThread = New Thread(AddressOf TextEdit_ParseCommand) With {.Name = "Text Edit Command Thread"}

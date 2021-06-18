@@ -21,7 +21,6 @@ Imports System.IO
 Imports System.Text
 Imports System.Text.RegularExpressions
 Imports System.Threading
-Imports Microsoft.VisualBasic.FileIO
 
 Module TestGetCommand
 

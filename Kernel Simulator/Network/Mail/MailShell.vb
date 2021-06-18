@@ -85,35 +85,27 @@ Public Module MailShell
 
             'Listen for a command
             Dim cmd As String = Console.ReadLine
-            Dim args As String = ""
             If Not (cmd = Nothing Or cmd?.StartsWithAnyOf({" ", "#"}) = True) Then
-                Wdbg("I", "Original command: {0}", cmd)
-                If cmd.Contains(" ") And Not cmd.StartsWith(" ") Then
-                    Wdbg("I", "Found arguments in command. Parsing...")
-                    args = cmd.Substring(cmd.IndexOf(" ") + 1)
-                    cmd = cmd.Remove(cmd.IndexOf(" "))
-                    Wdbg("I", "Command: ""{0}"", Arguments: ""{1}""", cmd, args)
-                End If
-                EventManager.RaiseIMAPPreExecuteCommand(cmd + " " + args)
-
-                'Execute a command
-                Wdbg("I", "Executing command...")
-                If MailCommands.ContainsKey(cmd) Then
+                EventManager.RaiseIMAPPreExecuteCommand(cmd)
+                Dim words As String() = cmd.SplitEncloseDoubleQuotes(" ")
+                Wdbg("I", $"Is the command found? {MailCommands.ContainsKey(words(0))}")
+                If FTPCommands.ContainsKey(words(0)) Then
                     Wdbg("I", "Command found.")
                     MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand) With {.Name = "Mail Command Thread"}
-                    MailStartCommandThread.Start({cmd, args})
+                    MailStartCommandThread.Start(cmd)
                     MailStartCommandThread.Join()
-                ElseIf MailModCommands.Contains(cmd) Then
+                ElseIf MailModCommands.Contains(words(0)) Then
                     Wdbg("I", "Mod command found.")
-                    ExecuteModCommand(cmd + " " + args)
-                ElseIf MailShellAliases.Keys.Contains(cmd) Then
+                    ExecuteModCommand(cmd)
+                ElseIf MailShellAliases.Keys.Contains(words(0)) Then
                     Wdbg("I", "Mail shell alias command found.")
-                    ExecuteMailAlias(cmd + " " + args)
+                    cmd = cmd.Replace($"""{words(0)}""", words(0))
+                    ExecuteMailAlias(cmd)
                 ElseIf Not cmd.StartsWith(" ") Then
                     Wdbg("E", "Command not found. Reopening shell...")
-                    W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Error, cmd)
+                    W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Error, words(0))
                 End If
-                EventManager.RaiseIMAPPostExecuteCommand(cmd + " " + args)
+                EventManager.RaiseIMAPPostExecuteCommand(cmd)
             Else
                 Thread.Sleep(30) 'This is to fix race condition between mail shell initialization and starting the event handler thread
             End If
@@ -228,7 +220,7 @@ Public Module MailShell
     ''' </summary>
     ''' <param name="aliascmd">Aliased command with arguments</param>
     Sub ExecuteMailAlias(ByVal aliascmd As String)
-        Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
+        Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, MailShellAliases(FirstWordCmd))
         Wdbg("I", "Actual command: {0}", actualCmd)
         MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand) With {.Name = "Mail Command Thread"}

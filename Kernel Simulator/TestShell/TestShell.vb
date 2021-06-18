@@ -85,7 +85,7 @@ Module TestShell
             Try
                 If Not (FullCmd = Nothing Or FullCmd?.StartsWithAnyOf({" ", "#"}) = True) Then
                     Wdbg("I", "Command: {0}", FullCmd)
-                    Dim Command As String = FullCmd.Split(" ")(0)
+                    Dim Command As String = FullCmd.SplitEncloseDoubleQuotes(" ")(0)
                     If Test_Commands.ContainsKey(Command) Then
                         TStartCommandThread = New Thread(AddressOf TParseCommand) With {.Name = "Test Shell Command Thread"}
                         TStartCommandThread.Start(FullCmd)
@@ -95,6 +95,7 @@ Module TestShell
                         ExecuteModCommand(FullCmd)
                     ElseIf TestShellAliases.Keys.Contains(Command) Then
                         Wdbg("I", "Test shell alias command found.")
+                        FullCmd = FullCmd.Replace($"""{Command}""", Command)
                         ExecuteTestAlias(FullCmd)
                     Else
                         W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Error, Command)
@@ -117,7 +118,7 @@ Module TestShell
     ''' </summary>
     ''' <param name="aliascmd">Aliased command with arguments</param>
     Sub ExecuteTestAlias(ByVal aliascmd As String)
-        Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
+        Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, TestShellAliases(FirstWordCmd))
         Wdbg("I", "Actual command: {0}", actualCmd)
         TStartCommandThread = New Thread(AddressOf TParseCommand) With {.Name = "Test Shell Command Thread"}
