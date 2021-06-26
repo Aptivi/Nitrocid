@@ -310,10 +310,10 @@ Public Module Shell
 
                     'Scan PATH for file existence and set file name as needed
                     Dim TargetFile As String = ""
-                    Dim TargetFileName As String
+                    Dim TargetFileName As String = ""
                     FileExistsInPath(strcommand, TargetFile)
                     If String.IsNullOrEmpty(TargetFile) Then TargetFile = NeutralizePath(strcommand)
-                    TargetFileName = Path.GetFileName(TargetFile)
+                    If TryParsePath(TargetFile) Then TargetFileName = Path.GetFileName(TargetFile)
 
                     'Check to see if a user is able to execute a command
                     If Commands.ContainsKey(strcommand) Then
@@ -332,41 +332,43 @@ Public Module Shell
                             StartCommandThread.Start(cmdArgs)
                             StartCommandThread.Join()
                         End If
-                    Else
+                    ElseIf TryParsePath(TargetFile) Then
                         If File.Exists(TargetFile) And Not TargetFile.EndsWith(".uesh") Then
                             Wdbg("I", "Cmd exec {0} succeeded because file is found.", strcommand)
                             Try
                                 'Create a new instance of process
-                                cmdArgs = cmdArgs.Replace(TargetFileName, "")
-                                cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning
-                                Wdbg("I", "Command: {0}, Arguments: {1}", TargetFile, cmdArgs)
-                                Dim CommandProcess As New Process
-                                Dim CommandProcessStart As New ProcessStartInfo With {.RedirectStandardInput = True,
-                                                                                      .RedirectStandardOutput = True,
-                                                                                      .RedirectStandardError = True,
-                                                                                      .FileName = TargetFile,
-                                                                                      .Arguments = cmdArgs,
-                                                                                      .WorkingDirectory = CurrDir,
-                                                                                      .CreateNoWindow = True,
-                                                                                      .WindowStyle = ProcessWindowStyle.Hidden,
-                                                                                      .UseShellExecute = False}
-                                CommandProcess.StartInfo = CommandProcessStart
-                                AddHandler CommandProcess.OutputDataReceived, AddressOf ExecutableOutput
-                                AddHandler CommandProcess.ErrorDataReceived, AddressOf ExecutableOutput
+                                If TryParsePath(TargetFile) Then
+                                    cmdArgs = cmdArgs.Replace(TargetFileName, "")
+                                    cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning
+                                    Wdbg("I", "Command: {0}, Arguments: {1}", TargetFile, cmdArgs)
+                                    Dim CommandProcess As New Process
+                                    Dim CommandProcessStart As New ProcessStartInfo With {.RedirectStandardInput = True,
+                                                                                          .RedirectStandardOutput = True,
+                                                                                          .RedirectStandardError = True,
+                                                                                          .FileName = TargetFile,
+                                                                                          .Arguments = cmdArgs,
+                                                                                          .WorkingDirectory = CurrDir,
+                                                                                          .CreateNoWindow = True,
+                                                                                          .WindowStyle = ProcessWindowStyle.Hidden,
+                                                                                          .UseShellExecute = False}
+                                    CommandProcess.StartInfo = CommandProcessStart
+                                    AddHandler CommandProcess.OutputDataReceived, AddressOf ExecutableOutput
+                                    AddHandler CommandProcess.ErrorDataReceived, AddressOf ExecutableOutput
 
-                                'Start the process
-                                Wdbg("I", "Starting...")
-                                CommandProcess.Start()
-                                CommandProcess.BeginOutputReadLine()
-                                CommandProcess.BeginErrorReadLine()
-                                While Not CommandProcess.HasExited Or Not CancelRequested
-                                    If CommandProcess.HasExited Then
-                                        Exit While
-                                    ElseIf CancelRequested Then
-                                        CommandProcess.Kill()
-                                        Exit While
-                                    End If
-                                End While
+                                    'Start the process
+                                    Wdbg("I", "Starting...")
+                                    CommandProcess.Start()
+                                    CommandProcess.BeginOutputReadLine()
+                                    CommandProcess.BeginErrorReadLine()
+                                    While Not CommandProcess.HasExited Or Not CancelRequested
+                                        If CommandProcess.HasExited Then
+                                            Exit While
+                                        ElseIf CancelRequested Then
+                                            CommandProcess.Kill()
+                                            Exit While
+                                        End If
+                                    End While
+                                End If
                             Catch ex As Exception
                                 Wdbg("E", "Failed to start process: {0}", ex.Message)
                                 W(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Error, strcommand, ex.Message)
@@ -379,6 +381,9 @@ Public Module Shell
                             Wdbg("W", "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", strcommand, indexCmd)
                             W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Error, strcommand)
                         End If
+                    Else
+                        Wdbg("W", "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", strcommand, indexCmd)
+                        W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Error, strcommand)
                     End If
                 End If
             ElseIf ArgsMode = True And CommandFlag = True Then

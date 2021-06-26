@@ -856,9 +856,41 @@ Public Module Filesystem
         Return False
     End Function
 
+    ''' <summary>
+    ''' Tries to parse the path
+    ''' </summary>
+    ''' <param name="Path">The path to be parsed</param>
+    ''' <returns>True if successful; false if unsuccessful</returns>
+    Public Function TryParsePath(ByVal Path As String) As Boolean
+        Try
+            ThrowOnInvalidPath(Path)
+            Return Not Path.IndexOfAny(IO.Path.GetInvalidPathChars()) >= 0
+        Catch ex As Exception
+            WStkTrc(ex)
+            Wdbg("E", "Failed to parse path {0}: {1}", Path, ex.Message)
+        End Try
+        Return False
+    End Function
+
+    ''' <summary>
+    ''' Tries to parse the file name
+    ''' </summary>
+    ''' <param name="Name">The file name to be parsed</param>
+    ''' <returns>True if successful; false if unsuccessful</returns>
+    Public Function TryParseFileName(ByVal Name As String) As Boolean
+        Try
+            ThrowOnInvalidPath(Name)
+            Return Not Name.IndexOfAny(IO.Path.GetInvalidFileNameChars()) >= 0
+        Catch ex As Exception
+            WStkTrc(ex)
+            Wdbg("E", "Failed to parse file name {0}: {1}", Name, ex.Message)
+        End Try
+        Return False
+    End Function
+
 #If NTFSCorruptionFix Then
     ''' <summary>
-    ''' Mitigates Windows 10 NTFS corruption or Windows 10 BSOD bug
+    ''' Mitigates Windows 10/11 NTFS corruption or Windows 10/11 BSOD bug
     ''' </summary>
     ''' <param name="Path">Target path</param>
     Public Sub ThrowOnInvalidPath(ByVal Path As String)
