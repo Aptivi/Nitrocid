@@ -27,37 +27,59 @@ Module MailGetCommand
     ''' <summary>
     ''' Parses and executes the specified mail command
     ''' </summary>
-    ''' <param name="cmd">A command. It may come with arguments</param>
-    Sub Mail_ExecuteCommand(ByVal cmd As String)
+    ''' <param name="requestedCommand">A command. It may come with arguments</param>
+    Sub Mail_ExecuteCommand(ByVal requestedCommand As String)
         'Variables
-        Dim RequiredArgsProvided As Boolean = True
+        Dim Command As String
+        Dim RequiredArgumentsProvided As Boolean = True
 
-        'Get command and arguments
-        Dim index As Integer = cmd.IndexOf(" ")
-        If index = -1 Then index = cmd.Length
-        Dim words = cmd.Split({" "c})
-        Dim strArgs As String = cmd.Substring(index)
-        If Not index = cmd.Length Then strArgs = strArgs.Substring(1)
+        '1. Get the index of the first space (Used for step 3)
+        Dim index As Integer = requestedCommand.IndexOf(" ")
+        If index = -1 Then index = requestedCommand.Length
+        Wdbg("I", "Index: {0}", index)
 
-        'Parse arguments
-        Dim FullArgsLQ() As String = strArgs.SplitEncloseDoubleQuotes(" ")
-        If FullArgsLQ IsNot Nothing Then
-            RequiredArgsProvided = FullArgsLQ?.Length >= FTPCommands(words(0)).MinimumArguments
-        ElseIf FTPCommands(words(0)).ArgumentsRequired And FullArgsLQ Is Nothing Then
-            RequiredArgsProvided = False
+        '2. Split the requested command string into words
+        Dim words() As String = requestedCommand.Split({" "c})
+        For i As Integer = 0 To words.Length - 1
+            Wdbg("I", "Word {0}: {1}", i + 1, words(i))
+        Next
+        Command = words(0)
+
+        '3. Get the string of arguments
+        Dim strArgs As String = requestedCommand.Substring(index)
+        Wdbg("I", "Prototype strArgs: {0}", strArgs)
+        If Not index = requestedCommand.Length Then strArgs = strArgs.Substring(1)
+        Wdbg("I", "Finished strArgs: {0}", strArgs)
+
+        '4. Split the arguments with enclosed quotes and set the required boolean variable
+        Dim eqargs() As String = strArgs.SplitEncloseDoubleQuotes(" ")
+        If eqargs IsNot Nothing Then
+            RequiredArgumentsProvided = eqargs?.Length >= MailCommands(Command).MinimumArguments
+        ElseIf MailCommands(Command).ArgumentsRequired And eqargs Is Nothing Then
+            RequiredArgumentsProvided = False
         End If
 
+        '4a. Debug: get all arguments from eqargs()
+        If eqargs IsNot Nothing Then Wdbg("I", "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
+
+        '5. Check to see if a requested command is obsolete
+        If MailCommands(Command).Obsolete Then
+            Wdbg("I", "The command requested {0} is obsolete", Command)
+            W(DoTranslation("This command is obsolete and will be removed in a future release."), True, ColTypes.Neutral)
+        End If
+
+        '6. Execute a command
         Try
             Select Case words(0)
                 Case "cd"
-                    If RequiredArgsProvided Then
-                        MailChangeDirectory(FullArgsLQ(0))
+                    If RequiredArgumentsProvided Then
+                        MailChangeDirectory(eqargs(0))
                     End If
                 Case "list"
-                    If FullArgsLQ?.Count > 0 Then
-                        Wdbg("I", "Page is numeric? {0}", FullArgsLQ(0).IsNumeric)
-                        If FullArgsLQ(0).IsNumeric Then
-                            W(MailListMessages(FullArgsLQ(0)), False, ColTypes.Neutral)
+                    If eqargs?.Count > 0 Then
+                        Wdbg("I", "Page is numeric? {0}", eqargs(0).IsNumeric)
+                        If eqargs(0).IsNumeric Then
+                            W(MailListMessages(eqargs(0)), False, ColTypes.Neutral)
                         Else
                             W(DoTranslation("Page is not a numeric value."), True, ColTypes.Error)
                         End If
@@ -67,19 +89,19 @@ Module MailGetCommand
                 Case "lsdirs"
                     W(MailListDirectories, False, ColTypes.Neutral)
                 Case "read"
-                    If RequiredArgsProvided Then
-                        Wdbg("I", "Message number is numeric? {0}", FullArgsLQ(0).IsNumeric)
-                        If FullArgsLQ(0).IsNumeric Then
-                            MailPrintMessage(FullArgsLQ(0))
+                    If RequiredArgumentsProvided Then
+                        Wdbg("I", "Message number is numeric? {0}", eqargs(0).IsNumeric)
+                        If eqargs(0).IsNumeric Then
+                            MailPrintMessage(eqargs(0))
                         Else
                             W(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
                         End If
                     End If
                 Case "readenc"
-                    If RequiredArgsProvided Then
-                        Wdbg("I", "Message number is numeric? {0}", FullArgsLQ(0).IsNumeric)
-                        If FullArgsLQ(0).IsNumeric Then
-                            MailPrintMessage(FullArgsLQ(0), True)
+                    If RequiredArgumentsProvided Then
+                        Wdbg("I", "Message number is numeric? {0}", eqargs(0).IsNumeric)
+                        If eqargs(0).IsNumeric Then
+                            MailPrintMessage(eqargs(0), True)
                         Else
                             W(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
                         End If
@@ -130,7 +152,7 @@ Module MailGetCommand
 
                         'Send the message
                         W(DoTranslation("Sending message..."), True, ColTypes.Neutral)
-                        If cmd = "sendenc" Then
+                        If requestedCommand = "sendenc" Then
                             If MailSendEncryptedMessage(Receiver, Subject, Body.ToMessageBody) Then
                                 Wdbg("I", "Message sent.")
                                 W(DoTranslation("Message sent."), True, ColTypes.Neutral)
@@ -152,54 +174,54 @@ Module MailGetCommand
                         W(DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:") + " john.s@example.com", True, ColTypes.Error)
                     End If
                 Case "rm"
-                    If RequiredArgsProvided Then
-                        Wdbg("I", "Message number is numeric? {0}", FullArgsLQ(0).IsNumeric)
-                        If FullArgsLQ(0).IsNumeric Then
-                            MailRemoveMessage(FullArgsLQ(0))
+                    If RequiredArgumentsProvided Then
+                        Wdbg("I", "Message number is numeric? {0}", eqargs(0).IsNumeric)
+                        If eqargs(0).IsNumeric Then
+                            MailRemoveMessage(eqargs(0))
                         Else
                             W(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
                         End If
                     End If
                 Case "rmall"
-                    If RequiredArgsProvided Then
-                        If MailRemoveAllBySender(FullArgsLQ(0)) Then
-                            W(DoTranslation("All mail made by {0} are removed successfully."), True, ColTypes.Neutral, FullArgsLQ(0))
+                    If RequiredArgumentsProvided Then
+                        If MailRemoveAllBySender(eqargs(0)) Then
+                            W(DoTranslation("All mail made by {0} are removed successfully."), True, ColTypes.Neutral, eqargs(0))
                         Else
-                            W(DoTranslation("Failed to remove all mail made by {0}."), True, ColTypes.Neutral, FullArgsLQ(0))
+                            W(DoTranslation("Failed to remove all mail made by {0}."), True, ColTypes.Neutral, eqargs(0))
                         End If
                     End If
                 Case "mv"
-                    If RequiredArgsProvided Then
-                        Wdbg("I", "Message number is numeric? {0}", FullArgsLQ(0).IsNumeric)
-                        If FullArgsLQ(0).IsNumeric Then
-                            MailMoveMessage(FullArgsLQ(0), FullArgsLQ(1))
+                    If RequiredArgumentsProvided Then
+                        Wdbg("I", "Message number is numeric? {0}", eqargs(0).IsNumeric)
+                        If eqargs(0).IsNumeric Then
+                            MailMoveMessage(eqargs(0), eqargs(1))
                         Else
                             W(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
                         End If
                     End If
                 Case "mvall"
-                    If RequiredArgsProvided Then
-                        If MailMoveAllBySender(FullArgsLQ(0), FullArgsLQ(1)) Then
-                            W(DoTranslation("All mail made by {0} are moved successfully."), True, ColTypes.Neutral, FullArgsLQ(0))
+                    If RequiredArgumentsProvided Then
+                        If MailMoveAllBySender(eqargs(0), eqargs(1)) Then
+                            W(DoTranslation("All mail made by {0} are moved successfully."), True, ColTypes.Neutral, eqargs(0))
                         Else
-                            W(DoTranslation("Failed to move all mail made by {0}."), True, ColTypes.Neutral, FullArgsLQ(0))
+                            W(DoTranslation("Failed to move all mail made by {0}."), True, ColTypes.Neutral, eqargs(0))
                         End If
                     End If
                 Case "mkdir"
-                    If RequiredArgsProvided Then
-                        CreateMailDirectory(FullArgsLQ(0))
+                    If RequiredArgumentsProvided Then
+                        CreateMailDirectory(eqargs(0))
                     End If
                 Case "rmdir"
-                    If RequiredArgsProvided Then
-                        DeleteMailDirectory(FullArgsLQ(0))
+                    If RequiredArgumentsProvided Then
+                        DeleteMailDirectory(eqargs(0))
                     End If
                 Case "ren"
-                    If RequiredArgsProvided Then
-                        RenameMailDirectory(FullArgsLQ(0), FullArgsLQ(1))
+                    If RequiredArgumentsProvided Then
+                        RenameMailDirectory(eqargs(0), eqargs(1))
                     End If
                 Case "help"
-                    If FullArgsLQ?.Length > 0 Then
-                        IMAPShowHelp(FullArgsLQ(0))
+                    If eqargs?.Length > 0 Then
+                        IMAPShowHelp(eqargs(0))
                     Else
                         IMAPShowHelp()
                     End If
@@ -217,15 +239,15 @@ Module MailGetCommand
                     End If
             End Select
 
-            If MailCommands(words(0)).ArgumentsRequired And Not RequiredArgsProvided Then
+            If MailCommands(words(0)).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Error, words(0))
-                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", words(0), FullArgsLQ?.Count)
+                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", words(0), eqargs?.Count)
                 IMAPShowHelp(words(0))
             End If
         Catch taex As ThreadAbortException
             Exit Sub
         Catch ex As Exception
-            EventManager.RaiseIMAPCommandError(cmd, ex)
+            EventManager.RaiseIMAPCommandError(requestedCommand, ex)
             W(DoTranslation("Error executing mail command: {0}"), True, ColTypes.Error, ex.Message)
             WStkTrc(ex)
         End Try

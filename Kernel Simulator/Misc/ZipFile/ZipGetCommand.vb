@@ -25,38 +25,54 @@ Public Module ZipGetCommand
     'Variables
     Public ZipShell_CommandThread As New Thread(AddressOf ZipShell_ParseCommand) With {.Name = "ZIP Shell Command Thread"}
 
-    Sub ZipShell_ParseCommand(ByVal CommandText As String)
+    Sub ZipShell_ParseCommand(ByVal requestedCommand As String)
         Try
-            'Indicator if required arguments are provided
+            'Variables
+            Dim Command As String
             Dim RequiredArgumentsProvided As Boolean = True
 
-            'Get the index of the first space
-            Dim index As Integer = CommandText.IndexOf(" ")
-            If index = -1 Then index = CommandText.Length
+            '1. Get the index of the first space (Used for step 3)
+            Dim index As Integer = requestedCommand.IndexOf(" ")
+            If index = -1 Then index = requestedCommand.Length
             Wdbg("I", "Index: {0}", index)
 
-            'Get the String Of arguments
-            Dim strArgs As String = CommandText.Substring(index)
+            '2. Split the requested command string into words
+            Dim words() As String = requestedCommand.Split({" "c})
+            For i As Integer = 0 To words.Length - 1
+                Wdbg("I", "Word {0}: {1}", i + 1, words(i))
+            Next
+            Command = words(0)
+
+            '3. Get the string of arguments
+            Dim strArgs As String = requestedCommand.Substring(index)
             Wdbg("I", "Prototype strArgs: {0}", strArgs)
-            If Not index = CommandText.Length Then strArgs = strArgs.Substring(1)
+            If Not index = requestedCommand.Length Then strArgs = strArgs.Substring(1)
             Wdbg("I", "Finished strArgs: {0}", strArgs)
 
-            'Separate between command and arguments specified
-            Dim Command As String = CommandText.Split(" ")(0)
-            Dim Arguments() As String = strArgs.SplitEncloseDoubleQuotes(" ")
-            If Arguments IsNot Nothing Then
-                RequiredArgumentsProvided = Arguments?.Length >= ZipShell_Commands(Command).MinimumArguments
-            ElseIf ZipShell_Commands(Command).ArgumentsRequired And Arguments Is Nothing Then
+            '4. Split the arguments with enclosed quotes and set the required boolean variable
+            Dim eqargs() As String = strArgs.SplitEncloseDoubleQuotes(" ")
+            If eqargs IsNot Nothing Then
+                RequiredArgumentsProvided = eqargs?.Length >= ZipShell_Commands(Command).MinimumArguments
+            ElseIf ZipShell_Commands(Command).ArgumentsRequired And eqargs Is Nothing Then
                 RequiredArgumentsProvided = False
             End If
 
-            'Try to parse command
+            '4a. Debug: get all arguments from eqargs()
+            If eqargs IsNot Nothing Then Wdbg("I", "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
+
+            '5. Check to see if a requested command is obsolete
+            If ZipShell_Commands(Command).Obsolete Then
+                Wdbg("I", "The command requested {0} is obsolete", Command)
+                W(DoTranslation("This command is obsolete and will be removed in a future release."), True, ColTypes.Neutral)
+            End If
+
+            '6. Execute a command
             Select Case Command
                 Case "list"
                     Dim Entries As List(Of ZipArchiveEntry)
-                    If Arguments?.Length > 0 Then
-                        Wdbg("I", "Listing entries with {0} as target directory", Arguments(0))
-                        Entries = ListZipEntries(Arguments(0))
+                    If eqargs?.Length > 0 Then
+                        Wdbg("I", "Listing entries with {0} as target directory", eqargs(0))
+                        Entries = ListZipEntries(eqargs(0))
                     Else
                         Wdbg("I", "Listing entries with current directory as target directory")
                         Entries = ListZipEntries(ZipShell_CurrentArchiveDirectory)
@@ -73,24 +89,24 @@ Public Module ZipGetCommand
                     If RequiredArgumentsProvided Then
                         Dim Where As String = ""
                         Dim Absolute As Boolean
-                        If Arguments?.Length > 1 Then
-                            If Not Arguments(1) = "-absolute" Then Where = NeutralizePath(Arguments(1))
-                            If Arguments?.Contains("-absolute") Then
+                        If eqargs?.Length > 1 Then
+                            If Not eqargs(1) = "-absolute" Then Where = NeutralizePath(eqargs(1))
+                            If eqargs?.Contains("-absolute") Then
                                 Absolute = True
                             End If
                         End If
-                        ExtractZipFileEntry(Arguments(0), Where, Absolute)
+                        ExtractZipFileEntry(eqargs(0), Where, Absolute)
                     End If
                 Case "chdir"
                     If RequiredArgumentsProvided Then
-                        If Not ChangeWorkingZipLocalDirectory(Arguments(0)) Then
-                            W(DoTranslation("Directory {0} doesn't exist"), True, ColTypes.Error, Arguments(0))
+                        If Not ChangeWorkingZipLocalDirectory(eqargs(0)) Then
+                            W(DoTranslation("Directory {0} doesn't exist"), True, ColTypes.Error, eqargs(0))
                         End If
                     End If
                 Case "chadir"
                     If RequiredArgumentsProvided Then
-                        If Not ChangeWorkingArchiveDirectory(Arguments(0)) Then
-                            W(DoTranslation("Archive directory {0} doesn't exist"), True, ColTypes.Error, Arguments(0))
+                        If Not ChangeWorkingArchiveDirectory(eqargs(0)) Then
+                            W(DoTranslation("Archive directory {0} doesn't exist"), True, ColTypes.Error, eqargs(0))
                         End If
                     End If
                 Case "cdir"
@@ -98,9 +114,9 @@ Public Module ZipGetCommand
                 Case "exit"
                     ZipShell_Exiting = True
                 Case "help"
-                    If Arguments?.Length > 0 Then
-                        Wdbg("I", "Requested help for {0}", Arguments(0))
-                        ZipShell_GetHelp(Arguments(0))
+                    If eqargs?.Length > 0 Then
+                        Wdbg("I", "Requested help for {0}", eqargs(0))
+                        ZipShell_GetHelp(eqargs(0))
                     Else
                         Wdbg("I", "Requested help for all commands")
                         ZipShell_GetHelp()
@@ -110,16 +126,16 @@ Public Module ZipGetCommand
             'See if the command is done (passed all required arguments)
             If ZipShell_Commands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Error, Command)
-                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, Arguments?.Length)
+                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, eqargs?.Length)
                 ZipShell_GetHelp(Command)
             End If
         Catch taex As ThreadAbortException
             Exit Sub
         Catch ex As Exception
             W(DoTranslation("Error trying to run command: {0}"), True, ColTypes.Error, ex.Message)
-            Wdbg("E", "Error running command {0}: {1}", CommandText.Split(" ")(0), ex.Message)
+            Wdbg("E", "Error running command {0}: {1}", requestedCommand.Split(" ")(0), ex.Message)
             WStkTrc(ex)
-            EventManager.RaiseZipCommandError(CommandText, ex)
+            EventManager.RaiseZipCommandError(requestedCommand, ex)
         End Try
     End Sub
 

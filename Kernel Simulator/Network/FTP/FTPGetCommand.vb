@@ -28,51 +28,72 @@ Public Module FTPGetCommand
     ''' <summary>
     ''' Parses and executes the FTP command
     ''' </summary>
-    ''' <param name="cmd">A command. It may come with arguments</param>
-    Public Sub ExecuteCommand(ByVal cmd As String)
+    ''' <param name="requestedCommand">A command. It may come with arguments</param>
+    Public Sub ExecuteCommand(ByVal requestedCommand As String)
         'Variables
+        Dim Command As String
         Dim RequiredArgumentsProvided As Boolean = True
 
-        'Get command and arguments
-        Dim index As Integer = cmd.IndexOf(" ")
-        If index = -1 Then index = cmd.Length
-        Dim words = cmd.Split({" "c})
-        Dim strArgs As String = cmd.Substring(index)
-        If Not index = cmd.Length Then strArgs = strArgs.Substring(1)
+        '1. Get the index of the first space (Used for step 3)
+        Dim index As Integer = requestedCommand.IndexOf(" ")
+        If index = -1 Then index = requestedCommand.Length
+        Wdbg("I", "Index: {0}", index)
 
-        'Parse arguments
-        Dim ArgsQ() As String = strArgs.SplitEncloseDoubleQuotes(" ")
-        If ArgsQ IsNot Nothing Then
-            RequiredArgumentsProvided = ArgsQ?.Length >= FTPCommands(words(0)).MinimumArguments
-        ElseIf FTPCommands(words(0)).ArgumentsRequired And ArgsQ Is Nothing Then
+        '2. Split the requested command string into words
+        Dim words() As String = requestedCommand.Split({" "c})
+        For i As Integer = 0 To words.Length - 1
+            Wdbg("I", "Word {0}: {1}", i + 1, words(i))
+        Next
+        Command = words(0)
+
+        '3. Get the string of arguments
+        Dim strArgs As String = requestedCommand.Substring(index)
+        Wdbg("I", "Prototype strArgs: {0}", strArgs)
+        If Not index = requestedCommand.Length Then strArgs = strArgs.Substring(1)
+        Wdbg("I", "Finished strArgs: {0}", strArgs)
+
+        '4. Split the arguments with enclosed quotes and set the required boolean variable
+        Dim eqargs() As String = strArgs.SplitEncloseDoubleQuotes(" ")
+        If eqargs IsNot Nothing Then
+            RequiredArgumentsProvided = eqargs?.Length >= FTPCommands(Command).MinimumArguments
+        ElseIf FTPCommands(Command).ArgumentsRequired And eqargs Is Nothing Then
             RequiredArgumentsProvided = False
         End If
 
-        'Command code
+        '4a. Debug: get all arguments from eqargs()
+        If eqargs IsNot Nothing Then Wdbg("I", "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
+
+        '5. Check to see if a requested command is obsolete
+        If FTPCommands(Command).Obsolete Then
+            Wdbg("I", "The command requested {0} is obsolete", Command)
+            W(DoTranslation("This command is obsolete and will be removed in a future release."), True, ColTypes.Neutral)
+        End If
+
+        '6. Execute a command
         Try
-            Select Case words(0)
+            Select Case Command
                 Case "connect"
                     If RequiredArgumentsProvided Then
-                        If ArgsQ(0).StartsWith("ftp://") Or ArgsQ(0).StartsWith("ftps://") Or ArgsQ(0).StartsWith("ftpes://") Then
-                            TryToConnect(ArgsQ(0))
+                        If eqargs(0).StartsWith("ftp://") Or eqargs(0).StartsWith("ftps://") Or eqargs(0).StartsWith("ftpes://") Then
+                            TryToConnect(eqargs(0))
                         Else
-                            TryToConnect($"ftp://{ArgsQ(0)}")
+                            TryToConnect($"ftp://{eqargs(0)}")
                         End If
                     Else
                         W(DoTranslation("Enter an FTP server."), True, ColTypes.Neutral)
                     End If
                 Case "cdl"
-                    FTPChangeLocalDir(ArgsQ(0))
+                    FTPChangeLocalDir(eqargs(0))
                 Case "cdr"
-                    FTPChangeRemoteDir(ArgsQ(0))
+                    FTPChangeRemoteDir(eqargs(0))
                 Case "cp"
                     If RequiredArgumentsProvided Then
                         If connected Then
-                            W(DoTranslation("Copying {0} to {1}..."), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
-                            If FTPCopyItem(ArgsQ(0), ArgsQ(1)) Then
+                            W(DoTranslation("Copying {0} to {1}..."), True, ColTypes.Neutral, eqargs(0), eqargs(1))
+                            If FTPCopyItem(eqargs(0), eqargs(1)) Then
                                 W(vbNewLine + DoTranslation("Copied successfully"), True, ColTypes.Neutral)
                             Else
-                                W(vbNewLine + DoTranslation("Failed to copy {0} to {1}."), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
+                                W(vbNewLine + DoTranslation("Failed to copy {0} to {1}."), True, ColTypes.Neutral, eqargs(0), eqargs(1))
                             End If
                         Else
                             W(DoTranslation("You must connect to server before performing transmission."), True, ColTypes.Error)
@@ -92,15 +113,15 @@ Public Module FTPGetCommand
                     If RequiredArgumentsProvided Then
                         If connected = True Then
                             'Print a message
-                            W(DoTranslation("Deleting {0}..."), True, ColTypes.Neutral, ArgsQ(0))
+                            W(DoTranslation("Deleting {0}..."), True, ColTypes.Neutral, eqargs(0))
 
                             'Make a confirmation message so user will not accidentally delete a file or folder
-                            W(DoTranslation("Are you sure you want to delete {0} <y/n>?") + " ", False, ColTypes.Input, ArgsQ(0))
+                            W(DoTranslation("Are you sure you want to delete {0} <y/n>?") + " ", False, ColTypes.Input, eqargs(0))
                             Dim answer As String = Console.ReadKey.KeyChar
                             Console.WriteLine()
 
                             Try
-                                FTPDeleteRemote(ArgsQ(0))
+                                FTPDeleteRemote(eqargs(0))
                             Catch ex As Exception
                                 W(ex.Message, True, ColTypes.Error)
                             End Try
@@ -127,25 +148,25 @@ Public Module FTPGetCommand
                     End If
                 Case "get"
                     If RequiredArgumentsProvided Then
-                        W(DoTranslation("Downloading file {0}..."), False, ColTypes.Neutral, ArgsQ(0))
-                        If FTPGetFile(ArgsQ(0)) Then
+                        W(DoTranslation("Downloading file {0}..."), False, ColTypes.Neutral, eqargs(0))
+                        If FTPGetFile(eqargs(0)) Then
                             Console.WriteLine()
-                            W(DoTranslation("Downloaded file {0}."), True, ColTypes.Neutral, ArgsQ(0))
+                            W(DoTranslation("Downloaded file {0}."), True, ColTypes.Neutral, eqargs(0))
                         Else
                             Console.WriteLine()
-                            W(DoTranslation("Download failed for file {0}."), True, ColTypes.Error, ArgsQ(0))
+                            W(DoTranslation("Download failed for file {0}."), True, ColTypes.Error, eqargs(0))
                         End If
                     Else
                         W(DoTranslation("Enter a file to download to local directory."), True, ColTypes.Error)
                     End If
                 Case "lsl"
-                    If ArgsQ?.Count > 0 And ArgsQ IsNot Nothing Then
-                        List(ArgsQ(0))
+                    If eqargs?.Count > 0 And eqargs IsNot Nothing Then
+                        List(eqargs(0))
                     Else
                         List(CurrDir)
                     End If
                 Case "lsr"
-                    Dim Entries As List(Of String) = FTPListRemote(If(ArgsQ IsNot Nothing, ArgsQ(0), ""))
+                    Dim Entries As List(Of String) = FTPListRemote(If(eqargs IsNot Nothing, eqargs(0), ""))
                     Entries.Sort()
                     For Each Entry As String In Entries
                         W(Entry, True, ColTypes.ListEntry)
@@ -153,11 +174,11 @@ Public Module FTPGetCommand
                 Case "mv"
                     If RequiredArgumentsProvided Then
                         If connected Then
-                            W(DoTranslation("Moving {0} to {1}..."), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
-                            If FTPMoveItem(ArgsQ(0), ArgsQ(1)) Then
+                            W(DoTranslation("Moving {0} to {1}..."), True, ColTypes.Neutral, eqargs(0), eqargs(1))
+                            If FTPMoveItem(eqargs(0), eqargs(1)) Then
                                 W(vbNewLine + DoTranslation("Moved successfully"), True, ColTypes.Neutral)
                             Else
-                                W(vbNewLine + DoTranslation("Failed to move {0} to {1}."), True, ColTypes.Neutral, ArgsQ(0), ArgsQ(1))
+                                W(vbNewLine + DoTranslation("Failed to move {0} to {1}."), True, ColTypes.Neutral, eqargs(0), eqargs(1))
                             End If
                         Else
                             W(DoTranslation("You must connect to server before performing transmission."), True, ColTypes.Error)
@@ -174,10 +195,10 @@ Public Module FTPGetCommand
                 Case "perm"
                     If RequiredArgumentsProvided Then
                         If connected Then
-                            If FTPChangePermissions(ArgsQ(0), ArgsQ(1)) Then
-                                W(DoTranslation("Permissions set successfully for file") + " {0}", True, ColTypes.Neutral, ArgsQ(0))
+                            If FTPChangePermissions(eqargs(0), eqargs(1)) Then
+                                W(DoTranslation("Permissions set successfully for file") + " {0}", True, ColTypes.Neutral, eqargs(0))
                             Else
-                                W(DoTranslation("Failed to set permissions of {0} to {1}."), True, ColTypes.Error, ArgsQ(0), ArgsQ(1))
+                                W(DoTranslation("Failed to set permissions of {0} to {1}."), True, ColTypes.Error, eqargs(0), eqargs(1))
                             End If
                         Else
                             W(DoTranslation("You must connect to server before performing filesystem operations."), True, ColTypes.Error)
@@ -185,13 +206,13 @@ Public Module FTPGetCommand
                     End If
                 Case "type"
                     If RequiredArgumentsProvided Then
-                        If ArgsQ(0).ToLower = "a" Then
+                        If eqargs(0).ToLower = "a" Then
                             ClientFTP.DownloadDataType = FtpDataType.ASCII
                             ClientFTP.ListingDataType = FtpDataType.ASCII
                             ClientFTP.UploadDataType = FtpDataType.ASCII
                             W(DoTranslation("Data type set to ASCII!"), True, ColTypes.Neutral)
                             W(DoTranslation("Beware that most files won't download or upload properly using this mode, so we highly recommend using the Binary mode on most situations."), True, ColTypes.Warning)
-                        ElseIf ArgsQ(0).ToLower = "b" Then
+                        ElseIf eqargs(0).ToLower = "b" Then
                             ClientFTP.DownloadDataType = FtpDataType.Binary
                             ClientFTP.ListingDataType = FtpDataType.Binary
                             ClientFTP.UploadDataType = FtpDataType.Binary
@@ -202,15 +223,15 @@ Public Module FTPGetCommand
                     End If
                 Case "put"
                     If RequiredArgumentsProvided Then
-                        W(DoTranslation("Uploading file {0}..."), True, ColTypes.Neutral, ArgsQ(0))
+                        W(DoTranslation("Uploading file {0}..."), True, ColTypes.Neutral, eqargs(0))
 
                         'Begin the uploading process
-                        If FTPUploadFile(ArgsQ(0)) Then
+                        If FTPUploadFile(eqargs(0)) Then
                             Console.WriteLine()
-                            W(vbNewLine + DoTranslation("Uploaded file {0}"), True, ColTypes.Neutral, ArgsQ(0))
+                            W(vbNewLine + DoTranslation("Uploaded file {0}"), True, ColTypes.Neutral, eqargs(0))
                         Else
                             Console.WriteLine()
-                            W(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Neutral, ArgsQ(0))
+                            W(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Neutral, eqargs(0))
                         End If
                     Else
                         W(DoTranslation("Enter a file to upload to remote directory. upload <file> <directory>"), True, ColTypes.Error)
@@ -219,7 +240,7 @@ Public Module FTPGetCommand
                     'Set a flag
                     ftpexit = True
                 Case "help"
-                    If cmd = "help" Then
+                    If requestedCommand = "help" Then
                         FTPShowHelp()
                     Else
                         FTPShowHelp(strArgs)
@@ -231,22 +252,22 @@ Public Module FTPGetCommand
             If DebugMode = True Then
                 If ex.InnerException IsNot Nothing Then 'This is required to fix NullReferenceException when there is nothing in InnerException, so please don't remove.
                     W(DoTranslation("Error trying to execute FTP command {3}.") + vbNewLine +
-                      DoTranslation("Error {0}: {1} ") + DoTranslation("(Inner:") + " {4})" + vbNewLine + "{2}", True, ColTypes.Error, ex.GetType.FullName, ex.Message, ex.StackTrace, words(0), ex.InnerException.Message)
+                      DoTranslation("Error {0}: {1} ") + DoTranslation("(Inner:") + " {4})" + vbNewLine + "{2}", True, ColTypes.Error, ex.GetType.FullName, ex.Message, ex.StackTrace, Command, ex.InnerException.Message)
                 Else
                     W(DoTranslation("Error trying to execute FTP command {3}.") + vbNewLine +
-                      DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Error, ex.GetType.FullName, ex.Message, ex.StackTrace, words(0))
+                      DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Error, ex.GetType.FullName, ex.Message, ex.StackTrace, Command)
                 End If
                 WStkTrc(ex)
             Else
                 If ex.InnerException IsNot Nothing Then
                     W(DoTranslation("Error trying to execute FTP command {2}.") + vbNewLine +
-                      DoTranslation("Error {0}: {1} ") + DoTranslation("(Inner:") + " {3})", True, ColTypes.Error, ex.GetType.FullName, ex.Message, words(0), ex.InnerException.Message)
+                      DoTranslation("Error {0}: {1} ") + DoTranslation("(Inner:") + " {3})", True, ColTypes.Error, ex.GetType.FullName, ex.Message, Command, ex.InnerException.Message)
                 Else
                     W(DoTranslation("Error trying to execute FTP command {2}.") + vbNewLine +
-                      DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message, words(0))
+                      DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message, Command)
                 End If
             End If
-            EventManager.RaiseFTPCommandError(cmd, ex)
+            EventManager.RaiseFTPCommandError(requestedCommand, ex)
         End Try
 
     End Sub
