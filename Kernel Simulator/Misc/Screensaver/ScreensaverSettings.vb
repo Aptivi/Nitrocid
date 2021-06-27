@@ -190,6 +190,14 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public FaderFadeOutDelay As Integer = 3000
     ''' <summary>
+    ''' [FaderBack] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public FaderBackDelay As Integer = 10
+    ''' <summary>
+    ''' [FaderBack] How many milliseconds to wait before fading the text out?
+    ''' </summary>
+    Public FaderBackFadeOutDelay As Integer = 3000
+    ''' <summary>
     ''' [Typo] How many milliseconds to wait before making the next write?
     ''' </summary>
     Public TypoDelay As Integer = 50
@@ -233,6 +241,10 @@ Public Module ScreensaverSettings
     ''' [Fader] How many fade steps to do?
     ''' </summary>
     Public FaderMaxSteps As Integer = 25
+    ''' <summary>
+    ''' [FaderBack] How many fade steps to do?
+    ''' </summary>
+    Public FaderBackMaxSteps As Integer = 25
     ''' <summary>
     ''' [Typo] Minimum writing speed in WPM
     ''' </summary>

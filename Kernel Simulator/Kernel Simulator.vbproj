@@ -184,6 +184,7 @@
     <Compile Include="Misc\Configuration\Config.vb" />
     <Compile Include="Misc\ReportBugPrompt.vb" />
     <Compile Include="Misc\Screensaver\Displays\Fader.vb" />
+    <Compile Include="Misc\Screensaver\Displays\FaderBack.vb" />
     <Compile Include="Misc\Screensaver\Displays\Lighter.vb" />
     <Compile Include="Misc\Screensaver\Displays\Marquee.vb" />
     <Compile Include="Misc\Screensaver\Displays\Plain.vb" />

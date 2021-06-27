@@ -111,7 +111,7 @@ Public Module ToolPrompts
         Dim SectionFinished As Boolean
         Dim AnswerString As String
         Dim AnswerInt As Integer
-        Dim BuiltinSavers As Integer = 17
+        Dim BuiltinSavers As Integer = 18
 
         'Section-specific variables
         Dim ConfigurableScreensavers As New List(Of String)
@@ -230,6 +230,7 @@ Public Module ToolPrompts
                     W("15) HackUserFromAD...", True, ColTypes.Option)
                     W("16) AptErrorSim...", True, ColTypes.Option)
                     W("17) Marquee...", True, ColTypes.Option)
+                    W("18) FaderBack...", True, ColTypes.Option)
 
                     'Populate custom screensavers
                     For Each CustomSaver As String In CSvrdb.Keys
@@ -367,6 +368,13 @@ Public Module ToolPrompts
                     W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MarqueeDelay)))
                     W("4) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MarqueeWrite)))
                     W("5) " + DoTranslation("Always centered") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MarqueeAlwaysCentered)))
+                Case "7.18" 'Screensaver > FaderBack
+                    MaxOptions = 3
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > FaderBack" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " FaderBack." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderBackDelay)))
+                    W("2) " + DoTranslation("Fade Out Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderBackFadeOutDelay)))
+                    W("3) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderBackMaxSteps)))
                 Case "7." + $"{If(SectionParameters.Length <> 0, SectionParameters(0), $"{BuiltinSavers + 1}")}" 'Screensaver > a custom saver
                     Dim SaverIndex As Integer = SectionParameters(0) - BuiltinSavers - 1
                     Dim Configurables As List(Of String) = SectionParameters(1)
@@ -1259,6 +1267,27 @@ Public Module ToolPrompts
                             W(DoTranslation("Whether the text shown on the marquee is always centered."), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Marquee > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
+                    End Select
+                Case "7.18" 'FaderBack
+                    Select Case KeyNumber
+                        Case 1 'FaderBack: Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FaderBackDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > FaderBack > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 2 'FaderBack: Fade Out Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FaderBackFadeOutDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > FaderBack > " + DoTranslation("Fade Out Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before fading out text?"), True, ColTypes.Neutral)
+                        Case 3 'FaderBack: Max Fade Steps
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FaderBackMaxSteps)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > FaderBack > " + DoTranslation("Max Fade Steps") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many fade steps to do?"), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > FaderBack > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
                 Case "7." + $"{If(SectionParts.Length > 1, SectionParts(1), $"{BuiltinSavers + 1}")}" 'Custom saver

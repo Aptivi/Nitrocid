@@ -33,7 +33,8 @@ Public Module Screensaver
     Public ScrnSvrdb As New Dictionary(Of String, BackgroundWorker) From {{"colorMix", ColorMix}, {"matrix", Matrix}, {"glitterMatrix", GlitterMatrix}, {"disco", Disco},
                                                                           {"lines", Lines}, {"glitterColor", GlitterColor}, {"aptErrorSim", AptErrorSim}, {"hackUserFromAD", HackUserFromAD},
                                                                           {"bouncingText", BouncingText}, {"dissolve", Dissolve}, {"bouncingBlock", BouncingBlock}, {"progressClock", ProgressClock},
-                                                                          {"lighter", Lighter}, {"fader", Fader}, {"typo", Typo}, {"wipe", Wipe}, {"marquee", Marquee}, {"plain", Plain}}
+                                                                          {"lighter", Lighter}, {"fader", Fader}, {"typo", Typo}, {"wipe", Wipe}, {"marquee", Marquee}, {"plain", Plain},
+                                                                          {"faderBack", FaderBack}}
     Public CSvrdb As New Dictionary(Of String, ICustomSaver)
     Public WithEvents Timeout As New BackgroundWorker
     Public finalSaver As ICustomSaver
@@ -141,6 +142,7 @@ Public Module Screensaver
             End If
 
             'Raise event
+            Wdbg("I", "Screensaver really stopped.")
             EventManager.RaisePostShowScreensaver(saver)
             InSaver = False
         Catch ex As InvalidOperationException
