@@ -488,13 +488,11 @@ Public Module ToolPrompts
                 Case "1" 'General
                     Select Case KeyNumber
                         Case 1 'Prompt for Arguments on Boot
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(argsOnBoot)
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Prompt for Arguments on Boot") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Sets up the kernel so it prompts you for argument on boot."), True, ColTypes.Neutral)
                         Case 2 'Maintenance Mode Trigger
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(maintenance)
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Maintenance Mode Trigger") + vbNewLine, True, ColTypes.Neutral)
@@ -502,13 +500,11 @@ Public Module ToolPrompts
                         Case 3 'Change Root Password
                             OpenKey(Section, 1.3)
                         Case 4 'Check for Updates on Startup
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(CheckUpdateStart)
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Check for Updates on Startup") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Each startup, it will check for updates."), True, ColTypes.Neutral)
                         Case 5 'Change Culture when Switching Languages
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(LangChangeCulture)
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Culture when Switching Languages") + vbNewLine, True, ColTypes.Neutral)
@@ -536,13 +532,12 @@ Public Module ToolPrompts
                     End Select
                 Case "1.3" 'General -> Change Root Password
                     Select Case KeyNumber
-                        Case 1
-                            MaxKeyOptions = 2
+                        Case 1 'Change Root Password?
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(setRootPasswd)
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password...") + " > " + DoTranslation("Change Root Password?") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("If the kernel is started, it will set root password."), True, ColTypes.Neutral)
-                        Case 2
+                        Case 2 'Set Root Password...
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password...") + " > " + DoTranslation("Set Root Password...") + vbNewLine, True, ColTypes.Neutral)
                             If GetConfigValue(NameOf(setRootPasswd)) Then
                                 KeyType = SettingsKeyType.SString
@@ -558,13 +553,11 @@ Public Module ToolPrompts
                 Case "2" 'Hardware
                     Select Case KeyNumber
                         Case 1 'Quiet Probe
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(quietProbe)
                             W("*) " + DoTranslation("Hardware Settings...") + " > " + DoTranslation("Quiet Probe") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Keep hardware probing messages silent."), True, ColTypes.Neutral)
                         Case 2 'Full Probe
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(FullProbe)
                             W("*) " + DoTranslation("Hardware Settings...") + " > " + DoTranslation("Full Probe") + vbNewLine, True, ColTypes.Neutral)
@@ -576,19 +569,16 @@ Public Module ToolPrompts
                 Case "3" 'Login
                     Select Case KeyNumber
                         Case 1 'Show MOTD on Log-in
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(showMOTD)
                             W("*) " + DoTranslation("Login Settings...") + " > " + DoTranslation("Show MOTD on Log-in") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Show Message of the Day before displaying login screen."), True, ColTypes.Neutral)
                         Case 2 'Clear Screen on Log-in
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(clsOnLogin)
                             W("*) " + DoTranslation("Login Settings...") + " > " + DoTranslation("Clear Screen on Log-in") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Clear screen before displaying login screen."), True, ColTypes.Neutral)
                         Case 3 'Show Available Usernames
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ShowAvailableUsers)
                             W("*) " + DoTranslation("Login Settings...") + " > " + DoTranslation("Show available usernames") + vbNewLine, True, ColTypes.Neutral)
@@ -600,13 +590,11 @@ Public Module ToolPrompts
                 Case "4" 'Shell
                     Select Case KeyNumber
                         Case 1 'Colored Shell
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ColoredShell)
                             W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Colored Shell") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Gives the kernel color support"), True, ColTypes.Neutral)
                         Case 2 'Simplified Help Command
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(simHelp)
                             W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Simplified Help Command") + vbNewLine, True, ColTypes.Neutral)
@@ -753,19 +741,16 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Debug Size Quota in Bytes") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how many bytes can the debug log store. It must be numeric."), True, ColTypes.Neutral)
                         Case 4 'Show Hidden Files
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(HiddenFiles)
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Show Hidden Files") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Shows hidden files."), True, ColTypes.Neutral)
                         Case 5 'Size parse mode
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(FullParseMode)
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Size parse mode") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("If enabled, the kernel will parse the whole folder for its total size. Else, will only parse the surface."), True, ColTypes.Neutral)
                         Case 6 'Show progress on filesystem operations
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ShowFilesystemProgress)
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Show progress on filesystem operations") + vbNewLine, True, ColTypes.Neutral)
@@ -789,49 +774,41 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Upload Retry Times") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how many times the ""put"" command should retry failed uploads. It must be numeric."), True, ColTypes.Neutral)
                         Case 4 'Show progress bar while downloading or uploading from "get" or "put" command
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ShowProgress)
                             W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Show progress bar while downloading or uploading from ""get"" or ""put"" command") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("If true, it makes ""get"" or ""put"" show the progress bar while downloading or uploading."), True, ColTypes.Neutral)
                         Case 5 'Log FTP username
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(FTPLoggerUsername)
                             W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Log FTP username") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Whether or not to log FTP username."), True, ColTypes.Neutral)
                         Case 6 'Log FTP IP address
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(FTPLoggerIP)
                             W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Log FTP IP address") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Whether or not to log FTP IP address."), True, ColTypes.Neutral)
                         Case 7 'Return only first FTP profile
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(FTPFirstProfileOnly)
                             W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Return only first FTP profile") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Pick the first profile only when connecting."), True, ColTypes.Neutral)
                         Case 8 'Show mail message preview
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ShowPreview)
                             W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Show mail message preview") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("When listing mail messages, show body preview."), True, ColTypes.Neutral)
                         Case 9 'Record chat to debug log
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(RecordChatToDebugLog)
                             W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Record chat to debug log") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Records remote debug chat to debug log."), True, ColTypes.Neutral)
                         Case 10 'Show SSH banner
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(SSHBanner)
                             W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Show SSH banner") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Shows the SSH server banner on connection."), True, ColTypes.Neutral)
                         Case 11 'Enable RPC
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(RPCEnabled)
                             W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Enable RPC") + vbNewLine, True, ColTypes.Neutral)
@@ -859,13 +836,11 @@ Public Module ToolPrompts
                 Case "7.1" 'ColorMix
                     Select Case KeyNumber
                         Case 1 'ColorMix: Activate 255 colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ColorMix255Colors)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > ColorMix > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for ColorMix."), True, ColTypes.Neutral)
                         Case 2 'ColorMix: Activate true colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ColorMixTrueColor)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > ColorMix > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
@@ -904,19 +879,16 @@ Public Module ToolPrompts
                 Case "7.4" 'Disco
                     Select Case KeyNumber
                         Case 1 'Disco: Activate 255 colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(Disco255Colors)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Disco > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for Disco."), True, ColTypes.Neutral)
                         Case 2 'Disco: Activate true colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(DiscoTrueColor)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Disco > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates true color support for Disco."), True, ColTypes.Neutral)
                         Case 3 'Disco: Cycle colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(DiscoCycleColors)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Disco > " + DoTranslation("Cycle colors") + vbNewLine, True, ColTypes.Neutral)
@@ -933,13 +905,11 @@ Public Module ToolPrompts
                 Case "7.5" 'Lines
                     Select Case KeyNumber
                         Case 1 'Lines: Activate 255 colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(Lines255Colors)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Lines > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for Lines."), True, ColTypes.Neutral)
                         Case 2 'Lines: Activate true colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(LinesTrueColor)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Lines > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
@@ -956,13 +926,11 @@ Public Module ToolPrompts
                 Case "7.6" 'GlitterColor
                     Select Case KeyNumber
                         Case 1 'GlitterColor: Activate 255 colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(GlitterColor255Colors)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > GlitterColor > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for GlitterColor."), True, ColTypes.Neutral)
                         Case 2 'GlitterColor: Activate true colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(GlitterColorTrueColor)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > GlitterColor > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
@@ -979,13 +947,11 @@ Public Module ToolPrompts
                 Case "7.7" 'BouncingText
                     Select Case KeyNumber
                         Case 1 'BouncingText: Activate 255 colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(BouncingText255Colors)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for BouncingText."), True, ColTypes.Neutral)
                         Case 2 'BouncingText: Activate true colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(BouncingTextTrueColor)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
@@ -1007,13 +973,11 @@ Public Module ToolPrompts
                 Case "7.8" 'Dissolve
                     Select Case KeyNumber
                         Case 1 'Dissolve: Activate 255 colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(Dissolve255Colors)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Dissolve > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for Dissolve."), True, ColTypes.Neutral)
                         Case 2 'Dissolve: Activate true colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(DissolveTrueColor)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Dissolve > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
@@ -1025,13 +989,11 @@ Public Module ToolPrompts
                 Case "7.9" 'BouncingBlock
                     Select Case KeyNumber
                         Case 1 'BouncingBlock: Activate 255 colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(BouncingBlock255Colors)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingBlock > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for BouncingBlock."), True, ColTypes.Neutral)
                         Case 2 'BouncingBlock: Activate true colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(BouncingBlockTrueColor)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingBlock > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
@@ -1048,19 +1010,16 @@ Public Module ToolPrompts
                 Case "7.10" 'ProgressClock
                     Select Case KeyNumber
                         Case 1 'ProgressClock: Activate 255 colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ProgressClock255Colors)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for ProgressClock."), True, ColTypes.Neutral)
                         Case 2 'ProgressClock: Activate true colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ProgressClockTrueColor)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates true color support for ProgressClock."), True, ColTypes.Neutral)
                         Case 3 'ProgressClock: Cycle colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ProgressClockCycleColors)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Cycle colors") + vbNewLine, True, ColTypes.Neutral)
@@ -1097,13 +1056,11 @@ Public Module ToolPrompts
                 Case "7.11" 'Lighter
                     Select Case KeyNumber
                         Case 1 'Lighter: Activate 255 colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(Lighter255Colors)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Lighter > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for Lighter."), True, ColTypes.Neutral)
                         Case 2 'Lighter: Activate true colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(LighterTrueColor)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Lighter > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
@@ -1187,13 +1144,11 @@ Public Module ToolPrompts
                 Case "7.14" 'Wipe
                     Select Case KeyNumber
                         Case 1 'Wipe: Activate 255 colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(Wipe255Colors)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Wipe > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for Wipe."), True, ColTypes.Neutral)
                         Case 2 'Wipe: Activate true colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(WipeTrueColor)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Wipe > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
@@ -1215,7 +1170,6 @@ Public Module ToolPrompts
                 Case "7.15" 'HackUserFromAD
                     Select Case KeyNumber
                         Case 1 'HackUserFromAD: Hacker Mode
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(HackUserFromADHackerMode)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > HackUserFromAD > " + DoTranslation("Hacker Mode") + vbNewLine, True, ColTypes.Neutral)
@@ -1227,7 +1181,6 @@ Public Module ToolPrompts
                 Case "7.16" 'AptErrorSim
                     Select Case KeyNumber
                         Case 1 'AptErrorSim: Hacker Mode
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(AptErrorSimHackerMode)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > AptErrorSim > " + DoTranslation("Hacker Mode") + vbNewLine, True, ColTypes.Neutral)
@@ -1239,13 +1192,11 @@ Public Module ToolPrompts
                 Case "7.17" 'Marquee
                     Select Case KeyNumber
                         Case 1 'Marquee: Activate 255 colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(Marquee255Colors)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Activates 255 color support for Marquee."), True, ColTypes.Neutral)
                         Case 2 'Marquee: Activate true colors
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(MarqueeTrueColor)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
@@ -1261,13 +1212,11 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Text shown") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write any text you want shown."), True, ColTypes.Neutral)
                         Case 5 'Marquee: Always centered
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(MarqueeAlwaysCentered)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Always centered") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Whether the text shown on the marquee is always centered."), True, ColTypes.Neutral)
                         Case 6 'Marquee: Use Console API
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(MarqueeUseConsoleAPI)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Use Console API") + vbNewLine, True, ColTypes.Neutral)
@@ -1313,19 +1262,16 @@ Public Module ToolPrompts
                 Case "8" 'Misc
                     Select Case KeyNumber
                         Case 1 'Show Time/Date on Upper Right Corner
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(CornerTD)
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Show Time/Date on Upper Right Corner") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("The time and date will be shown in the upper right corner of the screen"), True, ColTypes.Neutral)
                         Case 2 'Marquee on startup
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(StartScroll)
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Marquee on startup") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Enables eyecandy on startup"), True, ColTypes.Neutral)
                         Case 3 'Long Time and Date
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(LongTimeDate)
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Long Time and Date") + vbNewLine, True, ColTypes.Neutral)
@@ -1340,7 +1286,6 @@ Public Module ToolPrompts
                             W("2) " + DoTranslation("Metric (Celsius)"), True, ColTypes.Option)
                             W("3) " + DoTranslation("Imperial (Fahrenheit)"), True, ColTypes.Option)
                         Case 5 'Enable text editor autosave
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(TextEdit_AutoSaveFlag)
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Enable text editor autosave") + vbNewLine, True, ColTypes.Neutral)
@@ -1351,7 +1296,6 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Text editor autosave interval") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("If autosave is enabled, the text file will be saved for each ""n"" seconds."), True, ColTypes.Neutral)
                         Case 7 'Wrap list outputs
-                            MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(WrapListOutputs)
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Wrap list outputs") + vbNewLine, True, ColTypes.Neutral)
@@ -1368,6 +1312,7 @@ Public Module ToolPrompts
             'If the type is boolean, write the two options
             If KeyType = SettingsKeyType.SBoolean Then
                 Console.WriteLine()
+                MaxKeyOptions = 2
                 W("1) " + DoTranslation("Enable"), True, ColTypes.Option)
                 W("2) " + DoTranslation("Disable"), True, ColTypes.Option)
             End If
