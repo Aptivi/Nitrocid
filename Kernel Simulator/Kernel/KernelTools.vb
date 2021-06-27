@@ -377,10 +377,6 @@ Public Module KernelTools
         'Load user token
         LoadUserToken()
 
-        If RebootRequested Then
-            Exit Sub
-        End If
-
         'Show welcome message.
         If StartScroll Then
             WriteSlowlyC("      >> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<", True, 10, ColTypes.Banner, KernelVersion)

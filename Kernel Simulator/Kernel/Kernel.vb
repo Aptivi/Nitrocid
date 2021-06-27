@@ -81,13 +81,6 @@ Public Module Kernel
                 StageTimer.Start()
                 InitEverything(Args)
 
-                'For config
-                If RebootRequested Then
-                    RebootRequested = False
-                    LogoutRequested = False
-                    Exit Try
-                End If
-
                 'Stage 1: Initialize the system
                 W(DoTranslation("Internal initialization finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
                 WriteSeparator(DoTranslation("- Stage 1: System initialization"), False, ColTypes.Stage)
