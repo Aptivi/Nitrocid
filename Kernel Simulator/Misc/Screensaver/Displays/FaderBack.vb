@@ -54,13 +54,16 @@ Module FaderBackDisplay
                     Dim ThresholdBlue As Double = BlueColorNum / FaderBackMaxSteps
 
                     'Fade in
-                    For CurrentStep As Integer = FaderBackMaxSteps To 1 Step -1
+                    Dim CurrentColorRedIn As Integer = 0
+                    Dim CurrentColorGreenIn As Integer = 0
+                    Dim CurrentColorBlueIn As Integer = 0
+                    For CurrentStep As Integer = 1 To FaderBackMaxSteps
                         If FaderBack.CancellationPending Then Exit For
                         SleepNoBlock(FaderBackDelay, FaderBack)
-                        Dim CurrentColorRed As Integer = RedColorNum / CurrentStep
-                        Dim CurrentColorGreen As Integer = GreenColorNum / CurrentStep
-                        Dim CurrentColorBlue As Integer = BlueColorNum / CurrentStep
-                        SetConsoleColor(New KS.Color($"{CurrentColorRed};{CurrentColorGreen};{CurrentColorBlue}"), True)
+                        CurrentColorRedIn += ThresholdRed
+                        CurrentColorGreenIn += ThresholdGreen
+                        CurrentColorBlueIn += ThresholdBlue
+                        SetConsoleColor(New Color($"{CurrentColorRedIn};{CurrentColorGreenIn};{CurrentColorBlueIn}"), True)
                         Console.Clear()
                     Next
 
@@ -71,10 +74,10 @@ Module FaderBackDisplay
                     For CurrentStep As Integer = 1 To FaderBackMaxSteps
                         If FaderBack.CancellationPending Then Exit For
                         SleepNoBlock(FaderBackDelay, FaderBack)
-                        Dim CurrentColorRed As Integer = RedColorNum - ThresholdRed * CurrentStep
-                        Dim CurrentColorGreen As Integer = GreenColorNum - ThresholdGreen * CurrentStep
-                        Dim CurrentColorBlue As Integer = BlueColorNum - ThresholdBlue * CurrentStep
-                        SetConsoleColor(New KS.Color($"{CurrentColorRed};{CurrentColorGreen};{CurrentColorBlue}"), True)
+                        Dim CurrentColorRedOut As Integer = RedColorNum - ThresholdRed * CurrentStep
+                        Dim CurrentColorGreenOut As Integer = GreenColorNum - ThresholdGreen * CurrentStep
+                        Dim CurrentColorBlueOut As Integer = BlueColorNum - ThresholdBlue * CurrentStep
+                        SetConsoleColor(New Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), True)
                         Console.Clear()
                     Next
 

@@ -62,13 +62,16 @@ Module FaderDisplay
                     Dim ThresholdBlue As Double = BlueColorNum / FaderMaxSteps
 
                     'Fade in
+                    Dim CurrentColorRedIn As Integer = 0
+                    Dim CurrentColorGreenIn As Integer = 0
+                    Dim CurrentColorBlueIn As Integer = 0
                     For CurrentStep As Integer = FaderMaxSteps To 1 Step -1
                         If Fader.CancellationPending Then Exit For
                         SleepNoBlock(FaderDelay, Fader)
-                        Dim CurrentColorRed As Integer = RedColorNum / CurrentStep
-                        Dim CurrentColorGreen As Integer = GreenColorNum / CurrentStep
-                        Dim CurrentColorBlue As Integer = BlueColorNum / CurrentStep
-                        WriteWhereC(FaderWrite, Left, Top, True, New Color(CurrentColorRed & ";" & CurrentColorGreen & ";" & CurrentColorBlue), New Color(ConsoleColors.Black))
+                        CurrentColorRedIn += ThresholdRed
+                        CurrentColorGreenIn += ThresholdGreen
+                        CurrentColorBlueIn += ThresholdBlue
+                        WriteWhereC(FaderWrite, Left, Top, True, New Color(CurrentColorRedIn & ";" & CurrentColorGreenIn & ";" & CurrentColorBlueIn), New Color(ConsoleColors.Black))
                     Next
 
                     'Wait until fade out
@@ -78,10 +81,10 @@ Module FaderDisplay
                     For CurrentStep As Integer = 1 To FaderMaxSteps
                         If Fader.CancellationPending Then Exit For
                         SleepNoBlock(FaderDelay, Fader)
-                        Dim CurrentColorRed As Integer = RedColorNum - ThresholdRed * CurrentStep
-                        Dim CurrentColorGreen As Integer = GreenColorNum - ThresholdGreen * CurrentStep
-                        Dim CurrentColorBlue As Integer = BlueColorNum - ThresholdBlue * CurrentStep
-                        WriteWhereC(FaderWrite, Left, Top, True, New Color(CurrentColorRed & ";" & CurrentColorGreen & ";" & CurrentColorBlue), New Color(ConsoleColors.Black))
+                        Dim CurrentColorRedOut As Integer = RedColorNum - ThresholdRed * CurrentStep
+                        Dim CurrentColorGreenOut As Integer = GreenColorNum - ThresholdGreen * CurrentStep
+                        Dim CurrentColorBlueOut As Integer = BlueColorNum - ThresholdBlue * CurrentStep
+                        WriteWhereC(FaderWrite, Left, Top, True, New Color(CurrentColorRedOut & ";" & CurrentColorGreenOut & ";" & CurrentColorBlueOut), New Color(ConsoleColors.Black))
                     Next
 
                     'Select new color
