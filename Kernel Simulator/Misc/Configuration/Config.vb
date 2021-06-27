@@ -273,7 +273,8 @@ Public Module Config
                     {"Activate True Color Mode", MarqueeTrueColor},
                     {"Delay in Milliseconds", MarqueeDelay},
                     {"Text Shown", MarqueeWrite},
-                    {"Always Centered", MarqueeAlwaysCentered}
+                    {"Always Centered", MarqueeAlwaysCentered},
+                    {"Use Console API", MarqueeUseConsoleAPI}
             }
             ScreensaverConfig.Add("Marquee", MarqueeConfig)
 
@@ -485,6 +486,7 @@ Public Module Config
             TypoMissStrikePossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Probability of typo in percent"), 0), ConfigToken("Screensaver")?("Typo")?("Probability of typo in percent"), 60)
             WipeWipesNeededToChangeDirection = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Wipes to change direction"), 0), ConfigToken("Screensaver")?("Wipe")?("Wipes to change direction"), 10)
             MarqueeAlwaysCentered = If(ConfigToken("Screensaver")?("Marquee")?("Always Centered"), True)
+            MarqueeUseConsoleAPI = If(ConfigToken("Screensaver")?("Marquee")?("Use Console API"), False)
 
             'Misc Section
             Wdbg("I", "Parsing misc section...")
@@ -719,7 +721,7 @@ Public Module Config
                 End If
             End If
             If ConfigToken("Screensaver")("Marquee") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Marquee").Count <> 5 Then
+                If ConfigToken("Screensaver")("Marquee").Count <> 6 Then
                     Wdbg("W", "Missing keys in Screensaver > Marquee. Config fix needed set to true.")
                     FixesNeeded = True
                 End If

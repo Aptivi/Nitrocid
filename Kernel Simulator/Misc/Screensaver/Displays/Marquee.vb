@@ -33,7 +33,6 @@ Module MarqueeDisplay
         Dim RandomDriver As New Random()
         Try
             Do While True
-                Console.Clear()
                 If Marquee.CancellationPending = True Then
                     Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
@@ -45,6 +44,7 @@ Module MarqueeDisplay
                     Exit Do
                 Else
                     SleepNoBlock(MarqueeDelay, Marquee)
+                    Console.Clear()
 
                     'Ensure that the top position of the written text is always centered if AlwaysCentered is enabled. Else, select a random height.
                     Dim TopPrinted As Integer = Console.WindowHeight / 2
@@ -74,7 +74,7 @@ Module MarqueeDisplay
                     Do Until CurrentLeftOtherEnd = 0
                         SleepNoBlock(MarqueeDelay, Marquee)
                         If Marquee.CancellationPending Then Exit Do
-                        Console.Clear()
+                        If MarqueeUseConsoleAPI Then Console.Clear()
 
                         'Declare variable for written marquee text
                         Dim MarqueeWritten As String = MarqueeWrite
@@ -90,6 +90,7 @@ Module MarqueeDisplay
                         Else
                             MarqueeWritten = MarqueeWritten.Substring(MarqueeWrite.Length - (CurrentLeftOtherEnd - CurrentLeft))
                         End If
+                        If Not MarqueeUseConsoleAPI Then MarqueeWritten += GetEsc() + "[0K"
 
                         'Set the appropriate cursor position and write the results
                         Console.SetCursorPosition(CurrentLeft, TopPrinted)

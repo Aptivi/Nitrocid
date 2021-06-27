@@ -360,7 +360,7 @@ Public Module ToolPrompts
                     W(DoTranslation("This section lists screensaver settings for") + " AptErrorSim." + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Hacker Mode") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(AptErrorSimHackerMode)))
                 Case "7.17" 'Screensaver > Marquee
-                    MaxOptions = 5
+                    MaxOptions = 6
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Marquee" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " Marquee." + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Marquee255Colors)))
@@ -368,6 +368,7 @@ Public Module ToolPrompts
                     W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MarqueeDelay)))
                     W("4) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MarqueeWrite)))
                     W("5) " + DoTranslation("Always centered") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MarqueeAlwaysCentered)))
+                    W("6) " + DoTranslation("Use Console API") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MarqueeUseConsoleAPI)))
                 Case "7.18" 'Screensaver > FaderBack
                     MaxOptions = 3
                     W("*) " + DoTranslation("Screensaver Settings...") + " > FaderBack" + vbNewLine, True, ColTypes.Neutral)
@@ -1265,6 +1266,12 @@ Public Module ToolPrompts
                             KeyVar = NameOf(MarqueeAlwaysCentered)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Always centered") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Whether the text shown on the marquee is always centered."), True, ColTypes.Neutral)
+                        Case 6 'Marquee: Use Console API
+                            MaxKeyOptions = 2
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(MarqueeUseConsoleAPI)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Use Console API") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API."), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Marquee > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

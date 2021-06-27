@@ -265,5 +265,9 @@ Public Module ScreensaverSettings
     ''' [Marquee] Whether the text is always on center.
     ''' </summary>
     Public MarqueeAlwaysCentered As Boolean = True
+    ''' <summary>
+    ''' [Marquee] Whether to use the Console.Clear() API (slow) or use the line-clearing VT sequence (fast).
+    ''' </summary>
+    Public MarqueeUseConsoleAPI As Boolean = False
 
 End Module
