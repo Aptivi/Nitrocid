@@ -27,6 +27,9 @@ Module MailLogin
     Public SMTP_Client As New SmtpClient()
     Friend Mail_Authentication As New NetworkCredential()
 
+    ''' <summary>
+    ''' Mail server type
+    ''' </summary>
     Public Enum ServerType
         IMAP
         SMTP
@@ -276,6 +279,7 @@ Module MailLogin
             W(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, Address)
             Wdbg("I", "Connecting to IMAP Server {0}:{1} with SSL...", Address, Port)
             IMAP_Client.Connect(Address, Port, MailKit.Security.SecureSocketOptions.SslOnConnect)
+            AddHandler IMAP_Client.WebAlert, AddressOf HandleWebAlert
 
             'SMTP Connection
             W(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, SmtpAddress)
@@ -290,6 +294,7 @@ Module MailLogin
             'SMTP Authentication
             Wdbg("I", "Authenticating {0} to SMTP server {1}...", Mail_Authentication.UserName, SmtpAddress)
             SMTP_Client.Authenticate(Mail_Authentication)
+            RemoveHandler IMAP_Client.WebAlert, AddressOf HandleWebAlert
 
             'Initialize shell
             Wdbg("I", "Authentication succeeded. Opening shell...")

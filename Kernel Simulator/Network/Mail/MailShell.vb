@@ -216,6 +216,16 @@ Public Module MailShell
     End Sub
 
     ''' <summary>
+    ''' Handles WebAlert sent by Gmail
+    ''' </summary>
+    Sub HandleWebAlert(sender As Object, e As WebAlertEventArgs)
+        Wdbg("I", "WebAlert URI: {0}", e.WebUri.AbsoluteUri)
+        W(e.Message, True, ColTypes.Warning)
+        W(DoTranslation("Opening URL... Make sure to follow the steps shown on the screen."), True, ColTypes.Neutral)
+        Process.Start(e.WebUri.AbsoluteUri).WaitForExit()
+    End Sub
+
+    ''' <summary>
     ''' Executes the mail shell alias
     ''' </summary>
     ''' <param name="aliascmd">Aliased command with arguments</param>
