@@ -37,7 +37,7 @@
       <dependency id="FluentFTP" version="34.0.0" />
       <dependency id="Newtonsoft.Json" version="13.0.1" />
       <dependency id="SSH.NET" version="2020.0.1" />
-      <dependency id="MailKit" version="2.12.0" />
+      <dependency id="MailKit" version="2.13.0" />
       <dependency id="Extensification" version="2021.5.1" />
       <dependency id="Inxi.NET" version="2021.3.0" />
     </Dependencies>
