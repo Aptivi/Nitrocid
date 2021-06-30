@@ -224,6 +224,7 @@
     <Compile Include="Misc\ZipFile\ZipTools.vb" />
     <Compile Include="Misc\ZipFile\ZipShell.vb" />
     <Compile Include="Modifications\ModExecutor.vb" />
+    <Compile Include="Modifications\ModInfo.vb" />
     <Compile Include="Modifications\ModParser.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>

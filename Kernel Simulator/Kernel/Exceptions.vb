@@ -744,4 +744,26 @@ Public Class Exceptions
         End Sub
     End Class
 
+    ''' <summary>
+    ''' Thrown when the mod has zero parts
+    ''' </summary>
+    Public Class ModNoPartsException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(ByVal message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(ByVal message As String, ParamArray vars() As Object)
+            MyBase.New(message.FormatString(vars))
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception)
+            MyBase.New(message, e)
+        End Sub
+        Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
+            MyBase.New(message.FormatString(vars), e)
+        End Sub
+    End Class
+
 End Class

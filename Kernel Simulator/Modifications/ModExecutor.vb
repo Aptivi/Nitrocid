@@ -28,8 +28,8 @@ Public Module ModExecutor
         Dim args As String = ""
         Dim actualCmd As String = parts(0)
         Wdbg("I", "Command = {0}", actualCmd)
-        For Each ModPart As Dictionary(Of String, IScript) In scripts.Values
-            For Each script As IScript In ModPart.Values
+        For Each ModPart As ModInfo In scripts.Values
+            For Each script As IScript In ModPart.ModParts.Values
                 If script.Commands IsNot Nothing Then
                     If script.Commands.ContainsKey(actualCmd) And (script.Name <> Nothing) And (actualCmd <> script.Name) Then
                         actualCmd = script.Name
@@ -42,20 +42,20 @@ Public Module ModExecutor
             args = cmd.Replace($"{parts(0)} ", "").Replace($"""{parts(0)}"" ", "")
             Wdbg("I", "Command {0} will be run with arguments: {1}", actualCmd, args)
         End If
-        For Each ModParts As String In scripts(actualCmd).Keys
-            Dim Script As IScript = scripts(actualCmd)(ModParts)
+        For Each ModPart As String In scripts(actualCmd).ModParts.Keys
+            Dim Script As IScript = scripts(actualCmd).ModParts(ModPart)
             If Script.Commands IsNot Nothing Then
                 If Script.Commands.ContainsKey(parts(0)) Then
                     If Script.Commands(parts(0)).Type = ShellCommandType.Shell Then
                         If (Script.Commands(parts(0)).Strict And adminList(signedinusrnm)) Or Not Script.Commands(parts(0)).Strict Then
-                            Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModParts)
+                            Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModPart)
                             Script.PerformCmd(Script.Commands(parts(0)), args)
                         Else
-                            Wdbg("E", "User {0} doesn't have permission to use {1} from {2}!", signedinusrnm, parts(0), ModParts)
+                            Wdbg("E", "User {0} doesn't have permission to use {1} from {2}!", signedinusrnm, parts(0), ModPart)
                             W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, parts(0))
                         End If
                     Else
-                        Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModParts)
+                        Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModPart)
                         Script.PerformCmd(Script.Commands(parts(0)), args)
                     End If
                 End If

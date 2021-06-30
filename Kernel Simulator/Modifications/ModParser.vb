@@ -73,7 +73,7 @@ Public Module ModParser
     ''' <summary>
     ''' Mods with their parts and scripts.
     ''' </summary>
-    Public scripts As New Dictionary(Of String, Dictionary(Of String, IScript))
+    Public scripts As New Dictionary(Of String, ModInfo)
     Private ReadOnly modPath As String = paths("Mods")
 
     ''' <summary>
@@ -219,16 +219,17 @@ NextEntry:
             If count <> 0 Then
                 W(DoTranslation("mod: Stopping mods..."), True, ColTypes.Neutral)
                 Wdbg("I", "Mods are being stopped. Total mods with screensavers = {0}", count)
-                For Each script As Dictionary(Of String, IScript) In scripts.Values
-                    Wdbg("I", "Stopping... Mod name: {0}", scripts.GetKeyFromValue(script))
-                    For Each ScriptPart As String In script.Keys
-                        Wdbg("I", "Stopping part {0} v{1}", script(ScriptPart).ModPart, script(ScriptPart).Version)
-                        script(ScriptPart).StopMod()
-                        If script(ScriptPart).Name <> "" And script(ScriptPart).Version <> "" Then
-                            W(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, script(ScriptPart).ModPart, script(ScriptPart).Version)
+                For Each script As String In scripts.Keys
+                    Wdbg("I", "Stopping... Mod name: {0}", script)
+                    Dim ScriptParts As Dictionary(Of String, IScript) = scripts(script).ModParts
+                    For Each ScriptPart As String In ScriptParts.Keys
+                        Wdbg("I", "Stopping part {0} v{1}", ScriptParts(ScriptPart).ModPart, ScriptParts(ScriptPart).Version)
+                        ScriptParts(ScriptPart).StopMod()
+                        If Not String.IsNullOrWhiteSpace(ScriptParts(ScriptPart).Name) And Not String.IsNullOrWhiteSpace(ScriptParts(ScriptPart).Version) Then
+                            W(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, ScriptParts(ScriptPart).ModPart, ScriptParts(ScriptPart).Version)
                         End If
                     Next
-                    W(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, scripts.GetKeyFromValue(script))
+                    W(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, script)
                 Next
                 CSvrdb.Clear()
             Else
@@ -292,9 +293,13 @@ NextEntry:
     ''' <param name="modFile">Mod file name with extension. It should end with .vb, .ss.vb, .ss.cs, or .cs</param>
     Sub FinalizeMods(ByVal script As IScript, ByVal modFile As String)
         Dim ModParts As New Dictionary(Of String, IScript)
+        Dim ModInstance As ModInfo
+
+        'Try to finalize mod
         If script IsNot Nothing Then
             EventManager.RaiseModParsed(modFile)
             Try
+                'Start the mod
                 script.StartMod()
                 Wdbg("I", "script.StartMod() initialized. Mod name: {0} | Mod part: {1} | Version: {2}", script.Name, script.ModPart, script.Version)
 
@@ -318,7 +323,7 @@ NextEntry:
 
                 'See if the mod has name
                 Dim ModName As String = script.Name
-                If ModName = "" Then
+                If String.IsNullOrWhiteSpace(ModName) Then
                     ModName = modFile
                     Wdbg("W", "No name for {0}", modFile)
                     W(DoTranslation("Mod {0} does not have the name. Review the source code."), True, ColTypes.Warning, modFile)
@@ -331,13 +336,13 @@ NextEntry:
                 Wdbg("I", "Checking to see if {0} exists in scripts...", ModName)
                 If scripts.ContainsKey(ModName) Then
                     Wdbg("I", "Exists. Adding mod part {0}...", script.ModPart)
-                    If Not scripts(ModName).ContainsKey(script.ModPart) Then
+                    If Not scripts(ModName).ModParts.ContainsKey(script.ModPart) Then
                         Wdbg("I", "No conflict with {0}. Adding as is...", script.ModPart)
-                        scripts(ModName).Add(script.ModPart, script)
+                        scripts(ModName).ModParts.Add(script.ModPart, script)
                     Else
                         Wdbg("W", "There is a conflict with {0}. Appending item number...", script.ModPart)
-                        script.ModPart += CStr(scripts(ModName).Count)
-                        scripts(ModName).Add(script.ModPart, script)
+                        script.ModPart += CStr(scripts(ModName).ModParts.Count)
+                        scripts(ModName).ModParts.Add(script.ModPart, script)
                     End If
                 Else
                     Wdbg("I", "Adding mod with mod part {0}...", script.ModPart)
@@ -349,7 +354,8 @@ NextEntry:
                         script.ModPart += CStr(scripts.Count)
                         ModParts.Add(script.ModPart, script)
                     End If
-                    scripts.Add(ModName, ModParts)
+                    ModInstance = New ModInfo(ModName, modFile, NeutralizePath(modFile, modPath), ModParts, script.Version)
+                    scripts.Add(ModName, ModInstance)
                 End If
 
                 'See if the mod has version
@@ -473,6 +479,8 @@ NextEntry:
                         End If
                     Next
                 End If
+
+                'Create instance of mod info
 
                 'Raise event
                 EventManager.RaiseModFinalized(modFile)
