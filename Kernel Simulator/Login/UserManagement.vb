@@ -23,14 +23,38 @@ Imports Newtonsoft.Json.Linq
 Public Module UserManagement
 
     'Variables
-    Public adminList As New Dictionary(Of String, Boolean)         'Users that are allowed to have administrative access.
-    Public disabledList As New Dictionary(Of String, Boolean)      'Users that are unable to login
-    Public AnonymousList As New Dictionary(Of String, Boolean)     'Users that shouldn't be listed in user list
+    ''' <summary>
+    ''' The users token
+    ''' </summary>
     Public UsersToken As JArray
+    ''' <summary>
+    ''' The administrators list (users that are allowed to have administrative access)
+    ''' </summary>
+    Friend adminList As New Dictionary(Of String, Boolean)
+    ''' <summary>
+    ''' The disabled list (users that are unable to login)
+    ''' </summary>
+    Friend disabledList As New Dictionary(Of String, Boolean)
+    ''' <summary>
+    ''' The anonymous list (users that shouldn't be listed in user list)
+    ''' </summary>
+    Friend AnonymousList As New Dictionary(Of String, Boolean)
 
+    ''' <summary>
+    ''' A user property
+    ''' </summary>
     Public Enum UserProperty
+        ''' <summary>
+        ''' Username
+        ''' </summary>
         Username
+        ''' <summary>
+        ''' Password
+        ''' </summary>
         Password
+        ''' <summary>
+        ''' List of permissions
+        ''' </summary>
         Permissions
     End Enum
 
@@ -57,10 +81,10 @@ Public Module UserManagement
             End If
 
             'Add user locally
-            If Not userword.ContainsKey(uninitUser) Then
-                userword.Add(uninitUser, unpassword)
-            ElseIf userword.ContainsKey(uninitUser) And ModifyExisting Then
-                userword(uninitUser) = unpassword
+            If Not Users.ContainsKey(uninitUser) Then
+                Users.Add(uninitUser, unpassword)
+            ElseIf Users.ContainsKey(uninitUser) And ModifyExisting Then
+                Users(uninitUser) = unpassword
             End If
 
             'Add user globally
@@ -179,7 +203,7 @@ Public Module UserManagement
         ElseIf newUser = Nothing Then
             Wdbg("W", "Username is blank.")
             Throw New Exceptions.UserCreationException(DoTranslation("Blank username."))
-        ElseIf Not userword.ContainsKey(newUser) Then
+        ElseIf Not Users.ContainsKey(newUser) Then
             Try
                 If newPassword = Nothing Then
                     Wdbg("W", "Initializing user with no password")
@@ -219,18 +243,18 @@ Public Module UserManagement
         ElseIf user = Nothing Then
             Wdbg("W", "Username is blank.")
             Throw New Exceptions.UserManagementException(DoTranslation("Blank username."))
-        ElseIf userword.ContainsKey(user) = False Then
+        ElseIf Users.ContainsKey(user) = False Then
             Wdbg("W", "Username {0} not found in list", user)
             Throw New Exceptions.UserManagementException(DoTranslation("User {0} not found."), user)
         Else
             'Try to remove user
-            If userword.Keys.ToArray.Contains(user) And user = "root" Then
+            If Users.Keys.ToArray.Contains(user) And user = "root" Then
                 Wdbg("W", "User is root, and is a system account")
                 Throw New Exceptions.UserManagementException(DoTranslation("User {0} isn't allowed to be removed."), user)
-            ElseIf userword.Keys.ToArray.Contains(user) And user = signedinusrnm Then
+            ElseIf Users.Keys.ToArray.Contains(user) And user = CurrentUser Then
                 Wdbg("W", "User has logged in, so can't delete self.")
                 Throw New Exceptions.UserManagementException(DoTranslation("User {0} is already logged in. Log-out and log-in as another admin."), user)
-            ElseIf userword.Keys.ToArray.Contains(user) And user <> "root" Then
+            ElseIf Users.Keys.ToArray.Contains(user) And user <> "root" Then
                 Try
                     Wdbg("I", "Removing permissions...")
                     adminList.Remove(user)
@@ -239,7 +263,7 @@ Public Module UserManagement
 
                     'Remove user
                     Wdbg("I", "Removing username {0}...", user)
-                    userword.Remove(user)
+                    Users.Remove(user)
 
                     'Remove user from Users.json
                     For Each UserToken As JObject In UsersToken
@@ -269,15 +293,15 @@ Public Module UserManagement
     ''' <param name="OldName">Old username</param>
     ''' <param name="Username">New username</param>
     Public Function ChangeUsername(ByVal OldName As String, ByVal Username As String) As Boolean
-        If userword.ContainsKey(OldName) Then
-            If Not userword.ContainsKey(Username) Then
+        If Users.ContainsKey(OldName) Then
+            If Not Users.ContainsKey(Username) Then
                 Try
                     'Store user password
-                    Dim Temporary As String = userword(OldName)
+                    Dim Temporary As String = Users(OldName)
 
                     'Rename username in dictionary
-                    userword.Remove(OldName)
-                    userword.Add(Username, Temporary)
+                    Users.Remove(OldName)
+                    Users.Add(Username, Temporary)
                     PermissionEditForNewUser(OldName, Username)
 
                     'Rename username in Users.json
@@ -327,11 +351,11 @@ Public Module UserManagement
     ''' <exception cref="Exceptions.UserManagementException"></exception>
     Public Function ChangePassword(ByVal Target As String, ByVal CurrentPass As String, ByVal NewPass As String)
         CurrentPass = GetEncryptedString(CurrentPass, Algorithms.SHA256)
-        If CurrentPass = userword(Target) Then
-            If adminList(signedinusrnm) And userword.ContainsKey(Target) Then
+        If CurrentPass = Users(Target) Then
+            If adminList(CurrentUser) And Users.ContainsKey(Target) Then
                 'Change password locally
                 NewPass = GetEncryptedString(NewPass, Algorithms.SHA256)
-                userword.Item(Target) = NewPass
+                Users.Item(Target) = NewPass
 
                 'Change password globally
                 SetUserProperty(Target, UserProperty.Password, NewPass)
@@ -339,9 +363,9 @@ Public Module UserManagement
                 'Raise event
                 EventManager.RaiseUserPasswordChanged(Target)
                 Return True
-            ElseIf adminList(signedinusrnm) And Not userword.ContainsKey(Target) Then
+            ElseIf adminList(CurrentUser) And Not Users.ContainsKey(Target) Then
                 Throw New Exceptions.UserManagementException(DoTranslation("User not found"))
-            ElseIf adminList(Target) And Not adminList(signedinusrnm) Then
+            ElseIf adminList(Target) And Not adminList(CurrentUser) Then
                 Throw New Exceptions.UserManagementException(DoTranslation("You are not authorized to change password of {0} because the target was an admin."), Target)
             End If
         Else
@@ -356,7 +380,7 @@ Public Module UserManagement
     ''' <param name="IncludeAnonymous">Include anonymous users</param>
     ''' <param name="IncludeDisabled">Include disabled users</param>
     Public Function ListAllUsers(Optional ByVal IncludeAnonymous As Boolean = False, Optional ByVal IncludeDisabled As Boolean = False) As List(Of String)
-        Dim UsersList As New List(Of String)(userword.Keys)
+        Dim UsersList As New List(Of String)(Users.Keys)
         If Not IncludeAnonymous Then
             UsersList.RemoveAll(New Predicate(Of String)(Function(x) AnonymousList.Keys.Contains(x) And AnonymousList(x) = True))
         End If

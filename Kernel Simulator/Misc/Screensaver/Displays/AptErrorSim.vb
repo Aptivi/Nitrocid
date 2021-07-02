@@ -47,8 +47,8 @@ IFCANCEL:
                         Console.ForegroundColor = ConsoleColor.Green
                     End If
                     Console.Clear()
-                    Console.Write("{0}@{1}:{2}", signedinusrnm, HName, CurrDir)
-                    If adminList(signedinusrnm) Then
+                    Console.Write("{0}@{1}:{2}", CurrentUser, HName, CurrDir)
+                    If adminList(CurrentUser) Then
                         Console.Write("# ")
                     Else
                         Sudo = True
@@ -122,8 +122,8 @@ IFCANCEL:
                     If AptErrorSim.CancellationPending Then GoTo IFCANCEL
                     SleepNoBlock(100, AptErrorSim)
                     If AptErrorSim.CancellationPending Then GoTo IFCANCEL
-                    Console.Write("{0}@{1}:{2}", signedinusrnm, HName, CurrDir)
-                    If adminList(signedinusrnm) Then
+                    Console.Write("{0}@{1}:{2}", CurrentUser, HName, CurrDir)
+                    If adminList(CurrentUser) Then
                         Console.Write("# ")
                     Else
                         Console.Write("$ ")

@@ -30,7 +30,7 @@ Public Module PlaceParse
             Wdbg("I", "Parsing text for placeholders...")
             If text.Contains("<user>") Then
                 Wdbg("I", "Username placeholder found.")
-                text = text.Replace("<user>", signedinusrnm)
+                text = text.Replace("<user>", CurrentUser)
             End If
             If text.Contains("<ftpuser>") Then
                 Wdbg("I", "FTP username placeholder found.")

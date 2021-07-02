@@ -351,7 +351,7 @@ Public Module GetCommand
                     If RequiredArgumentsProvided Then
                         ChangeUsername(eqargs(0), eqargs(1))
                         W(DoTranslation("Username has been changed to {0}!"), True, ColTypes.Neutral, eqargs(1))
-                        If eqargs(0) = signedinusrnm Then
+                        If eqargs(0) = CurrentUser Then
                             LogoutRequested = True
                         End If
                     End If
@@ -1167,7 +1167,7 @@ Public Module GetCommand
                     W(DoTranslation("{0}[ User settings ]"), True, ColTypes.ListEntry, vbNewLine)
                     W(vbNewLine + DoTranslation("Current user name:") + " {0}" + vbNewLine +
                                   DoTranslation("Current host name:") + " {1}" + vbNewLine +
-                                  DoTranslation("Available usernames:") + " {2}", True, ColTypes.Neutral, signedinusrnm, HName, String.Join(", ", userword.Keys))
+                                  DoTranslation("Available usernames:") + " {2}", True, ColTypes.Neutral, CurrentUser, HName, String.Join(", ", Users.Keys))
 
                     'Messages Section
                     W(vbNewLine + "[ MOTD ]", True, ColTypes.ListEntry)

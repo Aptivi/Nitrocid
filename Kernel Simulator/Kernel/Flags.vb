@@ -177,5 +177,9 @@ Public Module Flags
     ''' When the command cancel is requested
     ''' </summary>
     Friend CancelRequested As Boolean
+    ''' <summary>
+    ''' Show MOTD every LoginPrompt() call
+    ''' </summary>
+    Friend ShowMOTDOnceFlag As Boolean = True
 
 End Module

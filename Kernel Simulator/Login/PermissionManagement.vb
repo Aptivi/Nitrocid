@@ -80,7 +80,7 @@ Public Module PermissionManagement
     ''' <exception cref="Exceptions.PermissionManagementException"></exception>
     Public Function AddPermission(ByVal PermType As PermissionType, ByVal Username As String) As Boolean
         'Sets the required permissions to false.
-        If userword.Keys.ToArray.Contains(Username) Then
+        If Users.Keys.ToArray.Contains(Username) Then
             Wdbg("I", "Type is {0}", PermType)
             If PermType = PermissionType.Administrator Then
                 adminList(Username) = True
@@ -123,7 +123,7 @@ Public Module PermissionManagement
     ''' <exception cref="Exceptions.PermissionManagementException"></exception>
     Public Function RemovePermission(ByVal PermType As PermissionType, ByVal Username As String) As Boolean
         'Sets the required permissions to false.
-        If userword.Keys.ToArray.Contains(Username) And Username <> signedinusrnm Then
+        If Users.Keys.ToArray.Contains(Username) And Username <> CurrentUser Then
             Wdbg("I", "Type is {0}", PermType)
             If PermType = PermissionType.Administrator Then
                 adminList(Username) = False
@@ -139,7 +139,7 @@ Public Module PermissionManagement
                 Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid type {0}"), PermType)
                 Return False
             End If
-        ElseIf Username = signedinusrnm Then
+        ElseIf Username = CurrentUser Then
             Throw New Exceptions.PermissionManagementException(DoTranslation("You are already logged in."))
             Return False
         Else

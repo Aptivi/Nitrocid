@@ -131,7 +131,7 @@ Public Module HelpSystem
             If simHelp = False Then
                 W(DoTranslation("General commands:"), True, ColTypes.Neutral)
                 For Each cmd As String In definitions.Keys
-                    If (Not Commands(cmd).Strict) Or (Commands(cmd).Strict And adminList(signedinusrnm)) Then
+                    If (Not Commands(cmd).Strict) Or (Commands(cmd).Strict And adminList(CurrentUser)) Then
                         W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, definitions(cmd))
                     End If
                 Next
@@ -148,7 +148,7 @@ Public Module HelpSystem
                 W(vbNewLine + DoTranslation("* You can use multiple commands using the colon between commands."), True, ColTypes.Neutral)
             Else
                 For Each cmd As String In Commands.Keys
-                    If (Not Commands(cmd).Strict) Or (Commands(cmd).Strict And adminList(signedinusrnm)) Then
+                    If (Not Commands(cmd).Strict) Or (Commands(cmd).Strict And adminList(CurrentUser)) Then
                         W("{0}, ", False, ColTypes.ListEntry, cmd)
                     End If
                 Next

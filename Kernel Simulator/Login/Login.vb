@@ -19,12 +19,14 @@
 Public Module Login
 
     'Variables
-    Public userword As New Dictionary(Of String, String)()      'List of usernames and passwords
-    Public answeruser As String                                 'Input of username
-    Public answerpass As String                                 'Input of password
-    Public password As String                                   'Password for user we're logging in to
-    Public signedinusrnm As String                              'Username that is signed in
-    Private showMOTDOnceFlag As Boolean = True                  'Show MOTD every LoginPrompt() session
+    ''' <summary>
+    ''' Current username
+    ''' </summary>
+    Public CurrentUser As String
+    ''' <summary>
+    ''' List of usernames and passwords
+    ''' </summary>
+    Friend Users As New Dictionary(Of String, String)()
 
     ''' <summary>
     ''' Prompts user for login information
@@ -42,11 +44,11 @@ Public Module Login
             EventManager.RaisePreLogin()
 
             'Check to see if there are any users
-            If userword.Count = 0 Then
+            If Users.Count = 0 Then
                 'Extremely rare state reached
                 Wdbg("F", "Shell reached rare state, because userword count is 0.")
                 Throw New Exceptions.NullUsersException(DoTranslation("There are no more users remaining in the list."))
-            ElseIf userword.Count = 1 And userword.Keys(0) = "root" Then
+            ElseIf Users.Count = 1 And Users.Keys(0) = "root" Then
                 'Run a first user trigger
                 Wdbg("W", "Only root is found. Triggering first user setup...")
                 FirstUserTrigger()
@@ -66,15 +68,15 @@ Public Module Login
             ReadMOTDFromFile(MessageType.MAL)
 
             'Show MOTD once
-            Wdbg("I", "showMOTDOnceFlag = {0}, showMOTD = {1}", showMOTDOnceFlag, showMOTD)
-            If showMOTDOnceFlag = True And showMOTD = True Then
+            Wdbg("I", "showMOTDOnceFlag = {0}, showMOTD = {1}", ShowMOTDOnceFlag, showMOTD)
+            If ShowMOTDOnceFlag = True And showMOTD = True Then
                 W(vbNewLine + ProbePlaces(MOTDMessage), True, ColTypes.Banner)
             End If
-            showMOTDOnceFlag = False
+            ShowMOTDOnceFlag = False
 
             'Prompt user to login
             W(DoTranslation("Username: "), False, ColTypes.Input)
-            answeruser = Console.ReadLine()
+            Dim answeruser As String = Console.ReadLine()
 
             'Parse input
             If InStr(answeruser, " ") > 0 Then
@@ -85,7 +87,7 @@ Public Module Login
                 Wdbg("W", "Unknown characters found in username.")
                 W(DoTranslation("Special characters are not allowed."), True, ColTypes.Error)
                 EventManager.RaiseLoginError(answeruser, "specialchars")
-            ElseIf userword.ContainsKey(answeruser) Then
+            ElseIf Users.ContainsKey(answeruser) Then
                 Wdbg("I", "Username correct. Finding if the user is disabled...")
                 If disabledList(answeruser) = False Then
                     Wdbg("I", "User can log in. (User is not in disabled list)")
@@ -114,7 +116,6 @@ Public Module Login
         'Prompts user to enter a user's password
         While True
             'Check to see if reboot is requested
-            answerpass = ""
             If RebootRequested = True Then
                 Wdbg("W", "Reboot has been requested. Exiting...")
                 RebootRequested = False
@@ -122,16 +123,16 @@ Public Module Login
             End If
 
             'Get the password from dictionary
-            password = userword.Item(usernamerequested)
+            Dim UserPassword As String = Users.Item(usernamerequested)
 
             'Check if there's a password
-            If Not password = GetEmptyHash(Algorithms.SHA256) Then 'No password
+            If Not UserPassword = GetEmptyHash(Algorithms.SHA256) Then 'No password
                 'Wait for input
                 Wdbg("I", "Password not empty")
                 W(DoTranslation("{0}'s password: "), False, ColTypes.Input, usernamerequested)
 
                 'Get input
-                answerpass = ReadLineNoInput("*"c)
+                Dim answerpass As String = ReadLineNoInput("*"c)
                 Console.WriteLine()
 
                 'Compute password hash
@@ -139,7 +140,7 @@ Public Module Login
                 answerpass = GetEncryptedString(answerpass, Algorithms.SHA256)
 
                 'Parse password input
-                If userword.TryGetValue(usernamerequested, password) AndAlso password = answerpass Then
+                If Users.TryGetValue(usernamerequested, UserPassword) AndAlso UserPassword = answerpass Then
                     'Log-in instantly
                     Wdbg("I", "Password written correctly. Entering shell...")
                     SignIn(usernamerequested)
@@ -178,27 +179,21 @@ Public Module Login
             Exit Sub
         End If
 
-        'Resets inputs
-        answerpass = Nothing
-        answeruser = Nothing
-
-        'Resets outputs
-        password = Nothing
+        'Get out of login mode
         LoginFlag = False
-        signedinusrnm = Nothing
 
         'Notifies the kernel that the user has signed in
         LoggedIn = True
 
         'Sign in to user.
-        signedinusrnm = signedInUser
+        CurrentUser = signedInUser
         If LockMode = True Then LockMode = False
         Wdbg("I", "Lock released.")
-        showMOTDOnceFlag = True
+        ShowMOTDOnceFlag = True
         W(ProbePlaces(MAL), True, ColTypes.Banner)
 
         'Fire event PostLogin
-        EventManager.RaisePostLogin(signedinusrnm)
+        EventManager.RaisePostLogin(CurrentUser)
 
         'Initialize shell
         Wdbg("I", "Shell is being initialized...")

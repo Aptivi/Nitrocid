@@ -57,7 +57,7 @@ Module RemoteDebugCmd
                     End If
                 Case "username"
                     'Current username
-                    SocketStreamWriter.WriteLine(signedinusrnm)
+                    SocketStreamWriter.WriteLine(CurrentUser)
                 Case "register"
                     'Register to remote debugger so we can set device name
                     If String.IsNullOrWhiteSpace(GetDeviceProperty(Address, DeviceProperty.Name)) Then

@@ -158,7 +158,7 @@ Public Module Screensaver
         LockMode = True
         ShowSavers(defSaverName)
         EventManager.RaisePreUnlock(defSaverName)
-        ShowPasswordPrompt(signedinusrnm)
+        ShowPasswordPrompt(CurrentUser)
     End Sub
 
     ''' <summary>

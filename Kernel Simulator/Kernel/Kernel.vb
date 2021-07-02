@@ -159,8 +159,15 @@ Public Module Kernel
                     ReadMOTDFromFile(MessageType.MAL)
                     LoginFlag = False
                     W(DoTranslation("Enter the admin password for maintenance."), True, ColTypes.Neutral)
-                    answeruser = "root"
-                    ShowPasswordPrompt(answeruser)
+                    If Users.ContainsKey("root") Then
+                        Wdbg("I", "Root account found. Prompting for password...")
+                        ShowPasswordPrompt("root")
+                    Else
+                        'Some malicious mod removed the root account, or rare situation happened and it was gone.
+                        Wdbg("W", "Root account not found for maintenance. Initializing it...")
+                        InitializeSystemAccount()
+                        ShowPasswordPrompt("root")
+                    End If
                 End If
             Catch ex As Exception
                 If DebugMode = True Then

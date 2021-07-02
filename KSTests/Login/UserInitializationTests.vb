@@ -26,7 +26,7 @@ Imports KS
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeUsers()
         InitPaths()
         InitializeUsers()
-        userword.ShouldNotBeEmpty
+        Users.ShouldNotBeEmpty
     End Sub
 
 End Class

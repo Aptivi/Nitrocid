@@ -26,7 +26,7 @@ Imports KS
     <TestMethod()> <TestCategory("Action")> Public Sub TestParsePlaceholders()
         Dim UnparsedStrings As New List(Of String)
         InitPaths() 'For some reason, ProbePlaces' event raise likes to use paths...
-        signedinusrnm = "Test"
+        CurrentUser = "Test"
         Dim ParsedStrings As New List(Of String) From {
             ProbePlaces("Username is <user>"),
             ProbePlaces("Hostname is <host>"),
