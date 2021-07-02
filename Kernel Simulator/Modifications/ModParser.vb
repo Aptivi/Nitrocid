@@ -81,7 +81,6 @@ Public Module ModParser
     ''' </summary>
     ''' <param name="PLang">Specified programming language for scripts (C# or VB.NET)</param>
     ''' <param name="code">Code blocks from script</param>
-    ''' <returns></returns>
     Private Function GenMod(ByVal PLang As String, ByVal code As String) As IScript
 
         'Check language
@@ -324,6 +323,7 @@ NextEntry:
                 'See if the mod has name
                 Dim ModName As String = script.Name
                 If String.IsNullOrWhiteSpace(ModName) Then
+                    'Mod has no name! Give it a file name.
                     ModName = modFile
                     Wdbg("W", "No name for {0}", modFile)
                     W(DoTranslation("Mod {0} does not have the name. Review the source code."), True, ColTypes.Warning, modFile)
@@ -335,6 +335,7 @@ NextEntry:
                 'See if the mod part conflicts with existing parts
                 Wdbg("I", "Checking to see if {0} exists in scripts...", ModName)
                 If scripts.ContainsKey(ModName) Then
+                    'The mod already exists. Add mod part to existing mod.
                     Wdbg("I", "Exists. Adding mod part {0}...", script.ModPart)
                     If Not scripts(ModName).ModParts.ContainsKey(script.ModPart) Then
                         Wdbg("I", "No conflict with {0}. Adding as is...", script.ModPart)
@@ -345,6 +346,7 @@ NextEntry:
                         scripts(ModName).ModParts.Add(script.ModPart, script)
                     End If
                 Else
+                    'The mod wasn't existent. Add mod part to new entry of mod.
                     Wdbg("I", "Adding mod with mod part {0}...", script.ModPart)
                     If Not ModParts.ContainsKey(script.ModPart) Then
                         Wdbg("I", "No conflict with {0}. Adding as is...", script.ModPart)
@@ -359,10 +361,10 @@ NextEntry:
                 End If
 
                 'See if the mod has version
-                If script.Version = "" And script.Name <> "" Then
+                If String.IsNullOrWhiteSpace(script.Version) And Not String.IsNullOrWhiteSpace(script.Name) Then
                     Wdbg("I", "{0}.Version = """" | {0}.Name = {1}", modFile, script.Name)
                     W(DoTranslation("Mod {0} does not have the version."), True, ColTypes.Warning, script.Name)
-                ElseIf script.Name <> "" And script.Version <> "" Then
+                ElseIf Not String.IsNullOrWhiteSpace(script.Name) And Not String.IsNullOrWhiteSpace(script.Version) Then
                     Wdbg("I", "{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version)
                     W(DoTranslation("{0} v{1} started") + " ({2})", True, ColTypes.Neutral, script.Name, script.Version, script.ModPart)
                 End If
@@ -373,52 +375,53 @@ NextEntry:
                         'See if the command conflicts with pre-existing shell commands
                         Dim Command As String = script.Commands.Keys(i)
                         Dim ActualCommand As String = Command
-                        If script.Commands(Command).Type = ShellCommandType.Shell Then
-                            If Commands.ContainsKey(Command) Or modcmnds.Contains(Command) Then
-                                Wdbg("W", "Command {0} conflicts with available shell commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
-                            End If
-                        ElseIf script.Commands(Command).Type = ShellCommandType.FTPShell Then
-                            If FTPCommands.ContainsKey(Command) Or FTPModCommands.Contains(Command) Then
-                                Wdbg("W", "Command {0} conflicts with available FTP shell commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
-                            End If
-                        ElseIf script.Commands(Command).Type = ShellCommandType.MailShell Then
-                            If MailCommands.ContainsKey(Command) Or MailModCommands.Contains(Command) Then
-                                Wdbg("W", "Command {0} conflicts with available mail shell commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
-                            End If
-                        ElseIf script.Commands(Command).Type = ShellCommandType.SFTPShell Then
-                            If SFTPCommands.ContainsKey(Command) Or SFTPModCommands.Contains(Command) Then
-                                Wdbg("W", "Command {0} conflicts with available SFTP shell commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
-                            End If
-                        ElseIf script.Commands(Command).Type = ShellCommandType.TextShell Then
-                            If TextEdit_Commands.ContainsKey(Command) Or TextEdit_ModCommands.Contains(Command) Then
-                                Wdbg("W", "Command {0} conflicts with available text shell commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
-                            End If
-                        ElseIf script.Commands(Command).Type = ShellCommandType.TestShell Then
-                            If Test_Commands.ContainsKey(Command) Or Test_ModCommands.Contains(Command) Then
-                                Wdbg("W", "Command {0} conflicts with available text shell commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
-                            End If
-                        ElseIf script.Commands(Command).Type = ShellCommandType.RemoteDebugShell Then
-                            If DebugCommands.ContainsKey(Command) Or DebugModCmds.Contains(Command) Then
-                                Wdbg("W", "Command {0} conflicts with available remote debug shell commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
-                            End If
-                        ElseIf script.Commands(Command).Type = ShellCommandType.ZIPShell Then
-                            If ZipShell_Commands.ContainsKey(Command) Or ZipShell_ModCommands.Contains(Command) Then
-                                Wdbg("W", "Command {0} conflicts with available ZIP shell commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
-                            End If
-                        ElseIf script.Commands(Command).Type = ShellCommandType.RSSShell Then
-                            If RSSCommands.ContainsKey(Command) Or RSSModCommands.Contains(Command) Then
-                                Wdbg("W", "Command {0} conflicts with available RSS shell commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
-                                Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
-                            End If
-                        End If
+                        Select Case script.Commands(Command).Type
+                            Case ShellCommandType.Shell
+                                If Commands.ContainsKey(Command) Or modcmnds.Contains(Command) Then
+                                    Wdbg("W", "Command {0} conflicts with available shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
+                                End If
+                            Case ShellCommandType.FTPShell
+                                If FTPCommands.ContainsKey(Command) Or FTPModCommands.Contains(Command) Then
+                                    Wdbg("W", "Command {0} conflicts with available FTP shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
+                                End If
+                            Case ShellCommandType.MailShell
+                                If MailCommands.ContainsKey(Command) Or MailModCommands.Contains(Command) Then
+                                    Wdbg("W", "Command {0} conflicts with available mail shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
+                                End If
+                            Case ShellCommandType.SFTPShell
+                                If SFTPCommands.ContainsKey(Command) Or SFTPModCommands.Contains(Command) Then
+                                    Wdbg("W", "Command {0} conflicts with available SFTP shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
+                                End If
+                            Case ShellCommandType.TextShell
+                                If TextEdit_Commands.ContainsKey(Command) Or TextEdit_ModCommands.Contains(Command) Then
+                                    Wdbg("W", "Command {0} conflicts with available text shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
+                                End If
+                            Case ShellCommandType.TestShell
+                                If Test_Commands.ContainsKey(Command) Or Test_ModCommands.Contains(Command) Then
+                                    Wdbg("W", "Command {0} conflicts with available text shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
+                                End If
+                            Case ShellCommandType.RemoteDebugShell
+                                If DebugCommands.ContainsKey(Command) Or DebugModCmds.Contains(Command) Then
+                                    Wdbg("W", "Command {0} conflicts with available remote debug shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
+                                End If
+                            Case ShellCommandType.ZIPShell
+                                If ZipShell_Commands.ContainsKey(Command) Or ZipShell_ModCommands.Contains(Command) Then
+                                    Wdbg("W", "Command {0} conflicts with available ZIP shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
+                                End If
+                            Case ShellCommandType.RSSShell
+                                If RSSCommands.ContainsKey(Command) Or RSSModCommands.Contains(Command) Then
+                                    Wdbg("W", "Command {0} conflicts with available RSS shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Command += "-{0}-{1}".FormatString(script.Name, script.ModPart)
+                                End If
+                        End Select
 
                         'See if mod can be added to command list
                         If Command <> "" Then

@@ -29,8 +29,6 @@ Public Module TimeDate
     ''' <summary>
     ''' Updates the time and date. Also updates the time and date corner if it was enabled in kernel configuration.
     ''' </summary>
-    ''' <param name="sender"></param>
-    ''' <param name="e"></param>
     Sub TimeDateChange_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles TimeDateChange.DoWork
 
         Dim oldWid, oldTop As Integer
