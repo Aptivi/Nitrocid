@@ -150,7 +150,7 @@ Public Module ToolPrompts
                     W("2) " + DoTranslation("Clear Screen on Log-in") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(clsOnLogin)))
                     W("3) " + DoTranslation("Show available usernames") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ShowAvailableUsers)))
                 Case "4" 'Shell
-                    MaxOptions = 9
+                    MaxOptions = 12
                     W("*) " + DoTranslation("Shell Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the shell settings.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Colored Shell") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ColoredShell)))
@@ -161,8 +161,11 @@ Public Module ToolPrompts
                     W("6) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FTPShellPromptStyle)))
                     W("7) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MailShellPromptStyle)))
                     W("8) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(SFTPShellPromptStyle)))
-                    W("9) " + DoTranslation("Custom colors...", currentLang), True, ColTypes.Option)
-                Case "4.9" 'Custom colors...
+                    W("9) " + DoTranslation("RSS Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RSSShellPromptStyle)))
+                    W("10) " + DoTranslation("Text Edit Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TextEdit_PromptStyle)))
+                    W("11) " + DoTranslation("Zip Shell Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ZipShell_PromptStyle)))
+                    W("12) " + DoTranslation("Custom colors...", currentLang), True, ColTypes.Option)
+                Case "4.12" 'Custom colors...
                     MaxOptions = 15
                     W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Custom colors...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lets you choose what type of color do you want to change.") + vbNewLine, True, ColTypes.Neutral)
@@ -424,12 +427,12 @@ Public Module ToolPrompts
                     ElseIf AnswerInt <> MaxOptions And SectionNum = "1.3" Then
                         Wdbg("I", "Tried to open special section. Opening key {0} in section 1.3...", AnswerString)
                         OpenKey("1.3", AnswerInt)
-                    ElseIf AnswerInt = 9 And SectionNum = "4" Then
-                        Wdbg("I", "Tried to open subsection. Opening section 4.9...")
-                        OpenSection("4.9")
-                    ElseIf AnswerInt <> MaxOptions And SectionNum = "4.9" Then
-                        Wdbg("I", "Tried to open subsection. Opening key {0} in section 4.9...", AnswerString)
-                        OpenKey("4.9", AnswerInt)
+                    ElseIf AnswerInt = 12 And SectionNum = "4" Then
+                        Wdbg("I", "Tried to open subsection. Opening section 4.12...")
+                        OpenSection("4.12")
+                    ElseIf AnswerInt <> MaxOptions And SectionNum = "4.12" Then
+                        Wdbg("I", "Tried to open subsection. Opening key {0} in section 4.12...", AnswerString)
+                        OpenKey("4.12", AnswerInt)
                     ElseIf AnswerInt <> MaxOptions And SectionNum = "7" Then
                         Wdbg("I", "Tried to open subsection. Opening section 7.{0}...", AnswerString)
                         Wdbg("I", "Arguments: AnswerInt: {0}, ConfigurableScreensavers: {1}", AnswerInt, ConfigurableScreensavers.Count)
@@ -632,11 +635,26 @@ Public Module ToolPrompts
                             KeyVar = NameOf(SFTPShellPromptStyle)
                             W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("SFTP Prompt Style") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 9 'RSS Prompt Style
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(RSSShellPromptStyle)
+                            W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("RSS Prompt Style") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 10 'Text Edit Prompt Style
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(TextEdit_PromptStyle)
+                            W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Text Edit Prompt Style") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 11 'Zip Shell Prompt Style
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ZipShell_PromptStyle)
+                            W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Zip Shell Prompt Style") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Shell Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
-                Case "4.9" 'Shell -> Custom colors
+                Case "4.12" 'Shell -> Custom colors
                     Select Case KeyNumber
                         Case 1 'Input color
                             KeyType = SettingsKeyType.SVariant

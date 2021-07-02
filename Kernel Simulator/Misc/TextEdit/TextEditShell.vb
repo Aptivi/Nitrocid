@@ -44,6 +44,7 @@ Public Module TextEditShell
     Public TextEdit_AutoSave As New Thread(AddressOf TextEdit_HandleAutoSaveTextFile) With {.Name = "Text Edit Autosave Thread"}
     Public TextEdit_AutoSaveFlag As Boolean = True
     Public TextEdit_AutoSaveInterval As Integer = 60
+    Public TextEdit_PromptStyle As String = ""
 
     Public Sub InitializeTextShell(ByVal FilePath As String)
         'Add handler for text editor shell
@@ -65,7 +66,14 @@ Public Module TextEditShell
             If DefConsoleOut IsNot Nothing Then
                 Console.SetOut(DefConsoleOut)
             End If
-            W("[", False, ColTypes.Gray) : W("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(TextEdit_WasTextEdited(), "*", "")) : W("] > ", False, ColTypes.Gray)
+            Wdbg("I", "TextEdit_PromptStyle = {0}", TextEdit_PromptStyle)
+            If TextEdit_PromptStyle = "" Then
+                W("[", False, ColTypes.Gray) : W("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(TextEdit_WasTextEdited(), "*", "")) : W("] > ", False, ColTypes.Gray)
+            Else
+                Dim ParsedPromptStyle As String = ProbePlaces(TextEdit_PromptStyle)
+                ParsedPromptStyle.ConvertVTSequences
+                W(ParsedPromptStyle, False, ColTypes.Gray)
+            End If
             SetInputColor()
 
             'Prompt for command

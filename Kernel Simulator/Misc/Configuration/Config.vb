@@ -89,7 +89,10 @@ Public Module Config
                     {"Prompt Style", ShellPromptStyle},
                     {"FTP Prompt Style", FTPShellPromptStyle},
                     {"Mail Prompt Style", MailShellPromptStyle},
-                    {"SFTP Prompt Style", SFTPShellPromptStyle}
+                    {"SFTP Prompt Style", SFTPShellPromptStyle},
+                    {"RSS Prompt Style", RSSShellPromptStyle},
+                    {"Text Edit Prompt Style", TextEdit_PromptStyle},
+                    {"Zip Shell Prompt Style", ZipShell_PromptStyle}
             }
             ConfigurationObject.Add("Shell", ShellConfig)
 
@@ -385,6 +388,9 @@ Public Module Config
             FTPShellPromptStyle = If(ConfigToken("Shell")?("FTP Prompt Style"), "")
             MailShellPromptStyle = If(ConfigToken("Shell")?("Mail Prompt Style"), "")
             SFTPShellPromptStyle = If(ConfigToken("Shell")?("SFTP Prompt Style"), "")
+            RSSShellPromptStyle = If(ConfigToken("Shell")?("RSS Prompt Style"), "")
+            TextEdit_PromptStyle = If(ConfigToken("Shell")?("Text Edit Prompt Style"), "")
+            ZipShell_PromptStyle = If(ConfigToken("Shell")?("Zip Shell Prompt Style"), "")
 
             'Filesystem Section
             Wdbg("I", "Parsing filesystem section...")

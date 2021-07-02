@@ -31,6 +31,7 @@ Public Module RSSShell
                                                                                 {"read", New CommandInfo("read", ShellCommandType.RSSShell, DoTranslation("Reads a feed in a web browser"), True, 1)}}
     Public RSSModCommands As New ArrayList
     Public RSSFeedInstance As RSSFeed
+    Public RSSShellPromptStyle As String = ""
     Friend RSSFeedLink As String
 
     ''' <summary>
@@ -81,7 +82,14 @@ Begin:
                 If DefConsoleOut IsNot Nothing Then
                     Console.SetOut(DefConsoleOut)
                 End If
-                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, New Uri(RSSFeedLink).Host) : W("] > ", False, ColTypes.Gray)
+                Wdbg("I", "RSSShellPromptStyle = {0}", RSSShellPromptStyle)
+                If RSSShellPromptStyle = "" Then
+                    W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, New Uri(RSSFeedLink).Host) : W("] > ", False, ColTypes.Gray)
+                Else
+                    Dim ParsedPromptStyle As String = ProbePlaces(RSSShellPromptStyle)
+                    ParsedPromptStyle.ConvertVTSequences
+                    W(ParsedPromptStyle, False, ColTypes.Gray)
+                End If
                 SetInputColor()
 
                 'Prompt for command

@@ -36,6 +36,7 @@ Module ZipShell
     Public ZipShell_ZipArchive As ZipArchive
     Public ZipShell_CurrentDirectory As String
     Public ZipShell_CurrentArchiveDirectory As String
+    Public ZipShell_PromptStyle As String = ""
 
     ''' <summary>
     ''' Initializes the ZIP shell
@@ -56,7 +57,14 @@ Module ZipShell
             If DefConsoleOut IsNot Nothing Then
                 Console.SetOut(DefConsoleOut)
             End If
-            W("[", False, ColTypes.Gray) : W("{0}@{1}", False, ColTypes.UserName, ZipShell_CurrentArchiveDirectory, Path.GetFileName(ZipFile)) : W("] > ", False, ColTypes.Gray)
+            Wdbg("I", "ZipShell_PromptStyle = {0}", ZipShell_PromptStyle)
+            If ZipShell_PromptStyle = "" Then
+                W("[", False, ColTypes.Gray) : W("{0}@{1}", False, ColTypes.UserName, ZipShell_CurrentArchiveDirectory, Path.GetFileName(ZipFile)) : W("] > ", False, ColTypes.Gray)
+            Else
+                Dim ParsedPromptStyle As String = ProbePlaces(ZipShell_PromptStyle)
+                ParsedPromptStyle.ConvertVTSequences
+                W(ParsedPromptStyle, False, ColTypes.Gray)
+            End If
             SetInputColor()
 
             'Prompt for command
