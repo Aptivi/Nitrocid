@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports HtmlAgilityPack
 Imports System.Xml
 
 Public Module RSSTools
@@ -32,63 +33,24 @@ Public Module RSSTools
             Case RSSFeedType.RSS2
                 For Each Node As XmlNode In FeedNode(0) '<channel>
                     For Each Child As XmlNode In Node.ChildNodes '<item>
-                        Dim Parameters As New Dictionary(Of String, XmlNode)
-                        Dim Title, Link, Description As String
                         If Child.Name = "item" Then
-                            For Each ArticleNode As XmlNode In Child.ChildNodes 'Children of <item>
-                                If ArticleNode.Name = "title" Then
-                                    Title = ArticleNode.InnerText
-                                End If
-                                If ArticleNode.Name = "link" Then
-                                    Link = ArticleNode.InnerText
-                                End If
-                                If ArticleNode.Name = "description" Then
-                                    Description = ArticleNode.InnerText
-                                End If
-                                Parameters.Add(ArticleNode.Name, ArticleNode)
-                            Next
-                            Articles.Add(New RSSArticle(Title, Link, Description, Parameters))
+                            Dim Article As RSSArticle = MakeArticleFromFeed(Child)
+                            Articles.Add(Article)
                         End If
                     Next
                 Next
             Case RSSFeedType.RSS1
                 For Each Node As XmlNode In FeedNode(0) '<channel> or <item>
                     If Node.Name = "item" Then
-                        Dim Parameters As New Dictionary(Of String, XmlNode)
-                        Dim Title, Link, Description As String
-                        For Each ArticleNode As XmlNode In Node.ChildNodes 'Children of <item>
-                            If ArticleNode.Name = "title" Then
-                                Title = ArticleNode.InnerText
-                            End If
-                            If ArticleNode.Name = "link" Then
-                                Link = ArticleNode.InnerText
-                            End If
-                            If ArticleNode.Name = "description" Then
-                                Description = ArticleNode.InnerText
-                            End If
-                            Parameters.Add(ArticleNode.Name, ArticleNode)
-                        Next
-                        Articles.Add(New RSSArticle(Title, Link, Description, Parameters))
+                        Dim Article As RSSArticle = MakeArticleFromFeed(Node)
+                        Articles.Add(Article)
                     End If
                 Next
             Case RSSFeedType.Atom
-                For Each Node As XmlNode In FeedNode(0) 'Children of <feed>
+                For Each Node As XmlNode In FeedNode(0) '<feed>
                     If Node.Name = "entry" Then
-                        Dim Parameters As New Dictionary(Of String, XmlNode)
-                        Dim Title, Link, Description As String
-                        For Each ArticleNode As XmlNode In Node.ChildNodes 'Children of <entry>
-                            If ArticleNode.Name = "title" Then
-                                Title = ArticleNode.InnerText
-                            End If
-                            If ArticleNode.Name = "link" Then
-                                Link = ArticleNode.InnerText
-                            End If
-                            If ArticleNode.Name = "summary" Or ArticleNode.Name = "content" Then
-                                Description = ArticleNode.InnerText
-                            End If
-                            Parameters.Add(ArticleNode.Name, ArticleNode)
-                        Next
-                        Articles.Add(New RSSArticle(Title, Link, Description, Parameters))
+                        Dim Article As RSSArticle = MakeArticleFromFeed(Node)
+                        Articles.Add(Article)
                     End If
                 Next
             Case Else
@@ -96,6 +58,57 @@ Public Module RSSTools
         End Select
 #Enable Warning BC42104
         Return Articles
+    End Function
+
+    ''' <summary>
+    ''' Generates an instance of article from feed
+    ''' </summary>
+    ''' <param name="Article">The child node which holds the entire article</param>
+    ''' <returns>An article</returns>
+    Function MakeArticleFromFeed(ByVal Article As XmlNode) As RSSArticle
+        'Variables
+        Dim Parameters As New Dictionary(Of String, XmlNode)
+        Dim Title, Link, Description As String
+
+        'Parse article
+        For Each ArticleNode As XmlNode In Article.ChildNodes
+            'Check the title
+            If ArticleNode.Name = "title" Then
+                'Trimming newlines and spaces is necessary, since some RSS feeds (GitHub commits) might return string with trailing and leading spaces and newlines.
+                Title = ArticleNode.InnerText.Trim(vbCr, vbLf, " ")
+            End If
+
+            'Check the link
+            If ArticleNode.Name = "link" Then
+                'Links can be in href attribute, so check that.
+                If ArticleNode.Attributes.Count <> 0 And ArticleNode.Attributes.GetNamedItem("href") IsNot Nothing Then
+                    Link = ArticleNode.Attributes.GetNamedItem("href").InnerText
+                Else
+                    Link = ArticleNode.InnerText
+                End If
+            End If
+
+            'Check the summary
+            If ArticleNode.Name = "summary" Or ArticleNode.Name = "content" Or ArticleNode.Name = "description" Then
+                'It can be of HTML type, or plain text type.
+                If ArticleNode.Attributes.Count <> 0 And ArticleNode.Attributes.GetNamedItem("type") IsNot Nothing Then
+                    If ArticleNode.Attributes.GetNamedItem("type").Value = "html" Then
+                        'Extract plain text from HTML
+                        Dim HtmlContent As New HtmlDocument
+                        HtmlContent.LoadHtml(ArticleNode.InnerText.Trim(vbCr, vbLf, " "))
+                        Description = HtmlContent.DocumentNode.SelectSingleNode("pre").InnerText
+                    Else
+                        Description = ArticleNode.InnerText.Trim(vbCr, vbLf, " ")
+                    End If
+                Else
+                    Description = ArticleNode.InnerText.Trim(vbCr, vbLf, " ")
+                End If
+            End If
+            Parameters.Add(ArticleNode.Name, ArticleNode)
+        Next
+#Disable Warning BC42104
+        Return New RSSArticle(Title, Link, Description, Parameters)
+#Enable Warning BC42104
     End Function
 
     ''' <summary>

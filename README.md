@@ -198,9 +198,17 @@ License (GNU GPL 3.0 or later): https://github.com/EoflaOE/Extensification/blob/
 
 Source code: https://github.com/EoflaOE/Inxi.NET/
 
-Copyriht (c) 2020-present EoflaOE and its companies
+Copyright (c) 2020-present EoflaOE and its companies
 
 License (GNU GPL 3.0 or later): https://github.com/EoflaOE/Inxi.NET/blob/master/LICENSE
+
+### HtmlAgilityPack
+
+Source code: https://github.com/zzzprojects/html-agility-pack/
+
+Copyright © ZZZ Projects Inc. 2014 - 2021. All rights reserved.
+
+License (MIT): https://github.com/zzzprojects/html-agility-pack/blob/master/LICENSE
 
 ### Nuget.Build.Tasks.Pack (build dependency)
 
