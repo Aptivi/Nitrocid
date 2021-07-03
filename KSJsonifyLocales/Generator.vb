@@ -25,7 +25,7 @@ Module LocaleGenerator
     ''' <summary>
     ''' Entry point
     ''' </summary>
-    Sub Main()
+    Sub Main(Args As String())
         Try
             'Enumerate the translations folder
             Dim ToParse As New List(Of String)
@@ -66,14 +66,14 @@ Module LocaleGenerator
                 Next
 
                 'Save changes
-#If COPYTOKS Then
-                IO.File.WriteAllText("../Resources/" + Path.GetFileNameWithoutExtension(File) + ".json", JsonConvert.SerializeObject(LocalizedJson, Formatting.Indented))
-                Console.WriteLine($"Saved to ../Resources/{Path.GetFileNameWithoutExtension(File)}.json!")
-#Else
-                Directory.CreateDirectory("Translations/Output")
-                IO.File.WriteAllText("Translations/Output/" + Path.GetFileNameWithoutExtension(File) + ".json", JsonConvert.SerializeObject(LocalizedJson, Formatting.Indented))
-                Console.WriteLine($"Saved to Translations/Output/{Path.GetFileNameWithoutExtension(File)}.json!")
-#End If
+                If Args.Length > 0 AndAlso Args(0) = "--CopyToResources" Then
+                    IO.File.WriteAllText("../Resources/" + Path.GetFileNameWithoutExtension(File) + ".json", JsonConvert.SerializeObject(LocalizedJson, Formatting.Indented))
+                    Console.WriteLine($"Saved to ../Resources/{Path.GetFileNameWithoutExtension(File)}.json!")
+                Else
+                    Directory.CreateDirectory("Translations/Output")
+                    IO.File.WriteAllText("Translations/Output/" + Path.GetFileNameWithoutExtension(File) + ".json", JsonConvert.SerializeObject(LocalizedJson, Formatting.Indented))
+                    Console.WriteLine($"Saved to Translations/Output/{Path.GetFileNameWithoutExtension(File)}.json!")
+                End If
             Next
         Catch ex As Exception
             Console.WriteLine(ex.Message)
