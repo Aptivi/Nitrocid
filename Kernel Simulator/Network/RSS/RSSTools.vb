@@ -104,7 +104,7 @@ Public Module RSSTools
                     Description = ArticleNode.InnerText.Trim(vbCr, vbLf, " ")
                 End If
             End If
-            Parameters.Add(ArticleNode.Name, ArticleNode)
+            Parameters.AddIfNotFound(ArticleNode.Name, ArticleNode)
         Next
 #Disable Warning BC42104
         Return New RSSArticle(Title, Link, Description, Parameters)
