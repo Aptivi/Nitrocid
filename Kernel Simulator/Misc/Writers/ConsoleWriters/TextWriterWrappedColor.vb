@@ -119,7 +119,7 @@ Public Module TextWriterWrappedColor
             Dim OldTop As Integer
             Try
                 'Try to write to console
-                Console.BackgroundColor = IIf(IsNumeric(New Color(BackgroundColor).PlainSequence), If(BackgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor), ConsoleColor.Black), ConsoleColor.Black)
+                Console.BackgroundColor = If(New Color(BackgroundColor).PlainSequence.IsNumeric AndAlso BackgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor), ConsoleColor.Black)
                 Console.ForegroundColor = color
 
                 'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
