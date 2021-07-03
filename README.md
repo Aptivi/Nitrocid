@@ -206,7 +206,7 @@ License (GNU GPL 3.0 or later): https://github.com/EoflaOE/Inxi.NET/blob/master/
 
 Source code: https://github.com/zzzprojects/html-agility-pack/
 
-Copyright © ZZZ Projects Inc. 2014 - 2021. All rights reserved.
+Copyright (c) ZZZ Projects Inc. 2014 - 2021. All rights reserved.
 
 License (MIT): https://github.com/zzzprojects/html-agility-pack/blob/master/LICENSE
 
