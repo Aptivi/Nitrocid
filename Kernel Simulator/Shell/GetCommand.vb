@@ -1147,32 +1147,34 @@ Public Module GetCommand
                 Case "sysinfo"
 
                     'Shows system information
-                    W(DoTranslation("[ Kernel settings (Running on {0}) ]"), True, ColTypes.ListEntry, Environment.OSVersion.ToString)
+                    W(DoTranslation("[ Kernel settings (Running on {0}) ]") + vbNewLine, True, ColTypes.Banner, Environment.OSVersion.ToString)
 
                     'Kernel section
-                    W(vbNewLine + DoTranslation("Kernel Version:") + " {0}" + vbNewLine +
-                                  DoTranslation("Debug Mode:") + " {1}" + vbNewLine +
-                                  DoTranslation("Colored Shell:") + " {2}" + vbNewLine +
-                                  DoTranslation("Arguments on Boot:") + " {3}" + vbNewLine +
-                                  DoTranslation("Help command simplified:") + " {4}" + vbNewLine +
-                                  DoTranslation("MOTD on Login:") + " {5}" + vbNewLine +
-                                  DoTranslation("Time/Date on corner:") + " {6}" + vbNewLine, True, ColTypes.Neutral, KernelVersion, DebugMode.ToString, ColoredShell.ToString, argsOnBoot.ToString, simHelp.ToString, showMOTD.ToString, CornerTD.ToString)
+                    W(DoTranslation("Kernel Version:") + " ", False, ColTypes.ListEntry) : W(KernelVersion, True, ColTypes.ListValue)
+                    W(DoTranslation("Debug Mode:") + " ", False, ColTypes.ListEntry) : W(DebugMode, True, ColTypes.ListValue)
+                    W(DoTranslation("Colored Shell:") + " ", False, ColTypes.ListEntry) : W(ColoredShell, True, ColTypes.ListValue)
+                    W(DoTranslation("Arguments on Boot:") + " ", False, ColTypes.ListEntry) : W(argsOnBoot, True, ColTypes.ListValue)
+                    W(DoTranslation("Help command simplified:") + " ", False, ColTypes.ListEntry) : W(simHelp, True, ColTypes.ListValue)
+                    W(DoTranslation("MOTD on Login:") + " ", False, ColTypes.ListEntry) : W(showMOTD, True, ColTypes.ListValue)
+                    W(DoTranslation("Time/Date on corner:") + " ", False, ColTypes.ListEntry) : W(CornerTD, True, ColTypes.ListValue)
+                    Console.WriteLine()
 
                     'Hardware section
-                    W(DoTranslation("[ Hardware settings ]{0}"), True, ColTypes.ListEntry, vbNewLine)
+                    W(DoTranslation("[ Hardware settings ]{0}"), True, ColTypes.Banner, vbNewLine)
                     ListHardware()
                     W(DoTranslation("Use ""hwinfo"" for extended information about hardware."), True, ColTypes.Neutral)
 
                     'User section
-                    W(DoTranslation("{0}[ User settings ]"), True, ColTypes.ListEntry, vbNewLine)
-                    W(vbNewLine + DoTranslation("Current user name:") + " {0}" + vbNewLine +
-                                  DoTranslation("Current host name:") + " {1}" + vbNewLine +
-                                  DoTranslation("Available usernames:") + " {2}", True, ColTypes.Neutral, CurrentUser, HName, String.Join(", ", Users.Keys))
+                    W(DoTranslation("{0}[ User settings ]"), True, ColTypes.Banner, vbNewLine)
+                    W(DoTranslation("Current user name:") + " ", False, ColTypes.ListEntry) : W(CurrentUser, True, ColTypes.ListValue)
+                    W(DoTranslation("Current host name:") + " ", False, ColTypes.ListEntry) : W(HName, True, ColTypes.ListValue)
+                    W(DoTranslation("Available usernames:") + " ", False, ColTypes.ListEntry) : W(String.Join(", ", Users.Keys), True, ColTypes.ListValue)
+                    Console.WriteLine()
 
                     'Messages Section
-                    W(vbNewLine + "[ MOTD ]", True, ColTypes.ListEntry)
+                    W(vbNewLine + "[ MOTD ]", True, ColTypes.Banner)
                     W(vbNewLine + ProbePlaces(MOTDMessage), True, ColTypes.Neutral)
-                    W(vbNewLine + "[ MAL ]", True, ColTypes.ListEntry)
+                    W(vbNewLine + "[ MAL ]", True, ColTypes.Banner)
                     W(vbNewLine + ProbePlaces(MAL), True, ColTypes.Neutral)
 
                 Case "unblockdbgdev"
