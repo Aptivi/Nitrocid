@@ -24,7 +24,6 @@ Imports KS
     ''' Tests user initialization
     ''' </summary>
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeUsers()
-        InitPaths()
         InitializeUsers()
         ListAllUsers(True, True).ShouldNotBeEmpty
     End Sub

@@ -27,7 +27,6 @@ Public Module RSSTools
     ''' <param name="FeedNode">Feed XML node</param>
     ''' <param name="FeedType">Feed type</param>
     Function MakeRssArticlesFromFeed(ByVal FeedNode As XmlNodeList, ByVal FeedType As RSSFeedType) As List(Of RSSArticle)
-#Disable Warning BC42104
         Dim Articles As New List(Of RSSArticle)
         Select Case FeedType
             Case RSSFeedType.RSS2
@@ -56,7 +55,6 @@ Public Module RSSTools
             Case Else
                 Throw New Exceptions.InvalidFeedTypeException(DoTranslation("Invalid RSS feed type."))
         End Select
-#Enable Warning BC42104
         Return Articles
     End Function
 

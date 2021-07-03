@@ -24,7 +24,6 @@ Imports KS
     ''' Tests path neutralization on a folder in home directory
     ''' </summary>
     <TestMethod()> <TestCategory("Neutralization")> Public Sub TestNeutralizePaths()
-        InitPaths()
         CurrDir = paths("Home")
         Dim TestPath As String = "Documents"
         Dim ExpectedPath As String = paths("Home") + "/" + TestPath

@@ -25,7 +25,6 @@ Imports KS
     ''' Tests hostname change
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestChangeHostname()
-        InitPaths()
         ChangeHostname("NewHost").ShouldBeTrue
         HName.ShouldBe("NewHost")
     End Sub

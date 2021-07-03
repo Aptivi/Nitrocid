@@ -25,7 +25,6 @@ Imports KS
     ''' Tests copying directory to directory
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestCopyDirectoryToDirectory()
-        InitPaths()
         CurrDir = paths("Home")
         IO.Directory.CreateDirectory(paths("Home") + "/TestDir")
         Dim SourcePath As String = "/TestDir"
@@ -37,7 +36,6 @@ Imports KS
     ''' Tests copying file to directory
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestCopyFileToDirectory()
-        InitPaths()
         CurrDir = paths("Home")
         Dim SourcePath As String = Path.GetFullPath("TestText.txt")
         Dim TargetPath As String = "/Documents"
@@ -48,7 +46,6 @@ Imports KS
     ''' Tests copying file to file
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestCopyFileToFile()
-        InitPaths()
         CurrDir = paths("Home")
         Dim SourcePath As String = Path.GetFullPath("TestText.txt")
         Dim TargetPath As String = "/Documents/Text.txt"
@@ -59,7 +56,6 @@ Imports KS
     ''' Tests making directory
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMakeDirectory()
-        InitPaths()
         CurrDir = paths("Home")
         MakeDirectory("/NewDirectory").ShouldBeTrue
     End Sub
@@ -68,7 +64,6 @@ Imports KS
     ''' Tests making file
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMakeFile()
-        InitPaths()
         CurrDir = paths("Home")
         MakeFile("/NewFile.txt").ShouldBeTrue
     End Sub
@@ -77,7 +72,6 @@ Imports KS
     ''' Tests moving directory to directory
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMoveDirectoryToDirectory()
-        InitPaths()
         CurrDir = paths("Home")
         IO.Directory.CreateDirectory(paths("Home") + "/TestMovedDir")
         Dim SourcePath As String = "/TestMovedDir"
@@ -89,7 +83,6 @@ Imports KS
     ''' Tests moving file to directory
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMoveFileToDirectory()
-        InitPaths()
         CurrDir = paths("Home")
         Dim SourcePath As String = Path.GetFullPath("TestMove.txt")
         Dim TargetPath As String = "/Documents"
@@ -100,7 +93,6 @@ Imports KS
     ''' Tests moving file to file
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMoveFileToFile()
-        InitPaths()
         CurrDir = paths("Home")
         Dim SourcePath As String = "/Documents/TestMove.txt"
         Dim TargetPath As String = Path.GetFullPath("TestMove.txt")
@@ -111,7 +103,6 @@ Imports KS
     ''' Tests removing directory
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestRemoveDirectory()
-        InitPaths()
         CurrDir = paths("Home")
         Dim TargetPath As String = "/TestDir2"
         RemoveDirectory(TargetPath).ShouldBeTrue
@@ -121,7 +112,6 @@ Imports KS
     ''' Tests removing file
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestRemoveFile()
-        InitPaths()
         CurrDir = paths("Home")
         Dim TargetPath As String = "/Documents/Text.txt"
         RemoveFile(TargetPath).ShouldBeTrue
@@ -131,7 +121,6 @@ Imports KS
     ''' Tests searching file for string
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestSearchFileForString()
-        InitPaths()
         CurrDir = paths("Home")
         Dim TargetPath As String = Path.GetFullPath("TestText.txt")
         Dim Matches As List(Of String) = SearchFileForString(TargetPath, "test")
@@ -143,7 +132,6 @@ Imports KS
     ''' Tests adding attribute
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestAddAttribute()
-        InitPaths()
         CurrDir = paths("Home")
         Dim SourcePath As String = Path.GetFullPath("TestText.txt")
         AddAttributeToFile(SourcePath, FileAttributes.Hidden).ShouldBeTrue
@@ -153,7 +141,6 @@ Imports KS
     ''' Tests deleting attribute
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestDeleteAttribute()
-        InitPaths()
         CurrDir = paths("Home")
         Dim SourcePath As String = Path.GetFullPath("TestText.txt")
         RemoveAttributeFromFile(SourcePath, FileAttributes.Hidden).ShouldBeTrue

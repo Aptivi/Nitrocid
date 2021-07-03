@@ -24,7 +24,6 @@ Imports KS
     ''' Tests setting colors
     ''' </summary>
     <TestMethod()> <TestCategory("Setting")> Public Sub TestSetColors()
-        InitPaths()
         SetColors(ConsoleColors.White, ConsoleColors.White, ConsoleColors.Yellow, ConsoleColors.Red, ConsoleColors.DarkGreen, ConsoleColors.Green,
                   ConsoleColors.Black, ConsoleColors.Gray, ConsoleColors.DarkYellow, ConsoleColors.DarkGray, ConsoleColors.Green, ConsoleColors.Red,
                   ConsoleColors.Yellow, ConsoleColors.DarkYellow, ConsoleColors.Green).ShouldBeTrue

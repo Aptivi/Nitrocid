@@ -25,7 +25,6 @@ Imports KS
     ''' Tests alias initialization
     ''' </summary>
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitAliases()
-        InitPaths()
         Dim PathToTestAliases As String = Path.GetFullPath("TestAliases.json")
         If Not File.Exists(paths("Aliases")) Then File.Copy(PathToTestAliases, paths("Aliases"))
         InitAliases()
@@ -37,7 +36,6 @@ Imports KS
     ''' Tests alias initialization and saving
     ''' </summary>
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitAndSaveAliases()
-        InitPaths()
         Dim PathToTestAliases As String = Path.GetFullPath("TestAliases.json")
         If Not File.Exists(paths("Aliases")) Then File.Copy(PathToTestAliases, paths("Aliases"))
         InitAliases()

@@ -24,7 +24,6 @@ Imports KS
     ''' Tests user addition
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestAddUser()
-        InitPaths()
         AddUser("Account1").ShouldBeTrue
         AddUser("Account2", "password").ShouldBeTrue
     End Sub
@@ -33,7 +32,6 @@ Imports KS
     ''' Tests username change
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestChangeUser()
-        InitPaths()
         ChangeUsername("Account2", "Account3").ShouldBeTrue
     End Sub
 
@@ -41,7 +39,6 @@ Imports KS
     ''' Tests removing user
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestRemoveUser()
-        InitPaths()
         RemoveUser("Account1").ShouldBeTrue
         RemoveUser("Account3").ShouldBeTrue
     End Sub

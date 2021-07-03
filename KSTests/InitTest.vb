@@ -42,7 +42,6 @@ Imports Newtonsoft.Json.Linq
     ''' Clean up everything that the unit tests made
     ''' </summary>
     <AssemblyCleanup()> Public Shared Sub CleanEverything()
-        InitPaths()
         If File.Exists(paths("Home") + "/Documents/TestText.txt") Then File.Delete(paths("Home") + "/Documents/TestText.txt")
         If File.Exists(paths("Home") + "/Documents/Text.txt") Then File.Delete(paths("Home") + "/Documents/Text.txt")
         If File.Exists(paths("Home") + "/NewFile.txt") Then File.Delete(paths("Home") + "/NewFile.txt")

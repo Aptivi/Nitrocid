@@ -28,7 +28,6 @@ Imports KS
     ''' Tests adding permissions to user
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestAddUserPerm()
-        InitPaths()
         AddPermission(PermissionType.Administrator, "Account").ShouldBeTrue
         AddPermission(PermissionType.Disabled, "Account").ShouldBeTrue
     End Sub
@@ -37,7 +36,6 @@ Imports KS
     ''' Tests removing permissions from user
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestRemoveUserPerm()
-        InitPaths()
         RemovePermission(PermissionType.Administrator, "Account").ShouldBeTrue
         RemovePermission(PermissionType.Disabled, "Account").ShouldBeTrue
     End Sub
@@ -46,7 +44,6 @@ Imports KS
     ''' Tests loading permissions
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestLoadPermissions()
-        InitPaths()
         LoadPermissions.ShouldBeTrue
     End Sub
 

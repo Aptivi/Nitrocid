@@ -24,7 +24,6 @@ Imports KS
     ''' Tests setting default screensaver
     ''' </summary>
     <TestMethod()> <TestCategory("Setting")> Public Sub TestSetDefaultScreensaver()
-        InitPaths()
         SetDefaultScreensaver("matrix")
         defSaverName.ShouldBe("matrix")
     End Sub

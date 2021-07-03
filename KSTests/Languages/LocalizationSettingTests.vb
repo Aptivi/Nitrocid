@@ -44,7 +44,6 @@ Imports KS
     ''' Tests language setting
     ''' </summary>
     <TestMethod> <TestCategory("Setting")> Public Sub TestSetLang()
-        InitPaths()
         SetLang("spa").ShouldBeTrue
     End Sub
 

@@ -25,7 +25,6 @@ Imports KS
     ''' Tests reading MOTD from file
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestReadMOTDFromFile()
-        InitPaths()
         ReadMOTDFromFile(MessageType.MOTD)
         Dim MOTDLine As String = File.ReadAllText(paths("MOTD"))
         MOTDLine.ShouldBe(MOTDMessage)
@@ -35,7 +34,6 @@ Imports KS
     ''' Tests reading MAL from file
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestReadMALFromFile()
-        InitPaths()
         ReadMOTDFromFile(MessageType.MAL)
         Dim MALLine As String = File.ReadAllText(paths("MAL"))
         MALLine.ShouldBe(MAL)

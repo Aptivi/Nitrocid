@@ -24,7 +24,6 @@ Imports KS
     ''' Tests current directory setting
     ''' </summary>
     <TestMethod()> <TestCategory("Setting")> Public Sub TestSetCurrDir()
-        InitPaths()
         CurrDir = paths("Home")
         Dim Path As String = paths("Home") + "/Documents"
         SetCurrDir(Path).ShouldBeTrue
@@ -35,7 +34,6 @@ Imports KS
     ''' Tests setting size parse mode
     ''' </summary>
     <TestMethod()> <TestCategory("Setting")> Public Sub TestSetSizeParseMode()
-        InitPaths()
         SetSizeParseMode(True).ShouldBeTrue
         SetSizeParseMode(False).ShouldBeTrue
         SetSizeParseMode(1).ShouldBeTrue

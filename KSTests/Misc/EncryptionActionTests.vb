@@ -40,7 +40,6 @@ Imports KS
     ''' Tests file encryption
     ''' </summary>
     <TestMethod()> <TestCategory("Action")> Public Sub TestGetEncryptedFileUsingStream()
-        InitPaths()
         Dim FileStreamHash As FileStream = File.Create(paths("Home") + "/TestSum.txt")
         FileStreamHash.Write(Text.Encoding.Default.GetBytes("Test hashing."), 0, 13)
         FileStreamHash.Flush()
@@ -60,7 +59,6 @@ Imports KS
     ''' Tests file encryption
     ''' </summary>
     <TestMethod()> <TestCategory("Action")> Public Sub TestGetEncryptedFileUsingPath()
-        InitPaths()
         Dim FileStreamHash As FileStream = File.Create(paths("Home") + "/TestSum.txt")
         FileStreamHash.Write(Text.Encoding.Default.GetBytes("Test hashing with path."), 0, 23)
         FileStreamHash.Flush()
@@ -80,7 +78,6 @@ Imports KS
     ''' Tests hash verification
     ''' </summary>
     <TestMethod()> <TestCategory("Action")> Public Sub TestVerifyHashFromHash()
-        InitPaths()
         Dim FileStreamHash As FileStream = File.Create(paths("Home") + "/TestSum.txt")
         FileStreamHash.Write(Text.Encoding.Default.GetBytes("Test hashing with path."), 0, 23)
         FileStreamHash.Flush()
@@ -130,7 +127,6 @@ Imports KS
     ''' Tests hash verification for an uncalculated file
     ''' </summary>
     <TestMethod()> <TestCategory("Action")> Public Sub TestVerifyUncalculatedHashFromHash()
-        InitPaths()
         Dim FileStreamHash As FileStream = File.Create(paths("Home") + "/TestSum.txt")
         FileStreamHash.Write(Text.Encoding.Default.GetBytes("Test hashing with path."), 0, 23)
         FileStreamHash.Flush()
