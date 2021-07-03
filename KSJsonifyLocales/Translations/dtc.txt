@@ -155,8 +155,8 @@ Argumenten op Boot:
 Help-opdracht vereenvoudigd:
 MOTD bij inloggen:
 Tijd / datum op hoek:
-[ Hardware-instellingen ] {0}
-{0}[ Gebruikersinstellingen ]
+[ Hardware-instellingen ]
+[ Gebruikersinstellingen ]
 Huidige gebruikersnaam:
 Huidige hostnaam:
 Beschikbare gebruikersnamen:

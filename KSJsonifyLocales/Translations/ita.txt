@@ -155,8 +155,8 @@ Argomenti all'avvio:
 Aiuta il comando semplificato:
 MOTD on Login:
 Ora / data nell'angolo:
-[ Impostazioni hardware ] {0}
-{0}[ Impostazioni utente ]
+[ Impostazioni hardware ]
+[ Impostazioni utente ]
 Nome utente corrente:
 Nome host attuale:
 Nomi utente disponibili:

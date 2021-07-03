@@ -155,8 +155,8 @@ Argumenti fuq Boot:
 Kmand tal-għajnuna ssimplifikat:
 MOTD meta tidħol:
 Ħin / Data fuq il-kantuniera:
-[ Settings tal-ħardwer ]{0}
-{0}[ Settings tal-utent ]
+[ Settings tal-ħardwer ]
+[ Settings tal-utent ]
 Isem tal-utent kurrenti:
 Isem ospitanti attwali:
 Usernames disponibbli:

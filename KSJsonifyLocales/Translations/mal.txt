@@ -155,8 +155,8 @@ Argumen pada Boot:
 Perintah membantu dipermudahkan:
 MOTD pada Login:
 Masa / Tarikh di sudut:
-[ Tetapan perkakasan ] {0}
-{0}[ Tetapan pengguna ]
+[ Tetapan perkakasan ]
+[ Tetapan pengguna ]
 Nama pengguna semasa:
 Nama hos semasa:
 Nama pengguna yang tersedia:

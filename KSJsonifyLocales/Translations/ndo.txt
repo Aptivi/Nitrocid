@@ -155,8 +155,8 @@ Argumen tentang Boot:
 Perintah bantuan disederhanakan:
 MOTD saat Masuk:
 Waktu / Tanggal di sudut:
-[ Pengaturan perangkat keras ] {0}
-{0}[ Pengaturan pengguna ]
+[ Pengaturan perangkat keras ]
+[ Pengaturan pengguna ]
 Nama pengguna saat ini:
 Nama host saat ini:
 Nama pengguna yang tersedia:

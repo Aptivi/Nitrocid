@@ -155,8 +155,8 @@ Argument på Boot:
 Hjälpkommandot förenklat:
 MOTD på inloggning:
 Tid / datum på hörnet:
-[ Hårdvaruinställningar ] {0}
-{0}[ Användarinställningar ]
+[ Hårdvaruinställningar ]
+[ Användarinställningar ]
 Nuvarande användarnamn:
 Nuvarande värdnamn:
 Tillgängliga användarnamn:

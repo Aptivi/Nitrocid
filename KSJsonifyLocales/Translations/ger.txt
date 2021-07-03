@@ -155,8 +155,8 @@ Argumente beim Booten:
 Hilfebefehl vereinfacht:
 MOTD beim Login:
 Uhrzeit / Datum an der Ecke:
-[ Hardwareeinstellungen ]{0}
-{0}[ Benutzereinstellungen ]
+[ Hardwareeinstellungen ]
+[ Benutzereinstellungen ]
 Aktueller Benutzername:
 Aktueller Hostname:
 Verfügbare Benutzernamen:

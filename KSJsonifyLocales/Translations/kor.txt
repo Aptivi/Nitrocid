@@ -155,8 +155,8 @@ butingsi insu :
 doummal myeonglyeong dansunhwa :
 logeu-insi MOTD :
 koneo sigan / naljja :
-[ hadeuweeo seoljeong ] {0}
-{0}[ sayongja seoljeong ]
+[ hadeuweeo seoljeong ]
+[ sayongja seoljeong ]
 hyeonjae sayongja ileum :
 hyeonjae hoseuteu ileum :
 sayong ganeunghan sayongja ileum :

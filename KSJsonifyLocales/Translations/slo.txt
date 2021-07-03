@@ -155,8 +155,8 @@ Argumenty pri zavádzaní:
 Zjednodušený príkaz pomocníka:
 MOTD pri prihlásení:
 Čas / dátum na rohu:
-[ Hardvérové ​​nastavenia ] {0}
-{0}[ Nastavenia používateľa ]
+[ Hardvérové ​​nastavenia ]
+[ Nastavenia používateľa ]
 Aktuálne užívateľské meno:
 Aktuálny názov hostiteľa:
 Dostupné používateľské mená:

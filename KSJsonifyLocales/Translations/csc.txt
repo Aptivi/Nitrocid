@@ -155,7 +155,7 @@ Argumenti nantu à u Boot:
 Cumandamentu d'aiutu simplificatu:
 MOTD à l'Accessu:
 Ora / Data à l'angulu:
-[ Impostazioni hardware ] {0}
+[ Impostazioni hardware ]
 {0} [ Impostazioni utente ]
 Nome d'utente attuale:
 Nome attuale di l'ospite:

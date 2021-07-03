@@ -155,8 +155,8 @@ Arguments au démarrage:
 Commande d'aide simplifiée:
 MOTD sur Login:
 Heure / Date sur le coin:
-[ Paramètres matériels ]{0}
-{0}[ Paramètres utilisateur ]
+[ Paramètres matériels ]
+[ Paramètres utilisateur ]
 Nom d'utilisateur actuel:
 Nom d'hôte actuel:
 Noms d'utilisateur disponibles:

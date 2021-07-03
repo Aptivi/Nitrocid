@@ -155,8 +155,8 @@ Doodaha ku saabsan Boot:
 Caawinta amarka la fududeeyay:
 MOTD Soo Gal:
 Waqtiga/Taariikhda geeska:
-[ Dejinta qalabka ] {0}
-{0}[ Dejinta isticmaaleyaasha ]
+[ Dejinta qalabka ]
+[ Dejinta isticmaaleyaasha ]
 Magaca isticmaalaha hadda:
 Magaca martigaliyaha hadda:
 Magacyo adeegsi oo la heli karo:

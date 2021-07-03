@@ -155,8 +155,8 @@ Abiarazteko argudioak:
 Laguntza komandoa sinplifikatua:
 MOTD Saioa hastean:
 Izkinako ordua / data:
-[ Hardwarearen ezarpenak ]{0}
-{0}[ Erabiltzailearen ezarpenak ]
+[ Hardwarearen ezarpenak ]
+[ Erabiltzailearen ezarpenak ]
 Uneko erabiltzaile izena:
 Uneko ostalariaren izena:
 Erabilgarri dauden izenak:

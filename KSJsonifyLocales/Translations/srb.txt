@@ -155,8 +155,8 @@ Argument on Boot:
 Pojednostavljena naredba za pomo?:
 MOTD za prijavu:
 Vrijeme / datum na uglu:
-[ Hardverska pode?avanja ]{0}
-{0}[ Korisni?ke postavke ]
+[ Hardverska pode?avanja ]
+[ Korisni?ke postavke ]
 Trenutno korisni?ko ime:
 Trenutno ime doma?ina:
 Dostupna korisni?ka imena:

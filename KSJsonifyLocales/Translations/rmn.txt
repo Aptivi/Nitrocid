@@ -155,8 +155,8 @@ Argumente de pornire:
 Comanda de ajutor simplificat?:
 MOTD la Logare:
 Ora / data la col?:
-[ Set?ri hardware ] {0}
-{0}[ Set?ri utilizator ]
+[ Set?ri hardware ]
+[ Set?ri utilizator ]
 Numele de utilizator curent:
 Numele gazdei curente:
 Numele de utilizator disponibile:

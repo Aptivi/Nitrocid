@@ -155,8 +155,8 @@ Kidō-ji no hikisū:
 Herupu komando no kanryaku-ka: 
 Roguin-ji no MOTD: 
 Kōnā no nichiji: 
-[ Hādou~ea settei ]{0}
-{0}[ yūzā settei ]
+[ Hādou~ea settei ]
+[ yūzā settei ]
 genzai no yūzā-mei: 
 Genzai no hosuto-mei: 
 Riyō kanōna yūzā-mei: 

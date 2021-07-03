@@ -155,8 +155,8 @@ Argumentos no arranque:
 Comando de axuda simplificado:
 MOTD ao iniciar sesión:
 Hora / data na esquina:
-[ Configuración de hardware ]{0}
-{0}[ Configuración do usuario ]
+[ Configuración de hardware ]
+[ Configuración do usuario ]
 Nome de usuario actual:
 Nome de host actual:
 Nomes de usuario dispoñibles:

@@ -155,8 +155,8 @@ Rəngli Kabuk:
 Kömək əmri sadələşdirilmişdir:
 Girişdə MOTD:
 Saat / tarix küncdə:
-[ Təchizat parametrləri ] {0}
-{0}[ İstifadəçi ayarları ]
+[ Təchizat parametrləri ]
+[ İstifadəçi ayarları ]
 Cari istifadəçi adı:
 Cari host adı:
 Mövcud istifadəçi adları:

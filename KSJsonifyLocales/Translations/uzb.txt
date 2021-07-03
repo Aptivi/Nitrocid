@@ -155,8 +155,8 @@ Bootdagi dalillar:
 Soddalashtirilgan yordam buyrug'i:
 Kirishda MOTD:
 Burchakdagi vaqt / sana:
-[ Uskuna sozlamalari ]{0}
-{0}[ Foydalanuvchi sozlamalari ]
+[ Uskuna sozlamalari ]
+[ Foydalanuvchi sozlamalari ]
 Joriy foydalanuvchi ismi:
 Joriy host nomi:
 Mavjud foydalanuvchi nomlari:

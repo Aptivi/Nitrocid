@@ -156,7 +156,7 @@ sahaayata aadesh saraleekrt:
 login par emoteedee:
 kone par samay / tithi:
 [ haardaveyar setings ] 0}
-{0}[ upayogakarta setings ]
+[ upayogakarta setings ]
 vartamaan upayogakarta naam:
 vartamaan host naam:
 upalabdh upayogakarta naam:

@@ -155,8 +155,8 @@ Argumenter om boot:
 Hjælpekommando forenklet:
 MOTD ved login:
 Tid / dato på hjørnet:
-[ Hardwareindstillinger ] {0}
-{0}[ Brugerindstillinger ]
+[ Hardwareindstillinger ]
+[ Brugerindstillinger ]
 Nuværende brugernavn:
 Nuværende værtsnavn:
 Tilgængelige brugernavne:

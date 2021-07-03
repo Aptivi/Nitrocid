@@ -155,8 +155,8 @@ Argumenty na zagruzku:
 Spravka po komande uproshchena:
 MOTD pri vkhode v sistemu:
 Vremya / Data na uglu:
-[ Nastroyki oborudovaniya ] {0}
-{0}[ Nastroyki pol'zovatelya ]
+[ Nastroyki oborudovaniya ]
+[ Nastroyki pol'zovatelya ]
 Tekushcheye imya pol'zovatelya:
 Tekushcheye imya khosta:
 Dostupnyye imena pol'zovateley:

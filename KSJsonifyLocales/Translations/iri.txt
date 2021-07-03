@@ -155,8 +155,8 @@ Argóintí ar Tosaithe:
 Ordú cabhrach simplithe:
 MOTD ar Logáil Isteach:
 Am / Dáta ar an choirnéal:
-[ Socruithe crua-earraí ] {0}
-{0}[ Socruithe úsáideora ]
+[ Socruithe crua-earraí ]
+[ Socruithe úsáideora ]
 Ainm úsáideora reatha:
 Ainm óstach reatha:
 Ainmneacha úsáideora atá ar fáil:

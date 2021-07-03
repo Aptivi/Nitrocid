@@ -155,8 +155,8 @@ Agiman sou bòt:
 Ede kòmand senplifye:
 MOTD sou Login:
 Tan / Dat sou kwen:
-[ Anviwònman Materyèl ] {0}
-{0}[ Anviwònman itilizatè ]
+[ Anviwònman Materyèl ]
+[ Anviwònman itilizatè ]
 Non itilizatè aktyèl:
 Non lame aktyèl la:
 Non itilizatè ki disponib:

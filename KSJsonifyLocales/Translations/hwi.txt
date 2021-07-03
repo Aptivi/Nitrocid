@@ -155,8 +155,8 @@ Nā paio ma Boot:
 Kōkua ʻia ka ʻōlelo kōkua:
 MOTD ma ka ʻeʻe:
 Manawa / Lā ma ke kihi:
-[ Nā hoʻonohonoho paʻa paʻa paʻa ] {0}
-{0}[ Hoʻonohonoho hoʻohana ]
+[ Nā hoʻonohonoho paʻa paʻa paʻa ]
+[ Hoʻonohonoho hoʻohana ]
 Inoa hoʻohana o kēia manawa:
 Inoa host o kēia manawa:
 Nā inoa inoa i loaʻa:

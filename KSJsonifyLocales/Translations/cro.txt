@@ -155,8 +155,8 @@ Argumenti na čizmi:
 Pojednostavljena naredba pomoći:
 MOTD za prijavu:
 Vrijeme / datum na uglu:
-[ Hardverske postavke ] {0}
-{0}[ Korisničke postavke ]
+[ Hardverske postavke ]
+[ Korisničke postavke ]
 Trenutačno korisničko ime:
 Trenutačno ime domaćina:
 Dostupna korisnička imena:

@@ -155,8 +155,8 @@ Mikangano pa Boot:
 Lamulo lothandizira losavuta:
 MOTD pa Malowedwe:
 Nthawi / Tsiku pakona:
-[ Zida za Hardware ]{0}
-{0}[ Zikhazikiko za wogwiritsa ]
+[ Zida za Hardware ]
+[ Zikhazikiko za wogwiritsa ]
 Dzinalo lomasulira:
 Dzinalo lenileni:
 Maina ogwiritsa akupezeka:

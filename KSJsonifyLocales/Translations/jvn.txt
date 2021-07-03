@@ -155,8 +155,8 @@ Argumen ing Boot:
 Prentah pitulung disederhanakake:
 MOTD ing Login:
 Wektu / Tanggal ing sudhut:
-[ Setelan perangkat keras ]{0}
-{0}[ Setelan pangguna ]
+[ Setelan perangkat keras ]
+[ Setelan pangguna ]
 Jeneng pangguna saiki:
 Jeneng host saiki:
 Jeneng pangguna sing kasedhiya:

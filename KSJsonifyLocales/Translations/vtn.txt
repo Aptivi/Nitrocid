@@ -155,8 +155,8 @@ Vỏ màu:
 Lệnh trợ giúp được đơn giản hóa:
 MOTD khi đăng nhập:
 Thời gian / Ngày ở góc:
-[Cài đặt phần cứng ]{0}
-{0}[ Cài đặt người dùng ]
+[Cài đặt phần cứng ]
+[ Cài đặt người dùng ]
 Tên người dùng hiện tại:
 Tên máy chủ hiện tại:
 Tên người dùng có sẵn:

@@ -155,8 +155,8 @@ Dadleuon ar Gist:
 Symleiddio help help:
 MOTD ar Mewngofnodi:
 Amser / Dyddiad ar y gornel:
-[ Gosodiadau caledwedd ] {0}
-{0}[ Gosodiadau defnyddiwr ]
+[ Gosodiadau caledwedd ]
+[ Gosodiadau defnyddiwr ]
 Enw defnyddiwr cyfredol:
 Enw gwesteiwr cyfredol:
 Enwau defnyddwyr sydd ar gael:

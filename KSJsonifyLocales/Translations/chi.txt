@@ -155,8 +155,8 @@ Boot shàng de cānshù:
 Bāngzhù mìnglìng jiǎnhuà:
 Dēnglù shí de MOTD:
 Jiǎoluò de shíjiān/rìqí:
-[ Yìngjiàn shèzhì ]{0}
-{0}[ yònghù shèzhì ]
+[ Yìngjiàn shèzhì ]
+[ yònghù shèzhì ]
 Dāngqián yònghù míng:
 Dāngqián zhǔjī míng:
 Kěyòng de yònghù míng:

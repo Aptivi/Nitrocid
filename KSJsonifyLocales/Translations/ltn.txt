@@ -155,8 +155,8 @@ Booz vero argumentis a:
 Auxilium imperium simpliciores;
 MOTD super User name:
 Tempus / Date in anguli:
-[ Hardware occasus ]{0}
-{0}[ User occasus ]
+[ Hardware occasus ]
+[ User occasus ]
 Current User nomen:
 Current nomen exercitum:
 Donec available:

@@ -1147,7 +1147,7 @@ Public Module GetCommand
                 Case "sysinfo"
 
                     'Shows system information
-                    W(DoTranslation("[ Kernel settings (Running on {0}) ]") + vbNewLine, True, ColTypes.Banner, Environment.OSVersion.ToString)
+                    W(DoTranslation("[ Kernel settings (Running on {0}) ]"), True, ColTypes.Banner, Environment.OSVersion.ToString)
 
                     'Kernel section
                     W(DoTranslation("Kernel Version:") + " ", False, ColTypes.ListEntry) : W(KernelVersion, True, ColTypes.ListValue)
@@ -1160,22 +1160,25 @@ Public Module GetCommand
                     Console.WriteLine()
 
                     'Hardware section
-                    W(DoTranslation("[ Hardware settings ]{0}"), True, ColTypes.Banner, vbNewLine)
+                    W(DoTranslation("[ Hardware settings ]"), True, ColTypes.Banner, vbNewLine)
                     ListHardware()
                     W(DoTranslation("Use ""hwinfo"" for extended information about hardware."), True, ColTypes.Neutral)
+                    Console.WriteLine()
 
                     'User section
-                    W(DoTranslation("{0}[ User settings ]"), True, ColTypes.Banner, vbNewLine)
+                    W(DoTranslation("[ User settings ]"), True, ColTypes.Banner, vbNewLine)
                     W(DoTranslation("Current user name:") + " ", False, ColTypes.ListEntry) : W(CurrentUser, True, ColTypes.ListValue)
                     W(DoTranslation("Current host name:") + " ", False, ColTypes.ListEntry) : W(HName, True, ColTypes.ListValue)
                     W(DoTranslation("Available usernames:") + " ", False, ColTypes.ListEntry) : W(String.Join(", ", Users.Keys), True, ColTypes.ListValue)
                     Console.WriteLine()
 
-                    'Messages Section
-                    W(vbNewLine + "[ MOTD ]", True, ColTypes.Banner)
-                    W(vbNewLine + ProbePlaces(MOTDMessage), True, ColTypes.Neutral)
-                    W(vbNewLine + "[ MAL ]", True, ColTypes.Banner)
-                    W(vbNewLine + ProbePlaces(MAL), True, ColTypes.Neutral)
+                    'Show MOTD
+                    W("[ MOTD ]", True, ColTypes.Banner)
+                    W(ProbePlaces(MOTDMessage), True, ColTypes.Neutral)
+
+                    'Show MAL
+                    W("[ MAL ]", True, ColTypes.Banner)
+                    W(ProbePlaces(MAL), True, ColTypes.Neutral)
 
                 Case "unblockdbgdev"
 

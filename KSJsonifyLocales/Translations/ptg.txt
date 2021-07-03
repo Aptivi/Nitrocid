@@ -155,8 +155,8 @@ Argumentos na inicialização:
 Comando de ajuda simplificado:
 MOTD no Login:
 Hora/Data no canto:
-[ Configurações de hardware ]{0}
-{0}[ Configurações do usuário ]
+[ Configurações de hardware ]
+[ Configurações do usuário ]
 Nome de usuário atual:
 Nome do host atual:
 Usernames disponíveis:

@@ -155,8 +155,8 @@ Argumenty při spouštění:
 Zjednodušený příkaz nápovědy:
 MOTD při přihlášení:
 Čas / datum v rohu:
-[ Hardwarová nastavení ] {0}
-{0}[ Uživatelské nastavení ]
+[ Hardwarová nastavení ]
+[ Uživatelské nastavení ]
 Aktuální uživatelské jméno:
 Aktuální název hostitele:
 Dostupná uživatelská jména:

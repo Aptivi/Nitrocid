@@ -155,8 +155,8 @@ Argumentit käynnistettäessä:
 Ohjekomento yksinkertaistettu:
 MOTD kirjautumisessa:
 Aika / päivä kulmassa:
-[ Laitteiston asetukset ] {0}
-{0}[ Käyttäjän asetukset ]
+[ Laitteiston asetukset ]
+[ Käyttäjän asetukset ]
 Nykyinen käyttäjänimi:
 Nykyinen isäntänimi:
 Käytettävissä olevat käyttäjätunnukset:
