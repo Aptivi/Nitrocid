@@ -1,8 +1,8 @@
 ## General Contributions
 
-We are changing into how we organize releases for bug fixes and feature additions. We're going to separate between the master branch, which is where we're developing the major versions of kernel, and the servicing branch, which is where we're making minor versions of the kernel.
+We currently have branches for each major series to separate between the master branch, which is where we're developing the major versions of kernel, and the servicing branch, which is where we're making minor versions of the kernel.
 
-Both branches get their own continuous integration builds.
+Branches that start with version series are branches that exist for specific major version series, like `v0.0.12.x-servicing` for 0.0.12.x servicing versions. All of the branches get their own continuous integration builds. However, consult the supported version table in the wiki homepage to see if the version you're going to contribute is still officially supported.
 
 #### If you want to contribute to Kernel Simulator, the conditions below must be followed
 
@@ -25,7 +25,7 @@ The porting to ASM/C/C++ is up to us, the owner. Any ports to them before our of
 
 #### If you want to port Kernel Simulator to macOS (untested) on Visual Basic
 
-1. Install Mono and MonoDevelop, Visual Studio for Mac, or Rider. You can find out how at their official website.
+1. Install Mono and Visual Studio for Mac, or Rider. You can find out how at their official website.
 2. Download the KS source code
 3. Open the solution using the above IDEs, and run the program.
 4. Report any issues on Issues section in our KS repo.
