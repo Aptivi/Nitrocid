@@ -23,11 +23,11 @@ Imports KS
     ''' <summary>
     ''' Tests initializing current times in all timezones
     ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitTimesInZones()
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestGetTimeZones()
         KernelDateTime = Date.Now
-        InitTimesInZones()
-        zoneTimes.ShouldNotBeNull
-        zoneTimes.ShouldNotBeEmpty
+        Dim TimeZones As Dictionary(Of String, Date) = GetTimeZones()
+        TimeZones.ShouldNotBeNull
+        TimeZones.ShouldNotBeEmpty
     End Sub
 
 End Class
