@@ -1096,5 +1096,22 @@
   "Here's how your theme will look like:": "Yǐxià shì nín de zhǔtí de wàiguān:",
   "Wrappable commands:": "Kě bāozhuāng mìnglìng:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} de mìnglìng wúxiào. Mod jiěxī shībài. Chákàn yuán dàimǎ.",
-  "Mod parts:": "Mó zǔ bùfèn:"
+  "Mod parts:": "Mó zǔ bùfèn:",
+  "Use Console API": "Shǐyòng kòngzhì tái API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "shì shǐyòng kòngzhì tái API qīngchú wénběn huán shì shǐyòng gèng kuài de xíng qīngchú VT xùliè. Rúguǒ wèi False,Marquee jiāng shǐyòng shìdàng de VT xùliè. Fǒuzé, tā jiāng shǐyòng kěnéng jiào màn de Console API.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Zhèngzài dǎkāi URL... Quèbǎo ànzhào píngmù shàng xiǎnshì de bùzhòu jìnxíng cāozuò.",
+  "There are no parts in mod.": "Mod zhōng méiyǒu língjiàn.",
+  "Mod name:": "Mó zǔ míngchēng:",
+  "Mod file name:": "Mó zǔ wénjiàn míng:",
+  "Mod file path:": "Xiūgǎi wénjiàn lùjìng:",
+  "Part version:": "Bùfèn bǎnběn:",
+  "Minimum count of required arguments:": "Suǒ xū cān shǔ de zuìxiǎo shùliàng:",
+  "Arguments required?": "Xūyào cānshù ma?",
+  "Wrappable command?": "Kě bāozhuāng mìnglìng?",
+  "Setting shell variable?": "Shèzhì shell biànliàng?",
+  "Can not run in maintenance mode?": "Bùnéng zài wéihù móshì xià yùnxíng?",
+  "Obsolete?": "Guòshí de?",
+  "RSS Prompt Style": "RSS tíshì yàngshì",
+  "Text Edit Prompt Style": "wénběn biānjí tíshì yàngshì",
+  "Zip Shell Prompt Style": "Zip Shell tíshì yàngshì"
 }

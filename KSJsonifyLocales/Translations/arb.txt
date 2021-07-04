@@ -1097,3 +1097,20 @@ mueayanatu...
 'awamir qabilat lilaltafafu:
 alwade {0} bih 'amr ghayr salihin. fashal tahlil wazarat aldifaei. rajie kud almasdari.
 'ajza' wizarat aldifaei:
+astakhdim Console API
+ma 'iidha kan sayatimu astikhdam Console API limash alnasi 'aw astikhdam tasalsul mash al'astur al'asrae VT. 'iidha kan khataan , fasatustakhdam Marquee tasalsul VT almunasibu. wa'iilaa , fasayustakhdim wajihat barmajat tatbiqat wahdat altahakum alati rubama takun 'abta'u.
+fath eunwan URL ... ta'akad min atibae alkhutuat almuadihat ealaa alshaashati.
+la tujad 'ajza' fi altaedili.
+aism altaedili:
+aism milafi altaedili:
+masar milafi Mod:
+'iisdar aljuz'i:
+alhadu al'adnaa lieadad alwasayit almatlubati:
+alhujaj almatlubatu?
+'amr qabil lilfa?
+tahdid mutaghayir qadhifatun?
+la yumkin 'an taemal fi wade alsiyanati?
+eafa ealayha alzamana?
+'uslub muajah RSS
+namat muajih tahrir alnasi
+namat muajah min nawe Zip Shell

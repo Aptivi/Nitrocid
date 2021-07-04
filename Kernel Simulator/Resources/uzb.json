@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Mana sizning mavzuingiz qanday bo'ladi:",
   "Wrappable commands:": "O'rab olinadigan buyruqlar:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "{0} tartibida yaroqsiz buyruq mavjud. Tartibni tahlil qilib bo‘lmadi. Manba kodini ko'rib chiqing.",
-  "Mod parts:": "Tartibni qismlar:"
+  "Mod parts:": "Tartibni qismlar:",
+  "Use Console API": "Console API-dan foydalaning",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Matnni tozalash uchun yoki VT ketma-ketligini tezroq tozalash uchun Console API-dan foydalanish kerakmi. False bo'lsa, Marquee tegishli VT ketma-ketligini ishlatadi. Aks holda, u ehtimol sekinroq Konsol API-dan foydalanadi.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "URL ochilmoqda ... Ekranda ko'rsatilgan amallarni bajaring.",
+  "There are no parts in mod.": "Modda qismlar mavjud emas.",
+  "Mod name:": "Tartibni nomi:",
+  "Mod file name:": "Tartibni nomi:",
+  "Mod file path:": "Tartibni fayl yo'li:",
+  "Part version:": "Qism versiyasi:",
+  "Minimum count of required arguments:": "Kerakli argumentlarning minimal soni:",
+  "Arguments required?": "Argumentlar kerakmi?",
+  "Wrappable command?": "O'rab olinadigan buyruqmi?",
+  "Setting shell variable?": "Shell o'zgaruvchisi o'rnatiladimi?",
+  "Can not run in maintenance mode?": "Texnik rejimda ishlay olmaysizmi?",
+  "Obsolete?": "Eskirganmi?",
+  "RSS Prompt Style": "RSS tezkor uslubi",
+  "Text Edit Prompt Style": "Matnni tahrirlash tezligi uslubi",
+  "Zip Shell Prompt Style": "Zip Shell tezkor uslubi"
 }

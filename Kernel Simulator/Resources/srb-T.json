@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Ево како ће изгледати ваша тема:",
   "Wrappable commands:": "Наредбе које се могу премотати:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Мод {0} има неважећу наредбу. Рашчлањивање мода није успело. Прегледајте изворни код.",
-  "Mod parts:": "Мод делови:"
+  "Mod parts:": "Мод делови:",
+  "Use Console API": "Користите АПИ конзоле",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Да ли да користим АПИ конзоле за брисање текста или да користим брже брисање линија ВТ секвенце. Ако је Нетачно, шатор ће користити одговарајућу ВТ секвенцу. У супротном, користиће вероватно спорији АПИ конзоле.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Отварање УРЛ-а ... Обавезно следите кораке приказане на екрану.",
+  "There are no parts in mod.": "У моду нема делова.",
+  "Mod name:": "Назив мод:",
+  "Mod file name:": "Назив датотеке мод:",
+  "Mod file path:": "Путања мод датотеке:",
+  "Part version:": "Верзија дела:",
+  "Minimum count of required arguments:": "Минимални број потребних аргумената:",
+  "Arguments required?": "Потребни аргументи?",
+  "Wrappable command?": "Наредба за омотавање?",
+  "Setting shell variable?": "Постављање променљиве љуске?",
+  "Can not run in maintenance mode?": "Не можете да се покренете у режиму одржавања?",
+  "Obsolete?": "Застарело?",
+  "RSS Prompt Style": "РСС промпт стил",
+  "Text Edit Prompt Style": "Стил упита за уређивање текста",
+  "Zip Shell Prompt Style": "Зип Схелл Промпт Стиле"
 }

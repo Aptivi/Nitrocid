@@ -1097,3 +1097,20 @@ Tēma wa tsugi no yō ni narimasu.
 Rappu kanōna komando:
 Mod {0} ni wa mukōna komando ga arimasu. Mod no kaiseki ni shippai shimashita. Sōsu kōdo o kakunin shimasu.
 Kaizō pātsu:
+Konsōru api o shiyō suru
+Console api o shiyō shite tekisuto o kuria suru ka, yori kōsoku nagyō kuria VT shīkensu o shiyō suru ka. Farusu no baai, mākī wa tekisetsuna VT shīkensu o shiyō shimasu. Sore igai no baai wa, osoraku teisoku no konsōru api o shiyō shimasu.
+URL o aiteimasu... Gamen ni hyōji sa rete iru tejun ni shitagatte kudasai.
+Mod ni wa pātsu ga arimasen.
+Mod-mei:
+Mod fairu-mei:
+Mod fairu pasu:
+Pātsubājon:
+Hitsuyōna hikisū no saishō-sū:
+Hikisū ga hitsuyōdesu ka?
+Rappu kanōna komando?
+Sheru hensū o settei shimasu ka?
+Mentenansumōdo de jikkō dekimasen ka?
+Haishi sa remashita ka?
+RSS puronputosutairu
+tekisutoedittopuronputosutairu
+Zip sherupuronputosutairu

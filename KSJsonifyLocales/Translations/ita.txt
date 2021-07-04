@@ -1097,3 +1097,20 @@ Ecco come sarà il tuo tema:
 Comandi a capo:
 Il mod {0} ha un comando non valido. Analisi della mod non riuscita. Rivedere il codice sorgente.
 Parti del modulo:
+Usa l'API della console
+Se utilizzare l'API della console per cancellare il testo o utilizzare la sequenza VT di cancellazione della riga più veloce. Se False, Marquee utilizzerà la sequenza VT appropriata. In caso contrario, utilizzerà l'API Console probabilmente più lenta.
+Apertura URL... Assicurati di seguire i passaggi mostrati sullo schermo.
+Non ci sono parti nel mod.
+Nome del modulo:
+Nome del file del modulo:
+Percorso file mod:
+Versione parziale:
+Conteggio minimo di argomenti richiesti:
+Argomenti richiesti?
+Comando avvolgibile?
+Impostazione variabile shell?
+Non è possibile eseguire in modalità di manutenzione?
+Obsoleto?
+Stile del prompt RSS
+Stile del messaggio di modifica del testo
+Zip Shell Stile Prompt

@@ -1097,3 +1097,20 @@ Voici à quoi ressemblera votre thème :
 Commandes enveloppables :
 Mod {0} a une commande invalide. Échec de l'analyse du module. Passez en revue le code source.
 Pièces de modules :
+Utiliser l'API de la console
+Que ce soit pour utiliser l'API de la console pour effacer le texte ou pour utiliser la séquence VT d'effacement de ligne plus rapide. Si False, Marquee utilisera la séquence VT appropriée. Sinon, il utilisera l'API de la console probablement plus lente.
+URL d'ouverture... Assurez-vous de suivre les étapes affichées à l'écran.
+Il n'y a pas de pièces dans le mod.
+Nom du module :
+Nom du fichier mod :
+Chemin du fichier de modification :
+Version de la pièce :
+Nombre minimum d'arguments requis :
+Arguments requis ?
+Commande enveloppable ?
+Paramétrer la variable shell ?
+Impossible de fonctionner en mode maintenance ?
+Obsolète?
+Style d'invite RSS
+Style d'invite d'édition de texte
+Style d'invite de la coquille zippée

@@ -1097,3 +1097,20 @@ Narito kung paano magiging hitsura ang iyong tema:
 Mga mailalagay na utos:
 Ang Mod {0} ay may wastong utos. Nabigo ang pag-parse ng mod. Suriin ang source code.
 Mga bahagi ng mod:
+Gumamit ng Console API
+Gagamitin ba ang Console API upang i-clear ang teksto o gamitin ang mas mabilis na linya sa pag-clear ng pagkakasunud-sunod ng VT. Kung Mali, gagamitin ni Marquee ang naaangkop na pagkakasunud-sunod ng VT. Kung hindi man, gagamitin ito ng marahil mas mabagal na Console API.
+Pagbubukas ng URL ... Tiyaking sundin ang mga hakbang na ipinapakita sa screen.
+Walang mga bahagi sa mod.
+Pangalan ng mod:
+Pangalan ng mod file:
+Mod file path:
+Bahagi ng bersyon:
+Minimum na bilang ng mga kinakailangang argumento:
+Kailangan ng mga argumento?
+Napapalit na utos?
+Nagtatakda ng variable ng shell?
+Hindi maaaring tumakbo sa maintenance mode?
+Hindi na ginagamit?
+Estilo ng Prompt ng RSS
+Text I-edit ang Estilo ng Prompt
+Estilo ng Prompt ng Zip Shell

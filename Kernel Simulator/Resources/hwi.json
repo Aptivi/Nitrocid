@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Eia pehea ke ʻano o kāu kumuhana:",
   "Wrappable commands:": "Nā kauoha Wrappable:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "He kauoha kūpono ʻole kā Mod {0}. Ua holo pono ka mod Parsing. Loiloi i ke code kumu.",
-  "Mod parts:": "Nā māhele mod:"
+  "Mod parts:": "Nā māhele mod:",
+  "Use Console API": "E hoʻohana iā Console API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "E hoʻohana paha i ka Console API e hoʻomaʻemaʻe i ka ʻōlelo a i ʻole e hoʻohana i ka laina ʻoi aku ka hoʻomaʻemaʻe i ke kaʻina VT. Inā hewa, e hoʻohana ʻo Marquee i ke kaʻina VT kūpono. Inā ʻole, e hoʻohana ia i ka API lohi paha lohi.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Wehe i ka URL ... E nānā pono i nā ʻanuʻu i hōʻike ʻia ma ka papakaumaka.",
+  "There are no parts in mod.": "ʻAʻohe ʻāpana i ka mod.",
+  "Mod name:": "Inoa Mod:",
+  "Mod file name:": "Inoa faila Mod:",
+  "Mod file path:": "Ala ala mod:",
+  "Part version:": "Mana ʻāpana:",
+  "Minimum count of required arguments:": "Ka helu palena iki o nā paio i koi ʻia:",
+  "Arguments required?": "Koi ʻia nā paio?",
+  "Wrappable command?": "Kauoha Wrappable?",
+  "Setting shell variable?": "Hoʻonohonoho i ka loli iwi?",
+  "Can not run in maintenance mode?": "ʻAʻole hiki ke holo i ke ʻano mālama?",
+  "Obsolete?": "Pau ʻole?",
+  "RSS Prompt Style": "RSS Kāhea Paipai",
+  "Text Edit Prompt Style": "Kikokikona hoʻoponopono i ke kaila paipai",
+  "Zip Shell Prompt Style": "ʻO ka Zip Shell Prompt Style"
 }

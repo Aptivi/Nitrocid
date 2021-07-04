@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "So sieht Ihr Theme aus:",
   "Wrappable commands:": "Umwickelbare Befehle:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} hat einen ungültigen Befehl. Mod-Parsing fehlgeschlagen. Überprüfen Sie den Quellcode.",
-  "Mod parts:": "Mod-Teile:"
+  "Mod parts:": "Mod-Teile:",
+  "Use Console API": "Konsolen-API verwenden",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Ob die Konsolen-API zum Löschen von Text oder die schnellere VT-Sequenz zum Löschen von Zeilen verwendet werden soll. Bei False verwendet Marquee die entsprechende VT-Sequenz. Andernfalls wird die wahrscheinlich langsamere Konsolen-API verwendet.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "URL öffnen... Befolgen Sie die auf dem Bildschirm angezeigten Schritte.",
+  "There are no parts in mod.": "Es gibt keine Teile im Mod.",
+  "Mod name:": "Mod-Name:",
+  "Mod file name:": "Name der Mod-Datei:",
+  "Mod file path:": "Pfad der Mod-Datei:",
+  "Part version:": "Teilversion:",
+  "Minimum count of required arguments:": "Mindestanzahl der erforderlichen Argumente:",
+  "Arguments required?": "Argumente erforderlich?",
+  "Wrappable command?": "Einwickelbarer Befehl?",
+  "Setting shell variable?": "Shell-Variable setzen?",
+  "Can not run in maintenance mode?": "Kann nicht im Wartungsmodus ausgeführt werden?",
+  "Obsolete?": "Obsolet?",
+  "RSS Prompt Style": "RSS-Eingabeaufforderungsstil",
+  "Text Edit Prompt Style": "Eingabeaufforderungsstil für Textbearbeitung",
+  "Zip Shell Prompt Style": "Stil mit Reißverschluss-Eingabeaufforderung"
 }

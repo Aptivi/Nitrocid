@@ -1097,3 +1097,20 @@ Nakhu ukuthi itimu yakho izobukeka kanjani:
 Imiyalo eguquguqukayo:
 I-Mod {0} inomyalo ongavumelekile. Ukuhlukaniswa kweMod kuhlulekile. Buyekeza ikhodi yomthombo.
 Izingxenye Mod:
+Sebenzisa i-Console API
+Ukuthi usebenzise i-Console API ukusula umbhalo noma ukusebenzisa ulayini osula ukulandelana kwe-VT. Uma kungamanga, iMarquee izosebenzisa ukulandelana okufanele kwe-VT. Ngaphandle kwalokho, izosebenzisa i-Console API cishe ehamba kancane.
+Ivula i-URL ... Qiniseka ukuthi ulandela izinyathelo ezikhonjiswe esikrinini.
+Azikho izingxenye ku-mod.
+Igama le-Mod:
+Igama lefayela Mod:
+Indlela yefayela Mod:
+Ingxenye yenguqulo:
+Ukubalwa okungenani kwama-agumenti adingekayo:
+Izimpikiswano ziyadingeka?
+Umyalo ogoqekayo?
+Ukubeka ukuguquguquka kwegobolondo?
+Ayikwazi ukugijima kwimodi yesondlo?
+Ingasasebenzi?
+Isitayela se-RSS Prompt
+Bhala isitayela se-Prompt
+Isitayela se-Zip Shell Prompt

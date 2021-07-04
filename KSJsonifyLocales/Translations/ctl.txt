@@ -1097,3 +1097,20 @@ A continuació, es mostrarà el vostre tema:
 Ordres encapsulables:
 El mode {0} té una ordre no vàlida. S'ha produït un error en analitzar les modificacions. Reviseu el codi font.
 Parts del mod:
+Utilitzeu l'API de la consola
+Si voleu utilitzar l'API de la consola per esborrar text o utilitzar la seqüència de VT de neteja de línies més ràpida. Si és fals, Marquee utilitzarà la seqüència de TV adequada. En cas contrari, utilitzarà l'API de consola probablement més lenta.
+S'està obrint l'URL ... Assegureu-vos de seguir els passos que es mostren a la pantalla.
+No hi ha parts al mod.
+Nom del modificador:
+Nom del fitxer Mod:
+Camí del fitxer Mod:
+Versió de la peça:
+Recompte mínim d'arguments obligatoris:
+Es necessiten arguments?
+Ordre encapsulable?
+Voleu configurar una variable d'intèrpret d'ordres?
+No es pot executar en mode de manteniment?
+Obsolet?
+RSS Prompt Style
+Estil de sol·licitud d'edició de text
+Zip Shell Prompt Style

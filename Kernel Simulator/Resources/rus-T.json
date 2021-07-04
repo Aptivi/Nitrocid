@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Вот как будет выглядеть ваша тема:",
   "Wrappable commands:": "Оборачиваемые команды:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "У мода {0} недопустимая команда. Не удалось проанализировать мод. Просмотрите исходный код.",
-  "Mod parts:": "Детали мода:"
+  "Mod parts:": "Детали мода:",
+  "Use Console API": "Использовать консольный API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Следует ли использовать консольный API для очистки текста или использовать более быструю последовательность VT для очистки строки. Если False, Marquee будет использовать соответствующую последовательность VT. В противном случае он будет использовать, вероятно, более медленный консольный API.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Открытие URL ... Обязательно следуйте инструкциям на экране.",
+  "There are no parts in mod.": "В моде нет деталей.",
+  "Mod name:": "Название мода:",
+  "Mod file name:": "Имя файла мода:",
+  "Mod file path:": "Путь к файлу мода:",
+  "Part version:": "Версия детали:",
+  "Minimum count of required arguments:": "Минимальное количество обязательных аргументов:",
+  "Arguments required?": "Требуются аргументы?",
+  "Wrappable command?": "Оборачиваемая команда?",
+  "Setting shell variable?": "Установка переменной оболочки?",
+  "Can not run in maintenance mode?": "Не может работать в режиме обслуживания?",
+  "Obsolete?": "Устаревший?",
+  "RSS Prompt Style": "Стиль подсказки RSS",
+  "Text Edit Prompt Style": "Стиль подсказки редактирования текста",
+  "Zip Shell Prompt Style": "Застежка-молния в стиле подсказки"
 }

@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Đây là cách chủ đề của bạn sẽ trông như thế nào:",
   "Wrappable commands:": "Các lệnh có thể quấn:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} có lệnh không hợp lệ. Phân tích cú pháp mô-đun không thành công. Xem lại mã nguồn.",
-  "Mod parts:": "Phần mod:"
+  "Mod parts:": "Phần mod:",
+  "Use Console API": "Sử dụng API bảng điều khiển",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Sử dụng API Console để xóa văn bản hay sử dụng trình tự VT xóa dòng nhanh hơn. Nếu Sai, Marquee sẽ sử dụng trình tự VT thích hợp. Nếu không, nó sẽ sử dụng API Console chậm hơn.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Đang mở URL ... Đảm bảo làm theo các bước hiển thị trên màn hình.",
+  "There are no parts in mod.": "Không có phần nào trong mod.",
+  "Mod name:": "Tên mod:",
+  "Mod file name:": "Tên tệp mod:",
+  "Mod file path:": "Đường dẫn tệp mod:",
+  "Part version:": "Phiên bản một phần:",
+  "Minimum count of required arguments:": "Số lượng tối thiểu các đối số bắt buộc:",
+  "Arguments required?": "Lập luận bắt buộc?",
+  "Wrappable command?": "Lệnh có thể quấn?",
+  "Setting shell variable?": "Đặt biến shell?",
+  "Can not run in maintenance mode?": "Không thể chạy ở chế độ bảo trì?",
+  "Obsolete?": "Đã lỗi thời?",
+  "RSS Prompt Style": "Kiểu nhắc RSS",
+  "Text Edit Prompt Style": "Chỉnh sửa văn bản Kiểu lời nhắc",
+  "Zip Shell Prompt Style": "Zip Shell Prompt Style"
 }

@@ -1097,3 +1097,20 @@ Zo ziet je thema eruit:
 Inpakbare commando's:
 Mod {0} heeft een ongeldige opdracht. Mod-parsing is mislukt. Bekijk de broncode.
 Mod-onderdelen:
+Použijte Console API
+Zda použít rozhraní Console API k vymazání textu nebo k použití rychlejší sekvence vymazání řádků VT. Pokud je False, použije Marquee příslušnou sekvenci VT. Jinak použije pravděpodobně pomalejší rozhraní Console API.
+Otevírání adresy URL ... Postupujte podle pokynů na obrazovce.
+V mod. Nejsou žádné části
+Název módu:
+Název souboru mod:
+Cesta k souboru mod:
+Verze dílu:
+Minimální počet požadovaných argumentů:
+Vyžadují se argumenty?
+Zabalitelný příkaz?
+Nastavení proměnné prostředí?
+Nelze spustit v režimu údržby?
+Zastaralý?
+Styl výzvy RSS
+Styl výzvy k úpravě textu
+Rychlý styl zipu

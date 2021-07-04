@@ -1097,3 +1097,20 @@ temaneun da-eumgwa gatseubnida.
 laeping ganeunghan myeonglyeong :
 Mod {0}e jalmosdoen myeonglyeong-i issseubnida. Mod gumun bunseog-e silpaehaessseubnida. soseu kodeuleul geomtohasibsio.
 modeu bupum :
+konsol API sayong
+konsol APIleul sayonghayeo tegseuteuleul jiugeona VT sikwonseuleul jiuneun deo ppaleun lain-eul sayonghalji yeobu-ibnida. Falseimyeon Marqueeneun jeogjeolhan VT sikwonseuleul sayonghabnida. geuleohji anh-eumyeon deo neulin konsol APIleul sayonghabnida.
+URL yeolgi ... hwamyeon-e pyosidoen dangyeleul ttaleusibsio.
+modeueneun bupum-i eobs-seubnida.
+modeu ileum :
+modeu pail ileum :
+modeu pail gyeonglo :
+bupum beojeon :
+pilsu insuui choeso gaesu :
+insuga pil-yohabnikka?
+laeping ganeunghan myeonglyeong?
+syel byeonsuleul seoljeong hasigessseubnikka?
+yuji gwanli modeueseo silhaenghal su eobs-seubnikka?
+gusig?
+RSS peulompeuteu seutail
+tegseuteu pyeonjib peulompeuteu seutail
+Zip swel peulompeuteu seutail

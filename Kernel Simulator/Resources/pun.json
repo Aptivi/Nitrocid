@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Tuhāḍā thīma kivēṁ dikhā'ī dēvēgā iha ithē hai:",
   "Wrappable commands:": "Laṭakaṇa vālī'āṁ kamāṇḍāṁ:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mōḍa {0} kōla galata kamāṇḍa hai. Māḍa pārasiga asaphala sarōta kōḍa dī samīkhi'ā karō.",
-  "Mod parts:": "Māḍa bhāga:"
+  "Mod parts:": "Māḍa bhāga:",
+  "Use Console API": "Kanasōla API varatō",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "kī ṭaikasaṭa nū sāpha karana la'ī kōnnasōla ēpī'ā'ī dī varatōṁ karanī hai jāṁ tēza lā'īna kalī'ariga vīṭī sīna dī varatōṁ karanī hai. Jē galata hai, mārakī ucita vīṭī taratība dī varatōṁ karēgī. Nahīṁ tāṁ, iha śā'ida haulī haulī kanasōla API dī varatōṁ karēgā.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "URL khōl'ha rihā hai... Sakrīna tē dikhā'ē ga'ē kadamāṁ dī pālaṇā karanā niśacata karō.",
+  "There are no parts in mod.": "Māḍa vica kō'ī bhāga nahīṁ hana.",
+  "Mod name:": "Māḍa nāma:",
+  "Mod file name:": "Māḍa phā'īla dā nāma:",
+  "Mod file path:": "Māḍa phā'īla māraga:",
+  "Part version:": "Bhāga sasakaraṇa:",
+  "Minimum count of required arguments:": "Lōṛīndī'āṁ dalīlāṁ dī ghaṭō ghaṭa giṇatī:",
+  "Arguments required?": "Dalīlāṁ lōṛīndī'āṁ hana?",
+  "Wrappable command?": "Lapēṭaṇa vālī kamāṇḍa?",
+  "Setting shell variable?": "Śaila vērī'ēbala saiṭa karanā?",
+  "Can not run in maintenance mode?": "Kī maiṇṭēnainsa mōḍa vica nahīṁ cala sakadē?",
+  "Obsolete?": "Purāṇī?",
+  "RSS Prompt Style": "Āra'aisa'aisa prōmpaṭa śailī",
+  "Text Edit Prompt Style": "ṭaikasaṭa aiḍiṭa prōmpaṭa śailī",
+  "Zip Shell Prompt Style": "zipa śaila prā'uṭa śailī"
 }

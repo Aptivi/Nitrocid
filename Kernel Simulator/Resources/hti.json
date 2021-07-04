@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Men ki jan tèm ou pral sanble:",
   "Wrappable commands:": "Kòmandman vlope:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} gen kòmandman ki pa valab. Mod analiz echwe. Revize kòd sous la.",
-  "Mod parts:": "Pati Mod:"
+  "Mod parts:": "Pati Mod:",
+  "Use Console API": "Sèvi ak konsole API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Kit pou itilize konsole API pou efase tèks oswa pou itilize liy pi vit pou netwaye sekans VT. Si fo, Marquee pral itilize sekans VT ki apwopriye a. Sinon, li pral sèvi ak pwobableman pi dousman konsole API la.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Ouvèti URL ... Asire ou ke ou swiv etap sa yo montre sou ekran an.",
+  "There are no parts in mod.": "Pa gen okenn pati nan mod.",
+  "Mod name:": "Non mod:",
+  "Mod file name:": "Non dosye mod:",
+  "Mod file path:": "Mod dosye chemen:",
+  "Part version:": "Pati vèsyon:",
+  "Minimum count of required arguments:": "Minimòm konte nan agiman yo mande yo:",
+  "Arguments required?": "Agiman obligatwa?",
+  "Wrappable command?": "Wrappable lòd?",
+  "Setting shell variable?": "Anviwònman koki varyab?",
+  "Can not run in maintenance mode?": "Pa ka kouri nan mòd antretyen?",
+  "Obsolete?": "Obsolèt?",
+  "RSS Prompt Style": "RSS Èd Memwa Style",
+  "Text Edit Prompt Style": "Tèks Edit Style Èd Memwa",
+  "Zip Shell Prompt Style": "Zip Shell Style Èd Memwa"
 }

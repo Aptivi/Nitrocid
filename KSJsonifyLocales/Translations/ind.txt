@@ -1097,3 +1097,20 @@ yahaan bataaya gaya hai ki aapakee theem kaisee dikhegee:
 lapetane yogy aadesh:
 mod {0} mein amaany aadesh hai. mod paarsing viphal. srot kod kee sameeksha karen.
 mod bhaagon:
+kansol epeeaee ka prayog karen
+paath ko saaph karane ke lie kansol epeeaee ka upayog karana hai ya tej lain samaashodhan veetee anukram ka upayog karana hai. yadi galat hai, to maarkee upayukt veetee anukram ka upayog karega. anyatha, yah sambhavatah dheeme kansol api ka upayog karega.
+url khola ja raha hai... skreen par dikhae gae charanon ka paalan karana sunishchit karen.
+mod mein koee bhaag nahin hain.
+aadhunik naam:
+mod fail naam:
+mod fail path:
+bhaag sanskaran:
+aavashyak tarkon kee nyoonatam sankhya:
+tark kee aavashyakata hai?
+lapetane yogy aadesh?
+khol char set karana?
+rakharakhaav mod mein nahin chal sakata?
+aprachalit?
+aareses sheeghr shailee
+paath sampaadit karen sheeghr shailee
+zip shail sheeghr shailee

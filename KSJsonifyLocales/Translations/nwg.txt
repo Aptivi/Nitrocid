@@ -1097,3 +1097,20 @@ Slik ser temaet ditt ut:
 Wrappable kommandoer:
 Mod {0} har ugyldig kommando. Mod-parsing mislyktes. Gjennomgå kildekoden.
 Mod deler:
+Bruk Console API
+Om du skal bruke Console API for å fjerne tekst eller bruke raskere VT-sekvens for linjesletting. Hvis det er feil, vil teltet bruke den riktige VT-sekvensen. Ellers bruker den sannsynligvis tregere Console API.
+Åpner URL ... Sørg for å følge trinnene som vises på skjermen.
+Det er ingen deler i mod.
+Mod navn:
+Mod filnavn:
+Mod filbane:
+Delversjon:
+Minimum antall påkrevde argumenter:
+Argumenter påkrevd?
+Wrappable kommando?
+Innstilling av skallvariabel?
+Kan ikke kjøre i vedlikeholdsmodus?
+Utdatert?
+RSS-stil
+Tekst Rediger ledetekst
+Zip Shell Prompt Style

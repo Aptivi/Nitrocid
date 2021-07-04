@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "ਤੁਹਾਡਾ ਥੀਮ ਕਿਵੇਂ ਦਿਖਾਈ ਦੇਵੇਗਾ ਇਹ ਇੱਥੇ ਹੈ:",
   "Wrappable commands:": "ਲਟਕਣ ਵਾਲੀਆਂ ਕਮਾਂਡਾਂ:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "ਮੋਡ {0} ਕੋਲ ਗਲਤ ਕਮਾਂਡ ਹੈ. ਮਾਡ ਪਾਰਸਿੰਗ ਅਸਫਲ ਸਰੋਤ ਕੋਡ ਦੀ ਸਮੀਖਿਆ ਕਰੋ.",
-  "Mod parts:": "ਮਾਡ ਭਾਗ:"
+  "Mod parts:": "ਮਾਡ ਭਾਗ:",
+  "Use Console API": "ਕਨਸੋਲ API ਵਰਤੋ",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "ਕੀ ਟੈਕਸਟ ਨੂੰ ਸਾਫ ਕਰਨ ਲਈ ਕੋਂਨਸੋਲ ਏਪੀਆਈ ਦੀ ਵਰਤੋਂ ਕਰਨੀ ਹੈ ਜਾਂ ਤੇਜ਼ ਲਾਈਨ ਕਲੀਅਰਿੰਗ ਵੀਟੀ ਸੀਨ ਦੀ ਵਰਤੋਂ ਕਰਨੀ ਹੈ. ਜੇ ਗਲਤ ਹੈ, ਮਾਰਕੀ ਉਚਿਤ ਵੀਟੀ ਤਰਤੀਬ ਦੀ ਵਰਤੋਂ ਕਰੇਗੀ. ਨਹੀਂ ਤਾਂ, ਇਹ ਸ਼ਾਇਦ ਹੌਲੀ ਹੌਲੀ ਕਨਸੋਲ API ਦੀ ਵਰਤੋਂ ਕਰੇਗਾ.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "URL ਖੋਲ੍ਹ ਰਿਹਾ ਹੈ ... ਸਕ੍ਰੀਨ ਤੇ ਦਿਖਾਏ ਗਏ ਕਦਮਾਂ ਦੀ ਪਾਲਣਾ ਕਰਨਾ ਨਿਸ਼ਚਤ ਕਰੋ.",
+  "There are no parts in mod.": "ਮਾਡ ਵਿਚ ਕੋਈ ਭਾਗ ਨਹੀਂ ਹਨ.",
+  "Mod name:": "ਮਾਡ ਨਾਮ:",
+  "Mod file name:": "ਮਾਡ ਫਾਈਲ ਦਾ ਨਾਮ:",
+  "Mod file path:": "ਮਾਡ ਫਾਈਲ ਮਾਰਗ:",
+  "Part version:": "ਭਾਗ ਸੰਸਕਰਣ:",
+  "Minimum count of required arguments:": "ਲੋੜੀਂਦੀਆਂ ਦਲੀਲਾਂ ਦੀ ਘੱਟੋ ਘੱਟ ਗਿਣਤੀ:",
+  "Arguments required?": "ਦਲੀਲਾਂ ਲੋੜੀਂਦੀਆਂ ਹਨ?",
+  "Wrappable command?": "ਲਪੇਟਣ ਵਾਲੀ ਕਮਾਂਡ?",
+  "Setting shell variable?": "ਸ਼ੈੱਲ ਵੇਰੀਏਬਲ ਸੈਟ ਕਰਨਾ?",
+  "Can not run in maintenance mode?": "ਕੀ ਮੈਂਟੇਨੈਂਸ ਮੋਡ ਵਿੱਚ ਨਹੀਂ ਚੱਲ ਸਕਦੇ?",
+  "Obsolete?": "ਪੁਰਾਣੀ?",
+  "RSS Prompt Style": "ਆਰਐਸਐਸ ਪ੍ਰੋਂਪਟ ਸ਼ੈਲੀ",
+  "Text Edit Prompt Style": "ਟੈਕਸਟ ਐਡਿਟ ਪ੍ਰੋਂਪਟ ਸ਼ੈਲੀ",
+  "Zip Shell Prompt Style": "ਜ਼ਿਪ ਸ਼ੈੱਲ ਪ੍ਰਾਉਟ ਸ਼ੈਲੀ"
 }

@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "यहां बताया गया है कि आपकी थीम कैसी दिखेगी:",
   "Wrappable commands:": "लपेटने योग्य आदेश:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "मॉड {0} में अमान्य आदेश है। मॉड पार्सिंग विफल। स्रोत कोड की समीक्षा करें।",
-  "Mod parts:": "मॉड भागों:"
+  "Mod parts:": "मॉड भागों:",
+  "Use Console API": "कंसोल एपीआई का प्रयोग करें",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "पाठ को साफ करने के लिए कंसोल एपीआई का उपयोग करना है या तेज लाइन समाशोधन वीटी अनुक्रम का उपयोग करना है। यदि गलत है, तो मार्की उपयुक्त वीटी अनुक्रम का उपयोग करेगा। अन्यथा, यह संभवतः धीमे कंसोल API का उपयोग करेगा।",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "URL खोला जा रहा है... स्क्रीन पर दिखाए गए चरणों का पालन करना सुनिश्चित करें।",
+  "There are no parts in mod.": "मॉड में कोई भाग नहीं हैं।",
+  "Mod name:": "आधुनिक नाम:",
+  "Mod file name:": "मॉड फ़ाइल नाम:",
+  "Mod file path:": "मॉड फ़ाइल पथ:",
+  "Part version:": "भाग संस्करण:",
+  "Minimum count of required arguments:": "आवश्यक तर्कों की न्यूनतम संख्या:",
+  "Arguments required?": "तर्क की आवश्यकता है?",
+  "Wrappable command?": "लपेटने योग्य आदेश?",
+  "Setting shell variable?": "खोल चर सेट करना?",
+  "Can not run in maintenance mode?": "रखरखाव मोड में नहीं चल सकता?",
+  "Obsolete?": "अप्रचलित?",
+  "RSS Prompt Style": "आरएसएस शीघ्र शैली",
+  "Text Edit Prompt Style": "पाठ संपादित करें शीघ्र शैली",
+  "Zip Shell Prompt Style": "ज़िप शैल शीघ्र शैली"
 }

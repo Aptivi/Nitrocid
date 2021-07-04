@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "テーマは次のようになります。",
   "Wrappable commands:": "ラップ可能なコマンド:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} には無効なコマンドがあります。 Mod の解析に失敗しました。ソース コードを確認します。",
-  "Mod parts:": "改造パーツ:"
+  "Mod parts:": "改造パーツ:",
+  "Use Console API": "コンソールAPIを使用する",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Console APIを使用してテキストをクリアするか、より高速な行クリアVTシーケンスを使用するか。 Falseの場合、マーキーは適切なVTシーケンスを使用します。 それ以外の場合は、おそらく低速のコンソールAPIを使用します。",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "URLを開いています...画面に表示されている手順に従ってください。",
+  "There are no parts in mod.": "modにはパーツがありません。",
+  "Mod name:": "Mod名：",
+  "Mod file name:": "Modファイル名：",
+  "Mod file path:": "Modファイルパス：",
+  "Part version:": "パーツバージョン：",
+  "Minimum count of required arguments:": "必要な引数の最小数：",
+  "Arguments required?": "引数が必要ですか？",
+  "Wrappable command?": "ラップ可能なコマンド？",
+  "Setting shell variable?": "シェル変数を設定しますか？",
+  "Can not run in maintenance mode?": "メンテナンスモードで実行できませんか？",
+  "Obsolete?": "廃止されましたか？",
+  "RSS Prompt Style": "RSSプロンプトスタイル",
+  "Text Edit Prompt Style": "テキストエディットプロンプトスタイル",
+  "Zip Shell Prompt Style": "Zipシェルプロンプトスタイル"
 }

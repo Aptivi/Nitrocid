@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "'iilayk kayf sayabdu almazhar alkhasu bika:",
   "Wrappable commands:": "'awamir qabilat lilaltafafu:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "alwade {0} bih 'amr ghayr salihin. fashal tahlil wazarat aldifaei. rajie kud almasdari.",
-  "Mod parts:": "'ajza' wizarat aldifaei:"
+  "Mod parts:": "'ajza' wizarat aldifaei:",
+  "Use Console API": "astakhdim Console API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "ma 'iidha kan sayatimu astikhdam Console API limash alnasi 'aw astikhdam tasalsul mash al'astur al'asrae VT. 'iidha kan khataan , fasatustakhdam Marquee tasalsul VT almunasibu. wa'iilaa , fasayustakhdim wajihat barmajat tatbiqat wahdat altahakum alati rubama takun 'abta'u.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "fath eunwan URL ... ta'akad min atibae alkhutuat almuadihat ealaa alshaashati.",
+  "There are no parts in mod.": "la tujad 'ajza' fi altaedili.",
+  "Mod name:": "aism altaedili:",
+  "Mod file name:": "aism milafi altaedili:",
+  "Mod file path:": "masar milafi Mod:",
+  "Part version:": "'iisdar aljuz'i:",
+  "Minimum count of required arguments:": "alhadu al'adnaa lieadad alwasayit almatlubati:",
+  "Arguments required?": "alhujaj almatlubatu?",
+  "Wrappable command?": "'amr qabil lilfa?",
+  "Setting shell variable?": "tahdid mutaghayir qadhifatun?",
+  "Can not run in maintenance mode?": "la yumkin 'an taemal fi wade alsiyanati?",
+  "Obsolete?": "eafa ealayha alzamana?",
+  "RSS Prompt Style": "'uslub muajah RSS",
+  "Text Edit Prompt Style": "namat muajih tahrir alnasi",
+  "Zip Shell Prompt Style": "namat muajah min nawe Zip Shell"
 }

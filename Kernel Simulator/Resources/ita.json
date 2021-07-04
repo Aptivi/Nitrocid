@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Ecco come sarà il tuo tema:",
   "Wrappable commands:": "Comandi a capo:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Il mod {0} ha un comando non valido. Analisi della mod non riuscita. Rivedere il codice sorgente.",
-  "Mod parts:": "Parti del modulo:"
+  "Mod parts:": "Parti del modulo:",
+  "Use Console API": "Usa l'API della console",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Se utilizzare l'API della console per cancellare il testo o utilizzare la sequenza VT di cancellazione della riga più veloce. Se False, Marquee utilizzerà la sequenza VT appropriata. In caso contrario, utilizzerà l'API Console probabilmente più lenta.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Apertura URL... Assicurati di seguire i passaggi mostrati sullo schermo.",
+  "There are no parts in mod.": "Non ci sono parti nel mod.",
+  "Mod name:": "Nome del modulo:",
+  "Mod file name:": "Nome del file del modulo:",
+  "Mod file path:": "Percorso file mod:",
+  "Part version:": "Versione parziale:",
+  "Minimum count of required arguments:": "Conteggio minimo di argomenti richiesti:",
+  "Arguments required?": "Argomenti richiesti?",
+  "Wrappable command?": "Comando avvolgibile?",
+  "Setting shell variable?": "Impostazione variabile shell?",
+  "Can not run in maintenance mode?": "Non è possibile eseguire in modalità di manutenzione?",
+  "Obsolete?": "Obsoleto?",
+  "RSS Prompt Style": "Stile del prompt RSS",
+  "Text Edit Prompt Style": "Stile del messaggio di modifica del testo",
+  "Zip Shell Prompt Style": "Zip Shell Stile Prompt"
 }

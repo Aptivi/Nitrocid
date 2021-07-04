@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Zo ziet je thema eruit:",
   "Wrappable commands:": "Inpakbare commando's:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} heeft een ongeldige opdracht. Mod-parsing is mislukt. Bekijk de broncode.",
-  "Mod parts:": "Mod-onderdelen:"
+  "Mod parts:": "Mod-onderdelen:",
+  "Use Console API": "Console-API gebruiken",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Of u de Console API wilt gebruiken om tekst te wissen of om de snellere VT-reeks voor het wissen van regels te gebruiken. Indien False, zal Marquee de juiste VT-reeks gebruiken. Anders zal het de waarschijnlijk langzamere Console API gebruiken.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Openings-URL... Zorg ervoor dat u de stappen op het scherm volgt.",
+  "There are no parts in mod.": "Er zijn geen onderdelen in mod.",
+  "Mod name:": "Mod-naam:",
+  "Mod file name:": "Mod-bestandsnaam:",
+  "Mod file path:": "Mod-bestandspad:",
+  "Part version:": "Deel versie:",
+  "Minimum count of required arguments:": "Minimaal aantal vereiste argumenten:",
+  "Arguments required?": "Argumenten nodig?",
+  "Wrappable command?": "Inpakbare opdracht?",
+  "Setting shell variable?": "Shell-variabele instellen?",
+  "Can not run in maintenance mode?": "Kan niet worden uitgevoerd in de onderhoudsmodus?",
+  "Obsolete?": "Verouderd?",
+  "RSS Prompt Style": "RSS-promptstijl",
+  "Text Edit Prompt Style": "Aanwijzingsstijl voor tekstbewerking",
+  "Zip Shell Prompt Style": "Zip Shell Prompt-stijl"
 }

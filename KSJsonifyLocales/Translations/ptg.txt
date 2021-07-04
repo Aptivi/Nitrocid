@@ -1097,3 +1097,20 @@ Veja como será o seu tema:
 Comandos que podem ser embalados:
 O mod {0} possui um comando inválido. A análise do mod falhou. Revise o código-fonte.
 Partes mod:
+Use a API do console
+Se deve usar a API do console para limpar o texto ou usar a sequência VT de limpeza de linha mais rápida. Se for False, o Marquee usará a sequência VT apropriada. Caso contrário, ele usará a API do console provavelmente mais lenta.
+Abrindo URL ... Certifique-se de seguir as etapas mostradas na tela.
+Não há partes no mod.
+Nome do mod:
+Nome do arquivo mod:
+Caminho do arquivo mod:
+Versão da peça:
+Contagem mínima de argumentos necessários:
+Argumentos necessários?
+Comando encapsulável?
+Definindo a variável do shell?
+Não pode ser executado no modo de manutenção?
+Obsoleto?
+Estilo de prompt RSS
+Estilo de Prompt de Edição de Texto
+Estilo de prompt Zip Shell

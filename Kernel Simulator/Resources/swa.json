@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Hivi ndivyo mada yako itaonekana kama:",
   "Wrappable commands:": "Amri zinazoweza kukumbukwa:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} ina amri batili. Uchanganuzi wa Mod umeshindwa. Pitia nambari ya chanzo.",
-  "Mod parts:": "Sehemu za mod:"
+  "Mod parts:": "Sehemu za mod:",
+  "Use Console API": "Tumia API ya Dashibodi",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Ikiwa utatumia Dashibodi ya API kufuta maandishi au kutumia laini ya haraka ya kusafisha mlolongo wa VT. Ikiwa ni Uongo, Marquee atatumia mlolongo unaofaa wa VT. Vinginevyo, itatumia API ya Console polepole.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Inafungua URL ... Hakikisha kufuata hatua zilizoonyeshwa kwenye skrini.",
+  "There are no parts in mod.": "Hakuna sehemu katika mod.",
+  "Mod name:": "Jina la Mod:",
+  "Mod file name:": "Jina la faili la Mod:",
+  "Mod file path:": "Njia ya faili ya Mod:",
+  "Part version:": "Toleo la sehemu:",
+  "Minimum count of required arguments:": "Kiwango cha chini cha hoja zinazohitajika:",
+  "Arguments required?": "Hoja zinahitajika?",
+  "Wrappable command?": "Amri inayoweza kusambazwa?",
+  "Setting shell variable?": "Kuweka kutofautiana kwa ganda?",
+  "Can not run in maintenance mode?": "Haiwezi kukimbia katika hali ya matengenezo?",
+  "Obsolete?": "Imepitwa na wakati?",
+  "RSS Prompt Style": "Mtindo wa Haraka wa RSS",
+  "Text Edit Prompt Style": "Nakala Hariri Mtindo wa Haraka",
+  "Zip Shell Prompt Style": "Mtindo wa Zip Shell Prompt"
 }

@@ -1097,3 +1097,20 @@ Así será o teu tema:
 Comandos envolvibles:
 Mod {0} ten un comando non válido. Produciuse un erro ao analizar as modificacións. Revisa o código fonte.
 Partes Mod:
+Usa a consola API
+Se se usa a API da consola para limpar o texto ou se usa a secuencia VT de limpeza de liña máis rápida. Se é falso, Marquee empregará a secuencia de TV adecuada. Se non, usará a API de consola probablemente máis lenta.
+Abrindo URL ... Asegúrese de seguir os pasos mostrados na pantalla.
+Non hai partes no mod.
+Nome do mod:
+Nome do ficheiro Mod:
+Ruta do ficheiro Mod:
+Versión da peza:
+Reconto mínimo de argumentos requiridos:
+¿Argumentos necesarios?
+Comando envolvente?
+Configurando a variable de shell?
+Non se pode executar en modo de mantemento?
+¿Obsoleto?
+Estilo de solicitude de RSS
+Estilo de solicitude de edición de texto
+Zip Shell Prompt Style

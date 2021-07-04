@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Voici à quoi ressemblera votre thème :",
   "Wrappable commands:": "Commandes enveloppables :",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} a une commande invalide. Échec de l'analyse du module. Passez en revue le code source.",
-  "Mod parts:": "Pièces de modules :"
+  "Mod parts:": "Pièces de modules :",
+  "Use Console API": "Utiliser l'API de la console",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Que ce soit pour utiliser l'API de la console pour effacer le texte ou pour utiliser la séquence VT d'effacement de ligne plus rapide. Si False, Marquee utilisera la séquence VT appropriée. Sinon, il utilisera l'API de la console probablement plus lente.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "URL d'ouverture... Assurez-vous de suivre les étapes affichées à l'écran.",
+  "There are no parts in mod.": "Il n'y a pas de pièces dans le mod.",
+  "Mod name:": "Nom du module :",
+  "Mod file name:": "Nom du fichier mod :",
+  "Mod file path:": "Chemin du fichier de modification :",
+  "Part version:": "Version de la pièce :",
+  "Minimum count of required arguments:": "Nombre minimum d'arguments requis :",
+  "Arguments required?": "Arguments requis ?",
+  "Wrappable command?": "Commande enveloppable ?",
+  "Setting shell variable?": "Paramétrer la variable shell ?",
+  "Can not run in maintenance mode?": "Impossible de fonctionner en mode maintenance ?",
+  "Obsolete?": "Obsolète?",
+  "RSS Prompt Style": "Style d'invite RSS",
+  "Text Edit Prompt Style": "Style d'invite d'édition de texte",
+  "Zip Shell Prompt Style": "Style d'invite de la coquille zippée"
 }

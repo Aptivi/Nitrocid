@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Takto bude vyzerať vaša téma:",
   "Wrappable commands:": "Zabaliteľné príkazy:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} má neplatný príkaz. Analýza módu zlyhala. Skontrolujte zdrojový kód.",
-  "Mod parts:": "Časti modov:"
+  "Mod parts:": "Časti modov:",
+  "Use Console API": "Použite rozhranie Console API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Či sa má na vymazanie textu použiť rozhranie Console API, alebo či sa má použiť rýchlejšia sekvencia čistenia riadku VT. Ak je hodnota False, program Marquee použije príslušnú postupnosť VT. V opačnom prípade použije pravdepodobne pomalšie konzolové API.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Otvára sa adresa URL ... Postupujte podľa pokynov na obrazovke.",
+  "There are no parts in mod.": "V mod. Nie sú žiadne časti",
+  "Mod name:": "Názov módu:",
+  "Mod file name:": "Názov súboru mod:",
+  "Mod file path:": "Cesta k mod súboru:",
+  "Part version:": "Čiastočná verzia:",
+  "Minimum count of required arguments:": "Minimálny počet požadovaných argumentov:",
+  "Arguments required?": "Vyžadujú sa argumenty?",
+  "Wrappable command?": "Zabaliteľný príkaz?",
+  "Setting shell variable?": "Nastavujete premennú shellu?",
+  "Can not run in maintenance mode?": "Nemôžete bežať v režime údržby?",
+  "Obsolete?": "Zastaraný?",
+  "RSS Prompt Style": "Štýl výzvy RSS",
+  "Text Edit Prompt Style": "Štýl výzvy na úpravu textu",
+  "Zip Shell Prompt Style": "Štýl výzvy na zips"
 }

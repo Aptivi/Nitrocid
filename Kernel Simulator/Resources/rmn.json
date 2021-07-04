@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Iată cum va arăta tema dvs.:",
   "Wrappable commands:": "Comenzi împachetabile:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} are o comandă nevalidă. Analiza modului a eșuat. Examinați codul sursă.",
-  "Mod parts:": "Piese mod:"
+  "Mod parts:": "Piese mod:",
+  "Use Console API": "Utilizați API-ul Console",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Indiferent dacă se folosește API-ul Consolei pentru a șterge textul sau pentru a utiliza secvența VT de compensare a liniei mai rapidă. Dacă este fals, Marquee va utiliza secvența VT corespunzătoare. În caz contrar, va utiliza probabil API-ul Console mai lent.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Se deschide adresa URL ... Asigurați-vă că urmați pașii afișați pe ecran.",
+  "There are no parts in mod.": "Nu există părți în mod.",
+  "Mod name:": "Numele modului:",
+  "Mod file name:": "Numele fișierului Mod:",
+  "Mod file path:": "Calea fișierului Mod:",
+  "Part version:": "Versiunea piesei:",
+  "Minimum count of required arguments:": "Numărul minim de argumente necesare:",
+  "Arguments required?": "Argumente necesare?",
+  "Wrappable command?": "Comandă împachetabilă?",
+  "Setting shell variable?": "Setarea variabilei shell?",
+  "Can not run in maintenance mode?": "Nu puteți rula în modul de întreținere?",
+  "Obsolete?": "Învechit?",
+  "RSS Prompt Style": "Stil RSS Prompt",
+  "Text Edit Prompt Style": "Text Editați stilul prompt",
+  "Zip Shell Prompt Style": "Zip Shell Prompt Style"
 }

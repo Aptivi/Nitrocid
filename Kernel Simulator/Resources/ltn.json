@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Ecce quomodo theme tuum tamquam te:",
   "Wrappable commands:": "Wrappable imperium;",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod mandatum irritum est {0}. Mod parsing defecit. Review fons codice.",
-  "Mod parts:": "Mod partes:"
+  "Mod parts:": "Mod partes:",
+  "Use Console API": "Consolamini usus API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Uti nec illud tam claram Console API uti linea defensionem vt celerius sequentia. Si falsis Marquee te oportet utor series MN. Alioquin non erit verisimile utor tardius Consolamini API.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Fac foramen ... URL sequitur gradus, ut ostensum est in screen.",
+  "There are no parts in mod.": "Non sunt partes mod.",
+  "Mod name:": "Mod nomen tuum:",
+  "Mod file name:": "Mod lima nomen tuum:",
+  "Mod file path:": "Mod iter file:",
+  "Part version:": "Part version,",
+  "Minimum count of required arguments:": "Comitem de argumentis minimum requiritur:",
+  "Arguments required?": "Requiritur rationes?",
+  "Wrappable command?": "Wrappable imperio?",
+  "Setting shell variable?": "Profecta testa variabilis?",
+  "Can not run in maintenance mode?": "Numquid currere queunt in sustentationem modus?",
+  "Obsolete?": "Obsoleta videantur?",
+  "RSS Prompt Style": "Promptus Penicullus RSS",
+  "Text Edit Prompt Style": "Promptus Penicullus Edit Text",
+  "Zip Shell Prompt Style": "Promptus ZIP Crusta Style"
 }

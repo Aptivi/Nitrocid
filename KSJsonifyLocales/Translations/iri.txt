@@ -1097,3 +1097,20 @@ Seo an chuma a bheidh ar do théama:
 Orduithe fillte: Orduithe inúsáidte:
 Tá ordú neamhbhailí ag Mod {0}. Theip ar pharsáil mod. Déan athbhreithniú ar an gcód foinse.
 Páirteanna mod:
+Úsáid API Console
+Cibé an API Console a úsáid chun téacs a ghlanadh nó an seicheamh VT imréitigh líne níos gasta a úsáid. Más Bréagach é, úsáidfidh Marquee an t-ord VT cuí. Seachas sin, úsáidfidh sé an API Console is moille is dócha.
+URL Oscailte ... Déan cinnte na céimeanna a thaispeántar ar an scáileán a leanúint.
+Níl aon chodanna i mod.
+Ainm an mhodha:
+Ainm comhaid an mhod:
+Conair comhad mod:
+Leagan chuid:
+Líon íosta na n-argóintí riachtanacha:
+Argóintí de dhíth?
+Ordú in-inúsáidte?
+Athróg bhlaosc a shocrú?
+Ní féidir rith i mód cothabhála?
+I léig?
+Stíl Pras RSS
+Stíl Pras in Eagar Téacs
+Stíl Pras Zip Shell

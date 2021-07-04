@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "আপনার থিমটি কেমন প্রদর্শিত হবে তা এখানে:",
   "Wrappable commands:": "মোড়ানো কমান্ড:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "মোড {0} invalid এর অবৈধ আদেশ রয়েছে} মোড পার্সিং ব্যর্থ। উত্স কোড পর্যালোচনা।",
-  "Mod parts:": "মড অংশ:"
+  "Mod parts:": "মড অংশ:",
+  "Use Console API": "কনসোল API ব্যবহার করুন",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "পাঠ্য সাফ করার জন্য কনসোল API ব্যবহার করবেন বা দ্রুত লাইন ক্লিয়ারিং ভিটি সিকোয়েন্স ব্যবহার করবেন কিনা Whether মিথ্যা হলে, মার্কি উপযুক্ত ভিটি সিকোয়েন্স ব্যবহার করবে। অন্যথায় এটি সম্ভবত ধীর কনসোল API ব্যবহার করবে।",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "ইউআরএল খোলা হচ্ছে ... স্ক্রিনে দেখানো পদক্ষেপগুলি অনুসরণ করতে ভুলবেন না।",
+  "There are no parts in mod.": "মোডে কোনও অংশ নেই।",
+  "Mod name:": "মোড নাম:",
+  "Mod file name:": "মোড ফাইলের নাম:",
+  "Mod file path:": "মোড ফাইলের পথ:",
+  "Part version:": "পার্ট সংস্করণ:",
+  "Minimum count of required arguments:": "প্রয়োজনীয় যুক্তিগুলির ন্যূনতম গণনা:",
+  "Arguments required?": "যুক্তি প্রয়োজন?",
+  "Wrappable command?": "মোড়ানো আদেশ?",
+  "Setting shell variable?": "শেল ভেরিয়েবল সেট করছেন?",
+  "Can not run in maintenance mode?": "রক্ষণাবেক্ষণ মোডে চালানো যাবে না?",
+  "Obsolete?": "অপ্রচলিত?",
+  "RSS Prompt Style": "আরএসএস প্রম্পট স্টাইল",
+  "Text Edit Prompt Style": "পাঠ্য সম্পাদনা প্রম্পট শৈলী",
+  "Zip Shell Prompt Style": "জিপ শেল প্রম্পট স্টাইল"
 }

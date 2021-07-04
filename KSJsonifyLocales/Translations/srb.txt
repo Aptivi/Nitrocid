@@ -1097,3 +1097,20 @@ Evo kako će izgledati vaša tema:
 Naredbe koje se mogu premotati:
 Mod {0} ima nevažeću naredbu. Raščlanjivanje moda nije uspelo. Pregledajte izvorni kod.
 Mod delovi:
+Koristite API konzole
+Da li da koristim API konzole za brisanje teksta ili da koristim brže brisanje linija VT sekvence. Ako je Netačno, šator će koristiti odgovarajuću VT sekvencu. U suprotnom, koristiće verovatno sporiji API konzole.
+Otvaranje URL-a ... Obavezno sledite korake prikazane na ekranu.
+U modu nema delova.
+Naziv mod:
+Naziv datoteke mod:
+Putanja mod datoteke:
+Verzija dela:
+Minimalni broj potrebnih argumenata:
+Potrebni argumenti?
+Naredba za omotavanje?
+Postavljanje promenljive ljuske?
+Ne možete da se pokrenete u režimu održavanja?
+Zastarelo?
+RSS prompt stil
+Stil upita za uređivanje teksta
+Zip Shell Prompt Stile

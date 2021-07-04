@@ -1097,3 +1097,20 @@ Así es como se verá su tema:
 Comandos envolventes:
 El mod {0} tiene un comando no válido. Error al analizar el mod. Revise el código fuente.
 Partes mod:
+Usar API de consola
+Ya sea para usar la API de la consola para borrar texto o para usar la secuencia VT de limpieza de línea más rápida. Si es False, Marquee utilizará la secuencia VT apropiada. De lo contrario, utilizará la API de consola probablemente más lenta.
+Abriendo URL ... Asegúrese de seguir los pasos que se muestran en la pantalla.
+No hay partes en el mod.
+Nombre del mod:
+Nombre del archivo Mod:
+Ruta del archivo Mod:
+Versión de la pieza:
+Cantidad mínima de argumentos requeridos:
+¿Se requieren argumentos?
+¿Comando envolvente?
+¿Configurando la variable de shell?
+¿No se puede ejecutar en modo de mantenimiento?
+¿Obsoleto?
+Estilo de mensaje RSS
+Estilo de solicitud de edición de texto
+Estilo de aviso de cremallera

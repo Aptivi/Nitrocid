@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "temaneun da-eumgwa gatseubnida.",
   "Wrappable commands:": "laeping ganeunghan myeonglyeong :",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0}e jalmosdoen myeonglyeong-i issseubnida. Mod gumun bunseog-e silpaehaessseubnida. soseu kodeuleul geomtohasibsio.",
-  "Mod parts:": "modeu bupum :"
+  "Mod parts:": "modeu bupum :",
+  "Use Console API": "konsol API sayong",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "konsol APIleul sayonghayeo tegseuteuleul jiugeona VT sikwonseuleul jiuneun deo ppaleun lain-eul sayonghalji yeobu-ibnida. Falseimyeon Marqueeneun jeogjeolhan VT sikwonseuleul sayonghabnida. geuleohji anh-eumyeon deo neulin konsol APIleul sayonghabnida.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "URL yeolgi ... hwamyeon-e pyosidoen dangyeleul ttaleusibsio.",
+  "There are no parts in mod.": "modeueneun bupum-i eobs-seubnida.",
+  "Mod name:": "modeu ileum :",
+  "Mod file name:": "modeu pail ileum :",
+  "Mod file path:": "modeu pail gyeonglo :",
+  "Part version:": "bupum beojeon :",
+  "Minimum count of required arguments:": "pilsu insuui choeso gaesu :",
+  "Arguments required?": "insuga pil-yohabnikka?",
+  "Wrappable command?": "laeping ganeunghan myeonglyeong?",
+  "Setting shell variable?": "syel byeonsuleul seoljeong hasigessseubnikka?",
+  "Can not run in maintenance mode?": "yuji gwanli modeueseo silhaenghal su eobs-seubnikka?",
+  "Obsolete?": "gusig?",
+  "RSS Prompt Style": "RSS peulompeuteu seutail",
+  "Text Edit Prompt Style": "tegseuteu pyeonjib peulompeuteu seutail",
+  "Zip Shell Prompt Style": "Zip swel peulompeuteu seutail"
 }

@@ -1097,3 +1097,20 @@ Zo ziet je thema eruit:
 Inpakbare commando's:
 Mod {0} heeft een ongeldige opdracht. Mod-parsing is mislukt. Bekijk de broncode.
 Mod-onderdelen:
+Brug Console API
+Uanset om du skal bruge Console API til at rydde tekst eller bruge hurtigere VT-sekvens for linjeklaring Hvis False bruger Marquee den passende VT-sekvens. Ellers bruger den sandsynligvis langsommere Console API.
+Åbner URL ... Sørg for at følge de trin, der vises på skærmen.
+Der er ingen dele i mod.
+Mod navn:
+Mod filnavn:
+Mod filsti:
+Delversion:
+Minimum antal krævede argumenter:
+Kræver argumenter?
+Wrappable kommando?
+Indstilling af skalvariabel?
+Kan ikke køre i vedligeholdelsestilstand?
+Forældet?
+RSS-stil
+Tekst Rediger prompt stil
+Lyn lynhurtig stil

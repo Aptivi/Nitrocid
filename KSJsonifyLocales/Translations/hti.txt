@@ -1097,3 +1097,20 @@ Men ki jan tèm ou pral sanble:
 Kòmandman vlope:
 Mod {0} gen kòmandman ki pa valab. Mod analiz echwe. Revize kòd sous la.
 Pati Mod:
+Sèvi ak konsole API
+Kit pou itilize konsole API pou efase tèks oswa pou itilize liy pi vit pou netwaye sekans VT. Si fo, Marquee pral itilize sekans VT ki apwopriye a. Sinon, li pral sèvi ak pwobableman pi dousman konsole API la.
+Ouvèti URL ... Asire ou ke ou swiv etap sa yo montre sou ekran an.
+Pa gen okenn pati nan mod.
+Non mod:
+Non dosye mod:
+Mod dosye chemen:
+Pati vèsyon:
+Minimòm konte nan agiman yo mande yo:
+Agiman obligatwa?
+Wrappable lòd?
+Anviwònman koki varyab?
+Pa ka kouri nan mòd antretyen?
+Obsolèt?
+RSS Èd Memwa Style
+Tèks Edit Style Èd Memwa
+Zip Shell Style Èd Memwa

@@ -1097,3 +1097,20 @@ Hivi ndivyo mada yako itaonekana kama:
 Amri zinazoweza kukumbukwa:
 Mod {0} ina amri batili. Uchanganuzi wa Mod umeshindwa. Pitia nambari ya chanzo.
 Sehemu za mod:
+Tumia API ya Dashibodi
+Ikiwa utatumia Dashibodi ya API kufuta maandishi au kutumia laini ya haraka ya kusafisha mlolongo wa VT. Ikiwa ni Uongo, Marquee atatumia mlolongo unaofaa wa VT. Vinginevyo, itatumia API ya Console polepole.
+Inafungua URL ... Hakikisha kufuata hatua zilizoonyeshwa kwenye skrini.
+Hakuna sehemu katika mod.
+Jina la Mod:
+Jina la faili la Mod:
+Njia ya faili ya Mod:
+Toleo la sehemu:
+Kiwango cha chini cha hoja zinazohitajika:
+Hoja zinahitajika?
+Amri inayoweza kusambazwa?
+Kuweka kutofautiana kwa ganda?
+Haiwezi kukimbia katika hali ya matengenezo?
+Imepitwa na wakati?
+Mtindo wa Haraka wa RSS
+Nakala Hariri Mtindo wa Haraka
+Mtindo wa Zip Shell Prompt

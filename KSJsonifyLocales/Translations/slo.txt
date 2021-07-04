@@ -1097,3 +1097,20 @@ Takto bude vyzerať vaša téma:
 Zabaliteľné príkazy:
 Mod {0} má neplatný príkaz. Analýza módu zlyhala. Skontrolujte zdrojový kód.
 Časti modov:
+Použite rozhranie Console API
+Či sa má na vymazanie textu použiť rozhranie Console API, alebo či sa má použiť rýchlejšia sekvencia čistenia riadku VT. Ak je hodnota False, program Marquee použije príslušnú postupnosť VT. V opačnom prípade použije pravdepodobne pomalšie konzolové API.
+Otvára sa adresa URL ... Postupujte podľa pokynov na obrazovke.
+V mod. Nie sú žiadne časti
+Názov módu:
+Názov súboru mod:
+Cesta k mod súboru:
+Čiastočná verzia:
+Minimálny počet požadovaných argumentov:
+Vyžadujú sa argumenty?
+Zabaliteľný príkaz?
+Nastavujete premennú shellu?
+Nemôžete bežať v režime údržby?
+Zastaraný?
+Štýl výzvy RSS
+Štýl výzvy na úpravu textu
+Štýl výzvy na zips

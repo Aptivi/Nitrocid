@@ -1097,3 +1097,20 @@ Begini rupa tema anda:
 Perintah yang boleh dibungkus:
 Mod {0} mempunyai arahan yang tidak betul. Penguraian mod gagal. Semak kod sumber.
 Bahagian mod:
+Gunakan API Konsol
+Sama ada menggunakan API Konsol untuk mengosongkan teks atau menggunakan urutan VT penjelasan baris yang lebih pantas. Sekiranya Salah, Marquee akan menggunakan urutan VT yang sesuai. Jika tidak, ia akan menggunakan API Konsol yang mungkin lebih perlahan.
+Membuka URL ... Pastikan untuk mengikuti langkah-langkah yang ditunjukkan di skrin.
+Tidak ada bahagian dalam mod.
+Nama mod:
+Nama fail mod:
+Laluan fail mod:
+Versi bahagian:
+Jumlah minimum argumen yang diperlukan:
+Hujah diperlukan?
+Perintah yang boleh dibaca?
+Menetapkan pemboleh ubah shell?
+Tidak boleh berjalan dalam mod penyelenggaraan?
+Usang?
+Gaya Prompt RSS
+Gaya Prompt Edit Teks
+Gaya Prompt Shell Zip

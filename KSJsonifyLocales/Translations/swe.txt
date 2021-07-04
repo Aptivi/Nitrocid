@@ -1097,3 +1097,20 @@ Så här ser ditt tema ut:
 Wrappable-kommandon:
 Mod {0} har ogiltigt kommando. Modtolkning misslyckades. Granska källkoden.
 Mod delar:
+Använd Console API
+Oavsett om du ska använda Console API för att rensa text eller för att använda snabbare VT-sekvens för rensning av rader. Om falskt använder markeringsramen lämplig VT-sekvens. Annars kommer det troligtvis långsammare Console API att användas.
+Öppna URL ... Se till att följa stegen som visas på skärmen.
+Det finns inga delar i mod.
+Modnamn:
+Mod filnamn:
+Mod-filsökväg:
+Delversion:
+Minsta antal nödvändiga argument:
+Argument krävs?
+Wrappable kommando?
+Ställa in skalvariabel?
+Kan inte köras i underhållsläge?
+Föråldrad?
+RSS-meddelandestil
+Text Redigera stilstil
+Zip Shell Prompt Style

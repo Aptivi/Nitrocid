@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Narito kung paano magiging hitsura ang iyong tema:",
   "Wrappable commands:": "Mga mailalagay na utos:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Ang Mod {0} ay may wastong utos. Nabigo ang pag-parse ng mod. Suriin ang source code.",
-  "Mod parts:": "Mga bahagi ng mod:"
+  "Mod parts:": "Mga bahagi ng mod:",
+  "Use Console API": "Gumamit ng Console API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Gagamitin ba ang Console API upang i-clear ang teksto o gamitin ang mas mabilis na linya sa pag-clear ng pagkakasunud-sunod ng VT. Kung Mali, gagamitin ni Marquee ang naaangkop na pagkakasunud-sunod ng VT. Kung hindi man, gagamitin ito ng marahil mas mabagal na Console API.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Pagbubukas ng URL ... Tiyaking sundin ang mga hakbang na ipinapakita sa screen.",
+  "There are no parts in mod.": "Walang mga bahagi sa mod.",
+  "Mod name:": "Pangalan ng mod:",
+  "Mod file name:": "Pangalan ng mod file:",
+  "Mod file path:": "Mod file path:",
+  "Part version:": "Bahagi ng bersyon:",
+  "Minimum count of required arguments:": "Minimum na bilang ng mga kinakailangang argumento:",
+  "Arguments required?": "Kailangan ng mga argumento?",
+  "Wrappable command?": "Napapalit na utos?",
+  "Setting shell variable?": "Nagtatakda ng variable ng shell?",
+  "Can not run in maintenance mode?": "Hindi maaaring tumakbo sa maintenance mode?",
+  "Obsolete?": "Hindi na ginagamit?",
+  "RSS Prompt Style": "Estilo ng Prompt ng RSS",
+  "Text Edit Prompt Style": "Text I-edit ang Estilo ng Prompt",
+  "Zip Shell Prompt Style": "Estilo ng Prompt ng Zip Shell"
 }

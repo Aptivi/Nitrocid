@@ -1096,5 +1096,22 @@
   "Here's how your theme will look like:": "yahaan bataaya gaya hai ki aapakee theem kaisee dikhegee:",
   "Wrappable commands:": "lapetane yogy aadesh:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "mod {0} mein amaany aadesh hai. mod paarsing viphal. srot kod kee sameeksha karen.",
-  "Mod parts:": "mod bhaagon:"
+  "Mod parts:": "mod bhaagon:",
+  "Use Console API": "kansol epeeaee ka prayog karen",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "paath ko saaph karane ke lie kansol epeeaee ka upayog karana hai ya tej lain samaashodhan veetee anukram ka upayog karana hai. yadi galat hai, to maarkee upayukt veetee anukram ka upayog karega. anyatha, yah sambhavatah dheeme kansol api ka upayog karega.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "url khola ja raha hai... skreen par dikhae gae charanon ka paalan karana sunishchit karen.",
+  "There are no parts in mod.": "mod mein koee bhaag nahin hain.",
+  "Mod name:": "aadhunik naam:",
+  "Mod file name:": "mod fail naam:",
+  "Mod file path:": "mod fail path:",
+  "Part version:": "bhaag sanskaran:",
+  "Minimum count of required arguments:": "aavashyak tarkon kee nyoonatam sankhya:",
+  "Arguments required?": "tark kee aavashyakata hai?",
+  "Wrappable command?": "lapetane yogy aadesh?",
+  "Setting shell variable?": "khol char set karana?",
+  "Can not run in maintenance mode?": "rakharakhaav mod mein nahin chal sakata?",
+  "Obsolete?": "aprachalit?",
+  "RSS Prompt Style": "aareses sheeghr shailee",
+  "Text Edit Prompt Style": "paath sampaadit karen sheeghr shailee",
+  "Zip Shell Prompt Style": "zip shail sheeghr shailee"
 }

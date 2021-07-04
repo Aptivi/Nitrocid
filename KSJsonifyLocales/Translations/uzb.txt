@@ -1097,3 +1097,20 @@ Mana sizning mavzuingiz qanday bo'ladi:
 O'rab olinadigan buyruqlar:
 {0} tartibida yaroqsiz buyruq mavjud. Tartibni tahlil qilib bo‘lmadi. Manba kodini ko'rib chiqing.
 Tartibni qismlar:
+Console API-dan foydalaning
+Matnni tozalash uchun yoki VT ketma-ketligini tezroq tozalash uchun Console API-dan foydalanish kerakmi. False bo'lsa, Marquee tegishli VT ketma-ketligini ishlatadi. Aks holda, u ehtimol sekinroq Konsol API-dan foydalanadi.
+URL ochilmoqda ... Ekranda ko'rsatilgan amallarni bajaring.
+Modda qismlar mavjud emas.
+Tartibni nomi:
+Tartibni nomi:
+Tartibni fayl yo'li:
+Qism versiyasi:
+Kerakli argumentlarning minimal soni:
+Argumentlar kerakmi?
+O'rab olinadigan buyruqmi?
+Shell o'zgaruvchisi o'rnatiladimi?
+Texnik rejimda ishlay olmaysizmi?
+Eskirganmi?
+RSS tezkor uslubi
+Matnni tahrirlash tezligi uslubi
+Zip Shell tezkor uslubi

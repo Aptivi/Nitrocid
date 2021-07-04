@@ -1096,5 +1096,22 @@
   "Here's how your theme will look like:": "Tēma wa tsugi no yō ni narimasu.",
   "Wrappable commands:": "Rappu kanōna komando:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} ni wa mukōna komando ga arimasu. Mod no kaiseki ni shippai shimashita. Sōsu kōdo o kakunin shimasu.",
-  "Mod parts:": "Kaizō pātsu:"
+  "Mod parts:": "Kaizō pātsu:",
+  "Use Console API": "Konsōru api o shiyō suru",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Console api o shiyō shite tekisuto o kuria suru ka, yori kōsoku nagyō kuria VT shīkensu o shiyō suru ka. Farusu no baai, mākī wa tekisetsuna VT shīkensu o shiyō shimasu. Sore igai no baai wa, osoraku teisoku no konsōru api o shiyō shimasu.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "URL o aiteimasu... Gamen ni hyōji sa rete iru tejun ni shitagatte kudasai.",
+  "There are no parts in mod.": "Mod ni wa pātsu ga arimasen.",
+  "Mod name:": "Mod-mei:",
+  "Mod file name:": "Mod fairu-mei:",
+  "Mod file path:": "Mod fairu pasu:",
+  "Part version:": "Pātsubājon:",
+  "Minimum count of required arguments:": "Hitsuyōna hikisū no saishō-sū:",
+  "Arguments required?": "Hikisū ga hitsuyōdesu ka?",
+  "Wrappable command?": "Rappu kanōna komando?",
+  "Setting shell variable?": "Sheru hensū o settei shimasu ka?",
+  "Can not run in maintenance mode?": "Mentenansumōdo de jikkō dekimasen ka?",
+  "Obsolete?": "Haishi sa remashita ka?",
+  "RSS Prompt Style": "RSS puronputosutairu",
+  "Text Edit Prompt Style": "tekisutoedittopuronputosutairu",
+  "Zip Shell Prompt Style": "Zip sherupuronputosutairu"
 }

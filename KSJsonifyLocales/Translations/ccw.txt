@@ -1097,3 +1097,20 @@ Umu ndi momwe mutu wanu udzawonekere:
 Malamulo omangika:
 Mod {0} ili ndi lamulo losagwira. Kupatula ma Mod kwalephera. Unikani kachidindo koyambira.
 Mbali zamkati:
+Gwiritsani Console API
+Kaya mugwiritse ntchito Console API kuti muchotse mawuwo kapena kugwiritsa ntchito mzere wofulumira wotsatizana ndi VT. Ngati Zabodza, Marquee adzagwiritsa ntchito njira yoyenera ya VT. Kupanda kutero, imagwiritsa ntchito Console API pang'onopang'ono.
+Kutsegula URL ... Onetsetsani kuti mukutsatira njira zowonekera pazenera.
+Palibe magawo mod.
+Dzina lamtundu:
+Dzina la fayilo:
+Njira yamafayilo:
+Chigawo:
+Kuchuluka kwa zotsutsana zofunika:
+Mikangano imafunika?
+Lamulo lolemba?
+Kukhazikitsa kusintha kwa chipolopolo?
+Simungathamange momwe mungakonzekerere?
+Kutha ntchito?
+Mtundu wa RSS Prompt
+Lembani Mtundu Wotsogola
+Mtundu wa Zip Shell Prompt

@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Here's how your theme will look like:",
   "Wrappable commands:": "Wrappable commands:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} has invalid command. Mod parsing failed. Review the source code.",
-  "Mod parts:": "Mod parts:"
+  "Mod parts:": "Mod parts:",
+  "Use Console API": "Use Console API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Opening URL... Make sure to follow the steps shown on the screen.",
+  "There are no parts in mod.": "There are no parts in mod.",
+  "Mod name:": "Mod name:",
+  "Mod file name:": "Mod file name:",
+  "Mod file path:": "Mod file path:",
+  "Part version:": "Part version:",
+  "Minimum count of required arguments:": "Minimum count of required arguments:",
+  "Arguments required?": "Arguments required?",
+  "Wrappable command?": "Wrappable command?",
+  "Setting shell variable?": "Setting shell variable?",
+  "Can not run in maintenance mode?": "Can not run in maintenance mode?",
+  "Obsolete?": "Obsolete?",
+  "RSS Prompt Style": "RSS Prompt Style",
+  "Text Edit Prompt Style": "Text Edit Prompt Style",
+  "Zip Shell Prompt Style": "Zip Shell Prompt Style"
 }

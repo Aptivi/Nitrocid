@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Eccu cumu serà u vostru tema:",
   "Wrappable commands:": "Comandi avvolgibili:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} hà un cumandamentu invalidu. L'analisi di u Mod hà fiascatu. Verificate u codice fonte.",
-  "Mod parts:": "Parti Mod:"
+  "Mod parts:": "Parti Mod:",
+  "Use Console API": "Aduprate l'API Console",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Sia per aduprà l'API di a Consola per cancellà u testu sia per aduprà a sequenza VT di pulizia di linea più veloce. Sè False, Marquee utilizarà a sequenza VT adatta. Altrimenti, utilizerà l'API di a Consola probabilmente più lenta.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Apertura URL ... Assicuratevi di seguità i passi mostrati nantu à u schermu.",
+  "There are no parts in mod.": "Ùn ci hè micca parte in mod.",
+  "Mod name:": "Nome di Mod:",
+  "Mod file name:": "Nome di u schedariu Mod:",
+  "Mod file path:": "Percorsu di u schedariu Mod:",
+  "Part version:": "Versione parte:",
+  "Minimum count of required arguments:": "Contu minimu di argumenti richiesti:",
+  "Arguments required?": "Argumenti richiesti?",
+  "Wrappable command?": "Cumandamentu Wrappable?",
+  "Setting shell variable?": "Impostazione di variabile di shell?",
+  "Can not run in maintenance mode?": "Ùn pudete micca eseguisce in modu di mantenimentu?",
+  "Obsolete?": "Obsoleta?",
+  "RSS Prompt Style": "Stile di Prompt RSS",
+  "Text Edit Prompt Style": "Stile di Prompt Edit di Testu",
+  "Zip Shell Prompt Style": "Stile Prompt Zip Shell"
 }

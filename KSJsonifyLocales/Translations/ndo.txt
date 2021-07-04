@@ -1097,3 +1097,20 @@ Begini tampilan tema Anda:
 Perintah yang dapat dibungkus:
 Mod {0} memiliki perintah yang tidak valid. Penguraian mod gagal. Tinjau kode sumber.
 Bagian mod:
+Gunakan API Konsol
+Apakah akan menggunakan API Konsol untuk menghapus teks atau menggunakan urutan VT pembersihan baris yang lebih cepat. Jika Salah, Marquee akan menggunakan urutan VT yang sesuai. Jika tidak, itu akan menggunakan API Konsol yang mungkin lebih lambat.
+Membuka URL... Pastikan untuk mengikuti langkah-langkah yang ditampilkan di layar.
+Tidak ada bagian dalam mod.
+Nama Mod:
+Nama file mod:
+Jalur berkas mod:
+Versi bagian:
+Jumlah minimum argumen yang diperlukan:
+Argumen diperlukan?
+Perintah yang dapat dibungkus?
+Mengatur variabel shell?
+Tidak dapat berjalan dalam mode pemeliharaan?
+Usang?
+Gaya Prompt RSS
+Edit Teks Gaya Prompt
+Gaya Prompt Zip Shell

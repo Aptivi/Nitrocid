@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Zo ziet je thema eruit:",
   "Wrappable commands:": "Inpakbare commando's:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} heeft een ongeldige opdracht. Mod-parsing is mislukt. Bekijk de broncode.",
-  "Mod parts:": "Mod-onderdelen:"
+  "Mod parts:": "Mod-onderdelen:",
+  "Use Console API": "Použijte Console API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Zda použít rozhraní Console API k vymazání textu nebo k použití rychlejší sekvence vymazání řádků VT. Pokud je False, použije Marquee příslušnou sekvenci VT. Jinak použije pravděpodobně pomalejší rozhraní Console API.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Otevírání adresy URL ... Postupujte podle pokynů na obrazovce.",
+  "There are no parts in mod.": "V mod. Nejsou žádné části",
+  "Mod name:": "Název módu:",
+  "Mod file name:": "Název souboru mod:",
+  "Mod file path:": "Cesta k souboru mod:",
+  "Part version:": "Verze dílu:",
+  "Minimum count of required arguments:": "Minimální počet požadovaných argumentů:",
+  "Arguments required?": "Vyžadují se argumenty?",
+  "Wrappable command?": "Zabalitelný příkaz?",
+  "Setting shell variable?": "Nastavení proměnné prostředí?",
+  "Can not run in maintenance mode?": "Nelze spustit v režimu údržby?",
+  "Obsolete?": "Zastaralý?",
+  "RSS Prompt Style": "Styl výzvy RSS",
+  "Text Edit Prompt Style": "Styl výzvy k úpravě textu",
+  "Zip Shell Prompt Style": "Rychlý styl zipu"
 }

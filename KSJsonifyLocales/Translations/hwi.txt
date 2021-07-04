@@ -1097,3 +1097,20 @@ Eia pehea ke ʻano o kāu kumuhana:
 Nā kauoha Wrappable:
 He kauoha kūpono ʻole kā Mod {0}. Ua holo pono ka mod Parsing. Loiloi i ke code kumu.
 Nā māhele mod:
+E hoʻohana iā Console API
+E hoʻohana paha i ka Console API e hoʻomaʻemaʻe i ka ʻōlelo a i ʻole e hoʻohana i ka laina ʻoi aku ka hoʻomaʻemaʻe i ke kaʻina VT. Inā hewa, e hoʻohana ʻo Marquee i ke kaʻina VT kūpono. Inā ʻole, e hoʻohana ia i ka API lohi paha lohi.
+Wehe i ka URL ... E nānā pono i nā ʻanuʻu i hōʻike ʻia ma ka papakaumaka.
+ʻAʻohe ʻāpana i ka mod.
+Inoa Mod:
+Inoa faila Mod:
+Ala ala mod:
+Mana ʻāpana:
+Ka helu palena iki o nā paio i koi ʻia:
+Koi ʻia nā paio?
+Kauoha Wrappable?
+Hoʻonohonoho i ka loli iwi?
+ʻAʻole hiki ke holo i ke ʻano mālama?
+Pau ʻole?
+RSS Kāhea Paipai
+Kikokikona hoʻoponopono i ke kaila paipai
+ʻO ka Zip Shell Prompt Style

@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Nakhu ukuthi itimu yakho izobukeka kanjani:",
   "Wrappable commands:": "Imiyalo eguquguqukayo:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "I-Mod {0} inomyalo ongavumelekile. Ukuhlukaniswa kweMod kuhlulekile. Buyekeza ikhodi yomthombo.",
-  "Mod parts:": "Izingxenye Mod:"
+  "Mod parts:": "Izingxenye Mod:",
+  "Use Console API": "Sebenzisa i-Console API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Ukuthi usebenzise i-Console API ukusula umbhalo noma ukusebenzisa ulayini osula ukulandelana kwe-VT. Uma kungamanga, iMarquee izosebenzisa ukulandelana okufanele kwe-VT. Ngaphandle kwalokho, izosebenzisa i-Console API cishe ehamba kancane.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Ivula i-URL ... Qiniseka ukuthi ulandela izinyathelo ezikhonjiswe esikrinini.",
+  "There are no parts in mod.": "Azikho izingxenye ku-mod.",
+  "Mod name:": "Igama le-Mod:",
+  "Mod file name:": "Igama lefayela Mod:",
+  "Mod file path:": "Indlela yefayela Mod:",
+  "Part version:": "Ingxenye yenguqulo:",
+  "Minimum count of required arguments:": "Ukubalwa okungenani kwama-agumenti adingekayo:",
+  "Arguments required?": "Izimpikiswano ziyadingeka?",
+  "Wrappable command?": "Umyalo ogoqekayo?",
+  "Setting shell variable?": "Ukubeka ukuguquguquka kwegobolondo?",
+  "Can not run in maintenance mode?": "Ayikwazi ukugijima kwimodi yesondlo?",
+  "Obsolete?": "Ingasasebenzi?",
+  "RSS Prompt Style": "Isitayela se-RSS Prompt",
+  "Text Edit Prompt Style": "Bhala isitayela se-Prompt",
+  "Zip Shell Prompt Style": "Isitayela se-Zip Shell Prompt"
 }

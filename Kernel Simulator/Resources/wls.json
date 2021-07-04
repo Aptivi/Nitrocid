@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Dyma sut olwg fydd ar eich thema:",
   "Wrappable commands:": "Gorchmynion lapio:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mae gan Mod {0} orchymyn annilys. Methodd dosrannu mod. Adolygwch y cod ffynhonnell.",
-  "Mod parts:": "Rhannau mod:"
+  "Mod parts:": "Rhannau mod:",
+  "Use Console API": "Defnyddiwch API Consol",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "P'un ai i ddefnyddio'r API Consol i glirio testun neu i ddefnyddio'r dilyniant VT clirio llinell cyflymach. Os Anwir, bydd y Babell yn defnyddio'r dilyniant VT priodol. Fel arall, bydd yn defnyddio'r API Consol arafach mae'n debyg.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "URL Agoriadol ... Gwnewch yn siŵr eich bod yn dilyn y camau a ddangosir ar y sgrin.",
+  "There are no parts in mod.": "Nid oes unrhyw rannau yn mod.",
+  "Mod name:": "Enw'r mod:",
+  "Mod file name:": "Enw ffeil y mod:",
+  "Mod file path:": "Llwybr ffeil mod:",
+  "Part version:": "Fersiwn rhannol:",
+  "Minimum count of required arguments:": "Cyfrif lleiaf o ddadleuon gofynnol:",
+  "Arguments required?": "Dadleuon yn ofynnol?",
+  "Wrappable command?": "Gorchymyn lapio?",
+  "Setting shell variable?": "Gosod newidyn cragen?",
+  "Can not run in maintenance mode?": "Methu rhedeg yn y modd cynnal a chadw?",
+  "Obsolete?": "Wedi darfod?",
+  "RSS Prompt Style": "Arddull Prydlon RSS",
+  "Text Edit Prompt Style": "Testun Golygu Arddull Prydlon",
+  "Zip Shell Prompt Style": "Arddull Prydlon Zip Shell"
 }

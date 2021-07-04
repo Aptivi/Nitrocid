@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Begini tampilan tema Anda:",
   "Wrappable commands:": "Perintah yang dapat dibungkus:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} memiliki perintah yang tidak valid. Penguraian mod gagal. Tinjau kode sumber.",
-  "Mod parts:": "Bagian mod:"
+  "Mod parts:": "Bagian mod:",
+  "Use Console API": "Gunakan API Konsol",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Apakah akan menggunakan API Konsol untuk menghapus teks atau menggunakan urutan VT pembersihan baris yang lebih cepat. Jika Salah, Marquee akan menggunakan urutan VT yang sesuai. Jika tidak, itu akan menggunakan API Konsol yang mungkin lebih lambat.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Membuka URL... Pastikan untuk mengikuti langkah-langkah yang ditampilkan di layar.",
+  "There are no parts in mod.": "Tidak ada bagian dalam mod.",
+  "Mod name:": "Nama Mod:",
+  "Mod file name:": "Nama file mod:",
+  "Mod file path:": "Jalur berkas mod:",
+  "Part version:": "Versi bagian:",
+  "Minimum count of required arguments:": "Jumlah minimum argumen yang diperlukan:",
+  "Arguments required?": "Argumen diperlukan?",
+  "Wrappable command?": "Perintah yang dapat dibungkus?",
+  "Setting shell variable?": "Mengatur variabel shell?",
+  "Can not run in maintenance mode?": "Tidak dapat berjalan dalam mode pemeliharaan?",
+  "Obsolete?": "Usang?",
+  "RSS Prompt Style": "Gaya Prompt RSS",
+  "Text Edit Prompt Style": "Edit Teks Gaya Prompt",
+  "Zip Shell Prompt Style": "Gaya Prompt Zip Shell"
 }

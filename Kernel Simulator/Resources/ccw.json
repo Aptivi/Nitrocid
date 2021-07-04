@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Umu ndi momwe mutu wanu udzawonekere:",
   "Wrappable commands:": "Malamulo omangika:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} ili ndi lamulo losagwira. Kupatula ma Mod kwalephera. Unikani kachidindo koyambira.",
-  "Mod parts:": "Mbali zamkati:"
+  "Mod parts:": "Mbali zamkati:",
+  "Use Console API": "Gwiritsani Console API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Kaya mugwiritse ntchito Console API kuti muchotse mawuwo kapena kugwiritsa ntchito mzere wofulumira wotsatizana ndi VT. Ngati Zabodza, Marquee adzagwiritsa ntchito njira yoyenera ya VT. Kupanda kutero, imagwiritsa ntchito Console API pang'onopang'ono.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Kutsegula URL ... Onetsetsani kuti mukutsatira njira zowonekera pazenera.",
+  "There are no parts in mod.": "Palibe magawo mod.",
+  "Mod name:": "Dzina lamtundu:",
+  "Mod file name:": "Dzina la fayilo:",
+  "Mod file path:": "Njira yamafayilo:",
+  "Part version:": "Chigawo:",
+  "Minimum count of required arguments:": "Kuchuluka kwa zotsutsana zofunika:",
+  "Arguments required?": "Mikangano imafunika?",
+  "Wrappable command?": "Lamulo lolemba?",
+  "Setting shell variable?": "Kukhazikitsa kusintha kwa chipolopolo?",
+  "Can not run in maintenance mode?": "Simungathamange momwe mungakonzekerere?",
+  "Obsolete?": "Kutha ntchito?",
+  "RSS Prompt Style": "Mtundu wa RSS Prompt",
+  "Text Edit Prompt Style": "Lembani Mtundu Wotsogola",
+  "Zip Shell Prompt Style": "Mtundu wa Zip Shell Prompt"
 }

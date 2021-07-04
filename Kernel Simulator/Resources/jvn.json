@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Mangkene carane tema sampeyan bakal katon:",
   "Wrappable commands:": "Prentah sing bisa bungkus:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} nduwe perintah sing ora valid. Parsing mod gagal. Priksa kode sumber.",
-  "Mod parts:": "Bagéan mod:"
+  "Mod parts:": "Bagéan mod:",
+  "Use Console API": "Gunakake API Console",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Apa nggunakake API Console kanggo mbusak teks utawa nggunakake urutan VT baris luwih cepet. Yen Salah, Marquee bakal nggunakake urutan VT sing cocog. Yen ora, bakal nggunakake API Console sing kemungkinan luwih alon.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Mbukak URL ... Priksa manawa tindakake langkah-langkah sing ditampilake ing layar.",
+  "There are no parts in mod.": "Ora ana bagean ing mod.",
+  "Mod name:": "Jeneng mod:",
+  "Mod file name:": "Jeneng file mod:",
+  "Mod file path:": "Path file mod:",
+  "Part version:": "Versi bagean:",
+  "Minimum count of required arguments:": "Cacah minimum argumen sing dibutuhake:",
+  "Arguments required?": "Argumentasi dibutuhake?",
+  "Wrappable command?": "Prentah sing bisa bungkus?",
+  "Setting shell variable?": "Nyetel variabel cangkang?",
+  "Can not run in maintenance mode?": "Ora bisa mbukak mode perawatan?",
+  "Obsolete?": "Usang?",
+  "RSS Prompt Style": "Gaya Prompt RSS",
+  "Text Edit Prompt Style": "Gaya Sunting Teks Sunting",
+  "Zip Shell Prompt Style": "Gaya Prompt Shell Zip"
 }

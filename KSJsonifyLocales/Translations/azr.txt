@@ -1097,3 +1097,20 @@ Mövzunuz necə olacaq:
 Bükülən əmrlər:
 Mod {0} əmri yanlışdır. Mod təhlili alınmadı. Mənbə kodunu nəzərdən keçirin.
 Mod hissələri:
+Konsol API istifadə edin
+Mətni silmək üçün və ya daha sürətli sətir klirinq VT ardıcıllığını istifadə etmək üçün Konsol API-sindən istifadə olunsun. Yanlış olarsa, Marquee müvafiq VT ardıcıllığını istifadə edəcəkdir. Əks təqdirdə, ehtimal ki, daha yavaş Konsol API istifadə edəcəkdir.
+URL açılır ... Ekranda göstərilən addımları izlədiyinizə əmin olun.
+Modda hissə yoxdur.
+Mod adı:
+Mod fayl adı:
+Mod fayl yolu:
+Hissə versiyası:
+Tələb olunan arqumentlərin minimum sayı:
+Mübahisələr tələb olunur?
+Bükülən əmr?
+Qabıq dəyişənini təyin edirsiniz?
+Baxım rejimində çalışmaq olmur?
+Köhnəlib?
+RSS İstəməsi Stili
+Mətn Düzəliş İstemi Stili
+Zip Shell İstemi Stili

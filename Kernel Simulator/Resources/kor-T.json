@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "테마는 다음과 같습니다.",
   "Wrappable commands:": "래핑 가능한 명령 :",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0}에 잘못된 명령이 있습니다. Mod 구문 분석에 실패했습니다. 소스 코드를 검토하십시오.",
-  "Mod parts:": "모드 부품 :"
+  "Mod parts:": "모드 부품 :",
+  "Use Console API": "콘솔 API 사용",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "콘솔 API를 사용하여 텍스트를 지우거나 VT 시퀀스를 지우는 더 빠른 라인을 사용할지 여부입니다. False이면 Marquee는 적절한 VT 시퀀스를 사용합니다. 그렇지 않으면 더 느린 콘솔 API를 사용합니다.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "URL 열기 ... 화면에 표시된 단계를 따르십시오.",
+  "There are no parts in mod.": "모드에는 부품이 없습니다.",
+  "Mod name:": "모드 이름 :",
+  "Mod file name:": "모드 파일 이름 :",
+  "Mod file path:": "모드 파일 경로 :",
+  "Part version:": "부품 버전 :",
+  "Minimum count of required arguments:": "필수 인수의 최소 개수 :",
+  "Arguments required?": "인수가 필요합니까?",
+  "Wrappable command?": "래핑 가능한 명령?",
+  "Setting shell variable?": "셸 변수를 설정 하시겠습니까?",
+  "Can not run in maintenance mode?": "유지 관리 모드에서 실행할 수 없습니까?",
+  "Obsolete?": "구식?",
+  "RSS Prompt Style": "RSS 프롬프트 스타일",
+  "Text Edit Prompt Style": "텍스트 편집 프롬프트 스타일",
+  "Zip Shell Prompt Style": "Zip 쉘 프롬프트 스타일"
 }

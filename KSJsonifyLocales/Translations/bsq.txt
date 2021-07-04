@@ -1097,3 +1097,20 @@ Hona hemen itxura izango duen gaia:
 Biltzeko komandoak:
 {0} moduak komando baliogabea du. Mod analisiak huts egin du. Berrikusi iturburu kodea.
 Mod piezak:
+Erabili Console APIa
+Kontsolaren APIa testua garbitzeko edo LB sekuentzia garbitzeko lerro azkarragoa erabiltzeko. Faltsua bada, Markesek LH sekuentzia egokia erabiliko du. Bestela, seguruenik Console API motelagoa erabiliko du.
+URLa irekitzen ... Ziurtatu pantailan agertzen diren urratsak jarraitzen dituzula.
+Modan ez dago zatirik.
+Mod izena:
+Mod fitxategiaren izena:
+Mod fitxategiaren bidea:
+Zatiaren bertsioa:
+Eskatutako argumentuen gutxieneko kopurua:
+Beharrezkoak diren argudioak?
+Biltzeko komandoa?
+Shell aldagaia ezartzen?
+Ezin duzu mantenu moduan exekutatu?
+Zaharkituta?
+RSS Prompt Style
+Testua editatu abisuaren estiloa
+Zip Shell Prompt Style

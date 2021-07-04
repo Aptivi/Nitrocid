@@ -1097,3 +1097,20 @@ Eccu cumu serà u vostru tema:
 Comandi avvolgibili:
 Mod {0} hà un cumandamentu invalidu. L'analisi di u Mod hà fiascatu. Verificate u codice fonte.
 Parti Mod:
+Aduprate l'API Console
+Sia per aduprà l'API di a Consola per cancellà u testu sia per aduprà a sequenza VT di pulizia di linea più veloce. Sè False, Marquee utilizarà a sequenza VT adatta. Altrimenti, utilizerà l'API di a Consola probabilmente più lenta.
+Apertura URL ... Assicuratevi di seguità i passi mostrati nantu à u schermu.
+Ùn ci hè micca parte in mod.
+Nome di Mod:
+Nome di u schedariu Mod:
+Percorsu di u schedariu Mod:
+Versione parte:
+Contu minimu di argumenti richiesti:
+Argumenti richiesti?
+Cumandamentu Wrappable?
+Impostazione di variabile di shell?
+Ùn pudete micca eseguisce in modu di mantenimentu?
+Obsoleta?
+Stile di Prompt RSS
+Stile di Prompt Edit di Testu
+Stile Prompt Zip Shell

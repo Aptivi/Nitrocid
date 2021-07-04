@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "以下是您的主题的外观：",
   "Wrappable commands:": "可包装命令：",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} 的命令无效。 Mod解析失败。查看源代码。",
-  "Mod parts:": "模组部分："
+  "Mod parts:": "模组部分：",
+  "Use Console API": "使用控制台 API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "是使用控制台 API 清除文本还是使用更快的行清除 VT 序列。 如果为 False，Marquee 将使用适当的 VT 序列。 否则，它将使用可能较慢的 Console API。",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "正在打开 URL... 确保按照屏幕上显示的步骤进行操作。",
+  "There are no parts in mod.": "mod中没有零件。",
+  "Mod name:": "模组名称：",
+  "Mod file name:": "模组文件名：",
+  "Mod file path:": "修改文件路径：",
+  "Part version:": "部分版本：",
+  "Minimum count of required arguments:": "所需参数的最小数量：",
+  "Arguments required?": "需要参数吗？",
+  "Wrappable command?": "可包装命令？",
+  "Setting shell variable?": "设置shell变量？",
+  "Can not run in maintenance mode?": "不能在维护模式下运行？",
+  "Obsolete?": "过时的？",
+  "RSS Prompt Style": "RSS 提示样式",
+  "Text Edit Prompt Style": "文本编辑提示样式",
+  "Zip Shell Prompt Style": "Zip Shell 提示样式"
 }

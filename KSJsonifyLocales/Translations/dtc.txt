@@ -1097,3 +1097,20 @@ Zo ziet je thema eruit:
 Inpakbare commando's:
 Mod {0} heeft een ongeldige opdracht. Mod-parsing is mislukt. Bekijk de broncode.
 Mod-onderdelen:
+Console-API gebruiken
+Of u de Console API wilt gebruiken om tekst te wissen of om de snellere VT-reeks voor het wissen van regels te gebruiken. Indien False, zal Marquee de juiste VT-reeks gebruiken. Anders zal het de waarschijnlijk langzamere Console API gebruiken.
+Openings-URL... Zorg ervoor dat u de stappen op het scherm volgt.
+Er zijn geen onderdelen in mod.
+Mod-naam:
+Mod-bestandsnaam:
+Mod-bestandspad:
+Deel versie:
+Minimaal aantal vereiste argumenten:
+Argumenten nodig?
+Inpakbare opdracht?
+Shell-variabele instellen?
+Kan niet worden uitgevoerd in de onderhoudsmodus?
+Verouderd?
+RSS-promptstijl
+Aanwijzingsstijl voor tekstbewerking
+Zip Shell Prompt-stijl

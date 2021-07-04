@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Vot kak budet vyglyadet' vasha tema:",
   "Wrappable commands:": "Oborachivayemyye komandy:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "U moda {0} nedopustimaya komanda. Ne udalos' proanalizirovat' mod. Prosmotrite iskhodnyy kod.",
-  "Mod parts:": "Detali moda:"
+  "Mod parts:": "Detali moda:",
+  "Use Console API": "Ispol'zovat' konsol'nyy API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Sleduyet li ispol'zovat' konsol'nyy API dlya ochistki teksta ili ispol'zovat' boleye bystruyu posledovatel'nost' VT dlya ochistki stroki. Yesli False, Marquee budet ispol'zovat' sootvetstvuyushchuyu posledovatel'nost' VT. V protivnom sluchaye on budet ispol'zovat', veroyatno, boleye medlennyy konsol'nyy API.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Otkrytiye URL ... Obyazatel'no sleduyte instruktsiyam na ekrane.",
+  "There are no parts in mod.": "V mode net detaley.",
+  "Mod name:": "Nazvaniye moda:",
+  "Mod file name:": "Imya fayla moda:",
+  "Mod file path:": "Put' k faylu moda:",
+  "Part version:": "Versiya detali:",
+  "Minimum count of required arguments:": "Minimal'noye kolichestvo obyazatel'nykh argumentov:",
+  "Arguments required?": "Trebuyutsya argumenty?",
+  "Wrappable command?": "Oborachivayemaya komanda?",
+  "Setting shell variable?": "Ustanovka peremennoy obolochki?",
+  "Can not run in maintenance mode?": "Ne mozhet rabotat' v rezhime obsluzhivaniya?",
+  "Obsolete?": "Ustarevshiy?",
+  "RSS Prompt Style": "Stil' podskazki RSS",
+  "Text Edit Prompt Style": "Stil' podskazki redaktirovaniya teksta",
+  "Zip Shell Prompt Style": "Zastezhka-molniya v stile podskazki"
 }

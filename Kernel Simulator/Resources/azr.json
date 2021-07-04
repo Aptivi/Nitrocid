@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Mövzunuz necə olacaq:",
   "Wrappable commands:": "Bükülən əmrlər:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} əmri yanlışdır. Mod təhlili alınmadı. Mənbə kodunu nəzərdən keçirin.",
-  "Mod parts:": "Mod hissələri:"
+  "Mod parts:": "Mod hissələri:",
+  "Use Console API": "Konsol API istifadə edin",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Mətni silmək üçün və ya daha sürətli sətir klirinq VT ardıcıllığını istifadə etmək üçün Konsol API-sindən istifadə olunsun. Yanlış olarsa, Marquee müvafiq VT ardıcıllığını istifadə edəcəkdir. Əks təqdirdə, ehtimal ki, daha yavaş Konsol API istifadə edəcəkdir.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "URL açılır ... Ekranda göstərilən addımları izlədiyinizə əmin olun.",
+  "There are no parts in mod.": "Modda hissə yoxdur.",
+  "Mod name:": "Mod adı:",
+  "Mod file name:": "Mod fayl adı:",
+  "Mod file path:": "Mod fayl yolu:",
+  "Part version:": "Hissə versiyası:",
+  "Minimum count of required arguments:": "Tələb olunan arqumentlərin minimum sayı:",
+  "Arguments required?": "Mübahisələr tələb olunur?",
+  "Wrappable command?": "Bükülən əmr?",
+  "Setting shell variable?": "Qabıq dəyişənini təyin edirsiniz?",
+  "Can not run in maintenance mode?": "Baxım rejimində çalışmaq olmur?",
+  "Obsolete?": "Köhnəlib?",
+  "RSS Prompt Style": "RSS İstəməsi Stili",
+  "Text Edit Prompt Style": "Mətn Düzəliş İstemi Stili",
+  "Zip Shell Prompt Style": "Zip Shell İstemi Stili"
 }

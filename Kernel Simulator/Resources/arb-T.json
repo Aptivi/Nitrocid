@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "إليك كيف سيبدو المظهر الخاص بك:",
   "Wrappable commands:": "أوامر قابلة للالتفاف:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "الوضع {0} به أمر غير صالح. فشل تحليل وزارة الدفاع. راجع كود المصدر.",
-  "Mod parts:": "أجزاء وزارة الدفاع:"
+  "Mod parts:": "أجزاء وزارة الدفاع:",
+  "Use Console API": "استخدم Console API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "ما إذا كان سيتم استخدام Console API لمسح النص أو استخدام تسلسل مسح الأسطر الأسرع VT. إذا كان خطأ ، فستستخدم Marquee تسلسل VT المناسب. وإلا ، فسيستخدم واجهة برمجة تطبيقات وحدة التحكم التي ربما تكون أبطأ.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "فتح عنوان URL ... تأكد من اتباع الخطوات الموضحة على الشاشة.",
+  "There are no parts in mod.": "لا توجد أجزاء في التعديل.",
+  "Mod name:": "اسم التعديل:",
+  "Mod file name:": "اسم ملف التعديل:",
+  "Mod file path:": "مسار ملف Mod:",
+  "Part version:": "إصدار الجزء:",
+  "Minimum count of required arguments:": "الحد الأدنى لعدد الوسائط المطلوبة:",
+  "Arguments required?": "الحجج المطلوبة؟",
+  "Wrappable command?": "أمر قابل للف؟",
+  "Setting shell variable?": "تحديد متغير قذيفة؟",
+  "Can not run in maintenance mode?": "لا يمكن أن تعمل في وضع الصيانة؟",
+  "Obsolete?": "عفا عليها الزمن؟",
+  "RSS Prompt Style": "أسلوب موجه RSS",
+  "Text Edit Prompt Style": "نمط موجه تحرير النص",
+  "Zip Shell Prompt Style": "نمط موجه من نوع Zip Shell"
 }

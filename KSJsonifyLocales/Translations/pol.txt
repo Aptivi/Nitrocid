@@ -1097,3 +1097,20 @@ Oto jak będzie wyglądał Twój motyw:
 Polecenia do owijania:
 Mod {0} ma nieprawidłowe polecenie. Analiza modów nie powiodła się. Sprawdź kod źródłowy.
 Części modów:
+Użyj interfejsu API konsoli
+Czy użyć konsoli API do czyszczenia tekstu, czy użyć szybszej sekwencji czyszczenia wierszy VT. Jeśli False, Marquee użyje odpowiedniej sekwencji VT. W przeciwnym razie użyje prawdopodobnie wolniejszego interfejsu API konsoli.
+Otwieranie adresu URL... Upewnij się, że postępujesz zgodnie z instrukcjami wyświetlanymi na ekranie.
+W modzie nie ma części.
+Nazwa modu:
+Nazwa pliku modyfikacji:
+Ścieżka pliku modów:
+Wersja części:
+Minimalna liczba wymaganych argumentów:
+Wymagane argumenty?
+Polecenie do pakowania?
+Ustawiasz zmienną powłoki?
+Nie można uruchomić w trybie konserwacji?
+Przestarzały?
+Styl podpowiedzi RSS
+Styl monitu edycji tekstu
+Styl monitu powłoki zip

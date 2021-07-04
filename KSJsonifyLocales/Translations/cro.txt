@@ -1097,3 +1097,20 @@ Eccu cumu serà u vostru tema:
 Comandi avvolgibili:
 Mod {0} hà un cumandamentu invalidu. L'analisi di u Mod hà fiascatu. Verificate u codice fonte.
 Parti Mod:
+Upotrijebite API konzole
+Treba li koristiti API konzole za brisanje teksta ili za brže brisanje VT niza linija. Ako je False, Marquee će koristiti odgovarajući VT slijed. Inače će koristiti vjerojatno sporiji API konzole.
+Otvaranje URL-a ... Obavezno slijedite korake prikazane na zaslonu.
+U modu nema dijelova.
+Naziv mod:
+Naziv datoteke mod:
+Putanja mod datoteke:
+Dio verzije:
+Minimalni broj potrebnih argumenata:
+Potrebni argumenti?
+Naredba za omotavanje?
+Postavljanje varijable ljuske?
+Ne možete raditi u načinu održavanja?
+Zastario?
+RSS brzi stil
+Stil upita za uređivanje teksta
+Zip Shell Prompt Style

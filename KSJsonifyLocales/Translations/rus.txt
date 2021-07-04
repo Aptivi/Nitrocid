@@ -1097,3 +1097,20 @@ Vot kak budet vyglyadet' vasha tema:
 Oborachivayemyye komandy:
 U moda {0} nedopustimaya komanda. Ne udalos' proanalizirovat' mod. Prosmotrite iskhodnyy kod.
 Detali moda:
+Ispol'zovat' konsol'nyy API
+Sleduyet li ispol'zovat' konsol'nyy API dlya ochistki teksta ili ispol'zovat' boleye bystruyu posledovatel'nost' VT dlya ochistki stroki. Yesli False, Marquee budet ispol'zovat' sootvetstvuyushchuyu posledovatel'nost' VT. V protivnom sluchaye on budet ispol'zovat', veroyatno, boleye medlennyy konsol'nyy API.
+Otkrytiye URL ... Obyazatel'no sleduyte instruktsiyam na ekrane.
+V mode net detaley.
+Nazvaniye moda:
+Imya fayla moda:
+Put' k faylu moda:
+Versiya detali:
+Minimal'noye kolichestvo obyazatel'nykh argumentov:
+Trebuyutsya argumenty?
+Oborachivayemaya komanda?
+Ustanovka peremennoy obolochki?
+Ne mozhet rabotat' v rezhime obsluzhivaniya?
+Ustarevshiy?
+Stil' podskazki RSS
+Stil' podskazki redaktirovaniya teksta
+Zastezhka-molniya v stile podskazki

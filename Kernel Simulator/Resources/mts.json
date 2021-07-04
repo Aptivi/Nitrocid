@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Hawnhekk se tidher it-tema tiegħek:",
   "Wrappable commands:": "Kmandi għat-tgeżwir:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} għandu kmand invalidu. L-analiżi tal-mod falliet. Irrevedi l-kodiċi tas-sors.",
-  "Mod parts:": "Partijiet tal-mod:"
+  "Mod parts:": "Partijiet tal-mod:",
+  "Use Console API": "Uża Console API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Jekk tużax il-Console API biex tnaddaf it-test jew biex tuża s-sekwenza VT aktar mgħaġġla tal-ikklerjar tal-linja. Jekk Falza, Marquee tuża s-sekwenza VT xierqa. Inkella, tuża l-API tal-Console probabbilment aktar bil-mod.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Ftuħ tal-URL ... Kun żgur li ssegwi l-passi murija fuq l-iskrin.",
+  "There are no parts in mod.": "M'hemm l-ebda partijiet fil-mod.",
+  "Mod name:": "Isem tal-mod:",
+  "Mod file name:": "Isem tal-fajl Mod:",
+  "Mod file path:": "Triq il-fajl Mod:",
+  "Part version:": "Verżjoni tal-parti:",
+  "Minimum count of required arguments:": "Għadd minimu ta 'argumenti meħtieġa:",
+  "Arguments required?": "Argumenti meħtieġa?",
+  "Wrappable command?": "Kmand għat-tgeżwir?",
+  "Setting shell variable?": "Issettjar tal-qoxra varjabbli?",
+  "Can not run in maintenance mode?": "Ma tistax taħdem fil-modalità ta 'manutenzjoni?",
+  "Obsolete?": "Skaduti?",
+  "RSS Prompt Style": "Stil ta 'Prompt RSS",
+  "Text Edit Prompt Style": "Test Edit Style Prompt",
+  "Zip Shell Prompt Style": "Zip Shell Stil Prompt"
 }

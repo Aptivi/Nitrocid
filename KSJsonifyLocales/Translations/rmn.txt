@@ -1097,3 +1097,20 @@ Iată cum va arăta tema dvs.:
 Comenzi împachetabile:
 Mod {0} are o comandă nevalidă. Analiza modului a eșuat. Examinați codul sursă.
 Piese mod:
+Utilizați API-ul Console
+Indiferent dacă se folosește API-ul Consolei pentru a șterge textul sau pentru a utiliza secvența VT de compensare a liniei mai rapidă. Dacă este fals, Marquee va utiliza secvența VT corespunzătoare. În caz contrar, va utiliza probabil API-ul Console mai lent.
+Se deschide adresa URL ... Asigurați-vă că urmați pașii afișați pe ecran.
+Nu există părți în mod.
+Numele modului:
+Numele fișierului Mod:
+Calea fișierului Mod:
+Versiunea piesei:
+Numărul minim de argumente necesare:
+Argumente necesare?
+Comandă împachetabilă?
+Setarea variabilei shell?
+Nu puteți rula în modul de întreținere?
+Învechit?
+Stil RSS Prompt
+Text Editați stilul prompt
+Zip Shell Prompt Style

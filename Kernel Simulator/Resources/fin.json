@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Teemasi näyttää tältä:",
   "Wrappable commands:": "Kääritettävät komennot:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Modilla {0} on virheellinen komento. Modin jäsentäminen epäonnistui. Tarkista lähdekoodi.",
-  "Mod parts:": "Mod-osat:"
+  "Mod parts:": "Mod-osat:",
+  "Use Console API": "Käytä Console API: ta",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Käytetäänkö konsolin sovellusliittymää tekstin tyhjentämiseen vai nopeamman linjan tyhjentämisen VT-jaksoon. Jos False, Marquee käyttää asianmukaista VT-sekvenssiä. Muussa tapauksessa se käyttää todennäköisesti hitaampaa konsolin sovellusliittymää.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Avataan URL-osoitetta ... Varmista, että noudatat näytöllä näkyviä ohjeita.",
+  "There are no parts in mod.": "Modissa ei ole osia.",
+  "Mod name:": "Modin nimi:",
+  "Mod file name:": "Mod-tiedoston nimi:",
+  "Mod file path:": "Mod-tiedoston polku:",
+  "Part version:": "Osaversio:",
+  "Minimum count of required arguments:": "Vaadittujen argumenttien vähimmäismäärä:",
+  "Arguments required?": "Tarvitaanko argumentteja?",
+  "Wrappable command?": "Kääritettävä komento?",
+  "Setting shell variable?": "Asetetaanko kuoren muuttuja?",
+  "Can not run in maintenance mode?": "Etkö voi suorittaa huoltotilassa?",
+  "Obsolete?": "Vanhentunut?",
+  "RSS Prompt Style": "RSS-kehotustyyli",
+  "Text Edit Prompt Style": "Tekstin muokkauskehotustyyli",
+  "Zip Shell Prompt Style": "Zip Shell Prompt -tyyli"
 }

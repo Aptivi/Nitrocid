@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Hona hemen itxura izango duen gaia:",
   "Wrappable commands:": "Biltzeko komandoak:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "{0} moduak komando baliogabea du. Mod analisiak huts egin du. Berrikusi iturburu kodea.",
-  "Mod parts:": "Mod piezak:"
+  "Mod parts:": "Mod piezak:",
+  "Use Console API": "Erabili Console APIa",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Kontsolaren APIa testua garbitzeko edo LB sekuentzia garbitzeko lerro azkarragoa erabiltzeko. Faltsua bada, Markesek LH sekuentzia egokia erabiliko du. Bestela, seguruenik Console API motelagoa erabiliko du.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "URLa irekitzen ... Ziurtatu pantailan agertzen diren urratsak jarraitzen dituzula.",
+  "There are no parts in mod.": "Modan ez dago zatirik.",
+  "Mod name:": "Mod izena:",
+  "Mod file name:": "Mod fitxategiaren izena:",
+  "Mod file path:": "Mod fitxategiaren bidea:",
+  "Part version:": "Zatiaren bertsioa:",
+  "Minimum count of required arguments:": "Eskatutako argumentuen gutxieneko kopurua:",
+  "Arguments required?": "Beharrezkoak diren argudioak?",
+  "Wrappable command?": "Biltzeko komandoa?",
+  "Setting shell variable?": "Shell aldagaia ezartzen?",
+  "Can not run in maintenance mode?": "Ezin duzu mantenu moduan exekutatu?",
+  "Obsolete?": "Zaharkituta?",
+  "RSS Prompt Style": "RSS Prompt Style",
+  "Text Edit Prompt Style": "Testua editatu abisuaren estiloa",
+  "Zip Shell Prompt Style": "Zip Shell Prompt Style"
 }

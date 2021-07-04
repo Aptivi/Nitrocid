@@ -1097,3 +1097,20 @@ Yǐxià shì nín de zhǔtí de wàiguān:
 Kě bāozhuāng mìnglìng:
 Mod {0} de mìnglìng wúxiào. Mod jiěxī shībài. Chákàn yuán dàimǎ.
 Mó zǔ bùfèn:
+Shǐyòng kòngzhì tái API
+shì shǐyòng kòngzhì tái API qīngchú wénběn huán shì shǐyòng gèng kuài de xíng qīngchú VT xùliè. Rúguǒ wèi False,Marquee jiāng shǐyòng shìdàng de VT xùliè. Fǒuzé, tā jiāng shǐyòng kěnéng jiào màn de Console API.
+Zhèngzài dǎkāi URL... Quèbǎo ànzhào píngmù shàng xiǎnshì de bùzhòu jìnxíng cāozuò.
+Mod zhōng méiyǒu língjiàn.
+Mó zǔ míngchēng:
+Mó zǔ wénjiàn míng:
+Xiūgǎi wénjiàn lùjìng:
+Bùfèn bǎnběn:
+Suǒ xū cān shǔ de zuìxiǎo shùliàng:
+Xūyào cānshù ma?
+Kě bāozhuāng mìnglìng?
+Shèzhì shell biànliàng?
+Bùnéng zài wéihù móshì xià yùnxíng?
+Guòshí de?
+RSS tíshì yàngshì
+wénběn biānjí tíshì yàngshì
+Zip Shell tíshì yàngshì

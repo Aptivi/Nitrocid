@@ -1097,3 +1097,20 @@ Hawnhekk se tidher it-tema tiegħek:
 Kmandi għat-tgeżwir:
 Mod {0} għandu kmand invalidu. L-analiżi tal-mod falliet. Irrevedi l-kodiċi tas-sors.
 Partijiet tal-mod:
+Uża Console API
+Jekk tużax il-Console API biex tnaddaf it-test jew biex tuża s-sekwenza VT aktar mgħaġġla tal-ikklerjar tal-linja. Jekk Falza, Marquee tuża s-sekwenza VT xierqa. Inkella, tuża l-API tal-Console probabbilment aktar bil-mod.
+Ftuħ tal-URL ... Kun żgur li ssegwi l-passi murija fuq l-iskrin.
+M'hemm l-ebda partijiet fil-mod.
+Isem tal-mod:
+Isem tal-fajl Mod:
+Triq il-fajl Mod:
+Verżjoni tal-parti:
+Għadd minimu ta 'argumenti meħtieġa:
+Argumenti meħtieġa?
+Kmand għat-tgeżwir?
+Issettjar tal-qoxra varjabbli?
+Ma tistax taħdem fil-modalità ta 'manutenzjoni?
+Skaduti?
+Stil ta 'Prompt RSS
+Test Edit Style Prompt
+Zip Shell Stil Prompt

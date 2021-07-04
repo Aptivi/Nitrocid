@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Waa tan sida mawduucaagu u ekaan doono:",
   "Wrappable commands:": "Amarada la dabooli karo:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} wuxuu leeyahay amar aan ansax ahayn. Baaritaankii Mod ayaa fashilmay. Dib u eeg koodhka isha.",
-  "Mod parts:": "Qaybo Mod:"
+  "Mod parts:": "Qaybo Mod:",
+  "Use Console API": "Adeegso Console API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "In loo isticmaalo Console API si loo nadiifiyo qoraalka ama loo isticmaalo xariiqa degdega ah ee nadiifinta taxanaha VT. Hadday Been tahay, Marquee waxay isticmaali doontaa isku xigxiga VT-ga. Haddii kale, waxay adeegsaneysaa Console API-ga oo gaabis ah.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Furitaanka URL ... Hubso inaad raacdo talaabooyinka ka muuqda shaashadda.",
+  "There are no parts in mod.": "Ma jiraan qaybo ku jira moodeelka.",
+  "Mod name:": "Magaca moode:",
+  "Mod file name:": "Magaca faylka moodeelka:",
+  "Mod file path:": "Wadada faylka moodeelka:",
+  "Part version:": "Qaybta qaybta:",
+  "Minimum count of required arguments:": "Tirada ugu yar ee doodaha loo baahan yahay:",
+  "Arguments required?": "Dood ma loo baahan yahay?",
+  "Wrappable command?": "Amarka la duubi karo?",
+  "Setting shell variable?": "Dejinta isbeddel qolof ah?",
+  "Can not run in maintenance mode?": "Ma ordi karo qaabka dayactirka?",
+  "Obsolete?": "Ma dhamaatay?",
+  "RSS Prompt Style": "Qaabka Degdegga ah ee RSS",
+  "Text Edit Prompt Style": "Qaab qoraalka Qoraalka Tooska ah",
+  "Zip Shell Prompt Style": "Zip Shell Degdeg ah Style"
 }

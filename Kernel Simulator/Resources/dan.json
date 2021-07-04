@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Zo ziet je thema eruit:",
   "Wrappable commands:": "Inpakbare commando's:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} heeft een ongeldige opdracht. Mod-parsing is mislukt. Bekijk de broncode.",
-  "Mod parts:": "Mod-onderdelen:"
+  "Mod parts:": "Mod-onderdelen:",
+  "Use Console API": "Brug Console API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Uanset om du skal bruge Console API til at rydde tekst eller bruge hurtigere VT-sekvens for linjeklaring Hvis False bruger Marquee den passende VT-sekvens. Ellers bruger den sandsynligvis langsommere Console API.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Åbner URL ... Sørg for at følge de trin, der vises på skærmen.",
+  "There are no parts in mod.": "Der er ingen dele i mod.",
+  "Mod name:": "Mod navn:",
+  "Mod file name:": "Mod filnavn:",
+  "Mod file path:": "Mod filsti:",
+  "Part version:": "Delversion:",
+  "Minimum count of required arguments:": "Minimum antal krævede argumenter:",
+  "Arguments required?": "Kræver argumenter?",
+  "Wrappable command?": "Wrappable kommando?",
+  "Setting shell variable?": "Indstilling af skalvariabel?",
+  "Can not run in maintenance mode?": "Kan ikke køre i vedligeholdelsestilstand?",
+  "Obsolete?": "Forældet?",
+  "RSS Prompt Style": "RSS-stil",
+  "Text Edit Prompt Style": "Tekst Rediger prompt stil",
+  "Zip Shell Prompt Style": "Lyn lynhurtig stil"
 }

@@ -1097,3 +1097,20 @@ Dyma sut olwg fydd ar eich thema:
 Gorchmynion lapio:
 Mae gan Mod {0} orchymyn annilys. Methodd dosrannu mod. Adolygwch y cod ffynhonnell.
 Rhannau mod:
+Defnyddiwch API Consol
+P'un ai i ddefnyddio'r API Consol i glirio testun neu i ddefnyddio'r dilyniant VT clirio llinell cyflymach. Os Anwir, bydd y Babell yn defnyddio'r dilyniant VT priodol. Fel arall, bydd yn defnyddio'r API Consol arafach mae'n debyg.
+URL Agoriadol ... Gwnewch yn siŵr eich bod yn dilyn y camau a ddangosir ar y sgrin.
+Nid oes unrhyw rannau yn mod.
+Enw'r mod:
+Enw ffeil y mod:
+Llwybr ffeil mod:
+Fersiwn rhannol:
+Cyfrif lleiaf o ddadleuon gofynnol:
+Dadleuon yn ofynnol?
+Gorchymyn lapio?
+Gosod newidyn cragen?
+Methu rhedeg yn y modd cynnal a chadw?
+Wedi darfod?
+Arddull Prydlon RSS
+Testun Golygu Arddull Prydlon
+Arddull Prydlon Zip Shell

@@ -1097,3 +1097,20 @@ Mangkene carane tema sampeyan bakal katon:
 Prentah sing bisa bungkus:
 Mod {0} nduwe perintah sing ora valid. Parsing mod gagal. Priksa kode sumber.
 Bagéan mod:
+Gunakake API Console
+Apa nggunakake API Console kanggo mbusak teks utawa nggunakake urutan VT baris luwih cepet. Yen Salah, Marquee bakal nggunakake urutan VT sing cocog. Yen ora, bakal nggunakake API Console sing kemungkinan luwih alon.
+Mbukak URL ... Priksa manawa tindakake langkah-langkah sing ditampilake ing layar.
+Ora ana bagean ing mod.
+Jeneng mod:
+Jeneng file mod:
+Path file mod:
+Versi bagean:
+Cacah minimum argumen sing dibutuhake:
+Argumentasi dibutuhake?
+Prentah sing bisa bungkus?
+Nyetel variabel cangkang?
+Ora bisa mbukak mode perawatan?
+Usang?
+Gaya Prompt RSS
+Gaya Sunting Teks Sunting
+Gaya Prompt Shell Zip

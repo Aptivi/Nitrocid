@@ -1097,3 +1097,20 @@ So sieht Ihr Theme aus:
 Umwickelbare Befehle:
 Mod {0} hat einen ungültigen Befehl. Mod-Parsing fehlgeschlagen. Überprüfen Sie den Quellcode.
 Mod-Teile:
+Konsolen-API verwenden
+Ob die Konsolen-API zum Löschen von Text oder die schnellere VT-Sequenz zum Löschen von Zeilen verwendet werden soll. Bei False verwendet Marquee die entsprechende VT-Sequenz. Andernfalls wird die wahrscheinlich langsamere Konsolen-API verwendet.
+URL öffnen... Befolgen Sie die auf dem Bildschirm angezeigten Schritte.
+Es gibt keine Teile im Mod.
+Mod-Name:
+Name der Mod-Datei:
+Pfad der Mod-Datei:
+Teilversion:
+Mindestanzahl der erforderlichen Argumente:
+Argumente erforderlich?
+Einwickelbarer Befehl?
+Shell-Variable setzen?
+Kann nicht im Wartungsmodus ausgeführt werden?
+Obsolet?
+RSS-Eingabeaufforderungsstil
+Eingabeaufforderungsstil für Textbearbeitung
+Stil mit Reißverschluss-Eingabeaufforderung

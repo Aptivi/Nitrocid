@@ -1097,3 +1097,20 @@ Waa tan sida mawduucaagu u ekaan doono:
 Amarada la dabooli karo:
 Mod {0} wuxuu leeyahay amar aan ansax ahayn. Baaritaankii Mod ayaa fashilmay. Dib u eeg koodhka isha.
 Qaybo Mod:
+Adeegso Console API
+In loo isticmaalo Console API si loo nadiifiyo qoraalka ama loo isticmaalo xariiqa degdega ah ee nadiifinta taxanaha VT. Hadday Been tahay, Marquee waxay isticmaali doontaa isku xigxiga VT-ga. Haddii kale, waxay adeegsaneysaa Console API-ga oo gaabis ah.
+Furitaanka URL ... Hubso inaad raacdo talaabooyinka ka muuqda shaashadda.
+Ma jiraan qaybo ku jira moodeelka.
+Magaca moode:
+Magaca faylka moodeelka:
+Wadada faylka moodeelka:
+Qaybta qaybta:
+Tirada ugu yar ee doodaha loo baahan yahay:
+Dood ma loo baahan yahay?
+Amarka la duubi karo?
+Dejinta isbeddel qolof ah?
+Ma ordi karo qaabka dayactirka?
+Ma dhamaatay?
+Qaabka Degdegga ah ee RSS
+Qaab qoraalka Qoraalka Tooska ah
+Zip Shell Degdeg ah Style

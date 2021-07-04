@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Så här ser ditt tema ut:",
   "Wrappable commands:": "Wrappable-kommandon:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Mod {0} har ogiltigt kommando. Modtolkning misslyckades. Granska källkoden.",
-  "Mod parts:": "Mod delar:"
+  "Mod parts:": "Mod delar:",
+  "Use Console API": "Använd Console API",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Oavsett om du ska använda Console API för att rensa text eller för att använda snabbare VT-sekvens för rensning av rader. Om falskt använder markeringsramen lämplig VT-sekvens. Annars kommer det troligtvis långsammare Console API att användas.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "Öppna URL ... Se till att följa stegen som visas på skärmen.",
+  "There are no parts in mod.": "Det finns inga delar i mod.",
+  "Mod name:": "Modnamn:",
+  "Mod file name:": "Mod filnamn:",
+  "Mod file path:": "Mod-filsökväg:",
+  "Part version:": "Delversion:",
+  "Minimum count of required arguments:": "Minsta antal nödvändiga argument:",
+  "Arguments required?": "Argument krävs?",
+  "Wrappable command?": "Wrappable kommando?",
+  "Setting shell variable?": "Ställa in skalvariabel?",
+  "Can not run in maintenance mode?": "Kan inte köras i underhållsläge?",
+  "Obsolete?": "Föråldrad?",
+  "RSS Prompt Style": "RSS-meddelandestil",
+  "Text Edit Prompt Style": "Text Redigera stilstil",
+  "Zip Shell Prompt Style": "Zip Shell Prompt Style"
 }

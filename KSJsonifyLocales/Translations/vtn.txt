@@ -1097,3 +1097,20 @@ Xem trước ...
 Các lệnh có thể quấn:
 Mod {0} có lệnh không hợp lệ. Phân tích cú pháp mô-đun không thành công. Xem lại mã nguồn.
 Phần mod:
+Sử dụng API bảng điều khiển
+Sử dụng API Console để xóa văn bản hay sử dụng trình tự VT xóa dòng nhanh hơn. Nếu Sai, Marquee sẽ sử dụng trình tự VT thích hợp. Nếu không, nó sẽ sử dụng API Console chậm hơn.
+Đang mở URL ... Đảm bảo làm theo các bước hiển thị trên màn hình.
+Không có phần nào trong mod.
+Tên mod:
+Tên tệp mod:
+Đường dẫn tệp mod:
+Phiên bản một phần:
+Số lượng tối thiểu các đối số bắt buộc:
+Lập luận bắt buộc?
+Lệnh có thể quấn?
+Đặt biến shell?
+Không thể chạy ở chế độ bảo trì?
+Đã lỗi thời?
+Kiểu nhắc RSS
+Chỉnh sửa văn bản Kiểu lời nhắc
+Zip Shell Prompt Style

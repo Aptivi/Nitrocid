@@ -1097,5 +1097,22 @@
   "Here's how your theme will look like:": "Seo an chuma a bheidh ar do théama:",
   "Wrappable commands:": "Orduithe fillte: Orduithe inúsáidte:",
   "Mod {0} has invalid command. Mod parsing failed. Review the source code.": "Tá ordú neamhbhailí ag Mod {0}. Theip ar pharsáil mod. Déan athbhreithniú ar an gcód foinse.",
-  "Mod parts:": "Páirteanna mod:"
+  "Mod parts:": "Páirteanna mod:",
+  "Use Console API": "Úsáid API Console",
+  "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.": "Cibé an API Console a úsáid chun téacs a ghlanadh nó an seicheamh VT imréitigh líne níos gasta a úsáid. Más Bréagach é, úsáidfidh Marquee an t-ord VT cuí. Seachas sin, úsáidfidh sé an API Console is moille is dócha.",
+  "Opening URL... Make sure to follow the steps shown on the screen.": "URL Oscailte ... Déan cinnte na céimeanna a thaispeántar ar an scáileán a leanúint.",
+  "There are no parts in mod.": "Níl aon chodanna i mod.",
+  "Mod name:": "Ainm an mhodha:",
+  "Mod file name:": "Ainm comhaid an mhod:",
+  "Mod file path:": "Conair comhad mod:",
+  "Part version:": "Leagan chuid:",
+  "Minimum count of required arguments:": "Líon íosta na n-argóintí riachtanacha:",
+  "Arguments required?": "Argóintí de dhíth?",
+  "Wrappable command?": "Ordú in-inúsáidte?",
+  "Setting shell variable?": "Athróg bhlaosc a shocrú?",
+  "Can not run in maintenance mode?": "Ní féidir rith i mód cothabhála?",
+  "Obsolete?": "I léig?",
+  "RSS Prompt Style": "Stíl Pras RSS",
+  "Text Edit Prompt Style": "Stíl Pras in Eagar Téacs",
+  "Zip Shell Prompt Style": "Stíl Pras Zip Shell"
 }

@@ -1097,3 +1097,20 @@ Teemasi näyttää tältä:
 Kääritettävät komennot:
 Modilla {0} on virheellinen komento. Modin jäsentäminen epäonnistui. Tarkista lähdekoodi.
 Mod-osat:
+Käytä Console API: ta
+Käytetäänkö konsolin sovellusliittymää tekstin tyhjentämiseen vai nopeamman linjan tyhjentämisen VT-jaksoon. Jos False, Marquee käyttää asianmukaista VT-sekvenssiä. Muussa tapauksessa se käyttää todennäköisesti hitaampaa konsolin sovellusliittymää.
+Avataan URL-osoitetta ... Varmista, että noudatat näytöllä näkyviä ohjeita.
+Modissa ei ole osia.
+Modin nimi:
+Mod-tiedoston nimi:
+Mod-tiedoston polku:
+Osaversio:
+Vaadittujen argumenttien vähimmäismäärä:
+Tarvitaanko argumentteja?
+Kääritettävä komento?
+Asetetaanko kuoren muuttuja?
+Etkö voi suorittaa huoltotilassa?
+Vanhentunut?
+RSS-kehotustyyli
+Tekstin muokkauskehotustyyli
+Zip Shell Prompt -tyyli
