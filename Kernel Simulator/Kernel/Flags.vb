@@ -18,11 +18,7 @@
 
 Public Module Flags
 
-    'Variables: Normal environment
-    ''' <summary>
-    ''' Checks to see if time and date is set.
-    ''' </summary>
-    Public TimeDateIsSet As Boolean
+    'Variables
     ''' <summary>
     ''' Trigger double panic
     ''' </summary>

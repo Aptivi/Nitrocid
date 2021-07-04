@@ -56,9 +56,11 @@ Public Module TimeDate
     ''' </summary>
     Sub InitTimeDate()
 
-        KernelDateTime = Date.Now
-        TimeDateChange.WorkerSupportsCancellation = True
-        TimeDateChange.RunWorkerAsync()
+        If Not TimeDateChange.IsBusy Then
+            KernelDateTime = Date.Now
+            TimeDateChange.WorkerSupportsCancellation = True
+            TimeDateChange.RunWorkerAsync()
+        End If
 
     End Sub
 

@@ -363,10 +363,7 @@ Public Module KernelTools
         InitAliases()
 
         'Initialize date
-        If Not TimeDateIsSet Then
-            InitTimeDate()
-            TimeDateIsSet = True
-        End If
+        InitTimeDate()
 
         'Check for multiple instances of KS
         If instanceChecked = False Then MultiInstance()
