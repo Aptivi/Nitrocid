@@ -123,14 +123,17 @@ Public Module Kernel
                 WriteSeparator(DoTranslation("- Stage 4: Log in"), False, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 4: Log in")
                 InitializeSystemAccount()
+                InitializeUsers()
+                LoadPermissions()
+
+                'Reset console state and stop stage timer
+                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Reset()
                 LoginFlag = True
                 If EnteredArguments IsNot Nothing Then
                     If EnteredArguments.Contains("quiet") Then
                         Console.SetOut(DefConsoleOut)
                     End If
                 End If
-                InitializeUsers()
-                LoadPermissions()
 
                 'Show current time
                 ShowCurrentTimes()
@@ -150,7 +153,6 @@ Public Module Kernel
                 End If
 
                 'Initialize login prompt
-                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Reset()
                 DisposeAll()
                 If LoginFlag = True And maintenance = False Then
                     LoginPrompt()
