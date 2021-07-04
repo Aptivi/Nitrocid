@@ -958,18 +958,10 @@ Public Module GetCommand
                 Case "showtdzone"
 
                     If RequiredArgumentsProvided Then
-                        InitTimesInZones()
-                        Dim DoneFlag As Boolean = False
-                        If zoneTimes.Keys.Contains(strArgs) Then
-                            DoneFlag = True
-                            ShowTimesInZones(strArgs)
-                        End If
-                        If DoneFlag = False Then
-                            If eqargs(0) = "all" Then
-                                ShowTimesInZones()
-                            Else
-                                W(DoTranslation("Timezone is specified incorrectly."), True, ColTypes.Error)
-                            End If
+                        If eqargs(0) = "all" Then
+                            ShowAllTimeZones()
+                        Else
+                            If Not ShowTimeZones(eqargs(0)) Then W(DoTranslation("Timezone is specified incorrectly."), True, ColTypes.Error)
                         End If
                     End If
 
