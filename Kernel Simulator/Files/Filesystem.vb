@@ -868,7 +868,9 @@ Public Module Filesystem
     ''' <returns>True if successful; false if unsuccessful</returns>
     Public Function TryParsePath(ByVal Path As String) As Boolean
         Try
+#If NTFSCorruptionFix Then
             ThrowOnInvalidPath(Path)
+#End If
             Return Not Path.IndexOfAny(IO.Path.GetInvalidPathChars()) >= 0
         Catch ex As Exception
             WStkTrc(ex)
@@ -884,7 +886,9 @@ Public Module Filesystem
     ''' <returns>True if successful; false if unsuccessful</returns>
     Public Function TryParseFileName(ByVal Name As String) As Boolean
         Try
+#If NTFSCorruptionFix Then
             ThrowOnInvalidPath(Name)
+#End If
             Return Not Name.IndexOfAny(IO.Path.GetInvalidFileNameChars()) >= 0
         Catch ex As Exception
             WStkTrc(ex)
