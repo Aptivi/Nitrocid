@@ -87,14 +87,19 @@ Public Module Filesystem
         folder = NeutralizePath(folder)
         If Directory.Exists(folder) Then
             Dim enumeration As New List(Of FileSystemInfo)
+            WriteSeparator(folder, True, ColTypes.Stage)
+
+            'Try to create a list
             Try
                 enumeration = CreateList(folder, True)
+                If enumeration.Count = 0 Then W(DoTranslation("Folder is empty."), True, ColTypes.Warning)
             Catch ex As Exception
                 W(DoTranslation("Unknown error while listing in directory: {0}"), True, ColTypes.Error, ex.Message)
                 WStkTrc(ex)
                 Exit Sub
             End Try
-            WriteSeparator(folder, True, ColTypes.Stage)
+
+            'Enumerate each entry
             For Each Entry As FileSystemInfo In enumeration
                 Wdbg("I", "Enumerating {0}...", Entry.FullName)
                 Try
@@ -180,7 +185,7 @@ Public Module Filesystem
         End If
 
         'Return the resulting list immediately if not sorted. Otherwise, sort it.
-        If Sorted Then
+        If Sorted And Not FilesystemEntries.Count = 0 Then
             'We define the max string length for the largest size. This is to overcome the limitation of sorting when it comes to numbers.
             Dim MaxLength As Integer = FilesystemEntries.Max(Function(x) If(TryCast(x, FileInfo) IsNot Nothing, TryCast(x, FileInfo).Length, 0).ToString.Length)
 
