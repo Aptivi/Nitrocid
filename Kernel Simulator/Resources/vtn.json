@@ -1114,5 +1114,6 @@
   "Obsolete?": "Đã lỗi thời?",
   "RSS Prompt Style": "Kiểu nhắc RSS",
   "Text Edit Prompt Style": "Chỉnh sửa văn bản Kiểu lời nhắc",
-  "Zip Shell Prompt Style": "Zip Shell Prompt Style"
+  "Zip Shell Prompt Style": "Kiểu gợi ý Zip Shell",
+  "Folder is empty.": "Tệp này rỗng."
 }

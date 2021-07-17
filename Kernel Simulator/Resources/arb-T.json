@@ -1114,5 +1114,6 @@
   "Obsolete?": "عفا عليها الزمن؟",
   "RSS Prompt Style": "أسلوب موجه RSS",
   "Text Edit Prompt Style": "نمط موجه تحرير النص",
-  "Zip Shell Prompt Style": "نمط موجه من نوع Zip Shell"
+  "Zip Shell Prompt Style": "نمط موجه من نوع Zip Shell",
+  "Folder is empty.": "مجلد فارغ."
 }

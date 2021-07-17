@@ -1114,5 +1114,6 @@
   "Obsolete?": "Obsolète?",
   "RSS Prompt Style": "Style d'invite RSS",
   "Text Edit Prompt Style": "Style d'invite d'édition de texte",
-  "Zip Shell Prompt Style": "Style d'invite de la coquille zippée"
+  "Zip Shell Prompt Style": "Style d'invite de la coquille zippée",
+  "Folder is empty.": "Le dossier est vide."
 }

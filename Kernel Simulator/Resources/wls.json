@@ -1114,5 +1114,6 @@
   "Obsolete?": "Wedi darfod?",
   "RSS Prompt Style": "Arddull Prydlon RSS",
   "Text Edit Prompt Style": "Testun Golygu Arddull Prydlon",
-  "Zip Shell Prompt Style": "Arddull Prydlon Zip Shell"
+  "Zip Shell Prompt Style": "Arddull Prydlon Zip Shell",
+  "Folder is empty.": "Mae'r ffolder yn wag."
 }
