@@ -1114,3 +1114,4 @@ Verouderd?
 RSS-promptstijl
 Aanwijzingsstijl voor tekstbewerking
 Zip Shell Prompt-stijl
+Map is leeg.

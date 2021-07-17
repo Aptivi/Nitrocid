@@ -1113,4 +1113,5 @@ Ne možete raditi u načinu održavanja?
 Zastario?
 RSS brzi stil
 Stil upita za uređivanje teksta
-Zip Shell Prompt Style
+Zip brz stil poziva
+Mapa je prazna.

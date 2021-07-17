@@ -1113,4 +1113,5 @@ Kan ikke kjøre i vedlikeholdsmodus?
 Utdatert?
 RSS-stil
 Tekst Rediger ledetekst
-Zip Shell Prompt Style
+Zip shell rask stil
+Mappen er tom.

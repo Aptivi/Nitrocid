@@ -1114,3 +1114,4 @@ Przestarzały?
 Styl podpowiedzi RSS
 Styl monitu edycji tekstu
 Styl monitu powłoki zip
+Folder jest pusty.

@@ -1114,3 +1114,4 @@ Zastaralý?
 Styl výzvy RSS
 Styl výzvy k úpravě textu
 Rychlý styl zipu
+Složka je prázdná.

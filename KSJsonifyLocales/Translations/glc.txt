@@ -1113,4 +1113,5 @@ Non se pode executar en modo de mantemento?
 ¿Obsoleto?
 Estilo de solicitude de RSS
 Estilo de solicitude de edición de texto
-Zip Shell Prompt Style
+Estilo de solicitude de shell shell
+O cartafol está baleiro.

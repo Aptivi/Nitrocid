@@ -1114,3 +1114,4 @@ Zastaraný?
 Štýl výzvy RSS
 Štýl výzvy na úpravu textu
 Štýl výzvy na zips
+Priečinok je prázdny.

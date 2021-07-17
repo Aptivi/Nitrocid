@@ -1114,3 +1114,4 @@ Obsoleto?
 Estilo de prompt RSS
 Estilo de Prompt de Edição de Texto
 Estilo de prompt Zip Shell
+Pasta está vazia.

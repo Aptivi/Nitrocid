@@ -1113,4 +1113,5 @@ Ezin duzu mantenu moduan exekutatu?
 Zaharkituta?
 RSS Prompt Style
 Testua editatu abisuaren estiloa
-Zip Shell Prompt Style
+Zip shell gonbita estiloa
+Karpeta hutsik dago.

@@ -1114,3 +1114,4 @@ Obsoleto?
 Stile del prompt RSS
 Stile del messaggio di modifica del testo
 Zip Shell Stile Prompt
+La cartella è vuota.

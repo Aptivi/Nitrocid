@@ -1113,4 +1113,5 @@ Kan inte köras i underhållsläge?
 Föråldrad?
 RSS-meddelandestil
 Text Redigera stilstil
-Zip Shell Prompt Style
+Snabb stil för ZIP-skal
+Mappen är tom.

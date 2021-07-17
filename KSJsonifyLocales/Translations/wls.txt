@@ -1114,3 +1114,4 @@ Wedi darfod?
 Arddull Prydlon RSS
 Testun Golygu Arddull Prydlon
 Arddull Prydlon Zip Shell
+Mae'r ffolder yn wag.

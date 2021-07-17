@@ -1114,3 +1114,4 @@ Forældet?
 RSS-stil
 Tekst Rediger prompt stil
 Lyn lynhurtig stil
+Mappen er tom.

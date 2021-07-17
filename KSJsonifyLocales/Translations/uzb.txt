@@ -1114,3 +1114,4 @@ Eskirganmi?
 RSS tezkor uslubi
 Matnni tahrirlash tezligi uslubi
 Zip Shell tezkor uslubi
+Jild bo'sh.

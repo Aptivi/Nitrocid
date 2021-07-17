@@ -1114,3 +1114,4 @@ Hindi na ginagamit?
 Estilo ng Prompt ng RSS
 Text I-edit ang Estilo ng Prompt
 Estilo ng Prompt ng Zip Shell
+Walang laman ang folder.

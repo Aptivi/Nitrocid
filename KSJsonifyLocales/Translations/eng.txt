@@ -1114,3 +1114,4 @@ Obsolete?
 RSS Prompt Style
 Text Edit Prompt Style
 Zip Shell Prompt Style
+Folder is empty.

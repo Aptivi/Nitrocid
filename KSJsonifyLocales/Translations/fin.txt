@@ -1114,3 +1114,4 @@ Vanhentunut?
 RSS-kehotustyyli
 Tekstin muokkauskehotustyyli
 Zip Shell Prompt -tyyli
+Kansio on tyhjä.

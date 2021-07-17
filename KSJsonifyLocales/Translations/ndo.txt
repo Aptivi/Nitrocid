@@ -1114,3 +1114,4 @@ Usang?
 Gaya Prompt RSS
 Edit Teks Gaya Prompt
 Gaya Prompt Zip Shell
+Folder kosong.

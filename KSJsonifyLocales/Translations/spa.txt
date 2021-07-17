@@ -1114,3 +1114,4 @@ Cantidad mínima de argumentos requeridos:
 Estilo de mensaje RSS
 Estilo de solicitud de edición de texto
 Estilo de aviso de cremallera
+La carpeta está vacía.

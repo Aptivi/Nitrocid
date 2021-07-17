@@ -1114,3 +1114,4 @@ Zastarelo?
 RSS prompt stil
 Stil upita za uređivanje teksta
 Zip Shell Prompt Stile
+Mapa je prazna.

@@ -1114,3 +1114,4 @@ Obsolète?
 Style d'invite RSS
 Style d'invite d'édition de texte
 Style d'invite de la coquille zippée
+Le dossier est vide.

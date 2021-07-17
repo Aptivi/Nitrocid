@@ -1114,3 +1114,4 @@ Köhnəlib?
 RSS İstəməsi Stili
 Mətn Düzəliş İstemi Stili
 Zip Shell İstemi Stili
+Qovluq boşdur

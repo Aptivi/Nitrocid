@@ -1113,4 +1113,5 @@ No es pot executar en mode de manteniment?
 Obsolet?
 RSS Prompt Style
 Estil de sol·licitud d'edició de text
-Zip Shell Prompt Style
+Estil de sol·licitud de shell shell
+La carpeta està buida.

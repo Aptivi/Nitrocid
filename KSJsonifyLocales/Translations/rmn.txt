@@ -1114,3 +1114,4 @@ Nu puteți rula în modul de întreținere?
 Stil RSS Prompt
 Text Editați stilul prompt
 Zip Shell Prompt Style
+Dosarul este gol.

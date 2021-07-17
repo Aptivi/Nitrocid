@@ -1113,4 +1113,5 @@ Không thể chạy ở chế độ bảo trì?
 Đã lỗi thời?
 Kiểu nhắc RSS
 Chỉnh sửa văn bản Kiểu lời nhắc
-Zip Shell Prompt Style
+Kiểu gợi ý Zip Shell
+Tệp này rỗng.

@@ -1114,3 +1114,4 @@ Obsolet?
 RSS-Eingabeaufforderungsstil
 Eingabeaufforderungsstil für Textbearbeitung
 Stil mit Reißverschluss-Eingabeaufforderung
+Der Ordner ist leer.

@@ -1114,3 +1114,4 @@ Skaduti?
 Stil ta 'Prompt RSS
 Test Edit Style Prompt
 Zip Shell Stil Prompt
+Il-folder huwa vojt.
