@@ -140,11 +140,7 @@ Module FTPFilesystem
             targetDir = $"{currDirect}/{Directory}"
 
 #If NTFSCorruptionFix Then
-            'Mitigate Windows 10 NTFS corruption or Windows 10 BSOD bug
-            If IsOnWindows() And (targetDir.Contains("$i30") Or targetDir.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
-                Wdbg("F", "Trying to access invalid path. Path was {0}", targetDir)
-                Throw New ArgumentException(DoTranslation("Trying to access invalid path."))
-            End If
+            ThrowOnInvalidPath(targetDir)
 #End If
 
             'Check if folder exists
