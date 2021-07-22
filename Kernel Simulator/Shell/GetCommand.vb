@@ -1023,45 +1023,22 @@ Public Module GetCommand
                     If RequiredArgumentsProvided Then
                         Dim file As String = NeutralizePath(eqargs(1))
                         If IO.File.Exists(file) Then
-                            If eqargs(0) = "SHA512" Then
-                                Dim spent As New Stopwatch
-                                spent.Start() 'Time when you're on a breakpoint is counted
-                                W(GetEncryptedFile(file, Algorithms.SHA512), True, ColTypes.Neutral)
-                                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                                spent.Stop()
-                            ElseIf eqargs(0) = "SHA384" Then
-                                Dim spent As New Stopwatch
-                                spent.Start() 'Time when you're on a breakpoint is counted
-                                W(GetEncryptedFile(file, Algorithms.SHA384), True, ColTypes.Neutral)
-                                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                                spent.Stop()
-                            ElseIf eqargs(0) = "SHA256" Then
-                                Dim spent As New Stopwatch
-                                spent.Start() 'Time when you're on a breakpoint is counted
-                                W(GetEncryptedFile(file, Algorithms.SHA256), True, ColTypes.Neutral)
-                                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                                spent.Stop()
-                            ElseIf eqargs(0) = "SHA1" Then
-                                Dim spent As New Stopwatch
-                                spent.Start() 'Time when you're on a breakpoint is counted
-                                W(GetEncryptedFile(file, Algorithms.SHA1), True, ColTypes.Neutral)
-                                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                                spent.Stop()
-                            ElseIf eqargs(0) = "MD5" Then
-                                Dim spent As New Stopwatch
-                                spent.Start() 'Time when you're on a breakpoint is counted
-                                W(GetEncryptedFile(file, Algorithms.MD5), True, ColTypes.Neutral)
-                                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                                spent.Stop()
-                            ElseIf eqargs(0) = "all" Then
+                            Dim AlgorithmEnum As Algorithms
+                            If eqargs(0) = "all" Then
                                 For Each Algorithm As String In [Enum].GetNames(GetType(Algorithms))
-                                    Dim AlgorithmEnum As Algorithms = [Enum].Parse(GetType(Algorithms), Algorithm)
+                                    AlgorithmEnum = [Enum].Parse(GetType(Algorithms), Algorithm)
                                     Dim spent As New Stopwatch
                                     spent.Start() 'Time when you're on a breakpoint is counted
                                     W("{0} ({1})", True, ColTypes.Neutral, GetEncryptedFile(file, AlgorithmEnum), AlgorithmEnum)
                                     W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                                     spent.Stop()
                                 Next
+                            ElseIf [Enum].TryParse(eqargs(0), AlgorithmEnum) Then
+                                Dim spent As New Stopwatch
+                                spent.Start() 'Time when you're on a breakpoint is counted
+                                W(GetEncryptedFile(file, AlgorithmEnum), True, ColTypes.Neutral)
+                                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                                spent.Stop()
                             Else
                                 W(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
                             End If
@@ -1080,52 +1057,13 @@ Public Module GetCommand
                             out = NeutralizePath(eqargs(2))
                         End If
                         If Directory.Exists(folder) Then
-                            For Each file As String In Directory.EnumerateFiles(folder, "*", IO.SearchOption.TopDirectoryOnly)
+                            For Each file As String In Directory.EnumerateFiles(folder, "*", SearchOption.TopDirectoryOnly)
                                 file = NeutralizePath(file)
                                 WriteSeparator(file, True, ColTypes.Stage)
-                                If eqargs(0) = "SHA512" Then
-                                    Dim spent As New Stopwatch
-                                    spent.Start() 'Time when you're on a breakpoint is counted
-                                    Dim encrypted As String = GetEncryptedFile(file, Algorithms.SHA512)
-                                    W(encrypted, True, ColTypes.Neutral)
-                                    W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                                    FileBuilder.AppendLine($"- {file}: {encrypted} ({eqargs(0)})")
-                                    spent.Stop()
-                                ElseIf eqargs(0) = "SHA384" Then
-                                    Dim spent As New Stopwatch
-                                    spent.Start() 'Time when you're on a breakpoint is counted
-                                    Dim encrypted As String = GetEncryptedFile(file, Algorithms.SHA384)
-                                    W(encrypted, True, ColTypes.Neutral)
-                                    W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                                    FileBuilder.AppendLine($"- {file}: {encrypted} ({eqargs(0)})")
-                                    spent.Stop()
-                                ElseIf eqargs(0) = "SHA256" Then
-                                    Dim spent As New Stopwatch
-                                    spent.Start() 'Time when you're on a breakpoint is counted
-                                    Dim encrypted As String = GetEncryptedFile(file, Algorithms.SHA256)
-                                    W(encrypted, True, ColTypes.Neutral)
-                                    W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                                    FileBuilder.AppendLine($"- {file}: {encrypted} ({eqargs(0)})")
-                                    spent.Stop()
-                                ElseIf eqargs(0) = "SHA1" Then
-                                    Dim spent As New Stopwatch
-                                    spent.Start() 'Time when you're on a breakpoint is counted
-                                    Dim encrypted As String = GetEncryptedFile(file, Algorithms.SHA1)
-                                    W(encrypted, True, ColTypes.Neutral)
-                                    W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                                    FileBuilder.AppendLine($"- {file}: {encrypted} ({eqargs(0)})")
-                                    spent.Stop()
-                                ElseIf eqargs(0) = "MD5" Then
-                                    Dim spent As New Stopwatch
-                                    spent.Start() 'Time when you're on a breakpoint is counted
-                                    Dim encrypted As String = GetEncryptedFile(file, Algorithms.MD5)
-                                    W(encrypted, True, ColTypes.Neutral)
-                                    W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
-                                    FileBuilder.AppendLine($"- {file}: {encrypted} ({eqargs(0)})")
-                                    spent.Stop()
-                                ElseIf eqargs(0) = "all" Then
+                                Dim AlgorithmEnum As Algorithms
+                                If eqargs(0) = "all" Then
                                     For Each Algorithm As String In [Enum].GetNames(GetType(Algorithms))
-                                        Dim AlgorithmEnum As Algorithms = [Enum].Parse(GetType(Algorithms), Algorithm)
+                                        AlgorithmEnum = [Enum].Parse(GetType(Algorithms), Algorithm)
                                         Dim spent As New Stopwatch
                                         spent.Start() 'Time when you're on a breakpoint is counted
                                         Dim encrypted As String = GetEncryptedFile(file, AlgorithmEnum)
@@ -1134,6 +1072,14 @@ Public Module GetCommand
                                         FileBuilder.AppendLine($"- {file}: {encrypted} ({AlgorithmEnum})")
                                         spent.Stop()
                                     Next
+                                ElseIf [Enum].TryParse(eqargs(0), AlgorithmEnum) Then
+                                    Dim spent As New Stopwatch
+                                    spent.Start() 'Time when you're on a breakpoint is counted
+                                    Dim encrypted As String = GetEncryptedFile(file, AlgorithmEnum)
+                                    W(encrypted, True, ColTypes.Neutral)
+                                    W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                                    FileBuilder.AppendLine($"- {file}: {encrypted} ({AlgorithmEnum})")
+                                    spent.Stop()
                                 Else
                                     W(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
                                     Exit For
