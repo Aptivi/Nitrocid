@@ -1022,6 +1022,11 @@ Public Module GetCommand
 
                     If RequiredArgumentsProvided Then
                         Dim file As String = NeutralizePath(eqargs(1))
+                        Dim out As String = ""
+                        Dim FileBuilder As New StringBuilder
+                        If Not eqargs.Length < 3 Then
+                            out = NeutralizePath(eqargs(2))
+                        End If
                         If IO.File.Exists(file) Then
                             Dim AlgorithmEnum As Algorithms
                             If eqargs(0) = "all" Then
@@ -1029,18 +1034,27 @@ Public Module GetCommand
                                     AlgorithmEnum = [Enum].Parse(GetType(Algorithms), Algorithm)
                                     Dim spent As New Stopwatch
                                     spent.Start() 'Time when you're on a breakpoint is counted
-                                    W("{0} ({1})", True, ColTypes.Neutral, GetEncryptedFile(file, AlgorithmEnum), AlgorithmEnum)
+                                    Dim encrypted As String = GetEncryptedFile(file, AlgorithmEnum)
+                                    W("{0} ({1})", True, ColTypes.Neutral, encrypted, AlgorithmEnum)
                                     W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                                    FileBuilder.AppendLine($"- {file}: {encrypted} ({AlgorithmEnum})")
                                     spent.Stop()
                                 Next
                             ElseIf [Enum].TryParse(eqargs(0), AlgorithmEnum) Then
                                 Dim spent As New Stopwatch
                                 spent.Start() 'Time when you're on a breakpoint is counted
-                                W(GetEncryptedFile(file, AlgorithmEnum), True, ColTypes.Neutral)
+                                Dim encrypted As String = GetEncryptedFile(file, AlgorithmEnum)
+                                W(encrypted, True, ColTypes.Neutral)
                                 W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                                FileBuilder.AppendLine($"- {file}: {encrypted} ({AlgorithmEnum})")
                                 spent.Stop()
                             Else
                                 W(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
+                            End If
+                            If Not out = "" Then
+                                Dim FStream As New StreamWriter(out)
+                                FStream.Write(FileBuilder.ToString)
+                                FStream.Flush()
                             End If
                         Else
                             W(DoTranslation("{0} is not found."), True, ColTypes.Error, file)

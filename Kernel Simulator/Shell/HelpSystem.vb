@@ -479,7 +479,7 @@ Public Module HelpSystem
 
         ElseIf command = "sumfile" Then
 
-            W(DoTranslation("Usage:") + " sumfile <MD5/SHA1/SHA256/SHA384/SHA512/all> <file>: " + DoTranslation("Calculates file sums."), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " sumfile <MD5/SHA1/SHA256/SHA384/SHA512/all> <file> [outputFile]: " + DoTranslation("Calculates file sums."), True, ColTypes.Neutral)
 
         ElseIf command = "sumfiles" Then
 
