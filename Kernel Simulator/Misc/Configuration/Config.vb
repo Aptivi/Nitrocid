@@ -66,8 +66,9 @@ Public Module Config
 
             'The Hardware Section
             Dim HardwareConfig As New JObject From {
-                    {"Quiet Probe", quietProbe},
-                    {"Full Probe", FullProbe}
+                    {"Quiet Probe", QuietHardwareProbe},
+                    {"Full Probe", FullHardwareProbe},
+                    {"Verbose Probe", VerboseHardwareProbe}
             }
             ConfigurationObject.Add("Hardware", HardwareConfig)
 
@@ -403,8 +404,9 @@ Public Module Config
 
             'Hardware Section
             Wdbg("I", "Parsing hardware section...")
-            quietProbe = If(ConfigToken("Hardware")?("Quiet Probe"), False)
-            FullProbe = If(ConfigToken("Hardware")?("Full Probe"), True)
+            QuietHardwareProbe = If(ConfigToken("Hardware")?("Quiet Probe"), False)
+            FullHardwareProbe = If(ConfigToken("Hardware")?("Full Probe"), True)
+            VerboseHardwareProbe = If(ConfigToken("Hardware")?("Verbose Probe"), False)
 
             'Network Section
             Wdbg("I", "Parsing network section...")
@@ -594,7 +596,7 @@ Public Module Config
             End If
         End If
         If ConfigToken("Hardware") IsNot Nothing Then
-            If ConfigToken("Hardware").Count <> 2 Then
+            If ConfigToken("Hardware").Count <> 3 Then
                 Wdbg("W", "Missing keys in Hardware. Config fix needed set to true.")
                 FixesNeeded = True
             End If

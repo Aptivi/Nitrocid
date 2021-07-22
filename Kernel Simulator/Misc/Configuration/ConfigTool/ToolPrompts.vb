@@ -137,11 +137,12 @@ Public Module ToolPrompts
                     W("1) " + DoTranslation("Change Root Password?") + " [{0}]", True, ColTypes.Option, GetConfigValue("setRootPasswd"))
                     W("2) " + DoTranslation("Set Root Password..."), True, ColTypes.Option)
                 Case "2" 'Hardware
-                    MaxOptions = 2
+                    MaxOptions = 3
                     W("*) " + DoTranslation("Hardware Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section changes hardware probe behavior.") + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Quiet Probe") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(quietProbe)))
-                    W("2) " + DoTranslation("Full Probe") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FullProbe)))
+                    W("1) " + DoTranslation("Quiet Probe") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(QuietHardwareProbe)))
+                    W("2) " + DoTranslation("Full Probe") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FullHardwareProbe)))
+                    W("3) " + DoTranslation("Verbose Probe") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(VerboseHardwareProbe)))
                 Case "3" 'Login
                     MaxOptions = 3
                     W("*) " + DoTranslation("Login Settings...") + vbNewLine, True, ColTypes.Neutral)
@@ -557,14 +558,19 @@ Public Module ToolPrompts
                     Select Case KeyNumber
                         Case 1 'Quiet Probe
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(quietProbe)
+                            KeyVar = NameOf(QuietHardwareProbe)
                             W("*) " + DoTranslation("Hardware Settings...") + " > " + DoTranslation("Quiet Probe") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Keep hardware probing messages silent."), True, ColTypes.Neutral)
                         Case 2 'Full Probe
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(FullProbe)
+                            KeyVar = NameOf(FullHardwareProbe)
                             W("*) " + DoTranslation("Hardware Settings...") + " > " + DoTranslation("Full Probe") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("If true, probes all the hardware; else, will only probe the needed hardware."), True, ColTypes.Neutral)
+                        Case 3 'Verbose Probe
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(VerboseHardwareProbe)
+                            W("*) " + DoTranslation("Hardware Settings...") + " > " + DoTranslation("Verbose Probe") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Make hardware probing messages a bit talkative."), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Hardware Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

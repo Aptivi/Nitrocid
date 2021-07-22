@@ -130,10 +130,10 @@ Module FivePointFive
 
         'Hardware section
         If ConfigReader.Sections("Hardware").Keys.Contains("Quiet Probe") Then
-            If ConfigReader.Sections("Hardware").Keys("Quiet Probe").Value = "True" Then quietProbe = True Else quietProbe = False
+            If ConfigReader.Sections("Hardware").Keys("Quiet Probe").Value = "True" Then QuietHardwareProbe = True Else QuietHardwareProbe = False
         End If
         If ConfigReader.Sections("Hardware").Keys.Contains("Full Probe") Then
-            If ConfigReader.Sections("Hardware").Keys("Full Probe").Value = "True" Then FullProbe = True Else FullProbe = False
+            If ConfigReader.Sections("Hardware").Keys("Full Probe").Value = "True" Then FullHardwareProbe = True Else FullHardwareProbe = False
         End If
 
         'Network section

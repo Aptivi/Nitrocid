@@ -26,25 +26,27 @@ Public Module HardwareProbe
     ''' Starts probing hardware
     ''' </summary>
     Public Sub StartProbing()
-        If Not quietProbe Then W(DoTranslation("hwprobe: Your hardware will be probed. Please wait..."), True, ColTypes.Neutral)
+        If Not QuietHardwareProbe Then W(DoTranslation("hwprobe: Your hardware will be probed. Please wait..."), True, ColTypes.Neutral)
 
         'We will probe hardware
         EventManager.RaiseHardwareProbing()
         Try
             AddHandler DebugDataReceived, AddressOf WriteInxiDebugData
-            If FullProbe Then
+            AddHandler HardwareParsed, AddressOf WriteWhatProbed
+            If FullHardwareProbe Then
                 HardwareInfo = New Inxi()
             Else
                 HardwareInfo = New Inxi(InxiHardwareType.Processor Or InxiHardwareType.PCMemory Or InxiHardwareType.Graphics Or InxiHardwareType.HardDrive)
             End If
             RemoveHandler DebugDataReceived, AddressOf WriteInxiDebugData
+            RemoveHandler HardwareParsed, AddressOf WriteWhatProbed
         Catch ex As Exception
             Wdbg("E", "Failed to probe hardware: {0}", ex.Message)
             WStkTrc(ex)
             KernelError("F", True, 10, DoTranslation("There was an error when probing hardware: {0}"), ex, ex.Message)
         End Try
 
-        If Not quietProbe Then
+        If Not QuietHardwareProbe Then
             If HardwareInfo IsNot Nothing Then
                 'We are checking to see if any of the probers reported a failure starting with CPU
                 If HardwareInfo.Hardware.CPU Is Nothing Or (HardwareInfo.Hardware.CPU IsNot Nothing And HardwareInfo.Hardware.CPU.Count = 0) Then
@@ -77,6 +79,14 @@ Public Module HardwareProbe
 
         'Raise event
         EventManager.RaiseHardwareProbed()
+    End Sub
+
+    ''' <summary>
+    ''' Write Inxi.NET hardware parsing completion to debugger and, if quiet probe is disabled, the console
+    ''' </summary>
+    Private Sub WriteWhatProbed(Hardware As InxiHardwareType)
+        Wdbg("I", "Hardware {0} ({1}) successfully probed.", Hardware, Hardware.ToString)
+        If Not QuietHardwareProbe And VerboseHardwareProbe Then W(DoTranslation("Successfully probed {0}."), True, ColTypes.Neutral, Hardware.ToString)
     End Sub
 
     ''' <summary>
