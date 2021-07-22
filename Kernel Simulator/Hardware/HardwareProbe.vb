@@ -35,7 +35,7 @@ Public Module HardwareProbe
             If FullProbe Then
                 HardwareInfo = New Inxi()
             Else
-                HardwareInfo = New Inxi(InxiParseFlags.Processor Or InxiParseFlags.PCMemory Or InxiParseFlags.Graphics Or InxiParseFlags.HardDrive)
+                HardwareInfo = New Inxi(InxiHardwareType.Processor Or InxiHardwareType.PCMemory Or InxiHardwareType.Graphics Or InxiHardwareType.HardDrive)
             End If
             RemoveHandler DebugDataReceived, AddressOf WriteInxiDebugData
         Catch ex As Exception
