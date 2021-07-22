@@ -479,11 +479,11 @@ Public Module HelpSystem
 
         ElseIf command = "sumfile" Then
 
-            W(DoTranslation("Usage:") + " sumfile <MD5/SHA1/SHA256/SHA512/all> <file>: " + DoTranslation("Calculates file sums."), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " sumfile <MD5/SHA1/SHA256/SHA384/SHA512/all> <file>: " + DoTranslation("Calculates file sums."), True, ColTypes.Neutral)
 
         ElseIf command = "sumfiles" Then
 
-            W(DoTranslation("Usage:") + " sumfiles <MD5/SHA1/SHA256/SHA512/all> <dir> [outputFile]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " sumfiles <MD5/SHA1/SHA256/SHA384/SHA512/all> <dir> [outputFile]", True, ColTypes.Neutral)
 
         ElseIf command = "sysinfo" Then
 
@@ -507,7 +507,7 @@ Public Module HelpSystem
 
         ElseIf command = "verify" Then
 
-            W(DoTranslation("Usage:") + " verify <MD5/SHA1/SHA256/SHA512> <calculatedhash> <hashfile/expectedhash> <file>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " verify <MD5/SHA1/SHA256/SHA384/SHA512> <calculatedhash> <hashfile/expectedhash> <file>", True, ColTypes.Neutral)
 
         ElseIf command = "weather" Then
 

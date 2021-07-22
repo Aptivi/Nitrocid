@@ -1029,6 +1029,12 @@ Public Module GetCommand
                                 W(GetEncryptedFile(file, Algorithms.SHA512), True, ColTypes.Neutral)
                                 W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                                 spent.Stop()
+                            ElseIf eqargs(0) = "SHA384" Then
+                                Dim spent As New Stopwatch
+                                spent.Start() 'Time when you're on a breakpoint is counted
+                                W(GetEncryptedFile(file, Algorithms.SHA384), True, ColTypes.Neutral)
+                                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                                spent.Stop()
                             ElseIf eqargs(0) = "SHA256" Then
                                 Dim spent As New Stopwatch
                                 spent.Start() 'Time when you're on a breakpoint is counted
@@ -1081,6 +1087,14 @@ Public Module GetCommand
                                     Dim spent As New Stopwatch
                                     spent.Start() 'Time when you're on a breakpoint is counted
                                     Dim encrypted As String = GetEncryptedFile(file, Algorithms.SHA512)
+                                    W(encrypted, True, ColTypes.Neutral)
+                                    W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                                    FileBuilder.AppendLine($"- {file}: {encrypted} ({eqargs(0)})")
+                                    spent.Stop()
+                                ElseIf eqargs(0) = "SHA384" Then
+                                    Dim spent As New Stopwatch
+                                    spent.Start() 'Time when you're on a breakpoint is counted
+                                    Dim encrypted As String = GetEncryptedFile(file, Algorithms.SHA384)
                                     W(encrypted, True, ColTypes.Neutral)
                                     W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                                     FileBuilder.AppendLine($"- {file}: {encrypted} ({eqargs(0)})")

@@ -44,6 +44,8 @@ Public Module HashVerifier
             Select Case HashType
                 Case Algorithms.SHA512
                     ExpectedHashLength = 128
+                Case Algorithms.SHA384
+                    ExpectedHashLength = 96
                 Case Algorithms.SHA256
                     ExpectedHashLength = 64
                 Case Algorithms.SHA1
@@ -123,6 +125,8 @@ Public Module HashVerifier
             Select Case HashType
                 Case Algorithms.SHA512
                     ExpectedHashLength = 128
+                Case Algorithms.SHA384
+                    ExpectedHashLength = 96
                 Case Algorithms.SHA256
                     ExpectedHashLength = 64
                 Case Algorithms.SHA1
@@ -177,6 +181,8 @@ Public Module HashVerifier
             Select Case HashType
                 Case Algorithms.SHA512
                     ExpectedHashLength = 128
+                Case Algorithms.SHA384
+                    ExpectedHashLength = 96
                 Case Algorithms.SHA256
                     ExpectedHashLength = 64
                 Case Algorithms.SHA1
@@ -254,6 +260,8 @@ Public Module HashVerifier
             Select Case HashType
                 Case Algorithms.SHA512
                     ExpectedHashLength = 128
+                Case Algorithms.SHA384
+                    ExpectedHashLength = 96
                 Case Algorithms.SHA256
                     ExpectedHashLength = 64
                 Case Algorithms.SHA1
