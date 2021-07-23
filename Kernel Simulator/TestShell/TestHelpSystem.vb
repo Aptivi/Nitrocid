@@ -185,6 +185,8 @@ Public Module TestHelpSystem
             W(DoTranslation("Usage:") + " exit: " + TestDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "shutdown" Then
             W(DoTranslation("Usage:") + " shutdown: " + TestDefinitions(command), True, ColTypes.Neutral)
+        Else
+            W(DoTranslation("No help for command ""{0}""."), True, ColTypes.Error, command)
         End If
 
     End Sub

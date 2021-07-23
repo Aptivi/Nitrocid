@@ -71,6 +71,8 @@ Public Module ZipHelpSystem
             W(DoTranslation("Usage:") + " list [directory]: " + ZipShell_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "get" Then
             W(DoTranslation("Usage:") + " get <entry> [where] [-absolute]: " + ZipShell_HelpEntries(Command), True, ColTypes.Neutral)
+        Else
+            W(DoTranslation("No help for command ""{0}""."), True, ColTypes.Error, Command)
         End If
     End Sub
 

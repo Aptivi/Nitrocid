@@ -104,6 +104,8 @@ Public Module MailHelpSystem
             W(DoTranslation("Usage:") + " send: " + MailDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "sendenc" Then
             W(DoTranslation("Usage:") + " sendenc: " + MailDefinitions(command), True, ColTypes.Neutral)
+        Else
+            W(DoTranslation("No help for command ""{0}""."), True, ColTypes.Error, command)
         End If
     End Sub
 

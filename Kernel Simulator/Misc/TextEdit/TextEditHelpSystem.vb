@@ -92,6 +92,8 @@ Public Module TextEditHelpSystem
             W(DoTranslation("Usage:") + " queryword ""<word/phrase>"" <linenumber/all>: " + TextEdit_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "clear" Then
             W(DoTranslation("Usage:") + " clear: " + TextEdit_HelpEntries(Command), True, ColTypes.Neutral)
+        Else
+            W(DoTranslation("No help for command ""{0}""."), True, ColTypes.Error, Command)
         End If
     End Sub
 

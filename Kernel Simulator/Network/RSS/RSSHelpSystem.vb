@@ -78,6 +78,8 @@ Public Module RSSHelpSystem
             W(DoTranslation("Usage:") + " list: " + RSSDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "read" Then
             W(DoTranslation("Usage:") + " read <feednum>: " + RSSDefinitions(command), True, ColTypes.Neutral)
+        Else
+            W(DoTranslation("No help for command ""{0}""."), True, ColTypes.Error, command)
         End If
 
     End Sub

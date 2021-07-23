@@ -99,6 +99,8 @@ Public Module SFTPHelpSystem
             W(DoTranslation("Usage:") + " put <file>: " + SFTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "quickconnect" Then
             W(DoTranslation("Usage:") + " quickconnect: " + SFTPDefinitions(command), True, ColTypes.Neutral)
+        Else
+            W(DoTranslation("No help for command ""{0}""."), True, ColTypes.Error, command)
         End If
 
     End Sub
