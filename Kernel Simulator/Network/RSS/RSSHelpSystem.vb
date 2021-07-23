@@ -67,17 +67,17 @@ Public Module RSSHelpSystem
                 W(String.Join(", ", RSSShellAliases.Keys), True, ColTypes.ListEntry)
             End If
         ElseIf command = "articleinfo" Then
-            W(DoTranslation("Usage:") + " articleinfo <feednum>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " articleinfo <feednum>: " + RSSDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "chfeed" Then
-            W(DoTranslation("Usage:") + " chfeed <feedurl>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " chfeed <feedurl>: " + RSSDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "exit" Then
-            W(DoTranslation("Usage:") + " exit", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " exit: " + RSSDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "feedinfo" Then
-            W(DoTranslation("Usage:") + " feedinfo", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " feedinfo: " + RSSDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "list" Then
-            W(DoTranslation("Usage:") + " list", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " list: " + RSSDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "read" Then
-            W(DoTranslation("Usage:") + " read <feednum>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " read <feednum>: " + RSSDefinitions(command), True, ColTypes.Neutral)
         End If
 
     End Sub

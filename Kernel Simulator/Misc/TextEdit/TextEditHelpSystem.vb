@@ -65,33 +65,33 @@ Public Module TextEditHelpSystem
                 W(String.Join(", ", TextShellAliases.Keys), True, ColTypes.ListEntry)
             End If
         ElseIf Command = "help" Then
-            W(DoTranslation("Usage:") + " help [command]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " help [command]: " + TextEdit_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "exit" Then
-            W(DoTranslation("Usage:") + " exit", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " exit: " + TextEdit_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "exitnosave" Then
-            W(DoTranslation("Usage:") + " exitnosave", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " exitnosave: " + TextEdit_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "save" Then
-            W(DoTranslation("Usage:") + " save", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " save: " + TextEdit_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "print" Then
-            W(DoTranslation("Usage:") + " print [linenumber]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " print [linenumber]: " + TextEdit_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "addline" Then
-            W(DoTranslation("Usage:") + " addline <text>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " addline <text>: " + TextEdit_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "delline" Then
-            W(DoTranslation("Usage:") + " delline <linenumber>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " delline <linenumber>: " + TextEdit_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "replace" Then
-            W(DoTranslation("Usage:") + " replace ""<word/phrase>"" ""<word/phrase>""", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " replace ""<word/phrase>"" ""<word/phrase>"": " + TextEdit_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "replaceinline" Then
-            W(DoTranslation("Usage:") + " replaceinline ""<word/phrase>"" ""<word/phrase>"" <linenumber>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " replaceinline ""<word/phrase>"" ""<word/phrase>"" <linenumber>: " + TextEdit_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "delword" Then
-            W(DoTranslation("Usage:") + " delword ""<word/phrase>"" <linenumber>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " delword ""<word/phrase>"" <linenumber>: " + TextEdit_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "delcharnum" Then
-            W(DoTranslation("Usage:") + " delcharnum <charnumber> <linenumber>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " delcharnum <charnumber> <linenumber>: " + TextEdit_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "querychar" Then
-            W(DoTranslation("Usage:") + " querychar <char> <linenumber/all>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " querychar <char> <linenumber/all>: " + TextEdit_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "queryword" Then
-            W(DoTranslation("Usage:") + " queryword ""<word/phrase>"" <linenumber/all>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " queryword ""<word/phrase>"" <linenumber/all>: " + TextEdit_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "clear" Then
-            W(DoTranslation("Usage:") + " clear", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " clear: " + TextEdit_HelpEntries(Command), True, ColTypes.Neutral)
         End If
     End Sub
 

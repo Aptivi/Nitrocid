@@ -58,19 +58,19 @@ Public Module ZipHelpSystem
                 W(String.Join(", ", ZIPShellAliases.Keys), True, ColTypes.ListEntry)
             End If
         ElseIf Command = "help" Then
-            W(DoTranslation("Usage:") + " help [command]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " help [command]: " + ZipShell_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "exit" Then
-            W(DoTranslation("Usage:") + " exit", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " exit: " + ZipShell_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "chdir" Then
-            W(DoTranslation("Usage:") + " chdir <directory>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " chdir <directory>: " + ZipShell_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "cdir" Then
-            W(DoTranslation("Usage:") + " cdir", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " cdir: " + ZipShell_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "chadir" Then
-            W(DoTranslation("Usage:") + " chadir <archivedirectory>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " chadir <archivedirectory>: " + ZipShell_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "list" Then
-            W(DoTranslation("Usage:") + " list [directory]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " list [directory]: " + ZipShell_HelpEntries(Command), True, ColTypes.Neutral)
         ElseIf Command = "get" Then
-            W(DoTranslation("Usage:") + " get <entry> [where] [-absolute]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " get <entry> [where] [-absolute]: " + ZipShell_HelpEntries(Command), True, ColTypes.Neutral)
         End If
     End Sub
 

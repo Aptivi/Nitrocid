@@ -78,39 +78,39 @@ Public Module FTPHelpSystem
                 W(String.Join(", ", FTPShellAliases.Keys), True, ColTypes.ListEntry)
             End If
         ElseIf command = "pwdl" Then
-            W(DoTranslation("Usage:") + " currlocaldir or pwdl", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " currlocaldir or pwdl: " + FTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "pwdr" Then
-            W(DoTranslation("Usage:") + " currremotedir or pwdr", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " currremotedir or pwdr: " + FTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "connect" Then
-            W(DoTranslation("Usage:") + " connect <server>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " connect <server>: " + FTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "cdl" Then
-            W(DoTranslation("Usage:") + " cdl <directory>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " cdl <directory>: " + FTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "cdr" Then
-            W(DoTranslation("Usage:") + " cdr <directory>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " cdr <directory>: " + FTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "cp" Then
-            W(DoTranslation("Usage:") + " cp <sourcefileordir> <targetfileordir>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " cp <sourcefileordir> <targetfileordir>: " + FTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "del" Then
-            W(DoTranslation("Usage:") + " del <file>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " del <file>: " + FTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "disconnect" Then
-            W(DoTranslation("Usage:") + " disconnect", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " disconnect: " + FTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "get" Then
-            W(DoTranslation("Usage:") + " get <file>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " get <file>: " + FTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "exit" Then
-            W(DoTranslation("Usage:") + " exit", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " exit: " + FTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "lsl" Then
-            W(DoTranslation("Usage:") + " lsl [dir]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " lsl [dir]: " + FTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "ldr" Then
-            W(DoTranslation("Usage:") + " lsr [dir]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " lsr [dir]: " + FTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "mv" Then
-            W(DoTranslation("Usage:") + " mv <sourcefileordir> <targetfileordir>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " mv <sourcefileordir> <targetfileordir>: " + FTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "perm" Then
-            W(DoTranslation("Usage:") + " perm <file> <permnumber>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " perm <file> <permnumber>: " + FTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "type" Then
-            W(DoTranslation("Usage:") + " type <a/b>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " type <a/b>: " + FTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "put" Then
-            W(DoTranslation("Usage:") + " put <file>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " put <file>: " + FTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "quickconnect" Then
-            W(DoTranslation("Usage:") + " quickconnect", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " quickconnect: " + FTPDefinitions(command), True, ColTypes.Neutral)
         End If
 
     End Sub

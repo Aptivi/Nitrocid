@@ -74,31 +74,31 @@ Public Module SFTPHelpSystem
                 W(String.Join(", ", SFTPShellAliases.Keys), True, ColTypes.ListEntry)
             End If
         ElseIf command = "pwdl" Then
-            W(DoTranslation("Usage:") + " pwdl", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " pwdl: " + SFTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "pwdr" Then
-            W(DoTranslation("Usage:") + " pwdr", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " pwdr: " + SFTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "connect" Then
-            W(DoTranslation("Usage:") + " connect <server>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " connect <server>: " + SFTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "cdl" Then
-            W(DoTranslation("Usage:") + " cdl <directory>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " cdl <directory>: " + SFTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "cdr" Then
-            W(DoTranslation("Usage:") + " cdr <directory>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " cdr <directory>: " + SFTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "del" Then
-            W(DoTranslation("Usage:") + " del <file>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " del <file>: " + SFTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "disconnect" Then
-            W(DoTranslation("Usage:") + " disconnect", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " disconnect: " + SFTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "get" Then
-            W(DoTranslation("Usage:") + " get <file>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " get <file>: " + SFTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "exit" Then
-            W(DoTranslation("Usage:") + " exit", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " exit: " + SFTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "lsl" Then
-            W(DoTranslation("Usage:") + " lsl [dir]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " lsl [dir]: " + SFTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "ldr" Then
-            W(DoTranslation("Usage:") + " lsr [dir]", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " lsr [dir]: " + SFTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "put" Then
-            W(DoTranslation("Usage:") + " put <file>", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " put <file>: " + SFTPDefinitions(command), True, ColTypes.Neutral)
         ElseIf command = "quickconnect" Then
-            W(DoTranslation("Usage:") + " quickconnect", True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " quickconnect: " + SFTPDefinitions(command), True, ColTypes.Neutral)
         End If
 
     End Sub
