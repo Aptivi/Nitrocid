@@ -166,7 +166,7 @@ Public Module KernelTools
                                DoTranslation("> Source: {3}") + vbNewLine + vbNewLine +
                                DoTranslation("> Stack trace <") + vbNewLine + vbNewLine +
                                Exc.StackTrace + vbNewLine + vbNewLine +
-                               DoTranslation(">> Inner exception {0} information <<"), Exc.ToString.Substring(0, Exc.ToString.IndexOf(":")), Exc.Message, Exc.HResult, Exc.Source)
+                               DoTranslation(">> Inner exception {0} information <<"), Exc.GetType.FullName, Exc.Message, Exc.HResult, Exc.Source)
 
                 'Write info (Inner exceptions)
                 Dim InnerExc As Exception = Exc.InnerException
@@ -176,7 +176,7 @@ Public Module KernelTools
                                    DoTranslation("> HRESULT: {2}") + vbNewLine +
                                    DoTranslation("> Source: {3}") + vbNewLine + vbNewLine +
                                    DoTranslation("> Stack trace <") + vbNewLine + vbNewLine +
-                                   InnerExc.StackTrace + vbNewLine, InnerExc.ToString.Substring(0, InnerExc.ToString.IndexOf(":")), InnerExc.Message, InnerExc.HResult, InnerExc.Source)
+                                   InnerExc.StackTrace + vbNewLine, InnerExc.GetType.FullName, InnerExc.Message, InnerExc.HResult, InnerExc.Source)
                     InnerExc = InnerExc.InnerException
                     If InnerExc IsNot Nothing Then
                         Dump.WriteLine(DoTranslation(">> Inner exception {0} information <<"), Count)
@@ -203,14 +203,14 @@ Public Module KernelTools
                 Next
             Catch ex As Exception
                 WStkTrc(ex)
-                Dump.WriteLine(DoTranslation("> There is an error when trying to get frame information. {0}: {1}"), ex.GetType.FullName.Substring(0, ex.GetType.FullName.IndexOf(":")), ex.Message.Replace(vbNewLine, " | "))
+                Dump.WriteLine(DoTranslation("> There is an error when trying to get frame information. {0}: {1}"), ex.GetType.FullName, ex.Message.Replace(vbNewLine, " | "))
             End Try
 
             'Close stream
             Wdbg("I", "Closing file stream for dump...")
             Dump.Flush() : Dump.Close()
         Catch ex As Exception
-            W(DoTranslation("Dump information gatherer crashed when trying to get information about {0}: {1}"), True, ColTypes.Error, Exc.ToString.Substring(0, Exc.ToString.IndexOf(":")), ex.Message)
+            W(DoTranslation("Dump information gatherer crashed when trying to get information about {0}: {1}"), True, ColTypes.Error, Exc.GetType.FullName, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub

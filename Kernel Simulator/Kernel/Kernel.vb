@@ -105,6 +105,7 @@ Public Module Kernel
                 WriteSeparator(DoTranslation("- Stage 2: Hardware detection"), False, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 2: Probing hardware")
                 StartProbing()
+                KernelError("F", True, 21, "Hello! 0x{0:X}", New Exception, 6565)
 
                 'Phase 3: Parse Mods and Screensavers
                 W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
