@@ -63,7 +63,7 @@ Public Module HashVerifier
                     Dim StringLine As String = HashStream.ReadLine
                     If StringLine.StartsWith("- ") Then
                         Wdbg("I", "Hashes file is of KS format")
-                        If StringLine.StartsWith("- " + FileName) And StringLine.EndsWith("({0})".FormatString({HashType.ToString})) Then
+                        If StringLine.StartsWith("- " + FileName) And StringLine.EndsWith($"({HashType})") Then
                             Dim HashSplit() As String = StringLine.Split(" "c)
                             ExpectedHash = HashSplit(HashSplit.Length - 2).ToUpper
                             ActualHash = ActualHash.ToUpper
@@ -196,7 +196,7 @@ Public Module HashVerifier
                     Dim StringLine As String = HashStream.ReadLine
                     If StringLine.StartsWith("- ") Then
                         Wdbg("I", "Hashes file is of KS format")
-                        If StringLine.StartsWith("- " + FileName) And StringLine.EndsWith("({0})".FormatString({HashType.ToString})) Then
+                        If StringLine.StartsWith("- " + FileName) And StringLine.EndsWith($"({HashType})") Then
                             Dim HashSplit() As String = StringLine.Split(" "c)
                             ExpectedHash = HashSplit(HashSplit.Length - 2).ToUpper
                             ActualHash = GetEncryptedFile(FileName, HashType).ToUpper

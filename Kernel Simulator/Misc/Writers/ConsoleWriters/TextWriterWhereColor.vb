@@ -73,16 +73,11 @@ Module TextWriterWhereColor
                 SetConsoleColor(New Color(BackgroundColor), True)
             End If
 
-            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-            If msg IsNot Nothing Then
-                msg = msg.ToString.FormatString(vars)
-            End If
-
             'Write text in another place
             Dim OldLeft As Integer = CursorLeft
             Dim OldTop As Integer = CursorTop
             SetCursorPosition(Left, Top)
-            Write(msg)
+            Write(msg, vars)
             If [Return] Then SetCursorPosition(OldLeft, OldTop)
             If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
             If colorType = ColTypes.Input And ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
@@ -109,16 +104,11 @@ Module TextWriterWhereColor
             Console.BackgroundColor = If(New Color(BackgroundColor).PlainSequence.IsNumeric AndAlso BackgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor), ConsoleColor.Black)
             Console.ForegroundColor = color
 
-            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-            If msg IsNot Nothing Then
-                msg = msg.ToString.FormatString(vars)
-            End If
-
             'Write text in another place
             Dim OldLeft As Integer = CursorLeft
             Dim OldTop As Integer = CursorTop
             SetCursorPosition(Left, Top)
-            Write(msg)
+            Write(msg, vars)
             If [Return] Then SetCursorPosition(OldLeft, OldTop)
             If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
             If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
@@ -146,16 +136,11 @@ Module TextWriterWhereColor
             Console.BackgroundColor = BackgroundColor
             Console.ForegroundColor = ForegroundColor
 
-            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-            If msg IsNot Nothing Then
-                msg = msg.ToString.FormatString(vars)
-            End If
-
             'Write text in another place
             Dim OldLeft As Integer = CursorLeft
             Dim OldTop As Integer = CursorTop
             SetCursorPosition(Left, Top)
-            Write(msg)
+            Write(msg, vars)
             If [Return] Then SetCursorPosition(OldLeft, OldTop)
             If BackgroundColor = ConsoleColor.Black Then ResetColor()
             If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
@@ -184,16 +169,11 @@ Module TextWriterWhereColor
                 SetConsoleColor(New Color(BackgroundColor), True)
             End If
 
-            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-            If msg IsNot Nothing Then
-                msg = msg.ToString.FormatString(vars)
-            End If
-
             'Write text in another place
             Dim OldLeft As Integer = CursorLeft
             Dim OldTop As Integer = CursorTop
             SetCursorPosition(Left, Top)
-            Write(msg)
+            Write(msg, vars)
             If [Return] Then SetCursorPosition(OldLeft, OldTop)
             If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
             If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
@@ -223,16 +203,11 @@ Module TextWriterWhereColor
                 SetConsoleColor(BackgroundColor, True)
             End If
 
-            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-            If msg IsNot Nothing Then
-                msg = msg.ToString.FormatString(vars)
-            End If
-
             'Write text in another place
             Dim OldLeft As Integer = CursorLeft
             Dim OldTop As Integer = CursorTop
             SetCursorPosition(Left, Top)
-            Write(msg)
+            Write(msg, vars)
             If [Return] Then SetCursorPosition(OldLeft, OldTop)
             If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then ResetColor()
             If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then

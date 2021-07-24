@@ -84,13 +84,13 @@ Module ReportBugPrompt
         Dim TargetURL As String = "https://github.com/EoflaOE/Kernel-Simulator/issues/new?assignees=&labels=&template=ask-a-question.md"
         Select Case AnswerKind
             Case 1 'A problem
-                TargetURL += "&title=%5BBUG%5D+{0}+-+{1}".FormatString(AnswerFeature, AnswerRequest)
+                TargetURL += $"&title=%5BBUG%5D+{AnswerFeature}+-+{AnswerRequest}"
                 Wdbg("I", "Target URL: {0}", TargetURL)
             Case 2 'A feature request
-                TargetURL += "&title=%5BADD%5D+{0}+-+{1}".FormatString(AnswerFeature, AnswerRequest)
+                TargetURL += $"&title=%5BADD%5D+{AnswerFeature}+-+{AnswerRequest}"
                 Wdbg("I", "Target URL: {0}", TargetURL)
             Case 3 'A question
-                TargetURL += "&title=%5BQ%26A%5D+{0}+-+{1}".FormatString(AnswerFeature, AnswerRequest)
+                TargetURL += $"&title=%5BQ%26A%5D+{AnswerFeature}+-+{AnswerRequest}"
                 Wdbg("I", "Target URL: {0}", TargetURL)
         End Select
         Process.Start(TargetURL)

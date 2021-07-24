@@ -30,13 +30,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -52,13 +52,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -74,13 +74,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -96,13 +96,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -118,13 +118,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -140,13 +140,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -162,13 +162,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -184,13 +184,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -206,13 +206,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -228,13 +228,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -250,13 +250,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -272,13 +272,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -294,13 +294,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -316,13 +316,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -338,13 +338,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -360,13 +360,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -382,13 +382,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -404,13 +404,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -426,13 +426,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -448,13 +448,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -470,13 +470,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -492,13 +492,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -514,13 +514,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -536,13 +536,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -558,13 +558,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -580,13 +580,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -602,13 +602,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -624,13 +624,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -646,13 +646,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -668,13 +668,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -690,13 +690,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -712,13 +712,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -734,13 +734,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 
@@ -756,13 +756,13 @@ Public Class Exceptions
             MyBase.New(message)
         End Sub
         Public Sub New(ByVal message As String, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars))
+            MyBase.New(String.Format(message, vars))
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception)
             MyBase.New(message, e)
         End Sub
         Public Sub New(ByVal message As String, ByVal e As Exception, ParamArray vars() As Object)
-            MyBase.New(message.FormatString(vars), e)
+            MyBase.New(String.Format(message, vars), e)
         End Sub
     End Class
 

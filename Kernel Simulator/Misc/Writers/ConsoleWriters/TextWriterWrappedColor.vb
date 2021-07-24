@@ -27,7 +27,7 @@ Public Module TextWriterWrappedColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="colorType">A type of colors that will be changed.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteWrapped(ByVal text As Object, ByVal Line As Boolean, ByVal colorType As ColTypes, ByVal ParamArray vars() As Object)
+    Public Sub WriteWrapped(ByVal Text As String, ByVal Line As Boolean, ByVal colorType As ColTypes, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -75,13 +75,11 @@ Public Module TextWriterWrappedColor
                     SetConsoleColor(New Color(BackgroundColor), True)
                 End If
 
-                'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-                If text IsNot Nothing Then
-                    text = text.ToString.FormatString(vars)
-                End If
+                'Format string as needed
+                Text = String.Format(Text, vars)
 
                 OldTop = CursorTop
-                For Each TextChar As Char In text.ToString.ToCharArray
+                For Each TextChar As Char In Text.ToString.ToCharArray
                     Write(TextChar)
                     LinesMade += CursorTop - OldTop
                     OldTop = CursorTop
@@ -111,7 +109,7 @@ Public Module TextWriterWrappedColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteWrappedC16(ByVal text As Object, ByVal Line As Boolean, ByVal color As ConsoleColor, ByVal ParamArray vars() As Object)
+    Public Sub WriteWrappedC16(ByVal Text As String, ByVal Line As Boolean, ByVal color As ConsoleColor, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -122,13 +120,11 @@ Public Module TextWriterWrappedColor
                 Console.BackgroundColor = If(New Color(BackgroundColor).PlainSequence.IsNumeric AndAlso BackgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor), ConsoleColor.Black)
                 Console.ForegroundColor = color
 
-                'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-                If text IsNot Nothing Then
-                    text = text.ToString.FormatString(vars)
-                End If
+                'Format string as needed
+                Text = String.Format(Text, vars)
 
                 OldTop = CursorTop
-                For Each TextChar As Char In text.ToString.ToCharArray
+                For Each TextChar As Char In Text.ToString.ToCharArray
                     Write(TextChar)
                     LinesMade += CursorTop - OldTop
                     If LinesMade = WindowHeight - 1 Then
@@ -159,7 +155,7 @@ Public Module TextWriterWrappedColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteWrappedC16(ByVal text As Object, ByVal Line As Boolean, ByVal ForegroundColor As ConsoleColor, ByVal BackgroundColor As ConsoleColor, ByVal ParamArray vars() As Object)
+    Public Sub WriteWrappedC16(ByVal Text As String, ByVal Line As Boolean, ByVal ForegroundColor As ConsoleColor, ByVal BackgroundColor As ConsoleColor, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -170,13 +166,11 @@ Public Module TextWriterWrappedColor
                 Console.BackgroundColor = BackgroundColor
                 Console.ForegroundColor = ForegroundColor
 
-                'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-                If text IsNot Nothing Then
-                    text = text.ToString.FormatString(vars)
-                End If
+                'Format string as needed
+                Text = String.Format(Text, vars)
 
                 OldTop = CursorTop
-                For Each TextChar As Char In text.ToString.ToCharArray
+                For Each TextChar As Char In Text.ToString.ToCharArray
                     Write(TextChar)
                     LinesMade += CursorTop - OldTop
                     If LinesMade = WindowHeight - 1 Then
@@ -206,7 +200,7 @@ Public Module TextWriterWrappedColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteWrappedC(ByVal text As Object, ByVal Line As Boolean, ByVal color As Color, ByVal ParamArray vars() As Object)
+    Public Sub WriteWrappedC(ByVal Text As String, ByVal Line As Boolean, ByVal color As Color, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -219,13 +213,11 @@ Public Module TextWriterWrappedColor
                     SetConsoleColor(New Color(BackgroundColor), True)
                 End If
 
-                'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-                If text IsNot Nothing Then
-                    text = text.ToString.FormatString(vars)
-                End If
+                'Format string as needed
+                Text = String.Format(Text, vars)
 
                 OldTop = CursorTop
-                For Each TextChar As Char In text.ToString.ToCharArray
+                For Each TextChar As Char In Text.ToString.ToCharArray
                     Write(TextChar)
                     LinesMade += CursorTop - OldTop
                     If LinesMade = WindowHeight - 1 Then
@@ -256,7 +248,7 @@ Public Module TextWriterWrappedColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
-    Public Sub WriteWrappedC(ByVal text As Object, ByVal Line As Boolean, ByVal ForegroundColor As Color, ByVal BackgroundColor As Color, ByVal ParamArray vars() As Object)
+    Public Sub WriteWrappedC(ByVal Text As String, ByVal Line As Boolean, ByVal ForegroundColor As Color, ByVal BackgroundColor As Color, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -269,13 +261,11 @@ Public Module TextWriterWrappedColor
                     SetConsoleColor(BackgroundColor, True)
                 End If
 
-                'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-                If text IsNot Nothing Then
-                    text = text.ToString.FormatString(vars)
-                End If
+                'Format string as needed
+                Text = String.Format(Text, vars)
 
                 OldTop = CursorTop
-                For Each TextChar As Char In text.ToString.ToCharArray
+                For Each TextChar As Char In Text.ToString.ToCharArray
                     Write(TextChar)
                     LinesMade += CursorTop - OldTop
                     If LinesMade = WindowHeight - 1 Then

@@ -78,8 +78,8 @@ Public Module KernelTools
                 StopPanicAndGoToDoublePanic = True
             End If
 
-            'Parse variables ({0}, {1}, ...) in the "Description" string variable
-            Description = Description.FormatString(Variables)
+            'Format the "Description" string variable
+            Description = String.Format(Description, Variables)
 
             'Fire an event
             EventManager.RaiseKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
