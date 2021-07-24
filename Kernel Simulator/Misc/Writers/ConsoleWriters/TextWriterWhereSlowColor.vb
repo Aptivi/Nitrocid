@@ -76,10 +76,8 @@ Module TextWriterWhereSlowColor
                 SetConsoleColor(New Color(BackgroundColor), True)
             End If
 
-            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-            If msg IsNot Nothing Then
-                msg = msg.ToString.FormatString(vars)
-            End If
+            'Format string as needed
+            msg = String.Format(msg, vars)
 
             'Write text in another place slowly
             Dim OldLeft As Integer = CursorLeft
@@ -121,10 +119,8 @@ Module TextWriterWhereSlowColor
             Console.BackgroundColor = If(New Color(BackgroundColor).PlainSequence.IsNumeric AndAlso BackgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor), ConsoleColor.Black)
             Console.ForegroundColor = color
 
-            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-            If msg IsNot Nothing Then
-                msg = msg.ToString.FormatString(vars)
-            End If
+            'Format string as needed
+            msg = String.Format(msg, vars)
 
             'Write text in another place
             Dim OldLeft As Integer = CursorLeft
@@ -167,10 +163,8 @@ Module TextWriterWhereSlowColor
             Console.BackgroundColor = BackgroundColor
             Console.ForegroundColor = ForegroundColor
 
-            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-            If msg IsNot Nothing Then
-                msg = msg.ToString.FormatString(vars)
-            End If
+            'Format string as needed
+            msg = String.Format(msg, vars)
 
             'Write text in another place
             Dim OldLeft As Integer = CursorLeft
@@ -214,10 +208,8 @@ Module TextWriterWhereSlowColor
                 SetConsoleColor(New Color(BackgroundColor), True)
             End If
 
-            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-            If msg IsNot Nothing Then
-                msg = msg.ToString.FormatString(vars)
-            End If
+            'Format string as needed
+            msg = String.Format(msg, vars)
 
             'Write text in another place
             Dim OldLeft As Integer = CursorLeft
@@ -262,10 +254,8 @@ Module TextWriterWhereSlowColor
                 SetConsoleColor(BackgroundColor, True)
             End If
 
-            'Parse variables ({0}, {1}, ...) in the "text" string variable. (Used as a workaround for Linux)
-            If msg IsNot Nothing Then
-                msg = msg.ToString.FormatString(vars)
-            End If
+            'Format string as needed
+            msg = String.Format(msg, vars)
 
             'Write text in another place
             Dim OldLeft As Integer = CursorLeft
