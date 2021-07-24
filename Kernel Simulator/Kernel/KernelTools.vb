@@ -195,12 +195,18 @@ Public Module KernelTools
             Try
                 Dim ExcTrace As New StackTrace(Exc, True)
                 Dim FrameNo As Integer = 1
-                For Each Frame As StackFrame In ExcTrace.GetFrames
-                    If Not (Frame.GetFileName = "" And Frame.GetFileLineNumber = 0 And Frame.GetFileColumnNumber = 0) Then
-                        Dump.WriteLine(DoTranslation("> Frame {0}: File: {1} | Line: {2} | Column: {3}"), FrameNo, Frame.GetFileName, Frame.GetFileLineNumber, Frame.GetFileColumnNumber)
-                    End If
-                    FrameNo += 1
-                Next
+
+                'If there are frames to print the file information, write them down to the dump file.
+                If ExcTrace.FrameCount <> 0 Then
+                    For Each Frame As StackFrame In ExcTrace.GetFrames
+                        If Not (Frame.GetFileName = "" And Frame.GetFileLineNumber = 0 And Frame.GetFileColumnNumber = 0) Then
+                            Dump.WriteLine(DoTranslation("> Frame {0}: File: {1} | Line: {2} | Column: {3}"), FrameNo, Frame.GetFileName, Frame.GetFileLineNumber, Frame.GetFileColumnNumber)
+                        End If
+                        FrameNo += 1
+                    Next
+                Else
+                    Dump.WriteLine(DoTranslation("> There are no information about frames."))
+                End If
             Catch ex As Exception
                 WStkTrc(ex)
                 Dump.WriteLine(DoTranslation("> There is an error when trying to get frame information. {0}: {1}"), ex.GetType.FullName, ex.Message.Replace(vbNewLine, " | "))
