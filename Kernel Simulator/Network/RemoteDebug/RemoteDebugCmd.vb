@@ -61,9 +61,13 @@ Module RemoteDebugCmd
                 Case "register"
                     'Register to remote debugger so we can set device name
                     If String.IsNullOrWhiteSpace(GetDeviceProperty(Address, DeviceProperty.Name)) Then
-                        SetDeviceProperty(Address, DeviceProperty.Name, CmdArgs(0))
-                        dbgConns(dbgConns.ElementAt(DebugDevices.GetIndexOfKey(DebugDevices.GetKeyFromValue(Address))).Key) = CmdArgs(0)
-                        SocketStreamWriter.WriteLine(DoTranslation("Hi, {0}!").FormatString(CmdArgs(0)))
+                        If CmdArgs.Count <> 0 Then
+                            SetDeviceProperty(Address, DeviceProperty.Name, CmdArgs(0))
+                            dbgConns(dbgConns.ElementAt(DebugDevices.GetIndexOfKey(DebugDevices.GetKeyFromValue(Address))).Key) = CmdArgs(0)
+                            SocketStreamWriter.WriteLine(DoTranslation("Hi, {0}!").FormatString(CmdArgs(0)))
+                        Else
+                            SocketStreamWriter.WriteLine(DoTranslation("You need to write your name."))
+                        End If
                     Else
                         SocketStreamWriter.WriteLine(DoTranslation("You're already registered."))
                     End If
