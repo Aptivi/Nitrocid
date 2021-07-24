@@ -165,8 +165,8 @@ Public Module KernelTools
                                DoTranslation("> HRESULT: {2}") + vbNewLine +
                                DoTranslation("> Source: {3}") + vbNewLine + vbNewLine +
                                DoTranslation("> Stack trace <") + vbNewLine + vbNewLine +
-                               Exc.StackTrace + vbNewLine + vbNewLine +
-                               DoTranslation(">> Inner exception {0} information <<"), Exc.GetType.FullName, Exc.Message, Exc.HResult, Exc.Source)
+                               Exc.StackTrace + vbNewLine + vbNewLine, Exc.GetType.FullName, Exc.Message, Exc.HResult, Exc.Source)
+                Dump.WriteLine(DoTranslation(">> Inner exception {0} information <<"), Count)
 
                 'Write info (Inner exceptions)
                 Dim InnerExc As Exception = Exc.InnerException
