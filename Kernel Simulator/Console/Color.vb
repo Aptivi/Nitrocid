@@ -66,9 +66,9 @@ Public Class Color
             ColorSpecifier = ColorSpecifier.Replace("""", "")
             Dim ColorSpecifierArray() As String = ColorSpecifier.Split(";")
             If ColorSpecifierArray.Length = 3 Then
-                PlainSequence = "{0};{1};{2}".FormatString(ColorSpecifierArray(0), ColorSpecifierArray(1), ColorSpecifierArray(2))
-                VTSequenceForeground = GetEsc() + "[38;2;{0}m".FormatString(PlainSequence)
-                VTSequenceBackground = GetEsc() + "[48;2;{0}m".FormatString(PlainSequence)
+                PlainSequence = $"{ColorSpecifierArray(0)};{ColorSpecifierArray(1)};{ColorSpecifierArray(2)}"
+                VTSequenceForeground = GetEsc() + $"[38;2;{PlainSequence}m"
+                VTSequenceBackground = GetEsc() + $"[48;2;{PlainSequence}m"
                 Type = ColorType.TrueColor
                 IsBright = ColorSpecifierArray(0) + 0.2126 + ColorSpecifierArray(1) + 0.7152 + ColorSpecifierArray(2) + 0.0722 > 255 / 2
                 R = ColorSpecifierArray(0)
@@ -79,8 +79,8 @@ Public Class Color
             ColorSpecifier = ColorSpecifier.Replace("""", "")
             Dim ColorsInfo As New ConsoleColorsInfo(ColorSpecifier)
             PlainSequence = ColorSpecifier
-            VTSequenceForeground = GetEsc() + "[38;5;{0}m".FormatString(ColorSpecifier)
-            VTSequenceBackground = GetEsc() + "[48;5;{0}m".FormatString(ColorSpecifier)
+            VTSequenceForeground = GetEsc() + $"[38;5;{PlainSequence}m"
+            VTSequenceBackground = GetEsc() + $"[48;5;{PlainSequence}m"
             Type = ColorType._255Color
             IsBright = ColorsInfo.IsBright
             R = ColorsInfo.R
@@ -557,21 +557,21 @@ Public Module ColorTools
 
                 'The red color level
                 W(vbNewLine + " <", False, If(CurrentRange = "R", ColTypes.Gray, ColTypes.Neutral))
-                WriteWhereC("R: {0}", (Console.CursorLeft + 30 - "R: {0}".FormatString(CurrentColorR).Length) / 2, Console.CursorTop, True, New Color("{0};0;0".FormatString(CurrentColorR)), CurrentColorR)
+                WriteWhereC("R: {0}", (Console.CursorLeft + 30 - $"R: {CurrentColorR}".Length) / 2, Console.CursorTop, True, New Color($"{CurrentColorR};0;0"), CurrentColorR)
                 WriteWhere(">" + vbNewLine, Console.CursorLeft + 27, Console.CursorTop, False, If(CurrentRange = "R", ColTypes.Gray, ColTypes.Neutral))
 
                 'The green color level
                 W(vbNewLine + " <", False, If(CurrentRange = "G", ColTypes.Gray, ColTypes.Neutral))
-                WriteWhereC("G: {0}", (Console.CursorLeft + 30 - "G: {0}".FormatString(CurrentColorG).Length) / 2, Console.CursorTop, True, New Color("0;{0};0".FormatString(CurrentColorG)), CurrentColorG)
+                WriteWhereC("G: {0}", (Console.CursorLeft + 30 - $"G: {CurrentColorG}".Length) / 2, Console.CursorTop, True, New Color($"0;{CurrentColorG};0"), CurrentColorG)
                 WriteWhere(">" + vbNewLine, Console.CursorLeft + 27, Console.CursorTop, False, If(CurrentRange = "G", ColTypes.Gray, ColTypes.Neutral))
 
                 'The blue color level
                 W(vbNewLine + " <", False, If(CurrentRange = "B", ColTypes.Gray, ColTypes.Neutral))
-                WriteWhereC("B: {0}", (Console.CursorLeft + 30 - "B: {0}".FormatString(CurrentColorB).Length) / 2, Console.CursorTop, True, New Color("0;0;{0}".FormatString(CurrentColorB)), CurrentColorB)
+                WriteWhereC("B: {0}", (Console.CursorLeft + 30 - $"B: {CurrentColorB}".Length) / 2, Console.CursorTop, True, New Color($"0;0;{CurrentColorB}"), CurrentColorB)
                 WriteWhere(">" + vbNewLine, Console.CursorLeft + 27, Console.CursorTop, False, If(CurrentRange = "B", ColTypes.Gray, ColTypes.Neutral))
 
                 'Show example
-                WriteC(vbNewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, New Color("{0};{1};{2}".FormatString(CurrentColorR, CurrentColorG, CurrentColorB)))
+                WriteC(vbNewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, New Color($"{CurrentColorR};{CurrentColorG};{CurrentColorB}"))
 
                 'Read and get response
                 Dim ConsoleResponse As ConsoleKeyInfo = Console.ReadKey(True)
@@ -707,7 +707,7 @@ Public Module ColorTools
         End While
 
         If TrueColor Then
-            Return "{0};{1};{2}".FormatString(CurrentColorR, CurrentColorG, CurrentColorB)
+            Return $"{CurrentColorR};{CurrentColorG};{CurrentColorB}"
         Else
             Return CurrentColor
         End If

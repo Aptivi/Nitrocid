@@ -588,7 +588,7 @@ Public Module Filesystem
             Dim LineNumber As Integer = 1
             For Each Str As String In Filebyte
                 If Str.Contains(StringLookup) Then
-                    Matches.Add("[{0}] ".FormatString(LineNumber) + DoTranslation("Match {0}: {1}").FormatString(MatchNum, Str))
+                    Matches.Add($"[{LineNumber}] " + DoTranslation("Match {0}: {1}").FormatString(MatchNum, Str))
                     MatchNum += 1
                 End If
                 LineNumber += 1
@@ -620,7 +620,7 @@ Public Module Filesystem
             Dim LineNumber As Integer = 1
             For Each Str As String In Filebyte
                 If StringLookup.IsMatch(Str) Then
-                    Matches.Add("[{0}] ".FormatString(LineNumber) + DoTranslation("Match {0}: {1}").FormatString(MatchNum, Str))
+                    Matches.Add($"[{LineNumber}] " + DoTranslation("Match {0}: {1}").FormatString(MatchNum, Str))
                     MatchNum += 1
                 End If
                 LineNumber += 1
