@@ -256,7 +256,7 @@ Public Module ScreensaverSettings
     ''' <summary>
     ''' [Typo] Possibility that the writer made a typo in percent
     ''' </summary>
-    Public TypoMissStrikePossibility As Integer = 60
+    Public TypoMissStrikePossibility As Integer = 20
     ''' <summary>
     ''' [Wipe] How many wipes needed to change direction?
     ''' </summary>
