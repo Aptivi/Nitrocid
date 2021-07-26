@@ -20,56 +20,56 @@ Imports System.IO
 
 Public Module RemoteDebugHelpSystem
 
-    'This dictionary is the definitions for commands.
-    Public RDebugDefinitions As Dictionary(Of String, String)
     Public RDebugModDefs As New Dictionary(Of String, String)
-
-    ''' <summary>
-    ''' Updates the help definition so it reflects the available commands
-    ''' </summary>
-    Public Sub InitRDebugHelp()
-        RDebugDefinitions = New Dictionary(Of String, String) From {{"trace", DoTranslation("Shows last stack trace on exception")},
-                                                                    {"username", DoTranslation("Shows current username in the session")},
-                                                                    {"register", DoTranslation("Sets device username")},
-                                                                    {"exit", DoTranslation("Disconnects you from the debugger")},
-                                                                    {"help", DoTranslation("Shows help screen")}}
-    End Sub
 
     ''' <summary>
     ''' Shows the help entry for command.
     ''' </summary>
     ''' <param name="command">Specified command</param>
     Public Sub RDebugShowHelp(ByVal command As String, ByVal DeviceStream As StreamWriter)
-
-        If command = "" Then
-            DeviceStream.WriteLine(DoTranslation("General commands:"))
-            For Each cmd As String In RDebugDefinitions.Keys
-                DeviceStream.WriteLine("- {0}: {1}", cmd, RDebugDefinitions(cmd))
-            Next
-            DeviceStream.WriteLine(vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.Neutral)
-            If RDebugModDefs.Count = 0 Then DeviceStream.WriteLine(DoTranslation("No mod commands."))
-            For Each cmd As String In RDebugModDefs.Keys
-                DeviceStream.WriteLine("- {0}: {1}", cmd, RDebugModDefs(cmd))
-            Next
-            DeviceStream.WriteLine(vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.Neutral)
-            If RemoteDebugAliases.Count = 0 Then DeviceStream.WriteLine(DoTranslation("No alias commands."))
-            For Each cmd As String In RemoteDebugAliases.Keys
-                DeviceStream.WriteLine("- {0}: {1}", cmd, RDebugDefinitions(RemoteDebugAliases(cmd)))
-            Next
-        ElseIf command = "help" Then
-            DeviceStream.WriteLine(DoTranslation("Usage:") + " /help [command]: " + RDebugDefinitions(command))
-        ElseIf command = "trace" Then
-            DeviceStream.WriteLine(DoTranslation("Usage:") + " /trace <tracenumber>: " + RDebugDefinitions(command))
-        ElseIf command = "username" Then
-            DeviceStream.WriteLine(DoTranslation("Usage:") + " /username: " + RDebugDefinitions(command))
-        ElseIf command = "register" Then
-            DeviceStream.WriteLine(DoTranslation("Usage:") + " /register <username>: " + RDebugDefinitions(command))
-        ElseIf command = "exit" Then
-            DeviceStream.WriteLine(DoTranslation("Usage:") + " /exit: " + RDebugDefinitions(command))
+        'Check to see if command exists
+        If Not String.IsNullOrWhiteSpace(command) And DebugCommands.ContainsKey(command) Then
+            Dim HelpDefinition As String = DebugCommands(command).GetTranslatedHelpEntry
+            Select Case command
+                Case "help"
+                    DeviceStream.WriteLine(DoTranslation("Usage:") + " /help [command]: " + HelpDefinition)
+                Case "trace"
+                    DeviceStream.WriteLine(DoTranslation("Usage:") + " /trace <tracenumber>: " + HelpDefinition)
+                Case "username"
+                    DeviceStream.WriteLine(DoTranslation("Usage:") + " /username: " + HelpDefinition)
+                Case "register"
+                    DeviceStream.WriteLine(DoTranslation("Usage:") + " /register <username>: " + HelpDefinition)
+                Case "exit"
+                    DeviceStream.WriteLine(DoTranslation("Usage:") + " /exit: " + HelpDefinition)
+            End Select
+        ElseIf String.IsNullOrWhiteSpace(command) Then
+            If simHelp = False Then
+                W(DoTranslation("General commands:"), True, ColTypes.Neutral)
+                For Each cmd As String In DebugCommands.Keys
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, DebugCommands(cmd).GetTranslatedHelpEntry)
+                Next
+                W(vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.Neutral)
+                If RDebugModDefs.Count = 0 Then W(DoTranslation("No mod commands."), True, ColTypes.Neutral)
+                For Each cmd As String In RDebugModDefs.Keys
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, RDebugModDefs(cmd))
+                Next
+                W(vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.Neutral)
+                If RemoteDebugAliases.Count = 0 Then W(DoTranslation("No alias commands."), True, ColTypes.Neutral)
+                For Each cmd As String In RemoteDebugAliases.Keys
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, DebugCommands(RemoteDebugAliases(cmd)).GetTranslatedHelpEntry)
+                Next
+            Else
+                For Each cmd As String In DebugCommands.Keys
+                    W("{0}, ", False, ColTypes.ListEntry, cmd)
+                Next
+                For Each cmd As String In RDebugModDefs.Keys
+                    W("{0}, ", False, ColTypes.ListEntry, cmd)
+                Next
+                W(String.Join(", ", RemoteDebugAliases.Keys), True, ColTypes.ListEntry)
+            End If
         Else
-            DeviceStream.WriteLine(DoTranslation("No help for command ""{0}""."), command)
+            W(DoTranslation("No help for command ""{0}""."), True, ColTypes.Error, command)
         End If
-
     End Sub
 
 End Module

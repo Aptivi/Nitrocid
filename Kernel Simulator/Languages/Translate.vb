@@ -246,15 +246,6 @@ CHOICE:
                 Wdbg("I", "Saved new language.")
 
                 'Update help list for translated help
-                InitHelp()
-                InitFTPHelp()
-                InitSFTPHelp()
-                IMAPInitHelp()
-                InitRDebugHelp()
-                InitTestHelp()
-                TextEdit_UpdateHelp()
-                ZipShell_UpdateHelp()
-                InitRSSHelp()
                 ReloadGenericDefs(OldModDescGeneric)
 
                 'Update Culture if applicable

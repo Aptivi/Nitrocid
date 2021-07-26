@@ -27,7 +27,7 @@ Public Class CommandInfo
     ''' </summary>
     Public ReadOnly Property Type As ShellCommandType
     ''' <summary>
-    ''' The help definition of command
+    ''' The untranslated help definition of command. Translated by <see cref="GetTranslatedHelpEntry()"/>
     ''' </summary>
     Public Property HelpDefinition As String
     ''' <summary>
@@ -84,6 +84,14 @@ Public Class CommandInfo
         Me.Obsolete = Obsolete
         Me.SettingVariable = SettingVariable
     End Sub
+
+    ''' <summary>
+    ''' Gets the translated version of help entry (KS built-in commands only)
+    ''' </summary>
+    ''' <returns></returns>
+    Public Function GetTranslatedHelpEntry()
+        Return DoTranslation(HelpDefinition)
+    End Function
 
 End Class
 

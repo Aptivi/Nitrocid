@@ -354,17 +354,6 @@ Public Module KernelTools
     ''' Initializes everything
     ''' </summary>
     Sub InitEverything(Args() As String)
-        'Initialize help
-        InitHelp()
-        InitFTPHelp()
-        InitSFTPHelp()
-        IMAPInitHelp()
-        InitRDebugHelp()
-        InitTestHelp()
-        TextEdit_UpdateHelp()
-        ZipShell_UpdateHelp()
-        InitRSSHelp()
-
         'Initialize aliases
         InitAliases()
 

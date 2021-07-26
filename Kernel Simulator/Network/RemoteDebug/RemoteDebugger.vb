@@ -90,7 +90,7 @@ Public Module RemoteDebugger
                     Else
                         dbgConns.Add(RDebugSWriter, RDebugName)
                         DebugDevices.Add(RDebugClient, RDebugIP)
-                        RDebugSWriter.WriteLine(DoTranslation(">> Remote Debug and Chat: version") + " 0.6.2") 'Increment each minor/major change(s)
+                        RDebugSWriter.WriteLine(DoTranslation(">> Remote Debug and Chat: version") + " 0.6.3") 'Increment each minor/major change(s)
                         RDebugSWriter.WriteLine(DoTranslation(">> Your address is {0}."), RDebugIP)
                         If String.IsNullOrEmpty(RDebugName) Then
                             RDebugSWriter.WriteLine(DoTranslation(">> Welcome! This is your first time entering remote debug and chat. Use ""/register <name>"" to register.") + " ", RDebugName)

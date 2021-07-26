@@ -18,42 +18,53 @@
 
 Public Module MailHelpSystem
 
-    'This dictionary is the definitions for commands.
-    Public MailDefinitions As Dictionary(Of String, String)
     Public MailModDefs As New Dictionary(Of String, String)
-
-    ''' <summary>
-    ''' Updates the definition dictionary to make it full of available commands.
-    ''' </summary>
-    Public Sub IMAPInitHelp()
-        MailDefinitions = New Dictionary(Of String, String) From {{"cd", DoTranslation("Changes current mail directory")},
-                                                                  {"exit", DoTranslation("Exits the IMAP shell")},
-                                                                  {"help", DoTranslation("List of commands")},
-                                                                  {"list", DoTranslation("Downloads messages and lists them")},
-                                                                  {"lsdirs", DoTranslation("Lists directories in your mail address")},
-                                                                  {"mkdir", DoTranslation("Makes a directory in the current working directory")},
-                                                                  {"mv", DoTranslation("Moves a message")},
-                                                                  {"mvall", DoTranslation("Moves all messages from recipient")},
-                                                                  {"read", DoTranslation("Opens a message")},
-                                                                  {"readenc", DoTranslation("Opens an encrypted message")},
-                                                                  {"ren", DoTranslation("Renames a folder")},
-                                                                  {"rm", DoTranslation("Removes a message")},
-                                                                  {"rmall", DoTranslation("Removes all messages from recipient")},
-                                                                  {"rmdir", DoTranslation("Removes a directory from the current working directory")},
-                                                                  {"send", DoTranslation("Sends a message to an address")},
-                                                                  {"sendenc", DoTranslation("Sends an encrypted message to an address")}}
-    End Sub
 
     ''' <summary>
     ''' Shows the help and usage for a specified command, or displays a list of commands when nothing is specified.
     ''' </summary>
     ''' <param name="command">A command</param>
     Public Sub IMAPShowHelp(Optional ByVal command As String = "")
-        If command = "" Then
+        'Check to see if command exists
+        If Not String.IsNullOrWhiteSpace(command) And MailCommands.ContainsKey(command) Then
+            Dim HelpDefinition As String = MailCommands(command).GetTranslatedHelpEntry
+            Select Case command
+                Case "cd"
+                    W(DoTranslation("Usage:") + " cd <folder>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "exit"
+                    W(DoTranslation("Usage:") + " exit: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "list"
+                    W(DoTranslation("Usage:") + " list [pagenum]: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "ls"
+                    W(DoTranslation("Usage:") + " lsdirs: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "mkdir"
+                    W(DoTranslation("Usage:") + " mkdir <foldername>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "mv"
+                    W(DoTranslation("Usage:") + " mv <mailid> <targetfolder>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "mvall"
+                    W(DoTranslation("Usage:") + " mvall <sendername> <targetfolder>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "read"
+                    W(DoTranslation("Usage:") + " read <mailid>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "readenc"
+                    W(DoTranslation("Usage:") + " readenc <mailid>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "ren"
+                    W(DoTranslation("Usage:") + " ren <oldfoldername> <newfoldername>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "rm"
+                    W(DoTranslation("Usage:") + " rm <mailid>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "rmall"
+                    W(DoTranslation("Usage:") + " rmall <sendername>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "rmdir"
+                    W(DoTranslation("Usage:") + " rmdir <foldername>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "send"
+                    W(DoTranslation("Usage:") + " send: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "sendenc"
+                    W(DoTranslation("Usage:") + " sendenc: " + HelpDefinition, True, ColTypes.Neutral)
+            End Select
+        ElseIf String.IsNullOrWhiteSpace(command) Then
             If simHelp = False Then
                 W(DoTranslation("General commands:"), True, ColTypes.Neutral)
-                For Each cmd As String In MailDefinitions.Keys
-                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, MailDefinitions(cmd))
+                For Each cmd As String In MailCommands.Keys
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, MailCommands(cmd).GetTranslatedHelpEntry)
                 Next
                 W(vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.Neutral)
                 If MailModDefs.Count = 0 Then W(DoTranslation("No mod commands."), True, ColTypes.Neutral)
@@ -63,7 +74,7 @@ Public Module MailHelpSystem
                 W(vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.Neutral)
                 If MailShellAliases.Count = 0 Then W(DoTranslation("No alias commands."), True, ColTypes.Neutral)
                 For Each cmd As String In MailShellAliases.Keys
-                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, MailDefinitions(MailShellAliases(cmd)))
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, MailCommands(MailShellAliases(cmd)).GetTranslatedHelpEntry)
                 Next
             Else
                 For Each cmd As String In MailCommands.Keys
@@ -74,36 +85,6 @@ Public Module MailHelpSystem
                 Next
                 W(String.Join(", ", MailShellAliases.Keys), True, ColTypes.ListEntry)
             End If
-        ElseIf command = "cd" Then
-            W(DoTranslation("Usage:") + " cd <folder>: " + MailDefinitions(command), True, ColTypes.Neutral)
-        ElseIf command = "exit" Then
-            W(DoTranslation("Usage:") + " exit: " + MailDefinitions(command), True, ColTypes.Neutral)
-        ElseIf command = "list" Then
-            W(DoTranslation("Usage:") + " list [pagenum]: " + MailDefinitions(command), True, ColTypes.Neutral)
-        ElseIf command = "ls" Then
-            W(DoTranslation("Usage:") + " lsdirs: " + MailDefinitions(command), True, ColTypes.Neutral)
-        ElseIf command = "mkdir" Then
-            W(DoTranslation("Usage:") + " mkdir <foldername>: " + MailDefinitions(command), True, ColTypes.Neutral)
-        ElseIf command = "mv" Then
-            W(DoTranslation("Usage:") + " mv <mailid> <targetfolder>: " + MailDefinitions(command), True, ColTypes.Neutral)
-        ElseIf command = "mvall" Then
-            W(DoTranslation("Usage:") + " mvall <sendername> <targetfolder>: " + MailDefinitions(command), True, ColTypes.Neutral)
-        ElseIf command = "read" Then
-            W(DoTranslation("Usage:") + " read <mailid>: " + MailDefinitions(command), True, ColTypes.Neutral)
-        ElseIf command = "readenc" Then
-            W(DoTranslation("Usage:") + " readenc <mailid>: " + MailDefinitions(command), True, ColTypes.Neutral)
-        ElseIf command = "ren" Then
-            W(DoTranslation("Usage:") + " ren <oldfoldername> <newfoldername>: " + MailDefinitions(command), True, ColTypes.Neutral)
-        ElseIf command = "rm" Then
-            W(DoTranslation("Usage:") + " rm <mailid>: " + MailDefinitions(command), True, ColTypes.Neutral)
-        ElseIf command = "rmall" Then
-            W(DoTranslation("Usage:") + " rmall <sendername>: " + MailDefinitions(command), True, ColTypes.Neutral)
-        ElseIf command = "rmdir" Then
-            W(DoTranslation("Usage:") + " rmdir <foldername>: " + MailDefinitions(command), True, ColTypes.Neutral)
-        ElseIf command = "send" Then
-            W(DoTranslation("Usage:") + " send: " + MailDefinitions(command), True, ColTypes.Neutral)
-        ElseIf command = "sendenc" Then
-            W(DoTranslation("Usage:") + " sendenc: " + MailDefinitions(command), True, ColTypes.Neutral)
         Else
             W(DoTranslation("No help for command ""{0}""."), True, ColTypes.Error, command)
         End If
