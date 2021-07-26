@@ -76,7 +76,7 @@ Public Module TextWriterWrappedColor
                 End If
 
                 'Format string as needed
-                Text = String.Format(Text, vars)
+                If Not vars.Length = 0 Then Text = String.Format(Text, vars)
 
                 OldTop = CursorTop
                 For Each TextChar As Char In Text.ToString.ToCharArray
@@ -121,7 +121,7 @@ Public Module TextWriterWrappedColor
                 Console.ForegroundColor = color
 
                 'Format string as needed
-                Text = String.Format(Text, vars)
+                If Not vars.Length = 0 Then Text = String.Format(Text, vars)
 
                 OldTop = CursorTop
                 For Each TextChar As Char In Text.ToString.ToCharArray
@@ -167,7 +167,7 @@ Public Module TextWriterWrappedColor
                 Console.ForegroundColor = ForegroundColor
 
                 'Format string as needed
-                Text = String.Format(Text, vars)
+                If Not vars.Length = 0 Then Text = String.Format(Text, vars)
 
                 OldTop = CursorTop
                 For Each TextChar As Char In Text.ToString.ToCharArray
@@ -214,7 +214,7 @@ Public Module TextWriterWrappedColor
                 End If
 
                 'Format string as needed
-                Text = String.Format(Text, vars)
+                If Not vars.Length = 0 Then Text = String.Format(Text, vars)
 
                 OldTop = CursorTop
                 For Each TextChar As Char In Text.ToString.ToCharArray
@@ -262,7 +262,7 @@ Public Module TextWriterWrappedColor
                 End If
 
                 'Format string as needed
-                Text = String.Format(Text, vars)
+                If Not vars.Length = 0 Then Text = String.Format(Text, vars)
 
                 OldTop = CursorTop
                 For Each TextChar As Char In Text.ToString.ToCharArray

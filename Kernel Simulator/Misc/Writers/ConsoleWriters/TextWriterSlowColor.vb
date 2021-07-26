@@ -33,7 +33,7 @@ Module TextWriterSlowColor
         SyncLock WriteLock
 #End If
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text slowly
             Dim chars As List(Of Char) = msg.ToCharArray.ToList
@@ -102,7 +102,7 @@ Module TextWriterSlowColor
             End If
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text slowly
             Dim chars As List(Of Char) = msg.ToCharArray.ToList
@@ -138,7 +138,7 @@ Module TextWriterSlowColor
             Console.ForegroundColor = color
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text slowly
             Dim chars As List(Of Char) = msg.ToCharArray.ToList
@@ -175,7 +175,7 @@ Module TextWriterSlowColor
             Console.ForegroundColor = ForegroundColor
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text slowly
             Dim chars As List(Of Char) = msg.ToCharArray.ToList
@@ -213,7 +213,7 @@ Module TextWriterSlowColor
             End If
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text slowly
             Dim chars As List(Of Char) = msg.ToCharArray.ToList
@@ -252,7 +252,7 @@ Module TextWriterSlowColor
             End If
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text slowly
             Dim chars As List(Of Char) = msg.ToCharArray.ToList

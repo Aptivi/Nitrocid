@@ -76,7 +76,22 @@ Public Module TextWriterColor
                     SetConsoleColor(New Color(BackgroundColor), True)
                 End If
 
-                If Line Then WriteLine(Text, vars) Else Write(Text, vars)
+                'Write the text to console
+                If Line Then
+                    If Not vars.Length = 0 Then
+                        WriteLine(Text, vars)
+                    Else
+                        WriteLine(Text)
+                    End If
+                Else
+                    If Not vars.Length = 0 Then
+                        Write(Text, vars)
+                    Else
+                        Write(Text)
+                    End If
+                End If
+
+                'Reset the colors
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
                 If colorType = ColTypes.Input And ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
@@ -106,7 +121,22 @@ Public Module TextWriterColor
                 Console.BackgroundColor = If(New Color(BackgroundColor).PlainSequence.IsNumeric AndAlso BackgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor), ConsoleColor.Black)
                 Console.ForegroundColor = color
 
-                If Line Then WriteLine(Text, vars) Else Write(Text, vars)
+                'Write the text to console
+                If Line Then
+                    If Not vars.Length = 0 Then
+                        WriteLine(Text, vars)
+                    Else
+                        WriteLine(Text)
+                    End If
+                Else
+                    If Not vars.Length = 0 Then
+                        Write(Text, vars)
+                    Else
+                        Write(Text)
+                    End If
+                End If
+
+                'Reset the colors
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
                 If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
@@ -137,7 +167,22 @@ Public Module TextWriterColor
                 Console.BackgroundColor = BackgroundColor
                 Console.ForegroundColor = ForegroundColor
 
-                If Line Then WriteLine(Text, vars) Else Write(Text, vars)
+                'Write the text to console
+                If Line Then
+                    If Not vars.Length = 0 Then
+                        WriteLine(Text, vars)
+                    Else
+                        WriteLine(Text)
+                    End If
+                Else
+                    If Not vars.Length = 0 Then
+                        Write(Text, vars)
+                    Else
+                        Write(Text)
+                    End If
+                End If
+
+                'Reset the colors
                 If BackgroundColor = ConsoleColor.Black Then ResetColor()
                 If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
@@ -169,7 +214,22 @@ Public Module TextWriterColor
                     SetConsoleColor(New Color(BackgroundColor), True)
                 End If
 
-                If Line Then WriteLine(Text, vars) Else Write(Text, vars)
+                'Write the text to console
+                If Line Then
+                    If Not vars.Length = 0 Then
+                        WriteLine(Text, vars)
+                    Else
+                        WriteLine(Text)
+                    End If
+                Else
+                    If Not vars.Length = 0 Then
+                        Write(Text, vars)
+                    Else
+                        Write(Text)
+                    End If
+                End If
+
+                'Reset the colors
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
                 If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
@@ -202,7 +262,22 @@ Public Module TextWriterColor
                     SetConsoleColor(BackgroundColor, True)
                 End If
 
-                If Line Then WriteLine(Text, vars) Else Write(Text, vars)
+                'Write the text to console
+                If Line Then
+                    If Not vars.Length = 0 Then
+                        WriteLine(Text, vars)
+                    Else
+                        WriteLine(Text)
+                    End If
+                Else
+                    If Not vars.Length = 0 Then
+                        Write(Text, vars)
+                    Else
+                        Write(Text)
+                    End If
+                End If
+
+                'Reset the colors
                 If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then ResetColor()
                 If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()

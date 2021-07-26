@@ -77,7 +77,7 @@ Module TextWriterWhereSlowColor
             End If
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text in another place slowly
             Dim OldLeft As Integer = CursorLeft
@@ -120,7 +120,7 @@ Module TextWriterWhereSlowColor
             Console.ForegroundColor = color
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text in another place
             Dim OldLeft As Integer = CursorLeft
@@ -164,7 +164,7 @@ Module TextWriterWhereSlowColor
             Console.ForegroundColor = ForegroundColor
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text in another place
             Dim OldLeft As Integer = CursorLeft
@@ -209,7 +209,7 @@ Module TextWriterWhereSlowColor
             End If
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text in another place
             Dim OldLeft As Integer = CursorLeft
@@ -255,7 +255,7 @@ Module TextWriterWhereSlowColor
             End If
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text in another place
             Dim OldLeft As Integer = CursorLeft

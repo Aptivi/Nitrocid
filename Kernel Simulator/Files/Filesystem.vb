@@ -225,6 +225,7 @@ Public Module Filesystem
     ''' </summary>
     ''' <param name="Path">Target path, be it a file or a folder</param>
     ''' <returns>Absolute path</returns>
+    ''' <exception cref="FileNotFoundException"></exception>
     Public Function NeutralizePath(ByVal Path As String, Optional ByVal Strict As Boolean = False) As String
 #If NTFSCorruptionFix Then
         ThrowOnInvalidPath(Path)
@@ -263,6 +264,7 @@ Public Module Filesystem
     ''' <param name="Path">Target path, be it a file or a folder</param>
     ''' <param name="Source">Source path in which the target is found. Must be a directory</param>
     ''' <returns>Absolute path</returns>
+    ''' <exception cref="FileNotFoundException"></exception>
     Public Function NeutralizePath(ByVal Path As String, ByVal Source As String, Optional ByVal Strict As Boolean = False) As String
 #If NTFSCorruptionFix Then
         ThrowOnInvalidPath(Path)

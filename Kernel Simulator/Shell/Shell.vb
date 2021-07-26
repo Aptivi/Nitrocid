@@ -80,6 +80,7 @@ Public Module Shell
                                                                              {"help", New CommandInfo("help", ShellCommandType.Shell, DoTranslation("Help page"), False, 0)},
                                                                              {"hwinfo", New CommandInfo("hwinfo", ShellCommandType.Shell, DoTranslation("Prints hardware information"), True, 1, False, True)},
                                                                              {"input", New CommandInfo("input", ShellCommandType.Shell, DoTranslation("Allows user to enter input"), True, 2, False, False, False, False, True)},
+                                                                             {"jsonbeautify", New CommandInfo("jsonbeautify", ShellCommandType.Shell, DoTranslation("Beautifies the JSON file"), True, 1, False, True)},
                                                                              {"list", New CommandInfo("list", ShellCommandType.Shell, DoTranslation("List file/folder contents in current folder"), False, 0, False, True)},
                                                                              {"lockscreen", New CommandInfo("lockscreen", ShellCommandType.Shell, DoTranslation("Locks your screen with a password"), False, 0)},
                                                                              {"logout", New CommandInfo("logout", ShellCommandType.Shell, DoTranslation("Logs you out"), False, 0, False, False, True)},

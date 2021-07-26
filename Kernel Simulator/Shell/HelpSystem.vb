@@ -28,6 +28,7 @@ Public Module HelpSystem
     ''' Updates the shell help dictionary to reflect the available commands
     ''' </summary>
     Public Sub InitHelp()
+        'TODO: Use CommandInfo for displaying definitions.
         definitions = New Dictionary(Of String, String) From {{"adduser", DoTranslation("Adds users")},
                                                               {"alias", DoTranslation("Adds aliases to commands")},
                                                               {"arginj", DoTranslation("Injects arguments to the kernel (reboot required)")},
@@ -60,6 +61,7 @@ Public Module HelpSystem
                                                               {"help", DoTranslation("Help page")},
                                                               {"hwinfo", DoTranslation("Prints hardware information")},
                                                               {"input", DoTranslation("Allows user to enter input")},
+                                                              {"jsonbeautify", DoTranslation("Beautifies the JSON file")},
                                                               {"list", DoTranslation("List file/folder contents in current folder")},
                                                               {"lockscreen", DoTranslation("Locks your screen with a password")},
                                                               {"logout", DoTranslation("Logs you out")},
@@ -292,10 +294,13 @@ Public Module HelpSystem
 
             W(DoTranslation("Usage:") + " input <$variable> <question>: " + definitions(command), True, ColTypes.Neutral)
 
+        ElseIf command = "jsonbeautify" Then
+
+            W(DoTranslation("Usage:") + " jsonbeautify <jsonfile>: " + definitions(command), True, ColTypes.Neutral)
+
         ElseIf command = "list" Then
 
-            W(DoTranslation("Usage:") + " list [oneDirectory]: " + definitions(command) + vbNewLine +
-              "       list: " + DoTranslation("to get current directory."), True, ColTypes.Neutral)
+            W(DoTranslation("Usage:") + " list [oneDirectory]: " + definitions(command), True, ColTypes.Neutral)
 
         ElseIf command = "loteresp" Then
 

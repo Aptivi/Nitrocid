@@ -544,6 +544,17 @@ Public Module GetCommand
                         PromptInput(strArgs.Replace(eqargs(0) + " ", ""), eqargs(0))
                     End If
 
+                Case "jsonbeautify"
+
+                    If RequiredArgumentsProvided Then
+                        Dim JsonFile As String = NeutralizePath(eqargs(0))
+                        If File.Exists(JsonFile) Then
+                            W(BeautifyJson(JsonFile), True, ColTypes.Neutral)
+                        Else
+                            W(DoTranslation("File {0} not found."), True, ColTypes.Error, JsonFile)
+                        End If
+                    End If
+
                 Case "lockscreen"
 
                     LockScreen()
