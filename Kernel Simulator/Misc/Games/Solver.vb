@@ -29,7 +29,7 @@ Module Solver
         W(DoTranslation("Press CTRL+C to exit."), True, ColTypes.Neutral)
         Wdbg("I", "Initialized expressions.")
         While True
-            RandomExpression = CStr(RandomDriver.Next(1000)) + Operations.ElementAt(RandomDriver.Next(Operations.Count)) + CStr(RandomDriver.Next(1000))
+            RandomExpression = CStr(RandomDriver.Next(1000)) + Operations.ElementAt(RandomDriver.Next(Operations.Length)) + CStr(RandomDriver.Next(1000))
             Wdbg("I", "Expression to be solved: {0}", RandomExpression)
             W(RandomExpression, True, ColTypes.Input)
             UserEvaluated = ReadLineNoInput("")

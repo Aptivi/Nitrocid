@@ -87,7 +87,7 @@ Module TestGetCommand
                         Dim Line As Boolean = eqargs(1)
                         Dim Vars As Object() = eqargs(2).Split(";")
                         Dim Text As String = eqargs(3)
-                        For i As Integer = 0 To Vars.Count - 1
+                        For i As Integer = 0 To Vars.Length - 1
                             Vars(i) = Evaluate(Vars(i)).ToString
                         Next
                         W(Text, Line, Color, Vars)
@@ -99,7 +99,7 @@ Module TestGetCommand
                 Case "printdf"
                     If RequiredArgumentsProvided Then
                         Dim Vars As Object() = eqargs(0).Split(";")
-                        For i As Integer = 0 To Vars.Count - 1
+                        For i As Integer = 0 To Vars.Length - 1
                             Vars(i) = Evaluate(Vars(i)).ToString
                         Next
                         Wdbg("I", eqargs(1), Vars)
@@ -111,7 +111,7 @@ Module TestGetCommand
                 Case "printsepf"
                     If RequiredArgumentsProvided Then
                         Dim Vars As Object() = eqargs(0).Split(";")
-                        For i As Integer = 0 To Vars.Count - 1
+                        For i As Integer = 0 To Vars.Length - 1
                             Vars(i) = Evaluate(Vars(i)).ToString
                         Next
                         WriteSeparator(eqargs(1), True, ColTypes.Neutral, Vars)
@@ -123,7 +123,7 @@ Module TestGetCommand
                 Case "printsepcolorf"
                     If RequiredArgumentsProvided Then
                         Dim Vars As Object() = eqargs(1).Split(";")
-                        For i As Integer = 0 To Vars.Count - 1
+                        For i As Integer = 0 To Vars.Length - 1
                             Vars(i) = Evaluate(Vars(i)).ToString
                         Next
                         WriteSeparatorC(eqargs(2), True, New Color(eqargs(0)), Vars)

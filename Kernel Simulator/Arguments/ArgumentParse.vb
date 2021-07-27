@@ -32,7 +32,7 @@ Module ArgumentParse
             For i As Integer = 0 To EnteredArguments.Count - 1
                 Dim indexArg As Integer = EnteredArguments(i).IndexOf(" ")
                 If indexArg = -1 Then
-                    indexArg = EnteredArguments(i).Count
+                    indexArg = EnteredArguments(i).Length
                     EnteredArguments(i) = EnteredArguments(i).Substring(0, indexArg)
                 End If
                 If AvailableArgs.Contains(EnteredArguments(i).Substring(0, indexArg)) Then

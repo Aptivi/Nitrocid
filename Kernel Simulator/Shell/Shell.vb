@@ -305,7 +305,7 @@ Public Module Shell
                     Dim indexCmd As Integer = strcommand.IndexOf(" ")
                     Dim cmdArgs As String = strcommand 'Command with args
                     Wdbg("I", "Prototype indexCmd and strcommand: {0}, {1}", indexCmd, strcommand)
-                    If indexCmd = -1 Then indexCmd = strcommand.Count
+                    If indexCmd = -1 Then indexCmd = strcommand.Length
                     strcommand = strcommand.Substring(0, indexCmd)
                     Wdbg("I", "Finished indexCmd and strcommand: {0}, {1}", indexCmd, strcommand)
 

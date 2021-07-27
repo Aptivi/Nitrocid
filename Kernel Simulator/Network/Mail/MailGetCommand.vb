@@ -76,7 +76,7 @@ Module MailGetCommand
                         MailChangeDirectory(eqargs(0))
                     End If
                 Case "list"
-                    If eqargs?.Count > 0 Then
+                    If eqargs?.Length > 0 Then
                         Wdbg("I", "Page is numeric? {0}", eqargs(0).IsNumeric)
                         If eqargs(0).IsNumeric Then
                             W(MailListMessages(eqargs(0)), False, ColTypes.Neutral)
@@ -241,7 +241,7 @@ Module MailGetCommand
 
             If MailCommands(words(0)).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Error, words(0))
-                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", words(0), eqargs?.Count)
+                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", words(0), eqargs?.Length)
                 IMAPShowHelp(words(0))
             End If
         Catch taex As ThreadAbortException

@@ -44,7 +44,7 @@ Public Module TimeDate
                 End If
             End If
             Thread.Sleep(1000)
-            If oldWid <> 0 Then WriteWhere(StrDup(TimeString.Length, " "), oldWid, oldTop, True, ColTypes.Neutral)
+            If oldWid <> 0 Then WriteWhere(" ".Repeat(TimeString.Length), oldWid, oldTop, True, ColTypes.Neutral)
         Loop
     End Sub
 

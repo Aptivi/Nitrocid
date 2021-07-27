@@ -111,7 +111,7 @@ Module Converter
             'Read FTP speed dial addresses from old file
             W("  - Reading FTP speed dial addresses from ftp_speeddial.csv...", True, ColTypes.Neutral)
             Dim SpeedDialLines As String() = File.ReadAllLines(ListOfBackups("FTPSpeedDial"))
-            W("  - {0} addresses found.", True, ColTypes.Neutral, SpeedDialLines.Count)
+            W("  - {0} addresses found.", True, ColTypes.Neutral, SpeedDialLines.Length)
 
             'Add addresses to new format
             For Each SpeedDialLine As String In SpeedDialLines
@@ -135,7 +135,7 @@ Module Converter
             'Read all users from old file
             W("  - Reading users from users.csv...", True, ColTypes.Neutral)
             Dim UsersLines As String() = File.ReadAllLines(ListOfBackups("Users"))
-            W("  - {0} users found.", True, ColTypes.Neutral, UsersLines.Count)
+            W("  - {0} users found.", True, ColTypes.Neutral, UsersLines.Length)
 
             'Add users to new format
             For Each UsersLine As String In UsersLines
@@ -163,7 +163,7 @@ Module Converter
             'Read all aliases from old file
             W("  - Reading users from aliases.csv...", True, ColTypes.Neutral)
             Dim AliasesLines As String() = File.ReadAllLines(ListOfBackups("Aliases"))
-            W("  - {0} aliases found.", True, ColTypes.Neutral, AliasesLines.Count)
+            W("  - {0} aliases found.", True, ColTypes.Neutral, AliasesLines.Length)
 
             'Add aliases to new format
             For Each AliasLine As String In AliasesLines

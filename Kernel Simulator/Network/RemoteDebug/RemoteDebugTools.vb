@@ -72,7 +72,7 @@ Public Module RemoteDebugTools
     Public Function AddToBlockList(ByVal IP As String) As Boolean
         Try
             Dim BlockedDevices() As String = ListDevices()
-            Wdbg("I", "Devices count: {0}", BlockedDevices.Count)
+            Wdbg("I", "Devices count: {0}", BlockedDevices.Length)
             If BlockedDevices.Contains(IP) And Not GetDeviceProperty(IP, DeviceProperty.Blocked) Then
                 Wdbg("I", "Device {0} will be blocked...", IP)
                 DisconnectDbgDev(IP)
@@ -105,7 +105,7 @@ Public Module RemoteDebugTools
     Public Function RemoveFromBlockList(ByVal IP As String) As Boolean
         Try
             Dim BlockedDevices() As String = ListDevices()
-            Wdbg("I", "Devices count: {0}", BlockedDevices.Count)
+            Wdbg("I", "Devices count: {0}", BlockedDevices.Length)
             If BlockedDevices.Contains(IP) Then
                 Wdbg("I", "Device {0} found.", IP)
                 RDebugBlocked.Remove(IP)
@@ -128,7 +128,7 @@ Public Module RemoteDebugTools
     Function PopulateBlockedDevices() As Boolean
         Try
             Dim BlockEntries() As String = ListDevices()
-            Wdbg("I", "Devices count: {0}", BlockEntries.Count)
+            Wdbg("I", "Devices count: {0}", BlockEntries.Length)
             For Each BlockEntry As String In BlockEntries
                 If GetDeviceProperty(BlockEntry, DeviceProperty.Blocked) Then AddToBlockList(BlockEntry)
             Next

@@ -71,7 +71,7 @@ Module TypoDisplay
                             Loop
 
                             'Select a random character that is a typo from the selected strike index
-                            Dim RandomStrikeIndex As Integer = RandomDriver.Next(0, StrikesString.Count - 1)
+                            Dim RandomStrikeIndex As Integer = RandomDriver.Next(0, StrikesString.Length - 1)
                             Dim MistypedChar As Char = StrikesString(RandomStrikeIndex)
                             If "`-=\][';/.,".Contains(MistypedChar) And CappedStrike Then
                                 'The mistyped character is a symbol and the strike is capped. Select a symbol from CapStrikes.

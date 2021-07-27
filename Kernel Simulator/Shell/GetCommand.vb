@@ -503,7 +503,7 @@ Public Module GetCommand
                                 If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
                                     If Not URL.StartsWith(" ") Then
                                         Dim Credentials As NetworkCredential
-                                        If eqargs.Count > 1 Then 'Username specified
+                                        If eqargs.Length > 1 Then 'Username specified
                                             Credentials = New NetworkCredential With {
                                                 .UserName = eqargs(1)
                                             }
@@ -716,7 +716,7 @@ Public Module GetCommand
                                 If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
                                     If Not URL.StartsWith(" ") Then
                                         Dim Credentials As NetworkCredential
-                                        If eqargs.Count > 2 Then 'Username specified
+                                        If eqargs.Length > 2 Then 'Username specified
                                             Credentials = New NetworkCredential With {
                                                 .UserName = eqargs(2)
                                             }
