@@ -24,7 +24,7 @@ Public Module SeparatorColor
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
     ''' <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
     ''' <param name="ColTypes">A type of colors that will be changed.</param>
-    ''' <param name="Vars">Endless amounts of any variables that are separated by commas.</param>
+    ''' <param name="Vars">Variables to format the message before it's written.</param>
     Public Sub WriteSeparator(ByVal Text As String, ByVal PrintSuffix As Boolean, ByVal ColTypes As ColTypes, ParamArray Vars() As Object)
         'Print the suffix and the text
         If Not String.IsNullOrWhiteSpace(Text) Then
@@ -55,7 +55,7 @@ Public Module SeparatorColor
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
     ''' <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
     ''' <param name="Color">A color that will be changed to.</param>
-    ''' <param name="Vars">Endless amounts of any variables that are separated by commas.</param>
+    ''' <param name="Vars">Variables to format the message before it's written.</param>
     Public Sub WriteSeparatorC16(ByVal Text As String, ByVal PrintSuffix As Boolean, ByVal Color As ConsoleColor, ParamArray Vars() As Object)
         'Print the suffix and the text
         If Not String.IsNullOrWhiteSpace(Text) Then
@@ -87,7 +87,7 @@ Public Module SeparatorColor
     ''' <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    ''' <param name="Vars">Endless amounts of any variables that are separated by commas.</param>
+    ''' <param name="Vars">Variables to format the message before it's written.</param>
     Public Sub WriteSeparatorC16(ByVal Text As String, ByVal PrintSuffix As Boolean, ByVal ForegroundColor As ConsoleColor, ByVal BackgroundColor As ConsoleColor, ParamArray Vars() As Object)
         'Print the suffix and the text
         If Not String.IsNullOrWhiteSpace(Text) Then
@@ -118,7 +118,7 @@ Public Module SeparatorColor
     ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
     ''' <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
     ''' <param name="Color">A color that will be changed to.</param>
-    ''' <param name="Vars">Endless amounts of any variables that are separated by commas.</param>
+    ''' <param name="Vars">Variables to format the message before it's written.</param>
     Public Sub WriteSeparatorC(ByVal Text As String, ByVal PrintSuffix As Boolean, ByVal Color As Color, ParamArray Vars() As Object)
         'Print the suffix and the text
         If Not String.IsNullOrWhiteSpace(Text) Then
@@ -150,7 +150,7 @@ Public Module SeparatorColor
     ''' <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    ''' <param name="Vars">Endless amounts of any variables that are separated by commas.</param>
+    ''' <param name="Vars">Variables to format the message before it's written.</param>
     Public Sub WriteSeparatorC(ByVal Text As String, ByVal PrintSuffix As Boolean, ByVal ForegroundColor As Color, ByVal BackgroundColor As Color, ParamArray Vars() As Object)
         'Print the suffix and the text
         If Not String.IsNullOrWhiteSpace(Text) Then

@@ -28,7 +28,7 @@ Public Module DebugWriters
     ''' Outputs the text into the debugger file, and sets the time stamp.
     ''' </summary>
     ''' <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub Wdbg(ByVal Level As Char, ByVal text As String, ByVal ParamArray vars() As Object)
         If DebugMode Then
             'Open debugging stream
@@ -98,7 +98,7 @@ Public Module DebugWriters
     ''' Outputs the text into the debugger devices, and sets the time stamp. Note that it doesn't print where did the debugger debug in source files.
     ''' </summary>
     ''' <param name="text">A sentence that will be written to the the debugger devices. Supports {0}, {1}, ...</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub WdbgDevicesOnly(ByVal Level As Char, ByVal text As String, ByVal ParamArray vars() As Object)
         If DebugMode Then
             Dim OffendingIndex As New List(Of String)
