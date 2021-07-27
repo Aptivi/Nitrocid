@@ -20,6 +20,10 @@ Public Module TextEditHelpSystem
 
     Public TextEdit_ModHelpEntries As New Dictionary(Of String, String)
 
+    ''' <summary>
+    ''' Shows the list of commands.
+    ''' </summary>
+    ''' <param name="command">Specified command</param>
     Public Sub TextEdit_GetHelp(Optional ByVal Command As String = "")
         'Check to see if command exists
         If Not String.IsNullOrWhiteSpace(Command) And TextEdit_Commands.ContainsKey(Command) Then
