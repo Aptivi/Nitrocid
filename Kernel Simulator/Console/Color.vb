@@ -74,6 +74,8 @@ Public Class Color
                 R = ColorSpecifierArray(0)
                 G = ColorSpecifierArray(1)
                 B = ColorSpecifierArray(2)
+            Else
+                Throw New Exceptions.ColorException(DoTranslation("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows:") + " <R>;<G>;<B>")
             End If
         ElseIf IsNumeric(ColorSpecifier) Then
             ColorSpecifier = ColorSpecifier.Replace("""", "")
