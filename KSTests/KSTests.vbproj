@@ -111,7 +111,6 @@
     <Compile Include="Network\RemoteDebugManagementTests.vb" />
     <Compile Include="Network\SpeedDialManagementTests.vb" />
     <Compile Include="Shell\AliasManagementTests.vb" />
-    <Compile Include="Shell\HelpInitializationTests.vb" />
     <Compile Include="Shell\AliasInitializationTests.vb" />
     <Compile Include="TimeDate\TimeInitializationTests.vb" />
     <Compile Include="Kernel\KernelMiscTests.vb" />
