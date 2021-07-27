@@ -172,7 +172,8 @@
     <Compile Include="Languages\Translate.vb" />
     <Compile Include="Login\PermissionManagement.vb" />
     <Compile Include="Misc\Beautifiers\JsonBeautifier.vb" />
-    <Compile Include="Misc\Configuration\ConfigTool\ToolPrompts.vb" />
+    <Compile Include="Misc\Configuration\ConfigTools.vb" />
+    <Compile Include="Misc\Configuration\SettingsApp.vb" />
     <Compile Include="Misc\Encryption\Encryption.vb" />
     <Compile Include="Misc\Encryption\HashVerifier.vb" />
     <Compile Include="Misc\FieldManager.vb" />

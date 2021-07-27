@@ -88,6 +88,7 @@
     <Compile Include="Misc\PlaceholderActionTests.vb" />
     <Compile Include="Misc\TextEditorInitializationTests.vb" />
     <Compile Include="Misc\StringEvaluatorActionTests.vb" />
+    <Compile Include="Misc\ConfigManagementTests.vb" />
     <Compile Include="Shell\UESHVariableTests.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

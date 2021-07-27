@@ -168,9 +168,9 @@ Public Module Screensaver
     Public Sub SetDefaultScreensaver(ByVal saver As String)
         If ScrnSvrdb.ContainsKey(saver) Or CSvrdb.ContainsKey(saver) Then
             Wdbg("I", "{0} is found. Setting it to default...", saver)
-            ConfigToken("Screensaver")("Screensaver") = saver
-            File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
             defSaverName = saver
+            Dim Token As JToken = GetConfigCategory(ConfigCategory.Screensaver)
+            SetConfigValueAndWrite(ConfigCategory.Screensaver, Token, "Screensaver", saver)
         Else
             Wdbg("W", "{0} is not found.", saver)
             Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found in database. Check the name and try again."), saver)

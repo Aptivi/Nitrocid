@@ -19,7 +19,7 @@
 Imports System.Globalization
 Imports System.Reflection
 
-Public Module ToolPrompts
+Public Module SettingsApp
 
     ''' <summary>
     ''' Key type for settings entry

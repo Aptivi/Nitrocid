@@ -19,6 +19,7 @@
 Imports System.IO
 Imports System.Runtime.CompilerServices
 Imports System.Text.RegularExpressions
+Imports Newtonsoft.Json.Linq
 
 Public Module Filesystem
 
@@ -407,12 +408,12 @@ Public Module Filesystem
     Public Function SetSizeParseMode(ByVal Enable As Boolean) As Boolean
         Try
             FullParseMode = Enable
-            ConfigToken("Misc")("Size parse mode") = FullParseMode
-            File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
+            Dim Token As JToken = GetConfigCategory(ConfigCategory.Filesystem)
+            SetConfigValueAndWrite(ConfigCategory.Filesystem, Token, "Size parse mode", FullParseMode)
             Return True
         Catch ex As Exception
-            Throw New IOException(DoTranslation("Error when trying to set parse mode. Check the value and try again. If this is correct, see the stack trace when kernel debugging is enabled.") + " " + ex.Message)
             WStkTrc(ex)
+            Throw New IOException(DoTranslation("Error when trying to set parse mode. Check the value and try again. If this is correct, see the stack trace when kernel debugging is enabled.") + " " + ex.Message, ex)
         End Try
         Return False
     End Function
@@ -852,8 +853,8 @@ Public Module Filesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function SaveCurrDir() As Boolean
         Try
-            ConfigToken("Shell")("Current Directory") = CurrDir
-            File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
+            Dim Token As JToken = GetConfigCategory(ConfigCategory.Shell)
+            SetConfigValueAndWrite(ConfigCategory.Shell, Token, "Current Directory", CurrDir)
             Return True
         Catch ex As Exception
             WStkTrc(ex)
