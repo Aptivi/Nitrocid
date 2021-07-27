@@ -246,9 +246,9 @@ Public Module Filesystem
             End If
         End If
 
-        'If strict, checks for existence of file
+        'If strict, checks for existence of file or directory
         If Strict Then
-            If File.Exists(Path) Then
+            If File.Exists(Path) Or Directory.Exists(Path) Then
                 Return Path
             Else
                 Throw New FileNotFoundException(DoTranslation("Neutralized a non-existent path.") + " {0}".FormatString(Path))
@@ -289,7 +289,7 @@ Public Module Filesystem
 
         'If strict, checks for existence of file
         If Strict Then
-            If File.Exists(Path) Then
+            If File.Exists(Path) Or Directory.Exists(Path) Then
                 Return Path
             Else
                 Throw New FileNotFoundException(DoTranslation("Neutralized a non-existent path.") + " {0}".FormatString(Path))
