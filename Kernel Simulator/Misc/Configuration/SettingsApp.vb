@@ -921,12 +921,12 @@ Public Module SettingsApp
                         Case 4 'Disco: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(DiscoDelay)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > Disco >" + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Disco > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
                         Case 5 'Disco: Use Beats Per Second
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(DiscoUseBeatsPerMinute)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > Disco >" + DoTranslation("Use Beats Per Minute") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Disco > " + DoTranslation("Use Beats Per Minute") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("Whether to use the Beats Per Minute unit to write the next color."), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Disco > ???" + vbNewLine, True, ColTypes.Neutral)
