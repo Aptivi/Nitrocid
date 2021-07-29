@@ -26,21 +26,38 @@ Imports Newtonsoft.Json.Linq
 
 Public Module Screensaver
 
-    'Variables
+    'Public Variables
     Public LockMode As Boolean = False
     Public InSaver As Boolean = False
     Public defSaverName As String = "matrix"
-    Public ScrnSvrdb As New Dictionary(Of String, BackgroundWorker) From {{"colorMix", ColorMix}, {"matrix", Matrix}, {"glitterMatrix", GlitterMatrix}, {"disco", Disco},
-                                                                          {"lines", Lines}, {"glitterColor", GlitterColor}, {"aptErrorSim", AptErrorSim}, {"hackUserFromAD", HackUserFromAD},
-                                                                          {"bouncingText", BouncingText}, {"dissolve", Dissolve}, {"bouncingBlock", BouncingBlock}, {"progressClock", ProgressClock},
-                                                                          {"lighter", Lighter}, {"fader", Fader}, {"typo", Typo}, {"wipe", Wipe}, {"marquee", Marquee}, {"plain", Plain},
-                                                                          {"faderBack", FaderBack}}
     Public CSvrdb As New Dictionary(Of String, ICustomSaver)
     Public WithEvents Timeout As New BackgroundWorker
     Public finalSaver As ICustomSaver
-    Public colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())        '15 Console Colors
-    Public colors255() As ConsoleColors = CType([Enum].GetValues(GetType(ConsoleColors)), ConsoleColors())  '255 Console Colors
     Public CustomSaverSettingsToken As JObject
+    Public ReadOnly colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())        '15 Console Colors
+    Public ReadOnly colors255() As ConsoleColors = CType([Enum].GetValues(GetType(ConsoleColors)), ConsoleColors())  '255 Console Colors
+    Public ReadOnly ScrnSvrdb As New Dictionary(Of String, BackgroundWorker) From {{"aptErrorSim", AptErrorSim},
+                                                                                   {"beatFader", BeatFader},
+                                                                                   {"bouncingBlock", BouncingBlock},
+                                                                                   {"bouncingText", BouncingText},
+                                                                                   {"colorMix", ColorMix},
+                                                                                   {"disco", Disco},
+                                                                                   {"dissolve", Dissolve},
+                                                                                   {"fader", Fader},
+                                                                                   {"faderBack", FaderBack},
+                                                                                   {"glitterColor", GlitterColor},
+                                                                                   {"glitterMatrix", GlitterMatrix},
+                                                                                   {"hackUserFromAD", HackUserFromAD},
+                                                                                   {"lighter", Lighter},
+                                                                                   {"lines", Lines},
+                                                                                   {"marquee", Marquee},
+                                                                                   {"matrix", Matrix},
+                                                                                   {"plain", Plain},
+                                                                                   {"progressClock", ProgressClock},
+                                                                                   {"typo", Typo},
+                                                                                   {"wipe", Wipe}}
+
+    'Private variables
     Friend SaverAutoReset As New AutoResetEvent(False)
     Private execCustomSaver As CompilerResults
     Private DoneFlag As Boolean = False

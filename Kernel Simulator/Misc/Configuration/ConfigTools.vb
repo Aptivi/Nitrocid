@@ -52,7 +52,7 @@ Public Module ConfigTools
             FixesNeeded = True
         End If
         If ConfigToken("Screensaver") IsNot Nothing Then
-            If ConfigToken("Screensaver").Count <> 18 + 2 Then 'Screensavers + Keys
+            If ConfigToken("Screensaver").Count <> 19 + 2 Then 'Screensavers + Keys
                 Wdbg("W", "Missing sections and/or keys in Screensaver. Config fix needed set to true.")
                 FixesNeeded = True
             End If
@@ -183,6 +183,12 @@ Public Module ConfigTools
             If ConfigToken("Screensaver")("FaderBack") IsNot Nothing Then
                 If ConfigToken("Screensaver")("FaderBack").Count <> 3 Then
                     Wdbg("W", "Missing keys in Screensaver > FaderBack. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("BeatFader") IsNot Nothing Then
+                If ConfigToken("Screensaver")("BeatFader").Count <> 6 Then
+                    Wdbg("W", "Missing keys in Screensaver > BeatFader. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If

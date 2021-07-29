@@ -296,6 +296,17 @@ Public Module Config
             }
             ScreensaverConfig.Add("FaderBack", FaderBackConfig)
 
+            'BeatFader config json object
+            Dim BeatFaderConfig As New JObject From {
+                    {"Activate 255 Color Mode", BeatFader255Colors},
+                    {"Activate True Color Mode", BeatFaderTrueColor},
+                    {"Delay in Beats Per Minute", BeatFaderDelay},
+                    {"Cycle Colors", BeatFaderCycleColors},
+                    {"Beat Color", BeatFaderBeatColor},
+                    {"Max Fade Steps", BeatFaderMaxSteps}
+            }
+            ScreensaverConfig.Add("BeatFader", BeatFaderConfig)
+
             'Typo config json object
             Dim TypoConfig As New JObject From {
                     {"Delay in Milliseconds", TypoDelay},
@@ -487,6 +498,7 @@ Public Module Config
             Lighter255Colors = If(ConfigToken("Screensaver")?("Lighter")?("Activate 255 Color Mode"), False)
             Wipe255Colors = If(ConfigToken("Screensaver")?("Wipe")?("Activate 255 Color Mode"), False)
             Marquee255Colors = If(ConfigToken("Screensaver")?("Marquee")?("Activate 255 Color Mode"), False)
+            BeatFader255Colors = If(ConfigToken("Screensaver")?("BeatFader")?("Activate 255 Color Mode"), False)
             ColorMixTrueColor = If(ConfigToken("Screensaver")?("ColorMix")?("Activate True Color Mode"), True)
             DiscoTrueColor = If(ConfigToken("Screensaver")?("Disco")?("Activate True Color Mode"), True)
             GlitterColorTrueColor = If(ConfigToken("Screensaver")?("GlitterColor")?("Activate True Color Mode"), True)
@@ -498,7 +510,10 @@ Public Module Config
             LighterTrueColor = If(ConfigToken("Screensaver")?("Lighter")?("Activate True Color Mode"), True)
             WipeTrueColor = If(ConfigToken("Screensaver")?("Wipe")?("Activate True Color Mode"), True)
             MarqueeTrueColor = If(ConfigToken("Screensaver")?("Marquee")?("Activate True Color Mode"), True)
+            BeatFaderTrueColor = If(ConfigToken("Screensaver")?("BeatFader")?("Activate True Color Mode"), True)
             DiscoCycleColors = If(ConfigToken("Screensaver")?("Disco")?("Cycle Colors"), False)
+            BeatFaderCycleColors = If(ConfigToken("Screensaver")?("BeatFader")?("Cycle Colors"), True)
+            BeatFaderBeatColor = If(ConfigToken("Screensaver")?("BeatFader")?("Beat Color"), 17)
             ProgressClockCycleColors = If(ConfigToken("Screensaver")?("ProgressClock")?("Cycle Colors"), True)
             ProgressClockSecondsProgressColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Color of Seconds Bar"), 4)
             ProgressClockMinutesProgressColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Color of Minutes Bar"), 5)
@@ -526,6 +541,7 @@ Public Module Config
             TypoWriteAgainDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Write Again Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Typo")?("Write Again Delay in Milliseconds"), 3000)
             WipeDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Wipe")?("Delay in Milliseconds"), 10)
             MarqueeDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Marquee")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Marquee")?("Delay in Milliseconds"), 10)
+            BeatFaderDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatFader")?("Delay in Beats Per Minute"), 0), ConfigToken("Screensaver")?("BeatFader")?("Delay in Beats Per Minute"), 120)
 
             'Screensaver: Texts
             BouncingTextWrite = If(ConfigToken("Screensaver")?("BouncingText")?("Text Shown"), "Kernel Simulator")
@@ -544,6 +560,7 @@ Public Module Config
             MarqueeAlwaysCentered = If(ConfigToken("Screensaver")?("Marquee")?("Always Centered"), True)
             MarqueeUseConsoleAPI = If(ConfigToken("Screensaver")?("Marquee")?("Use Console API"), False)
             DiscoUseBeatsPerMinute = If(ConfigToken("Screensaver")?("Disco")?("Use Beats Per Minute"), False)
+            BeatFaderMaxSteps = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatFader")?("Max Fade Steps"), 0), ConfigToken("Screensaver")?("BeatFader")?("Max Fade Steps"), 25)
 
             'Misc Section
             Wdbg("I", "Parsing misc section...")

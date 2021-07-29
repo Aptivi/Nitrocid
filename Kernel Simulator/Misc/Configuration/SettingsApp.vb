@@ -111,7 +111,7 @@ Public Module SettingsApp
         Dim SectionFinished As Boolean
         Dim AnswerString As String
         Dim AnswerInt As Integer
-        Dim BuiltinSavers As Integer = 18
+        Dim BuiltinSavers As Integer = 19
 
         'Section-specific variables
         Dim ConfigurableScreensavers As New List(Of String)
@@ -235,6 +235,7 @@ Public Module SettingsApp
                     W("16) AptErrorSim...", True, ColTypes.Option)
                     W("17) Marquee...", True, ColTypes.Option)
                     W("18) FaderBack...", True, ColTypes.Option)
+                    W("19) BeatFader...", True, ColTypes.Option)
 
                     'Populate custom screensavers
                     For Each CustomSaver As String In CSvrdb.Keys
@@ -381,6 +382,16 @@ Public Module SettingsApp
                     W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderBackDelay)))
                     W("2) " + DoTranslation("Fade Out Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderBackFadeOutDelay)))
                     W("3) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderBackMaxSteps)))
+                Case "7.19" 'Screensaver > BeatFader
+                    MaxOptions = 6
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " BeatFader." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFader255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderTrueColor)))
+                    W("3) " + DoTranslation("Delay in Beats Per Minute") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderDelay)))
+                    W("4) " + DoTranslation("Cycle colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderCycleColors)))
+                    W("5) " + DoTranslation("Beat Color") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderBeatColor)))
+                    W("6) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderMaxSteps)))
                 Case "7." + $"{If(SectionParameters.Length <> 0, SectionParameters(0), $"{BuiltinSavers + 1}")}" 'Screensaver > a custom saver
                     Dim SaverIndex As Integer = SectionParameters(0) - BuiltinSavers - 1
                     Dim Configurables As List(Of String) = SectionParameters(1)
@@ -484,7 +495,7 @@ Public Module SettingsApp
         Dim TargetList As IEnumerable(Of Object)
         Dim SelectFrom As IEnumerable(Of Object)
         Dim NeutralizePaths As Boolean
-        Dim BuiltinSavers As Integer = 17
+        Dim BuiltinSavers As Integer = 19
 
         While Not KeyFinished
             Console.Clear()
@@ -1274,6 +1285,42 @@ Public Module SettingsApp
                             W("*) " + DoTranslation("How many fade steps to do?"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > FaderBack > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
+                    End Select
+                Case "7.19" 'BeatFader
+                    Select Case KeyNumber
+                        Case 1 'BeatFader: Activate 255 colors
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(BeatFader255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates 255 color support for BeatFader."), True, ColTypes.Neutral)
+                        Case 2 'BeatFader: Activate true colors
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(BeatFaderTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates true color support for BeatFader."), True, ColTypes.Neutral)
+                        Case 3 'BeatFader: Delay in Beats Per Minute
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BeatFaderDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Delay in Beats Per Minute") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many beats per minute to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 4 'BeatFader: Cycle colors
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(BeatFaderCycleColors)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Cycle colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("BeatFader will select random colors if it's enabled. Otherwise, use colors from config."), True, ColTypes.Neutral)
+                        Case 5 'BeatFader: Beat Color
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(BeatFaderBeatColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Beat Color") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("The color of a beat. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
+                        Case 6 'BeatFader: Max Fade Steps
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BeatFaderMaxSteps)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Max Fade Steps") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many fade steps to do?"), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
                 Case "7." + $"{If(SectionParts.Length > 1, SectionParts(1), $"{BuiltinSavers + 1}")}" 'Custom saver
