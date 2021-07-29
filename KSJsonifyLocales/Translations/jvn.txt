@@ -747,10 +747,6 @@ Werna Informasi
 Kelet kanggo ngganti warna
 Ngaktifake dhukungan warna 255 kanggo ProgressClock.
 Ngaktifake dhukungan warna sejati kanggo ProgressClock.
-Werna garis kemajuan detik. Bisa dadi 1-16, 1-255, utawa "1-255;1-255;1-255".
-Werna garis kemajuan menit. Bisa dadi 1-16, 1-255, utawa "1-255;1-255;1-255".
-Werna garis kemajuan jam. Bisa dadi 1-16, 1-255, utawa "1-255;1-255;1-255".
-Werna informasi tanggal. Bisa dadi 1-16, 1-255, utawa "1-255;1-255;1-255".
 Yen muter warna kanthi warna, pira centhang sadurunge ngganti warna ing ProgressClock? 1 tandhane = 0,5 detik
 ProgressClock bakal milih warna acak yen diaktifake. Yen ora, gunakake warna saka config.
 Nggawe tema anyar

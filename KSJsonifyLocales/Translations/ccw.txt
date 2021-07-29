@@ -747,10 +747,6 @@ Mtundu wa Zambiri
 Nkhupakupa kusintha mtundu
 Imathandizira kuthandizira kwamitundu 255 kwa ProgressClock.
 Imathandizira kuthandizira kwamtundu weniweni kwa ProgressClock.
-Mtundu wa masekondi opita patsogolo. Itha kukhala 1-16, 1-255, kapena "1-255;1-255;1-255".
-Mtundu wa mphindi yopita patsogolo. Itha kukhala 1-16, 1-255, kapena "1-255;1-255;1-255".
-Mtundu wa bar yopita patsogolo. Itha kukhala 1-16, 1-255, kapena "1-255;1-255;1-255".
-Mtundu wazidziwitso zatsiku. Itha kukhala 1-16, 1-255, kapena "1-255;1-255;1-255".
 Ngati kupalasa njinga ndikotheka, ndi nkhupakupa zingati musanasinthe mitundu mu ProgressClock? Chongani chimodzi = masekondi 0.5
 ProgressClock idzasankha mitundu yosasintha ngati ikuthandizidwa. Apo ayi, gwiritsani ntchito mitundu kuchokera ku config.
 Amapanga mutu watsopano

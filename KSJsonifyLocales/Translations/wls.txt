@@ -747,10 +747,6 @@ Lliw Gwybodaeth
 Trogod i newid lliw
 Yn actifadu cefnogaeth lliw 255 ar gyfer ProgressClock.
 Yn actifadu gwir gefnogaeth lliw ar gyfer ProgressClock.
-Mae lliw eiliadau bar cynnydd. Gall fod yn 1-16, 1-255, neu "1-255;1-255;1-255".
-Mae lliw munudau cynnydd bar. Gall fod yn 1-16, 1-255, neu "1-255;1-255;1-255".
-Lliw cynnydd bar oriau. Gall fod yn 1-16, 1-255, neu "1-255;1-255;1-255".
-Lliw gwybodaeth dyddiad. Gall fod yn 1-16, 1-255, neu "1-255;1-255;1-255".
 Os yw beicio lliw wedi'i alluogi, faint o diciau cyn newid lliwiau yn ProgressClock? 1 tic = 0.5 eiliad
 Bydd ProgressClock yn dewis lliwiau ar hap os yw wedi'i alluogi. Fel arall, defnyddiwch liwiau o config.
 Yn gwneud thema newydd

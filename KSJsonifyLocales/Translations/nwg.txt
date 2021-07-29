@@ -747,10 +747,6 @@ Informasjonens farge
 Flått for å skifte farge
 Aktiverer 255 fargestøtte for ProgressClock.
 Aktiverer ekte fargestøtte for ProgressClock.
-Fargen på sekunders fremdriftslinje. Det kan være 1-16, 1-255 eller "1-255;1-255;1-255".
-Fargen på minutts fremdriftslinje. Det kan være 1-16, 1-255 eller "1-255;1-255;1-255".
-Fargen på timens fremdriftslinje. Det kan være 1-16, 1-255 eller "1-255;1-255;1-255".
-Fargen på datoinformasjon. Det kan være 1-16, 1-255 eller "1-255;1-255;1-255".
 Hvis fargesykling er aktivert, hvor mange flått før du skifter farger i ProgressClock? 1 kryss = 0,5 sekunder
 ProgressClock velger tilfeldige farger hvis den er aktivert. Bruk ellers farger fra config.
 Lag et nytt tema

@@ -747,10 +747,6 @@ Cor da Informação
 Carrapatos para mudar de cor
 Ativa o suporte de 255 cores para ProgressClock.
 Ativa o suporte true color para ProgressClock.
-A cor da barra de progresso dos segundos. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
-A cor da barra de progresso dos minutos. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
-A cor da barra de progresso de horas. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
-A cor das informações de data. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
 Se o ciclo de cores estiver ativado, quantos tiques antes de alterar as cores no ProgressClock? 1 tick = 0,5 segundos
 ProgressClock selecionará cores aleatórias se estiver habilitado. Caso contrário, use as cores da configuração.
 Cria um novo tema

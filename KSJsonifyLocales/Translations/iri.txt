@@ -747,10 +747,6 @@ Dath na Faisnéise
 Sceartáin chun dath a athrú
 Gníomhaíonn 255 tacaíocht dathanna do ProgressClock.
 Gníomhaíonn sé fíor-thacaíocht dathanna do ProgressClock.
-Dath dul chun cinn barra dul chun cinn. Is féidir é a bheith 1-16, 1-255, nó "1-255;1-255;1-255".
-Dath barra nóiméad dul chun cinn. Is féidir é a bheith 1-16, 1-255, nó "1-255;1-255;1-255".
-Barra dul chun cinn dath na n-uaireanta. Is féidir é a bheith 1-16, 1-255, nó "1-255;1-255;1-255".
-Dath na faisnéise dáta. Is féidir é a bheith 1-16, 1-255, nó "1-255;1-255;1-255".
 Má tá rothaíocht dathanna cumasaithe, cé mhéad sceartán sula n-athraíonn tú dathanna i ProgressClock? 1 tic = 0.5 soicind
 Roghnóidh ProgressClock dathanna randamacha má tá sé cumasaithe. Seachas sin, bain úsáid as dathanna ón gcumraíocht.
 Téama nua a dhéanamh

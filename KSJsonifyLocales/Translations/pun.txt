@@ -747,10 +747,6 @@ jāṇakārī dā raga
 raga badalaṇa dī kōśiśa karadā hai
 prōgaisakalāka la'ī 255 raga sahā'itā nū saragarama karadā hai.
 Prōgraisakalāka la'ī sahī raga sahā'itā nū saragarama karadā hai.
-Sakiṭāṁ dī tarakī bāra dā raga. Iha 1-16, 1-255, jāṁ"1-255;1-255;1-255" hō sakadā hai.
-Miṭāṁ dī tarakī bāra dā raga. Iha 1-16, 1-255, jāṁ"1-255;1-255;1-255" hō sakadā hai.
-Ghaṭi'āṁ dī tarakī paṭī dā raga. Iha 1-16, 1-255, jāṁ"1-255;1-255;1-255" hō sakadā hai.
-Tārīkha dī jāṇakārī dā raga. Iha 1-16, 1-255, jāṁ"1-255;1-255;1-255" hō sakadā hai.
 Jē raga sā'īkaliga samarathita hai, tāṁ prōgraisakauka vica raga badalaṇa tōṁ pahilāṁ kinē ṭika? 1 Ṭika = 0.5 Sakiṭa
 prōgraisakalāka bētaratībē ragāṁ dī cōṇa karēgī jē iha samarathita hai. Nahīṁ tāṁ, saracanā tōṁ raga varatōṁ.
 Ika navāṁ thīma baṇā'undā hai

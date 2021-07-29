@@ -1066,25 +1066,25 @@ Public Module SettingsApp
                             W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Cycle colors") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("ProgressClock will select random colors if it's enabled. Otherwise, use colors from config."), True, ColTypes.Neutral)
                         Case 4 'ProgressClock: Color of Seconds Bar
-                            KeyType = SettingsKeyType.SString
+                            KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(ProgressClockSecondsProgressColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Color of Seconds Bar") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("The color of seconds progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(ProgressClockSecondsProgressColor).Type = ColorType.TrueColor, If(New Color(ProgressClockSecondsProgressColor).Type = ColorType._255Color, New Color(ProgressClockSecondsProgressColor).PlainSequence, ConsoleColors.DarkBlue), New Color(ProgressClockSecondsProgressColor).R, New Color(ProgressClockSecondsProgressColor).G, New Color(ProgressClockSecondsProgressColor).B)
                         Case 5 'ProgressClock: Color of Minutes Bar
-                            KeyType = SettingsKeyType.SString
+                            KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(ProgressClockMinutesProgressColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Color of Minutes Bar") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("The color of minutes progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(ProgressClockMinutesProgressColor).Type = ColorType.TrueColor, If(New Color(ProgressClockMinutesProgressColor).Type = ColorType._255Color, New Color(ProgressClockMinutesProgressColor).PlainSequence, ConsoleColors.DarkMagenta), New Color(ProgressClockMinutesProgressColor).R, New Color(ProgressClockMinutesProgressColor).G, New Color(ProgressClockMinutesProgressColor).B)
                         Case 6 'ProgressClock: Color of Hours Bar
-                            KeyType = SettingsKeyType.SString
+                            KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(ProgressClockHoursProgressColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Color of Hours Bar") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("The color of hours progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(ProgressClockHoursProgressColor).Type = ColorType.TrueColor, If(New Color(ProgressClockHoursProgressColor).Type = ColorType._255Color, New Color(ProgressClockHoursProgressColor).PlainSequence, ConsoleColors.DarkCyan), New Color(ProgressClockHoursProgressColor).R, New Color(ProgressClockHoursProgressColor).G, New Color(ProgressClockHoursProgressColor).B)
                         Case 7 'ProgressClock: Color of Information
-                            KeyType = SettingsKeyType.SString
+                            KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(ProgressClockProgressColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Color of Information") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("The color of date information. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(ProgressClockProgressColor).Type = ColorType.TrueColor, If(New Color(ProgressClockProgressColor).Type = ColorType._255Color, New Color(ProgressClockProgressColor).PlainSequence, ConsoleColors.Gray), New Color(ProgressClockProgressColor).R, New Color(ProgressClockProgressColor).G, New Color(ProgressClockProgressColor).B)
                         Case 8 'ProgressClock: Ticks to change color
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(ProgressClockCycleColorsTicks)
@@ -1310,10 +1310,10 @@ Public Module SettingsApp
                             W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Cycle colors") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("BeatFader will select random colors if it's enabled. Otherwise, use colors from config."), True, ColTypes.Neutral)
                         Case 5 'BeatFader: Beat Color
-                            KeyType = SettingsKeyType.SString
+                            KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(BeatFaderBeatColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Beat Color") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("The color of a beat. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(BeatFaderBeatColor).Type = ColorType.TrueColor, If(New Color(BeatFaderBeatColor).Type = ColorType._255Color, New Color(BeatFaderBeatColor).PlainSequence, ConsoleColors.NavyBlue), New Color(BeatFaderBeatColor).R, New Color(BeatFaderBeatColor).G, New Color(BeatFaderBeatColor).B)
                         Case 6 'BeatFader: Max Fade Steps
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(BeatFaderMaxSteps)

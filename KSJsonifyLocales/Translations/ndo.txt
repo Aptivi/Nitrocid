@@ -747,10 +747,6 @@ Warna Informasi
 Centang untuk mengubah warna
 Mengaktifkan 255 dukungan warna untuk ProgressClock.
 Mengaktifkan dukungan warna sebenarnya untuk ProgressClock.
-Warna bilah kemajuan detik. Itu bisa 1-16, 1-255, atau "1-255;1-255;1-255".
-Warna bilah kemajuan menit. Itu bisa 1-16, 1-255, atau "1-255;1-255;1-255".
-Warna bilah kemajuan jam. Itu bisa 1-16, 1-255, atau "1-255;1-255;1-255".
-Warna informasi tanggal. Itu bisa 1-16, 1-255, atau "1-255;1-255;1-255".
 Jika siklus warna diaktifkan, berapa banyak centang sebelum mengubah warna di ProgressClock? 1 centang = 0,5 detik
 ProgressClock akan memilih warna acak jika diaktifkan. Jika tidak, gunakan warna dari config.
 Membuat tema baru

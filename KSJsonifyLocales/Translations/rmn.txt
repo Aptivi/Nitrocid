@@ -747,10 +747,6 @@ Culoarea informațiilor
 Bifează pentru a schimba culoarea
 Activează suportul de 255 culori pentru ProgressClock.
 Activează suportul de culoare adevărată pentru ProgressClock.
-Culoarea barei de progres secunde. Poate fi 1-16, 1-255 sau „1-255;1-255;1-255”.
-Bara de progres a culorii minutelor. Poate fi 1-16, 1-255 sau „1-255;1-255;1-255”.
-Bara de progres a culorii orelor. Poate fi 1-16, 1-255 sau „1-255;1-255;1-255”.
-Culoarea informațiilor despre dată. Poate fi 1-16, 1-255 sau „1-255;1-255;1-255”.
 Dacă ciclarea culorilor este activată, câte bifuri înainte de a schimba culorile în ProgressClock? 1 bifă = 0,5 secunde
 ProgressClock va selecta culorile aleatorii dacă este activat. În caz contrar, utilizați culori din config.
 Creează o nouă temă

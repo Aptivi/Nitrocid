@@ -747,10 +747,6 @@ Color de Information
 Ticks ut color mutatio
 CCLV operatur color ProgressClock subsidium.
 Cuiusconceptionem sequitur verum est color ProgressClock subsidium.
-Quod color seconds of progressio talea. Potest esse 1-16, 1-255, seu «1-255, 1-255, 1-255".
-Quod color progredi talea of ​​minutes. Potest esse 1-16, 1-255, seu «1-255, 1-255, 1-255".
-Quod color horas progredi talea. Potest esse 1-16, 1-255, seu «1-255, 1-255, 1-255".
-Quod color in diem notitia. Potest esse 1-16, 1-255, seu «1-255, 1-255, 1-255".
 Quod si revolutio color est enabled, quot prius trahens in ProgressClock ticks? I ricinum = 0,5 seconds
 ProgressClock eligere in coloribus temere si suus 'enabled. Alioquin ex coloribus uti aboutconfig.
 Facit Melkorem novo melo

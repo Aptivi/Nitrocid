@@ -747,10 +747,6 @@ Farba informácií
 Kliešte na zmenu farby
 Aktivuje podporu 255 farieb pre ProgressClock.
 Aktivuje podporu skutočných farieb pre ProgressClock.
-Farba ukazovateľa priebehu sekúnd. Môže to byť 1 - 16, 1 - 255 alebo „1 - 255; 1 - 255; 1 - 255".
-Farba ukazovateľa priebehu minút. Môže to byť 1 - 16, 1 - 255 alebo „1 - 255; 1 - 255; 1 - 255".
-Farba ukazovateľa priebehu hodín. Môže to byť 1 - 16, 1 - 255 alebo „1 - 255; 1 - 255; 1 - 255".
-Farba informácií o dátume. Môže to byť 1 - 16, 1 - 255 alebo „1 - 255; 1 - 255; 1 - 255".
 Ak je povolené cyklovanie farieb, koľko zaškrtne pred zmenou farieb v ProgressClock? 1 zaškrtnutie = 0,5 sekundy
 Ak je to povolené, ProgressClock vyberie náhodné farby. V opačnom prípade použite farby z konfigurácie.
 Vytvorí novú tému

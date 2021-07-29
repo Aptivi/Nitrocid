@@ -747,10 +747,6 @@ Farbe der Informationen
 Zecken, um die Farbe zu ändern
 Aktiviert die Unterstützung von 255 Farben für ProgressClock.
 Aktiviert die True-Color-Unterstützung für ProgressClock.
-Die Farbe des Sekundenfortschrittsbalkens. Es kann 1-16, 1-255 oder "1-255;1-255;1-255" sein.
-Die Farbe des Minutenfortschrittsbalkens. Es kann 1-16, 1-255 oder "1-255;1-255;1-255" sein.
-Die Farbe des Stundenfortschrittsbalkens. Es kann 1-16, 1-255 oder "1-255;1-255;1-255" sein.
-Die Farbe der Datumsinformationen. Es kann 1-16, 1-255 oder "1-255;1-255;1-255" sein.
 Wenn der Farbwechsel aktiviert ist, wie viele Ticks, bevor die Farben in ProgressClock geändert werden? 1 Tick = 0,5 Sekunden
 ProgressClock wählt zufällige Farben aus, wenn es aktiviert ist. Verwenden Sie andernfalls Farben aus config.
 Macht ein neues Thema

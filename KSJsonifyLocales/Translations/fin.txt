@@ -747,10 +747,6 @@ Tietojen väri
 Punkit vaihtaa väriä
 Aktivoi 255 väritukea ProgressClockille.
 Aktivoi todellisen värituen ProgressClockille.
-Sekuntien etenemispalkin väri. Se voi olla 1-16, 1-255 tai "1-255;1-255;1-255".
-Minuuttien etenemispalkin väri. Se voi olla 1-16, 1-255 tai "1-255;1-255;1-255".
-Tunnin edistymispalkin väri. Se voi olla 1-16, 1-255 tai "1-255;1-255;1-255".
-Päivämäärätietojen väri. Se voi olla 1-16, 1-255 tai "1-255;1-255;1-255".
 Jos väripyöräily on käytössä, kuinka monta punkkia ennen kuin vaihdat värejä ProgressClockissa? 1 rasti = 0,5 sekuntia
 ProgressClock valitsee satunnaiset värit, jos se on käytössä. Muussa tapauksessa käytä kokoonpanon värejä.
 Tekee uuden teeman

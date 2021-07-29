@@ -747,10 +747,6 @@ Color de la informació
 Marques per canviar de color
 Activa el suport de 255 colors per a ProgressClock.
 Activa el suport del color real per a ProgressClock.
-La barra de progrés del color dels segons. Pot ser 1-16, 1-255 o "1-255;1-255;1-255".
-Barra de progrés del color dels minuts. Pot ser 1-16, 1-255 o "1-255;1-255;1-255".
-Barra de progrés del color de les hores. Pot ser 1-16, 1-255 o "1-255;1-255;1-255".
-El color de la informació de la data. Pot ser 1-16, 1-255 o "1-255;1-255;1-255".
 Si la funció de ciclisme de colors està habilitada, quantes marques abans de canviar els colors a ProgressClock? 1 tick = 0,5 segons
 ProgressClock seleccionarà colors aleatoris si està activat. En cas contrari, utilitzeu colors de config.
 Crea un tema nou

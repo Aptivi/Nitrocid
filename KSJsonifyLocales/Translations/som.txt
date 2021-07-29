@@ -747,10 +747,6 @@ Midabka Macluumaadka
 Shilinta si aad u bedesho midabka
 Waxay kicisaa taageerada midabka 255 ee loogu talagalay ProgressClock.
 Dhaqaajiyaa taageerada midabka runta ah ee ProgressClock.
-Midabka ilbiriqsiyada horumarka. Waxay noqon kartaa 1-16, 1-255, ama "1-255;1-255;1-255".
-Midabka daqiiqadaha horumarka. Waxay noqon kartaa 1-16, 1-255, ama "1-255;1-255;1-255".
-Midabka saacadaha horumarka. Waxay noqon kartaa 1-16, 1-255, ama "1-255;1-255;1-255".
-Midabka macluumaadka taariikhda. Waxay noqon kartaa 1-16, 1-255, ama "1-255;1-255;1-255".
 Haddii midabka baaskiil wadista la hawlgeliyo, immisa shilina ka hor intaanad midabbada ka beddelanin ProgressClock? 1 sax = 0.5 ilbiriqsi
 ProgressClock waxay dooran doontaa midabyo aan kala sooc lahayn haddii ay karti yeelato. Haddii kale, u isticmaal midabyada isku xidhka.
 Ka dhigaysa mawduuc cusub

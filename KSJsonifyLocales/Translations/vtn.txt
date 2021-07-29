@@ -747,10 +747,6 @@ Màu sắc của thông tin
 Bọ ve để thay đổi màu sắc
 Kích hoạt hỗ trợ 255 màu cho ProgressClock.
 Kích hoạt hỗ trợ màu sắc trung thực cho ProgressClock.
-Màu của thanh tiến trình giây. Nó có thể là 1-16, 1-255 hoặc "1-255;1-255;1-255".
-Màu của thanh tiến trình phút. Nó có thể là 1-16, 1-255 hoặc "1-255;1-255;1-255".
-Màu của thanh tiến trình giờ. Nó có thể là 1-16, 1-255 hoặc "1-255;1-255;1-255".
-Màu của thông tin ngày tháng. Nó có thể là 1-16, 1-255 hoặc "1-255;1-255;1-255".
 Nếu tính năng xoay vòng màu được bật, có bao nhiêu tích tắc trước khi thay đổi màu sắc trong ProgressClock? 1 tích tắc = 0,5 giây
 ProgressClock sẽ chọn các màu ngẫu nhiên nếu nó được bật. Nếu không, hãy sử dụng màu từ cấu hình.
 Tạo chủ đề mới

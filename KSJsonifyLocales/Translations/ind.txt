@@ -747,10 +747,6 @@ soochana ka rang
 rang badalane ke lie tiks
 progresaklok ke lie 255 rang samarthan sakriy karata hai.
 progresaklok ke lie sahee rang samarthan sakriy karata hai.
-sekand pragati pattee ka rang. yah 1-16, 1-255, ya "1-255;1-255;1-255" ho sakata hai.
-minat pragati pattee ka rang. yah 1-16, 1-255, ya "1-255;1-255;1-255" ho sakata hai.
-ghante pragati pattee ka rang. yah 1-16, 1-255, ya "1-255;1-255;1-255" ho sakata hai.
-taareekh kee jaanakaaree ka rang. yah 1-16, 1-255, ya "1-255;1-255;1-255" ho sakata hai.
 yadi kalar saikaling saksham hai, to progresaklok mein rang badalane se pahale kitane tik honge? 1 tik = 0.5 sekand
 progresaklok saksham hone par yaadrchchhik rangon ka chayan karega. anyatha, chonfig se rangon ka upayog karen.
 ek naya vishay banaata hai

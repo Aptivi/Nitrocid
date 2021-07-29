@@ -747,10 +747,6 @@ jeongbo saegsang
 saegsang-eul byeongyeonghaneun nungeum
 ProgressClocke daehan 255 saegsang jiwon-eul hwalseonghwahabnida.
 ProgressClocke daehan teulu keolleo jiwon-eul hwalseonghwahabnida.
-cho jinhaenglyul pyosi jul-ui saegsang-ibnida. 1-16, 1-255 ttoneun "1-255;1-255;1-255"il su issseubnida.
-bun jinhaenglyul pyosi jul-ui saegsang-ibnida. 1-16, 1-255 ttoneun "1-255;1-255;1-255"il su issseubnida.
-sigan jinhaenglyul pyosi jul-ui saegsang-ibnida. 1-16, 1-255 ttoneun "1-255;1-255;1-255"il su issseubnida.
-naljja jeongboui saegsang-ibnida. 1-16, 1-255 ttoneun "1-255;1-255;1-255"il su issseubnida.
 saegsang sunhwan-i hwalseonghwa doen gyeong-u ProgressClockeseo saegsang-eul byeongyeonghagi jeon-e myeoch tig-i pil-yohabnikka? 1 tig = 0.5 cho
 ProgressClockeun hwalseonghwa doen gyeong-u im-uiui saegsang-eul seontaeghabnida. geuleohji anh-eumyeon guseong-ui saegsang-eul sayonghasibsio.
 saeloun temaleul mandeubnida

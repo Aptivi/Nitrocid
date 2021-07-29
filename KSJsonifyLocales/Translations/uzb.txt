@@ -747,10 +747,6 @@ Axborotning rangi
 Rangni o'zgartirish uchun shomil
 ProgressClock uchun 255 rangni qo'llab-quvvatlashni faollashtiradi.
 ProgressClock uchun haqiqiy rangni qo'llab-quvvatlashni faollashtiradi.
-Bir necha soniya davom etish satrining rangi. Bu 1-16, 1-255 yoki "1-255;1-255;1-255" bo'lishi mumkin.
-Daqiqalar taraqqiyot satrining rangi. Bu 1-16, 1-255 yoki "1-255;1-255;1-255" bo'lishi mumkin.
-Soatlar rivoji satrining rangi. Bu 1-16, 1-255 yoki "1-255;1-255;1-255" bo'lishi mumkin.
-Sana ma'lumotining rangi. Bu 1-16, 1-255 yoki "1-255;1-255;1-255" bo'lishi mumkin.
 Rangli velosiped yoqilgan bo'lsa, ProgressClock-da ranglarni o'zgartirishdan oldin qancha belgi bor? 1 belgi = 0,5 soniya
 ProgressClock yoqilgan bo'lsa, tasodifiy ranglarni tanlaydi. Aks holda, config dan ranglardan foydalaning.
 Yangi mavzu yaratadi

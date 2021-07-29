@@ -747,10 +747,6 @@ Koulè Enfòmasyon
 Tik pou chanje koulè
 Aktive 255 sipò koulè pou ProgressClock.
 Aktive vrè sipò koulè pou ProgressClock.
-Koulè a ​​nan segonn ba pwogrè. Li kapab 1-16, 1-255, oswa "1-255;1-255;1-255".
-Koulè a ​​nan minit pwogrè ba. Li kapab 1-16, 1-255, oswa "1-255;1-255;1-255".
-Koulè a ​​nan èdtan ba pwogrè. Li kapab 1-16, 1-255, oswa "1-255;1-255;1-255".
-Koulè a ​​nan enfòmasyon dat. Li kapab 1-16, 1-255, oswa "1-255;1-255;1-255".
 Si monte bisiklèt koulè pèmèt, konbyen tik anvan ou chanje koulè nan ProgressClock? 1 tik = 0.5 segonn
 ProgressClock pral chwazi koulè o aza si li pèmèt. Sinon, sèvi ak koulè ki soti nan config.
 Fè yon nouvo tèm

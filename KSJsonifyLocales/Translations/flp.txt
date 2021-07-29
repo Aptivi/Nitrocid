@@ -747,10 +747,6 @@ Kulay ng Impormasyon
 Mga tiktik upang baguhin ang kulay
 Pinapagana ang 255 suporta sa kulay para sa ProgressClock.
 Pinapagana ang totoong suporta sa kulay para sa ProgressClock.
-Ang kulay ng mga segundo na pag-unlad bar. Maaari itong maging 1-16, 1-255, o "1-255;1-255;1-255".
-Ang kulay ng minutong pag-unlad na bar. Maaari itong maging 1-16, 1-255, o "1-255;1-255;1-255".
-Ang kulay ng mga oras ng progreso na bar. Maaari itong maging 1-16, 1-255, o "1-255;1-255;1-255".
-Ang kulay ng impormasyon sa petsa. Maaari itong maging 1-16, 1-255, o "1-255;1-255;1-255".
 Kung pinagana ang pagbibisikleta ng kulay, ilan ang mga ticks bago baguhin ang mga kulay sa ProgressClock? 1 tick = 0.5 segundo
 Pipili ang ProgressClock ng mga random na kulay kung pinagana ito. Kung hindi man, gumamit ng mga kulay mula sa config.
 Gumagawa ng isang bagong tema

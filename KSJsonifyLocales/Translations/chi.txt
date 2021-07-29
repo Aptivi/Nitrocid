@@ -747,10 +747,6 @@ xìnxī yánsè
 gǎibiàn yánsè de pí chóng
 wèi ProgressClock jīhuó 255 sè zhīchí.
 Jīhuó duì ProgressClock de zhēn cǎisè zhīchí.
-Miǎo jìndù tiáo de yánsè. Tā kěyǐ shì 1-16,1-255 huò “1-255;1-255;1-255”.
-Fēnzhōng jìndù tiáo de yánsè. Tā kěyǐ shì 1-16,1-255 huò “1-255;1-255;1-255”.
-Xiǎoshí jìndù tiáo de yánsè. Tā kěyǐ shì 1-16,1-255 huò “1-255;1-255;1-255”.
-Rìqí xìnxī de yánsè. Tā kěyǐ shì 1-16,1-255 huò “1-255;1-255;1-255”.
 Rúguǒ qǐyòng yánsè xúnhuán, zài ProgressClock zhōng gēnggǎi yánsè zhīqián yǒu duōshǎo dīdā shēng? 1 Dīdā = 0.5 Miǎo
 rúguǒ qǐyòng,ProgressClock jiāng xuǎnzé suíjī yánsè. Fǒuzé, qǐng shǐyòng pèizhì zhōng de yánsè.
 Chuàngjiàn yīgè xīn zhǔtí

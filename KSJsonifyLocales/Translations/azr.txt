@@ -747,10 +747,6 @@ Məlumat rəngi
 Rəngi ​​dəyişdirmək üçün gənələr
 ProgressClock üçün 255 rəng dəstəyini aktivləşdirir.
 ProgressClock üçün həqiqi rəng dəstəyini aktivləşdirir.
-Saniyə irəliləyiş çubuğunun rəngi. 1-16, 1-255 və ya "1-255;1-255;1-255" ola bilər.
-Dəqiqə tərəqqi çubuğunun rəngi. 1-16, 1-255 və ya "1-255;1-255;1-255" ola bilər.
-Saat tərəqqi çubuğunun rəngi. 1-16, 1-255 və ya "1-255;1-255;1-255" ola bilər.
-Tarix məlumatının rəngi. 1-16, 1-255 və ya "1-255;1-255;1-255" ola bilər.
 Rəngli velosiped aktivdirsə, ProgressClock-da rəng dəyişdirmədən əvvəl neçə gənə var? 1 gənə = 0,5 saniyə
 ProgressClock effektiv olduğu təqdirdə təsadüfi rəngləri seçəcəkdir. Əks təqdirdə, config-dən rənglərdən istifadə edin.
 Yeni bir mövzu yaradır

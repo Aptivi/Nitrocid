@@ -747,10 +747,6 @@ Kolor informacji
 Kleszcze, aby zmienić kolor
 Aktywuje obsługę 255 kolorów dla ProgressClock.
 Aktywuje prawdziwe wsparcie kolorów dla ProgressClock.
-Kolor paska postępu sekund. Może to być 1-16, 1-255 lub „1-255;1-255;1-255”.
-Kolor paska postępu minut. Może to być 1-16, 1-255 lub „1-255;1-255;1-255”.
-Kolor paska postępu godzin. Może to być 1-16, 1-255 lub „1-255;1-255;1-255”.
-Kolor informacji o dacie. Może to być 1-16, 1-255 lub „1-255;1-255;1-255”.
 Jeśli włączona jest cykliczna zmiana kolorów, ile zaznaczeń przed zmianą kolorów w ProgressClock? 1 tik = 0,5 sekundy
 ProgressClock wybierze losowe kolory, jeśli jest włączony. W przeciwnym razie użyj kolorów z konfiguracji.
 Tworzy nowy motyw

@@ -747,10 +747,6 @@ Jōhō no iro.
 -Shoku o henkō suru tikku.
 ProgressClock no 255-shoku sapōto o akutibu ni shimasu.
 ProgressClock no to~urū Color sapōto o akutibu ni shimasu.
-Byō no puroguresubā no iro. 1 - 16, 1 - 255, Matawa `1-255;1-255;1-255' ni suru koto ga dekimasu.
--Bun no puroguresubā no iro. 1 - 16, 1 - 255, Matawa `1-255;1-255;1-255' ni suru koto ga dekimasu.
-Jikan no puroguresubā no iro. 1 - 16, 1 - 255, Matawa `1-255;1-255;1-255' ni suru koto ga dekimasu.
-Hidzuke jōhō no iro. 1 - 16, 1 - 255, Matawa `1-255;1-255;1-255' ni suru koto ga dekimasu.
 Karā saikuringu ga yūkō ni natte iru baai, ProgressClock de karā o henkō suru made no tikku-sū wa? 1 Tikku = 0. 5-Byō.
 ProgressClock ga yūkō ni natte iru baai, randamuna iro ga sentaku sa remasu. Sore igai no baai wa, kōsei no iro o shiyō shimasu.
 Atarashī tēma o sakusei shimasu.

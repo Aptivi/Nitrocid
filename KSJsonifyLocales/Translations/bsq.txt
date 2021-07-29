@@ -747,10 +747,6 @@ Informazioaren kolorea
 Kolorea aldatzeko akainak
 255 kolore laguntza aktibatzen du ProgressClock-erako.
 ProgressClock-en benetako kolorearen laguntza aktibatzen du.
-Segundoen aurrerapen barra kolorea. 1-16, 1-255 edo "1-255;1-255;1-255" izan daiteke.
-Minutuen aurrerapen barra kolorea. 1-16, 1-255 edo "1-255;1-255;1-255" izan daiteke.
-Orduen aurrerapen barra. 1-16, 1-255 edo "1-255;1-255;1-255" izan daiteke.
-Dataren informazioaren kolorea. 1-16, 1-255 edo "1-255;1-255;1-255" izan daiteke.
 Koloreen bizikleta gaituta badago, zenbat markatu koloreak aldatu aurretik ProgressClock-en? 1 tick = 0,5 segundo
 ProgressClock-ek ausazko koloreak hautatuko ditu gaituta badago. Bestela, erabili config-eko koloreak.
 Gai berria egiten du

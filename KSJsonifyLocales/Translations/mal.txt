@@ -747,10 +747,6 @@ Warna Maklumat
 Kutu untuk menukar warna
 Mengaktifkan sokongan warna 255 untuk ProgressClock.
 Mengaktifkan sokongan warna sebenar untuk ProgressClock.
-Warna bar kemajuan saat. Ini boleh menjadi 1-16, 1-255, atau "1-255;1-255;1-255".
-Warna bar kemajuan minit. Ini boleh menjadi 1-16, 1-255, atau "1-255;1-255;1-255".
-Warna bar kemajuan jam. Ini boleh menjadi 1-16, 1-255, atau "1-255;1-255;1-255".
-Warna maklumat tarikh. Ini boleh menjadi 1-16, 1-255, atau "1-255;1-255;1-255".
 Sekiranya kitaran warna diaktifkan, berapa banyak tanda sebelum menukar warna di ProgressClock? 1 tandakan = 0.5 saat
 ProgressClock akan memilih warna rawak jika diaktifkan. Jika tidak, gunakan warna dari config.
 Menjadikan tema baru

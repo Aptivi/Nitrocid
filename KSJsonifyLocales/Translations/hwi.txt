@@ -747,10 +747,6 @@ Waihoʻoluʻu o ka ʻike
 Ticks e hoʻololi kala
 Hoʻoulu i ke kākoʻo kala 255 no ProgressClock.
 Hoʻoulu i ke kākoʻo kala maoli no ProgressClock.
-ʻO ke kala o nā kekona holomua. Hiki iā 1-16, 1-255, a i ʻole "1-255;1-255;1-255".
-Ka waihoʻoluʻu o nā minuke holomua. Hiki iā 1-16, 1-255, a i ʻole "1-255;1-255;1-255".
-ʻO ke kala o nā hola holomua. Hiki iā 1-16, 1-255, a i ʻole "1-255;1-255;1-255".
-ʻO ke kala o ka ʻike lā. Hiki iā 1-16, 1-255, a i ʻole "1-255;1-255;1-255".
 Inā hiki i ke kaʻa kaʻa waihoʻoluʻu, ehia mau tick ma mua o ka hoʻololi ʻana i nā kala i ka ProgressClock? 1 tick = 0.5 kekona
 E koho ʻo ProgressClock i nā waihoʻoluʻu kaulele inā hiki ke hoʻohana ʻia. Inā ʻole, e hoʻohana i nā kala mai config.
 Hana i kahi kumuhana hou

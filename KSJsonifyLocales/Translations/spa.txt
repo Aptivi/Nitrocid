@@ -747,10 +747,6 @@ Color de la información
 Garrapatas para cambiar de color
 Activa la compatibilidad con 255 colores para ProgressClock.
 Activa el soporte de color verdadero para ProgressClock.
-El color de la barra de progreso de los segundos. Puede ser 1-16, 1-255 o "1-255;1-255;1-255".
-El color de la barra de progreso de los minutos. Puede ser 1-16, 1-255 o "1-255;1-255;1-255".
-El color de la barra de progreso de las horas. Puede ser 1-16, 1-255 o "1-255;1-255;1-255".
-El color de la información de la fecha. Puede ser 1-16, 1-255 o "1-255;1-255;1-255".
 Si el ciclo de color está habilitado, ¿cuántos tics antes de cambiar los colores en ProgressClock? 1 tic = 0,5 segundos
 ProgressClock seleccionará colores aleatorios si está habilitado. De lo contrario, use los colores de config.
 Hace un nuevo tema

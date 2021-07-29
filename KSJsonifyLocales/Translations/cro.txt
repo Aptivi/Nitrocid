@@ -747,10 +747,6 @@ Culore di l'infurmazione
 Ticks per cambià di culore
 Attiva 255 supportu di culore per ProgressClock.
 Attiva u veru sustegnu di culore per ProgressClock.
-U culore di siconda barra di prugressu. Pò esse 1-16, 1-255, o "1-255;1-255;1-255".
-U culore di a barra di prugressu di i minuti. Pò esse 1-16, 1-255, o "1-255;1-255;1-255".
-U culore di l'ora barra di prugressu. Pò esse 1-16, 1-255, o "1-255;1-255;1-255".
-U culore di l'infurmazioni di data. Pò esse 1-16, 1-255, o "1-255;1-255;1-255".
 Se u ciculu di culore hè attivatu, quante zecche prima di cambià i culori in ProgressClock? 1 tick = 0,5 seconde
 ProgressClock selezziunerà culori aleatorii s'ellu hè attivatu. Inutili, utilizate culori da config.
 Face un novu tema

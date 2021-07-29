@@ -747,10 +747,6 @@ Colore delle informazioni
 Spunta per cambiare colore
 Attiva il supporto di 255 colori per ProgressClock.
 Attiva il supporto del vero colore per ProgressClock.
-Il colore della barra di avanzamento dei secondi. Può essere 1-16, 1-255 o "1-255;1-255;1-255".
-Il colore della barra di avanzamento dei minuti. Può essere 1-16, 1-255 o "1-255;1-255;1-255".
-Il colore della barra di avanzamento delle ore. Può essere 1-16, 1-255 o "1-255;1-255;1-255".
-Il colore delle informazioni sulla data. Può essere 1-16, 1-255 o "1-255;1-255;1-255".
 Se il ciclo dei colori è abilitato, quanti tick prima di cambiare i colori in ProgressClock? 1 segno di spunta = 0,5 secondi
 ProgressClock selezionerà colori casuali se è abilitato. Altrimenti, usa i colori di config.
 Crea un nuovo tema
