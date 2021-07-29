@@ -48,7 +48,7 @@ Module BeatFaderDisplay
                     SleepNoBlock(BeatIntervalStep, BeatFader)
 
                     'If we're cycling colors, set them. Else, use the user-provided color
-                    Dim RedColorNum, GreenColorNum, BlueColorNum, ChosenBeatColor As Integer
+                    Dim RedColorNum, GreenColorNum, BlueColorNum As Integer
                     Dim SelectedColorType As ColorType = ColorType._255Color
                     If BeatFaderCycleColors Then
                         'We're cycling. Select the color mode, starting from true color
@@ -58,9 +58,15 @@ Module BeatFaderDisplay
                             BlueColorNum = RandomDriver.Next(255)
                             SelectedColorType = ColorType.TrueColor
                         ElseIf BeatFader255Colors Then
-                            ChosenBeatColor = RandomDriver.Next(255)
+                            Dim ConsoleColor As New ConsoleColorsInfo(RandomDriver.Next(255))
+                            RedColorNum = ConsoleColor.R
+                            GreenColorNum = ConsoleColor.G
+                            BlueColorNum = ConsoleColor.B
                         Else
-                            ChosenBeatColor = RandomDriver.Next(15)
+                            Dim ConsoleColor As New ConsoleColorsInfo(RandomDriver.Next(15))
+                            RedColorNum = ConsoleColor.R
+                            GreenColorNum = ConsoleColor.G
+                            BlueColorNum = ConsoleColor.B
                         End If
                     Else
                         'We're not cycling. Parse the color and then select the color mode, starting from true color
@@ -71,7 +77,10 @@ Module BeatFaderDisplay
                             BlueColorNum = UserColor.B
                             SelectedColorType = ColorType.TrueColor
                         ElseIf UserColor.Type = ColorType._255Color Then
-                            ChosenBeatColor = UserColor.PlainSequence
+                            Dim ConsoleColor As New ConsoleColorsInfo(UserColor.PlainSequence)
+                            RedColorNum = ConsoleColor.R
+                            GreenColorNum = ConsoleColor.G
+                            BlueColorNum = ConsoleColor.B
                         End If
                     End If
 
@@ -79,23 +88,16 @@ Module BeatFaderDisplay
                     Dim ThresholdRed As Double = RedColorNum / BeatFaderMaxSteps
                     Dim ThresholdGreen As Double = GreenColorNum / BeatFaderMaxSteps
                     Dim ThresholdBlue As Double = BlueColorNum / BeatFaderMaxSteps
-                    Dim ThresholdStandard As Double = ChosenBeatColor / BeatFaderMaxSteps
 
                     'Fade out
                     For CurrentStep As Integer = 1 To BeatFaderMaxSteps
                         If FaderBack.CancellationPending Then Exit For
                         SleepNoBlock(BeatIntervalStep, FaderBack)
-                        If SelectedColorType = ColorType.TrueColor Then
-                            Dim CurrentColorRedOut As Integer = RedColorNum - ThresholdRed * CurrentStep
-                            Dim CurrentColorGreenOut As Integer = GreenColorNum - ThresholdGreen * CurrentStep
-                            Dim CurrentColorBlueOut As Integer = BlueColorNum - ThresholdBlue * CurrentStep
-                            SetConsoleColor(New Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), True)
-                            Console.Clear()
-                        Else
-                            Dim CurrentColorOut As Integer = ChosenBeatColor - ThresholdStandard * CurrentStep
-                            SetConsoleColor(New Color(CurrentColorOut), True)
-                            Console.Clear()
-                        End If
+                        Dim CurrentColorRedOut As Integer = RedColorNum - ThresholdRed * CurrentStep
+                        Dim CurrentColorGreenOut As Integer = GreenColorNum - ThresholdGreen * CurrentStep
+                        Dim CurrentColorBlueOut As Integer = BlueColorNum - ThresholdBlue * CurrentStep
+                        SetConsoleColor(New Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), True)
+                        Console.Clear()
                     Next
                 End If
             Loop
