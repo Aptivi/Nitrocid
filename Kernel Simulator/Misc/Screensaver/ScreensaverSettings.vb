@@ -154,7 +154,7 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public ColorMixDelay As Integer = 1
     ''' <summary>
-    ''' [Disco] How many milliseconds to wait before making the next write?
+    ''' [Disco] How many milliseconds, or beats per minute, to wait before making the next write?
     ''' </summary>
     Public DiscoDelay As Integer = 100
     ''' <summary>
@@ -269,5 +269,9 @@ Public Module ScreensaverSettings
     ''' [Marquee] Whether to use the Console.Clear() API (slow) or use the line-clearing VT sequence (fast).
     ''' </summary>
     Public MarqueeUseConsoleAPI As Boolean = False
+    ''' <summary>
+    ''' [Disco] Whether to use the Beats Per Minute (1/4) to change the writing delay. If False, will use the standard milliseconds delay instead.
+    ''' </summary>
+    Public DiscoUseBeatsPerMinute As Boolean = False
 
 End Module
