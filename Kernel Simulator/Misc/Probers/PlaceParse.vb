@@ -131,7 +131,9 @@ Public Module PlaceParse
             If text.Contains("<f:") Then
                 Wdbg("I", "Foreground color placeholder found.")
                 Do While text.Contains("<f:")
-                    Dim SequenceSubstring As String = text.Substring(text.IndexOf("<f:"), Finish:=text.IndexOf(">"))
+                    Dim StartForegroundIndex As Integer = text.IndexOf("<f:")
+                    Dim EndForegroundIndex As Integer = text.Substring(text.IndexOf("<f:")).IndexOf(">")
+                    Dim SequenceSubstring As String = text.Substring(text.IndexOf("<f:"), length:=EndForegroundIndex + 1)
                     Dim PlainSequence As String = SequenceSubstring.Substring(3, SequenceSubstring.Length - 1 - 3)
                     Dim VTSequence As String = New Color(PlainSequence).VTSequenceForeground
                     text = text.Replace(SequenceSubstring, VTSequence)
@@ -140,7 +142,9 @@ Public Module PlaceParse
             If text.Contains("<b:") Then
                 Wdbg("I", "Background color placeholder found.")
                 Do While text.Contains("<b:")
-                    Dim SequenceSubstring As String = text.Substring(text.IndexOf("<b:"), Finish:=text.IndexOf(">"))
+                    Dim StartBackgroundIndex As Integer = text.IndexOf("<b:")
+                    Dim EndBackgroundIndex As Integer = text.Substring(text.IndexOf("<b:")).IndexOf(">")
+                    Dim SequenceSubstring As String = text.Substring(text.IndexOf("<b:"), length:=EndBackgroundIndex + 1)
                     Dim PlainSequence As String = SequenceSubstring.Substring(3, SequenceSubstring.Length - 1 - 3)
                     Dim VTSequence As String = New Color(PlainSequence).VTSequenceBackground
                     text = text.Replace(SequenceSubstring, VTSequence)
@@ -149,7 +153,9 @@ Public Module PlaceParse
             If text.Contains("<$") Then
                 Wdbg("I", "UESH variable placeholder found.")
                 Do While text.Contains("<$")
-                    Dim ShellVariableSubstring As String = text.Substring(text.IndexOf("<$"), Finish:=text.IndexOf(">"))
+                    Dim StartShellVariableIndex As Integer = text.IndexOf("<$")
+                    Dim EndShellVariableIndex As Integer = text.Substring(text.IndexOf("<$")).IndexOf(">")
+                    Dim ShellVariableSubstring As String = text.Substring(text.IndexOf("<$"), length:=EndShellVariableIndex + 1)
                     Dim PlainShellVariable As String = ShellVariableSubstring.Substring(1, ShellVariableSubstring.Length - 1 - 1)
                     text = text.Replace(ShellVariableSubstring, GetVariable(PlainShellVariable))
                 Loop
