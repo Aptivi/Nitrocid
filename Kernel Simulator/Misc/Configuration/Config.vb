@@ -191,7 +191,7 @@ Public Module Config
                     {"Activate 255 Color Mode", Disco255Colors},
                     {"Activate True Color Mode", DiscoTrueColor},
                     {"Delay in Milliseconds", DiscoDelay},
-                    {"Use Beats Per Second", DiscoUseBeatsPerMinute},
+                    {"Use Beats Per Minute", DiscoUseBeatsPerMinute},
                     {"Cycle Colors", DiscoCycleColors}
             }
             ScreensaverConfig.Add("Disco", DiscoConfig)
@@ -543,7 +543,7 @@ Public Module Config
             WipeWipesNeededToChangeDirection = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Wipes to change direction"), 0), ConfigToken("Screensaver")?("Wipe")?("Wipes to change direction"), 10)
             MarqueeAlwaysCentered = If(ConfigToken("Screensaver")?("Marquee")?("Always Centered"), True)
             MarqueeUseConsoleAPI = If(ConfigToken("Screensaver")?("Marquee")?("Use Console API"), False)
-            DiscoUseBeatsPerMinute = If(ConfigToken("Screensaver")?("Disco")?("Use Beats Per Second"), False)
+            DiscoUseBeatsPerMinute = If(ConfigToken("Screensaver")?("Disco")?("Use Beats Per Minute"), False)
 
             'Misc Section
             Wdbg("I", "Parsing misc section...")

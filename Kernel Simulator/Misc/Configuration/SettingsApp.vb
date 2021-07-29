@@ -272,7 +272,7 @@ Public Module SettingsApp
                     W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoTrueColor)))
                     W("3) " + DoTranslation("Cycle colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoCycleColors)))
                     W("4) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoDelay)))
-                    W("5) " + DoTranslation("Use Beats Per Second") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoUseBeatsPerMinute)))
+                    W("5) " + DoTranslation("Use Beats Per Minute") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoUseBeatsPerMinute)))
                 Case "7.5" 'Screensaver > Lines
                     MaxOptions = 3
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Lines" + vbNewLine, True, ColTypes.Neutral)
@@ -926,8 +926,8 @@ Public Module SettingsApp
                         Case 5 'Disco: Use Beats Per Second
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(DiscoUseBeatsPerMinute)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > Disco >" + DoTranslation("Use Beats Per Second") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("Whether to use the Beats Per Second unit to write the next color."), True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Disco >" + DoTranslation("Use Beats Per Minute") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Whether to use the Beats Per Minute unit to write the next color."), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Disco > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
