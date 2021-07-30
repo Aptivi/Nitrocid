@@ -22,12 +22,12 @@ Imports System.Reflection.Assembly
 Public Module Kernel
 
     'Variables
-    Public ReadOnly KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
     Public MOTDMessage, MAL As String
     Public HName As String = "kernel"
     Public EventManager As New Events
     Public DefConsoleOut As TextWriter
-    Public ScrnTimeout As Integer = 300000
+    Public CustomBanner As String = ""
+    Public ReadOnly KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
     Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion}"
     Public ReadOnly vbNewLine As String = Environment.NewLine
     Friend StageTimer As New Stopwatch

@@ -34,6 +34,7 @@ Public Module Screensaver
     Public WithEvents Timeout As New BackgroundWorker
     Public finalSaver As ICustomSaver
     Public CustomSaverSettingsToken As JObject
+    Public ScrnTimeout As Integer = 300000
     Public ReadOnly colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())        '15 Console Colors
     Public ReadOnly colors255() As ConsoleColors = CType([Enum].GetValues(GetType(ConsoleColors)), ConsoleColors())  '255 Console Colors
     Public ReadOnly ScrnSvrdb As New Dictionary(Of String, BackgroundWorker) From {{"aptErrorSim", AptErrorSim},
