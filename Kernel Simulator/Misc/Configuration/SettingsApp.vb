@@ -1497,10 +1497,20 @@ Public Module SettingsApp
                 KeyFinished = True
             ElseIf KeyType = SettingsKeyType.SString Or KeyType = SettingsKeyType.SLongString Then
                 Wdbg("I", "Answer is not numeric and key is of the String type. Setting variable...")
+
+                'Check to see if written answer is empty
                 If String.IsNullOrWhiteSpace(AnswerString) Then
                     Wdbg("I", "Answer is nothing. Setting to {0}...", KeyValue)
                     AnswerString = KeyValue
                 End If
+
+                'Check to see if the user intended to clear the variable to make it consist of nothing
+                If AnswerString.ToLower = "/clear" Then
+                    Wdbg("I", "User requested clear.")
+                    AnswerString = ""
+                End If
+
+                'Set the value
                 KeyFinished = True
                 SetConfigValue(KeyVar, AnswerString)
             ElseIf KeyType = SettingsKeyType.SList Then
