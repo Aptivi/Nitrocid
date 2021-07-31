@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports MailKit
 Imports MailKit.Net.Imap
 Imports MailKit.Net.Smtp
 Imports MimeKit.Cryptography
@@ -273,6 +274,11 @@ Module MailLogin
     ''' <param name="SmtpPort">A port of the SMTP server</param>
     Sub ConnectShell(ByVal Address As String, ByVal Port As Integer, ByVal SmtpAddress As String, ByVal SmtpPort As Integer)
         Try
+            'Register the context and initialize the loggers if debug mode is on
+            If DebugMode Then
+                IMAP_Client = New ImapClient(New ProtocolLogger(paths("Home") + "/ImapDebug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
+                SMTP_Client = New SmtpClient(New ProtocolLogger(paths("Home") + "/SmtpDebug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
+            End If
             CryptographyContext.Register(GetType(PGPContext))
 
             'IMAP Connection
