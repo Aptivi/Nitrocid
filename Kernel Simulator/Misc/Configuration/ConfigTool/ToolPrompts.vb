@@ -482,7 +482,7 @@ Public Module ToolPrompts
         Dim TargetList As IEnumerable(Of Object)
         Dim SelectFrom As IEnumerable(Of Object)
         Dim NeutralizePaths As Boolean
-        Dim BuiltinSavers As Integer = 17
+        Dim BuiltinSavers As Integer = 18
 
         While Not KeyFinished
             Console.Clear()
