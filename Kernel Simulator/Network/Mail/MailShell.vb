@@ -89,7 +89,7 @@ Public Module MailShell
                 EventManager.RaiseIMAPPreExecuteCommand(cmd)
                 Dim words As String() = cmd.SplitEncloseDoubleQuotes(" ")
                 Wdbg("I", $"Is the command found? {MailCommands.ContainsKey(words(0))}")
-                If FTPCommands.ContainsKey(words(0)) Then
+                If MailCommands.ContainsKey(words(0)) Then
                     Wdbg("I", "Command found.")
                     MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand) With {.Name = "Mail Command Thread"}
                     MailStartCommandThread.Start(cmd)
