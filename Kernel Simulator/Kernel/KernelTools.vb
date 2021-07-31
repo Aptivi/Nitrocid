@@ -370,18 +370,7 @@ Public Module KernelTools
         LoadUserToken()
 
         'Show welcome message.
-        If StartScroll Then
-            WriteSlowlyC("      >> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<", True, 10, ColTypes.Banner, KernelVersion)
-        Else
-            W("      >> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<", True, ColTypes.Banner, KernelVersion)
-        End If
-
-        'Show license
-        W(vbNewLine + "    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE" + vbNewLine +
-                      "    This program comes with ABSOLUTELY NO WARRANTY, not even " + vbNewLine +
-                      "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +
-                      "    This is free software, and you are welcome to redistribute it" + vbNewLine +
-                      "    under certain conditions; See COPYING file in source code." + vbNewLine, True, ColTypes.License)
+        WriteMessage()
 
         'Some information
         WriteSeparator(DoTranslation("- App information"), False, ColTypes.Stage)

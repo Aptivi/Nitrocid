@@ -225,6 +225,7 @@
     <Compile Include="Misc\Writers\ConsoleWriters\TextWriterWrappedColor.vb" />
     <Compile Include="Misc\Writers\DebugWriters.vb" />
     <Compile Include="Misc\Writers\ConsoleWriters\TextWriterColor.vb" />
+    <Compile Include="Misc\Writers\MiscWriters\WelcomeMessage.vb" />
     <Compile Include="Misc\ZipFile\ZipGetCommand.vb" />
     <Compile Include="Misc\ZipFile\ZipHelpSystem.vb" />
     <Compile Include="Misc\ZipFile\ZipTools.vb" />

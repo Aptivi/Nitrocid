@@ -121,15 +121,16 @@ Public Module SettingsApp
             'List options
             Select Case SectionNum
                 Case "1" 'General
-                    MaxOptions = 6
+                    MaxOptions = 7
                     W("*) " + DoTranslation("General Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all general kernel settings, mainly for maintaining the kernel.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Prompt for Arguments on Boot") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(argsOnBoot)))
                     W("2) " + DoTranslation("Maintenance Mode Trigger") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(maintenance)))
                     W("3) " + DoTranslation("Change Root Password..."), True, ColTypes.Option)
                     W("4) " + DoTranslation("Check for Updates on Startup") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CheckUpdateStart)))
-                    W("5) " + DoTranslation("Change Culture when Switching Languages") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LangChangeCulture)))
-                    W("6) " + DoTranslation("Culture of") + " {0} [{1}]", True, ColTypes.Option, currentLang, CurrentCult.Name)
+                    W("5) " + DoTranslation("Custom Startup Banner") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CustomBanner)))
+                    W("6) " + DoTranslation("Change Culture when Switching Languages") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LangChangeCulture)))
+                    W("7) " + DoTranslation("Culture of") + " {0} [{1}]", True, ColTypes.Option, currentLang, CurrentCult.Name)
                 Case "1.3" 'Change Root Password...
                     MaxOptions = 2
                     W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password...") + vbNewLine, True, ColTypes.Neutral)
@@ -520,12 +521,17 @@ Public Module SettingsApp
                             KeyVar = NameOf(CheckUpdateStart)
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Check for Updates on Startup") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Each startup, it will check for updates."), True, ColTypes.Neutral)
-                        Case 5 'Change Culture when Switching Languages
+                        Case 5 'Custom Startup Banner
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(CustomBanner)
+                            W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Custom Startup Banner") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("If specified, it will display customized startup banner with placeholder support. You can use this phrase for kernel version:") + " {0}", True, ColTypes.Neutral)
+                        Case 6 'Change Culture when Switching Languages
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(LangChangeCulture)
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Culture when Switching Languages") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("When switching languages, change the month names, calendar, etc."), True, ColTypes.Neutral)
-                        Case 6 'Culture of current language
+                        Case 7 'Culture of current language
                             MaxKeyOptions = 0
                             KeyType = SettingsKeyType.SSelection
                             KeyVar = NameOf(CurrentCult)

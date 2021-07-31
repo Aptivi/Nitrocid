@@ -26,7 +26,6 @@ Public Module Kernel
     Public HName As String = "kernel"
     Public EventManager As New Events
     Public DefConsoleOut As TextWriter
-    Public CustomBanner As String = ""
     Public ReadOnly KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
     Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion}"
     Public ReadOnly vbNewLine As String = Environment.NewLine

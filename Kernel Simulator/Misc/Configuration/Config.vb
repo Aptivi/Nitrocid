@@ -85,6 +85,7 @@ Public Module Config
                     {"Change Root Password", setRootPasswd},
                     {"Set Root Password to", RootPasswd},
                     {"Check for Updates on Startup", CheckUpdateStart},
+                    {"Custom Startup Banner", CustomBanner},
                     {"Change Culture when Switching Languages", LangChangeCulture},
                     {"Language", currentLang},
                     {"Culture", CurrentCult.Name}
@@ -427,17 +428,14 @@ Public Module Config
             maintenance = If(ConfigToken("General")?("Maintenance Mode"), False)
             argsOnBoot = If(ConfigToken("General")?("Prompt for Arguments on Boot"), False)
             CheckUpdateStart = If(ConfigToken("General")?("Check for Updates on Startup"), True)
+            If Not String.IsNullOrWhiteSpace(ConfigToken("General")?("Custom Startup Banner")) Then CustomBanner = ConfigToken("General")?("Custom Startup Banner")
 
             'Login Section
             Wdbg("I", "Parsing login section...")
             clsOnLogin = If(ConfigToken("Login")?("Clear Screen on Log-in"), False)
             showMOTD = If(ConfigToken("Login")?("Show MOTD on Log-in"), True)
             ShowAvailableUsers = If(ConfigToken("Login")?("Show available usernames"), True)
-            If Not String.IsNullOrWhiteSpace(ConfigToken("Login")?("Host Name")) Then
-                HName = ConfigToken("Login")?("Host Name")
-            Else
-                HName = "kernel"
-            End If
+            If Not String.IsNullOrWhiteSpace(ConfigToken("Login")?("Host Name")) Then HName = ConfigToken("Login")?("Host Name")
 
             'Shell Section
             Wdbg("I", "Parsing shell section...")
