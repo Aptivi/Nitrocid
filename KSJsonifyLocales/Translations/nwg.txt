@@ -1111,3 +1111,21 @@ RSS-stil
 Tekst Rediger ledetekst
 Zip shell rask stil
 Mappen er tom.
+Gjennomgått {0}.
+Verbose Probe
+Gjør maskinvareundersøkelsesmeldinger litt snakkesalige.
+> Det er ingen informasjon om rammer.
+Du må skrive navnet ditt.
+Forbedrer JSON -filen
+Konfigurasjonskategori {0} ble ikke funnet.
+Konfigurasjonsoppføringen {0} ble ikke funnet.
+Bruk slag per minutt
+Om du skal bruke Beats Per Minute -enheten til å skrive den neste fargen.
+Forsinkelse i slag per minutt
+Slå farge
+Hvor mange slag per minutt skal du vente før du skriver neste gang?
+Aktiverer 255 fargestøtte for BeatFader.
+Aktiverer ekte fargestøtte for BeatFader.
+BeatFader vil velge tilfeldige farger hvis den er aktivert. Ellers bruker du farger fra config.
+Egendefinert oppstartsbanner
+Hvis det er spesifisert, vil det vise tilpasset oppstartsbanner med plassholderstøtte. Du kan bruke dette uttrykket for kjerneversjon:

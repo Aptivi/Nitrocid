@@ -1111,3 +1111,21 @@ RSS Prompt Style
 Estil de sol·licitud d'edició de text
 Estil de sol·licitud de shell shell
 La carpeta està buida.
+S'ha sondejat correctament {0}.
+Sonda Verbosa
+Feu que els missatges de sondeig de maquinari siguin una mica xerraires.
+> No hi ha informació sobre marcs.
+Heu d’escriure el vostre nom.
+Embelleix el fitxer JSON
+No s'ha trobat la categoria de configuració {0}.
+No s'ha trobat l'entrada de configuració {0}.
+Utilitzeu batecs per minut
+Si s’utilitza la unitat de batecs per minut per escriure el següent color.
+Retard en batecs per minut
+Beat Color
+Quantes pulsacions per minut esperar abans de fer la següent escriptura?
+Activa el suport de 255 colors per a BeatFader.
+Activa el suport del color real per a BeatFader.
+BeatFader seleccionarà colors aleatoris si està activat. En cas contrari, utilitzeu colors de config.
+Bàner d’inici personalitzat
+Si s’especifica, es mostrarà un bàner d’inici personalitzat amb suport d’espais reservats. Podeu utilitzar aquesta frase per a la versió del nucli:

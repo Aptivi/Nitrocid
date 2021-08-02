@@ -1111,3 +1111,21 @@ RSS-Eingabeaufforderungsstil
 Eingabeaufforderungsstil für Textbearbeitung
 Stil mit Reißverschluss-Eingabeaufforderung
 Der Ordner ist leer.
+{0} erfolgreich getestet.
+Ausführliche Sonde
+Machen Sie Hardware-Probing-Meldungen etwas gesprächig.
+> Es liegen keine Informationen zu Frames vor.
+Sie müssen Ihren Namen schreiben.
+Verschönert die JSON-Datei
+Konfigurationskategorie {0} nicht gefunden.
+Konfigurationseintrag {0} nicht gefunden.
+Beats pro Minute verwenden
+Ob die Einheit Beats Per Minute verwendet werden soll, um die nächste Farbe zu schreiben.
+Verzögerung in Schlägen pro Minute
+Beatfarbe
+Wie viele Schläge pro Minute muss man warten, bevor der nächste Schreibvorgang ausgeführt wird?
+Aktiviert die 255-Farben-Unterstützung für BeatFader.
+Aktiviert True Color-Unterstützung für BeatFader.
+BeatFader wählt zufällige Farben aus, wenn es aktiviert ist. Verwenden Sie andernfalls Farben aus config.
+Benutzerdefiniertes Startup-Banner
+Falls angegeben, wird ein benutzerdefiniertes Startbanner mit Platzhalterunterstützung angezeigt. Sie können diesen Ausdruck für die Kernel-Version verwenden:

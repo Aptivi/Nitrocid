@@ -1111,3 +1111,21 @@ Isitayela se-RSS Prompt
 Bhala isitayela se-Prompt
 Isitayela se-Zip Shell Prompt
 Ifolda ayinalutho.
+Ihlolwe ngempumelelo {0}.
+Isivivinyo seVerbose
+Yenza imilayezo yokuhlola i-Hardware ikhulume kancane.
+> Alukho ulwazi mayelana namafreyimu.
+Udinga ukubhala igama lakho.
+Ihlobisa ifayela le-JSON
+Isigaba sokulungiselela {0} asitholakali.
+Ukulungiselela ukungena {0} akutholakali.
+Sebenzisa amabhithi ngomzuzu ngamunye
+Ukuthi usebenzise iyunithi ye-Beats Per Minute ukubhala umbala olandelayo.
+Ukubambezeleka ku-Beats Per Minute
+Beat Umbala
+Mangaki amabhithi ngomzuzu wokulinda ngaphambi kokubhala okulandelayo?
+Yenza kusebenze ukwesekwa kombala okungu-255 kweBeatFader.
+Yenza kusebenze ukwesekwa kombala kweqiniso kweBeatFader.
+IBeatFader izokhetha imibala engahleliwe uma inikwe amandla. Ngaphandle kwalokho, sebenzisa imibala kusuka ku-config.
+Isibhengezo Sokuqalisa Ngokwezifiso
+Uma kucacisiwe, sizobonisa isibhengezo sokuqalisa esenziwe ngezifiso ngokusekelwa kwesimeli. Ungasebenzisa lesi sisho ukuthola inguqulo ye-kernel:

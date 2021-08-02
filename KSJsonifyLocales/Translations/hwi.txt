@@ -1111,3 +1111,21 @@ RSS Kāhea Paipai
 Kikokikona hoʻoponopono i ke kaila paipai
 ʻO ka Zip Shell Prompt Style
 Hakahaka ka faila.
+Ua hoʻokolokolo kūleʻa ʻia {0}.
+ʻO Verbose Probe
+E kamaʻilio iki i nā leka uila me ka loea.
+> ʻAʻohe ʻike e pili ana i nā mōlina.
+Pono ʻoe e kākau i kou inoa.
+Hoʻonani i ka faila JSON
+ʻAʻole i loaʻa ka waeʻano configur.
+ʻAʻole i loaʻa ka config config.
+Hoʻohana i nā Beats Per Minute
+E hoʻohana paha i ka mokuna Beats Per Minute e kākau ai i ke kala e hiki mai ana.
+Hoʻolālā i nā Beats Per Minute
+Pākuʻi ʻia ke kala
+Ehia mau kuʻi i kēlā me kēia minuke e kali ai ma mua o ka kākau ʻana?
+Hoʻoulu i ke kākoʻo kala 255 no BeatFader.
+Hoʻoulu i ke kākoʻo kala maoli no BeatFader.
+E koho ʻo BeatFader i nā waihoʻoluʻu ʻole inā hiki ke hoʻohana ʻia. Inā ʻole, e hoʻohana i nā kala mai config.
+Banner Hoʻomaka Kūmole
+Inā kuhikuhi ʻia, e hōʻike ʻia ka hae hoʻomaka me ka kākoʻo o ka placeholder. Hiki iā ʻoe ke hoʻohana i kēia huaʻōlelo no ka mana kernel:

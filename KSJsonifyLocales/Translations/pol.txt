@@ -1111,3 +1111,21 @@ Styl podpowiedzi RSS
 Styl monitu edycji tekstu
 Styl monitu powłoki zip
 Folder jest pusty.
+Pomyślnie sondowano {0}.
+Szczegółowa sonda
+Spraw, aby komunikaty dotyczące sondowania sprzętu były nieco rozmowne.
+> Brak informacji o ramkach.
+Musisz napisać swoje imię.
+Upiększa plik JSON
+Nie znaleziono kategorii konfiguracji {0}.
+Nie znaleziono wpisu konfiguracji {0}.
+Użyj uderzeń na minutę
+Czy użyć jednostki uderzeń na minutę do zapisania następnego koloru.
+Opóźnienie w uderzeniach na minutę
+Pokonaj kolor
+Ile uderzeń na minutę należy odczekać przed kolejnym zapisem?
+Aktywuje obsługę 255 kolorów dla BeatFader.
+Aktywuje prawdziwą obsługę kolorów dla BeatFader.
+BeatFader wybierze losowe kolory, jeśli jest włączony. W przeciwnym razie użyj kolorów z konfiguracji.
+Niestandardowy baner startowy
+Jeśli zostanie określony, wyświetli dostosowany baner startowy z obsługą symboli zastępczych. Możesz użyć tego wyrażenia dla wersji jądra:

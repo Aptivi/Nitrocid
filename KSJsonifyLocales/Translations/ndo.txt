@@ -1111,3 +1111,21 @@ Gaya Prompt RSS
 Edit Teks Gaya Prompt
 Gaya Prompt Zip Shell
 Folder kosong.
+Berhasil memeriksa {0}.
+Probe Verbose
+Buat pesan pemeriksaan perangkat keras sedikit banyak bicara.
+> Tidak ada informasi tentang frame.
+Anda perlu menulis nama Anda.
+Mempercantik file JSON
+Kategori konfigurasi {0} tidak ditemukan.
+Entri konfigurasi {0} tidak ditemukan.
+Gunakan Ketukan Per Menit
+Apakah akan menggunakan unit Beats Per Minute untuk menulis warna berikutnya.
+Keterlambatan dalam Ketukan Per Menit
+Mengalahkan Warna
+Berapa banyak ketukan per menit untuk menunggu sebelum membuat tulisan berikutnya?
+Mengaktifkan 255 dukungan warna untuk BeatFader.
+Mengaktifkan dukungan warna sebenarnya untuk BeatFader.
+BeatFader akan memilih warna acak jika diaktifkan. Jika tidak, gunakan warna dari config.
+Spanduk Startup Kustom
+Jika ditentukan, itu akan menampilkan spanduk startup yang disesuaikan dengan dukungan placeholder. Anda dapat menggunakan frasa ini untuk versi kernel:

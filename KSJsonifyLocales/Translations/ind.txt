@@ -1111,3 +1111,21 @@ aareses sheeghr shailee
 paath sampaadit karen sheeghr shailee
 zip shail sheeghr shailee
 foldar khaalee hai.
+{0} kee saphalataapoorvak jaanch kee gaee.
+kriya jaanch
+haardaveyar jaanch sandeshon ko thoda baatoonee banaen.
+> phrem ke baare mein koee jaanakaaree nahin hai.
+aapako apana naam likhana hai.
+json fail ko sushobhit karata hai
+konphig shrenee {0} nahin milee.
+konphig pravishti {0} nahin milee.
+beets prati minat ka prayog karen
+agala rang likhane ke lie beets prati minat ikaee ka upayog karana hai ya nahin.
+beets prati minat mein deree
+beet kalar
+agala likhane se pahale prati minat kitane beets prateeksha karen?
+baiatfadair ke lie 255 rang samarthan sakriy karata hai.
+baiatfadair ke lie troo kalar saport sakriy karata hai.
+yadi yah saksham hai to beetaphaidar yaadrchchhik rangon ka chayan karega. anyatha, chonfig se rangon ka upayog karen.
+kastam staartap bainar
+yadi nirdisht kiya gaya hai, to yah plesaholdar samarthan ke saath anukoolit staartap bainar pradarshit karega. aap karnel sanskaran ke lie is vaakyaansh ka upayog kar sakate hain:

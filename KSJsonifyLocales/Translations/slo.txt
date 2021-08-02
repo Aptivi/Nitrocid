@@ -1111,3 +1111,21 @@ Zastaraný?
 Štýl výzvy na úpravu textu
 Štýl výzvy na zips
 Priečinok je prázdny.
+Uspešno preizkušeno {0}.
+Natančna sonda
+Naredite sporočila o pregledu strojne opreme nekoliko zgovorna.
+> Ni podatkov o okvirjih.
+Morate napisati svoje ime.
+Polepša datoteko JSON
+Kategorije konfiguracije {0} ni mogoče najti.
+Vnos konfiguracije {0} ni bil najden.
+Uporabite utripe na minuto
+Ali naj za zapis naslednje barve uporabite enoto utripov na minuto.
+Zamuda v utripih na minuto
+Beat Barva
+Koliko utripov na minuto morate počakati, preden naredite naslednji zapis?
+Aktivira 255 barvno podporo za BeatFader.
+Aktivira podporo za prave barve za BeatFader.
+BeatFader bo izbral naključne barve, če je omogočen. V nasprotnem primeru uporabite barve iz konfiguracije.
+Začetna pasica po meri
+Če je določeno, bo prikazana prilagojena zagonska pasica s podporo za nadomestna mesta. Za različico jedra lahko uporabite ta stavek:

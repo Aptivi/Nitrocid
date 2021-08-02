@@ -1111,3 +1111,21 @@ Stil' podskazki RSS
 Stil' podskazki redaktirovaniya teksta
 Zastezhka-molniya v stile podskazki
 Papka pusta.
+Uspeshno issledovano {0}.
+Podrobnyy zond
+Sdelayte soobshcheniya proverki oborudovaniya nemnogo razgovorchivymi.
+> Net informatsii o freymakh.
+Vam nuzhno napisat' svoye imya.
+Ukrashayet fayl JSON
+Kategoriya konfiguratsii {0} ne naydena.
+Zapis' konfiguratsii {0} ne naydena.
+Ispol'zovat' udary v minutu
+Sleduyet li ispol'zovat' yedinitsu udarov v minutu dlya napisaniya sleduyushchego tsveta.
+Zaderzhka v udarakh v minutu
+Tsvet udara
+Skol'ko udarov v minutu nuzhno podozhdat' pered sleduyushchey zapis'yu?
+Aktiviruyet podderzhku 255 tsvetov dlya BeatFader.
+Aktiviruyet podderzhku istinnogo tsveta dlya BeatFader.
+BeatFader vyberet sluchaynyye tsveta, yesli on vklyuchen. V protivnom sluchaye ispol'zuyte tsveta iz config.
+Pol'zovatel'skiy banner pri zapuske
+Yesli ukazano, on budet otobrazhat' nastroyennyy startovyy banner s podderzhkoy zapolniteley. Vy mozhete ispol'zovat' etu frazu dlya oboznacheniya versii yadra:

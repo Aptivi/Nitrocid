@@ -1111,3 +1111,21 @@ RSS puronputosutairu
 tekisutoedittopuronputosutairu
 Zip sherupuronputosutairu
 Foruda ga soradesu.
+{0} No purōbu ni seikō shimashita.
+Jōchō purōbu
+hādou~eapurōbingumessēji o sukoshi oshaberi ni shimasu.
+> Furēmu ni kansuru jōhō wa arimasen.
+Anata wa anata no namae o kaku hitsuyō ga arimasu.
+Jeison fairu o bika shimasu
+kōsei kategori {0} ga mitsukarimasen.
+Kōsei entori {0} ga mitsukarimasen.
+1-Bu-atari no bīto o shiyō suru
+bītsu PerMinute tan'i o shiyō shite tsugi no iro o kakikomu ka dō ka.
+1-Bu-atari no hakusū no chien
+bītokarā-ji
+no kakikomi o okonau mae ni taiki suru 1-bu-atari no bīto-sū wa?
+BeatFader no 255-shoku no sapōto o akutibu ni shimasu.
+BeatFader no to~urūkarāsapōto o akutibu ni shimasu.
+BeatFader ga yūkō ni natte iru baai, randamuna iro o sentaku shimasu. Sore igai no baai wa, kōsei no iro o shiyō shimasu.
+Kasutamusutātoappubanā
+shitei suru to, purēsuhorudā o sapōto suru kasutamaizu sa reta sutātoappubanā ga hyōji sa remasu. Kono furēzu wa kānerubājon ni shiyō dekimasu.

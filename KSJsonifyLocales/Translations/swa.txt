@@ -1111,3 +1111,21 @@ Mtindo wa Haraka wa RSS
 Nakala Hariri Mtindo wa Haraka
 Mtindo wa Zip Shell Prompt
 Folda haina kitu.
+Imefanikiwa kuchunguza {0}.
+Utaftaji wa Verbose
+Fanya ujumbe wa uchunguzi wa vifaa uzungumze kidogo.
+> Hakuna habari kuhusu muafaka.
+Unahitaji kuandika jina lako.
+Inapamba faili ya JSON
+Aina ya mipangilio {0} haipatikani.
+Usanidi wa usanidi {0} haupatikani.
+Tumia Beats Kwa Dakika
+Ikiwa utatumia kitengo cha Beats kwa Dakika kuandika rangi inayofuata.
+Kuchelewesha Kupigwa kwa Dakika
+Rangi ya Beat
+Beats ngapi kwa dakika kusubiri kabla ya kuandika ijayo?
+Inamsha msaada wa rangi 255 kwa BeatFader.
+Inamsha msaada wa kweli wa rangi kwa BeatFader.
+BeatFader itachagua rangi bila mpangilio ikiwa imewezeshwa. Vinginevyo, tumia rangi kutoka kwa usanidi.
+Bango la Kuanzisha Maalum
+Ikiwa imeainishwa, itaonyesha bendera ya kuanza ya kukufaa na msaada wa kishikilia nafasi. Unaweza kutumia kifungu hiki kwa toleo la kernel:

@@ -1111,3 +1111,21 @@ Stile di Prompt RSS
 Stile di Prompt Edit di Testu
 Stile Prompt Zip Shell
 U cartulare hè viotu.
+Pruvatu cù successu {0}.
+Sonda Verbosa
+Fate chì i messaghji di sonda di hardware sia un pocu parlatori.
+> Ùn ci hè micca infurmazione nantu à i frames.
+Duvete scrive u vostru nome.
+Abbellisce u fugliale JSON
+Categoria di cunfigurazione {0} micca truvata.
+Intrata di cunfigurazione {0} micca truvata.
+Aduprate Battiti Per Minutu
+Sia da aduprà l'unità Beats Per Minute per scrive u prossimu culore.
+Ritardu in Battiti Per Minutu
+Beat Culore
+Quanti battiti per minutu da aspettà prima di fà a prossima scrittura?
+Attiva u supportu di culore 255 per BeatFader.
+Attiva u veru supportu di culore per BeatFader.
+BeatFader selezziunà i culori aleatorii s'ellu hè attivatu. Inutili, utilizate culori da config.
+Banner di Startup Persunale
+Se specificatu, visualizerà una bandiera iniziale persunalizata cù supportu di placeholder. Pudete aduprà sta frasa per a versione di u kernel:

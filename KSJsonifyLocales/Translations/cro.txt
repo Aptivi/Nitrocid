@@ -1111,3 +1111,21 @@ RSS brzi stil
 Stil upita za uređivanje teksta
 Zip brz stil poziva
 Mapa je prazna.
+Uspješno ispitano {0}.
+Detaljna sonda
+Neka poruke o ispitivanju hardvera budu malo pričljive.
+> Nema podataka o okvirima.
+Morate napisati svoje ime.
+Uljepšava JSON datoteku
+Kategorija konfiguracije {0} nije pronađena.
+Unos konfiguracije {0} nije pronađen.
+Koristite otkucaje u minuti
+Treba li koristiti jedinicu otkucaja u minuti za pisanje sljedeće boje.
+Odgoda u otkucajima u minuti
+Pobijedite boju
+Koliko otkucaja u minuti čekati prije sljedećeg pisanja?
+Aktivira podršku 255 boja za BeatFader.
+Aktivira podršku za prave boje za BeatFader.
+BeatFader će odabrati nasumične boje ako je omogućen. U protivnom koristite boje iz konfiguracije.
+Prilagođeni početni banner
+Ako je navedeno, prikazat će prilagođeni početni banner s podrškom za rezervirano mjesto. Ovaj izraz možete koristiti za verziju jezgre:

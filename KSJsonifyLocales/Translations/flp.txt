@@ -1111,3 +1111,21 @@ Estilo ng Prompt ng RSS
 Text I-edit ang Estilo ng Prompt
 Estilo ng Prompt ng Zip Shell
 Walang laman ang folder.
+Matagumpay na sinubukan ang {0}.
+Verbose Probe
+Gawing medyo madaldal ang mga mensahe sa pag-iimbak ng hardware.
+> Walang impormasyon tungkol sa mga frame.
+Kailangan mong isulat ang iyong pangalan.
+Pinagpapaganda ang file na JSON
+Hindi nahanap ang kategorya ng Config.
+Hindi nakita ang config ng entry na {0}.
+Gumamit ng Beats Per Minute
+Gagamitin man ang unit ng Beats Per Minute upang isulat ang susunod na kulay.
+Pagkaantala sa Beats Per Minute
+Kulay ng Beat
+Ilan ang mga beats bawat minuto upang maghintay bago gawin ang susunod na pagsulat?
+Pinapagana ang suporta ng 255 na kulay para sa BeatFader.
+Pinapagana ang totoong suporta sa kulay para sa BeatFader.
+Pipili ang BeatFader ng mga random na kulay kung pinagana ito. Kung hindi man, gumamit ng mga kulay mula sa config.
+Pasadyang Startup Banner
+Kung tinukoy, ipapakita nito ang na-customize na startup banner na may suporta ng placeholder. Maaari mong gamitin ang pariralang ito para sa bersyon ng kernel:

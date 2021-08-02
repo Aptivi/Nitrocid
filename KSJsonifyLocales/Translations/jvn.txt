@@ -1111,3 +1111,21 @@ Gaya Prompt RSS
 Gaya Sunting Teks Sunting
 Gaya Prompt Shell Zip
 Folder kosong.
+Sukses dicoba {0}.
+Probe Verbose
+Gawe pesen panelitian hardware dadi rada omong.
+> Ora ana informasi babagan pigura.
+Sampeyan kudu nulis jeneng sampeyan.
+Cantikake file JSON
+Kategori konfigurasi {0} ora ditemokake.
+Entri konfigurasi {0} ora ditemokake.
+Gunakake Beats Saben Menit
+Apa nggunakake unit Beats Per Minute kanggo nulis warna sabanjure.
+Tundha ing Beats Saben Menit
+Warna Beat
+Pira ketukan saben menit kanggo ngenteni sadurunge nulis sabanjure?
+Ngaktifake dhukungan warna 255 kanggo BeatFader.
+Ngaktifake dhukungan warna sejatine kanggo BeatFader.
+BeatFader bakal milih warna acak yen diaktifake. Yen ora, gunakake warna saka config.
+Spanduk Startup Khusus
+Yen ditemtokake, bakal nampilake spanduk wiwitan sing disesuaikan kanthi dhukungan placeholder. Sampeyan bisa nggunakake ukara iki kanggo versi kernel:

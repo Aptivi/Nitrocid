@@ -1111,3 +1111,21 @@ RSS Prompt Style
 Text Edit Prompt Style
 Zip Shell Prompt Style
 Folder is empty.
+Successfully probed {0}.
+Verbose Probe
+Make hardware probing messages a bit talkative.
+> There are no information about frames.
+You need to write your name.
+Beautifies the JSON file
+Config category {0} not found.
+Config entry {0} not found.
+Use Beats Per Minute
+Whether to use the Beats Per Minute unit to write the next color.
+Delay in Beats Per Minute
+Beat Color
+How many beats per minute to wait before making the next write?
+Activates 255 color support for BeatFader.
+Activates true color support for BeatFader.
+BeatFader will select random colors if it's enabled. Otherwise, use colors from config.
+Custom Startup Banner
+If specified, it will display customized startup banner with placeholder support. You can use this phrase for kernel version:

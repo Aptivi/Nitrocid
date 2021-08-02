@@ -1111,3 +1111,21 @@ RSS-promptstijl
 Aanwijzingsstijl voor tekstbewerking
 Zip Shell Prompt-stijl
 Map is leeg.
+{0} gesondeerd.
+Uitgebreide sonde
+Maak hardware indringende berichten een beetje spraakzaam.
+> Er is geen informatie over frames.
+Je moet je naam schrijven.
+Verfraait het JSON-bestand
+Configuratiecategorie {0} niet gevonden.
+Configuratie-item {0} niet gevonden.
+Gebruik beats per minuut
+Of de Beats Per Minute-eenheid moet worden gebruikt om de volgende kleur te schrijven.
+Vertraging in beats per minuut
+Klop kleur
+Hoeveel beats per minuut moet je wachten voordat je de volgende keer schrijft?
+Activeert 255 kleurenondersteuning voor BeatFader.
+Activeert ondersteuning voor ware kleuren voor BeatFader.
+BeatFader selecteert willekeurige kleuren als dit is ingeschakeld. Gebruik anders kleuren uit config.
+Aangepaste opstartbanner
+Indien opgegeven, wordt een aangepaste opstartbanner weergegeven met ondersteuning voor tijdelijke aanduidingen. Je kunt deze zin gebruiken voor de kernelversie:

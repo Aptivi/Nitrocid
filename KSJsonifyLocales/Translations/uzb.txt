@@ -1111,3 +1111,21 @@ RSS tezkor uslubi
 Matnni tahrirlash tezligi uslubi
 Zip Shell tezkor uslubi
 Jild bo'sh.
+{0} tekshirildi.
+Aniq zond
+Apparat tekshiruvi xabarlarini biroz suhbatdosh qiling.
+> Ramkalar haqida ma'lumot yo'q.
+Ismingizni yozishingiz kerak.
+JSON faylini chiroyli qiladi
+{0} konfiguratsiya toifasi topilmadi.
+{0} konfiguratsiya yozuvi topilmadi.
+Har daqiqada Beatsdan foydalaning
+Keyingi rangni yozish uchun Beats Per Minute birligidan foydalanish kerakmi.
+Har daqiqada urishning kechikishi
+Beat Color
+Keyingi yozuvni yozishdan oldin daqiqada necha zarba kutish kerak?
+BeatFader uchun 255 ta rangli qo'llab -quvvatlashni faollashtiradi.
+BeatFader uchun haqiqiy rangni qo'llab -quvvatlashni faollashtiradi.
+BeatFader yoqilgan bo'lsa, tasodifiy ranglarni tanlaydi. Aks holda, config dan ranglardan foydalaning.
+Maxsus ishga tushirish bannerlari
+Belgilangan bo'lsa, u to'ldirgichni qo'llab -quvvatlaydigan moslashtirilgan ishga tushirish bannerini ko'rsatadi. Siz bu iborani yadro versiyasi uchun ishlatishingiz mumkin:

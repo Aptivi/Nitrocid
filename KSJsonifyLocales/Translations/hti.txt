@@ -1111,3 +1111,21 @@ RSS Èd Memwa Style
 Tèks Edit Style Èd Memwa
 Zip Shell Style Èd Memwa
 Dosye a vid.
+Sonde avèk siksè {0}.
+Verbose Probe
+Fè kenkayri sonde mesaj yon ti jan pale.
+> Pa gen okenn enfòmasyon sou ankadreman.
+Ou bezwen ekri non ou.
+Anbeli dosye JSON la
+Kategori konfigirasyon {0} pa jwenn.
+Konfigirasyon antre {0} pa jwenn.
+Sèvi ak bat pou chak minit
+Kit pou itilize inite bat chak minit pou ekri pwochen koulè a.
+Reta nan bat pou chak minit
+Bat Koulè
+Konbyen bat pou chak minit yo rete tann anvan yo fè ekri nan pwochen an?
+Aktive 255 sipò koulè pou BeatFader.
+Aktive vrè sipò koulè pou BeatFader.
+BeatFader pral chwazi koulè o aza si li pèmèt. Sinon, sèvi ak koulè ki soti nan config.
+Custom Banner demaraj
+Si yo espesifye, li pral montre banyè demaraj Customized ak sipò plas. Ou ka itilize fraz sa a pou vèsyon Kernel:

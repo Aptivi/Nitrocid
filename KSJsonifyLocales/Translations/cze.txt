@@ -1111,3 +1111,21 @@ Styl výzvy RSS
 Styl výzvy k úpravě textu
 Rychlý styl zipu
 Složka je prázdná.
+Úspěšně sondováno {0}.
+Podrobná sonda
+Udělejte ze zpráv sondování hardwaru trochu upovídané.
+> Neexistují žádné informace o rámcích.
+Musíte napsat své jméno.
+Zkrášluje soubor JSON
+Kategorie konfigurace {0} nebyla nalezena.
+Záznam konfigurace {0} nebyl nalezen.
+Používejte údery za minutu
+Zda použít jednotku Beats Per Minute k napsání další barvy.
+Zpoždění v úderech za minutu
+Porazte barvu
+Kolik úderů za minutu počkat, než začnete psát další?
+Aktivuje podporu 255 barev pro BeatFader.
+Aktivuje podporu skutečných barev pro BeatFader.
+BeatFader vybere náhodné barvy, pokud je povolen. Jinak použijte barvy z config.
+Vlastní banner pro spuštění
+Pokud je zadán, zobrazí přizpůsobený spouštěcí banner s podporou zástupného symbolu. Pro verzi jádra můžete použít tuto frázi:

@@ -1111,3 +1111,21 @@ Stil ta 'Prompt RSS
 Test Edit Style Prompt
 Zip Shell Stil Prompt
 Il-folder huwa vojt.
+Probat b'suċċess {0}.
+Verbose Probe
+Agħmel il-messaġġi tal-hardware probing daqsxejn jitkellmu.
+> M'hemm l-ebda informazzjoni dwar frames.
+Trid tikteb ismek.
+Tsebbaħ il-fajl JSON
+Il-kategorija tal-konfigurazzjoni {0} ma nstabitx.
+Id-dħul tal-konfigurazzjoni {0} ma nstabx.
+Uża taħbita kull minuta
+Jekk tużax l-unità Beats Per Minute biex tikteb il-kulur li jmiss.
+Dewmien f'Beats Fil-Minuta
+Ħabbat il-Kulur
+Kemm taħbit kull minuta tistenna qabel ma tagħmel il-kitba li jmiss?
+Jattiva 255 appoġġ tal-kulur għal BeatFader.
+Jattiva l-appoġġ tal-kulur veru għal BeatFader.
+BeatFader jagħżel kuluri każwali jekk ikun attivat. Inkella, uża kuluri minn config.
+Banner tal-Istartjar Personalizzat
+Jekk speċifikat, se juri banner tal-istartjar apposta bl-appoġġ tal-placeholder. Tista 'tuża din il-frażi għall-verżjoni tal-qalba:

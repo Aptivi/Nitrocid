@@ -1111,3 +1111,21 @@ Estilo de mensaje RSS
 Estilo de solicitud de edición de texto
 Estilo de aviso de cremallera
 La carpeta está vacía.
+Probado con éxito {0}.
+Sonda detallada
+Haga que los mensajes de sondeo de hardware sean un poco locuaces.
+> No hay información sobre marcos.
+Necesitas escribir tu nombre.
+Embellece el archivo JSON
+No se encontró la categoría de configuración {0}.
+No se encontró la entrada de configuración {0}.
+Usar latidos por minuto
+Ya sea para usar la unidad Beats Per Minute para escribir el siguiente color.
+Retraso en latidos por minuto
+Batir color
+¿Cuántos latidos por minuto hay que esperar antes de realizar la siguiente escritura?
+Activa la compatibilidad con 255 colores para BeatFader.
+Activa la compatibilidad con colores verdaderos para BeatFader.
+BeatFader seleccionará colores aleatorios si está habilitado. De lo contrario, use los colores de config.
+Banner de inicio personalizado
+Si se especifica, mostrará un banner de inicio personalizado con soporte de marcador de posición. Puede usar esta frase para la versión del kernel:

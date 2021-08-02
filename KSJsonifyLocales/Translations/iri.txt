@@ -1111,3 +1111,21 @@ Stíl Pras RSS
 Stíl Pras in Eagar Téacs
 Stíl Pras Zip Shell
 Tá an fillteán folamh.
+Scrúdaíodh go rathúil {0}.
+Tóraigh Briathra
+Déan teachtaireachtaí promhaidh crua-earraí rud beag cainte.
+> Níl aon fhaisnéis faoi fhrámaí.
+Caithfidh tú d’ainm a scríobh.
+Is breá an comhad JSON
+Catagóir cumraíochta {0} gan aimsiú.
+Níor aimsíodh iontráil chumraíochta {0}.
+Úsáid Beats in aghaidh an nóiméid
+Cibé acu an t-aonad Beats Per Minute a úsáid chun an chéad dath eile a scríobh.
+Moill i mBuille in aghaidh an Nóiméad
+Buille Dath
+Cé mhéad buille sa nóiméad atá le fanacht sula ndéanfaidh tú an chéad scríbhinn eile?
+Gníomhaíonn 255 tacaíocht dathanna do BeatFader.
+Gníomhaíonn sé fíor-thacaíocht dathanna do BeatFader.
+Roghnóidh BeatFader dathanna randamacha má tá sé cumasaithe. Seachas sin, bain úsáid as dathanna ón gcumraíocht.
+Meirge Tosaithe Saincheaptha
+Má shonraítear é, taispeánfaidh sé meirge saincheaptha tosaithe le tacaíocht ó áitritheoirí. Is féidir leat an frása seo a úsáid le haghaidh leagan eithne:

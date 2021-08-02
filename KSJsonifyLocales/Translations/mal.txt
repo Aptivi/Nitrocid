@@ -1111,3 +1111,21 @@ Gaya Prompt RSS
 Gaya Prompt Edit Teks
 Gaya Prompt Shell Zip
 Folder kosong.
+Berjaya disiasat {0}.
+Probe Kata Kerja
+Jadikan mesej probing perkakasan sedikit banyak bercakap.
+> Tidak ada maklumat mengenai bingkai.
+Anda perlu menulis nama anda.
+Mencantikkan fail JSON
+Kategori konfigurasi {0} tidak dijumpai.
+Entri konfigurasi {0} tidak dijumpai.
+Gunakan Beats Per Minute
+Sama ada menggunakan unit Beats Per Minute untuk menulis warna seterusnya.
+Kelewatan dalam Beats Setiap Minit
+Pukul Warna
+Berapa denyutan seminit untuk menunggu sebelum membuat penulisan seterusnya?
+Mengaktifkan sokongan warna 255 untuk BeatFader.
+Mengaktifkan sokongan warna sebenar untuk BeatFader.
+BeatFader akan memilih warna rawak jika diaktifkan. Jika tidak, gunakan warna dari config.
+Sepanduk Permulaan Tersuai
+Sekiranya dinyatakan, ia akan memaparkan sepanduk permulaan yang disesuaikan dengan sokongan pemegang tempat. Anda boleh menggunakan frasa ini untuk versi kernel:
