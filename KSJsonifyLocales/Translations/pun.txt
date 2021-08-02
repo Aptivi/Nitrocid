@@ -747,10 +747,6 @@ jāṇakārī dā raga
 raga badalaṇa dī kōśiśa karadā hai
 prōgaisakalāka la'ī 255 raga sahā'itā nū saragarama karadā hai.
 Prōgraisakalāka la'ī sahī raga sahā'itā nū saragarama karadā hai.
-Sakiṭāṁ dī tarakī bāra dā raga. Iha 1-16, 1-255, jāṁ"1-255;1-255;1-255" hō sakadā hai.
-Miṭāṁ dī tarakī bāra dā raga. Iha 1-16, 1-255, jāṁ"1-255;1-255;1-255" hō sakadā hai.
-Ghaṭi'āṁ dī tarakī paṭī dā raga. Iha 1-16, 1-255, jāṁ"1-255;1-255;1-255" hō sakadā hai.
-Tārīkha dī jāṇakārī dā raga. Iha 1-16, 1-255, jāṁ"1-255;1-255;1-255" hō sakadā hai.
 Jē raga sā'īkaliga samarathita hai, tāṁ prōgraisakauka vica raga badalaṇa tōṁ pahilāṁ kinē ṭika? 1 Ṭika = 0.5 Sakiṭa
 prōgraisakalāka bētaratībē ragāṁ dī cōṇa karēgī jē iha samarathita hai. Nahīṁ tāṁ, saracanā tōṁ raga varatōṁ.
 Ika navāṁ thīma baṇā'undā hai
@@ -1115,3 +1111,21 @@ Purāṇī?
 ṭaikasaṭa aiḍiṭa prōmpaṭa śailī
 zipa śaila prā'uṭa śailī
 Phōlaḍara khālī hai.
+Saphalatāpūravaka paṛatāla kītī ga'ī {0}.
+Varabōsa paṛatāla
+hāraḍavē'ara paṛatāla sadēśāṁ nū thōṛā bōlacāla baṇā'u.
+> Pharēmāṁ bārē kō'ī jāṇakārī nahīṁ hai.
+Tuhānū āpaṇā nāma likhaṇa dī zarūrata hai.
+JSON phā'īla nū sudara baṇā'undā hai
+saracanā śrēṇī {0} nahīṁ milī.
+Saracanā aiṇṭarī {0} nahīṁ milī.
+Bīṭasa pratī miṭa dī varatōṁ karō
+kī agalā raga likhaṇa la'ī bīṭasa pratī miṭa yūniṭa dī varatōṁ karanī hai.
+Bīṭasa pratī miṭa vica dērī
+raga nū harā'ō
+agalī likhata likhaṇa tōṁ pahilāṁ pratī miṭa kinē dhaṛakaṇa uḍīka karana?
+Bīṭaphaiḍara la'ī 255 raga samarathana nū kiri'āśīla karadā hai.
+Bīṭaphaiḍara la'ī sacā raga samarathana kiri'āśīla karadā hai.
+Jē iha samaratha hai tāṁ bīṭaphaiḍara bētaratībē ragāṁ dī cōṇa karēgā. Nahīṁ tāṁ, saracanā tōṁ ragāṁ dī varatōṁ karō.
+Kasaṭama saṭāraṭa'apa bainara
+jē niradhārata kītā gi'ā hai, tāṁ iha palēsahōlaḍara sahā'itā dē nāla anukūlita śurū'ātī bainara pradaraśata karēgā. Tusīṁ karanala sasakaraṇa la'ī isa vākaśa dī varatōṁ kara sakadē hō:

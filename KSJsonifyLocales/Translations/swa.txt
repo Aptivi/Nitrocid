@@ -747,10 +747,6 @@ Rangi ya Habari
 Tiketi kubadilisha rangi
 Inamsha msaada wa rangi 255 kwa ProgressClock.
 Inamsha msaada wa kweli wa rangi kwa ProgressClock.
-Rangi ya mwambaa wa maendeleo wa sekunde. Inaweza kuwa 1-16, 1-255, au "1-255;1-255;1-255".
-Rangi ya mwambaa wa maendeleo ya dakika. Inaweza kuwa 1-16, 1-255, au "1-255;1-255;1-255".
-Rangi ya mwambaa wa mwendo wa masaa. Inaweza kuwa 1-16, 1-255, au "1-255;1-255;1-255".
-Rangi ya habari ya tarehe. Inaweza kuwa 1-16, 1-255, au "1-255;1-255;1-255".
 Ikiwa baiskeli ya rangi imewezeshwa, ni kupe ngapi kabla ya kubadilisha rangi kwenye ProgressClock? Jibu 1 = sekunde 0.5
 ProgressClock itachagua rangi bila mpangilio ikiwa imewezeshwa. Vinginevyo, tumia rangi kutoka kwa usanidi.
 Hufanya mandhari mpya
@@ -1115,3 +1111,21 @@ Mtindo wa Haraka wa RSS
 Nakala Hariri Mtindo wa Haraka
 Mtindo wa Zip Shell Prompt
 Folda haina kitu.
+Imefanikiwa kuchunguza {0}.
+Utaftaji wa Verbose
+Fanya ujumbe wa uchunguzi wa vifaa uzungumze kidogo.
+> Hakuna habari kuhusu muafaka.
+Unahitaji kuandika jina lako.
+Inapamba faili ya JSON
+Aina ya mipangilio {0} haipatikani.
+Usanidi wa usanidi {0} haupatikani.
+Tumia Beats Kwa Dakika
+Ikiwa utatumia kitengo cha Beats kwa Dakika kuandika rangi inayofuata.
+Kuchelewesha Kupigwa kwa Dakika
+Rangi ya Beat
+Beats ngapi kwa dakika kusubiri kabla ya kuandika ijayo?
+Inamsha msaada wa rangi 255 kwa BeatFader.
+Inamsha msaada wa kweli wa rangi kwa BeatFader.
+BeatFader itachagua rangi bila mpangilio ikiwa imewezeshwa. Vinginevyo, tumia rangi kutoka kwa usanidi.
+Bango la Kuanzisha Maalum
+Ikiwa imeainishwa, itaonyesha bendera ya kuanza ya kukufaa na msaada wa kishikilia nafasi. Unaweza kutumia kifungu hiki kwa toleo la kernel:

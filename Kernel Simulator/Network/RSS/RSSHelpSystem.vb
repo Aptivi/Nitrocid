@@ -18,34 +18,35 @@
 
 Public Module RSSHelpSystem
 
-    'This dictionary is the definitions for commands.
-    Public RSSDefinitions As Dictionary(Of String, String)
     Public RSSModDefs As New Dictionary(Of String, String)
-
-    ''' <summary>
-    ''' Updates the help definition so it reflects the available commands
-    ''' </summary>
-    Public Sub InitRSSHelp()
-        RSSDefinitions = New Dictionary(Of String, String) From {{"articleinfo", DoTranslation("Gets the article info")},
-                                                                 {"chfeed", DoTranslation("Changes the feed link")},
-                                                                 {"feedinfo", DoTranslation("Gets the feed info")},
-                                                                 {"list", DoTranslation("Lists all feeds")},
-                                                                 {"read", DoTranslation("Reads a feed in a web browser")},
-                                                                 {"exit", DoTranslation("Exits RSS shell and returns to kernel")},
-                                                                 {"help", DoTranslation("Shows help screen")}}
-    End Sub
 
     ''' <summary>
     ''' Shows the list of commands.
     ''' </summary>
     ''' <param name="command">Specified command</param>
     Public Sub RSSShowHelp(Optional ByVal command As String = "")
-
-        If command = "" Then
+        'Check to see if command exists
+        If Not String.IsNullOrWhiteSpace(command) And RSSCommands.ContainsKey(command) Then
+            Dim HelpDefinition As String = RSSCommands(command).GetTranslatedHelpEntry
+            Select Case command
+                Case "articleinfo"
+                    W(DoTranslation("Usage:") + " articleinfo <feednum>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "chfeed"
+                    W(DoTranslation("Usage:") + " chfeed <feedurl>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "exit"
+                    W(DoTranslation("Usage:") + " exit: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "feedinfo"
+                    W(DoTranslation("Usage:") + " feedinfo: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "list"
+                    W(DoTranslation("Usage:") + " list: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "read"
+                    W(DoTranslation("Usage:") + " read <feednum>: " + HelpDefinition, True, ColTypes.Neutral)
+            End Select
+        ElseIf String.IsNullOrWhiteSpace(command) Then
             If simHelp = False Then
                 W(DoTranslation("General commands:"), True, ColTypes.Neutral)
-                For Each cmd As String In RSSDefinitions.Keys
-                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, RSSDefinitions(cmd))
+                For Each cmd As String In RSSCommands.Keys
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, RSSCommands(cmd).GetTranslatedHelpEntry)
                 Next
                 W(vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.Neutral)
                 If RSSModDefs.Count = 0 Then W(DoTranslation("No mod commands."), True, ColTypes.Neutral)
@@ -55,7 +56,7 @@ Public Module RSSHelpSystem
                 W(vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.Neutral)
                 If RSSShellAliases.Count = 0 Then W(DoTranslation("No alias commands."), True, ColTypes.Neutral)
                 For Each cmd As String In RSSShellAliases.Keys
-                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, RSSDefinitions(RSSShellAliases(cmd)))
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, RSSCommands(RSSShellAliases(cmd)).GetTranslatedHelpEntry)
                 Next
             Else
                 For Each cmd As String In RSSCommands.Keys
@@ -66,20 +67,9 @@ Public Module RSSHelpSystem
                 Next
                 W(String.Join(", ", RSSShellAliases.Keys), True, ColTypes.ListEntry)
             End If
-        ElseIf command = "articleinfo" Then
-            W(DoTranslation("Usage:") + " articleinfo <feednum>", True, ColTypes.Neutral)
-        ElseIf command = "chfeed" Then
-            W(DoTranslation("Usage:") + " chfeed <feedurl>", True, ColTypes.Neutral)
-        ElseIf command = "exit" Then
-            W(DoTranslation("Usage:") + " exit", True, ColTypes.Neutral)
-        ElseIf command = "feedinfo" Then
-            W(DoTranslation("Usage:") + " feedinfo", True, ColTypes.Neutral)
-        ElseIf command = "list" Then
-            W(DoTranslation("Usage:") + " list", True, ColTypes.Neutral)
-        ElseIf command = "read" Then
-            W(DoTranslation("Usage:") + " read <feednum>", True, ColTypes.Neutral)
+        Else
+            W(DoTranslation("No help for command ""{0}""."), True, ColTypes.Error, command)
         End If
-
     End Sub
 
 End Module

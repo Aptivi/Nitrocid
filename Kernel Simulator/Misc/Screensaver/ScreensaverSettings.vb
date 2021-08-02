@@ -139,6 +139,22 @@ Public Module ScreensaverSettings
     ''' [Marquee] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
     Public MarqueeTrueColor As Boolean = True
+    ''' <summary>
+    ''' [BeatFader] Enable 255 color support. Has a higher priority than 16 color support. Please note that it only works if color cycling is enabled.
+    ''' </summary>
+    Public BeatFader255Colors As Boolean
+    ''' <summary>
+    ''' [BeatFader] Enable truecolor support. Has a higher priority than 255 color support. Please note that it only works if color cycling is enabled.
+    ''' </summary>
+    Public BeatFaderTrueColor As Boolean = True
+    ''' <summary>
+    ''' [BeatFader] Enable color cycling (uses RNG. If disabled, uses the <see cref="BeatFaderBeatColor"/> color.)
+    ''' </summary>
+    Public BeatFaderCycleColors As Boolean = True
+    ''' <summary>
+    ''' [BeatFader] The color of beats. It can be 1-16, 1-255, or "1-255;1-255;1-255".
+    ''' </summary>
+    Public BeatFaderBeatColor As String = 17
 
     '-> Delays
     ''' <summary>
@@ -154,7 +170,7 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public ColorMixDelay As Integer = 1
     ''' <summary>
-    ''' [Disco] How many milliseconds to wait before making the next write?
+    ''' [Disco] How many milliseconds, or beats per minute, to wait before making the next write?
     ''' </summary>
     Public DiscoDelay As Integer = 100
     ''' <summary>
@@ -213,6 +229,10 @@ Public Module ScreensaverSettings
     ''' [Marquee] How many milliseconds to wait before making the next write?
     ''' </summary>
     Public MarqueeDelay As Integer = 10
+    ''' <summary>
+    ''' [BeatFader] How many beats per minute to wait before making the next write?
+    ''' </summary>
+    Public BeatFaderDelay As Integer = 120
 
     '-> Texts
     ''' <summary>
@@ -269,5 +289,13 @@ Public Module ScreensaverSettings
     ''' [Marquee] Whether to use the Console.Clear() API (slow) or use the line-clearing VT sequence (fast).
     ''' </summary>
     Public MarqueeUseConsoleAPI As Boolean = False
+    ''' <summary>
+    ''' [Disco] Whether to use the Beats Per Minute (1/4) to change the writing delay. If False, will use the standard milliseconds delay instead.
+    ''' </summary>
+    Public DiscoUseBeatsPerMinute As Boolean = False
+    ''' <summary>
+    ''' [BeatFader] How many fade steps to do?
+    ''' </summary>
+    Public BeatFaderMaxSteps As Integer = 25
 
 End Module

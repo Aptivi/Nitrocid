@@ -34,7 +34,7 @@ Imports Newtonsoft.Json.Linq
             If Not File.Exists(paths("Configuration") + ".old") Then File.Move(paths("Configuration"), paths("Configuration") + ".old")
             CreateConfig()
         End If
-        ConfigToken = JObject.Parse(File.ReadAllText(paths("Configuration")))
+        InitializeConfigToken()
         LoadUserToken()
     End Sub
 

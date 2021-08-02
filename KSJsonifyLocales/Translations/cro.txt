@@ -747,10 +747,6 @@ Culore di l'infurmazione
 Ticks per cambià di culore
 Attiva 255 supportu di culore per ProgressClock.
 Attiva u veru sustegnu di culore per ProgressClock.
-U culore di siconda barra di prugressu. Pò esse 1-16, 1-255, o "1-255;1-255;1-255".
-U culore di a barra di prugressu di i minuti. Pò esse 1-16, 1-255, o "1-255;1-255;1-255".
-U culore di l'ora barra di prugressu. Pò esse 1-16, 1-255, o "1-255;1-255;1-255".
-U culore di l'infurmazioni di data. Pò esse 1-16, 1-255, o "1-255;1-255;1-255".
 Se u ciculu di culore hè attivatu, quante zecche prima di cambià i culori in ProgressClock? 1 tick = 0,5 seconde
 ProgressClock selezziunerà culori aleatorii s'ellu hè attivatu. Inutili, utilizate culori da config.
 Face un novu tema
@@ -1115,3 +1111,21 @@ RSS brzi stil
 Stil upita za uređivanje teksta
 Zip brz stil poziva
 Mapa je prazna.
+Uspješno ispitano {0}.
+Detaljna sonda
+Neka poruke o ispitivanju hardvera budu malo pričljive.
+> Nema podataka o okvirima.
+Morate napisati svoje ime.
+Uljepšava JSON datoteku
+Kategorija konfiguracije {0} nije pronađena.
+Unos konfiguracije {0} nije pronađen.
+Koristite otkucaje u minuti
+Treba li koristiti jedinicu otkucaja u minuti za pisanje sljedeće boje.
+Odgoda u otkucajima u minuti
+Pobijedite boju
+Koliko otkucaja u minuti čekati prije sljedećeg pisanja?
+Aktivira podršku 255 boja za BeatFader.
+Aktivira podršku za prave boje za BeatFader.
+BeatFader će odabrati nasumične boje ako je omogućen. U protivnom koristite boje iz konfiguracije.
+Prilagođeni početni banner
+Ako je navedeno, prikazat će prilagođeni početni banner s podrškom za rezervirano mjesto. Ovaj izraz možete koristiti za verziju jezgre:

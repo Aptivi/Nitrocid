@@ -747,10 +747,6 @@ Kulur ta 'Informazzjoni
 Qurdien biex tbiddel il-kulur
 Jattiva 255 appoġġ tal-kulur għal ProgressClock.
 Jattiva l-appoġġ tal-kulur veru għal ProgressClock.
-Il-kulur ta 'sekonda progress bar. Jista 'jkun 1-16, 1-255, jew "1-255;1-255;1-255".
-Il-kulur tal-progress bar tal-minuti. Jista 'jkun 1-16, 1-255, jew "1-255;1-255;1-255".
-Il-kulur tas-sigħat progress bar. Jista 'jkun 1-16, 1-255, jew "1-255;1-255;1-255".
-Il-kulur tal-informazzjoni tad-data. Jista 'jkun 1-16, 1-255, jew "1-255;1-255;1-255".
 Jekk iċ-ċiklar tal-kulur huwa attivat, kemm qurdien qabel ma tbiddel il-kuluri fi ProgressClock? Immarka 1 = 0.5 sekondi
 ProgressClock jagħżel kuluri każwali jekk ikun attivat. Inkella, uża kuluri minn config.
 Tagħmel tema ġdida
@@ -1115,3 +1111,21 @@ Stil ta 'Prompt RSS
 Test Edit Style Prompt
 Zip Shell Stil Prompt
 Il-folder huwa vojt.
+Probat b'suċċess {0}.
+Verbose Probe
+Agħmel il-messaġġi tal-hardware probing daqsxejn jitkellmu.
+> M'hemm l-ebda informazzjoni dwar frames.
+Trid tikteb ismek.
+Tsebbaħ il-fajl JSON
+Il-kategorija tal-konfigurazzjoni {0} ma nstabitx.
+Id-dħul tal-konfigurazzjoni {0} ma nstabx.
+Uża taħbita kull minuta
+Jekk tużax l-unità Beats Per Minute biex tikteb il-kulur li jmiss.
+Dewmien f'Beats Fil-Minuta
+Ħabbat il-Kulur
+Kemm taħbit kull minuta tistenna qabel ma tagħmel il-kitba li jmiss?
+Jattiva 255 appoġġ tal-kulur għal BeatFader.
+Jattiva l-appoġġ tal-kulur veru għal BeatFader.
+BeatFader jagħżel kuluri każwali jekk ikun attivat. Inkella, uża kuluri minn config.
+Banner tal-Istartjar Personalizzat
+Jekk speċifikat, se juri banner tal-istartjar apposta bl-appoġġ tal-placeholder. Tista 'tuża din il-frażi għall-verżjoni tal-qalba:

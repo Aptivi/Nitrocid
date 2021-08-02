@@ -203,8 +203,8 @@ Public Module NetworkTools
     Public Function ChangeHostname(ByVal NewHost As String) As Boolean
         Try
             HName = NewHost
-            ConfigToken("Login")("Host Name") = HName
-            File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
+            Dim Token As JToken = GetConfigCategory(ConfigCategory.Login)
+            SetConfigValueAndWrite(ConfigCategory.Login, Token, "Host Name", HName)
             Return True
         Catch ex As Exception
             WStkTrc(ex)

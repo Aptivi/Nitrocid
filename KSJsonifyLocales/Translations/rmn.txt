@@ -747,10 +747,6 @@ Culoarea informațiilor
 Bifează pentru a schimba culoarea
 Activează suportul de 255 culori pentru ProgressClock.
 Activează suportul de culoare adevărată pentru ProgressClock.
-Culoarea barei de progres secunde. Poate fi 1-16, 1-255 sau „1-255;1-255;1-255”.
-Bara de progres a culorii minutelor. Poate fi 1-16, 1-255 sau „1-255;1-255;1-255”.
-Bara de progres a culorii orelor. Poate fi 1-16, 1-255 sau „1-255;1-255;1-255”.
-Culoarea informațiilor despre dată. Poate fi 1-16, 1-255 sau „1-255;1-255;1-255”.
 Dacă ciclarea culorilor este activată, câte bifuri înainte de a schimba culorile în ProgressClock? 1 bifă = 0,5 secunde
 ProgressClock va selecta culorile aleatorii dacă este activat. În caz contrar, utilizați culori din config.
 Creează o nouă temă
@@ -1115,3 +1111,21 @@ Stil RSS Prompt
 Text Editați stilul prompt
 Zip Shell Prompt Style
 Dosarul este gol.
+Sondat cu succes {0}.
+Verbose Probe
+Faceți ca mesajele de sondare hardware să fie puțin vorbărețe.
+> Nu există informații despre cadre.
+Trebuie să îți scrii numele.
+Înfrumusețează fișierul JSON
+Categoria de configurare {0} nu a fost găsită.
+Intrarea de configurare {0} nu a fost găsită.
+Utilizați bătăi pe minut
+Dacă utilizați unitatea Beats Per Minute pentru a scrie următoarea culoare.
+Întârziere în bătăi pe minut
+Beat Color
+Câte bătăi pe minut să aștepți înainte de a scrie următoarea scriere?
+Activează 255 de culori pentru BeatFader.
+Activează suportul de culoare adevărată pentru BeatFader.
+BeatFader va selecta culorile aleatorii dacă este activat. În caz contrar, utilizați culori din config.
+Banner de pornire personalizat
+Dacă este specificat, va afișa un banner de pornire personalizat cu suport pentru substituent. Puteți utiliza această expresie pentru versiunea kernel:

@@ -43,7 +43,7 @@ Public Module UESHParse
 
                 'If $variable is found in string, initialize it
                 Dim SplitWords() As String = Line.Split(" ")
-                For i As Integer = 0 To SplitWords.Count - 1
+                For i As Integer = 0 To SplitWords.Length - 1
                     If Not ShellVariables.ContainsKey(SplitWords(i)) And SplitWords(i).StartsWith("$") Then
                         InitializeVariable(SplitWords(i))
                     End If
@@ -61,7 +61,7 @@ Public Module UESHParse
 
                 'See if the line contains variable, and replace every instance of it with its value
                 Dim SplitWords() As String = Line.Split(" ")
-                For i As Integer = 0 To SplitWords.Count - 1
+                For i As Integer = 0 To SplitWords.Length - 1
                     If SplitWords(i).StartsWith("$") Then
                         Line = GetVariableCommand(SplitWords(i).Replace("""", ""), Line)
                     End If
@@ -69,8 +69,8 @@ Public Module UESHParse
 
                 'See if the line contains argument placeholder, and replace every instance of it with its value
                 Dim SplitArguments() As String = scriptarguments.Split(" ")
-                For i As Integer = 0 To SplitWords.Count - 1
-                    For j As Integer = 0 To SplitArguments.Count - 1
+                For i As Integer = 0 To SplitWords.Length - 1
+                    For j As Integer = 0 To SplitArguments.Length - 1
                         If SplitWords(i) = $"{{{j}}}" Then
                             Line = Line.Replace(SplitWords(i), SplitArguments(j))
                         End If

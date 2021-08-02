@@ -31,7 +31,7 @@ Public Module TimeDate
     Sub TimeDateChange_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles TimeDateChange.DoWork
         Dim oldWid, oldTop As Integer
         Do While True
-            Dim TimeString As String = RenderTime() + " " + RenderDate()
+            Dim TimeString As String = $"{RenderDate()} - {RenderTime()}"
             If TimeDateChange.CancellationPending = True Then
                 e.Cancel = True
                 Exit Do
@@ -44,7 +44,7 @@ Public Module TimeDate
                 End If
             End If
             Thread.Sleep(1000)
-            If oldWid <> 0 Then WriteWhere(StrDup(TimeString.Length, " "), oldWid, oldTop, True, ColTypes.Neutral)
+            If oldWid <> 0 Then WriteWhere(" ".Repeat(TimeString.Length), oldWid, oldTop, True, ColTypes.Neutral)
         Loop
     End Sub
 

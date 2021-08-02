@@ -18,6 +18,7 @@
 
 Imports System.Globalization
 Imports System.IO
+Imports Microsoft.SqlServer
 Imports Newtonsoft.Json.Linq
 
 Public Module Translate
@@ -241,20 +242,11 @@ CHOICE:
                 Dim OldModDescGeneric As String = DoTranslation("Command defined by ")
                 Wdbg("I", "Translating kernel to {0}.", lang)
                 currentLang = lang
-                ConfigToken("General")("Language") = currentLang
-                File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
+                Dim Token As JToken = GetConfigCategory(ConfigCategory.General)
+                SetConfigValueAndWrite(ConfigCategory.General, Token, "Language", currentLang)
                 Wdbg("I", "Saved new language.")
 
                 'Update help list for translated help
-                InitHelp()
-                InitFTPHelp()
-                InitSFTPHelp()
-                IMAPInitHelp()
-                InitRDebugHelp()
-                InitTestHelp()
-                TextEdit_UpdateHelp()
-                ZipShell_UpdateHelp()
-                InitRSSHelp()
                 ReloadGenericDefs(OldModDescGeneric)
 
                 'Update Culture if applicable
@@ -285,8 +277,8 @@ CHOICE:
             If Cult.EnglishName = StrCult Then
                 Wdbg("I", "Found. Changing culture...")
                 CurrentCult = Cult
-                ConfigToken("General")("Culture") = CurrentCult.Name
-                File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
+                Dim Token As JToken = GetConfigCategory(ConfigCategory.General)
+                SetConfigValueAndWrite(ConfigCategory.General, Token, "Culture", CurrentCult.Name)
                 Wdbg("I", "Saved new culture.")
                 Exit For
             End If
@@ -303,8 +295,8 @@ CHOICE:
             If Cult.EnglishName = Culture Then
                 Wdbg("I", "Found. Changing culture...")
                 CurrentCult = Cult
-                ConfigToken("General")("Culture") = CurrentCult.Name
-                File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
+                Dim Token As JToken = GetConfigCategory(ConfigCategory.General)
+                SetConfigValueAndWrite(ConfigCategory.General, Token, "Culture", CurrentCult.Name)
                 Wdbg("I", "Saved new culture.")
                 Exit For
             End If

@@ -747,10 +747,6 @@ Boja informacija
 Krpelji za promenu boje
 Aktivira 255 podrške u boji za ProgressClock.
 Aktivira istinsku podršku u boji za ProgressClock.
-Boja trake napretka u sekundama. Može biti 1-16, 1-255 ili „1-255;1-255;1-255“.
-Boja trake napredovanja minuta. Može biti 1-16, 1-255 ili „1-255;1-255;1-255“.
-Boja trake napredovanja sati. Može biti 1-16, 1-255 ili „1-255;1-255;1-255“.
-Boja podataka o datumu. Može biti 1-16, 1-255 ili „1-255;1-255;1-255“.
 Ako je omogućeno ciklično kretanje u boji, koliko krpelja pre promene boja u ProgressClock-u? 1 tik = 0,5 sekunde
 ProgressClock će odabrati slučajne boje ako je to omogućeno. U suprotnom, koristite boje iz config.
 Pravi novu temu
@@ -1115,3 +1111,21 @@ RSS prompt stil
 Stil upita za uređivanje teksta
 Zip Shell Prompt Stile
 Mapa je prazna.
+Ispitano {0}.
+Detaljna sonda
+Neka poruke o ispitivanju hardvera budu malo pričljive.
+> Nema podataka o okvirima.
+Morate napisati svoje ime.
+Ulepšava JSON datoteku
+Kategorija konfiguracije {0} nije pronađena.
+Unos konfiguracije {0} nije pronađen.
+Koristite otkucaje u minuti
+Da li ćete koristiti jedinicu otkucaja u minuti za pisanje sledeće boje.
+Odlaganje u otkucajima u minuti
+Beat Color
+Koliko otkucaja u minuti treba čekati pre sledećeg pisanja?
+Aktivira podršku 255 boja za BeatFader.
+Aktivira podršku za prave boje za BeatFader.
+BeatFader će izabrati nasumične boje ako je omogućen. U suprotnom, koristite boje iz konfiguracije.
+Prilagođeni baner za pokretanje
+Ako je navedeno, prikazaće prilagođeni početni banner sa podrškom za čuvare mesta. Ovu frazu možete koristiti za verziju jezgra:

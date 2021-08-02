@@ -747,10 +747,6 @@ tathyēra raṅa
 raṅa paribartana karāra cēṣṭā karē
 pragrēsaklakēra jan'ya 255 raṅa samarthana sakriẏa karē.
 Pragrēsaklakēra jan'ya satya raṅa samarthana sakriẏa karē.
-Sēkēnḍēra agragatira bārēra raṅa. Ēṭi 1-16, 1-255, bā"1-255;1-255;1-255" hatē pārē.
-Miniṭēra agragatira bārēra raṅa. Ēṭi 1-16, 1-255, bā"1-255;1-255;1-255" hatē pārē.
-Ghanṭā agragatira bārēra raṅa. Ēṭi 1-16, 1-255, bā"1-255;1-255;1-255" hatē pārē.
-Tārikhēra tathyēra raṅa. Ēṭi 1-16, 1-255, bā"1-255;1-255;1-255" hatē pārē.
 Raṅa sā'ikliṁ sakṣama karā thākalē, pragrēsaklakaṭitē raṅa paribartana karāra āgē kaẏaṭi ṭiksa? 1 Ṭika = 0.5 Sēkēnḍa
 pragrēsaklaka ēṭi sakṣama karā thākalē ēlōmēlō raṅa nirbācana karabē. An'yathāẏa, kanaphigāra thēkē raṁ byabahāra karuna.
 Ēkaṭi natuna thima tairi karē
@@ -1115,3 +1111,21 @@ Apracalita?
 pāṭhya sampādanā prampaṭa śailī
 jipa śēla prampaṭa sṭā'ila
 Phōlḍāraṭi khāli.
+Saphalabhābē anusandhāna karā haẏēchē {0}.
+Bhārbōja prōba
+hārḍa'ōẏyāra anusandhānēra bārtāgulikē ēkaṭu ālāpacārita karuna.
+> Phrēma samparkē kōna tathya nē'i.
+Āpanāra nāma likhatē habē.
+JSON phā'ilakē sundara karē
+kanaphiga bibhāga {0} pā'ōẏā yāẏani.
+Kanaphiga ēnṭri {0} pā'ōẏā yāẏani.
+Prati miniṭē biṭa byabahāra karuna
+parabartī raṁ lēkhāra jan'ya biṭa pāra miniṭa i'uniṭa byabahāra karabēna kinā.
+Biṭa prati miniṭa bilamba
+raṅa biṭa
+parabartī lēkhāra āgē prati miniṭē kata biṭa apēkṣā karatē habē?
+BeatFader ēra jan'ya 255 raṅa samarthana sakriẏa karē.
+Biṭaphyāḍārēra jan'ya satyikārēra raṅa samarthana sakriẏa karē.
+BeatFader ryānḍama raṁ nirbācana karabē yadi ēṭi sakriẏa thākē. An'yathāẏa, kanaphigārēśana thēkē raṁ byabahāra karuna.
+Kāsṭama sṭārṭa'āpa byānāra
+nirdiṣṭa karā halē, ēṭi plēsahōlḍāra samarthana saha kāsṭamā'ijaḍa sṭārṭa'āpa byānāra pradarśana karabē. Āpani kārnēla sanskaraṇēra jan'ya ē'i bākyānśaṭi byabahāra karatē pārēna:

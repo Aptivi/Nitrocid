@@ -747,10 +747,6 @@ Couleur des informations
 Tiques pour changer de couleur
 Active la prise en charge de 255 couleurs pour ProgressClock.
 Active la prise en charge des couleurs vraies pour ProgressClock.
-La couleur de la barre de progression des secondes. Il peut s'agir de 1-16, 1-255 ou "1-255;1-255;1-255".
-La couleur de la barre de progression des minutes. Il peut s'agir de 1-16, 1-255 ou "1-255;1-255;1-255".
-La couleur de la barre de progression des heures. Il peut s'agir de 1-16, 1-255 ou "1-255;1-255;1-255".
-La couleur des informations de date. Il peut s'agir de 1-16, 1-255 ou "1-255;1-255;1-255".
 Si le cycle des couleurs est activé, combien de ticks avant de changer les couleurs dans ProgressClock ? 1 tick = 0,5 seconde
 ProgressClock sélectionnera des couleurs aléatoires si elle est activée. Sinon, utilisez les couleurs de config.
 Crée un nouveau thème
@@ -1115,3 +1111,21 @@ Style d'invite RSS
 Style d'invite d'édition de texte
 Style d'invite de la coquille zippée
 Le dossier est vide.
+{0} erfolgreich getestet.
+Ausführliche Sonde
+Machen Sie Hardware-Probing-Meldungen etwas gesprächig.
+> Es liegen keine Informationen zu Frames vor.
+Sie müssen Ihren Namen schreiben.
+Verschönert die JSON-Datei
+Konfigurationskategorie {0} nicht gefunden.
+Konfigurationseintrag {0} nicht gefunden.
+Beats pro Minute verwenden
+Ob die Einheit Beats Per Minute verwendet werden soll, um die nächste Farbe zu schreiben.
+Verzögerung in Schlägen pro Minute
+Beatfarbe
+Wie viele Schläge pro Minute muss man warten, bevor der nächste Schreibvorgang ausgeführt wird?
+Aktiviert die 255-Farben-Unterstützung für BeatFader.
+Aktiviert True Color-Unterstützung für BeatFader.
+BeatFader wählt zufällige Farben aus, wenn es aktiviert ist. Verwenden Sie andernfalls Farben aus config.
+Benutzerdefiniertes Startup-Banner
+Falls angegeben, wird ein benutzerdefiniertes Startbanner mit Platzhalterunterstützung angezeigt. Sie können diesen Ausdruck für die Kernel-Version verwenden:

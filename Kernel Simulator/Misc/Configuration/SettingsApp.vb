@@ -19,7 +19,7 @@
 Imports System.Globalization
 Imports System.Reflection
 
-Public Module ToolPrompts
+Public Module SettingsApp
 
     ''' <summary>
     ''' Key type for settings entry
@@ -111,7 +111,7 @@ Public Module ToolPrompts
         Dim SectionFinished As Boolean
         Dim AnswerString As String
         Dim AnswerInt As Integer
-        Dim BuiltinSavers As Integer = 18
+        Dim BuiltinSavers As Integer = 19
 
         'Section-specific variables
         Dim ConfigurableScreensavers As New List(Of String)
@@ -121,15 +121,16 @@ Public Module ToolPrompts
             'List options
             Select Case SectionNum
                 Case "1" 'General
-                    MaxOptions = 6
+                    MaxOptions = 7
                     W("*) " + DoTranslation("General Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all general kernel settings, mainly for maintaining the kernel.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Prompt for Arguments on Boot") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(argsOnBoot)))
                     W("2) " + DoTranslation("Maintenance Mode Trigger") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(maintenance)))
                     W("3) " + DoTranslation("Change Root Password..."), True, ColTypes.Option)
                     W("4) " + DoTranslation("Check for Updates on Startup") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CheckUpdateStart)))
-                    W("5) " + DoTranslation("Change Culture when Switching Languages") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LangChangeCulture)))
-                    W("6) " + DoTranslation("Culture of") + " {0} [{1}]", True, ColTypes.Option, currentLang, CurrentCult.Name)
+                    W("5) " + DoTranslation("Custom Startup Banner") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CustomBanner)))
+                    W("6) " + DoTranslation("Change Culture when Switching Languages") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LangChangeCulture)))
+                    W("7) " + DoTranslation("Culture of") + " {0} [{1}]", True, ColTypes.Option, currentLang, CurrentCult.Name)
                 Case "1.3" 'Change Root Password...
                     MaxOptions = 2
                     W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password...") + vbNewLine, True, ColTypes.Neutral)
@@ -137,11 +138,12 @@ Public Module ToolPrompts
                     W("1) " + DoTranslation("Change Root Password?") + " [{0}]", True, ColTypes.Option, GetConfigValue("setRootPasswd"))
                     W("2) " + DoTranslation("Set Root Password..."), True, ColTypes.Option)
                 Case "2" 'Hardware
-                    MaxOptions = 2
+                    MaxOptions = 3
                     W("*) " + DoTranslation("Hardware Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section changes hardware probe behavior.") + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Quiet Probe") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(quietProbe)))
-                    W("2) " + DoTranslation("Full Probe") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FullProbe)))
+                    W("1) " + DoTranslation("Quiet Probe") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(QuietHardwareProbe)))
+                    W("2) " + DoTranslation("Full Probe") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FullHardwareProbe)))
+                    W("3) " + DoTranslation("Verbose Probe") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(VerboseHardwareProbe)))
                 Case "3" 'Login
                     MaxOptions = 3
                     W("*) " + DoTranslation("Login Settings...") + vbNewLine, True, ColTypes.Neutral)
@@ -234,6 +236,7 @@ Public Module ToolPrompts
                     W("16) AptErrorSim...", True, ColTypes.Option)
                     W("17) Marquee...", True, ColTypes.Option)
                     W("18) FaderBack...", True, ColTypes.Option)
+                    W("19) BeatFader...", True, ColTypes.Option)
 
                     'Populate custom screensavers
                     For Each CustomSaver As String In CSvrdb.Keys
@@ -264,13 +267,14 @@ Public Module ToolPrompts
                     W(DoTranslation("This section lists screensaver settings for") + " GlitterMatrix." + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(GlitterMatrixDelay)))
                 Case "7.4" 'Screensaver > Disco
-                    MaxOptions = 4
+                    MaxOptions = 5
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Disco" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " Disco." + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Disco255Colors)))
                     W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoTrueColor)))
                     W("3) " + DoTranslation("Cycle colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoCycleColors)))
                     W("4) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoDelay)))
+                    W("5) " + DoTranslation("Use Beats Per Minute") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoUseBeatsPerMinute)))
                 Case "7.5" 'Screensaver > Lines
                     MaxOptions = 3
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Lines" + vbNewLine, True, ColTypes.Neutral)
@@ -379,6 +383,16 @@ Public Module ToolPrompts
                     W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderBackDelay)))
                     W("2) " + DoTranslation("Fade Out Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderBackFadeOutDelay)))
                     W("3) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderBackMaxSteps)))
+                Case "7.19" 'Screensaver > BeatFader
+                    MaxOptions = 6
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " BeatFader." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFader255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderTrueColor)))
+                    W("3) " + DoTranslation("Delay in Beats Per Minute") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderDelay)))
+                    W("4) " + DoTranslation("Cycle colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderCycleColors)))
+                    W("5) " + DoTranslation("Beat Color") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderBeatColor)))
+                    W("6) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderMaxSteps)))
                 Case "7." + $"{If(SectionParameters.Length <> 0, SectionParameters(0), $"{BuiltinSavers + 1}")}" 'Screensaver > a custom saver
                     Dim SaverIndex As Integer = SectionParameters(0) - BuiltinSavers - 1
                     Dim Configurables As List(Of String) = SectionParameters(1)
@@ -482,7 +496,7 @@ Public Module ToolPrompts
         Dim TargetList As IEnumerable(Of Object)
         Dim SelectFrom As IEnumerable(Of Object)
         Dim NeutralizePaths As Boolean
-        Dim BuiltinSavers As Integer = 18
+        Dim BuiltinSavers As Integer = 19
 
         While Not KeyFinished
             Console.Clear()
@@ -507,12 +521,17 @@ Public Module ToolPrompts
                             KeyVar = NameOf(CheckUpdateStart)
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Check for Updates on Startup") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Each startup, it will check for updates."), True, ColTypes.Neutral)
-                        Case 5 'Change Culture when Switching Languages
+                        Case 5 'Custom Startup Banner
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(CustomBanner)
+                            W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Custom Startup Banner") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("If specified, it will display customized startup banner with placeholder support. You can use this phrase for kernel version:") + " {0}", True, ColTypes.Neutral)
+                        Case 6 'Change Culture when Switching Languages
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(LangChangeCulture)
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Culture when Switching Languages") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("When switching languages, change the month names, calendar, etc."), True, ColTypes.Neutral)
-                        Case 6 'Culture of current language
+                        Case 7 'Culture of current language
                             MaxKeyOptions = 0
                             KeyType = SettingsKeyType.SSelection
                             KeyVar = NameOf(CurrentCult)
@@ -557,14 +576,19 @@ Public Module ToolPrompts
                     Select Case KeyNumber
                         Case 1 'Quiet Probe
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(quietProbe)
+                            KeyVar = NameOf(QuietHardwareProbe)
                             W("*) " + DoTranslation("Hardware Settings...") + " > " + DoTranslation("Quiet Probe") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Keep hardware probing messages silent."), True, ColTypes.Neutral)
                         Case 2 'Full Probe
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(FullProbe)
+                            KeyVar = NameOf(FullHardwareProbe)
                             W("*) " + DoTranslation("Hardware Settings...") + " > " + DoTranslation("Full Probe") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("If true, probes all the hardware; else, will only probe the needed hardware."), True, ColTypes.Neutral)
+                        Case 3 'Verbose Probe
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(VerboseHardwareProbe)
+                            W("*) " + DoTranslation("Hardware Settings...") + " > " + DoTranslation("Verbose Probe") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Make hardware probing messages a bit talkative."), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Hardware Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
@@ -914,8 +938,13 @@ Public Module ToolPrompts
                         Case 4 'Disco: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(DiscoDelay)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > Disco >" + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Disco > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
                             W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 5 'Disco: Use Beats Per Second
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(DiscoUseBeatsPerMinute)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Disco > " + DoTranslation("Use Beats Per Minute") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Whether to use the Beats Per Minute unit to write the next color."), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Disco > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
@@ -1043,25 +1072,25 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Cycle colors") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("ProgressClock will select random colors if it's enabled. Otherwise, use colors from config."), True, ColTypes.Neutral)
                         Case 4 'ProgressClock: Color of Seconds Bar
-                            KeyType = SettingsKeyType.SString
+                            KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(ProgressClockSecondsProgressColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Color of Seconds Bar") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("The color of seconds progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(ProgressClockSecondsProgressColor).Type = ColorType.TrueColor, If(New Color(ProgressClockSecondsProgressColor).Type = ColorType._255Color, New Color(ProgressClockSecondsProgressColor).PlainSequence, ConsoleColors.DarkBlue), New Color(ProgressClockSecondsProgressColor).R, New Color(ProgressClockSecondsProgressColor).G, New Color(ProgressClockSecondsProgressColor).B)
                         Case 5 'ProgressClock: Color of Minutes Bar
-                            KeyType = SettingsKeyType.SString
+                            KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(ProgressClockMinutesProgressColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Color of Minutes Bar") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("The color of minutes progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(ProgressClockMinutesProgressColor).Type = ColorType.TrueColor, If(New Color(ProgressClockMinutesProgressColor).Type = ColorType._255Color, New Color(ProgressClockMinutesProgressColor).PlainSequence, ConsoleColors.DarkMagenta), New Color(ProgressClockMinutesProgressColor).R, New Color(ProgressClockMinutesProgressColor).G, New Color(ProgressClockMinutesProgressColor).B)
                         Case 6 'ProgressClock: Color of Hours Bar
-                            KeyType = SettingsKeyType.SString
+                            KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(ProgressClockHoursProgressColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Color of Hours Bar") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("The color of hours progress bar. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(ProgressClockHoursProgressColor).Type = ColorType.TrueColor, If(New Color(ProgressClockHoursProgressColor).Type = ColorType._255Color, New Color(ProgressClockHoursProgressColor).PlainSequence, ConsoleColors.DarkCyan), New Color(ProgressClockHoursProgressColor).R, New Color(ProgressClockHoursProgressColor).G, New Color(ProgressClockHoursProgressColor).B)
                         Case 7 'ProgressClock: Color of Information
-                            KeyType = SettingsKeyType.SString
+                            KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(ProgressClockProgressColor)
-                            W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Color of Information") + vbNewLine, True, ColTypes.Neutral)
-                            W("*) " + DoTranslation("The color of date information. It can be 1-16, 1-255, or ""1-255;1-255;1-255""."), True, ColTypes.Neutral)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(ProgressClockProgressColor).Type = ColorType.TrueColor, If(New Color(ProgressClockProgressColor).Type = ColorType._255Color, New Color(ProgressClockProgressColor).PlainSequence, ConsoleColors.Gray), New Color(ProgressClockProgressColor).R, New Color(ProgressClockProgressColor).G, New Color(ProgressClockProgressColor).B)
                         Case 8 'ProgressClock: Ticks to change color
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(ProgressClockCycleColorsTicks)
@@ -1264,6 +1293,42 @@ Public Module ToolPrompts
                             W("*) " + DoTranslation("Screensaver Settings...") + " > FaderBack > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
+                Case "7.19" 'BeatFader
+                    Select Case KeyNumber
+                        Case 1 'BeatFader: Activate 255 colors
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(BeatFader255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates 255 color support for BeatFader."), True, ColTypes.Neutral)
+                        Case 2 'BeatFader: Activate true colors
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(BeatFaderTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates true color support for BeatFader."), True, ColTypes.Neutral)
+                        Case 3 'BeatFader: Delay in Beats Per Minute
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BeatFaderDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Delay in Beats Per Minute") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many beats per minute to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 4 'BeatFader: Cycle colors
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(BeatFaderCycleColors)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Cycle colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("BeatFader will select random colors if it's enabled. Otherwise, use colors from config."), True, ColTypes.Neutral)
+                        Case 5 'BeatFader: Beat Color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(BeatFaderBeatColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(BeatFaderBeatColor).Type = ColorType.TrueColor, If(New Color(BeatFaderBeatColor).Type = ColorType._255Color, New Color(BeatFaderBeatColor).PlainSequence, ConsoleColors.NavyBlue), New Color(BeatFaderBeatColor).R, New Color(BeatFaderBeatColor).G, New Color(BeatFaderBeatColor).B)
+                        Case 6 'BeatFader: Max Fade Steps
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BeatFaderMaxSteps)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Max Fade Steps") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many fade steps to do?"), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
+                    End Select
                 Case "7." + $"{If(SectionParts.Length > 1, SectionParts(1), $"{BuiltinSavers + 1}")}" 'Custom saver
                     Dim SaverIndex As Integer = SectionParts(1) - BuiltinSavers - 1
                     Dim SaverSettings As Dictionary(Of String, Object) = CSvrdb.Values(SaverIndex).SaverSettings
@@ -1432,10 +1497,20 @@ Public Module ToolPrompts
                 KeyFinished = True
             ElseIf KeyType = SettingsKeyType.SString Or KeyType = SettingsKeyType.SLongString Then
                 Wdbg("I", "Answer is not numeric and key is of the String type. Setting variable...")
+
+                'Check to see if written answer is empty
                 If String.IsNullOrWhiteSpace(AnswerString) Then
                     Wdbg("I", "Answer is nothing. Setting to {0}...", KeyValue)
                     AnswerString = KeyValue
                 End If
+
+                'Check to see if the user intended to clear the variable to make it consist of nothing
+                If AnswerString.ToLower = "/clear" Then
+                    Wdbg("I", "User requested clear.")
+                    AnswerString = ""
+                End If
+
+                'Set the value
                 KeyFinished = True
                 SetConfigValue(KeyVar, AnswerString)
             ElseIf KeyType = SettingsKeyType.SList Then

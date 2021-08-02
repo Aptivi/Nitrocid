@@ -747,10 +747,6 @@ Jōhō no iro.
 -Shoku o henkō suru tikku.
 ProgressClock no 255-shoku sapōto o akutibu ni shimasu.
 ProgressClock no to~urū Color sapōto o akutibu ni shimasu.
-Byō no puroguresubā no iro. 1 - 16, 1 - 255, Matawa `1-255;1-255;1-255' ni suru koto ga dekimasu.
--Bun no puroguresubā no iro. 1 - 16, 1 - 255, Matawa `1-255;1-255;1-255' ni suru koto ga dekimasu.
-Jikan no puroguresubā no iro. 1 - 16, 1 - 255, Matawa `1-255;1-255;1-255' ni suru koto ga dekimasu.
-Hidzuke jōhō no iro. 1 - 16, 1 - 255, Matawa `1-255;1-255;1-255' ni suru koto ga dekimasu.
 Karā saikuringu ga yūkō ni natte iru baai, ProgressClock de karā o henkō suru made no tikku-sū wa? 1 Tikku = 0. 5-Byō.
 ProgressClock ga yūkō ni natte iru baai, randamuna iro ga sentaku sa remasu. Sore igai no baai wa, kōsei no iro o shiyō shimasu.
 Atarashī tēma o sakusei shimasu.
@@ -1115,3 +1111,21 @@ RSS puronputosutairu
 tekisutoedittopuronputosutairu
 Zip sherupuronputosutairu
 Foruda ga soradesu.
+{0} No purōbu ni seikō shimashita.
+Jōchō purōbu
+hādou~eapurōbingumessēji o sukoshi oshaberi ni shimasu.
+> Furēmu ni kansuru jōhō wa arimasen.
+Anata wa anata no namae o kaku hitsuyō ga arimasu.
+Jeison fairu o bika shimasu
+kōsei kategori {0} ga mitsukarimasen.
+Kōsei entori {0} ga mitsukarimasen.
+1-Bu-atari no bīto o shiyō suru
+bītsu PerMinute tan'i o shiyō shite tsugi no iro o kakikomu ka dō ka.
+1-Bu-atari no hakusū no chien
+bītokarā-ji
+no kakikomi o okonau mae ni taiki suru 1-bu-atari no bīto-sū wa?
+BeatFader no 255-shoku no sapōto o akutibu ni shimasu.
+BeatFader no to~urūkarāsapōto o akutibu ni shimasu.
+BeatFader ga yūkō ni natte iru baai, randamuna iro o sentaku shimasu. Sore igai no baai wa, kōsei no iro o shiyō shimasu.
+Kasutamusutātoappubanā
+shitei suru to, purēsuhorudā o sapōto suru kasutamaizu sa reta sutātoappubanā ga hyōji sa remasu. Kono furēzu wa kānerubājon ni shiyō dekimasu.

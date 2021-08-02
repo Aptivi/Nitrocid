@@ -72,9 +72,9 @@ Public Module Flags
     ''' </summary>
     Public slotProbe As Boolean = True
     ''' <summary>
-    ''' Probe quietly
+    ''' Probe the hardware quietly. This overrides the <see cref="VerboseHardwareProbe"/> flag.
     ''' </summary>
-    Public quietProbe As Boolean
+    Public QuietHardwareProbe As Boolean
     ''' <summary>
     ''' Show Time/Date on corner
     ''' </summary>
@@ -158,7 +158,11 @@ Public Module Flags
     ''' <summary>
     ''' Ensures that all hardware will be probed
     ''' </summary>
-    Public FullProbe As Boolean = True
+    Public FullHardwareProbe As Boolean = True
+    ''' <summary>
+    ''' Makes the hardware prober a bit talkative
+    ''' </summary>
+    Public VerboseHardwareProbe As Boolean = False
 
     'Private flags
     ''' <summary>

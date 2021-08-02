@@ -747,10 +747,6 @@ Waihoʻoluʻu o ka ʻike
 Ticks e hoʻololi kala
 Hoʻoulu i ke kākoʻo kala 255 no ProgressClock.
 Hoʻoulu i ke kākoʻo kala maoli no ProgressClock.
-ʻO ke kala o nā kekona holomua. Hiki iā 1-16, 1-255, a i ʻole "1-255;1-255;1-255".
-Ka waihoʻoluʻu o nā minuke holomua. Hiki iā 1-16, 1-255, a i ʻole "1-255;1-255;1-255".
-ʻO ke kala o nā hola holomua. Hiki iā 1-16, 1-255, a i ʻole "1-255;1-255;1-255".
-ʻO ke kala o ka ʻike lā. Hiki iā 1-16, 1-255, a i ʻole "1-255;1-255;1-255".
 Inā hiki i ke kaʻa kaʻa waihoʻoluʻu, ehia mau tick ma mua o ka hoʻololi ʻana i nā kala i ka ProgressClock? 1 tick = 0.5 kekona
 E koho ʻo ProgressClock i nā waihoʻoluʻu kaulele inā hiki ke hoʻohana ʻia. Inā ʻole, e hoʻohana i nā kala mai config.
 Hana i kahi kumuhana hou
@@ -1115,3 +1111,21 @@ RSS Kāhea Paipai
 Kikokikona hoʻoponopono i ke kaila paipai
 ʻO ka Zip Shell Prompt Style
 Hakahaka ka faila.
+Ua hoʻokolokolo kūleʻa ʻia {0}.
+ʻO Verbose Probe
+E kamaʻilio iki i nā leka uila me ka loea.
+> ʻAʻohe ʻike e pili ana i nā mōlina.
+Pono ʻoe e kākau i kou inoa.
+Hoʻonani i ka faila JSON
+ʻAʻole i loaʻa ka waeʻano configur.
+ʻAʻole i loaʻa ka config config.
+Hoʻohana i nā Beats Per Minute
+E hoʻohana paha i ka mokuna Beats Per Minute e kākau ai i ke kala e hiki mai ana.
+Hoʻolālā i nā Beats Per Minute
+Pākuʻi ʻia ke kala
+Ehia mau kuʻi i kēlā me kēia minuke e kali ai ma mua o ka kākau ʻana?
+Hoʻoulu i ke kākoʻo kala 255 no BeatFader.
+Hoʻoulu i ke kākoʻo kala maoli no BeatFader.
+E koho ʻo BeatFader i nā waihoʻoluʻu ʻole inā hiki ke hoʻohana ʻia. Inā ʻole, e hoʻohana i nā kala mai config.
+Banner Hoʻomaka Kūmole
+Inā kuhikuhi ʻia, e hōʻike ʻia ka hae hoʻomaka me ka kākoʻo o ka placeholder. Hiki iā ʻoe ke hoʻohana i kēia huaʻōlelo no ka mana kernel:

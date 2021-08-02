@@ -16,8 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.IO
-
 Public Class Color
 
     ''' <summary>
@@ -74,6 +72,8 @@ Public Class Color
                 R = ColorSpecifierArray(0)
                 G = ColorSpecifierArray(1)
                 B = ColorSpecifierArray(2)
+            Else
+                Throw New Exceptions.ColorException(DoTranslation("Invalid color specifier. Ensure that it's on the correct format, which means a number from 0-255 if using 255 colors or a VT sequence if using true color as follows:") + " <R>;<G>;<B>")
             End If
         ElseIf IsNumeric(ColorSpecifier) Then
             ColorSpecifier = ColorSpecifier.Replace("""", "")
@@ -557,21 +557,21 @@ Public Module ColorTools
 
                 'The red color level
                 W(vbNewLine + " <", False, If(CurrentRange = "R", ColTypes.Gray, ColTypes.Neutral))
-                WriteWhereC("R: {0}", (Console.CursorLeft + 30 - $"R: {CurrentColorR}".Length) / 2, Console.CursorTop, True, New Color($"{CurrentColorR};0;0"), CurrentColorR)
+                WriteWhereC("R: {0}", (Console.CursorLeft + 30 - "R: {0}".FormatString(CurrentColorR).Length) / 2, Console.CursorTop, True, New Color("{0};0;0".FormatString(CurrentColorR)), CurrentColorR)
                 WriteWhere(">" + vbNewLine, Console.CursorLeft + 27, Console.CursorTop, False, If(CurrentRange = "R", ColTypes.Gray, ColTypes.Neutral))
 
                 'The green color level
                 W(vbNewLine + " <", False, If(CurrentRange = "G", ColTypes.Gray, ColTypes.Neutral))
-                WriteWhereC("G: {0}", (Console.CursorLeft + 30 - $"G: {CurrentColorG}".Length) / 2, Console.CursorTop, True, New Color($"0;{CurrentColorG};0"), CurrentColorG)
+                WriteWhereC("G: {0}", (Console.CursorLeft + 30 - "G: {0}".FormatString(CurrentColorG).Length) / 2, Console.CursorTop, True, New Color("0;{0};0".FormatString(CurrentColorG)), CurrentColorG)
                 WriteWhere(">" + vbNewLine, Console.CursorLeft + 27, Console.CursorTop, False, If(CurrentRange = "G", ColTypes.Gray, ColTypes.Neutral))
 
                 'The blue color level
                 W(vbNewLine + " <", False, If(CurrentRange = "B", ColTypes.Gray, ColTypes.Neutral))
-                WriteWhereC("B: {0}", (Console.CursorLeft + 30 - $"B: {CurrentColorB}".Length) / 2, Console.CursorTop, True, New Color($"0;0;{CurrentColorB}"), CurrentColorB)
+                WriteWhereC("B: {0}", (Console.CursorLeft + 30 - "B: {0}".FormatString(CurrentColorB).Length) / 2, Console.CursorTop, True, New Color("0;0;{0}".FormatString(CurrentColorB)), CurrentColorB)
                 WriteWhere(">" + vbNewLine, Console.CursorLeft + 27, Console.CursorTop, False, If(CurrentRange = "B", ColTypes.Gray, ColTypes.Neutral))
 
                 'Show example
-                WriteC(vbNewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, New Color($"{CurrentColorR};{CurrentColorG};{CurrentColorB}"))
+                WriteC(vbNewLine + "- Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, New Color("{0};{1};{2}".FormatString(CurrentColorR, CurrentColorG, CurrentColorB)))
 
                 'Read and get response
                 Dim ConsoleResponse As ConsoleKeyInfo = Console.ReadKey(True)
@@ -707,7 +707,7 @@ Public Module ColorTools
         End While
 
         If TrueColor Then
-            Return $"{CurrentColorR};{CurrentColorG};{CurrentColorB}"
+            Return "{0};{1};{2}".FormatString(CurrentColorR, CurrentColorG, CurrentColorB)
         Else
             Return CurrentColor
         End If

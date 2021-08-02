@@ -747,10 +747,6 @@ Cor da Informação
 Carrapatos para mudar de cor
 Ativa o suporte de 255 cores para ProgressClock.
 Ativa o suporte true color para ProgressClock.
-A cor da barra de progresso dos segundos. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
-A cor da barra de progresso dos minutos. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
-A cor da barra de progresso de horas. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
-A cor das informações de data. Pode ser 1-16, 1-255 ou "1-255;1-255;1-255".
 Se o ciclo de cores estiver ativado, quantos tiques antes de alterar as cores no ProgressClock? 1 tick = 0,5 segundos
 ProgressClock selecionará cores aleatórias se estiver habilitado. Caso contrário, use as cores da configuração.
 Cria um novo tema
@@ -1115,3 +1111,21 @@ Estilo de prompt RSS
 Estilo de Prompt de Edição de Texto
 Estilo de prompt Zip Shell
 Pasta está vazia.
+Sondado com sucesso {0}.
+Verbose Probe
+Torne as mensagens de sondagem de hardware um pouco comunicativas.
+> Não há informações sobre frames.
+Você precisa escrever seu nome.
+Embeleza o arquivo JSON
+Categoria de configuração {0} não encontrada.
+Entrada de configuração {0} não encontrada.
+Use batidas por minuto
+Se deve usar a unidade de batidas por minuto para escrever a próxima cor.
+Atraso em batidas por minuto
+Beat Color
+Quantas batidas por minuto devemos esperar antes de fazer a próxima gravação?
+Ativa o suporte de 255 cores para BeatFader.
+Ativa o suporte true color para BeatFader.
+O BeatFader selecionará cores aleatórias se estiver habilitado. Caso contrário, use as cores da configuração.
+Banner de inicialização personalizado
+Se especificado, ele exibirá um banner de inicialização personalizado com suporte para espaço reservado. Você pode usar esta frase para a versão do kernel:

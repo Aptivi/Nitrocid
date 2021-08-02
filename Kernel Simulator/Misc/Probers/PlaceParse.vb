@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
+
 Public Module PlaceParse
 
     ''' <summary>
@@ -48,6 +50,10 @@ Public Module PlaceParse
                 Wdbg("I", "FTP local directory placeholder found.")
                 text = text.Replace("<currentftplocaldirectory>", currDirect)
             End If
+            If text.Contains("<currentftplocaldirectoryname>") Then
+                Wdbg("I", "FTP local directory name placeholder found.")
+                text = text.Replace("<currentftplocaldirectoryname>", New DirectoryInfo(currDirect).Name)
+            End If
             If text.Contains("<sftpuser>") Then
                 Wdbg("I", "SFTP username placeholder found.")
                 text = text.Replace("<sftpuser>", SFTPUser)
@@ -63,6 +69,10 @@ Public Module PlaceParse
             If text.Contains("<currentsftplocaldirectory>") Then
                 Wdbg("I", "SFTP local directory placeholder found.")
                 text = text.Replace("<currentsftplocaldirectory>", SFTPCurrDirect)
+            End If
+            If text.Contains("<currentsftplocaldirectoryname>") Then
+                Wdbg("I", "SFTP local directory name placeholder found.")
+                text = text.Replace("<currentsftplocaldirectoryname>", New DirectoryInfo(SFTPCurrDirect).Name)
             End If
             If text.Contains("<mailuser>") Then
                 Wdbg("I", "Mail username placeholder found.")
@@ -83,6 +93,10 @@ Public Module PlaceParse
             If text.Contains("<currentdirectory>") Then
                 Wdbg("I", "Current directory placeholder found.")
                 text = text.Replace("<currentdirectory>", CurrDir)
+            End If
+            If text.Contains("<currentdirectoryname>") Then
+                Wdbg("I", "Current directory name placeholder found.")
+                text = text.Replace("<currentdirectoryname>", New DirectoryInfo(CurrDir).Name)
             End If
             If text.Contains("<shortdate>") Then
                 Wdbg("I", "Short Date placeholder found.")
@@ -131,7 +145,9 @@ Public Module PlaceParse
             If text.Contains("<f:") Then
                 Wdbg("I", "Foreground color placeholder found.")
                 Do While text.Contains("<f:")
-                    Dim SequenceSubstring As String = text.Substring(text.IndexOf("<f:"), Finish:=text.IndexOf(">"))
+                    Dim StartForegroundIndex As Integer = text.IndexOf("<f:")
+                    Dim EndForegroundIndex As Integer = text.Substring(text.IndexOf("<f:")).IndexOf(">")
+                    Dim SequenceSubstring As String = text.Substring(text.IndexOf("<f:"), length:=EndForegroundIndex + 1)
                     Dim PlainSequence As String = SequenceSubstring.Substring(3, SequenceSubstring.Length - 1 - 3)
                     Dim VTSequence As String = New Color(PlainSequence).VTSequenceForeground
                     text = text.Replace(SequenceSubstring, VTSequence)
@@ -140,7 +156,9 @@ Public Module PlaceParse
             If text.Contains("<b:") Then
                 Wdbg("I", "Background color placeholder found.")
                 Do While text.Contains("<b:")
-                    Dim SequenceSubstring As String = text.Substring(text.IndexOf("<b:"), Finish:=text.IndexOf(">"))
+                    Dim StartBackgroundIndex As Integer = text.IndexOf("<b:")
+                    Dim EndBackgroundIndex As Integer = text.Substring(text.IndexOf("<b:")).IndexOf(">")
+                    Dim SequenceSubstring As String = text.Substring(text.IndexOf("<b:"), length:=EndBackgroundIndex + 1)
                     Dim PlainSequence As String = SequenceSubstring.Substring(3, SequenceSubstring.Length - 1 - 3)
                     Dim VTSequence As String = New Color(PlainSequence).VTSequenceBackground
                     text = text.Replace(SequenceSubstring, VTSequence)
@@ -149,7 +167,9 @@ Public Module PlaceParse
             If text.Contains("<$") Then
                 Wdbg("I", "UESH variable placeholder found.")
                 Do While text.Contains("<$")
-                    Dim ShellVariableSubstring As String = text.Substring(text.IndexOf("<$"), Finish:=text.IndexOf(">"))
+                    Dim StartShellVariableIndex As Integer = text.IndexOf("<$")
+                    Dim EndShellVariableIndex As Integer = text.Substring(text.IndexOf("<$")).IndexOf(">")
+                    Dim ShellVariableSubstring As String = text.Substring(text.IndexOf("<$"), length:=EndShellVariableIndex + 1)
                     Dim PlainShellVariable As String = ShellVariableSubstring.Substring(1, ShellVariableSubstring.Length - 1 - 1)
                     text = text.Replace(ShellVariableSubstring, GetVariable(PlainShellVariable))
                 Loop

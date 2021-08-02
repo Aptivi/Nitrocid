@@ -29,6 +29,7 @@ Public Module Encryption
         MD5
         SHA1
         SHA256
+        SHA384
         SHA512
     End Enum
 
@@ -57,16 +58,19 @@ Public Module Encryption
         Wdbg("I", "Selected algorithm: {0}", algorithm.ToString)
         Wdbg("I", "String length: {0}", str.Length)
         Select Case algorithm
-            Case 0
+            Case Algorithms.MD5
                 Dim hashbyte As Byte() = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(str))
                 Return GetArrayEnc(hashbyte)
-            Case 1
+            Case Algorithms.SHA1
                 Dim hashbyte As Byte() = SHA1.Create().ComputeHash(Encoding.UTF8.GetBytes(str))
                 Return GetArrayEnc(hashbyte)
-            Case 2
+            Case Algorithms.SHA256
                 Dim hashbyte As Byte() = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(str))
                 Return GetArrayEnc(hashbyte)
-            Case 3
+            Case Algorithms.SHA384
+                Dim hashbyte As Byte() = SHA384.Create().ComputeHash(Encoding.UTF8.GetBytes(str))
+                Return GetArrayEnc(hashbyte)
+            Case Algorithms.SHA512
                 Dim hashbyte As Byte() = SHA512.Create().ComputeHash(Encoding.UTF8.GetBytes(str))
                 Return GetArrayEnc(hashbyte)
         End Select
@@ -83,16 +87,19 @@ Public Module Encryption
         Wdbg("I", "Selected algorithm: {0}", algorithm.ToString)
         Wdbg("I", "Stream length: {0}", str.Length)
         Select Case algorithm
-            Case 0
+            Case Algorithms.MD5
                 Dim hashbyte As Byte() = MD5.Create().ComputeHash(str)
                 Return GetArrayEnc(hashbyte)
-            Case 1
+            Case Algorithms.SHA1
                 Dim hashbyte As Byte() = SHA1.Create().ComputeHash(str)
                 Return GetArrayEnc(hashbyte)
-            Case 2
+            Case Algorithms.SHA256
                 Dim hashbyte As Byte() = SHA256.Create().ComputeHash(str)
                 Return GetArrayEnc(hashbyte)
-            Case 3
+            Case Algorithms.SHA384
+                Dim hashbyte As Byte() = SHA384.Create().ComputeHash(str)
+                Return GetArrayEnc(hashbyte)
+            Case Algorithms.SHA512
                 Dim hashbyte As Byte() = SHA512.Create().ComputeHash(str)
                 Return GetArrayEnc(hashbyte)
         End Select

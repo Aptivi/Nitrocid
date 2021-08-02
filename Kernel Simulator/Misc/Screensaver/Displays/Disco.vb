@@ -36,7 +36,15 @@ Module DiscoDisplay
         Dim random As New Random()
         Try
             Do While True
-                SleepNoBlock(DiscoDelay, Disco)
+                'Check to see if we're dealing with beats per minute
+                If DiscoUseBeatsPerMinute Then
+                    Dim BeatInterval As Integer = 60000 / DiscoDelay
+                    SleepNoBlock(BeatInterval, Disco)
+                Else
+                    SleepNoBlock(DiscoDelay, Disco)
+                End If
+
+                'Make the disco light!
                 If Disco.CancellationPending = True Then
                     Wdbg("W", "Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True

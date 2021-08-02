@@ -747,10 +747,6 @@ xìnxī yánsè
 gǎibiàn yánsè de pí chóng
 wèi ProgressClock jīhuó 255 sè zhīchí.
 Jīhuó duì ProgressClock de zhēn cǎisè zhīchí.
-Miǎo jìndù tiáo de yánsè. Tā kěyǐ shì 1-16,1-255 huò “1-255;1-255;1-255”.
-Fēnzhōng jìndù tiáo de yánsè. Tā kěyǐ shì 1-16,1-255 huò “1-255;1-255;1-255”.
-Xiǎoshí jìndù tiáo de yánsè. Tā kěyǐ shì 1-16,1-255 huò “1-255;1-255;1-255”.
-Rìqí xìnxī de yánsè. Tā kěyǐ shì 1-16,1-255 huò “1-255;1-255;1-255”.
 Rúguǒ qǐyòng yánsè xúnhuán, zài ProgressClock zhōng gēnggǎi yánsè zhīqián yǒu duōshǎo dīdā shēng? 1 Dīdā = 0.5 Miǎo
 rúguǒ qǐyòng,ProgressClock jiāng xuǎnzé suíjī yánsè. Fǒuzé, qǐng shǐyòng pèizhì zhōng de yánsè.
 Chuàngjiàn yīgè xīn zhǔtí
@@ -1115,3 +1111,21 @@ RSS tíshì yàngshì
 wénběn biānjí tíshì yàngshì
 Zip Shell tíshì yàngshì
 Wénjiàn jiā wèi kōng.
+Chénggōng tàncè {0}.
+Xiángxì tàn zhēn
+shǐ yìngjiàn tàncè xiāoxī yǒudiǎn jiàntán.
+> Méiyǒu guānyú kuàngjià de xìnxī.
+Nǐ xūyào xiě xià nǐ de míngzì.
+Měihuà JSON wénjiàn
+wèi zhǎodào pèizhì lèibié {0}.
+Wèi zhǎodào pèizhì tiáomù {0}.
+Shǐyòng měi fēnzhōng jiépāi
+shìfǒu shǐyòng Beats Per Minute dānwèi xiě rù xià yī zhǒng yánsè.
+Měi fēnzhōng jiépāi yánchí
+jiépāi yánsè
+zài jìnxíng xià yīcì xiě rù zhīqián měi fēnzhōng yào děngdài duōshǎo cì?
+Jīhuó duì BeatFader de 255 sè zhīchí.
+Jīhuó duì BeatFader de zhēn cǎisè zhīchí.
+Rúguǒ qǐyòng,BeatFader jiāng xuǎnzé suíjī yánsè. Fǒuzé, qǐng shǐyòng pèizhì zhōng de yánsè.
+Zì dìngyì qǐdòng héngfú
+rúguǒ zhǐdìng, tā jiāng xiǎnshì dài yǒu zhàn wèi fú zhīchí de zì dìngyì qǐdòng héngfú. Nín kěyǐ jiāng zhè jù huà yòng yú nèihé bǎnběn:

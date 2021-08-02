@@ -747,10 +747,6 @@ Tietojen väri
 Punkit vaihtaa väriä
 Aktivoi 255 väritukea ProgressClockille.
 Aktivoi todellisen värituen ProgressClockille.
-Sekuntien etenemispalkin väri. Se voi olla 1-16, 1-255 tai "1-255;1-255;1-255".
-Minuuttien etenemispalkin väri. Se voi olla 1-16, 1-255 tai "1-255;1-255;1-255".
-Tunnin edistymispalkin väri. Se voi olla 1-16, 1-255 tai "1-255;1-255;1-255".
-Päivämäärätietojen väri. Se voi olla 1-16, 1-255 tai "1-255;1-255;1-255".
 Jos väripyöräily on käytössä, kuinka monta punkkia ennen kuin vaihdat värejä ProgressClockissa? 1 rasti = 0,5 sekuntia
 ProgressClock valitsee satunnaiset värit, jos se on käytössä. Muussa tapauksessa käytä kokoonpanon värejä.
 Tekee uuden teeman
@@ -1115,3 +1111,21 @@ RSS-kehotustyyli
 Tekstin muokkauskehotustyyli
 Zip Shell Prompt -tyyli
 Kansio on tyhjä.
+Koetus onnistui {0}.
+Monipuolinen koetin
+Tee laitteiston koetussanomista hieman puhuttavia.
+> Kehyksistä ei ole tietoa.
+Sinun on kirjoitettava nimesi.
+Kaunistaa JSON -tiedoston
+Konfigurointiluokkaa {0} ei löydy.
+Konfiguraatiota {0} ei löydy.
+Käytä lyöntejä minuutissa
+Käytetäänkö lyöntejä minuutissa yksikkö seuraavan värin kirjoittamiseen.
+Viive lyönteissä minuutissa
+Beat Väri
+Kuinka monta lyöntiä minuutissa odottaa ennen seuraavan kirjoituksen tekemistä?
+Aktivoi 255 värin tuen BeatFaderille.
+Aktivoi BeatFaderin todellisen värituen.
+BeatFader valitsee satunnaiset värit, jos se on käytössä. Muussa tapauksessa käytä määritysten värejä.
+Mukautettu käynnistysbanneri
+Jos se on määritetty, se näyttää mukautetun käynnistysbannerin paikkamerkkituen kanssa. Voit käyttää tätä ilmausta ytimen versiossa:

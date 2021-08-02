@@ -30,7 +30,7 @@ Public Module TextWriterColor
     ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="colorType">A type of colors that will be changed.</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub W(ByVal Text As String, ByVal Line As Boolean, ByVal colorType As ColTypes, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
@@ -76,7 +76,22 @@ Public Module TextWriterColor
                     SetConsoleColor(New Color(BackgroundColor), True)
                 End If
 
-                If Line Then WriteLine(Text, vars) Else Write(Text, vars)
+                'Write the text to console
+                If Line Then
+                    If Not vars.Length = 0 Then
+                        WriteLine(Text, vars)
+                    Else
+                        WriteLine(Text)
+                    End If
+                Else
+                    If Not vars.Length = 0 Then
+                        Write(Text, vars)
+                    Else
+                        Write(Text)
+                    End If
+                End If
+
+                'Reset the colors
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
                 If colorType = ColTypes.Input And ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
@@ -96,7 +111,7 @@ Public Module TextWriterColor
     ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="color">A color that will be changed to.</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub WriteC16(ByVal Text As String, ByVal Line As Boolean, ByVal color As ConsoleColor, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
@@ -106,7 +121,22 @@ Public Module TextWriterColor
                 Console.BackgroundColor = If(New Color(BackgroundColor).PlainSequence.IsNumeric AndAlso BackgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor), ConsoleColor.Black)
                 Console.ForegroundColor = color
 
-                If Line Then WriteLine(Text, vars) Else Write(Text, vars)
+                'Write the text to console
+                If Line Then
+                    If Not vars.Length = 0 Then
+                        WriteLine(Text, vars)
+                    Else
+                        WriteLine(Text)
+                    End If
+                Else
+                    If Not vars.Length = 0 Then
+                        Write(Text, vars)
+                    Else
+                        Write(Text)
+                    End If
+                End If
+
+                'Reset the colors
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
                 If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
@@ -127,7 +157,7 @@ Public Module TextWriterColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub WriteC16(ByVal Text As String, ByVal Line As Boolean, ByVal ForegroundColor As ConsoleColor, ByVal BackgroundColor As ConsoleColor, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
@@ -137,7 +167,22 @@ Public Module TextWriterColor
                 Console.BackgroundColor = BackgroundColor
                 Console.ForegroundColor = ForegroundColor
 
-                If Line Then WriteLine(Text, vars) Else Write(Text, vars)
+                'Write the text to console
+                If Line Then
+                    If Not vars.Length = 0 Then
+                        WriteLine(Text, vars)
+                    Else
+                        WriteLine(Text)
+                    End If
+                Else
+                    If Not vars.Length = 0 Then
+                        Write(Text, vars)
+                    Else
+                        Write(Text)
+                    End If
+                End If
+
+                'Reset the colors
                 If BackgroundColor = ConsoleColor.Black Then ResetColor()
                 If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
@@ -157,7 +202,7 @@ Public Module TextWriterColor
     ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="color">A color that will be changed to.</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub WriteC(ByVal Text As String, ByVal Line As Boolean, ByVal color As Color, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
@@ -169,7 +214,22 @@ Public Module TextWriterColor
                     SetConsoleColor(New Color(BackgroundColor), True)
                 End If
 
-                If Line Then WriteLine(Text, vars) Else Write(Text, vars)
+                'Write the text to console
+                If Line Then
+                    If Not vars.Length = 0 Then
+                        WriteLine(Text, vars)
+                    Else
+                        WriteLine(Text)
+                    End If
+                Else
+                    If Not vars.Length = 0 Then
+                        Write(Text, vars)
+                    Else
+                        Write(Text)
+                    End If
+                End If
+
+                'Reset the colors
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
                 If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
@@ -190,7 +250,7 @@ Public Module TextWriterColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub WriteC(ByVal Text As String, ByVal Line As Boolean, ByVal ForegroundColor As Color, ByVal BackgroundColor As Color, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
@@ -202,7 +262,22 @@ Public Module TextWriterColor
                     SetConsoleColor(BackgroundColor, True)
                 End If
 
-                If Line Then WriteLine(Text, vars) Else Write(Text, vars)
+                'Write the text to console
+                If Line Then
+                    If Not vars.Length = 0 Then
+                        WriteLine(Text, vars)
+                    Else
+                        WriteLine(Text)
+                    End If
+                Else
+                    If Not vars.Length = 0 Then
+                        Write(Text, vars)
+                    Else
+                        Write(Text)
+                    End If
+                End If
+
+                'Reset the colors
                 If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then ResetColor()
                 If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()

@@ -160,7 +160,7 @@ Public Module FTPGetCommand
                         W(DoTranslation("Enter a file to download to local directory."), True, ColTypes.Error)
                     End If
                 Case "lsl"
-                    If eqargs?.Count > 0 And eqargs IsNot Nothing Then
+                    If eqargs?.Length > 0 And eqargs IsNot Nothing Then
                         List(eqargs(0))
                     Else
                         List(CurrDir)

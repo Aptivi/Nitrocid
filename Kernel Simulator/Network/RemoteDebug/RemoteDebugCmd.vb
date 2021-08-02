@@ -20,11 +20,11 @@ Imports System.IO
 
 Module RemoteDebugCmd
 
-    Public ReadOnly DebugCommands As New Dictionary(Of String, CommandInfo) From {{"exit", New CommandInfo("exit", ShellCommandType.RemoteDebugShell, DoTranslation("Disconnects you from the debugger"), False, 0)},
-                                                                                  {"help", New CommandInfo("help", ShellCommandType.RemoteDebugShell, DoTranslation("Shows help screen"), False, 0)},
-                                                                                  {"register", New CommandInfo("register", ShellCommandType.RemoteDebugShell, DoTranslation("Sets device username"), True, 1)},
-                                                                                  {"trace", New CommandInfo("trace", ShellCommandType.RemoteDebugShell, DoTranslation("Shows last stack trace on exception"), True, 1)},
-                                                                                  {"username", New CommandInfo("username", ShellCommandType.RemoteDebugShell, DoTranslation("Shows current username in the session"), False, 0)}}
+    Public ReadOnly DebugCommands As New Dictionary(Of String, CommandInfo) From {{"exit", New CommandInfo("exit", ShellCommandType.RemoteDebugShell, "Disconnects you from the debugger", False, 0)},
+                                                                                  {"help", New CommandInfo("help", ShellCommandType.RemoteDebugShell, "Shows help screen", False, 0)},
+                                                                                  {"register", New CommandInfo("register", ShellCommandType.RemoteDebugShell, "Sets device username", True, 1)},
+                                                                                  {"trace", New CommandInfo("trace", ShellCommandType.RemoteDebugShell, "Shows last stack trace on exception", True, 1)},
+                                                                                  {"username", New CommandInfo("username", ShellCommandType.RemoteDebugShell, "Shows current username in the session", False, 0)}}
     Public DebugModCmds As New ArrayList
 
     ''' <summary>
@@ -61,9 +61,13 @@ Module RemoteDebugCmd
                 Case "register"
                     'Register to remote debugger so we can set device name
                     If String.IsNullOrWhiteSpace(GetDeviceProperty(Address, DeviceProperty.Name)) Then
-                        SetDeviceProperty(Address, DeviceProperty.Name, CmdArgs(0))
-                        dbgConns(dbgConns.ElementAt(DebugDevices.GetIndexOfKey(DebugDevices.GetKeyFromValue(Address))).Key) = CmdArgs(0)
-                        SocketStreamWriter.WriteLine(DoTranslation("Hi, {0}!").FormatString(CmdArgs(0)))
+                        If CmdArgs.Count <> 0 Then
+                            SetDeviceProperty(Address, DeviceProperty.Name, CmdArgs(0))
+                            dbgConns(dbgConns.ElementAt(DebugDevices.GetIndexOfKey(DebugDevices.GetKeyFromValue(Address))).Key) = CmdArgs(0)
+                            SocketStreamWriter.WriteLine(DoTranslation("Hi, {0}!").FormatString(CmdArgs(0)))
+                        Else
+                            SocketStreamWriter.WriteLine(DoTranslation("You need to write your name."))
+                        End If
                     Else
                         SocketStreamWriter.WriteLine(DoTranslation("You're already registered."))
                     End If

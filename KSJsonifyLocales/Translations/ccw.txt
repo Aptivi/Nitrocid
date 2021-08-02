@@ -747,10 +747,6 @@ Mtundu wa Zambiri
 Nkhupakupa kusintha mtundu
 Imathandizira kuthandizira kwamitundu 255 kwa ProgressClock.
 Imathandizira kuthandizira kwamtundu weniweni kwa ProgressClock.
-Mtundu wa masekondi opita patsogolo. Itha kukhala 1-16, 1-255, kapena "1-255;1-255;1-255".
-Mtundu wa mphindi yopita patsogolo. Itha kukhala 1-16, 1-255, kapena "1-255;1-255;1-255".
-Mtundu wa bar yopita patsogolo. Itha kukhala 1-16, 1-255, kapena "1-255;1-255;1-255".
-Mtundu wazidziwitso zatsiku. Itha kukhala 1-16, 1-255, kapena "1-255;1-255;1-255".
 Ngati kupalasa njinga ndikotheka, ndi nkhupakupa zingati musanasinthe mitundu mu ProgressClock? Chongani chimodzi = masekondi 0.5
 ProgressClock idzasankha mitundu yosasintha ngati ikuthandizidwa. Apo ayi, gwiritsani ntchito mitundu kuchokera ku config.
 Amapanga mutu watsopano
@@ -1115,3 +1111,21 @@ Mtundu wa RSS Prompt
 Lembani Mtundu Wotsogola
 Mtundu wa Zip Shell Prompt
 Foda ilibe kanthu.
+Adasanthula {0}.
+Kufufuza Verbose
+Pangani mauthenga ofufuza za hardware kukhala olankhula pang'ono.
+> Palibe chilichonse chokhudza mafelemu.
+Muyenera kulemba dzina lanu.
+Imakongoletsa fayilo ya JSON
+Gulu lokonza {0} silinapezeke.
+Konzani zolowera {0} sizinapezeke.
+Gwiritsani Ntchito Beats Per Minute
+Kaya mugwiritse ntchito Beats Per Minute unit kuti mulembe mtundu wotsatira.
+Kuchedwa Kumenyedwa Pamphindi
+Mtundu wa Beat
+Ndi kumenya kangati pamphindi kudikirira kuti mupange kulemba kotsatira?
+Imathandizira mtundu wa 255 wothandizira BeatFader.
+Imathandizira kuthandizira kwamtundu weniweni kwa BeatFader.
+BeatFader idzasankha mitundu yosasintha ngati itatha. Apo ayi, gwiritsani ntchito mitundu kuchokera ku config.
+Chikwangwani Choyambira Mwambo
+Ngati zafotokozedwa, iwonetsa chikwangwani choyambira chosinthidwa ndi othandizira ogwira ntchito. Mutha kugwiritsa ntchito mawuwa pamtundu wa kernel:

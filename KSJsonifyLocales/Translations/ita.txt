@@ -747,10 +747,6 @@ Colore delle informazioni
 Spunta per cambiare colore
 Attiva il supporto di 255 colori per ProgressClock.
 Attiva il supporto del vero colore per ProgressClock.
-Il colore della barra di avanzamento dei secondi. Può essere 1-16, 1-255 o "1-255;1-255;1-255".
-Il colore della barra di avanzamento dei minuti. Può essere 1-16, 1-255 o "1-255;1-255;1-255".
-Il colore della barra di avanzamento delle ore. Può essere 1-16, 1-255 o "1-255;1-255;1-255".
-Il colore delle informazioni sulla data. Può essere 1-16, 1-255 o "1-255;1-255;1-255".
 Se il ciclo dei colori è abilitato, quanti tick prima di cambiare i colori in ProgressClock? 1 segno di spunta = 0,5 secondi
 ProgressClock selezionerà colori casuali se è abilitato. Altrimenti, usa i colori di config.
 Crea un nuovo tema
@@ -1115,3 +1111,21 @@ Stile del prompt RSS
 Stile del messaggio di modifica del testo
 Zip Shell Stile Prompt
 La cartella è vuota.
+Sondaggio {0} riuscito.
+Sonda verbosa
+Rendi un po' loquaci i messaggi di ispezione dell'hardware.
+> Non ci sono informazioni sui frame.
+Devi scrivere il tuo nome.
+Abbellisce il file JSON
+Categoria di configurazione {0} non trovata.
+Voce di configurazione {0} non trovata.
+Usa battiti al minuto
+Se utilizzare l'unità Beats Per Minute per scrivere il colore successivo.
+Ritardo in battiti al minuto
+Batti il colore
+Quanti battiti al minuto aspettare prima di fare la prossima scrittura?
+Attiva il supporto di 255 colori per BeatFader.
+Attiva il supporto True Color per BeatFader.
+BeatFader selezionerà colori casuali se è abilitato. Altrimenti, usa i colori di config.
+Banner di avvio personalizzato
+Se specificato, visualizzerà banner di avvio personalizzato con supporto segnaposto. Puoi usare questa frase per la versione del kernel:

@@ -747,10 +747,6 @@ Color of Information
 Ticks to change color
 Activates 255 color support for ProgressClock.
 Activates true color support for ProgressClock.
-The color of seconds progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
-The color of minutes progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
-The color of hours progress bar. It can be 1-16, 1-255, or "1-255;1-255;1-255".
-The color of date information. It can be 1-16, 1-255, or "1-255;1-255;1-255".
 If color cycling is enabled, how many ticks before changing colors in ProgressClock? 1 tick = 0.5 seconds
 ProgressClock will select random colors if it's enabled. Otherwise, use colors from config.
 Makes a new theme
@@ -1115,3 +1111,21 @@ RSS Prompt Style
 Text Edit Prompt Style
 Zip Shell Prompt Style
 Folder is empty.
+Successfully probed {0}.
+Verbose Probe
+Make hardware probing messages a bit talkative.
+> There are no information about frames.
+You need to write your name.
+Beautifies the JSON file
+Config category {0} not found.
+Config entry {0} not found.
+Use Beats Per Minute
+Whether to use the Beats Per Minute unit to write the next color.
+Delay in Beats Per Minute
+Beat Color
+How many beats per minute to wait before making the next write?
+Activates 255 color support for BeatFader.
+Activates true color support for BeatFader.
+BeatFader will select random colors if it's enabled. Otherwise, use colors from config.
+Custom Startup Banner
+If specified, it will display customized startup banner with placeholder support. You can use this phrase for kernel version:

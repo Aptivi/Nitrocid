@@ -747,10 +747,6 @@ jeongbo saegsang
 saegsang-eul byeongyeonghaneun nungeum
 ProgressClocke daehan 255 saegsang jiwon-eul hwalseonghwahabnida.
 ProgressClocke daehan teulu keolleo jiwon-eul hwalseonghwahabnida.
-cho jinhaenglyul pyosi jul-ui saegsang-ibnida. 1-16, 1-255 ttoneun "1-255;1-255;1-255"il su issseubnida.
-bun jinhaenglyul pyosi jul-ui saegsang-ibnida. 1-16, 1-255 ttoneun "1-255;1-255;1-255"il su issseubnida.
-sigan jinhaenglyul pyosi jul-ui saegsang-ibnida. 1-16, 1-255 ttoneun "1-255;1-255;1-255"il su issseubnida.
-naljja jeongboui saegsang-ibnida. 1-16, 1-255 ttoneun "1-255;1-255;1-255"il su issseubnida.
 saegsang sunhwan-i hwalseonghwa doen gyeong-u ProgressClockeseo saegsang-eul byeongyeonghagi jeon-e myeoch tig-i pil-yohabnikka? 1 tig = 0.5 cho
 ProgressClockeun hwalseonghwa doen gyeong-u im-uiui saegsang-eul seontaeghabnida. geuleohji anh-eumyeon guseong-ui saegsang-eul sayonghasibsio.
 saeloun temaleul mandeubnida
@@ -1115,3 +1111,21 @@ RSS peulompeuteu seutail
 tegseuteu pyeonjib peulompeuteu seutail
 Zip swel peulompeuteu seutail
 poldeoga bieo issseubnida.
+{0}eul(leul) seong-gongjeog-eulo geomsaeghaessseubnida.
+sangse peulobeu
+hadeuweeo peulobing mesijileul daso sudaseuleobge mandeusibsio.
+> peuleim-e daehan jeongboga eobs-seubnida.
+ileum-eul jagseonghaeya habnida.
+JSON pail-eul aleumdabge habnida.
+guseong kategoli {0}eul(leul) chaj-eul su eobs-seubnida.
+guseong hangmog {0}eul(leul) chaj-eul su eobs-seubnida.
+bundang biteu sayong
+da-eum saegsang-eul sseugi wihae Beats Per Minute dan-wileul sayonghalji yeobu-ibnida.
+bundang biteu su jiyeon
+biteu saegsang
+da-eum sseugileul suhaenghagi jeon-e daegihaeya haneun bundang biteu suneun eolmaibnikka?
+BeatFadere daehan 255gaji saegsang jiwon-eul hwalseonghwahabnida.
+BeatFadere daehan teulu keolleo jiwon-eul hwalseonghwahabnida.
+BeatFaderneun hwalseonghwadoen gyeong-u im-uiui saegsang-eul seontaeghabnida. geuleohji anh-eumyeon guseong-ui saegsang-eul sayonghasibsio.
+majchumhyeong sijag baeneo
+jijeonghamyeon jali pyosijaleul jiwonhaneun majchumhyeong sijag baeneoga pyosidoebnida. keoneol beojeon-e daehae da-eum munguleul sayonghal su issseubnida.

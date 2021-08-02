@@ -31,7 +31,7 @@ Module TextWriterWhereSlowColor
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
     ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="colorType">A type of colors that will be changed.</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub WriteWhereSlowly(ByVal msg As String, ByVal Line As Boolean, ByVal Left As Integer, ByVal Top As Integer, ByVal MsEachLetter As Double, ByVal [Return] As Boolean, ByVal colorType As ColTypes, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
@@ -77,7 +77,7 @@ Module TextWriterWhereSlowColor
             End If
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text in another place slowly
             Dim OldLeft As Integer = CursorLeft
@@ -111,7 +111,7 @@ Module TextWriterWhereSlowColor
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
     ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="color">A color that will be changed to.</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub WriteWhereSlowlyC16(ByVal msg As String, ByVal Line As Boolean, ByVal Left As Integer, ByVal Top As Integer, ByVal MsEachLetter As Double, ByVal [Return] As Boolean, ByVal color As ConsoleColor, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
@@ -120,7 +120,7 @@ Module TextWriterWhereSlowColor
             Console.ForegroundColor = color
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text in another place
             Dim OldLeft As Integer = CursorLeft
@@ -155,7 +155,7 @@ Module TextWriterWhereSlowColor
     ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub WriteWhereSlowlyC16(ByVal msg As String, ByVal Line As Boolean, ByVal Left As Integer, ByVal Top As Integer, ByVal MsEachLetter As Double, ByVal [Return] As Boolean, ByVal ForegroundColor As ConsoleColor, ByVal BackgroundColor As ConsoleColor, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
@@ -164,7 +164,7 @@ Module TextWriterWhereSlowColor
             Console.ForegroundColor = ForegroundColor
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text in another place
             Dim OldLeft As Integer = CursorLeft
@@ -198,7 +198,7 @@ Module TextWriterWhereSlowColor
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
     ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="color">A color that will be changed to.</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub WriteWhereSlowlyC(ByVal msg As String, ByVal Line As Boolean, ByVal Left As Integer, ByVal Top As Integer, ByVal MsEachLetter As Double, ByVal [Return] As Boolean, ByVal color As Color, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
@@ -209,7 +209,7 @@ Module TextWriterWhereSlowColor
             End If
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text in another place
             Dim OldLeft As Integer = CursorLeft
@@ -244,7 +244,7 @@ Module TextWriterWhereSlowColor
     ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub WriteWhereSlowlyC(ByVal msg As String, ByVal Line As Boolean, ByVal Left As Integer, ByVal Top As Integer, ByVal MsEachLetter As Double, ByVal [Return] As Boolean, ByVal ForegroundColor As Color, ByVal BackgroundColor As Color, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
@@ -255,7 +255,7 @@ Module TextWriterWhereSlowColor
             End If
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text in another place
             Dim OldLeft As Integer = CursorLeft

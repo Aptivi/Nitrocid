@@ -19,6 +19,7 @@
 Imports System.IO
 Imports System.Runtime.CompilerServices
 Imports System.Text.RegularExpressions
+Imports Newtonsoft.Json.Linq
 
 Public Module Filesystem
 
@@ -225,6 +226,7 @@ Public Module Filesystem
     ''' </summary>
     ''' <param name="Path">Target path, be it a file or a folder</param>
     ''' <returns>Absolute path</returns>
+    ''' <exception cref="FileNotFoundException"></exception>
     Public Function NeutralizePath(ByVal Path As String, Optional ByVal Strict As Boolean = False) As String
 #If NTFSCorruptionFix Then
         ThrowOnInvalidPath(Path)
@@ -245,9 +247,9 @@ Public Module Filesystem
             End If
         End If
 
-        'If strict, checks for existence of file
+        'If strict, checks for existence of file or directory
         If Strict Then
-            If File.Exists(Path) Then
+            If File.Exists(Path) Or Directory.Exists(Path) Then
                 Return Path
             Else
                 Throw New FileNotFoundException(DoTranslation("Neutralized a non-existent path.") + " {0}".FormatString(Path))
@@ -263,6 +265,7 @@ Public Module Filesystem
     ''' <param name="Path">Target path, be it a file or a folder</param>
     ''' <param name="Source">Source path in which the target is found. Must be a directory</param>
     ''' <returns>Absolute path</returns>
+    ''' <exception cref="FileNotFoundException"></exception>
     Public Function NeutralizePath(ByVal Path As String, ByVal Source As String, Optional ByVal Strict As Boolean = False) As String
 #If NTFSCorruptionFix Then
         ThrowOnInvalidPath(Path)
@@ -287,7 +290,7 @@ Public Module Filesystem
 
         'If strict, checks for existence of file
         If Strict Then
-            If File.Exists(Path) Then
+            If File.Exists(Path) Or Directory.Exists(Path) Then
                 Return Path
             Else
                 Throw New FileNotFoundException(DoTranslation("Neutralized a non-existent path.") + " {0}".FormatString(Path))
@@ -405,12 +408,12 @@ Public Module Filesystem
     Public Function SetSizeParseMode(ByVal Enable As Boolean) As Boolean
         Try
             FullParseMode = Enable
-            ConfigToken("Misc")("Size parse mode") = FullParseMode
-            File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
+            Dim Token As JToken = GetConfigCategory(ConfigCategory.Filesystem)
+            SetConfigValueAndWrite(ConfigCategory.Filesystem, Token, "Size parse mode", FullParseMode)
             Return True
         Catch ex As Exception
-            Throw New IOException(DoTranslation("Error when trying to set parse mode. Check the value and try again. If this is correct, see the stack trace when kernel debugging is enabled.") + " " + ex.Message)
             WStkTrc(ex)
+            Throw New IOException(DoTranslation("Error when trying to set parse mode. Check the value and try again. If this is correct, see the stack trace when kernel debugging is enabled.") + " " + ex.Message, ex)
         End Try
         Return False
     End Function
@@ -850,8 +853,8 @@ Public Module Filesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function SaveCurrDir() As Boolean
         Try
-            ConfigToken("Shell")("Current Directory") = CurrDir
-            File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
+            Dim Token As JToken = GetConfigCategory(ConfigCategory.Shell)
+            SetConfigValueAndWrite(ConfigCategory.Shell, Token, "Current Directory", CurrDir)
             Return True
         Catch ex As Exception
             WStkTrc(ex)

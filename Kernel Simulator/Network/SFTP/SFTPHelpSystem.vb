@@ -19,40 +19,49 @@
 Public Module SFTPHelpSystem
 
     'This dictionary is the definitions for commands.
-    Public SFTPDefinitions As Dictionary(Of String, String)
     Public SFTPModDefs As New Dictionary(Of String, String)
-
-    ''' <summary>
-    ''' Updates the help definition so it reflects the available commands
-    ''' </summary>
-    Public Sub InitSFTPHelp()
-        SFTPDefinitions = New Dictionary(Of String, String) From {{"pwdl", DoTranslation("Gets current local directory")},
-                                                                  {"pwdr", DoTranslation("Gets current remote directory")},
-                                                                  {"connect", DoTranslation("Connects to an SFTP server (it must start with ""sftp://"")")},
-                                                                  {"cdl", DoTranslation("Changes local directory to download to or upload from")},
-                                                                  {"cdr", DoTranslation("Changes remote directory to download from or upload to")},
-                                                                  {"del", DoTranslation("Deletes remote file from server")},
-                                                                  {"disconnect", DoTranslation("Disconnects from server")},
-                                                                  {"get", DoTranslation("Downloads remote file to local directory using binary or text")},
-                                                                  {"exit", DoTranslation("Exits SFTP shell and returns to kernel")},
-                                                                  {"help", DoTranslation("Shows help screen")},
-                                                                  {"lsl", DoTranslation("Lists local directory")},
-                                                                  {"lsr", DoTranslation("Lists remote directory")},
-                                                                  {"quickconnect", DoTranslation("Uses information from Speed Dial to connect to any network quickly")},
-                                                                  {"put", DoTranslation("Uploads local file to remote directory using binary or text")}}
-    End Sub
 
     ''' <summary>
     ''' Shows the list of commands.
     ''' </summary>
     ''' <param name="command">Specified command</param>
     Public Sub SFTPShowHelp(Optional ByVal command As String = "")
-
-        If command = "" Then
+        'Check to see if command exists
+        If Not String.IsNullOrWhiteSpace(command) And SFTPCommands.ContainsKey(command) Then
+            Dim HelpDefinition As String = SFTPCommands(command).GetTranslatedHelpEntry
+            Select Case command
+                Case "pwdl"
+                    W(DoTranslation("Usage:") + " pwdl: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "pwdr"
+                    W(DoTranslation("Usage:") + " pwdr: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "connect"
+                    W(DoTranslation("Usage:") + " connect <server>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "cdl"
+                    W(DoTranslation("Usage:") + " cdl <directory>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "cdr"
+                    W(DoTranslation("Usage:") + " cdr <directory>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "del"
+                    W(DoTranslation("Usage:") + " del <file>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "disconnect"
+                    W(DoTranslation("Usage:") + " disconnect: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "get"
+                    W(DoTranslation("Usage:") + " get <file>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "exit"
+                    W(DoTranslation("Usage:") + " exit: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "lsl"
+                    W(DoTranslation("Usage:") + " lsl [dir]: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "ldr"
+                    W(DoTranslation("Usage:") + " lsr [dir]: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "put"
+                    W(DoTranslation("Usage:") + " put <file>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "quickconnect"
+                    W(DoTranslation("Usage:") + " quickconnect: " + HelpDefinition, True, ColTypes.Neutral)
+            End Select
+        ElseIf String.IsNullOrWhiteSpace(command) Then
             If simHelp = False Then
                 W(DoTranslation("General commands:"), True, ColTypes.Neutral)
-                For Each cmd As String In SFTPDefinitions.Keys
-                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, SFTPDefinitions(cmd))
+                For Each cmd As String In SFTPCommands.Keys
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, SFTPCommands(cmd).GetTranslatedHelpEntry)
                 Next
                 W(vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.Neutral)
                 If SFTPModDefs.Count = 0 Then W(DoTranslation("No mod commands."), True, ColTypes.Neutral)
@@ -62,7 +71,7 @@ Public Module SFTPHelpSystem
                 W(vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.Neutral)
                 If SFTPShellAliases.Count = 0 Then W(DoTranslation("No alias commands."), True, ColTypes.Neutral)
                 For Each cmd As String In SFTPShellAliases.Keys
-                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, SFTPDefinitions(SFTPShellAliases(cmd)))
+                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, SFTPCommands(SFTPShellAliases(cmd)).GetTranslatedHelpEntry)
                 Next
             Else
                 For Each cmd As String In SFTPCommands.Keys
@@ -73,34 +82,9 @@ Public Module SFTPHelpSystem
                 Next
                 W(String.Join(", ", SFTPShellAliases.Keys), True, ColTypes.ListEntry)
             End If
-        ElseIf command = "pwdl" Then
-            W(DoTranslation("Usage:") + " pwdl", True, ColTypes.Neutral)
-        ElseIf command = "pwdr" Then
-            W(DoTranslation("Usage:") + " pwdr", True, ColTypes.Neutral)
-        ElseIf command = "connect" Then
-            W(DoTranslation("Usage:") + " connect <server>", True, ColTypes.Neutral)
-        ElseIf command = "cdl" Then
-            W(DoTranslation("Usage:") + " cdl <directory>", True, ColTypes.Neutral)
-        ElseIf command = "cdr" Then
-            W(DoTranslation("Usage:") + " cdr <directory>", True, ColTypes.Neutral)
-        ElseIf command = "del" Then
-            W(DoTranslation("Usage:") + " del <file>", True, ColTypes.Neutral)
-        ElseIf command = "disconnect" Then
-            W(DoTranslation("Usage:") + " disconnect", True, ColTypes.Neutral)
-        ElseIf command = "get" Then
-            W(DoTranslation("Usage:") + " get <file>", True, ColTypes.Neutral)
-        ElseIf command = "exit" Then
-            W(DoTranslation("Usage:") + " exit", True, ColTypes.Neutral)
-        ElseIf command = "lsl" Then
-            W(DoTranslation("Usage:") + " lsl [dir]", True, ColTypes.Neutral)
-        ElseIf command = "ldr" Then
-            W(DoTranslation("Usage:") + " lsr [dir]", True, ColTypes.Neutral)
-        ElseIf command = "put" Then
-            W(DoTranslation("Usage:") + " put <file>", True, ColTypes.Neutral)
-        ElseIf command = "quickconnect" Then
-            W(DoTranslation("Usage:") + " quickconnect", True, ColTypes.Neutral)
+        Else
+            W(DoTranslation("No help for command ""{0}""."), True, ColTypes.Error, command)
         End If
-
     End Sub
 
 End Module

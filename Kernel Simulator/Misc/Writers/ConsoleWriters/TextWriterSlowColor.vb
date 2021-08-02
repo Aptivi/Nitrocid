@@ -27,13 +27,13 @@ Module TextWriterSlowColor
     ''' <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub WriteSlowly(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ParamArray ByVal vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text slowly
             Dim chars As List(Of Char) = msg.ToCharArray.ToList
@@ -56,7 +56,7 @@ Module TextWriterSlowColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
     ''' <param name="colorType">A type of colors that will be changed.</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub WriteSlowlyC(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal colorType As ColTypes, ParamArray ByVal vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
@@ -102,7 +102,7 @@ Module TextWriterSlowColor
             End If
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text slowly
             Dim chars As List(Of Char) = msg.ToCharArray.ToList
@@ -129,7 +129,7 @@ Module TextWriterSlowColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
     ''' <param name="color">A color that will be changed to.</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub WriteSlowlyC16(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal color As ConsoleColor, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
@@ -138,7 +138,7 @@ Module TextWriterSlowColor
             Console.ForegroundColor = color
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text slowly
             Dim chars As List(Of Char) = msg.ToCharArray.ToList
@@ -166,7 +166,7 @@ Module TextWriterSlowColor
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub WriteSlowlyC16(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal ForegroundColor As ConsoleColor, ByVal BackgroundColor As ConsoleColor, ByVal ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
@@ -175,7 +175,7 @@ Module TextWriterSlowColor
             Console.ForegroundColor = ForegroundColor
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text slowly
             Dim chars As List(Of Char) = msg.ToCharArray.ToList
@@ -202,7 +202,7 @@ Module TextWriterSlowColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
     ''' <param name="color">A color that will be changed to.</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub WriteSlowlyC(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal color As Color, ParamArray ByVal vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
@@ -213,7 +213,7 @@ Module TextWriterSlowColor
             End If
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text slowly
             Dim chars As List(Of Char) = msg.ToCharArray.ToList
@@ -241,7 +241,7 @@ Module TextWriterSlowColor
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    ''' <param name="vars">Endless amounts of any variables that is separated by commas.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub WriteSlowlyC(ByVal msg As String, ByVal Line As Boolean, ByVal MsEachLetter As Double, ByVal ForegroundColor As Color, ByVal BackgroundColor As Color, ParamArray ByVal vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
@@ -252,7 +252,7 @@ Module TextWriterSlowColor
             End If
 
             'Format string as needed
-            msg = String.Format(msg, vars)
+            If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
             'Write text slowly
             Dim chars As List(Of Char) = msg.ToCharArray.ToList

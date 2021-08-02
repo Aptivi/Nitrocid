@@ -747,10 +747,6 @@ Informazioaren kolorea
 Kolorea aldatzeko akainak
 255 kolore laguntza aktibatzen du ProgressClock-erako.
 ProgressClock-en benetako kolorearen laguntza aktibatzen du.
-Segundoen aurrerapen barra kolorea. 1-16, 1-255 edo "1-255;1-255;1-255" izan daiteke.
-Minutuen aurrerapen barra kolorea. 1-16, 1-255 edo "1-255;1-255;1-255" izan daiteke.
-Orduen aurrerapen barra. 1-16, 1-255 edo "1-255;1-255;1-255" izan daiteke.
-Dataren informazioaren kolorea. 1-16, 1-255 edo "1-255;1-255;1-255" izan daiteke.
 Koloreen bizikleta gaituta badago, zenbat markatu koloreak aldatu aurretik ProgressClock-en? 1 tick = 0,5 segundo
 ProgressClock-ek ausazko koloreak hautatuko ditu gaituta badago. Bestela, erabili config-eko koloreak.
 Gai berria egiten du
@@ -1115,3 +1111,21 @@ RSS Prompt Style
 Testua editatu abisuaren estiloa
 Zip shell gonbita estiloa
 Karpeta hutsik dago.
+{0} ondo probatu da.
+Aditz zundaketa
+Egin hardware probing mezuak pixka bat berritsuak.
+> Ez dago fotogramei buruzko informaziorik.
+Zure izena idatzi behar duzu.
+JSON fitxategia edertzen du
+{0} konfigurazio kategoria ez da aurkitu.
+{0} konfigurazio sarrera ez da aurkitu.
+Erabili taupadak minutuko
+Minutu bakoitzeko taupadak hurrengo kolorea idazteko erabili behar den ala ez.
+Atzerapena minutuko taupadetan
+Beat Kolorea
+Zenbat taupada minutuko itxaron behar da hurrengo idazketa egin aurretik?
+255 kolore euskarri aktibatzen ditu BeatFader-entzat.
+Benetako kolorearen euskarria aktibatzen du BeatFader-entzat.
+BeatFader-ek ausazko koloreak hautatuko ditu gaituta badago. Bestela, erabili config-eko koloreak.
+Abiarazte Banner pertsonalizatua
+Zehazten bada, hasierako bandera pertsonalizatua erakutsiko du leku-markaren laguntzarekin. Esaldi hau kernel bertsiorako erabil dezakezu:

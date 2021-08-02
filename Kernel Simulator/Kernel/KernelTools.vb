@@ -165,8 +165,8 @@ Public Module KernelTools
                                DoTranslation("> HRESULT: {2}") + vbNewLine +
                                DoTranslation("> Source: {3}") + vbNewLine + vbNewLine +
                                DoTranslation("> Stack trace <") + vbNewLine + vbNewLine +
-                               Exc.StackTrace + vbNewLine + vbNewLine +
-                               DoTranslation(">> Inner exception {0} information <<"), Exc.ToString.Substring(0, Exc.ToString.IndexOf(":")), Exc.Message, Exc.HResult, Exc.Source)
+                               Exc.StackTrace + vbNewLine + vbNewLine, Exc.GetType.FullName, Exc.Message, Exc.HResult, Exc.Source)
+                Dump.WriteLine(DoTranslation(">> Inner exception {0} information <<"), Count)
 
                 'Write info (Inner exceptions)
                 Dim InnerExc As Exception = Exc.InnerException
@@ -176,7 +176,7 @@ Public Module KernelTools
                                    DoTranslation("> HRESULT: {2}") + vbNewLine +
                                    DoTranslation("> Source: {3}") + vbNewLine + vbNewLine +
                                    DoTranslation("> Stack trace <") + vbNewLine + vbNewLine +
-                                   InnerExc.StackTrace + vbNewLine, InnerExc.ToString.Substring(0, InnerExc.ToString.IndexOf(":")), InnerExc.Message, InnerExc.HResult, InnerExc.Source)
+                                   InnerExc.StackTrace + vbNewLine, InnerExc.GetType.FullName, InnerExc.Message, InnerExc.HResult, InnerExc.Source)
                     InnerExc = InnerExc.InnerException
                     If InnerExc IsNot Nothing Then
                         Dump.WriteLine(DoTranslation(">> Inner exception {0} information <<"), Count)
@@ -195,22 +195,28 @@ Public Module KernelTools
             Try
                 Dim ExcTrace As New StackTrace(Exc, True)
                 Dim FrameNo As Integer = 1
-                For Each Frame As StackFrame In ExcTrace.GetFrames
-                    If Not (Frame.GetFileName = "" And Frame.GetFileLineNumber = 0 And Frame.GetFileColumnNumber = 0) Then
-                        Dump.WriteLine(DoTranslation("> Frame {0}: File: {1} | Line: {2} | Column: {3}"), FrameNo, Frame.GetFileName, Frame.GetFileLineNumber, Frame.GetFileColumnNumber)
-                    End If
-                    FrameNo += 1
-                Next
+
+                'If there are frames to print the file information, write them down to the dump file.
+                If ExcTrace.FrameCount <> 0 Then
+                    For Each Frame As StackFrame In ExcTrace.GetFrames
+                        If Not (Frame.GetFileName = "" And Frame.GetFileLineNumber = 0 And Frame.GetFileColumnNumber = 0) Then
+                            Dump.WriteLine(DoTranslation("> Frame {0}: File: {1} | Line: {2} | Column: {3}"), FrameNo, Frame.GetFileName, Frame.GetFileLineNumber, Frame.GetFileColumnNumber)
+                        End If
+                        FrameNo += 1
+                    Next
+                Else
+                    Dump.WriteLine(DoTranslation("> There are no information about frames."))
+                End If
             Catch ex As Exception
                 WStkTrc(ex)
-                Dump.WriteLine(DoTranslation("> There is an error when trying to get frame information. {0}: {1}"), ex.GetType.FullName.Substring(0, ex.GetType.FullName.IndexOf(":")), ex.Message.Replace(vbNewLine, " | "))
+                Dump.WriteLine(DoTranslation("> There is an error when trying to get frame information. {0}: {1}"), ex.GetType.FullName, ex.Message.Replace(vbNewLine, " | "))
             End Try
 
             'Close stream
             Wdbg("I", "Closing file stream for dump...")
             Dump.Flush() : Dump.Close()
         Catch ex As Exception
-            W(DoTranslation("Dump information gatherer crashed when trying to get information about {0}: {1}"), True, ColTypes.Error, Exc.ToString.Substring(0, Exc.ToString.IndexOf(":")), ex.Message)
+            W(DoTranslation("Dump information gatherer crashed when trying to get information about {0}: {1}"), True, ColTypes.Error, Exc.GetType.FullName, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub
@@ -348,17 +354,6 @@ Public Module KernelTools
     ''' Initializes everything
     ''' </summary>
     Sub InitEverything(Args() As String)
-        'Initialize help
-        InitHelp()
-        InitFTPHelp()
-        InitSFTPHelp()
-        IMAPInitHelp()
-        InitRDebugHelp()
-        InitTestHelp()
-        TextEdit_UpdateHelp()
-        ZipShell_UpdateHelp()
-        InitRSSHelp()
-
         'Initialize aliases
         InitAliases()
 
@@ -375,18 +370,7 @@ Public Module KernelTools
         LoadUserToken()
 
         'Show welcome message.
-        If StartScroll Then
-            WriteSlowlyC("      >> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<", True, 10, ColTypes.Banner, KernelVersion)
-        Else
-            W("      >> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<", True, ColTypes.Banner, KernelVersion)
-        End If
-
-        'Show license
-        W(vbNewLine + "    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE" + vbNewLine +
-                      "    This program comes with ABSOLUTELY NO WARRANTY, not even " + vbNewLine +
-                      "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +
-                      "    This is free software, and you are welcome to redistribute it" + vbNewLine +
-                      "    under certain conditions; See COPYING file in source code." + vbNewLine, True, ColTypes.License)
+        WriteMessage()
 
         'Some information
         WriteSeparator(DoTranslation("- App information"), False, ColTypes.Stage)

@@ -747,10 +747,6 @@ Midabka Macluumaadka
 Shilinta si aad u bedesho midabka
 Waxay kicisaa taageerada midabka 255 ee loogu talagalay ProgressClock.
 Dhaqaajiyaa taageerada midabka runta ah ee ProgressClock.
-Midabka ilbiriqsiyada horumarka. Waxay noqon kartaa 1-16, 1-255, ama "1-255;1-255;1-255".
-Midabka daqiiqadaha horumarka. Waxay noqon kartaa 1-16, 1-255, ama "1-255;1-255;1-255".
-Midabka saacadaha horumarka. Waxay noqon kartaa 1-16, 1-255, ama "1-255;1-255;1-255".
-Midabka macluumaadka taariikhda. Waxay noqon kartaa 1-16, 1-255, ama "1-255;1-255;1-255".
 Haddii midabka baaskiil wadista la hawlgeliyo, immisa shilina ka hor intaanad midabbada ka beddelanin ProgressClock? 1 sax = 0.5 ilbiriqsi
 ProgressClock waxay dooran doontaa midabyo aan kala sooc lahayn haddii ay karti yeelato. Haddii kale, u isticmaal midabyada isku xidhka.
 Ka dhigaysa mawduuc cusub
@@ -1115,3 +1111,21 @@ Qaabka Degdegga ah ee RSS
 Qaab qoraalka Qoraalka Tooska ah
 Zip Shell Degdeg ah Style
 Faylka waa faaruq
+Si guul leh loo baadhay {0}.
+Baaritaanka Verbose
+Ka dhig farriimaha baarista qalabka waxoogaa hadal ah.
+> Ma jiraan wax war ah oo ku saabsan xayndaabyada.
+Waxaad u baahan tahay inaad magacaaga qorto.
+Waxay qurxisaa faylka JSON
+Kaydka qaybta {0} lama helin.
+Soo gal galka {0} lama helin.
+Isticmaal Beats Daqiiqad kasta
+Haddii aad isticmaasho cutubka Beats Per Minute si aad u qorto midabka xiga.
+Dib -u -dhaca Beats Daqiiqad kasta
+Midabka Garaaca
+Immisa garaac daqiiqaddii ayaa la sugayaa ka hor inta aan la qorin qormada xigta?
+Wuxuu dhaqaajiyaa taageerada midabka 255 ee BeatFader.
+Wuxuu dhaqaajiyaa taageerada midabka runta ah ee BeatFader.
+BeatFader ayaa dooran doonta midabada aan kala sooca lahayn haddii la kartiyeeyo. Haddii kale, isticmaal midabyo ka yimid config.
+Calanka Bilowga Khaaska ah
+Haddii la cayimay, waxay soo bandhigi doontaa banner bilow ah oo la habeeyay oo leh taageero goob -haye. Waxaad u adeegsan kartaa weedhan nooca kernel:

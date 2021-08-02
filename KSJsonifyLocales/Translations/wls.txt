@@ -747,10 +747,6 @@ Lliw Gwybodaeth
 Trogod i newid lliw
 Yn actifadu cefnogaeth lliw 255 ar gyfer ProgressClock.
 Yn actifadu gwir gefnogaeth lliw ar gyfer ProgressClock.
-Mae lliw eiliadau bar cynnydd. Gall fod yn 1-16, 1-255, neu "1-255;1-255;1-255".
-Mae lliw munudau cynnydd bar. Gall fod yn 1-16, 1-255, neu "1-255;1-255;1-255".
-Lliw cynnydd bar oriau. Gall fod yn 1-16, 1-255, neu "1-255;1-255;1-255".
-Lliw gwybodaeth dyddiad. Gall fod yn 1-16, 1-255, neu "1-255;1-255;1-255".
 Os yw beicio lliw wedi'i alluogi, faint o diciau cyn newid lliwiau yn ProgressClock? 1 tic = 0.5 eiliad
 Bydd ProgressClock yn dewis lliwiau ar hap os yw wedi'i alluogi. Fel arall, defnyddiwch liwiau o config.
 Yn gwneud thema newydd
@@ -1115,3 +1111,21 @@ Arddull Prydlon RSS
 Testun Golygu Arddull Prydlon
 Arddull Prydlon Zip Shell
 Mae'r ffolder yn wag.
+Profwyd yn llwyddiannus {0}.
+Profi Berfau
+Gwneud negeseuon archwilio caledwedd ychydig yn siaradus.
+> Nid oes unrhyw wybodaeth am fframiau.
+Mae angen i chi ysgrifennu'ch enw.
+Yn harddu'r ffeil JSON
+Ni ddaethpwyd o hyd i gategori ffurfweddu {0}.
+Ffurfweddu cofnod {0} heb ei ddarganfod.
+Defnyddiwch Beats y Munud
+P'un ai i ddefnyddio'r uned Beats Per Minute i ysgrifennu'r lliw nesaf.
+Oedi mewn Curiadau Fesul Munud
+Curwch Lliw
+Faint o guriadau y funud i aros cyn gwneud yr ysgrifen nesaf?
+Yn actifadu cefnogaeth lliw 255 i BeatFader.
+Yn actifadu gwir gefnogaeth lliw i BeatFader.
+Bydd BeatFader yn dewis lliwiau ar hap os yw wedi'i alluogi. Fel arall, defnyddiwch liwiau o config.
+Baner Cychwyn Custom
+Os yw wedi'i nodi, bydd yn arddangos baner cychwyn wedi'i theilwra gyda chefnogaeth deiliad y lle. Gallwch ddefnyddio'r ymadrodd hwn ar gyfer fersiwn cnewyllyn:

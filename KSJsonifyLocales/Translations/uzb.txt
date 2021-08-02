@@ -747,10 +747,6 @@ Axborotning rangi
 Rangni o'zgartirish uchun shomil
 ProgressClock uchun 255 rangni qo'llab-quvvatlashni faollashtiradi.
 ProgressClock uchun haqiqiy rangni qo'llab-quvvatlashni faollashtiradi.
-Bir necha soniya davom etish satrining rangi. Bu 1-16, 1-255 yoki "1-255;1-255;1-255" bo'lishi mumkin.
-Daqiqalar taraqqiyot satrining rangi. Bu 1-16, 1-255 yoki "1-255;1-255;1-255" bo'lishi mumkin.
-Soatlar rivoji satrining rangi. Bu 1-16, 1-255 yoki "1-255;1-255;1-255" bo'lishi mumkin.
-Sana ma'lumotining rangi. Bu 1-16, 1-255 yoki "1-255;1-255;1-255" bo'lishi mumkin.
 Rangli velosiped yoqilgan bo'lsa, ProgressClock-da ranglarni o'zgartirishdan oldin qancha belgi bor? 1 belgi = 0,5 soniya
 ProgressClock yoqilgan bo'lsa, tasodifiy ranglarni tanlaydi. Aks holda, config dan ranglardan foydalaning.
 Yangi mavzu yaratadi
@@ -1115,3 +1111,21 @@ RSS tezkor uslubi
 Matnni tahrirlash tezligi uslubi
 Zip Shell tezkor uslubi
 Jild bo'sh.
+{0} tekshirildi.
+Aniq zond
+Apparat tekshiruvi xabarlarini biroz suhbatdosh qiling.
+> Ramkalar haqida ma'lumot yo'q.
+Ismingizni yozishingiz kerak.
+JSON faylini chiroyli qiladi
+{0} konfiguratsiya toifasi topilmadi.
+{0} konfiguratsiya yozuvi topilmadi.
+Har daqiqada Beatsdan foydalaning
+Keyingi rangni yozish uchun Beats Per Minute birligidan foydalanish kerakmi.
+Har daqiqada urishning kechikishi
+Beat Color
+Keyingi yozuvni yozishdan oldin daqiqada necha zarba kutish kerak?
+BeatFader uchun 255 ta rangli qo'llab -quvvatlashni faollashtiradi.
+BeatFader uchun haqiqiy rangni qo'llab -quvvatlashni faollashtiradi.
+BeatFader yoqilgan bo'lsa, tasodifiy ranglarni tanlaydi. Aks holda, config dan ranglardan foydalaning.
+Maxsus ishga tushirish bannerlari
+Belgilangan bo'lsa, u to'ldirgichni qo'llab -quvvatlaydigan moslashtirilgan ishga tushirish bannerini ko'rsatadi. Siz bu iborani yadro versiyasi uchun ishlatishingiz mumkin:

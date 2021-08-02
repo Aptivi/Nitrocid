@@ -747,10 +747,6 @@ Kleur van informatie
 Tikken om van kleur te veranderen
 Activeert 255 kleurenondersteuning voor ProgressClock.
 Activeert ondersteuning voor ware kleuren voor ProgressClock.
-De kleur van de voortgangsbalk van de seconden. Dit kan 1-16, 1-255 of "1-255;1-255;1-255" zijn.
-De kleur van de voortgangsbalk van de minuten. Dit kan 1-16, 1-255 of "1-255;1-255;1-255" zijn.
-De kleur van de voortgangsbalk voor uren. Dit kan 1-16, 1-255 of "1-255;1-255;1-255" zijn.
-De kleur van datuminformatie. Dit kan 1-16, 1-255 of "1-255;1-255;1-255" zijn.
 Als kleurcyclus is ingeschakeld, hoeveel vinkjes voordat kleuren worden gewijzigd in ProgressClock? 1 vinkje = 0,5 seconden
 ProgressClock selecteert willekeurige kleuren als dit is ingeschakeld. Gebruik anders kleuren uit config.
 Maakt een nieuw thema
@@ -1115,3 +1111,21 @@ RSS-promptstijl
 Aanwijzingsstijl voor tekstbewerking
 Zip Shell Prompt-stijl
 Map is leeg.
+{0} gesondeerd.
+Uitgebreide sonde
+Maak hardware indringende berichten een beetje spraakzaam.
+> Er is geen informatie over frames.
+Je moet je naam schrijven.
+Verfraait het JSON-bestand
+Configuratiecategorie {0} niet gevonden.
+Configuratie-item {0} niet gevonden.
+Gebruik beats per minuut
+Of de Beats Per Minute-eenheid moet worden gebruikt om de volgende kleur te schrijven.
+Vertraging in beats per minuut
+Klop kleur
+Hoeveel beats per minuut moet je wachten voordat je de volgende keer schrijft?
+Activeert 255 kleurenondersteuning voor BeatFader.
+Activeert ondersteuning voor ware kleuren voor BeatFader.
+BeatFader selecteert willekeurige kleuren als dit is ingeschakeld. Gebruik anders kleuren uit config.
+Aangepaste opstartbanner
+Indien opgegeven, wordt een aangepaste opstartbanner weergegeven met ondersteuning voor tijdelijke aanduidingen. Je kunt deze zin gebruiken voor de kernelversie:

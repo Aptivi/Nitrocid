@@ -23,6 +23,53 @@ Imports Newtonsoft.Json.Linq
 Public Module Config
 
     ''' <summary>
+    ''' Base config token to be loaded each kernel startup.
+    ''' </summary>
+    Friend ConfigToken As JObject
+
+    ''' <summary>
+    ''' Config category enumeration
+    ''' </summary>
+    Public Enum ConfigCategory
+        ''' <summary>
+        ''' All general kernel settings, mainly for maintaining the kernel.
+        ''' </summary>
+        General
+        ''' <summary>
+        ''' Color settings
+        ''' </summary>
+        Colors
+        ''' <summary>
+        ''' Hardware settings
+        ''' </summary>
+        Hardware
+        ''' <summary>
+        ''' Login settings
+        ''' </summary>
+        Login
+        ''' <summary>
+        ''' Shell settings
+        ''' </summary>
+        Shell
+        ''' <summary>
+        ''' Filesystem settings
+        ''' </summary>
+        Filesystem
+        ''' <summary>
+        ''' Network settings
+        ''' </summary>
+        Network
+        ''' <summary>
+        ''' Screensaver settings
+        ''' </summary>
+        Screensaver
+        ''' <summary>
+        ''' Miscellaneous settings
+        ''' </summary>
+        Misc
+    End Enum
+
+    ''' <summary>
     ''' Creates the kernel configuration file
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful.</returns>
@@ -38,6 +85,7 @@ Public Module Config
                     {"Change Root Password", setRootPasswd},
                     {"Set Root Password to", RootPasswd},
                     {"Check for Updates on Startup", CheckUpdateStart},
+                    {"Custom Startup Banner", CustomBanner},
                     {"Change Culture when Switching Languages", LangChangeCulture},
                     {"Language", currentLang},
                     {"Culture", CurrentCult.Name}
@@ -66,8 +114,9 @@ Public Module Config
 
             'The Hardware Section
             Dim HardwareConfig As New JObject From {
-                    {"Quiet Probe", quietProbe},
-                    {"Full Probe", FullProbe}
+                    {"Quiet Probe", QuietHardwareProbe},
+                    {"Full Probe", FullHardwareProbe},
+                    {"Verbose Probe", VerboseHardwareProbe}
             }
             ConfigurationObject.Add("Hardware", HardwareConfig)
 
@@ -143,6 +192,7 @@ Public Module Config
                     {"Activate 255 Color Mode", Disco255Colors},
                     {"Activate True Color Mode", DiscoTrueColor},
                     {"Delay in Milliseconds", DiscoDelay},
+                    {"Use Beats Per Minute", DiscoUseBeatsPerMinute},
                     {"Cycle Colors", DiscoCycleColors}
             }
             ScreensaverConfig.Add("Disco", DiscoConfig)
@@ -247,6 +297,17 @@ Public Module Config
             }
             ScreensaverConfig.Add("FaderBack", FaderBackConfig)
 
+            'BeatFader config json object
+            Dim BeatFaderConfig As New JObject From {
+                    {"Activate 255 Color Mode", BeatFader255Colors},
+                    {"Activate True Color Mode", BeatFaderTrueColor},
+                    {"Delay in Beats Per Minute", BeatFaderDelay},
+                    {"Cycle Colors", BeatFaderCycleColors},
+                    {"Beat Color", BeatFaderBeatColor},
+                    {"Max Fade Steps", BeatFaderMaxSteps}
+            }
+            ScreensaverConfig.Add("BeatFader", BeatFaderConfig)
+
             'Typo config json object
             Dim TypoConfig As New JObject From {
                     {"Delay in Milliseconds", TypoDelay},
@@ -320,7 +381,7 @@ Public Module Config
     Public Function ReadConfig() As Boolean
         Try
             'Parse configuration. NOTE: Question marks between parentheses are for nullable types.
-            ConfigToken = JObject.Parse(File.ReadAllText(paths("Configuration")))
+            InitializeConfigToken()
             Wdbg("I", "Config loaded with {0} sections", ConfigToken.Count)
 
             '----------------------------- Important configuration -----------------------------
@@ -367,17 +428,14 @@ Public Module Config
             maintenance = If(ConfigToken("General")?("Maintenance Mode"), False)
             argsOnBoot = If(ConfigToken("General")?("Prompt for Arguments on Boot"), False)
             CheckUpdateStart = If(ConfigToken("General")?("Check for Updates on Startup"), True)
+            If Not String.IsNullOrWhiteSpace(ConfigToken("General")?("Custom Startup Banner")) Then CustomBanner = ConfigToken("General")?("Custom Startup Banner")
 
             'Login Section
             Wdbg("I", "Parsing login section...")
             clsOnLogin = If(ConfigToken("Login")?("Clear Screen on Log-in"), False)
             showMOTD = If(ConfigToken("Login")?("Show MOTD on Log-in"), True)
             ShowAvailableUsers = If(ConfigToken("Login")?("Show available usernames"), True)
-            If Not String.IsNullOrWhiteSpace(ConfigToken("Login")?("Host Name")) Then
-                HName = ConfigToken("Login")?("Host Name")
-            Else
-                HName = "kernel"
-            End If
+            If Not String.IsNullOrWhiteSpace(ConfigToken("Login")?("Host Name")) Then HName = ConfigToken("Login")?("Host Name")
 
             'Shell Section
             Wdbg("I", "Parsing shell section...")
@@ -403,8 +461,9 @@ Public Module Config
 
             'Hardware Section
             Wdbg("I", "Parsing hardware section...")
-            quietProbe = If(ConfigToken("Hardware")?("Quiet Probe"), False)
-            FullProbe = If(ConfigToken("Hardware")?("Full Probe"), True)
+            QuietHardwareProbe = If(ConfigToken("Hardware")?("Quiet Probe"), False)
+            FullHardwareProbe = If(ConfigToken("Hardware")?("Full Probe"), True)
+            VerboseHardwareProbe = If(ConfigToken("Hardware")?("Verbose Probe"), False)
 
             'Network Section
             Wdbg("I", "Parsing network section...")
@@ -425,74 +484,112 @@ Public Module Config
             defSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")
             ScrnTimeout = If(Integer.TryParse(ConfigToken("Screensaver")?("Screensaver Timeout in ms"), 0), ConfigToken("Screensaver")?("Screensaver Timeout in ms"), 300000)
 
-            'Screensaver: Colors
+            'Screensaver-specific settings go below:
+            '> ColorMix
             ColorMix255Colors = If(ConfigToken("Screensaver")?("ColorMix")?("Activate 255 Color Mode"), False)
-            Disco255Colors = If(ConfigToken("Screensaver")?("Disco")?("Activate 255 Color Mode"), False)
-            GlitterColor255Colors = If(ConfigToken("Screensaver")?("GlitterColor")?("Activate 255 Color Mode"), False)
-            Lines255Colors = If(ConfigToken("Screensaver")?("Lines")?("Activate 255 Color Mode"), False)
-            Dissolve255Colors = If(ConfigToken("Screensaver")?("Dissolve")?("Activate 255 Color Mode"), False)
-            BouncingBlock255Colors = If(ConfigToken("Screensaver")?("BouncingBlock")?("Activate 255 Color Mode"), False)
-            BouncingText255Colors = If(ConfigToken("Screensaver")?("BouncingText")?("Activate 255 Color Mode"), False)
-            ProgressClock255Colors = If(ConfigToken("Screensaver")?("ProgressClock")?("Activate 255 Color Mode"), False)
-            Lighter255Colors = If(ConfigToken("Screensaver")?("Lighter")?("Activate 255 Color Mode"), False)
-            Wipe255Colors = If(ConfigToken("Screensaver")?("Wipe")?("Activate 255 Color Mode"), False)
-            Marquee255Colors = If(ConfigToken("Screensaver")?("Marquee")?("Activate 255 Color Mode"), False)
             ColorMixTrueColor = If(ConfigToken("Screensaver")?("ColorMix")?("Activate True Color Mode"), True)
+            ColorMixDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("ColorMix")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("ColorMix")?("Delay in Milliseconds"), 1)
+
+            '> Disco
+            Disco255Colors = If(ConfigToken("Screensaver")?("Disco")?("Activate 255 Color Mode"), False)
             DiscoTrueColor = If(ConfigToken("Screensaver")?("Disco")?("Activate True Color Mode"), True)
-            GlitterColorTrueColor = If(ConfigToken("Screensaver")?("GlitterColor")?("Activate True Color Mode"), True)
-            LinesTrueColor = If(ConfigToken("Screensaver")?("Lines")?("Activate True Color Mode"), True)
-            DissolveTrueColor = If(ConfigToken("Screensaver")?("Dissolve")?("Activate True Color Mode"), True)
-            BouncingBlockTrueColor = If(ConfigToken("Screensaver")?("BouncingBlock")?("Activate True Color Mode"), True)
-            BouncingTextTrueColor = If(ConfigToken("Screensaver")?("BouncingText")?("Activate True Color Mode"), True)
-            ProgressClockTrueColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Activate True Color Mode"), True)
-            LighterTrueColor = If(ConfigToken("Screensaver")?("Lighter")?("Activate True Color Mode"), True)
-            WipeTrueColor = If(ConfigToken("Screensaver")?("Wipe")?("Activate True Color Mode"), True)
-            MarqueeTrueColor = If(ConfigToken("Screensaver")?("Marquee")?("Activate True Color Mode"), True)
             DiscoCycleColors = If(ConfigToken("Screensaver")?("Disco")?("Cycle Colors"), False)
+            DiscoDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Disco")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Disco")?("Delay in Milliseconds"), 100)
+            DiscoUseBeatsPerMinute = If(ConfigToken("Screensaver")?("Disco")?("Use Beats Per Minute"), False)
+
+            '> GlitterColor
+            GlitterColor255Colors = If(ConfigToken("Screensaver")?("GlitterColor")?("Activate 255 Color Mode"), False)
+            GlitterColorTrueColor = If(ConfigToken("Screensaver")?("GlitterColor")?("Activate True Color Mode"), True)
+            GlitterColorDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterColor")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("GlitterColor")?("Delay in Milliseconds"), 1)
+
+            '> GlitterMatrix
+            GlitterMatrixDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterMatrix")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("GlitterMatrix")?("Delay in Milliseconds"), 1)
+
+            '> Lines
+            Lines255Colors = If(ConfigToken("Screensaver")?("Lines")?("Activate 255 Color Mode"), False)
+            LinesTrueColor = If(ConfigToken("Screensaver")?("Lines")?("Activate True Color Mode"), True)
+            LinesDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Lines")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Lines")?("Delay in Milliseconds"), 500)
+
+            '> Dissolve
+            Dissolve255Colors = If(ConfigToken("Screensaver")?("Dissolve")?("Activate 255 Color Mode"), False)
+            DissolveTrueColor = If(ConfigToken("Screensaver")?("Dissolve")?("Activate True Color Mode"), True)
+
+            '> BouncingBlock
+            BouncingBlock255Colors = If(ConfigToken("Screensaver")?("BouncingBlock")?("Activate 255 Color Mode"), False)
+            BouncingBlockTrueColor = If(ConfigToken("Screensaver")?("BouncingBlock")?("Activate True Color Mode"), True)
+            BouncingBlockDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingBlock")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("BouncingBlock")?("Delay in Milliseconds"), 10)
+
+            '> BouncingText
+            BouncingText255Colors = If(ConfigToken("Screensaver")?("BouncingText")?("Activate 255 Color Mode"), False)
+            BouncingTextTrueColor = If(ConfigToken("Screensaver")?("BouncingText")?("Activate True Color Mode"), True)
+            BouncingTextDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingText")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("BouncingText")?("Delay in Milliseconds"), 10)
+            BouncingTextWrite = If(ConfigToken("Screensaver")?("BouncingText")?("Text Shown"), "Kernel Simulator")
+
+            '> ProgressClock
+            ProgressClock255Colors = If(ConfigToken("Screensaver")?("ProgressClock")?("Activate 255 Color Mode"), False)
+            ProgressClockTrueColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Activate True Color Mode"), True)
             ProgressClockCycleColors = If(ConfigToken("Screensaver")?("ProgressClock")?("Cycle Colors"), True)
             ProgressClockSecondsProgressColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Color of Seconds Bar"), 4)
             ProgressClockMinutesProgressColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Color of Minutes Bar"), 5)
             ProgressClockHoursProgressColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Color of Hours Bar"), 6)
             ProgressClockProgressColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Color of Information"), 7)
-            HackUserFromADHackerMode = If(ConfigToken("Screensaver")?("HackUserFromAD")?("Hacker Mode"), True)
-            AptErrorSimHackerMode = If(ConfigToken("Screensaver")?("AptErrorSim")?("Hacker Mode"), False)
+            ProgressClockCycleColorsTicks = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Ticks to change color"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Ticks to change color"), 20)
 
-            'Screensaver: Delays
-            BouncingBlockDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingBlock")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("BouncingBlock")?("Delay in Milliseconds"), 10)
-            BouncingTextDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingText")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("BouncingText")?("Delay in Milliseconds"), 10)
-            ColorMixDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("ColorMix")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("ColorMix")?("Delay in Milliseconds"), 1)
-            DiscoDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Disco")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Disco")?("Delay in Milliseconds"), 100)
-            GlitterColorDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterColor")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("GlitterColor")?("Delay in Milliseconds"), 1)
-            GlitterMatrixDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterMatrix")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("GlitterMatrix")?("Delay in Milliseconds"), 1)
-            LinesDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Lines")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Lines")?("Delay in Milliseconds"), 500)
-            MatrixDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Matrix")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Matrix")?("Delay in Milliseconds"), 1)
+            '> Lighter
+            Lighter255Colors = If(ConfigToken("Screensaver")?("Lighter")?("Activate 255 Color Mode"), False)
+            LighterTrueColor = If(ConfigToken("Screensaver")?("Lighter")?("Activate True Color Mode"), True)
             LighterDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Lighter")?("Delay in Milliseconds"), 100)
+            LighterMaxPositions = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Max Positions Count"), 0), ConfigToken("Screensaver")?("Lighter")?("Max Positions Count"), 10)
+
+            '> Wipe
+            Wipe255Colors = If(ConfigToken("Screensaver")?("Wipe")?("Activate 255 Color Mode"), False)
+            WipeTrueColor = If(ConfigToken("Screensaver")?("Wipe")?("Activate True Color Mode"), True)
+            WipeDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Wipe")?("Delay in Milliseconds"), 10)
+            WipeWipesNeededToChangeDirection = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Wipes to change direction"), 0), ConfigToken("Screensaver")?("Wipe")?("Wipes to change direction"), 10)
+
+            '> Fader
             FaderDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Fader")?("Delay in Milliseconds"), 50)
             FaderFadeOutDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Fade Out Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Fader")?("Fade Out Delay in Milliseconds"), 3000)
+            FaderWrite = If(ConfigToken("Screensaver")?("Fader")?("Text Shown"), "Kernel Simulator")
+            FaderMaxSteps = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Max Fade Steps"), 0), ConfigToken("Screensaver")?("Fader")?("Max Fade Steps"), 25)
+
+            '> FaderBack
             FaderBackDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("FaderBack")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("FaderBack")?("Delay in Milliseconds"), 50)
             FaderBackFadeOutDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("FaderBack")?("Fade Out Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("FaderBack")?("Fade Out Delay in Milliseconds"), 3000)
-            ProgressClockCycleColorsTicks = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Ticks to change color"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Ticks to change color"), 20)
+            FaderBackMaxSteps = If(Integer.TryParse(ConfigToken("Screensaver")?("FaderBack")?("Max Fade Steps"), 0), ConfigToken("Screensaver")?("FaderBack")?("Max Fade Steps"), 25)
+
+            '> BeatFader
+            BeatFader255Colors = If(ConfigToken("Screensaver")?("BeatFader")?("Activate 255 Color Mode"), False)
+            BeatFaderTrueColor = If(ConfigToken("Screensaver")?("BeatFader")?("Activate True Color Mode"), True)
+            BeatFaderCycleColors = If(ConfigToken("Screensaver")?("BeatFader")?("Cycle Colors"), True)
+            BeatFaderBeatColor = If(ConfigToken("Screensaver")?("BeatFader")?("Beat Color"), 17)
+            BeatFaderDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatFader")?("Delay in Beats Per Minute"), 0), ConfigToken("Screensaver")?("BeatFader")?("Delay in Beats Per Minute"), 120)
+            BeatFaderMaxSteps = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatFader")?("Max Fade Steps"), 0), ConfigToken("Screensaver")?("BeatFader")?("Max Fade Steps"), 25)
+
+            '> Typo
             TypoDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Typo")?("Delay in Milliseconds"), 50)
             TypoWriteAgainDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Write Again Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Typo")?("Write Again Delay in Milliseconds"), 3000)
-            WipeDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Wipe")?("Delay in Milliseconds"), 10)
-            MarqueeDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Marquee")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Marquee")?("Delay in Milliseconds"), 10)
-
-            'Screensaver: Texts
-            BouncingTextWrite = If(ConfigToken("Screensaver")?("BouncingText")?("Text Shown"), "Kernel Simulator")
-            FaderWrite = If(ConfigToken("Screensaver")?("Fader")?("Text Shown"), "Kernel Simulator")
             TypoWrite = If(ConfigToken("Screensaver")?("Typo")?("Text Shown"), "Kernel Simulator")
-            MarqueeWrite = If(ConfigToken("Screensaver")?("Marquee")?("Text Shown"), "Kernel Simulator")
-
-            'Screensaver: Misc
-            LighterMaxPositions = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Max Positions Count"), 0), ConfigToken("Screensaver")?("Lighter")?("Max Positions Count"), 10)
-            FaderMaxSteps = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Max Fade Steps"), 0), ConfigToken("Screensaver")?("Fader")?("Max Fade Steps"), 25)
-            FaderBackMaxSteps = If(Integer.TryParse(ConfigToken("Screensaver")?("FaderBack")?("Max Fade Steps"), 0), ConfigToken("Screensaver")?("FaderBack")?("Max Fade Steps"), 25)
             TypoWritingSpeedMin = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Minimum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Typo")?("Minimum writing speed in WPM"), 50)
             TypoWritingSpeedMax = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Maximum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Typo")?("Maximum writing speed in WPM"), 80)
             TypoMissStrikePossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Probability of typo in percent"), 0), ConfigToken("Screensaver")?("Typo")?("Probability of typo in percent"), 60)
-            WipeWipesNeededToChangeDirection = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Wipes to change direction"), 0), ConfigToken("Screensaver")?("Wipe")?("Wipes to change direction"), 10)
+
+            '> Marquee
+            Marquee255Colors = If(ConfigToken("Screensaver")?("Marquee")?("Activate 255 Color Mode"), False)
+            MarqueeTrueColor = If(ConfigToken("Screensaver")?("Marquee")?("Activate True Color Mode"), True)
+            MarqueeWrite = If(ConfigToken("Screensaver")?("Marquee")?("Text Shown"), "Kernel Simulator")
+            MarqueeDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Marquee")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Marquee")?("Delay in Milliseconds"), 10)
             MarqueeAlwaysCentered = If(ConfigToken("Screensaver")?("Marquee")?("Always Centered"), True)
             MarqueeUseConsoleAPI = If(ConfigToken("Screensaver")?("Marquee")?("Use Console API"), False)
+
+            '> Matrix
+            MatrixDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Matrix")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Matrix")?("Delay in Milliseconds"), 1)
+
+            '> HackUserFromAD
+            HackUserFromADHackerMode = If(ConfigToken("Screensaver")?("HackUserFromAD")?("Hacker Mode"), True)
+
+            '> AptErrorSim
+            AptErrorSimHackerMode = If(ConfigToken("Screensaver")?("AptErrorSim")?("Hacker Mode"), False)
 
             'Misc Section
             Wdbg("I", "Parsing misc section...")
@@ -525,23 +622,6 @@ Public Module Config
     End Function
 
     ''' <summary>
-    ''' Reloads config
-    ''' </summary>
-    ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function ReloadConfig() As Boolean
-        Try
-            EventManager.RaisePreReloadConfig()
-            InitializeConfig()
-            EventManager.RaisePostReloadConfig()
-            Return True
-        Catch ex As Exception
-            Wdbg("E", "Failed to reload config: {0}", ex.Message)
-            WStkTrc(ex)
-        End Try
-        Return False
-    End Function
-
-    ''' <summary>
     ''' Main loader for configuration file
     ''' </summary>
     Sub InitializeConfig()
@@ -561,188 +641,10 @@ Public Module Config
     End Sub
 
     ''' <summary>
-    ''' Checks to see if the config needs repair and repairs it as necessary.
+    ''' Initializes the config token
     ''' </summary>
-    ''' <returns>True if the config is repaired; False if no repairs done; Throws exceptions if unsuccessful.</returns>
-    Public Function RepairConfig() As Boolean
-        'Variables
-        Dim FixesNeeded As Boolean
-
-        'Check for missing sections
-        If ConfigToken.Count <> 9 Then
-            Wdbg("W", "Missing sections. Config fix needed set to true.")
-            FixesNeeded = True
-        End If
-        If ConfigToken("Screensaver") IsNot Nothing Then
-            If ConfigToken("Screensaver").Count <> 18 + 2 Then 'Screensavers + Keys
-                Wdbg("W", "Missing sections and/or keys in Screensaver. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-        End If
-
-        'Now, check for missing keys in each section that ARE available.
-        If ConfigToken("General") IsNot Nothing Then
-            If ConfigToken("General").Count <> 8 Then
-                Wdbg("W", "Missing keys in General. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-        End If
-        If ConfigToken("Colors") IsNot Nothing Then
-            If ConfigToken("Colors").Count <> 15 Then
-                Wdbg("W", "Missing keys in Colors. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-        End If
-        If ConfigToken("Hardware") IsNot Nothing Then
-            If ConfigToken("Hardware").Count <> 2 Then
-                Wdbg("W", "Missing keys in Hardware. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-        End If
-        If ConfigToken("Login") IsNot Nothing Then
-            If ConfigToken("Login").Count <> 4 Then
-                Wdbg("W", "Missing keys in Login. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-        End If
-        If ConfigToken("Shell") IsNot Nothing Then
-            If ConfigToken("Shell").Count <> 8 Then
-                Wdbg("W", "Missing keys in Shell. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-        End If
-        If ConfigToken("Filesystem") IsNot Nothing Then
-            If ConfigToken("Filesystem").Count <> 6 Then
-                Wdbg("W", "Missing keys in Filesystem. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-        End If
-        If ConfigToken("Network") IsNot Nothing Then
-            If ConfigToken("Network").Count <> 12 Then
-                Wdbg("W", "Missing keys in Network. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-        End If
-        If ConfigToken("Screensaver") IsNot Nothing Then
-            If ConfigToken("Screensaver")("ColorMix") IsNot Nothing Then
-                If ConfigToken("Screensaver")("ColorMix").Count <> 3 Then
-                    Wdbg("W", "Missing keys in Screensaver > ColorMix. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("Disco") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Disco").Count <> 4 Then
-                    Wdbg("W", "Missing keys in Screensaver > Disco. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("GlitterColor") IsNot Nothing Then
-                If ConfigToken("Screensaver")("GlitterColor").Count <> 3 Then
-                    Wdbg("W", "Missing keys in Screensaver > GlitterColor. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("Lines") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Lines").Count <> 3 Then
-                    Wdbg("W", "Missing keys in Screensaver > Lines. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("Dissolve") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Dissolve").Count <> 2 Then
-                    Wdbg("W", "Missing keys in Screensaver > Dissolve. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("BouncingBlock") IsNot Nothing Then
-                If ConfigToken("Screensaver")("BouncingBlock").Count <> 3 Then
-                    Wdbg("W", "Missing keys in Screensaver > BouncingBlock. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("BouncingText") IsNot Nothing Then
-                If ConfigToken("Screensaver")("BouncingText").Count <> 4 Then
-                    Wdbg("W", "Missing keys in Screensaver > BouncingText. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("ProgressClock") IsNot Nothing Then
-                If ConfigToken("Screensaver")("ProgressClock").Count <> 8 Then
-                    Wdbg("W", "Missing keys in Screensaver > ProgressClock. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("Lighter") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Lighter").Count <> 4 Then
-                    Wdbg("W", "Missing keys in Screensaver > Lighter. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("Wipe") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Wipe").Count <> 4 Then
-                    Wdbg("W", "Missing keys in Screensaver > Wipe. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("Matrix") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Matrix").Count <> 1 Then
-                    Wdbg("W", "Missing keys in Screensaver > Matrix. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("GlitterMatrix") IsNot Nothing Then
-                If ConfigToken("Screensaver")("GlitterMatrix").Count <> 1 Then
-                    Wdbg("W", "Missing keys in Screensaver > GlitterMatrix. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("Fader") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Fader").Count <> 4 Then
-                    Wdbg("W", "Missing keys in Screensaver > Fader. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("FaderBack") IsNot Nothing Then
-                If ConfigToken("Screensaver")("FaderBack").Count <> 3 Then
-                    Wdbg("W", "Missing keys in Screensaver > FaderBack. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("Typo") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Typo").Count <> 6 Then
-                    Wdbg("W", "Missing keys in Screensaver > Typo. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("HackUserFromAD") IsNot Nothing Then
-                If ConfigToken("Screensaver")("HackUserFromAD").Count <> 1 Then
-                    Wdbg("W", "Missing keys in Screensaver > HackUserFromAD. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("AptErrorSim") IsNot Nothing Then
-                If ConfigToken("Screensaver")("AptErrorSim").Count <> 1 Then
-                    Wdbg("W", "Missing keys in Screensaver > AptErrorSim. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("Marquee") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Marquee").Count <> 6 Then
-                    Wdbg("W", "Missing keys in Screensaver > Marquee. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-        End If
-        If ConfigToken("Misc") IsNot Nothing Then
-            If ConfigToken("Misc").Count <> 7 Then
-                Wdbg("W", "Missing keys in Misc. Config fix needed set to true.")
-                FixesNeeded = True
-            End If
-        End If
-
-        'If the fixes are needed, try to remake config with parsed values
-        If FixesNeeded Then CreateConfig()
-        Return FixesNeeded
-    End Function
+    Sub InitializeConfigToken()
+        ConfigToken = JObject.Parse(File.ReadAllText(paths("Configuration")))
+    End Sub
 
 End Module

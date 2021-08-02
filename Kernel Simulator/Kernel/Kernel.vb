@@ -18,18 +18,15 @@
 
 Imports System.IO
 Imports System.Reflection.Assembly
-Imports Newtonsoft.Json.Linq
 
 Public Module Kernel
 
     'Variables
-    Public ReadOnly KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
-    Public ConfigToken As JObject
     Public MOTDMessage, MAL As String
     Public HName As String = "kernel"
     Public EventManager As New Events
     Public DefConsoleOut As TextWriter
-    Public ScrnTimeout As Integer = 300000
+    Public ReadOnly KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
     Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion}"
     Public ReadOnly vbNewLine As String = Environment.NewLine
     Friend StageTimer As New Stopwatch

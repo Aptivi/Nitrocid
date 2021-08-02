@@ -103,9 +103,9 @@ Module PreFivePointFive
                     End If
                 ElseIf line.Contains("Quiet Probe = ") Then
                     If line.Replace("Quiet Probe = ", "") = "True" Then
-                        quietProbe = True
+                        QuietHardwareProbe = True
                     ElseIf line.Replace("Quiet Probe = ", "") = "False" Then
-                        quietProbe = False
+                        QuietHardwareProbe = False
                     End If
                 ElseIf line.Contains("Show Time/Date on Corner = ") Then
                     If line.Replace("Show Time/Date on Corner = ", "") = "True" Then

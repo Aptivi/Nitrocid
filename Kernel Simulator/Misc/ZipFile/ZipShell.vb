@@ -24,13 +24,13 @@ Module ZipShell
 
     'Variables
     Public ZipShell_Exiting As Boolean
-    Public ReadOnly ZipShell_Commands As New Dictionary(Of String, CommandInfo) From {{"cdir", New CommandInfo("cdir", ShellCommandType.ZIPShell, DoTranslation("Gets current local directory"), False, 0)},
-                                                                                      {"chdir", New CommandInfo("chdir", ShellCommandType.ZIPShell, DoTranslation("Changes directory"), True, 1)},
-                                                                                      {"chadir", New CommandInfo("chadir", ShellCommandType.ZIPShell, DoTranslation("Changes archive directory"), True, 1)},
-                                                                                      {"exit", New CommandInfo("exit", ShellCommandType.ZIPShell, DoTranslation("Exits the ZIP shell"), False, 0)},
-                                                                                      {"get", New CommandInfo("get", ShellCommandType.ZIPShell, DoTranslation("Extracts a file to a specified directory or a current directory"), True, 1)},
-                                                                                      {"help", New CommandInfo("help", ShellCommandType.ZIPShell, DoTranslation("Lists available commands"), False, 0)},
-                                                                                      {"list", New CommandInfo("list", ShellCommandType.ZIPShell, DoTranslation("Lists all files inside the archive"), False, 0)}}
+    Public ReadOnly ZipShell_Commands As New Dictionary(Of String, CommandInfo) From {{"cdir", New CommandInfo("cdir", ShellCommandType.ZIPShell, "Gets current local directory", False, 0)},
+                                                                                      {"chdir", New CommandInfo("chdir", ShellCommandType.ZIPShell, "Changes directory", True, 1)},
+                                                                                      {"chadir", New CommandInfo("chadir", ShellCommandType.ZIPShell, "Changes archive directory", True, 1)},
+                                                                                      {"exit", New CommandInfo("exit", ShellCommandType.ZIPShell, "Exits the ZIP shell", False, 0)},
+                                                                                      {"get", New CommandInfo("get", ShellCommandType.ZIPShell, "Extracts a file to a specified directory or a current directory", True, 1)},
+                                                                                      {"help", New CommandInfo("help", ShellCommandType.ZIPShell, "Lists available commands", False, 0)},
+                                                                                      {"list", New CommandInfo("list", ShellCommandType.ZIPShell, "Lists all files inside the archive", False, 0)}}
     Public ZipShell_ModCommands As New ArrayList
     Public ZipShell_FileStream As FileStream
     Public ZipShell_ZipArchive As ZipArchive

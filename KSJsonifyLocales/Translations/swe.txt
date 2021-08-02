@@ -747,10 +747,6 @@ Färg på information
 Fästingar för att ändra färg
 Aktiverar 255 färgstöd för ProgressClock.
 Aktiverar äkta färgstöd för ProgressClock.
-Färgen på sekunders framstegsfält. Det kan vara 1-16, 1-255 eller "1-255;1-255;1-255".
-Färgen på minutens förloppsindikator. Det kan vara 1-16, 1-255 eller "1-255;1-255;1-255".
-Färgen på förloppsindikatorn för timmar. Det kan vara 1-16, 1-255 eller "1-255;1-255;1-255".
-Färgen på datuminformation. Det kan vara 1-16, 1-255 eller "1-255;1-255;1-255".
 Om färgcykling är aktiverad, hur många fästingar innan du byter färg i ProgressClock? 1 bock = 0,5 sekunder
 ProgressClock väljer slumpmässiga färger om den är aktiverad. Använd annars färger från config.
 Gör ett nytt tema
@@ -1115,3 +1111,21 @@ RSS-meddelandestil
 Text Redigera stilstil
 Snabb stil för ZIP-skal
 Mappen är tom.
+Utförd {0}.
+Ordlig sond
+Gör hårdvarusökande meddelanden lite pratsamma.
+> Det finns ingen information om ramar.
+Du måste skriva ditt namn.
+Förskönar JSON -filen
+Konfigurationskategori {0} hittades inte.
+Konfigurationsposten {0} hittades inte.
+Använd slag per minut
+Om du vill använda Beats Per Minute -enheten för att skriva nästa färg.
+Fördröjning i slag per minut
+Slå färg
+Hur många slag per minut ska man vänta innan man skriver nästa?
+Aktiverar 255 färgstöd för BeatFader.
+Aktiverar äkta färgstöd för BeatFader.
+BeatFader väljer slumpmässiga färger om det är aktiverat. Använd annars färger från config.
+Anpassad startbanner
+Om det anges kommer det att visa anpassad startbanner med platshållarsupport. Du kan använda denna fras för kärnversion:

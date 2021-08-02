@@ -747,10 +747,6 @@ Məlumat rəngi
 Rəngi ​​dəyişdirmək üçün gənələr
 ProgressClock üçün 255 rəng dəstəyini aktivləşdirir.
 ProgressClock üçün həqiqi rəng dəstəyini aktivləşdirir.
-Saniyə irəliləyiş çubuğunun rəngi. 1-16, 1-255 və ya "1-255;1-255;1-255" ola bilər.
-Dəqiqə tərəqqi çubuğunun rəngi. 1-16, 1-255 və ya "1-255;1-255;1-255" ola bilər.
-Saat tərəqqi çubuğunun rəngi. 1-16, 1-255 və ya "1-255;1-255;1-255" ola bilər.
-Tarix məlumatının rəngi. 1-16, 1-255 və ya "1-255;1-255;1-255" ola bilər.
 Rəngli velosiped aktivdirsə, ProgressClock-da rəng dəyişdirmədən əvvəl neçə gənə var? 1 gənə = 0,5 saniyə
 ProgressClock effektiv olduğu təqdirdə təsadüfi rəngləri seçəcəkdir. Əks təqdirdə, config-dən rənglərdən istifadə edin.
 Yeni bir mövzu yaradır
@@ -1115,3 +1111,21 @@ RSS İstəməsi Stili
 Mətn Düzəliş İstemi Stili
 Zip Shell İstemi Stili
 Qovluq boşdur
+{0} uğurla araşdırıldı.
+Sözsüz zond
+Aparat araşdırma mesajlarını bir az danışıcı edin.
+> Çərçivələr haqqında heç bir məlumat yoxdur.
+Adınızı yazmalısınız.
+JSON faylını gözəlləşdirir
+{0} konfiqurasiya kateqoriyası tapılmadı.
+{0} konfiqurasiya girişi tapılmadı.
+Dəqiqədə Beats istifadə edin
+Növbəti rəngi yazmaq üçün Beats Per Dakika vahidindən istifadə edib -etməmək.
+Dəqiqədə Beats Gecikməsi
+Rəng döyün
+Növbəti yazını etməzdən əvvəl dəqiqədə neçə vuruş gözləmək lazımdır?
+BeatFader üçün 255 rəng dəstəyini aktivləşdirir.
+BeatFader üçün əsl rəng dəstəyini aktivləşdirir.
+BeatFader aktiv olduqda təsadüfi rəngləri seçəcək. Əks halda, config -dən rənglərdən istifadə edin.
+Fərdi Başlanğıc Banner
+Göstərilərsə, yer tutucu dəstəyi ilə xüsusi başlanğıc bannerini göstərəcək. Bu ifadəni kernel versiyası üçün istifadə edə bilərsiniz:
