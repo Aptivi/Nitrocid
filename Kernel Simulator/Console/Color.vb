@@ -374,9 +374,9 @@ Public Module ColorTools
     ''' <param name="LicenseColor">License color</param>
     ''' <param name="ContKernelErrorColor">Continuable kernel error color</param>
     ''' <param name="UncontKernelErrorColor">Uncontinuable kernel error color</param>
-    ''' <param name="HostNameColor">Host name color</param>
-    ''' <param name="UserNameColor">User name color</param>
-    ''' <param name="BackColor">Background color</param>
+    ''' <param name="HostNameShellColor">Host name color</param>
+    ''' <param name="UserNameShellColor">User name color</param>
+    ''' <param name="BackgroundColor">Background color</param>
     ''' <param name="NeutralTextColor">Neutral text color</param>
     ''' <param name="ListEntryColor">Command list color</param>
     ''' <param name="ListValueColor">Command definition color</param>
@@ -387,8 +387,8 @@ Public Module ColorTools
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="InvalidOperationException"></exception>
     ''' <exception cref="Exceptions.ColorException"></exception>
-    Public Function SetColors(InputColor As String, LicenseColor As String, ContKernelErrorColor As String, UncontKernelErrorColor As String, HostNameColor As String, UserNameColor As String,
-                              BackColor As String, NeutralTextColor As String, ListEntryColor As String, ListValueColor As String, StageColor As String, ErrorColor As String, WarningColor As String,
+    Public Function SetColors(InputColor As String, LicenseColor As String, ContKernelErrorColor As String, UncontKernelErrorColor As String, HostNameShellColor As String, UserNameShellColor As String,
+                              BackgroundColor As String, NeutralTextColor As String, ListEntryColor As String, ListValueColor As String, StageColor As String, ErrorColor As String, WarningColor As String,
                               OptionColor As String, BannerColor As String) As Boolean
         'Check colors for null and set them to "def" if found
         If String.IsNullOrEmpty(OptionColor) Then OptionColor = "def"
@@ -398,9 +398,9 @@ Public Module ColorTools
         If String.IsNullOrEmpty(ListValueColor) Then ListValueColor = "def"
         If String.IsNullOrEmpty(ListEntryColor) Then ListEntryColor = "def"
         If String.IsNullOrEmpty(NeutralTextColor) Then NeutralTextColor = "def"
-        If String.IsNullOrEmpty(BackColor) Then BackColor = "def"
-        If String.IsNullOrEmpty(UserNameColor) Then UserNameColor = "def"
-        If String.IsNullOrEmpty(HostNameColor) Then HostNameColor = "def"
+        If String.IsNullOrEmpty(BackgroundColor) Then BackgroundColor = "def"
+        If String.IsNullOrEmpty(UserNameShellColor) Then UserNameShellColor = "def"
+        If String.IsNullOrEmpty(HostNameShellColor) Then HostNameShellColor = "def"
         If String.IsNullOrEmpty(UncontKernelErrorColor) Then UncontKernelErrorColor = "def"
         If String.IsNullOrEmpty(ContKernelErrorColor) Then ContKernelErrorColor = "def"
         If String.IsNullOrEmpty(LicenseColor) Then LicenseColor = "def"
@@ -415,8 +415,8 @@ Public Module ColorTools
             If LicenseColor = "def" Then LicenseColor = New Color(ConsoleColors.White).PlainSequence
             If ContKernelErrorColor = "def" Then ContKernelErrorColor = New Color(ConsoleColors.Yellow).PlainSequence
             If UncontKernelErrorColor = "def" Then UncontKernelErrorColor = New Color(ConsoleColors.Red).PlainSequence
-            If HostNameColor = "def" Then HostNameColor = New Color(ConsoleColors.DarkGreen).PlainSequence
-            If UserNameColor = "def" Then UserNameColor = New Color(ConsoleColors.Green).PlainSequence
+            If HostNameShellColor = "def" Then HostNameShellColor = New Color(ConsoleColors.DarkGreen).PlainSequence
+            If UserNameShellColor = "def" Then UserNameShellColor = New Color(ConsoleColors.Green).PlainSequence
             If NeutralTextColor = "def" Then NeutralTextColor = New Color(ConsoleColors.Gray).PlainSequence
             If ListEntryColor = "def" Then ListEntryColor = New Color(ConsoleColors.DarkYellow).PlainSequence
             If ListValueColor = "def" Then ListValueColor = New Color(ConsoleColors.DarkGray).PlainSequence
@@ -425,8 +425,8 @@ Public Module ColorTools
             If WarningColor = "def" Then WarningColor = New Color(ConsoleColors.Yellow).PlainSequence
             If OptionColor = "def" Then OptionColor = New Color(ConsoleColors.DarkYellow).PlainSequence
             If BannerColor = "def" Then OptionColor = New Color(ConsoleColors.Green).PlainSequence
-            If BackColor = "def" Then
-                BackColor = New Color(ConsoleColors.Black).PlainSequence
+            If BackgroundColor = "def" Then
+                BackgroundColor = New Color(ConsoleColors.Black).PlainSequence
                 LoadBack()
             End If
 
@@ -436,9 +436,9 @@ Public Module ColorTools
                 ColorTools.LicenseColor = New Color(LicenseColor).PlainSequence
                 ColorTools.ContKernelErrorColor = New Color(ContKernelErrorColor).PlainSequence
                 ColorTools.UncontKernelErrorColor = New Color(UncontKernelErrorColor).PlainSequence
-                ColorTools.HostNameShellColor = New Color(HostNameColor).PlainSequence
-                ColorTools.UserNameShellColor = New Color(UserNameColor).PlainSequence
-                ColorTools.BackgroundColor = New Color(BackColor).PlainSequence
+                ColorTools.HostNameShellColor = New Color(HostNameShellColor).PlainSequence
+                ColorTools.UserNameShellColor = New Color(UserNameShellColor).PlainSequence
+                ColorTools.BackgroundColor = New Color(BackgroundColor).PlainSequence
                 ColorTools.NeutralTextColor = New Color(NeutralTextColor).PlainSequence
                 ColorTools.ListEntryColor = New Color(ListEntryColor).PlainSequence
                 ColorTools.ListValueColor = New Color(ListValueColor).PlainSequence
