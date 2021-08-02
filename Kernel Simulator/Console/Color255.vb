@@ -19,50 +19,6 @@
 Imports System.Runtime.InteropServices
 Imports Newtonsoft.Json.Linq
 
-Public Class ConsoleColorsInfo
-
-    ''' <summary>
-    ''' The color ID
-    ''' </summary>
-    Public ReadOnly Property ColorID As Integer
-    ''' <summary>
-    ''' The red color value
-    ''' </summary>
-    Public ReadOnly Property R As Integer
-    ''' <summary>
-    ''' The green color value
-    ''' </summary>
-    ''' <returns></returns>
-    Public ReadOnly Property G As Integer
-    ''' <summary>
-    ''' The blue color value
-    ''' </summary>
-    ''' <returns></returns>
-    Public ReadOnly Property B As Integer
-    ''' <summary>
-    ''' Is the color bright?
-    ''' </summary>
-    Public ReadOnly Property IsBright As Boolean
-
-    ''' <summary>
-    ''' Makes a new instance of 255-color console color information
-    ''' </summary>
-    ''' <param name="ColorValue">A 255-color console color</param>
-    Public Sub New(ByVal ColorValue As ConsoleColors)
-        If Not (ColorValue < 0 Or ColorValue > 255) Then
-            Dim ColorData As JObject = ColorDataJson(CInt(ColorValue))
-            ColorID = ColorData("colorId")
-            R = ColorData("rgb")("r")
-            G = ColorData("rgb")("g")
-            B = ColorData("rgb")("b")
-            IsBright = R + 0.2126 + G + 0.7152 + B + 0.0722 > 255 / 2
-        Else
-            Throw New ArgumentOutOfRangeException(NameOf(ColorValue), ColorValue, DoTranslation("The color value is outside the range of 0-255."))
-        End If
-    End Sub
-
-End Class
-
 Public Module Color255
 
     ''' <summary>
