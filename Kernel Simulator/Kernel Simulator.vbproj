@@ -14,7 +14,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <!-- KS Nuget Information -->
     <PackageId>KS</PackageId>
-    <Version>0.0.18.0</Version>
+    <Version>0.0.18.1</Version>
     <Authors>EoflaOE</Authors>
     <Title>Kernel Simulator</Title>
     <PackageDescription>Simulates our future-planned kernel</PackageDescription>
@@ -34,12 +34,13 @@
     <!-- Dependencies set up -->
     <Dependencies>
       <dependency id="MadMilkman.Ini" version="1.0.6.0" />
-      <dependency id="FluentFTP" version="34.0.0" />
+      <dependency id="FluentFTP" version="34.0.1" />
       <dependency id="Newtonsoft.Json" version="13.0.1" />
       <dependency id="SSH.NET" version="2020.0.1" />
       <dependency id="MailKit" version="2.14.0" />
-      <dependency id="Extensification" version="2021.5.1" />
-      <dependency id="Inxi.NET" version="2021.3.0" />
+      <dependency id="Extensification" version="2021.6.0" />
+      <dependency id="Inxi.NET" version="2021.4.0.1" />
+      <dependency id="HtmlAgilityPack" version="1.11.34" />
     </Dependencies>
     <!-- KS Nuget Information End -->
   </PropertyGroup>
