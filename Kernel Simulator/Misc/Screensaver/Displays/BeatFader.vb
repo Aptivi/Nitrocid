@@ -91,7 +91,7 @@ Module BeatFaderDisplay
 
                     'Fade out
                     For CurrentStep As Integer = 1 To BeatFaderMaxSteps
-                        If FaderBack.CancellationPending Then Exit For
+                        If BeatFader.CancellationPending Then Exit For
                         SleepNoBlock(BeatIntervalStep, FaderBack)
                         Dim CurrentColorRedOut As Integer = RedColorNum - ThresholdRed * CurrentStep
                         Dim CurrentColorGreenOut As Integer = GreenColorNum - ThresholdGreen * CurrentStep
