@@ -41,11 +41,12 @@ Public Module SeparatorColor
         End If
 
         'Write the closing minus sign.
+        Dim OldTop As Integer = Console.CursorTop
         W("-".Repeat(RepeatTimes), True, ColTypes)
 
         'Fix CursorTop value on Unix systems. Mono...
         If IsOnUnix() Then
-            If Not Console.CursorTop = Console.BufferHeight - 1 Then Console.CursorTop -= 1
+            If Not Console.CursorTop = Console.WindowHeight - 1 Or OldTop = Console.WindowHeight - 3 Then Console.CursorTop -= 1
         End If
     End Sub
 
@@ -72,11 +73,12 @@ Public Module SeparatorColor
         End If
 
         'Write the closing minus sign.
+        Dim OldTop As Integer = Console.CursorTop
         WriteC16("-".Repeat(RepeatTimes), True, Color)
 
         'Fix CursorTop value on Unix systems. Mono...
         If IsOnUnix() Then
-            If Not Console.CursorTop = Console.BufferHeight - 1 Then Console.CursorTop -= 1
+            If Not Console.CursorTop = Console.WindowHeight - 1 Or OldTop = Console.WindowHeight - 3 Then Console.CursorTop -= 1
         End If
     End Sub
 
@@ -104,11 +106,12 @@ Public Module SeparatorColor
         End If
 
         'Write the closing minus sign.
+        Dim OldTop As Integer = Console.CursorTop
         WriteC16("-".Repeat(RepeatTimes), True, ForegroundColor, BackgroundColor)
 
         'Fix CursorTop value on Unix systems. Mono...
         If IsOnUnix() Then
-            If Not Console.CursorTop = Console.BufferHeight - 1 Then Console.CursorTop -= 1
+            If Not Console.CursorTop = Console.WindowHeight - 1 Or OldTop = Console.WindowHeight - 3 Then Console.CursorTop -= 1
         End If
     End Sub
 
@@ -135,11 +138,12 @@ Public Module SeparatorColor
         End If
 
         'Write the closing minus sign.
+        Dim OldTop As Integer = Console.CursorTop
         WriteC("-".Repeat(RepeatTimes), True, Color)
 
         'Fix CursorTop value on Unix systems. Mono...
         If IsOnUnix() Then
-            If Not Console.CursorTop = Console.BufferHeight - 1 Then Console.CursorTop -= 1
+            If Not Console.CursorTop = Console.WindowHeight - 1 Or OldTop = Console.WindowHeight - 3 Then Console.CursorTop -= 1
         End If
     End Sub
 
@@ -167,11 +171,12 @@ Public Module SeparatorColor
         End If
 
         'Write the closing minus sign.
+        Dim OldTop As Integer = Console.CursorTop
         WriteC("-".Repeat(RepeatTimes), True, ForegroundColor, BackgroundColor)
 
         'Fix CursorTop value on Unix systems. Mono...
         If IsOnUnix() Then
-            If Not Console.CursorTop = Console.BufferHeight - 1 Then Console.CursorTop -= 1
+            If Not Console.CursorTop = Console.WindowHeight - 1 Or OldTop = Console.WindowHeight - 3 Then Console.CursorTop -= 1
         End If
     End Sub
 
