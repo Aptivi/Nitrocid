@@ -47,6 +47,8 @@ Public Module FTPHelpSystem
                     W(DoTranslation("Usage:") + " disconnect: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "get"
                     W(DoTranslation("Usage:") + " get <file>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "getfolder"
+                    W(DoTranslation("Usage:") + " getfolder <folder>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "exit"
                     W(DoTranslation("Usage:") + " exit: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "lsl"
@@ -61,6 +63,8 @@ Public Module FTPHelpSystem
                     W(DoTranslation("Usage:") + " type <a/b>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "put"
                     W(DoTranslation("Usage:") + " put <file>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "putfolder"
+                    W(DoTranslation("Usage:") + " putfolder <folder>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "quickconnect"
                     W(DoTranslation("Usage:") + " quickconnect: " + HelpDefinition, True, ColTypes.Neutral)
             End Select

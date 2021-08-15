@@ -159,6 +159,19 @@ Public Module FTPGetCommand
                     Else
                         W(DoTranslation("Enter a file to download to local directory."), True, ColTypes.Error)
                     End If
+                Case "getfolder"
+                    If RequiredArgumentsProvided Then
+                        W(DoTranslation("Downloading folder {0}..."), False, ColTypes.Neutral, eqargs(0))
+                        If FTPGetFolder(eqargs(0)) Then
+                            Console.WriteLine()
+                            W(DoTranslation("Downloaded folder {0}."), True, ColTypes.Neutral, eqargs(0))
+                        Else
+                            Console.WriteLine()
+                            W(DoTranslation("Download failed for folder {0}."), True, ColTypes.Error, eqargs(0))
+                        End If
+                    Else
+                        W(DoTranslation("Enter a folder to download to local directory."), True, ColTypes.Error)
+                    End If
                 Case "lsl"
                     If eqargs?.Length > 0 And eqargs IsNot Nothing Then
                         List(eqargs(0))
@@ -235,6 +248,21 @@ Public Module FTPGetCommand
                         End If
                     Else
                         W(DoTranslation("Enter a file to upload to remote directory. upload <file> <directory>"), True, ColTypes.Error)
+                    End If
+                Case "putfolder"
+                    If RequiredArgumentsProvided Then
+                        W(DoTranslation("Uploading folder {0}..."), True, ColTypes.Neutral, eqargs(0))
+
+                        'Begin the uploading process
+                        If FTPUploadFile(eqargs(0)) Then
+                            Console.WriteLine()
+                            W(vbNewLine + DoTranslation("Uploaded folder {0}"), True, ColTypes.Neutral, eqargs(0))
+                        Else
+                            Console.WriteLine()
+                            W(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Neutral, eqargs(0))
+                        End If
+                    Else
+                        W(DoTranslation("Enter a folder to upload to remote directory."), True, ColTypes.Error)
                     End If
                 Case "exit"
                     'Set a flag

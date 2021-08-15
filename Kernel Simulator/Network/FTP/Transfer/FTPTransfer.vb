@@ -60,8 +60,66 @@ Public Module FTPTransfer
                 EventManager.RaiseFTPPostDownload(File, Result.IsSuccess)
                 Return True
             Catch ex As Exception
+                WStkTrc(ex)
                 Wdbg("E", "Download failed for file {0}: {1}", File, ex.Message)
                 EventManager.RaiseFTPPostDownload(File, False)
+            End Try
+        Else
+            Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
+        End If
+        Return False
+    End Function
+
+    ''' <summary>
+    ''' Downloads a folder from the currently connected FTP server
+    ''' </summary>
+    ''' <param name="Folder">A remote folder</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function FTPGetFolder(ByVal Folder As String) As Boolean
+        If connected Then
+            Try
+                'Show a message to download
+                EventManager.RaiseFTPPreDownload(Folder)
+                Wdbg("I", "Downloading folder {0}...", Folder)
+
+                'Try to download folder
+                Dim Results As List(Of FtpResult) = ClientFTP.DownloadDirectory($"{currDirect}/{Folder}", Folder, FtpFolderSyncMode.Update, FtpLocalExists.Append, FtpVerify.Retry + FtpVerify.Throw, Nothing, Complete)
+
+                'Print download results to debugger
+                Dim Failed As Boolean
+                Wdbg("I", "Folder download result:")
+                For Each Result As FtpResult In Results
+                    Wdbg("I", "-- {0} --", Result.Name)
+                    Wdbg("I", "Success: {0}", Result.IsSuccess)
+                    Wdbg("I", "Skipped: {0}", Result.IsSkipped)
+                    Wdbg("I", "Failure: {0}", Result.IsFailed)
+                    Wdbg("I", "Size: {0}", Result.Size)
+                    Wdbg("I", "Type: {0}", Result.Type)
+                    If Result.IsFailed Then
+                        Wdbg("E", "Download failed for {0}", Result.Name)
+
+                        'Download could fail with no exception in very rare cases.
+                        If Result.Exception IsNot Nothing Then
+                            Wdbg("E", "Exception {0}", Result.Exception.Message)
+                            WStkTrc(Result.Exception)
+                        End If
+                        Failed = True
+                    End If
+                    EventManager.RaiseFTPPostDownload(Result.Name, Failed)
+                Next
+
+                'Show a message that it's downloaded
+                If Not Failed Then
+                    Wdbg("I", "Downloaded folder {0}.", Folder)
+                Else
+                    Wdbg("I", "Downloaded folder {0} partially due to failure.", Folder)
+                End If
+                EventManager.RaiseFTPPostDownload(Folder, Failed)
+                Return Failed
+            Catch ex As Exception
+                WStkTrc(ex)
+                Wdbg("E", "Download failed for folder {0}: {1}", Folder, ex.Message)
+                EventManager.RaiseFTPPostDownload(Folder, False)
             End Try
         Else
             Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
@@ -85,6 +143,57 @@ Public Module FTPTransfer
             Wdbg("I", "Uploaded file {0} with status {1}.", File, Success)
             EventManager.RaiseFTPPostUpload(File, Success)
             Return Success
+        Else
+            Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
+        End If
+        Return False
+    End Function
+
+    ''' <summary>
+    ''' Uploads a folder to the currently connected FTP server
+    ''' </summary>
+    ''' <param name="Folder">A local folder</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function FTPUploadFolder(ByVal Folder As String) As Boolean
+        If connected Then
+            'Show a message to download
+            EventManager.RaiseFTPPreUpload(Folder)
+            Wdbg("I", "Uploading folder {0}...", Folder)
+
+            'Try to upload
+            Dim Results As List(Of FtpResult) = ClientFTP.UploadDirectory($"{currDirect}/{Folder}", Folder, FtpFolderSyncMode.Update, FtpRemoteExists.Append, FtpVerify.Retry, Nothing, Complete)
+
+            'Print upload results to debugger
+            Dim Failed As Boolean
+            Wdbg("I", "Folder upload result:")
+            For Each Result As FtpResult In Results
+                Wdbg("I", "-- {0} --", Result.Name)
+                Wdbg("I", "Success: {0}", Result.IsSuccess)
+                Wdbg("I", "Skipped: {0}", Result.IsSkipped)
+                Wdbg("I", "Failure: {0}", Result.IsFailed)
+                Wdbg("I", "Size: {0}", Result.Size)
+                Wdbg("I", "Type: {0}", Result.Type)
+                If Result.IsFailed Then
+                    Wdbg("E", "Upload failed for {0}", Result.Name)
+
+                    'Upload could fail with no exception in very rare cases.
+                    If Result.Exception IsNot Nothing Then
+                        Wdbg("E", "Exception {0}", Result.Exception.Message)
+                        WStkTrc(Result.Exception)
+                    End If
+                    Failed = True
+                End If
+                EventManager.RaiseFTPPostUpload(Result.Name, Failed)
+            Next
+
+            'Show a message that it's downloaded
+            If Not Failed Then
+                Wdbg("I", "Uploaded folder {0}.", Folder)
+            Else
+                Wdbg("I", "Uploaded folder {0} partially due to failure.", Folder)
+            End If
+            EventManager.RaiseFTPPostUpload(Folder, Failed)
+            Return Failed
         Else
             Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
         End If
@@ -116,6 +225,7 @@ Public Module FTPTransfer
                 EventManager.RaiseFTPPostDownload(File, Downloaded)
                 Return DownloadedContent.ToString
             Catch ex As Exception
+                WStkTrc(ex)
                 Wdbg("E", "Download failed for {0}: {1}", File, ex.Message)
                 EventManager.RaiseFTPPostDownload(File, False)
             End Try
