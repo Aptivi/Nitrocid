@@ -122,6 +122,13 @@ This section covers how to build Kernel Simulator on your system. Please scroll 
 3. Click on the `Build` menu bar, and click on build button to compile.
 4. In your file manager, go to the build directory and then double-click on the executable file.
 
+## Packing for distribution
+
+The packing and distribution procedures are now easier by executing this script below on the command line.
+
+1. Open the terminal to the root directory of KS
+2. Execute `./buildandpack.sh` if you're using Linux or execute `buildandpack` on `cmd` if running on Windows
+
 ## Credits
 
 **EoflaOE:** Owner of Kernel Simulator
