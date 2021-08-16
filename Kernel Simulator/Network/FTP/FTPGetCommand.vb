@@ -236,7 +236,7 @@ Public Module FTPGetCommand
                     End If
                 Case "put"
                     If RequiredArgumentsProvided Then
-                        W(DoTranslation("Uploading file {0}..."), True, ColTypes.Neutral, eqargs(0))
+                        W(DoTranslation("Uploading file {0}..."), False, ColTypes.Neutral, eqargs(0))
 
                         'Begin the uploading process
                         If FTPUploadFile(eqargs(0)) Then
