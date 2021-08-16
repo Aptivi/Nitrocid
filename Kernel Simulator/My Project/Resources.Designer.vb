@@ -22,7 +22,7 @@ Namespace My.Resources
     '''<summary>
     '''  A strongly-typed resource class, for looking up localized strings, etc.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
@@ -912,6 +912,34 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Qoldanbalı pärmender: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Jazw parmeni:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Komandalıq ïnekcïya joyıldı.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Bos orınsız ütirmen bölek jüktew argwmentteri, säykes, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;«Cmdinject» boyınşa bos orındar är türli komandalar [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property kzk() As String
+            Get
+                Return ResourceManager.GetString("kzk", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Қол жетімді пәрмендер: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Жазу пәрмені:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Командалық инъекция жойылды.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Бос орынсыз үтірмен бөлек жүктеу аргументтері, мысалы, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;«Cmdinject» бойынша бос орындары бар бөлек команда [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property kzk_T() As String
+            Get
+                Return ResourceManager.GetString("kzk_T", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;7&quot;,
         '''    &quot;LicenseColor&quot;: &quot;7&quot;,
         '''    &quot;ContKernelErrorColor&quot;: &quot;7&quot;,
@@ -1110,8 +1138,8 @@ Namespace My.Resources
         '''  &quot;Available commands: {0}&quot;: &quot;Dost?pne polecenia: {0}&quot;,
         '''  &quot;Write command: &quot;: &quot;Napisz polecenie:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Wprowadzanie polece? zosta?o anulowane.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Oddziel argumenty rozruchowe przecinkami bez spacji, na przyk?ad �motd, gpuprobe�&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Oddzielne polecenia na �cmdi [rest of string was truncated]&quot;;.
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Oddziel argumenty rozruchowe przecinkami bez spacji, na przyk?ad „motd, gpuprobe”&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Oddzielne polecenia na „cmdi [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property pol() As String
             Get
@@ -1192,7 +1220,7 @@ Namespace My.Resources
         '''  &quot;Write command: &quot;: &quot;Comanda de scriere:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Injectarea comenzii a fost anulat?.&quot;,
         '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Separa?i argumentele de pornire cu virgule f?r? spa?ii, de exemplu, &apos;motd, gpuprobe&apos;&quot;,
-        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separa comenzile de pe �cm [rest of string was truncated]&quot;;.
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Separa comenzile de pe „cm [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property rmn() As String
             Get
@@ -1321,7 +1349,7 @@ Namespace My.Resources
         '''  &quot;Available commands: {0}&quot;: &quot;Dostupne komande: {0}&quot;,
         '''  &quot;Write command: &quot;: &quot;Vrite command:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Ubacivanje komande je otkazano.&quot;,
-        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Razdvojite argumente za pokretanje zarezima bez razmaka, na primer, �motd, gpuprobe�&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Razdvojite argumente za pokretanje zarezima bez razmaka, na primer, „motd, gpuprobe“&quot;,
         '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Odvojite komande na &apos;cmdinject&apos; sa kol [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property srb() As String
@@ -1561,6 +1589,20 @@ Namespace My.Resources
         Public ReadOnly Property YellowFG() As String
             Get
                 Return ResourceManager.GetString("YellowFG", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Awọn pipaṣẹ to wa: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Kọ aṣẹ:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Abẹrẹ aṣẹ ti paarẹ.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Lọtọ awọn ariyanjiyan bata pẹlu aami idẹsẹ laisi awọn alafo, fun apẹẹrẹ, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Awọn pipaṣẹ lọtọ lori &apos;cmdinject&apos; pẹlu awọn oluṣafi [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property yrb() As String
+            Get
+                Return ResourceManager.GetString("yrb", resourceCulture)
             End Get
         End Property
         

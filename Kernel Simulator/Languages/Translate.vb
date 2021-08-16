@@ -48,6 +48,7 @@ Public Module Translate
                                                                                {"jpn", New LanguageInfo("jpn", "Japanese", True)}, {"jpn-T", New LanguageInfo("jpn-T", "Japanese", True)},
                                                                                {"jvn", New LanguageInfo("jvn", "Javanese", False)},
                                                                                {"kor", New LanguageInfo("kor", "Korean", True)}, {"kor-T", New LanguageInfo("kor-T", "Korean", True)},
+                                                                               {"kzk", New LanguageInfo("kzk", "Kazakh", True)}, {"kzk-T", New LanguageInfo("kzk-T", "Kazakh", True)},
                                                                                {"ltn", New LanguageInfo("ltn", "Latin", False)},
                                                                                {"mal", New LanguageInfo("mal", "Malay", False)},
                                                                                {"mts", New LanguageInfo("mts", "Maltese", False)},
@@ -67,6 +68,7 @@ Public Module Translate
                                                                                {"uzb", New LanguageInfo("uzb", "Uzbek", False)},
                                                                                {"vtn", New LanguageInfo("vtn", "Vietnamese", False)},
                                                                                {"wls", New LanguageInfo("wls", "Welsh", False)},
+                                                                               {"yrb", New LanguageInfo("yrb", "Yoruba", False)},
                                                                                {"zul", New LanguageInfo("zul", "Zulu", False)}} 'Don't use isiZulu here. isiZulu? Really? What is "isi" doing here?
     Public currentLang As String = "eng" 'Default to English
     Public CurrentCult As New CultureInfo("en-US")

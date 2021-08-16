@@ -376,4 +376,13 @@
   <data name="glc" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\glc.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="kzk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kzk.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="kzk_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kzk-T.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="yrb" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\yrb.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
 </root>
