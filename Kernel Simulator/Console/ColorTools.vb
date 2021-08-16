@@ -572,7 +572,9 @@ Public Module ColorTools
                             _DefaultColor = CurrentColorB
                     End Select
                     WriteWhere(DoTranslation("Enter color number from 0 to 255:") + " [{0}] ", 0, Console.WindowHeight - 1, False, ColTypes.Input, _DefaultColor)
+                    Console.CursorVisible = True
                     Dim ColorNum As String = Console.ReadLine
+                    Console.CursorVisible = False
                     If IsNumeric(ColorNum) Then
                         If ColorNum >= 0 And ColorNum <= 255 Then
                             Select Case CurrentRange
@@ -587,7 +589,9 @@ Public Module ColorTools
                     End If
                 ElseIf ConsoleResponse.Key = ConsoleKey.C Then
                     WriteWhere(DoTranslation("Enter color code that satisfies these formats:") + " ""RRR;GGG;BBB"" / 0-255 [{0}] ", 0, Console.WindowHeight - 1, False, ColTypes.Input, $"{CurrentColorR};{CurrentColorG};{CurrentColorB}")
+                    Console.CursorVisible = True
                     Dim ColorSequence As String = Console.ReadLine
+                    Console.CursorVisible = False
                     Try
                         Dim ParsedColor As New Color(ColorSequence)
                         CurrentColorR = ParsedColor.R
@@ -630,7 +634,9 @@ Public Module ColorTools
                     End If
                 ElseIf ConsoleResponse.Key = ConsoleKey.I Then
                     WriteWhere(DoTranslation("Enter color number from 0 to 255:") + " [{0}] ", 0, Console.WindowHeight - 1, False, ColTypes.Input, CInt(CurrentColor))
+                    Console.CursorVisible = True
                     Dim ColorNum As String = Console.ReadLine
+                    Console.CursorVisible = False
                     If IsNumeric(ColorNum) Then
                         If ColorNum >= 0 And ColorNum <= 255 Then
                             CurrentColor = ColorNum
