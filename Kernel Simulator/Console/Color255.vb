@@ -50,6 +50,9 @@ Public Module Color255
     Public Function GetStdHandle(ByVal handle As Integer) As IntPtr
     End Function
 
+    ''' <summary>
+    ''' The 255 console colors data JSON token to get information about these colors
+    ''' </summary>
     Public ReadOnly ColorDataJson As JToken = JToken.Parse(My.Resources.ConsoleColorsData)
 
     ''' <summary>
