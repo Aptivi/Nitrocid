@@ -81,6 +81,7 @@ Public Module Shell
                                                                              {"hwinfo", New CommandInfo("hwinfo", ShellCommandType.Shell, "Prints hardware information", True, 1, False, True)},
                                                                              {"input", New CommandInfo("input", ShellCommandType.Shell, "Allows user to enter input", True, 2, False, False, False, False, True)},
                                                                              {"jsonbeautify", New CommandInfo("jsonbeautify", ShellCommandType.Shell, "Beautifies the JSON file", True, 1, False, True)},
+                                                                             {"jsonminify", New CommandInfo("jsonminify", ShellCommandType.Shell, "Minifies the JSON file", True, 1, False, True)},
                                                                              {"list", New CommandInfo("list", ShellCommandType.Shell, "List file/folder contents in current folder", False, 0, False, True)},
                                                                              {"lockscreen", New CommandInfo("lockscreen", ShellCommandType.Shell, "Locks your screen with a password", False, 0)},
                                                                              {"logout", New CommandInfo("logout", ShellCommandType.Shell, "Logs you out", False, 0, False, False, True)},

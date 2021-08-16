@@ -555,6 +555,17 @@ Public Module GetCommand
                         End If
                     End If
 
+                Case "jsonminify"
+
+                    If RequiredArgumentsProvided Then
+                        Dim JsonFile As String = NeutralizePath(eqargs(0))
+                        If File.Exists(JsonFile) Then
+                            W(MinifyJson(JsonFile), True, ColTypes.Neutral)
+                        Else
+                            W(DoTranslation("File {0} not found."), True, ColTypes.Error, JsonFile)
+                        End If
+                    End If
+
                 Case "lockscreen"
 
                     LockScreen()
