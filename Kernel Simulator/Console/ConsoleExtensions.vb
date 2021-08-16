@@ -28,4 +28,11 @@ Public Module ConsoleExtensions
         Console.SetCursorPosition(Left, Top)
     End Sub
 
+    ''' <summary>
+    ''' Clears the line to the right
+    ''' </summary>
+    Public Sub ClearLineToRight()
+        Console.Write(GetEsc() + "[0K")
+    End Sub
+
 End Module

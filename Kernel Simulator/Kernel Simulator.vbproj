@@ -241,6 +241,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Network\FTP\Transfer\FTPTransferProgress.vb" />
     <Compile Include="Network\RemoteDebug\RemoteDebugHelpSystem.vb" />
     <Compile Include="Network\RSS\Instance\RSSArticle.vb" />
     <Compile Include="Network\RSS\Instance\RSSFeed.vb" />

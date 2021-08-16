@@ -161,7 +161,7 @@ Public Module FTPGetCommand
                     End If
                 Case "getfolder"
                     If RequiredArgumentsProvided Then
-                        W(DoTranslation("Downloading folder {0}..."), False, ColTypes.Neutral, eqargs(0))
+                        W(DoTranslation("Downloading folder {0}..."), True, ColTypes.Neutral, eqargs(0))
                         If FTPGetFolder(eqargs(0)) Then
                             Console.WriteLine()
                             W(DoTranslation("Downloaded folder {0}."), True, ColTypes.Neutral, eqargs(0))
