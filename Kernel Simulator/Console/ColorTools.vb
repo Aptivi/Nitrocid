@@ -479,6 +479,7 @@ Public Module ColorTools
             If TrueColor Then
                 W(vbNewLine + DoTranslation("Select color using ""<-"" and ""->"" keys. Press ENTER to quit. Press ""i"" to insert color number manually."), True, ColTypes.Neutral)
                 W(DoTranslation("Press ""t"" to switch to 255 color mode."), True, ColTypes.Neutral)
+                W(DoTranslation("Press ""c"" to write full color code."), True, ColTypes.Neutral)
 
                 'The red color level
                 W(vbNewLine + " <", False, If(CurrentRange = "R", ColTypes.Gray, ColTypes.Neutral))
@@ -584,6 +585,18 @@ Public Module ColorTools
                             End Select
                         End If
                     End If
+                ElseIf ConsoleResponse.Key = ConsoleKey.C Then
+                    WriteWhere(DoTranslation("Enter color code that satisfies these formats:") + " ""RRR;GGG;BBB"" / 0-255 [{0}] ", 0, Console.WindowHeight - 1, False, ColTypes.Input, $"{CurrentColorR};{CurrentColorG};{CurrentColorB}")
+                    Dim ColorSequence As String = Console.ReadLine
+                    Try
+                        Dim ParsedColor As New Color(ColorSequence)
+                        CurrentColorR = ParsedColor.R
+                        CurrentColorG = ParsedColor.G
+                        CurrentColorB = ParsedColor.B
+                    Catch ex As Exception
+                        WStkTrc(ex)
+                        Wdbg("E", "Possible input error: {0} ({1})", ColorSequence, ex.Message)
+                    End Try
                 ElseIf ConsoleResponse.Key = ConsoleKey.T Then
                     TrueColor = False
                 ElseIf ConsoleResponse.Key = ConsoleKey.Enter Then
