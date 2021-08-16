@@ -548,8 +548,19 @@ Public Module GetCommand
 
                     If RequiredArgumentsProvided Then
                         Dim JsonFile As String = NeutralizePath(eqargs(0))
+                        Dim JsonOutputFile As String
+                        Dim BeautifiedJson As String
+
                         If File.Exists(JsonFile) Then
-                            W(BeautifyJson(JsonFile), True, ColTypes.Neutral)
+                            'Beautify the JSON and display it on screen
+                            BeautifiedJson = BeautifyJson(JsonFile)
+                            W(BeautifiedJson, True, ColTypes.Neutral)
+
+                            'Beautify it to an output file specified (optional)
+                            If eqargs.Count > 1 Then
+                                JsonOutputFile = NeutralizePath(eqargs(1))
+                                File.WriteAllText(JsonOutputFile, BeautifiedJson)
+                            End If
                         Else
                             W(DoTranslation("File {0} not found."), True, ColTypes.Error, JsonFile)
                         End If
@@ -559,8 +570,19 @@ Public Module GetCommand
 
                     If RequiredArgumentsProvided Then
                         Dim JsonFile As String = NeutralizePath(eqargs(0))
+                        Dim JsonOutputFile As String
+                        Dim MinifiedJson As String
+
                         If File.Exists(JsonFile) Then
-                            W(MinifyJson(JsonFile), True, ColTypes.Neutral)
+                            'Minify the JSON and display it on screen
+                            MinifiedJson = MinifyJson(JsonFile)
+                            W(MinifiedJson, True, ColTypes.Neutral)
+
+                            'Minify it to an output file specified (optional)
+                            If eqargs.Count > 1 Then
+                                JsonOutputFile = NeutralizePath(eqargs(1))
+                                File.WriteAllText(JsonOutputFile, MinifiedJson)
+                            End If
                         Else
                             W(DoTranslation("File {0} not found."), True, ColTypes.Error, JsonFile)
                         End If

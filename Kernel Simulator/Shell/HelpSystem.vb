@@ -109,9 +109,9 @@ Public Module HelpSystem
                 Case "input"
                     W(DoTranslation("Usage:") + " input <$variable> <question>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "jsonbeautify"
-                    W(DoTranslation("Usage:") + " jsonbeautify <jsonfile>: " + HelpDefinition, True, ColTypes.Neutral)
+                    W(DoTranslation("Usage:") + " jsonbeautify <jsonfile> [output]: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "jsonminify"
-                    W(DoTranslation("Usage:") + " jsonminify <jsonfile>: " + HelpDefinition, True, ColTypes.Neutral)
+                    W(DoTranslation("Usage:") + " jsonminify <jsonfile> [output]: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "list"
                     W(DoTranslation("Usage:") + " list [oneDirectory]: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "loteresp"
