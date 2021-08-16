@@ -473,6 +473,7 @@ Public Module ColorTools
         Dim CurrentColorB As Integer = DefaultColorB
         Dim CurrentRange As Char = "R"
         Dim ColorWheelExiting As Boolean
+
         Console.CursorVisible = False
         While Not ColorWheelExiting
             Console.Clear()
@@ -650,6 +651,7 @@ Public Module ColorTools
             End If
         End While
 
+        Console.CursorVisible = True
         If TrueColor Then
             Return $"{CurrentColorR};{CurrentColorG};{CurrentColorB}"
         Else
