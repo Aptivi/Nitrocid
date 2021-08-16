@@ -395,7 +395,7 @@ Public Module Screensaver
                 Next
             End If
         Next
-        File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
+        If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
     End Sub
 
     ''' <summary>
@@ -412,7 +412,7 @@ Public Module Screensaver
                     NewCustomSaver.Add(Setting, CSvrdb(CustomSaver).SaverSettings(Setting).ToString)
                 Next
                 CustomSaverSettingsToken.Add(CustomSaver, NewCustomSaver)
-                File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
+                If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
             End If
         End If
     End Sub
@@ -426,7 +426,7 @@ Public Module Screensaver
     Public Sub RemoveCustomSaverFromSettings(ByVal CustomSaver As String)
         If Not CSvrdb.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found."), CustomSaver)
         If Not CustomSaverSettingsToken.Remove(CustomSaver) Then Throw New Exceptions.ScreensaverManagementException(DoTranslation("Failed to remove screensaver {0} from config."), CustomSaver)
-        File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
+        If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
     End Sub
 
     ''' <summary>
@@ -462,7 +462,7 @@ Public Module Screensaver
                 CustomSaverSettingsToken(CustomSaver)(SaverSetting) = Value.ToString
             End If
         Next
-        File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
+        If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
         Return SettingFound
     End Function
 
