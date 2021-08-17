@@ -51,6 +51,7 @@ Public Module Screensaver
                                                                                    {"hackUserFromAD", HackUserFromAD},
                                                                                    {"lighter", Lighter},
                                                                                    {"lines", Lines},
+                                                                                   {"linotypo", Linotypo},
                                                                                    {"marquee", Marquee},
                                                                                    {"matrix", Matrix},
                                                                                    {"plain", Plain},

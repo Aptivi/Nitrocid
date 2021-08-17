@@ -18,6 +18,7 @@
 
 Public Module ScreensaverSettings
 
+    'TODO: Rearrangement by screensaver
     '-> Color Settings
     ''' <summary>
     ''' [ColorMix] Enable 255 color support. Has a higher priority than 16 color support.
@@ -233,24 +234,36 @@ Public Module ScreensaverSettings
     ''' [BeatFader] How many beats per minute to wait before making the next write?
     ''' </summary>
     Public BeatFaderDelay As Integer = 120
+    ''' <summary>
+    ''' [Linotypo] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public LinotypoDelay As Integer = 50
+    ''' <summary>
+    ''' [Linotypo] How many milliseconds to wait before writing the text in the new screen again?
+    ''' </summary>
+    Public LinotypoNewScreenDelay As Integer = 3000
 
     '-> Texts
     ''' <summary>
-    ''' [BouncingText] Text for Bouncing Text
+    ''' [BouncingText] Text for Bouncing Text. Shorter is better.
     ''' </summary>
     Public BouncingTextWrite As String = "Kernel Simulator"
     ''' <summary>
-    ''' [Fader] Text for Fader
+    ''' [Fader] Text for Fader. Shorter is better.
     ''' </summary>
     Public FaderWrite As String = "Kernel Simulator"
     ''' <summary>
-    ''' [Typo] Text for Typo
+    ''' [Typo] Text for Typo. Longer is better.
     ''' </summary>
     Public TypoWrite As String = "Kernel Simulator"
     ''' <summary>
-    ''' [Marquee] Text for Marquee
+    ''' [Marquee] Text for Marquee. Shorter is better.
     ''' </summary>
     Public MarqueeWrite As String = "Kernel Simulator"
+    ''' <summary>
+    ''' [Linotypo] Text for Linotypo. Longer is better.
+    ''' </summary>
+    Public LinotypoWrite As String = "Kernel Simulator"
 
     '-> Misc
     ''' <summary>
@@ -277,6 +290,34 @@ Public Module ScreensaverSettings
     ''' [Typo] Possibility that the writer made a typo in percent
     ''' </summary>
     Public TypoMissStrikePossibility As Integer = 20
+    ''' <summary>
+    ''' [Linotypo] Minimum writing speed in WPM
+    ''' </summary>
+    Public LinotypoWritingSpeedMin As Integer = 50
+    ''' <summary>
+    ''' [Linotypo] Maximum writing speed in WPM
+    ''' </summary>
+    Public LinotypoWritingSpeedMax As Integer = 80
+    ''' <summary>
+    ''' [Linotypo] Possibility that the writer made a typo in percent
+    ''' </summary>
+    Public LinotypoMissStrikePossibility As Integer = 1
+    ''' <summary>
+    ''' [Linotypo] The text columns to be printed.
+    ''' </summary>
+    Public LinotypoTextColumns As Integer = 3
+    ''' <summary>
+    ''' [Linotypo] How many characters to write before triggering the "line fill"?
+    ''' </summary>
+    Public LinotypoEtaoinThreshold As Integer = 5
+    ''' <summary>
+    ''' [Linotypo] Possibility that the Etaoin pattern will be printed in all caps in percent
+    ''' </summary>
+    Public LinotypoEtaoinCappingPossibility As Integer = 5
+    ''' <summary>
+    ''' [Linotypo] Line fill pattern type
+    ''' </summary>
+    Public LinotypoEtaoinType As FillType = FillType.EtaoinPattern
     ''' <summary>
     ''' [Wipe] How many wipes needed to change direction?
     ''' </summary>

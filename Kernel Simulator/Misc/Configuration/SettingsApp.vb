@@ -111,7 +111,7 @@ Public Module SettingsApp
         Dim SectionFinished As Boolean
         Dim AnswerString As String
         Dim AnswerInt As Integer
-        Dim BuiltinSavers As Integer = 19
+        Dim BuiltinSavers As Integer = 20
 
         'Section-specific variables
         Dim ConfigurableScreensavers As New List(Of String)
@@ -237,6 +237,7 @@ Public Module SettingsApp
                     W("17) Marquee...", True, ColTypes.Option)
                     W("18) FaderBack...", True, ColTypes.Option)
                     W("19) BeatFader...", True, ColTypes.Option)
+                    W("20) Linotypo...", True, ColTypes.Option)
 
                     'Populate custom screensavers
                     For Each CustomSaver As String In CSvrdb.Keys
@@ -393,6 +394,20 @@ Public Module SettingsApp
                     W("4) " + DoTranslation("Cycle colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderCycleColors)))
                     W("5) " + DoTranslation("Beat Color") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderBeatColor)))
                     W("6) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderMaxSteps)))
+                Case "7.20" 'Screensaver > Linotypo
+                    MaxOptions = 10
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " Linotypo." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoDelay)))
+                    W("2) " + DoTranslation("New Screen Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoNewScreenDelay)))
+                    W("3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoWrite)))
+                    W("4) " + DoTranslation("Minimum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoWritingSpeedMin)))
+                    W("5) " + DoTranslation("Maximum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoWritingSpeedMax)))
+                    W("6) " + DoTranslation("Probability of typo in percent") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoMissStrikePossibility)))
+                    W("7) " + DoTranslation("Column Count") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoTextColumns)))
+                    W("8) " + DoTranslation("Line Fill Threshold") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoEtaoinThreshold)))
+                    W("9) " + DoTranslation("Line Fill Capping Probability in percent") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoEtaoinCappingPossibility)))
+                    W("10) " + DoTranslation("Line Fill Type") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoEtaoinType)))
                 Case "7." + $"{If(SectionParameters.Length <> 0, SectionParameters(0), $"{BuiltinSavers + 1}")}" 'Screensaver > a custom saver
                     Dim SaverIndex As Integer = SectionParameters(0) - BuiltinSavers - 1
                     Dim Configurables As List(Of String) = SectionParameters(1)
@@ -496,7 +511,7 @@ Public Module SettingsApp
         Dim TargetList As IEnumerable(Of Object)
         Dim SelectFrom As IEnumerable(Of Object)
         Dim NeutralizePaths As Boolean
-        Dim BuiltinSavers As Integer = 19
+        Dim BuiltinSavers As Integer = 20
 
         While Not KeyFinished
             Console.Clear()
@@ -1327,6 +1342,66 @@ Public Module SettingsApp
                             W("*) " + DoTranslation("How many fade steps to do?"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
+                    End Select
+                Case "7.20" 'Linotypo
+                    Select Case KeyNumber
+                        Case 1 'Typo: Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinotypoDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 2 'Linotypo: New Screen Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinotypoNewScreenDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo > " + DoTranslation("New Screen Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many milliseconds to wait before writing the text in the new screen again?"), True, ColTypes.Neutral)
+                        Case 3 'Linotypo: Text shown
+                            KeyType = SettingsKeyType.SLongString
+                            KeyVar = NameOf(LinotypoWrite)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo > " + DoTranslation("Text shown") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Write any text you want shown. Longer is better."), True, ColTypes.Neutral)
+                        Case 4 'Linotypo: Minimum writing speed in WPM
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinotypoWritingSpeedMin)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo > " + DoTranslation("Minimum writing speed in WPM") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Minimum writing speed in WPM"), True, ColTypes.Neutral)
+                        Case 5 'Linotypo: Maximum writing speed in WPM
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinotypoWritingSpeedMax)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo > " + DoTranslation("Maximum writing speed in WPM") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Maximum writing speed in WPM"), True, ColTypes.Neutral)
+                        Case 6 'Linotypo: Probability of typo in percent
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinotypoMissStrikePossibility)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo > " + DoTranslation("Probability of typo in percent") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Probability of typo in percent"), True, ColTypes.Neutral)
+                        Case 7 'Linotypo: Column Count
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinotypoTextColumns)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo > " + DoTranslation("Column Count") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("The text columns to be printed."), True, ColTypes.Neutral)
+                        Case 8 'Linotypo: Line Fill Threshold
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinotypoEtaoinThreshold)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo > " + DoTranslation("Line Fill Threshold") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("How many characters to write before triggering the ""line fill""?"), True, ColTypes.Neutral)
+                        Case 9 'Linotypo: Line Fill Capping Probability in percent
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinotypoEtaoinCappingPossibility)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo > " + DoTranslation("Line Fill Capping Probability in percent") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Possibility that the line fill pattern will be printed in all caps in percent"), True, ColTypes.Neutral)
+                        Case 10 'Linotypo: Line Fill Type
+                            MaxKeyOptions = 3
+                            KeyType = SettingsKeyType.SSelection
+                            KeyVar = NameOf(LinotypoEtaoinType)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo > " + DoTranslation("Line Fill Type") + vbNewLine, True, ColTypes.Neutral)
+                            W("*) " + DoTranslation("Line fill pattern type"), True, ColTypes.Neutral)
+                            W("1) " + DoTranslation("Common Pattern"), True, ColTypes.Option)
+                            W("2) " + DoTranslation("Complete Pattern"), True, ColTypes.Option)
+                            W("3) " + DoTranslation("Random Pattern"), True, ColTypes.Option)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
                 Case "7." + $"{If(SectionParts.Length > 1, SectionParts(1), $"{BuiltinSavers + 1}")}" 'Custom saver

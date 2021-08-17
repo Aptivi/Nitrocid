@@ -342,6 +342,21 @@ Public Module Config
             }
             ScreensaverConfig.Add("Marquee", MarqueeConfig)
 
+            'Linotypo config json object
+            Dim LinotypoConfig As New JObject From {
+                    {"Delay in Milliseconds", LinotypoDelay},
+                    {"New Screen Delay in Milliseconds", LinotypoNewScreenDelay},
+                    {"Text Shown", LinotypoWrite},
+                    {"Minimum writing speed in WPM", LinotypoWritingSpeedMin},
+                    {"Maximum writing speed in WPM", LinotypoWritingSpeedMax},
+                    {"Probability of typo in percent", LinotypoMissStrikePossibility},
+                    {"Column Count", LinotypoTextColumns},
+                    {"Line Fill Threshold", LinotypoEtaoinThreshold},
+                    {"Line Fill Capping Probability in percent", LinotypoEtaoinCappingPossibility},
+                    {"Line Fill Type", LinotypoEtaoinType}
+            }
+            ScreensaverConfig.Add("Linotypo", LinotypoConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -590,6 +605,18 @@ Public Module Config
 
             '> AptErrorSim
             AptErrorSimHackerMode = If(ConfigToken("Screensaver")?("AptErrorSim")?("Hacker Mode"), False)
+
+            '> Linotypo
+            LinotypoDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Linotypo")?("Delay in Milliseconds"), 50)
+            LinotypoNewScreenDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("New Screen Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Linotypo")?("New Screen Delay in Milliseconds"), 3000)
+            LinotypoWrite = If(ConfigToken("Screensaver")?("Linotypo")?("Text Shown"), "Kernel Simulator")
+            LinotypoWritingSpeedMin = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("Minimum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Linotypo")?("Minimum writing speed in WPM"), 50)
+            LinotypoWritingSpeedMax = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("Maximum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Linotypo")?("Maximum writing speed in WPM"), 80)
+            LinotypoMissStrikePossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("Probability of typo in percent"), 0), ConfigToken("Screensaver")?("Linotypo")?("Probability of typo in percent"), 1)
+            LinotypoTextColumns = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("Column Count"), 0), ConfigToken("Screensaver")?("Linotypo")?("Column Count"), 3)
+            LinotypoEtaoinThreshold = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("Line Fill Threshold"), 0), ConfigToken("Screensaver")?("Linotypo")?("Line Fill Threshold"), 5)
+            LinotypoEtaoinCappingPossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("Line Fill Capping Probability in percent"), 0), ConfigToken("Screensaver")?("Linotypo")?("Line Fill Capping Probability in percent"), 5)
+            LinotypoEtaoinType = If(ConfigToken("Screensaver")?("Linotypo")?("Line Fill Type") IsNot Nothing, If([Enum].TryParse(ConfigToken("Screensaver")?("Linotypo")?("Line Fill Type"), LinotypoEtaoinType), LinotypoEtaoinType, FillType.EtaoinPattern), FillType.EtaoinPattern)
 
             'Misc Section
             Wdbg("I", "Parsing misc section...")

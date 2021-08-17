@@ -196,6 +196,7 @@
     <Compile Include="Misc\Screensaver\Displays\Fader.vb" />
     <Compile Include="Misc\Screensaver\Displays\FaderBack.vb" />
     <Compile Include="Misc\Screensaver\Displays\Lighter.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Linotypo.vb" />
     <Compile Include="Misc\Screensaver\Displays\Marquee.vb" />
     <Compile Include="Misc\Screensaver\Displays\Plain.vb" />
     <Compile Include="Misc\Screensaver\Displays\ProgressClock.vb" />
