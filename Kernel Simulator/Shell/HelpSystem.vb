@@ -136,6 +136,9 @@ Public Module HelpSystem
                     W(DoTranslation("Usage:") + " mktheme <themeName>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "modinfo"
                     W(DoTranslation("Usage:") + " modinfo <mod>: " + HelpDefinition, True, ColTypes.Neutral)
+                Case "modman"
+                    W(DoTranslation("Usage:") + " modman <start/stop/info/reload> <modfilename> " +
+                     "        modman <list/reloadall/stopall/startall>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "move"
                     W(DoTranslation("Usage:") + " move <source> <target>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "netinfo"

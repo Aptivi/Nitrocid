@@ -688,6 +688,174 @@ Public Module GetCommand
                         End If
                     End If
 
+                Case "modman"
+
+                    If RequiredArgumentsProvided Then
+                        If Not SafeMode Then
+                            Dim CommandMode As String = eqargs(0).ToLower
+                            Dim TargetMod As String = ""
+                            Dim TargetModPath As String = ""
+                            Dim TargetScript As String = ""
+
+                            'These command modes require two arguments to be passed, so re-check here and there.
+                            Select Case CommandMode
+                                Case "start", "stop", "info", "reload"
+                                    RequiredArgumentsProvided = eqargs.Length > 1
+                                    If RequiredArgumentsProvided Then
+                                        TargetMod = eqargs(1)
+                                        TargetModPath = paths("Mods") + TargetMod
+                                        If Not (TryParsePath(TargetModPath) AndAlso File.Exists(TargetModPath)) Then
+                                            W(DoTranslation("Mod not found or file has invalid characters."), True, ColTypes.Error)
+                                            Exit Sub
+                                        End If
+                                    End If
+                            End Select
+
+                            'Now, the actual logic
+                            If RequiredArgumentsProvided Then
+                                Select Case CommandMode
+                                    Case "start"
+                                        W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileNameWithoutExtension(TargetMod))
+                                        ParseMod(TargetModPath)
+                                    Case "stop"
+                                        For Each script As String In scripts.Keys
+                                            If scripts(script).ModFilePath = TargetModPath Then
+                                                TargetScript = script
+                                                Dim ScriptParts As Dictionary(Of String, IScript) = scripts(script).ModParts
+                                                For Each ScriptPart As String In ScriptParts.Keys
+                                                    Wdbg("I", "Stopping part {0} v{1}", ScriptParts(ScriptPart).ModPart, ScriptParts(ScriptPart).Version)
+                                                    ScriptParts(ScriptPart).StopMod()
+                                                    If Not String.IsNullOrWhiteSpace(ScriptParts(ScriptPart).Name) And Not String.IsNullOrWhiteSpace(ScriptParts(ScriptPart).Version) Then
+                                                        W(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, ScriptParts(ScriptPart).ModPart, ScriptParts(ScriptPart).Version)
+                                                    End If
+                                                Next
+                                                W(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, script)
+                                            End If
+                                        Next
+                                        scripts.Remove(TargetScript)
+                                    Case "info"
+                                        For Each script As String In scripts.Keys
+                                            If scripts(script).ModFilePath = TargetModPath Then
+                                                WriteSeparator(script, True, ColTypes.Stage)
+                                                W("- " + DoTranslation("Mod name:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModName, True, ColTypes.ListValue)
+                                                W("- " + DoTranslation("Mod file name:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModFileName, True, ColTypes.ListValue)
+                                                W("- " + DoTranslation("Mod file path:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModFilePath, True, ColTypes.ListValue)
+                                                W("- " + DoTranslation("Mod version:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModVersion, True, ColTypes.ListValue)
+                                                W("- " + DoTranslation("Mod parts:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts.Count, True, ColTypes.ListValue)
+                                                For Each ModPart As String In scripts(script).ModParts.Keys
+                                                    WriteSeparator("-- {0}", False, ColTypes.Stage, ModPart)
+                                                    W("- " + DoTranslation("Part version:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).Version, True, ColTypes.ListValue)
+                                                    If scripts(script).ModParts(ModPart).Commands IsNot Nothing Then
+                                                        For Each ModCommand As String In scripts(script).ModParts(ModPart).Commands.Keys
+                                                            WriteSeparator("--- {0}", False, ColTypes.Stage, ModCommand)
+                                                            W("- " + DoTranslation("Command name:") + " ", False, ColTypes.ListEntry) : W(ModCommand, True, ColTypes.ListValue)
+                                                            W("- " + DoTranslation("Command definition:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).Commands(ModCommand).HelpDefinition, True, ColTypes.ListValue)
+                                                            W("- " + DoTranslation("Command type:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).Commands(ModCommand).Type, True, ColTypes.ListValue)
+                                                            W("- " + DoTranslation("Strict command?") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).Commands(ModCommand).Strict, True, ColTypes.ListValue)
+                                                            W("- " + DoTranslation("Arguments required?") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).Commands(ModCommand).ArgumentsRequired, True, ColTypes.ListValue)
+                                                            W("- " + DoTranslation("Minimum count of required arguments:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).Commands(ModCommand).MinimumArguments, True, ColTypes.ListValue)
+                                                            W("- " + DoTranslation("Wrappable command?") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).Commands(ModCommand).Wrappable, True, ColTypes.ListValue)
+                                                            W("- " + DoTranslation("Setting shell variable?") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).Commands(ModCommand).SettingVariable, True, ColTypes.ListValue)
+                                                            W("- " + DoTranslation("Can not run in maintenance mode?") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).Commands(ModCommand).NoMaintenance, True, ColTypes.ListValue)
+                                                            W("- " + DoTranslation("Obsolete?") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).Commands(ModCommand).Obsolete, True, ColTypes.ListValue)
+                                                        Next
+                                                    End If
+                                                Next
+                                            End If
+                                        Next
+                                    Case "reload"
+                                        For Each script As String In scripts.Keys
+                                            If scripts(script).ModFilePath = TargetModPath Then
+                                                'Get commands for target mod and remove them
+                                                For Each Part As String In scripts(script).ModParts.Keys
+                                                    'We can have no commands
+                                                    If scripts(script).ModParts(Part).Commands IsNot Nothing Then
+                                                        For Each CommandInfo As CommandInfo In scripts(script).ModParts(Part).Commands.Values
+                                                            Select Case CommandInfo.Type
+                                                                Case ShellCommandType.Shell
+                                                                    Wdbg("I", "Removing command {0} from main shell...", CommandInfo.Command)
+                                                                    modcmnds.Remove(CommandInfo.Command)
+                                                                    moddefs.Remove(CommandInfo.Command)
+                                                                Case ShellCommandType.FTPShell
+                                                                    Wdbg("I", "Removing command {0} from FTP shell...", CommandInfo.Command)
+                                                                    FTPModCommands.Remove(CommandInfo.Command)
+                                                                    FTPModDefs.Remove(CommandInfo.Command)
+                                                                Case ShellCommandType.MailShell
+                                                                    Wdbg("I", "Removing command {0} from main shell...", CommandInfo.Command)
+                                                                    MailModCommands.Remove(CommandInfo.Command)
+                                                                    MailModDefs.Remove(CommandInfo.Command)
+                                                                Case ShellCommandType.SFTPShell
+                                                                    Wdbg("I", "Removing command {0} from SFTP shell...", CommandInfo.Command)
+                                                                    SFTPModCommands.Remove(CommandInfo.Command)
+                                                                    SFTPModDefs.Remove(CommandInfo.Command)
+                                                                Case ShellCommandType.TextShell
+                                                                    Wdbg("I", "Removing command {0} from text editor shell...", CommandInfo.Command)
+                                                                    TextEdit_ModCommands.Remove(CommandInfo.Command)
+                                                                    TextEdit_ModHelpEntries.Remove(CommandInfo.Command)
+                                                                Case ShellCommandType.TestShell
+                                                                    Wdbg("I", "Removing command {0} from test shell...", CommandInfo.Command)
+                                                                    Test_ModCommands.Remove(CommandInfo.Command)
+                                                                    TestModDefs.Remove(CommandInfo.Command)
+                                                                Case ShellCommandType.RemoteDebugShell
+                                                                    Wdbg("I", "Removing command {0} from remote debug shell...", CommandInfo.Command)
+                                                                    DebugModCmds.Remove(CommandInfo.Command)
+                                                                    RDebugModDefs.Remove(CommandInfo.Command)
+                                                                Case ShellCommandType.ZIPShell
+                                                                    Wdbg("I", "Removing command {0} from ZIP shell...", CommandInfo.Command)
+                                                                    ZipShell_ModCommands.Remove(CommandInfo.Command)
+                                                                    ZipShell_ModHelpEntries.Remove(CommandInfo.Command)
+                                                                Case ShellCommandType.RSSShell
+                                                                    Wdbg("I", "Removing command {0} from RSS shell...", CommandInfo.Command)
+                                                                    RSSModCommands.Remove(CommandInfo.Command)
+                                                                    RSSModDefs.Remove(CommandInfo.Command)
+                                                            End Select
+                                                        Next
+                                                    End If
+
+                                                    'Now, stop the mod...
+                                                    Dim ScriptParts As Dictionary(Of String, IScript) = scripts(script).ModParts
+                                                    For Each ScriptPart As String In ScriptParts.Keys
+                                                        Wdbg("I", "Stopping part {0} v{1}", ScriptParts(ScriptPart).ModPart, ScriptParts(ScriptPart).Version)
+                                                        ScriptParts(ScriptPart).StopMod()
+                                                        If Not String.IsNullOrWhiteSpace(ScriptParts(ScriptPart).Name) And Not String.IsNullOrWhiteSpace(ScriptParts(ScriptPart).Version) Then
+                                                            W(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, ScriptParts(ScriptPart).ModPart, ScriptParts(ScriptPart).Version)
+                                                        End If
+                                                    Next
+                                                    W(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, script)
+                                                Next
+
+                                                '...and load it again
+                                                'TODO: Mod logic re-write will allow reloading with all the parts.
+                                                scripts(script).ModParts.Clear()
+                                                W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileNameWithoutExtension(TargetMod))
+                                                ParseMod(TargetModPath)
+                                            End If
+                                        Next
+                                    Case "list"
+                                        For Each script As String In scripts.Keys
+                                            WriteSeparator(script, True, ColTypes.Stage)
+                                            W("- " + DoTranslation("Mod name:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModName, True, ColTypes.ListValue)
+                                            W("- " + DoTranslation("Mod file name:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModFileName, True, ColTypes.ListValue)
+                                            W("- " + DoTranslation("Mod file path:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModFilePath, True, ColTypes.ListValue)
+                                            W("- " + DoTranslation("Mod version:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModVersion, True, ColTypes.ListValue)
+                                            W("- " + DoTranslation("Mod parts:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts.Count, True, ColTypes.ListValue)
+                                        Next
+                                    Case "reloadall"
+                                        ReloadMods()
+                                    Case "stopall"
+                                        StopMods()
+                                    Case "startall"
+                                        StartMods()
+                                    Case Else
+                                        W(DoTranslation("Invalid command {0}. Check the usage below:"), True, ColTypes.Error, CommandMode)
+                                        ShowHelp(Command)
+                                End Select
+                            End If
+                        Else
+                            W(DoTranslation("Mod management is disabled in safe mode."), True, ColTypes.Error)
+                        End If
+                    End If
+
                 Case "move"
 
                     If RequiredArgumentsProvided Then

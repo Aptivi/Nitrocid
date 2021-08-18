@@ -21,6 +21,7 @@ Imports System.IO
 Imports System.Reflection
 Imports Microsoft.CSharp
 
+'TODO: The entire mod load/stop/reload logic is messy. It needs to be reprogrammed to allow having these logics with the two versions: One mod, or all
 Public Module ModParser
 
     ''' <summary>
