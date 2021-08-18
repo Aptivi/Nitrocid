@@ -94,6 +94,10 @@ Public Module LinotypoDisplay
                     For Each Paragraph As String In LinotypeWrite.SplitNewLines
                         If Linotypo.CancellationPending Then Exit For
 
+                        'Sometimes, a paragraph could consist of nothing, but prints its new line, so honor this by checking to see if we need to
+                        'clear screen or advance to the next column so that we don't mess up the display by them
+                        HandleNextColumn(CurrentColumn, CurrentColumnRowConsole, ColumnRowConsoleThreshold)
+
                         'We need to make sure that we indent spaces for each new paragraph.
                         If CurrentColumn = 1 Then
                             Console.WriteLine()
