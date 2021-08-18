@@ -510,6 +510,7 @@ Public Module SettingsApp
         Dim ListJoinString As String = ""
         Dim TargetList As IEnumerable(Of Object)
         Dim SelectFrom As IEnumerable(Of Object)
+        Dim SelectionEnumZeroBased As Boolean
         Dim NeutralizePaths As Boolean
         Dim BuiltinSavers As Integer = 20
 
@@ -1395,6 +1396,7 @@ Public Module SettingsApp
                             MaxKeyOptions = 3
                             KeyType = SettingsKeyType.SSelection
                             KeyVar = NameOf(LinotypoEtaoinType)
+                            SelectionEnumZeroBased = True
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo > " + DoTranslation("Line Fill Type") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Line fill pattern type"), True, ColTypes.Neutral)
                             W("1) " + DoTranslation("Common Pattern"), True, ColTypes.Option)
@@ -1558,6 +1560,7 @@ Public Module SettingsApp
                     KeyFinished = True
                     SetConfigValue(KeyVar, SelectFrom(AnswerInt - 1))
                 ElseIf AnswerInt >= 0 Then
+                    If SelectionEnumZeroBased Then AnswerInt -= 1
                     Wdbg("I", "Setting variable {0} to {1}...", KeyVar, AnswerInt)
                     KeyFinished = True
                     SetConfigValue(KeyVar, AnswerInt)
