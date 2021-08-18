@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.ComponentModel
+Imports System.IO
 Imports System.Text
 
 Public Module LinotypoDisplay
@@ -57,7 +58,8 @@ Public Module LinotypoDisplay
 
             'Strikes
             Dim Strikes As New List(Of String) From {"q`12wsa", "r43edfgt5", "u76yhjki8", "p09ol;'[-=]\", "/';. ", "m,lkjn ", "vbhgfc ", "zxdsa "}
-            Dim CapStrikes As New List(Of String) From {" ~!@   ", " $#     %", " &^     *", " )(  :""{_+}|", "?"":> ", " <     "}
+            Dim CapStrikes As New List(Of String) From {"Q~!@WSA", "R$#EDFGT%", "U&^YHJKI*", "P)(OL:""{_+}|", "?"":> ", "M<LKJN ", "VBHGFC ", "ZXDSA "}
+            Dim CapSymbols As String = "~!@$#%&^*)(:""{_+}|?><"
             Dim LinotypeLayout(,) As String = {{"e", "t", "a", "o", "i", "n", " "}, {"s", "h", "r", "d", "l", "u", " "},
                                                {"c", "m", "f", "w", "y", "p", " "}, {"v", "b", "g", "k", "q", "j", " "},
                                                {"x", "z", " ", " ", " ", " ", " "}, {" ", " ", " ", " ", " ", " ", " "}}
@@ -80,12 +82,19 @@ Public Module LinotypoDisplay
                     Dim CharacterCounter As Integer
                     Dim EtaoinMode As Boolean
                     Dim CappedEtaoin As Boolean
+                    Dim LinotypeWrite As String = LinotypoWrite
 
-                    'For each line, write four spaces, and extra two spaces if paragraph start.
-                    For Each Paragraph As String In LinotypoWrite.SplitNewLines
+                    'Linotypo can also deal with files written on the field that is used for storing text, so check to see if the path exists.
+                    If TryParsePath(LinotypoWrite) AndAlso File.Exists(LinotypoWrite) Then
+                        'File found! Now, write the contents of it to the local variable that stores the actual written text.
+                        LinotypeWrite = File.ReadAllText(LinotypoWrite)
+                    End If
+
+                    'For each line, write four spaces, and extra two spaces if paragraph starts.
+                    For Each Paragraph As String In LinotypeWrite.SplitNewLines
                         If Linotypo.CancellationPending Then Exit For
 
-                        'We need to make sure that we indent a paragraph for each new paragraph.
+                        'We need to make sure that we indent spaces for each new paragraph.
                         If CurrentColumn = 1 Then
                             Console.WriteLine()
                         Else
@@ -102,7 +111,7 @@ Public Module LinotypoDisplay
                         Dim IncompleteSentenceBuilder As New StringBuilder
                         Dim CharactersParsed As Integer = 0
 
-                        'This reserved characters count tells us how many spaces are used for intending the paragraph. This is only four for
+                        'This reserved characters count tells us how many spaces are used for indenting the paragraph. This is only four for
                         'the first time and will be reverted back to zero after the incomplete sentence is formed.
                         Dim ReservedCharacters As Integer = 4
                         For Each ParagraphChar As Char In Paragraph
@@ -209,8 +218,8 @@ Public Module LinotypoDisplay
                                         Dim StrikesString As String = ""
                                         Do Until StruckFound
                                             StrikeCharsIndex = RandomDriver.Next(0, Strikes.Count - 1)
-                                            CappedStrike = Char.IsUpper(StruckChar)
-                                            StrikesString = If(CappedStrike, Strikes(StrikeCharsIndex).ToUpper, Strikes(StrikeCharsIndex))
+                                            CappedStrike = Char.IsUpper(StruckChar) Or CapSymbols.Contains(StruckChar)
+                                            StrikesString = If(CappedStrike, CapStrikes(StrikeCharsIndex), Strikes(StrikeCharsIndex))
                                             StruckFound = Not String.IsNullOrEmpty(StrikesString) AndAlso StrikesString.Contains(StruckChar)
                                         Loop
 
@@ -240,7 +249,7 @@ Public Module LinotypoDisplay
                                 If CountingCharacters Then
                                     CharacterCounter += 1
                                     If CharacterCounter > LinotypoEtaoinThreshold Then
-                                        'We've reached the Etaoin threshold. Turn on that mode and stop counting charaters.
+                                        'We've reached the Etaoin threshold. Turn on that mode and stop counting characters.
                                         EtaoinMode = True
                                         CountingCharacters = False
                                         CharacterCounter = 0

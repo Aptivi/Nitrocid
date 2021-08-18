@@ -865,7 +865,7 @@ Public Module Filesystem
     End Function
 
     ''' <summary>
-    ''' Tries to parse the path
+    ''' Tries to parse the path (For file names and only names, use <see cref="TryParseFileName(String)"/> instead.)
     ''' </summary>
     ''' <param name="Path">The path to be parsed</param>
     ''' <returns>True if successful; false if unsuccessful</returns>
@@ -883,7 +883,7 @@ Public Module Filesystem
     End Function
 
     ''' <summary>
-    ''' Tries to parse the file name
+    ''' Tries to parse the file name (For full paths, use <see cref="TryParsePath(String)"/> instead.)
     ''' </summary>
     ''' <param name="Name">The file name to be parsed</param>
     ''' <returns>True if successful; false if unsuccessful</returns>

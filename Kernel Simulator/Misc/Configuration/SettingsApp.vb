@@ -1362,6 +1362,7 @@ Public Module SettingsApp
                             KeyVar = NameOf(LinotypoWrite)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo > " + DoTranslation("Text shown") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Write any text you want shown. Longer is better."), True, ColTypes.Neutral)
+                            W(DoTranslation("This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately."), True, ColTypes.Neutral)
                         Case 4 'Linotypo: Minimum writing speed in WPM
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(LinotypoWritingSpeedMin)
