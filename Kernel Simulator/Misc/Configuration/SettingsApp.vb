@@ -1479,7 +1479,11 @@ Public Module SettingsApp
             Console.WriteLine()
 
             'Add an option to go back.
-            If Not KeyType = SettingsKeyType.SVariant Then W("{0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.Option, MaxKeyOptions + 1)
+            If Not KeyType = SettingsKeyType.SVariant And Not KeyType = SettingsKeyType.SInt And Not KeyType = SettingsKeyType.SLongString And Not KeyType = SettingsKeyType.SString And Not KeyType = SettingsKeyType.SList Then
+                W("{0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.Option, MaxKeyOptions + 1)
+            ElseIf KeyType = SettingsKeyType.SList Then
+                W("q) " + DoTranslation("Save Changes...") + vbNewLine, True, ColTypes.Option, MaxKeyOptions + 1)
+            End If
 
             'Get key value
             If Not KeyType = SettingsKeyType.SUnknown Then KeyValue = GetConfigValue(KeyVar)
