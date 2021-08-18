@@ -35,6 +35,7 @@ Public Module HelpSystem
         'Check to see if command exists
         If Not String.IsNullOrWhiteSpace(command) And Commands.ContainsKey(command) Then
             Dim HelpDefinition As String = Commands(command).GetTranslatedHelpEntry
+            Dim UsageLength As Integer = DoTranslation("Usage:").Length
             Select Case command
                 Case "adduser"
                     W(DoTranslation("Usage:") + " adduser <userName> [password] [confirm]: " + HelpDefinition, True, ColTypes.Neutral)
@@ -42,7 +43,7 @@ Public Module HelpSystem
                     W(DoTranslation("Usage:") + " alias <rem/add> <{0}> <alias> <cmd>: " + HelpDefinition, True, ColTypes.Neutral, String.Join("/", [Enum].GetNames(GetType(AliasType))))
                 Case "arginj"
                     W(DoTranslation("Usage:") + " arginj [Arguments separated by spaces]: " + HelpDefinition + vbNewLine +
-                      "       " + DoTranslation("where arguments will be {0}"), True, ColTypes.Neutral, String.Join(", ", AvailableArgs))
+                      " ".Repeat(UsageLength) + " " + DoTranslation("where arguments will be {0}"), True, ColTypes.Neutral, String.Join(", ", AvailableArgs))
                 Case "beep"
                     W(DoTranslation("Usage:") + " beep <37-32767 Hz> <milliseconds>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "blockdbgdev"
@@ -66,15 +67,15 @@ Public Module HelpSystem
                     W(DoTranslation("Usage:") + " chhostname <HostName>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "chlang"
                     W(DoTranslation("Usage:") + " chlang <language>: " + HelpDefinition + vbNewLine +
-                      "<language>: " + String.Join("/", Languages.Keys), True, ColTypes.Neutral)
+                      " ".Repeat(UsageLength) + " " + " <language>: " + String.Join("/", Languages.Keys), True, ColTypes.Neutral)
                 Case "chmotd"
                     W(DoTranslation("Usage:") + " chmotd [Message]: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "chmal"
                     W(DoTranslation("Usage:") + " chmal [Message]: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "choice"
                     W(DoTranslation("Usage:") + " choice [-o|-t|-m] <$variable> <answers> <input>: " + HelpDefinition + vbNewLine +
-                      "       " + DoTranslation("where <$variable> is any variable that will be used to store response") + vbNewLine +
-                      "       " + DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"), True, ColTypes.Neutral)
+                      " ".Repeat(UsageLength) + " " + DoTranslation("where <$variable> is any variable that will be used to store response") + vbNewLine +
+                      " ".Repeat(UsageLength) + " " + DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"), True, ColTypes.Neutral)
                 Case "chpwd"
                     W(DoTranslation("Usage:") + " chpwd <Username> <UserPass> <newPass> <confirm>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "chusrname"
@@ -105,7 +106,7 @@ Public Module HelpSystem
                     W(DoTranslation("Usage:") + " get <URL> [username]: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "hwinfo"
                     W(DoTranslation("Usage:") + " hwinfo <HardwareType>: " + HelpDefinition + vbNewLine +
-                      "       " + DoTranslation("where HardwareType will be") + " HDD, LogicalParts, CPU, GPU, Sound, Network, System, Machine, BIOS, RAM, all.", True, ColTypes.Neutral)
+                      " ".Repeat(UsageLength) + " " + DoTranslation("where HardwareType will be") + " HDD, LogicalParts, CPU, GPU, Sound, Network, System, Machine, BIOS, RAM, all.", True, ColTypes.Neutral)
                 Case "input"
                     W(DoTranslation("Usage:") + " input <$variable> <question>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "jsonbeautify"
@@ -122,10 +123,10 @@ Public Module HelpSystem
                     W(DoTranslation("Usage:") + " lsmail [emailAddress]: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "lockscreen"
                     W(DoTranslation("Usage:") + " lockscreen: " + HelpDefinition + vbNewLine +
-                      "       " + DoTranslation("Friends of") + " lockscreen: savescreen", True, ColTypes.Neutral)
+                      " ".Repeat(UsageLength) + " " + DoTranslation("Friends of") + " lockscreen: savescreen", True, ColTypes.Neutral)
                 Case "logout"
                     W(DoTranslation("Usage:") + " logout: " + HelpDefinition + vbNewLine +
-                      "       " + DoTranslation("Friends of") + " logout: reboot, shutdown", True, ColTypes.Neutral)
+                      " ".Repeat(UsageLength) + " " + DoTranslation("Friends of") + " logout: reboot, shutdown", True, ColTypes.Neutral)
                 Case "mathbee"
                     W(DoTranslation("Usage:") + " mathbee: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "md"
@@ -138,7 +139,7 @@ Public Module HelpSystem
                     W(DoTranslation("Usage:") + " modinfo <mod>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "modman"
                     W(DoTranslation("Usage:") + " modman <start/stop/info/reload> <modfilename> " +
-                     "        modman <list/reloadall/stopall/startall>: " + HelpDefinition, True, ColTypes.Neutral)
+                      " ".Repeat(UsageLength) + " " + " modman <list/reloadall/stopall/startall>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "move"
                     W(DoTranslation("Usage:") + " move <source> <target>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "netinfo"
@@ -155,15 +156,15 @@ Public Module HelpSystem
                     W(DoTranslation("Usage:") + " rdebug: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "reboot"
                     W(DoTranslation("Usage:") + " reboot [ip] [port]: " + HelpDefinition + vbNewLine +
-                      "       " + DoTranslation("Friends of") + " reboot: shutdown, logout", True, ColTypes.Neutral)
+                      " ".Repeat(UsageLength) + " " + DoTranslation("Friends of") + " reboot: shutdown, logout", True, ColTypes.Neutral)
                 Case "reloadmods"
                     W(DoTranslation("Usage:") + " reloadmods: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "reloadconfig"
                     W(DoTranslation("Usage:") + " reloadconfig: " + HelpDefinition + vbNewLine +
-                      "       " + DoTranslation("Colors doesn't require a restart, but most of the settings require you to restart."), True, ColTypes.Neutral)
+                      " ".Repeat(UsageLength) + " " + DoTranslation("Colors doesn't require a restart, but most of the settings require you to restart."), True, ColTypes.Neutral)
                 Case "reloadsaver"
                     W(DoTranslation("Usage:") + " reloadsaver <customsaver>: " + HelpDefinition + vbNewLine +
-                      "       " + DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", ScreensaverFiles))
+                      " ".Repeat(UsageLength) + " " + DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", ScreensaverFiles))
                 Case "reportbug"
                     W(DoTranslation("Usage:") + " reportbug: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "rexec"
@@ -176,7 +177,7 @@ Public Module HelpSystem
                     W(DoTranslation("Usage:") + " savecurrdir: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "savescreen"
                     W(DoTranslation("Usage:") + " savescreen [saver]: " + HelpDefinition + vbNewLine +
-                      "       " + DoTranslation("Friends of") + " savescreen: lockscreen", True, ColTypes.Neutral)
+                      " ".Repeat(UsageLength) + " " + DoTranslation("Friends of") + " savescreen: lockscreen", True, ColTypes.Neutral)
                 Case "search"
                     W(DoTranslation("Usage:") + " search <Regexp> <File>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "searchword"
@@ -184,11 +185,11 @@ Public Module HelpSystem
                 Case "setsaver"
                     W(DoTranslation("Usage:") + " setsaver <customsaver/{0}>: " + HelpDefinition, True, ColTypes.Neutral, String.Join("/", ScrnSvrdb.Keys))
                     If CSvrdb.Count > 0 Then
-                        W("       " + DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", CSvrdb.Keys))
+                        W(" ".Repeat(UsageLength) + " " + DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", CSvrdb.Keys))
                     End If
                 Case "setthemes"
                     W(DoTranslation("Usage:") + " setthemes <Theme>: " + HelpDefinition + vbNewLine +
-                      "       " + "<Theme>: ThemeName.json, " + String.Join(", ", colorTemplates.Keys), True, ColTypes.Neutral)
+                      " ".Repeat(UsageLength) + "<Theme>: ThemeName.json, " + String.Join(", ", colorTemplates.Keys), True, ColTypes.Neutral)
                 Case "settings"
                     W(DoTranslation("Usage:") + " settings: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "set"
@@ -203,7 +204,7 @@ Public Module HelpSystem
                     W(DoTranslation("Usage:") + " showtdzone <timezone/all>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "shutdown"
                     W(DoTranslation("Usage:") + " shutdown [ip] [port]: " + HelpDefinition + vbNewLine +
-                      "       " + DoTranslation("Friends of") + " shutdown: reboot, logout", True, ColTypes.Neutral)
+                      " ".Repeat(UsageLength) + " " + DoTranslation("Friends of") + " shutdown: reboot, logout", True, ColTypes.Neutral)
                 Case "speedpress"
                     W(DoTranslation("Usage:") + " speedpress <e/m/h>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "spellbee"
@@ -230,7 +231,7 @@ Public Module HelpSystem
                     W(DoTranslation("Usage:") + " verify <MD5/SHA1/SHA256/SHA384/SHA512> <calculatedhash> <hashfile/expectedhash> <file>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "weather"
                     W(DoTranslation("Usage:") + " weather <CityID/CityName/listcities>: " + HelpDefinition + vbNewLine +
-                      DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.") + " " + DoTranslation("Or, pass ""listcities"" to this command."), True, ColTypes.Neutral)
+                      " ".Repeat(UsageLength) + " " + DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.") + " " + DoTranslation("Or, pass ""listcities"" to this command."), True, ColTypes.Neutral)
                 Case "wrap"
                     'Get wrappable commands
                     Dim WrappableCmds As New ArrayList
@@ -240,7 +241,7 @@ Public Module HelpSystem
 
                     'Print them along with help description
                     W(DoTranslation("Usage:") + " wrap <command>: " + HelpDefinition, True, ColTypes.Neutral)
-                    W("       " + DoTranslation("Wrappable commands:") + " {0}", True, ColTypes.Neutral, String.Join(", ", WrappableCmds.ToArray))
+                    W(" ".Repeat(UsageLength) + " " + DoTranslation("Wrappable commands:") + " {0}", True, ColTypes.Neutral, String.Join(", ", WrappableCmds.ToArray))
                 Case "zip"
                     W(DoTranslation("Usage:") + " zip <zipfile> <path> [-fast/-nocomp] [-nobasedir]: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "zipshell"
