@@ -237,7 +237,11 @@ Public Module Filesystem
 
         'Append current directory to path
         If (IsOnWindows() And Not Path.Contains(":/")) Or (IsOnUnix() And Not Path.StartsWith("/")) Then
-            Path = $"{CurrDir}/{Path}"
+            If Not CurrDir.EndsWith("/") Then
+                Path = $"{CurrDir}/{Path}"
+            Else
+                Path = $"{CurrDir}{Path}"
+            End If
         End If
 
         'Replace last occurrences of current directory of path with nothing.
@@ -278,7 +282,11 @@ Public Module Filesystem
 
         'Append current directory to path
         If (IsOnWindows() And Not Path.Contains(":/")) Or (IsOnUnix() And Not Path.StartsWith("/")) Then
-            Path = $"{Source}/{Path}"
+            If Not Source.EndsWith("/") Then
+                Path = $"{Source}/{Path}"
+            Else
+                Path = $"{Source}{Path}"
+            End If
         End If
 
         'Replace last occurrences of current directory of path with nothing.
@@ -892,7 +900,7 @@ Public Module Filesystem
 #If NTFSCorruptionFix Then
             ThrowOnInvalidPath(Name)
 #End If
-            Return Not Name.IndexOfAny(IO.Path.GetInvalidFileNameChars()) >= 0
+            Return Not Name.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0
         Catch ex As Exception
             WStkTrc(ex)
             Wdbg("E", "Failed to parse file name {0}: {1}", Name, ex.Message)

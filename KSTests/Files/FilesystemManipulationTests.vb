@@ -26,7 +26,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestCopyDirectoryToDirectory()
         CurrDir = paths("Home")
-        IO.Directory.CreateDirectory(paths("Home") + "/TestDir")
+        Directory.CreateDirectory(paths("Home") + "/TestDir")
         Dim SourcePath As String = "/TestDir"
         Dim TargetPath As String = "/TestDir2"
         CopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue
@@ -73,7 +73,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMoveDirectoryToDirectory()
         CurrDir = paths("Home")
-        IO.Directory.CreateDirectory(paths("Home") + "/TestMovedDir")
+        Directory.CreateDirectory(paths("Home") + "/TestMovedDir")
         Dim SourcePath As String = "/TestMovedDir"
         Dim TargetPath As String = "/TestMovedDir2"
         MoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue

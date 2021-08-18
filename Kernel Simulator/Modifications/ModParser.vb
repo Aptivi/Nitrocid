@@ -257,12 +257,12 @@ NextEntry:
         ElseIf modFile.EndsWith(".cs") Then
             'Mod has a language of C#
             Wdbg("I", "Mod language is C# from extension "".cs""")
-            Dim script As IScript = GenMod("C#", IO.File.ReadAllText(modPath + modFile))
+            Dim script As IScript = GenMod("C#", File.ReadAllText(modPath + modFile))
             FinalizeMods(script, modFile)
         ElseIf modFile.EndsWith(".vb") Then
             'Mod has a language of VB.NET
             Wdbg("I", "Mod language is VB.NET from extension "".vb""")
-            Dim script As IScript = GenMod("VB.NET", IO.File.ReadAllText(modPath + modFile))
+            Dim script As IScript = GenMod("VB.NET", File.ReadAllText(modPath + modFile))
             FinalizeMods(script, modFile)
         ElseIf modFile.EndsWith(".dll") Then
             'Mod is a dynamic DLL
@@ -483,8 +483,6 @@ NextEntry:
                         End If
                     Next
                 End If
-
-                'Create instance of mod info
 
                 'Raise event
                 EventManager.RaiseModFinalized(modFile)

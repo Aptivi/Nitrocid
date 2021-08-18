@@ -284,13 +284,13 @@ Module MailLogin
             'IMAP Connection
             W(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, Address)
             Wdbg("I", "Connecting to IMAP Server {0}:{1} with SSL...", Address, Port)
-            IMAP_Client.Connect(Address, Port, MailKit.Security.SecureSocketOptions.SslOnConnect)
+            IMAP_Client.Connect(Address, Port, Security.SecureSocketOptions.SslOnConnect)
             AddHandler IMAP_Client.WebAlert, AddressOf HandleWebAlert
 
             'SMTP Connection
             W(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, SmtpAddress)
             Wdbg("I", "Connecting to SMTP Server {0}:{1} with SSL...", Address, Port)
-            SMTP_Client.Connect(SmtpAddress, SmtpPort, MailKit.Security.SecureSocketOptions.StartTls)
+            SMTP_Client.Connect(SmtpAddress, SmtpPort, Security.SecureSocketOptions.StartTls)
 
             'IMAP Authentication
             W(DoTranslation("Authenticating..."), True, ColTypes.Neutral)
