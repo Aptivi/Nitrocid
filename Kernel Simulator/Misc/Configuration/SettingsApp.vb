@@ -1555,15 +1555,28 @@ Public Module SettingsApp
                 If AnswerInt = MaxKeyOptions + 1 And KeyType = SettingsKeyType.SSelection Then 'Go Back...
                     Wdbg("I", "User requested exit. Returning...")
                     KeyFinished = True
-                ElseIf AnswerInt >= 0 And SelectFrom IsNot Nothing Then
+                ElseIf KeyType = SettingsKeyType.SSelection And AnswerInt > 0 And SelectFrom IsNot Nothing Then
                     Wdbg("I", "Setting variable {0} to item index {1}...", KeyVar, AnswerInt - 1)
                     KeyFinished = True
                     SetConfigValue(KeyVar, SelectFrom(AnswerInt - 1))
-                ElseIf AnswerInt >= 0 Then
-                    If SelectionEnumZeroBased Then AnswerInt -= 1
-                    Wdbg("I", "Setting variable {0} to {1}...", KeyVar, AnswerInt)
-                    KeyFinished = True
-                    SetConfigValue(KeyVar, AnswerInt)
+                ElseIf (KeyType = SettingsKeyType.SSelection And AnswerInt > 0) Or
+                       (KeyType = SettingsKeyType.SInt And AnswerInt >= 0) Then
+                    If (KeyType = SettingsKeyType.SSelection And Not AnswerInt > MaxKeyOptions) Or KeyType = SettingsKeyType.SInt Then
+                        If SelectionEnumZeroBased Then AnswerInt -= 1
+                        Wdbg("I", "Setting variable {0} to {1}...", KeyVar, AnswerInt)
+                        KeyFinished = True
+                        SetConfigValue(KeyVar, AnswerInt)
+                    ElseIf KeyType = SettingsKeyType.SSelection Then
+                        Wdbg("W", "Answer is not valid.")
+                        W(DoTranslation("The answer may not exceed the entries shown."), True, ColTypes.Error)
+                        W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                        Console.ReadKey()
+                    End If
+                ElseIf AnswerInt = 0 Then
+                    Wdbg("W", "Zero is not allowed.")
+                    W(DoTranslation("The answer may not be zero."), True, ColTypes.Error)
+                    W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                    Console.ReadKey()
                 Else
                     Wdbg("W", "Negative values are disallowed.")
                     W(DoTranslation("The answer may not be negative."), True, ColTypes.Error)
