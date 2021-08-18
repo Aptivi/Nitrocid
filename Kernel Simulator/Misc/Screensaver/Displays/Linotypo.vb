@@ -335,6 +335,15 @@ Public Module LinotypoDisplay
                     Console.SetCursorPosition(CurrentColumnRowConsole, 0)
                 End If
             End If
+        ElseIf LinotypoTextColumns = 1 And Console.CursorTop >= Console.WindowHeight - 2 Then
+            'We're on the botto, so wait until retry...
+            Console.WriteLine()
+            SleepNoBlock(LinotypoNewScreenDelay, Linotypo)
+
+            '...and make a new screen
+            Console.Clear()
+            CurrentColumn = 1
+            CurrentColumnRowConsole = Console.CursorLeft
         End If
     End Sub
 
