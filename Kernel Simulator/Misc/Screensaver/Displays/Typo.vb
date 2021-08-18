@@ -30,7 +30,8 @@ Module TypoDisplay
             Dim CpmSpeedMin As Integer = TypoWritingSpeedMin * 5
             Dim CpmSpeedMax As Integer = TypoWritingSpeedMax * 5
             Dim Strikes As New List(Of String) From {"q`12wsa", "r43edfgt5", "u76yhjki8", "p09ol;'[-=]\", "/';. ", "m,lkjn ", "vbhgfc ", "zxdsa "}
-            Dim CapStrikes As New List(Of String) From {" ~!@   ", " $#     %", " &^     *", " )(  :""{_+}|", "?"":> ", " <     "}
+            Dim CapStrikes As New List(Of String) From {"Q~!@WSA", "R$#EDFGT%", "U&^YHJKI*", "P)(OL:""{_+}|", "?"":> ", "M<LKJN ", "VBHGFC ", "ZXDSA "}
+            Dim CapSymbols As String = "~!@$#%&^*)(:""{_+}|?><"
             Do While True
                 SleepNoBlock(TypoDelay, Typo)
                 If Typo.CancellationPending = True Then
@@ -65,8 +66,8 @@ Module TypoDisplay
                             Dim StrikesString As String = ""
                             Do Until StruckFound
                                 StrikeCharsIndex = RandomDriver.Next(0, Strikes.Count - 1)
-                                CappedStrike = Char.IsUpper(StruckChar)
-                                StrikesString = If(CappedStrike, Strikes(StrikeCharsIndex).ToUpper, Strikes(StrikeCharsIndex))
+                                CappedStrike = Char.IsUpper(StruckChar) Or CapSymbols.Contains(StruckChar)
+                                StrikesString = If(CappedStrike, CapStrikes(StrikeCharsIndex), Strikes(StrikeCharsIndex))
                                 StruckFound = Not String.IsNullOrEmpty(StrikesString) AndAlso StrikesString.Contains(StruckChar)
                             Loop
 
