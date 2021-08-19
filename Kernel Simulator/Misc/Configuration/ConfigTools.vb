@@ -52,7 +52,7 @@ Public Module ConfigTools
             FixesNeeded = True
         End If
         If ConfigToken("Screensaver") IsNot Nothing Then
-            If ConfigToken("Screensaver").Count <> 20 + 2 Then 'Screensavers + Keys
+            If ConfigToken("Screensaver").Count <> 21 + 2 Then 'Screensavers + Keys
                 Wdbg("W", "Missing sections and/or keys in Screensaver. Config fix needed set to true.")
                 FixesNeeded = True
             End If
@@ -219,6 +219,12 @@ Public Module ConfigTools
             If ConfigToken("Screensaver")("Linotypo") IsNot Nothing Then
                 If ConfigToken("Screensaver")("Linotypo").Count <> 11 Then
                     Wdbg("W", "Missing keys in Screensaver > Linotypo. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("Typewriter") IsNot Nothing Then
+                If ConfigToken("Screensaver")("Typewriter").Count <> 5 Then
+                    Wdbg("W", "Missing keys in Screensaver > Typewriter. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If

@@ -111,7 +111,7 @@ Public Module SettingsApp
         Dim SectionFinished As Boolean
         Dim AnswerString As String
         Dim AnswerInt As Integer
-        Dim BuiltinSavers As Integer = 20
+        Dim BuiltinSavers As Integer = 21
 
         'Section-specific variables
         Dim ConfigurableScreensavers As New List(Of String)
@@ -238,6 +238,7 @@ Public Module SettingsApp
                     W("18) FaderBack...", True, ColTypes.Option)
                     W("19) BeatFader...", True, ColTypes.Option)
                     W("20) Linotypo...", True, ColTypes.Option)
+                    W("21) Typewriter...", True, ColTypes.Option)
 
                     'Populate custom screensavers
                     For Each CustomSaver As String In CSvrdb.Keys
@@ -410,6 +411,15 @@ Public Module SettingsApp
                     W("9) " + DoTranslation("Line Fill Capping Probability in percent") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoEtaoinCappingPossibility)))
                     W("10) " + DoTranslation("Line Fill Type") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoEtaoinType)))
                     W("11) " + DoTranslation("Probability of miss in percent") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoMissPossibility)))
+                Case "7.21" 'Screensaver > Typewriter
+                    MaxOptions = 5
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > Typewriter" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " Typewriter." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypewriterDelay)))
+                    W("2) " + DoTranslation("New Screen Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypewriterNewScreenDelay)))
+                    W("3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypewriterWrite)))
+                    W("4) " + DoTranslation("Minimum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypewriterWritingSpeedMin)))
+                    W("5) " + DoTranslation("Maximum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypewriterWritingSpeedMax)))
                 Case "7." + $"{If(SectionParameters.Length <> 0, SectionParameters(0), $"{BuiltinSavers + 1}")}" 'Screensaver > a custom saver
                     Dim SaverIndex As Integer = SectionParameters(0) - BuiltinSavers - 1
                     Dim Configurables As List(Of String) = SectionParameters(1)
@@ -1354,7 +1364,7 @@ Public Module SettingsApp
                     End Select
                 Case "7.20" 'Linotypo
                     Select Case KeyNumber
-                        Case 1 'Typo: Delay in Milliseconds
+                        Case 1 'Linotypo: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(LinotypoDelay)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
@@ -1417,6 +1427,38 @@ Public Module SettingsApp
                             W(DoTranslation("Probability of miss in percent"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
+                    End Select
+                Case "7.21" 'Typewriter
+                    Select Case KeyNumber
+                        Case 1 'Typewriter: Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(TypewriterDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Typewriter > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 2 'Typewriter: New Screen Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(TypewriterNewScreenDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Typewriter > " + DoTranslation("New Screen Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("How many milliseconds to wait before writing the text in the new screen again?"), True, ColTypes.Neutral)
+                        Case 3 'Typewriter: Text shown
+                            KeyType = SettingsKeyType.SLongString
+                            KeyVar = NameOf(TypewriterWrite)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Typewriter > " + DoTranslation("Text shown") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Write any text you want shown. Longer is better."), True, ColTypes.Neutral)
+                            W(DoTranslation("This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately."), True, ColTypes.Neutral)
+                        Case 4 'Typewriter: Minimum writing speed in WPM
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(TypewriterWritingSpeedMin)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Typewriter > " + DoTranslation("Minimum writing speed in WPM") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Minimum writing speed in WPM"), True, ColTypes.Neutral)
+                        Case 5 'Typewriter: Maximum writing speed in WPM
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(TypewriterWritingSpeedMax)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Typewriter > " + DoTranslation("Maximum writing speed in WPM") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Maximum writing speed in WPM"), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Typewriter > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
                 Case "7." + $"{If(SectionParts.Length > 1, SectionParts(1), $"{BuiltinSavers + 1}")}" 'Custom saver

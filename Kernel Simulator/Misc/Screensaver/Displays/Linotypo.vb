@@ -348,7 +348,7 @@ Public Module LinotypoDisplay
                 End If
             End If
         ElseIf LinotypoTextColumns = 1 And Console.CursorTop >= Console.WindowHeight - 2 Then
-            'We're on the botto, so wait until retry...
+            'We're on the bottom, so wait until retry...
             Console.WriteLine()
             SleepNoBlock(LinotypoNewScreenDelay, Linotypo)
 

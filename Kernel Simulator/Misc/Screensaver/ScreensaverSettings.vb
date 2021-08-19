@@ -376,4 +376,30 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public LinotypoMissPossibility As Integer = 10
 
+    '-> Typewriter
+    ''' <summary>
+    ''' [Typewriter] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public TypewriterDelay As Integer = 50
+    ''' <summary>
+    ''' [Typewriter] How many milliseconds to wait before writing the text in the new screen again?
+    ''' </summary>
+    Public TypewriterNewScreenDelay As Integer = 3000
+    ''' <summary>
+    ''' [Typewriter] Text for Typewriter. Longer is better.
+    ''' </summary>
+    Public TypewriterWrite As String = "Kernel Simulator"
+    ''' <summary>
+    ''' [Typewriter] Minimum writing speed in WPM
+    ''' </summary>
+    Public TypewriterWritingSpeedMin As Integer = 50
+    ''' <summary>
+    ''' [Typewriter] Maximum writing speed in WPM
+    ''' </summary>
+    Public TypewriterWritingSpeedMax As Integer = 80
+    ''' <summary>
+    ''' [Typewriter] Shows the typewriter letter column position by showing this key on the bottom of the screen: <code>^</code>
+    ''' </summary>
+    Public TypewriterShowArrowPos As Boolean = True
+
 End Module

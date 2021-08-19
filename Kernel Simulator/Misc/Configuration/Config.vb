@@ -359,6 +359,16 @@ Public Module Config
             }
             ScreensaverConfig.Add("Linotypo", LinotypoConfig)
 
+            'Typewriter config json object
+            Dim TypewriterConfig As New JObject From {
+                    {"Delay in Milliseconds", TypewriterDelay},
+                    {"New Screen Delay in Milliseconds", TypewriterNewScreenDelay},
+                    {"Text Shown", TypewriterWrite},
+                    {"Minimum writing speed in WPM", TypewriterWritingSpeedMin},
+                    {"Maximum writing speed in WPM", TypewriterWritingSpeedMax}
+            }
+            ScreensaverConfig.Add("Typewriter", TypewriterConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -621,6 +631,13 @@ Public Module Config
             LinotypoEtaoinCappingPossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("Line Fill Capping Probability in percent"), 0), ConfigToken("Screensaver")?("Linotypo")?("Line Fill Capping Probability in percent"), 5)
             LinotypoEtaoinType = If(ConfigToken("Screensaver")?("Linotypo")?("Line Fill Type") IsNot Nothing, If([Enum].TryParse(ConfigToken("Screensaver")?("Linotypo")?("Line Fill Type"), LinotypoEtaoinType), LinotypoEtaoinType, FillType.EtaoinPattern), FillType.EtaoinPattern)
             LinotypoMissPossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("Probability of miss in percent"), 0), ConfigToken("Screensaver")?("Linotypo")?("Probability of miss in percent"), 10)
+
+            '> Typewriter
+            TypewriterDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Typewriter")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Typewriter")?("Delay in Milliseconds"), 50)
+            TypewriterNewScreenDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Typewriter")?("New Screen Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Typewriter")?("New Screen Delay in Milliseconds"), 3000)
+            TypewriterWrite = If(ConfigToken("Screensaver")?("Typewriter")?("Text Shown"), "Kernel Simulator")
+            TypewriterWritingSpeedMin = If(Integer.TryParse(ConfigToken("Screensaver")?("Typewriter")?("Minimum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Typewriter")?("Minimum writing speed in WPM"), 50)
+            TypewriterWritingSpeedMax = If(Integer.TryParse(ConfigToken("Screensaver")?("Typewriter")?("Maximum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Typewriter")?("Maximum writing speed in WPM"), 80)
 
             'Misc Section
             Wdbg("I", "Parsing misc section...")
