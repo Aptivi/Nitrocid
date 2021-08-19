@@ -31,6 +31,7 @@ Module MarqueeDisplay
         Console.Clear()
         Console.CursorVisible = False
         Dim RandomDriver As New Random()
+        MarqueeWrite = MarqueeWrite.ReplaceAll({vbCr, vbLf}, " - ")
         Try
             Do While True
                 If Marquee.CancellationPending = True Then
