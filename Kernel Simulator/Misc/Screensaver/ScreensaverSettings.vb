@@ -18,8 +18,7 @@
 
 Public Module ScreensaverSettings
 
-    'TODO: Rearrangement by screensaver
-    '-> Color Settings
+    '-> ColorMix
     ''' <summary>
     ''' [ColorMix] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
@@ -29,6 +28,12 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public ColorMixTrueColor As Boolean = True
     ''' <summary>
+    ''' [ColorMix] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public ColorMixDelay As Integer = 1
+
+    '-> Disco
+    ''' <summary>
     ''' [Disco] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
     Public Disco255Colors As Boolean
@@ -36,6 +41,20 @@ Public Module ScreensaverSettings
     ''' [Disco] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
     Public DiscoTrueColor As Boolean = True
+    ''' <summary>
+    ''' [Disco] Enable color cycling
+    ''' </summary>
+    Public DiscoCycleColors As Boolean
+    ''' <summary>
+    ''' [Disco] How many milliseconds, or beats per minute, to wait before making the next write?
+    ''' </summary>
+    Public DiscoDelay As Integer = 100
+    ''' <summary>
+    ''' [Disco] Whether to use the Beats Per Minute (1/4) to change the writing delay. If False, will use the standard milliseconds delay instead.
+    ''' </summary>
+    Public DiscoUseBeatsPerMinute As Boolean = False
+
+    '-> GlitterColor
     ''' <summary>
     ''' [GlitterColor] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
@@ -45,6 +64,12 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public GlitterColorTrueColor As Boolean = True
     ''' <summary>
+    ''' [GlitterColor] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public GlitterColorDelay As Integer = 1
+
+    '-> Lines
+    ''' <summary>
     ''' [Lines] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
     Public Lines255Colors As Boolean
@@ -53,6 +78,12 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public LinesTrueColor As Boolean = True
     ''' <summary>
+    ''' [Lines] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public LinesDelay As Integer = 500
+
+    '-> Dissolve
+    ''' <summary>
     ''' [Dissolve] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
     Public Dissolve255Colors As Boolean
@@ -60,6 +91,8 @@ Public Module ScreensaverSettings
     ''' [Dissolve] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
     Public DissolveTrueColor As Boolean = True
+
+    '-> BouncingBlock
     ''' <summary>
     ''' [BouncingBlock] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
@@ -69,6 +102,12 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public BouncingBlockTrueColor As Boolean = True
     ''' <summary>
+    ''' [BouncingBlock] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public BouncingBlockDelay As Integer = 10
+
+    '-> BouncingText
+    ''' <summary>
     ''' [BouncingText] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
     Public BouncingText255Colors As Boolean
@@ -77,6 +116,16 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public BouncingTextTrueColor As Boolean = True
     ''' <summary>
+    ''' [BouncingText] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public BouncingTextDelay As Integer = 10
+    ''' <summary>
+    ''' [BouncingText] Text for Bouncing Text. Shorter is better.
+    ''' </summary>
+    Public BouncingTextWrite As String = "Kernel Simulator"
+
+    '-> ProgressClock
+    ''' <summary>
     ''' [ProgressClock] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
     Public ProgressClock255Colors As Boolean
@@ -84,26 +133,6 @@ Public Module ScreensaverSettings
     ''' [ProgressClock] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
     Public ProgressClockTrueColor As Boolean = True
-    ''' <summary>
-    ''' [Lighter] Enable 255 color support. Has a higher priority than 16 color support.
-    ''' </summary>
-    Public Lighter255Colors As Boolean
-    ''' <summary>
-    ''' [Lighter] Enable truecolor support. Has a higher priority than 255 color support.
-    ''' </summary>
-    Public LighterTrueColor As Boolean = True
-    ''' <summary>
-    ''' [Wipe] Enable 255 color support. Has a higher priority than 16 color support.
-    ''' </summary>
-    Public Wipe255Colors As Boolean
-    ''' <summary>
-    ''' [Wipe] Enable truecolor support. Has a higher priority than 255 color support.
-    ''' </summary>
-    Public WipeTrueColor As Boolean = True
-    ''' <summary>
-    ''' [Disco] Enable color cycling
-    ''' </summary>
-    Public DiscoCycleColors As Boolean
     ''' <summary>
     ''' [ProgressClock] Enable color cycling (uses RNG. If disabled, uses the <see cref="ProgressClockSecondsProgressColor"/>, <see cref="ProgressClockMinutesProgressColor"/>, and <see cref="ProgressClockHoursProgressColor"/> colors.)
     ''' </summary>
@@ -125,13 +154,59 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public ProgressClockProgressColor As String = 7
     ''' <summary>
+    ''' [ProgressClock] If color cycling is enabled, how many ticks before changing colors? 1 tick = 0.5 seconds
+    ''' </summary>
+    Public ProgressClockCycleColorsTicks As Long = 20
+
+    '-> Lighter
+    ''' <summary>
+    ''' [Lighter] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public Lighter255Colors As Boolean
+    ''' <summary>
+    ''' [Lighter] Enable truecolor support. Has a higher priority than 255 color support.
+    ''' </summary>
+    Public LighterTrueColor As Boolean = True
+    ''' <summary>
+    ''' [Lighter] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public LighterDelay As Integer = 100
+    ''' <summary>
+    ''' [Lighter] How many positions to write before starting to blacken them?
+    ''' </summary>
+    Public LighterMaxPositions As Integer = 10
+
+    '-> Wipe
+    ''' <summary>
+    ''' [Wipe] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public Wipe255Colors As Boolean
+    ''' <summary>
+    ''' [Wipe] Enable truecolor support. Has a higher priority than 255 color support.
+    ''' </summary>
+    Public WipeTrueColor As Boolean = True
+    ''' <summary>
+    ''' [Wipe] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public WipeDelay As Integer = 10
+    ''' <summary>
+    ''' [Wipe] How many wipes needed to change direction?
+    ''' </summary>
+    Public WipeWipesNeededToChangeDirection As Integer = 10
+
+    '-> HackUserFromAD
+    ''' <summary>
     ''' [HackUserFromAD] Sets the console foreground color to green to represent "Hacker Mode"
     ''' </summary>
     Public HackUserFromADHackerMode As Boolean = True
+
+    '-> AptErrorSim
     ''' <summary>
     ''' [AptErrorSim] Sets the console foreground color to green to represent "Hacker Mode"
     ''' </summary>
     Public AptErrorSimHackerMode As Boolean
+
+    '-> Marquee
     ''' <summary>
     ''' [Marquee] Enable 255 color support. Has a higher priority than 16 color support.
     ''' </summary>
@@ -140,6 +215,24 @@ Public Module ScreensaverSettings
     ''' [Marquee] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
     Public MarqueeTrueColor As Boolean = True
+    ''' <summary>
+    ''' [Marquee] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public MarqueeDelay As Integer = 10
+    ''' <summary>
+    ''' [Marquee] Text for Marquee. Shorter is better.
+    ''' </summary>
+    Public MarqueeWrite As String = "Kernel Simulator"
+    ''' <summary>
+    ''' [Marquee] Whether the text is always on center.
+    ''' </summary>
+    Public MarqueeAlwaysCentered As Boolean = True
+    ''' <summary>
+    ''' [Marquee] Whether to use the Console.Clear() API (slow) or use the line-clearing VT sequence (fast).
+    ''' </summary>
+    Public MarqueeUseConsoleAPI As Boolean = False
+
+    '-> BeatFader
     ''' <summary>
     ''' [BeatFader] Enable 255 color support. Has a higher priority than 16 color support. Please note that it only works if color cycling is enabled.
     ''' </summary>
@@ -156,48 +249,28 @@ Public Module ScreensaverSettings
     ''' [BeatFader] The color of beats. It can be 1-16, 1-255, or "1-255;1-255;1-255".
     ''' </summary>
     Public BeatFaderBeatColor As String = 17
+    ''' <summary>
+    ''' [BeatFader] How many beats per minute to wait before making the next write?
+    ''' </summary>
+    Public BeatFaderDelay As Integer = 120
+    ''' <summary>
+    ''' [BeatFader] How many fade steps to do?
+    ''' </summary>
+    Public BeatFaderMaxSteps As Integer = 25
 
-    '-> Delays
-    ''' <summary>
-    ''' [BouncingBlock] How many milliseconds to wait before making the next write?
-    ''' </summary>
-    Public BouncingBlockDelay As Integer = 10
-    ''' <summary>
-    ''' [BouncingText] How many milliseconds to wait before making the next write?
-    ''' </summary>
-    Public BouncingTextDelay As Integer = 10
-    ''' <summary>
-    ''' [ColorMix] How many milliseconds to wait before making the next write?
-    ''' </summary>
-    Public ColorMixDelay As Integer = 1
-    ''' <summary>
-    ''' [Disco] How many milliseconds, or beats per minute, to wait before making the next write?
-    ''' </summary>
-    Public DiscoDelay As Integer = 100
-    ''' <summary>
-    ''' [GlitterColor] How many milliseconds to wait before making the next write?
-    ''' </summary>
-    Public GlitterColorDelay As Integer = 1
+    '-> GlitterMatrix
     ''' <summary>
     ''' [GlitterMatrix] How many milliseconds to wait before making the next write?
     ''' </summary>
     Public GlitterMatrixDelay As Integer = 1
-    ''' <summary>
-    ''' [Lines] How many milliseconds to wait before making the next write?
-    ''' </summary>
-    Public LinesDelay As Integer = 500
+
+    '-> Matrix
     ''' <summary>
     ''' [Matrix] How many milliseconds to wait before making the next write?
     ''' </summary>
     Public MatrixDelay As Integer = 1
-    ''' <summary>
-    ''' [ProgressClock] If color cycling is enabled, how many ticks before changing colors? 1 tick = 0.5 seconds
-    ''' </summary>
-    Public ProgressClockCycleColorsTicks As Long = 20
-    ''' <summary>
-    ''' [Lighter] How many milliseconds to wait before making the next write?
-    ''' </summary>
-    Public LighterDelay As Integer = 100
+
+    '-> Fader
     ''' <summary>
     ''' [Fader] How many milliseconds to wait before making the next write?
     ''' </summary>
@@ -215,61 +288,9 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public FaderBackFadeOutDelay As Integer = 3000
     ''' <summary>
-    ''' [Typo] How many milliseconds to wait before making the next write?
-    ''' </summary>
-    Public TypoDelay As Integer = 50
-    ''' <summary>
-    ''' [Typo] How many milliseconds to wait before writing the text again?
-    ''' </summary>
-    Public TypoWriteAgainDelay As Integer = 3000
-    ''' <summary>
-    ''' [Wipe] How many milliseconds to wait before making the next write?
-    ''' </summary>
-    Public WipeDelay As Integer = 10
-    ''' <summary>
-    ''' [Marquee] How many milliseconds to wait before making the next write?
-    ''' </summary>
-    Public MarqueeDelay As Integer = 10
-    ''' <summary>
-    ''' [BeatFader] How many beats per minute to wait before making the next write?
-    ''' </summary>
-    Public BeatFaderDelay As Integer = 120
-    ''' <summary>
-    ''' [Linotypo] How many milliseconds to wait before making the next write?
-    ''' </summary>
-    Public LinotypoDelay As Integer = 50
-    ''' <summary>
-    ''' [Linotypo] How many milliseconds to wait before writing the text in the new screen again?
-    ''' </summary>
-    Public LinotypoNewScreenDelay As Integer = 3000
-
-    '-> Texts
-    ''' <summary>
-    ''' [BouncingText] Text for Bouncing Text. Shorter is better.
-    ''' </summary>
-    Public BouncingTextWrite As String = "Kernel Simulator"
-    ''' <summary>
     ''' [Fader] Text for Fader. Shorter is better.
     ''' </summary>
     Public FaderWrite As String = "Kernel Simulator"
-    ''' <summary>
-    ''' [Typo] Text for Typo. Longer is better.
-    ''' </summary>
-    Public TypoWrite As String = "Kernel Simulator"
-    ''' <summary>
-    ''' [Marquee] Text for Marquee. Shorter is better.
-    ''' </summary>
-    Public MarqueeWrite As String = "Kernel Simulator"
-    ''' <summary>
-    ''' [Linotypo] Text for Linotypo. Longer is better.
-    ''' </summary>
-    Public LinotypoWrite As String = "Kernel Simulator"
-
-    '-> Misc
-    ''' <summary>
-    ''' [Lighter] How many positions to write before starting to blacken them?
-    ''' </summary>
-    Public LighterMaxPositions As Integer = 10
     ''' <summary>
     ''' [Fader] How many fade steps to do?
     ''' </summary>
@@ -278,6 +299,20 @@ Public Module ScreensaverSettings
     ''' [FaderBack] How many fade steps to do?
     ''' </summary>
     Public FaderBackMaxSteps As Integer = 25
+
+    '-> Typo
+    ''' <summary>
+    ''' [Typo] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public TypoDelay As Integer = 50
+    ''' <summary>
+    ''' [Typo] How many milliseconds to wait before writing the text again?
+    ''' </summary>
+    Public TypoWriteAgainDelay As Integer = 3000
+    ''' <summary>
+    ''' [Typo] Text for Typo. Longer is better.
+    ''' </summary>
+    Public TypoWrite As String = "Kernel Simulator"
     ''' <summary>
     ''' [Typo] Minimum writing speed in WPM
     ''' </summary>
@@ -290,6 +325,20 @@ Public Module ScreensaverSettings
     ''' [Typo] Possibility that the writer made a typo in percent
     ''' </summary>
     Public TypoMissStrikePossibility As Integer = 20
+
+    '-> Linotypo
+    ''' <summary>
+    ''' [Linotypo] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public LinotypoDelay As Integer = 50
+    ''' <summary>
+    ''' [Linotypo] How many milliseconds to wait before writing the text in the new screen again?
+    ''' </summary>
+    Public LinotypoNewScreenDelay As Integer = 3000
+    ''' <summary>
+    ''' [Linotypo] Text for Linotypo. Longer is better.
+    ''' </summary>
+    Public LinotypoWrite As String = "Kernel Simulator"
     ''' <summary>
     ''' [Linotypo] Minimum writing speed in WPM
     ''' </summary>
@@ -318,25 +367,5 @@ Public Module ScreensaverSettings
     ''' [Linotypo] Line fill pattern type
     ''' </summary>
     Public LinotypoEtaoinType As FillType = FillType.EtaoinPattern
-    ''' <summary>
-    ''' [Wipe] How many wipes needed to change direction?
-    ''' </summary>
-    Public WipeWipesNeededToChangeDirection As Integer = 10
-    ''' <summary>
-    ''' [Marquee] Whether the text is always on center.
-    ''' </summary>
-    Public MarqueeAlwaysCentered As Boolean = True
-    ''' <summary>
-    ''' [Marquee] Whether to use the Console.Clear() API (slow) or use the line-clearing VT sequence (fast).
-    ''' </summary>
-    Public MarqueeUseConsoleAPI As Boolean = False
-    ''' <summary>
-    ''' [Disco] Whether to use the Beats Per Minute (1/4) to change the writing delay. If False, will use the standard milliseconds delay instead.
-    ''' </summary>
-    Public DiscoUseBeatsPerMinute As Boolean = False
-    ''' <summary>
-    ''' [BeatFader] How many fade steps to do?
-    ''' </summary>
-    Public BeatFaderMaxSteps As Integer = 25
 
 End Module
