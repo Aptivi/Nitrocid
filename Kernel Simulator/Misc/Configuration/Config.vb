@@ -315,7 +315,8 @@ Public Module Config
                     {"Text Shown", TypoWrite},
                     {"Minimum writing speed in WPM", TypoWritingSpeedMin},
                     {"Maximum writing speed in WPM", TypoWritingSpeedMax},
-                    {"Probability of typo in percent", TypoMissStrikePossibility}
+                    {"Probability of typo in percent", TypoMissStrikePossibility},
+                    {"Probability of miss in percent", TypoMissPossibility}
             }
             ScreensaverConfig.Add("Typo", TypoConfig)
 
@@ -353,7 +354,8 @@ Public Module Config
                     {"Column Count", LinotypoTextColumns},
                     {"Line Fill Threshold", LinotypoEtaoinThreshold},
                     {"Line Fill Capping Probability in percent", LinotypoEtaoinCappingPossibility},
-                    {"Line Fill Type", LinotypoEtaoinType}
+                    {"Line Fill Type", LinotypoEtaoinType},
+                    {"Probability of miss in percent", LinotypoMissPossibility}
             }
             ScreensaverConfig.Add("Linotypo", LinotypoConfig)
 
@@ -588,6 +590,7 @@ Public Module Config
             TypoWritingSpeedMin = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Minimum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Typo")?("Minimum writing speed in WPM"), 50)
             TypoWritingSpeedMax = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Maximum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Typo")?("Maximum writing speed in WPM"), 80)
             TypoMissStrikePossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Probability of typo in percent"), 0), ConfigToken("Screensaver")?("Typo")?("Probability of typo in percent"), 20)
+            TypoMissPossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Probability of miss in percent"), 0), ConfigToken("Screensaver")?("Typo")?("Probability of miss in percent"), 10)
 
             '> Marquee
             Marquee255Colors = If(ConfigToken("Screensaver")?("Marquee")?("Activate 255 Color Mode"), False)
@@ -617,6 +620,7 @@ Public Module Config
             LinotypoEtaoinThreshold = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("Line Fill Threshold"), 0), ConfigToken("Screensaver")?("Linotypo")?("Line Fill Threshold"), 5)
             LinotypoEtaoinCappingPossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("Line Fill Capping Probability in percent"), 0), ConfigToken("Screensaver")?("Linotypo")?("Line Fill Capping Probability in percent"), 5)
             LinotypoEtaoinType = If(ConfigToken("Screensaver")?("Linotypo")?("Line Fill Type") IsNot Nothing, If([Enum].TryParse(ConfigToken("Screensaver")?("Linotypo")?("Line Fill Type"), LinotypoEtaoinType), LinotypoEtaoinType, FillType.EtaoinPattern), FillType.EtaoinPattern)
+            LinotypoMissPossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("Probability of miss in percent"), 0), ConfigToken("Screensaver")?("Linotypo")?("Probability of miss in percent"), 10)
 
             'Misc Section
             Wdbg("I", "Parsing misc section...")

@@ -325,6 +325,10 @@ Public Module ScreensaverSettings
     ''' [Typo] Possibility that the writer made a typo in percent
     ''' </summary>
     Public TypoMissStrikePossibility As Integer = 20
+    ''' <summary>
+    ''' [Typo] Possibility that the writer missed a character in percent
+    ''' </summary>
+    Public TypoMissPossibility As Integer = 10
 
     '-> Linotypo
     ''' <summary>
@@ -367,5 +371,9 @@ Public Module ScreensaverSettings
     ''' [Linotypo] Line fill pattern type
     ''' </summary>
     Public LinotypoEtaoinType As FillType = FillType.EtaoinPattern
+    ''' <summary>
+    ''' [Linotypo] Possibility that the writer missed a character in percent
+    ''' </summary>
+    Public LinotypoMissPossibility As Integer = 10
 
 End Module

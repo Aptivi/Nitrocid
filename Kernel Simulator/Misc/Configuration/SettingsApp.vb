@@ -340,7 +340,7 @@ Public Module SettingsApp
                     W("3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderWrite)))
                     W("4) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderMaxSteps)))
                 Case "7.13" 'Screensaver > Typo
-                    MaxOptions = 6
+                    MaxOptions = 7
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Typo" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " Typo." + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoDelay)))
@@ -349,6 +349,7 @@ Public Module SettingsApp
                     W("4) " + DoTranslation("Minimum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoWritingSpeedMin)))
                     W("5) " + DoTranslation("Maximum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoWritingSpeedMax)))
                     W("6) " + DoTranslation("Probability of typo in percent") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoMissStrikePossibility)))
+                    W("7) " + DoTranslation("Probability of miss in percent") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoMissPossibility)))
                 Case "7.14" 'Screensaver > Wipe
                     MaxOptions = 4
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Wipe" + vbNewLine, True, ColTypes.Neutral)
@@ -395,7 +396,7 @@ Public Module SettingsApp
                     W("5) " + DoTranslation("Beat Color") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderBeatColor)))
                     W("6) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderMaxSteps)))
                 Case "7.20" 'Screensaver > Linotypo
-                    MaxOptions = 10
+                    MaxOptions = 11
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " Linotypo." + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoDelay)))
@@ -408,6 +409,7 @@ Public Module SettingsApp
                     W("8) " + DoTranslation("Line Fill Threshold") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoEtaoinThreshold)))
                     W("9) " + DoTranslation("Line Fill Capping Probability in percent") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoEtaoinCappingPossibility)))
                     W("10) " + DoTranslation("Line Fill Type") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoEtaoinType)))
+                    W("11) " + DoTranslation("Probability of miss in percent") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoMissPossibility)))
                 Case "7." + $"{If(SectionParameters.Length <> 0, SectionParameters(0), $"{BuiltinSavers + 1}")}" 'Screensaver > a custom saver
                     Dim SaverIndex As Integer = SectionParameters(0) - BuiltinSavers - 1
                     Dim Configurables As List(Of String) = SectionParameters(1)
@@ -1200,6 +1202,11 @@ Public Module SettingsApp
                             KeyVar = NameOf(TypoMissStrikePossibility)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Typo > " + DoTranslation("Probability of typo in percent") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Probability of typo in percent"), True, ColTypes.Neutral)
+                        Case 7 'Typo: Probability of miss in percent
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(TypoMissPossibility)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Typo > " + DoTranslation("Probability of miss in percent") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Probability of miss in percent"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Typo > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
@@ -1403,6 +1410,11 @@ Public Module SettingsApp
                             W("1) " + DoTranslation("Common Pattern"), True, ColTypes.Option)
                             W("2) " + DoTranslation("Complete Pattern"), True, ColTypes.Option)
                             W("3) " + DoTranslation("Random Pattern"), True, ColTypes.Option)
+                        Case 11 'Linotypo: Probability of miss in percent
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinotypoMissPossibility)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo > " + DoTranslation("Probability of miss in percent") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Probability of miss in percent"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
