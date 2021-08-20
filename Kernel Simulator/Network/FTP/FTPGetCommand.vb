@@ -148,26 +148,32 @@ Public Module FTPGetCommand
                     End If
                 Case "get"
                     If RequiredArgumentsProvided Then
-                        W(DoTranslation("Downloading file {0}..."), False, ColTypes.Neutral, eqargs(0))
-                        If FTPGetFile(eqargs(0)) Then
+                        Dim RemoteFile As String = eqargs(0)
+                        Dim LocalFile As String = If(eqargs.Count > 1, eqargs(1), "")
+                        W(DoTranslation("Downloading file {0}..."), False, ColTypes.Neutral, RemoteFile)
+                        Dim Result As Boolean = If(Not String.IsNullOrWhiteSpace(LocalFile), FTPGetFile(RemoteFile, LocalFile), FTPGetFile(RemoteFile))
+                        If Result Then
                             Console.WriteLine()
-                            W(DoTranslation("Downloaded file {0}."), True, ColTypes.Neutral, eqargs(0))
+                            W(DoTranslation("Downloaded file {0}."), True, ColTypes.Neutral, RemoteFile)
                         Else
                             Console.WriteLine()
-                            W(DoTranslation("Download failed for file {0}."), True, ColTypes.Error, eqargs(0))
+                            W(DoTranslation("Download failed for file {0}."), True, ColTypes.Error, RemoteFile)
                         End If
                     Else
                         W(DoTranslation("Enter a file to download to local directory."), True, ColTypes.Error)
                     End If
                 Case "getfolder"
                     If RequiredArgumentsProvided Then
-                        W(DoTranslation("Downloading folder {0}..."), True, ColTypes.Neutral, eqargs(0))
-                        If FTPGetFolder(eqargs(0)) Then
+                        Dim RemoteFolder As String = eqargs(0)
+                        Dim LocalFolder As String = If(eqargs.Count > 1, eqargs(1), "")
+                        W(DoTranslation("Downloading folder {0}..."), True, ColTypes.Neutral, RemoteFolder)
+                        Dim Result As Boolean = If(Not String.IsNullOrWhiteSpace(LocalFolder), FTPGetFolder(RemoteFolder, LocalFolder), FTPGetFolder(RemoteFolder))
+                        If Result Then
                             Console.WriteLine()
-                            W(DoTranslation("Downloaded folder {0}."), True, ColTypes.Neutral, eqargs(0))
+                            W(DoTranslation("Downloaded folder {0}."), True, ColTypes.Neutral, RemoteFolder)
                         Else
                             Console.WriteLine()
-                            W(DoTranslation("Download failed for folder {0}."), True, ColTypes.Error, eqargs(0))
+                            W(DoTranslation("Download failed for folder {0}."), True, ColTypes.Error, RemoteFolder)
                         End If
                     Else
                         W(DoTranslation("Enter a folder to download to local directory."), True, ColTypes.Error)

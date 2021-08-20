@@ -46,9 +46,9 @@ Public Module FTPHelpSystem
                 Case "disconnect"
                     W(DoTranslation("Usage:") + " disconnect: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "get"
-                    W(DoTranslation("Usage:") + " get <file>: " + HelpDefinition, True, ColTypes.Neutral)
+                    W(DoTranslation("Usage:") + " get <file> [output]: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "getfolder"
-                    W(DoTranslation("Usage:") + " getfolder <folder>: " + HelpDefinition, True, ColTypes.Neutral)
+                    W(DoTranslation("Usage:") + " getfolder <folder> [outputfolder]: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "exit"
                     W(DoTranslation("Usage:") + " exit: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "lsl"
