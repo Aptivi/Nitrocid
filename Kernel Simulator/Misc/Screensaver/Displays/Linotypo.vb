@@ -51,7 +51,7 @@ Public Module LinotypoDisplay
             Dim RandomDriver As New Random()
             Dim CpmSpeedMin As Integer = LinotypoWritingSpeedMin * 5
             Dim CpmSpeedMax As Integer = LinotypoWritingSpeedMax * 5
-            Dim MaxCharacters As Integer = ((Console.WindowWidth - 2) / LinotypoTextColumns) - 2
+            Dim MaxCharacters As Integer = ((Console.WindowWidth - 2) / LinotypoTextColumns) - 3
             Dim CurrentColumn As Integer = 1
             Dim CurrentColumnRowConsole As Integer = Console.CursorLeft
             Dim ColumnRowConsoleThreshold As Integer = Console.WindowWidth / LinotypoTextColumns
