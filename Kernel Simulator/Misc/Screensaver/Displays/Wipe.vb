@@ -49,12 +49,15 @@ Module WipeDisplay
                         Dim RedColorNum As Integer = RandomDriver.Next(255)
                         Dim GreenColorNum As Integer = RandomDriver.Next(255)
                         Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                        WdbgConditional(ScreensaverDebug, "I", "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         SetConsoleColor(New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), True)
                     ElseIf Wipe255Colors Then
                         Dim ColorNum As Integer = RandomDriver.Next(255)
+                        WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", ColorNum)
                         SetConsoleColor(New Color(ColorNum), True)
                     Else
                         Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                        WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", Console.BackgroundColor)
                     End If
 
                     'Set max height according to platform
@@ -62,6 +65,7 @@ Module WipeDisplay
                     If IsOnUnix() Then MaxWindowHeight -= 1
 
                     'Print a space {Column} times until the entire screen is wiped.
+                    WdbgConditional(ScreensaverDebug, "I", "Wipe direction {0}", ToDirection.ToString)
                     Select Case ToDirection
                         Case WipeDirections.Right
                             For Column As Integer = 0 To Console.WindowWidth
@@ -99,11 +103,13 @@ Module WipeDisplay
                             Console.SetCursorPosition(0, 0)
                     End Select
                     TimesWiped += 1
+                    WdbgConditional(ScreensaverDebug, "I", "Wiped {0} times out of {1}", TimesWiped, WipeWipesNeededToChangeDirection)
 
                     'Check if the number of times wiped is equal to the number of required times to change wiping direction.
                     If TimesWiped = WipeWipesNeededToChangeDirection Then
                         TimesWiped = 0
                         ToDirection = [Enum].Parse(GetType(WipeDirections), RandomDriver.Next(0, 3))
+                        WdbgConditional(ScreensaverDebug, "I", "Changed direction to {0}", ToDirection.ToString)
                     End If
                 End If
             Loop

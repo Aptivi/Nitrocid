@@ -52,6 +52,7 @@ Module MarqueeDisplay
                     If Not MarqueeAlwaysCentered Then
                         TopPrinted = RandomDriver.Next(Console.WindowHeight - 1)
                     End If
+                    WdbgConditional(ScreensaverDebug, "I", "Top position: {0}", TopPrinted)
 
                     'Start with the left position as the right position.
                     Dim CurrentLeft As Integer = Console.WindowWidth - 1
@@ -63,12 +64,15 @@ Module MarqueeDisplay
                         Dim RedColorNum As Integer = RandomDriver.Next(255)
                         Dim GreenColorNum As Integer = RandomDriver.Next(255)
                         Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                        WdbgConditional(ScreensaverDebug, "I", "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         SetConsoleColor(New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"))
                     ElseIf Marquee255Colors Then
                         Dim color As Integer = RandomDriver.Next(255)
+                        WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", color)
                         SetConsoleColor(New Color(color))
                     Else
                         Console.ForegroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                        WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", Console.ForegroundColor)
                     End If
 
                     'If the text is at the right and is longer than the console width, crop it until it's complete.
@@ -76,10 +80,12 @@ Module MarqueeDisplay
                         SleepNoBlock(MarqueeDelay, Marquee)
                         If Marquee.CancellationPending Then Exit Do
                         If MarqueeUseConsoleAPI Then Console.Clear()
+                        WdbgConditional(ScreensaverDebug, "I", "Current left: {0} | Current left on other end: {1}", CurrentLeft, CurrentLeftOtherEnd)
 
                         'Declare variable for written marquee text
                         Dim MarqueeWritten As String = MarqueeWrite
                         Dim Middle As Boolean = MarqueeWrite.Length - (CurrentLeftOtherEnd - CurrentLeft) <> CurrentCharacterNum - (CurrentLeftOtherEnd - CurrentLeft)
+                        WdbgConditional(ScreensaverDebug, "I", "Middle of long text: {0}", Middle)
 
                         'If the current left position is not zero (not on the left), take the substring starting from the beginning of the string until the
                         'written variable equals the base text variable. However, if we're on the left, take the substring so that the character which was
@@ -91,6 +97,7 @@ Module MarqueeDisplay
                         Else
                             MarqueeWritten = MarqueeWritten.Substring(MarqueeWrite.Length - (CurrentLeftOtherEnd - CurrentLeft))
                         End If
+                        WdbgConditional(ScreensaverDebug, "I", "Written result: {0}", MarqueeWritten)
                         If Not MarqueeUseConsoleAPI Then MarqueeWritten += GetEsc() + "[0K"
 
                         'Set the appropriate cursor position and write the results

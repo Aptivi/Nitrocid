@@ -47,6 +47,7 @@ Module GlitterMatrixDisplay
                     SleepNoBlock(GlitterMatrixDelay, GlitterMatrix)
                     Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                     Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+                    WdbgConditional(ScreensaverDebug, "I", "Selected left and top: {0}, {1}", Left, Top)
                     Console.SetCursorPosition(Left, Top)
                     Console.Write(CStr(RandomDriver.Next(2)))
                 End If

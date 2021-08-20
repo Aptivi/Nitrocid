@@ -44,30 +44,43 @@ Module LighterDisplay
                     SaverAutoReset.Set()
                     Exit Do
                 Else
+                    'Select a position
                     SleepNoBlock(LighterDelay, Lighter)
                     Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                     Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+                    WdbgConditional(ScreensaverDebug, "I", "Selected left and top: {0}, {1}", Left, Top)
                     Console.SetCursorPosition(Left, Top)
+                    If Not CoveredPositions.Contains(Left & ";" & Top) Then
+                        WdbgConditional(ScreensaverDebug, "I", "Covering position...")
+                        CoveredPositions.Add(Left & ";" & Top)
+                        WdbgConditional(ScreensaverDebug, "I", "Position covered. Covered positions: {0}", CoveredPositions.Count)
+                    End If
+
+                    'Select a color and write the space
                     Dim esc As Char = GetEsc()
                     If LighterTrueColor Then
                         Dim RedColorNum As Integer = RandomDriver.Next(255)
                         Dim GreenColorNum As Integer = RandomDriver.Next(255)
                         Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                        WdbgConditional(ScreensaverDebug, "I", "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-                        If Not CoveredPositions.Contains(Left & ";" & Top) Then CoveredPositions.Add(Left & ";" & Top)
                         Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
                     ElseIf Lighter255Colors Then
                         Dim ColorNum As Integer = RandomDriver.Next(255)
-                        If Not CoveredPositions.Contains(Left & ";" & Top) Then CoveredPositions.Add(Left & ";" & Top)
+                        WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", ColorNum)
                         Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
                     Else
-                        If Not CoveredPositions.Contains(Left & ";" & Top) Then CoveredPositions.Add(Left & ";" & Top)
                         Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                        WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", Console.BackgroundColor)
                         Console.Write(" ")
                     End If
+
+                    'Simulate a trail effect
                     If CoveredPositions.Count = LighterMaxPositions Then
+                        WdbgConditional(ScreensaverDebug, "I", "Covered positions exceeded max positions of {0}", LighterMaxPositions)
                         Dim WipeLeft As Integer = CoveredPositions(0).ToString.Substring(0, CoveredPositions(0).ToString.IndexOf(";"))
                         Dim WipeTop As Integer = CoveredPositions(0).ToString.Substring(CoveredPositions(0).ToString.IndexOf(";") + 1)
+                        WdbgConditional(ScreensaverDebug, "I", "Wiping in {0}, {1}...", WipeLeft, WipeTop)
                         Console.SetCursorPosition(WipeLeft, WipeTop)
                         Console.BackgroundColor = ConsoleColor.Black
                         Console.Write(" ")

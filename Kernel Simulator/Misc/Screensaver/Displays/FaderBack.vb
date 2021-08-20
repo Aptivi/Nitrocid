@@ -52,6 +52,7 @@ Module FaderBackDisplay
                     Dim ThresholdRed As Double = RedColorNum / FaderBackMaxSteps
                     Dim ThresholdGreen As Double = GreenColorNum / FaderBackMaxSteps
                     Dim ThresholdBlue As Double = BlueColorNum / FaderBackMaxSteps
+                    WdbgConditional(ScreensaverDebug, "I", "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue)
 
                     'Fade in
                     Dim CurrentColorRedIn As Integer = 0
@@ -59,24 +60,29 @@ Module FaderBackDisplay
                     Dim CurrentColorBlueIn As Integer = 0
                     For CurrentStep As Integer = 1 To FaderBackMaxSteps
                         If FaderBack.CancellationPending Then Exit For
+                        WdbgConditional(ScreensaverDebug, "I", "Step {0}/{1}", CurrentStep, FaderBackMaxSteps)
                         SleepNoBlock(FaderBackDelay, FaderBack)
                         CurrentColorRedIn += ThresholdRed
                         CurrentColorGreenIn += ThresholdGreen
                         CurrentColorBlueIn += ThresholdBlue
+                        WdbgConditional(ScreensaverDebug, "I", "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn)
                         SetConsoleColor(New Color($"{CurrentColorRedIn};{CurrentColorGreenIn};{CurrentColorBlueIn}"), True)
                         Console.Clear()
                     Next
 
                     'Wait until fade out
+                    WdbgConditional(ScreensaverDebug, "I", "Waiting {0} ms...", FaderBackFadeOutDelay)
                     SleepNoBlock(FaderBackFadeOutDelay, FaderBack)
 
                     'Fade out
                     For CurrentStep As Integer = 1 To FaderBackMaxSteps
                         If FaderBack.CancellationPending Then Exit For
+                        WdbgConditional(ScreensaverDebug, "I", "Step {0}/{1}", CurrentStep, FaderBackMaxSteps)
                         SleepNoBlock(FaderBackDelay, FaderBack)
                         Dim CurrentColorRedOut As Integer = RedColorNum - ThresholdRed * CurrentStep
                         Dim CurrentColorGreenOut As Integer = GreenColorNum - ThresholdGreen * CurrentStep
                         Dim CurrentColorBlueOut As Integer = BlueColorNum - ThresholdBlue * CurrentStep
+                        WdbgConditional(ScreensaverDebug, "I", "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut)
                         SetConsoleColor(New Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), True)
                         Console.Clear()
                     Next
@@ -85,6 +91,7 @@ Module FaderBackDisplay
                     RedColorNum = RandomDriver.Next(255)
                     GreenColorNum = RandomDriver.Next(255)
                     BlueColorNum = RandomDriver.Next(255)
+                    WdbgConditional(ScreensaverDebug, "I", "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                 End If
             Loop
         Catch ex As Exception

@@ -49,13 +49,17 @@ Module ColorMixDisplay
                         Dim RedColorNum As Integer = colorrand.Next(255)
                         Dim GreenColorNum As Integer = colorrand.Next(255)
                         Dim BlueColorNum As Integer = colorrand.Next(255)
+                        WdbgConditional(ScreensaverDebug, "I", "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
                         Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
                     ElseIf ColorMix255Colors Then
                         Dim ColorNum As Integer = colorrand.Next(255)
+                        WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", ColorNum)
                         Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
                     Else
-                        Console.BackgroundColor = CType(colorrand.Next(1, 16), ConsoleColor) : Console.Write(" ")
+                        Console.BackgroundColor = CType(colorrand.Next(1, 16), ConsoleColor)
+                        WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", Console.BackgroundColor)
+                        Console.Write(" ")
                     End If
                 End If
             Loop

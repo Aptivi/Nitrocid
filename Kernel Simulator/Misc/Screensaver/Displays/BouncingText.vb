@@ -49,40 +49,55 @@ Module BouncingTextDisplay
                     SaverAutoReset.Set()
                     Exit Do
                 Else
+                    WdbgConditional(ScreensaverDebug, "I", "Row text: {0}", RowText)
+                    WdbgConditional(ScreensaverDebug, "I", "Column first letter of text: {0}", ColumnFirstLetter)
+                    WdbgConditional(ScreensaverDebug, "I", "Column last letter of text: {0}", ColumnLastLetter)
                     Dim BouncingColor As Color
-                    If BouncingColor Is Nothing Then BouncingColor = ChangeBouncingTextColor()
+                    If BouncingColor Is Nothing Then
+                        WdbgConditional(ScreensaverDebug, "I", "Defining color...")
+                        BouncingColor = ChangeBouncingTextColor()
+                    End If
                     WriteWhereC(BouncingTextWrite, ColumnFirstLetter, RowText, True, BouncingColor)
 
+                    WdbgConditional(ScreensaverDebug, "I", "Text is facing {0}.", Direction)
                     If Direction = "BottomRight" Then
+                        WdbgConditional(ScreensaverDebug, "I", "Increasing row and column text position")
                         RowText += 1
                         ColumnFirstLetter += 1
                         ColumnLastLetter += 1
                     ElseIf Direction = "BottomLeft" Then
+                        WdbgConditional(ScreensaverDebug, "I", "Increasing row and decreasing column text position")
                         RowText += 1
                         ColumnFirstLetter -= 1
                         ColumnLastLetter -= 1
                     ElseIf Direction = "TopRight" Then
+                        WdbgConditional(ScreensaverDebug, "I", "Decreasing row and increasing column text position")
                         RowText -= 1
                         ColumnFirstLetter += 1
                         ColumnLastLetter += 1
                     ElseIf Direction = "TopLeft" Then
+                        WdbgConditional(ScreensaverDebug, "I", "Decreasing row and column text position")
                         RowText -= 1
                         ColumnFirstLetter -= 1
                         ColumnLastLetter -= 1
                     End If
 
                     If RowText = Console.WindowHeight - 2 Then
+                        WdbgConditional(ScreensaverDebug, "I", "We're on the bottom.")
                         Direction = Direction.Replace("Bottom", "Top")
                         BouncingColor = ChangeBouncingTextColor()
                     ElseIf RowText = 1 Then
+                        WdbgConditional(ScreensaverDebug, "I", "We're on the top.")
                         Direction = Direction.Replace("Top", "Bottom")
                         BouncingColor = ChangeBouncingTextColor()
                     End If
 
                     If ColumnLastLetter = Console.WindowWidth - 1 Then
+                        WdbgConditional(ScreensaverDebug, "I", "We're on the right.")
                         Direction = Direction.Replace("Right", "Left")
                         BouncingColor = ChangeBouncingTextColor()
                     ElseIf ColumnFirstLetter = 1 Then
+                        WdbgConditional(ScreensaverDebug, "I", "We're on the left.")
                         Direction = Direction.Replace("Left", "Right")
                         BouncingColor = ChangeBouncingTextColor()
                     End If

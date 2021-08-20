@@ -29,6 +29,7 @@ Public Module Screensaver
     'Public Variables
     Public LockMode As Boolean = False
     Public InSaver As Boolean = False
+    Public ScreensaverDebug As Boolean
     Public defSaverName As String = "matrix"
     Public CSvrdb As New Dictionary(Of String, ICustomSaver)
     Public WithEvents Timeout As New BackgroundWorker

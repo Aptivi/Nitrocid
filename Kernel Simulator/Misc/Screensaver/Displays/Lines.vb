@@ -42,6 +42,7 @@ Module LinesDisplay
                     SaverAutoReset.Set()
                     Exit Do
                 Else
+                    'Select a color
                     Dim esc As Char = GetEsc()
                     If LinesTrueColor Then
                         Console.BackgroundColor = ConsoleColor.Black
@@ -49,20 +50,26 @@ Module LinesDisplay
                         Dim RedColorNum As Integer = random.Next(255)
                         Dim GreenColorNum As Integer = random.Next(255)
                         Dim BlueColorNum As Integer = random.Next(255)
+                        WdbgConditional(ScreensaverDebug, "I", "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
                         Console.Write(esc + "[38;2;" + ColorStorage.ToString + "m")
                     ElseIf Lines255Colors Then
                         Console.BackgroundColor = ConsoleColor.Black
                         Console.Clear()
                         Dim color As Integer = random.Next(255)
+                        WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", color)
                         Console.Write(esc + "[38;5;" + CStr(color) + "m")
                     Else
                         Console.Clear()
                         Console.BackgroundColor = ConsoleColor.Black
                         Console.ForegroundColor = colors(random.Next(colors.Length - 1))
+                        WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", Console.ForegroundColor)
                     End If
+
+                    'Draw a line
                     Dim Line As String = ""
                     Dim Top As Integer = New Random().Next(Console.WindowHeight)
+                    WdbgConditional(ScreensaverDebug, "I", "Got top position ({0})", Top)
                     For i As Integer = 1 To Console.WindowWidth
                         Line += "-"
                     Next

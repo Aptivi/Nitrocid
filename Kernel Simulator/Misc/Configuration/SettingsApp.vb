@@ -213,7 +213,7 @@ Public Module SettingsApp
                     W("11) " + DoTranslation("Enable RPC") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RPCEnabled)))
                     W("12) " + DoTranslation("RPC Port") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RPCPort)))
                 Case "7" 'Screensaver
-                    MaxOptions = BuiltinSavers + 1 'Screensavers + Keys
+                    MaxOptions = BuiltinSavers + 2 'Screensavers + Keys
                     W("*) " + DoTranslation("Screensaver Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all the screensavers and their available settings.") + vbNewLine, True, ColTypes.Neutral)
 
@@ -250,7 +250,8 @@ Public Module SettingsApp
                     Next
 
                     'Populate general screensaver settings
-                    W("{0}) " + DoTranslation("Screensaver Timeout in ms") + " [{1}]", True, ColTypes.Option, MaxOptions, GetConfigValue(NameOf(ScrnTimeout)))
+                    W("{0}) " + DoTranslation("Screensaver Timeout in ms") + " [{1}]", True, ColTypes.Option, MaxOptions - 1, GetConfigValue(NameOf(ScrnTimeout)))
+                    W("{0}) " + DoTranslation("Enable screensaver debugging") + " [{1}]", True, ColTypes.Option, MaxOptions, GetConfigValue(NameOf(ScreensaverDebug)))
                 Case "7.1" 'Screensaver > ColorMix
                     MaxOptions = 3
                     W("*) " + DoTranslation("Screensaver Settings...") + " > ColorMix" + vbNewLine, True, ColTypes.Neutral)
@@ -524,7 +525,7 @@ Public Module SettingsApp
         Dim SelectFrom As IEnumerable(Of Object)
         Dim SelectionEnumZeroBased As Boolean
         Dim NeutralizePaths As Boolean
-        Dim BuiltinSavers As Integer = 20
+        Dim BuiltinSavers As Integer = 21
 
         While Not KeyFinished
             Console.Clear()
@@ -894,11 +895,16 @@ Public Module SettingsApp
                     End Select
                 Case "7" 'Screensaver
                     Select Case KeyNumber
-                        Case KeyParameters(0) 'Screensaver Timeout in ms
+                        Case BuiltinSavers + 1 'Screensaver Timeout in ms
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(ScrnTimeout)
                             W("*) " + DoTranslation("Screensaver Settings...") + " > " + DoTranslation("Screensaver Timeout in ms") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Write when to launch screensaver after specified milliseconds. It must be numeric."), True, ColTypes.Neutral)
+                        Case BuiltinSavers + 2 'Enable screensaver debugging
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ScreensaverDebug)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > " + DoTranslation("Enable screensaver debugging") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes."), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

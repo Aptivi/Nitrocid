@@ -51,6 +51,8 @@ Module DissolveDisplay
                     Dim EndTop As Integer = Console.WindowHeight - 1
                     Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                     Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+                    WdbgConditional(ScreensaverDebug, "I", "Dissolving: {0}", ColorFilled)
+                    WdbgConditional(ScreensaverDebug, "I", "End left: {0} | End top: {1}", EndLeft, EndTop)
                     If Not ColorFilled Then
                         'NOTICE: Mono seems to have a bug in Console.CursorLeft and Console.CursorTop when printing with VT escape sequences.
                         If Not (Console.CursorLeft = EndLeft And Console.CursorTop = EndTop) Then
@@ -59,23 +61,32 @@ Module DissolveDisplay
                                 Dim RedColorNum As Integer = RandomDriver.Next(255)
                                 Dim GreenColorNum As Integer = RandomDriver.Next(255)
                                 Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                                WdbgConditional(ScreensaverDebug, "I", "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                                 WriteC(" ", False, New Color("0;0;0"), New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"))
                             ElseIf Dissolve255Colors Then
                                 Dim ColorNum As Integer = RandomDriver.Next(255)
+                                WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", ColorNum)
                                 WriteC(" ", False, New Color("0"), New Color(ColorNum))
                             Else
                                 Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                                WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", Console.BackgroundColor)
                                 Console.Write(" ")
                             End If
                         Else
+                            WdbgConditional(ScreensaverDebug, "I", "We're now dissolving... L: {0} = {1} | T: {2} = {3}", Console.CursorLeft, EndLeft, Console.CursorTop, EndTop)
                             ColorFilled = True
                         End If
                     Else
-                        If Not CoveredPositions.Contains(Left & " - " & Top) Then CoveredPositions.Add(Left & " - " & Top)
+                        If Not CoveredPositions.Contains(Left & " - " & Top) Then
+                            WdbgConditional(ScreensaverDebug, "I", "Covered position {0}", Left & " - " & Top)
+                            CoveredPositions.Add(Left & " - " & Top)
+                            WdbgConditional(ScreensaverDebug, "I", "Covered positions: {0}/{1}", CoveredPositions.Count, (EndLeft + 1) * (EndTop + 1))
+                        End If
                         Console.SetCursorPosition(Left, Top)
                         Console.BackgroundColor = ConsoleColor.Black
                         Console.Write(" ")
                         If CoveredPositions.Count = (EndLeft + 1) * (EndTop + 1) Then
+                            WdbgConditional(ScreensaverDebug, "I", "We're refilling...")
                             ColorFilled = False
                             Console.BackgroundColor = ConsoleColor.Black
                             Console.Clear()
