@@ -300,6 +300,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Shell\HelpInfo.vb" />
     <Compile Include="Shell\HelpSystem.vb" />
     <Compile Include="Shell\Shell.vb" />
     <Compile Include="TestShell\TestGetCommand.vb" />
