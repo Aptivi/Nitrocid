@@ -49,6 +49,8 @@ Module BouncingTextDisplay
                     SaverAutoReset.Set()
                     Exit Do
                 Else
+                    'Define the color
+#Disable Warning BC42104
                     WdbgConditional(ScreensaverDebug, "I", "Row text: {0}", RowText)
                     WdbgConditional(ScreensaverDebug, "I", "Column first letter of text: {0}", ColumnFirstLetter)
                     WdbgConditional(ScreensaverDebug, "I", "Column last letter of text: {0}", ColumnLastLetter)
@@ -58,7 +60,9 @@ Module BouncingTextDisplay
                         BouncingColor = ChangeBouncingTextColor()
                     End If
                     WriteWhereC(BouncingTextWrite, ColumnFirstLetter, RowText, True, BouncingColor)
+#Enable Warning BC42104
 
+                    'Change the direction of text
                     WdbgConditional(ScreensaverDebug, "I", "Text is facing {0}.", Direction)
                     If Direction = "BottomRight" Then
                         WdbgConditional(ScreensaverDebug, "I", "Increasing row and column text position")
@@ -82,6 +86,7 @@ Module BouncingTextDisplay
                         ColumnLastLetter -= 1
                     End If
 
+                    'Check to see if the text is on the edge
                     If RowText = Console.WindowHeight - 2 Then
                         WdbgConditional(ScreensaverDebug, "I", "We're on the bottom.")
                         Direction = Direction.Replace("Bottom", "Top")
