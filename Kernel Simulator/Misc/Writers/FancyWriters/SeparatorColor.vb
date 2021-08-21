@@ -29,7 +29,8 @@ Public Module SeparatorColor
         'Print the suffix and the text
         If Not String.IsNullOrWhiteSpace(Text) Then
             If PrintSuffix Then Text = "- " + Text
-            W(Text.Truncate(Console.WindowWidth - 6) + " ", False, ColTypes, Vars)
+            If Not Text.EndsWith("-") Then Text += " "
+            W(Text.Truncate(Console.WindowWidth - 6), False, ColTypes, Vars)
         End If
 
         'See how many times to repeat the closing minus sign. We could be running this in the wrap command.
@@ -61,7 +62,8 @@ Public Module SeparatorColor
         'Print the suffix and the text
         If Not String.IsNullOrWhiteSpace(Text) Then
             If PrintSuffix Then Text = "- " + Text
-            WriteC16(Text.Truncate(Console.WindowWidth - 6) + " ", False, Color, Vars)
+            If Not Text.EndsWith("-") Then Text += " "
+            WriteC16(Text.Truncate(Console.WindowWidth - 6), False, Color, Vars)
         End If
 
         'See how many times to repeat the closing minus sign. We could be running this in the wrap command.
@@ -94,7 +96,8 @@ Public Module SeparatorColor
         'Print the suffix and the text
         If Not String.IsNullOrWhiteSpace(Text) Then
             If PrintSuffix Then Text = "- " + Text
-            WriteC16(Text.Truncate(Console.WindowWidth - 6) + " ", False, ForegroundColor, BackgroundColor, Vars)
+            If Not Text.EndsWith("-") Then Text += " "
+            WriteC16(Text.Truncate(Console.WindowWidth - 6), False, ForegroundColor, BackgroundColor, Vars)
         End If
 
         'See how many times to repeat the closing minus sign. We could be running this in the wrap command.
@@ -126,7 +129,8 @@ Public Module SeparatorColor
         'Print the suffix and the text
         If Not String.IsNullOrWhiteSpace(Text) Then
             If PrintSuffix Then Text = "- " + Text
-            WriteC(Text.Truncate(Console.WindowWidth - 6) + " ", False, Color, Vars)
+            If Not Text.EndsWith("-") Then Text += " "
+            WriteC(Text.Truncate(Console.WindowWidth - 6), False, Color, Vars)
         End If
 
         'See how many times to repeat the closing minus sign. We could be running this in the wrap command.
@@ -159,7 +163,8 @@ Public Module SeparatorColor
         'Print the suffix and the text
         If Not String.IsNullOrWhiteSpace(Text) Then
             If PrintSuffix Then Text = "- " + Text
-            WriteC(Text.Truncate(Console.WindowWidth - 6) + " ", False, ForegroundColor, BackgroundColor, Vars)
+            If Not Text.EndsWith("-") Then Text += " "
+            WriteC(Text.Truncate(Console.WindowWidth - 6), False, ForegroundColor, BackgroundColor, Vars)
         End If
 
         'See how many times to repeat the closing minus sign. We could be running this in the wrap command.
