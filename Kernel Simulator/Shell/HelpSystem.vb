@@ -138,8 +138,8 @@ Public Module HelpSystem
                 Case "modinfo"
                     W(DoTranslation("Usage:") + " modinfo <mod>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "modman"
-                    W(DoTranslation("Usage:") + " modman <start/stop/info/reload> <modfilename> " +
-                      " ".Repeat(UsageLength) + " " + " modman <list/reloadall/stopall/startall>: " + HelpDefinition, True, ColTypes.Neutral)
+                    W(DoTranslation("Usage:") + " modman <start/stop/info/reload> <modfilename> " + vbNewLine +
+                      " ".Repeat(UsageLength) + " modman <list/reloadall/stopall/startall>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "move"
                     W(DoTranslation("Usage:") + " move <source> <target>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "netinfo"
