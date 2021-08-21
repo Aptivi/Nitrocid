@@ -1427,6 +1427,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Kullanılabilir komutlar: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Komut yaz:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Komut enjeksiyonu iptal edildi.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Önyükleme bağımsız değişkenlerini boşluksuz virgülle ayırın, örneğin, &apos;motd,gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;&apos;cmdinject&apos; üzerinde boşluk içeren [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property tky() As String
+            Get
+                Return ResourceManager.GetString("tky", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;10&quot;,
         '''    &quot;LicenseColor&quot;: &quot;10&quot;,
         '''    &quot;ContKernelErrorColor&quot;: &quot;226&quot;,

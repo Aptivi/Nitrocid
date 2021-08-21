@@ -65,6 +65,7 @@ Public Module Translate
                                                                                {"srb", New LanguageInfo("srb", "Serbian", True)}, {"srb-T", New LanguageInfo("srb-T", "Serbian", True)},
                                                                                {"swa", New LanguageInfo("swa", "Swahili", False)}, 'Don't use Kiswahili here. "Swahili" is saner than "Kiswahili".
                                                                                {"swe", New LanguageInfo("swe", "Swedish", False)},
+                                                                               {"tky", New LanguageInfo("tky", "Turkish", False)},
                                                                                {"uzb", New LanguageInfo("uzb", "Uzbek", False)},
                                                                                {"vtn", New LanguageInfo("vtn", "Vietnamese", False)},
                                                                                {"wls", New LanguageInfo("wls", "Welsh", False)},

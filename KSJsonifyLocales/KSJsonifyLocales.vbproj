@@ -272,6 +272,9 @@
     <Content Include="Translations\swe.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Translations\tky.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Translations\uzb.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
