@@ -62,19 +62,23 @@ Public Module SSH
             W("1) " + DoTranslation("Private key file"), True, ColTypes.Option)
             W("2) " + DoTranslation("Password") + vbNewLine, True, ColTypes.Option)
             W(">> ", False, ColTypes.Input)
-            Answer = Val(Console.ReadKey(True).KeyChar)
-            Console.WriteLine()
-
-            'Check for answer
-            Select Case Answer
-                Case 1, 2
-                    Exit While
-                Case Else
-                    Wdbg("W", "Option is not valid. Returning...")
-                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, Answer)
-                    W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
-                    Console.ReadKey()
-            End Select
+            If Integer.TryParse(Console.ReadLine, Answer) Then
+                'Check for answer
+                Select Case Answer
+                    Case 1, 2
+                        Exit While
+                    Case Else
+                        Wdbg("W", "Option is not valid. Returning...")
+                        W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, Answer)
+                        W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                        Console.ReadKey()
+                End Select
+            Else
+                Wdbg("W", "Answer is not numeric.")
+                W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                Console.ReadKey()
+            End If
         End While
 
         Select Case Answer

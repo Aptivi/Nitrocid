@@ -439,18 +439,23 @@ Public Module UserManagement
             W("1) " + DoTranslation("Administrator: This account type has the most power in the kernel, allowing you to use system management programs."), True, ColTypes.Option)
             W("2) " + DoTranslation("Normal User: This account type is slightly more restricted than administrators."), True, ColTypes.Option)
             W(vbNewLine + ">> ", False, ColTypes.Input)
-            AnswerType = Val(Console.ReadKey(True).KeyChar)
-            Console.WriteLine()
-            Wdbg("I", "Answer: {0}", AnswerType)
-            Select Case AnswerType
-                Case 1, 2
-                    [Step] += 1
-                Case Else '???
-                    Wdbg("W", "Option is not valid. Returning...")
-                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerType)
-                    W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
-                    Console.ReadKey()
-            End Select
+            If Integer.TryParse(Console.ReadLine, AnswerType) Then
+                Wdbg("I", "Answer: {0}", AnswerType)
+                Select Case AnswerType
+                    Case 1, 2
+                        [Step] += 1
+                    Case Else '???
+                        Wdbg("W", "Option is not valid. Returning...")
+                        W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerType)
+                        W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                        Console.ReadKey()
+                End Select
+            Else
+                Wdbg("W", "Answer is not numeric.")
+                W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                Console.ReadKey()
+            End If
         End While
 
         'Finally, create an account

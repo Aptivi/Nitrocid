@@ -34,18 +34,23 @@ Module ReportBugPrompt
             W("2) " + DoTranslation("A feature request"), True, ColTypes.Option)
             W("3) " + DoTranslation("A question") + vbNewLine, True, ColTypes.Option)
             W(">> ", False, ColTypes.Input)
-            AnswerKind = Val(Console.ReadKey(True).KeyChar)
-            Console.WriteLine()
-            Wdbg("I", "Answer: {0}", AnswerKind)
-            Select Case AnswerKind
-                Case 1, 2, 3
-                    [Step] += 1
-                Case Else '???
-                    Wdbg("W", "Option is not valid. Returning...")
-                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerKind)
-                    W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
-                    Console.ReadKey()
-            End Select
+            If Integer.TryParse(Console.ReadLine, AnswerKind) Then
+                Wdbg("I", "Answer: {0}", AnswerKind)
+                Select Case AnswerKind
+                    Case 1, 2, 3
+                        [Step] += 1
+                    Case Else '???
+                        Wdbg("W", "Option is not valid. Returning...")
+                        W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerKind)
+                        W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                        Console.ReadKey()
+                End Select
+            Else
+                Wdbg("W", "Answer is not numeric.")
+                W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                Console.ReadKey()
+            End If
         End While
 
         'Second, type what feature you need to raise a ticket on

@@ -151,17 +151,23 @@ Public Module Translate
                         W(DoTranslation("The language you've selected contains two variants. Select one:") + vbNewLine, True, ColTypes.Neutral)
                         W(DoTranslation("1. Transliterated", lang), True, ColTypes.Neutral)
                         W(DoTranslation("2. Translated", lang + "-T") + vbNewLine, True, ColTypes.Neutral)
-CHOICE:
-                        W(DoTranslation("Select your choice:"), False, ColTypes.Input)
-                        Dim cho As String = Console.ReadKey(True).KeyChar
-                        Console.WriteLine()
-                        Wdbg("I", "Choice: {0}", cho)
-                        If cho = "2" Then
-                            lang += "-T"
-                        ElseIf Not cho = "1" Then
-                            W(DoTranslation("Invalid choice. Try again."), True, ColTypes.Error)
-                            GoTo CHOICE
-                        End If
+                        Dim LanguageSet As Boolean
+                        While Not LanguageSet
+                            W(DoTranslation("Select your choice:") + " ", False, ColTypes.Input)
+                            Dim Answer As Integer
+                            If Integer.TryParse(Console.ReadLine, Answer) Then
+                                Wdbg("I", "Choice: {0}", Answer)
+                                Select Case Answer
+                                    Case 1, 2
+                                        If Answer = 2 Then lang += "-T"
+                                        LanguageSet = True
+                                    Case Else
+                                        W(DoTranslation("Invalid choice. Try again."), True, ColTypes.Error)
+                                End Select
+                            Else
+                                W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                            End If
+                        End While
                     End If
                 End If
             End If
