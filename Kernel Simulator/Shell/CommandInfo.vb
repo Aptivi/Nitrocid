@@ -89,7 +89,7 @@ Public Class CommandInfo
     ''' Gets the translated version of help entry (KS built-in commands only)
     ''' </summary>
     ''' <returns></returns>
-    Public Function GetTranslatedHelpEntry()
+    Public Function GetTranslatedHelpEntry() As String
         Return DoTranslation(HelpDefinition)
     End Function
 
