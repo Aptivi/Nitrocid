@@ -96,7 +96,9 @@ Public Class Events
     Public Event TextPostExecuteCommand(ByVal Command As String)
     Public Event TextCommandError(ByVal Command As String, ByVal Exception As Exception)
     Public Event NotificationSent(ByVal Notification As Notification)
+    Public Event NotificationsSent(ByVal Notifications As List(Of Notification))
     Public Event NotificationReceived(ByVal Notification As Notification)
+    Public Event NotificationsReceived(ByVal Notifications As List(Of Notification))
     Public Event NotificationDismissed()
     Public Event ConfigSaved()
     Public Event ConfigSaveError(ByVal Exception As Exception)
@@ -909,6 +911,17 @@ Public Class Events
         Next
     End Sub
     ''' <summary>
+    ''' Makes the mod respond to the event of notifications being sent
+    ''' </summary>
+    Public Sub RespondNotificationsSent(ByVal Notifications As List(Of Notification)) Handles Me.NotificationsSent
+        For Each ModPart As ModInfo In scripts.Values
+            For Each script As IScript In ModPart.ModParts.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event NotificationsSent()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("NotificationsSent", Notifications)
+            Next
+        Next
+    End Sub
+    ''' <summary>
     ''' Makes the mod respond to the event of notification being received
     ''' </summary>
     Public Sub RespondNotificationReceived(ByVal Notification As Notification) Handles Me.NotificationReceived
@@ -916,6 +929,17 @@ Public Class Events
             For Each script As IScript In ModPart.ModParts.Values
                 Wdbg("I", "{0} in mod {1} v{2} responded to event NotificationReceived()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("NotificationReceived", Notification)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of notifications being received
+    ''' </summary>
+    Public Sub RespondNotificationsReceived(ByVal Notifications As List(Of Notification)) Handles Me.NotificationsReceived
+        For Each ModPart As ModInfo In scripts.Values
+            For Each script As IScript In ModPart.ModParts.Values
+                Wdbg("I", "{0} in mod {1} v{2} responded to event NotificationsReceived()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("NotificationsReceived", Notifications)
             Next
         Next
     End Sub
@@ -1922,12 +1946,28 @@ Public Class Events
         RaiseEvent NotificationSent(Notification)
     End Sub
     ''' <summary>
+    ''' Raise an event of notifications being sent
+    ''' </summary>
+    Public Sub RaiseNotificationsSent(ByVal Notifications As List(Of Notification))
+        Wdbg("I", "Raising event NotificationsSent() and responding in RespondNotificationsSent()...")
+        FiredEvents.Add("NotificationsSent (" + CStr(FiredEvents.Count) + ")", {Notifications})
+        RaiseEvent NotificationsSent(Notifications)
+    End Sub
+    ''' <summary>
     ''' Raise an event of notification being received
     ''' </summary>
     Public Sub RaiseNotificationReceived(ByVal Notification As Notification)
         Wdbg("I", "Raising event NotificationReceived() and responding in RespondNotificationReceived()...")
         FiredEvents.Add("NotificationReceived (" + CStr(FiredEvents.Count) + ")", {Notification})
         RaiseEvent NotificationReceived(Notification)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of notifications being received
+    ''' </summary>
+    Public Sub RaiseNotificationsReceived(ByVal Notifications As List(Of Notification))
+        Wdbg("I", "Raising event NotificationsReceived() and responding in RespondNotificationsReceived()...")
+        FiredEvents.Add("NotificationsReceived (" + CStr(FiredEvents.Count) + ")", {Notifications})
+        RaiseEvent NotificationsReceived(Notifications)
     End Sub
     ''' <summary>
     ''' Raise an event of notification being dismissed

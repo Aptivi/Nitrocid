@@ -28,11 +28,23 @@ Imports KS
     End Sub
 
     ''' <summary>
-    ''' Tests notifications sending
+    ''' Tests notification sending
     ''' </summary>
     <TestMethod> Public Sub TestNotifySend()
         Dim Notif As Notification = NotifyCreate("Notification title", "This is a high priority notification", NotifPriority.High, NotifType.Normal)
         NotifySend(Notif)
+        NotifRecents.ShouldNotBeEmpty
+    End Sub
+
+    ''' <summary>
+    ''' Tests notifications sending
+    ''' </summary>
+    <TestMethod> Public Sub TestNotifySendRange()
+        Dim Notif1 As Notification = NotifyCreate("High notification title", "This is a high priority notification", NotifPriority.High, NotifType.Normal)
+        Dim Notif2 As Notification = NotifyCreate("Medium notification title", "This is a medium priority notification", NotifPriority.Medium, NotifType.Normal)
+        Dim Notif3 As Notification = NotifyCreate("Low notification title", "This is a low priority notification", NotifPriority.Low, NotifType.Normal)
+        Dim Notifs As New List(Of Notification) From {Notif1, Notif2, Notif3}
+        NotifySendRange(Notifs)
         NotifRecents.ShouldNotBeEmpty
     End Sub
 

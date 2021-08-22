@@ -114,6 +114,7 @@ Public Module Notifications
                 'Update the old notifications list
                 Wdbg("W", "Notifications received! Recents count was {0}, Old count was {1}", NotifRecents.Count, OldNotificationsList.Count)
                 OldNotificationsList = New List(Of Notification)(NotifRecents)
+                EventManager.RaiseNotificationsReceived(NewNotificationsList)
 
                 'Iterate through new notifications
                 For Each NewNotification As Notification In NewNotificationsList
@@ -200,6 +201,17 @@ Public Module Notifications
             NotifRecents.Add(notif)
             EventManager.RaiseNotificationSent(notif)
         End If
+    End Sub
+
+    ''' <summary>
+    ''' Sends notifications
+    ''' </summary>
+    ''' <param name="notifs">Instances of notification holder</param>
+    Public Sub NotifySendRange(ByVal notifs As List(Of Notification))
+        For Each notif As Notification In notifs
+            NotifySend(notif)
+        Next
+        EventManager.RaiseNotificationsSent(notifs)
     End Sub
 
     ''' <summary>
