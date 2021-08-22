@@ -192,7 +192,6 @@ Public Module DebugWriters
             End If
         Catch ex As Exception
             WStkTrc(ex)
-            Exit Sub
         End Try
     End Sub
 
