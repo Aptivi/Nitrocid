@@ -64,13 +64,16 @@ Public Module Kernel
 
                 'Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
 #If SPECIFIER <> "DEV" And SPECIFIER <> "RC" Then
-                If Not IO.File.Exists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
-                    Dim pdbdown As New WebClient
-                    Try
-                        pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/raw/archive/dbgsyms/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
-                    Catch ex As Exception
-                        NotifyDebugDownloadError = True
-                    End Try
+                NotifyDebugDownloadNetworkUnavailable = Not NetworkAvailable
+                If NetworkAvailable Then
+                    If Not File.Exists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
+                        Dim pdbdown As New WebClient
+                        Try
+                            pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/raw/archive/dbgsyms/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
+                        Catch ex As Exception
+                            NotifyDebugDownloadError = True
+                        End Try
+                    End If
                 End If
 #End If
 
@@ -146,6 +149,12 @@ Public Module Kernel
                     NotifyDebugDownloadError = False
                     NotifySend(New Notification With {.Title = DoTranslation("Error downloading debug data"),
                                                       .Desc = DoTranslation("There is an error while downloading debug data. Check your internet connection."),
+                                                      .Priority = NotifPriority.Medium})
+                End If
+                If NotifyDebugDownloadNetworkUnavailable Then
+                    NotifyDebugDownloadNetworkUnavailable = False
+                    NotifySend(New Notification With {.Title = DoTranslation("No network while downloading debug data"),
+                                                      .Desc = DoTranslation("Check your internet connection and try again."),
                                                       .Priority = NotifPriority.Medium})
                 End If
 

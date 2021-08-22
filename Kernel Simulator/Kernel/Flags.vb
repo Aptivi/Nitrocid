@@ -174,6 +174,10 @@ Public Module Flags
     ''' </summary>
     Friend NotifyDebugDownloadError As Boolean
     ''' <summary>
+    ''' Notifies user as soon as the kernel finished booting if netwokr is not available while downloading debugging data.
+    ''' </summary>
+    Friend NotifyDebugDownloadNetworkUnavailable As Boolean
+    ''' <summary>
     ''' When the command cancel is requested
     ''' </summary>
     Friend CancelRequested As Boolean

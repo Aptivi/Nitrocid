@@ -42,6 +42,15 @@ Public Module NetworkTools
     End Enum
 
     ''' <summary>
+    ''' Checks to see if the network is available
+    ''' </summary>
+    Public ReadOnly Property NetworkAvailable As Boolean
+        Get
+            Return NetworkInterface.GetIsNetworkAvailable()
+        End Get
+    End Property
+
+    ''' <summary>
     ''' Print each of adapters' properties to the console.
     ''' </summary>
     Public Sub PrintAdapterProperties()
