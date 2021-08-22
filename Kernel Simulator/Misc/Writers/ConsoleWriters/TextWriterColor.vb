@@ -96,7 +96,7 @@ Public Module TextWriterColor
                 If colorType = ColTypes.Input And ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
                 End If
-            Catch ex As Exception
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
@@ -141,7 +141,7 @@ Public Module TextWriterColor
                 If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
                 End If
-            Catch ex As Exception
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
@@ -187,7 +187,7 @@ Public Module TextWriterColor
                 If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
                 End If
-            Catch ex As Exception
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
@@ -234,7 +234,7 @@ Public Module TextWriterColor
                 If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
                 End If
-            Catch ex As Exception
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
@@ -282,7 +282,7 @@ Public Module TextWriterColor
                 If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
                     SetInputColor()
                 End If
-            Catch ex As Exception
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
