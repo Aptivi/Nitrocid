@@ -1129,3 +1129,39 @@ Ngaktifake dhukungan warna sejatine kanggo BeatFader.
 BeatFader bakal milih warna acak yen diaktifake. Yen ora, gunakake warna saka config.
 Spanduk Startup Khusus
 Yen ditemtokake, bakal nampilake spanduk wiwitan sing disesuaikan kanthi dhukungan placeholder. Sampeyan bisa nggunakake ukara iki kanggo versi kernel:
+Download folder remot menyang direktori lokal nggunakake binar utawa teks
+Ngunggah folder lokal menyang direktori remot nggunakake binar utawa teks
+Ketik folder kanggo didownload menyang direktori lokal.
+Ngundhuh folder {0} ...
+Folder sing didownload {0}.
+Download gagal kanggo folder {0}.
+Ngunggah folder {0} ...
+Folder sing diunggah {0}
+Ketik folder kanggo ngunggah menyang direktori adoh.
+Pencet "c" kanggo nulis kode warna lengkap.
+Ketik kode warna sing memenuhi format iki:
+Nyilikake file JSON
+Penundaan Layar Anyar ing Milidetik
+Cacah Kolom
+Ambang Isi Line
+Kemungkinan Isi Casing Line ing persen
+Jinis Isi Line
+Pira milidetik sing kudu ditunggu sadurunge nulis teks ing layar anyar maneh?
+Kolom teks sing bakal dicithak.
+Pira karakter sing kudu ditulis sadurunge nyebabake "isi baris"?
+Kamungkinan pola Isi baris bakal dicithak ing kabeh tutup persen
+Tipe pola isi baris
+Pola Umum
+Pola Lengkap
+Pola Random
+Wangsulane bisa uga nol.
+Jawaban iki bisa uga ora ngluwihi entri sing ditampilake.
+Simpen Pangowahan ...
+Screensaver iki ndhukung teks ditulis ing file. Liwati path file lengkap menyang lapangan iki, lan screensaver bakal nampilake konten file kanthi cocog.
+Atur mod sampeyan
+Manajemen mod dipateni ing mode aman.
+Prentah ora valid {0}. Priksa panggunaan ing ngisor iki:
+Mod ora ditemokake utawa file ora duwe karakter sing ora valid.
+Kemungkinan saka kantun persen
+Aktifake debugging screensaver
+Ngaktifake debugging kanggo screensaver. Elinga yen bisa cepet ngisi log debug lan alon-alon layar mudhun, gumantung karo screensaver sing digunakake. Mung bisa digunakake yen debug kernel diaktifake kanggo tujuan diagnostik.

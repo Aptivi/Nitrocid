@@ -1129,3 +1129,39 @@ BeatFader için gerçek renk desteğini etkinleştirir.
 Etkinleştirilmişse, BeatFader rastgele renkler seçecektir. Aksi takdirde, yapılandırmadaki renkleri kullanın.
 Özel Başlangıç ​​Banner'ı
 Belirtilirse, yer tutucu desteğiyle özelleştirilmiş başlangıç ​​başlığını görüntüler. Bu ifadeyi çekirdek sürümü için kullanabilirsiniz:
+İkili veya metin kullanarak uzak klasörü yerel dizine indirir
+İkili veya metin kullanarak yerel klasörü uzak dizine yükler
+Yerel dizine indirmek için bir klasör girin.
+{0} klasörü indiriliyor...
+İndirilen klasör {0}.
+{0} klasörü için indirme başarısız oldu.
+{0} klasörü yükleniyor...
+Yüklenen klasör {0}
+Uzak dizine yüklemek için bir klasör girin.
+Tam renkli kod yazmak için "c" tuşuna basın.
+Bu biçimleri karşılayan renk kodunu girin:
+JSON dosyasını küçültür
+Milisaniye cinsinden Yeni Ekran Gecikmesi
+Sütun Sayısı
+Satır Doldurma Eşiği
+Yüzde olarak Satır Doldurma Sınırlama Olasılığı
+Satır Doldurma Türü
+Metni yeni ekrana tekrar yazmadan önce kaç milisaniye beklenmeli?
+Yazdırılacak metin sütunları.
+"Satır doldurmayı" tetiklemeden önce kaç karakter yazılmalı?
+Satır doldurma deseninin yüzde olarak tüm büyük harflerle yazdırılma imkanı
+Çizgi dolgu deseni türü
+Ortak Desen
+Komple Desen
+Rastgele Desen
+Cevap sıfır olmayabilir.
+Cevap gösterilen girişleri aşamaz.
+Değişiklikleri Kaydet...
+Bu ekran koruyucu, dosyada yazılı metni destekler. Tam dosya yolunu bu alana iletin, ekran koruyucu dosyanın içeriğini uygun şekilde gösterecektir.
+Modlarınızı yönetin
+Güvenli modda mod yönetimi devre dışı bırakılır.
+Geçersiz komut {0}. Aşağıdaki kullanımı kontrol edin:
+Mod bulunamadı veya dosyada geçersiz karakterler var.
+Yüzde olarak kaçırma olasılığı
+Ekran koruyucu hata ayıklamasını etkinleştir
+Ekran koruyucular için hata ayıklamayı etkinleştirir. Lütfen, kullanılan ekran koruyucuya bağlı olarak hata ayıklama günlüğünü hızla doldurabileceğini ve ekran koruyucuyu biraz yavaşlatabileceğini unutmayın. Yalnızca, tanılama amacıyla çekirdek hata ayıklaması etkinleştirildiyse çalışır.

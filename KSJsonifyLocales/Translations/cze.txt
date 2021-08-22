@@ -1129,3 +1129,39 @@ Aktivuje podporu skutečných barev pro BeatFader.
 BeatFader vybere náhodné barvy, pokud je povolen. Jinak použijte barvy z config.
 Vlastní banner pro spuštění
 Pokud je zadán, zobrazí přizpůsobený spouštěcí banner s podporou zástupného symbolu. Pro verzi jádra můžete použít tuto frázi:
+Stahuje vzdálenou složku do místního adresáře pomocí binárního souboru nebo textu
+Odesílá místní složku do vzdáleného adresáře pomocí binárního souboru nebo textu
+Zadejte složku, kterou chcete stáhnout do místního adresáře.
+Stahování složky {0} ...
+Stažená složka {0}.
+Stahování složky {0} se nezdařilo.
+Nahrávání složky {0} ...
+Nahraná složka {0}
+Zadejte složku, kterou chcete nahrát do vzdáleného adresáře.
+Stisknutím „c“ zapíšete barevný kód.
+Zadejte kód barvy, který odpovídá těmto formátům:
+Minimalizuje soubor JSON
+Nové zpoždění obrazovky v milisekundách
+Počet sloupců
+Práh naplnění řádku
+Pravděpodobnost uzavření řádkové výplně v procentech
+Typ výplně řádku
+Kolik milisekund počkat, než znovu napíšete text na novou obrazovku?
+Sloupce textu, které se mají vytisknout.
+Kolik znaků napsat před spuštěním „vyplnění řádku“?
+Možnost, že vzor výplně čáry bude vytištěn všemi velkými písmeny v procentech
+Typ vzoru čáry
+Společný vzor
+Kompletní vzor
+Náhodný vzor
+Odpověď nemusí být nulová.
+Odpověď nesmí překročit zobrazené položky.
+Uložit změny...
+Tento spořič obrazovky podporuje psaný text v souboru. Do tohoto pole předejte úplnou cestu k souboru a spořič obrazovky odpovídajícím způsobem zobrazí obsah souboru.
+Spravujte své mody
+Správa režimu je v nouzovém režimu zakázána.
+Neplatný příkaz {0}. Zkontrolujte použití níže:
+Mod nebyl nalezen nebo soubor obsahuje neplatné znaky.
+Pravděpodobnost chyby v procentech
+Povolit ladění spořiče obrazovky
+Umožňuje ladění pro spořiče obrazovky. Vezměte prosím na vědomí, že může rychle zaplnit protokol ladění a mírně zpomalit spořič obrazovky, v závislosti na použitém spořiči obrazovky. Funguje pouze v případě, že je pro diagnostické účely povoleno ladění jádra.

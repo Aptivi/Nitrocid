@@ -1129,3 +1129,39 @@ Pinapagana ang totoong suporta sa kulay para sa BeatFader.
 Pipili ang BeatFader ng mga random na kulay kung pinagana ito. Kung hindi man, gumamit ng mga kulay mula sa config.
 Pasadyang Startup Banner
 Kung tinukoy, ipapakita nito ang na-customize na startup banner na may suporta ng placeholder. Maaari mong gamitin ang pariralang ito para sa bersyon ng kernel:
+Nagda-download ng remote folder sa lokal na direktoryo gamit ang binary o teksto
+Nag-upload ng lokal na folder sa remote na direktoryo gamit ang binary o teksto
+Magpasok ng isang folder upang mai-download sa lokal na direktoryo.
+Nagda-download ng folder na {0} ...
+Na-download na folder na {0}.
+Nabigo ang pag-download para sa folder na {0}.
+Ina-upload ang folder na {0} ...
+Na-upload na folder {0}
+Magpasok ng isang folder upang mai-upload sa remote na direktoryo.
+Pindutin ang "c" upang isulat ang buong code ng kulay.
+Ipasok ang color code na nagbibigay-kasiyahan sa mga format na ito:
+Minimize ang JSON file
+Bagong Pag-antala sa Screen sa Milliseconds
+Bilang ng Haligi
+Line Fill Threshold
+Line Fill Capping Probability sa porsyento
+Uri ng Punan ng Linya
+Ilang milliseconds ang maghihintay bago isulat muli ang teksto sa bagong screen?
+Ang mga haligi ng teksto upang mai-print.
+Gaano karaming mga character na isulat bago mag-trigger ang "linya punan"?
+Posibilidad na ang pattern ng pagpuno ng linya ay mai-print sa lahat ng mga takip sa porsyento
+Uri ng pattern na punan ang linya
+Karaniwang Huwaran
+Kumpletong Huwaran
+Random na pattern
+Ang sagot ay maaaring hindi zero.
+Ang sagot ay maaaring hindi lumagpas sa ipinakitang mga entry.
+I-save ang mga pagbabago...
+Sinusuportahan ng screensaver na ito ang nakasulat na teksto sa file. Ipasa ang kumpletong landas ng file sa patlang na ito, at ipapakita ng screensaver nang naaangkop ang mga nilalaman ng file.
+Pamahalaan ang iyong mga mod
+Ang pamamahala ng mod ay hindi pinagana sa ligtas na mode.
+Di-wastong utos {0}. Suriin ang paggamit sa ibaba:
+Hindi nahanap ang mod o may hindi wastong mga character ang file.
+Ang posibilidad ng miss sa porsyento
+Paganahin ang pag-debug ng screensaver
+Pinapagana ang pag-debug para sa mga screensaver. Mangyaring tandaan na maaari nitong mabilis na punan ang log ng pag-debug at bahagyang mapabagal ang screensaver, depende sa ginamit na screensaver. Gumagana lamang kung pinagana ang pag-debug ng kernel para sa mga layuning diagnostic.

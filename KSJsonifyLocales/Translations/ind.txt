@@ -1129,3 +1129,39 @@ baiatfadair ke lie troo kalar saport sakriy karata hai.
 yadi yah saksham hai to beetaphaidar yaadrchchhik rangon ka chayan karega. anyatha, chonfig se rangon ka upayog karen.
 kastam staartap bainar
 yadi nirdisht kiya gaya hai, to yah plesaholdar samarthan ke saath anukoolit staartap bainar pradarshit karega. aap karnel sanskaran ke lie is vaakyaansh ka upayog kar sakate hain:
+bainaree ya tekst ka upayog karake doorasth foldar ko sthaaneey nirdeshika mein daunalod karata hai
+bainaree ya tekst ka upayog karake sthaaneey foldar ko doorasth nirdeshika mein apalod karata hai
+sthaaneey nirdeshika mein daunalod karane ke lie ek foldar darj karen.
+foldar daunalod ho raha hai {0}...
+daunalod kiya gaya foldar {0}.
+foldar {0} ke lie daunalod viphal raha.
+foldar apalod ho raha hai {0}...
+apalod kiya gaya foldar {0}
+doorasth nirdeshika mein apalod karane ke lie ek foldar darj karen.
+poorn rang kod likhane ke lie "ch" dabaen.
+rang kod darj karen jo in praaroopon ko santusht karata hai:
+json fail ko chhota karata hai
+mileesekand mein naya skreen vilamb
+kolam ganana
+lain bharan dahaleej
+lain phil kaiping praayikata pratishat mein
+lain bharan prakaar
+naee skreen mein tekst ko dobaara likhane se pahale kitane mileesekand prateeksha karen?
+mudrit kie jaane vaale tekst kolam.
+"lain phil" ko trigar karane se pahale kitane akshar likhane hain?
+sambhaavana hai ki lain bharan paitarn sabhee kaips mein pratishat mein mudrit kiya jaega
+lain bharan paitarn prakaar
+saamaany paitarn
+poora paitarn
+yaadrchchhik paitarn
+uttar shoony nahin ho sakata.
+uttar dikhaee gaee pravishtiyon se adhik nahin ho sakata hai.
+parivartanon ko surakshit karen...
+yah skreenasevar fail par likhit paath ka samarthan karata hai. is feeld mein poora fail path paas karen, aur skreenasevar fail kee saamagree ko uchit roop se pradarshit karega.
+apane mod prabandhit karen
+mod prabandhan surakshit mod mein aksham hai.
+amaany aadesh {0}. neeche upayog kee jaanch karen:
+mod nahin mila ya fail mein amaany varn hain.
+pratishat mein chhootane kee praayikata
+skreenasevar dibaging saksham karen
+skreenasevar ke lie dibaging saksham karata hai. krpaya dhyaan den ki yah upayog kie gae skreenasevar ke aadhaar par deebag log ko jaldee se bhar sakata hai aur skreenasevar ko thoda dheema kar sakata hai. keval tabhee kaam karata hai jab naidaanik ​​uddeshyon ke lie karnel dibaging saksham ho.

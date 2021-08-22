@@ -1129,3 +1129,39 @@ Ativa o suporte true color para BeatFader.
 O BeatFader selecionará cores aleatórias se estiver habilitado. Caso contrário, use as cores da configuração.
 Banner de inicialização personalizado
 Se especificado, ele exibirá um banner de inicialização personalizado com suporte para espaço reservado. Você pode usar esta frase para a versão do kernel:
+Faz o download da pasta remota para o diretório local usando binário ou texto
+Carrega pasta local para diretório remoto usando binário ou texto
+Insira uma pasta para baixar no diretório local.
+Baixando pasta {0} ...
+Pasta baixada {0}.
+O download falhou para a pasta {0}.
+Fazendo upload da pasta {0} ...
+Pasta enviada {0}
+Insira uma pasta para carregar no diretório remoto.
+Pressione "c" para escrever o código de cores completo.
+Insira um código de cor que atenda a estes formatos:
+Minimiza o arquivo JSON
+Novo atraso de tela em milissegundos
+Contagem de Colunas
+Limite de preenchimento de linha
+Probabilidade de limite de preenchimento de linha em porcentagem
+Tipo de Preenchimento de Linha
+Quantos milissegundos esperar antes de escrever o texto na nova tela novamente?
+As colunas de texto a serem impressas.
+Quantos caracteres escrever antes de acionar o "preenchimento de linha"?
+Possibilidade de que o padrão de preenchimento de linha seja impresso em letras maiúsculas em porcentagem
+Tipo de padrão de preenchimento de linha
+Padrão Comum
+Padrão Completo
+Padrão Aleatório
+A resposta pode não ser zero.
+A resposta não pode exceder as entradas mostradas.
+Salvar alterações ...
+Este protetor de tela oferece suporte a texto escrito em arquivo. Passe o caminho completo do arquivo para este campo e o protetor de tela exibirá o conteúdo do arquivo apropriadamente.
+Gerenciar seus mods
+O gerenciamento de mod é desabilitado no modo de segurança.
+Comando inválido {0}. Verifique o uso abaixo:
+Mod não encontrado ou o arquivo contém caracteres inválidos.
+Probabilidade de falha em porcentagem
+Habilitar depuração do protetor de tela
+Ativa a depuração de protetores de tela. Observe que isso pode preencher rapidamente o log de depuração e diminuir um pouco a velocidade do protetor de tela, dependendo do protetor de tela usado. Funciona apenas se a depuração do kernel estiver habilitada para fins de diagnóstico.

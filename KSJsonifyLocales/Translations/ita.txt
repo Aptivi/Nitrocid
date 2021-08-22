@@ -1129,3 +1129,39 @@ Attiva il supporto True Color per BeatFader.
 BeatFader selezionerà colori casuali se è abilitato. Altrimenti, usa i colori di config.
 Banner di avvio personalizzato
 Se specificato, visualizzerà banner di avvio personalizzato con supporto segnaposto. Puoi usare questa frase per la versione del kernel:
+Scarica la cartella remota nella directory locale utilizzando binario o testo
+Carica la cartella locale nella directory remota usando binario o testo
+Inserisci una cartella da scaricare nella directory locale.
+Download della cartella {0}...
+Cartella scaricata {0}.
+Download non riuscito per la cartella {0}.
+Caricamento cartella {0}...
+Cartella caricata {0}
+Inserisci una cartella da caricare nella directory remota.
+Premere "c" per scrivere il codice colore completo.
+Inserisci il codice colore che soddisfi questi formati:
+Minimizza il file JSON
+Nuovo ritardo dello schermo in millisecondi
+Conteggio colonne
+Soglia di riempimento linea
+Probabilità del limite di riempimento della linea in percentuale
+Tipo di riempimento della linea
+Quanti millisecondi attendere prima di scrivere nuovamente il testo nella nuova schermata?
+Le colonne di testo da stampare.
+Quanti caratteri scrivere prima di attivare il "riempimento riga"?
+Possibilità che il modello di riempimento della linea venga stampato in maiuscolo in percentuale
+Tipo di motivo di riempimento della linea
+Modello comune
+Modello completo
+Modello casuale
+La risposta potrebbe non essere zero.
+La risposta non può superare le voci mostrate.
+Salvare le modifiche...
+Questo salvaschermo supporta il testo scritto su file. Passa il percorso completo del file a questo campo e lo screensaver visualizzerà il contenuto del file in modo appropriato.
+Gestisci le tue mod
+La gestione della mod è disabilitata in modalità provvisoria.
+Comando non valido {0}. Controllare l'utilizzo di seguito:
+Mod non trovata o il file contiene caratteri non validi.
+Probabilità di perdere in percentuale
+Abilita il debug del salvaschermo
+Abilita il debug per gli screensaver. Si noti che potrebbe riempire rapidamente il registro di debug e rallentare leggermente lo screensaver, a seconda dello screensaver utilizzato. Funziona solo se il debug del kernel è abilitato per scopi diagnostici.

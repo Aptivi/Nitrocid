@@ -1129,3 +1129,39 @@ BeatFader no to~urūkarāsapōto o akutibu ni shimasu.
 BeatFader ga yūkō ni natte iru baai, randamuna iro o sentaku shimasu. Sore igai no baai wa, kōsei no iro o shiyō shimasu.
 Kasutamusutātoappubanā
 shitei suru to, purēsuhorudā o sapōto suru kasutamaizu sa reta sutātoappubanā ga hyōji sa remasu. Kono furēzu wa kānerubājon ni shiyō dekimasu.
+Bainari matawa tekisuto o shiyō shite rimōtoforuda o rōkarudirekutori ni daunrōdo shimasu
+Bainari matawa tekisuto o shiyō shite rōkaruforuda o rimōtodirekutori ni appurōdo shimasu
+rōkarudirekutori ni daunrōdo suru foruda o nyūryoku shimasu.
+Foruda {0} o daunrōdo shite imasu...
+Daunrōdo shita foruda {0}.
+Foruda {0} no daunrōdo ni shippai shimashita.
+Foruda {0} o appurōdo shite imasu...
+Appurōdo sa reta foruda {0}
+rimōtodirekutori ni appurōdo suru foruda o nyūryoku shimasu.
+`C' o oshite furukarākōdo o kijutsu shimasu.
+Tsugi no keishiki o mitasu karākōdo o nyūryoku shimasu. 
+Jeison fairu o saishō-ka shimasu
+miri byō tan'i no atarashī gamen chien
+retsu-sū
+rainfiru shikīchi
+rainfirukyappingu kakuritsu (pāsento)
+rainfirutaipu
+atarashī gamen ni tekisuto o saido kakikomu made ni nan-miri byō taiki shimasu ka?
+Insatsu suru tekisuto retsu.
+`Gyō-nuri' o torigā suru mae ni nan moji kaku hitsuyō ga arimasu ka?
+Sen no nuritsubushi patān ga subete daimonji de insatsu sa reru kanōsei (pāsento)
+sen-nuri patāntaipu
+ippantekina patān
+kanzen'na patān
+randamupatān
+kotaeha zerodehanai kamo shiremasen.
+Kaitō wa, hyōji sa rete iru entori o koeru koto wa dekimasen.
+Henkō naiyō o hozon...
+Kono sukurīnsēbā wa, fairu ni kaka reta tekisuto o sapōto shimasu. Kanzen'na fairu pasu o kono fīrudo ni watasu to, sukurīnsēbā ni fairu no naiyō ga tekisetsu ni hyōji sa remasu.
+Anata no kaizō o kanri suru
+Mod kanri wa sēfumōdode wa mukō ni natte imasu.
+Komando {0} ga mukōdesu. Ika no shiyō-hō o kakuninshitekudasai.
+Mod ga mitsukaranai ka, fairu ni mukōna moji ga fukuma rete imasu.
+Misu no kakuritsu (pāsento)
+sukurīnsēbā no debaggu o yūkōnisuru
+sukurīnsēbā no debaggu o yūkō ni shimasu. Shiyō suru sukurīnsēbā ni yotte wa, debaggurogu ga sugu ni ippai ni nari, sukurīnsēbā no sokudo ga wazuka ni osoku naru baai ga aru koto ni chūi shite kudasai. Shindan mokuteki de kānerudebaggu ga yūkō ni natte iru baai ni nomi kinō shimasu.

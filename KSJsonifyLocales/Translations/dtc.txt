@@ -1129,3 +1129,39 @@ Activeert ondersteuning voor ware kleuren voor BeatFader.
 BeatFader selecteert willekeurige kleuren als dit is ingeschakeld. Gebruik anders kleuren uit config.
 Aangepaste opstartbanner
 Indien opgegeven, wordt een aangepaste opstartbanner weergegeven met ondersteuning voor tijdelijke aanduidingen. Je kunt deze zin gebruiken voor de kernelversie:
+Downloadt de externe map naar de lokale map met behulp van binair of tekst
+Uploadt lokale map naar externe map met binair of tekst
+Voer een map in om te downloaden naar de lokale map.
+Map {0} downloaden...
+Gedownloade map {0}.
+Download mislukt voor map {0}.
+Map uploaden {0}...
+Geüploade map {0}
+Voer een map in om te uploaden naar de externe map.
+Druk op "c" om de volledige kleurcode te schrijven.
+Voer de kleurcode in die voldoet aan deze indelingen:
+Verkleint het JSON-bestand
+Nieuwe schermvertraging in milliseconden
+Kolomtelling
+Drempel voor lijnvulling
+Kans op lijnvulling in procenten
+Type lijnopvulling
+Hoeveel milliseconden wachten voordat de tekst opnieuw in het nieuwe scherm wordt geschreven?
+De tekstkolommen die moeten worden afgedrukt.
+Hoeveel tekens moeten worden geschreven voordat de "regelopvulling" wordt geactiveerd?
+Mogelijkheid dat het lijnopvulpatroon in procenten in hoofdletters wordt afgedrukt
+Type lijnopvulpatroon
+Gemeenschappelijk patroon
+Compleet patroon
+Willekeurig patroon
+Het antwoord is misschien niet nul.
+Het antwoord mag de getoonde gegevens niet overschrijden.
+Wijzigingen opslaan...
+Deze screensaver ondersteunt geschreven tekst in een bestand. Geef het volledige bestandspad door aan dit veld en de screensaver zal de inhoud van het bestand op de juiste manier weergeven.
+Beheer je mods
+Mod-beheer is uitgeschakeld in de veilige modus.
+Ongeldige opdracht {0}. Controleer het gebruik hieronder:
+Mod niet gevonden of bestand bevat ongeldige tekens.
+Kans op missen in procenten
+Schermbeveiliging foutopsporing inschakelen
+Schakelt foutopsporing in voor screensavers. Houd er rekening mee dat het debug-logboek snel kan vullen en de screensaver enigszins kan vertragen, afhankelijk van de gebruikte screensaver. Werkt alleen als kerneldebugging is ingeschakeld voor diagnostische doeleinden.

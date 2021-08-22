@@ -1129,3 +1129,39 @@ Mengaktifkan sokongan warna sebenar untuk BeatFader.
 BeatFader akan memilih warna rawak jika diaktifkan. Jika tidak, gunakan warna dari config.
 Sepanduk Permulaan Tersuai
 Sekiranya dinyatakan, ia akan memaparkan sepanduk permulaan yang disesuaikan dengan sokongan pemegang tempat. Anda boleh menggunakan frasa ini untuk versi kernel:
+Muat turun folder jauh ke direktori tempatan menggunakan perduaan atau teks
+Muat naik folder tempatan ke direktori jauh menggunakan perduaan atau teks
+Masukkan folder untuk memuat turun ke direktori tempatan.
+Memuat turun folder {0} ...
+Folder yang dimuat turun {0}.
+Muat turun gagal untuk folder {0}.
+Memuat naik folder {0} ...
+Folder yang dimuat naik {0}
+Masukkan folder untuk dimuat ke direktori jauh.
+Tekan "c" untuk menulis kod warna penuh.
+Masukkan kod warna yang memenuhi format berikut:
+Mengurangkan fail JSON
+Kelewatan Skrin Baru dalam Milisaat
+Kiraan Lajur
+Ambang Garis Isi
+Kebarangkalian Pengisian Garis dalam peratus
+Jenis Isi Talian
+Berapa milisaat yang perlu ditunggu sebelum menulis teks di skrin baru lagi?
+Lajur teks yang akan dicetak.
+Berapa banyak watak untuk ditulis sebelum mencetuskan "mengisi baris"?
+Kemungkinan corak pengisian baris akan dicetak dalam huruf besar dalam bentuk peratus
+Jenis corak pengisian garisan
+Corak Biasa
+Corak Lengkap
+Corak Rawak
+Jawapannya mungkin tidak sifar.
+Jawapannya mungkin tidak melebihi entri yang ditunjukkan.
+Simpan Perubahan ...
+Penjimat skrin ini menyokong teks bertulis dalam fail. Lewati jalan fail yang lengkap ke bidang ini, dan screensaver akan memaparkan isi fail dengan tepat.
+Urus mod anda
+Pengurusan mod dilumpuhkan dalam mod selamat.
+Perintah tidak sah {0}. Periksa penggunaan di bawah:
+Mod tidak dijumpai atau fail mempunyai aksara yang tidak sah.
+Kebarangkalian ketinggalan dalam peratus
+Dayakan penyahpepijatan screensaver
+Membolehkan penyahpepijatan untuk screensaver. Harap maklum bahawa ia dapat mengisi log debug dengan cepat dan sedikit melambatkan screensaver, bergantung pada screensaver yang digunakan. Hanya berfungsi jika debugging kernel diaktifkan untuk tujuan diagnostik.

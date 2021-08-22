@@ -1129,3 +1129,39 @@ Imathandizira kuthandizira kwamtundu weniweni kwa BeatFader.
 BeatFader idzasankha mitundu yosasintha ngati itatha. Apo ayi, gwiritsani ntchito mitundu kuchokera ku config.
 Chikwangwani Choyambira Mwambo
 Ngati zafotokozedwa, iwonetsa chikwangwani choyambira chosinthidwa ndi othandizira ogwira ntchito. Mutha kugwiritsa ntchito mawuwa pamtundu wa kernel:
+Tsitsani chikwatu chakutali kusanja yakomweko pogwiritsa ntchito binary kapena zolemba
+Ikani mafoda am'deralo kusanja yakutali pogwiritsa ntchito binary kapena zolemba
+Lowetsani chikwatu kuti muzitsitse kutsamba la m'deralo.
+Kutsitsa chikwatu {0} ...
+Foda yotsitsidwa {0}.
+Zatsitsa forodha {0}.
+Tikukweza chikwatu {0} ...
+Foda yomwe idakwezedwa {0}
+Lowetsani chikwatu kuti muzitsetse ku chikwatu chakutali.
+Dinani "c" kuti mulembe mtundu wathunthu.
+Lowetsani nambala yamtundu yomwe imakhutiritsa mawonekedwe awa:
+Imachepetsa fayilo ya JSON
+Kuchedwa Kwatsopano Kwazithunzi mu Milliseconds
+Chiwerengero cha Column
+Mzere Wodzaza Mzere
+Mzere Wodzaza Kutseka Mwinanso peresenti
+Mzere Wodzaza Mtundu
+Ndi ma millisecond angati kuti mudikire musanalembe mawuwo pazenera latsopano?
+Zolemba pamanja kuti zisindikizidwe.
+Ndi anthu angati oti alembe asanayambitse "kudzaza mzere"?
+Kutheka kuti mzere wodzaza mzere udzalembedwa mu zisoti zonse peresenti
+Mtundu wazodzaza mzere
+Zofanana
+Chitsanzo chathunthu
+Zotengera
+Yankho mwina silikhala zero.
+Yankho silikhoza kupitirira zomwe zawonetsedwa.
+Sungani Zosintha ...
+Wosunga zowonetserayu amathandizira kulemba zolembedwa pa fayilo. Pitani mafayilo athunthu kumundawu, ndipo wojambulayo awonetsa zomwe zili mufayiloyi moyenera.
+Sinthani ma mod anu
+Kuwongolera Mod kumayimitsidwa motetezeka.
+Lamulo lolakwika {0}. Onani ntchito pansipa:
+Mod sinapezeke kapena fayilo ili ndi zilembo zosagwira.
+Mwayi wophonya peresenti
+Thandizani kutsegula kwa screensaver
+Ikuthandizira kuthana ndi zowonera pazenera. Chonde dziwani kuti ikhoza kudzaza chipika chazachangu ndikuchepetsa pang'ono chojambulira, kutengera chowonera chomwe chagwiritsidwa ntchito. Zimagwira kokha ngati kukonza kwa kernel kumathandizidwa kuti muzindikire.

@@ -1129,3 +1129,39 @@ Wuxuu dhaqaajiyaa taageerada midabka runta ah ee BeatFader.
 BeatFader ayaa dooran doonta midabada aan kala sooca lahayn haddii la kartiyeeyo. Haddii kale, isticmaal midabyo ka yimid config.
 Calanka Bilowga Khaaska ah
 Haddii la cayimay, waxay soo bandhigi doontaa banner bilow ah oo la habeeyay oo leh taageero goob -haye. Waxaad u adeegsan kartaa weedhan nooca kernel:
+Waxay u soo dejisaa faylka fog diiwaanka maxalliga ah iyadoo la adeegsanayo binary ama qoraal
+Waxay kor ugu qaaddaa faylka maxalliga ah tusaha fog iyadoo la adeegsanayo binary ama qoraal
+Geli gal si aad ugu soo dejiso tusaha deegaanka.
+Soo dejinaya faylka {0} ...
+Faylka la soo dejiyay {0}.
+Soo dejinta ayaa ku fashilantay galka {0}.
+Faylka soo raraya {0} ...
+Faylka la soo raray {0}
+Geli gal si aad ugu rarto tusaha fog.
+Riix "c" si aad u qorto koodh midab oo buuxa.
+Geli koodhka midabka ee qanciya qaababkaan:
+Wuxuu yareeyaa faylka JSON
+Dib -u -dhigista Shaashadda Cusub ee Milliseconds
+Tirada Tiirka
+Xariiqda Buuxi Marxaladda
+Khadka Fill Probability ee Boqolkiiba
+Nooca Buuxinta Khadka
+Immisa ilbidhiqsi ayaa la sugayaa ka hor inta aan qoraalka lagu qorin shaashadda cusub?
+Tiirrada qoraalka ah ee la daabacayo.
+Immisa xaraf ayaa la qori karaa ka hor inta aan la kicin "buuxinta xariiqda"?
+Suurtagalnimada in qaabka buuxinta khadka lagu daabici doono dhammaan koofiyadaha boqolkiiba
+Nooca qaabka buuxinta khadka
+Qaabka Guud
+Qaab Dhamaystiran
+Qaabka Random
+Jawaabtu ma noqon karto eber.
+Jawaabtu ma dhaafi karto gelitaannada la muujiyay.
+Kaydi Isbedelada ...
+Badbaadiyahaan wuxuu taageeraa qoraalka qoran ee faylka. U gudbi waddada faylka oo dhammaystiran goobtan, shaashad -ilaaliyaha ayaa si habboon u soo bandhigi doona waxyaabaha ku jira faylka.
+Maamul hababkaaga
+Maaraynta moodeelka ayaa ku naafoobay hab nabdoon.
+Amarka aan ansax ahayn {0}. Hubi adeegsiga hoose:
+Mod lama helin ama faylku wuxuu leeyahay xuruuf aan sax ahayn.
+Suurtagalnimada lumitaanka boqolkiiba
+Daar khaladka shaashadda badbaadinta
+Waxay awood u siisaa ka -saaridda shaashadaha. Fadlan ogow inay si dhaqso ah u buuxin karto diiwaanka khaladka oo ay yara yara yareyn karto shaashadda, iyadoo ku xiran badbaadiyaha shaashadda la isticmaalay. Kaliya wuxuu shaqeeyaa haddii khal -goynta kernel -ka loo oggolaado ujeedo baadhitaan.

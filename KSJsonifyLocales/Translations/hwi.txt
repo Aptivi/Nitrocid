@@ -1129,3 +1129,39 @@ Hoʻoulu i ke kākoʻo kala maoli no BeatFader.
 E koho ʻo BeatFader i nā waihoʻoluʻu ʻole inā hiki ke hoʻohana ʻia. Inā ʻole, e hoʻohana i nā kala mai config.
 Banner Hoʻomaka Kūmole
 Inā kuhikuhi ʻia, e hōʻike ʻia ka hae hoʻomaka me ka kākoʻo o ka placeholder. Hiki iā ʻoe ke hoʻohana i kēia huaʻōlelo no ka mana kernel:
+Hoʻoiho i kahi waihona mamao i ka papa kuhikuhi kūloko me ka hoʻohana ʻana i ka binary a i ʻole ka huaʻōlelo
+Hoʻouka i kahi waihona kūloko i ka papa kuhikuhi mamao me ka hoʻohana ʻana i ka binary a i ʻole ka huaʻōlelo
+E hoʻokomo i kahi waihona e hoʻoiho ai i ka papa kuhikuhi kūloko.
+Ke hoʻoiho nei i ka waihona {0} ...
+Hoʻoiho ʻia ka waihona {0}.
+ʻAʻole i hiki ka hoʻoiho no ka waihona {0}.
+Ke hoʻouka nei i ka waihona {0} ...
+Hoʻoili i ka waihona {0}
+E hoʻokomo i kahi waihona e hoʻouka i kahi papa kuhikuhi mamao.
+Kaomi "c" e kākau i ke code kala piha.
+E hoʻokomo i ka pāʻālua waihoʻoluʻu e māʻona ai kēia mau ʻano:
+Hoʻohaʻahaʻa i ka faila JSON
+Hoʻolaha papaha hou ma Milliseconds
+Helu Kolamu
+Paepae Hoʻopiha Laina
+Ke laina hoʻopihapiha hoʻopihapiha i ka pākēneka
+ʻAno hoʻopiha laina
+Ehia mau milliseconds e kali ai ma mua o ke kākau ʻana i ka huaʻōlelo i ka paku hou?
+E paʻi ʻia nā kolamu kikokiko.
+Ehia mau huapalapala e kākau ma mua o ka hoʻoulu ʻana i ka "laina piha"?
+Hiki ke paʻi ʻia ke kaha laina hoʻopihapiha i nā pāpale āpau i ka pākēneka
+Ke ʻano hoʻopihapiha hoʻopihapiha laina
+Lauana maʻamau
+Piha piha
+Kumu hoʻohālike kaulike
+ʻAʻole paha ka pane.
+ʻAʻole paha iʻoi aku ka pane ma mua o nā mea i hōʻike ʻia.
+Mālama i nā Hoʻololi ...
+Kākoʻo kēia pale i nā huaʻōlelo i kākau ʻia ma ka faile. E hele i ke ala faila holoʻokoʻa i kēia kahua, a hōʻike ka pale papakaumaka i nā ʻike o ka faila ma ke kūpono.
+Hoʻoponopono i kāu mods
+Ua pio ka polokalamu mod i ke ʻano palekana.
+Kauoha kūpono ʻole {0}. E hōʻoia i ka hoʻohana ma lalo:
+ʻAʻole i loaʻa ka mod a i ʻole waihona paha nā huapalapala kūpono ʻole.
+Maliʻa o ka hala i ka pākēneka
+Hiki i ka debugging screensaver
+Hiki i ka debugging no nā screensaver. E ʻoluʻolu e hoʻopihapiha koke paha i ka log debug a hoʻolōʻihi i ka screensaver i lalo, e hilinaʻi ana i ka screensaver i hoʻohana ʻia. Hana wale inā hiki ke hoʻopau ʻia ke kernel debugging no nā hana diagnostics.

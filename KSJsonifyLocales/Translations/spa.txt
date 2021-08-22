@@ -1129,3 +1129,39 @@ Activa la compatibilidad con colores verdaderos para BeatFader.
 BeatFader seleccionará colores aleatorios si está habilitado. De lo contrario, use los colores de config.
 Banner de inicio personalizado
 Si se especifica, mostrará un banner de inicio personalizado con soporte de marcador de posición. Puede usar esta frase para la versión del kernel:
+Descarga la carpeta remota al directorio local usando binario o texto
+Carga la carpeta local al directorio remoto usando binario o texto
+Ingrese una carpeta para descargar al directorio local.
+Descargando carpeta {0} ...
+Carpeta descargada {0}.
+Error al descargar la carpeta {0}.
+Subiendo carpeta {0} ...
+Carpeta cargada {0}
+Ingrese una carpeta para cargar en el directorio remoto.
+Presione "c" para escribir el código a todo color.
+Ingrese un código de color que satisfaga estos formatos:
+Minifica el archivo JSON
+Nuevo retardo de pantalla en milisegundos
+Recuento de columnas
+Umbral de relleno de línea
+Probabilidad de límite de relleno de línea en porcentaje
+Tipo de relleno de línea
+¿Cuántos milisegundos esperar antes de volver a escribir el texto en la nueva pantalla?
+Las columnas de texto que se imprimirán.
+¿Cuántos caracteres escribir antes de activar el "relleno de línea"?
+Posibilidad de que el patrón de relleno de línea se imprima en mayúsculas en porcentaje
+Tipo de patrón de relleno de línea
+Patrón común
+Patrón completo
+Patrón aleatorio
+Puede que la respuesta no sea cero.
+La respuesta no puede exceder las entradas mostradas.
+Guardar cambios...
+Este protector de pantalla admite texto escrito en archivo. Pase la ruta completa del archivo a este campo y el protector de pantalla mostrará el contenido del archivo de manera adecuada.
+Administra tus modificaciones
+La gestión de mod está deshabilitada en modo seguro.
+Comando no válido {0}. Compruebe el uso a continuación:
+Mod no encontrado o el archivo tiene caracteres no válidos.
+Probabilidad de falla en porcentaje
+Habilitar la depuración del protector de pantalla
+Habilita la depuración de protectores de pantalla. Tenga en cuenta que puede llenar rápidamente el registro de depuración y ralentizar ligeramente el protector de pantalla, según el protector de pantalla utilizado. Solo funciona si la depuración del kernel está habilitada para fines de diagnóstico.

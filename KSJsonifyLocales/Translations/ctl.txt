@@ -1129,3 +1129,39 @@ Activa el suport del color real per a BeatFader.
 BeatFader seleccionarà colors aleatoris si està activat. En cas contrari, utilitzeu colors de config.
 Bàner d’inici personalitzat
 Si s’especifica, es mostrarà un bàner d’inici personalitzat amb suport d’espais reservats. Podeu utilitzar aquesta frase per a la versió del nucli:
+Baixa la carpeta remota al directori local mitjançant text binari o binari
+Penja la carpeta local al directori remot mitjançant text binari o binari
+Introduïu una carpeta per descarregar-la al directori local.
+S'està baixant la carpeta {0} ...
+Carpeta descarregada {0}.
+No s'ha pogut baixar la carpeta {0}.
+S'està penjant la carpeta {0} ...
+Carpeta penjada {0}
+Introduïu una carpeta per penjar-la al directori remot.
+Premeu "c" per escriure el codi a tot color.
+Introduïu el codi de color que compleixi aquests formats:
+Minimitza el fitxer JSON
+Retard de pantalla nou en mil·lisegons
+Recompte de columnes
+Llindar d'ompliment de línia
+Probabilitat de límit d’ompliment de línia en percentatge
+Tipus d'ompliment de línia
+Quants mil·lisegons cal esperar abans de tornar a escriure el text a la nova pantalla?
+Les columnes de text que s’imprimiran.
+Quants caràcters cal escriure abans d'activar el "farciment de línia"?
+Possibilitat que el patró d’ompliment de línia s’imprimeixi en majúscules i en majúscules
+Tipus de patró d’ompliment de línia
+Patró comú
+Patró complet
+Patró aleatori
+La resposta pot no ser nul·la.
+La resposta no pot superar les entrades mostrades.
+Guardar canvis...
+Aquest estalvi de pantalla admet text escrit en un fitxer. Passeu el camí complet del fitxer a aquest camp i el protector de pantalla mostrarà el contingut del fitxer adequadament.
+Gestioneu les vostres modificacions
+La gestió de modificacions està desactivada en mode segur.
+Ordre no vàlida {0}. Consulteu l'ús següent:
+No s'ha trobat la modificació o el fitxer té caràcters no vàlids.
+Probabilitat d'error en percentatge
+Activeu la depuració de l'estalvi de pantalla
+Permet la depuració per als estalvis de pantalla. Tingueu en compte que pot omplir ràpidament el registre de depuració i alentir lleugerament el salvapantalles, en funció del salvapantalles utilitzat. Només funciona si la depuració del nucli està habilitada amb finalitats de diagnòstic.

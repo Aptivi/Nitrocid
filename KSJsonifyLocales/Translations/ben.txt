@@ -1129,3 +1129,39 @@ Biṭaphyāḍārēra jan'ya satyikārēra raṅa samarthana sakriẏa karē.
 BeatFader ryānḍama raṁ nirbācana karabē yadi ēṭi sakriẏa thākē. An'yathāẏa, kanaphigārēśana thēkē raṁ byabahāra karuna.
 Kāsṭama sṭārṭa'āpa byānāra
 nirdiṣṭa karā halē, ēṭi plēsahōlḍāra samarthana saha kāsṭamā'ijaḍa sṭārṭa'āpa byānāra pradarśana karabē. Āpani kārnēla sanskaraṇēra jan'ya ē'i bākyānśaṭi byabahāra karatē pārēna:
+Bā'ināri bā ṭēksaṭa byabahāra karē rimōṭa phōlḍāra sthānīẏa ḍirēkṭaritē ḍā'unalōḍa karē
+bā'ināri bā pāṭhya byabahāra karē rimōṭa ḍirēkṭaritē sthānīẏa phōlḍāra āpalōḍa karē
+sthānīẏa ḍirēkṭaritē ḍā'unalōḍa karāra jan'ya ēkaṭi phōlḍāra likhuna.
+Phōlḍāra {0} ḍā'unalōḍa hacchē...
+Phōlḍāra {0} ḍā'unalōḍa karā haẏēchē.
+{0} Phōlḍārēra jan'ya ḍā'unalōḍa byartha haẏēchē.
+Phōlḍāra {0} āpalōḍa hacchē...
+Āpalōḍa karā phōlḍāra {0}
+dūrabartī ḍirēkṭaritē āpalōḍa karāra jan'ya ēkaṭi phōlḍāra likhuna.
+Sampūrṇa raṅēra kōḍa likhatē"c" ṭipuna.
+Ē'i pharamyāṭagulikē santuṣṭa karē ēmana raṅa kōḍa likhuna:
+JSON phā'ilakē chōṭa karē
+milisēkēnḍē natuna skrina bilamba
+kalāma gaṇanā
+lā'ina phila thrēśahōlḍa
+lā'ina pūraṇa kyāpiṁ sambhābanā śatakarā
+lā'ina phila ṭā'ipa
+ābāra natuna skrinē lēkhā lēkhāra āgē kata milisēkēnḍa apēkṣā karatē habē?
+Pāṭhya kalāmaguli mudraṇa karā habē.
+"Lā'ina phila" ṭrigāra karāra āgē kaẏaṭi akṣara likhatē habē?
+Sambhābanā yē lā'ina bharāṭa pyāṭārna saba kyāpē śatānśē mudrita habē
+lā'ina phila pyāṭārna ṭā'ipa
+sādhāraṇa pyāṭārna
+sampūrṇa pyāṭārna
+ēlōmēlō pyāṭārna
+uttara śūn'ya nā'ō hatē pārē.
+Uttara dēkhānō ēnṭri atikrama karatē pārē nā.
+Paribartanagulōra sanrakṣana...
+Ē'i skrinasēbhāra phā'ilē likhita lēkhā samarthana karē. Ē'i kṣētraṭitē sampūrṇa phā'ilēra pathaṭi pāsa karuna, ēbaṁ skrinasēbhāra yathāyathabhābē phā'ilēra biṣaẏabastu pradarśana karabē.
+Āpanāra mōḍaguli paricālanā karuna
+mōḍa byabasthāpanā nirāpada mōḍē niṣkriẏa.
+Abaidha kamānḍa {0}. Nīcēra byabahāra parīkṣā karuna:
+Mōḍa pā'ōẏā yāẏani bā phā'ilē abaidha akṣara raẏēchē.
+Śatānśē misa ha'ōẏāra sambhābanā
+skrinasēbhāra ḍibāgiṁ sakṣama karuna
+skrinasēbhāragulira jan'ya ḍibāgiṁ sakṣama karē. Anugraha karē manē rākhabēna yē ēṭi druta ḍibāga laga pūraṇa karatē pārē ēbaṁ skrinasēbhārakē kichuṭā dhīra karē ditē pārē, yā byabahr̥ta skrina sēbhārēra upara nirbhara karē. Ḍāẏāganasṭika uddēśyē kārnēla ḍibāgiṁ sakṣama halē'i kāja karē.

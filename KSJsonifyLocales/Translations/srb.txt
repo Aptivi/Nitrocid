@@ -1129,3 +1129,39 @@ Aktivira podršku za prave boje za BeatFader.
 BeatFader će izabrati nasumične boje ako je omogućen. U suprotnom, koristite boje iz konfiguracije.
 Prilagođeni baner za pokretanje
 Ako je navedeno, prikazaće prilagođeni početni banner sa podrškom za čuvare mesta. Ovu frazu možete koristiti za verziju jezgra:
+Preuzima udaljenu fasciklu u lokalni direktorijum pomoću binarnog ili tekstualnog teksta
+Otprema lokalnu fasciklu u udaljeni direktorijum pomoću binarnog ili tekstualnog teksta
+Unesite fasciklu za preuzimanje u lokalni direktorijum.
+Preuzimanje fascikle {0} ...
+Preuzeti direktorijum {0}.
+Preuzimanje fascikle {0} nije uspelo.
+Otprema se direktorijum {0} ...
+Otpremljen direktorijum {0}
+Unesite fasciklu za otpremanje u udaljeni direktorijum.
+Pritisnite "c" za pisanje koda u boji.
+Unesite kod boje koji zadovoljava ove formate:
+Umanjuje JSON datoteku
+Novo kašnjenje ekrana u milisekundama
+Column Count
+Prag popune linije
+Verovatnoća ograničavanja popunjavanja linija u procentima
+Vrsta popune linije
+Koliko milisekundi čekati pre nego što ponovo napišete tekst na novom ekranu?
+Tekstualne kolone za štampanje.
+Koliko znakova treba napisati pre pokretanja „popunjavanja reda“?
+Mogućnost da se obrazac popunjavanja redova štampa velikim slovima u procentima
+Tip obrasca za popunjavanje linije
+Common Pattern
+Complete Pattern
+Random Pattern
+Odgovor možda nije nula.
+Odgovor ne može premašiti prikazane unose.
+Sačuvaj promene...
+Ovaj skrinsejver podržava pisani tekst u datoteci. Prenesite kompletnu putanju do ovog polja i čuvar ekrana će na odgovarajući način prikazati sadržaj datoteke.
+Upravljajte svojim modovima
+Upravljanje režimom je onemogućeno u bezbednom režimu.
+Nevažeća komanda {0}. Proverite upotrebu ispod:
+Mod nije pronađen ili datoteka ima nevažeće znakove.
+Verovatnoća promašaja u procentima
+Omogući otklanjanje grešaka u čuvaru ekrana
+Omogućava otklanjanje grešaka za čuvare ekrana. Imajte na umu da može brzo ispuniti evidenciju otklanjanja grešaka i malo usporiti čuvar ekrana, u zavisnosti od korišćenog čuvara ekrana. Radi samo ako je otklanjanje grešaka u jezgru omogućeno u dijagnostičke svrhe.

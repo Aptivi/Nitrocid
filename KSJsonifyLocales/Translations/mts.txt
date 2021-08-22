@@ -1129,3 +1129,39 @@ Jattiva l-appoġġ tal-kulur veru għal BeatFader.
 BeatFader jagħżel kuluri każwali jekk ikun attivat. Inkella, uża kuluri minn config.
 Banner tal-Istartjar Personalizzat
 Jekk speċifikat, se juri banner tal-istartjar apposta bl-appoġġ tal-placeholder. Tista 'tuża din il-frażi għall-verżjoni tal-qalba:
+Tniżżel folder remot għal direttorju lokali billi tuża binarju jew test
+Tella 'folder lokali għal direttorju remot billi tuża binarju jew test
+Daħħal folder biex tniżżel fid-direttorju lokali.
+Tniżżil tal-folder {0} ...
+Fowlder imniżżel {0}.
+It-tniżżil falla għall-folder {0}.
+Tella 'folder {0} ...
+Fowlder imtella '{0}
+Daħħal folder biex ittella 'fid-direttorju remot.
+Agħfas "c" biex tikteb kodiċi tal-kulur sħiħ.
+Daħħal kodiċi tal-kulur li jissodisfa dawn il-formati:
+Jimminimizza l-fajl JSON
+Dewmien tal-Iskrin Ġdid f'millisekondi
+Għadd tal-Kolonni
+Limitu tal-Mili tal-Linja
+Probabbiltà ta 'Limitu ta' Mili ta 'Linja f'perċentwali
+Tip ta 'Mili tal-Linja
+Kemm millisekondi tistenna qabel ma terġa tikteb it-test fl-iskrin il-ġdid?
+Il-kolonni tat-test li għandhom jiġu stampati.
+Kemm karattri tikteb qabel ma tiskatta l- "mili tal-linja"?
+Possibbiltà li l-mudell tal-mili tal-linja jiġi stampat fit-tappijiet kollha f'perċentwali
+Tip ta 'mudell tal-mili tal-linja
+Disinn Komuni
+Disinn sħiħ
+Disinn Każwali
+It-tweġiba tista 'ma tkunx żero.
+It-tweġiba ma tistax taqbeż l-entrati murija.
+Iffranka l-Bidliet ...
+Dan l-iscreensaver jappoġġja test bil-miktub fuq fajl. Għaddi t-triq sħiħa tal-fajl għal dan il-qasam, u l-iscreensaver juri l-kontenut tal-fajl b'mod xieraq.
+Immaniġġja l-mods tiegħek
+Il-ġestjoni tal-mod hija diżattivata fil-modalità sikura.
+Kmand invalidu {0}. Iċċekkja l-użu hawn taħt:
+Mod ma nstabx jew il-fajl għandu karattri invalidi.
+Probabbiltà ta 'nuqqas fil-mija
+Ippermetti l-iscreensaver debugging
+Jippermetti d-debugging għall-iscreeners. Jekk jogħġbok innota li jista 'jimla malajr il-log tad-debug u jnaqqas kemmxejn is-screensaver, skont l-iscreensaver użat. Jaħdem biss jekk id-debugging tal-kernel huwa attivat għal skopijiet dijanjostiċi.

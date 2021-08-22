@@ -1129,3 +1129,39 @@ BeatFader uchun haqiqiy rangni qo'llab -quvvatlashni faollashtiradi.
 BeatFader yoqilgan bo'lsa, tasodifiy ranglarni tanlaydi. Aks holda, config dan ranglardan foydalaning.
 Maxsus ishga tushirish bannerlari
 Belgilangan bo'lsa, u to'ldirgichni qo'llab -quvvatlaydigan moslashtirilgan ishga tushirish bannerini ko'rsatadi. Siz bu iborani yadro versiyasi uchun ishlatishingiz mumkin:
+Uzoq jildni ikkilik yoki matn yordamida mahalliy katalogga yuklaydi
+Mahalliy papkani ikkilik yoki matnli masofaviy katalogga yuklaydi
+Mahalliy katalogga yuklab olish uchun papkani kiriting.
+{0} jild yuklab olinmoqda ...
+Yuklangan jild {0}.
+{0} jildini yuklab bo'lmadi.
+{0} jild yuklanmoqda ...
+Yuklangan jild {0}
+Uzoq katalogga yuklash uchun papkani kiriting.
+To'liq rang kodini yozish uchun "c" tugmasini bosing.
+Ushbu formatlarga mos keladigan rang kodini kiriting:
+JSON faylini kamaytiradi
+Millisekundlarda yangi ekran kechikishi
+Ustunlar soni
+Chiziqni to'ldirish chegarasi
+Chiziqni to'ldirish ehtimolligi foizda
+Chiziqni to'ldirish turi
+Yangi ekranda matnni qayta yozishdan oldin qancha millisekund kutish kerak?
+Bosib chiqariladigan matn ustunlari.
+"Satrni to'ldirish" ni ishga tushirishdan oldin nechta belgi yozish kerak?
+Chiziqni to'ldirish namunasi barcha bosh harflarda foizda chop etilishi mumkin
+Chiziqni to'ldirish naqshining turi
+Umumiy naqsh
+To'liq naqsh
+Tasodifiy naqsh
+Javob nol bo'lmasligi mumkin.
+Javob ko'rsatilgan yozuvlardan oshmasligi kerak.
+O'zgarishlarni saqlash ...
+Bu ekran pardasi faylda yozilgan matnni qo'llab -quvvatlaydi. To'liq fayl yo'lini bu maydonga o'tkazing, shunda ekran pardasi fayl mazmunini mos ravishda ko'rsatadi.
+Modlaringizni boshqaring
+Modni boshqarish xavfsiz rejimda o'chirilgan.
+{0} buyrug'i noto'g'ri. Quyida ishlatilishini tekshiring:
+Mod topilmadi yoki fayl yaroqsiz.
+Yo'qotish ehtimoli foizda
+Ekran saqlagichini tuzatishni yoqish
+Ekran saqlovchilar uchun tuzatishni yoqadi. E'tibor bering, u disk raskadrovka jurnalini tezda to'ldirishi mumkin va ishlatilgan ekran saqlovchiga qarab ekran pardasini biroz sekinlashtirishi mumkin. Faqat diagnostika maqsadida yadro disk raskadrovka yoqilgan bo'lsa ishlaydi.

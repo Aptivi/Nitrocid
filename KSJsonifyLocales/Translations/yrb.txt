@@ -1129,3 +1129,39 @@ Nṣiṣẹ atilẹyin awọ otitọ fun BeatFader.
 BeatFader yoo yan awọn awọ laileto ti o ba ṣiṣẹ. Bibẹẹkọ, lo awọn awọ lati atunto.
 Aṣa Ibẹrẹ Aṣa
 Ti o ba jẹ pato, yoo ṣafihan asia ibẹrẹ ti adani pẹlu atilẹyin ibi. O le lo gbolohun yii fun ẹya ekuro:
+Ṣe igbasilẹ folda latọna jijin si itọsọna agbegbe nipa lilo alakomeji tabi ọrọ
+Ṣe ikojọpọ folda agbegbe si itọsọna latọna jijin nipa lilo alakomeji tabi ọrọ
+Tẹ folda kan lati ṣe igbasilẹ si itọsọna agbegbe.
+Gbigba folda {0} ...
+Faili ti a gba wọle {0}.
+Gbigba lati ayelujara kuna fun folda {0}.
+Ikojọpọ folda {0} ...
+Apo ti a kojọpọ {0}
+Tẹ folda kan lati gbe si itọsọna latọna jijin.
+Tẹ “c” lati kọ koodu awọ ni kikun.
+Tẹ koodu awọ ti o ni itẹlọrun awọn ọna kika wọnyi:
+Ṣe idinku faili JSON
+Idaduro iboju Tuntun ni Awọn iṣẹju -aaya
+Iwe kika
+Line Kun Ala
+Laini Kun iṣeeṣe Capping ni ogorun
+Ila Fikun Iru
+Awọn millisecond melo ni lati duro ṣaaju kikọ ọrọ ni iboju tuntun lẹẹkansi?
+Awọn ọwọn ọrọ lati tẹjade.
+Awọn ohun kikọ melo ni lati kọ ṣaaju ki o to ma nfa “laini kun”?
+O ṣeeṣe pe ilana ti o kun laini yoo tẹ ni gbogbo awọn bọtini ni ogorun
+Iru apẹẹrẹ ila
+Àpẹẹrẹ ti o wọpọ
+Apẹrẹ pipe
+ID Àpẹẹrẹ
+Idahun le ma jẹ odo.
+Idahun le ma kọja awọn titẹ sii ti o han.
+Fipamọ Awọn Ayipada ...
+Iboju iboju ṣe atilẹyin ọrọ kikọ lori faili. Ṣe ọna ọna faili ni pipe si aaye yii, ati oluṣeto iboju yoo ṣafihan awọn akoonu inu faili ni deede.
+Ṣakoso awọn mods rẹ
+Isakoso Mod jẹ alaabo ni ipo ailewu.
+Aṣẹ ti ko tọna {0}. Ṣayẹwo lilo ni isalẹ:
+Mod ko rii tabi faili ni awọn ohun kikọ ti ko wulo.
+Awọn iṣeeṣe ti miss ni ogorun
+Mu n ṣatunṣe aṣiṣe iboju ṣiṣẹ
+Mu ṣiṣẹ n ṣatunṣe aṣiṣe fun awọn iboju iboju. Jọwọ ṣakiyesi pe o le yara fọwọsi iwe aṣiṣe ati yiyara fifipamọ iboju si isalẹ, da lori oluṣeto iboju ti a lo. Awọn iṣẹ nikan ti n ṣatunṣe aṣiṣe ekuro ṣiṣẹ fun awọn idi iwadii.

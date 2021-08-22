@@ -1129,3 +1129,39 @@ Benetako kolorearen euskarria aktibatzen du BeatFader-entzat.
 BeatFader-ek ausazko koloreak hautatuko ditu gaituta badago. Bestela, erabili config-eko koloreak.
 Abiarazte Banner pertsonalizatua
 Zehazten bada, hasierako bandera pertsonalizatua erakutsiko du leku-markaren laguntzarekin. Esaldi hau kernel bertsiorako erabil dezakezu:
+Urruneko karpeta direktorio lokalera deskargatzen du bitarra edo testua erabiliz
+Karpeta lokala urruneko direktoriora kargatzen du bitarra edo testua erabiliz
+Sartu karpeta bat direktorio lokalera deskargatzeko.
+{0} karpeta deskargatzen ...
+Deskargatutako {0} karpeta.
+Ezin izan da deskargatu {0} karpetan.
+{0} karpeta kargatzen ...
+Kargatutako {0} karpeta
+Sartu karpeta bat urruneko direktoriora kargatzeko.
+Sakatu "c" kolore osoa idazteko.
+Idatzi formatu hauek betetzen dituen kolore kodea:
+JSON fitxategia minimizatzen du
+Pantaila berria atzeratzea milisegundotan
+Zutabe kopurua
+Lerro betetze atalasea
+Lerro betetze kapitala probabilitatea ehunekotan
+Lerro betegarri mota
+Zenbat milisegundo itxaron behar da pantaila berrian testua berriro idatzi aurretik?
+Inprimatu beharreko testu-zutabeak.
+Zenbat karaktere idatzi "lerro betetzea" aktibatu aurretik?
+Lerroa betetzeko eredua ehuneko maiuskula guztietan inprimatzeko aukera
+Linea betetzeko eredu mota
+Eredu arrunta
+Eredu osoa
+Ausazko eredua
+Baliteke erantzuna ez izatea zero.
+Erantzunak ezin izango ditu bistaratutako sarrerak baino gehiago izan.
+Aldaketak gorde...
+Pantaila-babesle honek fitxategian idatzitako testua onartzen du. Pasa ezazu fitxategi bide osoa eremu honetara, eta pantaila-babesleak fitxategiaren edukia modu egokian erakutsiko du.
+Kudeatu zure modak
+Moduen kudeaketa modu seguruan desgaituta dago.
+{0} komando baliogabea. Begiratu beheko erabilera:
+Mod ez da aurkitu edo fitxategiak karaktere baliogabeak ditu.
+Ehuneko huts egiteko probabilitatea
+Gaitu pantaila-babeslearen arazketa
+Pantaila-babesleentzako arazketa gaitzen du. Kontuan izan arazketa erregistroa azkar bete dezakeela eta pantaila-babeslea apur bat moteldu dezakeela, erabilitako pantaila-babeslearen arabera. Nukleoaren arazketa diagnostikoetarako gaituta badago soilik funtzionatzen du.

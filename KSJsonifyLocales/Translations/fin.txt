@@ -1129,3 +1129,39 @@ Aktivoi BeatFaderin todellisen värituen.
 BeatFader valitsee satunnaiset värit, jos se on käytössä. Muussa tapauksessa käytä määritysten värejä.
 Mukautettu käynnistysbanneri
 Jos se on määritetty, se näyttää mukautetun käynnistysbannerin paikkamerkkituen kanssa. Voit käyttää tätä ilmausta ytimen versiossa:
+Lataa etäkansion paikalliseen hakemistoon binaarilla tai tekstillä
+Lataa paikallisen kansion etähakemistoon binaarilla tai tekstillä
+Anna kansio, joka ladataan paikalliseen hakemistoon.
+Ladataan kansiota {0} ...
+Ladattu kansio {0}.
+Lataus epäonnistui kansiolle {0}.
+Ladataan kansiota {0} ...
+Ladattu kansio {0}
+Anna kansio, joka ladataan etähakemistoon.
+Kirjoita täysi värikoodi painamalla "c".
+Anna värikoodi, joka täyttää nämä muodot:
+Pienentää JSON -tiedoston
+Uusi näytön viive millisekunneissa
+Sarakelaskuri
+Rivin täytön kynnys
+Rivin täyttörajoituksen todennäköisyys prosentteina
+Rivin täyttötyyppi
+Kuinka monta millisekuntia on odotettava ennen kuin kirjoitat tekstin uudelleen uudelle näytölle?
+Tulostettavat tekstisarakkeet.
+Kuinka monta merkkiä kirjoitetaan ennen "rivin täytön" käynnistämistä?
+Mahdollisuus, että rivin täyttökuvio tulostetaan isoilla kirjaimilla prosentteina
+Rivin täyttökuvion tyyppi
+Yhteinen malli
+Täydellinen kuvio
+Satunnainen kuvio
+Vastaus ei välttämättä ole nolla.
+Vastaus ei saa ylittää näytettyjä merkintöjä.
+Tallenna muutokset...
+Tämä näytönsäästäjä tukee kirjoitettua tekstiä tiedostoon. Siirrä koko tiedostopolku tähän kenttään, ja näytönsäästäjä näyttää tiedoston sisällön asianmukaisesti.
+Hallitse modeja
+Modien hallinta on poistettu käytöstä vikasietotilassa.
+Virheellinen komento {0}. Tarkista käyttö alla:
+Modia ei löydy tai tiedostossa on virheellisiä merkkejä.
+Miss -todennäköisyys prosentteina
+Ota näytönsäästäjän virheenkorjaus käyttöön
+Ottaa käyttöön näytönsäästäjien virheenkorjauksen. Huomaa, että se voi nopeasti täyttää virheenkorjauslokin ja hieman hidastaa näytönsäästäjää käytetystä näytönsäästäjästä riippuen. Toimii vain, jos ytimen virheenkorjaus on otettu käyttöön diagnostisia tarkoituksia varten.

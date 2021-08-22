@@ -1129,3 +1129,39 @@ Activează suportul de culoare adevărată pentru BeatFader.
 BeatFader va selecta culorile aleatorii dacă este activat. În caz contrar, utilizați culori din config.
 Banner de pornire personalizat
 Dacă este specificat, va afișa un banner de pornire personalizat cu suport pentru substituent. Puteți utiliza această expresie pentru versiunea kernel:
+Descarcă folderul la distanță în directorul local folosind binar sau text
+Încarcă folderul local în directorul de la distanță folosind binar sau text
+Introduceți un folder pe care să îl descărcați în directorul local.
+Se descarcă dosarul {0} ...
+Dosarul descărcat {0}.
+Descărcarea nu a reușit pentru dosarul {0}.
+Se încarcă dosarul {0} ...
+Dosar încărcat {0}
+Introduceți un folder pe care să îl încărcați în directorul de la distanță.
+Apăsați „c” pentru a scrie cod color complet.
+Introduceți codul de culoare care îndeplinește aceste formate:
+Minimizează fișierul JSON
+Nouă întârziere a ecranului în milisecunde
+Numărul de coloane
+Prag de umplere linie
+Probabilitate de limitare a umplerii liniei în procente
+Tipul de umplere a liniei
+Câte milisecunde trebuie să așteptați înainte de a scrie din nou textul în noul ecran?
+Coloanele de text de imprimat.
+Câte caractere să scrie înainte de a declanșa „umplerea liniei”?
+Posibilitatea ca modelul de umplere a liniei să fie tipărit în toate majusculele în procente
+Tipul modelului de umplere a liniei
+Tipar comun
+Model complet
+Model aleatoriu
+Răspunsul poate să nu fie zero.
+Răspunsul nu poate depăși intrările afișate.
+Salvează modificările...
+Acest screensaver acceptă textul scris pe fișier. Treceți calea completă a fișierului în acest câmp, iar economizorul de ecran va afișa corespunzător conținutul fișierului.
+Gestionați-vă modificările
+Gestionarea modurilor este dezactivată în modul sigur.
+Comandă nevalidă {0}. Verificați utilizarea de mai jos:
+Modul nu a fost găsit sau fișierul are caractere nevalide.
+Probabilitatea ratării în procente
+Activați depanarea screensaverului
+Activează depanarea pentru economizoarele de ecran. Vă rugăm să rețineți că poate umple rapid jurnalul de depanare și poate încetini ușor screensaver-ul, în funcție de screensaver-ul utilizat. Funcționează numai dacă depanarea kernelului este activată în scopuri de diagnostic.

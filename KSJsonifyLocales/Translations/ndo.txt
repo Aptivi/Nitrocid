@@ -1129,3 +1129,39 @@ Mengaktifkan dukungan warna sebenarnya untuk BeatFader.
 BeatFader akan memilih warna acak jika diaktifkan. Jika tidak, gunakan warna dari config.
 Spanduk Startup Kustom
 Jika ditentukan, itu akan menampilkan spanduk startup yang disesuaikan dengan dukungan placeholder. Anda dapat menggunakan frasa ini untuk versi kernel:
+Unduh folder jarak jauh ke direktori lokal menggunakan biner atau teks
+Unggah folder lokal ke direktori jarak jauh menggunakan biner atau teks
+Masukkan folder untuk mengunduh ke direktori lokal.
+Mengunduh map {0}...
+Folder yang diunduh {0}.
+Unduhan gagal untuk folder {0}.
+Mengunggah map {0}...
+Folder yang diunggah {0}
+Masukkan folder untuk diunggah ke direktori jarak jauh.
+Tekan "c" untuk menulis kode penuh warna.
+Masukkan kode warna yang memenuhi format berikut:
+Memperkecil file JSON
+Penundaan Layar Baru dalam Milidetik
+Jumlah Kolom
+Ambang Batas Isi Garis
+Probabilitas Pembatasan Isi Baris dalam persen
+Jenis Isi Garis
+Berapa milidetik untuk menunggu sebelum menulis teks di layar baru lagi?
+Kolom teks yang akan dicetak.
+Berapa banyak karakter yang harus ditulis sebelum memicu "pengisian baris"?
+Kemungkinan pola isian garis akan dicetak dalam huruf besar semua dalam persen
+Jenis pola pengisian garis
+Pola Umum
+Pola Lengkap
+Pola Acak
+Jawabannya mungkin tidak nol.
+Jawabannya tidak boleh melebihi entri yang ditampilkan.
+Simpan perubahan...
+Screensaver ini mendukung teks tertulis pada file. Lewati jalur file lengkap ke bidang ini, dan screensaver akan menampilkan konten file dengan tepat.
+Kelola mod Anda
+Manajemen mod dinonaktifkan dalam mode aman.
+Perintah tidak valid {0}. Periksa penggunaan di bawah ini:
+Mod tidak ditemukan atau file memiliki karakter yang tidak valid.
+Probabilitas meleset dalam persen
+Aktifkan debugging screensaver
+Mengaktifkan debugging untuk screensaver. Harap dicatat bahwa ini dapat dengan cepat mengisi log debug dan sedikit memperlambat screensaver, tergantung pada screensaver yang digunakan. Hanya berfungsi jika debugging kernel diaktifkan untuk tujuan diagnostik.

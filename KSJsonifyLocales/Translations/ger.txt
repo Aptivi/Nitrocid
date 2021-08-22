@@ -1129,3 +1129,39 @@ Aktiviert True Color-Unterstützung für BeatFader.
 BeatFader wählt zufällige Farben aus, wenn es aktiviert ist. Verwenden Sie andernfalls Farben aus config.
 Benutzerdefiniertes Startup-Banner
 Falls angegeben, wird ein benutzerdefiniertes Startbanner mit Platzhalterunterstützung angezeigt. Sie können diesen Ausdruck für die Kernel-Version verwenden:
+Lädt den Remote-Ordner mithilfe von Binär- oder Textdateien in das lokale Verzeichnis herunter
+Lädt den lokalen Ordner mit Binärdatei oder Text in das Remote-Verzeichnis hoch
+Geben Sie einen Ordner zum Herunterladen in das lokale Verzeichnis ein.
+Ordner {0} wird heruntergeladen...
+Heruntergeladener Ordner {0}.
+Download für Ordner {0} fehlgeschlagen.
+Ordner {0} wird hochgeladen...
+Hochgeladener Ordner {0}
+Geben Sie einen Ordner ein, der in das Remote-Verzeichnis hochgeladen werden soll.
+Drücken Sie "c", um den vollständigen Farbcode zu schreiben.
+Geben Sie einen Farbcode ein, der diese Formate erfüllt:
+Minimiert die JSON-Datei
+Neue Bildschirmverzögerung in Millisekunden
+Spaltenanzahl
+Zeilenfüllschwelle
+Wahrscheinlichkeit der Linienfüllung in Prozent
+Linienfülltyp
+Wie viele Millisekunden müssen Sie warten, bevor Sie den Text erneut in den neuen Bildschirm schreiben?
+Die zu druckenden Textspalten.
+Wie viele Zeichen müssen geschrieben werden, bevor die "Zeilenfüllung" ausgelöst wird?
+Möglichkeit, dass das Linienfüllmuster in Großbuchstaben in Prozent gedruckt wird
+Linienfüllmustertyp
+Bekanntes Muster
+Komplettes Muster
+Zufälliges Muster
+Die Antwort darf nicht null sein.
+Die Antwort darf die angezeigten Einträge nicht überschreiten.
+Änderungen speichern...
+Dieser Bildschirmschoner unterstützt geschriebenen Text in einer Datei. Übergeben Sie den vollständigen Dateipfad an dieses Feld, und der Bildschirmschoner zeigt den Inhalt der Datei entsprechend an.
+Verwalten Sie Ihre Mods
+Die Mod-Verwaltung ist im abgesicherten Modus deaktiviert.
+Ungültiger Befehl {0}. Überprüfen Sie die Verwendung unten:
+Mod nicht gefunden oder Datei enthält ungültige Zeichen.
+Verfehlungswahrscheinlichkeit in Prozent
+Bildschirmschoner-Debugging aktivieren
+Aktiviert das Debuggen für Bildschirmschoner. Bitte beachten Sie, dass es je nach verwendetem Bildschirmschoner das Debug-Protokoll schnell füllen und den Bildschirmschoner etwas verlangsamen kann. Funktioniert nur, wenn das Kernel-Debugging für Diagnosezwecke aktiviert ist.

@@ -1129,3 +1129,39 @@ Jīhuó duì BeatFader de zhēn cǎisè zhīchí.
 Rúguǒ qǐyòng,BeatFader jiāng xuǎnzé suíjī yánsè. Fǒuzé, qǐng shǐyòng pèizhì zhōng de yánsè.
 Zì dìngyì qǐdòng héngfú
 rúguǒ zhǐdìng, tā jiāng xiǎnshì dài yǒu zhàn wèi fú zhīchí de zì dìngyì qǐdòng héngfú. Nín kěyǐ jiāng zhè jù huà yòng yú nèihé bǎnběn:
+Shǐyòng èrjìnzhì huò wénběn jiāng yuǎnchéng wénjiàn jiā xiàzài dào běndì mùlù
+shǐyòng èrjìnzhì huò wénběn jiāng běndì wénjiàn jiā shàngchuán dào yuǎnchéng mùlù
+shūrù yào xiàzài dào běndì mùlù de wénjiàn jiā.
+Zhèngzài xiàzài wénjiàn jiā {0}...
+Yǐxiàzài wénjiàn jiā {0}.
+Wénjiàn jiā {0} de xià zǎi shībài.
+Zhèngzài shàngchuán wénjiàn jiā {0}...
+Shàngchuán de wénjiàn jiā {0}
+shūrù yào shàngchuán dào yuǎnchéng mùlù de wénjiàn jiā.
+Àn “c” xiě rù quán cǎi dàimǎ.
+Shūrù mǎnzú zhèxiē géshì de yánsè dàimǎ:
+Suōxiǎo JSON wénjiàn
+yǐ háomiǎo wèi dānwèi de xīn píngmù yánchí
+liè shù
+xiàn tiánchōng yùzhí
+xíng tiánchōng fēngdǐng gàilǜ (bǎifēnbǐ)
+xiàntiáo tiánchōng lèixíng
+zàicì zài xīn píngmù zhōng xiě rù wénběn zhīqián yào děngdài duōshǎo háomiǎo?
+Yào dǎyìn de wénběn liè.
+Zài chùfā “xíng tiánchōng” zhīqián yào xiě duōshǎo gè zìfú?
+Xiàntiáo tiánchōng tú'àn jiāng yǐ bǎifēnbǐ xíngshì dǎyìn zài suǒyǒu dàxiě zìmǔ zhōng de kěnéng xìng
+xiàntiáo tiánchōng tú'àn lèixíng
+chángjiàn móshì
+wánzhěng móshì
+suíjī móshì
+dá'àn kěnéng bùshì líng.
+Dá'àn bùdé chāoguò xiǎnshì de tiáomù.
+Bǎocún gēnggǎi...
+Cǐ píngmù bǎohù chéngxù zhīchí wénjiàn shàng de shūmiàn wénběn. Jiāng wánzhěng de wénjiàn lùjìng chuándì gěi gāi zìduàn, píngmù bǎohù chéngxù jiāng shìdàng de xiǎnshì wénjiàn de nèiróng.
+Guǎnlǐ nǐ de mó zǔ
+Mod guǎnlǐ zài ānquán móshì xià bèi jìnyòng.
+Wúxiào mìnglìng {0}. Jiǎnchá yǐ xià yòngfǎ:
+Wèi zhǎodào Mod huò wénjiàn bāohán wúxiào zìfú.
+Wèi mìngzhòng gàilǜ (bǎifēnbǐ)
+qǐyòng píngmù bǎohù chéngxù tiáoshì
+qǐyòng píngmù bǎohù chéngxù tiáoshì. Qǐng zhùyì, tā kěnéng huì xùnsù tián mǎn tiáoshì rìzhì bìng shāowéi jiǎn màn píngmù bǎohù chéngxù de sùdù, jùtǐ qǔjué yú suǒ shǐyòng de píngmù bǎohù chéngxù. Jǐn zài wèi zhěnduàn mùdì qǐyòng nèihé tiáoshì shí cái yǒuxiào.

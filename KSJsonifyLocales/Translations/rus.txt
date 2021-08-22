@@ -1129,3 +1129,39 @@ Aktiviruyet podderzhku istinnogo tsveta dlya BeatFader.
 BeatFader vyberet sluchaynyye tsveta, yesli on vklyuchen. V protivnom sluchaye ispol'zuyte tsveta iz config.
 Pol'zovatel'skiy banner pri zapuske
 Yesli ukazano, on budet otobrazhat' nastroyennyy startovyy banner s podderzhkoy zapolniteley. Vy mozhete ispol'zovat' etu frazu dlya oboznacheniya versii yadra:
+Zagruzhayet udalennuyu papku v lokal'nyy katalog, ispol'zuya dvoichnyy ili tekstovyy fayl
+Zagruzhayet lokal'nuyu papku v udalennyy katalog, ispol'zuya dvoichnyy ili tekstovyy fayl
+Vvedite papku dlya zagruzki v lokal'nyy katalog.
+Skachivaniye papki {0} ...
+Skachannaya papka {0}.
+Ne udalos' skachat' papku {0}.
+Zagruzka papki {0} ...
+Zagruzhennaya papka {0}
+Vvedite papku dlya zagruzki v udalennyy katalog.
+Nazhmite «c», chtoby vvesti polnotsvetnyy kod.
+Vvedite tsvetovoy kod, kotoryy sootvetstvuyet etim formatam:
+Umen'shayet fayl JSON
+Novaya zaderzhka ekrana v millisekundakh
+Kolichestvo stolbtsov
+Porog zapolneniya linii
+Veroyatnost' ukuporki linii zapolneniya v protsentakh
+Tip zalivki linii
+Skol'ko millisekund zhdat', prezhde chem snova pisat' tekst na novom ekrane?
+Tekstovyye stolbtsy dlya pechati.
+Skol'ko simvolov nuzhno napisat', prezhde chem zapuskayetsya «zalivka stroki»?
+Vozmozhnost' togo, chto obrazets zalivki linii budet napechatan zaglavnymi bukvami v protsentakh
+Tip risunka zalivki linii
+Obshchiy shablon
+Polnyy shablon
+Sluchaynyy obrazets
+Otvet ne mozhet byt' nulevym.
+Otvet ne mozhet prevyshat' kolichestvo predstavlennykh zapisey.
+Sokhranit' izmeneniya...
+Eta zastavka podderzhivayet zapisannyy tekst v fayle. Peredayte v eto pole polnyy put' k faylu, i zastavka otobrazit soderzhimoye fayla sootvetstvuyushchim obrazom.
+Upravlyayte svoimi modami
+V bezopasnom rezhime upravleniye modami otklyucheno.
+Nedeystvitel'naya komanda {0}. Prover'te ispol'zovaniye nizhe:
+Mod ne nayden ili fayl soderzhit nedopustimyye simvoly.
+Veroyatnost' promakha v protsentakh
+Vklyuchit' otladku zastavki
+Vklyuchayet otladku zastavok. Obratite vnimaniye, chto on mozhet bystro zapolnit' zhurnal otladki i nemnogo zamedlit' rabotu zastavki, v zavisimosti ot ispol'zuyemoy zastavki. Rabotayet, tol'ko yesli otladka yadra vklyuchena dlya diagnosticheskikh tseley.

@@ -1129,3 +1129,39 @@ Bīṭaphaiḍara la'ī sacā raga samarathana kiri'āśīla karadā hai.
 Jē iha samaratha hai tāṁ bīṭaphaiḍara bētaratībē ragāṁ dī cōṇa karēgā. Nahīṁ tāṁ, saracanā tōṁ ragāṁ dī varatōṁ karō.
 Kasaṭama saṭāraṭa'apa bainara
 jē niradhārata kītā gi'ā hai, tāṁ iha palēsahōlaḍara sahā'itā dē nāla anukūlita śurū'ātī bainara pradaraśata karēgā. Tusīṁ karanala sasakaraṇa la'ī isa vākaśa dī varatōṁ kara sakadē hō:
+Bā'īnarī jāṁ ṭaikasaṭa dī varatōṁ karakē rimōṭa phōlaḍara nū sathānaka ḍā'iraikaṭarī vica ḍā'unalōḍa karadā hai
+bā'īnarī jāṁ ṭaikasaṭa dī varatōṁ karakē rimōṭa ḍā'iraikaṭarī vica sathānaka phōlaḍara apalōḍa karadā hai
+sathānaka ḍā'iraikaṭarī vica ḍā'unalōḍa karana la'ī ika phōlaḍara dākhala karō.
+Phōlaḍara {0} nū ḍānalōḍa kītā jā rihā hai...
+Phōlaḍara {0} ḍā Downloadnalōḍa kītā gi'ā.
+Phōlaḍara {0} la'ī ḍā Downloadnalōḍa asaphala rihā.
+Phōlaḍara {0} apalōḍa kītā jā rihā hai...
+Apalōḍa kītā phōlaḍara {0}
+rimōṭa ḍā'iraikaṭarī vica apalōḍa karana la'ī ika phōlaḍara dākhala karō.
+Pūrā raga kōḍa likhaṇa la'ī"c" dabā'ō.
+Raga kōḍa dākhala karō jō ihanāṁ phāramaiṭāṁ nū satuśaṭa karadā hai:
+JSON phā'īla nū chōṭā karadā hai
+milīsakiṭa vica navīṁ sakrīna dērī
+kālama giṇatī
+lā'īna bharana dī thraiśahōlaḍa
+pratīśata vica lā'īna philiga kaipiga sabhāvanā
+lā'īna bharana dī kisama
+dubārā navīṁ sakrīna tē ṭaikasaṭa likhaṇa tōṁ pahilāṁ kinē milīsakiṭa uḍīka karanī hai?
+Chāpē jāṇa vālē pāṭha kālama.
+"Lā'īna bharana" nū cālū karana tōṁ pahilāṁ kinē akhara likhaṇē hana?
+Sabhāvanā hai ki lā'īna bharana dā paiṭarana sārē kaipasa vica pratīśata vica chāpi'ā jāvēgā
+lā'īna bharana dē paiṭarana dī kisama
+āma paiṭarana
+pūrā paiṭarana
+bētaratībē paiṭarana
+javāba zīrō nahīṁ hō sakadā.
+Javāba dikhā'ī'āṁ ga'ī'āṁ idarājāṁ tōṁ vadha nahīṁ hō sakadā.
+Kītē ga'ē badalā'a surakhi'ata karō...
+Iha sakrīnasēvara phā'īla tē likhata ṭaikasaṭa dā samarathana karadā hai. Isa khētara vica sapūrana phā'īla māraga pāsa karō, atē sakrīnasēvara phā'īla dī samagarī nū ucita tarīkē nāla pradaraśata karēgā.
+Āpaṇē mōḍasa dā prabadhana karō
+māḍa prabadhana surakhi'ata mōḍa vica ayōga hai.
+Avaidha kamāṇḍa {0}. Hēṭhāṁ varatōṁ dī jān̄ca karō:
+Māḍa nahīṁ mili'ā jāṁ phā'īla vica avaidha akhara hana.
+Pratīśata vica khujhaṇa dī sabhāvanā
+sakrīnasēvara ḍībagiga nū samaratha baṇā'u
+sakrīnasēvarāṁ la'ī ḍībagiga nū samaratha baṇā'undā hai. Kirapā karakē nōṭa karō ki iha ḍībaga lauga nū tēzī nāla bhara sakadā hai atē varatē ga'ē sakrīnasēvara dē adhāra tē, sakrīnasēvara nū thōṛhā haulī kara sakadā hai. Sirapha tāṁ hī kama karadā hai jē karanala ḍībagiga ḍā'iganausaṭika udēśāṁ la'ī samaratha hōvē.

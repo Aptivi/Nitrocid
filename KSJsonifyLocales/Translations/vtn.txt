@@ -1129,3 +1129,39 @@ Kích hoạt hỗ trợ màu sắc trung thực cho BeatFader.
 BeatFader sẽ chọn màu ngẫu nhiên nếu nó được bật. Nếu không, hãy sử dụng màu từ cấu hình.
 Biểu ngữ khởi động tùy chỉnh
 Nếu được chỉ định, nó sẽ hiển thị biểu ngữ khởi động tùy chỉnh với hỗ trợ giữ chỗ. Bạn có thể sử dụng cụm từ này cho phiên bản hạt nhân:
+Tải thư mục từ xa xuống thư mục cục bộ bằng mã nhị phân hoặc văn bản
+Tải lên thư mục cục bộ vào thư mục từ xa bằng cách sử dụng nhị phân hoặc văn bản
+Nhập một thư mục để tải xuống thư mục cục bộ.
+Đang tải xuống thư mục {0} ...
+Thư mục đã tải xuống {0}.
+Tải xuống không thành công cho thư mục {0}.
+Đang tải lên thư mục {0} ...
+Thư mục đã tải lên {0}
+Nhập một thư mục để tải lên thư mục từ xa.
+Nhấn "c" để viết mã màu đầy đủ.
+Nhập mã màu đáp ứng các định dạng sau:
+Thu nhỏ tệp JSON
+Độ trễ màn hình mới tính bằng mili giây
+Số cột
+Ngưỡng tô dòng
+Xác suất lấp đầy dòng tính bằng phần trăm
+Loại tô dòng
+Phải đợi bao nhiêu mili giây trước khi viết lại văn bản trên màn hình mới?
+Các cột văn bản sẽ được in.
+Cần viết bao nhiêu ký tự trước khi kích hoạt "điền dòng"?
+Khả năng mẫu tô dòng sẽ được in hoa toàn bộ tính bằng phần trăm
+Kiểu điền dòng
+Mẫu chung
+Mẫu hoàn chỉnh
+Mẫu ngẫu nhiên
+Câu trả lời có thể không phải là số không.
+Câu trả lời không được vượt quá các mục được hiển thị.
+Lưu thay đổi...
+Trình bảo vệ màn hình này hỗ trợ văn bản được viết trên tệp. Chuyển đường dẫn tệp hoàn chỉnh đến trường này và trình bảo vệ màn hình sẽ hiển thị nội dung của tệp một cách thích hợp.
+Quản lý mod của bạn
+Quản lý mod bị tắt ở chế độ an toàn.
+Lệnh không hợp lệ {0}. Kiểm tra việc sử dụng bên dưới:
+Không tìm thấy mod hoặc tệp có ký tự không hợp lệ.
+Xác suất trượt tính bằng phần trăm
+Bật gỡ lỗi trình bảo vệ màn hình
+Cho phép gỡ lỗi cho trình bảo vệ màn hình. Xin lưu ý rằng nó có thể nhanh chóng lấp đầy nhật ký gỡ lỗi và làm chậm một chút trình bảo vệ màn hình, tùy thuộc vào trình bảo vệ màn hình được sử dụng. Chỉ hoạt động nếu gỡ lỗi hạt nhân được bật cho mục đích chẩn đoán.

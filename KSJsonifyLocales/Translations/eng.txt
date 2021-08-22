@@ -1129,3 +1129,39 @@ Activates true color support for BeatFader.
 BeatFader will select random colors if it's enabled. Otherwise, use colors from config.
 Custom Startup Banner
 If specified, it will display customized startup banner with placeholder support. You can use this phrase for kernel version:
+Downloads remote folder to local directory using binary or text
+Uploads local folder to remote directory using binary or text
+Enter a folder to download to local directory.
+Downloading folder {0}...
+Downloaded folder {0}.
+Download failed for folder {0}.
+Uploading folder {0}...
+Uploaded folder {0}
+Enter a folder to upload to remote directory.
+Press "c" to write full color code.
+Enter color code that satisfies these formats:
+Minifies the JSON file
+New Screen Delay in Milliseconds
+Column Count
+Line Fill Threshold
+Line Fill Capping Probability in percent
+Line Fill Type
+How many milliseconds to wait before writing the text in the new screen again?
+The text columns to be printed.
+How many characters to write before triggering the "line fill"?
+Possibility that the line fill pattern will be printed in all caps in percent
+Line fill pattern type
+Common Pattern
+Complete Pattern
+Random Pattern
+The answer may not be zero.
+The answer may not exceed the entries shown.
+Save Changes...
+This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately.
+Manage your mods
+Mod management is disabled in safe mode.
+Invalid command {0}. Check the usage below:
+Mod not found or file has invalid characters.
+Probability of miss in percent
+Enable screensaver debugging
+Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.

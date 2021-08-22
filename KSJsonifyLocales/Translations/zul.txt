@@ -1129,3 +1129,39 @@ Yenza kusebenze ukwesekwa kombala kweqiniso kweBeatFader.
 IBeatFader izokhetha imibala engahleliwe uma inikwe amandla. Ngaphandle kwalokho, sebenzisa imibala kusuka ku-config.
 Isibhengezo Sokuqalisa Ngokwezifiso
 Uma kucacisiwe, sizobonisa isibhengezo sokuqalisa esenziwe ngezifiso ngokusekelwa kwesimeli. Ungasebenzisa lesi sisho ukuthola inguqulo ye-kernel:
+Ukulanda ifolda ekude kuya enkombeni yendawo usebenzisa kanambambili noma umbhalo
+Kulayishwa ifolda yendawo enkombeni ekude kusetshenziswa kanambambili noma umbhalo
+Faka ifolda ukuze uyilande enkombeni yasendaweni.
+Ilanda ifolda {0} ...
+Ifolda elandiwe {0}.
+Ukulanda kwehlulekile kufolda {0}.
+Kulayishwa ifolda {0} ...
+Kulayishwe ifolda {0}
+Faka ifolda ukuze uyilayishe enkombeni ekude.
+Cindezela u- "c" ukubhala ikhodi enemibala ephelele.
+Faka ikhodi yombala eyanelisa lezi zakhiwo:
+Inciphisa ifayili le-JSON
+Ukubambezeleka okusha kwesikrini kumaMillisecond
+Ukubalwa Kwekholomu
+Ulayini Gcwalisa Umkhawulo
+Umugqa Gcwalisa Ukuqhafaza Amathuba ngamaphesenti
+Ulayini Gcwalisa Uhlobo
+Mangaki ama-millisecond okulinda ngaphambi kokubhala umbhalo kusikrini esisha futhi?
+Amakholomu ombhalo azophrintwa.
+Zingaki izinhlamvu okufanele zibhalwe ngaphambi kokucindezela "ukugcwaliswa komugqa"?
+Kungenzeka ukuthi iphethini lokugcwalisa umugqa lizophrintwa kuwo wonke ama-caps ngamaphesenti
+Uhlobo lwendlela yokugcwalisa ulayini
+Iphethini Ejwayelekile
+Qedela iphethini
+Iphethini engahleliwe
+Impendulo kungenzeka ingabi uziro.
+Impendulo ingahle yeqe okufakiwe okubonisiwe.
+Londoloza Izinguquko ...
+Lesi sikrini sesikrini sisekela umbhalo obhaliwe kufayela. Dlulisa indlela ephelele yefayela kule nkambu, futhi i-screensaver izokhombisa okuqukethwe kwefayela ngokufanele.
+Phatha ama-mods akho
+Ukuphathwa kweMod kukhutshaziwe kumodi ephephile.
+Umyalo ongavumelekile {0}. Bheka ukusetshenziswa okungezansi:
+Imodi ayitholakalanga noma ifayela linezinhlamvu ezingavumelekile.
+Amathuba okuphuthelwa ngamaphesenti
+Nika amandla ukulungisa iphutha kwe-screensaver
+Inika amandla ukulungisa iphutha kokulondolozwa kwesikrini. Uyacelwa ukuthi wazi ukuthi ingagcwalisa ngokushesha ilog yokulungisa iphutha bese yehlise kancane i-screensaver phansi, kuya ngesilondolozi-skrini esisetshenzisiwe. Kusebenza kuphela uma ukulungisa iphutha kwe-kernel kunikwe amandla ngezinhloso zokuxilonga.

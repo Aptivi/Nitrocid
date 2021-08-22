@@ -1129,3 +1129,39 @@ Aktywuje prawdziwą obsługę kolorów dla BeatFader.
 BeatFader wybierze losowe kolory, jeśli jest włączony. W przeciwnym razie użyj kolorów z konfiguracji.
 Niestandardowy baner startowy
 Jeśli zostanie określony, wyświetli dostosowany baner startowy z obsługą symboli zastępczych. Możesz użyć tego wyrażenia dla wersji jądra:
+Pobiera zdalny folder do katalogu lokalnego za pomocą pliku binarnego lub tekstowego
+Wysyła lokalny folder do zdalnego katalogu za pomocą pliku binarnego lub tekstowego
+Wprowadź folder do pobrania do katalogu lokalnego.
+Pobieranie folderu {0}...
+Pobrany folder {0}.
+Pobieranie nie powiodło się dla folderu {0}.
+Przesyłanie folderu {0}...
+Przesłany folder {0}
+Wprowadź folder, który chcesz przesłać do katalogu zdalnego.
+Naciśnij "c", aby napisać kod w pełnym kolorze.
+Wprowadź kod koloru, który spełnia te formaty:
+Minimalizuje plik JSON
+Nowe opóźnienie ekranu w milisekundach
+Liczba kolumn
+Próg wypełnienia linii
+Prawdopodobieństwo ograniczenia wypełnienia linii w procentach
+Typ wypełnienia linii
+Ile milisekund trzeba czekać, zanim ponownie napiszesz tekst na nowym ekranie?
+Kolumny tekstu do wydrukowania.
+Ile znaków napisać przed uruchomieniem „wypełniania linii”?
+Możliwość, że wzór wypełnienia linii zostanie wydrukowany we wszystkich wersalikach w procentach
+Typ wzoru wypełnienia linii
+Wspólny wzór
+Kompletny wzór
+Losowy wzór
+Odpowiedź może nie być zerem.
+Odpowiedź nie może przekraczać wskazanych wpisów.
+Zapisz zmiany...
+Ten wygaszacz ekranu obsługuje tekst pisany w pliku. Podaj pełną ścieżkę pliku do tego pola, a wygaszacz ekranu odpowiednio wyświetli zawartość pliku.
+Zarządzaj swoimi modami
+Zarządzanie modami jest wyłączone w trybie awaryjnym.
+Nieprawidłowe polecenie {0}. Sprawdź użycie poniżej:
+Nie znaleziono modu lub plik zawiera nieprawidłowe znaki.
+Prawdopodobieństwo chybienia w procentach
+Włącz debugowanie wygaszacza ekranu
+Włącza debugowanie wygaszaczy ekranu. Należy pamiętać, że może to szybko zapełnić dziennik debugowania i nieco spowolnić wygaszacz ekranu, w zależności od używanego wygaszacza ekranu. Działa tylko wtedy, gdy debugowanie jądra jest włączone do celów diagnostycznych.

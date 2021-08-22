@@ -1129,3 +1129,39 @@ Yn actifadu gwir gefnogaeth lliw i BeatFader.
 Bydd BeatFader yn dewis lliwiau ar hap os yw wedi'i alluogi. Fel arall, defnyddiwch liwiau o config.
 Baner Cychwyn Custom
 Os yw wedi'i nodi, bydd yn arddangos baner cychwyn wedi'i theilwra gyda chefnogaeth deiliad y lle. Gallwch ddefnyddio'r ymadrodd hwn ar gyfer fersiwn cnewyllyn:
+Dadlwytho ffolder anghysbell i'r cyfeiriadur lleol gan ddefnyddio deuaidd neu destun
+Yn llwytho ffolder leol i gyfeiriadur anghysbell gan ddefnyddio deuaidd neu destun
+Rhowch ffolder i'w lawrlwytho i'r cyfeiriadur lleol.
+Llwytho ffolder {0} ...
+Ffolder wedi'i lawrlwytho {0}.
+Methodd lawrlwytho ar gyfer ffolder {0}.
+Ffolder uwchlwytho {0} ...
+Ffolder wedi'i llwytho i fyny {0}
+Rhowch ffolder i'w lanlwytho i gyfeiriadur anghysbell.
+Pwyswch "c" i ysgrifennu cod lliw llawn.
+Rhowch god lliw sy'n bodloni'r fformatau hyn:
+Yn lleihau'r ffeil JSON
+Oedi Sgrin Newydd mewn Milliseconds
+Cyfrif Colofnau
+Trothwy Llenwi Llinell
+Capio Llenwi Llinell Tebygolrwydd yn y cant
+Math Llenwi Llinell
+Sawl milieiliad i aros cyn ysgrifennu'r testun yn y sgrin newydd eto?
+Y colofnau testun i'w hargraffu.
+Faint o gymeriadau i'w hysgrifennu cyn sbarduno'r "llenwad llinell"?
+Posibilrwydd y bydd y patrwm llenwi llinell yn cael ei argraffu ym mhob cap yn y cant
+Math o batrwm llenwi llinell
+Patrwm Cyffredin
+Patrwm Cyflawn
+Patrwm ar hap
+Efallai na fydd yr ateb yn sero.
+Efallai na fydd yr ateb yn fwy na'r cofnodion a ddangosir.
+Arbed Newidiadau ...
+Mae'r arbedwr sgrin hwn yn cefnogi testun ysgrifenedig ar ffeil. Pasiwch y llwybr ffeil cyflawn i'r maes hwn, a bydd yr arbedwr sgrin yn arddangos cynnwys y ffeil yn briodol.
+Rheoli eich mods
+Mae rheoli mod yn anabl yn y modd diogel.
+Gorchymyn annilys {0}. Gwiriwch y defnydd isod:
+Mod heb ei ddarganfod neu mae gan y ffeil nodau annilys.
+Tebygolrwydd o golli yn y cant
+Galluogi difa chwilod arbed sgrin
+Yn galluogi difa chwilod ar gyfer arbedwyr sgrin. Sylwch y gallai lenwi'r log dadfygio yn gyflym ac arafu'r arbedwr sgrin i lawr, yn dibynnu ar yr arbedwr sgrin a ddefnyddir. Dim ond os yw difa chwilod cnewyllyn wedi'i alluogi at ddibenion diagnostig y mae'n gweithio.

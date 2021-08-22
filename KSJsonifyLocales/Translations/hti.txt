@@ -1129,3 +1129,39 @@ Aktive vrè sipò koulè pou BeatFader.
 BeatFader pral chwazi koulè o aza si li pèmèt. Sinon, sèvi ak koulè ki soti nan config.
 Custom Banner demaraj
 Si yo espesifye, li pral montre banyè demaraj Customized ak sipò plas. Ou ka itilize fraz sa a pou vèsyon Kernel:
+Downloads aleka katab nan anyè lokal lè l sèvi avèk binè oswa tèks
+Uploads katab lokal nan anyè aleka lè l sèvi avèk binè oswa tèks
+Mete yon katab pou telechaje nan anyè lokal la.
+Telechaje katab {0} ...
+Katab telechaje {0}.
+Telechaje echwe pou katab {0}.
+Téléchargement Katab {0} ...
+Katab telechaje {0}
+Mete yon katab pou telechaje nan anyè aleka.
+Peze "c" yo ekri kòd koulè plen.
+Mete kòd koulè ki satisfè fòma sa yo:
+Minimize dosye a JSON
+Nouvo ekran Reta nan milisgond
+Kolòn Konte
+Liy Ranpli Limit
+Liy Ranpli Pwobabilite Capping an pousan
+Liy Ranpli Kalite
+Konbyen milisgond yo rete tann anvan ou ekri tèks la nan nouvo ekran an ankò?
+Kolòn tèks yo dwe enprime.
+Konbyen karaktè yo ekri anvan deklanche "liy lan ranpli"?
+Posibilite pou modèl ranpli liy lan enprime nan tout bouchon an pousan
+Liy ranpli modèl tip
+Komen Modèl
+Ranpli Modèl
+Modèl o aza
+Repons lan pa ka zewo.
+Repons lan pa dwe depase antre yo montre yo.
+Sove Chanjman ...
+Ekran sa a sipòte tèks ekri nan dosye a. Pase chemen ranpli dosye a nan jaden sa a, ak ekran an ap montre sa ki nan dosye a kòmsadwa.
+Jere mods ou
+Jesyon Mod enfim nan mòd san danje.
+Kòmandman ki pa valab {0}. Tcheke l 'ki anba a:
+Mod pa jwenn oswa dosye gen karaktè envalid.
+Pwobabilite pou manke nan pousan
+Pèmèt debogaj ekran
+Pèmèt debogaj pou ekran. Tanpri sonje ke li ka byen vit ranpli boutèy la debug ak yon ti kras ralanti ekran an desann, tou depann de ekran an itilize. Se sèlman travay si debogaj Kernel la pèmèt pou rezon dyagnostik.

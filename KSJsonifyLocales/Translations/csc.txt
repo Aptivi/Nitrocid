@@ -1129,3 +1129,39 @@ Attiva u veru supportu di culore per BeatFader.
 BeatFader selezziunà i culori aleatorii s'ellu hè attivatu. Inutili, utilizate culori da config.
 Banner di Startup Persunale
 Se specificatu, visualizerà una bandiera iniziale persunalizata cù supportu di placeholder. Pudete aduprà sta frasa per a versione di u kernel:
+Scaricate u cartulare remotu in u repertoriu lucale cù binariu o testu
+Carica u cartulare lucale in u repertoriu luntanu aduprendu binariu o testu
+Entre un cartulare da scaricà in u cartulare lucale.
+Scaricamentu di u cartulare {0} ...
+Cartulare scaricatu {0}.
+U scaricamentu hà fiascatu per u cartulare {0}.
+Caricamentu di u cartulare {0} ...
+Cartulare caricatu {0}
+Inserite un cartulare da caricare in u repertoriu remoto.
+Pulsà "c" per scrive u codice di culore.
+Inserite u codice di culore chì soddisfa questi formati:
+Riduce u file JSON
+New Screen Delay in Millisecondi
+Conte di Culonne
+Soglia di Fill Fill Line
+Probabilità di Capping Line Fill in percentuale
+Tipu di Riempimentu di Linea
+Quantu millisecondi da aspittà prima di scrive dinò u testu in u novu schermu?
+E colonne di testu da stampà.
+Quantu caratteri da scrive prima di scatenà u "fill fill"?
+Possibilità chì u mudellu di riempimentu di linea sia stampatu in tutti i tappi in percentuale
+Tipu di mudellu di riempimentu di linea
+Pattern cumunu
+Pattern cumpletu
+Pattern Random
+A risposta ùn pò esse zero.
+A risposta ùn pò micca supera l'entrate mostrate.
+Salvà Cambiamenti ...
+Stu screensaver sustene u testu scrittu in u fugliale. Passate u percorsu cumpletu di u fugliale in questu campu, è u screensaver mostrarà u cuntenutu di u fugliale in modu adattatu.
+Gestite e vostre mods
+A gestione di Mod hè disattivata in modu sicuru.
+Cumanda invalida {0}. Verificate l'usu quì sottu:
+Mod ùn hè micca truvatu o u fugliale hà caratteri invalidi.
+Probabilità di mancanza in percentuale
+Attivà u debugging di u screensaver
+Permette u debugging per i screensaver. Da nutà chì pò riempie rapidamente u log di debug è rallentà leggermente u screensaver, secondu u screensaver adupratu. Funziona solu sì u debugging di u kernel hè abilitatu per scopi diagnostichi.

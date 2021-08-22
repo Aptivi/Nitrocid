@@ -1129,3 +1129,39 @@ Inamsha msaada wa kweli wa rangi kwa BeatFader.
 BeatFader itachagua rangi bila mpangilio ikiwa imewezeshwa. Vinginevyo, tumia rangi kutoka kwa usanidi.
 Bango la Kuanzisha Maalum
 Ikiwa imeainishwa, itaonyesha bendera ya kuanza ya kukufaa na msaada wa kishikilia nafasi. Unaweza kutumia kifungu hiki kwa toleo la kernel:
+Inapakua folda ya mbali kwa saraka ya karibu kwa kutumia binary au maandishi
+Inapakia folda ya ndani kwa saraka ya mbali kwa kutumia binary au maandishi
+Ingiza folda kupakua kwenye saraka ya karibu.
+Inapakua folda {0} ...
+Folda iliyopakuliwa {0}.
+Folda imepotea {0}.
+Inapakia folda {0} ...
+Folda iliyopakiwa {0}
+Ingiza folda kupakia kwenye saraka ya mbali.
+Bonyeza "c" kuandika nambari kamili ya rangi.
+Ingiza msimbo wa rangi ambao unaridhisha fomati hizi:
+Inasafisha faili ya JSON
+Ucheleweshaji Mpya wa Screen katika Milisekunde
+Hesabu ya safu wima
+Line Jaza Kizingiti
+Jaza Ujazaji wa Ukataji wa Mstari kwa asilimia
+Laini Jaza Aina
+Ni milisekunde ngapi kusubiri kabla ya kuandika maandishi kwenye skrini mpya tena?
+Safu wima za maandishi zitakazochapishwa.
+Ni wahusika wangapi wa kuandika kabla ya kuchochea "ujazaji wa laini"?
+Uwezekano kwamba muundo wa kujaza laini utachapishwa kwa kofia zote kwa asilimia
+Aina ya muundo wa kujaza mstari
+Mfano wa kawaida
+Mfano kamili
+Sampuli isiyo ya kawaida
+Jibu linaweza lisiwe sifuri.
+Jibu haliwezi kuzidi viingizo vilivyoonyeshwa.
+Hifadhi mabadiliko...
+Screensaver hii inasaidia maandishi yaliyoandikwa kwenye faili. Pitisha njia kamili ya faili kwenda kwenye uwanja huu, na mtunzi wa skrini ataonyesha yaliyomo kwenye faili ipasavyo.
+Dhibiti mods zako
+Usimamizi wa Mod umezimwa katika hali salama.
+Amri batili {0}. Angalia matumizi hapa chini:
+Mod haijapatikana au faili ina vibambo batili.
+Uwezekano wa kukosa kwa asilimia
+Washa utatuaji wa kiwambo cha skrini
+Huwasha utatuzi wa viokoaji skrini. Tafadhali kumbuka kuwa inaweza kujaza haraka kumbukumbu ya utatuzi na kupunguza polepole kiwambo cha skrini chini, kulingana na kiwambo cha skrini kilichotumiwa. Inafanya kazi tu ikiwa utatuaji wa kernel umewezeshwa kwa madhumuni ya uchunguzi.

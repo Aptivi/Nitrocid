@@ -1129,3 +1129,39 @@ Aktiverer ekte fargestøtte for BeatFader.
 BeatFader vil velge tilfeldige farger hvis den er aktivert. Ellers bruker du farger fra config.
 Egendefinert oppstartsbanner
 Hvis det er spesifisert, vil det vise tilpasset oppstartsbanner med plassholderstøtte. Du kan bruke dette uttrykket for kjerneversjon:
+Last ned ekstern mappe til lokal katalog ved hjelp av binær eller tekst
+Laster opp lokal mappe til ekstern katalog ved hjelp av binær eller tekst
+Skriv inn en mappe du vil laste ned til den lokale katalogen.
+Laster ned mappen {0} ...
+Nedlastet mappe {0}.
+Nedlasting mislyktes for mappen {0}.
+Laster opp mappen {0} ...
+Lastet opp mappe {0}
+Skriv inn en mappe for å laste opp til ekstern katalog.
+Trykk "c" for å skrive fullfargekode.
+Skriv inn fargekode som tilfredsstiller disse formatene:
+Minerer JSON -filen
+Ny skjermforsinkelse i millisekunder
+Kolonneantall
+Terskel for linjefyll
+Sannsynlighet for linjefylling i prosent
+Linjefyllingstype
+Hvor mange millisekunder å vente før du skriver teksten i den nye skjermen igjen?
+Tekstkolonnene som skal skrives ut.
+Hvor mange tegn skal du skrive før du fyller ut "linjefyllingen"?
+Mulighet for at linjefyllmønsteret skrives ut i alle kapsler i prosent
+Linjefyllmønster type
+Felles mønster
+Komplett mønster
+Tilfeldig mønster
+Svaret er kanskje ikke null.
+Svaret kan ikke overstige oppføringene som vises.
+Lagre endringer...
+Denne skjermspareren støtter skriftlig tekst på fil. Send hele filbanen til dette feltet, og skjermspareren viser innholdet i filen på riktig måte.
+Administrer modsene dine
+Mod -administrasjon er deaktivert i sikker modus.
+Ugyldig kommando {0}. Sjekk bruken nedenfor:
+Modus ble ikke funnet, eller filen har ugyldige tegn.
+Sannsynlighet for tap i prosent
+Aktiver feilsøking av skjermsparer
+Aktiverer feilsøking for skjermsparere. Vær oppmerksom på at det raskt kan fylle feilsøkingsloggen og bremse skjermspareren litt, avhengig av hvilken skjermsparer som brukes. Fungerer bare hvis feilsøking av kjerner er aktivert for diagnostiske formål.

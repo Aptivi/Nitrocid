@@ -1129,3 +1129,39 @@ Aktive vrè sipò koulè pou BeatFader.
 BeatFader pral chwazi koulè o aza si li pèmèt. Sinon, sèvi ak koulè ki soti nan config.
 Custom Banner demaraj
 Si yo espesifye, li pral montre banyè demaraj Customized ak sipò plas. Ou ka itilize fraz sa a pou vèsyon Kernel:
+Descarga o cartafol remoto ao directorio local usando binario ou texto
+Carga o cartafol local ao directorio remoto usando binario ou texto
+Insira un cartafol para descargar no directorio local.
+Descargando o cartafol {0} ...
+Cartafol descargado {0}.
+Fallou a descarga do cartafol {0}.
+Cargando cartafol {0} ...
+Cartafol cargado {0}
+Insira un cartafol para cargar no directorio remoto.
+Preme "c" para escribir o código a toda cor.
+Introduza o código de cor que cumpra estes formatos:
+Minimiza o ficheiro JSON
+Novo atraso da pantalla en milisegundos
+Reconto de columnas
+Limiar de recheo de liña
+Probabilidade de límite de recheo de liña en porcentaxe
+Tipo de recheo de liña
+Cantos milisegundos agardar antes de escribir de novo o texto na nova pantalla?
+As columnas de texto que se van imprimir.
+Cantos caracteres escribir antes de activar o "recheo de liña"?
+Posibilidade de que o patrón de recheo de liña se imprima en maiúsculas en porcentaxe
+Tipo de patrón de recheo de liña
+Patrón común
+Patrón completo
+Patrón aleatorio
+A resposta pode non ser cero.
+A resposta non pode exceder as entradas mostradas.
+Gardar cambios...
+Este protector de pantalla admite texto escrito no ficheiro. Pasa a ruta completa do ficheiro a este campo e o protector de pantalla amosará o contido do ficheiro de xeito adecuado.
+Xestiona os teus mods
+A xestión de mods está desactivada en modo seguro.
+Comando {0} non válido. Comprobe o uso a continuación:
+Non se atopou o mod ou o ficheiro ten caracteres non válidos.
+Probabilidade de falta en porcentaxe
+Activar a depuración do protector de pantalla
+Habilita a depuración para os protectores de pantalla. Ten en conta que pode encher rapidamente o rexistro de depuración e retardar lixeiramente o protector de pantalla, dependendo do protector de pantalla usado. Só funciona se a depuración do núcleo está habilitada con fins de diagnóstico.

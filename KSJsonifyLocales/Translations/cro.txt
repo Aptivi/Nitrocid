@@ -1129,3 +1129,39 @@ Aktivira podršku za prave boje za BeatFader.
 BeatFader će odabrati nasumične boje ako je omogućen. U protivnom koristite boje iz konfiguracije.
 Prilagođeni početni banner
 Ako je navedeno, prikazat će prilagođeni početni banner s podrškom za rezervirano mjesto. Ovaj izraz možete koristiti za verziju jezgre:
+Preuzima udaljenu mapu u lokalni direktorij pomoću binarnog ili tekstualnog teksta
+Prenosi lokalnu mapu u udaljeni direktorij pomoću binarnog zapisa ili teksta
+Unesite mapu za preuzimanje u lokalni direktorij.
+Preuzimanje mape {0} ...
+Preuzeta mapa {0}.
+Preuzimanje nije uspjelo za mapu {0}.
+Prijenos mape {0} ...
+Prenesena mapa {0}
+Unesite mapu za prijenos u udaljeni direktorij.
+Pritisnite "c" za pisanje koda u boji.
+Unesite kôd boje koji zadovoljava ove formate:
+Umanjuje datoteku JSON
+Novo kašnjenje zaslona u milisekundama
+Broj stupaca
+Prag ispune linije
+Vjerojatnost ograničavanja punjenja retka u postocima
+Vrsta ispune linije
+Koliko milisekundi čekati prije nego što ponovo upišete tekst na novom ekranu?
+Tekstualni stupci za ispis.
+Koliko znakova napisati prije pokretanja "popunjavanja retka"?
+Mogućnost da se uzorak za popunjavanje redaka ispiše velikim slovima u postocima
+Vrsta uzorka za popunjavanje retka
+Zajednički uzorak
+Potpuni uzorak
+Slučajni uzorak
+Odgovor možda nije nula.
+Odgovor ne smije premašiti prikazane unose.
+Spremi promjene...
+Ovaj čuvar zaslona podržava pisani tekst u datoteci. Prenesite cijelu putanju datoteke do ovog polja i čuvar zaslona će na odgovarajući način prikazati sadržaj datoteke.
+Upravljajte svojim modovima
+Upravljanje načinom rada onemogućeno je u sigurnom načinu rada.
+Nevažeća naredba {0}. Upotrebu provjerite u nastavku:
+Mod nije pronađen ili datoteka ima nevažeće znakove.
+Vjerojatnost promašaja u postocima
+Omogući ispravljanje pogrešaka čuvara zaslona
+Omogućuje ispravljanje pogrešaka za čuvare zaslona. Imajte na umu da može brzo ispuniti dnevnik otklanjanja pogrešaka i malo usporiti čuvar zaslona, ​​ovisno o čuvaru zaslona koji se koristi. Radi samo ako je otklanjanje pogrešaka u jezgri omogućeno u dijagnostičke svrhe.

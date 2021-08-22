@@ -1129,3 +1129,39 @@ BeatFader üşin naqtı qoldawdı belsendiredi.
 BeatFader kezdeysoq tüsterdi tañdaydı, eger ol bolsa. Äytpese, konfïgwracïyadan tüsterdi qoldanıñız.
 Arnayı iske qosw banneri
 Eger körsetilse, ol tolıqtay qoldawımen teñşelgen iske qosw bannerin qoldaydı. Siz bul söylemdi yadro ​​nusqası üşin alasız:
+Qaşıqtağı qaltanı ekilik nemese mätindi paydalanıp jergilikti katalogqa jükteydi
+Jergilikti qaltanı ekilik nemese mätindi paydalanıp qaşıqtağı katalogqa jükteydi
+Jergilikti katalogqa jükteletin qaltanı engiziñiz.
+{0} qaltası jüktelwde ...
+{0} qaltası jükteldi.
+{0} qaltası üşin jüktew sätsiz ayaqtaldı.
+{0} qaltası jüktelwde ...
+{0} qaltası jükteldi
+Qaşıqtağı katalogqa jükteletin qaltanı engiziñiz.
+Tolıq tüs kodın jazw üşin «c» tüymesin basıñız.
+Osı formattarğa säykes keletin tüs kodın engiziñiz:
+JSON faylın kişireytedi
+Jaña ékran kidirisi mïllïsekwndtarda
+Bağan sanı
+Joldı toltırw şegi
+Sızıqtı toltırwdı jabw ıqtïmaldığı payızben
+Joldı toltırw türi
+Mätindi jaña ékranğa qayta jazar aldında qanşa mïllïsekwnd kütw kerek?
+Basıp şığarılatın mätin bağandarı.
+«Joldı toltırwdı» bastamas burın qanşa tañba jazw kerek?
+Joldı toltırw ülgisi barlıq bas äriptermen payızben basıp şığarılwı mümkin
+Sızıq toltırw ülgisiniñ türi
+Ortaq örnek
+Tolıq ülgi
+Kezdeysoq ülgi
+Jawap nölge teñ bolmawı mümkin.
+Jawap körsetilgen jazbadan aspawı kerek.
+Özgeristerdi saqtaw...
+Bul ékran saqtawşı fayldağı jazbaşa mätindi qoldaydı. Fayldıñ tolıq jolın osı öriske jiberiñiz, sonda ékran saqtawşı fayldıñ mazmunın tïisti türde körsetedi.
+Modwlderdi basqarıñız
+Modwldi basqarw qawipsiz rejïmde öşirilgen.
+Jaramsız {0} pärmeni. Qoldanwdı tömende tekseriñiz:
+Mod tabılmadı nemese faylda jaramsız tañbalar bar.
+Ötkizw ıqtïmaldığı payızben
+Ékran saqtağışınıñ jöndewin qosıñız
+Ékran saqtawşılardıñ otladtawın qosadı. Nazar awdarıñız, ol otladtaw jwrnalın tez toltıradı jäne paydalanılğan ékran saqtağışqa baylanıstı ékran saqtawşını säl bayawlatadı. Tek dïagnostïkalıq maqsatta yadro ​​küyin keltirw mümkindigi qosılğan jağdayda ğana jumıs isteydi.

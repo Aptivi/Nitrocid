@@ -1129,3 +1129,39 @@ Aktiverar äkta färgstöd för BeatFader.
 BeatFader väljer slumpmässiga färger om det är aktiverat. Använd annars färger från config.
 Anpassad startbanner
 Om det anges kommer det att visa anpassad startbanner med platshållarsupport. Du kan använda denna fras för kärnversion:
+Hämtar fjärrmapp till lokal katalog med binär eller text
+Överför lokal mapp till fjärrkatalog med binär eller text
+Ange en mapp för nedladdning till lokal katalog.
+Hämtar mapp {0} ...
+Nedladdad mapp {0}.
+Nedladdningen misslyckades för mappen {0}.
+Överför mapp {0} ...
+Uppladdad mapp {0}
+Ange en mapp för att ladda upp till fjärrkatalogen.
+Tryck på "c" för att skriva fullfärgskod.
+Ange färgkod som uppfyller följande format:
+Förminskar JSON -filen
+Ny skärmfördröjning i millisekunder
+Kolumnantal
+Linjefyllningströskel
+Sannolikhet för radfyllning i procent
+Linjefyllningstyp
+Hur många millisekunder ska man vänta innan man skriver texten i den nya skärmen igen?
+Textkolumnerna som ska skrivas ut.
+Hur många tecken ska skrivas innan "radfyllningen" aktiveras?
+Möjlighet att linjefyllningsmönstret kommer att skrivas ut i alla versaler i procent
+Linjefyllningsmönstertyp
+Vanligt mönster
+Komplett mönster
+Slumpmässigt mönster
+Svaret kanske inte är noll.
+Svaret får inte överstiga de angivna posterna.
+Spara ändringar...
+Denna skärmsläckare stöder skriven text på fil. Skicka hela filsökvägen till det här fältet, och skärmsläckaren visar innehållet i filen på lämpligt sätt.
+Hantera dina mods
+Modhantering är inaktiverad i säkert läge.
+Ogiltigt kommando {0}. Kontrollera användningen nedan:
+Mod hittades inte eller filen har ogiltiga tecken.
+Sannolikhet för miss i procent
+Aktivera felsökning av skärmsläckare
+Aktiverar felsökning för skärmsläckare. Observera att det snabbt kan fylla felsökningsloggen och sakta ner skärmsläckaren, beroende på vilken skärmsläckare som används. Fungerar bara om kärnfelsökning är aktiverat för diagnostiska ändamål.

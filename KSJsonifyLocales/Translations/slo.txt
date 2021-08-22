@@ -1129,3 +1129,39 @@ Aktivira podporo za prave barve za BeatFader.
 BeatFader bo izbral naključne barve, če je omogočen. V nasprotnem primeru uporabite barve iz konfiguracije.
 Začetna pasica po meri
 Če je določeno, bo prikazana prilagojena zagonska pasica s podporo za nadomestna mesta. Za različico jedra lahko uporabite ta stavek:
+Sťahuje vzdialený priečinok do lokálneho adresára pomocou binárneho alebo textu
+Odošle lokálny priečinok do vzdialeného adresára pomocou binárneho súboru alebo textu
+Zadajte priečinok, ktorý chcete stiahnuť do miestneho adresára.
+Sťahuje sa priečinok {0} ...
+Stiahnutý priečinok {0}.
+Sťahovanie zlyhalo pre priečinok {0}.
+Nahráva sa priečinok {0} ...
+Nahraný priečinok {0}
+Zadajte priečinok, ktorý chcete nahrať do vzdialeného adresára.
+Stlačením „c“ napíšte farebný kód.
+Zadajte kód farby, ktorý vyhovuje týmto formátom:
+Minimalizuje súbor JSON
+Nové oneskorenie obrazovky v milisekundách
+Počet stĺpcov
+Prah vyplnenia riadka
+Pravdepodobnosť uzatvorenia riadkovej výplne v percentách
+Typ výplne riadku
+Koľko milisekúnd čakať, kým znova napíšete text na novú obrazovku?
+Textové stĺpce, ktoré sa majú vytlačiť.
+Koľko znakov napísať pred spustením „vyplnenia riadka“?
+Možnosť, že vzor výplne čiary bude vytlačený všetkými veľkými písmenami v percentách
+Typ vzoru čiary
+Spoločný vzor
+Kompletný vzor
+Náhodný vzor
+Odpoveď nemusí byť nulová.
+Odpoveď nesmie prekročiť uvedené položky.
+Uložiť zmeny...
+Tento šetrič obrazovky podporuje napísaný text v súbore. Do tohto poľa zadajte úplnú cestu k súboru a šetrič obrazovky primerane zobrazí obsah súboru.
+Spravujte svoje režimy
+Správa režimu je v núdzovom režime zakázaná.
+Neplatný príkaz {0}. Skontrolujte použitie nižšie:
+Mod nebol nájdený alebo súbor obsahuje neplatné znaky.
+Pravdepodobnosť zmeškania v percentách
+Povoliť ladenie šetriča obrazovky
+Umožňuje ladenie šetričov obrazovky. V závislosti od použitého šetriča obrazovky to môže rýchlo zaplniť denník ladenia a mierne spomaliť šetrič obrazovky. Funguje iba vtedy, ak je na diagnostické účely povolené ladenie jadra.

@@ -1129,3 +1129,39 @@ BeatFadere daehan teulu keolleo jiwon-eul hwalseonghwahabnida.
 BeatFaderneun hwalseonghwadoen gyeong-u im-uiui saegsang-eul seontaeghabnida. geuleohji anh-eumyeon guseong-ui saegsang-eul sayonghasibsio.
 majchumhyeong sijag baeneo
 jijeonghamyeon jali pyosijaleul jiwonhaneun majchumhyeong sijag baeneoga pyosidoebnida. keoneol beojeon-e daehae da-eum munguleul sayonghal su issseubnida.
+baineoli ttoneun tegseuteuleul sayonghayeo wongyeog poldeoleul lokeol dilegtolilo daunlodeu
+baineoli ttoneun tegseuteuleul sayonghayeo lokeol poldeoleul wongyeog dilegtolie eoblodeu
+lokeol dilegtolie daunlodeuhal poldeoleul iblyeoghabnida.
+{0} poldeo daunlodeu jung...
+daunlodeuhan poldeo {0}.
+{0} poldeoe daehan daunlodeue silpaehaessseubnida.
+{0} poldeo eoblodeu jung...
+eoblodeudoen poldeo {0}
+wongyeog dilegteolie eoblodeuhal poldeoleul iblyeoghabnida.
+pul keolleo kodeuleul jagseonghalyeomyeon "c"leul nuleusibsio.
+da-eum hyeongsig-eul chungjoghaneun saegsang kodeuleul iblyeoghasibsio.
+JSON pail-eul choesohwahabnida.
+saeloun hwamyeon jiyeon(millicho)
+yeol gaesu
+seon chaeugi imgyegabs
+lain chaeugi sanghan hwaglyul(%)
+lain chaeugi yuhyeong
+sae hwamyeon-e tegseuteuleul dasi sseugi jeon-e myeoch millicholeul gidalyeoya habnikka?
+inswaehal tegseuteu yeol-ibnida.
+"jul chaeugi"leul silhaenghagi jeon-e myeoch jakkaji jagseonghaeya habnikka?
+lain chaeugi paeteon-i modu daemunjalo inswaedoel ganeungseong(peosenteu)
+seon chaeugi paeteon yuhyeong
+gongtong paeteon
+wanjeonhan paeteon
+laendeom paeteon
+dab-eun 0i anil su issseubnida.
+dabbyeon-eun pyosidoen hangmog-eul chogwahal su eobs-seubnida.
+byeongyeong sahang-eul jeojanghada...
+i hwamyeon bohogineun pail-e jagseongdoen tegseuteuleul jiwonhabnida. jeonche pail gyeongloleul i pildeue jeondalhamyeon hwamyeon bohogiga pail naeyong-eul jeogjeolhage pyosihabnida.
+modeu gwanli
+modeu gwanlineun anjeon modeueseo bihwalseonghwadoebnida.
+jalmosdoen myeonglyeong {0}. alaeeseo sayongbeob-eul hwag-inhaseyo.
+modeuleul chaj-eul su eobsgeona pail-e jalmosdoen munjaga issseubnida.
+silpae hwaglyul(peosenteu)
+hwamyeon bohogi dibeoging hwalseonghwa
+hwamyeon bohogie daehan dibeoging-eul hwalseonghwahabnida. sayonghaneun hwamyeon bohogie ttala dibeogeu logeuga ppaleuge chaewojigo hwamyeon bohogiga yaggan neulyeojil su issseubnida. jindan mogjeog-eulo keoneol dibeoging-i hwalseonghwadoen gyeong-ueman jagdonghabnida.

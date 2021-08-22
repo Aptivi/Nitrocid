@@ -1129,3 +1129,39 @@ Aktiviert True Color-Unterstützung für BeatFader.
 BeatFader wählt zufällige Farben aus, wenn es aktiviert ist. Verwenden Sie andernfalls Farben aus config.
 Benutzerdefiniertes Startup-Banner
 Falls angegeben, wird ein benutzerdefiniertes Startbanner mit Platzhalterunterstützung angezeigt. Sie können diesen Ausdruck für die Kernel-Version verwenden:
+Télécharge le dossier distant dans le répertoire local à l'aide de binaire ou de texte
+Télécharge le dossier local dans le répertoire distant à l'aide de binaire ou de texte
+Entrez un dossier à télécharger dans le répertoire local.
+Téléchargement du dossier {0}...
+Dossier téléchargé {0}.
+Échec du téléchargement pour le dossier {0}.
+Téléchargement du dossier {0}...
+Dossier téléchargé {0}
+Entrez un dossier à télécharger dans le répertoire distant.
+Appuyez sur "c" pour écrire le code couleur complet.
+Saisissez le code couleur correspondant à ces formats :
+Minimise le fichier JSON
+Nouveau délai d'écran en millisecondes
+Nombre de colonnes
+Seuil de remplissage de ligne
+Probabilité de bouchage de remplissage de ligne en pourcentage
+Type de remplissage de ligne
+Combien de millisecondes attendre avant de réécrire le texte dans le nouvel écran ?
+Les colonnes de texte à imprimer.
+Combien de caractères écrire avant de déclencher le "remplissage de ligne" ?
+Possibilité que le motif de remplissage de ligne soit imprimé en majuscules en pourcentage
+Type de motif de remplissage de ligne
+Modèle commun
+Modèle complet
+Motif aléatoire
+La réponse peut ne pas être zéro.
+La réponse ne doit pas dépasser les entrées affichées.
+Sauvegarder les modifications...
+Cet économiseur d'écran prend en charge le texte écrit sur fichier. Transmettez le chemin complet du fichier à ce champ et l'économiseur d'écran affichera le contenu du fichier de manière appropriée.
+Gérez vos modules
+La gestion des mods est désactivée en mode sans échec.
+Commande {0} non valide. Vérifiez l'utilisation ci-dessous :
+Mod introuvable ou le fichier contient des caractères invalides.
+Probabilité d'échec en pourcentage
+Activer le débogage de l'économiseur d'écran
+Active le débogage pour les économiseurs d'écran. Veuillez noter que cela peut rapidement remplir le journal de débogage et ralentir légèrement l'économiseur d'écran, selon l'économiseur d'écran utilisé. Ne fonctionne que si le débogage du noyau est activé à des fins de diagnostic.

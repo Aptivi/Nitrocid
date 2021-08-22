@@ -1129,3 +1129,39 @@ Aktiverer ægte farveunderstøttelse til BeatFader.
 BeatFader vælger tilfældige farver, hvis den er aktiveret. Ellers skal du bruge farver fra config.
 Tilpasset opstartsbanner
 Hvis det er angivet, viser det tilpasset opstartsbanner med pladsholderunderstøttelse. Du kan bruge denne sætning til kerneversion:
+Downloader fjernmappe til lokal bibliotek ved hjælp af binær eller tekst
+Uploader lokal mappe til fjernmappe ved hjælp af binær eller tekst
+Indtast en mappe, der skal downloades til det lokale bibliotek.
+Downloader mappe {0} ...
+Downloadet mappe {0}.
+Download mislykkedes for mappen {0}.
+Uploader mappe {0} ...
+Uploadet mappe {0}
+Indtast en mappe, der skal uploades til fjernbiblioteket.
+Tryk på "c" for at skrive fuld farvekode.
+Indtast farvekode, der opfylder disse formater:
+Formindsker JSON -filen
+Ny skærmforsinkelse i millisekunder
+Kolonneantal
+Linjefyldningsgrænse
+Line Fill Capping Sandsynlighed i procent
+Linjefyldtype
+Hvor mange millisekunder skal der vente med at skrive teksten på den nye skærm igen?
+Tekstkolonnerne, der skal udskrives.
+Hvor mange tegn skal der skrives, før "line fill" udløses?
+Mulighed for at linjefyldmønsteret udskrives i alle caps i procent
+Linjefyldningsmønster type
+Fælles mønster
+Komplet mønster
+Tilfældigt mønster
+Svaret er muligvis ikke nul.
+Svaret må ikke overstige de viste poster.
+Gem ændringer...
+Denne screensaver understøtter skrevet tekst på fil. Giv den komplette filsti til dette felt, og pauseskærmen viser filens indhold korrekt.
+Administrer dine mods
+Modstyring er deaktiveret i fejlsikret tilstand.
+Ugyldig kommando {0}. Tjek brugen herunder:
+Mod blev ikke fundet, eller filen har ugyldige tegn.
+Sandsynlighed for savn i procent
+Aktiver fejlfinding i screensaver
+Aktiverer fejlfinding for screensavers. Bemærk, at det hurtigt kan udfylde fejlfindingsloggen og en smule bremse pauseskærmen, afhængigt af den anvendte pauseskærm. Fungerer kun, hvis kernefejlfinding er aktiveret til diagnostiske formål.

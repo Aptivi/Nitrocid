@@ -1129,3 +1129,39 @@ Gníomhaíonn sé fíor-thacaíocht dathanna do BeatFader.
 Roghnóidh BeatFader dathanna randamacha má tá sé cumasaithe. Seachas sin, bain úsáid as dathanna ón gcumraíocht.
 Meirge Tosaithe Saincheaptha
 Má shonraítear é, taispeánfaidh sé meirge saincheaptha tosaithe le tacaíocht ó áitritheoirí. Is féidir leat an frása seo a úsáid le haghaidh leagan eithne:
+Íoslódáil fillteán iargúlta chuig eolaire áitiúil ag úsáid dénártha nó téacs
+Uaslódáil an fillteán áitiúil chuig eolaire iargúlta ag úsáid dénártha nó téacs
+Iontráil fillteán le híoslódáil chuig an eolaire áitiúil.
+Fillteán a íoslódáil {0} ...
+Fillteán íoslódáilte {0}.
+Theip ar íoslódáil don fhillteán {0}.
+Fillteán á uaslódáil {0} ...
+Fillteán uaslódáilte {0}
+Iontráil fillteán le huaslódáil chuig eolaire iargúlta.
+Brúigh "c" chun cód lándaite a scríobh.
+Iontráil cód datha a shásaíonn na formáidí seo:
+Íslíonn sé an comhad JSON
+Moill Scáileáin Nua i Milliseconds
+Líon na gColún
+Tairseach Líon Líne
+Dóchúlacht Líonadh Líne Dóchúlacht faoin gcéad
+Cineál Líonadh Líne
+Cé mhéad milleasoicind atá le fanacht sula scríobhfaidh tú an téacs sa scáileán nua arís?
+Na colúin téacs atá le priontáil.
+Cé mhéad carachtar atá le scríobh sula spreagfaidh tú an “líonadh líne”?
+Deis go ndéanfar an patrún líonta líne a phriontáil i ngach caipín faoin gcéad
+Cineál patrún líonta líne
+Patrún Coiteann
+Patrún Iomlán
+Patrún randamach
+B’fhéidir nach mbeidh an freagra nialasach.
+Ní fhéadfaidh an freagra a bheith níos mó ná na hiontrálacha a thaispeántar.
+Sabháil na hathruithe...
+Tacaíonn an spárálaí scáileáin seo le téacs scríofa ar chomhad. Téigh cosán iomlán an chomhaid chuig an réimse seo, agus taispeánfaidh an spárálaí scáileáin ábhar an chomhaid go cuí.
+Bainistigh do mods
+Tá bainistíocht mod faoi mhíchumas i mód sábháilte.
+Ordú neamhbhailí {0}. Seiceáil an úsáid thíos:
+Mod nach bhfuarthas nó nach bhfuil carachtair neamhbhailí sa chomhad.
+Dóchúlacht go gcaillfear faoin gcéad
+Cumasaigh dífhabhtú spárálaíscáileáin
+Cumasaíonn dífhabhtú do spárálaithe scáileáin. Tabhair faoi deara le do thoil go bhféadfadh sé an logáil dífhabhtaithe a líonadh go tapa agus an spárálaí scáileáin a mhoilliú beagán, ag brath ar an spárálaí scáileáin a úsáidtear. Ní oibríonn sé ach má tá dífhabhtú eithne cumasaithe chun críocha diagnóiseacha.

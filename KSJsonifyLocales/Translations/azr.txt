@@ -1129,3 +1129,39 @@ BeatFader üçün əsl rəng dəstəyini aktivləşdirir.
 BeatFader aktiv olduqda təsadüfi rəngləri seçəcək. Əks halda, config -dən rənglərdən istifadə edin.
 Fərdi Başlanğıc Banner
 Göstərilərsə, yer tutucu dəstəyi ilə xüsusi başlanğıc bannerini göstərəcək. Bu ifadəni kernel versiyası üçün istifadə edə bilərsiniz:
+Uzaq qovluğu ikili və ya mətndən istifadə edərək yerli qovluğa yükləyir
+Yerli qovluğu ikili və ya mətndən istifadə edərək uzaq qovluğa yükləyir
+Yerli qovluğa yükləmək üçün bir qovluq daxil edin.
+{0} qovluğu endirilir ...
+{0} qovluğu endirildi.
+{0} qovluğu üçün endirmə uğursuz oldu.
+{0} qovluğu yüklənir ...
+Yüklənmiş qovluq {0}
+Uzaqdakı qovluğa yükləmək üçün bir qovluq daxil edin.
+Tam rəng kodu yazmaq üçün "c" düyməsini basın.
+Bu formatlara uyğun rəng kodunu daxil edin:
+JSON faylını kiçiltir
+Millisaniyələrdə Yeni Ekran Gecikməsi
+Sütun sayı
+Satır Doldurma Eşik
+Xəttin Doldurma Səbəbi Yüzdə
+Satır Doldurma Növü
+Mətni yenidən yeni ekrana yazmadan əvvəl neçə milisaniyəni gözləmək lazımdır?
+Çap olunacaq mətn sütunları.
+"Satır doldurmağı" işə salmadan əvvəl neçə simvol yazmalısınız?
+Satır doldurma modelinin bütün hərflərlə faizlə çap olunma ehtimalı
+Xətt doldurma nümunəsi növü
+Ümumi Nümunə
+Tam Nümunə
+Təsadüfi Nümunə
+Cavab sıfır ola bilməz.
+Cavab göstərilən yazıları aşa bilməz.
+Dəyişiklikləri yadda saxla...
+Bu ekran qoruyucu fayl üzərində yazılı mətni dəstəkləyir. Tam sahə yolunu bu sahəyə keçirin və ekran qoruyucusu faylın məzmununu uyğun şəkildə göstərəcək.
+Modlarınızı idarə edin
+Mod idarəetmə təhlükəsiz rejimdə deaktiv edilir.
+Yanlış əmr {0}. Aşağıdakı istifadəni yoxlayın:
+Mod tapılmadı və ya faylda etibarsız simvollar var.
+Qaçırma ehtimalı yüzdə
+Ekran qoruyucu ayıklamasını aktiv edin
+Ekran qoruyucuları üçün ayıklamayı aktivləşdirir. Unutmayın ki, istifadə olunan ekran qoruyucusundan asılı olaraq ayıklama jurnalını tez doldura bilər və ekran qoruyucusunu bir qədər yavaşlata bilər. Yalnız diaqnostik məqsədlər üçün kernel ayıklama aktivləşdirildikdə işləyir.
