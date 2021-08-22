@@ -138,6 +138,9 @@
     <Content Include="TestVerifySHA256.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="TestVerifySHA384.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestVerifySHA512.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
