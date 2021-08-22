@@ -17,8 +17,6 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Globalization
-Imports System.IO
-Imports Microsoft.SqlServer
 Imports Newtonsoft.Json.Linq
 
 Public Module Translate

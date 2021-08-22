@@ -18,7 +18,6 @@
 
 Imports System.IO
 Imports KS
-Imports Newtonsoft.Json.Linq
 
 <TestClass()> Public Class InitTest
 
