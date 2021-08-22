@@ -35,8 +35,7 @@ Public Module RemoteProcedure
             Try
                 Wdbg("I", "RPC: Starting...")
                 If RPCListen Is Nothing Then
-                    RPCListen = New UdpClient(RPCPort)
-                    RPCListen.EnableBroadcast = True
+                    RPCListen = New UdpClient(RPCPort) With {.EnableBroadcast = True}
                     Wdbg("I", "RPC: Listener started")
                     RPCThread.Start()
                     Wdbg("I", "RPC: Thread started")
