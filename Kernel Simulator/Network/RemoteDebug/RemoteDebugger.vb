@@ -34,12 +34,18 @@ Public Module RemoteDebugger
     ''' <summary>
     ''' Whether to start or stop the remote debugger
     ''' </summary>
-    ''' <param name="DebugEnable">If true, starts the Remote Debugger. If false, stops it.</param>
-    Sub StartRDebugThread(ByVal DebugEnable As Boolean)
+    Public Sub StartRDebugThread()
         If DebugMode Then
-            If DebugEnable Then
-                If Not RDebugThread.IsAlive Then RDebugThread.Start()
-            Else
+            If Not RDebugThread.IsAlive Then RDebugThread.Start()
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Whether to start or stop the remote debugger
+    ''' </summary>
+    Public Sub StopRDebugThread()
+        If DebugMode Then
+            If RDebugThread.IsAlive Then
                 RDebugStopping = True
                 RDebugThread = New Thread(AddressOf StartRDebugger) With {.IsBackground = True, .Name = "Remote Debug Thread"}
             End If

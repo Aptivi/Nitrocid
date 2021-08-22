@@ -82,7 +82,7 @@ Public Module Kernel
                 W(DoTranslation("Internal initialization finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
                 WriteSeparator(DoTranslation("- Stage 1: System initialization"), False, ColTypes.Stage)
                 Wdbg("I", "- Kernel Phase 1: Initializing system")
-                StartRDebugThread(True)
+                StartRDebugThread()
                 W(DoTranslation("Starting RPC..."), True, ColTypes.Neutral)
                 StartRPC()
 

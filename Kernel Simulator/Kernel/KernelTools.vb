@@ -322,7 +322,7 @@ Public Module KernelTools
         Wdbg("I", "Garbage collector finished")
 
         'Disconnect all hosts from remote debugger
-        StartRDebugThread(False)
+        StopRDebugThread()
         Wdbg("I", "Remote debugger stopped")
 
         'Stop all mods

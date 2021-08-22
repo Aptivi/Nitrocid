@@ -1009,9 +1009,9 @@ Public Module GetCommand
 
                     If DebugMode Then
                         If RDebugThread.IsAlive Then
-                            StartRDebugThread(False)
+                            StopRDebugThread()
                         Else
-                            StartRDebugThread(True)
+                            StartRDebugThread()
                         End If
                     Else
                         W(DoTranslation("Debugging not enabled."), True, ColTypes.Error)

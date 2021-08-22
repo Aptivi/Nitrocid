@@ -230,9 +230,9 @@ Module TestGetCommand
                 Case "rdebug"
                     If RequiredArgumentsProvided Then
                         If eqargs(0) = True Then
-                            StartRDebugThread(True)
+                            StartRDebugThread()
                         Else
-                            StartRDebugThread(False)
+                            StopRDebugThread()
                         End If
                     End If
                 Case "colortest"
