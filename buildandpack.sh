@@ -22,8 +22,8 @@ ksversion=0.0.19.0
 
 mkdir ~/tmp
 echo Make sure you have the following:
-echo   - msbuild (from mono repos)
-echo.
+echo "  - msbuild (from mono repos)"
+echo 
 echo Press any key to start.
 read -n 1
 
@@ -40,7 +40,7 @@ if [ ! $? == 0 ]; then
 fi
 tarpath=`which tar`
 if [ ! $? == 0 ]; then
-	echo taR is not found.
+	echo tar is not found.
 	exit 1
 fi
 rarpath=`which rar`
@@ -67,7 +67,7 @@ fi
 
 # Pack binary
 echo Packing binary...
-rm "Kernel Simulator/KSBuild/*.nupkg" >> ~/tmp/buildandpack.log
+find . -type f -iname \*.nupkg -delete >> ~/tmp/buildandpack.log
 "$rarpath" a -ep1 -r -m5 ~/tmp/$ksversion-bin.rar "Kernel Simulator/KSBuild/" >> ~/tmp/buildandpack.log
 if [ ! $? == 0 ]; then
 	echo Packing using rar failed.
@@ -90,7 +90,7 @@ fi
 
 # Pack source using tar
 echo Packing source using tar...
-"$tarpath" -cfv --exclude-vcs ~/tmp/$ksversion-src.tar . >> ~/tmp/buildandpack.log
+"$tarpath" --exclude-vcs -cf ~/tmp/$ksversion-src.tar . >> ~/tmp/buildandpack.log
 if [ ! $? == 0 ]; then
 	echo Packing source using tar failed.
 	exit 1
