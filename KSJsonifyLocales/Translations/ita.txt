@@ -1165,3 +1165,11 @@ Mod non trovata o il file contiene caratteri non validi.
 Probabilità di perdere in percentuale
 Abilita il debug del salvaschermo
 Abilita il debug per gli screensaver. Si noti che potrebbe riempire rapidamente il registro di debug e rallentare leggermente lo screensaver, a seconda dello screensaver utilizzato. Funziona solo se il debug del kernel è abilitato per scopi diagnostici.
+Nessuna rete durante il download dei dati di debug
+Controlla la tua connessione Internet e riprova.
+La pagina di manuale {0} non è valida.
+Considera di riempire questa pagina di manuale.
+Premi un tasto qualsiasi per leggere la pagina del manuale...
+Questa pagina di manuale necessita di lavori per:
+Pagina del manuale {0} non trovata.
+Manuale del modulo

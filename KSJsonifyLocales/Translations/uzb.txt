@@ -1165,3 +1165,11 @@ Mod topilmadi yoki fayl yaroqsiz.
 Yo'qotish ehtimoli foizda
 Ekran saqlagichini tuzatishni yoqish
 Ekran saqlovchilar uchun tuzatishni yoqadi. E'tibor bering, u disk raskadrovka jurnalini tezda to'ldirishi mumkin va ishlatilgan ekran saqlovchiga qarab ekran pardasini biroz sekinlashtirishi mumkin. Faqat diagnostika maqsadida yadro disk raskadrovka yoqilgan bo'lsa ishlaydi.
+Tuzatish ma'lumotlarini yuklab olishda tarmoq yo'q
+Internetga ulanishni tekshiring va qaytadan urining.
+Qo'l sahifasi {0} yaroqsiz.
+Ushbu qo'llanma sahifasini to'ldirishni o'ylab ko'ring.
+Qo'llanma sahifasini o'qish uchun istalgan tugmani bosing ...
+Ushbu qo'llanma sahifasi quyidagilar uchun ishlashi kerak:
+Qo'l sahifasi {0} topilmadi.
+Mod qo'llanma

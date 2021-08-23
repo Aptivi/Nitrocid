@@ -1165,3 +1165,11 @@ Mod no encontrado o el archivo tiene caracteres no válidos.
 Probabilidad de falla en porcentaje
 Habilitar la depuración del protector de pantalla
 Habilita la depuración de protectores de pantalla. Tenga en cuenta que puede llenar rápidamente el registro de depuración y ralentizar ligeramente el protector de pantalla, según el protector de pantalla utilizado. Solo funciona si la depuración del kernel está habilitada para fines de diagnóstico.
+No hay red mientras se descargan datos de depuración
+Verifique su conexión a Internet y vuelva a intentarlo.
+La página de manual {0} no es válida.
+Considere llenar esta página del manual.
+Presione cualquier tecla para leer la página del manual ...
+Esta página de manual necesita trabajo para:
+No se encontró la página manual {0}.
+Mod manual

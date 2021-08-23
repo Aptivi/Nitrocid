@@ -1165,3 +1165,11 @@ No s'ha trobat la modificació o el fitxer té caràcters no vàlids.
 Probabilitat d'error en percentatge
 Activeu la depuració de l'estalvi de pantalla
 Permet la depuració per als estalvis de pantalla. Tingueu en compte que pot omplir ràpidament el registre de depuració i alentir lleugerament el salvapantalles, en funció del salvapantalles utilitzat. Només funciona si la depuració del nucli està habilitada amb finalitats de diagnòstic.
+No hi ha xarxa mentre baixeu dades de depuració
+Comproveu la vostra connexió a Internet i torneu-ho a provar.
+La pàgina del manual {0} no és vàlida.
+Penseu a emplenar aquesta pàgina del manual.
+Premeu qualsevol tecla per llegir la pàgina del manual ...
+Aquesta pàgina del manual necessita treballar per a:
+No s'ha trobat la pàgina del manual {0}.
+Manual de modificacions

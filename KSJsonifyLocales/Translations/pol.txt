@@ -1165,3 +1165,11 @@ Nie znaleziono modu lub plik zawiera nieprawidłowe znaki.
 Prawdopodobieństwo chybienia w procentach
 Włącz debugowanie wygaszacza ekranu
 Włącza debugowanie wygaszaczy ekranu. Należy pamiętać, że może to szybko zapełnić dziennik debugowania i nieco spowolnić wygaszacz ekranu, w zależności od używanego wygaszacza ekranu. Działa tylko wtedy, gdy debugowanie jądra jest włączone do celów diagnostycznych.
+Brak sieci podczas pobierania danych debugowania
+Sprawdź połączenie internetowe i spróbuj ponownie.
+Strona podręcznika {0} jest nieprawidłowa.
+Rozważ wypełnienie tej strony podręcznika.
+Naciśnij dowolny klawisz, aby przeczytać stronę podręcznika...
+Ta strona podręcznika wymaga pracy dla:
+Nie znaleziono strony podręcznika {0}.
+Instrukcja mod

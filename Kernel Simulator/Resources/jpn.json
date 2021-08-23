@@ -1164,5 +1164,13 @@
   "Mod not found or file has invalid characters.": "Mod ga mitsukaranai ka, fairu ni mukōna moji ga fukuma rete imasu.",
   "Probability of miss in percent": "Misu no kakuritsu (pāsento)",
   "Enable screensaver debugging": "sukurīnsēbā no debaggu o yūkōnisuru",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "sukurīnsēbā no debaggu o yūkō ni shimasu. Shiyō suru sukurīnsēbā ni yotte wa, debaggurogu ga sugu ni ippai ni nari, sukurīnsēbā no sokudo ga wazuka ni osoku naru baai ga aru koto ni chūi shite kudasai. Shindan mokuteki de kānerudebaggu ga yūkō ni natte iru baai ni nomi kinō shimasu."
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "sukurīnsēbā no debaggu o yūkō ni shimasu. Shiyō suru sukurīnsēbā ni yotte wa, debaggurogu ga sugu ni ippai ni nari, sukurīnsēbā no sokudo ga wazuka ni osoku naru baai ga aru koto ni chūi shite kudasai. Shindan mokuteki de kānerudebaggu ga yūkō ni natte iru baai ni nomi kinō shimasu.",
+  "No network while downloading debug data": "Debaggudēta no daunrōdo-chū ni nettowāku ga arimasen",
+  "Check your internet connection and try again.": "Intānetto setsuzoku o kakunin shite, sai shikō shite kudasai.",
+  "The manual page {0} is invalid.": "Manyuarupēji {0} ga mukōdesu.",
+  "Consider filling this manual page.": "Kono manyuarupēji ni kinyū suru koto o kentō shite kudasai.",
+  "Press any key to read the manual page...": "Manyuarupēji o yomu ni wa, nin'i no kī o oshite kudasai...",
+  "This manual page needs work for:": "Kono manyuarupēji wa,-ji no sagyō ga hitsuyōdesu.",
+  "Manual page {0} not found.": "Manyuarupēji {0} ga mitsukarimasen.",
+  "Mod manual": "Mod manyuaru"
 }

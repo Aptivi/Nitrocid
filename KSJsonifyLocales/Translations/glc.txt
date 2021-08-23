@@ -1165,3 +1165,11 @@ Non se atopou o mod ou o ficheiro ten caracteres non válidos.
 Probabilidade de falta en porcentaxe
 Activar a depuración do protector de pantalla
 Habilita a depuración para os protectores de pantalla. Ten en conta que pode encher rapidamente o rexistro de depuración e retardar lixeiramente o protector de pantalla, dependendo do protector de pantalla usado. Só funciona se a depuración do núcleo está habilitada con fins de diagnóstico.
+Non hai rede ao descargar datos de depuración
+Comproba a túa conexión a Internet e téntao de novo.
+A páxina do manual {0} non é válida.
+Considere encher esta páxina do manual.
+Preme calquera tecla para ler a páxina do manual ...
+Esta páxina do manual precisa traballar para:
+Non se atopou a páxina do manual {0}.
+Manual de mod

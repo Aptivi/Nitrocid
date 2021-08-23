@@ -1165,3 +1165,11 @@ Mod nije pronađen ili datoteka ima nevažeće znakove.
 Verovatnoća promašaja u procentima
 Omogući otklanjanje grešaka u čuvaru ekrana
 Omogućava otklanjanje grešaka za čuvare ekrana. Imajte na umu da može brzo ispuniti evidenciju otklanjanja grešaka i malo usporiti čuvar ekrana, u zavisnosti od korišćenog čuvara ekrana. Radi samo ako je otklanjanje grešaka u jezgru omogućeno u dijagnostičke svrhe.
+Nema mreže tokom preuzimanja podataka za otklanjanje grešaka
+Proverite internetsku vezu i pokušajte ponovo.
+Stranica priručnika {0} je nevažeća.
+Razmislite o popunjavanju ove stranice sa priručnikom.
+Pritisnite bilo koji taster da biste pročitali stranicu sa priručnikom ...
+Ova stranica sa priručnikom treba da radi za:
+Stranica sa priručnikom {0} nije pronađena.
+Mod manual

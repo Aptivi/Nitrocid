@@ -1165,3 +1165,11 @@ Mod ùn hè micca truvatu o u fugliale hà caratteri invalidi.
 Probabilità di mancanza in percentuale
 Attivà u debugging di u screensaver
 Permette u debugging per i screensaver. Da nutà chì pò riempie rapidamente u log di debug è rallentà leggermente u screensaver, secondu u screensaver adupratu. Funziona solu sì u debugging di u kernel hè abilitatu per scopi diagnostichi.
+Nisuna rete mentre scarica i dati di debug
+Verificate a vostra cunnessione Internet è riprovate.
+A pagina di manuale {0} hè invalida.
+Pensate à riempia sta pagina manuale.
+Pulsà qualsiasi chjave per leghje a pagina di u manuale ...
+Questa pagina di manuale hà bisognu di travagliu per:
+Pagina di manuale {0} micca truvata.
+Manuale di mod

@@ -1165,3 +1165,11 @@ Mod nicht gefunden oder Datei enthält ungültige Zeichen.
 Verfehlungswahrscheinlichkeit in Prozent
 Bildschirmschoner-Debugging aktivieren
 Aktiviert das Debuggen für Bildschirmschoner. Bitte beachten Sie, dass es je nach verwendetem Bildschirmschoner das Debug-Protokoll schnell füllen und den Bildschirmschoner etwas verlangsamen kann. Funktioniert nur, wenn das Kernel-Debugging für Diagnosezwecke aktiviert ist.
+Kein Netzwerk beim Herunterladen von Debug-Daten
+Überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.
+Die Handbuchseite {0} ist ungültig.
+Ziehen Sie in Betracht, diese Handbuchseite auszufüllen.
+Drücken Sie eine beliebige Taste, um die Handbuchseite zu lesen...
+Diese Handbuchseite benötigt Arbeit für:
+Handbuchseite {0} nicht gefunden.
+Mod-Handbuch

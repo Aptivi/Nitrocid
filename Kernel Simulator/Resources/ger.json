@@ -1165,5 +1165,13 @@
   "Mod not found or file has invalid characters.": "Mod nicht gefunden oder Datei enthält ungültige Zeichen.",
   "Probability of miss in percent": "Verfehlungswahrscheinlichkeit in Prozent",
   "Enable screensaver debugging": "Bildschirmschoner-Debugging aktivieren",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Aktiviert das Debuggen für Bildschirmschoner. Bitte beachten Sie, dass es je nach verwendetem Bildschirmschoner das Debug-Protokoll schnell füllen und den Bildschirmschoner etwas verlangsamen kann. Funktioniert nur, wenn das Kernel-Debugging für Diagnosezwecke aktiviert ist."
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Aktiviert das Debuggen für Bildschirmschoner. Bitte beachten Sie, dass es je nach verwendetem Bildschirmschoner das Debug-Protokoll schnell füllen und den Bildschirmschoner etwas verlangsamen kann. Funktioniert nur, wenn das Kernel-Debugging für Diagnosezwecke aktiviert ist.",
+  "No network while downloading debug data": "Kein Netzwerk beim Herunterladen von Debug-Daten",
+  "Check your internet connection and try again.": "Überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.",
+  "The manual page {0} is invalid.": "Die Handbuchseite {0} ist ungültig.",
+  "Consider filling this manual page.": "Ziehen Sie in Betracht, diese Handbuchseite auszufüllen.",
+  "Press any key to read the manual page...": "Drücken Sie eine beliebige Taste, um die Handbuchseite zu lesen...",
+  "This manual page needs work for:": "Diese Handbuchseite benötigt Arbeit für:",
+  "Manual page {0} not found.": "Handbuchseite {0} nicht gefunden.",
+  "Mod manual": "Mod-Handbuch"
 }

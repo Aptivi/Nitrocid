@@ -1165,3 +1165,11 @@ Mod nach bhfuarthas nó nach bhfuil carachtair neamhbhailí sa chomhad.
 Dóchúlacht go gcaillfear faoin gcéad
 Cumasaigh dífhabhtú spárálaíscáileáin
 Cumasaíonn dífhabhtú do spárálaithe scáileáin. Tabhair faoi deara le do thoil go bhféadfadh sé an logáil dífhabhtaithe a líonadh go tapa agus an spárálaí scáileáin a mhoilliú beagán, ag brath ar an spárálaí scáileáin a úsáidtear. Ní oibríonn sé ach má tá dífhabhtú eithne cumasaithe chun críocha diagnóiseacha.
+Gan aon líonra agus sonraí dífhabhtaithe á n-íoslódáil
+Seiceáil do nasc idirlín agus bain triail eile as.
+Tá an leathanach láimhe {0} neamhbhailí.
+Smaoinigh ar an leathanach láimhe seo a líonadh.
+Brúigh eochair ar bith chun an leathanach láimhe a léamh ...
+Teastaíonn obair ón leathanach láimhe seo le haghaidh:
+Níor aimsíodh leathanach láimhe {0}.
+Lámhleabhar mod

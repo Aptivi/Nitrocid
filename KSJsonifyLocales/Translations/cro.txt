@@ -1165,3 +1165,11 @@ Mod nije pronađen ili datoteka ima nevažeće znakove.
 Vjerojatnost promašaja u postocima
 Omogući ispravljanje pogrešaka čuvara zaslona
 Omogućuje ispravljanje pogrešaka za čuvare zaslona. Imajte na umu da može brzo ispuniti dnevnik otklanjanja pogrešaka i malo usporiti čuvar zaslona, ​​ovisno o čuvaru zaslona koji se koristi. Radi samo ako je otklanjanje pogrešaka u jezgri omogućeno u dijagnostičke svrhe.
+Nema mreže tijekom preuzimanja podataka za ispravljanje pogrešaka
+Provjerite internetsku vezu i pokušajte ponovo.
+Stranica s priručnikom {0} nije važeća.
+Razmislite o popunjavanju ove stranice s priručnikom.
+Pritisnite bilo koju tipku za čitanje stranice s priručnikom ...
+Ova stranica s priručnikom treba raditi za:
+Stranica s priručnikom {0} nije pronađena.
+Mod priručnik

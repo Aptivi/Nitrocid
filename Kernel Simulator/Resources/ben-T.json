@@ -1165,5 +1165,13 @@
   "Mod not found or file has invalid characters.": "মোড পাওয়া যায়নি বা ফাইলে অবৈধ অক্ষর রয়েছে।",
   "Probability of miss in percent": "শতাংশে মিস হওয়ার সম্ভাবনা",
   "Enable screensaver debugging": "স্ক্রিনসেভার ডিবাগিং সক্ষম করুন",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "স্ক্রিনসেভারগুলির জন্য ডিবাগিং সক্ষম করে। অনুগ্রহ করে মনে রাখবেন যে এটি দ্রুত ডিবাগ লগ পূরণ করতে পারে এবং স্ক্রিনসেভারকে কিছুটা ধীর করে দিতে পারে, যা ব্যবহৃত স্ক্রিন সেভারের উপর নির্ভর করে। ডায়াগনস্টিক উদ্দেশ্যে কার্নেল ডিবাগিং সক্ষম হলেই কাজ করে।"
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "স্ক্রিনসেভারগুলির জন্য ডিবাগিং সক্ষম করে। অনুগ্রহ করে মনে রাখবেন যে এটি দ্রুত ডিবাগ লগ পূরণ করতে পারে এবং স্ক্রিনসেভারকে কিছুটা ধীর করে দিতে পারে, যা ব্যবহৃত স্ক্রিন সেভারের উপর নির্ভর করে। ডায়াগনস্টিক উদ্দেশ্যে কার্নেল ডিবাগিং সক্ষম হলেই কাজ করে।",
+  "No network while downloading debug data": "ডিবাগ ডেটা ডাউনলোড করার সময় কোন নেটওয়ার্ক নেই",
+  "Check your internet connection and try again.": "আপনার ইন্টারনেট সংযোগ পরীক্ষা করে আবার চেষ্টা করুন।",
+  "The manual page {0} is invalid.": "ম্যানুয়াল পৃষ্ঠা {0} অবৈধ",
+  "Consider filling this manual page.": "এই ম্যানুয়াল পৃষ্ঠাটি পূরণ করার কথা বিবেচনা করুন।",
+  "Press any key to read the manual page...": "ম্যানুয়াল পৃষ্ঠাটি পড়তে যেকোন কী টিপুন ...",
+  "This manual page needs work for:": "এই ম্যানুয়াল পৃষ্ঠার জন্য কাজের প্রয়োজন:",
+  "Manual page {0} not found.": "ম্যানুয়াল পৃষ্ঠা {0} পাওয়া যায়নি",
+  "Mod manual": "মোড ম্যানুয়াল"
 }

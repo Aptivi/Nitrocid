@@ -1165,5 +1165,13 @@
   "Mod not found or file has invalid characters.": "Mod nije pronađen ili datoteka ima nevažeće znakove.",
   "Probability of miss in percent": "Verovatnoća promašaja u procentima",
   "Enable screensaver debugging": "Omogući otklanjanje grešaka u čuvaru ekrana",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Omogućava otklanjanje grešaka za čuvare ekrana. Imajte na umu da može brzo ispuniti evidenciju otklanjanja grešaka i malo usporiti čuvar ekrana, u zavisnosti od korišćenog čuvara ekrana. Radi samo ako je otklanjanje grešaka u jezgru omogućeno u dijagnostičke svrhe."
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Omogućava otklanjanje grešaka za čuvare ekrana. Imajte na umu da može brzo ispuniti evidenciju otklanjanja grešaka i malo usporiti čuvar ekrana, u zavisnosti od korišćenog čuvara ekrana. Radi samo ako je otklanjanje grešaka u jezgru omogućeno u dijagnostičke svrhe.",
+  "No network while downloading debug data": "Nema mreže tokom preuzimanja podataka za otklanjanje grešaka",
+  "Check your internet connection and try again.": "Proverite internetsku vezu i pokušajte ponovo.",
+  "The manual page {0} is invalid.": "Stranica priručnika {0} je nevažeća.",
+  "Consider filling this manual page.": "Razmislite o popunjavanju ove stranice sa priručnikom.",
+  "Press any key to read the manual page...": "Pritisnite bilo koji taster da biste pročitali stranicu sa priručnikom ...",
+  "This manual page needs work for:": "Ova stranica sa priručnikom treba da radi za:",
+  "Manual page {0} not found.": "Stranica sa priručnikom {0} nije pronađena.",
+  "Mod manual": "Mod manual"
 }

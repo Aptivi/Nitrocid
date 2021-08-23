@@ -1165,3 +1165,11 @@ Mod blev ikke fundet, eller filen har ugyldige tegn.
 Sandsynlighed for savn i procent
 Aktiver fejlfinding i screensaver
 Aktiverer fejlfinding for screensavers. Bemærk, at det hurtigt kan udfylde fejlfindingsloggen og en smule bremse pauseskærmen, afhængigt af den anvendte pauseskærm. Fungerer kun, hvis kernefejlfinding er aktiveret til diagnostiske formål.
+Intet netværk under download af fejlretningsdata
+Kontroller din internetforbindelse, og prøv igen.
+Den manuelle side {0} er ugyldig.
+Overvej at udfylde denne manuelle side.
+Tryk på en vilkårlig tast for at læse den manuelle side ...
+Denne manuelle side har brug for arbejde til:
+Manuel side {0} blev ikke fundet.
+Mod manual

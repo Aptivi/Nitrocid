@@ -1165,3 +1165,11 @@ Mod lama helin ama faylku wuxuu leeyahay xuruuf aan sax ahayn.
 Suurtagalnimada lumitaanka boqolkiiba
 Daar khaladka shaashadda badbaadinta
 Waxay awood u siisaa ka -saaridda shaashadaha. Fadlan ogow inay si dhaqso ah u buuxin karto diiwaanka khaladka oo ay yara yara yareyn karto shaashadda, iyadoo ku xiran badbaadiyaha shaashadda la isticmaalay. Kaliya wuxuu shaqeeyaa haddii khal -goynta kernel -ka loo oggolaado ujeedo baadhitaan.
+Ma jiro shabakad inta la soo dejinayo xogta khalad
+Hubi isku xirnaantaada internetka oo isku day mar kale.
+Bogga gacanta {0} ma xuma.
+Tixgeli buuxinta boggan buuggan.
+Guji furaha kasta si aad u akhrido bogga gacanta ...
+Boggan gacanta ah wuxuu u baahan yahay shaqo:
+Bogga gacanta {0} lama helin.
+Buugga Mod

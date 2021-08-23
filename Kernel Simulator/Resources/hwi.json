@@ -1165,5 +1165,13 @@
   "Mod not found or file has invalid characters.": "ʻAʻole i loaʻa ka mod a i ʻole waihona paha nā huapalapala kūpono ʻole.",
   "Probability of miss in percent": "Maliʻa o ka hala i ka pākēneka",
   "Enable screensaver debugging": "Hiki i ka debugging screensaver",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Hiki i ka debugging no nā screensaver. E ʻoluʻolu e hoʻopihapiha koke paha i ka log debug a hoʻolōʻihi i ka screensaver i lalo, e hilinaʻi ana i ka screensaver i hoʻohana ʻia. Hana wale inā hiki ke hoʻopau ʻia ke kernel debugging no nā hana diagnostics."
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Hiki i ka debugging no nā screensaver. E ʻoluʻolu e hoʻopihapiha koke paha i ka log debug a hoʻolōʻihi i ka screensaver i lalo, e hilinaʻi ana i ka screensaver i hoʻohana ʻia. Hana wale inā hiki ke hoʻopau ʻia ke kernel debugging no nā hana diagnostics.",
+  "No network while downloading debug data": "ʻAʻohe kikowaena pūnaewele i ka hoʻoiho ʻana i nā ʻikepili debug",
+  "Check your internet connection and try again.": "E hōʻoia i kāu pili pūnaewele a hoʻāʻo hou.",
+  "The manual page {0} is invalid.": "He kūpono ʻole ka ʻaoʻao manual {0}.",
+  "Consider filling this manual page.": "E noʻonoʻo e hoʻopiha i kēia ʻaoʻao ʻaoʻao.",
+  "Press any key to read the manual page...": "Kaomi i nā kī e heluhelu ai i ka ʻaoʻao manual ...",
+  "This manual page needs work for:": "Pono kēia ʻaoʻao manual e hana no:",
+  "Manual page {0} not found.": "ʻAʻole i loaʻa ka ʻaoʻao manual.",
+  "Mod manual": "Manual manual"
 }

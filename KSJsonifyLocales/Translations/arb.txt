@@ -1165,3 +1165,11 @@ lam yatima aleuthur ealaa wizarat aldifae 'aw 'ana almilafa yahtawi ealaa 'ahruf
 aihtimal alkhata fi almia
 tafeil tashih shashat altawaquf
 tamakan min tashih al'akhta' lihafizat alshaashati. yurjaa mulahazat 'anah qad yamla sajal tashih al'akhta' bisureat wayubatiy shashat altawaquf qlylaan , aetmadan ealaa shashat altawaquf almustakhdamati. yaemal faqat 'iidha tama tamkin tashih 'akhta' kernel li'aghrad altashkhisi.
+la tujad shabakat 'athna' tanzil bayanat altashih
+tahaqaq min atisalik bial'iintirnit wahawal maratan 'ukhraa.
+safhat aldalil {0} ghayr salihatin.
+dae fi aetibarik mil' safhat aldalil hadhihi.
+adghat ealaa 'ayi miftah liqira'at safhat aldalil ...
+tahtaj safhat aldalil hadhih 'iilaa aleamal min 'ajli:
+alsafhat alyadawia {0} ghayr mawjudatin.
+dalil wizarat aldifae

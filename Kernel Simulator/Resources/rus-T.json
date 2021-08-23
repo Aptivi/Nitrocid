@@ -1165,5 +1165,13 @@
   "Mod not found or file has invalid characters.": "Мод не найден или файл содержит недопустимые символы.",
   "Probability of miss in percent": "Вероятность промаха в процентах",
   "Enable screensaver debugging": "Включить отладку заставки",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Включает отладку заставок. Обратите внимание, что он может быстро заполнить журнал отладки и немного замедлить работу заставки, в зависимости от используемой заставки. Работает, только если отладка ядра включена для диагностических целей."
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Включает отладку заставок. Обратите внимание, что он может быстро заполнить журнал отладки и немного замедлить работу заставки, в зависимости от используемой заставки. Работает, только если отладка ядра включена для диагностических целей.",
+  "No network while downloading debug data": "Нет сети при загрузке данных отладки",
+  "Check your internet connection and try again.": "Проверьте подключение к Интернету и попробуйте еще раз.",
+  "The manual page {0} is invalid.": "Страница руководства {0} недействительна.",
+  "Consider filling this manual page.": "Рассмотрите возможность заполнения этой страницы руководства.",
+  "Press any key to read the manual page...": "Нажмите любую клавишу, чтобы прочитать страницу руководства ...",
+  "This manual page needs work for:": "Эта страница руководства нуждается в доработке для:",
+  "Manual page {0} not found.": "Страница руководства {0} не найдена.",
+  "Mod manual": "Руководство по моду"
 }

@@ -1165,5 +1165,13 @@
   "Mod not found or file has invalid characters.": "Māḍa nahīṁ mili'ā jāṁ phā'īla vica avaidha akhara hana.",
   "Probability of miss in percent": "Pratīśata vica khujhaṇa dī sabhāvanā",
   "Enable screensaver debugging": "sakrīnasēvara ḍībagiga nū samaratha baṇā'u",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "sakrīnasēvarāṁ la'ī ḍībagiga nū samaratha baṇā'undā hai. Kirapā karakē nōṭa karō ki iha ḍībaga lauga nū tēzī nāla bhara sakadā hai atē varatē ga'ē sakrīnasēvara dē adhāra tē, sakrīnasēvara nū thōṛhā haulī kara sakadā hai. Sirapha tāṁ hī kama karadā hai jē karanala ḍībagiga ḍā'iganausaṭika udēśāṁ la'ī samaratha hōvē."
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "sakrīnasēvarāṁ la'ī ḍībagiga nū samaratha baṇā'undā hai. Kirapā karakē nōṭa karō ki iha ḍībaga lauga nū tēzī nāla bhara sakadā hai atē varatē ga'ē sakrīnasēvara dē adhāra tē, sakrīnasēvara nū thōṛhā haulī kara sakadā hai. Sirapha tāṁ hī kama karadā hai jē karanala ḍībagiga ḍā'iganausaṭika udēśāṁ la'ī samaratha hōvē.",
+  "No network while downloading debug data": "Ḍībaga ḍāṭā ḍā'unalōḍa karadē samēṁ kō'ī naiṭavaraka nahīṁ",
+  "Check your internet connection and try again.": "āpaṇē iṭaranaiṭa kanaikaśana dī jān̄ca karō atē dubārā kōśiśa karō.",
+  "The manual page {0} is invalid.": "Dasatāvēza panā {0} avaidha hai.",
+  "Consider filling this manual page.": "Isa mainu'ala panē nū bharana bārē vicāra karō.",
+  "Press any key to read the manual page...": "Mainu'ala panē nū paṛhana la'ī kō'ī vī kujī dabā'ō...",
+  "This manual page needs work for:": "Isa dasatāvēza panē la'ī kama dī lōṛa hai:",
+  "Manual page {0} not found.": "Mainu'ala panā {0} nahīṁ mili'ā.",
+  "Mod manual": "Māḍa mainu'ala"
 }

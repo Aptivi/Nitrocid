@@ -1165,3 +1165,11 @@ Mod nebyl nalezen nebo soubor obsahuje neplatné znaky.
 Pravděpodobnost chyby v procentech
 Povolit ladění spořiče obrazovky
 Umožňuje ladění pro spořiče obrazovky. Vezměte prosím na vědomí, že může rychle zaplnit protokol ladění a mírně zpomalit spořič obrazovky, v závislosti na použitém spořiči obrazovky. Funguje pouze v případě, že je pro diagnostické účely povoleno ladění jádra.
+Při stahování dat ladění není žádná síť
+Zkontrolujte připojení k internetu a zkuste to znovu.
+Stránka manuálu {0} je neplatná.
+Zvažte vyplnění této stránky manuálu.
+Stránku manuálu si přečtete stisknutím libovolné klávesy ...
+Tato příručka vyžaduje práci pro:
+Stránka manuálu {0} nebyla nalezena.
+Mod manuál

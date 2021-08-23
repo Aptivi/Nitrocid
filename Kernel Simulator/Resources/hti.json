@@ -1165,5 +1165,13 @@
   "Mod not found or file has invalid characters.": "Mod pa jwenn oswa dosye gen karaktè envalid.",
   "Probability of miss in percent": "Pwobabilite pou manke nan pousan",
   "Enable screensaver debugging": "Pèmèt debogaj ekran",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Pèmèt debogaj pou ekran. Tanpri sonje ke li ka byen vit ranpli boutèy la debug ak yon ti kras ralanti ekran an desann, tou depann de ekran an itilize. Se sèlman travay si debogaj Kernel la pèmèt pou rezon dyagnostik."
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Pèmèt debogaj pou ekran. Tanpri sonje ke li ka byen vit ranpli boutèy la debug ak yon ti kras ralanti ekran an desann, tou depann de ekran an itilize. Se sèlman travay si debogaj Kernel la pèmèt pou rezon dyagnostik.",
+  "No network while downloading debug data": "Pa gen rezo pandan wap telechaje done debug yo",
+  "Check your internet connection and try again.": "Tcheke koneksyon entènèt ou an epi eseye ankò.",
+  "The manual page {0} is invalid.": "Paj manyèl la {0} pa valab.",
+  "Consider filling this manual page.": "Konsidere ranpli paj manyèl sa a.",
+  "Press any key to read the manual page...": "Peze nenpòt kle pou li paj manyèl la ...",
+  "This manual page needs work for:": "Paj manyèl sa a bezwen travay pou:",
+  "Manual page {0} not found.": "Paj Manyèl {0} pa jwenn.",
+  "Mod manual": "Mod manyèl"
 }

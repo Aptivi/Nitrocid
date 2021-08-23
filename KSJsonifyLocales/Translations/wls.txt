@@ -1165,3 +1165,11 @@ Mod heb ei ddarganfod neu mae gan y ffeil nodau annilys.
 Tebygolrwydd o golli yn y cant
 Galluogi difa chwilod arbed sgrin
 Yn galluogi difa chwilod ar gyfer arbedwyr sgrin. Sylwch y gallai lenwi'r log dadfygio yn gyflym ac arafu'r arbedwr sgrin i lawr, yn dibynnu ar yr arbedwr sgrin a ddefnyddir. Dim ond os yw difa chwilod cnewyllyn wedi'i alluogi at ddibenion diagnostig y mae'n gweithio.
+Dim rhwydwaith wrth lawrlwytho data dadfygio
+Gwiriwch eich cysylltiad rhyngrwyd a rhoi cynnig arall arni.
+Mae'r dudalen â llaw {0} yn annilys.
+Ystyriwch lenwi'r dudalen hon â llaw.
+Pwyswch unrhyw allwedd i ddarllen y dudalen â llaw ...
+Mae angen gwaith ar y dudalen â llaw hon ar gyfer:
+Tudalen law {0} heb ei darganfod.
+Llawlyfr mod

@@ -1165,3 +1165,11 @@ Hindi nahanap ang mod o may hindi wastong mga character ang file.
 Ang posibilidad ng miss sa porsyento
 Paganahin ang pag-debug ng screensaver
 Pinapagana ang pag-debug para sa mga screensaver. Mangyaring tandaan na maaari nitong mabilis na punan ang log ng pag-debug at bahagyang mapabagal ang screensaver, depende sa ginamit na screensaver. Gumagana lamang kung pinagana ang pag-debug ng kernel para sa mga layuning diagnostic.
+Walang network habang nagda-download ng data ng pag-debug
+Suriin ang iyong koneksyon sa internet at subukang muli.
+Ang manu-manong pahina na {0} ay hindi wasto.
+Pag-isipang punan ang manu-manong pahina.
+Pindutin ang anumang key upang basahin ang manu-manong pahina ...
+Ang manu-manong pahina na ito ay kailangang gumana para sa:
+Hindi nahanap ang manu-manong pahina {0}.
+Manwal ng mod

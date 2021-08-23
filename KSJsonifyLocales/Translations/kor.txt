@@ -1165,3 +1165,11 @@ modeuleul chaj-eul su eobsgeona pail-e jalmosdoen munjaga issseubnida.
 silpae hwaglyul(peosenteu)
 hwamyeon bohogi dibeoging hwalseonghwa
 hwamyeon bohogie daehan dibeoging-eul hwalseonghwahabnida. sayonghaneun hwamyeon bohogie ttala dibeogeu logeuga ppaleuge chaewojigo hwamyeon bohogiga yaggan neulyeojil su issseubnida. jindan mogjeog-eulo keoneol dibeoging-i hwalseonghwadoen gyeong-ueman jagdonghabnida.
+dibeogeu deiteoleul daunlodeuhaneun dong-an neteuwokeu eobs-eum
+inteones yeongyeol-eul hwag-inhago dasi sidohasibsio.
+maenyueol peiji {0}i(ga) jalmosdoeeossseubnida.
+i maenyueol peijileul chaeuneun geos-eul golyeohasibsio.
+maenyueol peijileul ilg-eulyeomyeon amu kina nuleusibsio ...
+i maenyueol peijineun da-eum-e daehan jag-eob-i pil-yohabnida.
+maenyueol peiji {0}eul(leul) chaj-eul su eobs-seubnida.
+modeu maenyueol

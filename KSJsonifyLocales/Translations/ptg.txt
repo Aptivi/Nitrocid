@@ -1165,3 +1165,11 @@ Mod não encontrado ou o arquivo contém caracteres inválidos.
 Probabilidade de falha em porcentagem
 Habilitar depuração do protetor de tela
 Ativa a depuração de protetores de tela. Observe que isso pode preencher rapidamente o log de depuração e diminuir um pouco a velocidade do protetor de tela, dependendo do protetor de tela usado. Funciona apenas se a depuração do kernel estiver habilitada para fins de diagnóstico.
+Sem rede durante o download de dados de depuração
+Verifique sua conexão com a Internet e tente novamente.
+A página do manual {0} é inválida.
+Considere preencher esta página do manual.
+Pressione qualquer tecla para ler a página do manual ...
+Esta página do manual precisa ser trabalhada para:
+Página do manual {0} não encontrada.
+Manual do Mod

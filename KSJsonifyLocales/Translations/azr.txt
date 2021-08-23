@@ -1165,3 +1165,11 @@ Mod tapılmadı və ya faylda etibarsız simvollar var.
 Qaçırma ehtimalı yüzdə
 Ekran qoruyucu ayıklamasını aktiv edin
 Ekran qoruyucuları üçün ayıklamayı aktivləşdirir. Unutmayın ki, istifadə olunan ekran qoruyucusundan asılı olaraq ayıklama jurnalını tez doldura bilər və ekran qoruyucusunu bir qədər yavaşlata bilər. Yalnız diaqnostik məqsədlər üçün kernel ayıklama aktivləşdirildikdə işləyir.
+Ayıklama məlumatları endirilərkən şəbəkə yoxdur
+İnternet bağlantınızı yoxlayın və yenidən cəhd edin.
+Manual səhifə {0} etibarsızdır.
+Bu təlimat səhifəsini doldurmağı düşünün.
+Təlimat səhifəsini oxumaq üçün hər hansı bir düyməni basın ...
+Bu dərslik səhifəsi üçün işləmək lazımdır:
+Manual səhifə {0} tapılmadı.
+Mod təlimatı

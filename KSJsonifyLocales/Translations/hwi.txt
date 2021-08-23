@@ -1165,3 +1165,11 @@ Kauoha kūpono ʻole {0}. E hōʻoia i ka hoʻohana ma lalo:
 Maliʻa o ka hala i ka pākēneka
 Hiki i ka debugging screensaver
 Hiki i ka debugging no nā screensaver. E ʻoluʻolu e hoʻopihapiha koke paha i ka log debug a hoʻolōʻihi i ka screensaver i lalo, e hilinaʻi ana i ka screensaver i hoʻohana ʻia. Hana wale inā hiki ke hoʻopau ʻia ke kernel debugging no nā hana diagnostics.
+ʻAʻohe kikowaena pūnaewele i ka hoʻoiho ʻana i nā ʻikepili debug
+E hōʻoia i kāu pili pūnaewele a hoʻāʻo hou.
+He kūpono ʻole ka ʻaoʻao manual {0}.
+E noʻonoʻo e hoʻopiha i kēia ʻaoʻao ʻaoʻao.
+Kaomi i nā kī e heluhelu ai i ka ʻaoʻao manual ...
+Pono kēia ʻaoʻao manual e hana no:
+ʻAʻole i loaʻa ka ʻaoʻao manual.
+Manual manual

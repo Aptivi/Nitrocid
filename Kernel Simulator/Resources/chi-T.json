@@ -1165,5 +1165,13 @@
   "Mod not found or file has invalid characters.": "未找到 Mod 或文件包含无效字符。",
   "Probability of miss in percent": "未命中概率（百分比）",
   "Enable screensaver debugging": "启用屏幕保护程序调试",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "启用屏幕保护程序调试。请注意，它可能会迅速填满调试日志并稍微减慢屏幕保护程序的速度，具体取决于所使用的屏幕保护程序。仅在为诊断目的启用内核调试时才有效。"
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "启用屏幕保护程序调试。请注意，它可能会迅速填满调试日志并稍微减慢屏幕保护程序的速度，具体取决于所使用的屏幕保护程序。仅在为诊断目的启用内核调试时才有效。",
+  "No network while downloading debug data": "下载调试数据时没有网络",
+  "Check your internet connection and try again.": "检查您的互联网连接，然后重试。",
+  "The manual page {0} is invalid.": "手册页 {0} 无效。",
+  "Consider filling this manual page.": "考虑填写本手册页。",
+  "Press any key to read the manual page...": "按任意键阅读手册页...",
+  "This manual page needs work for:": "本手册页需要用于：",
+  "Manual page {0} not found.": "未找到手册页 {0}。",
+  "Mod manual": "模组手册"
 }

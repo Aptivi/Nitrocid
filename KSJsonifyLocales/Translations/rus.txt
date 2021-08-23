@@ -1165,3 +1165,11 @@ Mod ne nayden ili fayl soderzhit nedopustimyye simvoly.
 Veroyatnost' promakha v protsentakh
 Vklyuchit' otladku zastavki
 Vklyuchayet otladku zastavok. Obratite vnimaniye, chto on mozhet bystro zapolnit' zhurnal otladki i nemnogo zamedlit' rabotu zastavki, v zavisimosti ot ispol'zuyemoy zastavki. Rabotayet, tol'ko yesli otladka yadra vklyuchena dlya diagnosticheskikh tseley.
+Net seti pri zagruzke dannykh otladki
+Prover'te podklyucheniye k Internetu i poprobuyte yeshche raz.
+Stranitsa rukovodstva {0} nedeystvitel'na.
+Rassmotrite vozmozhnost' zapolneniya etoy stranitsy rukovodstva.
+Nazhmite lyubuyu klavishu, chtoby prochitat' stranitsu rukovodstva ...
+Eta stranitsa rukovodstva nuzhdayetsya v dorabotke dlya:
+Stranitsa rukovodstva {0} ne naydena.
+Rukovodstvo po modu

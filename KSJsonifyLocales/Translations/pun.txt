@@ -1165,3 +1165,11 @@ Māḍa nahīṁ mili'ā jāṁ phā'īla vica avaidha akhara hana.
 Pratīśata vica khujhaṇa dī sabhāvanā
 sakrīnasēvara ḍībagiga nū samaratha baṇā'u
 sakrīnasēvarāṁ la'ī ḍībagiga nū samaratha baṇā'undā hai. Kirapā karakē nōṭa karō ki iha ḍībaga lauga nū tēzī nāla bhara sakadā hai atē varatē ga'ē sakrīnasēvara dē adhāra tē, sakrīnasēvara nū thōṛhā haulī kara sakadā hai. Sirapha tāṁ hī kama karadā hai jē karanala ḍībagiga ḍā'iganausaṭika udēśāṁ la'ī samaratha hōvē.
+Ḍībaga ḍāṭā ḍā'unalōḍa karadē samēṁ kō'ī naiṭavaraka nahīṁ
+āpaṇē iṭaranaiṭa kanaikaśana dī jān̄ca karō atē dubārā kōśiśa karō.
+Dasatāvēza panā {0} avaidha hai.
+Isa mainu'ala panē nū bharana bārē vicāra karō.
+Mainu'ala panē nū paṛhana la'ī kō'ī vī kujī dabā'ō...
+Isa dasatāvēza panē la'ī kama dī lōṛa hai:
+Mainu'ala panā {0} nahīṁ mili'ā.
+Māḍa mainu'ala

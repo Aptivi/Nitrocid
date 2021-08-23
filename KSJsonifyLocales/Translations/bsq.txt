@@ -1165,3 +1165,11 @@ Mod ez da aurkitu edo fitxategiak karaktere baliogabeak ditu.
 Ehuneko huts egiteko probabilitatea
 Gaitu pantaila-babeslearen arazketa
 Pantaila-babesleentzako arazketa gaitzen du. Kontuan izan arazketa erregistroa azkar bete dezakeela eta pantaila-babeslea apur bat moteldu dezakeela, erabilitako pantaila-babeslearen arabera. Nukleoaren arazketa diagnostikoetarako gaituta badago soilik funtzionatzen du.
+Sarerik ez dago arazketa datuak deskargatzen ari zaren bitartean
+Egiaztatu Interneteko konexioa eta saiatu berriro.
+{0} eskuzko orria baliogabea da.
+Demagun eskuzko orri hau betetzea.
+Sakatu edozein tekla eskuliburu orria irakurtzeko ...
+Eskuliburu orri honek hauetarako lan egin behar du:
+Ez da aurkitu {0} eskuliburu orria.
+Mod eskuliburua

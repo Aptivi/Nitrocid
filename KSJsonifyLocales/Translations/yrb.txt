@@ -1165,3 +1165,11 @@ Mod ko rii tabi faili ni awọn ohun kikọ ti ko wulo.
 Awọn iṣeeṣe ti miss ni ogorun
 Mu n ṣatunṣe aṣiṣe iboju ṣiṣẹ
 Mu ṣiṣẹ n ṣatunṣe aṣiṣe fun awọn iboju iboju. Jọwọ ṣakiyesi pe o le yara fọwọsi iwe aṣiṣe ati yiyara fifipamọ iboju si isalẹ, da lori oluṣeto iboju ti a lo. Awọn iṣẹ nikan ti n ṣatunṣe aṣiṣe ekuro ṣiṣẹ fun awọn idi iwadii.
+Ko si nẹtiwọọki lakoko gbigba data yokokoro
+Ṣayẹwo isopọ Ayelujara rẹ ki o tun gbiyanju lẹẹkansi.
+Oju -iwe afọwọkọ {0} ko wulo.
+Gbiyanju lati kun oju -iwe afọwọkọ yii.
+Tẹ bọtini eyikeyi lati ka oju -iwe Afowoyi ...
+Oju -iwe Afowoyi nilo iṣẹ fun:
+Oju -iwe Afowoyi {0} ko ri.
+Afowoyi Mod

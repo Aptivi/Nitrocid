@@ -1165,3 +1165,11 @@ Mod ma nstabx jew il-fajl għandu karattri invalidi.
 Probabbiltà ta 'nuqqas fil-mija
 Ippermetti l-iscreensaver debugging
 Jippermetti d-debugging għall-iscreeners. Jekk jogħġbok innota li jista 'jimla malajr il-log tad-debug u jnaqqas kemmxejn is-screensaver, skont l-iscreensaver użat. Jaħdem biss jekk id-debugging tal-kernel huwa attivat għal skopijiet dijanjostiċi.
+L-ebda netwerk waqt li tniżżel id-data ta 'debug
+Iċċekkja l-konnessjoni tal-internet tiegħek u erġa 'pprova.
+Il-paġna tal-manwal {0} mhijiex valida.
+Ikkunsidra li timla din il-paġna tal-manwal.
+Agħfas kwalunkwe ċavetta biex taqra l-paġna tal-manwal ...
+Din il-paġna tal-manwal teħtieġ xogħol għal:
+Paġna tal-manwal {0} ma nstabitx.
+Manwal tal-mod

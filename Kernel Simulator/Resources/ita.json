@@ -1165,5 +1165,13 @@
   "Mod not found or file has invalid characters.": "Mod non trovata o il file contiene caratteri non validi.",
   "Probability of miss in percent": "Probabilità di perdere in percentuale",
   "Enable screensaver debugging": "Abilita il debug del salvaschermo",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Abilita il debug per gli screensaver. Si noti che potrebbe riempire rapidamente il registro di debug e rallentare leggermente lo screensaver, a seconda dello screensaver utilizzato. Funziona solo se il debug del kernel è abilitato per scopi diagnostici."
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Abilita il debug per gli screensaver. Si noti che potrebbe riempire rapidamente il registro di debug e rallentare leggermente lo screensaver, a seconda dello screensaver utilizzato. Funziona solo se il debug del kernel è abilitato per scopi diagnostici.",
+  "No network while downloading debug data": "Nessuna rete durante il download dei dati di debug",
+  "Check your internet connection and try again.": "Controlla la tua connessione Internet e riprova.",
+  "The manual page {0} is invalid.": "La pagina di manuale {0} non è valida.",
+  "Consider filling this manual page.": "Considera di riempire questa pagina di manuale.",
+  "Press any key to read the manual page...": "Premi un tasto qualsiasi per leggere la pagina del manuale...",
+  "This manual page needs work for:": "Questa pagina di manuale necessita di lavori per:",
+  "Manual page {0} not found.": "Pagina del manuale {0} non trovata.",
+  "Mod manual": "Manuale del modulo"
 }

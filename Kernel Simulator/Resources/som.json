@@ -1165,5 +1165,13 @@
   "Mod not found or file has invalid characters.": "Mod lama helin ama faylku wuxuu leeyahay xuruuf aan sax ahayn.",
   "Probability of miss in percent": "Suurtagalnimada lumitaanka boqolkiiba",
   "Enable screensaver debugging": "Daar khaladka shaashadda badbaadinta",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Waxay awood u siisaa ka -saaridda shaashadaha. Fadlan ogow inay si dhaqso ah u buuxin karto diiwaanka khaladka oo ay yara yara yareyn karto shaashadda, iyadoo ku xiran badbaadiyaha shaashadda la isticmaalay. Kaliya wuxuu shaqeeyaa haddii khal -goynta kernel -ka loo oggolaado ujeedo baadhitaan."
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Waxay awood u siisaa ka -saaridda shaashadaha. Fadlan ogow inay si dhaqso ah u buuxin karto diiwaanka khaladka oo ay yara yara yareyn karto shaashadda, iyadoo ku xiran badbaadiyaha shaashadda la isticmaalay. Kaliya wuxuu shaqeeyaa haddii khal -goynta kernel -ka loo oggolaado ujeedo baadhitaan.",
+  "No network while downloading debug data": "Ma jiro shabakad inta la soo dejinayo xogta khalad",
+  "Check your internet connection and try again.": "Hubi isku xirnaantaada internetka oo isku day mar kale.",
+  "The manual page {0} is invalid.": "Bogga gacanta {0} ma xuma.",
+  "Consider filling this manual page.": "Tixgeli buuxinta boggan buuggan.",
+  "Press any key to read the manual page...": "Guji furaha kasta si aad u akhrido bogga gacanta ...",
+  "This manual page needs work for:": "Boggan gacanta ah wuxuu u baahan yahay shaqo:",
+  "Manual page {0} not found.": "Bogga gacanta {0} lama helin.",
+  "Mod manual": "Buugga Mod"
 }

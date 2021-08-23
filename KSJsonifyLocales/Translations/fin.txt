@@ -1165,3 +1165,11 @@ Modia ei löydy tai tiedostossa on virheellisiä merkkejä.
 Miss -todennäköisyys prosentteina
 Ota näytönsäästäjän virheenkorjaus käyttöön
 Ottaa käyttöön näytönsäästäjien virheenkorjauksen. Huomaa, että se voi nopeasti täyttää virheenkorjauslokin ja hieman hidastaa näytönsäästäjää käytetystä näytönsäästäjästä riippuen. Toimii vain, jos ytimen virheenkorjaus on otettu käyttöön diagnostisia tarkoituksia varten.
+Ei verkkoa, kun lataat virheenkorjaustietoja
+Tarkista Internet -yhteys ja yritä uudelleen.
+Manuaalinen sivu {0} on virheellinen.
+Harkitse tämän ohjekirjan sivun täyttämistä.
+Lue käyttöopas painamalla mitä tahansa näppäintä ...
+Tämä ohjekirja -sivu vaatii työtä:
+Manuaalista sivua {0} ei löydy.
+Mod käsikirja

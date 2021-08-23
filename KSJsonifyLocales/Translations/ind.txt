@@ -1165,3 +1165,11 @@ mod nahin mila ya fail mein amaany varn hain.
 pratishat mein chhootane kee praayikata
 skreenasevar dibaging saksham karen
 skreenasevar ke lie dibaging saksham karata hai. krpaya dhyaan den ki yah upayog kie gae skreenasevar ke aadhaar par deebag log ko jaldee se bhar sakata hai aur skreenasevar ko thoda dheema kar sakata hai. keval tabhee kaam karata hai jab naidaanik ​​uddeshyon ke lie karnel dibaging saksham ho.
+dibag deta daunalod karate samay koee netavark nahin
+apane intaranet kanekshan kee jaanch karen aur punah prayaas karen.
+mainual pej {0} amaany hai.
+is mainual pej ko bharane par vichaar karen.
+mainual pej padhane ke lie koee bhee kunjee dabaen...
+is mainual pej ke lie kaam karane kee jaroorat hai:
+mainual pej {0} nahin mila.
+mod mainual

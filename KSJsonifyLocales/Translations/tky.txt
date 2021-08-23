@@ -1165,3 +1165,11 @@ Mod bulunamadı veya dosyada geçersiz karakterler var.
 Yüzde olarak kaçırma olasılığı
 Ekran koruyucu hata ayıklamasını etkinleştir
 Ekran koruyucular için hata ayıklamayı etkinleştirir. Lütfen, kullanılan ekran koruyucuya bağlı olarak hata ayıklama günlüğünü hızla doldurabileceğini ve ekran koruyucuyu biraz yavaşlatabileceğini unutmayın. Yalnızca, tanılama amacıyla çekirdek hata ayıklaması etkinleştirildiyse çalışır.
+Hata ayıklama verilerini indirirken ağ yok
+İnternet bağlantınızı kontrol edin ve tekrar deneyin.
+Kılavuz sayfası {0} geçersiz.
+Bu kılavuz sayfasını doldurmayı düşünün.
+Kılavuz sayfasını okumak için herhangi bir tuşa basın...
+Bu kılavuz sayfasının aşağıdakiler için çalışması gerekiyor:
+Manuel sayfa {0} bulunamadı.
+mod kılavuzu

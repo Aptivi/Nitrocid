@@ -1165,3 +1165,11 @@ Mod haijapatikana au faili ina vibambo batili.
 Uwezekano wa kukosa kwa asilimia
 Washa utatuaji wa kiwambo cha skrini
 Huwasha utatuzi wa viokoaji skrini. Tafadhali kumbuka kuwa inaweza kujaza haraka kumbukumbu ya utatuzi na kupunguza polepole kiwambo cha skrini chini, kulingana na kiwambo cha skrini kilichotumiwa. Inafanya kazi tu ikiwa utatuaji wa kernel umewezeshwa kwa madhumuni ya uchunguzi.
+Hakuna mtandao wakati unapakua data ya utatuzi
+Angalia muunganisho wako wa mtandao na ujaribu tena.
+Ukurasa wa mwongozo {0} ni batili.
+Fikiria kujaza ukurasa huu wa mwongozo.
+Bonyeza kitufe chochote kusoma ukurasa wa mwongozo ..
+Ukurasa huu wa mwongozo unahitaji kufanya kazi kwa:
+Ukurasa wa mwongozo {0} haupatikani.
+Mwongozo wa mod

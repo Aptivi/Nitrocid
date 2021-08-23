@@ -1165,3 +1165,11 @@ Mod tidak ditemukan atau file memiliki karakter yang tidak valid.
 Probabilitas meleset dalam persen
 Aktifkan debugging screensaver
 Mengaktifkan debugging untuk screensaver. Harap dicatat bahwa ini dapat dengan cepat mengisi log debug dan sedikit memperlambat screensaver, tergantung pada screensaver yang digunakan. Hanya berfungsi jika debugging kernel diaktifkan untuk tujuan diagnostik.
+Tidak ada jaringan saat mengunduh data debug
+Periksa koneksi internet Anda dan coba lagi.
+Laman manual {0} tidak valid.
+Pertimbangkan untuk mengisi halaman manual ini.
+Tekan sembarang tombol untuk membaca halaman manual...
+Halaman manual ini perlu bekerja untuk:
+Halaman manual {0} tidak ditemukan.
+Panduan mod

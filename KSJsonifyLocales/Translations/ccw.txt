@@ -1165,3 +1165,11 @@ Mod sinapezeke kapena fayilo ili ndi zilembo zosagwira.
 Mwayi wophonya peresenti
 Thandizani kutsegula kwa screensaver
 Ikuthandizira kuthana ndi zowonera pazenera. Chonde dziwani kuti ikhoza kudzaza chipika chazachangu ndikuchepetsa pang'ono chojambulira, kutengera chowonera chomwe chagwiritsidwa ntchito. Zimagwira kokha ngati kukonza kwa kernel kumathandizidwa kuti muzindikire.
+Palibe netiweki mukamatsitsa zosokoneza
+Chongani intaneti yanu ndikuyesanso.
+Tsamba lofufuzira {0} ndi losavomerezeka.
+Ganizirani zodzaza ndi bukuli.
+Dinani chilichonse kuti muwerenge bukuli ...
+Bukuli limafunikira kugwira ntchito:
+Tsamba lamanja {0} silinapezeke.
+Buku la Mod

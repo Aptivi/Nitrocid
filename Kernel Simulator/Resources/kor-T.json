@@ -1165,5 +1165,13 @@
   "Mod not found or file has invalid characters.": "모드를 찾을 수 없거나 파일에 잘못된 문자가 있습니다.",
   "Probability of miss in percent": "실패 확률(퍼센트)",
   "Enable screensaver debugging": "화면 보호기 디버깅 활성화",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "화면 보호기에 대한 디버깅을 활성화합니다. 사용하는 화면 보호기에 따라 디버그 로그가 빠르게 채워지고 화면 보호기가 약간 느려질 수 있습니다. 진단 목적으로 커널 디버깅이 활성화된 경우에만 작동합니다."
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "화면 보호기에 대한 디버깅을 활성화합니다. 사용하는 화면 보호기에 따라 디버그 로그가 빠르게 채워지고 화면 보호기가 약간 느려질 수 있습니다. 진단 목적으로 커널 디버깅이 활성화된 경우에만 작동합니다.",
+  "No network while downloading debug data": "디버그 데이터를 다운로드하는 동안 네트워크 없음",
+  "Check your internet connection and try again.": "인터넷 연결을 확인하고 다시 시도하십시오.",
+  "The manual page {0} is invalid.": "매뉴얼 페이지 {0}이(가) 잘못되었습니다.",
+  "Consider filling this manual page.": "이 매뉴얼 페이지를 채우는 것을 고려하십시오.",
+  "Press any key to read the manual page...": "매뉴얼 페이지를 읽으려면 아무 키나 누르십시오 ...",
+  "This manual page needs work for:": "이 매뉴얼 페이지는 다음에 대한 작업이 필요합니다.",
+  "Manual page {0} not found.": "매뉴얼 페이지 {0}을(를) 찾을 수 없습니다.",
+  "Mod manual": "모드 매뉴얼"
 }

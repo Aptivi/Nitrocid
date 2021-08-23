@@ -1165,3 +1165,11 @@ Imodi ayitholakalanga noma ifayela linezinhlamvu ezingavumelekile.
 Amathuba okuphuthelwa ngamaphesenti
 Nika amandla ukulungisa iphutha kwe-screensaver
 Inika amandla ukulungisa iphutha kokulondolozwa kwesikrini. Uyacelwa ukuthi wazi ukuthi ingagcwalisa ngokushesha ilog yokulungisa iphutha bese yehlise kancane i-screensaver phansi, kuya ngesilondolozi-skrini esisetshenzisiwe. Kusebenza kuphela uma ukulungisa iphutha kwe-kernel kunikwe amandla ngezinhloso zokuxilonga.
+Ayikho inethiwekhi ngenkathi kulandwa idatha yokulungisa iphutha
+Hlola ukuxhumeka kwakho kwe-inthanethi uphinde uzame futhi.
+Ikhasi elenziwe ngesandla {0} alivumelekile.
+Cabanga ngokugcwalisa leli khasi lemanuwali.
+Cindezela noma yimuphi ukhiye ukufunda ikhasi lesandla ...
+Leli khasi lesandla lidinga ukusebenzela:
+Ikhasi elenziwa ngesandla {0} alitholakali.
+Imanyuwali yeMod

@@ -1165,5 +1165,13 @@
   "Mod not found or file has invalid characters.": "Mod ko rii tabi faili ni awọn ohun kikọ ti ko wulo.",
   "Probability of miss in percent": "Awọn iṣeeṣe ti miss ni ogorun",
   "Enable screensaver debugging": "Mu n ṣatunṣe aṣiṣe iboju ṣiṣẹ",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Mu ṣiṣẹ n ṣatunṣe aṣiṣe fun awọn iboju iboju. Jọwọ ṣakiyesi pe o le yara fọwọsi iwe aṣiṣe ati yiyara fifipamọ iboju si isalẹ, da lori oluṣeto iboju ti a lo. Awọn iṣẹ nikan ti n ṣatunṣe aṣiṣe ekuro ṣiṣẹ fun awọn idi iwadii."
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Mu ṣiṣẹ n ṣatunṣe aṣiṣe fun awọn iboju iboju. Jọwọ ṣakiyesi pe o le yara fọwọsi iwe aṣiṣe ati yiyara fifipamọ iboju si isalẹ, da lori oluṣeto iboju ti a lo. Awọn iṣẹ nikan ti n ṣatunṣe aṣiṣe ekuro ṣiṣẹ fun awọn idi iwadii.",
+  "No network while downloading debug data": "Ko si nẹtiwọọki lakoko gbigba data yokokoro",
+  "Check your internet connection and try again.": "Ṣayẹwo isopọ Ayelujara rẹ ki o tun gbiyanju lẹẹkansi.",
+  "The manual page {0} is invalid.": "Oju -iwe afọwọkọ {0} ko wulo.",
+  "Consider filling this manual page.": "Gbiyanju lati kun oju -iwe afọwọkọ yii.",
+  "Press any key to read the manual page...": "Tẹ bọtini eyikeyi lati ka oju -iwe Afowoyi ...",
+  "This manual page needs work for:": "Oju -iwe Afowoyi nilo iṣẹ fun:",
+  "Manual page {0} not found.": "Oju -iwe Afowoyi {0} ko ri.",
+  "Mod manual": "Afowoyi Mod"
 }

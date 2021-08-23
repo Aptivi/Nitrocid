@@ -1165,5 +1165,13 @@
   "Mod not found or file has invalid characters.": "Không tìm thấy mod hoặc tệp có ký tự không hợp lệ.",
   "Probability of miss in percent": "Xác suất trượt tính bằng phần trăm",
   "Enable screensaver debugging": "Bật gỡ lỗi trình bảo vệ màn hình",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Cho phép gỡ lỗi cho trình bảo vệ màn hình. Xin lưu ý rằng nó có thể nhanh chóng lấp đầy nhật ký gỡ lỗi và làm chậm một chút trình bảo vệ màn hình, tùy thuộc vào trình bảo vệ màn hình được sử dụng. Chỉ hoạt động nếu gỡ lỗi hạt nhân được bật cho mục đích chẩn đoán."
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Cho phép gỡ lỗi cho trình bảo vệ màn hình. Xin lưu ý rằng nó có thể nhanh chóng lấp đầy nhật ký gỡ lỗi và làm chậm một chút trình bảo vệ màn hình, tùy thuộc vào trình bảo vệ màn hình được sử dụng. Chỉ hoạt động nếu gỡ lỗi hạt nhân được bật cho mục đích chẩn đoán.",
+  "No network while downloading debug data": "Không có mạng khi tải xuống dữ liệu gỡ lỗi",
+  "Check your internet connection and try again.": "Kiểm tra kết nối internet của bạn và thử lại.",
+  "The manual page {0} is invalid.": "Trang thủ công {0} không hợp lệ.",
+  "Consider filling this manual page.": "Hãy xem xét việc điền vào trang hướng dẫn này.",
+  "Press any key to read the manual page...": "Nhấn phím bất kỳ để đọc trang hướng dẫn sử dụng ...",
+  "This manual page needs work for:": "Trang hướng dẫn này cần hoạt động cho:",
+  "Manual page {0} not found.": "Không tìm thấy trang thủ công {0}.",
+  "Mod manual": "Hướng dẫn mod"
 }

@@ -1165,3 +1165,11 @@ Mod introuvable ou le fichier contient des caractères invalides.
 Probabilité d'échec en pourcentage
 Activer le débogage de l'économiseur d'écran
 Active le débogage pour les économiseurs d'écran. Veuillez noter que cela peut rapidement remplir le journal de débogage et ralentir légèrement l'économiseur d'écran, selon l'économiseur d'écran utilisé. Ne fonctionne que si le débogage du noyau est activé à des fins de diagnostic.
+Pas de réseau lors du téléchargement des données de débogage
+Vérifiez votre connexion Internet et réessayez.
+La page de manuel {0} n'est pas valide.
+Pensez à remplir cette page de manuel.
+Appuyez sur n'importe quelle touche pour lire la page de manuel...
+Cette page de manuel a besoin de travail pour :
+Page de manuel {0} introuvable.
+Mode d'emploi

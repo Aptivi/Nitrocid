@@ -1165,3 +1165,11 @@ Mod niet gevonden of bestand bevat ongeldige tekens.
 Kans op missen in procenten
 Schermbeveiliging foutopsporing inschakelen
 Schakelt foutopsporing in voor screensavers. Houd er rekening mee dat het debug-logboek snel kan vullen en de screensaver enigszins kan vertragen, afhankelijk van de gebruikte screensaver. Werkt alleen als kerneldebugging is ingeschakeld voor diagnostische doeleinden.
+Geen netwerk tijdens het downloaden van foutopsporingsgegevens
+Controleer uw internetverbinding en probeer het opnieuw.
+De handmatige pagina {0} is ongeldig.
+Overweeg om deze handleiding te vullen.
+Druk op een willekeurige toets om de handleiding te lezen...
+Deze handleiding heeft werk nodig voor:
+Handleiding pagina {0} niet gevonden.
+Mod-handleiding

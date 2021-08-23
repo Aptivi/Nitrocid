@@ -1165,3 +1165,11 @@ Mod hittades inte eller filen har ogiltiga tecken.
 Sannolikhet för miss i procent
 Aktivera felsökning av skärmsläckare
 Aktiverar felsökning för skärmsläckare. Observera att det snabbt kan fylla felsökningsloggen och sakta ner skärmsläckaren, beroende på vilken skärmsläckare som används. Fungerar bara om kärnfelsökning är aktiverat för diagnostiska ändamål.
+Inget nätverk vid nedladdning av felsökningsdata
+Kontrollera din internetanslutning och försök igen.
+Den manuella sidan {0} är ogiltig.
+Överväg att fylla den här manuella sidan.
+Tryck på valfri knapp för att läsa den manuella sidan ...
+Denna manuella sida behöver arbete för:
+Manuell sida {0} hittades inte.
+Mod manuell

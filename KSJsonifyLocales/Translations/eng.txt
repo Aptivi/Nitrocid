@@ -1165,3 +1165,11 @@ Mod not found or file has invalid characters.
 Probability of miss in percent
 Enable screensaver debugging
 Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.
+No network while downloading debug data
+Check your internet connection and try again.
+The manual page {0} is invalid.
+Consider filling this manual page.
+Press any key to read the manual page...
+This manual page needs work for:
+Manual page {0} not found.
+Mod manual

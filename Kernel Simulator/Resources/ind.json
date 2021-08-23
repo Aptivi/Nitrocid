@@ -1164,5 +1164,13 @@
   "Mod not found or file has invalid characters.": "mod nahin mila ya fail mein amaany varn hain.",
   "Probability of miss in percent": "pratishat mein chhootane kee praayikata",
   "Enable screensaver debugging": "skreenasevar dibaging saksham karen",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "skreenasevar ke lie dibaging saksham karata hai. krpaya dhyaan den ki yah upayog kie gae skreenasevar ke aadhaar par deebag log ko jaldee se bhar sakata hai aur skreenasevar ko thoda dheema kar sakata hai. keval tabhee kaam karata hai jab naidaanik ​​uddeshyon ke lie karnel dibaging saksham ho."
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "skreenasevar ke lie dibaging saksham karata hai. krpaya dhyaan den ki yah upayog kie gae skreenasevar ke aadhaar par deebag log ko jaldee se bhar sakata hai aur skreenasevar ko thoda dheema kar sakata hai. keval tabhee kaam karata hai jab naidaanik ​​uddeshyon ke lie karnel dibaging saksham ho.",
+  "No network while downloading debug data": "dibag deta daunalod karate samay koee netavark nahin",
+  "Check your internet connection and try again.": "apane intaranet kanekshan kee jaanch karen aur punah prayaas karen.",
+  "The manual page {0} is invalid.": "mainual pej {0} amaany hai.",
+  "Consider filling this manual page.": "is mainual pej ko bharane par vichaar karen.",
+  "Press any key to read the manual page...": "mainual pej padhane ke lie koee bhee kunjee dabaen...",
+  "This manual page needs work for:": "is mainual pej ke lie kaam karane kee jaroorat hai:",
+  "Manual page {0} not found.": "mainual pej {0} nahin mila.",
+  "Mod manual": "mod mainual"
 }

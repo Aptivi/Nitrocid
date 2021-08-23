@@ -1165,3 +1165,11 @@ Mod ga mitsukaranai ka, fairu ni mukōna moji ga fukuma rete imasu.
 Misu no kakuritsu (pāsento)
 sukurīnsēbā no debaggu o yūkōnisuru
 sukurīnsēbā no debaggu o yūkō ni shimasu. Shiyō suru sukurīnsēbā ni yotte wa, debaggurogu ga sugu ni ippai ni nari, sukurīnsēbā no sokudo ga wazuka ni osoku naru baai ga aru koto ni chūi shite kudasai. Shindan mokuteki de kānerudebaggu ga yūkō ni natte iru baai ni nomi kinō shimasu.
+Debaggudēta no daunrōdo-chū ni nettowāku ga arimasen
+Intānetto setsuzoku o kakunin shite, sai shikō shite kudasai.
+Manyuarupēji {0} ga mukōdesu.
+Kono manyuarupēji ni kinyū suru koto o kentō shite kudasai.
+Manyuarupēji o yomu ni wa, nin'i no kī o oshite kudasai...
+Kono manyuarupēji wa,-ji no sagyō ga hitsuyōdesu.
+Manyuarupēji {0} ga mitsukarimasen.
+Mod manyuaru

@@ -1165,3 +1165,11 @@ Mod pa jwenn oswa dosye gen karaktè envalid.
 Pwobabilite pou manke nan pousan
 Pèmèt debogaj ekran
 Pèmèt debogaj pou ekran. Tanpri sonje ke li ka byen vit ranpli boutèy la debug ak yon ti kras ralanti ekran an desann, tou depann de ekran an itilize. Se sèlman travay si debogaj Kernel la pèmèt pou rezon dyagnostik.
+Pa gen rezo pandan wap telechaje done debug yo
+Tcheke koneksyon entènèt ou an epi eseye ankò.
+Paj manyèl la {0} pa valab.
+Konsidere ranpli paj manyèl sa a.
+Peze nenpòt kle pou li paj manyèl la ...
+Paj manyèl sa a bezwen travay pou:
+Paj Manyèl {0} pa jwenn.
+Mod manyèl

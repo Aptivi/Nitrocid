@@ -1165,3 +1165,11 @@ Mod ora ditemokake utawa file ora duwe karakter sing ora valid.
 Kemungkinan saka kantun persen
 Aktifake debugging screensaver
 Ngaktifake debugging kanggo screensaver. Elinga yen bisa cepet ngisi log debug lan alon-alon layar mudhun, gumantung karo screensaver sing digunakake. Mung bisa digunakake yen debug kernel diaktifake kanggo tujuan diagnostik.
+Ora ana jaringan nalika ndownload data debug
+Priksa sambungan internet sampeyan banjur coba maneh.
+Kaca manual {0} ora valid.
+Coba isi kaca manual iki.
+Pencet tombol apa wae kanggo maca kaca manual ...
+Kaca manual iki kudu digunakake kanggo:
+Kaca manual {0} ora ditemokake.
+Manual mod

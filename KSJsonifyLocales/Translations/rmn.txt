@@ -1165,3 +1165,11 @@ Modul nu a fost găsit sau fișierul are caractere nevalide.
 Probabilitatea ratării în procente
 Activați depanarea screensaverului
 Activează depanarea pentru economizoarele de ecran. Vă rugăm să rețineți că poate umple rapid jurnalul de depanare și poate încetini ușor screensaver-ul, în funcție de screensaver-ul utilizat. Funcționează numai dacă depanarea kernelului este activată în scopuri de diagnostic.
+Nu există rețea în timp ce descărcați datele de depanare
+Verificați conexiunea la internet și încercați din nou.
+Pagina manuală {0} este nevalidă.
+Luați în considerare completarea acestei pagini de manual.
+Apăsați orice tastă pentru a citi pagina manualului ...
+Această pagină manuală trebuie să funcționeze pentru:
+Pagina manuală {0} nu a fost găsită.
+Manual de mod

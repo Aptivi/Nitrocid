@@ -1165,3 +1165,11 @@ Mod tidak dijumpai atau fail mempunyai aksara yang tidak sah.
 Kebarangkalian ketinggalan dalam peratus
 Dayakan penyahpepijatan screensaver
 Membolehkan penyahpepijatan untuk screensaver. Harap maklum bahawa ia dapat mengisi log debug dengan cepat dan sedikit melambatkan screensaver, bergantung pada screensaver yang digunakan. Hanya berfungsi jika debugging kernel diaktifkan untuk tujuan diagnostik.
+Tiada rangkaian semasa memuat turun data debug
+Periksa sambungan internet anda dan cuba lagi.
+Halaman manual {0} tidak sah.
+Pertimbangkan untuk mengisi halaman manual ini.
+Tekan sebarang kekunci untuk membaca halaman manual ...
+Halaman manual ini memerlukan kerja untuk:
+Halaman manual {0} tidak dijumpai.
+Manual mod

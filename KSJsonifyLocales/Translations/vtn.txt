@@ -1165,3 +1165,11 @@ Không tìm thấy mod hoặc tệp có ký tự không hợp lệ.
 Xác suất trượt tính bằng phần trăm
 Bật gỡ lỗi trình bảo vệ màn hình
 Cho phép gỡ lỗi cho trình bảo vệ màn hình. Xin lưu ý rằng nó có thể nhanh chóng lấp đầy nhật ký gỡ lỗi và làm chậm một chút trình bảo vệ màn hình, tùy thuộc vào trình bảo vệ màn hình được sử dụng. Chỉ hoạt động nếu gỡ lỗi hạt nhân được bật cho mục đích chẩn đoán.
+Không có mạng khi tải xuống dữ liệu gỡ lỗi
+Kiểm tra kết nối internet của bạn và thử lại.
+Trang thủ công {0} không hợp lệ.
+Hãy xem xét việc điền vào trang hướng dẫn này.
+Nhấn phím bất kỳ để đọc trang hướng dẫn sử dụng ...
+Trang hướng dẫn này cần hoạt động cho:
+Không tìm thấy trang thủ công {0}.
+Hướng dẫn mod

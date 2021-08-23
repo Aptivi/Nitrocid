@@ -1165,5 +1165,13 @@
   "Mod not found or file has invalid characters.": "Hindi nahanap ang mod o may hindi wastong mga character ang file.",
   "Probability of miss in percent": "Ang posibilidad ng miss sa porsyento",
   "Enable screensaver debugging": "Paganahin ang pag-debug ng screensaver",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Pinapagana ang pag-debug para sa mga screensaver. Mangyaring tandaan na maaari nitong mabilis na punan ang log ng pag-debug at bahagyang mapabagal ang screensaver, depende sa ginamit na screensaver. Gumagana lamang kung pinagana ang pag-debug ng kernel para sa mga layuning diagnostic."
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Pinapagana ang pag-debug para sa mga screensaver. Mangyaring tandaan na maaari nitong mabilis na punan ang log ng pag-debug at bahagyang mapabagal ang screensaver, depende sa ginamit na screensaver. Gumagana lamang kung pinagana ang pag-debug ng kernel para sa mga layuning diagnostic.",
+  "No network while downloading debug data": "Walang network habang nagda-download ng data ng pag-debug",
+  "Check your internet connection and try again.": "Suriin ang iyong koneksyon sa internet at subukang muli.",
+  "The manual page {0} is invalid.": "Ang manu-manong pahina na {0} ay hindi wasto.",
+  "Consider filling this manual page.": "Pag-isipang punan ang manu-manong pahina.",
+  "Press any key to read the manual page...": "Pindutin ang anumang key upang basahin ang manu-manong pahina ...",
+  "This manual page needs work for:": "Ang manu-manong pahina na ito ay kailangang gumana para sa:",
+  "Manual page {0} not found.": "Hindi nahanap ang manu-manong pahina {0}.",
+  "Mod manual": "Manwal ng mod"
 }

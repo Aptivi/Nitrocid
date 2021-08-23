@@ -1165,5 +1165,13 @@
   "Mod not found or file has invalid characters.": "Modia ei löydy tai tiedostossa on virheellisiä merkkejä.",
   "Probability of miss in percent": "Miss -todennäköisyys prosentteina",
   "Enable screensaver debugging": "Ota näytönsäästäjän virheenkorjaus käyttöön",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Ottaa käyttöön näytönsäästäjien virheenkorjauksen. Huomaa, että se voi nopeasti täyttää virheenkorjauslokin ja hieman hidastaa näytönsäästäjää käytetystä näytönsäästäjästä riippuen. Toimii vain, jos ytimen virheenkorjaus on otettu käyttöön diagnostisia tarkoituksia varten."
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "Ottaa käyttöön näytönsäästäjien virheenkorjauksen. Huomaa, että se voi nopeasti täyttää virheenkorjauslokin ja hieman hidastaa näytönsäästäjää käytetystä näytönsäästäjästä riippuen. Toimii vain, jos ytimen virheenkorjaus on otettu käyttöön diagnostisia tarkoituksia varten.",
+  "No network while downloading debug data": "Ei verkkoa, kun lataat virheenkorjaustietoja",
+  "Check your internet connection and try again.": "Tarkista Internet -yhteys ja yritä uudelleen.",
+  "The manual page {0} is invalid.": "Manuaalinen sivu {0} on virheellinen.",
+  "Consider filling this manual page.": "Harkitse tämän ohjekirjan sivun täyttämistä.",
+  "Press any key to read the manual page...": "Lue käyttöopas painamalla mitä tahansa näppäintä ...",
+  "This manual page needs work for:": "Tämä ohjekirja -sivu vaatii työtä:",
+  "Manual page {0} not found.": "Manuaalista sivua {0} ei löydy.",
+  "Mod manual": "Mod käsikirja"
 }

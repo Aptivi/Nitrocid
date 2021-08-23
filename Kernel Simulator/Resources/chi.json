@@ -1164,5 +1164,13 @@
   "Mod not found or file has invalid characters.": "Wèi zhǎodào Mod huò wénjiàn bāohán wúxiào zìfú.",
   "Probability of miss in percent": "Wèi mìngzhòng gàilǜ (bǎifēnbǐ)",
   "Enable screensaver debugging": "qǐyòng píngmù bǎohù chéngxù tiáoshì",
-  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "qǐyòng píngmù bǎohù chéngxù tiáoshì. Qǐng zhùyì, tā kěnéng huì xùnsù tián mǎn tiáoshì rìzhì bìng shāowéi jiǎn màn píngmù bǎohù chéngxù de sùdù, jùtǐ qǔjué yú suǒ shǐyòng de píngmù bǎohù chéngxù. Jǐn zài wèi zhěnduàn mùdì qǐyòng nèihé tiáoshì shí cái yǒuxiào."
+  "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.": "qǐyòng píngmù bǎohù chéngxù tiáoshì. Qǐng zhùyì, tā kěnéng huì xùnsù tián mǎn tiáoshì rìzhì bìng shāowéi jiǎn màn píngmù bǎohù chéngxù de sùdù, jùtǐ qǔjué yú suǒ shǐyòng de píngmù bǎohù chéngxù. Jǐn zài wèi zhěnduàn mùdì qǐyòng nèihé tiáoshì shí cái yǒuxiào.",
+  "No network while downloading debug data": "Xià zǎi tiáoshì shùjù shí méiyǒu wǎngluò",
+  "Check your internet connection and try again.": "jiǎnchá nín de hùliánwǎng liánjiē, ránhòu chóng shì.",
+  "The manual page {0} is invalid.": "Shǒucè yè {0} wúxiào.",
+  "Consider filling this manual page.": "Kǎolǜ tiánxiě běn shǒucè yè.",
+  "Press any key to read the manual page...": "Àn rènyì jiàn yuèdú shǒucè yè...",
+  "This manual page needs work for:": "Běn shǒucè yè xūyào yòng yú:",
+  "Manual page {0} not found.": "Wèi zhǎodào shǒucè yè {0}.",
+  "Mod manual": "Mó zǔ shǒucè"
 }

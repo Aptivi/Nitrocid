@@ -1165,3 +1165,11 @@ Mod tabılmadı nemese faylda jaramsız tañbalar bar.
 Ötkizw ıqtïmaldığı payızben
 Ékran saqtağışınıñ jöndewin qosıñız
 Ékran saqtawşılardıñ otladtawın qosadı. Nazar awdarıñız, ol otladtaw jwrnalın tez toltıradı jäne paydalanılğan ékran saqtağışqa baylanıstı ékran saqtawşını säl bayawlatadı. Tek dïagnostïkalıq maqsatta yadro ​​küyin keltirw mümkindigi qosılğan jağdayda ğana jumıs isteydi.
+Jöndew derekterin jüktew kezinde jeli joq
+Ïnternet baylanısın tekserip, qaytalap köriñiz.
+Qolmen jasalğan bet {0} jaramsız.
+Bul nusqawlıq betin toltırwdı qarastırıñız.
+Nusqawlıq betin oqw üşin kez kelgen perneni basıñız ...
+Bul nusqawlıq bet jumıs üşin qajet:
+Qolmen jasalğan bet {0} tabılmadı.
+Mod nusqawlığı

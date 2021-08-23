@@ -1165,3 +1165,11 @@ Modus ble ikke funnet, eller filen har ugyldige tegn.
 Sannsynlighet for tap i prosent
 Aktiver feilsøking av skjermsparer
 Aktiverer feilsøking for skjermsparere. Vær oppmerksom på at det raskt kan fylle feilsøkingsloggen og bremse skjermspareren litt, avhengig av hvilken skjermsparer som brukes. Fungerer bare hvis feilsøking av kjerner er aktivert for diagnostiske formål.
+Ingen nettverk mens du laster ned feilsøkingsdata
+Kontroller internettforbindelsen, og prøv igjen.
+Den manuelle siden {0} er ugyldig.
+Vurder å fylle denne manuelle siden.
+Trykk på hvilken som helst tast for å lese den manuelle siden ...
+Denne manuelle siden trenger arbeid for:
+Manuell side {0} ble ikke funnet.
+Mod manual

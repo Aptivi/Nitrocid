@@ -1165,3 +1165,11 @@ Mod nebol nájdený alebo súbor obsahuje neplatné znaky.
 Pravdepodobnosť zmeškania v percentách
 Povoliť ladenie šetriča obrazovky
 Umožňuje ladenie šetričov obrazovky. V závislosti od použitého šetriča obrazovky to môže rýchlo zaplniť denník ladenia a mierne spomaliť šetrič obrazovky. Funguje iba vtedy, ak je na diagnostické účely povolené ladenie jadra.
+Pri sťahovaní údajov o ladení nie je žiadna sieť
+Skontrolujte svoje internetové pripojenie a skúste to znova.
+Stránka manuálu {0} je neplatná.
+Zvážte vyplnenie tejto stránky s manuálom.
+Stránku manuálu si prečítate stlačením ľubovoľného klávesu ...
+Táto stránka s manuálom potrebuje prácu pre:
+Manuálna stránka {0} nebola nájdená.
+Mod manuál
