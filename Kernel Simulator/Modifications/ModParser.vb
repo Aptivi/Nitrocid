@@ -184,63 +184,6 @@ NextEntry:
     End Function
 
     ''' <summary>
-    ''' Loads all mods in KSMods
-    ''' </summary>
-    Sub StartMods()
-        Wdbg("I", "Safe mode: {0}", SafeMode)
-        If Not SafeMode Then
-            If Not Directory.Exists(modPath) Then Directory.CreateDirectory(modPath)
-            Dim count As Integer = Directory.EnumerateFiles(modPath).Count
-            Wdbg("I", "Files count: {0}", count)
-            If count <> 0 Then
-                W(DoTranslation("mod: Loading mods..."), True, ColTypes.Neutral)
-                Wdbg("I", "Mods are being loaded. Total mods with screensavers = {0}", count)
-                For Each modFile As String In Directory.EnumerateFiles(modPath)
-                    W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(modFile))
-                    ParseMod(modFile.Replace("\", "/"))
-                Next
-            Else
-                W(DoTranslation("mod: No mods detected."), True, ColTypes.Neutral)
-            End If
-        Else
-            W(DoTranslation("Parsing mods not allowed on safe mode."), True, ColTypes.Error)
-        End If
-    End Sub
-
-    ''' <summary>
-    ''' Stops all mods in KSMods
-    ''' </summary>
-    Sub StopMods()
-        Wdbg("I", "Safe mode: {0}", SafeMode)
-        If Not SafeMode Then
-            If Not Directory.Exists(modPath) Then Directory.CreateDirectory(modPath)
-            Dim count As Integer = Directory.EnumerateFiles(modPath).Count
-            Wdbg("I", "Files count: {0}", count)
-            If count <> 0 Then
-                W(DoTranslation("mod: Stopping mods..."), True, ColTypes.Neutral)
-                Wdbg("I", "Mods are being stopped. Total mods with screensavers = {0}", count)
-                For Each script As String In scripts.Keys
-                    Wdbg("I", "Stopping... Mod name: {0}", script)
-                    Dim ScriptParts As Dictionary(Of String, IScript) = scripts(script).ModParts
-                    For Each ScriptPart As String In ScriptParts.Keys
-                        Wdbg("I", "Stopping part {0} v{1}", ScriptParts(ScriptPart).ModPart, ScriptParts(ScriptPart).Version)
-                        ScriptParts(ScriptPart).StopMod()
-                        If Not String.IsNullOrWhiteSpace(ScriptParts(ScriptPart).Name) And Not String.IsNullOrWhiteSpace(ScriptParts(ScriptPart).Version) Then
-                            W(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, ScriptParts(ScriptPart).ModPart, ScriptParts(ScriptPart).Version)
-                        End If
-                    Next
-                    W(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, script)
-                Next
-                CSvrdb.Clear()
-            Else
-                W(DoTranslation("mod: No mods detected."), True, ColTypes.Neutral)
-            End If
-        Else
-            W(DoTranslation("Parsing mods not allowed on safe mode."), True, ColTypes.Error)
-        End If
-    End Sub
-
-    ''' <summary>
     ''' Starts to parse the mod, and configures it so it can be used
     ''' </summary>
     ''' <param name="modFile">Mod file name with extension. It should end with .vb or .cs</param>
@@ -494,67 +437,6 @@ NextEntry:
         Else
             EventManager.RaiseModParseError(modFile)
         End If
-    End Sub
-
-    '------------------------------------------- Reloader -------------------------------------------
-    ''' <summary>
-    ''' Reloads all mods
-    ''' </summary>
-    Sub ReloadMods()
-        'Clear all scripts, commands, and defs
-        modcmnds.Clear()
-        moddefs.Clear()
-        Wdbg("I", "Mod commands for main shell cleared.")
-        FTPModCommands.Clear()
-        FTPModDefs.Clear()
-        Wdbg("I", "Mod commands for FTP shell cleared.")
-        MailModCommands.Clear()
-        MailModDefs.Clear()
-        Wdbg("I", "Mod commands for mail shell cleared.")
-        SFTPModCommands.Clear()
-        SFTPModDefs.Clear()
-        Wdbg("I", "Mod commands for SFTP shell cleared.")
-        TextEdit_ModCommands.Clear()
-        TextEdit_ModHelpEntries.Clear()
-        Wdbg("I", "Mod commands for text editor shell cleared.")
-        Test_ModCommands.Clear()
-        TestModDefs.Clear()
-        Wdbg("I", "Mod commands for test shell cleared.")
-        DebugModCmds.Clear()
-        RDebugModDefs.Clear()
-        Wdbg("I", "Mod commands for remote debug shell cleared.")
-        ZipShell_ModCommands.Clear()
-        ZipShell_ModHelpEntries.Clear()
-        Wdbg("I", "Mod commands for ZIP shell cleared.")
-        RSSModCommands.Clear()
-        RSSModDefs.Clear()
-        Wdbg("I", "Mod commands for RSS shell cleared.")
-        scripts.Clear()
-        Wdbg("I", "Mod scripts cleared.")
-
-        'Stop all mods
-        StopMods()
-        Wdbg("I", "All mods stopped.")
-
-        'Start all mods
-        StartMods()
-        Wdbg("I", "All mods restarted.")
-    End Sub
-
-    ''' <summary>
-    ''' Reloads all generic definitions so it can be updated with language change
-    ''' </summary>
-    ''' <param name="OldModDesc">Old mod command description</param>
-    Sub ReloadGenericDefs(ByVal OldModDesc As String)
-        For i As Integer = 0 To moddefs.Keys.Count - 1
-            Wdbg("I", "Replacing ""{0}""...", OldModDesc)
-            Dim Cmd As String = moddefs.Keys(i)
-            If moddefs(Cmd).Contains(OldModDesc) Then
-                Wdbg("I", "Old Definition: {0}", moddefs(Cmd))
-                moddefs(Cmd) = moddefs(Cmd).Replace(OldModDesc, DoTranslation("Command defined by "))
-                Wdbg("I", "New Definition: {0}", moddefs(Cmd))
-            End If
-        Next
     End Sub
 
 End Module
