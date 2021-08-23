@@ -16,7 +16,11 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
+
 Public Module ModManager
+
+    Friend ReadOnly modPath As String = paths("Mods")
 
     ''' <summary>
     ''' Loads all mods in KSMods

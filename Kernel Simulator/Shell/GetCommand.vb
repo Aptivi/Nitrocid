@@ -856,6 +856,16 @@ Public Module GetCommand
                         End If
                     End If
 
+                Case "modmanual"
+
+                    If RequiredArgumentsProvided Then
+                        If eqargs(0) <> "list" Then
+                            ViewPage(eqargs(0))
+                        Else
+                            WriteList(Pages.Keys, True)
+                        End If
+                    End If
+
                 Case "move"
 
                     If RequiredArgumentsProvided Then

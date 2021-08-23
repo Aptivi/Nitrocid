@@ -75,7 +75,6 @@ Public Module ModParser
     ''' Mods with their parts and scripts.
     ''' </summary>
     Public scripts As New Dictionary(Of String, ModInfo)
-    Private ReadOnly modPath As String = paths("Mods")
 
     ''' <summary>
     ''' Compiles the script and returns the instance of script interface
@@ -426,6 +425,17 @@ NextEntry:
                         End If
                     Next
                 End If
+
+                'Check for accompanying manual pages for mods (EXPERIMENTAL)
+#If MANPAGE Then
+                Dim ModManualPath As String = NeutralizePath(modFile + ".manual", modPath)
+                If Directory.Exists(ModManualPath) Then
+                    Wdbg("I", "Found manual page collection in {0}", ModManualPath)
+                    For Each ModManualFile As String In Directory.EnumerateFiles(ModManualPath, "*.man", SearchOption.AllDirectories)
+                        InitMan(ModManualFile)
+                    Next
+                End If
+#End If
 
                 'Raise event
                 EventManager.RaiseModFinalized(modFile)

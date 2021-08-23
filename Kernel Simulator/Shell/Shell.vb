@@ -94,6 +94,7 @@ Public Module Shell
                                                                              {"mktheme", New CommandInfo("mktheme", ShellCommandType.Shell, "Makes a new theme", True, 1)},
                                                                              {"modinfo", New CommandInfo("modinfo", ShellCommandType.Shell, "Gets mod information", True, 1, False, False, False, True)},
                                                                              {"modman", New CommandInfo("modman", ShellCommandType.Shell, "Manage your mods", True, 1, True)},
+                                                                             {"modmanual", New CommandInfo("modmanual", ShellCommandType.Shell, "Mod manual", True, 1)},
                                                                              {"move", New CommandInfo("move", ShellCommandType.Shell, "Moves a file to another directory", True, 2)},
                                                                              {"netinfo", New CommandInfo("netinfo", ShellCommandType.Shell, "Lists information about all available interfaces", False, 0, True, True)},
                                                                              {"perm", New CommandInfo("perm", ShellCommandType.Shell, "Manage permissions for users", True, 3, True)},
