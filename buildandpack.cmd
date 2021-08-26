@@ -38,22 +38,22 @@ goto :finished
 :download
 echo MSBuild found in %msbuildpath%
 echo Downloading packages...
-"%msbuildpath%" -t:restore > %temp%/buildandpack.log
+"%msbuildpath%" -t:restore > %temp%/buildandpack.log 2>&1
 if %errorlevel% == 0 goto :build
 echo There was an error trying to download packages (%errorlevel%).
 goto :finished
 
 :build
 echo Building Kernel Simulator...
-"%msbuildpath%" -p:Configuration=Release >> %temp%/buildandpack.log
+"%msbuildpath%" -p:Configuration=Release >> %temp%/buildandpack.log 2>&1
 if %errorlevel% == 0 goto :packbin
 echo There was an error trying to build (%errorlevel%).
 goto :finished
 
 :packbin
 echo Packing binary...
-del "Kernel Simulator\KSBuild\*.nupkg" >> %temp%/buildandpack.log
-"%ProgramFiles%\WinRAR\rar.exe" a -ep1 -r -m5 %temp%/%ksversion%-bin.rar "Kernel Simulator\KSBuild\" >> %temp%/buildandpack.log
+del "Kernel Simulator\KSBuild\*.nupkg" >> %temp%/buildandpack.log 2>&1
+"%ProgramFiles%\WinRAR\rar.exe" a -ep1 -r -m5 %temp%/%ksversion%-bin.rar "Kernel Simulator\KSBuild\" >> %temp%/buildandpack.log 2>&1
 if %errorlevel% == 0 goto :packsrc
 echo There was an error trying to pack binary (%errorlevel%).
 goto :finished
@@ -61,36 +61,36 @@ goto :finished
 :packsrc
 echo Binary artifact found in root directory.
 echo Packing source...
-rmdir /S /Q "Kernel Simulator\KSBuild\" >> %temp%/buildandpack.log
-rmdir /S /Q "Kernel Simulator\obj\" >> %temp%/buildandpack.log
-rmdir /S /Q "KSTests\KSTest" >> %temp%/buildandpack.log
-rmdir /S /Q "KSTests\obj\" >> %temp%/buildandpack.log
-rmdir /S /Q "KSJsonifyLocales\obj\" >> %temp%/buildandpack.log
-rmdir /S /Q "KSConverter\obj\" >> %temp%/buildandpack.log
+rmdir /S /Q "Kernel Simulator\KSBuild\" >> %temp%/buildandpack.log 2>&1
+rmdir /S /Q "Kernel Simulator\obj\" >> %temp%/buildandpack.log 2>&1
+rmdir /S /Q "KSTests\KSTest" >> %temp%/buildandpack.log 2>&1
+rmdir /S /Q "KSTests\obj\" >> %temp%/buildandpack.log 2>&1
+rmdir /S /Q "KSJsonifyLocales\obj\" >> %temp%/buildandpack.log 2>&1
+rmdir /S /Q "KSConverter\obj\" >> %temp%/buildandpack.log 2>&1
 echo Packing source using rar...
-"%ProgramFiles%\WinRAR\rar.exe" a -ep1 -r -m5 -x.git -x.vs %temp%/%ksversion%-src.rar >> %temp%/buildandpack.log
+"%ProgramFiles%\WinRAR\rar.exe" a -ep1 -r -m5 -x.git -x.vs %temp%/%ksversion%-src.rar >> %temp%/buildandpack.log 2>&1
 if %errorlevel% == 0 goto :packsrctar
 echo There was an error trying to pack source using rar (%errorlevel%).
 goto :finished
 
 :packsrctar
 echo Packing source using tar...
-"%ProgramFiles%\7-Zip\7z.exe" a -ttar %temp%/%ksversion%-src.tar -xr!.git -xr!.vs >> %temp%/buildandpack.log
+"%ProgramFiles%\7-Zip\7z.exe" a -ttar %temp%/%ksversion%-src.tar -xr!.git -xr!.vs >> %temp%/buildandpack.log 2>&1
 if %errorlevel% == 0 goto :compresstar
 echo There was an error trying to pack source using tar (%errorlevel%).
 goto :finished
 
 :compresstar
 echo Compressing tar using gzip...
-"%ProgramFiles(x86)%\GnuWin32\bin\gzip.exe" -9 %temp%/%ksversion%-src.tar >> %temp%/buildandpack.log
+"%ProgramFiles(x86)%\GnuWin32\bin\gzip.exe" -9 %temp%/%ksversion%-src.tar >> %temp%/buildandpack.log 2>&1
 if %errorlevel% == 0 goto :complete
 echo There was an error trying to compress tar (%errorlevel%).
 goto :finished
 
 :complete
-move %temp%\%ksversion%-bin.rar >> %temp%/buildandpack.log
-move %temp%\%ksversion%-src.rar >> %temp%/buildandpack.log
-move %temp%\%ksversion%-src.tar.gz >> %temp%/buildandpack.log
+move %temp%\%ksversion%-bin.rar >> %temp%/buildandpack.log 2>&1
+move %temp%\%ksversion%-src.rar >> %temp%/buildandpack.log 2>&1
+move %temp%\%ksversion%-src.tar.gz >> %temp%/buildandpack.log 2>&1
 echo Build and pack successful.
 goto :finished
 
