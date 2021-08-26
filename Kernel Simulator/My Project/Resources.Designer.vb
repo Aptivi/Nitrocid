@@ -731,6 +731,34 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;ઉપલબ્ધ આદેશો: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;આદેશ લખો:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;આદેશ ઇન્જેક્શન રદ કરવામાં આવ્યું છે.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;ખાલી જગ્યાઓ વગર અલ્પવિરામથી બુટ દલીલો અલગ કરો, ઉદાહરણ તરીકે, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;જગ્યાઓ સાથે કોલોન સાથે &apos;cmdinject&apos; પર અલગ આદેશો,  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property guj() As String
+            Get
+                Return ResourceManager.GetString("guj", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Upalabdha ādēśō: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Ādēśa lakhō:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Ādēśa injēkśana rada karavāmāṁ āvyuṁ chē.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Khālī jagyā&apos;ō vagara alpavirāmathī buṭa dalīlō alaga karō, udāharaṇa tarīkē, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;jagyā&apos;ō sāthē kōlōna s [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property guj_T() As String
+            Get
+                Return ResourceManager.GetString("guj_T", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;10&quot;,
         '''    &quot;LicenseColor&quot;: &quot;10&quot;,
         '''    &quot;ContKernelErrorColor&quot;: &quot;10&quot;,

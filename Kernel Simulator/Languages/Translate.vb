@@ -39,6 +39,7 @@ Public Module Translate
                                                                                {"fre", New LanguageInfo("fre", "French", False)},
                                                                                {"ger", New LanguageInfo("ger", "German", False)},
                                                                                {"glc", New LanguageInfo("glc", "Galician", False)},
+                                                                               {"guj", New LanguageInfo("guj", "Gujarati", True)}, {"guj-T", New LanguageInfo("ind-T", "Gujarati", True)},
                                                                                {"hwi", New LanguageInfo("hwi", "Hawaiian", False)},
                                                                                {"ind", New LanguageInfo("ind", "Hindi", True)}, {"ind-T", New LanguageInfo("ind-T", "Hindi", True)},
                                                                                {"iri", New LanguageInfo("iri", "Irish", False)},

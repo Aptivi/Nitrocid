@@ -176,6 +176,12 @@
     <Content Include="Translations\glc.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Translations\guj-T.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Translations\guj.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Translations\hti.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
