@@ -1173,3 +1173,5 @@ Tekan sembarang tombol untuk membaca halaman manual...
 Halaman manual ini perlu bekerja untuk:
 Halaman manual {0} tidak ditemukan.
 Panduan mod
+Mengaktifkan 255 dukungan warna untuk FlashColor.
+Mengaktifkan dukungan warna sebenarnya untuk FlashColor.

@@ -1173,3 +1173,5 @@ Pressione qualquer tecla para ler a página do manual ...
 Esta página do manual precisa ser trabalhada para:
 Página do manual {0} não encontrada.
 Manual do Mod
+Ativa o suporte de 255 cores para FlashColor.
+Ativa o suporte true color para FlashColor.

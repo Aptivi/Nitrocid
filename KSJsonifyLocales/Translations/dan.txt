@@ -1173,3 +1173,5 @@ Tryk på en vilkårlig tast for at læse den manuelle side ...
 Denne manuelle side har brug for arbejde til:
 Manuel side {0} blev ikke fundet.
 Mod manual
+Aktiverer 255 farveunderstøttelse til FlashColor.
+Aktiverer ægte farveunderstøttelse for FlashColor.

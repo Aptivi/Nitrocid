@@ -1173,3 +1173,5 @@ Tẹ bọtini eyikeyi lati ka oju -iwe Afowoyi ...
 Oju -iwe Afowoyi nilo iṣẹ fun:
 Oju -iwe Afowoyi {0} ko ri.
 Afowoyi Mod
+Yenza kusebenze ukwesekwa kombala okungama-255 kweFlashColor.
+Yenza kusebenze ukwesekwa kombala kweqiniso kweFlashColor.

@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "adghat ealaa 'ayi miftah liqira'at safhat aldalil ...",
   "This manual page needs work for:": "tahtaj safhat aldalil hadhih 'iilaa aleamal min 'ajli:",
   "Manual page {0} not found.": "alsafhat alyadawia {0} ghayr mawjudatin.",
-  "Mod manual": "dalil wizarat aldifae"
+  "Mod manual": "dalil wizarat aldifae",
+  "Activates 255 color support for FlashColor.": "yanshut daem 255 lwnan li FlashColor.",
+  "Activates true color support for FlashColor.": "yanshut daem allawn alhaqiqii li FlashColor."
 }

@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Kaomi i nā kī e heluhelu ai i ka ʻaoʻao manual ...",
   "This manual page needs work for:": "Pono kēia ʻaoʻao manual e hana no:",
   "Manual page {0} not found.": "ʻAʻole i loaʻa ka ʻaoʻao manual.",
-  "Mod manual": "Manual manual"
+  "Mod manual": "Manual manual",
+  "Activates 255 color support for FlashColor.": "Hoʻoulu i ke kākoʻo kala 255 no FlashColor.",
+  "Activates true color support for FlashColor.": "Hoʻoulu i ke kākoʻo kala maoli no FlashColor."
 }

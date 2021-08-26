@@ -1173,3 +1173,5 @@ Druk op een willekeurige toets om de handleiding te lezen...
 Deze handleiding heeft werk nodig voor:
 Handleiding pagina {0} niet gevonden.
 Mod-handleiding
+Activeert 255 kleurenondersteuning voor FlashColor.
+Activeert ondersteuning voor ware kleuren voor FlashColor.

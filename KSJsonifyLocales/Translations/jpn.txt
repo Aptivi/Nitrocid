@@ -1173,3 +1173,5 @@ Manyuarupēji o yomu ni wa, nin'i no kī o oshite kudasai...
 Kono manyuarupēji wa,-ji no sagyō ga hitsuyōdesu.
 Manyuarupēji {0} ga mitsukarimasen.
 Mod manyuaru
+FlashColor no 255-shoku no sapōto o akutibu ni shimasu.
+FlashColor no to~urūkarāsapōto o akutibu ni shimasu.

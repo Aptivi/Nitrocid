@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Agħfas kwalunkwe ċavetta biex taqra l-paġna tal-manwal ...",
   "This manual page needs work for:": "Din il-paġna tal-manwal teħtieġ xogħol għal:",
   "Manual page {0} not found.": "Paġna tal-manwal {0} ma nstabitx.",
-  "Mod manual": "Manwal tal-mod"
+  "Mod manual": "Manwal tal-mod",
+  "Activates 255 color support for FlashColor.": "Jattiva 255 appoġġ tal-kulur għal FlashColor.",
+  "Activates true color support for FlashColor.": "Jattiva l-appoġġ tal-kulur veru għal FlashColor."
 }

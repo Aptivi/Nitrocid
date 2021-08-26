@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "ম্যানুয়াল পৃষ্ঠাটি পড়তে যেকোন কী টিপুন ...",
   "This manual page needs work for:": "এই ম্যানুয়াল পৃষ্ঠার জন্য কাজের প্রয়োজন:",
   "Manual page {0} not found.": "ম্যানুয়াল পৃষ্ঠা {0} পাওয়া যায়নি",
-  "Mod manual": "মোড ম্যানুয়াল"
+  "Mod manual": "মোড ম্যানুয়াল",
+  "Activates 255 color support for FlashColor.": "FlashColor এর জন্য 255 কালার সাপোর্ট সক্রিয় করে।",
+  "Activates true color support for FlashColor.": "FlashColor কালারের জন্য সত্যিকারের রঙ সমর্থন সক্রিয় করে।"
 }

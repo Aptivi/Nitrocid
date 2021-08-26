@@ -1173,3 +1173,5 @@ Pencet tombol apa wae kanggo maca kaca manual ...
 Kaca manual iki kudu digunakake kanggo:
 Kaca manual {0} ora ditemokake.
 Manual mod
+Ngaktifake dhukungan warna 255 kanggo FlashColor.
+Ngaktifake dhukungan warna sejatine kanggo FlashColor.

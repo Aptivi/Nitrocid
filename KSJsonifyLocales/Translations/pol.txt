@@ -1173,3 +1173,5 @@ Naciśnij dowolny klawisz, aby przeczytać stronę podręcznika...
 Ta strona podręcznika wymaga pracy dla:
 Nie znaleziono strony podręcznika {0}.
 Instrukcja mod
+Aktywuje obsługę 255 kolorów dla FlashColor.
+Aktywuje prawdziwe wsparcie kolorów dla FlashColor.

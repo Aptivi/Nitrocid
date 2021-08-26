@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Tryk på en vilkårlig tast for at læse den manuelle side ...",
   "This manual page needs work for:": "Denne manuelle side har brug for arbejde til:",
   "Manual page {0} not found.": "Manuel side {0} blev ikke fundet.",
-  "Mod manual": "Mod manual"
+  "Mod manual": "Mod manual",
+  "Activates 255 color support for FlashColor.": "Aktiverer 255 farveunderstøttelse til FlashColor.",
+  "Activates true color support for FlashColor.": "Aktiverer ægte farveunderstøttelse for FlashColor."
 }

@@ -1173,3 +1173,5 @@ maenyueol peijileul ilg-eulyeomyeon amu kina nuleusibsio ...
 i maenyueol peijineun da-eum-e daehan jag-eob-i pil-yohabnida.
 maenyueol peiji {0}eul(leul) chaj-eul su eobs-seubnida.
 modeu maenyueol
+FlashColor daehan 255gaji saegsang jiwon-eul hwalseonghwahabnida.
+FlashColor daehan teulu keolleo jiwon-eul hwalseonghwahabnida.

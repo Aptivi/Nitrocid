@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Myānuẏāla pr̥ṣṭhāṭi paṛatē yēkōna kī ṭipuna...",
   "This manual page needs work for:": "Ē'i myānuẏāla pr̥ṣṭhāra jan'ya kājēra praẏōjana:",
   "Manual page {0} not found.": "Myānuẏāla pr̥ṣṭhā {0} pā'ōẏā yāẏani",
-  "Mod manual": "mōḍa myānuẏāla"
+  "Mod manual": "mōḍa myānuẏāla",
+  "Activates 255 color support for FlashColor.": "FlashColor ēra jan'ya 255 kālāra sāpōrṭa sakriẏa karē.",
+  "Activates true color support for FlashColor.": "FlashColor jan'ya satyikārēra raṅa samarthana sakriẏa karē."
 }

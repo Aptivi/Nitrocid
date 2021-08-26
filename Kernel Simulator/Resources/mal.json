@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Tekan sebarang kekunci untuk membaca halaman manual ...",
   "This manual page needs work for:": "Halaman manual ini memerlukan kerja untuk:",
   "Manual page {0} not found.": "Halaman manual {0} tidak dijumpai.",
-  "Mod manual": "Manual mod"
+  "Mod manual": "Manual mod",
+  "Activates 255 color support for FlashColor.": "Mengaktifkan sokongan warna 255 untuk FlashColor.",
+  "Activates true color support for FlashColor.": "Mengaktifkan sokongan warna sebenar untuk FlashColor."
 }

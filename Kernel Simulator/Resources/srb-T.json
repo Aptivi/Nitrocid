@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Притисните било који тастер да бисте прочитали страницу са приручником ...",
   "This manual page needs work for:": "Ова страница са приручником треба да ради за:",
   "Manual page {0} not found.": "Страница са приручником {0} није пронађена.",
-  "Mod manual": "Мод мануал"
+  "Mod manual": "Мод мануал",
+  "Activates 255 color support for FlashColor.": "Активира подршку за 255 боја за ФласхЦолор.",
+  "Activates true color support for FlashColor.": "Активира подршку за праве боје за ФласхЦолор."
 }

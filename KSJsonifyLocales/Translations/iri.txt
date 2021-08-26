@@ -1173,3 +1173,5 @@ Brúigh eochair ar bith chun an leathanach láimhe a léamh ...
 Teastaíonn obair ón leathanach láimhe seo le haghaidh:
 Níor aimsíodh leathanach láimhe {0}.
 Lámhleabhar mod
+Gníomhaíonn 255 tacaíocht dathanna do FlashColor.
+Gníomhaíonn sé fíor-thacaíocht dathanna do FlashColor.

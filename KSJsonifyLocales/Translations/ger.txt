@@ -1173,3 +1173,5 @@ Drücken Sie eine beliebige Taste, um die Handbuchseite zu lesen...
 Diese Handbuchseite benötigt Arbeit für:
 Handbuchseite {0} nicht gefunden.
 Mod-Handbuch
+Aktiviert die Unterstützung von 255 Farben für FlashColor.
+Aktiviert die True-Color-Unterstützung für FlashColor.

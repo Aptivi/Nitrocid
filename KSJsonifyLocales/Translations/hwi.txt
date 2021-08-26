@@ -1173,3 +1173,5 @@ Kaomi i nā kī e heluhelu ai i ka ʻaoʻao manual ...
 Pono kēia ʻaoʻao manual e hana no:
 ʻAʻole i loaʻa ka ʻaoʻao manual.
 Manual manual
+Hoʻoulu i ke kākoʻo kala 255 no FlashColor.
+Hoʻoulu i ke kākoʻo kala maoli no FlashColor.

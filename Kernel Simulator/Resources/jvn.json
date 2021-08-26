@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Pencet tombol apa wae kanggo maca kaca manual ...",
   "This manual page needs work for:": "Kaca manual iki kudu digunakake kanggo:",
   "Manual page {0} not found.": "Kaca manual {0} ora ditemokake.",
-  "Mod manual": "Manual mod"
+  "Mod manual": "Manual mod",
+  "Activates 255 color support for FlashColor.": "Ngaktifake dhukungan warna 255 kanggo FlashColor.",
+  "Activates true color support for FlashColor.": "Ngaktifake dhukungan warna sejatine kanggo FlashColor."
 }

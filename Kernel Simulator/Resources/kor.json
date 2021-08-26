@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "maenyueol peijileul ilg-eulyeomyeon amu kina nuleusibsio ...",
   "This manual page needs work for:": "i maenyueol peijineun da-eum-e daehan jag-eob-i pil-yohabnida.",
   "Manual page {0} not found.": "maenyueol peiji {0}eul(leul) chaj-eul su eobs-seubnida.",
-  "Mod manual": "modeu maenyueol"
+  "Mod manual": "modeu maenyueol",
+  "Activates 255 color support for FlashColor.": "FlashColor daehan 255gaji saegsang jiwon-eul hwalseonghwahabnida.",
+  "Activates true color support for FlashColor.": "FlashColor daehan teulu keolleo jiwon-eul hwalseonghwahabnida."
 }

@@ -1173,3 +1173,5 @@ Lue käyttöopas painamalla mitä tahansa näppäintä ...
 Tämä ohjekirja -sivu vaatii työtä:
 Manuaalista sivua {0} ei löydy.
 Mod käsikirja
+Aktivoi 255 värin tuen FlashColorille.
+Aktivoi todellisen värituen FlashColorille.

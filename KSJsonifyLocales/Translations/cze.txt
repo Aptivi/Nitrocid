@@ -1173,3 +1173,5 @@ Stránku manuálu si přečtete stisknutím libovolné klávesy ...
 Tato příručka vyžaduje práci pro:
 Stránka manuálu {0} nebyla nalezena.
 Mod manuál
+Aktivuje podporu 255 barev pro FlashColor.
+Aktivuje podporu skutečných barev pro FlashColor.

@@ -1173,3 +1173,5 @@ Mainu'ala panē nū paṛhana la'ī kō'ī vī kujī dabā'ō...
 Isa dasatāvēza panē la'ī kama dī lōṛa hai:
 Mainu'ala panā {0} nahīṁ mili'ā.
 Māḍa mainu'ala
+FlashColor la'ī 255 raga samarathana nū kiri'āśīla karadā hai.
+FlashColor la'ī sacā raga samarathana kiri'āśīla karadā hai.

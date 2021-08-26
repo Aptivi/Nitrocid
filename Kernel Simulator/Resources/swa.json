@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Bonyeza kitufe chochote kusoma ukurasa wa mwongozo ..",
   "This manual page needs work for:": "Ukurasa huu wa mwongozo unahitaji kufanya kazi kwa:",
   "Manual page {0} not found.": "Ukurasa wa mwongozo {0} haupatikani.",
-  "Mod manual": "Mwongozo wa mod"
+  "Mod manual": "Mwongozo wa mod",
+  "Activates 255 color support for FlashColor.": "Inamsha msaada wa rangi 255 kwa FlashColor.",
+  "Activates true color support for FlashColor.": "Inamsha msaada wa rangi ya kweli kwa FlashColor."
 }

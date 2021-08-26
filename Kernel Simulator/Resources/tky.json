@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Kılavuz sayfasını okumak için herhangi bir tuşa basın...",
   "This manual page needs work for:": "Bu kılavuz sayfasının aşağıdakiler için çalışması gerekiyor:",
   "Manual page {0} not found.": "Manuel sayfa {0} bulunamadı.",
-  "Mod manual": "mod kılavuzu"
+  "Mod manual": "mod kılavuzu",
+  "Activates 255 color support for FlashColor.": "FlashColor için 255 renk desteğini etkinleştirir.",
+  "Activates true color support for FlashColor.": "FlashColor için gerçek renk desteğini etkinleştirir."
 }

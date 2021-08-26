@@ -1173,3 +1173,5 @@ Key Preme omnis manual paginam legere ...
 Haec pagina requirit manual opus est:
 {0} manual paginam non invenitur.
 mod manual
+CCLV operatur color FlashColor subsidium.
+Cuiusconceptionem sequitur verum est color FlashColor subsidium.

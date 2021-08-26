@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Key Preme omnis manual paginam legere ...",
   "This manual page needs work for:": "Haec pagina requirit manual opus est:",
   "Manual page {0} not found.": "{0} manual paginam non invenitur.",
-  "Mod manual": "mod manual"
+  "Mod manual": "mod manual",
+  "Activates 255 color support for FlashColor.": "CCLV operatur color FlashColor subsidium.",
+  "Activates true color support for FlashColor.": "Cuiusconceptionem sequitur verum est color FlashColor subsidium."
 }

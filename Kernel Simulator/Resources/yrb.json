@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Tẹ bọtini eyikeyi lati ka oju -iwe Afowoyi ...",
   "This manual page needs work for:": "Oju -iwe Afowoyi nilo iṣẹ fun:",
   "Manual page {0} not found.": "Oju -iwe Afowoyi {0} ko ri.",
-  "Mod manual": "Afowoyi Mod"
+  "Mod manual": "Afowoyi Mod",
+  "Activates 255 color support for FlashColor.": "Yenza kusebenze ukwesekwa kombala okungama-255 kweFlashColor.",
+  "Activates true color support for FlashColor.": "Yenza kusebenze ukwesekwa kombala kweqiniso kweFlashColor."
 }

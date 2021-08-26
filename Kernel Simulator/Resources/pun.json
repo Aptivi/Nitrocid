@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Mainu'ala panē nū paṛhana la'ī kō'ī vī kujī dabā'ō...",
   "This manual page needs work for:": "Isa dasatāvēza panē la'ī kama dī lōṛa hai:",
   "Manual page {0} not found.": "Mainu'ala panā {0} nahīṁ mili'ā.",
-  "Mod manual": "Māḍa mainu'ala"
+  "Mod manual": "Māḍa mainu'ala",
+  "Activates 255 color support for FlashColor.": "FlashColor la'ī 255 raga samarathana nū kiri'āśīla karadā hai.",
+  "Activates true color support for FlashColor.": "FlashColor la'ī sacā raga samarathana kiri'āśīla karadā hai."
 }

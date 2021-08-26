@@ -1173,3 +1173,5 @@ mainual pej padhane ke lie koee bhee kunjee dabaen...
 is mainual pej ke lie kaam karane kee jaroorat hai:
 mainual pej {0} nahin mila.
 mod mainual
+FlashColor ke lie 255 rang samarthan sakriy karata hai.
+FlashColor ke lie troo kalar saport sakriy karata hai.

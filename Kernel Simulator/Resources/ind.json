@@ -1172,5 +1172,7 @@
   "Press any key to read the manual page...": "mainual pej padhane ke lie koee bhee kunjee dabaen...",
   "This manual page needs work for:": "is mainual pej ke lie kaam karane kee jaroorat hai:",
   "Manual page {0} not found.": "mainual pej {0} nahin mila.",
-  "Mod manual": "mod mainual"
+  "Mod manual": "mod mainual",
+  "Activates 255 color support for FlashColor.": "FlashColor ke lie 255 rang samarthan sakriy karata hai.",
+  "Activates true color support for FlashColor.": "FlashColor ke lie troo kalar saport sakriy karata hai."
 }

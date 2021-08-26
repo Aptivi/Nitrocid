@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Нажмите любую клавишу, чтобы прочитать страницу руководства ...",
   "This manual page needs work for:": "Эта страница руководства нуждается в доработке для:",
   "Manual page {0} not found.": "Страница руководства {0} не найдена.",
-  "Mod manual": "Руководство по моду"
+  "Mod manual": "Руководство по моду",
+  "Activates 255 color support for FlashColor.": "Активирует поддержку 255 цветов для FlashColor.",
+  "Activates true color support for FlashColor.": "Активирует поддержку истинного цвета для FlashColor."
 }

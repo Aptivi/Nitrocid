@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Preme calquera tecla para ler a páxina do manual ...",
   "This manual page needs work for:": "Esta páxina do manual precisa traballar para:",
   "Manual page {0} not found.": "Non se atopou a páxina do manual {0}.",
-  "Mod manual": "Manual de mod"
+  "Mod manual": "Manual de mod",
+  "Activates 255 color support for FlashColor.": "Activa a compatibilidade con 255 cores para FlashColor.",
+  "Activates true color support for FlashColor.": "Activa a compatibilidade coa cor verdadeira para FlashColor."
 }

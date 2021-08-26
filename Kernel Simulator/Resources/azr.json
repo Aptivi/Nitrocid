@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Təlimat səhifəsini oxumaq üçün hər hansı bir düyməni basın ...",
   "This manual page needs work for:": "Bu dərslik səhifəsi üçün işləmək lazımdır:",
   "Manual page {0} not found.": "Manual səhifə {0} tapılmadı.",
-  "Mod manual": "Mod təlimatı"
+  "Mod manual": "Mod təlimatı",
+  "Activates 255 color support for FlashColor.": "FlashColor üçün 255 rəng dəstəyini aktivləşdirir.",
+  "Activates true color support for FlashColor.": "FlashColor üçün əsl rəng dəstəyini aktivləşdirir."
 }

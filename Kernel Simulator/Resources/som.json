@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Guji furaha kasta si aad u akhrido bogga gacanta ...",
   "This manual page needs work for:": "Boggan gacanta ah wuxuu u baahan yahay shaqo:",
   "Manual page {0} not found.": "Bogga gacanta {0} lama helin.",
-  "Mod manual": "Buugga Mod"
+  "Mod manual": "Buugga Mod",
+  "Activates 255 color support for FlashColor.": "Wuxuu dhaqaajiyaa taageerada midabka 255 ee FlashColor.",
+  "Activates true color support for FlashColor.": "Wuxuu dhaqaajiyaa taageerada midabka runta ah ee FlashColor."
 }

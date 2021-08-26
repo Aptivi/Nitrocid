@@ -1173,3 +1173,5 @@ Press any key to read the manual page...
 This manual page needs work for:
 Manual page {0} not found.
 Mod manual
+Activates 255 color support for FlashColor.
+Activates true color support for FlashColor.

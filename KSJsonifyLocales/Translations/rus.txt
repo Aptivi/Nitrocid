@@ -1173,3 +1173,5 @@ Nazhmite lyubuyu klavishu, chtoby prochitat' stranitsu rukovodstva ...
 Eta stranitsa rukovodstva nuzhdayetsya v dorabotke dlya:
 Stranitsa rukovodstva {0} ne naydena.
 Rukovodstvo po modu
+Aktiviruyet podderzhku 255 tsvetov dlya FlashColor.
+Aktiviruyet podderzhku istinnogo tsveta dlya FlashColor.

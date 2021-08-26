@@ -1173,3 +1173,5 @@ Sakatu edozein tekla eskuliburu orria irakurtzeko ...
 Eskuliburu orri honek hauetarako lan egin behar du:
 Ez da aurkitu {0} eskuliburu orria.
 Mod eskuliburua
+FlashColor-en 255 kolore laguntza aktibatzen du.
+FlashColor-en benetako kolorearen laguntza aktibatzen du.

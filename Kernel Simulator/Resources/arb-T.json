@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "اضغط على أي مفتاح لقراءة صفحة الدليل ...",
   "This manual page needs work for:": "تحتاج صفحة الدليل هذه إلى العمل من أجل:",
   "Manual page {0} not found.": "الصفحة اليدوية {0} غير موجودة.",
-  "Mod manual": "دليل وزارة الدفاع"
+  "Mod manual": "دليل وزارة الدفاع",
+  "Activates 255 color support for FlashColor.": "ينشط دعم 255 لونًا لـ FlashColor.",
+  "Activates true color support for FlashColor.": "ينشط دعم اللون الحقيقي لـ FlashColor."
 }

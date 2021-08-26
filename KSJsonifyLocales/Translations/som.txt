@@ -1173,3 +1173,5 @@ Guji furaha kasta si aad u akhrido bogga gacanta ...
 Boggan gacanta ah wuxuu u baahan yahay shaqo:
 Bogga gacanta {0} lama helin.
 Buugga Mod
+Wuxuu dhaqaajiyaa taageerada midabka 255 ee FlashColor.
+Wuxuu dhaqaajiyaa taageerada midabka runta ah ee FlashColor.

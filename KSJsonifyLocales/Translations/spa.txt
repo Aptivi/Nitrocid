@@ -1173,3 +1173,5 @@ Presione cualquier tecla para leer la página del manual ...
 Esta página de manual necesita trabajo para:
 No se encontró la página manual {0}.
 Mod manual
+Activa la compatibilidad con 255 colores para FlashColor.
+Activa la compatibilidad con colores verdaderos para FlashColor.

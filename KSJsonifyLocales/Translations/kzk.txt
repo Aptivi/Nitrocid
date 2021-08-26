@@ -1173,3 +1173,5 @@ Nusqawlıq betin oqw üşin kez kelgen perneni basıñız ...
 Bul nusqawlıq bet jumıs üşin qajet:
 Qolmen jasalğan bet {0} tabılmadı.
 Mod nusqawlığı
+FlashColor üşin 255 tüsti qoldawdı belsendiredi.
+FlashColor üşin şınayı tüs qoldawın belsendiredi.

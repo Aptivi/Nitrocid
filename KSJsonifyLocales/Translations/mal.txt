@@ -1173,3 +1173,5 @@ Tekan sebarang kekunci untuk membaca halaman manual ...
 Halaman manual ini memerlukan kerja untuk:
 Halaman manual {0} tidak dijumpai.
 Manual mod
+Mengaktifkan sokongan warna 255 untuk FlashColor.
+Mengaktifkan sokongan warna sebenar untuk FlashColor.

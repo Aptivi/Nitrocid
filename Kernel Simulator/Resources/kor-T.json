@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "매뉴얼 페이지를 읽으려면 아무 키나 누르십시오 ...",
   "This manual page needs work for:": "이 매뉴얼 페이지는 다음에 대한 작업이 필요합니다.",
   "Manual page {0} not found.": "매뉴얼 페이지 {0}을(를) 찾을 수 없습니다.",
-  "Mod manual": "모드 매뉴얼"
+  "Mod manual": "모드 매뉴얼",
+  "Activates 255 color support for FlashColor.": "FlashColor에 대한 255가지 색상 지원을 활성화합니다.",
+  "Activates true color support for FlashColor.": "FlashColor에 대한 트루 컬러 지원을 활성화합니다."
 }

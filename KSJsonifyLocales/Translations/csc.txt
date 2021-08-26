@@ -1173,3 +1173,5 @@ Pulsà qualsiasi chjave per leghje a pagina di u manuale ...
 Questa pagina di manuale hà bisognu di travagliu per:
 Pagina di manuale {0} micca truvata.
 Manuale di mod
+Attiva u supportu di culore 255 per FlashColor.
+Attiva u veru sustegnu di culore per FlashColor.

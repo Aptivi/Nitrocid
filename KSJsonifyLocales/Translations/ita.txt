@@ -1173,3 +1173,5 @@ Premi un tasto qualsiasi per leggere la pagina del manuale...
 Questa pagina di manuale necessita di lavori per:
 Pagina del manuale {0} non trovata.
 Manuale del modulo
+Attiva il supporto di 255 colori per FlashColor.
+Attiva il supporto del vero colore per FlashColor.

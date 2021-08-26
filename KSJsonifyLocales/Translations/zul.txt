@@ -1173,3 +1173,5 @@ Cindezela noma yimuphi ukhiye ukufunda ikhasi lesandla ...
 Leli khasi lesandla lidinga ukusebenzela:
 Ikhasi elenziwa ngesandla {0} alitholakali.
 Imanyuwali yeMod
+Yenza kusebenze ukwesekwa kombala okungama-255 kweFlashColor.
+Yenza kusebenze ukwesekwa kombala kweqiniso kweFlashColor.

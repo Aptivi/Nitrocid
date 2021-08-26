@@ -1173,3 +1173,5 @@ Təlimat səhifəsini oxumaq üçün hər hansı bir düyməni basın ...
 Bu dərslik səhifəsi üçün işləmək lazımdır:
 Manual səhifə {0} tapılmadı.
 Mod təlimatı
+FlashColor üçün 255 rəng dəstəyini aktivləşdirir.
+FlashColor üçün əsl rəng dəstəyini aktivləşdirir.

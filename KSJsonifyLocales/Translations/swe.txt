@@ -1173,3 +1173,5 @@ Tryck på valfri knapp för att läsa den manuella sidan ...
 Denna manuella sida behöver arbete för:
 Manuell sida {0} hittades inte.
 Mod manuell
+Aktiverar 255 färgstöd för FlashColor.
+Aktiverar äkta färgstöd för FlashColor.

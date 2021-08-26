@@ -1173,3 +1173,5 @@ Pindutin ang anumang key upang basahin ang manu-manong pahina ...
 Ang manu-manong pahina na ito ay kailangang gumana para sa:
 Hindi nahanap ang manu-manong pahina {0}.
 Manwal ng mod
+Pinapagana ang 255 suporta sa kulay para sa FlashColor.
+Pinapagana ang totoong suporta sa kulay para sa FlashColor.

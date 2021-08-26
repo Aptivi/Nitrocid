@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Pwyswch unrhyw allwedd i ddarllen y dudalen â llaw ...",
   "This manual page needs work for:": "Mae angen gwaith ar y dudalen â llaw hon ar gyfer:",
   "Manual page {0} not found.": "Tudalen law {0} heb ei darganfod.",
-  "Mod manual": "Llawlyfr mod"
+  "Mod manual": "Llawlyfr mod",
+  "Activates 255 color support for FlashColor.": "Yn actifadu cefnogaeth lliw 255 ar gyfer FlashColor.",
+  "Activates true color support for FlashColor.": "Yn actifadu gwir gefnogaeth lliw ar gyfer FlashColor."
 }

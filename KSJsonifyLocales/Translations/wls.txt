@@ -1173,3 +1173,5 @@ Pwyswch unrhyw allwedd i ddarllen y dudalen â llaw ...
 Mae angen gwaith ar y dudalen â llaw hon ar gyfer:
 Tudalen law {0} heb ei darganfod.
 Llawlyfr mod
+Yn actifadu cefnogaeth lliw 255 ar gyfer FlashColor.
+Yn actifadu gwir gefnogaeth lliw ar gyfer FlashColor.

@@ -1173,3 +1173,5 @@ Kılavuz sayfasını okumak için herhangi bir tuşa basın...
 Bu kılavuz sayfasının aşağıdakiler için çalışması gerekiyor:
 Manuel sayfa {0} bulunamadı.
 mod kılavuzu
+FlashColor için 255 renk desteğini etkinleştirir.
+FlashColor için gerçek renk desteğini etkinleştirir.

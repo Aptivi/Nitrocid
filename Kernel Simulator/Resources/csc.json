@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Pulsà qualsiasi chjave per leghje a pagina di u manuale ...",
   "This manual page needs work for:": "Questa pagina di manuale hà bisognu di travagliu per:",
   "Manual page {0} not found.": "Pagina di manuale {0} micca truvata.",
-  "Mod manual": "Manuale di mod"
+  "Mod manual": "Manuale di mod",
+  "Activates 255 color support for FlashColor.": "Attiva u supportu di culore 255 per FlashColor.",
+  "Activates true color support for FlashColor.": "Attiva u veru sustegnu di culore per FlashColor."
 }

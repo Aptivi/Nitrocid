@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Cindezela noma yimuphi ukhiye ukufunda ikhasi lesandla ...",
   "This manual page needs work for:": "Leli khasi lesandla lidinga ukusebenzela:",
   "Manual page {0} not found.": "Ikhasi elenziwa ngesandla {0} alitholakali.",
-  "Mod manual": "Imanyuwali yeMod"
+  "Mod manual": "Imanyuwali yeMod",
+  "Activates 255 color support for FlashColor.": "Yenza kusebenze ukwesekwa kombala okungama-255 kweFlashColor.",
+  "Activates true color support for FlashColor.": "Yenza kusebenze ukwesekwa kombala kweqiniso kweFlashColor."
 }

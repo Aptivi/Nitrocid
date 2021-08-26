@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Sakatu edozein tekla eskuliburu orria irakurtzeko ...",
   "This manual page needs work for:": "Eskuliburu orri honek hauetarako lan egin behar du:",
   "Manual page {0} not found.": "Ez da aurkitu {0} eskuliburu orria.",
-  "Mod manual": "Mod eskuliburua"
+  "Mod manual": "Mod eskuliburua",
+  "Activates 255 color support for FlashColor.": "FlashColor-en 255 kolore laguntza aktibatzen du.",
+  "Activates true color support for FlashColor.": "FlashColor-en benetako kolorearen laguntza aktibatzen du."
 }

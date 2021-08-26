@@ -1172,5 +1172,7 @@
   "Press any key to read the manual page...": "Manyuarupēji o yomu ni wa, nin'i no kī o oshite kudasai...",
   "This manual page needs work for:": "Kono manyuarupēji wa,-ji no sagyō ga hitsuyōdesu.",
   "Manual page {0} not found.": "Manyuarupēji {0} ga mitsukarimasen.",
-  "Mod manual": "Mod manyuaru"
+  "Mod manual": "Mod manyuaru",
+  "Activates 255 color support for FlashColor.": "FlashColor no 255-shoku no sapōto o akutibu ni shimasu.",
+  "Activates true color support for FlashColor.": "FlashColor no to~urūkarāsapōto o akutibu ni shimasu."
 }

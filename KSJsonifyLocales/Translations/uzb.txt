@@ -1173,3 +1173,5 @@ Qo'llanma sahifasini o'qish uchun istalgan tugmani bosing ...
 Ushbu qo'llanma sahifasi quyidagilar uchun ishlashi kerak:
 Qo'l sahifasi {0} topilmadi.
 Mod qo'llanma
+FlashColor uchun 255 ta rangli qo'llab -quvvatlashni faollashtiradi.
+FlashColor uchun haqiqiy rangni qo'llab -quvvatlashni faollashtiradi.

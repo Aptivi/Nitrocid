@@ -1173,3 +1173,5 @@ Nhấn phím bất kỳ để đọc trang hướng dẫn sử dụng ...
 Trang hướng dẫn này cần hoạt động cho:
 Không tìm thấy trang thủ công {0}.
 Hướng dẫn mod
+Kích hoạt hỗ trợ 255 màu cho FlashColor.
+Kích hoạt hỗ trợ màu sắc trung thực cho FlashColor.

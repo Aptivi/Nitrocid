@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Lue käyttöopas painamalla mitä tahansa näppäintä ...",
   "This manual page needs work for:": "Tämä ohjekirja -sivu vaatii työtä:",
   "Manual page {0} not found.": "Manuaalista sivua {0} ei löydy.",
-  "Mod manual": "Mod käsikirja"
+  "Mod manual": "Mod käsikirja",
+  "Activates 255 color support for FlashColor.": "Aktivoi 255 värin tuen FlashColorille.",
+  "Activates true color support for FlashColor.": "Aktivoi todellisen värituen FlashColorille."
 }

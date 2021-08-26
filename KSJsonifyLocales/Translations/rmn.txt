@@ -1173,3 +1173,5 @@ Apăsați orice tastă pentru a citi pagina manualului ...
 Această pagină manuală trebuie să funcționeze pentru:
 Pagina manuală {0} nu a fost găsită.
 Manual de mod
+Activează suportul de 255 de culori pentru FlashColor.
+Activează suportul de culoare adevărată pentru FlashColor.

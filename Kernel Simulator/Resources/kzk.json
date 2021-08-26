@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Nusqawlıq betin oqw üşin kez kelgen perneni basıñız ...",
   "This manual page needs work for:": "Bul nusqawlıq bet jumıs üşin qajet:",
   "Manual page {0} not found.": "Qolmen jasalğan bet {0} tabılmadı.",
-  "Mod manual": "Mod nusqawlığı"
+  "Mod manual": "Mod nusqawlığı",
+  "Activates 255 color support for FlashColor.": "FlashColor üşin 255 tüsti qoldawdı belsendiredi.",
+  "Activates true color support for FlashColor.": "FlashColor üşin şınayı tüs qoldawın belsendiredi."
 }

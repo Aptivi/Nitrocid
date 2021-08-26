@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Dinani chilichonse kuti muwerenge bukuli ...",
   "This manual page needs work for:": "Bukuli limafunikira kugwira ntchito:",
   "Manual page {0} not found.": "Tsamba lamanja {0} silinapezeke.",
-  "Mod manual": "Buku la Mod"
+  "Mod manual": "Buku la Mod",
+  "Activates 255 color support for FlashColor.": "Amathandizira mtundu wa 255 wothandizira FlashColor.",
+  "Activates true color support for FlashColor.": "Amathandizira kuthandizira kwamtundu weniweni kwa FlashColor."
 }

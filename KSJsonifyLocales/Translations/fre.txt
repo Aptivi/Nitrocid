@@ -1173,3 +1173,5 @@ Appuyez sur n'importe quelle touche pour lire la page de manuel...
 Cette page de manuel a besoin de travail pour :
 Page de manuel {0} introuvable.
 Mode d'emploi
+Active la prise en charge de 255 couleurs pour FlashColor.
+Active la prise en charge des vraies couleurs pour FlashColor.

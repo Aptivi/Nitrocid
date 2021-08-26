@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Pindutin ang anumang key upang basahin ang manu-manong pahina ...",
   "This manual page needs work for:": "Ang manu-manong pahina na ito ay kailangang gumana para sa:",
   "Manual page {0} not found.": "Hindi nahanap ang manu-manong pahina {0}.",
-  "Mod manual": "Manwal ng mod"
+  "Mod manual": "Manwal ng mod",
+  "Activates 255 color support for FlashColor.": "Pinapagana ang 255 suporta sa kulay para sa FlashColor.",
+  "Activates true color support for FlashColor.": "Pinapagana ang totoong suporta sa kulay para sa FlashColor."
 }

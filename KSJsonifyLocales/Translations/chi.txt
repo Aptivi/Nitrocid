@@ -1173,3 +1173,5 @@ Kǎolǜ tiánxiě běn shǒucè yè.
 Běn shǒucè yè xūyào yòng yú:
 Wèi zhǎodào shǒucè yè {0}.
 Mó zǔ shǒucè
+Jīhuó duì FlashColor de 255 sè zhīchí.
+Jīhuó duì FlashColor de zhēn cǎisè zhīchí.

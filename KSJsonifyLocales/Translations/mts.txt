@@ -1173,3 +1173,5 @@ Agħfas kwalunkwe ċavetta biex taqra l-paġna tal-manwal ...
 Din il-paġna tal-manwal teħtieġ xogħol għal:
 Paġna tal-manwal {0} ma nstabitx.
 Manwal tal-mod
+Jattiva 255 appoġġ tal-kulur għal FlashColor.
+Jattiva l-appoġġ tal-kulur veru għal FlashColor.

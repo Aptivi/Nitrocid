@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Stránku manuálu si přečtete stisknutím libovolné klávesy ...",
   "This manual page needs work for:": "Tato příručka vyžaduje práci pro:",
   "Manual page {0} not found.": "Stránka manuálu {0} nebyla nalezena.",
-  "Mod manual": "Mod manuál"
+  "Mod manual": "Mod manuál",
+  "Activates 255 color support for FlashColor.": "Aktivuje podporu 255 barev pro FlashColor.",
+  "Activates true color support for FlashColor.": "Aktivuje podporu skutečných barev pro FlashColor."
 }

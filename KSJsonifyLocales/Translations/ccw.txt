@@ -1173,3 +1173,5 @@ Dinani chilichonse kuti muwerenge bukuli ...
 Bukuli limafunikira kugwira ntchito:
 Tsamba lamanja {0} silinapezeke.
 Buku la Mod
+Amathandizira mtundu wa 255 wothandizira FlashColor.
+Amathandizira kuthandizira kwamtundu weniweni kwa FlashColor.

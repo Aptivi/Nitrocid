@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "按任意键阅读手册页...",
   "This manual page needs work for:": "本手册页需要用于：",
   "Manual page {0} not found.": "未找到手册页 {0}。",
-  "Mod manual": "模组手册"
+  "Mod manual": "模组手册",
+  "Activates 255 color support for FlashColor.": "激活对 FlashColor 的 255 色支持。",
+  "Activates true color support for FlashColor.": "激活对 FlashColor 的真彩色支持。"
 }

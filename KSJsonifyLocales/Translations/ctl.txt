@@ -1173,3 +1173,5 @@ Premeu qualsevol tecla per llegir la pàgina del manual ...
 Aquesta pàgina del manual necessita treballar per a:
 No s'ha trobat la pàgina del manual {0}.
 Manual de modificacions
+Activa el suport de 255 colors per a FlashColor.
+Activa el suport del color real per a FlashColor.

@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Nazhmite lyubuyu klavishu, chtoby prochitat' stranitsu rukovodstva ...",
   "This manual page needs work for:": "Eta stranitsa rukovodstva nuzhdayetsya v dorabotke dlya:",
   "Manual page {0} not found.": "Stranitsa rukovodstva {0} ne naydena.",
-  "Mod manual": "Rukovodstvo po modu"
+  "Mod manual": "Rukovodstvo po modu",
+  "Activates 255 color support for FlashColor.": "Aktiviruyet podderzhku 255 tsvetov dlya FlashColor.",
+  "Activates true color support for FlashColor.": "Aktiviruyet podderzhku istinnogo tsveta dlya FlashColor."
 }

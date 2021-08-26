@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Qo'llanma sahifasini o'qish uchun istalgan tugmani bosing ...",
   "This manual page needs work for:": "Ushbu qo'llanma sahifasi quyidagilar uchun ishlashi kerak:",
   "Manual page {0} not found.": "Qo'l sahifasi {0} topilmadi.",
-  "Mod manual": "Mod qo'llanma"
+  "Mod manual": "Mod qo'llanma",
+  "Activates 255 color support for FlashColor.": "FlashColor uchun 255 ta rangli qo'llab -quvvatlashni faollashtiradi.",
+  "Activates true color support for FlashColor.": "FlashColor uchun haqiqiy rangni qo'llab -quvvatlashni faollashtiradi."
 }

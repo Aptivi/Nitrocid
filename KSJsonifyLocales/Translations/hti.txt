@@ -1173,3 +1173,5 @@ Peze nenpòt kle pou li paj manyèl la ...
 Paj manyèl sa a bezwen travay pou:
 Paj Manyèl {0} pa jwenn.
 Mod manyèl
+Aktive 255 sipò koulè pou FlashColor.
+Aktive vrè sipò koulè pou FlashColor.

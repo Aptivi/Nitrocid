@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Nhấn phím bất kỳ để đọc trang hướng dẫn sử dụng ...",
   "This manual page needs work for:": "Trang hướng dẫn này cần hoạt động cho:",
   "Manual page {0} not found.": "Không tìm thấy trang thủ công {0}.",
-  "Mod manual": "Hướng dẫn mod"
+  "Mod manual": "Hướng dẫn mod",
+  "Activates 255 color support for FlashColor.": "Kích hoạt hỗ trợ 255 màu cho FlashColor.",
+  "Activates true color support for FlashColor.": "Kích hoạt hỗ trợ màu sắc trung thực cho FlashColor."
 }

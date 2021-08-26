@@ -1173,3 +1173,5 @@ Pritisnite bilo koji taster da biste pročitali stranicu sa priručnikom ...
 Ova stranica sa priručnikom treba da radi za:
 Stranica sa priručnikom {0} nije pronađena.
 Mod manual
+Aktivira podršku za 255 boja za FlashColor.
+Aktivira podršku za prave boje za FlashColor.

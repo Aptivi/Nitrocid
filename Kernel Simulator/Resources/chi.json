@@ -1172,5 +1172,7 @@
   "Press any key to read the manual page...": "Àn rènyì jiàn yuèdú shǒucè yè...",
   "This manual page needs work for:": "Běn shǒucè yè xūyào yòng yú:",
   "Manual page {0} not found.": "Wèi zhǎodào shǒucè yè {0}.",
-  "Mod manual": "Mó zǔ shǒucè"
+  "Mod manual": "Mó zǔ shǒucè",
+  "Activates 255 color support for FlashColor.": "Jīhuó duì FlashColor de 255 sè zhīchí.",
+  "Activates true color support for FlashColor.": "Jīhuó duì FlashColor de zhēn cǎisè zhīchí."
 }

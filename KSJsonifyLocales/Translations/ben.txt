@@ -1173,3 +1173,5 @@ Myānuẏāla pr̥ṣṭhāṭi paṛatē yēkōna kī ṭipuna...
 Ē'i myānuẏāla pr̥ṣṭhāra jan'ya kājēra praẏōjana:
 Myānuẏāla pr̥ṣṭhā {0} pā'ōẏā yāẏani
 mōḍa myānuẏāla
+FlashColor ēra jan'ya 255 kālāra sāpōrṭa sakriẏa karē.
+FlashColor jan'ya satyikārēra raṅa samarthana sakriẏa karē.

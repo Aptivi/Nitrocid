@@ -1173,3 +1173,5 @@ adghat ealaa 'ayi miftah liqira'at safhat aldalil ...
 tahtaj safhat aldalil hadhih 'iilaa aleamal min 'ajli:
 alsafhat alyadawia {0} ghayr mawjudatin.
 dalil wizarat aldifae
+yanshut daem 255 lwnan li FlashColor.
+yanshut daem allawn alhaqiqii li FlashColor.

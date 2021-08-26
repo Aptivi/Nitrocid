@@ -1173,5 +1173,7 @@
   "Press any key to read the manual page...": "Apăsați orice tastă pentru a citi pagina manualului ...",
   "This manual page needs work for:": "Această pagină manuală trebuie să funcționeze pentru:",
   "Manual page {0} not found.": "Pagina manuală {0} nu a fost găsită.",
-  "Mod manual": "Manual de mod"
+  "Mod manual": "Manual de mod",
+  "Activates 255 color support for FlashColor.": "Activează suportul de 255 de culori pentru FlashColor.",
+  "Activates true color support for FlashColor.": "Activează suportul de culoare adevărată pentru FlashColor."
 }

@@ -1173,3 +1173,5 @@ Pritisnite bilo koju tipku za čitanje stranice s priručnikom ...
 Ova stranica s priručnikom treba raditi za:
 Stranica s priručnikom {0} nije pronađena.
 Mod priručnik
+Aktivira podršku 255 boja za FlashColor.
+Aktivira podršku za prave boje za FlashColor.
