@@ -111,7 +111,7 @@ Public Module SettingsApp
         Dim SectionFinished As Boolean
         Dim AnswerString As String
         Dim AnswerInt As Integer
-        Dim BuiltinSavers As Integer = 21
+        Dim BuiltinSavers As Integer = 22
 
         'Section-specific variables
         Dim ConfigurableScreensavers As New List(Of String)
@@ -239,6 +239,7 @@ Public Module SettingsApp
                     W("19) BeatFader...", True, ColTypes.Option)
                     W("20) Linotypo...", True, ColTypes.Option)
                     W("21) Typewriter...", True, ColTypes.Option)
+                    W("22) FlashColor...", True, ColTypes.Option)
 
                     'Populate custom screensavers
                     For Each CustomSaver As String In CSvrdb.Keys
@@ -421,6 +422,13 @@ Public Module SettingsApp
                     W("3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypewriterWrite)))
                     W("4) " + DoTranslation("Minimum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypewriterWritingSpeedMin)))
                     W("5) " + DoTranslation("Maximum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypewriterWritingSpeedMax)))
+                Case "7.22" 'Screensaver > FlashColor
+                    MaxOptions = 3
+                    W("*) " + DoTranslation("Screensaver Settings...") + " > FlashColor" + vbNewLine, True, ColTypes.Neutral)
+                    W(DoTranslation("This section lists screensaver settings for") + " FlashColor." + vbNewLine, True, ColTypes.Neutral)
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FlashColor255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FlashColorTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FlashColorDelay)))
                 Case "7." + $"{If(SectionParameters.Length <> 0, SectionParameters(0), $"{BuiltinSavers + 1}")}" 'Screensaver > a custom saver
                     Dim SaverIndex As Integer = SectionParameters(0) - BuiltinSavers - 1
                     Dim Configurables As List(Of String) = SectionParameters(1)
@@ -1465,6 +1473,27 @@ Public Module SettingsApp
                             W(DoTranslation("Maximum writing speed in WPM"), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Typewriter > ???" + vbNewLine, True, ColTypes.Neutral)
+                            W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
+                    End Select
+                Case "7.6" 'FlashColor
+                    Select Case KeyNumber
+                        Case 1 'FlashColor: Activate 255 colors
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(FlashColor255Colors)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > FlashColor > " + DoTranslation("Activate 255 colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates 255 color support for FlashColor."), True, ColTypes.Neutral)
+                        Case 2 'FlashColor: Activate true colors
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(FlashColorTrueColor)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > FlashColor > " + DoTranslation("Activate true colors") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Activates true color support for FlashColor."), True, ColTypes.Neutral)
+                        Case 3 'FlashColor: Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FlashColorDelay)
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > FlashColor > " + DoTranslation("Delay in Milliseconds") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case Else
+                            W("*) " + DoTranslation("Screensaver Settings...") + " > Lines > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
                 Case "7." + $"{If(SectionParts.Length > 1, SectionParts(1), $"{BuiltinSavers + 1}")}" 'Custom saver

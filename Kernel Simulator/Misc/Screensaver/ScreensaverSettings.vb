@@ -402,4 +402,18 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public TypewriterShowArrowPos As Boolean = True
 
+    '-> FlashColor
+    ''' <summary>
+    ''' [FlashColor] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public FlashColor255Colors As Boolean
+    ''' <summary>
+    ''' [FlashColor] Enable truecolor support. Has a higher priority than 255 color support.
+    ''' </summary>
+    Public FlashColorTrueColor As Boolean = True
+    ''' <summary>
+    ''' [FlashColor] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public FlashColorDelay As Integer = 20
+
 End Module

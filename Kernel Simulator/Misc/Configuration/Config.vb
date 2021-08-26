@@ -370,6 +370,14 @@ Public Module Config
             }
             ScreensaverConfig.Add("Typewriter", TypewriterConfig)
 
+            'FlashColor config json object
+            Dim FlashColorConfig As New JObject From {
+                    {"Activate 255 Color Mode", FlashColor255Colors},
+                    {"Activate True Color Mode", FlashColorTrueColor},
+                    {"Delay in Milliseconds", FlashColorDelay}
+            }
+            ScreensaverConfig.Add("FlashColor", FlashColorConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -640,6 +648,11 @@ Public Module Config
             TypewriterWrite = If(ConfigToken("Screensaver")?("Typewriter")?("Text Shown"), "Kernel Simulator")
             TypewriterWritingSpeedMin = If(Integer.TryParse(ConfigToken("Screensaver")?("Typewriter")?("Minimum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Typewriter")?("Minimum writing speed in WPM"), 50)
             TypewriterWritingSpeedMax = If(Integer.TryParse(ConfigToken("Screensaver")?("Typewriter")?("Maximum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Typewriter")?("Maximum writing speed in WPM"), 80)
+
+            '> FlashColor
+            FlashColor255Colors = If(ConfigToken("Screensaver")?("FlashColor")?("Activate 255 Color Mode"), False)
+            FlashColorTrueColor = If(ConfigToken("Screensaver")?("FlashColor")?("Activate True Color Mode"), True)
+            FlashColorDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashColor")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("FlashColor")?("Delay in Milliseconds"), 1)
 
             'Misc Section
             Wdbg("I", "Parsing misc section...")

@@ -47,6 +47,7 @@ Public Module Screensaver
                                                                                    {"dissolve", Dissolve},
                                                                                    {"fader", Fader},
                                                                                    {"faderBack", FaderBack},
+                                                                                   {"flashColor", FlashColor},
                                                                                    {"glitterColor", GlitterColor},
                                                                                    {"glitterMatrix", GlitterMatrix},
                                                                                    {"hackUserFromAD", HackUserFromAD},
