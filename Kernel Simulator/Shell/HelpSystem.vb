@@ -135,8 +135,6 @@ Public Module HelpSystem
                     W(DoTranslation("Usage:") + " mkfile <anything>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "mktheme"
                     W(DoTranslation("Usage:") + " mktheme <themeName>: " + HelpDefinition, True, ColTypes.Neutral)
-                Case "modinfo"
-                    W(DoTranslation("Usage:") + " modinfo <mod>: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "modman"
                     W(DoTranslation("Usage:") + " modman <start/stop/info/reload> <modfilename> " + vbNewLine +
                       " ".Repeat(UsageLength) + " modman <list/reloadall/stopall/startall>: " + HelpDefinition, True, ColTypes.Neutral)
@@ -159,8 +157,6 @@ Public Module HelpSystem
                 Case "reboot"
                     W(DoTranslation("Usage:") + " reboot [ip] [port]: " + HelpDefinition + vbNewLine +
                       " ".Repeat(UsageLength) + " " + DoTranslation("Friends of") + " reboot: shutdown, logout", True, ColTypes.Neutral)
-                Case "reloadmods"
-                    W(DoTranslation("Usage:") + " reloadmods: " + HelpDefinition, True, ColTypes.Neutral)
                 Case "reloadconfig"
                     W(DoTranslation("Usage:") + " reloadconfig: " + HelpDefinition + vbNewLine +
                       " ".Repeat(UsageLength) + " " + DoTranslation("Colors doesn't require a restart, but most of the settings require you to restart."), True, ColTypes.Neutral)

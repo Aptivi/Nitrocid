@@ -654,40 +654,6 @@ Public Module GetCommand
                         StartThemeStudio(eqargs(0))
                     End If
 
-                Case "modinfo"
-
-                    If RequiredArgumentsProvided Then
-                        If scripts.Keys.Contains(eqargs(0)) Then
-                            WriteSeparator(eqargs(0), True, ColTypes.Stage)
-                            W("- " + DoTranslation("Mod name:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0)).ModName, True, ColTypes.ListValue)
-                            W("- " + DoTranslation("Mod file name:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0)).ModFileName, True, ColTypes.ListValue)
-                            W("- " + DoTranslation("Mod file path:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0)).ModFilePath, True, ColTypes.ListValue)
-                            W("- " + DoTranslation("Mod version:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0)).ModVersion, True, ColTypes.ListValue)
-                            W("- " + DoTranslation("Mod parts:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0)).ModParts.Count, True, ColTypes.ListValue)
-                            For Each ModPart As String In scripts(eqargs(0)).ModParts.Keys
-                                WriteSeparator("-- {0}", False, ColTypes.Stage, ModPart)
-                                W("- " + DoTranslation("Part version:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0)).ModParts(ModPart).Version, True, ColTypes.ListValue)
-                                If scripts(eqargs(0)).ModParts(ModPart).Commands IsNot Nothing Then
-                                    For Each ModCommand As String In scripts(eqargs(0)).ModParts(ModPart).Commands.Keys
-                                        WriteSeparator("--- {0}", False, ColTypes.Stage, ModCommand)
-                                        W("- " + DoTranslation("Command name:") + " ", False, ColTypes.ListEntry) : W(ModCommand, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Command definition:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0)).ModParts(ModPart).Commands(ModCommand).HelpDefinition, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Command type:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0)).ModParts(ModPart).Commands(ModCommand).Type, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Strict command?") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0)).ModParts(ModPart).Commands(ModCommand).Strict, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Arguments required?") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0)).ModParts(ModPart).Commands(ModCommand).ArgumentsRequired, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Minimum count of required arguments:") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0)).ModParts(ModPart).Commands(ModCommand).MinimumArguments, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Wrappable command?") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0)).ModParts(ModPart).Commands(ModCommand).Wrappable, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Setting shell variable?") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0)).ModParts(ModPart).Commands(ModCommand).SettingVariable, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Can not run in maintenance mode?") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0)).ModParts(ModPart).Commands(ModCommand).NoMaintenance, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Obsolete?") + " ", False, ColTypes.ListEntry) : W(scripts(eqargs(0)).ModParts(ModPart).Commands(ModCommand).Obsolete, True, ColTypes.ListValue)
-                                    Next
-                                End If
-                            Next
-                        Else
-                            W(DoTranslation("Mod {0} not found."), True, ColTypes.Error, eqargs(0))
-                        End If
-                    End If
-
                 Case "modman"
 
                     If RequiredArgumentsProvided Then
@@ -979,16 +945,6 @@ Public Module GetCommand
                         End If
                     Else
                         PowerManage("reboot")
-                    End If
-
-                Case "reloadmods"
-
-                    'Reload mods
-                    If Not SafeMode Then
-                        ReloadMods()
-                        W(DoTranslation("Mods reloaded."), True, ColTypes.Neutral)
-                    Else
-                        W(DoTranslation("Reloading not allowed in safe mode."), True, ColTypes.Error)
                     End If
 
                 Case "reloadsaver"
