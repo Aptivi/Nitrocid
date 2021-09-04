@@ -187,6 +187,13 @@ Public Module SFTPGetCommand
                         ShowHelp(strArgs, ShellCommandType.SFTPShell)
                     End If
             End Select
+
+            'See if the command is done (passed all required arguments)
+            If SFTPCommands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
+                W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Error, Command)
+                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, eqargs?.Length)
+                ShowHelp(Command, ShellCommandType.SFTPShell)
+            End If
         Catch taex As ThreadAbortException
             Exit Sub
         Catch ex As Exception 'The InnerException CAN be Nothing
