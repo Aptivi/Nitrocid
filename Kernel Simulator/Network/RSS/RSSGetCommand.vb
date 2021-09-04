@@ -125,7 +125,7 @@ Public Module RSSGetCommand
             If RSSCommands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Error, Command)
                 Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, Arguments?.Length)
-                ShowHelp(Command, ShellCommandType.SFTPShell)
+                ShowHelp(Command, ShellCommandType.RSSShell)
             End If
         Catch taex As ThreadAbortException
             Exit Sub
