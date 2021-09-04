@@ -216,10 +216,10 @@ Public Module TextEditGetCommand
                 Case "help"
                     If eqargs?.Length > 0 Then
                         Wdbg("I", "Requested help for {0}", eqargs(0))
-                        TextEdit_GetHelp(eqargs(0))
+                        ShowHelp(eqargs(0), ShellCommandType.TextShell)
                     Else
                         Wdbg("I", "Requested help for all commands")
-                        TextEdit_GetHelp()
+                        ShowHelp(ShellCommandType.TextShell)
                     End If
             End Select
 
@@ -227,7 +227,7 @@ Public Module TextEditGetCommand
             If TextEdit_Commands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Error, Command)
                 Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, eqargs?.Length)
-                TextEdit_GetHelp(Command)
+                ShowHelp(Command, ShellCommandType.TextShell)
             End If
         Catch taex As ThreadAbortException
             Exit Sub

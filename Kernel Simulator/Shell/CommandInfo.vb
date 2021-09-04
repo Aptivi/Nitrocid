@@ -31,6 +31,10 @@ Public Class CommandInfo
     ''' </summary>
     Public Property HelpDefinition As String
     ''' <summary>
+    ''' The help usage of command.
+    ''' </summary>
+    Public ReadOnly Property HelpUsage As String
+    ''' <summary>
     ''' Does the command require arguments?
     ''' </summary>
     Public ReadOnly Property ArgumentsRequired As Boolean
@@ -65,6 +69,7 @@ Public Class CommandInfo
     ''' <param name="Command">Command</param>
     ''' <param name="Type">Shell command type</param>
     ''' <param name="HelpDefinition">Command help definition</param>
+    ''' <param name="HelpUsage">Command help usage</param>
     ''' <param name="ArgumentsRequired">Does the command require arguments?</param>
     ''' <param name="MinimumArguments">User must specify at least this number of arguments</param>
     ''' <param name="Strict">Is the command admin-only?</param>
@@ -72,10 +77,11 @@ Public Class CommandInfo
     ''' <param name="NoMaintenance">If true, the command can't be run in maintenance mode</param>
     ''' <param name="Obsolete">Is the command obsolete?</param>
     ''' <param name="SettingVariable">Does the command set a UESH $variable?</param>
-    Public Sub New(ByVal Command As String, ByVal Type As ShellCommandType, ByVal HelpDefinition As String, ByVal ArgumentsRequired As Boolean, ByVal MinimumArguments As Integer, Optional Strict As Boolean = False, Optional Wrappable As Boolean = False, Optional NoMaintenance As Boolean = False, Optional Obsolete As Boolean = False, Optional SettingVariable As Boolean = False)
+    Public Sub New(ByVal Command As String, ByVal Type As ShellCommandType, ByVal HelpDefinition As String, ByVal HelpUsage As String, ByVal ArgumentsRequired As Boolean, ByVal MinimumArguments As Integer, Optional Strict As Boolean = False, Optional Wrappable As Boolean = False, Optional NoMaintenance As Boolean = False, Optional Obsolete As Boolean = False, Optional SettingVariable As Boolean = False)
         Me.Command = Command
         Me.Type = Type
         Me.HelpDefinition = HelpDefinition
+        Me.HelpUsage = HelpUsage
         Me.ArgumentsRequired = ArgumentsRequired
         Me.MinimumArguments = MinimumArguments
         Me.Strict = Strict
@@ -88,55 +94,50 @@ Public Class CommandInfo
     ''' <summary>
     ''' Gets the translated version of help entry (KS built-in commands only)
     ''' </summary>
-    ''' <returns></returns>
     Public Function GetTranslatedHelpEntry() As String
         Return DoTranslation(HelpDefinition)
     End Function
 
 End Class
 
-Public Module CommandType
-
+''' <summary>
+''' Shell command type enumeration
+''' </summary>
+Public Enum ShellCommandType
     ''' <summary>
-    ''' Shell command type enumeration
+    ''' Normal UESH shell
     ''' </summary>
-    Public Enum ShellCommandType
-        ''' <summary>
-        ''' Normal UESH shell
-        ''' </summary>
-        Shell
-        ''' <summary>
-        ''' FTP shell
-        ''' </summary>
-        FTPShell
-        ''' <summary>
-        ''' Mail shell
-        ''' </summary>
-        MailShell
-        ''' <summary>
-        ''' SFTP shell
-        ''' </summary>
-        SFTPShell
-        ''' <summary>
-        ''' Text shell
-        ''' </summary>
-        TextShell
-        ''' <summary>
-        ''' Test shell
-        ''' </summary>
-        TestShell
-        ''' <summary>
-        ''' Remote debug shell
-        ''' </summary>
-        RemoteDebugShell
-        ''' <summary>
-        ''' ZIP shell
-        ''' </summary>
-        ZIPShell
-        ''' <summary>
-        ''' RSS Shell
-        ''' </summary>
-        RSSShell
-    End Enum
-
-End Module
+    Shell
+    ''' <summary>
+    ''' FTP shell
+    ''' </summary>
+    FTPShell
+    ''' <summary>
+    ''' Mail shell
+    ''' </summary>
+    MailShell
+    ''' <summary>
+    ''' SFTP shell
+    ''' </summary>
+    SFTPShell
+    ''' <summary>
+    ''' Text shell
+    ''' </summary>
+    TextShell
+    ''' <summary>
+    ''' Test shell
+    ''' </summary>
+    TestShell
+    ''' <summary>
+    ''' Remote debug shell
+    ''' </summary>
+    RemoteDebugShell
+    ''' <summary>
+    ''' ZIP shell
+    ''' </summary>
+    ZIPShell
+    ''' <summary>
+    ''' RSS Shell
+    ''' </summary>
+    RSSShell
+End Enum

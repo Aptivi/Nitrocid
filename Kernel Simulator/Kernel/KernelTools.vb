@@ -288,7 +288,7 @@ Public Module KernelTools
         StopPanicAndGoToDoublePanic = False
         strcommand = Nothing
         modcmnds.Clear()
-        moddefs.Clear()
+        ModDefs.Clear()
         FTPModCommands.Clear()
         FTPModDefs.Clear()
         SFTPModCommands.Clear()

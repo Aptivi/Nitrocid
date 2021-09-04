@@ -20,11 +20,11 @@ Imports System.IO
 
 Module RemoteDebugCmd
 
-    Public ReadOnly DebugCommands As New Dictionary(Of String, CommandInfo) From {{"exit", New CommandInfo("exit", ShellCommandType.RemoteDebugShell, "Disconnects you from the debugger", False, 0)},
-                                                                                  {"help", New CommandInfo("help", ShellCommandType.RemoteDebugShell, "Shows help screen", False, 0)},
-                                                                                  {"register", New CommandInfo("register", ShellCommandType.RemoteDebugShell, "Sets device username", True, 1)},
-                                                                                  {"trace", New CommandInfo("trace", ShellCommandType.RemoteDebugShell, "Shows last stack trace on exception", True, 1)},
-                                                                                  {"username", New CommandInfo("username", ShellCommandType.RemoteDebugShell, "Shows current username in the session", False, 0)}}
+    Public ReadOnly DebugCommands As New Dictionary(Of String, CommandInfo) From {{"exit", New CommandInfo("exit", ShellCommandType.RemoteDebugShell, "Disconnects you from the debugger", "", False, 0)},
+                                                                                  {"help", New CommandInfo("help", ShellCommandType.RemoteDebugShell, "Shows help screen", "[command]", False, 0)},
+                                                                                  {"register", New CommandInfo("register", ShellCommandType.RemoteDebugShell, "Sets device username", "<username>", True, 1)},
+                                                                                  {"trace", New CommandInfo("trace", ShellCommandType.RemoteDebugShell, "Shows last stack trace on exception", "<tracenumber>", True, 1)},
+                                                                                  {"username", New CommandInfo("username", ShellCommandType.RemoteDebugShell, "Shows current username in the session", "", False, 0)}}
     Public DebugModCmds As New ArrayList
 
     ''' <summary>

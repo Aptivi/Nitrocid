@@ -221,9 +221,9 @@ Module MailGetCommand
                     End If
                 Case "help"
                     If eqargs?.Length > 0 Then
-                        IMAPShowHelp(eqargs(0))
+                        ShowHelp(eqargs(0), ShellCommandType.MailShell)
                     Else
-                        IMAPShowHelp()
+                        ShowHelp(ShellCommandType.MailShell)
                     End If
                 Case "exit"
                     ExitRequested = True
@@ -242,7 +242,7 @@ Module MailGetCommand
             If MailCommands(words(0)).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Error, words(0))
                 Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", words(0), eqargs?.Length)
-                IMAPShowHelp(words(0))
+                ShowHelp(words(0), ShellCommandType.MailShell)
             End If
         Catch taex As ThreadAbortException
             Exit Sub

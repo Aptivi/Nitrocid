@@ -20,8 +20,6 @@ Imports System.IO
 
 Public Module RemoteDebugHelpSystem
 
-    Public RDebugModDefs As New Dictionary(Of String, String)
-
     ''' <summary>
     ''' Shows the help entry for command.
     ''' </summary>
@@ -44,31 +42,31 @@ Public Module RemoteDebugHelpSystem
             End Select
         ElseIf String.IsNullOrWhiteSpace(command) Then
             If simHelp = False Then
-                W(DoTranslation("General commands:"), True, ColTypes.Neutral)
+                DeviceStream.WriteLine(DoTranslation("General commands:"), True, ColTypes.Neutral)
                 For Each cmd As String In DebugCommands.Keys
-                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, DebugCommands(cmd).GetTranslatedHelpEntry)
+                    DeviceStream.WriteLine("- {0}: ", cmd) : DeviceStream.WriteLine("{0}", DebugCommands(cmd).GetTranslatedHelpEntry)
                 Next
-                W(vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.Neutral)
-                If RDebugModDefs.Count = 0 Then W(DoTranslation("No mod commands."), True, ColTypes.Neutral)
+                DeviceStream.WriteLine(vbNewLine + DoTranslation("Mod commands:"))
+                If RDebugModDefs.Count = 0 Then DeviceStream.WriteLine(DoTranslation("No mod commands."))
                 For Each cmd As String In RDebugModDefs.Keys
-                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, RDebugModDefs(cmd))
+                    DeviceStream.WriteLine("- {0}: ", cmd) : DeviceStream.WriteLine("{0}", RDebugModDefs(cmd))
                 Next
-                W(vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.Neutral)
-                If RemoteDebugAliases.Count = 0 Then W(DoTranslation("No alias commands."), True, ColTypes.Neutral)
+                DeviceStream.WriteLine(vbNewLine + DoTranslation("Alias commands:"))
+                If RemoteDebugAliases.Count = 0 Then DeviceStream.WriteLine(DoTranslation("No alias commands."))
                 For Each cmd As String In RemoteDebugAliases.Keys
-                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, DebugCommands(RemoteDebugAliases(cmd)).GetTranslatedHelpEntry)
+                    DeviceStream.WriteLine("- {0}: ", cmd) : DeviceStream.WriteLine("{0}", DebugCommands(RemoteDebugAliases(cmd)).GetTranslatedHelpEntry)
                 Next
             Else
                 For Each cmd As String In DebugCommands.Keys
-                    W("{0}, ", False, ColTypes.ListEntry, cmd)
+                    DeviceStream.WriteLine("{0}, ", cmd)
                 Next
                 For Each cmd As String In RDebugModDefs.Keys
-                    W("{0}, ", False, ColTypes.ListEntry, cmd)
+                    DeviceStream.WriteLine("{0}, ", cmd)
                 Next
-                W(String.Join(", ", RemoteDebugAliases.Keys), True, ColTypes.ListEntry)
+                DeviceStream.WriteLine(String.Join(", ", RemoteDebugAliases.Keys))
             End If
         Else
-            W(DoTranslation("No help for command ""{0}""."), True, ColTypes.Error, command)
+            DeviceStream.WriteLine(DoTranslation("No help for command ""{0}""."), command)
         End If
     End Sub
 

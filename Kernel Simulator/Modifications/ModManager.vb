@@ -101,7 +101,7 @@ Public Module ModManager
     Sub ReloadMods()
         'Clear all scripts, commands, and defs
         modcmnds.Clear()
-        moddefs.Clear()
+        ModDefs.Clear()
         Wdbg("I", "Mod commands for main shell cleared.")
         FTPModCommands.Clear()
         FTPModDefs.Clear()
@@ -152,13 +152,13 @@ Public Module ModManager
     ''' </summary>
     ''' <param name="OldModDesc">Old mod command description</param>
     Sub ReloadGenericDefs(ByVal OldModDesc As String)
-        For i As Integer = 0 To moddefs.Keys.Count - 1
+        For i As Integer = 0 To ModDefs.Keys.Count - 1
             Wdbg("I", "Replacing ""{0}""...", OldModDesc)
-            Dim Cmd As String = moddefs.Keys(i)
-            If moddefs(Cmd).Contains(OldModDesc) Then
-                Wdbg("I", "Old Definition: {0}", moddefs(Cmd))
-                moddefs(Cmd) = moddefs(Cmd).Replace(OldModDesc, DoTranslation("Command defined by "))
-                Wdbg("I", "New Definition: {0}", moddefs(Cmd))
+            Dim Cmd As String = ModDefs.Keys(i)
+            If ModDefs(Cmd).Contains(OldModDesc) Then
+                Wdbg("I", "Old Definition: {0}", ModDefs(Cmd))
+                ModDefs(Cmd) = ModDefs(Cmd).Replace(OldModDesc, DoTranslation("Command defined by "))
+                Wdbg("I", "New Definition: {0}", ModDefs(Cmd))
             End If
         Next
     End Sub

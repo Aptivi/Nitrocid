@@ -76,12 +76,12 @@ Public Module GetCommand
                 Case "help"
 
                     If requestedCommand = "help" Then
-                        ShowHelp()
+                        ShowHelp("")
                     Else
                         If eqargs IsNot Nothing Then
                             ShowHelp(eqargs(0))
                         Else
-                            ShowHelp()
+                            ShowHelp("")
                         End If
                     End If
 
@@ -741,7 +741,7 @@ Public Module GetCommand
                                                                 Case ShellCommandType.Shell
                                                                     Wdbg("I", "Removing command {0} from main shell...", CommandInfo.Command)
                                                                     modcmnds.Remove(CommandInfo.Command)
-                                                                    moddefs.Remove(CommandInfo.Command)
+                                                                    ModDefs.Remove(CommandInfo.Command)
                                                                 Case ShellCommandType.FTPShell
                                                                     Wdbg("I", "Removing command {0} from FTP shell...", CommandInfo.Command)
                                                                     FTPModCommands.Remove(CommandInfo.Command)

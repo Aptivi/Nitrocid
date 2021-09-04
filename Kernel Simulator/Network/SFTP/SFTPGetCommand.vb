@@ -182,9 +182,9 @@ Public Module SFTPGetCommand
                     sftpexit = True
                 Case "help"
                     If requestedCommand = "help" Then
-                        SFTPShowHelp()
+                        ShowHelp("", ShellCommandType.SFTPShell)
                     Else
-                        SFTPShowHelp(strArgs)
+                        ShowHelp(strArgs, ShellCommandType.SFTPShell)
                     End If
             End Select
         Catch taex As ThreadAbortException

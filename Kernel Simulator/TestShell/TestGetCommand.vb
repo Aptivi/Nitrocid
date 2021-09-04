@@ -352,9 +352,9 @@ Module TestGetCommand
                     End If
                 Case "help"
                     If eqargs?.Length = 0 Or eqargs Is Nothing Then
-                        TestShowHelp()
+                        ShowHelp("", ShellCommandType.TestShell)
                     Else
-                        TestShowHelp(eqargs(0))
+                        ShowHelp(eqargs(0), ShellCommandType.TestShell)
                     End If
                 Case "exit"
                     Test_ExitFlag = True
@@ -367,7 +367,7 @@ Module TestGetCommand
             If Test_Commands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 Wdbg("W", "User hasn't provided enough arguments for {0}", Command)
                 W(DoTranslation("There was not enough arguments. See below for usage:"), True, ColTypes.Neutral)
-                TestShowHelp(Command)
+                ShowHelp(Command, ShellCommandType.TestShell)
             End If
         Catch taex As ThreadAbortException
             Exit Sub

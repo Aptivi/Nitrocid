@@ -224,7 +224,6 @@
     <Compile Include="Misc\Screensaver\ScreensaverSettings.vb" />
     <Compile Include="Misc\StringEvaluators.vb" />
     <Compile Include="Misc\TextEdit\TextEditGetCommand.vb" />
-    <Compile Include="Misc\TextEdit\TextEditHelpSystem.vb" />
     <Compile Include="Misc\TextEdit\TextEditShell.vb" />
     <Compile Include="Misc\TextEdit\TextEditTools.vb" />
     <Compile Include="Misc\Threading\ThreadManager.vb" />
@@ -238,7 +237,6 @@
     <Compile Include="Misc\Writers\ConsoleWriters\TextWriterColor.vb" />
     <Compile Include="Misc\Writers\MiscWriters\WelcomeMessage.vb" />
     <Compile Include="Misc\ZipFile\ZipGetCommand.vb" />
-    <Compile Include="Misc\ZipFile\ZipHelpSystem.vb" />
     <Compile Include="Misc\ZipFile\ZipTools.vb" />
     <Compile Include="Misc\ZipFile\ZipShell.vb" />
     <Compile Include="Modifications\ModExecutor.vb" />
@@ -255,18 +253,15 @@
     <Compile Include="Network\RSS\Instance\RSSArticle.vb" />
     <Compile Include="Network\RSS\Instance\RSSFeed.vb" />
     <Compile Include="Network\RSS\RSSGetCommand.vb" />
-    <Compile Include="Network\RSS\RSSHelpSystem.vb" />
     <Compile Include="Network\RSS\RSSShell.vb" />
     <Compile Include="Network\RSS\RSSTools.vb" />
     <Compile Include="Network\SFTP\Filesystem\SFTPFilesystem.vb" />
     <Compile Include="Network\SFTP\SFTPGetCommand.vb" />
-    <Compile Include="Network\SFTP\SFTPHelpSystem.vb" />
     <Compile Include="Network\SFTP\SFTPShell.vb" />
     <Compile Include="Network\SFTP\SFTPTools.vb" />
     <Compile Include="Network\SFTP\Transfer\SFTPTransfer.vb" />
     <Compile Include="Network\FTP\Filesystem\FTPFilesystem.vb" />
     <Compile Include="Network\FTP\FTPGetCommand.vb" />
-    <Compile Include="Network\FTP\FTPHelpSystem.vb" />
     <Compile Include="Network\FTP\FTPShell.vb" />
     <Compile Include="Network\FTP\FTPTools.vb" />
     <Compile Include="Network\FTP\Transfer\FTPTransfer.vb" />
@@ -282,7 +277,6 @@
     <Compile Include="Network\RPC\RemoteProcedure.vb" />
     <Compile Include="Network\RPC\RPC-Commands.vb" />
     <Compile Include="Network\Mail\MailGetCommand.vb" />
-    <Compile Include="Network\Mail\MailHelpSystem.vb" />
     <Compile Include="Network\Mail\MailLogin.vb" />
     <Compile Include="Network\Mail\MailShell.vb" />
     <Compile Include="Network\SSH\SSH.vb" />
@@ -310,7 +304,6 @@
     <Compile Include="Shell\HelpSystem.vb" />
     <Compile Include="Shell\Shell.vb" />
     <Compile Include="TestShell\TestGetCommand.vb" />
-    <Compile Include="TestShell\TestHelpSystem.vb" />
     <Compile Include="TestShell\TestShell.vb" />
     <Compile Include="TimeDate\TimeDate.vb" />
     <Compile Include="TimeDate\TimeDateRenderers.vb" />

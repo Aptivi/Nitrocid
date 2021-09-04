@@ -75,6 +75,15 @@ Public Module ModParser
     ''' Mods with their parts and scripts.
     ''' </summary>
     Public scripts As New Dictionary(Of String, ModInfo)
+    Public ModDefs As New Dictionary(Of String, String)
+    Public TestModDefs As New Dictionary(Of String, String)
+    Public SFTPModDefs As New Dictionary(Of String, String)
+    Public RSSModDefs As New Dictionary(Of String, String)
+    Public RDebugModDefs As New Dictionary(Of String, String)
+    Public MailModDefs As New Dictionary(Of String, String)
+    Public FTPModDefs As New Dictionary(Of String, String)
+    Public ZipShell_ModHelpEntries As New Dictionary(Of String, String)
+    Public TextEdit_ModHelpEntries As New Dictionary(Of String, String)
 
     ''' <summary>
     ''' Compiles the script and returns the instance of script interface
@@ -380,7 +389,7 @@ NextEntry:
                                     Wdbg("I", "Adding command {0} for main shell...", Command)
                                     If Not modcmnds.Contains(Command) Then modcmnds.Add(Command)
                                     script.Commands.RenameKey(ActualCommand, Command)
-                                    moddefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
+                                    ModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
                                 Case ShellCommandType.FTPShell
                                     Wdbg("I", "Adding command {0} for FTP shell...", Command)
                                     If Not FTPModCommands.Contains(Command) Then FTPModCommands.Add(Command)

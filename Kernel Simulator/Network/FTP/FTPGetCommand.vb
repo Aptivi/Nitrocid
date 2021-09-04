@@ -275,9 +275,9 @@ Public Module FTPGetCommand
                     ftpexit = True
                 Case "help"
                     If requestedCommand = "help" Then
-                        FTPShowHelp()
+                        ShowHelp(ShellCommandType.FTPShell)
                     Else
-                        FTPShowHelp(strArgs)
+                        ShowHelp(strArgs, ShellCommandType.FTPShell)
                     End If
             End Select
         Catch taex As ThreadAbortException

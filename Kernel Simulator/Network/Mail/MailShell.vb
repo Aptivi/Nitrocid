@@ -24,22 +24,22 @@ Imports MailKit.Search
 Public Module MailShell
 
     'Variables
-    Public ReadOnly MailCommands As New Dictionary(Of String, CommandInfo) From {{"cd", New CommandInfo("cd", ShellCommandType.MailShell, "Changes current mail directory", True, 1)},
-                                                                                 {"exit", New CommandInfo("exit", ShellCommandType.MailShell, "Exits the IMAP shell", False, 0)},
-                                                                                 {"help", New CommandInfo("help", ShellCommandType.MailShell, "List of commands", False, 0)},
-                                                                                 {"lsdirs", New CommandInfo("lsdirs", ShellCommandType.MailShell, "Lists directories in your mail address", False, 0)},
-                                                                                 {"list", New CommandInfo("list", ShellCommandType.MailShell, "Downloads messages and lists them", False, 0)},
-                                                                                 {"mkdir", New CommandInfo("mkdir", ShellCommandType.MailShell, "Makes a directory in the current working directory", True, 1)},
-                                                                                 {"mv", New CommandInfo("mv", ShellCommandType.MailShell, "Moves a message", True, 2)},
-                                                                                 {"mvall", New CommandInfo("mvall", ShellCommandType.MailShell, "Moves all messages from recipient", True, 2)},
-                                                                                 {"read", New CommandInfo("read", ShellCommandType.MailShell, "Opens a message", True, 1)},
-                                                                                 {"readenc", New CommandInfo("readenc", ShellCommandType.MailShell, "Opens an encrypted message", True, 1)},
-                                                                                 {"ren", New CommandInfo("ren", ShellCommandType.MailShell, "Renames a folder", True, 2)},
-                                                                                 {"rm", New CommandInfo("rm", ShellCommandType.MailShell, "Removes a message", True, 1)},
-                                                                                 {"rmall", New CommandInfo("rmall", ShellCommandType.MailShell, "Removes all messages from recipient", True, 1)},
-                                                                                 {"rmdir", New CommandInfo("rmdir", ShellCommandType.MailShell, "Removes a directory from the current working directory", True, 1)},
-                                                                                 {"send", New CommandInfo("send", ShellCommandType.MailShell, "Sends a message to an address", False, 0)},
-                                                                                 {"sendenc", New CommandInfo("sendenc", ShellCommandType.MailShell, "Sends an encrypted message to an address", False, 0)}}
+    Public ReadOnly MailCommands As New Dictionary(Of String, CommandInfo) From {{"cd", New CommandInfo("cd", ShellCommandType.MailShell, "Changes current mail directory", "<folder>", True, 1)},
+                                                                                 {"exit", New CommandInfo("exit", ShellCommandType.MailShell, "Exits the IMAP shell", "", False, 0)},
+                                                                                 {"help", New CommandInfo("help", ShellCommandType.MailShell, "List of commands", "[command]", False, 0)},
+                                                                                 {"lsdirs", New CommandInfo("lsdirs", ShellCommandType.MailShell, "Lists directories in your mail address", "", False, 0)},
+                                                                                 {"list", New CommandInfo("list", ShellCommandType.MailShell, "Downloads messages and lists them", "[pagenum]", False, 0)},
+                                                                                 {"mkdir", New CommandInfo("mkdir", ShellCommandType.MailShell, "Makes a directory in the current working directory", "<foldername>", True, 1)},
+                                                                                 {"mv", New CommandInfo("mv", ShellCommandType.MailShell, "Moves a message", "<mailid> <targetfolder>", True, 2)},
+                                                                                 {"mvall", New CommandInfo("mvall", ShellCommandType.MailShell, "Moves all messages from recipient", "<sendername> <targetfolder>", True, 2)},
+                                                                                 {"read", New CommandInfo("read", ShellCommandType.MailShell, "Opens a message", "<mailid>", True, 1)},
+                                                                                 {"readenc", New CommandInfo("readenc", ShellCommandType.MailShell, "Opens an encrypted message", "<mailid>", True, 1)},
+                                                                                 {"ren", New CommandInfo("ren", ShellCommandType.MailShell, "Renames a folder", "<oldfoldername> <newfoldername>", True, 2)},
+                                                                                 {"rm", New CommandInfo("rm", ShellCommandType.MailShell, "Removes a message", "<mailid>", True, 1)},
+                                                                                 {"rmall", New CommandInfo("rmall", ShellCommandType.MailShell, "Removes all messages from recipient", "<sendername>", True, 1)},
+                                                                                 {"rmdir", New CommandInfo("rmdir", ShellCommandType.MailShell, "Removes a directory from the current working directory", "<foldername>", True, 1)},
+                                                                                 {"send", New CommandInfo("send", ShellCommandType.MailShell, "Sends a message to an address", "", False, 0)},
+                                                                                 {"sendenc", New CommandInfo("sendenc", ShellCommandType.MailShell, "Sends an encrypted message to an address", "", False, 0)}}
     Friend IMAP_Messages As IEnumerable(Of UniqueId)
     Public IMAP_CurrentDirectory As String = "Inbox"
     Friend ExitRequested, KeepAlive As Boolean

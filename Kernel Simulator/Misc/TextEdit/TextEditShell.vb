@@ -23,20 +23,20 @@ Public Module TextEditShell
 
     'Variables
     Public TextEdit_Exiting As Boolean
-    Public ReadOnly TextEdit_Commands As New Dictionary(Of String, CommandInfo) From {{"addline", New CommandInfo("addline", ShellCommandType.TextShell, "Adds a new line with text at the end of the file", True, 1)},
-                                                                                      {"clear", New CommandInfo("clear", ShellCommandType.TextShell, "Clears the text file", False, 0)},
-                                                                                      {"delcharnum", New CommandInfo("delcharnum", ShellCommandType.TextShell, "Deletes a character from character number in specified line", True, 2)},
-                                                                                      {"delline", New CommandInfo("delline", ShellCommandType.TextShell, "Removes the specified line number", True, 1)},
-                                                                                      {"delword", New CommandInfo("delword", ShellCommandType.TextShell, "Deletes a word or phrase from line number", True, 2)},
-                                                                                      {"exit", New CommandInfo("exit", ShellCommandType.TextShell, "Exits the text editor and save unsaved changes", False, 0)},
-                                                                                      {"exitnosave", New CommandInfo("exitnosave", ShellCommandType.TextShell, "Exits the text editor", False, 0)},
-                                                                                      {"help", New CommandInfo("help", ShellCommandType.TextShell, "Lists available commands", False, 0)},
-                                                                                      {"print", New CommandInfo("print", ShellCommandType.TextShell, "Prints the contents of the file with line numbers to the console", False, 0)},
-                                                                                      {"querychar", New CommandInfo("querychar", ShellCommandType.TextShell, "Queries a character in a specified line or all lines", True, 2)},
-                                                                                      {"queryword", New CommandInfo("queryword", ShellCommandType.TextShell, "Queries a word in a specified line or all lines", True, 2)},
-                                                                                      {"replace", New CommandInfo("replace", ShellCommandType.TextShell, "Replaces a word or phrase with another one", True, 2)},
-                                                                                      {"replaceinline", New CommandInfo("replaceinline", ShellCommandType.TextShell, "Replaces a word or phrase with another one in a line", True, 3)},
-                                                                                      {"save", New CommandInfo("save", ShellCommandType.TextShell, "Saves the file", False, 0)}}
+    Public ReadOnly TextEdit_Commands As New Dictionary(Of String, CommandInfo) From {{"addline", New CommandInfo("addline", ShellCommandType.TextShell, "Adds a new line with text at the end of the file", "<text>", True, 1)},
+                                                                                      {"clear", New CommandInfo("clear", ShellCommandType.TextShell, "Clears the text file", "", False, 0)},
+                                                                                      {"delcharnum", New CommandInfo("delcharnum", ShellCommandType.TextShell, "Deletes a character from character number in specified line", "<charnumber> <linenumber>", True, 2)},
+                                                                                      {"delline", New CommandInfo("delline", ShellCommandType.TextShell, "Removes the specified line number", "<linenumber>", True, 1)},
+                                                                                      {"delword", New CommandInfo("delword", ShellCommandType.TextShell, "Deletes a word or phrase from line number", """<word/phrase>"" <linenumber>", True, 2)},
+                                                                                      {"exit", New CommandInfo("exit", ShellCommandType.TextShell, "Exits the text editor and save unsaved changes", "", False, 0)},
+                                                                                      {"exitnosave", New CommandInfo("exitnosave", ShellCommandType.TextShell, "Exits the text editor", "", False, 0)},
+                                                                                      {"help", New CommandInfo("help", ShellCommandType.TextShell, "Lists available commands", "[command]", False, 0)},
+                                                                                      {"print", New CommandInfo("print", ShellCommandType.TextShell, "Prints the contents of the file with line numbers to the console", "[linenumber]", False, 0)},
+                                                                                      {"querychar", New CommandInfo("querychar", ShellCommandType.TextShell, "Queries a character in a specified line or all lines", "<char> <linenumber/all>", True, 2)},
+                                                                                      {"queryword", New CommandInfo("queryword", ShellCommandType.TextShell, "Queries a word in a specified line or all lines", """<word/phrase>"" <linenumber/all>", True, 2)},
+                                                                                      {"replace", New CommandInfo("replace", ShellCommandType.TextShell, "Replaces a word or phrase with another one", """<word/phrase>"" ""<word/phrase>""", True, 2)},
+                                                                                      {"replaceinline", New CommandInfo("replaceinline", ShellCommandType.TextShell, "Replaces a word or phrase with another one in a line", """<word/phrase>"" ""<word/phrase>"" <linenumber>", True, 3)},
+                                                                                      {"save", New CommandInfo("save", ShellCommandType.TextShell, "Saves the file", "", False, 0)}}
     Public TextEdit_ModCommands As New ArrayList
     Public TextEdit_FileStream As FileStream
     Public TextEdit_FileLines As List(Of String)

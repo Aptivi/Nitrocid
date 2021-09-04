@@ -116,10 +116,10 @@ Public Module ZipGetCommand
                 Case "help"
                     If eqargs?.Length > 0 Then
                         Wdbg("I", "Requested help for {0}", eqargs(0))
-                        ZipShell_GetHelp(eqargs(0))
+                        ShowHelp(eqargs(0), ShellCommandType.ZIPShell)
                     Else
                         Wdbg("I", "Requested help for all commands")
-                        ZipShell_GetHelp()
+                        ShowHelp(ShellCommandType.ZIPShell)
                     End If
             End Select
 
@@ -127,7 +127,7 @@ Public Module ZipGetCommand
             If ZipShell_Commands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Error, Command)
                 Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, eqargs?.Length)
-                ZipShell_GetHelp(Command)
+                ShowHelp(Command, ShellCommandType.ZIPShell)
             End If
         Catch taex As ThreadAbortException
             Exit Sub
