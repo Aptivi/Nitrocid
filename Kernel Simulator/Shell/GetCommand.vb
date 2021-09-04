@@ -138,7 +138,7 @@ Public Module GetCommand
                             W(DoTranslation("No arguments specified. Hint: Specify multiple arguments separated by spaces"), True, ColTypes.Error)
                         Else
                             EnteredArguments = New List(Of String)(FinalArgs)
-                            argsInjected = True
+                            ArgsInjected = True
                             W(DoTranslation("Injected arguments, {0}, will be scheduled to run at next reboot."), True, ColTypes.Neutral, String.Join(", ", EnteredArguments))
                         End If
                     End If

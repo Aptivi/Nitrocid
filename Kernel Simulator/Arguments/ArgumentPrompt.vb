@@ -31,28 +31,25 @@ Module ArgumentPrompt
         Dim AnswerArgs As String = ""
 
         'Shows available arguments
-        W(DoTranslation("Available arguments: {0}") + vbNewLine +
-          DoTranslation("'q' to quit."), True, ColTypes.Neutral, String.Join(", ", AvailableArgs))
+        W(DoTranslation("Available kernel arguments:"), True, ColTypes.Neutral)
+        WriteList(AvailableArgs, True)
+        W("* " + DoTranslation("Press ""q"" if you're done."), True, ColTypes.Neutral)
+        W("* " + DoTranslation("Multiple kernel arguments can be separated with commas without spaces, for example:") + " ""debug,safe""", True, ColTypes.Neutral)
+        W("* " + DoTranslation("Multiple injected commands can be separated with colons with spaces, for example:") + " cmdinject ""beep 100 500 : echo Hello!""", True, ColTypes.Neutral)
+
+        'Prompts for the arguments
         While Not AnswerArgs = "q"
-            'Prompts for the arguments
-            W(DoTranslation("Arguments ('help' for help): "), False, ColTypes.Input, String.Join(", ", AvailableArgs))
+            W(">> ", False, ColTypes.Input)
             AnswerArgs = Console.ReadLine()
 
             'Add an argument to the entered arguments list
             If AnswerArgs <> "q" Then
                 For Each AnswerArg As String In AnswerArgs.Split(","c)
-                    If AnswerArg.Contains("help") Then
-                        W(DoTranslation("Separate boot arguments with commas without spaces, for example, 'motd,gpuprobe'") + vbNewLine +
-                          DoTranslation("Separate commands on 'cmdinject' with colons with spaces, for example, 'cmdinject setthemes Hacker : beep 1024 0.5'") + vbNewLine +
-                          DoTranslation("Note that the 'debug' argument does not fully cover the kernel."), True, ColTypes.Neutral)
-                        Exit For
-                    Else
-                        EnteredArguments.Add(AnswerArg)
-                    End If
+                    EnteredArguments.Add(AnswerArg)
                 Next
             Else
                 If InjMode Then
-                    argsInjected = True
+                    ArgsInjected = True
                     EventManager.RaiseArgumentsInjected(EnteredArguments)
                     W(DoTranslation("Injected arguments will be scheduled to run at next reboot."), True, ColTypes.Neutral)
                 Else

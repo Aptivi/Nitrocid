@@ -38,7 +38,7 @@ Public Module Flags
     ''' <summary>
     ''' A flag for checking for an argument on reboot
     ''' </summary>
-    Public argsInjected As Boolean
+    Public ArgsInjected As Boolean
     ''' <summary>
     ''' Set Root Password boolean
     ''' </summary>

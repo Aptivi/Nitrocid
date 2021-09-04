@@ -153,6 +153,7 @@
   <ItemGroup>
     <Compile Include="Arguments\ArgumentParse.vb" />
     <Compile Include="Arguments\ArgumentPrompt.vb" />
+    <Compile Include="Arguments\ArgumentInfo.vb" />
     <Compile Include="Arguments\CommandLineArgsParse.vb" />
     <Compile Include="Console\Color.vb" />
     <Compile Include="Console\Color255.vb" />

@@ -282,7 +282,7 @@ Public Module KernelTools
     ''' </summary>
     Sub ResetEverything()
         'Reset every variable that is resettable
-        If argsInjected = False Then
+        If ArgsInjected = False Then
             EnteredArguments.Clear()
         End If
         StopPanicAndGoToDoublePanic = False
@@ -393,8 +393,8 @@ Public Module KernelTools
             PromptArgs()
             StageTimer.Start()
         End If
-        If argsInjected Then
-            argsInjected = False
+        If ArgsInjected Then
+            ArgsInjected = False
             ParseArguments()
         End If
 

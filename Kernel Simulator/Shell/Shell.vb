@@ -44,7 +44,7 @@ Public Module Shell
     ''' <summary>
     ''' All injected commands
     ''' </summary>
-    Public InjectedCommands As String()
+    Public InjectedCommands As New List(Of String)
     ''' <summary>
     ''' All mod commands
     ''' </summary>
