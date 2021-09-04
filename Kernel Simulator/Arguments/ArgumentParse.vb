@@ -18,14 +18,11 @@
 
 Module ArgumentParse
 
-    'Variables
-    Public argcommands As String
-    Public argcmds() As String
-
     ''' <summary>
     ''' Parses specified arguments
     ''' </summary>
     Public Sub ParseArguments()
+        Dim argcommands As String
 
         'Check for the arguments written by the user
         Try
@@ -47,16 +44,16 @@ Module ArgumentParse
                         If EnteredArguments(i) = "cmdinject" Then
                             W(DoTranslation("Available commands: {0}") + vbNewLine +
                               DoTranslation("Write command: "), False, ColTypes.Input, String.Join(", ", Commands.Keys))
-                            argcmds = Console.ReadLine().Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
-                            argcommands = String.Join(", ", argcmds)
+                            InjectedCommands = Console.ReadLine().Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
+                            argcommands = String.Join(", ", InjectedCommands)
                             If argcommands <> "q" Then
                                 CommandFlag = True
                             Else
                                 W(DoTranslation("Command injection has been cancelled."), True, ColTypes.Neutral)
                             End If
                         Else
-                            argcmds = EnteredArguments(i).Substring(10).Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
-                            argcommands = String.Join(", ", argcmds)
+                            InjectedCommands = EnteredArguments(i).Substring(10).Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
+                            argcommands = String.Join(", ", InjectedCommands)
                             CommandFlag = True
                         End If
 

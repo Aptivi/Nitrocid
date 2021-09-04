@@ -42,6 +42,10 @@ Public Module Shell
     ''' </summary>
     Public ReadOnly PathLookupDelimiter As String = If(IsOnUnix(), ":", ";")
     ''' <summary>
+    ''' All injected commands
+    ''' </summary>
+    Public InjectedCommands As String()
+    ''' <summary>
     ''' All mod commands
     ''' </summary>
     Public modcmnds As New ArrayList
@@ -390,7 +394,7 @@ Public Module Shell
                 End If
             ElseIf ArgsMode = True And CommandFlag = True Then
                 CommandFlag = False
-                For Each cmd In argcmds
+                For Each cmd In InjectedCommands
                     GetLine(False, cmd, True)
                 Next
             End If
