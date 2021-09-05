@@ -22,7 +22,6 @@ Imports System.Threading
 Public Module SFTPGetCommand
 
     'SFTP Client and thread
-    Public ClientSFTP As SftpClient
     Public SFTPStartCommandThread As New Thread(AddressOf ExecuteCommand) With {.Name = "SFTP Command Thread"}
 
     ''' <summary>

@@ -22,7 +22,6 @@ Imports System.Threading
 Public Module FTPGetCommand
 
     'FTP Client and thread
-    Public ClientFTP As FtpClient
     Public FTPStartCommandThread As New Thread(AddressOf ExecuteCommand) With {.Name = "FTP Command Thread"}
 
     ''' <summary>

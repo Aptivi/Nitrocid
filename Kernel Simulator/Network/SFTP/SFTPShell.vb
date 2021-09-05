@@ -37,14 +37,15 @@ Public Module SFTPShell
     Public SFTPConnected As Boolean = False
     Private SFTPInitialized As Boolean = False
     Public sftpsite As String
-    Public SFTPCurrDirect As String 'Current Local Directory
-    Public SFTPCurrentRemoteDir As String 'Current Remote Directory
+    Public SFTPCurrDirect As String
+    Public SFTPCurrentRemoteDir As String
     Public SFTPUser As String
     Friend SFTPPass As String
     Private SFTPStrCmd As String
     Public sftpexit As Boolean = False
     Public SFTPModCommands As New ArrayList
     Public SFTPShellPromptStyle As String = ""
+    Public ClientSFTP As SftpClient
 
     ''' <summary>
     ''' Initializes the SFTP shell

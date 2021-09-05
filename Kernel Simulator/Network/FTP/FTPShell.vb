@@ -51,6 +51,7 @@ Public Module FTPShell
     Public ftpexit As Boolean
     Public FTPModCommands As New ArrayList
     Public FTPShellPromptStyle As String = ""
+    Public ClientFTP As FtpClient
 
     ''' <summary>
     ''' Initializes the FTP shell
