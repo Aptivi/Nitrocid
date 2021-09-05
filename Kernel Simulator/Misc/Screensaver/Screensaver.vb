@@ -150,7 +150,7 @@ Public Module Screensaver
                 SaverAutoReset.WaitOne()
             ElseIf CSvrdb.ContainsKey(saver) Then
                 'Only one custom screensaver can be used.
-                finalSaver = CSvrdb(saver)
+                finalSaver = CSvrdb(saver).Screensaver
                 Custom.RunWorkerAsync()
                 Wdbg("I", "Custom screensaver {0} started", saver)
                 Console.ReadKey()
