@@ -26,28 +26,12 @@ Public Module RSSGetCommand
 
     Sub RSSParseCommand(ByVal CommandText As String)
         Try
-            'Indicator if required arguments are provided
-            Dim RequiredArgumentsProvided As Boolean = True
-
-            'Get the index of the first space
-            Dim index As Integer = CommandText.IndexOf(" ")
-            If index = -1 Then index = CommandText.Length
-            Wdbg("I", "Index: {0}", index)
-
-            'Get the String Of arguments
-            Dim strArgs As String = CommandText.Substring(index)
-            Wdbg("I", "Prototype strArgs: {0}", strArgs)
-            If Not index = CommandText.Length Then strArgs = strArgs.Substring(1)
-            Wdbg("I", "Finished strArgs: {0}", strArgs)
-
-            'Separate between command and arguments specified
-            Dim Command As String = CommandText.Split(" ")(0)
-            Dim Arguments() As String = strArgs.SplitEncloseDoubleQuotes(" ")
-            If Arguments IsNot Nothing Then
-                RequiredArgumentsProvided = Arguments?.Length >= RSSCommands(Command).MinimumArguments
-            ElseIf RSSCommands(Command).ArgumentsRequired And Arguments Is Nothing Then
-                RequiredArgumentsProvided = False
-            End If
+            'Variables
+            Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(CommandText, ShellCommandType.RSSShell)
+            Dim Command As String = ArgumentInfo.Command
+            Dim Arguments() As String = ArgumentInfo.ArgumentsList
+            Dim strArgs As String = ArgumentInfo.ArgumentsText
+            Dim RequiredArgumentsProvided As Boolean = ArgumentInfo.RequiredArgumentsProvided
 
             'Try to parse command
             Select Case Command

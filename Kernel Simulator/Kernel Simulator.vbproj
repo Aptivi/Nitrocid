@@ -302,6 +302,7 @@
     </Compile>
     <Compile Include="Shell\HelpInfo.vb" />
     <Compile Include="Shell\HelpSystem.vb" />
+    <Compile Include="Shell\ProvidedCommandArgumentsInfo.vb" />
     <Compile Include="Shell\Shell.vb" />
     <Compile Include="TestShell\TestGetCommand.vb" />
     <Compile Include="TestShell\TestShell.vb" />

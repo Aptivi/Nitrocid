@@ -33,37 +33,11 @@ Module TestGetCommand
     Sub TParseCommand(ByVal requestedCommand As String)
         Try
             'Variables
-            Dim Command As String
-            Dim RequiredArgumentsProvided As Boolean = True
-
-            '1. Get the index of the first space (Used for step 3)
-            Dim index As Integer = requestedCommand.IndexOf(" ")
-            If index = -1 Then index = requestedCommand.Length
-            Wdbg("I", "Index: {0}", index)
-
-            '2. Split the requested command string into words
-            Dim words() As String = requestedCommand.Split({" "c})
-            For i As Integer = 0 To words.Length - 1
-                Wdbg("I", "Word {0}: {1}", i + 1, words(i))
-            Next
-            Command = words(0)
-
-            '3. Get the string of arguments
-            Dim strArgs As String = requestedCommand.Substring(index)
-            Wdbg("I", "Prototype strArgs: {0}", strArgs)
-            If Not index = requestedCommand.Length Then strArgs = strArgs.Substring(1)
-            Wdbg("I", "Finished strArgs: {0}", strArgs)
-
-            '4. Split the arguments with enclosed quotes and set the required boolean variable
-            Dim eqargs() As String = strArgs.SplitEncloseDoubleQuotes(" ")
-            If eqargs IsNot Nothing Then
-                RequiredArgumentsProvided = eqargs?.Length >= Test_Commands(Command).MinimumArguments
-            ElseIf Test_Commands(Command).ArgumentsRequired And eqargs Is Nothing Then
-                RequiredArgumentsProvided = False
-            End If
-
-            '4a. Debug: get all arguments from eqargs()
-            If eqargs IsNot Nothing Then Wdbg("I", "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
+            Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(requestedCommand, ShellCommandType.TestShell)
+            Dim Command As String = ArgumentInfo.Command
+            Dim eqargs() As String = ArgumentInfo.ArgumentsList
+            Dim strArgs As String = ArgumentInfo.ArgumentsText
+            Dim RequiredArgumentsProvided As Boolean = ArgumentInfo.RequiredArgumentsProvided
 
             '5. Check to see if a requested command is obsolete
             If Test_Commands(Command).Obsolete Then

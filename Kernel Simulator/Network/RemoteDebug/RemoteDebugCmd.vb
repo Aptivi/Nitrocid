@@ -35,19 +35,22 @@ Module RemoteDebugCmd
     ''' <param name="Address">An IP address</param>
     Sub ParseCmd(ByVal CmdString As String, ByVal SocketStreamWriter As StreamWriter, ByVal Address As String)
         EventManager.RaiseRemoteDebugExecuteCommand(Address, CmdString)
-        Dim CmdArgs As List(Of String) = CmdString.Split({" "c}, StringSplitOptions.RemoveEmptyEntries).ToList
-        Dim CmdName As String = CmdArgs(0)
-        CmdArgs.RemoveAt(0)
+        Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(CmdString, ShellCommandType.RemoteDebugShell)
+        Dim Command As String = ArgumentInfo.Command
+        Dim eqargs() As String = ArgumentInfo.ArgumentsList
+        Dim strArgs As String = ArgumentInfo.ArgumentsText
+        Dim RequiredArgumentsProvided As Boolean = ArgumentInfo.RequiredArgumentsProvided
+
         Try
-            Select Case CmdName
+            Select Case Command
                 Case "trace"
                     'Print stack trace command code
                     If dbgStackTraces.Count <> 0 Then
-                        If CmdArgs.Count <> 0 Then
+                        If eqargs.Length <> 0 Then
                             Try
-                                SocketStreamWriter.WriteLine(dbgStackTraces(CmdArgs(0)))
+                                SocketStreamWriter.WriteLine(dbgStackTraces(eqargs(0)))
                             Catch ex As Exception
-                                SocketStreamWriter.WriteLine(DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1."), CmdArgs(0), dbgStackTraces.Count)
+                                SocketStreamWriter.WriteLine(DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1."), eqargs(0), dbgStackTraces.Count)
                             End Try
                         Else
                             SocketStreamWriter.WriteLine(dbgStackTraces(0))
@@ -61,10 +64,10 @@ Module RemoteDebugCmd
                 Case "register"
                     'Register to remote debugger so we can set device name
                     If String.IsNullOrWhiteSpace(GetDeviceProperty(Address, DeviceProperty.Name)) Then
-                        If CmdArgs.Count <> 0 Then
-                            SetDeviceProperty(Address, DeviceProperty.Name, CmdArgs(0))
-                            dbgConns(dbgConns.ElementAt(DebugDevices.GetIndexOfKey(DebugDevices.GetKeyFromValue(Address))).Key) = CmdArgs(0)
-                            SocketStreamWriter.WriteLine(DoTranslation("Hi, {0}!").FormatString(CmdArgs(0)))
+                        If eqargs.Length <> 0 Then
+                            SetDeviceProperty(Address, DeviceProperty.Name, eqargs(0))
+                            dbgConns(dbgConns.ElementAt(DebugDevices.GetIndexOfKey(DebugDevices.GetKeyFromValue(Address))).Key) = eqargs(0)
+                            SocketStreamWriter.WriteLine(DoTranslation("Hi, {0}!").FormatString(eqargs(0)))
                         Else
                             SocketStreamWriter.WriteLine(DoTranslation("You need to write your name."))
                         End If
@@ -73,8 +76,8 @@ Module RemoteDebugCmd
                     End If
                 Case "help"
                     'Help command code
-                    If CmdArgs.Count <> 0 Then
-                        RDebugShowHelp(CmdArgs(0), SocketStreamWriter)
+                    If eqargs.Length <> 0 Then
+                        RDebugShowHelp(eqargs(0), SocketStreamWriter)
                     Else
                         RDebugShowHelp("", SocketStreamWriter)
                     End If
@@ -83,7 +86,7 @@ Module RemoteDebugCmd
                     DisconnectDbgDev(Address)
             End Select
         Catch ex As Exception
-            SocketStreamWriter.WriteLine(DoTranslation("Error executing remote debug command {0}: {1}"), CmdName, ex.Message)
+            SocketStreamWriter.WriteLine(DoTranslation("Error executing remote debug command {0}: {1}"), Command, ex.Message)
             EventManager.RaiseRemoteDebugCommandError(Address, CmdString, ex)
         End Try
     End Sub
