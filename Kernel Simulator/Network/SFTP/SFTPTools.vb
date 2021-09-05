@@ -26,7 +26,7 @@ Public Module SFTPTools
     ''' </summary>
     ''' <param name="address">An FTP server. You may specify it like "[address]" or "[address]:[port]"</param>
     Public Sub SFTPTryToConnect(ByVal address As String)
-        If connected = True Then
+        If FtpConnected = True Then
             W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Error)
         Else
             Try

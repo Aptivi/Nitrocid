@@ -36,7 +36,7 @@ Public Module PlaceParse
             End If
             If text.Contains("<ftpuser>") Then
                 Wdbg("I", "FTP username placeholder found.")
-                text = text.Replace("<ftpuser>", user)
+                text = text.Replace("<ftpuser>", FtpUser)
             End If
             If text.Contains("<ftpaddr>") Then
                 Wdbg("I", "FTP address placeholder found.")
@@ -44,15 +44,15 @@ Public Module PlaceParse
             End If
             If text.Contains("<currentftpdirectory>") Then
                 Wdbg("I", "FTP directory placeholder found.")
-                text = text.Replace("<currentftpdirectory>", currentremoteDir)
+                text = text.Replace("<currentftpdirectory>", FtpCurrentRemoteDir)
             End If
             If text.Contains("<currentftplocaldirectory>") Then
                 Wdbg("I", "FTP local directory placeholder found.")
-                text = text.Replace("<currentftplocaldirectory>", currDirect)
+                text = text.Replace("<currentftplocaldirectory>", FtpCurrentDirectory)
             End If
             If text.Contains("<currentftplocaldirectoryname>") Then
                 Wdbg("I", "FTP local directory name placeholder found.")
-                text = text.Replace("<currentftplocaldirectoryname>", New DirectoryInfo(currDirect).Name)
+                text = text.Replace("<currentftplocaldirectoryname>", New DirectoryInfo(FtpCurrentDirectory).Name)
             End If
             If text.Contains("<sftpuser>") Then
                 Wdbg("I", "SFTP username placeholder found.")

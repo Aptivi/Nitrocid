@@ -131,7 +131,7 @@ Public Module SFTPGetCommand
                         W(Entry, True, ColTypes.ListEntry)
                     Next
                 Case "quickconnect"
-                    If Not connected Then
+                    If Not FtpConnected Then
                         SFTPQuickConnect()
                     Else
                         W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Error)

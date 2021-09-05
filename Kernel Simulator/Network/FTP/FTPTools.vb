@@ -43,11 +43,11 @@ Public Module FTPTools
         W(DoTranslation("Password for {0}: "), False, ColTypes.Input, user)
 
         'Get input
-        pass = ReadLineNoInput("*")
+        FtpPass = ReadLineNoInput("*")
         Console.WriteLine()
 
         'Set up credentials
-        ClientFTP.Credentials = New NetworkCredential(user, pass)
+        ClientFTP.Credentials = New NetworkCredential(user, FtpPass)
 
         'Connect to FTP
         ConnectFTP()
@@ -58,7 +58,7 @@ Public Module FTPTools
     ''' </summary>
     ''' <param name="address">An FTP server. You may specify it like "[address]" or "[address]:[port]"</param>
     Public Sub TryToConnect(ByVal address As String)
-        If connected = True Then
+        If FtpConnected = True Then
             W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Error)
         Else
             Try
@@ -84,13 +84,13 @@ Public Module FTPTools
 
                 'Prompt for username
                 W(DoTranslation("Username for {0}: "), False, ColTypes.Input, address)
-                user = Console.ReadLine()
-                If user = "" Then
+                FtpUser = Console.ReadLine()
+                If FtpUser = "" Then
                     Wdbg("W", "User is not provided. Fallback to ""anonymous""")
-                    user = "anonymous"
+                    FtpUser = "anonymous"
                 End If
 
-                PromptForPassword(user)
+                PromptForPassword(FtpUser)
             Catch ex As Exception
                 Wdbg("W", "Error connecting to {0}: {1}", address, ex.Message)
                 WStkTrc(ex)
@@ -152,7 +152,7 @@ Public Module FTPTools
         'Show that it's connected
         W(DoTranslation("Connected to {0}"), True, ColTypes.Neutral, ClientFTP.Host)
         Wdbg("I", "Connected.")
-        connected = True
+        FtpConnected = True
 
         'If MOTD exists, show it
         If ClientFTP.FileExists("welcome.msg") Then
@@ -162,10 +162,10 @@ Public Module FTPTools
         End If
 
         'Prepare to print current FTP directory
-        currentremoteDir = ClientFTP.GetWorkingDirectory
-        Wdbg("I", "Working directory: {0}", currentremoteDir)
+        FtpCurrentRemoteDir = ClientFTP.GetWorkingDirectory
+        Wdbg("I", "Working directory: {0}", FtpCurrentRemoteDir)
         ftpsite = ClientFTP.Host
-        user = ClientFTP.Credentials.UserName
+        FtpUser = ClientFTP.Credentials.UserName
 
         'Write connection information to Speed Dial file if it doesn't exist there
         Dim SpeedDialEntries As Dictionary(Of String, JToken) = ListSpeedDialEntries(SpeedDialType.FTP)
@@ -176,7 +176,7 @@ Public Module FTPTools
         Else
             'Speed dial format is below:
             'Site,Port,Username,Encryption
-            AddEntryToSpeedDial(ftpsite, ClientFTP.Port, user, SpeedDialType.FTP, ClientFTP.EncryptionMode)
+            AddEntryToSpeedDial(ftpsite, ClientFTP.Port, FtpUser, SpeedDialType.FTP, ClientFTP.EncryptionMode)
         End If
     End Sub
 

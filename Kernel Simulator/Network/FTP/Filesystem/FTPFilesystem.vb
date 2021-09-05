@@ -29,7 +29,7 @@ Module FTPFilesystem
     ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
     ''' <exception cref="InvalidOperationException"></exception>
     Public Function FTPListRemote(ByVal Path As String) As List(Of String)
-        If connected Then
+        If FtpConnected Then
             Dim EntryBuilder As New StringBuilder
             Dim Entries As New List(Of String)
             Dim FileSize As Long
@@ -40,7 +40,7 @@ Module FTPFilesystem
                 If Path <> "" Then
                     Listing = ClientFTP.GetListing(Path, FtpListOption.DerefLinks)
                 Else
-                    Listing = ClientFTP.GetListing(currentremoteDir, FtpListOption.DerefLinks)
+                    Listing = ClientFTP.GetListing(FtpCurrentRemoteDir, FtpListOption.DerefLinks)
                 End If
                 For Each DirListFTP As FtpListItem In Listing
                     EntryBuilder.Append($"- {DirListFTP.Name}")
@@ -82,7 +82,7 @@ Module FTPFilesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
     Public Function FTPDeleteRemote(ByVal Target As String) As Boolean
-        If connected Then
+        If FtpConnected Then
             Wdbg("I", "Deleting {0}...", Target)
 
             'Delete a file or folder
@@ -114,12 +114,12 @@ Module FTPFilesystem
     ''' <exception cref="InvalidOperationException"></exception>
     ''' <exception cref="ArgumentNullException"></exception>
     Public Function FTPChangeRemoteDir(ByVal Directory As String) As Boolean
-        If connected = True Then
+        If FtpConnected = True Then
             If Directory <> "" Then
                 If ClientFTP.DirectoryExists(Directory) Then
                     'Directory exists, go to the new directory
                     ClientFTP.SetWorkingDirectory(Directory)
-                    currentremoteDir = ClientFTP.GetWorkingDirectory
+                    FtpCurrentRemoteDir = ClientFTP.GetWorkingDirectory
                     Return True
                 Else
                     'Directory doesn't exist, go to the old directory
@@ -137,7 +137,7 @@ Module FTPFilesystem
     Public Function FTPChangeLocalDir(ByVal Directory As String) As Boolean
         If Directory <> "" Then
             Dim targetDir As String
-            targetDir = $"{currDirect}/{Directory}"
+            targetDir = $"{FtpCurrentDirectory}/{Directory}"
 
 #If NTFSCorruptionFix Then
             ThrowOnInvalidPath(targetDir)
@@ -147,7 +147,7 @@ Module FTPFilesystem
             If IO.Directory.Exists(targetDir) Then
                 'Parse written directory
                 Dim parser As New IO.DirectoryInfo(targetDir)
-                currDirect = parser.FullName
+                FtpCurrentDirectory = parser.FullName
                 Return True
             Else
                 Throw New Exceptions.FTPFilesystemException(DoTranslation("Local directory {0} doesn't exist."), Directory)
@@ -166,7 +166,7 @@ Module FTPFilesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="InvalidOperationException"></exception>
     Public Function FTPMoveItem(ByVal Source As String, ByVal Target As String) As Boolean
-        If connected Then
+        If FtpConnected Then
             Dim Success As Boolean
 
             'Begin the moving process
@@ -195,7 +195,7 @@ Module FTPFilesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="InvalidOperationException"></exception>
     Public Function FTPCopyItem(ByVal Source As String, ByVal Target As String) As Boolean
-        If connected Then
+        If FtpConnected Then
             Dim Success As Boolean = True
             Dim Result As Object
 
@@ -247,7 +247,7 @@ Module FTPFilesystem
     ''' <param name="Chmod">Permissions in CHMOD format. See https://man7.org/linux/man-pages/man2/chmod.2.html chmod(2) for more info.</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function FTPChangePermissions(ByVal Target As String, ByVal Chmod As Integer) As Boolean
-        If connected Then
+        If FtpConnected Then
             Try
                 ClientFTP.Chmod(Target, Chmod)
                 Return True

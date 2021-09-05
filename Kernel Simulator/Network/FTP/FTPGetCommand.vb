@@ -62,7 +62,7 @@ Public Module FTPGetCommand
                     FTPChangeRemoteDir(eqargs(0))
                 Case "cp"
                     If RequiredArgumentsProvided Then
-                        If connected Then
+                        If FtpConnected Then
                             W(DoTranslation("Copying {0} to {1}..."), True, ColTypes.Neutral, eqargs(0), eqargs(1))
                             If FTPCopyItem(eqargs(0), eqargs(1)) Then
                                 W(vbNewLine + DoTranslation("Copied successfully"), True, ColTypes.Neutral)
@@ -76,16 +76,16 @@ Public Module FTPGetCommand
                         W(DoTranslation("Enter a source path and a destination path."), True, ColTypes.Error)
                     End If
                 Case "pwdl"
-                    W(DoTranslation("Local directory: {0}"), True, ColTypes.Neutral, currDirect)
+                    W(DoTranslation("Local directory: {0}"), True, ColTypes.Neutral, FtpCurrentDirectory)
                 Case "pwdr"
-                    If connected = True Then
-                        W(DoTranslation("Remote directory: {0}"), True, ColTypes.Neutral, currentremoteDir)
+                    If FtpConnected = True Then
+                        W(DoTranslation("Remote directory: {0}"), True, ColTypes.Neutral, FtpCurrentRemoteDir)
                     Else
                         W(DoTranslation("You must connect to server before getting current remote directory."), True, ColTypes.Error)
                     End If
                 Case "del"
                     If RequiredArgumentsProvided Then
-                        If connected = True Then
+                        If FtpConnected = True Then
                             'Print a message
                             W(DoTranslation("Deleting {0}..."), True, ColTypes.Neutral, eqargs(0))
 
@@ -106,17 +106,17 @@ Public Module FTPGetCommand
                         W(DoTranslation("Enter a file or folder to remove. You must have administrative permissions on your account to be able to remove."), True, ColTypes.Error)
                     End If
                 Case "disconnect"
-                    If connected = True Then
+                    If FtpConnected = True Then
                         'Set a connected flag to False
-                        connected = False
+                        FtpConnected = False
                         ClientFTP.Disconnect()
                         W(DoTranslation("Disconnected from {0}"), True, ColTypes.Neutral, ftpsite)
 
                         'Clean up everything
                         ftpsite = ""
-                        currentremoteDir = ""
-                        user = ""
-                        pass = ""
+                        FtpCurrentRemoteDir = ""
+                        FtpUser = ""
+                        FtpPass = ""
                     Else
                         W(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Error)
                     End If
@@ -166,7 +166,7 @@ Public Module FTPGetCommand
                     Next
                 Case "mv"
                     If RequiredArgumentsProvided Then
-                        If connected Then
+                        If FtpConnected Then
                             W(DoTranslation("Moving {0} to {1}..."), True, ColTypes.Neutral, eqargs(0), eqargs(1))
                             If FTPMoveItem(eqargs(0), eqargs(1)) Then
                                 W(vbNewLine + DoTranslation("Moved successfully"), True, ColTypes.Neutral)
@@ -180,14 +180,14 @@ Public Module FTPGetCommand
                         W(DoTranslation("Enter a source path and a destination path."), True, ColTypes.Error)
                     End If
                 Case "quickconnect"
-                    If Not connected Then
+                    If Not FtpConnected Then
                         QuickConnect()
                     Else
                         W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Error)
                     End If
                 Case "perm"
                     If RequiredArgumentsProvided Then
-                        If connected Then
+                        If FtpConnected Then
                             If FTPChangePermissions(eqargs(0), eqargs(1)) Then
                                 W(DoTranslation("Permissions set successfully for file") + " {0}", True, ColTypes.Neutral, eqargs(0))
                             Else

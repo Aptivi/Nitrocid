@@ -41,14 +41,14 @@ Public Module FTPTransfer
     ''' <param name="LocalFile">A name of the local file</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function FTPGetFile(ByVal File As String, ByVal LocalFile As String) As Boolean
-        If connected Then
+        If FtpConnected Then
             Try
                 'Show a message to download
                 EventManager.RaiseFTPPreDownload(File)
                 Wdbg("I", "Downloading file {0}...", File)
 
                 'Try to download 3 times
-                Dim LocalFilePath As String = NeutralizePath(LocalFile, currDirect)
+                Dim LocalFilePath As String = NeutralizePath(LocalFile, FtpCurrentDirectory)
                 Dim Result As FtpStatus = ClientFTP.DownloadFile(LocalFilePath, File, True, FtpVerify.Retry + FtpVerify.Throw, FileProgress)
 
                 'Show a message that it's downloaded
@@ -81,14 +81,14 @@ Public Module FTPTransfer
     ''' <param name="Folder">A remote folder</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function FTPGetFolder(ByVal Folder As String, ByVal LocalFolder As String) As Boolean
-        If connected Then
+        If FtpConnected Then
             Try
                 'Show a message to download
                 EventManager.RaiseFTPPreDownload(Folder)
                 Wdbg("I", "Downloading folder {0}...", Folder)
 
                 'Try to download folder
-                Dim LocalFolderPath As String = NeutralizePath(LocalFolder, currDirect)
+                Dim LocalFolderPath As String = NeutralizePath(LocalFolder, FtpCurrentDirectory)
                 Dim Results As List(Of FtpResult) = ClientFTP.DownloadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpLocalExists.Append, FtpVerify.Retry + FtpVerify.Throw, Nothing, MultipleProgress)
 
                 'Print download results to debugger
@@ -149,13 +149,13 @@ Public Module FTPTransfer
     ''' <param name="LocalFile">A name of the local file</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function FTPUploadFile(ByVal File As String, ByVal LocalFile As String) As Boolean
-        If connected Then
+        If FtpConnected Then
             'Show a message to download
             EventManager.RaiseFTPPreUpload(File)
             Wdbg("I", "Uploading file {0}...", File)
 
             'Try to upload
-            Dim LocalFilePath As String = NeutralizePath(LocalFile, currDirect)
+            Dim LocalFilePath As String = NeutralizePath(LocalFile, FtpCurrentDirectory)
             Dim Success As Boolean = ClientFTP.UploadFile(LocalFilePath, File, True, True, FtpVerify.Retry, FileProgress)
             Wdbg("I", "Uploaded file {0} with status {1}.", File, Success)
             EventManager.RaiseFTPPostUpload(File, Success)
@@ -182,13 +182,13 @@ Public Module FTPTransfer
     ''' <param name="LocalFolder"></param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function FTPUploadFolder(ByVal Folder As String, ByVal LocalFolder As String) As Boolean
-        If connected Then
+        If FtpConnected Then
             'Show a message to download
             EventManager.RaiseFTPPreUpload(Folder)
             Wdbg("I", "Uploading folder {0}...", Folder)
 
             'Try to upload
-            Dim LocalFolderPath As String = NeutralizePath(LocalFolder, currDirect)
+            Dim LocalFolderPath As String = NeutralizePath(LocalFolder, FtpCurrentDirectory)
             Dim Results As List(Of FtpResult) = ClientFTP.UploadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpRemoteExists.Append, FtpVerify.Retry, Nothing, MultipleProgress)
 
             'Print upload results to debugger
@@ -234,7 +234,7 @@ Public Module FTPTransfer
     ''' <param name="File">A text file.</param>
     ''' <returns>Contents of the file</returns>
     Public Function FTPDownloadToString(ByVal File As String) As String
-        If connected Then
+        If FtpConnected Then
             Try
                 'Show a message to download
                 EventManager.RaiseFTPPreDownload(File)

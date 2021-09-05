@@ -40,15 +40,15 @@ Public Module FTPShell
                                                                                 {"perm", New CommandInfo("perm", ShellCommandType.FTPShell, "Sets file permissions. This is supported only on FTP servers that run Unix.", "<file> <permnumber>", True, 2)},
                                                                                 {"type", New CommandInfo("type", ShellCommandType.FTPShell, "Sets the type for this session", "<a/b>", True, 1)},
                                                                                 {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.FTPShell, "Uses information from Speed Dial to connect to any network quickly", "", False, 0)}}
-    Public connected As Boolean = False
-    Private initialized As Boolean = False
+    Public FtpConnected As Boolean
+    Private FtpInitialized As Boolean
     Public ftpsite As String
-    Public currDirect As String 'Current Local Directory
-    Public currentremoteDir As String 'Current Remote Directory
-    Public user As String
-    Friend pass As String
-    Private strcmd As String
-    Public ftpexit As Boolean = False
+    Public FtpCurrentDirectory As String
+    Public FtpCurrentRemoteDir As String
+    Public FtpUser As String
+    Friend FtpPass As String
+    Private FtpCommand As String
+    Public ftpexit As Boolean
     Public FTPModCommands As New ArrayList
     Public FTPShellPromptStyle As String = ""
 
@@ -61,35 +61,35 @@ Public Module FTPShell
         While True
             Try
                 'Complete initialization
-                If initialized = False Then
-                    Wdbg("I", $"Completing initialization of FTP: {initialized}")
+                If FtpInitialized = False Then
+                    Wdbg("I", $"Completing initialization of FTP: {FtpInitialized}")
                     FtpTrace.AddListener(New FTPTracer)
                     FtpTrace.LogUserName = FTPLoggerUsername
                     FtpTrace.LogPassword = False 'Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
                     FtpTrace.LogIP = FTPLoggerIP
-                    currDirect = paths("Home")
+                    FtpCurrentDirectory = paths("Home")
                     EventManager.RaiseFTPShellInitialized()
 
                     'This is the workaround for a bug in .NET Framework regarding Console.CancelKeyPress event. More info can be found below:
                     'https://stackoverflow.com/a/22717063/6688914
                     AddHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-                    initialized = True
+                    FtpInitialized = True
                 End If
 
                 'Check if the shell is going to exit
                 If ftpexit = True Then
                     Wdbg("W", "Exiting shell...")
-                    connected = False
+                    FtpConnected = False
                     ClientFTP?.Disconnect()
                     ftpsite = ""
-                    currDirect = ""
-                    currentremoteDir = ""
-                    user = ""
-                    pass = ""
-                    strcmd = ""
+                    FtpCurrentDirectory = ""
+                    FtpCurrentRemoteDir = ""
+                    FtpUser = ""
+                    FtpPass = ""
+                    FtpCommand = ""
                     ftpexit = False
-                    initialized = False
+                    FtpInitialized = False
                     AddHandler Console.CancelKeyPress, AddressOf CancelCommand
                     RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
                     Exit Sub
@@ -101,17 +101,17 @@ Public Module FTPShell
                 End If
                 If Not Connects Then
                     Wdbg("I", "Preparing prompt...")
-                    If connected Then
+                    If FtpConnected Then
                         Wdbg("I", "FTPShellPromptStyle = {0}", FTPShellPromptStyle)
                         If FTPShellPromptStyle = "" Then
-                            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, user) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, ftpsite) : W("]{0}> ", False, ColTypes.Gray, currentremoteDir)
+                            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, FtpUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, ftpsite) : W("]{0}> ", False, ColTypes.Gray, FtpCurrentRemoteDir)
                         Else
                             Dim ParsedPromptStyle As String = ProbePlaces(FTPShellPromptStyle)
                             ParsedPromptStyle.ConvertVTSequences
                             W(ParsedPromptStyle, False, ColTypes.Gray)
                         End If
                     Else
-                        W("{0}> ", False, ColTypes.Gray, currDirect)
+                        W("{0}> ", False, ColTypes.Gray, FtpCurrentDirectory)
                     End If
                 End If
 
@@ -124,22 +124,22 @@ Public Module FTPShell
                 'Try to connect if IP address is specified.
                 If Connects Then
                     Wdbg("I", $"Currently connecting to {Address} by ""ftp (address)""...")
-                    strcmd = $"connect {Address}"
+                    FtpCommand = $"connect {Address}"
                     Connects = False
                 Else
                     Wdbg("I", "Normal shell")
-                    strcmd = Console.ReadLine()
+                    FtpCommand = Console.ReadLine()
                 End If
-                EventManager.RaiseFTPPreExecuteCommand(strcmd)
+                EventManager.RaiseFTPPreExecuteCommand(FtpCommand)
 
                 'Parse command
-                If Not (strcmd = Nothing Or strcmd?.StartsWithAnyOf({" ", "#"})) Then
+                If Not (FtpCommand = Nothing Or FtpCommand?.StartsWithAnyOf({" ", "#"})) Then
                     FTPGetLine()
-                    EventManager.RaiseFTPPostExecuteCommand(strcmd)
+                    EventManager.RaiseFTPPostExecuteCommand(FtpCommand)
                 End If
 
                 'This is to fix race condition between FTP shell initialization and starting the event handler thread
-                If strcmd Is Nothing Then
+                If FtpCommand Is Nothing Then
                     Thread.Sleep(30)
                 End If
             Catch ex As Exception
@@ -153,22 +153,22 @@ Public Module FTPShell
     ''' Parses a command line from FTP shell
     ''' </summary>
     Public Sub FTPGetLine()
-        Dim words As String() = strcmd.SplitEncloseDoubleQuotes(" ")
+        Dim words As String() = FtpCommand.SplitEncloseDoubleQuotes(" ")
         Wdbg("I", $"Is the command found? {FTPCommands.ContainsKey(words(0))}")
         If FTPCommands.ContainsKey(words(0)) Then
             Wdbg("I", "Command found.")
             FTPStartCommandThread = New Thread(AddressOf FTPGetCommand.ExecuteCommand) With {.Name = "FTP Command Thread"}
-            FTPStartCommandThread.Start(strcmd)
+            FTPStartCommandThread.Start(FtpCommand)
             FTPStartCommandThread.Join()
         ElseIf FTPModCommands.Contains(words(0)) Then
             Wdbg("I", "Mod command found.")
-            ExecuteModCommand(strcmd)
+            ExecuteModCommand(FtpCommand)
         ElseIf FTPShellAliases.Keys.Contains(words(0)) Then
             Wdbg("I", "FTP shell alias command found.")
-            strcmd = strcmd.Replace($"""{words(0)}""", words(0))
-            ExecuteFTPAlias(strcmd)
-        ElseIf Not strcmd.StartsWith(" ") Then
-            Wdbg("E", "Command {0} not found.", strcmd)
+            FtpCommand = FtpCommand.Replace($"""{words(0)}""", words(0))
+            ExecuteFTPAlias(FtpCommand)
+        ElseIf Not FtpCommand.StartsWith(" ") Then
+            Wdbg("E", "Command {0} not found.", FtpCommand)
             W(DoTranslation("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell."), True, ColTypes.Error, words(0))
         End If
     End Sub
