@@ -155,7 +155,7 @@ Public Module FTPGetCommand
                     If eqargs?.Length > 0 And eqargs IsNot Nothing Then
                         List(eqargs(0))
                     Else
-                        List(CurrDir)
+                        List(FtpCurrentDirectory)
                     End If
                 Case "lsr"
                     Dim Entries As List(Of String) = FTPListRemote(If(eqargs IsNot Nothing, eqargs(0), ""))

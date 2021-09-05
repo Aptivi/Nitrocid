@@ -121,7 +121,7 @@ Public Module SFTPGetCommand
                     If eqargs?.Length > 0 And eqargs IsNot Nothing Then
                         List(eqargs(0))
                     Else
-                        List(CurrDir)
+                        List(SFTPCurrDirect)
                     End If
                 Case "lsr"
                     Dim Entries As List(Of String) = SFTPListRemote(If(eqargs IsNot Nothing, eqargs(0), ""))
