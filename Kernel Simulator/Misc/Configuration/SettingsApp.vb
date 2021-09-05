@@ -243,7 +243,7 @@ Public Module SettingsApp
 
                     'Populate custom screensavers
                     For Each CustomSaver As String In CSvrdb.Keys
-                        If CSvrdb(CustomSaver).SaverSettings?.Count >= 1 Then
+                        If CSvrdb(CustomSaver).Screensaver.SaverSettings?.Count >= 1 Then
                             ConfigurableScreensavers.Add(CustomSaver)
                             W("{0}) {1}...", True, ColTypes.Option, MaxOptions, CustomSaver)
                             MaxOptions += 1
@@ -433,12 +433,12 @@ Public Module SettingsApp
                     Dim SaverIndex As Integer = SectionParameters(0) - BuiltinSavers - 1
                     Dim Configurables As List(Of String) = SectionParameters(1)
                     Dim OptionNumber As Integer = 1
-                    If CSvrdb(Configurables(SaverIndex)).SaverSettings IsNot Nothing Then
-                        MaxOptions = CSvrdb(Configurables(SaverIndex)).SaverSettings.Count
+                    If CSvrdb(Configurables(SaverIndex)).Screensaver.SaverSettings IsNot Nothing Then
+                        MaxOptions = CSvrdb(Configurables(SaverIndex)).Screensaver.SaverSettings.Count
                         W("*) " + DoTranslation("Screensaver Settings...") + " > {0}" + vbNewLine, True, ColTypes.Neutral, Configurables(SaverIndex))
                         W(DoTranslation("This section lists screensaver settings for") + " {0}." + vbNewLine, True, ColTypes.Neutral, Configurables(SaverIndex))
-                        For Each Setting As String In CSvrdb(Configurables(SaverIndex)).SaverSettings.Keys
-                            W("{0}) {1} [{2}]", True, ColTypes.Option, OptionNumber, Setting, CSvrdb(Configurables(SaverIndex)).SaverSettings(Setting))
+                        For Each Setting As String In CSvrdb(Configurables(SaverIndex)).Screensaver.SaverSettings.Keys
+                            W("{0}) {1} [{2}]", True, ColTypes.Option, OptionNumber, Setting, CSvrdb(Configurables(SaverIndex)).Screensaver.SaverSettings(Setting))
                             OptionNumber += 1
                         Next
                     End If
@@ -1498,11 +1498,11 @@ Public Module SettingsApp
                     End Select
                 Case "7." + $"{If(SectionParts.Length > 1, SectionParts(1), $"{BuiltinSavers + 1}")}" 'Custom saver
                     Dim SaverIndex As Integer = SectionParts(1) - BuiltinSavers - 1
-                    Dim SaverSettings As Dictionary(Of String, Object) = CSvrdb.Values(SaverIndex).SaverSettings
+                    Dim SaverSettings As Dictionary(Of String, Object) = CSvrdb.Values(SaverIndex).Screensaver.SaverSettings
                     Dim KeyIndex As Integer = KeyNumber - 1
                     If KeyIndex <= SaverSettings.Count - 1 Then
                         KeyType = SettingsKeyType.SVariant
-                        KeyVar = CSvrdb.Values(SaverIndex).SaverSettings.Keys(KeyIndex)
+                        KeyVar = CSvrdb.Values(SaverIndex).Screensaver.SaverSettings.Keys(KeyIndex)
                         W("*) " + DoTranslation("Screensaver Settings...") + " > {0} > {1}" + vbNewLine, True, ColTypes.Neutral, CSvrdb.Keys(SaverIndex), SaverSettings.Keys(KeyIndex))
                         W(DoTranslation("Consult the screensaver manual or source code for information."), True, ColTypes.Neutral)
                     Else
@@ -1705,7 +1705,7 @@ Public Module SettingsApp
             ElseIf SectionParts.Length > 1 Then
                 If Section = "7." + SectionParts(1) And SectionParts(1) > BuiltinSavers And KeyType = SettingsKeyType.SVariant Then
                     Dim SaverIndex As Integer = SectionParts(1) - BuiltinSavers - 1
-                    Dim SaverSettings As Dictionary(Of String, Object) = CSvrdb.Values(SaverIndex).SaverSettings
+                    Dim SaverSettings As Dictionary(Of String, Object) = CSvrdb.Values(SaverIndex).Screensaver.SaverSettings
                     SaverSettings(KeyVar) = VariantValue
                     Wdbg("I", "User requested exit. Returning...")
                     KeyFinished = True

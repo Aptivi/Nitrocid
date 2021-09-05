@@ -21,7 +21,6 @@ Imports System.IO
 Imports System.Reflection
 Imports Microsoft.CSharp
 
-'TODO: The entire mod load/stop/reload logic is messy. It needs to be reprogrammed to allow having these logics with the two versions: One mod, or all
 Public Module ModParser
 
     ''' <summary>
@@ -196,7 +195,7 @@ NextEntry:
     ''' </summary>
     ''' <param name="modFile">Mod file name with extension. It should end with .vb or .cs</param>
     Sub ParseMod(ByVal modFile As String)
-        modFile = modFile.Replace(modPath, "")
+        modFile = Path.GetFileName(modFile)
         If modFile.EndsWith(".ss.vb") Then
             'Mod is a screensaver that has a language of VB.NET
             Wdbg("W", "Mod file {0} is a screensaver. Language: VB.NET", modFile)
@@ -243,8 +242,9 @@ NextEntry:
     ''' <param name="script">Instance of script</param>
     ''' <param name="modFile">Mod file name with extension. It should end with .vb, .ss.vb, .ss.cs, or .cs</param>
     Sub FinalizeMods(ByVal script As IScript, ByVal modFile As String)
-        Dim ModParts As New Dictionary(Of String, IScript)
+        Dim ModParts As New Dictionary(Of String, PartInfo)
         Dim ModInstance As ModInfo
+        Dim PartInstance As PartInfo
 
         'Try to finalize mod
         If script IsNot Nothing Then
@@ -291,22 +291,26 @@ NextEntry:
                     Wdbg("I", "Exists. Adding mod part {0}...", script.ModPart)
                     If Not scripts(ModName).ModParts.ContainsKey(script.ModPart) Then
                         Wdbg("I", "No conflict with {0}. Adding as is...", script.ModPart)
-                        scripts(ModName).ModParts.Add(script.ModPart, script)
+                        PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, modPath), script)
+                        scripts(ModName).ModParts.Add(script.ModPart, PartInstance)
                     Else
                         Wdbg("W", "There is a conflict with {0}. Appending item number...", script.ModPart)
                         script.ModPart += CStr(scripts(ModName).ModParts.Count)
-                        scripts(ModName).ModParts.Add(script.ModPart, script)
+                        PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, modPath), script)
+                        scripts(ModName).ModParts.Add(script.ModPart, PartInstance)
                     End If
                 Else
                     'The mod wasn't existent. Add mod part to new entry of mod.
                     Wdbg("I", "Adding mod with mod part {0}...", script.ModPart)
                     If Not ModParts.ContainsKey(script.ModPart) Then
                         Wdbg("I", "No conflict with {0}. Adding as is...", script.ModPart)
-                        ModParts.Add(script.ModPart, script)
+                        PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, modPath), script)
+                        ModParts.Add(script.ModPart, PartInstance)
                     Else
                         Wdbg("W", "There is a conflict with {0}. Appending item number...", script.ModPart)
                         script.ModPart += CStr(scripts.Count)
-                        ModParts.Add(script.ModPart, script)
+                        PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, modPath), script)
+                        ModParts.Add(script.ModPart, PartInstance)
                     End If
                     ModInstance = New ModInfo(ModName, modFile, NeutralizePath(modFile, modPath), ModParts, script.Version)
                     scripts.Add(ModName, ModInstance)

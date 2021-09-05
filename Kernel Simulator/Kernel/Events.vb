@@ -145,7 +145,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondStartKernel() Handles Me.KernelStarted
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event KernelStarted()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("KernelStarted")
             Next
@@ -156,7 +157,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPreLogin() Handles Me.PreLogin
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PreLogin()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PreLogin")
             Next
@@ -167,7 +169,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPostLogin(ByVal Username As String) Handles Me.PostLogin
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PostLogin()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PostLogin", Username)
             Next
@@ -178,7 +181,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondLoginError(ByVal Username As String, ByVal Reason As String) Handles Me.LoginError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event LoginError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("LoginError", Username, Reason)
             Next
@@ -189,7 +193,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondShellInitialized() Handles Me.ShellInitialized
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ShellInitialized()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ShellInitialized")
             Next
@@ -200,7 +205,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPreExecuteCommand(ByVal Command As String) Handles Me.PreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PreExecuteCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PreExecuteCommand", Command)
             Next
@@ -211,7 +217,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPostExecuteCommand(ByVal Command As String) Handles Me.PostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PostExecuteCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PostExecuteCommand", Command)
             Next
@@ -222,7 +229,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondKernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal Variables() As Object) Handles Me.KernelError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event KernelError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("KernelError", ErrorType, Reboot, RebootTime, Description, Exc, Variables)
             Next
@@ -233,7 +241,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondContKernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal Variables() As Object) Handles Me.ContKernelError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ContKernelError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ContKernelError", ErrorType, Reboot, RebootTime, Description, Exc, Variables)
             Next
@@ -244,7 +253,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPreShutdown() Handles Me.PreShutdown
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PreShutdown()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PreShutdown")
             Next
@@ -255,7 +265,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPostShutdown() Handles Me.PostShutdown
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PostShutdown()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PostShutdown")
             Next
@@ -266,7 +277,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPreReboot() Handles Me.PreReboot
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PreReboot()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PreReboot")
             Next
@@ -277,7 +289,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPostReboot() Handles Me.PostReboot
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PostReboot()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PostReboot")
             Next
@@ -288,7 +301,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPreShowScreensaver(ByVal Screensaver As String) Handles Me.PreShowScreensaver
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PreShowScreensaver()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PreShowScreensaver", Screensaver)
             Next
@@ -299,7 +313,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPostShowScreensaver(ByVal Screensaver As String) Handles Me.PostShowScreensaver
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PostShowScreensaver()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PostShowScreensaver", Screensaver)
             Next
@@ -310,7 +325,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPreUnlock(ByVal Screensaver As String) Handles Me.PreUnlock
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PreUnlock()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PreUnlock", Screensaver)
             Next
@@ -321,7 +337,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPostUnlock(ByVal Screensaver As String) Handles Me.PostUnlock
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PostUnlock()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PostUnlock", Screensaver)
             Next
@@ -332,7 +349,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.CommandError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event CommandError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("CommandError", Command, Exception)
             Next
@@ -343,7 +361,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPreReloadConfig() Handles Me.PreReloadConfig
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PreReloadConfig()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PreReloadConfig")
             Next
@@ -354,7 +373,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPostReloadConfig() Handles Me.PostReloadConfig
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PostReloadConfig()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PostReloadConfig")
             Next
@@ -365,7 +385,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPlaceholderParsing(ByVal Target As String) Handles Me.PlaceholderParsing
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PlaceholderParsing()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PlaceholderParsing", Target)
             Next
@@ -376,7 +397,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPlaceholderParsed(ByVal Target As String) Handles Me.PlaceholderParsed
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PlaceholderParsed()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PlaceholderParsed", Target)
             Next
@@ -387,7 +409,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondGarbageCollected() Handles Me.GarbageCollected
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event GarbageCollected()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("GarbageCollected")
             Next
@@ -398,7 +421,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondFTPShellInitialized() Handles Me.FTPShellInitialized
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FTPShellInitialized()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("FTPShellInitialized")
             Next
@@ -409,7 +433,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondFTPPreExecuteCommand(ByVal Command As String) Handles Me.FTPPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("FTPPreExecuteCommand", Command)
             Next
@@ -420,7 +445,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondFTPPostExecuteCommand(ByVal Command As String) Handles Me.FTPPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("FTPPostExecuteCommand", Command)
             Next
@@ -431,7 +457,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondFTPCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.FTPCommandError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FTPCommandError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("FTPCommandError", Command, Exception)
             Next
@@ -442,7 +469,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondFTPPreDownload(ByVal File As String) Handles Me.FTPPreDownload
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPreDownload()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("FTPPreDownload", File)
             Next
@@ -453,7 +481,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondFTPPostDownload(ByVal File As String, ByVal Success As Boolean) Handles Me.FTPPostDownload
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPostDownload()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("FTPPostDownload", File, Success)
             Next
@@ -464,7 +493,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondFTPPreUpload(ByVal File As String) Handles Me.FTPPreUpload
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPreUpload()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("FTPPreUpload", File)
             Next
@@ -475,7 +505,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondFTPPostUpload(ByVal File As String, ByVal Success As Boolean) Handles Me.FTPPostUpload
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FTPPostUpload()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("FTPPostUpload", File, Success)
             Next
@@ -486,7 +517,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondIMAPShellInitialized() Handles Me.IMAPShellInitialized
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event IMAPShellInitialized()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("IMAPShellInitialized")
             Next
@@ -497,7 +529,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondIMAPPreExecuteCommand(ByVal Command As String) Handles Me.IMAPPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event IMAPPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("IMAPPreExecuteCommand", Command)
             Next
@@ -508,7 +541,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondIMAPPostExecuteCommand(ByVal Command As String) Handles Me.IMAPPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event IMAPPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("IMAPPostExecuteCommand", Command)
             Next
@@ -519,7 +553,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondIMAPCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.IMAPCommandError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event IMAPCommandError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("IMAPCommandError", Command, Exception)
             Next
@@ -530,7 +565,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondRemoteDebugConnectionAccepted(ByVal IP As String) Handles Me.RemoteDebugConnectionAccepted
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RemoteDebugConnectionAccepted()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("RemoteDebugConnectionAccepted", IP)
             Next
@@ -541,7 +577,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondRemoteDebugConnectionDisconnected(ByVal IP As String) Handles Me.RemoteDebugConnectionDisconnected
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RemoteDebugConnectionDisconnected()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("RemoteDebugConnectionDisconnected", IP)
             Next
@@ -552,7 +589,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondRemoteDebugExecuteCommand(ByVal IP As String, ByVal Command As String) Handles Me.RemoteDebugExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RemoteDebugExecuteCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("RemoteDebugExecuteCommand", IP, Command)
             Next
@@ -563,7 +601,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondRemoteDebugCommandError(ByVal IP As String, ByVal Command As String, ByVal Exception As Exception) Handles Me.RemoteDebugCommandError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RemoteDebugCommandError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("RemoteDebugCommandError", IP, Command, Exception)
             Next
@@ -574,7 +613,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondRPCCommandSent(ByVal Command As String) Handles Me.RPCCommandSent
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RPCCommandSent()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("RPCCommandSent", Command)
             Next
@@ -585,7 +625,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondRPCCommandReceived(ByVal Command As String) Handles Me.RPCCommandReceived
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RPCCommandReceived()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("RPCCommandReceived", Command)
             Next
@@ -596,7 +637,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondRPCCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.RPCCommandError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RPCCommandError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("RPCCommandError", Command, Exception)
             Next
@@ -607,7 +649,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondRSSShellInitialized(ByVal FeedUrl As String) Handles Me.RSSShellInitialized
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RSSShellInitialized()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("RSSShellInitialized", FeedUrl)
             Next
@@ -618,7 +661,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondRSSPreExecuteCommand(ByVal FeedUrl As String, ByVal Command As String) Handles Me.RSSPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RSSPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("RSSPreExecuteCommand", FeedUrl, Command)
             Next
@@ -629,7 +673,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondRSSPostExecuteCommand(ByVal FeedUrl As String, ByVal Command As String) Handles Me.RSSPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RSSPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("RSSPostExecuteCommand", FeedUrl, Command)
             Next
@@ -640,7 +685,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondRSSCommandError(ByVal FeedUrl As String, ByVal Command As String, ByVal Exception As Exception) Handles Me.RSSCommandError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event RSSCommandError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("RSSCommandError", FeedUrl, Command, Exception)
             Next
@@ -651,7 +697,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondSFTPShellInitialized() Handles Me.SFTPShellInitialized
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPShellInitialized()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("SFTPShellInitialized")
             Next
@@ -662,7 +709,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondSFTPPreExecuteCommand(ByVal Command As String) Handles Me.SFTPPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("SFTPPreExecuteCommand", Command)
             Next
@@ -673,7 +721,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondSFTPPostExecuteCommand(ByVal Command As String) Handles Me.SFTPPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("SFTPPostExecuteCommand", Command)
             Next
@@ -684,7 +733,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondSFTPCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.SFTPCommandError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPCommandError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("SFTPCommandError", Command, Exception)
             Next
@@ -695,7 +745,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondSFTPPreDownload(ByVal File As String) Handles Me.SFTPPreDownload
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPPreDownload()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("SFTPPreDownload", File)
             Next
@@ -706,7 +757,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondSFTPPostDownload(ByVal File As String) Handles Me.SFTPPostDownload
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPPostDownload()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("SFTPPostDownload", File)
             Next
@@ -717,7 +769,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondSFTPDownloadError(ByVal File As String, ByVal Exception As Exception) Handles Me.SFTPDownloadError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPDownloadError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("SFTPDownloadError", File, Exception)
             Next
@@ -728,7 +781,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondSFTPPreUpload(ByVal File As String) Handles Me.SFTPPreUpload
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPPreUpload()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("SFTPPreUpload", File)
             Next
@@ -739,7 +793,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondSFTPPostUpload(ByVal File As String) Handles Me.SFTPPostUpload
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPPostUpload()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("SFTPPostUpload", File)
             Next
@@ -750,7 +805,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondSFTPUploadError(ByVal File As String, ByVal Exception As Exception) Handles Me.SFTPUploadError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SFTPUploadError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("SFTPUploadError", File, Exception)
             Next
@@ -761,7 +817,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondSSHConnected(ByVal Target As String) Handles Me.SSHConnected
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SSHConnected()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("SSHConnected", Target)
             Next
@@ -772,7 +829,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondSSHDisconnected() Handles Me.SSHDisconnected
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SSHDisconnected()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("SSHDisconnected")
             Next
@@ -783,7 +841,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondSSHPreExecuteCommand(ByVal Target As String, ByVal Command As String) Handles Me.SSHPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SSHPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("SSHPreExecuteCommand", Target, Command)
             Next
@@ -794,7 +853,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondSSHPostExecuteCommand(ByVal Target As String, ByVal Command As String) Handles Me.SSHPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SSHPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("SSHPostExecuteCommand", Target, Command)
             Next
@@ -805,7 +865,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondSSHCommandError(ByVal Target As String, ByVal Command As String, ByVal Exception As Exception) Handles Me.SSHCommandError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SSHCommandError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("SSHCommandError", Target, Command, Exception)
             Next
@@ -816,7 +877,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondSSHError(ByVal Exception As Exception) Handles Me.SSHError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event SSHError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("SSHError", Exception)
             Next
@@ -827,7 +889,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondUESHPreExecute(ByVal Command As String) Handles Me.UESHPreExecute
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event UESHPreExecute()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("UESHPreExecute", Command)
             Next
@@ -838,7 +901,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondUESHPostExecute(ByVal Command As String) Handles Me.UESHPostExecute
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event UESHPostExecute()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("UESHPostExecute", Command)
             Next
@@ -849,7 +913,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondUESHError(ByVal Command As String, ByVal Exception As Exception) Handles Me.UESHError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event UESHError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("UESHError", Command, Exception)
             Next
@@ -860,7 +925,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondTextShellInitialized() Handles Me.TextShellInitialized
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event TextShellInitialized()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("TextShellInitialized")
             Next
@@ -871,7 +937,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondTextPreExecuteCommand(ByVal Command As String) Handles Me.TextPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event TextPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("TextPreExecuteCommand", Command)
             Next
@@ -882,7 +949,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondTextPostExecuteCommand(ByVal Command As String) Handles Me.TextPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event TextPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("TextPostExecuteCommand", Command)
             Next
@@ -893,7 +961,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondTextCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.TextCommandError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event TextCommandError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("TextCommandError", Command, Exception)
             Next
@@ -904,7 +973,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondNotificationSent(ByVal Notification As Notification) Handles Me.NotificationSent
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event NotificationSent()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("NotificationSent", Notification)
             Next
@@ -915,7 +985,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondNotificationsSent(ByVal Notifications As List(Of Notification)) Handles Me.NotificationsSent
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event NotificationsSent()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("NotificationsSent", Notifications)
             Next
@@ -926,7 +997,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondNotificationReceived(ByVal Notification As Notification) Handles Me.NotificationReceived
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event NotificationReceived()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("NotificationReceived", Notification)
             Next
@@ -937,7 +1009,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondNotificationsReceived(ByVal Notifications As List(Of Notification)) Handles Me.NotificationsReceived
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event NotificationsReceived()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("NotificationsReceived", Notifications)
             Next
@@ -948,7 +1021,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondNotificationDismissed() Handles Me.NotificationDismissed
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event NotificationDismissed()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("NotificationDismissed")
             Next
@@ -959,7 +1033,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondConfigSaved() Handles Me.ConfigSaved
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ConfigSaved()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ConfigSaved")
             Next
@@ -970,7 +1045,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondConfigSaveError(ByVal Exception As Exception) Handles Me.ConfigSaveError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ConfigSaveError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ConfigSaveError", Exception)
             Next
@@ -981,7 +1057,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondConfigRead() Handles Me.ConfigRead
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ConfigRead()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ConfigRead")
             Next
@@ -992,7 +1069,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondConfigReadError(ByVal Exception As Exception) Handles Me.ConfigReadError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ConfigReadError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ConfigReadError", Exception)
             Next
@@ -1003,7 +1081,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPreExecuteModCommand(ByVal Command As String) Handles Me.PreExecuteModCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PreExecuteModCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PreExecuteModCommand", Command)
             Next
@@ -1014,7 +1093,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondPostExecuteModCommand(ByVal Command As String) Handles Me.PostExecuteModCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event PostExecuteModCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("PostExecuteModCommand", Command)
             Next
@@ -1025,7 +1105,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondModParsed(ByVal ModFileName As String) Handles Me.ModParsed
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ModParsed()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ModParsed", ModFileName)
             Next
@@ -1036,7 +1117,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondModParseError(ByVal ModFileName As String) Handles Me.ModParseError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ModParseError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ModParseError", ModFileName)
             Next
@@ -1047,7 +1129,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondModFinalized(ByVal ModFileName As String) Handles Me.ModFinalized
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ModFinalized()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ModFinalized", ModFileName)
             Next
@@ -1058,7 +1141,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondModFinalizationFailed(ByVal ModFileName As String, ByVal Reason As String) Handles Me.ModFinalizationFailed
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ModFinalizationFailed()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ModFinalizationFailed", ModFileName, Reason)
             Next
@@ -1069,7 +1153,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondUserAdded(ByVal Username As String) Handles Me.UserAdded
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event UserAdded()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("UserAdded", Username)
             Next
@@ -1080,7 +1165,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondUserRemoved(ByVal Username As String) Handles Me.UserRemoved
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event UserRemoved()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("UserRemoved", Username)
             Next
@@ -1091,7 +1177,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondUsernameChanged(ByVal OldUsername As String, ByVal NewUsername As String) Handles Me.UsernameChanged
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event UsernameChanged()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("UsernameChanged", OldUsername, NewUsername)
             Next
@@ -1102,7 +1189,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondUserPasswordChanged(ByVal Username As String) Handles Me.UserPasswordChanged
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event UserPasswordChanged()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("UserPasswordChanged", Username)
             Next
@@ -1113,7 +1201,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondHardwareProbing() Handles Me.HardwareProbing
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event HardwareProbing()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("HardwareProbing")
             Next
@@ -1124,7 +1213,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondHardwareProbed() Handles Me.HardwareProbed
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event HardwareProbed()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("HardwareProbed")
             Next
@@ -1135,7 +1225,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondCurrentDirectoryChanged() Handles Me.CurrentDirectoryChanged
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event CurrentDirectoryChanged()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("CurrentDirectoryChanged")
             Next
@@ -1146,7 +1237,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondFileCreated(ByVal File As String) Handles Me.FileCreated
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FileCreated()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("FileCreated", File)
             Next
@@ -1157,7 +1249,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondDirectoryCreated(ByVal Directory As String) Handles Me.DirectoryCreated
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event DirectoryCreated()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("DirectoryCreated", Directory)
             Next
@@ -1168,7 +1261,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondFileCopied(ByVal Source As String, ByVal Destination As String) Handles Me.FileCopied
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FileCopied()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("FileCopied", Source, Destination)
             Next
@@ -1179,7 +1273,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondDirectoryCopied(ByVal Source As String, ByVal Destination As String) Handles Me.DirectoryCopied
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event DirectoryCopied()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("DirectoryCopied", Source, Destination)
             Next
@@ -1190,7 +1285,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondFileMoved(ByVal Source As String, ByVal Destination As String) Handles Me.FileMoved
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FileMoved()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("FileMoved", Source, Destination)
             Next
@@ -1201,7 +1297,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondDirectoryMoved(ByVal Source As String, ByVal Destination As String) Handles Me.DirectoryMoved
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event DirectoryMoved()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("DirectoryMoved", Source, Destination)
             Next
@@ -1212,7 +1309,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondFileRemoved(ByVal File As String) Handles Me.FileRemoved
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FileRemoved()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("FileRemoved", File)
             Next
@@ -1223,7 +1321,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondDirectoryRemoved(ByVal Directory As String) Handles Me.DirectoryRemoved
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event DirectoryRemoved()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("DirectoryRemoved", Directory)
             Next
@@ -1234,7 +1333,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondFileAttributeAdded(ByVal File As String, ByVal Attributes As FileAttributes) Handles Me.FileAttributeAdded
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FileAttributeAdded()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("FileAttributeAdded", File, Attributes)
             Next
@@ -1245,7 +1345,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondFileAttributeRemoved(ByVal File As String, ByVal Attributes As FileAttributes) Handles Me.FileAttributeRemoved
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event FileAttributeRemoved()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("FileAttributeRemoved", File, Attributes)
             Next
@@ -1256,7 +1357,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondColorReset() Handles Me.ColorReset
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ColorReset()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ColorReset")
             Next
@@ -1267,7 +1369,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondThemeSet(ByVal Theme As String) Handles Me.ThemeSet
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ThemeSet()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ThemeSet", Theme)
             Next
@@ -1278,7 +1381,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondThemeSetError(ByVal Theme As String, ByVal Reason As String) Handles Me.ThemeSetError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ThemeSetError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ThemeSetError", Theme, Reason)
             Next
@@ -1289,7 +1393,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondColorSet() Handles Me.ColorSet
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ColorSet()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ColorSet")
             Next
@@ -1300,7 +1405,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondColorSetError(ByVal Reason As String) Handles Me.ColorSetError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ColorSetError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ColorSetError", Reason)
             Next
@@ -1311,7 +1417,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondThemeStudioStarted() Handles Me.ThemeStudioStarted
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ThemeStudioStarted()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ThemeStudioStarted")
             Next
@@ -1322,7 +1429,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondThemeStudioExit() Handles Me.ThemeStudioExit
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ThemeStudioExit()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ThemeStudioExit")
             Next
@@ -1333,7 +1441,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondArgumentsInjected(ByVal InjectedArguments As List(Of String)) Handles Me.ArgumentsInjected
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ArgumentsInjected()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ArgumentsInjected", InjectedArguments)
             Next
@@ -1344,7 +1453,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondZipShellInitialized() Handles Me.ZipShellInitialized
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ZipShellInitialized()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ZipShellInitialized")
             Next
@@ -1355,7 +1465,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondZipPreExecuteCommand(ByVal Command As String) Handles Me.ZipPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ZipPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ZipPreExecuteCommand", Command)
             Next
@@ -1366,7 +1477,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondZipPostExecuteCommand(ByVal Command As String) Handles Me.ZipPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ZipPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ZipPostExecuteCommand", Command)
             Next
@@ -1377,7 +1489,8 @@ Public Class Events
     ''' </summary>
     Public Sub RespondZipCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.ZipCommandError
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 Wdbg("I", "{0} in mod {1} v{2} responded to event ZipCommandError()...", script.ModPart, script.Name, script.Version)
                 script.InitEvents("ZipCommandError", Command, Exception)
             Next

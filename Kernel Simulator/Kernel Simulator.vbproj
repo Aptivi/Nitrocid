@@ -221,6 +221,7 @@
     <Compile Include="Misc\Screensaver\Displays\Typo.vb" />
     <Compile Include="Misc\Screensaver\Displays\Wipe.vb" />
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
+    <Compile Include="Misc\Screensaver\ScreensaverInfo.vb" />
     <Compile Include="Misc\Screensaver\ScreensaverSettings.vb" />
     <Compile Include="Misc\StringEvaluators.vb" />
     <Compile Include="Misc\TextEdit\TextEditGetCommand.vb" />
@@ -240,6 +241,7 @@
     <Compile Include="Misc\ZipFile\ZipTools.vb" />
     <Compile Include="Misc\ZipFile\ZipShell.vb" />
     <Compile Include="Modifications\ModExecutor.vb" />
+    <Compile Include="Modifications\PartInfo.vb" />
     <Compile Include="Modifications\ModInfo.vb" />
     <Compile Include="Modifications\ModManager.vb" />
     <Compile Include="Modifications\ModParser.vb" />

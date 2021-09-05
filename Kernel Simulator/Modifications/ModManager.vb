@@ -28,15 +28,18 @@ Public Module ModManager
     Sub StartMods()
         Wdbg("I", "Safe mode: {0}", SafeMode)
         If Not SafeMode Then
+            'We're not in safe mode. We're good now.
             If Not Directory.Exists(modPath) Then Directory.CreateDirectory(modPath)
             Dim count As Integer = Directory.EnumerateFiles(modPath).Count
             Wdbg("I", "Files count: {0}", count)
+
+            'Check to see if we have mods
             If count <> 0 Then
                 W(DoTranslation("mod: Loading mods..."), True, ColTypes.Neutral)
                 Wdbg("I", "Mods are being loaded. Total mods with screensavers = {0}", count)
                 For Each modFile As String In Directory.EnumerateFiles(modPath)
                     W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(modFile))
-                    ParseMod(modFile.Replace("\", "/"))
+                    ParseMod(modFile)
                 Next
             Else
                 W(DoTranslation("mod: No mods detected."), True, ColTypes.Neutral)
@@ -51,39 +54,71 @@ Public Module ModManager
     ''' </summary>
     ''' <param name="ModFilename">Mod filename found in KSMods</param>
     Public Sub StartMod(ByVal ModFilename As String)
-        Throw New NotImplementedException()
+        Wdbg("I", "Safe mode: {0}", SafeMode)
+        ModFilename = Path.Combine(modPath, ModFilename)
+        Wdbg("I", "Mod file path: {0}", ModFilename)
+
+        If Not SafeMode Then
+            If File.Exists(ModFilename) Then
+                Wdbg("I", "Mod file exists! Starting...")
+                If Not HasModStarted(ModFilename) Then
+                    W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(ModFilename))
+                    ParseMod(ModFilename)
+                Else
+                    W(DoTranslation("Mod has already been started!"), True, ColTypes.Error)
+                End If
+            Else
+                W(DoTranslation("Mod {0} not found."), True, ColTypes.Neutral, Path.GetFileName(ModFilename))
+            End If
+        Else
+            W(DoTranslation("Parsing mods not allowed on safe mode."), True, ColTypes.Error)
+        End If
     End Sub
 
     ''' <summary>
     ''' Stops all mods in KSMods
     ''' </summary>
-    Sub StopMods()
+    Public Sub StopMods()
         Wdbg("I", "Safe mode: {0}", SafeMode)
         If Not SafeMode Then
+            'We're not in safe mode. We're good now.
             If Not Directory.Exists(modPath) Then Directory.CreateDirectory(modPath)
             Dim count As Integer = Directory.EnumerateFiles(modPath).Count
             Wdbg("I", "Files count: {0}", count)
+
+            'Check to see if we have mods
             If count <> 0 Then
                 W(DoTranslation("mod: Stopping mods..."), True, ColTypes.Neutral)
                 Wdbg("I", "Mods are being stopped. Total mods with screensavers = {0}", count)
-                For Each script As String In scripts.Keys
-                    Wdbg("I", "Stopping... Mod name: {0}", script)
-                    Dim ScriptParts As Dictionary(Of String, IScript) = scripts(script).ModParts
-                    For Each ScriptPart As String In ScriptParts.Keys
-                        Wdbg("I", "Stopping part {0} v{1}", ScriptParts(ScriptPart).ModPart, ScriptParts(ScriptPart).Version)
-                        ScriptParts(ScriptPart).StopMod()
-                        If Not String.IsNullOrWhiteSpace(ScriptParts(ScriptPart).Name) And Not String.IsNullOrWhiteSpace(ScriptParts(ScriptPart).Version) Then
-                            W(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, ScriptParts(ScriptPart).ModPart, ScriptParts(ScriptPart).Version)
+                For ScriptIndex As Integer = scripts.Count - 1 To 0 Step -1
+                    Dim TargetMod As ModInfo = scripts.Values(ScriptIndex)
+                    Dim ScriptParts As Dictionary(Of String, PartInfo) = TargetMod.ModParts
+
+                    'Try to stop the mod and all associated parts
+                    Wdbg("I", "Stopping... Mod name: {0}", TargetMod.ModName)
+                    For PartIndex As Integer = ScriptParts.Count - 1 To 0 Step -1
+                        Dim ScriptPartInfo As PartInfo = ScriptParts.Values(PartIndex)
+                        Wdbg("I", "Stopping part {0} v{1}", ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version)
+
+                        'Stop the associated part
+                        ScriptPartInfo.PartScript.StopMod()
+                        If Not String.IsNullOrWhiteSpace(ScriptPartInfo.PartName) And Not String.IsNullOrWhiteSpace(ScriptPartInfo.PartScript.Version) Then
+                            W(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version)
                         End If
+
+                        'Remove the part from the list
+                        ScriptParts.Remove(ScriptParts.Keys(PartIndex))
                     Next
-                    W(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, script)
+
+                    'Remove the mod from the list
+                    W(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, TargetMod.ModName)
                 Next
                 CSvrdb.Clear()
             Else
                 W(DoTranslation("mod: No mods detected."), True, ColTypes.Neutral)
             End If
         Else
-            W(DoTranslation("Parsing mods not allowed on safe mode."), True, ColTypes.Error)
+            W(DoTranslation("Stopping mods not allowed on safe mode."), True, ColTypes.Error)
         End If
     End Sub
 
@@ -92,7 +127,115 @@ Public Module ModManager
     ''' </summary>
     ''' <param name="ModFilename">Mod filename found in KSMods</param>
     Public Sub StopMod(ByVal ModFilename As String)
-        Throw New NotImplementedException()
+        Wdbg("I", "Safe mode: {0}", SafeMode)
+        ModFilename = Path.Combine(modPath, ModFilename)
+        Wdbg("I", "Mod file path: {0}", ModFilename)
+
+        If Not SafeMode Then
+            If File.Exists(ModFilename) Then
+                'Determine if we're dealing with screensaver
+                If Path.GetExtension(ModFilename) = ".ss." Then
+                    Wdbg("I", "Target mod is a screensaver.")
+
+                    'Iterate through all the screensavers
+                    For SaverIndex As Integer = CSvrdb.Count - 1 To 0 Step -1
+                        Dim TargetScreensaver As ScreensaverInfo = CSvrdb.Values(SaverIndex)
+                        Wdbg("I", "Checking screensaver {0}", TargetScreensaver.SaverName)
+
+                        'Check to see if we're dealign with the same screensaver
+                        If TargetScreensaver.FileName = ModFilename Then
+                            CSvrdb.Remove(CSvrdb.Keys(SaverIndex))
+                        End If
+                    Next
+                Else
+                    If HasModStarted(ModFilename) Then
+                        W(DoTranslation("mod: Stopping mod {0}..."), True, ColTypes.Neutral, Path.GetFileName(ModFilename))
+                        Wdbg("I", "Mod {0} is being stopped.", Path.GetFileName(ModFilename))
+
+                        'Iterate through all the mods
+                        For ScriptIndex As Integer = scripts.Count - 1 To 0 Step -1
+                            Dim TargetMod As ModInfo = scripts.Values(ScriptIndex)
+                            Dim ScriptParts As Dictionary(Of String, PartInfo) = TargetMod.ModParts
+
+                            'Try to stop the mod and all associated parts
+                            Wdbg("I", "Checking mod {0}...", TargetMod.ModName)
+                            If TargetMod.ModFileName = Path.GetFileName(ModFilename) Then
+                                Wdbg("I", "Found mod to be stopped. Stopping...")
+
+                                'Iterate through all the parts
+                                For PartIndex As Integer = ScriptParts.Count - 1 To 0 Step -1
+                                    Dim ScriptPartInfo As PartInfo = ScriptParts.Values(PartIndex)
+                                    Wdbg("I", "Stopping part {0} v{1}", ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version)
+
+                                    'Remove all the commands associated with the part
+                                    If ScriptPartInfo.PartScript.Commands IsNot Nothing Then
+                                        For Each CommandInfo As CommandInfo In ScriptPartInfo.PartScript.Commands.Values
+                                            Select Case CommandInfo.Type
+                                                Case ShellCommandType.Shell
+                                                    Wdbg("I", "Removing command {0} from main shell...", CommandInfo.Command)
+                                                    modcmnds.Remove(CommandInfo.Command)
+                                                    ModDefs.Remove(CommandInfo.Command)
+                                                Case ShellCommandType.FTPShell
+                                                    Wdbg("I", "Removing command {0} from FTP shell...", CommandInfo.Command)
+                                                    FTPModCommands.Remove(CommandInfo.Command)
+                                                    FTPModDefs.Remove(CommandInfo.Command)
+                                                Case ShellCommandType.MailShell
+                                                    Wdbg("I", "Removing command {0} from main shell...", CommandInfo.Command)
+                                                    MailModCommands.Remove(CommandInfo.Command)
+                                                    MailModDefs.Remove(CommandInfo.Command)
+                                                Case ShellCommandType.SFTPShell
+                                                    Wdbg("I", "Removing command {0} from SFTP shell...", CommandInfo.Command)
+                                                    SFTPModCommands.Remove(CommandInfo.Command)
+                                                    SFTPModDefs.Remove(CommandInfo.Command)
+                                                Case ShellCommandType.TextShell
+                                                    Wdbg("I", "Removing command {0} from text editor shell...", CommandInfo.Command)
+                                                    TextEdit_ModCommands.Remove(CommandInfo.Command)
+                                                    TextEdit_ModHelpEntries.Remove(CommandInfo.Command)
+                                                Case ShellCommandType.TestShell
+                                                    Wdbg("I", "Removing command {0} from test shell...", CommandInfo.Command)
+                                                    Test_ModCommands.Remove(CommandInfo.Command)
+                                                    TestModDefs.Remove(CommandInfo.Command)
+                                                Case ShellCommandType.RemoteDebugShell
+                                                    Wdbg("I", "Removing command {0} from remote debug shell...", CommandInfo.Command)
+                                                    DebugModCmds.Remove(CommandInfo.Command)
+                                                    RDebugModDefs.Remove(CommandInfo.Command)
+                                                Case ShellCommandType.ZIPShell
+                                                    Wdbg("I", "Removing command {0} from ZIP shell...", CommandInfo.Command)
+                                                    ZipShell_ModCommands.Remove(CommandInfo.Command)
+                                                    ZipShell_ModHelpEntries.Remove(CommandInfo.Command)
+                                                Case ShellCommandType.RSSShell
+                                                    Wdbg("I", "Removing command {0} from RSS shell...", CommandInfo.Command)
+                                                    RSSModCommands.Remove(CommandInfo.Command)
+                                                    RSSModDefs.Remove(CommandInfo.Command)
+                                            End Select
+                                        Next
+                                    End If
+
+                                    'Stop the associated part
+                                    ScriptPartInfo.PartScript.StopMod()
+                                    If Not String.IsNullOrWhiteSpace(ScriptPartInfo.PartName) And Not String.IsNullOrWhiteSpace(ScriptPartInfo.PartScript.Version) Then
+                                        W(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version)
+                                    End If
+
+                                    'Remove the part from the list
+                                    ScriptParts.Remove(ScriptParts.Keys(PartIndex))
+                                Next
+
+                                'Remove the mod from the list
+                                W(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, TargetMod.ModName)
+                                scripts.Remove(scripts.Keys(ScriptIndex))
+                            End If
+                        Next
+                    Else
+                        W(DoTranslation("Mod hasn't started yet!"), True, ColTypes.Error)
+                    End If
+                End If
+            Else
+                W(DoTranslation("Mod {0} not found."), True, ColTypes.Neutral, Path.GetFileName(ModFilename))
+            End If
+        Else
+            W(DoTranslation("Stopping mods not allowed on safe mode."), True, ColTypes.Error)
+        End If
     End Sub
 
     ''' <summary>
@@ -144,8 +287,30 @@ Public Module ModManager
     ''' </summary>
     ''' <param name="ModFilename">Mod filename found in KSMods</param>
     Public Sub ReloadMod(ByVal ModFilename As String)
-        Throw New NotImplementedException()
+        StopMod(ModFilename)
+        StartMod(ModFilename)
     End Sub
+
+    ''' <summary>
+    ''' Checks to see if the mod has started
+    ''' </summary>
+    ''' <param name="ModFilename">Mod filename found in KSMods</param>
+    Public Function HasModStarted(ModFilename As String) As Boolean
+        'Iterate through each mod and mod part
+        For Each ModName As String In scripts.Keys
+            Wdbg("I", "Checking mod {0}...", ModName)
+            For Each PartName As String In scripts(ModName).ModParts.Keys
+                Wdbg("I", "Checking part {0}...", PartName)
+                If scripts(ModName).ModParts(PartName).PartFilePath = ModFilename Then
+                    Wdbg("I", "Found part {0} ({1}). Returning True...", PartName, ModFilename)
+                    Return True
+                End If
+            Next
+        Next
+
+        'If not found, exit with mod not started yet
+        Return False
+    End Function
 
     ''' <summary>
     ''' Reloads all generic definitions so it can be updated with language change

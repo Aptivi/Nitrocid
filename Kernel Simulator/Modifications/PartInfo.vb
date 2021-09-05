@@ -16,49 +16,49 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Class ModInfo
+Public Class PartInfo
 
     ''' <summary>
     ''' The mod name. If no name is specified, or if it only consists of whitespaces (space), the file name is taken.
     ''' </summary>
     Public ReadOnly Property ModName As String
     ''' <summary>
-    ''' The mod file name
+    ''' The part name.
     ''' </summary>
-    Public ReadOnly Property ModFileName As String
+    Public ReadOnly Property PartName As String
     ''' <summary>
-    ''' The mod file path
+    ''' The mod part file name
     ''' </summary>
-    Public ReadOnly Property ModFilePath As String
+    Public ReadOnly Property PartFileName As String
     ''' <summary>
-    ''' The mod parts and their scripts
+    ''' The mod part file path
     ''' </summary>
-    Friend Property ModParts As Dictionary(Of String, PartInfo)
+    Public ReadOnly Property PartFilePath As String
     ''' <summary>
-    ''' The mod version. We recommend using <seealso href="https://semver.org/">Semantic Versioning</seealso> scheme.
+    ''' The mod part script
     ''' </summary>
-    Public ReadOnly Property ModVersion As String
+    Public ReadOnly Property PartScript As IScript
 
     ''' <summary>
     ''' Creates new mod info instance
     ''' </summary>
-    Friend Sub New(ModName As String, ModFileName As String, ModFilePath As String, ModParts As Dictionary(Of String, PartInfo), ModVersion As String)
+    Friend Sub New(ModName As String, PartName As String, PartFileName As String, PartFilePath As String, PartScript As IScript)
         'Validate values. Check to see if the name is null. If so, it will take the mod file name.
         If String.IsNullOrWhiteSpace(ModName) Then
-            ModName = ModFileName
+            ModName = PartFileName
         End If
 
-        'Check to see if the mod parts is null or zero. If so, throw exception.
-        If ModParts Is Nothing OrElse ModParts.Count = 0 Then
-            Throw New Exceptions.ModNoPartsException(DoTranslation("There are no parts in mod."))
+        'Check to see if the part script is null. If so, throw exception.
+        If PartScript Is Nothing Then
+            Throw New Exceptions.ModNoPartsException(DoTranslation("Mod part is nothing."))
         End If
 
         'Install values to new instance
         Me.ModName = ModName
-        Me.ModFileName = ModFileName
-        Me.ModFilePath = ModFilePath
-        Me.ModParts = ModParts
-        Me.ModVersion = ModVersion
+        Me.PartName = PartName
+        Me.PartFileName = PartFileName
+        Me.PartFilePath = PartFilePath
+        Me.PartScript = PartScript
     End Sub
 
 End Class

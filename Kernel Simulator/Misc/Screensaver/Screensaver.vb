@@ -31,7 +31,7 @@ Public Module Screensaver
     Public InSaver As Boolean = False
     Public ScreensaverDebug As Boolean
     Public defSaverName As String = "matrix"
-    Public CSvrdb As New Dictionary(Of String, ICustomSaver)
+    Public CSvrdb As New Dictionary(Of String, ScreensaverInfo)
     Public WithEvents Timeout As New BackgroundWorker
     Public finalSaver As ICustomSaver
     Public CustomSaverSettingsToken As JObject
@@ -236,7 +236,9 @@ Public Module Screensaver
                     Wdbg("I", "{0} compiled correctly. Starting...", file)
                     finalSaver.InitSaver()
                     Dim SaverName As String = finalSaver.SaverName
+                    Dim SaverInstance As ScreensaverInfo
                     If finalSaver.Initialized = True Then
+                        'Check to see if the screensaver is already found
                         Dim IsFound As Boolean
                         If Not SaverName = "" Then
                             IsFound = CSvrdb.ContainsKey(SaverName)
@@ -248,11 +250,13 @@ Public Module Screensaver
                             If Not SaverName = "" Then
                                 W(DoTranslation("{0} has been initialized properly."), True, ColTypes.Neutral, SaverName)
                                 Wdbg("I", "{0} ({1}) compiled correctly. Starting...", SaverName, file)
-                                CSvrdb.Add(SaverName, finalSaver)
+                                SaverInstance = New ScreensaverInfo(SaverName, file, NeutralizePath(file, modPath), finalSaver)
+                                CSvrdb.Add(SaverName, SaverInstance)
                             Else
                                 W(DoTranslation("{0} has been initialized properly."), True, ColTypes.Neutral, file)
                                 Wdbg("I", "{0} compiled correctly. Starting...", file)
-                                CSvrdb.Add(file, finalSaver)
+                                SaverInstance = New ScreensaverInfo(SaverName, file, NeutralizePath(file, modPath), finalSaver)
+                                CSvrdb.Add(file, SaverInstance)
                             End If
                         Else
                             If Not SaverName = "" Then
@@ -377,7 +381,7 @@ Public Module Screensaver
             Dim CustomSaverSettings As JObject = TryCast(CustomSaverToken(Saver), JObject)
             If CustomSaverSettings IsNot Nothing Then
                 For Each Setting In CustomSaverSettings
-                    CSvrdb(Saver).SaverSettings(Setting.Key) = Setting.Value.ToString
+                    CSvrdb(Saver).Screensaver.SaverSettings(Setting.Key) = Setting.Value.ToString
                 Next
             End If
         Next
@@ -389,12 +393,12 @@ Public Module Screensaver
     ''' </summary>
     Public Sub SaveCustomSaverSettings()
         For Each Saver As String In CSvrdb.Keys
-            If CSvrdb(Saver).SaverSettings IsNot Nothing Then
-                For Each Setting As String In CSvrdb(Saver).SaverSettings.Keys
+            If CSvrdb(Saver).Screensaver.SaverSettings IsNot Nothing Then
+                For Each Setting As String In CSvrdb(Saver).Screensaver.SaverSettings.Keys
                     If Not TryCast(CustomSaverSettingsToken(Saver), JObject).ContainsKey(Setting) Then
-                        TryCast(CustomSaverSettingsToken(Saver), JObject).Add(Setting, CSvrdb(Saver).SaverSettings(Setting).ToString)
+                        TryCast(CustomSaverSettingsToken(Saver), JObject).Add(Setting, CSvrdb(Saver).Screensaver.SaverSettings(Setting).ToString)
                     Else
-                        CustomSaverSettingsToken(Saver)(Setting) = CSvrdb(Saver).SaverSettings(Setting).ToString
+                        CustomSaverSettingsToken(Saver)(Setting) = CSvrdb(Saver).Screensaver.SaverSettings(Setting).ToString
                     End If
                 Next
             End If
@@ -411,9 +415,9 @@ Public Module Screensaver
         If Not CSvrdb.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found."), CustomSaver)
         If Not CustomSaverSettingsToken.ContainsKey(CustomSaver) Then
             Dim NewCustomSaver As New JObject
-            If CSvrdb(CustomSaver).SaverSettings IsNot Nothing Then
-                For Each Setting As String In CSvrdb(CustomSaver).SaverSettings.Keys
-                    NewCustomSaver.Add(Setting, CSvrdb(CustomSaver).SaverSettings(Setting).ToString)
+            If CSvrdb(CustomSaver).Screensaver.SaverSettings IsNot Nothing Then
+                For Each Setting As String In CSvrdb(CustomSaver).Screensaver.SaverSettings.Keys
+                    NewCustomSaver.Add(Setting, CSvrdb(CustomSaver).Screensaver.SaverSettings(Setting).ToString)
                 Next
                 CustomSaverSettingsToken.Add(CustomSaver, NewCustomSaver)
                 If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
