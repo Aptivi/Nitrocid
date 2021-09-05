@@ -167,6 +167,9 @@ Public Module Screensaver
         Catch ex As InvalidOperationException
             W(DoTranslation("Error when trying to start screensaver, because of an invalid operation."), True, ColTypes.Error)
             WStkTrc(ex)
+        Catch ex As Exception
+            W(DoTranslation("Error when trying to start screensaver:") + " {0}", True, ColTypes.Error, ex.Message)
+            WStkTrc(ex)
         Finally
             InSaver = False
             ScrnTimeReached = False
