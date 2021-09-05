@@ -146,7 +146,6 @@ Public Module Screensaver
                 ScrnSvrdb(saver).RunWorkerAsync()
                 Wdbg("I", "{0} started", saver)
                 Console.ReadKey()
-                ScrnTimeReached = False
                 ScrnSvrdb(saver).CancelAsync()
                 SaverAutoReset.WaitOne()
             ElseIf CSvrdb.ContainsKey(saver) Then
@@ -155,7 +154,6 @@ Public Module Screensaver
                 Custom.RunWorkerAsync()
                 Wdbg("I", "Custom screensaver {0} started", saver)
                 Console.ReadKey()
-                ScrnTimeReached = False
                 Custom.CancelAsync()
                 SaverAutoReset.WaitOne()
             Else
@@ -166,10 +164,12 @@ Public Module Screensaver
             'Raise event
             Wdbg("I", "Screensaver really stopped.")
             EventManager.RaisePostShowScreensaver(saver)
-            InSaver = False
         Catch ex As InvalidOperationException
             W(DoTranslation("Error when trying to start screensaver, because of an invalid operation."), True, ColTypes.Error)
             WStkTrc(ex)
+        Finally
+            InSaver = False
+            ScrnTimeReached = False
         End Try
     End Sub
 
