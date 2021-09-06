@@ -89,7 +89,7 @@ Public Module FTPTransfer
 
                 'Try to download folder
                 Dim LocalFolderPath As String = NeutralizePath(LocalFolder, FtpCurrentDirectory)
-                Dim Results As List(Of FtpResult) = ClientFTP.DownloadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpLocalExists.Append, FtpVerify.Retry + FtpVerify.Throw, Nothing, MultipleProgress)
+                Dim Results As List(Of FtpResult) = ClientFTP.DownloadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpLocalExists.Resume, FtpVerify.Retry + FtpVerify.Throw, Nothing, MultipleProgress)
 
                 'Print download results to debugger
                 Dim Failed As Boolean
@@ -189,7 +189,7 @@ Public Module FTPTransfer
 
             'Try to upload
             Dim LocalFolderPath As String = NeutralizePath(LocalFolder, FtpCurrentDirectory)
-            Dim Results As List(Of FtpResult) = ClientFTP.UploadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpRemoteExists.Append, FtpVerify.Retry, Nothing, MultipleProgress)
+            Dim Results As List(Of FtpResult) = ClientFTP.UploadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpRemoteExists.Resume, FtpVerify.Retry, Nothing, MultipleProgress)
 
             'Print upload results to debugger
             Dim Failed As Boolean
