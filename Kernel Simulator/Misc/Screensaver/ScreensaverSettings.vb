@@ -416,4 +416,18 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public FlashColorDelay As Integer = 20
 
+    '-> SpotWrite
+    ''' <summary>
+    ''' [SpotWrite] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public SpotWriteDelay As Integer = 100
+    ''' <summary>
+    ''' [SpotWrite] Text for SpotWrite. Longer is better.
+    ''' </summary>
+    Public SpotWriteWrite As String = "Kernel Simulator"
+    ''' <summary>
+    ''' [SpotWrite] How many milliseconds to wait before writing the text in the new screen again?
+    ''' </summary>
+    Public SpotWriteNewScreenDelay As Integer = 3000
+
 End Module

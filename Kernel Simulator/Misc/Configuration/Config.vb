@@ -378,6 +378,14 @@ Public Module Config
             }
             ScreensaverConfig.Add("FlashColor", FlashColorConfig)
 
+            'SpotWrite config json object
+            Dim SpotWriteConfig As New JObject From {
+                    {"Delay in Milliseconds", SpotWriteDelay},
+                    {"New Screen Delay in Milliseconds", SpotWriteNewScreenDelay},
+                    {"Text Shown", SpotWriteWrite}
+            }
+            ScreensaverConfig.Add("SpotWrite", SpotWriteConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -653,6 +661,11 @@ Public Module Config
             FlashColor255Colors = If(ConfigToken("Screensaver")?("FlashColor")?("Activate 255 Color Mode"), False)
             FlashColorTrueColor = If(ConfigToken("Screensaver")?("FlashColor")?("Activate True Color Mode"), True)
             FlashColorDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashColor")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("FlashColor")?("Delay in Milliseconds"), 1)
+
+            '> SpotWrite
+            SpotWriteDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("SpotWrite")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("SpotWrite")?("Delay in Milliseconds"), 50)
+            SpotWriteNewScreenDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("SpotWrite")?("New Screen Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("SpotWrite")?("New Screen Delay in Milliseconds"), 3000)
+            SpotWriteWrite = If(ConfigToken("Screensaver")?("SpotWrite")?("Text Shown"), "Kernel Simulator")
 
             'Misc Section
             Wdbg("I", "Parsing misc section...")

@@ -58,6 +58,7 @@ Public Module Screensaver
                                                                                    {"matrix", Matrix},
                                                                                    {"plain", Plain},
                                                                                    {"progressClock", ProgressClock},
+                                                                                   {"spotWrite", SpotWrite},
                                                                                    {"typewriter", Typewriter},
                                                                                    {"typo", Typo},
                                                                                    {"wipe", Wipe}}
