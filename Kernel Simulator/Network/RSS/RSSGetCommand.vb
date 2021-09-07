@@ -103,6 +103,16 @@ Public Module RSSGetCommand
                     End If
                 Case "exit"
                     RSSExiting = True
+                    W(DoTranslation("Do you want to keep connected?") + " <y/n> ", False, ColTypes.Input)
+                    Dim Answer As Char = Console.ReadKey.KeyChar
+                    Console.WriteLine()
+                    If Answer = "y" Then
+                        RSSKeepAlive = True
+                    ElseIf Answer = "n" Then
+                        RSSKeepAlive = False
+                    Else
+                        W(DoTranslation("Invalid choice. Assuming no..."), True, ColTypes.Input)
+                    End If
             End Select
 
             'See if the command is done (passed all required arguments)

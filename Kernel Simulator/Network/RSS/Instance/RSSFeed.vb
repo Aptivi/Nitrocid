@@ -21,27 +21,57 @@ Imports System.Xml
 
 Public Class RSSFeed
 
+    Private _FeedUrl As String
+    Private _FeedType As RSSFeedType
+    Private _FeedTitle As String
+    Private _FeedDescription As String
+    Private _FeedArticles As List(Of RSSArticle)
+
     ''' <summary>
     ''' A URL to RSS feed
     ''' </summary>
     Public ReadOnly Property FeedUrl As String
+        Get
+            Return _FeedUrl
+        End Get
+    End Property
+
     ''' <summary>
     ''' RSS feed type
     ''' </summary>
     Public ReadOnly Property FeedType As RSSFeedType
+        Get
+            Return _FeedType
+        End Get
+    End Property
+
     ''' <summary>
     ''' RSS feed type
     ''' </summary>
     Public ReadOnly Property FeedTitle As String
+        Get
+            Return _FeedTitle
+        End Get
+    End Property
+
     ''' <summary>
     ''' RSS feed description (Atom feeds not supported and always return an empty string)
     ''' </summary>
     Public ReadOnly Property FeedDescription As String
+        Get
+            Return _FeedDescription
+        End Get
+    End Property
+
     ''' <summary>
     ''' Feed articles
     ''' </summary>
     ''' <returns></returns>
     Public ReadOnly Property FeedArticles As List(Of RSSArticle)
+        Get
+            Return _FeedArticles
+        End Get
+    End Property
 
     ''' <summary>
     ''' Makes a new instance of an RSS feed class
@@ -49,7 +79,25 @@ Public Class RSSFeed
     ''' <param name="FeedUrl">A URL to RSS feed</param>
     ''' <param name="FeedType">A feed type to parse. If set to Infer, it will automatically detect the type based on contents.</param>
     Public Sub New(ByVal FeedUrl As String, ByVal FeedType As RSSFeedType)
+        Refresh(FeedUrl, FeedType)
+    End Sub
+
+    ''' <summary>
+    ''' Refreshes the RSS class instance
+    ''' </summary>
+    Public Sub Refresh()
+        Wdbg("I", "Refreshing feed {0}...", FeedUrl)
+        Refresh(_FeedUrl, _FeedType)
+    End Sub
+
+    ''' <summary>
+    ''' Refreshes the RSS class instance
+    ''' </summary>
+    ''' <param name="FeedUrl">A URL to RSS feed</param>
+    ''' <param name="FeedType">A feed type to parse. If set to Infer, it will automatically detect the type based on contents.</param>
+    Public Sub Refresh(FeedUrl As String, FeedType As RSSFeedType)
         'Load an RSS feed from URL
+        Wdbg("I", "Refreshing feed {0}...", FeedUrl)
         Dim FeedWebRequest As HttpWebRequest = DirectCast(WebRequest.Create(FeedUrl), HttpWebRequest)
         Dim FeedWebResponse As WebResponse = FeedWebRequest.GetResponse()
         Dim FeedStream As Stream = FeedWebResponse.GetResponseStream()
@@ -61,13 +109,13 @@ Public Class RSSFeed
         If FeedType = RSSFeedType.Infer Then
             If FeedDocument.GetElementsByTagName("rss").Count <> 0 Then
                 FeedNodeList = FeedDocument.GetElementsByTagName("rss")
-                FeedType = RSSFeedType.RSS2
+                _FeedType = RSSFeedType.RSS2
             ElseIf FeedDocument.GetElementsByTagName("rdf:RDF").Count <> 0 Then
                 FeedNodeList = FeedDocument.GetElementsByTagName("rdf:RDF")
-                FeedType = RSSFeedType.RSS1
+                _FeedType = RSSFeedType.RSS1
             ElseIf FeedDocument.GetElementsByTagName("feed").Count <> 0 Then
                 FeedNodeList = FeedDocument.GetElementsByTagName("feed")
-                FeedType = RSSFeedType.Atom
+                _FeedType = RSSFeedType.Atom
             End If
         ElseIf FeedType = RSSFeedType.RSS2 Then
             FeedNodeList = FeedDocument.GetElementsByTagName("rss")
@@ -82,19 +130,19 @@ Public Class RSSFeed
 
         'Populate basic feed properties
 #Disable Warning BC42104
-        Dim FeedTitle As String = GetFeedProperty("title", FeedNodeList, FeedType)
-        Dim FeedDescription As String = GetFeedProperty("description", FeedNodeList, FeedType)
+        Dim FeedTitle As String = GetFeedProperty("title", FeedNodeList, _FeedType)
+        Dim FeedDescription As String = GetFeedProperty("description", FeedNodeList, _FeedType)
 
         'Populate articles
-        Dim Articles As List(Of RSSArticle) = MakeRssArticlesFromFeed(FeedNodeList, FeedType)
+        Dim Articles As List(Of RSSArticle) = MakeRssArticlesFromFeed(FeedNodeList, _FeedType)
 #Enable Warning BC42104
 
         'Install the variables to a new instance
-        Me.FeedUrl = FeedUrl
-        Me.FeedType = FeedType
-        Me.FeedTitle = FeedTitle
-        Me.FeedDescription = FeedDescription
-        Me.FeedArticles = Articles
+        _FeedUrl = FeedUrl
+        _FeedType = FeedType
+        _FeedTitle = FeedTitle
+        _FeedDescription = FeedDescription
+        _FeedArticles = Articles
     End Sub
 
 End Class

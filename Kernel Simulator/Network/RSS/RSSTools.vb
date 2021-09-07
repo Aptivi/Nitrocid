@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports HtmlAgilityPack
+Imports System.Threading
 Imports System.Xml
 
 Public Module RSSTools
@@ -143,5 +144,32 @@ Public Module RSSTools
                 Throw New Exceptions.InvalidFeedTypeException(DoTranslation("Invalid RSS feed type."))
         End Select
     End Function
+
+    ''' <summary>
+    ''' Refreshes the feeds
+    ''' </summary>
+    Friend Sub RefreshFeeds()
+        Dim OldFeedsList As New List(Of RSSArticle)(RSSFeedInstance.FeedArticles)
+        Dim NewFeedsList As List(Of RSSArticle)
+        While RSSFeedInstance IsNot Nothing
+            If RSSFeedInstance IsNot Nothing Then
+                'Refresh the feed
+                RSSFeedInstance.Refresh()
+
+                'Check for new feeds
+                NewFeedsList = RSSFeedInstance.FeedArticles.Except(OldFeedsList).ToList
+                If NewFeedsList.Count > 0 Then
+                    'Update the list
+                    Wdbg("W", "Feeds received! Recents count was {0}, Old count was {1}", RSSFeedInstance.FeedArticles.Count, OldFeedsList.Count)
+                    OldFeedsList = New List(Of RSSArticle)(RSSFeedInstance.FeedArticles)
+                    For Each NewFeed As RSSArticle In NewFeedsList
+                        Dim FeedNotif As Notification = NotifyCreate(NewFeed.ArticleTitle, NewFeed.ArticleDescription, NotifPriority.Low, NotifType.Normal)
+                        NotifySend(FeedNotif)
+                    Next
+                End If
+            End If
+            Thread.Sleep(60000)
+        End While
+    End Sub
 
 End Module

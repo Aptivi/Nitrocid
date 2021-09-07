@@ -21,7 +21,7 @@ Imports System.Threading
 Public Module RSSShell
 
     'Variables
-    Public RSSExiting As Boolean
+    Public RSSExiting, RSSKeepAlive As Boolean
     Public ReadOnly RSSCommands As New Dictionary(Of String, CommandInfo) From {{"articleinfo", New CommandInfo("articleinfo", ShellCommandType.RSSShell, "Gets the article info", "<feednum>", True, 1)},
                                                                                 {"chfeed", New CommandInfo("chfeed", ShellCommandType.RSSShell, "Changes the feed link", "<feedurl>", True, 1)},
                                                                                 {"exit", New CommandInfo("exit", ShellCommandType.RSSShell, "Exits RSS shell and returns to kernel", "", False, 0)},
@@ -32,6 +32,7 @@ Public Module RSSShell
     Public RSSModCommands As New ArrayList
     Public RSSFeedInstance As RSSFeed
     Public RSSShellPromptStyle As String = ""
+    Friend RSSRefresher As New Thread(AddressOf RefreshFeeds) With {.Name = "RSS Feed Refresher"}
     Friend RSSFeedLink As String
 
     ''' <summary>
@@ -77,6 +78,10 @@ Begin:
                     RSSFeedLink = ""
                     GoTo Begin
                 End Try
+
+                'Send ping to keep the connection alive
+                If Not RSSKeepAlive Then RSSRefresher.Start()
+                Wdbg("I", "Made new thread about RefreshFeeds()")
 
                 'Prepare for prompt
                 If DefConsoleOut IsNot Nothing Then
@@ -135,10 +140,21 @@ Begin:
             End If
         End While
 
+        'Disconnect the session
+        If RSSKeepAlive Then
+            Wdbg("W", "Exit requested, but not disconnecting.")
+        Else
+            Wdbg("W", "Exit requested. Disconnecting host...")
+            RSSRefresher.Abort()
+            RSSFeedLink = ""
+            RSSFeedInstance = Nothing
+            RSSRefresher = New Thread(AddressOf RefreshFeeds) With {.Name = "RSS Feed Refresher"}
+        End If
+        RSSExiting = False
+
         'Remove handler for RSS shell
         AddHandler Console.CancelKeyPress, AddressOf CancelCommand
         RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
-        RSSExiting = False
     End Sub
 
     ''' <summary>
