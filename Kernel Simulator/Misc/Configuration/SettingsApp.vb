@@ -1483,7 +1483,7 @@ Public Module SettingsApp
                             W("*) " + DoTranslation("Screensaver Settings...") + " > Typewriter > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
-                Case "7.6" 'FlashColor
+                Case "7.22" 'FlashColor
                     Select Case KeyNumber
                         Case 1 'FlashColor: Activate 255 colors
                             KeyType = SettingsKeyType.SBoolean
@@ -1522,7 +1522,8 @@ Public Module SettingsApp
                             W("*) " + DoTranslation("Screensaver Settings...") + " > SpotWrite > " + DoTranslation("Text shown") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Write any text you want shown. Longer is better."), True, ColTypes.Neutral)
                             W(DoTranslation("This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately."), True, ColTypes.Neutral)
-                        Case "7." + $"{If(SectionParts.Length > 1, SectionParts(1), $"{BuiltinSavers + 1}")}" 'Custom saver
+                    End Select
+                Case "7." + $"{If(SectionParts.Length > 1, SectionParts(1), $"{BuiltinSavers + 1}")}" 'Custom saver
                     Dim SaverIndex As Integer = SectionParts(1) - BuiltinSavers - 1
                     Dim SaverSettings As Dictionary(Of String, Object) = CSvrdb.Values(SaverIndex).Screensaver.SaverSettings
                     Dim KeyIndex As Integer = KeyNumber - 1
