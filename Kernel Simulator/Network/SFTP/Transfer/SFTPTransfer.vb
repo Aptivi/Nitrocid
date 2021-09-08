@@ -23,7 +23,7 @@ Public Module SFTPTransfer
     ''' </summary>
     ''' <param name="File">A remote file</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function SFTPGetFile(ByVal File As String) As Boolean
+    Public Function SFTPGetFile(File As String) As Boolean
         If SFTPConnected Then
             Try
                 'Show a message to download
@@ -53,7 +53,7 @@ Public Module SFTPTransfer
     ''' </summary>
     ''' <param name="File">A local file</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function SFTPUploadFile(ByVal File As String) As Boolean
+    Public Function SFTPUploadFile(File As String) As Boolean
         If SFTPConnected Then
             Try
                 'Show a message to download

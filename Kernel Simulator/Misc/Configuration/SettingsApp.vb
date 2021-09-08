@@ -105,7 +105,7 @@ Public Module SettingsApp
     ''' Open section
     ''' </summary>
     ''' <param name="SectionNum">Section number</param>
-    Sub OpenSection(ByVal SectionNum As String, ParamArray SectionParameters() As Object)
+    Sub OpenSection(SectionNum As String, ParamArray SectionParameters() As Object)
         'General variables
         Dim MaxOptions As Integer = 0
         Dim SectionFinished As Boolean
@@ -525,7 +525,7 @@ Public Module SettingsApp
     ''' </summary>
     ''' <param name="Section">Section number</param>
     ''' <param name="KeyNumber">Key number</param>
-    Sub OpenKey(ByVal Section As String, ByVal KeyNumber As Integer, ParamArray KeyParameters() As Object)
+    Sub OpenKey(Section As String, KeyNumber As Integer, ParamArray KeyParameters() As Object)
         Dim MaxKeyOptions As Integer = 0
         Dim KeyFinished As Boolean
         Dim KeyType As SettingsKeyType = SettingsKeyType.SUnknown
@@ -1760,7 +1760,7 @@ Public Module SettingsApp
     ''' </summary>
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <param name="VariableValue">New value of variable</param>
-    Public Sub SetConfigValue(ByVal Variable As String, ByVal VariableValue As Object)
+    Public Sub SetConfigValue(Variable As String, VariableValue As Object)
         'Get field for specified variable
         Dim TargetField As FieldInfo = GetField(Variable)
 
@@ -1783,7 +1783,7 @@ Public Module SettingsApp
     ''' </summary>
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <returns>Value of a variable</returns>
-    Public Function GetConfigValue(ByVal Variable As String) As Object
+    Public Function GetConfigValue(Variable As String) As Object
         'Get field for specified variable
         Dim TargetField As FieldInfo = GetField(Variable)
 

@@ -25,7 +25,7 @@ Module PreFivePointFive
     ''' Takes configuration values and installs them to appropriate variables. Taken from config.vb version 0.0.5.2 with some removals that reflect this version
     ''' </summary>
     ''' <param name="PathToConfig">Path to pre-0.0.5.5 config (kernelConfig.ini)</param>
-    Function ReadPreFivePointFiveConfig(ByVal PathToConfig As String) As Boolean
+    Function ReadPreFivePointFiveConfig(PathToConfig As String) As Boolean
         Dim OldConfigReader As New IO.StreamReader(PathToConfig)
         Dim line As String = OldConfigReader.ReadLine
         Dim ValidFormat As Boolean

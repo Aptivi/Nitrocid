@@ -27,7 +27,7 @@ Module FivePointFive
     ''' Takes configuration values and installs them to appropriate variables.
     ''' </summary>
     ''' <param name="PathToConfig">Path to 0.0.5.5+ config (kernelConfig.ini)</param>
-    Function ReadFivePointFiveConfig(ByVal PathToConfig As String) As Boolean
+    Function ReadFivePointFiveConfig(PathToConfig As String) As Boolean
         Dim ConfigReader As New IniFile()
         ConfigReader.Load(PathToConfig)
         Dim ValidFormat As Boolean

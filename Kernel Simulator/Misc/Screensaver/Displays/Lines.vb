@@ -25,7 +25,7 @@ Module LinesDisplay
     ''' <summary>
     ''' Handles the code of Lines
     ''' </summary>
-    Sub Lines_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Lines.DoWork
+    Sub Lines_DoWork(sender As Object, e As DoWorkEventArgs) Handles Lines.DoWork
         Console.CursorVisible = False
         Dim random As New Random()
         Wdbg("I", "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)

@@ -25,7 +25,7 @@ Module BouncingTextDisplay
     ''' <summary>
     ''' Handles the code of Bouncing Text
     ''' </summary>
-    Sub BouncingText_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles BouncingText.DoWork
+    Sub BouncingText_DoWork(sender As Object, e As DoWorkEventArgs) Handles BouncingText.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.ForegroundColor = ConsoleColor.White
         Console.Clear()

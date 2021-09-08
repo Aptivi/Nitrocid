@@ -28,7 +28,7 @@ Module FTPFilesystem
     ''' <returns>The list if successful; null if unsuccessful</returns>
     ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
     ''' <exception cref="InvalidOperationException"></exception>
-    Public Function FTPListRemote(ByVal Path As String) As List(Of String)
+    Public Function FTPListRemote(Path As String) As List(Of String)
         If FtpConnected Then
             Dim EntryBuilder As New StringBuilder
             Dim Entries As New List(Of String)
@@ -81,7 +81,7 @@ Module FTPFilesystem
     ''' <param name="Target">Target folder or file</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
-    Public Function FTPDeleteRemote(ByVal Target As String) As Boolean
+    Public Function FTPDeleteRemote(Target As String) As Boolean
         If FtpConnected Then
             Wdbg("I", "Deleting {0}...", Target)
 
@@ -113,7 +113,7 @@ Module FTPFilesystem
     ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
     ''' <exception cref="InvalidOperationException"></exception>
     ''' <exception cref="ArgumentNullException"></exception>
-    Public Function FTPChangeRemoteDir(ByVal Directory As String) As Boolean
+    Public Function FTPChangeRemoteDir(Directory As String) As Boolean
         If FtpConnected = True Then
             If Directory <> "" Then
                 If ClientFTP.DirectoryExists(Directory) Then
@@ -134,7 +134,7 @@ Module FTPFilesystem
         Return False
     End Function
 
-    Public Function FTPChangeLocalDir(ByVal Directory As String) As Boolean
+    Public Function FTPChangeLocalDir(Directory As String) As Boolean
         If Directory <> "" Then
             Dim targetDir As String
             targetDir = $"{FtpCurrentDirectory}/{Directory}"
@@ -165,7 +165,7 @@ Module FTPFilesystem
     ''' <param name="Target">Target file or folder</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="InvalidOperationException"></exception>
-    Public Function FTPMoveItem(ByVal Source As String, ByVal Target As String) As Boolean
+    Public Function FTPMoveItem(Source As String, Target As String) As Boolean
         If FtpConnected Then
             Dim Success As Boolean
 
@@ -194,7 +194,7 @@ Module FTPFilesystem
     ''' <param name="Target">Target file or folder</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="InvalidOperationException"></exception>
-    Public Function FTPCopyItem(ByVal Source As String, ByVal Target As String) As Boolean
+    Public Function FTPCopyItem(Source As String, Target As String) As Boolean
         If FtpConnected Then
             Dim Success As Boolean = True
             Dim Result As Object
@@ -246,7 +246,7 @@ Module FTPFilesystem
     ''' <param name="Target">Target file</param>
     ''' <param name="Chmod">Permissions in CHMOD format. See https://man7.org/linux/man-pages/man2/chmod.2.html chmod(2) for more info.</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function FTPChangePermissions(ByVal Target As String, ByVal Chmod As Integer) As Boolean
+    Public Function FTPChangePermissions(Target As String, Chmod As Integer) As Boolean
         If FtpConnected Then
             Try
                 ClientFTP.Chmod(Target, Chmod)

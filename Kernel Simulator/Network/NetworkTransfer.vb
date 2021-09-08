@@ -33,7 +33,7 @@ Public Module NetworkTransfer
     ''' <param name="URL">A URL to a file</param>
     ''' <param name="Credentials">Authentication information</param>
     ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
-    Public Function DownloadFile(ByVal URL As String, Optional ByVal Credentials As NetworkCredential = Nothing) As Boolean
+    Public Function DownloadFile(URL As String, Optional Credentials As NetworkCredential = Nothing) As Boolean
         Return DownloadFile(URL, ShowProgress, Credentials)
     End Function
 
@@ -44,7 +44,7 @@ Public Module NetworkTransfer
     ''' <param name="ShowProgress">Whether or not to show progress bar</param>
     ''' <param name="Credentials">Authentication information</param>
     ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
-    Public Function DownloadFile(ByVal URL As String, ByVal ShowProgress As Boolean, Optional ByVal Credentials As NetworkCredential = Nothing) As Boolean
+    Public Function DownloadFile(URL As String, ShowProgress As Boolean, Optional Credentials As NetworkCredential = Nothing) As Boolean
         WClient = New WebClient
 
         'Limit the filename to the name without any URL arguments
@@ -85,7 +85,7 @@ Public Module NetworkTransfer
     ''' <param name="URL">A URL to a file</param>
     ''' <param name="Credentials">Authentication information</param>
     ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
-    Public Function UploadFile(ByVal File As String, ByVal URL As String, Optional ByVal Credentials As NetworkCredential = Nothing) As Boolean
+    Public Function UploadFile(File As String, URL As String, Optional Credentials As NetworkCredential = Nothing) As Boolean
         Return UploadFile(File, URL, ShowProgress, Credentials)
     End Function
 
@@ -97,7 +97,7 @@ Public Module NetworkTransfer
     ''' <param name="ShowProgress">Whether or not to show progress bar</param>
     ''' <param name="Credentials">Authentication information</param>
     ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
-    Public Function UploadFile(ByVal File As String, ByVal URL As String, ByVal ShowProgress As Boolean, Optional ByVal Credentials As NetworkCredential = Nothing) As Boolean
+    Public Function UploadFile(File As String, URL As String, ShowProgress As Boolean, Optional Credentials As NetworkCredential = Nothing) As Boolean
         WClient = New WebClient
 
         'Upload a file
@@ -129,7 +129,7 @@ Public Module NetworkTransfer
     ''' <param name="URL">A URL to a file</param>
     ''' <param name="Credentials">Authentication information</param>
     ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
-    Public Function DownloadString(ByVal URL As String, Optional ByVal Credentials As NetworkCredential = Nothing) As String
+    Public Function DownloadString(URL As String, Optional Credentials As NetworkCredential = Nothing) As String
         Return DownloadString(URL, ShowProgress, Credentials)
     End Function
 
@@ -140,7 +140,7 @@ Public Module NetworkTransfer
     ''' <param name="ShowProgress">Whether or not to show progress bar</param>
     ''' <param name="Credentials">Authentication information</param>
     ''' <returns>A resource string if successful; Throws exception if unsuccessful.</returns>
-    Public Function DownloadString(ByVal URL As String, ByVal ShowProgress As Boolean, Optional ByVal Credentials As NetworkCredential = Nothing) As String
+    Public Function DownloadString(URL As String, ShowProgress As Boolean, Optional Credentials As NetworkCredential = Nothing) As String
         WClient = New WebClient
         DownloadedString = ""
 
@@ -174,7 +174,7 @@ Public Module NetworkTransfer
     ''' <param name="Data">Content to upload</param>
     ''' <param name="Credentials">Authentication information</param>
     ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
-    Public Function UploadString(ByVal URL As String, ByVal Data As String, Optional ByVal Credentials As NetworkCredential = Nothing) As Boolean
+    Public Function UploadString(URL As String, Data As String, Optional Credentials As NetworkCredential = Nothing) As Boolean
         Return UploadString(URL, Data, ShowProgress, Credentials)
     End Function
 
@@ -186,7 +186,7 @@ Public Module NetworkTransfer
     ''' <param name="ShowProgress">Whether or not to show progress bar</param>
     ''' <param name="Credentials">Authentication information</param>
     ''' <returns>A resource string if successful; Throws exception if unsuccessful.</returns>
-    Public Function UploadString(ByVal URL As String, ByVal Data As String, ByVal ShowProgress As Boolean, Optional ByVal Credentials As NetworkCredential = Nothing) As Boolean
+    Public Function UploadString(URL As String, Data As String, ShowProgress As Boolean, Optional Credentials As NetworkCredential = Nothing) As Boolean
         WClient = New WebClient
 
         'Download a resource

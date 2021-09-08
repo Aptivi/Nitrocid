@@ -52,7 +52,7 @@ Public Class ArgumentInfo
     ''' <param name="ArgumentsRequired">Does the argument require arguments?</param>
     ''' <param name="MinimumArguments">User must specify at least this number of arguments</param>
     ''' <param name="Obsolete">Is the command obsolete?</param>
-    Public Sub New(ByVal Argument As String, ByVal Type As ShellCommandType, ByVal HelpDefinition As String, ByVal ArgumentsRequired As Boolean, ByVal MinimumArguments As Integer, Optional Obsolete As Boolean = False)
+    Public Sub New(Argument As String, Type As ShellCommandType, HelpDefinition As String, ArgumentsRequired As Boolean, MinimumArguments As Integer, Optional Obsolete As Boolean = False)
         Me.Argument = Argument
         Me.Type = Type
         Me.HelpDefinition = HelpDefinition

@@ -86,7 +86,7 @@ Public Class ThemeInfo
     ''' Generates a new theme info from KS resources
     ''' </summary>
     ''' <param name="ThemeResourceName">Theme name (must match resource name)</param>
-    Public Sub New(ByVal ThemeResourceName As String)
+    Public Sub New(ThemeResourceName As String)
         Dim ThemeResourceJson As JToken = JToken.Parse(My.Resources.ResourceManager.GetString(ThemeResourceName))
         ThemeInputColor = New Color(ThemeResourceJson.SelectToken("InputColor").ToString)
         ThemeLicenseColor = New Color(ThemeResourceJson.SelectToken("LicenseColor").ToString)
@@ -109,7 +109,7 @@ Public Class ThemeInfo
     ''' Generates a new theme info from file stream
     ''' </summary>
     ''' <param name="ThemeFileStream">Theme file stream reader</param>
-    Public Sub New(ByVal ThemeFileStream As StreamReader)
+    Public Sub New(ThemeFileStream As StreamReader)
         Dim ThemeResourceJson As JToken = JToken.Parse(ThemeFileStream.ReadToEnd)
         ThemeInputColor = New Color(ThemeResourceJson.SelectToken("InputColor").ToString)
         ThemeLicenseColor = New Color(ThemeResourceJson.SelectToken("LicenseColor").ToString)

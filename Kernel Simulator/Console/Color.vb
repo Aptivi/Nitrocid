@@ -59,7 +59,7 @@ Public Class Color
     ''' </summary>
     ''' <param name="ColorSpecifier">A color specifier. It must be a valid number from 0-255 if using 255-colors, or a VT sequence if using true color as follows: &lt;R&gt;;&lt;G&gt;;&lt;B&gt;</param>
     ''' <exception cref="Exceptions.ColorException"></exception>
-    Public Sub New(ByVal ColorSpecifier As String)
+    Public Sub New(ColorSpecifier As String)
         If ColorSpecifier.Contains(";") Then
             ColorSpecifier = ColorSpecifier.Replace("""", "")
             Dim ColorSpecifierArray() As String = ColorSpecifier.Split(";")

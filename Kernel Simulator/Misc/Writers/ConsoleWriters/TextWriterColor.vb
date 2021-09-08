@@ -31,7 +31,7 @@ Public Module TextWriterColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="colorType">A type of colors that will be changed.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub W(ByVal Text As String, ByVal Line As Boolean, ByVal colorType As ColTypes, ByVal ParamArray vars() As Object)
+    Public Sub W(Text As String, Line As Boolean, colorType As ColTypes, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -112,7 +112,7 @@ Public Module TextWriterColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteC16(ByVal Text As String, ByVal Line As Boolean, ByVal color As ConsoleColor, ByVal ParamArray vars() As Object)
+    Public Sub WriteC16(Text As String, Line As Boolean, color As ConsoleColor, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -158,7 +158,7 @@ Public Module TextWriterColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteC16(ByVal Text As String, ByVal Line As Boolean, ByVal ForegroundColor As ConsoleColor, ByVal BackgroundColor As ConsoleColor, ByVal ParamArray vars() As Object)
+    Public Sub WriteC16(Text As String, Line As Boolean, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -203,7 +203,7 @@ Public Module TextWriterColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteC(ByVal Text As String, ByVal Line As Boolean, ByVal color As Color, ByVal ParamArray vars() As Object)
+    Public Sub WriteC(Text As String, Line As Boolean, color As Color, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -251,7 +251,7 @@ Public Module TextWriterColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteC(ByVal Text As String, ByVal Line As Boolean, ByVal ForegroundColor As Color, ByVal BackgroundColor As Color, ByVal ParamArray vars() As Object)
+    Public Sub WriteC(Text As String, Line As Boolean, ForegroundColor As Color, BackgroundColor As Color, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If

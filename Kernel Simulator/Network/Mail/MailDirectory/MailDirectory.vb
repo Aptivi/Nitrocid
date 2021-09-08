@@ -25,7 +25,7 @@ Public Module MailDirectory
     ''' Creates mail folder
     ''' </summary>
     ''' <param name="Directory">Directory name</param>
-    Public Sub CreateMailDirectory(ByVal Directory As String)
+    Public Sub CreateMailDirectory(Directory As String)
         Wdbg("I", "Creating folder: {0}", Directory)
         Try
             Dim MailFolder As MailFolder
@@ -44,7 +44,7 @@ Public Module MailDirectory
     ''' Deletes mail folder
     ''' </summary>
     ''' <param name="Directory">Directory name</param>
-    Public Sub DeleteMailDirectory(ByVal Directory As String)
+    Public Sub DeleteMailDirectory(Directory As String)
         Wdbg("I", "Deleting folder: {0}", Directory)
         Try
             Dim MailFolder As MailFolder
@@ -63,7 +63,7 @@ Public Module MailDirectory
     ''' Deletes mail folder
     ''' </summary>
     ''' <param name="Directory">Directory name</param>
-    Public Sub RenameMailDirectory(ByVal Directory As String, ByVal NewName As String)
+    Public Sub RenameMailDirectory(Directory As String, NewName As String)
         Wdbg("I", "Renaming folder {0} to {1}", Directory, NewName)
         Try
             Dim MailFolder As MailFolder
@@ -82,7 +82,7 @@ Public Module MailDirectory
     ''' Changes current mail directory
     ''' </summary>
     ''' <param name="Directory">A mail directory</param>
-    Public Sub MailChangeDirectory(ByVal Directory As String)
+    Public Sub MailChangeDirectory(Directory As String)
         Wdbg("I", "Opening folder: {0}", Directory)
         Try
             SyncLock IMAP_Client.SyncRoot
@@ -102,7 +102,7 @@ Public Module MailDirectory
     ''' </summary>
     ''' <param name="FolderString">A folder to open (not a path)</param>
     ''' <returns>A folder</returns>
-    Public Function OpenFolder(ByVal FolderString As String, Optional ByVal FolderMode As FolderAccess = FolderAccess.ReadWrite) As MailFolder
+    Public Function OpenFolder(FolderString As String, Optional FolderMode As FolderAccess = FolderAccess.ReadWrite) As MailFolder
         Dim Opened As MailFolder
         Wdbg("I", "Personal namespace collection parsing started.")
         For Each nmspc As FolderNamespace In IMAP_Client.PersonalNamespaces

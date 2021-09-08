@@ -36,7 +36,7 @@ Public Module MOTDParse
     ''' </summary>
     ''' <param name="MOTD">A message of the day before/after login</param>
     ''' <param name="MType">Message type</param>
-    Public Sub SetMOTD(ByVal MOTD As String, ByVal MType As MessageType)
+    Public Sub SetMOTD(MOTD As String, MType As MessageType)
         Try
             MOTDFilePath = paths("MOTD")
             MALFilePath = paths("MAL")
@@ -71,7 +71,7 @@ Public Module MOTDParse
     ''' Reads the message of the day before/after login
     ''' </summary>
     ''' <param name="MType">Message type</param>
-    Public Sub ReadMOTDFromFile(ByVal MType As MessageType)
+    Public Sub ReadMOTDFromFile(MType As MessageType)
         Try
             MOTDFilePath = paths("MOTD")
             MALFilePath = paths("MAL")

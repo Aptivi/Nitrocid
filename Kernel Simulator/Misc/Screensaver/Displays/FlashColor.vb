@@ -25,7 +25,7 @@ Module FlashColorDisplay
     ''' <summary>
     ''' Handles the code of Flash Colors
     ''' </summary>
-    Sub FlashColor_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles FlashColor.DoWork
+    Sub FlashColor_DoWork(sender As Object, e As DoWorkEventArgs) Handles FlashColor.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.Clear()
         Console.CursorVisible = False

@@ -53,7 +53,7 @@ Public Module ModManager
     ''' Starts a specified mod
     ''' </summary>
     ''' <param name="ModFilename">Mod filename found in KSMods</param>
-    Public Sub StartMod(ByVal ModFilename As String)
+    Public Sub StartMod(ModFilename As String)
         Wdbg("I", "Safe mode: {0}", SafeMode)
         ModFilename = Path.Combine(modPath, ModFilename)
         Wdbg("I", "Mod file path: {0}", ModFilename)
@@ -160,7 +160,7 @@ Public Module ModManager
     ''' Stops a specified mod
     ''' </summary>
     ''' <param name="ModFilename">Mod filename found in KSMods</param>
-    Public Sub StopMod(ByVal ModFilename As String)
+    Public Sub StopMod(ModFilename As String)
         Wdbg("I", "Safe mode: {0}", SafeMode)
         ModFilename = Path.Combine(modPath, ModFilename)
         Wdbg("I", "Mod file path: {0}", ModFilename)
@@ -289,7 +289,7 @@ Public Module ModManager
     ''' Reloads a specified mod
     ''' </summary>
     ''' <param name="ModFilename">Mod filename found in KSMods</param>
-    Public Sub ReloadMod(ByVal ModFilename As String)
+    Public Sub ReloadMod(ModFilename As String)
         StopMod(ModFilename)
         StartMod(ModFilename)
     End Sub
@@ -319,7 +319,7 @@ Public Module ModManager
     ''' Reloads all generic definitions so it can be updated with language change
     ''' </summary>
     ''' <param name="OldModDesc">Old mod command description</param>
-    Sub ReloadGenericDefs(ByVal OldModDesc As String)
+    Sub ReloadGenericDefs(OldModDesc As String)
         For i As Integer = 0 To ModDefs.Keys.Count - 1
             Wdbg("I", "Replacing ""{0}""...", OldModDesc)
             Dim Cmd As String = ModDefs.Keys(i)

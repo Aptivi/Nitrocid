@@ -25,7 +25,7 @@ Module HackUserFromADDisplay
     ''' <summary>
     ''' Handles the code of Hack User from AD simulator
     ''' </summary>
-    Sub HackUserFromAD_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles HackUserFromAD.DoWork
+    Sub HackUserFromAD_DoWork(sender As Object, e As DoWorkEventArgs) Handles HackUserFromAD.DoWork
         Try
             Do While True
                 SleepNoBlock(1000, HackUserFromAD)

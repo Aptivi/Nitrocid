@@ -22,7 +22,7 @@ Module TypoDisplay
 
     Public WithEvents Typo As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
-    Sub Typo_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Typo.DoWork
+    Sub Typo_DoWork(sender As Object, e As DoWorkEventArgs) Handles Typo.DoWork
         Console.Clear()
         Console.CursorVisible = False
         Try

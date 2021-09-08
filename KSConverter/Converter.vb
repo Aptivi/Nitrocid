@@ -238,7 +238,7 @@ Module Converter
     ''' Gets all paths that are used in 0.0.15.x or earlier kernels.
     ''' </summary>
     ''' <param name="AppendedPath">Optional path to append</param>
-    Function GetOldPaths(ByVal AppendedPath As String) As Dictionary(Of String, String)
+    Function GetOldPaths(AppendedPath As String) As Dictionary(Of String, String)
         'Initialize all needed variables
         Dim OldPaths As New Dictionary(Of String, String)
 

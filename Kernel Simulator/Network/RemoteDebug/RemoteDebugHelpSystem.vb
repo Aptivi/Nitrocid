@@ -24,7 +24,7 @@ Public Module RemoteDebugHelpSystem
     ''' Shows the help entry for command.
     ''' </summary>
     ''' <param name="command">Specified command</param>
-    Public Sub RDebugShowHelp(ByVal command As String, ByVal DeviceStream As StreamWriter)
+    Public Sub RDebugShowHelp(command As String, DeviceStream As StreamWriter)
         'Check to see if command exists
         If Not String.IsNullOrWhiteSpace(command) And DebugCommands.ContainsKey(command) Then
             Dim HelpDefinition As String = DebugCommands(command).GetTranslatedHelpEntry

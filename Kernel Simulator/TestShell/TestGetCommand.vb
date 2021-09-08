@@ -30,7 +30,7 @@ Module TestGetCommand
     ''' Parses the specified command and executes it
     ''' </summary>
     ''' <param name="requestedCommand">A command to be executed. It may come with arguments</param>
-    Sub TParseCommand(ByVal requestedCommand As String)
+    Sub TParseCommand(requestedCommand As String)
         Try
             'Variables
             Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(requestedCommand, ShellCommandType.TestShell)

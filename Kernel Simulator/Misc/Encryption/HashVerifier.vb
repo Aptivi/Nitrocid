@@ -31,7 +31,7 @@ Public Module HashVerifier
     ''' <exception cref="Exceptions.InvalidHashException"></exception>
     ''' <exception cref="Exceptions.InvalidHashAlgorithmException"></exception>
     ''' <exception cref="FileNotFoundException"></exception>
-    Public Function VerifyHashFromHashesFile(ByVal FileName As String, ByVal HashType As Algorithms, ByVal HashesFile As String, ByVal ActualHash As String) As Boolean
+    Public Function VerifyHashFromHashesFile(FileName As String, HashType As Algorithms, HashesFile As String, ActualHash As String) As Boolean
         Dim ExpectedHashLength As Integer
         Dim ExpectedHash As String = ""
 
@@ -113,7 +113,7 @@ Public Module HashVerifier
     ''' <exception cref="Exceptions.InvalidHashException"></exception>
     ''' <exception cref="Exceptions.InvalidHashAlgorithmException"></exception>
     ''' <exception cref="FileNotFoundException"></exception>
-    Public Function VerifyHashFromHash(ByVal FileName As String, ByVal HashType As Algorithms, ByVal ExpectedHash As String, ByVal ActualHash As String) As Boolean
+    Public Function VerifyHashFromHash(FileName As String, HashType As Algorithms, ExpectedHash As String, ActualHash As String) As Boolean
         Dim ExpectedHashLength As Integer
 
         FileName = NeutralizePath(FileName)
@@ -167,7 +167,7 @@ Public Module HashVerifier
     ''' <exception cref="Exceptions.InvalidHashException"></exception>
     ''' <exception cref="Exceptions.InvalidHashAlgorithmException"></exception>
     ''' <exception cref="FileNotFoundException"></exception>
-    Public Function VerifyUncalculatedHashFromHashesFile(ByVal FileName As String, ByVal HashType As Algorithms, ByVal HashesFile As String) As Boolean
+    Public Function VerifyUncalculatedHashFromHashesFile(FileName As String, HashType As Algorithms, HashesFile As String) As Boolean
         Dim ExpectedHashLength As Integer
         Dim ExpectedHash As String = ""
         Dim ActualHash As String = ""
@@ -249,7 +249,7 @@ Public Module HashVerifier
     ''' <exception cref="Exceptions.InvalidHashException"></exception>
     ''' <exception cref="Exceptions.InvalidHashAlgorithmException"></exception>
     ''' <exception cref="FileNotFoundException"></exception>
-    Public Function VerifyUncalculatedHashFromHash(ByVal FileName As String, ByVal HashType As Algorithms, ByVal ExpectedHash As String) As Boolean
+    Public Function VerifyUncalculatedHashFromHash(FileName As String, HashType As Algorithms, ExpectedHash As String) As Boolean
         Dim ExpectedHashLength As Integer
         Dim ActualHash As String
         FileName = NeutralizePath(FileName)

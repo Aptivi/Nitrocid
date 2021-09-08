@@ -32,7 +32,7 @@ Module CommandLineArgsParse
     ''' Parses the command line arguments
     ''' </summary>
     ''' <param name="Args">Arguments</param>
-    Sub ParseCMDArguments(ByVal Args As String())
+    Sub ParseCMDArguments(Args As String())
         Try
             If Args.Length <> 0 Then
                 For Each Argument As String In Args

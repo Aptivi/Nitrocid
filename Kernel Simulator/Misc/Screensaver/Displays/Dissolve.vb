@@ -26,7 +26,7 @@ Module DissolveDisplay
     ''' <summary>
     ''' Handles the code of Dissolve
     ''' </summary>
-    Sub Dissolve_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Dissolve.DoWork
+    Sub Dissolve_DoWork(sender As Object, e As DoWorkEventArgs) Handles Dissolve.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.Clear()
         Console.CursorVisible = False

@@ -25,7 +25,7 @@ Public Module PlaceParse
     ''' </summary>
     ''' <param name="text">Specified string</param>
     ''' <returns>A string that has the parsed placeholders</returns>
-    Public Function ProbePlaces(ByVal text As String) As String
+    Public Function ProbePlaces(text As String) As String
 
         EventManager.RaisePlaceholderParsing(text)
         Try

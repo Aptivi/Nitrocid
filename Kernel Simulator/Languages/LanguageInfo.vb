@@ -48,7 +48,7 @@ Public Class LanguageInfo
     ''' <param name="LangName">The three-letter language name found in resources. Some languages have translated variants, and they usually end with "_T" in resources and "-T" in KS.</param>
     ''' <param name="FullLanguageName">The full name of language without the country specifier.</param>
     ''' <param name="Transliterable">Whether or not the language is transliterable (Arabic, Korea, ...)</param>
-    Public Sub New(ByVal LangName As String, ByVal FullLanguageName As String, ByVal Transliterable As Boolean)
+    Public Sub New(LangName As String, FullLanguageName As String, Transliterable As Boolean)
         'Check to see if the language being installed is found in resources
         If Not String.IsNullOrEmpty(My.Resources.ResourceManager.GetString(LangName.Replace("-", "_"))) Then
             'Install values to the object instance

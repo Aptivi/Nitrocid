@@ -44,7 +44,7 @@ Public Module PermissionManagement
     ''' <param name="PermType">A type of permission</param>
     ''' <param name="Username">A specified username</param>
     ''' <param name="PermissionMode">Whether to allow or disallow a specified type for a user</param>
-    Sub Permission(ByVal PermType As PermissionType, ByVal Username As String, ByVal PermissionMode As PermissionManagementMode)
+    Sub Permission(PermType As PermissionType, Username As String, PermissionMode As PermissionManagementMode)
 
         'Adds user into permission lists.
         Try
@@ -78,7 +78,7 @@ Public Module PermissionManagement
     ''' <param name="Username">A username to be managed</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="Exceptions.PermissionManagementException"></exception>
-    Public Function AddPermission(ByVal PermType As PermissionType, ByVal Username As String) As Boolean
+    Public Function AddPermission(PermType As PermissionType, Username As String) As Boolean
         'Sets the required permissions to false.
         If Users.Keys.ToArray.Contains(Username) Then
             Wdbg("I", "Type is {0}", PermType)
@@ -121,7 +121,7 @@ Public Module PermissionManagement
     ''' <param name="Username">A username to be managed</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="Exceptions.PermissionManagementException"></exception>
-    Public Function RemovePermission(ByVal PermType As PermissionType, ByVal Username As String) As Boolean
+    Public Function RemovePermission(PermType As PermissionType, Username As String) As Boolean
         'Sets the required permissions to false.
         If Users.Keys.ToArray.Contains(Username) And Username <> CurrentUser Then
             Wdbg("I", "Type is {0}", PermType)
@@ -167,7 +167,7 @@ Public Module PermissionManagement
     ''' <param name="Username">New username</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="Exceptions.PermissionManagementException"></exception>
-    Public Function PermissionEditForNewUser(ByVal OldName As String, ByVal Username As String) As Boolean
+    Public Function PermissionEditForNewUser(OldName As String, Username As String) As Boolean
         'Edit username
         If adminList.ContainsKey(OldName) And disabledList.ContainsKey(OldName) And AnonymousList.ContainsKey(OldName) Then
             Try
@@ -209,7 +209,7 @@ Public Module PermissionManagement
     ''' <param name="NewUser">A new user name</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="Exceptions.PermissionManagementException"></exception>
-    Public Function InitPermissionsForNewUser(ByVal NewUser As String) As Boolean
+    Public Function InitPermissionsForNewUser(NewUser As String) As Boolean
         Try
             'Initialize permissions locally
             If Not adminList.ContainsKey(NewUser) Then adminList.Add(NewUser, False)

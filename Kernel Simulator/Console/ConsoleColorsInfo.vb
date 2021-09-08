@@ -47,7 +47,7 @@ Public Class ConsoleColorsInfo
     ''' Makes a new instance of 255-color console color information
     ''' </summary>
     ''' <param name="ColorValue">A 255-color console color</param>
-    Public Sub New(ByVal ColorValue As ConsoleColors)
+    Public Sub New(ColorValue As ConsoleColors)
         If Not (ColorValue < 0 Or ColorValue > 255) Then
             Dim ColorData As JObject = ColorDataJson(CInt(ColorValue))
             ColorID = ColorData("colorId")

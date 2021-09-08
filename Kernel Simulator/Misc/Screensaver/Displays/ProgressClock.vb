@@ -25,7 +25,7 @@ Module ProgressClockDisplay
     ''' <summary>
     ''' Handles the code of Progress Clock
     ''' </summary>
-    Sub ProgressClock_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles ProgressClock.DoWork
+    Sub ProgressClock_DoWork(sender As Object, e As DoWorkEventArgs) Handles ProgressClock.DoWork
         Console.Clear()
         Console.CursorVisible = False
         Dim RandomDriver As New Random()

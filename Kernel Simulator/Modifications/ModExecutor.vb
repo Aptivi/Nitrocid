@@ -22,7 +22,7 @@ Public Module ModExecutor
     ''' Executes the command provided by a mod
     ''' </summary>
     ''' <param name="cmd">A mod command with arguments</param>
-    Sub ExecuteModCommand(ByVal cmd As String)
+    Sub ExecuteModCommand(cmd As String)
         EventManager.RaisePreExecuteModCommand(cmd)
 
         'Variables

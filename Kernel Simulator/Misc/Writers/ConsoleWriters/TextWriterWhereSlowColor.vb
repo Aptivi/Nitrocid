@@ -32,7 +32,7 @@ Module TextWriterWhereSlowColor
     ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="colorType">A type of colors that will be changed.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteWhereSlowly(ByVal msg As String, ByVal Line As Boolean, ByVal Left As Integer, ByVal Top As Integer, ByVal MsEachLetter As Double, ByVal [Return] As Boolean, ByVal colorType As ColTypes, ByVal ParamArray vars() As Object)
+    Public Sub WriteWhereSlowly(msg As String, Line As Boolean, Left As Integer, Top As Integer, MsEachLetter As Double, [Return] As Boolean, colorType As ColTypes, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -129,7 +129,7 @@ Module TextWriterWhereSlowColor
     ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteWhereSlowlyC16(ByVal msg As String, ByVal Line As Boolean, ByVal Left As Integer, ByVal Top As Integer, ByVal MsEachLetter As Double, ByVal [Return] As Boolean, ByVal color As ConsoleColor, ByVal ParamArray vars() As Object)
+    Public Sub WriteWhereSlowlyC16(msg As String, Line As Boolean, Left As Integer, Top As Integer, MsEachLetter As Double, [Return] As Boolean, color As ConsoleColor, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -190,7 +190,7 @@ Module TextWriterWhereSlowColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteWhereSlowlyC16(ByVal msg As String, ByVal Line As Boolean, ByVal Left As Integer, ByVal Top As Integer, ByVal MsEachLetter As Double, ByVal [Return] As Boolean, ByVal ForegroundColor As ConsoleColor, ByVal BackgroundColor As ConsoleColor, ByVal ParamArray vars() As Object)
+    Public Sub WriteWhereSlowlyC16(msg As String, Line As Boolean, Left As Integer, Top As Integer, MsEachLetter As Double, [Return] As Boolean, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -250,7 +250,7 @@ Module TextWriterWhereSlowColor
     ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteWhereSlowlyC(ByVal msg As String, ByVal Line As Boolean, ByVal Left As Integer, ByVal Top As Integer, ByVal MsEachLetter As Double, ByVal [Return] As Boolean, ByVal color As Color, ByVal ParamArray vars() As Object)
+    Public Sub WriteWhereSlowlyC(msg As String, Line As Boolean, Left As Integer, Top As Integer, MsEachLetter As Double, [Return] As Boolean, color As Color, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -313,7 +313,7 @@ Module TextWriterWhereSlowColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteWhereSlowlyC(ByVal msg As String, ByVal Line As Boolean, ByVal Left As Integer, ByVal Top As Integer, ByVal MsEachLetter As Double, ByVal [Return] As Boolean, ByVal ForegroundColor As Color, ByVal BackgroundColor As Color, ByVal ParamArray vars() As Object)
+    Public Sub WriteWhereSlowlyC(msg As String, Line As Boolean, Left As Integer, Top As Integer, MsEachLetter As Double, [Return] As Boolean, ForegroundColor As Color, BackgroundColor As Color, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If

@@ -258,7 +258,7 @@ Public Module ConfigTools
     ''' </summary>
     ''' <param name="ConfigCategory">Config category</param>
     ''' <param name="ConfigSubCategoryName">Sub-category name. Should be an Object. Currently used for screensavers</param>
-    Public Function GetConfigCategory(ByVal ConfigCategory As ConfigCategory, Optional ByVal ConfigSubCategoryName As String = "") As JToken
+    Public Function GetConfigCategory(ConfigCategory As ConfigCategory, Optional ConfigSubCategoryName As String = "") As JToken
         'Try to parse the config category
         Wdbg("I", "Parsing config category {0}...", ConfigCategory)
         If [Enum].TryParse(ConfigCategory, ConfigCategory) Then
@@ -297,7 +297,7 @@ Public Module ConfigTools
     ''' <param name="ConfigCategoryToken">Config category or sub-category token (You can get it from <see cref="GetConfigCategory(ConfigCategory, String)"/></param>
     ''' <param name="ConfigEntryName">Config entry name.</param>
     ''' <param name="ConfigValue">Config entry value to install</param>
-    Public Sub SetConfigValueAndWrite(ByVal ConfigCategory As ConfigCategory, ByVal ConfigCategoryToken As JToken, ByVal ConfigEntryName As String, ByVal ConfigValue As JToken)
+    Public Sub SetConfigValueAndWrite(ConfigCategory As ConfigCategory, ConfigCategoryToken As JToken, ConfigEntryName As String, ConfigValue As JToken)
         'Try to parse the config category
         Wdbg("I", "Parsing config category {0}...", ConfigCategory)
         If [Enum].TryParse(ConfigCategory, ConfigCategory) Then

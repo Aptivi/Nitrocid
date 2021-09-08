@@ -56,18 +56,18 @@ Public Module ModParser
         ''' </summary>
         ''' <param name="Command">A command.</param>
         ''' <param name="args">Arguments. Make sure to split your arguments if necessary.</param>
-        Sub PerformCmd(ByVal Command As CommandInfo, Optional ByVal Args As String = "")
+        Sub PerformCmd(Command As CommandInfo, Optional Args As String = "")
         ''' <summary>
         ''' Code executed when initializing events
         ''' </summary>
         ''' <param name="ev">Event name. Look it up on <see cref="Events"/></param>
-        Sub InitEvents(ByVal ev As String)
+        Sub InitEvents(ev As String)
         ''' <summary>
         ''' Code executed when initializing events
         ''' </summary>
         ''' <param name="ev">Event name. Look it up on <see cref="Events"/></param>
         ''' <param name="Args">Arguments.</param>
-        Sub InitEvents(ByVal ev As String, ParamArray Args() As Object)
+        Sub InitEvents(ev As String, ParamArray Args() As Object)
     End Interface
 
     ''' <summary>
@@ -89,7 +89,7 @@ Public Module ModParser
     ''' </summary>
     ''' <param name="PLang">Specified programming language for scripts (C# or VB.NET)</param>
     ''' <param name="code">Code blocks from script</param>
-    Private Function GenMod(ByVal PLang As String, ByVal code As String) As IScript
+    Private Function GenMod(PLang As String, code As String) As IScript
 
         'Check language
         Dim provider As CodeDomProvider
@@ -184,7 +184,7 @@ NextEntry:
     ''' Gets the mod instance from compiled assembly
     ''' </summary>
     ''' <param name="Assembly">An assembly</param>
-    Public Function GetModInstance(ByVal Assembly As Assembly) As IScript
+    Public Function GetModInstance(Assembly As Assembly) As IScript
         For Each t As Type In Assembly.GetTypes()
             If t.GetInterface(GetType(IScript).Name) IsNot Nothing Then Return CType(Assembly.CreateInstance(t.FullName), IScript)
         Next
@@ -194,7 +194,7 @@ NextEntry:
     ''' Starts to parse the mod, and configures it so it can be used
     ''' </summary>
     ''' <param name="modFile">Mod file name with extension. It should end with .vb or .cs</param>
-    Sub ParseMod(ByVal modFile As String)
+    Sub ParseMod(modFile As String)
         modFile = Path.GetFileName(modFile)
         If modFile.EndsWith(".ss.vb") Then
             'Mod is a screensaver that has a language of VB.NET
@@ -241,7 +241,7 @@ NextEntry:
     ''' </summary>
     ''' <param name="script">Instance of script</param>
     ''' <param name="modFile">Mod file name with extension. It should end with .vb, .ss.vb, .ss.cs, or .cs</param>
-    Sub FinalizeMods(ByVal script As IScript, ByVal modFile As String)
+    Sub FinalizeMods(script As IScript, modFile As String)
         Dim ModParts As New Dictionary(Of String, PartInfo)
         Dim ModInstance As ModInfo
         Dim PartInstance As PartInfo

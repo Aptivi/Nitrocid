@@ -77,7 +77,7 @@ Public Class CommandInfo
     ''' <param name="NoMaintenance">If true, the command can't be run in maintenance mode</param>
     ''' <param name="Obsolete">Is the command obsolete?</param>
     ''' <param name="SettingVariable">Does the command set a UESH $variable?</param>
-    Public Sub New(ByVal Command As String, ByVal Type As ShellCommandType, ByVal HelpDefinition As String, ByVal HelpUsage As String, ByVal ArgumentsRequired As Boolean, ByVal MinimumArguments As Integer, Optional Strict As Boolean = False, Optional Wrappable As Boolean = False, Optional NoMaintenance As Boolean = False, Optional Obsolete As Boolean = False, Optional SettingVariable As Boolean = False)
+    Public Sub New(Command As String, Type As ShellCommandType, HelpDefinition As String, HelpUsage As String, ArgumentsRequired As Boolean, MinimumArguments As Integer, Optional Strict As Boolean = False, Optional Wrappable As Boolean = False, Optional NoMaintenance As Boolean = False, Optional Obsolete As Boolean = False, Optional SettingVariable As Boolean = False)
         Me.Command = Command
         Me.Type = Type
         Me.HelpDefinition = HelpDefinition

@@ -24,7 +24,7 @@ Module SpotWriteDisplay
 
     Public WithEvents SpotWrite As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
-    Sub SpotWrite_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles SpotWrite.DoWork
+    Sub SpotWrite_DoWork(sender As Object, e As DoWorkEventArgs) Handles SpotWrite.DoWork
         Console.Clear()
         Console.CursorVisible = False
         Try

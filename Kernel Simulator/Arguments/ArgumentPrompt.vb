@@ -26,7 +26,7 @@ Module ArgumentPrompt
     ''' Prompts user for arguments
     ''' </summary>
     ''' <param name="InjMode">Argument injection mode (usually by "arginj" command)</param>
-    Sub PromptArgs(Optional ByVal InjMode As Boolean = False)
+    Sub PromptArgs(Optional InjMode As Boolean = False)
         'Checks if the arguments are injected
         Dim AnswerArgs As String = ""
 

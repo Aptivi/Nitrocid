@@ -25,7 +25,7 @@ Module MatrixDisplay
     ''' <summary>
     ''' Handles the code of Matrix
     ''' </summary>
-    Sub Matrix_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Matrix.DoWork
+    Sub Matrix_DoWork(sender As Object, e As DoWorkEventArgs) Handles Matrix.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.ForegroundColor = ConsoleColor.Green
         Console.Clear()

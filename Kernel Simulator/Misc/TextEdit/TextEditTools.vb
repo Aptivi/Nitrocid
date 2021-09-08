@@ -26,7 +26,7 @@ Public Module TextEditTools
     ''' </summary>
     ''' <param name="File">Target file. We recommend you to use <see cref="NeutralizePath(String, Boolean)"></see> to neutralize path.</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function TextEdit_OpenTextFile(ByVal File As String) As Boolean
+    Public Function TextEdit_OpenTextFile(File As String) As Boolean
         Try
             Wdbg("I", "Trying to open file {0}...", File)
             TextEdit_FileStream = New FileStream(File, FileMode.Open)
@@ -72,7 +72,7 @@ Public Module TextEditTools
     ''' Saves text file
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function TextEdit_SaveTextFile(ByVal ClearLines As Boolean) As Boolean
+    Public Function TextEdit_SaveTextFile(ClearLines As Boolean) As Boolean
         Try
             Wdbg("I", "Trying to save file...")
             TextEdit_FileStream.SetLength(0)
@@ -125,7 +125,7 @@ Public Module TextEditTools
     ''' Adds a new line to the current text
     ''' </summary>
     ''' <param name="Content">New line content</param>
-    Public Sub TextEdit_AddNewLine(ByVal Content As String)
+    Public Sub TextEdit_AddNewLine(Content As String)
         If TextEdit_FileStream IsNot Nothing Then
             TextEdit_FileLines.Add(Content)
         Else
@@ -137,7 +137,7 @@ Public Module TextEditTools
     ''' Removes a line from the current text
     ''' </summary>
     ''' <param name="LineNumber">The line number to remove</param>
-    Public Sub TextEdit_RemoveLine(ByVal LineNumber As Integer)
+    Public Sub TextEdit_RemoveLine(LineNumber As Integer)
         If TextEdit_FileStream IsNot Nothing Then
             Dim LineIndex As Integer = LineNumber - 1
             Wdbg("I", "Got line index: {0}", LineIndex)
@@ -158,7 +158,7 @@ Public Module TextEditTools
     ''' </summary>
     ''' <param name="From">String to be replaced</param>
     ''' <param name="[With]">String to replace with</param>
-    Public Sub TextEdit_Replace(ByVal From As String, ByVal [With] As String)
+    Public Sub TextEdit_Replace(From As String, [With] As String)
         If String.IsNullOrEmpty(From) Then Throw New ArgumentNullException(NameOf(From))
         If TextEdit_FileStream IsNot Nothing Then
             Wdbg("I", "Source: {0}, Target: {1}", From, [With])
@@ -177,7 +177,7 @@ Public Module TextEditTools
     ''' <param name="From">String to be replaced</param>
     ''' <param name="[With]">String to replace with</param>
     ''' <param name="LineNumber">The line number</param>
-    Public Sub TextEdit_Replace(ByVal From As String, ByVal [With] As String, ByVal LineNumber As Integer)
+    Public Sub TextEdit_Replace(From As String, [With] As String, LineNumber As Integer)
         If String.IsNullOrEmpty(From) Then Throw New ArgumentNullException(NameOf(From))
         If TextEdit_FileStream IsNot Nothing Then
             Wdbg("I", "Source: {0}, Target: {1}, Line Number: {2}", From, [With], LineNumber)
@@ -199,7 +199,7 @@ Public Module TextEditTools
     ''' </summary>
     ''' <param name="Word">The word or phrase</param>
     ''' <param name="LineNumber">The line number</param>
-    Public Sub TextEdit_DeleteWord(ByVal Word As String, ByVal LineNumber As Integer)
+    Public Sub TextEdit_DeleteWord(Word As String, LineNumber As Integer)
         If String.IsNullOrEmpty(Word) Then Throw New ArgumentNullException(NameOf(Word))
         If TextEdit_FileStream IsNot Nothing Then
             Dim LineIndex As Integer = LineNumber - 1
@@ -222,7 +222,7 @@ Public Module TextEditTools
     ''' </summary>
     ''' <param name="CharNumber">The character number</param>
     ''' <param name="LineNumber">The line number</param>
-    Public Sub TextEdit_DeleteChar(ByVal CharNumber As Integer, ByVal LineNumber As Integer)
+    Public Sub TextEdit_DeleteChar(CharNumber As Integer, LineNumber As Integer)
         If TextEdit_FileStream IsNot Nothing Then
             Dim LineIndex As Integer = LineNumber - 1
             Dim CharIndex As Integer = CharNumber - 1
@@ -245,7 +245,7 @@ Public Module TextEditTools
     ''' Queries a character in all lines.
     ''' </summary>
     ''' <param name="Char">The character to query</param>
-    Public Function TextEdit_QueryChar(ByVal [Char] As Char) As Dictionary(Of Integer, Dictionary(Of Integer, String))
+    Public Function TextEdit_QueryChar([Char] As Char) As Dictionary(Of Integer, Dictionary(Of Integer, String))
         If TextEdit_FileStream IsNot Nothing Then
             Dim Lines As New Dictionary(Of Integer, Dictionary(Of Integer, String))
             Dim Results As New Dictionary(Of Integer, String)
@@ -271,7 +271,7 @@ Public Module TextEditTools
     ''' </summary>
     ''' <param name="Char">The character to query</param>
     ''' <param name="LineNumber">The line number</param>
-    Public Function TextEdit_QueryChar(ByVal [Char] As Char, ByVal LineNumber As Integer) As Dictionary(Of Integer, String)
+    Public Function TextEdit_QueryChar([Char] As Char, LineNumber As Integer) As Dictionary(Of Integer, String)
         If TextEdit_FileStream IsNot Nothing Then
             Dim LineIndex As Integer = LineNumber - 1
             Dim Results As New Dictionary(Of Integer, String)
@@ -297,7 +297,7 @@ Public Module TextEditTools
     ''' Queries a word in all lines.
     ''' </summary>
     ''' <param name="Word">The word to query</param>
-    Public Function TextEdit_QueryWord(ByVal Word As String) As Dictionary(Of Integer, Dictionary(Of Integer, String))
+    Public Function TextEdit_QueryWord(Word As String) As Dictionary(Of Integer, Dictionary(Of Integer, String))
         If TextEdit_FileStream IsNot Nothing Then
             Dim Lines As New Dictionary(Of Integer, Dictionary(Of Integer, String))
             Dim Results As New Dictionary(Of Integer, String)
@@ -324,7 +324,7 @@ Public Module TextEditTools
     ''' </summary>
     ''' <param name="Word">The word to query</param>
     ''' <param name="LineNumber">The line number</param>
-    Public Function TextEdit_QueryWord(ByVal Word As String, ByVal LineNumber As Integer) As Dictionary(Of Integer, String)
+    Public Function TextEdit_QueryWord(Word As String, LineNumber As Integer) As Dictionary(Of Integer, String)
         If TextEdit_FileStream IsNot Nothing Then
             Dim LineIndex As Integer = LineNumber - 1
             Dim Results As New Dictionary(Of Integer, String)

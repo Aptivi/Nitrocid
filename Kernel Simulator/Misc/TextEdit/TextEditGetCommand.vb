@@ -24,7 +24,7 @@ Public Module TextEditGetCommand
     'Variables
     Public TextEdit_CommandThread As New Thread(AddressOf TextEdit_ParseCommand) With {.Name = "Text Edit Command Thread"}
 
-    Sub TextEdit_ParseCommand(ByVal requestedCommand As String)
+    Sub TextEdit_ParseCommand(requestedCommand As String)
         Try
             'Variables
             Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(requestedCommand, ShellCommandType.TextShell)

@@ -22,7 +22,7 @@ Module SpeedPress
     ''' Initializes the SpeedPress game
     ''' </summary>
     ''' <param name="Difficulty">Whether it's (e)asy, (m)edium, or (h)ard</param>
-    Sub InitializeSpeedPress(ByVal Difficulty As Char)
+    Sub InitializeSpeedPress(Difficulty As Char)
         Dim SpeedTimeout As Integer
         Dim SelectedChar As Char
         Dim WrittenChar As ConsoleKeyInfo

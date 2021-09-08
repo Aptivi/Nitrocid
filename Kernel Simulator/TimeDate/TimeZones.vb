@@ -47,7 +47,7 @@ Public Module TimeZones
     ''' </summary>
     ''' <param name="zone">Time zone</param>
     ''' <returns>True if found; False if not found</returns>
-    Public Function ShowTimeZone(ByVal Zone As String) As Boolean
+    Public Function ShowTimeZone(Zone As String) As Boolean
         Dim ZoneTimes As Dictionary(Of String, Date) = GetTimeZones()
         Dim ZoneFound As Boolean = ZoneTimes.Keys.Contains(Zone)
         If ZoneFound Then
@@ -61,7 +61,7 @@ Public Module TimeZones
     ''' </summary>
     ''' <param name="zone">Time zone to search</param>
     ''' <returns>True if found; False if not found</returns>
-    Public Function ShowTimeZones(ByVal Zone As String) As Boolean
+    Public Function ShowTimeZones(Zone As String) As Boolean
         Dim ZoneTimes As Dictionary(Of String, Date) = GetTimeZones()
         Dim ZoneFound As Boolean
         For Each ZoneName As String In ZoneTimes.Keys

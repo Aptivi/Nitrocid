@@ -44,7 +44,7 @@ Public Class RSSArticle
     ''' <param name="ArticleLink"></param>
     ''' <param name="ArticleDescription"></param>
     ''' <param name="ArticleVariables"></param>
-    Public Sub New(ByVal ArticleTitle As String, ByVal ArticleLink As String, ByVal ArticleDescription As String, ByVal ArticleVariables As Dictionary(Of String, XmlNode))
+    Public Sub New(ArticleTitle As String, ArticleLink As String, ArticleDescription As String, ArticleVariables As Dictionary(Of String, XmlNode))
         Me.ArticleTitle = ArticleTitle
         Me.ArticleLink = ArticleLink
         Me.ArticleDescription = ArticleDescription

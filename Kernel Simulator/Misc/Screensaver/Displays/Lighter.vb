@@ -25,7 +25,7 @@ Module LighterDisplay
     ''' <summary>
     ''' Handles the code of Lighter
     ''' </summary>
-    Sub Lighter_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Lighter.DoWork
+    Sub Lighter_DoWork(sender As Object, e As DoWorkEventArgs) Handles Lighter.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.Clear()
         Console.CursorVisible = False

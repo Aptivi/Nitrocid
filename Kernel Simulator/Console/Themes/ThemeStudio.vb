@@ -22,7 +22,7 @@ Module ThemeStudio
     ''' Starts the theme studio
     ''' </summary>
     ''' <param name="ThemeName">Theme name</param>
-    Sub StartThemeStudio(ByVal ThemeName As String)
+    Sub StartThemeStudio(ThemeName As String)
         'Inform user that we're on the studio
         EventManager.RaiseThemeStudioStarted()
         Wdbg("I", "Starting theme studio with theme name {0}", ThemeName)

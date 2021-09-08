@@ -25,7 +25,7 @@ Module MarqueeDisplay
     ''' <summary>
     ''' Handles the code of Marquee
     ''' </summary>
-    Sub Marquee_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Marquee.DoWork
+    Sub Marquee_DoWork(sender As Object, e As DoWorkEventArgs) Handles Marquee.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.ForegroundColor = ConsoleColor.White
         Console.Clear()

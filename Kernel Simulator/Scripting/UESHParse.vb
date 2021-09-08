@@ -25,7 +25,7 @@ Public Module UESHParse
     ''' </summary>
     ''' <param name="scriptpath">Full path to script</param>
     ''' <param name="scriptarguments">Script arguments</param>
-    Public Sub Execute(ByVal scriptpath As String, ByVal scriptarguments As String)
+    Public Sub Execute(scriptpath As String, scriptarguments As String)
         Try
             'Raise event
             EventManager.RaiseUESHPreExecute(scriptpath + " " + scriptarguments)

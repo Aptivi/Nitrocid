@@ -27,7 +27,7 @@ Public Module LinotypoDisplay
     ''' <summary>
     ''' Handles the code of Plain
     ''' </summary>
-    Sub Linotypo_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Linotypo.DoWork
+    Sub Linotypo_DoWork(sender As Object, e As DoWorkEventArgs) Handles Linotypo.DoWork
         Console.Clear()
         Console.CursorVisible = False
         Wdbg("I", "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
@@ -377,7 +377,7 @@ Public Module LinotypoDisplay
     ''' <param name="CurrentColumn"></param>
     ''' <param name="CurrentColumnRowConsole"></param>
     ''' <param name="ColumnRowConsoleThreshold"></param>
-    Sub HandleNextColumn(ByRef CurrentColumn As Integer, ByRef CurrentColumnRowConsole As Integer, ByVal ColumnRowConsoleThreshold As Integer)
+    Sub HandleNextColumn(ByRef CurrentColumn As Integer, ByRef CurrentColumnRowConsole As Integer, ColumnRowConsoleThreshold As Integer)
         If LinotypoTextColumns > 1 Then
             If Console.CursorTop >= Console.WindowHeight - 2 Then
                 'We're on the bottom, so...

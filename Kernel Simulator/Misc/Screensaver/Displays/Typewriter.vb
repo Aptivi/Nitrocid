@@ -24,7 +24,7 @@ Module TypewriterDisplay
 
     Public WithEvents Typewriter As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
-    Sub Typewriter_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Typewriter.DoWork
+    Sub Typewriter_DoWork(sender As Object, e As DoWorkEventArgs) Handles Typewriter.DoWork
         Console.Clear()
         Console.CursorVisible = False
         Try

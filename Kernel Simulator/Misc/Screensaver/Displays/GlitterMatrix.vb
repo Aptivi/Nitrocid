@@ -25,7 +25,7 @@ Module GlitterMatrixDisplay
     ''' <summary>
     ''' Handles the code of Glitter Matrix
     ''' </summary>
-    Sub GlitterMatrix_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles GlitterMatrix.DoWork
+    Sub GlitterMatrix_DoWork(sender As Object, e As DoWorkEventArgs) Handles GlitterMatrix.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.ForegroundColor = ConsoleColor.Green
         Console.Clear()

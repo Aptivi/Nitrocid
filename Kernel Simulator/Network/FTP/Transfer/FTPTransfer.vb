@@ -30,7 +30,7 @@ Public Module FTPTransfer
     ''' </summary>
     ''' <param name="File">A remote file</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function FTPGetFile(ByVal File As String) As Boolean
+    Public Function FTPGetFile(File As String) As Boolean
         Return FTPGetFile(File, File)
     End Function
 
@@ -40,7 +40,7 @@ Public Module FTPTransfer
     ''' <param name="File">A remote file</param>
     ''' <param name="LocalFile">A name of the local file</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function FTPGetFile(ByVal File As String, ByVal LocalFile As String) As Boolean
+    Public Function FTPGetFile(File As String, LocalFile As String) As Boolean
         If FtpConnected Then
             Try
                 'Show a message to download
@@ -71,7 +71,7 @@ Public Module FTPTransfer
     ''' </summary>
     ''' <param name="Folder">A remote folder</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function FTPGetFolder(ByVal Folder As String) As Boolean
+    Public Function FTPGetFolder(Folder As String) As Boolean
         Return FTPGetFolder(Folder, "")
     End Function
 
@@ -80,7 +80,7 @@ Public Module FTPTransfer
     ''' </summary>
     ''' <param name="Folder">A remote folder</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function FTPGetFolder(ByVal Folder As String, ByVal LocalFolder As String) As Boolean
+    Public Function FTPGetFolder(Folder As String, LocalFolder As String) As Boolean
         If FtpConnected Then
             Try
                 'Show a message to download
@@ -138,7 +138,7 @@ Public Module FTPTransfer
     ''' </summary>
     ''' <param name="File">A local file</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function FTPUploadFile(ByVal File As String) As Boolean
+    Public Function FTPUploadFile(File As String) As Boolean
         Return FTPUploadFile(File, File)
     End Function
 
@@ -148,7 +148,7 @@ Public Module FTPTransfer
     ''' <param name="File">A local file</param>
     ''' <param name="LocalFile">A name of the local file</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function FTPUploadFile(ByVal File As String, ByVal LocalFile As String) As Boolean
+    Public Function FTPUploadFile(File As String, LocalFile As String) As Boolean
         If FtpConnected Then
             'Show a message to download
             EventManager.RaiseFTPPreUpload(File)
@@ -171,7 +171,7 @@ Public Module FTPTransfer
     ''' </summary>
     ''' <param name="Folder">A local folder</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function FTPUploadFolder(ByVal Folder As String) As Boolean
+    Public Function FTPUploadFolder(Folder As String) As Boolean
         Return FTPUploadFolder(Folder, Folder)
     End Function
 
@@ -181,7 +181,7 @@ Public Module FTPTransfer
     ''' <param name="Folder">A local folder</param>
     ''' <param name="LocalFolder"></param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function FTPUploadFolder(ByVal Folder As String, ByVal LocalFolder As String) As Boolean
+    Public Function FTPUploadFolder(Folder As String, LocalFolder As String) As Boolean
         If FtpConnected Then
             'Show a message to download
             EventManager.RaiseFTPPreUpload(Folder)
@@ -233,7 +233,7 @@ Public Module FTPTransfer
     ''' </summary>
     ''' <param name="File">A text file.</param>
     ''' <returns>Contents of the file</returns>
-    Public Function FTPDownloadToString(ByVal File As String) As String
+    Public Function FTPDownloadToString(File As String) As String
         If FtpConnected Then
             Try
                 'Show a message to download

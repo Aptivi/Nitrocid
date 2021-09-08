@@ -171,7 +171,7 @@ Public Module Notifications
     ''' <param name="Width">Console width</param>
     ''' <param name="TopTitle">Vertical location of title</param>
     ''' <param name="TopDesc">Vertical location of description</param>
-    Private Sub NotifClearArea(ByVal Width As Integer, ByVal TopTitle As Integer, ByVal TopDesc As Integer, ByVal TopProg As Integer)
+    Private Sub NotifClearArea(Width As Integer, TopTitle As Integer, TopDesc As Integer, TopProg As Integer)
         WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 1, True, ColTypes.Neutral)
         WriteWhere(GetEsc() + "[0K", Width, TopTitle, True, ColTypes.Neutral)
         WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 2, True, ColTypes.Neutral)
@@ -187,7 +187,7 @@ Public Module Notifications
     ''' <param name="Desc">Description of notification</param>
     ''' <param name="Priority">Priority of notification</param>
     ''' <returns></returns>
-    Public Function NotifyCreate(ByVal Title As String, ByVal Desc As String, ByVal Priority As NotifPriority, ByVal Type As NotifType) As Notification
+    Public Function NotifyCreate(Title As String, Desc As String, Priority As NotifPriority, Type As NotifType) As Notification
         Return New Notification With {.Title = Title, .Desc = Desc, .Priority = Priority, .Type = Type, .Progress = 0}
     End Function
 
@@ -195,7 +195,7 @@ Public Module Notifications
     ''' Sends notification
     ''' </summary>
     ''' <param name="notif">Instance of notification holder</param>
-    Public Sub NotifySend(ByVal notif As Notification)
+    Public Sub NotifySend(notif As Notification)
         Wdbg("I", "List contains this notification? {0}", NotifRecents.Contains(notif))
         If Not NotifRecents.Contains(notif) Then
             NotifRecents.Add(notif)
@@ -207,7 +207,7 @@ Public Module Notifications
     ''' Sends notifications
     ''' </summary>
     ''' <param name="notifs">Instances of notification holder</param>
-    Public Sub NotifySendRange(ByVal notifs As List(Of Notification))
+    Public Sub NotifySendRange(notifs As List(Of Notification))
         For Each notif As Notification In notifs
             NotifySend(notif)
         Next
@@ -218,7 +218,7 @@ Public Module Notifications
     ''' Dismisses notification
     ''' </summary>
     ''' <param name="ind">Index of notification</param>
-    Public Function NotifDismiss(ByVal ind As Integer) As Boolean
+    Public Function NotifDismiss(ind As Integer) As Boolean
         Try
             NotifRecents.RemoveAt(ind)
             Wdbg("I", "Removed index {0} from notification list", ind)

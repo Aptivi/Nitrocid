@@ -25,7 +25,7 @@ Module BeatFaderDisplay
     ''' <summary>
     ''' Handles the code of FaderBack
     ''' </summary>
-    Sub BeatFader_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles BeatFader.DoWork
+    Sub BeatFader_DoWork(sender As Object, e As DoWorkEventArgs) Handles BeatFader.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.Clear()
         Console.CursorVisible = False

@@ -24,7 +24,7 @@ Public Module Input
     ''' Reads the next line of characters from the standard input stream without showing input being written by user.
     ''' </summary>
     ''' <param name="MaskChar">Specifies the password mask character</param>
-    Public Function ReadLineNoInput(ByVal MaskChar As Char) As String
+    Public Function ReadLineNoInput(MaskChar As Char) As String
         Dim Final As String = ""
         While True
             Dim KeyInfo As ConsoleKeyInfo = Console.ReadKey(True)
@@ -52,7 +52,7 @@ Public Module Input
     ''' </summary>
     ''' <param name="Intercept"></param>
     ''' <param name="Timeout"></param>
-    Public Function ReadKeyTimeout(ByVal Intercept As Boolean, ByVal Timeout As TimeSpan) As ConsoleKeyInfo
+    Public Function ReadKeyTimeout(Intercept As Boolean, Timeout As TimeSpan) As ConsoleKeyInfo
         Dim CurrentMilliseconds As Double
         While Not Console.KeyAvailable
             If Not CurrentMilliseconds = Timeout.TotalMilliseconds Then

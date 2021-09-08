@@ -25,7 +25,7 @@ Module PlainDisplay
     ''' <summary>
     ''' Handles the code of Plain
     ''' </summary>
-    Sub Plain_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Plain.DoWork
+    Sub Plain_DoWork(sender As Object, e As DoWorkEventArgs) Handles Plain.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.ForegroundColor = ConsoleColor.White
         Console.Clear()

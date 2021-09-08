@@ -28,7 +28,7 @@ Public Module Color255
     ''' <param name="mode">Mode</param>
     ''' <returns>True if succeeded, false if failed</returns>
     <DllImport("kernel32.dll", SetLastError:=True)>
-    Public Function SetConsoleMode(ByVal hConsoleHandle As IntPtr, ByVal mode As Integer) As Boolean
+    Public Function SetConsoleMode(hConsoleHandle As IntPtr, mode As Integer) As Boolean
     End Function
 
     ''' <summary>
@@ -38,7 +38,7 @@ Public Module Color255
     ''' <param name="mode">Mode</param>
     ''' <returns>True if succeeded, false if failed</returns>
     <DllImport("kernel32.dll", SetLastError:=True)>
-    Public Function GetConsoleMode(ByVal handle As IntPtr, <Out()> ByRef mode As Integer) As Boolean
+    Public Function GetConsoleMode(handle As IntPtr, <Out()> ByRef mode As Integer) As Boolean
     End Function
 
     ''' <summary>
@@ -47,7 +47,7 @@ Public Module Color255
     ''' <param name="handle">Handle number</param>
     ''' <returns>True if succeeded, false if failed</returns>
     <DllImport("kernel32.dll", SetLastError:=True)>
-    Public Function GetStdHandle(ByVal handle As Integer) As IntPtr
+    Public Function GetStdHandle(handle As Integer) As IntPtr
     End Function
 
     ''' <summary>

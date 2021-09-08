@@ -25,7 +25,7 @@ Module GlitterColorDisplay
     ''' <summary>
     ''' Handles the code of Glitter Colors
     ''' </summary>
-    Sub GlitterColor_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles GlitterColor.DoWork
+    Sub GlitterColor_DoWork(sender As Object, e As DoWorkEventArgs) Handles GlitterColor.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.Clear()
         Console.CursorVisible = False

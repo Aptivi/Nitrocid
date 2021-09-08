@@ -74,7 +74,7 @@ Public Class RGB
     ''' <param name="RedLevel">Red color level of 0-255</param>
     ''' <param name="GreenLevel">Green color level of 0-255</param>
     ''' <param name="BlueLevel">Blue color level of 0-255</param>
-    Public Sub New(ByVal RedLevel As Short, ByVal GreenLevel As Short, ByVal BlueLevel As Short)
+    Public Sub New(RedLevel As Short, GreenLevel As Short, BlueLevel As Short)
         Red = RedLevel
         Green = GreenLevel
         Blue = BlueLevel
@@ -87,7 +87,7 @@ Public Class RGB
     ''' <br>RRR: a red color level of 0-255</br>
     ''' <br>GGG: a green color level of 0-255</br>
     ''' <br>BBB: a blue color level of 0-255</br></param>
-    Public Sub New(ByVal RGBString As String)
+    Public Sub New(RGBString As String)
         Dim RGBStringArray() As String = RGBString.Split(";")
         If RGBStringArray.Length = 3 Then
             If IsNumeric(RGBStringArray(0)) Then

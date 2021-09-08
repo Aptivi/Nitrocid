@@ -28,7 +28,7 @@ Module SFTPFilesystem
     ''' <returns>The list if successful; null if unsuccessful</returns>
     ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
     ''' <exception cref="InvalidOperationException"></exception>
-    Public Function SFTPListRemote(ByVal Path As String) As List(Of String)
+    Public Function SFTPListRemote(Path As String) As List(Of String)
         If SFTPConnected Then
             Dim EntryBuilder As New StringBuilder
             Dim Entries As New List(Of String)
@@ -78,7 +78,7 @@ Module SFTPFilesystem
     ''' <param name="Target">Target folder or file</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
-    Public Function SFTPDeleteRemote(ByVal Target As String) As Boolean
+    Public Function SFTPDeleteRemote(Target As String) As Boolean
         If SFTPConnected Then
             Wdbg("I", "Deleting {0}...", Target)
 
@@ -107,7 +107,7 @@ Module SFTPFilesystem
     ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
     ''' <exception cref="InvalidOperationException"></exception>
     ''' <exception cref="ArgumentNullException"></exception>
-    Public Function SFTPChangeRemoteDir(ByVal Directory As String) As Boolean
+    Public Function SFTPChangeRemoteDir(Directory As String) As Boolean
         If SFTPConnected = True Then
             If Directory <> "" Then
                 If ClientSFTP.Exists(Directory) Then
@@ -128,7 +128,7 @@ Module SFTPFilesystem
         Return False
     End Function
 
-    Public Function SFTPChangeLocalDir(ByVal Directory As String) As Boolean
+    Public Function SFTPChangeLocalDir(Directory As String) As Boolean
         If Directory <> "" Then
             Dim targetDir As String
             targetDir = $"{SFTPCurrDirect}/{Directory}"
@@ -157,7 +157,7 @@ Module SFTPFilesystem
     ''' </summary>
     ''' <param name="Path">The remote path</param>
     ''' <returns>Absolute path for a remote path</returns>
-    Public Function SFTPGetCanonicalPath(ByVal Path As String) As String
+    Public Function SFTPGetCanonicalPath(Path As String) As String
         If SFTPConnected Then
             'GetCanonicalPath was supposed to be public, but it's in a private class called SftpSession. It should be in SftpClient, which is public.
             Dim SFTPType As Type = ClientSFTP.GetType

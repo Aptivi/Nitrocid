@@ -52,7 +52,7 @@ Public Module SFTPShell
     ''' </summary>
     ''' <param name="Connects">Specifies whether the SFTP client is currently connecting</param>
     ''' <param name="Address">An IP address</param>
-    Public Sub SFTPInitiateShell(Optional ByVal Connects As Boolean = False, Optional ByVal Address As String = "")
+    Public Sub SFTPInitiateShell(Optional Connects As Boolean = False, Optional Address As String = "")
         While True
             Try
                 'Complete initialization
@@ -169,7 +169,7 @@ Public Module SFTPShell
     ''' Executes the SFTP shell alias
     ''' </summary>
     ''' <param name="aliascmd">Aliased command with arguments</param>
-    Sub ExecuteSFTPAlias(ByVal aliascmd As String)
+    Sub ExecuteSFTPAlias(aliascmd As String)
         Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, SFTPShellAliases(FirstWordCmd))
         Wdbg("I", "Actual command: {0}", actualCmd)

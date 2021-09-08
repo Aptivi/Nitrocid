@@ -28,7 +28,7 @@ Public Module FTPTools
     ''' <param name="user">A user name</param>
     ''' <param name="Address">A host address</param>
     ''' <param name="Port">A port for the address</param>
-    Public Sub PromptForPassword(ByVal user As String, Optional ByVal Address As String = "", Optional ByVal Port As Integer = 0, Optional ByVal EncryptionMode As FtpEncryptionMode = FtpEncryptionMode.Explicit)
+    Public Sub PromptForPassword(user As String, Optional Address As String = "", Optional Port As Integer = 0, Optional EncryptionMode As FtpEncryptionMode = FtpEncryptionMode.Explicit)
         'Make a new FTP client object instance (Used in case logging in using speed dial)
         If ClientFTP Is Nothing Then
             ClientFTP = New FtpClient With {
@@ -57,7 +57,7 @@ Public Module FTPTools
     ''' Tries to connect to the FTP server
     ''' </summary>
     ''' <param name="address">An FTP server. You may specify it like "[address]" or "[address]:[port]"</param>
-    Public Sub TryToConnect(ByVal address As String)
+    Public Sub TryToConnect(address As String)
         If FtpConnected = True Then
             W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Error)
         Else
@@ -275,7 +275,7 @@ Class FTPTracer
     ''' Writes any message that the tracer has received to the debugger.
     ''' </summary>
     ''' <param name="Message">A message</param>
-    Public Overloads Overrides Sub Write(ByVal Message As String)
+    Public Overloads Overrides Sub Write(Message As String)
         Wdbg("I", Message)
     End Sub
 
@@ -283,7 +283,7 @@ Class FTPTracer
     ''' Writes any message that the tracer has received to the debugger. Please note that this does exactly as Write() since the debugger only supports writing with newlines.
     ''' </summary>
     ''' <param name="Message">A message</param>
-    Public Overloads Overrides Sub WriteLine(ByVal Message As String)
+    Public Overloads Overrides Sub WriteLine(Message As String)
         Wdbg("I", Message)
     End Sub
 End Class

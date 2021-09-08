@@ -38,7 +38,7 @@ Public Module Encryption
     ''' </summary>
     ''' <param name="encrypted">Array of encrypted bytes</param>
     ''' <returns>A string representation of hash sum</returns>
-    Function GetArrayEnc(ByVal encrypted As Byte()) As String
+    Function GetArrayEnc(encrypted As Byte()) As String
         Dim hash As String = ""
         For i As Integer = 0 To encrypted.Length - 1
             Wdbg("I", "Appending {0} to hash", encrypted(i))
@@ -54,7 +54,7 @@ Public Module Encryption
     ''' <param name="str">Source string</param>
     ''' <param name="algorithm">Algorithm</param>
     ''' <returns>Encrypted hash sum</returns>
-    Public Function GetEncryptedString(ByVal str As String, ByVal algorithm As Algorithms) As String
+    Public Function GetEncryptedString(str As String, algorithm As Algorithms) As String
         Wdbg("I", "Selected algorithm: {0}", algorithm.ToString)
         Wdbg("I", "String length: {0}", str.Length)
         Select Case algorithm
@@ -83,7 +83,7 @@ Public Module Encryption
     ''' <param name="str">Source stream</param>
     ''' <param name="algorithm">Algorithm</param>
     ''' <returns>Encrypted hash sum</returns>
-    Public Function GetEncryptedFile(ByVal str As Stream, ByVal algorithm As Algorithms) As String
+    Public Function GetEncryptedFile(str As Stream, algorithm As Algorithms) As String
         Wdbg("I", "Selected algorithm: {0}", algorithm.ToString)
         Wdbg("I", "Stream length: {0}", str.Length)
         Select Case algorithm
@@ -112,7 +112,7 @@ Public Module Encryption
     ''' <param name="Path">Relative path</param>
     ''' <param name="algorithm">Algorithm</param>
     ''' <returns>Encrypted hash sum</returns>
-    Public Function GetEncryptedFile(ByVal Path As String, ByVal algorithm As Algorithms) As String
+    Public Function GetEncryptedFile(Path As String, algorithm As Algorithms) As String
         Path = NeutralizePath(Path)
         Dim Str As New FileStream(Path, FileMode.Open)
         Dim Encrypted As String = GetEncryptedFile(Str, algorithm)
@@ -125,7 +125,7 @@ Public Module Encryption
     ''' </summary>
     ''' <param name="Algorithm">Algorithm</param>
     ''' <returns>Empty hash</returns>
-    Public Function GetEmptyHash(ByVal Algorithm As Algorithms) As String
+    Public Function GetEmptyHash(Algorithm As Algorithms) As String
         Return GetEncryptedString("", Algorithm)
     End Function
 

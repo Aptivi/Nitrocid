@@ -193,7 +193,7 @@ Public Module ColorTools
     ''' Sets system colors according to the programmed templates
     ''' </summary>
     ''' <param name="theme">A specified theme</param>
-    Public Sub ApplyThemeFromResources(ByVal theme As String)
+    Public Sub ApplyThemeFromResources(theme As String)
         Wdbg("I", "Theme: {0}", theme)
         If colorTemplates.ContainsKey(theme) Then
             Wdbg("I", "Theme found.")
@@ -238,7 +238,7 @@ Public Module ColorTools
     ''' Sets system colors according to the template file
     ''' </summary>
     ''' <param name="ThemeFile">Theme file</param>
-    Public Sub ApplyThemeFromFile(ByVal ThemeFile As String)
+    Public Sub ApplyThemeFromFile(ThemeFile As String)
         Try
             Wdbg("I", "Theme file name: {0}", ThemeFile)
             ThemeFile = NeutralizePath(ThemeFile, True)
@@ -407,7 +407,7 @@ Public Module ColorTools
     ''' <param name="ColorSequence">The color instance</param>
     ''' <param name="Background">Whether to set background or not</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function SetConsoleColor(ByVal ColorSequence As Color, Optional ByVal Background As Boolean = False) As Boolean
+    Public Function SetConsoleColor(ColorSequence As Color, Optional Background As Boolean = False) As Boolean
         If ColoredShell Then
             If ColorSequence Is Nothing Then Throw New ArgumentNullException(NameOf(ColorSequence))
             Dim OldLeft As Integer = Console.CursorLeft
@@ -434,7 +434,7 @@ Public Module ColorTools
     ''' Initializes color wheel
     ''' </summary>
     ''' <param name="TrueColor">Whether or not to use true color. It can be changed dynamically during runtime.</param>
-    Public Function ColorWheel(ByVal TrueColor As Boolean) As String
+    Public Function ColorWheel(TrueColor As Boolean) As String
         Return ColorWheel(TrueColor, ConsoleColors.White, 0, 0, 0)
     End Function
 
@@ -443,7 +443,7 @@ Public Module ColorTools
     ''' </summary>
     ''' <param name="TrueColor">Whether or not to use true color. It can be changed dynamically during runtime.</param>
     ''' <param name="DefaultColor">The default 255-color to use</param>
-    Public Function ColorWheel(ByVal TrueColor As Boolean, ByVal DefaultColor As ConsoleColors) As String
+    Public Function ColorWheel(TrueColor As Boolean, DefaultColor As ConsoleColors) As String
         Return ColorWheel(TrueColor, DefaultColor, 0, 0, 0)
     End Function
 
@@ -454,7 +454,7 @@ Public Module ColorTools
     ''' <param name="DefaultColorR">The default red color range of 0-255 to use</param>
     ''' <param name="DefaultColorG">The default green color range of 0-255 to use</param>
     ''' <param name="DefaultColorB">The default blue color range of 0-255 to use</param>
-    Public Function ColorWheel(ByVal TrueColor As Boolean, ByVal DefaultColorR As Integer, ByVal DefaultColorG As Integer, ByVal DefaultColorB As Integer) As String
+    Public Function ColorWheel(TrueColor As Boolean, DefaultColorR As Integer, DefaultColorG As Integer, DefaultColorB As Integer) As String
         Return ColorWheel(TrueColor, ConsoleColors.White, DefaultColorR, DefaultColorG, DefaultColorB)
     End Function
 
@@ -466,7 +466,7 @@ Public Module ColorTools
     ''' <param name="DefaultColorR">The default red color range of 0-255 to use</param>
     ''' <param name="DefaultColorG">The default green color range of 0-255 to use</param>
     ''' <param name="DefaultColorB">The default blue color range of 0-255 to use</param>
-    Public Function ColorWheel(ByVal TrueColor As Boolean, ByVal DefaultColor As ConsoleColors, ByVal DefaultColorR As Integer, ByVal DefaultColorG As Integer, ByVal DefaultColorB As Integer) As String
+    Public Function ColorWheel(TrueColor As Boolean, DefaultColor As ConsoleColors, DefaultColorR As Integer, DefaultColorG As Integer, DefaultColorB As Integer) As String
         Dim CurrentColor As ConsoleColors = DefaultColor
         Dim CurrentColorR As Integer = DefaultColorR
         Dim CurrentColorG As Integer = DefaultColorG

@@ -25,7 +25,7 @@ Public Module CustomDisplay
     ''' <summary>
     ''' Handles custom screensaver code
     ''' </summary>
-    Sub Custom_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Custom.DoWork
+    Sub Custom_DoWork(sender As Object, e As DoWorkEventArgs) Handles Custom.DoWork
         'To Screensaver Developers: ONLY put the effect code in your scrnSaver() sub.
         '                           Set colors, write welcome message, etc. with the exception of infinite loop and the effect code in preDisplay() sub
         '                           Recommended: Turn off console cursor, and clear the screen in preDisplay() sub.

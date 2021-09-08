@@ -58,7 +58,7 @@ Public Module FTPShell
     ''' </summary>
     ''' <param name="Connects">Specifies whether the FTP client is currently connecting</param>
     ''' <param name="Address">An IP address</param>
-    Public Sub InitiateShell(Optional ByVal Connects As Boolean = False, Optional ByVal Address As String = "")
+    Public Sub InitiateShell(Optional Connects As Boolean = False, Optional Address As String = "")
         While True
             Try
                 'Complete initialization
@@ -178,7 +178,7 @@ Public Module FTPShell
     ''' Executes the FTP shell alias
     ''' </summary>
     ''' <param name="aliascmd">Aliased command with arguments</param>
-    Sub ExecuteFTPAlias(ByVal aliascmd As String)
+    Sub ExecuteFTPAlias(aliascmd As String)
         Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, FTPShellAliases(FirstWordCmd))
         Wdbg("I", "Actual command: {0}", actualCmd)

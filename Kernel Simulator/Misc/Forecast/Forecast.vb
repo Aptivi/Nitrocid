@@ -32,7 +32,7 @@ Public Module Forecast
     ''' <param name="CityID">City ID</param>
     ''' <param name="APIKey">API key</param>
     ''' <returns>A class containing properties of weather information</returns>
-    Public Function GetWeatherInfo(ByVal CityID As Long, ByVal APIKey As String, Optional ByVal Unit As UnitMeasurement = UnitMeasurement.Metric) As ForecastInfo
+    Public Function GetWeatherInfo(CityID As Long, APIKey As String, Optional Unit As UnitMeasurement = UnitMeasurement.Metric) As ForecastInfo
         Dim WeatherInfo As New ForecastInfo With {.CityID = CityID, .TemperatureMeasurement = Unit}
         Dim WeatherURL As String = $"http://api.openweathermap.org/data/2.5/weather?id={CityID}&appid={APIKey}"
         Dim WeatherDownloader As New WebClient
@@ -70,7 +70,7 @@ Public Module Forecast
     ''' <param name="CityName">City name</param>
     ''' <param name="APIKey">API Key</param>
     ''' <returns>A class containing properties of weather information</returns>
-    Public Function GetWeatherInfo(ByVal CityName As String, ByVal APIKey As String, Optional ByVal Unit As UnitMeasurement = UnitMeasurement.Metric) As ForecastInfo
+    Public Function GetWeatherInfo(CityName As String, APIKey As String, Optional Unit As UnitMeasurement = UnitMeasurement.Metric) As ForecastInfo
         Dim WeatherInfo As New ForecastInfo With {.CityName = CityName, .TemperatureMeasurement = Unit}
         Dim WeatherURL As String = $"http://api.openweathermap.org/data/2.5/weather?q={CityName}&appid={APIKey}"
         Dim WeatherDownloader As New WebClient
@@ -107,7 +107,7 @@ Public Module Forecast
     ''' </summary>
     ''' <param name="CityID">City ID or name</param>
     ''' <param name="APIKey">API Key</param>
-    Public Sub PrintWeatherInfo(ByVal CityID As String, ByVal APIKey As String)
+    Public Sub PrintWeatherInfo(CityID As String, APIKey As String)
         Dim WeatherInfo As ForecastInfo
         Dim WeatherSpecifier As String = "°"
         Dim WindSpeedSpecifier As String = "m.s"

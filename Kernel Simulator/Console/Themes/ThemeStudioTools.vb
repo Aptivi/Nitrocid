@@ -86,7 +86,7 @@ Module ThemeStudioTools
     ''' Saves theme to current directory under "<paramref name="Theme"/>.json."
     ''' </summary>
     ''' <param name="Theme">Theme name</param>
-    Sub SaveThemeToCurrentDirectory(ByVal Theme As String)
+    Sub SaveThemeToCurrentDirectory(Theme As String)
         Dim ThemeJson As JObject = GetThemeJson()
         File.WriteAllText(NeutralizePath(Theme + ".json"), JsonConvert.SerializeObject(ThemeJson, Formatting.Indented))
     End Sub
@@ -96,7 +96,7 @@ Module ThemeStudioTools
     ''' </summary>
     ''' <param name="Theme">Theme name</param>
     ''' <param name="Path">Path name. Neutralized by <see cref="NeutralizePath(String, Boolean)"/></param>
-    Sub SaveThemeToAnotherDirectory(ByVal Theme As String, ByVal Path As String)
+    Sub SaveThemeToAnotherDirectory(Theme As String, Path As String)
         Dim ThemeJson As JObject = GetThemeJson()
         File.WriteAllText(NeutralizePath(Path + "/" + Theme + ".json"), JsonConvert.SerializeObject(ThemeJson, Formatting.Indented))
     End Sub
@@ -105,7 +105,7 @@ Module ThemeStudioTools
     ''' Loads theme from resource and places it to the studio
     ''' </summary>
     ''' <param name="Theme">A theme name</param>
-    Sub LoadThemeFromResource(ByVal Theme As String)
+    Sub LoadThemeFromResource(Theme As String)
         'Populate theme info
         Dim ThemeInfo As ThemeInfo
         If Theme = "Default" Then
@@ -142,7 +142,7 @@ Module ThemeStudioTools
     ''' Loads theme from resource and places it to the studio
     ''' </summary>
     ''' <param name="Theme">A theme name</param>
-    Sub LoadThemeFromFile(ByVal Theme As String)
+    Sub LoadThemeFromFile(Theme As String)
         'Populate theme info
         Dim ThemeInfo As New ThemeInfo(New StreamReader(NeutralizePath(Theme)))
 

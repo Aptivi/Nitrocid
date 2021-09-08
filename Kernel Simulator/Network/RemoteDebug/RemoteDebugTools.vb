@@ -43,7 +43,7 @@ Public Module RemoteDebugTools
     ''' Disconnects a specified debug device
     ''' </summary>
     ''' <param name="IPAddr">An IP address of the connected debug device</param>
-    Public Sub DisconnectDbgDev(ByVal IPAddr As String)
+    Public Sub DisconnectDbgDev(IPAddr As String)
         Dim Found As Boolean
         For i As Integer = 0 To DebugDevices.Count - 1
             If Found Then
@@ -69,7 +69,7 @@ Public Module RemoteDebugTools
     ''' </summary>
     ''' <param name="IP">An IP address for device</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
-    Public Function AddToBlockList(ByVal IP As String) As Boolean
+    Public Function AddToBlockList(IP As String) As Boolean
         Try
             Dim BlockedDevices() As String = ListDevices()
             Wdbg("I", "Devices count: {0}", BlockedDevices.Length)
@@ -102,7 +102,7 @@ Public Module RemoteDebugTools
     ''' </summary>
     ''' <param name="IP">A blocked IP address for device</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
-    Public Function RemoveFromBlockList(ByVal IP As String) As Boolean
+    Public Function RemoveFromBlockList(IP As String) As Boolean
         Try
             Dim BlockedDevices() As String = ListDevices()
             Wdbg("I", "Devices count: {0}", BlockedDevices.Length)
@@ -146,7 +146,7 @@ Public Module RemoteDebugTools
     ''' <param name="DeviceIP">Device IP address from remote endpoint address</param>
     ''' <param name="DeviceProperty">Device property</param>
     ''' <returns>Device property if successful; nothing if unsuccessful.</returns>
-    Public Function GetDeviceProperty(ByVal DeviceIP As String, ByVal DeviceProperty As DeviceProperty) As Object
+    Public Function GetDeviceProperty(DeviceIP As String, DeviceProperty As DeviceProperty) As Object
         Dim DeviceJsonContent As String = File.ReadAllText(paths("DebugDevNames"))
         Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
         Dim DeviceProperties As JObject = TryCast(DeviceNameToken(DeviceIP), JObject)
@@ -172,7 +172,7 @@ Public Module RemoteDebugTools
     ''' <param name="DeviceProperty">Device property</param>
     ''' <param name="Value">Value</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
-    Public Function SetDeviceProperty(ByVal DeviceIP As String, ByVal DeviceProperty As DeviceProperty, ByVal Value As Object) As Boolean
+    Public Function SetDeviceProperty(DeviceIP As String, DeviceProperty As DeviceProperty, Value As Object) As Boolean
         Dim DeviceJsonContent As String = File.ReadAllText(paths("DebugDevNames"))
         Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
         Dim DeviceProperties As JObject = TryCast(DeviceNameToken(DeviceIP), JObject)
@@ -200,7 +200,7 @@ Public Module RemoteDebugTools
     ''' <param name="DeviceIP">Device IP address from remote endpoint address</param>
     ''' <param name="ThrowException">Optionally throw exception</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
-    Public Function AddDeviceToJson(ByVal DeviceIP As String, Optional ThrowException As Boolean = True) As Boolean
+    Public Function AddDeviceToJson(DeviceIP As String, Optional ThrowException As Boolean = True) As Boolean
         If Not File.Exists(paths("DebugDevNames")) Then MakeFile(paths("DebugDevNames"))
         Dim DeviceJsonContent As String = File.ReadAllText(paths("DebugDevNames"))
         Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
@@ -222,7 +222,7 @@ Public Module RemoteDebugTools
     ''' </summary>
     ''' <param name="DeviceIP">Device IP address from remote endpoint address</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
-    Public Function RemoveDeviceFromJson(ByVal DeviceIP As String) As Boolean
+    Public Function RemoveDeviceFromJson(DeviceIP As String) As Boolean
         Dim DeviceJsonContent As String = File.ReadAllText(paths("DebugDevNames"))
         Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
         If DeviceNameToken(DeviceIP) IsNot Nothing Then

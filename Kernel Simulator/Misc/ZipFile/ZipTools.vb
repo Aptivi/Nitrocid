@@ -25,7 +25,7 @@ Public Module ZipTools
     ''' Lists all ZIP entries according to the target directory or the current directory
     ''' </summary>
     ''' <param name="Target">Target directory in an archive</param>
-    Public Function ListZipEntries(ByVal Target As String) As List(Of ZipArchiveEntry)
+    Public Function ListZipEntries(Target As String) As List(Of ZipArchiveEntry)
         If String.IsNullOrWhiteSpace(Target) Then Target = ZipShell_CurrentArchiveDirectory
         Dim Entries As New List(Of ZipArchiveEntry)
         For Each ArchiveEntry As ZipArchiveEntry In ZipShell_ZipArchive?.Entries
@@ -49,7 +49,7 @@ Public Module ZipTools
     ''' </summary>
     ''' <param name="Target">Target file in an archive</param>
     ''' <param name="Where">Where in the local filesystem to extract?</param>
-    Public Function ExtractZipFileEntry(ByVal Target As String, ByVal Where As String, Optional ByVal FullTargetPath As Boolean = False) As Boolean
+    Public Function ExtractZipFileEntry(Target As String, Where As String, Optional FullTargetPath As Boolean = False) As Boolean
         If String.IsNullOrWhiteSpace(Target) Then Throw New ArgumentException(DoTranslation("Can't extract nothing."))
         If String.IsNullOrWhiteSpace(Where) Then Where = ZipShell_CurrentDirectory
 
@@ -76,7 +76,7 @@ Public Module ZipTools
     ''' Changes the working archive directory
     ''' </summary>
     ''' <param name="Target">Target directory</param>
-    Public Function ChangeWorkingArchiveDirectory(ByVal Target As String) As Boolean
+    Public Function ChangeWorkingArchiveDirectory(Target As String) As Boolean
         If String.IsNullOrWhiteSpace(Target) Then Target = ZipShell_CurrentArchiveDirectory
 
         'Check to see if we're going back
@@ -143,7 +143,7 @@ Public Module ZipTools
     ''' Changes the working local directory
     ''' </summary>
     ''' <param name="Target">Target directory</param>
-    Public Function ChangeWorkingZipLocalDirectory(ByVal Target As String) As Boolean
+    Public Function ChangeWorkingZipLocalDirectory(Target As String) As Boolean
         If String.IsNullOrWhiteSpace(Target) Then Target = ZipShell_CurrentDirectory
         If Directory.Exists(NeutralizePath(Target, ZipShell_CurrentDirectory)) Then
             Wdbg("I", "{0} found. Changing...", Target)

@@ -69,7 +69,7 @@ Public Module UserManagement
     ''' <returns>True if successful; False if successful</returns>
     ''' <exception cref="InvalidOperationException"></exception>
     ''' <exception cref="Exceptions.UserCreationException"></exception>
-    Function InitializeUser(ByVal uninitUser As String, Optional ByVal unpassword As String = "", Optional ByVal ComputationNeeded As Boolean = True, Optional ByVal ModifyExisting As Boolean = False) As Boolean
+    Function InitializeUser(uninitUser As String, Optional unpassword As String = "", Optional ComputationNeeded As Boolean = True, Optional ModifyExisting As Boolean = False) As Boolean
         Try
             'Compute hash of a password
             Dim Regexp As New Regex("^([a-fA-F0-9]{64})$")
@@ -153,7 +153,7 @@ Public Module UserManagement
     ''' <param name="User">Target user</param>
     ''' <param name="PropertyType">Property type</param>
     ''' <returns>JSON token of user property</returns>
-    Public Function GetUserProperty(ByVal User As String, ByVal PropertyType As UserProperty) As JToken
+    Public Function GetUserProperty(User As String, PropertyType As UserProperty) As JToken
         For Each UserToken As JObject In UsersToken
             If UserToken("username").ToString = User Then
                 Return UserToken.SelectToken(PropertyType.ToString.ToLower)
@@ -167,7 +167,7 @@ Public Module UserManagement
     ''' <param name="User">Target user</param>
     ''' <param name="PropertyType">Property type</param>
     ''' <param name="Value">Value</param>
-    Public Sub SetUserProperty(ByVal User As String, ByVal PropertyType As UserProperty, ByVal Value As String)
+    Public Sub SetUserProperty(User As String, PropertyType As UserProperty, Value As String)
         For Each UserToken As JObject In UsersToken
             If UserToken("username").ToString = User Then
                 Select Case PropertyType
@@ -191,7 +191,7 @@ Public Module UserManagement
     ''' <param name="newUser">A new user</param>
     ''' <param name="newPassword">A password</param>
     ''' <exception cref="Exceptions.UserCreationException"></exception>
-    Public Function AddUser(ByVal newUser As String, Optional ByVal newPassword As String = "") As Boolean
+    Public Function AddUser(newUser As String, Optional newPassword As String = "") As Boolean
         'Adds user
         Wdbg("I", "Creating user {0}...", newUser)
         If InStr(newUser, " ") > 0 Then
@@ -233,7 +233,7 @@ Public Module UserManagement
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="Exceptions.UserManagementException"></exception>
     ''' <remarks>This sub is an accomplice of in-shell command arguments.</remarks>
-    Public Function RemoveUser(ByVal user As String) As Boolean
+    Public Function RemoveUser(user As String) As Boolean
         If InStr(user, " ") > 0 Then
             Wdbg("W", "There are spaces in username.")
             Throw New Exceptions.UserManagementException(DoTranslation("Spaces are not allowed."))
@@ -292,7 +292,7 @@ Public Module UserManagement
     ''' </summary>
     ''' <param name="OldName">Old username</param>
     ''' <param name="Username">New username</param>
-    Public Function ChangeUsername(ByVal OldName As String, ByVal Username As String) As Boolean
+    Public Function ChangeUsername(OldName As String, Username As String) As Boolean
         If Users.ContainsKey(OldName) Then
             If Not Users.ContainsKey(Username) Then
                 Try
@@ -349,7 +349,7 @@ Public Module UserManagement
     ''' <param name="NewPass">New user password</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="Exceptions.UserManagementException"></exception>
-    Public Function ChangePassword(ByVal Target As String, ByVal CurrentPass As String, ByVal NewPass As String)
+    Public Function ChangePassword(Target As String, CurrentPass As String, NewPass As String)
         CurrentPass = GetEncryptedString(CurrentPass, Algorithms.SHA256)
         If CurrentPass = Users(Target) Then
             If adminList(CurrentUser) And Users.ContainsKey(Target) Then
@@ -379,7 +379,7 @@ Public Module UserManagement
     ''' </summary>
     ''' <param name="IncludeAnonymous">Include anonymous users</param>
     ''' <param name="IncludeDisabled">Include disabled users</param>
-    Public Function ListAllUsers(Optional ByVal IncludeAnonymous As Boolean = False, Optional ByVal IncludeDisabled As Boolean = False) As List(Of String)
+    Public Function ListAllUsers(Optional IncludeAnonymous As Boolean = False, Optional IncludeDisabled As Boolean = False) As List(Of String)
         Dim UsersList As New List(Of String)(Users.Keys)
         If Not IncludeAnonymous Then
             UsersList.RemoveAll(New Predicate(Of String)(Function(x) AnonymousList.Keys.Contains(x) And AnonymousList(x) = True))

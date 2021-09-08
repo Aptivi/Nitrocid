@@ -24,7 +24,7 @@ Public Module UESHVariables
     ''' Initializes a $variable
     ''' </summary>
     ''' <param name="var">A $variable</param>
-    Public Sub InitializeVariable(ByVal var As String)
+    Public Sub InitializeVariable(var As String)
         If Not ShellVariables.ContainsKey(var) Then
             ShellVariables.Add(var, "")
             Wdbg("I", "Initialized variable {0}", var)
@@ -37,7 +37,7 @@ Public Module UESHVariables
     ''' <param name="var">A $variable</param>
     ''' <param name="cmd">A command line in script</param>
     ''' <returns>A command line in script that has a value of $variable</returns>
-    Function GetVariableCommand(ByVal var As String, ByVal cmd As String) As String
+    Function GetVariableCommand(var As String, cmd As String) As String
         If Not Commands(cmd.Split(" ")(0)).SettingVariable Then
             Dim newcmd As String = cmd.Replace(var, ShellVariables(var))
             Wdbg("I", "Replaced variable {0} with their values. Result: {1}", var, newcmd)
@@ -51,7 +51,7 @@ Public Module UESHVariables
     ''' </summary>
     ''' <param name="var">A $variable</param>
     ''' <returns>A value of $variable, or an empty string if not found</returns>
-    Public Function GetVariable(ByVal var As String) As String
+    Public Function GetVariable(var As String) As String
         Try
             Return ShellVariables(var)
         Catch ex As Exception
@@ -65,7 +65,7 @@ Public Module UESHVariables
     ''' </summary>
     ''' <param name="var">A $variable</param>
     ''' <param name="value">A value to set to $variable</param>
-    Public Function SetVariable(ByVal var As String, ByVal value As String) As Boolean
+    Public Function SetVariable(var As String, value As String) As Boolean
         Try
             If Not ShellVariables.ContainsKey(var) Then InitializeVariable(var)
             ShellVariables(var) = value

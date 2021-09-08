@@ -27,7 +27,7 @@ Public Module JsonBeautifier
     ''' <param name="JsonFile">Path to JSON file. It's automatically neutralized using <see cref="NeutralizePath(String, Boolean)"/>.</param>
     ''' <returns>Beautified JSON</returns>
     ''' <exception cref="FileNotFoundException"></exception>
-    Public Function BeautifyJson(ByVal JsonFile As String) As String
+    Public Function BeautifyJson(JsonFile As String) As String
         'Neutralize the file path
         Wdbg("I", "Neutralizing json file {0}...", JsonFile)
         JsonFile = NeutralizePath(JsonFile, True)
@@ -43,7 +43,7 @@ Public Module JsonBeautifier
     ''' </summary>
     ''' <param name="JsonText">Contents of a minified JSON.</param>
     ''' <returns>Beautified JSON</returns>
-    Public Function BeautifyJsonText(ByVal JsonText As String) As String
+    Public Function BeautifyJsonText(JsonText As String) As String
         'Make an instance of JToken with this text
         Dim JsonToken As JToken = JToken.Parse(JsonText)
         Wdbg("I", "Created a token with text length of {0}", JsonText.Length)

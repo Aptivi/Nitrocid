@@ -25,7 +25,7 @@ Public Module StringEvaluators
     ''' Evaluates a variable
     ''' </summary>
     ''' <param name="Var">A full path to variable</param>
-    Public Function Evaluate(ByVal Var As String) As Object
+    Public Function Evaluate(Var As String) As Object
         Dim EvalP As New VBCodeProvider
         Dim EvalCP As New CompilerParameters With {.GenerateExecutable = False,
                                                    .GenerateInMemory = True}
@@ -60,7 +60,7 @@ Public Module StringEvaluators
     ''' </summary>
     ''' <param name="Var">A full path to variable</param>
     ''' <param name="VarType">Variable type</param>
-    Public Function EvaluateFast(ByVal Var As String, ByVal VarType As Type) As Object
+    Public Function EvaluateFast(Var As String, VarType As Type) As Object
         Return GetValue(Var, VarType)
     End Function
 

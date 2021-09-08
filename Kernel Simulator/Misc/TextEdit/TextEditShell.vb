@@ -46,7 +46,7 @@ Public Module TextEditShell
     Public TextEdit_AutoSaveInterval As Integer = 60
     Public TextEdit_PromptStyle As String = ""
 
-    Public Sub InitializeTextShell(ByVal FilePath As String)
+    Public Sub InitializeTextShell(FilePath As String)
         'Add handler for text editor shell
         AddHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
         RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
@@ -127,7 +127,7 @@ Public Module TextEditShell
     ''' Executes the text editor shell alias
     ''' </summary>
     ''' <param name="aliascmd">Aliased command with arguments</param>
-    Sub ExecuteTextAlias(ByVal aliascmd As String)
+    Sub ExecuteTextAlias(aliascmd As String)
         Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, TextShellAliases(FirstWordCmd))
         Wdbg("I", "Actual command: {0}", actualCmd)

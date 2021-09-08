@@ -50,7 +50,7 @@ Public Module SSH
     ''' <param name="Address">An IP address or hostname</param>
     ''' <param name="Port">A port of the SSH/SFTP server. It's usually 22</param>
     ''' <param name="Username">A username to authenticate with</param>
-    Public Function GetConnectionInfo(ByVal Address As String, ByVal Port As Integer, ByVal Username As String) As ConnectionInfo
+    Public Function GetConnectionInfo(Address As String, Port As Integer, Username As String) As ConnectionInfo
 
         'Authentication
         Wdbg("I", "Address: {0}:{1}, Username: {2}", Address, Port, Username)
@@ -142,7 +142,7 @@ Public Module SSH
     ''' <param name="Address">An IP address or hostname</param>
     ''' <param name="Port">A port of the SSH server. It's usually 22</param>
     ''' <param name="Username">A username to authenticate with</param>
-    Sub InitializeSSH(ByVal Address As String, ByVal Port As Integer, ByVal Username As String, ByVal Connection As ConnectionType, Optional ByVal Command As String = "")
+    Sub InitializeSSH(Address As String, Port As Integer, Username As String, Connection As ConnectionType, Optional Command As String = "")
         Try
             'Connection
             Dim SSH As New SshClient(GetConnectionInfo(Address, Port, Username))

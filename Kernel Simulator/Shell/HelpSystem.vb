@@ -24,7 +24,7 @@ Public Module HelpSystem
     ''' Shows the help of a command, or command list if nothing is specified
     ''' </summary>
     ''' <param name="CommandType">A specified command type</param>
-    Public Sub ShowHelp(ByVal CommandType As ShellCommandType)
+    Public Sub ShowHelp(CommandType As ShellCommandType)
         ShowHelp("", CommandType)
     End Sub
 
@@ -32,7 +32,7 @@ Public Module HelpSystem
     ''' Shows the help of a command, or command list if nothing is specified
     ''' </summary>
     ''' <param name="command">A specified command</param>
-    Public Sub ShowHelp(ByVal command As String)
+    Public Sub ShowHelp(command As String)
         ShowHelp(command, ShellCommandType.Shell)
     End Sub
 
@@ -41,7 +41,7 @@ Public Module HelpSystem
     ''' </summary>
     ''' <param name="command">A specified command</param>
     ''' <param name="CommandType">A specified command type</param>
-    Public Sub ShowHelp(ByVal command As String, ByVal CommandType As ShellCommandType)
+    Public Sub ShowHelp(command As String, CommandType As ShellCommandType)
         'Populate screensaver files
         Dim ScreensaverFiles As New List(Of String)
         ScreensaverFiles.AddRange(Directory.GetFiles(paths("Mods"), "*.ss.vb", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))

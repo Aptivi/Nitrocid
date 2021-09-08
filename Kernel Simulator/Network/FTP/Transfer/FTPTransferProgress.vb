@@ -30,7 +30,7 @@ Public Module FTPTransferProgress
     ''' <summary>
     ''' Handles the individual file download/upload progress
     ''' </summary>
-    Private Sub FileProgressHandler(ByVal Percentage As FtpProgress)
+    Private Sub FileProgressHandler(Percentage As FtpProgress)
         'If the progress is not defined, disable progress bar
         If Percentage.Progress < 0 Then
             progressFlag = False
@@ -48,7 +48,7 @@ Public Module FTPTransferProgress
     ''' <summary>
     ''' Handles the multiple files/folder download/upload progress
     ''' </summary>
-    Private Sub MultipleProgressHandler(ByVal Percentage As FtpProgress)
+    Private Sub MultipleProgressHandler(Percentage As FtpProgress)
         'If the progress is not defined, disable progress bar
         If Percentage.Progress < 0 Then
             progressFlag = False

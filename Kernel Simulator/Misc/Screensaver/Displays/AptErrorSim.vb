@@ -25,7 +25,7 @@ Module AptErrorSimDisplay
     ''' <summary>
     ''' Handles the code of APT Error Sim
     ''' </summary>
-    Sub AptErrorSim_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles AptErrorSim.DoWork
+    Sub AptErrorSim_DoWork(sender As Object, e As DoWorkEventArgs) Handles AptErrorSim.DoWork
         Console.CursorVisible = False
         Try
             Do While True

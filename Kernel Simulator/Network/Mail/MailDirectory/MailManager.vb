@@ -30,7 +30,7 @@ Public Module MailManager
     ''' <param name="PageNum">Page number</param>
     ''' <returns>String list of messages and preview (optional)</returns>
     ''' <exception cref="ArgumentException"></exception>
-    Public Function MailListMessages(ByVal PageNum As Integer) As String
+    Public Function MailListMessages(PageNum As Integer) As String
         If PageNum <= 0 Then PageNum = 1
         Wdbg("I", "Page number {0}", PageNum)
         If PageNum <= 0 Then
@@ -89,7 +89,7 @@ Public Module MailManager
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="ArgumentException"></exception>
     ''' <exception cref="Exceptions.MailException"></exception>
-    Public Function MailRemoveMessage(ByVal MsgNumber As Integer) As Boolean
+    Public Function MailRemoveMessage(MsgNumber As Integer) As Boolean
         Dim Message As Integer = MsgNumber - 1
         Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
         Wdbg("I", "Message number {0}", Message)
@@ -128,7 +128,7 @@ Public Module MailManager
     ''' </summary>
     ''' <param name="Sender">The sender name</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function MailRemoveAllBySender(ByVal Sender As String) As Boolean
+    Public Function MailRemoveAllBySender(Sender As String) As Boolean
         Wdbg("I", "All mail by {0} will be removed.", Sender)
         Dim DeletedMsgNumber As Integer = 1
         Dim SteppedMsgNumber As Integer = 0
@@ -187,7 +187,7 @@ Public Module MailManager
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="ArgumentException"></exception>
     ''' <exception cref="Exceptions.MailException"></exception>
-    Public Function MailMoveMessage(ByVal MsgNumber As Integer, ByVal TargetFolder As String) As Boolean
+    Public Function MailMoveMessage(MsgNumber As Integer, TargetFolder As String) As Boolean
         Dim Message As Integer = MsgNumber - 1
         Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
         Wdbg("I", "Message number {0}", Message)
@@ -227,7 +227,7 @@ Public Module MailManager
     ''' <param name="Sender">The sender name</param>
     ''' <param name="TargetFolder">Target folder</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function MailMoveAllBySender(ByVal Sender As String, ByVal TargetFolder As String) As Boolean
+    Public Function MailMoveAllBySender(Sender As String, TargetFolder As String) As Boolean
         Wdbg("I", "All mail by {0} will be moved.", Sender)
         Dim DeletedMsgNumber As Integer = 1
         Dim SteppedMsgNumber As Integer = 0

@@ -68,7 +68,7 @@ Public Module HardwareList
     ''' Lists information about hardware
     ''' </summary>
     ''' <param name="HardwareType">Hadrware type defined by Inxi.NET. If "all", prints all information.</param>
-    Public Sub ListHardware(ByVal HardwareType As String)
+    Public Sub ListHardware(HardwareType As String)
         Dim HardwareField As FieldInfo = GetField(HardwareType, GetField(NameOf(HardwareInfo.Hardware), GetType(InxiFrontend.Inxi)).FieldType)
         Wdbg("I", "Got hardware field {0}.", If(HardwareField IsNot Nothing, HardwareField.Name, "unknown"))
         If HardwareField IsNot Nothing Then
@@ -83,7 +83,7 @@ Public Module HardwareList
         End If
     End Sub
 
-    Private Sub ListHardwareProperties(ByVal Field As FieldInfo)
+    Private Sub ListHardwareProperties(Field As FieldInfo)
         Wdbg("I", "Got hardware field {0}.", Field.Name)
         WriteSeparator(Field.Name, True, ColTypes.Stage)
         Dim FieldValue As Object = Field.GetValue(HardwareInfo.Hardware)

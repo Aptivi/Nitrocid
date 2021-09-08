@@ -29,7 +29,7 @@ Public Module MailTransfer
     ''' Prints content of message to console
     ''' </summary>
     ''' <param name="MessageNum">Message number</param>
-    Public Sub MailPrintMessage(ByVal MessageNum As Integer, Optional ByVal Decrypt As Boolean = False)
+    Public Sub MailPrintMessage(MessageNum As Integer, Optional Decrypt As Boolean = False)
         Dim Message As Integer = MessageNum - 1
         Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
         Wdbg("I", "Message number {0}", Message)
@@ -182,7 +182,7 @@ Public Module MailTransfer
     ''' </summary>
     ''' <param name="Text">Text part</param>
     ''' <returns>A decrypted message, or null if unsuccessful.</returns>
-    Public Function DecryptMessage(ByVal Text As MimeMessage) As Dictionary(Of String, MimeEntity)
+    Public Function DecryptMessage(Text As MimeMessage) As Dictionary(Of String, MimeEntity)
         Dim EncryptedDict As New Dictionary(Of String, MimeEntity)
         Wdbg("I", $"Encrypted message type: {If(TypeOf Text.Body Is MultipartEncrypted, "Multipart", "Singlepart")}")
         If TypeOf Text.Body Is MultipartEncrypted Then
@@ -219,7 +219,7 @@ Public Module MailTransfer
     ''' <param name="Subject">Subject</param>
     ''' <param name="Body">Body (only text. See <see cref="MailSendMessage(String, String, MimeEntity)"/> for more.)</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
-    Public Function MailSendMessage(ByVal Recipient As String, ByVal Subject As String, ByVal Body As String) As String
+    Public Function MailSendMessage(Recipient As String, Subject As String, Body As String) As String
         SyncLock SMTP_Client.SyncRoot
             Try
                 Dim FinalMessage As New MimeMessage
@@ -248,7 +248,7 @@ Public Module MailTransfer
     ''' <param name="Subject">Subject</param>
     ''' <param name="Body">Body</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
-    Public Function MailSendMessage(ByVal Recipient As String, ByVal Subject As String, ByVal Body As MimeEntity) As String
+    Public Function MailSendMessage(Recipient As String, Subject As String, Body As MimeEntity) As String
         SyncLock SMTP_Client.SyncRoot
             Try
                 Dim FinalMessage As New MimeMessage
@@ -277,7 +277,7 @@ Public Module MailTransfer
     ''' <param name="Subject">Subject</param>
     ''' <param name="Body">Body</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
-    Public Function MailSendEncryptedMessage(ByVal Recipient As String, ByVal Subject As String, ByVal Body As MimeEntity) As String
+    Public Function MailSendEncryptedMessage(Recipient As String, Subject As String, Body As MimeEntity) As String
         SyncLock SMTP_Client.SyncRoot
             Try
                 Dim FinalMessage As New MimeMessage

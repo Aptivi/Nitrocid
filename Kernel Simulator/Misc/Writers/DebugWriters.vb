@@ -29,7 +29,7 @@ Public Module DebugWriters
     ''' </summary>
     ''' <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub Wdbg(ByVal Level As Char, ByVal text As String, ByVal ParamArray vars() As Object)
+    Public Sub Wdbg(Level As Char, text As String, ParamArray vars() As Object)
         If DebugMode Then
             'Open debugging stream
             If dbgWriter Is Nothing Or dbgWriter?.BaseStream Is Nothing Then dbgWriter = New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
@@ -107,7 +107,7 @@ Public Module DebugWriters
     ''' <param name="Condition">The condition that must be satisfied</param>
     ''' <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WdbgConditional(ByRef Condition As Boolean, ByVal Level As Char, ByVal text As String, ByVal ParamArray vars() As Object)
+    Public Sub WdbgConditional(ByRef Condition As Boolean, Level As Char, text As String, ParamArray vars() As Object)
         If Condition Then Wdbg(Level, text, vars)
     End Sub
 
@@ -116,7 +116,7 @@ Public Module DebugWriters
     ''' </summary>
     ''' <param name="text">A sentence that will be written to the the debugger devices. Supports {0}, {1}, ...</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WdbgDevicesOnly(ByVal Level As Char, ByVal text As String, ByVal ParamArray vars() As Object)
+    Public Sub WdbgDevicesOnly(Level As Char, text As String, ParamArray vars() As Object)
         If DebugMode Then
             Dim OffendingIndex As New List(Of String)
 
@@ -151,7 +151,7 @@ Public Module DebugWriters
     ''' Writes the exception's stack trace to the debugger
     ''' </summary>
     ''' <param name="Ex">An exception</param>
-    Public Sub WStkTrc(ByVal Ex As Exception)
+    Public Sub WStkTrc(Ex As Exception)
         If DebugMode Then
             'These two vbNewLines are padding for accurate stack tracing.
             dbgStackTraces.Add($"{vbNewLine}{Ex.ToString.Substring(0, Ex.ToString.IndexOf(":"))}: {Ex.Message}{vbNewLine}{Ex.StackTrace}{vbNewLine}")

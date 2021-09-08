@@ -260,7 +260,7 @@ Public Module Shell
     ''' <param name="strcommand">Specify command</param>
     ''' <param name="OutputPath">Optional (non-)neutralized output path</param>
     ''' <param name="IsInvokedByKernelArgument">Indicates whether it was invoked by kernel argument parse (for internal use only)</param>
-    Public Sub GetLine(ByVal ArgsMode As Boolean, ByVal strcommand As String, Optional ByVal IsInvokedByKernelArgument As Boolean = False, Optional ByVal OutputPath As String = "")
+    Public Sub GetLine(ArgsMode As Boolean, strcommand As String, Optional IsInvokedByKernelArgument As Boolean = False, Optional OutputPath As String = "")
         'If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
         Wdbg("I", "Does the command contain the redirection sign "">>>"" or "">>""? {0} and {1}", strcommand.Contains(">>>"), strcommand.Contains(">>"))
         Dim OutputTextWriter As StreamWriter
@@ -418,7 +418,7 @@ Public Module Shell
     ''' Translates alias to actual command, preserving arguments
     ''' </summary>
     ''' <param name="aliascmd">Specifies the alias with arguments</param>
-    Sub ExecuteAlias(Base As String, ByVal aliascmd As String)
+    Sub ExecuteAlias(Base As String, aliascmd As String)
         Wdbg("I", "Translating alias {0} to {1}...", aliascmd, Aliases(aliascmd))
         Dim actualCmd As String = Base.Replace(aliascmd, Aliases(aliascmd))
         StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand) With {.Name = "Shell Command Thread"}

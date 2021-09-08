@@ -22,7 +22,7 @@ Module WipeDisplay
 
     Public WithEvents Wipe As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
-    Sub Wipe_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Wipe.DoWork
+    Sub Wipe_DoWork(sender As Object, e As DoWorkEventArgs) Handles Wipe.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.ForegroundColor = ConsoleColor.White
         Console.Clear()

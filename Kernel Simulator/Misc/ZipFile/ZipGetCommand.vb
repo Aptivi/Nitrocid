@@ -25,7 +25,7 @@ Public Module ZipGetCommand
     'Variables
     Public ZipShell_CommandThread As New Thread(AddressOf ZipShell_ParseCommand) With {.Name = "ZIP Shell Command Thread"}
 
-    Sub ZipShell_ParseCommand(ByVal requestedCommand As String)
+    Sub ZipShell_ParseCommand(requestedCommand As String)
         Try
             'Variables
             Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(requestedCommand, ShellCommandType.ZIPShell)

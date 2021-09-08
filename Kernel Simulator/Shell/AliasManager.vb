@@ -224,7 +224,7 @@ Public Module AliasManager
     ''' <param name="Type">Alias type (Shell or Remote Debug)</param>
     ''' <param name="AliasCmd">A specified alias</param>
     ''' <param name="DestCmd">A destination command (target)</param>
-    Public Sub ManageAlias(ByVal mode As String, ByVal Type As AliasType, ByVal AliasCmd As String, Optional ByVal DestCmd As String = "")
+    Public Sub ManageAlias(mode As String, Type As AliasType, AliasCmd As String, Optional DestCmd As String = "")
         If [Enum].IsDefined(GetType(AliasType), Type) Then
             If mode = "add" Then
                 'User tries to add an alias.
@@ -271,7 +271,7 @@ Public Module AliasManager
     ''' <exception cref="Exceptions.AliasNoSuchCommandException"></exception>
     ''' <exception cref="Exceptions.AliasAlreadyExistsException"></exception>
     ''' <exception cref="Exceptions.AliasNoSuchTypeException"></exception>
-    Public Function AddAlias(ByVal SourceAlias As String, ByVal Destination As String, ByVal Type As AliasType) As Boolean
+    Public Function AddAlias(SourceAlias As String, Destination As String, Type As AliasType) As Boolean
         If [Enum].IsDefined(GetType(AliasType), Type) Then
             If SourceAlias = Destination Then
                 Wdbg("I", "Assertion succeeded: {0} = {1}", SourceAlias, Destination)
@@ -324,7 +324,7 @@ Public Module AliasManager
     ''' <returns>True if successful, False if unsuccessful.</returns>
     ''' <exception cref="Exceptions.AliasNoSuchAliasException"></exception>
     ''' <exception cref="Exceptions.AliasNoSuchTypeException"></exception>
-    Public Function RemoveAlias(ByVal TargetAlias As String, ByVal Type As AliasType) As Boolean
+    Public Function RemoveAlias(TargetAlias As String, Type As AliasType) As Boolean
         If Type = AliasType.RDebug Then
             If RemoteDebugAliases.ContainsKey(TargetAlias) Then
                 Dim Aliased As String = RemoteDebugAliases(TargetAlias)
@@ -480,7 +480,7 @@ Public Module AliasManager
     ''' <param name="TargetAlias">The existing alias</param>
     ''' <param name="Type">The alias type</param>
     ''' <returns>True if it exists; false if it doesn't exist</returns>
-    Public Function DoesAliasExist(ByVal TargetAlias As String, ByVal Type As AliasType) As Boolean
+    Public Function DoesAliasExist(TargetAlias As String, Type As AliasType) As Boolean
         'Get all aliases from file
         If Not File.Exists(paths("Aliases")) Then MakeFile(paths("Aliases"))
         Dim AliasJsonContent As String = File.ReadAllText(paths("Aliases"))

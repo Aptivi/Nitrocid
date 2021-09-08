@@ -28,117 +28,117 @@ Public Class Events
     'These events are fired by their Raise<EventName>() subs and are responded by their Respond<EventName>() subs.
     Public Event KernelStarted()
     Public Event PreLogin()
-    Public Event PostLogin(ByVal Username As String)
-    Public Event LoginError(ByVal Username As String, ByVal Reason As String)
+    Public Event PostLogin(Username As String)
+    Public Event LoginError(Username As String, Reason As String)
     Public Event ShellInitialized()
-    Public Event PreExecuteCommand(ByVal Command As String)
-    Public Event PostExecuteCommand(ByVal Command As String)
-    Public Event KernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal Variables() As Object)
-    Public Event ContKernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal Variables() As Object)
+    Public Event PreExecuteCommand(Command As String)
+    Public Event PostExecuteCommand(Command As String)
+    Public Event KernelError(ErrorType As Char, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object)
+    Public Event ContKernelError(ErrorType As Char, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object)
     Public Event PreShutdown()
     Public Event PostShutdown()
     Public Event PreReboot()
     Public Event PostReboot()
-    Public Event PreShowScreensaver(ByVal Screensaver As String)
-    Public Event PostShowScreensaver(ByVal Screensaver As String) 'After a key is pressed after screensaver is shown
-    Public Event PreUnlock(ByVal Screensaver As String)
-    Public Event PostUnlock(ByVal Screensaver As String)
-    Public Event CommandError(ByVal Command As String, ByVal Exception As Exception)
+    Public Event PreShowScreensaver(Screensaver As String)
+    Public Event PostShowScreensaver(Screensaver As String) 'After a key is pressed after screensaver is shown
+    Public Event PreUnlock(Screensaver As String)
+    Public Event PostUnlock(Screensaver As String)
+    Public Event CommandError(Command As String, Exception As Exception)
     Public Event PreReloadConfig()
     Public Event PostReloadConfig()
-    Public Event PlaceholderParsing(ByVal Target As String)
-    Public Event PlaceholderParsed(ByVal Target As String)
+    Public Event PlaceholderParsing(Target As String)
+    Public Event PlaceholderParsed(Target As String)
     Public Event GarbageCollected()
     Public Event FTPShellInitialized()
-    Public Event FTPPreExecuteCommand(ByVal Command As String)
-    Public Event FTPPostExecuteCommand(ByVal Command As String)
-    Public Event FTPCommandError(ByVal Command As String, ByVal Exception As Exception)
-    Public Event FTPPreDownload(ByVal File As String)
-    Public Event FTPPostDownload(ByVal File As String, ByVal Success As Boolean)
-    Public Event FTPPreUpload(ByVal File As String)
-    Public Event FTPPostUpload(ByVal File As String, ByVal Success As Boolean)
+    Public Event FTPPreExecuteCommand(Command As String)
+    Public Event FTPPostExecuteCommand(Command As String)
+    Public Event FTPCommandError(Command As String, Exception As Exception)
+    Public Event FTPPreDownload(File As String)
+    Public Event FTPPostDownload(File As String, Success As Boolean)
+    Public Event FTPPreUpload(File As String)
+    Public Event FTPPostUpload(File As String, Success As Boolean)
     Public Event IMAPShellInitialized()
-    Public Event IMAPPreExecuteCommand(ByVal Command As String)
-    Public Event IMAPPostExecuteCommand(ByVal Command As String)
-    Public Event IMAPCommandError(ByVal Command As String, ByVal Exception As Exception)
-    Public Event RemoteDebugConnectionAccepted(ByVal IP As String)
-    Public Event RemoteDebugConnectionDisconnected(ByVal IP As String)
-    Public Event RemoteDebugExecuteCommand(ByVal IP As String, ByVal Command As String)
-    Public Event RemoteDebugCommandError(ByVal IP As String, ByVal Command As String, ByVal Exception As Exception)
-    Public Event RPCCommandSent(ByVal Command As String)
-    Public Event RPCCommandReceived(ByVal Command As String)
-    Public Event RPCCommandError(ByVal Command As String, ByVal Exception As Exception)
-    Public Event RSSShellInitialized(ByVal FeedUrl As String)
-    Public Event RSSPreExecuteCommand(ByVal FeedUrl As String, ByVal Command As String)
-    Public Event RSSPostExecuteCommand(ByVal FeedUrl As String, ByVal Command As String)
-    Public Event RSSCommandError(ByVal FeedUrl As String, ByVal Command As String, ByVal Exception As Exception)
+    Public Event IMAPPreExecuteCommand(Command As String)
+    Public Event IMAPPostExecuteCommand(Command As String)
+    Public Event IMAPCommandError(Command As String, Exception As Exception)
+    Public Event RemoteDebugConnectionAccepted(IP As String)
+    Public Event RemoteDebugConnectionDisconnected(IP As String)
+    Public Event RemoteDebugExecuteCommand(IP As String, Command As String)
+    Public Event RemoteDebugCommandError(IP As String, Command As String, Exception As Exception)
+    Public Event RPCCommandSent(Command As String)
+    Public Event RPCCommandReceived(Command As String)
+    Public Event RPCCommandError(Command As String, Exception As Exception)
+    Public Event RSSShellInitialized(FeedUrl As String)
+    Public Event RSSPreExecuteCommand(FeedUrl As String, Command As String)
+    Public Event RSSPostExecuteCommand(FeedUrl As String, Command As String)
+    Public Event RSSCommandError(FeedUrl As String, Command As String, Exception As Exception)
     Public Event SFTPShellInitialized()
-    Public Event SFTPPreExecuteCommand(ByVal Command As String)
-    Public Event SFTPPostExecuteCommand(ByVal Command As String)
-    Public Event SFTPCommandError(ByVal Command As String, ByVal Exception As Exception)
-    Public Event SFTPPreDownload(ByVal File As String)
-    Public Event SFTPPostDownload(ByVal File As String)
-    Public Event SFTPDownloadError(ByVal File As String, ByVal Exception As Exception)
-    Public Event SFTPPreUpload(ByVal File As String)
-    Public Event SFTPPostUpload(ByVal File As String)
-    Public Event SFTPUploadError(ByVal File As String, ByVal Exception As Exception)
-    Public Event SSHConnected(ByVal Target As String)
+    Public Event SFTPPreExecuteCommand(Command As String)
+    Public Event SFTPPostExecuteCommand(Command As String)
+    Public Event SFTPCommandError(Command As String, Exception As Exception)
+    Public Event SFTPPreDownload(File As String)
+    Public Event SFTPPostDownload(File As String)
+    Public Event SFTPDownloadError(File As String, Exception As Exception)
+    Public Event SFTPPreUpload(File As String)
+    Public Event SFTPPostUpload(File As String)
+    Public Event SFTPUploadError(File As String, Exception As Exception)
+    Public Event SSHConnected(Target As String)
     Public Event SSHDisconnected()
-    Public Event SSHPreExecuteCommand(ByVal Target As String, ByVal Command As String)
-    Public Event SSHPostExecuteCommand(ByVal Target As String, ByVal Command As String)
-    Public Event SSHCommandError(ByVal Target As String, ByVal Command As String, ByVal Exception As Exception)
-    Public Event SSHError(ByVal Exception As Exception)
-    Public Event UESHPreExecute(ByVal Command As String)
-    Public Event UESHPostExecute(ByVal Command As String)
-    Public Event UESHError(ByVal Command As String, ByVal Exception As Exception)
+    Public Event SSHPreExecuteCommand(Target As String, Command As String)
+    Public Event SSHPostExecuteCommand(Target As String, Command As String)
+    Public Event SSHCommandError(Target As String, Command As String, Exception As Exception)
+    Public Event SSHError(Exception As Exception)
+    Public Event UESHPreExecute(Command As String)
+    Public Event UESHPostExecute(Command As String)
+    Public Event UESHError(Command As String, Exception As Exception)
     Public Event TextShellInitialized()
-    Public Event TextPreExecuteCommand(ByVal Command As String)
-    Public Event TextPostExecuteCommand(ByVal Command As String)
-    Public Event TextCommandError(ByVal Command As String, ByVal Exception As Exception)
-    Public Event NotificationSent(ByVal Notification As Notification)
-    Public Event NotificationsSent(ByVal Notifications As List(Of Notification))
-    Public Event NotificationReceived(ByVal Notification As Notification)
-    Public Event NotificationsReceived(ByVal Notifications As List(Of Notification))
+    Public Event TextPreExecuteCommand(Command As String)
+    Public Event TextPostExecuteCommand(Command As String)
+    Public Event TextCommandError(Command As String, Exception As Exception)
+    Public Event NotificationSent(Notification As Notification)
+    Public Event NotificationsSent(Notifications As List(Of Notification))
+    Public Event NotificationReceived(Notification As Notification)
+    Public Event NotificationsReceived(Notifications As List(Of Notification))
     Public Event NotificationDismissed()
     Public Event ConfigSaved()
-    Public Event ConfigSaveError(ByVal Exception As Exception)
+    Public Event ConfigSaveError(Exception As Exception)
     Public Event ConfigRead()
-    Public Event ConfigReadError(ByVal Exception As Exception)
-    Public Event PreExecuteModCommand(ByVal Command As String)
-    Public Event PostExecuteModCommand(ByVal Command As String)
-    Public Event ModParsed(ByVal ModFileName As String)
-    Public Event ModParseError(ByVal ModFileName As String)
-    Public Event ModFinalized(ByVal ModFileName As String)
-    Public Event ModFinalizationFailed(ByVal ModFileName As String, ByVal Reason As String)
-    Public Event UserAdded(ByVal Username As String)
-    Public Event UserRemoved(ByVal Username As String)
-    Public Event UsernameChanged(ByVal OldUsername As String, ByVal NewUsername As String)
-    Public Event UserPasswordChanged(ByVal Username As String)
+    Public Event ConfigReadError(Exception As Exception)
+    Public Event PreExecuteModCommand(Command As String)
+    Public Event PostExecuteModCommand(Command As String)
+    Public Event ModParsed(ModFileName As String)
+    Public Event ModParseError(ModFileName As String)
+    Public Event ModFinalized(ModFileName As String)
+    Public Event ModFinalizationFailed(ModFileName As String, Reason As String)
+    Public Event UserAdded(Username As String)
+    Public Event UserRemoved(Username As String)
+    Public Event UsernameChanged(OldUsername As String, NewUsername As String)
+    Public Event UserPasswordChanged(Username As String)
     Public Event HardwareProbing()
     Public Event HardwareProbed()
     Public Event CurrentDirectoryChanged()
-    Public Event FileCreated(ByVal File As String)
-    Public Event DirectoryCreated(ByVal Directory As String)
-    Public Event FileCopied(ByVal Source As String, ByVal Destination As String)
-    Public Event DirectoryCopied(ByVal Source As String, ByVal Destination As String)
-    Public Event FileMoved(ByVal Source As String, ByVal Destination As String)
-    Public Event DirectoryMoved(ByVal Source As String, ByVal Destination As String)
-    Public Event FileRemoved(ByVal File As String)
-    Public Event DirectoryRemoved(ByVal Directory As String)
-    Public Event FileAttributeAdded(ByVal File As String, ByVal Attributes As FileAttributes)
-    Public Event FileAttributeRemoved(ByVal File As String, ByVal Attributes As FileAttributes)
+    Public Event FileCreated(File As String)
+    Public Event DirectoryCreated(Directory As String)
+    Public Event FileCopied(Source As String, Destination As String)
+    Public Event DirectoryCopied(Source As String, Destination As String)
+    Public Event FileMoved(Source As String, Destination As String)
+    Public Event DirectoryMoved(Source As String, Destination As String)
+    Public Event FileRemoved(File As String)
+    Public Event DirectoryRemoved(Directory As String)
+    Public Event FileAttributeAdded(File As String, Attributes As FileAttributes)
+    Public Event FileAttributeRemoved(File As String, Attributes As FileAttributes)
     Public Event ColorReset()
-    Public Event ThemeSet(ByVal Theme As String)
-    Public Event ThemeSetError(ByVal Theme As String, ByVal Reason As String)
+    Public Event ThemeSet(Theme As String)
+    Public Event ThemeSetError(Theme As String, Reason As String)
     Public Event ColorSet()
-    Public Event ColorSetError(ByVal Reason As String)
+    Public Event ColorSetError(Reason As String)
     Public Event ThemeStudioStarted()
     Public Event ThemeStudioExit()
-    Public Event ArgumentsInjected(ByVal InjectedArguments As List(Of String))
+    Public Event ArgumentsInjected(InjectedArguments As List(Of String))
     Public Event ZipShellInitialized()
-    Public Event ZipPreExecuteCommand(ByVal Command As String)
-    Public Event ZipPostExecuteCommand(ByVal Command As String)
-    Public Event ZipCommandError(ByVal Command As String, ByVal Exception As Exception)
+    Public Event ZipPreExecuteCommand(Command As String)
+    Public Event ZipPostExecuteCommand(Command As String)
+    Public Event ZipCommandError(Command As String, Exception As Exception)
 
     ''' <summary>
     ''' Makes the mod respond to the event of kernel start
@@ -167,7 +167,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of post-login
     ''' </summary>
-    Public Sub RespondPostLogin(ByVal Username As String) Handles Me.PostLogin
+    Public Sub RespondPostLogin(Username As String) Handles Me.PostLogin
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -179,7 +179,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of login error
     ''' </summary>
-    Public Sub RespondLoginError(ByVal Username As String, ByVal Reason As String) Handles Me.LoginError
+    Public Sub RespondLoginError(Username As String, Reason As String) Handles Me.LoginError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -203,7 +203,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of pre-execute command
     ''' </summary>
-    Public Sub RespondPreExecuteCommand(ByVal Command As String) Handles Me.PreExecuteCommand
+    Public Sub RespondPreExecuteCommand(Command As String) Handles Me.PreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -215,7 +215,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of post-execute command
     ''' </summary>
-    Public Sub RespondPostExecuteCommand(ByVal Command As String) Handles Me.PostExecuteCommand
+    Public Sub RespondPostExecuteCommand(Command As String) Handles Me.PostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -227,7 +227,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of kernel error
     ''' </summary>
-    Public Sub RespondKernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal Variables() As Object) Handles Me.KernelError
+    Public Sub RespondKernelError(ErrorType As Char, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object) Handles Me.KernelError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -239,7 +239,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of continuable kernel error
     ''' </summary>
-    Public Sub RespondContKernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal Variables() As Object) Handles Me.ContKernelError
+    Public Sub RespondContKernelError(ErrorType As Char, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object) Handles Me.ContKernelError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -299,7 +299,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of pre-screensaver show
     ''' </summary>
-    Public Sub RespondPreShowScreensaver(ByVal Screensaver As String) Handles Me.PreShowScreensaver
+    Public Sub RespondPreShowScreensaver(Screensaver As String) Handles Me.PreShowScreensaver
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -311,7 +311,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of post-screensaver show
     ''' </summary>
-    Public Sub RespondPostShowScreensaver(ByVal Screensaver As String) Handles Me.PostShowScreensaver
+    Public Sub RespondPostShowScreensaver(Screensaver As String) Handles Me.PostShowScreensaver
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -323,7 +323,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of pre-unlock
     ''' </summary>
-    Public Sub RespondPreUnlock(ByVal Screensaver As String) Handles Me.PreUnlock
+    Public Sub RespondPreUnlock(Screensaver As String) Handles Me.PreUnlock
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -335,7 +335,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of post-unlock
     ''' </summary>
-    Public Sub RespondPostUnlock(ByVal Screensaver As String) Handles Me.PostUnlock
+    Public Sub RespondPostUnlock(Screensaver As String) Handles Me.PostUnlock
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -347,7 +347,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of command error
     ''' </summary>
-    Public Sub RespondCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.CommandError
+    Public Sub RespondCommandError(Command As String, Exception As Exception) Handles Me.CommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -383,7 +383,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of a placeholder being parsed
     ''' </summary>
-    Public Sub RespondPlaceholderParsing(ByVal Target As String) Handles Me.PlaceholderParsing
+    Public Sub RespondPlaceholderParsing(Target As String) Handles Me.PlaceholderParsing
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -395,7 +395,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of a parsed placeholder
     ''' </summary>
-    Public Sub RespondPlaceholderParsed(ByVal Target As String) Handles Me.PlaceholderParsed
+    Public Sub RespondPlaceholderParsed(Target As String) Handles Me.PlaceholderParsed
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -431,7 +431,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of pre-command execution
     ''' </summary>
-    Public Sub RespondFTPPreExecuteCommand(ByVal Command As String) Handles Me.FTPPreExecuteCommand
+    Public Sub RespondFTPPreExecuteCommand(Command As String) Handles Me.FTPPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -443,7 +443,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of post-command execution
     ''' </summary>
-    Public Sub RespondFTPPostExecuteCommand(ByVal Command As String) Handles Me.FTPPostExecuteCommand
+    Public Sub RespondFTPPostExecuteCommand(Command As String) Handles Me.FTPPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -455,7 +455,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of FTP command error
     ''' </summary>
-    Public Sub RespondFTPCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.FTPCommandError
+    Public Sub RespondFTPCommandError(Command As String, Exception As Exception) Handles Me.FTPCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -467,7 +467,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of FTP pre-download
     ''' </summary>
-    Public Sub RespondFTPPreDownload(ByVal File As String) Handles Me.FTPPreDownload
+    Public Sub RespondFTPPreDownload(File As String) Handles Me.FTPPreDownload
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -479,7 +479,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of FTP post-download
     ''' </summary>
-    Public Sub RespondFTPPostDownload(ByVal File As String, ByVal Success As Boolean) Handles Me.FTPPostDownload
+    Public Sub RespondFTPPostDownload(File As String, Success As Boolean) Handles Me.FTPPostDownload
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -491,7 +491,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of FTP pre-upload
     ''' </summary>
-    Public Sub RespondFTPPreUpload(ByVal File As String) Handles Me.FTPPreUpload
+    Public Sub RespondFTPPreUpload(File As String) Handles Me.FTPPreUpload
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -503,7 +503,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of FTP post-upload
     ''' </summary>
-    Public Sub RespondFTPPostUpload(ByVal File As String, ByVal Success As Boolean) Handles Me.FTPPostUpload
+    Public Sub RespondFTPPostUpload(File As String, Success As Boolean) Handles Me.FTPPostUpload
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -527,7 +527,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of IMAP pre-command execution
     ''' </summary>
-    Public Sub RespondIMAPPreExecuteCommand(ByVal Command As String) Handles Me.IMAPPreExecuteCommand
+    Public Sub RespondIMAPPreExecuteCommand(Command As String) Handles Me.IMAPPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -539,7 +539,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of IMAP post-command execution
     ''' </summary>
-    Public Sub RespondIMAPPostExecuteCommand(ByVal Command As String) Handles Me.IMAPPostExecuteCommand
+    Public Sub RespondIMAPPostExecuteCommand(Command As String) Handles Me.IMAPPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -551,7 +551,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of IMAP command error
     ''' </summary>
-    Public Sub RespondIMAPCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.IMAPCommandError
+    Public Sub RespondIMAPCommandError(Command As String, Exception As Exception) Handles Me.IMAPCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -563,7 +563,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of remote debugging connection accepted
     ''' </summary>
-    Public Sub RespondRemoteDebugConnectionAccepted(ByVal IP As String) Handles Me.RemoteDebugConnectionAccepted
+    Public Sub RespondRemoteDebugConnectionAccepted(IP As String) Handles Me.RemoteDebugConnectionAccepted
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -575,7 +575,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of remote debugging connection disconnected
     ''' </summary>
-    Public Sub RespondRemoteDebugConnectionDisconnected(ByVal IP As String) Handles Me.RemoteDebugConnectionDisconnected
+    Public Sub RespondRemoteDebugConnectionDisconnected(IP As String) Handles Me.RemoteDebugConnectionDisconnected
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -587,7 +587,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of remote debugging command execution
     ''' </summary>
-    Public Sub RespondRemoteDebugExecuteCommand(ByVal IP As String, ByVal Command As String) Handles Me.RemoteDebugExecuteCommand
+    Public Sub RespondRemoteDebugExecuteCommand(IP As String, Command As String) Handles Me.RemoteDebugExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -599,7 +599,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of remote debugging command error
     ''' </summary>
-    Public Sub RespondRemoteDebugCommandError(ByVal IP As String, ByVal Command As String, ByVal Exception As Exception) Handles Me.RemoteDebugCommandError
+    Public Sub RespondRemoteDebugCommandError(IP As String, Command As String, Exception As Exception) Handles Me.RemoteDebugCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -611,7 +611,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of RPC command sent
     ''' </summary>
-    Public Sub RespondRPCCommandSent(ByVal Command As String) Handles Me.RPCCommandSent
+    Public Sub RespondRPCCommandSent(Command As String) Handles Me.RPCCommandSent
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -623,7 +623,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of RPC command received
     ''' </summary>
-    Public Sub RespondRPCCommandReceived(ByVal Command As String) Handles Me.RPCCommandReceived
+    Public Sub RespondRPCCommandReceived(Command As String) Handles Me.RPCCommandReceived
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -635,7 +635,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of RPC command error
     ''' </summary>
-    Public Sub RespondRPCCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.RPCCommandError
+    Public Sub RespondRPCCommandError(Command As String, Exception As Exception) Handles Me.RPCCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -647,7 +647,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of RSS shell initialized
     ''' </summary>
-    Public Sub RespondRSSShellInitialized(ByVal FeedUrl As String) Handles Me.RSSShellInitialized
+    Public Sub RespondRSSShellInitialized(FeedUrl As String) Handles Me.RSSShellInitialized
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -659,7 +659,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of pre-command execution
     ''' </summary>
-    Public Sub RespondRSSPreExecuteCommand(ByVal FeedUrl As String, ByVal Command As String) Handles Me.RSSPreExecuteCommand
+    Public Sub RespondRSSPreExecuteCommand(FeedUrl As String, Command As String) Handles Me.RSSPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -671,7 +671,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of post-command execution
     ''' </summary>
-    Public Sub RespondRSSPostExecuteCommand(ByVal FeedUrl As String, ByVal Command As String) Handles Me.RSSPostExecuteCommand
+    Public Sub RespondRSSPostExecuteCommand(FeedUrl As String, Command As String) Handles Me.RSSPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -683,7 +683,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of RSS command error
     ''' </summary>
-    Public Sub RespondRSSCommandError(ByVal FeedUrl As String, ByVal Command As String, ByVal Exception As Exception) Handles Me.RSSCommandError
+    Public Sub RespondRSSCommandError(FeedUrl As String, Command As String, Exception As Exception) Handles Me.RSSCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -707,7 +707,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of pre-command execution
     ''' </summary>
-    Public Sub RespondSFTPPreExecuteCommand(ByVal Command As String) Handles Me.SFTPPreExecuteCommand
+    Public Sub RespondSFTPPreExecuteCommand(Command As String) Handles Me.SFTPPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -719,7 +719,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of post-command execution
     ''' </summary>
-    Public Sub RespondSFTPPostExecuteCommand(ByVal Command As String) Handles Me.SFTPPostExecuteCommand
+    Public Sub RespondSFTPPostExecuteCommand(Command As String) Handles Me.SFTPPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -731,7 +731,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of SFTP command error
     ''' </summary>
-    Public Sub RespondSFTPCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.SFTPCommandError
+    Public Sub RespondSFTPCommandError(Command As String, Exception As Exception) Handles Me.SFTPCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -743,7 +743,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of SFTP pre-download
     ''' </summary>
-    Public Sub RespondSFTPPreDownload(ByVal File As String) Handles Me.SFTPPreDownload
+    Public Sub RespondSFTPPreDownload(File As String) Handles Me.SFTPPreDownload
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -755,7 +755,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of SFTP post-download
     ''' </summary>
-    Public Sub RespondSFTPPostDownload(ByVal File As String) Handles Me.SFTPPostDownload
+    Public Sub RespondSFTPPostDownload(File As String) Handles Me.SFTPPostDownload
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -767,7 +767,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of SFTP download error
     ''' </summary>
-    Public Sub RespondSFTPDownloadError(ByVal File As String, ByVal Exception As Exception) Handles Me.SFTPDownloadError
+    Public Sub RespondSFTPDownloadError(File As String, Exception As Exception) Handles Me.SFTPDownloadError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -779,7 +779,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of SFTP pre-upload
     ''' </summary>
-    Public Sub RespondSFTPPreUpload(ByVal File As String) Handles Me.SFTPPreUpload
+    Public Sub RespondSFTPPreUpload(File As String) Handles Me.SFTPPreUpload
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -791,7 +791,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of SFTP post-upload
     ''' </summary>
-    Public Sub RespondSFTPPostUpload(ByVal File As String) Handles Me.SFTPPostUpload
+    Public Sub RespondSFTPPostUpload(File As String) Handles Me.SFTPPostUpload
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -803,7 +803,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of SFTP download error
     ''' </summary>
-    Public Sub RespondSFTPUploadError(ByVal File As String, ByVal Exception As Exception) Handles Me.SFTPUploadError
+    Public Sub RespondSFTPUploadError(File As String, Exception As Exception) Handles Me.SFTPUploadError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -815,7 +815,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of SSH being connected
     ''' </summary>
-    Public Sub RespondSSHConnected(ByVal Target As String) Handles Me.SSHConnected
+    Public Sub RespondSSHConnected(Target As String) Handles Me.SSHConnected
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -839,7 +839,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of pre-command execution
     ''' </summary>
-    Public Sub RespondSSHPreExecuteCommand(ByVal Target As String, ByVal Command As String) Handles Me.SSHPreExecuteCommand
+    Public Sub RespondSSHPreExecuteCommand(Target As String, Command As String) Handles Me.SSHPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -851,7 +851,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of post-command execution
     ''' </summary>
-    Public Sub RespondSSHPostExecuteCommand(ByVal Target As String, ByVal Command As String) Handles Me.SSHPostExecuteCommand
+    Public Sub RespondSSHPostExecuteCommand(Target As String, Command As String) Handles Me.SSHPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -863,7 +863,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of SSH command error
     ''' </summary>
-    Public Sub RespondSSHCommandError(ByVal Target As String, ByVal Command As String, ByVal Exception As Exception) Handles Me.SSHCommandError
+    Public Sub RespondSSHCommandError(Target As String, Command As String, Exception As Exception) Handles Me.SSHCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -875,7 +875,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of SSH error
     ''' </summary>
-    Public Sub RespondSSHError(ByVal Exception As Exception) Handles Me.SSHError
+    Public Sub RespondSSHError(Exception As Exception) Handles Me.SSHError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -887,7 +887,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of UESH pre-execute
     ''' </summary>
-    Public Sub RespondUESHPreExecute(ByVal Command As String) Handles Me.UESHPreExecute
+    Public Sub RespondUESHPreExecute(Command As String) Handles Me.UESHPreExecute
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -899,7 +899,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of UESH post-execute
     ''' </summary>
-    Public Sub RespondUESHPostExecute(ByVal Command As String) Handles Me.UESHPostExecute
+    Public Sub RespondUESHPostExecute(Command As String) Handles Me.UESHPostExecute
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -911,7 +911,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of UESH post-execute
     ''' </summary>
-    Public Sub RespondUESHError(ByVal Command As String, ByVal Exception As Exception) Handles Me.UESHError
+    Public Sub RespondUESHError(Command As String, Exception As Exception) Handles Me.UESHError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -935,7 +935,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of text pre-command execution
     ''' </summary>
-    Public Sub RespondTextPreExecuteCommand(ByVal Command As String) Handles Me.TextPreExecuteCommand
+    Public Sub RespondTextPreExecuteCommand(Command As String) Handles Me.TextPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -947,7 +947,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of text post-command execution
     ''' </summary>
-    Public Sub RespondTextPostExecuteCommand(ByVal Command As String) Handles Me.TextPostExecuteCommand
+    Public Sub RespondTextPostExecuteCommand(Command As String) Handles Me.TextPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -959,7 +959,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of text command error
     ''' </summary>
-    Public Sub RespondTextCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.TextCommandError
+    Public Sub RespondTextCommandError(Command As String, Exception As Exception) Handles Me.TextCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -971,7 +971,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of notification being sent
     ''' </summary>
-    Public Sub RespondNotificationSent(ByVal Notification As Notification) Handles Me.NotificationSent
+    Public Sub RespondNotificationSent(Notification As Notification) Handles Me.NotificationSent
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -983,7 +983,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of notifications being sent
     ''' </summary>
-    Public Sub RespondNotificationsSent(ByVal Notifications As List(Of Notification)) Handles Me.NotificationsSent
+    Public Sub RespondNotificationsSent(Notifications As List(Of Notification)) Handles Me.NotificationsSent
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -995,7 +995,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of notification being received
     ''' </summary>
-    Public Sub RespondNotificationReceived(ByVal Notification As Notification) Handles Me.NotificationReceived
+    Public Sub RespondNotificationReceived(Notification As Notification) Handles Me.NotificationReceived
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1007,7 +1007,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of notifications being received
     ''' </summary>
-    Public Sub RespondNotificationsReceived(ByVal Notifications As List(Of Notification)) Handles Me.NotificationsReceived
+    Public Sub RespondNotificationsReceived(Notifications As List(Of Notification)) Handles Me.NotificationsReceived
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1043,7 +1043,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of config having problems saving
     ''' </summary>
-    Public Sub RespondConfigSaveError(ByVal Exception As Exception) Handles Me.ConfigSaveError
+    Public Sub RespondConfigSaveError(Exception As Exception) Handles Me.ConfigSaveError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1067,7 +1067,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of config having problems reading
     ''' </summary>
-    Public Sub RespondConfigReadError(ByVal Exception As Exception) Handles Me.ConfigReadError
+    Public Sub RespondConfigReadError(Exception As Exception) Handles Me.ConfigReadError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1079,7 +1079,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of mod command pre-execution
     ''' </summary>
-    Public Sub RespondPreExecuteModCommand(ByVal Command As String) Handles Me.PreExecuteModCommand
+    Public Sub RespondPreExecuteModCommand(Command As String) Handles Me.PreExecuteModCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1091,7 +1091,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of mod command post-execution
     ''' </summary>
-    Public Sub RespondPostExecuteModCommand(ByVal Command As String) Handles Me.PostExecuteModCommand
+    Public Sub RespondPostExecuteModCommand(Command As String) Handles Me.PostExecuteModCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1103,7 +1103,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of mod being parsed
     ''' </summary>
-    Public Sub RespondModParsed(ByVal ModFileName As String) Handles Me.ModParsed
+    Public Sub RespondModParsed(ModFileName As String) Handles Me.ModParsed
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1115,7 +1115,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of mod having problems parsing
     ''' </summary>
-    Public Sub RespondModParseError(ByVal ModFileName As String) Handles Me.ModParseError
+    Public Sub RespondModParseError(ModFileName As String) Handles Me.ModParseError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1127,7 +1127,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of mod being finalized
     ''' </summary>
-    Public Sub RespondModFinalized(ByVal ModFileName As String) Handles Me.ModFinalized
+    Public Sub RespondModFinalized(ModFileName As String) Handles Me.ModFinalized
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1139,7 +1139,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of mod having problems finalizing
     ''' </summary>
-    Public Sub RespondModFinalizationFailed(ByVal ModFileName As String, ByVal Reason As String) Handles Me.ModFinalizationFailed
+    Public Sub RespondModFinalizationFailed(ModFileName As String, Reason As String) Handles Me.ModFinalizationFailed
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1151,7 +1151,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of user being added
     ''' </summary>
-    Public Sub RespondUserAdded(ByVal Username As String) Handles Me.UserAdded
+    Public Sub RespondUserAdded(Username As String) Handles Me.UserAdded
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1163,7 +1163,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of user being removed
     ''' </summary>
-    Public Sub RespondUserRemoved(ByVal Username As String) Handles Me.UserRemoved
+    Public Sub RespondUserRemoved(Username As String) Handles Me.UserRemoved
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1175,7 +1175,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of username being changed
     ''' </summary>
-    Public Sub RespondUsernameChanged(ByVal OldUsername As String, ByVal NewUsername As String) Handles Me.UsernameChanged
+    Public Sub RespondUsernameChanged(OldUsername As String, NewUsername As String) Handles Me.UsernameChanged
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1187,7 +1187,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of user password being changed
     ''' </summary>
-    Public Sub RespondUserPasswordChanged(ByVal Username As String) Handles Me.UserPasswordChanged
+    Public Sub RespondUserPasswordChanged(Username As String) Handles Me.UserPasswordChanged
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1235,7 +1235,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of file creation
     ''' </summary>
-    Public Sub RespondFileCreated(ByVal File As String) Handles Me.FileCreated
+    Public Sub RespondFileCreated(File As String) Handles Me.FileCreated
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1247,7 +1247,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of directory creation
     ''' </summary>
-    Public Sub RespondDirectoryCreated(ByVal Directory As String) Handles Me.DirectoryCreated
+    Public Sub RespondDirectoryCreated(Directory As String) Handles Me.DirectoryCreated
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1259,7 +1259,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of file copying process
     ''' </summary>
-    Public Sub RespondFileCopied(ByVal Source As String, ByVal Destination As String) Handles Me.FileCopied
+    Public Sub RespondFileCopied(Source As String, Destination As String) Handles Me.FileCopied
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1271,7 +1271,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of directory copying process
     ''' </summary>
-    Public Sub RespondDirectoryCopied(ByVal Source As String, ByVal Destination As String) Handles Me.DirectoryCopied
+    Public Sub RespondDirectoryCopied(Source As String, Destination As String) Handles Me.DirectoryCopied
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1283,7 +1283,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of file moving process
     ''' </summary>
-    Public Sub RespondFileMoved(ByVal Source As String, ByVal Destination As String) Handles Me.FileMoved
+    Public Sub RespondFileMoved(Source As String, Destination As String) Handles Me.FileMoved
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1295,7 +1295,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of directory moving process
     ''' </summary>
-    Public Sub RespondDirectoryMoved(ByVal Source As String, ByVal Destination As String) Handles Me.DirectoryMoved
+    Public Sub RespondDirectoryMoved(Source As String, Destination As String) Handles Me.DirectoryMoved
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1307,7 +1307,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of file removal
     ''' </summary>
-    Public Sub RespondFileRemoved(ByVal File As String) Handles Me.FileRemoved
+    Public Sub RespondFileRemoved(File As String) Handles Me.FileRemoved
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1319,7 +1319,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of directory removal
     ''' </summary>
-    Public Sub RespondDirectoryRemoved(ByVal Directory As String) Handles Me.DirectoryRemoved
+    Public Sub RespondDirectoryRemoved(Directory As String) Handles Me.DirectoryRemoved
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1331,7 +1331,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of file attribute addition
     ''' </summary>
-    Public Sub RespondFileAttributeAdded(ByVal File As String, ByVal Attributes As FileAttributes) Handles Me.FileAttributeAdded
+    Public Sub RespondFileAttributeAdded(File As String, Attributes As FileAttributes) Handles Me.FileAttributeAdded
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1343,7 +1343,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of file attribute removal
     ''' </summary>
-    Public Sub RespondFileAttributeRemoved(ByVal File As String, ByVal Attributes As FileAttributes) Handles Me.FileAttributeRemoved
+    Public Sub RespondFileAttributeRemoved(File As String, Attributes As FileAttributes) Handles Me.FileAttributeRemoved
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1367,7 +1367,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of theme setting
     ''' </summary>
-    Public Sub RespondThemeSet(ByVal Theme As String) Handles Me.ThemeSet
+    Public Sub RespondThemeSet(Theme As String) Handles Me.ThemeSet
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1379,7 +1379,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of theme setting problem
     ''' </summary>
-    Public Sub RespondThemeSetError(ByVal Theme As String, ByVal Reason As String) Handles Me.ThemeSetError
+    Public Sub RespondThemeSetError(Theme As String, Reason As String) Handles Me.ThemeSetError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1403,7 +1403,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of console colors having problems being set
     ''' </summary>
-    Public Sub RespondColorSetError(ByVal Reason As String) Handles Me.ColorSetError
+    Public Sub RespondColorSetError(Reason As String) Handles Me.ColorSetError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1439,7 +1439,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of console colors having problems being set
     ''' </summary>
-    Public Sub RespondArgumentsInjected(ByVal InjectedArguments As List(Of String)) Handles Me.ArgumentsInjected
+    Public Sub RespondArgumentsInjected(InjectedArguments As List(Of String)) Handles Me.ArgumentsInjected
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1463,7 +1463,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of ZIP pre-command execution
     ''' </summary>
-    Public Sub RespondZipPreExecuteCommand(ByVal Command As String) Handles Me.ZipPreExecuteCommand
+    Public Sub RespondZipPreExecuteCommand(Command As String) Handles Me.ZipPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1475,7 +1475,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of ZIP post-command execution
     ''' </summary>
-    Public Sub RespondZipPostExecuteCommand(ByVal Command As String) Handles Me.ZipPostExecuteCommand
+    Public Sub RespondZipPostExecuteCommand(Command As String) Handles Me.ZipPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1487,7 +1487,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of ZIP command error
     ''' </summary>
-    Public Sub RespondZipCommandError(ByVal Command As String, ByVal Exception As Exception) Handles Me.ZipCommandError
+    Public Sub RespondZipCommandError(Command As String, Exception As Exception) Handles Me.ZipCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1517,7 +1517,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of post-login
     ''' </summary>
-    Public Sub RaisePostLogin(ByVal Username As String)
+    Public Sub RaisePostLogin(Username As String)
         Wdbg("I", "Raising event PostLogin() and responding in RespondPostLogin()...")
         FiredEvents.Add("PostLogin (" + CStr(FiredEvents.Count) + ")", {Username})
         RaiseEvent PostLogin(Username)
@@ -1525,7 +1525,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of login error
     ''' </summary>
-    Public Sub RaiseLoginError(ByVal Username As String, ByVal Reason As String)
+    Public Sub RaiseLoginError(Username As String, Reason As String)
         Wdbg("I", "Raising event LoginError() and responding in RespondLoginError()...")
         FiredEvents.Add("LoginError (" + CStr(FiredEvents.Count) + ")", {Username, Reason})
         RaiseEvent LoginError(Username, Reason)
@@ -1541,7 +1541,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of pre-command execution
     ''' </summary>
-    Public Sub RaisePreExecuteCommand(ByVal Command As String)
+    Public Sub RaisePreExecuteCommand(Command As String)
         Wdbg("I", "Raising event PreExecuteCommand() and responding in RespondPreExecuteCommand()...")
         FiredEvents.Add("PreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent PreExecuteCommand(Command)
@@ -1549,7 +1549,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of post-command execution
     ''' </summary>
-    Public Sub RaisePostExecuteCommand(ByVal Command As String)
+    Public Sub RaisePostExecuteCommand(Command As String)
         Wdbg("I", "Raising event PostExecuteCommand() and responding in RespondPostExecuteCommand()...")
         FiredEvents.Add("PostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent PostExecuteCommand(Command)
@@ -1557,7 +1557,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of kernel error
     ''' </summary>
-    Public Sub RaiseKernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal Variables() As Object)
+    Public Sub RaiseKernelError(ErrorType As Char, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object)
         Wdbg("I", "Raising event KernelError() and responding in RespondKernelError()...")
         FiredEvents.Add("KernelError (" + CStr(FiredEvents.Count) + ")", {ErrorType, Reboot, RebootTime, Description, Exc, Variables})
         RaiseEvent KernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
@@ -1565,7 +1565,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of continuable kernel error
     ''' </summary>
-    Public Sub RaiseContKernelError(ByVal ErrorType As Char, ByVal Reboot As Boolean, ByVal RebootTime As Long, ByVal Description As String, ByVal Exc As Exception, ByVal Variables() As Object)
+    Public Sub RaiseContKernelError(ErrorType As Char, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object)
         Wdbg("I", "Raising event ContKernelError() and responding in RespondContKernelError()...")
         FiredEvents.Add("ContKernelError (" + CStr(FiredEvents.Count) + ")", {ErrorType, Reboot, RebootTime, Description, Exc, Variables})
         RaiseEvent ContKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
@@ -1605,7 +1605,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of pre-show screensaver
     ''' </summary>
-    Public Sub RaisePreShowScreensaver(ByVal Screensaver As String)
+    Public Sub RaisePreShowScreensaver(Screensaver As String)
         Wdbg("I", "Raising event PreShowScreensaver() and responding in RespondPreShowScreensaver()...")
         FiredEvents.Add("PreShowScreensaver (" + CStr(FiredEvents.Count) + ")", {Screensaver})
         RaiseEvent PreShowScreensaver(Screensaver)
@@ -1613,7 +1613,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of post-show screensaver
     ''' </summary>
-    Public Sub RaisePostShowScreensaver(ByVal Screensaver As String)
+    Public Sub RaisePostShowScreensaver(Screensaver As String)
         Wdbg("I", "Raising event PostShowScreensaver() and responding in RespondPostShowScreensaver()...")
         FiredEvents.Add("PostShowScreensaver (" + CStr(FiredEvents.Count) + ")", {Screensaver})
         RaiseEvent PostShowScreensaver(Screensaver)
@@ -1621,7 +1621,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of pre-unlock
     ''' </summary>
-    Public Sub RaisePreUnlock(ByVal Screensaver As String)
+    Public Sub RaisePreUnlock(Screensaver As String)
         Wdbg("I", "Raising event PreUnlock() and responding in RespondPreUnlock()...")
         FiredEvents.Add("PreUnlock (" + CStr(FiredEvents.Count) + ")", {Screensaver})
         RaiseEvent PreUnlock(Screensaver)
@@ -1629,7 +1629,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of post-unlock
     ''' </summary>
-    Public Sub RaisePostUnlock(ByVal Screensaver As String)
+    Public Sub RaisePostUnlock(Screensaver As String)
         Wdbg("I", "Raising event PostUnlock() and responding in RespondPostUnlock()...")
         FiredEvents.Add("PostUnlock (" + CStr(FiredEvents.Count) + ")", {Screensaver})
         RaiseEvent PostUnlock(Screensaver)
@@ -1637,7 +1637,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of command error
     ''' </summary>
-    Public Sub RaiseCommandError(ByVal Command As String, ByVal Exception As Exception)
+    Public Sub RaiseCommandError(Command As String, Exception As Exception)
         Wdbg("I", "Raising event CommandError() and responding in RespondCommandError()...")
         FiredEvents.Add("CommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent CommandError(Command, Exception)
@@ -1661,7 +1661,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of placeholders being parsed
     ''' </summary>
-    Public Sub RaisePlaceholderParsing(ByVal Target As String)
+    Public Sub RaisePlaceholderParsing(Target As String)
         Wdbg("I", "Raising event PlaceholderParsing() and responding in RespondPlaceholderParsing()...")
         FiredEvents.Add("PlaceholderParsing (" + CStr(FiredEvents.Count) + ")", {Target})
         RaiseEvent PlaceholderParsing(Target)
@@ -1669,7 +1669,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of a parsed placeholder
     ''' </summary>
-    Public Sub RaisePlaceholderParsed(ByVal Target As String)
+    Public Sub RaisePlaceholderParsed(Target As String)
         Wdbg("I", "Raising event PlaceholderParsed() and responding in RespondPlaceholderParsed()...")
         FiredEvents.Add("PlaceholderParsed (" + CStr(FiredEvents.Count) + ")", {Target})
         RaiseEvent PlaceholderParsed(Target)
@@ -1693,7 +1693,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of FTP pre-execute command
     ''' </summary>
-    Public Sub RaiseFTPPreExecuteCommand(ByVal Command As String)
+    Public Sub RaiseFTPPreExecuteCommand(Command As String)
         Wdbg("I", "Raising event FTPPreExecuteCommand() and responding in RespondFTPPreExecuteCommand()...")
         FiredEvents.Add("FTPPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent FTPPreExecuteCommand(Command)
@@ -1701,7 +1701,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of FTP post-execute command
     ''' </summary>
-    Public Sub RaiseFTPPostExecuteCommand(ByVal Command As String)
+    Public Sub RaiseFTPPostExecuteCommand(Command As String)
         Wdbg("I", "Raising event FTPPostExecuteCommand() and responding in RespondFTPPostExecuteCommand()...")
         FiredEvents.Add("FTPPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent FTPPostExecuteCommand(Command)
@@ -1709,7 +1709,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of FTP command error
     ''' </summary>
-    Public Sub RaiseFTPCommandError(ByVal Command As String, ByVal Exception As Exception)
+    Public Sub RaiseFTPCommandError(Command As String, Exception As Exception)
         Wdbg("I", "Raising event FTPCommandError() and responding in RespondFTPCommandError()...")
         FiredEvents.Add("FTPCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent FTPCommandError(Command, Exception)
@@ -1717,7 +1717,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of FTP pre-download
     ''' </summary>
-    Public Sub RaiseFTPPreDownload(ByVal File As String)
+    Public Sub RaiseFTPPreDownload(File As String)
         Wdbg("I", "Raising event FTPPreDownload() and responding in RespondFTPPreDownload()...")
         FiredEvents.Add("FTPPreDownload (" + CStr(FiredEvents.Count) + ")", {File})
         RaiseEvent FTPPreDownload(File)
@@ -1725,7 +1725,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of FTP post-download
     ''' </summary>
-    Public Sub RaiseFTPPostDownload(ByVal File As String, ByVal Success As Boolean)
+    Public Sub RaiseFTPPostDownload(File As String, Success As Boolean)
         Wdbg("I", "Raising event FTPPostDownload() and responding in RespondFTPPostDownload()...")
         FiredEvents.Add("FTPPostDownload (" + CStr(FiredEvents.Count) + ")", {File, Success})
         RaiseEvent FTPPostDownload(File, Success)
@@ -1733,7 +1733,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of FTP pre-upload
     ''' </summary>
-    Public Sub RaiseFTPPreUpload(ByVal File As String)
+    Public Sub RaiseFTPPreUpload(File As String)
         Wdbg("I", "Raising event FTPPreUpload() and responding in RespondFTPPreUpload()...")
         FiredEvents.Add("FTPPreUpload (" + CStr(FiredEvents.Count) + ")", {File})
         RaiseEvent FTPPreUpload(File)
@@ -1741,7 +1741,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of FTP post-upload
     ''' </summary>
-    Public Sub RaiseFTPPostUpload(ByVal File As String, ByVal Success As Boolean)
+    Public Sub RaiseFTPPostUpload(File As String, Success As Boolean)
         Wdbg("I", "Raising event FTPPostUpload() and responding in RespondFTPPostUpload()...")
         FiredEvents.Add("FTPPostUpload (" + CStr(FiredEvents.Count) + ")", {File, Success})
         RaiseEvent FTPPostUpload(File, Success)
@@ -1757,7 +1757,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of IMAP pre-command execution
     ''' </summary>
-    Public Sub RaiseIMAPPreExecuteCommand(ByVal Command As String)
+    Public Sub RaiseIMAPPreExecuteCommand(Command As String)
         Wdbg("I", "Raising event IMAPPreExecuteCommand() and responding in RespondIMAPPreExecuteCommand()...")
         FiredEvents.Add("IMAPPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent IMAPPreExecuteCommand(Command)
@@ -1765,7 +1765,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of IMAP post-command execution
     ''' </summary>
-    Public Sub RaiseIMAPPostExecuteCommand(ByVal Command As String)
+    Public Sub RaiseIMAPPostExecuteCommand(Command As String)
         Wdbg("I", "Raising event IMAPPostExecuteCommand() and responding in RespondIMAPPostExecuteCommand()...")
         FiredEvents.Add("IMAPPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent IMAPPostExecuteCommand(Command)
@@ -1773,7 +1773,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of IMAP command error
     ''' </summary>
-    Public Sub RaiseIMAPCommandError(ByVal Command As String, ByVal Exception As Exception)
+    Public Sub RaiseIMAPCommandError(Command As String, Exception As Exception)
         Wdbg("I", "Raising event IMAPCommandError() and responding in RespondIMAPCommandError()...")
         FiredEvents.Add("IMAPCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent IMAPCommandError(Command, Exception)
@@ -1781,7 +1781,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of remote debugging connection accepted
     ''' </summary>
-    Public Sub RaiseRemoteDebugConnectionAccepted(ByVal IP As String)
+    Public Sub RaiseRemoteDebugConnectionAccepted(IP As String)
         Wdbg("I", "Raising event RemoteDebugConnectionAccepted() and responding in RespondRemoteDebugConnectionAccepted()...")
         FiredEvents.Add("RemoteDebugConnectionAccepted (" + CStr(FiredEvents.Count) + ")", {IP})
         RaiseEvent RemoteDebugConnectionAccepted(IP)
@@ -1789,7 +1789,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of remote debugging connection disconnected
     ''' </summary>
-    Public Sub RaiseRemoteDebugConnectionDisconnected(ByVal IP As String)
+    Public Sub RaiseRemoteDebugConnectionDisconnected(IP As String)
         Wdbg("I", "Raising event RemoteDebugConnectionDisconnected() and responding in RespondRemoteDebugConnectionDisconnected()...")
         FiredEvents.Add("RemoteDebugConnectionDisconnected (" + CStr(FiredEvents.Count) + ")", {IP})
         RaiseEvent RemoteDebugConnectionDisconnected(IP)
@@ -1797,7 +1797,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of remote debugging command execution
     ''' </summary>
-    Public Sub RaiseRemoteDebugExecuteCommand(ByVal IP As String, ByVal Command As String)
+    Public Sub RaiseRemoteDebugExecuteCommand(IP As String, Command As String)
         Wdbg("I", "Raising event RemoteDebugExecuteCommand() and responding in RespondRemoteDebugExecuteCommand()...")
         FiredEvents.Add("RemoteDebugExecuteCommand (" + CStr(FiredEvents.Count) + ")", {IP, Command})
         RaiseEvent RemoteDebugExecuteCommand(IP, Command)
@@ -1805,7 +1805,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of remote debugging command error
     ''' </summary>
-    Public Sub RaiseRemoteDebugCommandError(ByVal IP As String, ByVal Command As String, ByVal Exception As Exception)
+    Public Sub RaiseRemoteDebugCommandError(IP As String, Command As String, Exception As Exception)
         Wdbg("I", "Raising event RemoteDebugCommandError() and responding in RespondRemoteDebugCommandError()...")
         FiredEvents.Add("RemoteDebugCommandError (" + CStr(FiredEvents.Count) + ")", {IP, Command, Exception})
         RaiseEvent RemoteDebugCommandError(IP, Command, Exception)
@@ -1813,7 +1813,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of RPC command sent
     ''' </summary>
-    Public Sub RaiseRPCCommandSent(ByVal Command As String)
+    Public Sub RaiseRPCCommandSent(Command As String)
         Wdbg("I", "Raising event RPCCommandSent() and responding in RespondRPCCommandSent()...")
         FiredEvents.Add("RPCCommandSent (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent RPCCommandSent(Command)
@@ -1821,7 +1821,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of RPC command received
     ''' </summary>
-    Public Sub RaiseRPCCommandReceived(ByVal Command As String)
+    Public Sub RaiseRPCCommandReceived(Command As String)
         Wdbg("I", "Raising event RPCCommandReceived() and responding in RespondRPCCommandReceived()...")
         FiredEvents.Add("RPCCommandReceived (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent RPCCommandReceived(Command)
@@ -1829,7 +1829,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of RPC command error
     ''' </summary>
-    Public Sub RaiseRPCCommandError(ByVal Command As String, ByVal Exception As Exception)
+    Public Sub RaiseRPCCommandError(Command As String, Exception As Exception)
         Wdbg("I", "Raising event RPCCommandError() and responding in RespondRPCCommandError()...")
         FiredEvents.Add("RPCCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent RPCCommandError(Command, Exception)
@@ -1837,7 +1837,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of RSS shell initialized
     ''' </summary>
-    Public Sub RaiseRSSShellInitialized(ByVal FeedUrl As String)
+    Public Sub RaiseRSSShellInitialized(FeedUrl As String)
         Wdbg("I", "Raising event RSSShellInitialized() and responding in RespondRSSShellInitialized()...")
         FiredEvents.Add("RSSShellInitialized (" + CStr(FiredEvents.Count) + ")", {FeedUrl})
         RaiseEvent RSSShellInitialized(FeedUrl)
@@ -1845,7 +1845,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of RSS pre-execute command
     ''' </summary>
-    Public Sub RaiseRSSPreExecuteCommand(ByVal FeedUrl As String, ByVal Command As String)
+    Public Sub RaiseRSSPreExecuteCommand(FeedUrl As String, Command As String)
         Wdbg("I", "Raising event RSSPreExecuteCommand() and responding in RespondRSSPreExecuteCommand()...")
         FiredEvents.Add("RSSPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {FeedUrl, Command})
         RaiseEvent RSSPreExecuteCommand(FeedUrl, Command)
@@ -1853,7 +1853,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of RSS post-execute command
     ''' </summary>
-    Public Sub RaiseRSSPostExecuteCommand(ByVal FeedUrl As String, ByVal Command As String)
+    Public Sub RaiseRSSPostExecuteCommand(FeedUrl As String, Command As String)
         Wdbg("I", "Raising event RSSPostExecuteCommand() and responding in RespondRSSPostExecuteCommand()...")
         FiredEvents.Add("RSSPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {FeedUrl, Command})
         RaiseEvent RSSPostExecuteCommand(FeedUrl, Command)
@@ -1861,7 +1861,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of RSS command error
     ''' </summary>
-    Public Sub RaiseRSSCommandError(ByVal FeedUrl As String, ByVal Command As String, ByVal Exception As Exception)
+    Public Sub RaiseRSSCommandError(FeedUrl As String, Command As String, Exception As Exception)
         Wdbg("I", "Raising event RSSCommandError() and responding in RespondRSSCommandError()...")
         FiredEvents.Add("RSSCommandError (" + CStr(FiredEvents.Count) + ")", {FeedUrl, Command, Exception})
         RaiseEvent RSSCommandError(FeedUrl, Command, Exception)
@@ -1877,7 +1877,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of SFTP pre-execute command
     ''' </summary>
-    Public Sub RaiseSFTPPreExecuteCommand(ByVal Command As String)
+    Public Sub RaiseSFTPPreExecuteCommand(Command As String)
         Wdbg("I", "Raising event SFTPPreExecuteCommand() and responding in RespondSFTPPreExecuteCommand()...")
         FiredEvents.Add("SFTPPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent SFTPPreExecuteCommand(Command)
@@ -1885,7 +1885,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of SFTP post-execute command
     ''' </summary>
-    Public Sub RaiseSFTPPostExecuteCommand(ByVal Command As String)
+    Public Sub RaiseSFTPPostExecuteCommand(Command As String)
         Wdbg("I", "Raising event SFTPPostExecuteCommand() and responding in RespondSFTPPostExecuteCommand()...")
         FiredEvents.Add("SFTPPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent SFTPPostExecuteCommand(Command)
@@ -1893,7 +1893,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of SFTP command error
     ''' </summary>
-    Public Sub RaiseSFTPCommandError(ByVal Command As String, ByVal Exception As Exception)
+    Public Sub RaiseSFTPCommandError(Command As String, Exception As Exception)
         Wdbg("I", "Raising event SFTPCommandError() and responding in RespondSFTPCommandError()...")
         FiredEvents.Add("SFTPCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent SFTPCommandError(Command, Exception)
@@ -1901,7 +1901,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of SFTP pre-download
     ''' </summary>
-    Public Sub RaiseSFTPPreDownload(ByVal File As String)
+    Public Sub RaiseSFTPPreDownload(File As String)
         Wdbg("I", "Raising event SFTPPreDownload() and responding in RespondSFTPPreDownload()...")
         FiredEvents.Add("SFTPPreDownload (" + CStr(FiredEvents.Count) + ")", {File})
         RaiseEvent SFTPPreDownload(File)
@@ -1909,7 +1909,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of SFTP post-download
     ''' </summary>
-    Public Sub RaiseSFTPPostDownload(ByVal File As String)
+    Public Sub RaiseSFTPPostDownload(File As String)
         Wdbg("I", "Raising event SFTPPostDownload() and responding in RespondSFTPPostDownload()...")
         FiredEvents.Add("SFTPPostDownload (" + CStr(FiredEvents.Count) + ")", {File})
         RaiseEvent SFTPPostDownload(File)
@@ -1917,7 +1917,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of SFTP download error
     ''' </summary>
-    Public Sub RaiseSFTPDownloadError(ByVal File As String, ByVal Exception As Exception)
+    Public Sub RaiseSFTPDownloadError(File As String, Exception As Exception)
         Wdbg("I", "Raising event SFTPDownloadError() and responding in RespondSFTPDownloadError()...")
         FiredEvents.Add("SFTPDownloadError (" + CStr(FiredEvents.Count) + ")", {File, Exception})
         RaiseEvent SFTPDownloadError(File, Exception)
@@ -1925,7 +1925,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of SFTP pre-upload
     ''' </summary>
-    Public Sub RaiseSFTPPreUpload(ByVal File As String)
+    Public Sub RaiseSFTPPreUpload(File As String)
         Wdbg("I", "Raising event SFTPPreUpload() and responding in RespondSFTPPreUpload()...")
         FiredEvents.Add("SFTPPreUpload (" + CStr(FiredEvents.Count) + ")", {File})
         RaiseEvent SFTPPreUpload(File)
@@ -1933,7 +1933,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of SFTP post-upload
     ''' </summary>
-    Public Sub RaiseSFTPPostUpload(ByVal File As String)
+    Public Sub RaiseSFTPPostUpload(File As String)
         Wdbg("I", "Raising event SFTPPostUpload() and responding in RespondSFTPPostUpload()...")
         FiredEvents.Add("SFTPPostUpload (" + CStr(FiredEvents.Count) + ")", {File})
         RaiseEvent SFTPPostUpload(File)
@@ -1941,7 +1941,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of SFTP upload error
     ''' </summary>
-    Public Sub RaiseSFTPUploadError(ByVal File As String, ByVal Exception As Exception)
+    Public Sub RaiseSFTPUploadError(File As String, Exception As Exception)
         Wdbg("I", "Raising event SFTPUploadError() and responding in RespondSFTPUploadError()...")
         FiredEvents.Add("SFTPUploadError (" + CStr(FiredEvents.Count) + ")", {File, Exception})
         RaiseEvent SFTPUploadError(File, Exception)
@@ -1949,7 +1949,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of SSH being connected
     ''' </summary>
-    Public Sub RaiseSSHConnected(ByVal Target As String)
+    Public Sub RaiseSSHConnected(Target As String)
         Wdbg("I", "Raising event SSHConnected() and responding in RespondSSHConnected()...")
         FiredEvents.Add("SSHConnected (" + CStr(FiredEvents.Count) + ")", {Target})
         RaiseEvent SSHConnected(Target)
@@ -1965,7 +1965,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of SSH pre-execute command
     ''' </summary>
-    Public Sub RaiseSSHPreExecuteCommand(ByVal Target As String, ByVal Command As String)
+    Public Sub RaiseSSHPreExecuteCommand(Target As String, Command As String)
         Wdbg("I", "Raising event SSHPreExecuteCommand() and responding in RespondSSHPreExecuteCommand()...")
         FiredEvents.Add("SSHPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent SSHPreExecuteCommand(Target, Command)
@@ -1973,7 +1973,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of SSH post-execute command
     ''' </summary>
-    Public Sub RaiseSSHPostExecuteCommand(ByVal Target As String, ByVal Command As String)
+    Public Sub RaiseSSHPostExecuteCommand(Target As String, Command As String)
         Wdbg("I", "Raising event SSHPostExecuteCommand() and responding in RespondSSHPostExecuteCommand()...")
         FiredEvents.Add("SSHPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent SSHPostExecuteCommand(Target, Command)
@@ -1981,7 +1981,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of SSH command error
     ''' </summary>
-    Public Sub RaiseSSHCommandError(ByVal Target As String, ByVal Command As String, ByVal Exception As Exception)
+    Public Sub RaiseSSHCommandError(Target As String, Command As String, Exception As Exception)
         Wdbg("I", "Raising event SSHCommandError() and responding in RespondSSHCommandError()...")
         FiredEvents.Add("SSHCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent SSHCommandError(Target, Command, Exception)
@@ -1989,7 +1989,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of SSH error
     ''' </summary>
-    Public Sub RaiseSSHError(ByVal Exception As Exception)
+    Public Sub RaiseSSHError(Exception As Exception)
         Wdbg("I", "Raising event SSHError() and responding in RespondSSHError()...")
         FiredEvents.Add("SSHError (" + CStr(FiredEvents.Count) + ")", {Exception})
         RaiseEvent SSHError(Exception)
@@ -1997,7 +1997,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of UESH pre-execute
     ''' </summary>
-    Public Sub RaiseUESHPreExecute(ByVal Command As String)
+    Public Sub RaiseUESHPreExecute(Command As String)
         Wdbg("I", "Raising event UESHPreExecute() and responding in RespondUESHPreExecute()...")
         FiredEvents.Add("UESHPreExecute (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent UESHPreExecute(Command)
@@ -2005,7 +2005,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of UESH post-execute
     ''' </summary>
-    Public Sub RaiseUESHPostExecute(ByVal Command As String)
+    Public Sub RaiseUESHPostExecute(Command As String)
         Wdbg("I", "Raising event UESHPostExecute() and responding in RespondUESHPostExecute()...")
         FiredEvents.Add("UESHPostExecute (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent UESHPostExecute(Command)
@@ -2013,7 +2013,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of UESH error
     ''' </summary>
-    Public Sub RaiseUESHError(ByVal Command As String, ByVal Exception As Exception)
+    Public Sub RaiseUESHError(Command As String, Exception As Exception)
         Wdbg("I", "Raising event UESHError() and responding in RespondUESHError()...")
         FiredEvents.Add("UESHError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent UESHError(Command, Exception)
@@ -2029,7 +2029,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of text pre-command execution
     ''' </summary>
-    Public Sub RaiseTextPreExecuteCommand(ByVal Command As String)
+    Public Sub RaiseTextPreExecuteCommand(Command As String)
         Wdbg("I", "Raising event TextPreExecuteCommand() and responding in RespondTextPreExecuteCommand()...")
         FiredEvents.Add("TextPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent TextPreExecuteCommand(Command)
@@ -2037,7 +2037,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of text post-command execution
     ''' </summary>
-    Public Sub RaiseTextPostExecuteCommand(ByVal Command As String)
+    Public Sub RaiseTextPostExecuteCommand(Command As String)
         Wdbg("I", "Raising event TextPostExecuteCommand() and responding in RespondTextPostExecuteCommand()...")
         FiredEvents.Add("TextPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent TextPostExecuteCommand(Command)
@@ -2045,7 +2045,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of text command error
     ''' </summary>
-    Public Sub RaiseTextCommandError(ByVal Command As String, ByVal Exception As Exception)
+    Public Sub RaiseTextCommandError(Command As String, Exception As Exception)
         Wdbg("I", "Raising event TextCommandError() and responding in RespondTextCommandError()...")
         FiredEvents.Add("TextCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent TextCommandError(Command, Exception)
@@ -2053,7 +2053,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of notification being sent
     ''' </summary>
-    Public Sub RaiseNotificationSent(ByVal Notification As Notification)
+    Public Sub RaiseNotificationSent(Notification As Notification)
         Wdbg("I", "Raising event NotificationSent() and responding in RespondNotificationSent()...")
         FiredEvents.Add("NotificationSent (" + CStr(FiredEvents.Count) + ")", {Notification})
         RaiseEvent NotificationSent(Notification)
@@ -2061,7 +2061,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of notifications being sent
     ''' </summary>
-    Public Sub RaiseNotificationsSent(ByVal Notifications As List(Of Notification))
+    Public Sub RaiseNotificationsSent(Notifications As List(Of Notification))
         Wdbg("I", "Raising event NotificationsSent() and responding in RespondNotificationsSent()...")
         FiredEvents.Add("NotificationsSent (" + CStr(FiredEvents.Count) + ")", {Notifications})
         RaiseEvent NotificationsSent(Notifications)
@@ -2069,7 +2069,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of notification being received
     ''' </summary>
-    Public Sub RaiseNotificationReceived(ByVal Notification As Notification)
+    Public Sub RaiseNotificationReceived(Notification As Notification)
         Wdbg("I", "Raising event NotificationReceived() and responding in RespondNotificationReceived()...")
         FiredEvents.Add("NotificationReceived (" + CStr(FiredEvents.Count) + ")", {Notification})
         RaiseEvent NotificationReceived(Notification)
@@ -2077,7 +2077,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of notifications being received
     ''' </summary>
-    Public Sub RaiseNotificationsReceived(ByVal Notifications As List(Of Notification))
+    Public Sub RaiseNotificationsReceived(Notifications As List(Of Notification))
         Wdbg("I", "Raising event NotificationsReceived() and responding in RespondNotificationsReceived()...")
         FiredEvents.Add("NotificationsReceived (" + CStr(FiredEvents.Count) + ")", {Notifications})
         RaiseEvent NotificationsReceived(Notifications)
@@ -2101,7 +2101,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of config having problems saving
     ''' </summary>
-    Public Sub RaiseConfigSaveError(ByVal Exception As Exception)
+    Public Sub RaiseConfigSaveError(Exception As Exception)
         Wdbg("I", "Raising event ConfigSaveError() and responding in RespondConfigSaveError()...")
         FiredEvents.Add("ConfigSaveError (" + CStr(FiredEvents.Count) + ")", {Exception})
         RaiseEvent ConfigSaveError(Exception)
@@ -2117,7 +2117,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of config having problems reading
     ''' </summary>
-    Public Sub RaiseConfigReadError(ByVal Exception As Exception)
+    Public Sub RaiseConfigReadError(Exception As Exception)
         Wdbg("I", "Raising event ConfigReadError() and responding in RespondConfigReadError()...")
         FiredEvents.Add("ConfigReadError (" + CStr(FiredEvents.Count) + ")", {Exception})
         RaiseEvent ConfigReadError(Exception)
@@ -2125,7 +2125,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of mod command pre-execution
     ''' </summary>
-    Public Sub RaisePreExecuteModCommand(ByVal Command As String)
+    Public Sub RaisePreExecuteModCommand(Command As String)
         Wdbg("I", "Raising event PreExecuteModCommand() and responding in RespondPreExecuteModCommand()...")
         FiredEvents.Add("PreExecuteModCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent PreExecuteModCommand(Command)
@@ -2133,7 +2133,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of mod command post-execution
     ''' </summary>
-    Public Sub RaisePostExecuteModCommand(ByVal Command As String)
+    Public Sub RaisePostExecuteModCommand(Command As String)
         Wdbg("I", "Raising event PostExecuteModCommand() and responding in RespondPostExecuteModCommand()...")
         FiredEvents.Add("PostExecuteModCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent PostExecuteModCommand(Command)
@@ -2141,7 +2141,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of mod being parsed
     ''' </summary>
-    Public Sub RaiseModParsed(ByVal ModFileName As String)
+    Public Sub RaiseModParsed(ModFileName As String)
         Wdbg("I", "Raising event ModParsed() and responding in RespondModParsed()...")
         FiredEvents.Add("ModParsed (" + CStr(FiredEvents.Count) + ")", {ModFileName})
         RaiseEvent ModParsed(ModFileName)
@@ -2149,7 +2149,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of mod having problems parsing
     ''' </summary>
-    Public Sub RaiseModParseError(ByVal ModFileName As String)
+    Public Sub RaiseModParseError(ModFileName As String)
         Wdbg("I", "Raising event ModParseError() and responding in RespondModParseError()...")
         FiredEvents.Add("ModParseError (" + CStr(FiredEvents.Count) + ")", {ModFileName})
         RaiseEvent ModParseError(ModFileName)
@@ -2157,7 +2157,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of mod being finalized
     ''' </summary>
-    Public Sub RaiseModFinalized(ByVal ModFileName As String)
+    Public Sub RaiseModFinalized(ModFileName As String)
         Wdbg("I", "Raising event ModFinalized() and responding in RespondModFinalized()...")
         FiredEvents.Add("ModFinalized (" + CStr(FiredEvents.Count) + ")", {ModFileName})
         RaiseEvent ModFinalized(ModFileName)
@@ -2165,7 +2165,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of mod having problems finalizing
     ''' </summary>
-    Public Sub RaiseModFinalizationFailed(ByVal ModFileName As String, ByVal Reason As String)
+    Public Sub RaiseModFinalizationFailed(ModFileName As String, Reason As String)
         Wdbg("I", "Raising event ModFinalizationFailed() and responding in RespondModFinalizationFailed()...")
         FiredEvents.Add("ModFinalizationFailed (" + CStr(FiredEvents.Count) + ")", {ModFileName, Reason})
         RaiseEvent ModFinalizationFailed(ModFileName, Reason)
@@ -2173,7 +2173,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of user being added
     ''' </summary>
-    Public Sub RaiseUserAdded(ByVal Username As String)
+    Public Sub RaiseUserAdded(Username As String)
         Wdbg("I", "Raising event UserAdded() and responding in RespondUserAdded()...")
         FiredEvents.Add("UserAdded (" + CStr(FiredEvents.Count) + ")", {Username})
         RaiseEvent UserAdded(Username)
@@ -2181,7 +2181,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of user being removed
     ''' </summary>
-    Public Sub RaiseUserRemoved(ByVal Username As String)
+    Public Sub RaiseUserRemoved(Username As String)
         Wdbg("I", "Raising event UserRemoved() and responding in RespondUserRemoved()...")
         FiredEvents.Add("UserRemoved (" + CStr(FiredEvents.Count) + ")", {Username})
         RaiseEvent UserRemoved(Username)
@@ -2189,7 +2189,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of username being changed
     ''' </summary>
-    Public Sub RaiseUsernameChanged(ByVal OldUsername As String, ByVal NewUsername As String)
+    Public Sub RaiseUsernameChanged(OldUsername As String, NewUsername As String)
         Wdbg("I", "Raising event UsernameChanged() and responding in RespondUsernameChanged()...")
         FiredEvents.Add("UsernameChanged (" + CStr(FiredEvents.Count) + ")", {OldUsername, NewUsername})
         RaiseEvent UsernameChanged(OldUsername, NewUsername)
@@ -2197,7 +2197,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of user password being changed
     ''' </summary>
-    Public Sub RaiseUserPasswordChanged(ByVal Username As String)
+    Public Sub RaiseUserPasswordChanged(Username As String)
         Wdbg("I", "Raising event UserPasswordChanged() and responding in RespondUserPasswordChanged()...")
         FiredEvents.Add("UserPasswordChanged (" + CStr(FiredEvents.Count) + ")", {Username})
         RaiseEvent UserPasswordChanged(Username)
@@ -2229,7 +2229,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of file creation
     ''' </summary>
-    Public Sub RaiseFileCreated(ByVal File As String)
+    Public Sub RaiseFileCreated(File As String)
         Wdbg("I", "Raising event FileCreated() and responding in RespondFileCreated()...")
         FiredEvents.Add("FileCreated (" + CStr(FiredEvents.Count) + ")", {File})
         RaiseEvent FileCreated(File)
@@ -2237,7 +2237,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of directory creation
     ''' </summary>
-    Public Sub RaiseDirectoryCreated(ByVal Directory As String)
+    Public Sub RaiseDirectoryCreated(Directory As String)
         Wdbg("I", "Raising event DirectoryCreated() and responding in RespondDirectoryCreated()...")
         FiredEvents.Add("DirectoryCreated (" + CStr(FiredEvents.Count) + ")", {Directory})
         RaiseEvent DirectoryCreated(Directory)
@@ -2245,7 +2245,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of file copying process
     ''' </summary>
-    Public Sub RaiseFileCopied(ByVal Source As String, ByVal Destination As String)
+    Public Sub RaiseFileCopied(Source As String, Destination As String)
         Wdbg("I", "Raising event FileCopied() and responding in RespondFileCopied()...")
         FiredEvents.Add("FileCopied (" + CStr(FiredEvents.Count) + ")", {Source, Destination})
         RaiseEvent FileCopied(Source, Destination)
@@ -2253,7 +2253,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of directory copying process
     ''' </summary>
-    Public Sub RaiseDirectoryCopied(ByVal Source As String, ByVal Destination As String)
+    Public Sub RaiseDirectoryCopied(Source As String, Destination As String)
         Wdbg("I", "Raising event DirectoryCopied() and responding in RespondDirectoryCopied()...")
         FiredEvents.Add("DirectoryCopied (" + CStr(FiredEvents.Count) + ")", {Source, Destination})
         RaiseEvent DirectoryCopied(Source, Destination)
@@ -2261,7 +2261,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of file moving process
     ''' </summary>
-    Public Sub RaiseFileMoved(ByVal Source As String, ByVal Destination As String)
+    Public Sub RaiseFileMoved(Source As String, Destination As String)
         Wdbg("I", "Raising event FileMoved() and responding in RespondFileMoved()...")
         FiredEvents.Add("FileMoved (" + CStr(FiredEvents.Count) + ")", {Source, Destination})
         RaiseEvent FileMoved(Source, Destination)
@@ -2269,7 +2269,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of directory moving process
     ''' </summary>
-    Public Sub RaiseDirectoryMoved(ByVal Source As String, ByVal Destination As String)
+    Public Sub RaiseDirectoryMoved(Source As String, Destination As String)
         Wdbg("I", "Raising event DirectoryMoved() and responding in RespondDirectoryMoved()...")
         FiredEvents.Add("DirectoryMoved (" + CStr(FiredEvents.Count) + ")", {Source, Destination})
         RaiseEvent DirectoryMoved(Source, Destination)
@@ -2277,7 +2277,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of file removal
     ''' </summary>
-    Public Sub RaiseFileRemoved(ByVal File As String)
+    Public Sub RaiseFileRemoved(File As String)
         Wdbg("I", "Raising event FileRemoved() and responding in RespondFileRemoved()...")
         FiredEvents.Add("FileRemoved (" + CStr(FiredEvents.Count) + ")", {File})
         RaiseEvent FileRemoved(File)
@@ -2285,7 +2285,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of directory removal
     ''' </summary>
-    Public Sub RaiseDirectoryRemoved(ByVal Directory As String)
+    Public Sub RaiseDirectoryRemoved(Directory As String)
         Wdbg("I", "Raising event DirectoryRemoved() and responding in RespondDirectoryRemoved()...")
         FiredEvents.Add("DirectoryRemoved (" + CStr(FiredEvents.Count) + ")", {Directory})
         RaiseEvent DirectoryRemoved(Directory)
@@ -2293,7 +2293,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of file attribute addition
     ''' </summary>
-    Public Sub RaiseFileAttributeAdded(ByVal File As String, ByVal Attributes As FileAttributes)
+    Public Sub RaiseFileAttributeAdded(File As String, Attributes As FileAttributes)
         Wdbg("I", "Raising event FileAttributeAdded() and responding in RespondFileAttributeAdded()...")
         FiredEvents.Add("FileAttributeAdded (" + CStr(FiredEvents.Count) + ")", {File, Attributes})
         RaiseEvent FileAttributeAdded(File, Attributes)
@@ -2301,7 +2301,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of file attribute removal
     ''' </summary>
-    Public Sub RaiseFileAttributeRemoved(ByVal File As String, ByVal Attributes As FileAttributes)
+    Public Sub RaiseFileAttributeRemoved(File As String, Attributes As FileAttributes)
         Wdbg("I", "Raising event FileAttributeRemoved() and responding in RespondFileAttributeRemoved()...")
         FiredEvents.Add("FileAttributeRemoved (" + CStr(FiredEvents.Count) + ")", {File, Attributes})
         RaiseEvent FileAttributeRemoved(File, Attributes)
@@ -2317,7 +2317,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of theme setting
     ''' </summary>
-    Public Sub RaiseThemeSet(ByVal Theme As String)
+    Public Sub RaiseThemeSet(Theme As String)
         Wdbg("I", "Raising event ThemeSet() and responding in RespondThemeSet()...")
         FiredEvents.Add("ThemeSet (" + CStr(FiredEvents.Count) + ")", {Theme})
         RaiseEvent ThemeSet(Theme)
@@ -2325,7 +2325,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of theme setting problem
     ''' </summary>
-    Public Sub RaiseThemeSetError(ByVal Theme As String, ByVal Reason As String)
+    Public Sub RaiseThemeSetError(Theme As String, Reason As String)
         Wdbg("I", "Raising event ThemeSetError() and responding in RespondThemeSetError()...")
         FiredEvents.Add("ThemeSetError (" + CStr(FiredEvents.Count) + ")", {Theme, Reason})
         RaiseEvent ThemeSetError(Theme, Reason)
@@ -2341,7 +2341,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of console colors having problems being set
     ''' </summary>
-    Public Sub RaiseColorSetError(ByVal Reason As String)
+    Public Sub RaiseColorSetError(Reason As String)
         Wdbg("I", "Raising event ColorSetError() and responding in RespondColorSetError()...")
         FiredEvents.Add("ColorSetError (" + CStr(FiredEvents.Count) + ")", {Reason})
         RaiseEvent ColorSetError(Reason)
@@ -2365,7 +2365,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of arguments being injected
     ''' </summary>
-    Public Sub RaiseArgumentsInjected(ByVal InjectedArguments As List(Of String))
+    Public Sub RaiseArgumentsInjected(InjectedArguments As List(Of String))
         Wdbg("I", "Raising event ArgumentsInjected() and responding in RespondArgumentsInjected()...")
         FiredEvents.Add("ArgumentsInjected (" + CStr(FiredEvents.Count) + ")", {InjectedArguments})
         RaiseEvent ArgumentsInjected(InjectedArguments)
@@ -2381,7 +2381,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of ZIP pre-command execution
     ''' </summary>
-    Public Sub RaiseZipPreExecuteCommand(ByVal Command As String)
+    Public Sub RaiseZipPreExecuteCommand(Command As String)
         Wdbg("I", "Raising event ZipPreExecuteCommand() and responding in RespondZipPreExecuteCommand()...")
         FiredEvents.Add("ZipPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent ZipPreExecuteCommand(Command)
@@ -2389,7 +2389,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of ZIP post-command execution
     ''' </summary>
-    Public Sub RaiseZipPostExecuteCommand(ByVal Command As String)
+    Public Sub RaiseZipPostExecuteCommand(Command As String)
         Wdbg("I", "Raising event ZipPostExecuteCommand() and responding in RespondZipPostExecuteCommand()...")
         FiredEvents.Add("ZipPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
         RaiseEvent ZipPostExecuteCommand(Command)
@@ -2397,7 +2397,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of ZIP command error
     ''' </summary>
-    Public Sub RaiseZipCommandError(ByVal Command As String, ByVal Exception As Exception)
+    Public Sub RaiseZipCommandError(Command As String, Exception As Exception)
         Wdbg("I", "Raising event ZipCommandError() and responding in RespondZipCommandError()...")
         FiredEvents.Add("ZipCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent ZipCommandError(Command, Exception)

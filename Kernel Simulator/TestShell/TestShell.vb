@@ -117,7 +117,7 @@ Module TestShell
     ''' Executes the test shell alias
     ''' </summary>
     ''' <param name="aliascmd">Aliased command with arguments</param>
-    Sub ExecuteTestAlias(ByVal aliascmd As String)
+    Sub ExecuteTestAlias(aliascmd As String)
         Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, TestShellAliases(FirstWordCmd))
         Wdbg("I", "Actual command: {0}", actualCmd)

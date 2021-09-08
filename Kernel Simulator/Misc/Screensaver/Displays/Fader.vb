@@ -25,7 +25,7 @@ Module FaderDisplay
     ''' <summary>
     ''' Handles the code of Fader
     ''' </summary>
-    Sub Fader_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Fader.DoWork
+    Sub Fader_DoWork(sender As Object, e As DoWorkEventArgs) Handles Fader.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.Clear()
         Console.CursorVisible = False

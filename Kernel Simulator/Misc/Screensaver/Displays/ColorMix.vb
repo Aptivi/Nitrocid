@@ -25,7 +25,7 @@ Module ColorMixDisplay
     ''' <summary>
     ''' Handles the code of ColorMix
     ''' </summary>
-    Sub ColorMix_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles ColorMix.DoWork
+    Sub ColorMix_DoWork(sender As Object, e As DoWorkEventArgs) Handles ColorMix.DoWork
         Console.BackgroundColor = ConsoleColor.Black
         Console.ForegroundColor = ConsoleColor.White
         Console.Clear()

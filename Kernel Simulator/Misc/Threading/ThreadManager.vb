@@ -25,7 +25,7 @@ Public Module ThreadManager
     ''' </summary>
     ''' <param name="Time">Time in milliseconds</param>
     ''' <param name="ThreadWork">The working thread</param>
-    Public Sub SleepNoBlock(ByVal Time As Long, ByVal ThreadWork As BackgroundWorker)
+    Public Sub SleepNoBlock(Time As Long, ThreadWork As BackgroundWorker)
         Dim WorkFinished As Boolean
         Dim TimeCount As Long
         AddHandler ThreadWork.RunWorkerCompleted, Sub() WorkFinished = True

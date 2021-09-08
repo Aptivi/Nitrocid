@@ -37,7 +37,7 @@ Public Module RPC_Commands
     ''' </summary>
     ''' <param name="Request">A request</param>
     ''' <param name="IP">An IP address which the RPC is hosted</param>
-    Public Sub SendCommand(ByVal Request As String, ByVal IP As String)
+    Public Sub SendCommand(Request As String, IP As String)
         SendCommand(Request, IP, RPCPort)
     End Sub
 
@@ -48,7 +48,7 @@ Public Module RPC_Commands
     ''' <param name="IP">An IP address which the RPC is hosted</param>
     ''' <param name="Port">A port which the RPC is hosted</param>
     ''' <exception cref="InvalidOperationException"></exception>
-    Public Sub SendCommand(ByVal Request As String, ByVal IP As String, ByVal Port As Integer)
+    Public Sub SendCommand(Request As String, IP As String, Port As Integer)
         If RPCEnabled Then
             Dim Cmd As String = Request.Remove(Request.IndexOf("("))
             Wdbg("I", "Command: {0}", Cmd)

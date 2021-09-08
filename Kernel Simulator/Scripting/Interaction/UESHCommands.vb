@@ -43,7 +43,7 @@ Public Module UESHCommands
     ''' <param name="ScriptVariable">An $variable</param>
     ''' <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
     ''' <param name="OutputType">Output type of choices</param>
-    Public Sub PromptChoice(ByVal Question As String, ByVal ScriptVariable As String, ByVal AnswersStr As String, Optional OutputType As ChoiceOutputType = ChoiceOutputType.OneLine)
+    Public Sub PromptChoice(Question As String, ScriptVariable As String, AnswersStr As String, Optional OutputType As ChoiceOutputType = ChoiceOutputType.OneLine)
         While True
             'Variables
             Dim answers As String() = {}
@@ -84,7 +84,7 @@ Public Module UESHCommands
     ''' Prompts user for input (answer the question with your own answers)
     ''' </summary>
     ''' <param name="ScriptVariable">An $variable</param>
-    Public Sub PromptInput(ByVal Question As String, ByVal ScriptVariable As String)
+    Public Sub PromptInput(Question As String, ScriptVariable As String)
         While True
             'Variables
             Dim Answer As String

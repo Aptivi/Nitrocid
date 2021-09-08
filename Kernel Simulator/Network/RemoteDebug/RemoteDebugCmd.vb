@@ -33,7 +33,7 @@ Module RemoteDebugCmd
     ''' <param name="CmdString">A specified command. It may contain arguments.</param>
     ''' <param name="SocketStreamWriter">A socket stream writer</param>
     ''' <param name="Address">An IP address</param>
-    Sub ParseCmd(ByVal CmdString As String, ByVal SocketStreamWriter As StreamWriter, ByVal Address As String)
+    Sub ParseCmd(CmdString As String, SocketStreamWriter As StreamWriter, Address As String)
         EventManager.RaiseRemoteDebugExecuteCommand(Address, CmdString)
         Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(CmdString, ShellCommandType.RemoteDebugShell)
         Dim Command As String = ArgumentInfo.Command

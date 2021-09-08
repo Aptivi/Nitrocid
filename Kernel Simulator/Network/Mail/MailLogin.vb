@@ -49,7 +49,7 @@ Module MailLogin
     ''' Prompts user to enter password
     ''' </summary>
     ''' <param name="Username">Specified username</param>
-    Sub PromptPassword(ByVal Username As String)
+    Sub PromptPassword(Username As String)
         'Password
         Wdbg("I", "Username: {0}", Username)
         Mail_Authentication.UserName = Username
@@ -81,7 +81,7 @@ Module MailLogin
         ParseAddresses(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port)
     End Sub
 
-    Sub ParseAddresses(ByVal IMAP_Address As String, ByVal IMAP_Port As Integer, ByVal SMTP_Address As String, ByVal SMTP_Port As Integer)
+    Sub ParseAddresses(IMAP_Address As String, IMAP_Port As Integer, SMTP_Address As String, SMTP_Port As Integer)
         'If the address is <address>:[port]
         If IMAP_Address.Contains(":") Then
             Wdbg("I", "Found colon in address. Separating...", Mail_Authentication.UserName)
@@ -108,7 +108,7 @@ Module MailLogin
     ''' </summary>
     ''' <param name="Address">E-mail address</param>
     ''' <returns>Server address. Otherwise, null.</returns>
-    Public Function ServerDetect(ByVal Address As String, ByVal Type As ServerType) As String
+    Public Function ServerDetect(Address As String, Type As ServerType) As String
         If Address.EndsWith("@gmail.com") Or Address.EndsWith("@googlemail.com") Then
             If Type = ServerType.IMAP Then
                 Return "imap.gmail.com"
@@ -272,7 +272,7 @@ Module MailLogin
     ''' <param name="Port">A port of the IMAP server</param>
     ''' <param name="SmtpAddress">An IP address of the SMTP server</param>
     ''' <param name="SmtpPort">A port of the SMTP server</param>
-    Sub ConnectShell(ByVal Address As String, ByVal Port As Integer, ByVal SmtpAddress As String, ByVal SmtpPort As Integer)
+    Sub ConnectShell(Address As String, Port As Integer, SmtpAddress As String, SmtpPort As Integer)
         Try
             'Register the context and initialize the loggers if debug mode is on
             If DebugMode Then

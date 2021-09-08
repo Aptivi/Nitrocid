@@ -42,7 +42,7 @@ Module ZipShell
     ''' Initializes the ZIP shell
     ''' </summary>
     ''' <param name="ZipFile">A ZIP file. We recommend you to use <see cref="NeutralizePath(String, Boolean)"></see> to neutralize path.</param>
-    Public Sub InitializeZipShell(ByVal ZipFile As String)
+    Public Sub InitializeZipShell(ZipFile As String)
         'Add handler for ZIP shell
         AddHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
         RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
@@ -120,7 +120,7 @@ Module ZipShell
     ''' Executes the ZIP shell alias
     ''' </summary>
     ''' <param name="aliascmd">Aliased command with arguments</param>
-    Sub ExecuteZIPAlias(ByVal aliascmd As String)
+    Sub ExecuteZIPAlias(aliascmd As String)
         Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, ZIPShellAliases(FirstWordCmd))
         Wdbg("I", "Actual command: {0}", actualCmd)

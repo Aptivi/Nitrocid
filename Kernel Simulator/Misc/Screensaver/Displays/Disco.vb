@@ -25,7 +25,7 @@ Module DiscoDisplay
     ''' <summary>
     ''' Handles the code of Disco
     ''' </summary>
-    Sub Disco_DoWork(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Disco.DoWork
+    Sub Disco_DoWork(sender As Object, e As DoWorkEventArgs) Handles Disco.DoWork
         Console.CursorVisible = False
         Dim MaximumColors As Integer = 15
         Dim MaximumColorsR As Integer = 255

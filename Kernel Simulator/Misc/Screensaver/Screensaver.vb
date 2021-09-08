@@ -113,7 +113,7 @@ Public Module Screensaver
     ''' <summary>
     ''' Handles the screensaver time so that when it reaches the time threshold, the screensaver launches
     ''' </summary>
-    Sub HandleTimeout(ByVal sender As Object, ByVal e As DoWorkEventArgs) Handles Timeout.DoWork
+    Sub HandleTimeout(sender As Object, e As DoWorkEventArgs) Handles Timeout.DoWork
         Dim count As Integer
         Dim oldcursor As Integer = Console.CursorLeft
         While True
@@ -137,7 +137,7 @@ Public Module Screensaver
     ''' Shows the screensaver
     ''' </summary>
     ''' <param name="saver">A specified screensaver</param>
-    Sub ShowSavers(ByVal saver As String)
+    Sub ShowSavers(saver As String)
         Try
             InSaver = True
             ScrnTimeReached = True
@@ -191,7 +191,7 @@ Public Module Screensaver
     ''' Sets the default screensaver
     ''' </summary>
     ''' <param name="saver">Specified screensaver</param>
-    Public Sub SetDefaultScreensaver(ByVal saver As String)
+    Public Sub SetDefaultScreensaver(saver As String)
         If ScrnSvrdb.ContainsKey(saver) Or CSvrdb.ContainsKey(saver) Then
             Wdbg("I", "{0} is found. Setting it to default...", saver)
             defSaverName = saver
@@ -207,7 +207,7 @@ Public Module Screensaver
     ''' Compiles the custom screensaver file and configures it so it can be viewed
     ''' </summary>
     ''' <param name="file">File name with .ss.vb</param>
-    Public Sub CompileCustom(ByVal file As String)
+    Public Sub CompileCustom(file As String)
         'Initialize path
         Dim modPath As String = paths("Mods")
         file = file.Replace("\", "/").Replace(modPath, "")
@@ -302,7 +302,7 @@ Public Module Screensaver
     ''' <param name="PLang">Specified programming language for scripts (C# or VB.NET)</param>
     ''' <param name="code">Screensaver code</param>
     ''' <returns>Interface of the compiled custom saver</returns>
-    Function GenSaver(ByVal PLang As String, ByVal code As String) As ICustomSaver
+    Function GenSaver(PLang As String, code As String) As ICustomSaver
         DoneFlag = False
 
         'Check language
@@ -368,7 +368,7 @@ Public Module Screensaver
     ''' Gets a screensaver instance from loaded assembly
     ''' </summary>
     ''' <param name="Assembly">An assembly</param>
-    Public Function GetScreensaverInstance(ByVal Assembly As Assembly) As ICustomSaver
+    Public Function GetScreensaverInstance(Assembly As Assembly) As ICustomSaver
         For Each t As Type In Assembly.GetTypes()
             If t.GetInterface(GetType(ICustomSaver).Name) IsNot Nothing Then Return CType(Assembly.CreateInstance(t.FullName), ICustomSaver)
         Next
@@ -415,7 +415,7 @@ Public Module Screensaver
     ''' </summary>
     ''' <param name="CustomSaver">A custom saver</param>
     ''' <exception cref="Exceptions.NoSuchScreensaverException"></exception>
-    Public Sub AddCustomSaverToSettings(ByVal CustomSaver As String)
+    Public Sub AddCustomSaverToSettings(CustomSaver As String)
         If Not CSvrdb.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found."), CustomSaver)
         If Not CustomSaverSettingsToken.ContainsKey(CustomSaver) Then
             Dim NewCustomSaver As New JObject
@@ -435,7 +435,7 @@ Public Module Screensaver
     ''' <param name="CustomSaver">A custom saver</param>
     ''' <exception cref="Exceptions.NoSuchScreensaverException"></exception>
     ''' <exception cref="Exceptions.ScreensaverManagementException"></exception>
-    Public Sub RemoveCustomSaverFromSettings(ByVal CustomSaver As String)
+    Public Sub RemoveCustomSaverFromSettings(CustomSaver As String)
         If Not CSvrdb.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found."), CustomSaver)
         If Not CustomSaverSettingsToken.Remove(CustomSaver) Then Throw New Exceptions.ScreensaverManagementException(DoTranslation("Failed to remove screensaver {0} from config."), CustomSaver)
         If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
@@ -448,7 +448,7 @@ Public Module Screensaver
     ''' <param name="SaverSetting">A saver setting</param>
     ''' <returns>Saver setting value if successful; nothing if unsuccessful.</returns>
     ''' <exception cref="Exceptions.NoSuchScreensaverException"></exception>
-    Public Function GetCustomSaverSettings(ByVal CustomSaver As String, ByVal SaverSetting As String) As Object
+    Public Function GetCustomSaverSettings(CustomSaver As String, SaverSetting As String) As Object
         If Not CustomSaverSettingsToken.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found."), CustomSaver)
         For Each Setting As JProperty In CustomSaverSettingsToken(CustomSaver)
             If Setting.Name = SaverSetting Then
@@ -465,7 +465,7 @@ Public Module Screensaver
     ''' <param name="Value">Value</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
     ''' <exception cref="Exceptions.NoSuchScreensaverException"></exception>
-    Public Function SetCustomSaverSettings(ByVal CustomSaver As String, ByVal SaverSetting As String, ByVal Value As Object) As Boolean
+    Public Function SetCustomSaverSettings(CustomSaver As String, SaverSetting As String, Value As Object) As Boolean
         If Not CustomSaverSettingsToken.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found."), CustomSaver)
         Dim SettingFound As Boolean
         For Each Setting As JProperty In CustomSaverSettingsToken(CustomSaver)

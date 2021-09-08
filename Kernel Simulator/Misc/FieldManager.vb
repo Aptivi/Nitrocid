@@ -26,7 +26,7 @@ Public Module FieldManager
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <param name="VariableValue">New value of variable</param>
     ''' <param name="VariableType">Variable type</param>
-    Public Sub SetValue(ByVal Variable As String, ByVal VariableValue As Object, ByVal VariableType As Type)
+    Public Sub SetValue(Variable As String, VariableValue As Object, VariableType As Type)
         'Get field for specified variable
         Dim TargetField As FieldInfo = GetField(Variable, VariableType)
 
@@ -50,7 +50,7 @@ Public Module FieldManager
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <param name="VariableType">Variable type</param>
     ''' <returns>Value of a variable</returns>
-    Public Function GetValue(ByVal Variable As String, ByVal VariableType As Type) As Object
+    Public Function GetValue(Variable As String, VariableType As Type) As Object
         'Get field for specified variable
         Dim TargetField As FieldInfo = GetField(Variable, VariableType)
 
@@ -75,7 +75,7 @@ Public Module FieldManager
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <param name="Type">Variable type</param>
     ''' <returns>Field information</returns>
-    Public Function GetField(ByVal Variable As String, ByVal Type As Type) As FieldInfo
+    Public Function GetField(Variable As String, Type As Type) As FieldInfo
         'Get fields of specified type
         Dim Field As FieldInfo = Type.GetField(Variable)
 
@@ -90,7 +90,7 @@ Public Module FieldManager
     ''' </summary>
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <returns>Field information</returns>
-    Public Function GetField(ByVal Variable As String) As FieldInfo
+    Public Function GetField(Variable As String) As FieldInfo
         Dim PossibleTypes As Type()
         Dim PossibleField As FieldInfo
 

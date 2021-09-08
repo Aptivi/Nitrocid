@@ -24,7 +24,7 @@ Public Module RSSGetCommand
     'Variables
     Public RSSCommandThread As New Thread(AddressOf RSSParseCommand) With {.Name = "RSS Shell Command Thread"}
 
-    Sub RSSParseCommand(ByVal CommandText As String)
+    Sub RSSParseCommand(CommandText As String)
         Try
             'Variables
             Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(CommandText, ShellCommandType.RSSShell)
