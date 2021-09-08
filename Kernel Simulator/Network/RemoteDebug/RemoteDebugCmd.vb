@@ -46,7 +46,7 @@ Module RemoteDebugCmd
                 Case "trace"
                     'Print stack trace command code
                     If dbgStackTraces.Count <> 0 Then
-                        If eqargs.Length <> 0 Then
+                        If eqargs?.Length <> 0 Then
                             Try
                                 SocketStreamWriter.WriteLine(dbgStackTraces(eqargs(0)))
                             Catch ex As Exception
@@ -76,7 +76,7 @@ Module RemoteDebugCmd
                     End If
                 Case "help"
                     'Help command code
-                    If eqargs.Length <> 0 Then
+                    If eqargs?.Length <> 0 Then
                         ShowHelp(eqargs(0), ShellCommandType.RemoteDebugShell, SocketStreamWriter)
                     Else
                         ShowHelp("", ShellCommandType.RemoteDebugShell, SocketStreamWriter)
