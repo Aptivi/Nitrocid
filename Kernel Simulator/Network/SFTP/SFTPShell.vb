@@ -58,7 +58,7 @@ Public Module SFTPShell
                 'Complete initialization
                 If SFTPInitialized = False Then
                     Wdbg("I", $"Completing initialization of SFTP: {SFTPInitialized}")
-                    SFTPCurrDirect = paths("Home")
+                    SFTPCurrDirect = GetOtherPath(OtherPathType.Home)
                     EventManager.RaiseSFTPShellInitialized()
 
                     'This is the workaround for a bug in .NET Framework regarding Console.CancelKeyPress event. More info can be found below:

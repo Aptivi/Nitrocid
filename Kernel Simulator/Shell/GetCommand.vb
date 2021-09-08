@@ -178,7 +178,7 @@ Public Module GetCommand
                     If DebugMode Then
                         Try
                             dbgWriter.Close()
-                            dbgWriter = New StreamWriter(paths("Debugging")) With {.AutoFlush = True}
+                            dbgWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging)) With {.AutoFlush = True}
                             W(DoTranslation("Debug log removed. All connected debugging devices may still view messages."), True, ColTypes.Neutral)
                         Catch ex As Exception
                             W(DoTranslation("Debug log removal failed: {0}"), True, ColTypes.Error, ex.Message)
@@ -265,7 +265,7 @@ Public Module GetCommand
                             SetMOTD(strArgs, MessageType.MOTD)
                         End If
                     Else
-                        InitializeTextShell(paths("MOTD"))
+                        InitializeTextShell(GetKernelPath(KernelPathType.MOTD))
                         W(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
                         ReadMOTDFromFile(MessageType.MOTD)
                     End If
@@ -280,7 +280,7 @@ Public Module GetCommand
                             SetMOTD(strArgs, MessageType.MAL)
                         End If
                     Else
-                        InitializeTextShell(paths("MAL"))
+                        InitializeTextShell(GetKernelPath(KernelPathType.MAL))
                         W(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
                         ReadMOTDFromFile(MessageType.MAL)
                     End If
@@ -643,7 +643,7 @@ Public Module GetCommand
                                     RequiredArgumentsProvided = eqargs.Length > 1
                                     If RequiredArgumentsProvided Then
                                         TargetMod = eqargs(1)
-                                        TargetModPath = paths("Mods") + TargetMod
+                                        TargetModPath = GetKernelPath(KernelPathType.Mods) + TargetMod
                                         If Not (TryParsePath(TargetModPath) AndAlso File.Exists(TargetModPath)) Then
                                             W(DoTranslation("Mod not found or file has invalid characters."), True, ColTypes.Error)
                                             Exit Sub
@@ -958,7 +958,7 @@ Public Module GetCommand
 
                 Case "setsaver"
 
-                    Dim modPath As String = paths("Mods")
+                    Dim modPath As String = GetKernelPath(KernelPathType.Mods)
                     If RequiredArgumentsProvided Then
                         If ScrnSvrdb.ContainsKey(strArgs) Or CSvrdb.ContainsKey(strArgs) Then
                             SetDefaultScreensaver(strArgs)
@@ -1315,7 +1315,7 @@ Public Module GetCommand
                         Dim CommandToBeWrapped As String = eqargs(0).Split(" ")(0)
                         If Commands.ContainsKey(CommandToBeWrapped) Then
                             If Commands(CommandToBeWrapped).Wrappable Then
-                                Dim WrapOutputPath As String = paths("Temp") + "/wrapoutput.txt"
+                                Dim WrapOutputPath As String = GetOtherPath(OtherPathType.Temp) + "/wrapoutput.txt"
                                 GetLine(False, eqargs(0), False, WrapOutputPath)
                                 Dim WrapOutputStream As New StreamReader(WrapOutputPath)
                                 Dim WrapOutput As String = WrapOutputStream.ReadToEnd

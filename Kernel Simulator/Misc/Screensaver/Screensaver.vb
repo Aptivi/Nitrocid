@@ -209,7 +209,7 @@ Public Module Screensaver
     ''' <param name="file">File name with .ss.vb</param>
     Public Sub CompileCustom(file As String)
         'Initialize path
-        Dim modPath As String = paths("Mods")
+        Dim modPath As String = GetKernelPath(KernelPathType.Mods)
         file = file.Replace("\", "/").Replace(modPath, "")
 
         'Start parsing screensaver
@@ -378,8 +378,8 @@ Public Module Screensaver
     ''' Initializes and reads the custom saver settings
     ''' </summary>
     Public Sub InitializeCustomSaverSettings()
-        If Not File.Exists(paths("CustomSaverSettings")) Then MakeFile(paths("CustomSaverSettings"))
-        Dim CustomSaverJsonContent As String = File.ReadAllText(paths("CustomSaverSettings"))
+        If Not File.Exists(GetKernelPath(KernelPathType.CustomSaverSettings)) Then MakeFile(GetKernelPath(KernelPathType.CustomSaverSettings))
+        Dim CustomSaverJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.CustomSaverSettings))
         Dim CustomSaverToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(CustomSaverJsonContent), CustomSaverJsonContent, "{}"))
         For Each Saver As String In CSvrdb.Keys
             Dim CustomSaverSettings As JObject = TryCast(CustomSaverToken(Saver), JObject)
@@ -407,7 +407,7 @@ Public Module Screensaver
                 Next
             End If
         Next
-        If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
+        If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(GetKernelPath(KernelPathType.CustomSaverSettings), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
     End Sub
 
     ''' <summary>
@@ -424,7 +424,7 @@ Public Module Screensaver
                     NewCustomSaver.Add(Setting, CSvrdb(CustomSaver).Screensaver.SaverSettings(Setting).ToString)
                 Next
                 CustomSaverSettingsToken.Add(CustomSaver, NewCustomSaver)
-                If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
+                If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(GetKernelPath(KernelPathType.CustomSaverSettings), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
             End If
         End If
     End Sub
@@ -438,7 +438,7 @@ Public Module Screensaver
     Public Sub RemoveCustomSaverFromSettings(CustomSaver As String)
         If Not CSvrdb.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found."), CustomSaver)
         If Not CustomSaverSettingsToken.Remove(CustomSaver) Then Throw New Exceptions.ScreensaverManagementException(DoTranslation("Failed to remove screensaver {0} from config."), CustomSaver)
-        If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
+        If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(GetKernelPath(KernelPathType.CustomSaverSettings), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
     End Sub
 
     ''' <summary>
@@ -474,7 +474,7 @@ Public Module Screensaver
                 CustomSaverSettingsToken(CustomSaver)(SaverSetting) = Value.ToString
             End If
         Next
-        If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(paths("CustomSaverSettings"), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
+        If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(GetKernelPath(KernelPathType.CustomSaverSettings), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
         Return SettingFound
     End Function
 

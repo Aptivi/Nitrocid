@@ -68,7 +68,7 @@ Public Module FTPShell
                     FtpTrace.LogUserName = FTPLoggerUsername
                     FtpTrace.LogPassword = False 'Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
                     FtpTrace.LogIP = FTPLoggerIP
-                    FtpCurrentDirectory = paths("Home")
+                    FtpCurrentDirectory = GetOtherPath(OtherPathType.Home)
                     EventManager.RaiseFTPShellInitialized()
 
                     'This is the workaround for a bug in .NET Framework regarding Console.CancelKeyPress event. More info can be found below:

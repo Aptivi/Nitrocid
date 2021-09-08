@@ -20,7 +20,7 @@ Imports System.IO
 
 Public Module ModManager
 
-    Friend ReadOnly modPath As String = paths("Mods")
+    Friend ReadOnly modPath As String = GetKernelPath(KernelPathType.Mods)
 
     ''' <summary>
     ''' Loads all mods in KSMods

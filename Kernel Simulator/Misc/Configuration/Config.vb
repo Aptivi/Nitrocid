@@ -402,7 +402,7 @@ Public Module Config
             ConfigurationObject.Add("Misc", MiscConfig)
 
             'Save Config
-            File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigurationObject, Formatting.Indented))
+            File.WriteAllText(GetKernelPath(KernelPathType.Configuration), JsonConvert.SerializeObject(ConfigurationObject, Formatting.Indented))
             EventManager.RaiseConfigSaved()
             Return True
         Catch ex As Exception
@@ -484,7 +484,7 @@ Public Module Config
             'Shell Section
             Wdbg("I", "Parsing shell section...")
             simHelp = If(ConfigToken("Shell")?("Simplified Help Command"), False)
-            CurrDir = If(ConfigToken("Shell")?("Current Directory"), paths("Home"))
+            CurrDir = If(ConfigToken("Shell")?("Current Directory"), GetOtherPath(OtherPathType.Home))
             PathsToLookup = If(Not String.IsNullOrEmpty(ConfigToken("Shell")?("Lookup Directories")), ConfigToken("Shell")?("Lookup Directories").ToString.ReleaseDoubleQuotes, Environ("PATH"))
             ShellPromptStyle = If(ConfigToken("Shell")?("Prompt Style"), "")
             FTPShellPromptStyle = If(ConfigToken("Shell")?("FTP Prompt Style"), "")
@@ -702,7 +702,7 @@ Public Module Config
     ''' </summary>
     Sub InitializeConfig()
         'Make a config file if not found
-        If Not File.Exists(paths("Configuration")) Then
+        If Not File.Exists(GetKernelPath(KernelPathType.Configuration)) Then
             Wdbg("E", "No config file found. Creating...")
             CreateConfig()
         End If
@@ -720,7 +720,7 @@ Public Module Config
     ''' Initializes the config token
     ''' </summary>
     Sub InitializeConfigToken()
-        ConfigToken = JObject.Parse(File.ReadAllText(paths("Configuration")))
+        ConfigToken = JObject.Parse(File.ReadAllText(GetKernelPath(KernelPathType.Configuration)))
     End Sub
 
 End Module

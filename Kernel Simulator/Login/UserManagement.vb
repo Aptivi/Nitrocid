@@ -100,7 +100,7 @@ Public Module UserManagement
                                            New JProperty("permissions", New JArray))
                 UsersToken.Add(NewUser)
             End If
-            File.WriteAllText(paths("Users"), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
+            File.WriteAllText(GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
 
             'Ready permissions
             Wdbg("I", "Username {0} added. Readying permissions...", uninitUser)
@@ -119,7 +119,7 @@ Public Module UserManagement
     ''' </summary>
     Public Sub InitializeUsers()
         'Opens file stream
-        Dim UsersTokenContent As String = File.ReadAllText(paths("Users"))
+        Dim UsersTokenContent As String = File.ReadAllText(GetKernelPath(KernelPathType.Users))
         Dim UninitUsersToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(UsersTokenContent), UsersTokenContent, "{}"))
         For Each UserToken As JObject In UninitUsersToken
             InitializeUser(UserToken("username"), UserToken("password"), False)
@@ -130,8 +130,8 @@ Public Module UserManagement
     ''' Loads user token
     ''' </summary>
     Sub LoadUserToken()
-        If Not File.Exists(paths("Users")) Then File.Create(paths("Users")).Close()
-        Dim UsersTokenContent As String = File.ReadAllText(paths("Users"))
+        If Not File.Exists(GetKernelPath(KernelPathType.Users)) Then File.Create(GetKernelPath(KernelPathType.Users)).Close()
+        Dim UsersTokenContent As String = File.ReadAllText(GetKernelPath(KernelPathType.Users))
         UsersToken = JArray.Parse(If(Not String.IsNullOrEmpty(UsersTokenContent), UsersTokenContent, "[]"))
     End Sub
 
@@ -170,7 +170,7 @@ Public Module UserManagement
                 End Select
             End If
         Next
-        File.WriteAllText(paths("Users"), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
+        File.WriteAllText(GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
     End Sub
 
     ''' <summary>
@@ -258,7 +258,7 @@ Public Module UserManagement
                             Exit For
                         End If
                     Next
-                    File.WriteAllText(paths("Users"), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
+                    File.WriteAllText(GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
 
                     'Raise event
                     EventManager.RaiseUserRemoved(user)
@@ -315,7 +315,7 @@ Public Module UserManagement
     Sub InitializeSystemAccount()
         If setRootPasswd Then
             InitializeUser("root", RootPasswd, True, True)
-        ElseIf File.Exists(paths("Users")) Then
+        ElseIf File.Exists(GetKernelPath(KernelPathType.Users)) Then
             If GetUserProperty("root", UserProperty.Password) IsNot Nothing Then
                 InitializeUser("root", GetUserProperty("root", UserProperty.Password), False, True)
             Else

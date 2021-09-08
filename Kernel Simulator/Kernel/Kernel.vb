@@ -90,8 +90,8 @@ Public Module Kernel
                 StartRPC()
 
                 'If the two files are not found, create two MOTD files with current config.
-                If Not File.Exists(paths("MOTD")) Then SetMOTD(DoTranslation("Welcome to Kernel!"), MessageType.MOTD)
-                If Not File.Exists(paths("MAL")) Then SetMOTD(DoTranslation("Logged in successfully as <user>"), MessageType.MAL)
+                If Not File.Exists(GetKernelPath(KernelPathType.MOTD)) Then SetMOTD(DoTranslation("Welcome to Kernel!"), MessageType.MOTD)
+                If Not File.Exists(GetKernelPath(KernelPathType.MAL)) Then SetMOTD(DoTranslation("Logged in successfully as <user>"), MessageType.MAL)
 
                 'Check for kernel updates
 #If SPECIFIER <> "DEV" And SPECIFIER <> "RC" Then

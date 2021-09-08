@@ -124,7 +124,7 @@ Public Module PermissionManagement
                 End If
             End If
         Next
-        File.WriteAllText(paths("Users"), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
+        File.WriteAllText(GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
         Return True
     End Function
 
@@ -169,7 +169,7 @@ Public Module PermissionManagement
                 UserToken("permissions") = JArray.FromObject(PermissionArray)
             End If
         Next
-        File.WriteAllText(paths("Users"), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
+        File.WriteAllText(GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
         Return True
     End Function
 

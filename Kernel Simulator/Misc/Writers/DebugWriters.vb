@@ -32,7 +32,7 @@ Public Module DebugWriters
     Public Sub Wdbg(Level As Char, text As String, ParamArray vars() As Object)
         If DebugMode Then
             'Open debugging stream
-            If dbgWriter Is Nothing Or dbgWriter?.BaseStream Is Nothing Then dbgWriter = New StreamWriter(paths("Debugging"), True) With {.AutoFlush = True}
+            If dbgWriter Is Nothing Or dbgWriter?.BaseStream Is Nothing Then dbgWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging), True) With {.AutoFlush = True}
 
             Dim STrace As New StackTrace(True)
             Dim Source As String = Path.GetFileName(STrace.GetFrame(1).GetFileName)
@@ -179,12 +179,12 @@ Public Module DebugWriters
     ''' </summary>
     Public Sub CheckForExceed()
         Try
-            Dim FInfo As New FileInfo(paths("Debugging"))
+            Dim FInfo As New FileInfo(GetKernelPath(KernelPathType.Debugging))
             Dim OldSize As Double = FInfo.Length
-            Dim Lines() As String = ReadAllLinesNoBlock(paths("Debugging"))
+            Dim Lines() As String = ReadAllLinesNoBlock(GetKernelPath(KernelPathType.Debugging))
             If OldSize > DebugQuota Then
                 dbgWriter.Close()
-                dbgWriter = New StreamWriter(paths("Debugging")) With {.AutoFlush = True}
+                dbgWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging)) With {.AutoFlush = True}
                 For l As Integer = 5 To Lines.Length - 2 'Remove the first 5 lines from stream.
                     dbgWriter.WriteLine(Lines(l))
                 Next

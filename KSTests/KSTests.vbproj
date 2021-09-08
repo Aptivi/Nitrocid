@@ -77,6 +77,7 @@
     <Compile Include="Files\FilesystemNeutralizationTests.vb" />
     <Compile Include="Files\FilesystemManipulationTests.vb" />
     <Compile Include="Files\FilesystemSettingTests.vb" />
+    <Compile Include="Files\FilesystemQueryingTests.vb" />
     <Compile Include="Languages\LocalizationInitializationTests.vb" />
     <Compile Include="Languages\LocalizationSettingTests.vb" />
     <Compile Include="Login\UserPermissionManagementTests.vb" />

@@ -44,8 +44,8 @@ Public Module HelpSystem
     Public Sub ShowHelp(command As String, CommandType As ShellCommandType)
         'Populate screensaver files
         Dim ScreensaverFiles As New List(Of String)
-        ScreensaverFiles.AddRange(Directory.GetFiles(paths("Mods"), "*.ss.vb", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))
-        ScreensaverFiles.AddRange(Directory.GetFiles(paths("Mods"), "*.ss.cs", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))
+        ScreensaverFiles.AddRange(Directory.GetFiles(GetKernelPath(KernelPathType.Mods), "*.ss.vb", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))
+        ScreensaverFiles.AddRange(Directory.GetFiles(GetKernelPath(KernelPathType.Mods), "*.ss.cs", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))
 
         'Determine command type
         Dim CommandList As Dictionary(Of String, CommandInfo) = Commands

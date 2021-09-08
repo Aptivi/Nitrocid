@@ -16,28 +16,27 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS
+''' <summary>
+''' Specifies the kernel path type
+''' </summary>
+Public Enum KernelPathType
+    Mods
+    Configuration
+    Debugging
+    Aliases
+    Users
+    FTPSpeedDial
+    SFTPSpeedDial
+    DebugDevNames
+    MOTD
+    MAL
+    CustomSaverSettings
+End Enum
 
-<TestClass()> Public Class FilesystemSettingTests
-
-    ''' <summary>
-    ''' Tests current directory setting
-    ''' </summary>
-    <TestMethod()> <TestCategory("Setting")> Public Sub TestSetCurrDir()
-        CurrDir = GetOtherPath(OtherPathType.Home)
-        Dim Path As String = GetOtherPath(OtherPathType.Home) + "/Documents"
-        SetCurrDir(Path).ShouldBeTrue
-        Path.ShouldBe(CurrDir)
-    End Sub
-
-    ''' <summary>
-    ''' Tests setting size parse mode
-    ''' </summary>
-    <TestMethod()> <TestCategory("Setting")> Public Sub TestSetSizeParseMode()
-        SetSizeParseMode(True).ShouldBeTrue
-        SetSizeParseMode(False).ShouldBeTrue
-        SetSizeParseMode(1).ShouldBeTrue
-        SetSizeParseMode(0).ShouldBeTrue
-    End Sub
-
-End Class
+''' <summary>
+''' Specifies the other path type
+''' </summary>
+Public Enum OtherPathType
+    Home
+    Temp
+End Enum

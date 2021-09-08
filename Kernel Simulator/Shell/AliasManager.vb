@@ -52,8 +52,8 @@ Public Module AliasManager
     ''' </summary>
     Public Sub InitAliases()
         'Get all aliases from file
-        If Not File.Exists(paths("Aliases")) Then MakeFile(paths("Aliases"))
-        Dim AliasJsonContent As String = File.ReadAllText(paths("Aliases"))
+        If Not File.Exists(GetKernelPath(KernelPathType.Aliases)) Then MakeFile(GetKernelPath(KernelPathType.Aliases))
+        Dim AliasJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.Aliases))
         Dim AliasNameToken As JToken = JToken.Parse(If(Not String.IsNullOrEmpty(AliasJsonContent), AliasJsonContent, "{}"))
         Dim AliasCmd, ActualCmd, AliasType As String
 
@@ -110,8 +110,8 @@ Public Module AliasManager
     ''' </summary>
     Public Sub SaveAliases()
         'Get all aliases from file
-        If Not File.Exists(paths("Aliases")) Then MakeFile(paths("Aliases"))
-        Dim AliasJsonContent As String = File.ReadAllText(paths("Aliases"))
+        If Not File.Exists(GetKernelPath(KernelPathType.Aliases)) Then MakeFile(GetKernelPath(KernelPathType.Aliases))
+        Dim AliasJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.Aliases))
         Dim AliasNameToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(AliasJsonContent), AliasJsonContent, "[]"))
 
         'Shell aliases
@@ -214,7 +214,7 @@ Public Module AliasManager
         Next
 
         'Save changes
-        File.WriteAllText(paths("Aliases"), JsonConvert.SerializeObject(AliasNameToken, Formatting.Indented))
+        File.WriteAllText(GetKernelPath(KernelPathType.Aliases), JsonConvert.SerializeObject(AliasNameToken, Formatting.Indented))
     End Sub
 
     ''' <summary>
@@ -436,8 +436,8 @@ Public Module AliasManager
     ''' </summary>
     Public Sub PurgeAliases()
         'Get all aliases from file
-        If Not File.Exists(paths("Aliases")) Then MakeFile(paths("Aliases"))
-        Dim AliasJsonContent As String = File.ReadAllText(paths("Aliases"))
+        If Not File.Exists(GetKernelPath(KernelPathType.Aliases)) Then MakeFile(GetKernelPath(KernelPathType.Aliases))
+        Dim AliasJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.Aliases))
         Dim AliasNameToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(AliasJsonContent), AliasJsonContent, "[]"))
 
         'Purge aliases that are to be removed from config
@@ -471,7 +471,7 @@ Public Module AliasManager
         AliasesToBeRemoved.Clear()
 
         'Save the changes
-        File.WriteAllText(paths("Aliases"), JsonConvert.SerializeObject(AliasNameToken, Formatting.Indented))
+        File.WriteAllText(GetKernelPath(KernelPathType.Aliases), JsonConvert.SerializeObject(AliasNameToken, Formatting.Indented))
     End Sub
 
     ''' <summary>
@@ -482,8 +482,8 @@ Public Module AliasManager
     ''' <returns>True if it exists; false if it doesn't exist</returns>
     Public Function DoesAliasExist(TargetAlias As String, Type As AliasType) As Boolean
         'Get all aliases from file
-        If Not File.Exists(paths("Aliases")) Then MakeFile(paths("Aliases"))
-        Dim AliasJsonContent As String = File.ReadAllText(paths("Aliases"))
+        If Not File.Exists(GetKernelPath(KernelPathType.Aliases)) Then MakeFile(GetKernelPath(KernelPathType.Aliases))
+        Dim AliasJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.Aliases))
         Dim AliasNameToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(AliasJsonContent), AliasJsonContent, "[]"))
 
         'Check to see if the specified alias exists

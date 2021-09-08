@@ -26,7 +26,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Setting")> Public Sub TestSetMOTD()
         SetMOTD(ProbePlaces("Hello, I am on <system>"), MessageType.MOTD)
-        Dim MOTDFile As New StreamReader(paths("MOTD"))
+        Dim MOTDFile As New StreamReader(GetKernelPath(KernelPathType.MOTD))
         MOTDFile.ReadLine.ShouldBe(ProbePlaces("Hello, I am on <system>"))
     End Sub
 
@@ -35,7 +35,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Setting")> Public Sub TestSetMAL()
         SetMOTD(ProbePlaces("Hello, I am on <system>"), MessageType.MAL)
-        Dim MALFile As New StreamReader(paths("MAL"))
+        Dim MALFile As New StreamReader(GetKernelPath(KernelPathType.MAL))
         MALFile.ReadLine.ShouldBe(ProbePlaces("Hello, I am on <system>"))
     End Sub
 

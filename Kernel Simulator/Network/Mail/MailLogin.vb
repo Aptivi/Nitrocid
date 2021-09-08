@@ -276,8 +276,8 @@ Module MailLogin
         Try
             'Register the context and initialize the loggers if debug mode is on
             If DebugMode Then
-                IMAP_Client = New ImapClient(New ProtocolLogger(paths("Home") + "/ImapDebug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
-                SMTP_Client = New SmtpClient(New ProtocolLogger(paths("Home") + "/SmtpDebug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
+                IMAP_Client = New ImapClient(New ProtocolLogger(GetOtherPath(OtherPathType.Home) + "/ImapDebug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
+                SMTP_Client = New SmtpClient(New ProtocolLogger(GetOtherPath(OtherPathType.Home) + "/SmtpDebug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
             End If
             CryptographyContext.Register(GetType(PGPContext))
 

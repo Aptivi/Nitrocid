@@ -311,7 +311,7 @@ Public Module ConfigTools
                 ConfigCategoryToken(ConfigEntryName) = ConfigValue
 
                 'Write the changes to the config file
-                File.WriteAllText(paths("Configuration"), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
+                File.WriteAllText(GetKernelPath(KernelPathType.Configuration), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
             Else
                 'We didn't get an entry.
                 Wdbg("E", "Entry {0} not found!", ConfigEntryName)

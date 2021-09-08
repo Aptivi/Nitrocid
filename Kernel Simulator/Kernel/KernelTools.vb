@@ -25,7 +25,6 @@ Imports Newtonsoft.Json.Linq
 Public Module KernelTools
 
     ' A dictionary for storing paths and files (used for mods, screensavers, etc.)
-    Public paths As New Dictionary(Of String, String)
     Friend RPCPowerListener As New Thread(AddressOf PowerManage) With {.Name = "RPC Power Listener Thread"}
 
     ' ----------------------------------------------- Kernel errors -----------------------------------------------
@@ -141,7 +140,7 @@ Public Module KernelTools
     Sub GeneratePanicDump(Description As String, ErrorType As Char, Exc As Exception)
         Try
             'Open a file stream for dump
-            Dim Dump As New StreamWriter($"{paths("Home")}/dmp_{RenderDate(FormatType.Short).Replace("/", "-")}_{RenderTime(FormatType.Short).Replace(":", "-")}.txt")
+            Dim Dump As New StreamWriter($"{GetOtherPath(OtherPathType.Home)}/dmp_{RenderDate(FormatType.Short).Replace("/", "-")}_{RenderTime(FormatType.Short).Replace(":", "-")}.txt")
             Wdbg("I", "Opened file stream in home directory, saved as dmp_{0}.txt", $"{RenderDate(FormatType.Short).Replace("/", "-")}_{RenderTime(FormatType.Short).Replace(":", "-")}")
 
             'Write info (Header)
@@ -385,41 +384,6 @@ Public Module KernelTools
         If Not Timeout.IsBusy Then Timeout.RunWorkerAsync()
     End Sub
 
-    ''' <summary>
-    ''' Initializes the paths
-    ''' </summary>
-    Sub InitPaths()
-        If IsOnUnix() Then
-            paths.AddIfNotFound("Mods", Environ("HOME") + "/KSMods/")
-            paths.AddIfNotFound("Configuration", Environ("HOME") + "/KernelConfig.json")
-            paths.AddIfNotFound("Debugging", Environ("HOME") + "/kernelDbg.log")
-            paths.AddIfNotFound("Aliases", Environ("HOME") + "/Aliases.json")
-            paths.AddIfNotFound("Users", Environ("HOME") + "/Users.json")
-            paths.AddIfNotFound("FTPSpeedDial", Environ("HOME") + "/FTP_SpeedDial.json")
-            paths.AddIfNotFound("SFTPSpeedDial", Environ("HOME") + "/SFTP_SpeedDial.json")
-            paths.AddIfNotFound("DebugDevNames", Environ("HOME") + "/DebugDeviceNames.json")
-            paths.AddIfNotFound("MOTD", Environ("HOME") + "/MOTD.txt")
-            paths.AddIfNotFound("MAL", Environ("HOME") + "/MAL.txt")
-            paths.AddIfNotFound("CustomSaverSettings", Environ("HOME") + "/CustomSaverSettings.json")
-            paths.AddIfNotFound("Home", Environ("HOME"))
-            paths.AddIfNotFound("Temp", "/tmp")
-        Else
-            paths.AddIfNotFound("Mods", Environ("USERPROFILE").Replace("\", "/") + "/KSMods/")
-            paths.AddIfNotFound("Configuration", Environ("USERPROFILE").Replace("\", "/") + "/KernelConfig.json")
-            paths.AddIfNotFound("Debugging", Environ("USERPROFILE").Replace("\", "/") + "/kernelDbg.log")
-            paths.AddIfNotFound("Aliases", Environ("USERPROFILE").Replace("\", "/") + "/Aliases.json")
-            paths.AddIfNotFound("Users", Environ("USERPROFILE").Replace("\", "/") + "/Users.json")
-            paths.AddIfNotFound("FTPSpeedDial", Environ("USERPROFILE").Replace("\", "/") + "/FTP_SpeedDial.json")
-            paths.AddIfNotFound("SFTPSpeedDial", Environ("USERPROFILE").Replace("\", "/") + "/SFTP_SpeedDial.json")
-            paths.AddIfNotFound("DebugDevNames", Environ("USERPROFILE").Replace("\", "/") + "/DebugDeviceNames.json")
-            paths.AddIfNotFound("MOTD", Environ("USERPROFILE").Replace("\", "/") + "/MOTD.txt")
-            paths.AddIfNotFound("MAL", Environ("USERPROFILE").Replace("\", "/") + "/MAL.txt")
-            paths.AddIfNotFound("CustomSaverSettings", Environ("USERPROFILE").Replace("\", "/") + "/CustomSaverSettings.json")
-            paths.AddIfNotFound("Home", Environ("USERPROFILE").Replace("\", "/"))
-            paths.AddIfNotFound("Temp", Environ("TEMP").Replace("\", "/"))
-        End If
-    End Sub
-
     ' ----------------------------------------------- Misc -----------------------------------------------
 
     Sub MultiInstance()
@@ -527,13 +491,11 @@ Public Module KernelTools
     ''' Removes all configuration files
     ''' </summary>
     Sub FactoryReset()
-        For Each PathName As String In paths.Keys
-            If Not PathName = "Home" And Not PathName = "Temp" Then
-                If File.Exists(paths(PathName)) Then
-                    File.Delete(paths(PathName))
-                Else
-                    Directory.Delete(paths(PathName), True)
-                End If
+        For Each PathName As String In KernelPaths.Keys
+            If File.Exists(KernelPaths(PathName)) Then
+                File.Delete(KernelPaths(PathName))
+            Else
+                Directory.Delete(KernelPaths(PathName), True)
             End If
         Next
         Environment.Exit(0)

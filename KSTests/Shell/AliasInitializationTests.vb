@@ -26,7 +26,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitAliases()
         Dim PathToTestAliases As String = Path.GetFullPath("TestAliases.json")
-        If Not File.Exists(paths("Aliases")) Then File.Copy(PathToTestAliases, paths("Aliases"))
+        If Not File.Exists(GetKernelPath(KernelPathType.Aliases)) Then File.Copy(PathToTestAliases, GetKernelPath(KernelPathType.Aliases))
         InitAliases()
         Aliases.ShouldNotBeEmpty
         RemoteDebugAliases.ShouldNotBeEmpty
@@ -37,7 +37,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitAndSaveAliases()
         Dim PathToTestAliases As String = Path.GetFullPath("TestAliases.json")
-        If Not File.Exists(paths("Aliases")) Then File.Copy(PathToTestAliases, paths("Aliases"))
+        If Not File.Exists(GetKernelPath(KernelPathType.Aliases)) Then File.Copy(PathToTestAliases, GetKernelPath(KernelPathType.Aliases))
         InitAliases()
         SaveAliases()
         Aliases.ShouldNotBeEmpty

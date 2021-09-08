@@ -167,6 +167,8 @@
     <Compile Include="Console\Themes\ThemeStudioTools.vb" />
     <Compile Include="Files\Filesystem.vb" />
     <Compile Include="Files\FilesystemEnums.vb" />
+    <Compile Include="Files\Paths.vb" />
+    <Compile Include="Files\PathType.vb" />
     <Compile Include="Hardware\HardwareList.vb" />
     <Compile Include="Kernel\Events.vb" />
     <Compile Include="Kernel\Exceptions.vb" />

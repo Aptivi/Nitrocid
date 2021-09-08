@@ -147,7 +147,7 @@ Public Module RemoteDebugTools
     ''' <param name="DeviceProperty">Device property</param>
     ''' <returns>Device property if successful; nothing if unsuccessful.</returns>
     Public Function GetDeviceProperty(DeviceIP As String, DeviceProperty As DeviceProperty) As Object
-        Dim DeviceJsonContent As String = File.ReadAllText(paths("DebugDevNames"))
+        Dim DeviceJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.DebugDevNames))
         Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
         Dim DeviceProperties As JObject = TryCast(DeviceNameToken(DeviceIP), JObject)
         If DeviceProperties IsNot Nothing Then
@@ -173,7 +173,7 @@ Public Module RemoteDebugTools
     ''' <param name="Value">Value</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
     Public Function SetDeviceProperty(DeviceIP As String, DeviceProperty As DeviceProperty, Value As Object) As Boolean
-        Dim DeviceJsonContent As String = File.ReadAllText(paths("DebugDevNames"))
+        Dim DeviceJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.DebugDevNames))
         Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
         Dim DeviceProperties As JObject = TryCast(DeviceNameToken(DeviceIP), JObject)
         If DeviceProperties IsNot Nothing Then
@@ -186,7 +186,7 @@ Public Module RemoteDebugTools
                     Dim ChatHistory As JArray = TryCast(DeviceProperties("ChatHistory"), JArray)
                     ChatHistory.Add(Value)
             End Select
-            File.WriteAllText(paths("DebugDevNames"), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented))
+            File.WriteAllText(GetKernelPath(KernelPathType.DebugDevNames), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented))
             Return True
         Else
             Throw New Exceptions.RemoteDebugDeviceNotFoundException(DoTranslation("No such device."))
@@ -201,15 +201,15 @@ Public Module RemoteDebugTools
     ''' <param name="ThrowException">Optionally throw exception</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
     Public Function AddDeviceToJson(DeviceIP As String, Optional ThrowException As Boolean = True) As Boolean
-        If Not File.Exists(paths("DebugDevNames")) Then MakeFile(paths("DebugDevNames"))
-        Dim DeviceJsonContent As String = File.ReadAllText(paths("DebugDevNames"))
+        If Not File.Exists(GetKernelPath(KernelPathType.DebugDevNames)) Then MakeFile(GetKernelPath(KernelPathType.DebugDevNames))
+        Dim DeviceJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.DebugDevNames))
         Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
         If DeviceNameToken(DeviceIP) Is Nothing Then
             Dim NewDevice As New JObject(New JProperty("Name", ""),
                                          New JProperty("Blocked", False),
                                          New JProperty("ChatHistory", New JArray()))
             DeviceNameToken.Add(DeviceIP, NewDevice)
-            File.WriteAllText(paths("DebugDevNames"), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented))
+            File.WriteAllText(GetKernelPath(KernelPathType.DebugDevNames), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented))
             Return True
         Else
             If ThrowException Then Throw New Exceptions.RemoteDebugDeviceAlreadyExistsException(DoTranslation("Device already exists."))
@@ -223,11 +223,11 @@ Public Module RemoteDebugTools
     ''' <param name="DeviceIP">Device IP address from remote endpoint address</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
     Public Function RemoveDeviceFromJson(DeviceIP As String) As Boolean
-        Dim DeviceJsonContent As String = File.ReadAllText(paths("DebugDevNames"))
+        Dim DeviceJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.DebugDevNames))
         Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
         If DeviceNameToken(DeviceIP) IsNot Nothing Then
             DeviceNameToken.Remove(DeviceIP)
-            File.WriteAllText(paths("DebugDevNames"), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented))
+            File.WriteAllText(GetKernelPath(KernelPathType.DebugDevNames), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented))
             Return True
         Else
             Throw New Exceptions.RemoteDebugDeviceNotFoundException(DoTranslation("No such device."))
@@ -239,8 +239,8 @@ Public Module RemoteDebugTools
     ''' Lists all devices and puts them into an array
     ''' </summary>
     Public Function ListDevices() As String()
-        If Not File.Exists(paths("DebugDevNames")) Then MakeFile(paths("DebugDevNames"))
-        Dim DeviceJsonContent As String = File.ReadAllText(paths("DebugDevNames"))
+        If Not File.Exists(GetKernelPath(KernelPathType.DebugDevNames)) Then MakeFile(GetKernelPath(KernelPathType.DebugDevNames))
+        Dim DeviceJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.DebugDevNames))
         Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
         Return DeviceNameToken.Properties.Select(Function(p) p.Name).ToArray
     End Function
