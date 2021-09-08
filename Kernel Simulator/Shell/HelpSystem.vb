@@ -41,7 +41,8 @@ Public Module HelpSystem
     ''' </summary>
     ''' <param name="command">A specified command</param>
     ''' <param name="CommandType">A specified command type</param>
-    Public Sub ShowHelp(command As String, CommandType As ShellCommandType)
+    ''' <param name="DebugDeviceSocket">Only for remote debug shell. Specifies the debug device socket.</param>
+    Public Sub ShowHelp(command As String, CommandType As ShellCommandType, Optional DebugDeviceSocket As StreamWriter = Nothing)
         'Populate screensaver files
         Dim ScreensaverFiles As New List(Of String)
         ScreensaverFiles.AddRange(Directory.GetFiles(GetKernelPath(KernelPathType.Mods), "*.ss.vb", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))
@@ -80,6 +81,10 @@ Public Module HelpSystem
                 CommandList = ZipShell_Commands
                 ModCommandList = ZipShell_ModHelpEntries
                 AliasedCommandList = ZIPShellAliases
+            Case ShellCommandType.RemoteDebugShell
+                CommandList = DebugCommands
+                ModCommandList = RDebugModDefs
+                AliasedCommandList = RemoteDebugAliases
         End Select
 
         'Check to see if command exists
@@ -89,7 +94,11 @@ Public Module HelpSystem
             Dim UsageLength As Integer = DoTranslation("Usage:").Length
 
             'Print usage information
-            W(DoTranslation("Usage:") + $" {command} {HelpUsage}: {HelpDefinition}", True, ColTypes.Neutral)
+            If Not CommandType = ShellCommandType.RemoteDebugShell Then
+                W(DoTranslation("Usage:") + $" {command} {HelpUsage}: {HelpDefinition}", True, ColTypes.Neutral)
+            ElseIf DebugDeviceSocket IsNot Nothing Then
+                DebugDeviceSocket.WriteLine(DoTranslation("Usage:") + $" /{command} {HelpUsage}: {HelpDefinition}")
+            End If
 
             'Extra information for specific commands to be printed
             If CommandType = ShellCommandType.Shell Then
@@ -137,47 +146,73 @@ Public Module HelpSystem
             'List the available commands
             If Not simHelp Then
                 'The built-in commands
-                W(DoTranslation("General commands:"), True, ColTypes.Neutral)
+                DecideStreamWriter(CommandType, DebugDeviceSocket, DoTranslation("General commands:"), True, ColTypes.Neutral)
                 For Each cmd As String In CommandList.Keys
                     If (Not CommandList(cmd).Strict) Or (CommandList(cmd).Strict And HasPermission(CurrentUser, PermissionType.Administrator)) Then
-                        W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, CommandList(cmd).GetTranslatedHelpEntry)
+                        DecideStreamWriter(CommandType, DebugDeviceSocket, "- {0}: ", False, ColTypes.ListEntry, cmd)
+                        DecideStreamWriter(CommandType, DebugDeviceSocket, "{0}", True, ColTypes.ListValue, CommandList(cmd).GetTranslatedHelpEntry)
                     End If
                 Next
 
                 'The mod commands
-                W(vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.Neutral)
-                If ModCommandList.Count = 0 Then W(DoTranslation("No mod commands."), True, ColTypes.Neutral)
+                DecideStreamWriter(CommandType, DebugDeviceSocket, vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.Neutral)
+                If ModCommandList.Count = 0 Then DecideStreamWriter(CommandType, DebugDeviceSocket, DoTranslation("No mod commands."), True, ColTypes.Neutral)
                 For Each cmd As String In ModCommandList.Keys
-                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, ModCommandList(cmd))
+                    DecideStreamWriter(CommandType, DebugDeviceSocket, "- {0}: ", False, ColTypes.ListEntry, cmd)
+                    DecideStreamWriter(CommandType, DebugDeviceSocket, "{0}", True, ColTypes.ListValue, ModCommandList(cmd))
                 Next
 
                 'The alias commands
-                W(vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.Neutral)
-                If AliasedCommandList.Count = 0 Then W(DoTranslation("No alias commands."), True, ColTypes.Neutral)
+                DecideStreamWriter(CommandType, DebugDeviceSocket, vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.Neutral)
+                If AliasedCommandList.Count = 0 Then DecideStreamWriter(CommandType, DebugDeviceSocket, DoTranslation("No alias commands."), True, ColTypes.Neutral)
                 For Each cmd As String In AliasedCommandList.Keys
-                    W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, CommandList(AliasedCommandList(cmd)).GetTranslatedHelpEntry)
+                    DecideStreamWriter(CommandType, DebugDeviceSocket, "- {0}: ", False, ColTypes.ListEntry, cmd)
+                    DecideStreamWriter(CommandType, DebugDeviceSocket, "{0}", True, ColTypes.ListValue, CommandList(AliasedCommandList(cmd)).GetTranslatedHelpEntry)
                 Next
 
                 'A tip for you all
-                W(vbNewLine + DoTranslation("* You can use multiple commands using the colon between commands."), True, ColTypes.Neutral)
+                If CommandType = ShellCommandType.Shell Then
+                    DecideStreamWriter(CommandType, DebugDeviceSocket, vbNewLine + DoTranslation("* You can use multiple commands using the colon between commands."), True, ColTypes.Neutral)
+                End If
             Else
                 'The built-in commands
                 For Each cmd As String In CommandList.Keys
                     If (Not CommandList(cmd).Strict) Or (CommandList(cmd).Strict And HasPermission(CurrentUser, PermissionType.Administrator)) Then
-                        W("{0}, ", False, ColTypes.ListEntry, cmd)
+                        DecideStreamWriter(CommandType, DebugDeviceSocket, "{0}, ", False, ColTypes.ListEntry, cmd)
                     End If
                 Next
 
                 'The mod commands
                 For Each cmd As String In ModCommandList.Keys
-                    W("{0}, ", False, ColTypes.ListEntry, cmd)
+                    DecideStreamWriter(CommandType, DebugDeviceSocket, "{0}, ", False, ColTypes.ListEntry, cmd)
                 Next
 
                 'The alias commands
-                W(String.Join(", ", AliasedCommandList.Keys), True, ColTypes.ListEntry)
+                DecideStreamWriter(CommandType, DebugDeviceSocket, String.Join(", ", AliasedCommandList.Keys), True, ColTypes.ListEntry)
             End If
         Else
-            W(DoTranslation("No help for command ""{0}""."), True, ColTypes.Error, command)
+            DecideStreamWriter(CommandType, DebugDeviceSocket, DoTranslation("No help for command ""{0}""."), True, ColTypes.Error, command)
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Decides where to write the help text entries
+    ''' </summary>
+    ''' <param name="CommandType">A specified command type</param>
+    ''' <param name="DebugDeviceSocket">Only for remote debug shell. Specifies the debug device socket.</param>
+    ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+    ''' <param name="Line">Whether to print a new line or not</param>
+    ''' <param name="colorType">A type of colors that will be changed.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
+    Private Sub DecideStreamWriter(CommandType As ShellCommandType, DebugDeviceSocket As StreamWriter, Text As String, Line As Boolean, colorType As ColTypes, ParamArray vars() As Object)
+        If Not CommandType = ShellCommandType.RemoteDebugShell Then
+            W(Text, Line, colorType, vars)
+        ElseIf DebugDeviceSocket IsNot Nothing Then
+            If Line Then
+                DebugDeviceSocket.WriteLine(Text, vars)
+            Else
+                DebugDeviceSocket.Write(Text, vars)
+            End If
         End If
     End Sub
 

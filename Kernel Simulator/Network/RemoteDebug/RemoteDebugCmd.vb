@@ -77,9 +77,9 @@ Module RemoteDebugCmd
                 Case "help"
                     'Help command code
                     If eqargs.Length <> 0 Then
-                        RDebugShowHelp(eqargs(0), SocketStreamWriter)
+                        ShowHelp(eqargs(0), ShellCommandType.RemoteDebugShell, SocketStreamWriter)
                     Else
-                        RDebugShowHelp("", SocketStreamWriter)
+                        ShowHelp("", ShellCommandType.RemoteDebugShell, SocketStreamWriter)
                     End If
                 Case "exit"
                     'Exit command code
