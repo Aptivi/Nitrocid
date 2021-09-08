@@ -36,7 +36,7 @@ Public Module ZipGetCommand
 
             '5. Check to see if a requested command is obsolete
             If ZipShell_Commands(Command).Obsolete Then
-                Wdbg("I", "The command requested {0} is obsolete", Command)
+                Wdbg(DebugLevel.I, "The command requested {0} is obsolete", Command)
                 W(DoTranslation("This command is obsolete and will be removed in a future release."), True, ColTypes.Neutral)
             End If
 
@@ -45,10 +45,10 @@ Public Module ZipGetCommand
                 Case "list"
                     Dim Entries As List(Of ZipArchiveEntry)
                     If eqargs?.Length > 0 Then
-                        Wdbg("I", "Listing entries with {0} as target directory", eqargs(0))
+                        Wdbg(DebugLevel.I, "Listing entries with {0} as target directory", eqargs(0))
                         Entries = ListZipEntries(eqargs(0))
                     Else
-                        Wdbg("I", "Listing entries with current directory as target directory")
+                        Wdbg(DebugLevel.I, "Listing entries with current directory as target directory")
                         Entries = ListZipEntries(ZipShell_CurrentArchiveDirectory)
                     End If
                     For Each Entry As ZipArchiveEntry In Entries
@@ -89,10 +89,10 @@ Public Module ZipGetCommand
                     ZipShell_Exiting = True
                 Case "help"
                     If eqargs?.Length > 0 Then
-                        Wdbg("I", "Requested help for {0}", eqargs(0))
+                        Wdbg(DebugLevel.I, "Requested help for {0}", eqargs(0))
                         ShowHelp(eqargs(0), ShellCommandType.ZIPShell)
                     Else
-                        Wdbg("I", "Requested help for all commands")
+                        Wdbg(DebugLevel.I, "Requested help for all commands")
                         ShowHelp(ShellCommandType.ZIPShell)
                     End If
             End Select
@@ -100,14 +100,14 @@ Public Module ZipGetCommand
             'See if the command is done (passed all required arguments)
             If ZipShell_Commands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Error, Command)
-                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, eqargs?.Length)
+                Wdbg(DebugLevel.E, "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, eqargs?.Length)
                 ShowHelp(Command, ShellCommandType.ZIPShell)
             End If
         Catch taex As ThreadAbortException
             Exit Sub
         Catch ex As Exception
             W(DoTranslation("Error trying to run command: {0}"), True, ColTypes.Error, ex.Message)
-            Wdbg("E", "Error running command {0}: {1}", requestedCommand.Split(" ")(0), ex.Message)
+            Wdbg(DebugLevel.E, "Error running command {0}: {1}", requestedCommand.Split(" ")(0), ex.Message)
             WStkTrc(ex)
             EventManager.RaiseZipCommandError(requestedCommand, ex)
         End Try

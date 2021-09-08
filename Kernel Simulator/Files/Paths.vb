@@ -64,7 +64,6 @@ Public Module Paths
     ''' <exception cref="Exceptions.InvalidKernelPathException"></exception>
     Public Function GetKernelPath(PathType As KernelPathType) As String
         If [Enum].IsDefined(GetType(KernelPathType), PathType) Then
-            Wdbg("I", "Requested to get kernel path {0}...", PathType.ToString)
             Return NeutralizePath(KernelPaths(PathType.ToString))
         Else
             Throw New Exceptions.InvalidKernelPathException(DoTranslation("Invalid kernel path type."))
@@ -79,7 +78,6 @@ Public Module Paths
     ''' <exception cref="Exceptions.InvalidKernelPathException"></exception>
     Public Function GetOtherPath(PathType As OtherPathType) As String
         If [Enum].IsDefined(GetType(OtherPathType), PathType) Then
-            Wdbg("I", "Requested to get path {0}...", PathType.ToString)
             Return NeutralizePath(OtherPaths(PathType.ToString))
         Else
             Throw New Exceptions.InvalidPathException(DoTranslation("Invalid path type."))

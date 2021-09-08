@@ -88,16 +88,16 @@ Public Module UESHCommands
         While True
             'Variables
             Dim Answer As String
-            Wdbg("I", "Script var: {0} ({1}), Question: {2}", ScriptVariable, ShellVariables.ContainsKey(ScriptVariable), Question)
+            Wdbg(DebugLevel.I, "Script var: {0} ({1}), Question: {2}", ScriptVariable, ShellVariables.ContainsKey(ScriptVariable), Question)
 
             'Ask a question
             W(Question, False, ColTypes.Input)
 
             'Wait for an answer
             Answer = Console.ReadLine
-            Wdbg("I", "Answer: {0}", Answer)
+            Wdbg(DebugLevel.I, "Answer: {0}", Answer)
 
-            Wdbg("I", "Setting {0} to {1}...", ScriptVariable, Answer)
+            Wdbg(DebugLevel.I, "Setting {0} to {1}...", ScriptVariable, Answer)
             SetVariable(ScriptVariable, Answer)
             Exit While
         End While

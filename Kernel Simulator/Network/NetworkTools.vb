@@ -67,21 +67,21 @@ Public Module NetworkTools
 
             'See if it supports IPv6
             If Not adapter.Supports(NetworkInterfaceComponent.IPv6) Then
-                Wdbg("W", "{0} doesn't support IPv6. Trying to get information about IPv4.", adapter.Description)
+                Wdbg(DebugLevel.W, "{0} doesn't support IPv6. Trying to get information about IPv4.", adapter.Description)
                 W(DoTranslation("Adapter {0} doesn't support IPv6. Continuing..."), True, ColTypes.Error, adapter.Description)
                 NoV6 = True
             End If
 
             'See if it supports IPv4
             If Not adapter.Supports(NetworkInterfaceComponent.IPv4) Then
-                Wdbg("E", "{0} doesn't support IPv4.", adapter.Description)
+                Wdbg(DebugLevel.E, "{0} doesn't support IPv4.", adapter.Description)
                 W(DoTranslation("Adapter {0} doesn't support IPv4. Probe failed."), True, ColTypes.Error, adapter.Description)
                 NoV4 = True
             End If
 
             'Get adapter IPv(4/6) properties
             If IsInternetAdapter(adapter) And Not NoV4 Then
-                Wdbg("I", "Adapter type of {0}: {1}", adapter.Description, adapter.NetworkInterfaceType.ToString)
+                Wdbg(DebugLevel.I, "Adapter type of {0}: {1}", adapter.Description, adapter.NetworkInterfaceType.ToString)
                 Dim adapterProperties As IPInterfaceProperties = adapter.GetIPProperties()
                 Dim p As IPv4InterfaceProperties
                 Dim s As IPv4InterfaceStatistics = adapter.GetIPv4Statistics
@@ -93,11 +93,11 @@ Public Module NetworkTools
                 Catch ex As NetworkInformationException
 #Disable Warning BC42104
                     If p6 Is Nothing Then
-                        Wdbg("W", "Failed to get IPv6 properties.")
+                        Wdbg(DebugLevel.W, "Failed to get IPv6 properties.")
                         W(DoTranslation("Failed to get IPv6 properties for adapter {0}. Continuing..."), True, ColTypes.Error, adapter.Description)
                     End If
                     If p Is Nothing Then
-                        Wdbg("E", "Failed to get IPv4 properties.")
+                        Wdbg(DebugLevel.E, "Failed to get IPv4 properties.")
                         W(DoTranslation("Failed to get properties for adapter {0}"), True, ColTypes.Error, adapter.Description)
                         Failed = True
                     End If
@@ -107,7 +107,7 @@ Public Module NetworkTools
 
                 'Check if statistics is nothing
                 If s Is Nothing Then
-                    Wdbg("E", "Failed to get statistics.")
+                    Wdbg(DebugLevel.E, "Failed to get statistics.")
                     W(DoTranslation("Failed to get statistics for adapter {0}"), True, ColTypes.Error, adapter.Description)
                     Failed = True
                 End If
@@ -121,7 +121,7 @@ Public Module NetworkTools
                     End If
                 End If
             Else
-                Wdbg("W", "Adapter {0} doesn't belong in netinfo because the type is {1}", adapter.Description, adapter.NetworkInterfaceType)
+                Wdbg(DebugLevel.W, "Adapter {0} doesn't belong in netinfo because the type is {1}", adapter.Description, adapter.NetworkInterfaceType)
             End If
         Next
 
@@ -217,7 +217,7 @@ Public Module NetworkTools
             Return True
         Catch ex As Exception
             WStkTrc(ex)
-            Wdbg("E", "Failed to change hostname: {0}", ex.Message)
+            Wdbg(DebugLevel.E, "Failed to change hostname: {0}", ex.Message)
             Throw New Exceptions.HostnameException(DoTranslation("Failed to change host name: {0}"), ex, ex.Message)
         End Try
         Return False

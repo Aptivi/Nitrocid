@@ -33,13 +33,13 @@ Public Module UESHParse
             'Open the script file for reading
             Dim FileStream As New StreamReader(scriptpath)
             Dim LineNo As Integer = 1
-            Wdbg("I", "Stream opened. Parsing script")
+            Wdbg(DebugLevel.I, "Stream opened. Parsing script")
 
             'Look for $variables and initialize them
             While Not FileStream.EndOfStream
                 'Get line
                 Dim Line As String = FileStream.ReadLine
-                Wdbg("I", "Line {0}: ""{1}""", LineNo, Line)
+                Wdbg(DebugLevel.I, "Line {0}: ""{1}""", LineNo, Line)
 
                 'If $variable is found in string, initialize it
                 Dim SplitWords() As String = Line.Split(" ")
@@ -57,7 +57,7 @@ Public Module UESHParse
             While Not FileStream.EndOfStream
                 'Get line
                 Dim Line As String = FileStream.ReadLine
-                Wdbg("I", "Line {0}: ""{1}""", LineNo, Line)
+                Wdbg(DebugLevel.I, "Line {0}: ""{1}""", LineNo, Line)
 
                 'See if the line contains variable, and replace every instance of it with its value
                 Dim SplitWords() As String = Line.Split(" ")
@@ -79,10 +79,10 @@ Public Module UESHParse
 
                 'See if the line is a comment or command
                 If Not Line.StartsWith("#") And Not Line.StartsWith(" ") Then
-                    Wdbg("I", "Line {0} is not a comment.", Line)
+                    Wdbg(DebugLevel.I, "Line {0} is not a comment.", Line)
                     GetLine(False, Line)
                 Else 'For debugging purposes
-                    Wdbg("I", "Line {0} is a comment.", Line)
+                    Wdbg(DebugLevel.I, "Line {0} is a comment.", Line)
                 End If
             End While
             EventManager.RaiseUESHPostExecute(scriptpath + " " + scriptarguments)

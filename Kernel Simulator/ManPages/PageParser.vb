@@ -36,8 +36,8 @@ Module PageParser
 #If MANPAGE Then
                 'We found the manual, but we need to check its contents.
                 Dim ManualFileName As String = Path.GetFileNameWithoutExtension(ManualFile)
-                Wdbg("I", "Found manual page {0}.", ManualFileName)
-                Wdbg("W", "Experimentally parsing manpage...")
+                Wdbg(DebugLevel.I, "Found manual page {0}.", ManualFileName)
+                Wdbg(DebugLevel.W, "Experimentally parsing manpage...")
                 Dim ManualInstance As New Manual(ManualFile)
                 If Not Pages.ContainsKey(ManualInstance.Title) Then
                     If ManualInstance.ValidManpage Then
@@ -47,7 +47,7 @@ Module PageParser
                     End If
                 End If
 #Else
-                Wdbg("F", "Not implemented yet.")
+                Wdbg(DebugLevel.F, "Not implemented yet.")
 #End If
             End If
         End If
@@ -66,7 +66,7 @@ Module PageParser
         Try
             Dim InternalParseDone As Boolean = False
             ManualFile = NeutralizePath(ManualFile)
-            Wdbg("I", "Current manual file: {0}", ManualFile)
+            Wdbg(DebugLevel.I, "Current manual file: {0}", ManualFile)
 
             'First, get all lines in the file
             Dim ManLines() As String = File.ReadAllLines(ManualFile)
@@ -77,7 +77,7 @@ Module PageParser
                     'Check for the TODOs
                     Dim TodoConstant As String = "TODO"
                     If ManLine.StartsWith("~~-") And ManLine.Contains(TodoConstant) Then
-                        Wdbg("I", "TODO found on this line: {0}", ManLine)
+                        Wdbg(DebugLevel.I, "TODO found on this line: {0}", ManLine)
                         Dim TodoIndex As Integer = InStr(ManLine, TodoConstant)
                         Todos.Add(ManLine.Substring(TodoIndex + TodoConstant.Length + 1))
                     End If
@@ -106,7 +106,7 @@ Module PageParser
                                 Wdbg("Revision found on this line: {0}", ManLine)
                                 Dim Rev As String = ManLine.Substring(RevisionConstant.Length)
                                 If String.IsNullOrWhiteSpace(Rev) Then
-                                    Wdbg("W", "Revision not defined. Assuming v1...")
+                                    Wdbg(DebugLevel.W, "Revision not defined. Assuming v1...")
                                     Rev = "1"
                                 End If
                                 ManRevision = Rev
@@ -115,7 +115,7 @@ Module PageParser
                                 Wdbg("Title found on this line: {0}", ManLine)
                                 Dim Title As String = ManLine.Substring(TitleConstant.Length)
                                 If String.IsNullOrWhiteSpace(Title) Then
-                                    Wdbg("W", "Title not defined.")
+                                    Wdbg(DebugLevel.W, "Title not defined.")
                                     Title = $"Untitled ({Pages.Count})"
                                 End If
                                 ManTitle = Title

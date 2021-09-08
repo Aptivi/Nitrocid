@@ -35,11 +35,11 @@ Public Module FieldManager
             'The "obj" description says this: "The object whose field value will be set."
             'Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
             'Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-            Wdbg("I", "Got field {0}. Setting to {1}...", TargetField.Name, VariableValue)
+            Wdbg(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetField.Name, VariableValue)
             TargetField.SetValue(Variable, VariableValue)
         Else
             'Variable not found on any of the "flag" modules.
-            Wdbg("I", "Field {0} not found.", Variable)
+            Wdbg(DebugLevel.I, "Field {0} not found.", Variable)
             W(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
         End If
     End Sub
@@ -59,11 +59,11 @@ Public Module FieldManager
             'The "obj" description says this: "The object whose field value will be returned."
             'Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
             'Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-            Wdbg("I", "Got field {0}.", TargetField.Name)
+            Wdbg(DebugLevel.I, "Got field {0}.", TargetField.Name)
             Return TargetField.GetValue(Variable)
         Else
             'Variable not found on any of the "flag" modules.
-            Wdbg("I", "Field {0} not found.", Variable)
+            Wdbg(DebugLevel.I, "Field {0} not found.", Variable)
             W(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
             Return Nothing
         End If

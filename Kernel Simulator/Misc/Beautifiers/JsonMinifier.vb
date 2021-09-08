@@ -29,9 +29,9 @@ Public Module JsonMinifier
     ''' <exception cref="FileNotFoundException"></exception>
     Public Function MinifyJson(JsonFile As String) As String
         'Neutralize the file path
-        Wdbg("I", "Neutralizing json file {0}...", JsonFile)
+        Wdbg(DebugLevel.I, "Neutralizing json file {0}...", JsonFile)
         JsonFile = NeutralizePath(JsonFile, True)
-        Wdbg("I", "Got json file {0}...", JsonFile)
+        Wdbg(DebugLevel.I, "Got json file {0}...", JsonFile)
 
         'Try to minify JSON
         Dim JsonFileContents As String = File.ReadAllText(JsonFile)
@@ -46,11 +46,11 @@ Public Module JsonMinifier
     Public Function MinifyJsonText(JsonText As String) As String
         'Make an instance of JToken with this text
         Dim JsonToken As JToken = JToken.Parse(JsonText)
-        Wdbg("I", "Created a token with text length of {0}", JsonText.Length)
+        Wdbg(DebugLevel.I, "Created a token with text length of {0}", JsonText.Length)
 
         'Minify JSON
         Dim MinifiedJson As String = JsonConvert.SerializeObject(JsonToken)
-        Wdbg("I", "Minified the JSON text. Length: {0}", MinifiedJson.Length)
+        Wdbg(DebugLevel.I, "Minified the JSON text. Length: {0}", MinifiedJson.Length)
         Return MinifiedJson
     End Function
 

@@ -28,18 +28,18 @@ Public Module SFTPTransfer
             Try
                 'Show a message to download
                 EventManager.RaiseSFTPPreDownload(File)
-                Wdbg("I", "Downloading file {0}...", File)
+                Wdbg(DebugLevel.I, "Downloading file {0}...", File)
 
                 'Try to download
                 Dim DownloadFileStream As New IO.FileStream($"{SFTPCurrDirect}/{File}", IO.FileMode.OpenOrCreate)
                 ClientSFTP.DownloadFile($"{SFTPCurrentRemoteDir}/{File}", DownloadFileStream)
 
                 'Show a message that it's downloaded
-                Wdbg("I", "Downloaded file {0}.", File)
+                Wdbg(DebugLevel.I, "Downloaded file {0}.", File)
                 EventManager.RaiseSFTPPostDownload(File)
                 Return True
             Catch ex As Exception
-                Wdbg("E", "Download failed for file {0}: {1}", File, ex.Message)
+                Wdbg(DebugLevel.E, "Download failed for file {0}: {1}", File, ex.Message)
                 EventManager.RaiseSFTPDownloadError(File, ex)
             End Try
         Else
@@ -58,16 +58,16 @@ Public Module SFTPTransfer
             Try
                 'Show a message to download
                 EventManager.RaiseSFTPPreUpload(File)
-                Wdbg("I", "Uploading file {0}...", File)
+                Wdbg(DebugLevel.I, "Uploading file {0}...", File)
 
                 'Try to upload
                 Dim UploadFileStream As New IO.FileStream($"{SFTPCurrDirect}/{File}", IO.FileMode.Open)
                 ClientSFTP.UploadFile(UploadFileStream, $"{SFTPCurrentRemoteDir}/{File}")
-                Wdbg("I", "Uploaded file {0}", File)
+                Wdbg(DebugLevel.I, "Uploaded file {0}", File)
                 EventManager.RaiseSFTPPostUpload(File)
                 Return True
             Catch ex As Exception
-                Wdbg("E", "Upload failed for file {0}: {1}", File, ex.Message)
+                Wdbg(DebugLevel.E, "Upload failed for file {0}: {1}", File, ex.Message)
                 EventManager.RaiseSFTPUploadError(File, ex)
             End Try
         Else

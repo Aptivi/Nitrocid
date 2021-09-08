@@ -67,7 +67,7 @@ Public Module Notifications
             NewNotificationsList = NotifRecents.Except(OldNotificationsList).ToList
             If NewNotificationsList.Count > 0 And Not InSaver Then
                 'Update the old notifications list
-                Wdbg("W", "Notifications received! Recents count was {0}, Old count was {1}", NotifRecents.Count, OldNotificationsList.Count)
+                Wdbg(DebugLevel.W, "Notifications received! Recents count was {0}, Old count was {1}", NotifRecents.Count, OldNotificationsList.Count)
                 OldNotificationsList = New List(Of Notification)(NotifRecents)
                 EventManager.RaiseNotificationsReceived(NewNotificationsList)
 
@@ -77,23 +77,23 @@ Public Module Notifications
 
                     'Populate title and description
                     Dim Title, Desc As String
-                    Wdbg("I", "Title: {0}", NewNotification.Title)
-                    Wdbg("I", "Desc: {0}", NewNotification.Desc)
+                    Wdbg(DebugLevel.I, "Title: {0}", NewNotification.Title)
+                    Wdbg(DebugLevel.I, "Desc: {0}", NewNotification.Desc)
                     Title = NewNotification.Title.Truncate(36)
                     Desc = NewNotification.Desc.Truncate(36)
-                    Wdbg("I", "Truncated title: {0}", Title)
-                    Wdbg("I", "Truncated desc: {0}", Desc)
-                    Wdbg("I", "Truncated title length: {0}", Title.Length)
-                    Wdbg("I", "Truncated desc length: {0}", Desc.Length)
+                    Wdbg(DebugLevel.I, "Truncated title: {0}", Title)
+                    Wdbg(DebugLevel.I, "Truncated desc: {0}", Desc)
+                    Wdbg(DebugLevel.I, "Truncated title length: {0}", Title.Length)
+                    Wdbg(DebugLevel.I, "Truncated desc length: {0}", Desc.Length)
 
                     'Write notification to console
-                    Wdbg("I", "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}", Console.WindowWidth - 40, Console.WindowTop, Console.WindowTop + 1, Console.WindowTop + 2)
+                    Wdbg(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}", Console.WindowWidth - 40, Console.WindowTop, Console.WindowTop + 1, Console.WindowTop + 2)
                     WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop, True, ColTypes.Neutral)
                     WriteWhere(Title + GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 1, True, ColTypes.Neutral)
                     WriteWhere(Desc + GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 2, True, ColTypes.Neutral)
 
                     'Beep according to priority
-                    Wdbg("I", "Priority: {0}", NewNotification.Priority)
+                    Wdbg(DebugLevel.I, "Priority: {0}", NewNotification.Priority)
                     For i As Integer = 1 To NewNotification.Priority
                         Console.Beep()
                     Next
@@ -102,8 +102,8 @@ Public Module Notifications
                     If NewNotification.Type = NotifType.Progress Then
                         Do Until NewNotification.Progress >= 100 Or NewNotification.ProgressFailed
                             Dim ProgressTitle As String = Title + " (" + CStr(NewNotification.Progress) + "%)"
-                            Wdbg("I", "Where to store progress: {0},{1}", Console.WindowWidth - 40, Console.WindowTop + 3)
-                            Wdbg("I", "Progress: {0}", NewNotification.Progress)
+                            Wdbg(DebugLevel.I, "Where to store progress: {0},{1}", Console.WindowWidth - 40, Console.WindowTop + 3)
+                            Wdbg(DebugLevel.I, "Progress: {0}", NewNotification.Progress)
                             WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop, True, ColTypes.Neutral)
                             WriteWhere(ProgressTitle + GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 1, True, ColTypes.Neutral, NewNotification.Progress)
                             WriteWhere(Desc + GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 2, True, ColTypes.Neutral)
@@ -151,7 +151,7 @@ Public Module Notifications
     ''' </summary>
     ''' <param name="notif">Instance of notification holder</param>
     Public Sub NotifySend(notif As Notification)
-        Wdbg("I", "List contains this notification? {0}", NotifRecents.Contains(notif))
+        Wdbg(DebugLevel.I, "List contains this notification? {0}", NotifRecents.Contains(notif))
         If Not NotifRecents.Contains(notif) Then
             NotifRecents.Add(notif)
             EventManager.RaiseNotificationSent(notif)
@@ -176,11 +176,11 @@ Public Module Notifications
     Public Function NotifDismiss(ind As Integer) As Boolean
         Try
             NotifRecents.RemoveAt(ind)
-            Wdbg("I", "Removed index {0} from notification list", ind)
+            Wdbg(DebugLevel.I, "Removed index {0} from notification list", ind)
             EventManager.RaiseNotificationDismissed()
             Return True
         Catch ex As Exception
-            Wdbg("E", "Error trying to dismiss notification: {0}", ex.Message)
+            Wdbg(DebugLevel.E, "Error trying to dismiss notification: {0}", ex.Message)
             WStkTrc(ex)
         End Try
         Return False

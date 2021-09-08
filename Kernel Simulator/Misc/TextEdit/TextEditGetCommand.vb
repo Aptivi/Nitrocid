@@ -35,7 +35,7 @@ Public Module TextEditGetCommand
 
             '5. Check to see if a requested command is obsolete
             If TextEdit_Commands(Command).Obsolete Then
-                Wdbg("I", "The command requested {0} is obsolete", Command)
+                Wdbg(DebugLevel.I, "The command requested {0} is obsolete", Command)
                 W(DoTranslation("This command is obsolete and will be removed in a future release."), True, ColTypes.Neutral)
             End If
 
@@ -44,14 +44,14 @@ Public Module TextEditGetCommand
                 Case "print"
                     Dim LineNumber As Integer = 1
                     If eqargs?.Length > 0 Then
-                        Wdbg("I", "Line number provided: {0}", eqargs(0))
-                        Wdbg("I", "Is it numeric? {0}", eqargs(0).IsNumeric)
+                        Wdbg(DebugLevel.I, "Line number provided: {0}", eqargs(0))
+                        Wdbg(DebugLevel.I, "Is it numeric? {0}", eqargs(0).IsNumeric)
                         If eqargs(0).IsNumeric Then
                             LineNumber = eqargs(0)
-                            Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
+                            Wdbg(DebugLevel.I, "File lines: {0}", TextEdit_FileLines.Count)
                             If CInt(eqargs(0)) <= TextEdit_FileLines.Count Then
                                 Dim Line As String = TextEdit_FileLines(LineNumber - 1)
-                                Wdbg("I", "Line number: {0} ({1})", LineNumber, Line)
+                                Wdbg(DebugLevel.I, "Line number: {0} ({1})", LineNumber, Line)
                                 W("- {0}: ", False, ColTypes.ListEntry, LineNumber)
                                 W(Line, True, ColTypes.ListValue)
                             Else
@@ -59,11 +59,11 @@ Public Module TextEditGetCommand
                             End If
                         Else
                             W(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, eqargs(0))
-                            Wdbg("E", "{0} is not a numeric value.", eqargs(0))
+                            Wdbg(DebugLevel.E, "{0} is not a numeric value.", eqargs(0))
                         End If
                     Else
                         For Each Line As String In TextEdit_FileLines
-                            Wdbg("I", "Line number: {0} ({1})", LineNumber, Line)
+                            Wdbg(DebugLevel.I, "Line number: {0} ({1})", LineNumber, Line)
                             W("- {0}: ", False, ColTypes.ListEntry, LineNumber)
                             W(Line, True, ColTypes.ListValue)
                             LineNumber += 1
@@ -84,7 +84,7 @@ Public Module TextEditGetCommand
                             End If
                         Else
                             W(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, eqargs(0))
-                            Wdbg("E", "{0} is not a numeric value.", eqargs(0))
+                            Wdbg(DebugLevel.E, "{0} is not a numeric value.", eqargs(0))
                         End If
                     End If
                 Case "replace"
@@ -103,7 +103,7 @@ Public Module TextEditGetCommand
                             End If
                         Else
                             W(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, eqargs(2))
-                            Wdbg("E", "{0} is not a numeric value.", eqargs(2))
+                            Wdbg(DebugLevel.E, "{0} is not a numeric value.", eqargs(2))
                         End If
                     End If
                 Case "delword"
@@ -117,7 +117,7 @@ Public Module TextEditGetCommand
                             End If
                         Else
                             W(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, eqargs(1))
-                            Wdbg("E", "{0} is not a numeric value.", eqargs(1))
+                            Wdbg(DebugLevel.E, "{0} is not a numeric value.", eqargs(1))
                         End If
                     End If
                 Case "delcharnum"
@@ -131,7 +131,7 @@ Public Module TextEditGetCommand
                             End If
                         Else
                             W(DoTranslation("One or both of the numbers are not numeric."), True, ColTypes.Error)
-                            Wdbg("E", "{0} and {1} are not numeric values.", eqargs(0), eqargs(1))
+                            Wdbg(DebugLevel.E, "{0} and {1} are not numeric values.", eqargs(0), eqargs(1))
                         End If
                     End If
                 Case "querychar"
@@ -189,10 +189,10 @@ Public Module TextEditGetCommand
                     TextEdit_Exiting = True
                 Case "help"
                     If eqargs?.Length > 0 Then
-                        Wdbg("I", "Requested help for {0}", eqargs(0))
+                        Wdbg(DebugLevel.I, "Requested help for {0}", eqargs(0))
                         ShowHelp(eqargs(0), ShellCommandType.TextShell)
                     Else
-                        Wdbg("I", "Requested help for all commands")
+                        Wdbg(DebugLevel.I, "Requested help for all commands")
                         ShowHelp(ShellCommandType.TextShell)
                     End If
             End Select
@@ -200,14 +200,14 @@ Public Module TextEditGetCommand
             'See if the command is done (passed all required arguments)
             If TextEdit_Commands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Error, Command)
-                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, eqargs?.Length)
+                Wdbg(DebugLevel.E, "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, eqargs?.Length)
                 ShowHelp(Command, ShellCommandType.TextShell)
             End If
         Catch taex As ThreadAbortException
             Exit Sub
         Catch ex As Exception
             W(DoTranslation("Error trying to run command: {0}"), True, ColTypes.Error, ex.Message)
-            Wdbg("E", "Error running command {0}: {1}", requestedCommand.Split(" ")(0), ex.Message)
+            Wdbg(DebugLevel.E, "Error running command {0}: {1}", requestedCommand.Split(" ")(0), ex.Message)
             WStkTrc(ex)
             EventManager.RaiseTextCommandError(requestedCommand, ex)
         End Try

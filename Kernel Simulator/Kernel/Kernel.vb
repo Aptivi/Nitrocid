@@ -84,7 +84,7 @@ Public Module Kernel
                 'Stage 1: Initialize the system
                 W(DoTranslation("Internal initialization finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
                 WriteSeparator(DoTranslation("- Stage 1: System initialization"), False, ColTypes.Stage)
-                Wdbg("I", "- Kernel Phase 1: Initializing system")
+                Wdbg(DebugLevel.I, "- Kernel Phase 1: Initializing system")
                 StartRDebugThread()
                 W(DoTranslation("Starting RPC..."), True, ColTypes.Neutral)
                 StartRPC()
@@ -103,14 +103,14 @@ Public Module Kernel
                 'Phase 2: Probe hardware
                 W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
                 WriteSeparator(DoTranslation("- Stage 2: Hardware detection"), False, ColTypes.Stage)
-                Wdbg("I", "- Kernel Phase 2: Probing hardware")
+                Wdbg(DebugLevel.I, "- Kernel Phase 2: Probing hardware")
                 StartProbing()
 
                 'Phase 3: Parse Mods and Screensavers
                 W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
                 WriteSeparator(DoTranslation("- Stage 3: Mods and screensavers detection"), False, ColTypes.Stage)
-                Wdbg("I", "- Kernel Phase 3: Parse mods and screensavers")
-                Wdbg("I", "Safe mode flag is set to {0}", SafeMode)
+                Wdbg(DebugLevel.I, "- Kernel Phase 3: Parse mods and screensavers")
+                Wdbg(DebugLevel.I, "Safe mode flag is set to {0}", SafeMode)
                 If Not SafeMode Then
                     StartMods()
                 Else
@@ -121,7 +121,7 @@ Public Module Kernel
                 'Phase 4: Log-in
                 W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
                 WriteSeparator(DoTranslation("- Stage 4: Log in"), False, ColTypes.Stage)
-                Wdbg("I", "- Kernel Phase 4: Log in")
+                Wdbg(DebugLevel.I, "- Kernel Phase 4: Log in")
                 InitializeSystemAccount()
                 InitializeUsers()
                 LoadPermissions()
@@ -168,11 +168,11 @@ Public Module Kernel
                     LoginFlag = False
                     W(DoTranslation("Enter the admin password for maintenance."), True, ColTypes.Neutral)
                     If Users.ContainsKey("root") Then
-                        Wdbg("I", "Root account found. Prompting for password...")
+                        Wdbg(DebugLevel.I, "Root account found. Prompting for password...")
                         ShowPasswordPrompt("root")
                     Else
                         'Some malicious mod removed the root account, or rare situation happened and it was gone.
-                        Wdbg("W", "Root account not found for maintenance. Initializing it...")
+                        Wdbg(DebugLevel.W, "Root account not found for maintenance. Initializing it...")
                         InitializeSystemAccount()
                         ShowPasswordPrompt("root")
                     End If

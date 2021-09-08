@@ -63,7 +63,7 @@ Public Module FTPShell
             Try
                 'Complete initialization
                 If FtpInitialized = False Then
-                    Wdbg("I", $"Completing initialization of FTP: {FtpInitialized}")
+                    Wdbg(DebugLevel.I, $"Completing initialization of FTP: {FtpInitialized}")
                     FtpTrace.AddListener(New FTPTracer)
                     FtpTrace.LogUserName = FTPLoggerUsername
                     FtpTrace.LogPassword = False 'Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
@@ -80,7 +80,7 @@ Public Module FTPShell
 
                 'Check if the shell is going to exit
                 If ftpexit = True Then
-                    Wdbg("W", "Exiting shell...")
+                    Wdbg(DebugLevel.W, "Exiting shell...")
                     FtpConnected = False
                     ClientFTP?.Disconnect()
                     ftpsite = ""
@@ -101,9 +101,9 @@ Public Module FTPShell
                     Console.SetOut(DefConsoleOut)
                 End If
                 If Not Connects Then
-                    Wdbg("I", "Preparing prompt...")
+                    Wdbg(DebugLevel.I, "Preparing prompt...")
                     If FtpConnected Then
-                        Wdbg("I", "FTPShellPromptStyle = {0}", FTPShellPromptStyle)
+                        Wdbg(DebugLevel.I, "FTPShellPromptStyle = {0}", FTPShellPromptStyle)
                         If FTPShellPromptStyle = "" Then
                             W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, FtpUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, ftpsite) : W("]{0}> ", False, ColTypes.Gray, FtpCurrentRemoteDir)
                         Else
@@ -124,11 +124,11 @@ Public Module FTPShell
 
                 'Try to connect if IP address is specified.
                 If Connects Then
-                    Wdbg("I", $"Currently connecting to {Address} by ""ftp (address)""...")
+                    Wdbg(DebugLevel.I, $"Currently connecting to {Address} by ""ftp (address)""...")
                     FtpCommand = $"connect {Address}"
                     Connects = False
                 Else
-                    Wdbg("I", "Normal shell")
+                    Wdbg(DebugLevel.I, "Normal shell")
                     FtpCommand = Console.ReadLine()
                 End If
                 EventManager.RaiseFTPPreExecuteCommand(FtpCommand)
@@ -155,21 +155,21 @@ Public Module FTPShell
     ''' </summary>
     Public Sub FTPGetLine()
         Dim words As String() = FtpCommand.SplitEncloseDoubleQuotes(" ")
-        Wdbg("I", $"Is the command found? {FTPCommands.ContainsKey(words(0))}")
+        Wdbg(DebugLevel.I, $"Is the command found? {FTPCommands.ContainsKey(words(0))}")
         If FTPCommands.ContainsKey(words(0)) Then
-            Wdbg("I", "Command found.")
+            Wdbg(DebugLevel.I, "Command found.")
             FTPStartCommandThread = New Thread(AddressOf FTPGetCommand.ExecuteCommand) With {.Name = "FTP Command Thread"}
             FTPStartCommandThread.Start(FtpCommand)
             FTPStartCommandThread.Join()
         ElseIf FTPModCommands.Contains(words(0)) Then
-            Wdbg("I", "Mod command found.")
+            Wdbg(DebugLevel.I, "Mod command found.")
             ExecuteModCommand(FtpCommand)
         ElseIf FTPShellAliases.Keys.Contains(words(0)) Then
-            Wdbg("I", "FTP shell alias command found.")
+            Wdbg(DebugLevel.I, "FTP shell alias command found.")
             FtpCommand = FtpCommand.Replace($"""{words(0)}""", words(0))
             ExecuteFTPAlias(FtpCommand)
         ElseIf Not FtpCommand.StartsWith(" ") Then
-            Wdbg("E", "Command {0} not found.", FtpCommand)
+            Wdbg(DebugLevel.E, "Command {0} not found.", FtpCommand)
             W(DoTranslation("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell."), True, ColTypes.Error, words(0))
         End If
     End Sub
@@ -181,7 +181,7 @@ Public Module FTPShell
     Sub ExecuteFTPAlias(aliascmd As String)
         Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, FTPShellAliases(FirstWordCmd))
-        Wdbg("I", "Actual command: {0}", actualCmd)
+        Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
         FTPStartCommandThread = New Thread(AddressOf FTPGetCommand.ExecuteCommand) With {.Name = "FTP Command Thread"}
         FTPStartCommandThread.Start(actualCmd)
         FTPStartCommandThread.Join()

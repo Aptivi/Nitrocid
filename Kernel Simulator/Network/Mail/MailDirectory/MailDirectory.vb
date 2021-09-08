@@ -26,7 +26,7 @@ Public Module MailDirectory
     ''' </summary>
     ''' <param name="Directory">Directory name</param>
     Public Sub CreateMailDirectory(Directory As String)
-        Wdbg("I", "Creating folder: {0}", Directory)
+        Wdbg(DebugLevel.I, "Creating folder: {0}", Directory)
         Try
             Dim MailFolder As MailFolder
             SyncLock IMAP_Client.SyncRoot
@@ -34,7 +34,7 @@ Public Module MailDirectory
                 MailFolder.Create(Directory, True)
             End SyncLock
         Catch ex As Exception
-            Wdbg("E", "Failed to create folder {0}: {1}", Directory, ex.Message)
+            Wdbg(DebugLevel.E, "Failed to create folder {0}: {1}", Directory, ex.Message)
             WStkTrc(ex)
             Throw New Exceptions.MailException(DoTranslation("Unable to create mail folder {0}: {1}"), ex, Directory, ex.Message)
         End Try
@@ -45,7 +45,7 @@ Public Module MailDirectory
     ''' </summary>
     ''' <param name="Directory">Directory name</param>
     Public Sub DeleteMailDirectory(Directory As String)
-        Wdbg("I", "Deleting folder: {0}", Directory)
+        Wdbg(DebugLevel.I, "Deleting folder: {0}", Directory)
         Try
             Dim MailFolder As MailFolder
             SyncLock IMAP_Client.SyncRoot
@@ -53,7 +53,7 @@ Public Module MailDirectory
                 MailFolder.Delete()
             End SyncLock
         Catch ex As Exception
-            Wdbg("E", "Failed to delete folder {0}: {1}", Directory, ex.Message)
+            Wdbg(DebugLevel.E, "Failed to delete folder {0}: {1}", Directory, ex.Message)
             WStkTrc(ex)
             Throw New Exceptions.MailException(DoTranslation("Unable to delete mail folder {0}: {1}"), ex, Directory, ex.Message)
         End Try
@@ -64,7 +64,7 @@ Public Module MailDirectory
     ''' </summary>
     ''' <param name="Directory">Directory name</param>
     Public Sub RenameMailDirectory(Directory As String, NewName As String)
-        Wdbg("I", "Renaming folder {0} to {1}", Directory, NewName)
+        Wdbg(DebugLevel.I, "Renaming folder {0} to {1}", Directory, NewName)
         Try
             Dim MailFolder As MailFolder
             SyncLock IMAP_Client.SyncRoot
@@ -72,7 +72,7 @@ Public Module MailDirectory
                 MailFolder.Rename(MailFolder.ParentFolder, NewName)
             End SyncLock
         Catch ex As Exception
-            Wdbg("E", "Failed to delete folder {0}: {1}", Directory, ex.Message)
+            Wdbg(DebugLevel.E, "Failed to delete folder {0}: {1}", Directory, ex.Message)
             WStkTrc(ex)
             Throw New Exceptions.MailException(DoTranslation("Unable to delete mail folder {0}: {1}"), ex, Directory, ex.Message)
         End Try
@@ -83,15 +83,15 @@ Public Module MailDirectory
     ''' </summary>
     ''' <param name="Directory">A mail directory</param>
     Public Sub MailChangeDirectory(Directory As String)
-        Wdbg("I", "Opening folder: {0}", Directory)
+        Wdbg(DebugLevel.I, "Opening folder: {0}", Directory)
         Try
             SyncLock IMAP_Client.SyncRoot
                 OpenFolder(Directory)
             End SyncLock
             IMAP_CurrentDirectory = Directory
-            Wdbg("I", "Current directory changed.")
+            Wdbg(DebugLevel.I, "Current directory changed.")
         Catch ex As Exception
-            Wdbg("E", "Failed to open folder {0}: {1}", Directory, ex.Message)
+            Wdbg(DebugLevel.E, "Failed to open folder {0}: {1}", Directory, ex.Message)
             WStkTrc(ex)
             Throw New Exceptions.MailException(DoTranslation("Unable to open mail folder {0}: {1}"), ex, Directory, ex.Message)
         End Try
@@ -104,9 +104,9 @@ Public Module MailDirectory
     ''' <returns>A folder</returns>
     Public Function OpenFolder(FolderString As String, Optional FolderMode As FolderAccess = FolderAccess.ReadWrite) As MailFolder
         Dim Opened As MailFolder
-        Wdbg("I", "Personal namespace collection parsing started.")
+        Wdbg(DebugLevel.I, "Personal namespace collection parsing started.")
         For Each nmspc As FolderNamespace In IMAP_Client.PersonalNamespaces
-            Wdbg("I", "Namespace: {0}", nmspc.Path)
+            Wdbg(DebugLevel.I, "Namespace: {0}", nmspc.Path)
             For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
                 If dir.Name.ToLower = FolderString.ToLower Then
                     dir.Open(FolderMode)
@@ -115,9 +115,9 @@ Public Module MailDirectory
             Next
         Next
 
-        Wdbg("I", "Shared namespace collection parsing started.")
+        Wdbg(DebugLevel.I, "Shared namespace collection parsing started.")
         For Each nmspc As FolderNamespace In IMAP_Client.SharedNamespaces
-            Wdbg("I", "Namespace: {0}", nmspc.Path)
+            Wdbg(DebugLevel.I, "Namespace: {0}", nmspc.Path)
             For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
                 If dir.Name.ToLower = FolderString.ToLower Then
                     dir.Open(FolderMode)
@@ -126,9 +126,9 @@ Public Module MailDirectory
             Next
         Next
 
-        Wdbg("I", "Other namespace collection parsing started.")
+        Wdbg(DebugLevel.I, "Other namespace collection parsing started.")
         For Each nmspc As FolderNamespace In IMAP_Client.OtherNamespaces
-            Wdbg("I", "Namespace: {0}", nmspc.Path)
+            Wdbg(DebugLevel.I, "Namespace: {0}", nmspc.Path)
             For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
                 If dir.Name.ToLower = FolderString.ToLower Then
                     dir.Open(FolderMode)
@@ -153,32 +153,32 @@ Public Module MailDirectory
     Public Function MailListDirectories() As String
         Dim EntryBuilder As New StringBuilder
         SyncLock IMAP_Client.SyncRoot
-            Wdbg("I", "Personal namespace collection parsing started.")
+            Wdbg(DebugLevel.I, "Personal namespace collection parsing started.")
             For Each nmspc As FolderNamespace In IMAP_Client.PersonalNamespaces
-                Wdbg("I", "Namespace: {0}", nmspc.Path)
+                Wdbg(DebugLevel.I, "Namespace: {0}", nmspc.Path)
                 EntryBuilder.AppendLine($"- {nmspc.Path}")
                 For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
-                    Wdbg("I", "Folder: {0}", dir.Name)
+                    Wdbg(DebugLevel.I, "Folder: {0}", dir.Name)
                     EntryBuilder.AppendLine($"  - {dir.Name}")
                 Next
             Next
 
-            Wdbg("I", "Shared namespace collection parsing started.")
+            Wdbg(DebugLevel.I, "Shared namespace collection parsing started.")
             For Each nmspc As FolderNamespace In IMAP_Client.SharedNamespaces
-                Wdbg("I", "Namespace: {0}", nmspc.Path)
+                Wdbg(DebugLevel.I, "Namespace: {0}", nmspc.Path)
                 EntryBuilder.AppendLine($"- {nmspc.Path}")
                 For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
-                    Wdbg("I", "Folder: {0}", dir.Name)
+                    Wdbg(DebugLevel.I, "Folder: {0}", dir.Name)
                     EntryBuilder.AppendLine($"  - {dir.Name}")
                 Next
             Next
 
-            Wdbg("I", "Other namespace collection parsing started.")
+            Wdbg(DebugLevel.I, "Other namespace collection parsing started.")
             For Each nmspc As FolderNamespace In IMAP_Client.OtherNamespaces
-                Wdbg("I", "Namespace: {0}", nmspc.Path)
+                Wdbg(DebugLevel.I, "Namespace: {0}", nmspc.Path)
                 EntryBuilder.AppendLine($"- {nmspc.Path}")
                 For Each dir As MailFolder In IMAP_Client.GetFolders(nmspc)
-                    Wdbg("I", "Folder: {0}", dir.Name)
+                    Wdbg(DebugLevel.I, "Folder: {0}", dir.Name)
                     EntryBuilder.AppendLine($"  - {dir.Name}")
                 Next
             Next

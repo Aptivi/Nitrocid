@@ -51,7 +51,7 @@ Module MailLogin
     ''' <param name="Username">Specified username</param>
     Sub PromptPassword(Username As String)
         'Password
-        Wdbg("I", "Username: {0}", Username)
+        Wdbg(DebugLevel.I, "Username: {0}", Username)
         Mail_Authentication.UserName = Username
         W(DoTranslation("Enter password: "), False, ColTypes.Input)
         Mail_Authentication.Password = ReadLineNoInput("*")
@@ -73,29 +73,29 @@ Module MailLogin
         W(DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
         Dim IMAP_Address As String = Console.ReadLine
         Dim IMAP_Port As Integer = 0
-        Wdbg("I", "IMAP Server: ""{0}""", IMAP_Address)
+        Wdbg(DebugLevel.I, "IMAP Server: ""{0}""", IMAP_Address)
         W(DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
         Dim SMTP_Address As String = Console.ReadLine
         Dim SMTP_Port As Integer = 587
-        Wdbg("I", "SMTP Server: ""{0}""", SMTP_Address)
+        Wdbg(DebugLevel.I, "SMTP Server: ""{0}""", SMTP_Address)
         ParseAddresses(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port)
     End Sub
 
     Sub ParseAddresses(IMAP_Address As String, IMAP_Port As Integer, SMTP_Address As String, SMTP_Port As Integer)
         'If the address is <address>:[port]
         If IMAP_Address.Contains(":") Then
-            Wdbg("I", "Found colon in address. Separating...", Mail_Authentication.UserName)
+            Wdbg(DebugLevel.I, "Found colon in address. Separating...", Mail_Authentication.UserName)
             IMAP_Port = CInt(IMAP_Address.Substring(IMAP_Address.IndexOf(":") + 1))
             IMAP_Address = IMAP_Address.Remove(IMAP_Address.IndexOf(":"))
-            Wdbg("I", "Final address: {0}, Final port: {1}", IMAP_Address, IMAP_Port)
+            Wdbg(DebugLevel.I, "Final address: {0}, Final port: {1}", IMAP_Address, IMAP_Port)
         End If
 
         'If the address is <address>:[port]
         If SMTP_Address.Contains(":") Then
-            Wdbg("I", "Found colon in address. Separating...", Mail_Authentication.UserName)
+            Wdbg(DebugLevel.I, "Found colon in address. Separating...", Mail_Authentication.UserName)
             SMTP_Port = CInt(SMTP_Address.Substring(SMTP_Address.IndexOf(":") + 1))
             SMTP_Address = SMTP_Address.Remove(SMTP_Address.IndexOf(":"))
-            Wdbg("I", "Final address: {0}, Final port: {1}", SMTP_Address, SMTP_Port)
+            Wdbg(DebugLevel.I, "Final address: {0}, Final port: {1}", SMTP_Address, SMTP_Port)
         End If
 
         'Try to connect
@@ -283,27 +283,27 @@ Module MailLogin
 
             'IMAP Connection
             W(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, Address)
-            Wdbg("I", "Connecting to IMAP Server {0}:{1} with SSL...", Address, Port)
+            Wdbg(DebugLevel.I, "Connecting to IMAP Server {0}:{1} with SSL...", Address, Port)
             IMAP_Client.Connect(Address, Port, Security.SecureSocketOptions.SslOnConnect)
             AddHandler IMAP_Client.WebAlert, AddressOf HandleWebAlert
 
             'SMTP Connection
             W(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, SmtpAddress)
-            Wdbg("I", "Connecting to SMTP Server {0}:{1} with SSL...", Address, Port)
+            Wdbg(DebugLevel.I, "Connecting to SMTP Server {0}:{1} with SSL...", Address, Port)
             SMTP_Client.Connect(SmtpAddress, SmtpPort, Security.SecureSocketOptions.StartTls)
 
             'IMAP Authentication
             W(DoTranslation("Authenticating..."), True, ColTypes.Neutral)
-            Wdbg("I", "Authenticating {0} to IMAP server {1}...", Mail_Authentication.UserName, Address)
+            Wdbg(DebugLevel.I, "Authenticating {0} to IMAP server {1}...", Mail_Authentication.UserName, Address)
             IMAP_Client.Authenticate(Mail_Authentication)
 
             'SMTP Authentication
-            Wdbg("I", "Authenticating {0} to SMTP server {1}...", Mail_Authentication.UserName, SmtpAddress)
+            Wdbg(DebugLevel.I, "Authenticating {0} to SMTP server {1}...", Mail_Authentication.UserName, SmtpAddress)
             SMTP_Client.Authenticate(Mail_Authentication)
             RemoveHandler IMAP_Client.WebAlert, AddressOf HandleWebAlert
 
             'Initialize shell
-            Wdbg("I", "Authentication succeeded. Opening shell...")
+            Wdbg(DebugLevel.I, "Authentication succeeded. Opening shell...")
             OpenMailShell(Address)
         Catch ex As Exception
             W(DoTranslation("Error while connecting to {0}: {1}"), True, ColTypes.Error, Address, ex.Message)

@@ -32,12 +32,12 @@ Public Module PageViewer
 
             'Get the bottom place
             InfoPlace = Console.WindowHeight - 1
-            Wdbg("I", "Bottom info height is {0}", InfoPlace)
+            Wdbg(DebugLevel.I, "Bottom info height is {0}", InfoPlace)
 
             'If there is any To-do, write them to the console
-            Wdbg("I", "Todo count for ""{0}"": {1}", ManualTitle, Pages(ManualTitle).Todos.Count.ToString)
+            Wdbg(DebugLevel.I, "Todo count for ""{0}"": {1}", ManualTitle, Pages(ManualTitle).Todos.Count.ToString)
             If Pages(ManualTitle).Todos.Count <> 0 Then
-                Wdbg("I", "Todos are found in manpage.")
+                Wdbg(DebugLevel.I, "Todos are found in manpage.")
                 W(DoTranslation("This manual page needs work for:", currentLang) + vbNewLine, True, ColTypes.Warning)
                 WriteList(Pages(ManualTitle).Todos, True)
                 W(vbNewLine + DoTranslation("Press any key to read the manual page...", currentLang), False, ColTypes.Warning)
@@ -85,7 +85,7 @@ Public Module PageViewer
                     If Not InEsc Then
                         If IncompleteSentenceBuilder.Length - EscapeCharacters = Console.WindowWidth - Convert.ToInt32(IsOnUnix) Or line.Length = CharactersParsed Then
                             'We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
-                            Wdbg("I", "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString, IncompleteSentences.Count)
+                            Wdbg(DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString, IncompleteSentences.Count)
                             IncompleteSentences.Add(IncompleteSentenceBuilder.ToString)
 
                             'Clean everything up
@@ -113,11 +113,11 @@ Public Module PageViewer
             Next
 
             'Stop on last page
-            Wdbg("I", "We're on the last page.")
+            Wdbg(DebugLevel.I, "We're on the last page.")
             Console.ReadKey()
 
             'Clean up
-            Wdbg("I", "Exiting...")
+            Wdbg(DebugLevel.I, "Exiting...")
             Console.Clear()
         Else
             W(DoTranslation("Manual page {0} not found.", currentLang), True, ColTypes.Neutral, ManualTitle)

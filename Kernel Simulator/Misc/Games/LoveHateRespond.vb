@@ -58,36 +58,36 @@ Module LoveHateRespond
             Type = Comments.ElementAt(RandomDriver.Next(Comments.Keys.Count)).Key
             RandomUser = Users.ElementAt(RandomDriver.Next(Users.Count))
             RandomComment = Comments(Type).ElementAt(RandomDriver.Next(Comments(Type).Count))
-            Wdbg("I", "Comment type: {0}", Type)
-            Wdbg("I", "Commenter: {0}", RandomUser)
-            Wdbg("I", "Comment: {0}", RandomComment)
+            Wdbg(DebugLevel.I, "Comment type: {0}", Type)
+            Wdbg(DebugLevel.I, "Commenter: {0}", RandomUser)
+            Wdbg(DebugLevel.I, "Comment: {0}", RandomComment)
             W(DoTranslation("If someone made this comment to your video:"), True, ColTypes.Neutral)
             W("{0}: {1}", True, ColTypes.Neutral, RandomUser, RandomComment)
             W(DoTranslation("How would you respond?") + " <R/T/Q> ", False, ColTypes.Input)
             Response = Console.ReadKey.KeyChar
             Console.WriteLine()
-            Wdbg("I", "Response: {0}", Response)
+            Wdbg(DebugLevel.I, "Response: {0}", Response)
             If Response = "R" Or Response = "r" Then
                 If Type = "Hate" Then
-                    Wdbg("I", "Reported hate comment")
+                    Wdbg(DebugLevel.I, "Reported hate comment")
                     W(DoTranslation("Great! {0}'s comment will be removed for that."), True, ColTypes.Neutral, RandomUser)
                 Else
-                    Wdbg("I", "Reported love comment")
+                    Wdbg(DebugLevel.I, "Reported love comment")
                     W(DoTranslation("You just reported the love comment!"), True, ColTypes.Neutral)
                 End If
             ElseIf Response = "T" Or Response = "t" Then
                 If Type = "Love" Then
-                    Wdbg("I", "Thanked love comment")
+                    Wdbg(DebugLevel.I, "Thanked love comment")
                     W(DoTranslation("Great! {0} will appreciate your thanks."), True, ColTypes.Neutral, RandomUser)
                 Else
-                    Wdbg("I", "Thanked hate comment")
+                    Wdbg(DebugLevel.I, "Thanked hate comment")
                     W(DoTranslation("You just replied to the hate comment!"), True, ColTypes.Neutral)
                 End If
             ElseIf Response = "Q" Or Response = "q" Then
-                Wdbg("I", "Exit requested")
+                Wdbg(DebugLevel.I, "Exit requested")
                 Exit Sub
             Else
-                Wdbg("I", "No such selection")
+                Wdbg(DebugLevel.I, "No such selection")
                 W(DoTranslation("Invalid selection. Going to the next comment..."), True, ColTypes.Error)
             End If
         End While

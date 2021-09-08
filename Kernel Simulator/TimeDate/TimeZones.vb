@@ -27,11 +27,11 @@ Public Module TimeZones
         'Get all system time zones (IANA on Unix)
         Dim Zones As TimeZoneInfo() = GetSystemTimeZones.ToArray
         Dim ZoneTimes As New Dictionary(Of String, Date)
-        Wdbg("I", "Found {0} time zones.", Zones.Length)
+        Wdbg(DebugLevel.I, "Found {0} time zones.", Zones.Length)
 
         'Run a cleanup in the list
         ZoneTimes.Clear()
-        Wdbg("I", "Cleaned up zoneTimes.")
+        Wdbg(DebugLevel.I, "Cleaned up zoneTimes.")
 
         'Adds date and time to every single time zone to the list
         For Each Zone In Zones

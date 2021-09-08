@@ -38,7 +38,7 @@ Public Module FTPGetCommand
 
         '5. Check to see if a requested command is obsolete
         If FTPCommands(Command).Obsolete Then
-            Wdbg("I", "The command requested {0} is obsolete", Command)
+            Wdbg(DebugLevel.I, "The command requested {0} is obsolete", Command)
             W(DoTranslation("This command is obsolete and will be removed in a future release."), True, ColTypes.Neutral)
         End If
 
@@ -257,7 +257,7 @@ Public Module FTPGetCommand
             'See if the command is done (passed all required arguments)
             If FTPCommands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Error, Command)
-                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, eqargs?.Length)
+                Wdbg(DebugLevel.E, "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, eqargs?.Length)
                 ShowHelp(Command, ShellCommandType.FTPShell)
             End If
         Catch taex As ThreadAbortException

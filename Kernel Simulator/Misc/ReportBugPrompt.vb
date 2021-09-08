@@ -35,18 +35,18 @@ Module ReportBugPrompt
             W("3) " + DoTranslation("A question") + vbNewLine, True, ColTypes.Option)
             W(">> ", False, ColTypes.Input)
             If Integer.TryParse(Console.ReadLine, AnswerKind) Then
-                Wdbg("I", "Answer: {0}", AnswerKind)
+                Wdbg(DebugLevel.I, "Answer: {0}", AnswerKind)
                 Select Case AnswerKind
                     Case 1, 2, 3
                         [Step] += 1
                     Case Else '???
-                        Wdbg("W", "Option is not valid. Returning...")
+                        Wdbg(DebugLevel.W, "Option is not valid. Returning...")
                         W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerKind)
                         W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                         Console.ReadKey()
                 End Select
             Else
-                Wdbg("W", "Answer is not numeric.")
+                Wdbg(DebugLevel.W, "Answer is not numeric.")
                 W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
                 W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
@@ -58,9 +58,9 @@ Module ReportBugPrompt
             W(DoTranslation("Type a feature that you want to raise a ticket on.") + vbNewLine, True, ColTypes.Neutral)
             W(">> ", False, ColTypes.Input)
             AnswerFeature = Console.ReadLine
-            Wdbg("I", "Answer: {0}", AnswerFeature)
+            Wdbg(DebugLevel.I, "Answer: {0}", AnswerFeature)
             If String.IsNullOrWhiteSpace(AnswerFeature) Then
-                Wdbg("W", "Text written is not valid. Returning...")
+                Wdbg(DebugLevel.W, "Text written is not valid. Returning...")
                 W(DoTranslation("You must specify a feature."), True, ColTypes.Error)
                 W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
@@ -74,9 +74,9 @@ Module ReportBugPrompt
             W(DoTranslation("Ask a question, jot your idea, or report a problem.") + vbNewLine, True, ColTypes.Neutral)
             W(">> ", False, ColTypes.Input)
             AnswerRequest = Console.ReadLine
-            Wdbg("I", "Answer: {0}", AnswerRequest)
+            Wdbg(DebugLevel.I, "Answer: {0}", AnswerRequest)
             If String.IsNullOrWhiteSpace(AnswerRequest) Then
-                Wdbg("W", "Text written is not valid. Returning...")
+                Wdbg(DebugLevel.W, "Text written is not valid. Returning...")
                 W(DoTranslation("You must write your request."), True, ColTypes.Error)
                 W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
@@ -90,13 +90,13 @@ Module ReportBugPrompt
         Select Case AnswerKind
             Case 1 'A problem
                 TargetURL += $"&title=%5BBUG%5D+{AnswerFeature}+-+{AnswerRequest}"
-                Wdbg("I", "Target URL: {0}", TargetURL)
+                Wdbg(DebugLevel.I, "Target URL: {0}", TargetURL)
             Case 2 'A feature request
                 TargetURL += $"&title=%5BADD%5D+{AnswerFeature}+-+{AnswerRequest}"
-                Wdbg("I", "Target URL: {0}", TargetURL)
+                Wdbg(DebugLevel.I, "Target URL: {0}", TargetURL)
             Case 3 'A question
                 TargetURL += $"&title=%5BQ%26A%5D+{AnswerFeature}+-+{AnswerRequest}"
-                Wdbg("I", "Target URL: {0}", TargetURL)
+                Wdbg(DebugLevel.I, "Target URL: {0}", TargetURL)
         End Select
         Process.Start(TargetURL)
     End Sub

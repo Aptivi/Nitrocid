@@ -53,7 +53,7 @@ Public Module SSH
     Public Function GetConnectionInfo(Address As String, Port As Integer, Username As String) As ConnectionInfo
 
         'Authentication
-        Wdbg("I", "Address: {0}:{1}, Username: {2}", Address, Port, Username)
+        Wdbg(DebugLevel.I, "Address: {0}:{1}, Username: {2}", Address, Port, Username)
         Dim AuthenticationMethods As New List(Of AuthenticationMethod)
         Dim Answer As Integer
         While True
@@ -68,13 +68,13 @@ Public Module SSH
                     Case 1, 2
                         Exit While
                     Case Else
-                        Wdbg("W", "Option is not valid. Returning...")
+                        Wdbg(DebugLevel.W, "Option is not valid. Returning...")
                         W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, Answer)
                         W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                         Console.ReadKey()
                 End Select
             Else
-                Wdbg("W", "Answer is not numeric.")
+                Wdbg(DebugLevel.W, "Answer is not numeric.")
                 W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
                 W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
@@ -110,7 +110,7 @@ Public Module SSH
                             AuthFiles.Add(PrivateKeyAuth)
                         Catch ex As Exception
                             WStkTrc(ex)
-                            Wdbg("E", "Error trying to add private key authentication method: {0}", ex.Message)
+                            Wdbg(DebugLevel.E, "Error trying to add private key authentication method: {0}", ex.Message)
                             W(DoTranslation("Error trying to add private key:") + " {0}", True, ColTypes.Error, ex.Message)
                         End Try
                     ElseIf PrivateKeyFile.EndsWith("/q") Then
@@ -148,7 +148,7 @@ Public Module SSH
             Dim SSH As New SshClient(GetConnectionInfo(Address, Port, Username))
             SSH.ConnectionInfo.Timeout = TimeSpan.FromSeconds(30)
             If SSHBanner Then AddHandler SSH.ConnectionInfo.AuthenticationBanner, AddressOf ShowBanner
-            Wdbg("I", "Connecting to {0}...", Address)
+            Wdbg(DebugLevel.I, "Connecting to {0}...", Address)
             SSH.Connect()
 
             'Open SSH connection
@@ -168,13 +168,13 @@ Public Module SSH
     ''' Shows the SSH banner
     ''' </summary>
     Private Sub ShowBanner(sender As Object, e As AuthenticationBannerEventArgs)
-        Wdbg("I", "Banner language: {0}", e.Language)
-        Wdbg("I", "Banner username: {0}", e.Username)
-        Wdbg("I", "Banner length: {0}", e.BannerMessage.Length)
-        Wdbg("I", "Banner:")
+        Wdbg(DebugLevel.I, "Banner language: {0}", e.Language)
+        Wdbg(DebugLevel.I, "Banner username: {0}", e.Username)
+        Wdbg(DebugLevel.I, "Banner length: {0}", e.BannerMessage.Length)
+        Wdbg(DebugLevel.I, "Banner:")
         Dim BannerMessageLines() As String = e.BannerMessage.SplitNewLines
         For Each BannerLine As String In BannerMessageLines
-            Wdbg("I", BannerLine)
+            Wdbg(DebugLevel.I, BannerLine)
             W(BannerLine, True, ColTypes.Neutral)
         Next
     End Sub
@@ -191,7 +191,7 @@ Public Module SSH
             EventManager.RaiseSSHConnected(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port))
 
             'Shell creation. Note that $TERM is what kind of terminal being used (vt100, xterm, ...). Always vt100 on Windows.
-            Wdbg("I", "Opening shell...")
+            Wdbg(DebugLevel.I, "Opening shell...")
             Dim SSHS As Renci.SshNet.Shell = SSHClient.CreateShell(Console.OpenStandardInput, Console.OpenStandardOutput, Console.OpenStandardError, If(IsOnUnix(), Environ("TERM"), "vt100"), Console.WindowWidth, Console.WindowHeight, Console.BufferWidth, Console.BufferHeight, New Dictionary(Of Common.TerminalModes, UInteger))
             SSHS.Start()
 
@@ -204,11 +204,11 @@ Public Module SSH
                 End If
             End While
         Catch ex As Exception
-            Wdbg("E", "Error on SSH shell in {0}: {1}", SSHClient.ConnectionInfo.Host, ex.Message)
+            Wdbg(DebugLevel.E, "Error on SSH shell in {0}: {1}", SSHClient.ConnectionInfo.Host, ex.Message)
             WStkTrc(ex)
             W(DoTranslation("Error on SSH shell") + ": {0}", True, ColTypes.Error, ex.Message)
         Finally
-            Wdbg("I", "Connected: {0}", SSHClient.IsConnected)
+            Wdbg(DebugLevel.I, "Connected: {0}", SSHClient.IsConnected)
             W(vbNewLine + DoTranslation("SSH Disconnected."), True, ColTypes.Neutral)
             DisconnectionRequested = False
 
@@ -230,7 +230,7 @@ Public Module SSH
             EventManager.RaiseSSHConnected(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port))
 
             'Shell creation
-            Wdbg("I", "Opening shell...")
+            Wdbg(DebugLevel.I, "Opening shell...")
             EventManager.RaiseSSHPreExecuteCommand(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port), Command)
             Dim SSHC As SshCommand = SSHClient.CreateCommand(Command)
             Dim SSHCAsyncResult As IAsyncResult = SSHC.BeginExecute()
@@ -253,12 +253,12 @@ Public Module SSH
                 End While
             End While
         Catch ex As Exception
-            Wdbg("E", "Error trying to execute SSH command ""{0}"" to {1}: {2}", Command, SSHClient.ConnectionInfo.Host, ex.Message)
+            Wdbg(DebugLevel.E, "Error trying to execute SSH command ""{0}"" to {1}: {2}", Command, SSHClient.ConnectionInfo.Host, ex.Message)
             WStkTrc(ex)
             W(DoTranslation("Error executing SSH command") + " {0}: {1}", True, ColTypes.Error, Command, ex.Message)
             EventManager.RaiseSSHCommandError(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port), Command, ex)
         Finally
-            Wdbg("I", "Connected: {0}", SSHClient.IsConnected)
+            Wdbg(DebugLevel.I, "Connected: {0}", SSHClient.IsConnected)
             W(vbNewLine + DoTranslation("SSH Disconnected."), True, ColTypes.Neutral)
             DisconnectionRequested = False
             EventManager.RaiseSSHPostExecuteCommand(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port), Command)

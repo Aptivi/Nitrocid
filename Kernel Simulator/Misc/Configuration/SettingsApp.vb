@@ -64,17 +64,17 @@ Public Module SettingsApp
             Console.WriteLine()
             W("> ", False, ColTypes.Input)
             AnswerString = Console.ReadLine
-            Wdbg("I", "User answered {0}", AnswerString)
+            Wdbg(DebugLevel.I, "User answered {0}", AnswerString)
             Console.WriteLine()
 
-            Wdbg("I", "Is the answer numeric? {0}", IsNumeric(AnswerString))
+            Wdbg(DebugLevel.I, "Is the answer numeric? {0}", IsNumeric(AnswerString))
             If Integer.TryParse(AnswerString, AnswerInt) Then
-                Wdbg("I", "Succeeded. Checking the answer if it points to the right direction...")
+                Wdbg(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...")
                 If AnswerInt >= 1 And AnswerInt <= MaxSections Then
-                    Wdbg("I", "Opening section {0}...", AnswerInt)
+                    Wdbg(DebugLevel.I, "Opening section {0}...", AnswerInt)
                     OpenSection(AnswerString)
                 ElseIf AnswerInt = MaxSections + 1 Then 'Save Settings
-                    Wdbg("I", "Saving settings...")
+                    Wdbg(DebugLevel.I, "Saving settings...")
                     Try
                         CreateConfig()
                         SaveCustomSaverSettings()
@@ -84,16 +84,16 @@ Public Module SettingsApp
                         Console.ReadKey()
                     End Try
                 ElseIf AnswerInt = MaxSections + 2 Then 'Exit
-                    Wdbg("W", "Exiting...")
+                    Wdbg(DebugLevel.W, "Exiting...")
                     PromptFinished = True
                 Else
-                    Wdbg("W", "Option is not valid. Returning...")
+                    Wdbg(DebugLevel.W, "Option is not valid. Returning...")
                     W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerInt)
                     W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
                 End If
             Else
-                Wdbg("W", "Answer is not numeric.")
+                Wdbg(DebugLevel.W, "Answer is not numeric.")
                 W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
                 W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
@@ -467,52 +467,52 @@ Public Module SettingsApp
             End Select
             Console.WriteLine()
             W("{0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.Option, MaxOptions + 1)
-            Wdbg("W", "Section {0} has {1} selections.", SectionNum, MaxOptions)
+            Wdbg(DebugLevel.W, "Section {0} has {1} selections.", SectionNum, MaxOptions)
 
             'Prompt user and check for input
             W("> ", False, ColTypes.Input)
             AnswerString = Console.ReadLine
-            Wdbg("I", "User answered {0}", AnswerString)
+            Wdbg(DebugLevel.I, "User answered {0}", AnswerString)
             Console.WriteLine()
 
-            Wdbg("I", "Is the answer numeric? {0}", IsNumeric(AnswerString))
+            Wdbg(DebugLevel.I, "Is the answer numeric? {0}", IsNumeric(AnswerString))
             If Integer.TryParse(AnswerString, AnswerInt) Then
-                Wdbg("I", "Succeeded. Checking the answer if it points to the right direction...")
+                Wdbg(DebugLevel.I, "Succeeded. Checking the answer if it points to the right direction...")
                 If AnswerInt >= 1 And AnswerInt <= MaxOptions Then
                     If AnswerInt = 3 And SectionNum = "1" Then
-                        Wdbg("I", "Tried to open special section. Opening section 1.3...")
+                        Wdbg(DebugLevel.I, "Tried to open special section. Opening section 1.3...")
                         OpenSection("1.3")
                     ElseIf AnswerInt <> MaxOptions And SectionNum = "1.3" Then
-                        Wdbg("I", "Tried to open special section. Opening key {0} in section 1.3...", AnswerString)
+                        Wdbg(DebugLevel.I, "Tried to open special section. Opening key {0} in section 1.3...", AnswerString)
                         OpenKey("1.3", AnswerInt)
                     ElseIf AnswerInt = 12 And SectionNum = "4" Then
-                        Wdbg("I", "Tried to open subsection. Opening section 4.12...")
+                        Wdbg(DebugLevel.I, "Tried to open subsection. Opening section 4.12...")
                         OpenSection("4.12")
                     ElseIf AnswerInt <> MaxOptions And SectionNum = "4.12" Then
-                        Wdbg("I", "Tried to open subsection. Opening key {0} in section 4.12...", AnswerString)
+                        Wdbg(DebugLevel.I, "Tried to open subsection. Opening key {0} in section 4.12...", AnswerString)
                         OpenKey("4.12", AnswerInt)
                     ElseIf AnswerInt <> MaxOptions And SectionNum = "7" Then
-                        Wdbg("I", "Tried to open subsection. Opening section 7.{0}...", AnswerString)
-                        Wdbg("I", "Arguments: AnswerInt: {0}, ConfigurableScreensavers: {1}", AnswerInt, ConfigurableScreensavers.Count)
+                        Wdbg(DebugLevel.I, "Tried to open subsection. Opening section 7.{0}...", AnswerString)
+                        Wdbg(DebugLevel.I, "Arguments: AnswerInt: {0}, ConfigurableScreensavers: {1}", AnswerInt, ConfigurableScreensavers.Count)
                         OpenSection("7." + AnswerString, AnswerInt, ConfigurableScreensavers)
                     ElseIf AnswerInt = MaxOptions And SectionNum = "7" Then
-                        Wdbg("I", "Opening key {0} from section {1} with argument {2}...", AnswerInt, SectionNum)
+                        Wdbg(DebugLevel.I, "Opening key {0} from section {1} with argument {2}...", AnswerInt, SectionNum)
                         OpenKey(SectionNum, AnswerInt, MaxOptions)
                     Else
-                        Wdbg("I", "Opening key {0} from section {1}...", AnswerInt, SectionNum)
+                        Wdbg(DebugLevel.I, "Opening key {0} from section {1}...", AnswerInt, SectionNum)
                         OpenKey(SectionNum, AnswerInt)
                     End If
                 ElseIf AnswerInt = MaxOptions + 1 Then 'Go Back...
-                    Wdbg("I", "User requested exit. Returning...")
+                    Wdbg(DebugLevel.I, "User requested exit. Returning...")
                     SectionFinished = True
                 Else
-                    Wdbg("W", "Option is not valid. Returning...")
+                    Wdbg(DebugLevel.W, "Option is not valid. Returning...")
                     W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerInt)
                     W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
                 End If
             Else
-                Wdbg("W", "Answer is not numeric.")
+                Wdbg(DebugLevel.W, "Answer is not numeric.")
                 W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
                 W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
@@ -1606,8 +1606,8 @@ Public Module SettingsApp
             If Not KeyType = SettingsKeyType.SUnknown Then KeyValue = GetConfigValue(KeyVar)
 
             'Print debugging info
-            Wdbg("W", "Key {0} in section {1} has {2} selections.", KeyNumber, Section, MaxKeyOptions)
-            Wdbg("W", "Target variable: {0}, Key Type: {1}, Key value: {2}, Variant Value: {3}", KeyVar, KeyType, KeyValue, VariantValue)
+            Wdbg(DebugLevel.W, "Key {0} in section {1} has {2} selections.", KeyNumber, Section, MaxKeyOptions)
+            Wdbg(DebugLevel.W, "Target variable: {0}, Key Type: {1}, Key value: {2}, Variant Value: {3}", KeyVar, KeyType, KeyValue, VariantValue)
 
             'Prompt user
             If KeyNumber = 2 And Section = "1.3" And Not KeyType = SettingsKeyType.SUnknown Then
@@ -1618,7 +1618,7 @@ Public Module SettingsApp
                 W("> ", False, ColTypes.Input)
                 VariantValue = Console.ReadLine
                 If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString)
-                Wdbg("I", "User answered {0}", VariantValue)
+                Wdbg(DebugLevel.I, "User answered {0}", VariantValue)
             ElseIf Not KeyType = SettingsKeyType.SVariant Then
                 If KeyType = SettingsKeyType.SList Then
 #Disable Warning BC42104
@@ -1628,7 +1628,7 @@ Public Module SettingsApp
                         If Not AnswerString = "q" Then
                             If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString)
                             TargetList = Enumerable.Append(TargetList, AnswerString)
-                            Wdbg("I", "Added answer {0} to list.", AnswerString)
+                            Wdbg(DebugLevel.I, "Added answer {0} to list.", AnswerString)
                             W("> ", False, ColTypes.Input)
                         End If
                     Loop
@@ -1641,84 +1641,84 @@ Public Module SettingsApp
                         AnswerString = Console.ReadLine
                     End If
                     If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString)
-                    Wdbg("I", "User answered {0}", AnswerString)
+                    Wdbg(DebugLevel.I, "User answered {0}", AnswerString)
                 End If
             End If
 
             'Check for input
 #Disable Warning BC42104
-            Wdbg("I", "Is the answer numeric? {0}", IsNumeric(AnswerString))
+            Wdbg(DebugLevel.I, "Is the answer numeric? {0}", IsNumeric(AnswerString))
             If Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SBoolean Then
-                Wdbg("I", "Answer is numeric and key is of the Boolean type.")
+                Wdbg(DebugLevel.I, "Answer is numeric and key is of the Boolean type.")
                 If AnswerInt >= 1 And AnswerInt <= MaxKeyOptions Then
-                    Wdbg("I", "Translating {0} to the boolean equivalent...", AnswerInt)
+                    Wdbg(DebugLevel.I, "Translating {0} to the boolean equivalent...", AnswerInt)
                     KeyFinished = True
                     Select Case AnswerInt
                         Case 1 'True
-                            Wdbg("I", "Setting to True...")
+                            Wdbg(DebugLevel.I, "Setting to True...")
                             SetConfigValue(KeyVar, True)
                         Case 2 'False
-                            Wdbg("I", "Setting to False...")
+                            Wdbg(DebugLevel.I, "Setting to False...")
                             SetConfigValue(KeyVar, False)
                     End Select
                 ElseIf AnswerInt = MaxKeyOptions + 1 Then 'Go Back...
-                    Wdbg("I", "User requested exit. Returning...")
+                    Wdbg(DebugLevel.I, "User requested exit. Returning...")
                     KeyFinished = True
                 Else
-                    Wdbg("W", "Option is not valid. Returning...")
+                    Wdbg(DebugLevel.W, "Option is not valid. Returning...")
                     W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerInt)
                     W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
                 End If
             ElseIf (Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SInt) Or
                    (Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SSelection) Then
-                Wdbg("I", "Answer is numeric and key is of the {0} type.", KeyType)
+                Wdbg(DebugLevel.I, "Answer is numeric and key is of the {0} type.", KeyType)
                 If AnswerInt = MaxKeyOptions + 1 And KeyType = SettingsKeyType.SSelection Then 'Go Back...
-                    Wdbg("I", "User requested exit. Returning...")
+                    Wdbg(DebugLevel.I, "User requested exit. Returning...")
                     KeyFinished = True
                 ElseIf KeyType = SettingsKeyType.SSelection And AnswerInt > 0 And SelectFrom IsNot Nothing Then
-                    Wdbg("I", "Setting variable {0} to item index {1}...", KeyVar, AnswerInt - 1)
+                    Wdbg(DebugLevel.I, "Setting variable {0} to item index {1}...", KeyVar, AnswerInt - 1)
                     KeyFinished = True
                     SetConfigValue(KeyVar, SelectFrom(AnswerInt - 1))
                 ElseIf (KeyType = SettingsKeyType.SSelection And AnswerInt > 0) Or
                        (KeyType = SettingsKeyType.SInt And AnswerInt >= 0) Then
                     If (KeyType = SettingsKeyType.SSelection And Not AnswerInt > MaxKeyOptions) Or KeyType = SettingsKeyType.SInt Then
                         If SelectionEnumZeroBased Then AnswerInt -= 1
-                        Wdbg("I", "Setting variable {0} to {1}...", KeyVar, AnswerInt)
+                        Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
                         KeyFinished = True
                         SetConfigValue(KeyVar, AnswerInt)
                     ElseIf KeyType = SettingsKeyType.SSelection Then
-                        Wdbg("W", "Answer is not valid.")
+                        Wdbg(DebugLevel.W, "Answer is not valid.")
                         W(DoTranslation("The answer may not exceed the entries shown."), True, ColTypes.Error)
                         W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                         Console.ReadKey()
                     End If
                 ElseIf AnswerInt = 0 Then
-                    Wdbg("W", "Zero is not allowed.")
+                    Wdbg(DebugLevel.W, "Zero is not allowed.")
                     W(DoTranslation("The answer may not be zero."), True, ColTypes.Error)
                     W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
                 Else
-                    Wdbg("W", "Negative values are disallowed.")
+                    Wdbg(DebugLevel.W, "Negative values are disallowed.")
                     W(DoTranslation("The answer may not be negative."), True, ColTypes.Error)
                     W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
                 End If
             ElseIf KeyType = SettingsKeyType.SUnknown Then
-                Wdbg("I", "User requested exit. Returning...")
+                Wdbg(DebugLevel.I, "User requested exit. Returning...")
                 KeyFinished = True
             ElseIf KeyType = SettingsKeyType.SString Or KeyType = SettingsKeyType.SLongString Then
-                Wdbg("I", "Answer is not numeric and key is of the String type. Setting variable...")
+                Wdbg(DebugLevel.I, "Answer is not numeric and key is of the String type. Setting variable...")
 
                 'Check to see if written answer is empty
                 If String.IsNullOrWhiteSpace(AnswerString) Then
-                    Wdbg("I", "Answer is nothing. Setting to {0}...", KeyValue)
+                    Wdbg(DebugLevel.I, "Answer is nothing. Setting to {0}...", KeyValue)
                     AnswerString = KeyValue
                 End If
 
                 'Check to see if the user intended to clear the variable to make it consist of nothing
                 If AnswerString.ToLower = "/clear" Then
-                    Wdbg("I", "User requested clear.")
+                    Wdbg(DebugLevel.I, "User requested clear.")
                     AnswerString = ""
                 End If
 
@@ -1726,7 +1726,7 @@ Public Module SettingsApp
                 KeyFinished = True
                 SetConfigValue(KeyVar, AnswerString)
             ElseIf KeyType = SettingsKeyType.SList Then
-                Wdbg("I", "Answer is not numeric and key is of the List type. Adding answers to the list...")
+                Wdbg(DebugLevel.I, "Answer is not numeric and key is of the List type. Adding answers to the list...")
                 KeyFinished = True
                 SetConfigValue(KeyVar, String.Join(ListJoinString, TargetList))
             ElseIf SectionParts.Length > 1 Then
@@ -1734,19 +1734,19 @@ Public Module SettingsApp
                     Dim SaverIndex As Integer = SectionParts(1) - BuiltinSavers - 1
                     Dim SaverSettings As Dictionary(Of String, Object) = CSvrdb.Values(SaverIndex).Screensaver.SaverSettings
                     SaverSettings(KeyVar) = VariantValue
-                    Wdbg("I", "User requested exit. Returning...")
+                    Wdbg(DebugLevel.I, "User requested exit. Returning...")
                     KeyFinished = True
                 ElseIf KeyType = SettingsKeyType.SVariant Then
                     SetConfigValue(KeyVar, VariantValue)
-                    Wdbg("I", "User requested exit. Returning...")
+                    Wdbg(DebugLevel.I, "User requested exit. Returning...")
                     KeyFinished = True
                 End If
             ElseIf KeyType = SettingsKeyType.SVariant Then
                 SetConfigValue(KeyVar, VariantValue)
-                Wdbg("I", "User requested exit. Returning...")
+                Wdbg(DebugLevel.I, "User requested exit. Returning...")
                 KeyFinished = True
             Else
-                Wdbg("W", "Answer is not valid.")
+                Wdbg(DebugLevel.W, "Answer is not valid.")
                 W(DoTranslation("The answer is invalid. Check to make sure that the answer is numeric for config entries that need numbers as answers."), True, ColTypes.Error)
                 W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
@@ -1769,11 +1769,11 @@ Public Module SettingsApp
             'The "obj" description says this: "The object whose field value will be set."
             'Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
             'Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-            Wdbg("I", "Got field {0}. Setting to {1}...", TargetField.Name, VariableValue)
+            Wdbg(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetField.Name, VariableValue)
             TargetField.SetValue(Variable, VariableValue)
         Else
             'Variable not found on any of the "flag" modules.
-            Wdbg("I", "Field {0} not found.", Variable)
+            Wdbg(DebugLevel.I, "Field {0} not found.", Variable)
             W(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
         End If
     End Sub
@@ -1792,11 +1792,11 @@ Public Module SettingsApp
             'The "obj" description says this: "The object whose field value will be returned."
             'Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
             'Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-            Wdbg("I", "Got field {0}.", TargetField.Name)
+            Wdbg(DebugLevel.I, "Got field {0}.", TargetField.Name)
             Return TargetField.GetValue(Variable)
         Else
             'Variable not found on any of the "flag" modules.
-            Wdbg("I", "Field {0} not found.", Variable)
+            Wdbg(DebugLevel.I, "Field {0} not found.", Variable)
             W(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
             Return Nothing
         End If

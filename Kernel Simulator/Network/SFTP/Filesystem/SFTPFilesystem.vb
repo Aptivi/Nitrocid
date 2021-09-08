@@ -80,18 +80,18 @@ Module SFTPFilesystem
     ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
     Public Function SFTPDeleteRemote(Target As String) As Boolean
         If SFTPConnected Then
-            Wdbg("I", "Deleting {0}...", Target)
+            Wdbg(DebugLevel.I, "Deleting {0}...", Target)
 
             'Delete a file or folder
             If ClientSFTP.Exists(Target) Then
-                Wdbg("I", "Deleting {0}...", Target)
+                Wdbg(DebugLevel.I, "Deleting {0}...", Target)
                 ClientSFTP.Delete(Target)
             Else
-                Wdbg("E", "{0} is not found.", Target)
+                Wdbg(DebugLevel.E, "{0} is not found.", Target)
                 Throw New Exceptions.SFTPFilesystemException(DoTranslation("{0} is not found in the server."), Target)
                 Return False
             End If
-            Wdbg("I", "Deleted {0}", Target)
+            Wdbg(DebugLevel.I, "Deleted {0}", Target)
             Return True
         Else
             Throw New Exceptions.SFTPFilesystemException(DoTranslation("You must connect to server with administrative privileges before performing the deletion."))
@@ -166,7 +166,7 @@ Module SFTPFilesystem
             Dim SFTPSessionType As Type = SFTPSession.GetType
             Dim SFTPSessionCanon As MethodInfo = SFTPSessionType.GetMethod("GetCanonicalPath")
             Dim CanonicalPath As String = SFTPSessionCanon.Invoke(SFTPSession, New String() {Path})
-            Wdbg("I", "Canonical path: {0}", CanonicalPath)
+            Wdbg(DebugLevel.I, "Canonical path: {0}", CanonicalPath)
             Return CanonicalPath
         Else
             Throw New InvalidOperationException(DoTranslation("You must connect to server before performing filesystem operations."))

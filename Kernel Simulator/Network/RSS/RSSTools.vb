@@ -160,7 +160,7 @@ Public Module RSSTools
                 NewFeedsList = RSSFeedInstance.FeedArticles.Except(OldFeedsList).ToList
                 If NewFeedsList.Count > 0 Then
                     'Update the list
-                    Wdbg("W", "Feeds received! Recents count was {0}, Old count was {1}", RSSFeedInstance.FeedArticles.Count, OldFeedsList.Count)
+                    Wdbg(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", RSSFeedInstance.FeedArticles.Count, OldFeedsList.Count)
                     OldFeedsList = New List(Of RSSArticle)(RSSFeedInstance.FeedArticles)
                     For Each NewFeed As RSSArticle In NewFeedsList
                         Dim FeedNotif As New Notification(NewFeed.ArticleTitle, NewFeed.ArticleDescription, NotifPriority.Low, NotifType.Normal)

@@ -148,14 +148,14 @@ Public Module Shell
 
         While True
             If LogoutRequested Then
-                Wdbg("I", "Requested log out: {0}", LogoutRequested)
+                Wdbg(DebugLevel.I, "Requested log out: {0}", LogoutRequested)
                 LogoutRequested = False
                 LoggedIn = False
                 Exit Sub
             ElseIf Not InSaver Then
                 Try
                     'Try to probe injected commands
-                    Wdbg("I", "Probing injected commands using GetLine(True)...")
+                    Wdbg(DebugLevel.I, "Probing injected commands using GetLine(True)...")
                     GetLine(True, "")
 
                     'Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes)
@@ -169,11 +169,11 @@ Public Module Shell
                     DisposeAll()
 
                     'Set an input color
-                    Wdbg("I", "ColoredShell is {0}", ColoredShell)
+                    Wdbg(DebugLevel.I, "ColoredShell is {0}", ColoredShell)
                     SetInputColor()
 
                     'Wait for command
-                    Wdbg("I", "Waiting for command")
+                    Wdbg(DebugLevel.I, "Waiting for command")
                     EventManager.RaiseShellInitialized()
                     Dim strcommand As String = Console.ReadLine()
 
@@ -187,21 +187,21 @@ Public Module Shell
                             Dim Commands As String() = strcommand.Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
                             For Each Command As String In Commands
                                 Dim Parts As String() = Command.SplitEncloseDoubleQuotes(" ")
-                                Wdbg("I", "Mod commands probing started with {0} from {1}", Command, strcommand)
+                                Wdbg(DebugLevel.I, "Mod commands probing started with {0} from {1}", Command, strcommand)
                                 If modcmnds.Contains(Parts(0)) Then
                                     Done = True
-                                    Wdbg("I", "Mod command: {0}", Parts(0))
+                                    Wdbg(DebugLevel.I, "Mod command: {0}", Parts(0))
                                     ExecuteModCommand(Command)
                                 End If
-                                Wdbg("I", "Aliases probing started with {0} from {1}", Command, strcommand)
+                                Wdbg(DebugLevel.I, "Aliases probing started with {0} from {1}", Command, strcommand)
                                 If Aliases.Keys.Contains(Parts(0)) Then
                                     Done = True
-                                    Wdbg("I", "Alias: {0}", Parts(0))
+                                    Wdbg(DebugLevel.I, "Alias: {0}", Parts(0))
                                     Command = Command.Replace($"""{Parts(0)}""", Parts(0))
                                     ExecuteAlias(Command, Parts(0))
                                 End If
                                 If Done = False Then
-                                    Wdbg("I", "Executing built-in command")
+                                    Wdbg(DebugLevel.I, "Executing built-in command")
                                     GetLine(False, Command)
                                 End If
                             Next
@@ -229,7 +229,7 @@ Public Module Shell
     ''' </summary>
     Public Sub CommandPromptWrite()
 
-        Wdbg("I", "ShellPromptStyle = {0}", ShellPromptStyle)
+        Wdbg(DebugLevel.I, "ShellPromptStyle = {0}", ShellPromptStyle)
         If ShellPromptStyle <> "" And Not maintenance Then
             Dim ParsedPromptStyle As String = ProbePlaces(ShellPromptStyle)
             ParsedPromptStyle.ConvertVTSequences
@@ -262,11 +262,11 @@ Public Module Shell
     ''' <param name="IsInvokedByKernelArgument">Indicates whether it was invoked by kernel argument parse (for internal use only)</param>
     Public Sub GetLine(ArgsMode As Boolean, strcommand As String, Optional IsInvokedByKernelArgument As Boolean = False, Optional OutputPath As String = "")
         'If requested command has output redirection sign after arguments, remove it from final command string and set output to that file
-        Wdbg("I", "Does the command contain the redirection sign "">>>"" or "">>""? {0} and {1}", strcommand.Contains(">>>"), strcommand.Contains(">>"))
+        Wdbg(DebugLevel.I, "Does the command contain the redirection sign "">>>"" or "">>""? {0} and {1}", strcommand.Contains(">>>"), strcommand.Contains(">>"))
         Dim OutputTextWriter As StreamWriter
         Dim OutputStream As FileStream
         If strcommand.Contains(">>>") Then
-            Wdbg("I", "Output redirection found with append.")
+            Wdbg(DebugLevel.I, "Output redirection found with append.")
             DefConsoleOut = Console.Out
             Dim OutputFileName As String = strcommand.Substring(strcommand.LastIndexOf(">") + 2)
             OutputStream = New FileStream(NeutralizePath(OutputFileName), FileMode.Append, FileAccess.Write)
@@ -274,7 +274,7 @@ Public Module Shell
             Console.SetOut(OutputTextWriter)
             strcommand = strcommand.Replace(" >>> " + OutputFileName, "")
         ElseIf strcommand.Contains(">>") Then
-            Wdbg("I", "Output redirection found with overwrite.")
+            Wdbg(DebugLevel.I, "Output redirection found with overwrite.")
             DefConsoleOut = Console.Out
             Dim OutputFileName As String = strcommand.Substring(strcommand.LastIndexOf(">") + 2)
             OutputStream = New FileStream(NeutralizePath(OutputFileName), FileMode.OpenOrCreate, FileAccess.Write)
@@ -285,7 +285,7 @@ Public Module Shell
 
         'Checks to see if the user provided optional path
         If Not String.IsNullOrWhiteSpace(OutputPath) Then
-            Wdbg("I", "Optional output redirection found using OutputPath ({0}).", OutputPath)
+            Wdbg(DebugLevel.I, "Optional output redirection found using OutputPath ({0}).", OutputPath)
             DefConsoleOut = Console.Out
             OutputStream = New FileStream(NeutralizePath(OutputPath), FileMode.OpenOrCreate, FileAccess.Write)
             OutputTextWriter = New StreamWriter(OutputStream) With {.AutoFlush = True}
@@ -305,10 +305,10 @@ Public Module Shell
                     'Get the index of the first space
                     Dim indexCmd As Integer = strcommand.IndexOf(" ")
                     Dim cmdArgs As String = strcommand 'Command with args
-                    Wdbg("I", "Prototype indexCmd and strcommand: {0}, {1}", indexCmd, strcommand)
+                    Wdbg(DebugLevel.I, "Prototype indexCmd and strcommand: {0}, {1}", indexCmd, strcommand)
                     If indexCmd = -1 Then indexCmd = strcommand.Length
                     strcommand = strcommand.Substring(0, indexCmd)
-                    Wdbg("I", "Finished indexCmd and strcommand: {0}, {1}", indexCmd, strcommand)
+                    Wdbg(DebugLevel.I, "Finished indexCmd and strcommand: {0}, {1}", indexCmd, strcommand)
 
                     'Scan PATH for file existence and set file name as needed
                     Dim TargetFile As String = ""
@@ -320,29 +320,29 @@ Public Module Shell
                     'Check to see if a user is able to execute a command
                     If Commands.ContainsKey(strcommand) Then
                         If HasPermission(CurrentUser, PermissionType.Administrator) = False And Commands(strcommand).Strict Then
-                            Wdbg("W", "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", strcommand)
+                            Wdbg(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", strcommand)
                             W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, strcommand)
                         ElseIf maintenance = True And Commands(strcommand).NoMaintenance Then
-                            Wdbg("W", "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", strcommand)
+                            Wdbg(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", strcommand)
                             W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Error, strcommand)
                         ElseIf IsInvokedByKernelArgument And (strcommand.StartsWith("logout") Or strcommand.StartsWith("shutdown") Or strcommand.StartsWith("reboot")) Then
-                            Wdbg("W", "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", strcommand)
+                            Wdbg(DebugLevel.W, "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", strcommand)
                             W(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Error, strcommand)
                         ElseIf (HasPermission(CurrentUser, PermissionType.Administrator) And Commands(strcommand).Strict) Or Commands.ContainsKey(strcommand) Then
-                            Wdbg("I", "Cmd exec {0} succeeded. Running with {1}", strcommand, cmdArgs)
+                            Wdbg(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", strcommand, cmdArgs)
                             StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand) With {.Name = "Shell Command Thread"}
                             StartCommandThread.Start(cmdArgs)
                             StartCommandThread.Join()
                         End If
                     ElseIf TryParsePath(TargetFile) Then
                         If File.Exists(TargetFile) And Not TargetFile.EndsWith(".uesh") Then
-                            Wdbg("I", "Cmd exec {0} succeeded because file is found.", strcommand)
+                            Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", strcommand)
                             Try
                                 'Create a new instance of process
                                 If TryParsePath(TargetFile) Then
                                     cmdArgs = cmdArgs.Replace(TargetFileName, "")
                                     cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning
-                                    Wdbg("I", "Command: {0}, Arguments: {1}", TargetFile, cmdArgs)
+                                    Wdbg(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, cmdArgs)
                                     Dim CommandProcess As New Process
                                     Dim CommandProcessStart As New ProcessStartInfo With {.RedirectStandardInput = True,
                                                                                           .RedirectStandardOutput = True,
@@ -358,7 +358,7 @@ Public Module Shell
                                     AddHandler CommandProcess.ErrorDataReceived, AddressOf ExecutableOutput
 
                                     'Start the process
-                                    Wdbg("I", "Starting...")
+                                    Wdbg(DebugLevel.I, "Starting...")
                                     CommandProcess.Start()
                                     CommandProcess.BeginOutputReadLine()
                                     CommandProcess.BeginErrorReadLine()
@@ -372,19 +372,19 @@ Public Module Shell
                                     End While
                                 End If
                             Catch ex As Exception
-                                Wdbg("E", "Failed to start process: {0}", ex.Message)
+                                Wdbg(DebugLevel.E, "Failed to start process: {0}", ex.Message)
                                 W(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Error, strcommand, ex.Message)
                                 WStkTrc(ex)
                             End Try
                         ElseIf File.Exists(TargetFile) And TargetFile.EndsWith(".uesh") Then
-                            Wdbg("I", "Cmd exec {0} succeeded because it's a UESH script.", strcommand)
+                            Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", strcommand)
                             Execute(TargetFile, scriptArgs.Join(" "))
                         Else
-                            Wdbg("W", "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", strcommand, indexCmd)
+                            Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", strcommand, indexCmd)
                             W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Error, strcommand)
                         End If
                     Else
-                        Wdbg("W", "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", strcommand, indexCmd)
+                        Wdbg(DebugLevel.W, "Cmd exec {0} failed: availableCmds.Cont({0}.Substring(0, {1})) = False", strcommand, indexCmd)
                         W(DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), True, ColTypes.Error, strcommand)
                     End If
                 End If
@@ -419,7 +419,7 @@ Public Module Shell
     ''' </summary>
     ''' <param name="aliascmd">Specifies the alias with arguments</param>
     Sub ExecuteAlias(Base As String, aliascmd As String)
-        Wdbg("I", "Translating alias {0} to {1}...", aliascmd, Aliases(aliascmd))
+        Wdbg(DebugLevel.I, "Translating alias {0} to {1}...", aliascmd, Aliases(aliascmd))
         Dim actualCmd As String = Base.Replace(aliascmd, Aliases(aliascmd))
         StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand) With {.Name = "Shell Command Thread"}
         StartCommandThread.Start(actualCmd)
@@ -432,7 +432,7 @@ Public Module Shell
     ''' <param name="sendingProcess">Sender</param>
     ''' <param name="outLine">Output</param>
     Private Sub ExecutableOutput(sendingProcess As Object, outLine As DataReceivedEventArgs)
-        Wdbg("I", outLine.Data)
+        Wdbg(DebugLevel.I, outLine.Data)
         W(outLine.Data, True, ColTypes.Neutral)
     End Sub
 

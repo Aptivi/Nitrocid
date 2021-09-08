@@ -51,42 +51,42 @@ Public Module RPC_Commands
     Public Sub SendCommand(Request As String, IP As String, Port As Integer)
         If RPCEnabled Then
             Dim Cmd As String = Request.Remove(Request.IndexOf("("))
-            Wdbg("I", "Command: {0}", Cmd)
+            Wdbg(DebugLevel.I, "Command: {0}", Cmd)
             Dim Arg As String = Request.Substring(Request.IndexOf("(") + 1)
-            Wdbg("I", "Prototype Arg: {0}", Arg)
+            Wdbg(DebugLevel.I, "Prototype Arg: {0}", Arg)
             Arg = Arg.Remove(Arg.Count - 1)
-            Wdbg("I", "Finished Arg: {0}", Arg)
+            Wdbg(DebugLevel.I, "Finished Arg: {0}", Arg)
             Dim Malformed As Boolean
             If Commands.Contains(Cmd) Then
-                Wdbg("I", "Command found.")
+                Wdbg(DebugLevel.I, "Command found.")
                 Dim ByteMsg() As Byte = {}
                 If Cmd = "<Request:Shutdown>" Then
-                    Wdbg("I", "Stream opened for device {0}", Arg)
+                    Wdbg(DebugLevel.I, "Stream opened for device {0}", Arg)
                     ByteMsg = Text.Encoding.Default.GetBytes("ShutdownConfirm, " + Arg + vbNewLine)
                 ElseIf Cmd = "<Request:Reboot>" Then
-                    Wdbg("I", "Stream opened for device {0}", Arg)
+                    Wdbg(DebugLevel.I, "Stream opened for device {0}", Arg)
                     ByteMsg = Text.Encoding.Default.GetBytes("RebootConfirm, " + Arg + vbNewLine)
                 ElseIf Cmd = "<Request:Lock>" Then
-                    Wdbg("I", "Stream opened for device {0}", Arg)
+                    Wdbg(DebugLevel.I, "Stream opened for device {0}", Arg)
                     ByteMsg = Text.Encoding.Default.GetBytes("LockConfirm, " + Arg + vbNewLine)
                 ElseIf Cmd = "<Request:SaveScr>" Then
-                    Wdbg("I", "Stream opened for device {0}", Arg)
+                    Wdbg(DebugLevel.I, "Stream opened for device {0}", Arg)
                     ByteMsg = Text.Encoding.Default.GetBytes("SaveScrConfirm, " + Arg + vbNewLine)
                 ElseIf Cmd = "<Request:Exec>" Then
-                    Wdbg("I", "Stream opened for device {0} to execute ""{1}""", IP, Arg)
+                    Wdbg(DebugLevel.I, "Stream opened for device {0} to execute ""{1}""", IP, Arg)
                     ByteMsg = Text.Encoding.Default.GetBytes("ExecConfirm, " + Arg + vbNewLine)
                 ElseIf Cmd = "<Request:Acknowledge>" Then
-                    Wdbg("I", "Stream opened for device {0}", Arg)
+                    Wdbg(DebugLevel.I, "Stream opened for device {0}", Arg)
                     ByteMsg = Text.Encoding.Default.GetBytes("AckConfirm, " + Arg + vbNewLine)
                 ElseIf Cmd = "<Request:Ping>" Then
-                    Wdbg("I", "Stream opened for device {0}", Arg)
+                    Wdbg(DebugLevel.I, "Stream opened for device {0}", Arg)
                     ByteMsg = Text.Encoding.Default.GetBytes("PingConfirm, " + Arg + vbNewLine)
                 Else
-                    Wdbg("E", "Malformed request. {0}", Cmd)
+                    Wdbg(DebugLevel.E, "Malformed request. {0}", Cmd)
                     Malformed = True
                 End If
                 If Not Malformed Then
-                    Wdbg("I", "Sending response to device...")
+                    Wdbg(DebugLevel.I, "Sending response to device...")
                     RPCListen.Send(ByteMsg, ByteMsg.Length, IP, Port)
                     EventManager.RaiseRPCCommandSent(Cmd)
                 End If
@@ -111,45 +111,45 @@ Public Module RPC_Commands
                 Wdbg("RPC: Received message {0}", msg)
                 EventManager.RaiseRPCCommandReceived(msg)
                 If msg.StartsWith("ShutdownConfirm") Then
-                    Wdbg("I", "Shutdown confirmed from remote access.")
+                    Wdbg(DebugLevel.I, "Shutdown confirmed from remote access.")
                     RPCPowerListener.Start("shutdown")
                 ElseIf msg.StartsWith("RebootConfirm") Then
-                    Wdbg("I", "Reboot confirmed from remote access.")
+                    Wdbg(DebugLevel.I, "Reboot confirmed from remote access.")
                     RPCPowerListener.Start("reboot")
                 ElseIf msg.StartsWith("LockConfirm") Then
-                    Wdbg("I", "Lock confirmed from remote access.")
+                    Wdbg(DebugLevel.I, "Lock confirmed from remote access.")
                     LockScreen()
                 ElseIf msg.StartsWith("SaveScrConfirm") Then
-                    Wdbg("I", "Save screen confirmed from remote access.")
+                    Wdbg(DebugLevel.I, "Save screen confirmed from remote access.")
                     ShowSavers(defSaverName)
                 ElseIf msg.StartsWith("ExecConfirm") Then
                     If LoggedIn Then
-                        Wdbg("I", "Exec confirmed from remote access.")
+                        Wdbg(DebugLevel.I, "Exec confirmed from remote access.")
                         Console.WriteLine()
                         GetLine(False, msg.Replace("ExecConfirm, ", "").Replace(vbNewLine, ""))
                     Else
-                        Wdbg("W", "Tried to exec from remote access while not logged in. Dropping packet...")
+                        Wdbg(DebugLevel.W, "Tried to exec from remote access while not logged in. Dropping packet...")
                     End If
                 ElseIf msg.StartsWith("AckConfirm") Then
-                    Wdbg("I", "{0} says ""Hello.""", msg.Replace("AckConfirm, ", "").Replace(vbNewLine, ""))
+                    Wdbg(DebugLevel.I, "{0} says ""Hello.""", msg.Replace("AckConfirm, ", "").Replace(vbNewLine, ""))
                 ElseIf msg.StartsWith("PingConfirm") Then
                     Dim IPAddr As String = msg.Replace("PingConfirm, ", "").Replace(vbNewLine, "")
-                    Wdbg("I", "{0} pinged this device!", IPAddr)
+                    Wdbg(DebugLevel.I, "{0} pinged this device!", IPAddr)
                     NotifySend(New Notification(DoTranslation("Ping!"),
                                                 DoTranslation("{0} pinged you.").FormatString(IPAddr),
                                                 NotifPriority.Low, NotifType.Normal))
                 Else
-                    Wdbg("W", "Not found. Message was {0}", msg)
+                    Wdbg(DebugLevel.W, "Not found. Message was {0}", msg)
                 End If
             Catch ex As Exception
                 Dim SE As SocketException = CType(ex.InnerException, SocketException)
                 If SE IsNot Nothing Then
                     If Not SE.SocketErrorCode = SocketError.TimedOut Then
-                        Wdbg("E", "Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
+                        Wdbg(DebugLevel.E, "Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
                         WStkTrc(ex)
                     End If
                 Else
-                    Wdbg("E", "Fatal error: {0}", ex.Message)
+                    Wdbg(DebugLevel.E, "Fatal error: {0}", ex.Message)
                     WStkTrc(ex)
                     EventManager.RaiseRPCCommandError(msg, ex)
                 End If

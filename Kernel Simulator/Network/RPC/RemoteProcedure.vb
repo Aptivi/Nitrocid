@@ -33,12 +33,12 @@ Public Module RemoteProcedure
     Sub StartRPC()
         If RPCEnabled Then
             Try
-                Wdbg("I", "RPC: Starting...")
+                Wdbg(DebugLevel.I, "RPC: Starting...")
                 If RPCListen Is Nothing Then
                     RPCListen = New UdpClient(RPCPort) With {.EnableBroadcast = True}
-                    Wdbg("I", "RPC: Listener started")
+                    Wdbg(DebugLevel.I, "RPC: Listener started")
                     RPCThread.Start()
-                    Wdbg("I", "RPC: Thread started")
+                    Wdbg(DebugLevel.I, "RPC: Thread started")
                     W(DoTranslation("RPC listening on all addresses using port {0}."), True, ColTypes.Neutral, RPCPort)
                 Else
                     Throw New ThreadStateException()

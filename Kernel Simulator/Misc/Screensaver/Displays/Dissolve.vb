@@ -33,16 +33,16 @@ Module DissolveDisplay
         Dim RandomDriver As New Random()
         Dim ColorFilled As Boolean
         Dim CoveredPositions As New ArrayList
-        Wdbg("I", "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+        Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         Try
             Do While True
                 If Dissolve.CancellationPending = True Then
-                    Wdbg("W", "Cancellation is pending. Cleaning everything up...")
+                    Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
                     SetInputColor()
                     LoadBack()
                     Console.CursorVisible = True
-                    Wdbg("I", "All clean. Dissolve screensaver stopped.")
+                    Wdbg(DebugLevel.I, "All clean. Dissolve screensaver stopped.")
                     SaverAutoReset.Set()
                     Exit Do
                 Else
@@ -96,13 +96,13 @@ Module DissolveDisplay
                 End If
             Loop
         Catch ex As Exception
-            Wdbg("W", "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
+            Wdbg(DebugLevel.W, "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
             WStkTrc(ex)
             e.Cancel = True
             SetInputColor()
             LoadBack()
             Console.CursorVisible = True
-            Wdbg("I", "All clean. Dissolve screensaver stopped.")
+            Wdbg(DebugLevel.I, "All clean. Dissolve screensaver stopped.")
             W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
             SaverAutoReset.Set()
         End Try

@@ -26,17 +26,17 @@ Public Module ModManager
     ''' Loads all mods in KSMods
     ''' </summary>
     Public Sub StartMods()
-        Wdbg("I", "Safe mode: {0}", SafeMode)
+        Wdbg(DebugLevel.I, "Safe mode: {0}", SafeMode)
         If Not SafeMode Then
             'We're not in safe mode. We're good now.
             If Not Directory.Exists(modPath) Then Directory.CreateDirectory(modPath)
             Dim count As Integer = Directory.EnumerateFiles(modPath).Count
-            Wdbg("I", "Files count: {0}", count)
+            Wdbg(DebugLevel.I, "Files count: {0}", count)
 
             'Check to see if we have mods
             If count <> 0 Then
                 W(DoTranslation("mod: Loading mods..."), True, ColTypes.Neutral)
-                Wdbg("I", "Mods are being loaded. Total mods with screensavers = {0}", count)
+                Wdbg(DebugLevel.I, "Mods are being loaded. Total mods with screensavers = {0}", count)
                 For Each modFile As String In Directory.EnumerateFiles(modPath)
                     W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(modFile))
                     ParseMod(modFile)
@@ -54,13 +54,13 @@ Public Module ModManager
     ''' </summary>
     ''' <param name="ModFilename">Mod filename found in KSMods</param>
     Public Sub StartMod(ModFilename As String)
-        Wdbg("I", "Safe mode: {0}", SafeMode)
+        Wdbg(DebugLevel.I, "Safe mode: {0}", SafeMode)
         ModFilename = Path.Combine(modPath, ModFilename)
-        Wdbg("I", "Mod file path: {0}", ModFilename)
+        Wdbg(DebugLevel.I, "Mod file path: {0}", ModFilename)
 
         If Not SafeMode Then
             If File.Exists(ModFilename) Then
-                Wdbg("I", "Mod file exists! Starting...")
+                Wdbg(DebugLevel.I, "Mod file exists! Starting...")
                 If Not HasModStarted(ModFilename) Then
                     W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(ModFilename))
                     ParseMod(ModFilename)
@@ -79,17 +79,17 @@ Public Module ModManager
     ''' Stops all mods in KSMods
     ''' </summary>
     Public Sub StopMods()
-        Wdbg("I", "Safe mode: {0}", SafeMode)
+        Wdbg(DebugLevel.I, "Safe mode: {0}", SafeMode)
         If Not SafeMode Then
             'We're not in safe mode. We're good now.
             If Not Directory.Exists(modPath) Then Directory.CreateDirectory(modPath)
             Dim count As Integer = Directory.EnumerateFiles(modPath).Count
-            Wdbg("I", "Files count: {0}", count)
+            Wdbg(DebugLevel.I, "Files count: {0}", count)
 
             'Check to see if we have mods
             If count <> 0 Then
                 W(DoTranslation("mod: Stopping mods..."), True, ColTypes.Neutral)
-                Wdbg("I", "Mods are being stopped. Total mods with screensavers = {0}", count)
+                Wdbg(DebugLevel.I, "Mods are being stopped. Total mods with screensavers = {0}", count)
 
                 'Enumerate and delete the script as soon as the stopping is complete
                 For ScriptIndex As Integer = scripts.Count - 1 To 0 Step -1
@@ -97,10 +97,10 @@ Public Module ModManager
                     Dim ScriptParts As Dictionary(Of String, PartInfo) = TargetMod.ModParts
 
                     'Try to stop the mod and all associated parts
-                    Wdbg("I", "Stopping... Mod name: {0}", TargetMod.ModName)
+                    Wdbg(DebugLevel.I, "Stopping... Mod name: {0}", TargetMod.ModName)
                     For PartIndex As Integer = ScriptParts.Count - 1 To 0 Step -1
                         Dim ScriptPartInfo As PartInfo = ScriptParts.Values(PartIndex)
-                        Wdbg("I", "Stopping part {0} v{1}", ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version)
+                        Wdbg(DebugLevel.I, "Stopping part {0} v{1}", ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version)
 
                         'Stop the associated part
                         ScriptPartInfo.PartScript.StopMod()
@@ -120,31 +120,31 @@ Public Module ModManager
                 'Clear all mod commands list, since we've stopped all mods.
                 modcmnds.Clear()
                 ModDefs.Clear()
-                Wdbg("I", "Mod commands for main shell cleared.")
+                Wdbg(DebugLevel.I, "Mod commands for main shell cleared.")
                 FTPModCommands.Clear()
                 FTPModDefs.Clear()
-                Wdbg("I", "Mod commands for FTP shell cleared.")
+                Wdbg(DebugLevel.I, "Mod commands for FTP shell cleared.")
                 MailModCommands.Clear()
                 MailModDefs.Clear()
-                Wdbg("I", "Mod commands for mail shell cleared.")
+                Wdbg(DebugLevel.I, "Mod commands for mail shell cleared.")
                 SFTPModCommands.Clear()
                 SFTPModDefs.Clear()
-                Wdbg("I", "Mod commands for SFTP shell cleared.")
+                Wdbg(DebugLevel.I, "Mod commands for SFTP shell cleared.")
                 TextEdit_ModCommands.Clear()
                 TextEdit_ModHelpEntries.Clear()
-                Wdbg("I", "Mod commands for text editor shell cleared.")
+                Wdbg(DebugLevel.I, "Mod commands for text editor shell cleared.")
                 Test_ModCommands.Clear()
                 TestModDefs.Clear()
-                Wdbg("I", "Mod commands for test shell cleared.")
+                Wdbg(DebugLevel.I, "Mod commands for test shell cleared.")
                 DebugModCmds.Clear()
                 RDebugModDefs.Clear()
-                Wdbg("I", "Mod commands for remote debug shell cleared.")
+                Wdbg(DebugLevel.I, "Mod commands for remote debug shell cleared.")
                 ZipShell_ModCommands.Clear()
                 ZipShell_ModHelpEntries.Clear()
-                Wdbg("I", "Mod commands for ZIP shell cleared.")
+                Wdbg(DebugLevel.I, "Mod commands for ZIP shell cleared.")
                 RSSModCommands.Clear()
                 RSSModDefs.Clear()
-                Wdbg("I", "Mod commands for RSS shell cleared.")
+                Wdbg(DebugLevel.I, "Mod commands for RSS shell cleared.")
 
                 'Clear the custom screensavers
                 CSvrdb.Clear()
@@ -161,20 +161,20 @@ Public Module ModManager
     ''' </summary>
     ''' <param name="ModFilename">Mod filename found in KSMods</param>
     Public Sub StopMod(ModFilename As String)
-        Wdbg("I", "Safe mode: {0}", SafeMode)
+        Wdbg(DebugLevel.I, "Safe mode: {0}", SafeMode)
         ModFilename = Path.Combine(modPath, ModFilename)
-        Wdbg("I", "Mod file path: {0}", ModFilename)
+        Wdbg(DebugLevel.I, "Mod file path: {0}", ModFilename)
 
         If Not SafeMode Then
             If File.Exists(ModFilename) Then
                 'Determine if we're dealing with screensaver
                 If Path.GetExtension(ModFilename) = ".ss." Then
-                    Wdbg("I", "Target mod is a screensaver.")
+                    Wdbg(DebugLevel.I, "Target mod is a screensaver.")
 
                     'Iterate through all the screensavers
                     For SaverIndex As Integer = CSvrdb.Count - 1 To 0 Step -1
                         Dim TargetScreensaver As ScreensaverInfo = CSvrdb.Values(SaverIndex)
-                        Wdbg("I", "Checking screensaver {0}", TargetScreensaver.SaverName)
+                        Wdbg(DebugLevel.I, "Checking screensaver {0}", TargetScreensaver.SaverName)
 
                         'Check to see if we're dealign with the same screensaver
                         If TargetScreensaver.FileName = ModFilename Then
@@ -184,7 +184,7 @@ Public Module ModManager
                 Else
                     If HasModStarted(ModFilename) Then
                         W(DoTranslation("mod: Stopping mod {0}..."), True, ColTypes.Neutral, Path.GetFileName(ModFilename))
-                        Wdbg("I", "Mod {0} is being stopped.", Path.GetFileName(ModFilename))
+                        Wdbg(DebugLevel.I, "Mod {0} is being stopped.", Path.GetFileName(ModFilename))
 
                         'Iterate through all the mods
                         For ScriptIndex As Integer = scripts.Count - 1 To 0 Step -1
@@ -192,53 +192,53 @@ Public Module ModManager
                             Dim ScriptParts As Dictionary(Of String, PartInfo) = TargetMod.ModParts
 
                             'Try to stop the mod and all associated parts
-                            Wdbg("I", "Checking mod {0}...", TargetMod.ModName)
+                            Wdbg(DebugLevel.I, "Checking mod {0}...", TargetMod.ModName)
                             If TargetMod.ModFileName = Path.GetFileName(ModFilename) Then
-                                Wdbg("I", "Found mod to be stopped. Stopping...")
+                                Wdbg(DebugLevel.I, "Found mod to be stopped. Stopping...")
 
                                 'Iterate through all the parts
                                 For PartIndex As Integer = ScriptParts.Count - 1 To 0 Step -1
                                     Dim ScriptPartInfo As PartInfo = ScriptParts.Values(PartIndex)
-                                    Wdbg("I", "Stopping part {0} v{1}", ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version)
+                                    Wdbg(DebugLevel.I, "Stopping part {0} v{1}", ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version)
 
                                     'Remove all the commands associated with the part
                                     If ScriptPartInfo.PartScript.Commands IsNot Nothing Then
                                         For Each CommandInfo As CommandInfo In ScriptPartInfo.PartScript.Commands.Values
                                             Select Case CommandInfo.Type
                                                 Case ShellCommandType.Shell
-                                                    Wdbg("I", "Removing command {0} from main shell...", CommandInfo.Command)
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from main shell...", CommandInfo.Command)
                                                     modcmnds.Remove(CommandInfo.Command)
                                                     ModDefs.Remove(CommandInfo.Command)
                                                 Case ShellCommandType.FTPShell
-                                                    Wdbg("I", "Removing command {0} from FTP shell...", CommandInfo.Command)
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from FTP shell...", CommandInfo.Command)
                                                     FTPModCommands.Remove(CommandInfo.Command)
                                                     FTPModDefs.Remove(CommandInfo.Command)
                                                 Case ShellCommandType.MailShell
-                                                    Wdbg("I", "Removing command {0} from main shell...", CommandInfo.Command)
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from main shell...", CommandInfo.Command)
                                                     MailModCommands.Remove(CommandInfo.Command)
                                                     MailModDefs.Remove(CommandInfo.Command)
                                                 Case ShellCommandType.SFTPShell
-                                                    Wdbg("I", "Removing command {0} from SFTP shell...", CommandInfo.Command)
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from SFTP shell...", CommandInfo.Command)
                                                     SFTPModCommands.Remove(CommandInfo.Command)
                                                     SFTPModDefs.Remove(CommandInfo.Command)
                                                 Case ShellCommandType.TextShell
-                                                    Wdbg("I", "Removing command {0} from text editor shell...", CommandInfo.Command)
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from text editor shell...", CommandInfo.Command)
                                                     TextEdit_ModCommands.Remove(CommandInfo.Command)
                                                     TextEdit_ModHelpEntries.Remove(CommandInfo.Command)
                                                 Case ShellCommandType.TestShell
-                                                    Wdbg("I", "Removing command {0} from test shell...", CommandInfo.Command)
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from test shell...", CommandInfo.Command)
                                                     Test_ModCommands.Remove(CommandInfo.Command)
                                                     TestModDefs.Remove(CommandInfo.Command)
                                                 Case ShellCommandType.RemoteDebugShell
-                                                    Wdbg("I", "Removing command {0} from remote debug shell...", CommandInfo.Command)
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from remote debug shell...", CommandInfo.Command)
                                                     DebugModCmds.Remove(CommandInfo.Command)
                                                     RDebugModDefs.Remove(CommandInfo.Command)
                                                 Case ShellCommandType.ZIPShell
-                                                    Wdbg("I", "Removing command {0} from ZIP shell...", CommandInfo.Command)
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from ZIP shell...", CommandInfo.Command)
                                                     ZipShell_ModCommands.Remove(CommandInfo.Command)
                                                     ZipShell_ModHelpEntries.Remove(CommandInfo.Command)
                                                 Case ShellCommandType.RSSShell
-                                                    Wdbg("I", "Removing command {0} from RSS shell...", CommandInfo.Command)
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from RSS shell...", CommandInfo.Command)
                                                     RSSModCommands.Remove(CommandInfo.Command)
                                                     RSSModDefs.Remove(CommandInfo.Command)
                                             End Select
@@ -278,11 +278,11 @@ Public Module ModManager
     Sub ReloadMods()
         'Stop all mods
         StopMods()
-        Wdbg("I", "All mods stopped.")
+        Wdbg(DebugLevel.I, "All mods stopped.")
 
         'Start all mods
         StartMods()
-        Wdbg("I", "All mods restarted.")
+        Wdbg(DebugLevel.I, "All mods restarted.")
     End Sub
 
     ''' <summary>
@@ -301,11 +301,11 @@ Public Module ModManager
     Public Function HasModStarted(ModFilename As String) As Boolean
         'Iterate through each mod and mod part
         For Each ModName As String In scripts.Keys
-            Wdbg("I", "Checking mod {0}...", ModName)
+            Wdbg(DebugLevel.I, "Checking mod {0}...", ModName)
             For Each PartName As String In scripts(ModName).ModParts.Keys
-                Wdbg("I", "Checking part {0}...", PartName)
+                Wdbg(DebugLevel.I, "Checking part {0}...", PartName)
                 If scripts(ModName).ModParts(PartName).PartFilePath = ModFilename Then
-                    Wdbg("I", "Found part {0} ({1}). Returning True...", PartName, ModFilename)
+                    Wdbg(DebugLevel.I, "Found part {0} ({1}). Returning True...", PartName, ModFilename)
                     Return True
                 End If
             Next
@@ -321,12 +321,12 @@ Public Module ModManager
     ''' <param name="OldModDesc">Old mod command description</param>
     Sub ReloadGenericDefs(OldModDesc As String)
         For i As Integer = 0 To ModDefs.Keys.Count - 1
-            Wdbg("I", "Replacing ""{0}""...", OldModDesc)
+            Wdbg(DebugLevel.I, "Replacing ""{0}""...", OldModDesc)
             Dim Cmd As String = ModDefs.Keys(i)
             If ModDefs(Cmd).Contains(OldModDesc) Then
-                Wdbg("I", "Old Definition: {0}", ModDefs(Cmd))
+                Wdbg(DebugLevel.I, "Old Definition: {0}", ModDefs(Cmd))
                 ModDefs(Cmd) = ModDefs(Cmd).Replace(OldModDesc, DoTranslation("Command defined by "))
-                Wdbg("I", "New Definition: {0}", ModDefs(Cmd))
+                Wdbg(DebugLevel.I, "New Definition: {0}", ModDefs(Cmd))
             End If
         Next
     End Sub

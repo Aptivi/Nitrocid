@@ -25,13 +25,13 @@ Module ThemeStudio
     Sub StartThemeStudio(ThemeName As String)
         'Inform user that we're on the studio
         EventManager.RaiseThemeStudioStarted()
-        Wdbg("I", "Starting theme studio with theme name {0}", ThemeName)
+        Wdbg(DebugLevel.I, "Starting theme studio with theme name {0}", ThemeName)
         Dim Response As String
         Dim MaximumOptions As Integer = 23
         Dim StudioExiting As Boolean
 
         While Not StudioExiting
-            Wdbg("I", "Studio not exiting yet. Populating {0} options...", MaximumOptions)
+            Wdbg(DebugLevel.I, "Studio not exiting yet. Populating {0} options...", MaximumOptions)
             Console.Clear()
             W(DoTranslation("Making a new theme ""{0}"".") + vbNewLine, True, ColTypes.Neutral, ThemeName)
 
@@ -63,18 +63,18 @@ Module ThemeStudio
             W("23) " + DoTranslation("Exit") + vbNewLine, True, ColTypes.Option)
 
             'Prompt user
-            Wdbg("I", "Waiting for user input...")
+            Wdbg(DebugLevel.I, "Waiting for user input...")
             W("> ", False, ColTypes.Input)
             Response = Console.ReadLine
-            Wdbg("I", "Got response: {0}", Response)
+            Wdbg(DebugLevel.I, "Got response: {0}", Response)
 
             'Check for response integrity
             If IsNumeric(Response) Then
-                Wdbg("I", "Response is numeric.")
+                Wdbg(DebugLevel.I, "Response is numeric.")
                 Dim NumericResponse As Integer = Response
-                Wdbg("I", "Checking response...")
+                Wdbg(DebugLevel.I, "Checking response...")
                 If NumericResponse >= 1 And NumericResponse <= MaximumOptions Then
-                    Wdbg("I", "Numeric response {0} is >= 1 and <= {0}.", NumericResponse, MaximumOptions)
+                    Wdbg(DebugLevel.I, "Numeric response {0} is >= 1 and <= {0}.", NumericResponse, MaximumOptions)
                     Select Case NumericResponse
                         Case 1 'Input color
                             Dim ColorWheelReturn As String = ColorWheel(SelectedInputColor.Type = ColorType.TrueColor, If(SelectedInputColor.Type = ColorType._255Color, SelectedInputColor.PlainSequence, ConsoleColors.White), SelectedInputColor.R, SelectedInputColor.G, SelectedInputColor.B)
@@ -124,58 +124,58 @@ Module ThemeStudio
                         Case 16 'Save theme to current directory
                             SaveThemeToCurrentDirectory(ThemeName)
                         Case 17 'Save theme to another directory...
-                            Wdbg("I", "Prompting user for directory name...")
+                            Wdbg(DebugLevel.I, "Prompting user for directory name...")
                             W(DoTranslation("Specify directory to save theme to:") + " [{0}] ", False, ColTypes.Input, CurrDir)
                             Dim DirectoryName As String = Console.ReadLine
                             DirectoryName = If(String.IsNullOrWhiteSpace(DirectoryName), CurrDir, DirectoryName)
-                            Wdbg("I", "Got directory name {0}.", DirectoryName)
+                            Wdbg(DebugLevel.I, "Got directory name {0}.", DirectoryName)
                             SaveThemeToAnotherDirectory(ThemeName, DirectoryName)
                         Case 18 'Save theme to current directory as...
-                            Wdbg("I", "Prompting user for theme name...")
+                            Wdbg(DebugLevel.I, "Prompting user for theme name...")
                             W(DoTranslation("Specify theme name:") + " [{0}] ", False, ColTypes.Input, ThemeName)
                             Dim AltThemeName As String = Console.ReadLine
                             AltThemeName = If(String.IsNullOrWhiteSpace(AltThemeName), ThemeName, AltThemeName)
-                            Wdbg("I", "Got theme name {0}.", AltThemeName)
+                            Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                             SaveThemeToCurrentDirectory(AltThemeName)
                         Case 19 'Save theme to another directory as...
-                            Wdbg("I", "Prompting user for theme and directory name...")
+                            Wdbg(DebugLevel.I, "Prompting user for theme and directory name...")
                             W(DoTranslation("Specify directory to save theme to:") + " [{0}] ", False, ColTypes.Input, CurrDir)
                             Dim DirectoryName As String = Console.ReadLine
                             DirectoryName = If(String.IsNullOrWhiteSpace(DirectoryName), CurrDir, DirectoryName)
-                            Wdbg("I", "Got directory name {0}.", DirectoryName)
-                            Wdbg("I", "Prompting user for theme name...")
+                            Wdbg(DebugLevel.I, "Got directory name {0}.", DirectoryName)
+                            Wdbg(DebugLevel.I, "Prompting user for theme name...")
                             W(DoTranslation("Specify theme name:") + " [{0}] ", False, ColTypes.Input, ThemeName)
                             Dim AltThemeName As String = Console.ReadLine
                             AltThemeName = If(String.IsNullOrWhiteSpace(AltThemeName), ThemeName, AltThemeName)
-                            Wdbg("I", "Got theme name {0}.", AltThemeName)
+                            Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                             SaveThemeToAnotherDirectory(AltThemeName, DirectoryName)
                         Case 20 'Load Theme From File...
-                            Wdbg("I", "Prompting user for theme name...")
+                            Wdbg(DebugLevel.I, "Prompting user for theme name...")
                             W(DoTranslation("Specify theme file name wihout the .json extension:") + " ", False, ColTypes.Input)
                             Dim AltThemeName As String = Console.ReadLine + ".json"
-                            Wdbg("I", "Got theme name {0}.", AltThemeName)
+                            Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                             LoadThemeFromFile(AltThemeName)
                         Case 21 'Load Theme From Prebuilt Themes...
-                            Wdbg("I", "Prompting user for theme name...")
+                            Wdbg(DebugLevel.I, "Prompting user for theme name...")
                             W(DoTranslation("Specify theme name:") + " ", False, ColTypes.Input)
                             Dim AltThemeName As String = Console.ReadLine
-                            Wdbg("I", "Got theme name {0}.", AltThemeName)
+                            Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                             LoadThemeFromResource(AltThemeName)
                         Case 22 'Preview...
-                            Wdbg("I", "Printing text with colors of theme...")
+                            Wdbg(DebugLevel.I, "Printing text with colors of theme...")
                             PreparePreview()
                         Case 23 'Exit
-                            Wdbg("I", "Exiting studio...")
+                            Wdbg(DebugLevel.I, "Exiting studio...")
                             StudioExiting = True
                     End Select
                 Else
-                    Wdbg("W", "Option is not valid. Returning...")
+                    Wdbg(DebugLevel.W, "Option is not valid. Returning...")
                     W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, NumericResponse)
                     W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
                 End If
             Else
-                Wdbg("W", "Answer is not numeric.")
+                Wdbg(DebugLevel.W, "Answer is not numeric.")
                 W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
                 W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()

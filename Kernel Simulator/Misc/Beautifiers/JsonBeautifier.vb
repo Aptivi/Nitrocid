@@ -29,9 +29,9 @@ Public Module JsonBeautifier
     ''' <exception cref="FileNotFoundException"></exception>
     Public Function BeautifyJson(JsonFile As String) As String
         'Neutralize the file path
-        Wdbg("I", "Neutralizing json file {0}...", JsonFile)
+        Wdbg(DebugLevel.I, "Neutralizing json file {0}...", JsonFile)
         JsonFile = NeutralizePath(JsonFile, True)
-        Wdbg("I", "Got json file {0}...", JsonFile)
+        Wdbg(DebugLevel.I, "Got json file {0}...", JsonFile)
 
         'Try to beautify JSON
         Dim JsonFileContents As String = File.ReadAllText(JsonFile)
@@ -46,11 +46,11 @@ Public Module JsonBeautifier
     Public Function BeautifyJsonText(JsonText As String) As String
         'Make an instance of JToken with this text
         Dim JsonToken As JToken = JToken.Parse(JsonText)
-        Wdbg("I", "Created a token with text length of {0}", JsonText.Length)
+        Wdbg(DebugLevel.I, "Created a token with text length of {0}", JsonText.Length)
 
         'Beautify JSON
         Dim BeautifiedJson As String = JsonConvert.SerializeObject(JsonToken, Formatting.Indented)
-        Wdbg("I", "Beautified the JSON text. Length: {0}", BeautifiedJson.Length)
+        Wdbg(DebugLevel.I, "Beautified the JSON text. Length: {0}", BeautifiedJson.Length)
         Return BeautifiedJson
     End Function
 

@@ -61,7 +61,7 @@ Public Module AliasManager
             AliasCmd = AliasObject("Alias")
             ActualCmd = AliasObject("Command")
             AliasType = AliasObject("Type")
-            Wdbg("I", "Adding ""{0}"" and ""{1}"" from Aliases.json to {2} list...", AliasCmd, ActualCmd, AliasType)
+            Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from Aliases.json to {2} list...", AliasCmd, ActualCmd, AliasType)
             Select Case AliasType
                 Case "Shell"
                     If Not Aliases.ContainsKey(AliasCmd) Then
@@ -100,7 +100,7 @@ Public Module AliasManager
                         RSSShellAliases.Add(AliasCmd, ActualCmd)
                     End If
                 Case Else
-                    Wdbg("E", "Invalid type {0}", AliasType)
+                    Wdbg(DebugLevel.E, "Invalid type {0}", AliasType)
             End Select
         Next
     End Sub
@@ -116,7 +116,7 @@ Public Module AliasManager
 
         'Shell aliases
         For i As Integer = 0 To Aliases.Count - 1
-            Wdbg("I", "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Shell...", Aliases.Keys(i), Aliases.Values(i))
+            Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Shell...", Aliases.Keys(i), Aliases.Values(i))
             Dim AliasObject As New JObject From {
                 {"Alias", Aliases.Keys(i)},
                 {"Command", Aliases.Values(i)},
@@ -127,7 +127,7 @@ Public Module AliasManager
 
         'Remote Debug aliases
         For i As Integer = 0 To RemoteDebugAliases.Count - 1
-            Wdbg("I", "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Remote...", RemoteDebugAliases.Keys(i), RemoteDebugAliases.Values(i))
+            Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Remote...", RemoteDebugAliases.Keys(i), RemoteDebugAliases.Values(i))
             Dim AliasObject As New JObject From {
                 {"Alias", RemoteDebugAliases.Keys(i)},
                 {"Command", RemoteDebugAliases.Values(i)},
@@ -138,7 +138,7 @@ Public Module AliasManager
 
         'FTP shell aliases
         For i As Integer = 0 To FTPShellAliases.Count - 1
-            Wdbg("I", "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type FTPShell...", FTPShellAliases.Keys(i), FTPShellAliases.Values(i))
+            Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type FTPShell...", FTPShellAliases.Keys(i), FTPShellAliases.Values(i))
             Dim AliasObject As New JObject From {
                 {"Alias", FTPShellAliases.Keys(i)},
                 {"Command", FTPShellAliases.Values(i)},
@@ -149,7 +149,7 @@ Public Module AliasManager
 
         'SFTP shell aliases
         For i As Integer = 0 To SFTPShellAliases.Count - 1
-            Wdbg("I", "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type SFTPShell...", SFTPShellAliases.Keys(i), SFTPShellAliases.Values(i))
+            Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type SFTPShell...", SFTPShellAliases.Keys(i), SFTPShellAliases.Values(i))
             Dim AliasObject As New JObject From {
                 {"Alias", SFTPShellAliases.Keys(i)},
                 {"Command", SFTPShellAliases.Values(i)},
@@ -160,7 +160,7 @@ Public Module AliasManager
 
         'Mail shell aliases
         For i As Integer = 0 To MailShellAliases.Count - 1
-            Wdbg("I", "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Mail...", MailShellAliases.Keys(i), MailShellAliases.Values(i))
+            Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Mail...", MailShellAliases.Keys(i), MailShellAliases.Values(i))
             Dim AliasObject As New JObject From {
                 {"Alias", MailShellAliases.Keys(i)},
                 {"Command", MailShellAliases.Values(i)},
@@ -171,7 +171,7 @@ Public Module AliasManager
 
         'Text shell aliases
         For i As Integer = 0 To TextShellAliases.Count - 1
-            Wdbg("I", "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Text...", TextShellAliases.Keys(i), TextShellAliases.Values(i))
+            Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Text...", TextShellAliases.Keys(i), TextShellAliases.Values(i))
             Dim AliasObject As New JObject From {
                 {"Alias", TextShellAliases.Keys(i)},
                 {"Command", TextShellAliases.Values(i)},
@@ -182,7 +182,7 @@ Public Module AliasManager
 
         'Test shell aliases
         For i As Integer = 0 To TestShellAliases.Count - 1
-            Wdbg("I", "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Test...", TestShellAliases.Keys(i), TestShellAliases.Values(i))
+            Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type Test...", TestShellAliases.Keys(i), TestShellAliases.Values(i))
             Dim AliasObject As New JObject From {
                 {"Alias", TestShellAliases.Keys(i)},
                 {"Command", TestShellAliases.Values(i)},
@@ -193,7 +193,7 @@ Public Module AliasManager
 
         'ZIP shell aliases
         For i As Integer = 0 To ZIPShellAliases.Count - 1
-            Wdbg("I", "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type ZIP...", ZIPShellAliases.Keys(i), ZIPShellAliases.Values(i))
+            Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type ZIP...", ZIPShellAliases.Keys(i), ZIPShellAliases.Values(i))
             Dim AliasObject As New JObject From {
                 {"Alias", ZIPShellAliases.Keys(i)},
                 {"Command", ZIPShellAliases.Values(i)},
@@ -204,7 +204,7 @@ Public Module AliasManager
 
         'RSS shell aliases
         For i As Integer = 0 To RSSShellAliases.Count - 1
-            Wdbg("I", "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type RSS...", RSSShellAliases.Keys(i), RSSShellAliases.Values(i))
+            Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type RSS...", RSSShellAliases.Keys(i), RSSShellAliases.Values(i))
             Dim AliasObject As New JObject From {
                 {"Alias", RSSShellAliases.Keys(i)},
                 {"Command", RSSShellAliases.Values(i)},
@@ -232,7 +232,7 @@ Public Module AliasManager
                     AddAlias(AliasCmd, DestCmd, Type)
                     W(DoTranslation("You can now run ""{0}"" as a command: ""{1}""."), True, ColTypes.Neutral, AliasCmd, DestCmd)
                 Catch ex As Exception
-                    Wdbg("E", "Failed to add alias. Stack trace written using WStkTrc().")
+                    Wdbg(DebugLevel.E, "Failed to add alias. Stack trace written using WStkTrc().")
                     WStkTrc(ex)
                     W(ex.Message, True, ColTypes.Error)
                 End Try
@@ -243,19 +243,19 @@ Public Module AliasManager
                     PurgeAliases()
                     W(DoTranslation("Removed alias {0} successfully."), True, ColTypes.Neutral, AliasCmd)
                 Catch ex As Exception
-                    Wdbg("E", "Failed to remove alias. Stack trace written using WStkTrc().")
+                    Wdbg(DebugLevel.E, "Failed to remove alias. Stack trace written using WStkTrc().")
                     WStkTrc(ex)
                     W(ex.Message, True, ColTypes.Error)
                 End Try
             Else
-                Wdbg("E", "Mode {0} was neither add nor rem.", mode)
+                Wdbg(DebugLevel.E, "Mode {0} was neither add nor rem.", mode)
                 W(DoTranslation("Invalid mode {0}."), True, ColTypes.Error, mode)
             End If
 
             'Save all aliases
             SaveAliases()
         Else
-            Wdbg("E", "Type {0} not found.", Type)
+            Wdbg(DebugLevel.E, "Type {0} not found.", Type)
             W(DoTranslation("Invalid type {0}."), True, ColTypes.Error, Type)
         End If
     End Sub
@@ -274,20 +274,20 @@ Public Module AliasManager
     Public Function AddAlias(SourceAlias As String, Destination As String, Type As AliasType) As Boolean
         If [Enum].IsDefined(GetType(AliasType), Type) Then
             If SourceAlias = Destination Then
-                Wdbg("I", "Assertion succeeded: {0} = {1}", SourceAlias, Destination)
+                Wdbg(DebugLevel.I, "Assertion succeeded: {0} = {1}", SourceAlias, Destination)
                 Throw New Exceptions.AliasInvalidOperationException(DoTranslation("Alias can't be the same name as a command."))
             ElseIf Not Commands.ContainsKey(Destination) And Not DebugCommands.ContainsKey(Destination) And Not SFTPCommands.ContainsKey(Destination) And
                    Not FTPCommands.ContainsKey(Destination) And Not MailCommands.ContainsKey(Destination) And Not TextEdit_Commands.ContainsKey(Destination) And
                    Not Test_Commands.ContainsKey(Destination) And Not ZipShell_Commands.ContainsKey(Destination) And Not RSSCommands.ContainsKey(Destination) Then
-                Wdbg("W", "{0} not found in all the command lists", Destination)
+                Wdbg(DebugLevel.W, "{0} not found in all the command lists", Destination)
                 Throw New Exceptions.AliasNoSuchCommandException(DoTranslation("Command not found to alias to {0}."), Destination)
             ElseIf Aliases.ContainsKey(SourceAlias) Or RemoteDebugAliases.ContainsKey(SourceAlias) Or FTPShellAliases.ContainsKey(SourceAlias) Or
                    SFTPShellAliases.ContainsKey(SourceAlias) Or MailShellAliases.ContainsKey(SourceAlias) Or TextShellAliases.ContainsKey(SourceAlias) Or
                    TestShellAliases.ContainsKey(SourceAlias) Or ZIPShellAliases.ContainsKey(SourceAlias) Or RSSShellAliases.ContainsKey(SourceAlias) Then
-                Wdbg("W", "Alias {0} already found", SourceAlias)
+                Wdbg(DebugLevel.W, "Alias {0} already found", SourceAlias)
                 Throw New Exceptions.AliasAlreadyExistsException(DoTranslation("Alias already found: {0}"), SourceAlias)
             Else
-                Wdbg("W", "Aliasing {0} to {1}", SourceAlias, Destination)
+                Wdbg(DebugLevel.W, "Aliasing {0} to {1}", SourceAlias, Destination)
                 If Type = AliasType.Shell Then
                     Aliases.Add(SourceAlias, Destination)
                 ElseIf Type = AliasType.RDebug Then
@@ -310,7 +310,7 @@ Public Module AliasManager
                 Return True
             End If
         Else
-            Wdbg("E", "Type {0} not found.", Type)
+            Wdbg(DebugLevel.E, "Type {0} not found.", Type)
             Throw New Exceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}."), Type)
         End If
         Return False
@@ -328,104 +328,104 @@ Public Module AliasManager
         If Type = AliasType.RDebug Then
             If RemoteDebugAliases.ContainsKey(TargetAlias) Then
                 Dim Aliased As String = RemoteDebugAliases(TargetAlias)
-                Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
+                Wdbg(DebugLevel.I, "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 RemoteDebugAliases.Remove(TargetAlias)
                 AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.RDebug)
                 Return True
             Else
-                Wdbg("W", "{0} is not found in remote debug aliases", TargetAlias)
+                Wdbg(DebugLevel.W, "{0} is not found in remote debug aliases", TargetAlias)
                 Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed."), TargetAlias)
             End If
         ElseIf Type = AliasType.Shell Then
             If Aliases.ContainsKey(TargetAlias) Then
                 Dim Aliased As String = Aliases(TargetAlias)
-                Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
+                Wdbg(DebugLevel.I, "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 Aliases.Remove(TargetAlias)
                 AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.Shell)
                 Return True
             Else
-                Wdbg("W", "{0} is not found in shell aliases", TargetAlias)
+                Wdbg(DebugLevel.W, "{0} is not found in shell aliases", TargetAlias)
                 Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed."), TargetAlias)
             End If
         ElseIf Type = AliasType.FTPShell Then
             If FTPShellAliases.ContainsKey(TargetAlias) Then
                 Dim Aliased As String = FTPShellAliases(TargetAlias)
-                Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
+                Wdbg(DebugLevel.I, "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 FTPShellAliases.Remove(TargetAlias)
                 AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.FTPShell)
                 Return True
             Else
-                Wdbg("W", "{0} is not found in FTP shell aliases", TargetAlias)
+                Wdbg(DebugLevel.W, "{0} is not found in FTP shell aliases", TargetAlias)
                 Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed."), TargetAlias)
             End If
         ElseIf Type = AliasType.SFTPShell Then
             If SFTPShellAliases.ContainsKey(TargetAlias) Then
                 Dim Aliased As String = SFTPShellAliases(TargetAlias)
-                Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
+                Wdbg(DebugLevel.I, "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 SFTPShellAliases.Remove(TargetAlias)
                 AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.SFTPShell)
                 Return True
             Else
-                Wdbg("W", "{0} is not found in SFTP shell aliases", TargetAlias)
+                Wdbg(DebugLevel.W, "{0} is not found in SFTP shell aliases", TargetAlias)
                 Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed."), TargetAlias)
             End If
         ElseIf Type = AliasType.MailShell Then
             If MailShellAliases.ContainsKey(TargetAlias) Then
                 Dim Aliased As String = MailShellAliases(TargetAlias)
-                Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
+                Wdbg(DebugLevel.I, "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 MailShellAliases.Remove(TargetAlias)
                 AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.MailShell)
                 Return True
             Else
-                Wdbg("W", "{0} is not found in mail shell aliases", TargetAlias)
+                Wdbg(DebugLevel.W, "{0} is not found in mail shell aliases", TargetAlias)
                 Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed."), TargetAlias)
             End If
         ElseIf Type = AliasType.TextShell Then
             If TextShellAliases.ContainsKey(TargetAlias) Then
                 Dim Aliased As String = TextShellAliases(TargetAlias)
-                Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
+                Wdbg(DebugLevel.I, "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 TextShellAliases.Remove(TargetAlias)
                 AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.TextShell)
                 Return True
             Else
-                Wdbg("W", "{0} is not found in text shell aliases", TargetAlias)
+                Wdbg(DebugLevel.W, "{0} is not found in text shell aliases", TargetAlias)
                 Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed."), TargetAlias)
             End If
         ElseIf Type = AliasType.TestShell Then
             If TestShellAliases.ContainsKey(TargetAlias) Then
                 Dim Aliased As String = TestShellAliases(TargetAlias)
-                Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
+                Wdbg(DebugLevel.I, "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 TestShellAliases.Remove(TargetAlias)
                 AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.TestShell)
                 Return True
             Else
-                Wdbg("W", "{0} is not found in test shell aliases", TargetAlias)
+                Wdbg(DebugLevel.W, "{0} is not found in test shell aliases", TargetAlias)
                 Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed."), TargetAlias)
             End If
         ElseIf Type = AliasType.ZIPShell Then
             If ZIPShellAliases.ContainsKey(TargetAlias) Then
                 Dim Aliased As String = ZIPShellAliases(TargetAlias)
-                Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
+                Wdbg(DebugLevel.I, "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 ZIPShellAliases.Remove(TargetAlias)
                 AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.ZIPShell)
                 Return True
             Else
-                Wdbg("W", "{0} is not found in ZIP shell aliases", TargetAlias)
+                Wdbg(DebugLevel.W, "{0} is not found in ZIP shell aliases", TargetAlias)
                 Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed."), TargetAlias)
             End If
         ElseIf Type = AliasType.RSSShell Then
             If RSSShellAliases.ContainsKey(TargetAlias) Then
                 Dim Aliased As String = RSSShellAliases(TargetAlias)
-                Wdbg("I", "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
+                Wdbg(DebugLevel.I, "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
                 RSSShellAliases.Remove(TargetAlias)
                 AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", AliasType.RSSShell)
                 Return True
             Else
-                Wdbg("W", "{0} is not found in RSS shell aliases", TargetAlias)
+                Wdbg(DebugLevel.W, "{0} is not found in RSS shell aliases", TargetAlias)
                 Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed."), TargetAlias)
             End If
         Else
-            Wdbg("E", "Type {0} not found.", Type)
+            Wdbg(DebugLevel.E, "Type {0} not found.", Type)
             Throw New Exceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}."), Type)
         End If
         Return False
@@ -524,7 +524,7 @@ Public Module AliasManager
                 If AliasName("Alias") = TargetAlias And AliasName("Type") = "RSS" Then Return True
             Next
         Else
-            Wdbg("E", "Type {0} not found.", Type)
+            Wdbg(DebugLevel.E, "Type {0} not found.", Type)
             Throw New Exceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}."), Type)
         End If
         Return False

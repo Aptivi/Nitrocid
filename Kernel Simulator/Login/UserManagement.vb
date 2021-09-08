@@ -63,7 +63,7 @@ Public Module UserManagement
             Dim Regexp As New Regex("^([a-fA-F0-9]{64})$")
             If ComputationNeeded Then
                 unpassword = GetEncryptedString(unpassword, Algorithms.SHA256)
-                Wdbg("I", "Hash computed.")
+                Wdbg(DebugLevel.I, "Hash computed.")
             ElseIf Not Regexp.IsMatch(unpassword) Then
                 Throw New InvalidOperationException("Trying to add unencrypted password to users list.")
             End If
@@ -103,7 +103,7 @@ Public Module UserManagement
             File.WriteAllText(GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
 
             'Ready permissions
-            Wdbg("I", "Username {0} added. Readying permissions...", uninitUser)
+            Wdbg(DebugLevel.I, "Username {0} added. Readying permissions...", uninitUser)
             InitPermissionsForNewUser(uninitUser)
             Return True
         Catch ex As Exception
@@ -181,34 +181,34 @@ Public Module UserManagement
     ''' <exception cref="Exceptions.UserCreationException"></exception>
     Public Function AddUser(newUser As String, Optional newPassword As String = "") As Boolean
         'Adds user
-        Wdbg("I", "Creating user {0}...", newUser)
+        Wdbg(DebugLevel.I, "Creating user {0}...", newUser)
         If InStr(newUser, " ") > 0 Then
-            Wdbg("W", "There are spaces in username.")
+            Wdbg(DebugLevel.W, "There are spaces in username.")
             Throw New Exceptions.UserCreationException(DoTranslation("Spaces are not allowed."))
         ElseIf newUser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
-            Wdbg("W", "There are special characters in username.")
+            Wdbg(DebugLevel.W, "There are special characters in username.")
             Throw New Exceptions.UserCreationException(DoTranslation("Special characters are not allowed."))
         ElseIf newUser = Nothing Then
-            Wdbg("W", "Username is blank.")
+            Wdbg(DebugLevel.W, "Username is blank.")
             Throw New Exceptions.UserCreationException(DoTranslation("Blank username."))
         ElseIf Not Users.ContainsKey(newUser) Then
             Try
                 If newPassword = Nothing Then
-                    Wdbg("W", "Initializing user with no password")
+                    Wdbg(DebugLevel.W, "Initializing user with no password")
                     InitializeUser(newUser)
                 Else
-                    Wdbg("I", "Initializing user with password")
+                    Wdbg(DebugLevel.I, "Initializing user with password")
                     InitializeUser(newUser, newPassword)
                 End If
                 EventManager.RaiseUserAdded(newUser)
                 Return True
             Catch ex As Exception
-                Wdbg("E", "Failed to create user {0}: {1}", ex.Message)
+                Wdbg(DebugLevel.E, "Failed to create user {0}: {1}", ex.Message)
                 WStkTrc(ex)
                 Throw New Exceptions.UserCreationException(DoTranslation("usrmgr: Failed to create username {0}: {1}"), ex, newUser, ex.Message)
             End Try
         Else
-            Wdbg("W", "User {0} already found.", newUser)
+            Wdbg(DebugLevel.W, "User {0} already found.", newUser)
             Throw New Exceptions.UserCreationException(DoTranslation("usrmgr: Username {0} is already found"), newUser)
         End If
         Return False
@@ -223,32 +223,32 @@ Public Module UserManagement
     ''' <remarks>This sub is an accomplice of in-shell command arguments.</remarks>
     Public Function RemoveUser(user As String) As Boolean
         If InStr(user, " ") > 0 Then
-            Wdbg("W", "There are spaces in username.")
+            Wdbg(DebugLevel.W, "There are spaces in username.")
             Throw New Exceptions.UserManagementException(DoTranslation("Spaces are not allowed."))
         ElseIf user.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
-            Wdbg("W", "There are special characters in username.")
+            Wdbg(DebugLevel.W, "There are special characters in username.")
             Throw New Exceptions.UserManagementException(DoTranslation("Special characters are not allowed."))
         ElseIf user = Nothing Then
-            Wdbg("W", "Username is blank.")
+            Wdbg(DebugLevel.W, "Username is blank.")
             Throw New Exceptions.UserManagementException(DoTranslation("Blank username."))
         ElseIf Users.ContainsKey(user) = False Then
-            Wdbg("W", "Username {0} not found in list", user)
+            Wdbg(DebugLevel.W, "Username {0} not found in list", user)
             Throw New Exceptions.UserManagementException(DoTranslation("User {0} not found."), user)
         Else
             'Try to remove user
             If Users.Keys.ToArray.Contains(user) And user = "root" Then
-                Wdbg("W", "User is root, and is a system account")
+                Wdbg(DebugLevel.W, "User is root, and is a system account")
                 Throw New Exceptions.UserManagementException(DoTranslation("User {0} isn't allowed to be removed."), user)
             ElseIf Users.Keys.ToArray.Contains(user) And user = CurrentUser Then
-                Wdbg("W", "User has logged in, so can't delete self.")
+                Wdbg(DebugLevel.W, "User has logged in, so can't delete self.")
                 Throw New Exceptions.UserManagementException(DoTranslation("User {0} is already logged in. Log-out and log-in as another admin."), user)
             ElseIf Users.Keys.ToArray.Contains(user) And user <> "root" Then
                 Try
-                    Wdbg("I", "Removing permissions...")
+                    Wdbg(DebugLevel.I, "Removing permissions...")
                     UserPermissions.Remove(user)
 
                     'Remove user
-                    Wdbg("I", "Removing username {0}...", user)
+                    Wdbg(DebugLevel.I, "Removing username {0}...", user)
                     Users.Remove(user)
 
                     'Remove user from Users.json
@@ -391,9 +391,9 @@ Public Module UserManagement
             W(DoTranslation("Write your username.") + vbNewLine, True, ColTypes.Neutral)
             W(">> ", False, ColTypes.Input)
             AnswerUsername = Console.ReadLine
-            Wdbg("I", "Answer: {0}", AnswerUsername)
+            Wdbg(DebugLevel.I, "Answer: {0}", AnswerUsername)
             If String.IsNullOrWhiteSpace(AnswerUsername) Then
-                Wdbg("W", "Username is not valid. Returning...")
+                Wdbg(DebugLevel.W, "Username is not valid. Returning...")
                 W(DoTranslation("You must write your username."), True, ColTypes.Error)
                 W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
@@ -408,9 +408,9 @@ Public Module UserManagement
             W(">> ", False, ColTypes.Input)
             AnswerPassword = ReadLineNoInput("*")
             Console.WriteLine()
-            Wdbg("I", "Answer: {0}", AnswerPassword)
+            Wdbg(DebugLevel.I, "Answer: {0}", AnswerPassword)
             If String.IsNullOrWhiteSpace(AnswerPassword) Then
-                Wdbg("W", "Password is not valid. Returning...")
+                Wdbg(DebugLevel.W, "Password is not valid. Returning...")
                 W(DoTranslation("You must write your password."), True, ColTypes.Error)
                 W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
@@ -426,18 +426,18 @@ Public Module UserManagement
             W("2) " + DoTranslation("Normal User: This account type is slightly more restricted than administrators."), True, ColTypes.Option)
             W(vbNewLine + ">> ", False, ColTypes.Input)
             If Integer.TryParse(Console.ReadLine, AnswerType) Then
-                Wdbg("I", "Answer: {0}", AnswerType)
+                Wdbg(DebugLevel.I, "Answer: {0}", AnswerType)
                 Select Case AnswerType
                     Case 1, 2
                         [Step] += 1
                     Case Else '???
-                        Wdbg("W", "Option is not valid. Returning...")
+                        Wdbg(DebugLevel.W, "Option is not valid. Returning...")
                         W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerType)
                         W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                         Console.ReadKey()
                 End Select
             Else
-                Wdbg("W", "Answer is not numeric.")
+                Wdbg(DebugLevel.W, "Answer is not numeric.")
                 W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
                 W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()

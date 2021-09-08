@@ -29,7 +29,7 @@ Public Module ModExecutor
         Dim parts As String() = cmd.SplitEncloseDoubleQuotes(" ")
         Dim args As String = ""
         Dim actualCmd As String = parts(0)
-        Wdbg("I", "Command = {0}", actualCmd)
+        Wdbg(DebugLevel.I, "Command = {0}", actualCmd)
 
         'Check to see if the command written needs normalization
         For Each ModPart As ModInfo In scripts.Values
@@ -39,7 +39,7 @@ Public Module ModExecutor
                         'The commands in the script has the actual command, the mod name is not null, and the command doesn't equal the mod name.
                         'In this case, make the actual command executed the script name.
                         actualCmd = script.Name
-                        Wdbg("I", "Actual command = {0}", actualCmd)
+                        Wdbg(DebugLevel.I, "Actual command = {0}", actualCmd)
                     End If
                 End If
             Next
@@ -49,7 +49,7 @@ Public Module ModExecutor
         If cmd.StartsWith(parts(0) + " ") Or cmd.StartsWith("""" + parts(0) + """ ") Then
             'These below will be executed if there are arguments
             args = cmd.Replace($"{parts(0)} ", "").Replace($"""{parts(0)}"" ", "")
-            Wdbg("I", "Command {0} will be run with arguments: {1}", actualCmd, args)
+            Wdbg(DebugLevel.I, "Command {0} will be run with arguments: {1}", actualCmd, args)
         End If
 
         'Try to execute the command.
@@ -62,16 +62,16 @@ Public Module ModExecutor
                         'Command type is of shell. Check the user privileges for restricted commands.
                         If (Script.Commands(parts(0)).Strict And HasPermission(CurrentUser, PermissionType.Administrator)) Or Not Script.Commands(parts(0)).Strict Then
                             'User was authorized to use the command, or the command wasn't strict
-                            Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModPart)
+                            Wdbg(DebugLevel.I, "Using command {0} from {1} to be executed...", parts(0), ModPart)
                             Script.PerformCmd(Script.Commands(parts(0)), args)
                         Else
                             'User wasn't authorized.
-                            Wdbg("E", "User {0} doesn't have permission to use {1} from {2}!", CurrentUser, parts(0), ModPart)
+                            Wdbg(DebugLevel.E, "User {0} doesn't have permission to use {1} from {2}!", CurrentUser, parts(0), ModPart)
                             W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, parts(0))
                         End If
                     Else
                         'Command type is not of shell. Execute anyway.
-                        Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModPart)
+                        Wdbg(DebugLevel.I, "Using command {0} from {1} to be executed...", parts(0), ModPart)
                         Script.PerformCmd(Script.Commands(parts(0)), args)
                     End If
                 End If
@@ -80,7 +80,7 @@ Public Module ModExecutor
 
         'Raise event
         EventManager.RaisePostExecuteModCommand(cmd)
-        Wdbg("I", "Command executed successfully.")
+        Wdbg(DebugLevel.I, "Command executed successfully.")
     End Sub
 
 End Module

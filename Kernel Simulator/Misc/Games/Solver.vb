@@ -27,18 +27,18 @@ Module Solver
         Dim UserEvaluated As String
         Dim Operations() As String = {"+", "-", "*", "/"}
         W(DoTranslation("Press CTRL+C to exit."), True, ColTypes.Neutral)
-        Wdbg("I", "Initialized expressions.")
+        Wdbg(DebugLevel.I, "Initialized expressions.")
         While True
             RandomExpression = CStr(RandomDriver.Next(1000)) + Operations.ElementAt(RandomDriver.Next(Operations.Length)) + CStr(RandomDriver.Next(1000))
-            Wdbg("I", "Expression to be solved: {0}", RandomExpression)
+            Wdbg(DebugLevel.I, "Expression to be solved: {0}", RandomExpression)
             W(RandomExpression, True, ColTypes.Input)
             UserEvaluated = ReadLineNoInput("")
-            Wdbg("I", "Evaluated: {0}", UserEvaluated)
+            Wdbg(DebugLevel.I, "Evaluated: {0}", UserEvaluated)
             If CDbl(UserEvaluated) = New DataTable().Compute(RandomExpression, Nothing) Then
-                Wdbg("I", "Expression is {0} and equals {1}", UserEvaluated, New DataTable().Compute(RandomExpression, Nothing))
+                Wdbg(DebugLevel.I, "Expression is {0} and equals {1}", UserEvaluated, New DataTable().Compute(RandomExpression, Nothing))
                 W(DoTranslation("Solved perfectly!"), True, ColTypes.Neutral)
             Else
-                Wdbg("I", "Expression is {0} and equals {1}", UserEvaluated, New DataTable().Compute(RandomExpression, Nothing))
+                Wdbg(DebugLevel.I, "Expression is {0} and equals {1}", UserEvaluated, New DataTable().Compute(RandomExpression, Nothing))
                 W(DoTranslation("Solved incorrectly."), True, ColTypes.Neutral)
             End If
         End While

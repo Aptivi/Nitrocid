@@ -18,10 +18,9 @@
 
 Imports System.IO
 
-Public Module DebugWriters
+Public Module DebugWriter
 
     Public dbgWriter As StreamWriter
-    Public DebugQuota As Double = 1073741824 '1073741824 bytes = 1 GiB (1 GB for Windows)
     Public dbgStackTraces As New List(Of String)
 
     ''' <summary>
@@ -29,7 +28,7 @@ Public Module DebugWriters
     ''' </summary>
     ''' <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub Wdbg(Level As Char, text As String, ParamArray vars() As Object)
+    Public Sub Wdbg(Level As DebugLevel, text As String, ParamArray vars() As Object)
         If DebugMode Then
             'Open debugging stream
             If dbgWriter Is Nothing Or dbgWriter?.BaseStream Is Nothing Then dbgWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging), True) With {.AutoFlush = True}
@@ -92,7 +91,7 @@ Public Module DebugWriters
                 If i <> -1 Then
                     DebugDevices.Keys(i).Disconnect(True)
                     EventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices.Values(i))
-                    Wdbg("W", "Debug device {0} ({1}) disconnected.", dbgConns.Values(i), DebugDevices.Values(i))
+                    Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", dbgConns.Values(i), DebugDevices.Values(i))
                     dbgConns.Remove(dbgConns.Keys(i))
                     DebugDevices.Remove(DebugDevices.Keys(i))
                 End If
@@ -107,7 +106,7 @@ Public Module DebugWriters
     ''' <param name="Condition">The condition that must be satisfied</param>
     ''' <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WdbgConditional(ByRef Condition As Boolean, Level As Char, text As String, ParamArray vars() As Object)
+    Public Sub WdbgConditional(ByRef Condition As Boolean, Level As DebugLevel, text As String, ParamArray vars() As Object)
         If Condition Then Wdbg(Level, text, vars)
     End Sub
 
@@ -116,7 +115,7 @@ Public Module DebugWriters
     ''' </summary>
     ''' <param name="text">A sentence that will be written to the the debugger devices. Supports {0}, {1}, ...</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WdbgDevicesOnly(Level As Char, text As String, ParamArray vars() As Object)
+    Public Sub WdbgDevicesOnly(Level As DebugLevel, text As String, ParamArray vars() As Object)
         If DebugMode Then
             Dim OffendingIndex As New List(Of String)
 
@@ -138,7 +137,7 @@ Public Module DebugWriters
                 If i <> -1 Then
                     DebugDevices.Keys(i).Disconnect(True)
                     EventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices.Values(i))
-                    Wdbg("W", "Debug device {0} ({1}) disconnected.", dbgConns.Values(i), DebugDevices.Values(i))
+                    Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", dbgConns.Values(i), DebugDevices.Values(i))
                     dbgConns.Remove(dbgConns.Keys(i))
                     DebugDevices.Remove(DebugDevices.Keys(i))
                 End If
@@ -169,30 +168,9 @@ Public Module DebugWriters
                 StkTrcs.AddRange(dbgStackTraces(i).SplitNewLines)
             Next
             For i As Integer = 0 To StkTrcs.Count - 1
-                Wdbg("E", StkTrcs(i))
+                Wdbg(DebugLevel.E, StkTrcs(i))
             Next
         End If
-    End Sub
-
-    ''' <summary>
-    ''' Checks to see if the debug file exceeds the quota
-    ''' </summary>
-    Public Sub CheckForExceed()
-        Try
-            Dim FInfo As New FileInfo(GetKernelPath(KernelPathType.Debugging))
-            Dim OldSize As Double = FInfo.Length
-            Dim Lines() As String = ReadAllLinesNoBlock(GetKernelPath(KernelPathType.Debugging))
-            If OldSize > DebugQuota Then
-                dbgWriter.Close()
-                dbgWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging)) With {.AutoFlush = True}
-                For l As Integer = 5 To Lines.Length - 2 'Remove the first 5 lines from stream.
-                    dbgWriter.WriteLine(Lines(l))
-                Next
-                Wdbg("W", "Max debug quota size exceeded, was {0} MB.", FormatNumber(OldSize / 1024 / 1024, 1))
-            End If
-        Catch ex As Exception
-            WStkTrc(ex)
-        End Try
     End Sub
 
 End Module

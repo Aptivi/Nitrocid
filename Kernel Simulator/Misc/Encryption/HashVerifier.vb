@@ -37,10 +37,10 @@ Public Module HashVerifier
 
         FileName = NeutralizePath(FileName)
         HashesFile = NeutralizePath(HashesFile)
-        Wdbg("I", "File name: {0}", FileName)
-        Wdbg("I", "Hashes file name: {0}", HashesFile)
+        Wdbg(DebugLevel.I, "File name: {0}", FileName)
+        Wdbg(DebugLevel.I, "Hashes file name: {0}", HashesFile)
         If File.Exists(FileName) Then
-            Wdbg("I", "Hash type: {0} ({1})", HashType, HashType.ToString)
+            Wdbg(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString)
             Select Case HashType
                 Case Algorithms.SHA512
                     ExpectedHashLength = 128
@@ -59,19 +59,19 @@ Public Module HashVerifier
             'Verify the hash
             If File.Exists(HashesFile) Then
                 Dim HashStream As New StreamReader(HashesFile)
-                Wdbg("I", "Stream length: {0}", HashStream.BaseStream.Length)
+                Wdbg(DebugLevel.I, "Stream length: {0}", HashStream.BaseStream.Length)
                 Do While Not HashStream.EndOfStream
                     'Check if made from KS, and take it from before-last split space. If not, take it from the beginning
                     Dim StringLine As String = HashStream.ReadLine
                     If StringLine.StartsWith("- ") Then
-                        Wdbg("I", "Hashes file is of KS format")
+                        Wdbg(DebugLevel.I, "Hashes file is of KS format")
                         If StringLine.StartsWith("- " + FileName) And StringLine.EndsWith($"({HashType})") Then
                             Dim HashSplit() As String = StringLine.Split(" "c)
                             ExpectedHash = HashSplit(HashSplit.Length - 2).ToUpper
                             ActualHash = ActualHash.ToUpper
                         End If
                     Else
-                        Wdbg("I", "Hashes file is of standard format")
+                        Wdbg(DebugLevel.I, "Hashes file is of standard format")
                         If StringLine.EndsWith(Path.GetFileName(FileName)) Then
                             Dim HashSplit() As String = StringLine.Split(" "c)
                             ExpectedHash = HashSplit(0).ToUpper
@@ -84,17 +84,17 @@ Public Module HashVerifier
             End If
 
             If ActualHash.Length = ExpectedHashLength And ExpectedHash.Length = ExpectedHashLength Then
-                Wdbg("I", "Hashes are consistent.")
-                Wdbg("I", "Hashes {0} and {1}", ActualHash, ExpectedHash)
+                Wdbg(DebugLevel.I, "Hashes are consistent.")
+                Wdbg(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash)
                 If ActualHash = ExpectedHash Then
-                    Wdbg("I", "Hashes match.")
+                    Wdbg(DebugLevel.I, "Hashes match.")
                     Return True
                 Else
-                    Wdbg("W", "Hashes don't match.")
+                    Wdbg(DebugLevel.W, "Hashes don't match.")
                     Return False
                 End If
             Else
-                Wdbg("E", "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength)
+                Wdbg(DebugLevel.E, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength)
                 Throw New Exceptions.InvalidHashException("{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength)
             End If
         Else
@@ -119,9 +119,9 @@ Public Module HashVerifier
         FileName = NeutralizePath(FileName)
         ExpectedHash = ExpectedHash.ToUpper
         ActualHash = ActualHash.ToUpper
-        Wdbg("I", "File name: {0}", FileName)
+        Wdbg(DebugLevel.I, "File name: {0}", FileName)
         If File.Exists(FileName) Then
-            Wdbg("I", "Hash type: {0} ({1})", HashType, HashType.ToString)
+            Wdbg(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString)
             Select Case HashType
                 Case Algorithms.SHA512
                     ExpectedHashLength = 128
@@ -139,17 +139,17 @@ Public Module HashVerifier
 
             'Verify the hash
             If ActualHash.Length = ExpectedHashLength And ExpectedHash.Length = ExpectedHashLength Then
-                Wdbg("I", "Hashes are consistent.")
-                Wdbg("I", "Hashes {0} and {1}", ActualHash, ExpectedHash)
+                Wdbg(DebugLevel.I, "Hashes are consistent.")
+                Wdbg(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash)
                 If ActualHash = ExpectedHash Then
-                    Wdbg("I", "Hashes match.")
+                    Wdbg(DebugLevel.I, "Hashes match.")
                     Return True
                 Else
-                    Wdbg("W", "Hashes don't match.")
+                    Wdbg(DebugLevel.W, "Hashes don't match.")
                     Return False
                 End If
             Else
-                Wdbg("E", "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength)
+                Wdbg(DebugLevel.E, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength)
                 Throw New Exceptions.InvalidHashException("{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength)
             End If
         Else
@@ -174,10 +174,10 @@ Public Module HashVerifier
 
         FileName = NeutralizePath(FileName)
         HashesFile = NeutralizePath(HashesFile)
-        Wdbg("I", "File name: {0}", FileName)
-        Wdbg("I", "Hashes file name: {0}", HashesFile)
+        Wdbg(DebugLevel.I, "File name: {0}", FileName)
+        Wdbg(DebugLevel.I, "Hashes file name: {0}", HashesFile)
         If File.Exists(FileName) Then
-            Wdbg("I", "Hash type: {0} ({1})", HashType, HashType.ToString)
+            Wdbg(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString)
             Select Case HashType
                 Case Algorithms.SHA512
                     ExpectedHashLength = 128
@@ -196,19 +196,19 @@ Public Module HashVerifier
             'Verify the hash
             If File.Exists(HashesFile) Then
                 Dim HashStream As New StreamReader(HashesFile)
-                Wdbg("I", "Stream length: {0}", HashStream.BaseStream.Length)
+                Wdbg(DebugLevel.I, "Stream length: {0}", HashStream.BaseStream.Length)
                 Do While Not HashStream.EndOfStream
                     'Check if made from KS, and take it from before-last split space. If not, take it from the beginning
                     Dim StringLine As String = HashStream.ReadLine
                     If StringLine.StartsWith("- ") Then
-                        Wdbg("I", "Hashes file is of KS format")
+                        Wdbg(DebugLevel.I, "Hashes file is of KS format")
                         If StringLine.StartsWith("- " + FileName) And StringLine.EndsWith($"({HashType})") Then
                             Dim HashSplit() As String = StringLine.Split(" "c)
                             ExpectedHash = HashSplit(HashSplit.Length - 2).ToUpper
                             ActualHash = GetEncryptedFile(FileName, HashType).ToUpper
                         End If
                     Else
-                        Wdbg("I", "Hashes file is of standard format")
+                        Wdbg(DebugLevel.I, "Hashes file is of standard format")
                         If StringLine.EndsWith(Path.GetFileName(FileName)) Then
                             Dim HashSplit() As String = StringLine.Split(" "c)
                             ExpectedHash = HashSplit(0).ToUpper
@@ -221,17 +221,17 @@ Public Module HashVerifier
             End If
 
             If ActualHash.Length = ExpectedHashLength And ExpectedHash.Length = ExpectedHashLength Then
-                Wdbg("I", "Hashes are consistent.")
-                Wdbg("I", "Hashes {0} and {1}", ActualHash, ExpectedHash)
+                Wdbg(DebugLevel.I, "Hashes are consistent.")
+                Wdbg(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash)
                 If ActualHash = ExpectedHash Then
-                    Wdbg("I", "Hashes match.")
+                    Wdbg(DebugLevel.I, "Hashes match.")
                     Return True
                 Else
-                    Wdbg("W", "Hashes don't match.")
+                    Wdbg(DebugLevel.W, "Hashes don't match.")
                     Return False
                 End If
             Else
-                Wdbg("E", "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength)
+                Wdbg(DebugLevel.E, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength)
                 Throw New Exceptions.InvalidHashException("{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength)
             End If
         Else
@@ -254,9 +254,9 @@ Public Module HashVerifier
         Dim ActualHash As String
         FileName = NeutralizePath(FileName)
         ExpectedHash = ExpectedHash.ToUpper
-        Wdbg("I", "File name: {0}", FileName)
+        Wdbg(DebugLevel.I, "File name: {0}", FileName)
         If File.Exists(FileName) Then
-            Wdbg("I", "Hash type: {0} ({1})", HashType, HashType.ToString)
+            Wdbg(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString)
             Select Case HashType
                 Case Algorithms.SHA512
                     ExpectedHashLength = 128
@@ -277,17 +277,17 @@ Public Module HashVerifier
 
             'Verify the hash
             If ActualHash.Length = ExpectedHashLength And ExpectedHash.Length = ExpectedHashLength Then
-                Wdbg("I", "Hashes are consistent.")
-                Wdbg("I", "Hashes {0} and {1}", ActualHash, ExpectedHash)
+                Wdbg(DebugLevel.I, "Hashes are consistent.")
+                Wdbg(DebugLevel.I, "Hashes {0} and {1}", ActualHash, ExpectedHash)
                 If ActualHash = ExpectedHash Then
-                    Wdbg("I", "Hashes match.")
+                    Wdbg(DebugLevel.I, "Hashes match.")
                     Return True
                 Else
-                    Wdbg("W", "Hashes don't match.")
+                    Wdbg(DebugLevel.W, "Hashes don't match.")
                     Return False
                 End If
             Else
-                Wdbg("E", "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength)
+                Wdbg(DebugLevel.E, "{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength)
                 Throw New Exceptions.InvalidHashException("{0} ({1}) or {2} ({3}) is malformed. Check the algorithm ({4}). Expected length: {5}", ActualHash, ActualHash.Length, ExpectedHash, ExpectedHash.Length, HashType, ExpectedHashLength)
             End If
         Else

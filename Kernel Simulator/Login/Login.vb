@@ -35,7 +35,7 @@ Public Module Login
         While True
             'Check to see if the reboot is requested
             If RebootRequested = True Then
-                Wdbg("W", "Reboot has been requested. Exiting...")
+                Wdbg(DebugLevel.W, "Reboot has been requested. Exiting...")
                 RebootRequested = False
                 Exit Sub
             End If
@@ -46,17 +46,17 @@ Public Module Login
             'Check to see if there are any users
             If Users.Count = 0 Then
                 'Extremely rare state reached
-                Wdbg("F", "Shell reached rare state, because userword count is 0.")
+                Wdbg(DebugLevel.F, "Shell reached rare state, because userword count is 0.")
                 Throw New Exceptions.NullUsersException(DoTranslation("There are no more users remaining in the list."))
             ElseIf Users.Count = 1 And Users.Keys(0) = "root" Then
                 'Run a first user trigger
-                Wdbg("W", "Only root is found. Triggering first user setup...")
+                Wdbg(DebugLevel.W, "Only root is found. Triggering first user setup...")
                 FirstUserTrigger()
             End If
 
             'Clear console if clsOnLogin is set to True (If a user has enabled Clear Screen on Login)
             If clsOnLogin = True Then
-                Wdbg("I", "Clearing screen...")
+                Wdbg(DebugLevel.I, "Clearing screen...")
                 Console.Clear()
             End If
 
@@ -68,7 +68,7 @@ Public Module Login
             ReadMOTDFromFile(MessageType.MAL)
 
             'Show MOTD once
-            Wdbg("I", "showMOTDOnceFlag = {0}, showMOTD = {1}", ShowMOTDOnceFlag, showMOTD)
+            Wdbg(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", ShowMOTDOnceFlag, showMOTD)
             If ShowMOTDOnceFlag = True And showMOTD = True Then
                 W(vbNewLine + ProbePlaces(MOTDMessage), True, ColTypes.Banner)
             End If
@@ -80,25 +80,25 @@ Public Module Login
 
             'Parse input
             If InStr(answeruser, " ") > 0 Then
-                Wdbg("W", "Spaces found in username.")
+                Wdbg(DebugLevel.W, "Spaces found in username.")
                 W(DoTranslation("Spaces are not allowed."), True, ColTypes.Error)
                 EventManager.RaiseLoginError(answeruser, "spaces")
             ElseIf answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
-                Wdbg("W", "Unknown characters found in username.")
+                Wdbg(DebugLevel.W, "Unknown characters found in username.")
                 W(DoTranslation("Special characters are not allowed."), True, ColTypes.Error)
                 EventManager.RaiseLoginError(answeruser, "specialchars")
             ElseIf Users.ContainsKey(answeruser) Then
-                Wdbg("I", "Username correct. Finding if the user is disabled...")
+                Wdbg(DebugLevel.I, "Username correct. Finding if the user is disabled...")
                 If Not HasPermission(answeruser, PermissionType.Disabled) Then
-                    Wdbg("I", "User can log in. (User is not in disabled list)")
+                    Wdbg(DebugLevel.I, "User can log in. (User is not in disabled list)")
                     ShowPasswordPrompt(answeruser)
                 Else
-                    Wdbg("W", "User can't log in. (User is in disabled list)")
+                    Wdbg(DebugLevel.W, "User can't log in. (User is in disabled list)")
                     W(DoTranslation("User is disabled."), True, ColTypes.Error)
                     EventManager.RaiseLoginError(answeruser, "disabled")
                 End If
             Else
-                Wdbg("E", "Username not found.")
+                Wdbg(DebugLevel.E, "Username not found.")
                 W(DoTranslation("Wrong username."), True, ColTypes.Error)
                 EventManager.RaiseLoginError(answeruser, "notfound")
             End If
@@ -117,7 +117,7 @@ Public Module Login
         While True
             'Check to see if reboot is requested
             If RebootRequested = True Then
-                Wdbg("W", "Reboot has been requested. Exiting...")
+                Wdbg(DebugLevel.W, "Reboot has been requested. Exiting...")
                 RebootRequested = False
                 Exit Sub
             End If
@@ -128,7 +128,7 @@ Public Module Login
             'Check if there's a password
             If Not UserPassword = GetEmptyHash(Algorithms.SHA256) Then 'No password
                 'Wait for input
-                Wdbg("I", "Password not empty")
+                Wdbg(DebugLevel.I, "Password not empty")
                 W(DoTranslation("{0}'s password: "), False, ColTypes.Input, usernamerequested)
 
                 'Get input
@@ -136,17 +136,17 @@ Public Module Login
                 Console.WriteLine()
 
                 'Compute password hash
-                Wdbg("I", "Computing written password hash...")
+                Wdbg(DebugLevel.I, "Computing written password hash...")
                 answerpass = GetEncryptedString(answerpass, Algorithms.SHA256)
 
                 'Parse password input
                 If Users.TryGetValue(usernamerequested, UserPassword) AndAlso UserPassword = answerpass Then
                     'Log-in instantly
-                    Wdbg("I", "Password written correctly. Entering shell...")
+                    Wdbg(DebugLevel.I, "Password written correctly. Entering shell...")
                     SignIn(usernamerequested)
                     Exit Sub
                 Else
-                    Wdbg("I", "Passowrd written wrong...")
+                    Wdbg(DebugLevel.I, "Passowrd written wrong...")
                     W(DoTranslation("Wrong password."), True, ColTypes.Error)
                     EventManager.RaiseLoginError(usernamerequested, "wrongpass")
                     If Not maintenance Then
@@ -157,7 +157,7 @@ Public Module Login
                 End If
             Else
                 'Log-in instantly
-                Wdbg("I", "Password is empty")
+                Wdbg(DebugLevel.I, "Password is empty")
                 SignIn(usernamerequested)
                 Exit Sub
             End If
@@ -173,7 +173,7 @@ Public Module Login
 
         'Release lock
         If LockMode Then
-            Wdbg("I", "Releasing lock and getting back to shell...")
+            Wdbg(DebugLevel.I, "Releasing lock and getting back to shell...")
             LockMode = False
             EventManager.RaisePostUnlock(defSaverName)
             Exit Sub
@@ -188,7 +188,7 @@ Public Module Login
         'Sign in to user.
         CurrentUser = signedInUser
         If LockMode = True Then LockMode = False
-        Wdbg("I", "Lock released.")
+        Wdbg(DebugLevel.I, "Lock released.")
         ShowMOTDOnceFlag = True
         W(ProbePlaces(MAL), True, ColTypes.Banner)
 
@@ -196,7 +196,7 @@ Public Module Login
         EventManager.RaisePostLogin(CurrentUser)
 
         'Initialize shell
-        Wdbg("I", "Shell is being initialized...")
+        Wdbg(DebugLevel.I, "Shell is being initialized...")
         InitializeShell()
     End Sub
 

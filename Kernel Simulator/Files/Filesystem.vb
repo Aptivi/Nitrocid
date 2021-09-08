@@ -40,7 +40,7 @@ Public Module Filesystem
         ThrowOnInvalidPath(dir)
 #End If
         dir = NeutralizePath(dir)
-        Wdbg("I", "Directory exists? {0}", Directory.Exists(dir))
+        Wdbg(DebugLevel.I, "Directory exists? {0}", Directory.Exists(dir))
         If Directory.Exists(dir) Then
             Dim Parser As New DirectoryInfo(dir)
             CurrDir = Parser.FullName.Replace("\", "/")
@@ -66,7 +66,7 @@ Public Module Filesystem
         'Read the contents
         filename = NeutralizePath(filename)
         Using FStream As New StreamReader(filename)
-            Wdbg("I", "Stream to file {0} opened.", filename)
+            Wdbg(DebugLevel.I, "Stream to file {0} opened.", filename)
             While Not FStream.EndOfStream
                 W(FStream.ReadLine, True, ColTypes.Neutral)
             End While
@@ -78,7 +78,7 @@ Public Module Filesystem
     ''' </summary>
     ''' <param name="folder">Full path to folder</param>
     Sub List(folder As String)
-        Wdbg("I", "Folder {0} will be listed...", folder)
+        Wdbg(DebugLevel.I, "Folder {0} will be listed...", folder)
 
 #If NTFSCorruptionFix Then
         ThrowOnInvalidPath(folder)
@@ -102,7 +102,7 @@ Public Module Filesystem
 
             'Enumerate each entry
             For Each Entry As FileSystemInfo In enumeration
-                Wdbg("I", "Enumerating {0}...", Entry.FullName)
+                Wdbg(DebugLevel.I, "Enumerating {0}...", Entry.FullName)
                 Try
                     If File.Exists(Entry.FullName) Then
                         'Print information
@@ -139,7 +139,7 @@ Public Module Filesystem
             Next
         Else
             W(DoTranslation("Directory {0} not found"), True, ColTypes.Error, folder)
-            Wdbg("I", "IO.Directory.Exists = {0}", Directory.Exists(folder))
+            Wdbg(DebugLevel.I, "IO.Directory.Exists = {0}", Directory.Exists(folder))
         End If
     End Sub
 
@@ -151,7 +151,7 @@ Public Module Filesystem
     ''' <returns>List of filesystem entries if any. Empty list if folder is not found or is empty.</returns>
     ''' <exception cref="Exceptions.FilesystemException"></exception>
     Public Function CreateList(folder As String, Optional Sorted As Boolean = False) As List(Of FileSystemInfo)
-        Wdbg("I", "Folder {0} will be listed...", folder)
+        Wdbg(DebugLevel.I, "Folder {0} will be listed...", folder)
         Dim FilesystemEntries As New List(Of FileSystemInfo)
 #If NTFSCorruptionFix Then
         ThrowOnInvalidPath(folder)
@@ -164,22 +164,22 @@ Public Module Filesystem
             Try
                 enumeration = Directory.EnumerateFileSystemEntries(folder)
             Catch ex As Exception
-                Wdbg("E", "Failed to make a list of filesystem entries for directory {0}: {1}", folder, ex.Message)
+                Wdbg(DebugLevel.E, "Failed to make a list of filesystem entries for directory {0}: {1}", folder, ex.Message)
                 WStkTrc(ex)
                 Throw New Exceptions.FilesystemException(DoTranslation("Failed to make a list of filesystem entries for directory") + " {0}", ex, folder)
             End Try
             For Each Entry As String In enumeration
-                Wdbg("I", "Enumerating {0}...", Entry)
+                Wdbg(DebugLevel.I, "Enumerating {0}...", Entry)
                 Try
                     If File.Exists(Entry) Then
-                        Wdbg("I", "Entry is a file. Adding {0} to list...", Entry)
+                        Wdbg(DebugLevel.I, "Entry is a file. Adding {0} to list...", Entry)
                         FilesystemEntries.Add(New FileInfo(Entry))
                     ElseIf Directory.Exists(Entry) Then
-                        Wdbg("I", "Entry is a folder. Adding {0} to list...", Entry)
+                        Wdbg(DebugLevel.I, "Entry is a folder. Adding {0} to list...", Entry)
                         FilesystemEntries.Add(New DirectoryInfo(Entry))
                     End If
                 Catch ex As Exception
-                    Wdbg("E", "Failed to enumerate {0} for directory {1}: {2}", Entry, folder, ex.Message)
+                    Wdbg(DebugLevel.E, "Failed to enumerate {0} for directory {1}: {2}", Entry, folder, ex.Message)
                     WStkTrc(ex)
                 End Try
             Next
@@ -322,38 +322,38 @@ Public Module Filesystem
             ThrowOnInvalidPath(Destination)
 #End If
             Source = NeutralizePath(Source)
-            Wdbg("I", "Source directory: {0}", Source)
+            Wdbg(DebugLevel.I, "Source directory: {0}", Source)
             Destination = NeutralizePath(Destination)
-            Wdbg("I", "Target directory: {0}", Destination)
+            Wdbg(DebugLevel.I, "Target directory: {0}", Destination)
             Dim FileName As String = Path.GetFileName(Source)
-            Wdbg("I", "Source file name: {0}", FileName)
+            Wdbg(DebugLevel.I, "Source file name: {0}", FileName)
             If Directory.Exists(Source) Then
-                Wdbg("I", "Source and destination are directories")
+                Wdbg(DebugLevel.I, "Source and destination are directories")
                 CopyDirectory(Source, Destination)
 
                 'Raise event
                 EventManager.RaiseDirectoryCopied(Source, Destination)
                 Return True
             ElseIf File.Exists(Source) And Directory.Exists(Destination) Then
-                Wdbg("I", "Source is a file and destination is a directory")
+                Wdbg(DebugLevel.I, "Source is a file and destination is a directory")
                 File.Copy(Source, Destination + "/" + FileName, True)
 
                 'Raise event
                 EventManager.RaiseFileCopied(Source, Destination + "/" + FileName)
                 Return True
             ElseIf File.Exists(Source) Then
-                Wdbg("I", "Source is a file and destination is a file")
+                Wdbg(DebugLevel.I, "Source is a file and destination is a file")
                 File.Copy(Source, Destination, True)
 
                 'Raise event
                 EventManager.RaiseFileCopied(Source, Destination)
                 Return True
             Else
-                Wdbg("E", "Source or destination are invalid.")
+                Wdbg(DebugLevel.E, "Source or destination are invalid.")
                 Throw New IOException(DoTranslation("The path is neither a file nor a directory."))
             End If
         Catch ex As Exception
-            Wdbg("E", "Failed to copy {0} to {1}: {2}", Source, Destination, ex.Message)
+            Wdbg(DebugLevel.E, "Failed to copy {0} to {1}: {2}", Source, Destination, ex.Message)
             WStkTrc(ex)
             Throw New IOException(DoTranslation("Failed to copy file or directory: {0}").FormatString(ex.Message))
         End Try
@@ -381,20 +381,20 @@ Public Module Filesystem
         'Get all source directories and files
         Dim SourceDirInfo As New DirectoryInfo(Source)
         Dim SourceDirectories As DirectoryInfo() = SourceDirInfo.GetDirectories
-        Wdbg("I", "Source directories: {0}", SourceDirectories.Length)
+        Wdbg(DebugLevel.I, "Source directories: {0}", SourceDirectories.Length)
         Dim SourceFiles As FileInfo() = SourceDirInfo.GetFiles
-        Wdbg("I", "Source files: {0}", SourceFiles.Length)
+        Wdbg(DebugLevel.I, "Source files: {0}", SourceFiles.Length)
 
         'Make a destination directory if it doesn't exist
         If Not Directory.Exists(Destination) Then
-            Wdbg("I", "Destination directory {0} doesn't exist. Creating...", Destination)
+            Wdbg(DebugLevel.I, "Destination directory {0} doesn't exist. Creating...", Destination)
             Directory.CreateDirectory(Destination)
         End If
 
         'Iterate through every file and copy them to destination
         For Each SourceFile As FileInfo In SourceFiles
             Dim DestinationFilePath As String = Path.Combine(Destination, SourceFile.Name)
-            Wdbg("I", "Copying file {0} to destination...", DestinationFilePath)
+            Wdbg(DebugLevel.I, "Copying file {0} to destination...", DestinationFilePath)
             If ShowProgress Then W("-> {0}", True, ColTypes.Neutral, DestinationFilePath)
             SourceFile.CopyTo(DestinationFilePath, True)
         Next
@@ -402,7 +402,7 @@ Public Module Filesystem
         'Iterate through every subdirectory and copy them to destination
         For Each SourceDirectory As DirectoryInfo In SourceDirectories
             Dim DestinationDirectoryPath As String = Path.Combine(Destination, SourceDirectory.Name)
-            Wdbg("I", "Calling CopyDirectory() with destination {0}...", DestinationDirectoryPath)
+            Wdbg(DebugLevel.I, "Calling CopyDirectory() with destination {0}...", DestinationDirectoryPath)
             CopyDirectory(SourceDirectory.FullName, DestinationDirectoryPath)
         Next
     End Sub
@@ -437,7 +437,7 @@ Public Module Filesystem
         ThrowOnInvalidPath(NewDirectory)
 #End If
         NewDirectory = NeutralizePath(NewDirectory)
-        Wdbg("I", "New directory: {0} ({1})", NewDirectory, Directory.Exists(NewDirectory))
+        Wdbg(DebugLevel.I, "New directory: {0} ({1})", NewDirectory, Directory.Exists(NewDirectory))
         If Not Directory.Exists(NewDirectory) Then
             Directory.CreateDirectory(NewDirectory)
 
@@ -461,13 +461,13 @@ Public Module Filesystem
         ThrowOnInvalidPath(NewFile)
 #End If
         NewFile = NeutralizePath(NewFile)
-        Wdbg("I", "File path is {0} and .Exists is {0}", NewFile, File.Exists(NewFile))
+        Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", NewFile, File.Exists(NewFile))
         If Not File.Exists(NewFile) Then
             Try
                 Dim NewFileStream As FileStream = File.Create(NewFile)
-                Wdbg("I", "File created")
+                Wdbg(DebugLevel.I, "File created")
                 NewFileStream.Close()
-                Wdbg("I", "File closed")
+                Wdbg(DebugLevel.I, "File closed")
 
                 'Raise event
                 EventManager.RaiseFileCreated(NewFile)
@@ -496,38 +496,38 @@ Public Module Filesystem
             ThrowOnInvalidPath(Destination)
 #End If
             Source = NeutralizePath(Source)
-            Wdbg("I", "Source directory: {0}", Source)
+            Wdbg(DebugLevel.I, "Source directory: {0}", Source)
             Destination = NeutralizePath(Destination)
-            Wdbg("I", "Target directory: {0}", Destination)
+            Wdbg(DebugLevel.I, "Target directory: {0}", Destination)
             Dim FileName As String = Path.GetFileName(Source)
-            Wdbg("I", "Source file name: {0}", FileName)
+            Wdbg(DebugLevel.I, "Source file name: {0}", FileName)
             If Directory.Exists(Source) Then
-                Wdbg("I", "Source and destination are directories")
+                Wdbg(DebugLevel.I, "Source and destination are directories")
                 Directory.Move(Source, Destination)
 
                 'Raise event
                 EventManager.RaiseDirectoryMoved(Source, Destination)
                 Return True
             ElseIf File.Exists(Source) And Directory.Exists(Destination) Then
-                Wdbg("I", "Source is a file and destination is a directory")
+                Wdbg(DebugLevel.I, "Source is a file and destination is a directory")
                 File.Move(Source, Destination + "/" + FileName)
 
                 'Raise event
                 EventManager.RaiseFileMoved(Source, Destination + "/" + FileName)
                 Return True
             ElseIf File.Exists(Source) Then
-                Wdbg("I", "Source is a file and destination is a file")
+                Wdbg(DebugLevel.I, "Source is a file and destination is a file")
                 File.Move(Source, Destination)
 
                 'Raise event
                 EventManager.RaiseFileMoved(Source, Destination)
                 Return True
             Else
-                Wdbg("E", "Source or destination are invalid.")
+                Wdbg(DebugLevel.E, "Source or destination are invalid.")
                 Throw New IOException(DoTranslation("The path is neither a file nor a directory."))
             End If
         Catch ex As Exception
-            Wdbg("E", "Failed to move {0} to {1}: {2}", Source, Destination, ex.Message)
+            Wdbg(DebugLevel.E, "Failed to move {0} to {1}: {2}", Source, Destination, ex.Message)
             WStkTrc(ex)
             Throw New IOException(DoTranslation("Failed to move file or directory: {0}").FormatString(ex.Message))
         End Try
@@ -667,14 +667,14 @@ Public Module Filesystem
             ThrowOnInvalidPath(FilePath)
 #End If
             FilePath = NeutralizePath(FilePath)
-            Wdbg("I", "Setting file attribute to {0}...", Attributes)
+            Wdbg(DebugLevel.I, "Setting file attribute to {0}...", Attributes)
             File.SetAttributes(FilePath, Attributes)
 
             'Raise event
             EventManager.RaiseFileAttributeAdded(FilePath, Attributes)
             Return True
         Catch ex As Exception
-            Wdbg("E", "Failed to add attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message)
+            Wdbg(DebugLevel.E, "Failed to add attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message)
             WStkTrc(ex)
         End Try
         Return False
@@ -693,16 +693,16 @@ Public Module Filesystem
 #End If
             FilePath = NeutralizePath(FilePath)
             Dim Attrib As FileAttributes = File.GetAttributes(FilePath)
-            Wdbg("I", "File attributes: {0}", Attrib)
+            Wdbg(DebugLevel.I, "File attributes: {0}", Attrib)
             Attrib = Attrib.RemoveAttribute(Attributes)
-            Wdbg("I", "Setting file attribute to {0}...", Attrib)
+            Wdbg(DebugLevel.I, "Setting file attribute to {0}...", Attrib)
             File.SetAttributes(FilePath, Attrib)
 
             'Raise event
             EventManager.RaiseFileAttributeRemoved(FilePath, Attributes)
             Return True
         Catch ex As Exception
-            Wdbg("E", "Failed to remove attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message)
+            Wdbg(DebugLevel.E, "Failed to remove attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message)
             WStkTrc(ex)
         End Try
         Return False
@@ -729,12 +729,12 @@ Public Module Filesystem
         Else
             Files = DirectoryInfo.EnumerateFiles("*", SearchOption.TopDirectoryOnly).ToList
         End If
-        Wdbg("I", "{0} files to be parsed", Files.Count)
+        Wdbg(DebugLevel.I, "{0} files to be parsed", Files.Count)
         Dim TotalSize As Long = 0 'In bytes
         For Each DFile As FileInfo In Files
             If (DFile.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not DFile.Attributes.HasFlag(FileAttributes.Hidden) Then
                 If (IsOnWindows() And (Not DFile.Name.StartsWith(".") Or (DFile.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
-                    Wdbg("I", "File {0}, Size {1} bytes", DFile.Name, DFile.Length)
+                    Wdbg(DebugLevel.I, "File {0}, Size {1} bytes", DFile.Name, DFile.Length)
                     TotalSize += DFile.Length
                 End If
             End If
@@ -866,7 +866,7 @@ Public Module Filesystem
             Return True
         Catch ex As Exception
             WStkTrc(ex)
-            Wdbg("E", "Failed to save current directory: {0}", ex.Message)
+            Wdbg(DebugLevel.E, "Failed to save current directory: {0}", ex.Message)
             Throw New Exceptions.FilesystemException(DoTranslation("Failed to save current directory: {0}"), ex, ex.Message)
         End Try
         Return False
@@ -885,7 +885,7 @@ Public Module Filesystem
             Return Not Path.IndexOfAny(IO.Path.GetInvalidPathChars()) >= 0
         Catch ex As Exception
             WStkTrc(ex)
-            Wdbg("E", "Failed to parse path {0}: {1}", Path, ex.Message)
+            Wdbg(DebugLevel.E, "Failed to parse path {0}: {1}", Path, ex.Message)
         End Try
         Return False
     End Function
@@ -903,7 +903,7 @@ Public Module Filesystem
             Return Not Name.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0
         Catch ex As Exception
             WStkTrc(ex)
-            Wdbg("E", "Failed to parse file name {0}: {1}", Name, ex.Message)
+            Wdbg(DebugLevel.E, "Failed to parse file name {0}: {1}", Name, ex.Message)
         End Try
         Return False
     End Function
@@ -915,7 +915,7 @@ Public Module Filesystem
     ''' <param name="Path">Target path</param>
     Public Sub ThrowOnInvalidPath(Path As String)
         If IsOnWindows() And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
-            Wdbg("F", "Trying to access invalid path. Path was {0}", Path)
+            Wdbg(DebugLevel.F, "Trying to access invalid path. Path was {0}", Path)
             Throw New ArgumentException(DoTranslation("Trying to access invalid path."))
         End If
     End Sub

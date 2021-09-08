@@ -98,21 +98,21 @@ Public Module Translate
         If Languages.ContainsKey(lang) And lang <> "eng" Then
             'Prepare dictionary
             translatedString = PrepareDict(lang)
-            Wdbg("I", "Dictionary size: {0}", translatedString.Count)
+            Wdbg(DebugLevel.I, "Dictionary size: {0}", translatedString.Count)
 
             'Do translation
             If translatedString.Keys.Contains(text) Then
-                Wdbg("I", "Translating string to {0}: {1}", lang, text)
+                Wdbg(DebugLevel.I, "Translating string to {0}: {1}", lang, text)
                 Return translatedString(text)
             Else 'String wasn't found
-                Wdbg("W", "No string found in langlist. Lang: {0}, String: {1}", lang, text)
+                Wdbg(DebugLevel.W, "No string found in langlist. Lang: {0}, String: {1}", lang, text)
                 text = "(( " + text + " ))"
                 Return text
             End If
         ElseIf Languages.ContainsKey(lang) And lang = "eng" Then 'If the language is available, but is English, don't translate
             Return text
         Else 'If the language is invalid
-            Wdbg("E", "{0} isn't in language list", lang)
+            Wdbg(DebugLevel.E, "{0} isn't in language list", lang)
             Return text
         End If
     End Function
@@ -139,14 +139,14 @@ Public Module Translate
     ''' <param name="Force">Force changes</param>
     Sub PromptForSetLang(lang As String, Optional Force As Boolean = False)
         If Languages.ContainsKey(lang) Then
-            Wdbg("I", "Forced {0}", Force)
+            Wdbg(DebugLevel.I, "Forced {0}", Force)
             If Not Force Then
                 If lang.EndsWith("-T") Then 'The condition prevents tricksters from using "chlang <lang>-T", if not forced.
-                    Wdbg("W", "Trying to bypass prompt.")
+                    Wdbg(DebugLevel.W, "Trying to bypass prompt.")
                     Exit Sub
                 Else
                     'Check to see if the language is transliterable
-                    Wdbg("I", "Transliterable? {0}", Languages(lang).Transliterable)
+                    Wdbg(DebugLevel.I, "Transliterable? {0}", Languages(lang).Transliterable)
                     If Languages(lang).Transliterable Then
                         W(DoTranslation("The language you've selected contains two variants. Select one:") + vbNewLine, True, ColTypes.Neutral)
                         W(DoTranslation("1. Transliterated", lang), True, ColTypes.Neutral)
@@ -156,7 +156,7 @@ Public Module Translate
                             W(DoTranslation("Select your choice:") + " ", False, ColTypes.Input)
                             Dim Answer As Integer
                             If Integer.TryParse(Console.ReadLine, Answer) Then
-                                Wdbg("I", "Choice: {0}", Answer)
+                                Wdbg(DebugLevel.I, "Choice: {0}", Answer)
                                 Select Case Answer
                                     Case 1, 2
                                         If Answer = 2 Then lang += "-T"
@@ -197,74 +197,74 @@ Public Module Translate
                     Case "arb-T"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(1256)
                         Console.InputEncoding = Text.Encoding.GetEncoding(1256)
-                        Wdbg("I", "Encoding set successfully for Arabic to {0}.", Console.OutputEncoding.EncodingName)
+                        Wdbg(DebugLevel.I, "Encoding set successfully for Arabic to {0}.", Console.OutputEncoding.EncodingName)
                     Case "ben-T"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(57003)
                         Console.InputEncoding = Text.Encoding.GetEncoding(57003)
-                        Wdbg("I", "Encoding set successfully for Bengali to {0}.", Console.OutputEncoding.EncodingName)
+                        Wdbg(DebugLevel.I, "Encoding set successfully for Bengali to {0}.", Console.OutputEncoding.EncodingName)
                     Case "chi-T"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(936)
                         Console.InputEncoding = Text.Encoding.GetEncoding(936)
-                        Wdbg("I", "Encoding set successfully for Chinese to {0}.", Console.OutputEncoding.EncodingName)
+                        Wdbg(DebugLevel.I, "Encoding set successfully for Chinese to {0}.", Console.OutputEncoding.EncodingName)
                     Case "jpn-T"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(932)
                         Console.InputEncoding = Text.Encoding.GetEncoding(932)
-                        Wdbg("I", "Encoding set successfully for Japanese to {0}.", Console.OutputEncoding.EncodingName)
+                        Wdbg(DebugLevel.I, "Encoding set successfully for Japanese to {0}.", Console.OutputEncoding.EncodingName)
                     Case "kor-T"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(949)
                         Console.InputEncoding = Text.Encoding.GetEncoding(949)
-                        Wdbg("I", "Encoding set successfully for Korean to {0}.", Console.OutputEncoding.EncodingName)
+                        Wdbg(DebugLevel.I, "Encoding set successfully for Korean to {0}.", Console.OutputEncoding.EncodingName)
                     Case "pun-T"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(57011)
                         Console.InputEncoding = Text.Encoding.GetEncoding(57011)
-                        Wdbg("I", "Encoding set successfully for Punjabi to {0}.", Console.OutputEncoding.EncodingName)
+                        Wdbg(DebugLevel.I, "Encoding set successfully for Punjabi to {0}.", Console.OutputEncoding.EncodingName)
                     Case "rus-T"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(866)
                         Console.InputEncoding = Text.Encoding.GetEncoding(866)
-                        Wdbg("I", "Encoding set successfully for Russian to {0}.", Console.OutputEncoding.EncodingName)
+                        Wdbg(DebugLevel.I, "Encoding set successfully for Russian to {0}.", Console.OutputEncoding.EncodingName)
                     Case "srb-T"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(21025)
                         Console.InputEncoding = Text.Encoding.GetEncoding(21025)
-                        Wdbg("I", "Encoding set successfully for Serbian to {0}.", Console.OutputEncoding.EncodingName)
+                        Wdbg(DebugLevel.I, "Encoding set successfully for Serbian to {0}.", Console.OutputEncoding.EncodingName)
                     Case "dan"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(865)
                         Console.InputEncoding = Text.Encoding.GetEncoding(865)
-                        Wdbg("I", "Encoding set successfully for Danish to {0}.", Console.OutputEncoding.EncodingName)
+                        Wdbg(DebugLevel.I, "Encoding set successfully for Danish to {0}.", Console.OutputEncoding.EncodingName)
                     Case "vtn"
                         Console.OutputEncoding = Text.Encoding.GetEncoding(1258)
                         Console.InputEncoding = Text.Encoding.GetEncoding(1258)
-                        Wdbg("I", "Encoding set successfully for Vietnamese to {0}.", Console.OutputEncoding.EncodingName)
+                        Wdbg(DebugLevel.I, "Encoding set successfully for Vietnamese to {0}.", Console.OutputEncoding.EncodingName)
                     Case Else
                         Console.OutputEncoding = Text.Encoding.GetEncoding(65001)
                         Console.InputEncoding = Text.Encoding.GetEncoding(65001)
-                        Wdbg("I", "Encoding set successfully to {0}.", Console.OutputEncoding.EncodingName)
+                        Wdbg(DebugLevel.I, "Encoding set successfully to {0}.", Console.OutputEncoding.EncodingName)
                 End Select
             Catch ex As Exception
                 NotifyCodepageError = True
-                Wdbg("W", "Codepage can't be set. {0}", ex.Message)
+                Wdbg(DebugLevel.W, "Codepage can't be set. {0}", ex.Message)
                 WStkTrc(ex)
             End Try
 
             'Set current language
             Try
                 Dim OldModDescGeneric As String = DoTranslation("Command defined by ")
-                Wdbg("I", "Translating kernel to {0}.", lang)
+                Wdbg(DebugLevel.I, "Translating kernel to {0}.", lang)
                 currentLang = lang
                 Dim Token As JToken = GetConfigCategory(ConfigCategory.General)
                 SetConfigValueAndWrite(ConfigCategory.General, Token, "Language", currentLang)
-                Wdbg("I", "Saved new language.")
+                Wdbg(DebugLevel.I, "Saved new language.")
 
                 'Update help list for translated help
                 ReloadGenericDefs(OldModDescGeneric)
 
                 'Update Culture if applicable
                 If LangChangeCulture Then
-                    Wdbg("I", "Updating culture.")
+                    Wdbg(DebugLevel.I, "Updating culture.")
                     UpdateCulture()
                 End If
                 Return True
             Catch ex As Exception
-                Wdbg("W", "Language can't be set. {0}", ex.Message)
+                Wdbg(DebugLevel.W, "Language can't be set. {0}", ex.Message)
                 WStkTrc(ex)
             End Try
         Else
@@ -278,16 +278,16 @@ Public Module Translate
     ''' </summary>
     Public Sub UpdateCulture()
         Dim StrCult As String = If(Not GetCulturesFromCurrentLang.Count = 0, GetCulturesFromCurrentLang(0).EnglishName, CultureInfo.CurrentCulture.EnglishName)
-        Wdbg("I", "Culture for {0} is {1}", currentLang, StrCult)
+        Wdbg(DebugLevel.I, "Culture for {0} is {1}", currentLang, StrCult)
         Dim Cults As CultureInfo() = CultureInfo.GetCultures(CultureTypes.AllCultures)
-        Wdbg("I", "Parsing {0} cultures for {1}", Cults.Length, StrCult)
+        Wdbg(DebugLevel.I, "Parsing {0} cultures for {1}", Cults.Length, StrCult)
         For Each Cult As CultureInfo In Cults
             If Cult.EnglishName = StrCult Then
-                Wdbg("I", "Found. Changing culture...")
+                Wdbg(DebugLevel.I, "Found. Changing culture...")
                 CurrentCult = Cult
                 Dim Token As JToken = GetConfigCategory(ConfigCategory.General)
                 SetConfigValueAndWrite(ConfigCategory.General, Token, "Culture", CurrentCult.Name)
-                Wdbg("I", "Saved new culture.")
+                Wdbg(DebugLevel.I, "Saved new culture.")
                 Exit For
             End If
         Next
@@ -301,11 +301,11 @@ Public Module Translate
         Dim Cultures As List(Of CultureInfo) = GetCulturesFromCurrentLang()
         For Each Cult As CultureInfo In Cultures
             If Cult.EnglishName = Culture Then
-                Wdbg("I", "Found. Changing culture...")
+                Wdbg(DebugLevel.I, "Found. Changing culture...")
                 CurrentCult = Cult
                 Dim Token As JToken = GetConfigCategory(ConfigCategory.General)
                 SetConfigValueAndWrite(ConfigCategory.General, Token, "Culture", CurrentCult.Name)
-                Wdbg("I", "Saved new culture.")
+                Wdbg(DebugLevel.I, "Saved new culture.")
                 Exit For
             End If
         Next

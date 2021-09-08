@@ -40,7 +40,7 @@ Public Module RSSGetCommand
                         Dim ArticleIndex As Integer = Arguments(0) - 1
                         If ArticleIndex > RSSFeedInstance.FeedArticles.Count - 1 Then
                             W(DoTranslation("Article number couldn't be bigger than the available articles."), True, ColTypes.Error)
-                            Wdbg("E", "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSFeedInstance.FeedArticles.Count - 1)
+                            Wdbg(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSFeedInstance.FeedArticles.Count - 1)
                         Else
                             Dim Article As RSSArticle = RSSFeedInstance.FeedArticles(ArticleIndex)
                             W("- " + DoTranslation("Title:") + " ", False, ColTypes.ListEntry)
@@ -82,23 +82,23 @@ Public Module RSSGetCommand
                         Dim ArticleIndex As Integer = Arguments(0) - 1
                         If ArticleIndex > RSSFeedInstance.FeedArticles.Count - 1 Then
                             W(DoTranslation("Article number couldn't be bigger than the available articles."), True, ColTypes.Error)
-                            Wdbg("E", "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSFeedInstance.FeedArticles.Count - 1)
+                            Wdbg(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSFeedInstance.FeedArticles.Count - 1)
                         Else
                             If Not String.IsNullOrWhiteSpace(RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink) Then
-                                Wdbg("I", "Opening web browser to {0}...", RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
+                                Wdbg(DebugLevel.I, "Opening web browser to {0}...", RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
                                 Process.Start(RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
                             Else
                                 W(DoTranslation("Article doesn't have a link!"), True, ColTypes.Error)
-                                Wdbg("E", "Tried to open a web browser to link of article number {0}, but it's empty. ""{1}""", ArticleIndex, RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
+                                Wdbg(DebugLevel.E, "Tried to open a web browser to link of article number {0}, but it's empty. ""{1}""", ArticleIndex, RSSFeedInstance.FeedArticles(ArticleIndex).ArticleLink)
                             End If
                         End If
                     End If
                 Case "help"
                     If Arguments?.Length > 0 Then
-                        Wdbg("I", "Requested help for {0}", Arguments(0))
+                        Wdbg(DebugLevel.I, "Requested help for {0}", Arguments(0))
                         ShowHelp(Arguments(0), ShellCommandType.RSSShell)
                     Else
-                        Wdbg("I", "Requested help for all commands")
+                        Wdbg(DebugLevel.I, "Requested help for all commands")
                         ShowHelp(ShellCommandType.SFTPShell)
                     End If
                 Case "exit"
@@ -118,14 +118,14 @@ Public Module RSSGetCommand
             'See if the command is done (passed all required arguments)
             If RSSCommands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Error, Command)
-                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, Arguments?.Length)
+                Wdbg(DebugLevel.E, "Passed arguments were not enough to run command {0}. Arguments passed: {1}", Command, Arguments?.Length)
                 ShowHelp(Command, ShellCommandType.RSSShell)
             End If
         Catch taex As ThreadAbortException
             Exit Sub
         Catch ex As Exception
             W(DoTranslation("Error trying to run command: {0}"), True, ColTypes.Error, ex.Message)
-            Wdbg("E", "Error running command {0}: {1}", CommandText.Split(" ")(0), ex.Message)
+            Wdbg(DebugLevel.E, "Error running command {0}: {1}", CommandText.Split(" ")(0), ex.Message)
             WStkTrc(ex)
             EventManager.RaiseRSSCommandError(RSSFeedInstance.FeedUrl, CommandText, ex)
         End Try

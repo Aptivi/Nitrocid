@@ -32,20 +32,20 @@ Public Module MailTransfer
     Public Sub MailPrintMessage(MessageNum As Integer, Optional Decrypt As Boolean = False)
         Dim Message As Integer = MessageNum - 1
         Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1
-        Wdbg("I", "Message number {0}", Message)
+        Wdbg(DebugLevel.I, "Message number {0}", Message)
         If Message < 0 Then
-            Wdbg("E", "Trying to access message 0 or less than 0.")
+            Wdbg(DebugLevel.E, "Trying to access message 0 or less than 0.")
             W(DoTranslation("Message number may not be negative or zero."), True, ColTypes.Error)
             Exit Sub
         ElseIf Message > MaxMessagesIndex Then
-            Wdbg("E", "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex)
+            Wdbg(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex)
             W(DoTranslation("Message specified is not found."), True, ColTypes.Error)
             Exit Sub
         End If
 
         SyncLock IMAP_Client.SyncRoot
             'Get message
-            Wdbg("I", "Getting message...")
+            Wdbg(DebugLevel.I, "Getting message...")
             Dim Msg As MimeMessage
             If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
                 Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
@@ -58,30 +58,30 @@ Public Module MailTransfer
             Console.WriteLine()
 
             'Print all the addresses that sent the mail
-            Wdbg("I", "{0} senders.", Msg.From.Count)
+            Wdbg(DebugLevel.I, "{0} senders.", Msg.From.Count)
             For Each Address As InternetAddress In Msg.From
-                Wdbg("I", "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
+                Wdbg(DebugLevel.I, "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
                 W(DoTranslation("- From {0}"), True, ColTypes.ListEntry, Address.ToString)
             Next
 
             'Print all the addresses that received the mail
-            Wdbg("I", "{0} receivers.", Msg.To.Count)
+            Wdbg(DebugLevel.I, "{0} receivers.", Msg.To.Count)
             For Each Address As InternetAddress In Msg.To
-                Wdbg("I", "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
+                Wdbg(DebugLevel.I, "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
                 W(DoTranslation("- To {0}"), True, ColTypes.ListEntry, Address.ToString)
             Next
 
             'Print the date and time when the user received the mail
-            Wdbg("I", "Rendering time and date of {0}.", Msg.Date.DateTime.ToString)
+            Wdbg(DebugLevel.I, "Rendering time and date of {0}.", Msg.Date.DateTime.ToString)
             W(DoTranslation("- Sent at {0} in {1}"), True, ColTypes.ListEntry, RenderTime(Msg.Date.DateTime), RenderDate(Msg.Date.DateTime))
 
             'Prepare subject
             Console.WriteLine()
-            Wdbg("I", "Subject length: {0}, {1}", Msg.Subject.Length, Msg.Subject)
+            Wdbg(DebugLevel.I, "Subject length: {0}, {1}", Msg.Subject.Length, Msg.Subject)
             W($"- {Msg.Subject}", False, ColTypes.ListEntry)
 
             'Write a sign after the subject if attachments are found
-            Wdbg("I", "Attachments count: {0}", Msg.Attachments.Count)
+            Wdbg(DebugLevel.I, "Attachments count: {0}", Msg.Attachments.Count)
             If Msg.Attachments.Count > 0 Then
                 W(" - [*]", True, ColTypes.ListEntry)
             Else
@@ -90,39 +90,39 @@ Public Module MailTransfer
 
             'Prepare body
             Console.WriteLine()
-            Wdbg("I", "Displaying body...")
+            Wdbg(DebugLevel.I, "Displaying body...")
             Dim DecryptedMessage As Dictionary(Of String, MimeEntity)
-            Wdbg("I", "To decrypt: {0}", Decrypt)
+            Wdbg(DebugLevel.I, "To decrypt: {0}", Decrypt)
             If Decrypt Then
                 DecryptedMessage = DecryptMessage(Msg)
-                Wdbg("I", "Decrypted messages length: {0}", DecryptedMessage.Count)
+                Wdbg(DebugLevel.I, "Decrypted messages length: {0}", DecryptedMessage.Count)
                 Dim DecryptedEntity As MimeEntity = DecryptedMessage("Body")
                 Dim DecryptedStream As New MemoryStream
-                Wdbg("I", $"Decrypted message type: {If(TypeOf DecryptedEntity Is Multipart, "Multipart", "Singlepart")}")
+                Wdbg(DebugLevel.I, $"Decrypted message type: {If(TypeOf DecryptedEntity Is Multipart, "Multipart", "Singlepart")}")
                 If TypeOf DecryptedEntity Is Multipart Then
                     Dim MultiEntity As Multipart = CType(DecryptedEntity, Multipart)
-                    Wdbg("I", $"Decrypted message entity is {If(MultiEntity IsNot Nothing, "multipart", "nothing")}")
+                    Wdbg(DebugLevel.I, $"Decrypted message entity is {If(MultiEntity IsNot Nothing, "multipart", "nothing")}")
                     If MultiEntity IsNot Nothing Then
                         For EntityNumber As Integer = 0 To MultiEntity.Count - 1
-                            Wdbg("I", $"Entity number {EntityNumber} is {If(MultiEntity(EntityNumber).IsAttachment, "an attachment", "not an attachment")}")
+                            Wdbg(DebugLevel.I, $"Entity number {EntityNumber} is {If(MultiEntity(EntityNumber).IsAttachment, "an attachment", "not an attachment")}")
                             If Not MultiEntity(EntityNumber).IsAttachment Then
                                 MultiEntity(EntityNumber).WriteTo(DecryptedStream, True)
-                                Wdbg("I", "Written {0} bytes to stream.", DecryptedStream.Length)
+                                Wdbg(DebugLevel.I, "Written {0} bytes to stream.", DecryptedStream.Length)
                                 DecryptedStream.Position = 0
                                 Dim DecryptedByte(DecryptedStream.Length) As Byte
                                 DecryptedStream.Read(DecryptedByte, 0, DecryptedStream.Length)
-                                Wdbg("I", "Written {0} bytes to buffer.", DecryptedByte.Length)
+                                Wdbg(DebugLevel.I, "Written {0} bytes to buffer.", DecryptedByte.Length)
                                 W(Encoding.Default.GetString(DecryptedByte), True, ColTypes.ListValue)
                             End If
                         Next
                     End If
                 Else
                     DecryptedEntity.WriteTo(DecryptedStream, True)
-                    Wdbg("I", "Written {0} bytes to stream.", DecryptedStream.Length)
+                    Wdbg(DebugLevel.I, "Written {0} bytes to stream.", DecryptedStream.Length)
                     DecryptedStream.Position = 0
                     Dim DecryptedByte(DecryptedStream.Length) As Byte
                     DecryptedStream.Read(DecryptedByte, 0, DecryptedStream.Length)
-                    Wdbg("I", "Written {0} bytes to buffer.", DecryptedByte.Length)
+                    Wdbg(DebugLevel.I, "Written {0} bytes to buffer.", DecryptedByte.Length)
                     W(Encoding.Default.GetString(DecryptedByte), True, ColTypes.ListValue)
                 End If
             Else
@@ -136,22 +136,22 @@ Public Module MailTransfer
                 W(DoTranslation("Attachments:"), True, ColTypes.Neutral)
                 Dim AttachmentEntities As New List(Of MimeEntity)
                 If Decrypt Then
-                    Wdbg("I", "Parsing attachments...")
+                    Wdbg(DebugLevel.I, "Parsing attachments...")
                     For DecryptedEntityNumber As Integer = 0 To DecryptedMessage.Count - 1
-                        Wdbg("I", "Is entity number {0} an attachment? {1}", DecryptedEntityNumber, DecryptedMessage.Keys(DecryptedEntityNumber).Contains("Attachment"))
-                        Wdbg("I", "Is entity number {0} a body that is a multipart? {1}", DecryptedEntityNumber, DecryptedMessage.Keys(DecryptedEntityNumber) = "Body" And TypeOf DecryptedMessage("Body") Is Multipart)
+                        Wdbg(DebugLevel.I, "Is entity number {0} an attachment? {1}", DecryptedEntityNumber, DecryptedMessage.Keys(DecryptedEntityNumber).Contains("Attachment"))
+                        Wdbg(DebugLevel.I, "Is entity number {0} a body that is a multipart? {1}", DecryptedEntityNumber, DecryptedMessage.Keys(DecryptedEntityNumber) = "Body" And TypeOf DecryptedMessage("Body") Is Multipart)
                         If DecryptedMessage.Keys(DecryptedEntityNumber).Contains("Attachment") Then
-                            Wdbg("I", "Adding entity {0} to attachment entities...", DecryptedEntityNumber)
+                            Wdbg(DebugLevel.I, "Adding entity {0} to attachment entities...", DecryptedEntityNumber)
                             AttachmentEntities.Add(DecryptedMessage.Values(DecryptedEntityNumber))
                         ElseIf DecryptedMessage.Keys(DecryptedEntityNumber) = "Body" And TypeOf DecryptedMessage("Body") Is Multipart Then
                             Dim MultiEntity As Multipart = CType(DecryptedMessage("Body"), Multipart)
-                            Wdbg("I", $"Decrypted message entity is {If(MultiEntity IsNot Nothing, "multipart", "nothing")}")
+                            Wdbg(DebugLevel.I, $"Decrypted message entity is {If(MultiEntity IsNot Nothing, "multipart", "nothing")}")
                             If MultiEntity IsNot Nothing Then
-                                Wdbg("I", "{0} entities found.", MultiEntity.Count)
+                                Wdbg(DebugLevel.I, "{0} entities found.", MultiEntity.Count)
                                 For EntityNumber As Integer = 0 To MultiEntity.Count - 1
-                                    Wdbg("I", $"Entity number {EntityNumber} is {If(MultiEntity(EntityNumber).IsAttachment, "an attachment", "not an attachment")}")
+                                    Wdbg(DebugLevel.I, $"Entity number {EntityNumber} is {If(MultiEntity(EntityNumber).IsAttachment, "an attachment", "not an attachment")}")
                                     If MultiEntity(EntityNumber).IsAttachment Then
-                                        Wdbg("I", "Adding entity {0} to attachment list...", EntityNumber)
+                                        Wdbg(DebugLevel.I, "Adding entity {0} to attachment list...", EntityNumber)
                                         AttachmentEntities.Add(MultiEntity(EntityNumber))
                                     End If
                                 Next
@@ -162,12 +162,12 @@ Public Module MailTransfer
                     AttachmentEntities = Msg.Attachments
                 End If
                 For Each Attachment As MimeEntity In AttachmentEntities
-                    Wdbg("I", "Attachment ID: {0}", Attachment.ContentId)
+                    Wdbg(DebugLevel.I, "Attachment ID: {0}", Attachment.ContentId)
                     If TypeOf Attachment Is MessagePart Then
-                        Wdbg("I", "Attachment is a message.")
+                        Wdbg(DebugLevel.I, "Attachment is a message.")
                         W($"- {Attachment.ContentDisposition?.FileName}", True, ColTypes.Neutral)
                     Else
-                        Wdbg("I", "Attachment is a file.")
+                        Wdbg(DebugLevel.I, "Attachment is a file.")
                         Dim AttachmentPart As MimePart = Attachment
                         W($"- {AttachmentPart.FileName}", True, ColTypes.Neutral)
                     End If
@@ -184,27 +184,27 @@ Public Module MailTransfer
     ''' <returns>A decrypted message, or null if unsuccessful.</returns>
     Public Function DecryptMessage(Text As MimeMessage) As Dictionary(Of String, MimeEntity)
         Dim EncryptedDict As New Dictionary(Of String, MimeEntity)
-        Wdbg("I", $"Encrypted message type: {If(TypeOf Text.Body Is MultipartEncrypted, "Multipart", "Singlepart")}")
+        Wdbg(DebugLevel.I, $"Encrypted message type: {If(TypeOf Text.Body Is MultipartEncrypted, "Multipart", "Singlepart")}")
         If TypeOf Text.Body Is MultipartEncrypted Then
             Dim Encrypted = CType(Text.Body, MultipartEncrypted)
-            Wdbg("I", $"Message type: {If(Encrypted IsNot Nothing, "MultipartEncrypted", "Nothing")}")
-            Wdbg("I", "Decrypting...")
+            Wdbg(DebugLevel.I, $"Message type: {If(Encrypted IsNot Nothing, "MultipartEncrypted", "Nothing")}")
+            Wdbg(DebugLevel.I, "Decrypting...")
             EncryptedDict.Add("Body", Encrypted.Decrypt(New PGPContext))
         Else
-            Wdbg("W", "Trying to decrypt plain text. Returning body...")
+            Wdbg(DebugLevel.W, "Trying to decrypt plain text. Returning body...")
             EncryptedDict.Add("Body", Text.Body)
         End If
         Dim AttachmentNumber As Integer = 1
         For Each TextAttachment As MimeEntity In Text.Attachments
-            Wdbg("I", "Attachment number {0}", AttachmentNumber)
-            Wdbg("I", $"Encrypted attachment type: {If(TypeOf TextAttachment Is MultipartEncrypted, "Multipart", "Singlepart")}")
+            Wdbg(DebugLevel.I, "Attachment number {0}", AttachmentNumber)
+            Wdbg(DebugLevel.I, $"Encrypted attachment type: {If(TypeOf TextAttachment Is MultipartEncrypted, "Multipart", "Singlepart")}")
             If TypeOf TextAttachment Is MultipartEncrypted Then
                 Dim Encrypted = CType(TextAttachment, MultipartEncrypted)
-                Wdbg("I", $"Attachment type: {If(Encrypted IsNot Nothing, "MultipartEncrypted", "Nothing")}")
-                Wdbg("I", "Decrypting...")
+                Wdbg(DebugLevel.I, $"Attachment type: {If(Encrypted IsNot Nothing, "MultipartEncrypted", "Nothing")}")
+                Wdbg(DebugLevel.I, "Decrypting...")
                 EncryptedDict.Add("Attachment " & AttachmentNumber, Encrypted.Decrypt(New PGPContext))
             Else
-                Wdbg("W", "Trying to decrypt plain attachment. Returning body...")
+                Wdbg(DebugLevel.W, "Trying to decrypt plain attachment. Returning body...")
                 EncryptedDict.Add("Attachment " & AttachmentNumber, TextAttachment)
             End If
             AttachmentNumber += 1
@@ -224,17 +224,17 @@ Public Module MailTransfer
             Try
                 Dim FinalMessage As New MimeMessage
                 FinalMessage.From.Add(MailboxAddress.Parse(Mail_Authentication.UserName))
-                Wdbg("I", "Added sender to FinalMessage.From.")
+                Wdbg(DebugLevel.I, "Added sender to FinalMessage.From.")
                 FinalMessage.To.Add(MailboxAddress.Parse(Recipient))
-                Wdbg("I", "Added address to FinalMessage.To.")
+                Wdbg(DebugLevel.I, "Added address to FinalMessage.To.")
                 FinalMessage.Subject = Subject
-                Wdbg("I", "Added subject to FinalMessage.Subject.")
+                Wdbg(DebugLevel.I, "Added subject to FinalMessage.Subject.")
                 FinalMessage.Body = New TextPart(TextFormat.Plain) With {.Text = Body.ToString}
-                Wdbg("I", "Added body to FinalMessage.Body (plain text). Sending message...")
+                Wdbg(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...")
                 SMTP_Client.Send(FinalMessage)
                 Return True
             Catch ex As Exception
-                Wdbg("E", "Failed to send message: {0}", ex.Message)
+                Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
                 WStkTrc(ex)
             End Try
             Return False
@@ -253,17 +253,17 @@ Public Module MailTransfer
             Try
                 Dim FinalMessage As New MimeMessage
                 FinalMessage.From.Add(MailboxAddress.Parse(Mail_Authentication.UserName))
-                Wdbg("I", "Added sender to FinalMessage.From.")
+                Wdbg(DebugLevel.I, "Added sender to FinalMessage.From.")
                 FinalMessage.To.Add(MailboxAddress.Parse(Recipient))
-                Wdbg("I", "Added address to FinalMessage.To.")
+                Wdbg(DebugLevel.I, "Added address to FinalMessage.To.")
                 FinalMessage.Subject = Subject
-                Wdbg("I", "Added subject to FinalMessage.Subject.")
+                Wdbg(DebugLevel.I, "Added subject to FinalMessage.Subject.")
                 FinalMessage.Body = Body
-                Wdbg("I", "Added body to FinalMessage.Body (plain text). Sending message...")
+                Wdbg(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...")
                 SMTP_Client.Send(FinalMessage)
                 Return True
             Catch ex As Exception
-                Wdbg("E", "Failed to send message: {0}", ex.Message)
+                Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
                 WStkTrc(ex)
             End Try
             Return False
@@ -282,17 +282,17 @@ Public Module MailTransfer
             Try
                 Dim FinalMessage As New MimeMessage
                 FinalMessage.From.Add(MailboxAddress.Parse(Mail_Authentication.UserName))
-                Wdbg("I", "Added sender to FinalMessage.From.")
+                Wdbg(DebugLevel.I, "Added sender to FinalMessage.From.")
                 FinalMessage.To.Add(MailboxAddress.Parse(Recipient))
-                Wdbg("I", "Added address to FinalMessage.To.")
+                Wdbg(DebugLevel.I, "Added address to FinalMessage.To.")
                 FinalMessage.Subject = Subject
-                Wdbg("I", "Added subject to FinalMessage.Subject.")
+                Wdbg(DebugLevel.I, "Added subject to FinalMessage.Subject.")
                 FinalMessage.Body = MultipartEncrypted.Encrypt(New PGPContext, FinalMessage.To.Mailboxes, Body)
-                Wdbg("I", "Added body to FinalMessage.Body (plain text). Sending message...")
+                Wdbg(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...")
                 SMTP_Client.Send(FinalMessage)
                 Return True
             Catch ex As Exception
-                Wdbg("E", "Failed to send message: {0}", ex.Message)
+                Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
                 WStkTrc(ex)
             End Try
             Return False

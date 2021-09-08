@@ -27,7 +27,7 @@ Public Module UESHVariables
     Public Sub InitializeVariable(var As String)
         If Not ShellVariables.ContainsKey(var) Then
             ShellVariables.Add(var, "")
-            Wdbg("I", "Initialized variable {0}", var)
+            Wdbg(DebugLevel.I, "Initialized variable {0}", var)
         End If
     End Sub
 
@@ -40,7 +40,7 @@ Public Module UESHVariables
     Function GetVariableCommand(var As String, cmd As String) As String
         If Not Commands(cmd.Split(" ")(0)).SettingVariable Then
             Dim newcmd As String = cmd.Replace(var, ShellVariables(var))
-            Wdbg("I", "Replaced variable {0} with their values. Result: {1}", var, newcmd)
+            Wdbg(DebugLevel.I, "Replaced variable {0} with their values. Result: {1}", var, newcmd)
             Return newcmd
         End If
         Return cmd
@@ -55,7 +55,7 @@ Public Module UESHVariables
         Try
             Return ShellVariables(var)
         Catch ex As Exception
-            Wdbg("E", "Error getting variable {0}: {1}", var, ex.Message)
+            Wdbg(DebugLevel.E, "Error getting variable {0}: {1}", var, ex.Message)
         End Try
         Return ""
     End Function
@@ -69,10 +69,10 @@ Public Module UESHVariables
         Try
             If Not ShellVariables.ContainsKey(var) Then InitializeVariable(var)
             ShellVariables(var) = value
-            Wdbg("I", "Set variable {0} to {1}", var, value)
+            Wdbg(DebugLevel.I, "Set variable {0} to {1}", var, value)
             Return True
         Catch ex As Exception
-            Wdbg("E", "Error setting variable {0}: {1}", var, ex.Message)
+            Wdbg(DebugLevel.E, "Error setting variable {0}: {1}", var, ex.Message)
         End Try
         Return False
     End Function

@@ -28,11 +28,11 @@ Public Module TextEditTools
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function TextEdit_OpenTextFile(File As String) As Boolean
         Try
-            Wdbg("I", "Trying to open file {0}...", File)
+            Wdbg(DebugLevel.I, "Trying to open file {0}...", File)
             TextEdit_FileStream = New FileStream(File, FileMode.Open)
             If TextEdit_FileLines Is Nothing Then TextEdit_FileLines = New List(Of String)
             If TextEdit_FileLinesOrig Is Nothing Then TextEdit_FileLinesOrig = New List(Of String)
-            Wdbg("I", "File {0} is open. Length: {1}, Pos: {2}", File, TextEdit_FileStream.Length, TextEdit_FileStream.Position)
+            Wdbg(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, TextEdit_FileStream.Length, TextEdit_FileStream.Position)
             Dim TextFileStreamReader As New StreamReader(TextEdit_FileStream)
             Do While Not TextFileStreamReader.EndOfStream
                 Dim StreamLine As String = TextFileStreamReader.ReadLine
@@ -42,7 +42,7 @@ Public Module TextEditTools
             TextEdit_FileStream.Seek(0, SeekOrigin.Begin)
             Return True
         Catch ex As Exception
-            Wdbg("E", "Open file {0} failed: {1}", File, ex.Message)
+            Wdbg(DebugLevel.E, "Open file {0} failed: {1}", File, ex.Message)
             WStkTrc(ex)
             Return False
         End Try
@@ -54,15 +54,15 @@ Public Module TextEditTools
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function TextEdit_CloseTextFile() As Boolean
         Try
-            Wdbg("I", "Trying to close file...")
+            Wdbg(DebugLevel.I, "Trying to close file...")
             TextEdit_FileStream.Close()
             TextEdit_FileStream = Nothing
-            Wdbg("I", "File is no longer open.")
+            Wdbg(DebugLevel.I, "File is no longer open.")
             TextEdit_FileLines.Clear()
             TextEdit_FileLinesOrig.Clear()
             Return True
         Catch ex As Exception
-            Wdbg("E", "Closing file failed: {0}", ex.Message)
+            Wdbg(DebugLevel.E, "Closing file failed: {0}", ex.Message)
             WStkTrc(ex)
             Return False
         End Try
@@ -74,14 +74,14 @@ Public Module TextEditTools
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function TextEdit_SaveTextFile(ClearLines As Boolean) As Boolean
         Try
-            Wdbg("I", "Trying to save file...")
+            Wdbg(DebugLevel.I, "Trying to save file...")
             TextEdit_FileStream.SetLength(0)
-            Wdbg("I", "Length set to 0.")
+            Wdbg(DebugLevel.I, "Length set to 0.")
             Dim FileLinesByte() As Byte = Encoding.Default.GetBytes(TextEdit_FileLines.ToArray.Join(vbNewLine))
-            Wdbg("I", "Converted lines to bytes. Length: {0}", FileLinesByte.Length)
+            Wdbg(DebugLevel.I, "Converted lines to bytes. Length: {0}", FileLinesByte.Length)
             TextEdit_FileStream.Write(FileLinesByte, 0, FileLinesByte.Length)
             TextEdit_FileStream.Flush()
-            Wdbg("I", "File is saved.")
+            Wdbg(DebugLevel.I, "File is saved.")
             If ClearLines Then
                 TextEdit_FileLines.Clear()
             End If
@@ -89,7 +89,7 @@ Public Module TextEditTools
             TextEdit_FileLinesOrig.AddRange(TextEdit_FileLines)
             Return True
         Catch ex As Exception
-            Wdbg("E", "Saving file failed: {0}", ex.Message)
+            Wdbg(DebugLevel.E, "Saving file failed: {0}", ex.Message)
             WStkTrc(ex)
             Return False
         End Try
@@ -140,11 +140,11 @@ Public Module TextEditTools
     Public Sub TextEdit_RemoveLine(LineNumber As Integer)
         If TextEdit_FileStream IsNot Nothing Then
             Dim LineIndex As Integer = LineNumber - 1
-            Wdbg("I", "Got line index: {0}", LineIndex)
-            Wdbg("I", "Old file lines: {0}", TextEdit_FileLines.Count)
+            Wdbg(DebugLevel.I, "Got line index: {0}", LineIndex)
+            Wdbg(DebugLevel.I, "Old file lines: {0}", TextEdit_FileLines.Count)
             If LineNumber <= TextEdit_FileLines.Count Then
                 TextEdit_FileLines.RemoveAt(LineIndex)
-                Wdbg("I", "New file lines: {0}", TextEdit_FileLines.Count)
+                Wdbg(DebugLevel.I, "New file lines: {0}", TextEdit_FileLines.Count)
             Else
                 Throw New ArgumentOutOfRangeException(NameOf(LineNumber), LineNumber, DoTranslation("The specified line number may not be larger than the last file line number."))
             End If
@@ -161,9 +161,9 @@ Public Module TextEditTools
     Public Sub TextEdit_Replace(From As String, [With] As String)
         If String.IsNullOrEmpty(From) Then Throw New ArgumentNullException(NameOf(From))
         If TextEdit_FileStream IsNot Nothing Then
-            Wdbg("I", "Source: {0}, Target: {1}", From, [With])
+            Wdbg(DebugLevel.I, "Source: {0}, Target: {1}", From, [With])
             For LineIndex As Integer = 0 To TextEdit_FileLines.Count - 1
-                Wdbg("I", "Replacing ""{0}"" with ""{1}"" in line {2}", From, [With], LineIndex + 1)
+                Wdbg(DebugLevel.I, "Replacing ""{0}"" with ""{1}"" in line {2}", From, [With], LineIndex + 1)
                 TextEdit_FileLines(LineIndex) = TextEdit_FileLines(LineIndex).Replace(From, [With])
             Next
         Else
@@ -180,11 +180,11 @@ Public Module TextEditTools
     Public Sub TextEdit_Replace(From As String, [With] As String, LineNumber As Integer)
         If String.IsNullOrEmpty(From) Then Throw New ArgumentNullException(NameOf(From))
         If TextEdit_FileStream IsNot Nothing Then
-            Wdbg("I", "Source: {0}, Target: {1}, Line Number: {2}", From, [With], LineNumber)
-            Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
+            Wdbg(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", From, [With], LineNumber)
+            Wdbg(DebugLevel.I, "File lines: {0}", TextEdit_FileLines.Count)
             Dim LineIndex As Long = LineNumber - 1
             If LineNumber <= TextEdit_FileLines.Count Then
-                Wdbg("I", "Replacing ""{0}"" with ""{1}"" in line {2}", From, [With], LineIndex + 1)
+                Wdbg(DebugLevel.I, "Replacing ""{0}"" with ""{1}"" in line {2}", From, [With], LineIndex + 1)
                 TextEdit_FileLines(LineIndex) = TextEdit_FileLines(LineIndex).Replace(From, [With])
             Else
                 Throw New ArgumentOutOfRangeException(NameOf(LineNumber), LineNumber, DoTranslation("The specified line number may not be larger than the last file line number."))
@@ -203,12 +203,12 @@ Public Module TextEditTools
         If String.IsNullOrEmpty(Word) Then Throw New ArgumentNullException(NameOf(Word))
         If TextEdit_FileStream IsNot Nothing Then
             Dim LineIndex As Integer = LineNumber - 1
-            Wdbg("I", "Word/Phrase: {0}, Line: {1}", Word, LineNumber)
-            Wdbg("I", "Got line index: {0}", LineIndex)
-            Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
+            Wdbg(DebugLevel.I, "Word/Phrase: {0}, Line: {1}", Word, LineNumber)
+            Wdbg(DebugLevel.I, "Got line index: {0}", LineIndex)
+            Wdbg(DebugLevel.I, "File lines: {0}", TextEdit_FileLines.Count)
             If LineNumber <= TextEdit_FileLines.Count Then
                 TextEdit_FileLines(LineIndex) = TextEdit_FileLines(LineIndex).Replace(Word, "")
-                Wdbg("I", "Removed {0}. Result: {1}", LineIndex, TextEdit_FileLines.Count)
+                Wdbg(DebugLevel.I, "Removed {0}. Result: {1}", LineIndex, TextEdit_FileLines.Count)
             Else
                 Throw New ArgumentOutOfRangeException(NameOf(LineNumber), LineNumber, DoTranslation("The specified line number may not be larger than the last file line number."))
             End If
@@ -226,13 +226,13 @@ Public Module TextEditTools
         If TextEdit_FileStream IsNot Nothing Then
             Dim LineIndex As Integer = LineNumber - 1
             Dim CharIndex As Integer = CharNumber - 1
-            Wdbg("I", "Char number: {0}, Line: {1}", CharNumber, LineNumber)
-            Wdbg("I", "Got line index: {0}", LineIndex)
-            Wdbg("I", "Got char index: {0}", CharIndex)
-            Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
+            Wdbg(DebugLevel.I, "Char number: {0}, Line: {1}", CharNumber, LineNumber)
+            Wdbg(DebugLevel.I, "Got line index: {0}", LineIndex)
+            Wdbg(DebugLevel.I, "Got char index: {0}", CharIndex)
+            Wdbg(DebugLevel.I, "File lines: {0}", TextEdit_FileLines.Count)
             If LineNumber <= TextEdit_FileLines.Count Then
                 TextEdit_FileLines(LineIndex) = TextEdit_FileLines(LineIndex).Remove(CharIndex, 1)
-                Wdbg("I", "Removed {0}. Result: {1}", LineIndex, TextEdit_FileLines(LineIndex))
+                Wdbg(DebugLevel.I, "Removed {0}. Result: {1}", LineIndex, TextEdit_FileLines(LineIndex))
             Else
                 Throw New ArgumentOutOfRangeException(NameOf(LineNumber), LineNumber, DoTranslation("The specified line number may not be larger than the last file line number."))
             End If
@@ -249,8 +249,8 @@ Public Module TextEditTools
         If TextEdit_FileStream IsNot Nothing Then
             Dim Lines As New Dictionary(Of Integer, Dictionary(Of Integer, String))
             Dim Results As New Dictionary(Of Integer, String)
-            Wdbg("I", "Char: {0}", [Char])
-            Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
+            Wdbg(DebugLevel.I, "Char: {0}", [Char])
+            Wdbg(DebugLevel.I, "File lines: {0}", TextEdit_FileLines.Count)
             For LineIndex As Integer = 0 To TextEdit_FileLines.Count - 1
                 For CharIndex As Integer = 0 To TextEdit_FileLines(LineIndex).Length - 1
                     If TextEdit_FileLines(LineIndex)(CharIndex) = [Char] Then
@@ -275,9 +275,9 @@ Public Module TextEditTools
         If TextEdit_FileStream IsNot Nothing Then
             Dim LineIndex As Integer = LineNumber - 1
             Dim Results As New Dictionary(Of Integer, String)
-            Wdbg("I", "Char: {0}, Line: {1}", [Char], LineNumber)
-            Wdbg("I", "Got line index: {0}", LineIndex)
-            Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
+            Wdbg(DebugLevel.I, "Char: {0}, Line: {1}", [Char], LineNumber)
+            Wdbg(DebugLevel.I, "Got line index: {0}", LineIndex)
+            Wdbg(DebugLevel.I, "File lines: {0}", TextEdit_FileLines.Count)
             If LineNumber <= TextEdit_FileLines.Count Then
                 For CharIndex As Integer = 0 To TextEdit_FileLines(LineIndex).Length - 1
                     If TextEdit_FileLines(LineIndex)(CharIndex) = [Char] Then
@@ -301,8 +301,8 @@ Public Module TextEditTools
         If TextEdit_FileStream IsNot Nothing Then
             Dim Lines As New Dictionary(Of Integer, Dictionary(Of Integer, String))
             Dim Results As New Dictionary(Of Integer, String)
-            Wdbg("I", "Word: {0}", Word)
-            Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
+            Wdbg(DebugLevel.I, "Word: {0}", Word)
+            Wdbg(DebugLevel.I, "File lines: {0}", TextEdit_FileLines.Count)
             For LineIndex As Integer = 0 To TextEdit_FileLines.Count - 1
                 Dim Words() As String = TextEdit_FileLines(LineIndex).Split(" ")
                 For WordIndex As Integer = 0 To Words.Length - 1
@@ -328,9 +328,9 @@ Public Module TextEditTools
         If TextEdit_FileStream IsNot Nothing Then
             Dim LineIndex As Integer = LineNumber - 1
             Dim Results As New Dictionary(Of Integer, String)
-            Wdbg("I", "Word: {0}, Line: {1}", Word, LineNumber)
-            Wdbg("I", "Got line index: {0}", LineIndex)
-            Wdbg("I", "File lines: {0}", TextEdit_FileLines.Count)
+            Wdbg(DebugLevel.I, "Word: {0}, Line: {1}", Word, LineNumber)
+            Wdbg(DebugLevel.I, "Got line index: {0}", LineIndex)
+            Wdbg(DebugLevel.I, "File lines: {0}", TextEdit_FileLines.Count)
             If LineNumber <= TextEdit_FileLines.Count Then
                 Dim Words() As String = TextEdit_FileLines(LineIndex).Split(" ")
                 For WordIndex As Integer = 0 To Words.Length - 1

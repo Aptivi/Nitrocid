@@ -30,7 +30,7 @@ Public Module LinotypoDisplay
     Sub Linotypo_DoWork(sender As Object, e As DoWorkEventArgs) Handles Linotypo.DoWork
         Console.Clear()
         Console.CursorVisible = False
-        Wdbg("I", "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+        Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         Try
             'Sanity checks
             If LinotypoTextColumns <= 0 Then
@@ -77,12 +77,12 @@ Public Module LinotypoDisplay
             Do While True
                 SleepNoBlock(LinotypoDelay, Linotypo)
                 If Linotypo.CancellationPending = True Then
-                    Wdbg("W", "Cancellation is pending. Cleaning everything up...")
+                    Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
                     SetInputColor()
                     LoadBack()
                     Console.CursorVisible = True
-                    Wdbg("I", "All clean. Linotypo screensaver stopped.")
+                    Wdbg(DebugLevel.I, "All clean. Linotypo screensaver stopped.")
                     SaverAutoReset.Set()
                     Exit Do
                 Else
@@ -359,13 +359,13 @@ Public Module LinotypoDisplay
                 End If
             Loop
         Catch ex As Exception
-            Wdbg("W", "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
+            Wdbg(DebugLevel.W, "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
             WStkTrc(ex)
             e.Cancel = True
             SetInputColor()
             LoadBack()
             Console.CursorVisible = True
-            Wdbg("I", "All clean. Linotypo screensaver stopped.")
+            Wdbg(DebugLevel.I, "All clean. Linotypo screensaver stopped.")
             W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
             SaverAutoReset.Set()
         End Try

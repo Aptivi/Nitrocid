@@ -54,7 +54,7 @@ Public Module TextEditShell
         While Not TextEdit_Exiting
             'Open file if not open
             If TextEdit_FileStream Is Nothing Then
-                Wdbg("W", "File not open yet. Trying to open {0}...", FilePath)
+                Wdbg(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath)
                 If Not TextEdit_OpenTextFile(FilePath) Then
                     W(DoTranslation("Failed to open file. Exiting shell..."), True, ColTypes.Error)
                     Exit While
@@ -66,7 +66,7 @@ Public Module TextEditShell
             If DefConsoleOut IsNot Nothing Then
                 Console.SetOut(DefConsoleOut)
             End If
-            Wdbg("I", "TextEdit_PromptStyle = {0}", TextEdit_PromptStyle)
+            Wdbg(DebugLevel.I, "TextEdit_PromptStyle = {0}", TextEdit_PromptStyle)
             If TextEdit_PromptStyle = "" Then
                 W("[", False, ColTypes.Gray) : W("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(TextEdit_WasTextEdited(), "*", "")) : W("] > ", False, ColTypes.Gray)
             Else
@@ -81,28 +81,28 @@ Public Module TextEditShell
             Dim WrittenCommand As String = Console.ReadLine
 
             'Check to see if the command doesn't start with spaces or if the command is nothing
-            Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand?.StartsWith(" "), WrittenCommand Is Nothing, WrittenCommand = "")
+            Wdbg(DebugLevel.I, "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand?.StartsWith(" "), WrittenCommand Is Nothing, WrittenCommand = "")
             If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"}) = True) Then
                 Dim Command As String = WrittenCommand.SplitEncloseDoubleQuotes(" ")(0)
-                Wdbg("I", "Checking command {0} for existence.", Command)
+                Wdbg(DebugLevel.I, "Checking command {0} for existence.", Command)
                 If TextEdit_Commands.ContainsKey(Command) Then
-                    Wdbg("I", "Command {0} found in the list of {1} commands.", Command, TextEdit_Commands.Count)
+                    Wdbg(DebugLevel.I, "Command {0} found in the list of {1} commands.", Command, TextEdit_Commands.Count)
                     TextEdit_CommandThread = New Thread(AddressOf TextEdit_ParseCommand) With {.Name = "Text Edit Command Thread"}
                     EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
-                    Wdbg("I", "Made new thread. Starting with argument {0}...", WrittenCommand)
+                    Wdbg(DebugLevel.I, "Made new thread. Starting with argument {0}...", WrittenCommand)
                     TextEdit_CommandThread.Start(WrittenCommand)
                     TextEdit_CommandThread.Join()
                     EventManager.RaiseTextPostExecuteCommand(WrittenCommand)
                 ElseIf TextEdit_ModCommands.Contains(Command) Then
-                    Wdbg("I", "Mod command {0} executing...", Command)
+                    Wdbg(DebugLevel.I, "Mod command {0} executing...", Command)
                     ExecuteModCommand(WrittenCommand)
                 ElseIf TextShellAliases.Keys.Contains(Command) Then
-                    Wdbg("I", "Text shell alias command found.")
+                    Wdbg(DebugLevel.I, "Text shell alias command found.")
                     WrittenCommand = WrittenCommand.Replace($"""{Command}""", Command)
                     ExecuteTextAlias(WrittenCommand)
                 Else
                     W(DoTranslation("The specified text editor command is not found."), True, ColTypes.Error)
-                    Wdbg("E", "Command {0} not found in the list of {1} commands.", Command, TextEdit_Commands.Count)
+                    Wdbg(DebugLevel.E, "Command {0} not found in the list of {1} commands.", Command, TextEdit_Commands.Count)
                 End If
             End If
 
@@ -130,7 +130,7 @@ Public Module TextEditShell
     Sub ExecuteTextAlias(aliascmd As String)
         Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, TextShellAliases(FirstWordCmd))
-        Wdbg("I", "Actual command: {0}", actualCmd)
+        Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
         TextEdit_CommandThread = New Thread(AddressOf TextEdit_ParseCommand) With {.Name = "Text Edit Command Thread"}
         TextEdit_CommandThread.Start(actualCmd)
         TextEdit_CommandThread.Join()

@@ -88,10 +88,10 @@ Public Module RemoteDebugger
                     AddDeviceToJson(RDebugIP, False)
                     RDebugName = GetDeviceProperty(RDebugIP, DeviceProperty.Name)
                     If String.IsNullOrEmpty(RDebugName) Then
-                        Wdbg("W", "Debug device {0} has no name. Prompting for name...", RDebugIP)
+                        Wdbg(DebugLevel.W, "Debug device {0} has no name. Prompting for name...", RDebugIP)
                     End If
                     If RDebugBlocked.Contains(RDebugIP) Then
-                        Wdbg("W", "Debug device {0} ({1}) tried to join remote debug, but blocked.", RDebugName, RDebugIP)
+                        Wdbg(DebugLevel.W, "Debug device {0} ({1}) tried to join remote debug, but blocked.", RDebugName, RDebugIP)
                         RDebugClient.Disconnect(True)
                     Else
                         dbgConns.Add(RDebugSWriter, RDebugName)
@@ -103,7 +103,7 @@ Public Module RemoteDebugger
                         Else
                             RDebugSWriter.WriteLine(DoTranslation(">> Your name is {0}."), RDebugName)
                         End If
-                        Wdbg("I", "Debug device ""{0}"" ({1}) connected.", RDebugName, RDebugIP)
+                        Wdbg(DebugLevel.I, "Debug device ""{0}"" ({1}) connected.", RDebugName, RDebugIP)
                         RDebugSWriter.Flush()
                         EventManager.RaiseRemoteDebugConnectionAccepted(RDebugIP)
                     End If
@@ -158,7 +158,7 @@ Public Module RemoteDebugger
                         Else
                             If Not String.IsNullOrEmpty(name) Then 'Prevent no-name people from chatting
                                 If RecordChatToDebugLog Then
-                                    Wdbg("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))
+                                    Wdbg(DebugLevel.I, "{0}> {1}", name, msg.Replace(vbNullChar, ""))
                                 Else
                                     WdbgDevicesOnly("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))
                                 End If
@@ -170,7 +170,7 @@ Public Module RemoteDebugger
                     Dim SE As SocketException = CType(ex.InnerException, SocketException)
                     If SE IsNot Nothing Then
                         If Not SE.SocketErrorCode = SocketError.TimedOut And Not SE.SocketErrorCode = SocketError.WouldBlock Then
-                            Wdbg("E", "Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
+                            Wdbg(DebugLevel.E, "Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
                             WStkTrc(ex)
                         End If
                     Else

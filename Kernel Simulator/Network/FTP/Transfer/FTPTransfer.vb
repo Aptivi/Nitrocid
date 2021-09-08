@@ -45,19 +45,19 @@ Public Module FTPTransfer
             Try
                 'Show a message to download
                 EventManager.RaiseFTPPreDownload(File)
-                Wdbg("I", "Downloading file {0}...", File)
+                Wdbg(DebugLevel.I, "Downloading file {0}...", File)
 
                 'Try to download 3 times
                 Dim LocalFilePath As String = NeutralizePath(LocalFile, FtpCurrentDirectory)
                 Dim Result As FtpStatus = ClientFTP.DownloadFile(LocalFilePath, File, True, FtpVerify.Retry + FtpVerify.Throw, FileProgress)
 
                 'Show a message that it's downloaded
-                Wdbg("I", "Downloaded file {0}.", File)
+                Wdbg(DebugLevel.I, "Downloaded file {0}.", File)
                 EventManager.RaiseFTPPostDownload(File, Result.IsSuccess)
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
-                Wdbg("E", "Download failed for file {0}: {1}", File, ex.Message)
+                Wdbg(DebugLevel.E, "Download failed for file {0}: {1}", File, ex.Message)
                 EventManager.RaiseFTPPostDownload(File, False)
             End Try
         Else
@@ -85,7 +85,7 @@ Public Module FTPTransfer
             Try
                 'Show a message to download
                 EventManager.RaiseFTPPreDownload(Folder)
-                Wdbg("I", "Downloading folder {0}...", Folder)
+                Wdbg(DebugLevel.I, "Downloading folder {0}...", Folder)
 
                 'Try to download folder
                 Dim LocalFolderPath As String = NeutralizePath(LocalFolder, FtpCurrentDirectory)
@@ -93,20 +93,20 @@ Public Module FTPTransfer
 
                 'Print download results to debugger
                 Dim Failed As Boolean
-                Wdbg("I", "Folder download result:")
+                Wdbg(DebugLevel.I, "Folder download result:")
                 For Each Result As FtpResult In Results
-                    Wdbg("I", "-- {0} --", Result.Name)
-                    Wdbg("I", "Success: {0}", Result.IsSuccess)
-                    Wdbg("I", "Skipped: {0}", Result.IsSkipped)
-                    Wdbg("I", "Failure: {0}", Result.IsFailed)
-                    Wdbg("I", "Size: {0}", Result.Size)
-                    Wdbg("I", "Type: {0}", Result.Type)
+                    Wdbg(DebugLevel.I, "-- {0} --", Result.Name)
+                    Wdbg(DebugLevel.I, "Success: {0}", Result.IsSuccess)
+                    Wdbg(DebugLevel.I, "Skipped: {0}", Result.IsSkipped)
+                    Wdbg(DebugLevel.I, "Failure: {0}", Result.IsFailed)
+                    Wdbg(DebugLevel.I, "Size: {0}", Result.Size)
+                    Wdbg(DebugLevel.I, "Type: {0}", Result.Type)
                     If Result.IsFailed Then
-                        Wdbg("E", "Download failed for {0}", Result.Name)
+                        Wdbg(DebugLevel.E, "Download failed for {0}", Result.Name)
 
                         'Download could fail with no exception in very rare cases.
                         If Result.Exception IsNot Nothing Then
-                            Wdbg("E", "Exception {0}", Result.Exception.Message)
+                            Wdbg(DebugLevel.E, "Exception {0}", Result.Exception.Message)
                             WStkTrc(Result.Exception)
                         End If
                         Failed = True
@@ -116,15 +116,15 @@ Public Module FTPTransfer
 
                 'Show a message that it's downloaded
                 If Not Failed Then
-                    Wdbg("I", "Downloaded folder {0}.", Folder)
+                    Wdbg(DebugLevel.I, "Downloaded folder {0}.", Folder)
                 Else
-                    Wdbg("I", "Downloaded folder {0} partially due to failure.", Folder)
+                    Wdbg(DebugLevel.I, "Downloaded folder {0} partially due to failure.", Folder)
                 End If
                 EventManager.RaiseFTPPostDownload(Folder, Not Failed)
                 Return Not Failed
             Catch ex As Exception
                 WStkTrc(ex)
-                Wdbg("E", "Download failed for folder {0}: {1}", Folder, ex.Message)
+                Wdbg(DebugLevel.E, "Download failed for folder {0}: {1}", Folder, ex.Message)
                 EventManager.RaiseFTPPostDownload(Folder, False)
             End Try
         Else
@@ -152,12 +152,12 @@ Public Module FTPTransfer
         If FtpConnected Then
             'Show a message to download
             EventManager.RaiseFTPPreUpload(File)
-            Wdbg("I", "Uploading file {0}...", File)
+            Wdbg(DebugLevel.I, "Uploading file {0}...", File)
 
             'Try to upload
             Dim LocalFilePath As String = NeutralizePath(LocalFile, FtpCurrentDirectory)
             Dim Success As Boolean = ClientFTP.UploadFile(LocalFilePath, File, True, True, FtpVerify.Retry, FileProgress)
-            Wdbg("I", "Uploaded file {0} with status {1}.", File, Success)
+            Wdbg(DebugLevel.I, "Uploaded file {0} with status {1}.", File, Success)
             EventManager.RaiseFTPPostUpload(File, Success)
             Return Success
         Else
@@ -185,7 +185,7 @@ Public Module FTPTransfer
         If FtpConnected Then
             'Show a message to download
             EventManager.RaiseFTPPreUpload(Folder)
-            Wdbg("I", "Uploading folder {0}...", Folder)
+            Wdbg(DebugLevel.I, "Uploading folder {0}...", Folder)
 
             'Try to upload
             Dim LocalFolderPath As String = NeutralizePath(LocalFolder, FtpCurrentDirectory)
@@ -193,20 +193,20 @@ Public Module FTPTransfer
 
             'Print upload results to debugger
             Dim Failed As Boolean
-            Wdbg("I", "Folder upload result:")
+            Wdbg(DebugLevel.I, "Folder upload result:")
             For Each Result As FtpResult In Results
-                Wdbg("I", "-- {0} --", Result.Name)
-                Wdbg("I", "Success: {0}", Result.IsSuccess)
-                Wdbg("I", "Skipped: {0}", Result.IsSkipped)
-                Wdbg("I", "Failure: {0}", Result.IsFailed)
-                Wdbg("I", "Size: {0}", Result.Size)
-                Wdbg("I", "Type: {0}", Result.Type)
+                Wdbg(DebugLevel.I, "-- {0} --", Result.Name)
+                Wdbg(DebugLevel.I, "Success: {0}", Result.IsSuccess)
+                Wdbg(DebugLevel.I, "Skipped: {0}", Result.IsSkipped)
+                Wdbg(DebugLevel.I, "Failure: {0}", Result.IsFailed)
+                Wdbg(DebugLevel.I, "Size: {0}", Result.Size)
+                Wdbg(DebugLevel.I, "Type: {0}", Result.Type)
                 If Result.IsFailed Then
-                    Wdbg("E", "Upload failed for {0}", Result.Name)
+                    Wdbg(DebugLevel.E, "Upload failed for {0}", Result.Name)
 
                     'Upload could fail with no exception in very rare cases.
                     If Result.Exception IsNot Nothing Then
-                        Wdbg("E", "Exception {0}", Result.Exception.Message)
+                        Wdbg(DebugLevel.E, "Exception {0}", Result.Exception.Message)
                         WStkTrc(Result.Exception)
                     End If
                     Failed = True
@@ -216,9 +216,9 @@ Public Module FTPTransfer
 
             'Show a message that it's downloaded
             If Not Failed Then
-                Wdbg("I", "Uploaded folder {0}.", Folder)
+                Wdbg(DebugLevel.I, "Uploaded folder {0}.", Folder)
             Else
-                Wdbg("I", "Uploaded folder {0} partially due to failure.", Folder)
+                Wdbg(DebugLevel.I, "Uploaded folder {0} partially due to failure.", Folder)
             End If
             EventManager.RaiseFTPPostUpload(Folder, Not Failed)
             Return Not Failed
@@ -238,7 +238,7 @@ Public Module FTPTransfer
             Try
                 'Show a message to download
                 EventManager.RaiseFTPPreDownload(File)
-                Wdbg("I", "Downloading {0}...", File)
+                Wdbg(DebugLevel.I, "Downloading {0}...", File)
 
                 'Try to download 3 times
                 Dim DownloadedBytes() As Byte = {}
@@ -249,12 +249,12 @@ Public Module FTPTransfer
                 Next
 
                 'Show a message that it's downloaded
-                Wdbg("I", "Downloaded {0}.", File)
+                Wdbg(DebugLevel.I, "Downloaded {0}.", File)
                 EventManager.RaiseFTPPostDownload(File, Downloaded)
                 Return DownloadedContent.ToString
             Catch ex As Exception
                 WStkTrc(ex)
-                Wdbg("E", "Download failed for {0}: {1}", File, ex.Message)
+                Wdbg(DebugLevel.E, "Download failed for {0}: {1}", File, ex.Message)
                 EventManager.RaiseFTPPostDownload(File, False)
             End Try
         Else

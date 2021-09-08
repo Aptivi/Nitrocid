@@ -153,7 +153,7 @@ Public Module ColorTools
     ''' Resets all colors to default
     ''' </summary>
     Public Sub ResetColors()
-        Wdbg("I", "Resetting colors")
+        Wdbg(DebugLevel.I, "Resetting colors")
         Dim DefInfo As New ThemeInfo("_Default")
         InputColor = DefInfo.ThemeInputColor.PlainSequence
         LicenseColor = DefInfo.ThemeLicenseColor.PlainSequence
@@ -181,11 +181,11 @@ Public Module ColorTools
     ''' </summary>
     Public Sub LoadBack()
         Try
-            Wdbg("I", "Filling background with background color")
+            Wdbg(DebugLevel.I, "Filling background with background color")
             SetConsoleColor(New Color(BackgroundColor), True)
             Console.Clear()
         Catch ex As Exception
-            Wdbg("E", "Failed to set background: {0}", ex.Message)
+            Wdbg(DebugLevel.E, "Failed to set background: {0}", ex.Message)
         End Try
     End Sub
 
@@ -194,9 +194,9 @@ Public Module ColorTools
     ''' </summary>
     ''' <param name="theme">A specified theme</param>
     Public Sub ApplyThemeFromResources(theme As String)
-        Wdbg("I", "Theme: {0}", theme)
+        Wdbg(DebugLevel.I, "Theme: {0}", theme)
         If colorTemplates.ContainsKey(theme) Then
-            Wdbg("I", "Theme found.")
+            Wdbg(DebugLevel.I, "Theme found.")
 
             'Populate theme info
             Dim ThemeInfo As ThemeInfo
@@ -227,7 +227,7 @@ Public Module ColorTools
             EventManager.RaiseThemeSet(theme)
         Else
             W(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, theme)
-            Wdbg("E", "Theme not found.")
+            Wdbg(DebugLevel.E, "Theme not found.")
 
             'Raise event
             EventManager.RaiseThemeSetError(theme, "notfound")
@@ -240,9 +240,9 @@ Public Module ColorTools
     ''' <param name="ThemeFile">Theme file</param>
     Public Sub ApplyThemeFromFile(ThemeFile As String)
         Try
-            Wdbg("I", "Theme file name: {0}", ThemeFile)
+            Wdbg(DebugLevel.I, "Theme file name: {0}", ThemeFile)
             ThemeFile = NeutralizePath(ThemeFile, True)
-            Wdbg("I", "Theme file path: {0}", ThemeFile)
+            Wdbg(DebugLevel.I, "Theme file path: {0}", ThemeFile)
 
             'Populate theme info
             Dim ThemeInfo As New ThemeInfo(New StreamReader(ThemeFile))
@@ -260,7 +260,7 @@ Public Module ColorTools
             EventManager.RaiseThemeSet(ThemeFile)
         Catch ex As Exception
             W(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, ThemeFile)
-            Wdbg("E", "Theme not found.")
+            Wdbg(DebugLevel.E, "Theme not found.")
 
             'Raise event
             EventManager.RaiseThemeSetError(ThemeFile, "notfound")
@@ -600,7 +600,7 @@ Public Module ColorTools
                         CurrentColorB = ParsedColor.B
                     Catch ex As Exception
                         WStkTrc(ex)
-                        Wdbg("E", "Possible input error: {0} ({1})", ColorSequence, ex.Message)
+                        Wdbg(DebugLevel.E, "Possible input error: {0} ({1})", ColorSequence, ex.Message)
                     End Try
                 ElseIf ConsoleResponse.Key = ConsoleKey.T Then
                     TrueColor = False

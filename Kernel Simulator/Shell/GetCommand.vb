@@ -40,7 +40,7 @@ Public Module GetCommand
 
         'Check to see if a requested command is obsolete
         If Commands(Command).Obsolete Then
-            Wdbg("I", "The command requested {0} is obsolete", Command)
+            Wdbg(DebugLevel.I, "The command requested {0} is obsolete", Command)
             W(DoTranslation("This command is obsolete and will be removed in a future release."), True, ColTypes.Neutral)
         End If
 
@@ -99,12 +99,12 @@ Public Module GetCommand
                     If RequiredArgumentsProvided Then
                         Dim FinalArgs As New List(Of String)
                         For Each arg As String In eqargs
-                            Wdbg("I", "Parsing argument {0}...", arg)
+                            Wdbg(DebugLevel.I, "Parsing argument {0}...", arg)
                             If AvailableArgs.Contains(arg) Then
-                                Wdbg("I", "Adding argument {0}...", arg)
+                                Wdbg(DebugLevel.I, "Adding argument {0}...", arg)
                                 FinalArgs.Add(arg)
                             Else
-                                Wdbg("W", "Argument {0} not found.", arg)
+                                Wdbg(DebugLevel.W, "Argument {0} not found.", arg)
                                 W(DoTranslation("Argument {0} not found to inject."), True, ColTypes.Warning, arg)
                             End If
                         Next
@@ -161,7 +161,7 @@ Public Module GetCommand
                     If RequiredArgumentsProvided Then
                         Try
                             Dim Res As String = Evaluate(strArgs)
-                            Wdbg("I", "Res = {0}", Res)
+                            Wdbg(DebugLevel.I, "Res = {0}", Res)
                             If Res = "" Then 'If there is an error in calculation
                                 W(DoTranslation("Error in calculation."), True, ColTypes.Error)
                             Else 'Calculation done
@@ -223,11 +223,11 @@ Public Module GetCommand
                         Try
                             SetCurrDir(eqargs(0))
                         Catch sex As Security.SecurityException
-                            Wdbg("E", "Security error: {0} ({1})", sex.Message, sex.PermissionType)
+                            Wdbg(DebugLevel.E, "Security error: {0} ({1})", sex.Message, sex.PermissionType)
                             W(DoTranslation("You are unauthorized to set current directory to {0}: {1}"), True, ColTypes.Error, eqargs(0), sex.Message)
                             WStkTrc(sex)
                         Catch ptlex As PathTooLongException
-                            Wdbg("I", "Directory length: {0}", NeutralizePath(eqargs(0)).Length)
+                            Wdbg(DebugLevel.I, "Directory length: {0}", NeutralizePath(eqargs(0)).Length)
                             W(DoTranslation("The path you've specified is too long."), True, ColTypes.Error)
                             WStkTrc(ptlex)
                         Catch ex As Exception
@@ -345,7 +345,7 @@ Public Module GetCommand
                     If RequiredArgumentsProvided Then
                         For Each Dir As String In eqargs
                             Dim DirectoryPath As String = NeutralizePath(Dir)
-                            Wdbg("I", "Neutralized directory path: {0} ({1})", DirectoryPath, Directory.Exists(DirectoryPath))
+                            Wdbg(DebugLevel.I, "Neutralized directory path: {0} ({1})", DirectoryPath, Directory.Exists(DirectoryPath))
                             WriteSeparator(Dir, True, ColTypes.Stage)
                             If Directory.Exists(DirectoryPath) Then
                                 Dim DirInfo As New DirectoryInfo(DirectoryPath)
@@ -389,7 +389,7 @@ Public Module GetCommand
 
                     If RequiredArgumentsProvided Then
                         eqargs(0) = NeutralizePath(eqargs(0))
-                        Wdbg("I", "File path is {0} and .Exists is {0}", eqargs(0), File.Exists(eqargs(0)))
+                        Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", eqargs(0), File.Exists(eqargs(0)))
                         If File.Exists(eqargs(0)) Then
                             InitializeTextShell(eqargs(0))
                         Else
@@ -402,7 +402,7 @@ Public Module GetCommand
                     If RequiredArgumentsProvided Then
                         For Each FileName As String In eqargs
                             Dim FilePath As String = NeutralizePath(FileName)
-                            Wdbg("I", "Neutralized file path: {0} ({1})", FilePath, File.Exists(FilePath))
+                            Wdbg(DebugLevel.I, "Neutralized file path: {0} ({1})", FilePath, File.Exists(FilePath))
                             WriteSeparator(FileName, True, ColTypes.Stage)
                             If File.Exists(FilePath) Then
                                 Dim FileInfo As New FileInfo(FilePath)
@@ -471,7 +471,7 @@ Public Module GetCommand
                     If RequiredArgumentsProvided Then
                         Dim RetryCount As Integer = 1
                         Dim URL As String = eqargs(0)
-                        Wdbg("I", "URL: {0}", URL)
+                        Wdbg(DebugLevel.I, "URL: {0}", URL)
                         While Not RetryCount > DRetries
                             Try
                                 If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
@@ -500,7 +500,7 @@ Public Module GetCommand
                                 DFinish = False
                                 W(DoTranslation("Download failed in try {0}: {1}"), True, ColTypes.Error, RetryCount, ex.Message)
                                 RetryCount += 1
-                                Wdbg("I", "Try count: {0}", RetryCount)
+                                Wdbg(DebugLevel.I, "Try count: {0}", RetryCount)
                                 WStkTrc(ex)
                             End Try
                         End While
@@ -753,7 +753,7 @@ Public Module GetCommand
                         Dim PingTimes As Integer = 4
                         Dim StepsToSkip As Integer = 0
                         If IsNumeric(eqargs(0)) Then
-                            Wdbg("I", "eqargs(0) is numeric. Assuming number of times: {0}", eqargs(0))
+                            Wdbg(DebugLevel.I, "eqargs(0) is numeric. Assuming number of times: {0}", eqargs(0))
                             PingTimes = eqargs(0)
                             StepsToSkip = 1
                         End If
@@ -785,7 +785,7 @@ Public Module GetCommand
                         Dim RetryCount As Integer = 1
                         Dim FileName As String = NeutralizePath(eqargs(0))
                         Dim URL As String = eqargs(1)
-                        Wdbg("I", "URL: {0}", URL)
+                        Wdbg(DebugLevel.I, "URL: {0}", URL)
                         While Not RetryCount > URetries
                             Try
                                 If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
@@ -814,7 +814,7 @@ Public Module GetCommand
                                 UFinish = False
                                 W(DoTranslation("Upload failed in try {0}: {1}"), True, ColTypes.Error, RetryCount, ex.Message)
                                 RetryCount += 1
-                                Wdbg("I", "Try count: {0}", RetryCount)
+                                Wdbg(DebugLevel.I, "Try count: {0}", RetryCount)
                                 WStkTrc(ex)
                             End Try
                         End While
@@ -887,13 +887,13 @@ Public Module GetCommand
                         For Each Path As String In eqargs
                             Dim NeutPath As String = NeutralizePath(Path)
                             If File.Exists(NeutPath) Then
-                                Wdbg("I", "{0} is a file. Removing...", Path)
+                                Wdbg(DebugLevel.I, "{0} is a file. Removing...", Path)
                                 RemoveFile(Path)
                             ElseIf Directory.Exists(NeutPath) Then
-                                Wdbg("I", "{0} is a folder. Removing...", Path)
+                                Wdbg(DebugLevel.I, "{0} is a folder. Removing...", Path)
                                 RemoveDirectory(Path)
                             Else
-                                Wdbg("W", "Trying to remove {0} which is not found.", Path)
+                                Wdbg(DebugLevel.W, "Trying to remove {0} which is not found.", Path)
                                 W(DoTranslation("Can't remove {0} because it doesn't exist."), True, ColTypes.Error, Path)
                             End If
                         Next
@@ -931,7 +931,7 @@ Public Module GetCommand
                                 W(Match, True, ColTypes.Neutral)
                             Next
                         Catch ex As Exception
-                            Wdbg("E", "Error trying to search {0} for {1}", eqargs(0), eqargs(1))
+                            Wdbg(DebugLevel.E, "Error trying to search {0} for {1}", eqargs(0), eqargs(1))
                             WStkTrc(ex)
                             W(DoTranslation("Searching {0} for {1} failed.") + " {2}", True, ColTypes.Error, eqargs(0), eqargs(1), ex.Message)
                         End Try
@@ -946,7 +946,7 @@ Public Module GetCommand
                                 W(Match, True, ColTypes.Neutral)
                             Next
                         Catch ex As Exception
-                            Wdbg("E", "Error trying to search {0} for {1}", eqargs(0), eqargs(1))
+                            Wdbg(DebugLevel.E, "Error trying to search {0} for {1}", eqargs(0), eqargs(1))
                             WStkTrc(ex)
                             W(DoTranslation("Searching {0} for {1} failed.") + " {2}", True, ColTypes.Error, eqargs(0), eqargs(1), ex.Message)
                         End Try
@@ -1357,7 +1357,7 @@ Public Module GetCommand
 
                     If RequiredArgumentsProvided Then
                         eqargs(0) = NeutralizePath(eqargs(0))
-                        Wdbg("I", "File path is {0} and .Exists is {0}", eqargs(0), File.Exists(eqargs(0)))
+                        Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", eqargs(0), File.Exists(eqargs(0)))
                         If File.Exists(eqargs(0)) Then
                             InitializeZipShell(eqargs(0))
                         Else
@@ -1369,7 +1369,7 @@ Public Module GetCommand
 
             'If not enough arguments, throw exception
             If Commands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
-                Wdbg("W", "User hasn't provided enough arguments for {0}", Command)
+                Wdbg(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command)
                 W(DoTranslation("There was not enough arguments. See below for usage:"), True, ColTypes.Neutral)
                 ShowHelp(Command)
             End If

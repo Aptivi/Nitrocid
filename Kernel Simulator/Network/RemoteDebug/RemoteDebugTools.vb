@@ -50,7 +50,7 @@ Public Module RemoteDebugTools
                 Exit Sub
             Else
                 If IPAddr = DebugDevices.Values(i) Then
-                    Wdbg("I", "Debug device {0} disconnected.", DebugDevices.Values(i))
+                    Wdbg(DebugLevel.I, "Debug device {0} disconnected.", DebugDevices.Values(i))
                     Found = True
                     DebugDevices.Keys(i).Disconnect(True)
                     dbgConns.Remove(dbgConns.Keys(i))
@@ -72,26 +72,26 @@ Public Module RemoteDebugTools
     Public Function AddToBlockList(IP As String) As Boolean
         Try
             Dim BlockedDevices() As String = ListDevices()
-            Wdbg("I", "Devices count: {0}", BlockedDevices.Length)
+            Wdbg(DebugLevel.I, "Devices count: {0}", BlockedDevices.Length)
             If BlockedDevices.Contains(IP) And Not GetDeviceProperty(IP, DeviceProperty.Blocked) Then
-                Wdbg("I", "Device {0} will be blocked...", IP)
+                Wdbg(DebugLevel.I, "Device {0} will be blocked...", IP)
                 DisconnectDbgDev(IP)
                 SetDeviceProperty(IP, DeviceProperty.Blocked, True)
                 RDebugBlocked.Add(IP)
                 Return True
             ElseIf BlockedDevices.Contains(IP) And GetDeviceProperty(IP, DeviceProperty.Blocked) Then
-                Wdbg("W", "Trying to add an already-blocked device {0}. Adding to list...", IP)
+                Wdbg(DebugLevel.W, "Trying to add an already-blocked device {0}. Adding to list...", IP)
                 If Not RDebugBlocked.Contains(IP) Then
                     DisconnectDbgDev(IP)
                     RDebugBlocked.Add(IP)
                     Return True
                 Else
-                    Wdbg("W", "Trying to add an already-blocked device {0}.", IP)
+                    Wdbg(DebugLevel.W, "Trying to add an already-blocked device {0}.", IP)
                     Return False
                 End If
             End If
         Catch ex As Exception
-            Wdbg("E", "Failed to add device to block list: {0}", ex.Message)
+            Wdbg(DebugLevel.E, "Failed to add device to block list: {0}", ex.Message)
             WStkTrc(ex)
         End Try
         Return False
@@ -105,17 +105,17 @@ Public Module RemoteDebugTools
     Public Function RemoveFromBlockList(IP As String) As Boolean
         Try
             Dim BlockedDevices() As String = ListDevices()
-            Wdbg("I", "Devices count: {0}", BlockedDevices.Length)
+            Wdbg(DebugLevel.I, "Devices count: {0}", BlockedDevices.Length)
             If BlockedDevices.Contains(IP) Then
-                Wdbg("I", "Device {0} found.", IP)
+                Wdbg(DebugLevel.I, "Device {0} found.", IP)
                 RDebugBlocked.Remove(IP)
                 Return SetDeviceProperty(IP, DeviceProperty.Blocked, False)
             Else
-                Wdbg("W", "Trying to remove an already-unblocked device {0}. Removing from list...", IP)
+                Wdbg(DebugLevel.W, "Trying to remove an already-unblocked device {0}. Removing from list...", IP)
                 Return RDebugBlocked.Remove(IP)
             End If
         Catch ex As Exception
-            Wdbg("E", "Failed to remove device from block list: {0}", ex.Message)
+            Wdbg(DebugLevel.E, "Failed to remove device from block list: {0}", ex.Message)
             WStkTrc(ex)
         End Try
         Return False
@@ -128,13 +128,13 @@ Public Module RemoteDebugTools
     Function PopulateBlockedDevices() As Boolean
         Try
             Dim BlockEntries() As String = ListDevices()
-            Wdbg("I", "Devices count: {0}", BlockEntries.Length)
+            Wdbg(DebugLevel.I, "Devices count: {0}", BlockEntries.Length)
             For Each BlockEntry As String In BlockEntries
                 If GetDeviceProperty(BlockEntry, DeviceProperty.Blocked) Then AddToBlockList(BlockEntry)
             Next
             Return True
         Catch ex As Exception
-            Wdbg("E", "Failed to populate block list: {0}", ex.Message)
+            Wdbg(DebugLevel.E, "Failed to populate block list: {0}", ex.Message)
             WStkTrc(ex)
         End Try
         Return False

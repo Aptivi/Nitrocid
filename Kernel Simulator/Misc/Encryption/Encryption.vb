@@ -41,10 +41,10 @@ Public Module Encryption
     Function GetArrayEnc(encrypted As Byte()) As String
         Dim hash As String = ""
         For i As Integer = 0 To encrypted.Length - 1
-            Wdbg("I", "Appending {0} to hash", encrypted(i))
+            Wdbg(DebugLevel.I, "Appending {0} to hash", encrypted(i))
             hash += $"{encrypted(i):X2}"
         Next
-        Wdbg("I", "Final hash: {0}", hash)
+        Wdbg(DebugLevel.I, "Final hash: {0}", hash)
         Return hash
     End Function
 
@@ -55,8 +55,8 @@ Public Module Encryption
     ''' <param name="algorithm">Algorithm</param>
     ''' <returns>Encrypted hash sum</returns>
     Public Function GetEncryptedString(str As String, algorithm As Algorithms) As String
-        Wdbg("I", "Selected algorithm: {0}", algorithm.ToString)
-        Wdbg("I", "String length: {0}", str.Length)
+        Wdbg(DebugLevel.I, "Selected algorithm: {0}", algorithm.ToString)
+        Wdbg(DebugLevel.I, "String length: {0}", str.Length)
         Select Case algorithm
             Case Algorithms.MD5
                 Dim hashbyte As Byte() = MD5.Create().ComputeHash(Encoding.UTF8.GetBytes(str))
@@ -84,8 +84,8 @@ Public Module Encryption
     ''' <param name="algorithm">Algorithm</param>
     ''' <returns>Encrypted hash sum</returns>
     Public Function GetEncryptedFile(str As Stream, algorithm As Algorithms) As String
-        Wdbg("I", "Selected algorithm: {0}", algorithm.ToString)
-        Wdbg("I", "Stream length: {0}", str.Length)
+        Wdbg(DebugLevel.I, "Selected algorithm: {0}", algorithm.ToString)
+        Wdbg(DebugLevel.I, "Stream length: {0}", str.Length)
         Select Case algorithm
             Case Algorithms.MD5
                 Dim hashbyte As Byte() = MD5.Create().ComputeHash(str)

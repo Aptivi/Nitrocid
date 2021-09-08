@@ -29,18 +29,18 @@ Public Module ZipTools
         If String.IsNullOrWhiteSpace(Target) Then Target = ZipShell_CurrentArchiveDirectory
         Dim Entries As New List(Of ZipArchiveEntry)
         For Each ArchiveEntry As ZipArchiveEntry In ZipShell_ZipArchive?.Entries
-            Wdbg("I", "Parsing entry {0}...", ArchiveEntry.FullName)
+            Wdbg(DebugLevel.I, "Parsing entry {0}...", ArchiveEntry.FullName)
             If Target IsNot Nothing Then
                 If ArchiveEntry.FullName.StartsWith(Target) Then
-                    Wdbg("I", "Entry {0} found in target {1}. Adding...", ArchiveEntry.FullName, Target)
+                    Wdbg(DebugLevel.I, "Entry {0} found in target {1}. Adding...", ArchiveEntry.FullName, Target)
                     Entries.Add(ArchiveEntry)
                 End If
             ElseIf Target Is Nothing Then
-                Wdbg("I", "Adding entry {0}...", ArchiveEntry.FullName)
+                Wdbg(DebugLevel.I, "Adding entry {0}...", ArchiveEntry.FullName)
                 Entries.Add(ArchiveEntry)
             End If
         Next
-        Wdbg("I", "Entries: {0}", Entries.Count)
+        Wdbg(DebugLevel.I, "Entries: {0}", Entries.Count)
         Return Entries
     End Function
 
@@ -56,7 +56,7 @@ Public Module ZipTools
         'Define absolute target
         Dim AbsoluteTarget As String = ZipShell_CurrentArchiveDirectory + "/" + Target
         If AbsoluteTarget.StartsWith("/") Then AbsoluteTarget = AbsoluteTarget.RemoveLetter(0)
-        Wdbg("I", "Target: {0}, AbsoluteTarget: {1}", Target, AbsoluteTarget)
+        Wdbg(DebugLevel.I, "Target: {0}, AbsoluteTarget: {1}", Target, AbsoluteTarget)
 
         'Define local destination while getting an entry from target
         Dim LocalDestination As String = Where + "/"
@@ -64,7 +64,7 @@ Public Module ZipTools
         If FullTargetPath Then
             LocalDestination += ZipEntry.FullName.Replace(ZipEntry.Name, "")
         End If
-        Wdbg("I", "Where: {0}", LocalDestination)
+        Wdbg(DebugLevel.I, "Where: {0}", LocalDestination)
 
         'Try to extract file
         Directory.CreateDirectory(LocalDestination)
@@ -81,61 +81,61 @@ Public Module ZipTools
 
         'Check to see if we're going back
         If Target.Contains("..") Then
-            Wdbg("I", "Target contains going back. Counting...")
+            Wdbg(DebugLevel.I, "Target contains going back. Counting...")
             Dim CADSplit As List(Of String) = ZipShell_CurrentArchiveDirectory.Split("/").ToList
             Dim TargetSplit As List(Of String) = Target.Split("/").ToList
             Dim CADBackSteps As Integer
 
             'Add back steps if target is ".."
-            Wdbg("I", "Target length: {0}", TargetSplit.Count)
+            Wdbg(DebugLevel.I, "Target length: {0}", TargetSplit.Count)
             For i As Integer = 0 To TargetSplit.Count - 1
-                Wdbg("I", "Target part {0}: {1}", i, TargetSplit(i))
+                Wdbg(DebugLevel.I, "Target part {0}: {1}", i, TargetSplit(i))
                 If TargetSplit(i) = ".." Then
-                    Wdbg("I", "Target is going back. Adding step...")
+                    Wdbg(DebugLevel.I, "Target is going back. Adding step...")
                     CADBackSteps += 1
                     TargetSplit(i) = ""
-                    Wdbg("I", "Steps: {0}", CADBackSteps)
+                    Wdbg(DebugLevel.I, "Steps: {0}", CADBackSteps)
                 End If
             Next
 
             'Remove empty strings
             TargetSplit.RemoveAll(Function(x) x = "")
-            Wdbg("I", "Target length: {0}", TargetSplit.Count)
+            Wdbg(DebugLevel.I, "Target length: {0}", TargetSplit.Count)
 
             'Remove every last entry that goes back
-            Wdbg("I", "Old CADSplit length: {0}", CADSplit.Count)
+            Wdbg(DebugLevel.I, "Old CADSplit length: {0}", CADSplit.Count)
             For Steps As Integer = CADBackSteps To 1 Step -1
-                Wdbg("I", "Current step: {0}", Steps)
-                Wdbg("I", "Removing index {0} from CADSplit...", CADSplit.Count - Steps)
+                Wdbg(DebugLevel.I, "Current step: {0}", Steps)
+                Wdbg(DebugLevel.I, "Removing index {0} from CADSplit...", CADSplit.Count - Steps)
                 CADSplit.RemoveAt(CADSplit.Count - Steps)
-                Wdbg("I", "New CADSplit length: {0}", CADSplit.Count)
+                Wdbg(DebugLevel.I, "New CADSplit length: {0}", CADSplit.Count)
             Next
 
             'Set current archive directory and target
             ZipShell_CurrentArchiveDirectory = String.Join("/", CADSplit)
-            Wdbg("I", "Setting CAD to {0}...", ZipShell_CurrentArchiveDirectory)
+            Wdbg(DebugLevel.I, "Setting CAD to {0}...", ZipShell_CurrentArchiveDirectory)
             Target = String.Join("/", TargetSplit)
-            Wdbg("I", "Setting target to {0}...", Target)
+            Wdbg(DebugLevel.I, "Setting target to {0}...", Target)
         End If
 
         'Prepare the target
         Target = ZipShell_CurrentArchiveDirectory + "/" + Target
         If Target.StartsWith("/") Then Target = Target.RemoveLetter(0)
-        Wdbg("I", "Setting target to {0}...", Target)
+        Wdbg(DebugLevel.I, "Setting target to {0}...", Target)
 
         'Enumerate entries
         For Each Entry As ZipArchiveEntry In ListZipEntries(Target)
-            Wdbg("I", "Entry: {0}", Entry.FullName)
+            Wdbg(DebugLevel.I, "Entry: {0}", Entry.FullName)
             If Entry.FullName.StartsWith(Target) Then
-                Wdbg("I", "{0} found ({1}). Changing...", Target, Entry.FullName)
+                Wdbg(DebugLevel.I, "{0} found ({1}). Changing...", Target, Entry.FullName)
                 ZipShell_CurrentArchiveDirectory = Entry.FullName.RemoveLetter(Entry.FullName.Length - 1)
-                Wdbg("I", "Setting CAD to {0}...", ZipShell_CurrentArchiveDirectory)
+                Wdbg(DebugLevel.I, "Setting CAD to {0}...", ZipShell_CurrentArchiveDirectory)
                 Return True
             End If
         Next
 
         'Assume that we didn't find anything.
-        Wdbg("E", "{0} not found.", Target)
+        Wdbg(DebugLevel.E, "{0} not found.", Target)
         Return False
     End Function
 
@@ -146,11 +146,11 @@ Public Module ZipTools
     Public Function ChangeWorkingZipLocalDirectory(Target As String) As Boolean
         If String.IsNullOrWhiteSpace(Target) Then Target = ZipShell_CurrentDirectory
         If Directory.Exists(NeutralizePath(Target, ZipShell_CurrentDirectory)) Then
-            Wdbg("I", "{0} found. Changing...", Target)
+            Wdbg(DebugLevel.I, "{0} found. Changing...", Target)
             ZipShell_CurrentDirectory = Target
             Return True
         Else
-            Wdbg("E", "{0} not found.", Target)
+            Wdbg(DebugLevel.E, "{0} not found.", Target)
             Return False
         End If
     End Function

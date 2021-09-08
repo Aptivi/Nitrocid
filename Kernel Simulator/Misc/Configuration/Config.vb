@@ -426,7 +426,7 @@ Public Module Config
         Try
             'Parse configuration. NOTE: Question marks between parentheses are for nullable types.
             InitializeConfigToken()
-            Wdbg("I", "Config loaded with {0} sections", ConfigToken.Count)
+            Wdbg(DebugLevel.I, "Config loaded with {0} sections", ConfigToken.Count)
 
             '----------------------------- Important configuration -----------------------------
             'Language
@@ -437,14 +437,14 @@ Public Module Config
             'Colored Shell
             Dim UncoloredDetected As Boolean = ConfigToken("Shell")?("Colored Shell") IsNot Nothing AndAlso Not ConfigToken("Shell")("Colored Shell").ToObject(Of Boolean)
             If UncoloredDetected Then
-                Wdbg("W", "Detected uncolored shell. Removing colors...")
+                Wdbg(DebugLevel.W, "Detected uncolored shell. Removing colors...")
                 ApplyThemeFromResources("LinuxUncolored")
                 ColoredShell = False
             End If
 
             '----------------------------- General configuration -----------------------------
             'Colors Section
-            Wdbg("I", "Loading colors...")
+            Wdbg(DebugLevel.I, "Loading colors...")
             If ColoredShell Then
                 'We use New Color() to parse entered color. This is to ensure that the kernel can use the correct VT sequence.
                 UserNameShellColor = New Color(If(ConfigToken("Colors")?("User Name Shell Color"), ConsoleColors.Green)).PlainSequence
@@ -466,7 +466,7 @@ Public Module Config
             End If
 
             'General Section
-            Wdbg("I", "Parsing general section...")
+            Wdbg(DebugLevel.I, "Parsing general section...")
             setRootPasswd = If(ConfigToken("General")?("Change Root Password"), False)
             If setRootPasswd = True Then RootPasswd = ConfigToken("General")?("Set Root Password to")
             maintenance = If(ConfigToken("General")?("Maintenance Mode"), False)
@@ -475,14 +475,14 @@ Public Module Config
             If Not String.IsNullOrWhiteSpace(ConfigToken("General")?("Custom Startup Banner")) Then CustomBanner = ConfigToken("General")?("Custom Startup Banner")
 
             'Login Section
-            Wdbg("I", "Parsing login section...")
+            Wdbg(DebugLevel.I, "Parsing login section...")
             clsOnLogin = If(ConfigToken("Login")?("Clear Screen on Log-in"), False)
             showMOTD = If(ConfigToken("Login")?("Show MOTD on Log-in"), True)
             ShowAvailableUsers = If(ConfigToken("Login")?("Show available usernames"), True)
             If Not String.IsNullOrWhiteSpace(ConfigToken("Login")?("Host Name")) Then HName = ConfigToken("Login")?("Host Name")
 
             'Shell Section
-            Wdbg("I", "Parsing shell section...")
+            Wdbg(DebugLevel.I, "Parsing shell section...")
             simHelp = If(ConfigToken("Shell")?("Simplified Help Command"), False)
             CurrDir = If(ConfigToken("Shell")?("Current Directory"), GetOtherPath(OtherPathType.Home))
             PathsToLookup = If(Not String.IsNullOrEmpty(ConfigToken("Shell")?("Lookup Directories")), ConfigToken("Shell")?("Lookup Directories").ToString.ReleaseDoubleQuotes, Environ("PATH"))
@@ -495,7 +495,7 @@ Public Module Config
             ZipShell_PromptStyle = If(ConfigToken("Shell")?("Zip Shell Prompt Style"), "")
 
             'Filesystem Section
-            Wdbg("I", "Parsing filesystem section...")
+            Wdbg(DebugLevel.I, "Parsing filesystem section...")
             DebugQuota = If(Integer.TryParse(ConfigToken("Filesystem")?("Debug Size Quota in Bytes"), 0), ConfigToken("Filesystem")?("Debug Size Quota in Bytes"), 1073741824)
             FullParseMode = If(ConfigToken("Filesystem")?("Size parse mode"), False)
             HiddenFiles = If(ConfigToken("Filesystem")?("Show Hidden Files"), False)
@@ -504,13 +504,13 @@ Public Module Config
             ShowFilesystemProgress = If(ConfigToken("Filesystem")?("Show progress on filesystem operations"), True)
 
             'Hardware Section
-            Wdbg("I", "Parsing hardware section...")
+            Wdbg(DebugLevel.I, "Parsing hardware section...")
             QuietHardwareProbe = If(ConfigToken("Hardware")?("Quiet Probe"), False)
             FullHardwareProbe = If(ConfigToken("Hardware")?("Full Probe"), True)
             VerboseHardwareProbe = If(ConfigToken("Hardware")?("Verbose Probe"), False)
 
             'Network Section
-            Wdbg("I", "Parsing network section...")
+            Wdbg(DebugLevel.I, "Parsing network section...")
             DebugPort = If(Integer.TryParse(ConfigToken("Network")?("Debug Port"), 0), ConfigToken("Network")?("Debug Port"), 3014)
             DRetries = If(Integer.TryParse(ConfigToken("Network")?("Download Retry Times"), 0), ConfigToken("Network")?("Download Retry Times"), 3)
             URetries = If(Integer.TryParse(ConfigToken("Network")?("Upload Retry Times"), 0), ConfigToken("Network")?("Upload Retry Times"), 3)
@@ -668,7 +668,7 @@ Public Module Config
             SpotWriteWrite = If(ConfigToken("Screensaver")?("SpotWrite")?("Text Shown"), "Kernel Simulator")
 
             'Misc Section
-            Wdbg("I", "Parsing misc section...")
+            Wdbg(DebugLevel.I, "Parsing misc section...")
             CornerTD = If(ConfigToken("Misc")?("Show Time/Date on Upper Right Corner"), False)
             StartScroll = If(ConfigToken("Misc")?("Marquee on startup"), True)
             LongTimeDate = If(ConfigToken("Misc")?("Long Time and Date"), True)
@@ -685,13 +685,13 @@ Public Module Config
             Return True
         Catch nre As NullReferenceException
             'Rare, but repair config if an NRE is caught.
-            Wdbg("E", "Error trying to read config: {0}", nre.Message)
+            Wdbg(DebugLevel.E, "Error trying to read config: {0}", nre.Message)
             RepairConfig()
         Catch ex As Exception
             EventManager.RaiseConfigReadError(ex)
             WStkTrc(ex)
             NotifyConfigError = True
-            Wdbg("E", "Error trying to read config: {0}", ex.Message)
+            Wdbg(DebugLevel.E, "Error trying to read config: {0}", ex.Message)
             Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to read configuration: {0}."), ex, ex.Message)
         End Try
         Return False
@@ -703,7 +703,7 @@ Public Module Config
     Sub InitializeConfig()
         'Make a config file if not found
         If Not File.Exists(GetKernelPath(KernelPathType.Configuration)) Then
-            Wdbg("E", "No config file found. Creating...")
+            Wdbg(DebugLevel.E, "No config file found. Creating...")
             CreateConfig()
         End If
 

@@ -84,17 +84,17 @@ Module TestShell
             FullCmd = Console.ReadLine
             Try
                 If Not (FullCmd = Nothing Or FullCmd?.StartsWithAnyOf({" ", "#"}) = True) Then
-                    Wdbg("I", "Command: {0}", FullCmd)
+                    Wdbg(DebugLevel.I, "Command: {0}", FullCmd)
                     Dim Command As String = FullCmd.SplitEncloseDoubleQuotes(" ")(0)
                     If Test_Commands.ContainsKey(Command) Then
                         TStartCommandThread = New Thread(AddressOf TParseCommand) With {.Name = "Test Shell Command Thread"}
                         TStartCommandThread.Start(FullCmd)
                         TStartCommandThread.Join()
                     ElseIf Test_ModCommands.Contains(Command) Then
-                        Wdbg("I", "Mod command found.")
+                        Wdbg(DebugLevel.I, "Mod command found.")
                         ExecuteModCommand(FullCmd)
                     ElseIf TestShellAliases.Keys.Contains(Command) Then
-                        Wdbg("I", "Test shell alias command found.")
+                        Wdbg(DebugLevel.I, "Test shell alias command found.")
                         FullCmd = FullCmd.Replace($"""{Command}""", Command)
                         ExecuteTestAlias(FullCmd)
                     Else
@@ -105,7 +105,7 @@ Module TestShell
                 End If
             Catch ex As Exception
                 W(DoTranslation("Error in test shell: {0}"), True, ColTypes.Error, ex.Message)
-                Wdbg("E", "Error: {0}", ex.Message)
+                Wdbg(DebugLevel.E, "Error: {0}", ex.Message)
                 WStkTrc(ex)
             End Try
         End While
@@ -120,7 +120,7 @@ Module TestShell
     Sub ExecuteTestAlias(aliascmd As String)
         Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, TestShellAliases(FirstWordCmd))
-        Wdbg("I", "Actual command: {0}", actualCmd)
+        Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
         TStartCommandThread = New Thread(AddressOf TParseCommand) With {.Name = "Test Shell Command Thread"}
         TStartCommandThread.Start(actualCmd)
         TStartCommandThread.Join()

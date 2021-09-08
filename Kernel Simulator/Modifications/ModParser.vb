@@ -93,7 +93,7 @@ Public Module ModParser
 
         'Check language
         Dim provider As CodeDomProvider
-        Wdbg("I", $"Language detected: {PLang}")
+        Wdbg(DebugLevel.I, $"Language detected: {PLang}")
         If PLang = "C#" Then
             provider = New CSharpCodeProvider
         ElseIf PLang = "VB.NET" Then
@@ -109,7 +109,7 @@ Public Module ModParser
         }
 
         'Add referenced assemblies
-        Wdbg("I", "Referenced assemblies will be added.")
+        Wdbg(DebugLevel.I, "Referenced assemblies will be added.")
         prm.ReferencedAssemblies.Add(Assembly.GetExecutingAssembly.Location) 'It should reference itself
         prm.ReferencedAssemblies.Add("System.dll")
         prm.ReferencedAssemblies.Add("System.Core.dll")
@@ -117,14 +117,14 @@ Public Module ModParser
         prm.ReferencedAssemblies.Add("System.DirectoryServices.dll")
         prm.ReferencedAssemblies.Add("System.Xml.dll")
         prm.ReferencedAssemblies.Add("System.Xml.Linq.dll")
-        Wdbg("I", "Referenced assemblies added.")
+        Wdbg(DebugLevel.I, "Referenced assemblies added.")
 
         'Detect referenced assemblies from comments that start with "Reference GAC: <ref>" or "Reference File: <path/to/ref>".
         Dim References() As String = code.SplitNewLines.Select(Function(x) x).Where(Function(x) x.ContainsAnyOf({"Reference GAC: ", "Reference File: "})).ToArray
-        Wdbg("I", "Found {0} references (matches taken from searching for ""Reference GAC: "" or ""Reference File: "").", References.Length)
+        Wdbg(DebugLevel.I, "Found {0} references (matches taken from searching for ""Reference GAC: "" or ""Reference File: "").", References.Length)
         For Each Reference As String In References
             Reference.RemoveNullsOrWhitespacesAtTheBeginning
-            Wdbg("I", "Reference line: {0}", Reference)
+            Wdbg(DebugLevel.I, "Reference line: {0}", Reference)
             Dim LocationCheckRequired As Boolean = Reference.Contains("Reference File: ")
             If (Reference.StartsWith("//") And PLang = "C#") Or (Reference.StartsWith("'") And PLang = "VB.NET") Then
                 'Remove comment mark
@@ -134,13 +134,13 @@ Public Module ModParser
                 'Remove "Reference GAC: " or "Reference File: " and remove all whitespaces or nulls in the beginning
                 Reference = Reference.ReplaceAll({"Reference GAC: ", "Reference File: "}, "")
                 Reference.RemoveNullsOrWhitespacesAtTheBeginning
-                Wdbg("I", "Final reference line: {0}", Reference)
+                Wdbg(DebugLevel.I, "Final reference line: {0}", Reference)
 
                 'Add reference
                 If LocationCheckRequired Then
                     'Check to see if the reference file exists
                     If Not File.Exists(Reference) Then
-                        Wdbg("E", "File {0} not found to reference.", Reference)
+                        Wdbg(DebugLevel.E, "File {0} not found to reference.", Reference)
                         W(DoTranslation("Referenced file {0} not found. This mod might not work properly without this file."), True, ColTypes.Warning, Reference)
                         GoTo NextEntry
                     End If
@@ -159,24 +159,24 @@ NextEntry:
             modCode = {$"using {namespc};{vbNewLine}{code}"}
         End If
 #Disable Warning BC42104
-        Wdbg("I", "Compiling...")
+        Wdbg(DebugLevel.I, "Compiling...")
         Dim res As CompilerResults = provider.CompileAssemblyFromSource(prm, modCode)
 #Enable Warning BC42104
 
         'Check to see if there are compilation errors
-        Wdbg("I", "Has errors: {0}", res.Errors.HasErrors)
-        Wdbg("I", "Has warnings: {0}", res.Errors.HasWarnings)
+        Wdbg(DebugLevel.I, "Has errors: {0}", res.Errors.HasErrors)
+        Wdbg(DebugLevel.I, "Has warnings: {0}", res.Errors.HasWarnings)
         If res.Errors.HasErrors Then
             W(DoTranslation("Mod can't be loaded because of the following: "), True, ColTypes.Error)
             For Each errorName In res.Errors
                 W(errorName.ToString, True, ColTypes.Error)
-                Wdbg("E", errorName.ToString)
+                Wdbg(DebugLevel.E, errorName.ToString)
             Next
             Exit Function
         End If
 
         'Make object type instance
-        Wdbg("I", "Creating instance of type...")
+        Wdbg(DebugLevel.I, "Creating instance of type...")
         Return GetModInstance(res.CompiledAssembly)
     End Function
 
@@ -198,20 +198,20 @@ NextEntry:
         modFile = Path.GetFileName(modFile)
         If modFile.EndsWith(".ss.vb") Then
             'Mod is a screensaver that has a language of VB.NET
-            Wdbg("W", "Mod file {0} is a screensaver. Language: VB.NET", modFile)
+            Wdbg(DebugLevel.W, "Mod file {0} is a screensaver. Language: VB.NET", modFile)
             CompileCustom(modFile)
         ElseIf modFile.EndsWith(".ss.cs") Then
             'Mod is a screensaver that has a language of C#
-            Wdbg("W", "Mod file {0} is a screensaver. Language: C#", modFile)
+            Wdbg(DebugLevel.W, "Mod file {0} is a screensaver. Language: C#", modFile)
             CompileCustom(modFile)
         ElseIf modFile.EndsWith(".cs") Then
             'Mod has a language of C#
-            Wdbg("I", "Mod language is C# from extension "".cs""")
+            Wdbg(DebugLevel.I, "Mod language is C# from extension "".cs""")
             Dim script As IScript = GenMod("C#", File.ReadAllText(modPath + modFile))
             FinalizeMods(script, modFile)
         ElseIf modFile.EndsWith(".vb") Then
             'Mod has a language of VB.NET
-            Wdbg("I", "Mod language is VB.NET from extension "".vb""")
+            Wdbg(DebugLevel.I, "Mod language is VB.NET from extension "".vb""")
             Dim script As IScript = GenMod("VB.NET", File.ReadAllText(modPath + modFile))
             FinalizeMods(script, modFile)
         ElseIf modFile.EndsWith(".dll") Then
@@ -221,18 +221,18 @@ NextEntry:
                 If script Is Nothing Then CompileCustom(modPath + modFile)
                 FinalizeMods(script, modFile)
             Catch ex As ReflectionTypeLoadException
-                Wdbg("E", "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message)
+                Wdbg(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message)
                 WStkTrc(ex)
                 W(DoTranslation("Mod can't be loaded because of the following: "), True, ColTypes.Error)
                 For Each LoaderException As Exception In ex.LoaderExceptions
-                    Wdbg("E", "Loader exception: {0}", LoaderException.Message)
+                    Wdbg(DebugLevel.E, "Loader exception: {0}", LoaderException.Message)
                     WStkTrc(LoaderException)
                     W(LoaderException.Message, True, ColTypes.Error)
                 Next
             End Try
         Else
             'Ignore all mods that its file name doesn't end with .vb
-            Wdbg("W", "Unsupported file type for mod file {0}.", modFile)
+            Wdbg(DebugLevel.W, "Unsupported file type for mod file {0}.", modFile)
         End If
     End Sub
 
@@ -252,11 +252,11 @@ NextEntry:
             Try
                 'Start the mod
                 script.StartMod()
-                Wdbg("I", "script.StartMod() initialized. Mod name: {0} | Mod part: {1} | Version: {2}", script.Name, script.ModPart, script.Version)
+                Wdbg(DebugLevel.I, "script.StartMod() initialized. Mod name: {0} | Mod part: {1} | Version: {2}", script.Name, script.ModPart, script.Version)
 
                 'See if the mod has part name
                 If String.IsNullOrWhiteSpace(script.ModPart) Then
-                    Wdbg("W", "No part name for {0}", modFile)
+                    Wdbg(DebugLevel.W, "No part name for {0}", modFile)
                     W(DoTranslation("Mod {0} does not have the part name. Mod parsing failed. Review the source code."), True, ColTypes.Error, modFile)
                     Exit Sub
                 End If
@@ -265,7 +265,7 @@ NextEntry:
                 If script.Commands IsNot Nothing Then
                     For Each Command As String In script.Commands.Keys
                         If String.IsNullOrWhiteSpace(Command) Then
-                            Wdbg("W", "No command for {0}", modFile)
+                            Wdbg(DebugLevel.W, "No command for {0}", modFile)
                             W(DoTranslation("Mod {0} has invalid command. Mod parsing failed. Review the source code."), True, ColTypes.Error, modFile)
                             Exit Sub
                         End If
@@ -277,37 +277,37 @@ NextEntry:
                 If String.IsNullOrWhiteSpace(ModName) Then
                     'Mod has no name! Give it a file name.
                     ModName = modFile
-                    Wdbg("W", "No name for {0}", modFile)
+                    Wdbg(DebugLevel.W, "No name for {0}", modFile)
                     W(DoTranslation("Mod {0} does not have the name. Review the source code."), True, ColTypes.Warning, modFile)
                 Else
-                    Wdbg("I", "There is a name for {0}", modFile)
+                    Wdbg(DebugLevel.I, "There is a name for {0}", modFile)
                 End If
-                Wdbg("I", "Mod name: {0}", ModName)
+                Wdbg(DebugLevel.I, "Mod name: {0}", ModName)
 
                 'See if the mod part conflicts with existing parts
-                Wdbg("I", "Checking to see if {0} exists in scripts...", ModName)
+                Wdbg(DebugLevel.I, "Checking to see if {0} exists in scripts...", ModName)
                 If scripts.ContainsKey(ModName) Then
                     'The mod already exists. Add mod part to existing mod.
-                    Wdbg("I", "Exists. Adding mod part {0}...", script.ModPart)
+                    Wdbg(DebugLevel.I, "Exists. Adding mod part {0}...", script.ModPart)
                     If Not scripts(ModName).ModParts.ContainsKey(script.ModPart) Then
-                        Wdbg("I", "No conflict with {0}. Adding as is...", script.ModPart)
+                        Wdbg(DebugLevel.I, "No conflict with {0}. Adding as is...", script.ModPart)
                         PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, modPath), script)
                         scripts(ModName).ModParts.Add(script.ModPart, PartInstance)
                     Else
-                        Wdbg("W", "There is a conflict with {0}. Appending item number...", script.ModPart)
+                        Wdbg(DebugLevel.W, "There is a conflict with {0}. Appending item number...", script.ModPart)
                         script.ModPart += CStr(scripts(ModName).ModParts.Count)
                         PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, modPath), script)
                         scripts(ModName).ModParts.Add(script.ModPart, PartInstance)
                     End If
                 Else
                     'The mod wasn't existent. Add mod part to new entry of mod.
-                    Wdbg("I", "Adding mod with mod part {0}...", script.ModPart)
+                    Wdbg(DebugLevel.I, "Adding mod with mod part {0}...", script.ModPart)
                     If Not ModParts.ContainsKey(script.ModPart) Then
-                        Wdbg("I", "No conflict with {0}. Adding as is...", script.ModPart)
+                        Wdbg(DebugLevel.I, "No conflict with {0}. Adding as is...", script.ModPart)
                         PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, modPath), script)
                         ModParts.Add(script.ModPart, PartInstance)
                     Else
-                        Wdbg("W", "There is a conflict with {0}. Appending item number...", script.ModPart)
+                        Wdbg(DebugLevel.W, "There is a conflict with {0}. Appending item number...", script.ModPart)
                         script.ModPart += CStr(scripts.Count)
                         PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, modPath), script)
                         ModParts.Add(script.ModPart, PartInstance)
@@ -318,10 +318,10 @@ NextEntry:
 
                 'See if the mod has version
                 If String.IsNullOrWhiteSpace(script.Version) And Not String.IsNullOrWhiteSpace(script.Name) Then
-                    Wdbg("I", "{0}.Version = """" | {0}.Name = {1}", modFile, script.Name)
+                    Wdbg(DebugLevel.I, "{0}.Version = """" | {0}.Name = {1}", modFile, script.Name)
                     W(DoTranslation("Mod {0} does not have the version."), True, ColTypes.Warning, script.Name)
                 ElseIf Not String.IsNullOrWhiteSpace(script.Name) And Not String.IsNullOrWhiteSpace(script.Version) Then
-                    Wdbg("I", "{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version)
+                    Wdbg(DebugLevel.I, "{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version)
                     W(DoTranslation("{0} v{1} started") + " ({2})", True, ColTypes.Neutral, script.Name, script.Version, script.ModPart)
                 End If
 
@@ -334,47 +334,47 @@ NextEntry:
                         Select Case script.Commands(Command).Type
                             Case ShellCommandType.Shell
                                 If Commands.ContainsKey(Command) Or modcmnds.Contains(Command) Then
-                                    Wdbg("W", "Command {0} conflicts with available shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Wdbg(DebugLevel.W, "Command {0} conflicts with available shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
                                     Command += $"-{script.Name}-{script.ModPart}"
                                 End If
                             Case ShellCommandType.FTPShell
                                 If FTPCommands.ContainsKey(Command) Or FTPModCommands.Contains(Command) Then
-                                    Wdbg("W", "Command {0} conflicts with available FTP shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Wdbg(DebugLevel.W, "Command {0} conflicts with available FTP shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
                                     Command += $"-{script.Name}-{script.ModPart}"
                                 End If
                             Case ShellCommandType.MailShell
                                 If MailCommands.ContainsKey(Command) Or MailModCommands.Contains(Command) Then
-                                    Wdbg("W", "Command {0} conflicts with available mail shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Wdbg(DebugLevel.W, "Command {0} conflicts with available mail shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
                                     Command += $"-{script.Name}-{script.ModPart}"
                                 End If
                             Case ShellCommandType.SFTPShell
                                 If SFTPCommands.ContainsKey(Command) Or SFTPModCommands.Contains(Command) Then
-                                    Wdbg("W", "Command {0} conflicts with available SFTP shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Wdbg(DebugLevel.W, "Command {0} conflicts with available SFTP shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
                                     Command += $"-{script.Name}-{script.ModPart}"
                                 End If
                             Case ShellCommandType.TextShell
                                 If TextEdit_Commands.ContainsKey(Command) Or TextEdit_ModCommands.Contains(Command) Then
-                                    Wdbg("W", "Command {0} conflicts with available text shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Wdbg(DebugLevel.W, "Command {0} conflicts with available text shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
                                     Command += $"-{script.Name}-{script.ModPart}"
                                 End If
                             Case ShellCommandType.TestShell
                                 If Test_Commands.ContainsKey(Command) Or Test_ModCommands.Contains(Command) Then
-                                    Wdbg("W", "Command {0} conflicts with available text shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Wdbg(DebugLevel.W, "Command {0} conflicts with available text shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
                                     Command += $"-{script.Name}-{script.ModPart}"
                                 End If
                             Case ShellCommandType.RemoteDebugShell
                                 If DebugCommands.ContainsKey(Command) Or DebugModCmds.Contains(Command) Then
-                                    Wdbg("W", "Command {0} conflicts with available remote debug shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Wdbg(DebugLevel.W, "Command {0} conflicts with available remote debug shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
                                     Command += $"-{script.Name}-{script.ModPart}"
                                 End If
                             Case ShellCommandType.ZIPShell
                                 If ZipShell_Commands.ContainsKey(Command) Or ZipShell_ModCommands.Contains(Command) Then
-                                    Wdbg("W", "Command {0} conflicts with available ZIP shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Wdbg(DebugLevel.W, "Command {0} conflicts with available ZIP shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
                                     Command += $"-{script.Name}-{script.ModPart}"
                                 End If
                             Case ShellCommandType.RSSShell
                                 If RSSCommands.ContainsKey(Command) Or RSSModCommands.Contains(Command) Then
-                                    Wdbg("W", "Command {0} conflicts with available RSS shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Wdbg(DebugLevel.W, "Command {0} conflicts with available RSS shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
                                     Command += $"-{script.Name}-{script.ModPart}"
                                 End If
                         End Select
@@ -383,54 +383,54 @@ NextEntry:
                         If Command <> "" Then
                             If script.Commands(ActualCommand).HelpDefinition = "" Then
                                 W(DoTranslation("No definition for command {0}."), True, ColTypes.Warning, Command)
-                                Wdbg("W", "{0}.Def = Nothing, {0}.Def = ""Command defined by {1} ({2})""", Command, script.Name, script.ModPart)
+                                Wdbg(DebugLevel.W, "{0}.Def = Nothing, {0}.Def = ""Command defined by {1} ({2})""", Command, script.Name, script.ModPart)
                                 script.Commands(ActualCommand).HelpDefinition = DoTranslation("Command defined by ") + script.Name + " (" + script.ModPart + ")"
                             End If
 
-                            Wdbg("I", "Command type: {0}", script.Commands(ActualCommand).Type)
+                            Wdbg(DebugLevel.I, "Command type: {0}", script.Commands(ActualCommand).Type)
                             Select Case script.Commands(ActualCommand).Type
                                 Case ShellCommandType.Shell
-                                    Wdbg("I", "Adding command {0} for main shell...", Command)
+                                    Wdbg(DebugLevel.I, "Adding command {0} for main shell...", Command)
                                     If Not modcmnds.Contains(Command) Then modcmnds.Add(Command)
                                     script.Commands.RenameKey(ActualCommand, Command)
                                     ModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
                                 Case ShellCommandType.FTPShell
-                                    Wdbg("I", "Adding command {0} for FTP shell...", Command)
+                                    Wdbg(DebugLevel.I, "Adding command {0} for FTP shell...", Command)
                                     If Not FTPModCommands.Contains(Command) Then FTPModCommands.Add(Command)
                                     script.Commands.RenameKey(ActualCommand, Command)
                                     FTPModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
                                 Case ShellCommandType.MailShell
-                                    Wdbg("I", "Adding command {0} for mail shell...", Command)
+                                    Wdbg(DebugLevel.I, "Adding command {0} for mail shell...", Command)
                                     If Not MailModCommands.Contains(Command) Then MailModCommands.Add(Command)
                                     script.Commands.RenameKey(ActualCommand, Command)
                                     MailModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
                                 Case ShellCommandType.SFTPShell
-                                    Wdbg("I", "Adding command {0} for SFTP shell...", Command)
+                                    Wdbg(DebugLevel.I, "Adding command {0} for SFTP shell...", Command)
                                     If Not SFTPModCommands.Contains(Command) Then SFTPModCommands.Add(Command)
                                     script.Commands.RenameKey(ActualCommand, Command)
                                     SFTPModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
                                 Case ShellCommandType.TextShell
-                                    Wdbg("I", "Adding command {0} for text editor shell...", Command)
+                                    Wdbg(DebugLevel.I, "Adding command {0} for text editor shell...", Command)
                                     If Not TextEdit_ModCommands.Contains(Command) Then TextEdit_ModCommands.Add(Command)
                                     script.Commands.RenameKey(ActualCommand, Command)
                                     TextEdit_ModHelpEntries.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
                                 Case ShellCommandType.TestShell
-                                    Wdbg("I", "Adding command {0} for test shell...", Command)
+                                    Wdbg(DebugLevel.I, "Adding command {0} for test shell...", Command)
                                     If Not Test_ModCommands.Contains(Command) Then Test_ModCommands.Add(Command)
                                     script.Commands.RenameKey(ActualCommand, Command)
                                     TestModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
                                 Case ShellCommandType.RemoteDebugShell
-                                    Wdbg("I", "Adding command {0} for remote debug shell...", Command)
+                                    Wdbg(DebugLevel.I, "Adding command {0} for remote debug shell...", Command)
                                     If Not DebugModCmds.Contains(Command) Then DebugModCmds.Add(Command)
                                     script.Commands.RenameKey(ActualCommand, Command)
                                     RDebugModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
                                 Case ShellCommandType.ZIPShell
-                                    Wdbg("I", "Adding command {0} for ZIP shell...", Command)
+                                    Wdbg(DebugLevel.I, "Adding command {0} for ZIP shell...", Command)
                                     If Not ZipShell_ModCommands.Contains(Command) Then ZipShell_ModCommands.Add(Command)
                                     script.Commands.RenameKey(ActualCommand, Command)
                                     ZipShell_ModHelpEntries.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
                                 Case ShellCommandType.RSSShell
-                                    Wdbg("I", "Adding command {0} for RSS shell...", Command)
+                                    Wdbg(DebugLevel.I, "Adding command {0} for RSS shell...", Command)
                                     If Not RSSModCommands.Contains(Command) Then RSSModCommands.Add(Command)
                                     script.Commands.RenameKey(ActualCommand, Command)
                                     RSSModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
@@ -443,7 +443,7 @@ NextEntry:
 #If MANPAGE Then
                 Dim ModManualPath As String = NeutralizePath(modFile + ".manual", modPath)
                 If Directory.Exists(ModManualPath) Then
-                    Wdbg("I", "Found manual page collection in {0}", ModManualPath)
+                    Wdbg(DebugLevel.I, "Found manual page collection in {0}", ModManualPath)
                     For Each ModManualFile As String In Directory.EnumerateFiles(ModManualPath, "*.man", SearchOption.AllDirectories)
                         InitMan(ModManualFile)
                     Next

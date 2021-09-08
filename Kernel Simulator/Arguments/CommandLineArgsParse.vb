@@ -42,19 +42,19 @@ Module CommandLineArgsParse
                     '1. Get the index of the first space (Used for step 3)
                     Dim index As Integer = Argument.IndexOf(" ")
                     If index = -1 Then index = Argument.Length
-                    Wdbg("I", "Index: {0}", index)
+                    Wdbg(DebugLevel.I, "Index: {0}", index)
 
                     '2. Split the requested command string into words
                     Dim words() As String = Argument.Split({" "c})
                     For i As Integer = 0 To words.Length - 1
-                        Wdbg("I", "Word {0}: {1}", i + 1, words(i))
+                        Wdbg(DebugLevel.I, "Word {0}: {1}", i + 1, words(i))
                     Next
 
                     '3. Get the string of arguments
                     Dim strArgs As String = Argument.Substring(index)
-                    Wdbg("I", "Prototype strArgs: {0}", strArgs)
+                    Wdbg(DebugLevel.I, "Prototype strArgs: {0}", strArgs)
                     If Not index = Argument.Length Then strArgs = strArgs.Substring(1)
-                    Wdbg("I", "Finished strArgs: {0}", strArgs)
+                    Wdbg(DebugLevel.I, "Finished strArgs: {0}", strArgs)
                     Argument = words(0)
 
                     '4. Split the arguments with enclosed quotes and set the required boolean variable
@@ -76,7 +76,7 @@ Module CommandLineArgsParse
                     End If
 
                     '4a. Debug: get all arguments from eqargs()
-                    If eqargs IsNot Nothing Then Wdbg("I", "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
+                    If eqargs IsNot Nothing Then Wdbg(DebugLevel.I, "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
 
                     '5. Parse the arguments
                     If AvailableCMDLineArgs.ContainsKey(Argument) Then

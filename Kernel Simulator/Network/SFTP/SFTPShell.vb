@@ -57,7 +57,7 @@ Public Module SFTPShell
             Try
                 'Complete initialization
                 If SFTPInitialized = False Then
-                    Wdbg("I", $"Completing initialization of SFTP: {SFTPInitialized}")
+                    Wdbg(DebugLevel.I, $"Completing initialization of SFTP: {SFTPInitialized}")
                     SFTPCurrDirect = GetOtherPath(OtherPathType.Home)
                     EventManager.RaiseSFTPShellInitialized()
 
@@ -70,7 +70,7 @@ Public Module SFTPShell
 
                 'Check if the shell is going to exit
                 If sftpexit = True Then
-                    Wdbg("W", "Exiting shell...")
+                    Wdbg(DebugLevel.W, "Exiting shell...")
                     SFTPConnected = False
                     ClientSFTP?.Disconnect()
                     sftpsite = ""
@@ -91,9 +91,9 @@ Public Module SFTPShell
                     Console.SetOut(DefConsoleOut)
                 End If
                 If Not Connects Then
-                    Wdbg("I", "Preparing prompt...")
+                    Wdbg(DebugLevel.I, "Preparing prompt...")
                     If SFTPConnected Then
-                        Wdbg("I", "SFTPShellPromptStyle = {0}", SFTPShellPromptStyle)
+                        Wdbg(DebugLevel.I, "SFTPShellPromptStyle = {0}", SFTPShellPromptStyle)
                         If SFTPShellPromptStyle = "" Then
                             W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, SFTPUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, sftpsite) : W("]{0}> ", False, ColTypes.Gray, SFTPCurrentRemoteDir)
                         Else
@@ -114,11 +114,11 @@ Public Module SFTPShell
 
                 'Try to connect if IP address is specified.
                 If Connects Then
-                    Wdbg("I", $"Currently connecting to {Address} by ""sftp (address)""...")
+                    Wdbg(DebugLevel.I, $"Currently connecting to {Address} by ""sftp (address)""...")
                     SFTPStrCmd = $"connect {Address}"
                     Connects = False
                 Else
-                    Wdbg("I", "Normal shell")
+                    Wdbg(DebugLevel.I, "Normal shell")
                     SFTPStrCmd = Console.ReadLine()
                 End If
                 EventManager.RaiseSFTPPreExecuteCommand(SFTPStrCmd)
@@ -145,22 +145,22 @@ Public Module SFTPShell
     ''' </summary>
     Public Sub SFTPGetLine()
         Dim words As String() = SFTPStrCmd.SplitEncloseDoubleQuotes(" ")
-        Wdbg("I", "Command: {0}", SFTPStrCmd)
-        Wdbg("I", $"Is the command found? {SFTPCommands.ContainsKey(words(0))}")
+        Wdbg(DebugLevel.I, "Command: {0}", SFTPStrCmd)
+        Wdbg(DebugLevel.I, $"Is the command found? {SFTPCommands.ContainsKey(words(0))}")
         If SFTPCommands.ContainsKey(words(0)) Then
-            Wdbg("I", "Command found.")
+            Wdbg(DebugLevel.I, "Command found.")
             SFTPStartCommandThread = New Thread(AddressOf SFTPGetCommand.ExecuteCommand) With {.Name = "SFTP Command Thread"}
             SFTPStartCommandThread.Start(SFTPStrCmd)
             SFTPStartCommandThread.Join()
         ElseIf SFTPModCommands.Contains(words(0)) Then
-            Wdbg("I", "Mod command found.")
+            Wdbg(DebugLevel.I, "Mod command found.")
             ExecuteModCommand(SFTPStrCmd)
         ElseIf SFTPShellAliases.Keys.Contains(words(0)) Then
-            Wdbg("I", "Aliased command found.")
+            Wdbg(DebugLevel.I, "Aliased command found.")
             SFTPStrCmd = SFTPStrCmd.Replace($"""{words(0)}""", words(0))
             ExecuteSFTPAlias(SFTPStrCmd)
         ElseIf Not SFTPStrCmd.StartsWith(" ") Then
-            Wdbg("E", "Command {0} not found.", SFTPStrCmd)
+            Wdbg(DebugLevel.E, "Command {0} not found.", SFTPStrCmd)
             W(DoTranslation("SFTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on SFTP shell."), True, ColTypes.Error, words(0))
         End If
     End Sub
@@ -172,7 +172,7 @@ Public Module SFTPShell
     Sub ExecuteSFTPAlias(aliascmd As String)
         Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, SFTPShellAliases(FirstWordCmd))
-        Wdbg("I", "Actual command: {0}", actualCmd)
+        Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
         SFTPStartCommandThread = New Thread(AddressOf SFTPGetCommand.ExecuteCommand) With {.Name = "SFTP Command Thread"}
         SFTPStartCommandThread.Start(actualCmd)
         SFTPStartCommandThread.Join()

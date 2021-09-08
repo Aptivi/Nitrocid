@@ -38,7 +38,7 @@ Module MailGetCommand
 
         '5. Check to see if a requested command is obsolete
         If MailCommands(Command).Obsolete Then
-            Wdbg("I", "The command requested {0} is obsolete", Command)
+            Wdbg(DebugLevel.I, "The command requested {0} is obsolete", Command)
             W(DoTranslation("This command is obsolete and will be removed in a future release."), True, ColTypes.Neutral)
         End If
 
@@ -51,7 +51,7 @@ Module MailGetCommand
                     End If
                 Case "list"
                     If eqargs?.Length > 0 Then
-                        Wdbg("I", "Page is numeric? {0}", eqargs(0).IsNumeric)
+                        Wdbg(DebugLevel.I, "Page is numeric? {0}", eqargs(0).IsNumeric)
                         If eqargs(0).IsNumeric Then
                             W(MailListMessages(eqargs(0)), False, ColTypes.Neutral)
                         Else
@@ -64,7 +64,7 @@ Module MailGetCommand
                     W(MailListDirectories, False, ColTypes.Neutral)
                 Case "read"
                     If RequiredArgumentsProvided Then
-                        Wdbg("I", "Message number is numeric? {0}", eqargs(0).IsNumeric)
+                        Wdbg(DebugLevel.I, "Message number is numeric? {0}", eqargs(0).IsNumeric)
                         If eqargs(0).IsNumeric Then
                             MailPrintMessage(eqargs(0))
                         Else
@@ -73,7 +73,7 @@ Module MailGetCommand
                     End If
                 Case "readenc"
                     If RequiredArgumentsProvided Then
-                        Wdbg("I", "Message number is numeric? {0}", eqargs(0).IsNumeric)
+                        Wdbg(DebugLevel.I, "Message number is numeric? {0}", eqargs(0).IsNumeric)
                         If eqargs(0).IsNumeric Then
                             MailPrintMessage(eqargs(0), True)
                         Else
@@ -87,16 +87,16 @@ Module MailGetCommand
                     'Prompt for receiver e-mail address
                     W(DoTranslation("Enter recipient mail address:") + " ", False, ColTypes.Input)
                     Receiver = Console.ReadLine
-                    Wdbg("I", "Recipient: {0}", Receiver)
+                    Wdbg(DebugLevel.I, "Recipient: {0}", Receiver)
 
                     'Check for mail format
                     If Receiver.Contains("@") And Receiver.Substring(Receiver.IndexOf("@")).Contains(".") Then
-                        Wdbg("I", "Mail format satisfied. Contains ""@"" and contains ""."" in the second part after the ""@"" symbol.")
+                        Wdbg(DebugLevel.I, "Mail format satisfied. Contains ""@"" and contains ""."" in the second part after the ""@"" symbol.")
 
                         'Prompt for subject
                         W(DoTranslation("Enter the subject:") + " ", False, ColTypes.Input)
                         Subject = Console.ReadLine
-                        Wdbg("I", "Subject: {0} ({1} chars)", Subject, Subject.Length)
+                        Wdbg(DebugLevel.I, "Subject: {0} ({1} chars)", Subject, Subject.Length)
 
                         'Prompt for body
                         W(DoTranslation("Enter your message below. Write ""EOF"" to confirm."), True, ColTypes.Input)
@@ -104,9 +104,9 @@ Module MailGetCommand
                         While Not BodyLine.ToUpper = "EOF"
                             BodyLine = Console.ReadLine
                             If Not BodyLine.ToUpper = "EOF" Then
-                                Wdbg("I", "Body line: {0} ({1} chars)", BodyLine, BodyLine.Length)
+                                Wdbg(DebugLevel.I, "Body line: {0} ({1} chars)", BodyLine, BodyLine.Length)
                                 Body.TextBody += BodyLine + vbNewLine
-                                Wdbg("I", "Body length: {0} chars", Body.TextBody.Length)
+                                Wdbg(DebugLevel.I, "Body length: {0} chars", Body.TextBody.Length)
                             End If
                         End While
 
@@ -117,7 +117,7 @@ Module MailGetCommand
                             PathLine = Console.ReadLine
                             If Not PathLine = "" Then
                                 PathLine = NeutralizePath(PathLine)
-                                Wdbg("I", "Path line: {0} ({1} chars)", PathLine, PathLine.Length)
+                                Wdbg(DebugLevel.I, "Path line: {0} ({1} chars)", PathLine, PathLine.Length)
                                 If File.Exists(PathLine) Then
                                     Body.Attachments.Add(PathLine)
                                 End If
@@ -128,28 +128,28 @@ Module MailGetCommand
                         W(DoTranslation("Sending message..."), True, ColTypes.Neutral)
                         If requestedCommand = "sendenc" Then
                             If MailSendEncryptedMessage(Receiver, Subject, Body.ToMessageBody) Then
-                                Wdbg("I", "Message sent.")
+                                Wdbg(DebugLevel.I, "Message sent.")
                                 W(DoTranslation("Message sent."), True, ColTypes.Neutral)
                             Else
-                                Wdbg("E", "See debug output to find what's wrong.")
+                                Wdbg(DebugLevel.E, "See debug output to find what's wrong.")
                                 W(DoTranslation("Error sending message."), True, ColTypes.Error)
                             End If
                         Else
                             If MailSendMessage(Receiver, Subject, Body.ToMessageBody) Then
-                                Wdbg("I", "Message sent.")
+                                Wdbg(DebugLevel.I, "Message sent.")
                                 W(DoTranslation("Message sent."), True, ColTypes.Neutral)
                             Else
-                                Wdbg("E", "See debug output to find what's wrong.")
+                                Wdbg(DebugLevel.E, "See debug output to find what's wrong.")
                                 W(DoTranslation("Error sending message."), True, ColTypes.Error)
                             End If
                         End If
                     Else
-                        Wdbg("E", "Mail format unsatisfied. " + Receiver)
+                        Wdbg(DebugLevel.E, "Mail format unsatisfied. " + Receiver)
                         W(DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:") + " john.s@example.com", True, ColTypes.Error)
                     End If
                 Case "rm"
                     If RequiredArgumentsProvided Then
-                        Wdbg("I", "Message number is numeric? {0}", eqargs(0).IsNumeric)
+                        Wdbg(DebugLevel.I, "Message number is numeric? {0}", eqargs(0).IsNumeric)
                         If eqargs(0).IsNumeric Then
                             MailRemoveMessage(eqargs(0))
                         Else
@@ -166,7 +166,7 @@ Module MailGetCommand
                     End If
                 Case "mv"
                     If RequiredArgumentsProvided Then
-                        Wdbg("I", "Message number is numeric? {0}", eqargs(0).IsNumeric)
+                        Wdbg(DebugLevel.I, "Message number is numeric? {0}", eqargs(0).IsNumeric)
                         If eqargs(0).IsNumeric Then
                             MailMoveMessage(eqargs(0), eqargs(1))
                         Else
@@ -215,7 +215,7 @@ Module MailGetCommand
 
             If MailCommands(words(0)).ArgumentsRequired And Not RequiredArgumentsProvided Then
                 W(DoTranslation("Required arguments are not passed to command {0}"), True, ColTypes.Error, words(0))
-                Wdbg("E", "Passed arguments were not enough to run command {0}. Arguments passed: {1}", words(0), eqargs?.Length)
+                Wdbg(DebugLevel.E, "Passed arguments were not enough to run command {0}. Arguments passed: {1}", words(0), eqargs?.Length)
                 ShowHelp(words(0), ShellCommandType.MailShell)
             End If
         Catch taex As ThreadAbortException

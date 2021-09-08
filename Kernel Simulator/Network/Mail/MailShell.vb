@@ -54,10 +54,10 @@ Public Module MailShell
         'Send ping to keep the connection alive
         Dim IMAP_NoOp As New Thread(AddressOf IMAPKeepConnection) With {.Name = "IMAP Keep Connection"}
         IMAP_NoOp.Start()
-        Wdbg("I", "Made new thread about IMAPKeepConnection()")
+        Wdbg(DebugLevel.I, "Made new thread about IMAPKeepConnection()")
         Dim SMTP_NoOp As New Thread(AddressOf SMTPKeepConnection) With {.Name = "SMTP Keep Connection"}
         SMTP_NoOp.Start()
-        Wdbg("I", "Made new thread about SMTPKeepConnection()")
+        Wdbg(DebugLevel.I, "Made new thread about SMTPKeepConnection()")
 
         'Add handler for IMAP and SMTP
         AddHandler Console.CancelKeyPress, AddressOf MailCancelCommand
@@ -73,7 +73,7 @@ Public Module MailShell
             If DefConsoleOut IsNot Nothing Then
                 Console.SetOut(DefConsoleOut)
             End If
-            Wdbg("I", "MailShellPromptStyle = {0}", MailShellPromptStyle)
+            Wdbg(DebugLevel.I, "MailShellPromptStyle = {0}", MailShellPromptStyle)
             If MailShellPromptStyle = "" Then
                 W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, Mail_Authentication.UserName) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, Address) : W("] ", False, ColTypes.Gray) : W("{0} > ", False, ColTypes.Gray, IMAP_CurrentDirectory)
             Else
@@ -88,21 +88,21 @@ Public Module MailShell
             If Not (cmd = Nothing Or cmd?.StartsWithAnyOf({" ", "#"}) = True) Then
                 EventManager.RaiseIMAPPreExecuteCommand(cmd)
                 Dim words As String() = cmd.SplitEncloseDoubleQuotes(" ")
-                Wdbg("I", $"Is the command found? {MailCommands.ContainsKey(words(0))}")
+                Wdbg(DebugLevel.I, $"Is the command found? {MailCommands.ContainsKey(words(0))}")
                 If MailCommands.ContainsKey(words(0)) Then
-                    Wdbg("I", "Command found.")
+                    Wdbg(DebugLevel.I, "Command found.")
                     MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand) With {.Name = "Mail Command Thread"}
                     MailStartCommandThread.Start(cmd)
                     MailStartCommandThread.Join()
                 ElseIf MailModCommands.Contains(words(0)) Then
-                    Wdbg("I", "Mod command found.")
+                    Wdbg(DebugLevel.I, "Mod command found.")
                     ExecuteModCommand(cmd)
                 ElseIf MailShellAliases.Keys.Contains(words(0)) Then
-                    Wdbg("I", "Mail shell alias command found.")
+                    Wdbg(DebugLevel.I, "Mail shell alias command found.")
                     cmd = cmd.Replace($"""{words(0)}""", words(0))
                     ExecuteMailAlias(cmd)
                 ElseIf Not cmd.StartsWith(" ") Then
-                    Wdbg("E", "Command not found. Reopening shell...")
+                    Wdbg(DebugLevel.E, "Command not found. Reopening shell...")
                     W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Error, words(0))
                 End If
                 EventManager.RaiseIMAPPostExecuteCommand(cmd)
@@ -114,9 +114,9 @@ Public Module MailShell
         'Disconnect the session
         IMAP_CurrentDirectory = "Inbox"
         If KeepAlive Then
-            Wdbg("W", "Exit requested, but not disconnecting.")
+            Wdbg(DebugLevel.W, "Exit requested, but not disconnecting.")
         Else
-            Wdbg("W", "Exit requested. Disconnecting host...")
+            Wdbg(DebugLevel.W, "Exit requested. Disconnecting host...")
             ReleaseHandlers()
             IMAP_Client.Disconnect(True)
             SMTP_Client.Disconnect(True)
@@ -141,7 +141,7 @@ Public Module MailShell
                 End SyncLock
                 PopulateMessages()
             Else
-                Wdbg("W", "Connection state is inconsistent. Stopping IMAPKeepConnection()...")
+                Wdbg(DebugLevel.W, "Connection state is inconsistent. Stopping IMAPKeepConnection()...")
                 Thread.CurrentThread.Abort()
             End If
         End While
@@ -159,7 +159,7 @@ Public Module MailShell
                     SMTP_Client.NoOp()
                 End SyncLock
             Else
-                Wdbg("W", "Connection state is inconsistent. Stopping SMTPKeepConnection()...")
+                Wdbg(DebugLevel.W, "Connection state is inconsistent. Stopping SMTPKeepConnection()...")
                 Thread.CurrentThread.Abort()
             End If
         End While
@@ -173,14 +173,14 @@ Public Module MailShell
             SyncLock IMAP_Client.SyncRoot
                 If IMAP_CurrentDirectory = "" Or IMAP_CurrentDirectory = "Inbox" Then
                     IMAP_Client.Inbox.Open(FolderAccess.ReadWrite)
-                    Wdbg("I", "Opened inbox")
+                    Wdbg(DebugLevel.I, "Opened inbox")
                     IMAP_Messages = IMAP_Client.Inbox.Search(SearchQuery.All).Reverse
-                    Wdbg("I", "Messages count: {0} messages", IMAP_Messages.LongCount)
+                    Wdbg(DebugLevel.I, "Messages count: {0} messages", IMAP_Messages.LongCount)
                 Else
                     Dim Folder As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-                    Wdbg("I", "Opened {0}", IMAP_CurrentDirectory)
+                    Wdbg(DebugLevel.I, "Opened {0}", IMAP_CurrentDirectory)
                     IMAP_Messages = Folder.Search(SearchQuery.All).Reverse
-                    Wdbg("I", "Messages count: {0} messages", IMAP_Messages.LongCount)
+                    Wdbg(DebugLevel.I, "Messages count: {0} messages", IMAP_Messages.LongCount)
                 End If
             End SyncLock
         End If
@@ -219,7 +219,7 @@ Public Module MailShell
     ''' Handles WebAlert sent by Gmail
     ''' </summary>
     Sub HandleWebAlert(sender As Object, e As WebAlertEventArgs)
-        Wdbg("I", "WebAlert URI: {0}", e.WebUri.AbsoluteUri)
+        Wdbg(DebugLevel.I, "WebAlert URI: {0}", e.WebUri.AbsoluteUri)
         W(e.Message, True, ColTypes.Warning)
         W(DoTranslation("Opening URL... Make sure to follow the steps shown on the screen."), True, ColTypes.Neutral)
         Process.Start(e.WebUri.AbsoluteUri).WaitForExit()
@@ -232,7 +232,7 @@ Public Module MailShell
     Sub ExecuteMailAlias(aliascmd As String)
         Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, MailShellAliases(FirstWordCmd))
-        Wdbg("I", "Actual command: {0}", actualCmd)
+        Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
         MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand) With {.Name = "Mail Command Thread"}
         MailStartCommandThread.Start({MailShellAliases(FirstWordCmd), actualCmd.Replace(MailShellAliases(FirstWordCmd), "")})
         MailStartCommandThread.Join()

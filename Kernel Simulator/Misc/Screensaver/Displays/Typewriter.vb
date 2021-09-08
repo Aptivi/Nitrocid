@@ -37,12 +37,12 @@ Module TypewriterDisplay
             Do While True
                 SleepNoBlock(TypewriterDelay, Typewriter)
                 If Typewriter.CancellationPending = True Then
-                    Wdbg("W", "Cancellation is pending. Cleaning everything up...")
+                    Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
                     SetInputColor()
                     LoadBack()
                     Console.CursorVisible = True
-                    Wdbg("I", "All clean. Typewriter screensaver stopped.")
+                    Wdbg(DebugLevel.I, "All clean. Typewriter screensaver stopped.")
                     SaverAutoReset.Set()
                     Exit Do
                 Else
@@ -138,13 +138,13 @@ Module TypewriterDisplay
                 End If
             Loop
         Catch ex As Exception
-            Wdbg("W", "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
+            Wdbg(DebugLevel.W, "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
             WStkTrc(ex)
             e.Cancel = True
             SetInputColor()
             LoadBack()
             Console.CursorVisible = True
-            Wdbg("I", "All clean. Typewriter screensaver stopped.")
+            Wdbg(DebugLevel.I, "All clean. Typewriter screensaver stopped.")
             W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
             SaverAutoReset.Set()
         End Try

@@ -41,7 +41,7 @@ Module TestGetCommand
 
             '5. Check to see if a requested command is obsolete
             If Test_Commands(Command).Obsolete Then
-                Wdbg("I", "The command requested {0} is obsolete", Command)
+                Wdbg(DebugLevel.I, "The command requested {0} is obsolete", Command)
                 W(DoTranslation("This command is obsolete and will be removed in a future release."), True, ColTypes.Neutral)
             End If
 
@@ -68,7 +68,7 @@ Module TestGetCommand
                     End If
                 Case "printd"
                     If RequiredArgumentsProvided Then
-                        Wdbg("I", String.Join(" ", eqargs))
+                        Wdbg(DebugLevel.I, String.Join(" ", eqargs))
                     End If
                 Case "printdf"
                     If RequiredArgumentsProvided Then
@@ -76,7 +76,7 @@ Module TestGetCommand
                         For i As Integer = 0 To Vars.Length - 1
                             Vars(i) = Evaluate(Vars(i)).ToString
                         Next
-                        Wdbg("I", eqargs(1), Vars)
+                        Wdbg(DebugLevel.I, eqargs(1), Vars)
                     End If
                 Case "printsep"
                     If RequiredArgumentsProvided Then
@@ -337,7 +337,7 @@ Module TestGetCommand
 
             'If not enough arguments, show help entry
             If Test_Commands(Command).ArgumentsRequired And Not RequiredArgumentsProvided Then
-                Wdbg("W", "User hasn't provided enough arguments for {0}", Command)
+                Wdbg(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command)
                 W(DoTranslation("There was not enough arguments. See below for usage:"), True, ColTypes.Neutral)
                 ShowHelp(Command, ShellCommandType.TestShell)
             End If

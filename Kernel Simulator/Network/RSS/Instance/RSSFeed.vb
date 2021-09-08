@@ -86,7 +86,7 @@ Public Class RSSFeed
     ''' Refreshes the RSS class instance
     ''' </summary>
     Public Sub Refresh()
-        Wdbg("I", "Refreshing feed {0}...", FeedUrl)
+        Wdbg(DebugLevel.I, "Refreshing feed {0}...", FeedUrl)
         Refresh(_FeedUrl, _FeedType)
     End Sub
 
@@ -97,7 +97,7 @@ Public Class RSSFeed
     ''' <param name="FeedType">A feed type to parse. If set to Infer, it will automatically detect the type based on contents.</param>
     Public Sub Refresh(FeedUrl As String, FeedType As RSSFeedType)
         'Load an RSS feed from URL
-        Wdbg("I", "Refreshing feed {0}...", FeedUrl)
+        Wdbg(DebugLevel.I, "Refreshing feed {0}...", FeedUrl)
         Dim FeedWebRequest As HttpWebRequest = DirectCast(WebRequest.Create(FeedUrl), HttpWebRequest)
         Dim FeedWebResponse As WebResponse = FeedWebRequest.GetResponse()
         Dim FeedStream As Stream = FeedWebResponse.GetResponseStream()

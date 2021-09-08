@@ -43,36 +43,36 @@ Public Module KernelTools
             'Unquiet
             If EnteredArguments IsNot Nothing Then
                 If EnteredArguments.Contains("quiet") Then
-                    Wdbg("I", "Removing quiet...")
+                    Wdbg(DebugLevel.I, "Removing quiet...")
                     Console.SetOut(DefConsoleOut)
                 End If
             End If
 
             'Check error types and its capabilities
-            Wdbg("I", "Error type: {0}", ErrorType)
+            Wdbg(DebugLevel.I, "Error type: {0}", ErrorType)
             If ErrorType = "S" Or ErrorType = "F" Or ErrorType = "U" Or ErrorType = "D" Or ErrorType = "C" Then
                 If ErrorType = "U" And RebootTime > 5 Or ErrorType = "D" And RebootTime > 5 Then
                     'If the error type is unrecoverable, or double, and the reboot time exceeds 5 seconds, then
                     'generate a second kernel error stating that there is something wrong with the reboot time.
-                    Wdbg("W", "Errors that have type {0} shouldn't exceed 5 seconds. RebootTime was {1} seconds", ErrorType, RebootTime)
+                    Wdbg(DebugLevel.W, "Errors that have type {0} shouldn't exceed 5 seconds. RebootTime was {1} seconds", ErrorType, RebootTime)
                     KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug."), Nothing, CStr(ErrorType))
                     StopPanicAndGoToDoublePanic = True
                 ElseIf ErrorType = "U" And Reboot = False Or ErrorType = "D" And Reboot = False Then
                     'If the error type is unrecoverable, or double, and the rebooting is false where it should
                     'not be false, then it can deal with this issue by enabling reboot.
-                    Wdbg("W", "Errors that have type {0} enforced Reboot = True.", ErrorType)
+                    Wdbg(DebugLevel.W, "Errors that have type {0} enforced Reboot = True.", ErrorType)
                     W(DoTranslation("[{0}] panic: Reboot enabled due to error level being {0}."), True, ColTypes.Uncontinuable, ErrorType)
                     Reboot = True
                 End If
                 If RebootTime > 3600 Then
                     'If the reboot time exceeds 1 hour, then it will set the time to 1 minute.
-                    Wdbg("W", "RebootTime shouldn't exceed 1 hour. Was {0} seconds", RebootTime)
+                    Wdbg(DebugLevel.W, "RebootTime shouldn't exceed 1 hour. Was {0} seconds", RebootTime)
                     W(DoTranslation("[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute."), True, ColTypes.Uncontinuable, ErrorType, CStr(RebootTime))
                     RebootTime = 60
                 End If
             Else
                 'If the error type is other than D/F/C/U/S, then it will generate a second error.
-                Wdbg("E", "Error type {0} is not valid.", ErrorType)
+                Wdbg(DebugLevel.E, "Error type {0} is not valid.", ErrorType)
                 KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Error Type {0} invalid."), Nothing, CStr(ErrorType))
                 StopPanicAndGoToDoublePanic = True
             End If
@@ -89,17 +89,17 @@ Public Module KernelTools
             'Check error capabilities
             If Description.Contains("DOUBLE PANIC: ") And ErrorType = "D" Then
                 'If the description has a double panic tag and the error type is Double
-                Wdbg("F", "Double panic caused by bug in kernel crash.")
+                Wdbg(DebugLevel.F, "Double panic caused by bug in kernel crash.")
                 W(DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds..."), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
                 Thread.Sleep(RebootTime * 1000)
-                Wdbg("F", "Rebooting")
+                Wdbg(DebugLevel.F, "Rebooting")
                 PowerManage("reboot")
             ElseIf StopPanicAndGoToDoublePanic = True Then
                 'Switch to Double Panic
                 Exit Sub
             ElseIf ErrorType = "C" And Reboot = True Then
                 'Check if error is Continuable and reboot is enabled
-                Wdbg("W", "Continuable kernel errors shouldn't have Reboot = True.")
+                Wdbg(DebugLevel.W, "Continuable kernel errors shouldn't have Reboot = True.")
                 W(DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}.") + vbNewLine +
                   DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), True, ColTypes.Continuable, ErrorType, Description)
                 Console.ReadKey()
@@ -110,13 +110,13 @@ Public Module KernelTools
                 Console.ReadKey()
             ElseIf (Reboot = False And ErrorType <> "D") Or (Reboot = False And ErrorType <> "C") Then
                 'If rebooting is disabled and the error type does not equal Double or Continuable
-                Wdbg("W", "Reboot is False, ErrorType is not double or continuable.")
+                Wdbg(DebugLevel.W, "Reboot is False, ErrorType is not double or continuable.")
                 W(DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), True, ColTypes.Uncontinuable, ErrorType, Description)
                 Console.ReadKey()
                 PowerManage("shutdown")
             Else
                 'Everything else.
-                Wdbg("F", "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType)
+                Wdbg(DebugLevel.F, "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType)
                 W(DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds..."), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
                 Thread.Sleep(RebootTime * 1000)
                 PowerManage("reboot")
@@ -141,7 +141,7 @@ Public Module KernelTools
         Try
             'Open a file stream for dump
             Dim Dump As New StreamWriter($"{GetOtherPath(OtherPathType.Home)}/dmp_{RenderDate(FormatType.Short).Replace("/", "-")}_{RenderTime(FormatType.Short).Replace(":", "-")}.txt")
-            Wdbg("I", "Opened file stream in home directory, saved as dmp_{0}.txt", $"{RenderDate(FormatType.Short).Replace("/", "-")}_{RenderTime(FormatType.Short).Replace(":", "-")}")
+            Wdbg(DebugLevel.I, "Opened file stream in home directory, saved as dmp_{0}.txt", $"{RenderDate(FormatType.Short).Replace("/", "-")}_{RenderTime(FormatType.Short).Replace(":", "-")}")
 
             'Write info (Header)
             Dump.AutoFlush = True
@@ -208,7 +208,7 @@ Public Module KernelTools
             End Try
 
             'Close stream
-            Wdbg("I", "Closing file stream for dump...")
+            Wdbg(DebugLevel.I, "Closing file stream for dump...")
             Dump.Flush() : Dump.Close()
         Catch ex As Exception
             W(DoTranslation("Dump information gatherer crashed when trying to get information about {0}: {1}"), True, ColTypes.Error, Exc.GetType.FullName, ex.Message)
@@ -239,7 +239,7 @@ Public Module KernelTools
     ''' </summary>
     ''' <param name="PowerMode">Whether it would be "shutdown", "rebootsafe", or "reboot"</param>
     Public Sub PowerManage(PowerMode As String, IP As String, Port As Integer)
-        Wdbg("I", "Power management has the argument of {0}", PowerMode)
+        Wdbg(DebugLevel.I, "Power management has the argument of {0}", PowerMode)
         If PowerMode = "shutdown" Then
             EventManager.RaisePreShutdown()
             W(DoTranslation("Shutting down..."), True, ColTypes.Neutral)
@@ -285,27 +285,27 @@ Public Module KernelTools
         SFTPShellAliases.Clear()
         MailShellAliases.Clear()
         UserPermissions.Clear()
-        Wdbg("I", "General variables reset")
+        Wdbg(DebugLevel.I, "General variables reset")
 
         'Reset hardware info
         HardwareInfo = Nothing
-        Wdbg("I", "Hardware info reset.")
+        Wdbg(DebugLevel.I, "Hardware info reset.")
 
         'Release RAM used
         DisposeAll()
-        Wdbg("I", "Garbage collector finished")
+        Wdbg(DebugLevel.I, "Garbage collector finished")
 
         'Disconnect all hosts from remote debugger
         StopRDebugThread()
-        Wdbg("I", "Remote debugger stopped")
+        Wdbg(DebugLevel.I, "Remote debugger stopped")
 
         'Stop all mods
         StopMods()
-        Wdbg("I", "Mods stopped")
+        Wdbg(DebugLevel.I, "Mods stopped")
 
         'Disable Debugger
         If DebugMode Then
-            Wdbg("I", "Shutting down debugger")
+            Wdbg(DebugLevel.I, "Shutting down debugger")
             DebugMode = False
             dbgWriter.Close() : dbgWriter.Dispose()
         End If
@@ -373,9 +373,9 @@ Public Module KernelTools
         End If
 
         'Write headers for debug
-        Wdbg("I", "-------------------------------------------------------------------")
-        Wdbg("I", "Kernel initialized, version {0}.", KernelVersion)
-        Wdbg("I", "OS: {0}", Environment.OSVersion.ToString)
+        Wdbg(DebugLevel.I, "-------------------------------------------------------------------")
+        Wdbg(DebugLevel.I, "Kernel initialized, version {0}.", KernelVersion)
+        Wdbg(DebugLevel.I, "OS: {0}", Environment.OSVersion.ToString)
 
         'Populate ban list for debug devices
         PopulateBlockedDevices()
@@ -418,7 +418,7 @@ Public Module KernelTools
             End If
             Return UpdateSpecifier
         Catch ex As Exception
-            Wdbg("E", "Failed to check for updates: {0}", ex.Message)
+            Wdbg(DebugLevel.E, "Failed to check for updates: {0}", ex.Message)
             WStkTrc(ex)
         End Try
         Return Nothing
@@ -468,14 +468,14 @@ Public Module KernelTools
 
         Try
             Dim proc As Process = GetCurrentProcess()
-            Wdbg("I", "Before garbage collection: {0} bytes", proc.PrivateMemorySize64)
-            Wdbg("I", "Garbage collector starting... Max generators: {0}", GC.MaxGeneration.ToString)
+            Wdbg(DebugLevel.I, "Before garbage collection: {0} bytes", proc.PrivateMemorySize64)
+            Wdbg(DebugLevel.I, "Garbage collector starting... Max generators: {0}", GC.MaxGeneration.ToString)
             GC.Collect()
             GC.WaitForPendingFinalizers()
             If IsOnWindows() Then
                 SetProcessWorkingSetSize(GetCurrentProcess().Handle, -1, -1)
             End If
-            Wdbg("I", "After garbage collection: {0} bytes", proc.PrivateMemorySize64)
+            Wdbg(DebugLevel.I, "After garbage collection: {0} bytes", proc.PrivateMemorySize64)
             proc.Dispose()
             EventManager.RaiseGarbageCollected()
         Catch ex As Exception

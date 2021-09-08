@@ -38,8 +38,8 @@ Public Module Forecast
         Dim WeatherDownloader As New WebClient
         Dim WeatherData As String
         Dim WeatherToken As JToken
-        Wdbg("I", "Made new instance of class with {0} and {1}", CityID, Unit)
-        Wdbg("I", "Weather URL: {0}", WeatherURL)
+        Wdbg(DebugLevel.I, "Made new instance of class with {0} and {1}", CityID, Unit)
+        Wdbg(DebugLevel.I, "Weather URL: {0}", WeatherURL)
 
         'Deal with measurements
         If Unit = UnitMeasurement.Imperial Then
@@ -76,8 +76,8 @@ Public Module Forecast
         Dim WeatherDownloader As New WebClient
         Dim WeatherData As String
         Dim WeatherToken As JToken
-        Wdbg("I", "Made new instance of class with {0} and {1}", CityName, Unit)
-        Wdbg("I", "Weather URL: {0}", WeatherURL)
+        Wdbg(DebugLevel.I, "Made new instance of class with {0} and {1}", CityName, Unit)
+        Wdbg(DebugLevel.I, "Weather URL: {0}", WeatherURL)
 
         'Deal with measurements
         If Unit = UnitMeasurement.Imperial Then
@@ -116,7 +116,7 @@ Public Module Forecast
         Else
             WeatherInfo = GetWeatherInfo(CityID, APIKey, PreferredUnit)
         End If
-        Wdbg("I", "City name: {0}, City ID: {1}", WeatherInfo.CityName, WeatherInfo.CityID)
+        Wdbg(DebugLevel.I, "City name: {0}, City ID: {1}", WeatherInfo.CityName, WeatherInfo.CityID)
         WriteSeparator(DoTranslation("-- Weather info for {0} --"), False, ColTypes.Stage, WeatherInfo.CityName)
         W(DoTranslation("Weather: {0}"), True, ColTypes.Neutral, WeatherInfo.Weather)
         If WeatherInfo.TemperatureMeasurement = UnitMeasurement.Metric Then
@@ -147,7 +147,7 @@ Public Module Forecast
         Dim WeatherCityListReadByte As Integer = 0
         Dim WeatherCityListToken As JToken
         Dim WeatherCityList As New Dictionary(Of Long, String)
-        Wdbg("I", "Weather City List URL: {0}", WeatherCityListURL)
+        Wdbg(DebugLevel.I, "Weather City List URL: {0}", WeatherCityListURL)
 
         'Download and parse JSON data
         WeatherCityListDataStream = WeatherCityListDownloader.OpenRead(WeatherCityListURL)

@@ -63,7 +63,7 @@ Public Module PermissionManagement
 
         'Adds user into permission lists.
         Try
-            Wdbg("I", "Mode: {0}", PermissionMode)
+            Wdbg(DebugLevel.I, "Mode: {0}", PermissionMode)
             If PermissionMode = PermissionManagementMode.Allow Then
                 AddPermission(PermType, Username)
                 W(DoTranslation("The user {0} has been added to the ""{1}"" list."), True, ColTypes.Neutral, Username, PermType.ToString)
@@ -71,7 +71,7 @@ Public Module PermissionManagement
                 RemovePermission(PermType, Username)
                 W(DoTranslation("The user {0} has been removed from the ""{1}"" list."), True, ColTypes.Neutral, Username, PermType.ToString)
             Else
-                Wdbg("W", "Mode is invalid")
+                Wdbg(DebugLevel.W, "Mode is invalid")
                 W(DoTranslation("Invalid mode {0}"), True, ColTypes.Error, PermissionMode)
             End If
         Catch ex As Exception
@@ -96,7 +96,7 @@ Public Module PermissionManagement
     Public Function AddPermission(PermType As PermissionType, Username As String) As Boolean
         'Sets the required permissions to false.
         If Users.Keys.ToArray.Contains(Username) Then
-            Wdbg("I", "Type is {0}", PermType)
+            Wdbg(DebugLevel.I, "Type is {0}", PermType)
             Select Case PermType
                 Case PermissionType.Administrator
                     UserPermissions(Username) += PermissionType.Administrator
@@ -105,13 +105,13 @@ Public Module PermissionManagement
                 Case PermissionType.Anonymous
                     UserPermissions(Username) += PermissionType.Anonymous
                 Case Else
-                    Wdbg("W", "Type is invalid")
+                    Wdbg(DebugLevel.W, "Type is invalid")
                     Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid type {0}"), PermType)
                     Return False
             End Select
-            Wdbg("I", "User {0} permission added; value is now: {1}", Username, UserPermissions(Username))
+            Wdbg(DebugLevel.I, "User {0} permission added; value is now: {1}", Username, UserPermissions(Username))
         Else
-            Wdbg("W", "User {0} not found on list", Username)
+            Wdbg(DebugLevel.W, "User {0} not found on list", Username)
             Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid user {0}"), Username)
             Return False
         End If
@@ -138,7 +138,7 @@ Public Module PermissionManagement
     Public Function RemovePermission(PermType As PermissionType, Username As String) As Boolean
         'Sets the required permissions to false.
         If Users.Keys.ToArray.Contains(Username) And Username <> CurrentUser Then
-            Wdbg("I", "Type is {0}", PermType)
+            Wdbg(DebugLevel.I, "Type is {0}", PermType)
             Select Case PermType
                 Case PermissionType.Administrator
                     UserPermissions(Username) -= PermissionType.Administrator
@@ -147,16 +147,16 @@ Public Module PermissionManagement
                 Case PermissionType.Anonymous
                     UserPermissions(Username) -= PermissionType.Anonymous
                 Case Else
-                    Wdbg("W", "Type is invalid")
+                    Wdbg(DebugLevel.W, "Type is invalid")
                     Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid type {0}"), PermType)
                     Return False
             End Select
-            Wdbg("I", "User {0} permission removed; value is now: {1}", Username, UserPermissions(Username))
+            Wdbg(DebugLevel.I, "User {0} permission removed; value is now: {1}", Username, UserPermissions(Username))
         ElseIf Username = CurrentUser Then
             Throw New Exceptions.PermissionManagementException(DoTranslation("You are already logged in."))
             Return False
         Else
-            Wdbg("W", "User {0} not found on list", Username)
+            Wdbg(DebugLevel.W, "User {0} not found on list", Username)
             Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid user {0}"), Username)
             Return False
         End If
@@ -188,12 +188,12 @@ Public Module PermissionManagement
                 Dim UserOldPermissions As PermissionType = UserPermissions(OldName)
 
                 'Remove old user entry
-                Wdbg("I", "Removing {0} from permissions list...", OldName)
+                Wdbg(DebugLevel.I, "Removing {0} from permissions list...", OldName)
                 UserPermissions.Remove(OldName)
 
                 'Add new user entry
                 UserPermissions.Add(Username, UserOldPermissions)
-                Wdbg("I", "Added {0} to permissions list with value of {1}", Username, UserPermissions(Username))
+                Wdbg(DebugLevel.I, "Added {0} to permissions list with value of {1}", Username, UserPermissions(Username))
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)

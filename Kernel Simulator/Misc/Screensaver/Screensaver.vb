@@ -126,7 +126,7 @@ Public Module Screensaver
                     oldcursor = Console.CursorLeft
                 Next
                 If Not RebootRequested Then
-                    Wdbg("W", "Screen time has reached.")
+                    Wdbg(DebugLevel.W, "Screen time has reached.")
                     ShowSavers(defSaverName)
                 End If
             End If
@@ -142,10 +142,10 @@ Public Module Screensaver
             InSaver = True
             ScrnTimeReached = True
             EventManager.RaisePreShowScreensaver(saver)
-            Wdbg("I", "Requested screensaver: {0}", saver)
+            Wdbg(DebugLevel.I, "Requested screensaver: {0}", saver)
             If ScrnSvrdb.ContainsKey(saver) Then
                 ScrnSvrdb(saver).RunWorkerAsync()
-                Wdbg("I", "{0} started", saver)
+                Wdbg(DebugLevel.I, "{0} started", saver)
                 Console.ReadKey()
                 ScrnSvrdb(saver).CancelAsync()
                 SaverAutoReset.WaitOne()
@@ -153,17 +153,17 @@ Public Module Screensaver
                 'Only one custom screensaver can be used.
                 finalSaver = CSvrdb(saver).Screensaver
                 Custom.RunWorkerAsync()
-                Wdbg("I", "Custom screensaver {0} started", saver)
+                Wdbg(DebugLevel.I, "Custom screensaver {0} started", saver)
                 Console.ReadKey()
                 Custom.CancelAsync()
                 SaverAutoReset.WaitOne()
             Else
                 W(DoTranslation("The requested screensaver {0} is not found."), True, ColTypes.Error, saver)
-                Wdbg("I", "Screensaver {0} not found in the dictionary.", saver)
+                Wdbg(DebugLevel.I, "Screensaver {0} not found in the dictionary.", saver)
             End If
 
             'Raise event
-            Wdbg("I", "Screensaver really stopped.")
+            Wdbg(DebugLevel.I, "Screensaver really stopped.")
             EventManager.RaisePostShowScreensaver(saver)
         Catch ex As InvalidOperationException
             W(DoTranslation("Error when trying to start screensaver, because of an invalid operation."), True, ColTypes.Error)
@@ -193,12 +193,12 @@ Public Module Screensaver
     ''' <param name="saver">Specified screensaver</param>
     Public Sub SetDefaultScreensaver(saver As String)
         If ScrnSvrdb.ContainsKey(saver) Or CSvrdb.ContainsKey(saver) Then
-            Wdbg("I", "{0} is found. Setting it to default...", saver)
+            Wdbg(DebugLevel.I, "{0} is found. Setting it to default...", saver)
             defSaverName = saver
             Dim Token As JToken = GetConfigCategory(ConfigCategory.Screensaver)
             SetConfigValueAndWrite(ConfigCategory.Screensaver, Token, "Screensaver", saver)
         Else
-            Wdbg("W", "{0} is not found.", saver)
+            Wdbg(DebugLevel.W, "{0} is not found.", saver)
             Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found in database. Check the name and try again."), saver)
         End If
     End Sub
@@ -214,9 +214,9 @@ Public Module Screensaver
 
         'Start parsing screensaver
         If IO.File.Exists(modPath + file) Then
-            Wdbg("I", "Parsing {0}...", file)
+            Wdbg(DebugLevel.I, "Parsing {0}...", file)
             If file.EndsWith(".ss.vb") Or file.EndsWith(".ss.cs") Or file.EndsWith(".dll") Then
-                Wdbg("W", "{0} is a valid screensaver. Generating...", file)
+                Wdbg(DebugLevel.W, "{0} is a valid screensaver. Generating...", file)
                 If file.EndsWith(".ss.vb") Then
                     finalSaver = GenSaver("VB.NET", IO.File.ReadAllText(modPath + file))
                 ElseIf file.EndsWith(".ss.cs") Then
@@ -226,18 +226,18 @@ Public Module Screensaver
                         finalSaver = GetScreensaverInstance(Assembly.LoadFrom(modPath + file))
                         DoneFlag = True
                     Catch ex As ReflectionTypeLoadException
-                        Wdbg("E", "Error trying to load dynamic mod {0}: {1}", file, ex.Message)
+                        Wdbg(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", file, ex.Message)
                         WStkTrc(ex)
                         W(DoTranslation("Screensaver can't be loaded because of the following: "), True, ColTypes.Error)
                         For Each LoaderException As Exception In ex.LoaderExceptions
-                            Wdbg("E", "Loader exception: {0}", LoaderException.Message)
+                            Wdbg(DebugLevel.E, "Loader exception: {0}", LoaderException.Message)
                             WStkTrc(LoaderException)
                             W(LoaderException.Message, True, ColTypes.Error)
                         Next
                     End Try
                 End If
                 If DoneFlag = True Then
-                    Wdbg("I", "{0} compiled correctly. Starting...", file)
+                    Wdbg(DebugLevel.I, "{0} compiled correctly. Starting...", file)
                     finalSaver.InitSaver()
                     Dim SaverName As String = finalSaver.SaverName
                     Dim SaverInstance As ScreensaverInfo
@@ -249,27 +249,27 @@ Public Module Screensaver
                         Else
                             IsFound = CSvrdb.ContainsKey(file)
                         End If
-                        Wdbg("I", "Is screensaver found? {0}", IsFound)
+                        Wdbg(DebugLevel.I, "Is screensaver found? {0}", IsFound)
                         If Not IsFound Then
                             If Not SaverName = "" Then
                                 W(DoTranslation("{0} has been initialized properly."), True, ColTypes.Neutral, SaverName)
-                                Wdbg("I", "{0} ({1}) compiled correctly. Starting...", SaverName, file)
+                                Wdbg(DebugLevel.I, "{0} ({1}) compiled correctly. Starting...", SaverName, file)
                                 SaverInstance = New ScreensaverInfo(SaverName, file, NeutralizePath(file, modPath), finalSaver)
                                 CSvrdb.Add(SaverName, SaverInstance)
                             Else
                                 W(DoTranslation("{0} has been initialized properly."), True, ColTypes.Neutral, file)
-                                Wdbg("I", "{0} compiled correctly. Starting...", file)
+                                Wdbg(DebugLevel.I, "{0} compiled correctly. Starting...", file)
                                 SaverInstance = New ScreensaverInfo(SaverName, file, NeutralizePath(file, modPath), finalSaver)
                                 CSvrdb.Add(file, SaverInstance)
                             End If
                         Else
                             If Not SaverName = "" Then
-                                Wdbg("W", "{0} ({1}) already exists. Recompiling...", SaverName, file)
+                                Wdbg(DebugLevel.W, "{0} ({1}) already exists. Recompiling...", SaverName, file)
                                 CSvrdb.Remove(SaverName)
                                 CompileCustom(file)
                                 Exit Sub
                             Else
-                                Wdbg("W", "{0} already exists. Recompiling...", file)
+                                Wdbg(DebugLevel.W, "{0} already exists. Recompiling...", file)
                                 CSvrdb.Remove(file)
                                 CompileCustom(file)
                                 Exit Sub
@@ -280,19 +280,19 @@ Public Module Screensaver
                     Else
                         If Not SaverName = "" Then
                             W(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing."), True, ColTypes.Error, SaverName)
-                            Wdbg("W", "{0} ({1}) is compiled, but not initialized.", SaverName, file)
+                            Wdbg(DebugLevel.W, "{0} ({1}) is compiled, but not initialized.", SaverName, file)
                         Else
                             W(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing."), True, ColTypes.Error, file)
-                            Wdbg("W", "{0} is compiled, but not initialized.", file)
+                            Wdbg(DebugLevel.W, "{0} is compiled, but not initialized.", file)
                         End If
                     End If
                 End If
             Else
-                Wdbg("W", "{0} is not a screensaver. A screensaver code should have "".ss.vb"" or "".dll"" at the end.", file)
+                Wdbg(DebugLevel.W, "{0} is not a screensaver. A screensaver code should have "".ss.vb"" or "".dll"" at the end.", file)
             End If
         Else
             W(DoTranslation("Screensaver {0} does not exist."), True, ColTypes.Error, file)
-            Wdbg("E", "The file {0} does not exist for compilation.", file)
+            Wdbg(DebugLevel.E, "The file {0} does not exist for compilation.", file)
         End If
     End Sub
 
@@ -307,7 +307,7 @@ Public Module Screensaver
 
         'Check language
         Dim provider As CodeDomProvider
-        Wdbg("I", $"Language detected: {PLang}")
+        Wdbg(DebugLevel.I, $"Language detected: {PLang}")
         If PLang = "C#" Then
             provider = New CSharpCodeProvider
         ElseIf PLang = "VB.NET" Then
@@ -324,7 +324,7 @@ Public Module Screensaver
             }
 
             'Add referenced assemblies
-            Wdbg("I", "Referenced assemblies will be added.")
+            Wdbg(DebugLevel.I, "Referenced assemblies will be added.")
             prm.ReferencedAssemblies.Add(Assembly.GetExecutingAssembly.Location)
             prm.ReferencedAssemblies.Add("System.dll")
             prm.ReferencedAssemblies.Add("System.Core.dll")
@@ -332,7 +332,7 @@ Public Module Screensaver
             prm.ReferencedAssemblies.Add("System.DirectoryServices.dll")
             prm.ReferencedAssemblies.Add("System.Xml.dll")
             prm.ReferencedAssemblies.Add("System.Xml.Linq.dll")
-            Wdbg("I", "All referenced assemblies prepared.")
+            Wdbg(DebugLevel.I, "All referenced assemblies prepared.")
 
             'Try to compile
             Dim namespc As String = GetType(ICustomSaver).Namespace
@@ -342,16 +342,16 @@ Public Module Screensaver
             ElseIf PLang = "C#" Then
                 modCode = {$"using {namespc};{vbNewLine}{code}"}
             End If
-            Wdbg("I", "Compiling...")
+            Wdbg(DebugLevel.I, "Compiling...")
             execCustomSaver = provider.CompileAssemblyFromSource(prm, modCode)
 
             'Check to see if there are compilation errors
-            Wdbg("I", "Compilation results: Errors? {0}, Warnings? {1} | Total: {2}", execCustomSaver.Errors.HasErrors, execCustomSaver.Errors.HasWarnings, execCustomSaver.Errors.Count)
+            Wdbg(DebugLevel.I, "Compilation results: Errors? {0}, Warnings? {1} | Total: {2}", execCustomSaver.Errors.HasErrors, execCustomSaver.Errors.HasWarnings, execCustomSaver.Errors.Count)
             If execCustomSaver.Errors.HasErrors Then
                 W(DoTranslation("Screensaver can't be loaded because of the following: "), True, ColTypes.Error)
-                Wdbg("E", "Errors when compiling:")
+                Wdbg(DebugLevel.E, "Errors when compiling:")
                 For Each errorName In execCustomSaver.Errors
-                    W(errorName.ToString, True, ColTypes.Error) : Wdbg("E", errorName.ToString, True)
+                    W(errorName.ToString, True, ColTypes.Error) : Wdbg(DebugLevel.E, errorName.ToString, True)
                 Next
                 Exit Function
             Else
@@ -359,7 +359,7 @@ Public Module Screensaver
             End If
 
             'Make object type instance
-            Wdbg("I", "Creating instance of type...")
+            Wdbg(DebugLevel.I, "Creating instance of type...")
             Return GetScreensaverInstance(execCustomSaver.CompiledAssembly)
         End Using
     End Function

@@ -83,21 +83,21 @@ Module FTPFilesystem
     ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
     Public Function FTPDeleteRemote(Target As String) As Boolean
         If FtpConnected Then
-            Wdbg("I", "Deleting {0}...", Target)
+            Wdbg(DebugLevel.I, "Deleting {0}...", Target)
 
             'Delete a file or folder
             If ClientFTP.FileExists(Target) Then
-                Wdbg("I", "{0} is a file.", Target)
+                Wdbg(DebugLevel.I, "{0} is a file.", Target)
                 ClientFTP.DeleteFile(Target)
             ElseIf ClientFTP.DirectoryExists(Target) Then
-                Wdbg("I", "{0} is a folder.", Target)
+                Wdbg(DebugLevel.I, "{0} is a folder.", Target)
                 ClientFTP.DeleteDirectory(Target)
             Else
-                Wdbg("E", "{0} is not found.", Target)
+                Wdbg(DebugLevel.E, "{0} is not found.", Target)
                 Throw New Exceptions.FTPFilesystemException(DoTranslation("{0} is not found in the server."), Target)
                 Return False
             End If
-            Wdbg("I", "Deleted {0}", Target)
+            Wdbg(DebugLevel.I, "Deleted {0}", Target)
             Return True
         Else
             Throw New Exceptions.FTPFilesystemException(DoTranslation("You must connect to server with administrative privileges before performing the deletion."))
@@ -171,7 +171,7 @@ Module FTPFilesystem
 
             'Begin the moving process
             Dim SourceFile As String = Source.Split("/").Last
-            Wdbg("I", "Moving from {0} to {1} with the source file of {2}...", Source, Target, SourceFile)
+            Wdbg(DebugLevel.I, "Moving from {0} to {1} with the source file of {2}...", Source, Target, SourceFile)
             If ClientFTP.DirectoryExists(Source) Then
                 Success = ClientFTP.MoveDirectory(Source, Target)
             ElseIf ClientFTP.FileExists(Source) And ClientFTP.DirectoryExists(Target) Then
@@ -179,7 +179,7 @@ Module FTPFilesystem
             ElseIf ClientFTP.FileExists(Source) Then
                 Success = ClientFTP.MoveFile(Source, Target)
             End If
-            Wdbg("I", "Moved. Result: {0}", Success)
+            Wdbg(DebugLevel.I, "Moved. Result: {0}", Success)
             Return Success
         Else
             Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
@@ -202,7 +202,7 @@ Module FTPFilesystem
             'Begin the copying process
             'TODO: FluentFTP currently doesn't support .CopyFile and .CopyDirectory
             Dim SourceFile As String = Source.Split("/").Last
-            Wdbg("I", "Copying from {0} to {1} with the source file of {2}...", Source, Target, SourceFile)
+            Wdbg(DebugLevel.I, "Copying from {0} to {1} with the source file of {2}...", Source, Target, SourceFile)
             If ClientFTP.DirectoryExists(Source) Then
                 ClientFTP.DownloadDirectory(GetOtherPath(OtherPathType.Temp) + "/FTPTransfer", Source)
                 Result = ClientFTP.UploadDirectory(GetOtherPath(OtherPathType.Temp) + "/FTPTransfer/" + Source, Target)
@@ -220,19 +220,19 @@ Module FTPFilesystem
             If Result.GetType = GetType(List(Of FtpResult)) Then
                 For Each FileResult As FtpResult In Result
                     If FileResult.IsFailed Then
-                        Wdbg("E", "Transfer for {0} failed: {1}", FileResult.Name, FileResult.Exception.Message)
+                        Wdbg(DebugLevel.E, "Transfer for {0} failed: {1}", FileResult.Name, FileResult.Exception.Message)
                         WStkTrc(FileResult.Exception)
                         Success = False
                     End If
                 Next
             ElseIf Result.GetType = GetType(FtpStatus) Then
                 If CType(Result, FtpStatus).IsFailure Then
-                    Wdbg("E", "Transfer failed")
+                    Wdbg(DebugLevel.E, "Transfer failed")
                     Success = False
                 End If
             End If
 #Enable Warning BC42104
-            Wdbg("I", "Copied. Result: {0}", Success)
+            Wdbg(DebugLevel.I, "Copied. Result: {0}", Success)
             Return Success
         Else
             Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
@@ -252,7 +252,7 @@ Module FTPFilesystem
                 ClientFTP.Chmod(Target, Chmod)
                 Return True
             Catch ex As Exception
-                Wdbg("E", "Error setting permissions ({0}) to file {1}: {2}", Chmod, Target, ex.Message)
+                Wdbg(DebugLevel.E, "Error setting permissions ({0}) to file {1}: {2}", Chmod, Target, ex.Message)
                 WStkTrc(ex)
             End Try
         Else

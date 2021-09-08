@@ -29,125 +29,125 @@ Public Module PlaceParse
 
         EventManager.RaisePlaceholderParsing(text)
         Try
-            Wdbg("I", "Parsing text for placeholders...")
+            Wdbg(DebugLevel.I, "Parsing text for placeholders...")
             If text.Contains("<user>") Then
-                Wdbg("I", "Username placeholder found.")
+                Wdbg(DebugLevel.I, "Username placeholder found.")
                 text = text.Replace("<user>", CurrentUser)
             End If
             If text.Contains("<ftpuser>") Then
-                Wdbg("I", "FTP username placeholder found.")
+                Wdbg(DebugLevel.I, "FTP username placeholder found.")
                 text = text.Replace("<ftpuser>", FtpUser)
             End If
             If text.Contains("<ftpaddr>") Then
-                Wdbg("I", "FTP address placeholder found.")
+                Wdbg(DebugLevel.I, "FTP address placeholder found.")
                 text = text.Replace("<ftpaddr>", ftpsite)
             End If
             If text.Contains("<currentftpdirectory>") Then
-                Wdbg("I", "FTP directory placeholder found.")
+                Wdbg(DebugLevel.I, "FTP directory placeholder found.")
                 text = text.Replace("<currentftpdirectory>", FtpCurrentRemoteDir)
             End If
             If text.Contains("<currentftplocaldirectory>") Then
-                Wdbg("I", "FTP local directory placeholder found.")
+                Wdbg(DebugLevel.I, "FTP local directory placeholder found.")
                 text = text.Replace("<currentftplocaldirectory>", FtpCurrentDirectory)
             End If
             If text.Contains("<currentftplocaldirectoryname>") Then
-                Wdbg("I", "FTP local directory name placeholder found.")
+                Wdbg(DebugLevel.I, "FTP local directory name placeholder found.")
                 text = text.Replace("<currentftplocaldirectoryname>", New DirectoryInfo(FtpCurrentDirectory).Name)
             End If
             If text.Contains("<sftpuser>") Then
-                Wdbg("I", "SFTP username placeholder found.")
+                Wdbg(DebugLevel.I, "SFTP username placeholder found.")
                 text = text.Replace("<sftpuser>", SFTPUser)
             End If
             If text.Contains("<sftpaddr>") Then
-                Wdbg("I", "SFTP address placeholder found.")
+                Wdbg(DebugLevel.I, "SFTP address placeholder found.")
                 text = text.Replace("<sftpaddr>", sftpsite)
             End If
             If text.Contains("<currentsftpdirectory>") Then
-                Wdbg("I", "SFTP directory placeholder found.")
+                Wdbg(DebugLevel.I, "SFTP directory placeholder found.")
                 text = text.Replace("<currentsftpdirectory>", SFTPCurrentRemoteDir)
             End If
             If text.Contains("<currentsftplocaldirectory>") Then
-                Wdbg("I", "SFTP local directory placeholder found.")
+                Wdbg(DebugLevel.I, "SFTP local directory placeholder found.")
                 text = text.Replace("<currentsftplocaldirectory>", SFTPCurrDirect)
             End If
             If text.Contains("<currentsftplocaldirectoryname>") Then
-                Wdbg("I", "SFTP local directory name placeholder found.")
+                Wdbg(DebugLevel.I, "SFTP local directory name placeholder found.")
                 text = text.Replace("<currentsftplocaldirectoryname>", New DirectoryInfo(SFTPCurrDirect).Name)
             End If
             If text.Contains("<mailuser>") Then
-                Wdbg("I", "Mail username placeholder found.")
+                Wdbg(DebugLevel.I, "Mail username placeholder found.")
                 text = text.Replace("<mailuser>", Mail_Authentication.UserName)
             End If
             If text.Contains("<mailaddr>") Then
-                Wdbg("I", "Mail address placeholder found.")
+                Wdbg(DebugLevel.I, "Mail address placeholder found.")
                 text = text.Replace("<mailaddr>", Mail_Authentication.Domain)
             End If
             If text.Contains("<currentmaildirectory>") Then
-                Wdbg("I", "Mail directory placeholder found.")
+                Wdbg(DebugLevel.I, "Mail directory placeholder found.")
                 text = text.Replace("<currentmaildirectory>", IMAP_CurrentDirectory)
             End If
             If text.Contains("<host>") Then
-                Wdbg("I", "Hostname placeholder found.")
+                Wdbg(DebugLevel.I, "Hostname placeholder found.")
                 text = text.Replace("<host>", HName)
             End If
             If text.Contains("<currentdirectory>") Then
-                Wdbg("I", "Current directory placeholder found.")
+                Wdbg(DebugLevel.I, "Current directory placeholder found.")
                 text = text.Replace("<currentdirectory>", CurrDir)
             End If
             If text.Contains("<currentdirectoryname>") Then
-                Wdbg("I", "Current directory name placeholder found.")
+                Wdbg(DebugLevel.I, "Current directory name placeholder found.")
                 text = text.Replace("<currentdirectoryname>", New DirectoryInfo(CurrDir).Name)
             End If
             If text.Contains("<shortdate>") Then
-                Wdbg("I", "Short Date placeholder found.")
+                Wdbg(DebugLevel.I, "Short Date placeholder found.")
                 text = text.Replace("<shortdate>", KernelDateTime.ToShortDateString)
             End If
             If text.Contains("<longdate>") Then
-                Wdbg("I", "Long Date placeholder found.")
+                Wdbg(DebugLevel.I, "Long Date placeholder found.")
                 text = text.Replace("<longdate>", KernelDateTime.ToLongDateString)
             End If
             If text.Contains("<shorttime>") Then
-                Wdbg("I", "Short Time placeholder found.")
+                Wdbg(DebugLevel.I, "Short Time placeholder found.")
                 text = text.Replace("<shorttime>", KernelDateTime.ToShortTimeString)
             End If
             If text.Contains("<longtime>") Then
-                Wdbg("I", "Long Time placeholder found.")
+                Wdbg(DebugLevel.I, "Long Time placeholder found.")
                 text = text.Replace("<longtime>", KernelDateTime.ToShortDateString)
             End If
             If text.Contains("<date>") Then
-                Wdbg("I", "Rendered Date placeholder found.")
+                Wdbg(DebugLevel.I, "Rendered Date placeholder found.")
                 text = text.Replace("<date>", RenderDate)
             End If
             If text.Contains("<time>") Then
-                Wdbg("I", "Rendered Time placeholder found.")
+                Wdbg(DebugLevel.I, "Rendered Time placeholder found.")
                 text = text.Replace("<time>", RenderTime)
             End If
             If text.Contains("<timezone>") Then
-                Wdbg("I", "Standard Time Zone placeholder found.")
+                Wdbg(DebugLevel.I, "Standard Time Zone placeholder found.")
                 text = text.Replace("<timezone>", TimeZone.CurrentTimeZone.StandardName)
             End If
             If text.Contains("<summertimezone>") Then
-                Wdbg("I", "Summer Time Zone placeholder found.")
+                Wdbg(DebugLevel.I, "Summer Time Zone placeholder found.")
                 text = text.Replace("<summertimezone>", TimeZone.CurrentTimeZone.DaylightName)
             End If
             If text.Contains("<system>") Then
-                Wdbg("I", "System placeholder found.")
+                Wdbg(DebugLevel.I, "System placeholder found.")
                 text = text.Replace("<system>", Environment.OSVersion.ToString)
             End If
             If text.Contains("<newline>") Then
-                Wdbg("I", "Newline placeholder found.")
+                Wdbg(DebugLevel.I, "Newline placeholder found.")
                 text = text.Replace("<newline>", vbNewLine)
             End If
             If text.Contains("<f:reset>") Then
-                Wdbg("I", "Foreground color reset placeholder found.")
+                Wdbg(DebugLevel.I, "Foreground color reset placeholder found.")
                 text = text.Replace("<f:reset>", New Color(NeutralTextColor).VTSequenceForeground)
             End If
             If text.Contains("<b:reset>") Then
-                Wdbg("I", "Background color reset placeholder found.")
+                Wdbg(DebugLevel.I, "Background color reset placeholder found.")
                 text = text.Replace("<b:reset>", New Color(BackgroundColor).VTSequenceBackground)
             End If
             If text.Contains("<f:") Then
-                Wdbg("I", "Foreground color placeholder found.")
+                Wdbg(DebugLevel.I, "Foreground color placeholder found.")
                 Do While text.Contains("<f:")
                     Dim StartForegroundIndex As Integer = text.IndexOf("<f:")
                     Dim EndForegroundIndex As Integer = text.Substring(text.IndexOf("<f:")).IndexOf(">")
@@ -158,7 +158,7 @@ Public Module PlaceParse
                 Loop
             End If
             If text.Contains("<b:") Then
-                Wdbg("I", "Background color placeholder found.")
+                Wdbg(DebugLevel.I, "Background color placeholder found.")
                 Do While text.Contains("<b:")
                     Dim StartBackgroundIndex As Integer = text.IndexOf("<b:")
                     Dim EndBackgroundIndex As Integer = text.Substring(text.IndexOf("<b:")).IndexOf(">")
@@ -169,7 +169,7 @@ Public Module PlaceParse
                 Loop
             End If
             If text.Contains("<$") Then
-                Wdbg("I", "UESH variable placeholder found.")
+                Wdbg(DebugLevel.I, "UESH variable placeholder found.")
                 Do While text.Contains("<$")
                     Dim StartShellVariableIndex As Integer = text.IndexOf("<$")
                     Dim EndShellVariableIndex As Integer = text.Substring(text.IndexOf("<$")).IndexOf(">")

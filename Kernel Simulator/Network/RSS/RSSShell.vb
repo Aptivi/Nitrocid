@@ -57,7 +57,7 @@ Begin:
                         RSSFeedLink = RSSFeedInstance.FeedUrl
                         OldRSSFeedLink = RSSFeedLink
                     Catch ex As Exception
-                        Wdbg("E", "Failed to parse RSS feed URL {0}: {1}", FeedUrl, ex.Message)
+                        Wdbg(DebugLevel.E, "Failed to parse RSS feed URL {0}: {1}", FeedUrl, ex.Message)
                         WStkTrc(ex)
                         W(DoTranslation("Failed to parse feed URL:") + " {0}", True, ColTypes.Error, ex.Message)
                         RSSFeedLink = ""
@@ -72,7 +72,7 @@ Begin:
                     End If
                     OldRSSFeedLink = RSSFeedLink
                 Catch ex As Exception
-                    Wdbg("E", "Failed to parse RSS feed URL {0}: {1}", RSSFeedLink, ex.Message)
+                    Wdbg(DebugLevel.E, "Failed to parse RSS feed URL {0}: {1}", RSSFeedLink, ex.Message)
                     WStkTrc(ex)
                     W(DoTranslation("Failed to parse feed URL:") + " {0}", True, ColTypes.Error, ex.Message)
                     RSSFeedLink = ""
@@ -81,13 +81,13 @@ Begin:
 
                 'Send ping to keep the connection alive
                 If Not RSSKeepAlive Then RSSRefresher.Start()
-                Wdbg("I", "Made new thread about RefreshFeeds()")
+                Wdbg(DebugLevel.I, "Made new thread about RefreshFeeds()")
 
                 'Prepare for prompt
                 If DefConsoleOut IsNot Nothing Then
                     Console.SetOut(DefConsoleOut)
                 End If
-                Wdbg("I", "RSSShellPromptStyle = {0}", RSSShellPromptStyle)
+                Wdbg(DebugLevel.I, "RSSShellPromptStyle = {0}", RSSShellPromptStyle)
                 If RSSShellPromptStyle = "" Then
                     W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, New Uri(RSSFeedLink).Host) : W("] > ", False, ColTypes.Gray)
                 Else
@@ -103,32 +103,32 @@ Begin:
 
                 'Check to see if the command doesn't start with spaces or if the command is nothing
                 Try
-                    Wdbg("I", "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand.StartsWith(" "), WrittenCommand Is Nothing, WrittenCommand = "")
+                    Wdbg(DebugLevel.I, "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand.StartsWith(" "), WrittenCommand Is Nothing, WrittenCommand = "")
                     If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"}) = True) Then
                         Dim Command As String = WrittenCommand.SplitEncloseDoubleQuotes(" ")(0)
-                        Wdbg("I", "Checking command {0} for existence.", Command)
+                        Wdbg(DebugLevel.I, "Checking command {0} for existence.", Command)
                         If RSSCommands.ContainsKey(Command) Then
-                            Wdbg("I", "Command {0} found in the list of {1} commands.", Command, RSSCommands.Count)
+                            Wdbg(DebugLevel.I, "Command {0} found in the list of {1} commands.", Command, RSSCommands.Count)
                             RSSCommandThread = New Thread(AddressOf RSSParseCommand) With {.Name = "RSS Shell Command Thread"}
                             EventManager.RaiseRSSPreExecuteCommand(RSSFeedLink, WrittenCommand)
-                            Wdbg("I", "Made new thread. Starting with argument {0}...", WrittenCommand)
+                            Wdbg(DebugLevel.I, "Made new thread. Starting with argument {0}...", WrittenCommand)
                             RSSCommandThread.Start(WrittenCommand)
                             RSSCommandThread.Join()
                             EventManager.RaiseRSSPostExecuteCommand(RSSFeedLink, WrittenCommand)
                         ElseIf RSSModCommands.Contains(Command) Then
-                            Wdbg("I", "Mod command {0} executing...", Command)
+                            Wdbg(DebugLevel.I, "Mod command {0} executing...", Command)
                             ExecuteModCommand(WrittenCommand)
                         ElseIf RSSShellAliases.Keys.Contains(Command) Then
-                            Wdbg("I", "RSS shell alias command found.")
+                            Wdbg(DebugLevel.I, "RSS shell alias command found.")
                             WrittenCommand = WrittenCommand.Replace($"""{Command}""", Command)
                             ExecuteRSSAlias(WrittenCommand)
                         Else
                             W(DoTranslation("The specified RSS shell command is not found."), True, ColTypes.Error)
-                            Wdbg("E", "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), RSSCommands.Count)
+                            Wdbg(DebugLevel.E, "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), RSSCommands.Count)
                         End If
                     End If
                 Catch ex As Exception
-                    Wdbg("E", "Unknown RSS shell error: {0}", ex.Message)
+                    Wdbg(DebugLevel.E, "Unknown RSS shell error: {0}", ex.Message)
                     WStkTrc(ex)
                     W(DoTranslation("Unknown shell error:") + " {0}", True, ColTypes.Error, ex.Message)
                 End Try
@@ -142,9 +142,9 @@ Begin:
 
         'Disconnect the session
         If RSSKeepAlive Then
-            Wdbg("W", "Exit requested, but not disconnecting.")
+            Wdbg(DebugLevel.W, "Exit requested, but not disconnecting.")
         Else
-            Wdbg("W", "Exit requested. Disconnecting host...")
+            Wdbg(DebugLevel.W, "Exit requested. Disconnecting host...")
             RSSRefresher.Abort()
             RSSFeedLink = ""
             RSSFeedInstance = Nothing
@@ -164,7 +164,7 @@ Begin:
     Sub ExecuteRSSAlias(aliascmd As String)
         Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, RSSShellAliases(FirstWordCmd))
-        Wdbg("I", "Actual command: {0}", actualCmd)
+        Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
         RSSCommandThread = New Thread(AddressOf RSSParseCommand) With {.Name = "RSS Shell Command Thread"}
         RSSCommandThread.Start(actualCmd)
         RSSCommandThread.Join()

@@ -68,20 +68,20 @@ Public Class ProvidedCommandArgumentsInfo
         'Get the index of the first space (Used for step 3)
         Dim index As Integer = CommandText.IndexOf(" ")
         If index = -1 Then index = CommandText.Length
-        Wdbg("I", "Index: {0}", index)
+        Wdbg(DebugLevel.I, "Index: {0}", index)
 
         'Split the requested command string into words
         Dim words() As String = CommandText.Split({" "c})
         For i As Integer = 0 To words.Length - 1
-            Wdbg("I", "Word {0}: {1}", i + 1, words(i))
+            Wdbg(DebugLevel.I, "Word {0}: {1}", i + 1, words(i))
         Next
         Command = words(0)
 
         'Get the string of arguments
         Dim strArgs As String = CommandText.Substring(index)
-        Wdbg("I", "Prototype strArgs: {0}", strArgs)
+        Wdbg(DebugLevel.I, "Prototype strArgs: {0}", strArgs)
         If Not index = CommandText.Length Then strArgs = strArgs.Substring(1)
-        Wdbg("I", "Finished strArgs: {0}", strArgs)
+        Wdbg(DebugLevel.I, "Finished strArgs: {0}", strArgs)
 
         'Split the arguments with enclosed quotes and set the required boolean variable
         Dim eqargs() As String = strArgs.SplitEncloseDoubleQuotes(" ")
@@ -90,7 +90,7 @@ Public Class ProvidedCommandArgumentsInfo
         ElseIf ShellCommands(Command).ArgumentsRequired And eqargs Is Nothing Then
             RequiredArgumentsProvided = False
         End If
-        If eqargs IsNot Nothing Then Wdbg("I", "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
+        If eqargs IsNot Nothing Then Wdbg(DebugLevel.I, "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
 
         'Install the parsed values to the new class instance
         ArgumentsList = eqargs
