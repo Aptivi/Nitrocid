@@ -286,7 +286,6 @@ Public Module KernelTools
             EnteredArguments.Clear()
         End If
         StopPanicAndGoToDoublePanic = False
-        strcommand = Nothing
         modcmnds.Clear()
         ModDefs.Clear()
         FTPModCommands.Clear()

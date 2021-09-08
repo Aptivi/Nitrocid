@@ -26,10 +26,6 @@ Public Module Shell
     ''' </summary>
     Public ColoredShell As Boolean = True
     ''' <summary>
-    ''' Written command
-    ''' </summary>
-    Public strcommand As String
-    ''' <summary>
     ''' Shell prompt style
     ''' </summary>
     Public ShellPromptStyle As String = ""
@@ -179,7 +175,7 @@ Public Module Shell
                     'Wait for command
                     Wdbg("I", "Waiting for command")
                     EventManager.RaiseShellInitialized()
-                    strcommand = Console.ReadLine()
+                    Dim strcommand As String = Console.ReadLine()
 
                     If Not InSaver Then
                         'Fire event of PreRaiseCommand
