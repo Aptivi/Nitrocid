@@ -27,18 +27,6 @@ Public Module UserManagement
     ''' The users token
     ''' </summary>
     Public UsersToken As JArray
-    ''' <summary>
-    ''' The administrators list (users that are allowed to have administrative access)
-    ''' </summary>
-    Friend adminList As New Dictionary(Of String, Boolean)
-    ''' <summary>
-    ''' The disabled list (users that are unable to login)
-    ''' </summary>
-    Friend disabledList As New Dictionary(Of String, Boolean)
-    ''' <summary>
-    ''' The anonymous list (users that shouldn't be listed in user list)
-    ''' </summary>
-    Friend AnonymousList As New Dictionary(Of String, Boolean)
 
     ''' <summary>
     ''' A user property
@@ -257,9 +245,7 @@ Public Module UserManagement
             ElseIf Users.Keys.ToArray.Contains(user) And user <> "root" Then
                 Try
                     Wdbg("I", "Removing permissions...")
-                    adminList.Remove(user)
-                    disabledList.Remove(user)
-                    AnonymousList.Remove(user)
+                    UserPermissions.Remove(user)
 
                     'Remove user
                     Wdbg("I", "Removing username {0}...", user)
@@ -352,7 +338,7 @@ Public Module UserManagement
     Public Function ChangePassword(Target As String, CurrentPass As String, NewPass As String)
         CurrentPass = GetEncryptedString(CurrentPass, Algorithms.SHA256)
         If CurrentPass = Users(Target) Then
-            If adminList(CurrentUser) And Users.ContainsKey(Target) Then
+            If HasPermission(CurrentUser, PermissionType.Administrator) And Users.ContainsKey(Target) Then
                 'Change password locally
                 NewPass = GetEncryptedString(NewPass, Algorithms.SHA256)
                 Users.Item(Target) = NewPass
@@ -363,9 +349,9 @@ Public Module UserManagement
                 'Raise event
                 EventManager.RaiseUserPasswordChanged(Target)
                 Return True
-            ElseIf adminList(CurrentUser) And Not Users.ContainsKey(Target) Then
+            ElseIf HasPermission(CurrentUser, PermissionType.Administrator) And Not Users.ContainsKey(Target) Then
                 Throw New Exceptions.UserManagementException(DoTranslation("User not found"))
-            ElseIf adminList(Target) And Not adminList(CurrentUser) Then
+            ElseIf HasPermission(Target, PermissionType.Administrator) And Not HasPermission(CurrentUser, PermissionType.Administrator) Then
                 Throw New Exceptions.UserManagementException(DoTranslation("You are not authorized to change password of {0} because the target was an admin."), Target)
             End If
         Else
@@ -382,10 +368,10 @@ Public Module UserManagement
     Public Function ListAllUsers(Optional IncludeAnonymous As Boolean = False, Optional IncludeDisabled As Boolean = False) As List(Of String)
         Dim UsersList As New List(Of String)(Users.Keys)
         If Not IncludeAnonymous Then
-            UsersList.RemoveAll(New Predicate(Of String)(Function(x) AnonymousList.Keys.Contains(x) And AnonymousList(x) = True))
+            UsersList.RemoveAll(New Predicate(Of String)(Function(x) HasPermission(x, PermissionType.Anonymous) = True))
         End If
         If Not IncludeDisabled Then
-            UsersList.RemoveAll(New Predicate(Of String)(Function(x) disabledList.Keys.Contains(x) And disabledList(x) = True))
+            UsersList.RemoveAll(New Predicate(Of String)(Function(x) HasPermission(x, PermissionType.Disabled) = True))
         End If
         Return UsersList
     End Function

@@ -139,7 +139,7 @@ Public Module HelpSystem
                 'The built-in commands
                 W(DoTranslation("General commands:"), True, ColTypes.Neutral)
                 For Each cmd As String In CommandList.Keys
-                    If (Not CommandList(cmd).Strict) Or (CommandList(cmd).Strict And adminList(CurrentUser)) Then
+                    If (Not CommandList(cmd).Strict) Or (CommandList(cmd).Strict And HasPermission(CurrentUser, PermissionType.Administrator)) Then
                         W("- {0}: ", False, ColTypes.ListEntry, cmd) : W("{0}", True, ColTypes.ListValue, CommandList(cmd).GetTranslatedHelpEntry)
                     End If
                 Next
@@ -163,7 +163,7 @@ Public Module HelpSystem
             Else
                 'The built-in commands
                 For Each cmd As String In CommandList.Keys
-                    If (Not CommandList(cmd).Strict) Or (CommandList(cmd).Strict And adminList(CurrentUser)) Then
+                    If (Not CommandList(cmd).Strict) Or (CommandList(cmd).Strict And HasPermission(CurrentUser, PermissionType.Administrator)) Then
                         W("{0}, ", False, ColTypes.ListEntry, cmd)
                     End If
                 Next

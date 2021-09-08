@@ -60,7 +60,7 @@ Public Module ModExecutor
                 If Script.Commands.ContainsKey(parts(0)) Then
                     If Script.Commands(parts(0)).Type = ShellCommandType.Shell Then
                         'Command type is of shell. Check the user privileges for restricted commands.
-                        If (Script.Commands(parts(0)).Strict And adminList(CurrentUser)) Or Not Script.Commands(parts(0)).Strict Then
+                        If (Script.Commands(parts(0)).Strict And HasPermission(CurrentUser, PermissionType.Administrator)) Or Not Script.Commands(parts(0)).Strict Then
                             'User was authorized to use the command, or the command wasn't strict
                             Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModPart)
                             Script.PerformCmd(Script.Commands(parts(0)), args)
@@ -70,7 +70,7 @@ Public Module ModExecutor
                             W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, parts(0))
                         End If
                     Else
-                        'Command type is not of shell. Execute anyways.
+                        'Command type is not of shell. Execute anyway.
                         Wdbg("I", "Using command {0} from {1} to be executed...", parts(0), ModPart)
                         Script.PerformCmd(Script.Commands(parts(0)), args)
                     End If

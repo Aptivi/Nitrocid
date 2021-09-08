@@ -21,10 +21,16 @@ Imports Newtonsoft.Json.Linq
 
 Public Module PermissionManagement
 
+    Friend UserPermissions As New Dictionary(Of String, PermissionType)
+
     ''' <summary>
     ''' This enumeration lists all permission types.
     ''' </summary>
     Public Enum PermissionType As Integer
+        ''' <summary>
+        ''' User has no permissions
+        ''' </summary>
+        None = 0
         ''' <summary>
         ''' This user is an administrator
         ''' </summary>
@@ -32,11 +38,11 @@ Public Module PermissionManagement
         ''' <summary>
         ''' This user is disabled
         ''' </summary>
-        Disabled
+        Disabled = 2
         ''' <summary>
         ''' This user doesn't show in the available users list
         ''' </summary>
-        Anonymous
+        Anonymous = 4
     End Enum
 
     ''' <summary>
@@ -91,20 +97,19 @@ Public Module PermissionManagement
         'Sets the required permissions to false.
         If Users.Keys.ToArray.Contains(Username) Then
             Wdbg("I", "Type is {0}", PermType)
-            If PermType = PermissionType.Administrator Then
-                adminList(Username) = True
-                Wdbg("I", "User {0} allowed (Admin): {1}", Username, adminList(Username))
-            ElseIf PermType = PermissionType.Disabled Then
-                disabledList(Username) = True
-                Wdbg("I", "User {0} allowed (Disabled): {1}", Username, disabledList(Username))
-            ElseIf PermType = PermissionType.Anonymous Then
-                AnonymousList(Username) = True
-                Wdbg("I", "User {0} allowed (Anonymous): {1}", Username, AnonymousList(Username))
-            Else
-                Wdbg("W", "Type is invalid")
-                Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid type {0}"), PermType)
-                Return False
-            End If
+            Select Case PermType
+                Case PermissionType.Administrator
+                    UserPermissions(Username) += PermissionType.Administrator
+                Case PermissionType.Disabled
+                    UserPermissions(Username) += PermissionType.Disabled
+                Case PermissionType.Anonymous
+                    UserPermissions(Username) += PermissionType.Anonymous
+                Case Else
+                    Wdbg("W", "Type is invalid")
+                    Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid type {0}"), PermType)
+                    Return False
+            End Select
+            Wdbg("I", "User {0} permission added; value is now: {1}", Username, UserPermissions(Username))
         Else
             Wdbg("W", "User {0} not found on list", Username)
             Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to add user into permission lists: invalid user {0}"), Username)
@@ -134,20 +139,19 @@ Public Module PermissionManagement
         'Sets the required permissions to false.
         If Users.Keys.ToArray.Contains(Username) And Username <> CurrentUser Then
             Wdbg("I", "Type is {0}", PermType)
-            If PermType = PermissionType.Administrator Then
-                adminList(Username) = False
-                Wdbg("I", "User {0} allowed (Admin): {1}", Username, adminList(Username))
-            ElseIf PermType = PermissionType.Disabled Then
-                disabledList(Username) = False
-                Wdbg("I", "User {0} allowed (Disabled): {1}", Username, disabledList(Username))
-            ElseIf PermType = PermissionType.Anonymous Then
-                AnonymousList(Username) = False
-                Wdbg("I", "User {0} allowed (Anonymous): {1}", Username, AnonymousList(Username))
-            Else
-                Wdbg("W", "Type is invalid")
-                Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid type {0}"), PermType)
-                Return False
-            End If
+            Select Case PermType
+                Case PermissionType.Administrator
+                    UserPermissions(Username) -= PermissionType.Administrator
+                Case PermissionType.Disabled
+                    UserPermissions(Username) -= PermissionType.Disabled
+                Case PermissionType.Anonymous
+                    UserPermissions(Username) -= PermissionType.Anonymous
+                Case Else
+                    Wdbg("W", "Type is invalid")
+                    Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to remove user from permission lists: invalid type {0}"), PermType)
+                    Return False
+            End Select
+            Wdbg("I", "User {0} permission removed; value is now: {1}", Username, UserPermissions(Username))
         ElseIf Username = CurrentUser Then
             Throw New Exceptions.PermissionManagementException(DoTranslation("You are already logged in."))
             Return False
@@ -178,28 +182,18 @@ Public Module PermissionManagement
     ''' <exception cref="Exceptions.PermissionManagementException"></exception>
     Public Function PermissionEditForNewUser(OldName As String, Username As String) As Boolean
         'Edit username
-        If adminList.ContainsKey(OldName) And disabledList.ContainsKey(OldName) And AnonymousList.ContainsKey(OldName) Then
+        If UserPermissions.ContainsKey(OldName) Then
             Try
                 'Store permissions
-                Dim AdminAllowed As Boolean = adminList(OldName)
-                Dim DisabledAllowed As Boolean = disabledList(OldName)
-                Dim AnonymousAllowed As Boolean = AnonymousList(OldName)
+                Dim UserOldPermissions As PermissionType = UserPermissions(OldName)
 
                 'Remove old user entry
-                Wdbg("I", "Removing {0} from Admin List", OldName)
-                adminList.Remove(OldName)
-                Wdbg("I", "Removing {0} from Disabled List", OldName)
-                disabledList.Remove(OldName)
-                Wdbg("I", "Removing {0} from Anonymous List", OldName)
-                AnonymousList.Remove(OldName)
+                Wdbg("I", "Removing {0} from permissions list...", OldName)
+                UserPermissions.Remove(OldName)
 
                 'Add new user entry
-                adminList.Add(Username, AdminAllowed)
-                Wdbg("I", "Added {0} to Admin List with value of {1}", Username, AdminAllowed)
-                disabledList.Add(Username, DisabledAllowed)
-                Wdbg("I", "Added {0} to Disabled List with value of {1}", Username, DisabledAllowed)
-                AnonymousList.Add(Username, AnonymousAllowed)
-                Wdbg("I", "Added {0} to Anonymous List with value of {1}", Username, AnonymousAllowed)
+                UserPermissions.Add(Username, UserOldPermissions)
+                Wdbg("I", "Added {0} to permissions list with value of {1}", Username, UserPermissions(Username))
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
@@ -221,9 +215,7 @@ Public Module PermissionManagement
     Public Function InitPermissionsForNewUser(NewUser As String) As Boolean
         Try
             'Initialize permissions locally
-            If Not adminList.ContainsKey(NewUser) Then adminList.Add(NewUser, False)
-            If Not disabledList.ContainsKey(NewUser) Then disabledList.Add(NewUser, False)
-            If Not AnonymousList.ContainsKey(NewUser) Then AnonymousList.Add(NewUser, False)
+            If Not UserPermissions.ContainsKey(NewUser) Then UserPermissions.Add(NewUser, PermissionType.None)
             Return True
         Catch ex As Exception
             WStkTrc(ex)
@@ -241,17 +233,15 @@ Public Module PermissionManagement
         Try
             For Each UserToken As JObject In UsersToken
                 Dim User As String = UserToken("username")
-                adminList(User) = False
-                disabledList(User) = False
-                AnonymousList(User) = False
+                UserPermissions(User) = PermissionType.None
                 For Each Perm As String In CType(UserToken("permissions"), JArray)
                     Select Case Perm
                         Case "Administrator"
-                            adminList(User) = True
+                            UserPermissions(User) += PermissionType.Administrator
                         Case "Disabled"
-                            disabledList(User) = True
+                            UserPermissions(User) += PermissionType.Disabled
                         Case "Anonymous"
-                            AnonymousList(User) = True
+                            UserPermissions(User) += PermissionType.Anonymous
                     End Select
                 Next
             Next
@@ -261,6 +251,27 @@ Public Module PermissionManagement
             Throw New Exceptions.PermissionManagementException(DoTranslation("Failed to load permissions from file: {0}"), ex, ex.Message)
         End Try
         Return False
+    End Function
+
+    ''' <summary>
+    ''' Gets the permissions for the user
+    ''' </summary>
+    ''' <param name="Username">Target username</param>
+    ''' <returns>Permission type enumeration for the current user, or none if the user isn't found or has no permissions</returns>
+    Public Function GetPermissions(Username As String) As PermissionType
+        If Username = Nothing Then Username = ""
+        Return If(UserPermissions.ContainsKey(Username), UserPermissions(Username), PermissionType.None)
+    End Function
+
+    ''' <summary>
+    ''' Checks to see if the user has a specific permission
+    ''' </summary>
+    ''' <param name="Username">Target username</param>
+    ''' <param name="SpecificPermission">Specific permission type</param>
+    ''' <returns>True if the user has permission; False otherwise</returns>
+    Public Function HasPermission(Username As String, SpecificPermission As PermissionType) As Boolean
+        Dim SpecificPermissions As PermissionType = GetPermissions(Username)
+        Return SpecificPermissions.HasFlag(SpecificPermission)
     End Function
 
 End Module

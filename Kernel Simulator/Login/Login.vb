@@ -89,7 +89,7 @@ Public Module Login
                 EventManager.RaiseLoginError(answeruser, "specialchars")
             ElseIf Users.ContainsKey(answeruser) Then
                 Wdbg("I", "Username correct. Finding if the user is disabled...")
-                If disabledList(answeruser) = False Then
+                If Not HasPermission(answeruser, PermissionType.Disabled) Then
                     Wdbg("I", "User can log in. (User is not in disabled list)")
                     ShowPasswordPrompt(answeruser)
                 Else
