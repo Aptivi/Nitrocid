@@ -135,7 +135,9 @@ Public Module RPC_Commands
                 ElseIf msg.StartsWith("PingConfirm") Then
                     Dim IPAddr As String = msg.Replace("PingConfirm, ", "").Replace(vbNewLine, "")
                     Wdbg("I", "{0} pinged this device!", IPAddr)
-                    NotifySend(New Notification With {.Title = DoTranslation("Ping!"), .Desc = DoTranslation("{0} pinged you.").FormatString(IPAddr), .Priority = NotifPriority.Low, .Type = NotifType.Normal})
+                    NotifySend(New Notification(DoTranslation("Ping!"),
+                                                DoTranslation("{0} pinged you.").FormatString(IPAddr),
+                                                NotifPriority.Low, NotifType.Normal))
                 Else
                     Wdbg("W", "Not found. Message was {0}", msg)
                 End If

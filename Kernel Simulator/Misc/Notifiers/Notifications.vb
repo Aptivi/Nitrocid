@@ -57,51 +57,6 @@ Public Module Notifications
     End Enum
 
     ''' <summary>
-    ''' Notification holder with title, description, and priority
-    ''' </summary>
-    Public Class Notification
-        Private _Progress As Integer
-        ''' <summary>
-        ''' Notification title
-        ''' </summary>
-        Property Title As String
-        ''' <summary>
-        ''' Notification description
-        ''' </summary>
-        Property Desc As String
-        ''' <summary>
-        ''' Notification priority
-        ''' </summary>
-        Property Priority As NotifPriority
-        ''' <summary>
-        ''' Notification type
-        ''' </summary>
-        Property Type As NotifType
-        ''' <summary>
-        ''' Notification progress
-        ''' </summary>
-        Property Progress As Integer
-            Get
-                Return _Progress
-            End Get
-            Set
-                If Value >= 100 Then
-                    _Progress = 100
-                ElseIf Value <= 0 Then
-                    _Progress = 0
-                Else
-                    _Progress = Value
-                End If
-            End Set
-        End Property
-        ''' <summary>
-        ''' Whether the progress failed
-        ''' </summary>
-        ''' <returns></returns>
-        Property ProgressFailed As Boolean
-    End Class
-
-    ''' <summary>
     ''' Listens for notifications and notifies the user if one has been found
     ''' </summary>
     Private Sub NotifListen()
@@ -186,9 +141,9 @@ Public Module Notifications
     ''' <param name="Title">Title of notification</param>
     ''' <param name="Desc">Description of notification</param>
     ''' <param name="Priority">Priority of notification</param>
-    ''' <returns></returns>
+    <Obsolete("Use the Notification constructor instead")>
     Public Function NotifyCreate(Title As String, Desc As String, Priority As NotifPriority, Type As NotifType) As Notification
-        Return New Notification With {.Title = Title, .Desc = Desc, .Priority = Priority, .Type = Type, .Progress = 0}
+        Return New Notification(Title, Desc, Priority, Type)
     End Function
 
     ''' <summary>

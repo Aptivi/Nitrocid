@@ -24,14 +24,15 @@ Imports KS
     ''' Tests notification creation
     ''' </summary>
     <TestMethod()> Public Sub TestNotifyCreate()
-        NotifyCreate("This is the title.", "This is the description.", NotifPriority.Medium, NotifType.Normal).ShouldNotBeNull
+        Dim Notif As New Notification("This is the title.", "This is the description.", NotifPriority.Medium, NotifType.Normal)
+        Notif.ShouldNotBeNull
     End Sub
 
     ''' <summary>
     ''' Tests notification sending
     ''' </summary>
     <TestMethod> Public Sub TestNotifySend()
-        Dim Notif As Notification = NotifyCreate("Notification title", "This is a high priority notification", NotifPriority.High, NotifType.Normal)
+        Dim Notif As New Notification("Notification title", "This is a high priority notification", NotifPriority.High, NotifType.Normal)
         NotifySend(Notif)
         NotifRecents.ShouldNotBeEmpty
     End Sub
@@ -40,9 +41,9 @@ Imports KS
     ''' Tests notifications sending
     ''' </summary>
     <TestMethod> Public Sub TestNotifySendRange()
-        Dim Notif1 As Notification = NotifyCreate("High notification title", "This is a high priority notification", NotifPriority.High, NotifType.Normal)
-        Dim Notif2 As Notification = NotifyCreate("Medium notification title", "This is a medium priority notification", NotifPriority.Medium, NotifType.Normal)
-        Dim Notif3 As Notification = NotifyCreate("Low notification title", "This is a low priority notification", NotifPriority.Low, NotifType.Normal)
+        Dim Notif1 As New Notification("High notification title", "This is a high priority notification", NotifPriority.High, NotifType.Normal)
+        Dim Notif2 As New Notification("Medium notification title", "This is a medium priority notification", NotifPriority.Medium, NotifType.Normal)
+        Dim Notif3 As New Notification("Low notification title", "This is a low priority notification", NotifPriority.Low, NotifType.Normal)
         Dim Notifs As New List(Of Notification) From {Notif1, Notif2, Notif3}
         NotifySendRange(Notifs)
         NotifRecents.ShouldNotBeEmpty
@@ -52,7 +53,7 @@ Imports KS
     ''' Tests notification dismiss
     ''' </summary>
     <TestMethod> Public Sub TestNotifyDismiss()
-        Dim Notif As Notification = NotifyCreate("Redundant title", "This is a redundant notification", NotifPriority.Low, NotifType.Normal)
+        Dim Notif As New Notification("Redundant title", "This is a redundant notification", NotifPriority.Low, NotifType.Normal)
         NotifySend(Notif)
         NotifDismiss(NotifRecents.Count - 1).ShouldBeTrue
     End Sub

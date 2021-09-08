@@ -141,21 +141,21 @@ Public Module Kernel
                 'Notify user of errors if appropriate
                 If NotifyConfigError Then
                     NotifyConfigError = False
-                    NotifySend(New Notification With {.Title = DoTranslation("Error loading settings"),
-                                                      .Desc = DoTranslation("There is an error while loading settings. You may need to check the settings file."),
-                                                      .Priority = NotifPriority.Medium})
+                    NotifySend(New Notification(DoTranslation("Error loading settings"),
+                                                DoTranslation("There is an error while loading settings. You may need to check the settings file."),
+                                                NotifPriority.Medium, NotifType.Normal))
                 End If
                 If NotifyDebugDownloadError Then
                     NotifyDebugDownloadError = False
-                    NotifySend(New Notification With {.Title = DoTranslation("Error downloading debug data"),
-                                                      .Desc = DoTranslation("There is an error while downloading debug data. Check your internet connection."),
-                                                      .Priority = NotifPriority.Medium})
+                    NotifySend(New Notification(DoTranslation("Error downloading debug data"),
+                                                DoTranslation("There is an error while downloading debug data. Check your internet connection."),
+                                                NotifPriority.Medium, NotifType.Normal))
                 End If
                 If NotifyDebugDownloadNetworkUnavailable Then
                     NotifyDebugDownloadNetworkUnavailable = False
-                    NotifySend(New Notification With {.Title = DoTranslation("No network while downloading debug data"),
-                                                      .Desc = DoTranslation("Check your internet connection and try again."),
-                                                      .Priority = NotifPriority.Medium})
+                    NotifySend(New Notification(DoTranslation("No network while downloading debug data"),
+                                                DoTranslation("Check your internet connection and try again."),
+                                                NotifPriority.Medium, NotifType.Normal))
                 End If
 
                 'Initialize login prompt

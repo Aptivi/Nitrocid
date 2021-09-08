@@ -25,8 +25,17 @@ Public Module PermissionManagement
     ''' This enumeration lists all permission types.
     ''' </summary>
     Public Enum PermissionType As Integer
+        ''' <summary>
+        ''' This user is an administrator
+        ''' </summary>
         Administrator = 1
+        ''' <summary>
+        ''' This user is disabled
+        ''' </summary>
         Disabled
+        ''' <summary>
+        ''' This user doesn't show in the available users list
+        ''' </summary>
         Anonymous
     End Enum
 

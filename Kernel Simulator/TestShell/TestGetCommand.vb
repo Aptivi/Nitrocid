@@ -221,9 +221,7 @@ Module TestGetCommand
                     End If
                 Case "sendnot"
                     If RequiredArgumentsProvided Then
-                        Dim Notif As New Notification With {.Priority = eqargs(0),
-                                                            .Title = eqargs(1),
-                                                            .Desc = eqargs(2)}
+                        Dim Notif As New Notification(eqargs(0), eqargs(1), eqargs(2), NotifType.Normal)
                         NotifySend(Notif)
                     End If
                 Case "dcalend"
