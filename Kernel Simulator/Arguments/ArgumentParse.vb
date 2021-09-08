@@ -105,7 +105,7 @@ Module ArgumentParse
                 End If
             Next
         Catch ex As Exception
-            KernelError("U", True, 5, DoTranslation("Unrecoverable error in argument:") + " " + ex.Message, ex)
+            KernelError(KernelErrorLevel.U, True, 5, DoTranslation("Unrecoverable error in argument:") + " " + ex.Message, ex)
         End Try
 
     End Sub

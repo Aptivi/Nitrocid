@@ -47,7 +47,7 @@ Module TextWriterSlowColor
                 End If
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
-                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -125,7 +125,7 @@ Module TextWriterSlowColor
                 End If
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
-                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -166,7 +166,7 @@ Module TextWriterSlowColor
                 End If
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
-                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -208,7 +208,7 @@ Module TextWriterSlowColor
                 End If
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
-                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -251,7 +251,7 @@ Module TextWriterSlowColor
                 End If
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
-                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
 #If Not NOWRITELOCK Then
         End SyncLock
@@ -295,7 +295,7 @@ Module TextWriterSlowColor
                 End If
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
-                KernelError("C", False, 0, DoTranslation("There is a serious error when printing text."), ex)
+                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
             End Try
 #If Not NOWRITELOCK Then
         End SyncLock

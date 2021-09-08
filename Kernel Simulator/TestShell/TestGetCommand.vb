@@ -117,7 +117,7 @@ Module TestGetCommand
                     DisposeAll()
                 Case "panic"
                     If RequiredArgumentsProvided Then
-                        Dim EType As Char = eqargs(0)
+                        Dim EType As KernelErrorLevel = [Enum].Parse(GetType(KernelErrorLevel), eqargs(0))
                         Dim Reboot As Boolean = eqargs(1)
                         Dim RTime As Long = eqargs(2)
                         Dim Exc As New Exception
@@ -126,7 +126,7 @@ Module TestGetCommand
                     End If
                 Case "panicf"
                     If RequiredArgumentsProvided Then
-                        Dim EType As Char = eqargs(0)
+                        Dim EType As KernelErrorLevel = [Enum].Parse(GetType(KernelErrorLevel), eqargs(0))
                         Dim Reboot As Boolean = eqargs(1)
                         Dim RTime As Long = eqargs(2)
                         Dim Args As String = eqargs(3)

@@ -181,7 +181,7 @@ Public Module Kernel
                 If DebugMode = True Then
                     W(ex.StackTrace, True, ColTypes.Error) : WStkTrc(ex)
                 End If
-                KernelError("U", True, 5, DoTranslation("Kernel Error while booting: {0}"), ex, ex.Message)
+                KernelError(KernelErrorLevel.U, True, 5, DoTranslation("Kernel Error while booting: {0}"), ex, ex.Message)
             End Try
         End While
     End Sub

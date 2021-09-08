@@ -43,7 +43,7 @@ Public Module HardwareProbe
         Catch ex As Exception
             Wdbg(DebugLevel.E, "Failed to probe hardware: {0}", ex.Message)
             WStkTrc(ex)
-            KernelError("F", True, 10, DoTranslation("There was an error when probing hardware: {0}"), ex, ex.Message)
+            KernelError(KernelErrorLevel.F, True, 10, DoTranslation("There was an error when probing hardware: {0}"), ex, ex.Message)
         End Try
 
         If Not QuietHardwareProbe Then

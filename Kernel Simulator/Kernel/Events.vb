@@ -33,8 +33,8 @@ Public Class Events
     Public Event ShellInitialized()
     Public Event PreExecuteCommand(Command As String)
     Public Event PostExecuteCommand(Command As String)
-    Public Event KernelError(ErrorType As Char, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object)
-    Public Event ContKernelError(ErrorType As Char, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object)
+    Public Event KernelError(ErrorType As KernelErrorLevel, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object)
+    Public Event ContKernelError(ErrorType As KernelErrorLevel, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object)
     Public Event PreShutdown()
     Public Event PostShutdown()
     Public Event PreReboot()
@@ -227,7 +227,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of kernel error
     ''' </summary>
-    Public Sub RespondKernelError(ErrorType As Char, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object) Handles Me.KernelError
+    Public Sub RespondKernelError(ErrorType As KernelErrorLevel, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object) Handles Me.KernelError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -239,7 +239,7 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of continuable kernel error
     ''' </summary>
-    Public Sub RespondContKernelError(ErrorType As Char, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object) Handles Me.ContKernelError
+    Public Sub RespondContKernelError(ErrorType As KernelErrorLevel, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object) Handles Me.ContKernelError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Dim script As IScript = PartInfo.PartScript
@@ -1557,7 +1557,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of kernel error
     ''' </summary>
-    Public Sub RaiseKernelError(ErrorType As Char, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object)
+    Public Sub RaiseKernelError(ErrorType As KernelErrorLevel, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object)
         Wdbg(DebugLevel.I, "Raising event KernelError() and responding in RespondKernelError()...")
         FiredEvents.Add("KernelError (" + CStr(FiredEvents.Count) + ")", {ErrorType, Reboot, RebootTime, Description, Exc, Variables})
         RaiseEvent KernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
@@ -1565,7 +1565,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of continuable kernel error
     ''' </summary>
-    Public Sub RaiseContKernelError(ErrorType As Char, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object)
+    Public Sub RaiseContKernelError(ErrorType As KernelErrorLevel, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object)
         Wdbg(DebugLevel.I, "Raising event ContKernelError() and responding in RespondContKernelError()...")
         FiredEvents.Add("ContKernelError (" + CStr(FiredEvents.Count) + ")", {ErrorType, Reboot, RebootTime, Description, Exc, Variables})
         RaiseEvent ContKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)

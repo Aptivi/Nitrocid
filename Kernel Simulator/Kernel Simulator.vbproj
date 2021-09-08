@@ -173,6 +173,7 @@
     <Compile Include="Kernel\Events.vb" />
     <Compile Include="Kernel\Exceptions.vb" />
     <Compile Include="Kernel\Flags.vb" />
+    <Compile Include="Kernel\KernelErrorType.vb" />
     <Compile Include="Kernel\KernelTools.vb" />
     <Compile Include="Languages\LanguageInfo.vb" />
     <Compile Include="Languages\Translate.vb" />

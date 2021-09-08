@@ -32,13 +32,13 @@ Public Module KernelTools
     ''' <summary>
     ''' Indicates that there's something wrong with the kernel.
     ''' </summary>
-    ''' <param name="ErrorType">Specifies whether the error is serious, fatal, unrecoverable, or double panic. C/S/D/F/U</param>
+    ''' <param name="ErrorType">Specifies the error type.</param>
     ''' <param name="Reboot">Specifies whether to reboot on panic or to show the message to press any key to shut down</param>
     ''' <param name="RebootTime">Specifies seconds before reboot. 0 is instant. Negative numbers are not allowed.</param>
     ''' <param name="Description">Explanation of what happened when it errored.</param>
     ''' <param name="Exc">An exception to get stack traces, etc. Used for dump files currently.</param>
     ''' <param name="Variables">Optional. Specifies variables to get on text that will be printed.</param>
-    Public Sub KernelError(ErrorType As Char, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, ParamArray Variables() As Object)
+    Public Sub KernelError(ErrorType As KernelErrorLevel, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, ParamArray Variables() As Object)
         Try
             'Unquiet
             If EnteredArguments IsNot Nothing Then
@@ -50,14 +50,14 @@ Public Module KernelTools
 
             'Check error types and its capabilities
             Wdbg(DebugLevel.I, "Error type: {0}", ErrorType)
-            If ErrorType = "S" Or ErrorType = "F" Or ErrorType = "U" Or ErrorType = "D" Or ErrorType = "C" Then
-                If ErrorType = "U" And RebootTime > 5 Or ErrorType = "D" And RebootTime > 5 Then
+            If [Enum].IsDefined(GetType(KernelErrorLevel), ErrorType) Then
+                If (ErrorType = KernelErrorLevel.U Or ErrorType = KernelErrorLevel.D) And RebootTime > 5 Then
                     'If the error type is unrecoverable, or double, and the reboot time exceeds 5 seconds, then
                     'generate a second kernel error stating that there is something wrong with the reboot time.
                     Wdbg(DebugLevel.W, "Errors that have type {0} shouldn't exceed 5 seconds. RebootTime was {1} seconds", ErrorType, RebootTime)
-                    KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug."), Nothing, CStr(ErrorType))
+                    KernelError(KernelErrorLevel.D, True, 5, DoTranslation("DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug."), Nothing, CStr(ErrorType))
                     StopPanicAndGoToDoublePanic = True
-                ElseIf ErrorType = "U" And Reboot = False Or ErrorType = "D" And Reboot = False Then
+                ElseIf (ErrorType = KernelErrorLevel.U Or ErrorType = KernelErrorLevel.D) And Reboot = False Then
                     'If the error type is unrecoverable, or double, and the rebooting is false where it should
                     'not be false, then it can deal with this issue by enabling reboot.
                     Wdbg(DebugLevel.W, "Errors that have type {0} enforced Reboot = True.", ErrorType)
@@ -73,7 +73,7 @@ Public Module KernelTools
             Else
                 'If the error type is other than D/F/C/U/S, then it will generate a second error.
                 Wdbg(DebugLevel.E, "Error type {0} is not valid.", ErrorType)
-                KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Error Type {0} invalid."), Nothing, CStr(ErrorType))
+                KernelError(KernelErrorLevel.D, True, 5, DoTranslation("DOUBLE PANIC: Error Type {0} invalid."), Nothing, CStr(ErrorType))
                 StopPanicAndGoToDoublePanic = True
             End If
 
@@ -87,7 +87,7 @@ Public Module KernelTools
             GeneratePanicDump(Description, ErrorType, Exc)
 
             'Check error capabilities
-            If Description.Contains("DOUBLE PANIC: ") And ErrorType = "D" Then
+            If Description.Contains("DOUBLE PANIC: ") And ErrorType = KernelErrorLevel.D Then
                 'If the description has a double panic tag and the error type is Double
                 Wdbg(DebugLevel.F, "Double panic caused by bug in kernel crash.")
                 W(DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds..."), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
@@ -97,18 +97,18 @@ Public Module KernelTools
             ElseIf StopPanicAndGoToDoublePanic = True Then
                 'Switch to Double Panic
                 Exit Sub
-            ElseIf ErrorType = "C" And Reboot = True Then
+            ElseIf ErrorType = KernelErrorLevel.C And Reboot = True Then
                 'Check if error is Continuable and reboot is enabled
                 Wdbg(DebugLevel.W, "Continuable kernel errors shouldn't have Reboot = True.")
                 W(DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}.") + vbNewLine +
                   DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), True, ColTypes.Continuable, ErrorType, Description)
                 Console.ReadKey()
-            ElseIf ErrorType = "C" And Reboot = False Then
+            ElseIf ErrorType = KernelErrorLevel.C And Reboot = False Then
                 'Check if error is Continuable and reboot is disabled
                 EventManager.RaiseContKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
                 W(DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), True, ColTypes.Continuable, ErrorType, Description)
                 Console.ReadKey()
-            ElseIf (Reboot = False And ErrorType <> "D") Or (Reboot = False And ErrorType <> "C") Then
+            ElseIf (Reboot = False And ErrorType <> KernelErrorLevel.D) Or (Reboot = False And ErrorType <> KernelErrorLevel.C) Then
                 'If rebooting is disabled and the error type does not equal Double or Continuable
                 Wdbg(DebugLevel.W, "Reboot is False, ErrorType is not double or continuable.")
                 W(DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), True, ColTypes.Uncontinuable, ErrorType, Description)
@@ -124,9 +124,9 @@ Public Module KernelTools
         Catch ex As Exception
             If DebugMode = True Then
                 W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
-                KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message)
+                KernelError(KernelErrorLevel.D, True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message)
             Else
-                KernelError("D", True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message)
+                KernelError(KernelErrorLevel.D, True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message)
             End If
         End Try
     End Sub
@@ -137,7 +137,7 @@ Public Module KernelTools
     ''' <param name="Description">Error description</param>
     ''' <param name="ErrorType">Error type</param>
     ''' <param name="Exc">Exception</param>
-    Sub GeneratePanicDump(Description As String, ErrorType As Char, Exc As Exception)
+    Sub GeneratePanicDump(Description As String, ErrorType As KernelErrorLevel, Exc As Exception)
         Try
             'Open a file stream for dump
             Dim Dump As New StreamWriter($"{GetOtherPath(OtherPathType.Home)}/dmp_{RenderDate(FormatType.Short).Replace("/", "-")}_{RenderTime(FormatType.Short).Replace(":", "-")}.txt")
@@ -149,7 +149,7 @@ Public Module KernelTools
                            DoTranslation(">> Panic information <<") + vbNewLine +
                            DoTranslation("> Description: {0}") + vbNewLine +
                            DoTranslation("> Error type: {1}") + vbNewLine +
-                           DoTranslation("> Date and Time: {2}") + vbNewLine, Description, ErrorType, Render)
+                           DoTranslation("> Date and Time: {2}") + vbNewLine, Description, ErrorType.ToString, Render)
 
             'Write Info (Exception)
             If Exc IsNot Nothing Then
@@ -392,7 +392,7 @@ Public Module KernelTools
         Dim ksOwner As Boolean
         ksInst = New Mutex(True, "Kernel Simulator", ksOwner)
         If Not ksOwner Then
-            KernelError("F", False, 0, DoTranslation("Another instance of Kernel Simulator is running. Shutting down in case of interference."), Nothing)
+            KernelError(KernelErrorLevel.F, False, 0, DoTranslation("Another instance of Kernel Simulator is running. Shutting down in case of interference."), Nothing)
         End If
         instanceChecked = True
     End Sub
