@@ -25,7 +25,7 @@ Public Module ModManager
     ''' <summary>
     ''' Loads all mods in KSMods
     ''' </summary>
-    Sub StartMods()
+    Public Sub StartMods()
         Wdbg("I", "Safe mode: {0}", SafeMode)
         If Not SafeMode Then
             'We're not in safe mode. We're good now.
@@ -90,6 +90,8 @@ Public Module ModManager
             If count <> 0 Then
                 W(DoTranslation("mod: Stopping mods..."), True, ColTypes.Neutral)
                 Wdbg("I", "Mods are being stopped. Total mods with screensavers = {0}", count)
+
+                'Enumerate and delete the script as soon as the stopping is complete
                 For ScriptIndex As Integer = scripts.Count - 1 To 0 Step -1
                     Dim TargetMod As ModInfo = scripts.Values(ScriptIndex)
                     Dim ScriptParts As Dictionary(Of String, PartInfo) = TargetMod.ModParts
@@ -112,7 +114,39 @@ Public Module ModManager
 
                     'Remove the mod from the list
                     W(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, TargetMod.ModName)
+                    scripts.Remove(scripts.Keys(ScriptIndex))
                 Next
+
+                'Clear all mod commands list, since we've stopped all mods.
+                modcmnds.Clear()
+                ModDefs.Clear()
+                Wdbg("I", "Mod commands for main shell cleared.")
+                FTPModCommands.Clear()
+                FTPModDefs.Clear()
+                Wdbg("I", "Mod commands for FTP shell cleared.")
+                MailModCommands.Clear()
+                MailModDefs.Clear()
+                Wdbg("I", "Mod commands for mail shell cleared.")
+                SFTPModCommands.Clear()
+                SFTPModDefs.Clear()
+                Wdbg("I", "Mod commands for SFTP shell cleared.")
+                TextEdit_ModCommands.Clear()
+                TextEdit_ModHelpEntries.Clear()
+                Wdbg("I", "Mod commands for text editor shell cleared.")
+                Test_ModCommands.Clear()
+                TestModDefs.Clear()
+                Wdbg("I", "Mod commands for test shell cleared.")
+                DebugModCmds.Clear()
+                RDebugModDefs.Clear()
+                Wdbg("I", "Mod commands for remote debug shell cleared.")
+                ZipShell_ModCommands.Clear()
+                ZipShell_ModHelpEntries.Clear()
+                Wdbg("I", "Mod commands for ZIP shell cleared.")
+                RSSModCommands.Clear()
+                RSSModDefs.Clear()
+                Wdbg("I", "Mod commands for RSS shell cleared.")
+
+                'Clear the custom screensavers
                 CSvrdb.Clear()
             Else
                 W(DoTranslation("mod: No mods detected."), True, ColTypes.Neutral)
@@ -242,37 +276,6 @@ Public Module ModManager
     ''' Reloads all mods
     ''' </summary>
     Sub ReloadMods()
-        'Clear all scripts, commands, and defs
-        modcmnds.Clear()
-        ModDefs.Clear()
-        Wdbg("I", "Mod commands for main shell cleared.")
-        FTPModCommands.Clear()
-        FTPModDefs.Clear()
-        Wdbg("I", "Mod commands for FTP shell cleared.")
-        MailModCommands.Clear()
-        MailModDefs.Clear()
-        Wdbg("I", "Mod commands for mail shell cleared.")
-        SFTPModCommands.Clear()
-        SFTPModDefs.Clear()
-        Wdbg("I", "Mod commands for SFTP shell cleared.")
-        TextEdit_ModCommands.Clear()
-        TextEdit_ModHelpEntries.Clear()
-        Wdbg("I", "Mod commands for text editor shell cleared.")
-        Test_ModCommands.Clear()
-        TestModDefs.Clear()
-        Wdbg("I", "Mod commands for test shell cleared.")
-        DebugModCmds.Clear()
-        RDebugModDefs.Clear()
-        Wdbg("I", "Mod commands for remote debug shell cleared.")
-        ZipShell_ModCommands.Clear()
-        ZipShell_ModHelpEntries.Clear()
-        Wdbg("I", "Mod commands for ZIP shell cleared.")
-        RSSModCommands.Clear()
-        RSSModDefs.Clear()
-        Wdbg("I", "Mod commands for RSS shell cleared.")
-        scripts.Clear()
-        Wdbg("I", "Mod scripts cleared.")
-
         'Stop all mods
         StopMods()
         Wdbg("I", "All mods stopped.")

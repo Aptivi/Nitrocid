@@ -281,30 +281,9 @@ Public Module KernelTools
     ''' Reset everything for the next restart
     ''' </summary>
     Sub ResetEverything()
-        'Reset every variable that is resettable
-        If ArgsInjected = False Then
-            EnteredArguments.Clear()
-        End If
+        'Reset every variable below
+        If ArgsInjected = False Then EnteredArguments.Clear()
         StopPanicAndGoToDoublePanic = False
-        modcmnds.Clear()
-        ModDefs.Clear()
-        FTPModCommands.Clear()
-        FTPModDefs.Clear()
-        SFTPModCommands.Clear()
-        SFTPModDefs.Clear()
-        MailModCommands.Clear()
-        MailModDefs.Clear()
-        RDebugModDefs.Clear()
-        DebugModCmds.Clear()
-        TestModDefs.Clear()
-        Test_ModCommands.Clear()
-        TextEdit_ModCommands.Clear()
-        TextEdit_ModHelpEntries.Clear()
-        ZipShell_ModCommands.Clear()
-        ZipShell_ModHelpEntries.Clear()
-        RSSModCommands.Clear()
-        RSSModDefs.Clear()
-        scripts.Clear()
         Aliases.Clear()
         RemoteDebugAliases.Clear()
         FTPShellAliases.Clear()
