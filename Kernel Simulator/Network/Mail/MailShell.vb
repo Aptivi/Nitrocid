@@ -24,22 +24,22 @@ Imports MailKit.Search
 Public Module MailShell
 
     'Variables
-    Public ReadOnly MailCommands As New Dictionary(Of String, CommandInfo) From {{"cd", New CommandInfo("cd", ShellCommandType.MailShell, "Changes current mail directory", "<folder>", True, 1)},
-                                                                                 {"exit", New CommandInfo("exit", ShellCommandType.MailShell, "Exits the IMAP shell", "", False, 0)},
-                                                                                 {"help", New CommandInfo("help", ShellCommandType.MailShell, "List of commands", "[command]", False, 0)},
-                                                                                 {"lsdirs", New CommandInfo("lsdirs", ShellCommandType.MailShell, "Lists directories in your mail address", "", False, 0)},
-                                                                                 {"list", New CommandInfo("list", ShellCommandType.MailShell, "Downloads messages and lists them", "[pagenum]", False, 0)},
-                                                                                 {"mkdir", New CommandInfo("mkdir", ShellCommandType.MailShell, "Makes a directory in the current working directory", "<foldername>", True, 1)},
-                                                                                 {"mv", New CommandInfo("mv", ShellCommandType.MailShell, "Moves a message", "<mailid> <targetfolder>", True, 2)},
-                                                                                 {"mvall", New CommandInfo("mvall", ShellCommandType.MailShell, "Moves all messages from recipient", "<sendername> <targetfolder>", True, 2)},
-                                                                                 {"read", New CommandInfo("read", ShellCommandType.MailShell, "Opens a message", "<mailid>", True, 1)},
-                                                                                 {"readenc", New CommandInfo("readenc", ShellCommandType.MailShell, "Opens an encrypted message", "<mailid>", True, 1)},
-                                                                                 {"ren", New CommandInfo("ren", ShellCommandType.MailShell, "Renames a folder", "<oldfoldername> <newfoldername>", True, 2)},
-                                                                                 {"rm", New CommandInfo("rm", ShellCommandType.MailShell, "Removes a message", "<mailid>", True, 1)},
-                                                                                 {"rmall", New CommandInfo("rmall", ShellCommandType.MailShell, "Removes all messages from recipient", "<sendername>", True, 1)},
-                                                                                 {"rmdir", New CommandInfo("rmdir", ShellCommandType.MailShell, "Removes a directory from the current working directory", "<foldername>", True, 1)},
-                                                                                 {"send", New CommandInfo("send", ShellCommandType.MailShell, "Sends a message to an address", "", False, 0)},
-                                                                                 {"sendenc", New CommandInfo("sendenc", ShellCommandType.MailShell, "Sends an encrypted message to an address", "", False, 0)}}
+    Public ReadOnly MailCommands As New Dictionary(Of String, CommandInfo) From {{"cd", New CommandInfo("cd", ShellCommandType.MailShell, "Changes current mail directory", "<folder>", True, 1, New Mail_CdCommand)},
+                                                                                 {"exit", New CommandInfo("exit", ShellCommandType.MailShell, "Exits the IMAP shell", "", False, 0, New Mail_ExitCommand)},
+                                                                                 {"help", New CommandInfo("help", ShellCommandType.MailShell, "List of commands", "[command]", False, 0, New Mail_HelpCommand)},
+                                                                                 {"lsdirs", New CommandInfo("lsdirs", ShellCommandType.MailShell, "Lists directories in your mail address", "", False, 0, New Mail_LsDirsCommand)},
+                                                                                 {"list", New CommandInfo("list", ShellCommandType.MailShell, "Downloads messages and lists them", "[pagenum]", False, 0, New Mail_ListCommand)},
+                                                                                 {"mkdir", New CommandInfo("mkdir", ShellCommandType.MailShell, "Makes a directory in the current working directory", "<foldername>", True, 1, New Mail_MkdirCommand)},
+                                                                                 {"mv", New CommandInfo("mv", ShellCommandType.MailShell, "Moves a message", "<mailid> <targetfolder>", True, 2, New Mail_MvCommand)},
+                                                                                 {"mvall", New CommandInfo("mvall", ShellCommandType.MailShell, "Moves all messages from recipient", "<sendername> <targetfolder>", True, 2, New Mail_MvAllCommand)},
+                                                                                 {"read", New CommandInfo("read", ShellCommandType.MailShell, "Opens a message", "<mailid>", True, 1, New Mail_ReadCommand)},
+                                                                                 {"readenc", New CommandInfo("readenc", ShellCommandType.MailShell, "Opens an encrypted message", "<mailid>", True, 1, New Mail_ReadEncCommand)},
+                                                                                 {"ren", New CommandInfo("ren", ShellCommandType.MailShell, "Renames a folder", "<oldfoldername> <newfoldername>", True, 2, New Mail_RenCommand)},
+                                                                                 {"rm", New CommandInfo("rm", ShellCommandType.MailShell, "Removes a message", "<mailid>", True, 1, New Mail_RmCommand)},
+                                                                                 {"rmall", New CommandInfo("rmall", ShellCommandType.MailShell, "Removes all messages from recipient", "<sendername>", True, 1, New Mail_RmAllCommand)},
+                                                                                 {"rmdir", New CommandInfo("rmdir", ShellCommandType.MailShell, "Removes a directory from the current working directory", "<foldername>", True, 1, New Mail_RmdirCommand)},
+                                                                                 {"send", New CommandInfo("send", ShellCommandType.MailShell, "Sends a message to an address", "", False, 0, New Mail_SendCommand)},
+                                                                                 {"sendenc", New CommandInfo("sendenc", ShellCommandType.MailShell, "Sends an encrypted message to an address", "", False, 0, New Mail_SendEncCommand)}}
     Friend IMAP_Messages As IEnumerable(Of UniqueId)
     Public IMAP_CurrentDirectory As String = "Inbox"
     Friend ExitRequested, KeepAlive As Boolean
@@ -91,8 +91,9 @@ Public Module MailShell
                 Wdbg(DebugLevel.I, $"Is the command found? {MailCommands.ContainsKey(words(0))}")
                 If MailCommands.ContainsKey(words(0)) Then
                     Wdbg(DebugLevel.I, "Command found.")
-                    MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand) With {.Name = "Mail Command Thread"}
-                    MailStartCommandThread.Start(cmd)
+                    Dim Params As New ExecuteCommandThreadParameters(cmd, ShellCommandType.MailShell, Nothing)
+                    MailStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Mail Command Thread"}
+                    MailStartCommandThread.Start(Params)
                     MailStartCommandThread.Join()
                 ElseIf MailModCommands.Contains(words(0)) Then
                     Wdbg(DebugLevel.I, "Mod command found.")
@@ -233,8 +234,9 @@ Public Module MailShell
         Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, MailShellAliases(FirstWordCmd))
         Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
-        MailStartCommandThread = New Thread(AddressOf Mail_ExecuteCommand) With {.Name = "Mail Command Thread"}
-        MailStartCommandThread.Start({MailShellAliases(FirstWordCmd), actualCmd.Replace(MailShellAliases(FirstWordCmd), "")})
+        Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellCommandType.MailShell, Nothing)
+        MailStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Mail Command Thread"}
+        MailStartCommandThread.Start(Params)
         MailStartCommandThread.Join()
     End Sub
 

@@ -23,20 +23,20 @@ Public Module TextEditShell
 
     'Variables
     Public TextEdit_Exiting As Boolean
-    Public ReadOnly TextEdit_Commands As New Dictionary(Of String, CommandInfo) From {{"addline", New CommandInfo("addline", ShellCommandType.TextShell, "Adds a new line with text at the end of the file", "<text>", True, 1)},
-                                                                                      {"clear", New CommandInfo("clear", ShellCommandType.TextShell, "Clears the text file", "", False, 0)},
-                                                                                      {"delcharnum", New CommandInfo("delcharnum", ShellCommandType.TextShell, "Deletes a character from character number in specified line", "<charnumber> <linenumber>", True, 2)},
-                                                                                      {"delline", New CommandInfo("delline", ShellCommandType.TextShell, "Removes the specified line number", "<linenumber>", True, 1)},
-                                                                                      {"delword", New CommandInfo("delword", ShellCommandType.TextShell, "Deletes a word or phrase from line number", """<word/phrase>"" <linenumber>", True, 2)},
-                                                                                      {"exit", New CommandInfo("exit", ShellCommandType.TextShell, "Exits the text editor and save unsaved changes", "", False, 0)},
-                                                                                      {"exitnosave", New CommandInfo("exitnosave", ShellCommandType.TextShell, "Exits the text editor", "", False, 0)},
-                                                                                      {"help", New CommandInfo("help", ShellCommandType.TextShell, "Lists available commands", "[command]", False, 0)},
-                                                                                      {"print", New CommandInfo("print", ShellCommandType.TextShell, "Prints the contents of the file with line numbers to the console", "[linenumber]", False, 0)},
-                                                                                      {"querychar", New CommandInfo("querychar", ShellCommandType.TextShell, "Queries a character in a specified line or all lines", "<char> <linenumber/all>", True, 2)},
-                                                                                      {"queryword", New CommandInfo("queryword", ShellCommandType.TextShell, "Queries a word in a specified line or all lines", """<word/phrase>"" <linenumber/all>", True, 2)},
-                                                                                      {"replace", New CommandInfo("replace", ShellCommandType.TextShell, "Replaces a word or phrase with another one", """<word/phrase>"" ""<word/phrase>""", True, 2)},
-                                                                                      {"replaceinline", New CommandInfo("replaceinline", ShellCommandType.TextShell, "Replaces a word or phrase with another one in a line", """<word/phrase>"" ""<word/phrase>"" <linenumber>", True, 3)},
-                                                                                      {"save", New CommandInfo("save", ShellCommandType.TextShell, "Saves the file", "", False, 0)}}
+    Public ReadOnly TextEdit_Commands As New Dictionary(Of String, CommandInfo) From {{"addline", New CommandInfo("addline", ShellCommandType.TextShell, "Adds a new line with text at the end of the file", "<text>", True, 1, New TextEdit_AddLineCommand)},
+                                                                                      {"clear", New CommandInfo("clear", ShellCommandType.TextShell, "Clears the text file", "", False, 0, New TextEdit_ClearCommand)},
+                                                                                      {"delcharnum", New CommandInfo("delcharnum", ShellCommandType.TextShell, "Deletes a character from character number in specified line", "<charnumber> <linenumber>", True, 2, New TextEdit_DelCharNumCommand)},
+                                                                                      {"delline", New CommandInfo("delline", ShellCommandType.TextShell, "Removes the specified line number", "<linenumber>", True, 1, New TextEdit_DelLineCommand)},
+                                                                                      {"delword", New CommandInfo("delword", ShellCommandType.TextShell, "Deletes a word or phrase from line number", """<word/phrase>"" <linenumber>", True, 2, New TextEdit_DelWordCommand)},
+                                                                                      {"exit", New CommandInfo("exit", ShellCommandType.TextShell, "Exits the text editor and save unsaved changes", "", False, 0, New TextEdit_ExitCommand)},
+                                                                                      {"exitnosave", New CommandInfo("exitnosave", ShellCommandType.TextShell, "Exits the text editor", "", False, 0, New TextEdit_ExitNoSaveCommand)},
+                                                                                      {"help", New CommandInfo("help", ShellCommandType.TextShell, "Lists available commands", "[command]", False, 0, New TextEdit_HelpCommand)},
+                                                                                      {"print", New CommandInfo("print", ShellCommandType.TextShell, "Prints the contents of the file with line numbers to the console", "[linenumber]", False, 0, New TextEdit_PrintCommand)},
+                                                                                      {"querychar", New CommandInfo("querychar", ShellCommandType.TextShell, "Queries a character in a specified line or all lines", "<char> <linenumber/all>", True, 2, New TextEdit_QueryCharCommand)},
+                                                                                      {"queryword", New CommandInfo("queryword", ShellCommandType.TextShell, "Queries a word in a specified line or all lines", """<word/phrase>"" <linenumber/all>", True, 2, New TextEdit_QueryWordCommand)},
+                                                                                      {"replace", New CommandInfo("replace", ShellCommandType.TextShell, "Replaces a word or phrase with another one", """<word/phrase>"" ""<word/phrase>""", True, 2, New TextEdit_ReplaceCommand)},
+                                                                                      {"replaceinline", New CommandInfo("replaceinline", ShellCommandType.TextShell, "Replaces a word or phrase with another one in a line", """<word/phrase>"" ""<word/phrase>"" <linenumber>", True, 3, New TextEdit_ReplaceInlineCommand)},
+                                                                                      {"save", New CommandInfo("save", ShellCommandType.TextShell, "Saves the file", "", False, 0, New TextEdit_SaveCommand)}}
     Public TextEdit_ModCommands As New ArrayList
     Public TextEdit_FileStream As FileStream
     Public TextEdit_FileLines As List(Of String)
@@ -87,10 +87,11 @@ Public Module TextEditShell
                 Wdbg(DebugLevel.I, "Checking command {0} for existence.", Command)
                 If TextEdit_Commands.ContainsKey(Command) Then
                     Wdbg(DebugLevel.I, "Command {0} found in the list of {1} commands.", Command, TextEdit_Commands.Count)
-                    TextEdit_CommandThread = New Thread(AddressOf TextEdit_ParseCommand) With {.Name = "Text Edit Command Thread"}
+                    Dim Params As New ExecuteCommandThreadParameters(WrittenCommand, ShellCommandType.TextShell, Nothing)
+                    TextEdit_CommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Text Edit Command Thread"}
                     EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
                     Wdbg(DebugLevel.I, "Made new thread. Starting with argument {0}...", WrittenCommand)
-                    TextEdit_CommandThread.Start(WrittenCommand)
+                    TextEdit_CommandThread.Start(Params)
                     TextEdit_CommandThread.Join()
                     EventManager.RaiseTextPostExecuteCommand(WrittenCommand)
                 ElseIf TextEdit_ModCommands.Contains(Command) Then
@@ -131,8 +132,9 @@ Public Module TextEditShell
         Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, TextShellAliases(FirstWordCmd))
         Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
-        TextEdit_CommandThread = New Thread(AddressOf TextEdit_ParseCommand) With {.Name = "Text Edit Command Thread"}
-        TextEdit_CommandThread.Start(actualCmd)
+        Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellCommandType.TextShell, Nothing)
+        TextEdit_CommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Text Edit Command Thread"}
+        TextEdit_CommandThread.Start(Params)
         TextEdit_CommandThread.Join()
     End Sub
 

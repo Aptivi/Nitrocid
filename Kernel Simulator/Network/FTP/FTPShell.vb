@@ -20,26 +20,26 @@ Imports System.Threading
 
 Public Module FTPShell
 
-    Public ReadOnly FTPCommands As New Dictionary(Of String, CommandInfo) From {{"connect", New CommandInfo("connect", ShellCommandType.FTPShell, "Connects to an FTP server (it must start with ""ftp://"" or ""ftps://"")", "<server>", True, 1)},
-                                                                                {"cdl", New CommandInfo("cdl", ShellCommandType.FTPShell, "Changes local directory to download to or upload from", "<directory>", True, 1)},
-                                                                                {"cdr", New CommandInfo("cdr", ShellCommandType.FTPShell, "Changes remote directory to download from or upload to", "<directory>", True, 1)},
-                                                                                {"cp", New CommandInfo("cp", ShellCommandType.FTPShell, "Copies file or directory to another file or directory.", "<sourcefileordir> <targetfileordir>", True, 2)},
-                                                                                {"del", New CommandInfo("del", ShellCommandType.FTPShell, "Deletes remote file from server", "<file>", True, 1)},
-                                                                                {"disconnect", New CommandInfo("disconnect", ShellCommandType.FTPShell, "Disconnects from server", "", False, 0)},
-                                                                                {"exit", New CommandInfo("exit", ShellCommandType.FTPShell, "Exits FTP shell and returns to kernel", "", False, 0)},
-                                                                                {"get", New CommandInfo("get", ShellCommandType.FTPShell, "Downloads remote file to local directory using binary or text", "<file> [output]", True, 1)},
-                                                                                {"getfolder", New CommandInfo("getfolder", ShellCommandType.FTPShell, "Downloads remote folder to local directory using binary or text", "<folder> [outputfolder]", True, 1)},
-                                                                                {"help", New CommandInfo("help", ShellCommandType.FTPShell, "Shows help screen", "[command]", False, 0)},
-                                                                                {"lsl", New CommandInfo("lsl", ShellCommandType.FTPShell, "Lists local directory", "[dir]", False, 0)},
-                                                                                {"lsr", New CommandInfo("lsr", ShellCommandType.FTPShell, "Lists remote directory", "[dir]", False, 0)},
-                                                                                {"put", New CommandInfo("put", ShellCommandType.FTPShell, "Uploads local file to remote directory using binary or text", "<file>", True, 1)},
-                                                                                {"putfolder", New CommandInfo("putfolder", ShellCommandType.FTPShell, "Uploads local folder to remote directory using binary or text", "<folder>", True, 1)},
-                                                                                {"pwdl", New CommandInfo("pwdl", ShellCommandType.FTPShell, "Gets current local directory", "", False, 0)},
-                                                                                {"pwdr", New CommandInfo("pwdr", ShellCommandType.FTPShell, "Gets current remote directory", "", False, 0)},
-                                                                                {"mv", New CommandInfo("mv", ShellCommandType.FTPShell, "Moves file or directory to another file or directory. You can also use that to rename files.", "<sourcefileordir> <targetfileordir>", True, 2)},
-                                                                                {"perm", New CommandInfo("perm", ShellCommandType.FTPShell, "Sets file permissions. This is supported only on FTP servers that run Unix.", "<file> <permnumber>", True, 2)},
-                                                                                {"type", New CommandInfo("type", ShellCommandType.FTPShell, "Sets the type for this session", "<a/b>", True, 1)},
-                                                                                {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.FTPShell, "Uses information from Speed Dial to connect to any network quickly", "", False, 0)}}
+    Public ReadOnly FTPCommands As New Dictionary(Of String, CommandInfo) From {{"connect", New CommandInfo("connect", ShellCommandType.FTPShell, "Connects to an FTP server (it must start with ""ftp://"" or ""ftps://"")", "<server>", True, 1, New FTP_ConnectCommand)},
+                                                                                {"cdl", New CommandInfo("cdl", ShellCommandType.FTPShell, "Changes local directory to download to or upload from", "<directory>", True, 1, New FTP_CdlCommand)},
+                                                                                {"cdr", New CommandInfo("cdr", ShellCommandType.FTPShell, "Changes remote directory to download from or upload to", "<directory>", True, 1, New FTP_CdrCommand)},
+                                                                                {"cp", New CommandInfo("cp", ShellCommandType.FTPShell, "Copies file or directory to another file or directory.", "<sourcefileordir> <targetfileordir>", True, 2, New FTP_CpCommand)},
+                                                                                {"del", New CommandInfo("del", ShellCommandType.FTPShell, "Deletes remote file from server", "<file>", True, 1, New FTP_DelCommand)},
+                                                                                {"disconnect", New CommandInfo("disconnect", ShellCommandType.FTPShell, "Disconnects from server", "", False, 0, New FTP_DisconnectCommand)},
+                                                                                {"exit", New CommandInfo("exit", ShellCommandType.FTPShell, "Exits FTP shell and returns to kernel", "", False, 0, New FTP_ExitCommand)},
+                                                                                {"get", New CommandInfo("get", ShellCommandType.FTPShell, "Downloads remote file to local directory using binary or text", "<file> [output]", True, 1, New ZipShell_GetCommand)},
+                                                                                {"getfolder", New CommandInfo("getfolder", ShellCommandType.FTPShell, "Downloads remote folder to local directory using binary or text", "<folder> [outputfolder]", True, 1, New FTP_GetFolderCommand)},
+                                                                                {"help", New CommandInfo("help", ShellCommandType.FTPShell, "Shows help screen", "[command]", False, 0, New FTP_HelpCommand)},
+                                                                                {"lsl", New CommandInfo("lsl", ShellCommandType.FTPShell, "Lists local directory", "[dir]", False, 0, New FTP_LslCommand)},
+                                                                                {"lsr", New CommandInfo("lsr", ShellCommandType.FTPShell, "Lists remote directory", "[dir]", False, 0, New FTP_LsrCommand)},
+                                                                                {"put", New CommandInfo("put", ShellCommandType.FTPShell, "Uploads local file to remote directory using binary or text", "<file>", True, 1, New FTP_PutCommand)},
+                                                                                {"putfolder", New CommandInfo("putfolder", ShellCommandType.FTPShell, "Uploads local folder to remote directory using binary or text", "<folder>", True, 1, New FTP_PutFolderCommand)},
+                                                                                {"pwdl", New CommandInfo("pwdl", ShellCommandType.FTPShell, "Gets current local directory", "", False, 0, New FTP_PwdlCommand)},
+                                                                                {"pwdr", New CommandInfo("pwdr", ShellCommandType.FTPShell, "Gets current remote directory", "", False, 0, New FTP_PwdrCommand)},
+                                                                                {"mv", New CommandInfo("mv", ShellCommandType.FTPShell, "Moves file or directory to another file or directory. You can also use that to rename files.", "<sourcefileordir> <targetfileordir>", True, 2, New FTP_MvCommand)},
+                                                                                {"perm", New CommandInfo("perm", ShellCommandType.FTPShell, "Sets file permissions. This is supported only on FTP servers that run Unix.", "<file> <permnumber>", True, 2, New FTP_PermCommand)},
+                                                                                {"type", New CommandInfo("type", ShellCommandType.FTPShell, "Sets the type for this session", "<a/b>", True, 1, New FTP_TypeCommand)},
+                                                                                {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.FTPShell, "Uses information from Speed Dial to connect to any network quickly", "", False, 0, New FTP_QuickConnectCommand)}}
     Public FtpConnected As Boolean
     Private FtpInitialized As Boolean
     Public ftpsite As String
@@ -158,8 +158,9 @@ Public Module FTPShell
         Wdbg(DebugLevel.I, $"Is the command found? {FTPCommands.ContainsKey(words(0))}")
         If FTPCommands.ContainsKey(words(0)) Then
             Wdbg(DebugLevel.I, "Command found.")
-            FTPStartCommandThread = New Thread(AddressOf FTPGetCommand.ExecuteCommand) With {.Name = "FTP Command Thread"}
-            FTPStartCommandThread.Start(FtpCommand)
+            Dim Params As New ExecuteCommandThreadParameters(FtpCommand, ShellCommandType.FTPShell, Nothing)
+            FTPStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "FTP Command Thread"}
+            FTPStartCommandThread.Start(Params)
             FTPStartCommandThread.Join()
         ElseIf FTPModCommands.Contains(words(0)) Then
             Wdbg(DebugLevel.I, "Mod command found.")
@@ -182,8 +183,9 @@ Public Module FTPShell
         Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, FTPShellAliases(FirstWordCmd))
         Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
-        FTPStartCommandThread = New Thread(AddressOf FTPGetCommand.ExecuteCommand) With {.Name = "FTP Command Thread"}
-        FTPStartCommandThread.Start(actualCmd)
+        Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellCommandType.FTPShell, Nothing)
+        FTPStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "FTP Command Thread"}
+        FTPStartCommandThread.Start(Params)
         FTPStartCommandThread.Join()
     End Sub
 

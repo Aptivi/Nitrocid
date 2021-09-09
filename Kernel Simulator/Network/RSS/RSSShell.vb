@@ -22,13 +22,13 @@ Public Module RSSShell
 
     'Variables
     Public RSSExiting, RSSKeepAlive As Boolean
-    Public ReadOnly RSSCommands As New Dictionary(Of String, CommandInfo) From {{"articleinfo", New CommandInfo("articleinfo", ShellCommandType.RSSShell, "Gets the article info", "<feednum>", True, 1)},
-                                                                                {"chfeed", New CommandInfo("chfeed", ShellCommandType.RSSShell, "Changes the feed link", "<feedurl>", True, 1)},
-                                                                                {"exit", New CommandInfo("exit", ShellCommandType.RSSShell, "Exits RSS shell and returns to kernel", "", False, 0)},
-                                                                                {"feedinfo", New CommandInfo("feedinfo", ShellCommandType.RSSShell, "Gets the feed info", "", False, 0)},
-                                                                                {"help", New CommandInfo("help", ShellCommandType.RSSShell, "Shows help screen", "", False, 0)},
-                                                                                {"list", New CommandInfo("list", ShellCommandType.RSSShell, "Lists all feeds", "", False, 0)},
-                                                                                {"read", New CommandInfo("read", ShellCommandType.RSSShell, "Reads a feed in a web browser", "<feednum>", True, 1)}}
+    Public ReadOnly RSSCommands As New Dictionary(Of String, CommandInfo) From {{"articleinfo", New CommandInfo("articleinfo", ShellCommandType.RSSShell, "Gets the article info", "<feednum>", True, 1, New RSS_ArticleInfoCommand)},
+                                                                                {"chfeed", New CommandInfo("chfeed", ShellCommandType.RSSShell, "Changes the feed link", "<feedurl>", True, 1, New RSS_ChFeedCommand)},
+                                                                                {"exit", New CommandInfo("exit", ShellCommandType.RSSShell, "Exits RSS shell and returns to kernel", "", False, 0, New RSS_ExitCommand)},
+                                                                                {"feedinfo", New CommandInfo("feedinfo", ShellCommandType.RSSShell, "Gets the feed info", "", False, 0, New RSS_FeedInfoCommand)},
+                                                                                {"help", New CommandInfo("help", ShellCommandType.RSSShell, "Shows help screen", "", False, 0, New RSS_HelpCommand)},
+                                                                                {"list", New CommandInfo("list", ShellCommandType.RSSShell, "Lists all feeds", "", False, 0, New RSS_ListCommand)},
+                                                                                {"read", New CommandInfo("read", ShellCommandType.RSSShell, "Reads a feed in a web browser", "<feednum>", True, 1, New RSS_ReadCommand)}}
     Public RSSModCommands As New ArrayList
     Public RSSFeedInstance As RSSFeed
     Public RSSShellPromptStyle As String = ""
@@ -109,10 +109,11 @@ Begin:
                         Wdbg(DebugLevel.I, "Checking command {0} for existence.", Command)
                         If RSSCommands.ContainsKey(Command) Then
                             Wdbg(DebugLevel.I, "Command {0} found in the list of {1} commands.", Command, RSSCommands.Count)
-                            RSSCommandThread = New Thread(AddressOf RSSParseCommand) With {.Name = "RSS Shell Command Thread"}
+                            Dim Params As New ExecuteCommandThreadParameters(WrittenCommand, ShellCommandType.RSSShell, Nothing)
+                            RSSCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "RSS Shell Command Thread"}
                             EventManager.RaiseRSSPreExecuteCommand(RSSFeedLink, WrittenCommand)
                             Wdbg(DebugLevel.I, "Made new thread. Starting with argument {0}...", WrittenCommand)
-                            RSSCommandThread.Start(WrittenCommand)
+                            RSSCommandThread.Start(Params)
                             RSSCommandThread.Join()
                             EventManager.RaiseRSSPostExecuteCommand(RSSFeedLink, WrittenCommand)
                         ElseIf RSSModCommands.Contains(Command) Then
@@ -165,8 +166,9 @@ Begin:
         Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, RSSShellAliases(FirstWordCmd))
         Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
-        RSSCommandThread = New Thread(AddressOf RSSParseCommand) With {.Name = "RSS Shell Command Thread"}
-        RSSCommandThread.Start(actualCmd)
+        Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellCommandType.RSSShell, Nothing)
+        RSSCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "RSS Shell Command Thread"}
+        RSSCommandThread.Start(Params)
         RSSCommandThread.Join()
     End Sub
 

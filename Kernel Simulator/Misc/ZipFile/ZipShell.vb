@@ -24,13 +24,13 @@ Module ZipShell
 
     'Variables
     Public ZipShell_Exiting As Boolean
-    Public ReadOnly ZipShell_Commands As New Dictionary(Of String, CommandInfo) From {{"cdir", New CommandInfo("cdir", ShellCommandType.ZIPShell, "Gets current local directory", "", False, 0)},
-                                                                                      {"chdir", New CommandInfo("chdir", ShellCommandType.ZIPShell, "Changes directory", "<directory>", True, 1)},
-                                                                                      {"chadir", New CommandInfo("chadir", ShellCommandType.ZIPShell, "Changes archive directory", "<archivedirectory>", True, 1)},
-                                                                                      {"exit", New CommandInfo("exit", ShellCommandType.ZIPShell, "Exits the ZIP shell", "", False, 0)},
-                                                                                      {"get", New CommandInfo("get", ShellCommandType.ZIPShell, "Extracts a file to a specified directory or a current directory", "<entry> [where] [-absolute]", True, 1)},
-                                                                                      {"help", New CommandInfo("help", ShellCommandType.ZIPShell, "Lists available commands", "[command]", False, 0)},
-                                                                                      {"list", New CommandInfo("list", ShellCommandType.ZIPShell, "Lists all files inside the archive", "[directory]", False, 0)}}
+    Public ReadOnly ZipShell_Commands As New Dictionary(Of String, CommandInfo) From {{"cdir", New CommandInfo("cdir", ShellCommandType.ZIPShell, "Gets current local directory", "", False, 0, New ZipShell_CDirCommand)},
+                                                                                      {"chdir", New CommandInfo("chdir", ShellCommandType.ZIPShell, "Changes directory", "<directory>", True, 1, New ZipShell_ChDirCommand)},
+                                                                                      {"chadir", New CommandInfo("chadir", ShellCommandType.ZIPShell, "Changes archive directory", "<archivedirectory>", True, 1, New ZipShell_ChADirCommand)},
+                                                                                      {"exit", New CommandInfo("exit", ShellCommandType.ZIPShell, "Exits the ZIP shell", "", False, 0, New ZipShell_ExitCommand)},
+                                                                                      {"get", New CommandInfo("get", ShellCommandType.ZIPShell, "Extracts a file to a specified directory or a current directory", "<entry> [where] [-absolute]", True, 1, New ZipShell_GetCommand)},
+                                                                                      {"help", New CommandInfo("help", ShellCommandType.ZIPShell, "Lists available commands", "[command]", False, 0, New ZipShell_HelpCommand)},
+                                                                                      {"list", New CommandInfo("list", ShellCommandType.ZIPShell, "Lists all files inside the archive", "[directory]", False, 0, New ZipShell_ListCommand)}}
     Public ZipShell_ModCommands As New ArrayList
     Public ZipShell_FileStream As FileStream
     Public ZipShell_ZipArchive As ZipArchive
@@ -78,10 +78,11 @@ Module ZipShell
                 Wdbg(DebugLevel.I, "Checking command {0} for existence.", Command)
                 If ZipShell_Commands.ContainsKey(Command) Then
                     Wdbg(DebugLevel.I, "Command {0} found in the list of {1} commands.", Command, ZipShell_Commands.Count)
-                    ZipShell_CommandThread = New Thread(AddressOf ZipShell_ParseCommand) With {.Name = "ZIP Shell Command Thread"}
+                    Dim Params As New ExecuteCommandThreadParameters(WrittenCommand, ShellCommandType.ZIPShell, Nothing)
+                    ZipShell_CommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "ZIP Shell Command Thread"}
                     EventManager.RaiseZipPreExecuteCommand(WrittenCommand)
                     Wdbg(DebugLevel.I, "Made new thread. Starting with argument {0}...", WrittenCommand)
-                    ZipShell_CommandThread.Start(WrittenCommand)
+                    ZipShell_CommandThread.Start(Params)
                     ZipShell_CommandThread.Join()
                     EventManager.RaiseZipPostExecuteCommand(WrittenCommand)
                 ElseIf ZipShell_ModCommands.Contains(Command) Then
@@ -124,8 +125,9 @@ Module ZipShell
         Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
         Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, ZIPShellAliases(FirstWordCmd))
         Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
-        ZipShell_CommandThread = New Thread(AddressOf ZipShell_ParseCommand) With {.Name = "ZIP Shell Command Thread"}
-        ZipShell_CommandThread.Start(actualCmd)
+        Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellCommandType.ZIPShell, Nothing)
+        ZipShell_CommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "ZIP Shell Command Thread"}
+        ZipShell_CommandThread.Start(Params)
         ZipShell_CommandThread.Join()
     End Sub
 

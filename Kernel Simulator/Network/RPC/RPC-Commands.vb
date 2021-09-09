@@ -30,7 +30,7 @@ Public Module RPC_Commands
     ''' <br/>&lt;Request:Acknowledge&gt;: Request will be like this: &lt;Request:Acknowledge&gt;(IP)
     ''' <br/>&lt;Request:Ping&gt;: Request will be like this: &lt;Request:Ping&gt;(IP)
     ''' </summary>
-    ReadOnly Commands As New List(Of String) From {"<Request:Shutdown>", "<Request:Reboot>", "<Request:Lock>", "<Request:SaveScr>", "<Request:Exec>", "<Request:Acknowledge>", "<Request:Ping>"}
+    ReadOnly RPCCommands As New List(Of String) From {"<Request:Shutdown>", "<Request:Reboot>", "<Request:Lock>", "<Request:SaveScr>", "<Request:Exec>", "<Request:Acknowledge>", "<Request:Ping>"}
 
     ''' <summary>
     ''' Send an RPC command to another instance of KS using the specified address
@@ -57,7 +57,7 @@ Public Module RPC_Commands
             Arg = Arg.Remove(Arg.Count - 1)
             Wdbg(DebugLevel.I, "Finished Arg: {0}", Arg)
             Dim Malformed As Boolean
-            If Commands.Contains(Cmd) Then
+            If RPCCommands.Contains(Cmd) Then
                 Wdbg(DebugLevel.I, "Command found.")
                 Dim ByteMsg() As Byte = {}
                 If Cmd = "<Request:Shutdown>" Then
