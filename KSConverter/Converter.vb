@@ -18,7 +18,7 @@
 
 Imports KS.TextWriterColor
 Imports KS.ColorTools
-Imports KS.Kernel
+Imports KS.PlatformDetector
 Imports KS.KernelTools
 Imports KS.RemoteDebugTools
 Imports KS.NetworkTools
