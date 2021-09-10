@@ -196,6 +196,7 @@
     <Compile Include="Misc\Games\Speller.vb" />
     <Compile Include="Misc\Notifiers\Notification.vb" />
     <Compile Include="Misc\Notifiers\Notifications.vb" />
+    <Compile Include="Misc\Platform\PlatformDetector.vb" />
     <Compile Include="Misc\Probers\MOTDParse.vb" />
     <Compile Include="Misc\Probers\PlaceParse.vb" />
     <Compile Include="Misc\Configuration\Config.vb" />

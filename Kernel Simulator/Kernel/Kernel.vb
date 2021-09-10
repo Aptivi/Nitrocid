@@ -207,39 +207,4 @@ Public Module Kernel
         If KernelErrored Then Throw New Exceptions.KernelErrorException(DoTranslation("Kernel Error while booting: {0}"), LastKernelErrorException, LastKernelErrorException.Message)
     End Sub
 
-    ''' <summary>
-    ''' Is this system a Windows system?
-    ''' </summary>
-    Public Function IsOnWindows() As Boolean
-        Return Environment.OSVersion.Platform = PlatformID.Win32NT
-    End Function
-
-    ''' <summary>
-    ''' Is this system a Unix system?
-    ''' </summary>
-    Public Function IsOnUnix() As Boolean
-        Return Environment.OSVersion.Platform = PlatformID.Unix
-    End Function
-
-    ''' <summary>
-    ''' Is this system a macOS system?
-    ''' </summary>
-    Public Function IsOnMacOS() As Boolean
-        If IsOnUnix() Then
-            Dim UnameS As New Process
-            Dim UnameSInfo As New ProcessStartInfo With {.FileName = "/usr/bin/uname", .Arguments = "-s",
-                                                         .CreateNoWindow = True,
-                                                         .UseShellExecute = False,
-                                                         .WindowStyle = ProcessWindowStyle.Hidden,
-                                                         .RedirectStandardOutput = True}
-            UnameS.StartInfo = UnameSInfo
-            UnameS.Start()
-            UnameS.WaitForExit()
-            Dim System As String = UnameS.StandardOutput.ReadToEnd
-            Return System.Contains("Darwin")
-        Else
-            Return False
-        End If
-    End Function
-
 End Module
