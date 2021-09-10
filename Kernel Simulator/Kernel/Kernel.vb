@@ -80,6 +80,7 @@ Public Module Kernel
                 'Initialize everything
                 StageTimer.Start()
                 InitEverything(Args)
+                CheckErrored()
 
                 'Stage 1: Initialize the system
                 W(DoTranslation("Internal initialization finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
@@ -105,6 +106,7 @@ Public Module Kernel
                 WriteSeparator(DoTranslation("- Stage 2: Hardware detection"), False, ColTypes.Stage)
                 Wdbg(DebugLevel.I, "- Kernel Phase 2: Probing hardware")
                 StartProbing()
+                CheckErrored()
 
                 'Phase 3: Parse Mods and Screensavers
                 W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
@@ -157,6 +159,12 @@ Public Module Kernel
                                                 DoTranslation("Check your internet connection and try again."),
                                                 NotifPriority.Medium, NotifType.Normal))
                 End If
+                If NotifyKernelError Then
+                    NotifyKernelError = False
+                    NotifySend(New Notification(DoTranslation("Previous boot failed"),
+                                                LastKernelErrorException.Message,
+                                                NotifPriority.High, NotifType.Normal))
+                End If
 
                 'Initialize login prompt
                 DisposeAll()
@@ -177,6 +185,12 @@ Public Module Kernel
                         ShowPasswordPrompt("root")
                     End If
                 End If
+            Catch kee As Exceptions.KernelErrorException
+                WStkTrc(kee)
+                KernelErrored = False
+                RebootRequested = False
+                LogoutRequested = False
+                SafeMode = False
             Catch ex As Exception
                 If DebugMode = True Then
                     W(ex.StackTrace, True, ColTypes.Error) : WStkTrc(ex)
@@ -184,6 +198,13 @@ Public Module Kernel
                 KernelError(KernelErrorLevel.U, True, 5, DoTranslation("Kernel Error while booting: {0}"), ex, ex.Message)
             End Try
         End While
+    End Sub
+
+    ''' <summary>
+    ''' Check to see if KernelError has been called
+    ''' </summary>
+    Sub CheckErrored()
+        If KernelErrored Then Throw New Exceptions.KernelErrorException(DoTranslation("Kernel Error while booting: {0}"), LastKernelErrorException, LastKernelErrorException.Message)
     End Sub
 
     ''' <summary>

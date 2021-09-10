@@ -26,6 +26,7 @@ Public Module KernelTools
 
     ' A dictionary for storing paths and files (used for mods, screensavers, etc.)
     Friend RPCPowerListener As New Thread(AddressOf PowerManage) With {.Name = "RPC Power Listener Thread"}
+    Friend LastKernelErrorException As Exception
 
     ' ----------------------------------------------- Kernel errors -----------------------------------------------
 
@@ -39,6 +40,10 @@ Public Module KernelTools
     ''' <param name="Exc">An exception to get stack traces, etc. Used for dump files currently.</param>
     ''' <param name="Variables">Optional. Specifies variables to get on text that will be printed.</param>
     Public Sub KernelError(ErrorType As KernelErrorLevel, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, ParamArray Variables() As Object)
+        KernelErrored = True
+        LastKernelErrorException = Exc
+        NotifyKernelError = True
+
         Try
             'Unquiet
             If EnteredArguments IsNot Nothing Then

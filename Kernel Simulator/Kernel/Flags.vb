@@ -174,7 +174,7 @@ Public Module Flags
     ''' </summary>
     Friend NotifyDebugDownloadError As Boolean
     ''' <summary>
-    ''' Notifies user as soon as the kernel finished booting if netwokr is not available while downloading debugging data.
+    ''' Notifies user as soon as the kernel finished booting if network is not available while downloading debugging data.
     ''' </summary>
     Friend NotifyDebugDownloadNetworkUnavailable As Boolean
     ''' <summary>
@@ -185,5 +185,13 @@ Public Module Flags
     ''' Show MOTD every LoginPrompt() call
     ''' </summary>
     Friend ShowMOTDOnceFlag As Boolean = True
+    ''' <summary>
+    ''' The kernel has errored
+    ''' </summary>
+    Friend KernelErrored As Boolean
+    ''' <summary>
+    ''' Notifies user as soon as the kernel finished booting if there was a kernel error in the previous boot
+    ''' </summary>
+    Friend NotifyKernelError As Boolean
 
 End Module
