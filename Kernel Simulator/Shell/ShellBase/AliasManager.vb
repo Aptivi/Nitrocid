@@ -30,6 +30,7 @@ Public Module AliasManager
     Public TestShellAliases As New Dictionary(Of String, String)
     Public ZIPShellAliases As New Dictionary(Of String, String)
     Public RSSShellAliases As New Dictionary(Of String, String)
+    Public JsonShellAliases As New Dictionary(Of String, String)
     Friend AliasesToBeRemoved As New Dictionary(Of String, AliasType)
 
     ''' <summary>

@@ -83,6 +83,7 @@ Public Module ModParser
     Public FTPModDefs As New Dictionary(Of String, String)
     Public ZipShell_ModHelpEntries As New Dictionary(Of String, String)
     Public TextEdit_ModHelpEntries As New Dictionary(Of String, String)
+    Public JsonShell_ModDefs As New Dictionary(Of String, String)
 
     ''' <summary>
     ''' Compiles the script and returns the instance of script interface
@@ -377,6 +378,11 @@ NextEntry:
                                     Wdbg(DebugLevel.W, "Command {0} conflicts with available RSS shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
                                     Command += $"-{script.Name}-{script.ModPart}"
                                 End If
+                            Case ShellCommandType.JsonShell
+                                If JsonShell_Commands.ContainsKey(Command) Or JsonShell_ModCommands.Contains(Command) Then
+                                    Wdbg(DebugLevel.W, "Command {0} conflicts with available mail shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Command += $"-{script.Name}-{script.ModPart}"
+                                End If
                         End Select
 
                         'See if mod can be added to command list
@@ -434,6 +440,11 @@ NextEntry:
                                     If Not RSSModCommands.Contains(Command) Then RSSModCommands.Add(Command)
                                     script.Commands.RenameKey(ActualCommand, Command)
                                     RSSModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
+                                Case ShellCommandType.JsonShell
+                                    Wdbg(DebugLevel.I, "Adding command {0} for JSON shell...", Command)
+                                    If Not JsonShell_ModCommands.Contains(Command) Then JsonShell_ModCommands.Add(Command)
+                                    script.Commands.RenameKey(ActualCommand, Command)
+                                    JsonShell_ModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
                             End Select
                         End If
                     Next

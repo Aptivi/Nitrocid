@@ -34,5 +34,9 @@ Module ShellStartThreads
     ''' Test start command thread
     ''' </summary>
     Public TStartCommandThread As New Thread(AddressOf ExecuteCommand) With {.Name = "Test Shell Command Thread"}
+    ''' <summary>
+    ''' JSON start command thread
+    ''' </summary>
+    Public JsonShell_CommandThread As New Thread(AddressOf ExecuteCommand) With {.Name = "JSON Shell Command Thread"}
 
 End Module

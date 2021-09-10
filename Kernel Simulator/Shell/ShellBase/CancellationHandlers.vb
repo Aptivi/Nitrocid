@@ -101,4 +101,14 @@ Module CancellationHandlers
         End If
     End Sub
 
+    Sub JsonShell_CancelCommand(sender As Object, e As ConsoleCancelEventArgs)
+        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+            Console.WriteLine()
+            DefConsoleOut = Console.Out
+            Console.SetOut(StreamWriter.Null)
+            e.Cancel = True
+            JsonShell_CommandThread.Abort()
+        End If
+    End Sub
+
 End Module

@@ -85,6 +85,10 @@ Public Module HelpSystem
                 CommandList = DebugCommands
                 ModCommandList = RDebugModDefs
                 AliasedCommandList = RemoteDebugAliases
+            Case ShellCommandType.JsonShell
+                CommandList = JsonShell_Commands
+                ModCommandList = JsonShell_ModDefs
+                AliasedCommandList = JsonShellAliases
         End Select
 
         'Check to see if command exists

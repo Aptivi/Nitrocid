@@ -146,4 +146,8 @@ Public Enum ShellCommandType
     ''' RSS Shell
     ''' </summary>
     RSSShell
+    ''' <summary>
+    ''' JSON Shell
+    ''' </summary>
+    JsonShell
 End Enum

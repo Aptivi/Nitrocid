@@ -194,6 +194,16 @@
     <Compile Include="Misc\Games\Solver.vb" />
     <Compile Include="Misc\Games\SpeedPress.vb" />
     <Compile Include="Misc\Games\Speller.vb" />
+    <Compile Include="Misc\JsonShell\Commands\AddProperty.vb" />
+    <Compile Include="Misc\JsonShell\Commands\Clear.vb" />
+    <Compile Include="Misc\JsonShell\Commands\DelProperty.vb" />
+    <Compile Include="Misc\JsonShell\Commands\Exit.vb" />
+    <Compile Include="Misc\JsonShell\Commands\ExitNoSave.vb" />
+    <Compile Include="Misc\JsonShell\Commands\Help.vb" />
+    <Compile Include="Misc\JsonShell\Commands\Print.vb" />
+    <Compile Include="Misc\JsonShell\Commands\Save.vb" />
+    <Compile Include="Misc\JsonShell\JsonShell.vb" />
+    <Compile Include="Misc\JsonShell\JsonTools.vb" />
     <Compile Include="Misc\Notifiers\Notification.vb" />
     <Compile Include="Misc\Notifiers\Notifications.vb" />
     <Compile Include="Misc\Platform\PlatformDetector.vb" />
@@ -408,6 +418,7 @@
     <Compile Include="Shell\Commands\Input.vb" />
     <Compile Include="Shell\Commands\JsonBeautify.vb" />
     <Compile Include="Shell\Commands\JsonMinify.vb" />
+    <Compile Include="Shell\Commands\JsonShell.vb" />
     <Compile Include="Shell\Commands\List.vb" />
     <Compile Include="Shell\Commands\LockScreen.vb" />
     <Compile Include="Shell\Commands\Logout.vb" />

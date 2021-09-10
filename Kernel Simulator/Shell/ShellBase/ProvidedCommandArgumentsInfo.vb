@@ -63,6 +63,8 @@ Public Class ProvidedCommandArgumentsInfo
                 ShellCommands = TextEdit_Commands
             Case ShellCommandType.ZIPShell
                 ShellCommands = ZipShell_Commands
+            Case ShellCommandType.JsonShell
+                ShellCommands = JsonShell_Commands
         End Select
 
         'Get the index of the first space (Used for step 3)

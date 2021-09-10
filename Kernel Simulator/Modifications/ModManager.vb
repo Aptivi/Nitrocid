@@ -214,7 +214,7 @@ Public Module ModManager
                                                     FTPModCommands.Remove(CommandInfo.Command)
                                                     FTPModDefs.Remove(CommandInfo.Command)
                                                 Case ShellCommandType.MailShell
-                                                    Wdbg(DebugLevel.I, "Removing command {0} from main shell...", CommandInfo.Command)
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from mail shell...", CommandInfo.Command)
                                                     MailModCommands.Remove(CommandInfo.Command)
                                                     MailModDefs.Remove(CommandInfo.Command)
                                                 Case ShellCommandType.SFTPShell
@@ -241,6 +241,10 @@ Public Module ModManager
                                                     Wdbg(DebugLevel.I, "Removing command {0} from RSS shell...", CommandInfo.Command)
                                                     RSSModCommands.Remove(CommandInfo.Command)
                                                     RSSModDefs.Remove(CommandInfo.Command)
+                                                Case ShellCommandType.JsonShell
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from JSON shell...", CommandInfo.Command)
+                                                    JsonShell_ModCommands.Remove(CommandInfo.Command)
+                                                    JsonShell_ModDefs.Remove(CommandInfo.Command)
                                             End Select
                                         Next
                                     End If

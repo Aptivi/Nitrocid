@@ -77,6 +77,8 @@ Public Module GetCommand
                 TargetCommands = TextEdit_Commands
             Case ShellCommandType.ZIPShell
                 TargetCommands = ZipShell_Commands
+            Case ShellCommandType.JsonShell
+                TargetCommands = JsonShell_Commands
         End Select
 
 
