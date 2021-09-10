@@ -1,0 +1,4 @@
+[*.vb]
+
+# BC42304: XML documentation parse error
+dotnet_diagnostic.BC42304.severity = none
