@@ -335,7 +335,7 @@ Public Module UserManagement
     ''' <param name="NewPass">New user password</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="Exceptions.UserManagementException"></exception>
-    Public Function ChangePassword(Target As String, CurrentPass As String, NewPass As String)
+    Public Function ChangePassword(Target As String, CurrentPass As String, NewPass As String) As Boolean
         CurrentPass = GetEncryptedString(CurrentPass, Algorithms.SHA256)
         If CurrentPass = Users(Target) Then
             If HasPermission(CurrentUser, PermissionType.Administrator) And Users.ContainsKey(Target) Then
@@ -406,7 +406,7 @@ Public Module UserManagement
         While [Step] = 2
             W(DoTranslation("Write your password.") + vbNewLine, True, ColTypes.Neutral)
             W(">> ", False, ColTypes.Input)
-            AnswerPassword = ReadLineNoInput("*")
+            AnswerPassword = ReadLineNoInput("*"c)
             Console.WriteLine()
             Wdbg(DebugLevel.I, "Answer: {0}", AnswerPassword)
             If String.IsNullOrWhiteSpace(AnswerPassword) Then
