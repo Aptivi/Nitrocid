@@ -24,7 +24,6 @@ Imports Newtonsoft.Json.Linq
 Public Module NetworkTools
 
     'Variables
-    Public adapterNumber As Long
     Public DRetries As Integer = 3
     Public URetries As Integer = 3
     Friend DFinish As Boolean
@@ -59,6 +58,7 @@ Public Module NetworkTools
         Dim gp As IPGlobalProperties = IPGlobalProperties.GetIPGlobalProperties
         Dim gs6 As IPGlobalStatistics = gp.GetIPv6GlobalStatistics
         Dim gs4 As IPGlobalStatistics = gp.GetIPv4GlobalStatistics
+        Dim adapterNumber As Long = 0
 
         'Probe for adapter capabilities
         For Each adapter As NetworkInterface In adapters
@@ -114,10 +114,10 @@ Public Module NetworkTools
 
                 'Print adapter infos if not failed
                 If Not Failed Then
-                    PrintAdapterIPv4Info(adapter, p, s)
+                    PrintAdapterIPv4Info(adapter, p, s, adapterNumber)
                     'Additionally, print adapter IPv6 infos if available
                     If Not NoV6 Then
-                        PrintAdapterIPv6Info(adapter, p6)
+                        PrintAdapterIPv6Info(adapter, p6, adapterNumber)
                     End If
                 End If
             Else
@@ -136,7 +136,8 @@ Public Module NetworkTools
     ''' <param name="NInterface">A network interface or adapter</param>
     ''' <param name="Properties">Network properties</param>
     ''' <param name="Statistics">Network statistics</param>
-    Sub PrintAdapterIPv4Info(NInterface As NetworkInterface, Properties As IPv4InterfaceProperties, Statistics As IPv4InterfaceStatistics)
+    ''' <param name="AdapterNumber">Reference adapter number</param>
+    Sub PrintAdapterIPv4Info(NInterface As NetworkInterface, Properties As IPv4InterfaceProperties, Statistics As IPv4InterfaceStatistics, AdapterNumber As Long)
         W(DoTranslation("IPv4 information:") + vbNewLine +
           DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
           DoTranslation("Adapter Name:") + " {1}" + vbNewLine +
@@ -145,7 +146,7 @@ Public Module NetworkTools
           DoTranslation("Non-unicast packets:") + " {4}/{5}" + vbNewLine +
           DoTranslation("Unicast packets:") + " {6}/{7}" + vbNewLine +
           DoTranslation("Error incoming/outgoing packets:") + " {8}/{9}", True, ColTypes.Neutral,
-          adapterNumber, NInterface.Description, Properties.Mtu, Properties.IsDhcpEnabled, Statistics.NonUnicastPacketsSent, Statistics.NonUnicastPacketsReceived,
+          AdapterNumber, NInterface.Description, Properties.Mtu, Properties.IsDhcpEnabled, Statistics.NonUnicastPacketsSent, Statistics.NonUnicastPacketsReceived,
           Statistics.UnicastPacketsSent, Statistics.UnicastPacketsReceived, Statistics.IncomingPacketsWithErrors, Statistics.OutgoingPacketsWithErrors)
     End Sub
 
@@ -154,12 +155,13 @@ Public Module NetworkTools
     ''' </summary>
     ''' <param name="NInterface">A network interface or adapter</param>
     ''' <param name="Properties">Network properties</param>
-    Sub PrintAdapterIPv6Info(NInterface As NetworkInterface, Properties As IPv6InterfaceProperties)
+    ''' <param name="AdapterNumber">Reference adapter number</param>
+    Sub PrintAdapterIPv6Info(NInterface As NetworkInterface, Properties As IPv6InterfaceProperties, AdapterNumber As Long)
         W(DoTranslation("IPv6 information:") + vbNewLine +
           DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
           DoTranslation("Adapter Name:") + " {1}" + vbNewLine +
           DoTranslation("Maximum Transmission Unit: {2} Units"), True, ColTypes.Neutral,
-          adapterNumber, NInterface.Description, Properties.Mtu)
+          AdapterNumber, NInterface.Description, Properties.Mtu)
     End Sub
 
     ''' <summary>
