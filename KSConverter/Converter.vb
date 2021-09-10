@@ -26,6 +26,7 @@ Imports KS.AliasManager
 Imports KS.UserManagement
 Imports KS.PermissionManagement
 Imports KS.Config
+Imports KS.Paths
 Imports System.IO
 Imports FluentFTP
 
