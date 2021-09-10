@@ -47,7 +47,7 @@ Module FlashColorDisplay
                     SleepNoBlock(FlashColorDelay, FlashColor)
                     Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                     Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
-                    WdbgConditional(ScreensaverDebug, "I", "Selected left and top: {0}, {1}", Left, Top)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
                     Console.SetCursorPosition(Left, Top)
 
                     'Make a flash color
@@ -58,16 +58,16 @@ Module FlashColorDisplay
                         Dim RedColorNum As Integer = RandomDriver.Next(255)
                         Dim GreenColorNum As Integer = RandomDriver.Next(255)
                         Dim BlueColorNum As Integer = RandomDriver.Next(255)
-                        WdbgConditional(ScreensaverDebug, "I", "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
                         Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
                     ElseIf FlashColor255Colors Then
                         Dim ColorNum As Integer = RandomDriver.Next(255)
-                        WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", ColorNum)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                         Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
                     Else
                         Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
-                        WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", Console.BackgroundColor)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                         Console.Write(" ")
                     End If
                 End If

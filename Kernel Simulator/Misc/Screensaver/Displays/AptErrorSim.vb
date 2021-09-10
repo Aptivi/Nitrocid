@@ -43,17 +43,17 @@ IFCANCEL:
                 Else
                     Dim Sudo As Boolean
                     If AptErrorSimHackerMode Then
-                        WdbgConditional(ScreensaverDebug, "I", "Hacker mode enabled")
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Hacker mode enabled")
                         Console.BackgroundColor = ConsoleColor.Black
                         Console.ForegroundColor = ConsoleColor.Green
                     End If
                     Console.Clear()
                     Console.Write("{0}@{1}:{2}", CurrentUser, HName, CurrDir)
                     If HasPermission(CurrentUser, PermissionType.Administrator) Then
-                        WdbgConditional(ScreensaverDebug, "I", "User is admin.")
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "User is admin.")
                         Console.Write("# ")
                     Else
-                        WdbgConditional(ScreensaverDebug, "I", "User is not admin. Enabling sudo...")
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "User is not admin. Enabling sudo...")
                         Sudo = True
                         Console.Write("$ ")
                     End If
@@ -127,10 +127,10 @@ IFCANCEL:
                     If AptErrorSim.CancellationPending Then GoTo IFCANCEL
                     Console.Write("{0}@{1}:{2}", CurrentUser, HName, CurrDir)
                     If HasPermission(CurrentUser, PermissionType.Administrator) Then
-                        WdbgConditional(ScreensaverDebug, "I", "User is admin.")
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "User is admin.")
                         Console.Write("# ")
                     Else
-                        WdbgConditional(ScreensaverDebug, "I", "User is not admin. Enabling sudo...")
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "User is not admin. Enabling sudo...")
                         Console.Write("$ ")
                     End If
                     If AptErrorSim.CancellationPending Then GoTo IFCANCEL

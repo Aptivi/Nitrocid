@@ -51,25 +51,25 @@ Module BouncingBlockDisplay
                     SaverAutoReset.Set()
                     Exit Do
                 Else
-                    WdbgConditional(ScreensaverDebug, "I", "Row block: {0} | Column block: {1}", RowBlock, ColumnBlock)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Row block: {0} | Column block: {1}", RowBlock, ColumnBlock)
 
                     'Change the color
                     If BouncingBlockTrueColor Then
                         Dim RedColorNum As Integer = RandomDriver.Next(255)
                         Dim GreenColorNum As Integer = RandomDriver.Next(255)
                         Dim BlueColorNum As Integer = RandomDriver.Next(255)
-                        WdbgConditional(ScreensaverDebug, "I", "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
                         WriteWhereC(" ", ColumnBlock, RowBlock, True, New Color(New RGB(255, 255, 255).ToString), New Color(ColorStorage.ToString))
                     ElseIf BouncingBlock255Colors Then
                         Dim ColorNum As Integer = RandomDriver.Next(255)
-                        WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", ColorNum)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                         WriteWhereC(" ", ColumnBlock, RowBlock, True, New Color(ConsoleColors.White), BackgroundColor:=New Color([Enum].Parse(GetType(ConsoleColors), ColorNum)))
                     Else
                         Dim OldColumn As Integer = Console.CursorLeft
                         Dim OldRow As Integer = Console.CursorTop
                         Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
-                        WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", Console.BackgroundColor)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                         Console.SetCursorPosition(ColumnBlock, RowBlock)
                         Console.Write(" ")
                         Console.SetCursorPosition(OldColumn, OldRow)
@@ -77,38 +77,38 @@ Module BouncingBlockDisplay
                         Console.Write(" ")
                     End If
 
-                    WdbgConditional(ScreensaverDebug, "I", "Block is facing {0}.", Direction)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Block is facing {0}.", Direction)
                     If Direction = "BottomRight" Then
-                        WdbgConditional(ScreensaverDebug, "I", "Increasing row and column block position")
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Increasing row and column block position")
                         RowBlock += 1
                         ColumnBlock += 1
                     ElseIf Direction = "BottomLeft" Then
-                        WdbgConditional(ScreensaverDebug, "I", "Increasing row and decreasing column block position")
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Increasing row and decreasing column block position")
                         RowBlock += 1
                         ColumnBlock -= 1
                     ElseIf Direction = "TopRight" Then
-                        WdbgConditional(ScreensaverDebug, "I", "Decreasing row and increasing column block position")
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Decreasing row and increasing column block position")
                         RowBlock -= 1
                         ColumnBlock += 1
                     ElseIf Direction = "TopLeft" Then
-                        WdbgConditional(ScreensaverDebug, "I", "Decreasing row and column block position")
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Decreasing row and column block position")
                         RowBlock -= 1
                         ColumnBlock -= 1
                     End If
 
                     If RowBlock = Console.WindowHeight - 2 Then
-                        WdbgConditional(ScreensaverDebug, "I", "We're on the bottom.")
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the bottom.")
                         Direction = Direction.Replace("Bottom", "Top")
                     ElseIf RowBlock = 1 Then
-                        WdbgConditional(ScreensaverDebug, "I", "We're on the top.")
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the top.")
                         Direction = Direction.Replace("Top", "Bottom")
                     End If
 
                     If ColumnBlock = Console.WindowWidth - 1 Then
-                        WdbgConditional(ScreensaverDebug, "I", "We're on the right.")
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the right.")
                         Direction = Direction.Replace("Right", "Left")
                     ElseIf ColumnBlock = 1 Then
-                        WdbgConditional(ScreensaverDebug, "I", "We're on the left.")
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the left.")
                         Direction = Direction.Replace("Left", "Right")
                     End If
                 End If

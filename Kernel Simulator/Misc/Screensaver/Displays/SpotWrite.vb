@@ -45,14 +45,14 @@ Module SpotWriteDisplay
                     'SpotWrite can also deal with files written on the field that is used for storing text, so check to see if the path exists.
                     If TryParsePath(SpotWriteWrite) AndAlso File.Exists(SpotWriteWrite) Then
                         'File found! Now, write the contents of it to the local variable that stores the actual written text.
-                        WdbgConditional(ScreensaverDebug, "I", "Opening file {0} to write...", SpotWriteWrite)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", SpotWriteWrite)
                         TypeWrite = File.ReadAllText(SpotWriteWrite)
                     End If
 
                     'For each line, write four spaces, and extra two spaces if paragraph starts.
                     For Each Paragraph As String In TypeWrite.SplitNewLines
                         If SpotWrite.CancellationPending Then Exit For
-                        WdbgConditional(ScreensaverDebug, "I", "New paragraph: {0}", Paragraph)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph)
 
                         'Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
                         'sizes.
@@ -73,7 +73,7 @@ Module SpotWriteDisplay
                             'Check to see if we're at the maximum character number
                             If IncompleteSentenceBuilder.Length = Console.WindowWidth - 2 - ReservedCharacters Or Paragraph.Length = CharactersParsed Then
                                 'We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
-                                WdbgConditional(ScreensaverDebug, "I", "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString, IncompleteSentences.Count)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString, IncompleteSentences.Count)
                                 IncompleteSentences.Add(IncompleteSentenceBuilder.ToString)
 
                                 'Clean everything up
@@ -86,7 +86,7 @@ Module SpotWriteDisplay
                         If Not Console.CursorTop = Console.WindowHeight - 2 Then
                             Console.SetCursorPosition(0, Console.CursorTop + 1)
                             Console.Write("    ")
-                            WdbgConditional(ScreensaverDebug, "I", "Indented in {0}, {1}", Console.CursorLeft, Console.CursorTop)
+                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", Console.CursorLeft, Console.CursorTop)
                         End If
 
                         'Get struck character and write it
@@ -105,7 +105,7 @@ Module SpotWriteDisplay
                                     Else
                                         Console.Write(" ")
                                     End If
-                                    WdbgConditional(ScreensaverDebug, "I", "Indented in {0}, {1}", Console.CursorLeft, Console.CursorTop)
+                                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", Console.CursorLeft, Console.CursorTop)
                                 End If
 
                                 'Write the final character to the console and wait

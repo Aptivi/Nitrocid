@@ -54,27 +54,27 @@ Module ProgressClockDisplay
                         Dim InformationPositionHours, InformationPositionMinutes, InformationPositionSeconds As Integer
                         Dim ColorStorageHours, ColorStorageMinutes, ColorStorageSeconds, ColorStorage As RGB
 
-                        WdbgConditional(ScreensaverDebug, "I", "Current tick: {0}", CurrentTicks)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Current tick: {0}", CurrentTicks)
                         If ProgressClockCycleColors Then
-                            WdbgConditional(ScreensaverDebug, "I", "Cycling colors...")
+                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Cycling colors...")
                             If CurrentTicks >= ProgressClockCycleColorsTicks Then
-                                WdbgConditional(ScreensaverDebug, "I", "Current tick equals the maximum ticks to change color.")
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Current tick equals the maximum ticks to change color.")
                                 RedColorNumHours = RandomDriver.Next(255)
                                 GreenColorNumHours = RandomDriver.Next(255)
                                 BlueColorNumHours = RandomDriver.Next(255)
-                                WdbgConditional(ScreensaverDebug, "I", "Got color (Hours) (R;G;B: {0};{1};{2})", RedColorNumHours, GreenColorNumHours, BlueColorNumHours)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Hours) (R;G;B: {0};{1};{2})", RedColorNumHours, GreenColorNumHours, BlueColorNumHours)
                                 RedColorNumMinutes = RandomDriver.Next(255)
                                 GreenColorNumMinutes = RandomDriver.Next(255)
                                 BlueColorNumMinutes = RandomDriver.Next(255)
-                                WdbgConditional(ScreensaverDebug, "I", "Got color (Minutes) (R;G;B: {0};{1};{2})", RedColorNumMinutes, GreenColorNumMinutes, BlueColorNumMinutes)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Minutes) (R;G;B: {0};{1};{2})", RedColorNumMinutes, GreenColorNumMinutes, BlueColorNumMinutes)
                                 RedColorNumSeconds = RandomDriver.Next(255)
                                 GreenColorNumSeconds = RandomDriver.Next(255)
                                 BlueColorNumSeconds = RandomDriver.Next(255)
-                                WdbgConditional(ScreensaverDebug, "I", "Got color (Seconds) (R;G;B: {0};{1};{2})", RedColorNumSeconds, GreenColorNumSeconds, BlueColorNumSeconds)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Seconds) (R;G;B: {0};{1};{2})", RedColorNumSeconds, GreenColorNumSeconds, BlueColorNumSeconds)
                                 RedColorNum = RandomDriver.Next(255)
                                 GreenColorNum = RandomDriver.Next(255)
                                 BlueColorNum = RandomDriver.Next(255)
-                                WdbgConditional(ScreensaverDebug, "I", "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                                 ColorStorageHours = New RGB(RedColorNumHours, GreenColorNumHours, BlueColorNumHours)
                                 ColorStorageMinutes = New RGB(RedColorNumMinutes, GreenColorNumMinutes, BlueColorNumMinutes)
                                 ColorStorageSeconds = New RGB(RedColorNumSeconds, GreenColorNumSeconds, BlueColorNumSeconds)
@@ -82,24 +82,24 @@ Module ProgressClockDisplay
                                 CurrentTicks = 0
                             End If
                         Else
-                            WdbgConditional(ScreensaverDebug, "I", "Parsing colors...")
+                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Parsing colors...")
                             ColorStorageHours = New RGB(ProgressClockHoursProgressColor)
                             ColorStorageMinutes = New RGB(ProgressClockMinutesProgressColor)
                             ColorStorageSeconds = New RGB(ProgressClockSecondsProgressColor)
                             ColorStorage = New RGB(ProgressClockProgressColor)
                         End If
                         ProgressFillPositionHours = CInt(Console.WindowHeight / 2) - 10
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for progress (Hours) {0}", ProgressFillPositionHours)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for progress (Hours) {0}", ProgressFillPositionHours)
                         ProgressFillPositionMinutes = CInt(Console.WindowHeight / 2) - 1
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for progress (Minutes) {0}", ProgressFillPositionMinutes)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for progress (Minutes) {0}", ProgressFillPositionMinutes)
                         ProgressFillPositionSeconds = CInt(Console.WindowHeight / 2) + 8
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for progress (Seconds) {0}", ProgressFillPositionSeconds)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for progress (Seconds) {0}", ProgressFillPositionSeconds)
                         InformationPositionHours = CInt(Console.WindowHeight / 2) - 12
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for info (Hours) {0}", InformationPositionHours)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for info (Hours) {0}", InformationPositionHours)
                         InformationPositionMinutes = CInt(Console.WindowHeight / 2) - 3
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for info (Minutes) {0}", InformationPositionMinutes)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for info (Minutes) {0}", InformationPositionMinutes)
                         InformationPositionSeconds = CInt(Console.WindowHeight / 2) + 6
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for info (Seconds) {0}", InformationPositionSeconds)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for info (Seconds) {0}", InformationPositionSeconds)
 
 #Disable Warning BC42104
                         'Hours
@@ -134,37 +134,37 @@ Module ProgressClockDisplay
                         Dim ProgressFillPositionHours, ProgressFillPositionMinutes, ProgressFillPositionSeconds As Integer
                         Dim InformationPositionHours, InformationPositionMinutes, InformationPositionSeconds As Integer
                         If ProgressClockCycleColors Then
-                            WdbgConditional(ScreensaverDebug, "I", "Cycling colors...")
+                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Cycling colors...")
                             If CurrentTicks >= ProgressClockCycleColorsTicks Then
                                 ColorNumHours = [Enum].Parse(GetType(ConsoleColors), RandomDriver.Next(1, 255))
-                                WdbgConditional(ScreensaverDebug, "I", "Got color (Hours) ({0})", ColorNumHours)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Hours) ({0})", ColorNumHours)
                                 ColorNumMinutes = [Enum].Parse(GetType(ConsoleColors), RandomDriver.Next(1, 255))
-                                WdbgConditional(ScreensaverDebug, "I", "Got color (Minutes) ({0})", ColorNumMinutes)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Minutes) ({0})", ColorNumMinutes)
                                 ColorNumSeconds = [Enum].Parse(GetType(ConsoleColors), RandomDriver.Next(1, 255))
-                                WdbgConditional(ScreensaverDebug, "I", "Got color (Seconds) ({0})", ColorNumSeconds)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Seconds) ({0})", ColorNumSeconds)
                                 ColorNum = [Enum].Parse(GetType(ConsoleColors), RandomDriver.Next(1, 255))
-                                WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", ColorNum)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                                 CurrentTicks = 0
                             End If
                         Else
-                            WdbgConditional(ScreensaverDebug, "I", "Parsing colors...")
+                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Parsing colors...")
                             ColorNumHours = [Enum].Parse(GetType(ConsoleColors), ProgressClockHoursProgressColor)
                             ColorNumMinutes = [Enum].Parse(GetType(ConsoleColors), ProgressClockMinutesProgressColor)
                             ColorNumSeconds = [Enum].Parse(GetType(ConsoleColors), ProgressClockSecondsProgressColor)
                             ColorNum = [Enum].Parse(GetType(ConsoleColors), ProgressClockProgressColor)
                         End If
                         ProgressFillPositionHours = CInt(Console.WindowHeight / 2) - 10
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for progress (Hours) {0}", ProgressFillPositionHours)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for progress (Hours) {0}", ProgressFillPositionHours)
                         ProgressFillPositionMinutes = CInt(Console.WindowHeight / 2) - 1
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for progress (Minutes) {0}", ProgressFillPositionMinutes)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for progress (Minutes) {0}", ProgressFillPositionMinutes)
                         ProgressFillPositionSeconds = CInt(Console.WindowHeight / 2) + 8
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for progress (Seconds) {0}", ProgressFillPositionSeconds)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for progress (Seconds) {0}", ProgressFillPositionSeconds)
                         InformationPositionHours = CInt(Console.WindowHeight / 2) - 12
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for info (Hours) {0}", InformationPositionHours)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for info (Hours) {0}", InformationPositionHours)
                         InformationPositionMinutes = CInt(Console.WindowHeight / 2) - 3
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for info (Minutes) {0}", InformationPositionMinutes)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for info (Minutes) {0}", InformationPositionMinutes)
                         InformationPositionSeconds = CInt(Console.WindowHeight / 2) + 6
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for info (Seconds) {0}", InformationPositionSeconds)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for info (Seconds) {0}", InformationPositionSeconds)
 
                         'Hours
                         WriteWhereC("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) - 9, True, New Color(ColorNumHours))   'Top of Hours
@@ -198,37 +198,37 @@ Module ProgressClockDisplay
                         Dim ProgressFillPositionHours, ProgressFillPositionMinutes, ProgressFillPositionSeconds As Integer
                         Dim InformationPositionHours, InformationPositionMinutes, InformationPositionSeconds As Integer
                         If ProgressClockCycleColors Then
-                            WdbgConditional(ScreensaverDebug, "I", "Cycling colors...")
+                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Cycling colors...")
                             If CurrentTicks >= ProgressClockCycleColorsTicks Then
                                 ColorNumHours = [Enum].Parse(GetType(ConsoleColor), RandomDriver.Next(1, 15))
-                                WdbgConditional(ScreensaverDebug, "I", "Got color (Hours) ({0})", ColorNumHours)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Hours) ({0})", ColorNumHours)
                                 ColorNumMinutes = [Enum].Parse(GetType(ConsoleColor), RandomDriver.Next(1, 15))
-                                WdbgConditional(ScreensaverDebug, "I", "Got color (Minutes) ({0})", ColorNumMinutes)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Minutes) ({0})", ColorNumMinutes)
                                 ColorNumSeconds = [Enum].Parse(GetType(ConsoleColor), RandomDriver.Next(1, 15))
-                                WdbgConditional(ScreensaverDebug, "I", "Got color (Seconds) ({0})", ColorNumSeconds)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (Seconds) ({0})", ColorNumSeconds)
                                 ColorNum = [Enum].Parse(GetType(ConsoleColor), RandomDriver.Next(1, 15))
-                                WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", ColorNum)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                                 CurrentTicks = 0
                             End If
                         Else
-                            WdbgConditional(ScreensaverDebug, "I", "Parsing colors...")
+                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Parsing colors...")
                             ColorNumHours = [Enum].Parse(GetType(ConsoleColor), ProgressClockHoursProgressColor)
                             ColorNumMinutes = [Enum].Parse(GetType(ConsoleColor), ProgressClockMinutesProgressColor)
                             ColorNumSeconds = [Enum].Parse(GetType(ConsoleColor), ProgressClockSecondsProgressColor)
                             ColorNum = [Enum].Parse(GetType(ConsoleColor), ProgressClockProgressColor)
                         End If
                         ProgressFillPositionHours = CInt(Console.WindowHeight / 2) - 10
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for progress (Hours) {0}", ProgressFillPositionHours)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for progress (Hours) {0}", ProgressFillPositionHours)
                         ProgressFillPositionMinutes = CInt(Console.WindowHeight / 2) - 1
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for progress (Minutes) {0}", ProgressFillPositionMinutes)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for progress (Minutes) {0}", ProgressFillPositionMinutes)
                         ProgressFillPositionSeconds = CInt(Console.WindowHeight / 2) + 8
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for progress (Seconds) {0}", ProgressFillPositionSeconds)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for progress (Seconds) {0}", ProgressFillPositionSeconds)
                         InformationPositionHours = CInt(Console.WindowHeight / 2) - 12
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for info (Hours) {0}", InformationPositionHours)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for info (Hours) {0}", InformationPositionHours)
                         InformationPositionMinutes = CInt(Console.WindowHeight / 2) - 3
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for info (Minutes) {0}", InformationPositionMinutes)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for info (Minutes) {0}", InformationPositionMinutes)
                         InformationPositionSeconds = CInt(Console.WindowHeight / 2) + 6
-                        WdbgConditional(ScreensaverDebug, "I", "Fill position for info (Seconds) {0}", InformationPositionSeconds)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Fill position for info (Seconds) {0}", InformationPositionSeconds)
 
                         'Hours
                         WriteWhereC16("+" + "-".Repeat(Console.WindowWidth - 10) + "+", 4, CInt(Console.WindowHeight / 2) - 9, True, ColorNumHours)   'Top of Hours

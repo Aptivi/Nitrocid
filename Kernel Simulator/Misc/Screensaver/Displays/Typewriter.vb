@@ -31,8 +31,8 @@ Module TypewriterDisplay
             Dim RandomDriver As New Random()
             Dim CpmSpeedMin As Integer = TypewriterWritingSpeedMin * 5
             Dim CpmSpeedMax As Integer = TypewriterWritingSpeedMax * 5
-            WdbgConditional(ScreensaverDebug, "I", "Minimum speed from {0} WPM: {1} CPM", TypewriterWritingSpeedMin, CpmSpeedMin)
-            WdbgConditional(ScreensaverDebug, "I", "Maximum speed from {0} WPM: {1} CPM", TypewriterWritingSpeedMax, CpmSpeedMax)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", TypewriterWritingSpeedMin, CpmSpeedMin)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", TypewriterWritingSpeedMax, CpmSpeedMax)
             Dim TypeWrite As String = TypewriterWrite
             Do While True
                 SleepNoBlock(TypewriterDelay, Typewriter)
@@ -49,14 +49,14 @@ Module TypewriterDisplay
                     'Typewriter can also deal with files written on the field that is used for storing text, so check to see if the path exists.
                     If TryParsePath(TypewriterWrite) AndAlso File.Exists(TypewriterWrite) Then
                         'File found! Now, write the contents of it to the local variable that stores the actual written text.
-                        WdbgConditional(ScreensaverDebug, "I", "Opening file {0} to write...", TypewriterWrite)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", TypewriterWrite)
                         TypeWrite = File.ReadAllText(TypewriterWrite)
                     End If
 
                     'For each line, write four spaces, and extra two spaces if paragraph starts.
                     For Each Paragraph As String In TypeWrite.SplitNewLines
                         If Typewriter.CancellationPending Then Exit For
-                        WdbgConditional(ScreensaverDebug, "I", "New paragraph: {0}", Paragraph)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph)
 
                         'Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
                         'sizes.
@@ -77,7 +77,7 @@ Module TypewriterDisplay
                             'Check to see if we're at the maximum character number
                             If IncompleteSentenceBuilder.Length = Console.WindowWidth - 2 - ReservedCharacters Or Paragraph.Length = CharactersParsed Then
                                 'We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
-                                WdbgConditional(ScreensaverDebug, "I", "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString, IncompleteSentences.Count)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString, IncompleteSentences.Count)
                                 IncompleteSentences.Add(IncompleteSentenceBuilder.ToString)
 
                                 'Clean everything up
@@ -90,7 +90,7 @@ Module TypewriterDisplay
                         If Not Console.CursorTop = Console.WindowHeight - 2 Then
                             Console.WriteLine()
                             Console.Write("    ")
-                            WdbgConditional(ScreensaverDebug, "I", "Indented in {0}, {1}", Console.CursorLeft, Console.CursorTop)
+                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", Console.CursorLeft, Console.CursorTop)
                         End If
 
                         'Get struck character and write it
@@ -101,7 +101,7 @@ Module TypewriterDisplay
                                 'Calculate needed milliseconds from two WPM speeds (minimum and maximum)
                                 Dim SelectedCpm As Integer = RandomDriver.Next(CpmSpeedMin, CpmSpeedMax)
                                 Dim WriteMs As Integer = (60 / SelectedCpm) * 1000
-                                WdbgConditional(ScreensaverDebug, "I", "Delay for {0} CPM: {1} ms", SelectedCpm, WriteMs)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Delay for {0} CPM: {1} ms", SelectedCpm, WriteMs)
 
                                 'If we're at the end of the page, clear the screen
                                 If Console.CursorTop = Console.WindowHeight - 2 Then
@@ -113,7 +113,7 @@ Module TypewriterDisplay
                                     Else
                                         Console.Write(" ")
                                     End If
-                                    WdbgConditional(ScreensaverDebug, "I", "Indented in {0}, {1}", Console.CursorLeft, Console.CursorTop)
+                                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", Console.CursorLeft, Console.CursorTop)
                                 End If
 
                                 'If we need to show the arrow indicator, update its position
@@ -121,7 +121,7 @@ Module TypewriterDisplay
                                     Dim OldTop As Integer = Console.CursorTop
                                     Dim OldLeft As Integer = Console.CursorLeft
                                     Console.SetCursorPosition(OldLeft, Console.WindowHeight - 1)
-                                    WdbgConditional(ScreensaverDebug, "I", "Arrow drawn in {0}, {1}", Console.CursorLeft, Console.CursorTop)
+                                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Arrow drawn in {0}, {1}", Console.CursorLeft, Console.CursorTop)
                                     Console.Write(GetEsc() + "[1K^" + GetEsc() + "[K")
                                     Console.SetCursorPosition(OldLeft, OldTop)
                                 End If
@@ -132,7 +132,7 @@ Module TypewriterDisplay
                             Next
                             Console.WriteLine()
                             Console.Write(" ")
-                            WdbgConditional(ScreensaverDebug, "I", "Indented in {0}, {1}", Console.CursorLeft, Console.CursorTop)
+                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", Console.CursorLeft, Console.CursorTop)
                         Next
                     Next
                 End If

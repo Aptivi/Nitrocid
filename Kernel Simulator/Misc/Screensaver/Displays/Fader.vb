@@ -49,9 +49,9 @@ Module FaderDisplay
                     SleepNoBlock(FaderDelay, Fader)
                     Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                     Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
-                    WdbgConditional(ScreensaverDebug, "I", "Selected left and top: {0}, {1}", Left, Top)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
                     If FaderWrite.Length + Left >= Console.WindowWidth Then
-                        WdbgConditional(ScreensaverDebug, "I", "Text length of {0} exceeded window width of {1}.", FaderWrite.Length + Left, Console.WindowWidth)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Text length of {0} exceeded window width of {1}.", FaderWrite.Length + Left, Console.WindowWidth)
                         Left -= FaderWrite.Length + 1
                     End If
                     Console.SetCursorPosition(Left, Top)
@@ -62,7 +62,7 @@ Module FaderDisplay
                     Dim ThresholdRed As Double = RedColorNum / FaderMaxSteps
                     Dim ThresholdGreen As Double = GreenColorNum / FaderMaxSteps
                     Dim ThresholdBlue As Double = BlueColorNum / FaderMaxSteps
-                    WdbgConditional(ScreensaverDebug, "I", "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue)
 
                     'Fade in
                     Dim CurrentColorRedIn As Integer = 0
@@ -70,28 +70,28 @@ Module FaderDisplay
                     Dim CurrentColorBlueIn As Integer = 0
                     For CurrentStep As Integer = FaderMaxSteps To 1 Step -1
                         If Fader.CancellationPending Then Exit For
-                        WdbgConditional(ScreensaverDebug, "I", "Step {0}/{1}", CurrentStep, FaderMaxSteps)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, FaderMaxSteps)
                         SleepNoBlock(FaderDelay, Fader)
                         CurrentColorRedIn += ThresholdRed
                         CurrentColorGreenIn += ThresholdGreen
                         CurrentColorBlueIn += ThresholdBlue
-                        WdbgConditional(ScreensaverDebug, "I", "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn)
                         WriteWhereC(FaderWrite, Left, Top, True, New Color(CurrentColorRedIn & ";" & CurrentColorGreenIn & ";" & CurrentColorBlueIn), New Color(ConsoleColors.Black))
                     Next
 
                     'Wait until fade out
-                    WdbgConditional(ScreensaverDebug, "I", "Waiting {0} ms...", FaderFadeOutDelay)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Waiting {0} ms...", FaderFadeOutDelay)
                     SleepNoBlock(FaderFadeOutDelay, Fader)
 
                     'Fade out
                     For CurrentStep As Integer = 1 To FaderMaxSteps
                         If Fader.CancellationPending Then Exit For
-                        WdbgConditional(ScreensaverDebug, "I", "Step {0}/{1}", CurrentStep, FaderMaxSteps)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, FaderMaxSteps)
                         SleepNoBlock(FaderDelay, Fader)
                         Dim CurrentColorRedOut As Integer = RedColorNum - ThresholdRed * CurrentStep
                         Dim CurrentColorGreenOut As Integer = GreenColorNum - ThresholdGreen * CurrentStep
                         Dim CurrentColorBlueOut As Integer = BlueColorNum - ThresholdBlue * CurrentStep
-                        WdbgConditional(ScreensaverDebug, "I", "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut)
                         WriteWhereC(FaderWrite, Left, Top, True, New Color(CurrentColorRedOut & ";" & CurrentColorGreenOut & ";" & CurrentColorBlueOut), New Color(ConsoleColors.Black))
                     Next
 
@@ -99,7 +99,7 @@ Module FaderDisplay
                     RedColorNum = RandomDriver.Next(255)
                     GreenColorNum = RandomDriver.Next(255)
                     BlueColorNum = RandomDriver.Next(255)
-                    WdbgConditional(ScreensaverDebug, "I", "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                 End If
             Loop
         Catch ex As Exception

@@ -58,15 +58,15 @@ Module RampDisplay
                         RedColorNumTo = RandomDriver.Next(255)
                         GreenColorNumTo = RandomDriver.Next(255)
                         BlueColorNumTo = RandomDriver.Next(255)
-                        WdbgConditional(ScreensaverDebug, "I", "Got color from (R;G;B: {0};{1};{2}) to (R;G;B: {3};{4};{5})", RedColorNumFrom, GreenColorNumFrom, BlueColorNumFrom, RedColorNumTo, GreenColorNumTo, BlueColorNumTo)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color from (R;G;B: {0};{1};{2}) to (R;G;B: {3};{4};{5})", RedColorNumFrom, GreenColorNumFrom, BlueColorNumFrom, RedColorNumTo, GreenColorNumTo, BlueColorNumTo)
                     ElseIf Ramp255Colors Then
                         ColorNumFrom = RandomDriver.Next(255)
                         ColorNumTo = RandomDriver.Next(255)
-                        WdbgConditional(ScreensaverDebug, "I", "Got color from ({0}) to ({1})", ColorNumFrom, ColorNumTo)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color from ({0}) to ({1})", ColorNumFrom, ColorNumTo)
                     Else
                         ColorNumFrom = RandomDriver.Next(15)
                         ColorNumTo = RandomDriver.Next(15)
-                        WdbgConditional(ScreensaverDebug, "I", "Got color ({0})", Console.BackgroundColor)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                     End If
 
                     'Set start and end widths for the ramp frame

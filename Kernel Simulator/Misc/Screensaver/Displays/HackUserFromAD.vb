@@ -41,7 +41,7 @@ IFCANCEL:
                     Exit Do
                 Else
                     If HackUserFromADHackerMode Then
-                        WdbgConditional(ScreensaverDebug, "I", "Hacker mode enabled")
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Hacker mode enabled")
                         Console.BackgroundColor = ConsoleColor.Black
                         Console.ForegroundColor = ConsoleColor.Green
                     End If

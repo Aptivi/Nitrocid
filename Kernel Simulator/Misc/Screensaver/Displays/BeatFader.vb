@@ -45,8 +45,8 @@ Module BeatFaderDisplay
                 Else
                     Dim BeatInterval As Integer = 60000 / BeatFaderDelay
                     Dim BeatIntervalStep As Integer = BeatInterval / BeatFaderMaxSteps
-                    WdbgConditional(ScreensaverDebug, "I", "Beat interval from {0} BPM: {1}", BeatFaderDelay, BeatInterval)
-                    WdbgConditional(ScreensaverDebug, "I", "Beat steps: {0} ms", BeatFaderDelay, BeatIntervalStep)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1}", BeatFaderDelay, BeatInterval)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Beat steps: {0} ms", BeatFaderDelay, BeatIntervalStep)
                     SleepNoBlock(BeatIntervalStep, BeatFader)
 
                     'If we're cycling colors, set them. Else, use the user-provided color
@@ -54,7 +54,7 @@ Module BeatFaderDisplay
                     Dim SelectedColorType As ColorType = ColorType._255Color
                     If BeatFaderCycleColors Then
                         'We're cycling. Select the color mode, starting from true color
-                        WdbgConditional(ScreensaverDebug, "I", "Cycling colors...")
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Cycling colors...")
                         If BeatFaderTrueColor Then
                             RedColorNum = RandomDriver.Next(255)
                             GreenColorNum = RandomDriver.Next(255)
@@ -71,10 +71,10 @@ Module BeatFaderDisplay
                             GreenColorNum = ConsoleColor.G
                             BlueColorNum = ConsoleColor.B
                         End If
-                        WdbgConditional(ScreensaverDebug, "I", "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                     Else
                         'We're not cycling. Parse the color and then select the color mode, starting from true color
-                        WdbgConditional(ScreensaverDebug, "I", "Parsing colors... {0}", BeatFaderBeatColor)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Parsing colors... {0}", BeatFaderBeatColor)
                         Dim UserColor As New Color(BeatFaderBeatColor)
                         If UserColor.Type = ColorType.TrueColor Then
                             RedColorNum = UserColor.R
@@ -87,24 +87,24 @@ Module BeatFaderDisplay
                             GreenColorNum = ConsoleColor.G
                             BlueColorNum = ConsoleColor.B
                         End If
-                        WdbgConditional(ScreensaverDebug, "I", "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                     End If
 
                     'Set thresholds
                     Dim ThresholdRed As Double = RedColorNum / BeatFaderMaxSteps
                     Dim ThresholdGreen As Double = GreenColorNum / BeatFaderMaxSteps
                     Dim ThresholdBlue As Double = BlueColorNum / BeatFaderMaxSteps
-                    WdbgConditional(ScreensaverDebug, "I", "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue)
 
                     'Fade out
                     For CurrentStep As Integer = 1 To BeatFaderMaxSteps
                         If BeatFader.CancellationPending Then Exit For
-                        WdbgConditional(ScreensaverDebug, "I", "Step {0}/{1} each {2} ms", CurrentStep, BeatFaderMaxSteps, BeatIntervalStep)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1} each {2} ms", CurrentStep, BeatFaderMaxSteps, BeatIntervalStep)
                         SleepNoBlock(BeatIntervalStep, FaderBack)
                         Dim CurrentColorRedOut As Integer = RedColorNum - ThresholdRed * CurrentStep
                         Dim CurrentColorGreenOut As Integer = GreenColorNum - ThresholdGreen * CurrentStep
                         Dim CurrentColorBlueOut As Integer = BlueColorNum - ThresholdBlue * CurrentStep
-                        WdbgConditional(ScreensaverDebug, "I", "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         SetConsoleColor(New Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), True)
                         Console.Clear()
                     Next
