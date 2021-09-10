@@ -33,7 +33,8 @@ Public Module ModExecutor
 
         'Check to see if the command written needs normalization
         For Each ModPart As ModInfo In scripts.Values
-            For Each script As IScript In ModPart.ModParts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
                 If script.Commands IsNot Nothing Then
                     If script.Commands.ContainsKey(actualCmd) And (script.Name <> Nothing) And (actualCmd <> script.Name) Then
                         'The commands in the script has the actual command, the mod name is not null, and the command doesn't equal the mod name.
@@ -54,7 +55,7 @@ Public Module ModExecutor
 
         'Try to execute the command.
         For Each ModPart As String In scripts(actualCmd).ModParts.Keys
-            Dim Script As IScript = scripts(actualCmd).ModParts(ModPart)
+            Dim Script As IScript = scripts(actualCmd).ModParts(ModPart).PartScript
             If Script.Commands IsNot Nothing Then
                 'Found commands dictionary! Now, check it for the command
                 If Script.Commands.ContainsKey(parts(0)) Then
