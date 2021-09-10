@@ -386,6 +386,15 @@ Public Module Config
             }
             ScreensaverConfig.Add("SpotWrite", SpotWriteConfig)
 
+            'Ramp config json object
+            Dim RampConfig As New JObject From {
+                    {"Activate 255 Color Mode", Ramp255Colors},
+                    {"Activate True Color Mode", RampTrueColor},
+                    {"Delay in Milliseconds", RampDelay},
+                    {"Next ramp interval", RampDelay}
+            }
+            ScreensaverConfig.Add("Ramp", RampConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -666,6 +675,12 @@ Public Module Config
             SpotWriteDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("SpotWrite")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("SpotWrite")?("Delay in Milliseconds"), 50)
             SpotWriteNewScreenDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("SpotWrite")?("New Screen Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("SpotWrite")?("New Screen Delay in Milliseconds"), 3000)
             SpotWriteWrite = If(ConfigToken("Screensaver")?("SpotWrite")?("Text Shown"), "Kernel Simulator")
+
+            '> Ramp
+            Ramp255Colors = If(ConfigToken("Screensaver")?("Ramp")?("Activate 255 Color Mode"), False)
+            RampTrueColor = If(ConfigToken("Screensaver")?("Ramp")?("Activate True Color Mode"), True)
+            RampDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Ramp")?("Delay in Milliseconds"), 20)
+            RampNextRampDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Next ramp interval"), 0), ConfigToken("Screensaver")?("Ramp")?("Next ramp interval"), 250)
 
             'Misc Section
             Wdbg(DebugLevel.I, "Parsing misc section...")

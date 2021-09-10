@@ -232,6 +232,7 @@
     <Compile Include="Misc\Screensaver\Displays\Disco.vb" />
     <Compile Include="Misc\Screensaver\Displays\Matrix.vb" />
     <Compile Include="Misc\Screensaver\Displays\ColorMix.vb" />
+    <Compile Include="Misc\Screensaver\Displays\Ramp.vb" />
     <Compile Include="Misc\Screensaver\Displays\SpotWrite.vb" />
     <Compile Include="Misc\Screensaver\Displays\Typewriter.vb" />
     <Compile Include="Misc\Screensaver\Displays\Typo.vb" />

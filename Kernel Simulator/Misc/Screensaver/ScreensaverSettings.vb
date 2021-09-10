@@ -430,4 +430,22 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public SpotWriteNewScreenDelay As Integer = 3000
 
+    '-> Ramp
+    ''' <summary>
+    ''' [Ramp] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public Ramp255Colors As Boolean
+    ''' <summary>
+    ''' [Ramp] Enable truecolor support. Has a higher priority than 255 color support.
+    ''' </summary>
+    Public RampTrueColor As Boolean = True
+    ''' <summary>
+    ''' [Ramp] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public RampDelay As Integer = 20
+    ''' <summary>
+    ''' [Ramp] How many milliseconds to wait before starting the next ramp?
+    ''' </summary>
+    Public RampNextRampDelay As Integer = 250
+
 End Module
