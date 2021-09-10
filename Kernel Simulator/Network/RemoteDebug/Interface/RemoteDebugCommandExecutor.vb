@@ -22,7 +22,7 @@ Public MustInherit Class RemoteDebugCommandExecutor
     Inherits CommandExecutor
     Implements IRemoteDebugCommand
 
-    Public Overridable Sub Execute(StringArgs As String, ListArgs() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
+    Public Overridable Overloads Sub Execute(StringArgs As String, ListArgs() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
         Wdbg(DebugLevel.F, "We shouldn't be here!!!")
         Throw New InvalidOperationException()
     End Sub

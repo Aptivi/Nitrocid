@@ -42,7 +42,8 @@ Module RemoteDebugCmd
         Dim RequiredArgumentsProvided As Boolean = ArgumentInfo.RequiredArgumentsProvided
 
         Try
-            DebugCommands(Command).CommandBase.Execute(strArgs, eqargs)
+            Dim DebugCommandBase As RemoteDebugCommandExecutor = DebugCommands(Command).CommandBase
+            DebugCommandBase.Execute(strArgs, eqargs, SocketStreamWriter, Address)
         Catch ex As Exception
             SocketStreamWriter.WriteLine(DoTranslation("Error executing remote debug command {0}: {1}"), Command, ex.Message)
             EventManager.RaiseRemoteDebugCommandError(Address, CmdString, ex)
