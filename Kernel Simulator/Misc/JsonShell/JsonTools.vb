@@ -33,8 +33,9 @@ Public Module JsonTools
             Wdbg(DebugLevel.I, "Trying to open file {0}...", File)
             JsonShell_FileStream = New FileStream(File, FileMode.Open)
             Dim JsonFileReader As New StreamReader(JsonShell_FileStream)
-            JsonShell_FileToken = JToken.Parse(JsonFileReader.ReadToEndAndSeek)
-            JsonShell_FileTokenOrig = JToken.Parse(JsonFileReader.ReadToEndAndSeek)
+            Dim JsonFileContents As String = JsonFileReader.ReadToEndAndSeek
+            JsonShell_FileToken = JToken.Parse(If(Not String.IsNullOrWhiteSpace(JsonFileContents), JsonFileContents, "{}"))
+            JsonShell_FileTokenOrig = JToken.Parse(If(Not String.IsNullOrWhiteSpace(JsonFileContents), JsonFileContents, "{}"))
             Wdbg(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, JsonShell_FileStream.Length, JsonShell_FileStream.Position)
             Return True
         Catch ex As Exception
