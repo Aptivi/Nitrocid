@@ -151,7 +151,7 @@ Public Module SFTPShell
             Wdbg(DebugLevel.I, "Command found.")
             Dim Params As New ExecuteCommandThreadParameters(SFTPStrCmd, ShellCommandType.SFTPShell, Nothing)
             SFTPStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "SFTP Command Thread"}
-            SFTPStartCommandThread.Start(SFTPStrCmd)
+            SFTPStartCommandThread.Start(Params)
             SFTPStartCommandThread.Join()
         ElseIf SFTPModCommands.Contains(words(0)) Then
             Wdbg(DebugLevel.I, "Mod command found.")
