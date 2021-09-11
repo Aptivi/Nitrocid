@@ -144,8 +144,7 @@ Public Module Shell
     ''' </summary>
     Public Sub InitializeShell()
         'Let CTRL+C cancel running command
-        AddHandler Console.CancelKeyPress, AddressOf CancelCommand
-        RemoveHandler Console.CancelKeyPress, AddressOf TCancelCommand
+        SwitchCancellationHandler(ShellCommandType.Shell)
 
         While True
             If LogoutRequested Then

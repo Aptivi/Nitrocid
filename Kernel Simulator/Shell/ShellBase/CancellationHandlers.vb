@@ -20,6 +20,9 @@ Imports System.IO
 
 Module CancellationHandlers
 
+    Friend CurrentShellType As ShellCommandType = ShellCommandType.Shell
+    Friend LastShellType As ShellCommandType = ShellCommandType.Shell
+
     Sub CancelCommand(sender As Object, e As ConsoleCancelEventArgs)
         If e.SpecialKey = ConsoleSpecialKey.ControlC Then
             CancelRequested = True

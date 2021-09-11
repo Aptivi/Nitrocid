@@ -70,11 +70,7 @@ Public Module FTPShell
                     FtpTrace.LogIP = FTPLoggerIP
                     FtpCurrentDirectory = GetOtherPath(OtherPathType.Home)
                     EventManager.RaiseFTPShellInitialized()
-
-                    'This is the workaround for a bug in .NET Framework regarding Console.CancelKeyPress event. More info can be found below:
-                    'https://stackoverflow.com/a/22717063/6688914
-                    AddHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
-                    RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                    SwitchCancellationHandler(ShellCommandType.FTPShell)
                     FtpInitialized = True
                 End If
 
@@ -91,8 +87,7 @@ Public Module FTPShell
                     FtpCommand = ""
                     ftpexit = False
                     FtpInitialized = False
-                    AddHandler Console.CancelKeyPress, AddressOf CancelCommand
-                    RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
+                    SwitchCancellationHandler(LastShellType)
                     Exit Sub
                 End If
 

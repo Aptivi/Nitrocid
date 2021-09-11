@@ -48,8 +48,7 @@ Public Module TextEditShell
 
     Public Sub InitializeTextShell(FilePath As String)
         'Add handler for text editor shell
-        AddHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
-        RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+        SwitchCancellationHandler(ShellCommandType.TextShell)
 
         While Not TextEdit_Exiting
             'Open file if not open
@@ -119,8 +118,7 @@ Public Module TextEditShell
         TextEdit_AutoSave = New Thread(AddressOf TextEdit_HandleAutoSaveTextFile) With {.Name = "Text Edit Autosave Thread"}
 
         'Remove handler for text editor shell
-        AddHandler Console.CancelKeyPress, AddressOf CancelCommand
-        RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
+        SwitchCancellationHandler(LastShellType)
         TextEdit_Exiting = False
     End Sub
 

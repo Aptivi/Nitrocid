@@ -60,11 +60,7 @@ Public Module SFTPShell
                     Wdbg(DebugLevel.I, $"Completing initialization of SFTP: {SFTPInitialized}")
                     SFTPCurrDirect = GetOtherPath(OtherPathType.Home)
                     EventManager.RaiseSFTPShellInitialized()
-
-                    'This is the workaround for a bug in .NET Framework regarding Console.CancelKeyPress event. More info can be found below:
-                    'https://stackoverflow.com/a/22717063/6688914
-                    AddHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
-                    RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                    SwitchCancellationHandler(ShellCommandType.SFTPShell)
                     SFTPInitialized = True
                 End If
 
@@ -81,8 +77,7 @@ Public Module SFTPShell
                     SFTPStrCmd = ""
                     sftpexit = False
                     SFTPInitialized = False
-                    AddHandler Console.CancelKeyPress, AddressOf CancelCommand
-                    RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
+                    SwitchCancellationHandler(LastShellType)
                     Exit Sub
                 End If
 

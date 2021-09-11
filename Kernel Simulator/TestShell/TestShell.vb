@@ -71,7 +71,7 @@ Module TestShell
     ''' </summary>
     Sub InitTShell()
         Dim FullCmd As String
-        AddHandler Console.CancelKeyPress, AddressOf TCancelCommand
+        SwitchCancellationHandler(ShellCommandType.TestShell)
         StageTimer.Stop()
         Console.WriteLine()
         WriteSeparator(DoTranslation("Welcome to Test Shell!"), True, ColTypes.Stage)

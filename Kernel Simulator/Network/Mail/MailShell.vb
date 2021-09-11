@@ -60,8 +60,7 @@ Public Module MailShell
         Wdbg(DebugLevel.I, "Made new thread about SMTPKeepConnection()")
 
         'Add handler for IMAP and SMTP
-        AddHandler Console.CancelKeyPress, AddressOf MailCancelCommand
-        RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+        SwitchCancellationHandler(ShellCommandType.MailShell)
         EventManager.RaiseIMAPShellInitialized()
 
         While Not ExitRequested
@@ -125,8 +124,7 @@ Public Module MailShell
         ExitRequested = False
 
         'Restore handler
-        AddHandler Console.CancelKeyPress, AddressOf CancelCommand
-        RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
+        SwitchCancellationHandler(LastShellType)
     End Sub
 
     ''' <summary>

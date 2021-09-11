@@ -41,8 +41,7 @@ Public Module RSSShell
     ''' <param name="FeedUrl">A link to an RSS feed</param>
     Public Sub InitiateRSSShell(Optional FeedUrl As String = "")
         'Add handler for RSS shell
-        AddHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
-        RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+        SwitchCancellationHandler(ShellCommandType.RSSShell)
         Dim OldRSSFeedLink As String = ""
         RSSFeedLink = FeedUrl
 
@@ -154,8 +153,7 @@ Begin:
         RSSExiting = False
 
         'Remove handler for RSS shell
-        AddHandler Console.CancelKeyPress, AddressOf CancelCommand
-        RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
+        SwitchCancellationHandler(LastShellType)
     End Sub
 
     ''' <summary>

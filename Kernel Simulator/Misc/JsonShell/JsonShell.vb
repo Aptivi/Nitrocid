@@ -43,8 +43,7 @@ Public Module JsonShell
 
     Public Sub InitializeJsonShell(FilePath As String)
         'Add handler for JSON shell
-        AddHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
-        RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+        SwitchCancellationHandler(ShellCommandType.JsonShell)
 
         While Not JsonShell_Exiting
             'Open file if not open
@@ -114,8 +113,7 @@ Public Module JsonShell
         JsonShell_AutoSave = New Thread(AddressOf JsonShell_HandleAutoSaveJsonFile) With {.Name = "JSON Shell Autosave Thread"}
 
         'Remove handler for JSON shell
-        AddHandler Console.CancelKeyPress, AddressOf CancelCommand
-        RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
+        SwitchCancellationHandler(LastShellType)
         JsonShell_Exiting = False
     End Sub
 

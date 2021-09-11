@@ -44,8 +44,7 @@ Module ZipShell
     ''' <param name="ZipFile">A ZIP file. We recommend you to use <see cref="NeutralizePath(String, Boolean)"></see> to neutralize path.</param>
     Public Sub InitializeZipShell(ZipFile As String)
         'Add handler for ZIP shell
-        AddHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
-        RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+        SwitchCancellationHandler(ShellCommandType.ZIPShell)
         ZipShell_CurrentDirectory = CurrDir
 
         While Not ZipShell_Exiting
@@ -112,8 +111,7 @@ Module ZipShell
         ZipShell_FileStream = Nothing
 
         'Remove handler for ZIP shell
-        AddHandler Console.CancelKeyPress, AddressOf CancelCommand
-        RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
+        SwitchCancellationHandler(LastShellType)
         ZipShell_Exiting = False
     End Sub
 
