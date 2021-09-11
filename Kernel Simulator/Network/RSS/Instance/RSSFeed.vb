@@ -25,7 +25,7 @@ Public Class RSSFeed
     Private _FeedType As RSSFeedType
     Private _FeedTitle As String
     Private _FeedDescription As String
-    Private _FeedArticles As List(Of RSSArticle)
+    Private _FeedArticles As New List(Of RSSArticle)
 
     ''' <summary>
     ''' A URL to RSS feed
@@ -142,7 +142,7 @@ Public Class RSSFeed
         _FeedType = FeedType
         _FeedTitle = FeedTitle
         _FeedDescription = FeedDescription
-        _FeedArticles = Articles
+        If _FeedArticles.Count <> Articles.Count Then _FeedArticles = Articles
     End Sub
 
 End Class
