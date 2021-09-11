@@ -113,9 +113,9 @@ Public Module JsonShell
         JsonShell_AutoSave.Abort()
         JsonShell_AutoSave = New Thread(AddressOf JsonShell_HandleAutoSaveJsonFile) With {.Name = "JSON Shell Autosave Thread"}
 
-        'Remove handler for text editor shell
+        'Remove handler for JSON shell
         AddHandler Console.CancelKeyPress, AddressOf CancelCommand
-        RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
+        RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
         JsonShell_Exiting = False
     End Sub
 
