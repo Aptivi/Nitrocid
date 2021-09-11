@@ -142,7 +142,13 @@ Public Class RSSFeed
         _FeedType = FeedType
         _FeedTitle = FeedTitle
         _FeedDescription = FeedDescription
-        If _FeedArticles.Count <> Articles.Count Then _FeedArticles = Articles
+        If _FeedArticles.Count <> 0 And Articles.Count <> 0 Then
+            If Not _FeedArticles(0).Equals(Articles(0)) Then
+                _FeedArticles = Articles
+            End If
+        Else
+            _FeedArticles = Articles
+        End If
     End Sub
 
 End Class

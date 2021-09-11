@@ -165,7 +165,7 @@ Public Module RSSTools
 
                 'Check for new feeds
                 NewFeedsList = RSSFeedInstance.FeedArticles.Except(OldFeedsList).ToList
-                If NewFeedsList.Count > 0 Then
+                If NewFeedsList.Count > 0 And NewFeedsList(0).ArticleTitle <> OldFeedsList(0).ArticleTitle Then
                     'Update the list
                     Wdbg(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", RSSFeedInstance.FeedArticles.Count, OldFeedsList.Count)
                     OldFeedsList = New List(Of RSSArticle)(RSSFeedInstance.FeedArticles)
