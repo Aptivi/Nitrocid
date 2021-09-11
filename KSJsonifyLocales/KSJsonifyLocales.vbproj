@@ -128,6 +128,9 @@
     <Content Include="Translations\ben.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Translations\bsn.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Translations\bsq.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

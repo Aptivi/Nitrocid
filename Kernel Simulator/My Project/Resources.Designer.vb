@@ -422,6 +422,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;Available commands: {0}&quot;: &quot;Dostupne komande: {0}&quot;,
+        '''  &quot;Write command: &quot;: &quot;Napišite komandu:&quot;,
+        '''  &quot;Command injection has been cancelled.&quot;: &quot;Injekcija naredbe je otkazana.&quot;,
+        '''  &quot;Separate boot arguments with commas without spaces, for example, &apos;motd,gpuprobe&apos;&quot;: &quot;Odvojeni argumenti za pokretanje sa zarezima bez razmaka, na primjer, &apos;motd, gpuprobe&apos;&quot;,
+        '''  &quot;Separate commands on &apos;cmdinject&apos; with colons with spaces, for example, &apos;cmdinject setthemes Hacker : beep 1024 0.5&apos;&quot;: &quot;Odvojene naredbe na &apos;cmdinject&apos; s  [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property bsn() As String
+            Get
+                Return ResourceManager.GetString("bsn", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Eskuragarri dauden komandoak: {0}&quot;,
         '''  &quot;Write command: &quot;: &quot;Idatzi komandoa:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Komando injekzioa bertan behera utzi da.&quot;,

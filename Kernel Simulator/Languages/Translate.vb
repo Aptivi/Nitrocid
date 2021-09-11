@@ -25,6 +25,7 @@ Public Module Translate
     Public ReadOnly Languages As New Dictionary(Of String, LanguageInfo) From {{"arb", New LanguageInfo("arb", "Arabic", True)}, {"arb-T", New LanguageInfo("arb-T", "Arabic", True)},
                                                                                {"azr", New LanguageInfo("azr", "Azerbaijani", False)},
                                                                                {"ben", New LanguageInfo("ben", "Bangla", True)}, {"ben-T", New LanguageInfo("ben-T", "Bangla", True)},
+                                                                               {"bsn", New LanguageInfo("bsq", "Bosnian", False)},
                                                                                {"bsq", New LanguageInfo("bsq", "Basque", False)},
                                                                                {"chi", New LanguageInfo("chi", "Chinese", True)}, {"chi-T", New LanguageInfo("chi-T", "Chinese", True)},
                                                                                {"cro", New LanguageInfo("cro", "Croatian", False)},
