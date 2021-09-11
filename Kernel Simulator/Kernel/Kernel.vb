@@ -141,30 +141,7 @@ Public Module Kernel
                 ShowCurrentTimes()
 
                 'Notify user of errors if appropriate
-                If NotifyConfigError Then
-                    NotifyConfigError = False
-                    NotifySend(New Notification(DoTranslation("Error loading settings"),
-                                                DoTranslation("There is an error while loading settings. You may need to check the settings file."),
-                                                NotifPriority.Medium, NotifType.Normal))
-                End If
-                If NotifyDebugDownloadError Then
-                    NotifyDebugDownloadError = False
-                    NotifySend(New Notification(DoTranslation("Error downloading debug data"),
-                                                DoTranslation("There is an error while downloading debug data. Check your internet connection."),
-                                                NotifPriority.Medium, NotifType.Normal))
-                End If
-                If NotifyDebugDownloadNetworkUnavailable Then
-                    NotifyDebugDownloadNetworkUnavailable = False
-                    NotifySend(New Notification(DoTranslation("No network while downloading debug data"),
-                                                DoTranslation("Check your internet connection and try again."),
-                                                NotifPriority.Medium, NotifType.Normal))
-                End If
-                If NotifyKernelError Then
-                    NotifyKernelError = False
-                    NotifySend(New Notification(DoTranslation("Previous boot failed"),
-                                                LastKernelErrorException.Message,
-                                                NotifPriority.High, NotifType.Normal))
-                End If
+                NotifyStartupFaults()
 
                 'Initialize login prompt
                 DisposeAll()
