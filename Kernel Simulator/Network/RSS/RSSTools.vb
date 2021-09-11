@@ -95,7 +95,14 @@ Public Module RSSTools
                         'Extract plain text from HTML
                         Dim HtmlContent As New HtmlDocument
                         HtmlContent.LoadHtml(ArticleNode.InnerText.Trim(vbCr, vbLf, " "))
-                        Description = HtmlContent.DocumentNode.SelectSingleNode("pre").InnerText
+
+                        'Some feeds have no node called "pre," so work around this...
+                        Dim PreNode As HtmlNode = HtmlContent.DocumentNode.SelectSingleNode("pre")
+                        If PreNode Is Nothing Then
+                            Description = HtmlContent.DocumentNode.InnerText
+                        Else
+                            Description = PreNode.InnerText
+                        End If
                     Else
                         Description = ArticleNode.InnerText.Trim(vbCr, vbLf, " ")
                     End If
