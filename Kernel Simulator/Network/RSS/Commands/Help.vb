@@ -26,7 +26,7 @@ Class RSS_HelpCommand
             ShowHelp(ListArgs(0), ShellCommandType.RSSShell)
         Else
             Wdbg(DebugLevel.I, "Requested help for all commands")
-            ShowHelp(ShellCommandType.SFTPShell)
+            ShowHelp(ShellCommandType.RSSShell)
         End If
     End Sub
 
