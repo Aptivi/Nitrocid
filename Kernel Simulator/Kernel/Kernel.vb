@@ -27,7 +27,7 @@ Public Module Kernel
     Public EventManager As New Events
     Public DefConsoleOut As TextWriter
     Public ReadOnly KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
-    Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion}"
+    Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Milestone 1"
     Public ReadOnly vbNewLine As String = Environment.NewLine
     Friend StageTimer As New Stopwatch
 
