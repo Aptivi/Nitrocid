@@ -79,7 +79,7 @@ Begin:
                 End Try
 
                 'Send ping to keep the connection alive
-                If Not RSSKeepAlive Then RSSRefresher.Start()
+                If Not RSSKeepAlive And Not RSSRefresher.IsAlive Then RSSRefresher.Start()
                 Wdbg(DebugLevel.I, "Made new thread about RefreshFeeds()")
 
                 'Prepare for prompt
