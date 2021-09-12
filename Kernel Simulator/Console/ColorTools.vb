@@ -305,17 +305,7 @@ Public Module ColorTools
             If Not theme = "Default" Then
 #Disable Warning BC42104
                 'Set colors as appropriate
-                'TODO: Shorten this!
-                SetColors(ThemeInfo.ThemeInputColor.PlainSequence, ThemeInfo.ThemeLicenseColor.PlainSequence, ThemeInfo.ThemeContKernelErrorColor.PlainSequence,
-                          ThemeInfo.ThemeUncontKernelErrorColor.PlainSequence, ThemeInfo.ThemeHostNameShellColor.PlainSequence, ThemeInfo.ThemeUserNameShellColor.PlainSequence,
-                          ThemeInfo.ThemeBackgroundColor.PlainSequence, ThemeInfo.ThemeNeutralTextColor.PlainSequence, ThemeInfo.ThemeListEntryColor.PlainSequence,
-                          ThemeInfo.ThemeListValueColor.PlainSequence, ThemeInfo.ThemeStageColor.PlainSequence, ThemeInfo.ThemeErrorColor.PlainSequence,
-                          ThemeInfo.ThemeWarningColor.PlainSequence, ThemeInfo.ThemeOptionColor.PlainSequence, ThemeInfo.ThemeBannerColor.PlainSequence,
-                          ThemeInfo.ThemeNotificationTitleColor.PlainSequence, ThemeInfo.ThemeNotificationDescriptionColor.PlainSequence, ThemeInfo.ThemeNotificationProgressColor.PlainSequence,
-                          ThemeInfo.ThemeNotificationFailureColor.PlainSequence, ThemeInfo.ThemeQuestionColor.PlainSequence, ThemeInfo.ThemeSuccessColor.PlainSequence,
-                          ThemeInfo.ThemeUserDollarColor.PlainSequence, ThemeInfo.ThemeTipColor.PlainSequence, ThemeInfo.ThemeSeparatorTextColor.PlainSequence,
-                          ThemeInfo.ThemeSeparatorColor.PlainSequence, ThemeInfo.ThemeListTitleColor.PlainSequence, ThemeInfo.ThemeDevelopmentWarningColor.PlainSequence,
-                          ThemeInfo.ThemeStageTimeColor.PlainSequence, ThemeInfo.ThemeProgressColor.PlainSequence, ThemeInfo.ThemeBackOptionColor.PlainSequence)
+                SetColors(ThemeInfo)
 #Enable Warning BC42104
             End If
 
@@ -345,17 +335,7 @@ Public Module ColorTools
 
             If Not ThemeFile = "Default" Then
                 'Set colors as appropriate
-                'TODO: Shorten this!
-                SetColors(ThemeInfo.ThemeInputColor.PlainSequence, ThemeInfo.ThemeLicenseColor.PlainSequence, ThemeInfo.ThemeContKernelErrorColor.PlainSequence,
-                          ThemeInfo.ThemeUncontKernelErrorColor.PlainSequence, ThemeInfo.ThemeHostNameShellColor.PlainSequence, ThemeInfo.ThemeUserNameShellColor.PlainSequence,
-                          ThemeInfo.ThemeBackgroundColor.PlainSequence, ThemeInfo.ThemeNeutralTextColor.PlainSequence, ThemeInfo.ThemeListEntryColor.PlainSequence,
-                          ThemeInfo.ThemeListValueColor.PlainSequence, ThemeInfo.ThemeStageColor.PlainSequence, ThemeInfo.ThemeErrorColor.PlainSequence,
-                          ThemeInfo.ThemeWarningColor.PlainSequence, ThemeInfo.ThemeOptionColor.PlainSequence, ThemeInfo.ThemeBannerColor.PlainSequence,
-                          ThemeInfo.ThemeNotificationTitleColor.PlainSequence, ThemeInfo.ThemeNotificationDescriptionColor.PlainSequence, ThemeInfo.ThemeNotificationProgressColor.PlainSequence,
-                          ThemeInfo.ThemeNotificationFailureColor.PlainSequence, ThemeInfo.ThemeQuestionColor.PlainSequence, ThemeInfo.ThemeSuccessColor.PlainSequence,
-                          ThemeInfo.ThemeUserDollarColor.PlainSequence, ThemeInfo.ThemeTipColor.PlainSequence, ThemeInfo.ThemeSeparatorTextColor.PlainSequence,
-                          ThemeInfo.ThemeSeparatorColor.PlainSequence, ThemeInfo.ThemeListTitleColor.PlainSequence, ThemeInfo.ThemeDevelopmentWarningColor.PlainSequence,
-                          ThemeInfo.ThemeStageTimeColor.PlainSequence, ThemeInfo.ThemeProgressColor.PlainSequence, ThemeInfo.ThemeBackOptionColor.PlainSequence)
+                SetColors(ThemeInfo)
             End If
 
             'Raise event
@@ -549,6 +529,67 @@ Public Module ColorTools
                 ColorTools.StageTimeColor = New Color(StageTimeColor).PlainSequence
                 ColorTools.ProgressColor = New Color(ProgressColor).PlainSequence
                 ColorTools.BackOptionColor = New Color(BackOptionColor).PlainSequence
+                LoadBack()
+                MakePermanent()
+
+                'Raise event
+                EventManager.RaiseColorSet()
+                Return True
+            Catch ex As Exception
+                WStkTrc(ex)
+                EventManager.RaiseColorSetError("invalidcolors")
+                Throw New Exceptions.ColorException(DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message)
+            End Try
+        Else
+            EventManager.RaiseColorSetError("nocolors")
+            Throw New InvalidOperationException(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."))
+        End If
+        Return False
+    End Function
+
+    ''' <summary>
+    ''' Sets custom colors. It only works if colored shell is enabled.
+    ''' </summary>
+    ''' <param name="ThemeInfo">Theme information</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    ''' <exception cref="InvalidOperationException"></exception>
+    ''' <exception cref="Exceptions.ColorException"></exception>
+    Public Function SetColors(ThemeInfo As ThemeInfo) As Boolean
+        If ThemeInfo Is Nothing Then Throw New ArgumentNullException(NameOf(ThemeInfo))
+
+        'Set the colors
+        If ColoredShell = True Then
+            Try
+                InputColor = ThemeInfo.ThemeInputColor.PlainSequence
+                LicenseColor = ThemeInfo.ThemeLicenseColor.PlainSequence
+                ContKernelErrorColor = ThemeInfo.ThemeContKernelErrorColor.PlainSequence
+                UncontKernelErrorColor = ThemeInfo.ThemeUncontKernelErrorColor.PlainSequence
+                HostNameShellColor = ThemeInfo.ThemeHostNameShellColor.PlainSequence
+                UserNameShellColor = ThemeInfo.ThemeUserNameShellColor.PlainSequence
+                BackgroundColor = ThemeInfo.ThemeBackgroundColor.PlainSequence
+                NeutralTextColor = ThemeInfo.ThemeNeutralTextColor.PlainSequence
+                ListEntryColor = ThemeInfo.ThemeListEntryColor.PlainSequence
+                ListValueColor = ThemeInfo.ThemeListValueColor.PlainSequence
+                StageColor = ThemeInfo.ThemeStageColor.PlainSequence
+                ErrorColor = ThemeInfo.ThemeErrorColor.PlainSequence
+                WarningColor = ThemeInfo.ThemeWarningColor.PlainSequence
+                OptionColor = ThemeInfo.ThemeOptionColor.PlainSequence
+                BannerColor = ThemeInfo.ThemeBannerColor.PlainSequence
+                NotificationTitleColor = ThemeInfo.ThemeNotificationTitleColor.PlainSequence
+                NotificationDescriptionColor = ThemeInfo.ThemeNotificationDescriptionColor.PlainSequence
+                NotificationProgressColor = ThemeInfo.ThemeNotificationProgressColor.PlainSequence
+                NotificationFailureColor = ThemeInfo.ThemeNotificationFailureColor.PlainSequence
+                QuestionColor = ThemeInfo.ThemeQuestionColor.PlainSequence
+                SuccessColor = ThemeInfo.ThemeSuccessColor.PlainSequence
+                UserDollarColor = ThemeInfo.ThemeUserDollarColor.PlainSequence
+                TipColor = ThemeInfo.ThemeTipColor.PlainSequence
+                SeparatorTextColor = ThemeInfo.ThemeSeparatorTextColor.PlainSequence
+                SeparatorColor = ThemeInfo.ThemeSeparatorColor.PlainSequence
+                ListTitleColor = ThemeInfo.ThemeListTitleColor.PlainSequence
+                DevelopmentWarningColor = ThemeInfo.ThemeDevelopmentWarningColor.PlainSequence
+                StageTimeColor = ThemeInfo.ThemeStageTimeColor.PlainSequence
+                ProgressColor = ThemeInfo.ThemeProgressColor.PlainSequence
+                BackOptionColor = ThemeInfo.ThemeBackOptionColor.PlainSequence
                 LoadBack()
                 MakePermanent()
 
