@@ -13,5 +13,20 @@
     "ErrorColor": "255;51;51",
     "WarningColor": "255;119;51",
     "OptionColor": "149;230;203",
-    "BannerColor": "255;180;84"
+    "BannerColor": "255;180;84",
+    "NotificationTitleColor": "184;204;82",
+    "NotificationDescriptionColor": "92;103;115",
+    "NotificationProgressColor": "255;119;51",
+    "NotificationFailureColor": "255;51;51",
+    "QuestionColor": "184;204;82",
+    "SuccessColor": "230;182;115",
+    "UserDollarColor": "92;103;115",
+    "TipColor": "92;103;115",
+    "SeparatorTextColor": "184;204;82",
+    "SeparatorColor": "255;119;51",
+    "ListTitleColor": "184;204;82",
+    "DevelopmentWarningColor": "255;119;51",
+    "StageTimeColor": "92;103;115",
+    "ProgressColor": "255;119;51",
+    "BackOptionColor": "255;119;51"
 }

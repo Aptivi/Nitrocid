@@ -25,7 +25,7 @@ Class Test_PrintSepFCommand
         For i As Integer = 0 To Vars.Length - 1
             Vars(i) = Evaluate(Vars(i)).ToString
         Next
-        WriteSeparator(ListArgs(1), True, ColTypes.Neutral, Vars)
+        WriteSeparator(ListArgs(1), True, Vars)
     End Sub
 
 End Class

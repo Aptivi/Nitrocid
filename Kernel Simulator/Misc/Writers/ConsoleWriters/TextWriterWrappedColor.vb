@@ -35,45 +35,7 @@ Public Module TextWriterWrappedColor
             Dim OldTop As Integer
             Try
                 'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
-                    If colorType = ColTypes.Neutral Or colorType = ColTypes.Input Then
-                        SetConsoleColor(New Color(NeutralTextColor))
-                    ElseIf colorType = ColTypes.Continuable Then
-                        SetConsoleColor(New Color(ContKernelErrorColor))
-                    ElseIf colorType = ColTypes.Uncontinuable Then
-                        SetConsoleColor(New Color(UncontKernelErrorColor))
-                    ElseIf colorType = ColTypes.HostName Then
-                        SetConsoleColor(New Color(HostNameShellColor))
-                    ElseIf colorType = ColTypes.UserName Then
-                        SetConsoleColor(New Color(UserNameShellColor))
-                    ElseIf colorType = ColTypes.License Then
-                        SetConsoleColor(New Color(LicenseColor))
-                    ElseIf colorType = ColTypes.Gray Then
-                        If New Color(BackgroundColor).IsBright Then
-                            SetConsoleColor(New Color(NeutralTextColor))
-                        Else
-                            SetConsoleColor(New Color(ConsoleColors.Gray))
-                        End If
-                    ElseIf colorType = ColTypes.ListValue Then
-                        SetConsoleColor(New Color(ListValueColor))
-                    ElseIf colorType = ColTypes.ListEntry Then
-                        SetConsoleColor(New Color(ListEntryColor))
-                    ElseIf colorType = ColTypes.Stage Then
-                        SetConsoleColor(New Color(StageColor))
-                    ElseIf colorType = ColTypes.Error Then
-                        SetConsoleColor(New Color(ErrorColor))
-                    ElseIf colorType = ColTypes.Warning Then
-                        SetConsoleColor(New Color(WarningColor))
-                    ElseIf colorType = ColTypes.Option Then
-                        SetConsoleColor(New Color(OptionColor))
-                    ElseIf colorType = ColTypes.Banner Then
-                        SetConsoleColor(New Color(BannerColor))
-                    Else
-                        Exit Sub
-                    End If
-                    SetConsoleColor(New Color(BackgroundColor), True)
-                End If
+                SetConsoleColor(colorType)
 
                 'Format string as needed
                 If Not vars.Length = 0 Then Text = String.Format(Text, vars)

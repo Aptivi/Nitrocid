@@ -27,7 +27,7 @@ Module ThemeStudio
         EventManager.RaiseThemeStudioStarted()
         Wdbg(DebugLevel.I, "Starting theme studio with theme name {0}", ThemeName)
         Dim Response As String
-        Dim MaximumOptions As Integer = 23
+        Dim MaximumOptions As Integer = 30 + 8 'Colors + options
         Dim StudioExiting As Boolean
 
         While Not StudioExiting
@@ -50,17 +50,32 @@ Module ThemeStudio
             W("12) " + DoTranslation("Error color") + ": [{0}] ", True, ColTypes.Option, SelectedErrorColor.PlainSequence)
             W("13) " + DoTranslation("Warning color") + ": [{0}] ", True, ColTypes.Option, SelectedWarningColor.PlainSequence)
             W("14) " + DoTranslation("Option color") + ": [{0}] ", True, ColTypes.Option, SelectedOptionColor.PlainSequence)
-            W("15) " + DoTranslation("Banner color") + ": [{0}] " + vbNewLine, True, ColTypes.Option, SelectedBannerColor.PlainSequence)
+            W("15) " + DoTranslation("Banner color") + ": [{0}] ", True, ColTypes.Option, SelectedBannerColor.PlainSequence)
+            W("16) " + DoTranslation("Notification title color") + ": [{0}] ", True, ColTypes.Option, SelectedNotificationTitleColor.PlainSequence)
+            W("17) " + DoTranslation("Notification description color") + ": [{0}] ", True, ColTypes.Option, SelectedNotificationDescriptionColor.PlainSequence)
+            W("18) " + DoTranslation("Notification progress color") + ": [{0}] ", True, ColTypes.Option, SelectedNotificationProgressColor.PlainSequence)
+            W("19) " + DoTranslation("Notification failure color") + ": [{0}] ", True, ColTypes.Option, SelectedNotificationFailureColor.PlainSequence)
+            W("20) " + DoTranslation("Question color") + ": [{0}] ", True, ColTypes.Option, SelectedQuestionColor.PlainSequence)
+            W("21) " + DoTranslation("Success color") + ": [{0}] ", True, ColTypes.Option, SelectedSuccessColor.PlainSequence)
+            W("22) " + DoTranslation("User dollar color") + ": [{0}] ", True, ColTypes.Option, SelectedUserDollarColor.PlainSequence)
+            W("23) " + DoTranslation("Tip color") + ": [{0}] ", True, ColTypes.Option, SelectedTipColor.PlainSequence)
+            W("24) " + DoTranslation("Separator text color") + ": [{0}] ", True, ColTypes.Option, SelectedSeparatorTextColor.PlainSequence)
+            W("25) " + DoTranslation("Separator color") + ": [{0}] ", True, ColTypes.Option, SelectedSeparatorColor.PlainSequence)
+            W("26) " + DoTranslation("List title color") + ": [{0}] ", True, ColTypes.Option, SelectedListTitleColor.PlainSequence)
+            W("27) " + DoTranslation("Development warning color") + ": [{0}] ", True, ColTypes.Option, SelectedDevelopmentWarningColor.PlainSequence)
+            W("28) " + DoTranslation("Stage time color") + ": [{0}] ", True, ColTypes.Option, SelectedStageTimeColor.PlainSequence)
+            W("29) " + DoTranslation("Progress color") + ": [{0}] ", True, ColTypes.Option, SelectedProgressColor.PlainSequence)
+            W("30) " + DoTranslation("Back option color") + ": [{0}] " + vbNewLine, True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
 
             'List saving and loading options
-            W("16) " + DoTranslation("Save Theme to Current Directory"), True, ColTypes.Option)
-            W("17) " + DoTranslation("Save Theme to Another Directory..."), True, ColTypes.Option)
-            W("18) " + DoTranslation("Save Theme to Current Directory as..."), True, ColTypes.Option)
-            W("19) " + DoTranslation("Save Theme to Another Directory as..."), True, ColTypes.Option)
-            W("20) " + DoTranslation("Load Theme From File..."), True, ColTypes.Option)
-            W("21) " + DoTranslation("Load Theme From Prebuilt Themes..."), True, ColTypes.Option)
-            W("22) " + DoTranslation("Preview..."), True, ColTypes.Option)
-            W("23) " + DoTranslation("Exit") + vbNewLine, True, ColTypes.Option)
+            W("31) " + DoTranslation("Save Theme to Current Directory"), True, ColTypes.Option)
+            W("32) " + DoTranslation("Save Theme to Another Directory..."), True, ColTypes.Option)
+            W("33) " + DoTranslation("Save Theme to Current Directory as..."), True, ColTypes.Option)
+            W("34) " + DoTranslation("Save Theme to Another Directory as..."), True, ColTypes.Option)
+            W("35) " + DoTranslation("Load Theme From File..."), True, ColTypes.Option)
+            W("36) " + DoTranslation("Load Theme From Prebuilt Themes..."), True, ColTypes.Option)
+            W("37) " + DoTranslation("Preview..."), True, ColTypes.Option)
+            W("38) " + DoTranslation("Exit") + vbNewLine, True, ColTypes.Option)
 
             'Prompt user
             Wdbg(DebugLevel.I, "Waiting for user input...")
@@ -121,23 +136,68 @@ Module ThemeStudio
                         Case 15 'Banner color
                             Dim ColorWheelReturn As String = ColorWheel(SelectedBannerColor.Type = ColorType.TrueColor, If(SelectedBannerColor.Type = ColorType._255Color, SelectedBannerColor.PlainSequence, ConsoleColors.White), SelectedBannerColor.R, SelectedBannerColor.G, SelectedBannerColor.B)
                             SelectedBannerColor = New Color(ColorWheelReturn)
-                        Case 16 'Save theme to current directory
+                        Case 16 'Notification title color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedNotificationTitleColor.Type = ColorType.TrueColor, If(SelectedNotificationTitleColor.Type = ColorType._255Color, SelectedNotificationTitleColor.PlainSequence, ConsoleColors.White), SelectedNotificationTitleColor.R, SelectedNotificationTitleColor.G, SelectedNotificationTitleColor.B)
+                            SelectedNotificationTitleColor = New Color(ColorWheelReturn)
+                        Case 17 'Notification description color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedNotificationDescriptionColor.Type = ColorType.TrueColor, If(SelectedNotificationDescriptionColor.Type = ColorType._255Color, SelectedNotificationDescriptionColor.PlainSequence, ConsoleColors.White), SelectedNotificationDescriptionColor.R, SelectedNotificationDescriptionColor.G, SelectedNotificationDescriptionColor.B)
+                            SelectedNotificationDescriptionColor = New Color(ColorWheelReturn)
+                        Case 18 'Notification progress color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedNotificationProgressColor.Type = ColorType.TrueColor, If(SelectedNotificationProgressColor.Type = ColorType._255Color, SelectedNotificationProgressColor.PlainSequence, ConsoleColors.White), SelectedNotificationProgressColor.R, SelectedNotificationProgressColor.G, SelectedNotificationProgressColor.B)
+                            SelectedNotificationProgressColor = New Color(ColorWheelReturn)
+                        Case 19 'Notification failure color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedNotificationFailureColor.Type = ColorType.TrueColor, If(SelectedNotificationFailureColor.Type = ColorType._255Color, SelectedNotificationFailureColor.PlainSequence, ConsoleColors.White), SelectedNotificationFailureColor.R, SelectedNotificationFailureColor.G, SelectedNotificationFailureColor.B)
+                            SelectedNotificationFailureColor = New Color(ColorWheelReturn)
+                        Case 20 'Question color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedQuestionColor.Type = ColorType.TrueColor, If(SelectedQuestionColor.Type = ColorType._255Color, SelectedQuestionColor.PlainSequence, ConsoleColors.White), SelectedQuestionColor.R, SelectedQuestionColor.G, SelectedQuestionColor.B)
+                            SelectedQuestionColor = New Color(ColorWheelReturn)
+                        Case 21 'Success color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedSuccessColor.Type = ColorType.TrueColor, If(SelectedSuccessColor.Type = ColorType._255Color, SelectedSuccessColor.PlainSequence, ConsoleColors.White), SelectedSuccessColor.R, SelectedSuccessColor.G, SelectedSuccessColor.B)
+                            SelectedSuccessColor = New Color(ColorWheelReturn)
+                        Case 22 'User dollar color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedUserDollarColor.Type = ColorType.TrueColor, If(SelectedUserDollarColor.Type = ColorType._255Color, SelectedUserDollarColor.PlainSequence, ConsoleColors.White), SelectedUserDollarColor.R, SelectedUserDollarColor.G, SelectedUserDollarColor.B)
+                            SelectedUserDollarColor = New Color(ColorWheelReturn)
+                        Case 23 'Tip color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedTipColor.Type = ColorType.TrueColor, If(SelectedTipColor.Type = ColorType._255Color, SelectedTipColor.PlainSequence, ConsoleColors.White), SelectedTipColor.R, SelectedTipColor.G, SelectedTipColor.B)
+                            SelectedTipColor = New Color(ColorWheelReturn)
+                        Case 24 'Separator text color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedSeparatorTextColor.Type = ColorType.TrueColor, If(SelectedSeparatorTextColor.Type = ColorType._255Color, SelectedSeparatorTextColor.PlainSequence, ConsoleColors.White), SelectedSeparatorTextColor.R, SelectedSeparatorTextColor.G, SelectedSeparatorTextColor.B)
+                            SelectedSeparatorTextColor = New Color(ColorWheelReturn)
+                        Case 25 'Separator color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedSeparatorColor.Type = ColorType.TrueColor, If(SelectedSeparatorColor.Type = ColorType._255Color, SelectedSeparatorColor.PlainSequence, ConsoleColors.White), SelectedSeparatorColor.R, SelectedSeparatorColor.G, SelectedSeparatorColor.B)
+                            SelectedSeparatorColor = New Color(ColorWheelReturn)
+                        Case 26 'List title color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedListTitleColor.Type = ColorType.TrueColor, If(SelectedListTitleColor.Type = ColorType._255Color, SelectedListTitleColor.PlainSequence, ConsoleColors.White), SelectedListTitleColor.R, SelectedListTitleColor.G, SelectedListTitleColor.B)
+                            SelectedListTitleColor = New Color(ColorWheelReturn)
+                        Case 27 'Development warning color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedDevelopmentWarningColor.Type = ColorType.TrueColor, If(SelectedDevelopmentWarningColor.Type = ColorType._255Color, SelectedDevelopmentWarningColor.PlainSequence, ConsoleColors.White), SelectedDevelopmentWarningColor.R, SelectedDevelopmentWarningColor.G, SelectedDevelopmentWarningColor.B)
+                            SelectedDevelopmentWarningColor = New Color(ColorWheelReturn)
+                        Case 28 'Stage time color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedStageTimeColor.Type = ColorType.TrueColor, If(SelectedStageTimeColor.Type = ColorType._255Color, SelectedStageTimeColor.PlainSequence, ConsoleColors.White), SelectedStageTimeColor.R, SelectedStageTimeColor.G, SelectedStageTimeColor.B)
+                            SelectedStageTimeColor = New Color(ColorWheelReturn)
+                        Case 29 'Progress color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedProgressColor.Type = ColorType.TrueColor, If(SelectedProgressColor.Type = ColorType._255Color, SelectedProgressColor.PlainSequence, ConsoleColors.White), SelectedProgressColor.R, SelectedProgressColor.G, SelectedProgressColor.B)
+                            SelectedProgressColor = New Color(ColorWheelReturn)
+                        Case 30 'Back option color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedBackOptionColor.Type = ColorType.TrueColor, If(SelectedBackOptionColor.Type = ColorType._255Color, SelectedBackOptionColor.PlainSequence, ConsoleColors.White), SelectedBackOptionColor.R, SelectedBackOptionColor.G, SelectedBackOptionColor.B)
+                            SelectedBackOptionColor = New Color(ColorWheelReturn)
+                        Case 31 'Save theme to current directory
                             SaveThemeToCurrentDirectory(ThemeName)
-                        Case 17 'Save theme to another directory...
+                        Case 32 'Save theme to another directory...
                             Wdbg(DebugLevel.I, "Prompting user for directory name...")
                             W(DoTranslation("Specify directory to save theme to:") + " [{0}] ", False, ColTypes.Input, CurrDir)
                             Dim DirectoryName As String = Console.ReadLine
                             DirectoryName = If(String.IsNullOrWhiteSpace(DirectoryName), CurrDir, DirectoryName)
                             Wdbg(DebugLevel.I, "Got directory name {0}.", DirectoryName)
                             SaveThemeToAnotherDirectory(ThemeName, DirectoryName)
-                        Case 18 'Save theme to current directory as...
+                        Case 33 'Save theme to current directory as...
                             Wdbg(DebugLevel.I, "Prompting user for theme name...")
                             W(DoTranslation("Specify theme name:") + " [{0}] ", False, ColTypes.Input, ThemeName)
                             Dim AltThemeName As String = Console.ReadLine
                             AltThemeName = If(String.IsNullOrWhiteSpace(AltThemeName), ThemeName, AltThemeName)
                             Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                             SaveThemeToCurrentDirectory(AltThemeName)
-                        Case 19 'Save theme to another directory as...
+                        Case 34 'Save theme to another directory as...
                             Wdbg(DebugLevel.I, "Prompting user for theme and directory name...")
                             W(DoTranslation("Specify directory to save theme to:") + " [{0}] ", False, ColTypes.Input, CurrDir)
                             Dim DirectoryName As String = Console.ReadLine
@@ -149,22 +209,22 @@ Module ThemeStudio
                             AltThemeName = If(String.IsNullOrWhiteSpace(AltThemeName), ThemeName, AltThemeName)
                             Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                             SaveThemeToAnotherDirectory(AltThemeName, DirectoryName)
-                        Case 20 'Load Theme From File...
+                        Case 35 'Load Theme From File...
                             Wdbg(DebugLevel.I, "Prompting user for theme name...")
                             W(DoTranslation("Specify theme file name wihout the .json extension:") + " ", False, ColTypes.Input)
                             Dim AltThemeName As String = Console.ReadLine + ".json"
                             Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                             LoadThemeFromFile(AltThemeName)
-                        Case 21 'Load Theme From Prebuilt Themes...
+                        Case 36 'Load Theme From Prebuilt Themes...
                             Wdbg(DebugLevel.I, "Prompting user for theme name...")
                             W(DoTranslation("Specify theme name:") + " ", False, ColTypes.Input)
                             Dim AltThemeName As String = Console.ReadLine
                             Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                             LoadThemeFromResource(AltThemeName)
-                        Case 22 'Preview...
+                        Case 37 'Preview...
                             Wdbg(DebugLevel.I, "Printing text with colors of theme...")
                             PreparePreview()
-                        Case 23 'Exit
+                        Case 38 'Exit
                             Wdbg(DebugLevel.I, "Exiting studio...")
                             StudioExiting = True
                     End Select

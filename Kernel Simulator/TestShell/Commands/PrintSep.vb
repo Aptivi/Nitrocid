@@ -21,7 +21,7 @@ Class Test_PrintSepCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
-        WriteSeparator(ListArgs(0), True, ColTypes.Neutral)
+        WriteSeparator(ListArgs(0), True)
     End Sub
 
 End Class

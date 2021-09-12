@@ -27,7 +27,7 @@ Class FTP_GetCommand
         Dim Result As Boolean = If(Not String.IsNullOrWhiteSpace(LocalFile), FTPGetFile(RemoteFile, LocalFile), FTPGetFile(RemoteFile))
         If Result Then
             Console.WriteLine()
-            W(DoTranslation("Downloaded file {0}."), True, ColTypes.Neutral, RemoteFile)
+            W(DoTranslation("Downloaded file {0}."), True, ColTypes.Success, RemoteFile)
         Else
             Console.WriteLine()
             W(DoTranslation("Download failed for file {0}."), True, ColTypes.Error, RemoteFile)

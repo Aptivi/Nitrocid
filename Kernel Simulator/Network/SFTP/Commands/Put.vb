@@ -26,10 +26,10 @@ Class SFTP_PutCommand
         'Begin the uploading process
         If SFTPUploadFile(ListArgs(0)) Then
             Console.WriteLine()
-            W(vbNewLine + DoTranslation("Uploaded file {0}"), True, ColTypes.Neutral, ListArgs(0))
+            W(vbNewLine + DoTranslation("Uploaded file {0}"), True, ColTypes.Success, ListArgs(0))
         Else
             Console.WriteLine()
-            W(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Neutral, ListArgs(0))
+            W(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Error, ListArgs(0))
         End If
     End Sub
 

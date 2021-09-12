@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Module SeparatorColor
+Public Module SeparatorWriterColor
 
     ''' <summary>
     ''' Draw a separator with text
@@ -44,6 +44,38 @@ Public Module SeparatorColor
         'Write the closing minus sign.
         Dim OldTop As Integer = Console.CursorTop
         W("-".Repeat(RepeatTimes), True, ColTypes)
+
+        'Fix CursorTop value on Unix systems. Mono...
+        If IsOnUnix() Then
+            If Not Console.CursorTop = Console.WindowHeight - 1 Or OldTop = Console.WindowHeight - 3 Then Console.CursorTop -= 1
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Draw a separator with text
+    ''' </summary>
+    ''' <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+    ''' <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
+    ''' <param name="Vars">Variables to format the message before it's written.</param>
+    Public Sub WriteSeparator(Text As String, PrintSuffix As Boolean, ParamArray Vars() As Object)
+        'Print the suffix and the text
+        If Not String.IsNullOrWhiteSpace(Text) Then
+            If PrintSuffix Then W("- ", False, ColTypes.Separator, Vars)
+            If Not Text.EndsWith("-") Then Text += " "
+            W(Text.Truncate(Console.WindowWidth - 6), False, ColTypes.SeparatorText, Vars)
+        End If
+
+        'See how many times to repeat the closing minus sign. We could be running this in the wrap command.
+        Dim RepeatTimes As Integer
+        If Not Console.CursorLeft = 0 Then
+            RepeatTimes = Console.WindowWidth - Console.CursorLeft
+        Else
+            RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length
+        End If
+
+        'Write the closing minus sign.
+        Dim OldTop As Integer = Console.CursorTop
+        W("-".Repeat(RepeatTimes), True, ColTypes.Separator)
 
         'Fix CursorTop value on Unix systems. Mono...
         If IsOnUnix() Then

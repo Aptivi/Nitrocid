@@ -88,7 +88,7 @@ Public Module Filesystem
         folder = NeutralizePath(folder)
         If Directory.Exists(folder) Then
             Dim enumeration As New List(Of FileSystemInfo)
-            WriteSeparator(folder, True, ColTypes.Stage)
+            WriteSeparator(folder, True)
 
             'Try to create a list
             Try

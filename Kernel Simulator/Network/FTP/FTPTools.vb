@@ -150,7 +150,7 @@ Public Module FTPTools
         ClientFTP.Connect(profsel)
 
         'Show that it's connected
-        W(DoTranslation("Connected to {0}"), True, ColTypes.Neutral, ClientFTP.Host)
+        W(DoTranslation("Connected to {0}"), True, ColTypes.Success, ClientFTP.Host)
         Wdbg(DebugLevel.I, "Connected.")
         FtpConnected = True
 
@@ -195,7 +195,8 @@ Public Module FTPTools
             W("- {0}", True, ColTypes.Error, e.PolicyErrors.ToString)
             Dim Answer As String = ""
             Do Until Answer.ToLower = "y" Or Answer.ToLower = "n"
-                W(DoTranslation("Are you sure that you want to connect?") + " (y/n) ", False, ColTypes.Input)
+                W(DoTranslation("Are you sure that you want to connect?") + " (y/n) ", False, ColTypes.Question)
+                SetConsoleColor(New Color(InputColor))
                 Answer = Console.ReadKey.KeyChar
                 Console.WriteLine()
                 Wdbg(DebugLevel.I, $"Answer is {Answer}")

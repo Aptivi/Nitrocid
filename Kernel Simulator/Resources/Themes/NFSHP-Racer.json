@@ -13,5 +13,20 @@
     "ErrorColor": "88",
     "WarningColor": "94",
     "OptionColor": "94",
-    "BannerColor": "184"
+    "BannerColor": "184",
+    "NotificationTitleColor": "178",
+    "NotificationDescriptionColor": "172",
+    "NotificationProgressColor": "178",
+    "NotificationFailureColor": "88",
+    "QuestionColor": "94",
+    "SuccessColor": "178",
+    "UserDollarColor": "15",
+    "TipColor": "15",
+    "SeparatorTextColor": "178",
+    "SeparatorColor": "172",
+    "ListTitleColor": "178",
+    "DevelopmentWarningColor": "94",
+    "StageTimeColor": "172",
+    "ProgressColor": "178",
+    "BackOptionColor": "172"
 }

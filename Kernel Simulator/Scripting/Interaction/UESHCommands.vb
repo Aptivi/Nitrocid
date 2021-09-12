@@ -52,15 +52,15 @@ Public Module UESHCommands
             'Ask a question
             Select Case OutputType
                 Case ChoiceOutputType.OneLine
-                    W(Question, False, ColTypes.Neutral)
+                    W(Question, False, ColTypes.Question)
                     W(" <{0}> ", False, ColTypes.Input, AnswersStr)
                     answers = AnswersStr.Split("/")
                 Case ChoiceOutputType.TwoLines
-                    W(Question, True, ColTypes.Neutral)
+                    W(Question, True, ColTypes.Question)
                     W("<{0}> ", False, ColTypes.Input, AnswersStr)
                     answers = AnswersStr.Split("/")
                 Case ChoiceOutputType.Modern
-                    W(Question + vbNewLine, True, ColTypes.Neutral)
+                    W(Question + vbNewLine, True, ColTypes.Question)
                     answers = AnswersStr.Split("/")
                     For Each AnswerInstance As String In answers
                         W($"{AnswerInstance})", True, ColTypes.Option)
@@ -91,7 +91,8 @@ Public Module UESHCommands
             Wdbg(DebugLevel.I, "Script var: {0} ({1}), Question: {2}", ScriptVariable, ShellVariables.ContainsKey(ScriptVariable), Question)
 
             'Ask a question
-            W(Question, False, ColTypes.Input)
+            W(Question, False, ColTypes.Question)
+            SetConsoleColor(New Color(InputColor))
 
             'Wait for an answer
             Answer = Console.ReadLine

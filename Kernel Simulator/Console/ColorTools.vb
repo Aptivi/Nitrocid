@@ -84,6 +84,66 @@ Public Module ColorTools
         ''' Banner text
         ''' </summary>
         Banner
+        ''' <summary>
+        ''' Notification title text
+        ''' </summary>
+        NotificationTitle
+        ''' <summary>
+        ''' Notification description text
+        ''' </summary>
+        NotificationDescription
+        ''' <summary>
+        ''' Notification progress text
+        ''' </summary>
+        NotificationProgress
+        ''' <summary>
+        ''' Notification failure text
+        ''' </summary>
+        NotificationFailure
+        ''' <summary>
+        ''' Question text
+        ''' </summary>
+        Question
+        ''' <summary>
+        ''' Success text
+        ''' </summary>
+        Success
+        ''' <summary>
+        ''' User dollar sign on shell text
+        ''' </summary>
+        UserDollarSign
+        ''' <summary>
+        ''' Tip text
+        ''' </summary>
+        Tip
+        ''' <summary>
+        ''' Separator text
+        ''' </summary>
+        SeparatorText
+        ''' <summary>
+        ''' Separator color
+        ''' </summary>
+        Separator
+        ''' <summary>
+        ''' List title text
+        ''' </summary>
+        ListTitle
+        ''' <summary>
+        ''' Development warning text
+        ''' </summary>
+        DevelopmentWarning
+        ''' <summary>
+        ''' Stage time text
+        ''' </summary>
+        StageTime
+        ''' <summary>
+        ''' General progress text
+        ''' </summary>
+        Progress
+        ''' <summary>
+        ''' Back option text
+        ''' </summary>
+        BackOption
     End Enum
 
     ''' <summary>
@@ -116,6 +176,21 @@ Public Module ColorTools
     Public WarningColor As String = New Color(ConsoleColors.Yellow).PlainSequence
     Public OptionColor As String = New Color(ConsoleColors.DarkYellow).PlainSequence
     Public BannerColor As String = New Color(ConsoleColors.Green).PlainSequence
+    Public NotificationTitleColor As String = New Color(ConsoleColors.White).PlainSequence
+    Public NotificationDescriptionColor As String = New Color(ConsoleColors.Gray).PlainSequence
+    Public NotificationProgressColor As String = New Color(ConsoleColors.DarkYellow).PlainSequence
+    Public NotificationFailureColor As String = New Color(ConsoleColors.Red).PlainSequence
+    Public QuestionColor As String = New Color(ConsoleColors.Yellow).PlainSequence
+    Public SuccessColor As String = New Color(ConsoleColors.Green).PlainSequence
+    Public UserDollarColor As String = New Color(ConsoleColors.Gray).PlainSequence
+    Public TipColor As String = New Color(ConsoleColors.Gray).PlainSequence
+    Public SeparatorTextColor As String = New Color(ConsoleColors.White).PlainSequence
+    Public SeparatorColor As String = New Color(ConsoleColors.Gray).PlainSequence
+    Public ListTitleColor As String = New Color(ConsoleColors.White).PlainSequence
+    Public DevelopmentWarningColor As String = New Color(ConsoleColors.Yellow).PlainSequence
+    Public StageTimeColor As String = New Color(ConsoleColors.Gray).PlainSequence
+    Public ProgressColor As String = New Color(ConsoleColors.DarkYellow).PlainSequence
+    Public BackOptionColor As String = New Color(ConsoleColors.DarkRed).PlainSequence
 
     'Templates array (available ones)
     Public colorTemplates As New Dictionary(Of String, ThemeInfo) From {{"Default", New ThemeInfo("_Default")},
@@ -170,6 +245,21 @@ Public Module ColorTools
         WarningColor = DefInfo.ThemeWarningColor.PlainSequence
         OptionColor = DefInfo.ThemeOptionColor.PlainSequence
         BannerColor = DefInfo.ThemeBannerColor.PlainSequence
+        NotificationTitleColor = DefInfo.ThemeNotificationTitleColor.PlainSequence
+        NotificationDescriptionColor = DefInfo.ThemeNotificationDescriptionColor.PlainSequence
+        NotificationProgressColor = DefInfo.ThemeNotificationProgressColor.PlainSequence
+        NotificationFailureColor = DefInfo.ThemeNotificationFailureColor.PlainSequence
+        QuestionColor = DefInfo.ThemeQuestionColor.PlainSequence
+        SuccessColor = DefInfo.ThemeSuccessColor.PlainSequence
+        UserDollarColor = DefInfo.ThemeUserDollarColor.PlainSequence
+        TipColor = DefInfo.ThemeTipColor.PlainSequence
+        SeparatorTextColor = DefInfo.ThemeSeparatorTextColor.PlainSequence
+        SeparatorColor = DefInfo.ThemeSeparatorColor.PlainSequence
+        ListTitleColor = DefInfo.ThemeListTitleColor.PlainSequence
+        DevelopmentWarningColor = DefInfo.ThemeDevelopmentWarningColor.PlainSequence
+        StageTimeColor = DefInfo.ThemeStageTimeColor.PlainSequence
+        ProgressColor = DefInfo.ThemeProgressColor.PlainSequence
+        BackOptionColor = DefInfo.ThemeBackOptionColor.PlainSequence
         LoadBack()
 
         'Raise event
@@ -215,11 +305,17 @@ Public Module ColorTools
             If Not theme = "Default" Then
 #Disable Warning BC42104
                 'Set colors as appropriate
+                'TODO: Shorten this!
                 SetColors(ThemeInfo.ThemeInputColor.PlainSequence, ThemeInfo.ThemeLicenseColor.PlainSequence, ThemeInfo.ThemeContKernelErrorColor.PlainSequence,
                           ThemeInfo.ThemeUncontKernelErrorColor.PlainSequence, ThemeInfo.ThemeHostNameShellColor.PlainSequence, ThemeInfo.ThemeUserNameShellColor.PlainSequence,
                           ThemeInfo.ThemeBackgroundColor.PlainSequence, ThemeInfo.ThemeNeutralTextColor.PlainSequence, ThemeInfo.ThemeListEntryColor.PlainSequence,
                           ThemeInfo.ThemeListValueColor.PlainSequence, ThemeInfo.ThemeStageColor.PlainSequence, ThemeInfo.ThemeErrorColor.PlainSequence,
-                          ThemeInfo.ThemeWarningColor.PlainSequence, ThemeInfo.ThemeOptionColor.PlainSequence, ThemeInfo.ThemeBannerColor.PlainSequence)
+                          ThemeInfo.ThemeWarningColor.PlainSequence, ThemeInfo.ThemeOptionColor.PlainSequence, ThemeInfo.ThemeBannerColor.PlainSequence,
+                          ThemeInfo.ThemeNotificationTitleColor.PlainSequence, ThemeInfo.ThemeNotificationDescriptionColor.PlainSequence, ThemeInfo.ThemeNotificationProgressColor.PlainSequence,
+                          ThemeInfo.ThemeNotificationFailureColor.PlainSequence, ThemeInfo.ThemeQuestionColor.PlainSequence, ThemeInfo.ThemeSuccessColor.PlainSequence,
+                          ThemeInfo.ThemeUserDollarColor.PlainSequence, ThemeInfo.ThemeTipColor.PlainSequence, ThemeInfo.ThemeSeparatorTextColor.PlainSequence,
+                          ThemeInfo.ThemeSeparatorColor.PlainSequence, ThemeInfo.ThemeListTitleColor.PlainSequence, ThemeInfo.ThemeDevelopmentWarningColor.PlainSequence,
+                          ThemeInfo.ThemeStageTimeColor.PlainSequence, ThemeInfo.ThemeProgressColor.PlainSequence, ThemeInfo.ThemeBackOptionColor.PlainSequence)
 #Enable Warning BC42104
             End If
 
@@ -249,11 +345,17 @@ Public Module ColorTools
 
             If Not ThemeFile = "Default" Then
                 'Set colors as appropriate
+                'TODO: Shorten this!
                 SetColors(ThemeInfo.ThemeInputColor.PlainSequence, ThemeInfo.ThemeLicenseColor.PlainSequence, ThemeInfo.ThemeContKernelErrorColor.PlainSequence,
                           ThemeInfo.ThemeUncontKernelErrorColor.PlainSequence, ThemeInfo.ThemeHostNameShellColor.PlainSequence, ThemeInfo.ThemeUserNameShellColor.PlainSequence,
                           ThemeInfo.ThemeBackgroundColor.PlainSequence, ThemeInfo.ThemeNeutralTextColor.PlainSequence, ThemeInfo.ThemeListEntryColor.PlainSequence,
                           ThemeInfo.ThemeListValueColor.PlainSequence, ThemeInfo.ThemeStageColor.PlainSequence, ThemeInfo.ThemeErrorColor.PlainSequence,
-                          ThemeInfo.ThemeWarningColor.PlainSequence, ThemeInfo.ThemeOptionColor.PlainSequence, ThemeInfo.ThemeBannerColor.PlainSequence)
+                          ThemeInfo.ThemeWarningColor.PlainSequence, ThemeInfo.ThemeOptionColor.PlainSequence, ThemeInfo.ThemeBannerColor.PlainSequence,
+                          ThemeInfo.ThemeNotificationTitleColor.PlainSequence, ThemeInfo.ThemeNotificationDescriptionColor.PlainSequence, ThemeInfo.ThemeNotificationProgressColor.PlainSequence,
+                          ThemeInfo.ThemeNotificationFailureColor.PlainSequence, ThemeInfo.ThemeQuestionColor.PlainSequence, ThemeInfo.ThemeSuccessColor.PlainSequence,
+                          ThemeInfo.ThemeUserDollarColor.PlainSequence, ThemeInfo.ThemeTipColor.PlainSequence, ThemeInfo.ThemeSeparatorTextColor.PlainSequence,
+                          ThemeInfo.ThemeSeparatorColor.PlainSequence, ThemeInfo.ThemeListTitleColor.PlainSequence, ThemeInfo.ThemeDevelopmentWarningColor.PlainSequence,
+                          ThemeInfo.ThemeStageTimeColor.PlainSequence, ThemeInfo.ThemeProgressColor.PlainSequence, ThemeInfo.ThemeBackOptionColor.PlainSequence)
             End If
 
             'Raise event
@@ -287,6 +389,21 @@ Public Module ColorTools
         ConfigToken("Colors")("Warning Text Color") = If(New Color(WarningColor).Type = ColorType.TrueColor, WarningColor.EncloseByDoubleQuotes, WarningColor)
         ConfigToken("Colors")("Option Color") = If(New Color(OptionColor).Type = ColorType.TrueColor, OptionColor.EncloseByDoubleQuotes, OptionColor)
         ConfigToken("Colors")("Banner Color") = If(New Color(BannerColor).Type = ColorType.TrueColor, BannerColor.EncloseByDoubleQuotes, BannerColor)
+        ConfigToken("Colors")("Notification Title Color") = If(New Color(NotificationTitleColor).Type = ColorType.TrueColor, NotificationTitleColor.EncloseByDoubleQuotes, NotificationTitleColor)
+        ConfigToken("Colors")("Notification Description Color") = If(New Color(NotificationDescriptionColor).Type = ColorType.TrueColor, NotificationDescriptionColor.EncloseByDoubleQuotes, NotificationDescriptionColor)
+        ConfigToken("Colors")("Notification Progress Color") = If(New Color(NotificationProgressColor).Type = ColorType.TrueColor, NotificationProgressColor.EncloseByDoubleQuotes, NotificationProgressColor)
+        ConfigToken("Colors")("Notification Failure Color") = If(New Color(NotificationFailureColor).Type = ColorType.TrueColor, NotificationFailureColor.EncloseByDoubleQuotes, NotificationFailureColor)
+        ConfigToken("Colors")("Question Color") = If(New Color(QuestionColor).Type = ColorType.TrueColor, QuestionColor.EncloseByDoubleQuotes, QuestionColor)
+        ConfigToken("Colors")("Success Color") = If(New Color(SuccessColor).Type = ColorType.TrueColor, SuccessColor.EncloseByDoubleQuotes, SuccessColor)
+        ConfigToken("Colors")("User Dollar Color") = If(New Color(UserDollarColor).Type = ColorType.TrueColor, UserDollarColor.EncloseByDoubleQuotes, UserDollarColor)
+        ConfigToken("Colors")("Tip Color") = If(New Color(TipColor).Type = ColorType.TrueColor, TipColor.EncloseByDoubleQuotes, TipColor)
+        ConfigToken("Colors")("Separator Text Color") = If(New Color(SeparatorTextColor).Type = ColorType.TrueColor, SeparatorTextColor.EncloseByDoubleQuotes, SeparatorTextColor)
+        ConfigToken("Colors")("Separator Color") = If(New Color(SeparatorColor).Type = ColorType.TrueColor, SeparatorColor.EncloseByDoubleQuotes, SeparatorColor)
+        ConfigToken("Colors")("List Title Color") = If(New Color(ListTitleColor).Type = ColorType.TrueColor, ListTitleColor.EncloseByDoubleQuotes, ListTitleColor)
+        ConfigToken("Colors")("Development Warning Color") = If(New Color(DevelopmentWarningColor).Type = ColorType.TrueColor, DevelopmentWarningColor.EncloseByDoubleQuotes, DevelopmentWarningColor)
+        ConfigToken("Colors")("Stage Time Color") = If(New Color(StageTimeColor).Type = ColorType.TrueColor, StageTimeColor.EncloseByDoubleQuotes, StageTimeColor)
+        ConfigToken("Colors")("Progress Color") = If(New Color(ProgressColor).Type = ColorType.TrueColor, ProgressColor.EncloseByDoubleQuotes, ProgressColor)
+        ConfigToken("Colors")("Back Option Color") = If(New Color(BackOptionColor).Type = ColorType.TrueColor, BackOptionColor.EncloseByDoubleQuotes, BackOptionColor)
         File.WriteAllText(GetKernelPath(KernelPathType.Configuration), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
     End Sub
 
@@ -307,12 +424,29 @@ Public Module ColorTools
     ''' <param name="ErrorColor">Error color</param>
     ''' <param name="OptionColor">Option color</param>
     ''' <param name="BannerColor">Banner color</param>
+    ''' <param name="NotificationTitleColor">Notification title color</param>
+    ''' <param name="NotificationDescriptionColor">Notification description color</param>
+    ''' <param name="NotificationProgressColor">Notification progress color</param>
+    ''' <param name="NotificationFailureColor">Notification failure color</param>
+    ''' <param name="QuestionColor">Question color</param>
+    ''' <param name="SuccessColor">Success text color</param>
+    ''' <param name="UserDollarColor">User dollar color</param>
+    ''' <param name="TipColor">Tip color</param>
+    ''' <param name="SeparatorTextColor">Separator text color</param>
+    ''' <param name="SeparatorColor">Separator color</param>
+    ''' <param name="ListTitleColor">List title color</param>
+    ''' <param name="DevelopmentWarningColor">Development warning color</param>
+    ''' <param name="StageTimeColor">Stage time color</param>
+    ''' <param name="ProgressColor">Progress color</param>
+    ''' <param name="BackOptionColor">Back option color</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="InvalidOperationException"></exception>
     ''' <exception cref="Exceptions.ColorException"></exception>
     Public Function SetColors(InputColor As String, LicenseColor As String, ContKernelErrorColor As String, UncontKernelErrorColor As String, HostNameShellColor As String, UserNameShellColor As String,
                               BackgroundColor As String, NeutralTextColor As String, ListEntryColor As String, ListValueColor As String, StageColor As String, ErrorColor As String, WarningColor As String,
-                              OptionColor As String, BannerColor As String) As Boolean
+                              OptionColor As String, BannerColor As String, NotificationTitleColor As String, NotificationDescriptionColor As String, NotificationProgressColor As String,
+                              NotificationFailureColor As String, QuestionColor As String, SuccessColor As String, UserDollarColor As String, TipColor As String, SeparatorTextColor As String,
+                              SeparatorColor As String, ListTitleColor As String, DevelopmentWarningColor As String, StageTimeColor As String, ProgressColor As String, BackOptionColor As String) As Boolean
         'Check colors for null and set them to "def" if found
         If String.IsNullOrEmpty(OptionColor) Then OptionColor = "def"
         If String.IsNullOrEmpty(WarningColor) Then WarningColor = "def"
@@ -329,6 +463,21 @@ Public Module ColorTools
         If String.IsNullOrEmpty(LicenseColor) Then LicenseColor = "def"
         If String.IsNullOrEmpty(InputColor) Then InputColor = "def"
         If String.IsNullOrEmpty(BannerColor) Then BannerColor = "def"
+        If String.IsNullOrEmpty(NotificationTitleColor) Then NotificationTitleColor = "def"
+        If String.IsNullOrEmpty(NotificationDescriptionColor) Then NotificationDescriptionColor = "def"
+        If String.IsNullOrEmpty(NotificationProgressColor) Then NotificationProgressColor = "def"
+        If String.IsNullOrEmpty(NotificationFailureColor) Then NotificationFailureColor = "def"
+        If String.IsNullOrEmpty(QuestionColor) Then QuestionColor = "def"
+        If String.IsNullOrEmpty(SuccessColor) Then SuccessColor = "def"
+        If String.IsNullOrEmpty(UserDollarColor) Then UserDollarColor = "def"
+        If String.IsNullOrEmpty(TipColor) Then TipColor = "def"
+        If String.IsNullOrEmpty(SeparatorTextColor) Then SeparatorTextColor = "def"
+        If String.IsNullOrEmpty(SeparatorColor) Then SeparatorColor = "def"
+        If String.IsNullOrEmpty(ListTitleColor) Then ListTitleColor = "def"
+        If String.IsNullOrEmpty(DevelopmentWarningColor) Then DevelopmentWarningColor = "def"
+        If String.IsNullOrEmpty(StageTimeColor) Then StageTimeColor = "def"
+        If String.IsNullOrEmpty(ProgressColor) Then ProgressColor = "def"
+        If String.IsNullOrEmpty(BackOptionColor) Then BackOptionColor = "def"
 
         'Set colors
         If ColoredShell = True Then
@@ -348,6 +497,21 @@ Public Module ColorTools
             If WarningColor = "def" Then WarningColor = New Color(ConsoleColors.Yellow).PlainSequence
             If OptionColor = "def" Then OptionColor = New Color(ConsoleColors.DarkYellow).PlainSequence
             If BannerColor = "def" Then OptionColor = New Color(ConsoleColors.Green).PlainSequence
+            If NotificationTitleColor = "def" Then NotificationTitleColor = New Color(ConsoleColors.White).PlainSequence
+            If NotificationDescriptionColor = "def" Then NotificationDescriptionColor = New Color(ConsoleColors.Gray).PlainSequence
+            If NotificationProgressColor = "def" Then NotificationProgressColor = New Color(ConsoleColors.DarkYellow).PlainSequence
+            If NotificationFailureColor = "def" Then NotificationFailureColor = New Color(ConsoleColors.Red).PlainSequence
+            If QuestionColor = "def" Then QuestionColor = New Color(ConsoleColors.Yellow).PlainSequence
+            If SuccessColor = "def" Then SuccessColor = New Color(ConsoleColors.Green).PlainSequence
+            If UserDollarColor = "def" Then UserDollarColor = New Color(ConsoleColors.Gray).PlainSequence
+            If TipColor = "def" Then TipColor = New Color(ConsoleColors.Gray).PlainSequence
+            If SeparatorTextColor = "def" Then SeparatorTextColor = New Color(ConsoleColors.White).PlainSequence
+            If SeparatorColor = "def" Then SeparatorColor = New Color(ConsoleColors.Gray).PlainSequence
+            If ListTitleColor = "def" Then ListTitleColor = New Color(ConsoleColors.White).PlainSequence
+            If DevelopmentWarningColor = "def" Then DevelopmentWarningColor = New Color(ConsoleColors.Yellow).PlainSequence
+            If StageTimeColor = "def" Then StageTimeColor = New Color(ConsoleColors.Gray).PlainSequence
+            If ProgressColor = "def" Then ProgressColor = New Color(ConsoleColors.DarkYellow).PlainSequence
+            If BackOptionColor = "def" Then BackOptionColor = New Color(ConsoleColors.DarkRed).PlainSequence
             If BackgroundColor = "def" Then
                 BackgroundColor = New Color(ConsoleColors.Black).PlainSequence
                 LoadBack()
@@ -370,6 +534,21 @@ Public Module ColorTools
                 ColorTools.WarningColor = New Color(WarningColor).PlainSequence
                 ColorTools.OptionColor = New Color(OptionColor).PlainSequence
                 ColorTools.BannerColor = New Color(BannerColor).PlainSequence
+                ColorTools.NotificationTitleColor = New Color(NotificationTitleColor).PlainSequence
+                ColorTools.NotificationDescriptionColor = New Color(NotificationDescriptionColor).PlainSequence
+                ColorTools.NotificationProgressColor = New Color(NotificationProgressColor).PlainSequence
+                ColorTools.NotificationFailureColor = New Color(NotificationFailureColor).PlainSequence
+                ColorTools.QuestionColor = New Color(QuestionColor).PlainSequence
+                ColorTools.SuccessColor = New Color(SuccessColor).PlainSequence
+                ColorTools.UserDollarColor = New Color(UserDollarColor).PlainSequence
+                ColorTools.TipColor = New Color(TipColor).PlainSequence
+                ColorTools.SeparatorTextColor = New Color(SeparatorTextColor).PlainSequence
+                ColorTools.SeparatorColor = New Color(SeparatorColor).PlainSequence
+                ColorTools.ListTitleColor = New Color(ListTitleColor).PlainSequence
+                ColorTools.DevelopmentWarningColor = New Color(DevelopmentWarningColor).PlainSequence
+                ColorTools.StageTimeColor = New Color(StageTimeColor).PlainSequence
+                ColorTools.ProgressColor = New Color(ProgressColor).PlainSequence
+                ColorTools.BackOptionColor = New Color(BackOptionColor).PlainSequence
                 LoadBack()
                 MakePermanent()
 
@@ -399,6 +578,84 @@ Public Module ColorTools
             Return True
         End If
         Return False
+    End Function
+
+    ''' <summary>
+    ''' Sets the console color
+    ''' </summary>
+    ''' <param name="colorType">A type of colors that will be changed.</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function SetConsoleColor(colorType As ColTypes) As Boolean
+        If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
+            Select Case colorType
+                Case ColTypes.Neutral, ColTypes.Input
+                    SetConsoleColor(New Color(NeutralTextColor))
+                Case ColTypes.Continuable
+                    SetConsoleColor(New Color(ContKernelErrorColor))
+                Case ColTypes.Uncontinuable
+                    SetConsoleColor(New Color(UncontKernelErrorColor))
+                Case ColTypes.HostName
+                    SetConsoleColor(New Color(HostNameShellColor))
+                Case ColTypes.UserName
+                    SetConsoleColor(New Color(UserNameShellColor))
+                Case ColTypes.License
+                    SetConsoleColor(New Color(LicenseColor))
+                Case ColTypes.Gray
+                    If New Color(BackgroundColor).IsBright Then
+                        SetConsoleColor(New Color(NeutralTextColor))
+                    Else
+                        SetConsoleColor(New Color(ConsoleColors.Gray))
+                    End If
+                Case ColTypes.ListValue
+                    SetConsoleColor(New Color(ListValueColor))
+                Case ColTypes.ListEntry
+                    SetConsoleColor(New Color(ListEntryColor))
+                Case ColTypes.Stage
+                    SetConsoleColor(New Color(StageColor))
+                Case ColTypes.Error
+                    SetConsoleColor(New Color(ErrorColor))
+                Case ColTypes.Warning
+                    SetConsoleColor(New Color(WarningColor))
+                Case ColTypes.Option
+                    SetConsoleColor(New Color(OptionColor))
+                Case ColTypes.Banner
+                    SetConsoleColor(New Color(BannerColor))
+                Case ColTypes.NotificationTitle
+                    SetConsoleColor(New Color(NotificationTitleColor))
+                Case ColTypes.NotificationDescription
+                    SetConsoleColor(New Color(NotificationDescriptionColor))
+                Case ColTypes.NotificationProgress
+                    SetConsoleColor(New Color(NotificationProgressColor))
+                Case ColTypes.NotificationFailure
+                    SetConsoleColor(New Color(NotificationFailureColor))
+                Case ColTypes.Question
+                    SetConsoleColor(New Color(QuestionColor))
+                Case ColTypes.Success
+                    SetConsoleColor(New Color(SuccessColor))
+                Case ColTypes.UserDollarSign
+                    SetConsoleColor(New Color(UserDollarColor))
+                Case ColTypes.Tip
+                    SetConsoleColor(New Color(TipColor))
+                Case ColTypes.SeparatorText
+                    SetConsoleColor(New Color(SeparatorTextColor))
+                Case ColTypes.Separator
+                    SetConsoleColor(New Color(SeparatorColor))
+                Case ColTypes.ListTitle
+                    SetConsoleColor(New Color(ListTitleColor))
+                Case ColTypes.DevelopmentWarning
+                    SetConsoleColor(New Color(DevelopmentWarningColor))
+                Case ColTypes.StageTime
+                    SetConsoleColor(New Color(StageTimeColor))
+                Case ColTypes.Progress
+                    SetConsoleColor(New Color(ProgressColor))
+                Case ColTypes.BackOption
+                    SetConsoleColor(New Color(BackOptionColor))
+                Case Else
+                    Exit Select
+            End Select
+            SetConsoleColor(New Color(BackgroundColor), True)
+        End If
+        Return True
     End Function
 
     ''' <summary>

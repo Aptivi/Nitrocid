@@ -13,5 +13,20 @@
     "ErrorColor": "7",
     "WarningColor": "15",
     "OptionColor": "15",
-    "BannerColor": "15"
+    "BannerColor": "15",
+    "NotificationTitleColor": "15",
+    "NotificationDescriptionColor": "15",
+    "NotificationProgressColor": "11",
+    "NotificationFailureColor": "15",
+    "QuestionColor": "15",
+    "SuccessColor": "15",
+    "UserDollarColor": "7",
+    "TipColor": "7",
+    "SeparatorTextColor": "15",
+    "SeparatorColor": "7",
+    "ListTitleColor": "15",
+    "DevelopmentWarningColor": "15",
+    "StageTimeColor": "7",
+    "ProgressColor": "15",
+    "BackOptionColor": "15"
 }

@@ -33,7 +33,7 @@ Class PingCommand
         End If
         For Each PingedAddress As String In ListArgs.Skip(StepsToSkip)
             If PingedAddress <> "" Then
-                WriteSeparator(PingedAddress, True, ColTypes.Stage)
+                WriteSeparator(PingedAddress, True)
                 For CurrentTime As Integer = 1 To PingTimes
                     Try
                         Dim PingReplied As PingReply = PingAddress(PingedAddress)

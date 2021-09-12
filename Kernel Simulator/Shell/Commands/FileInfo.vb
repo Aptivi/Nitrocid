@@ -26,7 +26,7 @@ Class FileInfoCommand
         For Each FileName As String In ListArgs
             Dim FilePath As String = NeutralizePath(FileName)
             Wdbg(DebugLevel.I, "Neutralized file path: {0} ({1})", FilePath, File.Exists(FilePath))
-            WriteSeparator(FileName, True, ColTypes.Stage)
+            WriteSeparator(FileName, True)
             If File.Exists(FilePath) Then
                 Dim FileInfo As New FileInfo(FilePath)
                 W(DoTranslation("Name: {0}"), True, ColTypes.Neutral, FileInfo.Name)

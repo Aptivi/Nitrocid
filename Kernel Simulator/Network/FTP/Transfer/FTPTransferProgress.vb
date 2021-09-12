@@ -38,7 +38,7 @@ Public Module FTPTransferProgress
             ConsoleOriginalPosition_LEFT = Console.CursorLeft
             ConsoleOriginalPosition_TOP = Console.CursorTop
             If progressFlag = True And Percentage.Progress <> 100 Then
-                W(" {0}% (ETA: {1}d {2}:{3}:{4} @ {5})", False, ColTypes.Neutral, FormatNumber(Percentage.Progress, 1), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString)
+                W(" {0}% (ETA: {1}d {2}:{3}:{4} @ {5})", False, ColTypes.Progress, FormatNumber(Percentage.Progress, 1), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString)
                 ClearLineToRight()
             End If
             Console.SetCursorPosition(ConsoleOriginalPosition_LEFT, ConsoleOriginalPosition_TOP)
@@ -57,7 +57,7 @@ Public Module FTPTransferProgress
             ConsoleOriginalPosition_TOP = Console.CursorTop
             If progressFlag = True And Percentage.Progress <> 100 Then
                 W("- [{0}/{1}] {2}: ", False, ColTypes.ListEntry, Percentage.FileIndex + 1, Percentage.FileCount, Percentage.RemotePath)
-                W("{0}% (ETA: {1}d {2}:{3}:{4} @ {5})", False, ColTypes.ListValue, FormatNumber(Percentage.Progress, 1), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString)
+                W("{0}% (ETA: {1}d {2}:{3}:{4} @ {5})", False, ColTypes.Progress, FormatNumber(Percentage.Progress, 1), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString)
                 ClearLineToRight()
             End If
             Console.SetCursorPosition(ConsoleOriginalPosition_LEFT, ConsoleOriginalPosition_TOP)

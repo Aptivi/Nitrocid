@@ -83,7 +83,7 @@ Public Module Kernel
                 CheckErrored()
 
                 'Stage 1: Initialize the system
-                W(DoTranslation("Internal initialization finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
+                W(DoTranslation("Internal initialization finished in") + " {0}" + vbNewLine, True, ColTypes.StageTime, StageTimer.Elapsed) : StageTimer.Restart()
                 WriteSeparator(DoTranslation("- Stage 1: System initialization"), False, ColTypes.Stage)
                 Wdbg(DebugLevel.I, "- Kernel Phase 1: Initializing system")
                 StartRDebugThread()
@@ -102,14 +102,14 @@ Public Module Kernel
 #End If
 
                 'Phase 2: Probe hardware
-                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
+                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.StageTime, StageTimer.Elapsed) : StageTimer.Restart()
                 WriteSeparator(DoTranslation("- Stage 2: Hardware detection"), False, ColTypes.Stage)
                 Wdbg(DebugLevel.I, "- Kernel Phase 2: Probing hardware")
                 StartProbing()
                 CheckErrored()
 
                 'Phase 3: Parse Mods and Screensavers
-                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
+                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.StageTime, StageTimer.Elapsed) : StageTimer.Restart()
                 WriteSeparator(DoTranslation("- Stage 3: Mods and screensavers detection"), False, ColTypes.Stage)
                 Wdbg(DebugLevel.I, "- Kernel Phase 3: Parse mods and screensavers")
                 Wdbg(DebugLevel.I, "Safe mode flag is set to {0}", SafeMode)
@@ -121,7 +121,7 @@ Public Module Kernel
                 EventManager.RaiseStartKernel()
 
                 'Phase 4: Log-in
-                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Restart()
+                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.StageTime, StageTimer.Elapsed) : StageTimer.Restart()
                 WriteSeparator(DoTranslation("- Stage 4: Log in"), False, ColTypes.Stage)
                 Wdbg(DebugLevel.I, "- Kernel Phase 4: Log in")
                 InitializeSystemAccount()
@@ -129,7 +129,7 @@ Public Module Kernel
                 LoadPermissions()
 
                 'Reset console state and stop stage timer
-                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.Neutral, StageTimer.Elapsed) : StageTimer.Reset()
+                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.StageTime, StageTimer.Elapsed) : StageTimer.Reset()
                 LoginFlag = True
                 If EnteredArguments IsNot Nothing Then
                     If EnteredArguments.Contains("quiet") Then

@@ -71,7 +71,7 @@ Class Mail_SendEncCommand
             W(DoTranslation("Sending message..."), True, ColTypes.Neutral)
             If MailSendEncryptedMessage(Receiver, Subject, Body.ToMessageBody) Then
                 Wdbg(DebugLevel.I, "Message sent.")
-                W(DoTranslation("Message sent."), True, ColTypes.Neutral)
+                W(DoTranslation("Message sent."), True, ColTypes.Success)
             Else
                 Wdbg(DebugLevel.E, "See debug output to find what's wrong.")
                 W(DoTranslation("Error sending message."), True, ColTypes.Error)

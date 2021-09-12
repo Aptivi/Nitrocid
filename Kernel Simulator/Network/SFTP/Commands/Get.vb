@@ -24,7 +24,7 @@ Class SFTP_GetCommand
         W(DoTranslation("Downloading file {0}..."), False, ColTypes.Neutral, ListArgs(0))
         If SFTPGetFile(ListArgs(0)) Then
             Console.WriteLine()
-            W(DoTranslation("Downloaded file {0}."), True, ColTypes.Neutral, ListArgs(0))
+            W(DoTranslation("Downloaded file {0}."), True, ColTypes.Success, ListArgs(0))
         Else
             Console.WriteLine()
             W(DoTranslation("Download failed for file {0}."), True, ColTypes.Error, ListArgs(0))

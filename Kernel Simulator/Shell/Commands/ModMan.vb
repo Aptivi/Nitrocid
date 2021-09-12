@@ -53,20 +53,20 @@ Class ModManCommand
                 Case "info"
                     For Each script As String In scripts.Keys
                         If scripts(script).ModFilePath = TargetModPath Then
-                            WriteSeparator(script, True, ColTypes.Stage)
+                            WriteSeparator(script, True)
                             W("- " + DoTranslation("Mod name:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModName, True, ColTypes.ListValue)
                             W("- " + DoTranslation("Mod file name:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModFileName, True, ColTypes.ListValue)
                             W("- " + DoTranslation("Mod file path:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModFilePath, True, ColTypes.ListValue)
                             W("- " + DoTranslation("Mod version:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModVersion, True, ColTypes.ListValue)
                             W("- " + DoTranslation("Mod parts:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts.Count, True, ColTypes.ListValue)
                             For Each ModPart As String In scripts(script).ModParts.Keys
-                                WriteSeparator("-- {0}", False, ColTypes.Stage, ModPart)
+                                WriteSeparator("-- {0}", False, ModPart)
                                 W("- " + DoTranslation("Part version:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Version, True, ColTypes.ListValue)
                                 W("- " + DoTranslation("Part file name:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartFileName, True, ColTypes.ListValue)
                                 W("- " + DoTranslation("Part file path:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartFilePath, True, ColTypes.ListValue)
                                 If scripts(script).ModParts(ModPart).PartScript.Commands IsNot Nothing Then
                                     For Each ModCommand As String In scripts(script).ModParts(ModPart).PartScript.Commands.Keys
-                                        WriteSeparator("--- {0}", False, ColTypes.Stage, ModCommand)
+                                        WriteSeparator("--- {0}", False, ModCommand)
                                         W("- " + DoTranslation("Command name:") + " ", False, ColTypes.ListEntry) : W(ModCommand, True, ColTypes.ListValue)
                                         W("- " + DoTranslation("Command definition:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).HelpDefinition, True, ColTypes.ListValue)
                                         W("- " + DoTranslation("Command usage:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).HelpUsage, True, ColTypes.ListValue)
@@ -88,7 +88,7 @@ Class ModManCommand
                     StartMod(TargetModPath)
                 Case "list"
                     For Each script As String In scripts.Keys
-                        WriteSeparator(script, True, ColTypes.Stage)
+                        WriteSeparator(script, True)
                         W("- " + DoTranslation("Mod name:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModName, True, ColTypes.ListValue)
                         W("- " + DoTranslation("Mod file name:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModFileName, True, ColTypes.ListValue)
                         W("- " + DoTranslation("Mod file path:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModFilePath, True, ColTypes.ListValue)

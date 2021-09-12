@@ -13,5 +13,20 @@
     "ErrorColor": "7",
     "WarningColor": "7",
     "OptionColor": "7",
-    "BannerColor": "7"
+    "BannerColor": "7",
+    "NotificationTitleColor": "7",
+    "NotificationDescriptionColor": "7",
+    "NotificationProgressColor": "7",
+    "NotificationFailureColor": "7",
+    "QuestionColor": "7",
+    "SuccessColor": "7",
+    "UserDollarColor": "7",
+    "TipColor": "7",
+    "SeparatorTextColor": "7",
+    "SeparatorColor": "7",
+    "ListTitleColor": "7",
+    "DevelopmentWarningColor": "7",
+    "StageTimeColor": "7",
+    "ProgressColor": "7",
+    "BackOptionColor": "7"
 }

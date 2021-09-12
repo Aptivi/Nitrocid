@@ -22,7 +22,8 @@ Class Mail_ExitCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
         ExitRequested = True
-        W(DoTranslation("Do you want to keep connected?") + " <y/n> ", False, ColTypes.Input)
+        W(DoTranslation("Do you want to keep connected?") + " <y/n> ", False, ColTypes.Question)
+        SetConsoleColor(New Color(InputColor))
         Dim Answer As Char = Console.ReadKey.KeyChar
         Console.WriteLine()
         If Answer = "y" Then

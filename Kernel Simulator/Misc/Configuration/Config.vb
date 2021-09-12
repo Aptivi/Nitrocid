@@ -108,7 +108,22 @@ Public Module Config
                     {"Error Text Color", If(New Color(ErrorColor).Type = ColorType.TrueColor, ErrorColor.EncloseByDoubleQuotes, ErrorColor)},
                     {"Warning Text Color", If(New Color(WarningColor).Type = ColorType.TrueColor, WarningColor.EncloseByDoubleQuotes, WarningColor)},
                     {"Option Color", If(New Color(OptionColor).Type = ColorType.TrueColor, OptionColor.EncloseByDoubleQuotes, OptionColor)},
-                    {"Banner Color", If(New Color(BannerColor).Type = ColorType.TrueColor, BannerColor.EncloseByDoubleQuotes, BannerColor)}
+                    {"Banner Color", If(New Color(BannerColor).Type = ColorType.TrueColor, BannerColor.EncloseByDoubleQuotes, BannerColor)},
+                    {"Notification Title Color", If(New Color(NotificationTitleColor).Type = ColorType.TrueColor, NotificationTitleColor.EncloseByDoubleQuotes, NotificationTitleColor)},
+                    {"Notification Description Color", If(New Color(NotificationDescriptionColor).Type = ColorType.TrueColor, NotificationDescriptionColor.EncloseByDoubleQuotes, NotificationDescriptionColor)},
+                    {"Notification Progress Color", If(New Color(NotificationProgressColor).Type = ColorType.TrueColor, NotificationProgressColor.EncloseByDoubleQuotes, NotificationProgressColor)},
+                    {"Notification Failure Color", If(New Color(NotificationFailureColor).Type = ColorType.TrueColor, NotificationFailureColor.EncloseByDoubleQuotes, NotificationFailureColor)},
+                    {"Question Color", If(New Color(QuestionColor).Type = ColorType.TrueColor, QuestionColor.EncloseByDoubleQuotes, QuestionColor)},
+                    {"Success Color", If(New Color(SuccessColor).Type = ColorType.TrueColor, SuccessColor.EncloseByDoubleQuotes, SuccessColor)},
+                    {"User Dollar Color", If(New Color(UserDollarColor).Type = ColorType.TrueColor, UserDollarColor.EncloseByDoubleQuotes, UserDollarColor)},
+                    {"Tip Color", If(New Color(TipColor).Type = ColorType.TrueColor, TipColor.EncloseByDoubleQuotes, TipColor)},
+                    {"Separator Text Color", If(New Color(SeparatorTextColor).Type = ColorType.TrueColor, SeparatorTextColor.EncloseByDoubleQuotes, SeparatorTextColor)},
+                    {"Separator Color", If(New Color(SeparatorColor).Type = ColorType.TrueColor, SeparatorColor.EncloseByDoubleQuotes, SeparatorColor)},
+                    {"List Title Color", If(New Color(ListTitleColor).Type = ColorType.TrueColor, ListTitleColor.EncloseByDoubleQuotes, ListTitleColor)},
+                    {"Development Warning Color", If(New Color(DevelopmentWarningColor).Type = ColorType.TrueColor, DevelopmentWarningColor.EncloseByDoubleQuotes, DevelopmentWarningColor)},
+                    {"Stage Time Color", If(New Color(StageTimeColor).Type = ColorType.TrueColor, StageTimeColor.EncloseByDoubleQuotes, StageTimeColor)},
+                    {"Progress Color", If(New Color(ProgressColor).Type = ColorType.TrueColor, ProgressColor.EncloseByDoubleQuotes, ProgressColor)},
+                    {"Back Option Color", If(New Color(BackOptionColor).Type = ColorType.TrueColor, BackOptionColor.EncloseByDoubleQuotes, BackOptionColor)}
             }
             ConfigurationObject.Add("Colors", ColorConfig)
 
@@ -471,6 +486,21 @@ Public Module Config
                 WarningColor = New Color(If(ConfigToken("Colors")?("Warning Text Color"), ConsoleColors.Yellow)).PlainSequence
                 OptionColor = New Color(If(ConfigToken("Colors")?("Option Color"), ConsoleColors.DarkYellow)).PlainSequence
                 BannerColor = New Color(If(ConfigToken("Colors")?("Banner Color"), ConsoleColors.Green)).PlainSequence
+                NotificationTitleColor = New Color(If(ConfigToken("Colors")?("Notification Title Color"), ConsoleColors.White)).PlainSequence
+                NotificationDescriptionColor = New Color(If(ConfigToken("Colors")?("Notification Description Color"), ConsoleColors.Gray)).PlainSequence
+                NotificationProgressColor = New Color(If(ConfigToken("Colors")?("Notification Progress Color"), ConsoleColors.DarkYellow)).PlainSequence
+                NotificationFailureColor = New Color(If(ConfigToken("Colors")?("Notification Failure Color"), ConsoleColors.Red)).PlainSequence
+                QuestionColor = New Color(If(ConfigToken("Colors")?("Question Color"), ConsoleColors.Yellow)).PlainSequence
+                SuccessColor = New Color(If(ConfigToken("Colors")?("Success Color"), ConsoleColors.Green)).PlainSequence
+                UserDollarColor = New Color(If(ConfigToken("Colors")?("User Dollar Color"), ConsoleColors.Gray)).PlainSequence
+                TipColor = New Color(If(ConfigToken("Colors")?("Tip Color"), ConsoleColors.Gray)).PlainSequence
+                SeparatorTextColor = New Color(If(ConfigToken("Colors")?("Separator Text Color"), ConsoleColors.White)).PlainSequence
+                SeparatorColor = New Color(If(ConfigToken("Colors")?("Separator Color"), ConsoleColors.Gray)).PlainSequence
+                ListTitleColor = New Color(If(ConfigToken("Colors")?("List Title Color"), ConsoleColors.White)).PlainSequence
+                DevelopmentWarningColor = New Color(If(ConfigToken("Colors")?("Development Warning Color"), ConsoleColors.Yellow)).PlainSequence
+                StageTimeColor = New Color(If(ConfigToken("Colors")?("Stage Time Color"), ConsoleColors.Gray)).PlainSequence
+                ProgressColor = New Color(If(ConfigToken("Colors")?("Progress Color"), ConsoleColors.DarkYellow)).PlainSequence
+                BackOptionColor = New Color(If(ConfigToken("Colors")?("Back Option Color"), ConsoleColors.DarkRed)).PlainSequence
                 LoadBack()
             End If
 

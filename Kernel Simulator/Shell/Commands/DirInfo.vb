@@ -26,7 +26,7 @@ Class DirInfoCommand
         For Each Dir As String In ListArgs
             Dim DirectoryPath As String = NeutralizePath(Dir)
             Wdbg(DebugLevel.I, "Neutralized directory path: {0} ({1})", DirectoryPath, Directory.Exists(DirectoryPath))
-            WriteSeparator(Dir, True, ColTypes.Stage)
+            WriteSeparator(Dir, True)
             If Directory.Exists(DirectoryPath) Then
                 Dim DirInfo As New DirectoryInfo(DirectoryPath)
                 W(DoTranslation("Name: {0}"), True, ColTypes.Neutral, DirInfo.Name)

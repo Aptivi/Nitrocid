@@ -58,7 +58,7 @@ Public Module SSH
         Dim Answer As Integer
         While True
             'Ask for authentication method
-            W(DoTranslation("How do you want to authenticate?") + vbNewLine, True, ColTypes.Neutral)
+            W(DoTranslation("How do you want to authenticate?") + vbNewLine, True, ColTypes.Question)
             W("1) " + DoTranslation("Private key file"), True, ColTypes.Option)
             W("2) " + DoTranslation("Password") + vbNewLine, True, ColTypes.Option)
             W(">> ", False, ColTypes.Input)

@@ -74,7 +74,7 @@ Module TestShell
         SwitchCancellationHandler(ShellCommandType.TestShell)
         StageTimer.Stop()
         Console.WriteLine()
-        WriteSeparator(DoTranslation("Welcome to Test Shell!"), True, ColTypes.Stage)
+        WriteSeparator(DoTranslation("Welcome to Test Shell!"), True)
 
         While Not Test_ExitFlag
             If DefConsoleOut IsNot Nothing Then

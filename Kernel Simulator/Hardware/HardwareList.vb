@@ -85,7 +85,7 @@ Public Module HardwareList
 
     Private Sub ListHardwareProperties(Field As FieldInfo)
         Wdbg(DebugLevel.I, "Got hardware field {0}.", Field.Name)
-        WriteSeparator(Field.Name, True, ColTypes.Stage)
+        WriteSeparator(Field.Name, True)
         Dim FieldValue As Object = Field.GetValue(HardwareInfo.Hardware)
         If FieldValue IsNot Nothing Then
             Dim FieldValueDict As IDictionary = TryCast(FieldValue, IDictionary)

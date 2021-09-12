@@ -117,7 +117,7 @@ Public Module Forecast
             WeatherInfo = GetWeatherInfo(CityID, APIKey, PreferredUnit)
         End If
         Wdbg(DebugLevel.I, "City name: {0}, City ID: {1}", WeatherInfo.CityName, WeatherInfo.CityID)
-        WriteSeparator(DoTranslation("-- Weather info for {0} --"), False, ColTypes.Stage, WeatherInfo.CityName)
+        WriteSeparator(DoTranslation("-- Weather info for {0} --"), False, WeatherInfo.CityName)
         W(DoTranslation("Weather: {0}"), True, ColTypes.Neutral, WeatherInfo.Weather)
         If WeatherInfo.TemperatureMeasurement = UnitMeasurement.Metric Then
             WeatherSpecifier += "C"

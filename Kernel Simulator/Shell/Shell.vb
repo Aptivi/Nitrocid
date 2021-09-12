@@ -235,17 +235,17 @@ Public Module Shell
             ParsedPromptStyle.ConvertVTSequences
             W(ParsedPromptStyle, False, ColTypes.Gray)
             If HasPermission(CurrentUser, PermissionType.Administrator) = True Then
-                W(" # ", False, ColTypes.Gray)
+                W(" # ", False, ColTypes.UserDollarSign)
             Else
-                W(" $ ", False, ColTypes.Gray)
+                W(" $ ", False, ColTypes.UserDollarSign)
             End If
         ElseIf ShellPromptStyle = "" And Not maintenance Then
             If HasPermission(CurrentUser, PermissionType.Administrator) = True Then
-                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, CurrentUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HName) : W("]{0} # ", False, ColTypes.Gray, CurrDir)
+                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, CurrentUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HName) : W("]{0}", False, ColTypes.Gray, CurrDir) : W(" # ", False, ColTypes.UserDollarSign)
             ElseIf maintenance Then
                 W(DoTranslation("Maintenance Mode") + "> ", False, ColTypes.Gray)
             Else
-                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, CurrentUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HName) : W("]{0} $ ", False, ColTypes.Gray, CurrDir)
+                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, CurrentUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HName) : W("]{0}", False, ColTypes.Gray, CurrDir) : W(" $ ", False, ColTypes.Gray, CurrDir)
             End If
         Else
             W(DoTranslation("Maintenance Mode") + "> ", False, ColTypes.Gray)

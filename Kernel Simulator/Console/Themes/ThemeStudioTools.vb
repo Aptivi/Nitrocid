@@ -81,6 +81,66 @@ Module ThemeStudioTools
     ''' Selected banner color for new theme
     ''' </summary>
     Friend SelectedBannerColor As New Color(BannerColor)
+    ''' <summary>
+    ''' Selected error color for new theme
+    ''' </summary>
+    Friend SelectedNotificationTitleColor As New Color(ErrorColor)
+    ''' <summary>
+    ''' Selected warning color for new theme
+    ''' </summary>
+    Friend SelectedNotificationDescriptionColor As New Color(WarningColor)
+    ''' <summary>
+    ''' Selected option color for new theme
+    ''' </summary>
+    Friend SelectedNotificationProgressColor As New Color(OptionColor)
+    ''' <summary>
+    ''' Selected banner color for new theme
+    ''' </summary>
+    Friend SelectedNotificationFailureColor As New Color(BannerColor)
+    ''' <summary>
+    ''' Selected error color for new theme
+    ''' </summary>
+    Friend SelectedQuestionColor As New Color(ErrorColor)
+    ''' <summary>
+    ''' Selected warning color for new theme
+    ''' </summary>
+    Friend SelectedSuccessColor As New Color(WarningColor)
+    ''' <summary>
+    ''' Selected option color for new theme
+    ''' </summary>
+    Friend SelectedUserDollarColor As New Color(OptionColor)
+    ''' <summary>
+    ''' Selected banner color for new theme
+    ''' </summary>
+    Friend SelectedTipColor As New Color(BannerColor)
+    ''' <summary>
+    ''' Selected error color for new theme
+    ''' </summary>
+    Friend SelectedSeparatorTextColor As New Color(ErrorColor)
+    ''' <summary>
+    ''' Selected warning color for new theme
+    ''' </summary>
+    Friend SelectedSeparatorColor As New Color(WarningColor)
+    ''' <summary>
+    ''' Selected option color for new theme
+    ''' </summary>
+    Friend SelectedListTitleColor As New Color(OptionColor)
+    ''' <summary>
+    ''' Selected banner color for new theme
+    ''' </summary>
+    Friend SelectedDevelopmentWarningColor As New Color(BannerColor)
+    ''' <summary>
+    ''' Selected warning color for new theme
+    ''' </summary>
+    Friend SelectedStageTimeColor As New Color(WarningColor)
+    ''' <summary>
+    ''' Selected option color for new theme
+    ''' </summary>
+    Friend SelectedProgressColor As New Color(OptionColor)
+    ''' <summary>
+    ''' Selected banner color for new theme
+    ''' </summary>
+    Friend SelectedBackOptionColor As New Color(BannerColor)
 
     ''' <summary>
     ''' Saves theme to current directory under "<paramref name="Theme"/>.json."
@@ -136,6 +196,21 @@ Module ThemeStudioTools
         SelectedWarningColor = ThemeInfo.ThemeWarningColor
         SelectedOptionColor = ThemeInfo.ThemeOptionColor
         SelectedBannerColor = ThemeInfo.ThemeBannerColor
+        SelectedNotificationTitleColor = ThemeInfo.ThemeNotificationTitleColor
+        SelectedNotificationDescriptionColor = ThemeInfo.ThemeNotificationDescriptionColor
+        SelectedNotificationProgressColor = ThemeInfo.ThemeNotificationProgressColor
+        SelectedNotificationFailureColor = ThemeInfo.ThemeNotificationFailureColor
+        SelectedQuestionColor = ThemeInfo.ThemeQuestionColor
+        SelectedSuccessColor = ThemeInfo.ThemeSuccessColor
+        SelectedUserDollarColor = ThemeInfo.ThemeUserDollarColor
+        SelectedTipColor = ThemeInfo.ThemeTipColor
+        SelectedSeparatorTextColor = ThemeInfo.ThemeSeparatorTextColor
+        SelectedSeparatorColor = ThemeInfo.ThemeSeparatorColor
+        SelectedListTitleColor = ThemeInfo.ThemeListTitleColor
+        SelectedDevelopmentWarningColor = ThemeInfo.ThemeDevelopmentWarningColor
+        SelectedStageTimeColor = ThemeInfo.ThemeStageTimeColor
+        SelectedProgressColor = ThemeInfo.ThemeProgressColor
+        SelectedBackOptionColor = ThemeInfo.ThemeBackOptionColor
     End Sub
 
     ''' <summary>
@@ -162,6 +237,21 @@ Module ThemeStudioTools
         SelectedWarningColor = ThemeInfo.ThemeWarningColor
         SelectedOptionColor = ThemeInfo.ThemeOptionColor
         SelectedBannerColor = ThemeInfo.ThemeBannerColor
+        SelectedNotificationTitleColor = ThemeInfo.ThemeNotificationTitleColor
+        SelectedNotificationDescriptionColor = ThemeInfo.ThemeNotificationDescriptionColor
+        SelectedNotificationProgressColor = ThemeInfo.ThemeNotificationProgressColor
+        SelectedNotificationFailureColor = ThemeInfo.ThemeNotificationFailureColor
+        SelectedQuestionColor = ThemeInfo.ThemeQuestionColor
+        SelectedSuccessColor = ThemeInfo.ThemeSuccessColor
+        SelectedUserDollarColor = ThemeInfo.ThemeUserDollarColor
+        SelectedTipColor = ThemeInfo.ThemeTipColor
+        SelectedSeparatorTextColor = ThemeInfo.ThemeSeparatorTextColor
+        SelectedSeparatorColor = ThemeInfo.ThemeSeparatorColor
+        SelectedListTitleColor = ThemeInfo.ThemeListTitleColor
+        SelectedDevelopmentWarningColor = ThemeInfo.ThemeDevelopmentWarningColor
+        SelectedStageTimeColor = ThemeInfo.ThemeStageTimeColor
+        SelectedProgressColor = ThemeInfo.ThemeProgressColor
+        SelectedBackOptionColor = ThemeInfo.ThemeBackOptionColor
     End Sub
 
     ''' <summary>
@@ -183,7 +273,22 @@ Module ThemeStudioTools
                            New JProperty("ErrorColor", SelectedErrorColor.PlainSequence),
                            New JProperty("WarningColor", SelectedWarningColor.PlainSequence),
                            New JProperty("OptionColor", SelectedOptionColor.PlainSequence),
-                           New JProperty("BannerColor", SelectedBannerColor.PlainSequence))
+                           New JProperty("BannerColor", SelectedBannerColor.PlainSequence),
+                           New JProperty("NotificationTitleColor", SelectedNotificationTitleColor.PlainSequence),
+                           New JProperty("NotificationDescriptionColor", SelectedNotificationDescriptionColor.PlainSequence),
+                           New JProperty("NotificationProgressColor", SelectedNotificationProgressColor.PlainSequence),
+                           New JProperty("NotificationFailureColor", SelectedNotificationFailureColor.PlainSequence),
+                           New JProperty("QuestionColor", SelectedQuestionColor.PlainSequence),
+                           New JProperty("SuccessColor", SelectedSuccessColor.PlainSequence),
+                           New JProperty("UserDollarColor", SelectedUserDollarColor.PlainSequence),
+                           New JProperty("TipColor", SelectedTipColor.PlainSequence),
+                           New JProperty("SeparatorTextColor", SelectedSeparatorTextColor.PlainSequence),
+                           New JProperty("SeparatorColor", SelectedSeparatorColor.PlainSequence),
+                           New JProperty("ListTitleColor", SelectedListTitleColor.PlainSequence),
+                           New JProperty("DevelopmentWarningColor", SelectedDevelopmentWarningColor.PlainSequence),
+                           New JProperty("StageTimeColor", SelectedStageTimeColor.PlainSequence),
+                           New JProperty("ProgressColor", SelectedProgressColor.PlainSequence),
+                           New JProperty("BackOptionColor", SelectedBackOptionColor.PlainSequence))
     End Function
 
     ''' <summary>
@@ -253,6 +358,66 @@ Module ThemeStudioTools
         'Banner color
         W("*) " + DoTranslation("Banner color") + ": ", False, ColTypes.Option)
         WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedBannerColor)
+
+        'Notification title color
+        W("*) " + DoTranslation("Notification title color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedNotificationTitleColor)
+
+        'Notification description color
+        W("*) " + DoTranslation("Notification description color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedNotificationDescriptionColor)
+
+        'Notification progress color
+        W("*) " + DoTranslation("Notification progress color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedNotificationProgressColor)
+
+        'Notification failure color
+        W("*) " + DoTranslation("Notification failure color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedNotificationFailureColor)
+
+        'Question color
+        W("*) " + DoTranslation("Question color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedQuestionColor)
+
+        'Success color
+        W("*) " + DoTranslation("Success color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedSuccessColor)
+
+        'User dollar color
+        W("*) " + DoTranslation("User dollar color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedUserDollarColor)
+
+        'Tip color
+        W("*) " + DoTranslation("Tip color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedTipColor)
+
+        'Separator text color
+        W("*) " + DoTranslation("Separator text color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedSeparatorTextColor)
+
+        'Separator color
+        W("*) " + DoTranslation("Separator color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedSeparatorColor)
+
+        'List title color
+        W("*) " + DoTranslation("List title color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedListTitleColor)
+
+        'Development warning color
+        W("*) " + DoTranslation("Development warning color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedDevelopmentWarningColor)
+
+        'Stage time color
+        W("*) " + DoTranslation("Stage time color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedStageTimeColor)
+
+        'Progress color
+        W("*) " + DoTranslation("Progress color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedProgressColor)
+
+        'Back option color
+        W("*) " + DoTranslation("Back option color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedBackOptionColor)
 
         'Pause until a key is pressed
         W(vbNewLine + DoTranslation("Press any key to go back."), True, ColTypes.Neutral)

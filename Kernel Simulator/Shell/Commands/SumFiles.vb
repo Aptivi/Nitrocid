@@ -33,7 +33,7 @@ Class SumFilesCommand
         If Directory.Exists(folder) Then
             For Each file As String In Directory.EnumerateFiles(folder, "*", SearchOption.TopDirectoryOnly)
                 file = NeutralizePath(file)
-                WriteSeparator(file, True, ColTypes.Stage)
+                WriteSeparator(file, True)
                 Dim AlgorithmEnum As Algorithms
                 If ListArgs(0) = "all" Then
                     For Each Algorithm As String In [Enum].GetNames(GetType(Algorithms))

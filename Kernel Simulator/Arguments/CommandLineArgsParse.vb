@@ -103,7 +103,7 @@ Module CommandLineArgsParse
                                 W("- debug: ", False, ColTypes.ListEntry) : W(AvailableCMDLineArgs("debug").GetTranslatedHelpEntry, True, ColTypes.ListValue)
                                 W("- args: ", False, ColTypes.ListEntry) : W(AvailableCMDLineArgs("args").GetTranslatedHelpEntry, True, ColTypes.ListValue)
                                 W("- reset: ", False, ColTypes.ListEntry) : W(AvailableCMDLineArgs("reset").GetTranslatedHelpEntry, True, ColTypes.ListValue)
-                                W(DoTranslation("* Press any key to start the kernel or ESC to exit."), True, ColTypes.Neutral)
+                                W(DoTranslation("* Press any key to start the kernel or ESC to exit."), True, ColTypes.Tip)
                                 If Console.ReadKey(True).Key = ConsoleKey.Escape Then
                                     Environment.Exit(0)
                                 End If

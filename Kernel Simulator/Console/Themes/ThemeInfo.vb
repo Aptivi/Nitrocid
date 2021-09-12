@@ -81,6 +81,66 @@ Public Class ThemeInfo
     ''' Banner color set by theme
     ''' </summary>
     Public ReadOnly Property ThemeBannerColor As Color
+    ''' <summary>
+    ''' Input color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeNotificationTitleColor As Color
+    ''' <summary>
+    ''' License color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeNotificationDescriptionColor As Color
+    ''' <summary>
+    ''' Continuable kernel error color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeNotificationProgressColor As Color
+    ''' <summary>
+    ''' Uncontinuable kernel error color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeNotificationFailureColor As Color
+    ''' <summary>
+    ''' Host name color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeQuestionColor As Color
+    ''' <summary>
+    ''' User name color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeSuccessColor As Color
+    ''' <summary>
+    ''' Background color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeUserDollarColor As Color
+    ''' <summary>
+    ''' Neutral text color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeTipColor As Color
+    ''' <summary>
+    ''' List entry color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeSeparatorTextColor As Color
+    ''' <summary>
+    ''' List value color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeSeparatorColor As Color
+    ''' <summary>
+    ''' Stage color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeListTitleColor As Color
+    ''' <summary>
+    ''' General error color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeDevelopmentWarningColor As Color
+    ''' <summary>
+    ''' General warning color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeStageTimeColor As Color
+    ''' <summary>
+    ''' Option color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeProgressColor As Color
+    ''' <summary>
+    ''' Banner color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeBackOptionColor As Color
 
     ''' <summary>
     ''' Generates a new theme info from KS resources
@@ -103,6 +163,21 @@ Public Class ThemeInfo
         ThemeWarningColor = New Color(ThemeResourceJson.SelectToken("WarningColor").ToString)
         ThemeOptionColor = New Color(ThemeResourceJson.SelectToken("OptionColor").ToString)
         ThemeBannerColor = New Color(ThemeResourceJson.SelectToken("BannerColor").ToString)
+        ThemeNotificationTitleColor = New Color(ThemeResourceJson.SelectToken("NotificationTitleColor").ToString)
+        ThemeNotificationDescriptionColor = New Color(ThemeResourceJson.SelectToken("NotificationDescriptionColor").ToString)
+        ThemeNotificationProgressColor = New Color(ThemeResourceJson.SelectToken("NotificationProgressColor").ToString)
+        ThemeNotificationFailureColor = New Color(ThemeResourceJson.SelectToken("NotificationFailureColor").ToString)
+        ThemeQuestionColor = New Color(ThemeResourceJson.SelectToken("QuestionColor").ToString)
+        ThemeSuccessColor = New Color(ThemeResourceJson.SelectToken("SuccessColor").ToString)
+        ThemeUserDollarColor = New Color(ThemeResourceJson.SelectToken("UserDollarColor").ToString)
+        ThemeTipColor = New Color(ThemeResourceJson.SelectToken("TipColor").ToString)
+        ThemeSeparatorTextColor = New Color(ThemeResourceJson.SelectToken("SeparatorTextColor").ToString)
+        ThemeSeparatorColor = New Color(ThemeResourceJson.SelectToken("SeparatorColor").ToString)
+        ThemeListTitleColor = New Color(ThemeResourceJson.SelectToken("ListTitleColor").ToString)
+        ThemeDevelopmentWarningColor = New Color(ThemeResourceJson.SelectToken("DevelopmentWarningColor").ToString)
+        ThemeStageTimeColor = New Color(ThemeResourceJson.SelectToken("StageTimeColor").ToString)
+        ThemeProgressColor = New Color(ThemeResourceJson.SelectToken("ProgressColor").ToString)
+        ThemeBackOptionColor = New Color(ThemeResourceJson.SelectToken("BackOptionColor").ToString)
     End Sub
 
     ''' <summary>
@@ -126,6 +201,21 @@ Public Class ThemeInfo
         ThemeWarningColor = New Color(ThemeResourceJson.SelectToken("WarningColor").ToString)
         ThemeOptionColor = New Color(ThemeResourceJson.SelectToken("OptionColor").ToString)
         ThemeBannerColor = New Color(ThemeResourceJson.SelectToken("BannerColor").ToString)
+        ThemeNotificationTitleColor = New Color(ThemeResourceJson.SelectToken("NotificationTitleColor").ToString)
+        ThemeNotificationDescriptionColor = New Color(ThemeResourceJson.SelectToken("NotificationDescriptionColor").ToString)
+        ThemeNotificationProgressColor = New Color(ThemeResourceJson.SelectToken("NotificationProgressColor").ToString)
+        ThemeNotificationFailureColor = New Color(ThemeResourceJson.SelectToken("NotificationFailureColor").ToString)
+        ThemeQuestionColor = New Color(ThemeResourceJson.SelectToken("QuestionColor").ToString)
+        ThemeSuccessColor = New Color(ThemeResourceJson.SelectToken("SuccessColor").ToString)
+        ThemeUserDollarColor = New Color(ThemeResourceJson.SelectToken("UserDollarColor").ToString)
+        ThemeTipColor = New Color(ThemeResourceJson.SelectToken("TipColor").ToString)
+        ThemeSeparatorTextColor = New Color(ThemeResourceJson.SelectToken("SeparatorTextColor").ToString)
+        ThemeSeparatorColor = New Color(ThemeResourceJson.SelectToken("SeparatorColor").ToString)
+        ThemeListTitleColor = New Color(ThemeResourceJson.SelectToken("ListTitleColor").ToString)
+        ThemeDevelopmentWarningColor = New Color(ThemeResourceJson.SelectToken("DevelopmentWarningColor").ToString)
+        ThemeStageTimeColor = New Color(ThemeResourceJson.SelectToken("StageTimeColor").ToString)
+        ThemeProgressColor = New Color(ThemeResourceJson.SelectToken("ProgressColor").ToString)
+        ThemeBackOptionColor = New Color(ThemeResourceJson.SelectToken("BackOptionColor").ToString)
     End Sub
 
 End Class
