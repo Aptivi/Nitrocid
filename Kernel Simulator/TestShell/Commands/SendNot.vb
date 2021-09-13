@@ -21,7 +21,7 @@ Class Test_SendNotCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
-        Dim Notif As New Notification(ListArgs(0), ListArgs(1), ListArgs(2), NotifType.Normal)
+        Dim Notif As New Notification(ListArgs(1), ListArgs(2), ListArgs(0), NotifType.Normal)
         NotifySend(Notif)
     End Sub
 
