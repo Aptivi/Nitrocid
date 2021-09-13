@@ -252,7 +252,7 @@ Public Module Translate
                 Wdbg(DebugLevel.I, "Translating kernel to {0}.", lang)
                 currentLang = lang
                 Dim Token As JToken = GetConfigCategory(ConfigCategory.General)
-                SetConfigValueAndWrite(ConfigCategory.General, Token, "Language", currentLang)
+                SetConfigValue(ConfigCategory.General, Token, "Language", currentLang)
                 Wdbg(DebugLevel.I, "Saved new language.")
 
                 'Update help list for translated help
@@ -287,7 +287,7 @@ Public Module Translate
                 Wdbg(DebugLevel.I, "Found. Changing culture...")
                 CurrentCult = Cult
                 Dim Token As JToken = GetConfigCategory(ConfigCategory.General)
-                SetConfigValueAndWrite(ConfigCategory.General, Token, "Culture", CurrentCult.Name)
+                SetConfigValue(ConfigCategory.General, Token, "Culture", CurrentCult.Name)
                 Wdbg(DebugLevel.I, "Saved new culture.")
                 Exit For
             End If
@@ -305,7 +305,7 @@ Public Module Translate
                 Wdbg(DebugLevel.I, "Found. Changing culture...")
                 CurrentCult = Cult
                 Dim Token As JToken = GetConfigCategory(ConfigCategory.General)
-                SetConfigValueAndWrite(ConfigCategory.General, Token, "Culture", CurrentCult.Name)
+                SetConfigValue(ConfigCategory.General, Token, "Culture", CurrentCult.Name)
                 Wdbg(DebugLevel.I, "Saved new culture.")
                 Exit For
             End If

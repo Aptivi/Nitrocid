@@ -197,7 +197,7 @@ Public Module Screensaver
             Wdbg(DebugLevel.I, "{0} is found. Setting it to default...", saver)
             defSaverName = saver
             Dim Token As JToken = GetConfigCategory(ConfigCategory.Screensaver)
-            SetConfigValueAndWrite(ConfigCategory.Screensaver, Token, "Screensaver", saver)
+            SetConfigValue(ConfigCategory.Screensaver, Token, "Screensaver", saver)
         Else
             Wdbg(DebugLevel.W, "{0} is not found.", saver)
             Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found in database. Check the name and try again."), saver)

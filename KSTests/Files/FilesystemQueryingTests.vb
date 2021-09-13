@@ -44,4 +44,25 @@ Imports KS
         Next
     End Sub
 
+    ''' <summary>
+    ''' Tests trying to parse the path name
+    ''' </summary>
+    <TestMethod()> <TestCategory("Querying")> Public Sub TestTryParsePath()
+        If IsOnWindows() Then
+            TryParsePath("C:\Windows").ShouldBeTrue
+            TryParsePath("C:\Windows<>").ShouldBeFalse
+        Else
+            TryParsePath("/usr/bin").ShouldBeTrue
+            TryParsePath("/usr/bin<>").ShouldBeFalse
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Tests trying to parse the file name
+    ''' </summary>
+    <TestMethod()> <TestCategory("Querying")> Public Sub TestTryParseFileName()
+        TryParseFileName("Windows").ShouldBeTrue
+        TryParseFileName("Windows/System32\").ShouldBeFalse
+    End Sub
+
 End Class

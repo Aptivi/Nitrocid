@@ -47,7 +47,7 @@ Imports Newtonsoft.Json.Linq
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestSetConfigValueAndWriteStandard()
         Dim Token As JToken = GetConfigCategory(ConfigCategory.General)
-        SetConfigValueAndWrite(ConfigCategory.General, Token, "Prompt for Arguments on Boot", True)
+        SetConfigValue(ConfigCategory.General, Token, "Prompt for Arguments on Boot", True)
         Token("Prompt for Arguments on Boot").ToObject(Of Boolean).ShouldBeTrue
     End Sub
 
@@ -56,7 +56,7 @@ Imports Newtonsoft.Json.Linq
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestSetConfigValueAndWriteWithSubcategory()
         Dim Token As JToken = GetConfigCategory(ConfigCategory.Screensaver, "Matrix")
-        SetConfigValueAndWrite(ConfigCategory.Screensaver, Token, "Delay in Milliseconds", 2)
+        SetConfigValue(ConfigCategory.Screensaver, Token, "Delay in Milliseconds", 2)
         Token("Delay in Milliseconds").ToObject(Of Integer).ShouldBe(2)
     End Sub
 

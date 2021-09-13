@@ -40,4 +40,13 @@ Imports KS
         SetSizeParseMode(0).ShouldBeTrue
     End Sub
 
+    ''' <summary>
+    ''' Tests saving the current directory value
+    ''' </summary>
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestSaveCurrDir()
+        CurrDir = GetOtherPath(OtherPathType.Home)
+        SaveCurrDir()
+        GetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Current Directory").ToString.ShouldBe(GetOtherPath(OtherPathType.Home))
+    End Sub
+
 End Class

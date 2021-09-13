@@ -303,7 +303,7 @@ Public Module ConfigTools
     ''' <param name="ConfigCategoryToken">Config category or sub-category token (You can get it from <see cref="GetConfigCategory(ConfigCategory, String)"/></param>
     ''' <param name="ConfigEntryName">Config entry name.</param>
     ''' <param name="ConfigValue">Config entry value to install</param>
-    Public Sub SetConfigValueAndWrite(ConfigCategory As ConfigCategory, ConfigCategoryToken As JToken, ConfigEntryName As String, ConfigValue As JToken)
+    Public Sub SetConfigValue(ConfigCategory As ConfigCategory, ConfigCategoryToken As JToken, ConfigEntryName As String, ConfigValue As JToken)
         'Try to parse the config category
         Wdbg(DebugLevel.I, "Parsing config category {0}...", ConfigCategory)
         If [Enum].TryParse(ConfigCategory, ConfigCategory) Then
@@ -329,5 +329,34 @@ Public Module ConfigTools
             Throw New Exceptions.ConfigException(DoTranslation("Config category {0} not found."), ConfigCategory)
         End If
     End Sub
+
+    ''' <summary>
+    ''' Gets the value of an entry in a category.
+    ''' </summary>
+    ''' <param name="ConfigCategory">Config category</param>
+    ''' <param name="ConfigCategoryToken">Config category or sub-category token (You can get it from <see cref="GetConfigCategory(ConfigCategory, String)"/></param>
+    ''' <param name="ConfigEntryName">Config entry name.</param>
+    Public Function GetConfigValue(ConfigCategory As ConfigCategory, ConfigCategoryToken As JToken, ConfigEntryName As String) As JToken
+        'Try to parse the config category
+        Wdbg(DebugLevel.I, "Parsing config category {0}...", ConfigCategory)
+        If [Enum].TryParse(ConfigCategory, ConfigCategory) Then
+            'We have a valid category. Now, find the config entry property in the token
+            Wdbg(DebugLevel.I, "Parsing config entry {0}...", ConfigEntryName)
+            Dim CategoryToken As JToken = ConfigToken(ConfigCategory.ToString)
+            If ConfigCategoryToken(ConfigEntryName) IsNot Nothing Then
+                'We got the appropriate value! Return it.
+                Wdbg(DebugLevel.E, "Entry {0} found! Getting value...", ConfigEntryName)
+                Return ConfigCategoryToken(ConfigEntryName)
+            Else
+                'We didn't get an entry.
+                Wdbg(DebugLevel.E, "Entry {0} not found!", ConfigEntryName)
+                Throw New Exceptions.ConfigException(DoTranslation("Config entry {0} not found."), ConfigEntryName)
+            End If
+        Else
+            'We didn't get a category.
+            Wdbg(DebugLevel.E, "Category {0} not found!", ConfigCategory)
+            Throw New Exceptions.ConfigException(DoTranslation("Config category {0} not found."), ConfigCategory)
+        End If
+    End Function
 
 End Module

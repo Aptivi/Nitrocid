@@ -124,48 +124,48 @@ Public Module SettingsApp
                     MaxOptions = 7
                     W("*) " + DoTranslation("General Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all general kernel settings, mainly for maintaining the kernel.") + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Prompt for Arguments on Boot") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(argsOnBoot)))
-                    W("2) " + DoTranslation("Maintenance Mode Trigger") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(maintenance)))
+                    W("1) " + DoTranslation("Prompt for Arguments on Boot") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(argsOnBoot)))
+                    W("2) " + DoTranslation("Maintenance Mode Trigger") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(maintenance)))
                     W("3) " + DoTranslation("Change Root Password..."), True, ColTypes.Option)
-                    W("4) " + DoTranslation("Check for Updates on Startup") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CheckUpdateStart)))
-                    W("5) " + DoTranslation("Custom Startup Banner") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CustomBanner)))
-                    W("6) " + DoTranslation("Change Culture when Switching Languages") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LangChangeCulture)))
+                    W("4) " + DoTranslation("Check for Updates on Startup") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(CheckUpdateStart)))
+                    W("5) " + DoTranslation("Custom Startup Banner") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(CustomBanner)))
+                    W("6) " + DoTranslation("Change Culture when Switching Languages") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LangChangeCulture)))
                     W("7) " + DoTranslation("Culture of") + " {0} [{1}]", True, ColTypes.Option, currentLang, CurrentCult.Name)
                 Case "1.3" 'Change Root Password...
                     MaxOptions = 2
                     W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lets you manage root password creation.") + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Change Root Password?") + " [{0}]", True, ColTypes.Option, GetConfigValue("setRootPasswd"))
+                    W("1) " + DoTranslation("Change Root Password?") + " [{0}]", True, ColTypes.Option, GetConfigValueField("setRootPasswd"))
                     W("2) " + DoTranslation("Set Root Password..."), True, ColTypes.Option)
                 Case "2" 'Hardware
                     MaxOptions = 3
                     W("*) " + DoTranslation("Hardware Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section changes hardware probe behavior.") + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Quiet Probe") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(QuietHardwareProbe)))
-                    W("2) " + DoTranslation("Full Probe") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FullHardwareProbe)))
-                    W("3) " + DoTranslation("Verbose Probe") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(VerboseHardwareProbe)))
+                    W("1) " + DoTranslation("Quiet Probe") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(QuietHardwareProbe)))
+                    W("2) " + DoTranslation("Full Probe") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FullHardwareProbe)))
+                    W("3) " + DoTranslation("Verbose Probe") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(VerboseHardwareProbe)))
                 Case "3" 'Login
                     MaxOptions = 3
                     W("*) " + DoTranslation("Login Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section represents the login settings. Log out of your account for the changes to take effect.") + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Show MOTD on Log-in") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(showMOTD)))
-                    W("2) " + DoTranslation("Clear Screen on Log-in") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(clsOnLogin)))
-                    W("3) " + DoTranslation("Show available usernames") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ShowAvailableUsers)))
+                    W("1) " + DoTranslation("Show MOTD on Log-in") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(showMOTD)))
+                    W("2) " + DoTranslation("Clear Screen on Log-in") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(clsOnLogin)))
+                    W("3) " + DoTranslation("Show available usernames") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowAvailableUsers)))
                 Case "4" 'Shell
                     MaxOptions = 12
                     W("*) " + DoTranslation("Shell Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the shell settings.") + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Colored Shell") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ColoredShell)))
-                    W("2) " + DoTranslation("Simplified Help Command") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(simHelp)))
-                    W("3) " + DoTranslation("Current Directory", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CurrDir)))
+                    W("1) " + DoTranslation("Colored Shell") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColoredShell)))
+                    W("2) " + DoTranslation("Simplified Help Command") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(simHelp)))
+                    W("3) " + DoTranslation("Current Directory", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(CurrDir)))
                     W("4) " + DoTranslation("Lookup Directories", currentLang) + " [{0}]", True, ColTypes.Option, PathsToLookup.Split(PathLookupDelimiter).Length)
-                    W("5) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ShellPromptStyle)))
-                    W("6) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FTPShellPromptStyle)))
-                    W("7) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MailShellPromptStyle)))
-                    W("8) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(SFTPShellPromptStyle)))
-                    W("9) " + DoTranslation("RSS Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RSSShellPromptStyle)))
-                    W("10) " + DoTranslation("Text Edit Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TextEdit_PromptStyle)))
-                    W("11) " + DoTranslation("Zip Shell Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ZipShell_PromptStyle)))
+                    W("5) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShellPromptStyle)))
+                    W("6) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FTPShellPromptStyle)))
+                    W("7) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MailShellPromptStyle)))
+                    W("8) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SFTPShellPromptStyle)))
+                    W("9) " + DoTranslation("RSS Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RSSShellPromptStyle)))
+                    W("10) " + DoTranslation("Text Edit Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TextEdit_PromptStyle)))
+                    W("11) " + DoTranslation("Zip Shell Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ZipShell_PromptStyle)))
                     W("12) " + DoTranslation("Custom colors...", currentLang), True, ColTypes.Option)
                 Case "4.12" 'Custom colors...
                     MaxOptions = 30
@@ -205,28 +205,28 @@ Public Module SettingsApp
                     MaxOptions = 6
                     W("*) " + DoTranslation("Filesystem Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the filesystem settings.") + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Filesystem sort mode") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(SortMode)))
-                    W("2) " + DoTranslation("Filesystem sort direction") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(SortDirection)))
-                    W("3) " + DoTranslation("Debug Size Quota in Bytes") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DebugQuota)))
-                    W("4) " + DoTranslation("Show Hidden Files") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(HiddenFiles)))
-                    W("5) " + DoTranslation("Size parse mode") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FullParseMode)))
-                    W("6) " + DoTranslation("Show progress on filesystem operations") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ShowFilesystemProgress)))
+                    W("1) " + DoTranslation("Filesystem sort mode") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SortMode)))
+                    W("2) " + DoTranslation("Filesystem sort direction") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SortDirection)))
+                    W("3) " + DoTranslation("Debug Size Quota in Bytes") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DebugQuota)))
+                    W("4) " + DoTranslation("Show Hidden Files") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(HiddenFiles)))
+                    W("5) " + DoTranslation("Size parse mode") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FullParseMode)))
+                    W("6) " + DoTranslation("Show progress on filesystem operations") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFilesystemProgress)))
                 Case "6" 'Network
                     MaxOptions = 12
                     W("*) " + DoTranslation("Network Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.") + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Debug Port") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DebugPort)))
-                    W("2) " + DoTranslation("Download Retry Times") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DRetries)))
-                    W("3) " + DoTranslation("Upload Retry Times") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(URetries)))
-                    W("4) " + DoTranslation("Show progress bar while downloading or uploading from ""get"" or ""put"" command") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ShowProgress)))
-                    W("5) " + DoTranslation("Log FTP username") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FTPLoggerUsername)))
-                    W("6) " + DoTranslation("Log FTP IP address") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FTPLoggerIP)))
-                    W("7) " + DoTranslation("Return only first FTP profile") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FTPFirstProfileOnly)))
-                    W("8) " + DoTranslation("Show mail message preview") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ShowPreview)))
-                    W("9) " + DoTranslation("Record chat to debug log") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RecordChatToDebugLog)))
-                    W("10) " + DoTranslation("Show SSH banner") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(SSHBanner)))
-                    W("11) " + DoTranslation("Enable RPC") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RPCEnabled)))
-                    W("12) " + DoTranslation("RPC Port") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RPCPort)))
+                    W("1) " + DoTranslation("Debug Port") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DebugPort)))
+                    W("2) " + DoTranslation("Download Retry Times") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DRetries)))
+                    W("3) " + DoTranslation("Upload Retry Times") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(URetries)))
+                    W("4) " + DoTranslation("Show progress bar while downloading or uploading from ""get"" or ""put"" command") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowProgress)))
+                    W("5) " + DoTranslation("Log FTP username") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FTPLoggerUsername)))
+                    W("6) " + DoTranslation("Log FTP IP address") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FTPLoggerIP)))
+                    W("7) " + DoTranslation("Return only first FTP profile") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FTPFirstProfileOnly)))
+                    W("8) " + DoTranslation("Show mail message preview") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowPreview)))
+                    W("9) " + DoTranslation("Record chat to debug log") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RecordChatToDebugLog)))
+                    W("10) " + DoTranslation("Show SSH banner") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SSHBanner)))
+                    W("11) " + DoTranslation("Enable RPC") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RPCEnabled)))
+                    W("12) " + DoTranslation("RPC Port") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RPCPort)))
                 Case "7" 'Screensaver
                     MaxOptions = BuiltinSavers + 2 'Screensavers + Keys
                     W("*) " + DoTranslation("Screensaver Settings...") + vbNewLine, True, ColTypes.Neutral)
@@ -268,199 +268,199 @@ Public Module SettingsApp
                     Next
 
                     'Populate general screensaver settings
-                    W("{0}) " + DoTranslation("Screensaver Timeout in ms") + " [{1}]", True, ColTypes.Option, MaxOptions - 1, GetConfigValue(NameOf(ScrnTimeout)))
-                    W("{0}) " + DoTranslation("Enable screensaver debugging") + " [{1}]", True, ColTypes.Option, MaxOptions, GetConfigValue(NameOf(ScreensaverDebug)))
+                    W("{0}) " + DoTranslation("Screensaver Timeout in ms") + " [{1}]", True, ColTypes.Option, MaxOptions - 1, GetConfigValueField(NameOf(ScrnTimeout)))
+                    W("{0}) " + DoTranslation("Enable screensaver debugging") + " [{1}]", True, ColTypes.Option, MaxOptions, GetConfigValueField(NameOf(ScreensaverDebug)))
                 Case "7.1" 'Screensaver > ColorMix
                     MaxOptions = 3
                     W("*) " + DoTranslation("Screensaver Settings...") + " > ColorMix" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " ColorMix." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ColorMix255Colors)))
-                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ColorMixTrueColor)))
-                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ColorMixDelay)))
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColorMix255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColorMixTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColorMixDelay)))
                 Case "7.2" 'Screensaver > Matrix
                     MaxOptions = 1
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Matrix" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " Matrix." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MatrixDelay)))
+                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MatrixDelay)))
                 Case "7.3" 'Screensaver > GlitterMatrix
                     MaxOptions = 1
                     W("*) " + DoTranslation("Screensaver Settings...") + " > GlitterMatrix" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " GlitterMatrix." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(GlitterMatrixDelay)))
+                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterMatrixDelay)))
                 Case "7.4" 'Screensaver > Disco
                     MaxOptions = 5
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Disco" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " Disco." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Disco255Colors)))
-                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoTrueColor)))
-                    W("3) " + DoTranslation("Cycle colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoCycleColors)))
-                    W("4) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoDelay)))
-                    W("5) " + DoTranslation("Use Beats Per Minute") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DiscoUseBeatsPerMinute)))
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Disco255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DiscoTrueColor)))
+                    W("3) " + DoTranslation("Cycle colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DiscoCycleColors)))
+                    W("4) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DiscoDelay)))
+                    W("5) " + DoTranslation("Use Beats Per Minute") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DiscoUseBeatsPerMinute)))
                 Case "7.5" 'Screensaver > Lines
                     MaxOptions = 3
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Lines" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " Lines." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Lines255Colors)))
-                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinesTrueColor)))
-                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinesDelay)))
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Lines255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinesTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinesDelay)))
                 Case "7.6" 'Screensaver > GlitterColor
                     MaxOptions = 3
                     W("*) " + DoTranslation("Screensaver Settings...") + " > GlitterColor" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " GlitterColor." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(GlitterColor255Colors)))
-                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(GlitterColorTrueColor)))
-                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(GlitterColorDelay)))
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterColor255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterColorTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterColorDelay)))
                 Case "7.7" 'Screensaver > BouncingText
                     MaxOptions = 4
                     W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingText" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " BouncingText." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingText255Colors)))
-                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingTextTrueColor)))
-                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingTextDelay)))
-                    W("4) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingTextWrite)))
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingText255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextDelay)))
+                    W("4) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextWrite)))
                 Case "7.8" 'Screensaver > Dissolve
                     MaxOptions = 2
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Dissolve" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " Dissolve." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Dissolve255Colors)))
-                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(DissolveTrueColor)))
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Dissolve255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DissolveTrueColor)))
                 Case "7.9" 'Screensaver > BouncingBlock
                     MaxOptions = 3
                     W("*) " + DoTranslation("Screensaver Settings...") + " > BouncingBlock" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " BouncingBlock." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingBlock255Colors)))
-                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingBlockTrueColor)))
-                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BouncingBlockDelay)))
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlock255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlockTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlockDelay)))
                 Case "7.10" 'Screensaver > ProgressClock
                     MaxOptions = 8
                     W("*) " + DoTranslation("Screensaver Settings...") + " > ProgressClock" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " ProgressClock." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClock255Colors)))
-                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockTrueColor)))
-                    W("3) " + DoTranslation("Cycle colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockCycleColors)))
-                    W("4) " + DoTranslation("Color of Seconds Bar") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockSecondsProgressColor)))
-                    W("5) " + DoTranslation("Color of Minutes Bar") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockMinutesProgressColor)))
-                    W("6) " + DoTranslation("Color of Hours Bar") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockHoursProgressColor)))
-                    W("7) " + DoTranslation("Color of Information") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockProgressColor)))
-                    W("8) " + DoTranslation("Ticks to change color") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(ProgressClockCycleColorsTicks)))
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClock255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockTrueColor)))
+                    W("3) " + DoTranslation("Cycle colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockCycleColors)))
+                    W("4) " + DoTranslation("Color of Seconds Bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockSecondsProgressColor)))
+                    W("5) " + DoTranslation("Color of Minutes Bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMinutesProgressColor)))
+                    W("6) " + DoTranslation("Color of Hours Bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockHoursProgressColor)))
+                    W("7) " + DoTranslation("Color of Information") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockProgressColor)))
+                    W("8) " + DoTranslation("Ticks to change color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockCycleColorsTicks)))
                 Case "7.11" 'Screensaver > Lighter
                     MaxOptions = 4
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Lighter" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " Lighter." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Lighter255Colors)))
-                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LighterTrueColor)))
-                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LighterDelay)))
-                    W("4) " + DoTranslation("Max Positions Count") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LighterMaxPositions)))
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Lighter255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LighterTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LighterDelay)))
+                    W("4) " + DoTranslation("Max Positions Count") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LighterMaxPositions)))
                 Case "7.12" 'Screensaver > Fader
                     MaxOptions = 4
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Fader" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " Fader." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderDelay)))
-                    W("2) " + DoTranslation("Fade Out Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderFadeOutDelay)))
-                    W("3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderWrite)))
-                    W("4) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderMaxSteps)))
+                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderDelay)))
+                    W("2) " + DoTranslation("Fade Out Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderFadeOutDelay)))
+                    W("3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderWrite)))
+                    W("4) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderMaxSteps)))
                 Case "7.13" 'Screensaver > Typo
                     MaxOptions = 7
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Typo" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " Typo." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoDelay)))
-                    W("2) " + DoTranslation("Write Again Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoWriteAgainDelay)))
-                    W("3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoWrite)))
-                    W("4) " + DoTranslation("Minimum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoWritingSpeedMin)))
-                    W("5) " + DoTranslation("Maximum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoWritingSpeedMax)))
-                    W("6) " + DoTranslation("Probability of typo in percent") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoMissStrikePossibility)))
-                    W("7) " + DoTranslation("Probability of miss in percent") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypoMissPossibility)))
+                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypoDelay)))
+                    W("2) " + DoTranslation("Write Again Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypoWriteAgainDelay)))
+                    W("3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypoWrite)))
+                    W("4) " + DoTranslation("Minimum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypoWritingSpeedMin)))
+                    W("5) " + DoTranslation("Maximum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypoWritingSpeedMax)))
+                    W("6) " + DoTranslation("Probability of typo in percent") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypoMissStrikePossibility)))
+                    W("7) " + DoTranslation("Probability of miss in percent") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypoMissPossibility)))
                 Case "7.14" 'Screensaver > Wipe
                     MaxOptions = 4
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Wipe" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " Wipe." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Wipe255Colors)))
-                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(WipeTrueColor)))
-                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(WipeDelay)))
-                    W("4) " + DoTranslation("Wipes to change direction") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(WipeWipesNeededToChangeDirection)))
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Wipe255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeDelay)))
+                    W("4) " + DoTranslation("Wipes to change direction") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeWipesNeededToChangeDirection)))
                 Case "7.15" 'Screensaver > HackUserFromAD
                     MaxOptions = 1
                     W("*) " + DoTranslation("Screensaver Settings...") + " > HackUserFromAD" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " HackUserFromAD." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Hacker Mode") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(HackUserFromADHackerMode)))
+                    W("1) " + DoTranslation("Hacker Mode") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(HackUserFromADHackerMode)))
                 Case "7.16" 'Screensaver > AptErrorSim
                     MaxOptions = 1
                     W("*) " + DoTranslation("Screensaver Settings...") + " > AptErrorSim" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " AptErrorSim." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Hacker Mode") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(AptErrorSimHackerMode)))
+                    W("1) " + DoTranslation("Hacker Mode") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(AptErrorSimHackerMode)))
                 Case "7.17" 'Screensaver > Marquee
                     MaxOptions = 6
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Marquee" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " Marquee." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Marquee255Colors)))
-                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MarqueeTrueColor)))
-                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MarqueeDelay)))
-                    W("4) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MarqueeWrite)))
-                    W("5) " + DoTranslation("Always centered") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MarqueeAlwaysCentered)))
-                    W("6) " + DoTranslation("Use Console API") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(MarqueeUseConsoleAPI)))
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Marquee255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeDelay)))
+                    W("4) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeWrite)))
+                    W("5) " + DoTranslation("Always centered") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeAlwaysCentered)))
+                    W("6) " + DoTranslation("Use Console API") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeUseConsoleAPI)))
                 Case "7.18" 'Screensaver > FaderBack
                     MaxOptions = 3
                     W("*) " + DoTranslation("Screensaver Settings...") + " > FaderBack" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " FaderBack." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderBackDelay)))
-                    W("2) " + DoTranslation("Fade Out Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderBackFadeOutDelay)))
-                    W("3) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FaderBackMaxSteps)))
+                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderBackDelay)))
+                    W("2) " + DoTranslation("Fade Out Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderBackFadeOutDelay)))
+                    W("3) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderBackMaxSteps)))
                 Case "7.19" 'Screensaver > BeatFader
                     MaxOptions = 6
                     W("*) " + DoTranslation("Screensaver Settings...") + " > BeatFader" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " BeatFader." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFader255Colors)))
-                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderTrueColor)))
-                    W("3) " + DoTranslation("Delay in Beats Per Minute") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderDelay)))
-                    W("4) " + DoTranslation("Cycle colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderCycleColors)))
-                    W("5) " + DoTranslation("Beat Color") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderBeatColor)))
-                    W("6) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(BeatFaderMaxSteps)))
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFader255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderTrueColor)))
+                    W("3) " + DoTranslation("Delay in Beats Per Minute") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderDelay)))
+                    W("4) " + DoTranslation("Cycle colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderCycleColors)))
+                    W("5) " + DoTranslation("Beat Color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderBeatColor)))
+                    W("6) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderMaxSteps)))
                 Case "7.20" 'Screensaver > Linotypo
                     MaxOptions = 11
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Linotypo" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " Linotypo." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoDelay)))
-                    W("2) " + DoTranslation("New Screen Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoNewScreenDelay)))
-                    W("3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoWrite)))
-                    W("4) " + DoTranslation("Minimum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoWritingSpeedMin)))
-                    W("5) " + DoTranslation("Maximum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoWritingSpeedMax)))
-                    W("6) " + DoTranslation("Probability of typo in percent") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoMissStrikePossibility)))
-                    W("7) " + DoTranslation("Column Count") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoTextColumns)))
-                    W("8) " + DoTranslation("Line Fill Threshold") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoEtaoinThreshold)))
-                    W("9) " + DoTranslation("Line Fill Capping Probability in percent") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoEtaoinCappingPossibility)))
-                    W("10) " + DoTranslation("Line Fill Type") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoEtaoinType)))
-                    W("11) " + DoTranslation("Probability of miss in percent") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LinotypoMissPossibility)))
+                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoDelay)))
+                    W("2) " + DoTranslation("New Screen Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoNewScreenDelay)))
+                    W("3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoWrite)))
+                    W("4) " + DoTranslation("Minimum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoWritingSpeedMin)))
+                    W("5) " + DoTranslation("Maximum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoWritingSpeedMax)))
+                    W("6) " + DoTranslation("Probability of typo in percent") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoMissStrikePossibility)))
+                    W("7) " + DoTranslation("Column Count") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoTextColumns)))
+                    W("8) " + DoTranslation("Line Fill Threshold") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoEtaoinThreshold)))
+                    W("9) " + DoTranslation("Line Fill Capping Probability in percent") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoEtaoinCappingPossibility)))
+                    W("10) " + DoTranslation("Line Fill Type") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoEtaoinType)))
+                    W("11) " + DoTranslation("Probability of miss in percent") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoMissPossibility)))
                 Case "7.21" 'Screensaver > Typewriter
                     MaxOptions = 5
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Typewriter" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " Typewriter." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypewriterDelay)))
-                    W("2) " + DoTranslation("New Screen Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypewriterNewScreenDelay)))
-                    W("3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypewriterWrite)))
-                    W("4) " + DoTranslation("Minimum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypewriterWritingSpeedMin)))
-                    W("5) " + DoTranslation("Maximum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TypewriterWritingSpeedMax)))
+                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypewriterDelay)))
+                    W("2) " + DoTranslation("New Screen Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypewriterNewScreenDelay)))
+                    W("3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypewriterWrite)))
+                    W("4) " + DoTranslation("Minimum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypewriterWritingSpeedMin)))
+                    W("5) " + DoTranslation("Maximum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypewriterWritingSpeedMax)))
                 Case "7.22" 'Screensaver > FlashColor
                     MaxOptions = 3
                     W("*) " + DoTranslation("Screensaver Settings...") + " > FlashColor" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " FlashColor." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FlashColor255Colors)))
-                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FlashColorTrueColor)))
-                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(FlashColorDelay)))
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColor255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColorTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColorDelay)))
                 Case "7.23" 'Screensaver > SpotWrite
                     MaxOptions = 5
                     W("*) " + DoTranslation("Screensaver Settings...") + " > SpotWrite" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " SpotWrite." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(SpotWriteDelay)))
-                    W("2) " + DoTranslation("New Screen Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(SpotWriteNewScreenDelay)))
-                    W("3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(SpotWriteWrite)))
+                    W("1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SpotWriteDelay)))
+                    W("2) " + DoTranslation("New Screen Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SpotWriteNewScreenDelay)))
+                    W("3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SpotWriteWrite)))
                 Case "7.24" 'Screensaver > Ramp
                     MaxOptions = 4
                     W("*) " + DoTranslation("Screensaver Settings...") + " > Ramp" + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists screensaver settings for") + " Ramp." + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(Ramp255Colors)))
-                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RampTrueColor)))
-                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RampDelay)))
-                    W("4) " + DoTranslation("Next ramp interval") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(RampNextRampDelay)))
+                    W("1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Ramp255Colors)))
+                    W("2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampTrueColor)))
+                    W("3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampDelay)))
+                    W("4) " + DoTranslation("Next ramp interval") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampNextRampDelay)))
                 Case "7." + $"{If(SectionParameters.Length <> 0, SectionParameters(0), $"{BuiltinSavers + 1}")}" 'Screensaver > a custom saver
                     Dim SaverIndex As Integer = SectionParameters(0) - BuiltinSavers - 1
                     Dim Configurables As List(Of String) = SectionParameters(1)
@@ -478,13 +478,13 @@ Public Module SettingsApp
                     MaxOptions = 7
                     W("*) " + DoTranslation("Miscellaneous Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("Settings that don't fit in their appropriate sections land here.") + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Show Time/Date on Upper Right Corner") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(CornerTD)))
-                    W("2) " + DoTranslation("Marquee on startup") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(StartScroll)))
-                    W("3) " + DoTranslation("Long Time and Date") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(LongTimeDate)))
-                    W("4) " + DoTranslation("Preferred Unit for Temperature") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(PreferredUnit)))
-                    W("5) " + DoTranslation("Enable text editor autosave") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TextEdit_AutoSaveFlag)))
-                    W("6) " + DoTranslation("Text editor autosave interval") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(TextEdit_AutoSaveInterval)))
-                    W("7) " + DoTranslation("Wrap list outputs") + " [{0}]", True, ColTypes.Option, GetConfigValue(NameOf(WrapListOutputs)))
+                    W("1) " + DoTranslation("Show Time/Date on Upper Right Corner") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(CornerTD)))
+                    W("2) " + DoTranslation("Marquee on startup") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(StartScroll)))
+                    W("3) " + DoTranslation("Long Time and Date") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LongTimeDate)))
+                    W("4) " + DoTranslation("Preferred Unit for Temperature") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(PreferredUnit)))
+                    W("5) " + DoTranslation("Enable text editor autosave") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TextEdit_AutoSaveFlag)))
+                    W("6) " + DoTranslation("Text editor autosave interval") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TextEdit_AutoSaveInterval)))
+                    W("7) " + DoTranslation("Wrap list outputs") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WrapListOutputs)))
                 Case Else 'Invalid section
                     W("*) ???" + vbNewLine, True, ColTypes.Neutral)
                     W("X) " + DoTranslation("Invalid section entered. Please go back."), True, ColTypes.Error)
@@ -630,7 +630,7 @@ Public Module SettingsApp
                             W(DoTranslation("If the kernel is started, it will set root password."), True, ColTypes.Neutral)
                         Case 2 'Set Root Password...
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password...") + " > " + DoTranslation("Set Root Password...") + vbNewLine, True, ColTypes.Neutral)
-                            If GetConfigValue(NameOf(setRootPasswd)) Then
+                            If GetConfigValueField(NameOf(setRootPasswd)) Then
                                 KeyType = SettingsKeyType.SString
                                 KeyVar = NameOf(RootPasswd)
                                 W("*) " + DoTranslation("Write the root password to be set. Don't worry; the password are shown as stars."), True, ColTypes.Neutral)
@@ -1728,7 +1728,7 @@ Public Module SettingsApp
             End If
 
             'Get key value
-            If Not KeyType = SettingsKeyType.SUnknown Then KeyValue = GetConfigValue(KeyVar)
+            If Not KeyType = SettingsKeyType.SUnknown Then KeyValue = GetConfigValueField(KeyVar)
 
             'Print debugging info
             Wdbg(DebugLevel.W, "Key {0} in section {1} has {2} selections.", KeyNumber, Section, MaxKeyOptions)
@@ -1781,10 +1781,10 @@ Public Module SettingsApp
                     Select Case AnswerInt
                         Case 1 'True
                             Wdbg(DebugLevel.I, "Setting to True...")
-                            SetConfigValue(KeyVar, True)
+                            SetConfigValueField(KeyVar, True)
                         Case 2 'False
                             Wdbg(DebugLevel.I, "Setting to False...")
-                            SetConfigValue(KeyVar, False)
+                            SetConfigValueField(KeyVar, False)
                     End Select
                 ElseIf AnswerInt = MaxKeyOptions + 1 Then 'Go Back...
                     Wdbg(DebugLevel.I, "User requested exit. Returning...")
@@ -1804,14 +1804,14 @@ Public Module SettingsApp
                 ElseIf KeyType = SettingsKeyType.SSelection And AnswerInt > 0 And SelectFrom IsNot Nothing Then
                     Wdbg(DebugLevel.I, "Setting variable {0} to item index {1}...", KeyVar, AnswerInt - 1)
                     KeyFinished = True
-                    SetConfigValue(KeyVar, SelectFrom(AnswerInt - 1))
+                    SetConfigValueField(KeyVar, SelectFrom(AnswerInt - 1))
                 ElseIf (KeyType = SettingsKeyType.SSelection And AnswerInt > 0) Or
                        (KeyType = SettingsKeyType.SInt And AnswerInt >= 0) Then
                     If (KeyType = SettingsKeyType.SSelection And Not AnswerInt > MaxKeyOptions) Or KeyType = SettingsKeyType.SInt Then
                         If SelectionEnumZeroBased Then AnswerInt -= 1
                         Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
                         KeyFinished = True
-                        SetConfigValue(KeyVar, AnswerInt)
+                        SetConfigValueField(KeyVar, AnswerInt)
                     ElseIf KeyType = SettingsKeyType.SSelection Then
                         Wdbg(DebugLevel.W, "Answer is not valid.")
                         W(DoTranslation("The answer may not exceed the entries shown."), True, ColTypes.Error)
@@ -1849,11 +1849,11 @@ Public Module SettingsApp
 
                 'Set the value
                 KeyFinished = True
-                SetConfigValue(KeyVar, AnswerString)
+                SetConfigValueField(KeyVar, AnswerString)
             ElseIf KeyType = SettingsKeyType.SList Then
                 Wdbg(DebugLevel.I, "Answer is not numeric and key is of the List type. Adding answers to the list...")
                 KeyFinished = True
-                SetConfigValue(KeyVar, String.Join(ListJoinString, TargetList))
+                SetConfigValueField(KeyVar, String.Join(ListJoinString, TargetList))
             ElseIf SectionParts.Length > 1 Then
                 If Section = "7." + SectionParts(1) And SectionParts(1) > BuiltinSavers And KeyType = SettingsKeyType.SVariant Then
                     Dim SaverIndex As Integer = SectionParts(1) - BuiltinSavers - 1
@@ -1862,12 +1862,12 @@ Public Module SettingsApp
                     Wdbg(DebugLevel.I, "User requested exit. Returning...")
                     KeyFinished = True
                 ElseIf KeyType = SettingsKeyType.SVariant Then
-                    SetConfigValue(KeyVar, VariantValue)
+                    SetConfigValueField(KeyVar, VariantValue)
                     Wdbg(DebugLevel.I, "User requested exit. Returning...")
                     KeyFinished = True
                 End If
             ElseIf KeyType = SettingsKeyType.SVariant Then
-                SetConfigValue(KeyVar, VariantValue)
+                SetConfigValueField(KeyVar, VariantValue)
                 Wdbg(DebugLevel.I, "User requested exit. Returning...")
                 KeyFinished = True
             Else
@@ -1885,7 +1885,7 @@ Public Module SettingsApp
     ''' </summary>
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <param name="VariableValue">New value of variable</param>
-    Public Sub SetConfigValue(Variable As String, VariableValue As Object)
+    Public Sub SetConfigValueField(Variable As String, VariableValue As Object)
         'Get field for specified variable
         Dim TargetField As FieldInfo = GetField(Variable)
 
@@ -1908,7 +1908,7 @@ Public Module SettingsApp
     ''' </summary>
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
     ''' <returns>Value of a variable</returns>
-    Public Function GetConfigValue(Variable As String) As Object
+    Public Function GetConfigValueField(Variable As String) As Object
         'Get field for specified variable
         Dim TargetField As FieldInfo = GetField(Variable)
 

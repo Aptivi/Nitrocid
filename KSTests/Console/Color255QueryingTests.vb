@@ -17,30 +17,28 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports KS
+Imports Newtonsoft.Json.Linq
 
-<TestClass()> Public Class KernelMiscTests
+<TestClass()> Public Class Color255QueryingTests
 
     ''' <summary>
-    ''' Tests update fetching
+    ''' Tests querying 255-color data from JSON (parses only needed data by KS)
     ''' </summary>
-    <TestMethod()> <TestCategory("Misc")> Public Sub TestFetchKernelUpdates()
-        Dim Updates As List(Of String) = FetchKernelUpdates()
-        Updates.ShouldNotBeNull
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestQueryColorDataFromJson()
+        For ColorIndex As Integer = 0 To 255
+            Dim ColorData As JObject = ColorDataJson(ColorIndex)
+            ColorData("colorId").ToString().ShouldBe(ColorIndex)
+            Integer.TryParse(ColorData("rgb")("r").ToString(), 0).ShouldBeTrue
+            Integer.TryParse(ColorData("rgb")("g").ToString(), 0).ShouldBeTrue
+            Integer.TryParse(ColorData("rgb")("b").ToString(), 0).ShouldBeTrue
+        Next
     End Sub
 
     ''' <summary>
-    ''' Tests garbage collection
+    ''' Tests getting an escape character
     ''' </summary>
-    <TestMethod()> <TestCategory("Misc")> Public Sub TestGarbageCollect()
-        DisposeAll()
-    End Sub
-
-    ''' <summary>
-    ''' Tests raising an event and adding it to the fired events list
-    ''' </summary>
-    <TestMethod()> <TestCategory("Misc")> Public Sub TestRaiseEvent()
-        EventManager.RaiseStartKernel()
-        EventManager.FiredEvents.ShouldContainKey("KernelStarted (" + CStr(EventManager.FiredEvents.Count - 1) + ")")
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestGetEsc()
+        GetEsc.ShouldBe(Convert.ToChar(&H1B))
     End Sub
 
 End Class

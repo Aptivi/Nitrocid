@@ -25,7 +25,7 @@ Imports KS
     ''' Tests getting value
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestGetValue()
-        Dim Value As String = GetConfigValue("HiddenFiles")
+        Dim Value As String = GetConfigValueField("HiddenFiles")
         Value.ShouldNotBeNullOrEmpty
     End Sub
 
@@ -33,8 +33,8 @@ Imports KS
     ''' Tests setting value
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestSetValue()
-        SetConfigValue("HiddenFiles", False)
-        Dim Value As String = GetConfigValue("HiddenFiles")
+        SetConfigValueField("HiddenFiles", False)
+        Dim Value As String = GetConfigValueField("HiddenFiles")
         Value.ShouldBe("False")
     End Sub
 

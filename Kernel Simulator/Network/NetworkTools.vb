@@ -71,7 +71,7 @@ Public Module NetworkTools
         Try
             HName = NewHost
             Dim Token As JToken = GetConfigCategory(ConfigCategory.Login)
-            SetConfigValueAndWrite(ConfigCategory.Login, Token, "Host Name", HName)
+            SetConfigValue(ConfigCategory.Login, Token, "Host Name", HName)
             Return True
         Catch ex As Exception
             WStkTrc(ex)

@@ -71,8 +71,11 @@
     <Import Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Argument\ArgumentInfoInitializationTests.vb" />
+    <Compile Include="Console\Color255QueryingTests.vb" />
     <Compile Include="Console\ColorInitializationTests.vb" />
     <Compile Include="Console\RGBInitializationTests.vb" />
+    <Compile Include="Console\ConsoleColorsInfoInitializationTests.vb" />
     <Compile Include="Console\ThemeInfoInitializationTests.vb" />
     <Compile Include="Files\FilesystemNeutralizationTests.vb" />
     <Compile Include="Files\FilesystemManipulationTests.vb" />
@@ -86,6 +89,7 @@
     <Compile Include="Misc\EncryptionActionTests.vb" />
     <Compile Include="Misc\MOTDSettingTests.vb" />
     <Compile Include="Misc\MOTDManagementTests.vb" />
+    <Compile Include="Misc\JsonActionTests.vb" />
     <Compile Include="Misc\PlaceholderActionTests.vb" />
     <Compile Include="Misc\TextEditorInitializationTests.vb" />
     <Compile Include="Misc\StringEvaluatorActionTests.vb" />

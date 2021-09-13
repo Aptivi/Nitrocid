@@ -19,7 +19,6 @@
 Imports System.IO
 Imports KS
 
-'TODO: Synchronize with the latest API additions/changes/removals.
 <TestClass()> Public Class InitTest
 
     ''' <summary>

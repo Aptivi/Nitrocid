@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports System.Text.RegularExpressions
 Imports KS
 
 <TestClass()> Public Class FilesystemManipulationTests
@@ -124,6 +125,17 @@ Imports KS
         CurrDir = GetOtherPath(OtherPathType.Home)
         Dim TargetPath As String = Path.GetFullPath("TestText.txt")
         Dim Matches As List(Of String) = SearchFileForString(TargetPath, "test")
+        Matches.ShouldNotBeNull
+        Matches.ShouldNotBeEmpty
+    End Sub
+
+    ''' <summary>
+    ''' Tests searching file for string using regular expressions
+    ''' </summary>
+    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestSearchFileForStringRegexp()
+        CurrDir = GetOtherPath(OtherPathType.Home)
+        Dim TargetPath As String = Path.GetFullPath("TestText.txt")
+        Dim Matches As List(Of String) = SearchFileForStringRegexp(TargetPath, New Regex("test"))
         Matches.ShouldNotBeNull
         Matches.ShouldNotBeEmpty
     End Sub

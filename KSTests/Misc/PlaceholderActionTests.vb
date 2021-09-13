@@ -37,7 +37,16 @@ Imports KS
             ProbePlaces("Time is <time>"),
             ProbePlaces("Timezone is <timezone>"),
             ProbePlaces("Summer timezone is <summertimezone>"),
-            ProbePlaces("Operating system is <system>")
+            ProbePlaces("Operating system is <system>"),
+            ProbePlaces("Newline is <newline>"),
+            ProbePlaces("Foreground reset is <f:reset>here"),
+            ProbePlaces("Background reset is <b:reset>here"),
+            ProbePlaces("Foreground color is <f:4>0-15"),
+            ProbePlaces("Foreground color is <b:4>0-15"),
+            ProbePlaces("Foreground color is <f:254>0-255"),
+            ProbePlaces("Foreground color is <b:254>0-255"),
+            ProbePlaces("Foreground color is <f:255;255;255>truecolor"),
+            ProbePlaces("Foreground color is <b:255;255;255>truecolor")
         }
         For Each ParsedString As String In ParsedStrings
             If ParsedString.Contains("<") And ParsedString.Contains(">") Then

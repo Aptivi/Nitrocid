@@ -43,6 +43,74 @@ Imports KS
         ThemeInfoInstance.ThemeUncontKernelErrorColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeUserNameShellColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeWarningColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeNotificationTitleColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeNotificationDescriptionColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeNotificationProgressColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeNotificationFailureColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeQuestionColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeSuccessColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeUserDollarColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeTipColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeSeparatorTextColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeSeparatorColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeListTitleColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeDevelopmentWarningColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeStageTimeColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeProgressColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeBackOptionColor.ShouldNotBeNull
+    End Sub
+
+    ''' <summary>
+    ''' Tests initializing an instance of ThemeInfo from all KS resources
+    ''' </summary>
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeThemeInfoFromAllResources()
+        For Each ResourceName As String In colorTemplates.Keys
+            'Special naming cases
+            Dim ThemeName As String = ResourceName
+            Select Case ResourceName
+                Case "Default"
+                    ThemeName = "_Default"
+                Case "NFSHP-Cop"
+                    ThemeName = "NFSHP_Cop"
+                Case "NFSHP-Racer"
+                    ThemeName = "NFSHP_Racer"
+                Case "3Y-Diamond"
+                    ThemeName = "_3Y_Diamond"
+            End Select
+            'Create instance
+            Dim ThemeInfoInstance As New ThemeInfo(ThemeName)
+
+            'Check for null
+            ThemeInfoInstance.ThemeBackgroundColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeListValueColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeListEntryColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeContKernelErrorColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeErrorColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeHostNameShellColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeInputColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeLicenseColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeNeutralTextColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeOptionColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeStageColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeUncontKernelErrorColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeUserNameShellColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeWarningColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeNotificationTitleColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeNotificationDescriptionColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeNotificationProgressColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeNotificationFailureColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeQuestionColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeSuccessColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeUserDollarColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeTipColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeSeparatorTextColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeSeparatorColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeListTitleColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeDevelopmentWarningColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeStageTimeColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeProgressColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeBackOptionColor.ShouldNotBeNull
+        Next
     End Sub
 
     ''' <summary>
@@ -68,6 +136,21 @@ Imports KS
         ThemeInfoInstance.ThemeUncontKernelErrorColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeUserNameShellColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeWarningColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeNotificationTitleColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeNotificationDescriptionColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeNotificationProgressColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeNotificationFailureColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeQuestionColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeSuccessColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeUserDollarColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeTipColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeSeparatorTextColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeSeparatorColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeListTitleColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeDevelopmentWarningColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeStageTimeColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeProgressColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeBackOptionColor.ShouldNotBeNull
     End Sub
 
 End Class

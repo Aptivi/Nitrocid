@@ -417,7 +417,7 @@ Public Module Filesystem
         Try
             FullParseMode = Enable
             Dim Token As JToken = GetConfigCategory(ConfigCategory.Filesystem)
-            SetConfigValueAndWrite(ConfigCategory.Filesystem, Token, "Size parse mode", FullParseMode)
+            SetConfigValue(ConfigCategory.Filesystem, Token, "Size parse mode", FullParseMode)
             Return True
         Catch ex As Exception
             WStkTrc(ex)
@@ -862,7 +862,7 @@ Public Module Filesystem
     Public Function SaveCurrDir() As Boolean
         Try
             Dim Token As JToken = GetConfigCategory(ConfigCategory.Shell)
-            SetConfigValueAndWrite(ConfigCategory.Shell, Token, "Current Directory", CurrDir)
+            SetConfigValue(ConfigCategory.Shell, Token, "Current Directory", CurrDir)
             Return True
         Catch ex As Exception
             WStkTrc(ex)
