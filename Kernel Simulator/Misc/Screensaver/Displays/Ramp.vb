@@ -36,6 +36,9 @@ Module RampDisplay
         Dim GreenColorNumTo As Integer = RandomDriver.Next(255)
         Dim BlueColorNumTo As Integer = RandomDriver.Next(255)
         Dim ColorNumTo As Integer = RandomDriver.Next(255)
+        Dim CurrentWindowWidth As Integer = Console.WindowWidth
+        Dim CurrentWindowHeight As Integer = Console.WindowHeight
+        Dim ResizeSyncing As Boolean
         Try
             Do While True
                 If Ramp.CancellationPending = True Then
@@ -49,6 +52,7 @@ Module RampDisplay
                     Exit Do
                 Else
                     SleepNoBlock(RampDelay, Ramp)
+                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
 
                     'Select a color range for the ramp
                     If RampTrueColor Then
@@ -91,27 +95,29 @@ Module RampDisplay
                     Dim RampCurrentPositionLeft As Integer = RampFrameStartWidth + 1
 
                     'Draw the frame
-                    Console.ForegroundColor = ConsoleColor.Gray
-                    Console.SetCursorPosition(RampFrameStartWidth, RampCenterPosition - 2)
-                    Console.Write("╔"c)
-                    Console.Write(StrDup(RampFrameSpaces, "═"c))
-                    Console.Write("╗"c)
-                    Console.SetCursorPosition(RampFrameStartWidth, RampCenterPosition - 1)
-                    Console.Write("║"c)
-                    Console.SetCursorPosition(RampFrameStartWidth, RampCenterPosition)
-                    Console.Write("║"c)
-                    Console.SetCursorPosition(RampFrameStartWidth, RampCenterPosition + 1)
-                    Console.Write("║"c)
-                    Console.SetCursorPosition(RampFrameEndWidth + 1, RampCenterPosition - 1)
-                    Console.Write("║"c)
-                    Console.SetCursorPosition(RampFrameEndWidth + 1, RampCenterPosition)
-                    Console.Write("║"c)
-                    Console.SetCursorPosition(RampFrameEndWidth + 1, RampCenterPosition + 1)
-                    Console.Write("║"c)
-                    Console.SetCursorPosition(RampFrameStartWidth, RampCenterPosition + 2)
-                    Console.Write("╚"c)
-                    Console.Write(StrDup(RampFrameSpaces, "═"c))
-                    Console.Write("╝"c)
+                    If Not ResizeSyncing Then
+                        Console.ForegroundColor = ConsoleColor.Gray
+                        Console.SetCursorPosition(RampFrameStartWidth, RampCenterPosition - 2)
+                        Console.Write("╔"c)
+                        Console.Write(StrDup(RampFrameSpaces, "═"c))
+                        Console.Write("╗"c)
+                        Console.SetCursorPosition(RampFrameStartWidth, RampCenterPosition - 1)
+                        Console.Write("║"c)
+                        Console.SetCursorPosition(RampFrameStartWidth, RampCenterPosition)
+                        Console.Write("║"c)
+                        Console.SetCursorPosition(RampFrameStartWidth, RampCenterPosition + 1)
+                        Console.Write("║"c)
+                        Console.SetCursorPosition(RampFrameEndWidth + 1, RampCenterPosition - 1)
+                        Console.Write("║"c)
+                        Console.SetCursorPosition(RampFrameEndWidth + 1, RampCenterPosition)
+                        Console.Write("║"c)
+                        Console.SetCursorPosition(RampFrameEndWidth + 1, RampCenterPosition + 1)
+                        Console.Write("║"c)
+                        Console.SetCursorPosition(RampFrameStartWidth, RampCenterPosition + 2)
+                        Console.Write("╚"c)
+                        Console.Write(StrDup(RampFrameSpaces, "═"c))
+                        Console.Write("╝"c)
+                    End If
 
                     'Draw the ramp
                     If RampTrueColor Then
@@ -124,7 +130,9 @@ Module RampDisplay
                         'Set the console color and fill the ramp!
                         SetConsoleColor(RampCurrentColorInstance, True)
                         Do Until Convert.ToInt32(RampCurrentColorRed) = RedColorNumTo And Convert.ToInt32(RampCurrentColorGreen) = GreenColorNumTo And Convert.ToInt32(RampCurrentColorBlue) = BlueColorNumTo
+                            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                             If Ramp.CancellationPending Then Exit Do
+                            If ResizeSyncing Then Exit Do
                             Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1)
                             Console.Write(" "c)
                             Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition)
@@ -151,7 +159,9 @@ Module RampDisplay
                         'Set the console color and fill the ramp!
                         SetConsoleColor(RampCurrentColorInstance, True)
                         Do Until Convert.ToInt32(RampCurrentColor) = ColorNumTo
+                            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                             If Ramp.CancellationPending Then Exit Do
+                            If ResizeSyncing Then Exit Do
                             Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition - 1)
                             Console.Write(" "c)
                             Console.SetCursorPosition(RampCurrentPositionLeft, RampCenterPosition)
@@ -172,6 +182,9 @@ Module RampDisplay
                     SleepNoBlock(RampNextRampDelay, Ramp)
                     Console.BackgroundColor = ConsoleColor.Black
                     Console.Clear()
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
             Loop
         Catch ex As Exception
