@@ -45,7 +45,11 @@ Module ArgumentPrompt
             'Add an argument to the entered arguments list
             If AnswerArgs <> "q" Then
                 For Each AnswerArg As String In AnswerArgs.Split(","c)
-                    EnteredArguments.Add(AnswerArg)
+                    If AvailableArgs.Contains(AnswerArg.Split(" "c)(0)) Then
+                        EnteredArguments.Add(AnswerArg)
+                    ElseIf Not String.IsNullOrWhiteSpace(AnswerArg.Split(" "c)(0)) Then
+                        W(DoTranslation("The requested argument {0} is not found."), True, ColTypes.Error, AnswerArg.Split(" "c)(0))
+                    End If
                 Next
             Else
                 If InjMode Then
