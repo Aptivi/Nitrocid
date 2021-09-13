@@ -540,6 +540,7 @@
     <Compile Include="TestShell\Commands\TestMD5.vb" />
     <Compile Include="TestShell\Commands\TestRegExp.vb" />
     <Compile Include="TestShell\Commands\TestSHA1.vb" />
+    <Compile Include="TestShell\Commands\TestSHA384.vb" />
     <Compile Include="TestShell\Commands\TestSHA256.vb" />
     <Compile Include="TestShell\Commands\TestSHA512.vb" />
     <Compile Include="TestShell\Commands\Translate.vb" />
