@@ -26,7 +26,9 @@ Imports KS
     <TestMethod()> <TestCategory("Setting")> Public Sub TestSetColors()
         SetColors(ConsoleColors.White, ConsoleColors.White, ConsoleColors.Yellow, ConsoleColors.Red, ConsoleColors.DarkGreen, ConsoleColors.Green,
                   ConsoleColors.Black, ConsoleColors.Gray, ConsoleColors.DarkYellow, ConsoleColors.DarkGray, ConsoleColors.Green, ConsoleColors.Red,
-                  ConsoleColors.Yellow, ConsoleColors.DarkYellow, ConsoleColors.Green).ShouldBeTrue
+                  ConsoleColors.Yellow, ConsoleColors.DarkYellow, ConsoleColors.Green, ConsoleColors.White, ConsoleColors.Gray, ConsoleColors.DarkYellow,
+                  ConsoleColors.Red, ConsoleColors.Yellow, ConsoleColors.Green, ConsoleColors.Gray, ConsoleColors.Gray, ConsoleColors.White, ConsoleColors.Gray,
+                  ConsoleColors.White, ConsoleColors.Yellow, ConsoleColors.Gray, ConsoleColors.DarkYellow, ConsoleColors.DarkRed).ShouldBeTrue
     End Sub
 
 End Class
