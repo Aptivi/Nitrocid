@@ -16,18 +16,21 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
 Imports KS
 
-'Warning: Don't implement the unit tests related to downloading or uploading files. This causes AppVeyor to choke.
-<TestClass()> Public Class NetworkManipulationTests
+<TestClass()> Public Class JsonShellInitializationTests
 
     ''' <summary>
-    ''' Tests hostname change
+    ''' Tests opening, saving, and closing a JSON file
     ''' </summary>
-    <TestMethod()> <TestCategory("Manipulation")> Public Sub TestChangeHostname()
-        ChangeHostname("NewHost").ShouldBeTrue
-        HName.ShouldBe("NewHost")
-        GetConfigValue(ConfigCategory.Login, GetConfigCategory(ConfigCategory.Login), "Host Name").ShouldBe("NewHost")
+    <TestMethod()> <TestCategory("Initialization")> Public Sub TestOpenSaveCloseJsonFile()
+        Dim PathToTestJson As String = Path.GetFullPath("TestJson.json")
+        JsonShell_OpenJsonFile(PathToTestJson).ShouldBeTrue
+        JsonShell_AddNewProperty("$", "HowText", "How are you today?")
+        JsonShell_FileToken("HowText").ShouldNotBeNull
+        JsonShell_SaveFile(False).ShouldBeTrue
+        JsonShell_CloseTextFile.ShouldBeTrue
     End Sub
 
 End Class

@@ -91,6 +91,7 @@
     <Compile Include="Misc\MOTDManagementTests.vb" />
     <Compile Include="Misc\JsonActionTests.vb" />
     <Compile Include="Misc\PlaceholderActionTests.vb" />
+    <Compile Include="Misc\JsonShellInitializationTests.vb" />
     <Compile Include="Misc\TextEditorInitializationTests.vb" />
     <Compile Include="Misc\StringEvaluatorActionTests.vb" />
     <Compile Include="Misc\ConfigManagementTests.vb" />
@@ -159,6 +160,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="TestJson.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Hacker.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
