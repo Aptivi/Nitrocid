@@ -62,6 +62,19 @@ Public Module SeparatorWriterColor
         If Not String.IsNullOrWhiteSpace(Text) Then
             If PrintSuffix Then W("- ", False, ColTypes.Separator, Vars)
             If Not Text.EndsWith("-") Then Text += " "
+
+            'We need to set an appropriate color for the suffix in the text.
+            If Text.StartsWith("-") Then
+                For CharIndex As Integer = 0 To Text.Length - 1
+                    If Text(CharIndex) = "-" Then
+                        W(Text(CharIndex), False, ColTypes.Separator)
+                    Else
+                        'We're (mostly) done
+                        Text = Text.Substring(CharIndex)
+                        Exit For
+                    End If
+                Next
+            End If
             W(Text.Truncate(Console.WindowWidth - 6), False, ColTypes.SeparatorText, Vars)
         End If
 

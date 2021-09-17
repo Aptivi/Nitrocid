@@ -28,7 +28,7 @@ Public Module WelcomeMessage
     ''' </summary>
     Sub WriteMessage()
         'The default message to write
-        Dim MessageWrite As String = "      >> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<"
+        Dim MessageWrite As String = "      >> " + DoTranslation("Welcome to the kernel! - Version {0}") + " <<      "
 
         'Check to see if user specified custom message
         If Not String.IsNullOrWhiteSpace(CustomBanner) Then
