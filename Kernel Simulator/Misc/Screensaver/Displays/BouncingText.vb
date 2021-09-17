@@ -26,16 +26,21 @@ Module BouncingTextDisplay
     ''' Handles the code of Bouncing Text
     ''' </summary>
     Sub BouncingText_DoWork(sender As Object, e As DoWorkEventArgs) Handles BouncingText.DoWork
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.ForegroundColor = ConsoleColor.White
-        Console.Clear()
-        Console.CursorVisible = False
         Try
+            'Variables
             Dim Direction As String = "BottomRight"
             Dim RowText, ColumnFirstLetter, ColumnLastLetter As Integer
+
+            'Preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.White
+            Console.Clear()
+            Console.CursorVisible = False
             RowText = Console.WindowHeight / 2
             ColumnFirstLetter = (Console.WindowWidth / 2) - BouncingTextWrite.Length / 2
             ColumnLastLetter = (Console.WindowWidth / 2) + BouncingTextWrite.Length / 2
+
+            'Screensaver logic
             Do While True
                 SleepNoBlock(BouncingTextDelay, BouncingText)
                 Console.Clear()

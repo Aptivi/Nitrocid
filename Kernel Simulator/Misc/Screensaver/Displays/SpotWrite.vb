@@ -25,11 +25,16 @@ Module SpotWriteDisplay
     Public WithEvents SpotWrite As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     Sub SpotWrite_DoWork(sender As Object, e As DoWorkEventArgs) Handles SpotWrite.DoWork
-        Console.Clear()
-        Console.CursorVisible = False
         Try
+            'Variables
             Dim RandomDriver As New Random()
             Dim TypeWrite As String = SpotWriteWrite
+
+            'Preparations
+            Console.Clear()
+            Console.CursorVisible = False
+
+            'Screensaver logic
             Do While True
                 SleepNoBlock(SpotWriteDelay, SpotWrite)
                 If SpotWrite.CancellationPending = True Then

@@ -26,16 +26,21 @@ Module BouncingBlockDisplay
     ''' Handles the code of Bouncing Block
     ''' </summary>
     Sub BouncingBlock_DoWork(sender As Object, e As DoWorkEventArgs) Handles BouncingBlock.DoWork
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.ForegroundColor = ConsoleColor.White
-        Console.Clear()
-        Console.CursorVisible = False
         Try
+            'Variables
             Dim RandomDriver As New Random()
             Dim Direction As String = "BottomRight"
             Dim RowBlock, ColumnBlock As Integer
+
+            'Preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.White
+            Console.Clear()
+            Console.CursorVisible = False
             RowBlock = Console.WindowHeight / 2
             ColumnBlock = Console.WindowWidth / 2
+
+            'Screensaver logic
             Do While True
                 SleepNoBlock(BouncingBlockDelay, BouncingBlock)
                 Console.BackgroundColor = ConsoleColor.Black

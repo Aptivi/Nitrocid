@@ -26,10 +26,15 @@ Module LinesDisplay
     ''' Handles the code of Lines
     ''' </summary>
     Sub Lines_DoWork(sender As Object, e As DoWorkEventArgs) Handles Lines.DoWork
-        Console.CursorVisible = False
-        Dim random As New Random()
-        Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         Try
+            'Variables
+            Dim random As New Random()
+
+            'Preparations
+            Console.CursorVisible = False
+            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+
+            'Screensaver logic
             Do While True
                 SleepNoBlock(LinesDelay, Lines)
                 If Lines.CancellationPending = True Then
@@ -47,22 +52,22 @@ Module LinesDisplay
                     If LinesTrueColor Then
                         Console.BackgroundColor = ConsoleColor.Black
                         Console.Clear()
-                        Dim RedColorNum As Integer = random.Next(255)
-                        Dim GreenColorNum As Integer = random.Next(255)
-                        Dim BlueColorNum As Integer = random.Next(255)
+                        Dim RedColorNum As Integer = Random.Next(255)
+                        Dim GreenColorNum As Integer = Random.Next(255)
+                        Dim BlueColorNum As Integer = Random.Next(255)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
                         Console.Write(esc + "[38;2;" + ColorStorage.ToString + "m")
                     ElseIf Lines255Colors Then
                         Console.BackgroundColor = ConsoleColor.Black
                         Console.Clear()
-                        Dim color As Integer = random.Next(255)
+                        Dim color As Integer = Random.Next(255)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", color)
                         Console.Write(esc + "[38;5;" + CStr(color) + "m")
                     Else
                         Console.Clear()
                         Console.BackgroundColor = ConsoleColor.Black
-                        Console.ForegroundColor = colors(random.Next(colors.Length - 1))
+                        Console.ForegroundColor = colors(Random.Next(colors.Length - 1))
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.ForegroundColor)
                     End If
 

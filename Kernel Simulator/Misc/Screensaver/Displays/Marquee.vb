@@ -26,13 +26,18 @@ Module MarqueeDisplay
     ''' Handles the code of Marquee
     ''' </summary>
     Sub Marquee_DoWork(sender As Object, e As DoWorkEventArgs) Handles Marquee.DoWork
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.ForegroundColor = ConsoleColor.White
-        Console.Clear()
-        Console.CursorVisible = False
-        Dim RandomDriver As New Random()
-        MarqueeWrite = MarqueeWrite.ReplaceAll({vbCr, vbLf}, " - ")
         Try
+            'Variables
+            Dim RandomDriver As New Random()
+
+            'Preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.White
+            Console.Clear()
+            Console.CursorVisible = False
+            MarqueeWrite = MarqueeWrite.ReplaceAll({vbCr, vbLf}, " - ")
+
+            'Screensaver logic
             Do While True
                 If Marquee.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")

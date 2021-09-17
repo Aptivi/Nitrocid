@@ -26,11 +26,16 @@ Module ProgressClockDisplay
     ''' Handles the code of Progress Clock
     ''' </summary>
     Sub ProgressClock_DoWork(sender As Object, e As DoWorkEventArgs) Handles ProgressClock.DoWork
-        Console.Clear()
-        Console.CursorVisible = False
-        Dim RandomDriver As New Random()
-        Dim CurrentTicks As Long = ProgressClockCycleColorsTicks
         Try
+            'Variables
+            Dim RandomDriver As New Random()
+            Dim CurrentTicks As Long = ProgressClockCycleColorsTicks
+
+            'Preparations
+            Console.Clear()
+            Console.CursorVisible = False
+
+            'Screensaver logic
             Do While True
                 SleepNoBlock(500, ProgressClock)
                 Console.Clear()

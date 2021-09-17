@@ -25,15 +25,20 @@ Module TypewriterDisplay
     Public WithEvents Typewriter As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     Sub Typewriter_DoWork(sender As Object, e As DoWorkEventArgs) Handles Typewriter.DoWork
-        Console.Clear()
-        Console.CursorVisible = False
         Try
+            'Variables
             Dim RandomDriver As New Random()
             Dim CpmSpeedMin As Integer = TypewriterWritingSpeedMin * 5
             Dim CpmSpeedMax As Integer = TypewriterWritingSpeedMax * 5
+            Dim TypeWrite As String = TypewriterWrite
+
+            'Preparations
+            Console.Clear()
+            Console.CursorVisible = False
             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", TypewriterWritingSpeedMin, CpmSpeedMin)
             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", TypewriterWritingSpeedMax, CpmSpeedMax)
-            Dim TypeWrite As String = TypewriterWrite
+
+            'Screensaver logic
             Do While True
                 SleepNoBlock(TypewriterDelay, Typewriter)
                 If Typewriter.CancellationPending = True Then

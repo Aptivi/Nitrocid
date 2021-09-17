@@ -26,15 +26,20 @@ Module DiscoDisplay
     ''' Handles the code of Disco
     ''' </summary>
     Sub Disco_DoWork(sender As Object, e As DoWorkEventArgs) Handles Disco.DoWork
-        Console.CursorVisible = False
-        Dim MaximumColors As Integer = 15
-        Dim MaximumColorsR As Integer = 255
-        Dim MaximumColorsG As Integer = 255
-        Dim MaximumColorsB As Integer = 255
-        Dim CurrentColor As Integer = 0
-        Dim CurrentColorR, CurrentColorG, CurrentColorB As Integer
-        Dim random As New Random()
         Try
+            'Variables
+            Dim MaximumColors As Integer = 15
+            Dim MaximumColorsR As Integer = 255
+            Dim MaximumColorsG As Integer = 255
+            Dim MaximumColorsB As Integer = 255
+            Dim CurrentColor As Integer = 0
+            Dim CurrentColorR, CurrentColorG, CurrentColorB As Integer
+            Dim random As New Random()
+
+            'Preparations
+            Console.CursorVisible = False
+
+            'Screensaver logic
             Do While True
                 'Check to see if we're dealing with beats per minute
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Using BPM: {0}", DiscoUseBeatsPerMinute)
@@ -62,9 +67,9 @@ Module DiscoDisplay
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Cycling colors: {0}", DiscoCycleColors)
                     If DiscoTrueColor Then
                         If Not DiscoCycleColors Then
-                            Dim RedColorNum As Integer = random.Next(255)
-                            Dim GreenColorNum As Integer = random.Next(255)
-                            Dim BlueColorNum As Integer = random.Next(255)
+                            Dim RedColorNum As Integer = Random.Next(255)
+                            Dim GreenColorNum As Integer = Random.Next(255)
+                            Dim BlueColorNum As Integer = Random.Next(255)
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                             Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
                             Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m")
@@ -75,7 +80,7 @@ Module DiscoDisplay
                         End If
                     ElseIf Disco255Colors Then
                         If Not DiscoCycleColors Then
-                            Dim color As Integer = random.Next(255)
+                            Dim color As Integer = Random.Next(255)
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", color)
                             Console.Write(esc + "[48;5;" + CStr(color) + "m")
                         Else
@@ -85,7 +90,7 @@ Module DiscoDisplay
                         End If
                     Else
                         If Not DiscoCycleColors Then
-                            Console.BackgroundColor = colors(random.Next(colors.Length - 1))
+                            Console.BackgroundColor = colors(Random.Next(colors.Length - 1))
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                         Else
                             Console.BackgroundColor = colors(CurrentColor)

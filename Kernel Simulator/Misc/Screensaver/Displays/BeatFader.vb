@@ -26,12 +26,17 @@ Module BeatFaderDisplay
     ''' Handles the code of FaderBack
     ''' </summary>
     Sub BeatFader_DoWork(sender As Object, e As DoWorkEventArgs) Handles BeatFader.DoWork
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.Clear()
-        Console.CursorVisible = False
-        Dim RandomDriver As New Random()
-        Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         Try
+            'Variables
+            Dim RandomDriver As New Random()
+
+            'Preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.Clear()
+            Console.CursorVisible = False
+            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+
+            'Screensaver logic
             Do While True
                 If BeatFader.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")

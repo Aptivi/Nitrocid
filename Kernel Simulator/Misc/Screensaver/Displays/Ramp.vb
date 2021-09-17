@@ -23,23 +23,28 @@ Module RampDisplay
     Public WithEvents Ramp As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     Sub Ramp_DoWork(sender As Object, e As DoWorkEventArgs) Handles Ramp.DoWork
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.ForegroundColor = ConsoleColor.White
-        Console.Clear()
-        Console.CursorVisible = False
-        Dim RandomDriver As New Random()
-        Dim RedColorNumFrom As Integer = RandomDriver.Next(255)
-        Dim GreenColorNumFrom As Integer = RandomDriver.Next(255)
-        Dim BlueColorNumFrom As Integer = RandomDriver.Next(255)
-        Dim ColorNumFrom As Integer = RandomDriver.Next(255)
-        Dim RedColorNumTo As Integer = RandomDriver.Next(255)
-        Dim GreenColorNumTo As Integer = RandomDriver.Next(255)
-        Dim BlueColorNumTo As Integer = RandomDriver.Next(255)
-        Dim ColorNumTo As Integer = RandomDriver.Next(255)
-        Dim CurrentWindowWidth As Integer = Console.WindowWidth
-        Dim CurrentWindowHeight As Integer = Console.WindowHeight
-        Dim ResizeSyncing As Boolean
         Try
+            'Variables
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.White
+            Console.Clear()
+            Console.CursorVisible = False
+
+            'Preparations
+            Dim RandomDriver As New Random()
+            Dim RedColorNumFrom As Integer = RandomDriver.Next(255)
+            Dim GreenColorNumFrom As Integer = RandomDriver.Next(255)
+            Dim BlueColorNumFrom As Integer = RandomDriver.Next(255)
+            Dim ColorNumFrom As Integer = RandomDriver.Next(255)
+            Dim RedColorNumTo As Integer = RandomDriver.Next(255)
+            Dim GreenColorNumTo As Integer = RandomDriver.Next(255)
+            Dim BlueColorNumTo As Integer = RandomDriver.Next(255)
+            Dim ColorNumTo As Integer = RandomDriver.Next(255)
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
+
+            'Screensaver logic
             Do While True
                 If Ramp.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")

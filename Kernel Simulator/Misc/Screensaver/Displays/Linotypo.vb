@@ -25,13 +25,15 @@ Public Module LinotypoDisplay
     Friend WithEvents Linotypo As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
-    ''' Handles the code of Plain
+    ''' Handles the code of Linotypo
     ''' </summary>
     Sub Linotypo_DoWork(sender As Object, e As DoWorkEventArgs) Handles Linotypo.DoWork
-        Console.Clear()
-        Console.CursorVisible = False
-        Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         Try
+            'Preparations
+            Console.Clear()
+            Console.CursorVisible = False
+            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+
             'Sanity checks
             If LinotypoTextColumns <= 0 Then
                 'We can't do zero columns! We would print nothing!

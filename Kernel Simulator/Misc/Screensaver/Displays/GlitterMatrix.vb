@@ -26,13 +26,18 @@ Module GlitterMatrixDisplay
     ''' Handles the code of Glitter Matrix
     ''' </summary>
     Sub GlitterMatrix_DoWork(sender As Object, e As DoWorkEventArgs) Handles GlitterMatrix.DoWork
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.ForegroundColor = ConsoleColor.Green
-        Console.Clear()
-        Console.CursorVisible = False
-        Dim RandomDriver As New Random()
-        Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         Try
+            'Variables
+            Dim RandomDriver As New Random()
+
+            'Preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.Green
+            Console.Clear()
+            Console.CursorVisible = False
+            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+
+            'Screensaver logic
             Do While True
                 If GlitterMatrix.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")

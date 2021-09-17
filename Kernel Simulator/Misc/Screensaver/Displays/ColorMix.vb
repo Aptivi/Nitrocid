@@ -26,12 +26,17 @@ Module ColorMixDisplay
     ''' Handles the code of ColorMix
     ''' </summary>
     Sub ColorMix_DoWork(sender As Object, e As DoWorkEventArgs) Handles ColorMix.DoWork
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.ForegroundColor = ConsoleColor.White
-        Console.Clear()
-        Console.CursorVisible = False
-        Dim colorrand As New Random()
         Try
+            'Variables
+            Dim colorrand As New Random()
+
+            'Preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.White
+            Console.Clear()
+            Console.CursorVisible = False
+
+            'Screensaver logic
             Do While True
                 SleepNoBlock(ColorMixDelay, ColorMix)
                 If ColorMix.CancellationPending = True Then

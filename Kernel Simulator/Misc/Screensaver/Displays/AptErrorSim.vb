@@ -26,8 +26,11 @@ Module AptErrorSimDisplay
     ''' Handles the code of APT Error Sim
     ''' </summary>
     Sub AptErrorSim_DoWork(sender As Object, e As DoWorkEventArgs) Handles AptErrorSim.DoWork
-        Console.CursorVisible = False
         Try
+            'Preparations
+            Console.CursorVisible = False
+
+            'Screensaver logic
             Do While True
                 SleepNoBlock(100, AptErrorSim)
 IFCANCEL:

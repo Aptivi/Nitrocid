@@ -23,15 +23,20 @@ Module TypoDisplay
     Public WithEvents Typo As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     Sub Typo_DoWork(sender As Object, e As DoWorkEventArgs) Handles Typo.DoWork
-        Console.Clear()
-        Console.CursorVisible = False
         Try
+            'Variables
             Dim RandomDriver As New Random()
             Dim CpmSpeedMin As Integer = TypoWritingSpeedMin * 5
             Dim CpmSpeedMax As Integer = TypoWritingSpeedMax * 5
             Dim Strikes As New List(Of String) From {"q`12wsa", "r43edfgt5", "u76yhjki8", "p09ol;'[-=]\", "/';. ", "m,lkjn ", "vbhgfc ", "zxdsa "}
             Dim CapStrikes As New List(Of String) From {"Q~!@WSA", "R$#EDFGT%", "U&^YHJKI*", "P)(OL:""{_+}|", "?"":> ", "M<LKJN ", "VBHGFC ", "ZXDSA "}
             Dim CapSymbols As String = "~!@$#%&^*)(:""{_+}|?><"
+
+            'Preparations
+            Console.Clear()
+            Console.CursorVisible = False
+
+            'Screensaver logic
             Do While True
                 SleepNoBlock(TypoDelay, Typo)
                 If Typo.CancellationPending = True Then

@@ -26,15 +26,20 @@ Module FaderBackDisplay
     ''' Handles the code of FaderBack
     ''' </summary>
     Sub FaderBack_DoWork(sender As Object, e As DoWorkEventArgs) Handles FaderBack.DoWork
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.Clear()
-        Console.CursorVisible = False
-        Dim RandomDriver As New Random()
-        Dim RedColorNum As Integer = RandomDriver.Next(255)
-        Dim GreenColorNum As Integer = RandomDriver.Next(255)
-        Dim BlueColorNum As Integer = RandomDriver.Next(255)
-        Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         Try
+            'Variables
+            Dim RandomDriver As New Random()
+            Dim RedColorNum As Integer = RandomDriver.Next(255)
+            Dim GreenColorNum As Integer = RandomDriver.Next(255)
+            Dim BlueColorNum As Integer = RandomDriver.Next(255)
+
+            'Preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.Clear()
+            Console.CursorVisible = False
+            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+
+            'Screensaver logic
             Do While True
                 If FaderBack.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")

@@ -26,12 +26,17 @@ Module MatrixDisplay
     ''' Handles the code of Matrix
     ''' </summary>
     Sub Matrix_DoWork(sender As Object, e As DoWorkEventArgs) Handles Matrix.DoWork
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.ForegroundColor = ConsoleColor.Green
-        Console.Clear()
-        Console.CursorVisible = False
-        Dim random As New Random()
         Try
+            'Variables
+            Dim random As New Random()
+
+            'Preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.Green
+            Console.Clear()
+            Console.CursorVisible = False
+
+            'Screensaver logic
             Do While True
                 If Matrix.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
@@ -44,7 +49,7 @@ Module MatrixDisplay
                     Exit Do
                 Else
                     SleepNoBlock(MatrixDelay, Matrix)
-                    Console.Write(CStr(random.Next(2)))
+                    Console.Write(CStr(Random.Next(2)))
                 End If
             Loop
         Catch ex As Exception

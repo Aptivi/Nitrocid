@@ -26,11 +26,12 @@ Module PlainDisplay
     ''' Handles the code of Plain
     ''' </summary>
     Sub Plain_DoWork(sender As Object, e As DoWorkEventArgs) Handles Plain.DoWork
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.ForegroundColor = ConsoleColor.White
-        Console.Clear()
-        Console.CursorVisible = False
         Try
+            'Preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.White
+            Console.Clear()
+            Console.CursorVisible = False
             Do While True
                 SleepNoBlock(10, Plain)
                 If Plain.CancellationPending = True Then

@@ -23,14 +23,19 @@ Module WipeDisplay
     Public WithEvents Wipe As New BackgroundWorker With {.WorkerSupportsCancellation = True}
 
     Sub Wipe_DoWork(sender As Object, e As DoWorkEventArgs) Handles Wipe.DoWork
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.ForegroundColor = ConsoleColor.White
-        Console.Clear()
-        Console.CursorVisible = False
-        Dim RandomDriver As New Random()
-        Dim ToDirection As WipeDirections = WipeDirections.Right
-        Dim TimesWiped As Integer = 0
         Try
+            'Variables
+            Dim RandomDriver As New Random()
+            Dim ToDirection As WipeDirections = WipeDirections.Right
+            Dim TimesWiped As Integer = 0
+
+            'Preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.White
+            Console.Clear()
+            Console.CursorVisible = False
+
+            'Screensaver logic
             Do While True
                 If Wipe.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")

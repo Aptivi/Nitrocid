@@ -26,12 +26,17 @@ Module FlashColorDisplay
     ''' Handles the code of Flash Colors
     ''' </summary>
     Sub FlashColor_DoWork(sender As Object, e As DoWorkEventArgs) Handles FlashColor.DoWork
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.Clear()
-        Console.CursorVisible = False
-        Dim RandomDriver As New Random()
-        Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         Try
+            'Variables
+            Dim RandomDriver As New Random()
+
+            'Preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.Clear()
+            Console.CursorVisible = False
+            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+
+            'Screensaver logic
             Do While True
                 If FlashColor.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")

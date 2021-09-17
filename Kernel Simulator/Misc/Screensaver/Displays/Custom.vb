@@ -31,7 +31,10 @@ Public Module CustomDisplay
         '                           Recommended: Turn off console cursor, and clear the screen in preDisplay() sub.
         '                           Substitute: TextWriterColor.W() with System.Console.WriteLine() or System.Console.Write().
         Try
+            'Preparations
             Console.CursorVisible = False
+
+            'Screensaver logic
             finalSaver.PreDisplay()
             Do While True
                 If Not finalSaver.DelayForEachWrite = Nothing Then

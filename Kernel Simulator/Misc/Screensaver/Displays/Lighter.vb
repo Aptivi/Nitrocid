@@ -26,13 +26,18 @@ Module LighterDisplay
     ''' Handles the code of Lighter
     ''' </summary>
     Sub Lighter_DoWork(sender As Object, e As DoWorkEventArgs) Handles Lighter.DoWork
-        Console.BackgroundColor = ConsoleColor.Black
-        Console.Clear()
-        Console.CursorVisible = False
-        Dim RandomDriver As New Random()
-        Dim CoveredPositions As New ArrayList
-        Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
         Try
+            'Variables
+            Dim RandomDriver As New Random()
+            Dim CoveredPositions As New ArrayList
+
+            'Preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.Clear()
+            Console.CursorVisible = False
+            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+
+            'Screensaver logic
             Do While True
                 If Lighter.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
