@@ -28,7 +28,7 @@ Class RSS_FeedInfoCommand
         W("- " + DoTranslation("Description:") + " ", False, ColTypes.ListEntry)
         W(RSSFeedInstance.FeedDescription, True, ColTypes.ListValue)
         W("- " + DoTranslation("Feed type:") + " ", False, ColTypes.ListEntry)
-        W(RSSFeedInstance.FeedType, True, ColTypes.ListValue)
+        W(RSSFeedInstance.FeedType.ToString, True, ColTypes.ListValue)
         W("- " + DoTranslation("Number of articles:") + " ", False, ColTypes.ListEntry)
         W(RSSFeedInstance.FeedArticles.Count, True, ColTypes.ListValue)
     End Sub

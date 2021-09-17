@@ -139,7 +139,6 @@ Public Class RSSFeed
 
         'Install the variables to a new instance
         _FeedUrl = FeedUrl
-        _FeedType = FeedType
         _FeedTitle = FeedTitle
         _FeedDescription = FeedDescription
         If _FeedArticles.Count <> 0 And Articles.Count <> 0 Then
