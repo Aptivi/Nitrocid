@@ -28,7 +28,6 @@ Module RampDisplay
             Console.BackgroundColor = ConsoleColor.Black
             Console.ForegroundColor = ConsoleColor.White
             Console.Clear()
-            Console.CursorVisible = False
 
             'Preparations
             Dim RandomDriver As New Random()
@@ -46,6 +45,8 @@ Module RampDisplay
 
             'Screensaver logic
             Do While True
+                'Console resizing can sometimes cause the cursor to remain visible. This happens on Windows 10's terminal.
+                Console.CursorVisible = False
                 If Ramp.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
