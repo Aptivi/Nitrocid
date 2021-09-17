@@ -70,48 +70,6 @@ Public Module Screensaver
     Private DoneFlag As Boolean = False
 
     ''' <summary>
-    ''' Custom screensaver interface with groups of subs and properties
-    ''' </summary>
-    Public Interface ICustomSaver
-        ''' <summary>
-        ''' Initializes screensaver
-        ''' </summary>
-        Sub InitSaver()
-        ''' <summary>
-        ''' Do anything before displaying screensaver
-        ''' </summary>
-        Sub PreDisplay()
-        ''' <summary>
-        ''' Do anything after displaying screensaver
-        ''' </summary>
-        Sub PostDisplay()
-        ''' <summary>
-        ''' Display a screensaver
-        ''' </summary>
-        Sub ScrnSaver()
-        ''' <summary>
-        ''' Indicate whether or not the screensaver is initialized
-        ''' </summary>
-        ''' <returns>true if initialized, false if uninitialized</returns>
-        Property Initialized As Boolean
-        ''' <summary>
-        ''' How many milliseconds to delay for each call to ScrnSaver
-        ''' </summary>
-        ''' <returns>A millisecond value</returns>
-        Property DelayForEachWrite As Integer
-        ''' <summary>
-        ''' The name of screensaver
-        ''' </summary>
-        ''' <returns>The name</returns>
-        Property SaverName As String
-        ''' <summary>
-        ''' Settings for custom screensaver
-        ''' </summary>
-        ''' <returns>A set of keys and values holding settings for the screensaver</returns>
-        Property SaverSettings As Dictionary(Of String, Object)
-    End Interface
-
-    ''' <summary>
     ''' Handles the screensaver time so that when it reaches the time threshold, the screensaver launches
     ''' </summary>
     Sub HandleTimeout(sender As Object, e As DoWorkEventArgs) Handles Timeout.DoWork
