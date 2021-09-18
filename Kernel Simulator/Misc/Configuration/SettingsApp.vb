@@ -475,7 +475,7 @@ Public Module SettingsApp
                         Next
                     End If
                 Case "8" 'Misc
-                    MaxOptions = 7
+                    MaxOptions = 8
                     W("*) " + DoTranslation("Miscellaneous Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("Settings that don't fit in their appropriate sections land here.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Show Time/Date on Upper Right Corner") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(CornerTD)))
@@ -485,6 +485,7 @@ Public Module SettingsApp
                     W("5) " + DoTranslation("Enable text editor autosave") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TextEdit_AutoSaveFlag)))
                     W("6) " + DoTranslation("Text editor autosave interval") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TextEdit_AutoSaveInterval)))
                     W("7) " + DoTranslation("Wrap list outputs") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WrapListOutputs)))
+                    W("8) " + DoTranslation("Draw notification border") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DrawBorderNotification)))
                 Case Else 'Invalid section
                     W("*) ???" + vbNewLine, True, ColTypes.Neutral)
                     W("X) " + DoTranslation("Invalid section entered. Please go back."), True, ColTypes.Error)
@@ -1702,6 +1703,11 @@ Public Module SettingsApp
                             KeyVar = NameOf(WrapListOutputs)
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Wrap list outputs") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Wraps the list outputs if it seems too long for the current console geometry."), True, ColTypes.Neutral)
+                        Case 8 'Draw notification border
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(DrawBorderNotification)
+                            W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Draw notification border") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Covers the notification with the border."), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

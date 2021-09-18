@@ -162,7 +162,11 @@ Public Module Flags
     ''' <summary>
     ''' Makes the hardware prober a bit talkative
     ''' </summary>
-    Public VerboseHardwareProbe As Boolean = False
+    Public VerboseHardwareProbe As Boolean
+    ''' <summary>
+    ''' Draws the border around the notification
+    ''' </summary>
+    Public DrawBorderNotification As Boolean
 
     'Private flags
     ''' <summary>

@@ -92,6 +92,18 @@ Public Module Notifications
                     WriteWhere(Title + GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 1, True, ColTypes.NotificationTitle)
                     WriteWhere(Desc + GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 2, True, ColTypes.NotificationDescription)
 
+                    'Optionally, draw a border
+                    If DrawBorderNotification Then
+                        WriteWhere("╔" + "═".Repeat(38) + "╗", Console.WindowWidth - 41, Console.WindowTop, True, ColTypes.Neutral)
+                        WriteWhere("║", Console.WindowWidth - 41, Console.WindowTop + 1, True, ColTypes.Neutral)
+                        WriteWhere("║", Console.WindowWidth - 41, Console.WindowTop + 2, True, ColTypes.Neutral)
+                        WriteWhere("║", Console.WindowWidth - 41, Console.WindowTop + 3, True, ColTypes.Neutral)
+                        WriteWhere("║", Console.WindowWidth - 2, Console.WindowTop + 1, True, ColTypes.Neutral)
+                        WriteWhere("║", Console.WindowWidth - 2, Console.WindowTop + 2, True, ColTypes.Neutral)
+                        WriteWhere("║", Console.WindowWidth - 2, Console.WindowTop + 3, True, ColTypes.Neutral)
+                        WriteWhere("╚" + "═".Repeat(38) + "╝", Console.WindowWidth - 41, Console.WindowTop + 4, True, ColTypes.Neutral)
+                    End If
+
                     'Beep according to priority
                     Wdbg(DebugLevel.I, "Priority: {0}", NewNotification.Priority)
                     For i As Integer = 1 To NewNotification.Priority
@@ -114,8 +126,13 @@ Public Module Notifications
                     End If
 
                     'Clear the area
+                    Dim TopTitleClear As Integer = Console.WindowTop + 1
+                    Dim TopDescClear As Integer = Console.WindowTop + 2
+                    Dim TopProgClear As Integer = Console.WindowTop + 3
+                    Dim TopOpenBorderClear As Integer = Console.WindowTop
+                    Dim TopCloseBorderClear As Integer = Console.WindowTop + 4
                     Thread.Sleep(5000)
-                    NotifClearArea(Console.WindowWidth - 40, Console.WindowTop + 1, Console.WindowTop + 2, Console.WindowTop + 3)
+                    NotifClearArea(Console.WindowWidth - If(DrawBorderNotification, 41, 40), TopTitleClear, TopDescClear, TopProgClear, TopOpenBorderClear, TopCloseBorderClear)
                 Next
             End If
         End While
@@ -127,13 +144,26 @@ Public Module Notifications
     ''' <param name="Width">Console width</param>
     ''' <param name="TopTitle">Vertical location of title</param>
     ''' <param name="TopDesc">Vertical location of description</param>
-    Private Sub NotifClearArea(Width As Integer, TopTitle As Integer, TopDesc As Integer, TopProg As Integer)
-        WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 1, True, ColTypes.Neutral)
-        WriteWhere(GetEsc() + "[0K", Width, TopTitle, True, ColTypes.Neutral)
-        WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 2, True, ColTypes.Neutral)
-        WriteWhere(GetEsc() + "[0K", Width, TopDesc, True, ColTypes.Neutral)
-        WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 3, True, ColTypes.Neutral)
-        WriteWhere(GetEsc() + "[0K", Width, TopProg, True, ColTypes.Neutral)
+    Private Sub NotifClearArea(Width As Integer, TopTitle As Integer, TopDesc As Integer, TopProg As Integer, TopOpenBorder As Integer, TopCloseBorder As Integer)
+        If DrawBorderNotification Then
+            WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 41, Console.WindowTop, True, ColTypes.Neutral)
+            WriteWhere(GetEsc() + "[0K", Width, TopOpenBorder, True, ColTypes.Neutral)
+            WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 41, Console.WindowTop + 1, True, ColTypes.Neutral)
+            WriteWhere(GetEsc() + "[0K", Width, TopTitle, True, ColTypes.Neutral)
+            WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 41, Console.WindowTop + 2, True, ColTypes.Neutral)
+            WriteWhere(GetEsc() + "[0K", Width, TopDesc, True, ColTypes.Neutral)
+            WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 41, Console.WindowTop + 3, True, ColTypes.Neutral)
+            WriteWhere(GetEsc() + "[0K", Width, TopProg, True, ColTypes.Neutral)
+            WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 41, Console.WindowTop + 4, True, ColTypes.Neutral)
+            WriteWhere(GetEsc() + "[0K", Width, TopCloseBorder, True, ColTypes.Neutral)
+        Else
+            WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 1, True, ColTypes.Neutral)
+            WriteWhere(GetEsc() + "[0K", Width, TopTitle, True, ColTypes.Neutral)
+            WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 2, True, ColTypes.Neutral)
+            WriteWhere(GetEsc() + "[0K", Width, TopDesc, True, ColTypes.Neutral)
+            WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop + 3, True, ColTypes.Neutral)
+            WriteWhere(GetEsc() + "[0K", Width, TopProg, True, ColTypes.Neutral)
+        End If
     End Sub
 
     ''' <summary>

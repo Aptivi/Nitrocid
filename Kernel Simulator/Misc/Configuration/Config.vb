@@ -421,7 +421,8 @@ Public Module Config
                     {"Preferred Unit for Temperature", PreferredUnit},
                     {"Enable text editor autosave", TextEdit_AutoSaveFlag},
                     {"Text editor autosave interval", TextEdit_AutoSaveInterval},
-                    {"Wrap list outputs", WrapListOutputs}
+                    {"Wrap list outputs", WrapListOutputs},
+                    {"Draw notification border", DrawBorderNotification}
             }
             ConfigurationObject.Add("Misc", MiscConfig)
 
@@ -721,6 +722,7 @@ Public Module Config
             TextEdit_AutoSaveFlag = If(ConfigToken("Misc")?("Enable text editor autosave"), True)
             TextEdit_AutoSaveInterval = If(Integer.TryParse(ConfigToken("Misc")?("Text editor autosave interval"), 0), ConfigToken("Misc")?("Text editor autosave interval"), 60)
             WrapListOutputs = If(ConfigToken("Misc")?("Wrap list outputs"), False)
+            DrawBorderNotification = If(ConfigToken("Misc")?("Draw notification border"), False)
 
             'Check to see if the config needs fixes
             RepairConfig()
