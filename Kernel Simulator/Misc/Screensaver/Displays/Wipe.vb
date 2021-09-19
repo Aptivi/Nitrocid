@@ -28,6 +28,9 @@ Module WipeDisplay
             Dim RandomDriver As New Random()
             Dim ToDirection As WipeDirections = WipeDirections.Right
             Dim TimesWiped As Integer = 0
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
 
             'Preparations
             Console.BackgroundColor = ConsoleColor.Black
@@ -37,6 +40,7 @@ Module WipeDisplay
 
             'Screensaver logic
             Do While True
+                Console.CursorVisible = False
                 If Wipe.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
@@ -48,6 +52,7 @@ Module WipeDisplay
                     Exit Do
                 Else
                     SleepNoBlock(WipeDelay, Wipe)
+                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
 
                     'Select a color
                     If WipeTrueColor Then
@@ -55,13 +60,13 @@ Module WipeDisplay
                         Dim GreenColorNum As Integer = RandomDriver.Next(255)
                         Dim BlueColorNum As Integer = RandomDriver.Next(255)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                        SetConsoleColor(New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), True)
+                        If Not ResizeSyncing Then SetConsoleColor(New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), True)
                     ElseIf Wipe255Colors Then
                         Dim ColorNum As Integer = RandomDriver.Next(255)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
-                        SetConsoleColor(New Color(ColorNum), True)
+                        If Not ResizeSyncing Then SetConsoleColor(New Color(ColorNum), True)
                     Else
-                        Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                        If Not ResizeSyncing Then Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                     End If
 
@@ -74,9 +79,13 @@ Module WipeDisplay
                     Select Case ToDirection
                         Case WipeDirections.Right
                             For Column As Integer = 0 To Console.WindowWidth
+                                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                                 If Wipe.CancellationPending Then Exit For
+                                If ResizeSyncing Then Exit For
                                 For Row As Integer = 0 To MaxWindowHeight
+                                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                                     If Wipe.CancellationPending Then Exit For
+                                    If ResizeSyncing Then Exit For
                                     Console.SetCursorPosition(0, Row)
                                     Console.Write(StrDup(Column, " "))
                                 Next
@@ -84,9 +93,13 @@ Module WipeDisplay
                             Next
                         Case WipeDirections.Left
                             For Column As Integer = Console.WindowWidth To 1 Step -1
+                                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                                 If Wipe.CancellationPending Then Exit For
+                                If ResizeSyncing Then Exit For
                                 For Row As Integer = 0 To MaxWindowHeight
+                                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                                     If Wipe.CancellationPending Then Exit For
+                                    If ResizeSyncing Then Exit For
                                     Console.SetCursorPosition(Column - 1, Row)
                                     Console.Write(StrDup(Console.WindowWidth - Column + 1, " "))
                                 Next
@@ -94,28 +107,42 @@ Module WipeDisplay
                             Next
                         Case WipeDirections.Top
                             For Row As Integer = MaxWindowHeight To 0 Step -1
+                                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                                 If Wipe.CancellationPending Then Exit For
+                                If ResizeSyncing Then Exit For
                                 Console.SetCursorPosition(0, Row)
                                 Console.Write(StrDup(Console.WindowWidth, " "))
                                 SleepNoBlock(WipeDelay, Wipe)
                             Next
                         Case WipeDirections.Bottom
                             For Row As Integer = 0 To MaxWindowHeight
+                                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                                 If Wipe.CancellationPending Then Exit For
+                                If ResizeSyncing Then Exit For
                                 Console.Write(StrDup(Console.WindowWidth, " "))
                                 SleepNoBlock(WipeDelay, Wipe)
                             Next
                             Console.SetCursorPosition(0, 0)
                     End Select
-                    TimesWiped += 1
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Wiped {0} times out of {1}", TimesWiped, WipeWipesNeededToChangeDirection)
 
-                    'Check if the number of times wiped is equal to the number of required times to change wiping direction.
-                    If TimesWiped = WipeWipesNeededToChangeDirection Then
-                        TimesWiped = 0
-                        ToDirection = [Enum].Parse(GetType(WipeDirections), RandomDriver.Next(0, 3))
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Changed direction to {0}", ToDirection.ToString)
+                    If Not ResizeSyncing Then
+                        TimesWiped += 1
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Wiped {0} times out of {1}", TimesWiped, WipeWipesNeededToChangeDirection)
+
+                        'Check if the number of times wiped is equal to the number of required times to change wiping direction.
+                        If TimesWiped = WipeWipesNeededToChangeDirection Then
+                            TimesWiped = 0
+                            ToDirection = [Enum].Parse(GetType(WipeDirections), RandomDriver.Next(0, 3))
+                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Changed direction to {0}", ToDirection.ToString)
+                        End If
+                    Else
+                        Console.BackgroundColor = ConsoleColor.Black
+                        Console.Clear()
                     End If
+
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
             Loop
         Catch ex As Exception
