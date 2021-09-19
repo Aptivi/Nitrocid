@@ -230,6 +230,7 @@ NextEntry:
                     WStkTrc(LoaderException)
                     W(LoaderException.Message, True, ColTypes.Error)
                 Next
+                W(DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), True, ColTypes.Error)
             End Try
         Else
             'Ignore all mods that its file name doesn't end with .vb
