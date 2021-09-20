@@ -284,6 +284,7 @@ Public Module KernelTools
         'Reset every variable below
         If ArgsInjected = False Then EnteredArguments.Clear()
         StopPanicAndGoToDoublePanic = False
+        Test_ExitFlag = False
         Aliases.Clear()
         RemoteDebugAliases.Clear()
         FTPShellAliases.Clear()

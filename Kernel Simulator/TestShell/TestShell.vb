@@ -74,8 +74,10 @@ Module TestShell
         Dim FullCmd As String
         SwitchCancellationHandler(ShellCommandType.TestShell)
         StageTimer.Stop()
-        Console.WriteLine()
-        WriteSeparator(DoTranslation("Welcome to Test Shell!"), True)
+        If Not Test_ExitFlag Then
+            Console.WriteLine()
+            WriteSeparator(DoTranslation("Welcome to Test Shell!"), True)
+        End If
 
         While Not Test_ExitFlag
             If DefConsoleOut IsNot Nothing Then
