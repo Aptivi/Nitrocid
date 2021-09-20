@@ -168,7 +168,7 @@ Public Module SettingsApp
                     W("11) " + DoTranslation("Zip Shell Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ZipShell_PromptStyle)))
                     W("12) " + DoTranslation("Custom colors...", currentLang), True, ColTypes.Option)
                 Case "4.12" 'Custom colors...
-                    MaxOptions = 30
+                    MaxOptions = 33
                     W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Custom colors...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lets you choose what type of color do you want to change.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Input color") + " [{0}]", True, ColTypes.Option, InputColor)
@@ -201,6 +201,9 @@ Public Module SettingsApp
                     W("28) " + DoTranslation("Stage time color") + " [{0}] ", True, ColTypes.Option, StageTimeColor)
                     W("29) " + DoTranslation("Progress color") + " [{0}] ", True, ColTypes.Option, ProgressColor)
                     W("30) " + DoTranslation("Back option color") + " [{0}] ", True, ColTypes.Option, BackOptionColor)
+                    W("31) " + DoTranslation("Low priority border color") + " [{0}] ", True, ColTypes.Option, LowPriorityBorderColor)
+                    W("32) " + DoTranslation("Medium priority border color") + " [{0}] ", True, ColTypes.Option, MediumPriorityBorderColor)
+                    W("33) " + DoTranslation("High priority border color") + " [{0}] ", True, ColTypes.Option, HighPriorityBorderColor)
                 Case "5" 'Filesystem
                     MaxOptions = 6
                     W("*) " + DoTranslation("Filesystem Settings...") + vbNewLine, True, ColTypes.Neutral)
@@ -900,6 +903,21 @@ Public Module SettingsApp
                             KeyVar = NameOf(BackOptionColor)
                             VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(BackOptionColor).Type = ColorType.TrueColor, If(New Color(BackOptionColor).Type = ColorType._255Color, New Color(BackOptionColor).PlainSequence, ConsoleColors.White), New Color(BackOptionColor).R, New Color(BackOptionColor).G, New Color(BackOptionColor).B)
+                        Case 31 'Low priority border color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(LowPriorityBorderColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(LowPriorityBorderColor).Type = ColorType.TrueColor, If(New Color(LowPriorityBorderColor).Type = ColorType._255Color, New Color(LowPriorityBorderColor).PlainSequence, ConsoleColors.White), New Color(LowPriorityBorderColor).R, New Color(LowPriorityBorderColor).G, New Color(LowPriorityBorderColor).B)
+                        Case 32 'Medium priority border color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(MediumPriorityBorderColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(MediumPriorityBorderColor).Type = ColorType.TrueColor, If(New Color(MediumPriorityBorderColor).Type = ColorType._255Color, New Color(MediumPriorityBorderColor).PlainSequence, ConsoleColors.White), New Color(MediumPriorityBorderColor).R, New Color(MediumPriorityBorderColor).G, New Color(MediumPriorityBorderColor).B)
+                        Case 33 'High priority border color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(HighPriorityBorderColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(HighPriorityBorderColor).Type = ColorType.TrueColor, If(New Color(HighPriorityBorderColor).Type = ColorType._255Color, New Color(HighPriorityBorderColor).PlainSequence, ConsoleColors.White), New Color(HighPriorityBorderColor).R, New Color(HighPriorityBorderColor).G, New Color(HighPriorityBorderColor).B)
                     End Select
                 Case "5" 'Filesystem
                     Select Case KeyNumber

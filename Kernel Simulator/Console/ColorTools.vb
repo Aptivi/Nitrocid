@@ -144,6 +144,18 @@ Public Module ColorTools
         ''' Back option text
         ''' </summary>
         BackOption
+        ''' <summary>
+        ''' Low priority notification border color
+        ''' </summary>
+        LowPriorityBorder
+        ''' <summary>
+        ''' Medium priority notification border color
+        ''' </summary>
+        MediumPriorityBorder
+        ''' <summary>
+        ''' High priority notification border color
+        ''' </summary>
+        HighPriorityBorder
     End Enum
 
     ''' <summary>
@@ -191,6 +203,9 @@ Public Module ColorTools
     Public StageTimeColor As String = New Color(ConsoleColors.Gray).PlainSequence
     Public ProgressColor As String = New Color(ConsoleColors.DarkYellow).PlainSequence
     Public BackOptionColor As String = New Color(ConsoleColors.DarkRed).PlainSequence
+    Public LowPriorityBorderColor As String = New Color(ConsoleColors.White).PlainSequence
+    Public MediumPriorityBorderColor As String = New Color(ConsoleColors.Yellow).PlainSequence
+    Public HighPriorityBorderColor As String = New Color(ConsoleColors.Red).PlainSequence
 
     'Templates array (available ones)
     Public colorTemplates As New Dictionary(Of String, ThemeInfo) From {{"Default", New ThemeInfo("_Default")},
@@ -260,6 +275,9 @@ Public Module ColorTools
         StageTimeColor = DefInfo.ThemeStageTimeColor.PlainSequence
         ProgressColor = DefInfo.ThemeProgressColor.PlainSequence
         BackOptionColor = DefInfo.ThemeBackOptionColor.PlainSequence
+        LowPriorityBorderColor = DefInfo.ThemeLowPriorityBorderColor.PlainSequence
+        MediumPriorityBorderColor = DefInfo.ThemeMediumPriorityBorderColor.PlainSequence
+        HighPriorityBorderColor = DefInfo.ThemeHighPriorityBorderColor.PlainSequence
         LoadBack()
 
         'Raise event
@@ -384,6 +402,9 @@ Public Module ColorTools
         ConfigToken("Colors")("Stage Time Color") = If(New Color(StageTimeColor).Type = ColorType.TrueColor, StageTimeColor.EncloseByDoubleQuotes, StageTimeColor)
         ConfigToken("Colors")("Progress Color") = If(New Color(ProgressColor).Type = ColorType.TrueColor, ProgressColor.EncloseByDoubleQuotes, ProgressColor)
         ConfigToken("Colors")("Back Option Color") = If(New Color(BackOptionColor).Type = ColorType.TrueColor, BackOptionColor.EncloseByDoubleQuotes, BackOptionColor)
+        ConfigToken("Colors")("Low Priority Border Color") = If(New Color(LowPriorityBorderColor).Type = ColorType.TrueColor, LowPriorityBorderColor.EncloseByDoubleQuotes, LowPriorityBorderColor)
+        ConfigToken("Colors")("Medium Priority Border Color") = If(New Color(MediumPriorityBorderColor).Type = ColorType.TrueColor, MediumPriorityBorderColor.EncloseByDoubleQuotes, MediumPriorityBorderColor)
+        ConfigToken("Colors")("High Priority Border Color") = If(New Color(HighPriorityBorderColor).Type = ColorType.TrueColor, HighPriorityBorderColor.EncloseByDoubleQuotes, HighPriorityBorderColor)
         File.WriteAllText(GetKernelPath(KernelPathType.Configuration), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
     End Sub
 
@@ -402,6 +423,7 @@ Public Module ColorTools
     ''' <param name="ListValueColor">Command definition color</param>
     ''' <param name="StageColor">Stage color</param>
     ''' <param name="ErrorColor">Error color</param>
+    ''' <param name="WarningColor">Warning color</param>
     ''' <param name="OptionColor">Option color</param>
     ''' <param name="BannerColor">Banner color</param>
     ''' <param name="NotificationTitleColor">Notification title color</param>
@@ -419,6 +441,9 @@ Public Module ColorTools
     ''' <param name="StageTimeColor">Stage time color</param>
     ''' <param name="ProgressColor">Progress color</param>
     ''' <param name="BackOptionColor">Back option color</param>
+    ''' <param name="LowPriorityBorderColor">Low priority notification border color</param>
+    ''' <param name="MediumPriorityBorderColor">Medium priority notification border color</param>
+    ''' <param name="HighPriorityBorderColor">High priority notification border color</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="InvalidOperationException"></exception>
     ''' <exception cref="Exceptions.ColorException"></exception>
@@ -426,7 +451,8 @@ Public Module ColorTools
                               BackgroundColor As String, NeutralTextColor As String, ListEntryColor As String, ListValueColor As String, StageColor As String, ErrorColor As String, WarningColor As String,
                               OptionColor As String, BannerColor As String, NotificationTitleColor As String, NotificationDescriptionColor As String, NotificationProgressColor As String,
                               NotificationFailureColor As String, QuestionColor As String, SuccessColor As String, UserDollarColor As String, TipColor As String, SeparatorTextColor As String,
-                              SeparatorColor As String, ListTitleColor As String, DevelopmentWarningColor As String, StageTimeColor As String, ProgressColor As String, BackOptionColor As String) As Boolean
+                              SeparatorColor As String, ListTitleColor As String, DevelopmentWarningColor As String, StageTimeColor As String, ProgressColor As String, BackOptionColor As String,
+                              LowPriorityBorderColor As String, MediumPriorityBorderColor As String, HighPriorityBorderColor As String) As Boolean
         'Check colors for null and set them to "def" if found
         If String.IsNullOrEmpty(OptionColor) Then OptionColor = "def"
         If String.IsNullOrEmpty(WarningColor) Then WarningColor = "def"
@@ -458,6 +484,9 @@ Public Module ColorTools
         If String.IsNullOrEmpty(StageTimeColor) Then StageTimeColor = "def"
         If String.IsNullOrEmpty(ProgressColor) Then ProgressColor = "def"
         If String.IsNullOrEmpty(BackOptionColor) Then BackOptionColor = "def"
+        If String.IsNullOrEmpty(LowPriorityBorderColor) Then LowPriorityBorderColor = "def"
+        If String.IsNullOrEmpty(MediumPriorityBorderColor) Then MediumPriorityBorderColor = "def"
+        If String.IsNullOrEmpty(HighPriorityBorderColor) Then HighPriorityBorderColor = "def"
 
         'Set colors
         If ColoredShell = True Then
@@ -492,6 +521,9 @@ Public Module ColorTools
             If StageTimeColor = "def" Then StageTimeColor = New Color(ConsoleColors.Gray).PlainSequence
             If ProgressColor = "def" Then ProgressColor = New Color(ConsoleColors.DarkYellow).PlainSequence
             If BackOptionColor = "def" Then BackOptionColor = New Color(ConsoleColors.DarkRed).PlainSequence
+            If LowPriorityBorderColor = "def" Then LowPriorityBorderColor = New Color(ConsoleColors.White).PlainSequence
+            If MediumPriorityBorderColor = "def" Then MediumPriorityBorderColor = New Color(ConsoleColors.Yellow).PlainSequence
+            If HighPriorityBorderColor = "def" Then HighPriorityBorderColor = New Color(ConsoleColors.Red).PlainSequence
             If BackgroundColor = "def" Then
                 BackgroundColor = New Color(ConsoleColors.Black).PlainSequence
                 LoadBack()
@@ -529,6 +561,9 @@ Public Module ColorTools
                 ColorTools.StageTimeColor = New Color(StageTimeColor).PlainSequence
                 ColorTools.ProgressColor = New Color(ProgressColor).PlainSequence
                 ColorTools.BackOptionColor = New Color(BackOptionColor).PlainSequence
+                ColorTools.LowPriorityBorderColor = New Color(LowPriorityBorderColor).PlainSequence
+                ColorTools.MediumPriorityBorderColor = New Color(MediumPriorityBorderColor).PlainSequence
+                ColorTools.HighPriorityBorderColor = New Color(HighPriorityBorderColor).PlainSequence
                 LoadBack()
                 MakePermanent()
 
@@ -590,6 +625,9 @@ Public Module ColorTools
                 StageTimeColor = ThemeInfo.ThemeStageTimeColor.PlainSequence
                 ProgressColor = ThemeInfo.ThemeProgressColor.PlainSequence
                 BackOptionColor = ThemeInfo.ThemeBackOptionColor.PlainSequence
+                LowPriorityBorderColor = ThemeInfo.ThemeLowPriorityBorderColor.PlainSequence
+                MediumPriorityBorderColor = ThemeInfo.ThemeMediumPriorityBorderColor.PlainSequence
+                HighPriorityBorderColor = ThemeInfo.ThemeHighPriorityBorderColor.PlainSequence
                 LoadBack()
                 MakePermanent()
 
@@ -691,6 +729,12 @@ Public Module ColorTools
                     SetConsoleColor(New Color(ProgressColor))
                 Case ColTypes.BackOption
                     SetConsoleColor(New Color(BackOptionColor))
+                Case ColTypes.LowPriorityBorder
+                    SetConsoleColor(New Color(LowPriorityBorderColor))
+                Case ColTypes.MediumPriorityBorder
+                    SetConsoleColor(New Color(MediumPriorityBorderColor))
+                Case ColTypes.HighPriorityBorder
+                    SetConsoleColor(New Color(HighPriorityBorderColor))
                 Case Else
                     Exit Select
             End Select

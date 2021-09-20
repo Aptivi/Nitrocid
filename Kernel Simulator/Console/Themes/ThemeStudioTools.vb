@@ -141,6 +141,18 @@ Module ThemeStudioTools
     ''' Selected banner color for new theme
     ''' </summary>
     Friend SelectedBackOptionColor As New Color(BannerColor)
+    ''' <summary>
+    ''' Selected banner color for new theme
+    ''' </summary>
+    Friend SelectedLowPriorityBorderColor As New Color(LowPriorityBorderColor)
+    ''' <summary>
+    ''' Selected banner color for new theme
+    ''' </summary>
+    Friend SelectedMediumPriorityBorderColor As New Color(MediumPriorityBorderColor)
+    ''' <summary>
+    ''' Selected banner color for new theme
+    ''' </summary>
+    Friend SelectedHighPriorityBorderColor As New Color(HighPriorityBorderColor)
 
     ''' <summary>
     ''' Saves theme to current directory under "<paramref name="Theme"/>.json."
@@ -211,6 +223,9 @@ Module ThemeStudioTools
         SelectedStageTimeColor = ThemeInfo.ThemeStageTimeColor
         SelectedProgressColor = ThemeInfo.ThemeProgressColor
         SelectedBackOptionColor = ThemeInfo.ThemeBackOptionColor
+        SelectedLowPriorityBorderColor = ThemeInfo.ThemeLowPriorityBorderColor
+        SelectedMediumPriorityBorderColor = ThemeInfo.ThemeMediumPriorityBorderColor
+        SelectedHighPriorityBorderColor = ThemeInfo.ThemeHighPriorityBorderColor
     End Sub
 
     ''' <summary>
@@ -252,6 +267,9 @@ Module ThemeStudioTools
         SelectedStageTimeColor = ThemeInfo.ThemeStageTimeColor
         SelectedProgressColor = ThemeInfo.ThemeProgressColor
         SelectedBackOptionColor = ThemeInfo.ThemeBackOptionColor
+        SelectedLowPriorityBorderColor = ThemeInfo.ThemeLowPriorityBorderColor
+        SelectedMediumPriorityBorderColor = ThemeInfo.ThemeMediumPriorityBorderColor
+        SelectedHighPriorityBorderColor = ThemeInfo.ThemeHighPriorityBorderColor
     End Sub
 
     ''' <summary>
@@ -288,7 +306,10 @@ Module ThemeStudioTools
                            New JProperty("DevelopmentWarningColor", SelectedDevelopmentWarningColor.PlainSequence),
                            New JProperty("StageTimeColor", SelectedStageTimeColor.PlainSequence),
                            New JProperty("ProgressColor", SelectedProgressColor.PlainSequence),
-                           New JProperty("BackOptionColor", SelectedBackOptionColor.PlainSequence))
+                           New JProperty("BackOptionColor", SelectedBackOptionColor.PlainSequence),
+                           New JProperty("LowPriorityBorderColor", SelectedLowPriorityBorderColor.PlainSequence),
+                           New JProperty("MediumPriorityBorderColor", SelectedMediumPriorityBorderColor.PlainSequence),
+                           New JProperty("HighPriorityBorderColor", SelectedHighPriorityBorderColor.PlainSequence))
     End Function
 
     ''' <summary>
@@ -418,6 +439,18 @@ Module ThemeStudioTools
         'Back option color
         W("*) " + DoTranslation("Back option color") + ": ", False, ColTypes.Option)
         WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedBackOptionColor)
+
+        'Low priority border color
+        W("*) " + DoTranslation("Low priority border color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedLowPriorityBorderColor)
+
+        'Medium priority border color
+        W("*) " + DoTranslation("Medium priority border color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedMediumPriorityBorderColor)
+
+        'High priority border color
+        W("*) " + DoTranslation("High priority border color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedHighPriorityBorderColor)
 
         'Pause until a key is pressed
         W(vbNewLine + DoTranslation("Press any key to go back."), True, ColTypes.Neutral)

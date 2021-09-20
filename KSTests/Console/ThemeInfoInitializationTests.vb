@@ -58,6 +58,9 @@ Imports KS
         ThemeInfoInstance.ThemeStageTimeColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeProgressColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeBackOptionColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeLowPriorityBorderColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeMediumPriorityBorderColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeHighPriorityBorderColor.ShouldNotBeNull
     End Sub
 
     ''' <summary>
@@ -110,6 +113,9 @@ Imports KS
             ThemeInfoInstance.ThemeStageTimeColor.ShouldNotBeNull
             ThemeInfoInstance.ThemeProgressColor.ShouldNotBeNull
             ThemeInfoInstance.ThemeBackOptionColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeLowPriorityBorderColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeMediumPriorityBorderColor.ShouldNotBeNull
+            ThemeInfoInstance.ThemeHighPriorityBorderColor.ShouldNotBeNull
         Next
     End Sub
 
@@ -151,6 +157,9 @@ Imports KS
         ThemeInfoInstance.ThemeStageTimeColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeProgressColor.ShouldNotBeNull
         ThemeInfoInstance.ThemeBackOptionColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeLowPriorityBorderColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeMediumPriorityBorderColor.ShouldNotBeNull
+        ThemeInfoInstance.ThemeHighPriorityBorderColor.ShouldNotBeNull
     End Sub
 
 End Class

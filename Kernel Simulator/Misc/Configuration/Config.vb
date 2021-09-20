@@ -123,7 +123,10 @@ Public Module Config
                     {"Development Warning Color", If(New Color(DevelopmentWarningColor).Type = ColorType.TrueColor, DevelopmentWarningColor.EncloseByDoubleQuotes, DevelopmentWarningColor)},
                     {"Stage Time Color", If(New Color(StageTimeColor).Type = ColorType.TrueColor, StageTimeColor.EncloseByDoubleQuotes, StageTimeColor)},
                     {"Progress Color", If(New Color(ProgressColor).Type = ColorType.TrueColor, ProgressColor.EncloseByDoubleQuotes, ProgressColor)},
-                    {"Back Option Color", If(New Color(BackOptionColor).Type = ColorType.TrueColor, BackOptionColor.EncloseByDoubleQuotes, BackOptionColor)}
+                    {"Back Option Color", If(New Color(BackOptionColor).Type = ColorType.TrueColor, BackOptionColor.EncloseByDoubleQuotes, BackOptionColor)},
+                    {"Low Priority Border Color", If(New Color(LowPriorityBorderColor).Type = ColorType.TrueColor, LowPriorityBorderColor.EncloseByDoubleQuotes, LowPriorityBorderColor)},
+                    {"Medium Priority Border Color", If(New Color(MediumPriorityBorderColor).Type = ColorType.TrueColor, MediumPriorityBorderColor.EncloseByDoubleQuotes, MediumPriorityBorderColor)},
+                    {"High Priority Border Color", If(New Color(HighPriorityBorderColor).Type = ColorType.TrueColor, HighPriorityBorderColor.EncloseByDoubleQuotes, HighPriorityBorderColor)}
             }
             ConfigurationObject.Add("Colors", ColorConfig)
 
@@ -502,6 +505,9 @@ Public Module Config
                 StageTimeColor = New Color(If(ConfigToken("Colors")?("Stage Time Color"), ConsoleColors.Gray)).PlainSequence
                 ProgressColor = New Color(If(ConfigToken("Colors")?("Progress Color"), ConsoleColors.DarkYellow)).PlainSequence
                 BackOptionColor = New Color(If(ConfigToken("Colors")?("Back Option Color"), ConsoleColors.DarkRed)).PlainSequence
+                LowPriorityBorderColor = New Color(If(ConfigToken("Colors")?("Low Priority Border Color"), ConsoleColors.White)).PlainSequence
+                MediumPriorityBorderColor = New Color(If(ConfigToken("Colors")?("Medium Priority Border Color"), ConsoleColors.Yellow)).PlainSequence
+                HighPriorityBorderColor = New Color(If(ConfigToken("Colors")?("High Priority Border Color"), ConsoleColors.Red)).PlainSequence
                 LoadBack()
             End If
 

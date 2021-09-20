@@ -141,6 +141,18 @@ Public Class ThemeInfo
     ''' Banner color set by theme
     ''' </summary>
     Public ReadOnly Property ThemeBackOptionColor As Color
+    ''' <summary>
+    ''' Low priority notification border color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeLowPriorityBorderColor As Color
+    ''' <summary>
+    ''' Medium priority notification border color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeMediumPriorityBorderColor As Color
+    ''' <summary>
+    ''' High priority notification border color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeHighPriorityBorderColor As Color
 
     ''' <summary>
     ''' Generates a new theme info from KS resources
@@ -178,6 +190,9 @@ Public Class ThemeInfo
         ThemeStageTimeColor = New Color(ThemeResourceJson.SelectToken("StageTimeColor").ToString)
         ThemeProgressColor = New Color(ThemeResourceJson.SelectToken("ProgressColor").ToString)
         ThemeBackOptionColor = New Color(ThemeResourceJson.SelectToken("BackOptionColor").ToString)
+        ThemeLowPriorityBorderColor = New Color(ThemeResourceJson.SelectToken("LowPriorityBorderColor").ToString)
+        ThemeMediumPriorityBorderColor = New Color(ThemeResourceJson.SelectToken("MediumPriorityBorderColor").ToString)
+        ThemeHighPriorityBorderColor = New Color(ThemeResourceJson.SelectToken("HighPriorityBorderColor").ToString)
     End Sub
 
     ''' <summary>
@@ -216,6 +231,9 @@ Public Class ThemeInfo
         ThemeStageTimeColor = New Color(ThemeResourceJson.SelectToken("StageTimeColor").ToString)
         ThemeProgressColor = New Color(ThemeResourceJson.SelectToken("ProgressColor").ToString)
         ThemeBackOptionColor = New Color(ThemeResourceJson.SelectToken("BackOptionColor").ToString)
+        ThemeLowPriorityBorderColor = New Color(ThemeResourceJson.SelectToken("LowPriorityBorderColor").ToString)
+        ThemeMediumPriorityBorderColor = New Color(ThemeResourceJson.SelectToken("MediumPriorityBorderColor").ToString)
+        ThemeHighPriorityBorderColor = New Color(ThemeResourceJson.SelectToken("HighPriorityBorderColor").ToString)
     End Sub
 
 End Class

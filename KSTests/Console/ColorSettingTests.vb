@@ -28,7 +28,8 @@ Imports KS
                   ConsoleColors.Black, ConsoleColors.Gray, ConsoleColors.DarkYellow, ConsoleColors.DarkGray, ConsoleColors.Green, ConsoleColors.Red,
                   ConsoleColors.Yellow, ConsoleColors.DarkYellow, ConsoleColors.Green, ConsoleColors.White, ConsoleColors.Gray, ConsoleColors.DarkYellow,
                   ConsoleColors.Red, ConsoleColors.Yellow, ConsoleColors.Green, ConsoleColors.Gray, ConsoleColors.Gray, ConsoleColors.White, ConsoleColors.Gray,
-                  ConsoleColors.White, ConsoleColors.Yellow, ConsoleColors.Gray, ConsoleColors.DarkYellow, ConsoleColors.DarkRed).ShouldBeTrue
+                  ConsoleColors.White, ConsoleColors.Yellow, ConsoleColors.Gray, ConsoleColors.DarkYellow, ConsoleColors.DarkRed, ConsoleColors.White,
+                  ConsoleColors.Yellow, ConsoleColors.Red).ShouldBeTrue
     End Sub
 
 End Class

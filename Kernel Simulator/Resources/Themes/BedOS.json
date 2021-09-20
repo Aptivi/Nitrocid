@@ -28,5 +28,8 @@
     "DevelopmentWarningColor": "202",
     "StageTimeColor": "130",
     "ProgressColor": "202",
-    "BackOptionColor": "130"
+    "BackOptionColor": "130",
+    "LowPriorityBorderColor": "177",
+    "MediumPriorityBorderColor": "202",
+    "HighPriorityBorderColor": "202"
 }

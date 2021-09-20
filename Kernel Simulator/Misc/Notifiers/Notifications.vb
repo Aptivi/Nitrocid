@@ -77,6 +77,7 @@ Public Module Notifications
 
                     'Populate title and description
                     Dim Title, Desc As String
+                    Dim NotifyBorderColor As ColTypes = ColTypes.LowPriorityBorder
                     Wdbg(DebugLevel.I, "Title: {0}", NewNotification.Title)
                     Wdbg(DebugLevel.I, "Desc: {0}", NewNotification.Desc)
                     Title = NewNotification.Title.Truncate(36)
@@ -86,6 +87,14 @@ Public Module Notifications
                     Wdbg(DebugLevel.I, "Truncated title length: {0}", Title.Length)
                     Wdbg(DebugLevel.I, "Truncated desc length: {0}", Desc.Length)
 
+                    'Set the border color
+                    Select Case NewNotification.Priority
+                        Case NotifPriority.Medium
+                            NotifyBorderColor = ColTypes.MediumPriorityBorder
+                        Case NotifPriority.High
+                            NotifyBorderColor = ColTypes.HighPriorityBorder
+                    End Select
+
                     'Write notification to console
                     Wdbg(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}", Console.WindowWidth - 40, Console.WindowTop, Console.WindowTop + 1, Console.WindowTop + 2)
                     WriteWhere(GetEsc() + "[0K", Console.WindowWidth - 40, Console.WindowTop, True, ColTypes.Neutral)
@@ -94,14 +103,14 @@ Public Module Notifications
 
                     'Optionally, draw a border
                     If DrawBorderNotification Then
-                        WriteWhere("╔" + "═".Repeat(38) + "╗", Console.WindowWidth - 41, Console.WindowTop, True, ColTypes.Neutral)
-                        WriteWhere("║", Console.WindowWidth - 41, Console.WindowTop + 1, True, ColTypes.Neutral)
-                        WriteWhere("║", Console.WindowWidth - 41, Console.WindowTop + 2, True, ColTypes.Neutral)
-                        WriteWhere("║", Console.WindowWidth - 41, Console.WindowTop + 3, True, ColTypes.Neutral)
-                        WriteWhere("║", Console.WindowWidth - 2, Console.WindowTop + 1, True, ColTypes.Neutral)
-                        WriteWhere("║", Console.WindowWidth - 2, Console.WindowTop + 2, True, ColTypes.Neutral)
-                        WriteWhere("║", Console.WindowWidth - 2, Console.WindowTop + 3, True, ColTypes.Neutral)
-                        WriteWhere("╚" + "═".Repeat(38) + "╝", Console.WindowWidth - 41, Console.WindowTop + 4, True, ColTypes.Neutral)
+                        WriteWhere("╔" + "═".Repeat(38) + "╗", Console.WindowWidth - 41, Console.WindowTop, True, NotifyBorderColor)
+                        WriteWhere("║", Console.WindowWidth - 41, Console.WindowTop + 1, True, NotifyBorderColor)
+                        WriteWhere("║", Console.WindowWidth - 41, Console.WindowTop + 2, True, NotifyBorderColor)
+                        WriteWhere("║", Console.WindowWidth - 41, Console.WindowTop + 3, True, NotifyBorderColor)
+                        WriteWhere("║", Console.WindowWidth - 2, Console.WindowTop + 1, True, NotifyBorderColor)
+                        WriteWhere("║", Console.WindowWidth - 2, Console.WindowTop + 2, True, NotifyBorderColor)
+                        WriteWhere("║", Console.WindowWidth - 2, Console.WindowTop + 3, True, NotifyBorderColor)
+                        WriteWhere("╚" + "═".Repeat(38) + "╝", Console.WindowWidth - 41, Console.WindowTop + 4, True, NotifyBorderColor)
                     End If
 
                     'Beep according to priority
