@@ -521,13 +521,10 @@ Public Module SettingsApp
                     ElseIf AnswerInt <> MaxOptions And SectionNum = "4.12" Then
                         Wdbg(DebugLevel.I, "Tried to open subsection. Opening key {0} in section 4.12...", AnswerString)
                         OpenKey("4.12", AnswerInt)
-                    ElseIf AnswerInt <> MaxOptions And SectionNum = "7" Then
+                    ElseIf AnswerInt <= BuiltinSavers And SectionNum = "7" Then
                         Wdbg(DebugLevel.I, "Tried to open subsection. Opening section 7.{0}...", AnswerString)
                         Wdbg(DebugLevel.I, "Arguments: AnswerInt: {0}, ConfigurableScreensavers: {1}", AnswerInt, ConfigurableScreensavers.Count)
                         OpenSection("7." + AnswerString, AnswerInt, ConfigurableScreensavers)
-                    ElseIf AnswerInt = MaxOptions And SectionNum = "7" Then
-                        Wdbg(DebugLevel.I, "Opening key {0} from section {1} with argument {2}...", AnswerInt, SectionNum)
-                        OpenKey(SectionNum, AnswerInt, MaxOptions)
                     Else
                         Wdbg(DebugLevel.I, "Opening key {0} from section {1}...", AnswerInt, SectionNum)
                         OpenKey(SectionNum, AnswerInt)
@@ -555,7 +552,7 @@ Public Module SettingsApp
     ''' </summary>
     ''' <param name="Section">Section number</param>
     ''' <param name="KeyNumber">Key number</param>
-    Sub OpenKey(Section As String, KeyNumber As Integer, ParamArray KeyParameters() As Object)
+    Sub OpenKey(Section As String, KeyNumber As Integer)
         Dim MaxKeyOptions As Integer = 0
         Dim KeyFinished As Boolean
         Dim KeyType As SettingsKeyType = SettingsKeyType.SUnknown
@@ -571,7 +568,7 @@ Public Module SettingsApp
         Dim SelectFrom As IEnumerable(Of Object)
         Dim SelectionEnumZeroBased As Boolean
         Dim NeutralizePaths As Boolean
-        Dim BuiltinSavers As Integer = 21
+        Dim BuiltinSavers As Integer = 24
 
         While Not KeyFinished
             Console.Clear()
