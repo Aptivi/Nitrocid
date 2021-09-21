@@ -93,7 +93,7 @@ Module PageParser
                         If BodyParsing Then
                             'If we're not at the end of the body
                             If ManLine <> BodyEndConstant Then
-                                If Not String.IsNullOrWhiteSpace(ManLine) Then Wdbg("Appending {0} to builder", ManLine)
+                                If Not String.IsNullOrWhiteSpace(ManLine) Then Wdbg(DebugLevel.I, "Appending {0} to builder", ManLine)
                                 Body.AppendLine(ProbePlaces(ManLine))
                             Else
                                 'Stop parsing the body
@@ -103,7 +103,7 @@ Module PageParser
                             'Check for constants
                             If ManLine.StartsWith(RevisionConstant) Then
                                 'Found the revision constant
-                                Wdbg("Revision found on this line: {0}", ManLine)
+                                Wdbg(DebugLevel.I, "Revision found on this line: {0}", ManLine)
                                 Dim Rev As String = ManLine.Substring(RevisionConstant.Length)
                                 If String.IsNullOrWhiteSpace(Rev) Then
                                     Wdbg(DebugLevel.W, "Revision not defined. Assuming v1...")
@@ -112,7 +112,7 @@ Module PageParser
                                 ManRevision = Rev
                             ElseIf ManLine.StartsWith(TitleConstant) Then
                                 'Found the title constant
-                                Wdbg("Title found on this line: {0}", ManLine)
+                                Wdbg(DebugLevel.I, "Title found on this line: {0}", ManLine)
                                 Dim Title As String = ManLine.Substring(TitleConstant.Length)
                                 If String.IsNullOrWhiteSpace(Title) Then
                                     Wdbg(DebugLevel.W, "Title not defined.")
@@ -128,16 +128,16 @@ Module PageParser
 
                 'Check to see if the manual starts with (*MAN START*) header
                 If ManLine = "(*MAN START*)" Then
-                    Wdbg("Successfully found (*MAN START*) in manpage {0}.", ManualFile)
+                    Wdbg(DebugLevel.I, "Successfully found (*MAN START*) in manpage {0}.", ManualFile)
                     InternalParseDone = True
                 End If
             Next
 
             'Check for body
             If InternalParseDone Then
-                Wdbg("Valid manual page! ({0})", ManualFile)
+                Wdbg(DebugLevel.I, "Valid manual page! ({0})", ManualFile)
                 If String.IsNullOrWhiteSpace(Body.ToString) Then
-                    Wdbg("Body for ""{0}"" does not contain anything.", ManualFile)
+                    Wdbg(DebugLevel.W, "Body for ""{0}"" does not contain anything.", ManualFile)
                     Body.AppendLine(DoTranslation("Consider filling this manual page."))
                 End If
             Else
@@ -145,7 +145,7 @@ Module PageParser
             End If
         Catch ex As Exception
             Success = False
-            Wdbg("The manual page {0} is invalid. {1}", ManTitle, ex.Message)
+            Wdbg(DebugLevel.E, "The manual page {0} is invalid. {1}", ManTitle, ex.Message)
             WStkTrc(ex)
         End Try
         Return Success

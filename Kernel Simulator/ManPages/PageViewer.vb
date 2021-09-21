@@ -48,7 +48,7 @@ Public Module PageViewer
             Console.Clear()
 
             'Write the information to the console
-            WriteWhereC("{0} (v{1})", Console.CursorLeft, InfoPlace, True, New Color(ConsoleColor.Black), New Color(ConsoleColor.White), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+            WriteWhereC(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
 
             'Disable blinking cursor
             Console.CursorVisible = False
@@ -108,7 +108,7 @@ Public Module PageViewer
                 If Console.CursorTop = InfoPlace - 1 Then
                     Console.ReadKey()
                     Console.Clear()
-                    WriteWhereC("{0} (v{1})", Console.CursorLeft, InfoPlace, True, New Color(ConsoleColor.Black), New Color(ConsoleColor.White), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+                    WriteWhereC(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
                 End If
             Next
 
