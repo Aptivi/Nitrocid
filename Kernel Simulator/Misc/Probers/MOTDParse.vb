@@ -19,7 +19,8 @@
 Public Module MOTDParse
 
     'Variables
-    Public MOTDFilePath, MALFilePath As String
+    Public MOTDFilePath As String = GetKernelPath(KernelPathType.MOTD)
+    Public MALFilePath As String = GetKernelPath(KernelPathType.MAL)
 
     'TODO: Document this by Milestone 2
     ''' <summary>
@@ -40,8 +41,8 @@ Public Module MOTDParse
             Dim MOTDStreamW As IO.StreamWriter
 
             'Get the MOTD and MAL file path
-            MOTDFilePath = GetKernelPath(KernelPathType.MOTD)
-            MALFilePath = GetKernelPath(KernelPathType.MAL)
+            MOTDFilePath = NeutralizePath(MOTDFilePath)
+            MALFilePath = NeutralizePath(MALFilePath)
             Wdbg(DebugLevel.I, "Paths: {0}, {1}", MOTDFilePath, MALFilePath)
             Wdbg(DebugLevel.I, "Message type: {0}", MType)
 
@@ -83,8 +84,8 @@ Public Module MOTDParse
             Dim MOTDBuilder As New Text.StringBuilder
 
             'Get the MOTD and MAL file path
-            MOTDFilePath = GetKernelPath(KernelPathType.MOTD)
-            MALFilePath = GetKernelPath(KernelPathType.MAL)
+            MOTDFilePath = NeutralizePath(MOTDFilePath)
+            MALFilePath = NeutralizePath(MALFilePath)
             Wdbg(DebugLevel.I, "Paths: {0}, {1}", MOTDFilePath, MALFilePath)
             Wdbg(DebugLevel.I, "Message type: {0}", MType)
 

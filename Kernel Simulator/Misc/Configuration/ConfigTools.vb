@@ -78,7 +78,7 @@ Public Module ConfigTools
             End If
         End If
         If ConfigToken("Login") IsNot Nothing Then
-            If ConfigToken("Login").Count <> 4 Then
+            If ConfigToken("Login").Count <> 6 Then
                 Wdbg(DebugLevel.W, "Missing keys in Login. Config fix needed set to true.")
                 FixesNeeded = True
             End If

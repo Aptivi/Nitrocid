@@ -145,12 +145,14 @@ Public Module SettingsApp
                     W("2) " + DoTranslation("Full Probe") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FullHardwareProbe)))
                     W("3) " + DoTranslation("Verbose Probe") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(VerboseHardwareProbe)))
                 Case "3" 'Login
-                    MaxOptions = 3
+                    MaxOptions = 5
                     W("*) " + DoTranslation("Login Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section represents the login settings. Log out of your account for the changes to take effect.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Show MOTD on Log-in") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowMOTD)))
                     W("2) " + DoTranslation("Clear Screen on Log-in") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ClearOnLogin)))
                     W("3) " + DoTranslation("Show available usernames") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowAvailableUsers)))
+                    W("4) " + DoTranslation("MOTD path") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MOTDFilePath)))
+                    W("5) " + DoTranslation("MAL path") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MALFilePath)))
                 Case "4" 'Shell
                     MaxOptions = 12
                     W("*) " + DoTranslation("Shell Settings...") + vbNewLine, True, ColTypes.Neutral)
@@ -683,6 +685,16 @@ Public Module SettingsApp
                             KeyVar = NameOf(ShowAvailableUsers)
                             W("*) " + DoTranslation("Login Settings...") + " > " + DoTranslation("Show available usernames") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Shows available users if enabled."), True, ColTypes.Neutral)
+                        Case 4 'MOTD Path
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(MOTDFilePath)
+                            W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("MOTD Path") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Which file is the MOTD text file? Write an absolute path to the text file."), True, ColTypes.Neutral)
+                        Case 5 'MAL Path
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(MALFilePath)
+                            W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("MAL Path") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("Which file is the MAL text file? Write an absolute path to the text file."), True, ColTypes.Neutral)
                         Case Else
                             W("*) " + DoTranslation("Login Settings...") + " > ???" + vbNewLine, True, ColTypes.Neutral)
                             W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

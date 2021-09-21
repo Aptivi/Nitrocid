@@ -143,7 +143,9 @@ Public Module Config
                     {"Show MOTD on Log-in", ShowMOTD},
                     {"Clear Screen on Log-in", ClearOnLogin},
                     {"Host Name", HostName},
-                    {"Show available usernames", ShowAvailableUsers}
+                    {"Show available usernames", ShowAvailableUsers},
+                    {"MOTD Path", MOTDFilePath},
+                    {"MAL Path", MALFilePath}
             }
             ConfigurationObject.Add("Login", LoginConfig)
 
@@ -526,6 +528,8 @@ Public Module Config
             ShowMOTD = If(ConfigToken("Login")?("Show MOTD on Log-in"), True)
             ShowAvailableUsers = If(ConfigToken("Login")?("Show available usernames"), True)
             If Not String.IsNullOrWhiteSpace(ConfigToken("Login")?("Host Name")) Then HostName = ConfigToken("Login")?("Host Name")
+            If Not String.IsNullOrWhiteSpace(ConfigToken("Login")?("MOTD Path")) And TryParsePath(ConfigToken("Login")?("MOTD Path")) Then MOTDFilePath = ConfigToken("Login")?("MOTD Path")
+            If Not String.IsNullOrWhiteSpace(ConfigToken("Login")?("MAL Path")) And TryParsePath(ConfigToken("Login")?("MAL Path")) Then MALFilePath = ConfigToken("Login")?("MAL Path")
 
             'Shell Section
             Wdbg(DebugLevel.I, "Parsing shell section...")
