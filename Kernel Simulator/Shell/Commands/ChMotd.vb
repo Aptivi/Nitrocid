@@ -31,7 +31,7 @@ Class ChMotdCommand
         Else
             InitializeTextShell(GetKernelPath(KernelPathType.MOTD))
             W(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
-            ReadMOTDFromFile(MessageType.MOTD)
+            ReadMOTD(MessageType.MOTD)
         End If
     End Sub
 

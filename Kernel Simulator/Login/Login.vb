@@ -64,8 +64,8 @@ Public Module Login
             If ShowAvailableUsers Then W(DoTranslation("Available usernames: {0}"), True, ColTypes.Neutral, String.Join(", ", ListAllUsers))
 
             'Read MOTD and MAL
-            ReadMOTDFromFile(MessageType.MOTD)
-            ReadMOTDFromFile(MessageType.MAL)
+            ReadMOTD(MessageType.MOTD)
+            ReadMOTD(MessageType.MAL)
 
             'Show MOTD once
             Wdbg(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", ShowMOTDOnceFlag, ShowMOTD)

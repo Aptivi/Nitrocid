@@ -31,7 +31,7 @@ Class ChMalCommand
         Else
             InitializeTextShell(GetKernelPath(KernelPathType.MAL))
             W(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
-            ReadMOTDFromFile(MessageType.MAL)
+            ReadMOTD(MessageType.MAL)
         End If
     End Sub
 
