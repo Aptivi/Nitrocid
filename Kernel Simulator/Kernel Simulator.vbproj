@@ -502,6 +502,7 @@
     <Compile Include="Shell\ShellBase\ProvidedCommandArgumentsInfo.vb" />
     <Compile Include="Shell\Shell.vb" />
     <Compile Include="Shell\ShellBase\ShellStartThreads.vb" />
+    <Compile Include="TestShell\Commands\ColorWheel.vb" />
     <Compile Include="TestShell\Commands\ColorTest.vb" />
     <Compile Include="TestShell\Commands\ColorTrueTest.vb" />
     <Compile Include="TestShell\Commands\DCalend.vb" />
