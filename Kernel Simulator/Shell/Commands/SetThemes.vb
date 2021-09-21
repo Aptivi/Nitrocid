@@ -30,6 +30,7 @@ Class SetThemesCommand
             Else
                 ApplyThemeFromResources(ListArgs(0))
             End If
+            MakePermanent()
         Else
             W(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."), True, ColTypes.Neutral)
         End If
