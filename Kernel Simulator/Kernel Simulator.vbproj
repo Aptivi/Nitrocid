@@ -527,6 +527,7 @@
     <Compile Include="TestShell\Commands\PrintSepF.vb" />
     <Compile Include="TestShell\Commands\ProbeHw.vb" />
     <Compile Include="TestShell\Commands\RDebug.vb" />
+    <Compile Include="TestShell\Commands\SendNotProg.vb" />
     <Compile Include="TestShell\Commands\SendNot.vb" />
     <Compile Include="TestShell\Commands\SetCustomSaverSetting.vb" />
     <Compile Include="TestShell\Commands\Shutdown.vb" />

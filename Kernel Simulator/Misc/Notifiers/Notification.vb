@@ -44,6 +44,11 @@ Public Class Notification
     Property Type As NotifType
 
     ''' <summary>
+    ''' Whether the progress failed
+    ''' </summary>
+    Property ProgressFailed As Boolean
+
+    ''' <summary>
     ''' Notification progress
     ''' </summary>
     Property Progress As Integer
@@ -62,9 +67,13 @@ Public Class Notification
     End Property
 
     ''' <summary>
-    ''' Whether the progress failed
+    ''' Whether the progress has been compeleted successfully or with failure
     ''' </summary>
-    Property ProgressFailed As Boolean
+    ReadOnly Property ProgressCompleted As Boolean
+        Get
+            Return _Progress >= 100 Or ProgressFailed
+        End Get
+    End Property
 
     ''' <summary>
     ''' Creates a new notification
