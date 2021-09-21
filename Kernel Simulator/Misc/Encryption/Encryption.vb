@@ -22,6 +22,7 @@ Imports System.Text
 
 Public Module Encryption
 
+    'TODO: Document this by Milestone 2
     ''' <summary>
     ''' Encryption algorithms supported by KS
     ''' </summary>

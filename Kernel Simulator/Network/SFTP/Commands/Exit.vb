@@ -21,7 +21,7 @@ Class SFTP_ExitCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
-        sftpexit = True
+        SFTPExit = True
     End Sub
 
 End Class

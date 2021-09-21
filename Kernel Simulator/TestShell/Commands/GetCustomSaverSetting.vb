@@ -21,7 +21,7 @@ Class Test_GetCustomSaverSettingCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
-        If CSvrdb.ContainsKey(ListArgs(0)) Then
+        If CustomSavers.ContainsKey(ListArgs(0)) Then
             W("- {0} -> {1}: ", False, ColTypes.ListEntry, ListArgs(0), ListArgs(1))
             W(GetCustomSaverSettings(ListArgs(0), ListArgs(1)), True, ColTypes.ListValue)
         Else

@@ -208,7 +208,7 @@ Public Module ColorTools
     Public HighPriorityBorderColor As String = New Color(ConsoleColors.Red).PlainSequence
 
     'Templates array (available ones)
-    Public colorTemplates As New Dictionary(Of String, ThemeInfo) From {{"Default", New ThemeInfo("_Default")},
+    Public ColorTemplates As New Dictionary(Of String, ThemeInfo) From {{"Default", New ThemeInfo("_Default")},
                                                                         {"RedConsole", New ThemeInfo("RedConsole")},
                                                                         {"Bluespire", New ThemeInfo("Bluespire")},
                                                                         {"Hacker", New ThemeInfo("Hacker")},
@@ -303,7 +303,7 @@ Public Module ColorTools
     ''' <param name="theme">A specified theme</param>
     Public Sub ApplyThemeFromResources(theme As String)
         Wdbg(DebugLevel.I, "Theme: {0}", theme)
-        If colorTemplates.ContainsKey(theme) Then
+        If ColorTemplates.ContainsKey(theme) Then
             Wdbg(DebugLevel.I, "Theme found.")
 
             'Populate theme info

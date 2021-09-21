@@ -25,8 +25,8 @@ Class CdbgLogCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
         If DebugMode Then
             Try
-                dbgWriter.Close()
-                dbgWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging)) With {.AutoFlush = True}
+                DebugWriter.DebugWriter.Close()
+                DebugWriter.DebugWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging)) With {.AutoFlush = True}
                 W(DoTranslation("Debug log removed. All connected debugging devices may still view messages."), True, ColTypes.Neutral)
             Catch ex As Exception
                 W(DoTranslation("Debug log removal failed: {0}"), True, ColTypes.Error, ex.Message)

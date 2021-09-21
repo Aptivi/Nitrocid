@@ -42,35 +42,35 @@ Public Module Flags
     ''' <summary>
     ''' Set Root Password boolean
     ''' </summary>
-    Public setRootPasswd As Boolean
+    Public SetRootPassword As Boolean
     ''' <summary>
     ''' Set Root Password to any password
     ''' </summary>
-    Public RootPasswd As String = "toor"
+    Public RootPassword As String = "toor"
     ''' <summary>
     ''' Maintenance Mode
     ''' </summary>
-    Public maintenance As Boolean
+    Public Maintenance As Boolean
     ''' <summary>
     ''' Arguments On Boot
     ''' </summary>
-    Public argsOnBoot As Boolean
+    Public ArgsOnBoot As Boolean
     ''' <summary>
     ''' Clear Screen On Log-in
     ''' </summary>
-    Public clsOnLogin As Boolean
+    Public ClearOnLogin As Boolean
     ''' <summary>
     ''' Show MOTD on log-in
     ''' </summary>
-    Public showMOTD As Boolean = True
+    Public ShowMOTD As Boolean = True
     ''' <summary>
     ''' Simplified Help Command
     ''' </summary>
-    Public simHelp As Boolean
+    Public SimHelp As Boolean
     ''' <summary>
     ''' Probe slots
     ''' </summary>
-    Public slotProbe As Boolean = True
+    Public SlotProbe As Boolean = True
     ''' <summary>
     ''' Probe the hardware quietly. This overrides the <see cref="VerboseHardwareProbe"/> flag.
     ''' </summary>
@@ -78,11 +78,11 @@ Public Module Flags
     ''' <summary>
     ''' Show Time/Date on corner
     ''' </summary>
-    Public CornerTD As Boolean
+    Public CornerTimeDate As Boolean
     ''' <summary>
     ''' Instance checking
     ''' </summary>
-    Public instanceChecked As Boolean
+    Public InstanceChecked As Boolean
     ''' <summary>
     ''' A signal when user logs out.
     ''' </summary>

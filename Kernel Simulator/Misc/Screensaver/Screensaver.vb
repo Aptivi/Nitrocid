@@ -27,42 +27,42 @@ Imports Newtonsoft.Json.Linq
 Public Module Screensaver
 
     'Public Variables
-    Public LockMode As Boolean = False
-    Public InSaver As Boolean = False
+    Public LockMode As Boolean
+    Public InSaver As Boolean
     Public ScreensaverDebug As Boolean
-    Public defSaverName As String = "matrix"
-    Public CSvrdb As New Dictionary(Of String, ScreensaverInfo)
+    Public DefSaverName As String = "matrix"
+    Public CustomSavers As New Dictionary(Of String, ScreensaverInfo)
     Public WithEvents Timeout As New BackgroundWorker
-    Public finalSaver As ICustomSaver
+    Public FinalSaver As ICustomSaver
     Public CustomSaverSettingsToken As JObject
     Public ScrnTimeout As Integer = 300000
     Public ReadOnly colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())        '15 Console Colors
     Public ReadOnly colors255() As ConsoleColors = CType([Enum].GetValues(GetType(ConsoleColors)), ConsoleColors())  '255 Console Colors
-    Public ReadOnly ScrnSvrdb As New Dictionary(Of String, BackgroundWorker) From {{"aptErrorSim", AptErrorSim},
-                                                                                   {"beatFader", BeatFader},
-                                                                                   {"bouncingBlock", BouncingBlock},
-                                                                                   {"bouncingText", BouncingText},
-                                                                                   {"colorMix", ColorMix},
-                                                                                   {"disco", Disco},
-                                                                                   {"dissolve", Dissolve},
-                                                                                   {"fader", Fader},
-                                                                                   {"faderBack", FaderBack},
-                                                                                   {"flashColor", FlashColor},
-                                                                                   {"glitterColor", GlitterColor},
-                                                                                   {"glitterMatrix", GlitterMatrix},
-                                                                                   {"hackUserFromAD", HackUserFromAD},
-                                                                                   {"lighter", Lighter},
-                                                                                   {"lines", Lines},
-                                                                                   {"linotypo", Linotypo},
-                                                                                   {"marquee", Marquee},
-                                                                                   {"matrix", Matrix},
-                                                                                   {"plain", Plain},
-                                                                                   {"progressClock", ProgressClock},
-                                                                                   {"ramp", Ramp},
-                                                                                   {"spotWrite", SpotWrite},
-                                                                                   {"typewriter", Typewriter},
-                                                                                   {"typo", Typo},
-                                                                                   {"wipe", Wipe}}
+    Public ReadOnly Screensavers As New Dictionary(Of String, BackgroundWorker) From {{"aptErrorSim", AptErrorSim},
+                                                                                      {"beatFader", BeatFader},
+                                                                                      {"bouncingBlock", BouncingBlock},
+                                                                                      {"bouncingText", BouncingText},
+                                                                                      {"colorMix", ColorMix},
+                                                                                      {"disco", Disco},
+                                                                                      {"dissolve", Dissolve},
+                                                                                      {"fader", Fader},
+                                                                                      {"faderBack", FaderBack},
+                                                                                      {"flashColor", FlashColor},
+                                                                                      {"glitterColor", GlitterColor},
+                                                                                      {"glitterMatrix", GlitterMatrix},
+                                                                                      {"hackUserFromAD", HackUserFromAD},
+                                                                                      {"lighter", Lighter},
+                                                                                      {"lines", Lines},
+                                                                                      {"linotypo", Linotypo},
+                                                                                      {"marquee", Marquee},
+                                                                                      {"matrix", Matrix},
+                                                                                      {"plain", Plain},
+                                                                                      {"progressClock", ProgressClock},
+                                                                                      {"ramp", Ramp},
+                                                                                      {"spotWrite", SpotWrite},
+                                                                                      {"typewriter", Typewriter},
+                                                                                      {"typo", Typo},
+                                                                                      {"wipe", Wipe}}
 
     'Private variables
     Friend SaverAutoReset As New AutoResetEvent(False)
@@ -86,7 +86,7 @@ Public Module Screensaver
                 Next
                 If Not RebootRequested Then
                     Wdbg(DebugLevel.W, "Screen time has reached.")
-                    ShowSavers(defSaverName)
+                    ShowSavers(DefSaverName)
                 End If
             End If
         End While
@@ -102,15 +102,15 @@ Public Module Screensaver
             ScrnTimeReached = True
             EventManager.RaisePreShowScreensaver(saver)
             Wdbg(DebugLevel.I, "Requested screensaver: {0}", saver)
-            If ScrnSvrdb.ContainsKey(saver) Then
-                ScrnSvrdb(saver).RunWorkerAsync()
+            If Screensavers.ContainsKey(saver) Then
+                Screensavers(saver).RunWorkerAsync()
                 Wdbg(DebugLevel.I, "{0} started", saver)
                 Console.ReadKey()
-                ScrnSvrdb(saver).CancelAsync()
+                Screensavers(saver).CancelAsync()
                 SaverAutoReset.WaitOne()
-            ElseIf CSvrdb.ContainsKey(saver) Then
+            ElseIf CustomSavers.ContainsKey(saver) Then
                 'Only one custom screensaver can be used.
-                finalSaver = CSvrdb(saver).Screensaver
+                FinalSaver = CustomSavers(saver).Screensaver
                 Custom.RunWorkerAsync()
                 Wdbg(DebugLevel.I, "Custom screensaver {0} started", saver)
                 Console.ReadKey()
@@ -141,8 +141,8 @@ Public Module Screensaver
     ''' </summary>
     Public Sub LockScreen()
         LockMode = True
-        ShowSavers(defSaverName)
-        EventManager.RaisePreUnlock(defSaverName)
+        ShowSavers(DefSaverName)
+        EventManager.RaisePreUnlock(DefSaverName)
         ShowPasswordPrompt(CurrentUser)
     End Sub
 
@@ -151,9 +151,9 @@ Public Module Screensaver
     ''' </summary>
     ''' <param name="saver">Specified screensaver</param>
     Public Sub SetDefaultScreensaver(saver As String)
-        If ScrnSvrdb.ContainsKey(saver) Or CSvrdb.ContainsKey(saver) Then
+        If Screensavers.ContainsKey(saver) Or CustomSavers.ContainsKey(saver) Then
             Wdbg(DebugLevel.I, "{0} is found. Setting it to default...", saver)
-            defSaverName = saver
+            DefSaverName = saver
             Dim Token As JToken = GetConfigCategory(ConfigCategory.Screensaver)
             SetConfigValue(ConfigCategory.Screensaver, Token, "Screensaver", saver)
         Else
@@ -177,12 +177,12 @@ Public Module Screensaver
             If file.EndsWith(".ss.vb") Or file.EndsWith(".ss.cs") Or file.EndsWith(".dll") Then
                 Wdbg(DebugLevel.W, "{0} is a valid screensaver. Generating...", file)
                 If file.EndsWith(".ss.vb") Then
-                    finalSaver = GenSaver("VB.NET", IO.File.ReadAllText(modPath + file))
+                    FinalSaver = GenSaver("VB.NET", IO.File.ReadAllText(modPath + file))
                 ElseIf file.EndsWith(".ss.cs") Then
-                    finalSaver = GenSaver("C#", IO.File.ReadAllText(modPath + file))
+                    FinalSaver = GenSaver("C#", IO.File.ReadAllText(modPath + file))
                 ElseIf file.EndsWith(".dll") Then
                     Try
-                        finalSaver = GetScreensaverInstance(Assembly.LoadFrom(modPath + file))
+                        FinalSaver = GetScreensaverInstance(Assembly.LoadFrom(modPath + file))
                         DoneFlag = True
                     Catch ex As ReflectionTypeLoadException
                         Wdbg(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", file, ex.Message)
@@ -197,39 +197,39 @@ Public Module Screensaver
                 End If
                 If DoneFlag = True Then
                     Wdbg(DebugLevel.I, "{0} compiled correctly. Starting...", file)
-                    finalSaver.InitSaver()
-                    Dim SaverName As String = finalSaver.SaverName
+                    FinalSaver.InitSaver()
+                    Dim SaverName As String = FinalSaver.SaverName
                     Dim SaverInstance As ScreensaverInfo
-                    If finalSaver.Initialized = True Then
+                    If FinalSaver.Initialized = True Then
                         'Check to see if the screensaver is already found
                         Dim IsFound As Boolean
                         If Not SaverName = "" Then
-                            IsFound = CSvrdb.ContainsKey(SaverName)
+                            IsFound = CustomSavers.ContainsKey(SaverName)
                         Else
-                            IsFound = CSvrdb.ContainsKey(file)
+                            IsFound = CustomSavers.ContainsKey(file)
                         End If
                         Wdbg(DebugLevel.I, "Is screensaver found? {0}", IsFound)
                         If Not IsFound Then
                             If Not SaverName = "" Then
                                 W(DoTranslation("{0} has been initialized properly."), True, ColTypes.Neutral, SaverName)
                                 Wdbg(DebugLevel.I, "{0} ({1}) compiled correctly. Starting...", SaverName, file)
-                                SaverInstance = New ScreensaverInfo(SaverName, file, NeutralizePath(file, modPath), finalSaver)
-                                CSvrdb.Add(SaverName, SaverInstance)
+                                SaverInstance = New ScreensaverInfo(SaverName, file, NeutralizePath(file, modPath), FinalSaver)
+                                CustomSavers.Add(SaverName, SaverInstance)
                             Else
                                 W(DoTranslation("{0} has been initialized properly."), True, ColTypes.Neutral, file)
                                 Wdbg(DebugLevel.I, "{0} compiled correctly. Starting...", file)
-                                SaverInstance = New ScreensaverInfo(SaverName, file, NeutralizePath(file, modPath), finalSaver)
-                                CSvrdb.Add(file, SaverInstance)
+                                SaverInstance = New ScreensaverInfo(SaverName, file, NeutralizePath(file, modPath), FinalSaver)
+                                CustomSavers.Add(file, SaverInstance)
                             End If
                         Else
                             If Not SaverName = "" Then
                                 Wdbg(DebugLevel.W, "{0} ({1}) already exists. Recompiling...", SaverName, file)
-                                CSvrdb.Remove(SaverName)
+                                CustomSavers.Remove(SaverName)
                                 CompileCustom(file)
                                 Exit Sub
                             Else
                                 Wdbg(DebugLevel.W, "{0} already exists. Recompiling...", file)
-                                CSvrdb.Remove(file)
+                                CustomSavers.Remove(file)
                                 CompileCustom(file)
                                 Exit Sub
                             End If
@@ -340,11 +340,11 @@ Public Module Screensaver
         If Not File.Exists(GetKernelPath(KernelPathType.CustomSaverSettings)) Then MakeFile(GetKernelPath(KernelPathType.CustomSaverSettings))
         Dim CustomSaverJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.CustomSaverSettings))
         Dim CustomSaverToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(CustomSaverJsonContent), CustomSaverJsonContent, "{}"))
-        For Each Saver As String In CSvrdb.Keys
+        For Each Saver As String In CustomSavers.Keys
             Dim CustomSaverSettings As JObject = TryCast(CustomSaverToken(Saver), JObject)
             If CustomSaverSettings IsNot Nothing Then
                 For Each Setting In CustomSaverSettings
-                    CSvrdb(Saver).Screensaver.SaverSettings(Setting.Key) = Setting.Value.ToString
+                    CustomSavers(Saver).Screensaver.SaverSettings(Setting.Key) = Setting.Value.ToString
                 Next
             End If
         Next
@@ -355,13 +355,13 @@ Public Module Screensaver
     ''' Saves the custom saver settings
     ''' </summary>
     Public Sub SaveCustomSaverSettings()
-        For Each Saver As String In CSvrdb.Keys
-            If CSvrdb(Saver).Screensaver.SaverSettings IsNot Nothing Then
-                For Each Setting As String In CSvrdb(Saver).Screensaver.SaverSettings.Keys
+        For Each Saver As String In CustomSavers.Keys
+            If CustomSavers(Saver).Screensaver.SaverSettings IsNot Nothing Then
+                For Each Setting As String In CustomSavers(Saver).Screensaver.SaverSettings.Keys
                     If Not TryCast(CustomSaverSettingsToken(Saver), JObject).ContainsKey(Setting) Then
-                        TryCast(CustomSaverSettingsToken(Saver), JObject).Add(Setting, CSvrdb(Saver).Screensaver.SaverSettings(Setting).ToString)
+                        TryCast(CustomSaverSettingsToken(Saver), JObject).Add(Setting, CustomSavers(Saver).Screensaver.SaverSettings(Setting).ToString)
                     Else
-                        CustomSaverSettingsToken(Saver)(Setting) = CSvrdb(Saver).Screensaver.SaverSettings(Setting).ToString
+                        CustomSaverSettingsToken(Saver)(Setting) = CustomSavers(Saver).Screensaver.SaverSettings(Setting).ToString
                     End If
                 Next
             End If
@@ -375,12 +375,12 @@ Public Module Screensaver
     ''' <param name="CustomSaver">A custom saver</param>
     ''' <exception cref="Exceptions.NoSuchScreensaverException"></exception>
     Public Sub AddCustomSaverToSettings(CustomSaver As String)
-        If Not CSvrdb.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found."), CustomSaver)
+        If Not CustomSavers.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found."), CustomSaver)
         If Not CustomSaverSettingsToken.ContainsKey(CustomSaver) Then
             Dim NewCustomSaver As New JObject
-            If CSvrdb(CustomSaver).Screensaver.SaverSettings IsNot Nothing Then
-                For Each Setting As String In CSvrdb(CustomSaver).Screensaver.SaverSettings.Keys
-                    NewCustomSaver.Add(Setting, CSvrdb(CustomSaver).Screensaver.SaverSettings(Setting).ToString)
+            If CustomSavers(CustomSaver).Screensaver.SaverSettings IsNot Nothing Then
+                For Each Setting As String In CustomSavers(CustomSaver).Screensaver.SaverSettings.Keys
+                    NewCustomSaver.Add(Setting, CustomSavers(CustomSaver).Screensaver.SaverSettings(Setting).ToString)
                 Next
                 CustomSaverSettingsToken.Add(CustomSaver, NewCustomSaver)
                 If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(GetKernelPath(KernelPathType.CustomSaverSettings), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
@@ -395,7 +395,7 @@ Public Module Screensaver
     ''' <exception cref="Exceptions.NoSuchScreensaverException"></exception>
     ''' <exception cref="Exceptions.ScreensaverManagementException"></exception>
     Public Sub RemoveCustomSaverFromSettings(CustomSaver As String)
-        If Not CSvrdb.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found."), CustomSaver)
+        If Not CustomSavers.ContainsKey(CustomSaver) Then Throw New Exceptions.NoSuchScreensaverException(DoTranslation("Screensaver {0} not found."), CustomSaver)
         If Not CustomSaverSettingsToken.Remove(CustomSaver) Then Throw New Exceptions.ScreensaverManagementException(DoTranslation("Failed to remove screensaver {0} from config."), CustomSaver)
         If CustomSaverSettingsToken IsNot Nothing Then File.WriteAllText(GetKernelPath(KernelPathType.CustomSaverSettings), JsonConvert.SerializeObject(CustomSaverSettingsToken, Formatting.Indented))
     End Sub

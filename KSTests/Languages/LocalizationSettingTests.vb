@@ -24,7 +24,7 @@ Imports KS
     ''' Tests updating the culture
     ''' </summary>
     <TestMethod> <TestCategory("Setting")> Public Sub TestUpdateCulture()
-        currentLang = "spa"
+        CurrentLanguage = "spa"
         Dim ExpectedCulture As String = "Spanish"
         UpdateCulture()
         CurrentCult.EnglishName.ShouldBe(ExpectedCulture)
@@ -34,7 +34,7 @@ Imports KS
     ''' Tests updating the culture using custom culture
     ''' </summary>
     <TestMethod> <TestCategory("Setting")> Public Sub TestUpdateCultureCustom()
-        currentLang = "spa"
+        CurrentLanguage = "spa"
         Dim ExpectedCulture As String = "Spanish (Spain, International Sort)"
         UpdateCulture(ExpectedCulture)
         CurrentCult.EnglishName.ShouldBe(ExpectedCulture)

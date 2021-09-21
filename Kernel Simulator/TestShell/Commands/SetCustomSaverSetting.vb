@@ -21,7 +21,7 @@ Class Test_SetCustomSaverSettingCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
-        If CSvrdb.ContainsKey(ListArgs(0)) Then
+        If CustomSavers.ContainsKey(ListArgs(0)) Then
             If SetCustomSaverSettings(ListArgs(0), ListArgs(1), ListArgs(2)) Then
                 W(DoTranslation("Settings set successfully for screensaver") + " {0}.", True, ColTypes.Neutral, ListArgs(0))
             Else

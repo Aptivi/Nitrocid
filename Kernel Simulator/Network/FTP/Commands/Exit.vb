@@ -21,7 +21,7 @@ Class FTP_ExitCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
-        ftpexit = True
+        FtpExit = True
     End Sub
 
 End Class

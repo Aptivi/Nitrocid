@@ -26,7 +26,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestChangeHostname()
         ChangeHostname("NewHost").ShouldBeTrue
-        HName.ShouldBe("NewHost")
+        HostName.ShouldBe("NewHost")
         GetConfigValue(ConfigCategory.Login, GetConfigCategory(ConfigCategory.Login), "Host Name").ShouldBe("NewHost")
     End Sub
 

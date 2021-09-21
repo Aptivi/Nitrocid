@@ -96,7 +96,7 @@ Module CommandLineArgsParse
                             Case "debug"
                                 DebugMode = True
                             Case "args"
-                                argsOnBoot = True
+                                ArgsOnBoot = True
                             Case "help"
                                 W("- testMod: ", False, ColTypes.ListEntry) : W(AvailableCMDLineArgs("testMod").GetTranslatedHelpEntry, True, ColTypes.ListValue)
                                 W("- testInteractive: ", False, ColTypes.ListEntry) : W(AvailableCMDLineArgs("testInteractive").GetTranslatedHelpEntry, True, ColTypes.ListValue)

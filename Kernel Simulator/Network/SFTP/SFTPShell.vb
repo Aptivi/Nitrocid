@@ -34,18 +34,18 @@ Public Module SFTPShell
                                                                                  {"pwdl", New CommandInfo("pwdl", ShellCommandType.SFTPShell, "Gets current local directory", "", False, 0, New SFTP_PwdlCommand)},
                                                                                  {"pwdr", New CommandInfo("pwdr", ShellCommandType.SFTPShell, "Gets current remote directory", "", False, 0, New SFTP_PwdrCommand)},
                                                                                  {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.SFTPShell, "Uses information from Speed Dial to connect to any network quickly", "", False, 0, New SFTP_QuickConnectCommand)}}
-    Public SFTPConnected As Boolean = False
-    Private SFTPInitialized As Boolean = False
-    Public sftpsite As String
+    Public SFTPConnected As Boolean
+    Public SFTPSite As String
     Public SFTPCurrDirect As String
     Public SFTPCurrentRemoteDir As String
     Public SFTPUser As String
-    Friend SFTPPass As String
-    Private SFTPStrCmd As String
-    Public sftpexit As Boolean = False
+    Public SFTPExit As Boolean
     Public SFTPModCommands As New ArrayList
     Public SFTPShellPromptStyle As String = ""
     Public ClientSFTP As SftpClient
+    Friend SFTPPass As String
+    Private SFTPStrCmd As String
+    Private SFTPInitialized As Boolean
 
     ''' <summary>
     ''' Initializes the SFTP shell
@@ -65,17 +65,17 @@ Public Module SFTPShell
                 End If
 
                 'Check if the shell is going to exit
-                If sftpexit = True Then
+                If SFTPExit = True Then
                     Wdbg(DebugLevel.W, "Exiting shell...")
                     SFTPConnected = False
                     ClientSFTP?.Disconnect()
-                    sftpsite = ""
+                    SFTPSite = ""
                     SFTPCurrDirect = ""
                     SFTPCurrentRemoteDir = ""
                     SFTPUser = ""
                     SFTPPass = ""
                     SFTPStrCmd = ""
-                    sftpexit = False
+                    SFTPExit = False
                     SFTPInitialized = False
                     SwitchCancellationHandler(LastShellType)
                     Exit Sub
@@ -90,7 +90,7 @@ Public Module SFTPShell
                     If SFTPConnected Then
                         Wdbg(DebugLevel.I, "SFTPShellPromptStyle = {0}", SFTPShellPromptStyle)
                         If SFTPShellPromptStyle = "" Then
-                            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, SFTPUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, sftpsite) : W("]{0}> ", False, ColTypes.Gray, SFTPCurrentRemoteDir)
+                            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, SFTPUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, SFTPSite) : W("]{0}> ", False, ColTypes.Gray, SFTPCurrentRemoteDir)
                         Else
                             Dim ParsedPromptStyle As String = ProbePlaces(SFTPShellPromptStyle)
                             ParsedPromptStyle.ConvertVTSequences

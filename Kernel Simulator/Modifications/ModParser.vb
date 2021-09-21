@@ -335,7 +335,7 @@ NextEntry:
                         Dim ActualCommand As String = Command
                         Select Case script.Commands(Command).Type
                             Case ShellCommandType.Shell
-                                If Commands.ContainsKey(Command) Or modcmnds.Contains(Command) Then
+                                If Commands.ContainsKey(Command) Or ModCommands.Contains(Command) Then
                                     Wdbg(DebugLevel.W, "Command {0} conflicts with available shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
                                     Command += $"-{script.Name}-{script.ModPart}"
                                 End If
@@ -398,7 +398,7 @@ NextEntry:
                             Select Case script.Commands(ActualCommand).Type
                                 Case ShellCommandType.Shell
                                     Wdbg(DebugLevel.I, "Adding command {0} for main shell...", Command)
-                                    If Not modcmnds.Contains(Command) Then modcmnds.Add(Command)
+                                    If Not ModCommands.Contains(Command) Then ModCommands.Add(Command)
                                     script.Commands.RenameKey(ActualCommand, Command)
                                     ModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
                                 Case ShellCommandType.FTPShell

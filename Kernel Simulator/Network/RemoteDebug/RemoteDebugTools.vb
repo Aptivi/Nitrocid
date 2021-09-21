@@ -53,7 +53,7 @@ Public Module RemoteDebugTools
                     Wdbg(DebugLevel.I, "Debug device {0} disconnected.", DebugDevices.Values(i))
                     Found = True
                     DebugDevices.Keys(i).Disconnect(True)
-                    dbgConns.Remove(dbgConns.Keys(i))
+                    DebugConnections.Remove(DebugConnections.Keys(i))
                     DebugDevices.Remove(DebugDevices.Keys(i))
                     EventManager.RaiseRemoteDebugConnectionDisconnected(IPAddr)
                 End If

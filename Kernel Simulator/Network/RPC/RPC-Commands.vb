@@ -121,7 +121,7 @@ Public Module RPC_Commands
                     LockScreen()
                 ElseIf msg.StartsWith("SaveScrConfirm") Then
                     Wdbg(DebugLevel.I, "Save screen confirmed from remote access.")
-                    ShowSavers(defSaverName)
+                    ShowSavers(DefSaverName)
                 ElseIf msg.StartsWith("ExecConfirm") Then
                     If LoggedIn Then
                         Wdbg(DebugLevel.I, "Exec confirmed from remote access.")

@@ -313,8 +313,8 @@ Public Module UserManagement
     ''' Initializes root account
     ''' </summary>
     Sub InitializeSystemAccount()
-        If setRootPasswd Then
-            InitializeUser("root", RootPasswd, True, True)
+        If SetRootPassword Then
+            InitializeUser("root", RootPassword, True, True)
         ElseIf File.Exists(GetKernelPath(KernelPathType.Users)) Then
             If GetUserProperty("root", UserProperty.Password) IsNot Nothing Then
                 InitializeUser("root", GetUserProperty("root", UserProperty.Password), False, True)

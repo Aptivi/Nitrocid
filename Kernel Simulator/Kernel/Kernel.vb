@@ -23,7 +23,7 @@ Public Module Kernel
 
     'Variables
     Public MOTDMessage, MAL As String
-    Public HName As String = "kernel"
+    Public HostName As String = "kernel"
     Public EventManager As New Events
     Public DefConsoleOut As TextWriter
     Public ReadOnly KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
@@ -145,9 +145,9 @@ Public Module Kernel
 
                 'Initialize login prompt
                 DisposeAll()
-                If LoginFlag = True And maintenance = False Then
+                If LoginFlag = True And Maintenance = False Then
                     LoginPrompt()
-                ElseIf LoginFlag = True And maintenance = True Then
+                ElseIf LoginFlag = True And Maintenance = True Then
                     ReadMOTDFromFile(MessageType.MOTD)
                     ReadMOTDFromFile(MessageType.MAL)
                     LoginFlag = False

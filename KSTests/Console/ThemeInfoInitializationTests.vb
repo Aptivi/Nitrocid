@@ -67,7 +67,7 @@ Imports KS
     ''' Tests initializing an instance of ThemeInfo from all KS resources
     ''' </summary>
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeThemeInfoFromAllResources()
-        For Each ResourceName As String In colorTemplates.Keys
+        For Each ResourceName As String In ColorTemplates.Keys
             'Special naming cases
             Dim ThemeName As String = ResourceName
             Select Case ResourceName

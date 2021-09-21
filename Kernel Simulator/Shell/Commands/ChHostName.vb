@@ -26,7 +26,7 @@ Class ChHostNameCommand
         ElseIf ListArgs(0).IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
             W(DoTranslation("Special characters are not allowed."), True, ColTypes.Error)
         Else
-            W(DoTranslation("Changing from: {0} to {1}..."), True, ColTypes.Neutral, HName, ListArgs(0))
+            W(DoTranslation("Changing from: {0} to {1}..."), True, ColTypes.Neutral, HostName, ListArgs(0))
             ChangeHostname(ListArgs(0))
         End If
     End Sub

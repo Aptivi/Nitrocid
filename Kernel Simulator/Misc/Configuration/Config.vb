@@ -80,14 +80,14 @@ Public Module Config
 
             'The General Section
             Dim GeneralConfig As New JObject From {
-                    {"Prompt for Arguments on Boot", argsOnBoot},
-                    {"Maintenance Mode", maintenance},
-                    {"Change Root Password", setRootPasswd},
-                    {"Set Root Password to", RootPasswd},
+                    {"Prompt for Arguments on Boot", ArgsOnBoot},
+                    {"Maintenance Mode", Maintenance},
+                    {"Change Root Password", SetRootPassword},
+                    {"Set Root Password to", RootPassword},
                     {"Check for Updates on Startup", CheckUpdateStart},
                     {"Custom Startup Banner", CustomBanner},
                     {"Change Culture when Switching Languages", LangChangeCulture},
-                    {"Language", currentLang},
+                    {"Language", CurrentLanguage},
                     {"Culture", CurrentCult.Name}
             }
             ConfigurationObject.Add("General", GeneralConfig)
@@ -140,9 +140,9 @@ Public Module Config
 
             'The Login Section
             Dim LoginConfig As New JObject From {
-                    {"Show MOTD on Log-in", showMOTD},
-                    {"Clear Screen on Log-in", clsOnLogin},
-                    {"Host Name", HName},
+                    {"Show MOTD on Log-in", ShowMOTD},
+                    {"Clear Screen on Log-in", ClearOnLogin},
+                    {"Host Name", HostName},
                     {"Show available usernames", ShowAvailableUsers}
             }
             ConfigurationObject.Add("Login", LoginConfig)
@@ -150,7 +150,7 @@ Public Module Config
             'The Shell Section
             Dim ShellConfig As New JObject From {
                     {"Colored Shell", ColoredShell},
-                    {"Simplified Help Command", simHelp},
+                    {"Simplified Help Command", SimHelp},
                     {"Current Directory", CurrDir},
                     {"Lookup Directories", PathsToLookup.EncloseByDoubleQuotes},
                     {"Prompt Style", ShellPromptStyle},
@@ -177,8 +177,8 @@ Public Module Config
             'The Network Section
             Dim NetworkConfig As New JObject From {
                     {"Debug Port", DebugPort},
-                    {"Download Retry Times", DRetries},
-                    {"Upload Retry Times", URetries},
+                    {"Download Retry Times", DownloadRetries},
+                    {"Upload Retry Times", UploadRetries},
                     {"Show progress bar while downloading or uploading from ""get"" or ""put"" command", ShowProgress},
                     {"Log FTP username", FTPLoggerUsername},
                     {"Log FTP IP address", FTPLoggerIP},
@@ -193,7 +193,7 @@ Public Module Config
 
             'The Screensaver Section
             Dim ScreensaverConfig As New JObject From {
-                    {"Screensaver", defSaverName},
+                    {"Screensaver", DefSaverName},
                     {"Screensaver Timeout in ms", ScrnTimeout},
                     {"Enable screensaver debugging", ScreensaverDebug}
             }
@@ -418,7 +418,7 @@ Public Module Config
 
             'Misc Section
             Dim MiscConfig As New JObject From {
-                    {"Show Time/Date on Upper Right Corner", CornerTD},
+                    {"Show Time/Date on Upper Right Corner", CornerTimeDate},
                     {"Marquee on startup", StartScroll},
                     {"Long Time and Date", LongTimeDate},
                     {"Preferred Unit for Temperature", PreferredUnit},
@@ -513,23 +513,23 @@ Public Module Config
 
             'General Section
             Wdbg(DebugLevel.I, "Parsing general section...")
-            setRootPasswd = If(ConfigToken("General")?("Change Root Password"), False)
-            If setRootPasswd = True Then RootPasswd = ConfigToken("General")?("Set Root Password to")
-            maintenance = If(ConfigToken("General")?("Maintenance Mode"), False)
-            argsOnBoot = If(ConfigToken("General")?("Prompt for Arguments on Boot"), False)
+            SetRootPassword = If(ConfigToken("General")?("Change Root Password"), False)
+            If SetRootPassword = True Then RootPassword = ConfigToken("General")?("Set Root Password to")
+            Maintenance = If(ConfigToken("General")?("Maintenance Mode"), False)
+            ArgsOnBoot = If(ConfigToken("General")?("Prompt for Arguments on Boot"), False)
             CheckUpdateStart = If(ConfigToken("General")?("Check for Updates on Startup"), True)
             If Not String.IsNullOrWhiteSpace(ConfigToken("General")?("Custom Startup Banner")) Then CustomBanner = ConfigToken("General")?("Custom Startup Banner")
 
             'Login Section
             Wdbg(DebugLevel.I, "Parsing login section...")
-            clsOnLogin = If(ConfigToken("Login")?("Clear Screen on Log-in"), False)
-            showMOTD = If(ConfigToken("Login")?("Show MOTD on Log-in"), True)
+            ClearOnLogin = If(ConfigToken("Login")?("Clear Screen on Log-in"), False)
+            ShowMOTD = If(ConfigToken("Login")?("Show MOTD on Log-in"), True)
             ShowAvailableUsers = If(ConfigToken("Login")?("Show available usernames"), True)
-            If Not String.IsNullOrWhiteSpace(ConfigToken("Login")?("Host Name")) Then HName = ConfigToken("Login")?("Host Name")
+            If Not String.IsNullOrWhiteSpace(ConfigToken("Login")?("Host Name")) Then HostName = ConfigToken("Login")?("Host Name")
 
             'Shell Section
             Wdbg(DebugLevel.I, "Parsing shell section...")
-            simHelp = If(ConfigToken("Shell")?("Simplified Help Command"), False)
+            SimHelp = If(ConfigToken("Shell")?("Simplified Help Command"), False)
             CurrDir = If(ConfigToken("Shell")?("Current Directory"), GetOtherPath(OtherPathType.Home))
             PathsToLookup = If(Not String.IsNullOrEmpty(ConfigToken("Shell")?("Lookup Directories")), ConfigToken("Shell")?("Lookup Directories").ToString.ReleaseDoubleQuotes, Environ("PATH"))
             ShellPromptStyle = If(ConfigToken("Shell")?("Prompt Style"), "")
@@ -558,8 +558,8 @@ Public Module Config
             'Network Section
             Wdbg(DebugLevel.I, "Parsing network section...")
             DebugPort = If(Integer.TryParse(ConfigToken("Network")?("Debug Port"), 0), ConfigToken("Network")?("Debug Port"), 3014)
-            DRetries = If(Integer.TryParse(ConfigToken("Network")?("Download Retry Times"), 0), ConfigToken("Network")?("Download Retry Times"), 3)
-            URetries = If(Integer.TryParse(ConfigToken("Network")?("Upload Retry Times"), 0), ConfigToken("Network")?("Upload Retry Times"), 3)
+            DownloadRetries = If(Integer.TryParse(ConfigToken("Network")?("Download Retry Times"), 0), ConfigToken("Network")?("Download Retry Times"), 3)
+            UploadRetries = If(Integer.TryParse(ConfigToken("Network")?("Upload Retry Times"), 0), ConfigToken("Network")?("Upload Retry Times"), 3)
             ShowProgress = If(ConfigToken("Network")?("Show progress bar while downloading or uploading from ""get"" or ""put"" command"), True)
             FTPLoggerUsername = If(ConfigToken("Network")?("Log FTP username"), False)
             FTPLoggerIP = If(ConfigToken("Network")?("Log FTP IP address"), False)
@@ -571,7 +571,7 @@ Public Module Config
             RPCPort = If(Integer.TryParse(ConfigToken("Network")?("RPC Port"), 0), ConfigToken("Network")?("RPC Port"), 12345)
 
             'Screensaver Section
-            defSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")
+            DefSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")
             ScrnTimeout = If(Integer.TryParse(ConfigToken("Screensaver")?("Screensaver Timeout in ms"), 0), ConfigToken("Screensaver")?("Screensaver Timeout in ms"), 300000)
             ScreensaverDebug = If(ConfigToken("Screensaver")?("Enable screensaver debugging"), False)
 
@@ -721,7 +721,7 @@ Public Module Config
 
             'Misc Section
             Wdbg(DebugLevel.I, "Parsing misc section...")
-            CornerTD = If(ConfigToken("Misc")?("Show Time/Date on Upper Right Corner"), False)
+            CornerTimeDate = If(ConfigToken("Misc")?("Show Time/Date on Upper Right Corner"), False)
             StartScroll = If(ConfigToken("Misc")?("Marquee on startup"), True)
             LongTimeDate = If(ConfigToken("Misc")?("Long Time and Date"), True)
             PreferredUnit = If(ConfigToken("Misc")?("Preferred Unit for Temperature") IsNot Nothing, If([Enum].TryParse(ConfigToken("Misc")?("Preferred Unit for Temperature"), PreferredUnit), PreferredUnit, UnitMeasurement.Metric), UnitMeasurement.Metric)

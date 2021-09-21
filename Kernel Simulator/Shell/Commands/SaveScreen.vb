@@ -24,7 +24,7 @@ Class SaveScreenCommand
         If Not ListArgs?.Length = 0 Then
             ShowSavers(ListArgs(0))
         Else
-            ShowSavers(defSaverName)
+            ShowSavers(DefSaverName)
         End If
     End Sub
 

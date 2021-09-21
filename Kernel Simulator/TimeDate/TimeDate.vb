@@ -37,7 +37,7 @@ Public Module TimeDate
                 Exit Do
             Else
                 KernelDateTime = Date.Now
-                If CornerTD = True And Not InSaver Then
+                If CornerTimeDate = True And Not InSaver Then
                     oldWid = Console.WindowWidth - TimeString.Length - 1
                     oldTop = Console.WindowTop
                     WriteWhere(TimeString, Console.WindowWidth - TimeString.Length - 1, Console.WindowTop, True, ColTypes.Neutral)

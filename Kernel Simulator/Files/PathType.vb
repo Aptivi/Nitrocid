@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+'TODO: Document these by Milestone 2
 ''' <summary>
 ''' Specifies the kernel path type
 ''' </summary>

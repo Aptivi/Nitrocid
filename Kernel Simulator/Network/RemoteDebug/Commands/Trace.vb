@@ -23,15 +23,15 @@ Class Debug_TraceCommand
     Implements IRemoteDebugCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, SocketStreamWriter As StreamWriter, DeviceAddress As String) Implements IRemoteDebugCommand.Execute
-        If dbgStackTraces.Count <> 0 Then
+        If DebugStackTraces.Count <> 0 Then
             If ListArgs?.Length <> 0 Then
                 Try
-                    SocketStreamWriter.WriteLine(dbgStackTraces(ListArgs(0)))
+                    SocketStreamWriter.WriteLine(DebugStackTraces(ListArgs(0)))
                 Catch ex As Exception
-                    SocketStreamWriter.WriteLine(DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1."), ListArgs(0), dbgStackTraces.Count)
+                    SocketStreamWriter.WriteLine(DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1."), ListArgs(0), DebugStackTraces.Count)
                 End Try
             Else
-                SocketStreamWriter.WriteLine(dbgStackTraces(0))
+                SocketStreamWriter.WriteLine(DebugStackTraces(0))
             End If
         Else
             SocketStreamWriter.WriteLine(DoTranslation("No stack trace"))

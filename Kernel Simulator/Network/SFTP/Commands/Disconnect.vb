@@ -25,10 +25,10 @@ Class SFTP_DisconnectCommand
             'Set a connected flag to False
             SFTPConnected = False
             ClientSFTP.Disconnect()
-            W(DoTranslation("Disconnected from {0}"), True, ColTypes.Neutral, ftpsite)
+            W(DoTranslation("Disconnected from {0}"), True, ColTypes.Neutral, FtpSite)
 
             'Clean up everything
-            sftpsite = ""
+            SFTPSite = ""
             SFTPCurrentRemoteDir = ""
             SFTPUser = ""
             SFTPPass = ""

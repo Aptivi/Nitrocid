@@ -25,7 +25,7 @@ Class PutCommand
         Dim FileName As String = NeutralizePath(ListArgs(0))
         Dim URL As String = ListArgs(1)
         Wdbg(DebugLevel.I, "URL: {0}", URL)
-        While Not RetryCount > URetries
+        While Not RetryCount > UploadRetries
             Try
                 If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
                     If Not URL.StartsWith(" ") Then

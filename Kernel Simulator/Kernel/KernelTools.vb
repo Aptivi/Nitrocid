@@ -313,7 +313,7 @@ Public Module KernelTools
         If DebugMode Then
             Wdbg(DebugLevel.I, "Shutting down debugger")
             DebugMode = False
-            dbgWriter.Close() : dbgWriter.Dispose()
+            DebugWriter.DebugWriter.Close() : DebugWriter.DebugWriter.Dispose()
         End If
 
         'Stop RPC
@@ -341,7 +341,7 @@ Public Module KernelTools
         InitTimeDate()
 
         'Check for multiple instances of KS
-        If instanceChecked = False Then MultiInstance()
+        If InstanceChecked = False Then MultiInstance()
 
         'Create config file and then read it
         InitializeConfig()
@@ -368,7 +368,7 @@ Public Module KernelTools
         ParseCMDArguments(Args)
 
         'Check arguments
-        If argsOnBoot Then
+        If ArgsOnBoot Then
             StageTimer.Stop()
             PromptArgs()
             StageTimer.Start()
@@ -400,7 +400,7 @@ Public Module KernelTools
         If Not ksOwner Then
             KernelError(KernelErrorLevel.F, False, 0, DoTranslation("Another instance of Kernel Simulator is running. Shutting down in case of interference."), Nothing)
         End If
-        instanceChecked = True
+        InstanceChecked = True
     End Sub
 
     ''' <summary>

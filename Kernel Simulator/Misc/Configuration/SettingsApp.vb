@@ -124,13 +124,13 @@ Public Module SettingsApp
                     MaxOptions = 7
                     W("*) " + DoTranslation("General Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists all general kernel settings, mainly for maintaining the kernel.") + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Prompt for Arguments on Boot") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(argsOnBoot)))
-                    W("2) " + DoTranslation("Maintenance Mode Trigger") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(maintenance)))
+                    W("1) " + DoTranslation("Prompt for Arguments on Boot") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ArgsOnBoot)))
+                    W("2) " + DoTranslation("Maintenance Mode Trigger") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Maintenance)))
                     W("3) " + DoTranslation("Change Root Password..."), True, ColTypes.Option)
                     W("4) " + DoTranslation("Check for Updates on Startup") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(CheckUpdateStart)))
                     W("5) " + DoTranslation("Custom Startup Banner") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(CustomBanner)))
                     W("6) " + DoTranslation("Change Culture when Switching Languages") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LangChangeCulture)))
-                    W("7) " + DoTranslation("Culture of") + " {0} [{1}]", True, ColTypes.Option, currentLang, CurrentCult.Name)
+                    W("7) " + DoTranslation("Culture of") + " {0} [{1}]", True, ColTypes.Option, CurrentLanguage, CurrentCult.Name)
                 Case "1.3" 'Change Root Password...
                     MaxOptions = 2
                     W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password...") + vbNewLine, True, ColTypes.Neutral)
@@ -148,25 +148,25 @@ Public Module SettingsApp
                     MaxOptions = 3
                     W("*) " + DoTranslation("Login Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section represents the login settings. Log out of your account for the changes to take effect.") + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Show MOTD on Log-in") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(showMOTD)))
-                    W("2) " + DoTranslation("Clear Screen on Log-in") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(clsOnLogin)))
+                    W("1) " + DoTranslation("Show MOTD on Log-in") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowMOTD)))
+                    W("2) " + DoTranslation("Clear Screen on Log-in") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ClearOnLogin)))
                     W("3) " + DoTranslation("Show available usernames") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowAvailableUsers)))
                 Case "4" 'Shell
                     MaxOptions = 12
                     W("*) " + DoTranslation("Shell Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the shell settings.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Colored Shell") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColoredShell)))
-                    W("2) " + DoTranslation("Simplified Help Command") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(simHelp)))
-                    W("3) " + DoTranslation("Current Directory", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(CurrDir)))
-                    W("4) " + DoTranslation("Lookup Directories", currentLang) + " [{0}]", True, ColTypes.Option, PathsToLookup.Split(PathLookupDelimiter).Length)
-                    W("5) " + DoTranslation("Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShellPromptStyle)))
-                    W("6) " + DoTranslation("FTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FTPShellPromptStyle)))
-                    W("7) " + DoTranslation("Mail Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MailShellPromptStyle)))
-                    W("8) " + DoTranslation("SFTP Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SFTPShellPromptStyle)))
-                    W("9) " + DoTranslation("RSS Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RSSShellPromptStyle)))
-                    W("10) " + DoTranslation("Text Edit Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TextEdit_PromptStyle)))
-                    W("11) " + DoTranslation("Zip Shell Prompt Style", currentLang) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ZipShell_PromptStyle)))
-                    W("12) " + DoTranslation("Custom colors...", currentLang), True, ColTypes.Option)
+                    W("2) " + DoTranslation("Simplified Help Command") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SimHelp)))
+                    W("3) " + DoTranslation("Current Directory", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(CurrDir)))
+                    W("4) " + DoTranslation("Lookup Directories", CurrentLanguage) + " [{0}]", True, ColTypes.Option, PathsToLookup.Split(PathLookupDelimiter).Length)
+                    W("5) " + DoTranslation("Prompt Style", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShellPromptStyle)))
+                    W("6) " + DoTranslation("FTP Prompt Style", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FTPShellPromptStyle)))
+                    W("7) " + DoTranslation("Mail Prompt Style", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MailShellPromptStyle)))
+                    W("8) " + DoTranslation("SFTP Prompt Style", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SFTPShellPromptStyle)))
+                    W("9) " + DoTranslation("RSS Prompt Style", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RSSShellPromptStyle)))
+                    W("10) " + DoTranslation("Text Edit Prompt Style", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TextEdit_PromptStyle)))
+                    W("11) " + DoTranslation("Zip Shell Prompt Style", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ZipShell_PromptStyle)))
+                    W("12) " + DoTranslation("Custom colors...", CurrentLanguage), True, ColTypes.Option)
                 Case "4.12" 'Custom colors...
                     MaxOptions = 33
                     W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Custom colors...") + vbNewLine, True, ColTypes.Neutral)
@@ -219,8 +219,8 @@ Public Module SettingsApp
                     W("*) " + DoTranslation("Network Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.") + vbNewLine, True, ColTypes.Neutral)
                     W("1) " + DoTranslation("Debug Port") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DebugPort)))
-                    W("2) " + DoTranslation("Download Retry Times") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DRetries)))
-                    W("3) " + DoTranslation("Upload Retry Times") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(URetries)))
+                    W("2) " + DoTranslation("Download Retry Times") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DownloadRetries)))
+                    W("3) " + DoTranslation("Upload Retry Times") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(UploadRetries)))
                     W("4) " + DoTranslation("Show progress bar while downloading or uploading from ""get"" or ""put"" command") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowProgress)))
                     W("5) " + DoTranslation("Log FTP username") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FTPLoggerUsername)))
                     W("6) " + DoTranslation("Log FTP IP address") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FTPLoggerIP)))
@@ -262,8 +262,8 @@ Public Module SettingsApp
                     W("24) Ramp...", True, ColTypes.Option)
 
                     'Populate custom screensavers
-                    For Each CustomSaver As String In CSvrdb.Keys
-                        If CSvrdb(CustomSaver).Screensaver.SaverSettings?.Count >= 1 Then
+                    For Each CustomSaver As String In CustomSavers.Keys
+                        If CustomSavers(CustomSaver).Screensaver.SaverSettings?.Count >= 1 Then
                             ConfigurableScreensavers.Add(CustomSaver)
                             W("{0}) {1}...", True, ColTypes.Option, MaxOptions, CustomSaver)
                             MaxOptions += 1
@@ -468,12 +468,12 @@ Public Module SettingsApp
                     Dim SaverIndex As Integer = SectionParameters(0) - BuiltinSavers - 1
                     Dim Configurables As List(Of String) = SectionParameters(1)
                     Dim OptionNumber As Integer = 1
-                    If CSvrdb(Configurables(SaverIndex)).Screensaver.SaverSettings IsNot Nothing Then
-                        MaxOptions = CSvrdb(Configurables(SaverIndex)).Screensaver.SaverSettings.Count
+                    If CustomSavers(Configurables(SaverIndex)).Screensaver.SaverSettings IsNot Nothing Then
+                        MaxOptions = CustomSavers(Configurables(SaverIndex)).Screensaver.SaverSettings.Count
                         W("*) " + DoTranslation("Screensaver Settings...") + " > {0}" + vbNewLine, True, ColTypes.Neutral, Configurables(SaverIndex))
                         W(DoTranslation("This section lists screensaver settings for") + " {0}." + vbNewLine, True, ColTypes.Neutral, Configurables(SaverIndex))
-                        For Each Setting As String In CSvrdb(Configurables(SaverIndex)).Screensaver.SaverSettings.Keys
-                            W("{0}) {1} [{2}]", True, ColTypes.Option, OptionNumber, Setting, CSvrdb(Configurables(SaverIndex)).Screensaver.SaverSettings(Setting))
+                        For Each Setting As String In CustomSavers(Configurables(SaverIndex)).Screensaver.SaverSettings.Keys
+                            W("{0}) {1} [{2}]", True, ColTypes.Option, OptionNumber, Setting, CustomSavers(Configurables(SaverIndex)).Screensaver.SaverSettings(Setting))
                             OptionNumber += 1
                         Next
                     End If
@@ -481,7 +481,7 @@ Public Module SettingsApp
                     MaxOptions = 8
                     W("*) " + DoTranslation("Miscellaneous Settings...") + vbNewLine, True, ColTypes.Neutral)
                     W(DoTranslation("Settings that don't fit in their appropriate sections land here.") + vbNewLine, True, ColTypes.Neutral)
-                    W("1) " + DoTranslation("Show Time/Date on Upper Right Corner") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(CornerTD)))
+                    W("1) " + DoTranslation("Show Time/Date on Upper Right Corner") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(CornerTimeDate)))
                     W("2) " + DoTranslation("Marquee on startup") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(StartScroll)))
                     W("3) " + DoTranslation("Long Time and Date") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LongTimeDate)))
                     W("4) " + DoTranslation("Preferred Unit for Temperature") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(PreferredUnit)))
@@ -579,12 +579,12 @@ Public Module SettingsApp
                     Select Case KeyNumber
                         Case 1 'Prompt for Arguments on Boot
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(argsOnBoot)
+                            KeyVar = NameOf(ArgsOnBoot)
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Prompt for Arguments on Boot") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Sets up the kernel so it prompts you for argument on boot."), True, ColTypes.Neutral)
                         Case 2 'Maintenance Mode Trigger
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(maintenance)
+                            KeyVar = NameOf(Maintenance)
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Maintenance Mode Trigger") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Triggers maintenance mode. This disables multiple accounts."), True, ColTypes.Neutral)
                         Case 3 'Change Root Password
@@ -608,8 +608,8 @@ Public Module SettingsApp
                             MaxKeyOptions = 0
                             KeyType = SettingsKeyType.SSelection
                             KeyVar = NameOf(CurrentCult)
-                            W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Culture of") + " {0}" + vbNewLine, True, ColTypes.Neutral, currentLang)
-                            W(DoTranslation("Which variant of {0} is being used to change the month names, calendar, etc.?"), True, ColTypes.Neutral, currentLang)
+                            W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Culture of") + " {0}" + vbNewLine, True, ColTypes.Neutral, CurrentLanguage)
+                            W(DoTranslation("Which variant of {0} is being used to change the month names, calendar, etc.?"), True, ColTypes.Neutral, CurrentLanguage)
                             SelectFrom = GetCulturesFromCurrentLang()
                             If SelectFrom.Count > 0 Then
                                 For Each Cult As CultureInfo In SelectFrom
@@ -629,14 +629,14 @@ Public Module SettingsApp
                     Select Case KeyNumber
                         Case 1 'Change Root Password?
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(setRootPasswd)
+                            KeyVar = NameOf(SetRootPassword)
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password...") + " > " + DoTranslation("Change Root Password?") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("If the kernel is started, it will set root password."), True, ColTypes.Neutral)
                         Case 2 'Set Root Password...
                             W("*) " + DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password...") + " > " + DoTranslation("Set Root Password...") + vbNewLine, True, ColTypes.Neutral)
-                            If GetConfigValueField(NameOf(setRootPasswd)) Then
+                            If GetConfigValueField(NameOf(SetRootPassword)) Then
                                 KeyType = SettingsKeyType.SString
-                                KeyVar = NameOf(RootPasswd)
+                                KeyVar = NameOf(RootPassword)
                                 W("*) " + DoTranslation("Write the root password to be set. Don't worry; the password are shown as stars."), True, ColTypes.Neutral)
                             Else
                                 W("X) " + DoTranslation("Enable ""Change Root Password"" to use this option. Please go back."), True, ColTypes.Error)
@@ -670,12 +670,12 @@ Public Module SettingsApp
                     Select Case KeyNumber
                         Case 1 'Show MOTD on Log-in
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(showMOTD)
+                            KeyVar = NameOf(ShowMOTD)
                             W("*) " + DoTranslation("Login Settings...") + " > " + DoTranslation("Show MOTD on Log-in") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Show Message of the Day before displaying login screen."), True, ColTypes.Neutral)
                         Case 2 'Clear Screen on Log-in
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(clsOnLogin)
+                            KeyVar = NameOf(ClearOnLogin)
                             W("*) " + DoTranslation("Login Settings...") + " > " + DoTranslation("Clear Screen on Log-in") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Clear screen before displaying login screen."), True, ColTypes.Neutral)
                         Case 3 'Show Available Usernames
@@ -696,7 +696,7 @@ Public Module SettingsApp
                             W(DoTranslation("Gives the kernel color support"), True, ColTypes.Neutral)
                         Case 2 'Simplified Help Command
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(simHelp)
+                            KeyVar = NameOf(SimHelp)
                             W("*) " + DoTranslation("Shell Settings...") + " > " + DoTranslation("Simplified Help Command") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Simplified help command for all the shells"), True, ColTypes.Neutral)
                         Case 3 'Current Directory
@@ -970,12 +970,12 @@ Public Module SettingsApp
                             W(DoTranslation("Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port."), True, ColTypes.Neutral)
                         Case 2 'Download Retry Times
                             KeyType = SettingsKeyType.SInt
-                            KeyVar = NameOf(DRetries)
+                            KeyVar = NameOf(DownloadRetries)
                             W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Download Retry Times") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Write how many times the ""get"" command should retry failed downloads. It must be numeric."), True, ColTypes.Neutral)
                         Case 3 'Upload Retry Times
                             KeyType = SettingsKeyType.SInt
-                            KeyVar = NameOf(URetries)
+                            KeyVar = NameOf(UploadRetries)
                             W("*) " + DoTranslation("Network Settings...") + " > " + DoTranslation("Upload Retry Times") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("Write how many times the ""put"" command should retry failed uploads. It must be numeric."), True, ColTypes.Neutral)
                         Case 4 'Show progress bar while downloading or uploading from "get" or "put" command
@@ -1669,22 +1669,22 @@ Public Module SettingsApp
                     End Select
                 Case "7." + $"{If(SectionParts.Length > 1, SectionParts(1), $"{BuiltinSavers + 1}")}" 'Custom saver
                     Dim SaverIndex As Integer = SectionParts(1) - BuiltinSavers - 1
-                    Dim SaverSettings As Dictionary(Of String, Object) = CSvrdb.Values(SaverIndex).Screensaver.SaverSettings
+                    Dim SaverSettings As Dictionary(Of String, Object) = CustomSavers.Values(SaverIndex).Screensaver.SaverSettings
                     Dim KeyIndex As Integer = KeyNumber - 1
                     If KeyIndex <= SaverSettings.Count - 1 Then
                         KeyType = SettingsKeyType.SVariant
-                        KeyVar = CSvrdb.Values(SaverIndex).Screensaver.SaverSettings.Keys(KeyIndex)
-                        W("*) " + DoTranslation("Screensaver Settings...") + " > {0} > {1}" + vbNewLine, True, ColTypes.Neutral, CSvrdb.Keys(SaverIndex), SaverSettings.Keys(KeyIndex))
+                        KeyVar = CustomSavers.Values(SaverIndex).Screensaver.SaverSettings.Keys(KeyIndex)
+                        W("*) " + DoTranslation("Screensaver Settings...") + " > {0} > {1}" + vbNewLine, True, ColTypes.Neutral, CustomSavers.Keys(SaverIndex), SaverSettings.Keys(KeyIndex))
                         W(DoTranslation("Consult the screensaver manual or source code for information."), True, ColTypes.Neutral)
                     Else
-                        W("*) " + DoTranslation("Screensaver Settings...") + " > {0} > ???" + vbNewLine, True, ColTypes.Neutral, CSvrdb.Keys(SaverIndex))
+                        W("*) " + DoTranslation("Screensaver Settings...") + " > {0} > ???" + vbNewLine, True, ColTypes.Neutral, CustomSavers.Keys(SaverIndex))
                         W("X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End If
                 Case "8" 'Misc
                     Select Case KeyNumber
                         Case 1 'Show Time/Date on Upper Right Corner
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(CornerTD)
+                            KeyVar = NameOf(CornerTimeDate)
                             W("*) " + DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Show Time/Date on Upper Right Corner") + vbNewLine, True, ColTypes.Neutral)
                             W(DoTranslation("The time and date will be shown in the upper right corner of the screen"), True, ColTypes.Neutral)
                         Case 2 'Marquee on startup
@@ -1881,7 +1881,7 @@ Public Module SettingsApp
             ElseIf SectionParts.Length > 1 Then
                 If Section = "7." + SectionParts(1) And SectionParts(1) > BuiltinSavers And KeyType = SettingsKeyType.SVariant Then
                     Dim SaverIndex As Integer = SectionParts(1) - BuiltinSavers - 1
-                    Dim SaverSettings As Dictionary(Of String, Object) = CSvrdb.Values(SaverIndex).Screensaver.SaverSettings
+                    Dim SaverSettings As Dictionary(Of String, Object) = CustomSavers.Values(SaverIndex).Screensaver.SaverSettings
                     SaverSettings(KeyVar) = VariantValue
                     Wdbg(DebugLevel.I, "User requested exit. Returning...")
                     KeyFinished = True

@@ -51,7 +51,7 @@ IFCANCEL:
                         Console.ForegroundColor = ConsoleColor.Green
                     End If
                     Console.Clear()
-                    Console.Write("{0}@{1}:{2}", CurrentUser, HName, CurrDir)
+                    Console.Write("{0}@{1}:{2}", CurrentUser, HostName, CurrDir)
                     If HasPermission(CurrentUser, PermissionType.Administrator) Then
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "User is admin.")
                         Console.Write("# ")
@@ -128,7 +128,7 @@ IFCANCEL:
                     If AptErrorSim.CancellationPending Then GoTo IFCANCEL
                     SleepNoBlock(100, AptErrorSim)
                     If AptErrorSim.CancellationPending Then GoTo IFCANCEL
-                    Console.Write("{0}@{1}:{2}", CurrentUser, HName, CurrDir)
+                    Console.Write("{0}@{1}:{2}", CurrentUser, HostName, CurrDir)
                     If HasPermission(CurrentUser, PermissionType.Administrator) Then
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "User is admin.")
                         Console.Write("# ")

@@ -164,19 +164,19 @@ Public Module FTPTools
         'Prepare to print current FTP directory
         FtpCurrentRemoteDir = ClientFTP.GetWorkingDirectory
         Wdbg(DebugLevel.I, "Working directory: {0}", FtpCurrentRemoteDir)
-        ftpsite = ClientFTP.Host
+        FtpSite = ClientFTP.Host
         FtpUser = ClientFTP.Credentials.UserName
 
         'Write connection information to Speed Dial file if it doesn't exist there
         Dim SpeedDialEntries As Dictionary(Of String, JToken) = ListSpeedDialEntries(SpeedDialType.FTP)
         Wdbg(DebugLevel.I, "Speed dial length: {0}", SpeedDialEntries.Count)
-        If SpeedDialEntries.ContainsKey(ftpsite) Then
+        If SpeedDialEntries.ContainsKey(FtpSite) Then
             Wdbg(DebugLevel.I, "Site already there.")
             Exit Sub
         Else
             'Speed dial format is below:
             'Site,Port,Username,Encryption
-            AddEntryToSpeedDial(ftpsite, ClientFTP.Port, FtpUser, SpeedDialType.FTP, ClientFTP.EncryptionMode)
+            AddEntryToSpeedDial(FtpSite, ClientFTP.Port, FtpUser, SpeedDialType.FTP, ClientFTP.EncryptionMode)
         End If
     End Sub
 

@@ -28,10 +28,10 @@ Class SysInfoCommand
         W(DoTranslation("Kernel Version:") + " ", False, ColTypes.ListEntry) : W(KernelVersion, True, ColTypes.ListValue)
         W(DoTranslation("Debug Mode:") + " ", False, ColTypes.ListEntry) : W(DebugMode, True, ColTypes.ListValue)
         W(DoTranslation("Colored Shell:") + " ", False, ColTypes.ListEntry) : W(ColoredShell, True, ColTypes.ListValue)
-        W(DoTranslation("Arguments on Boot:") + " ", False, ColTypes.ListEntry) : W(argsOnBoot, True, ColTypes.ListValue)
-        W(DoTranslation("Help command simplified:") + " ", False, ColTypes.ListEntry) : W(simHelp, True, ColTypes.ListValue)
-        W(DoTranslation("MOTD on Login:") + " ", False, ColTypes.ListEntry) : W(showMOTD, True, ColTypes.ListValue)
-        W(DoTranslation("Time/Date on corner:") + " ", False, ColTypes.ListEntry) : W(CornerTD, True, ColTypes.ListValue)
+        W(DoTranslation("Arguments on Boot:") + " ", False, ColTypes.ListEntry) : W(ArgsOnBoot, True, ColTypes.ListValue)
+        W(DoTranslation("Help command simplified:") + " ", False, ColTypes.ListEntry) : W(SimHelp, True, ColTypes.ListValue)
+        W(DoTranslation("MOTD on Login:") + " ", False, ColTypes.ListEntry) : W(ShowMOTD, True, ColTypes.ListValue)
+        W(DoTranslation("Time/Date on corner:") + " ", False, ColTypes.ListEntry) : W(CornerTimeDate, True, ColTypes.ListValue)
         Console.WriteLine()
 
         'Hardware section
@@ -43,7 +43,7 @@ Class SysInfoCommand
         'User section
         W(DoTranslation("[ User settings ]"), True, ColTypes.Banner, vbNewLine)
         W(DoTranslation("Current user name:") + " ", False, ColTypes.ListEntry) : W(CurrentUser, True, ColTypes.ListValue)
-        W(DoTranslation("Current host name:") + " ", False, ColTypes.ListEntry) : W(HName, True, ColTypes.ListValue)
+        W(DoTranslation("Current host name:") + " ", False, ColTypes.ListEntry) : W(HostName, True, ColTypes.ListValue)
         W(DoTranslation("Available usernames:") + " ", False, ColTypes.ListEntry) : W(String.Join(", ", Users.Keys), True, ColTypes.ListValue)
         Console.WriteLine()
 

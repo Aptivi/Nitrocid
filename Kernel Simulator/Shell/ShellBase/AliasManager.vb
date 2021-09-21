@@ -33,6 +33,7 @@ Public Module AliasManager
     Public JsonShellAliases As New Dictionary(Of String, String)
     Friend AliasesToBeRemoved As New Dictionary(Of String, AliasType)
 
+    'TODO: Document this by Milestone 2
     ''' <summary>
     ''' Aliases type
     ''' </summary>

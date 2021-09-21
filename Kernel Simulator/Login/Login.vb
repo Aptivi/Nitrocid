@@ -55,7 +55,7 @@ Public Module Login
             End If
 
             'Clear console if clsOnLogin is set to True (If a user has enabled Clear Screen on Login)
-            If clsOnLogin = True Then
+            If ClearOnLogin = True Then
                 Wdbg(DebugLevel.I, "Clearing screen...")
                 Console.Clear()
             End If
@@ -68,8 +68,8 @@ Public Module Login
             ReadMOTDFromFile(MessageType.MAL)
 
             'Show MOTD once
-            Wdbg(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", ShowMOTDOnceFlag, showMOTD)
-            If ShowMOTDOnceFlag = True And showMOTD = True Then
+            Wdbg(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", ShowMOTDOnceFlag, ShowMOTD)
+            If ShowMOTDOnceFlag = True And ShowMOTD = True Then
                 W(vbNewLine + ProbePlaces(MOTDMessage), True, ColTypes.Banner)
             End If
             ShowMOTDOnceFlag = False
@@ -149,7 +149,7 @@ Public Module Login
                     Wdbg(DebugLevel.I, "Passowrd written wrong...")
                     W(DoTranslation("Wrong password."), True, ColTypes.Error)
                     EventManager.RaiseLoginError(usernamerequested, "wrongpass")
-                    If Not maintenance Then
+                    If Not Maintenance Then
                         If Not LockMode Then
                             Exit Sub
                         End If
@@ -175,7 +175,7 @@ Public Module Login
         If LockMode Then
             Wdbg(DebugLevel.I, "Releasing lock and getting back to shell...")
             LockMode = False
-            EventManager.RaisePostUnlock(defSaverName)
+            EventManager.RaisePostUnlock(DefSaverName)
             Exit Sub
         End If
 

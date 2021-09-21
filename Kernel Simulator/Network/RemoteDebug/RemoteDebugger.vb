@@ -26,7 +26,7 @@ Public Module RemoteDebugger
     Public RDebugClient As Socket
     Public DebugTCP As TcpListener
     Public DebugDevices As New Dictionary(Of Socket, String)
-    Public dbgConns As New Dictionary(Of StreamWriter, String)
+    Public DebugConnections As New Dictionary(Of StreamWriter, String)
     Public RDebugThread As New Thread(AddressOf StartRDebugger) With {.IsBackground = True, .Name = "Remote Debug Thread"}
     Public RDebugBlocked As New List(Of String) 'Blocked IP addresses
     Public RDebugStopping As Boolean
@@ -94,7 +94,7 @@ Public Module RemoteDebugger
                         Wdbg(DebugLevel.W, "Debug device {0} ({1}) tried to join remote debug, but blocked.", RDebugName, RDebugIP)
                         RDebugClient.Disconnect(True)
                     Else
-                        dbgConns.Add(RDebugSWriter, RDebugName)
+                        DebugConnections.Add(RDebugSWriter, RDebugName)
                         DebugDevices.Add(RDebugClient, RDebugIP)
                         RDebugSWriter.WriteLine(DoTranslation(">> Remote Debug and Chat: version") + " 0.6.3") 'Increment each minor/major change(s)
                         RDebugSWriter.WriteLine(DoTranslation(">> Your address is {0}."), RDebugIP)
@@ -118,7 +118,7 @@ Public Module RemoteDebugger
 
         RDebugStopping = False
         DebugTCP.Stop()
-        dbgConns.Clear()
+        DebugConnections.Clear()
         Thread.CurrentThread.Abort()
     End Sub
 
@@ -135,7 +135,7 @@ Public Module RemoteDebugger
                 Dim buff(65536) As Byte
                 Dim streamnet As New NetworkStream(DebugDevices.Keys(i))
                 Dim ip As String = DebugDevices.Values(i)
-                Dim name As String = dbgConns.Values(i)
+                Dim name As String = DebugConnections.Values(i)
                 streamnet.ReadTimeout = 10 'Seems to have fixed it
                 i += 1
                 Try
@@ -148,12 +148,12 @@ Public Module RemoteDebugger
                             Dim cmd As String = msg.Replace("/", "").Replace(vbNullChar, "")
                             If DebugCommands.ContainsKey(cmd.Split(" ")(0)) Then 'Command is found or not
                                 'Parsing starts here.
-                                ParseCmd(cmd, dbgConns.Keys(i - 1), ip)
+                                ParseCmd(cmd, DebugConnections.Keys(i - 1), ip)
                             ElseIf RemoteDebugAliases.Keys.Contains(cmd.Split(" ")(0)) Then
                                 'Alias parsing starts here.
-                                ExecuteRDAlias(cmd, dbgConns.Keys(i - 1), ip)
+                                ExecuteRDAlias(cmd, DebugConnections.Keys(i - 1), ip)
                             Else
-                                dbgConns.Keys(i - 1).WriteLine(DoTranslation("Command {0} not found. Use ""/help"" to see the list."), cmd.Split(" ")(0))
+                                DebugConnections.Keys(i - 1).WriteLine(DoTranslation("Command {0} not found. Use ""/help"" to see the list."), cmd.Split(" ")(0))
                             End If
                         Else
                             If Not String.IsNullOrEmpty(name) Then 'Prevent no-name people from chatting
@@ -199,8 +199,8 @@ Public Module RemoteDebugger
     ''' <param name="SW">A stream writer</param>
     ''' <returns>An index of it, or -1 if not found.</returns>
     Function GetSWIndex(SW As StreamWriter) As Integer
-        For i As Integer = 0 To dbgConns.Count - 1
-            If SW.Equals(dbgConns.Keys(i)) Then
+        For i As Integer = 0 To DebugConnections.Count - 1
+            If SW.Equals(DebugConnections.Keys(i)) Then
                 Return i
             End If
         Next

@@ -39,16 +39,16 @@ Module FivePointFive
 
         'Now, install the values - General section
         If ConfigReader.Sections("General").Keys.Contains("Change Root Password") Then
-            If ConfigReader.Sections("General").Keys("Change Root Password").Value = "True" Then setRootPasswd = True Else setRootPasswd = False
+            If ConfigReader.Sections("General").Keys("Change Root Password").Value = "True" Then SetRootPassword = True Else SetRootPassword = False
         End If
         If ConfigReader.Sections("General").Keys.Contains("Set Root Password to") Then
-            If setRootPasswd = True Then RootPasswd = ConfigReader.Sections("General").Keys("Set Root Password to").Value
+            If SetRootPassword = True Then RootPassword = ConfigReader.Sections("General").Keys("Set Root Password to").Value
         End If
         If ConfigReader.Sections("General").Keys.Contains("Maintenance Mode") Then
-            If ConfigReader.Sections("General").Keys("Maintenance Mode").Value = "True" Then maintenance = True Else maintenance = False
+            If ConfigReader.Sections("General").Keys("Maintenance Mode").Value = "True" Then Maintenance = True Else Maintenance = False
         End If
         If ConfigReader.Sections("General").Keys.Contains("Prompt for Arguments on Boot") Then
-            If ConfigReader.Sections("General").Keys("Prompt for Arguments on Boot").Value = "True" Then argsOnBoot = True Else argsOnBoot = False
+            If ConfigReader.Sections("General").Keys("Prompt for Arguments on Boot").Value = "True" Then ArgsOnBoot = True Else ArgsOnBoot = False
         End If
         If ConfigReader.Sections("General").Keys.Contains("Check for Updates on Startup") Then
             If ConfigReader.Sections("General").Keys("Check for Updates on Startup").Value = "True" Then CheckUpdateStart = True Else CheckUpdateStart = False
@@ -86,25 +86,25 @@ Module FivePointFive
 
         'Login section
         If ConfigReader.Sections("Login").Keys.Contains("Clear Screen on Log-in") Then
-            If ConfigReader.Sections("Login").Keys("Clear Screen on Log-in").Value = "True" Then clsOnLogin = True Else clsOnLogin = False
+            If ConfigReader.Sections("Login").Keys("Clear Screen on Log-in").Value = "True" Then ClearOnLogin = True Else ClearOnLogin = False
         End If
         If ConfigReader.Sections("Login").Keys.Contains("Show MOTD on Log-in") Then
-            If ConfigReader.Sections("Login").Keys("Show MOTD on Log-in").Value = "True" Then showMOTD = True Else showMOTD = False
+            If ConfigReader.Sections("Login").Keys("Show MOTD on Log-in").Value = "True" Then ShowMOTD = True Else ShowMOTD = False
         End If
         If ConfigReader.Sections("Login").Keys.Contains("Show available usernames") Then
             If ConfigReader.Sections("Login").Keys("Show available usernames").Value = "True" Then ShowAvailableUsers = True Else ShowAvailableUsers = False
         End If
         If ConfigReader.Sections("Login").Keys.Contains("Host Name") Then
             If Not ConfigReader.Sections("Login").Keys("Host Name").Value = "" Then
-                HName = ConfigReader.Sections("Login").Keys("Host Name").Value
+                HostName = ConfigReader.Sections("Login").Keys("Host Name").Value
             Else
-                HName = "kernel"
+                HostName = "kernel"
             End If
         End If
 
         'Shell section
         If ConfigReader.Sections("Shell").Keys.Contains("Simplified Help Command") Then
-            If ConfigReader.Sections("Shell").Keys("Simplified Help Command").Value = "True" Then simHelp = True Else simHelp = False
+            If ConfigReader.Sections("Shell").Keys("Simplified Help Command").Value = "True" Then SimHelp = True Else SimHelp = False
         End If
         If ConfigReader.Sections("Shell").Keys.Contains("Colored Shell") Then
             If ConfigReader.Sections("Shell").Keys("Colored Shell").Value = "True" Then ColoredShell = True Else ColoredShell = False
@@ -141,10 +141,10 @@ Module FivePointFive
             If Integer.TryParse(ConfigReader.Sections("Network").Keys("Debug Port").Value, 0) Then DebugPort = ConfigReader.Sections("Network").Keys("Debug Port").Value
         End If
         If ConfigReader.Sections("Network").Keys.Contains("Download Retry Times") Then
-            If Integer.TryParse(ConfigReader.Sections("Network").Keys("Download Retry Times").Value, 0) Then DRetries = ConfigReader.Sections("Network").Keys("Download Retry Times").Value
+            If Integer.TryParse(ConfigReader.Sections("Network").Keys("Download Retry Times").Value, 0) Then DownloadRetries = ConfigReader.Sections("Network").Keys("Download Retry Times").Value
         End If
         If ConfigReader.Sections("Network").Keys.Contains("Upload Retry Times") Then
-            If Integer.TryParse(ConfigReader.Sections("Network").Keys("Upload Retry Times").Value, 0) Then URetries = ConfigReader.Sections("Network").Keys("Upload Retry Times").Value
+            If Integer.TryParse(ConfigReader.Sections("Network").Keys("Upload Retry Times").Value, 0) Then UploadRetries = ConfigReader.Sections("Network").Keys("Upload Retry Times").Value
         End If
         If ConfigReader.Sections("Network").Keys.Contains("Show progress bar while downloading or uploading from ""get"" or ""put"" command") Then
             ShowProgress = ConfigReader.Sections("Network").Keys("Show progress bar while downloading or uploading from ""get"" or ""put"" command").Value
@@ -176,7 +176,7 @@ Module FivePointFive
 
         'Screensaver section
         If ConfigReader.Sections("Screensaver").Keys.Contains("Screensaver") Then
-            defSaverName = ConfigReader.Sections("Screensaver").Keys("Screensaver").Value
+            DefSaverName = ConfigReader.Sections("Screensaver").Keys("Screensaver").Value
         End If
         If ConfigReader.Sections("Screensaver").Keys.Contains("Screensaver Timeout in ms") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("Screensaver Timeout in ms").Value, 0) Then ScrnTimeout = ConfigReader.Sections("Screensaver").Keys("Screensaver Timeout in ms").Value
@@ -336,7 +336,7 @@ Module FivePointFive
 
         'Misc section
         If ConfigReader.Sections("Misc").Keys.Contains("Show Time/Date on Upper Right Corner") Then
-            If ConfigReader.Sections("Misc").Keys("Show Time/Date on Upper Right Corner").Value = "True" Then CornerTD = True Else CornerTD = False
+            If ConfigReader.Sections("Misc").Keys("Show Time/Date on Upper Right Corner").Value = "True" Then CornerTimeDate = True Else CornerTimeDate = False
         End If
         If ConfigReader.Sections("Misc").Keys.Contains("Debug Size Quota in Bytes") Then
             If Integer.TryParse(ConfigReader.Sections("Misc").Keys("Debug Size Quota in Bytes").Value, 0) Then DebugQuota = ConfigReader.Sections("Misc").Keys("Debug Size Quota in Bytes").Value

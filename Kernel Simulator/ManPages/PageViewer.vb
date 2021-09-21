@@ -38,9 +38,9 @@ Public Module PageViewer
             Wdbg(DebugLevel.I, "Todo count for ""{0}"": {1}", ManualTitle, Pages(ManualTitle).Todos.Count.ToString)
             If Pages(ManualTitle).Todos.Count <> 0 Then
                 Wdbg(DebugLevel.I, "Todos are found in manpage.")
-                W(DoTranslation("This manual page needs work for:", currentLang) + vbNewLine, True, ColTypes.Warning)
+                W(DoTranslation("This manual page needs work for:", CurrentLanguage) + vbNewLine, True, ColTypes.Warning)
                 WriteList(Pages(ManualTitle).Todos, True)
-                W(vbNewLine + DoTranslation("Press any key to read the manual page...", currentLang), False, ColTypes.Warning)
+                W(vbNewLine + DoTranslation("Press any key to read the manual page...", CurrentLanguage), False, ColTypes.Warning)
                 Console.ReadKey()
             End If
 
@@ -120,7 +120,7 @@ Public Module PageViewer
             Wdbg(DebugLevel.I, "Exiting...")
             Console.Clear()
         Else
-            W(DoTranslation("Manual page {0} not found.", currentLang), True, ColTypes.Neutral, ManualTitle)
+            W(DoTranslation("Manual page {0} not found.", CurrentLanguage), True, ColTypes.Neutral, ManualTitle)
         End If
 #Else
         Throw New NotImplementedException

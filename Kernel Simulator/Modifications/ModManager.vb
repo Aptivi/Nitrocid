@@ -118,7 +118,7 @@ Public Module ModManager
                 Next
 
                 'Clear all mod commands list, since we've stopped all mods.
-                modcmnds.Clear()
+                ModCommands.Clear()
                 ModDefs.Clear()
                 Wdbg(DebugLevel.I, "Mod commands for main shell cleared.")
                 FTPModCommands.Clear()
@@ -147,7 +147,7 @@ Public Module ModManager
                 Wdbg(DebugLevel.I, "Mod commands for RSS shell cleared.")
 
                 'Clear the custom screensavers
-                CSvrdb.Clear()
+                CustomSavers.Clear()
             Else
                 W(DoTranslation("mod: No mods detected."), True, ColTypes.Neutral)
             End If
@@ -172,13 +172,13 @@ Public Module ModManager
                     Wdbg(DebugLevel.I, "Target mod is a screensaver.")
 
                     'Iterate through all the screensavers
-                    For SaverIndex As Integer = CSvrdb.Count - 1 To 0 Step -1
-                        Dim TargetScreensaver As ScreensaverInfo = CSvrdb.Values(SaverIndex)
+                    For SaverIndex As Integer = CustomSavers.Count - 1 To 0 Step -1
+                        Dim TargetScreensaver As ScreensaverInfo = CustomSavers.Values(SaverIndex)
                         Wdbg(DebugLevel.I, "Checking screensaver {0}", TargetScreensaver.SaverName)
 
                         'Check to see if we're dealign with the same screensaver
                         If TargetScreensaver.FileName = ModFilename Then
-                            CSvrdb.Remove(CSvrdb.Keys(SaverIndex))
+                            CustomSavers.Remove(CustomSavers.Keys(SaverIndex))
                         End If
                     Next
                 Else
@@ -207,7 +207,7 @@ Public Module ModManager
                                             Select Case CommandInfo.Type
                                                 Case ShellCommandType.Shell
                                                     Wdbg(DebugLevel.I, "Removing command {0} from main shell...", CommandInfo.Command)
-                                                    modcmnds.Remove(CommandInfo.Command)
+                                                    ModCommands.Remove(CommandInfo.Command)
                                                     ModDefs.Remove(CommandInfo.Command)
                                                 Case ShellCommandType.FTPShell
                                                     Wdbg(DebugLevel.I, "Removing command {0} from FTP shell...", CommandInfo.Command)

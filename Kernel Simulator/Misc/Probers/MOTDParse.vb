@@ -23,6 +23,7 @@ Public Module MOTDParse
     Public MOTDStreamW As IO.StreamWriter
     Public MOTDFilePath, MALFilePath As String
 
+    'TODO: Document this by Milestone 2
     ''' <summary>
     ''' Types of message
     ''' </summary>

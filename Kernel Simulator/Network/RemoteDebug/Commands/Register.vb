@@ -26,7 +26,7 @@ Class Debug_RegisterCommand
         If String.IsNullOrWhiteSpace(GetDeviceProperty(DeviceAddress, DeviceProperty.Name)) Then
             If ListArgs.Length <> 0 Then
                 SetDeviceProperty(DeviceAddress, DeviceProperty.Name, ListArgs(0))
-                dbgConns(dbgConns.ElementAt(DebugDevices.GetIndexOfKey(DebugDevices.GetKeyFromValue(DeviceAddress))).Key) = ListArgs(0)
+                DebugConnections(DebugConnections.ElementAt(DebugDevices.GetIndexOfKey(DebugDevices.GetKeyFromValue(DeviceAddress))).Key) = ListArgs(0)
                 SocketStreamWriter.WriteLine(DoTranslation("Hi, {0}!").FormatString(ListArgs(0)))
             Else
                 SocketStreamWriter.WriteLine(DoTranslation("You need to write your name."))

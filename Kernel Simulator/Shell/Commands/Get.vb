@@ -24,7 +24,7 @@ Class Get_Command
         Dim RetryCount As Integer = 1
         Dim URL As String = ListArgs(0)
         Wdbg(DebugLevel.I, "URL: {0}", URL)
-        While Not RetryCount > DRetries
+        While Not RetryCount > DownloadRetries
             Try
                 If Not (URL.StartsWith("ftp://") Or URL.StartsWith("ftps://") Or URL.StartsWith("ftpes://")) Then
                     If Not URL.StartsWith(" ") Then

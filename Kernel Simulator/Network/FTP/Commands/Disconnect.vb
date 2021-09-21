@@ -25,10 +25,10 @@ Class FTP_DisconnectCommand
             'Set a connected flag to False
             FtpConnected = False
             ClientFTP.Disconnect()
-            W(DoTranslation("Disconnected from {0}"), True, ColTypes.Neutral, ftpsite)
+            W(DoTranslation("Disconnected from {0}"), True, ColTypes.Neutral, FtpSite)
 
             'Clean up everything
-            ftpsite = ""
+            FtpSite = ""
             FtpCurrentRemoteDir = ""
             FtpUser = ""
             FtpPass = ""

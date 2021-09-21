@@ -71,7 +71,7 @@ Public Module Translate
                                                                                {"wls", New LanguageInfo("wls", "Welsh", False)},
                                                                                {"yrb", New LanguageInfo("yrb", "Yoruba", False)},
                                                                                {"zul", New LanguageInfo("zul", "Zulu", False)}} 'Don't use isiZulu here. isiZulu? Really? What is "isi" doing here?
-    Public currentLang As String = "eng" 'Default to English
+    Public CurrentLanguage As String = "eng" 'Default to English
     Public CurrentCult As New CultureInfo("en-US")
     Private NotifyCodepageError As Boolean
 
@@ -81,7 +81,7 @@ Public Module Translate
     ''' <param name="text">Any string that exists in Kernel Simulator's translation files</param>
     ''' <returns>Translated string</returns>
     Public Function DoTranslation(text As String) As String
-        Return DoTranslation(text, currentLang)
+        Return DoTranslation(text, CurrentLanguage)
     End Function
 
     ''' <summary>
@@ -173,7 +173,7 @@ Public Module Translate
                 End If
             End If
 
-            W(DoTranslation("Changing from: {0} to {1}..."), True, ColTypes.Neutral, currentLang, lang)
+            W(DoTranslation("Changing from: {0} to {1}..."), True, ColTypes.Neutral, CurrentLanguage, lang)
             If Not SetLang(lang) Then
                 W(DoTranslation("Failed to set language."), True, ColTypes.Error)
             End If
@@ -250,9 +250,9 @@ Public Module Translate
             Try
                 Dim OldModDescGeneric As String = DoTranslation("Command defined by ")
                 Wdbg(DebugLevel.I, "Translating kernel to {0}.", lang)
-                currentLang = lang
+                CurrentLanguage = lang
                 Dim Token As JToken = GetConfigCategory(ConfigCategory.General)
-                SetConfigValue(ConfigCategory.General, Token, "Language", currentLang)
+                SetConfigValue(ConfigCategory.General, Token, "Language", CurrentLanguage)
                 Wdbg(DebugLevel.I, "Saved new language.")
 
                 'Update help list for translated help
@@ -279,7 +279,7 @@ Public Module Translate
     ''' </summary>
     Public Sub UpdateCulture()
         Dim StrCult As String = If(Not GetCulturesFromCurrentLang.Count = 0, GetCulturesFromCurrentLang(0).EnglishName, CultureInfo.CurrentCulture.EnglishName)
-        Wdbg(DebugLevel.I, "Culture for {0} is {1}", currentLang, StrCult)
+        Wdbg(DebugLevel.I, "Culture for {0} is {1}", CurrentLanguage, StrCult)
         Dim Cults As CultureInfo() = CultureInfo.GetCultures(CultureTypes.AllCultures)
         Wdbg(DebugLevel.I, "Parsing {0} cultures for {1}", Cults.Length, StrCult)
         For Each Cult As CultureInfo In Cults
@@ -316,7 +316,7 @@ Public Module Translate
     ''' Gets all cultures available for the current language
     ''' </summary>
     Public Function GetCulturesFromCurrentLang() As List(Of CultureInfo)
-        Return Languages(currentLang).Cultures
+        Return Languages(CurrentLanguage).Cultures
     End Function
 
 End Module

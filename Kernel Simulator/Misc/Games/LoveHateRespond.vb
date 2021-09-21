@@ -18,35 +18,35 @@
 
 Module LoveHateRespond
 
-    Dim LoveComments As New List(Of String) From {DoTranslation("Thanks! This is interesting."),
-                                                  DoTranslation("Everyone will support your video for this."),
-                                                  DoTranslation("I gave you the special file in your e-mail for your next video."),
-                                                  DoTranslation("Listen, haters, he is trying to help us, not scam."),
-                                                  DoTranslation("I don't know how much do I and my friends thank you for this video."),
-                                                  DoTranslation("I love you for this video."),
-                                                  DoTranslation("Keep going, don't stop."),
-                                                  DoTranslation("I will help you reach to 1M subscribers!"),
-                                                  DoTranslation("My friends got their computer fixed because of you."),
-                                                  DoTranslation("Awesome prank! I shut down my enemy's PC."),
-                                                  DoTranslation("To haters: STOP HATING ON HIM"),
-                                                  DoTranslation("To haters: GET TO WORK"),
-                                                  DoTranslation("Nobody will notice this now thanks to your object hiding guide")}
-    Dim HateComments As New List(Of String) From {DoTranslation("I will stop watching your videos. Subscriber lost."),
-                                                  DoTranslation("What is this? This is unclear."),
-                                                  DoTranslation("This video is the worst!"),
-                                                  DoTranslation("Everyone report this video!"),
-                                                  DoTranslation("My friends are furious with you!"),
-                                                  DoTranslation("Lovers will now hate you for this."),
-                                                  DoTranslation("Your friend will hate you for this."),
-                                                  DoTranslation("This prank made me unsubscribe to you."),
-                                                  DoTranslation("Mission failed, Respect -, Subscriber -"),
-                                                  DoTranslation("Stop making this kind of video!!!"),
-                                                  DoTranslation("Get back to your job, your videos are the worst!"),
-                                                  DoTranslation("We prejudice on this video.")}
-    Dim Comments As New Dictionary(Of String, List(Of String)) From {{"Love", LoveComments}, {"Hate", HateComments}}
-    Dim Users As New List(Of String) From {"GS4L", "The Eagle", "Vercity", "Losting - Computers, fixes, and more", "WillStrike", "CyberBully #2095", "ProGamer453",
-                                           "ExtFS", "Elaine Stretch", "NFSMW2005", "WhatsUp", "BSearch", "Wellington Marks", "CD-OS", "LinuxUser348", "Speculate Ltd.",
-                                           "The Matrix", "v2i0c2e3-cGiTtAy6"}
+    ReadOnly LoveComments As New List(Of String) From {DoTranslation("Thanks! This is interesting."),
+                                                       DoTranslation("Everyone will support your video for this."),
+                                                       DoTranslation("I gave you the special file in your e-mail for your next video."),
+                                                       DoTranslation("Listen, haters, he is trying to help us, not scam."),
+                                                       DoTranslation("I don't know how much do I and my friends thank you for this video."),
+                                                       DoTranslation("I love you for this video."),
+                                                       DoTranslation("Keep going, don't stop."),
+                                                       DoTranslation("I will help you reach to 1M subscribers!"),
+                                                       DoTranslation("My friends got their computer fixed because of you."),
+                                                       DoTranslation("Awesome prank! I shut down my enemy's PC."),
+                                                       DoTranslation("To haters: STOP HATING ON HIM"),
+                                                       DoTranslation("To haters: GET TO WORK"),
+                                                       DoTranslation("Nobody will notice this now thanks to your object hiding guide")}
+    ReadOnly HateComments As New List(Of String) From {DoTranslation("I will stop watching your videos. Subscriber lost."),
+                                                       DoTranslation("What is this? This is unclear."),
+                                                       DoTranslation("This video is the worst!"),
+                                                       DoTranslation("Everyone report this video!"),
+                                                       DoTranslation("My friends are furious with you!"),
+                                                       DoTranslation("Lovers will now hate you for this."),
+                                                       DoTranslation("Your friend will hate you for this."),
+                                                       DoTranslation("This prank made me unsubscribe to you."),
+                                                       DoTranslation("Mission failed, Respect -, Subscriber -"),
+                                                       DoTranslation("Stop making this kind of video!!!"),
+                                                       DoTranslation("Get back to your job, your videos are the worst!"),
+                                                       DoTranslation("We prejudice on this video.")}
+    ReadOnly Comments As New Dictionary(Of String, List(Of String)) From {{"Love", LoveComments}, {"Hate", HateComments}}
+    ReadOnly Users As New List(Of String) From {"GS4L", "The Eagle", "Vercity", "Losting - Computers, fixes, and more", "WillStrike", "CyberBully #2095", "ProGamer453",
+                                                "ExtFS", "Elaine Stretch", "NFSMW2005", "WhatsUp", "BSearch", "Wellington Marks", "CD-OS", "LinuxUser348", "Speculate Ltd.",
+                                                "The Matrix", "v2i0c2e3-cGiTtAy6"}
 
     ''' <summary>
     ''' Initializes the game

@@ -25,7 +25,7 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Setting")> Public Sub TestSetDefaultScreensaver()
         SetDefaultScreensaver("matrix")
-        defSaverName.ShouldBe("matrix")
+        DefSaverName.ShouldBe("matrix")
     End Sub
 
 End Class

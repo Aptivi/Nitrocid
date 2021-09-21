@@ -28,6 +28,7 @@ Module MailLogin
     Public SMTP_Client As New SmtpClient()
     Friend Mail_Authentication As New NetworkCredential()
 
+    'TODO: Document this by Milestone 2
     ''' <summary>
     ''' Mail server type
     ''' </summary>

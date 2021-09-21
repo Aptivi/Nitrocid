@@ -127,12 +127,12 @@ Public Module HelpSystem
                     Case "reloadsaver"
                         W(" ".Repeat(UsageLength) + " " + DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", ScreensaverFiles))
                     Case "setsaver"
-                        If CSvrdb.Count > 0 Then
-                            W(" ".Repeat(UsageLength) + " " + DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", CSvrdb.Keys))
+                        If CustomSavers.Count > 0 Then
+                            W(" ".Repeat(UsageLength) + " " + DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", CustomSavers.Keys))
                         End If
-                        W(" ".Repeat(UsageLength) + " " + DoTranslation("where builtinsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", ScrnSvrdb.Keys))
+                        W(" ".Repeat(UsageLength) + " " + DoTranslation("where builtinsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", Screensavers.Keys))
                     Case "setthemes"
-                        W(" ".Repeat(UsageLength) + "<Theme>: ThemeName.json, " + String.Join(", ", colorTemplates.Keys), True, ColTypes.Neutral)
+                        W(" ".Repeat(UsageLength) + "<Theme>: ThemeName.json, " + String.Join(", ", ColorTemplates.Keys), True, ColTypes.Neutral)
                     Case "weather"
                         W(" ".Repeat(UsageLength) + " " + DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.") + " " + DoTranslation("Or, pass ""listcities"" to this command."), True, ColTypes.Neutral)
                     Case "wrap"
@@ -148,7 +148,7 @@ Public Module HelpSystem
             End If
         ElseIf String.IsNullOrWhiteSpace(command) Then
             'List the available commands
-            If Not simHelp Then
+            If Not SimHelp Then
                 'The built-in commands
                 DecisiveWrite(CommandType, DebugDeviceSocket, DoTranslation("General commands:"), True, ColTypes.ListTitle)
                 For Each cmd As String In CommandList.Keys

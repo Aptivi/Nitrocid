@@ -93,7 +93,7 @@ Module ArgumentParse
                         Case "debug"
                             DebugMode = True
                         Case "maintenance"
-                            maintenance = True
+                            Maintenance = True
                         Case "safe"
                             SafeMode = True
                         Case "testInteractive"

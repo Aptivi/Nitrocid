@@ -41,17 +41,17 @@ Public Module FTPShell
                                                                                 {"type", New CommandInfo("type", ShellCommandType.FTPShell, "Sets the type for this session", "<a/b>", True, 1, New FTP_TypeCommand)},
                                                                                 {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.FTPShell, "Uses information from Speed Dial to connect to any network quickly", "", False, 0, New FTP_QuickConnectCommand)}}
     Public FtpConnected As Boolean
-    Private FtpInitialized As Boolean
-    Public ftpsite As String
+    Public FtpSite As String
     Public FtpCurrentDirectory As String
     Public FtpCurrentRemoteDir As String
     Public FtpUser As String
-    Friend FtpPass As String
-    Private FtpCommand As String
-    Public ftpexit As Boolean
+    Public FtpExit As Boolean
     Public FTPModCommands As New ArrayList
     Public FTPShellPromptStyle As String = ""
     Public ClientFTP As FtpClient
+    Friend FtpPass As String
+    Private FtpCommand As String
+    Private FtpInitialized As Boolean
 
     ''' <summary>
     ''' Initializes the FTP shell
@@ -75,17 +75,17 @@ Public Module FTPShell
                 End If
 
                 'Check if the shell is going to exit
-                If ftpexit = True Then
+                If FtpExit = True Then
                     Wdbg(DebugLevel.W, "Exiting shell...")
                     FtpConnected = False
                     ClientFTP?.Disconnect()
-                    ftpsite = ""
+                    FtpSite = ""
                     FtpCurrentDirectory = ""
                     FtpCurrentRemoteDir = ""
                     FtpUser = ""
                     FtpPass = ""
                     FtpCommand = ""
-                    ftpexit = False
+                    FtpExit = False
                     FtpInitialized = False
                     SwitchCancellationHandler(LastShellType)
                     Exit Sub
@@ -100,7 +100,7 @@ Public Module FTPShell
                     If FtpConnected Then
                         Wdbg(DebugLevel.I, "FTPShellPromptStyle = {0}", FTPShellPromptStyle)
                         If FTPShellPromptStyle = "" Then
-                            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, FtpUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, ftpsite) : W("]{0}> ", False, ColTypes.Gray, FtpCurrentRemoteDir)
+                            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, FtpUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, FtpSite) : W("]{0}> ", False, ColTypes.Gray, FtpCurrentRemoteDir)
                         Else
                             Dim ParsedPromptStyle As String = ProbePlaces(FTPShellPromptStyle)
                             ParsedPromptStyle.ConvertVTSequences

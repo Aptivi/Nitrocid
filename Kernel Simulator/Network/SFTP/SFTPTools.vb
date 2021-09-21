@@ -82,19 +82,19 @@ Public Module SFTPTools
         'Prepare to print current SFTP directory
         SFTPCurrentRemoteDir = ClientSFTP.WorkingDirectory
         Wdbg(DebugLevel.I, "Working directory: {0}", SFTPCurrentRemoteDir)
-        sftpsite = ClientSFTP.ConnectionInfo.Host
+        SFTPSite = ClientSFTP.ConnectionInfo.Host
         SFTPUser = ClientSFTP.ConnectionInfo.Username
 
         'Write connection information to Speed Dial file if it doesn't exist there
         Dim SpeedDialEntries As Dictionary(Of String, JToken) = ListSpeedDialEntries(SpeedDialType.SFTP)
         Wdbg(DebugLevel.I, "Speed dial length: {0}", SpeedDialEntries.Count)
-        If SpeedDialEntries.ContainsKey(sftpsite) Then
+        If SpeedDialEntries.ContainsKey(SFTPSite) Then
             Wdbg(DebugLevel.I, "Site already there.")
             Exit Sub
         Else
             'Speed dial format is below:
             'Site,Port,Username
-            AddEntryToSpeedDial(sftpsite, ClientSFTP.ConnectionInfo.Port, SFTPUser, SpeedDialType.SFTP)
+            AddEntryToSpeedDial(SFTPSite, ClientSFTP.ConnectionInfo.Port, SFTPUser, SpeedDialType.SFTP)
         End If
     End Sub
 

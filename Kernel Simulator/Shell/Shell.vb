@@ -44,7 +44,7 @@ Public Module Shell
     ''' <summary>
     ''' All mod commands
     ''' </summary>
-    Public modcmnds As New ArrayList
+    Public ModCommands As New ArrayList
     ''' <summary>
     ''' List of commands
     ''' </summary>
@@ -188,7 +188,7 @@ Public Module Shell
                             For Each Command As String In Commands
                                 Dim Parts As String() = Command.SplitEncloseDoubleQuotes(" ")
                                 Wdbg(DebugLevel.I, "Mod commands probing started with {0} from {1}", Command, strcommand)
-                                If modcmnds.Contains(Parts(0)) Then
+                                If ModCommands.Contains(Parts(0)) Then
                                     Done = True
                                     Wdbg(DebugLevel.I, "Mod command: {0}", Parts(0))
                                     ExecuteModCommand(Command)
@@ -230,7 +230,7 @@ Public Module Shell
     Public Sub CommandPromptWrite()
 
         Wdbg(DebugLevel.I, "ShellPromptStyle = {0}", ShellPromptStyle)
-        If ShellPromptStyle <> "" And Not maintenance Then
+        If ShellPromptStyle <> "" And Not Maintenance Then
             Dim ParsedPromptStyle As String = ProbePlaces(ShellPromptStyle)
             ParsedPromptStyle.ConvertVTSequences
             W(ParsedPromptStyle, False, ColTypes.Gray)
@@ -239,13 +239,13 @@ Public Module Shell
             Else
                 W(" $ ", False, ColTypes.UserDollarSign)
             End If
-        ElseIf ShellPromptStyle = "" And Not maintenance Then
+        ElseIf ShellPromptStyle = "" And Not Maintenance Then
             If HasPermission(CurrentUser, PermissionType.Administrator) = True Then
-                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, CurrentUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HName) : W("]{0}", False, ColTypes.Gray, CurrDir) : W(" # ", False, ColTypes.UserDollarSign)
-            ElseIf maintenance Then
+                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, CurrentUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HostName) : W("]{0}", False, ColTypes.Gray, CurrDir) : W(" # ", False, ColTypes.UserDollarSign)
+            ElseIf Maintenance Then
                 W(DoTranslation("Maintenance Mode") + "> ", False, ColTypes.Gray)
             Else
-                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, CurrentUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HName) : W("]{0}", False, ColTypes.Gray, CurrDir) : W(" $ ", False, ColTypes.Gray, CurrDir)
+                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, CurrentUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HostName) : W("]{0}", False, ColTypes.Gray, CurrDir) : W(" $ ", False, ColTypes.Gray, CurrDir)
             End If
         Else
             W(DoTranslation("Maintenance Mode") + "> ", False, ColTypes.Gray)
@@ -323,7 +323,7 @@ Public Module Shell
                         If HasPermission(CurrentUser, PermissionType.Administrator) = False And Commands(strcommand).Strict Then
                             Wdbg(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", strcommand)
                             W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, strcommand)
-                        ElseIf maintenance = True And Commands(strcommand).NoMaintenance Then
+                        ElseIf Maintenance = True And Commands(strcommand).NoMaintenance Then
                             Wdbg(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", strcommand)
                             W(DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), True, ColTypes.Error, strcommand)
                         ElseIf IsInvokedByKernelArgument And (strcommand.StartsWith("logout") Or strcommand.StartsWith("shutdown") Or strcommand.StartsWith("reboot")) Then

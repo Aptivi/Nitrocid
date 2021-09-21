@@ -40,7 +40,7 @@ Public Module PlaceParse
             End If
             If text.Contains("<ftpaddr>") Then
                 Wdbg(DebugLevel.I, "FTP address placeholder found.")
-                text = text.Replace("<ftpaddr>", ftpsite)
+                text = text.Replace("<ftpaddr>", FtpSite)
             End If
             If text.Contains("<currentftpdirectory>") Then
                 Wdbg(DebugLevel.I, "FTP directory placeholder found.")
@@ -60,7 +60,7 @@ Public Module PlaceParse
             End If
             If text.Contains("<sftpaddr>") Then
                 Wdbg(DebugLevel.I, "SFTP address placeholder found.")
-                text = text.Replace("<sftpaddr>", sftpsite)
+                text = text.Replace("<sftpaddr>", SFTPSite)
             End If
             If text.Contains("<currentsftpdirectory>") Then
                 Wdbg(DebugLevel.I, "SFTP directory placeholder found.")
@@ -88,7 +88,7 @@ Public Module PlaceParse
             End If
             If text.Contains("<host>") Then
                 Wdbg(DebugLevel.I, "Hostname placeholder found.")
-                text = text.Replace("<host>", HName)
+                text = text.Replace("<host>", HostName)
             End If
             If text.Contains("<currentdirectory>") Then
                 Wdbg(DebugLevel.I, "Current directory placeholder found.")

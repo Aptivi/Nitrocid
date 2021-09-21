@@ -24,8 +24,8 @@ Imports Newtonsoft.Json.Linq
 Public Module NetworkTools
 
     'Variables
-    Public DRetries As Integer = 3
-    Public URetries As Integer = 3
+    Public DownloadRetries As Integer = 3
+    Public UploadRetries As Integer = 3
     Friend DFinish As Boolean
     Friend UFinish As Boolean
 
@@ -69,9 +69,9 @@ Public Module NetworkTools
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function ChangeHostname(NewHost As String) As Boolean
         Try
-            HName = NewHost
+            HostName = NewHost
             Dim Token As JToken = GetConfigCategory(ConfigCategory.Login)
-            SetConfigValue(ConfigCategory.Login, Token, "Host Name", HName)
+            SetConfigValue(ConfigCategory.Login, Token, "Host Name", HostName)
             Return True
         Catch ex As Exception
             WStkTrc(ex)

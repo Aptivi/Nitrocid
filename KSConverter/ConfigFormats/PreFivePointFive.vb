@@ -63,43 +63,43 @@ Module PreFivePointFive
                     If ColoredShell = True Then ListValueColor = Val(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Definition of command in Help Color = ", "")), ConsoleColors))
                 ElseIf line.Contains("Change Root Password = ") Then
                     If line.Replace("Change Root Password = ", "") = "True" Then
-                        setRootPasswd = True
+                        SetRootPassword = True
                     ElseIf line.Replace("Change Root Password = ", "") = "False" Then
-                        setRootPasswd = False
+                        SetRootPassword = False
                     End If
                 ElseIf line.Contains("Set Root Password to = ") Then
-                    If setRootPasswd = True Then
-                        RootPasswd = line.Replace("Set Root Password to = ", "")
+                    If SetRootPassword = True Then
+                        RootPassword = line.Replace("Set Root Password to = ", "")
                     End If
                 ElseIf line.Contains("Maintenance Mode = ") Then
                     If line.Replace("Maintenance Mode = ", "") = "True" Then
-                        maintenance = True
+                        Maintenance = True
                     ElseIf line.Replace("Maintenance Mode = ", "") = "False" Then
-                        maintenance = False
+                        Maintenance = False
                     End If
                 ElseIf line.Contains("Prompt for Arguments on Boot = ") Then
                     If line.Replace("Prompt for Arguments on Boot = ", "") = "True" Then
-                        argsOnBoot = True
+                        ArgsOnBoot = True
                     ElseIf line.Replace("Prompt for Arguments on Boot = ", "") = "False" Then
-                        argsOnBoot = False
+                        ArgsOnBoot = False
                     End If
                 ElseIf line.Contains("Clear Screen on Log-in = ") Then
                     If line.Replace("Clear Screen on Log-in = ", "") = "True" Then
-                        clsOnLogin = True
+                        ClearOnLogin = True
                     ElseIf line.Replace("Clear Screen on Log-in = ", "") = "False" Then
-                        clsOnLogin = False
+                        ClearOnLogin = False
                     End If
                 ElseIf line.Contains("Show MOTD on Log-in = ") Then
                     If line.Replace("Show MOTD on Log-in = ", "") = "True" Then
-                        showMOTD = True
+                        ShowMOTD = True
                     ElseIf line.Replace("Show MOTD on Log-in = ", "") = "False" Then
-                        showMOTD = False
+                        ShowMOTD = False
                     End If
                 ElseIf line.Contains("Simplified Help Command = ") Then
                     If line.Replace("Simplified Help Command = ", "") = "True" Then
-                        simHelp = True
+                        SimHelp = True
                     ElseIf line.Replace("Simplified Help Command = ", "") = "False" Then
-                        simHelp = False
+                        SimHelp = False
                     End If
                 ElseIf line.Contains("Quiet Probe = ") Then
                     If line.Replace("Quiet Probe = ", "") = "True" Then
@@ -109,14 +109,14 @@ Module PreFivePointFive
                     End If
                 ElseIf line.Contains("Show Time/Date on Corner = ") Then
                     If line.Replace("Show Time/Date on Corner = ", "") = "True" Then
-                        CornerTD = True
+                        CornerTimeDate = True
                     ElseIf line.Replace("Show Time/Date on Corner = ", "") = "False" Then
-                        CornerTD = False
+                        CornerTimeDate = False
                     End If
                 ElseIf line.Contains("MOTD = ") Then
                     MOTDMessage = line.Replace("MOTD = ", "")
                 ElseIf line.Contains("Host Name = ") Then
-                    HName = line.Replace("Host Name = ", "")
+                    HostName = line.Replace("Host Name = ", "")
                 ElseIf line.Contains("MOTD After Login = ") Then
                     MAL = line.Replace("MOTD After Login = ", "")
                 End If

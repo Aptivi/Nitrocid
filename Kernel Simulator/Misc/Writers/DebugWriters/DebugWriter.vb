@@ -20,8 +20,8 @@ Imports System.IO
 
 Public Module DebugWriter
 
-    Public dbgWriter As StreamWriter
-    Public dbgStackTraces As New List(Of String)
+    Public DebugWriter As StreamWriter
+    Public DebugStackTraces As New List(Of String)
 
     ''' <summary>
     ''' Outputs the text into the debugger file, and sets the time stamp.
@@ -31,7 +31,7 @@ Public Module DebugWriter
     Public Sub Wdbg(Level As DebugLevel, text As String, ParamArray vars() As Object)
         If DebugMode Then
             'Open debugging stream
-            If dbgWriter Is Nothing Or dbgWriter?.BaseStream Is Nothing Then dbgWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging), True) With {.AutoFlush = True}
+            If DebugWriter Is Nothing Or DebugWriter?.BaseStream Is Nothing Then DebugWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging), True) With {.AutoFlush = True}
 
             Dim STrace As New StackTrace(True)
             Dim Source As String = Path.GetFileName(STrace.GetFrame(1).GetFileName)
@@ -59,12 +59,12 @@ Public Module DebugWriter
             'For contributors who are testing new code: Define ENABLEIMMEDITEWINDOWDEBUG for immediate debugging (Immediate Window)
             If Source IsNot Nothing And Not LineNum = 0 Then
                 'Debug to file and all connected debug devices (raw mode)
-                dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
-                For i As Integer = 0 To dbgConns.Count - 1
+                DebugWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
+                For i As Integer = 0 To DebugConnections.Count - 1
                     Try
-                        dbgConns.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
+                        DebugConnections.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
                     Catch ex As Exception
-                        OffendingIndex.Add(GetSWIndex(dbgConns.Keys(i)))
+                        OffendingIndex.Add(GetSWIndex(DebugConnections.Keys(i)))
                         WStkTrc(ex)
                     End Try
                 Next
@@ -72,12 +72,12 @@ Public Module DebugWriter
                 Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
 #End If
             Else 'Rare case, unless debug symbol is not found on archives.
-                dbgWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
-                For i As Integer = 0 To dbgConns.Count - 1
+                DebugWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
+                For i As Integer = 0 To DebugConnections.Count - 1
                     Try
-                        dbgConns.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
+                        DebugConnections.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
                     Catch ex As Exception
-                        OffendingIndex.Add(GetSWIndex(dbgConns.Keys(i)))
+                        OffendingIndex.Add(GetSWIndex(DebugConnections.Keys(i)))
                         WStkTrc(ex)
                     End Try
                 Next
@@ -91,8 +91,8 @@ Public Module DebugWriter
                 If i <> -1 Then
                     DebugDevices.Keys(i).Disconnect(True)
                     EventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices.Values(i))
-                    Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", dbgConns.Values(i), DebugDevices.Values(i))
-                    dbgConns.Remove(dbgConns.Keys(i))
+                    Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", DebugConnections.Values(i), DebugDevices.Values(i))
+                    DebugConnections.Remove(DebugConnections.Keys(i))
                     DebugDevices.Remove(DebugDevices.Keys(i))
                 End If
             Next
@@ -120,11 +120,11 @@ Public Module DebugWriter
             Dim OffendingIndex As New List(Of String)
 
             'For contributors who are testing new code: Uncomment the two Debug.WriteLine lines for immediate debugging (Immediate Window)
-            For i As Integer = 0 To dbgConns.Count - 1
+            For i As Integer = 0 To DebugConnections.Count - 1
                 Try
-                    dbgConns.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
+                    DebugConnections.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
                 Catch ex As Exception
-                    OffendingIndex.Add(GetSWIndex(dbgConns.Keys(i)))
+                    OffendingIndex.Add(GetSWIndex(DebugConnections.Keys(i)))
                     WStkTrc(ex)
                 End Try
             Next
@@ -137,8 +137,8 @@ Public Module DebugWriter
                 If i <> -1 Then
                     DebugDevices.Keys(i).Disconnect(True)
                     EventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices.Values(i))
-                    Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", dbgConns.Values(i), DebugDevices.Values(i))
-                    dbgConns.Remove(dbgConns.Keys(i))
+                    Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", DebugConnections.Values(i), DebugDevices.Values(i))
+                    DebugConnections.Remove(DebugConnections.Keys(i))
                     DebugDevices.Remove(DebugDevices.Keys(i))
                 End If
             Next
@@ -153,19 +153,19 @@ Public Module DebugWriter
     Public Sub WStkTrc(Ex As Exception)
         If DebugMode Then
             'These two vbNewLines are padding for accurate stack tracing.
-            dbgStackTraces.Add($"{vbNewLine}{Ex.ToString.Substring(0, Ex.ToString.IndexOf(":"))}: {Ex.Message}{vbNewLine}{Ex.StackTrace}{vbNewLine}")
+            DebugStackTraces.Add($"{vbNewLine}{Ex.ToString.Substring(0, Ex.ToString.IndexOf(":"))}: {Ex.Message}{vbNewLine}{Ex.StackTrace}{vbNewLine}")
             Dim Inner As Exception = Ex.InnerException
             Dim InnerNumber As Integer = 1
             Do Until Inner Is Nothing
-                dbgStackTraces.Add($"{vbNewLine}[{InnerNumber}] {Inner.ToString.Substring(0, Inner.ToString.IndexOf(":"))}: {Inner.Message}{vbNewLine}{Inner.StackTrace}{vbNewLine}")
+                DebugStackTraces.Add($"{vbNewLine}[{InnerNumber}] {Inner.ToString.Substring(0, Inner.ToString.IndexOf(":"))}: {Inner.Message}{vbNewLine}{Inner.StackTrace}{vbNewLine}")
                 InnerNumber += 1
                 Inner = Inner.InnerException
             Loop
 
             'Print stack trace to debugger
             Dim StkTrcs As New List(Of String)
-            For i As Integer = 0 To dbgStackTraces.Count - 1
-                StkTrcs.AddRange(dbgStackTraces(i).SplitNewLines)
+            For i As Integer = 0 To DebugStackTraces.Count - 1
+                StkTrcs.AddRange(DebugStackTraces(i).SplitNewLines)
             Next
             For i As Integer = 0 To StkTrcs.Count - 1
                 Wdbg(DebugLevel.E, StkTrcs(i))

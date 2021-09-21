@@ -31,10 +31,10 @@ Public Module DebugManager
             Dim OldSize As Double = FInfo.Length
             Dim Lines() As String = ReadAllLinesNoBlock(GetKernelPath(KernelPathType.Debugging))
             If OldSize > DebugQuota Then
-                dbgWriter.Close()
-                dbgWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging)) With {.AutoFlush = True}
+                DebugWriter.DebugWriter.Close()
+                DebugWriter.DebugWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging)) With {.AutoFlush = True}
                 For l As Integer = 5 To Lines.Length - 2 'Remove the first 5 lines from stream.
-                    dbgWriter.WriteLine(Lines(l))
+                    DebugWriter.DebugWriter.WriteLine(Lines(l))
                 Next
                 Wdbg(DebugLevel.W, "Max debug quota size exceeded, was {0} MB.", FormatNumber(OldSize / 1024 / 1024, 1))
             End If
