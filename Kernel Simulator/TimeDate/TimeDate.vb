@@ -23,7 +23,22 @@ Public Module TimeDate
 
     'Variables
     Public KernelDateTime As New Date
+    Public KernelDateTimeUtc As New Date
     Public WithEvents TimeDateChange As New BackgroundWorker
+
+    ''' <summary>
+    ''' Specifies the time/date format type.
+    ''' </summary>
+    Public Enum FormatType
+        ''' <summary>
+        ''' Long time/date format
+        ''' </summary>
+        [Long]
+        ''' <summary>
+        ''' Short time/date format
+        ''' </summary>
+        [Short]
+    End Enum
 
     ''' <summary>
     ''' Updates the time and date. Also updates the time and date corner if it was enabled in kernel configuration.
@@ -37,6 +52,7 @@ Public Module TimeDate
                 Exit Do
             Else
                 KernelDateTime = Date.Now
+                KernelDateTimeUtc = Date.UtcNow
                 If CornerTimeDate = True And Not InSaver Then
                     oldWid = Console.WindowWidth - TimeString.Length - 1
                     oldTop = Console.WindowTop
@@ -54,6 +70,7 @@ Public Module TimeDate
     Sub InitTimeDate()
         If Not TimeDateChange.IsBusy Then
             KernelDateTime = Date.Now
+            KernelDateTimeUtc = Date.UtcNow
             TimeDateChange.WorkerSupportsCancellation = True
             TimeDateChange.RunWorkerAsync()
         End If

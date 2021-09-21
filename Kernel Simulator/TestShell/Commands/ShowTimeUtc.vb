@@ -16,19 +16,12 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS
+Class Test_ShowTimeUtcCommand
+    Inherits CommandExecutor
+    Implements ICommand
 
-<TestClass()> Public Class TimeInitializationTests
-
-    ''' <summary>
-    ''' Tests initializing current times in all timezones
-    ''' </summary>
-    <TestMethod()> <TestCategory("Initialization")> Public Sub TestGetTimeZones()
-        KernelDateTime = Date.Now
-        KernelDateTimeUtc = Date.UtcNow
-        Dim TimeZones As Dictionary(Of String, Date) = GetTimeZones()
-        TimeZones.ShouldNotBeNull
-        TimeZones.ShouldNotBeEmpty
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+        W(RenderTimeUtc, True, ColTypes.Neutral)
     End Sub
 
 End Class

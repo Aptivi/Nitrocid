@@ -21,20 +21,6 @@ Imports System.Globalization
 Public Module TimeDateRenderers
 
     ''' <summary>
-    ''' Specifies the time/date format type.
-    ''' </summary>
-    Public Enum FormatType
-        ''' <summary>
-        ''' Long time/date format
-        ''' </summary>
-        [Long]
-        ''' <summary>
-        ''' Short time/date format
-        ''' </summary>
-        [Short]
-    End Enum
-
-    ''' <summary>
     ''' Renders the current time based on kernel config (long or short) and current culture
     ''' </summary>
     ''' <returns>A long or short time</returns>

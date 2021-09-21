@@ -518,6 +518,12 @@
     <Compile Include="TestShell\Commands\Panic.vb" />
     <Compile Include="TestShell\Commands\PanicF.vb" />
     <Compile Include="TestShell\Commands\Places.vb" />
+    <Compile Include="TestShell\Commands\ShowDateUtc.vb" />
+    <Compile Include="TestShell\Commands\ShowTDUtc.vb" />
+    <Compile Include="TestShell\Commands\ShowTD.vb" />
+    <Compile Include="TestShell\Commands\ShowDate.vb" />
+    <Compile Include="TestShell\Commands\ShowTimeUtc.vb" />
+    <Compile Include="TestShell\Commands\ShowTime.vb" />
     <Compile Include="TestShell\Commands\Print.vb" />
     <Compile Include="TestShell\Commands\PrintD.vb" />
     <Compile Include="TestShell\Commands\PrintDF.vb" />
@@ -550,6 +556,7 @@
     <Compile Include="TestShell\TestShell.vb" />
     <Compile Include="TimeDate\TimeDate.vb" />
     <Compile Include="TimeDate\TimeDateRenderers.vb" />
+    <Compile Include="TimeDate\TimeDateRenderersUtc.vb" />
     <Compile Include="TimeDate\TimeZones.vb" />
   </ItemGroup>
   <ItemGroup>
