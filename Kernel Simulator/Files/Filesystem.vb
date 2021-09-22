@@ -483,6 +483,41 @@ Public Module Filesystem
     End Function
 
     ''' <summary>
+    ''' Makes an empty JSON file
+    ''' </summary>
+    ''' <param name="NewFile">New JSON file</param>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    ''' <exception cref="IOException"></exception>
+    Public Function MakeJsonFile(NewFile As String) As Boolean
+#If NTFSCorruptionFix Then
+        ThrowOnInvalidPath(NewFile)
+#End If
+        NewFile = NeutralizePath(NewFile)
+        Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", NewFile, File.Exists(NewFile))
+        If Not File.Exists(NewFile) Then
+            Try
+                Dim NewFileStream As FileStream = File.Create(NewFile)
+                Wdbg(DebugLevel.I, "File created")
+                Dim NewJsonObject As JObject = JObject.Parse("{}")
+                Dim NewFileWriter As New StreamWriter(NewFileStream)
+                NewFileWriter.WriteLine(JsonConvert.SerializeObject(NewJsonObject))
+                NewFileStream.Close()
+                Wdbg(DebugLevel.I, "File closed")
+
+                'Raise event
+                EventManager.RaiseFileCreated(NewFile)
+                Return True
+            Catch ex As Exception
+                WStkTrc(ex)
+                Throw New IOException(DoTranslation("Error trying to create a file: {0}").FormatString(ex.Message))
+            End Try
+        Else
+            Throw New IOException(DoTranslation("File already exists."))
+        End If
+        Return False
+    End Function
+
+    ''' <summary>
     ''' Moves a file or directory
     ''' </summary>
     ''' <param name="Source">Source file or directory</param>

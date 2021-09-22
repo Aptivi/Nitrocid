@@ -208,18 +208,18 @@ NextEntry:
         ElseIf modFile.EndsWith(".cs") Then
             'Mod has a language of C#
             Wdbg(DebugLevel.I, "Mod language is C# from extension "".cs""")
-            Dim script As IScript = GenMod("C#", File.ReadAllText(modPath + modFile))
+            Dim script As IScript = GenMod("C#", File.ReadAllText(ModPath + modFile))
             FinalizeMods(script, modFile)
         ElseIf modFile.EndsWith(".vb") Then
             'Mod has a language of VB.NET
             Wdbg(DebugLevel.I, "Mod language is VB.NET from extension "".vb""")
-            Dim script As IScript = GenMod("VB.NET", File.ReadAllText(modPath + modFile))
+            Dim script As IScript = GenMod("VB.NET", File.ReadAllText(ModPath + modFile))
             FinalizeMods(script, modFile)
         ElseIf modFile.EndsWith(".dll") Then
             'Mod is a dynamic DLL
             Try
-                Dim script As IScript = GetModInstance(Assembly.LoadFrom(modPath + modFile))
-                If script Is Nothing Then CompileCustom(modPath + modFile)
+                Dim script As IScript = GetModInstance(Assembly.LoadFrom(ModPath + modFile))
+                If script Is Nothing Then CompileCustom(ModPath + modFile)
                 FinalizeMods(script, modFile)
             Catch ex As ReflectionTypeLoadException
                 Wdbg(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message)
@@ -293,12 +293,12 @@ NextEntry:
                     Wdbg(DebugLevel.I, "Exists. Adding mod part {0}...", script.ModPart)
                     If Not scripts(ModName).ModParts.ContainsKey(script.ModPart) Then
                         Wdbg(DebugLevel.I, "No conflict with {0}. Adding as is...", script.ModPart)
-                        PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, modPath), script)
+                        PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, ModPath), script)
                         scripts(ModName).ModParts.Add(script.ModPart, PartInstance)
                     Else
                         Wdbg(DebugLevel.W, "There is a conflict with {0}. Appending item number...", script.ModPart)
                         script.ModPart += CStr(scripts(ModName).ModParts.Count)
-                        PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, modPath), script)
+                        PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, ModPath), script)
                         scripts(ModName).ModParts.Add(script.ModPart, PartInstance)
                     End If
                 Else
@@ -306,15 +306,15 @@ NextEntry:
                     Wdbg(DebugLevel.I, "Adding mod with mod part {0}...", script.ModPart)
                     If Not ModParts.ContainsKey(script.ModPart) Then
                         Wdbg(DebugLevel.I, "No conflict with {0}. Adding as is...", script.ModPart)
-                        PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, modPath), script)
+                        PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, ModPath), script)
                         ModParts.Add(script.ModPart, PartInstance)
                     Else
                         Wdbg(DebugLevel.W, "There is a conflict with {0}. Appending item number...", script.ModPart)
                         script.ModPart += CStr(scripts.Count)
-                        PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, modPath), script)
+                        PartInstance = New PartInfo(ModName, script.ModPart, modFile, NeutralizePath(modFile, ModPath), script)
                         ModParts.Add(script.ModPart, PartInstance)
                     End If
-                    ModInstance = New ModInfo(ModName, modFile, NeutralizePath(modFile, modPath), ModParts, script.Version)
+                    ModInstance = New ModInfo(ModName, modFile, NeutralizePath(modFile, ModPath), ModParts, script.Version)
                     scripts.Add(ModName, ModInstance)
                 End If
 
@@ -453,7 +453,7 @@ NextEntry:
 
                 'Check for accompanying manual pages for mods (EXPERIMENTAL)
 #If MANPAGE Then
-                Dim ModManualPath As String = NeutralizePath(modFile + ".manual", modPath)
+                Dim ModManualPath As String = NeutralizePath(modFile + ".manual", ModPath)
                 If Directory.Exists(ModManualPath) Then
                     Wdbg(DebugLevel.I, "Found manual page collection in {0}", ModManualPath)
                     For Each ModManualFile As String In Directory.EnumerateFiles(ModManualPath, "*.man", SearchOption.AllDirectories)

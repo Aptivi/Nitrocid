@@ -502,6 +502,7 @@
     <Compile Include="Shell\ShellBase\ProvidedCommandArgumentsInfo.vb" />
     <Compile Include="Shell\Shell.vb" />
     <Compile Include="Shell\ShellBase\ShellStartThreads.vb" />
+    <Compile Include="TestShell\Commands\UnblacklistMod.vb" />
     <Compile Include="TestShell\Commands\ColorWheel.vb" />
     <Compile Include="TestShell\Commands\ColorTest.vb" />
     <Compile Include="TestShell\Commands\ColorTrueTest.vb" />
@@ -518,6 +519,7 @@
     <Compile Include="TestShell\Commands\Panic.vb" />
     <Compile Include="TestShell\Commands\PanicF.vb" />
     <Compile Include="TestShell\Commands\Places.vb" />
+    <Compile Include="TestShell\Commands\BlacklistMod.vb" />
     <Compile Include="TestShell\Commands\ShowDateUtc.vb" />
     <Compile Include="TestShell\Commands\ShowTDUtc.vb" />
     <Compile Include="TestShell\Commands\ShowTD.vb" />
@@ -538,6 +540,7 @@
     <Compile Include="TestShell\Commands\SendNot.vb" />
     <Compile Include="TestShell\Commands\SetCustomSaverSetting.vb" />
     <Compile Include="TestShell\Commands\Shutdown.vb" />
+    <Compile Include="TestShell\Commands\ReloadMods.vb" />
     <Compile Include="TestShell\Commands\StopMods.vb" />
     <Compile Include="TestShell\Commands\TestDictWriterChar.vb" />
     <Compile Include="TestShell\Commands\TestDictWriterInt.vb" />

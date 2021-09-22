@@ -482,7 +482,7 @@ Public Module SettingsApp
                         Next
                     End If
                 Case "8" 'Misc
-                    MaxOptions = 8
+                    MaxOptions = 9
                     WriteSeparator(DoTranslation("Miscellaneous Settings..."), True)
                     W(vbNewLine + DoTranslation("Settings that don't fit in their appropriate sections land here.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Show Time/Date on Upper Right Corner") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(CornerTimeDate)))
@@ -493,6 +493,7 @@ Public Module SettingsApp
                     W(" 6) " + DoTranslation("Text editor autosave interval") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TextEdit_AutoSaveInterval)))
                     W(" 7) " + DoTranslation("Wrap list outputs") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WrapListOutputs)))
                     W(" 8) " + DoTranslation("Draw notification border") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DrawBorderNotification)))
+                    W(" 9) " + DoTranslation("Blacklisted mods") + " [{0}]", True, ColTypes.Option, BlacklistedModsString.Split(";").Length)
                 Case Else 'Invalid section
                     WriteSeparator("*) ???", True)
                     W(vbNewLine + "X) " + DoTranslation("Invalid section entered. Please go back."), True, ColTypes.Error)
@@ -570,6 +571,7 @@ Public Module SettingsApp
         Dim SelectFrom As IEnumerable(Of Object)
         Dim SelectionEnumZeroBased As Boolean
         Dim NeutralizePaths As Boolean
+        Dim NeutralizeRootPath As String = CurrDir
         Dim BuiltinSavers As Integer = 24
 
         While Not KeyFinished
@@ -1737,6 +1739,15 @@ Public Module SettingsApp
                             KeyVar = NameOf(DrawBorderNotification)
                             WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Draw notification border"), True)
                             W(vbNewLine + DoTranslation("Covers the notification with the border."), True, ColTypes.Neutral)
+                        Case 9 'Blacklisted mods
+                            KeyType = SettingsKeyType.SList
+                            KeyVar = NameOf(BlacklistedModsString)
+                            ListJoinString = ";"
+                            TargetList = GetBlacklistedMods()
+                            NeutralizePaths = True
+                            NeutralizeRootPath = GetKernelPath(KernelPathType.Mods)
+                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Blacklisted mods"), True)
+                            W(vbNewLine + DoTranslation("Write the filenames of the mods that will not run on startup. When you're finished, write ""q"". Write a minus sign next to the path to remove an existing mod."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
@@ -1777,7 +1788,7 @@ Public Module SettingsApp
             ElseIf KeyType = SettingsKeyType.SVariant And Not VariantValueFromExternalPrompt Then
                 W("> ", False, ColTypes.Input)
                 VariantValue = Console.ReadLine
-                If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString)
+                If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString, NeutralizeRootPath)
                 Wdbg(DebugLevel.I, "User answered {0}", VariantValue)
             ElseIf Not KeyType = SettingsKeyType.SVariant Then
                 If KeyType = SettingsKeyType.SList Then
@@ -1786,7 +1797,7 @@ Public Module SettingsApp
                     Do Until AnswerString = "q"
                         AnswerString = Console.ReadLine
                         If Not AnswerString = "q" Then
-                            If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString)
+                            If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString, NeutralizeRootPath)
                             TargetList = Enumerable.Append(TargetList, AnswerString)
                             Wdbg(DebugLevel.I, "Added answer {0} to list.", AnswerString)
                             W("> ", False, ColTypes.Input)
@@ -1800,7 +1811,7 @@ Public Module SettingsApp
                     Else
                         AnswerString = Console.ReadLine
                     End If
-                    If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString)
+                    If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString, NeutralizeRootPath)
                     Wdbg(DebugLevel.I, "User answered {0}", AnswerString)
                 End If
             End If

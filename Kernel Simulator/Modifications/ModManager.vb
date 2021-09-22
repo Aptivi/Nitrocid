@@ -17,10 +17,12 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports Newtonsoft.Json.Linq
 
 Public Module ModManager
 
-    Friend ReadOnly modPath As String = GetKernelPath(KernelPathType.Mods)
+    Public BlacklistedModsString As String = ""
+    Friend ReadOnly ModPath As String = GetKernelPath(KernelPathType.Mods)
 
     ''' <summary>
     ''' Loads all mods in KSMods
@@ -29,17 +31,23 @@ Public Module ModManager
         Wdbg(DebugLevel.I, "Safe mode: {0}", SafeMode)
         If Not SafeMode Then
             'We're not in safe mode. We're good now.
-            If Not Directory.Exists(modPath) Then Directory.CreateDirectory(modPath)
-            Dim count As Integer = Directory.EnumerateFiles(modPath).Count
+            If Not Directory.Exists(ModPath) Then Directory.CreateDirectory(ModPath)
+            Dim count As Integer = Directory.EnumerateFiles(ModPath).Count
             Wdbg(DebugLevel.I, "Files count: {0}", count)
 
             'Check to see if we have mods
             If count <> 0 Then
                 W(DoTranslation("mod: Loading mods..."), True, ColTypes.Neutral)
                 Wdbg(DebugLevel.I, "Mods are being loaded. Total mods with screensavers = {0}", count)
-                For Each modFile As String In Directory.EnumerateFiles(modPath)
-                    W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(modFile))
-                    ParseMod(modFile)
+                For Each modFile As String In Directory.EnumerateFiles(ModPath)
+                    If Not GetBlacklistedMods.Contains(modFile) Then
+                        Wdbg(DebugLevel.I, "Mod {0} is not blacklisted.", Path.GetFileName(modFile))
+                        W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(modFile))
+                        ParseMod(modFile)
+                    Else
+                        Wdbg(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", Path.GetFileName(modFile))
+                        W(DoTranslation("Mod {0} is blacklisted."), True, ColTypes.Warning, Path.GetFileName(modFile))
+                    End If
                 Next
             Else
                 W(DoTranslation("mod: No mods detected."), True, ColTypes.Neutral)
@@ -55,15 +63,21 @@ Public Module ModManager
     ''' <param name="ModFilename">Mod filename found in KSMods</param>
     Public Sub StartMod(ModFilename As String)
         Wdbg(DebugLevel.I, "Safe mode: {0}", SafeMode)
-        ModFilename = Path.Combine(modPath, ModFilename)
+        ModFilename = Path.Combine(ModPath, ModFilename)
         Wdbg(DebugLevel.I, "Mod file path: {0}", ModFilename)
 
         If Not SafeMode Then
             If File.Exists(ModFilename) Then
                 Wdbg(DebugLevel.I, "Mod file exists! Starting...")
                 If Not HasModStarted(ModFilename) Then
-                    W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(ModFilename))
-                    ParseMod(ModFilename)
+                    If Not GetBlacklistedMods.Contains(ModFilename) Then
+                        Wdbg(DebugLevel.I, "Mod {0} is not blacklisted.", Path.GetFileName(ModFilename))
+                        W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(ModFilename))
+                        ParseMod(ModFilename)
+                    Else
+                        Wdbg(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", Path.GetFileName(ModFilename))
+                        W(DoTranslation("Mod {0} is blacklisted."), True, ColTypes.Warning, Path.GetFileName(ModFilename))
+                    End If
                 Else
                     W(DoTranslation("Mod has already been started!"), True, ColTypes.Error)
                 End If
@@ -82,8 +96,8 @@ Public Module ModManager
         Wdbg(DebugLevel.I, "Safe mode: {0}", SafeMode)
         If Not SafeMode Then
             'We're not in safe mode. We're good now.
-            If Not Directory.Exists(modPath) Then Directory.CreateDirectory(modPath)
-            Dim count As Integer = Directory.EnumerateFiles(modPath).Count
+            If Not Directory.Exists(ModPath) Then Directory.CreateDirectory(ModPath)
+            Dim count As Integer = Directory.EnumerateFiles(ModPath).Count
             Wdbg(DebugLevel.I, "Files count: {0}", count)
 
             'Check to see if we have mods
@@ -162,7 +176,7 @@ Public Module ModManager
     ''' <param name="ModFilename">Mod filename found in KSMods</param>
     Public Sub StopMod(ModFilename As String)
         Wdbg(DebugLevel.I, "Safe mode: {0}", SafeMode)
-        ModFilename = Path.Combine(modPath, ModFilename)
+        ModFilename = Path.Combine(ModPath, ModFilename)
         Wdbg(DebugLevel.I, "Mod file path: {0}", ModFilename)
 
         If Not SafeMode Then
@@ -317,6 +331,47 @@ Public Module ModManager
 
         'If not found, exit with mod not started yet
         Return False
+    End Function
+
+    ''' <summary>
+    ''' Adds the mod to the blacklist (specified mod will not start on the next boot)
+    ''' </summary>
+    ''' <param name="ModFilename">Mod filename found in KSMods</param>
+    Public Sub AddModToBlacklist(ModFilename As String)
+        ModFilename = NeutralizePath(ModFilename, GetKernelPath(KernelPathType.Mods))
+        Wdbg(DebugLevel.I, "Adding {0} to the mod blacklist...", ModFilename)
+        Dim BlacklistedMods As List(Of String) = GetBlacklistedMods()
+        If Not BlacklistedMods.Contains(ModFilename) Then
+            Wdbg(DebugLevel.I, "Mod {0} not on the blacklist. Adding...", ModFilename)
+            BlacklistedMods.Add(ModFilename)
+        End If
+        BlacklistedModsString = String.Join(";", BlacklistedMods)
+        Dim Token As JToken = GetConfigCategory(ConfigCategory.Misc)
+        SetConfigValue(ConfigCategory.Misc, Token, "Blacklisted mods", BlacklistedModsString)
+    End Sub
+
+    ''' <summary>
+    ''' Removes the mod from the blacklist (specified mod will start on the next boot)
+    ''' </summary>
+    ''' <param name="ModFilename">Mod filename found in KSMods</param>
+    Public Sub RemoveModFromBlacklist(ModFilename As String)
+        ModFilename = NeutralizePath(ModFilename, GetKernelPath(KernelPathType.Mods))
+        Wdbg(DebugLevel.I, "Removing {0} from the mod blacklist...", ModFilename)
+        Dim BlacklistedMods As List(Of String) = GetBlacklistedMods()
+        If BlacklistedMods.Contains(ModFilename) Then
+            Wdbg(DebugLevel.I, "Mod {0} on the blacklist. Removing...", ModFilename)
+            BlacklistedMods.Remove(ModFilename)
+        End If
+        BlacklistedModsString = String.Join(";", BlacklistedMods)
+        Dim Token As JToken = GetConfigCategory(ConfigCategory.Misc)
+        SetConfigValue(ConfigCategory.Misc, Token, "Blacklisted mods", BlacklistedModsString)
+    End Sub
+
+    ''' <summary>
+    ''' Gets the blacklisted mods list
+    ''' </summary>
+    Public Function GetBlacklistedMods() As List(Of String)
+        Return BlacklistedModsString.Split(";").ToList
     End Function
 
     ''' <summary>

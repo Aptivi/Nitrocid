@@ -248,7 +248,7 @@ Public Module ConfigTools
             End If
         End If
         If ConfigToken("Misc") IsNot Nothing Then
-            If ConfigToken("Misc").Count <> 8 Then
+            If ConfigToken("Misc").Count <> 9 Then
                 Wdbg(DebugLevel.W, "Missing keys in Misc. Config fix needed set to true.")
                 FixesNeeded = True
             End If
