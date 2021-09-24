@@ -156,18 +156,4 @@ Begin:
         SwitchCancellationHandler(LastShellType)
     End Sub
 
-    ''' <summary>
-    ''' Executes the RSS shell alias
-    ''' </summary>
-    ''' <param name="aliascmd">Aliased command with arguments</param>
-    Sub ExecuteRSSAlias(aliascmd As String)
-        Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
-        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, RSSShellAliases(FirstWordCmd))
-        Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
-        Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellCommandType.RSSShell, Nothing)
-        RSSCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "RSS Shell Command Thread"}
-        RSSCommandThread.Start(Params)
-        RSSCommandThread.Join()
-    End Sub
-
 End Module

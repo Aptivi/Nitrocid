@@ -117,18 +117,4 @@ Public Module JsonShell
         JsonShell_Exiting = False
     End Sub
 
-    ''' <summary>
-    ''' Executes the JSON shell alias
-    ''' </summary>
-    ''' <param name="aliascmd">Aliased command with arguments</param>
-    Sub ExecuteJsonAlias(aliascmd As String)
-        Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
-        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, JsonShellAliases(FirstWordCmd))
-        Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
-        Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellCommandType.JsonShell, Nothing)
-        JsonShell_CommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "JSON Shell Command Thread"}
-        JsonShell_CommandThread.Start(Params)
-        JsonShell_CommandThread.Join()
-    End Sub
-
 End Module

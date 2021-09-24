@@ -416,20 +416,6 @@ Public Module Shell
     End Sub
 
     ''' <summary>
-    ''' Translates alias to actual command, preserving arguments
-    ''' </summary>
-    ''' <param name="aliascmd">Specifies the alias with arguments</param>
-    Sub ExecuteAlias(aliascmd As String)
-        Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
-        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, Aliases(FirstWordCmd))
-        Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
-        Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellCommandType.Shell, Nothing)
-        StartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Shell Command Thread"}
-        StartCommandThread.Start(Params)
-        StartCommandThread.Join()
-    End Sub
-
-    ''' <summary>
     ''' Handles executable output
     ''' </summary>
     ''' <param name="sendingProcess">Sender</param>

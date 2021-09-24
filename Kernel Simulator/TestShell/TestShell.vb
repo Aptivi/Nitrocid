@@ -128,18 +128,4 @@ Module TestShell
         StageTimer.Start()
     End Sub
 
-    ''' <summary>
-    ''' Executes the test shell alias
-    ''' </summary>
-    ''' <param name="aliascmd">Aliased command with arguments</param>
-    Sub ExecuteTestAlias(aliascmd As String)
-        Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
-        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, TestShellAliases(FirstWordCmd))
-        Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
-        Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellCommandType.TestShell, Nothing)
-        TStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Test Shell Command Thread"}
-        TStartCommandThread.Start(Params)
-        TStartCommandThread.Join()
-    End Sub
-
 End Module

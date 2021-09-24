@@ -122,18 +122,4 @@ Public Module TextEditShell
         TextEdit_Exiting = False
     End Sub
 
-    ''' <summary>
-    ''' Executes the text editor shell alias
-    ''' </summary>
-    ''' <param name="aliascmd">Aliased command with arguments</param>
-    Sub ExecuteTextAlias(aliascmd As String)
-        Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
-        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, TextShellAliases(FirstWordCmd))
-        Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
-        Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellCommandType.TextShell, Nothing)
-        TextEdit_CommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Text Edit Command Thread"}
-        TextEdit_CommandThread.Start(Params)
-        TextEdit_CommandThread.Join()
-    End Sub
-
 End Module

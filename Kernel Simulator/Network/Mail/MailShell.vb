@@ -224,18 +224,4 @@ Public Module MailShell
         Process.Start(e.WebUri.AbsoluteUri).WaitForExit()
     End Sub
 
-    ''' <summary>
-    ''' Executes the mail shell alias
-    ''' </summary>
-    ''' <param name="aliascmd">Aliased command with arguments</param>
-    Sub ExecuteMailAlias(aliascmd As String)
-        Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
-        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, MailShellAliases(FirstWordCmd))
-        Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
-        Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellCommandType.MailShell, Nothing)
-        MailStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Mail Command Thread"}
-        MailStartCommandThread.Start(Params)
-        MailStartCommandThread.Join()
-    End Sub
-
 End Module

@@ -170,18 +170,4 @@ Public Module FTPShell
         End If
     End Sub
 
-    ''' <summary>
-    ''' Executes the FTP shell alias
-    ''' </summary>
-    ''' <param name="aliascmd">Aliased command with arguments</param>
-    Sub ExecuteFTPAlias(aliascmd As String)
-        Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
-        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, FTPShellAliases(FirstWordCmd))
-        Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
-        Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellCommandType.FTPShell, Nothing)
-        FTPStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "FTP Command Thread"}
-        FTPStartCommandThread.Start(Params)
-        FTPStartCommandThread.Join()
-    End Sub
-
 End Module

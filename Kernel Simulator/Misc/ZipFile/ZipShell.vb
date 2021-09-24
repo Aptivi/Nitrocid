@@ -115,18 +115,4 @@ Module ZipShell
         ZipShell_Exiting = False
     End Sub
 
-    ''' <summary>
-    ''' Executes the ZIP shell alias
-    ''' </summary>
-    ''' <param name="aliascmd">Aliased command with arguments</param>
-    Sub ExecuteZIPAlias(aliascmd As String)
-        Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
-        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, ZIPShellAliases(FirstWordCmd))
-        Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
-        Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellCommandType.ZIPShell, Nothing)
-        ZipShell_CommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "ZIP Shell Command Thread"}
-        ZipShell_CommandThread.Start(Params)
-        ZipShell_CommandThread.Join()
-    End Sub
-
 End Module

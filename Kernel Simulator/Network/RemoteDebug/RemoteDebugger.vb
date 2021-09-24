@@ -182,18 +182,6 @@ Public Module RemoteDebugger
     End Sub
 
     ''' <summary>
-    ''' Executes the remote debugger alias
-    ''' </summary>
-    ''' <param name="aliascmd">Aliased command with arguments</param>
-    ''' <param name="SocketStream">A socket stream writer</param>
-    ''' <param name="Address">IP Address</param>
-    Sub ExecuteRDAlias(aliascmd As String, SocketStream As IO.StreamWriter, Address As String)
-        Dim FirstWordCmd As String = aliascmd.Split(" "c)(0)
-        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, RemoteDebugAliases(FirstWordCmd))
-        ParseCmd(actualCmd, SocketStream, Address)
-    End Sub
-
-    ''' <summary>
     ''' Gets the index from an instance of StreamWriter
     ''' </summary>
     ''' <param name="SW">A stream writer</param>
