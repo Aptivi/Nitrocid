@@ -1757,6 +1757,7 @@ Public Module SettingsApp
                     W(vbNewLine + "X) " + DoTranslation("Invalid section entered. Please go back."), True, ColTypes.Error)
             End Select
 
+#Disable Warning BC42104
             'If the type is boolean, write the two options
             If KeyType = SettingsKeyType.SBoolean Then
                 Console.WriteLine()
@@ -1770,7 +1771,9 @@ Public Module SettingsApp
             If Not KeyType = SettingsKeyType.SVariant And Not KeyType = SettingsKeyType.SInt And Not KeyType = SettingsKeyType.SLongString And Not KeyType = SettingsKeyType.SString And Not KeyType = SettingsKeyType.SList Then
                 W(" {0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.BackOption, MaxKeyOptions + 1)
             ElseIf KeyType = SettingsKeyType.SList Then
-                W(" q) " + DoTranslation("Save Changes...") + vbNewLine, True, ColTypes.Option, MaxKeyOptions + 1)
+                W(DoTranslation("Current items:"), True, ColTypes.ListTitle)
+                WriteList(TargetList)
+                W(vbNewLine + " q) " + DoTranslation("Save Changes...") + vbNewLine, True, ColTypes.Option, MaxKeyOptions + 1)
             End If
 
             'Get key value
@@ -1792,7 +1795,6 @@ Public Module SettingsApp
                 Wdbg(DebugLevel.I, "User answered {0}", VariantValue)
             ElseIf Not KeyType = SettingsKeyType.SVariant Then
                 If KeyType = SettingsKeyType.SList Then
-#Disable Warning BC42104
                     W("> ", False, ColTypes.Input)
                     Do Until AnswerString = "q"
                         AnswerString = Console.ReadLine
@@ -1800,10 +1802,9 @@ Public Module SettingsApp
                             If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString, NeutralizeRootPath)
                             TargetList = Enumerable.Append(TargetList, AnswerString)
                             Wdbg(DebugLevel.I, "Added answer {0} to list.", AnswerString)
-                            W("> ", False, ColTypes.Input)
+                            W(vbNewLine + "> ", False, ColTypes.Input)
                         End If
                     Loop
-#Enable Warning BC42104
                 Else
                     W(If(KeyType = SettingsKeyType.SUnknown, "> ", "[{0}] > "), False, ColTypes.Input, KeyValue)
                     If KeyType = SettingsKeyType.SLongString Then
@@ -1817,7 +1818,6 @@ Public Module SettingsApp
             End If
 
             'Check for input
-#Disable Warning BC42104
             Wdbg(DebugLevel.I, "Is the answer numeric? {0}", IsNumeric(AnswerString))
             If Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SBoolean Then
                 Wdbg(DebugLevel.I, "Answer is numeric and key is of the Boolean type.")
