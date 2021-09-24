@@ -29,11 +29,13 @@ Module FivePointFive
     ''' <param name="PathToConfig">Path to 0.0.5.5+ config (kernelConfig.ini)</param>
     Function ReadFivePointFiveConfig(PathToConfig As String) As Boolean
         Dim ConfigReader As New IniFile()
-        ConfigReader.Load(PathToConfig)
         Dim ValidFormat As Boolean
+        Debug.WriteLine("Reading post-0.0.5.5 config...")
+        ConfigReader.Load(PathToConfig)
 
         'Check for sections
         If ConfigReader.Sections.Contains("General") And ConfigReader.Sections.Contains("Colors") And ConfigReader.Sections.Contains("Hardware") And ConfigReader.Sections.Contains("Login") And ConfigReader.Sections.Contains("Shell") And ConfigReader.Sections.Contains("Misc") Then
+            Debug.WriteLine("Valid config!")
             ValidFormat = True
         End If
 
@@ -373,6 +375,7 @@ Module FivePointFive
         End If
 
         'Return valid format
+        Debug.WriteLine($"Returning ValidFormat as {ValidFormat}...")
         Return ValidFormat
     End Function
 

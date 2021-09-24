@@ -50,6 +50,7 @@ Module LocaleGenerator
                 'Initialize two arrays for localization
                 Dim FileLines() As String = IO.File.ReadAllLines(File)
                 Dim FileLinesEng() As String = IO.File.ReadAllLines(EnglishFile)
+                Debug.WriteLine("Lines (Eng: {0}, Loc: {1})", FileLinesEng.Length, FileLines.Length)
 
                 'Make a JSON object for each language entry
                 Dim LocalizedJson As New JObject

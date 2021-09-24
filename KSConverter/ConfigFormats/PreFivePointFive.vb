@@ -29,8 +29,11 @@ Module PreFivePointFive
         Dim OldConfigReader As New IO.StreamReader(PathToConfig)
         Dim line As String = OldConfigReader.ReadLine
         Dim ValidFormat As Boolean
+        Debug.WriteLine("Reading pre-0.0.5.5 config...")
         Do While line <> ""
+            Debug.WriteLine($"Parsing line {line}...")
             If line.Contains("Kernel Version = ") Then
+                Debug.WriteLine("Valid config!")
                 ValidFormat = True
             End If
             If ValidFormat Then
@@ -125,6 +128,7 @@ Module PreFivePointFive
         Loop
         OldConfigReader.Close()
         OldConfigReader.Dispose()
+        Debug.WriteLine($"Returning ValidFormat as {ValidFormat}...")
         Return ValidFormat
     End Function
 
