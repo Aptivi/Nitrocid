@@ -197,8 +197,7 @@ Public Module Shell
                                 If Aliases.Keys.Contains(Parts(0)) Then
                                     Done = True
                                     Wdbg(DebugLevel.I, "Alias: {0}", Parts(0))
-                                    Command = Command.Replace($"""{Parts(0)}""", Parts(0))
-                                    ExecuteAlias(Command, Parts(0))
+                                    ExecuteAlias(Command)
                                 End If
                                 If Done = False Then
                                     Wdbg(DebugLevel.I, "Executing built-in command")
@@ -420,11 +419,13 @@ Public Module Shell
     ''' Translates alias to actual command, preserving arguments
     ''' </summary>
     ''' <param name="aliascmd">Specifies the alias with arguments</param>
-    Sub ExecuteAlias(Base As String, aliascmd As String)
-        Wdbg(DebugLevel.I, "Translating alias {0} to {1}...", aliascmd, Aliases(aliascmd))
-        Dim actualCmd As String = Base.Replace(aliascmd, Aliases(aliascmd))
-        StartCommandThread = New Thread(AddressOf GetCommand.ExecuteCommand) With {.Name = "Shell Command Thread"}
-        StartCommandThread.Start(actualCmd)
+    Sub ExecuteAlias(aliascmd As String)
+        Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
+        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, Aliases(FirstWordCmd))
+        Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
+        Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellCommandType.Shell, Nothing)
+        StartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Shell Command Thread"}
+        StartCommandThread.Start(Params)
         StartCommandThread.Join()
     End Sub
 
