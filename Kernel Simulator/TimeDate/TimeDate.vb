@@ -82,6 +82,7 @@ Public Module TimeDate
     Public Sub ShowCurrentTimes()
         W(DoTranslation("datetime: Time is {0}"), True, ColTypes.Neutral, RenderTime)
         W(DoTranslation("datetime: Today is {0}"), True, ColTypes.Neutral, RenderDate)
+        W(DoTranslation("datetime: Time and date in UTC: {0}"), True, ColTypes.Neutral, RenderUtc)
         W(DoTranslation("datetime: Time Zone: {0}") + " ({1})", True, ColTypes.Neutral, TimeZone.CurrentTimeZone.StandardName, TimeZone.CurrentTimeZone.GetUtcOffset(KernelDateTime).ToString(If(TimeZone.CurrentTimeZone.GetUtcOffset(KernelDateTime) < TimeSpan.Zero, "\-", "\+") + "hh\:mm\:ss"))
     End Sub
 
