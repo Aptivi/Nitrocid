@@ -1800,9 +1800,17 @@ Public Module SettingsApp
                         AnswerString = Console.ReadLine
                         If Not AnswerString = "q" Then
                             If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString, NeutralizeRootPath)
-                            TargetList = Enumerable.Append(TargetList, AnswerString)
+                            If Not AnswerString.StartsWith("-") Then
+                                'We're not removing an item!
+                                TargetList = Enumerable.Append(TargetList, AnswerString)
+                            Else
+                                'We're removing an item.
+                                Dim DeletedItems As IEnumerable(Of Object) = Enumerable.Empty(Of Object)
+                                DeletedItems = Enumerable.Append(DeletedItems, AnswerString.Substring(1))
+                                TargetList = Enumerable.Except(TargetList, DeletedItems)
+                            End If
                             Wdbg(DebugLevel.I, "Added answer {0} to list.", AnswerString)
-                            W(vbNewLine + "> ", False, ColTypes.Input)
+                            W("> ", False, ColTypes.Input)
                         End If
                     Loop
                 Else
