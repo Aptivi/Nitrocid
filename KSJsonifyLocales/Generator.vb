@@ -19,6 +19,8 @@
 Imports System.IO
 Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
+Imports KS.TextWriterColor
+Imports KS.ColorTools
 
 Module LocaleGenerator
 
@@ -50,7 +52,7 @@ Module LocaleGenerator
                 'Initialize two arrays for localization
                 Dim FileLines() As String = IO.File.ReadAllLines(File)
                 Dim FileLinesEng() As String = IO.File.ReadAllLines(EnglishFile)
-                Debug.WriteLine("Lines (Eng: {0}, Loc: {1})", FileLinesEng.Length, FileLines.Length)
+                Debug.WriteLine("Lines for {0} (Eng: {1}, Loc: {2})", Path.GetFileNameWithoutExtension(File), FileLinesEng.Length, FileLines.Length)
 
                 'Make a JSON object for each language entry
                 Dim LocalizedJson As New JObject
@@ -60,29 +62,30 @@ Module LocaleGenerator
                             Debug.WriteLine("Adding ""{0}, {1}""...", FileLinesEng(i), FileLines(i))
                             LocalizedJson.Add(FileLinesEng(i), FileLines(i))
                         Catch ex As Exception
-                            Console.WriteLine(ex.Message)
-                            Console.WriteLine($"Malformed line {i + 1}: {FileLinesEng(i)} -> {FileLines(i)}")
+                            W("Malformed line" + $" {i + 1}: {FileLinesEng(i)} -> {FileLines(i)}", True, ColTypes.Error)
+                            W("Error trying to parse above line:" + $" {ex.Message}", True, ColTypes.Error)
                         End Try
                     End If
                 Next
 
                 'Save changes
+                Debug.WriteLine("Saving as {0}...", Path.GetFileNameWithoutExtension(File) + ".json")
                 If Args.Length > 0 AndAlso Args(0) = "--CopyToResources" Then
                     IO.File.WriteAllText("../Resources/" + Path.GetFileNameWithoutExtension(File) + ".json", JsonConvert.SerializeObject(LocalizedJson, Formatting.Indented))
-                    Console.WriteLine($"Saved to ../Resources/{Path.GetFileNameWithoutExtension(File)}.json!")
+                    W("Saved new language JSON file to" + $" ../Resources/{Path.GetFileNameWithoutExtension(File)}.json!", True, ColTypes.Success)
                 Else
                     Directory.CreateDirectory("Translations/Output")
                     IO.File.WriteAllText("Translations/Output/" + Path.GetFileNameWithoutExtension(File) + ".json", JsonConvert.SerializeObject(LocalizedJson, Formatting.Indented))
-                    Console.WriteLine($"Saved to Translations/Output/{Path.GetFileNameWithoutExtension(File)}.json!")
+                    W("Saved new language JSON file to" + $" Translations/Output/{Path.GetFileNameWithoutExtension(File)}.json!", True, ColTypes.Success)
                 End If
             Next
         Catch ex As Exception
-            Console.WriteLine(ex.Message)
-            Console.WriteLine(ex.StackTrace)
+            W("Unexpected error in converter:" + $" {ex.Message}", True, ColTypes.Error)
+            W(ex.StackTrace, True, ColTypes.Error)
         End Try
 
         'Finish the program
-        Console.WriteLine("Press any key to continue...")
+        W("Press any key to continue...", True, ColTypes.Neutral)
         Console.ReadKey()
     End Sub
 

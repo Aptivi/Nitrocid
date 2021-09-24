@@ -305,5 +305,11 @@
       <Version>13.0.1</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Kernel Simulator\Kernel Simulator.vbproj">
+      <Project>{c7b37899-c361-423d-9512-fe0a87a46866}</Project>
+      <Name>Kernel Simulator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
