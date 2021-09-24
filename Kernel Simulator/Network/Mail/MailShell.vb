@@ -18,8 +18,6 @@
 
 Imports System.Threading
 Imports MailKit
-Imports MailKit.Net.Imap
-Imports MailKit.Search
 
 Public Module MailShell
 
@@ -40,11 +38,11 @@ Public Module MailShell
                                                                                  {"rmdir", New CommandInfo("rmdir", ShellCommandType.MailShell, "Removes a directory from the current working directory", "<foldername>", True, 1, New Mail_RmdirCommand)},
                                                                                  {"send", New CommandInfo("send", ShellCommandType.MailShell, "Sends a message to an address", "", False, 0, New Mail_SendCommand)},
                                                                                  {"sendenc", New CommandInfo("sendenc", ShellCommandType.MailShell, "Sends an encrypted message to an address", "", False, 0, New Mail_SendEncCommand)}}
-    Friend IMAP_Messages As IEnumerable(Of UniqueId)
     Public IMAP_CurrentDirectory As String = "Inbox"
-    Friend ExitRequested, KeepAlive As Boolean
     Public MailModCommands As New ArrayList
     Public MailShellPromptStyle As String = ""
+    Friend ExitRequested, KeepAlive As Boolean
+    Friend IMAP_Messages As IEnumerable(Of UniqueId)
 
     ''' <summary>
     ''' Initializes the shell of the mail client
@@ -125,103 +123,6 @@ Public Module MailShell
 
         'Restore handler
         SwitchCancellationHandler(LastShellType)
-    End Sub
-
-    ''' <summary>
-    ''' [IMAP] Tries to keep the connection going
-    ''' </summary>
-    Sub IMAPKeepConnection()
-        'Every 30 seconds, send a ping to IMAP server
-        While IMAP_Client.IsConnected
-            Thread.Sleep(30000)
-            If IMAP_Client.IsConnected Then
-                SyncLock IMAP_Client.SyncRoot
-                    IMAP_Client.NoOp()
-                End SyncLock
-                PopulateMessages()
-            Else
-                Wdbg(DebugLevel.W, "Connection state is inconsistent. Stopping IMAPKeepConnection()...")
-                Thread.CurrentThread.Abort()
-            End If
-        End While
-    End Sub
-
-    ''' <summary>
-    ''' [SMTP] Tries to keep the connection going
-    ''' </summary>
-    Sub SMTPKeepConnection()
-        'Every 30 seconds, send a ping to IMAP server
-        While SMTP_Client.IsConnected
-            Thread.Sleep(30000)
-            If SMTP_Client.IsConnected Then
-                SyncLock SMTP_Client.SyncRoot
-                    SMTP_Client.NoOp()
-                End SyncLock
-            Else
-                Wdbg(DebugLevel.W, "Connection state is inconsistent. Stopping SMTPKeepConnection()...")
-                Thread.CurrentThread.Abort()
-            End If
-        End While
-    End Sub
-
-    ''' <summary>
-    ''' Populates e-mail messages
-    ''' </summary>
-    Public Sub PopulateMessages()
-        If IMAP_Client.IsConnected Then
-            SyncLock IMAP_Client.SyncRoot
-                If IMAP_CurrentDirectory = "" Or IMAP_CurrentDirectory = "Inbox" Then
-                    IMAP_Client.Inbox.Open(FolderAccess.ReadWrite)
-                    Wdbg(DebugLevel.I, "Opened inbox")
-                    IMAP_Messages = IMAP_Client.Inbox.Search(SearchQuery.All).Reverse
-                    Wdbg(DebugLevel.I, "Messages count: {0} messages", IMAP_Messages.LongCount)
-                Else
-                    Dim Folder As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-                    Wdbg(DebugLevel.I, "Opened {0}", IMAP_CurrentDirectory)
-                    IMAP_Messages = Folder.Search(SearchQuery.All).Reverse
-                    Wdbg(DebugLevel.I, "Messages count: {0} messages", IMAP_Messages.LongCount)
-                End If
-            End SyncLock
-        End If
-    End Sub
-
-    ''' <summary>
-    ''' Executed when the CountChanged event is fired.
-    ''' </summary>
-    ''' <param name="Sender">A folder</param>
-    ''' <param name="e">Event arguments</param>
-    Private Sub OnCountChanged(Sender As Object, e As EventArgs)
-        Dim Folder As ImapFolder = Sender
-        If Folder.Count > IMAP_Messages.Count Then
-            Dim NewMessagesCount As Integer = Folder.Count - IMAP_Messages.Count
-            NotifySend(New Notification(DoTranslation("{0} new messages arrived in inbox.").FormatString(NewMessagesCount),
-                                        DoTranslation("Open ""lsmail"" to see them."),
-                                        NotifPriority.Medium, NotifType.Normal))
-        End If
-    End Sub
-
-    ''' <summary>
-    ''' Initializes the CountChanged handlers. Currently, it only supports inbox.
-    ''' </summary>
-    Public Sub InitializeHandlers()
-        AddHandler IMAP_Client.Inbox.CountChanged, AddressOf OnCountChanged
-    End Sub
-
-    ''' <summary>
-    ''' Releases the CountChanged handlers. Currently, it only supports inbox.
-    ''' </summary>
-    Public Sub ReleaseHandlers()
-        RemoveHandler IMAP_Client.Inbox.CountChanged, AddressOf OnCountChanged
-    End Sub
-
-    ''' <summary>
-    ''' Handles WebAlert sent by Gmail
-    ''' </summary>
-    Sub HandleWebAlert(sender As Object, e As WebAlertEventArgs)
-        Wdbg(DebugLevel.I, "WebAlert URI: {0}", e.WebUri.AbsoluteUri)
-        W(e.Message, True, ColTypes.Warning)
-        W(DoTranslation("Opening URL... Make sure to follow the steps shown on the screen."), True, ColTypes.Neutral)
-        Process.Start(e.WebUri.AbsoluteUri).WaitForExit()
     End Sub
 
 End Module

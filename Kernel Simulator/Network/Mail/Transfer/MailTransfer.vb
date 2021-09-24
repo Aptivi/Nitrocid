@@ -19,6 +19,7 @@
 Imports System.IO
 Imports System.Text
 Imports MailKit
+Imports MailKit.Search
 Imports MimeKit
 Imports MimeKit.Cryptography
 Imports MimeKit.Text
@@ -298,5 +299,26 @@ Public Module MailTransfer
             Return False
         End SyncLock
     End Function
+
+    ''' <summary>
+    ''' Populates e-mail messages
+    ''' </summary>
+    Public Sub PopulateMessages()
+        If IMAP_Client.IsConnected Then
+            SyncLock IMAP_Client.SyncRoot
+                If IMAP_CurrentDirectory = "" Or IMAP_CurrentDirectory = "Inbox" Then
+                    IMAP_Client.Inbox.Open(FolderAccess.ReadWrite)
+                    Wdbg(DebugLevel.I, "Opened inbox")
+                    IMAP_Messages = IMAP_Client.Inbox.Search(SearchQuery.All).Reverse
+                    Wdbg(DebugLevel.I, "Messages count: {0} messages", IMAP_Messages.LongCount)
+                Else
+                    Dim Folder As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+                    Wdbg(DebugLevel.I, "Opened {0}", IMAP_CurrentDirectory)
+                    IMAP_Messages = Folder.Search(SearchQuery.All).Reverse
+                    Wdbg(DebugLevel.I, "Messages count: {0} messages", IMAP_Messages.LongCount)
+                End If
+            End SyncLock
+        End If
+    End Sub
 
 End Module
