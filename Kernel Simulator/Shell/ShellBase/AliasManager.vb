@@ -323,10 +323,7 @@ Public Module AliasManager
             ElseIf Not IsCommandFound(Destination) Then
                 Wdbg(DebugLevel.W, "{0} not found in all the command lists", Destination)
                 Throw New Exceptions.AliasNoSuchCommandException(DoTranslation("Command not found to alias to {0}."), Destination)
-            ElseIf Aliases.ContainsKey(SourceAlias) Or RemoteDebugAliases.ContainsKey(SourceAlias) Or FTPShellAliases.ContainsKey(SourceAlias) Or
-                   SFTPShellAliases.ContainsKey(SourceAlias) Or MailShellAliases.ContainsKey(SourceAlias) Or TextShellAliases.ContainsKey(SourceAlias) Or
-                   TestShellAliases.ContainsKey(SourceAlias) Or ZIPShellAliases.ContainsKey(SourceAlias) Or RSSShellAliases.ContainsKey(SourceAlias) Or
-                   JsonShellAliases.ContainsKey(SourceAlias) Then
+            ElseIf DoesAliasExist(SourceAlias, Type) Then
                 Wdbg(DebugLevel.W, "Alias {0} already found", SourceAlias)
                 Throw New Exceptions.AliasAlreadyExistsException(DoTranslation("Alias already found: {0}"), SourceAlias)
             Else
@@ -482,43 +479,43 @@ Public Module AliasManager
         Select Case Type
             Case ShellCommandType.Shell
                 For Each AliasName As JObject In AliasNameToken
-                    Return AliasName("Alias") = TargetAlias And AliasName("Type") = "Shell"
+                    If AliasName("Alias") = TargetAlias And AliasName("Type") = "Shell" Then Return True
                 Next
             Case ShellCommandType.RemoteDebugShell
                 For Each AliasName As JObject In AliasNameToken
-                    Return AliasName("Alias") = TargetAlias And AliasName("Type") = "Remote"
+                    If AliasName("Alias") = TargetAlias And AliasName("Type") = "Remote" Then Return True
                 Next
             Case ShellCommandType.FTPShell
                 For Each AliasName As JObject In AliasNameToken
-                    Return AliasName("Alias") = TargetAlias And AliasName("Type") = "FTPShell"
+                    If AliasName("Alias") = TargetAlias And AliasName("Type") = "FTPShell" Then Return True
                 Next
             Case ShellCommandType.SFTPShell
                 For Each AliasName As JObject In AliasNameToken
-                    Return AliasName("Alias") = TargetAlias And AliasName("Type") = "SFTPShell"
+                    If AliasName("Alias") = TargetAlias And AliasName("Type") = "SFTPShell" Then Return True
                 Next
             Case ShellCommandType.MailShell
                 For Each AliasName As JObject In AliasNameToken
-                    Return AliasName("Alias") = TargetAlias And AliasName("Type") = "Mail"
+                    If AliasName("Alias") = TargetAlias And AliasName("Type") = "Mail" Then Return True
                 Next
             Case ShellCommandType.TextShell
                 For Each AliasName As JObject In AliasNameToken
-                    Return AliasName("Alias") = TargetAlias And AliasName("Type") = "Text"
+                    If AliasName("Alias") = TargetAlias And AliasName("Type") = "Text" Then Return True
                 Next
             Case ShellCommandType.TestShell
                 For Each AliasName As JObject In AliasNameToken
-                    Return AliasName("Alias") = TargetAlias And AliasName("Type") = "Test"
+                    If AliasName("Alias") = TargetAlias And AliasName("Type") = "Test" Then Return True
                 Next
             Case ShellCommandType.ZIPShell
                 For Each AliasName As JObject In AliasNameToken
-                    Return AliasName("Alias") = TargetAlias And AliasName("Type") = "ZIP"
+                    If AliasName("Alias") = TargetAlias And AliasName("Type") = "ZIP" Then Return True
                 Next
             Case ShellCommandType.RSSShell
                 For Each AliasName As JObject In AliasNameToken
-                    Return AliasName("Alias") = TargetAlias And AliasName("Type") = "RSS"
+                    If AliasName("Alias") = TargetAlias And AliasName("Type") = "RSS" Then Return True
                 Next
             Case ShellCommandType.JsonShell
                 For Each AliasName As JObject In AliasNameToken
-                    Return AliasName("Alias") = TargetAlias And AliasName("Type") = "JSON"
+                    If AliasName("Alias") = TargetAlias And AliasName("Type") = "JSON" Then Return True
                 Next
             Case Else
                 Wdbg(DebugLevel.E, "Type {0} not found.", Type)
