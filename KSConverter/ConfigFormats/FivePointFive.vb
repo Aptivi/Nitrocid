@@ -69,21 +69,21 @@ Module FivePointFive
         'Colors section
         If ColoredShell Then
             'We use New Color() to parse entered color. This is to ensure that the kernel can use the correct VT sequence.
-            If ConfigReader.Sections("Colors").Keys.Contains("User Name Shell Color") Then UserNameShellColor = New Color(ConfigReader.Sections("Colors").Keys("User Name Shell Color").Value).PlainSequence
-            If ConfigReader.Sections("Colors").Keys.Contains("Host Name Shell Color") Then HostNameShellColor = New Color(ConfigReader.Sections("Colors").Keys("Host Name Shell Color").Value).PlainSequence
-            If ConfigReader.Sections("Colors").Keys.Contains("Continuable Kernel Error Color") Then ContKernelErrorColor = New Color(ConfigReader.Sections("Colors").Keys("Continuable Kernel Error Color").Value).PlainSequence
-            If ConfigReader.Sections("Colors").Keys.Contains("Uncontinuable Kernel Error Color") Then UncontKernelErrorColor = New Color(ConfigReader.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value).PlainSequence
-            If ConfigReader.Sections("Colors").Keys.Contains("Text Color") Then NeutralTextColor = New Color(ConfigReader.Sections("Colors").Keys("Text Color").Value).PlainSequence
-            If ConfigReader.Sections("Colors").Keys.Contains("License Color") Then LicenseColor = New Color(ConfigReader.Sections("Colors").Keys("License Color").Value).PlainSequence
-            If ConfigReader.Sections("Colors").Keys.Contains("Background Color") Then BackgroundColor = New Color(ConfigReader.Sections("Colors").Keys("Background Color").Value).PlainSequence
-            If ConfigReader.Sections("Colors").Keys.Contains("Input Color") Then InputColor = New Color(ConfigReader.Sections("Colors").Keys("Input Color").Value).PlainSequence
-            If ConfigReader.Sections("Colors").Keys.Contains("List Entry Color") Then ListEntryColor = New Color(ConfigReader.Sections("Colors").Keys("List Entry Color").Value).PlainSequence
-            If ConfigReader.Sections("Colors").Keys.Contains("List Value Color") Then ListValueColor = New Color(ConfigReader.Sections("Colors").Keys("List Value Color").Value).PlainSequence
-            If ConfigReader.Sections("Colors").Keys.Contains("Kernel Stage Color") Then StageColor = New Color(ConfigReader.Sections("Colors").Keys("Kernel Stage Color").Value).PlainSequence
-            If ConfigReader.Sections("Colors").Keys.Contains("Error Text Color") Then ErrorColor = New Color(ConfigReader.Sections("Colors").Keys("Error Text Color").Value).PlainSequence
-            If ConfigReader.Sections("Colors").Keys.Contains("Warning Text Color") Then WarningColor = New Color(ConfigReader.Sections("Colors").Keys("Warning Text Color").Value).PlainSequence
-            If ConfigReader.Sections("Colors").Keys.Contains("Option Color") Then OptionColor = New Color(ConfigReader.Sections("Colors").Keys("Option Color").Value).PlainSequence
-            If ConfigReader.Sections("Colors").Keys.Contains("Banner Color") Then BannerColor = New Color(ConfigReader.Sections("Colors").Keys("Banner Color").Value).PlainSequence
+            If ConfigReader.Sections("Colors").Keys.Contains("User Name Shell Color") Then UserNameShellColor = New Color(Convert.ToInt32([Enum].Parse(GetType(ConsoleColors), ConfigReader.Sections("Colors").Keys("User Name Shell Color").Value))).PlainSequence
+            If ConfigReader.Sections("Colors").Keys.Contains("Host Name Shell Color") Then HostNameShellColor = New Color(Convert.ToInt32([Enum].Parse(GetType(ConsoleColors), ConfigReader.Sections("Colors").Keys("Host Name Shell Color").Value))).PlainSequence
+            If ConfigReader.Sections("Colors").Keys.Contains("Continuable Kernel Error Color") Then ContKernelErrorColor = New Color(Convert.ToInt32([Enum].Parse(GetType(ConsoleColors), ConfigReader.Sections("Colors").Keys("Continuable Kernel Error Color").Value))).PlainSequence
+            If ConfigReader.Sections("Colors").Keys.Contains("Uncontinuable Kernel Error Color") Then UncontKernelErrorColor = New Color(Convert.ToInt32([Enum].Parse(GetType(ConsoleColors), ConfigReader.Sections("Colors").Keys("Uncontinuable Kernel Error Color").Value))).PlainSequence
+            If ConfigReader.Sections("Colors").Keys.Contains("Text Color") Then NeutralTextColor = New Color(Convert.ToInt32([Enum].Parse(GetType(ConsoleColors), ConfigReader.Sections("Colors").Keys("Text Color").Value))).PlainSequence
+            If ConfigReader.Sections("Colors").Keys.Contains("License Color") Then LicenseColor = New Color(Convert.ToInt32([Enum].Parse(GetType(ConsoleColors), ConfigReader.Sections("Colors").Keys("License Color").Value))).PlainSequence
+            If ConfigReader.Sections("Colors").Keys.Contains("Background Color") Then BackgroundColor = New Color(Convert.ToInt32([Enum].Parse(GetType(ConsoleColors), ConfigReader.Sections("Colors").Keys("Background Color").Value))).PlainSequence
+            If ConfigReader.Sections("Colors").Keys.Contains("Input Color") Then InputColor = New Color(Convert.ToInt32([Enum].Parse(GetType(ConsoleColors), ConfigReader.Sections("Colors").Keys("Input Color").Value))).PlainSequence
+            If ConfigReader.Sections("Colors").Keys.Contains("List Entry Color") Then ListEntryColor = New Color(Convert.ToInt32([Enum].Parse(GetType(ConsoleColors), ConfigReader.Sections("Colors").Keys("List Entry Color").Value))).PlainSequence
+            If ConfigReader.Sections("Colors").Keys.Contains("List Value Color") Then ListValueColor = New Color(Convert.ToInt32([Enum].Parse(GetType(ConsoleColors), ConfigReader.Sections("Colors").Keys("List Value Color").Value))).PlainSequence
+            If ConfigReader.Sections("Colors").Keys.Contains("Kernel Stage Color") Then StageColor = New Color(Convert.ToInt32([Enum].Parse(GetType(ConsoleColors), ConfigReader.Sections("Colors").Keys("Kernel Stage Color").Value))).PlainSequence
+            If ConfigReader.Sections("Colors").Keys.Contains("Error Text Color") Then ErrorColor = New Color(Convert.ToInt32([Enum].Parse(GetType(ConsoleColors), ConfigReader.Sections("Colors").Keys("Error Text Color").Value))).PlainSequence
+            If ConfigReader.Sections("Colors").Keys.Contains("Warning Text Color") Then WarningColor = New Color(Convert.ToInt32([Enum].Parse(GetType(ConsoleColors), ConfigReader.Sections("Colors").Keys("Warning Text Color").Value))).PlainSequence
+            If ConfigReader.Sections("Colors").Keys.Contains("Option Color") Then OptionColor = New Color(Convert.ToInt32([Enum].Parse(GetType(ConsoleColors), ConfigReader.Sections("Colors").Keys("Option Color").Value))).PlainSequence
+            If ConfigReader.Sections("Colors").Keys.Contains("Banner Color") Then BannerColor = New Color(Convert.ToInt32([Enum].Parse(GetType(ConsoleColors), ConfigReader.Sections("Colors").Keys("Banner Color").Value))).PlainSequence
         End If
 
         'Login section
@@ -139,200 +139,200 @@ Module FivePointFive
         End If
 
         'Network section
-        If ConfigReader.Sections("Network").Keys.Contains("Debug Port") Then
+        If ConfigReader.Sections("Network")?.Keys?.Contains("Debug Port") Then
             If Integer.TryParse(ConfigReader.Sections("Network").Keys("Debug Port").Value, 0) Then DebugPort = ConfigReader.Sections("Network").Keys("Debug Port").Value
         End If
-        If ConfigReader.Sections("Network").Keys.Contains("Download Retry Times") Then
+        If ConfigReader.Sections("Network")?.Keys?.Contains("Download Retry Times") Then
             If Integer.TryParse(ConfigReader.Sections("Network").Keys("Download Retry Times").Value, 0) Then DownloadRetries = ConfigReader.Sections("Network").Keys("Download Retry Times").Value
         End If
-        If ConfigReader.Sections("Network").Keys.Contains("Upload Retry Times") Then
+        If ConfigReader.Sections("Network")?.Keys?.Contains("Upload Retry Times") Then
             If Integer.TryParse(ConfigReader.Sections("Network").Keys("Upload Retry Times").Value, 0) Then UploadRetries = ConfigReader.Sections("Network").Keys("Upload Retry Times").Value
         End If
-        If ConfigReader.Sections("Network").Keys.Contains("Show progress bar while downloading or uploading from ""get"" or ""put"" command") Then
+        If ConfigReader.Sections("Network")?.Keys?.Contains("Show progress bar while downloading or uploading from ""get"" or ""put"" command") Then
             ShowProgress = ConfigReader.Sections("Network").Keys("Show progress bar while downloading or uploading from ""get"" or ""put"" command").Value
         End If
-        If ConfigReader.Sections("Network").Keys.Contains("Log FTP username") Then
+        If ConfigReader.Sections("Network")?.Keys?.Contains("Log FTP username") Then
             FTPLoggerUsername = ConfigReader.Sections("Network").Keys("Log FTP username").Value
         End If
-        If ConfigReader.Sections("Network").Keys.Contains("Log FTP IP address") Then
+        If ConfigReader.Sections("Network")?.Keys?.Contains("Log FTP IP address") Then
             FTPLoggerIP = ConfigReader.Sections("Network").Keys("Log FTP IP address").Value
         End If
-        If ConfigReader.Sections("Network").Keys.Contains("Return only first FTP profile") Then
+        If ConfigReader.Sections("Network")?.Keys?.Contains("Return only first FTP profile") Then
             FTPFirstProfileOnly = ConfigReader.Sections("Network").Keys("Return only first FTP profile").Value
         End If
-        If ConfigReader.Sections("Network").Keys.Contains("Show mail message preview") Then
+        If ConfigReader.Sections("Network")?.Keys?.Contains("Show mail message preview") Then
             ShowPreview = ConfigReader.Sections("Network").Keys("Show mail message preview").Value
         End If
-        If ConfigReader.Sections("Network").Keys.Contains("Record chat to debug log") Then
+        If ConfigReader.Sections("Network")?.Keys?.Contains("Record chat to debug log") Then
             RecordChatToDebugLog = ConfigReader.Sections("Network").Keys("Record chat to debug log").Value
         End If
-        If ConfigReader.Sections("Network").Keys.Contains("Show SSH banner") Then
+        If ConfigReader.Sections("Network")?.Keys?.Contains("Show SSH banner") Then
             SSHBanner = ConfigReader.Sections("Network").Keys("Show SSH banner").Value
         End If
-        If ConfigReader.Sections("Network").Keys.Contains("Enable RPC") Then
+        If ConfigReader.Sections("Network")?.Keys?.Contains("Enable RPC") Then
             RPCEnabled = ConfigReader.Sections("Network").Keys("Enable RPC").Value
         End If
-        If ConfigReader.Sections("Network").Keys.Contains("RPC Port") Then
+        If ConfigReader.Sections("Network")?.Keys?.Contains("RPC Port") Then
             If Integer.TryParse(ConfigReader.Sections("Network").Keys("RPC Port").Value, 0) Then RPCPort = ConfigReader.Sections("Network").Keys("RPC Port").Value
         End If
 
         'Screensaver section
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Screensaver") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Screensaver") Then
             DefSaverName = ConfigReader.Sections("Screensaver").Keys("Screensaver").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Screensaver Timeout in ms") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Screensaver Timeout in ms") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("Screensaver Timeout in ms").Value, 0) Then ScrnTimeout = ConfigReader.Sections("Screensaver").Keys("Screensaver Timeout in ms").Value
         End If
 
         'Screensaver: Colors
-        If ConfigReader.Sections("Screensaver").Keys.Contains("ColorMix - Activate 255 Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("ColorMix - Activate 255 Color Mode") Then
             ColorMix255Colors = ConfigReader.Sections("Screensaver").Keys("ColorMix - Activate 255 Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Disco - Activate 255 Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Disco - Activate 255 Color Mode") Then
             Disco255Colors = ConfigReader.Sections("Screensaver").Keys("Disco - Activate 255 Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("GlitterColor - Activate 255 Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("GlitterColor - Activate 255 Color Mode") Then
             GlitterColor255Colors = ConfigReader.Sections("Screensaver").Keys("GlitterColor - Activate 255 Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Lines - Activate 255 Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Lines - Activate 255 Color Mode") Then
             Lines255Colors = ConfigReader.Sections("Screensaver").Keys("Lines - Activate 255 Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Dissolve - Activate 255 Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Dissolve - Activate 255 Color Mode") Then
             Dissolve255Colors = ConfigReader.Sections("Screensaver").Keys("Dissolve - Activate 255 Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("BouncingBlock - Activate 255 Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("BouncingBlock - Activate 255 Color Mode") Then
             BouncingBlock255Colors = ConfigReader.Sections("Screensaver").Keys("BouncingBlock - Activate 255 Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("ProgressClock - Activate 255 Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("ProgressClock - Activate 255 Color Mode") Then
             ProgressClock255Colors = ConfigReader.Sections("Screensaver").Keys("ProgressClock - Activate 255 Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Lighter - Activate 255 Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Lighter - Activate 255 Color Mode") Then
             Lighter255Colors = ConfigReader.Sections("Screensaver").Keys("Lighter - Activate 255 Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Wipe - Activate 255 Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Wipe - Activate 255 Color Mode") Then
             Wipe255Colors = ConfigReader.Sections("Screensaver").Keys("Wipe - Activate 255 Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("ColorMix - Activate True Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("ColorMix - Activate True Color Mode") Then
             ColorMixTrueColor = ConfigReader.Sections("Screensaver").Keys("ColorMix - Activate True Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Disco - Activate True Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Disco - Activate True Color Mode") Then
             DiscoTrueColor = ConfigReader.Sections("Screensaver").Keys("Disco - Activate True Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("GlitterColor - Activate True Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("GlitterColor - Activate True Color Mode") Then
             GlitterColorTrueColor = ConfigReader.Sections("Screensaver").Keys("GlitterColor - Activate True Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Lines - Activate True Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Lines - Activate True Color Mode") Then
             LinesTrueColor = ConfigReader.Sections("Screensaver").Keys("Lines - Activate True Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Dissolve - Activate True Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Dissolve - Activate True Color Mode") Then
             DissolveTrueColor = ConfigReader.Sections("Screensaver").Keys("Dissolve - Activate True Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("BouncingBlock - Activate True Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("BouncingBlock - Activate True Color Mode") Then
             BouncingBlockTrueColor = ConfigReader.Sections("Screensaver").Keys("BouncingBlock - Activate True Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("ProgressClock - Activate True Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("ProgressClock - Activate True Color Mode") Then
             ProgressClockTrueColor = ConfigReader.Sections("Screensaver").Keys("ProgressClock - Activate True Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Lighter - Activate True Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Lighter - Activate True Color Mode") Then
             LighterTrueColor = ConfigReader.Sections("Screensaver").Keys("Lighter - Activate True Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Wipe - Activate True Color Mode") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Wipe - Activate True Color Mode") Then
             WipeTrueColor = ConfigReader.Sections("Screensaver").Keys("Wipe - Activate True Color Mode").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Disco - Cycle Colors") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Disco - Cycle Colors") Then
             DiscoCycleColors = ConfigReader.Sections("Screensaver").Keys("Disco - Cycle Colors").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("ProgressClock - Cycle Colors") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("ProgressClock - Cycle Colors") Then
             ProgressClockCycleColors = ConfigReader.Sections("Screensaver").Keys("ProgressClock - Cycle Colors").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("ProgressClock - Color of Seconds Bar") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("ProgressClock - Color of Seconds Bar") Then
             ProgressClockSecondsProgressColor = ConfigReader.Sections("Screensaver").Keys("ProgressClock - Color of Seconds Bar").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("ProgressClock - Color of Minutes Bar") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("ProgressClock - Color of Minutes Bar") Then
             ProgressClockMinutesProgressColor = ConfigReader.Sections("Screensaver").Keys("ProgressClock - Color of Minutes Bar").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("ProgressClock - Color of Hours Bar") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("ProgressClock - Color of Hours Bar") Then
             ProgressClockHoursProgressColor = ConfigReader.Sections("Screensaver").Keys("ProgressClock - Color of Hours Bar").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("ProgressClock - Color of Information") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("ProgressClock - Color of Information") Then
             ProgressClockProgressColor = ConfigReader.Sections("Screensaver").Keys("ProgressClock - Color of Information").Value
         End If
 
         'Screensaver: Delays
-        If ConfigReader.Sections("Screensaver").Keys.Contains("BouncingBlock - Delay in Milliseconds") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("BouncingBlock - Delay in Milliseconds") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("BouncingBlock - Delay in Milliseconds").Value, 0) Then BouncingBlockDelay = ConfigReader.Sections("Screensaver").Keys("BouncingBlock - Delay in Milliseconds").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("BouncingText - Delay in Milliseconds") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("BouncingText - Delay in Milliseconds") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("BouncingText - Delay in Milliseconds").Value, 0) Then BouncingTextDelay = ConfigReader.Sections("Screensaver").Keys("BouncingText - Delay in Milliseconds").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("ColorMix - Delay in Milliseconds") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("ColorMix - Delay in Milliseconds") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("ColorMix - Delay in Milliseconds").Value, 0) Then ColorMixDelay = ConfigReader.Sections("Screensaver").Keys("ColorMix - Delay in Milliseconds").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Disco - Delay in Milliseconds") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Disco - Delay in Milliseconds") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("Disco - Delay in Milliseconds").Value, 0) Then DiscoDelay = ConfigReader.Sections("Screensaver").Keys("Disco - Delay in Milliseconds").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("GlitterColor - Delay in Milliseconds") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("GlitterColor - Delay in Milliseconds") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("GlitterColor - Delay in Milliseconds").Value, 0) Then GlitterColorDelay = ConfigReader.Sections("Screensaver").Keys("GlitterColor - Delay in Milliseconds").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("GlitterMatrix - Delay in Milliseconds") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("GlitterMatrix - Delay in Milliseconds") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("GlitterMatrix - Delay in Milliseconds").Value, 0) Then GlitterMatrixDelay = ConfigReader.Sections("Screensaver").Keys("GlitterMatrix - Delay in Milliseconds").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Lines - Delay in Milliseconds") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Lines - Delay in Milliseconds") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("Lines - Delay in Milliseconds").Value, 0) Then LinesDelay = ConfigReader.Sections("Screensaver").Keys("Lines - Delay in Milliseconds").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Matrix - Delay in Milliseconds") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Matrix - Delay in Milliseconds") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("Matrix - Delay in Milliseconds").Value, 0) Then MatrixDelay = ConfigReader.Sections("Screensaver").Keys("Matrix - Delay in Milliseconds").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Lighter - Delay in Milliseconds") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Lighter - Delay in Milliseconds") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("Lighter - Delay in Milliseconds").Value, 0) Then LighterDelay = ConfigReader.Sections("Screensaver").Keys("Lighter - Delay in Milliseconds").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Fader - Delay in Milliseconds") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Fader - Delay in Milliseconds") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("Fader - Delay in Milliseconds").Value, 0) Then FaderDelay = ConfigReader.Sections("Screensaver").Keys("Fader - Delay in Milliseconds").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Fader - Fade Out Delay in Milliseconds") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Fader - Fade Out Delay in Milliseconds") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("Fader - Fade Out Delay in Milliseconds").Value, 0) Then FaderFadeOutDelay = ConfigReader.Sections("Screensaver").Keys("Fader - Fade Out Delay in Milliseconds").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("ProgressClock - Ticks to change color") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("ProgressClock - Ticks to change color") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("ProgressClock - Ticks to change color").Value, 0) Then ProgressClockCycleColorsTicks = ConfigReader.Sections("Screensaver").Keys("ProgressClock - Ticks to change color").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Typo - Delay in Milliseconds") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Typo - Delay in Milliseconds") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("Typo - Delay in Milliseconds").Value, 0) Then TypoDelay = ConfigReader.Sections("Screensaver").Keys("Typo - Delay in Milliseconds").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Typo - Write Again Delay in Milliseconds") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Typo - Write Again Delay in Milliseconds") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("Typo - Write Again Delay in Milliseconds").Value, 0) Then TypoWriteAgainDelay = ConfigReader.Sections("Screensaver").Keys("Typo - Write Again Delay in Milliseconds").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Wipe - Delay in Milliseconds") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Wipe - Delay in Milliseconds") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("Wipe - Delay in Milliseconds").Value, 0) Then WipeDelay = ConfigReader.Sections("Screensaver").Keys("Wipe - Delay in Milliseconds").Value
         End If
 
         'Screensaver: Texts
-        If ConfigReader.Sections("Screensaver").Keys.Contains("BouncingText - Text Shown") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("BouncingText - Text Shown") Then
             BouncingTextWrite = ConfigReader.Sections("Screensaver").Keys("BouncingText - Text Shown").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Fader - Text Shown") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Fader - Text Shown") Then
             FaderWrite = ConfigReader.Sections("Screensaver").Keys("Fader - Text Shown").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Typo - Text Shown") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Typo - Text Shown") Then
             TypoWrite = ConfigReader.Sections("Screensaver").Keys("Typo - Text Shown").Value
         End If
 
         'Screensaver: Misc
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Lighter - Max Positions Count") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Lighter - Max Positions Count") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("Lighter - Max Positions Count").Value, 0) Then LighterMaxPositions = ConfigReader.Sections("Screensaver").Keys("Lighter - Max Positions Count").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Fader - Max Fade Steps") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Fader - Max Fade Steps") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("Fader - Max Fade Steps").Value, 0) Then FaderMaxSteps = ConfigReader.Sections("Screensaver").Keys("Fader - Max Fade Steps").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Typo - Minimum writing speed in WPM") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Typo - Minimum writing speed in WPM") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("Typo - Minimum writing speed in WPM").Value, 0) Then TypoWritingSpeedMin = ConfigReader.Sections("Screensaver").Keys("Typo - Minimum writing speed in WPM").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Typo - Maximum writing speed in WPM") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Typo - Maximum writing speed in WPM") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("Typo - Maximum writing speed in WPM").Value, 0) Then TypoWritingSpeedMax = ConfigReader.Sections("Screensaver").Keys("Typo - Maximum writing speed in WPM").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Typo - Probability of typo in percent") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Typo - Probability of typo in percent") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("Typo - Probability of typo in percent").Value, 0) Then TypoMissStrikePossibility = ConfigReader.Sections("Screensaver").Keys("Typo - Probability of typo in percent").Value
         End If
-        If ConfigReader.Sections("Screensaver").Keys.Contains("Wipe - Wipes to change direction") Then
+        If ConfigReader.Sections("Screensaver")?.Keys?.Contains("Wipe - Wipes to change direction") Then
             If Integer.TryParse(ConfigReader.Sections("Screensaver").Keys("Wipe - Wipes to change direction").Value, 0) Then WipeWipesNeededToChangeDirection = ConfigReader.Sections("Screensaver").Keys("Wipe - Wipes to change direction").Value
         End If
 
