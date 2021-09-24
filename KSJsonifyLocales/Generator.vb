@@ -21,6 +21,8 @@ Imports Newtonsoft.Json
 Imports Newtonsoft.Json.Linq
 Imports KS.TextWriterColor
 Imports KS.ColorTools
+Imports KS.PlatformDetector
+Imports KS.KernelTools
 
 Module LocaleGenerator
 
@@ -28,6 +30,16 @@ Module LocaleGenerator
     ''' Entry point
     ''' </summary>
     Sub Main(Args As String())
+        'Check for terminal (macOS only). Go to Kernel.vb on Kernel Simulator for more info.
+#If STOCKTERMINALMACOS = False Then
+        If IsOnMacOS() Then
+            If GetTerminalEmulator() = "Apple_Terminal" Then
+                Console.WriteLine("Kernel Simulator makes use of VT escape sequences, but Terminal.app has broken support for 255 and true colors. This program can't continue.")
+                Environment.Exit(5)
+            End If
+        End If
+#End If
+
         Try
             'Enumerate the translations folder
             Dim ToParse As New List(Of String)
