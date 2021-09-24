@@ -38,7 +38,7 @@ Public Module SeparatorWriterColor
         If Not Console.CursorLeft = 0 Then
             RepeatTimes = Console.WindowWidth - Console.CursorLeft
         Else
-            RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length
+            RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1
         End If
 
         'Write the closing minus sign.
@@ -83,7 +83,7 @@ Public Module SeparatorWriterColor
         If Not Console.CursorLeft = 0 Then
             RepeatTimes = Console.WindowWidth - Console.CursorLeft
         Else
-            RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length
+            RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1
         End If
 
         'Write the closing minus sign.
@@ -116,7 +116,7 @@ Public Module SeparatorWriterColor
         If Not Console.CursorLeft = 0 Then
             RepeatTimes = Console.WindowWidth - Console.CursorLeft
         Else
-            RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length
+            RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1
         End If
 
         'Write the closing minus sign.
@@ -150,7 +150,7 @@ Public Module SeparatorWriterColor
         If Not Console.CursorLeft = 0 Then
             RepeatTimes = Console.WindowWidth - Console.CursorLeft
         Else
-            RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length
+            RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1
         End If
 
         'Write the closing minus sign.
@@ -183,7 +183,7 @@ Public Module SeparatorWriterColor
         If Not Console.CursorLeft = 0 Then
             RepeatTimes = Console.WindowWidth - Console.CursorLeft
         Else
-            RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length
+            RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1
         End If
 
         'Write the closing minus sign.
@@ -217,7 +217,7 @@ Public Module SeparatorWriterColor
         If Not Console.CursorLeft = 0 Then
             RepeatTimes = Console.WindowWidth - Console.CursorLeft
         Else
-            RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length
+            RepeatTimes = Console.WindowWidth - (Text.Truncate(Console.WindowWidth - 6) + " ").Length - 1
         End If
 
         'Write the closing minus sign.
