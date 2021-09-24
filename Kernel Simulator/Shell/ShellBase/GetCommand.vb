@@ -50,46 +50,45 @@ Public Module GetCommand
     ''' </summary>
     ''' <param name="ThreadParams">Thread parameters for ExecuteCommand.</param>
     Friend Sub ExecuteCommand(ThreadParams As ExecuteCommandThreadParameters)
-        'Variables
         Dim RequestedCommand As String = ThreadParams.RequestedCommand
         Dim ShellType As ShellCommandType = ThreadParams.ShellType
         Dim DebugDeviceSocket As StreamWriter = ThreadParams.DebugDeviceSocket
-        Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(RequestedCommand, ShellType)
-        Dim Command As String = ArgumentInfo.Command
-        Dim eqargs() As String = ArgumentInfo.ArgumentsList
-        Dim strArgs As String = ArgumentInfo.ArgumentsText
-        Dim RequiredArgumentsProvided As Boolean = ArgumentInfo.RequiredArgumentsProvided
-        Dim TargetCommands As Dictionary(Of String, CommandInfo) = Commands
-
-        'Set TargetCommands according to the shell type
-        Select Case ShellType
-            Case ShellCommandType.FTPShell
-                TargetCommands = FTPCommands
-            Case ShellCommandType.MailShell
-                TargetCommands = MailCommands
-            Case ShellCommandType.RSSShell
-                TargetCommands = RSSCommands
-            Case ShellCommandType.SFTPShell
-                TargetCommands = SFTPCommands
-            Case ShellCommandType.TestShell
-                TargetCommands = Test_Commands
-            Case ShellCommandType.TextShell
-                TargetCommands = TextEdit_Commands
-            Case ShellCommandType.ZIPShell
-                TargetCommands = ZipShell_Commands
-            Case ShellCommandType.JsonShell
-                TargetCommands = JsonShell_Commands
-        End Select
-
-
-        'Check to see if a requested command is obsolete
-        If TargetCommands(Command).Obsolete Then
-            Wdbg(DebugLevel.I, "The command requested {0} is obsolete", Command)
-            DecisiveWrite(ShellType, DebugDeviceSocket, DoTranslation("This command is obsolete and will be removed in a future release."), True, ColTypes.Neutral)
-        End If
-
-        '6. Execute a command
         Try
+            'Variables
+            Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(RequestedCommand, ShellType)
+            Dim Command As String = ArgumentInfo.Command
+            Dim eqargs() As String = ArgumentInfo.ArgumentsList
+            Dim strArgs As String = ArgumentInfo.ArgumentsText
+            Dim RequiredArgumentsProvided As Boolean = ArgumentInfo.RequiredArgumentsProvided
+            Dim TargetCommands As Dictionary(Of String, CommandInfo) = Commands
+
+            'Set TargetCommands according to the shell type
+            Select Case ShellType
+                Case ShellCommandType.FTPShell
+                    TargetCommands = FTPCommands
+                Case ShellCommandType.MailShell
+                    TargetCommands = MailCommands
+                Case ShellCommandType.RSSShell
+                    TargetCommands = RSSCommands
+                Case ShellCommandType.SFTPShell
+                    TargetCommands = SFTPCommands
+                Case ShellCommandType.TestShell
+                    TargetCommands = Test_Commands
+                Case ShellCommandType.TextShell
+                    TargetCommands = TextEdit_Commands
+                Case ShellCommandType.ZIPShell
+                    TargetCommands = ZipShell_Commands
+                Case ShellCommandType.JsonShell
+                    TargetCommands = JsonShell_Commands
+            End Select
+
+
+            'Check to see if a requested command is obsolete
+            If TargetCommands(Command).Obsolete Then
+                Wdbg(DebugLevel.I, "The command requested {0} is obsolete", Command)
+                DecisiveWrite(ShellType, DebugDeviceSocket, DoTranslation("This command is obsolete and will be removed in a future release."), True, ColTypes.Neutral)
+            End If
+
             'If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
             If (TargetCommands(Command).ArgumentsRequired And RequiredArgumentsProvided) Or Not TargetCommands(Command).ArgumentsRequired Then
                 Dim CommandBase As CommandExecutor = TargetCommands(Command).CommandBase
@@ -106,10 +105,10 @@ Public Module GetCommand
             EventManager.RaiseCommandError(RequestedCommand, ex)
             If DebugMode = True Then
                 DecisiveWrite(ShellType, DebugDeviceSocket, DoTranslation("Error trying to execute command") + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Error,
-                  ex.GetType.FullName, ex.Message, ex.StackTrace, Command)
+                              ex.GetType.FullName, ex.Message, ex.StackTrace, RequestedCommand)
                 WStkTrc(ex)
             Else
-                DecisiveWrite(ShellType, DebugDeviceSocket, DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message, Command)
+                DecisiveWrite(ShellType, DebugDeviceSocket, DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message, RequestedCommand)
             End If
         End Try
     End Sub
