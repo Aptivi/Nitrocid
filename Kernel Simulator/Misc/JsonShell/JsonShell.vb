@@ -91,10 +91,10 @@ Public Module JsonShell
                 ElseIf JsonShell_ModCommands.Contains(Command) Then
                     Wdbg(DebugLevel.I, "Mod command {0} executing...", Command)
                     ExecuteModCommand(WrittenCommand)
-                ElseIf TextShellAliases.Keys.Contains(Command) Then
-                    Wdbg(DebugLevel.I, "Text shell alias command found.")
+                ElseIf JsonShellAliases.Keys.Contains(Command) Then
+                    Wdbg(DebugLevel.I, "JSON shell alias command found.")
                     WrittenCommand = WrittenCommand.Replace($"""{Command}""", Command)
-                    ExecuteTextAlias(WrittenCommand)
+                    ExecuteJsonAlias(WrittenCommand)
                 Else
                     W(DoTranslation("The specified text editor command is not found."), True, ColTypes.Error)
                     Wdbg(DebugLevel.E, "Command {0} not found in the list of {1} commands.", Command, JsonShell_Commands.Count)
@@ -118,12 +118,12 @@ Public Module JsonShell
     End Sub
 
     ''' <summary>
-    ''' Executes the text editor shell alias
+    ''' Executes the JSON shell alias
     ''' </summary>
     ''' <param name="aliascmd">Aliased command with arguments</param>
-    Sub ExecuteTextAlias(aliascmd As String)
+    Sub ExecuteJsonAlias(aliascmd As String)
         Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
-        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, TextShellAliases(FirstWordCmd))
+        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, JsonShellAliases(FirstWordCmd))
         Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
         Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellCommandType.JsonShell, Nothing)
         JsonShell_CommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "JSON Shell Command Thread"}

@@ -128,6 +128,10 @@ Public Module AliasManager
                     If Not RSSShellAliases.ContainsKey(AliasCmd) Then
                         RSSShellAliases.Add(AliasCmd, ActualCmd)
                     End If
+                Case "JSON"
+                    If Not JsonShellAliases.ContainsKey(AliasCmd) Then
+                        JsonShellAliases.Add(AliasCmd, ActualCmd)
+                    End If
                 Case Else
                     Wdbg(DebugLevel.E, "Invalid type {0}", AliasType)
             End Select
@@ -242,6 +246,17 @@ Public Module AliasManager
             If Not DoesAliasExist(RSSShellAliases.Keys(i), ShellCommandType.RSSShell) Then AliasNameToken.Add(AliasObject)
         Next
 
+        'JSON shell aliases
+        For i As Integer = 0 To JsonShellAliases.Count - 1
+            Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type JSON...", JsonShellAliases.Keys(i), JsonShellAliases.Values(i))
+            Dim AliasObject As New JObject From {
+                {"Alias", JsonShellAliases.Keys(i)},
+                {"Command", JsonShellAliases.Values(i)},
+                {"Type", "JSON"}
+            }
+            If Not DoesAliasExist(JsonShellAliases.Keys(i), ShellCommandType.JsonShell) Then AliasNameToken.Add(AliasObject)
+        Next
+
         'Save changes
         File.WriteAllText(GetKernelPath(KernelPathType.Aliases), JsonConvert.SerializeObject(AliasNameToken, Formatting.Indented))
     End Sub
@@ -307,12 +322,14 @@ Public Module AliasManager
                 Throw New Exceptions.AliasInvalidOperationException(DoTranslation("Alias can't be the same name as a command."))
             ElseIf Not Commands.ContainsKey(Destination) And Not DebugCommands.ContainsKey(Destination) And Not SFTPCommands.ContainsKey(Destination) And
                    Not FTPCommands.ContainsKey(Destination) And Not MailCommands.ContainsKey(Destination) And Not TextEdit_Commands.ContainsKey(Destination) And
-                   Not Test_Commands.ContainsKey(Destination) And Not ZipShell_Commands.ContainsKey(Destination) And Not RSSCommands.ContainsKey(Destination) Then
+                   Not Test_Commands.ContainsKey(Destination) And Not ZipShell_Commands.ContainsKey(Destination) And Not RSSCommands.ContainsKey(Destination) And
+                   Not JsonShell_Commands.ContainsKey(Destination) Then
                 Wdbg(DebugLevel.W, "{0} not found in all the command lists", Destination)
                 Throw New Exceptions.AliasNoSuchCommandException(DoTranslation("Command not found to alias to {0}."), Destination)
             ElseIf Aliases.ContainsKey(SourceAlias) Or RemoteDebugAliases.ContainsKey(SourceAlias) Or FTPShellAliases.ContainsKey(SourceAlias) Or
                    SFTPShellAliases.ContainsKey(SourceAlias) Or MailShellAliases.ContainsKey(SourceAlias) Or TextShellAliases.ContainsKey(SourceAlias) Or
-                   TestShellAliases.ContainsKey(SourceAlias) Or ZIPShellAliases.ContainsKey(SourceAlias) Or RSSShellAliases.ContainsKey(SourceAlias) Then
+                   TestShellAliases.ContainsKey(SourceAlias) Or ZIPShellAliases.ContainsKey(SourceAlias) Or RSSShellAliases.ContainsKey(SourceAlias) Or
+                   JsonShellAliases.ContainsKey(SourceAlias) Then
                 Wdbg(DebugLevel.W, "Alias {0} already found", SourceAlias)
                 Throw New Exceptions.AliasAlreadyExistsException(DoTranslation("Alias already found: {0}"), SourceAlias)
             Else
@@ -335,6 +352,8 @@ Public Module AliasManager
                     ZIPShellAliases.Add(SourceAlias, Destination)
                 ElseIf Type = ShellCommandType.RSSShell Then
                     RSSShellAliases.Add(SourceAlias, Destination)
+                ElseIf Type = ShellCommandType.JsonShell Then
+                    JsonShellAliases.Add(SourceAlias, Destination)
                 End If
                 Return True
             End If
@@ -453,6 +472,17 @@ Public Module AliasManager
                 Wdbg(DebugLevel.W, "{0} is not found in RSS shell aliases", TargetAlias)
                 Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed."), TargetAlias)
             End If
+        ElseIf Type = ShellCommandType.JsonShell Then
+            If JsonShellAliases.ContainsKey(TargetAlias) Then
+                Dim Aliased As String = JsonShellAliases(TargetAlias)
+                Wdbg(DebugLevel.I, "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased)
+                JsonShellAliases.Remove(TargetAlias)
+                AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", ShellCommandType.JsonShell)
+                Return True
+            Else
+                Wdbg(DebugLevel.W, "{0} is not found in JSON shell aliases", TargetAlias)
+                Throw New Exceptions.AliasNoSuchAliasException(DoTranslation("Alias {0} is not found to be removed."), TargetAlias)
+            End If
         Else
             Wdbg(DebugLevel.E, "Type {0} not found.", Type)
             Throw New Exceptions.AliasNoSuchTypeException(DoTranslation("Invalid type {0}."), Type)
@@ -492,6 +522,8 @@ Public Module AliasManager
                     If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "ZIP" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
                 ElseIf TargetAliasType = ShellCommandType.RSSShell Then
                     If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "RSS" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
+                ElseIf TargetAliasType = ShellCommandType.JsonShell Then
+                    If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "JSON" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
                 End If
             Next
         Next
@@ -551,6 +583,10 @@ Public Module AliasManager
         ElseIf Type = ShellCommandType.RSSShell Then
             For Each AliasName As JObject In AliasNameToken
                 If AliasName("Alias") = TargetAlias And AliasName("Type") = "RSS" Then Return True
+            Next
+        ElseIf Type = ShellCommandType.JsonShell Then
+            For Each AliasName As JObject In AliasNameToken
+                If AliasName("Alias") = TargetAlias And AliasName("Type") = "JSON" Then Return True
             Next
         Else
             Wdbg(DebugLevel.E, "Type {0} not found.", Type)
