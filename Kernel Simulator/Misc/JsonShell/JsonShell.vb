@@ -96,7 +96,7 @@ Public Module JsonShell
                     WrittenCommand = WrittenCommand.Replace($"""{Command}""", Command)
                     ExecuteJsonAlias(WrittenCommand)
                 Else
-                    W(DoTranslation("The specified text editor command is not found."), True, ColTypes.Error)
+                    W(DoTranslation("The specified JSON shell command is not found."), True, ColTypes.Error)
                     Wdbg(DebugLevel.E, "Command {0} not found in the list of {1} commands.", Command, JsonShell_Commands.Count)
                 End If
             End If
