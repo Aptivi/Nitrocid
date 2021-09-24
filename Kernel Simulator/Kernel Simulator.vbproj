@@ -479,6 +479,7 @@
     <Compile Include="Shell\ShellBase\CancellationHandlers.vb" />
     <Compile Include="Shell\ShellBase\CancellationInstallers.vb" />
     <Compile Include="Shell\ShellBase\CommandExecutor.vb" />
+    <Compile Include="Shell\ShellBase\CommandManager.vb" />
     <Compile Include="Shell\ShellBase\ICommand.vb" />
     <Compile Include="Shell\ShellBase\AliasManager.vb" />
     <Compile Include="Shell\ShellBase\CommandInfo.vb" />
