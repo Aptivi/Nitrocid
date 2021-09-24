@@ -33,19 +33,45 @@ Public Module AliasManager
     Public JsonShellAliases As New Dictionary(Of String, String)
     Friend AliasesToBeRemoved As New Dictionary(Of String, AliasType)
 
-    'TODO: Document this by Milestone 2
     ''' <summary>
     ''' Aliases type
     ''' </summary>
     Public Enum AliasType
+        ''' <summary>
+        ''' Normal shell
+        ''' </summary>
         Shell = 1
+        ''' <summary>
+        ''' Remote debugging shell
+        ''' </summary>
         RDebug
+        ''' <summary>
+        ''' FTP shell
+        ''' </summary>
         FTPShell
+        ''' <summary>
+        ''' SFTP shell
+        ''' </summary>
         SFTPShell
+        ''' <summary>
+        ''' Mail shell
+        ''' </summary>
         MailShell
+        ''' <summary>
+        ''' Text shell
+        ''' </summary>
         TextShell
+        ''' <summary>
+        ''' Test shell
+        ''' </summary>
         TestShell
+        ''' <summary>
+        ''' ZIP shell
+        ''' </summary>
         ZIPShell
+        ''' <summary>
+        ''' RSS shell
+        ''' </summary>
         RSSShell
     End Enum
 

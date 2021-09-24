@@ -22,15 +22,29 @@ Imports System.Text
 
 Public Module Encryption
 
-    'TODO: Document this by Milestone 2
     ''' <summary>
     ''' Encryption algorithms supported by KS
     ''' </summary>
     Public Enum Algorithms
+        ''' <summary>
+        ''' The MD5 Algorithm
+        ''' </summary>
         MD5
+        ''' <summary>
+        ''' The SHA1 Algorithm
+        ''' </summary>
         SHA1
+        ''' <summary>
+        ''' The SHA256 Algorithm
+        ''' </summary>
         SHA256
+        ''' <summary>
+        ''' The SHA384 Algorithm
+        ''' </summary>
         SHA384
+        ''' <summary>
+        ''' The SHA512 Algorithm
+        ''' </summary>
         SHA512
     End Enum
 

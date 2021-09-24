@@ -28,12 +28,17 @@ Module MailLogin
     Public SMTP_Client As New SmtpClient()
     Friend Mail_Authentication As New NetworkCredential()
 
-    'TODO: Document this by Milestone 2
     ''' <summary>
     ''' Mail server type
     ''' </summary>
     Public Enum ServerType
+        ''' <summary>
+        ''' The IMAP server
+        ''' </summary>
         IMAP
+        ''' <summary>
+        ''' The SMTP server
+        ''' </summary>
         SMTP
     End Enum
 

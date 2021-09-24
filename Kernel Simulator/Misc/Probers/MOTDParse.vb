@@ -22,13 +22,18 @@ Public Module MOTDParse
     Public MOTDFilePath As String = GetKernelPath(KernelPathType.MOTD)
     Public MALFilePath As String = GetKernelPath(KernelPathType.MAL)
 
-    'TODO: Document this by Milestone 2
     ''' <summary>
     ''' Types of message
     ''' </summary>
     Public Enum MessageType As Integer
+        ''' <summary>
+        ''' MOTD (Message of the Day) message
+        ''' </summary>
         MOTD = 1
-        MAL = 2
+        ''' <summary>
+        ''' MAL (MOTD After Login) message
+        ''' </summary>
+        MAL
     End Enum
 
     ''' <summary>

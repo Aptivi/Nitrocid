@@ -16,21 +16,53 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-'TODO: Document these by Milestone 2
 ''' <summary>
 ''' Specifies the kernel path type
 ''' </summary>
 Public Enum KernelPathType
+    ''' <summary>
+    ''' Mods directory. Usually found in user directory as KSMods.
+    ''' </summary>
     Mods
+    ''' <summary>
+    ''' Configuration file.
+    ''' </summary>
     Configuration
+    ''' <summary>
+    ''' Kernel debug log file.
+    ''' </summary>
     Debugging
+    ''' <summary>
+    ''' Aliases file.
+    ''' </summary>
     Aliases
+    ''' <summary>
+    ''' Users file.
+    ''' </summary>
     Users
+    ''' <summary>
+    ''' FTP speed dial file.
+    ''' </summary>
     FTPSpeedDial
+    ''' <summary>
+    ''' SFTP speed dial file.
+    ''' </summary>
     SFTPSpeedDial
+    ''' <summary>
+    ''' Debug devices configuration file.
+    ''' </summary>
     DebugDevNames
+    ''' <summary>
+    ''' MOTD text file.
+    ''' </summary>
     MOTD
+    ''' <summary>
+    ''' MAL text file.
+    ''' </summary>
     MAL
+    ''' <summary>
+    ''' Custom screensaver settings file.
+    ''' </summary>
     CustomSaverSettings
 End Enum
 
@@ -38,6 +70,12 @@ End Enum
 ''' Specifies the other path type
 ''' </summary>
 Public Enum OtherPathType
+    ''' <summary>
+    ''' The home directory.
+    ''' </summary>
     Home
+    ''' <summary>
+    ''' The temporary directory.
+    ''' </summary>
     Temp
 End Enum
