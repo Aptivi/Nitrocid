@@ -24,8 +24,8 @@ Imports KS
     ''' Tests alias addition
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestAddAlias()
-        AddAlias("ls", "list", AliasType.Shell).ShouldBeTrue
-        AddAlias("trc", "trace", AliasType.RDebug).ShouldBeTrue
+        AddAlias("ls", "list", ShellCommandType.Shell).ShouldBeTrue
+        AddAlias("trc", "trace", ShellCommandType.RemoteDebugShell).ShouldBeTrue
         Aliases.ShouldContainKey("ls")
         RemoteDebugAliases.ShouldContainKey("trc")
     End Sub
@@ -34,8 +34,8 @@ Imports KS
     ''' Tests alias removal
     ''' </summary>
     <TestMethod()> <TestCategory("Management")> Public Sub TestRemoveAlias()
-        RemoveAlias("ls", AliasType.Shell).ShouldBeTrue
-        RemoveAlias("trc", AliasType.RDebug).ShouldBeTrue
+        RemoveAlias("ls", ShellCommandType.Shell).ShouldBeTrue
+        RemoveAlias("trc", ShellCommandType.RemoteDebugShell).ShouldBeTrue
         Aliases.ShouldNotContainKey("ls")
         RemoteDebugAliases.ShouldNotContainKey("trc")
     End Sub

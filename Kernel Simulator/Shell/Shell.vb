@@ -49,7 +49,7 @@ Public Module Shell
     ''' List of commands
     ''' </summary>
     Public ReadOnly Commands As New Dictionary(Of String, CommandInfo) From {{"adduser", New CommandInfo("adduser", ShellCommandType.Shell, "Adds users", "<userName> [password] [confirm]", True, 1, New AddUserCommand, True)},
-                                                                             {"alias", New CommandInfo("alias", ShellCommandType.Shell, "Adds aliases to commands", $"<rem/add> <{String.Join("/", [Enum].GetNames(GetType(AliasType)))}> <alias> <cmd>", True, 3, New AliasCommand, True)},
+                                                                             {"alias", New CommandInfo("alias", ShellCommandType.Shell, "Adds aliases to commands", $"<rem/add> <{String.Join("/", [Enum].GetNames(GetType(ShellCommandType)))}> <alias> <cmd>", True, 3, New AliasCommand, True)},
                                                                              {"arginj", New CommandInfo("arginj", ShellCommandType.Shell, "Injects arguments to the kernel (reboot required)", "[Arguments separated by spaces]", True, 1, New ArgInjCommand, True)},
                                                                              {"beep", New CommandInfo("beep", ShellCommandType.Shell, "Beep in 'n' Hz and time in 'n' milliseconds", "<37-32767 Hz> <milliseconds>", True, 2, New BeepCommand)},
                                                                              {"blockdbgdev", New CommandInfo("blockdbgdev", ShellCommandType.Shell, "Block a debug device by IP address", "<ipaddress>", True, 1, New BlockDbgDevCommand, True)},
