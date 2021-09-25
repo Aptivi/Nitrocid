@@ -31,18 +31,20 @@ Module BouncingBlockDisplay
             Dim RandomDriver As New Random()
             Dim Direction As String = "BottomRight"
             Dim RowBlock, ColumnBlock As Integer
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
 
             'Preparations
             Console.BackgroundColor = ConsoleColor.Black
             Console.ForegroundColor = ConsoleColor.White
             Console.Clear()
-            Console.CursorVisible = False
             RowBlock = Console.WindowHeight / 2
             ColumnBlock = Console.WindowWidth / 2
 
             'Screensaver logic
             Do While True
-                SleepNoBlock(BouncingBlockDelay, BouncingBlock)
+                Console.CursorVisible = False
                 Console.BackgroundColor = ConsoleColor.Black
                 Console.ForegroundColor = ConsoleColor.White
                 Console.Clear()
@@ -57,6 +59,7 @@ Module BouncingBlockDisplay
                     Exit Do
                 Else
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Row block: {0} | Column block: {1}", RowBlock, ColumnBlock)
+                    SleepNoBlock(BouncingBlockDelay, BouncingBlock)
 
                     'Change the color
                     If BouncingBlockTrueColor Then
@@ -65,21 +68,39 @@ Module BouncingBlockDisplay
                         Dim BlueColorNum As Integer = RandomDriver.Next(255)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-                        WriteWhereC(" ", ColumnBlock, RowBlock, True, New Color(New RGB(255, 255, 255).ToString), New Color(ColorStorage.ToString))
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                        If Not ResizeSyncing Then
+                            WriteWhereC(" ", ColumnBlock, RowBlock, True, New Color(New RGB(255, 255, 255).ToString), New Color(ColorStorage.ToString))
+                        Else
+                            RowBlock = Console.WindowHeight / 2
+                            ColumnBlock = Console.WindowWidth / 2
+                        End If
                     ElseIf BouncingBlock255Colors Then
                         Dim ColorNum As Integer = RandomDriver.Next(255)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
-                        WriteWhereC(" ", ColumnBlock, RowBlock, True, New Color(ConsoleColors.White), BackgroundColor:=New Color([Enum].Parse(GetType(ConsoleColors), ColorNum)))
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                        If Not ResizeSyncing Then
+                            WriteWhereC(" ", ColumnBlock, RowBlock, True, New Color(ConsoleColors.White), BackgroundColor:=New Color([Enum].Parse(GetType(ConsoleColors), ColorNum)))
+                        Else
+                            RowBlock = Console.WindowHeight / 2
+                            ColumnBlock = Console.WindowWidth / 2
+                        End If
                     Else
                         Dim OldColumn As Integer = Console.CursorLeft
                         Dim OldRow As Integer = Console.CursorTop
-                        Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
-                        Console.SetCursorPosition(ColumnBlock, RowBlock)
-                        Console.Write(" ")
-                        Console.SetCursorPosition(OldColumn, OldRow)
-                        Console.BackgroundColor = ConsoleColor.Black
-                        Console.Write(" ")
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                        If Not ResizeSyncing Then
+                            Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
+                            Console.SetCursorPosition(ColumnBlock, RowBlock)
+                            Console.Write(" ")
+                            Console.SetCursorPosition(OldColumn, OldRow)
+                            Console.BackgroundColor = ConsoleColor.Black
+                            Console.Write(" ")
+                        Else
+                            RowBlock = Console.WindowHeight / 2
+                            ColumnBlock = Console.WindowWidth / 2
+                        End If
                     End If
 
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Block is facing {0}.", Direction)
@@ -116,6 +137,11 @@ Module BouncingBlockDisplay
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the left.")
                         Direction = Direction.Replace("Left", "Right")
                     End If
+
+                    'Reset resize sync
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
             Loop
         Catch ex As Exception

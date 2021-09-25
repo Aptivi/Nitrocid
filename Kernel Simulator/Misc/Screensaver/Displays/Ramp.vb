@@ -25,11 +25,6 @@ Module RampDisplay
     Sub Ramp_DoWork(sender As Object, e As DoWorkEventArgs) Handles Ramp.DoWork
         Try
             'Variables
-            Console.BackgroundColor = ConsoleColor.Black
-            Console.ForegroundColor = ConsoleColor.White
-            Console.Clear()
-
-            'Preparations
             Dim RandomDriver As New Random()
             Dim RedColorNumFrom As Integer = RandomDriver.Next(255)
             Dim GreenColorNumFrom As Integer = RandomDriver.Next(255)
@@ -42,6 +37,11 @@ Module RampDisplay
             Dim CurrentWindowWidth As Integer = Console.WindowWidth
             Dim CurrentWindowHeight As Integer = Console.WindowHeight
             Dim ResizeSyncing As Boolean
+
+            'Preparations
+            Console.BackgroundColor = ConsoleColor.Black
+            Console.ForegroundColor = ConsoleColor.White
+            Console.Clear()
 
             'Screensaver logic
             Do While True

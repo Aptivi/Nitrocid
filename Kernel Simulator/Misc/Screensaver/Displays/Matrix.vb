@@ -29,15 +29,18 @@ Module MatrixDisplay
         Try
             'Variables
             Dim random As New Random()
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
 
             'Preparations
             Console.BackgroundColor = ConsoleColor.Black
             Console.ForegroundColor = ConsoleColor.Green
             Console.Clear()
-            Console.CursorVisible = False
 
             'Screensaver logic
             Do While True
+                Console.CursorVisible = False
                 If Matrix.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
@@ -49,7 +52,17 @@ Module MatrixDisplay
                     Exit Do
                 Else
                     SleepNoBlock(MatrixDelay, Matrix)
-                    Console.Write(CStr(Random.Next(2)))
+                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                    If Not ResizeSyncing Then
+                        Console.Write(CStr(random.Next(2)))
+                    Else
+                        Console.Clear()
+                    End If
+
+                    'Reset resize sync
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
             Loop
         Catch ex As Exception

@@ -29,16 +29,19 @@ Module GlitterMatrixDisplay
         Try
             'Variables
             Dim RandomDriver As New Random()
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
 
             'Preparations
             Console.BackgroundColor = ConsoleColor.Black
             Console.ForegroundColor = ConsoleColor.Green
             Console.Clear()
-            Console.CursorVisible = False
             Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
             'Screensaver logic
             Do While True
+                Console.CursorVisible = False
                 If GlitterMatrix.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
@@ -54,7 +57,17 @@ Module GlitterMatrixDisplay
                     Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
                     Console.SetCursorPosition(Left, Top)
-                    Console.Write(CStr(RandomDriver.Next(2)))
+                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                    If Not ResizeSyncing Then
+                        Console.Write(CStr(RandomDriver.Next(2)))
+                    Else
+                        Console.Clear()
+                    End If
+
+                    'Reset resize sync
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
             Loop
         Catch ex As Exception

@@ -32,15 +32,18 @@ Module DissolveDisplay
             Dim RandomDriver As New Random()
             Dim ColorFilled As Boolean
             Dim CoveredPositions As New ArrayList
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
 
             'Preparations
             Console.BackgroundColor = ConsoleColor.Black
             Console.Clear()
-            Console.CursorVisible = False
             Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
             'Screensaver logic
             Do While True
+                Console.CursorVisible = False
                 If Dissolve.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
@@ -60,22 +63,49 @@ Module DissolveDisplay
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "End left: {0} | End top: {1}", EndLeft, EndTop)
                     If Not ColorFilled Then
                         'NOTICE: Mono seems to have a bug in Console.CursorLeft and Console.CursorTop when printing with VT escape sequences.
-                        If Not (Console.CursorLeft = EndLeft And Console.CursorTop = EndTop) Then
+                        If Not (Console.CursorLeft >= EndLeft And Console.CursorTop >= EndTop) Then
                             Dim esc As Char = GetEsc()
                             If DissolveTrueColor Then
                                 Dim RedColorNum As Integer = RandomDriver.Next(255)
                                 Dim GreenColorNum As Integer = RandomDriver.Next(255)
                                 Dim BlueColorNum As Integer = RandomDriver.Next(255)
                                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                                WriteC(" ", False, New Color("0;0;0"), New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"))
+                                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                                If Not ResizeSyncing Then
+                                    WriteC(" ", False, New Color("0;0;0"), New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"))
+                                Else
+                                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're refilling...")
+                                    ColorFilled = False
+                                    Console.BackgroundColor = ConsoleColor.Black
+                                    Console.Clear()
+                                    CoveredPositions.Clear()
+                                End If
                             ElseIf Dissolve255Colors Then
                                 Dim ColorNum As Integer = RandomDriver.Next(255)
                                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
-                                WriteC(" ", False, New Color("0"), New Color(ColorNum))
+                                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                                If Not ResizeSyncing Then
+                                    WriteC(" ", False, New Color("0"), New Color(ColorNum))
+                                Else
+                                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're refilling...")
+                                    ColorFilled = False
+                                    Console.BackgroundColor = ConsoleColor.Black
+                                    Console.Clear()
+                                    CoveredPositions.Clear()
+                                End If
                             Else
-                                Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
-                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
-                                Console.Write(" ")
+                                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                                If Not ResizeSyncing Then
+                                    Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
+                                    Console.Write(" ")
+                                Else
+                                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're refilling...")
+                                    ColorFilled = False
+                                    Console.BackgroundColor = ConsoleColor.Black
+                                    Console.Clear()
+                                    CoveredPositions.Clear()
+                                End If
                             End If
                         Else
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're now dissolving... L: {0} = {1} | T: {2} = {3}", Console.CursorLeft, EndLeft, Console.CursorTop, EndTop)
@@ -87,10 +117,19 @@ Module DissolveDisplay
                             CoveredPositions.Add(Left & " - " & Top)
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Covered positions: {0}/{1}", CoveredPositions.Count, (EndLeft + 1) * (EndTop + 1))
                         End If
-                        Console.SetCursorPosition(Left, Top)
-                        Console.BackgroundColor = ConsoleColor.Black
-                        Console.Write(" ")
-                        If CoveredPositions.Count = (EndLeft + 1) * (EndTop + 1) Then
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                        If Not ResizeSyncing Then
+                            Console.SetCursorPosition(Left, Top)
+                            Console.BackgroundColor = ConsoleColor.Black
+                            Console.Write(" ")
+                            If CoveredPositions.Count = (EndLeft + 1) * (EndTop + 1) Then
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're refilling...")
+                                ColorFilled = False
+                                Console.BackgroundColor = ConsoleColor.Black
+                                Console.Clear()
+                                CoveredPositions.Clear()
+                            End If
+                        Else
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're refilling...")
                             ColorFilled = False
                             Console.BackgroundColor = ConsoleColor.Black
@@ -98,6 +137,11 @@ Module DissolveDisplay
                             CoveredPositions.Clear()
                         End If
                     End If
+
+                    'Reset resize sync
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
             Loop
         Catch ex As Exception

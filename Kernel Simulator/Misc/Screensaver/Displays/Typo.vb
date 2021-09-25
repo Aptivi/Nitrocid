@@ -31,13 +31,16 @@ Module TypoDisplay
             Dim Strikes As New List(Of String) From {"q`12wsa", "r43edfgt5", "u76yhjki8", "p09ol;'[-=]\", "/';. ", "m,lkjn ", "vbhgfc ", "zxdsa "}
             Dim CapStrikes As New List(Of String) From {"Q~!@WSA", "R$#EDFGT%", "U&^YHJKI*", "P)(OL:""{_+}|", "?"":> ", "M<LKJN ", "VBHGFC ", "ZXDSA "}
             Dim CapSymbols As String = "~!@$#%&^*)(:""{_+}|?><"
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
 
             'Preparations
             Console.Clear()
-            Console.CursorVisible = False
 
             'Screensaver logic
             Do While True
+                Console.CursorVisible = False
                 SleepNoBlock(TypoDelay, Typo)
                 If Typo.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
@@ -56,7 +59,10 @@ Module TypoDisplay
 
                     'Get struck character and write it
                     For Each StruckChar As Char In TypoWrite
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Typo.CancellationPending Then Exit For
+                        If ResizeSyncing Then Exit For
+
                         'Calculate needed milliseconds from two WPM speeds (minimum and maximum)
                         Dim SelectedCpm As Integer = RandomDriver.Next(CpmSpeedMin, CpmSpeedMax)
                         Dim WriteMs As Integer = (60 / SelectedCpm) * 1000
@@ -114,7 +120,12 @@ Module TypoDisplay
 
                     'Wait until retry
                     Console.WriteLine()
-                    SleepNoBlock(TypoWriteAgainDelay, Typo)
+                    If Not ResizeSyncing Then SleepNoBlock(TypoWriteAgainDelay, Typo)
+
+                    'Reset resize sync
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
             Loop
         Catch ex As Exception

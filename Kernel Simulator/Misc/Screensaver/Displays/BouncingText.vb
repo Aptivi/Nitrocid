@@ -30,20 +30,21 @@ Module BouncingTextDisplay
             'Variables
             Dim Direction As String = "BottomRight"
             Dim RowText, ColumnFirstLetter, ColumnLastLetter As Integer
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
 
             'Preparations
             Console.BackgroundColor = ConsoleColor.Black
             Console.ForegroundColor = ConsoleColor.White
             Console.Clear()
-            Console.CursorVisible = False
             RowText = Console.WindowHeight / 2
             ColumnFirstLetter = (Console.WindowWidth / 2) - BouncingTextWrite.Length / 2
             ColumnLastLetter = (Console.WindowWidth / 2) + BouncingTextWrite.Length / 2
 
             'Screensaver logic
             Do While True
-                SleepNoBlock(BouncingTextDelay, BouncingText)
-                Console.Clear()
+                Console.CursorVisible = False
                 If BouncingText.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
@@ -54,8 +55,11 @@ Module BouncingTextDisplay
                     SaverAutoReset.Set()
                     Exit Do
                 Else
-                    'Define the color
+                    SleepNoBlock(BouncingTextDelay, BouncingText)
+                    Console.Clear()
+
 #Disable Warning BC42104
+                    'Define the color
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Row text: {0}", RowText)
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Column first letter of text: {0}", ColumnFirstLetter)
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Column last letter of text: {0}", ColumnLastLetter)
@@ -64,7 +68,14 @@ Module BouncingTextDisplay
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Defining color...")
                         BouncingColor = ChangeBouncingTextColor()
                     End If
-                    WriteWhereC(BouncingTextWrite, ColumnFirstLetter, RowText, True, BouncingColor)
+                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                    If Not ResizeSyncing Then
+                        WriteWhereC(BouncingTextWrite, ColumnFirstLetter, RowText, True, BouncingColor)
+                    Else
+                        RowText = Console.WindowHeight / 2
+                        ColumnFirstLetter = (Console.WindowWidth / 2) - BouncingTextWrite.Length / 2
+                        ColumnLastLetter = (Console.WindowWidth / 2) + BouncingTextWrite.Length / 2
+                    End If
 #Enable Warning BC42104
 
                     'Change the direction of text
@@ -111,6 +122,11 @@ Module BouncingTextDisplay
                         Direction = Direction.Replace("Left", "Right")
                         BouncingColor = ChangeBouncingTextColor()
                     End If
+
+                    'Reset resize sync
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
             Loop
         Catch ex As Exception

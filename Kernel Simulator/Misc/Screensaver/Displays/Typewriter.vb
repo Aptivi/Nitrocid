@@ -31,15 +31,18 @@ Module TypewriterDisplay
             Dim CpmSpeedMin As Integer = TypewriterWritingSpeedMin * 5
             Dim CpmSpeedMax As Integer = TypewriterWritingSpeedMax * 5
             Dim TypeWrite As String = TypewriterWrite
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
 
             'Preparations
             Console.Clear()
-            Console.CursorVisible = False
             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", TypewriterWritingSpeedMin, CpmSpeedMin)
             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", TypewriterWritingSpeedMax, CpmSpeedMax)
 
             'Screensaver logic
             Do While True
+                Console.CursorVisible = False
                 SleepNoBlock(TypewriterDelay, Typewriter)
                 If Typewriter.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
@@ -60,7 +63,9 @@ Module TypewriterDisplay
 
                     'For each line, write four spaces, and extra two spaces if paragraph starts.
                     For Each Paragraph As String In TypeWrite.SplitNewLines
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Typewriter.CancellationPending Then Exit For
+                        If ResizeSyncing Then Exit For
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph)
 
                         'Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
@@ -73,7 +78,9 @@ Module TypewriterDisplay
                         'the first time and will be reverted back to zero after the incomplete sentence is formed.
                         Dim ReservedCharacters As Integer = 4
                         For Each ParagraphChar As Char In Paragraph
+                            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                             If Typewriter.CancellationPending Then Exit For
+                            If ResizeSyncing Then Exit For
 
                             'Append the character into the incomplete sentence builder.
                             IncompleteSentenceBuilder.Append(ParagraphChar)
@@ -101,8 +108,14 @@ Module TypewriterDisplay
                         'Get struck character and write it
                         For SentenceIndex As Integer = 0 To IncompleteSentences.Count - 1
                             Dim Sentence As String = IncompleteSentences(SentenceIndex)
+                            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                            If Typewriter.CancellationPending Then Exit For
+                            If ResizeSyncing Then Exit For
                             For Each StruckChar As Char In Sentence
+                                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                                 If Typewriter.CancellationPending Then Exit For
+                                If ResizeSyncing Then Exit For
+
                                 'Calculate needed milliseconds from two WPM speeds (minimum and maximum)
                                 Dim SelectedCpm As Integer = RandomDriver.Next(CpmSpeedMin, CpmSpeedMax)
                                 Dim WriteMs As Integer = (60 / SelectedCpm) * 1000
@@ -140,6 +153,11 @@ Module TypewriterDisplay
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Indented in {0}, {1}", Console.CursorLeft, Console.CursorTop)
                         Next
                     Next
+
+                    'Reset resize sync
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
             Loop
         Catch ex As Exception

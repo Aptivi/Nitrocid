@@ -36,11 +36,10 @@ Module DiscoDisplay
             Dim CurrentColorR, CurrentColorG, CurrentColorB As Integer
             Dim random As New Random()
 
-            'Preparations
-            Console.CursorVisible = False
-
             'Screensaver logic
             Do While True
+                Console.CursorVisible = False
+
                 'Check to see if we're dealing with beats per minute
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Using BPM: {0}", DiscoUseBeatsPerMinute)
                 If DiscoUseBeatsPerMinute Then

@@ -29,15 +29,18 @@ Module BeatFaderDisplay
         Try
             'Variables
             Dim RandomDriver As New Random()
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
 
             'Preparations
             Console.BackgroundColor = ConsoleColor.Black
             Console.Clear()
-            Console.CursorVisible = False
             Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
             'Screensaver logic
             Do While True
+                Console.CursorVisible = False
                 If BeatFader.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
@@ -103,7 +106,9 @@ Module BeatFaderDisplay
 
                     'Fade out
                     For CurrentStep As Integer = 1 To BeatFaderMaxSteps
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If BeatFader.CancellationPending Then Exit For
+                        If ResizeSyncing Then Exit For
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1} each {2} ms", CurrentStep, BeatFaderMaxSteps, BeatIntervalStep)
                         SleepNoBlock(BeatIntervalStep, FaderBack)
                         Dim CurrentColorRedOut As Integer = RedColorNum - ThresholdRed * CurrentStep
@@ -113,6 +118,11 @@ Module BeatFaderDisplay
                         SetConsoleColor(New Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}"), True)
                         Console.Clear()
                     Next
+
+                    'Reset resize sync
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
             Loop
         Catch ex As Exception

@@ -62,6 +62,9 @@ Public Module LinotypoDisplay
             Dim CurrentColumn As Integer = 1
             Dim CurrentColumnRowConsole As Integer = Console.CursorLeft
             Dim ColumnRowConsoleThreshold As Integer = Console.WindowWidth / LinotypoTextColumns
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", LinotypoWritingSpeedMin, CpmSpeedMin)
             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", LinotypoWritingSpeedMax, CpmSpeedMax)
             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum characters: {0} (satisfying {1} columns)", MaxCharacters, LinotypoTextColumns)
@@ -104,7 +107,9 @@ Public Module LinotypoDisplay
 
                     'For each line, write four spaces, and extra two spaces if paragraph starts.
                     For Each Paragraph As String In LinotypeWrite.SplitNewLines
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Linotypo.CancellationPending Then Exit For
+                        If ResizeSyncing Then Exit For
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph)
 
                         'Sometimes, a paragraph could consist of nothing, but prints its new line, so honor this by checking to see if we need to
@@ -135,7 +140,9 @@ Public Module LinotypoDisplay
                         'the first time and will be reverted back to zero after the incomplete sentence is formed.
                         Dim ReservedCharacters As Integer = 4
                         For Each ParagraphChar As Char In Paragraph
+                            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                             If Linotypo.CancellationPending Then Exit For
+                            If ResizeSyncing Then Exit For
 
                             'Append the character into the incomplete sentence builder.
                             IncompleteSentenceBuilder.Append(ParagraphChar)
@@ -156,7 +163,9 @@ Public Module LinotypoDisplay
                         'Get struck character and write it
                         For IncompleteSentenceIndex As Integer = 0 To IncompleteSentences.Count - 1
                             Dim IncompleteSentence As String = IncompleteSentences(IncompleteSentenceIndex)
+                            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                             If Linotypo.CancellationPending Then Exit For
+                            If ResizeSyncing Then Exit For
 
                             'Check if we need to indent a sentence
                             If Not NewLineDone Then
@@ -178,7 +187,9 @@ Public Module LinotypoDisplay
 
                             'Process the incomplete sentences
                             For StruckCharIndex As Integer = 0 To IncompleteSentence.Length - 1
+                                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                                 If Linotypo.CancellationPending Then Exit For
+                                If ResizeSyncing Then Exit For
 
                                 'Sometimes, typing error can be made in the last line and the line is repeated on the first line in the different
                                 'column, but it ruins the overall beautiful look of the paragraphs, considering how it is split in columns. We
@@ -358,6 +369,11 @@ Public Module LinotypoDisplay
                             HandleNextColumn(CurrentColumn, CurrentColumnRowConsole, ColumnRowConsoleThreshold)
                         Next
                     Next
+
+                    'Reset resize sync
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
             Loop
         Catch ex As Exception

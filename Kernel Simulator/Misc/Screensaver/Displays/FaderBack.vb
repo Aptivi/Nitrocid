@@ -32,15 +32,18 @@ Module FaderBackDisplay
             Dim RedColorNum As Integer = RandomDriver.Next(255)
             Dim GreenColorNum As Integer = RandomDriver.Next(255)
             Dim BlueColorNum As Integer = RandomDriver.Next(255)
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
 
             'Preparations
             Console.BackgroundColor = ConsoleColor.Black
             Console.Clear()
-            Console.CursorVisible = False
             Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
             'Screensaver logic
             Do While True
+                Console.CursorVisible = False
                 If FaderBack.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
@@ -64,7 +67,9 @@ Module FaderBackDisplay
                     Dim CurrentColorGreenIn As Integer = 0
                     Dim CurrentColorBlueIn As Integer = 0
                     For CurrentStep As Integer = 1 To FaderBackMaxSteps
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If FaderBack.CancellationPending Then Exit For
+                        If ResizeSyncing Then Exit For
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, FaderBackMaxSteps)
                         SleepNoBlock(FaderBackDelay, FaderBack)
                         CurrentColorRedIn += ThresholdRed
@@ -76,12 +81,16 @@ Module FaderBackDisplay
                     Next
 
                     'Wait until fade out
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Waiting {0} ms...", FaderBackFadeOutDelay)
-                    SleepNoBlock(FaderBackFadeOutDelay, FaderBack)
+                    If Not ResizeSyncing Then
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Waiting {0} ms...", FaderBackFadeOutDelay)
+                        SleepNoBlock(FaderBackFadeOutDelay, FaderBack)
+                    End If
 
                     'Fade out
                     For CurrentStep As Integer = 1 To FaderBackMaxSteps
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If FaderBack.CancellationPending Then Exit For
+                        If ResizeSyncing Then Exit For
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Step {0}/{1}", CurrentStep, FaderBackMaxSteps)
                         SleepNoBlock(FaderBackDelay, FaderBack)
                         Dim CurrentColorRedOut As Integer = RedColorNum - ThresholdRed * CurrentStep
@@ -97,6 +106,11 @@ Module FaderBackDisplay
                     GreenColorNum = RandomDriver.Next(255)
                     BlueColorNum = RandomDriver.Next(255)
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
+
+                    'Reset resize sync
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
             Loop
         Catch ex As Exception

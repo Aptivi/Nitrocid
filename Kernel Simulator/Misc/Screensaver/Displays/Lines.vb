@@ -29,13 +29,14 @@ Module LinesDisplay
         Try
             'Variables
             Dim random As New Random()
-
-            'Preparations
-            Console.CursorVisible = False
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
             Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
             'Screensaver logic
             Do While True
+                Console.CursorVisible = False
                 SleepNoBlock(LinesDelay, Lines)
                 If Lines.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
@@ -78,8 +79,16 @@ Module LinesDisplay
                     For i As Integer = 1 To Console.WindowWidth
                         Line += "-"
                     Next
-                    Console.SetCursorPosition(0, Top)
-                    Console.WriteLine(Line)
+                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                    If Not ResizeSyncing Then
+                        Console.SetCursorPosition(0, Top)
+                        Console.WriteLine(Line)
+                    End If
+
+                    'Reset resize sync
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
             Loop
         Catch ex As Exception

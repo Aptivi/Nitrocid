@@ -29,13 +29,16 @@ Module SpotWriteDisplay
             'Variables
             Dim RandomDriver As New Random()
             Dim TypeWrite As String = SpotWriteWrite
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
 
             'Preparations
             Console.Clear()
-            Console.CursorVisible = False
 
             'Screensaver logic
             Do While True
+                Console.CursorVisible = False
                 SleepNoBlock(SpotWriteDelay, SpotWrite)
                 If SpotWrite.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
@@ -56,7 +59,9 @@ Module SpotWriteDisplay
 
                     'For each line, write four spaces, and extra two spaces if paragraph starts.
                     For Each Paragraph As String In TypeWrite.SplitNewLines
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If SpotWrite.CancellationPending Then Exit For
+                        If ResizeSyncing Then Exit For
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "New paragraph: {0}", Paragraph)
 
                         'Split the paragraph into sentences that have the length of maximum characters that can be printed in various terminal
@@ -69,7 +74,9 @@ Module SpotWriteDisplay
                         'the first time and will be reverted back to zero after the incomplete sentence is formed.
                         Dim ReservedCharacters As Integer = 4
                         For Each ParagraphChar As Char In Paragraph
+                            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                             If SpotWrite.CancellationPending Then Exit For
+                            If ResizeSyncing Then Exit For
 
                             'Append the character into the incomplete sentence builder.
                             IncompleteSentenceBuilder.Append(ParagraphChar)
@@ -97,8 +104,13 @@ Module SpotWriteDisplay
                         'Get struck character and write it
                         For SentenceIndex As Integer = 0 To IncompleteSentences.Count - 1
                             Dim Sentence As String = IncompleteSentences(SentenceIndex)
+                            If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                            If SpotWrite.CancellationPending Then Exit For
+                            If ResizeSyncing Then Exit For
                             For Each StruckChar As Char In Sentence
+                                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                                 If SpotWrite.CancellationPending Then Exit For
+                                If ResizeSyncing Then Exit For
 
                                 'If we're at the end of the page, clear the screen
                                 If Console.CursorTop = Console.WindowHeight - 2 Then
@@ -120,6 +132,11 @@ Module SpotWriteDisplay
                             Console.Write(GetEsc() + "[1K")
                         Next
                     Next
+
+                    'Reset resize sync
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
             Loop
         Catch ex As Exception

@@ -29,15 +29,18 @@ Module ColorMixDisplay
         Try
             'Variables
             Dim colorrand As New Random()
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
 
             'Preparations
             Console.BackgroundColor = ConsoleColor.Black
             Console.ForegroundColor = ConsoleColor.White
             Console.Clear()
-            Console.CursorVisible = False
 
             'Screensaver logic
             Do While True
+                Console.CursorVisible = False
                 SleepNoBlock(ColorMixDelay, ColorMix)
                 If ColorMix.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
@@ -56,16 +59,26 @@ Module ColorMixDisplay
                         Dim BlueColorNum As Integer = colorrand.Next(255)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-                        Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                        If Not ResizeSyncing Then Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
                     ElseIf ColorMix255Colors Then
                         Dim ColorNum As Integer = colorrand.Next(255)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
-                        Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                        If Not ResizeSyncing Then Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
                     Else
-                        Console.BackgroundColor = CType(colorrand.Next(1, 16), ConsoleColor)
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
-                        Console.Write(" ")
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                        If Not ResizeSyncing Then
+                            Console.BackgroundColor = CType(colorrand.Next(1, 16), ConsoleColor)
+                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
+                            Console.Write(" ")
+                        End If
                     End If
+
+                    'Reset resize sync
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
             Loop
         Catch ex As Exception

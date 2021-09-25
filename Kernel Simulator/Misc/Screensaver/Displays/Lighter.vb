@@ -30,15 +30,18 @@ Module LighterDisplay
             'Variables
             Dim RandomDriver As New Random()
             Dim CoveredPositions As New ArrayList
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
 
             'Preparations
             Console.BackgroundColor = ConsoleColor.Black
             Console.Clear()
-            Console.CursorVisible = False
             Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
             'Screensaver logic
             Do While True
+                Console.CursorVisible = False
                 If Lighter.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
@@ -69,15 +72,30 @@ Module LighterDisplay
                         Dim BlueColorNum As Integer = RandomDriver.Next(255)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-                        Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                        If Not ResizeSyncing Then
+                            Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
+                        Else
+                            CoveredPositions.Clear()
+                        End If
                     ElseIf Lighter255Colors Then
                         Dim ColorNum As Integer = RandomDriver.Next(255)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
-                        Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                        If Not ResizeSyncing Then
+                            Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
+                        Else
+                            CoveredPositions.Clear()
+                        End If
                     Else
-                        Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
-                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
-                        Console.Write(" ")
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                        If Not ResizeSyncing Then
+                            Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
+                            Console.Write(" ")
+                        Else
+                            CoveredPositions.Clear()
+                        End If
                     End If
 
                     'Simulate a trail effect
@@ -86,11 +104,21 @@ Module LighterDisplay
                         Dim WipeLeft As Integer = CoveredPositions(0).ToString.Substring(0, CoveredPositions(0).ToString.IndexOf(";"))
                         Dim WipeTop As Integer = CoveredPositions(0).ToString.Substring(CoveredPositions(0).ToString.IndexOf(";") + 1)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Wiping in {0}, {1}...", WipeLeft, WipeTop)
-                        Console.SetCursorPosition(WipeLeft, WipeTop)
-                        Console.BackgroundColor = ConsoleColor.Black
-                        Console.Write(" ")
-                        CoveredPositions.RemoveAt(0)
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                        If Not ResizeSyncing Then
+                            Console.SetCursorPosition(WipeLeft, WipeTop)
+                            Console.BackgroundColor = ConsoleColor.Black
+                            Console.Write(" ")
+                            CoveredPositions.RemoveAt(0)
+                        Else
+                            CoveredPositions.Clear()
+                        End If
                     End If
+
+                    'Reset resize sync
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
             Loop
         Catch ex As Exception

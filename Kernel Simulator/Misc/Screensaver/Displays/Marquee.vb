@@ -29,16 +29,19 @@ Module MarqueeDisplay
         Try
             'Variables
             Dim RandomDriver As New Random()
+            Dim CurrentWindowWidth As Integer = Console.WindowWidth
+            Dim CurrentWindowHeight As Integer = Console.WindowHeight
+            Dim ResizeSyncing As Boolean
 
             'Preparations
             Console.BackgroundColor = ConsoleColor.Black
             Console.ForegroundColor = ConsoleColor.White
             Console.Clear()
-            Console.CursorVisible = False
             MarqueeWrite = MarqueeWrite.ReplaceAll({vbCr, vbLf}, " - ")
 
             'Screensaver logic
             Do While True
+                Console.CursorVisible = False
                 If Marquee.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
@@ -83,7 +86,9 @@ Module MarqueeDisplay
                     'If the text is at the right and is longer than the console width, crop it until it's complete.
                     Do Until CurrentLeftOtherEnd = 0
                         SleepNoBlock(MarqueeDelay, Marquee)
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Marquee.CancellationPending Then Exit Do
+                        If ResizeSyncing Then Exit Do
                         If MarqueeUseConsoleAPI Then Console.Clear()
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Current left: {0} | Current left on other end: {1}", CurrentLeft, CurrentLeftOtherEnd)
 
@@ -120,6 +125,11 @@ Module MarqueeDisplay
                             CurrentLeftOtherEnd -= 1
                         End If
                     Loop
+
+                    'Reset resize sync
+                    ResizeSyncing = False
+                    CurrentWindowWidth = Console.WindowWidth
+                    CurrentWindowHeight = Console.WindowHeight
                 End If
             Loop
         Catch ex As Exception
