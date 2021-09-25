@@ -53,7 +53,6 @@ Public Module Kernel
 #End If
 
                 'Initialize crucial things
-                If Not NotifThread.IsAlive Then NotifThread.Start()
                 InitPaths()
                 If Not IsOnUnix() Then Initialize255()
 

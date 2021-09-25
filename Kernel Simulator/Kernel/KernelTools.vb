@@ -334,6 +334,9 @@ Public Module KernelTools
     ''' Initializes everything
     ''' </summary>
     Sub InitEverything(Args() As String)
+        'Initialize notifications
+        If Not NotifThread.IsAlive Then NotifThread.Start()
+
         'Initialize aliases
         InitAliases()
 
