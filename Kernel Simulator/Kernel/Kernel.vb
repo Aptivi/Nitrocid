@@ -82,7 +82,11 @@ Public Module Kernel
                 CheckErrored()
 
                 'Stage 1: Initialize the system
-                W(DoTranslation("Internal initialization finished in") + " {0}" + vbNewLine, True, ColTypes.StageTime, StageTimer.Elapsed) : StageTimer.Restart()
+                If ShowStageFinishTimes Then
+                    W(DoTranslation("Internal initialization finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
+                    StageTimer.Restart()
+                End If
+                Console.WriteLine()
                 WriteSeparator(DoTranslation("- Stage 1: System initialization"), False, ColTypes.Stage)
                 Wdbg(DebugLevel.I, "- Kernel Phase 1: Initializing system")
                 StartRDebugThread()
@@ -101,26 +105,38 @@ Public Module Kernel
 #End If
 
                 'Phase 2: Probe hardware
-                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.StageTime, StageTimer.Elapsed) : StageTimer.Restart()
+                If ShowStageFinishTimes Then
+                    W(DoTranslation("Stage finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
+                    StageTimer.Restart()
+                End If
+                Console.WriteLine()
                 WriteSeparator(DoTranslation("- Stage 2: Hardware detection"), False, ColTypes.Stage)
                 Wdbg(DebugLevel.I, "- Kernel Phase 2: Probing hardware")
                 StartProbing()
                 CheckErrored()
 
                 'Phase 3: Parse Mods and Screensavers
-                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.StageTime, StageTimer.Elapsed) : StageTimer.Restart()
+                If ShowStageFinishTimes Then
+                    W(DoTranslation("Stage finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
+                    StageTimer.Restart()
+                End If
+                Console.WriteLine()
                 WriteSeparator(DoTranslation("- Stage 3: Mods and screensavers detection"), False, ColTypes.Stage)
                 Wdbg(DebugLevel.I, "- Kernel Phase 3: Parse mods and screensavers")
                 Wdbg(DebugLevel.I, "Safe mode flag is set to {0}", SafeMode)
                 If Not SafeMode Then
-                    StartMods()
+                    If StartKernelMods Then StartMods()
                 Else
                     W(DoTranslation("Running in safe mode. Skipping stage..."), True, ColTypes.Neutral)
                 End If
                 EventManager.RaiseStartKernel()
 
                 'Phase 4: Log-in
-                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.StageTime, StageTimer.Elapsed) : StageTimer.Restart()
+                If ShowStageFinishTimes Then
+                    W(DoTranslation("Stage finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
+                    StageTimer.Restart()
+                End If
+                Console.WriteLine()
                 WriteSeparator(DoTranslation("- Stage 4: Log in"), False, ColTypes.Stage)
                 Wdbg(DebugLevel.I, "- Kernel Phase 4: Log in")
                 InitializeSystemAccount()
@@ -128,7 +144,11 @@ Public Module Kernel
                 LoadPermissions()
 
                 'Reset console state and stop stage timer
-                W(DoTranslation("Stage finished in") + " {0}" + vbNewLine, True, ColTypes.StageTime, StageTimer.Elapsed) : StageTimer.Reset()
+                If ShowStageFinishTimes Then
+                    W(DoTranslation("Stage finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
+                    StageTimer.Reset()
+                End If
+                Console.WriteLine()
                 LoginFlag = True
                 If EnteredArguments IsNot Nothing Then
                     If EnteredArguments.Contains("quiet") Then
@@ -137,28 +157,30 @@ Public Module Kernel
                 End If
 
                 'Show current time
-                ShowCurrentTimes()
+                If ShowCurrentTimeBeforeLogin Then ShowCurrentTimes()
 
                 'Notify user of errors if appropriate
-                NotifyStartupFaults()
+                If NotifyFaultsBoot Then NotifyStartupFaults()
 
                 'Initialize login prompt
                 DisposeAll()
-                If LoginFlag = True And Maintenance = False Then
-                    LoginPrompt()
-                ElseIf LoginFlag = True And Maintenance = True Then
-                    ReadMOTD(MessageType.MOTD)
-                    ReadMOTD(MessageType.MAL)
-                    LoginFlag = False
-                    W(DoTranslation("Enter the admin password for maintenance."), True, ColTypes.Neutral)
-                    If Users.ContainsKey("root") Then
-                        Wdbg(DebugLevel.I, "Root account found. Prompting for password...")
-                        ShowPasswordPrompt("root")
+                If LoginFlag Then
+                    If Not Maintenance Then
+                        LoginPrompt()
                     Else
-                        'Some malicious mod removed the root account, or rare situation happened and it was gone.
-                        Wdbg(DebugLevel.W, "Root account not found for maintenance. Initializing it...")
-                        InitializeSystemAccount()
-                        ShowPasswordPrompt("root")
+                        ReadMOTD(MessageType.MOTD)
+                        ReadMOTD(MessageType.MAL)
+                        LoginFlag = False
+                        W(DoTranslation("Enter the admin password for maintenance."), True, ColTypes.Neutral)
+                        If Users.ContainsKey("root") Then
+                            Wdbg(DebugLevel.I, "Root account found. Prompting for password...")
+                            ShowPasswordPrompt("root")
+                        Else
+                            'Some malicious mod removed the root account, or rare situation happened and it was gone.
+                            Wdbg(DebugLevel.W, "Root account not found for maintenance. Initializing it...")
+                            InitializeSystemAccount()
+                            ShowPasswordPrompt("root")
+                        End If
                     End If
                 End If
             Catch kee As Exceptions.KernelErrorException

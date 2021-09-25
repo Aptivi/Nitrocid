@@ -167,6 +167,30 @@ Public Module Flags
     ''' Draws the border around the notification
     ''' </summary>
     Public DrawBorderNotification As Boolean
+    ''' <summary>
+    ''' Whether to show the app information on boot
+    ''' </summary>
+    Public ShowAppInfoOnBoot As Boolean = True
+    ''' <summary>
+    ''' Whether to parse the command-line arguments on boot
+    ''' </summary>
+    Public ParseCommandLineArguments As Boolean = True
+    ''' <summary>
+    ''' Show how much time a stage took on boot
+    ''' </summary>
+    Public ShowStageFinishTimes As Boolean
+    ''' <summary>
+    ''' Whether to start the kernel mods on boot
+    ''' </summary>
+    Public StartKernelMods As Boolean = True
+    ''' <summary>
+    ''' Whether to show the current time before login
+    ''' </summary>
+    Public ShowCurrentTimeBeforeLogin As Boolean = True
+    ''' <summary>
+    ''' Whether to notify the user about minor boot faults
+    ''' </summary>
+    Public NotifyFaultsBoot As Boolean = True
 
     'Private flags
     ''' <summary>

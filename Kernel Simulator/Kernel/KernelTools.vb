@@ -356,9 +356,11 @@ Public Module KernelTools
         WriteMessage()
 
         'Some information
-        WriteSeparator(DoTranslation("- App information"), False)
-        W("OS: " + DoTranslation("Running on {0}"), True, ColTypes.Neutral, Environment.OSVersion.ToString)
-        W("KS: " + DoTranslation("Built in {0}"), True, ColTypes.Neutral, Render(GetCompileDate()))
+        If ShowAppInfoOnBoot Then
+            WriteSeparator(DoTranslation("- App information"), False)
+            W("OS: " + DoTranslation("Running on {0}"), True, ColTypes.Neutral, Environment.OSVersion.ToString)
+            W("KS: " + DoTranslation("Built in {0}"), True, ColTypes.Neutral, Render(GetCompileDate()))
+        End If
 
         'Show dev version notice
 #If SPECIFIER = "DEV" Then 'WARNING: When the development nearly ends, change the compiler constant value to "REL" to suppress this message out of stable versions
@@ -368,7 +370,7 @@ Public Module KernelTools
 #End If
 
         'Parse real command-line arguments
-        ParseCMDArguments(Args)
+        If ParseCommandLineArguments Then ParseCMDArguments(Args)
 
         'Check arguments
         If ArgsOnBoot Then

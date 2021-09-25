@@ -123,7 +123,7 @@ Public Module SettingsApp
             'List options
             Select Case SectionNum
                 Case "1" 'General
-                    MaxOptions = 7
+                    MaxOptions = 13
                     WriteSeparator(DoTranslation("General Settings..."), True)
                     W(vbNewLine + DoTranslation("This section lists all general kernel settings, mainly for maintaining the kernel.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Prompt for Arguments on Boot") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ArgsOnBoot)))
@@ -133,6 +133,12 @@ Public Module SettingsApp
                     W(" 5) " + DoTranslation("Custom Startup Banner") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(CustomBanner)))
                     W(" 6) " + DoTranslation("Change Culture when Switching Languages") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LangChangeCulture)))
                     W(" 7) " + DoTranslation("Culture of") + " {0} [{1}]", True, ColTypes.Option, CurrentLanguage, CurrentCult.Name)
+                    W(" 8) " + DoTranslation("Show app information during boot") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowAppInfoOnBoot)))
+                    W(" 9) " + DoTranslation("Parse command-line arguments") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ParseCommandLineArguments)))
+                    W(" 10) " + DoTranslation("Show stage finish times") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowStageFinishTimes)))
+                    W(" 11) " + DoTranslation("Start kernel modifications on boot") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(StartKernelMods)))
+                    W(" 12) " + DoTranslation("Show current time before login") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowCurrentTimeBeforeLogin)))
+                    W(" 13) " + DoTranslation("Notify for any fault during boot") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(NotifyFaultsBoot)))
                 Case "1.3" 'Change Root Password...
                     MaxOptions = 2
                     WriteSeparator(DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password..."), True)
@@ -612,6 +618,36 @@ Public Module SettingsApp
                                 MaxKeyOptions = 1
                                 W(" 1) en-US (English (United States))", True, ColTypes.Option)
                             End If
+                        Case 8 'Show app information during boot
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ShowAppInfoOnBoot)
+                            WriteSeparator(DoTranslation("General Settings...") + " > " + DoTranslation("Show app information during boot"), True)
+                            W(vbNewLine + DoTranslation("Shows brief information about the application on boot."), True, ColTypes.Neutral)
+                        Case 9 'Parse command-line arguments
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ParseCommandLineArguments)
+                            WriteSeparator(DoTranslation("General Settings...") + " > " + DoTranslation("Parse command-line arguments"), True)
+                            W(vbNewLine + DoTranslation("Parses the command-line arguments on boot."), True, ColTypes.Neutral)
+                        Case 10 'Show stage finish times
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ShowStageFinishTimes)
+                            WriteSeparator(DoTranslation("General Settings...") + " > " + DoTranslation("Show stage finish times"), True)
+                            W(vbNewLine + DoTranslation("Shows how much time did the kernel take to finish a stage."), True, ColTypes.Neutral)
+                        Case 11 'Start kernel modifications on boot
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(StartKernelMods)
+                            WriteSeparator(DoTranslation("General Settings...") + " > " + DoTranslation("Start kernel modifications on boot"), True)
+                            W(vbNewLine + DoTranslation("Automatically start the kernel modifications on boot."), True, ColTypes.Neutral)
+                        Case 12 'Show current time before login
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ShowCurrentTimeBeforeLogin)
+                            WriteSeparator(DoTranslation("General Settings...") + " > " + DoTranslation("Show current time before login"), True)
+                            W(vbNewLine + DoTranslation("Shows the current time, time zone, and date before logging in."), True, ColTypes.Neutral)
+                        Case 13 'Notify for any fault during boot
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(NotifyFaultsBoot)
+                            WriteSeparator(DoTranslation("General Settings...") + " > " + DoTranslation("Notify for any fault during boot"), True)
+                            W(vbNewLine + DoTranslation("If there is a minor fault during kernel boot, notifies the user about it."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("General Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

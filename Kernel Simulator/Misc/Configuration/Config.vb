@@ -88,7 +88,13 @@ Public Module Config
                     {"Custom Startup Banner", CustomBanner},
                     {"Change Culture when Switching Languages", LangChangeCulture},
                     {"Language", CurrentLanguage},
-                    {"Culture", CurrentCult.Name}
+                    {"Culture", CurrentCult.Name},
+                    {"Show app information during boot", ShowAppInfoOnBoot},
+                    {"Parse command-line arguments", ParseCommandLineArguments},
+                    {"Show stage finish times", ShowStageFinishTimes},
+                    {"Start kernel modifications on boot", StartKernelMods},
+                    {"Show current time before login", ShowCurrentTimeBeforeLogin},
+                    {"Notify for any fault during boot", NotifyFaultsBoot}
             }
             ConfigurationObject.Add("General", GeneralConfig)
 
@@ -510,6 +516,12 @@ Public Module Config
             ArgsOnBoot = If(ConfigToken("General")?("Prompt for Arguments on Boot"), False)
             CheckUpdateStart = If(ConfigToken("General")?("Check for Updates on Startup"), True)
             If Not String.IsNullOrWhiteSpace(ConfigToken("General")?("Custom Startup Banner")) Then CustomBanner = ConfigToken("General")?("Custom Startup Banner")
+            ShowAppInfoOnBoot = If(ConfigToken("General")?("Show app information during boot"), True)
+            ParseCommandLineArguments = If(ConfigToken("General")?("Parse command-line arguments"), True)
+            ShowStageFinishTimes = If(ConfigToken("General")?("Show stage finish times"), False)
+            StartKernelMods = If(ConfigToken("General")?("Start kernel modifications on boot"), True)
+            ShowCurrentTimeBeforeLogin = If(ConfigToken("General")?("Show current time before login"), True)
+            NotifyFaultsBoot = If(ConfigToken("General")?("Notify for any fault during boot"), True)
 
             'Login Section
             Wdbg(DebugLevel.I, "Parsing login section...")
