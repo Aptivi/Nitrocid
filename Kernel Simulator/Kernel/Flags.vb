@@ -64,6 +64,10 @@ Public Module Flags
     ''' </summary>
     Public ShowMOTD As Boolean = True
     ''' <summary>
+    ''' Show MAL on log-in
+    ''' </summary>
+    Public ShowMAL As Boolean = True
+    ''' <summary>
     ''' Simplified Help Command
     ''' </summary>
     Public SimHelp As Boolean

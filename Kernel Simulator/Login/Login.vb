@@ -24,6 +24,14 @@ Public Module Login
     ''' </summary>
     Public CurrentUser As String
     ''' <summary>
+    ''' Username prompt
+    ''' </summary>
+    Public UsernamePrompt As String
+    ''' <summary>
+    ''' Password prompt
+    ''' </summary>
+    Public PasswordPrompt As String
+    ''' <summary>
     ''' List of usernames and passwords
     ''' </summary>
     Friend Users As New Dictionary(Of String, String)()
@@ -75,7 +83,11 @@ Public Module Login
             ShowMOTDOnceFlag = False
 
             'Prompt user to login
-            W(DoTranslation("Username: "), False, ColTypes.Input)
+            If Not String.IsNullOrWhiteSpace(UsernamePrompt) Then
+                W(ProbePlaces(UsernamePrompt), False, ColTypes.Input)
+            Else
+                W(DoTranslation("Username: "), False, ColTypes.Input)
+            End If
             Dim answeruser As String = Console.ReadLine()
 
             'Parse input
@@ -129,7 +141,11 @@ Public Module Login
             If Not UserPassword = GetEmptyHash(Algorithms.SHA256) Then 'No password
                 'Wait for input
                 Wdbg(DebugLevel.I, "Password not empty")
-                W(DoTranslation("{0}'s password: "), False, ColTypes.Input, usernamerequested)
+                If Not String.IsNullOrWhiteSpace(PasswordPrompt) Then
+                    W(ProbePlaces(PasswordPrompt), False, ColTypes.Input)
+                Else
+                    W(DoTranslation("{0}'s password: "), False, ColTypes.Input, usernamerequested)
+                End If
 
                 'Get input
                 Dim answerpass As String = ReadLineNoInput("*"c)
@@ -190,7 +206,7 @@ Public Module Login
         If LockMode = True Then LockMode = False
         Wdbg(DebugLevel.I, "Lock released.")
         ShowMOTDOnceFlag = True
-        W(ProbePlaces(MAL), True, ColTypes.Banner)
+        If ShowMAL Then W(ProbePlaces(MAL), True, ColTypes.Banner)
 
         'Fire event PostLogin
         EventManager.RaisePostLogin(CurrentUser)

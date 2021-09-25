@@ -153,7 +153,7 @@ Public Module SettingsApp
                     W(" 2) " + DoTranslation("Full Probe") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FullHardwareProbe)))
                     W(" 3) " + DoTranslation("Verbose Probe") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(VerboseHardwareProbe)))
                 Case "3" 'Login
-                    MaxOptions = 5
+                    MaxOptions = 8
                     WriteSeparator(DoTranslation("Login Settings..."), True)
                     W(vbNewLine + DoTranslation("This section represents the login settings. Log out of your account for the changes to take effect.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Show MOTD on Log-in") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowMOTD)))
@@ -161,6 +161,9 @@ Public Module SettingsApp
                     W(" 3) " + DoTranslation("Show available usernames") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowAvailableUsers)))
                     W(" 4) " + DoTranslation("MOTD path") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MOTDFilePath)))
                     W(" 5) " + DoTranslation("MAL path") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MALFilePath)))
+                    W(" 6) " + DoTranslation("Username prompt style") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(UsernamePrompt)))
+                    W(" 7) " + DoTranslation("Password prompt style") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(PasswordPrompt)))
+                    W(" 8) " + DoTranslation("Show MAL on log-in") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowMAL)))
                 Case "4" 'Shell
                     MaxOptions = 12
                     WriteSeparator(DoTranslation("Shell Settings..."), True)
@@ -720,6 +723,21 @@ Public Module SettingsApp
                             KeyVar = NameOf(MALFilePath)
                             WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("MAL Path"), True)
                             W(vbNewLine + DoTranslation("Which file is the MAL text file? Write an absolute path to the text file."), True, ColTypes.Neutral)
+                        Case 6 'Username prompt style
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(UsernamePrompt)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Username prompt style"), True)
+                            W(vbNewLine + DoTranslation("Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 7 'Password prompt style
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(PasswordPrompt)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Password prompt style"), True)
+                            W(vbNewLine + DoTranslation("Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 8 'Show MAL on Log-in
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ShowMAL)
+                            WriteSeparator(DoTranslation("Login Settings...") + " > " + DoTranslation("Show MAL on Log-in"), True)
+                            W(vbNewLine + DoTranslation("Shows Message of the Day after displaying login screen."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Login Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
