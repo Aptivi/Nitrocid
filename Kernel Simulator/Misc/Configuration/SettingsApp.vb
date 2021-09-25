@@ -112,7 +112,7 @@ Public Module SettingsApp
         Dim SectionFinished As Boolean
         Dim AnswerString As String
         Dim AnswerInt As Integer
-        Dim BuiltinSavers As Integer = 24
+        Dim BuiltinSavers As Integer = 22
 
         'Section-specific variables
         Dim ConfigurableScreensavers As New List(Of String)
@@ -254,16 +254,14 @@ Public Module SettingsApp
                     W(" 12) Fader...", True, ColTypes.Option)
                     W(" 13) Typo...", True, ColTypes.Option)
                     W(" 14) Wipe...", True, ColTypes.Option)
-                    W(" 15) HackUserFromAD...", True, ColTypes.Option)
-                    W(" 16) AptErrorSim...", True, ColTypes.Option)
-                    W(" 17) Marquee...", True, ColTypes.Option)
-                    W(" 18) FaderBack...", True, ColTypes.Option)
-                    W(" 19) BeatFader...", True, ColTypes.Option)
-                    W(" 20) Linotypo...", True, ColTypes.Option)
-                    W(" 21) Typewriter...", True, ColTypes.Option)
-                    W(" 22) FlashColor...", True, ColTypes.Option)
-                    W(" 23) SpotWrite...", True, ColTypes.Option)
-                    W(" 24) Ramp...", True, ColTypes.Option)
+                    W(" 15) Marquee...", True, ColTypes.Option)
+                    W(" 16) FaderBack...", True, ColTypes.Option)
+                    W(" 17) BeatFader...", True, ColTypes.Option)
+                    W(" 18) Linotypo...", True, ColTypes.Option)
+                    W(" 19) Typewriter...", True, ColTypes.Option)
+                    W(" 20) FlashColor...", True, ColTypes.Option)
+                    W(" 21) SpotWrite...", True, ColTypes.Option)
+                    W(" 22) Ramp...", True, ColTypes.Option)
 
                     'Populate custom screensavers
                     For Each CustomSaver As String In CustomSavers.Keys
@@ -385,17 +383,7 @@ Public Module SettingsApp
                     W(" 2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeTrueColor)))
                     W(" 3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeDelay)))
                     W(" 4) " + DoTranslation("Wipes to change direction") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeWipesNeededToChangeDirection)))
-                Case "7.15" 'Screensaver > HackUserFromAD
-                    MaxOptions = 1
-                    WriteSeparator(DoTranslation("Screensaver Settings...") + " > HackUserFromAD", True)
-                    W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " HackUserFromAD." + vbNewLine, True, ColTypes.Neutral)
-                    W(" 1) " + DoTranslation("Hacker Mode") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(HackUserFromADHackerMode)))
-                Case "7.16" 'Screensaver > AptErrorSim
-                    MaxOptions = 1
-                    WriteSeparator(DoTranslation("Screensaver Settings...") + " > AptErrorSim", True)
-                    W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " AptErrorSim." + vbNewLine, True, ColTypes.Neutral)
-                    W(" 1) " + DoTranslation("Hacker Mode") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(AptErrorSimHackerMode)))
-                Case "7.17" 'Screensaver > Marquee
+                Case "7.15" 'Screensaver > Marquee
                     MaxOptions = 6
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Marquee", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " Marquee." + vbNewLine, True, ColTypes.Neutral)
@@ -405,14 +393,14 @@ Public Module SettingsApp
                     W(" 4) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeWrite)))
                     W(" 5) " + DoTranslation("Always centered") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeAlwaysCentered)))
                     W(" 6) " + DoTranslation("Use Console API") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeUseConsoleAPI)))
-                Case "7.18" 'Screensaver > FaderBack
+                Case "7.16" 'Screensaver > FaderBack
                     MaxOptions = 3
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > FaderBack", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " FaderBack." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderBackDelay)))
                     W(" 2) " + DoTranslation("Fade Out Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderBackFadeOutDelay)))
                     W(" 3) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderBackMaxSteps)))
-                Case "7.19" 'Screensaver > BeatFader
+                Case "7.17" 'Screensaver > BeatFader
                     MaxOptions = 6
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > BeatFader", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " BeatFader." + vbNewLine, True, ColTypes.Neutral)
@@ -422,7 +410,7 @@ Public Module SettingsApp
                     W(" 4) " + DoTranslation("Cycle colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderCycleColors)))
                     W(" 5) " + DoTranslation("Beat Color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderBeatColor)))
                     W(" 6) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderMaxSteps)))
-                Case "7.20" 'Screensaver > Linotypo
+                Case "7.18" 'Screensaver > Linotypo
                     MaxOptions = 11
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Linotypo", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " Linotypo." + vbNewLine, True, ColTypes.Neutral)
@@ -437,7 +425,7 @@ Public Module SettingsApp
                     W(" 9) " + DoTranslation("Line Fill Capping Probability in percent") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoEtaoinCappingPossibility)))
                     W(" 10) " + DoTranslation("Line Fill Type") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoEtaoinType)))
                     W(" 11) " + DoTranslation("Probability of miss in percent") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoMissPossibility)))
-                Case "7.21" 'Screensaver > Typewriter
+                Case "7.19" 'Screensaver > Typewriter
                     MaxOptions = 5
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Typewriter", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " Typewriter." + vbNewLine, True, ColTypes.Neutral)
@@ -446,21 +434,21 @@ Public Module SettingsApp
                     W(" 3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypewriterWrite)))
                     W(" 4) " + DoTranslation("Minimum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypewriterWritingSpeedMin)))
                     W(" 5) " + DoTranslation("Maximum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypewriterWritingSpeedMax)))
-                Case "7.22" 'Screensaver > FlashColor
+                Case "7.20" 'Screensaver > FlashColor
                     MaxOptions = 3
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > FlashColor", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " FlashColor." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColor255Colors)))
                     W(" 2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColorTrueColor)))
                     W(" 3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColorDelay)))
-                Case "7.23" 'Screensaver > SpotWrite
+                Case "7.21" 'Screensaver > SpotWrite
                     MaxOptions = 5
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > SpotWrite", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " SpotWrite." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SpotWriteDelay)))
                     W(" 2) " + DoTranslation("New Screen Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SpotWriteNewScreenDelay)))
                     W(" 3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SpotWriteWrite)))
-                Case "7.24" 'Screensaver > Ramp
+                Case "7.22" 'Screensaver > Ramp
                     MaxOptions = 4
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " Ramp." + vbNewLine, True, ColTypes.Neutral)
@@ -572,7 +560,7 @@ Public Module SettingsApp
         Dim SelectionEnumZeroBased As Boolean
         Dim NeutralizePaths As Boolean
         Dim NeutralizeRootPath As String = CurrDir
-        Dim BuiltinSavers As Integer = 24
+        Dim BuiltinSavers As Integer = 22
 
         While Not KeyFinished
             Console.Clear()
@@ -1400,29 +1388,7 @@ Public Module SettingsApp
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Wipe > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
-                Case "7.15" 'HackUserFromAD
-                    Select Case KeyNumber
-                        Case 1 'HackUserFromAD: Hacker Mode
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(HackUserFromADHackerMode)
-                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > HackUserFromAD > " + DoTranslation("Hacker Mode"), True)
-                            W(vbNewLine + DoTranslation("If enabled, green console will be enabled.") + " l33t h4x0r!", True, ColTypes.Neutral)
-                        Case Else
-                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > HackUserFromAD > ???", True)
-                            W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
-                    End Select
-                Case "7.16" 'AptErrorSim
-                    Select Case KeyNumber
-                        Case 1 'AptErrorSim: Hacker Mode
-                            KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(AptErrorSimHackerMode)
-                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > AptErrorSim > " + DoTranslation("Hacker Mode"), True)
-                            W(vbNewLine + DoTranslation("If enabled, green console will be enabled.") + " l33t h4x0r!", True, ColTypes.Neutral)
-                        Case Else
-                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > AptErrorSim > ???", True)
-                            W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
-                    End Select
-                Case "7.17" 'Marquee
+                Case "7.15" 'Marquee
                     Select Case KeyNumber
                         Case 1 'Marquee: Activate 255 colors
                             KeyType = SettingsKeyType.SBoolean
@@ -1458,7 +1424,7 @@ Public Module SettingsApp
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Marquee > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
-                Case "7.18" 'FaderBack
+                Case "7.16" 'FaderBack
                     Select Case KeyNumber
                         Case 1 'FaderBack: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
@@ -1479,7 +1445,7 @@ Public Module SettingsApp
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > FaderBack > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
-                Case "7.19" 'BeatFader
+                Case "7.17" 'BeatFader
                     Select Case KeyNumber
                         Case 1 'BeatFader: Activate 255 colors
                             KeyType = SettingsKeyType.SBoolean
@@ -1515,7 +1481,7 @@ Public Module SettingsApp
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > BeatFader > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
-                Case "7.20" 'Linotypo
+                Case "7.18" 'Linotypo
                     Select Case KeyNumber
                         Case 1 'Linotypo: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
@@ -1582,7 +1548,7 @@ Public Module SettingsApp
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Linotypo > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
-                Case "7.21" 'Typewriter
+                Case "7.19" 'Typewriter
                     Select Case KeyNumber
                         Case 1 'Typewriter: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
@@ -1614,7 +1580,7 @@ Public Module SettingsApp
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Typewriter > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
-                Case "7.22" 'FlashColor
+                Case "7.20" 'FlashColor
                     Select Case KeyNumber
                         Case 1 'FlashColor: Activate 255 colors
                             KeyType = SettingsKeyType.SBoolean
@@ -1635,7 +1601,7 @@ Public Module SettingsApp
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
-                Case "7.23" 'SpotWrite
+                Case "7.21" 'SpotWrite
                     Select Case KeyNumber
                         Case 1 'SpotWrite: Delay in Milliseconds
                             KeyType = SettingsKeyType.SInt
@@ -1654,7 +1620,7 @@ Public Module SettingsApp
                             W(vbNewLine + DoTranslation("Write any text you want shown. Longer is better."), True, ColTypes.Neutral)
                             W(DoTranslation("This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately."), True, ColTypes.Neutral)
                     End Select
-                Case "7.24" 'Ramp
+                Case "7.22" 'Ramp
                     Select Case KeyNumber
                         Case 1 'Ramp: Activate 255 colors
                             KeyType = SettingsKeyType.SBoolean

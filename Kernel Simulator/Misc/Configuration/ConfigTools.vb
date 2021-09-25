@@ -52,7 +52,7 @@ Public Module ConfigTools
             FixesNeeded = True
         End If
         If ConfigToken("Screensaver") IsNot Nothing Then
-            If ConfigToken("Screensaver").Count <> 24 + 3 Then 'Screensavers + Keys
+            If ConfigToken("Screensaver").Count <> 22 + 3 Then 'Screensavers + Keys
                 Wdbg(DebugLevel.W, "Missing sections and/or keys in Screensaver. Config fix needed set to true.")
                 FixesNeeded = True
             End If
@@ -195,18 +195,6 @@ Public Module ConfigTools
             If ConfigToken("Screensaver")("Typo") IsNot Nothing Then
                 If ConfigToken("Screensaver")("Typo").Count <> 7 Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Typo. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("HackUserFromAD") IsNot Nothing Then
-                If ConfigToken("Screensaver")("HackUserFromAD").Count <> 1 Then
-                    Wdbg(DebugLevel.W, "Missing keys in Screensaver > HackUserFromAD. Config fix needed set to true.")
-                    FixesNeeded = True
-                End If
-            End If
-            If ConfigToken("Screensaver")("AptErrorSim") IsNot Nothing Then
-                If ConfigToken("Screensaver")("AptErrorSim").Count <> 1 Then
-                    Wdbg(DebugLevel.W, "Missing keys in Screensaver > AptErrorSim. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If

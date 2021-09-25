@@ -224,8 +224,6 @@
     <Compile Include="Misc\Screensaver\Displays\Custom.vb" />
     <Compile Include="Misc\Screensaver\Displays\BouncingBlock.vb" />
     <Compile Include="Misc\Screensaver\Displays\BouncingText.vb" />
-    <Compile Include="Misc\Screensaver\Displays\HackUserFromAD.vb" />
-    <Compile Include="Misc\Screensaver\Displays\AptErrorSim.vb" />
     <Compile Include="Misc\Screensaver\Displays\GlitterColor.vb" />
     <Compile Include="Misc\Screensaver\Displays\GlitterMatrix.vb" />
     <Compile Include="Misc\Screensaver\Displays\Lines.vb" />

@@ -38,8 +38,7 @@ Public Module Screensaver
     Public ScrnTimeout As Integer = 300000
     Public ReadOnly colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())        '15 Console Colors
     Public ReadOnly colors255() As ConsoleColors = CType([Enum].GetValues(GetType(ConsoleColors)), ConsoleColors())  '255 Console Colors
-    Public ReadOnly Screensavers As New Dictionary(Of String, BackgroundWorker) From {{"aptErrorSim", AptErrorSim},
-                                                                                      {"beatFader", BeatFader},
+    Public ReadOnly Screensavers As New Dictionary(Of String, BackgroundWorker) From {{"beatFader", BeatFader},
                                                                                       {"bouncingBlock", BouncingBlock},
                                                                                       {"bouncingText", BouncingText},
                                                                                       {"colorMix", ColorMix},
@@ -50,7 +49,6 @@ Public Module Screensaver
                                                                                       {"flashColor", FlashColor},
                                                                                       {"glitterColor", GlitterColor},
                                                                                       {"glitterMatrix", GlitterMatrix},
-                                                                                      {"hackUserFromAD", HackUserFromAD},
                                                                                       {"lighter", Lighter},
                                                                                       {"lines", Lines},
                                                                                       {"linotypo", Linotypo},

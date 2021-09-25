@@ -341,18 +341,6 @@ Public Module Config
             }
             ScreensaverConfig.Add("Typo", TypoConfig)
 
-            'HackUserFromAD config json object
-            Dim HackUserFromADConfig As New JObject From {
-                    {"Hacker Mode", HackUserFromADHackerMode}
-            }
-            ScreensaverConfig.Add("HackUserFromAD", HackUserFromADConfig)
-
-            'AptErrorSim config json object
-            Dim AptErrorSimConfig As New JObject From {
-                    {"Hacker Mode", AptErrorSimHackerMode}
-            }
-            ScreensaverConfig.Add("AptErrorSim", AptErrorSimConfig)
-
             'Marquee config json object
             Dim MarqueeConfig As New JObject From {
                     {"Activate 255 Color Mode", Marquee255Colors},
@@ -681,12 +669,6 @@ Public Module Config
 
             '> Matrix
             MatrixDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Matrix")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Matrix")?("Delay in Milliseconds"), 1)
-
-            '> HackUserFromAD
-            HackUserFromADHackerMode = If(ConfigToken("Screensaver")?("HackUserFromAD")?("Hacker Mode"), True)
-
-            '> AptErrorSim
-            AptErrorSimHackerMode = If(ConfigToken("Screensaver")?("AptErrorSim")?("Hacker Mode"), False)
 
             '> Linotypo
             LinotypoDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Linotypo")?("Delay in Milliseconds"), 50)
