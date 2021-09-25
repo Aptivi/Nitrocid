@@ -165,7 +165,7 @@ Public Module SettingsApp
                     W(" 7) " + DoTranslation("Password prompt style") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(PasswordPrompt)))
                     W(" 8) " + DoTranslation("Show MAL on log-in") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowMAL)))
                 Case "4" 'Shell
-                    MaxOptions = 12
+                    MaxOptions = 15
                     WriteSeparator(DoTranslation("Shell Settings..."), True)
                     W(vbNewLine + DoTranslation("This section lists the shell settings.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Colored Shell") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColoredShell)))
@@ -179,8 +179,11 @@ Public Module SettingsApp
                     W(" 9) " + DoTranslation("RSS Prompt Style", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RSSShellPromptStyle)))
                     W(" 10) " + DoTranslation("Text Edit Prompt Style", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TextEdit_PromptStyle)))
                     W(" 11) " + DoTranslation("Zip Shell Prompt Style", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ZipShell_PromptStyle)))
-                    W(" 12) " + DoTranslation("Custom colors...", CurrentLanguage), True, ColTypes.Option)
-                Case "4.12" 'Custom colors...
+                    W(" 12) " + DoTranslation("Test Shell Prompt Style", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Test_PromptStyle)))
+                    W(" 13) " + DoTranslation("JSON Shell Prompt Style", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(JsonShell_PromptStyle)))
+                    W(" 14) " + DoTranslation("Probe injected commands", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProbeInjectedCommands)))
+                    W(" 15) " + DoTranslation("Custom colors...", CurrentLanguage), True, ColTypes.Option)
+                Case "4.15" 'Custom colors...
                     MaxOptions = 33
                     WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Custom colors..."), True)
                     W(vbNewLine + DoTranslation("This section lets you choose what type of color do you want to change.") + vbNewLine, True, ColTypes.Neutral)
@@ -515,12 +518,12 @@ Public Module SettingsApp
                     ElseIf AnswerInt <> MaxOptions And SectionNum = "1.3" Then
                         Wdbg(DebugLevel.I, "Tried to open special section. Opening key {0} in section 1.3...", AnswerString)
                         OpenKey("1.3", AnswerInt)
-                    ElseIf AnswerInt = 12 And SectionNum = "4" Then
-                        Wdbg(DebugLevel.I, "Tried to open subsection. Opening section 4.12...")
-                        OpenSection("4.12")
-                    ElseIf AnswerInt <> MaxOptions And SectionNum = "4.12" Then
-                        Wdbg(DebugLevel.I, "Tried to open subsection. Opening key {0} in section 4.12...", AnswerString)
-                        OpenKey("4.12", AnswerInt)
+                    ElseIf AnswerInt = 15 And SectionNum = "4" Then
+                        Wdbg(DebugLevel.I, "Tried to open subsection. Opening section 4.15...")
+                        OpenSection("4.15")
+                    ElseIf AnswerInt <> MaxOptions And SectionNum = "4.15" Then
+                        Wdbg(DebugLevel.I, "Tried to open subsection. Opening key {0} in section 4.15...", AnswerString)
+                        OpenKey("4.15", AnswerInt)
                     ElseIf AnswerInt <= BuiltinSavers And SectionNum = "7" Then
                         Wdbg(DebugLevel.I, "Tried to open subsection. Opening section 7.{0}...", AnswerString)
                         Wdbg(DebugLevel.I, "Arguments: AnswerInt: {0}, ConfigurableScreensavers: {1}", AnswerInt, ConfigurableScreensavers.Count)
@@ -802,11 +805,26 @@ Public Module SettingsApp
                             KeyVar = NameOf(ZipShell_PromptStyle)
                             WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Zip Shell Prompt Style"), True)
                             W(vbNewLine + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 12 'Test Shell Prompt Style
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(Test_PromptStyle)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Test Shell Prompt Style"), True)
+                            W(vbNewLine + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 13 'JSON Shell Prompt Style
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(JsonShell_PromptStyle)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("JSON Shell Prompt Style"), True)
+                            W(vbNewLine + DoTranslation("Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 14 'Probe injected commands
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ProbeInjectedCommands)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Probe injected commands"), True)
+                            W(vbNewLine + DoTranslation("Probes the injected commands at the start of the kernel shell."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Shell Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
-                Case "4.12" 'Shell -> Custom colors
+                Case "4.15" 'Shell -> Custom colors
                     Select Case KeyNumber
                         Case 1 'Input color
                             KeyType = SettingsKeyType.SVariant

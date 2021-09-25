@@ -77,6 +77,7 @@ Module TestShell
                                                                                   {"shutdown", New CommandInfo("shutdown", ShellCommandType.TestShell, "Exits the test shell and shuts down the kernel", "", False, 0, New Test_ShutdownCommand)}}
     Public Test_ExitFlag As Boolean
     Public Test_ShutdownFlag As Boolean
+    Public Test_PromptStyle As String = ""
 
     ''' <summary>
     ''' Initiates the test shell
@@ -94,7 +95,14 @@ Module TestShell
             If DefConsoleOut IsNot Nothing Then
                 Console.SetOut(DefConsoleOut)
             End If
-            W("(t)> ", False, ColTypes.Input)
+            Wdbg(DebugLevel.I, "Test_PromptStyle = {0}", Test_PromptStyle)
+            If Test_PromptStyle = "" Then
+                W("(t)> ", False, ColTypes.Input)
+            Else
+                Dim ParsedPromptStyle As String = ProbePlaces(Test_PromptStyle)
+                ParsedPromptStyle.ConvertVTSequences
+                W(ParsedPromptStyle, False, ColTypes.Gray)
+            End If
             FullCmd = Console.ReadLine
             Try
                 If Not (FullCmd = Nothing Or FullCmd?.StartsWithAnyOf({" ", "#"}) = True) Then

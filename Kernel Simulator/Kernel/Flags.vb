@@ -195,6 +195,10 @@ Public Module Flags
     ''' Whether to notify the user about minor boot faults
     ''' </summary>
     Public NotifyFaultsBoot As Boolean = True
+    ''' <summary>
+    ''' Whether to probe the injected commands at the start of the kernel shell
+    ''' </summary>
+    Public ProbeInjectedCommands As Boolean = True
 
     'Private flags
     ''' <summary>

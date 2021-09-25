@@ -391,9 +391,11 @@ Public Module Shell
                 End If
             ElseIf ArgsMode = True And CommandFlag = True Then
                 CommandFlag = False
-                For Each cmd In InjectedCommands
-                    GetLine(False, cmd, True)
-                Next
+                If ProbeInjectedCommands Then
+                    For Each cmd In InjectedCommands
+                        GetLine(False, cmd, True)
+                    Next
+                End If
             End If
         Catch ex As Exception
             If DebugMode = True Then

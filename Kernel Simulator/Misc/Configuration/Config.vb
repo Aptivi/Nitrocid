@@ -170,7 +170,10 @@ Public Module Config
                     {"SFTP Prompt Style", SFTPShellPromptStyle},
                     {"RSS Prompt Style", RSSShellPromptStyle},
                     {"Text Edit Prompt Style", TextEdit_PromptStyle},
-                    {"Zip Shell Prompt Style", ZipShell_PromptStyle}
+                    {"Zip Shell Prompt Style", ZipShell_PromptStyle},
+                    {"Test Shell Prompt Style", Test_PromptStyle},
+                    {"JSON Shell Prompt Style", JsonShell_PromptStyle},
+                    {"Probe injected commands", ProbeInjectedCommands}
             }
             ConfigurationObject.Add("Shell", ShellConfig)
 
@@ -550,6 +553,9 @@ Public Module Config
             RSSShellPromptStyle = If(ConfigToken("Shell")?("RSS Prompt Style"), "")
             TextEdit_PromptStyle = If(ConfigToken("Shell")?("Text Edit Prompt Style"), "")
             ZipShell_PromptStyle = If(ConfigToken("Shell")?("Zip Shell Prompt Style"), "")
+            Test_PromptStyle = If(ConfigToken("Shell")?("Test Shell Prompt Style"), "")
+            JsonShell_PromptStyle = If(ConfigToken("Shell")?("JSON Shell Prompt Style"), "")
+            ProbeInjectedCommands = If(ConfigToken("Shell")?("Probe injected commands"), True)
 
             'Filesystem Section
             Wdbg(DebugLevel.I, "Parsing filesystem section...")
