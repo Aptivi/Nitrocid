@@ -18,6 +18,7 @@
 
 Imports System.Threading
 Imports MailKit
+Imports MimeKit.Text
 
 Public Module MailShell
 
@@ -41,6 +42,10 @@ Public Module MailShell
     Public IMAP_CurrentDirectory As String = "Inbox"
     Public MailModCommands As New ArrayList
     Public MailShellPromptStyle As String = ""
+    Public Mail_NotifyNewMail As Boolean = True
+    Public Mail_ImapPingInterval As Integer = 30000
+    Public Mail_SmtpPingInterval As Integer = 30000
+    Public Mail_TextFormat As TextFormat = TextFormat.Plain
     Friend ExitRequested, KeepAlive As Boolean
     Friend IMAP_Messages As IEnumerable(Of UniqueId)
 
@@ -64,7 +69,7 @@ Public Module MailShell
         While Not ExitRequested
             'Populate messages
             PopulateMessages()
-            InitializeHandlers()
+            If Mail_NotifyNewMail Then InitializeHandlers()
 
             'Initialize prompt
             If DefConsoleOut IsNot Nothing Then
@@ -115,7 +120,7 @@ Public Module MailShell
             Wdbg(DebugLevel.W, "Exit requested, but not disconnecting.")
         Else
             Wdbg(DebugLevel.W, "Exit requested. Disconnecting host...")
-            ReleaseHandlers()
+            If Mail_NotifyNewMail Then ReleaseHandlers()
             IMAP_Client.Disconnect(True)
             SMTP_Client.Disconnect(True)
         End If

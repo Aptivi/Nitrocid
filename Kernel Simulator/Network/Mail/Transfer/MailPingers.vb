@@ -26,7 +26,7 @@ Module MailPingers
     Sub IMAPKeepConnection()
         'Every 30 seconds, send a ping to IMAP server
         While IMAP_Client.IsConnected
-            Thread.Sleep(30000)
+            Thread.Sleep(Mail_ImapPingInterval)
             If IMAP_Client.IsConnected Then
                 SyncLock IMAP_Client.SyncRoot
                     IMAP_Client.NoOp()
@@ -45,7 +45,7 @@ Module MailPingers
     Sub SMTPKeepConnection()
         'Every 30 seconds, send a ping to IMAP server
         While SMTP_Client.IsConnected
-            Thread.Sleep(30000)
+            Thread.Sleep(Mail_SmtpPingInterval)
             If SMTP_Client.IsConnected Then
                 SyncLock SMTP_Client.SyncRoot
                     SMTP_Client.NoOp()

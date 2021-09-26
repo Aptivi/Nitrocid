@@ -27,6 +27,13 @@ Module MailLogin
     Public IMAP_Client As New ImapClient()
     Public SMTP_Client As New SmtpClient()
     Friend Mail_Authentication As New NetworkCredential()
+    Public Mail_UserPromptStyle As String = ""
+    Public Mail_PassPromptStyle As String = ""
+    Public Mail_IMAPPromptStyle As String = ""
+    Public Mail_SMTPPromptStyle As String = ""
+    Public Mail_GPGPromptStyle As String = ""
+    Public Mail_Debug As Boolean
+    Public Mail_AutoDetectServer As Boolean = True
 
     ''' <summary>
     ''' Mail server type
@@ -47,7 +54,11 @@ Module MailLogin
     ''' </summary>
     Sub PromptUser()
         'Username or mail address
-        W(DoTranslation("Enter username or mail address: "), False, ColTypes.Input)
+        If Not String.IsNullOrWhiteSpace(Mail_UserPromptStyle) Then
+            W(ProbePlaces(Mail_UserPromptStyle), False, ColTypes.Input)
+        Else
+            W(DoTranslation("Enter username or mail address: "), False, ColTypes.Input)
+        End If
         PromptPassword(Console.ReadLine)
     End Sub
 
@@ -59,12 +70,16 @@ Module MailLogin
         'Password
         Wdbg(DebugLevel.I, "Username: {0}", Username)
         Mail_Authentication.UserName = Username
-        W(DoTranslation("Enter password: "), False, ColTypes.Input)
+        If Not String.IsNullOrWhiteSpace(Mail_PassPromptStyle) Then
+            W(ProbePlaces(Mail_PassPromptStyle), False, ColTypes.Input)
+        Else
+            W(DoTranslation("Enter password: "), False, ColTypes.Input)
+        End If
         Mail_Authentication.Password = ReadLineNoInput("*")
         Console.WriteLine()
         Dim DynamicAddressIMAP As String = ServerDetect(Username, ServerType.IMAP)
         Dim DynamicAddressSMTP As String = ServerDetect(Username, ServerType.SMTP)
-        If DynamicAddressIMAP <> "" And DynamicAddressSMTP <> "" Then
+        If DynamicAddressIMAP <> "" And DynamicAddressSMTP <> "" And Mail_AutoDetectServer Then
             ParseAddresses(DynamicAddressIMAP, 0, DynamicAddressSMTP, 0)
         Else
             PromptServer()
@@ -75,15 +90,27 @@ Module MailLogin
     ''' Prompts for server
     ''' </summary>
     Sub PromptServer()
-        'IMAP Server address and port
-        W(DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
+        'IMAP server address and port
+        If Not String.IsNullOrWhiteSpace(Mail_IMAPPromptStyle) Then
+            W(ProbePlaces(Mail_IMAPPromptStyle), False, ColTypes.Input)
+        Else
+            W(DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
+        End If
         Dim IMAP_Address As String = Console.ReadLine
         Dim IMAP_Port As Integer = 0
         Wdbg(DebugLevel.I, "IMAP Server: ""{0}""", IMAP_Address)
-        W(DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
+
+        'SMTP server address and port
+        If Not String.IsNullOrWhiteSpace(Mail_SMTPPromptStyle) Then
+            W(ProbePlaces(Mail_SMTPPromptStyle), False, ColTypes.Input)
+        Else
+            W(DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
+        End If
         Dim SMTP_Address As String = Console.ReadLine
         Dim SMTP_Port As Integer = 587
         Wdbg(DebugLevel.I, "SMTP Server: ""{0}""", SMTP_Address)
+
+        'Parse addresses to connect
         ParseAddresses(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port)
     End Sub
 
@@ -281,7 +308,7 @@ Module MailLogin
     Sub ConnectShell(Address As String, Port As Integer, SmtpAddress As String, SmtpPort As Integer)
         Try
             'Register the context and initialize the loggers if debug mode is on
-            If DebugMode Then
+            If DebugMode And Mail_Debug Then
                 IMAP_Client = New ImapClient(New ProtocolLogger(GetOtherPath(OtherPathType.Home) + "/ImapDebug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
                 SMTP_Client = New SmtpClient(New ProtocolLogger(GetOtherPath(OtherPathType.Home) + "/SmtpDebug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
             End If

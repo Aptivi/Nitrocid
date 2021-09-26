@@ -18,6 +18,7 @@
 
 Imports System.Globalization
 Imports System.IO
+Imports MimeKit.Text
 Imports Newtonsoft.Json.Linq
 
 Public Module Config
@@ -210,7 +211,18 @@ Public Module Config
                     {"Add new connections to FTP speed dial", FtpNewConnectionsToSpeedDial},
                     {"Try to validate secure FTP certificates", FtpTryToValidateCertificate},
                     {"Show FTP MOTD on connection", FtpShowMotd},
-                    {"Always accept invalid FTP certificates", FtpAlwaysAcceptInvalidCerts}
+                    {"Always accept invalid FTP certificates", FtpAlwaysAcceptInvalidCerts},
+                    {"Username prompt style for mail", Mail_UserPromptStyle},
+                    {"Password prompt style for mail", Mail_PassPromptStyle},
+                    {"IMAP prompt style for mail", Mail_IMAPPromptStyle},
+                    {"SMTP prompt style for mail", Mail_SMTPPromptStyle},
+                    {"Automatically detect mail server", Mail_AutoDetectServer},
+                    {"Enable mail debug", Mail_Debug},
+                    {"Notify for new mail messages", Mail_NotifyNewMail},
+                    {"GPG password prompt style for mail", Mail_GPGPromptStyle},
+                    {"Send IMAP ping interval", Mail_ImapPingInterval},
+                    {"Send SMTP ping interval", Mail_SmtpPingInterval},
+                    {"Mail text format", Mail_TextFormat.ToString}
             }
             ConfigurationObject.Add("Network", NetworkConfig)
 
@@ -604,6 +616,17 @@ Public Module Config
             FtpTryToValidateCertificate = If(ConfigToken("Network")?("Try to validate secure FTP certificates"), True)
             FtpShowMotd = If(ConfigToken("Network")?("Show FTP MOTD on connection"), True)
             FtpAlwaysAcceptInvalidCerts = If(ConfigToken("Network")?("Always accept invalid FTP certificates"), True)
+            Mail_UserPromptStyle = If(ConfigToken("Network")?("Username prompt style for mail"), "")
+            Mail_PassPromptStyle = If(ConfigToken("Network")?("Password prompt style for mail"), "")
+            Mail_IMAPPromptStyle = If(ConfigToken("Network")?("IMAP prompt style for mail"), "")
+            Mail_SMTPPromptStyle = If(ConfigToken("Network")?("SMTP prompt style for mail"), "")
+            Mail_AutoDetectServer = If(ConfigToken("Network")?("Automatically detect mail server"), True)
+            Mail_Debug = If(ConfigToken("Network")?("Enable mail debug"), False)
+            Mail_NotifyNewMail = If(ConfigToken("Network")?("Notify for new mail messages"), True)
+            Mail_GPGPromptStyle = If(ConfigToken("Network")?("GPG password prompt style for mail"), True)
+            Mail_ImapPingInterval = If(Integer.TryParse(ConfigToken("Network")?("Send IMAP ping interval"), 0), ConfigToken("Network")?("Send IMAP ping interval"), 30000)
+            Mail_SmtpPingInterval = If(Integer.TryParse(ConfigToken("Network")?("Send SMTP ping interval"), 0), ConfigToken("Network")?("Send SMTP ping interval"), 30000)
+            Mail_TextFormat = If(ConfigToken("Network")?("Mail text format") IsNot Nothing, If([Enum].TryParse(ConfigToken("Network")?("Mail text format"), Mail_TextFormat), Mail_TextFormat, TextFormat.Plain), TextFormat.Plain)
 
             'Screensaver Section
             DefSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")

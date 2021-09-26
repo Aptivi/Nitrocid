@@ -232,7 +232,7 @@ Public Module SettingsApp
                     W(" 6) " + DoTranslation("Show progress on filesystem operations") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFilesystemProgress)))
                     W(" 7) " + DoTranslation("Show file details in list") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFileDetailsList)))
                 Case "6" 'Network
-                    MaxOptions = 20
+                    MaxOptions = 31
                     WriteSeparator(DoTranslation("Network Settings..."), True)
                     W(vbNewLine + DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Debug Port") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DebugPort)))
@@ -255,6 +255,17 @@ Public Module SettingsApp
                     W(" 18) " + DoTranslation("Try to validate secure FTP certificates") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FtpTryToValidateCertificate)))
                     W(" 19) " + DoTranslation("Show FTP MOTD on connection") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FtpShowMotd)))
                     W(" 20) " + DoTranslation("Always accept invalid FTP certificates") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FtpAlwaysAcceptInvalidCerts)))
+                    W(" 21) " + DoTranslation("Username prompt style for mail") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_UserPromptStyle)))
+                    W(" 22) " + DoTranslation("Password prompt style for mail") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_PassPromptStyle)))
+                    W(" 23) " + DoTranslation("IMAP prompt style for mail") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_IMAPPromptStyle)))
+                    W(" 24) " + DoTranslation("SMTP prompt style for mail") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_SMTPPromptStyle)))
+                    W(" 25) " + DoTranslation("Automatically detect mail server") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_AutoDetectServer)))
+                    W(" 26) " + DoTranslation("Enable mail debug") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_Debug)))
+                    W(" 27) " + DoTranslation("Notify for new mail messages") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_NotifyNewMail)))
+                    W(" 28) " + DoTranslation("GPG password prompt style for mail") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_GPGPromptStyle)))
+                    W(" 29) " + DoTranslation("Send IMAP ping interval") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_ImapPingInterval)))
+                    W(" 30) " + DoTranslation("Send SMTP ping interval") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_SmtpPingInterval)))
+                    W(" 31) " + DoTranslation("Mail text format") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_TextFormat)))
                 Case "7" 'Screensaver
                     MaxOptions = BuiltinSavers + 2 'Screensavers + Keys
                     WriteSeparator(DoTranslation("Screensaver Settings..."), True)
@@ -1150,6 +1161,68 @@ Public Module SettingsApp
                             KeyVar = NameOf(FtpShowDetailsInList)
                             WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Always accept invalid FTP certificates"), True)
                             W(vbNewLine + DoTranslation("Always accept invalid FTP certificates. Turning it on is not recommended as it may pose security risks."), True, ColTypes.Neutral)
+                        Case 21 'Username prompt style for mail
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(Mail_UserPromptStyle)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Username prompt style for mail"), True)
+                            W(vbNewLine + DoTranslation("Write how you want your username prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 22 'Password prompt style for mail
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(Mail_PassPromptStyle)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Password prompt style for mail"), True)
+                            W(vbNewLine + DoTranslation("Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 23 'IMAP prompt style for mail
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(Mail_IMAPPromptStyle)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("IMAP prompt style for mail"), True)
+                            W(vbNewLine + DoTranslation("Write how you want your IMAP server prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 24 'SMTP prompt style for mail
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(Mail_SMTPPromptStyle)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("SMTP prompt style for mail"), True)
+                            W(vbNewLine + DoTranslation("Write how you want your SMTP server prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 25 'Automatically detect mail server
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(Mail_AutoDetectServer)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Automatically detect mail server"), True)
+                            W(vbNewLine + DoTranslation("Automatically detect the mail server based on the given address."), True, ColTypes.Neutral)
+                        Case 26 'Enable mail debug
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(Mail_Debug)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Enable mail debug"), True)
+                            W(vbNewLine + DoTranslation("Enables mail server debug."), True, ColTypes.Neutral)
+                        Case 27 'Notify for new mail messages
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(Mail_NotifyNewMail)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Notify for new mail messages"), True)
+                            W(vbNewLine + DoTranslation("Notifies you for any new mail messages."), True, ColTypes.Neutral)
+                        Case 28 'GPG password prompt style for mail
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(Mail_GPGPromptStyle)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("GPG password prompt style for mail"), True)
+                            W(vbNewLine + DoTranslation("Write how you want your GPG password prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 29 'Send IMAP ping interval
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(Mail_ImapPingInterval)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Send IMAP ping interval"), True)
+                            W(vbNewLine + DoTranslation("How many milliseconds to send the IMAP ping?"), True, ColTypes.Neutral)
+                        Case 30 'Send SMTP ping interval
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(Mail_SmtpPingInterval)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Send SMTP ping interval"), True)
+                            W(vbNewLine + DoTranslation("How many milliseconds to send the SMTP ping?"), True, ColTypes.Neutral)
+                        Case 31 'Mail text format
+                            MaxKeyOptions = 6
+                            KeyType = SettingsKeyType.SSelection
+                            KeyVar = NameOf(Mail_TextFormat)
+                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Mail text format"), True)
+                            W(vbNewLine + DoTranslation("Controls how the mail text will be shown.") + vbNewLine, True, ColTypes.Neutral)
+                            W(" 1) " + DoTranslation("Plain text"), True, ColTypes.Option)
+                            W(" 2) " + DoTranslation("Flowed text"), True, ColTypes.Option)
+                            W(" 3) " + DoTranslation("HTML text"), True, ColTypes.Option)
+                            W(" 4) " + DoTranslation("Enriched text"), True, ColTypes.Option)
+                            W(" 5) " + DoTranslation("Compressed rich text"), True, ColTypes.Option)
+                            W(" 6) " + DoTranslation("Rich text"), True, ColTypes.Option)
                         Case Else
                             WriteSeparator(DoTranslation("Network Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

@@ -127,7 +127,7 @@ Public Module MailTransfer
                     W(Encoding.Default.GetString(DecryptedByte), True, ColTypes.ListValue)
                 End If
             Else
-                W(Msg.GetTextBody(TextFormat.Plain), True, ColTypes.ListValue)
+                W(Msg.GetTextBody(Mail_TextFormat), True, ColTypes.ListValue)
             End If
             Console.WriteLine()
 
