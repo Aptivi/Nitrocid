@@ -78,19 +78,19 @@ Public Module ConfigTools
             End If
         End If
         If ConfigToken("Login") IsNot Nothing Then
-            If ConfigToken("Login").Count <> 6 Then
+            If ConfigToken("Login").Count <> 9 Then
                 Wdbg(DebugLevel.W, "Missing keys in Login. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
         If ConfigToken("Shell") IsNot Nothing Then
-            If ConfigToken("Shell").Count <> 11 Then
+            If ConfigToken("Shell").Count <> 14 Then
                 Wdbg(DebugLevel.W, "Missing keys in Shell. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
         If ConfigToken("Filesystem") IsNot Nothing Then
-            If ConfigToken("Filesystem").Count <> 6 Then
+            If ConfigToken("Filesystem").Count <> 7 Then
                 Wdbg(DebugLevel.W, "Missing keys in Filesystem. Config fix needed set to true.")
                 FixesNeeded = True
             End If

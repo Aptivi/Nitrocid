@@ -221,7 +221,7 @@ Public Module SettingsApp
                     W(" 32) " + DoTranslation("Medium priority border color") + " [{0}] ", True, ColTypes.Option, MediumPriorityBorderColor)
                     W(" 33) " + DoTranslation("High priority border color") + " [{0}] ", True, ColTypes.Option, HighPriorityBorderColor)
                 Case "5" 'Filesystem
-                    MaxOptions = 6
+                    MaxOptions = 7
                     WriteSeparator(DoTranslation("Filesystem Settings..."), True)
                     W(vbNewLine + DoTranslation("This section lists the filesystem settings.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Filesystem sort mode") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SortMode)))
@@ -230,6 +230,7 @@ Public Module SettingsApp
                     W(" 4) " + DoTranslation("Show Hidden Files") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(HiddenFiles)))
                     W(" 5) " + DoTranslation("Size parse mode") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FullParseMode)))
                     W(" 6) " + DoTranslation("Show progress on filesystem operations") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFilesystemProgress)))
+                    W(" 7) " + DoTranslation("Show file details in list") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFileDetailsList)))
                 Case "6" 'Network
                     MaxOptions = 12
                     WriteSeparator(DoTranslation("Network Settings..."), True)
@@ -1033,6 +1034,11 @@ Public Module SettingsApp
                             KeyVar = NameOf(ShowFilesystemProgress)
                             WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Show progress on filesystem operations"), True)
                             W(vbNewLine + DoTranslation("Shows what file is being processed during the filesystem operations"), True, ColTypes.Neutral)
+                        Case 7 'Show file details in list
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ShowFileDetailsList)
+                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Show file details in list"), True)
+                            W(vbNewLine + DoTranslation("Shows the brief file details while listing files"), True, ColTypes.Neutral)
                     End Select
                 Case "6" 'Network
                     Select Case KeyNumber

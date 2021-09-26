@@ -184,7 +184,8 @@ Public Module Config
                     {"Debug Size Quota in Bytes", DebugQuota},
                     {"Show Hidden Files", HiddenFiles},
                     {"Size parse mode", FullParseMode},
-                    {"Show progress on filesystem operations", ShowFilesystemProgress}
+                    {"Show progress on filesystem operations", ShowFilesystemProgress},
+                    {"Show file details in list", ShowFileDetailsList}
             }
             ConfigurationObject.Add("Filesystem", FilesystemConfig)
 
@@ -565,6 +566,7 @@ Public Module Config
             SortMode = If(ConfigToken("Filesystem")?("Filesystem sort mode") IsNot Nothing, If([Enum].TryParse(ConfigToken("Filesystem")?("Filesystem sort mode"), SortMode), SortMode, FilesystemSortOptions.FullName), FilesystemSortOptions.FullName)
             SortDirection = If(ConfigToken("Filesystem")?("Filesystem sort direction") IsNot Nothing, If([Enum].TryParse(ConfigToken("Filesystem")?("Filesystem sort direction"), SortDirection), SortDirection, FilesystemSortDirection.Ascending), FilesystemSortDirection.Ascending)
             ShowFilesystemProgress = If(ConfigToken("Filesystem")?("Show progress on filesystem operations"), True)
+            ShowFileDetailsList = If(ConfigToken("Filesystem")?("Show file details in list"), True)
 
             'Hardware Section
             Wdbg(DebugLevel.I, "Parsing hardware section...")
