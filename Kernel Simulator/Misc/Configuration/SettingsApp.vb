@@ -232,7 +232,7 @@ Public Module SettingsApp
                     W(" 6) " + DoTranslation("Show progress on filesystem operations") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFilesystemProgress)))
                     W(" 7) " + DoTranslation("Show file details in list") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFileDetailsList)))
                 Case "6" 'Network
-                    MaxOptions = 12
+                    MaxOptions = 20
                     WriteSeparator(DoTranslation("Network Settings..."), True)
                     W(vbNewLine + DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Debug Port") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DebugPort)))
@@ -247,6 +247,14 @@ Public Module SettingsApp
                     W(" 10) " + DoTranslation("Show SSH banner") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SSHBanner)))
                     W(" 11) " + DoTranslation("Enable RPC") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RPCEnabled)))
                     W(" 12) " + DoTranslation("RPC Port") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RPCPort)))
+                    W(" 13) " + DoTranslation("Show file details in FTP list") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FtpShowDetailsInList)))
+                    W(" 14) " + DoTranslation("Username prompt style for FTP") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FtpUserPromptStyle)))
+                    W(" 15) " + DoTranslation("Password prompt style for FTP") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FtpPassPromptStyle)))
+                    W(" 16) " + DoTranslation("Use first FTP profile") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FtpUseFirstProfile)))
+                    W(" 17) " + DoTranslation("Add new connections to FTP speed dial") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FtpNewConnectionsToSpeedDial)))
+                    W(" 18) " + DoTranslation("Try to validate secure FTP certificates") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FtpTryToValidateCertificate)))
+                    W(" 19) " + DoTranslation("Show FTP MOTD on connection") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FtpShowMotd)))
+                    W(" 20) " + DoTranslation("Always accept invalid FTP certificates") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FtpAlwaysAcceptInvalidCerts)))
                 Case "7" 'Screensaver
                     MaxOptions = BuiltinSavers + 2 'Screensavers + Keys
                     WriteSeparator(DoTranslation("Screensaver Settings..."), True)
@@ -1102,6 +1110,46 @@ Public Module SettingsApp
                             KeyVar = NameOf(RPCPort)
                             WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("RPC Port"), True)
                             W(vbNewLine + DoTranslation("Write an RPC port. It must be numeric, and must not be already used. Otherwise, RPC will fail to open the port."), True, ColTypes.Neutral)
+                        Case 13 'Show file details in FTP list
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(FtpShowDetailsInList)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Show file details in FTP list"), True)
+                            W(vbNewLine + DoTranslation("Shows the FTP file details while listing remote directories."), True, ColTypes.Neutral)
+                        Case 14 'Username prompt style for FTP
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(FtpUserPromptStyle)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Username prompt style for FTP"), True)
+                            W(vbNewLine + DoTranslation("Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 15 'Password prompt style for FTP
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(FtpPassPromptStyle)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Password prompt style for FTP"), True)
+                            W(vbNewLine + DoTranslation("Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 16 'Use first FTP profile
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(FtpShowDetailsInList)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Use first FTP profile"), True)
+                            W(vbNewLine + DoTranslation("Uses the first FTP profile to connect to FTP."), True, ColTypes.Neutral)
+                        Case 17 'Add new connections to FTP speed dial
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(FtpShowDetailsInList)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Add new connections to FTP speed dial"), True)
+                            W(vbNewLine + DoTranslation("If enabled, adds a new connection to the FTP speed dial."), True, ColTypes.Neutral)
+                        Case 18 'Try to validate secure FTP certificates
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(FtpShowDetailsInList)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Try to validate secure FTP certificates"), True)
+                            W(vbNewLine + DoTranslation("Tries to validate the FTP certificates. Turning it off is not recommended."), True, ColTypes.Neutral)
+                        Case 19 'Show FTP MOTD on connection
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(FtpShowDetailsInList)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Show FTP MOTD on connection"), True)
+                            W(vbNewLine + DoTranslation("Shows the FTP message of the day on login."), True, ColTypes.Neutral)
+                        Case 20 'Always accept invalid FTP certificates
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(FtpShowDetailsInList)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Always accept invalid FTP certificates"), True)
+                            W(vbNewLine + DoTranslation("Always accept invalid FTP certificates. Turning it on is not recommended as it may pose security risks."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Network Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

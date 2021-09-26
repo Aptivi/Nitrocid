@@ -53,10 +53,12 @@ Module FTPFilesystem
 
                     If DirListFTP IsNot Nothing Then
                         If DirListFTP.Type = FtpFileSystemObjectType.File Then
-                            EntryBuilder.Append(": ")
-                            FileSize = ClientFTP.GetFileSize(DirListFTP.FullName)
-                            ModDate = ClientFTP.GetModifiedTime(DirListFTP.FullName)
-                            EntryBuilder.Append(New Color(ListValueColor).VTSequenceForeground + DoTranslation("{0} KB | Modified in: {1}").FormatString(FormatNumber(FileSize / 1024, 2), ModDate.ToString))
+                            If FtpShowDetailsInList Then
+                                EntryBuilder.Append(": ")
+                                FileSize = ClientFTP.GetFileSize(DirListFTP.FullName)
+                                ModDate = ClientFTP.GetModifiedTime(DirListFTP.FullName)
+                                EntryBuilder.Append(New Color(ListValueColor).VTSequenceForeground + DoTranslation("{0} KB | Modified in: {1}").FormatString(FormatNumber(FileSize / 1024, 2), ModDate.ToString))
+                            End If
                         ElseIf DirListFTP.Type = FtpFileSystemObjectType.Directory Then
                             EntryBuilder.Append("/")
                         End If

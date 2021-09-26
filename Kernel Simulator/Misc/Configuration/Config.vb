@@ -202,7 +202,15 @@ Public Module Config
                     {"Record chat to debug log", RecordChatToDebugLog},
                     {"Show SSH banner", SSHBanner},
                     {"Enable RPC", RPCEnabled},
-                    {"RPC Port", RPCPort}
+                    {"RPC Port", RPCPort},
+                    {"Show file details in FTP list", FtpShowDetailsInList},
+                    {"Username prompt style for FTP", FtpUserPromptStyle},
+                    {"Password prompt style for FTP", FtpPassPromptStyle},
+                    {"Use first FTP profile", FtpUseFirstProfile},
+                    {"Add new connections to FTP speed dial", FtpNewConnectionsToSpeedDial},
+                    {"Try to validate secure FTP certificates", FtpTryToValidateCertificate},
+                    {"Show FTP MOTD on connection", FtpShowMotd},
+                    {"Always accept invalid FTP certificates", FtpAlwaysAcceptInvalidCerts}
             }
             ConfigurationObject.Add("Network", NetworkConfig)
 
@@ -588,6 +596,14 @@ Public Module Config
             SSHBanner = If(ConfigToken("Network")?("Show SSH banner"), False)
             RPCEnabled = If(ConfigToken("Network")?("Enable RPC"), True)
             RPCPort = If(Integer.TryParse(ConfigToken("Network")?("RPC Port"), 0), ConfigToken("Network")?("RPC Port"), 12345)
+            FtpShowDetailsInList = If(ConfigToken("Network")?("Show file details in FTP list"), True)
+            FtpUserPromptStyle = If(ConfigToken("Network")?("Username prompt style for FTP"), "")
+            FtpPassPromptStyle = If(ConfigToken("Network")?("Password prompt style for FTP"), "")
+            FtpUseFirstProfile = If(ConfigToken("Network")?("Use first FTP profile"), True)
+            FtpNewConnectionsToSpeedDial = If(ConfigToken("Network")?("Add new connections to FTP speed dial"), True)
+            FtpTryToValidateCertificate = If(ConfigToken("Network")?("Try to validate secure FTP certificates"), True)
+            FtpShowMotd = If(ConfigToken("Network")?("Show FTP MOTD on connection"), True)
+            FtpAlwaysAcceptInvalidCerts = If(ConfigToken("Network")?("Always accept invalid FTP certificates"), True)
 
             'Screensaver Section
             DefSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")

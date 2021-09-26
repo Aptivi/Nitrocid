@@ -49,6 +49,14 @@ Public Module FTPShell
     Public FTPModCommands As New ArrayList
     Public FTPShellPromptStyle As String = ""
     Public ClientFTP As FtpClient
+    Public FtpShowDetailsInList As Boolean = True
+    Public FtpUserPromptStyle As String = ""
+    Public FtpPassPromptStyle As String = ""
+    Public FtpUseFirstProfile As Boolean
+    Public FtpNewConnectionsToSpeedDial As Boolean = True
+    Public FtpTryToValidateCertificate As Boolean = True
+    Public FtpShowMotd As Boolean = True
+    Public FtpAlwaysAcceptInvalidCerts As Boolean
     Friend FtpPass As String
     Private FtpCommand As String
     Private FtpInitialized As Boolean

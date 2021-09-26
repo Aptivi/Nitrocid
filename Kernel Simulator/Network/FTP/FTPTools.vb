@@ -40,7 +40,11 @@ Public Module FTPTools
         End If
 
         'Prompt for password
-        W(DoTranslation("Password for {0}: "), False, ColTypes.Input, user)
+        If Not String.IsNullOrWhiteSpace(FtpPassPromptStyle) Then
+            W(ProbePlaces(FtpPassPromptStyle), False, ColTypes.Input, user)
+        Else
+            W(DoTranslation("Password for {0}: "), False, ColTypes.Input, user)
+        End If
 
         'Get input
         FtpPass = ReadLineNoInput("*")
@@ -80,10 +84,14 @@ Public Module FTPTools
                 }
 
                 'Add handler for SSL validation
-                AddHandler ClientFTP.ValidateCertificate, New FtpSslValidation(AddressOf TryToValidate)
+                If FtpTryToValidateCertificate Then AddHandler ClientFTP.ValidateCertificate, New FtpSslValidation(AddressOf TryToValidate)
 
                 'Prompt for username
-                W(DoTranslation("Username for {0}: "), False, ColTypes.Input, address)
+                If Not String.IsNullOrWhiteSpace(FtpUserPromptStyle) Then
+                    W(ProbePlaces(FtpUserPromptStyle), False, ColTypes.Input, address)
+                Else
+                    W(DoTranslation("Username for {0}: "), False, ColTypes.Input, address)
+                End If
                 FtpUser = Console.ReadLine()
                 If FtpUser = "" Then
                     Wdbg(DebugLevel.W, "User is not provided. Fallback to ""anonymous""")
@@ -114,29 +122,33 @@ Public Module FTPTools
         Dim profsel As New FtpProfile
         Wdbg(DebugLevel.I, "Profile count: {0}", profiles.Count)
         If profiles.Count > 1 Then 'More than one profile
-            W(DoTranslation("More than one profile found. Select one:") + vbNewLine + vbNewLine +
-              "#, " + DoTranslation("Host Name, Username, Data Type, Encoding, Encryption, Protocols"), True, ColTypes.Neutral)
-            For i As Integer = 0 To profiles.Count - 1
-                W($"{i + 1}) {profiles(i).Host}, {profiles(i).Credentials.UserName}, {profiles(i).DataConnection}, {profiles(i).Encoding.EncodingName}, {profiles(i).Encryption}, {profiles(i).Protocols}", True, ColTypes.Option)
-            Next
-            Dim profanswer As Char
-            Dim profanswered As Boolean
-            While Not profanswered
-                W(vbNewLine + ">> ", False, ColTypes.Input)
-                profanswer = Console.ReadLine
-                Wdbg(DebugLevel.I, "Selection: {0}", profanswer)
-                If IsNumeric(profanswer) Then
-                    Try
-                        Wdbg(DebugLevel.I, "Profile selected")
-                        profsel = profiles(Val(profanswer) - 1)
-                        profanswered = True
-                    Catch ex As Exception
-                        Wdbg(DebugLevel.I, "Profile invalid")
-                        W(DoTranslation("Invalid profile selection.") + vbNewLine, True, ColTypes.Error)
-                        WStkTrc(ex)
-                    End Try
-                End If
-            End While
+            If FtpUseFirstProfile Then
+                profsel = profiles(0)
+            Else
+                W(DoTranslation("More than one profile found. Select one:") + vbNewLine + vbNewLine +
+                              "#, " + DoTranslation("Host Name, Username, Data Type, Encoding, Encryption, Protocols"), True, ColTypes.Neutral)
+                For i As Integer = 0 To profiles.Count - 1
+                    W($"{i + 1}) {profiles(i).Host}, {profiles(i).Credentials.UserName}, {profiles(i).DataConnection}, {profiles(i).Encoding.EncodingName}, {profiles(i).Encryption}, {profiles(i).Protocols}", True, ColTypes.Option)
+                Next
+                Dim profanswer As Char
+                Dim profanswered As Boolean
+                While Not profanswered
+                    W(vbNewLine + ">> ", False, ColTypes.Input)
+                    profanswer = Console.ReadLine
+                    Wdbg(DebugLevel.I, "Selection: {0}", profanswer)
+                    If IsNumeric(profanswer) Then
+                        Try
+                            Wdbg(DebugLevel.I, "Profile selected")
+                            profsel = profiles(Val(profanswer) - 1)
+                            profanswered = True
+                        Catch ex As Exception
+                            Wdbg(DebugLevel.I, "Profile invalid")
+                            W(DoTranslation("Invalid profile selection.") + vbNewLine, True, ColTypes.Error)
+                            WStkTrc(ex)
+                        End Try
+                    End If
+                End While
+            End If
         ElseIf profiles.Count = 1 Then
             profsel = profiles(0) 'Select first profile
         Else 'Failed trying to get profiles
@@ -155,10 +167,12 @@ Public Module FTPTools
         FtpConnected = True
 
         'If MOTD exists, show it
-        If ClientFTP.FileExists("welcome.msg") Then
-            W(FTPDownloadToString("welcome.msg"), True, ColTypes.Banner)
-        ElseIf ClientFTP.FileExists(".message") Then
-            W(FTPDownloadToString(".message"), True, ColTypes.Banner)
+        If FtpShowMotd Then
+            If ClientFTP.FileExists("welcome.msg") Then
+                W(FTPDownloadToString("welcome.msg"), True, ColTypes.Banner)
+            ElseIf ClientFTP.FileExists(".message") Then
+                W(FTPDownloadToString(".message"), True, ColTypes.Banner)
+            End If
         End If
 
         'Prepare to print current FTP directory
@@ -176,7 +190,7 @@ Public Module FTPTools
         Else
             'Speed dial format is below:
             'Site,Port,Username,Encryption
-            AddEntryToSpeedDial(FtpSite, ClientFTP.Port, FtpUser, SpeedDialType.FTP, ClientFTP.EncryptionMode)
+            If FtpNewConnectionsToSpeedDial Then AddEntryToSpeedDial(FtpSite, ClientFTP.Port, FtpUser, SpeedDialType.FTP, ClientFTP.EncryptionMode)
         End If
     End Sub
 
@@ -193,22 +207,28 @@ Public Module FTPTools
             Wdbg(DebugLevel.W, $"Certificate error is {e.PolicyErrors}")
             W(DoTranslation("During certificate validation, there are certificate errors. It might be the first time you've connected to the server or the certificate might have been expired. Here's an error:"), True, ColTypes.Error)
             W("- {0}", True, ColTypes.Error, e.PolicyErrors.ToString)
-            Dim Answer As String = ""
-            Do Until Answer.ToLower = "y" Or Answer.ToLower = "n"
-                W(DoTranslation("Are you sure that you want to connect?") + " (y/n) ", False, ColTypes.Question)
-                SetConsoleColor(New Color(InputColor))
-                Answer = Console.ReadKey.KeyChar
-                Console.WriteLine()
-                Wdbg(DebugLevel.I, $"Answer is {Answer}")
-                If Answer.ToLower = "y" Then
-                    Wdbg(DebugLevel.W, "Certificate accepted, although there are errors.")
-                    Wdbg(DebugLevel.I, e.Certificate.GetRawCertDataString)
-                    e.Accept = True
-                ElseIf Answer.ToLower <> "n" Then
-                    Wdbg(DebugLevel.W, "Invalid answer.")
-                    W(DoTranslation("Invalid answer. Please try again."), True, ColTypes.Error)
-                End If
-            Loop
+            If FtpAlwaysAcceptInvalidCerts Then
+                Wdbg(DebugLevel.W, "Certificate accepted, although there are errors.")
+                Wdbg(DebugLevel.I, e.Certificate.GetRawCertDataString)
+                e.Accept = True
+            Else
+                Dim Answer As String = ""
+                Do Until Answer.ToLower = "y" Or Answer.ToLower = "n"
+                    W(DoTranslation("Are you sure that you want to connect?") + " (y/n) ", False, ColTypes.Question)
+                    SetConsoleColor(New Color(InputColor))
+                    Answer = Console.ReadKey.KeyChar
+                    Console.WriteLine()
+                    Wdbg(DebugLevel.I, $"Answer is {Answer}")
+                    If Answer.ToLower = "y" Then
+                        Wdbg(DebugLevel.W, "Certificate accepted, although there are errors.")
+                        Wdbg(DebugLevel.I, e.Certificate.GetRawCertDataString)
+                        e.Accept = True
+                    ElseIf Answer.ToLower <> "n" Then
+                        Wdbg(DebugLevel.W, "Invalid answer.")
+                        W(DoTranslation("Invalid answer. Please try again."), True, ColTypes.Error)
+                    End If
+                Loop
+            End If
         End If
     End Sub
 
