@@ -52,7 +52,7 @@ Public Module SFTPTools
                 End If
 
                 'Make a new instance of SftpClient
-                ClientSFTP = New SftpClient(GetConnectionInfo(SftpHost, SftpPort, SFTPUser))
+                ClientSFTP = New SftpClient(PromptConnectionInfo(SftpHost, SftpPort, SFTPUser))
 
                 'Connect to SFTP
                 ConnectSFTP()
@@ -136,7 +136,7 @@ Public Module SFTPTools
                             Dim Port As String = SpeedDialLines(ChosenSpeedDialAddress)("Port")
                             Dim Username As String = SpeedDialLines(ChosenSpeedDialAddress)("User")
                             Wdbg(DebugLevel.I, "Address: {0}, Port: {1}, Username: {2}", Address, Port, Username)
-                            ClientSFTP = New SftpClient(GetConnectionInfo(Address, Port, Username))
+                            ClientSFTP = New SftpClient(PromptConnectionInfo(Address, Port, Username))
                             ConnectSFTP()
                         Else
                             Wdbg(DebugLevel.I, "Response is out-of-bounds. Retrying...")

@@ -45,13 +45,12 @@ Public Module SSH
     End Enum
 
     ''' <summary>
-    ''' Gets connection info from the information that the user provided (with prompts)
+    ''' Prompts the user for the connection info
     ''' </summary>
     ''' <param name="Address">An IP address or hostname</param>
     ''' <param name="Port">A port of the SSH/SFTP server. It's usually 22</param>
     ''' <param name="Username">A username to authenticate with</param>
-    Public Function GetConnectionInfo(Address As String, Port As Integer, Username As String) As ConnectionInfo
-
+    Public Function PromptConnectionInfo(Address As String, Port As Integer, Username As String) As ConnectionInfo
         'Authentication
         Wdbg(DebugLevel.I, "Address: {0}:{1}, Username: {2}", Address, Port, Username)
         Dim AuthenticationMethods As New List(Of AuthenticationMethod)
@@ -133,7 +132,18 @@ Public Module SSH
                 'Add authentication method
                 AuthenticationMethods.Add(New PasswordAuthenticationMethod(Username, Pass))
         End Select
-        Return New ConnectionInfo(Address, Port, Username, AuthenticationMethods.ToArray)
+        Return GetConnectionInfo(Address, Port, Username, AuthenticationMethods)
+    End Function
+
+    ''' <summary>
+    ''' Gets connection info from the information that the user provided
+    ''' </summary>
+    ''' <param name="Address">An IP address or hostname</param>
+    ''' <param name="Port">A port of the SSH/SFTP server. It's usually 22</param>
+    ''' <param name="Username">A username to authenticate with</param>
+    ''' <param name="AuthMethods">Authentication methods list.</param>
+    Public Function GetConnectionInfo(Address As String, Port As Integer, Username As String, AuthMethods As List(Of AuthenticationMethod)) As ConnectionInfo
+        Return New ConnectionInfo(Address, Port, Username, AuthMethods.ToArray)
     End Function
 
     ''' <summary>
@@ -145,7 +155,7 @@ Public Module SSH
     Sub InitializeSSH(Address As String, Port As Integer, Username As String, Connection As ConnectionType, Optional Command As String = "")
         Try
             'Connection
-            Dim SSH As New SshClient(GetConnectionInfo(Address, Port, Username))
+            Dim SSH As New SshClient(PromptConnectionInfo(Address, Port, Username))
             SSH.ConnectionInfo.Timeout = TimeSpan.FromSeconds(30)
             If SSHBanner Then AddHandler SSH.ConnectionInfo.AuthenticationBanner, AddressOf ShowBanner
             Wdbg(DebugLevel.I, "Connecting to {0}...", Address)
