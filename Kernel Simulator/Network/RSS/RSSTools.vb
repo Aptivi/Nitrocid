@@ -175,7 +175,7 @@ Public Module RSSTools
                     Next
                 End If
             End If
-            Thread.Sleep(60000)
+            Thread.Sleep(RSSRefreshInterval)
         End While
     End Sub
 

@@ -32,6 +32,9 @@ Public Module RSSShell
     Public RSSModCommands As New ArrayList
     Public RSSFeedInstance As RSSFeed
     Public RSSShellPromptStyle As String = ""
+    Public RSSFeedUrlPromptStyle As String = ""
+    Public RSSRefreshFeeds As Boolean = True
+    Public RSSRefreshInterval As Integer = 60000
     Friend RSSRefresher As New Thread(AddressOf RefreshFeeds) With {.Name = "RSS Feed Refresher"}
     Friend RSSFeedLink As String
 
@@ -50,7 +53,11 @@ Begin:
             If String.IsNullOrWhiteSpace(RSSFeedLink) Then
                 Do While String.IsNullOrWhiteSpace(RSSFeedLink)
                     Try
-                        W(DoTranslation("Enter an RSS feed URL:") + " ", False, ColTypes.Input)
+                        If Not String.IsNullOrWhiteSpace(RSSFeedUrlPromptStyle) Then
+                            W(ProbePlaces(RSSFeedUrlPromptStyle), False, ColTypes.Input)
+                        Else
+                            W(DoTranslation("Enter an RSS feed URL:") + " ", False, ColTypes.Input)
+                        End If
                         RSSFeedLink = Console.ReadLine
                         RSSFeedInstance = New RSSFeed(RSSFeedLink, RSSFeedType.Infer)
                         RSSFeedLink = RSSFeedInstance.FeedUrl
@@ -79,7 +86,7 @@ Begin:
                 End Try
 
                 'Send ping to keep the connection alive
-                If Not RSSKeepAlive And Not RSSRefresher.IsAlive Then RSSRefresher.Start()
+                If Not RSSKeepAlive And Not RSSRefresher.IsAlive And RSSRefreshFeeds Then RSSRefresher.Start()
                 Wdbg(DebugLevel.I, "Made new thread about RefreshFeeds()")
 
                 'Prepare for prompt
@@ -145,7 +152,7 @@ Begin:
             Wdbg(DebugLevel.W, "Exit requested, but not disconnecting.")
         Else
             Wdbg(DebugLevel.W, "Exit requested. Disconnecting host...")
-            RSSRefresher.Abort()
+            If RSSRefreshFeeds Then RSSRefresher.Abort()
             RSSFeedLink = ""
             RSSFeedInstance = Nothing
             RSSRefresher = New Thread(AddressOf RefreshFeeds) With {.Name = "RSS Feed Refresher"}

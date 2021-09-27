@@ -224,7 +224,10 @@ Public Module Config
                     {"Send SMTP ping interval", Mail_SmtpPingInterval},
                     {"Mail text format", Mail_TextFormat.ToString},
                     {"Automatically start remote debug on startup", RDebugAutoStart},
-                    {"Remote debug message format", RDebugMessageFormat}
+                    {"Remote debug message format", RDebugMessageFormat},
+                    {"RSS feed URL prompt style", RSSFeedUrlPromptStyle},
+                    {"Auto refresh RSS feed", RSSRefreshFeeds},
+                    {"Auto refresh RSS feed interval", RSSRefreshInterval}
             }
             ConfigurationObject.Add("Network", NetworkConfig)
 
@@ -631,6 +634,9 @@ Public Module Config
             Mail_TextFormat = If(ConfigToken("Network")?("Mail text format") IsNot Nothing, If([Enum].TryParse(ConfigToken("Network")?("Mail text format"), Mail_TextFormat), Mail_TextFormat, TextFormat.Plain), TextFormat.Plain)
             RDebugAutoStart = If(ConfigToken("Network")?("Automatically start remote debug on startup"), True)
             RDebugMessageFormat = If(ConfigToken("Network")?("Remote debug message format"), "")
+            RSSFeedUrlPromptStyle = If(ConfigToken("Network")?("RSS feed URL prompt style"), "")
+            RSSRefreshFeeds = If(ConfigToken("Network")?("Auto refresh RSS feed"), True)
+            RSSRefreshInterval = If(Integer.TryParse(ConfigToken("Network")?("Auto refresh RSS feed interval"), 0), ConfigToken("Network")?("Auto refresh RSS feed interval"), 60000)
 
             'Screensaver Section
             DefSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")

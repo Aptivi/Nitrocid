@@ -232,7 +232,7 @@ Public Module SettingsApp
                     W(" 6) " + DoTranslation("Show progress on filesystem operations") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFilesystemProgress)))
                     W(" 7) " + DoTranslation("Show file details in list") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFileDetailsList)))
                 Case "6" 'Network
-                    MaxOptions = 33
+                    MaxOptions = 36
                     WriteSeparator(DoTranslation("Network Settings..."), True)
                     W(vbNewLine + DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Debug Port") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DebugPort)))
@@ -268,6 +268,9 @@ Public Module SettingsApp
                     W(" 31) " + DoTranslation("Mail text format") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_TextFormat)))
                     W(" 32) " + DoTranslation("Automatically start remote debug on startup") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RDebugAutoStart)))
                     W(" 33) " + DoTranslation("Remote debug message format") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RDebugMessageFormat)))
+                    W(" 34) " + DoTranslation("RSS feed URL prompt style") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RSSFeedUrlPromptStyle)))
+                    W(" 35) " + DoTranslation("Auto refresh RSS feed") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RSSRefreshFeeds)))
+                    W(" 36) " + DoTranslation("Auto refresh RSS feed interval") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RSSRefreshInterval)))
                 Case "7" 'Screensaver
                     MaxOptions = BuiltinSavers + 2 'Screensavers + Keys
                     WriteSeparator(DoTranslation("Screensaver Settings..."), True)
@@ -1235,6 +1238,21 @@ Public Module SettingsApp
                             KeyVar = NameOf(RDebugMessageFormat)
                             WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Remote debug message format"), True)
                             W(vbNewLine + DoTranslation("Specifies the remote debug message format. {0} for name, {1} for message."), True, ColTypes.Neutral)
+                        Case 34 'RSS feed URL prompt style
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(RSSFeedUrlPromptStyle)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("RSS feed URL prompt style"), True)
+                            W(vbNewLine + DoTranslation("Write how you want your RSS feed server prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 35 'Auto refresh RSS feed
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(RSSRefreshFeeds)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Auto refresh RSS feed"), True)
+                            W(vbNewLine + DoTranslation("Auto refresh RSS feed"), True, ColTypes.Neutral)
+                        Case 36 'Auto refresh RSS feed interval
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RSSRefreshInterval)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Auto refresh RSS feed interval"), True)
+                            W(vbNewLine + DoTranslation("How many milliseconds to refresh the RSS feed?"), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Network Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
