@@ -227,7 +227,10 @@ Public Module Config
                     {"Remote debug message format", RDebugMessageFormat},
                     {"RSS feed URL prompt style", RSSFeedUrlPromptStyle},
                     {"Auto refresh RSS feed", RSSRefreshFeeds},
-                    {"Auto refresh RSS feed interval", RSSRefreshInterval}
+                    {"Auto refresh RSS feed interval", RSSRefreshInterval},
+                    {"Show file details in SFTP list", SFTPShowDetailsInList},
+                    {"Username prompt style for SFTP", SFTPUserPromptStyle},
+                    {"Add new connections to SFTP speed dial", SFTPNewConnectionsToSpeedDial}
             }
             ConfigurationObject.Add("Network", NetworkConfig)
 
@@ -637,6 +640,9 @@ Public Module Config
             RSSFeedUrlPromptStyle = If(ConfigToken("Network")?("RSS feed URL prompt style"), "")
             RSSRefreshFeeds = If(ConfigToken("Network")?("Auto refresh RSS feed"), True)
             RSSRefreshInterval = If(Integer.TryParse(ConfigToken("Network")?("Auto refresh RSS feed interval"), 0), ConfigToken("Network")?("Auto refresh RSS feed interval"), 60000)
+            SFTPShowDetailsInList = If(ConfigToken("Network")?("Show file details in SFTP list"), True)
+            SFTPUserPromptStyle = If(ConfigToken("Network")?("Username prompt style for SFTP"), "")
+            SFTPNewConnectionsToSpeedDial = If(ConfigToken("Network")?("Add new connections to SFTP speed dial"), True)
 
             'Screensaver Section
             DefSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")

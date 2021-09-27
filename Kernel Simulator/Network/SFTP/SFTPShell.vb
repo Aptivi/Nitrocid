@@ -42,6 +42,9 @@ Public Module SFTPShell
     Public SFTPExit As Boolean
     Public SFTPModCommands As New ArrayList
     Public SFTPShellPromptStyle As String = ""
+    Public SFTPShowDetailsInList As Boolean = True
+    Public SFTPUserPromptStyle As String = ""
+    Public SFTPNewConnectionsToSpeedDial As Boolean = True
     Public ClientSFTP As SftpClient
     Friend SFTPPass As String
     Private SFTPStrCmd As String

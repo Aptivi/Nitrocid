@@ -52,9 +52,11 @@ Module SFTPFilesystem
 
                     If DirListSFTP.IsRegularFile Then
                         EntryBuilder.Append(": ")
-                        FileSize = DirListSFTP.Length
-                        ModDate = DirListSFTP.LastWriteTime
-                        EntryBuilder.Append(New Color(ListValueColor).VTSequenceForeground + DoTranslation("{0} KB | Modified in: {1}").FormatString(FormatNumber(FileSize / 1024, 2), ModDate.ToString))
+                        If SFTPShowDetailsInList Then
+                            FileSize = DirListSFTP.Length
+                            ModDate = DirListSFTP.LastWriteTime
+                            EntryBuilder.Append(New Color(ListValueColor).VTSequenceForeground + DoTranslation("{0} KB | Modified in: {1}").FormatString(FormatNumber(FileSize / 1024, 2), ModDate.ToString))
+                        End If
                     ElseIf DirListSFTP.IsDirectory Then
                         EntryBuilder.Append("/")
                     End If

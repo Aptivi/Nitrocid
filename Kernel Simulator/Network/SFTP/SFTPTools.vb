@@ -40,7 +40,11 @@ Public Module SFTPTools
                 End If
 
                 'Prompt for username
-                W(DoTranslation("Username for {0}: "), False, ColTypes.Input, address)
+                If Not String.IsNullOrWhiteSpace(SFTPUserPromptStyle) Then
+                    W(ProbePlaces(SFTPUserPromptStyle), False, ColTypes.Input, address)
+                Else
+                    W(DoTranslation("Username for {0}: "), False, ColTypes.Input, address)
+                End If
                 SFTPUser = Console.ReadLine()
                 If SFTPUser = "" Then
                     Wdbg(DebugLevel.W, "User is not provided. Fallback to ""anonymous""")
@@ -94,7 +98,7 @@ Public Module SFTPTools
         Else
             'Speed dial format is below:
             'Site,Port,Username
-            AddEntryToSpeedDial(SFTPSite, ClientSFTP.ConnectionInfo.Port, SFTPUser, SpeedDialType.SFTP)
+            If SFTPNewConnectionsToSpeedDial Then AddEntryToSpeedDial(SFTPSite, ClientSFTP.ConnectionInfo.Port, SFTPUser, SpeedDialType.SFTP)
         End If
     End Sub
 

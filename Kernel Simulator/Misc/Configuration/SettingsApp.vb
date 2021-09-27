@@ -232,7 +232,7 @@ Public Module SettingsApp
                     W(" 6) " + DoTranslation("Show progress on filesystem operations") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFilesystemProgress)))
                     W(" 7) " + DoTranslation("Show file details in list") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFileDetailsList)))
                 Case "6" 'Network
-                    MaxOptions = 36
+                    MaxOptions = 39
                     WriteSeparator(DoTranslation("Network Settings..."), True)
                     W(vbNewLine + DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Debug Port") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DebugPort)))
@@ -271,6 +271,9 @@ Public Module SettingsApp
                     W(" 34) " + DoTranslation("RSS feed URL prompt style") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RSSFeedUrlPromptStyle)))
                     W(" 35) " + DoTranslation("Auto refresh RSS feed") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RSSRefreshFeeds)))
                     W(" 36) " + DoTranslation("Auto refresh RSS feed interval") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RSSRefreshInterval)))
+                    W(" 37) " + DoTranslation("Show file details in SFTP list") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SFTPShowDetailsInList)))
+                    W(" 38) " + DoTranslation("Username prompt style for SFTP") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SFTPUserPromptStyle)))
+                    W(" 39) " + DoTranslation("Add new connections to SFTP speed dial") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SFTPNewConnectionsToSpeedDial)))
                 Case "7" 'Screensaver
                     MaxOptions = BuiltinSavers + 2 'Screensavers + Keys
                     WriteSeparator(DoTranslation("Screensaver Settings..."), True)
@@ -1253,6 +1256,21 @@ Public Module SettingsApp
                             KeyVar = NameOf(RSSRefreshInterval)
                             WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Auto refresh RSS feed interval"), True)
                             W(vbNewLine + DoTranslation("How many milliseconds to refresh the RSS feed?"), True, ColTypes.Neutral)
+                        Case 37 'Show file details in SFTP list
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(SFTPShowDetailsInList)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Show file details in SFTP list"), True)
+                            W(vbNewLine + DoTranslation("Shows the SFTP file details while listing remote directories."), True, ColTypes.Neutral)
+                        Case 38 'Username prompt style for SFTP
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(SFTPUserPromptStyle)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Username prompt style for SFTP"), True)
+                            W(vbNewLine + DoTranslation("Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 39 'Add new connections to SFTP speed dial
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(SFTPNewConnectionsToSpeedDial)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Add new connections to SFTP speed dial"), True)
+                            W(vbNewLine + DoTranslation("If enabled, adds a new connection to the SFTP speed dial."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Network Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
