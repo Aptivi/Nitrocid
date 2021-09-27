@@ -275,7 +275,7 @@ Public Module NetworkTransfer
         If CancellationToken.Token.IsCancellationRequested Then
             WClient.CancelAsync()
         End If
-        If Not DFinish Then
+        If Not UFinish Then
             If Not String.IsNullOrWhiteSpace(UploadPercentagePrint) Then
                 WriteWhere(ProbePlaces(UploadPercentagePrint), 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
             Else
