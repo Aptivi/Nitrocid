@@ -232,7 +232,7 @@ Public Module SettingsApp
                     W(" 6) " + DoTranslation("Show progress on filesystem operations") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFilesystemProgress)))
                     W(" 7) " + DoTranslation("Show file details in list") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFileDetailsList)))
                 Case "6" 'Network
-                    MaxOptions = 31
+                    MaxOptions = 33
                     WriteSeparator(DoTranslation("Network Settings..."), True)
                     W(vbNewLine + DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Debug Port") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DebugPort)))
@@ -266,6 +266,8 @@ Public Module SettingsApp
                     W(" 29) " + DoTranslation("Send IMAP ping interval") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_ImapPingInterval)))
                     W(" 30) " + DoTranslation("Send SMTP ping interval") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_SmtpPingInterval)))
                     W(" 31) " + DoTranslation("Mail text format") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_TextFormat)))
+                    W(" 32) " + DoTranslation("Automatically start remote debug on startup") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RDebugAutoStart)))
+                    W(" 33) " + DoTranslation("Remote debug message format") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RDebugMessageFormat)))
                 Case "7" 'Screensaver
                     MaxOptions = BuiltinSavers + 2 'Screensavers + Keys
                     WriteSeparator(DoTranslation("Screensaver Settings..."), True)
@@ -1223,6 +1225,16 @@ Public Module SettingsApp
                             W(" 4) " + DoTranslation("Enriched text"), True, ColTypes.Option)
                             W(" 5) " + DoTranslation("Compressed rich text"), True, ColTypes.Option)
                             W(" 6) " + DoTranslation("Rich text"), True, ColTypes.Option)
+                        Case 32 'Automatically start remote debug on startup
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(RDebugAutoStart)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Automatically start remote debug on startup"), True)
+                            W(vbNewLine + DoTranslation("If you want remote debug to start on boot, enable this."), True, ColTypes.Neutral)
+                        Case 33 'Remote debug message format
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(RDebugMessageFormat)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Remote debug message format"), True)
+                            W(vbNewLine + DoTranslation("Specifies the remote debug message format. {0} for name, {1} for message."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Network Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

@@ -30,6 +30,8 @@ Public Module RemoteDebugger
     Public RDebugThread As New Thread(AddressOf StartRDebugger) With {.IsBackground = True, .Name = "Remote Debug Thread"}
     Public RDebugBlocked As New List(Of String) 'Blocked IP addresses
     Public RDebugStopping As Boolean
+    Public RDebugAutoStart As Boolean = True
+    Public RDebugMessageFormat As String = ""
 
     ''' <summary>
     ''' Whether to start or stop the remote debugger
@@ -157,10 +159,13 @@ Public Module RemoteDebugger
                             End If
                         Else
                             If Not String.IsNullOrEmpty(name) Then 'Prevent no-name people from chatting
+                                If String.IsNullOrWhiteSpace(RDebugMessageFormat) Then
+                                    RDebugMessageFormat = "{0}> {1}"
+                                End If
                                 If RecordChatToDebugLog Then
-                                    Wdbg(DebugLevel.I, "{0}> {1}", name, msg.Replace(vbNullChar, ""))
+                                    Wdbg(DebugLevel.I, ProbePlaces(RDebugMessageFormat), name, msg.Replace(vbNullChar, ""))
                                 Else
-                                    WdbgDevicesOnly("I", "{0}> {1}", name, msg.Replace(vbNullChar, ""))
+                                    WdbgDevicesOnly(DebugLevel.I, ProbePlaces(RDebugMessageFormat), name, msg.Replace(vbNullChar, ""))
                                 End If
                                 SetDeviceProperty(ip, DeviceProperty.ChatHistory, "[" + Render() + "] " + msg.Replace(vbNullChar, ""))
                             End If

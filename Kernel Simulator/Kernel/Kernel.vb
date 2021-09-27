@@ -89,7 +89,7 @@ Public Module Kernel
                 Console.WriteLine()
                 WriteSeparator(DoTranslation("- Stage 1: System initialization"), False, ColTypes.Stage)
                 Wdbg(DebugLevel.I, "- Kernel Phase 1: Initializing system")
-                StartRDebugThread()
+                If RDebugAutoStart Then StartRDebugThread()
                 W(DoTranslation("Starting RPC..."), True, ColTypes.Neutral)
                 StartRPC()
 

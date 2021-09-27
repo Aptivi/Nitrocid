@@ -222,7 +222,9 @@ Public Module Config
                     {"GPG password prompt style for mail", Mail_GPGPromptStyle},
                     {"Send IMAP ping interval", Mail_ImapPingInterval},
                     {"Send SMTP ping interval", Mail_SmtpPingInterval},
-                    {"Mail text format", Mail_TextFormat.ToString}
+                    {"Mail text format", Mail_TextFormat.ToString},
+                    {"Automatically start remote debug on startup", RDebugAutoStart},
+                    {"Remote debug message format", RDebugMessageFormat}
             }
             ConfigurationObject.Add("Network", NetworkConfig)
 
@@ -627,6 +629,8 @@ Public Module Config
             Mail_ImapPingInterval = If(Integer.TryParse(ConfigToken("Network")?("Send IMAP ping interval"), 0), ConfigToken("Network")?("Send IMAP ping interval"), 30000)
             Mail_SmtpPingInterval = If(Integer.TryParse(ConfigToken("Network")?("Send SMTP ping interval"), 0), ConfigToken("Network")?("Send SMTP ping interval"), 30000)
             Mail_TextFormat = If(ConfigToken("Network")?("Mail text format") IsNot Nothing, If([Enum].TryParse(ConfigToken("Network")?("Mail text format"), Mail_TextFormat), Mail_TextFormat, TextFormat.Plain), TextFormat.Plain)
+            RDebugAutoStart = If(ConfigToken("Network")?("Automatically start remote debug on startup"), True)
+            RDebugMessageFormat = If(ConfigToken("Network")?("Remote debug message format"), "")
 
             'Screensaver Section
             DefSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")
