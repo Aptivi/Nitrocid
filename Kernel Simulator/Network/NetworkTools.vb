@@ -26,6 +26,7 @@ Public Module NetworkTools
     'Variables
     Public DownloadRetries As Integer = 3
     Public UploadRetries As Integer = 3
+    Public PingTimeout As Integer = 60000
     Friend DFinish As Boolean
     Friend UFinish As Boolean
 
@@ -58,8 +59,31 @@ Public Module NetworkTools
         Dim Pinger As New Ping
         Dim PingerOpts As New PingOptions With {.DontFragment = True}
         Dim PingBuffer() As Byte = Encoding.ASCII.GetBytes("Kernel Simulator")
-        Dim PingTimeout As Integer = 60000 '60 seconds = 1 minute. timeout of Pinger.Send() takes milliseconds.
-        Return Pinger.Send(Address, PingTimeout, PingBuffer, PingerOpts)
+        Dim Timeout As Integer = PingTimeout '60 seconds = 1 minute. timeout of Pinger.Send() takes milliseconds.
+        Return PingAddress(Address, Timeout, PingBuffer)
+    End Function
+
+    ''' <summary>
+    ''' Pings an address
+    ''' </summary>
+    ''' <param name="Address">Target address</param>
+    ''' <returns>A ping reply status</returns>
+    Public Function PingAddress(Address As String, Timeout As Integer) As PingReply
+        Dim Pinger As New Ping
+        Dim PingerOpts As New PingOptions With {.DontFragment = True}
+        Dim PingBuffer() As Byte = Encoding.ASCII.GetBytes("Kernel Simulator")
+        Return PingAddress(Address, Timeout, PingBuffer)
+    End Function
+
+    ''' <summary>
+    ''' Pings an address
+    ''' </summary>
+    ''' <param name="Address">Target address</param>
+    ''' <returns>A ping reply status</returns>
+    Public Function PingAddress(Address As String, Timeout As Integer, Buffer() As Byte) As PingReply
+        Dim Pinger As New Ping
+        Dim PingerOpts As New PingOptions With {.DontFragment = True}
+        Return Pinger.Send(Address, Timeout, Buffer, PingerOpts)
     End Function
 
     ''' <summary>

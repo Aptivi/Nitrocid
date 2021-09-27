@@ -86,7 +86,7 @@ Public Module NetworkAdapterPrint
                 'Print adapter infos if not failed
                 If Not Failed Then
                     PrintAdapterIPv4Info(adapter, p, s, adapterNumber)
-                    'Additionally, print adapter IPv6 infos if available
+                    'Additionally, print adapter IPv6 info if available
                     If Not NoV6 Then
                         PrintAdapterIPv6Info(adapter, p6, adapterNumber)
                     End If
@@ -97,8 +97,10 @@ Public Module NetworkAdapterPrint
         Next
 
         'Print general IPv4 and IPv6 information
-        W("==========================================", True, ColTypes.Neutral)
-        PrintGeneralNetInfo(gs4, gs6)
+        If GeneralNetworkInformation Then
+            W("==========================================", True, ColTypes.Neutral)
+            PrintGeneralNetInfo(gs4, gs6)
+        End If
     End Sub
 
     ''' <summary>
@@ -109,16 +111,23 @@ Public Module NetworkAdapterPrint
     ''' <param name="Statistics">Network statistics</param>
     ''' <param name="AdapterNumber">Reference adapter number</param>
     Sub PrintAdapterIPv4Info(NInterface As NetworkInterface, Properties As IPv4InterfaceProperties, Statistics As IPv4InterfaceStatistics, AdapterNumber As Long)
-        W(DoTranslation("IPv4 information:") + vbNewLine +
-          DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
-          DoTranslation("Adapter Name:") + " {1}" + vbNewLine +
-          DoTranslation("Maximum Transmission Unit: {2} Units") + vbNewLine +
-          DoTranslation("DHCP Enabled:") + " {3}" + vbNewLine +
-          DoTranslation("Non-unicast packets:") + " {4}/{5}" + vbNewLine +
-          DoTranslation("Unicast packets:") + " {6}/{7}" + vbNewLine +
-          DoTranslation("Error incoming/outgoing packets:") + " {8}/{9}", True, ColTypes.Neutral,
-          AdapterNumber, NInterface.Description, Properties.Mtu, Properties.IsDhcpEnabled, Statistics.NonUnicastPacketsSent, Statistics.NonUnicastPacketsReceived,
-          Statistics.UnicastPacketsSent, Statistics.UnicastPacketsReceived, Statistics.IncomingPacketsWithErrors, Statistics.OutgoingPacketsWithErrors)
+        If ExtensiveAdapterInformation Then
+            W(DoTranslation("IPv4 information:") + vbNewLine +
+              DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
+              DoTranslation("Adapter Name:") + " {1}" + vbNewLine +
+              DoTranslation("Maximum Transmission Unit: {2} Units") + vbNewLine +
+              DoTranslation("DHCP Enabled:") + " {3}" + vbNewLine +
+              DoTranslation("Non-unicast packets:") + " {4}/{5}" + vbNewLine +
+              DoTranslation("Unicast packets:") + " {6}/{7}" + vbNewLine +
+              DoTranslation("Error incoming/outgoing packets:") + " {8}/{9}", True, ColTypes.Neutral,
+              AdapterNumber, NInterface.Description, Properties.Mtu, Properties.IsDhcpEnabled, Statistics.NonUnicastPacketsSent, Statistics.NonUnicastPacketsReceived,
+              Statistics.UnicastPacketsSent, Statistics.UnicastPacketsReceived, Statistics.IncomingPacketsWithErrors, Statistics.OutgoingPacketsWithErrors)
+        Else
+            W(DoTranslation("IPv4 information:") + vbNewLine +
+              DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
+              DoTranslation("Adapter Name:") + " {1}", True, ColTypes.Neutral,
+              AdapterNumber, NInterface.Description)
+        End If
     End Sub
 
     ''' <summary>
@@ -128,11 +137,18 @@ Public Module NetworkAdapterPrint
     ''' <param name="Properties">Network properties</param>
     ''' <param name="AdapterNumber">Reference adapter number</param>
     Sub PrintAdapterIPv6Info(NInterface As NetworkInterface, Properties As IPv6InterfaceProperties, AdapterNumber As Long)
-        W(DoTranslation("IPv6 information:") + vbNewLine +
-          DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
-          DoTranslation("Adapter Name:") + " {1}" + vbNewLine +
-          DoTranslation("Maximum Transmission Unit: {2} Units"), True, ColTypes.Neutral,
-          AdapterNumber, NInterface.Description, Properties.Mtu)
+        If ExtensiveAdapterInformation Then
+            W(DoTranslation("IPv6 information:") + vbNewLine +
+              DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
+              DoTranslation("Adapter Name:") + " {1}" + vbNewLine +
+              DoTranslation("Maximum Transmission Unit: {2} Units"), True, ColTypes.Neutral,
+              AdapterNumber, NInterface.Description, Properties.Mtu)
+        Else
+            W(DoTranslation("IPv6 information:") + vbNewLine +
+              DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
+              DoTranslation("Adapter Name:") + " {1}", True, ColTypes.Neutral,
+              AdapterNumber, NInterface.Description)
+        End If
     End Sub
 
     ''' <summary>

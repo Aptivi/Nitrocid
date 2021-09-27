@@ -199,6 +199,14 @@ Public Module Flags
     ''' Whether to probe the injected commands at the start of the kernel shell
     ''' </summary>
     Public ProbeInjectedCommands As Boolean = True
+    ''' <summary>
+    ''' Whether to show more information about adapters
+    ''' </summary>
+    Public ExtensiveAdapterInformation As Boolean = True
+    ''' <summary>
+    ''' Whether to print general network information
+    ''' </summary>
+    Public GeneralNetworkInformation As Boolean = True
 
     'Private flags
     ''' <summary>

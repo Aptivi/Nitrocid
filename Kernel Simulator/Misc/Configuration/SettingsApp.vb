@@ -232,7 +232,7 @@ Public Module SettingsApp
                     W(" 6) " + DoTranslation("Show progress on filesystem operations") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFilesystemProgress)))
                     W(" 7) " + DoTranslation("Show file details in list") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFileDetailsList)))
                 Case "6" 'Network
-                    MaxOptions = 39
+                    MaxOptions = 44
                     WriteSeparator(DoTranslation("Network Settings..."), True)
                     W(vbNewLine + DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Debug Port") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DebugPort)))
@@ -274,6 +274,11 @@ Public Module SettingsApp
                     W(" 37) " + DoTranslation("Show file details in SFTP list") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SFTPShowDetailsInList)))
                     W(" 38) " + DoTranslation("Username prompt style for SFTP") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SFTPUserPromptStyle)))
                     W(" 39) " + DoTranslation("Add new connections to SFTP speed dial") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SFTPNewConnectionsToSpeedDial)))
+                    W(" 40) " + DoTranslation("Ping timeout") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(PingTimeout)))
+                    W(" 41) " + DoTranslation("Show extensive adapter info") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ExtensiveAdapterInformation)))
+                    W(" 42) " + DoTranslation("Show general network information") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GeneralNetworkInformation)))
+                    W(" 43) " + DoTranslation("Download percentage text") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DownloadPercentagePrint)))
+                    W(" 44) " + DoTranslation("Upload percentage text") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(UploadPercentagePrint)))
                 Case "7" 'Screensaver
                     MaxOptions = BuiltinSavers + 2 'Screensavers + Keys
                     WriteSeparator(DoTranslation("Screensaver Settings..."), True)
@@ -1271,6 +1276,31 @@ Public Module SettingsApp
                             KeyVar = NameOf(SFTPNewConnectionsToSpeedDial)
                             WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Add new connections to SFTP speed dial"), True)
                             W(vbNewLine + DoTranslation("If enabled, adds a new connection to the SFTP speed dial."), True, ColTypes.Neutral)
+                        Case 40 'Ping timeout
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(PingTimeout)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Ping timeout"), True)
+                            W(vbNewLine + DoTranslation("How many milliseconds to wait before declaring timeout?"), True, ColTypes.Neutral)
+                        Case 41 'Show extensive adapter info
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ExtensiveAdapterInformation)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Show extensive adapter info"), True)
+                            W(vbNewLine + DoTranslation("Prints the extensive adapter information, such as packet information."), True, ColTypes.Neutral)
+                        Case 42 'Show general network information
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(GeneralNetworkInformation)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Show general network information"), True)
+                            W(vbNewLine + DoTranslation("Shows the general information about network."), True, ColTypes.Neutral)
+                        Case 43 'Download percentage text
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(DownloadPercentagePrint)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Download percentage text"), True)
+                            W(vbNewLine + DoTranslation("Write how you want your download percentage text to be. Leave blank to use default style. Placeholders are parsed. {0} for downloaded size, {1} for target size, {2} for percentage."), True, ColTypes.Neutral)
+                        Case 44 'Upload percentage text
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(UploadPercentagePrint)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Upload percentage text"), True)
+                            W(vbNewLine + DoTranslation("Write how you want your upload percentage text to be. Leave blank to use default style. Placeholders are parsed. {0} for uploaded size, {1} for target size, {2} for percentage."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Network Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

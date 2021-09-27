@@ -21,6 +21,8 @@ Imports System.Threading
 
 Public Module NetworkTransfer
 
+    Public DownloadPercentagePrint As String = ""
+    Public UploadPercentagePrint As String = ""
     Friend IsError As Boolean
     Friend ReasonError As Exception
     Friend CancellationToken As New CancellationTokenSource
@@ -245,7 +247,11 @@ Public Module NetworkTransfer
             WClient.CancelAsync()
         End If
         If Not DFinish Then
-            WriteWhere(DoTranslation("{0} of {1} downloaded.") + " | {2}%", 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+            If Not String.IsNullOrWhiteSpace(DownloadPercentagePrint) Then
+                WriteWhere(ProbePlaces(DownloadPercentagePrint), 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+            Else
+                WriteWhere(DoTranslation("{0} of {1} downloaded.") + " | {2}%", 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+            End If
             ClearLineToRight()
         End If
     End Sub
@@ -270,7 +276,11 @@ Public Module NetworkTransfer
             WClient.CancelAsync()
         End If
         If Not DFinish Then
-            WriteWhere(DoTranslation("{0} of {1} uploaded.") + " | {2}%", 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesSent.FileSizeToString, e.TotalBytesToSend.FileSizeToString, e.ProgressPercentage)
+            If Not String.IsNullOrWhiteSpace(UploadPercentagePrint) Then
+                WriteWhere(ProbePlaces(UploadPercentagePrint), 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+            Else
+                WriteWhere(DoTranslation("{0} of {1} uploaded.") + " | {2}%", 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesSent.FileSizeToString, e.TotalBytesToSend.FileSizeToString, e.ProgressPercentage)
+            End If
             ClearLineToRight()
         End If
     End Sub

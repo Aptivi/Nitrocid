@@ -230,7 +230,12 @@ Public Module Config
                     {"Auto refresh RSS feed interval", RSSRefreshInterval},
                     {"Show file details in SFTP list", SFTPShowDetailsInList},
                     {"Username prompt style for SFTP", SFTPUserPromptStyle},
-                    {"Add new connections to SFTP speed dial", SFTPNewConnectionsToSpeedDial}
+                    {"Add new connections to SFTP speed dial", SFTPNewConnectionsToSpeedDial},
+                    {"Ping timeout", PingTimeout},
+                    {"Show extensive adapter info", ExtensiveAdapterInformation},
+                    {"Show general network information", GeneralNetworkInformation},
+                    {"Download percentage text", DownloadPercentagePrint},
+                    {"Upload percentage text", UploadPercentagePrint}
             }
             ConfigurationObject.Add("Network", NetworkConfig)
 
@@ -643,6 +648,11 @@ Public Module Config
             SFTPShowDetailsInList = If(ConfigToken("Network")?("Show file details in SFTP list"), True)
             SFTPUserPromptStyle = If(ConfigToken("Network")?("Username prompt style for SFTP"), "")
             SFTPNewConnectionsToSpeedDial = If(ConfigToken("Network")?("Add new connections to SFTP speed dial"), True)
+            PingTimeout = If(Integer.TryParse(ConfigToken("Network")?("Ping timeout"), 0), ConfigToken("Network")?("Ping timeout"), 60000)
+            ExtensiveAdapterInformation = If(ConfigToken("Network")?("Show extensive adapter info"), True)
+            GeneralNetworkInformation = If(ConfigToken("Network")?("Show general network information"), True)
+            DownloadPercentagePrint = If(ConfigToken("Network")?("Download percentage text"), "")
+            UploadPercentagePrint = If(ConfigToken("Network")?("Upload percentage text"), "")
 
             'Screensaver Section
             DefSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")
