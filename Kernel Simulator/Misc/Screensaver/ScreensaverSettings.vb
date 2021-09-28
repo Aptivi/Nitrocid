@@ -363,6 +363,14 @@ Public Module ScreensaverSettings
     ''' [GlitterMatrix] How many milliseconds to wait before making the next write?
     ''' </summary>
     Public GlitterMatrixDelay As Integer = 1
+    ''' <summary>
+    ''' [GlitterMatrix] Screensaver background color
+    ''' </summary>
+    Public GlitterMatrixBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+    ''' <summary>
+    ''' [GlitterMatrix] Screensaver foreground color
+    ''' </summary>
+    Public GlitterMatrixForegroundColor As String = New Color(ConsoleColor.Green).PlainSequence
 
     '-> Matrix
     ''' <summary>

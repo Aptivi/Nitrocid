@@ -360,7 +360,9 @@ Public Module Config
 
             'GlitterMatrix config json object
             Dim GlitterMatrixConfig As New JObject From {
-                    {"Delay in Milliseconds", GlitterMatrixDelay}
+                    {"Delay in Milliseconds", GlitterMatrixDelay},
+                    {"Background color", If(New Color(GlitterMatrixBackgroundColor).Type = ColorType.TrueColor, GlitterMatrixBackgroundColor.EncloseByDoubleQuotes, GlitterMatrixBackgroundColor)},
+                    {"Foreground color", If(New Color(GlitterMatrixForegroundColor).Type = ColorType.TrueColor, GlitterMatrixForegroundColor.EncloseByDoubleQuotes, GlitterMatrixForegroundColor)}
             }
             ScreensaverConfig.Add("GlitterMatrix", GlitterMatrixConfig)
 
@@ -731,6 +733,8 @@ Public Module Config
 
             '> GlitterMatrix
             GlitterMatrixDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterMatrix")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("GlitterMatrix")?("Delay in Milliseconds"), 1)
+            GlitterMatrixBackgroundColor = New Color(If(ConfigToken("Screensaver")?("GlitterMatrix")?("Background color"), ConsoleColors.Black)).PlainSequence
+            GlitterMatrixForegroundColor = New Color(If(ConfigToken("Screensaver")?("GlitterMatrix")?("Foreground color"), ConsoleColors.Green)).PlainSequence
 
             '> Lines
             Lines255Colors = If(ConfigToken("Screensaver")?("Lines")?("Activate 255 Color Mode"), False)

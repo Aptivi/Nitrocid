@@ -344,10 +344,12 @@ Public Module SettingsApp
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " Matrix." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MatrixDelay)))
                 Case "7.3" 'Screensaver > GlitterMatrix
-                    MaxOptions = 1
+                    MaxOptions = 3
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > GlitterMatrix", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " GlitterMatrix." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterMatrixDelay)))
+                    W(" 2) " + DoTranslation("Background color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterMatrixBackgroundColor)))
+                    W(" 3) " + DoTranslation("Foreground color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterMatrixForegroundColor)))
                 Case "7.4" 'Screensaver > Disco
                     MaxOptions = 13
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Disco", True)
@@ -1437,6 +1439,16 @@ Public Module SettingsApp
                             KeyVar = NameOf(GlitterMatrixDelay)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > GlitterMatrix > " + DoTranslation("Delay in Milliseconds"), True)
                             W(vbNewLine + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 2 'GlitterMatrix: Background color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(GlitterMatrixBackgroundColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(GlitterMatrixBackgroundColor).Type = ColorType.TrueColor, If(New Color(GlitterMatrixBackgroundColor).Type = ColorType._255Color, New Color(GlitterMatrixBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(GlitterMatrixBackgroundColor).R, New Color(GlitterMatrixBackgroundColor).G, New Color(GlitterMatrixBackgroundColor).B)
+                        Case 3 'GlitterMatrix: Background color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(GlitterMatrixForegroundColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(GlitterMatrixForegroundColor).Type = ColorType.TrueColor, If(New Color(GlitterMatrixForegroundColor).Type = ColorType._255Color, New Color(GlitterMatrixForegroundColor).PlainSequence, ConsoleColors.Green), New Color(GlitterMatrixForegroundColor).R, New Color(GlitterMatrixForegroundColor).G, New Color(GlitterMatrixForegroundColor).B)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > GlitterMatrix > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

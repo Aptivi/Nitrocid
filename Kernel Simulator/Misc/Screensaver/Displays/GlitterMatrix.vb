@@ -34,8 +34,8 @@ Module GlitterMatrixDisplay
             Dim ResizeSyncing As Boolean
 
             'Preparations
-            Console.BackgroundColor = ConsoleColor.Black
-            Console.ForegroundColor = ConsoleColor.Green
+            SetConsoleColor(New Color(GlitterMatrixBackgroundColor), True)
+            SetConsoleColor(New Color(GlitterMatrixForegroundColor))
             Console.Clear()
             Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 

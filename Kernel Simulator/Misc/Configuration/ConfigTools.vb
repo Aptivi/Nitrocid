@@ -169,7 +169,7 @@ Public Module ConfigTools
                 End If
             End If
             If ConfigToken("Screensaver")("GlitterMatrix") IsNot Nothing Then
-                If ConfigToken("Screensaver")("GlitterMatrix").Count <> 1 Then
+                If ConfigToken("Screensaver")("GlitterMatrix").Count <> 3 Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > GlitterMatrix. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
