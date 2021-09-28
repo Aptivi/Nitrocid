@@ -135,6 +135,38 @@ Public Module ScreensaverSettings
     ''' [GlitterColor] How many milliseconds to wait before making the next write?
     ''' </summary>
     Public GlitterColorDelay As Integer = 1
+    ''' <summary>
+    ''' [GlitterColor] The minimum red color level (true color)
+    ''' </summary>
+    Public GlitterColorMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [GlitterColor] The minimum green color level (true color)
+    ''' </summary>
+    Public GlitterColorMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [GlitterColor] The minimum blue color level (true color)
+    ''' </summary>
+    Public GlitterColorMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [GlitterColor] The minimum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public GlitterColorMinimumColorLevel As Integer = 0
+    ''' <summary>
+    ''' [GlitterColor] The maximum red color level (true color)
+    ''' </summary>
+    Public GlitterColorMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [GlitterColor] The maximum green color level (true color)
+    ''' </summary>
+    Public GlitterColorMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [GlitterColor] The maximum blue color level (true color)
+    ''' </summary>
+    Public GlitterColorMaximumBlueColorLevel As Integer = 255
+    ''' <summary>
+    ''' [GlitterColor] The maximum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public GlitterColorMaximumColorLevel As Integer = 255
 
     '-> Lines
     ''' <summary>

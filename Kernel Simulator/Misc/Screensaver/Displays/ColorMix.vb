@@ -53,6 +53,7 @@ Module ColorMixDisplay
                     Exit Do
                 Else
                     Dim esc As Char = GetEsc()
+
                     'Sanity checks for color levels
                     If ColorMixTrueColor Or ColorMix255Colors Then
                         ColorMixMinimumRedColorLevel = If(ColorMixMinimumRedColorLevel >= 0 And ColorMixMinimumRedColorLevel <= 255, ColorMixMinimumRedColorLevel, 0)
@@ -72,7 +73,7 @@ Module ColorMixDisplay
                         ColorMixMaximumColorLevel = If(ColorMixMaximumColorLevel >= 0 And ColorMixMaximumColorLevel <= 255, ColorMixMaximumColorLevel, 255)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", ColorMixMaximumColorLevel)
                     Else
-                        ColorMixMinimumColorLevel = If(ColorMixMinimumColorLevel >= 0 And ColorMixMinimumColorLevel <= 255, ColorMixMinimumColorLevel, 0)
+                        ColorMixMinimumColorLevel = If(ColorMixMinimumColorLevel >= 0 And ColorMixMinimumColorLevel <= 16, ColorMixMinimumColorLevel, 0)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", ColorMixMinimumColorLevel)
                         ColorMixMaximumColorLevel = If(ColorMixMaximumColorLevel >= 0 And ColorMixMaximumColorLevel <= 16, ColorMixMaximumColorLevel, 16)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", ColorMixMaximumColorLevel)

@@ -373,12 +373,20 @@ Public Module SettingsApp
                     W(" 2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinesTrueColor)))
                     W(" 3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinesDelay)))
                 Case "7.6" 'Screensaver > GlitterColor
-                    MaxOptions = 3
+                    MaxOptions = 11
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > GlitterColor", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " GlitterColor." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterColor255Colors)))
                     W(" 2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterColorTrueColor)))
                     W(" 3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterColorDelay)))
+                    W(" 4) " + DoTranslation("Minimum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterColorMinimumRedColorLevel)))
+                    W(" 5) " + DoTranslation("Minimum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterColorMinimumGreenColorLevel)))
+                    W(" 6) " + DoTranslation("Minimum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterColorMinimumBlueColorLevel)))
+                    W(" 7) " + DoTranslation("Minimum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterColorMinimumColorLevel)))
+                    W(" 8) " + DoTranslation("Maximum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterColorMaximumRedColorLevel)))
+                    W(" 9) " + DoTranslation("Maximum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterColorMaximumGreenColorLevel)))
+                    W(" 10) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterColorMaximumBlueColorLevel)))
+                    W(" 11) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterColorMaximumColorLevel)))
                 Case "7.7" 'Screensaver > BouncingText
                     MaxOptions = 4
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingText", True)
@@ -1542,6 +1550,46 @@ Public Module SettingsApp
                             KeyVar = NameOf(GlitterColorDelay)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > GlitterColor > " + DoTranslation("Delay in Milliseconds"), True)
                             W(vbNewLine + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 4 'GlitterColor: Minimum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(GlitterColorMinimumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > GlitterColor > " + DoTranslation("Minimum red color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 5 'GlitterColor: Minimum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(GlitterColorMinimumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > GlitterColor > " + DoTranslation("Minimum green color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 6 'GlitterColor: Minimum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(GlitterColorMinimumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > GlitterColor > " + DoTranslation("Minimum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 7 'GlitterColor: Minimum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(GlitterColorMinimumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > GlitterColor > " + DoTranslation("Minimum color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 8 'GlitterColor: Maximum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(GlitterColorMaximumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > GlitterColor > " + DoTranslation("Maximum red color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 9 'GlitterColor: Maximum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(GlitterColorMaximumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > GlitterColor > " + DoTranslation("Maximum green color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 10 'GlitterColor: Maximum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(GlitterColorMaximumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > GlitterColor > " + DoTranslation("Maximum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 11 'GlitterColor: Maximum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(GlitterColorMaximumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > GlitterColor > " + DoTranslation("Maximum color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

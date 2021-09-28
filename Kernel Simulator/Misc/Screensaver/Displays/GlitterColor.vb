@@ -51,6 +51,31 @@ Module GlitterColorDisplay
                     SaverAutoReset.Set()
                     Exit Do
                 Else
+                    'Sanity checks for color levels
+                    If GlitterColorTrueColor Or GlitterColor255Colors Then
+                        GlitterColorMinimumRedColorLevel = If(GlitterColorMinimumRedColorLevel >= 0 And GlitterColorMinimumRedColorLevel <= 255, GlitterColorMinimumRedColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", GlitterColorMinimumRedColorLevel)
+                        GlitterColorMinimumGreenColorLevel = If(GlitterColorMinimumGreenColorLevel >= 0 And GlitterColorMinimumGreenColorLevel <= 255, GlitterColorMinimumGreenColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", GlitterColorMinimumGreenColorLevel)
+                        GlitterColorMinimumBlueColorLevel = If(GlitterColorMinimumBlueColorLevel >= 0 And GlitterColorMinimumBlueColorLevel <= 255, GlitterColorMinimumBlueColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", GlitterColorMinimumBlueColorLevel)
+                        GlitterColorMinimumColorLevel = If(GlitterColorMinimumColorLevel >= 0 And GlitterColorMinimumColorLevel <= 255, GlitterColorMinimumColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", GlitterColorMinimumColorLevel)
+                        GlitterColorMaximumRedColorLevel = If(GlitterColorMaximumRedColorLevel >= 0 And GlitterColorMaximumRedColorLevel <= 255, GlitterColorMaximumRedColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", GlitterColorMaximumRedColorLevel)
+                        GlitterColorMaximumGreenColorLevel = If(GlitterColorMaximumGreenColorLevel >= 0 And GlitterColorMaximumGreenColorLevel <= 255, GlitterColorMaximumGreenColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", GlitterColorMaximumGreenColorLevel)
+                        GlitterColorMaximumBlueColorLevel = If(GlitterColorMaximumBlueColorLevel >= 0 And GlitterColorMaximumBlueColorLevel <= 255, GlitterColorMaximumBlueColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", GlitterColorMaximumBlueColorLevel)
+                        GlitterColorMaximumColorLevel = If(GlitterColorMaximumColorLevel >= 0 And GlitterColorMaximumColorLevel <= 255, GlitterColorMaximumColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", GlitterColorMaximumColorLevel)
+                    Else
+                        GlitterColorMinimumColorLevel = If(GlitterColorMinimumColorLevel >= 0 And GlitterColorMinimumColorLevel <= 15, GlitterColorMinimumColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", GlitterColorMinimumColorLevel)
+                        GlitterColorMaximumColorLevel = If(GlitterColorMaximumColorLevel >= 0 And GlitterColorMaximumColorLevel <= 15, GlitterColorMaximumColorLevel, 15)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", GlitterColorMaximumColorLevel)
+                    End If
+
                     'Select position
                     SleepNoBlock(GlitterColorDelay, GlitterColor)
                     Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
@@ -61,22 +86,22 @@ Module GlitterColorDisplay
                     'Make a glitter color
                     Dim esc As Char = GetEsc()
                     If GlitterColorTrueColor Then
-                        Dim RedColorNum As Integer = RandomDriver.Next(255)
-                        Dim GreenColorNum As Integer = RandomDriver.Next(255)
-                        Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                        Dim RedColorNum As Integer = RandomDriver.Next(GlitterColorMinimumRedColorLevel, GlitterColorMaximumRedColorLevel)
+                        Dim GreenColorNum As Integer = RandomDriver.Next(GlitterColorMinimumGreenColorLevel, GlitterColorMaximumGreenColorLevel)
+                        Dim BlueColorNum As Integer = RandomDriver.Next(GlitterColorMinimumBlueColorLevel, GlitterColorMaximumBlueColorLevel)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Not ResizeSyncing Then Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
                     ElseIf GlitterColor255Colors Then
-                        Dim ColorNum As Integer = RandomDriver.Next(255)
+                        Dim ColorNum As Integer = RandomDriver.Next(GlitterColorMinimumColorLevel, GlitterColorMaximumColorLevel)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Not ResizeSyncing Then Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
                     Else
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Not ResizeSyncing Then
-                            Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                            Console.BackgroundColor = colors(RandomDriver.Next(GlitterColorMinimumColorLevel, GlitterColorMaximumColorLevel))
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                             Console.Write(" ")
                         End If

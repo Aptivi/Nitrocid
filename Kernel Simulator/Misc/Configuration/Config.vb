@@ -286,7 +286,15 @@ Public Module Config
             Dim GlitterColorConfig As New JObject From {
                     {"Activate 255 Color Mode", GlitterColor255Colors},
                     {"Activate True Color Mode", GlitterColorTrueColor},
-                    {"Delay in Milliseconds", GlitterColorDelay}
+                    {"Delay in Milliseconds", GlitterColorDelay},
+                    {"Minimum red color level", GlitterColorMinimumRedColorLevel},
+                    {"Minimum green color level", GlitterColorMinimumGreenColorLevel},
+                    {"Minimum blue color level", GlitterColorMinimumBlueColorLevel},
+                    {"Minimum color level", GlitterColorMinimumColorLevel},
+                    {"Maximum red color level", GlitterColorMaximumRedColorLevel},
+                    {"Maximum green color level", GlitterColorMaximumGreenColorLevel},
+                    {"Maximum blue color level", GlitterColorMaximumBlueColorLevel},
+                    {"Maximum color level", GlitterColorMaximumColorLevel}
             }
             ScreensaverConfig.Add("GlitterColor", GlitterColorConfig)
 
@@ -712,6 +720,14 @@ Public Module Config
             GlitterColor255Colors = If(ConfigToken("Screensaver")?("GlitterColor")?("Activate 255 Color Mode"), False)
             GlitterColorTrueColor = If(ConfigToken("Screensaver")?("GlitterColor")?("Activate True Color Mode"), True)
             GlitterColorDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterColor")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("GlitterColor")?("Delay in Milliseconds"), 1)
+            GlitterColorMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterColor")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("GlitterColor")?("Minimum red color level"), 0)
+            GlitterColorMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterColor")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("GlitterColor")?("Minimum green color level"), 0)
+            GlitterColorMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterColor")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("GlitterColor")?("Minimum blue color level"), 0)
+            GlitterColorMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterColor")?("Minimum color level"), 0), ConfigToken("Screensaver")?("GlitterColor")?("Minimum color level"), 0)
+            GlitterColorMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterColor")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("GlitterColor")?("Maximum red color level"), 255)
+            GlitterColorMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterColor")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("GlitterColor")?("Maximum green color level"), 255)
+            GlitterColorMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterColor")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("GlitterColor")?("Maximum blue color level"), 255)
+            GlitterColorMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterColor")?("Maximum color level"), 0), ConfigToken("Screensaver")?("GlitterColor")?("Maximum color level"), 255)
 
             '> GlitterMatrix
             GlitterMatrixDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterMatrix")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("GlitterMatrix")?("Delay in Milliseconds"), 1)

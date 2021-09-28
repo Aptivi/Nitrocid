@@ -115,7 +115,7 @@ Public Module ConfigTools
                 End If
             End If
             If ConfigToken("Screensaver")("GlitterColor") IsNot Nothing Then
-                If ConfigToken("Screensaver")("GlitterColor").Count <> 3 Then
+                If ConfigToken("Screensaver")("GlitterColor").Count <> 11 Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > GlitterColor. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
