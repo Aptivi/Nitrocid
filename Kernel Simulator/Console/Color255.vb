@@ -60,20 +60,20 @@ Public Module Color255
     ''' </summary>
     Public Enum ConsoleColors As Integer
         Black
-        DarkRed
-        DarkGreen
-        DarkYellow
         DarkBlue
-        DarkMagenta
+        DarkGreen
         DarkCyan
+        DarkRed
+        DarkMagenta
+        DarkYellow
         Gray
         DarkGray
-        Red
-        Green
-        Yellow
         Blue
-        Magenta
+        Green
         Cyan
+        Red
+        Magenta
+        Yellow
         White
         Grey0
         NavyBlue
