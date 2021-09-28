@@ -143,12 +143,13 @@ Public Module ModParser
                     If Not File.Exists(Reference) Then
                         Wdbg(DebugLevel.E, "File {0} not found to reference.", Reference)
                         W(DoTranslation("Referenced file {0} not found. This mod might not work properly without this file."), True, ColTypes.Warning, Reference)
-                        GoTo NextEntry
+                    Else
+                        prm.ReferencedAssemblies.Add(Reference)
                     End If
+                Else
+                    prm.ReferencedAssemblies.Add(Reference)
                 End If
-                prm.ReferencedAssemblies.Add(Reference)
             End If
-NextEntry:
         Next
 
         'Try to compile
