@@ -296,6 +296,38 @@ Public Module Screensaver
             prm.ReferencedAssemblies.Add("System.Xml.Linq.dll")
             Wdbg(DebugLevel.I, "All referenced assemblies prepared.")
 
+            'Detect referenced assemblies from comments that start with "Reference GAC: <ref>" or "Reference File: <path/to/ref>".
+            Dim References() As String = code.SplitNewLines.Select(Function(x) x).Where(Function(x) x.ContainsAnyOf({"Reference GAC: ", "Reference File: "})).ToArray
+            Wdbg(DebugLevel.I, "Found {0} references (matches taken from searching for ""Reference GAC: "" or ""Reference File: "").", References.Length)
+            For Each Reference As String In References
+                Reference.RemoveNullsOrWhitespacesAtTheBeginning
+                Wdbg(DebugLevel.I, "Reference line: {0}", Reference)
+                Dim LocationCheckRequired As Boolean = Reference.Contains("Reference File: ")
+                If (Reference.StartsWith("//") And PLang = "C#") Or (Reference.StartsWith("'") And PLang = "VB.NET") Then
+                    'Remove comment mark
+                    If Reference.StartsWith("//") Then Reference = Reference.Remove(0, 2)
+                    If Reference.StartsWith("'") Then Reference = Reference.Remove(0, 1)
+
+                    'Remove "Reference GAC: " or "Reference File: " and remove all whitespaces or nulls in the beginning
+                    Reference = Reference.ReplaceAll({"Reference GAC: ", "Reference File: "}, "")
+                    Reference.RemoveNullsOrWhitespacesAtTheBeginning
+                    Wdbg(DebugLevel.I, "Final reference line: {0}", Reference)
+
+                    'Add reference
+                    If LocationCheckRequired Then
+                        'Check to see if the reference file exists
+                        If Not File.Exists(Reference) Then
+                            Wdbg(DebugLevel.E, "File {0} not found to reference.", Reference)
+                            W(DoTranslation("Referenced file {0} not found. This mod might not work properly without this file."), True, ColTypes.Warning, Reference)
+                        Else
+                            prm.ReferencedAssemblies.Add(Reference)
+                        End If
+                    Else
+                        prm.ReferencedAssemblies.Add(Reference)
+                    End If
+                End If
+            Next
+
             'Try to compile
             Dim namespc As String = GetType(ICustomSaver).Namespace
             Dim modCode() As String = {}
