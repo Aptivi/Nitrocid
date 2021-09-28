@@ -110,15 +110,18 @@ Public Module Filesystem
                         If (Entry.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not Entry.Attributes.HasFlag(FileAttributes.Hidden) Then
                             If (IsOnWindows() And (Not Entry.Name.StartsWith(".") Or (Entry.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
                                 If Entry.Name.EndsWith(".uesh") Then
-                                    W("- " + Entry.Name + ": ", False, ColTypes.Stage)
+                                    W("- " + Entry.Name, False, ColTypes.Stage)
+                                    If ShowFileDetailsList Then W(": ", False, ColTypes.Stage)
                                 Else
-                                    W("- " + Entry.Name + ": ", False, ColTypes.ListEntry)
+                                    W("- " + Entry.Name, False, ColTypes.ListEntry)
+                                    If ShowFileDetailsList Then W(": ", False, ColTypes.ListEntry)
                                 End If
                                 If ShowFileDetailsList Then
-                                    W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), True, ColTypes.ListValue,
-                                                                      DirectCast(Entry, FileInfo).Length.FileSizeToString, Entry.CreationTime.ToShortDateString, Entry.CreationTime.ToShortTimeString,
-                                                                                                                           Entry.LastWriteTime.ToShortDateString, Entry.LastWriteTime.ToShortTimeString)
+                                    W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), False, ColTypes.ListValue,
+                                                    DirectCast(Entry, FileInfo).Length.FileSizeToString, Entry.CreationTime.ToShortDateString, Entry.CreationTime.ToShortTimeString,
+                                                                                                         Entry.LastWriteTime.ToShortDateString, Entry.LastWriteTime.ToShortTimeString)
                                 End If
+                                Console.WriteLine()
                             End If
                         End If
                     ElseIf Directory.Exists(Entry.FullName) Then
@@ -128,12 +131,14 @@ Public Module Filesystem
                         'Print information
                         If (Entry.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not Entry.Attributes.HasFlag(FileAttributes.Hidden) Then
                             If (IsOnWindows() And (Not Entry.Name.StartsWith(".") Or (Entry.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
-                                W("- " + Entry.Name + "/: ", False, ColTypes.ListEntry)
+                                W("- " + Entry.Name + "/", False, ColTypes.ListEntry)
                                 If ShowFileDetailsList Then
-                                    W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), True, ColTypes.ListValue,
-                                                                      TotalSize.FileSizeToString, Entry.CreationTime.ToShortDateString, Entry.CreationTime.ToShortTimeString,
-                                                                                                  Entry.LastWriteTime.ToShortDateString, Entry.LastWriteTime.ToShortTimeString)
+                                    W(": ", False, ColTypes.ListEntry)
+                                    W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), False, ColTypes.ListValue,
+                                                    TotalSize.FileSizeToString, Entry.CreationTime.ToShortDateString, Entry.CreationTime.ToShortTimeString,
+                                                                                Entry.LastWriteTime.ToShortDateString, Entry.LastWriteTime.ToShortTimeString)
                                 End If
+                                Console.WriteLine()
                             End If
                         End If
                     End If
