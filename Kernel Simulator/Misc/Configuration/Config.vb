@@ -243,7 +243,8 @@ Public Module Config
             Dim ScreensaverConfig As New JObject From {
                     {"Screensaver", DefSaverName},
                     {"Screensaver Timeout in ms", ScrnTimeout},
-                    {"Enable screensaver debugging", ScreensaverDebug}
+                    {"Enable screensaver debugging", ScreensaverDebug},
+                    {"Ask for password after locking", PasswordLock}
             }
 
             'ColorMix config json object
@@ -658,6 +659,7 @@ Public Module Config
             DefSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")
             ScrnTimeout = If(Integer.TryParse(ConfigToken("Screensaver")?("Screensaver Timeout in ms"), 0), ConfigToken("Screensaver")?("Screensaver Timeout in ms"), 300000)
             ScreensaverDebug = If(ConfigToken("Screensaver")?("Enable screensaver debugging"), False)
+            PasswordLock = If(ConfigToken("Screensaver")?("Ask for password after locking"), True)
 
             'Screensaver-specific settings go below:
             '> ColorMix

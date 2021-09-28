@@ -36,6 +36,7 @@ Public Module Screensaver
     Public FinalSaver As ICustomSaver
     Public CustomSaverSettingsToken As JObject
     Public ScrnTimeout As Integer = 300000
+    Public PasswordLock As Boolean = True
     Public ReadOnly colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())        '15 Console Colors
     Public ReadOnly colors255() As ConsoleColors = CType([Enum].GetValues(GetType(ConsoleColors)), ConsoleColors())  '255 Console Colors
     Public ReadOnly Screensavers As New Dictionary(Of String, BackgroundWorker) From {{"beatFader", BeatFader},
@@ -84,7 +85,7 @@ Public Module Screensaver
                 Next
                 If Not RebootRequested Then
                     Wdbg(DebugLevel.W, "Screen time has reached.")
-                    ShowSavers(DefSaverName)
+                    LockScreen()
                 End If
             End If
         End While
@@ -135,13 +136,17 @@ Public Module Screensaver
     End Sub
 
     ''' <summary>
-    ''' Locks the screen. The password will be required when unlocking.
+    ''' Locks the screen. The password will be required when unlocking, depending on the kernel settings.
     ''' </summary>
     Public Sub LockScreen()
         LockMode = True
         ShowSavers(DefSaverName)
         EventManager.RaisePreUnlock(DefSaverName)
-        ShowPasswordPrompt(CurrentUser)
+        If PasswordLock Then
+            ShowPasswordPrompt(CurrentUser)
+        Else
+            LockMode = False
+        End If
     End Sub
 
     ''' <summary>

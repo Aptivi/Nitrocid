@@ -280,7 +280,7 @@ Public Module SettingsApp
                     W(" 43) " + DoTranslation("Download percentage text") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DownloadPercentagePrint)))
                     W(" 44) " + DoTranslation("Upload percentage text") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(UploadPercentagePrint)))
                 Case "7" 'Screensaver
-                    MaxOptions = BuiltinSavers + 2 'Screensavers + Keys
+                    MaxOptions = BuiltinSavers + 3 'Screensavers + Keys
                     WriteSeparator(DoTranslation("Screensaver Settings..."), True)
                     W(vbNewLine + DoTranslation("This section lists all the screensavers and their available settings.") + vbNewLine, True, ColTypes.Neutral)
 
@@ -318,8 +318,10 @@ Public Module SettingsApp
                     Next
 
                     'Populate general screensaver settings
-                    W(" {0}) " + DoTranslation("Screensaver Timeout in ms") + " [{1}]", True, ColTypes.Option, MaxOptions - 1, GetConfigValueField(NameOf(ScrnTimeout)))
-                    W(" {0}) " + DoTranslation("Enable screensaver debugging") + " [{1}]", True, ColTypes.Option, MaxOptions, GetConfigValueField(NameOf(ScreensaverDebug)))
+                    'TODO: Separate between the normal and the screensaver-specific options.
+                    W(" {0}) " + DoTranslation("Screensaver Timeout in ms") + " [{1}]", True, ColTypes.Option, MaxOptions - 2, GetConfigValueField(NameOf(ScrnTimeout)))
+                    W(" {0}) " + DoTranslation("Enable screensaver debugging") + " [{1}]", True, ColTypes.Option, MaxOptions - 1, GetConfigValueField(NameOf(ScreensaverDebug)))
+                    W(" {0}) " + DoTranslation("Ask for password after locking") + " [{1}]", True, ColTypes.Option, MaxOptions, GetConfigValueField(NameOf(PasswordLock)))
                 Case "7.1" 'Screensaver > ColorMix
                     MaxOptions = 3
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > ColorMix", True)
@@ -1317,6 +1319,11 @@ Public Module SettingsApp
                             KeyVar = NameOf(ScreensaverDebug)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > " + DoTranslation("Enable screensaver debugging"), True)
                             W(vbNewLine + DoTranslation("Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes."), True, ColTypes.Neutral)
+                        Case BuiltinSavers + 3 'Ask for password after locking
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(PasswordLock)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > " + DoTranslation("Ask for password after locking"), True)
+                            W(vbNewLine + DoTranslation("After locking the screen, ask for password"), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

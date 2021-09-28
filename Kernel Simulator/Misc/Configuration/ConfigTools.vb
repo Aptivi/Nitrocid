@@ -52,7 +52,7 @@ Public Module ConfigTools
             FixesNeeded = True
         End If
         If ConfigToken("Screensaver") IsNot Nothing Then
-            If ConfigToken("Screensaver").Count <> 22 + 3 Then 'Screensavers + Keys
+            If ConfigToken("Screensaver").Count <> 22 + 4 Then 'Screensavers + Keys
                 Wdbg(DebugLevel.W, "Missing sections and/or keys in Screensaver. Config fix needed set to true.")
                 FixesNeeded = True
             End If
