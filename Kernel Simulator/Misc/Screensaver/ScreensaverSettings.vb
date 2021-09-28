@@ -181,6 +181,46 @@ Public Module ScreensaverSettings
     ''' [Lines] How many milliseconds to wait before making the next write?
     ''' </summary>
     Public LinesDelay As Integer = 500
+    ''' <summary>
+    ''' [Lines] Line character
+    ''' </summary>
+    Public LinesLineChar As String = "-"
+    ''' <summary>
+    ''' [Lines] Screensaver background color
+    ''' </summary>
+    Public LinesBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+    ''' <summary>
+    ''' [Lines] The minimum red color level (true color)
+    ''' </summary>
+    Public LinesMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Lines] The minimum green color level (true color)
+    ''' </summary>
+    Public LinesMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Lines] The minimum blue color level (true color)
+    ''' </summary>
+    Public LinesMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Lines] The minimum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public LinesMinimumColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Lines] The maximum red color level (true color)
+    ''' </summary>
+    Public LinesMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Lines] The maximum green color level (true color)
+    ''' </summary>
+    Public LinesMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Lines] The maximum blue color level (true color)
+    ''' </summary>
+    Public LinesMaximumBlueColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Lines] The maximum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public LinesMaximumColorLevel As Integer = 255
 
     '-> Dissolve
     ''' <summary>

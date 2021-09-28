@@ -302,7 +302,17 @@ Public Module Config
             Dim LinesConfig As New JObject From {
                     {"Activate 255 Color Mode", Lines255Colors},
                     {"Activate True Color Mode", LinesTrueColor},
-                    {"Delay in Milliseconds", LinesDelay}
+                    {"Delay in Milliseconds", LinesDelay},
+                    {"Line character", LinesLineChar},
+                    {"Background color", If(New Color(LinesBackgroundColor).Type = ColorType.TrueColor, LinesBackgroundColor.EncloseByDoubleQuotes, LinesBackgroundColor)},
+                    {"Minimum red color level", LinesMinimumRedColorLevel},
+                    {"Minimum green color level", LinesMinimumGreenColorLevel},
+                    {"Minimum blue color level", LinesMinimumBlueColorLevel},
+                    {"Minimum color level", LinesMinimumColorLevel},
+                    {"Maximum red color level", LinesMaximumRedColorLevel},
+                    {"Maximum green color level", LinesMaximumGreenColorLevel},
+                    {"Maximum blue color level", LinesMaximumBlueColorLevel},
+                    {"Maximum color level", LinesMaximumColorLevel}
             }
             ScreensaverConfig.Add("Lines", LinesConfig)
 
@@ -740,6 +750,16 @@ Public Module Config
             Lines255Colors = If(ConfigToken("Screensaver")?("Lines")?("Activate 255 Color Mode"), False)
             LinesTrueColor = If(ConfigToken("Screensaver")?("Lines")?("Activate True Color Mode"), True)
             LinesDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Lines")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Lines")?("Delay in Milliseconds"), 500)
+            LinesLineChar = If(ConfigToken("Screensaver")?("Lines")?("Line character"), "-")
+            LinesBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Lines")?("Background color"), ConsoleColors.Black)).PlainSequence
+            LinesMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lines")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("ColorMix")?("Minimum red color level"), 0)
+            LinesMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lines")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("ColorMix")?("Minimum green color level"), 0)
+            LinesMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lines")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("ColorMix")?("Minimum blue color level"), 0)
+            LinesMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lines")?("Minimum color level"), 0), ConfigToken("Screensaver")?("ColorMix")?("Minimum color level"), 0)
+            LinesMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lines")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("ColorMix")?("Maximum red color level"), 255)
+            LinesMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lines")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("ColorMix")?("Maximum green color level"), 255)
+            LinesMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lines")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("ColorMix")?("Maximum blue color level"), 255)
+            LinesMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lines")?("Maximum color level"), 0), ConfigToken("Screensaver")?("ColorMix")?("Maximum color level"), 255)
 
             '> Dissolve
             Dissolve255Colors = If(ConfigToken("Screensaver")?("Dissolve")?("Activate 255 Color Mode"), False)

@@ -121,7 +121,7 @@ Public Module ConfigTools
                 End If
             End If
             If ConfigToken("Screensaver")("Lines") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Lines").Count <> 3 Then
+                If ConfigToken("Screensaver")("Lines").Count <> 13 Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Lines. Config fix needed set to true.")
                     FixesNeeded = True
                 End If

@@ -368,12 +368,22 @@ Public Module SettingsApp
                     W(" 12) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DiscoMaximumBlueColorLevel)))
                     W(" 13) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DiscoMaximumColorLevel)))
                 Case "7.5" 'Screensaver > Lines
-                    MaxOptions = 3
+                    MaxOptions = 13
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " Lines." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Lines255Colors)))
                     W(" 2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinesTrueColor)))
                     W(" 3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinesDelay)))
+                    W(" 4) " + DoTranslation("Line character") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinesLineChar)))
+                    W(" 5) " + DoTranslation("Background color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinesBackgroundColor)))
+                    W(" 6) " + DoTranslation("Minimum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinesMinimumRedColorLevel)))
+                    W(" 7) " + DoTranslation("Minimum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinesMinimumGreenColorLevel)))
+                    W(" 8) " + DoTranslation("Minimum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinesMinimumBlueColorLevel)))
+                    W(" 9) " + DoTranslation("Minimum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinesMinimumColorLevel)))
+                    W(" 10) " + DoTranslation("Maximum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinesMaximumRedColorLevel)))
+                    W(" 11) " + DoTranslation("Maximum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinesMaximumGreenColorLevel)))
+                    W(" 12) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinesMaximumBlueColorLevel)))
+                    W(" 13) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinesMaximumColorLevel)))
                 Case "7.6" 'Screensaver > GlitterColor
                     MaxOptions = 11
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > GlitterColor", True)
@@ -1444,7 +1454,7 @@ Public Module SettingsApp
                             KeyVar = NameOf(GlitterMatrixBackgroundColor)
                             VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(GlitterMatrixBackgroundColor).Type = ColorType.TrueColor, If(New Color(GlitterMatrixBackgroundColor).Type = ColorType._255Color, New Color(GlitterMatrixBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(GlitterMatrixBackgroundColor).R, New Color(GlitterMatrixBackgroundColor).G, New Color(GlitterMatrixBackgroundColor).B)
-                        Case 3 'GlitterMatrix: Background color
+                        Case 3 'GlitterMatrix: Foreground color
                             KeyType = SettingsKeyType.SVariant
                             KeyVar = NameOf(GlitterMatrixForegroundColor)
                             VariantValueFromExternalPrompt = True
@@ -1541,6 +1551,56 @@ Public Module SettingsApp
                             KeyVar = NameOf(LinesDelay)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > " + DoTranslation("Delay in Milliseconds"), True)
                             W(vbNewLine + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 4 'Lines: Line character
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(LinesLineChar)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > " + DoTranslation("Line character"), True)
+                            W(vbNewLine + DoTranslation("A character to form a line. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 5 'Lines: Background color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(LinesBackgroundColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(LinesBackgroundColor).Type = ColorType.TrueColor, If(New Color(LinesBackgroundColor).Type = ColorType._255Color, New Color(LinesBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(LinesBackgroundColor).R, New Color(LinesBackgroundColor).G, New Color(LinesBackgroundColor).B)
+                        Case 6 'Lines: Minimum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinesMinimumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > " + DoTranslation("Minimum red color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 7 'Lines: Minimum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinesMinimumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > " + DoTranslation("Minimum green color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 8 'Lines: Minimum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinesMinimumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > " + DoTranslation("Minimum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 9 'Lines: Minimum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinesMinimumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > " + DoTranslation("Minimum color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 10 'Lines: Maximum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinesMaximumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > " + DoTranslation("Maximum red color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 11 'Lines: Maximum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinesMaximumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > " + DoTranslation("Maximum green color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 12 'Lines: Maximum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinesMaximumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > " + DoTranslation("Maximum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 13 'Lines: Maximum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LinesMaximumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > " + DoTranslation("Maximum color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
