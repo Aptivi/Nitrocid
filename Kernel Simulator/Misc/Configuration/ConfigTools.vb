@@ -103,7 +103,7 @@ Public Module ConfigTools
         End If
         If ConfigToken("Screensaver") IsNot Nothing Then
             If ConfigToken("Screensaver")("ColorMix") IsNot Nothing Then
-                If ConfigToken("Screensaver")("ColorMix").Count <> 3 Then
+                If ConfigToken("Screensaver")("ColorMix").Count <> 12 Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > ColorMix. Config fix needed set to true.")
                     FixesNeeded = True
                 End If

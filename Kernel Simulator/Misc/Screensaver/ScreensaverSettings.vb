@@ -31,6 +31,42 @@ Public Module ScreensaverSettings
     ''' [ColorMix] How many milliseconds to wait before making the next write?
     ''' </summary>
     Public ColorMixDelay As Integer = 1
+    ''' <summary>
+    ''' [ColorMix] Screensaver background color
+    ''' </summary>
+    Public ColorMixBackgroundColor As String = New Color(ConsoleColor.Red).PlainSequence
+    ''' <summary>
+    ''' [ColorMix] The minimum red color level (true color)
+    ''' </summary>
+    Public ColorMixMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [ColorMix] The minimum green color level (true color)
+    ''' </summary>
+    Public ColorMixMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [ColorMix] The minimum blue color level (true color)
+    ''' </summary>
+    Public ColorMixMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [ColorMix] The minimum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public ColorMixMinimumColorLevel As Integer = 0
+    ''' <summary>
+    ''' [ColorMix] The maximum red color level (true color)
+    ''' </summary>
+    Public ColorMixMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [ColorMix] The maximum green color level (true color)
+    ''' </summary>
+    Public ColorMixMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [ColorMix] The maximum blue color level (true color)
+    ''' </summary>
+    Public ColorMixMaximumBlueColorLevel As Integer = 255
+    ''' <summary>
+    ''' [ColorMix] The maximum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public ColorMixMaximumColorLevel As Integer = 255
 
     '-> Disco
     ''' <summary>

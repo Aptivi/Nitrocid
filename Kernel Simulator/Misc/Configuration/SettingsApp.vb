@@ -323,12 +323,21 @@ Public Module SettingsApp
                     W(" {0}) " + DoTranslation("Enable screensaver debugging") + " [{1}]", True, ColTypes.Option, MaxOptions - 1, GetConfigValueField(NameOf(ScreensaverDebug)))
                     W(" {0}) " + DoTranslation("Ask for password after locking") + " [{1}]", True, ColTypes.Option, MaxOptions, GetConfigValueField(NameOf(PasswordLock)))
                 Case "7.1" 'Screensaver > ColorMix
-                    MaxOptions = 3
+                    MaxOptions = 12
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > ColorMix", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " ColorMix." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColorMix255Colors)))
                     W(" 2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColorMixTrueColor)))
                     W(" 3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColorMixDelay)))
+                    W(" 4) " + DoTranslation("Background color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColorMixBackgroundColor)))
+                    W(" 5) " + DoTranslation("Minimum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColorMixMinimumRedColorLevel)))
+                    W(" 6) " + DoTranslation("Minimum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColorMixMinimumGreenColorLevel)))
+                    W(" 7) " + DoTranslation("Minimum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColorMixMinimumBlueColorLevel)))
+                    W(" 8) " + DoTranslation("Minimum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColorMixMinimumColorLevel)))
+                    W(" 9) " + DoTranslation("Maximum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColorMixMaximumRedColorLevel)))
+                    W(" 10) " + DoTranslation("Maximum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColorMixMaximumGreenColorLevel)))
+                    W(" 11) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColorMixMaximumBlueColorLevel)))
+                    W(" 12) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColorMixMaximumColorLevel)))
                 Case "7.2" 'Screensaver > Matrix
                     MaxOptions = 1
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Matrix", True)
@@ -1345,6 +1354,51 @@ Public Module SettingsApp
                             KeyVar = NameOf(ColorMixDelay)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > ColorMix > " + DoTranslation("Delay in Milliseconds"), True)
                             W(vbNewLine + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 4 'ColorMix: Background color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(ColorMixBackgroundColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(ColorMixBackgroundColor).Type = ColorType.TrueColor, If(New Color(ColorMixBackgroundColor).Type = ColorType._255Color, New Color(ColorMixBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(ColorMixBackgroundColor).R, New Color(ColorMixBackgroundColor).G, New Color(ColorMixBackgroundColor).B)
+                        Case 5 'ColorMix: Minimum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ColorMixMinimumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ColorMix > " + DoTranslation("Minimum red color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 6 'ColorMix: Minimum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ColorMixMinimumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ColorMix > " + DoTranslation("Minimum green color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 7 'ColorMix: Minimum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ColorMixMinimumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ColorMix > " + DoTranslation("Minimum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 8 'ColorMix: Minimum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ColorMixMinimumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ColorMix > " + DoTranslation("Minimum color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 9 'ColorMix: Maximum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ColorMixMaximumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ColorMix > " + DoTranslation("Maximum red color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 10 'ColorMix: Maximum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ColorMixMaximumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ColorMix > " + DoTranslation("Maximum green color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 11 'ColorMix: Maximum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ColorMixMaximumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ColorMix > " + DoTranslation("Maximum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 12 'ColorMix: Maximum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ColorMixMaximumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ColorMix > " + DoTranslation("Maximum color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > ColorMix > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

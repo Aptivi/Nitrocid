@@ -251,7 +251,16 @@ Public Module Config
             Dim ColorMixConfig As New JObject From {
                     {"Activate 255 Color Mode", ColorMix255Colors},
                     {"Activate True Color Mode", ColorMixTrueColor},
-                    {"Delay in Milliseconds", ColorMixDelay}
+                    {"Delay in Milliseconds", ColorMixDelay},
+                    {"Background color", If(New Color(ColorMixBackgroundColor).Type = ColorType.TrueColor, ColorMixBackgroundColor.EncloseByDoubleQuotes, ColorMixBackgroundColor)},
+                    {"Minimum red color level", ColorMixMinimumRedColorLevel},
+                    {"Minimum green color level", ColorMixMinimumGreenColorLevel},
+                    {"Minimum blue color level", ColorMixMinimumBlueColorLevel},
+                    {"Minimum color level", ColorMixMinimumColorLevel},
+                    {"Maximum red color level", ColorMixMaximumRedColorLevel},
+                    {"Maximum green color level", ColorMixMaximumGreenColorLevel},
+                    {"Maximum blue color level", ColorMixMaximumBlueColorLevel},
+                    {"Maximum color level", ColorMixMaximumColorLevel}
             }
             ScreensaverConfig.Add("ColorMix", ColorMixConfig)
 
@@ -666,6 +675,15 @@ Public Module Config
             ColorMix255Colors = If(ConfigToken("Screensaver")?("ColorMix")?("Activate 255 Color Mode"), False)
             ColorMixTrueColor = If(ConfigToken("Screensaver")?("ColorMix")?("Activate True Color Mode"), True)
             ColorMixDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("ColorMix")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("ColorMix")?("Delay in Milliseconds"), 1)
+            ColorMixBackgroundColor = New Color(If(ConfigToken("Screensaver")?("ColorMix")?("Background color"), ConsoleColors.Red)).PlainSequence
+            ColorMixMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Minimum red color level"), 0)
+            ColorMixMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Minimum green color level"), 0)
+            ColorMixMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("Minimum blue color level"), 0)
+            ColorMixMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Minimum color level"), 0), ConfigToken("Screensaver")?("Minimum color level"), 0)
+            ColorMixMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("Maximum red color level"), 255)
+            ColorMixMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Maximum green color level"), 255)
+            ColorMixMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Maximum blue color level"), 255)
+            ColorMixMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Maximum color level"), 0), ConfigToken("Screensaver")?("Maximum color level"), 255)
 
             '> Disco
             Disco255Colors = If(ConfigToken("Screensaver")?("Disco")?("Activate 255 Color Mode"), False)
