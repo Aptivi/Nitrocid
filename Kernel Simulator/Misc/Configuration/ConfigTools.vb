@@ -109,7 +109,7 @@ Public Module ConfigTools
                 End If
             End If
             If ConfigToken("Screensaver")("Disco") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Disco").Count <> 5 Then
+                If ConfigToken("Screensaver")("Disco").Count <> 13 Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Disco. Config fix needed set to true.")
                     FixesNeeded = True
                 End If

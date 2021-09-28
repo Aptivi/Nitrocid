@@ -28,10 +28,10 @@ Module DiscoDisplay
     Sub Disco_DoWork(sender As Object, e As DoWorkEventArgs) Handles Disco.DoWork
         Try
             'Variables
-            Dim MaximumColors As Integer = 15
-            Dim MaximumColorsR As Integer = 255
-            Dim MaximumColorsG As Integer = 255
-            Dim MaximumColorsB As Integer = 255
+            Dim MaximumColors As Integer = If(DiscoMaximumColorLevel >= 0 And DiscoMaximumColorLevel <= 255, DiscoMaximumColorLevel, 255)
+            Dim MaximumColorsR As Integer = If(DiscoMaximumRedColorLevel >= 0 And DiscoMaximumRedColorLevel <= 255, DiscoMaximumRedColorLevel, 255)
+            Dim MaximumColorsG As Integer = If(DiscoMaximumGreenColorLevel >= 0 And DiscoMaximumGreenColorLevel <= 255, DiscoMaximumGreenColorLevel, 255)
+            Dim MaximumColorsB As Integer = If(DiscoMaximumBlueColorLevel >= 0 And DiscoMaximumBlueColorLevel <= 255, DiscoMaximumBlueColorLevel, 255)
             Dim CurrentColor As Integer = 0
             Dim CurrentColorR, CurrentColorG, CurrentColorB As Integer
             Dim random As New Random()
@@ -83,7 +83,6 @@ Module DiscoDisplay
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", color)
                             Console.Write(esc + "[48;5;" + CStr(color) + "m")
                         Else
-                            MaximumColors = 255
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", CurrentColor)
                             Console.Write(esc + "[48;5;" + CStr(CurrentColor) + "m")
                         End If
@@ -92,6 +91,7 @@ Module DiscoDisplay
                             Console.BackgroundColor = colors(Random.Next(colors.Length - 1))
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                         Else
+                            MaximumColors = If(DiscoMaximumColorLevel >= 0 And DiscoMaximumColorLevel <= 15, DiscoMaximumColorLevel, 15)
                             Console.BackgroundColor = colors(CurrentColor)
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                         End If

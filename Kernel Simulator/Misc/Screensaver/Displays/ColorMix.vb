@@ -95,7 +95,7 @@ Module ColorMixDisplay
                     Else
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Not ResizeSyncing Then
-                            Console.BackgroundColor = CType(colorrand.Next(1, 16), ConsoleColor)
+                            Console.BackgroundColor = CType(colorrand.Next(ColorMixMinimumColorLevel, ColorMixMaximumColorLevel), ConsoleColor)
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                             Console.Write(" ")
                         End If

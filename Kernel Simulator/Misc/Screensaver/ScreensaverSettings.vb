@@ -89,6 +89,38 @@ Public Module ScreensaverSettings
     ''' [Disco] Whether to use the Beats Per Minute (1/4) to change the writing delay. If False, will use the standard milliseconds delay instead.
     ''' </summary>
     Public DiscoUseBeatsPerMinute As Boolean = False
+    ''' <summary>
+    ''' [Disco] The minimum red color level (true color)
+    ''' </summary>
+    Public DiscoMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Disco] The minimum green color level (true color)
+    ''' </summary>
+    Public DiscoMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Disco] The minimum blue color level (true color)
+    ''' </summary>
+    Public DiscoMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Disco] The minimum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public DiscoMinimumColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Disco] The maximum red color level (true color)
+    ''' </summary>
+    Public DiscoMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Disco] The maximum green color level (true color)
+    ''' </summary>
+    Public DiscoMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Disco] The maximum blue color level (true color)
+    ''' </summary>
+    Public DiscoMaximumBlueColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Disco] The maximum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public DiscoMaximumColorLevel As Integer = 255
 
     '-> GlitterColor
     ''' <summary>
