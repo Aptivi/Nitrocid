@@ -34,7 +34,7 @@ Module FlashColorDisplay
             Dim ResizeSyncing As Boolean
 
             'Preparations
-            Console.BackgroundColor = ConsoleColor.Black
+            SetConsoleColor(New Color(FlashColorBackgroundColor), True)
             Console.Clear()
             Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
@@ -58,27 +58,52 @@ Module FlashColorDisplay
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
                     Console.SetCursorPosition(Left, Top)
 
+                    'Sanity checks for color levels
+                    If FlashColorTrueColor Or FlashColor255Colors Then
+                        FlashColorMinimumRedColorLevel = If(FlashColorMinimumRedColorLevel >= 0 And FlashColorMinimumRedColorLevel <= 255, FlashColorMinimumRedColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", FlashColorMinimumRedColorLevel)
+                        FlashColorMinimumGreenColorLevel = If(FlashColorMinimumGreenColorLevel >= 0 And FlashColorMinimumGreenColorLevel <= 255, FlashColorMinimumGreenColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", FlashColorMinimumGreenColorLevel)
+                        FlashColorMinimumBlueColorLevel = If(FlashColorMinimumBlueColorLevel >= 0 And FlashColorMinimumBlueColorLevel <= 255, FlashColorMinimumBlueColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", FlashColorMinimumBlueColorLevel)
+                        FlashColorMinimumColorLevel = If(FlashColorMinimumColorLevel >= 0 And FlashColorMinimumColorLevel <= 255, FlashColorMinimumColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", FlashColorMinimumColorLevel)
+                        FlashColorMaximumRedColorLevel = If(FlashColorMaximumRedColorLevel >= 0 And FlashColorMaximumRedColorLevel <= 255, FlashColorMaximumRedColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", FlashColorMaximumRedColorLevel)
+                        FlashColorMaximumGreenColorLevel = If(FlashColorMaximumGreenColorLevel >= 0 And FlashColorMaximumGreenColorLevel <= 255, FlashColorMaximumGreenColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", FlashColorMaximumGreenColorLevel)
+                        FlashColorMaximumBlueColorLevel = If(FlashColorMaximumBlueColorLevel >= 0 And FlashColorMaximumBlueColorLevel <= 255, FlashColorMaximumBlueColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", FlashColorMaximumBlueColorLevel)
+                        FlashColorMaximumColorLevel = If(FlashColorMaximumColorLevel >= 0 And FlashColorMaximumColorLevel <= 255, FlashColorMaximumColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", FlashColorMaximumColorLevel)
+                    Else
+                        FlashColorMinimumColorLevel = If(FlashColorMinimumColorLevel >= 0 And FlashColorMinimumColorLevel <= 15, FlashColorMinimumColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", FlashColorMinimumColorLevel)
+                        FlashColorMaximumColorLevel = If(FlashColorMaximumColorLevel >= 0 And FlashColorMaximumColorLevel <= 15, FlashColorMaximumColorLevel, 15)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", FlashColorMaximumColorLevel)
+                    End If
+
                     'Make a flash color
                     Dim esc As Char = GetEsc()
                     Console.BackgroundColor = ConsoleColor.Black
                     ClearKeepPosition()
                     If FlashColorTrueColor Then
-                        Dim RedColorNum As Integer = RandomDriver.Next(255)
-                        Dim GreenColorNum As Integer = RandomDriver.Next(255)
-                        Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                        Dim RedColorNum As Integer = RandomDriver.Next(FlashColorMinimumRedColorLevel, FlashColorMaximumRedColorLevel)
+                        Dim GreenColorNum As Integer = RandomDriver.Next(FlashColorMinimumGreenColorLevel, FlashColorMaximumGreenColorLevel)
+                        Dim BlueColorNum As Integer = RandomDriver.Next(FlashColorMinimumBlueColorLevel, FlashColorMaximumBlueColorLevel)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Not ResizeSyncing Then Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
                     ElseIf FlashColor255Colors Then
-                        Dim ColorNum As Integer = RandomDriver.Next(255)
+                        Dim ColorNum As Integer = RandomDriver.Next(FlashColorMinimumColorLevel, FlashColorMaximumColorLevel)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Not ResizeSyncing Then Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
                     Else
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Not ResizeSyncing Then
-                            Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                            Console.BackgroundColor = colors(RandomDriver.Next(FlashColorMinimumColorLevel, FlashColorMaximumColorLevel))
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                             Console.Write(" ")
                         End If

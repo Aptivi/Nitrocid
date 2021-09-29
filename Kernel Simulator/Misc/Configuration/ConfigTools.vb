@@ -217,7 +217,7 @@ Public Module ConfigTools
                 End If
             End If
             If ConfigToken("Screensaver")("FlashColor") IsNot Nothing Then
-                If ConfigToken("Screensaver")("FlashColor").Count <> 3 Then
+                If ConfigToken("Screensaver")("FlashColor").Count <> 12 Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > FlashColor. Config fix needed set to true.")
                     FixesNeeded = True
                 End If

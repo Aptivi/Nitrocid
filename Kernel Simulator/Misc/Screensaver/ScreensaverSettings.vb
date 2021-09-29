@@ -824,7 +824,6 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public MarqueeMaximumColorLevel As Integer = 0
 
-
     '-> BeatFader
     ''' <summary>
     ''' [BeatFader] Enable 255 color support. Has a higher priority than 16 color support. Please note that it only works if color cycling is enabled.
@@ -882,7 +881,6 @@ Public Module ScreensaverSettings
     ''' [BeatFader] The maximum color level (255 colors or 16 colors)
     ''' </summary>
     Public BeatFaderMaximumColorLevel As Integer = 255
-
 
     '-> GlitterMatrix
     ''' <summary>
@@ -1115,6 +1113,42 @@ Public Module ScreensaverSettings
     ''' [FlashColor] How many milliseconds to wait before making the next write?
     ''' </summary>
     Public FlashColorDelay As Integer = 20
+    ''' <summary>
+    ''' [FlashColor] Screensaver background color
+    ''' </summary>
+    Public FlashColorBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+    ''' <summary>
+    ''' [FlashColor] The minimum red color level (true color)
+    ''' </summary>
+    Public FlashColorMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [FlashColor] The minimum green color level (true color)
+    ''' </summary>
+    Public FlashColorMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [FlashColor] The minimum blue color level (true color)
+    ''' </summary>
+    Public FlashColorMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [FlashColor] The minimum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public FlashColorMinimumColorLevel As Integer = 0
+    ''' <summary>
+    ''' [FlashColor] The maximum red color level (true color)
+    ''' </summary>
+    Public FlashColorMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [FlashColor] The maximum green color level (true color)
+    ''' </summary>
+    Public FlashColorMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [FlashColor] The maximum blue color level (true color)
+    ''' </summary>
+    Public FlashColorMaximumBlueColorLevel As Integer = 255
+    ''' <summary>
+    ''' [FlashColor] The maximum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public FlashColorMaximumColorLevel As Integer = 0
 
     '-> SpotWrite
     ''' <summary>

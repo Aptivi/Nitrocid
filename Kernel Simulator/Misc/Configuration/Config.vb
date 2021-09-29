@@ -606,7 +606,16 @@ Public Module Config
             Dim FlashColorConfig As New JObject From {
                     {"Activate 255 Color Mode", FlashColor255Colors},
                     {"Activate True Color Mode", FlashColorTrueColor},
-                    {"Delay in Milliseconds", FlashColorDelay}
+                    {"Delay in Milliseconds", FlashColorDelay},
+                    {"Background color", If(New Color(FlashColorBackgroundColor).Type = ColorType.TrueColor, FlashColorBackgroundColor.EncloseByDoubleQuotes, FlashColorBackgroundColor)},
+                    {"Minimum red color level", FlashColorMinimumRedColorLevel},
+                    {"Minimum green color level", FlashColorMinimumGreenColorLevel},
+                    {"Minimum blue color level", FlashColorMinimumBlueColorLevel},
+                    {"Minimum color level", FlashColorMinimumColorLevel},
+                    {"Maximum red color level", FlashColorMaximumRedColorLevel},
+                    {"Maximum green color level", FlashColorMaximumGreenColorLevel},
+                    {"Maximum blue color level", FlashColorMaximumBlueColorLevel},
+                    {"Maximum color level", FlashColorMaximumColorLevel}
             }
             ScreensaverConfig.Add("FlashColor", FlashColorConfig)
 
@@ -1141,6 +1150,15 @@ Public Module Config
             FlashColor255Colors = If(ConfigToken("Screensaver")?("FlashColor")?("Activate 255 Color Mode"), False)
             FlashColorTrueColor = If(ConfigToken("Screensaver")?("FlashColor")?("Activate True Color Mode"), True)
             FlashColorDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashColor")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("FlashColor")?("Delay in Milliseconds"), 1)
+            FlashColorBackgroundColor = New Color(If(ConfigToken("Screensaver")?("FlashColor")?("Background color"), ConsoleColors.Black)).PlainSequence
+            FlashColorMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashColor")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("FlashColor")?("Minimum red color level"), 0)
+            FlashColorMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashColor")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("FlashColor")?("Minimum green color level"), 0)
+            FlashColorMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashColor")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("FlashColor")?("Minimum blue color level"), 0)
+            FlashColorMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashColor")?("Minimum color level"), 0), ConfigToken("Screensaver")?("FlashColor")?("Minimum color level"), 0)
+            FlashColorMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashColor")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("FlashColor")?("Maximum red color level"), 255)
+            FlashColorMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashColor")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("FlashColor")?("Maximum green color level"), 255)
+            FlashColorMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashColor")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("FlashColor")?("Maximum blue color level"), 255)
+            FlashColorMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashColor")?("Maximum color level"), 0), ConfigToken("Screensaver")?("FlashColor")?("Maximum color level"), 255)
 
             '> SpotWrite
             SpotWriteDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("SpotWrite")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("SpotWrite")?("Delay in Milliseconds"), 50)

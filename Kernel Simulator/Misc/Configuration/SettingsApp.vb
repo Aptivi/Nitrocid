@@ -659,12 +659,21 @@ Public Module SettingsApp
                     W(" 5) " + DoTranslation("Maximum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypewriterWritingSpeedMax)))
                     W(" 6) " + DoTranslation("Text color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypewriterTextColor)))
                 Case "7.20" 'Screensaver > FlashColor
-                    MaxOptions = 3
+                    MaxOptions = 12
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > FlashColor", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " FlashColor." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColor255Colors)))
                     W(" 2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColorTrueColor)))
                     W(" 3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColorDelay)))
+                    W(" 4) " + DoTranslation("Background color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColorBackgroundColor)))
+                    W(" 5) " + DoTranslation("Minimum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColorMinimumRedColorLevel)))
+                    W(" 6) " + DoTranslation("Minimum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColorMinimumGreenColorLevel)))
+                    W(" 7) " + DoTranslation("Minimum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColorMinimumBlueColorLevel)))
+                    W(" 8) " + DoTranslation("Minimum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColorMinimumColorLevel)))
+                    W(" 9) " + DoTranslation("Maximum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColorMaximumRedColorLevel)))
+                    W(" 10) " + DoTranslation("Maximum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColorMaximumGreenColorLevel)))
+                    W(" 11) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColorMaximumBlueColorLevel)))
+                    W(" 12) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColorMaximumColorLevel)))
                 Case "7.21" 'Screensaver > SpotWrite
                     MaxOptions = 5
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > SpotWrite", True)
@@ -2943,6 +2952,51 @@ Public Module SettingsApp
                             KeyVar = NameOf(FlashColorDelay)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > FlashColor > " + DoTranslation("Delay in Milliseconds"), True)
                             W(vbNewLine + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 4 'FlashColor: Background color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(FlashColorBackgroundColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(FlashColorBackgroundColor).Type = ColorType.TrueColor, If(New Color(FlashColorBackgroundColor).Type = ColorType._255Color, New Color(FlashColorBackgroundColor).PlainSequence, ConsoleColors.White), New Color(FlashColorBackgroundColor).R, New Color(FlashColorBackgroundColor).G, New Color(FlashColorBackgroundColor).B)
+                        Case 5 'FlashColor: Minimum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FlashColorMinimumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > FlashColor > " + DoTranslation("Minimum red color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 6 'FlashColor: Minimum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FlashColorMinimumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > FlashColor > " + DoTranslation("Minimum green color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 7 'FlashColor: Minimum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FlashColorMinimumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > FlashColor > " + DoTranslation("Minimum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 8 'FlashColor: Minimum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FlashColorMinimumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > FlashColor > " + DoTranslation("Minimum color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 9 'FlashColor: Maximum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FlashColorMaximumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > FlashColor > " + DoTranslation("Maximum red color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 10 'FlashColor: Maximum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FlashColorMaximumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > FlashColor > " + DoTranslation("Maximum green color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 11 'FlashColor: Maximum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FlashColorMaximumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > FlashColor > " + DoTranslation("Maximum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 12 'FlashColor: Maximum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FlashColorMaximumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > FlashColor > " + DoTranslation("Maximum color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
