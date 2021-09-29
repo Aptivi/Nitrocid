@@ -3193,7 +3193,7 @@ Public Module SettingsApp
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Maximum color level for end color"), True)
                             W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
                         Case Else
-                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > ???", True)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
                 Case "7." + $"{If(SectionParts.Length > 1, SectionParts(1), $"{BuiltinSavers + 1}")}" 'Custom saver
