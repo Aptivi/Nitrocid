@@ -35,8 +35,8 @@ Module BouncingTextDisplay
             Dim ResizeSyncing As Boolean
 
             'Preparations
-            Console.BackgroundColor = ConsoleColor.Black
-            Console.ForegroundColor = ConsoleColor.White
+            SetConsoleColor(New Color(BouncingTextBackgroundColor), True)
+            SetConsoleColor(New Color(BouncingTextForegroundColor))
             Console.Clear()
             RowText = Console.WindowHeight / 2
             ColumnFirstLetter = (Console.WindowWidth / 2) - BouncingTextWrite.Length / 2
@@ -57,6 +57,31 @@ Module BouncingTextDisplay
                 Else
                     SleepNoBlock(BouncingTextDelay, BouncingText)
                     Console.Clear()
+
+                    'Sanity checks for color levels
+                    If BouncingTextTrueColor Or BouncingText255Colors Then
+                        BouncingTextMinimumRedColorLevel = If(BouncingTextMinimumRedColorLevel >= 0 And BouncingTextMinimumRedColorLevel <= 255, BouncingTextMinimumRedColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", BouncingTextMinimumRedColorLevel)
+                        BouncingTextMinimumGreenColorLevel = If(BouncingTextMinimumGreenColorLevel >= 0 And BouncingTextMinimumGreenColorLevel <= 255, BouncingTextMinimumGreenColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", BouncingTextMinimumGreenColorLevel)
+                        BouncingTextMinimumBlueColorLevel = If(BouncingTextMinimumBlueColorLevel >= 0 And BouncingTextMinimumBlueColorLevel <= 255, BouncingTextMinimumBlueColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", BouncingTextMinimumBlueColorLevel)
+                        BouncingTextMinimumColorLevel = If(BouncingTextMinimumColorLevel >= 0 And BouncingTextMinimumColorLevel <= 255, BouncingTextMinimumColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", BouncingTextMinimumColorLevel)
+                        BouncingTextMaximumRedColorLevel = If(BouncingTextMaximumRedColorLevel >= 0 And BouncingTextMaximumRedColorLevel <= 255, BouncingTextMaximumRedColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", BouncingTextMaximumRedColorLevel)
+                        BouncingTextMaximumGreenColorLevel = If(BouncingTextMaximumGreenColorLevel >= 0 And BouncingTextMaximumGreenColorLevel <= 255, BouncingTextMaximumGreenColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", BouncingTextMaximumGreenColorLevel)
+                        BouncingTextMaximumBlueColorLevel = If(BouncingTextMaximumBlueColorLevel >= 0 And BouncingTextMaximumBlueColorLevel <= 255, BouncingTextMaximumBlueColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", BouncingTextMaximumBlueColorLevel)
+                        BouncingTextMaximumColorLevel = If(BouncingTextMaximumColorLevel >= 0 And BouncingTextMaximumColorLevel <= 255, BouncingTextMaximumColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", BouncingTextMaximumColorLevel)
+                    Else
+                        BouncingTextMinimumColorLevel = If(BouncingTextMinimumColorLevel >= 0 And BouncingTextMinimumColorLevel <= 15, BouncingTextMinimumColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", BouncingTextMinimumColorLevel)
+                        BouncingTextMaximumColorLevel = If(BouncingTextMaximumColorLevel >= 0 And BouncingTextMaximumColorLevel <= 15, BouncingTextMaximumColorLevel, 15)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", BouncingTextMaximumColorLevel)
+                    End If
 
 #Disable Warning BC42104
                     'Define the color
@@ -149,16 +174,16 @@ Module BouncingTextDisplay
         Dim RandomDriver As New Random
         Dim ColorInstance As Color
         If BouncingTextTrueColor Then
-            Dim RedColorNum As Integer = RandomDriver.Next(1, 255)
-            Dim GreenColorNum As Integer = RandomDriver.Next(1, 255)
-            Dim BlueColorNum As Integer = RandomDriver.Next(1, 255)
+            Dim RedColorNum As Integer = RandomDriver.Next(BouncingTextMinimumRedColorLevel, BouncingTextMaximumRedColorLevel)
+            Dim GreenColorNum As Integer = RandomDriver.Next(BouncingTextMinimumGreenColorLevel, BouncingTextMaximumGreenColorLevel)
+            Dim BlueColorNum As Integer = RandomDriver.Next(BouncingTextMinimumBlueColorLevel, BouncingTextMaximumBlueColorLevel)
             Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
             ColorInstance = New Color(ColorStorage.ToString)
         ElseIf BouncingText255Colors Then
-            Dim ColorNum As Integer = RandomDriver.Next(1, 255)
+            Dim ColorNum As Integer = RandomDriver.Next(BouncingTextMinimumColorLevel, BouncingTextMaximumColorLevel)
             ColorInstance = New Color(ColorNum)
         Else
-            ColorInstance = New Color(colors(RandomDriver.Next(1, colors.Length - 1)))
+            ColorInstance = New Color(colors(RandomDriver.Next(BouncingTextMinimumColorLevel, BouncingTextMaximumColorLevel)))
         End If
         Return ColorInstance
     End Function

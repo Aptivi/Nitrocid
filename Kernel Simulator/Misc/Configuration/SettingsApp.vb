@@ -400,13 +400,23 @@ Public Module SettingsApp
                     W(" 10) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterColorMaximumBlueColorLevel)))
                     W(" 11) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GlitterColorMaximumColorLevel)))
                 Case "7.7" 'Screensaver > BouncingText
-                    MaxOptions = 4
+                    MaxOptions = 14
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingText", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " BouncingText." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingText255Colors)))
                     W(" 2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextTrueColor)))
                     W(" 3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextDelay)))
                     W(" 4) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextWrite)))
+                    W(" 5) " + DoTranslation("Background color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextBackgroundColor)))
+                    W(" 6) " + DoTranslation("Foreground color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextForegroundColor)))
+                    W(" 7) " + DoTranslation("Minimum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextMinimumRedColorLevel)))
+                    W(" 8) " + DoTranslation("Minimum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextMinimumGreenColorLevel)))
+                    W(" 9) " + DoTranslation("Minimum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextMinimumBlueColorLevel)))
+                    W(" 10) " + DoTranslation("Minimum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextMinimumColorLevel)))
+                    W(" 11) " + DoTranslation("Maximum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextMaximumRedColorLevel)))
+                    W(" 12) " + DoTranslation("Maximum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextMaximumGreenColorLevel)))
+                    W(" 13) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextMaximumBlueColorLevel)))
+                    W(" 14) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextMaximumColorLevel)))
                 Case "7.8" 'Screensaver > Dissolve
                     MaxOptions = 11
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Dissolve", True)
@@ -1707,6 +1717,56 @@ Public Module SettingsApp
                             KeyVar = NameOf(BouncingTextWrite)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Text shown"), True)
                             W(vbNewLine + DoTranslation("Write any text you want shown. Shorter is better."), True, ColTypes.Neutral)
+                        Case 5 'BouncingText: Background color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(BouncingTextBackgroundColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(BouncingTextBackgroundColor).Type = ColorType.TrueColor, If(New Color(BouncingTextBackgroundColor).Type = ColorType._255Color, New Color(BouncingTextBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(BouncingTextBackgroundColor).R, New Color(BouncingTextBackgroundColor).G, New Color(BouncingTextBackgroundColor).B)
+                        Case 6 'BouncingText: Foreground color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(BouncingTextForegroundColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(BouncingTextForegroundColor).Type = ColorType.TrueColor, If(New Color(BouncingTextForegroundColor).Type = ColorType._255Color, New Color(BouncingTextForegroundColor).PlainSequence, ConsoleColors.White), New Color(BouncingTextForegroundColor).R, New Color(BouncingTextForegroundColor).G, New Color(BouncingTextForegroundColor).B)
+                        Case 7 'BouncingText: Minimum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingTextMinimumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Minimum red color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 8 'BouncingText: Minimum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingTextMinimumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Minimum green color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 9 'BouncingText: Minimum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingTextMinimumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Minimum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 10 'BouncingText: Minimum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingTextMinimumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Minimum color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 11 'BouncingText: Maximum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingTextMaximumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Maximum red color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 12 'BouncingText: Maximum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingTextMaximumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Maximum green color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 13 'BouncingText: Maximum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingTextMaximumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Maximum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 14 'BouncingText: Maximum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingTextMaximumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingText > " + DoTranslation("Maximum color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingText > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

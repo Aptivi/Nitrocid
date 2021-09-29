@@ -400,7 +400,17 @@ Public Module Config
                     {"Activate 255 Color Mode", BouncingText255Colors},
                     {"Activate True Color Mode", BouncingTextTrueColor},
                     {"Delay in Milliseconds", BouncingTextDelay},
-                    {"Text Shown", BouncingTextWrite}
+                    {"Text Shown", BouncingTextWrite},
+                    {"Background color", If(New Color(BouncingTextBackgroundColor).Type = ColorType.TrueColor, BouncingTextBackgroundColor.EncloseByDoubleQuotes, BouncingTextBackgroundColor)},
+                    {"Foreground color", If(New Color(BouncingTextForegroundColor).Type = ColorType.TrueColor, BouncingTextForegroundColor.EncloseByDoubleQuotes, BouncingTextForegroundColor)},
+                    {"Minimum red color level", BouncingTextMinimumRedColorLevel},
+                    {"Minimum green color level", BouncingTextMinimumGreenColorLevel},
+                    {"Minimum blue color level", BouncingTextMinimumBlueColorLevel},
+                    {"Minimum color level", BouncingTextMinimumColorLevel},
+                    {"Maximum red color level", BouncingTextMaximumRedColorLevel},
+                    {"Maximum green color level", BouncingTextMaximumGreenColorLevel},
+                    {"Maximum blue color level", BouncingTextMaximumBlueColorLevel},
+                    {"Maximum color level", BouncingTextMaximumColorLevel}
             }
             ScreensaverConfig.Add("BouncingText", BouncingTextConfig)
 
@@ -813,6 +823,16 @@ Public Module Config
             BouncingTextTrueColor = If(ConfigToken("Screensaver")?("BouncingText")?("Activate True Color Mode"), True)
             BouncingTextDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingText")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("BouncingText")?("Delay in Milliseconds"), 10)
             BouncingTextWrite = If(ConfigToken("Screensaver")?("BouncingText")?("Text Shown"), "Kernel Simulator")
+            BouncingTextBackgroundColor = New Color(If(ConfigToken("Screensaver")?("BouncingText")?("Background color"), ConsoleColors.Black)).PlainSequence
+            BouncingTextForegroundColor = New Color(If(ConfigToken("Screensaver")?("BouncingText")?("Foreground color"), ConsoleColors.White)).PlainSequence
+            BouncingTextMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingText")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("BouncingText")?("Minimum red color level"), 0)
+            BouncingTextMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingText")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("BouncingText")?("Minimum green color level"), 0)
+            BouncingTextMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingText")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("BouncingText")?("Minimum blue color level"), 0)
+            BouncingTextMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingText")?("Minimum color level"), 0), ConfigToken("Screensaver")?("BouncingText")?("Minimum color level"), 0)
+            BouncingTextMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingText")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("BouncingText")?("Maximum red color level"), 255)
+            BouncingTextMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingText")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("BouncingText")?("Maximum green color level"), 255)
+            BouncingTextMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingText")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("BouncingText")?("Maximum blue color level"), 255)
+            BouncingTextMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingText")?("Maximum color level"), 0), ConfigToken("Screensaver")?("BouncingText")?("Maximum color level"), 255)
 
             '> ProgressClock
             ProgressClock255Colors = If(ConfigToken("Screensaver")?("ProgressClock")?("Activate 255 Color Mode"), False)

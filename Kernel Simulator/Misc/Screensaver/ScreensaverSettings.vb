@@ -339,6 +339,46 @@ Public Module ScreensaverSettings
     ''' [BouncingText] Text for Bouncing Text. Shorter is better.
     ''' </summary>
     Public BouncingTextWrite As String = "Kernel Simulator"
+    ''' <summary>
+    ''' [BouncingText] Screensaver background color
+    ''' </summary>
+    Public BouncingTextBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+    ''' <summary>
+    ''' [BouncingText] Screensaver foreground color
+    ''' </summary>
+    Public BouncingTextForegroundColor As String = New Color(ConsoleColor.White).PlainSequence
+    ''' <summary>
+    ''' [BouncingText] The minimum red color level (true color)
+    ''' </summary>
+    Public BouncingTextMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [BouncingText] The minimum green color level (true color)
+    ''' </summary>
+    Public BouncingTextMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [BouncingText] The minimum blue color level (true color)
+    ''' </summary>
+    Public BouncingTextMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [BouncingText] The minimum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public BouncingTextMinimumColorLevel As Integer = 0
+    ''' <summary>
+    ''' [BouncingText] The maximum red color level (true color)
+    ''' </summary>
+    Public BouncingTextMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [BouncingText] The maximum green color level (true color)
+    ''' </summary>
+    Public BouncingTextMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [BouncingText] The maximum blue color level (true color)
+    ''' </summary>
+    Public BouncingTextMaximumBlueColorLevel As Integer = 255
+    ''' <summary>
+    ''' [BouncingText] The maximum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public BouncingTextMaximumColorLevel As Integer = 255
 
     '-> ProgressClock
     ''' <summary>
