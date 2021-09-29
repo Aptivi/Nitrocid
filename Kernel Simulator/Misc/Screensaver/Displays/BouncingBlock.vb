@@ -36,8 +36,8 @@ Module BouncingBlockDisplay
             Dim ResizeSyncing As Boolean
 
             'Preparations
-            Console.BackgroundColor = ConsoleColor.Black
-            Console.ForegroundColor = ConsoleColor.White
+            SetConsoleColor(New Color(BouncingBlockBackgroundColor), True)
+            SetConsoleColor(New Color(BouncingBlockForegroundColor))
             Console.Clear()
             RowBlock = Console.WindowHeight / 2
             ColumnBlock = Console.WindowWidth / 2
@@ -45,8 +45,8 @@ Module BouncingBlockDisplay
             'Screensaver logic
             Do While True
                 Console.CursorVisible = False
-                Console.BackgroundColor = ConsoleColor.Black
-                Console.ForegroundColor = ConsoleColor.White
+                SetConsoleColor(New Color(BouncingBlockBackgroundColor), True)
+                SetConsoleColor(New Color(BouncingBlockForegroundColor))
                 Console.Clear()
                 If BouncingBlock.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
@@ -61,11 +61,36 @@ Module BouncingBlockDisplay
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Row block: {0} | Column block: {1}", RowBlock, ColumnBlock)
                     SleepNoBlock(BouncingBlockDelay, BouncingBlock)
 
+                    'Sanity checks for color levels
+                    If BouncingBlockTrueColor Or BouncingBlock255Colors Then
+                        BouncingBlockMinimumRedColorLevel = If(BouncingBlockMinimumRedColorLevel >= 0 And BouncingBlockMinimumRedColorLevel <= 255, BouncingBlockMinimumRedColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", BouncingBlockMinimumRedColorLevel)
+                        BouncingBlockMinimumGreenColorLevel = If(BouncingBlockMinimumGreenColorLevel >= 0 And BouncingBlockMinimumGreenColorLevel <= 255, BouncingBlockMinimumGreenColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", BouncingBlockMinimumGreenColorLevel)
+                        BouncingBlockMinimumBlueColorLevel = If(BouncingBlockMinimumBlueColorLevel >= 0 And BouncingBlockMinimumBlueColorLevel <= 255, BouncingBlockMinimumBlueColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", BouncingBlockMinimumBlueColorLevel)
+                        BouncingBlockMinimumColorLevel = If(BouncingBlockMinimumColorLevel >= 0 And BouncingBlockMinimumColorLevel <= 255, BouncingBlockMinimumColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", BouncingBlockMinimumColorLevel)
+                        BouncingBlockMaximumRedColorLevel = If(BouncingBlockMaximumRedColorLevel >= 0 And BouncingBlockMaximumRedColorLevel <= 255, BouncingBlockMaximumRedColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", BouncingBlockMaximumRedColorLevel)
+                        BouncingBlockMaximumGreenColorLevel = If(BouncingBlockMaximumGreenColorLevel >= 0 And BouncingBlockMaximumGreenColorLevel <= 255, BouncingBlockMaximumGreenColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", BouncingBlockMaximumGreenColorLevel)
+                        BouncingBlockMaximumBlueColorLevel = If(BouncingBlockMaximumBlueColorLevel >= 0 And BouncingBlockMaximumBlueColorLevel <= 255, BouncingBlockMaximumBlueColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", BouncingBlockMaximumBlueColorLevel)
+                        BouncingBlockMaximumColorLevel = If(BouncingBlockMaximumColorLevel >= 0 And BouncingBlockMaximumColorLevel <= 255, BouncingBlockMaximumColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", BouncingBlockMaximumColorLevel)
+                    Else
+                        BouncingBlockMinimumColorLevel = If(BouncingBlockMinimumColorLevel >= 0 And BouncingBlockMinimumColorLevel <= 15, BouncingBlockMinimumColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", BouncingBlockMinimumColorLevel)
+                        BouncingBlockMaximumColorLevel = If(BouncingBlockMaximumColorLevel >= 0 And BouncingBlockMaximumColorLevel <= 15, BouncingBlockMaximumColorLevel, 15)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", BouncingBlockMaximumColorLevel)
+                    End If
+
                     'Change the color
                     If BouncingBlockTrueColor Then
-                        Dim RedColorNum As Integer = RandomDriver.Next(255)
-                        Dim GreenColorNum As Integer = RandomDriver.Next(255)
-                        Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                        Dim RedColorNum As Integer = RandomDriver.Next(BouncingBlockMinimumRedColorLevel, BouncingBlockMaximumRedColorLevel)
+                        Dim GreenColorNum As Integer = RandomDriver.Next(BouncingBlockMinimumGreenColorLevel, BouncingBlockMaximumGreenColorLevel)
+                        Dim BlueColorNum As Integer = RandomDriver.Next(BouncingBlockMinimumBlueColorLevel, BouncingBlockMaximumBlueColorLevel)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
@@ -76,7 +101,7 @@ Module BouncingBlockDisplay
                             ColumnBlock = Console.WindowWidth / 2
                         End If
                     ElseIf BouncingBlock255Colors Then
-                        Dim ColorNum As Integer = RandomDriver.Next(255)
+                        Dim ColorNum As Integer = RandomDriver.Next(BouncingBlockMinimumColorLevel, BouncingBlockMaximumColorLevel)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Not ResizeSyncing Then
@@ -90,7 +115,7 @@ Module BouncingBlockDisplay
                         Dim OldRow As Integer = Console.CursorTop
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Not ResizeSyncing Then
-                            Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                            Console.BackgroundColor = colors(RandomDriver.Next(BouncingBlockMinimumColorLevel, BouncingBlockMaximumColorLevel))
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                             Console.SetCursorPosition(ColumnBlock, RowBlock)
                             Console.Write(" ")

@@ -423,12 +423,22 @@ Public Module SettingsApp
                     W(" 10) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DissolveMaximumBlueColorLevel)))
                     W(" 11) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DissolveMaximumColorLevel)))
                 Case "7.9" 'Screensaver > BouncingBlock
-                    MaxOptions = 3
+                    MaxOptions = 13
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingBlock", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " BouncingBlock." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlock255Colors)))
                     W(" 2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlockTrueColor)))
                     W(" 3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlockDelay)))
+                    W(" 4) " + DoTranslation("Background color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlockBackgroundColor)))
+                    W(" 5) " + DoTranslation("Foreground color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlockForegroundColor)))
+                    W(" 6) " + DoTranslation("Minimum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlockMinimumRedColorLevel)))
+                    W(" 7) " + DoTranslation("Minimum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlockMinimumGreenColorLevel)))
+                    W(" 8) " + DoTranslation("Minimum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlockMinimumBlueColorLevel)))
+                    W(" 9) " + DoTranslation("Minimum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlockMinimumColorLevel)))
+                    W(" 10) " + DoTranslation("Maximum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlockMaximumRedColorLevel)))
+                    W(" 11) " + DoTranslation("Maximum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlockMaximumGreenColorLevel)))
+                    W(" 12) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlockMaximumBlueColorLevel)))
+                    W(" 13) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlockMaximumColorLevel)))
                 Case "7.10" 'Screensaver > ProgressClock
                     MaxOptions = 8
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock", True)
@@ -1779,6 +1789,56 @@ Public Module SettingsApp
                             KeyVar = NameOf(BouncingBlockDelay)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingBlock > " + DoTranslation("Delay in Milliseconds"), True)
                             W(vbNewLine + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 4 'BouncingBlock: Background color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(BouncingBlockBackgroundColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(BouncingBlockBackgroundColor).Type = ColorType.TrueColor, If(New Color(BouncingBlockBackgroundColor).Type = ColorType._255Color, New Color(BouncingBlockBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(BouncingBlockBackgroundColor).R, New Color(BouncingBlockBackgroundColor).G, New Color(BouncingBlockBackgroundColor).B)
+                        Case 5 'BouncingBlock: Foreground color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(BouncingBlockForegroundColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(BouncingBlockForegroundColor).Type = ColorType.TrueColor, If(New Color(BouncingBlockForegroundColor).Type = ColorType._255Color, New Color(BouncingBlockForegroundColor).PlainSequence, ConsoleColors.White), New Color(BouncingBlockForegroundColor).R, New Color(BouncingBlockForegroundColor).G, New Color(BouncingBlockForegroundColor).B)
+                        Case 6 'BouncingBlock: Minimum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingBlockMinimumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingBlock > " + DoTranslation("Minimum red color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 7 'BouncingBlock: Minimum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingBlockMinimumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingBlock > " + DoTranslation("Minimum green color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 8 'BouncingBlock: Minimum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingBlockMinimumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingBlock > " + DoTranslation("Minimum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 9 'BouncingBlock: Minimum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingBlockMinimumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingBlock > " + DoTranslation("Minimum color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 10 'BouncingBlock: Maximum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingBlockMaximumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingBlock > " + DoTranslation("Maximum red color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 11 'BouncingBlock: Maximum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingBlockMaximumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingBlock > " + DoTranslation("Maximum green color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 12 'BouncingBlock: Maximum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingBlockMaximumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingBlock > " + DoTranslation("Maximum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 13 'BouncingBlock: Maximum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BouncingBlockMaximumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingBlock > " + DoTranslation("Maximum color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingBlock > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

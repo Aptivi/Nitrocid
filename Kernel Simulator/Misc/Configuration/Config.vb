@@ -336,7 +336,17 @@ Public Module Config
             Dim BouncingBlockConfig As New JObject From {
                     {"Activate 255 Color Mode", BouncingBlock255Colors},
                     {"Activate True Color Mode", BouncingBlockTrueColor},
-                    {"Delay in Milliseconds", BouncingBlockDelay}
+                    {"Delay in Milliseconds", BouncingBlockDelay},
+                    {"Background color", If(New Color(BouncingBlockBackgroundColor).Type = ColorType.TrueColor, BouncingBlockBackgroundColor.EncloseByDoubleQuotes, BouncingBlockBackgroundColor)},
+                    {"Foreground color", If(New Color(BouncingBlockForegroundColor).Type = ColorType.TrueColor, BouncingBlockForegroundColor.EncloseByDoubleQuotes, BouncingBlockForegroundColor)},
+                    {"Minimum red color level", BouncingBlockMinimumRedColorLevel},
+                    {"Minimum green color level", BouncingBlockMinimumGreenColorLevel},
+                    {"Minimum blue color level", BouncingBlockMinimumBlueColorLevel},
+                    {"Minimum color level", BouncingBlockMinimumColorLevel},
+                    {"Maximum red color level", BouncingBlockMaximumRedColorLevel},
+                    {"Maximum green color level", BouncingBlockMaximumGreenColorLevel},
+                    {"Maximum blue color level", BouncingBlockMaximumBlueColorLevel},
+                    {"Maximum color level", BouncingBlockMaximumColorLevel}
             }
             ScreensaverConfig.Add("BouncingBlock", BouncingBlockConfig)
 
@@ -787,6 +797,16 @@ Public Module Config
             BouncingBlock255Colors = If(ConfigToken("Screensaver")?("BouncingBlock")?("Activate 255 Color Mode"), False)
             BouncingBlockTrueColor = If(ConfigToken("Screensaver")?("BouncingBlock")?("Activate True Color Mode"), True)
             BouncingBlockDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingBlock")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("BouncingBlock")?("Delay in Milliseconds"), 10)
+            BouncingBlockBackgroundColor = New Color(If(ConfigToken("Screensaver")?("BouncingBlock")?("Background color"), ConsoleColors.Black)).PlainSequence
+            BouncingBlockForegroundColor = New Color(If(ConfigToken("Screensaver")?("BouncingBlock")?("Foreground color"), ConsoleColors.White)).PlainSequence
+            BouncingBlockMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingBlock")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("BouncingBlock")?("Minimum red color level"), 0)
+            BouncingBlockMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingBlock")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("BouncingBlock")?("Minimum green color level"), 0)
+            BouncingBlockMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingBlock")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("BouncingBlock")?("Minimum blue color level"), 0)
+            BouncingBlockMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingBlock")?("Minimum color level"), 0), ConfigToken("Screensaver")?("BouncingBlock")?("Minimum color level"), 0)
+            BouncingBlockMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingBlock")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("BouncingBlock")?("Maximum red color level"), 255)
+            BouncingBlockMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingBlock")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("BouncingBlock")?("Maximum green color level"), 255)
+            BouncingBlockMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingBlock")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("BouncingBlock")?("Maximum blue color level"), 255)
+            BouncingBlockMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingBlock")?("Maximum color level"), 0), ConfigToken("Screensaver")?("BouncingBlock")?("Maximum color level"), 255)
 
             '> BouncingText
             BouncingText255Colors = If(ConfigToken("Screensaver")?("BouncingText")?("Activate 255 Color Mode"), False)

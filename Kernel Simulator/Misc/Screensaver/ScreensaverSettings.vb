@@ -281,6 +281,46 @@ Public Module ScreensaverSettings
     ''' [BouncingBlock] How many milliseconds to wait before making the next write?
     ''' </summary>
     Public BouncingBlockDelay As Integer = 10
+    ''' <summary>
+    ''' [BouncingBlock] Screensaver background color
+    ''' </summary>
+    Public BouncingBlockBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+    ''' <summary>
+    ''' [BouncingBlock] Screensaver foreground color
+    ''' </summary>
+    Public BouncingBlockForegroundColor As String = New Color(ConsoleColor.White).PlainSequence
+    ''' <summary>
+    ''' [BouncingBlock] The minimum red color level (true color)
+    ''' </summary>
+    Public BouncingBlockMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [BouncingBlock] The minimum green color level (true color)
+    ''' </summary>
+    Public BouncingBlockMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [BouncingBlock] The minimum blue color level (true color)
+    ''' </summary>
+    Public BouncingBlockMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [BouncingBlock] The minimum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public BouncingBlockMinimumColorLevel As Integer = 0
+    ''' <summary>
+    ''' [BouncingBlock] The maximum red color level (true color)
+    ''' </summary>
+    Public BouncingBlockMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [BouncingBlock] The maximum green color level (true color)
+    ''' </summary>
+    Public BouncingBlockMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [BouncingBlock] The maximum blue color level (true color)
+    ''' </summary>
+    Public BouncingBlockMaximumBlueColorLevel As Integer = 255
+    ''' <summary>
+    ''' [BouncingBlock] The maximum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public BouncingBlockMaximumColorLevel As Integer = 255
 
     '-> BouncingText
     ''' <summary>
