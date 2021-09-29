@@ -893,6 +893,30 @@ Public Module ScreensaverSettings
     ''' [FaderBack] How many fade steps to do?
     ''' </summary>
     Public FaderBackMaxSteps As Integer = 25
+    ''' <summary>
+    ''' [FaderBack] The minimum red color level (true color)
+    ''' </summary>
+    Public FaderBackMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [FaderBack] The minimum green color level (true color)
+    ''' </summary>
+    Public FaderBackMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [FaderBack] The minimum blue color level (true color)
+    ''' </summary>
+    Public FaderBackMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [FaderBack] The maximum red color level (true color)
+    ''' </summary>
+    Public FaderBackMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [FaderBack] The maximum green color level (true color)
+    ''' </summary>
+    Public FaderBackMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [FaderBack] The maximum blue color level (true color)
+    ''' </summary>
+    Public FaderBackMaximumBlueColorLevel As Integer = 255
 
     '-> Typo
     ''' <summary>

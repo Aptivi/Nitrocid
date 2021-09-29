@@ -512,7 +512,13 @@ Public Module Config
             Dim FaderBackConfig As New JObject From {
                     {"Delay in Milliseconds", FaderBackDelay},
                     {"Fade Out Delay in Milliseconds", FaderBackFadeOutDelay},
-                    {"Max Fade Steps", FaderBackMaxSteps}
+                    {"Max Fade Steps", FaderBackMaxSteps},
+                    {"Minimum red color level", FaderBackMinimumRedColorLevel},
+                    {"Minimum green color level", FaderBackMinimumGreenColorLevel},
+                    {"Minimum blue color level", FaderBackMinimumBlueColorLevel},
+                    {"Maximum red color level", FaderBackMaximumRedColorLevel},
+                    {"Maximum green color level", FaderBackMaximumGreenColorLevel},
+                    {"Maximum blue color level", FaderBackMaximumBlueColorLevel}
             }
             ScreensaverConfig.Add("FaderBack", FaderBackConfig)
 
@@ -1024,18 +1030,24 @@ Public Module Config
             FaderFadeOutDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Fade Out Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Fader")?("Fade Out Delay in Milliseconds"), 3000)
             FaderWrite = If(ConfigToken("Screensaver")?("Fader")?("Text Shown"), "Kernel Simulator")
             FaderMaxSteps = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Max Fade Steps"), 0), ConfigToken("Screensaver")?("Fader")?("Max Fade Steps"), 25)
-            FaderBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Wipe")?("Background color"), ConsoleColors.Black)).PlainSequence
-            FaderMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Wipe")?("Minimum red color level"), 0)
-            FaderMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Wipe")?("Minimum green color level"), 0)
-            FaderMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("Wipe")?("Minimum blue color level"), 0)
-            FaderMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("Wipe")?("Maximum red color level"), 255)
-            FaderMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Wipe")?("Maximum green color level"), 255)
-            FaderMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Wipe")?("Maximum blue color level"), 255)
+            FaderBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Fader")?("Background color"), ConsoleColors.Black)).PlainSequence
+            FaderMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Fader")?("Minimum red color level"), 0)
+            FaderMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Fader")?("Minimum green color level"), 0)
+            FaderMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("Fader")?("Minimum blue color level"), 0)
+            FaderMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("Fader")?("Maximum red color level"), 255)
+            FaderMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Fader")?("Maximum green color level"), 255)
+            FaderMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Fader")?("Maximum blue color level"), 255)
 
             '> FaderBack
             FaderBackDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("FaderBack")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("FaderBack")?("Delay in Milliseconds"), 50)
             FaderBackFadeOutDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("FaderBack")?("Fade Out Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("FaderBack")?("Fade Out Delay in Milliseconds"), 3000)
             FaderBackMaxSteps = If(Integer.TryParse(ConfigToken("Screensaver")?("FaderBack")?("Max Fade Steps"), 0), ConfigToken("Screensaver")?("FaderBack")?("Max Fade Steps"), 25)
+            FaderBackMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FaderBack")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("FaderBack")?("Minimum red color level"), 0)
+            FaderBackMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FaderBack")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("FaderBack")?("Minimum green color level"), 0)
+            FaderBackMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FaderBack")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("FaderBack")?("Minimum blue color level"), 0)
+            FaderBackMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FaderBack")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("FaderBack")?("Maximum red color level"), 255)
+            FaderBackMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FaderBack")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("FaderBack")?("Maximum green color level"), 255)
+            FaderBackMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FaderBack")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("FaderBack")?("Maximum blue color level"), 255)
 
             '> BeatFader
             BeatFader255Colors = If(ConfigToken("Screensaver")?("BeatFader")?("Activate 255 Color Mode"), False)

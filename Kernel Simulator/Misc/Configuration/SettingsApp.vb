@@ -592,12 +592,18 @@ Public Module SettingsApp
                     W(" 5) " + DoTranslation("Always centered") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeAlwaysCentered)))
                     W(" 6) " + DoTranslation("Use Console API") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeUseConsoleAPI)))
                 Case "7.16" 'Screensaver > FaderBack
-                    MaxOptions = 3
+                    MaxOptions = 9
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > FaderBack", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " FaderBack." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderBackDelay)))
                     W(" 2) " + DoTranslation("Fade Out Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderBackFadeOutDelay)))
                     W(" 3) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderBackMaxSteps)))
+                    W(" 4) " + DoTranslation("Minimum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderBackMinimumRedColorLevel)))
+                    W(" 5) " + DoTranslation("Minimum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderBackMinimumGreenColorLevel)))
+                    W(" 6) " + DoTranslation("Minimum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderBackMinimumBlueColorLevel)))
+                    W(" 7) " + DoTranslation("Maximum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderBackMaximumRedColorLevel)))
+                    W(" 8) " + DoTranslation("Maximum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderBackMaximumGreenColorLevel)))
+                    W(" 9) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderBackMaximumBlueColorLevel)))
                 Case "7.17" 'Screensaver > BeatFader
                     MaxOptions = 6
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > BeatFader", True)
@@ -2631,6 +2637,36 @@ Public Module SettingsApp
                             KeyVar = NameOf(FaderBackMaxSteps)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > FaderBack > " + DoTranslation("Max Fade Steps"), True)
                             W(vbNewLine + DoTranslation("How many fade steps to do?"), True, ColTypes.Neutral)
+                        Case 4 'FaderBack: Minimum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FaderBackMinimumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > FaderBack > " + DoTranslation("Minimum red color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 5 'FaderBack: Minimum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FaderBackMinimumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > FaderBack > " + DoTranslation("Minimum green color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 6 'FaderBack: Minimum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FaderBackMinimumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > FaderBack > " + DoTranslation("Minimum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 7 'FaderBack: Maximum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FaderBackMaximumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > FaderBack > " + DoTranslation("Maximum red color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 8 'FaderBack: Maximum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FaderBackMaximumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > FaderBack > " + DoTranslation("Maximum green color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 9 'FaderBack: Maximum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(FaderBackMaximumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > FaderBack > " + DoTranslation("Maximum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > FaderBack > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

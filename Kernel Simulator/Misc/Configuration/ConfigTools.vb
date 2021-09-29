@@ -181,7 +181,7 @@ Public Module ConfigTools
                 End If
             End If
             If ConfigToken("Screensaver")("FaderBack") IsNot Nothing Then
-                If ConfigToken("Screensaver")("FaderBack").Count <> 3 Then
+                If ConfigToken("Screensaver")("FaderBack").Count <> 9 Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > FaderBack. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
