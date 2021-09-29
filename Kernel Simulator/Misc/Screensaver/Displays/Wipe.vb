@@ -81,17 +81,17 @@ Module WipeDisplay
 
                     'Select a color
                     If WipeTrueColor Then
-                        Dim RedColorNum As Integer = RandomDriver.Next(255)
-                        Dim GreenColorNum As Integer = RandomDriver.Next(255)
-                        Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                        Dim RedColorNum As Integer = RandomDriver.Next(WipeMinimumRedColorLevel, WipeMaximumRedColorLevel)
+                        Dim GreenColorNum As Integer = RandomDriver.Next(WipeMinimumGreenColorLevel, WipeMaximumGreenColorLevel)
+                        Dim BlueColorNum As Integer = RandomDriver.Next(WipeMinimumBlueColorLevel, WipeMaximumBlueColorLevel)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         If Not ResizeSyncing Then SetConsoleColor(New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), True)
                     ElseIf Wipe255Colors Then
-                        Dim ColorNum As Integer = RandomDriver.Next(255)
+                        Dim ColorNum As Integer = RandomDriver.Next(WipeMinimumColorLevel, WipeMaximumColorLevel)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                         If Not ResizeSyncing Then SetConsoleColor(New Color(ColorNum), True)
                     Else
-                        If Not ResizeSyncing Then Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                        If Not ResizeSyncing Then Console.BackgroundColor = colors(RandomDriver.Next(WipeMinimumColorLevel, WipeMaximumColorLevel))
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                     End If
 
@@ -161,7 +161,7 @@ Module WipeDisplay
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Changed direction to {0}", ToDirection.ToString)
                         End If
                     Else
-                        Console.BackgroundColor = ConsoleColor.Black
+                        SetConsoleColor(New Color(WipeBackgroundColor), True)
                         Console.Clear()
                     End If
 
