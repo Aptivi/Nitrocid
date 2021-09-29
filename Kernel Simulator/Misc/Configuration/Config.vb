@@ -446,7 +446,16 @@ Public Module Config
                     {"Activate 255 Color Mode", Wipe255Colors},
                     {"Activate True Color Mode", WipeTrueColor},
                     {"Delay in Milliseconds", WipeDelay},
-                    {"Wipes to change direction", WipeWipesNeededToChangeDirection}
+                    {"Wipes to change direction", WipeWipesNeededToChangeDirection},
+                    {"Background color", If(New Color(WipeBackgroundColor).Type = ColorType.TrueColor, WipeBackgroundColor.EncloseByDoubleQuotes, WipeBackgroundColor)},
+                    {"Minimum red color level", WipeMinimumRedColorLevel},
+                    {"Minimum green color level", WipeMinimumGreenColorLevel},
+                    {"Minimum blue color level", WipeMinimumBlueColorLevel},
+                    {"Minimum color level", WipeMinimumColorLevel},
+                    {"Maximum red color level", WipeMaximumRedColorLevel},
+                    {"Maximum green color level", WipeMaximumGreenColorLevel},
+                    {"Maximum blue color level", WipeMaximumBlueColorLevel},
+                    {"Maximum color level", WipeMaximumColorLevel}
             }
             ScreensaverConfig.Add("Wipe", WipeConfig)
 
@@ -993,6 +1002,15 @@ Public Module Config
             WipeTrueColor = If(ConfigToken("Screensaver")?("Wipe")?("Activate True Color Mode"), True)
             WipeDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Wipe")?("Delay in Milliseconds"), 10)
             WipeWipesNeededToChangeDirection = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Wipes to change direction"), 0), ConfigToken("Screensaver")?("Wipe")?("Wipes to change direction"), 10)
+            WipeBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Wipe")?("Background color"), ConsoleColors.Black)).PlainSequence
+            WipeMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Wipe")?("Minimum red color level"), 0)
+            WipeMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Wipe")?("Minimum green color level"), 0)
+            WipeMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("Wipe")?("Minimum blue color level"), 0)
+            WipeMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Minimum color level"), 0), ConfigToken("Screensaver")?("Wipe")?("Minimum color level"), 0)
+            WipeMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("Wipe")?("Maximum red color level"), 255)
+            WipeMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Wipe")?("Maximum green color level"), 255)
+            WipeMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Wipe")?("Maximum blue color level"), 255)
+            WipeMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Maximum color level"), 0), ConfigToken("Screensaver")?("Wipe")?("Maximum color level"), 255)
 
             '> Fader
             FaderDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Fader")?("Delay in Milliseconds"), 50)

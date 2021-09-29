@@ -151,13 +151,13 @@ Public Module ConfigTools
                 End If
             End If
             If ConfigToken("Screensaver")("Lighter") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Lighter").Count <> 4 Then
+                If ConfigToken("Screensaver")("Lighter").Count <> 13 Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Lighter. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Wipe") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Wipe").Count <> 4 Then
+                If ConfigToken("Screensaver")("Wipe").Count <> 13 Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Wipe. Config fix needed set to true.")
                     FixesNeeded = True
                 End If

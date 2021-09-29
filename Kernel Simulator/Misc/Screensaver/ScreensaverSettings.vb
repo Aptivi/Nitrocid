@@ -725,6 +725,42 @@ Public Module ScreensaverSettings
     ''' [Wipe] How many wipes needed to change direction?
     ''' </summary>
     Public WipeWipesNeededToChangeDirection As Integer = 10
+    ''' <summary>
+    ''' [Wipe] Screensaver background color
+    ''' </summary>
+    Public WipeBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+    ''' <summary>
+    ''' [Wipe] The minimum red color level (true color)
+    ''' </summary>
+    Public WipeMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Wipe] The minimum green color level (true color)
+    ''' </summary>
+    Public WipeMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Wipe] The minimum blue color level (true color)
+    ''' </summary>
+    Public WipeMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Wipe] The minimum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public WipeMinimumColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Wipe] The maximum red color level (true color)
+    ''' </summary>
+    Public WipeMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Wipe] The maximum green color level (true color)
+    ''' </summary>
+    Public WipeMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Wipe] The maximum blue color level (true color)
+    ''' </summary>
+    Public WipeMaximumBlueColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Wipe] The maximum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public WipeMaximumColorLevel As Integer = 255
 
     '-> HackUserFromAD
     ''' <summary>

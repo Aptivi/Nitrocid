@@ -522,13 +522,22 @@ Public Module SettingsApp
                     W(" 67) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumBlueColorLevel)))
                     W(" 68) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumColorLevel)))
                 Case "7.11" 'Screensaver > Lighter
-                    MaxOptions = 4
+                    MaxOptions = 13
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lighter", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " Lighter." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Lighter255Colors)))
                     W(" 2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LighterTrueColor)))
                     W(" 3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LighterDelay)))
                     W(" 4) " + DoTranslation("Max Positions Count") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LighterMaxPositions)))
+                    W(" 5) " + DoTranslation("Background color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LighterBackgroundColor)))
+                    W(" 6) " + DoTranslation("Minimum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LighterMinimumRedColorLevel)))
+                    W(" 7) " + DoTranslation("Minimum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LighterMinimumGreenColorLevel)))
+                    W(" 8) " + DoTranslation("Minimum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LighterMinimumBlueColorLevel)))
+                    W(" 9) " + DoTranslation("Minimum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LighterMinimumColorLevel)))
+                    W(" 10) " + DoTranslation("Maximum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LighterMaximumRedColorLevel)))
+                    W(" 11) " + DoTranslation("Maximum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LighterMaximumGreenColorLevel)))
+                    W(" 12) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LighterMaximumBlueColorLevel)))
+                    W(" 13) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LighterMaximumColorLevel)))
                 Case "7.12" 'Screensaver > Fader
                     MaxOptions = 4
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Fader", True)
@@ -549,13 +558,22 @@ Public Module SettingsApp
                     W(" 6) " + DoTranslation("Probability of typo in percent") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypoMissStrikePossibility)))
                     W(" 7) " + DoTranslation("Probability of miss in percent") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypoMissPossibility)))
                 Case "7.14" 'Screensaver > Wipe
-                    MaxOptions = 4
+                    MaxOptions = 13
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Wipe", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " Wipe." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Wipe255Colors)))
                     W(" 2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeTrueColor)))
                     W(" 3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeDelay)))
                     W(" 4) " + DoTranslation("Wipes to change direction") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeWipesNeededToChangeDirection)))
+                    W(" 5) " + DoTranslation("Background color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeBackgroundColor)))
+                    W(" 6) " + DoTranslation("Minimum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeMinimumRedColorLevel)))
+                    W(" 7) " + DoTranslation("Minimum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeMinimumGreenColorLevel)))
+                    W(" 8) " + DoTranslation("Minimum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeMinimumBlueColorLevel)))
+                    W(" 9) " + DoTranslation("Minimum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeMinimumColorLevel)))
+                    W(" 10) " + DoTranslation("Maximum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeMaximumRedColorLevel)))
+                    W(" 11) " + DoTranslation("Maximum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeMaximumGreenColorLevel)))
+                    W(" 12) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeMaximumBlueColorLevel)))
+                    W(" 13) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WipeMaximumColorLevel)))
                 Case "7.15" 'Screensaver > Marquee
                     MaxOptions = 6
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Marquee", True)
@@ -2331,6 +2349,51 @@ Public Module SettingsApp
                             KeyVar = NameOf(LighterMaxPositions)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lighter > " + DoTranslation("Max Positions Count"), True)
                             W(vbNewLine + DoTranslation("How many positions are lit before dimming?"), True, ColTypes.Neutral)
+                        Case 5 'Lighter: Background color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(LighterBackgroundColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(LighterBackgroundColor).Type = ColorType.TrueColor, If(New Color(LighterBackgroundColor).Type = ColorType._255Color, New Color(LighterBackgroundColor).PlainSequence, ConsoleColors.White), New Color(LighterBackgroundColor).R, New Color(LighterBackgroundColor).G, New Color(LighterBackgroundColor).B)
+                        Case 6 'Lighter: Minimum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LighterMinimumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lighter > " + DoTranslation("Minimum red color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 7 'Lighter: Minimum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LighterMinimumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lighter > " + DoTranslation("Minimum green color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 8 'Lighter: Minimum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LighterMinimumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lighter > " + DoTranslation("Minimum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 9 'Lighter: Minimum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LighterMinimumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lighter > " + DoTranslation("Minimum color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 10 'Lighter: Maximum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LighterMaximumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lighter > " + DoTranslation("Maximum red color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 11 'Lighter: Maximum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LighterMaximumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lighter > " + DoTranslation("Maximum green color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 12 'Lighter: Maximum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LighterMaximumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lighter > " + DoTranslation("Maximum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 13 'Lighter: Maximum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(LighterMaximumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lighter > " + DoTranslation("Maximum color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lighter > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
@@ -2424,6 +2487,51 @@ Public Module SettingsApp
                             KeyVar = NameOf(WipeWipesNeededToChangeDirection)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Wipe > " + DoTranslation("Wipes to change direction"), True)
                             W(vbNewLine + DoTranslation("How many wipes to do before changing direction randomly?"), True, ColTypes.Neutral)
+                        Case 5 'Wipe: Background color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(WipeBackgroundColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(WipeBackgroundColor).Type = ColorType.TrueColor, If(New Color(WipeBackgroundColor).Type = ColorType._255Color, New Color(WipeBackgroundColor).PlainSequence, ConsoleColors.White), New Color(WipeBackgroundColor).R, New Color(WipeBackgroundColor).G, New Color(WipeBackgroundColor).B)
+                        Case 6 'Wipe: Minimum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(WipeMinimumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Wipe > " + DoTranslation("Minimum red color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 7 'Wipe: Minimum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(WipeMinimumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Wipe > " + DoTranslation("Minimum green color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 8 'Wipe: Minimum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(WipeMinimumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Wipe > " + DoTranslation("Minimum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 9 'Wipe: Minimum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(WipeMinimumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Wipe > " + DoTranslation("Minimum color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 10 'Wipe: Maximum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(WipeMaximumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Wipe > " + DoTranslation("Maximum red color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 11 'Wipe: Maximum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(WipeMaximumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Wipe > " + DoTranslation("Maximum green color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 12 'Wipe: Maximum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(WipeMaximumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Wipe > " + DoTranslation("Maximum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 13 'Wipe: Maximum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(WipeMaximumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Wipe > " + DoTranslation("Maximum color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Wipe > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
