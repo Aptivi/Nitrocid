@@ -529,7 +529,15 @@ Public Module Config
                     {"Delay in Beats Per Minute", BeatFaderDelay},
                     {"Cycle Colors", BeatFaderCycleColors},
                     {"Beat Color", BeatFaderBeatColor},
-                    {"Max Fade Steps", BeatFaderMaxSteps}
+                    {"Max Fade Steps", BeatFaderMaxSteps},
+                    {"Minimum red color level", BeatFaderMinimumRedColorLevel},
+                    {"Minimum green color level", BeatFaderMinimumGreenColorLevel},
+                    {"Minimum blue color level", BeatFaderMinimumBlueColorLevel},
+                    {"Minimum color level", BeatFaderMinimumColorLevel},
+                    {"Maximum red color level", BeatFaderMaximumRedColorLevel},
+                    {"Maximum green color level", BeatFaderMaximumGreenColorLevel},
+                    {"Maximum blue color level", BeatFaderMaximumBlueColorLevel},
+                    {"Maximum color level", BeatFaderMaximumColorLevel}
             }
             ScreensaverConfig.Add("BeatFader", BeatFaderConfig)
 
@@ -1056,6 +1064,14 @@ Public Module Config
             BeatFaderBeatColor = If(ConfigToken("Screensaver")?("BeatFader")?("Beat Color"), 17)
             BeatFaderDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatFader")?("Delay in Beats Per Minute"), 0), ConfigToken("Screensaver")?("BeatFader")?("Delay in Beats Per Minute"), 120)
             BeatFaderMaxSteps = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatFader")?("Max Fade Steps"), 0), ConfigToken("Screensaver")?("BeatFader")?("Max Fade Steps"), 25)
+            BeatFaderMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatFader")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("BeatFader")?("Minimum red color level"), 0)
+            BeatFaderMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatFader")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("BeatFader")?("Minimum green color level"), 0)
+            BeatFaderMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatFader")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("BeatFader")?("Minimum blue color level"), 0)
+            BeatFaderMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatFader")?("Minimum color level"), 0), ConfigToken("Screensaver")?("BeatFader")?("Minimum color level"), 0)
+            BeatFaderMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatFader")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("BeatFader")?("Maximum red color level"), 255)
+            BeatFaderMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatFader")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("BeatFader")?("Maximum green color level"), 255)
+            BeatFaderMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatFader")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("BeatFader")?("Maximum blue color level"), 255)
+            BeatFaderMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BeatFader")?("Maximum color level"), 0), ConfigToken("Screensaver")?("BeatFader")?("Maximum color level"), 255)
 
             '> Typo
             TypoDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Typo")?("Delay in Milliseconds"), 50)

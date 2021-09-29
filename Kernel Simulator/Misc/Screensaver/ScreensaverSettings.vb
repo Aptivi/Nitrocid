@@ -813,6 +813,39 @@ Public Module ScreensaverSettings
     ''' [BeatFader] How many fade steps to do?
     ''' </summary>
     Public BeatFaderMaxSteps As Integer = 25
+    ''' <summary>
+    ''' [BeatFader] The minimum red color level (true color)
+    ''' </summary>
+    Public BeatFaderMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [BeatFader] The minimum green color level (true color)
+    ''' </summary>
+    Public BeatFaderMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [BeatFader] The minimum blue color level (true color)
+    ''' </summary>
+    Public BeatFaderMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [BeatFader] The minimum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public BeatFaderMinimumColorLevel As Integer = 0
+    ''' <summary>
+    ''' [BeatFader] The maximum red color level (true color)
+    ''' </summary>
+    Public BeatFaderMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [BeatFader] The maximum green color level (true color)
+    ''' </summary>
+    Public BeatFaderMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [BeatFader] The maximum blue color level (true color)
+    ''' </summary>
+    Public BeatFaderMaximumBlueColorLevel As Integer = 255
+    ''' <summary>
+    ''' [BeatFader] The maximum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public BeatFaderMaximumColorLevel As Integer = 255
+
 
     '-> GlitterMatrix
     ''' <summary>

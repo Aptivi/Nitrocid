@@ -605,7 +605,7 @@ Public Module SettingsApp
                     W(" 8) " + DoTranslation("Maximum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderBackMaximumGreenColorLevel)))
                     W(" 9) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderBackMaximumBlueColorLevel)))
                 Case "7.17" 'Screensaver > BeatFader
-                    MaxOptions = 6
+                    MaxOptions = 14
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > BeatFader", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " BeatFader." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFader255Colors)))
@@ -614,6 +614,14 @@ Public Module SettingsApp
                     W(" 4) " + DoTranslation("Cycle colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderCycleColors)))
                     W(" 5) " + DoTranslation("Beat Color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderBeatColor)))
                     W(" 6) " + DoTranslation("Max Fade Steps") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderMaxSteps)))
+                    W(" 7) " + DoTranslation("Minimum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderMinimumRedColorLevel)))
+                    W(" 8) " + DoTranslation("Minimum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderMinimumGreenColorLevel)))
+                    W(" 9) " + DoTranslation("Minimum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderMinimumBlueColorLevel)))
+                    W(" 10) " + DoTranslation("Minimum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderMinimumColorLevel)))
+                    W(" 11) " + DoTranslation("Maximum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderMaximumRedColorLevel)))
+                    W(" 12) " + DoTranslation("Maximum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderMaximumGreenColorLevel)))
+                    W(" 13) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderMaximumBlueColorLevel)))
+                    W(" 14) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderMaximumColorLevel)))
                 Case "7.18" 'Screensaver > Linotypo
                     MaxOptions = 11
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Linotypo", True)
@@ -2703,6 +2711,46 @@ Public Module SettingsApp
                             KeyVar = NameOf(BeatFaderMaxSteps)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Max Fade Steps"), True)
                             W(vbNewLine + DoTranslation("How many fade steps to do?"), True, ColTypes.Neutral)
+                        Case 7 'BeatFader: Minimum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BeatFaderMinimumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Minimum red color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 8 'BeatFader: Minimum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BeatFaderMinimumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Minimum green color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 9 'BeatFader: Minimum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BeatFaderMinimumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Minimum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 10 'BeatFader: Minimum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BeatFaderMinimumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Minimum color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 11 'BeatFader: Maximum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BeatFaderMaximumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Maximum red color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 12 'BeatFader: Maximum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BeatFaderMaximumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Maximum green color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 12 'BeatFader: Maximum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BeatFaderMaximumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Maximum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 14 'BeatFader: Maximum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(BeatFaderMaximumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > BeatFader > " + DoTranslation("Maximum color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > BeatFader > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
