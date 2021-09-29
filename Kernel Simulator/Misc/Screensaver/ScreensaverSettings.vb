@@ -844,14 +844,6 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public FaderFadeOutDelay As Integer = 3000
     ''' <summary>
-    ''' [FaderBack] How many milliseconds to wait before making the next write?
-    ''' </summary>
-    Public FaderBackDelay As Integer = 10
-    ''' <summary>
-    ''' [FaderBack] How many milliseconds to wait before fading the text out?
-    ''' </summary>
-    Public FaderBackFadeOutDelay As Integer = 3000
-    ''' <summary>
     ''' [Fader] Text for Fader. Shorter is better.
     ''' </summary>
     Public FaderWrite As String = "Kernel Simulator"
@@ -859,6 +851,44 @@ Public Module ScreensaverSettings
     ''' [Fader] How many fade steps to do?
     ''' </summary>
     Public FaderMaxSteps As Integer = 25
+    ''' <summary>
+    ''' [Fader] Screensaver background color
+    ''' </summary>
+    Public FaderBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+    ''' <summary>
+    ''' [Fader] The minimum red color level (true color)
+    ''' </summary>
+    Public FaderMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Fader] The minimum green color level (true color)
+    ''' </summary>
+    Public FaderMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Fader] The minimum blue color level (true color)
+    ''' </summary>
+    Public FaderMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Fader] The maximum red color level (true color)
+    ''' </summary>
+    Public FaderMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Fader] The maximum green color level (true color)
+    ''' </summary>
+    Public FaderMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Fader] The maximum blue color level (true color)
+    ''' </summary>
+    Public FaderMaximumBlueColorLevel As Integer = 255
+
+    '-> FaderBack
+    ''' <summary>
+    ''' [FaderBack] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public FaderBackDelay As Integer = 10
+    ''' <summary>
+    ''' [FaderBack] How many milliseconds to wait before fading the text out?
+    ''' </summary>
+    Public FaderBackFadeOutDelay As Integer = 3000
     ''' <summary>
     ''' [FaderBack] How many fade steps to do?
     ''' </summary>

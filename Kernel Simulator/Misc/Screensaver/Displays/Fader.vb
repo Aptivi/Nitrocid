@@ -27,17 +27,31 @@ Module FaderDisplay
     ''' </summary>
     Sub Fader_DoWork(sender As Object, e As DoWorkEventArgs) Handles Fader.DoWork
         Try
+            'Sanity checks for color levels
+            FaderMinimumRedColorLevel = If(FaderMinimumRedColorLevel >= 0 And FaderMinimumRedColorLevel <= 255, FaderMinimumRedColorLevel, 0)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", FaderMinimumRedColorLevel)
+            FaderMinimumGreenColorLevel = If(FaderMinimumGreenColorLevel >= 0 And FaderMinimumGreenColorLevel <= 255, FaderMinimumGreenColorLevel, 0)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", FaderMinimumGreenColorLevel)
+            FaderMinimumBlueColorLevel = If(FaderMinimumBlueColorLevel >= 0 And FaderMinimumBlueColorLevel <= 255, FaderMinimumBlueColorLevel, 0)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", FaderMinimumBlueColorLevel)
+            FaderMaximumRedColorLevel = If(FaderMaximumRedColorLevel >= 0 And FaderMaximumRedColorLevel <= 255, FaderMaximumRedColorLevel, 255)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", FaderMaximumRedColorLevel)
+            FaderMaximumGreenColorLevel = If(FaderMaximumGreenColorLevel >= 0 And FaderMaximumGreenColorLevel <= 255, FaderMaximumGreenColorLevel, 255)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", FaderMaximumGreenColorLevel)
+            FaderMaximumBlueColorLevel = If(FaderMaximumBlueColorLevel >= 0 And FaderMaximumBlueColorLevel <= 255, FaderMaximumBlueColorLevel, 255)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", FaderMaximumBlueColorLevel)
+
             'Variables
             Dim RandomDriver As New Random()
-            Dim RedColorNum As Integer = RandomDriver.Next(255)
-            Dim GreenColorNum As Integer = RandomDriver.Next(255)
-            Dim BlueColorNum As Integer = RandomDriver.Next(255)
+            Dim RedColorNum As Integer = RandomDriver.Next(FaderMinimumRedColorLevel, FaderMaximumRedColorLevel)
+            Dim GreenColorNum As Integer = RandomDriver.Next(FaderMinimumGreenColorLevel, FaderMaximumGreenColorLevel)
+            Dim BlueColorNum As Integer = RandomDriver.Next(FaderMinimumBlueColorLevel, FaderMaximumBlueColorLevel)
             Dim CurrentWindowWidth As Integer = Console.WindowWidth
             Dim CurrentWindowHeight As Integer = Console.WindowHeight
             Dim ResizeSyncing As Boolean
 
             'Preparations
-            Console.BackgroundColor = ConsoleColor.Black
+            SetConsoleColor(New Color(FaderBackgroundColor), True)
             Console.Clear()
             Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
@@ -109,9 +123,9 @@ Module FaderDisplay
                     Next
 
                     'Select new color
-                    RedColorNum = RandomDriver.Next(255)
-                    GreenColorNum = RandomDriver.Next(255)
-                    BlueColorNum = RandomDriver.Next(255)
+                    RedColorNum = RandomDriver.Next(FaderMinimumRedColorLevel, FaderMaximumRedColorLevel)
+                    GreenColorNum = RandomDriver.Next(FaderMinimumGreenColorLevel, FaderMaximumGreenColorLevel)
+                    BlueColorNum = RandomDriver.Next(FaderMinimumBlueColorLevel, FaderMaximumBlueColorLevel)
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
 
                     'Reset resize sync
