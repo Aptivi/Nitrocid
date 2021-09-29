@@ -211,7 +211,7 @@ Public Module ConfigTools
                 End If
             End If
             If ConfigToken("Screensaver")("Typewriter") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Typewriter").Count <> 5 Then
+                If ConfigToken("Screensaver")("Typewriter").Count <> 6 Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Typewriter. Config fix needed set to true.")
                     FixesNeeded = True
                 End If

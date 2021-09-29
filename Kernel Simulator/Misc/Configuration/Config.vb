@@ -597,7 +597,8 @@ Public Module Config
                     {"New Screen Delay in Milliseconds", TypewriterNewScreenDelay},
                     {"Text Shown", TypewriterWrite},
                     {"Minimum writing speed in WPM", TypewriterWritingSpeedMin},
-                    {"Maximum writing speed in WPM", TypewriterWritingSpeedMax}
+                    {"Maximum writing speed in WPM", TypewriterWritingSpeedMax},
+                    {"Text color", If(New Color(TypewriterTextColor).Type = ColorType.TrueColor, TypewriterTextColor.EncloseByDoubleQuotes, TypewriterTextColor)}
             }
             ScreensaverConfig.Add("Typewriter", TypewriterConfig)
 
@@ -1134,6 +1135,7 @@ Public Module Config
             TypewriterWrite = If(ConfigToken("Screensaver")?("Typewriter")?("Text Shown"), "Kernel Simulator")
             TypewriterWritingSpeedMin = If(Integer.TryParse(ConfigToken("Screensaver")?("Typewriter")?("Minimum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Typewriter")?("Minimum writing speed in WPM"), 50)
             TypewriterWritingSpeedMax = If(Integer.TryParse(ConfigToken("Screensaver")?("Typewriter")?("Maximum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Typewriter")?("Maximum writing speed in WPM"), 80)
+            TypewriterTextColor = New Color(If(ConfigToken("Screensaver")?("Typewriter")?("Text color"), ConsoleColors.White)).PlainSequence
 
             '> FlashColor
             FlashColor255Colors = If(ConfigToken("Screensaver")?("FlashColor")?("Activate 255 Color Mode"), False)

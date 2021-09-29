@@ -1070,7 +1070,7 @@ Public Module ScreensaverSettings
     ''' <summary>
     ''' [Linotypo] Text color
     ''' </summary>
-    Public LinotypoTextColor As String = New Color(ConsoleColor.Green).PlainSequence
+    Public LinotypoTextColor As String = New Color(ConsoleColor.White).PlainSequence
 
     '-> Typewriter
     ''' <summary>
@@ -1097,6 +1097,10 @@ Public Module ScreensaverSettings
     ''' [Typewriter] Shows the typewriter letter column position by showing this key on the bottom of the screen: <code>^</code>
     ''' </summary>
     Public TypewriterShowArrowPos As Boolean = True
+    ''' <summary>
+    ''' [Typewriter] Text color
+    ''' </summary>
+    Public TypewriterTextColor As String = New Color(ConsoleColor.White).PlainSequence
 
     '-> FlashColor
     ''' <summary>

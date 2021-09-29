@@ -36,6 +36,7 @@ Module TypewriterDisplay
             Dim ResizeSyncing As Boolean
 
             'Preparations
+            SetConsoleColor(New Color(TypewriterTextColor))
             Console.Clear()
             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", TypewriterWritingSpeedMin, CpmSpeedMin)
             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", TypewriterWritingSpeedMax, CpmSpeedMax)

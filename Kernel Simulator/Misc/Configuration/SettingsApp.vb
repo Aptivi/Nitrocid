@@ -649,7 +649,7 @@ Public Module SettingsApp
                     W(" 11) " + DoTranslation("Probability of miss in percent") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoMissPossibility)))
                     W(" 12) " + DoTranslation("Text color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoTextColor)))
                 Case "7.19" 'Screensaver > Typewriter
-                    MaxOptions = 5
+                    MaxOptions = 6
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Typewriter", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " Typewriter." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypewriterDelay)))
@@ -657,6 +657,7 @@ Public Module SettingsApp
                     W(" 3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypewriterWrite)))
                     W(" 4) " + DoTranslation("Minimum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypewriterWritingSpeedMin)))
                     W(" 5) " + DoTranslation("Maximum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypewriterWritingSpeedMax)))
+                    W(" 6) " + DoTranslation("Text color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypewriterTextColor)))
                 Case "7.20" 'Screensaver > FlashColor
                     MaxOptions = 3
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > FlashColor", True)
@@ -2916,6 +2917,11 @@ Public Module SettingsApp
                             KeyVar = NameOf(TypewriterWritingSpeedMax)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Typewriter > " + DoTranslation("Maximum writing speed in WPM"), True)
                             W(vbNewLine + DoTranslation("Maximum writing speed in WPM"), True, ColTypes.Neutral)
+                        Case 6 'Typewriter: Text color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(TypewriterTextColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(TypewriterTextColor).Type = ColorType.TrueColor, If(New Color(TypewriterTextColor).Type = ColorType._255Color, New Color(TypewriterTextColor).PlainSequence, ConsoleColors.White), New Color(TypewriterTextColor).R, New Color(TypewriterTextColor).G, New Color(TypewriterTextColor).B)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Typewriter > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
