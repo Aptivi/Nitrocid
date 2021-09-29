@@ -675,12 +675,13 @@ Public Module SettingsApp
                     W(" 11) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColorMaximumBlueColorLevel)))
                     W(" 12) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FlashColorMaximumColorLevel)))
                 Case "7.21" 'Screensaver > SpotWrite
-                    MaxOptions = 5
+                    MaxOptions = 4
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > SpotWrite", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " SpotWrite." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SpotWriteDelay)))
                     W(" 2) " + DoTranslation("New Screen Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SpotWriteNewScreenDelay)))
                     W(" 3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SpotWriteWrite)))
+                    W(" 4) " + DoTranslation("Text color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SpotWriteTextColor)))
                 Case "7.22" 'Screensaver > Ramp
                     MaxOptions = 4
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp", True)
@@ -3019,6 +3020,11 @@ Public Module SettingsApp
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > SpotWrite > " + DoTranslation("Text shown"), True)
                             W(vbNewLine + DoTranslation("Write any text you want shown. Longer is better."), True, ColTypes.Neutral)
                             W(DoTranslation("This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately."), True, ColTypes.Neutral)
+                        Case 4 'SpotWrite: Text color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(SpotWriteTextColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(SpotWriteTextColor).Type = ColorType.TrueColor, If(New Color(SpotWriteTextColor).Type = ColorType._255Color, New Color(SpotWriteTextColor).PlainSequence, ConsoleColors.White), New Color(SpotWriteTextColor).R, New Color(SpotWriteTextColor).G, New Color(SpotWriteTextColor).B)
                     End Select
                 Case "7.22" 'Ramp
                     Select Case KeyNumber

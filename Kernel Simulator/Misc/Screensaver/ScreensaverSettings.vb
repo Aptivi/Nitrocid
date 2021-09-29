@@ -1163,6 +1163,10 @@ Public Module ScreensaverSettings
     ''' [SpotWrite] How many milliseconds to wait before writing the text in the new screen again?
     ''' </summary>
     Public SpotWriteNewScreenDelay As Integer = 3000
+    ''' <summary>
+    ''' [SpotWrite] Text color
+    ''' </summary>
+    Public SpotWriteTextColor As String = New Color(ConsoleColor.White).PlainSequence
 
     '-> Ramp
     ''' <summary>

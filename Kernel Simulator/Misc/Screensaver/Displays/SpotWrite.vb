@@ -34,6 +34,7 @@ Module SpotWriteDisplay
             Dim ResizeSyncing As Boolean
 
             'Preparations
+            SetConsoleColor(New Color(SpotWriteTextColor))
             Console.Clear()
 
             'Screensaver logic

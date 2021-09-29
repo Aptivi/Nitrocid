@@ -223,7 +223,7 @@ Public Module ConfigTools
                 End If
             End If
             If ConfigToken("Screensaver")("SpotWrite") IsNot Nothing Then
-                If ConfigToken("Screensaver")("SpotWrite").Count <> 3 Then
+                If ConfigToken("Screensaver")("SpotWrite").Count <> 4 Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > SpotWrite. Config fix needed set to true.")
                     FixesNeeded = True
                 End If

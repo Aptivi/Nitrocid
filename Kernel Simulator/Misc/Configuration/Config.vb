@@ -1164,6 +1164,7 @@ Public Module Config
             SpotWriteDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("SpotWrite")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("SpotWrite")?("Delay in Milliseconds"), 50)
             SpotWriteNewScreenDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("SpotWrite")?("New Screen Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("SpotWrite")?("New Screen Delay in Milliseconds"), 3000)
             SpotWriteWrite = If(ConfigToken("Screensaver")?("SpotWrite")?("Text Shown"), "Kernel Simulator")
+            SpotWriteTextColor = New Color(If(ConfigToken("Screensaver")?("SpotWrite")?("Text color"), ConsoleColors.White)).PlainSequence
 
             '> Ramp
             Ramp255Colors = If(ConfigToken("Screensaver")?("Ramp")?("Activate 255 Color Mode"), False)
