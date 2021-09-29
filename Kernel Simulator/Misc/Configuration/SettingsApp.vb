@@ -633,7 +633,7 @@ Public Module SettingsApp
                     W(" 13) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderMaximumBlueColorLevel)))
                     W(" 14) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BeatFaderMaximumColorLevel)))
                 Case "7.18" 'Screensaver > Linotypo
-                    MaxOptions = 11
+                    MaxOptions = 12
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Linotypo", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " Linotypo." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoDelay)))
@@ -647,6 +647,7 @@ Public Module SettingsApp
                     W(" 9) " + DoTranslation("Line Fill Capping Probability in percent") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoEtaoinCappingPossibility)))
                     W(" 10) " + DoTranslation("Line Fill Type") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoEtaoinType)))
                     W(" 11) " + DoTranslation("Probability of miss in percent") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoMissPossibility)))
+                    W(" 12) " + DoTranslation("Text color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(LinotypoTextColor)))
                 Case "7.19" 'Screensaver > Typewriter
                     MaxOptions = 5
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Typewriter", True)
@@ -2878,6 +2879,11 @@ Public Module SettingsApp
                             KeyVar = NameOf(LinotypoMissPossibility)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Linotypo > " + DoTranslation("Probability of miss in percent"), True)
                             W(vbNewLine + DoTranslation("Probability of miss in percent"), True, ColTypes.Neutral)
+                        Case 12 'Linotypo: Text color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(LinotypoTextColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(LinotypoTextColor).Type = ColorType.TrueColor, If(New Color(LinotypoTextColor).Type = ColorType._255Color, New Color(LinotypoTextColor).PlainSequence, ConsoleColors.White), New Color(LinotypoTextColor).R, New Color(LinotypoTextColor).G, New Color(LinotypoTextColor).B)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Linotypo > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

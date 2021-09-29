@@ -30,6 +30,7 @@ Public Module LinotypoDisplay
     Sub Linotypo_DoWork(sender As Object, e As DoWorkEventArgs) Handles Linotypo.DoWork
         Try
             'Preparations
+            SetConsoleColor(New Color(LinotypoTextColor))
             Console.Clear()
             Console.CursorVisible = False
             Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)

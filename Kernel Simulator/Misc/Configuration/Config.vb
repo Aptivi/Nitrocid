@@ -586,7 +586,8 @@ Public Module Config
                     {"Line Fill Threshold", LinotypoEtaoinThreshold},
                     {"Line Fill Capping Probability in percent", LinotypoEtaoinCappingPossibility},
                     {"Line Fill Type", LinotypoEtaoinType},
-                    {"Probability of miss in percent", LinotypoMissPossibility}
+                    {"Probability of miss in percent", LinotypoMissPossibility},
+                    {"Text color", If(New Color(LinotypoTextColor).Type = ColorType.TrueColor, LinotypoTextColor.EncloseByDoubleQuotes, LinotypoTextColor)}
             }
             ScreensaverConfig.Add("Linotypo", LinotypoConfig)
 
@@ -1125,6 +1126,7 @@ Public Module Config
             LinotypoEtaoinCappingPossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("Line Fill Capping Probability in percent"), 0), ConfigToken("Screensaver")?("Linotypo")?("Line Fill Capping Probability in percent"), 5)
             LinotypoEtaoinType = If(ConfigToken("Screensaver")?("Linotypo")?("Line Fill Type") IsNot Nothing, If([Enum].TryParse(ConfigToken("Screensaver")?("Linotypo")?("Line Fill Type"), LinotypoEtaoinType), LinotypoEtaoinType, FillType.EtaoinPattern), FillType.EtaoinPattern)
             LinotypoMissPossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("Probability of miss in percent"), 0), ConfigToken("Screensaver")?("Linotypo")?("Probability of miss in percent"), 10)
+            LinotypoTextColor = New Color(If(ConfigToken("Screensaver")?("Linotypo")?("Text color"), ConsoleColors.White)).PlainSequence
 
             '> Typewriter
             TypewriterDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Typewriter")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Typewriter")?("Delay in Milliseconds"), 50)

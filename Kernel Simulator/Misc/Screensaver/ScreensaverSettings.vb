@@ -1022,7 +1022,6 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public TypoTextColor As String = New Color(ConsoleColor.White).PlainSequence
 
-
     '-> Linotypo
     ''' <summary>
     ''' [Linotypo] How many milliseconds to wait before making the next write?
@@ -1068,6 +1067,10 @@ Public Module ScreensaverSettings
     ''' [Linotypo] Possibility that the writer missed a character in percent
     ''' </summary>
     Public LinotypoMissPossibility As Integer = 10
+    ''' <summary>
+    ''' [Linotypo] Text color
+    ''' </summary>
+    Public LinotypoTextColor As String = New Color(ConsoleColor.Green).PlainSequence
 
     '-> Typewriter
     ''' <summary>
