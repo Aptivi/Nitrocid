@@ -92,9 +92,9 @@ Module LighterDisplay
                     'Select a color and write the space
                     Dim esc As Char = GetEsc()
                     If LighterTrueColor Then
-                        Dim RedColorNum As Integer = RandomDriver.Next(255)
-                        Dim GreenColorNum As Integer = RandomDriver.Next(255)
-                        Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                        Dim RedColorNum As Integer = RandomDriver.Next(LighterMinimumRedColorLevel, LighterMaximumRedColorLevel)
+                        Dim GreenColorNum As Integer = RandomDriver.Next(LighterMinimumGreenColorLevel, LighterMaximumGreenColorLevel)
+                        Dim BlueColorNum As Integer = RandomDriver.Next(LighterMinimumBlueColorLevel, LighterMaximumBlueColorLevel)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
@@ -104,7 +104,7 @@ Module LighterDisplay
                             CoveredPositions.Clear()
                         End If
                     ElseIf Lighter255Colors Then
-                        Dim ColorNum As Integer = RandomDriver.Next(255)
+                        Dim ColorNum As Integer = RandomDriver.Next(LighterMinimumColorLevel, LighterMaximumColorLevel)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Not ResizeSyncing Then
@@ -115,7 +115,7 @@ Module LighterDisplay
                     Else
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Not ResizeSyncing Then
-                            Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                            Console.BackgroundColor = colors(RandomDriver.Next(LighterMinimumColorLevel, LighterMaximumColorLevel))
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                             Console.Write(" ")
                         Else
@@ -132,7 +132,7 @@ Module LighterDisplay
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Not ResizeSyncing Then
                             Console.SetCursorPosition(WipeLeft, WipeTop)
-                            Console.BackgroundColor = ConsoleColor.Black
+                            SetConsoleColor(New Color(LighterBackgroundColor), True)
                             Console.Write(" ")
                             CoveredPositions.RemoveAt(0)
                         Else
