@@ -632,7 +632,31 @@ Public Module Config
                     {"Activate 255 Color Mode", Ramp255Colors},
                     {"Activate True Color Mode", RampTrueColor},
                     {"Delay in Milliseconds", RampDelay},
-                    {"Next ramp interval", RampDelay}
+                    {"Next ramp interval", RampDelay},
+                    {"Upper left corner character for ramp bar", RampUpperLeftCornerChar},
+                    {"Upper right corner character for ramp bar", RampUpperRightCornerChar},
+                    {"Lower left corner character for ramp bar", RampLowerRightCornerChar},
+                    {"Lower right corner character for ramp bar", RampLowerRightCornerChar},
+                    {"Upper frame character for ramp bar", RampUpperFrameChar},
+                    {"Lower frame character for ramp bar", RampLowerFrameChar},
+                    {"Left frame character for ramp bar", RampLeftFrameChar},
+                    {"Right frame character for ramp bar", RampRightFrameChar},
+                    {"Minimum red color level for start color", RampMinimumRedColorLevelStart},
+                    {"Minimum green color level for start color", RampMinimumGreenColorLevelStart},
+                    {"Minimum blue color level for start color", RampMinimumBlueColorLevelStart},
+                    {"Minimum color level for start color", RampMinimumColorLevelStart},
+                    {"Maximum red color level for start color", RampMaximumRedColorLevelStart},
+                    {"Maximum green color level for start color", RampMaximumGreenColorLevelStart},
+                    {"Maximum blue color level for start color", RampMaximumBlueColorLevelStart},
+                    {"Maximum color level for start color", RampMaximumColorLevelStart},
+                    {"Minimum red color level for end color", RampMinimumRedColorLevelEnd},
+                    {"Minimum green color level for end color", RampMinimumGreenColorLevelEnd},
+                    {"Minimum blue color level for end color", RampMinimumBlueColorLevelEnd},
+                    {"Minimum color level for end color", RampMinimumColorLevelEnd},
+                    {"Maximum red color level for end color", RampMaximumRedColorLevelEnd},
+                    {"Maximum green color level for end color", RampMaximumGreenColorLevelEnd},
+                    {"Maximum blue color level for end color", RampMaximumBlueColorLevelEnd},
+                    {"Maximum color level for end color", RampMaximumColorLevelEnd}
             }
             ScreensaverConfig.Add("Ramp", RampConfig)
 
@@ -1171,6 +1195,30 @@ Public Module Config
             RampTrueColor = If(ConfigToken("Screensaver")?("Ramp")?("Activate True Color Mode"), True)
             RampDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Ramp")?("Delay in Milliseconds"), 20)
             RampNextRampDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Next ramp interval"), 0), ConfigToken("Screensaver")?("Ramp")?("Next ramp interval"), 250)
+            RampUpperLeftCornerChar = If(ConfigToken("Screensaver")?("Ramp")?("Upper left corner character for ramp bar"), "╔")
+            RampUpperRightCornerChar = If(ConfigToken("Screensaver")?("Ramp")?("Upper right corner character for ramp bar"), "╗")
+            RampLowerLeftCornerChar = If(ConfigToken("Screensaver")?("Ramp")?("Lower left corner character for ramp bar"), "╚")
+            RampLowerRightCornerChar = If(ConfigToken("Screensaver")?("Ramp")?("Lower right corner character for ramp bar"), "╝")
+            RampUpperFrameChar = If(ConfigToken("Screensaver")?("Ramp")?("Upper frame character for ramp bar"), "═")
+            RampLowerFrameChar = If(ConfigToken("Screensaver")?("Ramp")?("Lower frame character for ramp bar"), "═")
+            RampLeftFrameChar = If(ConfigToken("Screensaver")?("Ramp")?("Left frame character for ramp bar"), "║")
+            RampRightFrameChar = If(ConfigToken("Screensaver")?("Ramp")?("Right frame character for ramp bar"), "║")
+            RampMinimumRedColorLevelStart = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Minimum red color level for start color"), 0), ConfigToken("Screensaver")?("Ramp")?("Minimum red color level for start color"), 0)
+            RampMinimumGreenColorLevelStart = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Minimum green color level for start color"), 0), ConfigToken("Screensaver")?("Ramp")?("Minimum green color level for start color"), 0)
+            RampMinimumBlueColorLevelStart = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Minimum blue color level for start color"), 0), ConfigToken("Screensaver")?("Ramp")?("Minimum blue color level for start color"), 0)
+            RampMinimumColorLevelStart = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Minimum color level for start color"), 0), ConfigToken("Screensaver")?("Ramp")?("Minimum color level for start color"), 0)
+            RampMaximumRedColorLevelStart = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Maximum red color level for start color"), 0), ConfigToken("Screensaver")?("Ramp")?("Maximum red color level for start color"), 255)
+            RampMaximumGreenColorLevelStart = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Maximum green color level for start color"), 0), ConfigToken("Screensaver")?("Ramp")?("Maximum green color level for start color"), 255)
+            RampMaximumBlueColorLevelStart = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Maximum blue color level for start color"), 0), ConfigToken("Screensaver")?("Ramp")?("Maximum blue color level for start color"), 255)
+            RampMaximumColorLevelStart = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Maximum color level for start color"), 0), ConfigToken("Screensaver")?("Ramp")?("Maximum color level for start color"), 255)
+            RampMinimumRedColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Minimum red color level for end color"), 0), ConfigToken("Screensaver")?("Ramp")?("Minimum red color level for end color"), 0)
+            RampMinimumGreenColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Minimum green color level for end color"), 0), ConfigToken("Screensaver")?("Ramp")?("Minimum green color level for end color"), 0)
+            RampMinimumBlueColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Minimum blue color level for end color"), 0), ConfigToken("Screensaver")?("Ramp")?("Minimum blue color level for end color"), 0)
+            RampMinimumColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Minimum color level for end color"), 0), ConfigToken("Screensaver")?("Ramp")?("Minimum color level for end color"), 0)
+            RampMaximumRedColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Maximum red color level for end color"), 0), ConfigToken("Screensaver")?("Ramp")?("Maximum red color level for end color"), 255)
+            RampMaximumGreenColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Maximum green color level for end color"), 0), ConfigToken("Screensaver")?("Ramp")?("Maximum green color level for end color"), 255)
+            RampMaximumBlueColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Maximum blue color level for end color"), 0), ConfigToken("Screensaver")?("Ramp")?("Maximum blue color level for end color"), 255)
+            RampMaximumColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Maximum color level for end color"), 0), ConfigToken("Screensaver")?("Ramp")?("Maximum color level for end color"), 255)
 
             'Misc Section
             Wdbg(DebugLevel.I, "Parsing misc section...")

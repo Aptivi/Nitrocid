@@ -1185,5 +1185,101 @@ Public Module ScreensaverSettings
     ''' [Ramp] How many milliseconds to wait before starting the next ramp?
     ''' </summary>
     Public RampNextRampDelay As Integer = 250
+    ''' <summary>
+    ''' [Ramp] Upper left corner character 
+    ''' </summary>
+    Public RampUpperLeftCornerChar As String = "╔"
+    ''' <summary>
+    ''' [Ramp] Upper right corner character 
+    ''' </summary>
+    Public RampUpperRightCornerChar As String = "╗"
+    ''' <summary>
+    ''' [Ramp] Lower left corner character 
+    ''' </summary>
+    Public RampLowerLeftCornerChar As String = "╚"
+    ''' <summary>
+    ''' [Ramp] Lower right corner character 
+    ''' </summary>
+    Public RampLowerRightCornerChar As String = "╝"
+    ''' <summary>
+    ''' [Ramp] Upper frame character 
+    ''' </summary>
+    Public RampUpperFrameChar As String = "═"
+    ''' <summary>
+    ''' [Ramp] Lower frame character 
+    ''' </summary>
+    Public RampLowerFrameChar As String = "═"
+    ''' <summary>
+    ''' [Ramp] Left frame character 
+    ''' </summary>
+    Public RampLeftFrameChar As String = "║"
+    ''' <summary>
+    ''' [Ramp] Right frame character 
+    ''' </summary>
+    Public RampRightFrameChar As String = "║"
+    ''' <summary>
+    ''' [Ramp] The minimum red color level (true color - start)
+    ''' </summary>
+    Public RampMinimumRedColorLevelStart As Integer = 0
+    ''' <summary>
+    ''' [Ramp] The minimum green color level (true color - start)
+    ''' </summary>
+    Public RampMinimumGreenColorLevelStart As Integer = 0
+    ''' <summary>
+    ''' [Ramp] The minimum blue color level (true color - start)
+    ''' </summary>
+    Public RampMinimumBlueColorLevelStart As Integer = 0
+    ''' <summary>
+    ''' [Ramp] The minimum color level (255 colors or 16 colors - start)
+    ''' </summary>
+    Public RampMinimumColorLevelStart As Integer = 0
+    ''' <summary>
+    ''' [Ramp] The maximum red color level (true color - start)
+    ''' </summary>
+    Public RampMaximumRedColorLevelStart As Integer = 255
+    ''' <summary>
+    ''' [Ramp] The maximum green color level (true color - start)
+    ''' </summary>
+    Public RampMaximumGreenColorLevelStart As Integer = 255
+    ''' <summary>
+    ''' [Ramp] The maximum blue color level (true color - start)
+    ''' </summary>
+    Public RampMaximumBlueColorLevelStart As Integer = 255
+    ''' <summary>
+    ''' [Ramp] The maximum color level (255 colors or 16 colors - start)
+    ''' </summary>
+    Public RampMaximumColorLevelStart As Integer = 255
+    ''' <summary>
+    ''' [Ramp] The minimum red color level (true color - end)
+    ''' </summary>
+    Public RampMinimumRedColorLevelEnd As Integer = 0
+    ''' <summary>
+    ''' [Ramp] The minimum green color level (true color - end)
+    ''' </summary>
+    Public RampMinimumGreenColorLevelEnd As Integer = 0
+    ''' <summary>
+    ''' [Ramp] The minimum blue color level (true color - end)
+    ''' </summary>
+    Public RampMinimumBlueColorLevelEnd As Integer = 0
+    ''' <summary>
+    ''' [Ramp] The minimum color level (255 colors or 16 colors - end)
+    ''' </summary>
+    Public RampMinimumColorLevelEnd As Integer = 0
+    ''' <summary>
+    ''' [Ramp] The maximum red color level (true color - end)
+    ''' </summary>
+    Public RampMaximumRedColorLevelEnd As Integer = 255
+    ''' <summary>
+    ''' [Ramp] The maximum green color level (true color - end)
+    ''' </summary>
+    Public RampMaximumGreenColorLevelEnd As Integer = 255
+    ''' <summary>
+    ''' [Ramp] The maximum blue color level (true color - end)
+    ''' </summary>
+    Public RampMaximumBlueColorLevelEnd As Integer = 255
+    ''' <summary>
+    ''' [Ramp] The maximum color level (255 colors or 16 colors - end)
+    ''' </summary>
+    Public RampMaximumColorLevelEnd As Integer = 255
 
 End Module

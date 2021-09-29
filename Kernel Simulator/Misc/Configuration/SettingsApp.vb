@@ -683,13 +683,37 @@ Public Module SettingsApp
                     W(" 3) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SpotWriteWrite)))
                     W(" 4) " + DoTranslation("Text color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SpotWriteTextColor)))
                 Case "7.22" 'Screensaver > Ramp
-                    MaxOptions = 4
+                    MaxOptions = 28
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " Ramp." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Ramp255Colors)))
                     W(" 2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampTrueColor)))
                     W(" 3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampDelay)))
                     W(" 4) " + DoTranslation("Next ramp interval") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampNextRampDelay)))
+                    W(" 5) " + DoTranslation("Upper left corner character for ramp bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampUpperLeftCornerChar)))
+                    W(" 6) " + DoTranslation("Lower left corner character for ramp bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampUpperRightCornerChar)))
+                    W(" 7) " + DoTranslation("Upper right corner character for ramp bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampLowerLeftCornerChar)))
+                    W(" 8) " + DoTranslation("Lower right corner character for ramp bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampLowerRightCornerChar)))
+                    W(" 9) " + DoTranslation("Upper frame character for ramp bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampUpperFrameChar)))
+                    W(" 10) " + DoTranslation("Lower frame character for ramp bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampLowerFrameChar)))
+                    W(" 11) " + DoTranslation("Left frame character for ramp bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampLeftFrameChar)))
+                    W(" 12) " + DoTranslation("Right frame character for ramp bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampRightFrameChar)))
+                    W(" 13) " + DoTranslation("Minimum red color level for start color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampMinimumRedColorLevelStart)))
+                    W(" 14) " + DoTranslation("Minimum green color level for start color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampMinimumGreenColorLevelStart)))
+                    W(" 15) " + DoTranslation("Minimum blue color level for start color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampMinimumBlueColorLevelStart)))
+                    W(" 16) " + DoTranslation("Minimum color level for start color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampMinimumColorLevelStart)))
+                    W(" 17) " + DoTranslation("Maximum red color level for start color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampMaximumRedColorLevelStart)))
+                    W(" 18) " + DoTranslation("Maximum green color level for start color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampMaximumGreenColorLevelStart)))
+                    W(" 19) " + DoTranslation("Maximum blue color level for start color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampMaximumBlueColorLevelStart)))
+                    W(" 20) " + DoTranslation("Maximum color level for start color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampMaximumColorLevelStart)))
+                    W(" 21) " + DoTranslation("Minimum red color level for end color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampMinimumRedColorLevelEnd)))
+                    W(" 22) " + DoTranslation("Minimum green color level for end color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampMinimumGreenColorLevelEnd)))
+                    W(" 23) " + DoTranslation("Minimum blue color level for end color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampMinimumBlueColorLevelEnd)))
+                    W(" 24) " + DoTranslation("Minimum color level for end color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampMinimumColorLevelEnd)))
+                    W(" 25) " + DoTranslation("Maximum red color level for end color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampMaximumRedColorLevelEnd)))
+                    W(" 26) " + DoTranslation("Maximum green color level for end color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampMaximumGreenColorLevelEnd)))
+                    W(" 27) " + DoTranslation("Maximum blue color level for end color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampMaximumBlueColorLevelEnd)))
+                    W(" 28) " + DoTranslation("Maximum color level for end color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(RampMaximumColorLevelEnd)))
                 Case "7." + $"{If(SectionParameters.Length <> 0, SectionParameters(0), $"{BuiltinSavers + 1}")}" 'Screensaver > a custom saver
                     Dim SaverIndex As Integer = SectionParameters(0) - BuiltinSavers - 1
                     Dim Configurables As List(Of String) = SectionParameters(1)
@@ -3048,6 +3072,126 @@ Public Module SettingsApp
                             KeyVar = NameOf(RampNextRampDelay)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Next ramp interval"), True)
                             W(vbNewLine + DoTranslation("How many milliseconds to wait before filling in the next ramp?"), True, ColTypes.Neutral)
+                        Case 5 'Ramp: Upper left corner character for ramp bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(RampUpperLeftCornerChar)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Upper left corner character for ramp bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the upper left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 6 'Ramp: Lower left corner character for ramp bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(RampLowerLeftCornerChar)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Lower left corner character for ramp bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the lower left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 7 'Ramp: Upper right corner character for ramp bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(RampUpperRightCornerChar)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Upper right corner character for ramp bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the upper left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 8 'Ramp: Lower right corner character for ramp bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(RampLowerRightCornerChar)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Lower right corner character for ramp bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the lower left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 9 'Ramp: Upper frame character for ramp bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(RampUpperFrameChar)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Upper frame character for ramp bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the upper frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 10 'Ramp: Lower frame character for ramp bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(RampLowerFrameChar)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Lower frame character for ramp bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the lower frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 11 'Ramp: Left frame character for ramp bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(RampLeftFrameChar)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Left frame character for ramp bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the left frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 12 'Ramp: Right frame character for ramp bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(RampRightFrameChar)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Right frame character for ramp bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the right frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 13 'Ramp: Minimum red color level for start color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RampMinimumRedColorLevelStart)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Minimum red color level for start color"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 14 'Ramp: Minimum green color level for start color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RampMinimumGreenColorLevelStart)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Minimum green color level for start color"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 15 'Ramp: Minimum blue color level for start color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RampMinimumBlueColorLevelStart)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Minimum blue color level for start color"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 16 'Ramp: Minimum color level for start color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RampMinimumColorLevelStart)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Minimum color level for start color"), True)
+                            W(vbNewLine + DoTranslation("Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 17 'Ramp: Maximum red color level for start color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RampMaximumRedColorLevelStart)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Maximum red color level for start color"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 18 'Ramp: Maximum green color level for start color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RampMaximumGreenColorLevelStart)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Maximum green color level for start color"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 19 'Ramp: Maximum blue color level for start color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RampMaximumBlueColorLevelStart)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Maximum blue color level for start color"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 20 'Ramp: Maximum color level for start color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RampMaximumColorLevelStart)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Maximum color level for start color"), True)
+                            W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 21 'Ramp: Minimum red color level for end color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RampMinimumRedColorLevelEnd)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Minimum red color level for end color"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 22 'Ramp: Minimum green color level for end color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RampMinimumGreenColorLevelEnd)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Minimum green color level for end color"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 23 'Ramp: Minimum blue color level for end color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RampMinimumBlueColorLevelEnd)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Minimum blue color level for end color"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 24 'Ramp: Minimum color level for end color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RampMinimumColorLevelEnd)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Minimum color level for end color"), True)
+                            W(vbNewLine + DoTranslation("Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 25 'Ramp: Maximum red color level for end color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RampMaximumRedColorLevelEnd)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Maximum red color level for end color"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 26 'Ramp: Maximum green color level for end color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RampMaximumGreenColorLevelEnd)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Maximum green color level for end color"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 27 'Ramp: Maximum blue color level for end color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RampMaximumBlueColorLevelEnd)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Maximum blue color level for end color"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 28 'Ramp: Maximum color level for end color
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(RampMaximumColorLevelEnd)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Ramp > " + DoTranslation("Maximum color level for end color"), True)
+                            W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
