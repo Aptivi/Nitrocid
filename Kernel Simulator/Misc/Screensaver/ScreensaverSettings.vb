@@ -231,6 +231,42 @@ Public Module ScreensaverSettings
     ''' [Dissolve] Enable truecolor support. Has a higher priority than 255 color support.
     ''' </summary>
     Public DissolveTrueColor As Boolean = True
+    ''' <summary>
+    ''' [Dissolve] Screensaver background color
+    ''' </summary>
+    Public DissolveBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+    ''' <summary>
+    ''' [Dissolve] The minimum red color level (true color)
+    ''' </summary>
+    Public DissolveMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Dissolve] The minimum green color level (true color)
+    ''' </summary>
+    Public DissolveMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Dissolve] The minimum blue color level (true color)
+    ''' </summary>
+    Public DissolveMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Dissolve] The minimum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public DissolveMinimumColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Dissolve] The maximum red color level (true color)
+    ''' </summary>
+    Public DissolveMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Dissolve] The maximum green color level (true color)
+    ''' </summary>
+    Public DissolveMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Dissolve] The maximum blue color level (true color)
+    ''' </summary>
+    Public DissolveMaximumBlueColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Dissolve] The maximum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public DissolveMaximumColorLevel As Integer = 255
 
     '-> BouncingBlock
     ''' <summary>

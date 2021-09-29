@@ -408,11 +408,20 @@ Public Module SettingsApp
                     W(" 3) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextDelay)))
                     W(" 4) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingTextWrite)))
                 Case "7.8" 'Screensaver > Dissolve
-                    MaxOptions = 2
+                    MaxOptions = 11
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Dissolve", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " Dissolve." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Dissolve255Colors)))
                     W(" 2) " + DoTranslation("Activate true colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DissolveTrueColor)))
+                    W(" 3) " + DoTranslation("Background color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DissolveBackgroundColor)))
+                    W(" 4) " + DoTranslation("Minimum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DissolveMinimumRedColorLevel)))
+                    W(" 5) " + DoTranslation("Minimum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DissolveMinimumGreenColorLevel)))
+                    W(" 6) " + DoTranslation("Minimum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DissolveMinimumBlueColorLevel)))
+                    W(" 7) " + DoTranslation("Minimum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DissolveMinimumColorLevel)))
+                    W(" 8) " + DoTranslation("Maximum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DissolveMaximumRedColorLevel)))
+                    W(" 9) " + DoTranslation("Maximum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DissolveMaximumGreenColorLevel)))
+                    W(" 10) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DissolveMaximumBlueColorLevel)))
+                    W(" 11) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DissolveMaximumColorLevel)))
                 Case "7.9" 'Screensaver > BouncingBlock
                     MaxOptions = 3
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > BouncingBlock", True)
@@ -1704,6 +1713,51 @@ Public Module SettingsApp
                             KeyVar = NameOf(DissolveTrueColor)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Dissolve > " + DoTranslation("Activate true colors"), True)
                             W(vbNewLine + DoTranslation("Activates true color support for Dissolve."), True, ColTypes.Neutral)
+                        Case 5 'Dissolve: Background color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(DissolveBackgroundColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(DissolveBackgroundColor).Type = ColorType.TrueColor, If(New Color(DissolveBackgroundColor).Type = ColorType._255Color, New Color(DissolveBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(DissolveBackgroundColor).R, New Color(DissolveBackgroundColor).G, New Color(DissolveBackgroundColor).B)
+                        Case 6 'Dissolve: Minimum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(DissolveMinimumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Dissolve > " + DoTranslation("Minimum red color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 7 'Dissolve: Minimum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(DissolveMinimumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Dissolve > " + DoTranslation("Minimum green color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 8 'Dissolve: Minimum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(DissolveMinimumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Dissolve > " + DoTranslation("Minimum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 9 'Dissolve: Minimum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(DissolveMinimumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Dissolve > " + DoTranslation("Minimum color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 10 'Dissolve: Maximum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(DissolveMaximumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Dissolve > " + DoTranslation("Maximum red color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 11 'Dissolve: Maximum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(DissolveMaximumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Dissolve > " + DoTranslation("Maximum green color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 12 'Dissolve: Maximum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(DissolveMaximumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Dissolve > " + DoTranslation("Maximum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 13 'Dissolve: Maximum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(DissolveMaximumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Dissolve > " + DoTranslation("Maximum color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Dissolve > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

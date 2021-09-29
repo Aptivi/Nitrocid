@@ -127,7 +127,7 @@ Public Module ConfigTools
                 End If
             End If
             If ConfigToken("Screensaver")("Dissolve") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Dissolve").Count <> 2 Then
+                If ConfigToken("Screensaver")("Dissolve").Count <> 11 Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Dissolve. Config fix needed set to true.")
                     FixesNeeded = True
                 End If

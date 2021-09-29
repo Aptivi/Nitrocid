@@ -37,7 +37,7 @@ Module DissolveDisplay
             Dim ResizeSyncing As Boolean
 
             'Preparations
-            Console.BackgroundColor = ConsoleColor.Black
+            SetConsoleColor(New Color(ColorMixBackgroundColor), True)
             Console.Clear()
             Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
@@ -59,6 +59,33 @@ Module DissolveDisplay
                     Dim EndTop As Integer = Console.WindowHeight - 1
                     Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                     Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+
+                    'Sanity checks for color levels
+                    If DissolveTrueColor Or Dissolve255Colors Then
+                        DissolveMinimumRedColorLevel = If(DissolveMinimumRedColorLevel >= 0 And DissolveMinimumRedColorLevel <= 255, DissolveMinimumRedColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", DissolveMinimumRedColorLevel)
+                        DissolveMinimumGreenColorLevel = If(DissolveMinimumGreenColorLevel >= 0 And DissolveMinimumGreenColorLevel <= 255, DissolveMinimumGreenColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", DissolveMinimumGreenColorLevel)
+                        DissolveMinimumBlueColorLevel = If(DissolveMinimumBlueColorLevel >= 0 And DissolveMinimumBlueColorLevel <= 255, DissolveMinimumBlueColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", DissolveMinimumBlueColorLevel)
+                        DissolveMinimumColorLevel = If(DissolveMinimumColorLevel >= 0 And DissolveMinimumColorLevel <= 255, DissolveMinimumColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", DissolveMinimumColorLevel)
+                        DissolveMaximumRedColorLevel = If(DissolveMaximumRedColorLevel >= 0 And DissolveMaximumRedColorLevel <= 255, DissolveMaximumRedColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", DissolveMaximumRedColorLevel)
+                        DissolveMaximumGreenColorLevel = If(DissolveMaximumGreenColorLevel >= 0 And DissolveMaximumGreenColorLevel <= 255, DissolveMaximumGreenColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", DissolveMaximumGreenColorLevel)
+                        DissolveMaximumBlueColorLevel = If(DissolveMaximumBlueColorLevel >= 0 And DissolveMaximumBlueColorLevel <= 255, DissolveMaximumBlueColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", DissolveMaximumBlueColorLevel)
+                        DissolveMaximumColorLevel = If(DissolveMaximumColorLevel >= 0 And DissolveMaximumColorLevel <= 255, DissolveMaximumColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", DissolveMaximumColorLevel)
+                    Else
+                        DissolveMinimumColorLevel = If(DissolveMinimumColorLevel >= 0 And DissolveMinimumColorLevel <= 15, DissolveMinimumColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", DissolveMinimumColorLevel)
+                        DissolveMaximumColorLevel = If(DissolveMaximumColorLevel >= 0 And DissolveMaximumColorLevel <= 15, DissolveMaximumColorLevel, 15)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", DissolveMaximumColorLevel)
+                    End If
+
+                    'Fill the color if not filled
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Dissolving: {0}", ColorFilled)
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "End left: {0} | End top: {1}", EndLeft, EndTop)
                     If Not ColorFilled Then
@@ -66,9 +93,9 @@ Module DissolveDisplay
                         If Not (Console.CursorLeft >= EndLeft And Console.CursorTop >= EndTop) Then
                             Dim esc As Char = GetEsc()
                             If DissolveTrueColor Then
-                                Dim RedColorNum As Integer = RandomDriver.Next(255)
-                                Dim GreenColorNum As Integer = RandomDriver.Next(255)
-                                Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                                Dim RedColorNum As Integer = RandomDriver.Next(DissolveMinimumRedColorLevel, DissolveMaximumRedColorLevel)
+                                Dim GreenColorNum As Integer = RandomDriver.Next(DissolveMinimumGreenColorLevel, DissolveMaximumGreenColorLevel)
+                                Dim BlueColorNum As Integer = RandomDriver.Next(DissolveMinimumBlueColorLevel, DissolveMaximumBlueColorLevel)
                                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                                 If Not ResizeSyncing Then
@@ -76,12 +103,12 @@ Module DissolveDisplay
                                 Else
                                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're refilling...")
                                     ColorFilled = False
-                                    Console.BackgroundColor = ConsoleColor.Black
+                                    SetConsoleColor(New Color(ColorMixBackgroundColor), True)
                                     Console.Clear()
                                     CoveredPositions.Clear()
                                 End If
                             ElseIf Dissolve255Colors Then
-                                Dim ColorNum As Integer = RandomDriver.Next(255)
+                                Dim ColorNum As Integer = RandomDriver.Next(DissolveMinimumColorLevel, DissolveMaximumColorLevel)
                                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                                 If Not ResizeSyncing Then
@@ -89,20 +116,20 @@ Module DissolveDisplay
                                 Else
                                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're refilling...")
                                     ColorFilled = False
-                                    Console.BackgroundColor = ConsoleColor.Black
+                                    SetConsoleColor(New Color(ColorMixBackgroundColor), True)
                                     Console.Clear()
                                     CoveredPositions.Clear()
                                 End If
                             Else
                                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                                 If Not ResizeSyncing Then
-                                    Console.BackgroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                                    SetConsoleColor(New Color(ColorMixBackgroundColor), True)
                                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                                     Console.Write(" ")
                                 Else
                                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're refilling...")
                                     ColorFilled = False
-                                    Console.BackgroundColor = ConsoleColor.Black
+                                    SetConsoleColor(New Color(ColorMixBackgroundColor), True)
                                     Console.Clear()
                                     CoveredPositions.Clear()
                                 End If
@@ -120,19 +147,19 @@ Module DissolveDisplay
                         If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                         If Not ResizeSyncing Then
                             Console.SetCursorPosition(Left, Top)
-                            Console.BackgroundColor = ConsoleColor.Black
+                            SetConsoleColor(New Color(ColorMixBackgroundColor), True)
                             Console.Write(" ")
                             If CoveredPositions.Count = (EndLeft + 1) * (EndTop + 1) Then
                                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're refilling...")
                                 ColorFilled = False
-                                Console.BackgroundColor = ConsoleColor.Black
+                                SetConsoleColor(New Color(ColorMixBackgroundColor), True)
                                 Console.Clear()
                                 CoveredPositions.Clear()
                             End If
                         Else
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're refilling...")
                             ColorFilled = False
-                            Console.BackgroundColor = ConsoleColor.Black
+                            SetConsoleColor(New Color(ColorMixBackgroundColor), True)
                             Console.Clear()
                             CoveredPositions.Clear()
                         End If
