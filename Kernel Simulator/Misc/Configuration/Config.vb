@@ -428,7 +428,16 @@ Public Module Config
                     {"Activate 255 Color Mode", Lighter255Colors},
                     {"Activate True Color Mode", LighterTrueColor},
                     {"Delay in Milliseconds", LighterDelay},
-                    {"Max Positions Count", LighterMaxPositions}
+                    {"Max Positions Count", LighterMaxPositions},
+                    {"Background color", If(New Color(LighterBackgroundColor).Type = ColorType.TrueColor, LighterBackgroundColor.EncloseByDoubleQuotes, LighterBackgroundColor)},
+                    {"Minimum red color level", LighterMinimumRedColorLevel},
+                    {"Minimum green color level", LighterMinimumGreenColorLevel},
+                    {"Minimum blue color level", LighterMinimumBlueColorLevel},
+                    {"Minimum color level", LighterMinimumColorLevel},
+                    {"Maximum red color level", LighterMaximumRedColorLevel},
+                    {"Maximum green color level", LighterMaximumGreenColorLevel},
+                    {"Maximum blue color level", LighterMaximumBlueColorLevel},
+                    {"Maximum color level", LighterMaximumColorLevel}
             }
             ScreensaverConfig.Add("Lighter", LighterConfig)
 
@@ -969,6 +978,15 @@ Public Module Config
             LighterTrueColor = If(ConfigToken("Screensaver")?("Lighter")?("Activate True Color Mode"), True)
             LighterDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Lighter")?("Delay in Milliseconds"), 100)
             LighterMaxPositions = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Max Positions Count"), 0), ConfigToken("Screensaver")?("Lighter")?("Max Positions Count"), 10)
+            LighterBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Lighter")?("Background color"), ConsoleColors.Black)).PlainSequence
+            LighterMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Lighter")?("Minimum red color level"), 0)
+            LighterMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Lighter")?("Minimum green color level"), 0)
+            LighterMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("Lighter")?("Minimum blue color level"), 0)
+            LighterMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Minimum color level"), 0), ConfigToken("Screensaver")?("Lighter")?("Minimum color level"), 0)
+            LighterMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("Lighter")?("Maximum red color level"), 255)
+            LighterMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Lighter")?("Maximum green color level"), 255)
+            LighterMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Lighter")?("Maximum blue color level"), 255)
+            LighterMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Maximum color level"), 0), ConfigToken("Screensaver")?("Lighter")?("Maximum color level"), 255)
 
             '> Wipe
             Wipe255Colors = If(ConfigToken("Screensaver")?("Wipe")?("Activate 255 Color Mode"), False)

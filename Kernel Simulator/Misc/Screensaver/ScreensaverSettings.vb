@@ -671,6 +671,42 @@ Public Module ScreensaverSettings
     ''' [Lighter] How many positions to write before starting to blacken them?
     ''' </summary>
     Public LighterMaxPositions As Integer = 10
+    ''' <summary>
+    ''' [Lighter] Screensaver background color
+    ''' </summary>
+    Public LighterBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+    ''' <summary>
+    ''' [Lighter] The minimum red color level (true color)
+    ''' </summary>
+    Public LighterMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Lighter] The minimum green color level (true color)
+    ''' </summary>
+    Public LighterMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Lighter] The minimum blue color level (true color)
+    ''' </summary>
+    Public LighterMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Lighter] The minimum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public LighterMinimumColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Lighter] The maximum red color level (true color)
+    ''' </summary>
+    Public LighterMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Lighter] The maximum green color level (true color)
+    ''' </summary>
+    Public LighterMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Lighter] The maximum blue color level (true color)
+    ''' </summary>
+    Public LighterMaximumBlueColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Lighter] The maximum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public LighterMaximumColorLevel As Integer = 255
 
     '-> Wipe
     ''' <summary>
