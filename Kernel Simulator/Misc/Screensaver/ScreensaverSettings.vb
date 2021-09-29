@@ -762,18 +762,6 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public WipeMaximumColorLevel As Integer = 255
 
-    '-> HackUserFromAD
-    ''' <summary>
-    ''' [HackUserFromAD] Sets the console foreground color to green to represent "Hacker Mode"
-    ''' </summary>
-    Public HackUserFromADHackerMode As Boolean = True
-
-    '-> AptErrorSim
-    ''' <summary>
-    ''' [AptErrorSim] Sets the console foreground color to green to represent "Hacker Mode"
-    ''' </summary>
-    Public AptErrorSimHackerMode As Boolean
-
     '-> Marquee
     ''' <summary>
     ''' [Marquee] Enable 255 color support. Has a higher priority than 16 color support.
