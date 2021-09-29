@@ -1837,7 +1837,7 @@ Public Module SettingsApp
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > GlitterColor > " + DoTranslation("Maximum color level"), True)
                             W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
                         Case Else
-                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > ???", True)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > GlitterColor > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
                 Case "7.7" 'BouncingText
@@ -3023,7 +3023,7 @@ Public Module SettingsApp
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > FlashColor > " + DoTranslation("Maximum color level"), True)
                             W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
                         Case Else
-                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lines > ???", True)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > FlashColor > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
                 Case "7.21" 'SpotWrite
@@ -3049,6 +3049,9 @@ Public Module SettingsApp
                             KeyVar = NameOf(SpotWriteTextColor)
                             VariantValueFromExternalPrompt = True
                             VariantValue = ColorWheel(New Color(SpotWriteTextColor).Type = ColorType.TrueColor, If(New Color(SpotWriteTextColor).Type = ColorType._255Color, New Color(SpotWriteTextColor).PlainSequence, ConsoleColors.White), New Color(SpotWriteTextColor).R, New Color(SpotWriteTextColor).G, New Color(SpotWriteTextColor).B)
+                        Case Else
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > SpotWrite > ???", True)
+                            W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
                 Case "7.22" 'Ramp
                     Select Case KeyNumber
