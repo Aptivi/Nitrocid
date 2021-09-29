@@ -787,6 +787,43 @@ Public Module ScreensaverSettings
     ''' [Marquee] Whether to use the Console.Clear() API (slow) or use the line-clearing VT sequence (fast).
     ''' </summary>
     Public MarqueeUseConsoleAPI As Boolean = False
+    ''' <summary>
+    ''' [Marquee] Screensaver background color
+    ''' </summary>
+    Public MarqueeBackgroundColor As String = New Color(ConsoleColor.Black).PlainSequence
+    ''' <summary>
+    ''' [Marquee] The minimum red color level (true color)
+    ''' </summary>
+    Public MarqueeMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Marquee] The minimum green color level (true color)
+    ''' </summary>
+    Public MarqueeMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Marquee] The minimum blue color level (true color)
+    ''' </summary>
+    Public MarqueeMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Marquee] The minimum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public MarqueeMinimumColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Marquee] The maximum red color level (true color)
+    ''' </summary>
+    Public MarqueeMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Marquee] The maximum green color level (true color)
+    ''' </summary>
+    Public MarqueeMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Marquee] The maximum blue color level (true color)
+    ''' </summary>
+    Public MarqueeMaximumBlueColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Marquee] The maximum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public MarqueeMaximumColorLevel As Integer = 0
+
 
     '-> BeatFader
     ''' <summary>

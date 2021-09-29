@@ -561,7 +561,16 @@ Public Module Config
                     {"Delay in Milliseconds", MarqueeDelay},
                     {"Text Shown", MarqueeWrite},
                     {"Always Centered", MarqueeAlwaysCentered},
-                    {"Use Console API", MarqueeUseConsoleAPI}
+                    {"Use Console API", MarqueeUseConsoleAPI},
+                    {"Background color", If(New Color(MarqueeBackgroundColor).Type = ColorType.TrueColor, MarqueeBackgroundColor.EncloseByDoubleQuotes, MarqueeBackgroundColor)},
+                    {"Minimum red color level", MarqueeMinimumRedColorLevel},
+                    {"Minimum green color level", MarqueeMinimumGreenColorLevel},
+                    {"Minimum blue color level", MarqueeMinimumBlueColorLevel},
+                    {"Minimum color level", MarqueeMinimumColorLevel},
+                    {"Maximum red color level", MarqueeMaximumRedColorLevel},
+                    {"Maximum green color level", MarqueeMaximumGreenColorLevel},
+                    {"Maximum blue color level", MarqueeMaximumBlueColorLevel},
+                    {"Maximum color level", MarqueeMaximumColorLevel}
             }
             ScreensaverConfig.Add("Marquee", MarqueeConfig)
 
@@ -1091,6 +1100,15 @@ Public Module Config
             MarqueeDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Marquee")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Marquee")?("Delay in Milliseconds"), 10)
             MarqueeAlwaysCentered = If(ConfigToken("Screensaver")?("Marquee")?("Always Centered"), True)
             MarqueeUseConsoleAPI = If(ConfigToken("Screensaver")?("Marquee")?("Use Console API"), False)
+            MarqueeMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Marquee")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Marquee")?("Minimum red color level"), 0)
+            MarqueeMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Marquee")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Marquee")?("Minimum green color level"), 0)
+            MarqueeMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Marquee")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("Marquee")?("Minimum blue color level"), 0)
+            MarqueeMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Marquee")?("Minimum color level"), 0), ConfigToken("Screensaver")?("Marquee")?("Minimum color level"), 0)
+            MarqueeMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Marquee")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("Marquee")?("Maximum red color level"), 255)
+            MarqueeMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Marquee")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Marquee")?("Maximum green color level"), 255)
+            MarqueeMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Marquee")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Marquee")?("Maximum blue color level"), 255)
+            MarqueeMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Marquee")?("Maximum color level"), 0), ConfigToken("Screensaver")?("Marquee")?("Maximum color level"), 255)
+            MarqueeBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Marquee")?("Background color"), ConsoleColors.Black)).PlainSequence
 
             '> Matrix
             MatrixDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Matrix")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Matrix")?("Delay in Milliseconds"), 1)

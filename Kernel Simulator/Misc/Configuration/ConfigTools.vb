@@ -199,7 +199,7 @@ Public Module ConfigTools
                 End If
             End If
             If ConfigToken("Screensaver")("Marquee") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Marquee").Count <> 6 Then
+                If ConfigToken("Screensaver")("Marquee").Count <> 15 Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Marquee. Config fix needed set to true.")
                     FixesNeeded = True
                 End If

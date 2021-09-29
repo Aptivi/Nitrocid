@@ -34,7 +34,7 @@ Module MarqueeDisplay
             Dim ResizeSyncing As Boolean
 
             'Preparations
-            Console.BackgroundColor = ConsoleColor.Black
+            SetConsoleColor(New Color(MarqueeBackgroundColor), True)
             Console.ForegroundColor = ConsoleColor.White
             Console.Clear()
             MarqueeWrite = MarqueeWrite.ReplaceAll({vbCr, vbLf}, " - ")
@@ -55,6 +55,31 @@ Module MarqueeDisplay
                     SleepNoBlock(MarqueeDelay, Marquee)
                     Console.Clear()
 
+                    'Sanity checks for color levels
+                    If MarqueeTrueColor Or Marquee255Colors Then
+                        MarqueeMinimumRedColorLevel = If(MarqueeMinimumRedColorLevel >= 0 And MarqueeMinimumRedColorLevel <= 255, MarqueeMinimumRedColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", MarqueeMinimumRedColorLevel)
+                        MarqueeMinimumGreenColorLevel = If(MarqueeMinimumGreenColorLevel >= 0 And MarqueeMinimumGreenColorLevel <= 255, MarqueeMinimumGreenColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", MarqueeMinimumGreenColorLevel)
+                        MarqueeMinimumBlueColorLevel = If(MarqueeMinimumBlueColorLevel >= 0 And MarqueeMinimumBlueColorLevel <= 255, MarqueeMinimumBlueColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", MarqueeMinimumBlueColorLevel)
+                        MarqueeMinimumColorLevel = If(MarqueeMinimumColorLevel >= 0 And MarqueeMinimumColorLevel <= 255, MarqueeMinimumColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", MarqueeMinimumColorLevel)
+                        MarqueeMaximumRedColorLevel = If(MarqueeMaximumRedColorLevel >= 0 And MarqueeMaximumRedColorLevel <= 255, MarqueeMaximumRedColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", MarqueeMaximumRedColorLevel)
+                        MarqueeMaximumGreenColorLevel = If(MarqueeMaximumGreenColorLevel >= 0 And MarqueeMaximumGreenColorLevel <= 255, MarqueeMaximumGreenColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", MarqueeMaximumGreenColorLevel)
+                        MarqueeMaximumBlueColorLevel = If(MarqueeMaximumBlueColorLevel >= 0 And MarqueeMaximumBlueColorLevel <= 255, MarqueeMaximumBlueColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", MarqueeMaximumBlueColorLevel)
+                        MarqueeMaximumColorLevel = If(MarqueeMaximumColorLevel >= 0 And MarqueeMaximumColorLevel <= 255, MarqueeMaximumColorLevel, 255)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", MarqueeMaximumColorLevel)
+                    Else
+                        MarqueeMinimumColorLevel = If(MarqueeMinimumColorLevel >= 0 And MarqueeMinimumColorLevel <= 15, MarqueeMinimumColorLevel, 0)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", MarqueeMinimumColorLevel)
+                        MarqueeMaximumColorLevel = If(MarqueeMaximumColorLevel >= 0 And MarqueeMaximumColorLevel <= 15, MarqueeMaximumColorLevel, 15)
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", MarqueeMaximumColorLevel)
+                    End If
+
                     'Ensure that the top position of the written text is always centered if AlwaysCentered is enabled. Else, select a random height.
                     Dim TopPrinted As Integer = Console.WindowHeight / 2
                     If Not MarqueeAlwaysCentered Then
@@ -69,17 +94,17 @@ Module MarqueeDisplay
 
                     'We need to set colors for the text.
                     If MarqueeTrueColor Then
-                        Dim RedColorNum As Integer = RandomDriver.Next(255)
-                        Dim GreenColorNum As Integer = RandomDriver.Next(255)
-                        Dim BlueColorNum As Integer = RandomDriver.Next(255)
+                        Dim RedColorNum As Integer = RandomDriver.Next(MarqueeMinimumRedColorLevel, MarqueeMaximumRedColorLevel)
+                        Dim GreenColorNum As Integer = RandomDriver.Next(MarqueeMinimumGreenColorLevel, MarqueeMaximumGreenColorLevel)
+                        Dim BlueColorNum As Integer = RandomDriver.Next(MarqueeMinimumBlueColorLevel, MarqueeMaximumBlueColorLevel)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                         SetConsoleColor(New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"))
                     ElseIf Marquee255Colors Then
-                        Dim color As Integer = RandomDriver.Next(255)
+                        Dim color As Integer = RandomDriver.Next(MarqueeMinimumColorLevel, MarqueeMaximumColorLevel)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", color)
                         SetConsoleColor(New Color(color))
                     Else
-                        Console.ForegroundColor = colors(RandomDriver.Next(colors.Length - 1))
+                        Console.ForegroundColor = colors(RandomDriver.Next(MarqueeMinimumColorLevel, MarqueeMaximumColorLevel))
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.ForegroundColor)
                     End If
 

@@ -592,6 +592,15 @@ Public Module SettingsApp
                     W(" 4) " + DoTranslation("Text shown") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeWrite)))
                     W(" 5) " + DoTranslation("Always centered") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeAlwaysCentered)))
                     W(" 6) " + DoTranslation("Use Console API") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeUseConsoleAPI)))
+                    W(" 7) " + DoTranslation("Background color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeBackgroundColor)))
+                    W(" 8) " + DoTranslation("Minimum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeMinimumRedColorLevel)))
+                    W(" 9) " + DoTranslation("Minimum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeMinimumGreenColorLevel)))
+                    W(" 10) " + DoTranslation("Minimum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeMinimumBlueColorLevel)))
+                    W(" 11) " + DoTranslation("Minimum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeMinimumColorLevel)))
+                    W(" 12) " + DoTranslation("Maximum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeMaximumRedColorLevel)))
+                    W(" 13) " + DoTranslation("Maximum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeMaximumGreenColorLevel)))
+                    W(" 14) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeMaximumBlueColorLevel)))
+                    W(" 15) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(MarqueeMaximumColorLevel)))
                 Case "7.16" 'Screensaver > FaderBack
                     MaxOptions = 9
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > FaderBack", True)
@@ -2630,6 +2639,51 @@ Public Module SettingsApp
                             KeyVar = NameOf(MarqueeUseConsoleAPI)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Use Console API"), True)
                             W(vbNewLine + DoTranslation("Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API."), True, ColTypes.Neutral)
+                        Case 7 'Marquee: Background color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(MarqueeBackgroundColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(MarqueeBackgroundColor).Type = ColorType.TrueColor, If(New Color(MarqueeBackgroundColor).Type = ColorType._255Color, New Color(MarqueeBackgroundColor).PlainSequence, ConsoleColors.White), New Color(MarqueeBackgroundColor).R, New Color(MarqueeBackgroundColor).G, New Color(MarqueeBackgroundColor).B)
+                        Case 8 'Marquee: Minimum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(MarqueeMinimumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Minimum red color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 9 'Marquee: Minimum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(MarqueeMinimumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Minimum green color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 10 'Marquee: Minimum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(MarqueeMinimumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Minimum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 11 'Marquee: Minimum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(MarqueeMinimumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Minimum color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 12 'Marquee: Maximum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(MarqueeMaximumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Maximum red color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 13 'Marquee: Maximum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(MarqueeMaximumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Maximum green color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 14 'Marquee: Maximum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(MarqueeMaximumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Maximum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 15 'Marquee: Maximum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(MarqueeMaximumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > Marquee > " + DoTranslation("Maximum color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Marquee > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
