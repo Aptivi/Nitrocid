@@ -359,7 +359,67 @@ Public Module Config
                     {"Color of Seconds Bar", ProgressClockSecondsProgressColor},
                     {"Color of Minutes Bar", ProgressClockMinutesProgressColor},
                     {"Color of Hours Bar", ProgressClockHoursProgressColor},
-                    {"Color of Information", ProgressClockProgressColor}
+                    {"Color of Information", ProgressClockProgressColor},
+                    {"Delay in Milliseconds", ProgressClockDelay},
+                    {"Upper left corner character for hours bar", ProgressClockUpperLeftCornerCharHours},
+                    {"Upper left corner character for minutes bar", ProgressClockUpperLeftCornerCharMinutes},
+                    {"Upper left corner character for seconds bar", ProgressClockUpperLeftCornerCharSeconds},
+                    {"Upper right corner character for hours bar", ProgressClockUpperRightCornerCharHours},
+                    {"Upper right corner character for minutes bar", ProgressClockUpperRightCornerCharMinutes},
+                    {"Upper right corner character for seconds bar", ProgressClockUpperRightCornerCharSeconds},
+                    {"Lower left corner character for hours bar", ProgressClockLowerRightCornerCharHours},
+                    {"Lower left corner character for minutes bar", ProgressClockLowerLeftCornerCharMinutes},
+                    {"Lower left corner character for seconds bar", ProgressClockLowerLeftCornerCharSeconds},
+                    {"Lower right corner character for hours bar", ProgressClockLowerRightCornerCharHours},
+                    {"Lower right corner character for minutes bar", ProgressClockLowerRightCornerCharMinutes},
+                    {"Lower right corner character for seconds bar", ProgressClockLowerRightCornerCharSeconds},
+                    {"Upper frame character for hours bar", ProgressClockUpperFrameCharHours},
+                    {"Upper frame character for minutes bar", ProgressClockUpperFrameCharMinutes},
+                    {"Upper frame character for seconds bar", ProgressClockUpperFrameCharSeconds},
+                    {"Lower frame character for hours bar", ProgressClockLowerFrameCharHours},
+                    {"Lower frame character for minutes bar", ProgressClockLowerFrameCharMinutes},
+                    {"Lower frame character for seconds bar", ProgressClockLowerFrameCharSeconds},
+                    {"Left frame character for hours bar", ProgressClockLeftFrameCharHours},
+                    {"Left frame character for minutes bar", ProgressClockLeftFrameCharMinutes},
+                    {"Left frame character for seconds bar", ProgressClockLeftFrameCharSeconds},
+                    {"Right frame character for hours bar", ProgressClockRightFrameCharHours},
+                    {"Right frame character for minutes bar", ProgressClockRightFrameCharMinutes},
+                    {"Right frame character for seconds bar", ProgressClockRightFrameCharSeconds},
+                    {"Information text for hours", ProgressClockInfoTextHours},
+                    {"Information text for minutes", ProgressClockInfoTextMinutes},
+                    {"Information text for seconds", ProgressClockInfoTextSeconds},
+                    {"Minimum red color level for hours", ProgressClockMinimumRedColorLevelHours},
+                    {"Minimum green color level for hours", ProgressClockMinimumGreenColorLevelHours},
+                    {"Minimum blue color level for hours", ProgressClockMinimumBlueColorLevelHours},
+                    {"Minimum color level for hours", ProgressClockMinimumColorLevelHours},
+                    {"Maximum red color level for hours", ProgressClockMaximumRedColorLevelHours},
+                    {"Maximum green color level for hours", ProgressClockMaximumGreenColorLevelHours},
+                    {"Maximum blue color level for hours", ProgressClockMaximumBlueColorLevelHours},
+                    {"Maximum color level for hours", ProgressClockMaximumColorLevelHours},
+                    {"Minimum red color level for minutes", ProgressClockMinimumRedColorLevelMinutes},
+                    {"Minimum green color level for minutes", ProgressClockMinimumGreenColorLevelMinutes},
+                    {"Minimum blue color level for minutes", ProgressClockMinimumBlueColorLevelMinutes},
+                    {"Minimum color level for minutes", ProgressClockMinimumColorLevelMinutes},
+                    {"Maximum red color level for minutes", ProgressClockMaximumRedColorLevelMinutes},
+                    {"Maximum green color level for minutes", ProgressClockMaximumGreenColorLevelMinutes},
+                    {"Maximum blue color level for minutes", ProgressClockMaximumBlueColorLevelMinutes},
+                    {"Maximum color level for minutes", ProgressClockMaximumColorLevelMinutes},
+                    {"Minimum red color level for seconds", ProgressClockMinimumRedColorLevelSeconds},
+                    {"Minimum green color level for seconds", ProgressClockMinimumGreenColorLevelSeconds},
+                    {"Minimum blue color level for seconds", ProgressClockMinimumBlueColorLevelSeconds},
+                    {"Minimum color level for seconds", ProgressClockMinimumColorLevelSeconds},
+                    {"Maximum red color level for seconds", ProgressClockMaximumRedColorLevelSeconds},
+                    {"Maximum green color level for seconds", ProgressClockMaximumGreenColorLevelSeconds},
+                    {"Maximum blue color level for seconds", ProgressClockMaximumBlueColorLevelSeconds},
+                    {"Maximum color level for seconds", ProgressClockMaximumColorLevelSeconds},
+                    {"Minimum red color level", ProgressClockMinimumRedColorLevel},
+                    {"Minimum green color level", ProgressClockMinimumGreenColorLevel},
+                    {"Minimum blue color level", ProgressClockMinimumBlueColorLevel},
+                    {"Minimum color level", ProgressClockMinimumColorLevel},
+                    {"Maximum red color level", ProgressClockMaximumRedColorLevel},
+                    {"Maximum green color level", ProgressClockMaximumGreenColorLevel},
+                    {"Maximum blue color level", ProgressClockMaximumBlueColorLevel},
+                    {"Maximum color level", ProgressClockMaximumColorLevel}
             }
             ScreensaverConfig.Add("ProgressClock", ProgressClockConfig)
 
@@ -843,6 +903,66 @@ Public Module Config
             ProgressClockHoursProgressColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Color of Hours Bar"), 6)
             ProgressClockProgressColor = If(ConfigToken("Screensaver")?("ProgressClock")?("Color of Information"), 7)
             ProgressClockCycleColorsTicks = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Ticks to change color"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Ticks to change color"), 20)
+            ProgressClockDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Delay in Milliseconds"), 500)
+            ProgressClockUpperLeftCornerCharHours = If(ConfigToken("Screensaver")?("ProgressClock")?("Upper left corner character for hours bar"), "+")
+            ProgressClockUpperLeftCornerCharMinutes = If(ConfigToken("Screensaver")?("ProgressClock")?("Upper left corner character for minutes bar"), "+")
+            ProgressClockUpperLeftCornerCharSeconds = If(ConfigToken("Screensaver")?("ProgressClock")?("Upper left corner character for seconds bar"), "+")
+            ProgressClockUpperRightCornerCharHours = If(ConfigToken("Screensaver")?("ProgressClock")?("Upper right corner character for hours bar"), "+")
+            ProgressClockUpperRightCornerCharMinutes = If(ConfigToken("Screensaver")?("ProgressClock")?("Upper right corner character for minutes bar"), "+")
+            ProgressClockUpperRightCornerCharSeconds = If(ConfigToken("Screensaver")?("ProgressClock")?("Upper right corner character for seconds bar"), "+")
+            ProgressClockLowerLeftCornerCharHours = If(ConfigToken("Screensaver")?("ProgressClock")?("Lower left corner character for hours bar"), "+")
+            ProgressClockLowerLeftCornerCharMinutes = If(ConfigToken("Screensaver")?("ProgressClock")?("Lower left corner character for minutes bar"), "+")
+            ProgressClockLowerLeftCornerCharSeconds = If(ConfigToken("Screensaver")?("ProgressClock")?("Lower left corner character for seconds bar"), "+")
+            ProgressClockLowerRightCornerCharHours = If(ConfigToken("Screensaver")?("ProgressClock")?("Lower right corner character for hours bar"), "+")
+            ProgressClockLowerRightCornerCharMinutes = If(ConfigToken("Screensaver")?("ProgressClock")?("Lower right corner character for minutes bar"), "+")
+            ProgressClockLowerRightCornerCharSeconds = If(ConfigToken("Screensaver")?("ProgressClock")?("Lower right corner character for seconds bar"), "+")
+            ProgressClockUpperFrameCharHours = If(ConfigToken("Screensaver")?("ProgressClock")?("Upper frame character for hours bar"), "-")
+            ProgressClockUpperFrameCharMinutes = If(ConfigToken("Screensaver")?("ProgressClock")?("Upper frame character for minutes bar"), "-")
+            ProgressClockUpperFrameCharSeconds = If(ConfigToken("Screensaver")?("ProgressClock")?("Upper frame character for seconds bar"), "-")
+            ProgressClockLowerFrameCharHours = If(ConfigToken("Screensaver")?("ProgressClock")?("Lower frame character for hours bar"), "-")
+            ProgressClockLowerFrameCharMinutes = If(ConfigToken("Screensaver")?("ProgressClock")?("Lower frame character for minutes bar"), "-")
+            ProgressClockLowerFrameCharSeconds = If(ConfigToken("Screensaver")?("ProgressClock")?("Lower frame character for seconds bar"), "-")
+            ProgressClockLeftFrameCharHours = If(ConfigToken("Screensaver")?("ProgressClock")?("Left frame character for hours bar"), "|")
+            ProgressClockLeftFrameCharMinutes = If(ConfigToken("Screensaver")?("ProgressClock")?("Left frame character for minutes bar"), "|")
+            ProgressClockLeftFrameCharSeconds = If(ConfigToken("Screensaver")?("ProgressClock")?("Left frame character for seconds bar"), "|")
+            ProgressClockRightFrameCharHours = If(ConfigToken("Screensaver")?("ProgressClock")?("Right frame character for hours bar"), "|")
+            ProgressClockRightFrameCharMinutes = If(ConfigToken("Screensaver")?("ProgressClock")?("Right frame character for minutes bar"), "|")
+            ProgressClockRightFrameCharSeconds = If(ConfigToken("Screensaver")?("ProgressClock")?("Right frame character for seconds bar"), "|")
+            ProgressClockInfoTextHours = If(ConfigToken("Screensaver")?("ProgressClock")?("Information text for hours"), "")
+            ProgressClockInfoTextMinutes = If(ConfigToken("Screensaver")?("ProgressClock")?("Information text for minutes"), "")
+            ProgressClockInfoTextSeconds = If(ConfigToken("Screensaver")?("ProgressClock")?("Information text for seconds"), "")
+            ProgressClockMinimumRedColorLevelHours = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Minimum red color level for hours"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Minimum red color level for hours"), 0)
+            ProgressClockMinimumGreenColorLevelHours = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Minimum green color level for hours"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Minimum green color level for hours"), 0)
+            ProgressClockMinimumBlueColorLevelHours = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Minimum blue color level for hours"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Minimum blue color level for hours"), 0)
+            ProgressClockMinimumColorLevelHours = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Minimum color level for hours"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Minimum color level for hours"), 0)
+            ProgressClockMaximumRedColorLevelHours = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Maximum red color level for hours"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Maximum red color level for hours"), 255)
+            ProgressClockMaximumGreenColorLevelHours = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Maximum green color level for hours"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Maximum green color level for hours"), 255)
+            ProgressClockMaximumBlueColorLevelHours = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Maximum blue color level for hours"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Maximum blue color level for hours"), 255)
+            ProgressClockMaximumColorLevelHours = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Maximum color level for hours"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Maximum color level for hours"), 255)
+            ProgressClockMinimumRedColorLevelMinutes = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Minimum red color level for minutes"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Minimum red color level for minutes"), 0)
+            ProgressClockMinimumGreenColorLevelMinutes = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Minimum green color level for minutes"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Minimum green color level for minutes"), 0)
+            ProgressClockMinimumBlueColorLevelMinutes = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Minimum blue color level for minutes"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Minimum blue color level for minutes"), 0)
+            ProgressClockMinimumColorLevelMinutes = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Minimum color level for minutes"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Minimum color level for minutes"), 0)
+            ProgressClockMaximumRedColorLevelMinutes = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Maximum red color level for minutes"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Maximum red color level for minutes"), 255)
+            ProgressClockMaximumGreenColorLevelMinutes = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Maximum green color level for minutes"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Maximum green color level for minutes"), 255)
+            ProgressClockMaximumBlueColorLevelMinutes = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Maximum blue color level for minutes"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Maximum blue color level for minutes"), 255)
+            ProgressClockMaximumColorLevelMinutes = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Maximum color level for minutes"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Maximum color level for minutes"), 255)
+            ProgressClockMinimumRedColorLevelSeconds = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Minimum red color level for seconds"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Minimum red color level for seconds"), 0)
+            ProgressClockMinimumGreenColorLevelSeconds = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Minimum green color level for seconds"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Minimum green color level for seconds"), 0)
+            ProgressClockMinimumBlueColorLevelSeconds = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Minimum blue color level for seconds"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Minimum blue color level for seconds"), 0)
+            ProgressClockMinimumColorLevelSeconds = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Minimum color level for seconds"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Minimum color level for seconds"), 0)
+            ProgressClockMaximumRedColorLevelSeconds = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Maximum red color level for seconds"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Maximum red color level for seconds"), 255)
+            ProgressClockMaximumGreenColorLevelSeconds = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Maximum green color level for seconds"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Maximum green color level for seconds"), 255)
+            ProgressClockMaximumBlueColorLevelSeconds = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Maximum blue color level for seconds"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Maximum blue color level for seconds"), 255)
+            ProgressClockMaximumColorLevelSeconds = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Maximum color level for seconds"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Maximum color level for seconds"), 255)
+            ProgressClockMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Minimum red color level"), 0)
+            ProgressClockMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Minimum green color level"), 0)
+            ProgressClockMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Minimum blue color level"), 0)
+            ProgressClockMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Minimum color level"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Minimum color level"), 0)
+            ProgressClockMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Maximum red color level"), 255)
+            ProgressClockMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Maximum green color level"), 255)
+            ProgressClockMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Maximum blue color level"), 255)
+            ProgressClockMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("ProgressClock")?("Maximum color level"), 0), ConfigToken("Screensaver")?("ProgressClock")?("Maximum color level"), 255)
 
             '> Lighter
             Lighter255Colors = If(ConfigToken("Screensaver")?("Lighter")?("Activate 255 Color Mode"), False)

@@ -145,7 +145,7 @@ Public Module ConfigTools
                 End If
             End If
             If ConfigToken("Screensaver")("ProgressClock") IsNot Nothing Then
-                If ConfigToken("Screensaver")("ProgressClock").Count <> 8 Then
+                If ConfigToken("Screensaver")("ProgressClock").Count <> 68 Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > ProgressClock. Config fix needed set to true.")
                     FixesNeeded = True
                 End If

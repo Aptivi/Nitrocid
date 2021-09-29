@@ -450,7 +450,7 @@ Public Module SettingsApp
                     W(" 12) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlockMaximumBlueColorLevel)))
                     W(" 13) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(BouncingBlockMaximumColorLevel)))
                 Case "7.10" 'Screensaver > ProgressClock
-                    MaxOptions = 8
+                    MaxOptions = 68
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " ProgressClock." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Activate 255 colors") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClock255Colors)))
@@ -461,6 +461,66 @@ Public Module SettingsApp
                     W(" 6) " + DoTranslation("Color of Hours Bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockHoursProgressColor)))
                     W(" 7) " + DoTranslation("Color of Information") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockProgressColor)))
                     W(" 8) " + DoTranslation("Ticks to change color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockCycleColorsTicks)))
+                    W(" 9) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockDelay)))
+                    W(" 10) " + DoTranslation("Upper left corner character for hours bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockUpperLeftCornerCharHours)))
+                    W(" 11) " + DoTranslation("Upper left corner character for minutes bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockUpperLeftCornerCharMinutes)))
+                    W(" 12) " + DoTranslation("Upper left corner character for seconds bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockUpperLeftCornerCharSeconds)))
+                    W(" 13) " + DoTranslation("Lower left corner character for hours bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockLowerLeftCornerCharHours)))
+                    W(" 14) " + DoTranslation("Lower left corner character for minutes bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockLowerLeftCornerCharMinutes)))
+                    W(" 15) " + DoTranslation("Lower left corner character for seconds bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockLowerLeftCornerCharSeconds)))
+                    W(" 16) " + DoTranslation("Upper right corner character for hours bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockUpperRightCornerCharHours)))
+                    W(" 17) " + DoTranslation("Upper right corner character for minutes bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockUpperRightCornerCharMinutes)))
+                    W(" 18) " + DoTranslation("Upper right corner character for seconds bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockUpperRightCornerCharSeconds)))
+                    W(" 19) " + DoTranslation("Lower right corner character for hours bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockLowerRightCornerCharHours)))
+                    W(" 20) " + DoTranslation("Lower right corner character for minutes bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockLowerRightCornerCharMinutes)))
+                    W(" 21) " + DoTranslation("Lower right corner character for seconds bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockLowerRightCornerCharSeconds)))
+                    W(" 22) " + DoTranslation("Upper frame character for hours bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockUpperFrameCharHours)))
+                    W(" 23) " + DoTranslation("Upper frame character for minutes bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockUpperFrameCharMinutes)))
+                    W(" 24) " + DoTranslation("Upper frame character for seconds bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockUpperFrameCharSeconds)))
+                    W(" 25) " + DoTranslation("Lower frame character for hours bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockLowerFrameCharHours)))
+                    W(" 26) " + DoTranslation("Lower frame character for minutes bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockLowerFrameCharMinutes)))
+                    W(" 27) " + DoTranslation("Lower frame character for seconds bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockLowerFrameCharSeconds)))
+                    W(" 28) " + DoTranslation("Left frame character for hours bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockLeftFrameCharHours)))
+                    W(" 29) " + DoTranslation("Left frame character for minutes bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockLeftFrameCharMinutes)))
+                    W(" 30) " + DoTranslation("Left frame character for seconds bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockLeftFrameCharSeconds)))
+                    W(" 31) " + DoTranslation("Right frame character for hours bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockRightFrameCharHours)))
+                    W(" 32) " + DoTranslation("Right frame character for minutes bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockRightFrameCharMinutes)))
+                    W(" 33) " + DoTranslation("Right frame character for seconds bar") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockRightFrameCharSeconds)))
+                    W(" 34) " + DoTranslation("Information text for hours") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockInfoTextHours)))
+                    W(" 35) " + DoTranslation("Information text for minutes") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockInfoTextMinutes)))
+                    W(" 36) " + DoTranslation("Information text for seconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockInfoTextSeconds)))
+                    W(" 37) " + DoTranslation("Minimum red color level for hours") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMinimumRedColorLevelHours)))
+                    W(" 38) " + DoTranslation("Minimum green color level for hours") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMinimumGreenColorLevelHours)))
+                    W(" 39) " + DoTranslation("Minimum blue color level for hours") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMinimumBlueColorLevelHours)))
+                    W(" 40) " + DoTranslation("Minimum color level for hours") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMinimumColorLevelHours)))
+                    W(" 41) " + DoTranslation("Maximum red color level for hours") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumRedColorLevelHours)))
+                    W(" 42) " + DoTranslation("Maximum green color level for hours") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumGreenColorLevelHours)))
+                    W(" 43) " + DoTranslation("Maximum blue color level for hours") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumBlueColorLevelHours)))
+                    W(" 44) " + DoTranslation("Maximum color level for hours") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumColorLevelHours)))
+                    W(" 45) " + DoTranslation("Minimum red color level for minutes") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMinimumRedColorLevelMinutes)))
+                    W(" 46) " + DoTranslation("Minimum green color level for minutes") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMinimumGreenColorLevelMinutes)))
+                    W(" 47) " + DoTranslation("Minimum blue color level for minutes") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMinimumBlueColorLevelMinutes)))
+                    W(" 48) " + DoTranslation("Minimum color level for minutes") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMinimumColorLevelMinutes)))
+                    W(" 49) " + DoTranslation("Maximum red color level for minutes") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumRedColorLevelMinutes)))
+                    W(" 50) " + DoTranslation("Maximum green color level for minutes") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumGreenColorLevelMinutes)))
+                    W(" 51) " + DoTranslation("Maximum blue color level for minutes") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumBlueColorLevelMinutes)))
+                    W(" 52) " + DoTranslation("Maximum color level for minutes") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumColorLevelMinutes)))
+                    W(" 53) " + DoTranslation("Minimum red color level for seconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMinimumRedColorLevelSeconds)))
+                    W(" 54) " + DoTranslation("Minimum green color level for seconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMinimumGreenColorLevelSeconds)))
+                    W(" 55) " + DoTranslation("Minimum blue color level for seconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMinimumBlueColorLevelSeconds)))
+                    W(" 56) " + DoTranslation("Minimum color level for seconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMinimumColorLevelSeconds)))
+                    W(" 57) " + DoTranslation("Maximum red color level for seconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumRedColorLevelSeconds)))
+                    W(" 58) " + DoTranslation("Maximum green color level for seconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumGreenColorLevelSeconds)))
+                    W(" 59) " + DoTranslation("Maximum blue color level for seconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumBlueColorLevelSeconds)))
+                    W(" 60) " + DoTranslation("Maximum color level for seconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumColorLevelSeconds)))
+                    W(" 61) " + DoTranslation("Minimum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMinimumRedColorLevel)))
+                    W(" 62) " + DoTranslation("Minimum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMinimumGreenColorLevel)))
+                    W(" 63) " + DoTranslation("Minimum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMinimumBlueColorLevel)))
+                    W(" 64) " + DoTranslation("Minimum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMinimumColorLevel)))
+                    W(" 65) " + DoTranslation("Maximum red color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumRedColorLevel)))
+                    W(" 66) " + DoTranslation("Maximum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumGreenColorLevel)))
+                    W(" 67) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumBlueColorLevel)))
+                    W(" 68) " + DoTranslation("Maximum color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProgressClockMaximumColorLevel)))
                 Case "7.11" 'Screensaver > Lighter
                     MaxOptions = 4
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Lighter", True)
@@ -1945,6 +2005,306 @@ Public Module SettingsApp
                             KeyVar = NameOf(ProgressClockCycleColorsTicks)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Ticks to change color"), True)
                             W(vbNewLine + DoTranslation("If color cycling is enabled, how many ticks before changing colors in ProgressClock? 1 tick = 0.5 seconds"), True, ColTypes.Neutral)
+                        Case 9 'ProgressClock: Delay in Milliseconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockDelay)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Delay in Milliseconds"), True)
+                            W(vbNewLine + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
+                        Case 10 'ProgressClock: Upper left corner character for hours bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockUpperLeftCornerCharHours)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Upper left corner character for hours bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the upper left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 11 'ProgressClock: Upper left corner character for minutes bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockUpperLeftCornerCharMinutes)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Upper left corner character for minutes bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the upper left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 12 'ProgressClock: Upper left corner character for seconds bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockUpperLeftCornerCharSeconds)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Upper left corner character for seconds bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the upper left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 13 'ProgressClock: Lower left corner character for hours bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockLowerLeftCornerCharHours)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Lower left corner character for hours bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the lower left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 14 'ProgressClock: Lower left corner character for minutes bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockLowerLeftCornerCharMinutes)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Lower left corner character for minutes bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the lower left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 15 'ProgressClock: Lower left corner character for seconds bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockLowerLeftCornerCharSeconds)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Lower left corner character for seconds bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the lower left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 16 'ProgressClock: Upper right corner character for hours bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockUpperRightCornerCharHours)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Upper right corner character for hours bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the upper left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 17 'ProgressClock: Upper right corner character for minutes bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockUpperRightCornerCharMinutes)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Upper right corner character for minutes bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the upper left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 18 'ProgressClock: Upper right corner character for seconds bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockUpperRightCornerCharSeconds)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Upper right corner character for seconds bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the upper left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 19 'ProgressClock: Lower right corner character for hours bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockLowerRightCornerCharHours)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Lower right corner character for hours bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the lower left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 20 'ProgressClock: Lower right corner character for minutes bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockLowerRightCornerCharMinutes)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Lower right corner character for minutes bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the lower left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 21 'ProgressClock: Lower right corner character for seconds bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockLowerRightCornerCharSeconds)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Lower right corner character for seconds bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the lower left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 22 'ProgressClock: Upper frame character for hours bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockUpperFrameCharHours)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Upper frame character for hours bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the upper frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 23 'ProgressClock: Upper frame character for minutes bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockUpperFrameCharMinutes)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Upper frame character for minutes bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the upper frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 24 'ProgressClock: Upper frame character for seconds bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockUpperFrameCharSeconds)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Upper frame character for seconds bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the upper frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 25 'ProgressClock: Lower frame character for hours bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockLowerFrameCharHours)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Lower frame character for hours bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the lower frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 26 'ProgressClock: Lower frame character for minutes bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockLowerFrameCharMinutes)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Lower frame character for minutes bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the lower frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 27 'ProgressClock: Lower frame character for seconds bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockLowerFrameCharSeconds)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Lower frame character for seconds bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the lower frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 28 'ProgressClock: Left frame character for hours bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockLeftFrameCharHours)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Left frame character for hours bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the left frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 29 'ProgressClock: Left frame character for minutes bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockLeftFrameCharMinutes)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Left frame character for minutes bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the left frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 30 'ProgressClock: Left frame character for seconds bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockLeftFrameCharSeconds)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Left frame character for seconds bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the left frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 31 'ProgressClock: Right frame character for hours bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockRightFrameCharHours)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Right frame character for hours bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the right frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 32 'ProgressClock: Right frame character for minutes bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockRightFrameCharMinutes)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Right frame character for minutes bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the right frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 33 'ProgressClock: Right frame character for seconds bar
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockRightFrameCharSeconds)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Right frame character for seconds bar"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the right frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 34 'ProgressClock: Information text for hours
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockInfoTextHours)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Information text for hours"), True)
+                            W(vbNewLine + DoTranslation("Write how your information text for the current hour shows. {0} for current hour out of 24 hours."), True, ColTypes.Neutral)
+                        Case 35 'ProgressClock: Information text for minutes
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockInfoTextMinutes)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Information text for minutes"), True)
+                            W(vbNewLine + DoTranslation("Write how your information text for the current minute shows. {0} for current minute out of 60 minutes."), True, ColTypes.Neutral)
+                        Case 36 'ProgressClock: Information text for seconds
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ProgressClockInfoTextSeconds)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Information text for seconds"), True)
+                            W(vbNewLine + DoTranslation("Write how your information text for the current second shows. {0} for current second out of 60 seconds."), True, ColTypes.Neutral)
+                        Case 37 'ProgressClock: Minimum red color level for hours
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMinimumRedColorLevelHours)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Minimum red color level for hours"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 38 'ProgressClock: Minimum green color level for hours
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMinimumGreenColorLevelHours)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Minimum green color level for hours"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 39 'ProgressClock: Minimum blue color level for hours
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMinimumBlueColorLevelHours)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Minimum blue color level for hours"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 44 'ProgressClock: Minimum color level for hours
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMinimumColorLevelHours)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Minimum color level for hours"), True)
+                            W(vbNewLine + DoTranslation("Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 41 'ProgressClock: Maximum red color level for hours
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMaximumRedColorLevelHours)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Maximum red color level for hours"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 42 'ProgressClock: Maximum green color level for hours
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMaximumGreenColorLevelHours)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Maximum green color level for hours"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 43 'ProgressClock: Maximum blue color level for hours
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMaximumBlueColorLevelHours)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Maximum blue color level for hours"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 44 'ProgressClock: Maximum color level for hours
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMaximumColorLevelHours)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Maximum color level for hours"), True)
+                            W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 45 'ProgressClock: Minimum red color level for minutes
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMinimumRedColorLevelMinutes)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Minimum red color level for minutes"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 46 'ProgressClock: Minimum green color level for minutes
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMinimumGreenColorLevelMinutes)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Minimum green color level for minutes"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 47 'ProgressClock: Minimum blue color level for minutes
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMinimumBlueColorLevelMinutes)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Minimum blue color level for minutes"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 48 'ProgressClock: Minimum color level for minutes
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMinimumColorLevelMinutes)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Minimum color level for minutes"), True)
+                            W(vbNewLine + DoTranslation("Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 49 'ProgressClock: Maximum red color level for minutes
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMaximumRedColorLevelMinutes)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Maximum red color level for minutes"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 50 'ProgressClock: Maximum green color level for minutes
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMaximumGreenColorLevelMinutes)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Maximum green color level for minutes"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 51 'ProgressClock: Maximum blue color level for minutes
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMaximumBlueColorLevelMinutes)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Maximum blue color level for minutes"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 52 'ProgressClock: Maximum color level for minutes
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMaximumColorLevelMinutes)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Maximum color level for minutes"), True)
+                            W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 53 'ProgressClock: Minimum red color level for seconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMinimumRedColorLevelSeconds)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Minimum red color level for seconds"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 54 'ProgressClock: Minimum green color level for seconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMinimumGreenColorLevelSeconds)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Minimum green color level for seconds"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 55 'ProgressClock: Minimum blue color level for seconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMinimumBlueColorLevelSeconds)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Minimum blue color level for seconds"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 56 'ProgressClock: Minimum color level for seconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMinimumColorLevelSeconds)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Minimum color level for seconds"), True)
+                            W(vbNewLine + DoTranslation("Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 57 'ProgressClock: Maximum red color level for seconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMaximumRedColorLevelSeconds)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Maximum red color level for seconds"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 58 'ProgressClock: Maximum green color level for seconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMaximumGreenColorLevelSeconds)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Maximum green color level for seconds"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 59 'ProgressClock: Maximum blue color level for seconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMaximumBlueColorLevelSeconds)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Maximum blue color level for seconds"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 60 'ProgressClock: Maximum color level for seconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMaximumColorLevelSeconds)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Maximum color level for seconds"), True)
+                            W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 61 'ProgressClock: Minimum red color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMinimumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Minimum red color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 62 'ProgressClock: Minimum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMinimumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Minimum green color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 63 'ProgressClock: Minimum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMinimumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Minimum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 64 'ProgressClock: Minimum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMinimumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Minimum color level"), True)
+                            W(vbNewLine + DoTranslation("Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
+                        Case 65 'ProgressClock: Maximum red color level for seconds
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMaximumRedColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Maximum red color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 66 'ProgressClock: Maximum green color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMaximumGreenColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Maximum green color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 67 'ProgressClock: Maximum blue color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMaximumBlueColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Maximum blue color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."), True, ColTypes.Neutral)
+                        Case 68 'ProgressClock: Maximum color level
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(ProgressClockMaximumColorLevel)
+                            WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > " + DoTranslation("Maximum color level"), True)
+                            W(vbNewLine + DoTranslation("Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > ProgressClock > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

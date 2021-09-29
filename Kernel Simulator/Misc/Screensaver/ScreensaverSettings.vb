@@ -413,6 +413,246 @@ Public Module ScreensaverSettings
     ''' [ProgressClock] If color cycling is enabled, how many ticks before changing colors? 1 tick = 0.5 seconds
     ''' </summary>
     Public ProgressClockCycleColorsTicks As Long = 20
+    ''' <summary>
+    ''' [ProgressClock] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public ProgressClockDelay As Integer = 500
+    ''' <summary>
+    ''' [ProgressClock] Upper left corner character for hours bar
+    ''' </summary>
+    Public ProgressClockUpperLeftCornerCharHours As String = "+"
+    ''' <summary>
+    ''' [ProgressClock] Upper left corner character for minutes bar
+    ''' </summary>
+    Public ProgressClockUpperLeftCornerCharMinutes As String = "+"
+    ''' <summary>
+    ''' [ProgressClock] Upper left corner character for seconds bar
+    ''' </summary>
+    Public ProgressClockUpperLeftCornerCharSeconds As String = "+"
+    ''' <summary>
+    ''' [ProgressClock] Upper right corner character for hours bar
+    ''' </summary>
+    Public ProgressClockUpperRightCornerCharHours As String = "+"
+    ''' <summary>
+    ''' [ProgressClock] Upper right corner character for minutes bar
+    ''' </summary>
+    Public ProgressClockUpperRightCornerCharMinutes As String = "+"
+    ''' <summary>
+    ''' [ProgressClock] Upper right corner character for seconds bar
+    ''' </summary>
+    Public ProgressClockUpperRightCornerCharSeconds As String = "+"
+    ''' <summary>
+    ''' [ProgressClock] Lower left corner character for hours bar
+    ''' </summary>
+    Public ProgressClockLowerLeftCornerCharHours As String = "+"
+    ''' <summary>
+    ''' [ProgressClock] Lower left corner character for minutes bar
+    ''' </summary>
+    Public ProgressClockLowerLeftCornerCharMinutes As String = "+"
+    ''' <summary>
+    ''' [ProgressClock] Lower left corner character for seconds bar
+    ''' </summary>
+    Public ProgressClockLowerLeftCornerCharSeconds As String = "+"
+    ''' <summary>
+    ''' [ProgressClock] Lower right corner character for hours bar
+    ''' </summary>
+    Public ProgressClockLowerRightCornerCharHours As String = "+"
+    ''' <summary>
+    ''' [ProgressClock] Lower right corner character for minutes bar
+    ''' </summary>
+    Public ProgressClockLowerRightCornerCharMinutes As String = "+"
+    ''' <summary>
+    ''' [ProgressClock] Lower right corner character for seconds bar
+    ''' </summary>
+    Public ProgressClockLowerRightCornerCharSeconds As String = "+"
+    ''' <summary>
+    ''' [ProgressClock] Upper frame character for hours bar
+    ''' </summary>
+    Public ProgressClockUpperFrameCharHours As String = "-"
+    ''' <summary>
+    ''' [ProgressClock] Upper frame character for minutes bar
+    ''' </summary>
+    Public ProgressClockUpperFrameCharMinutes As String = "-"
+    ''' <summary>
+    ''' [ProgressClock] Upper frame character for seconds bar
+    ''' </summary>
+    Public ProgressClockUpperFrameCharSeconds As String = "-"
+    ''' <summary>
+    ''' [ProgressClock] Lower frame character for hours bar
+    ''' </summary>
+    Public ProgressClockLowerFrameCharHours As String = "-"
+    ''' <summary>
+    ''' [ProgressClock] Lower frame character for minutes bar
+    ''' </summary>
+    Public ProgressClockLowerFrameCharMinutes As String = "-"
+    ''' <summary>
+    ''' [ProgressClock] Lower frame character for seconds bar
+    ''' </summary>
+    Public ProgressClockLowerFrameCharSeconds As String = "-"
+    ''' <summary>
+    ''' [ProgressClock] Left frame character for hours bar
+    ''' </summary>
+    Public ProgressClockLeftFrameCharHours As String = "|"
+    ''' <summary>
+    ''' [ProgressClock] Left frame character for minutes bar
+    ''' </summary>
+    Public ProgressClockLeftFrameCharMinutes As String = "|"
+    ''' <summary>
+    ''' [ProgressClock] Left frame character for seconds bar
+    ''' </summary>
+    Public ProgressClockLeftFrameCharSeconds As String = "|"
+    ''' <summary>
+    ''' [ProgressClock] Right frame character for hours bar
+    ''' </summary>
+    Public ProgressClockRightFrameCharHours As String = "|"
+    ''' <summary>
+    ''' [ProgressClock] Right frame character for minutes bar
+    ''' </summary>
+    Public ProgressClockRightFrameCharMinutes As String = "|"
+    ''' <summary>
+    ''' [ProgressClock] Right frame character for seconds bar
+    ''' </summary>
+    Public ProgressClockRightFrameCharSeconds As String = "|"
+    ''' <summary>
+    ''' [ProgressClock] Information text for hours bar
+    ''' </summary>
+    Public ProgressClockInfoTextHours As String = ""
+    ''' <summary>
+    ''' [ProgressClock] Information text for minutes bar
+    ''' </summary>
+    Public ProgressClockInfoTextMinutes As String = ""
+    ''' <summary>
+    ''' [ProgressClock] Information text for seconds bar
+    ''' </summary>
+    Public ProgressClockInfoTextSeconds As String = ""
+    ''' <summary>
+    ''' [ProgressClock] The minimum red color level (true color - hours)
+    ''' </summary>
+    Public ProgressClockMinimumRedColorLevelHours As Integer = 0
+    ''' <summary>
+    ''' [ProgressClock] The minimum green color level (true color - hours)
+    ''' </summary>
+    Public ProgressClockMinimumGreenColorLevelHours As Integer = 0
+    ''' <summary>
+    ''' [ProgressClock] The minimum blue color level (true color - hours)
+    ''' </summary>
+    Public ProgressClockMinimumBlueColorLevelHours As Integer = 0
+    ''' <summary>
+    ''' [ProgressClock] The minimum color level (255 colors or 16 colors - hours)
+    ''' </summary>
+    Public ProgressClockMinimumColorLevelHours As Integer = 0
+    ''' <summary>
+    ''' [ProgressClock] The maximum red color level (true color - hours)
+    ''' </summary>
+    Public ProgressClockMaximumRedColorLevelHours As Integer = 255
+    ''' <summary>
+    ''' [ProgressClock] The maximum green color level (true color - hours)
+    ''' </summary>
+    Public ProgressClockMaximumGreenColorLevelHours As Integer = 255
+    ''' <summary>
+    ''' [ProgressClock] The maximum blue color level (true color - hours)
+    ''' </summary>
+    Public ProgressClockMaximumBlueColorLevelHours As Integer = 255
+    ''' <summary>
+    ''' [ProgressClock] The maximum color level (255 colors or 16 colors - hours)
+    ''' </summary>
+    Public ProgressClockMaximumColorLevelHours As Integer = 255
+    ''' <summary>
+    ''' [ProgressClock] The minimum red color level (true color - minutes)
+    ''' </summary>
+    Public ProgressClockMinimumRedColorLevelMinutes As Integer = 0
+    ''' <summary>
+    ''' [ProgressClock] The minimum green color level (true color - minutes)
+    ''' </summary>
+    Public ProgressClockMinimumGreenColorLevelMinutes As Integer = 0
+    ''' <summary>
+    ''' [ProgressClock] The minimum blue color level (true color - minutes)
+    ''' </summary>
+    Public ProgressClockMinimumBlueColorLevelMinutes As Integer = 0
+    ''' <summary>
+    ''' [ProgressClock] The minimum color level (255 colors or 16 colors - minutes)
+    ''' </summary>
+    Public ProgressClockMinimumColorLevelMinutes As Integer = 0
+    ''' <summary>
+    ''' [ProgressClock] The maximum red color level (true color - minutes)
+    ''' </summary>
+    Public ProgressClockMaximumRedColorLevelMinutes As Integer = 255
+    ''' <summary>
+    ''' [ProgressClock] The maximum green color level (true color - minutes)
+    ''' </summary>
+    Public ProgressClockMaximumGreenColorLevelMinutes As Integer = 255
+    ''' <summary>
+    ''' [ProgressClock] The maximum blue color level (true color - minutes)
+    ''' </summary>
+    Public ProgressClockMaximumBlueColorLevelMinutes As Integer = 255
+    ''' <summary>
+    ''' [ProgressClock] The maximum color level (255 colors or 16 colors - minutes)
+    ''' </summary>
+    Public ProgressClockMaximumColorLevelMinutes As Integer = 255
+    ''' <summary>
+    ''' [ProgressClock] The minimum red color level (true color - seconds)
+    ''' </summary>
+    Public ProgressClockMinimumRedColorLevelSeconds As Integer = 0
+    ''' <summary>
+    ''' [ProgressClock] The minimum green color level (true color - seconds)
+    ''' </summary>
+    Public ProgressClockMinimumGreenColorLevelSeconds As Integer = 0
+    ''' <summary>
+    ''' [ProgressClock] The minimum blue color level (true color - seconds)
+    ''' </summary>
+    Public ProgressClockMinimumBlueColorLevelSeconds As Integer = 0
+    ''' <summary>
+    ''' [ProgressClock] The minimum color level (255 colors or 16 colors - seconds)
+    ''' </summary>
+    Public ProgressClockMinimumColorLevelSeconds As Integer = 0
+    ''' <summary>
+    ''' [ProgressClock] The maximum red color level (true color - seconds)
+    ''' </summary>
+    Public ProgressClockMaximumRedColorLevelSeconds As Integer = 255
+    ''' <summary>
+    ''' [ProgressClock] The maximum green color level (true color - seconds)
+    ''' </summary>
+    Public ProgressClockMaximumGreenColorLevelSeconds As Integer = 255
+    ''' <summary>
+    ''' [ProgressClock] The maximum blue color level (true color - seconds)
+    ''' </summary>
+    Public ProgressClockMaximumBlueColorLevelSeconds As Integer = 255
+    ''' <summary>
+    ''' [ProgressClock] The maximum color level (255 colors or 16 colors - seconds)
+    ''' </summary>
+    Public ProgressClockMaximumColorLevelSeconds As Integer = 255
+    ''' <summary>
+    ''' [ProgressClock] The minimum red color level (true color)
+    ''' </summary>
+    Public ProgressClockMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [ProgressClock] The minimum green color level (true color)
+    ''' </summary>
+    Public ProgressClockMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [ProgressClock] The minimum blue color level (true color)
+    ''' </summary>
+    Public ProgressClockMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [ProgressClock] The minimum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public ProgressClockMinimumColorLevel As Integer = 0
+    ''' <summary>
+    ''' [ProgressClock] The maximum red color level (true color)
+    ''' </summary>
+    Public ProgressClockMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [ProgressClock] The maximum green color level (true color)
+    ''' </summary>
+    Public ProgressClockMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [ProgressClock] The maximum blue color level (true color)
+    ''' </summary>
+    Public ProgressClockMaximumBlueColorLevel As Integer = 255
+    ''' <summary>
+    ''' [ProgressClock] The maximum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public ProgressClockMaximumColorLevel As Integer = 255
 
     '-> Lighter
     ''' <summary>
