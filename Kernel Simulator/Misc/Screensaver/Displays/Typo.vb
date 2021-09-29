@@ -36,6 +36,7 @@ Module TypoDisplay
             Dim ResizeSyncing As Boolean
 
             'Preparations
+            SetConsoleColor(New Color(TypoTextColor))
             Console.Clear()
 
             'Screensaver logic

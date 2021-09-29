@@ -980,6 +980,11 @@ Public Module ScreensaverSettings
     ''' [Typo] Possibility that the writer missed a character in percent
     ''' </summary>
     Public TypoMissPossibility As Integer = 10
+    ''' <summary>
+    ''' [Typo] Text color
+    ''' </summary>
+    Public TypoTextColor As String = New Color(ConsoleColor.White).PlainSequence
+
 
     '-> Linotypo
     ''' <summary>

@@ -549,7 +549,8 @@ Public Module Config
                     {"Minimum writing speed in WPM", TypoWritingSpeedMin},
                     {"Maximum writing speed in WPM", TypoWritingSpeedMax},
                     {"Probability of typo in percent", TypoMissStrikePossibility},
-                    {"Probability of miss in percent", TypoMissPossibility}
+                    {"Probability of miss in percent", TypoMissPossibility},
+                    {"Text color", If(New Color(TypoTextColor).Type = ColorType.TrueColor, TypoTextColor.EncloseByDoubleQuotes, TypoTextColor)}
             }
             ScreensaverConfig.Add("Typo", TypoConfig)
 
@@ -1081,6 +1082,7 @@ Public Module Config
             TypoWritingSpeedMax = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Maximum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Typo")?("Maximum writing speed in WPM"), 80)
             TypoMissStrikePossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Probability of typo in percent"), 0), ConfigToken("Screensaver")?("Typo")?("Probability of typo in percent"), 20)
             TypoMissPossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Probability of miss in percent"), 0), ConfigToken("Screensaver")?("Typo")?("Probability of miss in percent"), 10)
+            TypoTextColor = New Color(If(ConfigToken("Screensaver")?("Typo")?("Text color"), ConsoleColors.White)).PlainSequence
 
             '> Marquee
             Marquee255Colors = If(ConfigToken("Screensaver")?("Marquee")?("Activate 255 Color Mode"), False)

@@ -554,7 +554,7 @@ Public Module SettingsApp
                     W(" 10) " + DoTranslation("Maximum green color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderMaximumGreenColorLevel)))
                     W(" 11) " + DoTranslation("Maximum blue color level") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FaderMaximumBlueColorLevel)))
                 Case "7.13" 'Screensaver > Typo
-                    MaxOptions = 7
+                    MaxOptions = 8
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Typo", True)
                     W(vbNewLine + DoTranslation("This section lists screensaver settings for") + " Typo." + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Delay in Milliseconds") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypoDelay)))
@@ -564,6 +564,7 @@ Public Module SettingsApp
                     W(" 5) " + DoTranslation("Maximum writing speed in WPM") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypoWritingSpeedMax)))
                     W(" 6) " + DoTranslation("Probability of typo in percent") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypoMissStrikePossibility)))
                     W(" 7) " + DoTranslation("Probability of miss in percent") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypoMissPossibility)))
+                    W(" 8) " + DoTranslation("Text color") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(TypoTextColor)))
                 Case "7.14" 'Screensaver > Wipe
                     MaxOptions = 13
                     WriteSeparator(DoTranslation("Screensaver Settings...") + " > Wipe", True)
@@ -2517,6 +2518,11 @@ Public Module SettingsApp
                             KeyVar = NameOf(TypoMissPossibility)
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Typo > " + DoTranslation("Probability of miss in percent"), True)
                             W(vbNewLine + DoTranslation("Probability of miss in percent"), True, ColTypes.Neutral)
+                        Case 8 'Typo: Text color
+                            KeyType = SettingsKeyType.SVariant
+                            KeyVar = NameOf(TypoTextColor)
+                            VariantValueFromExternalPrompt = True
+                            VariantValue = ColorWheel(New Color(TypoTextColor).Type = ColorType.TrueColor, If(New Color(TypoTextColor).Type = ColorType._255Color, New Color(TypoTextColor).PlainSequence, ConsoleColors.White), New Color(TypoTextColor).R, New Color(TypoTextColor).G, New Color(TypoTextColor).B)
                         Case Else
                             WriteSeparator(DoTranslation("Screensaver Settings...") + " > Typo > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
