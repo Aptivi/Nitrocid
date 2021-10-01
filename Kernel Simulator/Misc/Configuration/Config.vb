@@ -673,7 +673,19 @@ Public Module Config
                     {"Text editor autosave interval", TextEdit_AutoSaveInterval},
                     {"Wrap list outputs", WrapListOutputs},
                     {"Draw notification border", DrawBorderNotification},
-                    {"Blacklisted mods", BlacklistedModsString}
+                    {"Blacklisted mods", BlacklistedModsString},
+                    {"Solver minimum number", SolverMinimumNumber},
+                    {"Solver maximum number", SolverMaximumNumber},
+                    {"Solver show input", SolverShowInput},
+                    {"Upper left corner character for notification border", NotifyUpperLeftCornerChar},
+                    {"Upper right corner character for notification border", NotifyUpperRightCornerChar},
+                    {"Lower left corner character for notification border", NotifyLowerLeftCornerChar},
+                    {"Lower right corner character for notification border", NotifyLowerRightCornerChar},
+                    {"Upper frame character for notification border", NotifyUpperFrameChar},
+                    {"Lower frame character for notification border", NotifyLowerFrameChar},
+                    {"Left frame character for notification border", NotifyLeftFrameChar},
+                    {"Right frame character for notification border", NotifyRightFrameChar},
+                    {"Manual page information style", ManpageInfoStyle}
             }
             ConfigurationObject.Add("Misc", MiscConfig)
 
@@ -1231,6 +1243,18 @@ Public Module Config
             WrapListOutputs = If(ConfigToken("Misc")?("Wrap list outputs"), False)
             DrawBorderNotification = If(ConfigToken("Misc")?("Draw notification border"), False)
             BlacklistedModsString = If(ConfigToken("Misc")?("Blacklisted mods"), "")
+            SolverMinimumNumber = If(Integer.TryParse(ConfigToken("Misc")?("Solver minimum number"), 0), ConfigToken("Misc")?("Solver minimum number"), 1000)
+            SolverMaximumNumber = If(Integer.TryParse(ConfigToken("Misc")?("Solver maximum number"), 0), ConfigToken("Misc")?("Solver maximum number"), 1000)
+            SolverShowInput = If(ConfigToken("Misc")?("Solver show input"), False)
+            NotifyUpperLeftCornerChar = If(ConfigToken("Misc")?("Upper left corner character for notification border"), "╔")
+            NotifyUpperRightCornerChar = If(ConfigToken("Misc")?("Upper right corner character for notification border"), "╗")
+            NotifyLowerLeftCornerChar = If(ConfigToken("Misc")?("Lower left corner character for notification border"), "╚")
+            NotifyLowerRightCornerChar = If(ConfigToken("Misc")?("Lower right corner character for notification border"), "╝")
+            NotifyUpperFrameChar = If(ConfigToken("Misc")?("Upper frame character for notification border"), "═")
+            NotifyLowerFrameChar = If(ConfigToken("Misc")?("Lower frame character for notification border"), "═")
+            NotifyLeftFrameChar = If(ConfigToken("Misc")?("Left frame character for notification border"), "║")
+            NotifyRightFrameChar = If(ConfigToken("Misc")?("Right frame character for notification border"), "║")
+            ManpageInfoStyle = If(ConfigToken("Misc")?("Manual page information style"), "")
 
             'Check to see if the config needs fixes
             RepairConfig()

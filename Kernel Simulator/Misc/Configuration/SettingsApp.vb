@@ -728,7 +728,7 @@ Public Module SettingsApp
                         Next
                     End If
                 Case "8" 'Misc
-                    MaxOptions = 9
+                    MaxOptions = 21
                     WriteSeparator(DoTranslation("Miscellaneous Settings..."), True)
                     W(vbNewLine + DoTranslation("Settings that don't fit in their appropriate sections land here.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Show Time/Date on Upper Right Corner") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(CornerTimeDate)))
@@ -740,6 +740,18 @@ Public Module SettingsApp
                     W(" 7) " + DoTranslation("Wrap list outputs") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(WrapListOutputs)))
                     W(" 8) " + DoTranslation("Draw notification border") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DrawBorderNotification)))
                     W(" 9) " + DoTranslation("Blacklisted mods") + " [{0}]", True, ColTypes.Option, BlacklistedModsString.Split(";").Length)
+                    W(" 10) " + DoTranslation("Solver minimum number") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SolverMinimumNumber)))
+                    W(" 11) " + DoTranslation("Solver maximum number") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SolverMaximumNumber)))
+                    W(" 12) " + DoTranslation("Solver show input") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SolverShowInput)))
+                    W(" 13) " + DoTranslation("Upper left corner character for notification border") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(NotifyUpperLeftCornerChar)))
+                    W(" 14) " + DoTranslation("Lower left corner character for notification border") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(NotifyUpperRightCornerChar)))
+                    W(" 15) " + DoTranslation("Upper right corner character for notification border") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(NotifyLowerLeftCornerChar)))
+                    W(" 16) " + DoTranslation("Lower right corner character for notification border") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(NotifyLowerRightCornerChar)))
+                    W(" 17) " + DoTranslation("Upper frame character for notification border") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(NotifyUpperFrameChar)))
+                    W(" 18) " + DoTranslation("Lower frame character for notification border") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(NotifyLowerFrameChar)))
+                    W(" 19) " + DoTranslation("Left frame character for notification border") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(NotifyLeftFrameChar)))
+                    W(" 20) " + DoTranslation("Right frame character for notification border") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(NotifyRightFrameChar)))
+                    W(" 21) " + DoTranslation("Manual page information style") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ManpageInfoStyle)))
                 Case Else 'Invalid section
                     WriteSeparator("*) ???", True)
                     W(vbNewLine + "X) " + DoTranslation("Invalid section entered. Please go back."), True, ColTypes.Error)
@@ -3267,6 +3279,66 @@ Public Module SettingsApp
                             NeutralizeRootPath = GetKernelPath(KernelPathType.Mods)
                             WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Blacklisted mods"), True)
                             W(vbNewLine + DoTranslation("Write the filenames of the mods that will not run on startup. When you're finished, write ""q"". Write a minus sign next to the path to remove an existing mod."), True, ColTypes.Neutral)
+                        Case 10 'Solver minimum number
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(SolverMinimumNumber)
+                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Solver minimum number"), True)
+                            W(vbNewLine + DoTranslation("What is the minimum number to choose?"), True, ColTypes.Neutral)
+                        Case 11 'Solver maximum number
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(SolverMaximumNumber)
+                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Solver maximum number"), True)
+                            W(vbNewLine + DoTranslation("What is the maximum number to choose?"), True, ColTypes.Neutral)
+                        Case 12 'Solver show input
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(SolverShowInput)
+                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Solver show input"), True)
+                            W(vbNewLine + DoTranslation("Whether to show what's written in the input prompt."), True, ColTypes.Neutral)
+                        Case 13 'Upper left corner character for notification border
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(NotifyUpperLeftCornerChar)
+                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Upper left corner character for notification border"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the upper left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 14 'Lower left corner character for notification border
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(NotifyLowerLeftCornerChar)
+                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Lower left corner character for notification border"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the lower left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 15 'Upper right corner character for notification border
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(NotifyUpperRightCornerChar)
+                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Upper right corner character for notification border"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the upper left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 16 'Lower right corner character for notification border
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(NotifyLowerRightCornerChar)
+                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Lower right corner character for notification border"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the lower left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 17 'Upper frame character for notification border
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(NotifyUpperFrameChar)
+                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Upper frame character for notification border"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the upper frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 18 'Lower frame character for notification border
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(NotifyLowerFrameChar)
+                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Lower frame character for notification border"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the lower frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 19 'Left frame character for notification border
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(NotifyLeftFrameChar)
+                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Left frame character for notification border"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the left frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 20 'Right frame character for notification border
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(NotifyRightFrameChar)
+                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Right frame character for notification border"), True)
+                            W(vbNewLine + DoTranslation("A character that resembles the right frame. Be sure to only input one character."), True, ColTypes.Neutral)
+                        Case 21 'Manual page information style
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(ManpageInfoStyle)
+                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Manual page information style"), True)
+                            W(vbNewLine + DoTranslation("Write how you want your manpage information to be. Leave blank to use default style. Placeholders are parsed. {0} for manual title, {1} for revision."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

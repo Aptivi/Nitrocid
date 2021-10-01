@@ -16,7 +16,11 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module Solver
+Public Module Solver
+
+    Public SolverMinimumNumber As Integer = 0
+    Public SolverMaximumNumber As Integer = 1000
+    Public SolverShowInput As Boolean
 
     ''' <summary>
     ''' Initializes the game
@@ -29,10 +33,10 @@ Module Solver
         W(DoTranslation("Press CTRL+C to exit."), True, ColTypes.Neutral)
         Wdbg(DebugLevel.I, "Initialized expressions.")
         While True
-            RandomExpression = CStr(RandomDriver.Next(1000)) + Operations.ElementAt(RandomDriver.Next(Operations.Length)) + CStr(RandomDriver.Next(1000))
+            RandomExpression = CStr(RandomDriver.Next(SolverMinimumNumber, SolverMaximumNumber)) + Operations.ElementAt(RandomDriver.Next(Operations.Length)) + CStr(RandomDriver.Next(SolverMinimumNumber, SolverMaximumNumber))
             Wdbg(DebugLevel.I, "Expression to be solved: {0}", RandomExpression)
             W(RandomExpression, True, ColTypes.Input)
-            UserEvaluated = ReadLineNoInput("")
+            UserEvaluated = If(SolverShowInput, Console.ReadLine(), ReadLineNoInput(""))
             Wdbg(DebugLevel.I, "Evaluated: {0}", UserEvaluated)
             If CDbl(UserEvaluated) = New DataTable().Compute(RandomExpression, Nothing) Then
                 Wdbg(DebugLevel.I, "Expression is {0} and equals {1}", UserEvaluated, New DataTable().Compute(RandomExpression, Nothing))

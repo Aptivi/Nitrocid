@@ -23,6 +23,14 @@ Public Module Notifications
     'Variables
     Public NotifRecents As New List(Of Notification)
     Public NotifThread As New Thread(AddressOf NotifListen) With {.Name = "Notification Thread"}
+    Public NotifyUpperLeftCornerChar As String = "╔"
+    Public NotifyUpperRightCornerChar As String = "╗"
+    Public NotifyLowerLeftCornerChar As String = "╚"
+    Public NotifyLowerRightCornerChar As String = "╝"
+    Public NotifyUpperFrameChar As String = "═"
+    Public NotifyLowerFrameChar As String = "═"
+    Public NotifyLeftFrameChar As String = "║"
+    Public NotifyRightFrameChar As String = "║"
 
     ''' <summary>
     ''' Notification priority
@@ -103,14 +111,14 @@ Public Module Notifications
 
                     'Optionally, draw a border
                     If DrawBorderNotification Then
-                        WriteWhere("╔" + "═".Repeat(38) + "╗", Console.WindowWidth - 41, Console.WindowTop, True, NotifyBorderColor)
-                        WriteWhere("║", Console.WindowWidth - 41, Console.WindowTop + 1, True, NotifyBorderColor)
-                        WriteWhere("║", Console.WindowWidth - 41, Console.WindowTop + 2, True, NotifyBorderColor)
-                        WriteWhere("║", Console.WindowWidth - 41, Console.WindowTop + 3, True, NotifyBorderColor)
-                        WriteWhere("║", Console.WindowWidth - 2, Console.WindowTop + 1, True, NotifyBorderColor)
-                        WriteWhere("║", Console.WindowWidth - 2, Console.WindowTop + 2, True, NotifyBorderColor)
-                        WriteWhere("║", Console.WindowWidth - 2, Console.WindowTop + 3, True, NotifyBorderColor)
-                        WriteWhere("╚" + "═".Repeat(38) + "╝", Console.WindowWidth - 41, Console.WindowTop + 4, True, NotifyBorderColor)
+                        WriteWhere(NotifyUpperLeftCornerChar + NotifyUpperFrameChar.Repeat(38) + NotifyUpperRightCornerChar, Console.WindowWidth - 41, Console.WindowTop, True, NotifyBorderColor)
+                        WriteWhere(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 1, True, NotifyBorderColor)
+                        WriteWhere(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 2, True, NotifyBorderColor)
+                        WriteWhere(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 3, True, NotifyBorderColor)
+                        WriteWhere(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 1, True, NotifyBorderColor)
+                        WriteWhere(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 2, True, NotifyBorderColor)
+                        WriteWhere(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 3, True, NotifyBorderColor)
+                        WriteWhere(NotifyLowerLeftCornerChar + NotifyLowerFrameChar.Repeat(38) + NotifyLowerRightCornerChar, Console.WindowWidth - 41, Console.WindowTop + 4, True, NotifyBorderColor)
                     End If
 
                     'Beep according to priority

@@ -21,6 +21,11 @@ Imports System.Text
 Public Module PageViewer
 
     ''' <summary>
+    ''' Manual page information style
+    ''' </summary>
+    Public ManpageInfoStyle As String = ""
+
+    ''' <summary>
     ''' Previews the manual page
     ''' </summary>
     ''' <param name="ManualTitle">A manual title</param>
@@ -48,7 +53,11 @@ Public Module PageViewer
             Console.Clear()
 
             'Write the information to the console
-            WriteWhereC(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+            If Not String.IsNullOrWhiteSpace(ManpageInfoStyle) Then
+                WriteWhereC(ProbePlaces(ManpageInfoStyle), Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+            Else
+                WriteWhereC(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+            End If
 
             'Disable blinking cursor
             Console.CursorVisible = False
