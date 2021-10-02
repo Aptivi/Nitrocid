@@ -84,7 +84,7 @@ Public Module ConfigTools
             End If
         End If
         If ConfigToken("Shell") IsNot Nothing Then
-            If ConfigToken("Shell").Count <> 14 Then
+            If ConfigToken("Shell").Count <> 15 Then
                 Wdbg(DebugLevel.W, "Missing keys in Shell. Config fix needed set to true.")
                 FixesNeeded = True
             End If

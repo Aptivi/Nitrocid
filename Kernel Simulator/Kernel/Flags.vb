@@ -207,6 +207,10 @@ Public Module Flags
     ''' Whether to print general network information
     ''' </summary>
     Public GeneralNetworkInformation As Boolean = True
+    ''' <summary>
+    ''' Whether to start the default color wheel in true color mode
+    ''' </summary>
+    Public ColorWheelTrueColor As Boolean = True
 
     'Private flags
     ''' <summary>

@@ -775,6 +775,13 @@ Public Module ColorTools
     ''' <summary>
     ''' Initializes color wheel
     ''' </summary>
+    Public Function ColorWheel() As String
+        Return ColorWheel(False, ConsoleColors.White, 0, 0, 0)
+    End Function
+
+    ''' <summary>
+    ''' Initializes color wheel
+    ''' </summary>
     ''' <param name="TrueColor">Whether or not to use true color. It can be changed dynamically during runtime.</param>
     Public Function ColorWheel(TrueColor As Boolean) As String
         Return ColorWheel(TrueColor, ConsoleColors.White, 0, 0, 0)

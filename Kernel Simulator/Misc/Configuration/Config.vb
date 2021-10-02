@@ -174,7 +174,8 @@ Public Module Config
                     {"Zip Shell Prompt Style", ZipShell_PromptStyle},
                     {"Test Shell Prompt Style", Test_PromptStyle},
                     {"JSON Shell Prompt Style", JsonShell_PromptStyle},
-                    {"Probe injected commands", ProbeInjectedCommands}
+                    {"Probe injected commands", ProbeInjectedCommands},
+                    {"Start color wheel in true color mode", ColorWheelTrueColor}
             }
             ConfigurationObject.Add("Shell", ShellConfig)
 
@@ -814,6 +815,7 @@ Public Module Config
             Test_PromptStyle = If(ConfigToken("Shell")?("Test Shell Prompt Style"), "")
             JsonShell_PromptStyle = If(ConfigToken("Shell")?("JSON Shell Prompt Style"), "")
             ProbeInjectedCommands = If(ConfigToken("Shell")?("Probe injected commands"), True)
+            ColorWheelTrueColor = If(ConfigToken("Shell")?("Start color wheel in true color mode"), True)
 
             'Filesystem Section
             Wdbg(DebugLevel.I, "Parsing filesystem section...")

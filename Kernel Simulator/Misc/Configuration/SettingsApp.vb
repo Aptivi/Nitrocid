@@ -161,7 +161,7 @@ Public Module SettingsApp
                     W(" 7) " + DoTranslation("Password prompt style") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(PasswordPrompt)))
                     W(" 8) " + DoTranslation("Show MAL on log-in") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowMAL)))
                 Case "4" 'Shell
-                    MaxOptions = 15
+                    MaxOptions = 16
                     WriteSeparator(DoTranslation("Shell Settings..."), True)
                     W(vbNewLine + DoTranslation("This section lists the shell settings.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Colored Shell") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColoredShell)))
@@ -178,8 +178,9 @@ Public Module SettingsApp
                     W(" 12) " + DoTranslation("Test Shell Prompt Style", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Test_PromptStyle)))
                     W(" 13) " + DoTranslation("JSON Shell Prompt Style", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(JsonShell_PromptStyle)))
                     W(" 14) " + DoTranslation("Probe injected commands", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ProbeInjectedCommands)))
-                    W(" 15) " + DoTranslation("Custom colors...", CurrentLanguage), True, ColTypes.Option)
-                Case "4.15" 'Custom colors...
+                    W(" 15) " + DoTranslation("Start color wheel in true color mode", CurrentLanguage) + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ColorWheelTrueColor)))
+                    W(" 16) " + DoTranslation("Custom colors...", CurrentLanguage), True, ColTypes.Option)
+                Case "4.16" 'Custom colors...
                     MaxOptions = 33
                     WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Custom colors..."), True)
                     W(vbNewLine + DoTranslation("This section lets you choose what type of color do you want to change.") + vbNewLine, True, ColTypes.Neutral)
@@ -332,12 +333,12 @@ Public Module SettingsApp
                     ElseIf AnswerInt <> MaxOptions And SectionNum = "1.3" Then
                         Wdbg(DebugLevel.I, "Tried to open special section. Opening key {0} in section 1.3...", AnswerString)
                         OpenKey("1.3", AnswerInt)
-                    ElseIf AnswerInt = 15 And SectionNum = "4" Then
-                        Wdbg(DebugLevel.I, "Tried to open subsection. Opening section 4.15...")
-                        OpenSection("4.15")
-                    ElseIf AnswerInt <> MaxOptions And SectionNum = "4.15" Then
-                        Wdbg(DebugLevel.I, "Tried to open subsection. Opening key {0} in section 4.15...", AnswerString)
-                        OpenKey("4.15", AnswerInt)
+                    ElseIf AnswerInt = 16 And SectionNum = "4" Then
+                        Wdbg(DebugLevel.I, "Tried to open subsection. Opening section 4.16...")
+                        OpenSection("4.16")
+                    ElseIf AnswerInt <> MaxOptions And SectionNum = "4.16" Then
+                        Wdbg(DebugLevel.I, "Tried to open subsection. Opening key {0} in section 4.16...", AnswerString)
+                        OpenKey("4.16", AnswerInt)
                     Else
                         Wdbg(DebugLevel.I, "Opening key {0} from section {1}...", AnswerInt, SectionNum)
                         OpenKey(SectionNum, AnswerInt)
@@ -629,11 +630,16 @@ Public Module SettingsApp
                             KeyVar = NameOf(ProbeInjectedCommands)
                             WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Probe injected commands"), True)
                             W(vbNewLine + DoTranslation("Probes the injected commands at the start of the kernel shell."), True, ColTypes.Neutral)
+                        Case 15 'Start color wheel in true color mode
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(ColorWheelTrueColor)
+                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Start color wheel in true color mode"), True)
+                            W(vbNewLine + DoTranslation("Start color wheel in true color mode"), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Shell Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
-                Case "4.15" 'Shell -> Custom colors
+                Case "4.16" 'Shell -> Custom colors
                     Select Case KeyNumber
                         Case 1 'Input color
                             KeyType = SettingsKeyType.SVariant
