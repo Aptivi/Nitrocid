@@ -1296,6 +1296,9 @@ Public Module SettingsApp
                             KeyVar = NameOf(ShowFileDetailsList)
                             WriteSeparator(DoTranslation("Filesystem Settings...") + " > " + DoTranslation("Show file details in list"), True)
                             W(vbNewLine + DoTranslation("Shows the brief file details while listing files"), True, ColTypes.Neutral)
+                        Case Else
+                            WriteSeparator(DoTranslation("Filesystem Settings...") + " > ???", True)
+                            W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
                     End Select
                 Case "6" 'Network
                     Select Case KeyNumber
