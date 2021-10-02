@@ -1164,12 +1164,12 @@ Public Module SettingsApp
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(NotifyUpperRightCornerChar)
                             WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Upper right corner character for notification border"), True)
-                            W(vbNewLine + DoTranslation("A character that resembles the upper left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                            W(vbNewLine + DoTranslation("A character that resembles the upper right corner. Be sure to only input one character."), True, ColTypes.Neutral)
                         Case 16 'Lower right corner character for notification border
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(NotifyLowerRightCornerChar)
                             WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Lower right corner character for notification border"), True)
-                            W(vbNewLine + DoTranslation("A character that resembles the lower left corner. Be sure to only input one character."), True, ColTypes.Neutral)
+                            W(vbNewLine + DoTranslation("A character that resembles the lower right corner. Be sure to only input one character."), True, ColTypes.Neutral)
                         Case 17 'Upper frame character for notification border
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(NotifyUpperFrameChar)
