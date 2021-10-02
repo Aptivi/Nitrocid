@@ -936,27 +936,27 @@ Public Module SettingsApp
                             W(vbNewLine + DoTranslation("Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
                         Case 16 'Use first FTP profile
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(FtpShowDetailsInList)
+                            KeyVar = NameOf(FtpUseFirstProfile)
                             WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Use first FTP profile"), True)
                             W(vbNewLine + DoTranslation("Uses the first FTP profile to connect to FTP."), True, ColTypes.Neutral)
                         Case 17 'Add new connections to FTP speed dial
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(FtpShowDetailsInList)
+                            KeyVar = NameOf(FtpNewConnectionsToSpeedDial)
                             WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Add new connections to FTP speed dial"), True)
                             W(vbNewLine + DoTranslation("If enabled, adds a new connection to the FTP speed dial."), True, ColTypes.Neutral)
                         Case 18 'Try to validate secure FTP certificates
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(FtpShowDetailsInList)
+                            KeyVar = NameOf(FtpTryToValidateCertificate)
                             WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Try to validate secure FTP certificates"), True)
                             W(vbNewLine + DoTranslation("Tries to validate the FTP certificates. Turning it off is not recommended."), True, ColTypes.Neutral)
                         Case 19 'Show FTP MOTD on connection
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(FtpShowDetailsInList)
+                            KeyVar = NameOf(FtpShowMotd)
                             WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Show FTP MOTD on connection"), True)
                             W(vbNewLine + DoTranslation("Shows the FTP message of the day on login."), True, ColTypes.Neutral)
                         Case 20 'Always accept invalid FTP certificates
                             KeyType = SettingsKeyType.SBoolean
-                            KeyVar = NameOf(FtpShowDetailsInList)
+                            KeyVar = NameOf(FtpAlwaysAcceptInvalidCerts)
                             WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Always accept invalid FTP certificates"), True)
                             W(vbNewLine + DoTranslation("Always accept invalid FTP certificates. Turning it on is not recommended as it may pose security risks."), True, ColTypes.Neutral)
                         Case 21 'Username prompt style for mail
