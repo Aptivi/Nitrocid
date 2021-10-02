@@ -587,6 +587,7 @@ Public Module SaverSettingsApp
         Dim KeyValue As Object = ""
         Dim VariantValue As Object = ""
         Dim VariantValueFromExternalPrompt As Boolean
+        Dim ColorValue As Object = ""
         Dim AnswerString As String = ""
         Dim AnswerInt As Integer
         Dim SectionParts() As String = Section.Split(".")
@@ -620,10 +621,9 @@ Public Module SaverSettingsApp
                             WriteSeparator("ColorMix > " + DoTranslation("Delay in Milliseconds"), True)
                             W(vbNewLine + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
                         Case 4 'ColorMix: Background color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(ColorMixBackgroundColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(ColorMixBackgroundColor).Type = ColorType.TrueColor, If(New Color(ColorMixBackgroundColor).Type = ColorType._255Color, New Color(ColorMixBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(ColorMixBackgroundColor).R, New Color(ColorMixBackgroundColor).G, New Color(ColorMixBackgroundColor).B)
+                            ColorValue = ColorWheel(New Color(ColorMixBackgroundColor).Type = ColorType.TrueColor, If(New Color(ColorMixBackgroundColor).Type = ColorType._255Color, New Color(ColorMixBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(ColorMixBackgroundColor).R, New Color(ColorMixBackgroundColor).G, New Color(ColorMixBackgroundColor).B)
                         Case 5 'ColorMix: Minimum red color level
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(ColorMixMinimumRedColorLevel)
@@ -687,15 +687,13 @@ Public Module SaverSettingsApp
                             WriteSeparator("GlitterMatrix > " + DoTranslation("Delay in Milliseconds"), True)
                             W(vbNewLine + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
                         Case 2 'GlitterMatrix: Background color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(GlitterMatrixBackgroundColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(GlitterMatrixBackgroundColor).Type = ColorType.TrueColor, If(New Color(GlitterMatrixBackgroundColor).Type = ColorType._255Color, New Color(GlitterMatrixBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(GlitterMatrixBackgroundColor).R, New Color(GlitterMatrixBackgroundColor).G, New Color(GlitterMatrixBackgroundColor).B)
+                            ColorValue = ColorWheel(New Color(GlitterMatrixBackgroundColor).Type = ColorType.TrueColor, If(New Color(GlitterMatrixBackgroundColor).Type = ColorType._255Color, New Color(GlitterMatrixBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(GlitterMatrixBackgroundColor).R, New Color(GlitterMatrixBackgroundColor).G, New Color(GlitterMatrixBackgroundColor).B)
                         Case 3 'GlitterMatrix: Foreground color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(GlitterMatrixForegroundColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(GlitterMatrixForegroundColor).Type = ColorType.TrueColor, If(New Color(GlitterMatrixForegroundColor).Type = ColorType._255Color, New Color(GlitterMatrixForegroundColor).PlainSequence, ConsoleColors.Green), New Color(GlitterMatrixForegroundColor).R, New Color(GlitterMatrixForegroundColor).G, New Color(GlitterMatrixForegroundColor).B)
+                            ColorValue = ColorWheel(New Color(GlitterMatrixForegroundColor).Type = ColorType.TrueColor, If(New Color(GlitterMatrixForegroundColor).Type = ColorType._255Color, New Color(GlitterMatrixForegroundColor).PlainSequence, ConsoleColors.Green), New Color(GlitterMatrixForegroundColor).R, New Color(GlitterMatrixForegroundColor).G, New Color(GlitterMatrixForegroundColor).B)
                         Case Else
                             WriteSeparator("GlitterMatrix > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
@@ -794,10 +792,9 @@ Public Module SaverSettingsApp
                             WriteSeparator("Lines > " + DoTranslation("Line character"), True)
                             W(vbNewLine + DoTranslation("A character to form a line. Be sure to only input one character."), True, ColTypes.Neutral)
                         Case 5 'Lines: Background color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(LinesBackgroundColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(LinesBackgroundColor).Type = ColorType.TrueColor, If(New Color(LinesBackgroundColor).Type = ColorType._255Color, New Color(LinesBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(LinesBackgroundColor).R, New Color(LinesBackgroundColor).G, New Color(LinesBackgroundColor).B)
+                            ColorValue = ColorWheel(New Color(LinesBackgroundColor).Type = ColorType.TrueColor, If(New Color(LinesBackgroundColor).Type = ColorType._255Color, New Color(LinesBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(LinesBackgroundColor).R, New Color(LinesBackgroundColor).G, New Color(LinesBackgroundColor).B)
                         Case 6 'Lines: Minimum red color level
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(LinesMinimumRedColorLevel)
@@ -926,15 +923,13 @@ Public Module SaverSettingsApp
                             WriteSeparator("BouncingText > " + DoTranslation("Text shown"), True)
                             W(vbNewLine + DoTranslation("Write any text you want shown. Shorter is better."), True, ColTypes.Neutral)
                         Case 5 'BouncingText: Background color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(BouncingTextBackgroundColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(BouncingTextBackgroundColor).Type = ColorType.TrueColor, If(New Color(BouncingTextBackgroundColor).Type = ColorType._255Color, New Color(BouncingTextBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(BouncingTextBackgroundColor).R, New Color(BouncingTextBackgroundColor).G, New Color(BouncingTextBackgroundColor).B)
+                            ColorValue = ColorWheel(New Color(BouncingTextBackgroundColor).Type = ColorType.TrueColor, If(New Color(BouncingTextBackgroundColor).Type = ColorType._255Color, New Color(BouncingTextBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(BouncingTextBackgroundColor).R, New Color(BouncingTextBackgroundColor).G, New Color(BouncingTextBackgroundColor).B)
                         Case 6 'BouncingText: Foreground color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(BouncingTextForegroundColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(BouncingTextForegroundColor).Type = ColorType.TrueColor, If(New Color(BouncingTextForegroundColor).Type = ColorType._255Color, New Color(BouncingTextForegroundColor).PlainSequence, ConsoleColors.White), New Color(BouncingTextForegroundColor).R, New Color(BouncingTextForegroundColor).G, New Color(BouncingTextForegroundColor).B)
+                            ColorValue = ColorWheel(New Color(BouncingTextForegroundColor).Type = ColorType.TrueColor, If(New Color(BouncingTextForegroundColor).Type = ColorType._255Color, New Color(BouncingTextForegroundColor).PlainSequence, ConsoleColors.White), New Color(BouncingTextForegroundColor).R, New Color(BouncingTextForegroundColor).G, New Color(BouncingTextForegroundColor).B)
                         Case 7 'BouncingText: Minimum red color level
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(BouncingTextMinimumRedColorLevel)
@@ -992,10 +987,9 @@ Public Module SaverSettingsApp
                             WriteSeparator("Dissolve > " + DoTranslation("Activate true colors"), True)
                             W(vbNewLine + DoTranslation("Activates true color support for Dissolve."), True, ColTypes.Neutral)
                         Case 5 'Dissolve: Background color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(DissolveBackgroundColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(DissolveBackgroundColor).Type = ColorType.TrueColor, If(New Color(DissolveBackgroundColor).Type = ColorType._255Color, New Color(DissolveBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(DissolveBackgroundColor).R, New Color(DissolveBackgroundColor).G, New Color(DissolveBackgroundColor).B)
+                            ColorValue = ColorWheel(New Color(DissolveBackgroundColor).Type = ColorType.TrueColor, If(New Color(DissolveBackgroundColor).Type = ColorType._255Color, New Color(DissolveBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(DissolveBackgroundColor).R, New Color(DissolveBackgroundColor).G, New Color(DissolveBackgroundColor).B)
                         Case 6 'Dissolve: Minimum red color level
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(DissolveMinimumRedColorLevel)
@@ -1058,15 +1052,13 @@ Public Module SaverSettingsApp
                             WriteSeparator("BouncingBlock > " + DoTranslation("Delay in Milliseconds"), True)
                             W(vbNewLine + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
                         Case 4 'BouncingBlock: Background color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(BouncingBlockBackgroundColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(BouncingBlockBackgroundColor).Type = ColorType.TrueColor, If(New Color(BouncingBlockBackgroundColor).Type = ColorType._255Color, New Color(BouncingBlockBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(BouncingBlockBackgroundColor).R, New Color(BouncingBlockBackgroundColor).G, New Color(BouncingBlockBackgroundColor).B)
+                            ColorValue = ColorWheel(New Color(BouncingBlockBackgroundColor).Type = ColorType.TrueColor, If(New Color(BouncingBlockBackgroundColor).Type = ColorType._255Color, New Color(BouncingBlockBackgroundColor).PlainSequence, ConsoleColors.Black), New Color(BouncingBlockBackgroundColor).R, New Color(BouncingBlockBackgroundColor).G, New Color(BouncingBlockBackgroundColor).B)
                         Case 5 'BouncingBlock: Foreground color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(BouncingBlockForegroundColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(BouncingBlockForegroundColor).Type = ColorType.TrueColor, If(New Color(BouncingBlockForegroundColor).Type = ColorType._255Color, New Color(BouncingBlockForegroundColor).PlainSequence, ConsoleColors.White), New Color(BouncingBlockForegroundColor).R, New Color(BouncingBlockForegroundColor).G, New Color(BouncingBlockForegroundColor).B)
+                            ColorValue = ColorWheel(New Color(BouncingBlockForegroundColor).Type = ColorType.TrueColor, If(New Color(BouncingBlockForegroundColor).Type = ColorType._255Color, New Color(BouncingBlockForegroundColor).PlainSequence, ConsoleColors.White), New Color(BouncingBlockForegroundColor).R, New Color(BouncingBlockForegroundColor).G, New Color(BouncingBlockForegroundColor).B)
                         Case 6 'BouncingBlock: Minimum red color level
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(BouncingBlockMinimumRedColorLevel)
@@ -1129,25 +1121,21 @@ Public Module SaverSettingsApp
                             WriteSeparator("ProgressClock > " + DoTranslation("Cycle colors"), True)
                             W(vbNewLine + DoTranslation("ProgressClock will select random colors if it's enabled. Otherwise, use colors from config."), True, ColTypes.Neutral)
                         Case 4 'ProgressClock: Color of Seconds Bar
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(ProgressClockSecondsProgressColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(ProgressClockSecondsProgressColor).Type = ColorType.TrueColor, If(New Color(ProgressClockSecondsProgressColor).Type = ColorType._255Color, New Color(ProgressClockSecondsProgressColor).PlainSequence, ConsoleColors.DarkBlue), New Color(ProgressClockSecondsProgressColor).R, New Color(ProgressClockSecondsProgressColor).G, New Color(ProgressClockSecondsProgressColor).B)
+                            ColorValue = ColorWheel(New Color(ProgressClockSecondsProgressColor).Type = ColorType.TrueColor, If(New Color(ProgressClockSecondsProgressColor).Type = ColorType._255Color, New Color(ProgressClockSecondsProgressColor).PlainSequence, ConsoleColors.DarkBlue), New Color(ProgressClockSecondsProgressColor).R, New Color(ProgressClockSecondsProgressColor).G, New Color(ProgressClockSecondsProgressColor).B)
                         Case 5 'ProgressClock: Color of Minutes Bar
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(ProgressClockMinutesProgressColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(ProgressClockMinutesProgressColor).Type = ColorType.TrueColor, If(New Color(ProgressClockMinutesProgressColor).Type = ColorType._255Color, New Color(ProgressClockMinutesProgressColor).PlainSequence, ConsoleColors.DarkMagenta), New Color(ProgressClockMinutesProgressColor).R, New Color(ProgressClockMinutesProgressColor).G, New Color(ProgressClockMinutesProgressColor).B)
+                            ColorValue = ColorWheel(New Color(ProgressClockMinutesProgressColor).Type = ColorType.TrueColor, If(New Color(ProgressClockMinutesProgressColor).Type = ColorType._255Color, New Color(ProgressClockMinutesProgressColor).PlainSequence, ConsoleColors.DarkMagenta), New Color(ProgressClockMinutesProgressColor).R, New Color(ProgressClockMinutesProgressColor).G, New Color(ProgressClockMinutesProgressColor).B)
                         Case 6 'ProgressClock: Color of Hours Bar
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(ProgressClockHoursProgressColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(ProgressClockHoursProgressColor).Type = ColorType.TrueColor, If(New Color(ProgressClockHoursProgressColor).Type = ColorType._255Color, New Color(ProgressClockHoursProgressColor).PlainSequence, ConsoleColors.DarkCyan), New Color(ProgressClockHoursProgressColor).R, New Color(ProgressClockHoursProgressColor).G, New Color(ProgressClockHoursProgressColor).B)
+                            ColorValue = ColorWheel(New Color(ProgressClockHoursProgressColor).Type = ColorType.TrueColor, If(New Color(ProgressClockHoursProgressColor).Type = ColorType._255Color, New Color(ProgressClockHoursProgressColor).PlainSequence, ConsoleColors.DarkCyan), New Color(ProgressClockHoursProgressColor).R, New Color(ProgressClockHoursProgressColor).G, New Color(ProgressClockHoursProgressColor).B)
                         Case 7 'ProgressClock: Color of Information
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(ProgressClockProgressColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(ProgressClockProgressColor).Type = ColorType.TrueColor, If(New Color(ProgressClockProgressColor).Type = ColorType._255Color, New Color(ProgressClockProgressColor).PlainSequence, ConsoleColors.Gray), New Color(ProgressClockProgressColor).R, New Color(ProgressClockProgressColor).G, New Color(ProgressClockProgressColor).B)
+                            ColorValue = ColorWheel(New Color(ProgressClockProgressColor).Type = ColorType.TrueColor, If(New Color(ProgressClockProgressColor).Type = ColorType._255Color, New Color(ProgressClockProgressColor).PlainSequence, ConsoleColors.Gray), New Color(ProgressClockProgressColor).R, New Color(ProgressClockProgressColor).G, New Color(ProgressClockProgressColor).B)
                         Case 8 'ProgressClock: Ticks to change color
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(ProgressClockCycleColorsTicks)
@@ -1480,10 +1468,9 @@ Public Module SaverSettingsApp
                             WriteSeparator("Lighter > " + DoTranslation("Max Positions Count"), True)
                             W(vbNewLine + DoTranslation("How many positions are lit before dimming?"), True, ColTypes.Neutral)
                         Case 5 'Lighter: Background color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(LighterBackgroundColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(LighterBackgroundColor).Type = ColorType.TrueColor, If(New Color(LighterBackgroundColor).Type = ColorType._255Color, New Color(LighterBackgroundColor).PlainSequence, ConsoleColors.White), New Color(LighterBackgroundColor).R, New Color(LighterBackgroundColor).G, New Color(LighterBackgroundColor).B)
+                            ColorValue = ColorWheel(New Color(LighterBackgroundColor).Type = ColorType.TrueColor, If(New Color(LighterBackgroundColor).Type = ColorType._255Color, New Color(LighterBackgroundColor).PlainSequence, ConsoleColors.White), New Color(LighterBackgroundColor).R, New Color(LighterBackgroundColor).G, New Color(LighterBackgroundColor).B)
                         Case 6 'Lighter: Minimum red color level
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(LighterMinimumRedColorLevel)
@@ -1551,10 +1538,9 @@ Public Module SaverSettingsApp
                             WriteSeparator("Fader > " + DoTranslation("Max Fade Steps"), True)
                             W(vbNewLine + DoTranslation("How many fade steps to do?"), True, ColTypes.Neutral)
                         Case 5 'Fader: Background color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(FaderBackgroundColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(FaderBackgroundColor).Type = ColorType.TrueColor, If(New Color(FaderBackgroundColor).Type = ColorType._255Color, New Color(FaderBackgroundColor).PlainSequence, ConsoleColors.White), New Color(FaderBackgroundColor).R, New Color(FaderBackgroundColor).G, New Color(FaderBackgroundColor).B)
+                            ColorValue = ColorWheel(New Color(FaderBackgroundColor).Type = ColorType.TrueColor, If(New Color(FaderBackgroundColor).Type = ColorType._255Color, New Color(FaderBackgroundColor).PlainSequence, ConsoleColors.White), New Color(FaderBackgroundColor).R, New Color(FaderBackgroundColor).G, New Color(FaderBackgroundColor).B)
                         Case 6 'Fader: Minimum red color level
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(FaderMinimumRedColorLevel)
@@ -1627,10 +1613,9 @@ Public Module SaverSettingsApp
                             WriteSeparator("Typo > " + DoTranslation("Probability of miss in percent"), True)
                             W(vbNewLine + DoTranslation("Probability of miss in percent"), True, ColTypes.Neutral)
                         Case 8 'Typo: Text color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(TypoTextColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(TypoTextColor).Type = ColorType.TrueColor, If(New Color(TypoTextColor).Type = ColorType._255Color, New Color(TypoTextColor).PlainSequence, ConsoleColors.White), New Color(TypoTextColor).R, New Color(TypoTextColor).G, New Color(TypoTextColor).B)
+                            ColorValue = ColorWheel(New Color(TypoTextColor).Type = ColorType.TrueColor, If(New Color(TypoTextColor).Type = ColorType._255Color, New Color(TypoTextColor).PlainSequence, ConsoleColors.White), New Color(TypoTextColor).R, New Color(TypoTextColor).G, New Color(TypoTextColor).B)
                         Case Else
                             WriteSeparator("Typo > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
@@ -1658,10 +1643,9 @@ Public Module SaverSettingsApp
                             WriteSeparator("Wipe > " + DoTranslation("Wipes to change direction"), True)
                             W(vbNewLine + DoTranslation("How many wipes to do before changing direction randomly?"), True, ColTypes.Neutral)
                         Case 5 'Wipe: Background color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(WipeBackgroundColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(WipeBackgroundColor).Type = ColorType.TrueColor, If(New Color(WipeBackgroundColor).Type = ColorType._255Color, New Color(WipeBackgroundColor).PlainSequence, ConsoleColors.White), New Color(WipeBackgroundColor).R, New Color(WipeBackgroundColor).G, New Color(WipeBackgroundColor).B)
+                            ColorValue = ColorWheel(New Color(WipeBackgroundColor).Type = ColorType.TrueColor, If(New Color(WipeBackgroundColor).Type = ColorType._255Color, New Color(WipeBackgroundColor).PlainSequence, ConsoleColors.White), New Color(WipeBackgroundColor).R, New Color(WipeBackgroundColor).G, New Color(WipeBackgroundColor).B)
                         Case 6 'Wipe: Minimum red color level
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(WipeMinimumRedColorLevel)
@@ -1739,10 +1723,9 @@ Public Module SaverSettingsApp
                             WriteSeparator("Marquee > " + DoTranslation("Use Console API"), True)
                             W(vbNewLine + DoTranslation("Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API."), True, ColTypes.Neutral)
                         Case 7 'Marquee: Background color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(MarqueeBackgroundColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(MarqueeBackgroundColor).Type = ColorType.TrueColor, If(New Color(MarqueeBackgroundColor).Type = ColorType._255Color, New Color(MarqueeBackgroundColor).PlainSequence, ConsoleColors.White), New Color(MarqueeBackgroundColor).R, New Color(MarqueeBackgroundColor).G, New Color(MarqueeBackgroundColor).B)
+                            ColorValue = ColorWheel(New Color(MarqueeBackgroundColor).Type = ColorType.TrueColor, If(New Color(MarqueeBackgroundColor).Type = ColorType._255Color, New Color(MarqueeBackgroundColor).PlainSequence, ConsoleColors.White), New Color(MarqueeBackgroundColor).R, New Color(MarqueeBackgroundColor).G, New Color(MarqueeBackgroundColor).B)
                         Case 8 'Marquee: Minimum red color level
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(MarqueeMinimumRedColorLevel)
@@ -1861,10 +1844,9 @@ Public Module SaverSettingsApp
                             WriteSeparator("BeatFader > " + DoTranslation("Cycle colors"), True)
                             W(vbNewLine + DoTranslation("BeatFader will select random colors if it's enabled. Otherwise, use colors from config."), True, ColTypes.Neutral)
                         Case 5 'BeatFader: Beat Color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(BeatFaderBeatColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(BeatFaderBeatColor).Type = ColorType.TrueColor, If(New Color(BeatFaderBeatColor).Type = ColorType._255Color, New Color(BeatFaderBeatColor).PlainSequence, ConsoleColors.NavyBlue), New Color(BeatFaderBeatColor).R, New Color(BeatFaderBeatColor).G, New Color(BeatFaderBeatColor).B)
+                            ColorValue = ColorWheel(New Color(BeatFaderBeatColor).Type = ColorType.TrueColor, If(New Color(BeatFaderBeatColor).Type = ColorType._255Color, New Color(BeatFaderBeatColor).PlainSequence, ConsoleColors.NavyBlue), New Color(BeatFaderBeatColor).R, New Color(BeatFaderBeatColor).G, New Color(BeatFaderBeatColor).B)
                         Case 6 'BeatFader: Max Fade Steps
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(BeatFaderMaxSteps)
@@ -1978,10 +1960,9 @@ Public Module SaverSettingsApp
                             WriteSeparator("Linotypo > " + DoTranslation("Probability of miss in percent"), True)
                             W(vbNewLine + DoTranslation("Probability of miss in percent"), True, ColTypes.Neutral)
                         Case 12 'Linotypo: Text color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(LinotypoTextColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(LinotypoTextColor).Type = ColorType.TrueColor, If(New Color(LinotypoTextColor).Type = ColorType._255Color, New Color(LinotypoTextColor).PlainSequence, ConsoleColors.White), New Color(LinotypoTextColor).R, New Color(LinotypoTextColor).G, New Color(LinotypoTextColor).B)
+                            ColorValue = ColorWheel(New Color(LinotypoTextColor).Type = ColorType.TrueColor, If(New Color(LinotypoTextColor).Type = ColorType._255Color, New Color(LinotypoTextColor).PlainSequence, ConsoleColors.White), New Color(LinotypoTextColor).R, New Color(LinotypoTextColor).G, New Color(LinotypoTextColor).B)
                         Case Else
                             WriteSeparator("Linotypo > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
@@ -2015,10 +1996,9 @@ Public Module SaverSettingsApp
                             WriteSeparator("Typewriter > " + DoTranslation("Maximum writing speed in WPM"), True)
                             W(vbNewLine + DoTranslation("Maximum writing speed in WPM"), True, ColTypes.Neutral)
                         Case 6 'Typewriter: Text color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(TypewriterTextColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(TypewriterTextColor).Type = ColorType.TrueColor, If(New Color(TypewriterTextColor).Type = ColorType._255Color, New Color(TypewriterTextColor).PlainSequence, ConsoleColors.White), New Color(TypewriterTextColor).R, New Color(TypewriterTextColor).G, New Color(TypewriterTextColor).B)
+                            ColorValue = ColorWheel(New Color(TypewriterTextColor).Type = ColorType.TrueColor, If(New Color(TypewriterTextColor).Type = ColorType._255Color, New Color(TypewriterTextColor).PlainSequence, ConsoleColors.White), New Color(TypewriterTextColor).R, New Color(TypewriterTextColor).G, New Color(TypewriterTextColor).B)
                         Case Else
                             WriteSeparator("Typewriter > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
@@ -2041,10 +2021,9 @@ Public Module SaverSettingsApp
                             WriteSeparator("FlashColor > " + DoTranslation("Delay in Milliseconds"), True)
                             W(vbNewLine + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
                         Case 4 'FlashColor: Background color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(FlashColorBackgroundColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(FlashColorBackgroundColor).Type = ColorType.TrueColor, If(New Color(FlashColorBackgroundColor).Type = ColorType._255Color, New Color(FlashColorBackgroundColor).PlainSequence, ConsoleColors.White), New Color(FlashColorBackgroundColor).R, New Color(FlashColorBackgroundColor).G, New Color(FlashColorBackgroundColor).B)
+                            ColorValue = ColorWheel(New Color(FlashColorBackgroundColor).Type = ColorType.TrueColor, If(New Color(FlashColorBackgroundColor).Type = ColorType._255Color, New Color(FlashColorBackgroundColor).PlainSequence, ConsoleColors.White), New Color(FlashColorBackgroundColor).R, New Color(FlashColorBackgroundColor).G, New Color(FlashColorBackgroundColor).B)
                         Case 5 'FlashColor: Minimum red color level
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(FlashColorMinimumRedColorLevel)
@@ -2108,10 +2087,9 @@ Public Module SaverSettingsApp
                             W(vbNewLine + DoTranslation("Write any text you want shown. Longer is better."), True, ColTypes.Neutral)
                             W(DoTranslation("This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately."), True, ColTypes.Neutral)
                         Case 4 'SpotWrite: Text color
-                            KeyType = SettingsKeyType.SVariant
+                            KeyType = SettingsKeyType.SColor
                             KeyVar = NameOf(SpotWriteTextColor)
-                            VariantValueFromExternalPrompt = True
-                            VariantValue = ColorWheel(New Color(SpotWriteTextColor).Type = ColorType.TrueColor, If(New Color(SpotWriteTextColor).Type = ColorType._255Color, New Color(SpotWriteTextColor).PlainSequence, ConsoleColors.White), New Color(SpotWriteTextColor).R, New Color(SpotWriteTextColor).G, New Color(SpotWriteTextColor).B)
+                            ColorValue = ColorWheel(New Color(SpotWriteTextColor).Type = ColorType.TrueColor, If(New Color(SpotWriteTextColor).Type = ColorType._255Color, New Color(SpotWriteTextColor).PlainSequence, ConsoleColors.White), New Color(SpotWriteTextColor).R, New Color(SpotWriteTextColor).G, New Color(SpotWriteTextColor).B)
                         Case Else
                             WriteSeparator("SpotWrite > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
@@ -2312,7 +2290,7 @@ Public Module SaverSettingsApp
                 VariantValue = Console.ReadLine
                 If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString, NeutralizeRootPath)
                 Wdbg(DebugLevel.I, "User answered {0}", VariantValue)
-            ElseIf Not KeyType = SettingsKeyType.SVariant Then
+            ElseIf Not KeyType = SettingsKeyType.SVariant And Not KeyType = SettingsKeyType.SColor Then
                 If KeyType = SettingsKeyType.SList Then
                     W("> ", False, ColTypes.Input)
                     Do Until AnswerString = "q"
@@ -2441,6 +2419,10 @@ Public Module SaverSettingsApp
                 End If
             ElseIf KeyType = SettingsKeyType.SVariant Then
                 SetConfigValueField(KeyVar, VariantValue)
+                Wdbg(DebugLevel.I, "User requested exit. Returning...")
+                KeyFinished = True
+            ElseIf KeyType = SettingsKeyType.SColor Then
+                SetConfigValueField(KeyVar, New Color(ColorValue).PlainSequence)
                 Wdbg(DebugLevel.I, "User requested exit. Returning...")
                 KeyFinished = True
             Else
