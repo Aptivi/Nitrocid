@@ -623,7 +623,8 @@ Public Module Config
             Dim SpotWriteConfig As New JObject From {
                     {"Delay in Milliseconds", SpotWriteDelay},
                     {"New Screen Delay in Milliseconds", SpotWriteNewScreenDelay},
-                    {"Text Shown", SpotWriteWrite}
+                    {"Text Shown", SpotWriteWrite},
+                    {"Text color", SpotWriteTextColor}
             }
             ScreensaverConfig.Add("SpotWrite", SpotWriteConfig)
 
