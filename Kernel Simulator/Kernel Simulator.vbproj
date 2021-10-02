@@ -40,7 +40,7 @@
       <dependency id="MailKit" version="2.15.0" />
       <dependency id="Extensification" version="2021.7.0" />
       <dependency id="Inxi.NET" version="2021.4.0.1" />
-      <dependency id="HtmlAgilityPack" version="1.11.36" />
+      <dependency id="HtmlAgilityPack" version="1.11.37" />
     </Dependencies>
     <!-- KS Nuget Information End -->
   </PropertyGroup>
@@ -99,7 +99,7 @@
       <Version>35.0.4</Version>
     </PackageReference>
     <PackageReference Include="HtmlAgilityPack">
-      <Version>1.11.36</Version>
+      <Version>1.11.37</Version>
     </PackageReference>
     <PackageReference Include="Inxi.NET">
       <Version>2021.4.0.1</Version>
