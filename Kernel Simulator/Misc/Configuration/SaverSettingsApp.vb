@@ -720,7 +720,7 @@ Public Module SaverSettingsApp
                             KeyVar = NameOf(DiscoDelay)
                             WriteSeparator("Disco > " + DoTranslation("Delay in Milliseconds"), True)
                             W(vbNewLine + DoTranslation("How many milliseconds to wait before making the next write?"), True, ColTypes.Neutral)
-                        Case 5 'Disco: Use Beats Per Second
+                        Case 5 'Disco: Use Beats Per Minute
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(DiscoUseBeatsPerMinute)
                             WriteSeparator("Disco > " + DoTranslation("Use Beats Per Minute"), True)
