@@ -977,22 +977,22 @@ Public Module SettingsApp
                         Case 4 'MOTD Path
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(MOTDFilePath)
-                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("MOTD Path"), True)
+                            WriteSeparator(DoTranslation("Login Settings...") + " > " + DoTranslation("MOTD Path"), True)
                             W(vbNewLine + DoTranslation("Which file is the MOTD text file? Write an absolute path to the text file."), True, ColTypes.Neutral)
                         Case 5 'MAL Path
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(MALFilePath)
-                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("MAL Path"), True)
+                            WriteSeparator(DoTranslation("Login Settings...") + " > " + DoTranslation("MAL Path"), True)
                             W(vbNewLine + DoTranslation("Which file is the MAL text file? Write an absolute path to the text file."), True, ColTypes.Neutral)
                         Case 6 'Username prompt style
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(UsernamePrompt)
-                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Username prompt style"), True)
+                            WriteSeparator(DoTranslation("Login Settings...") + " > " + DoTranslation("Username prompt style"), True)
                             W(vbNewLine + DoTranslation("Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
                         Case 7 'Password prompt style
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(PasswordPrompt)
-                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Password prompt style"), True)
+                            WriteSeparator(DoTranslation("Login Settings...") + " > " + DoTranslation("Password prompt style"), True)
                             W(vbNewLine + DoTranslation("Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
                         Case 8 'Show MAL on Log-in
                             KeyType = SettingsKeyType.SBoolean
@@ -1256,7 +1256,7 @@ Public Module SettingsApp
                             MaxKeyOptions = 5
                             KeyType = SettingsKeyType.SSelection
                             KeyVar = NameOf(SortMode)
-                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Filesystem sort mode"), True)
+                            WriteSeparator(DoTranslation("Filesystem Settings...") + " > " + DoTranslation("Filesystem sort mode"), True)
                             W(vbNewLine + DoTranslation("Controls how the files will be sorted.") + vbNewLine, True, ColTypes.Neutral)
                             W(" 1) " + DoTranslation("Full name"), True, ColTypes.Option)
                             W(" 2) " + DoTranslation("File size"), True, ColTypes.Option)
@@ -1267,34 +1267,34 @@ Public Module SettingsApp
                             MaxKeyOptions = 2
                             KeyType = SettingsKeyType.SSelection
                             KeyVar = NameOf(SortDirection)
-                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Filesystem sort direction"), True)
+                            WriteSeparator(DoTranslation("Filesystem Settings...") + " > " + DoTranslation("Filesystem sort direction"), True)
                             W(vbNewLine + DoTranslation("Controls the direction of filesystem sorting whether it's ascending or descending.") + vbNewLine, True, ColTypes.Neutral)
                             W(" 1) " + DoTranslation("Ascending order"), True, ColTypes.Option)
                             W(" 2) " + DoTranslation("Descending order"), True, ColTypes.Option)
                         Case 3 'Debug Size Quota in Bytes
                             KeyType = SettingsKeyType.SInt
                             KeyVar = NameOf(DebugQuota)
-                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Debug Size Quota in Bytes"), True)
+                            WriteSeparator(DoTranslation("Filesystem Settings...") + " > " + DoTranslation("Debug Size Quota in Bytes"), True)
                             W(vbNewLine + DoTranslation("Write how many bytes can the debug log store. It must be numeric."), True, ColTypes.Neutral)
                         Case 4 'Show Hidden Files
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(HiddenFiles)
-                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Show Hidden Files"), True)
+                            WriteSeparator(DoTranslation("Filesystem Settings...") + " > " + DoTranslation("Show Hidden Files"), True)
                             W(vbNewLine + DoTranslation("Shows hidden files."), True, ColTypes.Neutral)
                         Case 5 'Size parse mode
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(FullParseMode)
-                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Size parse mode"), True)
+                            WriteSeparator(DoTranslation("Filesystem Settings...") + " > " + DoTranslation("Size parse mode"), True)
                             W(vbNewLine + DoTranslation("If enabled, the kernel will parse the whole folder for its total size. Else, will only parse the surface."), True, ColTypes.Neutral)
                         Case 6 'Show progress on filesystem operations
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ShowFilesystemProgress)
-                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Show progress on filesystem operations"), True)
+                            WriteSeparator(DoTranslation("Filesystem Settings...") + " > " + DoTranslation("Show progress on filesystem operations"), True)
                             W(vbNewLine + DoTranslation("Shows what file is being processed during the filesystem operations"), True, ColTypes.Neutral)
                         Case 7 'Show file details in list
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ShowFileDetailsList)
-                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Show file details in list"), True)
+                            WriteSeparator(DoTranslation("Filesystem Settings...") + " > " + DoTranslation("Show file details in list"), True)
                             W(vbNewLine + DoTranslation("Shows the brief file details while listing files"), True, ColTypes.Neutral)
                     End Select
                 Case "6" 'Network
@@ -1402,22 +1402,22 @@ Public Module SettingsApp
                         Case 21 'Username prompt style for mail
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(Mail_UserPromptStyle)
-                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Username prompt style for mail"), True)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Username prompt style for mail"), True)
                             W(vbNewLine + DoTranslation("Write how you want your username prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
                         Case 22 'Password prompt style for mail
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(Mail_PassPromptStyle)
-                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Password prompt style for mail"), True)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Password prompt style for mail"), True)
                             W(vbNewLine + DoTranslation("Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
                         Case 23 'IMAP prompt style for mail
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(Mail_IMAPPromptStyle)
-                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("IMAP prompt style for mail"), True)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("IMAP prompt style for mail"), True)
                             W(vbNewLine + DoTranslation("Write how you want your IMAP server prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
                         Case 24 'SMTP prompt style for mail
                             KeyType = SettingsKeyType.SString
                             KeyVar = NameOf(Mail_SMTPPromptStyle)
-                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("SMTP prompt style for mail"), True)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("SMTP prompt style for mail"), True)
                             W(vbNewLine + DoTranslation("Write how you want your SMTP server prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
                         Case 25 'Automatically detect mail server
                             KeyType = SettingsKeyType.SBoolean
@@ -1453,7 +1453,7 @@ Public Module SettingsApp
                             MaxKeyOptions = 6
                             KeyType = SettingsKeyType.SSelection
                             KeyVar = NameOf(Mail_TextFormat)
-                            WriteSeparator(DoTranslation("Miscellaneous Settings...") + " > " + DoTranslation("Mail text format"), True)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Mail text format"), True)
                             W(vbNewLine + DoTranslation("Controls how the mail text will be shown.") + vbNewLine, True, ColTypes.Neutral)
                             W(" 1) " + DoTranslation("Plain text"), True, ColTypes.Option)
                             W(" 2) " + DoTranslation("Flowed text"), True, ColTypes.Option)
@@ -1464,7 +1464,7 @@ Public Module SettingsApp
                         Case 32 'Automatically start remote debug on startup
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(RDebugAutoStart)
-                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Automatically start remote debug on startup"), True)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Automatically start remote debug on startup"), True)
                             W(vbNewLine + DoTranslation("If you want remote debug to start on boot, enable this."), True, ColTypes.Neutral)
                         Case 33 'Remote debug message format
                             KeyType = SettingsKeyType.SString
@@ -1479,7 +1479,7 @@ Public Module SettingsApp
                         Case 35 'Auto refresh RSS feed
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(RSSRefreshFeeds)
-                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Auto refresh RSS feed"), True)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Auto refresh RSS feed"), True)
                             W(vbNewLine + DoTranslation("Auto refresh RSS feed"), True, ColTypes.Neutral)
                         Case 36 'Auto refresh RSS feed interval
                             KeyType = SettingsKeyType.SInt
@@ -1489,7 +1489,7 @@ Public Module SettingsApp
                         Case 37 'Show file details in SFTP list
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(SFTPShowDetailsInList)
-                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Show file details in SFTP list"), True)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Show file details in SFTP list"), True)
                             W(vbNewLine + DoTranslation("Shows the SFTP file details while listing remote directories."), True, ColTypes.Neutral)
                         Case 38 'Username prompt style for SFTP
                             KeyType = SettingsKeyType.SString
@@ -1499,7 +1499,7 @@ Public Module SettingsApp
                         Case 39 'Add new connections to SFTP speed dial
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(SFTPNewConnectionsToSpeedDial)
-                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Add new connections to SFTP speed dial"), True)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Add new connections to SFTP speed dial"), True)
                             W(vbNewLine + DoTranslation("If enabled, adds a new connection to the SFTP speed dial."), True, ColTypes.Neutral)
                         Case 40 'Ping timeout
                             KeyType = SettingsKeyType.SInt
@@ -1509,12 +1509,12 @@ Public Module SettingsApp
                         Case 41 'Show extensive adapter info
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(ExtensiveAdapterInformation)
-                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Show extensive adapter info"), True)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Show extensive adapter info"), True)
                             W(vbNewLine + DoTranslation("Prints the extensive adapter information, such as packet information."), True, ColTypes.Neutral)
                         Case 42 'Show general network information
                             KeyType = SettingsKeyType.SBoolean
                             KeyVar = NameOf(GeneralNetworkInformation)
-                            WriteSeparator(DoTranslation("Shell Settings...") + " > " + DoTranslation("Show general network information"), True)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Show general network information"), True)
                             W(vbNewLine + DoTranslation("Shows the general information about network."), True, ColTypes.Neutral)
                         Case 43 'Download percentage text
                             KeyType = SettingsKeyType.SString
