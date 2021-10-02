@@ -70,6 +70,40 @@ Public Module FieldManager
     End Function
 
     ''' <summary>
+    ''' Gets the value of a property in the type of a variable dynamically
+    ''' </summary>
+    ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
+    ''' <param name="Property">Property name from within the variable type</param>
+    ''' <param name="VariableType">Variable type</param>
+    ''' <returns>Value of a property</returns>
+    Public Function GetPropertyValueInVariable(Variable As String, [Property] As String, VariableType As Type) As Object
+        'Get field for specified variable
+        Dim TargetField As FieldInfo = GetField(Variable, VariableType)
+
+        'Get the variable if found
+        If TargetField IsNot Nothing Then
+            'Now, get the property
+            Wdbg(DebugLevel.I, "Got field {0}.", TargetField.Name)
+            Dim TargetProperty As PropertyInfo = TargetField.FieldType.GetProperty([Property])
+
+            'Get the property value if found
+            If TargetProperty IsNot Nothing Then
+                Return TargetProperty.GetValue(GetValue(Variable, VariableType))
+            Else
+                'Property not found on any of the "flag" modules.
+                Wdbg(DebugLevel.I, "Property {0} not found.", [Property])
+                W(DoTranslation("Property {0} is not found on any of the modules."), True, ColTypes.Error, [Property])
+                Return Nothing
+            End If
+        Else
+            'Variable not found on any of the "flag" modules.
+            Wdbg(DebugLevel.I, "Field {0} not found.", Variable)
+            W(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
+            Return Nothing
+        End If
+    End Function
+
+    ''' <summary>
     ''' Gets a field from variable name
     ''' </summary>
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
