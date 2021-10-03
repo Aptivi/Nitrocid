@@ -36,8 +36,6 @@ Public Module HardwareList
             'SSE2 availability
             If HardwareInfo.Hardware.CPU(ProcessorInfo).Flags.Contains("sse2") Or HardwareInfo.Hardware.CPU(ProcessorInfo).Flags.Contains("SSE2") Then 'After SSE2 requirement addition, remove the check.
                 W(" : SSE2 @ {0}-bit", True, ColTypes.Neutral, HardwareInfo.Hardware.CPU(ProcessorInfo).Bits)
-            ElseIf HardwareInfo.Hardware.CPU(ProcessorInfo).Bits = 32 Then
-                W(vbNewLine + DoTranslation("CPU: WARNING: SSE2 will be required in future development commits."), True, ColTypes.Error)
             End If
         Next
         W(DoTranslation("CPU: Total number of processors: {0}"), True, ColTypes.Neutral, Environment.ProcessorCount)
