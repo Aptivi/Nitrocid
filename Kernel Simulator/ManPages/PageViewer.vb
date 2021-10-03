@@ -117,7 +117,11 @@ Public Module PageViewer
                 If Console.CursorTop = InfoPlace - 1 Then
                     Console.ReadKey()
                     Console.Clear()
-                    WriteWhereC(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+                    If Not String.IsNullOrWhiteSpace(ManpageInfoStyle) Then
+                        WriteWhereC(ProbePlaces(ManpageInfoStyle), Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+                    Else
+                        WriteWhereC(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+                    End If
                 End If
             Next
 
