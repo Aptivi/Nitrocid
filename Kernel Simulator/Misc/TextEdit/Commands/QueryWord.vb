@@ -16,29 +16,50 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports Extensification.IntegerExts
+
 Class TextEdit_QueryWordCommand
     Inherits CommandExecutor
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
-        If IsNumeric(ListArgs(1)) Then
-            If CInt(ListArgs(1)) <= TextEdit_FileLines.Count Then
-                Dim QueriedChars As Dictionary(Of Integer, String) = TextEdit_QueryWord(ListArgs(0), ListArgs(1))
-                For Each WordIndex As Integer In QueriedChars.Keys
-                    W("- {0}: ", False, ColTypes.ListEntry, WordIndex)
-                    W("{0} ({1})", True, ColTypes.ListValue, ListArgs(0), TextEdit_FileLines(ListArgs(1)))
+        If ListArgs?.Count = 2 Then
+            If IsNumeric(ListArgs(1)) Then
+                If CInt(ListArgs(1)) <= TextEdit_FileLines.Count Then
+                    Dim QueriedChars As Dictionary(Of Integer, String) = TextEdit_QueryWord(ListArgs(0), ListArgs(1))
+                    For Each WordIndex As Integer In QueriedChars.Keys
+                        W("- {0}: ", False, ColTypes.ListEntry, WordIndex)
+                        W("{0} ({1})", True, ColTypes.ListValue, ListArgs(0), TextEdit_FileLines(ListArgs(1)))
+                    Next
+                Else
+                    W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                End If
+            ElseIf ListArgs(1).ToLower = "all" Then
+                Dim QueriedWords As Dictionary(Of Integer, Dictionary(Of Integer, String)) = TextEdit_QueryWord(ListArgs(0))
+                For Each LineIndex As Integer In QueriedWords.Keys
+                    For Each WordIndex As Integer In QueriedWords(LineIndex).Keys
+                        W("- {0}:{1}: ", False, ColTypes.ListEntry, LineIndex, WordIndex)
+                        W("{0} ({1})", True, ColTypes.ListValue, ListArgs(0), TextEdit_FileLines(LineIndex))
+                    Next
                 Next
-            Else
-                W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
             End If
-        ElseIf ListArgs(1).ToLower = "all" Then
-            Dim QueriedWords As Dictionary(Of Integer, Dictionary(Of Integer, String)) = TextEdit_QueryWord(ListArgs(0))
-            For Each LineIndex As Integer In QueriedWords.Keys
-                For Each WordIndex As Integer In QueriedWords(LineIndex).Keys
-                    W("- {0}:{1}: ", False, ColTypes.ListEntry, LineIndex, WordIndex)
-                    W("{0} ({1})", True, ColTypes.ListValue, ListArgs(0), TextEdit_FileLines(LineIndex))
-                Next
-            Next
+        ElseIf ListArgs?.Count > 2 Then
+            If IsNumeric(ListArgs(1)) And IsNumeric(ListArgs(2)) Then
+                If CInt(ListArgs(1)) <= TextEdit_FileLines.Count And CInt(ListArgs(2)) <= TextEdit_FileLines.Count Then
+                    Dim LineNumberStart As Integer = ListArgs(1)
+                    Dim LineNumberEnd As Integer = ListArgs(2)
+                    LineNumberStart.SwapIfSourceLarger(LineNumberEnd)
+                    For LineNumber = LineNumberStart To LineNumberEnd
+                        Dim QueriedChars As Dictionary(Of Integer, String) = TextEdit_QueryWord(ListArgs(0), LineNumber)
+                        For Each WordIndex As Integer In QueriedChars.Keys
+                            W("- {0}:{1}: ", False, ColTypes.ListEntry, LineNumber, WordIndex)
+                            W("{0} ({1})", True, ColTypes.ListValue, ListArgs(0), TextEdit_FileLines(ListArgs(1)))
+                        Next
+                    Next
+                Else
+                    W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                End If
+            End If
         End If
     End Sub
 

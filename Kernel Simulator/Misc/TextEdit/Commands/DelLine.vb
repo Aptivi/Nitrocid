@@ -16,21 +16,42 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports Extensification.IntegerExts
+
 Class TextEdit_DelLineCommand
     Inherits CommandExecutor
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
-        If IsNumeric(ListArgs(0)) Then
-            If CInt(ListArgs(0)) <= TextEdit_FileLines.Count Then
-                TextEdit_RemoveLine(ListArgs(0))
-                W(DoTranslation("Removed line."), True, ColTypes.Neutral)
+        If ListArgs?.Count = 1 Then
+            If IsNumeric(ListArgs(0)) Then
+                If CInt(ListArgs(0)) <= TextEdit_FileLines.Count Then
+                    TextEdit_RemoveLine(ListArgs(0))
+                    W(DoTranslation("Removed line."), True, ColTypes.Neutral)
+                Else
+                    W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                End If
             Else
-                W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                W(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, ListArgs(0))
+                Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(0))
             End If
-        Else
-            W(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, ListArgs(0))
-            Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(0))
+        ElseIf ListArgs?.Count > 1 Then
+            If IsNumeric(ListArgs(0)) And IsNumeric(ListArgs(1)) Then
+                If CInt(ListArgs(0)) <= TextEdit_FileLines.Count And CInt(ListArgs(1)) <= TextEdit_FileLines.Count Then
+                    Dim LineNumberStart As Integer = ListArgs(0)
+                    Dim LineNumberEnd As Integer = ListArgs(1)
+                    LineNumberStart.SwapIfSourceLarger(LineNumberEnd)
+                    For LineNumber = LineNumberStart To LineNumberEnd
+                        TextEdit_RemoveLine(LineNumber)
+                        W(DoTranslation("Removed line number {0}."), True, ColTypes.Neutral, LineNumber)
+                    Next
+                Else
+                    W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                End If
+            Else
+                W(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, ListArgs(1))
+                Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(1))
+            End If
         End If
     End Sub
 
