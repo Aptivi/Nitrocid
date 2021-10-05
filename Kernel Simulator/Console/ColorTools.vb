@@ -669,7 +669,7 @@ Public Module ColorTools
     Public Function SetConsoleColor(colorType As ColTypes) As Boolean
         If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
             Select Case colorType
-                Case ColTypes.Neutral, ColTypes.Input
+                Case ColTypes.Neutral
                     SetConsoleColor(New Color(NeutralTextColor))
                 Case ColTypes.Continuable
                     SetConsoleColor(New Color(ContKernelErrorColor))
@@ -709,7 +709,7 @@ Public Module ColorTools
                     SetConsoleColor(New Color(NotificationProgressColor))
                 Case ColTypes.NotificationFailure
                     SetConsoleColor(New Color(NotificationFailureColor))
-                Case ColTypes.Question
+                Case ColTypes.Question, ColTypes.Input
                     SetConsoleColor(New Color(QuestionColor))
                 Case ColTypes.Success
                     SetConsoleColor(New Color(SuccessColor))
