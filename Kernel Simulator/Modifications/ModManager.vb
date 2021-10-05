@@ -39,15 +39,17 @@ Public Module ModManager
             If count <> 0 Then
                 W(DoTranslation("mod: Loading mods..."), True, ColTypes.Neutral)
                 Wdbg(DebugLevel.I, "Mods are being loaded. Total mods with screensavers = {0}", count)
+                Dim CurrentCount As Integer = 1
                 For Each modFile As String In Directory.EnumerateFiles(ModPath)
                     If Not GetBlacklistedMods.Contains(modFile) Then
                         Wdbg(DebugLevel.I, "Mod {0} is not blacklisted.", Path.GetFileName(modFile))
-                        W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(modFile))
+                        W("[{1}/{2}] " + DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(modFile), CurrentCount, count)
                         ParseMod(modFile)
                     Else
                         Wdbg(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", Path.GetFileName(modFile))
-                        W(DoTranslation("Mod {0} is blacklisted."), True, ColTypes.Warning, Path.GetFileName(modFile))
+                        W("[{1}/{2}] " + DoTranslation("Mod {0} is blacklisted."), True, ColTypes.Warning, Path.GetFileName(modFile), CurrentCount, count)
                     End If
+                    CurrentCount += 1
                 Next
             Else
                 W(DoTranslation("mod: No mods detected."), True, ColTypes.Neutral)
