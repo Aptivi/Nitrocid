@@ -61,6 +61,7 @@ Public Module Screensaver
                                                                                       {"spotWrite", SpotWrite},
                                                                                       {"typewriter", Typewriter},
                                                                                       {"typo", Typo},
+                                                                                      {"windowsLogo", WindowsLogo},
                                                                                       {"wipe", Wipe}}
 
     'Private variables

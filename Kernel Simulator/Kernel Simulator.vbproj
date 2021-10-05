@@ -214,6 +214,7 @@
     <Compile Include="Misc\ReportBugPrompt.vb" />
     <Compile Include="Misc\Screensaver\Displays\BeatFader.vb" />
     <Compile Include="Misc\Screensaver\Displays\Fader.vb" />
+    <Compile Include="Misc\Screensaver\Displays\WindowsLogo.vb" />
     <Compile Include="Misc\Screensaver\Displays\FaderBack.vb" />
     <Compile Include="Misc\Screensaver\Displays\FlashColor.vb" />
     <Compile Include="Misc\Screensaver\Displays\Lighter.vb" />
