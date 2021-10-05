@@ -46,4 +46,12 @@ Imports KS
         Field.Name.ShouldBe("HiddenFiles")
     End Sub
 
+    ''' <summary>
+    ''' Tests getting property value from variable
+    ''' </summary>
+    <TestMethod()> <TestCategory("Management")> Public Sub TestGetConfigPropertyValueInVariableField()
+        Dim Value As String = GetConfigPropertyValueInVariableField(NameOf(CurrentCult), NameOf(CurrentCult.Name))
+        Value.ShouldNotBeNullOrEmpty
+    End Sub
+
 End Class
