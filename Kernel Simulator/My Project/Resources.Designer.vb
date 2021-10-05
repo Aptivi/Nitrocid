@@ -76,8 +76,9 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;146&quot;,
         '''    &quot;WarningColor&quot;: &quot;146&quot;,
         '''    &quot;OptionColor&quot;: &quot;113&quot;,
-        '''    &quot;BannerColor&quot;: &quot;146&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;146&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;146&quot;,
+        '''    &quot;NotificationDescrip [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property _3Y_Diamond() As String
             Get
@@ -101,8 +102,10 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;9&quot;,
         '''    &quot;WarningColor&quot;: &quot;11&quot;,
         '''    &quot;OptionColor&quot;: &quot;3&quot;,
-        '''    &quot;BannerColor&quot;: &quot;10&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;10&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;10&quot;,
+        '''    &quot;NotificationDescriptionColor&quot;: &quot;7&quot;,
+        ''' [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property _Default() As String
             Get
@@ -237,8 +240,9 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;202&quot;,
         '''    &quot;WarningColor&quot;: &quot;202&quot;,
         '''    &quot;OptionColor&quot;: &quot;12&quot;,
-        '''    &quot;BannerColor&quot;: &quot;80&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;80&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;202&quot;,
+        '''    &quot;NotificationDescripti [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property BedOS() As String
             Get
@@ -290,8 +294,10 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;0&quot;,
         '''    &quot;WarningColor&quot;: &quot;0&quot;,
         '''    &quot;OptionColor&quot;: &quot;0&quot;,
-        '''    &quot;BannerColor&quot;: &quot;0&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;0&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;0&quot;,
+        '''    &quot;NotificationDescriptionColor&quot;: &quot;0&quot;,
+        '''    &quot;No [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property BlackOnWhite() As String
             Get
@@ -315,8 +321,9 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;12&quot;,
         '''    &quot;WarningColor&quot;: &quot;12&quot;,
         '''    &quot;OptionColor&quot;: &quot;14&quot;,
-        '''    &quot;BannerColor&quot;: &quot;14&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;14&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;14&quot;,
+        '''    &quot;NotificationDescriptionColor&quot;: [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Bluespire() As String
             Get
@@ -374,21 +381,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''  &quot;InputColor&quot;: &quot;244;79;79&quot;,
-        '''  &quot;LicenseColor&quot;: &quot;122;124;125&quot;,
-        '''  &quot;ContKernelErrorColor&quot;: &quot;202;146;25&quot;,
-        '''  &quot;UncontKernelErrorColor&quot;: &quot;77;31;36&quot;,
-        '''  &quot;HostNameShellColor&quot;: &quot;41;128;185&quot;,
-        '''  &quot;UserNameShellColor&quot;: &quot;61;174;233&quot;,
-        '''  &quot;BackgroundColor&quot;: &quot;35;38;41&quot;,
-        '''  &quot;NeutralTextColor&quot;: &quot;207;207;194&quot;,
-        '''  &quot;ListEntryColor&quot;: &quot;41;128;185&quot;,
-        '''  &quot;ListValueColor&quot;: &quot;61;174;233&quot;,
-        '''  &quot;StageColor&quot;: &quot;253;188;75&quot;,
-        '''  &quot;ErrorColor&quot;: &quot;77;31;36&quot;,
-        '''  &quot;WarningColor&quot;: &quot;202;146;25&quot;,
-        '''  &quot;OptionColor&quot;: &quot;39;174;174&quot;,
-        '''  &quot;BannerColor&quot;: &quot; [rest of string was truncated]&quot;;.
+        '''    &quot;InputColor&quot;: &quot;244;79;79&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;122;124;125&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;202;146;25&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;77;31;36&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;41;128;185&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;61;174;233&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;35;38;41&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;207;207;194&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;41;128;185&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;61;174;233&quot;,
+        '''    &quot;StageColor&quot;: &quot;253;188;75&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;77;31;36&quot;,
+        '''    &quot;WarningColor&quot;: &quot;202;146;25&quot;,
+        '''    &quot;OptionColor&quot;: &quot;39;1 [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Breeze() As String
             Get
@@ -398,21 +404,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''  &quot;InputColor&quot;: &quot;244;79;79&quot;,
-        '''  &quot;LicenseColor&quot;: &quot;122;124;125&quot;,
-        '''  &quot;ContKernelErrorColor&quot;: &quot;202;146;25&quot;,
-        '''  &quot;UncontKernelErrorColor&quot;: &quot;77;31;36&quot;,
-        '''  &quot;HostNameShellColor&quot;: &quot;41;128;185&quot;,
-        '''  &quot;UserNameShellColor&quot;: &quot;61;174;233&quot;,
-        '''  &quot;BackgroundColor&quot;: &quot;0&quot;,
-        '''  &quot;NeutralTextColor&quot;: &quot;207;207;194&quot;,
-        '''  &quot;ListEntryColor&quot;: &quot;41;128;185&quot;,
-        '''  &quot;ListValueColor&quot;: &quot;61;174;233&quot;,
-        '''  &quot;StageColor&quot;: &quot;253;188;75&quot;,
-        '''  &quot;ErrorColor&quot;: &quot;77;31;36&quot;,
-        '''  &quot;WarningColor&quot;: &quot;202;146;25&quot;,
-        '''  &quot;OptionColor&quot;: &quot;39;174;174&quot;,
-        '''  &quot;BannerColor&quot;: &quot;253;188 [rest of string was truncated]&quot;;.
+        '''    &quot;InputColor&quot;: &quot;244;79;79&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;122;124;125&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;202;146;25&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;77;31;36&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;41;128;185&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;61;174;233&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;207;207;194&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;41;128;185&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;61;174;233&quot;,
+        '''    &quot;StageColor&quot;: &quot;253;188;75&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;77;31;36&quot;,
+        '''    &quot;WarningColor&quot;: &quot;202;146;25&quot;,
+        '''    &quot;OptionColor&quot;: &quot;39;174;174&quot; [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property BreezeDark() As String
             Get
@@ -586,8 +591,9 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;7&quot;,
         '''    &quot;WarningColor&quot;: &quot;15&quot;,
         '''    &quot;OptionColor&quot;: &quot;15&quot;,
-        '''    &quot;BannerColor&quot;: &quot;15&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;15&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;15&quot;,
+        '''    &quot;NotificationDescriptionColor&quot;:  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Debian() As String
             Get
@@ -709,8 +715,10 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;7&quot;,
         '''    &quot;WarningColor&quot;: &quot;7&quot;,
         '''    &quot;OptionColor&quot;: &quot;7&quot;,
-        '''    &quot;BannerColor&quot;: &quot;7&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;7&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;7&quot;,
+        '''    &quot;NotificationDescriptionColor&quot;: &quot;7&quot;,
+        '''    &quot;Not [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property GrayOnYellow() As String
             Get
@@ -734,8 +742,9 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;3&quot;,
         '''    &quot;WarningColor&quot;: &quot;3&quot;,
         '''    &quot;OptionColor&quot;: &quot;11&quot;,
-        '''    &quot;BannerColor&quot;: &quot;11&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;11&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;15&quot;,
+        '''    &quot;NotificationDescriptionColor&quot;: &quot;11&quot;, [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property GTASA() As String
             Get
@@ -787,8 +796,9 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;2&quot;,
         '''    &quot;WarningColor&quot;: &quot;10&quot;,
         '''    &quot;OptionColor&quot;: &quot;2&quot;,
-        '''    &quot;BannerColor&quot;: &quot;2&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;2&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;10&quot;,
+        '''    &quot;NotificationDescriptionColor&quot;: &quot;2&quot;, [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Hacker() As String
             Get
@@ -996,8 +1006,10 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;7&quot;,
         '''    &quot;WarningColor&quot;: &quot;7&quot;,
         '''    &quot;OptionColor&quot;: &quot;15&quot;,
-        '''    &quot;BannerColor&quot;: &quot;15&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;15&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;15&quot;,
+        '''    &quot;NotificationDescriptionColor&quot;: &quot;7&quot;,
+        '''  [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property LinuxColoredDef() As String
             Get
@@ -1021,8 +1033,10 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;7&quot;,
         '''    &quot;WarningColor&quot;: &quot;7&quot;,
         '''    &quot;OptionColor&quot;: &quot;7&quot;,
-        '''    &quot;BannerColor&quot;: &quot;7&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;7&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;7&quot;,
+        '''    &quot;NotificationDescriptionColor&quot;: &quot;7&quot;,
+        '''    &quot;Not [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property LinuxUncolored() As String
             Get
@@ -1102,8 +1116,9 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;13&quot;,
         '''    &quot;WarningColor&quot;: &quot;13&quot;,
         '''    &quot;OptionColor&quot;: &quot;14&quot;,
-        '''    &quot;BannerColor&quot;: &quot;13&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;13&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;14&quot;,
+        '''    &quot;NotificationDescriptionColor [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property NeonBreeze() As String
             Get
@@ -1127,8 +1142,10 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;88&quot;,
         '''    &quot;WarningColor&quot;: &quot;4&quot;,
         '''    &quot;OptionColor&quot;: &quot;4&quot;,
-        '''    &quot;BannerColor&quot;: &quot;9&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;9&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;11&quot;,
+        '''    &quot;NotificationDescriptionColor&quot;: &quot;3&quot;,
+        '''     [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property NFSHP_Cop() As String
             Get
@@ -1152,8 +1169,9 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;88&quot;,
         '''    &quot;WarningColor&quot;: &quot;94&quot;,
         '''    &quot;OptionColor&quot;: &quot;94&quot;,
-        '''    &quot;BannerColor&quot;: &quot;184&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;184&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;178&quot;,
+        '''    &quot;NotificationDescriptionCo [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property NFSHP_Racer() As String
             Get
@@ -1247,8 +1265,10 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;1&quot;,
         '''    &quot;WarningColor&quot;: &quot;9&quot;,
         '''    &quot;OptionColor&quot;: &quot;9&quot;,
-        '''    &quot;BannerColor&quot;: &quot;9&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;9&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;9&quot;,
+        '''    &quot;NotificationDescriptionColor&quot;: &quot;1&quot;,
+        '''    &quot;Not [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property RedConsole() As String
             Get
@@ -1458,8 +1478,9 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;23&quot;,
         '''    &quot;WarningColor&quot;: &quot;23&quot;,
         '''    &quot;OptionColor&quot;: &quot;23&quot;,
-        '''    &quot;BannerColor&quot;: &quot;80&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;80&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;80&quot;,
+        '''    &quot;NotificationDescriptionColor&quot;: [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property TealerOS() As String
             Get
@@ -1497,8 +1518,9 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;9&quot;,
         '''    &quot;WarningColor&quot;: &quot;226&quot;,
         '''    &quot;OptionColor&quot;: &quot;10&quot;,
-        '''    &quot;BannerColor&quot;: &quot;226&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;226&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;10&quot;,
+        '''    &quot;NotificationDescriptionColor [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property TrafficLight() As String
             Get
@@ -1522,8 +1544,9 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;7&quot;,
         '''    &quot;WarningColor&quot;: &quot;15&quot;,
         '''    &quot;OptionColor&quot;: &quot;15&quot;,
-        '''    &quot;BannerColor&quot;: &quot;15&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;15&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;15&quot;,
+        '''    &quot;NotificationDescriptionColor&quot;: &quot; [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Ubuntu() As String
             Get
@@ -1561,6 +1584,55 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;InputColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;ListEntryColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;ListValueColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;StageColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;WarningColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;OptionColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;BannerColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;N [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property Windows11() As String
+            Get
+                Return ResourceManager.GetString("Windows11", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;InputColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;200;200;200&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;ListEntryColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;ListValueColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;StageColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;WarningColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;OptionColor&quot;: &quot;0;120;212&quot;,
+        '''  &quot;BannerColor&quot;: &quot;0;120;2 [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property Windows11Light() As String
+            Get
+                Return ResourceManager.GetString("Windows11Light", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''    &quot;InputColor&quot;: &quot;15&quot;,
         '''    &quot;LicenseColor&quot;: &quot;15&quot;,
         '''    &quot;ContKernelErrorColor&quot;: &quot;15&quot;,
@@ -1575,8 +1647,9 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;15&quot;,
         '''    &quot;WarningColor&quot;: &quot;15&quot;,
         '''    &quot;OptionColor&quot;: &quot;15&quot;,
-        '''    &quot;BannerColor&quot;: &quot;15&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;15&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;15&quot;,
+        '''    &quot;NotificationDescriptionColor&quot;: [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Windows95() As String
             Get
@@ -1614,8 +1687,10 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;0&quot;,
         '''    &quot;WarningColor&quot;: &quot;0&quot;,
         '''    &quot;OptionColor&quot;: &quot;0&quot;,
-        '''    &quot;BannerColor&quot;: &quot;0&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;0&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;0&quot;,
+        '''    &quot;NotificationDescriptionColor&quot;: &quot;0&quot;,
+        '''    &quot;Not [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property YellowBG() As String
             Get
@@ -1639,8 +1714,9 @@ Namespace My.Resources
         '''    &quot;ErrorColor&quot;: &quot;3&quot;,
         '''    &quot;WarningColor&quot;: &quot;11&quot;,
         '''    &quot;OptionColor&quot;: &quot;11&quot;,
-        '''    &quot;BannerColor&quot;: &quot;11&quot;
-        '''}.
+        '''    &quot;BannerColor&quot;: &quot;11&quot;,
+        '''    &quot;NotificationTitleColor&quot;: &quot;11&quot;,
+        '''    &quot;NotificationDescriptionColor&quot;: &quot;3&quot;, [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property YellowFG() As String
             Get

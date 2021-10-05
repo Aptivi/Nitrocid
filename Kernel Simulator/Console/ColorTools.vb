@@ -236,6 +236,8 @@ Public Module ColorTools
                                                                         {"TealerOS", New ThemeInfo("TealerOS")},
                                                                         {"BedOS", New ThemeInfo("BedOS")},
                                                                         {"3Y-Diamond", New ThemeInfo("_3Y_Diamond")},
+                                                                        {"Windows11", New ThemeInfo("Windows11")},
+                                                                        {"Windows11Light", New ThemeInfo("Windows11Light")},
                                                                         {"LinuxUncolored", New ThemeInfo("LinuxUncolored")},
                                                                         {"LinuxColoredDef", New ThemeInfo("LinuxColoredDef")}}
 
