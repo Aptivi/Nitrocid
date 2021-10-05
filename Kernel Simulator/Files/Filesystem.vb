@@ -143,7 +143,7 @@ Public Module Filesystem
                         End If
                     End If
                 Catch ex As UnauthorizedAccessException 'Error while getting info
-                    W("- " + DoTranslation("You are not authorized to get info for {0}."), True, ColTypes.Error, Entry.Name)
+                    If Not SuppressUnauthorizedMessages Then W("- " + DoTranslation("You are not authorized to get info for {0}."), True, ColTypes.Error, Entry.Name)
                     WStkTrc(ex)
                 End Try
             Next

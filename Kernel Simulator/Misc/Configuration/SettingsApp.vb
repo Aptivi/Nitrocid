@@ -219,7 +219,7 @@ Public Module SettingsApp
                     W(" 32) " + DoTranslation("Medium priority border color") + " [{0}] ", True, ColTypes.Option, MediumPriorityBorderColor)
                     W(" 33) " + DoTranslation("High priority border color") + " [{0}] ", True, ColTypes.Option, HighPriorityBorderColor)
                 Case "5" 'Filesystem
-                    MaxOptions = 7
+                    MaxOptions = 8
                     WriteSeparator(DoTranslation("Filesystem Settings..."), True)
                     W(vbNewLine + DoTranslation("This section lists the filesystem settings.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Filesystem sort mode") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SortMode)))
@@ -229,6 +229,7 @@ Public Module SettingsApp
                     W(" 5) " + DoTranslation("Size parse mode") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FullParseMode)))
                     W(" 6) " + DoTranslation("Show progress on filesystem operations") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFilesystemProgress)))
                     W(" 7) " + DoTranslation("Show file details in list") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFileDetailsList)))
+                    W(" 8) " + DoTranslation("Suppress unauthorized messages") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SuppressUnauthorizedMessages)))
                 Case "6" 'Network
                     MaxOptions = 44
                     WriteSeparator(DoTranslation("Network Settings..."), True)
@@ -822,6 +823,11 @@ Public Module SettingsApp
                             KeyVar = NameOf(ShowFileDetailsList)
                             WriteSeparator(DoTranslation("Filesystem Settings...") + " > " + DoTranslation("Show file details in list"), True)
                             W(vbNewLine + DoTranslation("Shows the brief file details while listing files"), True, ColTypes.Neutral)
+                        Case 8 'Suppress unauthorized messages
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(SuppressUnauthorizedMessages)
+                            WriteSeparator(DoTranslation("Filesystem Settings...") + " > " + DoTranslation("Suppress unauthorized messages"), True)
+                            W(vbNewLine + DoTranslation("Hides the annoying message if the listing function tries to open an unauthorized folder"), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Filesystem Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

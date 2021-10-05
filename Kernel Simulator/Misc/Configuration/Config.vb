@@ -187,7 +187,8 @@ Public Module Config
                     {"Show Hidden Files", HiddenFiles},
                     {"Size parse mode", FullParseMode},
                     {"Show progress on filesystem operations", ShowFilesystemProgress},
-                    {"Show file details in list", ShowFileDetailsList}
+                    {"Show file details in list", ShowFileDetailsList},
+                    {"Suppress unauthorized messages", SuppressUnauthorizedMessages}
             }
             ConfigurationObject.Add("Filesystem", FilesystemConfig)
 
@@ -826,6 +827,7 @@ Public Module Config
             SortDirection = If(ConfigToken("Filesystem")?("Filesystem sort direction") IsNot Nothing, If([Enum].TryParse(ConfigToken("Filesystem")?("Filesystem sort direction"), SortDirection), SortDirection, FilesystemSortDirection.Ascending), FilesystemSortDirection.Ascending)
             ShowFilesystemProgress = If(ConfigToken("Filesystem")?("Show progress on filesystem operations"), True)
             ShowFileDetailsList = If(ConfigToken("Filesystem")?("Show file details in list"), True)
+            SuppressUnauthorizedMessages = If(ConfigToken("Filesystem")?("Suppress unauthorized messages"), True)
 
             'Hardware Section
             Wdbg(DebugLevel.I, "Parsing hardware section...")

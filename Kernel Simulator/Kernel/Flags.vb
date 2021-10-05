@@ -211,6 +211,10 @@ Public Module Flags
     ''' Whether to start the default color wheel in true color mode
     ''' </summary>
     Public ColorWheelTrueColor As Boolean = True
+    ''' <summary>
+    ''' Whether to suppress the unauthorized messages while listing directory contents
+    ''' </summary>
+    Public SuppressUnauthorizedMessages As Boolean = True
 
     'Private flags
     ''' <summary>
