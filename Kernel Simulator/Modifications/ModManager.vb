@@ -43,7 +43,7 @@ Public Module ModManager
                 For Each modFile As String In Directory.EnumerateFiles(ModPath)
                     If Not GetBlacklistedMods.Contains(modFile) Then
                         Wdbg(DebugLevel.I, "Mod {0} is not blacklisted.", Path.GetFileName(modFile))
-                        W("[{1}/{2}] " + DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(modFile), CurrentCount, count)
+                        W("[{1}/{2}] " + DoTranslation("Starting mod") + " {0}...", True, ColTypes.Progress, Path.GetFileName(modFile), CurrentCount, count)
                         ParseMod(modFile)
                     Else
                         Wdbg(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", Path.GetFileName(modFile))

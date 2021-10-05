@@ -325,7 +325,7 @@ Public Module ModParser
                     W(DoTranslation("Mod {0} does not have the version."), True, ColTypes.Warning, script.Name)
                 ElseIf Not String.IsNullOrWhiteSpace(script.Name) And Not String.IsNullOrWhiteSpace(script.Version) Then
                     Wdbg(DebugLevel.I, "{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version)
-                    W(DoTranslation("{0} v{1} started") + " ({2})", True, ColTypes.Neutral, script.Name, script.Version, script.ModPart)
+                    W(DoTranslation("{0} v{1} started") + " ({2})", True, ColTypes.Success, script.Name, script.Version, script.ModPart)
                 End If
 
                 'Process the commands that are defined in a mod
