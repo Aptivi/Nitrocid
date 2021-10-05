@@ -23,7 +23,7 @@ Class FTP_DelCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
         If FtpConnected = True Then
             'Print a message
-            W(DoTranslation("Deleting {0}..."), True, ColTypes.Neutral, ListArgs(0))
+            W(DoTranslation("Deleting {0}..."), True, ColTypes.Progress, ListArgs(0))
 
             'Make a confirmation message so user will not accidentally delete a file or folder
             W(DoTranslation("Are you sure you want to delete {0} <y/n>?") + " ", False, ColTypes.Input, ListArgs(0))

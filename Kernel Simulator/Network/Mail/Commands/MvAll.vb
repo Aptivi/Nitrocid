@@ -22,9 +22,9 @@ Class Mail_MvAllCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
         If MailMoveAllBySender(ListArgs(0), ListArgs(1)) Then
-            W(DoTranslation("All mail made by {0} are moved successfully."), True, ColTypes.Neutral, ListArgs(0))
+            W(DoTranslation("All mail made by {0} are moved successfully."), True, ColTypes.Success, ListArgs(0))
         Else
-            W(DoTranslation("Failed to move all mail made by {0}."), True, ColTypes.Neutral, ListArgs(0))
+            W(DoTranslation("Failed to move all mail made by {0}."), True, ColTypes.Error, ListArgs(0))
         End If
     End Sub
 

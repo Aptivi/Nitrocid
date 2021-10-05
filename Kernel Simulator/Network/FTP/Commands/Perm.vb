@@ -23,7 +23,7 @@ Class FTP_PermCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
         If FtpConnected Then
             If FTPChangePermissions(ListArgs(0), ListArgs(1)) Then
-                W(DoTranslation("Permissions set successfully for file") + " {0}", True, ColTypes.Neutral, ListArgs(0))
+                W(DoTranslation("Permissions set successfully for file") + " {0}", True, ColTypes.Success, ListArgs(0))
             Else
                 W(DoTranslation("Failed to set permissions of {0} to {1}."), True, ColTypes.Error, ListArgs(0), ListArgs(1))
             End If

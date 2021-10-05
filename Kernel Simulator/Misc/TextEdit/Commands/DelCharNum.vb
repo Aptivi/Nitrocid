@@ -24,7 +24,7 @@ Class TextEdit_DelCharNumCommand
         If IsNumeric(ListArgs(1)) And IsNumeric(ListArgs(0)) Then
             If CInt(ListArgs(1)) <= TextEdit_FileLines.Count Then
                 TextEdit_DeleteChar(ListArgs(0), ListArgs(1))
-                W(DoTranslation("Character deleted."), True, ColTypes.Neutral)
+                W(DoTranslation("Character deleted."), True, ColTypes.Success)
             Else
                 W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
             End If

@@ -27,7 +27,7 @@ Class TextEdit_DelLineCommand
             If IsNumeric(ListArgs(0)) Then
                 If CInt(ListArgs(0)) <= TextEdit_FileLines.Count Then
                     TextEdit_RemoveLine(ListArgs(0))
-                    W(DoTranslation("Removed line."), True, ColTypes.Neutral)
+                    W(DoTranslation("Removed line."), True, ColTypes.Success)
                 Else
                     W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                 End If
@@ -43,7 +43,7 @@ Class TextEdit_DelLineCommand
                     LineNumberStart.SwapIfSourceLarger(LineNumberEnd)
                     For LineNumber = LineNumberStart To LineNumberEnd
                         TextEdit_RemoveLine(LineNumber)
-                        W(DoTranslation("Removed line number {0}."), True, ColTypes.Neutral, LineNumber)
+                        W(DoTranslation("Removed line number {0}."), True, ColTypes.Success, LineNumber)
                     Next
                 Else
                     W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)

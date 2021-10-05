@@ -24,9 +24,9 @@ Class FTP_CpCommand
         If FtpConnected Then
             W(DoTranslation("Copying {0} to {1}..."), True, ColTypes.Neutral, ListArgs(0), ListArgs(1))
             If FTPCopyItem(ListArgs(0), ListArgs(1)) Then
-                W(vbNewLine + DoTranslation("Copied successfully"), True, ColTypes.Neutral)
+                W(vbNewLine + DoTranslation("Copied successfully"), True, ColTypes.Success)
             Else
-                W(vbNewLine + DoTranslation("Failed to copy {0} to {1}."), True, ColTypes.Neutral, ListArgs(0), ListArgs(1))
+                W(vbNewLine + DoTranslation("Failed to copy {0} to {1}."), True, ColTypes.Error, ListArgs(0), ListArgs(1))
             End If
         Else
             W(DoTranslation("You must connect to server before performing transmission."), True, ColTypes.Error)

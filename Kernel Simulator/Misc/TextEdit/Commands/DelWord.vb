@@ -27,7 +27,7 @@ Class TextEdit_DelWordCommand
             If IsNumeric(ListArgs(1)) Then
                 If CInt(ListArgs(1)) <= TextEdit_FileLines.Count Then
                     TextEdit_DeleteWord(ListArgs(0), ListArgs(1))
-                    W(DoTranslation("Word deleted."), True, ColTypes.Neutral)
+                    W(DoTranslation("Word deleted."), True, ColTypes.Success)
                 Else
                     W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                 End If
@@ -43,7 +43,7 @@ Class TextEdit_DelWordCommand
                     LineNumberStart.SwapIfSourceLarger(LineNumberEnd)
                     For LineNumber = LineNumberStart To LineNumberEnd
                         TextEdit_DeleteWord(ListArgs(0), LineNumber)
-                        W(DoTranslation("Word deleted in line {0}."), True, ColTypes.Neutral, LineNumber)
+                        W(DoTranslation("Word deleted in line {0}."), True, ColTypes.Success, LineNumber)
                     Next
                 Else
                     W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)

@@ -23,7 +23,7 @@ Class FTP_GetFolderCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
         Dim RemoteFolder As String = ListArgs(0)
         Dim LocalFolder As String = If(ListArgs.Count > 1, ListArgs(1), "")
-        W(DoTranslation("Downloading folder {0}..."), True, ColTypes.Neutral, RemoteFolder)
+        W(DoTranslation("Downloading folder {0}..."), True, ColTypes.Progress, RemoteFolder)
         Dim Result As Boolean = If(Not String.IsNullOrWhiteSpace(LocalFolder), FTPGetFolder(RemoteFolder, LocalFolder), FTPGetFolder(RemoteFolder))
         If Result Then
             Console.WriteLine()

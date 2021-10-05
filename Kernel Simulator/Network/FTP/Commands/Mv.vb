@@ -22,11 +22,11 @@ Class FTP_MvCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
         If FtpConnected Then
-            W(DoTranslation("Moving {0} to {1}..."), True, ColTypes.Neutral, ListArgs(0), ListArgs(1))
+            W(DoTranslation("Moving {0} to {1}..."), True, ColTypes.Progress, ListArgs(0), ListArgs(1))
             If FTPMoveItem(ListArgs(0), ListArgs(1)) Then
-                W(vbNewLine + DoTranslation("Moved successfully"), True, ColTypes.Neutral)
+                W(vbNewLine + DoTranslation("Moved successfully"), True, ColTypes.Success)
             Else
-                W(vbNewLine + DoTranslation("Failed to move {0} to {1}."), True, ColTypes.Neutral, ListArgs(0), ListArgs(1))
+                W(vbNewLine + DoTranslation("Failed to move {0} to {1}."), True, ColTypes.Error, ListArgs(0), ListArgs(1))
             End If
         Else
             W(DoTranslation("You must connect to server before performing transmission."), True, ColTypes.Error)

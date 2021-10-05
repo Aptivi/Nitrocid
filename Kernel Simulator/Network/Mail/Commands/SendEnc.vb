@@ -68,7 +68,7 @@ Class Mail_SendEncCommand
             End While
 
             'Send the message
-            W(DoTranslation("Sending message..."), True, ColTypes.Neutral)
+            W(DoTranslation("Sending message..."), True, ColTypes.Progress)
             If MailSendEncryptedMessage(Receiver, Subject, Body.ToMessageBody) Then
                 Wdbg(DebugLevel.I, "Message sent.")
                 W(DoTranslation("Message sent."), True, ColTypes.Success)

@@ -27,7 +27,7 @@ Class TextEdit_ReplaceInlineCommand
             If ListArgs(2).IsNumeric Then
                 If CInt(ListArgs(2)) <= TextEdit_FileLines.Count Then
                     TextEdit_Replace(ListArgs(0), ListArgs(1), ListArgs(2))
-                    W(DoTranslation("String replaced."), True, ColTypes.Neutral)
+                    W(DoTranslation("String replaced."), True, ColTypes.Success)
                 Else
                     W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                 End If
@@ -43,7 +43,7 @@ Class TextEdit_ReplaceInlineCommand
                     LineNumberStart.SwapIfSourceLarger(LineNumberEnd)
                     For LineNumber = LineNumberStart To LineNumberEnd
                         TextEdit_Replace(ListArgs(0), ListArgs(1), LineNumber)
-                        W(DoTranslation("String replaced in line {0}."), True, ColTypes.Neutral, LineNumber)
+                        W(DoTranslation("String replaced in line {0}."), True, ColTypes.Success, LineNumber)
                     Next
                 Else
                     W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)

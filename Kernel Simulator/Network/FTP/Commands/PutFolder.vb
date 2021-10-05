@@ -21,7 +21,7 @@ Class FTP_PutFolderCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
-        W(DoTranslation("Uploading folder {0}..."), True, ColTypes.Neutral, ListArgs(0))
+        W(DoTranslation("Uploading folder {0}..."), True, ColTypes.Progress, ListArgs(0))
 
         'Begin the uploading process
         If FTPUploadFile(ListArgs(0)) Then

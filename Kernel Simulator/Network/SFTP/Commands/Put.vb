@@ -21,7 +21,7 @@ Class SFTP_PutCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
-        W(DoTranslation("Uploading file {0}..."), True, ColTypes.Neutral, ListArgs(0))
+        W(DoTranslation("Uploading file {0}..."), True, ColTypes.Progress, ListArgs(0))
 
         'Begin the uploading process
         If SFTPUploadFile(ListArgs(0)) Then
