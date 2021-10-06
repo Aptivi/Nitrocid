@@ -19,6 +19,7 @@
 Imports System.Globalization
 Imports System.Reflection
 
+'TODO: This and SaverSettingsApp are huge; consider downsizing it and jsonifying all the configuration parameters.
 Public Module SettingsApp
 
     ''' <summary>
