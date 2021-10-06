@@ -59,7 +59,7 @@ Public Module MailManager
                     Dim MsgFrom As String = Msg.From.ToString
                     Dim MsgSubject As String = Msg.Subject
                     Wdbg(DebugLevel.I, "From {0}: {1}", MsgFrom, MsgSubject)
-                    EntryBuilder.AppendLine($"- [{i + 1}] {Msg.From}: {Msg.Subject}")
+                    EntryBuilder.AppendLine($"- [{i + 1}/{MaxMessagesIndex + 1}] {Msg.From}: {Msg.Subject}")
 
                     'TODO: For more efficient preview, use the PREVIEW extension as documented in RFC-8970 (https://tools.ietf.org/html/rfc8970). However,
                     '      this is impossible at this time because no server and no client support this extension. It supports the LAZY modifier. It only
