@@ -215,6 +215,10 @@ Public Module Flags
     ''' Whether to suppress the unauthorized messages while listing directory contents
     ''' </summary>
     Public SuppressUnauthorizedMessages As Boolean = True
+    ''' <summary>
+    ''' Whether to use the legacy hardware listing (pre-0.0.20.0 era)
+    ''' </summary>
+    Public UseLegacyHardwareListing As Boolean = True
 
     'Private flags
     ''' <summary>

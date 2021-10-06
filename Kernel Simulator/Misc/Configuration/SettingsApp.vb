@@ -144,12 +144,13 @@ Public Module SettingsApp
                     W(" 1) " + DoTranslation("Change Root Password?") + " [{0}]", True, ColTypes.Option, GetConfigValueField("setRootPasswd"))
                     W(" 2) " + DoTranslation("Set Root Password..."), True, ColTypes.Option)
                 Case "2" 'Hardware
-                    MaxOptions = 3
+                    MaxOptions = 4
                     WriteSeparator(DoTranslation("Hardware Settings..."), True)
                     W(vbNewLine + DoTranslation("This section changes hardware probe behavior.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Quiet Probe") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(QuietHardwareProbe)))
                     W(" 2) " + DoTranslation("Full Probe") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FullHardwareProbe)))
                     W(" 3) " + DoTranslation("Verbose Probe") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(VerboseHardwareProbe)))
+                    W(" 4) " + DoTranslation("Use legacy hardware listing") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(UseLegacyHardwareListing)))
                 Case "3" 'Login
                     MaxOptions = 8
                     WriteSeparator(DoTranslation("Login Settings..."), True)
@@ -510,6 +511,11 @@ Public Module SettingsApp
                             KeyVar = NameOf(VerboseHardwareProbe)
                             WriteSeparator(DoTranslation("Hardware Settings...") + " > " + DoTranslation("Verbose Probe"), True)
                             W(vbNewLine + DoTranslation("Make hardware probing messages a bit talkative."), True, ColTypes.Neutral)
+                        Case 4 'Use legacy hardware listing
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(UseLegacyHardwareListing)
+                            WriteSeparator(DoTranslation("Hardware Settings...") + " > " + DoTranslation("Use legacy hardware listing"), True)
+                            W(vbNewLine + DoTranslation("Uses the legacy way of listing the hardware on startup."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Hardware Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

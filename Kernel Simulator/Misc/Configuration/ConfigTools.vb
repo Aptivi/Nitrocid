@@ -72,7 +72,7 @@ Public Module ConfigTools
             End If
         End If
         If ConfigToken("Hardware") IsNot Nothing Then
-            If ConfigToken("Hardware").Count <> 3 Then
+            If ConfigToken("Hardware").Count <> 4 Then
                 Wdbg(DebugLevel.W, "Missing keys in Hardware. Config fix needed set to true.")
                 FixesNeeded = True
             End If

@@ -141,7 +141,8 @@ Public Module Config
             Dim HardwareConfig As New JObject From {
                     {"Quiet Probe", QuietHardwareProbe},
                     {"Full Probe", FullHardwareProbe},
-                    {"Verbose Probe", VerboseHardwareProbe}
+                    {"Verbose Probe", VerboseHardwareProbe},
+                    {"Use legacy hardware listing", UseLegacyHardwareListing}
             }
             ConfigurationObject.Add("Hardware", HardwareConfig)
 
@@ -835,6 +836,7 @@ Public Module Config
             QuietHardwareProbe = If(ConfigToken("Hardware")?("Quiet Probe"), False)
             FullHardwareProbe = If(ConfigToken("Hardware")?("Full Probe"), True)
             VerboseHardwareProbe = If(ConfigToken("Hardware")?("Verbose Probe"), False)
+            UseLegacyHardwareListing = If(ConfigToken("Hardware")?("Use legacy hardware listing"), True)
 
             'Network Section
             Wdbg(DebugLevel.I, "Parsing network section...")
