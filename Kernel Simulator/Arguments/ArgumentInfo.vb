@@ -70,17 +70,3 @@ Public Class ArgumentInfo
     End Function
 
 End Class
-
-''' <summary>
-''' Argument type enumeration
-''' </summary>
-Public Enum ArgumentType
-    ''' <summary>
-    ''' Kernel arguments
-    ''' </summary>
-    KernelArgs
-    ''' <summary>
-    ''' Command line arguments
-    ''' </summary>
-    CommandLineArgs
-End Enum
