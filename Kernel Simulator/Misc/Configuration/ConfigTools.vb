@@ -96,7 +96,7 @@ Public Module ConfigTools
             End If
         End If
         If ConfigToken("Network") IsNot Nothing Then
-            If ConfigToken("Network").Count <> 45 Then
+            If ConfigToken("Network").Count <> 46 Then
                 Wdbg(DebugLevel.W, "Missing keys in Network. Config fix needed set to true.")
                 FixesNeeded = True
             End If

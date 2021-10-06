@@ -233,7 +233,7 @@ Public Module SettingsApp
                     W(" 7) " + DoTranslation("Show file details in list") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFileDetailsList)))
                     W(" 8) " + DoTranslation("Suppress unauthorized messages") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SuppressUnauthorizedMessages)))
                 Case "6" 'Network
-                    MaxOptions = 45
+                    MaxOptions = 46
                     WriteSeparator(DoTranslation("Network Settings..."), True)
                     W(vbNewLine + DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Debug Port") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DebugPort)))
@@ -281,6 +281,7 @@ Public Module SettingsApp
                     W(" 43) " + DoTranslation("Download percentage text") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DownloadPercentagePrint)))
                     W(" 44) " + DoTranslation("Upload percentage text") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(UploadPercentagePrint)))
                     W(" 45) " + DoTranslation("Recursive hashing for FTP") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FtpRecursiveHashing)))
+                    W(" 46) " + DoTranslation("Maximum number of e-mails in one page") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_MaxMessagesInPage)))
                 Case "7" 'Screensaver
                     MaxOptions = 3
                     WriteSeparator(DoTranslation("Screensaver Settings..."), True)
@@ -1074,6 +1075,11 @@ Public Module SettingsApp
                             KeyVar = NameOf(FtpRecursiveHashing)
                             WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Recursive hashing for FTP"), True)
                             W(vbNewLine + DoTranslation("Whether to recursively hash a directory. Please note that not all the FTP servers support that."), True, ColTypes.Neutral)
+                        Case 46 'Maximum number of e-mails in one page
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(Mail_MaxMessagesInPage)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Maximum number of e-mails in one page"), True)
+                            W(vbNewLine + DoTranslation("Maximum number of e-mails in one page"), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Network Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

@@ -239,7 +239,8 @@ Public Module Config
                     {"Show general network information", GeneralNetworkInformation},
                     {"Download percentage text", DownloadPercentagePrint},
                     {"Upload percentage text", UploadPercentagePrint},
-                    {"Recursive hashing for FTP", FtpRecursiveHashing}
+                    {"Recursive hashing for FTP", FtpRecursiveHashing},
+                    {"Maximum number of e-mails in one page", Mail_MaxMessagesInPage}
             }
             ConfigurationObject.Add("Network", NetworkConfig)
 
@@ -885,6 +886,7 @@ Public Module Config
             DownloadPercentagePrint = If(ConfigToken("Network")?("Download percentage text"), "")
             UploadPercentagePrint = If(ConfigToken("Network")?("Upload percentage text"), "")
             FtpRecursiveHashing = If(ConfigToken("Network")?("Recursive hashing for FTP"), False)
+            Mail_MaxMessagesInPage = If(Integer.TryParse(ConfigToken("Network")?("Maximum number of e-mails in one page"), 0), ConfigToken("Network")?("Maximum number of e-mails in one page"), 10)
 
             'Screensaver Section
             DefSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")

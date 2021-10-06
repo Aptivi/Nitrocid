@@ -30,11 +30,21 @@ Public Module MailManager
     ''' <param name="PageNum">Page number</param>
     ''' <exception cref="ArgumentException"></exception>
     Public Sub MailListMessages(PageNum As Integer)
+        MailListMessages(PageNum, Mail_MaxMessagesInPage)
+    End Sub
+
+    ''' <summary>
+    ''' Lists messages
+    ''' </summary>
+    ''' <param name="PageNum">Page number</param>
+    ''' <param name="MessagesInPage">Max messages in one page</param>
+    ''' <exception cref="ArgumentException"></exception>
+    Public Sub MailListMessages(PageNum As Integer, MessagesInPage As Integer)
         'Sanity checks for the page number
         If PageNum <= 0 Then PageNum = 1
         Wdbg(DebugLevel.I, "Page number {0}", PageNum)
 
-        Dim MsgsLimitForPg As Integer = 10
+        Dim MsgsLimitForPg As Integer = MessagesInPage
         Dim FirstIndex As Integer = (MsgsLimitForPg * PageNum) - 10
         Dim LastIndex As Integer = (MsgsLimitForPg * PageNum) - 1
         Dim MaxMessagesIndex As Integer = IMAP_Messages.Count - 1

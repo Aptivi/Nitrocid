@@ -45,6 +45,7 @@ Public Module MailShell
     Public Mail_NotifyNewMail As Boolean = True
     Public Mail_ImapPingInterval As Integer = 30000
     Public Mail_SmtpPingInterval As Integer = 30000
+    Public Mail_MaxMessagesInPage As Integer = 10
     Public Mail_TextFormat As TextFormat = TextFormat.Plain
     Friend ExitRequested, KeepAlive As Boolean
     Friend IMAP_Messages As IEnumerable(Of UniqueId)
