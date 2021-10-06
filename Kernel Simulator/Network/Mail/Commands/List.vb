@@ -24,12 +24,12 @@ Class Mail_ListCommand
         If ListArgs?.Length > 0 Then
             Wdbg(DebugLevel.I, "Page is numeric? {0}", ListArgs(0).IsNumeric)
             If ListArgs(0).IsNumeric Then
-                W(MailListMessages(ListArgs(0)), False, ColTypes.Neutral)
+                MailListMessages(ListArgs(0))
             Else
                 W(DoTranslation("Page is not a numeric value."), True, ColTypes.Error)
             End If
         Else
-            W(MailListMessages(1), False, ColTypes.Neutral)
+            MailListMessages(1)
         End If
     End Sub
 

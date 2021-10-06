@@ -28,18 +28,12 @@ Public Module MailManager
     ''' Lists messages
     ''' </summary>
     ''' <param name="PageNum">Page number</param>
-    ''' <returns>String list of messages and preview (optional)</returns>
     ''' <exception cref="ArgumentException"></exception>
-    Public Function MailListMessages(PageNum As Integer) As String
+    Public Sub MailListMessages(PageNum As Integer)
+        'Sanity checks for the page number
         If PageNum <= 0 Then PageNum = 1
         Wdbg(DebugLevel.I, "Page number {0}", PageNum)
-        If PageNum <= 0 Then
-            Wdbg(DebugLevel.E, "Trying to access page 0 or less than 0.")
-            Throw New ArgumentException(DoTranslation("Page may not be negative or zero."))
-            Return ""
-        End If
 
-        Dim EntryBuilder As New StringBuilder
         Dim MsgsLimitForPg As Integer = 10
         Dim FirstIndex As Integer = (MsgsLimitForPg * PageNum) - 10
         Dim LastIndex As Integer = (MsgsLimitForPg * PageNum) - 1
@@ -59,7 +53,7 @@ Public Module MailManager
                     Dim MsgFrom As String = Msg.From.ToString
                     Dim MsgSubject As String = Msg.Subject
                     Wdbg(DebugLevel.I, "From {0}: {1}", MsgFrom, MsgSubject)
-                    EntryBuilder.AppendLine($"- [{i + 1}/{MaxMessagesIndex + 1}] {Msg.From}: {Msg.Subject}")
+                    W($"- [{i + 1}/{MaxMessagesIndex + 1}] {Msg.From}: ", False, ColTypes.ListEntry) : W(Msg.Subject, True, ColTypes.ListValue)
 
                     'TODO: For more efficient preview, use the PREVIEW extension as documented in RFC-8970 (https://tools.ietf.org/html/rfc8970). However,
                     '      this is impossible at this time because no server and no client support this extension. It supports the LAZY modifier. It only
@@ -67,20 +61,14 @@ Public Module MailManager
                     '      Concept: Msg.Preview(LazyMode:=True)
                     If ShowPreview Then
                         Dim MsgPreview As String = Msg.GetTextBody(Text.TextFormat.Text).Truncate(200)
-                        If ColoredShell Then
-                            EntryBuilder.AppendLine($"{New Color(ListValueColor).VTSequenceForeground}{MsgPreview}")
-                            EntryBuilder.AppendLine($"{New Color(NeutralTextColor).VTSequenceForeground}")
-                        Else
-                            EntryBuilder.AppendLine(MsgPreview)
-                        End If
+                        W(MsgPreview, True, ColTypes.ListValue)
                     End If
                 End SyncLock
             Else
                 Wdbg(DebugLevel.W, "Reached max message limit. Message number {0}", i)
             End If
         Next
-        Return EntryBuilder.ToString
-    End Function
+    End Sub
 
     ''' <summary>
     ''' Removes a message
