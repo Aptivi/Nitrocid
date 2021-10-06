@@ -298,6 +298,8 @@
     <Compile Include="Network\FTP\Commands\Disconnect.vb" />
     <Compile Include="Network\FTP\Commands\Exit.vb" />
     <Compile Include="Network\FTP\Commands\Get.vb" />
+    <Compile Include="Network\FTP\Commands\SumFiles.vb" />
+    <Compile Include="Network\FTP\Commands\SumFile.vb" />
     <Compile Include="Network\FTP\Commands\GetFolder.vb" />
     <Compile Include="Network\FTP\Commands\Info.vb" />
     <Compile Include="Network\FTP\Commands\Help.vb" />
@@ -311,6 +313,7 @@
     <Compile Include="Network\FTP\Commands\Pwdr.vb" />
     <Compile Include="Network\FTP\Commands\QuickConnect.vb" />
     <Compile Include="Network\FTP\Commands\Type.vb" />
+    <Compile Include="Network\FTP\Filesystem\FTPHashing.vb" />
     <Compile Include="Network\FTP\Transfer\FTPTransferProgress.vb" />
     <Compile Include="Network\Mail\Commands\Cd.vb" />
     <Compile Include="Network\Mail\Commands\Exit.vb" />

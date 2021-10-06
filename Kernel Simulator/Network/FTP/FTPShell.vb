@@ -39,6 +39,8 @@ Public Module FTPShell
                                                                                 {"pwdr", New CommandInfo("pwdr", ShellCommandType.FTPShell, "Gets current remote directory", "", False, 0, New FTP_PwdrCommand)},
                                                                                 {"mv", New CommandInfo("mv", ShellCommandType.FTPShell, "Moves file or directory to another file or directory. You can also use that to rename files.", "<sourcefileordir> <targetfileordir>", True, 2, New FTP_MvCommand)},
                                                                                 {"perm", New CommandInfo("perm", ShellCommandType.FTPShell, "Sets file permissions. This is supported only on FTP servers that run Unix.", "<file> <permnumber>", True, 2, New FTP_PermCommand)},
+                                                                                {"sumfile", New CommandInfo("sumfile", ShellCommandType.FTPShell, "Calculates file sums.", "<file> <MD5/SHA1/SHA256/SHA512/CRC>", True, 2, New FTP_SumFileCommand)},
+                                                                                {"sumfiles", New CommandInfo("sumfiles", ShellCommandType.FTPShell, "Calculates sums of files in specified directory.", "<file> <MD5/SHA1/SHA256/SHA512/CRC>", True, 2, New FTP_SumFilesCommand)},
                                                                                 {"type", New CommandInfo("type", ShellCommandType.FTPShell, "Sets the type for this session", "<a/b>", True, 1, New FTP_TypeCommand)},
                                                                                 {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.FTPShell, "Uses information from Speed Dial to connect to any network quickly", "", False, 0, New FTP_QuickConnectCommand)}}
     Public FtpConnected As Boolean
@@ -56,6 +58,7 @@ Public Module FTPShell
     Public FtpUseFirstProfile As Boolean
     Public FtpNewConnectionsToSpeedDial As Boolean = True
     Public FtpTryToValidateCertificate As Boolean = True
+    Public FtpRecursiveHashing As Boolean
     Public FtpShowMotd As Boolean = True
     Public FtpAlwaysAcceptInvalidCerts As Boolean
     Friend FtpPass As String

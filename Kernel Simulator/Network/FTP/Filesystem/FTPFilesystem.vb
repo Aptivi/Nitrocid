@@ -19,7 +19,7 @@
 Imports System.IO
 Imports System.Text
 
-Module FTPFilesystem
+Public Module FTPFilesystem
 
     ''' <summary>
     ''' Lists remote folders and files

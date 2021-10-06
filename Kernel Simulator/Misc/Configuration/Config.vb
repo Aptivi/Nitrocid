@@ -237,7 +237,8 @@ Public Module Config
                     {"Show extensive adapter info", ExtensiveAdapterInformation},
                     {"Show general network information", GeneralNetworkInformation},
                     {"Download percentage text", DownloadPercentagePrint},
-                    {"Upload percentage text", UploadPercentagePrint}
+                    {"Upload percentage text", UploadPercentagePrint},
+                    {"Recursive hashing for FTP", FtpRecursiveHashing}
             }
             ConfigurationObject.Add("Network", NetworkConfig)
 
@@ -881,6 +882,7 @@ Public Module Config
             GeneralNetworkInformation = If(ConfigToken("Network")?("Show general network information"), True)
             DownloadPercentagePrint = If(ConfigToken("Network")?("Download percentage text"), "")
             UploadPercentagePrint = If(ConfigToken("Network")?("Upload percentage text"), "")
+            FtpRecursiveHashing = If(ConfigToken("Network")?("Recursive hashing for FTP"), False)
 
             'Screensaver Section
             DefSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")

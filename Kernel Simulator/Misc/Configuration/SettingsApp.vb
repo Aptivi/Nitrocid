@@ -231,7 +231,7 @@ Public Module SettingsApp
                     W(" 7) " + DoTranslation("Show file details in list") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFileDetailsList)))
                     W(" 8) " + DoTranslation("Suppress unauthorized messages") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SuppressUnauthorizedMessages)))
                 Case "6" 'Network
-                    MaxOptions = 44
+                    MaxOptions = 45
                     WriteSeparator(DoTranslation("Network Settings..."), True)
                     W(vbNewLine + DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Debug Port") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DebugPort)))
@@ -278,6 +278,7 @@ Public Module SettingsApp
                     W(" 42) " + DoTranslation("Show general network information") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(GeneralNetworkInformation)))
                     W(" 43) " + DoTranslation("Download percentage text") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DownloadPercentagePrint)))
                     W(" 44) " + DoTranslation("Upload percentage text") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(UploadPercentagePrint)))
+                    W(" 45) " + DoTranslation("Recursive hashing for FTP") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FtpRecursiveHashing)))
                 Case "7" 'Screensaver
                     MaxOptions = 3
                     WriteSeparator(DoTranslation("Screensaver Settings..."), True)
@@ -1061,6 +1062,11 @@ Public Module SettingsApp
                             KeyVar = NameOf(UploadPercentagePrint)
                             WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Upload percentage text"), True)
                             W(vbNewLine + DoTranslation("Write how you want your upload percentage text to be. Leave blank to use default style. Placeholders are parsed. {0} for uploaded size, {1} for target size, {2} for percentage."), True, ColTypes.Neutral)
+                        Case 45 'Recursive hashing for FTP
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(FtpRecursiveHashing)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Recursive hashing for FTP"), True)
+                            W(vbNewLine + DoTranslation("Whether to recursively hash a directory. Please note that not all the FTP servers support that."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Network Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)
