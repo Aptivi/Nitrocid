@@ -299,6 +299,7 @@
     <Compile Include="Network\FTP\Commands\Exit.vb" />
     <Compile Include="Network\FTP\Commands\Get.vb" />
     <Compile Include="Network\FTP\Commands\GetFolder.vb" />
+    <Compile Include="Network\FTP\Commands\Info.vb" />
     <Compile Include="Network\FTP\Commands\Help.vb" />
     <Compile Include="Network\FTP\Commands\Lsl.vb" />
     <Compile Include="Network\FTP\Commands\Lsr.vb" />
