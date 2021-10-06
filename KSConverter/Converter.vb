@@ -27,6 +27,7 @@ Imports KS.UserManagement
 Imports KS.PermissionManagement
 Imports KS.Config
 Imports KS.Paths
+Imports KS.SeparatorWriterColor
 Imports System.IO
 Imports FluentFTP
 
@@ -58,12 +59,12 @@ Module Converter
             LoadUserToken()
 
             'Make backup directory
-            W("- [1/7] Making backup directory...", True, ColTypes.Stage)
+            WriteSeparator("[1/7] Making backup directory", True, ColTypes.Stage)
             Debug.WriteLine($"Backup directory: {GetHomeDirectory() + "/KSBackup"}")
             Debug.WriteLine($"Directory.Exists = {Directory.Exists(GetHomeDirectory() + "/KSBackup")}")
             If Not Directory.Exists(GetHomeDirectory() + "/KSBackup") Then
                 'Just make it!
-                W("  - Backup directory not found. Creating directory...", True, ColTypes.Neutral)
+                W("  - Backup directory not found. Creating directory...", True, ColTypes.Progress)
                 Debug.WriteLine("Creating directory...")
                 Directory.CreateDirectory(GetHomeDirectory() + "/KSBackup")
             Else
@@ -74,7 +75,7 @@ Module Converter
             Console.WriteLine()
 
             'Make backup of old configuration files in case something goes wrong during conversion.
-            W("- [2/7] Making backup of old configuration files...", True, ColTypes.Stage)
+            WriteSeparator("[2/7] Making backup of old configuration files", True, ColTypes.Stage)
             For Each ConfigEntry As String In ListOfOldPaths.Keys
                 Debug.WriteLine($"Old path config entry: {ConfigEntry}")
                 Debug.WriteLine($"Old path exists: {File.Exists(ListOfOldPaths(ConfigEntry))}")
@@ -96,11 +97,11 @@ Module Converter
             Console.WriteLine()
 
             'Import all blocked devices to DebugDeviceNames.json
-            W("- [3/7] Importing all blocked devices to DebugDeviceNames.json...", True, ColTypes.Stage)
+            WriteSeparator("[3/7] Importing all blocked devices to DebugDeviceNames.json", True, ColTypes.Stage)
             Debug.WriteLine($"Blocked device backup exists = {File.Exists(ListOfBackups("BlockedDevices"))}")
             If File.Exists(ListOfBackups("BlockedDevices")) Then
                 'Read blocked devices from old file
-                W("  - Reading blocked devices from blocked_devices.csv...", True, ColTypes.Neutral)
+                W("  - Reading blocked devices from blocked_devices.csv...", True, ColTypes.Progress)
                 Debug.WriteLine($"Calling File.ReadAllLines on {ListOfBackups("BlockedDevices")}...")
                 Dim BlockedDevices As List(Of String) = File.ReadAllLines(ListOfBackups("BlockedDevices")).ToList
                 Debug.WriteLine($"We have {BlockedDevices.Count} devices.")
@@ -110,7 +111,7 @@ Module Converter
                 Debug.WriteLine($"Iterating {BlockedDevices.Count} blocked devices...")
                 For Each BlockedDevice As String In BlockedDevices
                     Debug.WriteLine($"Adding blocked device {BlockedDevice} to the new config format...")
-                    W("  - Adding {0} to DebugDeviceNames.json...", True, ColTypes.Neutral, BlockedDevice)
+                    W("  - Adding {0} to DebugDeviceNames.json...", True, ColTypes.Progress, BlockedDevice)
                     AddDeviceToJson(BlockedDevice, False)
                     SetDeviceProperty(BlockedDevice, DeviceProperty.Blocked, True)
                 Next
@@ -122,11 +123,11 @@ Module Converter
             Console.WriteLine()
 
             'Import all FTP speed dial settings to JSON
-            W("- [4/7] Importing all FTP speed dial addresses to FTP_SpeedDial.json...", True, ColTypes.Stage)
+            WriteSeparator("[4/7] Importing all FTP speed dial addresses to FTP_SpeedDial.json", True, ColTypes.Stage)
             Debug.WriteLine($"Speed dial addresses exists = {File.Exists(ListOfBackups("FTPSpeedDial"))}")
             If File.Exists(ListOfBackups("FTPSpeedDial")) Then
                 'Read FTP speed dial addresses from old file
-                W("  - Reading FTP speed dial addresses from ftp_speeddial.csv...", True, ColTypes.Neutral)
+                W("  - Reading FTP speed dial addresses from ftp_speeddial.csv...", True, ColTypes.Progress)
                 Debug.WriteLine($"Calling File.ReadAllLines on {ListOfBackups("FTPSpeedDial")}...")
                 Dim SpeedDialLines As String() = File.ReadAllLines(ListOfBackups("FTPSpeedDial"))
                 Debug.WriteLine($"We have {SpeedDialLines.Length} addresses.")
@@ -147,7 +148,7 @@ Module Converter
                     Debug.WriteLine($"Encryption = {Encryption}")
 
                     'Add the entry!
-                    W("  - Adding {0} to FTP_SpeedDial.json...", True, ColTypes.Neutral, Address)
+                    W("  - Adding {0} to FTP_SpeedDial.json...", True, ColTypes.Progress, Address)
                     AddEntryToSpeedDial(Address, Port, Username, SpeedDialType.FTP, Encryption)
                 Next
             Else
@@ -158,11 +159,11 @@ Module Converter
             Console.WriteLine()
 
             'Import all users to JSON
-            W("- [5/7] Importing all users to Users.json...", True, ColTypes.Stage)
+            WriteSeparator("[5/7] Importing all users to Users.json", True, ColTypes.Stage)
             Debug.WriteLine($"Users file exists = {File.Exists(ListOfBackups("Users"))}")
             If File.Exists(ListOfBackups("Users")) Then
                 'Read all users from old file
-                W("  - Reading users from users.csv...", True, ColTypes.Neutral)
+                W("  - Reading users from users.csv...", True, ColTypes.Progress)
                 Debug.WriteLine($"Calling File.ReadAllLines on {ListOfBackups("Users")}...")
                 Dim UsersLines As String() = File.ReadAllLines(ListOfBackups("Users"))
                 Debug.WriteLine($"We have {UsersLines.Length} addresses.")
@@ -186,7 +187,7 @@ Module Converter
                     Debug.WriteLine($"Anonymous = {Anonymous}")
 
                     'Add the entry!
-                    W("  - Adding {0} to Users.json...", True, ColTypes.Neutral, Username)
+                    W("  - Adding {0} to Users.json...", True, ColTypes.Progress, Username)
                     InitializeUser(Username, Password, False)
                     If Administrator = "True" Then
                         Debug.WriteLine($"Adding the Administrator permission to {Username}...")
@@ -209,11 +210,11 @@ Module Converter
             Console.WriteLine()
 
             'Import all aliases to JSON
-            W("- [6/7] Importing all aliases to Aliases.json...", True, ColTypes.Stage)
+            WriteSeparator("[6/7] Importing all aliases to Aliases.json", True, ColTypes.Stage)
             Debug.WriteLine($"Aliases file exists = {File.Exists(ListOfBackups("Aliases"))}")
             If File.Exists(ListOfBackups("Aliases")) Then
                 'Read all aliases from old file
-                W("  - Reading users from aliases.csv...", True, ColTypes.Neutral)
+                W("  - Reading users from aliases.csv...", True, ColTypes.Progress)
                 Debug.WriteLine($"Calling File.ReadAllLines on {ListOfBackups("Aliases")}...")
                 Dim AliasesLines As String() = File.ReadAllLines(ListOfBackups("Aliases"))
                 Debug.WriteLine($"We have {AliasesLines.Length} aliases.")
@@ -232,7 +233,7 @@ Module Converter
                     Debug.WriteLine($"AliasType = {AliasType}")
 
                     'Add the entry!
-                    W("  - Adding {0} to Aliases.json...", True, ColTypes.Neutral, AliasCommand)
+                    W("  - Adding {0} to Aliases.json...", True, ColTypes.Progress, AliasCommand)
                     Select Case AliasType
                         Case "Shell"
                             If Not Aliases.ContainsKey(AliasCommand) Then
@@ -266,7 +267,7 @@ Module Converter
 
                 'Save the changes
                 Debug.WriteLine("Saving...")
-                W("  - Saving aliases to Aliases.json...", True, ColTypes.Neutral)
+                W("  - Saving aliases to Aliases.json...", True, ColTypes.Progress)
                 SaveAliases()
             Else
                 'File not found. Skip stage.
@@ -276,11 +277,11 @@ Module Converter
             Console.WriteLine()
 
             'Import all config to JSON
-            W("- [7/7] Importing all kernel config to KernelConfig.json...", True, ColTypes.Stage)
+            WriteSeparator("[7/7] Importing all kernel config to KernelConfig.json", True, ColTypes.Stage)
             Debug.WriteLine($"Config file exists = {File.Exists(ListOfBackups("Configuration"))}")
             If File.Exists(ListOfBackups("Configuration")) Then
                 'Read all config from old file
-                W("  - Reading config from kernelConfig.ini...", True, ColTypes.Neutral)
+                W("  - Reading config from kernelConfig.ini...", True, ColTypes.Progress)
                 Debug.WriteLine("Reading configuration...")
                 If Not ReadPreFivePointFiveConfig(ListOfBackups("Configuration")) Then
                     If Not ReadFivePointFiveConfig(ListOfBackups("Configuration")) Then
@@ -291,7 +292,7 @@ Module Converter
 
                 'Save the changes
                 Debug.WriteLine("Saving...")
-                W("  - Saving configuration to KernelConfig.json...", True, ColTypes.Neutral)
+                W("  - Saving configuration to KernelConfig.json...", True, ColTypes.Progress)
                 CreateConfig()
             Else
                 'File not found. Skip stage.
