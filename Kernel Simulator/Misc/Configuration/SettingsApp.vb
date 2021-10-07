@@ -35,6 +35,7 @@ Public Module SettingsApp
         SList
         SVariant
         SColor
+        SMaskedString
     End Enum
 
     ''' <summary>
@@ -141,7 +142,7 @@ Public Module SettingsApp
                     MaxOptions = 2
                     WriteSeparator(DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password..."), True)
                     W(vbNewLine + DoTranslation("This section lets you manage root password creation.") + vbNewLine, True, ColTypes.Neutral)
-                    W(" 1) " + DoTranslation("Change Root Password?") + " [{0}]", True, ColTypes.Option, GetConfigValueField("setRootPasswd"))
+                    W(" 1) " + DoTranslation("Change Root Password?") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SetRootPassword)))
                     W(" 2) " + DoTranslation("Set Root Password..."), True, ColTypes.Option)
                 Case "2" 'Hardware
                     MaxOptions = 4
@@ -485,7 +486,7 @@ Public Module SettingsApp
                         Case 2 'Set Root Password...
                             WriteSeparator(DoTranslation("General Settings...") + " > " + DoTranslation("Change Root Password...") + " > " + DoTranslation("Set Root Password..."), True)
                             If GetConfigValueField(NameOf(SetRootPassword)) Then
-                                KeyType = SettingsKeyType.SString
+                                KeyType = SettingsKeyType.SMaskedString
                                 KeyVar = NameOf(RootPassword)
                                 WriteSeparator(DoTranslation("Write the root password to be set. Don't worry; the password are shown as stars."), True, ColTypes.Neutral)
                             Else
@@ -1240,7 +1241,7 @@ Public Module SettingsApp
             Console.WriteLine()
 
             'Add an option to go back.
-            If Not KeyType = SettingsKeyType.SVariant And Not KeyType = SettingsKeyType.SInt And Not KeyType = SettingsKeyType.SLongString And Not KeyType = SettingsKeyType.SString And Not KeyType = SettingsKeyType.SList Then
+            If Not KeyType = SettingsKeyType.SVariant And Not KeyType = SettingsKeyType.SInt And Not KeyType = SettingsKeyType.SLongString And Not KeyType = SettingsKeyType.SString And Not KeyType = SettingsKeyType.SMaskedString And Not KeyType = SettingsKeyType.SList Then
                 W(" {0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.BackOption, MaxKeyOptions + 1)
             ElseIf KeyType = SettingsKeyType.SList Then
                 W(DoTranslation("Current items:"), True, ColTypes.ListTitle)
@@ -1289,6 +1290,8 @@ Public Module SettingsApp
                     W(If(KeyType = SettingsKeyType.SUnknown, "> ", "[{0}] > "), False, ColTypes.Input, KeyValue)
                     If KeyType = SettingsKeyType.SLongString Then
                         AnswerString = ReadLineLong()
+                    ElseIf KeyType = SettingsKeyType.SMaskedString Then
+                        AnswerString = ReadLineNoInput("*")
                     Else
                         AnswerString = Console.ReadLine
                     End If
@@ -1358,7 +1361,7 @@ Public Module SettingsApp
             ElseIf KeyType = SettingsKeyType.SUnknown Then
                 Wdbg(DebugLevel.I, "User requested exit. Returning...")
                 KeyFinished = True
-            ElseIf KeyType = SettingsKeyType.SString Or KeyType = SettingsKeyType.SLongString Then
+            ElseIf KeyType = SettingsKeyType.SString Or KeyType = SettingsKeyType.SLongString Or KeyType = SettingsKeyType.SMaskedString Then
                 Wdbg(DebugLevel.I, "Answer is not numeric and key is of the String type. Setting variable...")
 
                 'Check to see if written answer is empty
