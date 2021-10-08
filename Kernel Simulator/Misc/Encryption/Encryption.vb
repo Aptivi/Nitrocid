@@ -19,6 +19,7 @@
 Imports System.IO
 Imports System.Security.Cryptography
 Imports System.Text
+Imports Force.Crc32
 
 Public Module Encryption
 
@@ -46,6 +47,10 @@ Public Module Encryption
         ''' The SHA512 Algorithm
         ''' </summary>
         SHA512
+        ''' <summary>
+        ''' The CRC32 Algorithm
+        ''' </summary>
+        CRC32
     End Enum
 
     ''' <summary>
@@ -88,6 +93,9 @@ Public Module Encryption
             Case Algorithms.SHA512
                 Dim hashbyte As Byte() = SHA512.Create().ComputeHash(Encoding.UTF8.GetBytes(str))
                 Return GetArrayEnc(hashbyte)
+            Case Algorithms.CRC32
+                Dim hashbyte As Byte() = New Crc32Algorithm().ComputeHash(Encoding.UTF8.GetBytes(str))
+                Return GetArrayEnc(hashbyte)
         End Select
         Return ""
     End Function
@@ -116,6 +124,9 @@ Public Module Encryption
                 Return GetArrayEnc(hashbyte)
             Case Algorithms.SHA512
                 Dim hashbyte As Byte() = SHA512.Create().ComputeHash(str)
+                Return GetArrayEnc(hashbyte)
+            Case Algorithms.CRC32
+                Dim hashbyte As Byte() = New Crc32Algorithm().ComputeHash(str)
                 Return GetArrayEnc(hashbyte)
         End Select
         Return ""
