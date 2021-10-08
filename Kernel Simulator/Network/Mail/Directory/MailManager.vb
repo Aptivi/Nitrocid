@@ -51,29 +51,45 @@ Public Module MailManager
         Wdbg(DebugLevel.I, "10 messages shown in each page. First message number in page {0} is {1} and last message number in page {0} is {2}", MsgsLimitForPg, FirstIndex, LastIndex)
         For i As Integer = FirstIndex To LastIndex
             If Not i > MaxMessagesIndex Then
-                Wdbg(DebugLevel.I, "Getting message {0}...", i)
-                SyncLock IMAP_Client.SyncRoot
-                    Dim Msg As MimeMessage
-                    If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
-                        Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-                        Msg = Dir.GetMessage(IMAP_Messages(i))
-                    Else
-                        Msg = IMAP_Client.Inbox.GetMessage(IMAP_Messages(i))
-                    End If
-                    Dim MsgFrom As String = Msg.From.ToString
-                    Dim MsgSubject As String = Msg.Subject
-                    Wdbg(DebugLevel.I, "From {0}: {1}", MsgFrom, MsgSubject)
-                    W($"- [{i + 1}/{MaxMessagesIndex + 1}] {Msg.From}: ", False, ColTypes.ListEntry) : W(Msg.Subject, True, ColTypes.ListValue)
+                Dim MsgFrom As String = ""
+                Dim MsgSubject As String = ""
+                Dim MsgPreview As String = ""
 
+                'Getting information about the message is vital to display them.
+                Wdbg(DebugLevel.I, "Getting message {0}...", i)
+                If Not Mail_UsePop3 Then
+                    SyncLock IMAP_Client.SyncRoot
+                        Dim Msg As MimeMessage
+                        If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
+                            Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+                            Msg = Dir.GetMessage(IMAP_Messages(i))
+                        Else
+                            Msg = IMAP_Client.Inbox.GetMessage(IMAP_Messages(i))
+                        End If
+                        MsgFrom = Msg.From.ToString
+                        MsgSubject = Msg.Subject
+                        MsgPreview = Msg.GetTextBody(Text.TextFormat.Text).Truncate(200)
+                    End SyncLock
+                Else
+                    SyncLock POP3_Client.SyncRoot
+                        Dim Msg As MimeMessage
+                        Msg = POP3_Client.GetMessage(i)
+                        MsgFrom = Msg.From.ToString
+                        MsgSubject = Msg.Subject
+                        MsgPreview = Msg.GetTextBody(Text.TextFormat.Text).Truncate(200)
+                    End SyncLock
+                End If
+                Wdbg(DebugLevel.I, "From {0}: {1}", MsgFrom, MsgSubject)
+
+                'Display them now.
+                W($"- [{i + 1}/{MaxMessagesIndex + 1}] {MsgFrom}: ", False, ColTypes.ListEntry) : W(MsgSubject, True, ColTypes.ListValue)
+                If ShowPreview Then
                     'TODO: For more efficient preview, use the PREVIEW extension as documented in RFC-8970 (https://tools.ietf.org/html/rfc8970). However,
                     '      this is impossible at this time because no server and no client support this extension. It supports the LAZY modifier. It only
                     '      displays 200 character long body.
                     '      Concept: Msg.Preview(LazyMode:=True)
-                    If ShowPreview Then
-                        Dim MsgPreview As String = Msg.GetTextBody(Text.TextFormat.Text).Truncate(200)
-                        W(MsgPreview, True, ColTypes.ListValue)
-                    End If
-                End SyncLock
+                    W(MsgPreview, True, ColTypes.ListValue)
+                End If
             Else
                 Wdbg(DebugLevel.W, "Reached max message limit. Message number {0}", i)
             End If
@@ -101,23 +117,29 @@ Public Module MailManager
             Return False
         End If
 
-        SyncLock IMAP_Client.SyncRoot
-            If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
-                'Remove message
-                Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-                Wdbg(DebugLevel.I, "Opened {0}. Removing {1}...", IMAP_CurrentDirectory, MsgNumber)
-                Dir.AddFlags(IMAP_Messages(Message), MessageFlags.Deleted, True)
-                Wdbg(DebugLevel.I, "Removed.")
-                Dir.Expunge()
-            Else
-                'Remove message
-                IMAP_Client.Inbox.Open(FolderAccess.ReadWrite)
-                Wdbg(DebugLevel.I, "Removing {0}...", MsgNumber)
-                IMAP_Client.Inbox.AddFlags(IMAP_Messages(Message), MessageFlags.Deleted, True)
-                Wdbg(DebugLevel.I, "Removed.")
-                IMAP_Client.Inbox.Expunge()
-            End If
-        End SyncLock
+        If Not Mail_UsePop3 Then
+            SyncLock IMAP_Client.SyncRoot
+                If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
+                    'Remove message
+                    Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
+                    Wdbg(DebugLevel.I, "Opened {0}. Removing {1}...", IMAP_CurrentDirectory, MsgNumber)
+                    Dir.AddFlags(IMAP_Messages(Message), MessageFlags.Deleted, True)
+                    Wdbg(DebugLevel.I, "Removed.")
+                    Dir.Expunge()
+                Else
+                    'Remove message
+                    IMAP_Client.Inbox.Open(FolderAccess.ReadWrite)
+                    Wdbg(DebugLevel.I, "Removing {0}...", MsgNumber)
+                    IMAP_Client.Inbox.AddFlags(IMAP_Messages(Message), MessageFlags.Deleted, True)
+                    Wdbg(DebugLevel.I, "Removed.")
+                    IMAP_Client.Inbox.Expunge()
+                End If
+            End SyncLock
+        Else
+            SyncLock POP3_Client.SyncRoot
+                POP3_Client.DeleteMessage(Message)
+            End SyncLock
+        End If
         Return True
     End Function
 

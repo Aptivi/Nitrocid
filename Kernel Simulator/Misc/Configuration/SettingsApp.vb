@@ -234,7 +234,7 @@ Public Module SettingsApp
                     W(" 7) " + DoTranslation("Show file details in list") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(ShowFileDetailsList)))
                     W(" 8) " + DoTranslation("Suppress unauthorized messages") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(SuppressUnauthorizedMessages)))
                 Case "6" 'Network
-                    MaxOptions = 46
+                    MaxOptions = 49
                     WriteSeparator(DoTranslation("Network Settings..."), True)
                     W(vbNewLine + DoTranslation("This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.") + vbNewLine, True, ColTypes.Neutral)
                     W(" 1) " + DoTranslation("Debug Port") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(DebugPort)))
@@ -283,6 +283,9 @@ Public Module SettingsApp
                     W(" 44) " + DoTranslation("Upload percentage text") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(UploadPercentagePrint)))
                     W(" 45) " + DoTranslation("Recursive hashing for FTP") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(FtpRecursiveHashing)))
                     W(" 46) " + DoTranslation("Maximum number of e-mails in one page") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_MaxMessagesInPage)))
+                    W(" 47) " + DoTranslation("POP3 prompt style for mail") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_POP3PromptStyle)))
+                    W(" 48) " + DoTranslation("Send POP3 ping interval") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_POP3PingInterval)))
+                    W(" 49) " + DoTranslation("Use POP3") + " [{0}]", True, ColTypes.Option, GetConfigValueField(NameOf(Mail_UsePop3)))
                 Case "7" 'Screensaver
                     MaxOptions = 3
                     WriteSeparator(DoTranslation("Screensaver Settings..."), True)
@@ -1081,6 +1084,21 @@ Public Module SettingsApp
                             KeyVar = NameOf(Mail_MaxMessagesInPage)
                             WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Maximum number of e-mails in one page"), True)
                             W(vbNewLine + DoTranslation("Maximum number of e-mails in one page"), True, ColTypes.Neutral)
+                        Case 47 'POP3 prompt style for mail
+                            KeyType = SettingsKeyType.SString
+                            KeyVar = NameOf(Mail_POP3PromptStyle)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("POP3 prompt style for mail"), True)
+                            W(vbNewLine + DoTranslation("Write how you want your POP3 server prompt to be. Leave blank to use default style. Placeholders are parsed."), True, ColTypes.Neutral)
+                        Case 48 'Send POP3 ping interval
+                            KeyType = SettingsKeyType.SInt
+                            KeyVar = NameOf(Mail_POP3PingInterval)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Send POP3 ping interval"), True)
+                            W(vbNewLine + DoTranslation("How many milliseconds to send the POP3 ping?"), True, ColTypes.Neutral)
+                        Case 49 'Use POP3
+                            KeyType = SettingsKeyType.SBoolean
+                            KeyVar = NameOf(Mail_UsePop3)
+                            WriteSeparator(DoTranslation("Network Settings...") + " > " + DoTranslation("Use POP3"), True)
+                            W(vbNewLine + DoTranslation("Whether to use POP3. Disabling this will use SMTP."), True, ColTypes.Neutral)
                         Case Else
                             WriteSeparator(DoTranslation("Network Settings...") + " > ???", True)
                             W(vbNewLine + "X) " + DoTranslation("Invalid key number entered. Please go back."), True, ColTypes.Error)

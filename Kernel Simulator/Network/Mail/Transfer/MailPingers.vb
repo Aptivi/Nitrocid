@@ -57,4 +57,22 @@ Module MailPingers
         End While
     End Sub
 
+    ''' <summary>
+    ''' [POP3] Tries to keep the connection going
+    ''' </summary>
+    Sub POP3KeepConnection()
+        'Every 30 seconds, send a ping to IMAP server
+        While POP3_Client.IsConnected
+            Thread.Sleep(Mail_POP3PingInterval)
+            If POP3_Client.IsConnected Then
+                SyncLock POP3_Client.SyncRoot
+                    POP3_Client.NoOp()
+                End SyncLock
+            Else
+                Wdbg(DebugLevel.W, "Connection state is inconsistent. Stopping POP3KeepConnection()...")
+                Thread.CurrentThread.Abort()
+            End If
+        End While
+    End Sub
+
 End Module

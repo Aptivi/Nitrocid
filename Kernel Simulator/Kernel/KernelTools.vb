@@ -325,6 +325,7 @@ Public Module KernelTools
         'Disconnect from mail
         IMAP_Client.Disconnect(True)
         SMTP_Client.Disconnect(True)
+        POP3_Client.Disconnect(True)
 
         'Disable safe mode
         SafeMode = False

@@ -19,6 +19,7 @@
 Imports MailKit
 Imports MailKit.Net.Imap
 Imports MailKit.Net.Smtp
+Imports MailKit.Net.Pop3
 Imports MimeKit.Cryptography
 
 Module MailLogin
@@ -26,11 +27,13 @@ Module MailLogin
     'Variables
     Public IMAP_Client As New ImapClient()
     Public SMTP_Client As New SmtpClient()
+    Public POP3_Client As New Pop3Client()
     Friend Mail_Authentication As New NetworkCredential()
     Public Mail_UserPromptStyle As String = ""
     Public Mail_PassPromptStyle As String = ""
     Public Mail_IMAPPromptStyle As String = ""
     Public Mail_SMTPPromptStyle As String = ""
+    Public Mail_POP3PromptStyle As String = ""
     Public Mail_GPGPromptStyle As String = ""
     Public Mail_Debug As Boolean
     Public Mail_AutoDetectServer As Boolean = True
@@ -47,6 +50,10 @@ Module MailLogin
         ''' The SMTP server
         ''' </summary>
         SMTP
+        ''' <summary>
+        ''' The POP3 server
+        ''' </summary>
+        POP3
     End Enum
 
     ''' <summary>
@@ -79,8 +86,9 @@ Module MailLogin
         Console.WriteLine()
         Dim DynamicAddressIMAP As String = ServerDetect(Username, ServerType.IMAP)
         Dim DynamicAddressSMTP As String = ServerDetect(Username, ServerType.SMTP)
-        If DynamicAddressIMAP <> "" And DynamicAddressSMTP <> "" And Mail_AutoDetectServer Then
-            ParseAddresses(DynamicAddressIMAP, 0, DynamicAddressSMTP, 0)
+        Dim DynamicAddressPOP3 As String = ServerDetect(Username, ServerType.POP3)
+        If DynamicAddressIMAP <> "" And (DynamicAddressSMTP <> "" Or DynamicAddressPOP3 <> "") And Mail_AutoDetectServer Then
+            ParseAddresses(DynamicAddressIMAP, 0, DynamicAddressSMTP, 0, DynamicAddressPOP3, 0)
         Else
             PromptServer()
         End If
@@ -90,31 +98,47 @@ Module MailLogin
     ''' Prompts for server
     ''' </summary>
     Sub PromptServer()
+        Dim IMAP_Address As String
+        Dim IMAP_Port As Integer
+        Dim SMTP_Address As String = ""
+        Dim SMTP_Port As Integer
+        Dim POP3_Address As String = ""
+        Dim POP3_Port As Integer = 587
         'IMAP server address and port
         If Not String.IsNullOrWhiteSpace(Mail_IMAPPromptStyle) Then
             W(ProbePlaces(Mail_IMAPPromptStyle), False, ColTypes.Input)
         Else
             W(DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
         End If
-        Dim IMAP_Address As String = Console.ReadLine
-        Dim IMAP_Port As Integer = 0
+        IMAP_Address = Console.ReadLine
         Wdbg(DebugLevel.I, "IMAP Server: ""{0}""", IMAP_Address)
 
-        'SMTP server address and port
-        If Not String.IsNullOrWhiteSpace(Mail_SMTPPromptStyle) Then
-            W(ProbePlaces(Mail_SMTPPromptStyle), False, ColTypes.Input)
+        'SMTP/POP3 server address and port
+        If Not Mail_UsePop3 Then
+            If Not String.IsNullOrWhiteSpace(Mail_SMTPPromptStyle) Then
+                W(ProbePlaces(Mail_SMTPPromptStyle), False, ColTypes.Input)
+            Else
+                W(DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
+            End If
+            SMTP_Address = Console.ReadLine
+            SMTP_Port = 587
+            Wdbg(DebugLevel.I, "SMTP Server: ""{0}""", SMTP_Address)
         Else
-            W(DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
+            If Not String.IsNullOrWhiteSpace(Mail_POP3PromptStyle) Then
+                W(ProbePlaces(Mail_POP3PromptStyle), False, ColTypes.Input)
+            Else
+                W(DoTranslation("Enter POP3 server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
+            End If
+            POP3_Address = Console.ReadLine
+            POP3_Port = 995
+            Wdbg(DebugLevel.I, "POP3 Server: ""{0}""", POP3_Address)
         End If
-        Dim SMTP_Address As String = Console.ReadLine
-        Dim SMTP_Port As Integer = 587
-        Wdbg(DebugLevel.I, "SMTP Server: ""{0}""", SMTP_Address)
 
         'Parse addresses to connect
-        ParseAddresses(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port)
+        ParseAddresses(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port, POP3_Address, POP3_Port)
     End Sub
 
-    Sub ParseAddresses(IMAP_Address As String, IMAP_Port As Integer, SMTP_Address As String, SMTP_Port As Integer)
+    Sub ParseAddresses(IMAP_Address As String, IMAP_Port As Integer, SMTP_Address As String, SMTP_Port As Integer, POP3_Address As String, POP3_Port As Integer)
         'If the address is <address>:[port]
         If IMAP_Address.Contains(":") Then
             Wdbg(DebugLevel.I, "Found colon in address. Separating...", Mail_Authentication.UserName)
@@ -131,9 +155,17 @@ Module MailLogin
             Wdbg(DebugLevel.I, "Final address: {0}, Final port: {1}", SMTP_Address, SMTP_Port)
         End If
 
+        'If the address is <address>:[port]
+        If POP3_Address.Contains(":") Then
+            Wdbg(DebugLevel.I, "Found colon in address. Separating...", Mail_Authentication.UserName)
+            POP3_Port = CInt(POP3_Address.Substring(POP3_Address.IndexOf(":") + 1))
+            POP3_Address = POP3_Address.Remove(POP3_Address.IndexOf(":"))
+            Wdbg(DebugLevel.I, "Final address: {0}, Final port: {1}", POP3_Address, POP3_Port)
+        End If
+
         'Try to connect
         Mail_Authentication.Domain = IMAP_Address
-        ConnectShell(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port)
+        ConnectShell(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port, POP3_Address, POP3_Port)
     End Sub
 
     ''' <summary>
@@ -147,6 +179,8 @@ Module MailLogin
                 Return "imap.gmail.com"
             ElseIf Type = ServerType.SMTP Then
                 Return "smtp.gmail.com:587"
+            ElseIf Type = ServerType.POP3 Then
+                Return "pop.gmail.com:995"
             Else
                 Return ""
             End If
@@ -154,7 +188,9 @@ Module MailLogin
             If Type = ServerType.IMAP Then
                 Return "imap.aol.com"
             ElseIf Type = ServerType.SMTP Then
-                Return "smtp.aol.com:587"
+                Return "smtp.aol.com:465"
+            ElseIf Type = ServerType.POP3 Then
+                Return "pop.aol.com:995"
             Else
                 Return ""
             End If
@@ -163,6 +199,8 @@ Module MailLogin
                 Return "imap-mail.outlook.com"
             ElseIf Type = ServerType.SMTP Then
                 Return "smtp-mail.outlook.com:587"
+            ElseIf Type = ServerType.POP3 Then
+                Return "pop3.live.com:995"
             Else
                 Return ""
             End If
@@ -171,14 +209,18 @@ Module MailLogin
                 Return "outlook.office365.com"
             ElseIf Type = ServerType.SMTP Then
                 Return "smtp.office365.com:587"
+            ElseIf Type = ServerType.POP3 Then
+                Return "outlook.office365.com:995"
             Else
                 Return ""
             End If
-        ElseIf Address.EndsWith("@bt.com") Then
+        ElseIf Address.EndsWith("@btinternet.com") Then
             If Type = ServerType.IMAP Then
-                Return "imap4.btconnect.com"
+                Return "mail.btinternet.com:993"
             ElseIf Type = ServerType.SMTP Then
-                Return "smtp.btconnect.com:25"
+                Return "mail.btinternet.com:465"
+            ElseIf Type = ServerType.POP3 Then
+                Return "mail.btinternet.com:995"
             Else
                 Return ""
             End If
@@ -187,6 +229,8 @@ Module MailLogin
                 Return "imap.mail.yahoo.com"
             ElseIf Type = ServerType.SMTP Then
                 Return "smtp.mail.yahoo.com"
+            ElseIf Type = ServerType.POP3 Then
+                Return "pop.mail.yahoo.com:995"
             Else
                 Return ""
             End If
@@ -195,6 +239,8 @@ Module MailLogin
                 Return "imap.mail.yahoo.co.uk"
             ElseIf Type = ServerType.SMTP Then
                 Return "smtp.mail.yahoo.co.uk"
+            ElseIf Type = ServerType.POP3 Then
+                Return "pop.mail.yahoo.co.uk:995"
             Else
                 Return ""
             End If
@@ -203,30 +249,38 @@ Module MailLogin
                 Return "imap.mail.yahoo.au"
             ElseIf Type = ServerType.SMTP Then
                 Return "smtp.mail.yahoo.au"
+            ElseIf Type = ServerType.POP3 Then
+                Return "pop.mail.yahoo.au:995"
             Else
                 Return ""
             End If
         ElseIf Address.EndsWith("@verizon.net") Then
             If Type = ServerType.IMAP Then
-                Return "incoming.verizon.net"
+                Return "imap.aol.com"
             ElseIf Type = ServerType.SMTP Then
-                Return "outgoing.verizon.net:587"
+                Return "smtp.verizon.net:465"
+            ElseIf Type = ServerType.POP3 Then
+                Return "pop.verizon.net:995"
             Else
                 Return ""
             End If
-        ElseIf Address.EndsWith("@att.com") Then
+        ElseIf Address.EndsWith("@att.net") Then
             If Type = ServerType.IMAP Then
-                Return "imap.att.yahoo.com"
+                Return "imap.mail.att.net"
             ElseIf Type = ServerType.SMTP Then
-                Return "smtp.att.yahoo.com"
+                Return "outbound.att.net:465"
+            ElseIf Type = ServerType.POP3 Then
+                Return "inbound.att.net:995"
             Else
                 Return ""
             End If
         ElseIf Address.EndsWith("@o2online.de") Then
             If Type = ServerType.IMAP Then
-                Return "imap.o2online.de"
-            ElseIf Type = ServerType.SMTP Then
                 Return "mail.o2online.de"
+            ElseIf Type = ServerType.SMTP Then
+                Return "smtp.o2online.de"
+            ElseIf Type = ServerType.POP3 Then
+                Return "pop.o2online.de:995"
             Else
                 Return ""
             End If
@@ -234,7 +288,9 @@ Module MailLogin
             If Type = ServerType.IMAP Then
                 Return "secureimap.t-online.de"
             ElseIf Type = ServerType.SMTP Then
-                Return "securesmtp.t-online.de:587"
+                Return "securesmtp.t-online.de:465"
+            ElseIf Type = ServerType.POP3 Then
+                Return "securepop.t-online.de:995"
             Else
                 Return ""
             End If
@@ -243,14 +299,18 @@ Module MailLogin
                 Return "imap.1und1.de"
             ElseIf Type = ServerType.SMTP Then
                 Return "smtp.1und1.de:587"
+            ElseIf Type = ServerType.POP3 Then
+                Return "pop.1und1.de:995"
             Else
                 Return ""
             End If
         ElseIf Address.EndsWith("@ionos.com") Then
             If Type = ServerType.IMAP Then
-                Return "imap.1and1.com"
+                Return "imap.ionos.com"
             ElseIf Type = ServerType.SMTP Then
-                Return "smtp.1and1.com:587"
+                Return "smtp.ionos.com:587"
+            ElseIf Type = ServerType.POP3 Then
+                Return "pop.ionos.com:995"
             Else
                 Return ""
             End If
@@ -259,14 +319,18 @@ Module MailLogin
                 Return "imap.zoho.com"
             ElseIf Type = ServerType.SMTP Then
                 Return "smtp.zoho.com"
+            ElseIf Type = ServerType.POP3 Then
+                Return "pop.zoho.com:995"
             Else
                 Return ""
             End If
         ElseIf Address.EndsWith("@ntlworld.com") Then
             If Type = ServerType.IMAP Then
-                Return "imap.ntlworld.com"
+                Return "imap.virginmedia.com"
             ElseIf Type = ServerType.SMTP Then
-                Return "smtp.ntlworld.com"
+                Return "smtp.virginmedia.com"
+            ElseIf Type = ServerType.POP3 Then
+                Return "pop3.virginmedia.com:995"
             Else
                 Return ""
             End If
@@ -275,6 +339,8 @@ Module MailLogin
                 Return "imap.mail.com"
             ElseIf Type = ServerType.SMTP Then
                 Return "smtp.mail.com:587"
+            ElseIf Type = ServerType.POP3 Then
+                Return "pop.mail.com:995"
             Else
                 Return ""
             End If
@@ -283,6 +349,8 @@ Module MailLogin
                 Return "imap.fastmail.com"
             ElseIf Type = ServerType.SMTP Then
                 Return "smtp.fastmail.com:587"
+            ElseIf Type = ServerType.POP3 Then
+                Return "pop.fastmail.com:995"
             Else
                 Return ""
             End If
@@ -291,6 +359,8 @@ Module MailLogin
                 Return "imap.gmx.com"
             ElseIf Type = ServerType.SMTP Then
                 Return "smtp.gmx.com"
+            ElseIf Type = ServerType.POP3 Then
+                Return "pop.gmx.com:995"
             Else
                 Return ""
             End If
@@ -305,12 +375,15 @@ Module MailLogin
     ''' <param name="Port">A port of the IMAP server</param>
     ''' <param name="SmtpAddress">An IP address of the SMTP server</param>
     ''' <param name="SmtpPort">A port of the SMTP server</param>
-    Sub ConnectShell(Address As String, Port As Integer, SmtpAddress As String, SmtpPort As Integer)
+    ''' <param name="POP3_Address">An IP address of the POP3 server</param>
+    ''' <param name="POP3_Port">A port of the POP3 server</param>
+    Sub ConnectShell(Address As String, Port As Integer, SmtpAddress As String, SmtpPort As Integer, POP3_Address As String, POP3_Port As Integer)
         Try
             'Register the context and initialize the loggers if debug mode is on
             If DebugMode And Mail_Debug Then
                 IMAP_Client = New ImapClient(New ProtocolLogger(GetOtherPath(OtherPathType.Home) + "/ImapDebug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
                 SMTP_Client = New SmtpClient(New ProtocolLogger(GetOtherPath(OtherPathType.Home) + "/SmtpDebug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
+                POP3_Client = New Pop3Client(New ProtocolLogger(GetOtherPath(OtherPathType.Home) + "/Pop3Debug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
             End If
             CryptographyContext.Register(GetType(PGPContext))
 
@@ -320,19 +393,30 @@ Module MailLogin
             IMAP_Client.Connect(Address, Port, Security.SecureSocketOptions.SslOnConnect)
             AddHandler IMAP_Client.WebAlert, AddressOf HandleWebAlert
 
-            'SMTP Connection
-            W(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, SmtpAddress)
-            Wdbg(DebugLevel.I, "Connecting to SMTP Server {0}:{1} with SSL...", Address, Port)
-            SMTP_Client.Connect(SmtpAddress, SmtpPort, Security.SecureSocketOptions.StartTls)
+            'SMTP/POP3 Connection
+            If Not Mail_UsePop3 Then
+                W(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, SmtpAddress)
+                Wdbg(DebugLevel.I, "Connecting to SMTP Server {0}:{1} with SSL...", Address, Port)
+                SMTP_Client.Connect(SmtpAddress, SmtpPort, Security.SecureSocketOptions.StartTlsWhenAvailable)
+            Else
+                W(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, POP3_Address)
+                Wdbg(DebugLevel.I, "Connecting to POP3 Server {0}:{1} with SSL...", Address, Port)
+                POP3_Client.Connect(POP3_Address, POP3_Port, Security.SecureSocketOptions.SslOnConnect)
+            End If
 
             'IMAP Authentication
             W(DoTranslation("Authenticating..."), True, ColTypes.Neutral)
             Wdbg(DebugLevel.I, "Authenticating {0} to IMAP server {1}...", Mail_Authentication.UserName, Address)
             IMAP_Client.Authenticate(Mail_Authentication)
 
-            'SMTP Authentication
-            Wdbg(DebugLevel.I, "Authenticating {0} to SMTP server {1}...", Mail_Authentication.UserName, SmtpAddress)
-            SMTP_Client.Authenticate(Mail_Authentication)
+            'SMTP/POP3 Authentication
+            If Not Mail_UsePop3 Then
+                Wdbg(DebugLevel.I, "Authenticating {0} to SMTP server {1}...", Mail_Authentication.UserName, SmtpAddress)
+                SMTP_Client.Authenticate(Mail_Authentication)
+            Else
+                Wdbg(DebugLevel.I, "Authenticating {0} to POP3 server {1}...", Mail_Authentication.UserName, POP3_Address)
+                POP3_Client.Authenticate(Mail_Authentication)
+            End If
             RemoveHandler IMAP_Client.WebAlert, AddressOf HandleWebAlert
 
             'Initialize shell
@@ -343,6 +427,7 @@ Module MailLogin
             WStkTrc(ex)
             IMAP_Client.Disconnect(True)
             SMTP_Client.Disconnect(True)
+            POP3_Client.Disconnect(True)
         End Try
     End Sub
 

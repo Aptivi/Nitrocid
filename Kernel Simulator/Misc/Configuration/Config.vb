@@ -240,7 +240,10 @@ Public Module Config
                     {"Download percentage text", DownloadPercentagePrint},
                     {"Upload percentage text", UploadPercentagePrint},
                     {"Recursive hashing for FTP", FtpRecursiveHashing},
-                    {"Maximum number of e-mails in one page", Mail_MaxMessagesInPage}
+                    {"Maximum number of e-mails in one page", Mail_MaxMessagesInPage},
+                    {"POP3 prompt style for mail", Mail_POP3PromptStyle},
+                    {"Send POP3 ping interval", Mail_POP3PingInterval},
+                    {"Use POP3", Mail_UsePop3}
             }
             ConfigurationObject.Add("Network", NetworkConfig)
 
@@ -887,6 +890,9 @@ Public Module Config
             UploadPercentagePrint = If(ConfigToken("Network")?("Upload percentage text"), "")
             FtpRecursiveHashing = If(ConfigToken("Network")?("Recursive hashing for FTP"), False)
             Mail_MaxMessagesInPage = If(Integer.TryParse(ConfigToken("Network")?("Maximum number of e-mails in one page"), 0), ConfigToken("Network")?("Maximum number of e-mails in one page"), 10)
+            Mail_POP3PromptStyle = If(ConfigToken("Network")?("POP3 prompt style for mail"), "")
+            Mail_POP3PingInterval = If(Integer.TryParse(ConfigToken("Network")?("Send POP3 ping interval"), 0), ConfigToken("Network")?("Send POP3 ping interval"), 30000)
+            Mail_UsePop3 = If(ConfigToken("Network")?("Use POP3"), False)
 
             'Screensaver Section
             DefSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")

@@ -45,7 +45,9 @@ Public Module MailShell
     Public Mail_NotifyNewMail As Boolean = True
     Public Mail_ImapPingInterval As Integer = 30000
     Public Mail_SmtpPingInterval As Integer = 30000
+    Public Mail_POP3PingInterval As Integer = 30000
     Public Mail_MaxMessagesInPage As Integer = 10
+    Public Mail_UsePop3 As Boolean
     Public Mail_TextFormat As TextFormat = TextFormat.Plain
     Friend ExitRequested, KeepAlive As Boolean
     Friend IMAP_Messages As IEnumerable(Of UniqueId)
@@ -59,9 +61,15 @@ Public Module MailShell
         Dim IMAP_NoOp As New Thread(AddressOf IMAPKeepConnection) With {.Name = "IMAP Keep Connection"}
         IMAP_NoOp.Start()
         Wdbg(DebugLevel.I, "Made new thread about IMAPKeepConnection()")
-        Dim SMTP_NoOp As New Thread(AddressOf SMTPKeepConnection) With {.Name = "SMTP Keep Connection"}
-        SMTP_NoOp.Start()
-        Wdbg(DebugLevel.I, "Made new thread about SMTPKeepConnection()")
+        If Not Mail_UsePop3 Then
+            Dim SMTP_NoOp As New Thread(AddressOf SMTPKeepConnection) With {.Name = "SMTP Keep Connection"}
+            SMTP_NoOp.Start()
+            Wdbg(DebugLevel.I, "Made new thread about SMTPKeepConnection()")
+        Else
+            Dim POP3_NoOp As New Thread(AddressOf POP3KeepConnection) With {.Name = "POP3 Keep Connection"}
+            POP3_NoOp.Start()
+            Wdbg(DebugLevel.I, "Made new thread about POP3KeepConnection()")
+        End If
 
         'Add handler for IMAP and SMTP
         SwitchCancellationHandler(ShellCommandType.MailShell)
@@ -124,6 +132,7 @@ Public Module MailShell
             If Mail_NotifyNewMail Then ReleaseHandlers()
             IMAP_Client.Disconnect(True)
             SMTP_Client.Disconnect(True)
+            POP3_Client.Disconnect(True)
         End If
         ExitRequested = False
 

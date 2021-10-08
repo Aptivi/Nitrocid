@@ -221,25 +221,33 @@ Public Module MailTransfer
     ''' <param name="Body">Body (only text. See <see cref="MailSendMessage(String, String, MimeEntity)"/> for more.)</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
     Public Function MailSendMessage(Recipient As String, Subject As String, Body As String) As String
-        SyncLock SMTP_Client.SyncRoot
-            Try
-                Dim FinalMessage As New MimeMessage
-                FinalMessage.From.Add(MailboxAddress.Parse(Mail_Authentication.UserName))
-                Wdbg(DebugLevel.I, "Added sender to FinalMessage.From.")
-                FinalMessage.To.Add(MailboxAddress.Parse(Recipient))
-                Wdbg(DebugLevel.I, "Added address to FinalMessage.To.")
-                FinalMessage.Subject = Subject
-                Wdbg(DebugLevel.I, "Added subject to FinalMessage.Subject.")
-                FinalMessage.Body = New TextPart(TextFormat.Plain) With {.Text = Body.ToString}
-                Wdbg(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...")
-                SMTP_Client.Send(FinalMessage)
-                Return True
-            Catch ex As Exception
-                Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
-                WStkTrc(ex)
-            End Try
+        'Construct a message
+        Dim FinalMessage As New MimeMessage
+        FinalMessage.From.Add(MailboxAddress.Parse(Mail_Authentication.UserName))
+        Wdbg(DebugLevel.I, "Added sender to FinalMessage.From.")
+        FinalMessage.To.Add(MailboxAddress.Parse(Recipient))
+        Wdbg(DebugLevel.I, "Added address to FinalMessage.To.")
+        FinalMessage.Subject = Subject
+        Wdbg(DebugLevel.I, "Added subject to FinalMessage.Subject.")
+        FinalMessage.Body = New TextPart(TextFormat.Plain) With {.Text = Body.ToString}
+        Wdbg(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...")
+
+        'Send the message
+        If Not Mail_UsePop3 Then
+            SyncLock SMTP_Client.SyncRoot
+                Try
+                    SMTP_Client.Send(FinalMessage)
+                    Return True
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
+                Return False
+            End SyncLock
+        Else
+            Wdbg(DebugLevel.E, "Not implemented.")
             Return False
-        End SyncLock
+        End If
     End Function
 
     ''' <summary>
@@ -250,25 +258,33 @@ Public Module MailTransfer
     ''' <param name="Body">Body</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
     Public Function MailSendMessage(Recipient As String, Subject As String, Body As MimeEntity) As String
-        SyncLock SMTP_Client.SyncRoot
-            Try
-                Dim FinalMessage As New MimeMessage
-                FinalMessage.From.Add(MailboxAddress.Parse(Mail_Authentication.UserName))
-                Wdbg(DebugLevel.I, "Added sender to FinalMessage.From.")
-                FinalMessage.To.Add(MailboxAddress.Parse(Recipient))
-                Wdbg(DebugLevel.I, "Added address to FinalMessage.To.")
-                FinalMessage.Subject = Subject
-                Wdbg(DebugLevel.I, "Added subject to FinalMessage.Subject.")
-                FinalMessage.Body = Body
-                Wdbg(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...")
-                SMTP_Client.Send(FinalMessage)
-                Return True
-            Catch ex As Exception
-                Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
-                WStkTrc(ex)
-            End Try
+        'Construct a message
+        Dim FinalMessage As New MimeMessage
+        FinalMessage.From.Add(MailboxAddress.Parse(Mail_Authentication.UserName))
+        Wdbg(DebugLevel.I, "Added sender to FinalMessage.From.")
+        FinalMessage.To.Add(MailboxAddress.Parse(Recipient))
+        Wdbg(DebugLevel.I, "Added address to FinalMessage.To.")
+        FinalMessage.Subject = Subject
+        Wdbg(DebugLevel.I, "Added subject to FinalMessage.Subject.")
+        FinalMessage.Body = Body
+        Wdbg(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...")
+
+        'Send the message
+        If Not Mail_UsePop3 Then
+            SyncLock SMTP_Client.SyncRoot
+                Try
+                    SMTP_Client.Send(FinalMessage)
+                    Return True
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
+                Return False
+            End SyncLock
+        Else
+            Wdbg(DebugLevel.E, "Not implemented.")
             Return False
-        End SyncLock
+        End If
     End Function
 
     ''' <summary>
@@ -279,25 +295,33 @@ Public Module MailTransfer
     ''' <param name="Body">Body</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
     Public Function MailSendEncryptedMessage(Recipient As String, Subject As String, Body As MimeEntity) As String
-        SyncLock SMTP_Client.SyncRoot
-            Try
-                Dim FinalMessage As New MimeMessage
-                FinalMessage.From.Add(MailboxAddress.Parse(Mail_Authentication.UserName))
-                Wdbg(DebugLevel.I, "Added sender to FinalMessage.From.")
-                FinalMessage.To.Add(MailboxAddress.Parse(Recipient))
-                Wdbg(DebugLevel.I, "Added address to FinalMessage.To.")
-                FinalMessage.Subject = Subject
-                Wdbg(DebugLevel.I, "Added subject to FinalMessage.Subject.")
-                FinalMessage.Body = MultipartEncrypted.Encrypt(New PGPContext, FinalMessage.To.Mailboxes, Body)
-                Wdbg(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...")
-                SMTP_Client.Send(FinalMessage)
-                Return True
-            Catch ex As Exception
-                Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
-                WStkTrc(ex)
-            End Try
+        'Construct a message
+        Dim FinalMessage As New MimeMessage
+        FinalMessage.From.Add(MailboxAddress.Parse(Mail_Authentication.UserName))
+        Wdbg(DebugLevel.I, "Added sender to FinalMessage.From.")
+        FinalMessage.To.Add(MailboxAddress.Parse(Recipient))
+        Wdbg(DebugLevel.I, "Added address to FinalMessage.To.")
+        FinalMessage.Subject = Subject
+        Wdbg(DebugLevel.I, "Added subject to FinalMessage.Subject.")
+        FinalMessage.Body = MultipartEncrypted.Encrypt(New PGPContext, FinalMessage.To.Mailboxes, Body)
+        Wdbg(DebugLevel.I, "Added body to FinalMessage.Body (plain text). Sending message...")
+
+        'Send the message
+        If Not Mail_UsePop3 Then
+            SyncLock SMTP_Client.SyncRoot
+                Try
+                    SMTP_Client.Send(FinalMessage)
+                    Return True
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
+                Return False
+            End SyncLock
+        Else
+            Wdbg(DebugLevel.E, "Not implemented.")
             Return False
-        End SyncLock
+        End If
     End Function
 
     ''' <summary>
