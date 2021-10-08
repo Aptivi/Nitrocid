@@ -297,6 +297,7 @@
     <Compile Include="Network\FTP\Commands\Cp.vb" />
     <Compile Include="Network\FTP\Commands\Del.vb" />
     <Compile Include="Network\FTP\Commands\Disconnect.vb" />
+    <Compile Include="Network\FTP\Commands\Execute.vb" />
     <Compile Include="Network\FTP\Commands\Exit.vb" />
     <Compile Include="Network\FTP\Commands\Get.vb" />
     <Compile Include="Network\FTP\Commands\SumFiles.vb" />
