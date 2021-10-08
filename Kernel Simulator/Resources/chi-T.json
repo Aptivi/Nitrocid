@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0}没有该命令。 Mod解析失败。查看源代码。",
   "You must turn on debug mode before you can clear debug log.": "您必须先打开调试模式，然后才能清除调试日志。",
   "{0} new messages arrived in inbox.": "{0}条新邮件到达收件箱。",
-  "Open \"lsmail\" to see them.": "打开“ lsmail”以查看它们。",
+  "Open \"mail\" to see them.": "打开“ mail”以查看它们。",
   "Unable to remove file: {0}": "无法删除文件：{0}",
   "Removes a directory or a file": "删除目录或文件",
   "Can't remove {0} because it doesn't exist.": "无法删除{0}，因为它不存在。",

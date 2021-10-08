@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} nemá příkaz. Analýza modů se nezdařila. Zkontrolujte zdrojový kód.",
   "You must turn on debug mode before you can clear debug log.": "Než budete moci vymazat protokol ladění, musíte zapnout režim ladění.",
   "{0} new messages arrived in inbox.": "{0} nové zprávy dorazily do doručené pošty.",
-  "Open \"lsmail\" to see them.": "Chcete-li je zobrazit, otevřete „lsmail“.",
+  "Open \"mail\" to see them.": "Chcete-li je zobrazit, otevřete „mail“.",
   "Unable to remove file: {0}": "Nelze odebrat soubor: {0}",
   "Removes a directory or a file": "Odebere adresář nebo soubor",
   "Can't remove {0} because it doesn't exist.": "Aplikaci {0} nelze odebrat, protože neexistuje.",

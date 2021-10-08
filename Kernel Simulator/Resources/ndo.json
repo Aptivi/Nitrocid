@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} tidak memiliki perintah. Penguraian mod gagal. Tinjau kode sumbernya.",
   "You must turn on debug mode before you can clear debug log.": "Anda harus mengaktifkan mode debug sebelum Anda dapat menghapus log debug.",
   "{0} new messages arrived in inbox.": "{0} pesan baru tiba di kotak masuk.",
-  "Open \"lsmail\" to see them.": "Buka \"lsmail\" untuk melihatnya.",
+  "Open \"mail\" to see them.": "Buka \"mail\" untuk melihatnya.",
   "Unable to remove file: {0}": "Tidak dapat menghapus file: {0}",
   "Removes a directory or a file": "Menghapus direktori atau file",
   "Can't remove {0} because it doesn't exist.": "Tidak dapat menghapus {0} karena tidak ada.",

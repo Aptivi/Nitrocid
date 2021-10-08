@@ -611,7 +611,7 @@ mōḍa {0} dā bhāga nāṁ nahīṁ hai. Māḍa pārasiga asaphala sarōta k
 Māḍa {0} kōla kamāṇḍa nahīṁ hai. Māḍa pārasiga asaphala sarōta kōḍa dī samīkhi'ā karō.
 Ḍībaga lauga sāfa karana tōṁ pahilāṁ tuhānū ḍībaga mōḍa cālū karanā pavēgā.
 Messages 0 messages navēṁ sunēhē inabākasa vica ā'ē.
-Uhanāṁ nū vēkhaṇa la'ī"lsmail" khōl'hō.
+Uhanāṁ nū vēkhaṇa la'ī"mail" khōl'hō.
 Phā'īla haṭā'uṇa vica asamaratha: {0}
 Ika ḍā'iraikaṭarī jāṁ ika phā'īla nū haṭā'undā hai
 {0} nū haṭā nahīṁ sakadā ki'uṅki iha maujūda nahīṁ hai.

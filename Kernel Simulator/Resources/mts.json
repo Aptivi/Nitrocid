@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} m'għandux il-kmand. L-analiżi tal-mod falliet. Irrevedi l-kodiċi tas-sors.",
   "You must turn on debug mode before you can clear debug log.": "Int trid tixgħel il-modalità ta 'debug qabel ma tkun tista' tnaddaf id-debug log.",
   "{0} new messages arrived in inbox.": "{0} messaġġi ġodda waslu fl-inbox.",
-  "Open \"lsmail\" to see them.": "Iftaħ \"lsmail\" biex tarahom.",
+  "Open \"mail\" to see them.": "Iftaħ \"mail\" biex tarahom.",
   "Unable to remove file: {0}": "Ma jistax ineħħi l-fajl: {0}",
   "Removes a directory or a file": "Tneħħi direttorju jew fajl",
   "Can't remove {0} because it doesn't exist.": "Ma tistax tneħħi {0} għax ma teżistix.",

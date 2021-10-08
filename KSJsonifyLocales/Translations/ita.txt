@@ -611,7 +611,7 @@ La mod {0} non ha il nome della parte. Analisi mod non riuscita. Rivedi il codic
 Il mod {0} non ha il comando. Analisi mod non riuscita. Rivedi il codice sorgente.
 È necessario attivare la modalità di debug prima di poter cancellare il registro di debug.
 {0} nuovi messaggi sono arrivati ​​nella Posta in arrivo.
-Apri "lsmail" per vederli.
+Apri "mail" per vederli.
 Impossibile rimuovere il file: {0}
 Rimuove una directory o un file
 Impossibile rimuovere {0} perché non esiste.

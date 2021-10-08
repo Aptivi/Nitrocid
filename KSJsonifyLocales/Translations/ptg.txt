@@ -611,7 +611,7 @@ O mod {0} não tem o nome da peça. A análise do mod falhou. Revise o código-f
 O mod {0} não possui o comando. A análise do mod falhou. Revise o código-fonte.
 Você deve ativar o modo de depuração antes de limpar o log de depuração.
 {0} novas mensagens chegaram à caixa de entrada.
-Abra "lsmail" para vê-los.
+Abra "mail" para vê-los.
 Não foi possível remover o arquivo: {0}
 Remove um diretório ou arquivo
 Não é possível remover {0} porque ele não existe.

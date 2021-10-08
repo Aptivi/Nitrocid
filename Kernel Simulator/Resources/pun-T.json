@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "ਮਾਡ {0} ਕੋਲ ਕਮਾਂਡ ਨਹੀਂ ਹੈ. ਮਾਡ ਪਾਰਸਿੰਗ ਅਸਫਲ ਸਰੋਤ ਕੋਡ ਦੀ ਸਮੀਖਿਆ ਕਰੋ.",
   "You must turn on debug mode before you can clear debug log.": "ਡੀਬੱਗ ਲੌਗ ਸਾਫ਼ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਡੀਬੱਗ ਮੋਡ ਚਾਲੂ ਕਰਨਾ ਪਵੇਗਾ.",
   "{0} new messages arrived in inbox.": "Messages 0 messages ਨਵੇਂ ਸੁਨੇਹੇ ਇਨਬਾਕਸ ਵਿੱਚ ਆਏ.",
-  "Open \"lsmail\" to see them.": "ਉਹਨਾਂ ਨੂੰ ਵੇਖਣ ਲਈ \"lsmail\" ਖੋਲ੍ਹੋ.",
+  "Open \"mail\" to see them.": "ਉਹਨਾਂ ਨੂੰ ਵੇਖਣ ਲਈ \"mail\" ਖੋਲ੍ਹੋ.",
   "Unable to remove file: {0}": "ਫਾਈਲ ਹਟਾਉਣ ਵਿੱਚ ਅਸਮਰੱਥ: {0}",
   "Removes a directory or a file": "ਇੱਕ ਡਾਇਰੈਕਟਰੀ ਜਾਂ ਇੱਕ ਫਾਈਲ ਨੂੰ ਹਟਾਉਂਦਾ ਹੈ",
   "Can't remove {0} because it doesn't exist.": "{0} ਨੂੰ ਹਟਾ ਨਹੀਂ ਸਕਦਾ ਕਿਉਂਕਿ ਇਹ ਮੌਜੂਦ ਨਹੀਂ ਹੈ.",

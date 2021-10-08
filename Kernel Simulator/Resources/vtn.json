@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} không có lệnh. Phân tích cú pháp mod không thành công. Xem lại mã nguồn.",
   "You must turn on debug mode before you can clear debug log.": "Bạn phải bật chế độ gỡ lỗi trước khi có thể xóa nhật ký gỡ lỗi.",
   "{0} new messages arrived in inbox.": "{0} thư mới đã đến hộp thư đến.",
-  "Open \"lsmail\" to see them.": "Mở \"lsmail\" để xem chúng.",
+  "Open \"mail\" to see them.": "Mở \"mail\" để xem chúng.",
   "Unable to remove file: {0}": "Không thể xóa tệp: {0}",
   "Removes a directory or a file": "Xóa một thư mục hoặc một tệp",
   "Can't remove {0} because it doesn't exist.": "Không thể xóa {0} vì nó không tồn tại.",

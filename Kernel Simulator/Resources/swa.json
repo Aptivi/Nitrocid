@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} haina amri. Uchanganuzi wa Mod umeshindwa. Pitia nambari ya chanzo.",
   "You must turn on debug mode before you can clear debug log.": "Lazima uwashe hali ya utatuaji kabla ya kufuta logi ya utatuzi.",
   "{0} new messages arrived in inbox.": "Ujumbe {0} mpya umewasili kwenye kikasha.",
-  "Open \"lsmail\" to see them.": "Fungua \"lsmail\" ili uwaone.",
+  "Open \"mail\" to see them.": "Fungua \"mail\" ili uwaone.",
   "Unable to remove file: {0}": "Imeshindwa kuondoa faili: {0}",
   "Removes a directory or a file": "Huondoa saraka au faili",
   "Can't remove {0} because it doesn't exist.": "Imeshindwa kuondoa {0} kwa sababu haipo.",

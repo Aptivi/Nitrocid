@@ -611,7 +611,7 @@ Ang Mod {0} ay walang pangalan ng bahagi. Nabigo ang pag-parse ng mod. Suriin an
 Ang Mod {0} ay walang utos. Nabigo ang pag-parse ng mod. Suriin ang source code.
 Dapat mong i-on ang debug mode bago mo i-clear ang debug log.
 {0} mga bagong mensahe ang dumating sa inbox.
-Buksan ang "lsmail" upang makita ang mga ito.
+Buksan ang "mail" upang makita ang mga ito.
 Hindi matanggal ang file: {0}
 Tinatanggal ang isang direktoryo o isang file
 Hindi matanggal {0} dahil wala ito.

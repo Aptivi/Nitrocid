@@ -611,7 +611,7 @@ Mod {0} nu are numele piesei. Analiza modului a e?uat. Examina?i codul surs?.
 Mod {0} nu are comanda. Analiza modului a e?uat. Examina?i codul surs?.
 Trebuie s? activa?i modul de depanare înainte de a putea ?terge jurnalul de depanare.
 {0} mesaje noi au sosit în c?su?a de e-mail.
-Deschide?i „lsmail” pentru a le vedea.
+Deschide?i „mail” pentru a le vedea.
 Imposibil de eliminat fi?ierul: {0}
 Elimin? un director sau un fi?ier
 Nu se poate elimina {0} deoarece nu exist?.

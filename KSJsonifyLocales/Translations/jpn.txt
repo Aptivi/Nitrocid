@@ -611,7 +611,7 @@ Mod {0} Ni Wa Patsumei Ga Arimasen . Mod No Kaiseki Ni Shippai Shimashita . Sosu
 Mod {0} Ni Wa Komando Ga Arimasen . Mod No Kaiseki Ni Shippai Shimashita . Sosu Kodo O Kakunin shimasu .
 Debaggu Rogu O Kuria Suru Mae Ni , Debaggumodo O On Ni Suru Hitsuyo Ga Arimasu .
 {0} Atarashi Messeji Ga Jushin Torei Ni Todokimashita .
-" Lsmail " O Hiraite Hyoji Shimasu .
+" mail " O Hiraite Hyoji Shimasu .
 Fairu O Sakujo Dekimasen : {0}
 Direkutori Mataha Fairu O Sakujo Shimasu
 {0} Ga Sonzai Shinai Tame , Sakujo Dekimasen .

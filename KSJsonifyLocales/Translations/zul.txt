@@ -611,7 +611,7 @@ I-Mod {0} ayinalo igama lengxenye. Ukuhlukaniswa kweMod kuhlulekile. Buyekeza ik
 I-Mod {0} ayinayo umyalo. Ukuhlukaniswa kweMod kuhlulekile. Buyekeza ikhodi yomthombo.
 Kufanele uvule imodi yokulungisa iphutha ngaphambi kokuthi usule ilog yokulungisa iphutha.
 {0} imilayezo emisha ifike ebhokisini lokungenayo.
-Vula i- "lsmail" ukuze uzibone.
+Vula i- "mail" ukuze uzibone.
 Ayikwazi ukususa ifayela: {0}
 Isusa umkhombandlela noma ifayela
 Ayikwazi ukususa i- {0} ngoba ayikho.

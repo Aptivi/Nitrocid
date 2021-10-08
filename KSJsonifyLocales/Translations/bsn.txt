@@ -611,7 +611,7 @@ Mod {0} nema naziv dijela. Raščlanjivanje modova nije uspjelo. Pregledajte izv
 Mod {0} nema naredbu. Raščlanjivanje modova nije uspjelo. Pregledajte izvorni kod.
 Morate uključiti način otklanjanja grešaka da biste mogli očistiti dnevnik otklanjanja grešaka.
 {0} novih poruka je stiglo u pristiglu poštu.
-Otvorite "lsmail" da biste ih vidjeli.
+Otvorite "mail" da biste ih vidjeli.
 Nije moguće ukloniti datoteku: {0}
 Uklanja direktorij ili datoteku
 Nije moguće ukloniti {0} jer ne postoji.

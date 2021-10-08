@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "I-Mod {0} ayinayo umyalo. Ukuhlukaniswa kweMod kuhlulekile. Buyekeza ikhodi yomthombo.",
   "You must turn on debug mode before you can clear debug log.": "Kufanele uvule imodi yokulungisa iphutha ngaphambi kokuthi usule ilog yokulungisa iphutha.",
   "{0} new messages arrived in inbox.": "{0} imilayezo emisha ifike ebhokisini lokungenayo.",
-  "Open \"lsmail\" to see them.": "Vula i- \"lsmail\" ukuze uzibone.",
+  "Open \"mail\" to see them.": "Vula i- \"mail\" ukuze uzibone.",
   "Unable to remove file: {0}": "Ayikwazi ukususa ifayela: {0}",
   "Removes a directory or a file": "Isusa umkhombandlela noma ifayela",
   "Can't remove {0} because it doesn't exist.": "Ayikwazi ukususa i- {0} ngoba ayikho.",

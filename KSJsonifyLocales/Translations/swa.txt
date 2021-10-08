@@ -611,7 +611,7 @@ Mod {0} haina jina la sehemu. Uchanganuzi wa Mod umeshindwa. Pitia nambari ya ch
 Mod {0} haina amri. Uchanganuzi wa Mod umeshindwa. Pitia nambari ya chanzo.
 Lazima uwashe hali ya utatuaji kabla ya kufuta logi ya utatuzi.
 Ujumbe {0} mpya umewasili kwenye kikasha.
-Fungua "lsmail" ili uwaone.
+Fungua "mail" ili uwaone.
 Imeshindwa kuondoa faili: {0}
 Huondoa saraka au faili
 Imeshindwa kuondoa {0} kwa sababu haipo.

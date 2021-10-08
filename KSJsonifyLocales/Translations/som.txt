@@ -611,7 +611,7 @@ Qaabka {0} ma laha magaca qeybta. Baaritaankii Mod ayaa fashilmay. Dib u eeg koo
 Mod {0} ma laha amarka. Baaritaankii Mod ayaa fashilmay. Dib u eeg koodhka isha.
 Waa inaad daartaa qaabka khalad ka hor intaadan nadiifin qoritaanka khaladka.
 {0} farriimo cusub ayaa soo galay sanduuqa.
-Fur "lsmail" si aad u aragto.
+Fur "mail" si aad u aragto.
 Waan saari kari waayey faylka: {0}
 Waxay tirtiraysaa galka ama feyl
 Ma saari karo {0} maxaa yeelay ma jiro.

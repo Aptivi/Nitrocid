@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} ma laha amarka. Baaritaankii Mod ayaa fashilmay. Dib u eeg koodhka isha.",
   "You must turn on debug mode before you can clear debug log.": "Waa inaad daartaa qaabka khalad ka hor intaadan nadiifin qoritaanka khaladka.",
   "{0} new messages arrived in inbox.": "{0} farriimo cusub ayaa soo galay sanduuqa.",
-  "Open \"lsmail\" to see them.": "Fur \"lsmail\" si aad u aragto.",
+  "Open \"mail\" to see them.": "Fur \"mail\" si aad u aragto.",
   "Unable to remove file: {0}": "Waan saari kari waayey faylka: {0}",
   "Removes a directory or a file": "Waxay tirtiraysaa galka ama feyl",
   "Can't remove {0} because it doesn't exist.": "Ma saari karo {0} maxaa yeelay ma jiro.",

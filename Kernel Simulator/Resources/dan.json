@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} har ikke kommandoen. Mod-parsing mislykkedes. Gennemgå kildekoden.",
   "You must turn on debug mode before you can clear debug log.": "Du skal aktivere fejlretningstilstand, før du kan rydde fejlretningslog.",
   "{0} new messages arrived in inbox.": "{0} nye meddelelser ankom i indbakken.",
-  "Open \"lsmail\" to see them.": "Åbn \"lsmail\" for at se dem.",
+  "Open \"mail\" to see them.": "Åbn \"mail\" for at se dem.",
   "Unable to remove file: {0}": "Kunne ikke fjerne filen: {0}",
   "Removes a directory or a file": "Fjerner et bibliotek eller en fil",
   "Can't remove {0} because it doesn't exist.": "Kan ikke fjerne {0}, fordi det ikke findes.",

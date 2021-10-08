@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Nid oes gan Mod {0} y gorchymyn. Methodd dosrannu mod. Adolygwch y cod ffynhonnell.",
   "You must turn on debug mode before you can clear debug log.": "Rhaid i chi droi ymlaen modd dadfygio cyn y gallwch chi glirio log dadfygio.",
   "{0} new messages arrived in inbox.": "Cyrhaeddodd {0} negeseuon newydd yn y blwch derbyn.",
-  "Open \"lsmail\" to see them.": "Agorwch \"lsmail\" i'w gweld.",
+  "Open \"mail\" to see them.": "Agorwch \"mail\" i'w gweld.",
   "Unable to remove file: {0}": "Methu tynnu ffeil: {0}",
   "Removes a directory or a file": "Yn dileu cyfeiriadur neu ffeil",
   "Can't remove {0} because it doesn't exist.": "Methu tynnu {0} oherwydd nad yw'n bodoli.",

@@ -611,7 +611,7 @@ Mod {0} nemá název součásti. Analýza modů se nezdařila. Zkontrolujte zdro
 Mod {0} nemá příkaz. Analýza modů se nezdařila. Zkontrolujte zdrojový kód.
 Než budete moci vymazat protokol ladění, musíte zapnout režim ladění.
 {0} nové zprávy dorazily do doručené pošty.
-Chcete-li je zobrazit, otevřete „lsmail“.
+Chcete-li je zobrazit, otevřete „mail“.
 Nelze odebrat soubor: {0}
 Odebere adresář nebo soubor
 Aplikaci {0} nelze odebrat, protože neexistuje.

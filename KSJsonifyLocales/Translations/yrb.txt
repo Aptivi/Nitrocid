@@ -611,7 +611,7 @@ Mod {0} ko ni orukọ apakan. Ṣiṣapẹrẹ Mod kuna. Ṣayẹwo koodu orisun
 Mod {0} ko ni aṣẹ naa. Ṣiṣapẹrẹ Mod kuna. Ṣayẹwo koodu orisun.
 O gbọdọ tan ipo n ṣatunṣe aṣiṣe ṣaaju ki o to nu iwe ifagile yokokoro kuro.
 {0} awọn ifiranṣẹ tuntun ti de inu apo -iwọle.
-Ṣii “lsmail” lati rii wọn.
+Ṣii “mail” lati rii wọn.
 Ko le yọ faili kuro: {0}
 Yọ liana tabi faili kan kuro
 Ko le yọ {0} kuro nitori ko si.

@@ -611,7 +611,7 @@ Mod {0} har inte artikelnamnet. Modtolkning misslyckades. Granska källkoden.
 Mod {0} har inte kommandot. Modtolkning misslyckades. Granska källkoden.
 Du måste aktivera felsökningsläget innan du kan rensa felsökningsloggen.
 {0} nya meddelanden kom till inkorgen.
-Öppna "lsmail" för att se dem.
+Öppna "mail" för att se dem.
 Det gick inte att ta bort filen: {0}
 Tar bort en katalog eller en fil
 Det går inte att ta bort {0} eftersom det inte finns.

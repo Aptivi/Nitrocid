@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} ora duwe komando. Parsing mod gagal. Priksa kode sumber.",
   "You must turn on debug mode before you can clear debug log.": "Sampeyan kudu nguripake mode debug sadurunge bisa mbusak log debug.",
   "{0} new messages arrived in inbox.": "{0} pesen anyar mlebu ing kothak mlebu.",
-  "Open \"lsmail\" to see them.": "Bukak \"lsmail\" kanggo ndeleng.",
+  "Open \"mail\" to see them.": "Bukak \"mail\" kanggo ndeleng.",
   "Unable to remove file: {0}": "Ora bisa mbusak file: {0}",
   "Removes a directory or a file": "Mbusak direktori utawa file",
   "Can't remove {0} because it doesn't exist.": "Ora bisa mbusak {0} amarga ora ana.",

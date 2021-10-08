@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Níl an t-ordú ag Mod {0}. Theip ar pharsáil mod. Déan athbhreithniú ar an gcód foinse.",
   "You must turn on debug mode before you can clear debug log.": "Caithfidh tú an modh dífhabhtaithe a chasadh air sular féidir leat logáil dífhabhtaithe a ghlanadh.",
   "{0} new messages arrived in inbox.": "Tháinig {0} teachtaireachtaí nua isteach sa bhosca isteach.",
-  "Open \"lsmail\" to see them.": "Oscail \"lsmail\" chun iad a fheiceáil.",
+  "Open \"mail\" to see them.": "Oscail \"mail\" chun iad a fheiceáil.",
   "Unable to remove file: {0}": "Ní féidir an comhad a bhaint: {0}",
   "Removes a directory or a file": "Bain eolaire nó comhad",
   "Can't remove {0} because it doesn't exist.": "Ní féidir {0} a bhaint toisc nach bhfuil sé ann.",

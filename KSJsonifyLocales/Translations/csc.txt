@@ -611,7 +611,7 @@ Mod {0} ùn hà micca u nome di a parte. L'analisi di u Mod hà fiascatu. Verifi
 Mod {0} ùn hà micca u cumandu. L'analisi di u Mod hà fiascatu. Verificate u codice fonte.
 Duvete attivà u modu di debug prima di pudè cancellà u log di debug.
 {0} novi missaghji sò ghjunti in inbox.
-Aprite "lsmail" per vedeli.
+Aprite "mail" per vedeli.
 Impussibule di caccià u fugliale: {0}
 Elimina un repertoriu o un schedariu
 Ùn pò micca caccià {0} perchè ùn esiste micca.

@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "{0} Mod-ek ez du komandoa. Mod analisiak huts egin du. Berrikusi iturburu kodea.",
   "You must turn on debug mode before you can clear debug log.": "Arazketa modua aktibatu behar duzu arazketa erregistroa garbitu aurretik.",
   "{0} new messages arrived in inbox.": "{0} mezu berri iritsi dira sarrera-ontzira.",
-  "Open \"lsmail\" to see them.": "Ireki \"lsmail\" ikusteko.",
+  "Open \"mail\" to see them.": "Ireki \"mail\" ikusteko.",
   "Unable to remove file: {0}": "Ezin da fitxategia kendu: {0}",
   "Removes a directory or a file": "Direktorio edo fitxategi bat kentzen du",
   "Can't remove {0} because it doesn't exist.": "Ezin da {0} kendu existitzen ez delako.",

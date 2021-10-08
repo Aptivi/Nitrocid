@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0}にはコマンドがありません。 Modの解析に失敗しました。ソースコードを確認します。",
   "You must turn on debug mode before you can clear debug log.": "デバッグログをクリアする前に、デバッグモードをオンにする必要があります。",
   "{0} new messages arrived in inbox.": "{0}新しいメッセージが受信トレイに届きました。",
-  "Open \"lsmail\" to see them.": "「lsmail」を開いて表示します。",
+  "Open \"mail\" to see them.": "「mail」を開いて表示します。",
   "Unable to remove file: {0}": "ファイルを削除できません：{0}",
   "Removes a directory or a file": "ディレクトリまたはファイルを削除します",
   "Can't remove {0} because it doesn't exist.": "{0}が存在しないため、削除できません。",

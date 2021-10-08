@@ -611,7 +611,7 @@ Mod {0} non ten o nome da peza. Produciuse un erro ao analizar as modificacións
 Mod {0} non ten o comando. Produciuse un erro ao analizar as modificacións. Revisa o código fonte.
 Debe activar o modo de depuración para poder borrar o rexistro de depuración.
 {0} novas mensaxes chegaron á caixa de entrada.
-Abre "lsmail" para velos.
+Abre "mail" para velos.
 Non se puido eliminar o ficheiro: {0}
 Elimina un directorio ou un ficheiro
 Non se pode eliminar {0} porque non existe.

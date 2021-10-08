@@ -611,7 +611,7 @@ Mod {0} ilibe dzina lachigawo. Kupatula ma Mod kwalephera. Unikani kachidindo ko
 Mod {0} ilibe lamulo. Kupatula ma Mod kwalephera. Unikani kachidindo koyambira.
 Muyenera kuyatsa njira yolakwika musanachotsere chipika.
 {0} mauthenga atsopano afika mu inbox.
-Tsegulani "lsmail" kuti muwawone.
+Tsegulani "mail" kuti muwawone.
 Takanika kuchotsa fayilo: {0}
 Imachotsa chikwatu kapena fayilo
 Sangathe kuchotsa {0} chifukwa kulibe.

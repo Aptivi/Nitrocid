@@ -611,7 +611,7 @@ Mod {0} lays lah aism aljuz'a. fashal tahlil wizarat aldifaei. rajae altaelimat 
 Mod {0} lays ladayh al'amra. fashil tahlil wizarat aldifaei. rajae altaelimat albarmajiat almusadara.
 yajib tashghil wade altashih qabl 'an tatamakan min mash sijila altashihi.
 wasalat {0} min alrasayil aljadidat 'iilaa albarid alwaridi.
-aftah "lsmail" liruyatihim.
+aftah "mail" liruyatihim.
 taeadhur 'iizalat almilafa: {0}
 yuzil dalil 'aw milafun
 la yumkin 'iizala {0} li'anah ghayr mawjudi.

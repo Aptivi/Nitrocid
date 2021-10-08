@@ -611,7 +611,7 @@ U moda {0} net nazvaniya detali. Ne udalos' proanalizirovat' mod. Prosmotrite is
 U moda {0} net komandy. Ne udalos' proanalizirovat' mod. Prosmotrite iskhodnyy kod.
 Pered ochistkoy zhurnala otladki neobkhodimo vklyuchit' rezhim otladki.
 Vo vkhodyashchiye postupilo novykh soobshcheniy: {0}.
-Otkroyte «lsmail», chtoby uvidet' ikh.
+Otkroyte «mail», chtoby uvidet' ikh.
 Nevozmozhno udalit' fayl: {0}
 Udalyayet katalog ili fayl
 Nevozmozhno udalit' {0}, potomu chto on ne sushchestvuyet.

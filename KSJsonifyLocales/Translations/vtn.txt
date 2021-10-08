@@ -611,7 +611,7 @@ Mod {0} không có tên bộ phận. Phân tích cú pháp mod không thành cô
 Mod {0} không có lệnh. Phân tích cú pháp mod không thành công. Xem lại mã nguồn.
 Bạn phải bật chế độ gỡ lỗi trước khi có thể xóa nhật ký gỡ lỗi.
 {0} thư mới đã đến hộp thư đến.
-Mở "lsmail" để xem chúng.
+Mở "mail" để xem chúng.
 Không thể xóa tệp: {0}
 Xóa một thư mục hoặc một tệp
 Không thể xóa {0} vì nó không tồn tại.

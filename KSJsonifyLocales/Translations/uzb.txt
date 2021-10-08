@@ -611,7 +611,7 @@ Harorat uchun afzal bo'lgan birlikni tanlang (bu faqat "ob-havo" buyrug'iga tegi
 {0} rejimida buyruq yo'q. Tartibni ajratib bo'lmadi. Manba kodini ko'rib chiqing.
 Tuzatish jurnalini tozalashdan oldin siz disk raskadrovka rejimini yoqishingiz kerak.
 {0} yangi xabarlar pochta qutisiga keldi.
-Ularni ko'rish uchun "lsmail" ni oching.
+Ularni ko'rish uchun "mail" ni oching.
 Fayl olib tashlanmadi: {0}
 Katalogni yoki faylni olib tashlaydi
 {0} olib tashlanmadi, chunki u mavjud emas.

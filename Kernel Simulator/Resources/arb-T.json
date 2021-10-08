@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} ليس لديه الأمر. فشل تحليل وزارة الدفاع. راجع التعليمات البرمجية المصدر.",
   "You must turn on debug mode before you can clear debug log.": "يجب تشغيل وضع التصحيح قبل أن تتمكن من مسح سجل التصحيح.",
   "{0} new messages arrived in inbox.": "وصلت {0} من الرسائل الجديدة إلى البريد الوارد.",
-  "Open \"lsmail\" to see them.": "افتح \"lsmail\" لرؤيتهم.",
+  "Open \"mail\" to see them.": "افتح \"mail\" لرؤيتهم.",
   "Unable to remove file: {0}": "تعذر إزالة الملف: {0}",
   "Removes a directory or a file": "يزيل دليل أو ملف",
   "Can't remove {0} because it doesn't exist.": "لا يمكن إزالة {0} لأنه غير موجود.",

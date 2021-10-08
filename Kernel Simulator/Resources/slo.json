@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} nima ukaza. Razčlenjevanje modov ni uspelo. Preglejte izvorno kodo.",
   "You must turn on debug mode before you can clear debug log.": "Preden lahko počistite dnevnik odpravljanja napak, morate vklopiti način za odpravljanje napak.",
   "{0} new messages arrived in inbox.": "V mapo »Prejeto« je prispelo {0} novih sporočil",
-  "Open \"lsmail\" to see them.": "Odprite \"lsmail\", da jih vidite.",
+  "Open \"mail\" to see them.": "Odprite \"mail\", da jih vidite.",
   "Unable to remove file: {0}": "Datoteke ni mogoče odstraniti: {0}",
   "Removes a directory or a file": "Odstrani imenik ali datoteko",
   "Can't remove {0} because it doesn't exist.": "{0} ni mogoče odstraniti, ker ne obstaja.",

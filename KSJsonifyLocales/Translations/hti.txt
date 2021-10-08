@@ -611,7 +611,7 @@ Mod {0} pa gen non pati a. Mod analiz echwe. Revize kòd sous la.
 Mod {0} pa gen kòmandman an. Mod analiz echwe. Revize kòd sous la.
 Ou dwe vire sou mòd debug anvan ou ka klè boutèy demi lit debug.
 {0} nouvo mesaj yo te rive nan bwat resepsyon an.
-Louvri "lsmail" pou wè yo.
+Louvri "mail" pou wè yo.
 Kapab retire dosye: {0}
 Retire yon anyè oswa yon dosye
 Pa ka retire {0} paske li pa egziste.

@@ -611,7 +611,7 @@ Mod {0} nie ma nazwy cz??ci. Analiza mod?w nie powiod?a si?. Przejrzyj kod ?r?d?
 Mod {0} nie ma polecenia. Analiza mod?w nie powiod?a si?. Przejrzyj kod ?r?d?owy.
 Aby wyczy?ci? dziennik debugowania, musisz w??czy? tryb debugowania.
 Do skrzynki odbiorczej dotar?o {0} nowych wiadomo?ci.
-Otw?rz „lsmail”, aby je zobaczy?.
+Otw?rz „mail”, aby je zobaczy?.
 Nie mo?na usun?? pliku: {0}
 Usuwa katalog lub plik
 Nie mo?na usun?? {0}, poniewa? nie istnieje.

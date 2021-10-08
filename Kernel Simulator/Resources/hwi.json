@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "ʻAʻohe o Mod ke kauoha. Ua holo pono ka mod Parsing. Loiloi i ke code kumu.",
   "You must turn on debug mode before you can clear debug log.": "Pono ʻoe e hoʻā i ka mode debug ma mua o ka hoʻomaʻemaʻe ʻana i ka log debug.",
   "{0} new messages arrived in inbox.": "{0} hiki mai nā leka hou i ka pahu leka.",
-  "Open \"lsmail\" to see them.": "Wehe i \"lsmail\" e ʻike iā lākou.",
+  "Open \"mail\" to see them.": "Wehe i \"mail\" e ʻike iā lākou.",
   "Unable to remove file: {0}": "ʻAʻole hiki ke hemo i ka faile: {0}",
   "Removes a directory or a file": "Wehe i kahi papa kuhikuhi a i ʻole faila",
   "Can't remove {0} because it doesn't exist.": "ʻAʻole hiki ke wehe iā {0} no ka mea ʻaʻohe ia.",

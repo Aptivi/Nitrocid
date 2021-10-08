@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} nema naredbu. Analiza moda nije uspjela. Pregledajte izvorni kod.",
   "You must turn on debug mode before you can clear debug log.": "Morate uključiti način otklanjanja pogrešaka prije nego što možete očistiti zapisnik o otklanjanju pogrešaka.",
   "{0} new messages arrived in inbox.": "U pristiglu poštu stiglo je {0} novih poruka.",
-  "Open \"lsmail\" to see them.": "Otvorite \"lsmail\" da biste ih vidjeli.",
+  "Open \"mail\" to see them.": "Otvorite \"mail\" da biste ih vidjeli.",
   "Unable to remove file: {0}": "Nije moguće ukloniti datoteku: {0}",
   "Removes a directory or a file": "Uklanja direktorij ili datoteku",
   "Can't remove {0} because it doesn't exist.": "{0} nije moguće ukloniti jer ne postoji.",

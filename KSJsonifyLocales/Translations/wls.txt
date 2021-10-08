@@ -611,7 +611,7 @@ Nid oes gan Mod {0} yr enw rhan. Methodd dosrannu mod. Adolygwch y cod ffynhonne
 Nid oes gan Mod {0} y gorchymyn. Methodd dosrannu mod. Adolygwch y cod ffynhonnell.
 Rhaid i chi droi ymlaen modd dadfygio cyn y gallwch chi glirio log dadfygio.
 Cyrhaeddodd {0} negeseuon newydd yn y blwch derbyn.
-Agorwch "lsmail" i'w gweld.
+Agorwch "mail" i'w gweld.
 Methu tynnu ffeil: {0}
 Yn dileu cyfeiriadur neu ffeil
 Methu tynnu {0} oherwydd nad yw'n bodoli.

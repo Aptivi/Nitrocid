@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Modilla {0} ei ole komentoa. Modin jäsentäminen epäonnistui. Tarkista lähdekoodi.",
   "You must turn on debug mode before you can clear debug log.": "Virheenkorjaustila on otettava käyttöön, ennen kuin voit tyhjentää virhelokin.",
   "{0} new messages arrived in inbox.": "{0} uutta viestiä saapui postilaatikkoon.",
-  "Open \"lsmail\" to see them.": "Avaa \"lsmail\" nähdäksesi ne.",
+  "Open \"mail\" to see them.": "Avaa \"mail\" nähdäksesi ne.",
   "Unable to remove file: {0}": "Tiedostoa ei voi poistaa: {0}",
   "Removes a directory or a file": "Poistaa hakemiston tai tiedoston",
   "Can't remove {0} because it doesn't exist.": "{0} ei voi poistaa, koska sitä ei ole olemassa.",

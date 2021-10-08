@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "मॉड {0} के पास कमांड नहीं है। मॉड पार्सिंग विफल रही। स्रोत कोड की समीक्षा करें।",
   "You must turn on debug mode before you can clear debug log.": "डीबग लॉग को खाली करने से पहले आपको डीबग मोड चालू करना होगा।",
   "{0} new messages arrived in inbox.": "{0} नए संदेश इनबॉक्स में आए।",
-  "Open \"lsmail\" to see them.": "उन्हें देखने के लिए \"lsmail\" खोलें।",
+  "Open \"mail\" to see them.": "उन्हें देखने के लिए \"mail\" खोलें।",
   "Unable to remove file: {0}": "फ़ाइल निकालने में असमर्थ: {0}",
   "Removes a directory or a file": "निर्देशिका या फ़ाइल को निकालता है",
   "Can't remove {0} because it doesn't exist.": "{0} को हटा नहीं सकते क्योंकि यह मौजूद नहीं है।",

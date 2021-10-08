@@ -611,7 +611,7 @@ Mod {0} nima imena dela. Razčlenjevanje modov ni uspelo. Preglejte izvorno kodo
 Mod {0} nima ukaza. Razčlenjevanje modov ni uspelo. Preglejte izvorno kodo.
 Preden lahko počistite dnevnik odpravljanja napak, morate vklopiti način za odpravljanje napak.
 V mapo »Prejeto« je prispelo {0} novih sporočil
-Odprite "lsmail", da jih vidite.
+Odprite "mail", da jih vidite.
 Datoteke ni mogoče odstraniti: {0}
 Odstrani imenik ali datoteko
 {0} ni mogoče odstraniti, ker ne obstaja.

@@ -611,7 +611,7 @@ Mod {0} har ikke delnavnet. Mod-parsing mislykkedes. Gennemgå kildekoden.
 Mod {0} har ikke kommandoen. Mod-parsing mislykkedes. Gennemgå kildekoden.
 Du skal aktivere fejlretningstilstand, før du kan rydde fejlretningslog.
 {0} nye meddelelser ankom i indbakken.
-Åbn "lsmail" for at se dem.
+Åbn "mail" for at se dem.
 Kunne ikke fjerne filen: {0}
 Fjerner et bibliotek eller en fil
 Kan ikke fjerne {0}, fordi det ikke findes.

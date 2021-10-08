@@ -611,7 +611,7 @@ Mod {0} tidak memiliki nama bagian. Penguraian mod gagal. Tinjau kode sumbernya.
 Mod {0} tidak memiliki perintah. Penguraian mod gagal. Tinjau kode sumbernya.
 Anda harus mengaktifkan mode debug sebelum Anda dapat menghapus log debug.
 {0} pesan baru tiba di kotak masuk.
-Buka "lsmail" untuk melihatnya.
+Buka "mail" untuk melihatnya.
 Tidak dapat menghapus file: {0}
 Menghapus direktori atau file
 Tidak dapat menghapus {0} karena tidak ada.

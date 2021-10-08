@@ -611,7 +611,7 @@ Mod {0} m'għandux l-isem tal-parti. L-analiżi tal-mod falliet. Irrevedi l-kodi
 Mod {0} m'għandux il-kmand. L-analiżi tal-mod falliet. Irrevedi l-kodiċi tas-sors.
 Int trid tixgħel il-modalità ta 'debug qabel ma tkun tista' tnaddaf id-debug log.
 {0} messaġġi ġodda waslu fl-inbox.
-Iftaħ "lsmail" biex tarahom.
+Iftaħ "mail" biex tarahom.
 Ma jistax ineħħi l-fajl: {0}
 Tneħħi direttorju jew fajl
 Ma tistax tneħħi {0} għax ma teżistix.

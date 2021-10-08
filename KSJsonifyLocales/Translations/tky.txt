@@ -611,7 +611,7 @@ Mod {0}, parça adına sahip değil. Mod ayrıştırma başarısız oldu. Kaynak
 Mod {0} komutuna sahip değil. Mod ayrıştırma başarısız oldu. Kaynak kodunu gözden geçirin.
 Hata ayıklama günlüğünü temizleyebilmeniz için önce hata ayıklama modunu açmalısınız.
 Gelen kutusuna {0} yeni mesaj geldi.
-Onları görmek için "lsmail"i açın.
+Onları görmek için "mail"i açın.
 Dosya kaldırılamıyor: {0}
 Bir dizini veya dosyayı kaldırır
 {0}, mevcut olmadığı için kaldırılamıyor.

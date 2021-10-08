@@ -611,7 +611,7 @@ Mod {0} nema naziv dela. Ra??lanjivanje moda nije uspelo. Pregledajte izvorni ko
 Mod {0} nema komandu. Ra??lanjivanje moda nije uspelo. Pregledajte izvorni kod.
 Morate da uklju?ite re?im otklanjanja gre?aka da biste mogli da o?istite dnevnik otklanjanja gre?aka.
 {0} novih poruka je stiglo u prijemno sandu?e.
-Otvorite „lsmail“ da biste ih videli.
+Otvorite „mail“ da biste ih videli.
 Nije moguc?e ukloniti datoteku: {0}
 Uklanja direktorijum ili datoteku
 Nije moguc?e ukloniti {0} jer ne postoji.

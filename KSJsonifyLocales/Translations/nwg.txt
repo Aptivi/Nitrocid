@@ -611,7 +611,7 @@ Mod {0} har ikke delenavnet. Mod-parsing mislyktes. Gjennomgå kildekoden.
 Mod {0} har ikke kommandoen. Mod-parsing mislyktes. Gjennomgå kildekoden.
 Du må slå på feilsøkingsmodus før du kan tømme feilsøkingsloggen.
 {0} nye meldinger ankom innboksen.
-Åpne "lsmail" for å se dem.
+Åpne "mail" for å se dem.
 Kan ikke fjerne filen: {0}
 Fjerner en katalog eller en fil
 Kan ikke fjerne {0} fordi den ikke eksisterer.

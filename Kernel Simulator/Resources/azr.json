@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Modda {0} əmri yoxdur. Mod təhlili alınmadı. Mənbə kodunu nəzərdən keçirin.",
   "You must turn on debug mode before you can clear debug log.": "Hata ayaqlama qeydini silməzdən əvvəl ayıklama rejimini açmalısınız.",
   "{0} new messages arrived in inbox.": "{0} yeni mesajlar gələnlər qutusuna gəldi.",
-  "Open \"lsmail\" to see them.": "Onları görmək üçün \"lsmail\" açın.",
+  "Open \"mail\" to see them.": "Onları görmək üçün \"mail\" açın.",
   "Unable to remove file: {0}": "Fayl silinə bilmir: {0}",
   "Removes a directory or a file": "Bir qovluğu və ya bir faylı silər",
   "Can't remove {0} because it doesn't exist.": "Mövcud olmadığı üçün {0} silinə bilmir.",

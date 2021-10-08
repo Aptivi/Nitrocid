@@ -611,7 +611,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} méiyǒu gāi mìnglìng. Mod jiěxī shībài. Chákàn yuán dàimǎ.",
   "You must turn on debug mode before you can clear debug log.": "Nín bìxū xiān dǎkāi tiáoshì móshì, ránhòu cáinéng qīngchú tiáoshì rìzhì.",
   "{0} new messages arrived in inbox.": "{0} Tiáo xīn yóujiàn dàodá shōu jiàn xiāng.",
-  "Open \"lsmail\" to see them.": "Dǎkāi “lsmail” yǐ chákàn tāmen.",
+  "Open \"mail\" to see them.": "Dǎkāi “mail” yǐ chákàn tāmen.",
   "Unable to remove file: {0}": "Wúfǎ shānchú wénjiàn:{0}",
   "Removes a directory or a file": "Shānchú mùlù huò wénjiàn",
   "Can't remove {0} because it doesn't exist.": "wúfǎ shānchú {0}, yīnwèi tā bù cúnzài.",

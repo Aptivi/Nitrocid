@@ -611,7 +611,7 @@ Mod {0} méiyǒu bùjiàn míngchēng. Mod jiěxī shībài. Chákàn yuán dài
 Mod {0} méiyǒu gāi mìnglìng. Mod jiěxī shībài. Chákàn yuán dàimǎ.
 Nín bìxū xiān dǎkāi tiáoshì móshì, ránhòu cáinéng qīngchú tiáoshì rìzhì.
 {0} Tiáo xīn yóujiàn dàodá shōu jiàn xiāng.
-Dǎkāi “lsmail” yǐ chákàn tāmen.
+Dǎkāi “mail” yǐ chákàn tāmen.
 Wúfǎ shānchú wénjiàn:{0}
 Shānchú mùlù huò wénjiàn
 wúfǎ shānchú {0}, yīnwèi tā bù cúnzài.

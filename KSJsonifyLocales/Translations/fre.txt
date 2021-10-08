@@ -611,7 +611,7 @@ Le mod {0} n'a pas le nom de la pièce. L'analyse du mod a échoué. Vérifiez l
 Le mod {0} n'a pas la commande. L'analyse du mod a échoué. Vérifiez le code source.
 Vous devez activer le mode débogage avant de pouvoir effacer le journal de débogage.
 {0} nouveaux messages sont arrivés dans la boîte de réception.
-Ouvrez «lsmail» pour les voir.
+Ouvrez «mail» pour les voir.
 Impossible de supprimer le fichier: {0}
 Supprime un répertoire ou un fichier
 Impossible de supprimer {0}, car il n'existe pas.

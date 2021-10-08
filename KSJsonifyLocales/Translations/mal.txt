@@ -611,7 +611,7 @@ Mod {0} tidak mempunyai nama bahagian. Penguraian mod gagal. Semak kod sumber.
 Mod {0} tidak mempunyai arahan. Penguraian mod gagal. Semak kod sumber.
 Anda mesti menghidupkan mod debug sebelum anda dapat membersihkan log debug.
 {0} mesej baru tiba di peti masuk.
-Buka "lsmail" untuk melihatnya.
+Buka "mail" untuk melihatnya.
 Tidak dapat mengalih keluar fail: {0}
 Membuang direktori atau fail
 Tidak dapat mengalih keluar {0} kerana tidak ada.

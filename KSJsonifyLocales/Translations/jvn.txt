@@ -611,7 +611,7 @@ Mod {0} ora duwe jeneng bagean. Parsing mod gagal. Priksa kode sumber.
 Mod {0} ora duwe komando. Parsing mod gagal. Priksa kode sumber.
 Sampeyan kudu nguripake mode debug sadurunge bisa mbusak log debug.
 {0} pesen anyar mlebu ing kothak mlebu.
-Bukak "lsmail" kanggo ndeleng.
+Bukak "mail" kanggo ndeleng.
 Ora bisa mbusak file: {0}
 Mbusak direktori utawa file
 Ora bisa mbusak {0} amarga ora ana.

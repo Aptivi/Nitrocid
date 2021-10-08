@@ -611,7 +611,7 @@ Mod {0} heeft niet de onderdeelnaam. Mod-parsing is mislukt. Bekijk de broncode.
 Mod {0} heeft het commando niet. Mod-parsing is mislukt. Bekijk de broncode.
 U moet de foutopsporingsmodus inschakelen voordat u het foutopsporingslogboek kunt wissen.
 {0} nieuwe berichten zijn binnengekomen in de inbox.
-Open "lsmail" om ze te zien.
+Open "mail" om ze te zien.
 Kan bestand niet verwijderen: {0}
 Verwijdert een map of een bestand
 Kan {0} niet verwijderen omdat het niet bestaat.

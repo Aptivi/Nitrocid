@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} lays ladayh al'amra. fashil tahlil wizarat aldifaei. rajae altaelimat albarmajiat almusadara.",
   "You must turn on debug mode before you can clear debug log.": "yajib tashghil wade altashih qabl 'an tatamakan min mash sijila altashihi.",
   "{0} new messages arrived in inbox.": "wasalat {0} min alrasayil aljadidat 'iilaa albarid alwaridi.",
-  "Open \"lsmail\" to see them.": "aftah \"lsmail\" liruyatihim.",
+  "Open \"mail\" to see them.": "aftah \"mail\" liruyatihim.",
   "Unable to remove file: {0}": "taeadhur 'iizalat almilafa: {0}",
   "Removes a directory or a file": "yuzil dalil 'aw milafun",
   "Can't remove {0} because it doesn't exist.": "la yumkin 'iizala {0} li'anah ghayr mawjudi.",

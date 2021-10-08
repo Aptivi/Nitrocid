@@ -611,7 +611,7 @@ El mod {0} no tiene el nombre de la pieza. Error al analizar el mod. Revise el c
 El mod {0} no tiene el comando. Error al analizar el mod. Revise el código fuente.
 Debe activar el modo de depuración antes de poder borrar el registro de depuración.
 {0} mensajes nuevos llegaron a la bandeja de entrada.
-Abra "lsmail" para verlos.
+Abra "mail" para verlos.
 No se puede eliminar el archivo: {0}
 Elimina un directorio o un archivo
 No se puede eliminar {0} porque no existe.

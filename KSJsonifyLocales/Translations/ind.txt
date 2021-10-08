@@ -611,7 +611,7 @@ mod {0} ka paart naam nahin hai. mod paarsing viphal rahee. srot kod kee sameeks
 mod {0} ke paas kamaand nahin hai. mod paarsing viphal rahee. srot kod kee sameeksha karen.
 deebag log ko khaalee karane se pahale aapako deebag mod chaaloo karana hoga.
 {0} nae sandesh inaboks mein aae.
-unhen dekhane ke lie "lsmail" kholen.
+unhen dekhane ke lie "mail" kholen.
 fail nikaalane mein asamarth: {0}
 nirdeshika ya fail ko nikaalata hai
 {0} ko hata nahin sakate kyonki yah maujood nahin hai.

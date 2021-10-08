@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mōḍa {0} ēra kamānḍa nē'i. Mōḍa pārsiṁ byartha. Utsa kōḍa paryālōcanā.",
   "You must turn on debug mode before you can clear debug log.": "Āpani ḍibāga laga pariṣkāra karāra āgē āpanākē abaśya'i ḍibāga mōḍaṭi cālu karatē habē.",
   "{0} new messages arrived in inbox.": "Inabaksē messages 0} natuna bārtā ēsēchē.",
-  "Open \"lsmail\" to see them.": "Tādēra dēkhatē\"lsmail\" khuluna.",
+  "Open \"mail\" to see them.": "Tādēra dēkhatē\"mail\" khuluna.",
   "Unable to remove file: {0}": "Phā'ila apasāraṇa karatē akṣama: {0}",
   "Removes a directory or a file": "Ḍirēkṭari bā ēkaṭi phā'ila sariẏē dēẏa",
   "Can't remove {0} because it doesn't exist.": "{0} sarānō yāẏa nā kāraṇa ēṭi bidyamāna nē'i.",

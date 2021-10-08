@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} ùn hà micca u cumandu. L'analisi di u Mod hà fiascatu. Verificate u codice fonte.",
   "You must turn on debug mode before you can clear debug log.": "Duvete attivà u modu di debug prima di pudè cancellà u log di debug.",
   "{0} new messages arrived in inbox.": "{0} novi missaghji sò ghjunti in inbox.",
-  "Open \"lsmail\" to see them.": "Aprite \"lsmail\" per vedeli.",
+  "Open \"mail\" to see them.": "Aprite \"mail\" per vedeli.",
   "Unable to remove file: {0}": "Impussibule di caccià u fugliale: {0}",
   "Removes a directory or a file": "Elimina un repertoriu o un schedariu",
   "Can't remove {0} because it doesn't exist.": "Ùn pò micca caccià {0} perchè ùn esiste micca.",

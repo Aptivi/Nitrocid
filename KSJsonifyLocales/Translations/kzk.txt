@@ -611,7 +611,7 @@ Temperatwra üşin qajet qondırğını qoldanw (bul tek «awa rayı» komandas�
 {0} rejïminde pärmen joq. Modwldi taldaw sätsiz ayaqtaldı. Bastapqı kodtı qarap şığıñız.
 Jöndew jwrnalı aşılmay turwı kerek.
 {0} jaña xabar kirispe jäşigine keldi.
-«Lsmail» aşıñız.
+«mail» aşıñız.
 Fayldı jetkizw mümkin emes: {0}
 Katalogtı nemese fayldı joyadı
 {0} mümkin emes, mümkin ol joq.

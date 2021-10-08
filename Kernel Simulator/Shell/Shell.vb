@@ -88,7 +88,7 @@ Public Module Shell
                                                                              {"logout", New CommandInfo("logout", ShellCommandType.Shell, "Logs you out", "", False, 0, New LogoutCommand, False, False, True)},
                                                                              {"loteresp", New CommandInfo("loteresp", ShellCommandType.Shell, "Respond to love or hate comments.", "", False, 0, New LoteRespCommand)},
                                                                              {"lsdbgdev", New CommandInfo("lsdbgdev", ShellCommandType.Shell, "Lists debugging devices connected", "", False, 0, New LsDbgDevCommand, True, True)},
-                                                                             {"lsmail", New CommandInfo("lsmail", ShellCommandType.Shell, "Lists all mails in the specific user.", "[emailAddress]", False, 0, New LsMailCommand)},
+                                                                             {"mail", New CommandInfo("mail", ShellCommandType.Shell, "Opens the mail client", "[emailAddress]", False, 0, New MailCommand)},
                                                                              {"mathbee", New CommandInfo("mathbee", ShellCommandType.Shell, "See if you can solve mathematical equations on time", "", False, 0, New MathBeeCommand)},
                                                                              {"md", New CommandInfo("md", ShellCommandType.Shell, "Creates a directory", "<directory>", True, 1, New MdCommand)},
                                                                              {"mkfile", New CommandInfo("mkfile", ShellCommandType.Shell, "Makes a new file", "<file>", True, 1, New MkFileCommand)},

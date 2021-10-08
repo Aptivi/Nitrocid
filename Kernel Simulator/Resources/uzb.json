@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "{0} rejimida buyruq yo'q. Tartibni ajratib bo'lmadi. Manba kodini ko'rib chiqing.",
   "You must turn on debug mode before you can clear debug log.": "Tuzatish jurnalini tozalashdan oldin siz disk raskadrovka rejimini yoqishingiz kerak.",
   "{0} new messages arrived in inbox.": "{0} yangi xabarlar pochta qutisiga keldi.",
-  "Open \"lsmail\" to see them.": "Ularni ko'rish uchun \"lsmail\" ni oching.",
+  "Open \"mail\" to see them.": "Ularni ko'rish uchun \"mail\" ni oching.",
   "Unable to remove file: {0}": "Fayl olib tashlanmadi: {0}",
   "Removes a directory or a file": "Katalogni yoki faylni olib tashlaydi",
   "Can't remove {0} because it doesn't exist.": "{0} olib tashlanmadi, chunki u mavjud emas.",

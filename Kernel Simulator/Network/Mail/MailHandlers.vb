@@ -55,7 +55,7 @@ Public Module MailHandlers
         If Folder.Count > IMAP_Messages.Count Then
             Dim NewMessagesCount As Integer = Folder.Count - IMAP_Messages.Count
             NotifySend(New Notification(DoTranslation("{0} new messages arrived in inbox.").FormatString(NewMessagesCount),
-                                        DoTranslation("Open ""lsmail"" to see them."),
+                                        DoTranslation("Open ""mail"" to see them."),
                                         NotifPriority.Medium, NotifType.Normal))
         End If
     End Sub

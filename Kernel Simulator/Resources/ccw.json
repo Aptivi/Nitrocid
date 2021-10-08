@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} ilibe lamulo. Kupatula ma Mod kwalephera. Unikani kachidindo koyambira.",
   "You must turn on debug mode before you can clear debug log.": "Muyenera kuyatsa njira yolakwika musanachotsere chipika.",
   "{0} new messages arrived in inbox.": "{0} mauthenga atsopano afika mu inbox.",
-  "Open \"lsmail\" to see them.": "Tsegulani \"lsmail\" kuti muwawone.",
+  "Open \"mail\" to see them.": "Tsegulani \"mail\" kuti muwawone.",
   "Unable to remove file: {0}": "Takanika kuchotsa fayilo: {0}",
   "Removes a directory or a file": "Imachotsa chikwatu kapena fayilo",
   "Can't remove {0} because it doesn't exist.": "Sangathe kuchotsa {0} chifukwa kulibe.",

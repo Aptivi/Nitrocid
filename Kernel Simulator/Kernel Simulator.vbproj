@@ -438,7 +438,7 @@
     <Compile Include="Shell\Commands\Logout.vb" />
     <Compile Include="Shell\Commands\LoteResp.vb" />
     <Compile Include="Shell\Commands\LsDbgDev.vb" />
-    <Compile Include="Shell\Commands\LsMail.vb" />
+    <Compile Include="Shell\Commands\Mail.vb" />
     <Compile Include="Shell\Commands\MathBee.vb" />
     <Compile Include="Shell\Commands\Md.vb" />
     <Compile Include="Shell\Commands\MkFile.vb" />

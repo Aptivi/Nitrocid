@@ -611,7 +611,7 @@ mōḍa {0} anśēra nāma nē'i. Mōḍa pārsiṁ byartha. Utsa kōḍa paryā
 Mōḍa {0} ēra kamānḍa nē'i. Mōḍa pārsiṁ byartha. Utsa kōḍa paryālōcanā.
 Āpani ḍibāga laga pariṣkāra karāra āgē āpanākē abaśya'i ḍibāga mōḍaṭi cālu karatē habē.
 Inabaksē messages 0} natuna bārtā ēsēchē.
-Tādēra dēkhatē"lsmail" khuluna.
+Tādēra dēkhatē"mail" khuluna.
 Phā'ila apasāraṇa karatē akṣama: {0}
 Ḍirēkṭari bā ēkaṭi phā'ila sariẏē dēẏa
 {0} sarānō yāẏa nā kāraṇa ēṭi bidyamāna nē'i.

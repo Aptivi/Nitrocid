@@ -611,7 +611,7 @@ Ua kū ʻo {0} v{1}
 ʻAʻohe o Mod ke kauoha. Ua holo pono ka mod Parsing. Loiloi i ke code kumu.
 Pono ʻoe e hoʻā i ka mode debug ma mua o ka hoʻomaʻemaʻe ʻana i ka log debug.
 {0} hiki mai nā leka hou i ka pahu leka.
-Wehe i "lsmail" e ʻike iā lākou.
+Wehe i "mail" e ʻike iā lākou.
 ʻAʻole hiki ke hemo i ka faile: {0}
 Wehe i kahi papa kuhikuhi a i ʻole faila
 ʻAʻole hiki ke wehe iā {0} no ka mea ʻaʻohe ia.

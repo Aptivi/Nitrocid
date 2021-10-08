@@ -611,7 +611,7 @@ Mod {0} no té el nom de la peça. S'ha produït un error en analitzar les modif
 Mod {0} no té l'ordre. S'ha produït un error en analitzar les modificacions. Reviseu el codi font.
 Per activar el registre de depuració, heu d'activar el mode de depuració.
 Han arribat {0} missatges nous a la safata d'entrada.
-Obriu "lsmail" per veure'ls.
+Obriu "mail" per veure'ls.
 No es pot eliminar el fitxer: {0}
 Elimina un directori o un fitxer
 No es pot eliminar {0} perquè no existeix.

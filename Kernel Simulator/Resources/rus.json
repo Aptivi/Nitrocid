@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "U moda {0} net komandy. Ne udalos' proanalizirovat' mod. Prosmotrite iskhodnyy kod.",
   "You must turn on debug mode before you can clear debug log.": "Pered ochistkoy zhurnala otladki neobkhodimo vklyuchit' rezhim otladki.",
   "{0} new messages arrived in inbox.": "Vo vkhodyashchiye postupilo novykh soobshcheniy: {0}.",
-  "Open \"lsmail\" to see them.": "Otkroyte «lsmail», chtoby uvidet' ikh.",
+  "Open \"mail\" to see them.": "Otkroyte «mail», chtoby uvidet' ikh.",
   "Unable to remove file: {0}": "Nevozmozhno udalit' fayl: {0}",
   "Removes a directory or a file": "Udalyayet katalog ili fayl",
   "Can't remove {0} because it doesn't exist.": "Nevozmozhno udalit' {0}, potomu chto on ne sushchestvuyet.",

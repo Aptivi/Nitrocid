@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} pa gen kòmandman an. Mod analiz echwe. Revize kòd sous la.",
   "You must turn on debug mode before you can clear debug log.": "Ou dwe vire sou mòd debug anvan ou ka klè boutèy demi lit debug.",
   "{0} new messages arrived in inbox.": "{0} nouvo mesaj yo te rive nan bwat resepsyon an.",
-  "Open \"lsmail\" to see them.": "Louvri \"lsmail\" pou wè yo.",
+  "Open \"mail\" to see them.": "Louvri \"mail\" pou wè yo.",
   "Unable to remove file: {0}": "Kapab retire dosye: {0}",
   "Removes a directory or a file": "Retire yon anyè oswa yon dosye",
   "Can't remove {0} because it doesn't exist.": "Pa ka retire {0} paske li pa egziste.",

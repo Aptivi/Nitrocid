@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0}e myeonglyeong-i eobs-seubnida. Mod gumun bunseog-e silpaehaessseubnida. soseu kodeuleul geomtohasibsio.",
   "You must turn on debug mode before you can clear debug log.": "dibeogeu logeuleul jiulyeomyeon meonjeo dibeogeu modeuleul kyeoyahabnida.",
   "{0} new messages arrived in inbox.": "{0} gaeui sae mesijigabad-eun pyeonjiham-e dochaghaessseubnida.",
-  "Open \"lsmail\" to see them.": "geudeul-eul bolyeomyeon \"lsmail\"eul yeobni da.",
+  "Open \"mail\" to see them.": "geudeul-eul bolyeomyeon \"mail\"eul yeobni da.",
   "Unable to remove file: {0}": "pail-eul jegeo hal su eobs-seubnida : {0}",
   "Removes a directory or a file": "dilegtoli ttoneun pail-eul jegeohabnida.",
   "Can't remove {0} because it doesn't exist.": "{0}i (ga) jonjaehaji anh-eumeulo sagjehal su eobs-seubnida.",

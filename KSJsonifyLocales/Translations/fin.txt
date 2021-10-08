@@ -611,7 +611,7 @@ Modilla {0} ei ole osan nimeä. Modin jäsentäminen epäonnistui. Tarkista läh
 Modilla {0} ei ole komentoa. Modin jäsentäminen epäonnistui. Tarkista lähdekoodi.
 Virheenkorjaustila on otettava käyttöön, ennen kuin voit tyhjentää virhelokin.
 {0} uutta viestiä saapui postilaatikkoon.
-Avaa "lsmail" nähdäksesi ne.
+Avaa "mail" nähdäksesi ne.
 Tiedostoa ei voi poistaa: {0}
 Poistaa hakemiston tai tiedoston
 {0} ei voi poistaa, koska sitä ei ole olemassa.

@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "{0} imperium non habet ad mod. Mod parsing defecit. Review fons codice.",
   "You must turn on debug mode before you can clear debug log.": "Vos hinc possis prius lusione cum conversus in lusione cum iniuriarum.",
   "{0} new messages arrived in inbox.": "{0} novas in capsa nuntiorum pervenit.",
-  "Open \"lsmail\" to see them.": "Aperta \"lsmail 'ad eos.",
+  "Open \"mail\" to see them.": "Aperta \"mail 'ad eos.",
   "Unable to remove file: {0}": "Removere 'non file: {0}",
   "Removes a directory or a file": "Trahit vel lima Directory",
   "Can't remove {0} because it doesn't exist.": "{0} removere potest, quod non est.",

@@ -611,7 +611,7 @@ Aukeratu tenperaturarako nahi duzun unitatea (hau "eguraldia" komandoari bakarri
 {0} Mod-ek ez du komandoa. Mod analisiak huts egin du. Berrikusi iturburu kodea.
 Arazketa modua aktibatu behar duzu arazketa erregistroa garbitu aurretik.
 {0} mezu berri iritsi dira sarrera-ontzira.
-Ireki "lsmail" ikusteko.
+Ireki "mail" ikusteko.
 Ezin da fitxategia kendu: {0}
 Direktorio edo fitxategi bat kentzen du
 Ezin da {0} kendu existitzen ez delako.

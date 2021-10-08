@@ -611,7 +611,7 @@ Mod {0} nema naziv dijela. Analiza moda nije uspjela. Pregledajte izvorni kod.
 Mod {0} nema naredbu. Analiza moda nije uspjela. Pregledajte izvorni kod.
 Morate uključiti način otklanjanja pogrešaka prije nego što možete očistiti zapisnik o otklanjanju pogrešaka.
 U pristiglu poštu stiglo je {0} novih poruka.
-Otvorite "lsmail" da biste ih vidjeli.
+Otvorite "mail" da biste ih vidjeli.
 Nije moguće ukloniti datoteku: {0}
 Uklanja direktorij ili datoteku
 {0} nije moguće ukloniti jer ne postoji.

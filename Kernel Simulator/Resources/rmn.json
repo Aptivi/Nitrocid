@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} nu are comanda. Analiza modului a e?uat. Examina?i codul surs?.",
   "You must turn on debug mode before you can clear debug log.": "Trebuie s? activa?i modul de depanare înainte de a putea ?terge jurnalul de depanare.",
   "{0} new messages arrived in inbox.": "{0} mesaje noi au sosit în c?su?a de e-mail.",
-  "Open \"lsmail\" to see them.": "Deschide?i „lsmail” pentru a le vedea.",
+  "Open \"mail\" to see them.": "Deschide?i „mail” pentru a le vedea.",
   "Unable to remove file: {0}": "Imposibil de eliminat fi?ierul: {0}",
   "Removes a directory or a file": "Elimin? un director sau un fi?ier",
   "Can't remove {0} because it doesn't exist.": "Nu se poate elimina {0} deoarece nu exist?.",

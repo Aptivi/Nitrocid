@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} hat den Befehl nicht. Mod-Analyse fehlgeschlagen. Überprüfen Sie den Quellcode.",
   "You must turn on debug mode before you can clear debug log.": "Sie müssen den Debug-Modus aktivieren, bevor Sie das Debug-Protokoll löschen können.",
   "{0} new messages arrived in inbox.": "{0} Neue Nachrichten sind im Posteingang eingetroffen.",
-  "Open \"lsmail\" to see them.": "Öffnen Sie \"lsmail\", um sie zu sehen.",
+  "Open \"mail\" to see them.": "Öffnen Sie \"mail\", um sie zu sehen.",
   "Unable to remove file: {0}": "Datei kann nicht entfernt werden: {0}",
   "Removes a directory or a file": "Entfernt ein Verzeichnis oder eine Datei",
   "Can't remove {0} because it doesn't exist.": "{0} kann nicht entfernt werden, da es nicht vorhanden ist.",

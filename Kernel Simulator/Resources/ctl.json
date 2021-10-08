@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} no té l'ordre. S'ha produït un error en analitzar les modificacions. Reviseu el codi font.",
   "You must turn on debug mode before you can clear debug log.": "Per activar el registre de depuració, heu d'activar el mode de depuració.",
   "{0} new messages arrived in inbox.": "Han arribat {0} missatges nous a la safata d'entrada.",
-  "Open \"lsmail\" to see them.": "Obriu \"lsmail\" per veure'ls.",
+  "Open \"mail\" to see them.": "Obriu \"mail\" per veure'ls.",
   "Unable to remove file: {0}": "No es pot eliminar el fitxer: {0}",
   "Removes a directory or a file": "Elimina un directori o un fitxer",
   "Can't remove {0} because it doesn't exist.": "No es pot eliminar {0} perquè no existeix.",

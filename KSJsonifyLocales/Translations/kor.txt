@@ -611,7 +611,7 @@ Mod {0}e bupum ileum-i eobs-seubnida. Mod gumun bunseog-e silpaehaessseubnida. s
 Mod {0}e myeonglyeong-i eobs-seubnida. Mod gumun bunseog-e silpaehaessseubnida. soseu kodeuleul geomtohasibsio.
 dibeogeu logeuleul jiulyeomyeon meonjeo dibeogeu modeuleul kyeoyahabnida.
 {0} gaeui sae mesijigabad-eun pyeonjiham-e dochaghaessseubnida.
-geudeul-eul bolyeomyeon "lsmail"eul yeobni da.
+geudeul-eul bolyeomyeon "mail"eul yeobni da.
 pail-eul jegeo hal su eobs-seubnida : {0}
 dilegtoli ttoneun pail-eul jegeohabnida.
 {0}i (ga) jonjaehaji anh-eumeulo sagjehal su eobs-seubnida.

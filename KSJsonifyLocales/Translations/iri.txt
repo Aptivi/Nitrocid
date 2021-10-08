@@ -611,7 +611,7 @@ Níl an chuid ainm ag Mod {0}. Theip ar pharsáil mod. Déan athbhreithniú ar a
 Níl an t-ordú ag Mod {0}. Theip ar pharsáil mod. Déan athbhreithniú ar an gcód foinse.
 Caithfidh tú an modh dífhabhtaithe a chasadh air sular féidir leat logáil dífhabhtaithe a ghlanadh.
 Tháinig {0} teachtaireachtaí nua isteach sa bhosca isteach.
-Oscail "lsmail" chun iad a fheiceáil.
+Oscail "mail" chun iad a fheiceáil.
 Ní féidir an comhad a bhaint: {0}
 Bain eolaire nó comhad
 Ní féidir {0} a bhaint toisc nach bhfuil sé ann.

@@ -611,7 +611,7 @@ Modda {0} hissənin adı yoxdur. Mod təhlili alınmadı. Mənbə kodunu nəzər
 Modda {0} əmri yoxdur. Mod təhlili alınmadı. Mənbə kodunu nəzərdən keçirin.
 Hata ayaqlama qeydini silməzdən əvvəl ayıklama rejimini açmalısınız.
 {0} yeni mesajlar gələnlər qutusuna gəldi.
-Onları görmək üçün "lsmail" açın.
+Onları görmək üçün "mail" açın.
 Fayl silinə bilmir: {0}
 Bir qovluğu və ya bir faylı silər
 Mövcud olmadığı üçün {0} silinə bilmir.

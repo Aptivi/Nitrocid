@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Ang Mod {0} ay walang utos. Nabigo ang pag-parse ng mod. Suriin ang source code.",
   "You must turn on debug mode before you can clear debug log.": "Dapat mong i-on ang debug mode bago mo i-clear ang debug log.",
   "{0} new messages arrived in inbox.": "{0} mga bagong mensahe ang dumating sa inbox.",
-  "Open \"lsmail\" to see them.": "Buksan ang \"lsmail\" upang makita ang mga ito.",
+  "Open \"mail\" to see them.": "Buksan ang \"mail\" upang makita ang mga ito.",
   "Unable to remove file: {0}": "Hindi matanggal ang file: {0}",
   "Removes a directory or a file": "Tinatanggal ang isang direktoryo o isang file",
   "Can't remove {0} because it doesn't exist.": "Hindi matanggal {0} dahil wala ito.",

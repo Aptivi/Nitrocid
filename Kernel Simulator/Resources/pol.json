@@ -612,7 +612,7 @@
   "Mod {0} does not have the command. Mod parsing failed. Review the source code.": "Mod {0} nie ma polecenia. Analiza mod?w nie powiod?a si?. Przejrzyj kod ?r?d?owy.",
   "You must turn on debug mode before you can clear debug log.": "Aby wyczy?ci? dziennik debugowania, musisz w??czy? tryb debugowania.",
   "{0} new messages arrived in inbox.": "Do skrzynki odbiorczej dotar?o {0} nowych wiadomo?ci.",
-  "Open \"lsmail\" to see them.": "Otw?rz „lsmail”, aby je zobaczy?.",
+  "Open \"mail\" to see them.": "Otw?rz „mail”, aby je zobaczy?.",
   "Unable to remove file: {0}": "Nie mo?na usun?? pliku: {0}",
   "Removes a directory or a file": "Usuwa katalog lub plik",
   "Can't remove {0} because it doesn't exist.": "Nie mo?na usun?? {0}, poniewa? nie istnieje.",
