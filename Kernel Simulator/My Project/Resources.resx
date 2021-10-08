@@ -398,9 +398,9 @@
     <value>..\Resources\bsn.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="Windows11" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\..\..\..\Test Workspace\KS - Work\New Themes\Windows11.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+    <value>..\Resources\Themes\Windows11.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="Windows11Light" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\..\..\..\..\Test Workspace\KS - Work\New Themes\Windows11Light.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
+    <value>..\Resources\Themes\Windows11Light.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
 </root>
