@@ -20,7 +20,7 @@ Class JsonShell_ExitCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         JsonShell_SaveFile(True)
         JsonShell_Exiting = True
     End Sub

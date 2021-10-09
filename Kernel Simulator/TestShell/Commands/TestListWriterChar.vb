@@ -20,7 +20,7 @@ Class Test_TestListWriterCharCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim NormalCharList As New List(Of Char) From {"1"c, "2"c, "3"c}
         Dim ArrayCharList As New List(Of Char()) From {{{"1"c, "2"c, "3"c}}, {{"1"c, "2"c, "3"c}}, {{"1"c, "2"c, "3"c}}}
         W(DoTranslation("Normal char list:"), True, ColTypes.Neutral)

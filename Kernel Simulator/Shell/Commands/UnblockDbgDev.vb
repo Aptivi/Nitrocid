@@ -20,7 +20,7 @@ Class UnblockDbgDevCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If RDebugBlocked.Contains(ListArgs(0)) Then
             If RemoveFromBlockList(ListArgs(0)) Then
                 W(DoTranslation("{0} can now join remote debug again."), True, ColTypes.Neutral, ListArgs(0))

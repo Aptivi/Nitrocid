@@ -20,7 +20,7 @@ Class ZipShell_GetCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim Where As String = ""
         Dim Absolute As Boolean
         If ListArgs?.Length > 1 Then

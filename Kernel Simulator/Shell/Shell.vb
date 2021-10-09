@@ -83,7 +83,7 @@ Public Module Shell
                                                                              {"jsonbeautify", New CommandInfo("jsonbeautify", ShellCommandType.Shell, "Beautifies the JSON file", "<jsonfile> [output]", True, 1, New JsonBeautifyCommand, False, True)},
                                                                              {"jsonminify", New CommandInfo("jsonminify", ShellCommandType.Shell, "Minifies the JSON file", "<jsonfile> [output]", True, 1, New JsonMinifyCommand, False, True)},
                                                                              {"jsonshell", New CommandInfo("jsonshell", ShellCommandType.Shell, "Opens the JSON shell", "<jsonfile>", True, 1, New JsonShellCommand)},
-                                                                             {"list", New CommandInfo("list", ShellCommandType.Shell, "List file/folder contents in current folder", "[directory]", False, 0, New ListCommand, False, True)},
+                                                                             {"list", New CommandInfo("list", ShellCommandType.Shell, "List file/folder contents in current folder", "[-showdetails|-suppressmessages] [directory]", False, 0, New ListCommand, False, True)},
                                                                              {"lockscreen", New CommandInfo("lockscreen", ShellCommandType.Shell, "Locks your screen with a password", "", False, 0, New LockScreenCommand)},
                                                                              {"logout", New CommandInfo("logout", ShellCommandType.Shell, "Logs you out", "", False, 0, New LogoutCommand, False, False, True)},
                                                                              {"loteresp", New CommandInfo("loteresp", ShellCommandType.Shell, "Respond to love or hate comments.", "", False, 0, New LoteRespCommand)},
@@ -137,7 +137,7 @@ Public Module Shell
                                                                              {"verify", New CommandInfo("verify", ShellCommandType.Shell, "Verifies sanity of the file", "<MD5/SHA1/SHA256/SHA384/SHA512> <calculatedhash> <hashfile/expectedhash> <file>", True, 4, New VerifyCommand)},
                                                                              {"weather", New CommandInfo("weather", ShellCommandType.Shell, "Shows weather info for specified city. Uses OpenWeatherMap.", "<CityID/CityName/listcities>", True, 1, New WeatherCommand)},
                                                                              {"wrap", New CommandInfo("wrap", ShellCommandType.Shell, "Wraps the console output", "<command>", True, 1, New WrapCommand)},
-                                                                             {"zip", New CommandInfo("zip", ShellCommandType.Shell, "Creates a ZIP archive", "<zipfile> <path> [-fast/-nocomp] [-nobasedir]", True, 2, New ZipCommand)},
+                                                                             {"zip", New CommandInfo("zip", ShellCommandType.Shell, "Creates a ZIP archive", "<zipfile> <path> [-fast|-nocomp|-nobasedir]", True, 2, New ZipCommand)},
                                                                              {"zipshell", New CommandInfo("zipshell", ShellCommandType.Shell, "Opens a ZIP archive", "<zipfile>", True, 1, New ZipShellCommand)}}
 
     ''' <summary>

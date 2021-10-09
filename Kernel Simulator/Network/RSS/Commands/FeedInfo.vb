@@ -20,7 +20,7 @@ Class RSS_FeedInfoCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         W("- " + DoTranslation("Title:") + " ", False, ColTypes.ListEntry)
         W(RSSFeedInstance.FeedTitle, True, ColTypes.ListValue)
         W("- " + DoTranslation("Link:") + " ", False, ColTypes.ListEntry)

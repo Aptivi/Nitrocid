@@ -22,7 +22,7 @@ Class VerifyCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Try
             Dim HashFile As String = NeutralizePath(ListArgs(2))
             If File.Exists(HashFile) Then

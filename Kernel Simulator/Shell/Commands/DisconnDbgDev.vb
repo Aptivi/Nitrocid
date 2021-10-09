@@ -20,7 +20,7 @@ Class DisconnDbgDevCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         DisconnectDbgDev(ListArgs(0))
         W(DoTranslation("Device {0} disconnected."), True, ColTypes.Neutral, ListArgs(0))
     End Sub

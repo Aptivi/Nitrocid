@@ -20,7 +20,7 @@ Class PermCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Permission([Enum].Parse(GetType(PermissionType), ListArgs(1)), ListArgs(0), [Enum].Parse(GetType(PermissionManagementMode), ListArgs(2)))
     End Sub
 

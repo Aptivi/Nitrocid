@@ -22,7 +22,7 @@ Class RmCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         For Each Path As String In ListArgs
             Dim NeutPath As String = NeutralizePath(Path)
             If File.Exists(NeutPath) Then

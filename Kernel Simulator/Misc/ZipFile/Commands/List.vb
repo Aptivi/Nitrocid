@@ -22,7 +22,7 @@ Class ZipShell_ListCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim Entries As List(Of ZipArchiveEntry)
         If ListArgs?.Length > 0 Then
             Wdbg(DebugLevel.I, "Listing entries with {0} as target directory", ListArgs(0))

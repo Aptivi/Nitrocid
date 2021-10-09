@@ -20,7 +20,7 @@ Class FTP_MvCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If FtpConnected Then
             W(DoTranslation("Moving {0} to {1}..."), True, ColTypes.Progress, ListArgs(0), ListArgs(1))
             If FTPMoveItem(ListArgs(0), ListArgs(1)) Then

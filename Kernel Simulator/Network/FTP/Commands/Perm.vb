@@ -20,7 +20,7 @@ Class FTP_PermCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If FtpConnected Then
             If FTPChangePermissions(ListArgs(0), ListArgs(1)) Then
                 W(DoTranslation("Permissions set successfully for file") + " {0}", True, ColTypes.Success, ListArgs(0))

@@ -20,7 +20,7 @@ Class Mail_RmAllCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If MailRemoveAllBySender(ListArgs(0)) Then
             W(DoTranslation("All mail made by {0} are removed successfully."), True, ColTypes.Success, ListArgs(0))
         Else

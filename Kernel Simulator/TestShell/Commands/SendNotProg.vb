@@ -20,7 +20,7 @@ Class Test_SendNotProgCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim Notif As New Notification(ListArgs(1), ListArgs(2), ListArgs(0), NotifType.Progress)
         NotifySend(Notif)
         Do While Not Notif.ProgressCompleted

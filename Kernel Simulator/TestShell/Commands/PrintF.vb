@@ -20,7 +20,7 @@ Class Test_PrintFCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim Parts As New List(Of String)(ListArgs)
         Dim Color As ColTypes = ListArgs(0)
         Dim Line As Boolean = ListArgs(1)

@@ -20,7 +20,7 @@ Class BeepCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If ListArgs(0).IsNumeric And CInt(ListArgs(0)) >= 37 And CInt(ListArgs(0)) <= 32767 Then 'Frequency must be numeric, and must be >= 37 and <= 32767
             If ListArgs(1).IsNumeric Then 'Time must be numeric
                 Console.Beep(ListArgs(0), ListArgs(1))

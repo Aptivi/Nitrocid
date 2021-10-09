@@ -22,7 +22,7 @@ Class SearchCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Try
             Dim Matches As List(Of String) = SearchFileForStringRegexp(ListArgs(1), New Regex(ListArgs(0), RegexOptions.IgnoreCase))
             For Each Match As String In Matches

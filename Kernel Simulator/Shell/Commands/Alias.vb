@@ -20,7 +20,7 @@ Class AliasCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If ListArgs?.Length > 3 Then
             If ListArgs(0) = "add" And [Enum].IsDefined(GetType(ShellCommandType), ListArgs(1)) Then
                 ManageAlias(ListArgs(0), Val([Enum].Parse(GetType(ShellCommandType), ListArgs(1))), ListArgs(2), ListArgs(3))

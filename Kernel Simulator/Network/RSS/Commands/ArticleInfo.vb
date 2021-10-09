@@ -20,7 +20,7 @@ Class RSS_ArticleInfoCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim ArticleIndex As Integer = ListArgs(0) - 1
         If ArticleIndex > RSSFeedInstance.FeedArticles.Count - 1 Then
             W(DoTranslation("Article number couldn't be bigger than the available articles."), True, ColTypes.Error)

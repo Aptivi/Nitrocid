@@ -20,7 +20,7 @@ Class JsonShell_PrintCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If ListArgs IsNot Nothing AndAlso ListArgs?.Count > 0 Then
             W(JsonShell_SerializeToString(StringArgs), True, ColTypes.Neutral)
         Else

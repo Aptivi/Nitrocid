@@ -20,7 +20,7 @@ Class GetTimeInfoCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim DateTimeInfo As Date
         Dim UnixEpoch As New Date(1970, 1, 1, 0, 0, 0, 0)
         If Date.TryParse(ListArgs(0), DateTimeInfo) Then

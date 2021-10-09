@@ -20,7 +20,7 @@ Class Test_TestSHA384Command
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim spent As New Stopwatch
         spent.Start() 'Time when you're on a breakpoint is counted
         W(GetEncryptedString(ListArgs(0), Algorithms.SHA384), True, ColTypes.Neutral)

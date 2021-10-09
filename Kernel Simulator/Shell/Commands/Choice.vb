@@ -20,17 +20,15 @@ Class ChoiceCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
-        If ListArgs(0).StartsWith("-") Then
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        If ListSwitchesOnly.Length > 0 Then
             Dim OutputType As ChoiceOutputType
-            If ListArgs(0) = "-o" Or ListArgs(0) = "-t" Or ListArgs(0) = "-m" Then
-                If ListArgs(0) = "-o" Then OutputType = ChoiceOutputType.OneLine
-                If ListArgs(0) = "-t" Then OutputType = ChoiceOutputType.TwoLines
-                If ListArgs(0) = "-m" Then OutputType = ChoiceOutputType.Modern
-                PromptChoice(ListArgs(3), ListArgs(1), ListArgs(2), OutputType)
-            End If
+            If ListSwitchesOnly(0) = "-o" Then OutputType = ChoiceOutputType.OneLine
+            If ListSwitchesOnly(0) = "-t" Then OutputType = ChoiceOutputType.TwoLines
+            If ListSwitchesOnly(0) = "-m" Then OutputType = ChoiceOutputType.Modern
+            PromptChoice(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1), OutputType)
         Else
-            PromptChoice(ListArgs(2), ListArgs(0), ListArgs(1))
+            PromptChoice(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1))
         End If
     End Sub
 

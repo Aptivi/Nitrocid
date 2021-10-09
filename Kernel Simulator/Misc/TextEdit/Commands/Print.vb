@@ -22,7 +22,7 @@ Class TextEdit_PrintCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim LineNumber As Integer = 1
         If ListArgs?.Length > 0 Then
             If ListArgs?.Length = 1 Then

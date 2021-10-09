@@ -22,7 +22,7 @@ Class Test_TestRegExpCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim Exp As String = ListArgs(0)
         Dim Reg As New Regex(Exp)
         Dim Matches As MatchCollection = Reg.Matches(ListArgs(1))

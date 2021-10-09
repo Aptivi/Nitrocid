@@ -20,7 +20,7 @@ Class ChUsrNameCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         ChangeUsername(ListArgs(0), ListArgs(1))
         W(DoTranslation("Username has been changed to {0}!"), True, ColTypes.Neutral, ListArgs(1))
         If ListArgs(0) = CurrentUser Then

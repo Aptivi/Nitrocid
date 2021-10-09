@@ -22,7 +22,7 @@ Class Test_LsCulturesCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim Cults As CultureInfo() = CultureInfo.GetCultures(CultureTypes.AllCultures)
         For Each Cult As CultureInfo In Cults
             If ListArgs?.Length > 0 Or ListArgs IsNot Nothing Then

@@ -23,13 +23,21 @@ Public Class ProvidedCommandArgumentsInfo
     ''' </summary>
     Public ReadOnly Property Command As String
     ''' <summary>
-    ''' Text version of the provided arguments
+    ''' Text version of the provided arguments and switches
     ''' </summary>
     Public ReadOnly Property ArgumentsText As String
+    ''' <summary>
+    ''' List version of the provided arguments and switches
+    ''' </summary>
+    Public ReadOnly Property FullArgumentsList As String()
     ''' <summary>
     ''' List version of the provided arguments
     ''' </summary>
     Public ReadOnly Property ArgumentsList As String()
+    ''' <summary>
+    ''' List version of the provided switches
+    ''' </summary>
+    Public ReadOnly Property SwitchesList As String()
     ''' <summary>
     ''' Checks to see if the required arguments are provided
     ''' </summary>
@@ -86,16 +94,31 @@ Public Class ProvidedCommandArgumentsInfo
         Wdbg(DebugLevel.I, "Finished strArgs: {0}", strArgs)
 
         'Split the arguments with enclosed quotes and set the required boolean variable
-        Dim eqargs() As String = strArgs.SplitEncloseDoubleQuotes(" ")
-        If eqargs IsNot Nothing Then
-            RequiredArgumentsProvided = eqargs?.Length >= ShellCommands(Command).MinimumArguments
-        ElseIf ShellCommands(Command).ArgumentsRequired And eqargs Is Nothing Then
+        Dim EnclosedArgs As List(Of String) = strArgs.SplitEncloseDoubleQuotes(" ")?.ToList
+        If EnclosedArgs IsNot Nothing Then
+            RequiredArgumentsProvided = EnclosedArgs?.Count >= ShellCommands(Command).MinimumArguments
+        ElseIf ShellCommands(Command).ArgumentsRequired And EnclosedArgs Is Nothing Then
             RequiredArgumentsProvided = False
         End If
-        If eqargs IsNot Nothing Then Wdbg(DebugLevel.I, "Arguments parsed from eqargs(): " + String.Join(", ", eqargs))
+        If EnclosedArgs IsNot Nothing Then Wdbg(DebugLevel.I, "Arguments parsed: " + String.Join(", ", EnclosedArgs))
+
+        'Separate the arguments from the switches
+        Dim FinalArgs As New List(Of String)
+        Dim FinalSwitches As New List(Of String)
+        If EnclosedArgs IsNot Nothing Then
+            For Each EnclosedArg As String In EnclosedArgs
+                If EnclosedArg.StartsWith("-") Then
+                    FinalSwitches.Add(EnclosedArg)
+                Else
+                    FinalArgs.Add(EnclosedArg)
+                End If
+            Next
+        End If
 
         'Install the parsed values to the new class instance
-        ArgumentsList = eqargs
+        FullArgumentsList = EnclosedArgs?.ToArray
+        ArgumentsList = FinalArgs.ToArray
+        SwitchesList = FinalSwitches.ToArray
         ArgumentsText = strArgs
         Me.Command = Command
         Me.RequiredArgumentsProvided = RequiredArgumentsProvided

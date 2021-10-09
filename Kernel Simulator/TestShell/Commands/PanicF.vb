@@ -20,7 +20,7 @@ Class Test_PanicFCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim EType As KernelErrorLevel = [Enum].Parse(GetType(KernelErrorLevel), ListArgs(0))
         Dim Reboot As Boolean = ListArgs(1)
         Dim RTime As Long = ListArgs(2)

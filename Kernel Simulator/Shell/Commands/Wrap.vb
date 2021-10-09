@@ -22,7 +22,7 @@ Class WrapCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim CommandToBeWrapped As String = ListArgs(0).Split(" ")(0)
         If Commands.ContainsKey(CommandToBeWrapped) Then
             If Commands(CommandToBeWrapped).Wrappable Then

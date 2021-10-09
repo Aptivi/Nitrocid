@@ -20,7 +20,7 @@ Class ZipShell_ChDirCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If Not ChangeWorkingZipLocalDirectory(ListArgs(0)) Then
             W(DoTranslation("Directory {0} doesn't exist"), True, ColTypes.Error, ListArgs(0))
         End If

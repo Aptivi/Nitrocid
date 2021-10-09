@@ -20,7 +20,7 @@ Class Test_ColorTestCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim esc As Char = GetEsc()
         Console.WriteLine(esc + "[38;5;" + ListArgs(0) + "mIndex " + ListArgs(0))
     End Sub

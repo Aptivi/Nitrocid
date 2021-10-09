@@ -20,7 +20,7 @@ Class FTP_GetCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim RemoteFile As String = ListArgs(0)
         Dim LocalFile As String = If(ListArgs.Count > 1, ListArgs(1), "")
         W(DoTranslation("Downloading file {0}..."), False, ColTypes.Progress, RemoteFile)

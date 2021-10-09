@@ -22,7 +22,7 @@ Class PingCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         'If the pinged address is actually a number of times
         Dim PingTimes As Integer = 4
         Dim StepsToSkip As Integer = 0

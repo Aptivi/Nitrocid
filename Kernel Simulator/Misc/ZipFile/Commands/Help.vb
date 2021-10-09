@@ -20,7 +20,7 @@ Class ZipShell_HelpCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If ListArgs?.Length > 0 Then
             Wdbg(DebugLevel.I, "Requested help for {0}", ListArgs(0))
             ShowHelp(ListArgs(0), ShellCommandType.ZIPShell)

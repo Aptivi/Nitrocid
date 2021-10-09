@@ -20,13 +20,15 @@ Class ListCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
-        If ListArgs?.Length = 0 Or ListArgs Is Nothing Then
-            List(CurrDir)
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Dim ShowFileDetails As Boolean = ListSwitchesOnly.Contains("-showdetails") OrElse ShowFileDetailsList
+        Dim SuppressUnauthorizedMessage As Boolean = ListSwitchesOnly.Contains("-suppressmessages") OrElse SuppressUnauthorizedMessages
+        If ListArgsOnly?.Length = 0 Or ListArgsOnly Is Nothing Then
+            List(CurrDir, ShowFileDetails, SuppressUnauthorizedMessage)
         Else
-            For Each Directory As String In ListArgs
+            For Each Directory As String In ListArgsOnly
                 Dim direct As String = NeutralizePath(Directory)
-                List(direct)
+                List(direct, ShowFileDetails, SuppressUnauthorizedMessage)
             Next
         End If
     End Sub

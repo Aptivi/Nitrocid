@@ -20,7 +20,7 @@ Class FTP_InfoCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If FtpConnected Then
             WriteSeparator(DoTranslation("FTP server information"), True)
             W(DoTranslation("Server address:") + " ", False, ColTypes.ListEntry)

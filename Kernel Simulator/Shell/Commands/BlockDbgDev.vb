@@ -20,7 +20,7 @@ Class BlockDbgDevCommand
     Inherits CommandExecutor
     Implements ICommand
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String) Implements ICommand.Execute
+    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If Not RDebugBlocked.Contains(ListArgs(0)) Then
             If AddToBlockList(ListArgs(0)) Then
                 W(DoTranslation("{0} can't join remote debug now."), True, ColTypes.Neutral, ListArgs(0))
