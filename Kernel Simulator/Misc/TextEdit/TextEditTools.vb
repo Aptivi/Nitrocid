@@ -134,6 +134,20 @@ Public Module TextEditTools
     End Sub
 
     ''' <summary>
+    ''' Adds the new lines to the current text
+    ''' </summary>
+    ''' <param name="Lines">New lines</param>
+    Public Sub TextEdit_AddNewLines(Lines() As String)
+        If TextEdit_FileStream IsNot Nothing Then
+            For Each Line As String In Lines
+                TextEdit_FileLines.Add(Line)
+            Next
+        Else
+            Throw New InvalidOperationException(DoTranslation("The text editor hasn't opened a file stream yet."))
+        End If
+    End Sub
+
+    ''' <summary>
     ''' Removes a line from the current text
     ''' </summary>
     ''' <param name="LineNumber">The line number to remove</param>

@@ -248,6 +248,7 @@
     <Compile Include="Misc\Screensaver\ScreensaverInfo.vb" />
     <Compile Include="Misc\Screensaver\ScreensaverSettings.vb" />
     <Compile Include="Misc\Reflection\StringEvaluators.vb" />
+    <Compile Include="Misc\TextEdit\Commands\AddLines.vb" />
     <Compile Include="Misc\TextEdit\Commands\AddLine.vb" />
     <Compile Include="Misc\TextEdit\Commands\Clear.vb" />
     <Compile Include="Misc\TextEdit\Commands\EditLine.vb" />

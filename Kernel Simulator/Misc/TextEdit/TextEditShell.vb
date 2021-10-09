@@ -24,6 +24,7 @@ Public Module TextEditShell
     'Variables
     Public TextEdit_Exiting As Boolean
     Public ReadOnly TextEdit_Commands As New Dictionary(Of String, CommandInfo) From {{"addline", New CommandInfo("addline", ShellCommandType.TextShell, "Adds a new line with text at the end of the file", "<text>", True, 1, New TextEdit_AddLineCommand)},
+                                                                                      {"addlines", New CommandInfo("addlines", ShellCommandType.TextShell, "Adds the new lines at the end of the file", "", False, 0, New TextEdit_AddLinesCommand)},
                                                                                       {"clear", New CommandInfo("clear", ShellCommandType.TextShell, "Clears the text file", "", False, 0, New TextEdit_ClearCommand)},
                                                                                       {"delcharnum", New CommandInfo("delcharnum", ShellCommandType.TextShell, "Deletes a character from character number in specified line", "<charnumber> <linenumber>", True, 2, New TextEdit_DelCharNumCommand)},
                                                                                       {"delline", New CommandInfo("delline", ShellCommandType.TextShell, "Removes the specified line number", "<linenumber> [linenumber2]", True, 1, New TextEdit_DelLineCommand)},
