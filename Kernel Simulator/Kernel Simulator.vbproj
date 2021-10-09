@@ -132,6 +132,7 @@
     <Reference Include="System.Management" />
     <Reference Include="System.Net" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -249,6 +250,7 @@
     <Compile Include="Misc\Reflection\StringEvaluators.vb" />
     <Compile Include="Misc\TextEdit\Commands\AddLine.vb" />
     <Compile Include="Misc\TextEdit\Commands\Clear.vb" />
+    <Compile Include="Misc\TextEdit\Commands\EditLine.vb" />
     <Compile Include="Misc\TextEdit\Commands\DelCharNum.vb" />
     <Compile Include="Misc\TextEdit\Commands\DelLine.vb" />
     <Compile Include="Misc\TextEdit\Commands\DelWord.vb" />
