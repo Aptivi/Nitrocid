@@ -65,10 +65,11 @@ Module ThemeStudio
             W("27) " + DoTranslation("Development warning color") + ": [{0}] ", True, ColTypes.Option, SelectedDevelopmentWarningColor.PlainSequence)
             W("28) " + DoTranslation("Stage time color") + ": [{0}] ", True, ColTypes.Option, SelectedStageTimeColor.PlainSequence)
             W("29) " + DoTranslation("Progress color") + ": [{0}] ", True, ColTypes.Option, SelectedProgressColor.PlainSequence)
-            W("30) " + DoTranslation("Back option color") + ": [{0}] " + vbNewLine, True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
-            W("31) " + DoTranslation("Low priority border color") + ": [{0}] " + vbNewLine, True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
-            W("32) " + DoTranslation("Medium priority border color") + ": [{0}] " + vbNewLine, True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
-            W("33) " + DoTranslation("High priority border color") + ": [{0}] " + vbNewLine, True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
+            W("30) " + DoTranslation("Back option color") + ": [{0}] ", True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
+            W("31) " + DoTranslation("Low priority border color") + ": [{0}] ", True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
+            W("32) " + DoTranslation("Medium priority border color") + ": [{0}] ", True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
+            W("33) " + DoTranslation("High priority border color") + ": [{0}] ", True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
+            Console.WriteLine()
 
             'List saving and loading options
             W("34) " + DoTranslation("Save Theme to Current Directory"), True, ColTypes.Option)
@@ -78,7 +79,8 @@ Module ThemeStudio
             W("38) " + DoTranslation("Load Theme From File..."), True, ColTypes.Option)
             W("39) " + DoTranslation("Load Theme From Prebuilt Themes..."), True, ColTypes.Option)
             W("40) " + DoTranslation("Preview..."), True, ColTypes.Option)
-            W("41) " + DoTranslation("Exit") + vbNewLine, True, ColTypes.Option)
+            W("41) " + DoTranslation("Exit"), True, ColTypes.Option)
+            Console.WriteLine()
 
             'Prompt user
             Wdbg(DebugLevel.I, "Waiting for user input...")
