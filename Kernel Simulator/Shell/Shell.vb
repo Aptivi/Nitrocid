@@ -36,7 +36,7 @@ Public Module Shell
     ''' <summary>
     ''' Path lookup delimiter, depending on the operating system
     ''' </summary>
-    Public ReadOnly PathLookupDelimiter As String = If(IsOnUnix(), ":", ";")
+    Public ReadOnly PathLookupDelimiter As String = Path.PathSeparator
     ''' <summary>
     ''' All injected commands
     ''' </summary>
