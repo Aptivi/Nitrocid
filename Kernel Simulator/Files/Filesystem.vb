@@ -78,7 +78,15 @@ Public Module Filesystem
     ''' List all files and folders in a specified folder
     ''' </summary>
     ''' <param name="folder">Full path to folder</param>
-    Sub List(folder As String)
+    Public Sub List(folder As String)
+        List(folder, ShowFileDetailsList, SuppressUnauthorizedMessages)
+    End Sub
+
+    ''' <summary>
+    ''' List all files and folders in a specified folder
+    ''' </summary>
+    ''' <param name="folder">Full path to folder</param>
+    Public Sub List(folder As String, ShowFileDetails As Boolean, SuppressUnauthorizedMessage As Boolean)
         Wdbg(DebugLevel.I, "Folder {0} will be listed...", folder)
 
 #If NTFSCorruptionFix Then
@@ -111,12 +119,12 @@ Public Module Filesystem
                             If (IsOnWindows() And (Not Entry.Name.StartsWith(".") Or (Entry.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
                                 If Entry.Name.EndsWith(".uesh") Then
                                     W("- " + Entry.Name, False, ColTypes.Stage)
-                                    If ShowFileDetailsList Then W(": ", False, ColTypes.Stage)
+                                    If ShowFileDetails Then W(": ", False, ColTypes.Stage)
                                 Else
                                     W("- " + Entry.Name, False, ColTypes.ListEntry)
-                                    If ShowFileDetailsList Then W(": ", False, ColTypes.ListEntry)
+                                    If ShowFileDetails Then W(": ", False, ColTypes.ListEntry)
                                 End If
-                                If ShowFileDetailsList Then
+                                If ShowFileDetails Then
                                     W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), False, ColTypes.ListValue,
                                                     DirectCast(Entry, FileInfo).Length.FileSizeToString, Entry.CreationTime.ToShortDateString, Entry.CreationTime.ToShortTimeString,
                                                                                                          Entry.LastWriteTime.ToShortDateString, Entry.LastWriteTime.ToShortTimeString)
@@ -132,7 +140,7 @@ Public Module Filesystem
                         If (Entry.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not Entry.Attributes.HasFlag(FileAttributes.Hidden) Then
                             If (IsOnWindows() And (Not Entry.Name.StartsWith(".") Or (Entry.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
                                 W("- " + Entry.Name + "/", False, ColTypes.ListEntry)
-                                If ShowFileDetailsList Then
+                                If ShowFileDetails Then
                                     W(": ", False, ColTypes.ListEntry)
                                     W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), False, ColTypes.ListValue,
                                                     TotalSize.FileSizeToString, Entry.CreationTime.ToShortDateString, Entry.CreationTime.ToShortTimeString,
@@ -143,7 +151,7 @@ Public Module Filesystem
                         End If
                     End If
                 Catch ex As UnauthorizedAccessException 'Error while getting info
-                    If Not SuppressUnauthorizedMessages Then W("- " + DoTranslation("You are not authorized to get info for {0}."), True, ColTypes.Error, Entry.Name)
+                    If Not SuppressUnauthorizedMessage Then W("- " + DoTranslation("You are not authorized to get info for {0}."), True, ColTypes.Error, Entry.Name)
                     WStkTrc(ex)
                 End Try
             Next
