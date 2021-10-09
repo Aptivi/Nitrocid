@@ -339,6 +339,7 @@
     <Compile Include="Network\Mail\Commands\SendEnc.vb" />
     <Compile Include="Network\Mail\MailHandlers.vb" />
     <Compile Include="Network\Mail\Transfer\MailPingers.vb" />
+    <Compile Include="Network\Mail\Transfer\MailTransferProgress.vb" />
     <Compile Include="Network\NetworkAdapter.vb" />
     <Compile Include="Network\NetworkAdapterPrint.vb" />
     <Compile Include="Network\RemoteDebug\Commands\Exit.vb" />

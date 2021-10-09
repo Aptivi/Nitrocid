@@ -16,7 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.Text
 Imports MailKit
 Imports MimeKit
 
@@ -62,9 +61,9 @@ Public Module MailManager
                         Dim Msg As MimeMessage
                         If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
                             Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-                            Msg = Dir.GetMessage(IMAP_Messages(i))
+                            Msg = Dir.GetMessage(IMAP_Messages(i), Nothing, Mail_Progress)
                         Else
-                            Msg = IMAP_Client.Inbox.GetMessage(IMAP_Messages(i))
+                            Msg = IMAP_Client.Inbox.GetMessage(IMAP_Messages(i), Nothing, Mail_Progress)
                         End If
                         MsgFrom = Msg.From.ToString
                         MsgSubject = Msg.Subject
@@ -159,9 +158,9 @@ Public Module MailManager
                     Dim Msg As MimeMessage
                     If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
                         Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-                        Msg = Dir.GetMessage(MessageId)
+                        Msg = Dir.GetMessage(MessageId, Nothing, Mail_Progress)
                     Else
-                        Msg = IMAP_Client.Inbox.GetMessage(MessageId)
+                        Msg = IMAP_Client.Inbox.GetMessage(MessageId, Nothing, Mail_Progress)
                     End If
                     SteppedMsgNumber += 1
 
@@ -258,9 +257,9 @@ Public Module MailManager
                     Dim Msg As MimeMessage
                     If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
                         Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-                        Msg = Dir.GetMessage(MessageId)
+                        Msg = Dir.GetMessage(MessageId, Nothing, Mail_Progress)
                     Else
-                        Msg = IMAP_Client.Inbox.GetMessage(MessageId)
+                        Msg = IMAP_Client.Inbox.GetMessage(MessageId, Nothing, Mail_Progress)
                     End If
                     SteppedMsgNumber += 1
 

@@ -50,9 +50,9 @@ Public Module MailTransfer
             Dim Msg As MimeMessage
             If Not IMAP_CurrentDirectory = "" And Not IMAP_CurrentDirectory = "Inbox" Then
                 Dim Dir As MailFolder = OpenFolder(IMAP_CurrentDirectory)
-                Msg = Dir.GetMessage(IMAP_Messages(Message))
+                Msg = Dir.GetMessage(IMAP_Messages(Message), Nothing, Mail_Progress)
             Else
-                Msg = IMAP_Client.Inbox.GetMessage(IMAP_Messages(Message))
+                Msg = IMAP_Client.Inbox.GetMessage(IMAP_Messages(Message), Nothing, Mail_Progress)
             End If
 
             'Prepare view
@@ -236,7 +236,7 @@ Public Module MailTransfer
         If Not Mail_UsePop3 Then
             SyncLock SMTP_Client.SyncRoot
                 Try
-                    SMTP_Client.Send(FinalMessage)
+                    SMTP_Client.Send(FinalMessage, Nothing, Mail_Progress)
                     Return True
                 Catch ex As Exception
                     Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
@@ -273,7 +273,7 @@ Public Module MailTransfer
         If Not Mail_UsePop3 Then
             SyncLock SMTP_Client.SyncRoot
                 Try
-                    SMTP_Client.Send(FinalMessage)
+                    SMTP_Client.Send(FinalMessage, Nothing, Mail_Progress)
                     Return True
                 Catch ex As Exception
                     Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
@@ -310,7 +310,7 @@ Public Module MailTransfer
         If Not Mail_UsePop3 Then
             SyncLock SMTP_Client.SyncRoot
                 Try
-                    SMTP_Client.Send(FinalMessage)
+                    SMTP_Client.Send(FinalMessage, Nothing, Mail_Progress)
                     Return True
                 Catch ex As Exception
                     Wdbg(DebugLevel.E, "Failed to send message: {0}", ex.Message)
