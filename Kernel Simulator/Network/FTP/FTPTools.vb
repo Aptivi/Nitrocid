@@ -125,13 +125,21 @@ Public Module FTPTools
             If FtpUseFirstProfile Then
                 profsel = profiles(0)
             Else
-                W(DoTranslation("More than one profile found. Select one:") + vbNewLine + vbNewLine +
-                              "#, " + DoTranslation("Host Name, Username, Data Type, Encoding, Encryption, Protocols"), True, ColTypes.Neutral)
-                For i As Integer = 0 To profiles.Count - 1
-                    W($"{i + 1}) {profiles(i).Host}, {profiles(i).Credentials.UserName}, {profiles(i).DataConnection}, {profiles(i).Encoding.EncodingName}, {profiles(i).Encryption}, {profiles(i).Protocols}", True, ColTypes.Option)
-                Next
                 Dim profanswer As Char
                 Dim profanswered As Boolean
+                Dim ProfHeaders As String() = {"#", DoTranslation("Host Name"), DoTranslation("Username"), DoTranslation("Data Type"), DoTranslation("Encoding"), DoTranslation("Encryption"), DoTranslation("Protocols")}
+                Dim ProfData(profiles.Count - 1, 6) As String
+                W(DoTranslation("More than one profile found. Select one:"), True, ColTypes.Neutral)
+                For i As Integer = 0 To profiles.Count - 1
+                    ProfData(i, 0) = i + 1
+                    ProfData(i, 1) = profiles(i).Host
+                    ProfData(i, 2) = profiles(i).Credentials.UserName
+                    ProfData(i, 3) = profiles(i).DataConnection.ToString
+                    ProfData(i, 4) = profiles(i).Encoding.EncodingName
+                    ProfData(i, 5) = profiles(i).Encryption.ToString
+                    ProfData(i, 6) = profiles(i).Protocols.ToString
+                Next
+                WriteTable(ProfHeaders, ProfData, 2, ColTypes.Option)
                 While Not profanswered
                     W(vbNewLine + ">> ", False, ColTypes.Input)
                     profanswer = Console.ReadLine
