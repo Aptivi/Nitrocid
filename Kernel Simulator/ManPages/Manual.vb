@@ -45,7 +45,6 @@ Public Class Manual
     ''' Makes a new instance of manual
     ''' </summary>
     Friend Sub New(ManualFileName As String)
-#If MANPAGE Then
         Dim Title As String = ""
         Dim Revision As String = ""
         Dim Body As New StringBuilder
@@ -57,9 +56,6 @@ Public Class Manual
             Me.Body = Body
             Me.Todos = Todos
         End If
-#Else
-        Throw New NotImplementedException
-#End If
     End Sub
 
 End Class

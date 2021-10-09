@@ -582,10 +582,6 @@ Public Module KernelTools
         CompilerVars.Add("STOCKTERMINALMACOS")
 #End If
 
-#If MANPAGE Then
-        CompilerVars.Add("MANPAGE")
-#End If
-
         'Return the compiler vars
         Return CompilerVars.ToArray
     End Function

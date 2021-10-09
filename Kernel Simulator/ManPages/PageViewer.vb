@@ -30,7 +30,6 @@ Public Module PageViewer
     ''' </summary>
     ''' <param name="ManualTitle">A manual title</param>
     Public Sub ViewPage(ManualTitle As String)
-#If MANPAGE Then
         If Pages.Keys.Contains(ManualTitle) Then
             'Variables
             Dim InfoPlace As Integer
@@ -135,9 +134,6 @@ Public Module PageViewer
         Else
             W(DoTranslation("Manual page {0} not found.", CurrentLanguage), True, ColTypes.Neutral, ManualTitle)
         End If
-#Else
-        Throw New NotImplementedException
-#End If
     End Sub
 
 End Module

@@ -452,8 +452,7 @@ Public Module ModParser
                     Next
                 End If
 
-                'Check for accompanying manual pages for mods (EXPERIMENTAL)
-#If MANPAGE Then
+                'Check for accompanying manual pages for mods
                 Dim ModManualPath As String = NeutralizePath(modFile + ".manual", ModPath)
                 If Directory.Exists(ModManualPath) Then
                     Wdbg(DebugLevel.I, "Found manual page collection in {0}", ModManualPath)
@@ -461,7 +460,6 @@ Public Module ModParser
                         InitMan(ModManualFile)
                     Next
                 End If
-#End If
 
                 'Raise event
                 EventManager.RaiseModFinalized(modFile)

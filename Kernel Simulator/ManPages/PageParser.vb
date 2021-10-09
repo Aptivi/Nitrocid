@@ -33,11 +33,10 @@ Module PageParser
         If File.Exists(ManualFile) Then
             'File found, but we need to verify that we're actually dealing with the manual page
             If Path.GetExtension(ManualFile) = ".man" Then
-#If MANPAGE Then
                 'We found the manual, but we need to check its contents.
                 Dim ManualFileName As String = Path.GetFileNameWithoutExtension(ManualFile)
                 Wdbg(DebugLevel.I, "Found manual page {0}.", ManualFileName)
-                Wdbg(DebugLevel.W, "Experimentally parsing manpage...")
+                Wdbg(DebugLevel.I, "Parsing manpage...")
                 Dim ManualInstance As New Manual(ManualFile)
                 If Not Pages.ContainsKey(ManualInstance.Title) Then
                     If ManualInstance.ValidManpage Then
@@ -46,9 +45,6 @@ Module PageParser
                         Throw New Exceptions.InvalidManpageException(DoTranslation("The manual page {0} is invalid."), ManualFileName)
                     End If
                 End If
-#Else
-                Wdbg(DebugLevel.F, "Not implemented yet.")
-#End If
             End If
         End If
     End Sub
