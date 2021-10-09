@@ -52,6 +52,8 @@ Public Module HashVerifier
                     ExpectedHashLength = 40
                 Case Algorithms.MD5
                     ExpectedHashLength = 32
+                Case Algorithms.CRC32
+                    ExpectedHashLength = 8
                 Case Else
                     Throw New Exceptions.InvalidHashAlgorithmException("Invalid encryption algorithm.")
             End Select
@@ -133,6 +135,8 @@ Public Module HashVerifier
                     ExpectedHashLength = 40
                 Case Algorithms.MD5
                     ExpectedHashLength = 32
+                Case Algorithms.CRC32
+                    ExpectedHashLength = 8
                 Case Else
                     Throw New Exceptions.InvalidHashAlgorithmException("Invalid encryption algorithm.")
             End Select
@@ -189,6 +193,8 @@ Public Module HashVerifier
                     ExpectedHashLength = 40
                 Case Algorithms.MD5
                     ExpectedHashLength = 32
+                Case Algorithms.CRC32
+                    ExpectedHashLength = 8
                 Case Else
                     Throw New Exceptions.InvalidHashAlgorithmException("Invalid encryption algorithm.")
             End Select
@@ -268,6 +274,8 @@ Public Module HashVerifier
                     ExpectedHashLength = 40
                 Case Algorithms.MD5
                     ExpectedHashLength = 32
+                Case Algorithms.CRC32
+                    ExpectedHashLength = 8
                 Case Else
                     Throw New Exceptions.InvalidHashAlgorithmException("Invalid encryption algorithm.")
             End Select
