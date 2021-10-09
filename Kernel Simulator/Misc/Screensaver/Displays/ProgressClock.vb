@@ -210,9 +210,9 @@ Module ProgressClockDisplay
                             WriteWhereC(ProgressClockUpperLeftCornerCharSeconds + ProgressClockUpperFrameCharSeconds.Repeat(Console.WindowWidth - 10) + ProgressClockUpperRightCornerCharSeconds, 4, CInt(Console.WindowHeight / 2) + 7, True, New Color(ColorStorageSeconds.ToString)) 'Top of Seconds
 
                             'Fill progress for hours, minutes, and seconds
-                            If Not KernelDateTime.Hour = 0 Then WriteWhereC(" ".Repeat(KernelDateTime.Hour * 100 / 24 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionHours, True, New Color(New RGB(0, 0, 0).ToString), New Color(ColorStorageHours.ToString))
-                            If Not KernelDateTime.Minute = 0 Then WriteWhereC(" ".Repeat(KernelDateTime.Minute * 100 / 60 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionMinutes, True, New Color(New RGB(0, 0, 0).ToString), New Color(ColorStorageMinutes.ToString))
-                            If Not KernelDateTime.Second = 0 Then WriteWhereC(" ".Repeat(KernelDateTime.Second * 100 / 60 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionSeconds, True, New Color(New RGB(0, 0, 0).ToString), New Color(ColorStorageSeconds.ToString))
+                            If Not KernelDateTime.Hour = 0 Then WriteWhereC(" ".Repeat(PercentRepeat(KernelDateTime.Hour, 24, 10)), 5, ProgressFillPositionHours, True, New Color(New RGB(0, 0, 0).ToString), New Color(ColorStorageHours.ToString))
+                            If Not KernelDateTime.Minute = 0 Then WriteWhereC(" ".Repeat(PercentRepeat(KernelDateTime.Minute, 60, 10)), 5, ProgressFillPositionMinutes, True, New Color(New RGB(0, 0, 0).ToString), New Color(ColorStorageMinutes.ToString))
+                            If Not KernelDateTime.Second = 0 Then WriteWhereC(" ".Repeat(PercentRepeat(KernelDateTime.Second, 60, 10)), 5, ProgressFillPositionSeconds, True, New Color(New RGB(0, 0, 0).ToString), New Color(ColorStorageSeconds.ToString))
 
                             'Print information
                             If Not String.IsNullOrEmpty(ProgressClockInfoTextHours) Then
@@ -290,9 +290,9 @@ Module ProgressClockDisplay
                             WriteWhereC(ProgressClockUpperLeftCornerCharSeconds + ProgressClockUpperFrameCharSeconds.Repeat(Console.WindowWidth - 10) + ProgressClockUpperRightCornerCharSeconds, 4, CInt(Console.WindowHeight / 2) + 7, True, New Color(ColorNumSeconds)) 'Top of Seconds
 
                             'Fill progress for hours, minutes, and seconds
-                            If Not KernelDateTime.Hour = 0 Then WriteWhereC(" ".Repeat(KernelDateTime.Hour * 100 / 24 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionHours, True, New Color(ConsoleColors.Black), BackgroundColor:=New Color(ColorNumHours))
-                            If Not KernelDateTime.Minute = 0 Then WriteWhereC(" ".Repeat(KernelDateTime.Minute * 100 / 60 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionMinutes, True, New Color(ConsoleColors.Black), BackgroundColor:=New Color(ColorNumMinutes))
-                            If Not KernelDateTime.Second = 0 Then WriteWhereC(" ".Repeat(KernelDateTime.Second * 100 / 60 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionSeconds, True, New Color(ConsoleColors.Black), BackgroundColor:=New Color(ColorNumSeconds))
+                            If Not KernelDateTime.Hour = 0 Then WriteWhereC(" ".Repeat(PercentRepeat(KernelDateTime.Hour, 24, 10)), 5, ProgressFillPositionHours, True, New Color(ConsoleColors.Black), BackgroundColor:=New Color(ColorNumHours))
+                            If Not KernelDateTime.Minute = 0 Then WriteWhereC(" ".Repeat(PercentRepeat(KernelDateTime.Minute, 60, 10)), 5, ProgressFillPositionMinutes, True, New Color(ConsoleColors.Black), BackgroundColor:=New Color(ColorNumMinutes))
+                            If Not KernelDateTime.Second = 0 Then WriteWhereC(" ".Repeat(PercentRepeat(KernelDateTime.Second, 60, 10)), 5, ProgressFillPositionSeconds, True, New Color(ConsoleColors.Black), BackgroundColor:=New Color(ColorNumSeconds))
 
                             'Print information
                             If Not String.IsNullOrEmpty(ProgressClockInfoTextHours) Then
@@ -369,9 +369,9 @@ Module ProgressClockDisplay
                             WriteWhereC16(ProgressClockUpperLeftCornerCharSeconds + ProgressClockUpperFrameCharSeconds.Repeat(Console.WindowWidth - 10) + ProgressClockUpperRightCornerCharSeconds, 4, CInt(Console.WindowHeight / 2) + 7, True, ColorNumSeconds) 'Top of Seconds
 
                             'Fill progress for hours, minutes, and seconds
-                            If Not KernelDateTime.Hour = 0 Then WriteWhereC16(" ".Repeat(KernelDateTime.Hour * 100 / 24 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionHours, True, ConsoleColor.Black, BackgroundColor:=ColorNumHours)
-                            If Not KernelDateTime.Minute = 0 Then WriteWhereC16(" ".Repeat(KernelDateTime.Minute * 100 / 60 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionMinutes, True, ConsoleColor.Black, BackgroundColor:=ColorNumMinutes)
-                            If Not KernelDateTime.Second = 0 Then WriteWhereC16(" ".Repeat(KernelDateTime.Second * 100 / 60 * ((Console.WindowWidth - 10) * 0.01)), 5, ProgressFillPositionSeconds, True, ConsoleColor.Black, BackgroundColor:=ColorNumSeconds)
+                            If Not KernelDateTime.Hour = 0 Then WriteWhereC16(" ".Repeat(PercentRepeat(KernelDateTime.Hour, 24, 10)), 5, ProgressFillPositionHours, True, ConsoleColor.Black, BackgroundColor:=ColorNumHours)
+                            If Not KernelDateTime.Minute = 0 Then WriteWhereC16(" ".Repeat(PercentRepeat(KernelDateTime.Minute, 60, 10)), 5, ProgressFillPositionMinutes, True, ConsoleColor.Black, BackgroundColor:=ColorNumMinutes)
+                            If Not KernelDateTime.Second = 0 Then WriteWhereC16(" ".Repeat(PercentRepeat(KernelDateTime.Second, 60, 10)), 5, ProgressFillPositionSeconds, True, ConsoleColor.Black, BackgroundColor:=ColorNumSeconds)
 
                             'Print information
                             If Not String.IsNullOrEmpty(ProgressClockInfoTextHours) Then
