@@ -118,8 +118,6 @@
     <Compile Include="Network\NetworkActionTests.vb" />
     <Compile Include="Network\RemoteDebugManagementTests.vb" />
     <Compile Include="Network\SpeedDialManagementTests.vb" />
-    <Compile Include="Shell\AliasManagementTests.vb" />
-    <Compile Include="Shell\AliasInitializationTests.vb" />
     <Compile Include="Shell\CommandManagerActionTests.vb" />
     <Compile Include="TimeDate\TimeInitializationTests.vb" />
     <Compile Include="Kernel\KernelMiscTests.vb" />
@@ -132,9 +130,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestText.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="TestAliases.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="TestVerifyMD5.txt">
