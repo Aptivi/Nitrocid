@@ -44,6 +44,7 @@ Public Module TableColor
         For HeaderIndex As Integer = 0 To Headers.Length - 1
             Dim Header As String = Headers(HeaderIndex)
             Dim ColumnPosition As Integer = ColumnPositions(HeaderIndex)
+            If Header Is Nothing Then Header = ""
             WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes)
         Next
         Console.WriteLine()
@@ -64,6 +65,7 @@ Public Module TableColor
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
+                If RowValue Is Nothing Then RowValue = ""
                 WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes)
             Next
             Console.WriteLine()
@@ -95,6 +97,7 @@ Public Module TableColor
         For HeaderIndex As Integer = 0 To Headers.Length - 1
             Dim Header As String = Headers(HeaderIndex)
             Dim ColumnPosition As Integer = ColumnPositions(HeaderIndex)
+            If Header Is Nothing Then Header = ""
             WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes.Neutral)
         Next
         Console.WriteLine()
@@ -115,6 +118,7 @@ Public Module TableColor
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
+                If RowValue Is Nothing Then RowValue = ""
                 WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes.Neutral)
             Next
             Console.WriteLine()
@@ -144,6 +148,7 @@ Public Module TableColor
         For HeaderIndex As Integer = 0 To Headers.Length - 1
             Dim Header As String = Headers(HeaderIndex)
             Dim ColumnPosition As Integer = ColumnPositions(HeaderIndex)
+            If Header Is Nothing Then Header = ""
             WriteWhereC16(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, Color)
         Next
         Console.WriteLine()
@@ -164,6 +169,7 @@ Public Module TableColor
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
+                If RowValue Is Nothing Then RowValue = ""
                 WriteWhereC16(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, Color)
             Next
             Console.WriteLine()
@@ -194,6 +200,7 @@ Public Module TableColor
         For HeaderIndex As Integer = 0 To Headers.Length - 1
             Dim Header As String = Headers(HeaderIndex)
             Dim ColumnPosition As Integer = ColumnPositions(HeaderIndex)
+            If Header Is Nothing Then Header = ""
             WriteWhereC16(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ForegroundColor, BackgroundColor)
         Next
         Console.WriteLine()
@@ -214,6 +221,7 @@ Public Module TableColor
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
+                If RowValue Is Nothing Then RowValue = ""
                 WriteWhereC16(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ForegroundColor, BackgroundColor)
             Next
             Console.WriteLine()
@@ -243,6 +251,7 @@ Public Module TableColor
         For HeaderIndex As Integer = 0 To Headers.Length - 1
             Dim Header As String = Headers(HeaderIndex)
             Dim ColumnPosition As Integer = ColumnPositions(HeaderIndex)
+            If Header Is Nothing Then Header = ""
             WriteWhereC(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, Color)
         Next
         Console.WriteLine()
@@ -263,6 +272,7 @@ Public Module TableColor
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
+                If RowValue Is Nothing Then RowValue = ""
                 WriteWhereC(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, Color)
             Next
             Console.WriteLine()
@@ -293,6 +303,7 @@ Public Module TableColor
         For HeaderIndex As Integer = 0 To Headers.Length - 1
             Dim Header As String = Headers(HeaderIndex)
             Dim ColumnPosition As Integer = ColumnPositions(HeaderIndex)
+            If Header Is Nothing Then Header = ""
             WriteWhereC(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ForegroundColor, BackgroundColor)
         Next
         Console.WriteLine()
@@ -313,6 +324,7 @@ Public Module TableColor
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
+                If RowValue Is Nothing Then RowValue = ""
                 WriteWhereC(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ForegroundColor, BackgroundColor)
             Next
             Console.WriteLine()
