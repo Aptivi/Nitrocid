@@ -1,0 +1,1929 @@
+{
+    "ColorMix": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "ColorMix255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "ColorMixTrueColor",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "ColorMixDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Background color",
+                "Type": "SColor",
+                "Variable": "ColorMixBackgroundColor"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "ColorMixMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "ColorMixMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "ColorMixMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SInt",
+                "Variable": "ColorMixMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "ColorMixMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "ColorMixMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "ColorMixMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SInt",
+                "Variable": "ColorMixMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+        ]
+    },
+    "Matrix": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "MatrixDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            }
+        ]
+    },
+    "GlitterMatrix": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "GlitterMatrixDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Background color",
+                "Type": "SColor",
+                "Variable": "GlitterMatrixBackgroundColor"
+            },
+            {
+                "Name": "Foreground color",
+                "Type": "SColor",
+                "Variable": "GlitterMatrixForegroundColor"
+            }
+        ]
+    },
+    "Disco": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "Disco255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "Disco255Colors",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Cycle colors",
+                "Type": "SBoolean",
+                "Variable": "DiscoCycleColors",
+                "Description": "Disco will cycle colors when enabled. Otherwise, select random colors."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "DiscoDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Use Beats Per Minute",
+                "Type": "SBoolean",
+                "Variable": "DiscoUseBeatsPerMinute",
+                "Description": "Whether to use the Beats Per Minute unit to write the next color."
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "DiscoMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "DiscoMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "DiscoMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SInt",
+                "Variable": "DiscoMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "DiscoMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "DiscoMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "DiscoMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SInt",
+                "Variable": "DiscoMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+        ]
+    },
+    "Lines": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "Lines255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "Lines255Colors",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "LinesDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Line character",
+                "Type": "SString",
+                "Variable": "LinesLineChar",
+                "Description": "A character to form a line. Be sure to only input one character."
+            },
+            {
+                "Name": "Background color",
+                "Type": "SColor",
+                "Variable": "LinesBackgroundColor"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "LinesMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "LinesMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "LinesMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SInt",
+                "Variable": "LinesMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "LinesMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "LinesMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "LinesMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SInt",
+                "Variable": "LinesMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+        ]
+    },
+    "GlitterColor": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "GlitterColor255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "GlitterColor255Colors",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "GlitterColorDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "GlitterColorMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "GlitterColorMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "GlitterColorMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SInt",
+                "Variable": "GlitterColorMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "GlitterColorMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "GlitterColorMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "GlitterColorMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SInt",
+                "Variable": "GlitterColorMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+        ]
+    },
+    "BouncingText": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "BouncingText255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "BouncingText255Colors",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "BouncingTextDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Text shown",
+                "Type": "SLongString",
+                "Variable": "BouncingTextWrite",
+                "Description": "Write any text you want shown. Shorter is better."
+            },
+            {
+                "Name": "Background color",
+                "Type": "SColor",
+                "Variable": "BouncingTextBackgroundColor"
+            },
+            {
+                "Name": "Foreground color",
+                "Type": "SColor",
+                "Variable": "BouncingTextForegroundColor"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "BouncingTextMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "BouncingTextMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "BouncingTextMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SInt",
+                "Variable": "BouncingTextMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "BouncingTextMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "BouncingTextMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "BouncingTextMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SInt",
+                "Variable": "BouncingTextMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+        ]
+    },
+    "Dissolve": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "Dissolve255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "Dissolve255Colors",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Background color",
+                "Type": "SColor",
+                "Variable": "DissolveBackgroundColor"
+            },
+            {
+                "Name": "Foreground color",
+                "Type": "SColor",
+                "Variable": "DissolveForegroundColor"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "DissolveMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "DissolveMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "DissolveMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SInt",
+                "Variable": "DissolveMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "DissolveMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "DissolveMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "DissolveMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SInt",
+                "Variable": "DissolveMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+        ]
+    },
+    "BouncingBlock": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "BouncingBlock255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "BouncingBlock255Colors",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "BouncingBlockDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Background color",
+                "Type": "SColor",
+                "Variable": "BouncingBlockBackgroundColor"
+            },
+            {
+                "Name": "Foreground color",
+                "Type": "SColor",
+                "Variable": "BouncingBlockForegroundColor"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "BouncingBlockMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "BouncingBlockMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "BouncingBlockMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SInt",
+                "Variable": "BouncingBlockMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "BouncingBlockMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "BouncingBlockMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "BouncingBlockMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SInt",
+                "Variable": "BouncingBlockMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+        ]
+    },
+    "ProgressClock": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "ProgressClock255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "ProgressClock255Colors",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Cycle colors",
+                "Type": "SBoolean",
+                "Variable": "ProgressClockCycleColors",
+                "Description": "ProgressClock will select random colors if it's enabled. Otherwise, use colors from config."
+            },
+            {
+                "Name": "Color of Seconds Bar",
+                "Type": "SColor",
+                "Variable": "ProgressClockSecondsProgressColor"
+            },
+            {
+                "Name": "Color of Minutes Bar",
+                "Type": "SColor",
+                "Variable": "ProgressClockMinutesProgressColor"
+            },
+            {
+                "Name": "Color of Hours Bar",
+                "Type": "SColor",
+                "Variable": "ProgressClockHoursProgressColor"
+            },
+            {
+                "Name": "Color of Information",
+                "Type": "SColor",
+                "Variable": "ProgressClockProgressColor"
+            },
+            {
+                "Name": "Ticks to change color",
+                "Type": "SInt",
+                "Variable": "ProgressClockCycleColorsTicks",
+                "Description": "If color cycling is enabled, how many ticks before changing colors in ProgressClock? 1 tick = 0.5 seconds"
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "ProgressClockDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Upper left corner character for hours bar",
+                "Type": "SString",
+                "Variable": "ProgressClockUpperLeftCornerCharHours",
+                "Description": "A character that resembles the upper left corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Upper left corner character for minutes bar",
+                "Type": "SString",
+                "Variable": "ProgressClockUpperLeftCornerCharMinutes",
+                "Description": "A character that resembles the upper left corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Upper left corner character for seconds bar",
+                "Type": "SString",
+                "Variable": "ProgressClockUpperLeftCornerCharSeconds",
+                "Description": "A character that resembles the upper left corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower left corner character for hours bar",
+                "Type": "SString",
+                "Variable": "ProgressClockLowerLeftCornerCharHours",
+                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower left corner character for minutes bar",
+                "Type": "SString",
+                "Variable": "ProgressClockLowerLeftCornerCharMinutes",
+                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower left corner character for seconds bar",
+                "Type": "SString",
+                "Variable": "ProgressClockLowerLeftCornerCharSeconds",
+                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Upper right corner character for hours bar",
+                "Type": "SString",
+                "Variable": "ProgressClockUpperRightCornerCharHours",
+                "Description": "A character that resembles the upper right corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Upper right corner character for minutes bar",
+                "Type": "SString",
+                "Variable": "ProgressClockUpperRightCornerCharMinutes",
+                "Description": "A character that resembles the upper right corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Upper right corner character for seconds bar",
+                "Type": "SString",
+                "Variable": "ProgressClockUpperRightCornerCharSeconds",
+                "Description": "A character that resembles the upper right corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower right corner character for hours bar",
+                "Type": "SString",
+                "Variable": "ProgressClockLowerRightCornerCharHours",
+                "Description": "A character that resembles the lower right corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower right corner character for minutes bar",
+                "Type": "SString",
+                "Variable": "ProgressClockLowerRightCornerCharMinutes",
+                "Description": "A character that resembles the lower right corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower right corner character for seconds bar",
+                "Type": "SString",
+                "Variable": "ProgressClockLowerRightCornerCharSeconds",
+                "Description": "A character that resembles the lower right corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Upper frame character for hours bar",
+                "Type": "SString",
+                "Variable": "ProgressClockUpperFrameCharHours",
+                "Description": "A character that resembles the upper frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Upper frame character for minutes bar",
+                "Type": "SString",
+                "Variable": "ProgressClockUpperFrameCharMinutes",
+                "Description": "A character that resembles the upper frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Upper frame character for seconds bar",
+                "Type": "SString",
+                "Variable": "ProgressClockUpperFrameCharSeconds",
+                "Description": "A character that resembles the upper frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower frame character for hours bar",
+                "Type": "SString",
+                "Variable": "ProgressClockLowerFrameCharHours",
+                "Description": "A character that resembles the lower frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower frame character for minutes bar",
+                "Type": "SString",
+                "Variable": "ProgressClockLowerFrameCharMinutes",
+                "Description": "A character that resembles the lower frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower frame character for seconds bar",
+                "Type": "SString",
+                "Variable": "ProgressClockLowerFrameCharSeconds",
+                "Description": "A character that resembles the lower frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Left frame character for hours bar",
+                "Type": "SString",
+                "Variable": "ProgressClockLeftFrameCharHours",
+                "Description": "A character that resembles the left frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Left frame character for minutes bar",
+                "Type": "SString",
+                "Variable": "ProgressClockLeftFrameCharMinutes",
+                "Description": "A character that resembles the left frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Left frame character for seconds bar",
+                "Type": "SString",
+                "Variable": "ProgressClockLeftFrameCharSeconds",
+                "Description": "A character that resembles the left frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Right frame character for hours bar",
+                "Type": "SString",
+                "Variable": "ProgressClockRightFrameCharHours",
+                "Description": "A character that resembles the right frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Right frame character for minutes bar",
+                "Type": "SString",
+                "Variable": "ProgressClockRightFrameCharMinutes",
+                "Description": "A character that resembles the right frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Right frame character for seconds bar",
+                "Type": "SString",
+                "Variable": "ProgressClockRightFrameCharSeconds",
+                "Description": "A character that resembles the right frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Information text for hours",
+                "Type": "SString",
+                "Variable": "ProgressClockInfoTextHours",
+                "Description": "Write how your information text for the current hour shows. {0} for current hour out of 24 hours."
+            },
+            {
+                "Name": "Information text for minutes",
+                "Type": "SString",
+                "Variable": "ProgressClockInfoTextMinutes",
+                "Description": "Write how your information text for the current minute shows. {0} for current minute out of 60 minutes."
+            },
+            {
+                "Name": "Information text for seconds",
+                "Type": "SString",
+                "Variable": "ProgressClockInfoTextSeconds",
+                "Description": "Write how your information text for the current second shows. {0} for current second out of 60 seconds."
+            },
+            {
+                "Name": "Minimum red color level for hours",
+                "Type": "SInt",
+                "Variable": "ProgressClockMinimumRedColorLevelHours",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level for hours",
+                "Type": "SInt",
+                "Variable": "ProgressClockMinimumGreenColorLevelHours",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level for hours",
+                "Type": "SInt",
+                "Variable": "ProgressClockMinimumBlueColorLevelHours",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level for hours",
+                "Type": "SInt",
+                "Variable": "ProgressClockMinimumColorLevelHours",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level for hours",
+                "Type": "SInt",
+                "Variable": "ProgressClockMaximumRedColorLevelHours",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level for hours",
+                "Type": "SInt",
+                "Variable": "ProgressClockMaximumGreenColorLevelHours",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level for hours",
+                "Type": "SInt",
+                "Variable": "ProgressClockMaximumBlueColorLevelHours",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level for hours",
+                "Type": "SInt",
+                "Variable": "ProgressClockMaximumColorLevelHours",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Minimum red color level for minutes",
+                "Type": "SInt",
+                "Variable": "ProgressClockMinimumRedColorLevelMinutes",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level for minutes",
+                "Type": "SInt",
+                "Variable": "ProgressClockMinimumGreenColorLevelMinutes",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level for minutes",
+                "Type": "SInt",
+                "Variable": "ProgressClockMinimumBlueColorLevelMinutes",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level for minutes",
+                "Type": "SInt",
+                "Variable": "ProgressClockMinimumColorLevelMinutes",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level for minutes",
+                "Type": "SInt",
+                "Variable": "ProgressClockMaximumRedColorLevelMinutes",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level for minutes",
+                "Type": "SInt",
+                "Variable": "ProgressClockMaximumGreenColorLevelMinutes",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level for minutes",
+                "Type": "SInt",
+                "Variable": "ProgressClockMaximumBlueColorLevelMinutes",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level for minutes",
+                "Type": "SInt",
+                "Variable": "ProgressClockMaximumColorLevelMinutes",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Minimum red color level for seconds",
+                "Type": "SInt",
+                "Variable": "ProgressClockMinimumRedColorLevelSeconds",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level for seconds",
+                "Type": "SInt",
+                "Variable": "ProgressClockMinimumGreenColorLevelSeconds",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level for seconds",
+                "Type": "SInt",
+                "Variable": "ProgressClockMinimumBlueColorLevelSeconds",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level for seconds",
+                "Type": "SInt",
+                "Variable": "ProgressClockMinimumColorLevelSeconds",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level for seconds",
+                "Type": "SInt",
+                "Variable": "ProgressClockMaximumRedColorLevelSeconds",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level for seconds",
+                "Type": "SInt",
+                "Variable": "ProgressClockMaximumGreenColorLevelSeconds",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level for seconds",
+                "Type": "SInt",
+                "Variable": "ProgressClockMaximumBlueColorLevelSeconds",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level for seconds",
+                "Type": "SInt",
+                "Variable": "ProgressClockMaximumColorLevelSeconds",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "ProgressClockMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "ProgressClockMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "ProgressClockMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SInt",
+                "Variable": "ProgressClockMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "ProgressClockMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "ProgressClockMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "ProgressClockMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SInt",
+                "Variable": "ProgressClockMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+        ]
+    },
+    "Lighter": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "Lighter255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "Lighter255Colors",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "LighterDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Max Positions Count",
+                "Type": "SInt",
+                "Variable": "LighterMaxPositions",
+                "Description": "How many positions are lit before dimming?"
+            },
+            {
+                "Name": "Background color",
+                "Type": "SColor",
+                "Variable": "LighterBackgroundColor"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "LighterMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "LighterMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "LighterMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SInt",
+                "Variable": "LighterMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "LighterMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "LighterMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "LighterMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SInt",
+                "Variable": "LighterMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+        ]
+    },
+    "Fader": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "FaderDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Fade Out Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "FaderFadeOutDelay",
+                "Description": "How many milliseconds to wait before fading out text?"
+            },
+            {
+                "Name": "Text shown",
+                "Type": "SLongString",
+                "Variable": "FaderWrite",
+                "Description": "Write any text you want shown. Shorter is better."
+            },
+            {
+                "Name": "Max Fade Steps",
+                "Type": "SInt",
+                "Variable": "FaderMaxSteps",
+                "Description": "How many fade steps to do?"
+            },
+            {
+                "Name": "Background color",
+                "Type": "SColor",
+                "Variable": "FaderBackgroundColor"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "FaderMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "FaderMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "FaderMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "FaderMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "FaderMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "FaderMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            }
+        ]
+    },
+    "Typo": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "TypoDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Write Again Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "TypoWriteAgainDelay",
+                "Description": "How many milliseconds to wait before writing text again?"
+            },
+            {
+                "Name": "Text shown",
+                "Type": "SLongString",
+                "Variable": "TypoWrite",
+                "Description": "Write any text you want shown. Longer is better."
+            },
+            {
+                "Name": "Minimum writing speed in WPM",
+                "Type": "SInt",
+                "Variable": "TypoWritingSpeedMin",
+                "Description": "Minimum writing speed in WPM"
+            },
+            {
+                "Name": "Maximum writing speed in WPM",
+                "Type": "SInt",
+                "Variable": "TypoWritingSpeedMax",
+                "Description": "Maximum writing speed in WPM"
+            },
+            {
+                "Name": "Probability of typo in percent",
+                "Type": "SInt",
+                "Variable": "TypoMissStrikePossibility",
+                "Description": "Probability of typo in percent"
+            },
+            {
+                "Name": "Probability of miss in percent",
+                "Type": "SInt",
+                "Variable": "TypoMissPossibility",
+                "Description": "Probability of miss in percent"
+            },
+            {
+                "Name": "Text color",
+                "Type": "SColor",
+                "Variable": "TypoTextColor"
+            }
+        ]
+    },
+    "Wipe": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "Wipe255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "Wipe255Colors",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "WipeDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Wipes to change direction",
+                "Type": "SInt",
+                "Variable": "WipeWipesNeededToChangeDirection",
+                "Description": "How many wipes to do before changing direction randomly?"
+            },
+            {
+                "Name": "Background color",
+                "Type": "SColor",
+                "Variable": "WipeBackgroundColor"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "WipeMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "WipeMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "WipeMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SInt",
+                "Variable": "WipeMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "WipeMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "WipeMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "WipeMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SInt",
+                "Variable": "WipeMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+        ]
+    },
+    "Marquee": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "Marquee255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "Marquee255Colors",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "MarqueeDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Text shown",
+                "Type": "SLongString",
+                "Variable": "MarqueeWrite",
+                "Description": "Write any text you want shown."
+            },
+            {
+                "Name": "Always centered",
+                "Type": "SBoolean",
+                "Variable": "MarqueeAlwaysCentered",
+                "Description": "Whether the text shown on the marquee is always centered."
+            },
+            {
+                "Name": "Use Console API",
+                "Type": "SBoolean",
+                "Variable": "MarqueeUseConsoleAPI",
+                "Description": "Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API."
+            },
+            {
+                "Name": "Background color",
+                "Type": "SColor",
+                "Variable": "MarqueeBackgroundColor"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "MarqueeMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "MarqueeMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "MarqueeMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SInt",
+                "Variable": "MarqueeMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "MarqueeMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "MarqueeMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "MarqueeMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SInt",
+                "Variable": "MarqueeMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+
+        ]
+    },
+    "FaderBack": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "FaderBackDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Fade Out Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "FaderBackFadeOutDelay",
+                "Description": "How many milliseconds to wait before fading out text?"
+            },
+            {
+                "Name": "Max Fade Steps",
+                "Type": "SInt",
+                "Variable": "FaderBackMaxSteps",
+                "Description": "How many fade steps to do?"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "FaderBackMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "FaderBackMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "FaderBackMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "FaderBackMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "FaderBackMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "FaderBackMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            }
+        ]
+    },
+    "BeatFader": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "BeatFader255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "BeatFader255Colors",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Beats Per Minute",
+                "Type": "SInt",
+                "Variable": "BeatFaderDelay",
+                "Description": "How many beats per minute to wait before making the next write?"
+            },
+            {
+                "Name": "Cycle colors",
+                "Type": "SBoolean",
+                "Variable": "BeatFaderCycleColors",
+                "Description": "BeatFader will select random colors if it's enabled. Otherwise, use colors from config."
+            },
+            {
+                "Name": "Beat color",
+                "Type": "SColor",
+                "Variable": "BeatFaderBeatColor"
+            },
+            {
+                "Name": "Max Fade Steps",
+                "Type": "SInt",
+                "Variable": "BeatFaderMaxSteps",
+                "Description": "How many fade steps to do?"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "BeatFaderMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "BeatFaderMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "BeatFaderMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SInt",
+                "Variable": "BeatFaderMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "BeatFaderMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "BeatFaderMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "BeatFaderMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SInt",
+                "Variable": "BeatFaderMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+
+        ]
+    },
+    "Linotypo": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "LinotypoDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "New Screen Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "LinotypoNewScreenDelay",
+                "Description": "How many milliseconds to wait before writing the text in the new screen again?"
+            },
+            {
+                "Name": "Text shown",
+                "Type": "SLongString",
+                "Variable": "LinotypoWrite",
+                "Description": "Write any text you want shown. Longer is better.",
+                "Tip": "This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately."
+            },
+            {
+                "Name": "Minimum writing speed in WPM",
+                "Type": "SInt",
+                "Variable": "LinotypoWritingSpeedMin",
+                "Description": "Minimum writing speed in WPM"
+            },
+            {
+                "Name": "Maximum writing speed in WPM",
+                "Type": "SInt",
+                "Variable": "LinotypoWritingSpeedMax",
+                "Description": "Maximum writing speed in WPM"
+            },
+            {
+                "Name": "Probability of typo in percent",
+                "Type": "SInt",
+                "Variable": "LinotypoMissStrikePossibility",
+                "Description": "Probability of typo in percent"
+            },
+            {
+                "Name": "Column Count",
+                "Type": "SInt",
+                "Variable": "LinotypoTextColumns",
+                "Description": "The text columns to be printed."
+            },
+            {
+                "Name": "Line Fill Threshold",
+                "Type": "SInt",
+                "Variable": "LinotypoEtaoinThreshold",
+                "Description": "How many characters to write before triggering the \"line fill\"?"
+            },
+            {
+                "Name": "Line Fill Capping Probability in percent",
+                "Type": "SInt",
+                "Variable": "LinotypoEtaoinCappingPossibility",
+                "Description": "Possibility that the line fill pattern will be printed in all caps in percent"
+            },
+            {
+                "Name": "Line Fill Type",
+                "Type": "SSelection",
+                "Variable": "LinotypoEtaoinType",
+                "IsEnumeration": true,
+                "MaxKeyOptions": 3,
+                "EnumerationInternal": true,
+                "Enumeration": "FillType",
+                "EnumerationZeroBased": true,
+                "WorkingTitles": [ "Common Pattern", "Complete Pattern", "Random Pattern" ],
+                "Description": "Line fill pattern type"
+            },
+            {
+                "Name": "Probability of miss in percent",
+                "Type": "SInt",
+                "Variable": "LinotypoMissPossibility",
+                "Description": "Probability of miss in percent"
+            },
+            {
+                "Name": "Text color",
+                "Type": "SColor",
+                "Variable": "LinotypoTextColor"
+            }
+        ]
+    },
+    "Typewriter": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "TypewriterDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "New Screen Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "TypewriterNewScreenDelay",
+                "Description": "How many milliseconds to wait before writing the text in the new screen again?"
+            },
+            {
+                "Name": "Text shown",
+                "Type": "SLongString",
+                "Variable": "TypewriterWrite",
+                "Description": "Write any text you want shown. Longer is better.",
+                "Tip": "This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately."
+            },
+            {
+                "Name": "Minimum writing speed in WPM",
+                "Type": "SInt",
+                "Variable": "TypewriterWritingSpeedMin",
+                "Description": "Minimum writing speed in WPM"
+            },
+            {
+                "Name": "Maximum writing speed in WPM",
+                "Type": "SInt",
+                "Variable": "TypewriterWritingSpeedMax",
+                "Description": "Maximum writing speed in WPM"
+            },
+            {
+                "Name": "Text color",
+                "Type": "SColor",
+                "Variable": "TypewriterTextColor"
+            }
+        ]
+    },
+    "FlashColor": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "FlashColor255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "FlashColor255Colors",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "FlashColorDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Background color",
+                "Type": "SColor",
+                "Variable": "FlashColorBackgroundColor"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "FlashColorMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "FlashColorMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "FlashColorMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SInt",
+                "Variable": "FlashColorMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "FlashColorMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "FlashColorMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "FlashColorMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SInt",
+                "Variable": "FlashColorMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+        ]
+    },
+    "SpotWrite": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "SpotWriteDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "New Screen Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "SpotWriteNewScreenDelay",
+                "Description": "How many milliseconds to wait before writing the text in the new screen again?"
+            },
+            {
+                "Name": "Text shown",
+                "Type": "SLongString",
+                "Variable": "SpotWriteWrite",
+                "Description": "Write any text you want shown. Longer is better.",
+                "Tip": "This screensaver supports written text on file. Pass the complete file path to this field, and the screensaver will display the contents of the file appropriately."
+            },
+            {
+                "Name": "Text color",
+                "Type": "SColor",
+                "Variable": "SpotWriteTextColor"
+            }
+        ]
+    },
+    "Ramp": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "Ramp255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "Ramp255Colors",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "RampDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Next ramp interval",
+                "Type": "SInt",
+                "Variable": "RampNextRampDelay",
+                "Description": "How many milliseconds to wait before filling in the next ramp?"
+            },
+            {
+                "Name": "Upper left corner character for ramp bar",
+                "Type": "SString",
+                "Variable": "RampUpperLeftCornerChar",
+                "Description": "A character that resembles the upper left corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower left corner character for ramp bar",
+                "Type": "SString",
+                "Variable": "RampLowerLeftCornerChar",
+                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Upper right corner character for ramp bar",
+                "Type": "SString",
+                "Variable": "RampUpperRightCornerChar",
+                "Description": "A character that resembles the upper right corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower right corner character for ramp bar",
+                "Type": "SString",
+                "Variable": "RampLowerRightCornerChar",
+                "Description": "A character that resembles the lower right corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Upper frame character for ramp bar",
+                "Type": "SString",
+                "Variable": "RampUpperFrameChar",
+                "Description": "A character that resembles the upper frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower frame character for ramp bar",
+                "Type": "SString",
+                "Variable": "RampLowerFrameChar",
+                "Description": "A character that resembles the lower frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Left frame character for ramp bar",
+                "Type": "SString",
+                "Variable": "RampLeftFrameChar",
+                "Description": "A character that resembles the left frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Right frame character for ramp bar",
+                "Type": "SString",
+                "Variable": "RampRightFrameChar",
+                "Description": "A character that resembles the right frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Minimum red color level for start color",
+                "Type": "SInt",
+                "Variable": "RampMinimumRedColorLevelStart",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level for start color",
+                "Type": "SInt",
+                "Variable": "RampMinimumGreenColorLevelStart",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level for start color",
+                "Type": "SInt",
+                "Variable": "RampMinimumBlueColorLevelStart",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level for start color",
+                "Type": "SInt",
+                "Variable": "RampMinimumColorLevelStart",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level for start color",
+                "Type": "SInt",
+                "Variable": "RampMaximumRedColorLevelStart",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level for start color",
+                "Type": "SInt",
+                "Variable": "RampMaximumGreenColorLevelStart",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level for start color",
+                "Type": "SInt",
+                "Variable": "RampMaximumBlueColorLevelStart",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level for start color",
+                "Type": "SInt",
+                "Variable": "RampMaximumColorLevelStart",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Minimum red color level for end color",
+                "Type": "SInt",
+                "Variable": "RampMinimumRedColorLevelEnd",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level for end color",
+                "Type": "SInt",
+                "Variable": "RampMinimumGreenColorLevelEnd",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level for end color",
+                "Type": "SInt",
+                "Variable": "RampMinimumBlueColorLevelEnd",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level for end color",
+                "Type": "SInt",
+                "Variable": "RampMinimumColorLevelEnd",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level for end color",
+                "Type": "SInt",
+                "Variable": "RampMaximumRedColorLevelEnd",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level for end color",
+                "Type": "SInt",
+                "Variable": "RampMaximumGreenColorLevelEnd",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level for end color",
+                "Type": "SInt",
+                "Variable": "RampMaximumBlueColorLevelEnd",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level for end color",
+                "Type": "SInt",
+                "Variable": "RampMaximumColorLevelEnd",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+        ]
+    }
+}

@@ -1320,6 +1320,51 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''    &quot;ColorMix&quot;: {
+        '''        &quot;Desc&quot;: &quot;Settings for this screensaver are available here.&quot;,
+        '''        &quot;Keys&quot;: [
+        '''            {
+        '''                &quot;Name&quot;: &quot;Activate 255 colors&quot;,
+        '''                &quot;Type&quot;: &quot;SBoolean&quot;,
+        '''                &quot;Variable&quot;: &quot;ColorMix255Colors&quot;,
+        '''                &quot;Description&quot;: &quot;Activates the 255 color support.&quot;
+        '''            },
+        '''            {
+        '''                &quot;Name&quot;: &quot;Activate true colors&quot;,
+        '''                &quot;Type&quot;: &quot;SBoolean&quot;,
+        '''                &quot;Variable&quot;: &quot;ColorMixTrueColor&quot;,
+        '''                &quot; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property ScreensaverSettingsEntries() As String
+            Get
+                Return ResourceManager.GetString("ScreensaverSettingsEntries", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''    &quot;General&quot;: {
+        '''        &quot;Desc&quot;: &quot;This section lists all general kernel settings, mainly for maintaining the kernel.&quot;,
+        '''        &quot;Keys&quot;: [
+        '''            {
+        '''                &quot;Name&quot;: &quot;Prompt for Arguments on Boot&quot;,
+        '''                &quot;Type&quot;: &quot;SBoolean&quot;,
+        '''                &quot;Variable&quot;: &quot;ArgsOnBoot&quot;,
+        '''                &quot;Description&quot;: &quot;Sets up the kernel so it prompts you for argument on boot.&quot;
+        '''            },
+        '''            {
+        '''                &quot;Name&quot;: &quot;Maintenance Mode Trigger&quot;,
+        '''                &quot;Type&quot;: &quot;SBoolean&quot;,
+        '''    [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property SettingsEntries() As String
+            Get
+                Return ResourceManager.GetString("SettingsEntries", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Dostupné príkazy: {0}&quot;,
         '''  &quot;Write command: &quot;: &quot;Príkaz na napísanie:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;Injekcia príkazu bola zrušená.&quot;,

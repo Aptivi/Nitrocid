@@ -1,0 +1,967 @@
+{
+    "General": {
+        "Desc": "This section lists all general kernel settings, mainly for maintaining the kernel.",
+        "Keys": [
+            {
+                "Name": "Prompt for Arguments on Boot",
+                "Type": "SBoolean",
+                "Variable": "ArgsOnBoot",
+                "Description": "Sets up the kernel so it prompts you for argument on boot."
+            },
+            {
+                "Name": "Maintenance Mode Trigger",
+                "Type": "SBoolean",
+                "Variable": "Maintenance",
+                "Description": "Triggers maintenance mode. This disables multiple accounts."
+            },
+            {
+                "Name": "Change Root Password?",
+                "Type": "SBoolean",
+                "Variable": "SetRootPassword",
+                "Description": "If the kernel is started, it will set root password."
+            },
+            {
+                "Name": "Set Root Password...",
+                "Type": "SMaskedString",
+                "Variable": "RootPassword",
+                "ShouldBeTrue": "SetRootPassword",
+                "Description": "Write the root password to be set. Don't worry; the password are shown as stars."
+            },
+            {
+                "Name": "Check for Updates on Startup",
+                "Type": "SBoolean",
+                "Variable": "CheckUpdateStart",
+                "Description": "Each startup, it will check for updates."
+            },
+            {
+                "Name": "Custom Startup Banner",
+                "Type": "SString",
+                "Variable": "CustomBanner",
+                "Description": "If specified, it will display customized startup banner with placeholder support. You can use {0} for kernel version."
+            },
+            {
+                "Name": "Change Culture when Switching Languages",
+                "Type": "SBoolean",
+                "Variable": "LangChangeCulture",
+                "Description": "When switching languages, change the month names, calendar, etc."
+            },
+            {
+                "Name": "Culture of the current language",
+                "Type": "SSelection",
+                "Variable": "CurrentCult",
+                "VariableProperty": "Name",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetCulturesFromCurrentLang",
+                "SelectionFunctionType": "Translate",
+                "SelectionFallback": [ "en-US (English (United States))" ],
+                "Description": "Which variant of the current language is being used to change the month names, calendar, etc.?"
+            },
+            {
+                "Name": "Show app information during boot",
+                "Type": "SBoolean",
+                "Variable": "ShowAppInfoOnBoot",
+                "Description": "Shows brief information about the application on boot."
+            },
+            {
+                "Name": "Parse command-line arguments",
+                "Type": "SBoolean",
+                "Variable": "ParseCommandLineArguments",
+                "Description": "Parses the command-line arguments on boot."
+            },
+            {
+                "Name": "Show stage finish times",
+                "Type": "SBoolean",
+                "Variable": "ShowStageFinishTimes",
+                "Description": "Shows how much time did the kernel take to finish a stage."
+            },
+            {
+                "Name": "Start kernel modifications on boot",
+                "Type": "SBoolean",
+                "Variable": "StartKernelMods",
+                "Description": "Automatically start the kernel modifications on boot."
+            },
+            {
+                "Name": "Show current time before login",
+                "Type": "SBoolean",
+                "Variable": "ShowCurrentTimeBeforeLogin",
+                "Description": "Shows the current time, time zone, and date before logging in."
+            },
+            {
+                "Name": "Notify for any fault during boot",
+                "Type": "SBoolean",
+                "Variable": "NotifyFaultsBoot",
+                "Description": "If there is a minor fault during kernel boot, notifies the user about it."
+            }
+        ]
+    },
+    "Colors": {
+        "Desc": "This section lets you choose what type of color do you want to change.",
+        "Keys": [
+            {
+                "Name": "Input color",
+                "Type": "SColor",
+                "Variable": "InputColor"
+            },
+            {
+                "Name": "License color",
+                "Type": "SColor",
+                "Variable": "LicenseColor"
+            },
+            {
+                "Name": "Continuable kernel error color",
+                "Type": "SColor",
+                "Variable": "ContKernelErrorColor"
+            },
+            {
+                "Name": "Uncontinuable kernel error color",
+                "Type": "SColor",
+                "Variable": "UncontKernelErrorColor"
+            },
+            {
+                "Name": "Host name color",
+                "Type": "SColor",
+                "Variable": "HostNameShellColor"
+            },
+            {
+                "Name": "User name color",
+                "Type": "SColor",
+                "Variable": "UserNameShellColor"
+            },
+            {
+                "Name": "Background color",
+                "Type": "SColor",
+                "Variable": "BackgroundColor"
+            },
+            {
+                "Name": "Neutral text color",
+                "Type": "SColor",
+                "Variable": "NeutralTextColor"
+            },
+            {
+                "Name": "List entry color",
+                "Type": "SColor",
+                "Variable": "ListEntryColor"
+            },
+            {
+                "Name": "List value color",
+                "Type": "SColor",
+                "Variable": "ListValueColor"
+            },
+            {
+                "Name": "Stage color",
+                "Type": "SColor",
+                "Variable": "StageColor"
+            },
+            {
+                "Name": "Error color",
+                "Type": "SColor",
+                "Variable": "ErrorColor"
+            },
+            {
+                "Name": "Warning color",
+                "Type": "SColor",
+                "Variable": "WarningColor"
+            },
+            {
+                "Name": "Option color",
+                "Type": "SColor",
+                "Variable": "OptionColor"
+            },
+            {
+                "Name": "Banner color",
+                "Type": "SColor",
+                "Variable": "BannerColor"
+            },
+            {
+                "Name": "Notification title color",
+                "Type": "SColor",
+                "Variable": "NotificationTitleColor"
+            },
+            {
+                "Name": "Notification description color",
+                "Type": "SColor",
+                "Variable": "NotificationDescriptionColor"
+            },
+            {
+                "Name": "Notification progress color",
+                "Type": "SColor",
+                "Variable": "NotificationProgressColor"
+            },
+            {
+                "Name": "Notification failure color",
+                "Type": "SColor",
+                "Variable": "NotificationFailureColor"
+            },
+            {
+                "Name": "Question color",
+                "Type": "SColor",
+                "Variable": "QuestionColor"
+            },
+            {
+                "Name": "Success color",
+                "Type": "SColor",
+                "Variable": "SuccessColor"
+            },
+            {
+                "Name": "User dollar color",
+                "Type": "SColor",
+                "Variable": "UserDollarColor"
+            },
+            {
+                "Name": "Tip color",
+                "Type": "SColor",
+                "Variable": "TipColor"
+            },
+            {
+                "Name": "Separator text color",
+                "Type": "SColor",
+                "Variable": "SeparatorTextColor"
+            },
+            {
+                "Name": "Separator color",
+                "Type": "SColor",
+                "Variable": "SeparatorColor"
+            },
+            {
+                "Name": "List title color",
+                "Type": "SColor",
+                "Variable": "ListTitleColor"
+            },
+            {
+                "Name": "Development warning color",
+                "Type": "SColor",
+                "Variable": "DevelopmentWarningColor"
+            },
+            {
+                "Name": "Stage time color",
+                "Type": "SColor",
+                "Variable": "StageTimeColor"
+            },
+            {
+                "Name": "Progress color",
+                "Type": "SColor",
+                "Variable": "ProgressColor"
+            },
+            {
+                "Name": "Back option color",
+                "Type": "SColor",
+                "Variable": "BackOptionColor"
+            },
+            {
+                "Name": "Low priority border color",
+                "Type": "SColor",
+                "Variable": "LowPriorityBorderColor"
+            },
+            {
+                "Name": "Medium priority border color",
+                "Type": "SColor",
+                "Variable": "MediumPriorityBorderColor"
+            },
+            {
+                "Name": "High priority border color",
+                "Type": "SColor",
+                "Variable": "HighPriorityBorderColor"
+            }
+        ]
+    },
+    "Hardware": {
+        "Desc": "This section changes hardware probe behavior.",
+        "Keys": [
+            {
+                "Name": "Quiet Probe",
+                "Type": "SBoolean",
+                "Variable": "QuietHardwareProbe",
+                "Description": "Keep hardware probing messages silent."
+            },
+            {
+                "Name": "Full Probe",
+                "Type": "SBoolean",
+                "Variable": "FullHardwareProbe",
+                "Description": "If true, probes all the hardware; else, will only probe the needed hardware."
+            },
+            {
+                "Name": "Verbose Probe",
+                "Type": "SBoolean",
+                "Variable": "VerboseHardwareProbe",
+                "Description": "Make hardware probing messages a bit talkative."
+            },
+            {
+                "Name": "Use legacy hardware listing",
+                "Type": "SBoolean",
+                "Variable": "UseLegacyHardwareListing",
+                "Description": "Uses the legacy way of listing the hardware on startup."
+            }
+        ]
+    },
+    "Login": {
+        "Desc": "This section represents the login settings. Log out of your account for the changes to take effect.",
+        "Keys": [
+            {
+                "Name": "Show MOTD on Log-in",
+                "Type": "SBoolean",
+                "Variable": "ShowMOTD",
+                "Description": "Show Message of the Day before displaying login screen."
+            },
+            {
+                "Name": "Clear Screen on Log-in",
+                "Type": "SBoolean",
+                "Variable": "ClsOnLogin",
+                "Description": "Clear screen before displaying login screen."
+            },
+            {
+                "Name": "Show Available Usernames",
+                "Type": "SBoolean",
+                "Variable": "ShowAvailableUsers",
+                "Description": "Shows available users if enabled."
+            },
+            {
+                "Name": "MOTD Path",
+                "Type": "SString",
+                "Variable": "MOTDFilePath",
+                "Description": "Which file is the MOTD text file? Write an absolute path to the text file."
+            },
+            {
+                "Name": "MAL Path",
+                "Type": "SString",
+                "Variable": "MALFilePath",
+                "Description": "Which file is the MAL text file? Write an absolute path to the text file."
+            },
+            {
+                "Name": "Username prompt style",
+                "Type": "SString",
+                "Variable": "UsernamePrompt",
+                "Description": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Password prompt style",
+                "Type": "SString",
+                "Variable": "PasswordPrompt",
+                "Description": "Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Show MAL on Log-in",
+                "Type": "SBoolean",
+                "Variable": "ShowMAL",
+                "Description": "Shows Message of the Day after displaying login screen."
+            }
+        ]
+    },
+    "Shell": {
+        "Desc": "This section lists the shell settings.",
+        "Keys": [
+            {
+                "Name": "Colored Shell",
+                "Type": "SBoolean",
+                "Variable": "ColoredShell",
+                "Description": "Gives the kernel color support"
+            },
+            {
+                "Name": "Simplified Help Command",
+                "Type": "SBoolean",
+                "Variable": "SimHelp",
+                "Description": "Simplified help command for all the shells"
+            },
+            {
+                "Name": "Current Directory",
+                "Type": "SString",
+                "Variable": "CurrDir",
+                "Description": "Sets the shell's current directory. Write an absolute path to any existing directory."
+            },
+            {
+                "Name": "Lookup Directories",
+                "Type": "SList",
+                "Variable": "PathsToLookup",
+                "SelectionFunctionName": "GetPathList",
+                "SelectionFunctionType": "Filesystem",
+                "DelimiterVariable": "PathLookupDelimiter",
+                "Description": "Group of paths separated by the colon. It works the same as PATH. Write a full path to a folder or a folder name. When you're finished, write \"q\". Write a minus sign next to the path to remove an existing directory."
+            },
+            {
+                "Name": "Prompt Style",
+                "Type": "SString",
+                "Variable": "ShellPromptStyle",
+                "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "FTP Prompt Style",
+                "Type": "SString",
+                "Variable": "FTPShellPromptStyle",
+                "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Mail Prompt Style",
+                "Type": "SString",
+                "Variable": "MailShellPromptStyle",
+                "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "SFTP Prompt Style",
+                "Type": "SString",
+                "Variable": "SFTPShellPromptStyle",
+                "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "RSS Prompt Style",
+                "Type": "SString",
+                "Variable": "RSSShellPromptStyle",
+                "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Text Edit Prompt Style",
+                "Type": "SString",
+                "Variable": "TextEdit_PromptStyle",
+                "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Zip Shell Prompt Style",
+                "Type": "SString",
+                "Variable": "ZipShell_PromptStyle",
+                "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Test Shell Prompt Style",
+                "Type": "SString",
+                "Variable": "Test_PromptStyle",
+                "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "JSON Shell Prompt Style",
+                "Type": "SString",
+                "Variable": "JsonShell_PromptStyle",
+                "Description": "Write how you want your shell prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Probe injected commands",
+                "Type": "SBoolean",
+                "Variable": "ProbeInjectedCommands",
+                "Description": "Probes the injected commands at the start of the kernel shell."
+            },
+            {
+                "Name": "Start color wheel in true color mode",
+                "Type": "SBoolean",
+                "Variable": "ColorWheelTrueColor",
+                "Description": "Start color wheel in true color mode"
+            }
+        ]
+    },
+    "Filesystem": {
+        "Desc": "This section lists the filesystem settings.",
+        "Keys": [
+            {
+                "Name": "Filesystem sort mode",
+                "Type": "SSelection",
+                "Variable": "SortMode",
+                "IsEnumeration": true,
+                "EnumerationInternal": true,
+                "Enumeration": "FilesystemSortOptions",
+                "EnumerationZeroBased": false,
+                "Description": "Controls how the files will be sorted."
+            },
+            {
+                "Name": "Filesystem sort direction",
+                "Type": "SSelection",
+                "Variable": "SortDirection",
+                "IsEnumeration": true,
+                "EnumerationInternal": true,
+                "Enumeration": "FilesystemSortDirection",
+                "EnumerationZeroBased": false,
+                "Description": "Controls the direction of filesystem sorting whether it's ascending or descending."
+            },
+            {
+                "Name": "Debug Size Quota in Bytes",
+                "Type": "SInt",
+                "Variable": "DebugQuota",
+                "Description": "Write how many bytes can the debug log store. It must be numeric."
+            },
+            {
+                "Name": "Show Hidden Files",
+                "Type": "SBoolean",
+                "Variable": "HiddenFiles",
+                "Description": "Shows hidden files."
+            },
+            {
+                "Name": "Size parse mode",
+                "Type": "SBoolean",
+                "Variable": "FullParseMode",
+                "Description": "If enabled, the kernel will parse the whole folder for its total size. Else, will only parse the surface."
+            },
+            {
+                "Name": "Show progress on filesystem operations",
+                "Type": "SBoolean",
+                "Variable": "ShowFilesystemProgress",
+                "Description": "Shows what file is being processed during the filesystem operations"
+            },
+            {
+                "Name": "Show file details in list",
+                "Type": "SBoolean",
+                "Variable": "ShowFileDetailsList",
+                "Description": "Shows the brief file details while listing files"
+            },
+            {
+                "Name": "Suppress unauthorized messages",
+                "Type": "SBoolean",
+                "Variable": "SuppressUnauthorizedMessages",
+                "Description": "Hides the annoying message if the listing function tries to open an unauthorized folder"
+            }
+        ]
+    },
+    "Network": {
+        "Desc": "This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.",
+        "Keys": [
+            {
+                "Name": "Debug Port",
+                "Type": "SInt",
+                "Variable": "DebugPort",
+                "Description": "Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port."
+            },
+            {
+                "Name": "Download Retry Times",
+                "Type": "SInt",
+                "Variable": "DownloadRetries",
+                "Description": "Write how many times the \"get\" command should retry failed downloads. It must be numeric."
+            },
+            {
+                "Name": "Upload Retry Times",
+                "Type": "SInt",
+                "Variable": "UploadRetries",
+                "Description": "Write how many times the \"put\" command should retry failed uploads. It must be numeric."
+            },
+            {
+                "Name": "Show progress bar while downloading or uploading from \"get\" or \"put\" command",
+                "Type": "SBoolean",
+                "Variable": "ShowProgress",
+                "Description": "If true, it makes \"get\" or \"put\" show the progress bar while downloading or uploading."
+            },
+            {
+                "Name": "Log FTP username",
+                "Type": "SBoolean",
+                "Variable": "FTPLoggerUsername",
+                "Description": "Whether or not to log FTP username."
+            },
+            {
+                "Name": "Log FTP IP address",
+                "Type": "SBoolean",
+                "Variable": "FTPLoggerIP",
+                "Description": "Whether or not to log FTP IP address."
+            },
+            {
+                "Name": "Return only first FTP profile",
+                "Type": "SBoolean",
+                "Variable": "FTPFirstProfileOnly",
+                "Description": "Pick the first profile only when connecting."
+            },
+            {
+                "Name": "Show mail message preview",
+                "Type": "SBoolean",
+                "Variable": "ShowPreview",
+                "Description": "When listing mail messages, show body preview."
+            },
+            {
+                "Name": "Record chat to debug log",
+                "Type": "SBoolean",
+                "Variable": "RecordChatToDebugLog",
+                "Description": "Records remote debug chat to debug log."
+            },
+            {
+                "Name": "Show SSH banner",
+                "Type": "SBoolean",
+                "Variable": "SSHBanner",
+                "Description": "Shows the SSH server banner on connection."
+            },
+            {
+                "Name": "Enable RPC",
+                "Type": "SBoolean",
+                "Variable": "RPCEnabled",
+                "Description": "Whether or not to enable RPC."
+            },
+            {
+                "Name": "RPC Port",
+                "Type": "SInt",
+                "Variable": "RPCPort",
+                "Description": "Write an RPC port. It must be numeric, and must not be already used. Otherwise, RPC will fail to open the port."
+            },
+            {
+                "Name": "Show file details in FTP list",
+                "Type": "SBoolean",
+                "Variable": "FtpShowDetailsInList",
+                "Description": "Shows the FTP file details while listing remote directories."
+            },
+            {
+                "Name": "Username prompt style for FTP",
+                "Type": "SString",
+                "Variable": "FtpUserPromptStyle",
+                "Description": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Password prompt style for FTP",
+                "Type": "SString",
+                "Variable": "FtpPassPromptStyle",
+                "Description": "Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Use first FTP profile",
+                "Type": "SBoolean",
+                "Variable": "FtpUseFirstProfile",
+                "Description": "Uses the first FTP profile to connect to FTP."
+            },
+            {
+                "Name": "Add new connections to FTP speed dial",
+                "Type": "SBoolean",
+                "Variable": "FtpNewConnectionsToSpeedDial",
+                "Description": "If enabled, adds a new connection to the FTP speed dial."
+            },
+            {
+                "Name": "Try to validate secure FTP certificates",
+                "Type": "SBoolean",
+                "Variable": "FtpTryToValidateCertificate",
+                "Description": "Tries to validate the FTP certificates. Turning it off is not recommended."
+            },
+            {
+                "Name": "Show FTP MOTD on connection",
+                "Type": "SBoolean",
+                "Variable": "FtpShowMotd",
+                "Description": "Shows the FTP message of the day on login."
+            },
+            {
+                "Name": "Always accept invalid FTP certificates",
+                "Type": "SBoolean",
+                "Variable": "FtpAlwaysAcceptInvalidCerts",
+                "Description": "Always accept invalid FTP certificates. Turning it on is not recommended as it may pose security risks."
+            },
+            {
+                "Name": "Username prompt style for mail",
+                "Type": "SString",
+                "Variable": "Mail_UserPromptStyle",
+                "Description": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Password prompt style for mail",
+                "Type": "SString",
+                "Variable": "Mail_PassPromptStyle",
+                "Description": "Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "IMAP prompt style for mail",
+                "Type": "SString",
+                "Variable": "Mail_IMAPPromptStyle",
+                "Description": "Write how you want your IMAP server prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "SMTP prompt style for mail",
+                "Type": "SString",
+                "Variable": "Mail_SMTPPromptStyle",
+                "Description": "Write how you want your SMTP server prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Automatically detect mail server",
+                "Type": "SBoolean",
+                "Variable": "Mail_AutoDetectServer",
+                "Description": "Automatically detect the mail server based on the given address."
+            },
+            {
+                "Name": "Enable mail debug",
+                "Type": "SBoolean",
+                "Variable": "Mail_Debug",
+                "Description": "Enables mail server debug."
+            },
+            {
+                "Name": "Notify for new mail messages",
+                "Type": "SBoolean",
+                "Variable": "Mail_NotifyNewMail",
+                "Description": "Notifies you for any new mail messages."
+            },
+            {
+                "Name": "GPG password prompt style for mail",
+                "Type": "SString",
+                "Variable": "Mail_GPGPromptStyle",
+                "Description": "Write how you want your GPG password prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Send IMAP ping interval",
+                "Type": "SInt",
+                "Variable": "Mail_ImapPingInterval",
+                "Description": "How many milliseconds to send the IMAP ping?"
+            },
+            {
+                "Name": "Send SMTP ping interval",
+                "Type": "SInt",
+                "Variable": "Mail_SmtpPingInterval",
+                "Description": "How many milliseconds to send the SMTP ping?"
+            },
+            {
+                "Name": "Mail text format",
+                "Type": "SSelection",
+                "Variable": "Mail_TextFormat",
+                "IsEnumeration": true,
+                "EnumerationInternal": false,
+                "Enumeration": "MimeKit.Text.TextFormat",
+                "EnumerationAssembly": "MimeKit",
+                "EnumerationZeroBased": true,
+                "Description": "Controls how the mail text will be shown."
+            },
+            {
+                "Name": "Automatically start remote debug on startup",
+                "Type": "SBoolean",
+                "Variable": "RDebugAutoStart",
+                "Description": "If you want remote debug to start on boot, enable this."
+            },
+            {
+                "Name": "Remote debug message format",
+                "Type": "SString",
+                "Variable": "RDebugMessageFormat",
+                "Description": "Specifies the remote debug message format. {0} for name, {1} for message."
+            },
+            {
+                "Name": "RSS feed URL prompt style",
+                "Type": "SString",
+                "Variable": "RSSFeedUrlPromptStyle",
+                "Description": "Write how you want your RSS feed server prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Auto refresh RSS feed",
+                "Type": "SBoolean",
+                "Variable": "RSSRefreshFeeds",
+                "Description": "Auto refresh RSS feed"
+            },
+            {
+                "Name": "Auto refresh RSS feed interval",
+                "Type": "SInt",
+                "Variable": "RSSRefreshInterval",
+                "Description": "How many milliseconds to refresh the RSS feed?"
+            },
+            {
+                "Name": "Show file details in SFTP list",
+                "Type": "SBoolean",
+                "Variable": "SFTPShowDetailsInList",
+                "Description": "Shows the SFTP file details while listing remote directories."
+            },
+            {
+                "Name": "Username prompt style for SFTP",
+                "Type": "SString",
+                "Variable": "SFTPUserPromptStyle",
+                "Description": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Add new connections to SFTP speed dial",
+                "Type": "SBoolean",
+                "Variable": "SFTPNewConnectionsToSpeedDial",
+                "Description": "If enabled, adds a new connection to the SFTP speed dial."
+            },
+            {
+                "Name": "Ping timeout",
+                "Type": "SInt",
+                "Variable": "PingTimeout",
+                "Description": "How many milliseconds to wait before declaring timeout?"
+            },
+            {
+                "Name": "Show extensive adapter info",
+                "Type": "SBoolean",
+                "Variable": "ExtensiveAdapterInformation",
+                "Description": "Prints the extensive adapter information, such as packet information."
+            },
+            {
+                "Name": "Show general network information",
+                "Type": "SBoolean",
+                "Variable": "GeneralNetworkInformation",
+                "Description": "Shows the general information about network."
+            },
+            {
+                "Name": "Download percentage text",
+                "Type": "SString",
+                "Variable": "DownloadPercentagePrint",
+                "Description": "Write how you want your download percentage text to be. Leave blank to use default style. Placeholders are parsed. {0} for downloaded size, {1} for target size, {2} for percentage."
+            },
+            {
+                "Name": "Upload percentage text",
+                "Type": "SString",
+                "Variable": "UploadPercentagePrint",
+                "Description": "Write how you want your upload percentage text to be. Leave blank to use default style. Placeholders are parsed. {0} for uploaded size, {1} for target size, {2} for percentage."
+            },
+            {
+                "Name": "Recursive hashing for FTP",
+                "Type": "SBoolean",
+                "Variable": "FtpRecursiveHashing",
+                "Description": "Whether to recursively hash a directory. Please note that not all the FTP servers support that."
+            },
+            {
+                "Name": "POP3 prompt style for mail",
+                "Type": "SString",
+                "Variable": "Mail_POP3PromptStyle",
+                "Description": "Write how you want your POP3 server prompt to be. Leave blank to use default style. Placeholders are parsed."
+            },
+            {
+                "Name": "Send POP3 ping interval",
+                "Type": "SInt",
+                "Variable": "Mail_POP3PingInterval",
+                "Description": "How many milliseconds to send the POP3 ping?"
+            },
+            {
+                "Name": "Use POP3",
+                "Type": "SBoolean",
+                "Variable": "Mail_UsePop3",
+                "Description": "Whether to use POP3. Disabling this will use SMTP."
+            }
+        ]
+    },
+    "Screensaver": {
+        "Desc": "This section lists the general screensaver settings. For individual screensaver settings, exit Settings and open Screensaver Settings.",
+        "Keys": [
+            {
+                "Name": "Screensaver Timeout in ms",
+                "Type": "SInt",
+                "Variable": "ScrnTimeout",
+                "Description": "Write when to launch screensaver after specified milliseconds. It must be numeric."
+            },
+            {
+                "Name": "Enable screensaver debugging",
+                "Type": "SBoolean",
+                "Variable": "ScreensaverDebug",
+                "Description": "Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes."
+            },
+            {
+                "Name": "Ask for password after locking",
+                "Type": "SBoolean",
+                "Variable": "PasswordLock",
+                "Description": "After locking the screen, ask for password"
+            }
+        ]
+    },
+    "Misc": {
+        "Desc": "Settings that don't fit in their appropriate sections land here.",
+        "Keys": [
+            {
+                "Name": "Show Time/Date on Upper Right Corner",
+                "Type": "SBoolean",
+                "Variable": "CornerTimeDate",
+                "Description": "The time and date will be shown in the upper right corner of the screen"
+            },
+            {
+                "Name": "Marquee on startup",
+                "Type": "SBoolean",
+                "Variable": "StartScroll",
+                "Description": "Enables eyecandy on startup"
+            },
+            {
+                "Name": "Long Time and Date",
+                "Type": "SBoolean",
+                "Variable": "LongTimeDate",
+                "Description": "The time and date will be longer, showing full month names, etc."
+            },
+            {
+                "Name": "Preferred Unit for Temperature",
+                "Type": "SSelection",
+                "Variable": "PreferredUnit",
+                "IsEnumeration": true,
+                "EnumerationInternal": true,
+                "Enumeration": "UnitMeasurement",
+                "EnumerationZeroBased": false,
+                "Description": "Select your preferred unit for temperature (this only applies to the \"weather\" command)"
+            },
+            {
+                "Name": "Enable text editor autosave",
+                "Type": "SBoolean",
+                "Variable": "TextEdit_AutoSaveFlag",
+                "Description": "Turns on or off the text editor autosave feature."
+            },
+            {
+                "Name": "Text editor autosave interval",
+                "Type": "SInt",
+                "Variable": "TextEdit_AutoSaveInterval",
+                "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
+            },
+            {
+                "Name": "Wrap list outputs",
+                "Type": "SBoolean",
+                "Variable": "WrapListOutputs",
+                "Description": "Wraps the list outputs if it seems too long for the current console geometry."
+            },
+            {
+                "Name": "Draw notification border",
+                "Type": "SBoolean",
+                "Variable": "DrawBorderNotification",
+                "Description": "Covers the notification with the border."
+            },
+            {
+                "Name": "Blacklisted mods",
+                "Type": "SList",
+                "Variable": "BlacklistedModsString",
+                "SelectionFunctionName": "GetBlacklistedMods",
+                "SelectionFunctionType": "ModManager",
+                "Delimiter": ";",
+                "Description": "Write the filenames of the mods that will not run on startup. When you're finished, write \"q\". Write a minus sign next to the path to remove an existing mod."
+            },
+            {
+                "Name": "Solver minimum number",
+                "Type": "SInt",
+                "Variable": "SolverMinimumNumber",
+                "Description": "What is the minimum number to choose?"
+            },
+            {
+                "Name": "Solver maximum number",
+                "Type": "SInt",
+                "Variable": "SolverMaximumNumber",
+                "Description": "What is the maximum number to choose?"
+            },
+            {
+                "Name": "Solver show input",
+                "Type": "SBoolean",
+                "Variable": "SolverShowInput",
+                "Description": "Whether to show what's written in the input prompt."
+            },
+            {
+                "Name": "Upper left corner character for notification border",
+                "Type": "SString",
+                "Variable": "NotifyUpperLeftCornerChar",
+                "Description": "A character that resembles the upper left corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower left corner character for notification border",
+                "Type": "SString",
+                "Variable": "NotifyLowerLeftCornerChar",
+                "Description": "A character that resembles the lower left corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Upper right corner character for notification border",
+                "Type": "SString",
+                "Variable": "NotifyUpperRightCornerChar",
+                "Description": "A character that resembles the upper right corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower right corner character for notification border",
+                "Type": "SString",
+                "Variable": "NotifyLowerRightCornerChar",
+                "Description": "A character that resembles the lower right corner. Be sure to only input one character."
+            },
+            {
+                "Name": "Upper frame character for notification border",
+                "Type": "SString",
+                "Variable": "NotifyUpperFrameChar",
+                "Description": "A character that resembles the upper frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Lower frame character for notification border",
+                "Type": "SString",
+                "Variable": "NotifyLowerFrameChar",
+                "Description": "A character that resembles the lower frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Left frame character for notification border",
+                "Type": "SString",
+                "Variable": "NotifyLeftFrameChar",
+                "Description": "A character that resembles the left frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Right frame character for notification border",
+                "Type": "SString",
+                "Variable": "NotifyRightFrameChar",
+                "Description": "A character that resembles the right frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Manual page information style",
+                "Type": "SString",
+                "Variable": "ManpageInfoStyle",
+                "Description": "Write how you want your manpage information to be. Leave blank to use default style. Placeholders are parsed. {0} for manual title, {1} for revision."
+            }
+        ]
+    }
+}

@@ -21,7 +21,7 @@ Class SettingsCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        OpenMainPage()
+        OpenMainPage(False)
     End Sub
 
 End Class

@@ -189,11 +189,10 @@
     <Compile Include="Misc\Beautifiers\JsonBeautifier.vb" />
     <Compile Include="Misc\Beautifiers\JsonMinifier.vb" />
     <Compile Include="Misc\Configuration\ConfigTools.vb" />
-    <Compile Include="Misc\Configuration\SaverSettingsApp.vb" />
     <Compile Include="Misc\Configuration\SettingsApp.vb" />
     <Compile Include="Misc\Encryption\Encryption.vb" />
     <Compile Include="Misc\Encryption\HashVerifier.vb" />
-    <Compile Include="Misc\FieldManager.vb" />
+    <Compile Include="Misc\Reflection\FieldManager.vb" />
     <Compile Include="Misc\Forecast\Forecast.vb" />
     <Compile Include="Misc\Forecast\ForecastInfo.vb" />
     <Compile Include="Misc\Games\LoveHateRespond.vb" />
@@ -210,6 +209,7 @@
     <Compile Include="Misc\JsonShell\Commands\Save.vb" />
     <Compile Include="Misc\JsonShell\JsonShell.vb" />
     <Compile Include="Misc\JsonShell\JsonTools.vb" />
+    <Compile Include="Misc\Reflection\MethodManager.vb" />
     <Compile Include="Misc\Notifiers\Notification.vb" />
     <Compile Include="Misc\Notifiers\Notifications.vb" />
     <Compile Include="Misc\Platform\PlatformDetector.vb" />
@@ -246,7 +246,7 @@
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
     <Compile Include="Misc\Screensaver\ScreensaverInfo.vb" />
     <Compile Include="Misc\Screensaver\ScreensaverSettings.vb" />
-    <Compile Include="Misc\StringEvaluators.vb" />
+    <Compile Include="Misc\Reflection\StringEvaluators.vb" />
     <Compile Include="Misc\TextEdit\Commands\AddLine.vb" />
     <Compile Include="Misc\TextEdit\Commands\Clear.vb" />
     <Compile Include="Misc\TextEdit\Commands\DelCharNum.vb" />
@@ -608,6 +608,8 @@
     <None Include="Resources\azr.json" />
     <None Include="Resources\ben-T.json" />
     <None Include="Resources\ben.json" />
+    <None Include="Resources\Data\ScreensaverSettingsEntries.json" />
+    <None Include="Resources\Data\SettingsEntries.json" />
     <None Include="Resources\Themes\Breeze.json" />
     <None Include="Resources\Themes\BreezeDark.json" />
     <None Include="Resources\bsq.json" />
