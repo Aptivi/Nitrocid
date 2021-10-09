@@ -274,6 +274,7 @@
     <Compile Include="Misc\Writers\ConsoleWriters\TextWriterWrappedColor.vb" />
     <Compile Include="Misc\Writers\DebugWriters\DebugWriter.vb" />
     <Compile Include="Misc\Writers\ConsoleWriters\TextWriterColor.vb" />
+    <Compile Include="Misc\Writers\FancyWriters\TableColor.vb" />
     <Compile Include="Misc\Writers\MiscWriters\Decisive.vb" />
     <Compile Include="Misc\Writers\MiscWriters\WelcomeMessage.vb" />
     <Compile Include="Misc\ZipFile\Commands\CDir.vb" />
@@ -519,6 +520,7 @@
     <Compile Include="Shell\Shell.vb" />
     <Compile Include="Shell\ShellBase\ShellStartThreads.vb" />
     <Compile Include="TestShell\Commands\TestCRC32.vb" />
+    <Compile Include="TestShell\Commands\TestTable.vb" />
     <Compile Include="TestShell\Commands\UnblacklistMod.vb" />
     <Compile Include="TestShell\Commands\ColorWheel.vb" />
     <Compile Include="TestShell\Commands\ColorTest.vb" />
