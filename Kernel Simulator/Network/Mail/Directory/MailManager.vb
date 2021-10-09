@@ -67,7 +67,7 @@ Public Module MailManager
                         End If
                         MsgFrom = Msg.From.ToString
                         MsgSubject = Msg.Subject
-                        MsgPreview = Msg.GetTextBody(Text.TextFormat.Text).Truncate(200)
+                        MsgPreview = If(Msg.GetTextBody(Text.TextFormat.Text), "").Truncate(200)
                     End SyncLock
                 Else
                     SyncLock POP3_Client.SyncRoot
@@ -75,14 +75,14 @@ Public Module MailManager
                         Msg = POP3_Client.GetMessage(i)
                         MsgFrom = Msg.From.ToString
                         MsgSubject = Msg.Subject
-                        MsgPreview = Msg.GetTextBody(Text.TextFormat.Text).Truncate(200)
+                        MsgPreview = If(Msg.GetTextBody(Text.TextFormat.Text), "").Truncate(200)
                     End SyncLock
                 End If
                 Wdbg(DebugLevel.I, "From {0}: {1}", MsgFrom, MsgSubject)
 
                 'Display them now.
                 W($"- [{i + 1}/{MaxMessagesIndex + 1}] {MsgFrom}: ", False, ColTypes.ListEntry) : W(MsgSubject, True, ColTypes.ListValue)
-                If ShowPreview Then
+                If ShowPreview And Not String.IsNullOrWhiteSpace(MsgPreview) Then
                     'TODO: For more efficient preview, use the PREVIEW extension as documented in RFC-8970 (https://tools.ietf.org/html/rfc8970). However,
                     '      this is impossible at this time because no server and no client support this extension. It supports the LAZY modifier. It only
                     '      displays 200 character long body.
