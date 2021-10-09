@@ -800,6 +800,24 @@
                 "Type": "SBoolean",
                 "Variable": "Mail_UsePop3",
                 "Description": "Whether to use POP3. Disabling this will use SMTP."
+            },
+            {
+                "Name": "Show mail transfer progress",
+                "Type": "SBoolean",
+                "Variable": "Mail_ShowProgress",
+                "Description": "If enabled, the mail shell will show how many bytes transmitted when downloading mail."
+            },
+            {
+                "Name": "Mail transfer progress",
+                "Type": "SString",
+                "Variable": "Mail_ProgressStyle",
+                "Description": "Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size and {1} for total size."
+            },
+            {
+                "Name": "Mail transfer progress (single)",
+                "Type": "SString",
+                "Variable": "Mail_ProgressStyleSingle",
+                "Description": "Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size."
             }
         ]
     },

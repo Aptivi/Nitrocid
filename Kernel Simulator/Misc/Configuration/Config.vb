@@ -243,7 +243,10 @@ Public Module Config
                     {"Maximum number of e-mails in one page", Mail_MaxMessagesInPage},
                     {"POP3 prompt style for mail", Mail_POP3PromptStyle},
                     {"Send POP3 ping interval", Mail_POP3PingInterval},
-                    {"Use POP3", Mail_UsePop3}
+                    {"Use POP3", Mail_UsePop3},
+                    {"Show mail transfer progress", Mail_ShowProgress},
+                    {"Mail transfer progress", Mail_ProgressStyle},
+                    {"Mail transfer progress (single)", Mail_ProgressStyleSingle}
             }
             ConfigurationObject.Add("Network", NetworkConfig)
 
@@ -893,6 +896,9 @@ Public Module Config
             Mail_POP3PromptStyle = If(ConfigToken("Network")?("POP3 prompt style for mail"), "")
             Mail_POP3PingInterval = If(Integer.TryParse(ConfigToken("Network")?("Send POP3 ping interval"), 0), ConfigToken("Network")?("Send POP3 ping interval"), 30000)
             Mail_UsePop3 = If(ConfigToken("Network")?("Use POP3"), False)
+            Mail_ShowProgress = If(ConfigToken("Network")?("Show mail transfer progress"), False)
+            Mail_ProgressStyle = If(ConfigToken("Network")?("Mail transfer progress"), "")
+            Mail_ProgressStyleSingle = If(ConfigToken("Network")?("Mail transfer progress (single)"), "")
 
             'Screensaver Section
             DefSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")

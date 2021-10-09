@@ -49,7 +49,10 @@ Public Module MailShell
     Public Mail_MaxMessagesInPage As Integer = 10
     Public Mail_UsePop3 As Boolean
     Public Mail_TextFormat As TextFormat = TextFormat.Plain
-    Public Mail_Progress As New MailTransferProgress
+    Public Mail_ShowProgress As Boolean = True
+    Public Mail_ProgressStyle As String = ""
+    Public Mail_ProgressStyleSingle As String = ""
+    Public ReadOnly Mail_Progress As New MailTransferProgress
     Friend ExitRequested, KeepAlive As Boolean
     Friend IMAP_Messages As IEnumerable(Of UniqueId)
 

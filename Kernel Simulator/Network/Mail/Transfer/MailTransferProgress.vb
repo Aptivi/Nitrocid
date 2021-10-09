@@ -22,11 +22,23 @@ Public Class MailTransferProgress
     Implements ITransferProgress
 
     Public Sub Report(bytesTransferred As Long, totalSize As Long) Implements ITransferProgress.Report
-        WriteWhere("{0}/{1} " + DoTranslation("of mail transferred...") + GetEsc() + "[0K", 0, Console.CursorTop, True, ColTypes.Progress, bytesTransferred.FileSizeToString, totalSize.FileSizeToString)
+        If Mail_ShowProgress Then
+            If Not String.IsNullOrWhiteSpace(Mail_ProgressStyle) Then
+                WriteWhere(ProbePlaces(Mail_ProgressStyle) + GetEsc() + "[0K", 0, Console.CursorTop, True, ColTypes.Progress, bytesTransferred.FileSizeToString, totalSize.FileSizeToString)
+            Else
+                WriteWhere("{0}/{1} " + DoTranslation("of mail transferred...") + GetEsc() + "[0K", 0, Console.CursorTop, True, ColTypes.Progress, bytesTransferred.FileSizeToString, totalSize.FileSizeToString)
+            End If
+        End If
     End Sub
 
     Public Sub Report(bytesTransferred As Long) Implements ITransferProgress.Report
-        WriteWhere("{0} " + DoTranslation("of mail transferred...") + GetEsc() + "[0K", 0, Console.CursorTop, True, ColTypes.Progress, bytesTransferred.FileSizeToString)
+        If Mail_ShowProgress Then
+            If Not String.IsNullOrWhiteSpace(Mail_ProgressStyleSingle) Then
+                WriteWhere(ProbePlaces(Mail_ProgressStyleSingle) + GetEsc() + "[0K", 0, Console.CursorTop, True, ColTypes.Progress, bytesTransferred.FileSizeToString)
+            Else
+                WriteWhere("{0} " + DoTranslation("of mail transferred...") + GetEsc() + "[0K", 0, Console.CursorTop, True, ColTypes.Progress, bytesTransferred.FileSizeToString)
+            End If
+        End If
     End Sub
 
 End Class
