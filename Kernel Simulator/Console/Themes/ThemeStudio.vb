@@ -27,7 +27,7 @@ Module ThemeStudio
         EventManager.RaiseThemeStudioStarted()
         Wdbg(DebugLevel.I, "Starting theme studio with theme name {0}", ThemeName)
         Dim Response As String
-        Dim MaximumOptions As Integer = 33 + 8 'Colors + options
+        Dim MaximumOptions As Integer = 36 + 8 'Colors + options
         Dim StudioExiting As Boolean
 
         While Not StudioExiting
@@ -69,17 +69,20 @@ Module ThemeStudio
             W("31) " + DoTranslation("Low priority border color") + ": [{0}] ", True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
             W("32) " + DoTranslation("Medium priority border color") + ": [{0}] ", True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
             W("33) " + DoTranslation("High priority border color") + ": [{0}] ", True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
+            W("34) " + DoTranslation("Table separator color") + ": [{0}] ", True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
+            W("35) " + DoTranslation("Table header color") + ": [{0}] ", True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
+            W("36) " + DoTranslation("Table value color") + ": [{0}] ", True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
             Console.WriteLine()
 
             'List saving and loading options
-            W("34) " + DoTranslation("Save Theme to Current Directory"), True, ColTypes.Option)
-            W("35) " + DoTranslation("Save Theme to Another Directory..."), True, ColTypes.Option)
-            W("36) " + DoTranslation("Save Theme to Current Directory as..."), True, ColTypes.Option)
-            W("37) " + DoTranslation("Save Theme to Another Directory as..."), True, ColTypes.Option)
-            W("38) " + DoTranslation("Load Theme From File..."), True, ColTypes.Option)
-            W("39) " + DoTranslation("Load Theme From Prebuilt Themes..."), True, ColTypes.Option)
-            W("40) " + DoTranslation("Preview..."), True, ColTypes.Option)
-            W("41) " + DoTranslation("Exit"), True, ColTypes.Option)
+            W("37) " + DoTranslation("Save Theme to Current Directory"), True, ColTypes.Option)
+            W("38) " + DoTranslation("Save Theme to Another Directory..."), True, ColTypes.Option)
+            W("39) " + DoTranslation("Save Theme to Current Directory as..."), True, ColTypes.Option)
+            W("40) " + DoTranslation("Save Theme to Another Directory as..."), True, ColTypes.Option)
+            W("41) " + DoTranslation("Load Theme From File..."), True, ColTypes.Option)
+            W("42) " + DoTranslation("Load Theme From Prebuilt Themes..."), True, ColTypes.Option)
+            W("43) " + DoTranslation("Preview..."), True, ColTypes.Option)
+            W("44) " + DoTranslation("Exit"), True, ColTypes.Option)
             Console.WriteLine()
 
             'Prompt user
@@ -195,23 +198,32 @@ Module ThemeStudio
                         Case 33 'High priority border color
                             Dim ColorWheelReturn As String = ColorWheel(SelectedHighPriorityBorderColor.Type = ColorType.TrueColor, If(SelectedHighPriorityBorderColor.Type = ColorType._255Color, SelectedHighPriorityBorderColor.PlainSequence, ConsoleColors.White), SelectedHighPriorityBorderColor.R, SelectedHighPriorityBorderColor.G, SelectedHighPriorityBorderColor.B)
                             SelectedHighPriorityBorderColor = New Color(ColorWheelReturn)
-                        Case 34 'Save theme to current directory
+                        Case 34 'Table separator color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedTableSeparatorColor.Type = ColorType.TrueColor, If(SelectedTableSeparatorColor.Type = ColorType._255Color, SelectedTableSeparatorColor.PlainSequence, ConsoleColors.White), SelectedTableSeparatorColor.R, SelectedTableSeparatorColor.G, SelectedTableSeparatorColor.B)
+                            SelectedTableSeparatorColor = New Color(ColorWheelReturn)
+                        Case 35 'Table header color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedTableHeaderColor.Type = ColorType.TrueColor, If(SelectedTableHeaderColor.Type = ColorType._255Color, SelectedTableHeaderColor.PlainSequence, ConsoleColors.White), SelectedTableHeaderColor.R, SelectedTableHeaderColor.G, SelectedTableHeaderColor.B)
+                            SelectedTableHeaderColor = New Color(ColorWheelReturn)
+                        Case 36 'Table value color
+                            Dim ColorWheelReturn As String = ColorWheel(SelectedTableValueColor.Type = ColorType.TrueColor, If(SelectedTableValueColor.Type = ColorType._255Color, SelectedTableValueColor.PlainSequence, ConsoleColors.White), SelectedTableValueColor.R, SelectedTableValueColor.G, SelectedTableValueColor.B)
+                            SelectedTableValueColor = New Color(ColorWheelReturn)
+                        Case 37 'Save theme to current directory
                             SaveThemeToCurrentDirectory(ThemeName)
-                        Case 35 'Save theme to another directory...
+                        Case 38 'Save theme to another directory...
                             Wdbg(DebugLevel.I, "Prompting user for directory name...")
                             W(DoTranslation("Specify directory to save theme to:") + " [{0}] ", False, ColTypes.Input, CurrDir)
                             Dim DirectoryName As String = Console.ReadLine
                             DirectoryName = If(String.IsNullOrWhiteSpace(DirectoryName), CurrDir, DirectoryName)
                             Wdbg(DebugLevel.I, "Got directory name {0}.", DirectoryName)
                             SaveThemeToAnotherDirectory(ThemeName, DirectoryName)
-                        Case 36 'Save theme to current directory as...
+                        Case 39 'Save theme to current directory as...
                             Wdbg(DebugLevel.I, "Prompting user for theme name...")
                             W(DoTranslation("Specify theme name:") + " [{0}] ", False, ColTypes.Input, ThemeName)
                             Dim AltThemeName As String = Console.ReadLine
                             AltThemeName = If(String.IsNullOrWhiteSpace(AltThemeName), ThemeName, AltThemeName)
                             Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                             SaveThemeToCurrentDirectory(AltThemeName)
-                        Case 37 'Save theme to another directory as...
+                        Case 40 'Save theme to another directory as...
                             Wdbg(DebugLevel.I, "Prompting user for theme and directory name...")
                             W(DoTranslation("Specify directory to save theme to:") + " [{0}] ", False, ColTypes.Input, CurrDir)
                             Dim DirectoryName As String = Console.ReadLine
@@ -223,22 +235,22 @@ Module ThemeStudio
                             AltThemeName = If(String.IsNullOrWhiteSpace(AltThemeName), ThemeName, AltThemeName)
                             Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                             SaveThemeToAnotherDirectory(AltThemeName, DirectoryName)
-                        Case 38 'Load Theme From File...
+                        Case 41 'Load Theme From File...
                             Wdbg(DebugLevel.I, "Prompting user for theme name...")
                             W(DoTranslation("Specify theme file name wihout the .json extension:") + " ", False, ColTypes.Input)
                             Dim AltThemeName As String = Console.ReadLine + ".json"
                             Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                             LoadThemeFromFile(AltThemeName)
-                        Case 39 'Load Theme From Prebuilt Themes...
+                        Case 42 'Load Theme From Prebuilt Themes...
                             Wdbg(DebugLevel.I, "Prompting user for theme name...")
                             W(DoTranslation("Specify theme name:") + " ", False, ColTypes.Input)
                             Dim AltThemeName As String = Console.ReadLine
                             Wdbg(DebugLevel.I, "Got theme name {0}.", AltThemeName)
                             LoadThemeFromResource(AltThemeName)
-                        Case 40 'Preview...
+                        Case 43 'Preview...
                             Wdbg(DebugLevel.I, "Printing text with colors of theme...")
                             PreparePreview()
-                        Case 41 'Exit
+                        Case 44 'Exit
                             Wdbg(DebugLevel.I, "Exiting studio...")
                             StudioExiting = True
                     End Select

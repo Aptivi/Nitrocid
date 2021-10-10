@@ -31,5 +31,8 @@
     "BackOptionColor": "172",
     "LowPriorityBorderColor": "178",
     "MediumPriorityBorderColor": "94",
-    "HighPriorityBorderColor": "88"
+    "HighPriorityBorderColor": "88",
+    "TableSeparatorColor": "172",
+    "TableHeaderColor": "178",
+    "TableValueColor": "172"
 }

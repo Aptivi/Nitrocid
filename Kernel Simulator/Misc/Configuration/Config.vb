@@ -133,7 +133,10 @@ Public Module Config
                     {"Back Option Color", If(New Color(BackOptionColor).Type = ColorType.TrueColor, BackOptionColor.EncloseByDoubleQuotes, BackOptionColor)},
                     {"Low Priority Border Color", If(New Color(LowPriorityBorderColor).Type = ColorType.TrueColor, LowPriorityBorderColor.EncloseByDoubleQuotes, LowPriorityBorderColor)},
                     {"Medium Priority Border Color", If(New Color(MediumPriorityBorderColor).Type = ColorType.TrueColor, MediumPriorityBorderColor.EncloseByDoubleQuotes, MediumPriorityBorderColor)},
-                    {"High Priority Border Color", If(New Color(HighPriorityBorderColor).Type = ColorType.TrueColor, HighPriorityBorderColor.EncloseByDoubleQuotes, HighPriorityBorderColor)}
+                    {"High Priority Border Color", If(New Color(HighPriorityBorderColor).Type = ColorType.TrueColor, HighPriorityBorderColor.EncloseByDoubleQuotes, HighPriorityBorderColor)},
+                    {"Table Separator Color", If(New Color(TableSeparatorColor).Type = ColorType.TrueColor, TableSeparatorColor.EncloseByDoubleQuotes, TableSeparatorColor)},
+                    {"Table Header Color", If(New Color(TableHeaderColor).Type = ColorType.TrueColor, TableHeaderColor.EncloseByDoubleQuotes, TableHeaderColor)},
+                    {"Table Value Color", If(New Color(TableValueColor).Type = ColorType.TrueColor, TableValueColor.EncloseByDoubleQuotes, TableValueColor)}
             }
             ConfigurationObject.Add("Colors", ColorConfig)
 
@@ -780,6 +783,9 @@ Public Module Config
                 LowPriorityBorderColor = New Color(If(ConfigToken("Colors")?("Low Priority Border Color"), ConsoleColors.White)).PlainSequence
                 MediumPriorityBorderColor = New Color(If(ConfigToken("Colors")?("Medium Priority Border Color"), ConsoleColors.Yellow)).PlainSequence
                 HighPriorityBorderColor = New Color(If(ConfigToken("Colors")?("High Priority Border Color"), ConsoleColors.Red)).PlainSequence
+                TableSeparatorColor = New Color(If(ConfigToken("Colors")?("Table Separator Color"), ConsoleColors.DarkGray)).PlainSequence
+                TableHeaderColor = New Color(If(ConfigToken("Colors")?("Table Header Color"), ConsoleColors.White)).PlainSequence
+                TableValueColor = New Color(If(ConfigToken("Colors")?("Table Value Color"), ConsoleColors.Gray)).PlainSequence
                 LoadBack()
             End If
 

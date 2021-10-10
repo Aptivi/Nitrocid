@@ -153,6 +153,18 @@ Public Class ThemeInfo
     ''' High priority notification border color set by theme
     ''' </summary>
     Public ReadOnly Property ThemeHighPriorityBorderColor As Color
+    ''' <summary>
+    ''' Table separator color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeTableSeparatorColor As Color
+    ''' <summary>
+    ''' Table header color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeTableHeaderColor As Color
+    ''' <summary>
+    ''' Table value color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeTableValueColor As Color
 
     ''' <summary>
     ''' Generates a new theme info from KS resources
@@ -193,6 +205,9 @@ Public Class ThemeInfo
         ThemeLowPriorityBorderColor = New Color(ThemeResourceJson.SelectToken("LowPriorityBorderColor").ToString)
         ThemeMediumPriorityBorderColor = New Color(ThemeResourceJson.SelectToken("MediumPriorityBorderColor").ToString)
         ThemeHighPriorityBorderColor = New Color(ThemeResourceJson.SelectToken("HighPriorityBorderColor").ToString)
+        ThemeTableSeparatorColor = New Color(ThemeResourceJson.SelectToken("TableSeparatorColor").ToString)
+        ThemeTableHeaderColor = New Color(ThemeResourceJson.SelectToken("TableHeaderColor").ToString)
+        ThemeTableValueColor = New Color(ThemeResourceJson.SelectToken("TableValueColor").ToString)
     End Sub
 
     ''' <summary>
@@ -234,6 +249,9 @@ Public Class ThemeInfo
         ThemeLowPriorityBorderColor = New Color(ThemeResourceJson.SelectToken("LowPriorityBorderColor").ToString)
         ThemeMediumPriorityBorderColor = New Color(ThemeResourceJson.SelectToken("MediumPriorityBorderColor").ToString)
         ThemeHighPriorityBorderColor = New Color(ThemeResourceJson.SelectToken("HighPriorityBorderColor").ToString)
+        ThemeTableSeparatorColor = New Color(ThemeResourceJson.SelectToken("TableSeparatorColor").ToString)
+        ThemeTableHeaderColor = New Color(ThemeResourceJson.SelectToken("TableHeaderColor").ToString)
+        ThemeTableValueColor = New Color(ThemeResourceJson.SelectToken("TableValueColor").ToString)
     End Sub
 
 End Class

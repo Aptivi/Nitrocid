@@ -156,6 +156,18 @@ Public Module ColorTools
         ''' High priority notification border color
         ''' </summary>
         HighPriorityBorder
+        ''' <summary>
+        ''' Table separator
+        ''' </summary>
+        TableSeparator
+        ''' <summary>
+        ''' Table header
+        ''' </summary>
+        TableHeader
+        ''' <summary>
+        ''' Table value
+        ''' </summary>
+        TableValue
     End Enum
 
     ''' <summary>
@@ -206,6 +218,9 @@ Public Module ColorTools
     Public LowPriorityBorderColor As String = New Color(ConsoleColors.White).PlainSequence
     Public MediumPriorityBorderColor As String = New Color(ConsoleColors.Yellow).PlainSequence
     Public HighPriorityBorderColor As String = New Color(ConsoleColors.Red).PlainSequence
+    Public TableSeparatorColor As String = New Color(ConsoleColors.DarkGray).PlainSequence
+    Public TableHeaderColor As String = New Color(ConsoleColors.White).PlainSequence
+    Public TableValueColor As String = New Color(ConsoleColors.Gray).PlainSequence
 
     'Templates array (available ones)
     Public ColorTemplates As New Dictionary(Of String, ThemeInfo) From {{"Default", New ThemeInfo("_Default")},
@@ -280,6 +295,9 @@ Public Module ColorTools
         LowPriorityBorderColor = DefInfo.ThemeLowPriorityBorderColor.PlainSequence
         MediumPriorityBorderColor = DefInfo.ThemeMediumPriorityBorderColor.PlainSequence
         HighPriorityBorderColor = DefInfo.ThemeHighPriorityBorderColor.PlainSequence
+        TableSeparatorColor = DefInfo.ThemeTableSeparatorColor.PlainSequence
+        TableHeaderColor = DefInfo.ThemeTableHeaderColor.PlainSequence
+        TableValueColor = DefInfo.ThemeTableValueColor.PlainSequence
         LoadBack()
 
         'Raise event
@@ -407,6 +425,9 @@ Public Module ColorTools
         ConfigToken("Colors")("Low Priority Border Color") = If(New Color(LowPriorityBorderColor).Type = ColorType.TrueColor, LowPriorityBorderColor.EncloseByDoubleQuotes, LowPriorityBorderColor)
         ConfigToken("Colors")("Medium Priority Border Color") = If(New Color(MediumPriorityBorderColor).Type = ColorType.TrueColor, MediumPriorityBorderColor.EncloseByDoubleQuotes, MediumPriorityBorderColor)
         ConfigToken("Colors")("High Priority Border Color") = If(New Color(HighPriorityBorderColor).Type = ColorType.TrueColor, HighPriorityBorderColor.EncloseByDoubleQuotes, HighPriorityBorderColor)
+        ConfigToken("Colors")("Table Separator Color") = If(New Color(TableSeparatorColor).Type = ColorType.TrueColor, TableSeparatorColor.EncloseByDoubleQuotes, TableSeparatorColor)
+        ConfigToken("Colors")("Table Header Color") = If(New Color(TableHeaderColor).Type = ColorType.TrueColor, TableHeaderColor.EncloseByDoubleQuotes, TableHeaderColor)
+        ConfigToken("Colors")("Table Value Color") = If(New Color(TableValueColor).Type = ColorType.TrueColor, TableValueColor.EncloseByDoubleQuotes, TableValueColor)
         File.WriteAllText(GetKernelPath(KernelPathType.Configuration), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
     End Sub
 
@@ -446,6 +467,9 @@ Public Module ColorTools
     ''' <param name="LowPriorityBorderColor">Low priority notification border color</param>
     ''' <param name="MediumPriorityBorderColor">Medium priority notification border color</param>
     ''' <param name="HighPriorityBorderColor">High priority notification border color</param>
+    ''' <param name="TableSeparatorColor">Table separator color</param>
+    ''' <param name="TableHeaderColor">Table header color</param>
+    ''' <param name="TableValueColor">Table value color</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="InvalidOperationException"></exception>
     ''' <exception cref="Exceptions.ColorException"></exception>
@@ -454,7 +478,8 @@ Public Module ColorTools
                               OptionColor As String, BannerColor As String, NotificationTitleColor As String, NotificationDescriptionColor As String, NotificationProgressColor As String,
                               NotificationFailureColor As String, QuestionColor As String, SuccessColor As String, UserDollarColor As String, TipColor As String, SeparatorTextColor As String,
                               SeparatorColor As String, ListTitleColor As String, DevelopmentWarningColor As String, StageTimeColor As String, ProgressColor As String, BackOptionColor As String,
-                              LowPriorityBorderColor As String, MediumPriorityBorderColor As String, HighPriorityBorderColor As String) As Boolean
+                              LowPriorityBorderColor As String, MediumPriorityBorderColor As String, HighPriorityBorderColor As String, TableSeparatorColor As String, TableHeaderColor As String,
+                              TableValueColor As String) As Boolean
         'Check colors for null and set them to "def" if found
         If String.IsNullOrEmpty(OptionColor) Then OptionColor = "def"
         If String.IsNullOrEmpty(WarningColor) Then WarningColor = "def"
@@ -489,6 +514,9 @@ Public Module ColorTools
         If String.IsNullOrEmpty(LowPriorityBorderColor) Then LowPriorityBorderColor = "def"
         If String.IsNullOrEmpty(MediumPriorityBorderColor) Then MediumPriorityBorderColor = "def"
         If String.IsNullOrEmpty(HighPriorityBorderColor) Then HighPriorityBorderColor = "def"
+        If String.IsNullOrEmpty(TableSeparatorColor) Then TableSeparatorColor = "def"
+        If String.IsNullOrEmpty(TableHeaderColor) Then TableHeaderColor = "def"
+        If String.IsNullOrEmpty(TableValueColor) Then TableValueColor = "def"
 
         'Set colors
         If ColoredShell = True Then
@@ -526,6 +554,9 @@ Public Module ColorTools
             If LowPriorityBorderColor = "def" Then LowPriorityBorderColor = New Color(ConsoleColors.White).PlainSequence
             If MediumPriorityBorderColor = "def" Then MediumPriorityBorderColor = New Color(ConsoleColors.Yellow).PlainSequence
             If HighPriorityBorderColor = "def" Then HighPriorityBorderColor = New Color(ConsoleColors.Red).PlainSequence
+            If TableSeparatorColor = "def" Then TableSeparatorColor = New Color(ConsoleColors.DarkGray).PlainSequence
+            If TableHeaderColor = "def" Then TableHeaderColor = New Color(ConsoleColors.White).PlainSequence
+            If TableValueColor = "def" Then TableValueColor = New Color(ConsoleColors.Gray).PlainSequence
             If BackgroundColor = "def" Then
                 BackgroundColor = New Color(ConsoleColors.Black).PlainSequence
                 LoadBack()
@@ -566,6 +597,9 @@ Public Module ColorTools
                 ColorTools.LowPriorityBorderColor = New Color(LowPriorityBorderColor).PlainSequence
                 ColorTools.MediumPriorityBorderColor = New Color(MediumPriorityBorderColor).PlainSequence
                 ColorTools.HighPriorityBorderColor = New Color(HighPriorityBorderColor).PlainSequence
+                ColorTools.TableSeparatorColor = New Color(TableSeparatorColor).PlainSequence
+                ColorTools.TableHeaderColor = New Color(TableHeaderColor).PlainSequence
+                ColorTools.TableValueColor = New Color(TableValueColor).PlainSequence
                 LoadBack()
                 MakePermanent()
 
@@ -630,6 +664,9 @@ Public Module ColorTools
                 LowPriorityBorderColor = ThemeInfo.ThemeLowPriorityBorderColor.PlainSequence
                 MediumPriorityBorderColor = ThemeInfo.ThemeMediumPriorityBorderColor.PlainSequence
                 HighPriorityBorderColor = ThemeInfo.ThemeHighPriorityBorderColor.PlainSequence
+                TableSeparatorColor = ThemeInfo.ThemeTableSeparatorColor.PlainSequence
+                TableHeaderColor = ThemeInfo.ThemeTableHeaderColor.PlainSequence
+                TableValueColor = ThemeInfo.ThemeTableValueColor.PlainSequence
                 LoadBack()
                 MakePermanent()
 
@@ -737,6 +774,12 @@ Public Module ColorTools
                     SetConsoleColor(New Color(MediumPriorityBorderColor))
                 Case ColTypes.HighPriorityBorder
                     SetConsoleColor(New Color(HighPriorityBorderColor))
+                Case ColTypes.TableSeparator
+                    SetConsoleColor(New Color(TableSeparatorColor))
+                Case ColTypes.TableHeader
+                    SetConsoleColor(New Color(TableHeaderColor))
+                Case ColTypes.TableValue
+                    SetConsoleColor(New Color(TableValueColor))
                 Case Else
                     Exit Select
             End Select

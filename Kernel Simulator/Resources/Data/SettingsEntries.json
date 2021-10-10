@@ -261,6 +261,21 @@
                 "Name": "High priority border color",
                 "Type": "SColor",
                 "Variable": "HighPriorityBorderColor"
+            },
+            {
+                "Name": "Table separator color",
+                "Type": "SColor",
+                "Variable": "TableSeparatorColor"
+            },
+            {
+                "Name": "Table header color",
+                "Type": "SColor",
+                "Variable": "TableHeaderColor"
+            },
+            {
+                "Name": "Table value color",
+                "Type": "SColor",
+                "Variable": "TableValueColor"
             }
         ]
     },

@@ -98,7 +98,7 @@ Public Module TableColor
             Dim Header As String = Headers(HeaderIndex)
             Dim ColumnPosition As Integer = ColumnPositions(HeaderIndex)
             If Header Is Nothing Then Header = ""
-            WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes.Neutral)
+            WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes.TableHeader)
         Next
         Console.WriteLine()
 
@@ -106,7 +106,7 @@ Public Module TableColor
         Dim OldTop As Integer = Console.CursorTop
         RepeatTimes = Console.WindowWidth - Console.CursorLeft - (Margin * 2)
         If Margin > 0 Then W(" ".Repeat(Margin), False, ColTypes.Neutral)
-        W("-".Repeat(RepeatTimes), True, ColTypes.Neutral)
+        W("-".Repeat(RepeatTimes), True, ColTypes.TableSeparator)
 
         'Fix CursorTop value on Unix systems.
         If IsOnUnix() Then
@@ -119,7 +119,7 @@ Public Module TableColor
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
                 If RowValue Is Nothing Then RowValue = ""
-                WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes.Neutral)
+                WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes.TableValue)
             Next
             Console.WriteLine()
         Next

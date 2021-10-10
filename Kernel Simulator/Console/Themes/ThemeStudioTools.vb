@@ -142,17 +142,29 @@ Module ThemeStudioTools
     ''' </summary>
     Friend SelectedBackOptionColor As New Color(BannerColor)
     ''' <summary>
-    ''' Selected banner color for new theme
+    ''' Selected low priority notification border color for new theme
     ''' </summary>
     Friend SelectedLowPriorityBorderColor As New Color(LowPriorityBorderColor)
     ''' <summary>
-    ''' Selected banner color for new theme
+    ''' Selected medium priority notification border color for new theme
     ''' </summary>
     Friend SelectedMediumPriorityBorderColor As New Color(MediumPriorityBorderColor)
     ''' <summary>
-    ''' Selected banner color for new theme
+    ''' Selected high priority notification border color for new theme
     ''' </summary>
     Friend SelectedHighPriorityBorderColor As New Color(HighPriorityBorderColor)
+    ''' <summary>
+    ''' Selected Table separator color for new theme
+    ''' </summary>
+    Friend SelectedTableSeparatorColor As New Color(TableSeparatorColor)
+    ''' <summary>
+    ''' Selected Table header color for new theme
+    ''' </summary>
+    Friend SelectedTableHeaderColor As New Color(TableHeaderColor)
+    ''' <summary>
+    ''' Selected Table value color for new theme
+    ''' </summary>
+    Friend SelectedTableValueColor As New Color(TableValueColor)
 
     ''' <summary>
     ''' Saves theme to current directory under "<paramref name="Theme"/>.json."
@@ -226,6 +238,9 @@ Module ThemeStudioTools
         SelectedLowPriorityBorderColor = ThemeInfo.ThemeLowPriorityBorderColor
         SelectedMediumPriorityBorderColor = ThemeInfo.ThemeMediumPriorityBorderColor
         SelectedHighPriorityBorderColor = ThemeInfo.ThemeHighPriorityBorderColor
+        SelectedTableSeparatorColor = ThemeInfo.ThemeTableSeparatorColor
+        SelectedTableHeaderColor = ThemeInfo.ThemeTableHeaderColor
+        SelectedTableValueColor = ThemeInfo.ThemeTableValueColor
     End Sub
 
     ''' <summary>
@@ -270,6 +285,9 @@ Module ThemeStudioTools
         SelectedLowPriorityBorderColor = ThemeInfo.ThemeLowPriorityBorderColor
         SelectedMediumPriorityBorderColor = ThemeInfo.ThemeMediumPriorityBorderColor
         SelectedHighPriorityBorderColor = ThemeInfo.ThemeHighPriorityBorderColor
+        SelectedTableSeparatorColor = ThemeInfo.ThemeTableSeparatorColor
+        SelectedTableHeaderColor = ThemeInfo.ThemeTableHeaderColor
+        SelectedTableValueColor = ThemeInfo.ThemeTableValueColor
     End Sub
 
     ''' <summary>
@@ -309,7 +327,10 @@ Module ThemeStudioTools
                            New JProperty("BackOptionColor", SelectedBackOptionColor.PlainSequence),
                            New JProperty("LowPriorityBorderColor", SelectedLowPriorityBorderColor.PlainSequence),
                            New JProperty("MediumPriorityBorderColor", SelectedMediumPriorityBorderColor.PlainSequence),
-                           New JProperty("HighPriorityBorderColor", SelectedHighPriorityBorderColor.PlainSequence))
+                           New JProperty("HighPriorityBorderColor", SelectedHighPriorityBorderColor.PlainSequence),
+                           New JProperty("TableSeparatorColor", SelectedTableSeparatorColor.PlainSequence),
+                           New JProperty("TableHeaderColor", SelectedTableHeaderColor.PlainSequence),
+                           New JProperty("TableValueColor", SelectedTableValueColor.PlainSequence))
     End Function
 
     ''' <summary>
@@ -451,6 +472,18 @@ Module ThemeStudioTools
         'High priority border color
         W("*) " + DoTranslation("High priority border color") + ": ", False, ColTypes.Option)
         WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedHighPriorityBorderColor)
+
+        'Table separator color
+        W("*) " + DoTranslation("Table separator color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedTableSeparatorColor)
+
+        'Table header color
+        W("*) " + DoTranslation("Table header color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedTableHeaderColor)
+
+        'Table value color
+        W("*) " + DoTranslation("Table value color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedTableValueColor)
 
         'Pause until a key is pressed
         W(vbNewLine + DoTranslation("Press any key to go back."), True, ColTypes.Neutral)
