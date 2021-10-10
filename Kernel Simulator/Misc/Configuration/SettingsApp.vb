@@ -123,7 +123,7 @@ Public Module SettingsApp
             Dim SectionTokenGeneral As JToken = SettingsToken(Section)
             Dim SectionToken As JToken = SectionTokenGeneral("Keys")
             Dim SectionDescription = SectionTokenGeneral("Desc")
-            Dim MaxOptions As Integer = SectionToken.Count - 1
+            Dim MaxOptions As Integer = SectionToken.Count
 
             While Not SectionFinished
                 Console.Clear()
