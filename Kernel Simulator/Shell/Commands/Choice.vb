@@ -26,6 +26,7 @@ Class ChoiceCommand
             If ListSwitchesOnly(0) = "-o" Then OutputType = ChoiceOutputType.OneLine
             If ListSwitchesOnly(0) = "-t" Then OutputType = ChoiceOutputType.TwoLines
             If ListSwitchesOnly(0) = "-m" Then OutputType = ChoiceOutputType.Modern
+            If ListSwitchesOnly(0) = "-a" Then OutputType = ChoiceOutputType.Table
             PromptChoice(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1), OutputType)
         Else
             PromptChoice(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1))
