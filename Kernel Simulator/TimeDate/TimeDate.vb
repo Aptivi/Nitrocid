@@ -80,10 +80,10 @@ Public Module TimeDate
     ''' Shows current time, date, and timezone.
     ''' </summary>
     Public Sub ShowCurrentTimes()
-        W(DoTranslation("datetime: Time is {0}"), True, ColTypes.Neutral, RenderTime)
-        W(DoTranslation("datetime: Today is {0}"), True, ColTypes.Neutral, RenderDate)
-        W(DoTranslation("datetime: Time and date in UTC: {0}"), True, ColTypes.Neutral, RenderUtc)
-        W(DoTranslation("datetime: Time Zone: {0}") + " ({1})", True, ColTypes.Neutral, TimeZone.CurrentTimeZone.StandardName, TimeZone.CurrentTimeZone.GetUtcOffset(KernelDateTime).ToString(If(TimeZone.CurrentTimeZone.GetUtcOffset(KernelDateTime) < TimeSpan.Zero, "\-", "\+") + "hh\:mm\:ss"))
+        W("datetime: ", False, ColTypes.ListEntry) : W(DoTranslation("Current time is {0}"), True, ColTypes.ListValue, RenderTime)
+        W("datetime: ", False, ColTypes.ListEntry) : W(DoTranslation("Today is {0}"), True, ColTypes.ListValue, RenderDate)
+        W("datetime: ", False, ColTypes.ListEntry) : W(DoTranslation("Time and date in UTC: {0}"), True, ColTypes.ListValue, RenderUtc)
+        W("datetime: ", False, ColTypes.ListEntry) : W(DoTranslation("Time Zone:") + " {0} ({1})", True, ColTypes.ListValue, TimeZone.CurrentTimeZone.StandardName, TimeZone.CurrentTimeZone.GetUtcOffset(KernelDateTime).ToString(If(TimeZone.CurrentTimeZone.GetUtcOffset(KernelDateTime) < TimeSpan.Zero, "\-", "\+") + "hh\:mm\:ss"))
     End Sub
 
 End Module
