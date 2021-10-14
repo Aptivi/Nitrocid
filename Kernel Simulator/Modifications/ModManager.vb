@@ -162,6 +162,9 @@ Public Module ModManager
                 RSSModCommands.Clear()
                 RSSModDefs.Clear()
                 Wdbg(DebugLevel.I, "Mod commands for RSS shell cleared.")
+                JsonShell_ModCommands.Clear()
+                JsonShell_ModDefs.Clear()
+                Wdbg(DebugLevel.I, "Mod commands for JSON shell cleared.")
 
                 'Clear the custom screensavers
                 CustomSavers.Clear()
