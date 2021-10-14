@@ -70,6 +70,7 @@ Public Module Shell
                                                                              {"dirinfo", New CommandInfo("dirinfo", ShellCommandType.Shell, "Provides information about a directory", "<directory>", True, 1, New DirInfoCommand)},
                                                                              {"disconndbgdev", New CommandInfo("disconndbgdev", ShellCommandType.Shell, "Disconnect a debug device", "<ip>", True, 1, New DisconnDbgDevCommand, True)},
                                                                              {"dismissnotif", New CommandInfo("dismissnotif", ShellCommandType.Shell, "Dismisses a notification", "<notificationNumber>", True, 1, New DismissNotifCommand)},
+                                                                             {"dismissnotifs", New CommandInfo("dismissnotifs", ShellCommandType.Shell, "Dismisses all notifications", "", False, 0, New DismissNotifsCommand)},
                                                                              {"echo", New CommandInfo("echo", ShellCommandType.Shell, "Writes text into the console", "<text>", False, 0, New EchoCommand)},
                                                                              {"edit", New CommandInfo("edit", ShellCommandType.Shell, "Edits a text file", "<file>", True, 1, New EditCommand)},
                                                                              {"fileinfo", New CommandInfo("fileinfo", ShellCommandType.Shell, "Provides information about a file", "<file>", True, 1, New FileInfoCommand)},

@@ -424,6 +424,7 @@
     <Compile Include="Shell\Commands\Copy.vb" />
     <Compile Include="Shell\Commands\DirInfo.vb" />
     <Compile Include="Shell\Commands\DisconnDbgDev.vb" />
+    <Compile Include="Shell\Commands\DismissNotifs.vb" />
     <Compile Include="Shell\Commands\DismissNotif.vb" />
     <Compile Include="Shell\Commands\Echo.vb" />
     <Compile Include="Shell\Commands\Edit.vb" />
