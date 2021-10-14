@@ -439,7 +439,7 @@ Public Module ModManager
                     Dim ManualFileName As String = Path.GetFileNameWithoutExtension(ModManualFile)
                     Dim ManualInstance As New Manual(ModManualFile)
                     If Not ManualInstance.ValidManpage Then Throw New Exceptions.ModInstallException(DoTranslation("The manual page {0} is invalid.").FormatString(ManualFileName))
-                    File.Copy(ModManualFile, TargetModPath + ".manual/" + ModManualFile, True)
+                    CopyFileOrDir(ModManualFile, TargetModPath + ".manual/" + ModManualFile)
                 Next
             End If
 
