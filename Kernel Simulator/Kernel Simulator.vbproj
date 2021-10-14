@@ -451,6 +451,7 @@
     <Compile Include="Shell\Commands\ModMan.vb" />
     <Compile Include="Shell\Commands\ModManual.vb" />
     <Compile Include="Shell\Commands\Move.vb" />
+    <Compile Include="Shell\Commands\Open.vb" />
     <Compile Include="Shell\Commands\NetInfo.vb" />
     <Compile Include="Shell\Commands\Perm.vb" />
     <Compile Include="Shell\Commands\Ping.vb" />
