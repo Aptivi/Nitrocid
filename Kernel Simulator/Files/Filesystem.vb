@@ -414,7 +414,7 @@ Public Module Filesystem
     ''' </summary>
     ''' <param name="Source">Source directory</param>
     ''' <param name="Destination">Target directory</param>
-    Private Sub CopyDirectory(Source As String, Destination As String)
+    Public Sub CopyDirectory(Source As String, Destination As String)
         CopyDirectory(Source, Destination, ShowFilesystemProgress)
     End Sub
 
@@ -424,7 +424,7 @@ Public Module Filesystem
     ''' <param name="Source">Source directory</param>
     ''' <param name="Destination">Target directory</param>
     ''' <param name="ShowProgress">Whether or not to show what files are being copied</param>
-    Private Sub CopyDirectory(Source As String, Destination As String, ShowProgress As Boolean)
+    Public Sub CopyDirectory(Source As String, Destination As String, ShowProgress As Boolean)
         If Not Directory.Exists(Source) Then Throw New IOException(DoTranslation("Directory {0} not found.").FormatString(Source))
 
         'Get all source directories and files
