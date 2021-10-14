@@ -250,7 +250,9 @@ Public Module Config
                     {"Use POP3", Mail_UsePop3},
                     {"Show mail transfer progress", Mail_ShowProgress},
                     {"Mail transfer progress", Mail_ProgressStyle},
-                    {"Mail transfer progress (single)", Mail_ProgressStyleSingle}
+                    {"Mail transfer progress (single)", Mail_ProgressStyleSingle},
+                    {"Show notification for download progress", DownloadNotificationProvoke},
+                    {"Show notification for upload progress", UploadNotificationProvoke}
             }
             ConfigurationObject.Add("Network", NetworkConfig)
 
@@ -907,6 +909,8 @@ Public Module Config
             Mail_ShowProgress = If(ConfigToken("Network")?("Show mail transfer progress"), False)
             Mail_ProgressStyle = If(ConfigToken("Network")?("Mail transfer progress"), "")
             Mail_ProgressStyleSingle = If(ConfigToken("Network")?("Mail transfer progress (single)"), "")
+            DownloadNotificationProvoke = If(ConfigToken("Network")?("Show notification for download progress"), False)
+            UploadNotificationProvoke = If(ConfigToken("Network")?("Show notification for upload progress"), False)
 
             'Screensaver Section
             DefSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")

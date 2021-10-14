@@ -839,6 +839,18 @@
                 "Type": "SString",
                 "Variable": "Mail_ProgressStyleSingle",
                 "Description": "Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size."
+            },
+            {
+                "Name": "Show notification for download progress",
+                "Type": "SBoolean",
+                "Variable": "DownloadNotificationProvoke",
+                "Description": "Shows the notification showing the download progress."
+            },
+            {
+                "Name": "Show notification for upload progress",
+                "Type": "SBoolean",
+                "Variable": "UploadNotificationProvoke",
+                "Description": "Shows the notification showing the download progress."
             }
         ]
     },
