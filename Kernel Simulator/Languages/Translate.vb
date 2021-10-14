@@ -155,11 +155,11 @@ Public Module Translate
                             If Not lang.EndsWith("-T") Then lang += "-T"
                         Else
                             W(DoTranslation("The language you've selected contains two variants. Select one:") + vbNewLine, True, ColTypes.Neutral)
-                            W(DoTranslation("1. Transliterated", lang), True, ColTypes.Neutral)
-                            W(DoTranslation("2. Translated", lang + "-T") + vbNewLine, True, ColTypes.Neutral)
+                            W(" 1) " + DoTranslation("Transliterated version", lang), True, ColTypes.Option)
+                            W(" 2) " + DoTranslation("Translated version", lang + "-T") + vbNewLine, True, ColTypes.Option)
                             Dim LanguageSet As Boolean
                             While Not LanguageSet
-                                W(DoTranslation("Select your choice:") + " ", False, ColTypes.Input)
+                                W(">> ", False, ColTypes.Input)
                                 Dim Answer As Integer
                                 If Integer.TryParse(Console.ReadLine, Answer) Then
                                     Wdbg(DebugLevel.I, "Choice: {0}", Answer)
