@@ -21,7 +21,11 @@ Class ChLangCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        PromptForSetLang(ListArgs(0))
+        Dim AlwaysTransliterated, AlwaysTranslated, Force As Boolean
+        If ListSwitchesOnly.Contains("-alwaystransliterated") Then AlwaysTransliterated = True
+        If ListSwitchesOnly.Contains("-alwaystranslated") Then AlwaysTranslated = True '-alwaystransliterated has higher priority.
+        If ListSwitchesOnly.Contains("-force") Then Force = True
+        PromptForSetLang(ListArgsOnly(0), Force, AlwaysTransliterated, AlwaysTranslated)
     End Sub
 
 End Class

@@ -138,7 +138,7 @@ Public Module Translate
     ''' </summary>
     ''' <param name="lang">A specified language</param>
     ''' <param name="Force">Force changes</param>
-    Sub PromptForSetLang(lang As String, Optional Force As Boolean = False)
+    Sub PromptForSetLang(lang As String, Optional Force As Boolean = False, Optional AlwaysTransliterated As Boolean = False, Optional AlwaysTranslated As Boolean = False)
         If Languages.ContainsKey(lang) Then
             Wdbg(DebugLevel.I, "Forced {0}", Force)
             If Not Force Then
@@ -149,26 +149,32 @@ Public Module Translate
                     'Check to see if the language is transliterable
                     Wdbg(DebugLevel.I, "Transliterable? {0}", Languages(lang).Transliterable)
                     If Languages(lang).Transliterable Then
-                        W(DoTranslation("The language you've selected contains two variants. Select one:") + vbNewLine, True, ColTypes.Neutral)
-                        W(DoTranslation("1. Transliterated", lang), True, ColTypes.Neutral)
-                        W(DoTranslation("2. Translated", lang + "-T") + vbNewLine, True, ColTypes.Neutral)
-                        Dim LanguageSet As Boolean
-                        While Not LanguageSet
-                            W(DoTranslation("Select your choice:") + " ", False, ColTypes.Input)
-                            Dim Answer As Integer
-                            If Integer.TryParse(Console.ReadLine, Answer) Then
-                                Wdbg(DebugLevel.I, "Choice: {0}", Answer)
-                                Select Case Answer
-                                    Case 1, 2
-                                        If Answer = 2 Then lang += "-T"
-                                        LanguageSet = True
-                                    Case Else
-                                        W(DoTranslation("Invalid choice. Try again."), True, ColTypes.Error)
-                                End Select
-                            Else
-                                W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
-                            End If
-                        End While
+                        If AlwaysTransliterated Then
+                            lang.RemovePostfix("-T")
+                        ElseIf AlwaysTranslated Then
+                            If Not lang.EndsWith("-T") Then lang += "-T"
+                        Else
+                            W(DoTranslation("The language you've selected contains two variants. Select one:") + vbNewLine, True, ColTypes.Neutral)
+                            W(DoTranslation("1. Transliterated", lang), True, ColTypes.Neutral)
+                            W(DoTranslation("2. Translated", lang + "-T") + vbNewLine, True, ColTypes.Neutral)
+                            Dim LanguageSet As Boolean
+                            While Not LanguageSet
+                                W(DoTranslation("Select your choice:") + " ", False, ColTypes.Input)
+                                Dim Answer As Integer
+                                If Integer.TryParse(Console.ReadLine, Answer) Then
+                                    Wdbg(DebugLevel.I, "Choice: {0}", Answer)
+                                    Select Case Answer
+                                        Case 1, 2
+                                            If Answer = 2 Then lang += "-T"
+                                            LanguageSet = True
+                                        Case Else
+                                            W(DoTranslation("Invalid choice. Try again."), True, ColTypes.Error)
+                                    End Select
+                                Else
+                                    W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                                End If
+                            End While
+                        End If
                     End If
                 End If
             End If
