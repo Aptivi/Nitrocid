@@ -22,7 +22,10 @@ Class CatCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Try
-            ReadContents(ListArgs(0))
+            Dim PrintLines As Boolean = Flags.PrintLineNumbers
+            If ListSwitchesOnly.Contains("-lines") Then PrintLines = True
+            If ListSwitchesOnly.Contains("-nolines") Then PrintLines = False '-lines and -nolines cancel together.
+            PrintContents(ListArgs(0), PrintLines)
         Catch ex As Exception
             WStkTrc(ex)
             W(ex.Message, True, ColTypes.Error)

@@ -56,23 +56,54 @@ Public Module Filesystem
     End Function
 
     ''' <summary>
-    ''' Reads the contents of a file and writes it to the console
+    ''' Prints to the console
     ''' </summary>
     ''' <param name="filename">Full path to file</param>
-    Public Sub ReadContents(filename As String)
+    Public Sub PrintContents(filename As String)
+        PrintContents(filename, PrintLineNumbers)
+    End Sub
+
+    ''' <summary>
+    ''' Prints to the console
+    ''' </summary>
+    ''' <param name="filename">Full path to file</param>
+    Public Sub PrintContents(filename As String, PrintLineNumbers As Boolean)
 #If NTFSCorruptionFix Then
         ThrowOnInvalidPath(filename)
 #End If
 
         'Read the contents
         filename = NeutralizePath(filename)
+        Dim Contents As String() = ReadContents(filename)
+        For ContentIndex As Integer = 0 To Contents.Length - 1
+            If PrintLineNumbers Then
+                W("{0,4}: ", False, ColTypes.ListEntry, ContentIndex + 1)
+            End If
+            W(Contents(ContentIndex), True, ColTypes.Neutral)
+        Next
+    End Sub
+
+    ''' <summary>
+    ''' Reads the contents of a file and writes it to the array
+    ''' </summary>
+    ''' <param name="filename">Full path to file</param>
+    ''' <returns>An array full of file contents</returns>
+    Public Function ReadContents(filename As String) As String()
+#If NTFSCorruptionFix Then
+        ThrowOnInvalidPath(filename)
+#End If
+
+        'Read the contents
+        Dim FileContents As New List(Of String)
+        filename = NeutralizePath(filename)
         Using FStream As New StreamReader(filename)
             Wdbg(DebugLevel.I, "Stream to file {0} opened.", filename)
             While Not FStream.EndOfStream
-                W(FStream.ReadLine, True, ColTypes.Neutral)
+                FileContents.Add(FStream.ReadLine)
             End While
         End Using
-    End Sub
+        Return FileContents.ToArray
+    End Function
 
     ''' <summary>
     ''' List all files and folders in a specified folder

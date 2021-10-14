@@ -517,6 +517,12 @@
                 "Type": "SBoolean",
                 "Variable": "SuppressUnauthorizedMessages",
                 "Description": "Hides the annoying message if the listing function tries to open an unauthorized folder"
+            },
+            {
+                "Name": "Print line numbers on printing file contents",
+                "Type": "SBoolean",
+                "Variable": "PrintLineNumbers",
+                "Description": "Makes the \"cat\" command print the file's line numbers."
             }
         ]
     },

@@ -192,7 +192,8 @@ Public Module Config
                     {"Size parse mode", FullParseMode},
                     {"Show progress on filesystem operations", ShowFilesystemProgress},
                     {"Show file details in list", ShowFileDetailsList},
-                    {"Suppress unauthorized messages", SuppressUnauthorizedMessages}
+                    {"Suppress unauthorized messages", SuppressUnauthorizedMessages},
+                    {"Print line numbers on printing file contents", PrintLineNumbers}
             }
             ConfigurationObject.Add("Filesystem", FilesystemConfig)
 
@@ -843,6 +844,7 @@ Public Module Config
             ShowFilesystemProgress = If(ConfigToken("Filesystem")?("Show progress on filesystem operations"), True)
             ShowFileDetailsList = If(ConfigToken("Filesystem")?("Show file details in list"), True)
             SuppressUnauthorizedMessages = If(ConfigToken("Filesystem")?("Suppress unauthorized messages"), True)
+            PrintLineNumbers = If(ConfigToken("Filesystem")?("Print line numbers on printing file contents"), False)
 
             'Hardware Section
             Wdbg(DebugLevel.I, "Parsing hardware section...")
