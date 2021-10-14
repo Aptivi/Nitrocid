@@ -90,7 +90,7 @@ Public Module ModParser
     ''' </summary>
     ''' <param name="PLang">Specified programming language for scripts (C# or VB.NET)</param>
     ''' <param name="code">Code blocks from script</param>
-    Private Function GenMod(PLang As String, code As String) As IScript
+    Friend Function GenMod(PLang As String, code As String) As IScript
 
         'Check language
         Dim provider As CodeDomProvider

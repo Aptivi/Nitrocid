@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.IO
+Imports System.Reflection
 Imports Newtonsoft.Json.Linq
 
 Public Module ModManager
@@ -375,6 +376,115 @@ Public Module ModManager
     Public Function GetBlacklistedMods() As List(Of String)
         Return BlacklistedModsString.Split(";").ToList
     End Function
+
+    ''' <summary>
+    ''' Installs the mod DLL or single code file to the mod directory
+    ''' </summary>
+    ''' <param name="ModPath">Target mod path</param>
+    Public Sub InstallMod(ModPath As String)
+#Disable Warning BC42104
+        Dim TargetModPath As String = NeutralizePath(Path.GetFileName(ModPath), GetKernelPath(KernelPathType.Mods))
+        Dim Script As IScript
+        ModPath = NeutralizePath(ModPath, True)
+        Wdbg(DebugLevel.I, "Installing mod {0} to {1}...", ModPath, TargetModPath)
+
+        'Check for upgrade
+        If File.Exists(TargetModPath) Then
+            W(DoTranslation("Trying to install an already-installed mod. Updating mod..."), True, ColTypes.Warning)
+            StopMod(Path.GetFileName(TargetModPath))
+        End If
+
+        Try
+            'First, parse the mod file
+            If Path.GetExtension(ModPath) = ".cs" Then
+                'Mod has a language of C#
+                Wdbg(DebugLevel.I, "Mod language is C# from extension "".cs""")
+                Script = GenMod("C#", File.ReadAllText(ModPath))
+            ElseIf Path.GetExtension(ModPath) = ".vb" Then
+                'Mod has a language of VB.NET
+                Wdbg(DebugLevel.I, "Mod language is VB.NET from extension "".vb""")
+                Script = GenMod("VB.NET", File.ReadAllText(ModPath))
+            ElseIf Path.GetExtension(ModPath) = ".dll" Then
+                'Mod is a dynamic DLL
+                Try
+                    Script = GetModInstance(Assembly.LoadFrom(ModPath))
+                Catch ex As ReflectionTypeLoadException
+                    Wdbg(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", ModPath, ex.Message)
+                    WStkTrc(ex)
+                    W(DoTranslation("Mod can't be loaded because of the following: "), True, ColTypes.Error)
+                    For Each LoaderException As Exception In ex.LoaderExceptions
+                        Wdbg(DebugLevel.E, "Loader exception: {0}", LoaderException.Message)
+                        WStkTrc(LoaderException)
+                        W(LoaderException.Message, True, ColTypes.Error)
+                    Next
+                    W(DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), True, ColTypes.Error)
+                    Throw ex
+                End Try
+            End If
+
+            'Second, check the script
+            If Script Is Nothing Then Throw New Exceptions.ModInstallException(DoTranslation("The mod file provided is incompatible."))
+
+            'Then, install the file.
+            File.Copy(ModPath, TargetModPath, True)
+
+            'Check for the manual pages
+            If Directory.Exists(ModPath + ".manual") Then
+                Wdbg(DebugLevel.I, "Found manual page directory. {0}.manual exists. Installing manual pages...", ModPath)
+                Directory.CreateDirectory(TargetModPath + ".manual")
+                For Each ModManualFile As String In Directory.EnumerateFiles(ModPath + ".manual", "*.man", SearchOption.AllDirectories)
+                    Dim ManualFileName As String = Path.GetFileNameWithoutExtension(ModManualFile)
+                    Dim ManualInstance As New Manual(ModManualFile)
+                    If Not ManualInstance.ValidManpage Then Throw New Exceptions.ModInstallException(DoTranslation("The manual page {0} is invalid.").FormatString(ManualFileName))
+                    File.Copy(ModManualFile, TargetModPath + ".manual/" + ModManualFile, True)
+                Next
+            End If
+
+            'Finally, start the mod
+            W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileNameWithoutExtension(TargetModPath))
+            StartMod(TargetModPath)
+        Catch ex As Exception
+            Wdbg(DebugLevel.E, "Installation failed for {0}: {1}", ModPath, ex.Message)
+            WStkTrc(ex)
+            W(DoTranslation("Installation failed for") + " {0}: {1}", True, ColTypes.Error, ModPath, ex.Message)
+        End Try
+#Enable Warning BC42104
+    End Sub
+
+    ''' <summary>
+    ''' Uninstalls the mod from the mod directory
+    ''' </summary>
+    ''' <param name="ModPath">Target mod path found in KSMods</param>
+    Public Sub UninstallMod(ModPath As String)
+        Dim TargetModPath As String = NeutralizePath(ModPath, GetKernelPath(KernelPathType.Mods), True)
+        Wdbg(DebugLevel.I, "Uninstalling mod {0}...", TargetModPath)
+        Try
+            'First, stop all mods related to it
+            StopMod(TargetModPath)
+
+            'Then, remove the file.
+            File.Delete(TargetModPath)
+
+            'Finally, check for the manual pages and remove them
+            If Directory.Exists(ModPath + ".manual") Then
+                Wdbg(DebugLevel.I, "Found manual page directory. {0}.manual exists. Removing manual pages...", ModPath)
+                For Each ModManualFile As String In Directory.EnumerateFiles(ModPath + ".manual", "*.man", SearchOption.AllDirectories)
+                    Dim ManualFileName As String = Path.GetFileNameWithoutExtension(ModManualFile)
+                    Dim ManualInstance As New Manual(ModManualFile)
+                    If ManualInstance.ValidManpage Then
+                        Pages.Remove(ManualInstance.Title)
+                    Else
+                        Throw New Exceptions.ModUninstallException(DoTranslation("The manual page {0} is invalid.").FormatString(ManualFileName))
+                    End If
+                Next
+                Directory.Delete(ModPath + ".manual", True)
+            End If
+        Catch ex As Exception
+            Wdbg(DebugLevel.E, "Uninstallation failed for {0}: {1}", ModPath, ex.Message)
+            WStkTrc(ex)
+            W(DoTranslation("Uninstallation failed for") + " {0}: {1}", True, ColTypes.Error, ModPath, ex.Message)
+        End Try
+    End Sub
 
     ''' <summary>
     ''' Reloads all generic definitions so it can be updated with language change

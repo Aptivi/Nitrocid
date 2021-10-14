@@ -24,21 +24,22 @@ Class ModManCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If Not SafeMode Then
-            Dim CommandMode As String = ListArgs(0).ToLower
+            Dim CommandMode As String = ListArgsOnly(0).ToLower
             Dim TargetMod As String = ""
             Dim TargetModPath As String = ""
 
             'These command modes require two arguments to be passed, so re-check here and there.
             Select Case CommandMode
-                Case "start", "stop", "info", "reload"
-                    If ListArgs.Length > 1 Then
-                        TargetMod = ListArgs(1)
-                        TargetModPath = GetKernelPath(KernelPathType.Mods) + TargetMod
+                Case "start", "stop", "info", "reload", "install", "uninstall"
+                    If ListArgsOnly.Length > 1 Then
+                        TargetMod = ListArgsOnly(1)
+                        TargetModPath = NeutralizePath(TargetMod, GetKernelPath(KernelPathType.Mods))
                         If Not (TryParsePath(TargetModPath) AndAlso File.Exists(TargetModPath)) Then
                             W(DoTranslation("Mod not found or file has invalid characters."), True, ColTypes.Error)
                             Exit Sub
                         End If
                     Else
+                        W(DoTranslation("Mod file is not specified."), True, ColTypes.Error)
                         Exit Sub
                     End If
             End Select
@@ -86,6 +87,10 @@ Class ModManCommand
                 Case "reload"
                     StopMod(TargetModPath)
                     StartMod(TargetModPath)
+                Case "install"
+                    InstallMod(TargetMod)
+                Case "uninstall"
+                    UninstallMod(TargetMod)
                 Case "list"
                     For Each script As String In scripts.Keys
                         WriteSeparator(script, True)
