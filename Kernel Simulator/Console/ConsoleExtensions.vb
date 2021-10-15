@@ -46,4 +46,15 @@ Public Module ConsoleExtensions
         Return CurrentNumber * 100 / MaximumNumber * ((Console.WindowWidth - WidthOffset) * 0.01)
     End Function
 
+    ''' <summary>
+    ''' Gets how many times to repeat the character to represent the appropriate percentage level for the specified number.
+    ''' </summary>
+    ''' <param name="CurrentNumber">The current number that is less than or equal to the maximum number.</param>
+    ''' <param name="MaximumNumber">The maximum number.</param>
+    ''' <param name="TargetWidth">The target width</param>
+    ''' <returns>How many times to repeat the character</returns>
+    Public Function PercentRepeatTargeted(CurrentNumber As Integer, MaximumNumber As Integer, TargetWidth As Integer) As Integer
+        Return CurrentNumber * 100 / MaximumNumber * (TargetWidth * 0.01)
+    End Function
+
 End Module
