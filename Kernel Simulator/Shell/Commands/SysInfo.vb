@@ -21,39 +21,61 @@ Class SysInfoCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        'Shows system information
-        W(DoTranslation("[ Kernel settings (Running on {0}) ]"), True, ColTypes.Banner, Environment.OSVersion.ToString)
+        Dim ShowSystemInfo, ShowHardwareInfo, ShowUserInfo, ShowMessageOfTheDay, ShowMal As Boolean
+        If ListSwitchesOnly.Contains("-s") Then ShowSystemInfo = True
+        If ListSwitchesOnly.Contains("-h") Then ShowHardwareInfo = True
+        If ListSwitchesOnly.Contains("-u") Then ShowUserInfo = True
+        If ListSwitchesOnly.Contains("-m") Then ShowMessageOfTheDay = True
+        If ListSwitchesOnly.Contains("-l") Then ShowMal = True
+        If ListSwitchesOnly.Contains("-a") Then
+            ShowSystemInfo = True
+            ShowHardwareInfo = True
+            ShowUserInfo = True
+            ShowMessageOfTheDay = True
+            ShowMal = True
+        End If
 
-        'Kernel section
-        W(DoTranslation("Kernel Version:") + " ", False, ColTypes.ListEntry) : W(KernelVersion, True, ColTypes.ListValue)
-        W(DoTranslation("Debug Mode:") + " ", False, ColTypes.ListEntry) : W(DebugMode, True, ColTypes.ListValue)
-        W(DoTranslation("Colored Shell:") + " ", False, ColTypes.ListEntry) : W(ColoredShell, True, ColTypes.ListValue)
-        W(DoTranslation("Arguments on Boot:") + " ", False, ColTypes.ListEntry) : W(ArgsOnBoot, True, ColTypes.ListValue)
-        W(DoTranslation("Help command simplified:") + " ", False, ColTypes.ListEntry) : W(SimHelp, True, ColTypes.ListValue)
-        W(DoTranslation("MOTD on Login:") + " ", False, ColTypes.ListEntry) : W(ShowMOTD, True, ColTypes.ListValue)
-        W(DoTranslation("Time/Date on corner:") + " ", False, ColTypes.ListEntry) : W(CornerTimeDate, True, ColTypes.ListValue)
-        Console.WriteLine()
+        If ShowSystemInfo Then
+            'Kernel section
+            W(DoTranslation("[ Kernel settings (Running on {0}) ]"), True, ColTypes.Banner, Environment.OSVersion.ToString)
+            W(DoTranslation("Kernel Version:") + " ", False, ColTypes.ListEntry) : W(KernelVersion, True, ColTypes.ListValue)
+            W(DoTranslation("Debug Mode:") + " ", False, ColTypes.ListEntry) : W(DebugMode, True, ColTypes.ListValue)
+            W(DoTranslation("Colored Shell:") + " ", False, ColTypes.ListEntry) : W(ColoredShell, True, ColTypes.ListValue)
+            W(DoTranslation("Arguments on Boot:") + " ", False, ColTypes.ListEntry) : W(ArgsOnBoot, True, ColTypes.ListValue)
+            W(DoTranslation("Help command simplified:") + " ", False, ColTypes.ListEntry) : W(SimHelp, True, ColTypes.ListValue)
+            W(DoTranslation("MOTD on Login:") + " ", False, ColTypes.ListEntry) : W(ShowMOTD, True, ColTypes.ListValue)
+            W(DoTranslation("Time/Date on corner:") + " ", False, ColTypes.ListEntry) : W(CornerTimeDate, True, ColTypes.ListValue)
+            Console.WriteLine()
+        End If
 
-        'Hardware section
-        W(DoTranslation("[ Hardware settings ]"), True, ColTypes.Banner, vbNewLine)
-        ListHardware()
-        W(DoTranslation("Use ""hwinfo"" for extended information about hardware."), True, ColTypes.Neutral)
-        Console.WriteLine()
+        If ShowHardwareInfo Then
+            'Hardware section
+            W(DoTranslation("[ Hardware settings ]"), True, ColTypes.Banner, vbNewLine)
+            ListHardware()
+            W(DoTranslation("Use ""hwinfo"" for extended information about hardware."), True, ColTypes.Neutral)
+            Console.WriteLine()
+        End If
 
-        'User section
-        W(DoTranslation("[ User settings ]"), True, ColTypes.Banner, vbNewLine)
-        W(DoTranslation("Current user name:") + " ", False, ColTypes.ListEntry) : W(CurrentUser, True, ColTypes.ListValue)
-        W(DoTranslation("Current host name:") + " ", False, ColTypes.ListEntry) : W(HostName, True, ColTypes.ListValue)
-        W(DoTranslation("Available usernames:") + " ", False, ColTypes.ListEntry) : W(String.Join(", ", Users.Keys), True, ColTypes.ListValue)
-        Console.WriteLine()
+        If ShowUserInfo Then
+            'User section
+            W(DoTranslation("[ User settings ]"), True, ColTypes.Banner, vbNewLine)
+            W(DoTranslation("Current user name:") + " ", False, ColTypes.ListEntry) : W(CurrentUser, True, ColTypes.ListValue)
+            W(DoTranslation("Current host name:") + " ", False, ColTypes.ListEntry) : W(HostName, True, ColTypes.ListValue)
+            W(DoTranslation("Available usernames:") + " ", False, ColTypes.ListEntry) : W(String.Join(", ", Users.Keys), True, ColTypes.ListValue)
+            Console.WriteLine()
+        End If
 
-        'Show MOTD
-        W("[ MOTD ]", True, ColTypes.Banner)
-        W(ProbePlaces(MOTDMessage), True, ColTypes.Neutral)
+        If ShowMessageOfTheDay Then
+            'Show MOTD
+            W("[ MOTD ]", True, ColTypes.Banner)
+            W(ProbePlaces(MOTDMessage), True, ColTypes.Neutral)
+        End If
 
-        'Show MAL
-        W("[ MAL ]", True, ColTypes.Banner)
-        W(ProbePlaces(MAL), True, ColTypes.Neutral)
+        If ShowMal Then
+            'Show MAL
+            W("[ MAL ]", True, ColTypes.Banner)
+            W(ProbePlaces(MAL), True, ColTypes.Neutral)
+        End If
     End Sub
 
 End Class
