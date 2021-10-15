@@ -82,6 +82,8 @@ Public Module GetCommand
                     TargetCommands = ZipShell_Commands
                 Case ShellCommandType.JsonShell
                     TargetCommands = JsonShell_Commands
+                Case ShellCommandType.HTTPShell
+                    TargetCommands = HTTPCommands
             End Select
 
 

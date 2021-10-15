@@ -60,4 +60,8 @@ Public Enum ShellCommandType
     ''' JSON Shell
     ''' </summary>
     JsonShell
+    ''' <summary>
+    ''' HTTP shell
+    ''' </summary>
+    HTTPShell
 End Enum

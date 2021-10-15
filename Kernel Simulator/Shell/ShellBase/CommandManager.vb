@@ -47,6 +47,8 @@ Public Module CommandManager
                 Return TextEdit_Commands.ContainsKey(Command)
             Case ShellCommandType.ZIPShell
                 Return ZipShell_Commands.ContainsKey(Command)
+            Case ShellCommandType.HTTPShell
+                Return HTTPCommands.ContainsKey(Command)
             Case Else
                 Return False
         End Select
@@ -68,7 +70,8 @@ Public Module CommandManager
                Commands.ContainsKey(Command) Or
                Test_Commands.ContainsKey(Command) Or
                TextEdit_Commands.ContainsKey(Command) Or
-               ZipShell_Commands.ContainsKey(Command)
+               ZipShell_Commands.ContainsKey(Command) Or
+               HTTPCommands.ContainsKey(Command)
     End Function
 
 End Module

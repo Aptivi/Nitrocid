@@ -84,6 +84,7 @@ Public Module ModParser
     Public ZipShell_ModHelpEntries As New Dictionary(Of String, String)
     Public TextEdit_ModHelpEntries As New Dictionary(Of String, String)
     Public JsonShell_ModDefs As New Dictionary(Of String, String)
+    Public HTTPModDefs As New Dictionary(Of String, String)
 
     ''' <summary>
     ''' Compiles the script and returns the instance of script interface
@@ -382,7 +383,12 @@ Public Module ModParser
                                 End If
                             Case ShellCommandType.JsonShell
                                 If JsonShell_Commands.ContainsKey(Command) Or JsonShell_ModCommands.Contains(Command) Then
-                                    Wdbg(DebugLevel.W, "Command {0} conflicts with available mail shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Wdbg(DebugLevel.W, "Command {0} conflicts with available JSON shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
+                                    Command += $"-{script.Name}-{script.ModPart}"
+                                End If
+                            Case ShellCommandType.HTTPShell
+                                If HTTPCommands.ContainsKey(Command) Or HTTPModCommands.Contains(Command) Then
+                                    Wdbg(DebugLevel.W, "Command {0} conflicts with available HTTP shell commands or mod commands. Appending ""-{1}-{2}"" to end of command...", Command, script.Name, script.ModPart)
                                     Command += $"-{script.Name}-{script.ModPart}"
                                 End If
                         End Select
@@ -447,6 +453,11 @@ Public Module ModParser
                                     If Not JsonShell_ModCommands.Contains(Command) Then JsonShell_ModCommands.Add(Command)
                                     script.Commands.RenameKey(ActualCommand, Command)
                                     JsonShell_ModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
+                                Case ShellCommandType.HTTPShell
+                                    Wdbg(DebugLevel.I, "Adding command {0} for HTTP shell...", Command)
+                                    If Not HTTPModCommands.Contains(Command) Then HTTPModCommands.Add(Command)
+                                    script.Commands.RenameKey(ActualCommand, Command)
+                                    HTTPModDefs.AddIfNotFound(Command, script.Commands(Command).HelpDefinition)
                             End Select
                         End If
                     Next

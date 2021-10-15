@@ -158,4 +158,18 @@ Module AliasExecutor
         JsonShell_CommandThread.Join()
     End Sub
 
+    ''' <summary>
+    ''' Executes the HTTP shell alias
+    ''' </summary>
+    ''' <param name="aliascmd">Aliased command with arguments</param>
+    Sub ExecuteHTTPAlias(aliascmd As String)
+        Dim FirstWordCmd As String = aliascmd.SplitEncloseDoubleQuotes(" ")(0)
+        Dim actualCmd As String = aliascmd.Replace(FirstWordCmd, HTTPShellAliases(FirstWordCmd))
+        Wdbg(DebugLevel.I, "Actual command: {0}", actualCmd)
+        Dim Params As New ExecuteCommandThreadParameters(actualCmd, ShellCommandType.HTTPShell, Nothing)
+        HTTPCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "HTTP Shell Command Thread"}
+        HTTPCommandThread.Start(Params)
+        HTTPCommandThread.Join()
+    End Sub
+
 End Module

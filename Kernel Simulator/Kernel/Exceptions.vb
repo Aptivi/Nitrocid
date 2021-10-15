@@ -898,4 +898,26 @@ Public Class Exceptions
         End Sub
     End Class
 
+    ''' <summary>
+    ''' Thrown when there is an error in HTTP shell
+    ''' </summary>
+    Public Class HTTPShellException
+        Inherits Exception
+        Public Sub New()
+            MyBase.New()
+        End Sub
+        Public Sub New(message As String)
+            MyBase.New(message)
+        End Sub
+        Public Sub New(message As String, ParamArray vars() As Object)
+            MyBase.New(String.Format(message, vars))
+        End Sub
+        Public Sub New(message As String, e As Exception)
+            MyBase.New(message, e)
+        End Sub
+        Public Sub New(message As String, e As Exception, ParamArray vars() As Object)
+            MyBase.New(String.Format(message, vars), e)
+        End Sub
+    End Class
+
 End Class

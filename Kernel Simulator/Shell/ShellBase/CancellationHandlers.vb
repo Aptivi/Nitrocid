@@ -114,4 +114,14 @@ Module CancellationHandlers
         End If
     End Sub
 
+    Sub HTTPCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
+        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+            Console.WriteLine()
+            DefConsoleOut = Console.Out
+            Console.SetOut(StreamWriter.Null)
+            e.Cancel = True
+            HTTPCommandThread.Abort()
+        End If
+    End Sub
+
 End Module

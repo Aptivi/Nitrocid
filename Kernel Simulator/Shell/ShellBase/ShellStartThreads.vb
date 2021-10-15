@@ -56,5 +56,9 @@ Module ShellStartThreads
     ''' JSON start command thread
     ''' </summary>
     Public JsonShell_CommandThread As New Thread(AddressOf ExecuteCommand) With {.Name = "JSON Shell Command Thread"}
+    ''' <summary>
+    ''' HTTP start command thread
+    ''' </summary>
+    Public HTTPCommandThread As New Thread(AddressOf ExecuteCommand) With {.Name = "HTTP Shell Command Thread"}
 
 End Module

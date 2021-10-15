@@ -139,6 +139,10 @@ Public Class Events
     Public Event ZipPreExecuteCommand(Command As String)
     Public Event ZipPostExecuteCommand(Command As String)
     Public Event ZipCommandError(Command As String, Exception As Exception)
+    Public Event HTTPShellInitialized()
+    Public Event HTTPPreExecuteCommand(Command As String)
+    Public Event HTTPPostExecuteCommand(Command As String)
+    Public Event HTTPCommandError(Command As String, Exception As Exception)
 
     ''' <summary>
     ''' Makes the mod respond to the event of kernel start
@@ -1496,6 +1500,54 @@ Public Class Events
             Next
         Next
     End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of HTTP shell initialized
+    ''' </summary>
+    Public Sub RespondHTTPShellInitialized() Handles Me.HTTPShellInitialized
+        For Each ModPart As ModInfo In scripts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
+                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPShellInitialized()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("HTTPShellInitialized")
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of pre-command execution
+    ''' </summary>
+    Public Sub RespondHTTPPreExecuteCommand(Command As String) Handles Me.HTTPPreExecuteCommand
+        For Each ModPart As ModInfo In scripts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
+                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("HTTPPreExecuteCommand", Command)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of post-command execution
+    ''' </summary>
+    Public Sub RespondHTTPPostExecuteCommand(Command As String) Handles Me.HTTPPostExecuteCommand
+        For Each ModPart As ModInfo In scripts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
+                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("HTTPPostExecuteCommand", Command)
+            Next
+        Next
+    End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of HTTP command error
+    ''' </summary>
+    Public Sub RespondHTTPCommandError(Command As String, Exception As Exception) Handles Me.HTTPCommandError
+        For Each ModPart As ModInfo In scripts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Dim script As IScript = PartInfo.PartScript
+                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPCommandError()...", script.ModPart, script.Name, script.Version)
+                script.InitEvents("HTTPCommandError", Command, Exception)
+            Next
+        Next
+    End Sub
 
     'These subs are for raising events
     ''' <summary>
@@ -2401,6 +2453,38 @@ Public Class Events
         Wdbg(DebugLevel.I, "Raising event ZipCommandError() and responding in RespondZipCommandError()...")
         FiredEvents.Add("ZipCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent ZipCommandError(Command, Exception)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of HTTP shell initialized
+    ''' </summary>
+    Public Sub RaiseHTTPShellInitialized()
+        Wdbg(DebugLevel.I, "Raising event HTTPShellInitialized() and responding in RespondHTTPShellInitialized()...")
+        FiredEvents.Add("HTTPShellInitialized (" + CStr(FiredEvents.Count) + ")", {})
+        RaiseEvent HTTPShellInitialized()
+    End Sub
+    ''' <summary>
+    ''' Raise an event of HTTP pre-execute command
+    ''' </summary>
+    Public Sub RaiseHTTPPreExecuteCommand(Command As String)
+        Wdbg(DebugLevel.I, "Raising event HTTPPreExecuteCommand() and responding in RespondHTTPPreExecuteCommand()...")
+        FiredEvents.Add("HTTPPreExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
+        RaiseEvent HTTPPreExecuteCommand(Command)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of HTTP post-execute command
+    ''' </summary>
+    Public Sub RaiseHTTPPostExecuteCommand(Command As String)
+        Wdbg(DebugLevel.I, "Raising event HTTPPostExecuteCommand() and responding in RespondHTTPPostExecuteCommand()...")
+        FiredEvents.Add("HTTPPostExecuteCommand (" + CStr(FiredEvents.Count) + ")", {Command})
+        RaiseEvent HTTPPostExecuteCommand(Command)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of HTTP command error
+    ''' </summary>
+    Public Sub RaiseHTTPCommandError(Command As String, Exception As Exception)
+        Wdbg(DebugLevel.I, "Raising event HTTPCommandError() and responding in RespondHTTPCommandError()...")
+        FiredEvents.Add("HTTPCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
+        RaiseEvent HTTPCommandError(Command, Exception)
     End Sub
 
 End Class

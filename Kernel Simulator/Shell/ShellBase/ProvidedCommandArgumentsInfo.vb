@@ -73,6 +73,8 @@ Public Class ProvidedCommandArgumentsInfo
                 ShellCommands = ZipShell_Commands
             Case ShellCommandType.JsonShell
                 ShellCommands = JsonShell_Commands
+            Case ShellCommandType.HTTPShell
+                ShellCommands = HTTPCommands
         End Select
 
         'Get the index of the first space (Used for step 3)

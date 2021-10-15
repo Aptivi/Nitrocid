@@ -38,6 +38,7 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf TCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
             Case ShellCommandType.JsonShell
                 AddHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
@@ -48,6 +49,7 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf TCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
             Case ShellCommandType.MailShell
                 AddHandler Console.CancelKeyPress, AddressOf MailCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
@@ -58,6 +60,7 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf TCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
             Case ShellCommandType.RSSShell
                 AddHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
@@ -68,6 +71,7 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf TCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
             Case ShellCommandType.SFTPShell
                 AddHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
@@ -78,6 +82,7 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf TCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
             Case ShellCommandType.Shell
                 AddHandler Console.CancelKeyPress, AddressOf CancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
@@ -88,6 +93,7 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf TCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
             Case ShellCommandType.TestShell
                 AddHandler Console.CancelKeyPress, AddressOf TCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
@@ -98,6 +104,7 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
             Case ShellCommandType.TextShell
                 AddHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
@@ -108,6 +115,7 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf TCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
             Case ShellCommandType.ZIPShell
                 AddHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
@@ -118,6 +126,18 @@ Public Module CancellationInstallers
                 RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf TCancelCommand
                 RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+            Case ShellCommandType.HTTPShell
+                AddHandler Console.CancelKeyPress, AddressOf HTTPCancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf FTPCancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf EditorCancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf JsonShell_CancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf MailCancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf RssShellCancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf SFTPCancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf TCancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
+                RemoveHandler Console.CancelKeyPress, AddressOf ZipShellCancelCommand
             Case Else
                 Return False
         End Select

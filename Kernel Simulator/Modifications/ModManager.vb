@@ -165,6 +165,9 @@ Public Module ModManager
                 JsonShell_ModCommands.Clear()
                 JsonShell_ModDefs.Clear()
                 Wdbg(DebugLevel.I, "Mod commands for JSON shell cleared.")
+                HTTPModCommands.Clear()
+                HTTPModDefs.Clear()
+                Wdbg(DebugLevel.I, "Mod commands for HTTP shell cleared.")
 
                 'Clear the custom screensavers
                 CustomSavers.Clear()
@@ -265,6 +268,10 @@ Public Module ModManager
                                                     Wdbg(DebugLevel.I, "Removing command {0} from JSON shell...", CommandInfo.Command)
                                                     JsonShell_ModCommands.Remove(CommandInfo.Command)
                                                     JsonShell_ModDefs.Remove(CommandInfo.Command)
+                                                Case ShellCommandType.HTTPShell
+                                                    Wdbg(DebugLevel.I, "Removing command {0} from HTTP shell...", CommandInfo.Command)
+                                                    HTTPModCommands.Remove(CommandInfo.Command)
+                                                    HTTPModDefs.Remove(CommandInfo.Command)
                                             End Select
                                         Next
                                     End If

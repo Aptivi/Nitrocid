@@ -89,6 +89,10 @@ Public Module HelpSystem
                 CommandList = JsonShell_Commands
                 ModCommandList = JsonShell_ModDefs
                 AliasedCommandList = JsonShellAliases
+            Case ShellCommandType.HTTPShell
+                CommandList = HTTPCommands
+                ModCommandList = HTTPModDefs
+                AliasedCommandList = HTTPShellAliases
         End Select
 
         'Check to see if command exists

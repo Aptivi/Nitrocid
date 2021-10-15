@@ -31,6 +31,7 @@ Public Module AliasManager
     Public ZIPShellAliases As New Dictionary(Of String, String)
     Public RSSShellAliases As New Dictionary(Of String, String)
     Public JsonShellAliases As New Dictionary(Of String, String)
+    Public HTTPShellAliases As New Dictionary(Of String, String)
     Friend AliasesToBeRemoved As New Dictionary(Of String, ShellCommandType)
 
     'TODO: Remove AliasType in RC1
@@ -131,6 +132,10 @@ Public Module AliasManager
                 Case "JSON"
                     If Not JsonShellAliases.ContainsKey(AliasCmd) Then
                         JsonShellAliases.Add(AliasCmd, ActualCmd)
+                    End If
+                Case "HTTP"
+                    If Not HTTPShellAliases.ContainsKey(AliasCmd) Then
+                        HTTPShellAliases.Add(AliasCmd, ActualCmd)
                     End If
                 Case Else
                     Wdbg(DebugLevel.E, "Invalid type {0}", AliasType)
@@ -257,6 +262,17 @@ Public Module AliasManager
             If Not DoesAliasExist(JsonShellAliases.Keys(i), ShellCommandType.JsonShell) Then AliasNameToken.Add(AliasObject)
         Next
 
+        'HTTP shell aliases
+        For i As Integer = 0 To HTTPShellAliases.Count - 1
+            Wdbg(DebugLevel.I, "Adding ""{0}"" and ""{1}"" from list to Aliases.json with type HTTP...", HTTPShellAliases.Keys(i), HTTPShellAliases.Values(i))
+            Dim AliasObject As New JObject From {
+                {"Alias", HTTPShellAliases.Keys(i)},
+                {"Command", HTTPShellAliases.Values(i)},
+                {"Type", "HTTP"}
+            }
+            If Not DoesAliasExist(HTTPShellAliases.Keys(i), ShellCommandType.HTTPShell) Then AliasNameToken.Add(AliasObject)
+        Next
+
         'Save changes
         File.WriteAllText(GetKernelPath(KernelPathType.Aliases), JsonConvert.SerializeObject(AliasNameToken, Formatting.Indented))
     End Sub
@@ -349,6 +365,8 @@ Public Module AliasManager
                         RSSShellAliases.Add(SourceAlias, Destination)
                     Case ShellCommandType.JsonShell
                         JsonShellAliases.Add(SourceAlias, Destination)
+                    Case ShellCommandType.HTTPShell
+                        HTTPShellAliases.Add(SourceAlias, Destination)
                 End Select
                 Return True
             End If
@@ -401,6 +419,9 @@ Public Module AliasManager
             Case ShellCommandType.JsonShell
                 TargetAliasList = JsonShellAliases
                 TargetAliasType = ShellCommandType.JsonShell
+            Case ShellCommandType.HTTPShell
+                TargetAliasList = HTTPShellAliases
+                TargetAliasType = ShellCommandType.HTTPShell
         End Select
 
         'Do the action!
@@ -452,6 +473,8 @@ Public Module AliasManager
                         If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "RSS" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
                     Case ShellCommandType.JsonShell
                         If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "JSON" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
+                    Case ShellCommandType.HTTPShell
+                        If AliasNameToken(RemovedAliasIndex)("Alias") = TargetAlias And AliasNameToken(RemovedAliasIndex)("Type") = "HTTP" Then AliasNameToken.RemoveAt(RemovedAliasIndex)
                 End Select
             Next
         Next
@@ -516,6 +539,10 @@ Public Module AliasManager
             Case ShellCommandType.JsonShell
                 For Each AliasName As JObject In AliasNameToken
                     If AliasName("Alias") = TargetAlias And AliasName("Type") = "JSON" Then Return True
+                Next
+            Case ShellCommandType.HTTPShell
+                For Each AliasName As JObject In AliasNameToken
+                    If AliasName("Alias") = TargetAlias And AliasName("Type") = "HTTP" Then Return True
                 Next
             Case Else
                 Wdbg(DebugLevel.E, "Type {0} not found.", Type)
