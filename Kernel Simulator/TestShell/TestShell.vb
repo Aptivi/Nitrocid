@@ -85,8 +85,9 @@ Module TestShell
     ''' <summary>
     ''' Initiates the test shell
     ''' </summary>
-    Sub InitTShell()
+    Sub InitTShell(InvokedFromCommand As Boolean)
         Dim FullCmd As String
+        If InvokedFromCommand Then Test_ExitFlag = False
         SwitchCancellationHandler(ShellCommandType.TestShell)
         StageTimer.Stop()
         If Not Test_ExitFlag Then

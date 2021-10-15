@@ -97,7 +97,7 @@ Module ArgumentParse
                         Case "safe"
                             SafeMode = True
                         Case "testInteractive"
-                            InitTShell()
+                            InitTShell(False)
                             If Test_ShutdownFlag Then Environment.Exit(0)
                     End Select
                 Else

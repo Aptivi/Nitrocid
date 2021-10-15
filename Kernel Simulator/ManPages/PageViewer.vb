@@ -64,8 +64,8 @@ Public Module PageViewer
             'Split the sentences to parts to deal with sentence lengths that are longer than the console window width
             Dim IncompleteSentences As New List(Of String)
             Dim IncompleteSentenceBuilder As New StringBuilder
-            Dim CharactersParsed As Integer = 0
-            Dim EscapeCharacters As Integer = 0
+            Dim CharactersParsed As Integer
+            Dim EscapeCharacters As Integer
             Dim InEsc As Boolean
             For Each line As String In Pages(ManualTitle).Body.ToString.SplitNewLines
                 CharactersParsed = 0

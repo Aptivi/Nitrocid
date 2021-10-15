@@ -91,7 +91,7 @@ Module CommandLineArgsParse
                                     End If
                                 End If
                             Case "testInteractive"
-                                InitTShell()
+                                InitTShell(False)
                                 If Test_ShutdownFlag Then Environment.Exit(0)
                             Case "debug"
                                 DebugMode = True

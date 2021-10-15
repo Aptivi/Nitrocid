@@ -475,6 +475,7 @@
     <Compile Include="Shell\Commands\SetThemes.vb" />
     <Compile Include="Shell\Commands\SaverSettings.vb" />
     <Compile Include="Shell\Commands\Settings.vb" />
+    <Compile Include="Shell\Commands\TestShell.vb" />
     <Compile Include="Shell\Commands\Sftp.vb" />
     <Compile Include="Shell\Commands\ShowNotifs.vb" />
     <Compile Include="Shell\Commands\ShowTd.vb" />
