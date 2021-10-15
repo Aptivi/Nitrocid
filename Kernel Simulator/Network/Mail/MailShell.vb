@@ -90,7 +90,7 @@ Public Module MailShell
             End If
             Wdbg(DebugLevel.I, "MailShellPromptStyle = {0}", MailShellPromptStyle)
             If MailShellPromptStyle = "" Then
-                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, Mail_Authentication.UserName) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, Address) : W("] ", False, ColTypes.Gray) : W("{0} > ", False, ColTypes.Gray, IMAP_CurrentDirectory)
+                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, Mail_Authentication.UserName) : W("|", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, Address) : W("] ", False, ColTypes.Gray) : W("{0} > ", False, ColTypes.Gray, IMAP_CurrentDirectory)
             Else
                 Dim ParsedPromptStyle As String = ProbePlaces(MailShellPromptStyle)
                 ParsedPromptStyle.ConvertVTSequences
