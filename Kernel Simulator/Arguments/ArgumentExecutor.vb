@@ -16,24 +16,12 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS
+Public MustInherit Class ArgumentExecutor
+    Implements IArgument
 
-<TestClass()> Public Class BlacklistManipulationTests
-
-    ''' <summary>
-    ''' Tests adding a mod to the blacklist
-    ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestAddModToBlacklist()
-        AddModToBlacklist("MaliciousMod.dll")
-        GetBlacklistedMods.ShouldContain(NeutralizePath("MaliciousMod.dll", GetKernelPath(KernelPathType.Mods)))
-    End Sub
-
-    ''' <summary>
-    ''' Tests removing a mod from the blacklist
-    ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestRemoveModFromBlacklist()
-        RemoveModFromBlacklist("MaliciousMod.dll")
-        GetBlacklistedMods.ShouldNotContain(NeutralizePath("MaliciousMod.dll", GetKernelPath(KernelPathType.Mods)))
+    Public Overridable Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
+        Wdbg(DebugLevel.F, "We shouldn't be here!!!")
+        Throw New InvalidOperationException()
     End Sub
 
 End Class

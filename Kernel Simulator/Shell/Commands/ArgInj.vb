@@ -24,7 +24,7 @@ Class ArgInjCommand
         Dim FinalArgs As New List(Of String)
         For Each arg As String In ListArgs
             Wdbg(DebugLevel.I, "Parsing argument {0}...", arg)
-            If AvailableArgs.Contains(arg) Then
+            If AvailableArgs.ContainsKey(arg) Then
                 Wdbg(DebugLevel.I, "Adding argument {0}...", arg)
                 FinalArgs.Add(arg)
             Else

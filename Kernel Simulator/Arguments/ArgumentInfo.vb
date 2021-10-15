@@ -31,6 +31,10 @@ Public Class ArgumentInfo
     ''' </summary>
     Public Property HelpDefinition As String
     ''' <summary>
+    ''' The help usage of command.
+    ''' </summary>
+    Public ReadOnly Property HelpUsage As String
+    ''' <summary>
     ''' Does the argument require arguments?
     ''' </summary>
     Public ReadOnly Property ArgumentsRequired As Boolean
@@ -38,6 +42,10 @@ Public Class ArgumentInfo
     ''' User must specify at least this number of arguments
     ''' </summary>
     Public ReadOnly Property MinimumArguments As Integer
+    ''' <summary>
+    ''' Kernel argument base for execution
+    ''' </summary>
+    Public ReadOnly Property ArgumentBase As ArgumentExecutor
     ''' <summary>
     ''' Is the argument obsolete?
     ''' </summary>
@@ -49,15 +57,19 @@ Public Class ArgumentInfo
     ''' <param name="Argument">Argument</param>
     ''' <param name="Type">Argument type</param>
     ''' <param name="HelpDefinition">Argument help definition</param>
+    ''' <param name="HelpUsage">Command help usage</param>
     ''' <param name="ArgumentsRequired">Does the argument require arguments?</param>
     ''' <param name="MinimumArguments">User must specify at least this number of arguments</param>
+    ''' <param name="ArgumentBase">Kernel argument base for execution</param>
     ''' <param name="Obsolete">Is the command obsolete?</param>
-    Public Sub New(Argument As String, Type As ShellCommandType, HelpDefinition As String, ArgumentsRequired As Boolean, MinimumArguments As Integer, Optional Obsolete As Boolean = False)
+    Public Sub New(Argument As String, Type As ArgumentType, HelpDefinition As String, HelpUsage As String, ArgumentsRequired As Boolean, MinimumArguments As Integer, ArgumentBase As ArgumentExecutor, Optional Obsolete As Boolean = False)
         Me.Argument = Argument
         Me.Type = Type
         Me.HelpDefinition = HelpDefinition
+        Me.HelpUsage = HelpUsage
         Me.ArgumentsRequired = ArgumentsRequired
         Me.MinimumArguments = MinimumArguments
+        Me.ArgumentBase = ArgumentBase
         Me.Obsolete = Obsolete
     End Sub
 

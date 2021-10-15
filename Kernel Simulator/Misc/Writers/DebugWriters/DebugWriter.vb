@@ -56,7 +56,7 @@ Public Module DebugWriter
             'Check for debug quota
             CheckForExceed()
 
-            'For contributors who are testing new code: Define ENABLEIMMEDITEWINDOWDEBUG for immediate debugging (Immediate Window)
+            'For contributors who are testing new code: Define ENABLEIMMEDIATEWINDOWDEBUG for immediate debugging (Immediate Window)
             If Source IsNot Nothing And Not LineNum = 0 Then
                 'Debug to file and all connected debug devices (raw mode)
                 DebugWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)

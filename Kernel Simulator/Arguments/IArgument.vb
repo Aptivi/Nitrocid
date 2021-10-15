@@ -16,24 +16,18 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS
-
-<TestClass()> Public Class BlacklistManipulationTests
-
-    ''' <summary>
-    ''' Tests adding a mod to the blacklist
-    ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestAddModToBlacklist()
-        AddModToBlacklist("MaliciousMod.dll")
-        GetBlacklistedMods.ShouldContain(NeutralizePath("MaliciousMod.dll", GetKernelPath(KernelPathType.Mods)))
-    End Sub
+''' <summary>
+''' Base kernel argument executor
+''' </summary>
+Public Interface IArgument
 
     ''' <summary>
-    ''' Tests removing a mod from the blacklist
+    ''' Executes the kernel argument with the given argument
     ''' </summary>
-    <TestMethod()> <TestCategory("Management")> Public Sub TestRemoveModFromBlacklist()
-        RemoveModFromBlacklist("MaliciousMod.dll")
-        GetBlacklistedMods.ShouldNotContain(NeutralizePath("MaliciousMod.dll", GetKernelPath(KernelPathType.Mods)))
-    End Sub
+    ''' <param name="StringArgs">Arguments in a string</param>
+    ''' <param name="ListArgs">List of provided arguments and switches</param>
+    ''' <param name="ListArgsOnly">List of provided arguments</param>
+    ''' <param name="ListSwitchesOnly">List of provided switches</param>
+    Sub Execute(StringArgs As String, ListArgs As String(), ListArgsOnly As String(), ListSwitchesOnly As String())
 
-End Class
+End Interface
