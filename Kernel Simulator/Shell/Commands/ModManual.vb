@@ -21,8 +21,10 @@ Class ModManualCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If ListArgs(0) <> "list" Then
-            ViewPage(ListArgs(0))
+        Dim ListMode As Boolean
+        If ListSwitchesOnly.Contains("-list") Then ListMode = True
+        If Not ListMode Then
+            ViewPage(ListArgsOnly(0))
         Else
             WriteList(Pages.Keys, True)
         End If

@@ -21,10 +21,12 @@ Class ShowTdZoneCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If ListArgs(0) = "all" Then
+        Dim ShowAll As Boolean
+        If ListSwitchesOnly.Contains("-all") Then ShowAll = True
+        If ShowAll Then
             ShowAllTimeZones()
         Else
-            If Not ShowTimeZones(ListArgs(0)) Then W(DoTranslation("Timezone is specified incorrectly."), True, ColTypes.Error)
+            If Not ShowTimeZones(ListArgsOnly(0)) Then W(DoTranslation("Timezone is specified incorrectly."), True, ColTypes.Error)
         End If
     End Sub
 

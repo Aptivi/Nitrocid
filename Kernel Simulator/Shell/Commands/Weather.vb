@@ -21,7 +21,9 @@ Class WeatherCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If ListArgs(0) = "listcities" Then
+        Dim ListMode As Boolean
+        If ListSwitchesOnly.Contains("-list") Then ListMode = True
+        If ListMode Then
             Dim Cities As Dictionary(Of Long, String) = ListAllCities()
             WriteList(Cities)
         Else
@@ -30,7 +32,7 @@ Class WeatherCommand
             W(DoTranslation("Enter your API key:") + " ", False, ColTypes.Input)
             APIKey = ReadLineNoInput("*")
             Console.WriteLine()
-            PrintWeatherInfo(ListArgs(0), APIKey)
+            PrintWeatherInfo(ListArgsOnly(0), APIKey)
         End If
     End Sub
 
