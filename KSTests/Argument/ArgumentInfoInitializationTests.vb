@@ -25,20 +25,20 @@ Imports KS
     ''' </summary>
     <TestMethod()> <TestCategory("Initialization")> Public Sub TestInitializeArgumentInfoInstanceFromCommandLineArg()
         'Create instance
-        Dim ColorInstance As New ArgumentInfo("help", ArgumentType.CommandLineArgs, "Help page", False, 0)
+        Dim ArgumentInstance As New ArgumentInfo("help", ArgumentType.CommandLineArgs, "Help page", "", False, 0, Nothing)
 
         'Check for null
-        ColorInstance.ShouldNotBeNull
-        ColorInstance.Argument.ShouldNotBeNullOrEmpty
-        ColorInstance.HelpDefinition.ShouldNotBeNullOrEmpty
+        ArgumentInstance.ShouldNotBeNull
+        ArgumentInstance.Argument.ShouldNotBeNullOrEmpty
+        ArgumentInstance.HelpDefinition.ShouldNotBeNullOrEmpty
 
         'Check for property correctness
-        ColorInstance.Argument.ShouldBe("help")
-        ColorInstance.ArgumentsRequired.ShouldBeFalse
-        ColorInstance.HelpDefinition.ShouldBe("Help page")
-        ColorInstance.MinimumArguments.ShouldBe(0)
-        ColorInstance.Obsolete.ShouldBeFalse
-        ColorInstance.Type.ShouldBe(ArgumentType.CommandLineArgs)
+        ArgumentInstance.Argument.ShouldBe("help")
+        ArgumentInstance.ArgumentsRequired.ShouldBeFalse
+        ArgumentInstance.HelpDefinition.ShouldBe("Help page")
+        ArgumentInstance.MinimumArguments.ShouldBe(0)
+        ArgumentInstance.Obsolete.ShouldBeFalse
+        ArgumentInstance.Type.ShouldBe(ArgumentType.CommandLineArgs)
     End Sub
 
 End Class
