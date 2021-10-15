@@ -301,13 +301,16 @@ Public Module NetworkTransfer
             WClient.CancelAsync()
         End If
         If Not DFinish Then
-            If DownloadNotificationProvoke Then DownloadNotif.Progress = e.ProgressPercentage
-            If Not String.IsNullOrWhiteSpace(DownloadPercentagePrint) Then
-                WriteWhere(ProbePlaces(DownloadPercentagePrint), 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+            If DownloadNotificationProvoke Then
+                DownloadNotif.Progress = e.ProgressPercentage
             Else
-                WriteWhere(DoTranslation("{0} of {1} downloaded.") + " | {2}%", 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+                If Not String.IsNullOrWhiteSpace(DownloadPercentagePrint) Then
+                    WriteWhere(ProbePlaces(DownloadPercentagePrint), 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+                Else
+                    WriteWhere(DoTranslation("{0} of {1} downloaded.") + " | {2}%", 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+                End If
+                ClearLineToRight()
             End If
-            ClearLineToRight()
         End If
     End Sub
 
@@ -332,13 +335,16 @@ Public Module NetworkTransfer
             WClient.CancelAsync()
         End If
         If Not UFinish Then
-            If UploadNotificationProvoke Then UploadNotif.Progress = e.ProgressPercentage
-            If Not String.IsNullOrWhiteSpace(UploadPercentagePrint) Then
-                WriteWhere(ProbePlaces(UploadPercentagePrint), 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+            If UploadNotificationProvoke Then
+                UploadNotif.Progress = e.ProgressPercentage
             Else
-                WriteWhere(DoTranslation("{0} of {1} uploaded.") + " | {2}%", 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesSent.FileSizeToString, e.TotalBytesToSend.FileSizeToString, e.ProgressPercentage)
+                If Not String.IsNullOrWhiteSpace(UploadPercentagePrint) Then
+                    WriteWhere(ProbePlaces(UploadPercentagePrint), 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesReceived.FileSizeToString, e.TotalBytesToReceive.FileSizeToString, e.ProgressPercentage)
+                Else
+                    WriteWhere(DoTranslation("{0} of {1} uploaded.") + " | {2}%", 0, Console.CursorTop, True, ColTypes.Neutral, e.BytesSent.FileSizeToString, e.TotalBytesToSend.FileSizeToString, e.ProgressPercentage)
+                End If
+                ClearLineToRight()
             End If
-            ClearLineToRight()
         End If
     End Sub
 
