@@ -184,17 +184,6 @@ Public Module Notifications
     End Sub
 
     ''' <summary>
-    ''' Creates a notification
-    ''' </summary>
-    ''' <param name="Title">Title of notification</param>
-    ''' <param name="Desc">Description of notification</param>
-    ''' <param name="Priority">Priority of notification</param>
-    <Obsolete("Use the Notification constructor instead")>
-    Public Function NotifyCreate(Title As String, Desc As String, Priority As NotifPriority, Type As NotifType) As Notification
-        Return New Notification(Title, Desc, Priority, Type)
-    End Function
-
-    ''' <summary>
     ''' Sends notification
     ''' </summary>
     ''' <param name="notif">Instance of notification holder</param>
