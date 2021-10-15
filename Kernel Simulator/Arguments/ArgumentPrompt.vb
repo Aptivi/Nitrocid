@@ -37,7 +37,7 @@ Module ArgumentPrompt
 
         'Shows available arguments
         W(DoTranslation("Available kernel arguments:"), True, ColTypes.ListTitle)
-        WriteList(AvailableArgs, True)
+        WriteList(AvailableArgs.Keys, True)
         W("* " + DoTranslation("Press ""q"" if you're done."), True, ColTypes.Tip)
         W("* " + DoTranslation("Multiple kernel arguments can be separated with commas without spaces, for example:") + " ""debug,safe""", True, ColTypes.Tip)
         W("* " + DoTranslation("Multiple injected commands can be separated with colons with spaces, for example:") + " cmdinject ""beep 100 500 : echo Hello!""", True, ColTypes.Tip)

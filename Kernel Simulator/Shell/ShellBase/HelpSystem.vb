@@ -108,7 +108,7 @@ Public Module HelpSystem
             If CommandType = ShellCommandType.Shell Then
                 Select Case command
                     Case "arginj"
-                        W(" ".Repeat(UsageLength) + " " + DoTranslation("where arguments will be {0}"), True, ColTypes.Neutral, String.Join(", ", AvailableArgs))
+                        W(" ".Repeat(UsageLength) + " " + DoTranslation("where arguments will be {0}"), True, ColTypes.Neutral, String.Join(", ", AvailableArgs.Keys))
                     Case "chattr"
                         W(DoTranslation("where <attributes> is one of the following:") + vbNewLine, True, ColTypes.Neutral)
                         W("- Normal: ", False, ColTypes.ListEntry) : W(DoTranslation("The file is a normal file"), True, ColTypes.ListValue)                   'Normal   = 128
