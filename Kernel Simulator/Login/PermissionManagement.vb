@@ -49,7 +49,13 @@ Public Module PermissionManagement
     ''' It specifies whether or not to allow permission
     ''' </summary>
     Public Enum PermissionManagementMode As Integer
+        ''' <summary>
+        ''' Adds the permission to the user properties
+        ''' </summary>
         Allow = 1
+        ''' <summary>
+        ''' Removes the permission from the user properties
+        ''' </summary>
         Disallow
     End Enum
 
