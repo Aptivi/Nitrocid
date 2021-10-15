@@ -27,7 +27,7 @@ Class SysInfoCommand
         If ListSwitchesOnly.Contains("-u") Then ShowUserInfo = True
         If ListSwitchesOnly.Contains("-m") Then ShowMessageOfTheDay = True
         If ListSwitchesOnly.Contains("-l") Then ShowMal = True
-        If ListSwitchesOnly.Contains("-a") Then
+        If ListSwitchesOnly.Contains("-a") Or ListSwitchesOnly.Length = 0 Then
             ShowSystemInfo = True
             ShowHardwareInfo = True
             ShowUserInfo = True
@@ -37,7 +37,7 @@ Class SysInfoCommand
 
         If ShowSystemInfo Then
             'Kernel section
-            W(DoTranslation("[ Kernel settings (Running on {0}) ]"), True, ColTypes.Banner, Environment.OSVersion.ToString)
+            WriteSeparator(DoTranslation("Kernel settings"), True)
             W(DoTranslation("Kernel Version:") + " ", False, ColTypes.ListEntry) : W(KernelVersion, True, ColTypes.ListValue)
             W(DoTranslation("Debug Mode:") + " ", False, ColTypes.ListEntry) : W(DebugMode, True, ColTypes.ListValue)
             W(DoTranslation("Colored Shell:") + " ", False, ColTypes.ListEntry) : W(ColoredShell, True, ColTypes.ListValue)
@@ -50,15 +50,15 @@ Class SysInfoCommand
 
         If ShowHardwareInfo Then
             'Hardware section
-            W(DoTranslation("[ Hardware settings ]"), True, ColTypes.Banner, vbNewLine)
+            WriteSeparator(DoTranslation("Hardware settings"), True)
             ListHardware()
-            W(DoTranslation("Use ""hwinfo"" for extended information about hardware."), True, ColTypes.Neutral)
+            W(DoTranslation("Use ""hwinfo"" for extended information about hardware."), True, ColTypes.Tip)
             Console.WriteLine()
         End If
 
         If ShowUserInfo Then
             'User section
-            W(DoTranslation("[ User settings ]"), True, ColTypes.Banner, vbNewLine)
+            WriteSeparator(DoTranslation("User settings"), True)
             W(DoTranslation("Current user name:") + " ", False, ColTypes.ListEntry) : W(CurrentUser, True, ColTypes.ListValue)
             W(DoTranslation("Current host name:") + " ", False, ColTypes.ListEntry) : W(HostName, True, ColTypes.ListValue)
             W(DoTranslation("Available usernames:") + " ", False, ColTypes.ListEntry) : W(String.Join(", ", Users.Keys), True, ColTypes.ListValue)
@@ -67,13 +67,13 @@ Class SysInfoCommand
 
         If ShowMessageOfTheDay Then
             'Show MOTD
-            W("[ MOTD ]", True, ColTypes.Banner)
+            WriteSeparator("MOTD", True)
             W(ProbePlaces(MOTDMessage), True, ColTypes.Neutral)
         End If
 
         If ShowMal Then
             'Show MAL
-            W("[ MAL ]", True, ColTypes.Banner)
+            WriteSeparator("MAL", True)
             W(ProbePlaces(MAL), True, ColTypes.Neutral)
         End If
     End Sub
