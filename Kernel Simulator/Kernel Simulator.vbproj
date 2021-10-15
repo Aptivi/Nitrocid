@@ -539,6 +539,7 @@
     <Compile Include="Shell\ShellBase\HelpSystem.vb" />
     <Compile Include="Shell\ShellBase\ProvidedCommandArgumentsInfo.vb" />
     <Compile Include="Shell\Shell.vb" />
+    <Compile Include="Shell\ShellBase\ShellCommandType.vb" />
     <Compile Include="Shell\ShellBase\ShellStartThreads.vb" />
     <Compile Include="TestShell\Commands\TestCRC32.vb" />
     <Compile Include="TestShell\Commands\TestTable.vb" />
