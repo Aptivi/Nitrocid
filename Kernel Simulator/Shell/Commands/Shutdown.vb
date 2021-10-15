@@ -23,12 +23,12 @@ Class ShutdownCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If Not ListArgs?.Length = 0 Then
             If ListArgs?.Length = 1 Then
-                PowerManage("remoteshutdown", ListArgs(0))
+                PowerManage(PowerMode.RemoteShutdown, ListArgs(0))
             Else
-                PowerManage("remoteshutdown", ListArgs(0), ListArgs(1))
+                PowerManage(PowerMode.RemoteShutdown, ListArgs(0), ListArgs(1))
             End If
         Else
-            PowerManage("shutdown")
+            PowerManage(PowerMode.Shutdown)
         End If
     End Sub
 

@@ -16,13 +16,28 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class TestShellCommand
-    Inherits CommandExecutor
-    Implements ICommand
-
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        InitTShell(True)
-        If Test_ShutdownFlag Then PowerManage(PowerMode.Shutdown)
-    End Sub
-
-End Class
+''' <summary>
+''' Kernel power modes
+''' </summary>
+Public Enum PowerMode
+    ''' <summary>
+    ''' Kernel will shut down
+    ''' </summary>
+    Shutdown
+    ''' <summary>
+    ''' Kernel will reboot
+    ''' </summary>
+    Reboot
+    ''' <summary>
+    ''' Kernel will reboot to safe mode (disables all mods)
+    ''' </summary>
+    RebootSafe
+    ''' <summary>
+    ''' Kernel will remotely shutdown another kernel on the network (if RPC is running here and there)
+    ''' </summary>
+    RemoteShutdown
+    ''' <summary>
+    ''' Kernel will remotely reboot another kernel on the network (if RPC is running here and there)
+    ''' </summary>
+    RemoteRestart
+End Enum

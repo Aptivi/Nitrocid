@@ -98,7 +98,7 @@ Public Module KernelTools
                 W(DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds..."), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
                 Thread.Sleep(RebootTime * 1000)
                 Wdbg(DebugLevel.F, "Rebooting")
-                PowerManage("reboot")
+                PowerManage(PowerMode.Reboot)
             ElseIf StopPanicAndGoToDoublePanic = True Then
                 'Switch to Double Panic
                 Exit Sub
@@ -118,13 +118,13 @@ Public Module KernelTools
                 Wdbg(DebugLevel.W, "Reboot is False, ErrorType is not double or continuable.")
                 W(DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), True, ColTypes.Uncontinuable, ErrorType, Description)
                 Console.ReadKey()
-                PowerManage("shutdown")
+                PowerManage(PowerMode.Shutdown)
             Else
                 'Everything else.
                 Wdbg(DebugLevel.F, "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType)
                 W(DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds..."), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
                 Thread.Sleep(RebootTime * 1000)
-                PowerManage("reboot")
+                PowerManage(PowerMode.Reboot)
             End If
         Catch ex As Exception
             If DebugMode = True Then
@@ -234,46 +234,47 @@ Public Module KernelTools
     ''' <summary>
     ''' Manage computer's (actually, simulated computer) power
     ''' </summary>
-    ''' <param name="PowerMode">Whether it would be "shutdown", "rebootsafe", or "reboot"</param>
-    Public Sub PowerManage(PowerMode As String, IP As String)
+    ''' <param name="PowerMode">Selects the power mode</param>
+    Public Sub PowerManage(PowerMode As PowerMode, IP As String)
         PowerManage(PowerMode, IP, RPCPort)
     End Sub
 
     ''' <summary>
     ''' Manage computer's (actually, simulated computer) power
     ''' </summary>
-    ''' <param name="PowerMode">Whether it would be "shutdown", "rebootsafe", or "reboot"</param>
-    Public Sub PowerManage(PowerMode As String, IP As String, Port As Integer)
+    ''' <param name="PowerMode">Selects the power mode</param>
+    Public Sub PowerManage(PowerMode As PowerMode, IP As String, Port As Integer)
         Wdbg(DebugLevel.I, "Power management has the argument of {0}", PowerMode)
-        If PowerMode = "shutdown" Then
-            EventManager.RaisePreShutdown()
-            W(DoTranslation("Shutting down..."), True, ColTypes.Neutral)
-            ResetEverything()
-            EventManager.RaisePostShutdown()
-            Environment.Exit(0)
-        ElseIf PowerMode = "reboot" Then
-            EventManager.RaisePreReboot()
-            W(DoTranslation("Rebooting..."), True, ColTypes.Neutral)
-            ResetEverything()
-            EventManager.RaisePostReboot()
-            Console.Clear()
-            RebootRequested = True
-            LogoutRequested = True
-            SafeMode = False
-        ElseIf PowerMode = "rebootsafe" Then
-            EventManager.RaisePreReboot()
-            W(DoTranslation("Rebooting..."), True, ColTypes.Neutral)
-            ResetEverything()
-            EventManager.RaisePostReboot()
-            Console.Clear()
-            RebootRequested = True
-            LogoutRequested = True
-            SafeMode = True
-        ElseIf PowerMode = "remoteshutdown" Then
-            SendCommand("<Request:Shutdown>(" + IP + ")", IP, Port)
-        ElseIf PowerMode = "remoterestart" Then
-            SendCommand("<Request:Reboot>(" + IP + ")", IP, Port)
-        End If
+        Select Case PowerMode
+            Case PowerMode.Shutdown
+                EventManager.RaisePreShutdown()
+                W(DoTranslation("Shutting down..."), True, ColTypes.Neutral)
+                ResetEverything()
+                EventManager.RaisePostShutdown()
+                Environment.Exit(0)
+            Case PowerMode.Reboot
+                EventManager.RaisePreReboot()
+                W(DoTranslation("Rebooting..."), True, ColTypes.Neutral)
+                ResetEverything()
+                EventManager.RaisePostReboot()
+                Console.Clear()
+                RebootRequested = True
+                LogoutRequested = True
+                SafeMode = False
+            Case PowerMode.RebootSafe
+                EventManager.RaisePreReboot()
+                W(DoTranslation("Rebooting..."), True, ColTypes.Neutral)
+                ResetEverything()
+                EventManager.RaisePostReboot()
+                Console.Clear()
+                RebootRequested = True
+                LogoutRequested = True
+                SafeMode = True
+            Case PowerMode.RemoteShutdown
+                SendCommand("<Request:Shutdown>(" + IP + ")", IP, Port)
+            Case PowerMode.RemoteRestart
+                SendCommand("<Request:Reboot>(" + IP + ")", IP, Port)
+        End Select
     End Sub
 
     ' ----------------------------------------------- Init and reset -----------------------------------------------

@@ -23,18 +23,18 @@ Class RebootCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If Not ListArgs?.Length = 0 Then
             If ListArgs(0) = "safe" Then
-                PowerManage("rebootsafe")
+                PowerManage(PowerMode.RebootSafe)
             ElseIf ListArgs(0) <> "" Then
                 If ListArgs?.Length > 1 Then
-                    PowerManage("remoterestart", ListArgs(0), ListArgs(1))
+                    PowerManage(PowerMode.RemoteRestart, ListArgs(0), ListArgs(1))
                 Else
-                    PowerManage("remoterestart", ListArgs(0))
+                    PowerManage(PowerMode.RemoteRestart, ListArgs(0))
                 End If
             Else
-                PowerManage("reboot")
+                PowerManage(PowerMode.Reboot)
             End If
         Else
-            PowerManage("reboot")
+            PowerManage(PowerMode.Reboot)
         End If
     End Sub
 
