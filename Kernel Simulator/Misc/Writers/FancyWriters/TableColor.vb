@@ -35,6 +35,7 @@ Public Module TableColor
         For ColumnPosition As Integer = Margin To Console.WindowWidth Step ColumnCapacity
             If Not ColumnPosition >= Console.WindowWidth Then
                 ColumnPositions.Add(ColumnPosition)
+                If ColumnPositions.Count = 1 Then ColumnPosition = 0
             Else
                 Exit For
             End If
@@ -88,6 +89,7 @@ Public Module TableColor
         For ColumnPosition As Integer = Margin To Console.WindowWidth Step ColumnCapacity
             If Not ColumnPosition >= Console.WindowWidth Then
                 ColumnPositions.Add(ColumnPosition)
+                If ColumnPositions.Count = 1 Then ColumnPosition = 0
             Else
                 Exit For
             End If
@@ -139,6 +141,7 @@ Public Module TableColor
         For ColumnPosition As Integer = Margin To Console.WindowWidth Step ColumnCapacity
             If Not ColumnPosition >= Console.WindowWidth Then
                 ColumnPositions.Add(ColumnPosition)
+                If ColumnPositions.Count = 1 Then ColumnPosition = 0
             Else
                 Exit For
             End If
@@ -191,6 +194,7 @@ Public Module TableColor
         For ColumnPosition As Integer = Margin To Console.WindowWidth Step ColumnCapacity
             If Not ColumnPosition >= Console.WindowWidth Then
                 ColumnPositions.Add(ColumnPosition)
+                If ColumnPositions.Count = 1 Then ColumnPosition = 0
             Else
                 Exit For
             End If
@@ -242,6 +246,7 @@ Public Module TableColor
         For ColumnPosition As Integer = Margin To Console.WindowWidth Step ColumnCapacity
             If Not ColumnPosition >= Console.WindowWidth Then
                 ColumnPositions.Add(ColumnPosition)
+                If ColumnPositions.Count = 1 Then ColumnPosition = 0
             Else
                 Exit For
             End If
@@ -294,6 +299,7 @@ Public Module TableColor
         For ColumnPosition As Integer = Margin To Console.WindowWidth Step ColumnCapacity
             If Not ColumnPosition >= Console.WindowWidth Then
                 ColumnPositions.Add(ColumnPosition)
+                If ColumnPositions.Count = 1 Then ColumnPosition = 0
             Else
                 Exit For
             End If
