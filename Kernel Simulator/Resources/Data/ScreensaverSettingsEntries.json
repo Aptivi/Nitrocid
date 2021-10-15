@@ -1923,6 +1923,52 @@
                 "Type": "SInt",
                 "Variable": "RampMaximumColorLevelEnd",
                 "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Upper left corner color for ramp bar",
+                "Type": "SColor",
+                "Variable": "RampUpperLeftCornerColor"
+            },
+            {
+                "Name": "Upper right corner color for ramp bar",
+                "Type": "SColor",
+                "Variable": "RampUpperRightCornerColor"
+            },
+            {
+                "Name": "Lower left corner color for ramp bar",
+                "Type": "SColor",
+                "Variable": "RampLowerLeftCornerColor"
+            },
+            {
+                "Name": "Lower right corner color for ramp bar",
+                "Type": "SColor",
+                "Variable": "RampLowerRightCornerColor"
+            },
+            {
+                "Name": "Upper frame color for ramp bar",
+                "Type": "SColor",
+                "Variable": "RampUpperFrameColor"
+            },
+            {
+                "Name": "Lower frame color for ramp bar",
+                "Type": "SColor",
+                "Variable": "RampLowerFrameColor"
+            },
+            {
+                "Name": "Left frame color for ramp bar",
+                "Type": "SColor",
+                "Variable": "RampLeftFrameColor"
+            },
+            {
+                "Name": "Right frame color for ramp bar",
+                "Type": "SColor",
+                "Variable": "RampRightFrameColor"
+            },
+            {
+                "Name": "Use border colors for ramp bar",
+                "Type": "SBoolean",
+                "Variable": "RampUseBorderColors",
+                "Description": "Use the border colors for the ramp bar. If disabled, will generate a grey bar."
             }
         ]
     }

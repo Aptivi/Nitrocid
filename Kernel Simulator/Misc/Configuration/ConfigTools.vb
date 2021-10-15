@@ -229,7 +229,7 @@ Public Module ConfigTools
                 End If
             End If
             If ConfigToken("Screensaver")("Ramp") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Ramp").Count <> 28 Then
+                If ConfigToken("Screensaver")("Ramp").Count <> 37 Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Ramp. Config fix needed set to true.")
                     FixesNeeded = True
                 End If

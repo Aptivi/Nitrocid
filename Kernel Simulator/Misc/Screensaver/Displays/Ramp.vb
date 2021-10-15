@@ -147,27 +147,18 @@ Module RampDisplay
 
                     'Draw the frame
                     If Not ResizeSyncing Then
-                        Console.ForegroundColor = ConsoleColor.Gray
-                        Console.SetCursorPosition(RampFrameStartWidth, RampCenterPosition - 2)
-                        Console.Write(RampUpperLeftCornerChar)
-                        Console.Write(StrDup(RampFrameSpaces, RampUpperFrameChar))
-                        Console.Write(RampUpperRightCornerChar)
-                        Console.SetCursorPosition(RampFrameStartWidth, RampCenterPosition - 1)
-                        Console.Write(RampLeftFrameChar)
-                        Console.SetCursorPosition(RampFrameStartWidth, RampCenterPosition)
-                        Console.Write(RampLeftFrameChar)
-                        Console.SetCursorPosition(RampFrameStartWidth, RampCenterPosition + 1)
-                        Console.Write(RampLeftFrameChar)
-                        Console.SetCursorPosition(RampFrameEndWidth + 1, RampCenterPosition - 1)
-                        Console.Write(RampRightFrameChar)
-                        Console.SetCursorPosition(RampFrameEndWidth + 1, RampCenterPosition)
-                        Console.Write(RampRightFrameChar)
-                        Console.SetCursorPosition(RampFrameEndWidth + 1, RampCenterPosition + 1)
-                        Console.Write(RampRightFrameChar)
-                        Console.SetCursorPosition(RampFrameStartWidth, RampCenterPosition + 2)
-                        Console.Write(RampLowerLeftCornerChar)
-                        Console.Write(StrDup(RampFrameSpaces, RampLowerFrameChar))
-                        Console.Write(RampLowerRightCornerChar)
+                        WriteWhereC(RampUpperLeftCornerChar, RampFrameStartWidth, RampCenterPosition - 2, False, If(RampUseBorderColors, New Color(RampUpperLeftCornerColor), New Color(ConsoleColors.Gray)))
+                        WriteC(StrDup(RampFrameSpaces, RampUpperFrameChar), False, If(RampUseBorderColors, New Color(RampUpperFrameColor), New Color(ConsoleColors.Gray)))
+                        WriteC(RampUpperRightCornerChar, False, If(RampUseBorderColors, New Color(RampUpperRightCornerColor), New Color(ConsoleColors.Gray)))
+                        WriteWhereC(RampLeftFrameChar, RampFrameStartWidth, RampCenterPosition - 1, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
+                        WriteWhereC(RampLeftFrameChar, RampFrameStartWidth, RampCenterPosition, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
+                        WriteWhereC(RampLeftFrameChar, RampFrameStartWidth, RampCenterPosition + 1, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
+                        WriteWhereC(RampRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition - 1, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
+                        WriteWhereC(RampRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
+                        WriteWhereC(RampRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition + 1, False, If(RampUseBorderColors, New Color(RampLeftFrameColor), New Color(ConsoleColors.Gray)))
+                        WriteWhereC(RampLowerLeftCornerChar, RampFrameStartWidth, RampCenterPosition + 2, False, If(RampUseBorderColors, New Color(RampLowerLeftCornerColor), New Color(ConsoleColors.Gray)))
+                        WriteC(StrDup(RampFrameSpaces, RampLowerFrameChar), False, If(RampUseBorderColors, New Color(RampLowerFrameColor), New Color(ConsoleColors.Gray)))
+                        WriteC(RampLowerRightCornerChar, False, If(RampUseBorderColors, New Color(RampLowerRightCornerColor), New Color(ConsoleColors.Gray)))
                     End If
 
                     'Draw the ramp

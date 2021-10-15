@@ -674,7 +674,16 @@ Public Module Config
                     {"Maximum red color level for end color", RampMaximumRedColorLevelEnd},
                     {"Maximum green color level for end color", RampMaximumGreenColorLevelEnd},
                     {"Maximum blue color level for end color", RampMaximumBlueColorLevelEnd},
-                    {"Maximum color level for end color", RampMaximumColorLevelEnd}
+                    {"Maximum color level for end color", RampMaximumColorLevelEnd},
+                    {"Upper left corner color for ramp bar", RampUpperLeftCornerColor},
+                    {"Upper right corner color for ramp bar", RampUpperRightCornerColor},
+                    {"Lower left corner color for ramp bar", RampLowerLeftCornerColor},
+                    {"Lower right corner color for ramp bar", RampLowerRightCornerColor},
+                    {"Upper frame color for ramp bar", RampUpperFrameColor},
+                    {"Lower frame color for ramp bar", RampLowerFrameColor},
+                    {"Left frame color for ramp bar", RampLeftFrameColor},
+                    {"Right frame color for ramp bar", RampRightFrameColor},
+                    {"Use border colors for ramp bar", RampUseBorderColors}
             }
             ScreensaverConfig.Add("Ramp", RampConfig)
 
@@ -1266,6 +1275,15 @@ Public Module Config
             RampMaximumGreenColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Maximum green color level for end color"), 0), ConfigToken("Screensaver")?("Ramp")?("Maximum green color level for end color"), 255)
             RampMaximumBlueColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Maximum blue color level for end color"), 0), ConfigToken("Screensaver")?("Ramp")?("Maximum blue color level for end color"), 255)
             RampMaximumColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Maximum color level for end color"), 0), ConfigToken("Screensaver")?("Ramp")?("Maximum color level for end color"), 255)
+            RampUpperLeftCornerColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Upper left corner color for ramp bar"), ConsoleColors.Gray)).PlainSequence
+            RampUpperRightCornerColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Upper right corner color for ramp bar"), ConsoleColors.Gray)).PlainSequence
+            RampLowerLeftCornerColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Lower left corner color for ramp bar"), ConsoleColors.Gray)).PlainSequence
+            RampLowerRightCornerColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Lower right corner color for ramp bar"), ConsoleColors.Gray)).PlainSequence
+            RampUpperFrameColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Upper frame color for ramp bar"), ConsoleColors.Gray)).PlainSequence
+            RampLowerFrameColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Lower frame color for ramp bar"), ConsoleColors.Gray)).PlainSequence
+            RampLeftFrameColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Left frame color for ramp bar"), ConsoleColors.Gray)).PlainSequence
+            RampRightFrameColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Right frame color for ramp bar"), ConsoleColors.Gray)).PlainSequence
+            RampUseBorderColors = If(ConfigToken("Screensaver")?("Ramp")?("Use border colors for ramp bar"), False)
 
             'Misc Section
             Wdbg(DebugLevel.I, "Parsing misc section...")

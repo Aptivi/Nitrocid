@@ -1281,5 +1281,41 @@ Public Module ScreensaverSettings
     ''' [Ramp] The maximum color level (255 colors or 16 colors - end)
     ''' </summary>
     Public RampMaximumColorLevelEnd As Integer = 255
+    ''' <summary>
+    ''' [Ramp] Upper left corner color.
+    ''' </summary>
+    Public RampUpperLeftCornerColor As String = 7
+    ''' <summary>
+    ''' [Ramp] Upper right corner color.
+    ''' </summary>
+    Public RampUpperRightCornerColor As String = 7
+    ''' <summary>
+    ''' [Ramp] Lower left corner color.
+    ''' </summary>
+    Public RampLowerLeftCornerColor As String = 7
+    ''' <summary>
+    ''' [Ramp] Lower right corner color.
+    ''' </summary>
+    Public RampLowerRightCornerColor As String = 7
+    ''' <summary>
+    ''' [Ramp] Upper frame color.
+    ''' </summary>
+    Public RampUpperFrameColor As String = 7
+    ''' <summary>
+    ''' [Ramp] Lower frame color.
+    ''' </summary>
+    Public RampLowerFrameColor As String = 7
+    ''' <summary>
+    ''' [Ramp] Left frame color.
+    ''' </summary>
+    Public RampLeftFrameColor As String = 7
+    ''' <summary>
+    ''' [Ramp] Right frame color.
+    ''' </summary>
+    Public RampRightFrameColor As String = 7
+    ''' <summary>
+    ''' [Ramp] Use the border colors.
+    ''' </summary>
+    Public RampUseBorderColors As Boolean
 
 End Module
