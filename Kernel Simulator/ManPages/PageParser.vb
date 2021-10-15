@@ -137,7 +137,7 @@ Module PageParser
                     Body.AppendLine(DoTranslation("Consider filling this manual page."))
                 End If
             Else
-                Throw New Exceptions.InvalidManpageException(DoTranslation("The manual page {0} is invalid.", CurrentLanguage), ManualFile)
+                Throw New Exceptions.InvalidManpageException(DoTranslation("The manual page {0} is invalid."), ManualFile)
             End If
         Catch ex As Exception
             Success = False
