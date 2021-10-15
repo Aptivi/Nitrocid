@@ -22,6 +22,8 @@ Imports Newtonsoft.Json.Linq
 Public Module Translate
 
     'Variables
+    'PLEASE NOTE: "zul" language is Zulu and "swa" is Swahili for compatibility with Windows and Linux platforms. Windows considers "zul" as
+    '             isiZulu and "swa" as Kiswahili, while Linux considers "zul" as Zulu and "swa" as Swahili.
     Public ReadOnly Languages As New Dictionary(Of String, LanguageInfo) From {{"arb", New LanguageInfo("arb", "Arabic", True)}, {"arb-T", New LanguageInfo("arb-T", "Arabic", True)},
                                                                                {"azr", New LanguageInfo("azr", "Azerbaijani", False)},
                                                                                {"ben", New LanguageInfo("ben", "Bangla", True)}, {"ben-T", New LanguageInfo("ben-T", "Bangla", True)},
@@ -63,14 +65,14 @@ Public Module Translate
                                                                                {"som", New LanguageInfo("som", "Somali", False)},
                                                                                {"spa", New LanguageInfo("spa", "Spanish", False)},
                                                                                {"srb", New LanguageInfo("srb", "Serbian", True)}, {"srb-T", New LanguageInfo("srb-T", "Serbian", True)},
-                                                                               {"swa", New LanguageInfo("swa", "Swahili", False)}, 'Don't use Kiswahili here. "Swahili" is saner than "Kiswahili".
+                                                                               {"swa", New LanguageInfo("swa", "Swahili", False)},
                                                                                {"swe", New LanguageInfo("swe", "Swedish", False)},
                                                                                {"tky", New LanguageInfo("tky", "Turkish", False)},
                                                                                {"uzb", New LanguageInfo("uzb", "Uzbek", False)},
                                                                                {"vtn", New LanguageInfo("vtn", "Vietnamese", False)},
                                                                                {"wls", New LanguageInfo("wls", "Welsh", False)},
                                                                                {"yrb", New LanguageInfo("yrb", "Yoruba", False)},
-                                                                               {"zul", New LanguageInfo("zul", "Zulu", False)}} 'Don't use isiZulu here. isiZulu? Really? What is "isi" doing here?
+                                                                               {"zul", New LanguageInfo("zul", "Zulu", False)}}
     Public CurrentLanguage As String = "eng" 'Default to English
     Public CurrentCult As New CultureInfo("en-US")
     Private NotifyCodepageError As Boolean
