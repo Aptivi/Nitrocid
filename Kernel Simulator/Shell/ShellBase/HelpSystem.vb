@@ -136,7 +136,7 @@ Public Module HelpSystem
                         End If
                         W(" ".Repeat(UsageLength) + " " + DoTranslation("where builtinsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", Screensavers.Keys))
                     Case "setthemes"
-                        W(" ".Repeat(UsageLength) + "<Theme>: ThemeName.json, " + String.Join(", ", ColorTemplates.Keys), True, ColTypes.Neutral)
+                        W(" ".Repeat(UsageLength) + "<Theme>: ThemeName.json, " + String.Join(", ", Themes.Keys), True, ColTypes.Neutral)
                     Case "weather"
                         W(" ".Repeat(UsageLength) + " " + DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.") + " " + DoTranslation("Or, pass ""listcities"" to this command."), True, ColTypes.Neutral)
                     Case "wrap"

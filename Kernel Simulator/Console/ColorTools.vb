@@ -222,42 +222,6 @@ Public Module ColorTools
     Public TableHeaderColor As String = New Color(ConsoleColors.White).PlainSequence
     Public TableValueColor As String = New Color(ConsoleColors.Gray).PlainSequence
 
-    'Templates array (available ones)
-    Public ColorTemplates As New Dictionary(Of String, ThemeInfo) From {{"Default", New ThemeInfo("_Default")},
-                                                                        {"RedConsole", New ThemeInfo("RedConsole")},
-                                                                        {"Bluespire", New ThemeInfo("Bluespire")},
-                                                                        {"Hacker", New ThemeInfo("Hacker")},
-                                                                        {"Ubuntu", New ThemeInfo("Ubuntu")},
-                                                                        {"YellowFG", New ThemeInfo("YellowFG")},
-                                                                        {"YellowBG", New ThemeInfo("YellowBG")},
-                                                                        {"SolarizedDark", New ThemeInfo("SolarizedDark")},
-                                                                        {"SolarizedLight", New ThemeInfo("SolarizedLight")},
-                                                                        {"NeonBreeze", New ThemeInfo("NeonBreeze")},
-                                                                        {"AyuDark", New ThemeInfo("AyuDark")},
-                                                                        {"AyuLight", New ThemeInfo("AyuLight")},
-                                                                        {"AyuMirage", New ThemeInfo("AyuMirage")},
-                                                                        {"BrandingBlue", New ThemeInfo("BrandingBlue")},
-                                                                        {"BrandingPurple", New ThemeInfo("BrandingPurple")},
-                                                                        {"TrafficLight", New ThemeInfo("TrafficLight")},
-                                                                        {"BreezeDark", New ThemeInfo("BreezeDark")},
-                                                                        {"Breeze", New ThemeInfo("Breeze")},
-                                                                        {"Windows95", New ThemeInfo("Windows95")},
-                                                                        {"GTASA", New ThemeInfo("GTASA")},
-                                                                        {"GrayOnYellow", New ThemeInfo("GrayOnYellow")},
-                                                                        {"BlackOnWhite", New ThemeInfo("BlackOnWhite")},
-                                                                        {"Debian", New ThemeInfo("Debian")},
-                                                                        {"NFSHP-Cop", New ThemeInfo("NFSHP_Cop")},
-                                                                        {"NFSHP-Racer", New ThemeInfo("NFSHP_Racer")},
-                                                                        {"TealerOS", New ThemeInfo("TealerOS")},
-                                                                        {"BedOS", New ThemeInfo("BedOS")},
-                                                                        {"3Y-Diamond", New ThemeInfo("_3Y_Diamond")},
-                                                                        {"Windows11", New ThemeInfo("Windows11")},
-                                                                        {"Windows11Light", New ThemeInfo("Windows11Light")},
-                                                                        {"Wood", New ThemeInfo("Wood")},
-                                                                        {"Metallic", New ThemeInfo("Metallic")},
-                                                                        {"LinuxUncolored", New ThemeInfo("LinuxUncolored")},
-                                                                        {"LinuxColoredDef", New ThemeInfo("LinuxColoredDef")}}
-
     ''' <summary>
     ''' Resets all colors to default
     ''' </summary>
@@ -316,76 +280,6 @@ Public Module ColorTools
             Console.Clear()
         Catch ex As Exception
             Wdbg(DebugLevel.E, "Failed to set background: {0}", ex.Message)
-        End Try
-    End Sub
-
-    ''' <summary>
-    ''' Sets system colors according to the programmed templates
-    ''' </summary>
-    ''' <param name="theme">A specified theme</param>
-    Public Sub ApplyThemeFromResources(theme As String)
-        Wdbg(DebugLevel.I, "Theme: {0}", theme)
-        If ColorTemplates.ContainsKey(theme) Then
-            Wdbg(DebugLevel.I, "Theme found.")
-
-            'Populate theme info
-            Dim ThemeInfo As ThemeInfo
-            If theme = "Default" Then
-                ResetColors()
-            ElseIf theme = "NFSHP-Cop" Then
-                ThemeInfo = New ThemeInfo("NFSHP_Cop")
-            ElseIf theme = "NFSHP-Racer" Then
-                ThemeInfo = New ThemeInfo("NFSHP_Racer")
-            ElseIf theme = "3Y-Diamond" Then
-                ThemeInfo = New ThemeInfo("_3Y_Diamond")
-            Else
-                ThemeInfo = New ThemeInfo(theme)
-            End If
-
-            If Not theme = "Default" Then
-#Disable Warning BC42104
-                'Set colors as appropriate
-                SetColors(ThemeInfo)
-#Enable Warning BC42104
-            End If
-
-            'Raise event
-            EventManager.RaiseThemeSet(theme)
-        Else
-            W(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, theme)
-            Wdbg(DebugLevel.E, "Theme not found.")
-
-            'Raise event
-            EventManager.RaiseThemeSetError(theme, "notfound")
-        End If
-    End Sub
-
-    ''' <summary>
-    ''' Sets system colors according to the template file
-    ''' </summary>
-    ''' <param name="ThemeFile">Theme file</param>
-    Public Sub ApplyThemeFromFile(ThemeFile As String)
-        Try
-            Wdbg(DebugLevel.I, "Theme file name: {0}", ThemeFile)
-            ThemeFile = NeutralizePath(ThemeFile, True)
-            Wdbg(DebugLevel.I, "Theme file path: {0}", ThemeFile)
-
-            'Populate theme info
-            Dim ThemeInfo As New ThemeInfo(New StreamReader(ThemeFile))
-
-            If Not ThemeFile = "Default" Then
-                'Set colors as appropriate
-                SetColors(ThemeInfo)
-            End If
-
-            'Raise event
-            EventManager.RaiseThemeSet(ThemeFile)
-        Catch ex As Exception
-            W(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, ThemeFile)
-            Wdbg(DebugLevel.E, "Theme not found.")
-
-            'Raise event
-            EventManager.RaiseThemeSetError(ThemeFile, "notfound")
         End Try
     End Sub
 
@@ -602,73 +496,6 @@ Public Module ColorTools
                 ColorTools.TableSeparatorColor = New Color(TableSeparatorColor).PlainSequence
                 ColorTools.TableHeaderColor = New Color(TableHeaderColor).PlainSequence
                 ColorTools.TableValueColor = New Color(TableValueColor).PlainSequence
-                LoadBack()
-                MakePermanent()
-
-                'Raise event
-                EventManager.RaiseColorSet()
-                Return True
-            Catch ex As Exception
-                WStkTrc(ex)
-                EventManager.RaiseColorSetError("invalidcolors")
-                Throw New Exceptions.ColorException(DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message)
-            End Try
-        Else
-            EventManager.RaiseColorSetError("nocolors")
-            Throw New InvalidOperationException(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."))
-        End If
-        Return False
-    End Function
-
-    ''' <summary>
-    ''' Sets custom colors. It only works if colored shell is enabled.
-    ''' </summary>
-    ''' <param name="ThemeInfo">Theme information</param>
-    ''' <returns>True if successful; False if unsuccessful</returns>
-    ''' <exception cref="InvalidOperationException"></exception>
-    ''' <exception cref="Exceptions.ColorException"></exception>
-    Public Function SetColors(ThemeInfo As ThemeInfo) As Boolean
-        If ThemeInfo Is Nothing Then Throw New ArgumentNullException(NameOf(ThemeInfo))
-
-        'Set the colors
-        If ColoredShell = True Then
-            Try
-                InputColor = ThemeInfo.ThemeInputColor.PlainSequence
-                LicenseColor = ThemeInfo.ThemeLicenseColor.PlainSequence
-                ContKernelErrorColor = ThemeInfo.ThemeContKernelErrorColor.PlainSequence
-                UncontKernelErrorColor = ThemeInfo.ThemeUncontKernelErrorColor.PlainSequence
-                HostNameShellColor = ThemeInfo.ThemeHostNameShellColor.PlainSequence
-                UserNameShellColor = ThemeInfo.ThemeUserNameShellColor.PlainSequence
-                BackgroundColor = ThemeInfo.ThemeBackgroundColor.PlainSequence
-                NeutralTextColor = ThemeInfo.ThemeNeutralTextColor.PlainSequence
-                ListEntryColor = ThemeInfo.ThemeListEntryColor.PlainSequence
-                ListValueColor = ThemeInfo.ThemeListValueColor.PlainSequence
-                StageColor = ThemeInfo.ThemeStageColor.PlainSequence
-                ErrorColor = ThemeInfo.ThemeErrorColor.PlainSequence
-                WarningColor = ThemeInfo.ThemeWarningColor.PlainSequence
-                OptionColor = ThemeInfo.ThemeOptionColor.PlainSequence
-                BannerColor = ThemeInfo.ThemeBannerColor.PlainSequence
-                NotificationTitleColor = ThemeInfo.ThemeNotificationTitleColor.PlainSequence
-                NotificationDescriptionColor = ThemeInfo.ThemeNotificationDescriptionColor.PlainSequence
-                NotificationProgressColor = ThemeInfo.ThemeNotificationProgressColor.PlainSequence
-                NotificationFailureColor = ThemeInfo.ThemeNotificationFailureColor.PlainSequence
-                QuestionColor = ThemeInfo.ThemeQuestionColor.PlainSequence
-                SuccessColor = ThemeInfo.ThemeSuccessColor.PlainSequence
-                UserDollarColor = ThemeInfo.ThemeUserDollarColor.PlainSequence
-                TipColor = ThemeInfo.ThemeTipColor.PlainSequence
-                SeparatorTextColor = ThemeInfo.ThemeSeparatorTextColor.PlainSequence
-                SeparatorColor = ThemeInfo.ThemeSeparatorColor.PlainSequence
-                ListTitleColor = ThemeInfo.ThemeListTitleColor.PlainSequence
-                DevelopmentWarningColor = ThemeInfo.ThemeDevelopmentWarningColor.PlainSequence
-                StageTimeColor = ThemeInfo.ThemeStageTimeColor.PlainSequence
-                ProgressColor = ThemeInfo.ThemeProgressColor.PlainSequence
-                BackOptionColor = ThemeInfo.ThemeBackOptionColor.PlainSequence
-                LowPriorityBorderColor = ThemeInfo.ThemeLowPriorityBorderColor.PlainSequence
-                MediumPriorityBorderColor = ThemeInfo.ThemeMediumPriorityBorderColor.PlainSequence
-                HighPriorityBorderColor = ThemeInfo.ThemeHighPriorityBorderColor.PlainSequence
-                TableSeparatorColor = ThemeInfo.ThemeTableSeparatorColor.PlainSequence
-                TableHeaderColor = ThemeInfo.ThemeTableHeaderColor.PlainSequence
-                TableValueColor = ThemeInfo.ThemeTableValueColor.PlainSequence
                 LoadBack()
                 MakePermanent()
 
