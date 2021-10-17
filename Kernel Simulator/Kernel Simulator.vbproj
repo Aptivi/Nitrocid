@@ -167,6 +167,7 @@
     <Compile Include="Arguments\CommandLineArguments\TestMod.vb" />
     <Compile Include="Arguments\CommandLineArguments\Debug.vb" />
     <Compile Include="Arguments\CommandLineArguments\TestInteractive.vb" />
+    <Compile Include="Arguments\ArgumentHelpSystem.vb" />
     <Compile Include="Arguments\IArgument.vb" />
     <Compile Include="Arguments\KernelArguments\CmdInject.vb" />
     <Compile Include="Arguments\KernelArguments\TestInteractive.vb" />

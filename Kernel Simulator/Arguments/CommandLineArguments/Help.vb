@@ -20,11 +20,7 @@ Class CommandLine_HelpArgument
     Implements IArgument
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
-        W("- testMod: ", False, ColTypes.ListEntry) : W(AvailableCMDLineArgs("testMod").GetTranslatedHelpEntry, True, ColTypes.ListValue)
-        W("- testInteractive: ", False, ColTypes.ListEntry) : W(AvailableCMDLineArgs("testInteractive").GetTranslatedHelpEntry, True, ColTypes.ListValue)
-        W("- debug: ", False, ColTypes.ListEntry) : W(AvailableCMDLineArgs("debug").GetTranslatedHelpEntry, True, ColTypes.ListValue)
-        W("- args: ", False, ColTypes.ListEntry) : W(AvailableCMDLineArgs("args").GetTranslatedHelpEntry, True, ColTypes.ListValue)
-        W("- reset: ", False, ColTypes.ListEntry) : W(AvailableCMDLineArgs("reset").GetTranslatedHelpEntry, True, ColTypes.ListValue)
+        ShowArgsHelp(ArgumentType.CommandLineArgs)
         W(DoTranslation("* Press any key to start the kernel or ESC to exit."), True, ColTypes.Tip)
         If Console.ReadKey(True).Key = ConsoleKey.Escape Then
             Environment.Exit(0)
