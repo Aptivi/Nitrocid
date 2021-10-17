@@ -29,7 +29,7 @@ Public Class Events
     Public Event KernelStarted()
     Public Event PreLogin()
     Public Event PostLogin(Username As String)
-    Public Event LoginError(Username As String, Reason As String)
+    Public Event LoginError(Username As String, Reason As LoginErrorReasons)
     Public Event ShellInitialized()
     Public Event PreExecuteCommand(Command As String)
     Public Event PostExecuteCommand(Command As String)
@@ -129,9 +129,9 @@ Public Class Events
     Public Event FileAttributeRemoved(File As String, Attributes As FileAttributes)
     Public Event ColorReset()
     Public Event ThemeSet(Theme As String)
-    Public Event ThemeSetError(Theme As String, Reason As String)
+    Public Event ThemeSetError(Theme As String, Reason As ThemeSetErrorReasons)
     Public Event ColorSet()
-    Public Event ColorSetError(Reason As String)
+    Public Event ColorSetError(Reason As ColorSetErrorReasons)
     Public Event ThemeStudioStarted()
     Public Event ThemeStudioExit()
     Public Event ArgumentsInjected(InjectedArguments As List(Of String))
@@ -1577,7 +1577,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of login error
     ''' </summary>
-    Public Sub RaiseLoginError(Username As String, Reason As String)
+    Public Sub RaiseLoginError(Username As String, Reason As LoginErrorReasons)
         Wdbg(DebugLevel.I, "Raising event LoginError() and responding in RespondLoginError()...")
         FiredEvents.Add("LoginError (" + CStr(FiredEvents.Count) + ")", {Username, Reason})
         RaiseEvent LoginError(Username, Reason)
@@ -2377,7 +2377,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of theme setting problem
     ''' </summary>
-    Public Sub RaiseThemeSetError(Theme As String, Reason As String)
+    Public Sub RaiseThemeSetError(Theme As String, Reason As ThemeSetErrorReasons)
         Wdbg(DebugLevel.I, "Raising event ThemeSetError() and responding in RespondThemeSetError()...")
         FiredEvents.Add("ThemeSetError (" + CStr(FiredEvents.Count) + ")", {Theme, Reason})
         RaiseEvent ThemeSetError(Theme, Reason)
@@ -2393,7 +2393,7 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of console colors having problems being set
     ''' </summary>
-    Public Sub RaiseColorSetError(Reason As String)
+    Public Sub RaiseColorSetError(Reason As ColorSetErrorReasons)
         Wdbg(DebugLevel.I, "Raising event ColorSetError() and responding in RespondColorSetError()...")
         FiredEvents.Add("ColorSetError (" + CStr(FiredEvents.Count) + ")", {Reason})
         RaiseEvent ColorSetError(Reason)

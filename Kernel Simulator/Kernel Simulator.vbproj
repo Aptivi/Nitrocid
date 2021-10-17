@@ -184,6 +184,7 @@
     <Compile Include="Console\ConsoleExtensions.vb" />
     <Compile Include="Console\Input.vb" />
     <Compile Include="Console\RGB.vb" />
+    <Compile Include="Console\ColorSetErrorReasons.vb" />
     <Compile Include="Console\Themes\ThemeInfo.vb" />
     <Compile Include="Console\Themes\ThemeStudio.vb" />
     <Compile Include="Console\Themes\ThemeStudioTools.vb" />
@@ -201,6 +202,7 @@
     <Compile Include="Kernel\PowerMode.vb" />
     <Compile Include="Languages\LanguageInfo.vb" />
     <Compile Include="Languages\Translate.vb" />
+    <Compile Include="Login\LoginErrorReasons.vb" />
     <Compile Include="Login\PermissionManagement.vb" />
     <Compile Include="ManPages\Manual.vb" />
     <Compile Include="ManPages\PageParser.vb" />
@@ -307,6 +309,7 @@
     <Compile Include="Misc\ZipFile\Commands\List.vb" />
     <Compile Include="Misc\ZipFile\ZipTools.vb" />
     <Compile Include="Misc\ZipFile\ZipShell.vb" />
+    <Compile Include="Console\Themes\ThemeSetErrorReasons.vb" />
     <Compile Include="Modifications\ModExecutor.vb" />
     <Compile Include="Modifications\PartInfo.vb" />
     <Compile Include="Modifications\ModInfo.vb" />

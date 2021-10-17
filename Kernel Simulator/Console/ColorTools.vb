@@ -504,11 +504,11 @@ Public Module ColorTools
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
-                EventManager.RaiseColorSetError("invalidcolors")
+                EventManager.RaiseColorSetError(ColorSetErrorReasons.InvalidColors)
                 Throw New Exceptions.ColorException(DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message)
             End Try
         Else
-            EventManager.RaiseColorSetError("nocolors")
+            EventManager.RaiseColorSetError(ColorSetErrorReasons.NoColors)
             Throw New InvalidOperationException(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."))
         End If
         Return False

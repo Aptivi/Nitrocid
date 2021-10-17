@@ -94,11 +94,11 @@ Public Module Login
             If InStr(answeruser, " ") > 0 Then
                 Wdbg(DebugLevel.W, "Spaces found in username.")
                 W(DoTranslation("Spaces are not allowed."), True, ColTypes.Error)
-                EventManager.RaiseLoginError(answeruser, "spaces")
+                EventManager.RaiseLoginError(answeruser, LoginErrorReasons.Spaces)
             ElseIf answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
                 Wdbg(DebugLevel.W, "Unknown characters found in username.")
                 W(DoTranslation("Special characters are not allowed."), True, ColTypes.Error)
-                EventManager.RaiseLoginError(answeruser, "specialchars")
+                EventManager.RaiseLoginError(answeruser, LoginErrorReasons.SpecialCharacters)
             ElseIf Users.ContainsKey(answeruser) Then
                 Wdbg(DebugLevel.I, "Username correct. Finding if the user is disabled...")
                 If Not HasPermission(answeruser, PermissionType.Disabled) Then
@@ -107,12 +107,12 @@ Public Module Login
                 Else
                     Wdbg(DebugLevel.W, "User can't log in. (User is in disabled list)")
                     W(DoTranslation("User is disabled."), True, ColTypes.Error)
-                    EventManager.RaiseLoginError(answeruser, "disabled")
+                    EventManager.RaiseLoginError(answeruser, LoginErrorReasons.Disabled)
                 End If
             Else
                 Wdbg(DebugLevel.E, "Username not found.")
                 W(DoTranslation("Wrong username."), True, ColTypes.Error)
-                EventManager.RaiseLoginError(answeruser, "notfound")
+                EventManager.RaiseLoginError(answeruser, LoginErrorReasons.NotFound)
             End If
         End While
     End Sub
@@ -164,7 +164,7 @@ Public Module Login
                 Else
                     Wdbg(DebugLevel.I, "Passowrd written wrong...")
                     W(DoTranslation("Wrong password."), True, ColTypes.Error)
-                    EventManager.RaiseLoginError(usernamerequested, "wrongpass")
+                    EventManager.RaiseLoginError(usernamerequested, LoginErrorReasons.WrongPassword)
                     If Not Maintenance Then
                         If Not LockMode Then
                             Exit Sub
