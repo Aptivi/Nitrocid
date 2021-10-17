@@ -1074,6 +1074,34 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
+        '''  &quot;InputColor&quot;: &quot;8&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;7&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;8&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;8&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;8&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;7&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;239&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;7&quot;,
+        '''  &quot;ListEntryColor&quot;: &quot;8&quot;,
+        '''  &quot;ListValueColor&quot;: &quot;8&quot;,
+        '''  &quot;StageColor&quot;: &quot;7&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;8&quot;,
+        '''  &quot;WarningColor&quot;: &quot;8&quot;,
+        '''  &quot;OptionColor&quot;: &quot;7&quot;,
+        '''  &quot;BannerColor&quot;: &quot;7&quot;,
+        '''  &quot;NotificationTitleColor&quot;: &quot;7&quot;,
+        '''  &quot;NotificationDescriptionColor&quot;: &quot;8&quot;,
+        '''  &quot;NotificationProgressColor&quot;: &quot;7&quot;,
+        '''  &quot; [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property Metallic() As String
+            Get
+                Return ResourceManager.GetString("Metallic", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
         '''  &quot;Available commands: {0}&quot;: &quot;Kmandi disponibbli: {0}&quot;,
         '''  &quot;Write command: &quot;: &quot;Ikteb kmand:&quot;,
         '''  &quot;Command injection has been cancelled.&quot;: &quot;L-injezzjoni tal-kmand ġiet ikkanċellata.&quot;,
@@ -1629,22 +1657,21 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''  &quot;InputColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;LicenseColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;ContKernelErrorColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;UncontKernelErrorColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;HostNameShellColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;UserNameShellColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;BackgroundColor&quot;: &quot;0&quot;,
-        '''  &quot;NeutralTextColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;ListEntryColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;ListValueColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;StageColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;ErrorColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;WarningColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;OptionColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;BannerColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;N [rest of string was truncated]&quot;;.
+        '''    &quot;InputColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;StageColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;WarningColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;OptionColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;Ba [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Windows11() As String
             Get
@@ -1654,21 +1681,20 @@ Namespace My.Resources
         
         '''<summary>
         '''  Looks up a localized string similar to {
-        '''  &quot;InputColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;LicenseColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;ContKernelErrorColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;UncontKernelErrorColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;HostNameShellColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;UserNameShellColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;BackgroundColor&quot;: &quot;200;200;200&quot;,
-        '''  &quot;NeutralTextColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;ListEntryColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;ListValueColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;StageColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;ErrorColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;WarningColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;OptionColor&quot;: &quot;0;120;212&quot;,
-        '''  &quot;BannerColor&quot;: &quot;0;120;2 [rest of string was truncated]&quot;;.
+        '''    &quot;InputColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;LicenseColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;ContKernelErrorColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;UncontKernelErrorColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;HostNameShellColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;UserNameShellColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;BackgroundColor&quot;: &quot;200;200;200&quot;,
+        '''    &quot;NeutralTextColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;ListEntryColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;ListValueColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;StageColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;ErrorColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;WarningColor&quot;: &quot;0;120;212&quot;,
+        '''    &quot;OptionColor&quot;: &quot;0;120;212&quot; [rest of string was truncated]&quot;;.
         '''</summary>
         Public ReadOnly Property Windows11Light() As String
             Get
@@ -1713,6 +1739,33 @@ Namespace My.Resources
         Public ReadOnly Property wls() As String
             Get
                 Return ResourceManager.GetString("wls", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to {
+        '''  &quot;InputColor&quot;: &quot;166&quot;,
+        '''  &quot;LicenseColor&quot;: &quot;130&quot;,
+        '''  &quot;ContKernelErrorColor&quot;: &quot;130&quot;,
+        '''  &quot;UncontKernelErrorColor&quot;: &quot;166&quot;,
+        '''  &quot;HostNameShellColor&quot;: &quot;166&quot;,
+        '''  &quot;UserNameShellColor&quot;: &quot;130&quot;,
+        '''  &quot;BackgroundColor&quot;: &quot;0&quot;,
+        '''  &quot;NeutralTextColor&quot;: &quot;130&quot;,
+        '''  &quot;ListEntryColor&quot;: &quot;166&quot;,
+        '''  &quot;ListValueColor&quot;: &quot;130&quot;,
+        '''  &quot;StageColor&quot;: &quot;166&quot;,
+        '''  &quot;ErrorColor&quot;: &quot;166&quot;,
+        '''  &quot;WarningColor&quot;: &quot;166&quot;,
+        '''  &quot;OptionColor&quot;: &quot;166&quot;,
+        '''  &quot;BannerColor&quot;: &quot;166&quot;,
+        '''  &quot;NotificationTitleColor&quot;: &quot;166&quot;,
+        '''  &quot;NotificationDescriptionColor&quot;: &quot;130&quot;,
+        '''  &quot;Notific [rest of string was truncated]&quot;;.
+        '''</summary>
+        Public ReadOnly Property Wood() As String
+            Get
+                Return ResourceManager.GetString("Wood", resourceCulture)
             End Get
         End Property
         

@@ -185,6 +185,7 @@
     <Compile Include="Console\Themes\ThemeInfo.vb" />
     <Compile Include="Console\Themes\ThemeStudio.vb" />
     <Compile Include="Console\Themes\ThemeStudioTools.vb" />
+    <Compile Include="Console\Themes\ThemeTools.vb" />
     <Compile Include="Files\Filesystem.vb" />
     <Compile Include="Files\FilesystemEnums.vb" />
     <Compile Include="Files\Paths.vb" />
@@ -698,11 +699,13 @@
     <None Include="Resources\Themes\AyuDark.json" />
     <None Include="Resources\Themes\AyuLight.json" />
     <None Include="Resources\Themes\AyuMirage.json" />
+    <None Include="Resources\Themes\Metallic.json" />
     <None Include="Resources\Themes\NeonBreeze.json" />
     <None Include="Resources\Themes\SolarizedDark.json" />
     <None Include="Resources\Themes\SolarizedLight.json" />
     <None Include="Resources\Themes\Windows11.json" />
     <None Include="Resources\Themes\Windows11Light.json" />
+    <None Include="Resources\Themes\Wood.json" />
     <None Include="Resources\Themes\YellowBG.json" />
     <None Include="Resources\Themes\YellowFG.json" />
   </ItemGroup>
