@@ -36,4 +36,9 @@ Class WeatherCommand
         End If
     End Sub
 
+    Public Sub HelpHelper()
+        Dim UsageLength As Integer = DoTranslation("Usage:").Length
+        W(" ".Repeat(UsageLength) + " " + DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.") + " " + DoTranslation("Or, pass ""listcities"" to this command."), True, ColTypes.Neutral)
+    End Sub
+
 End Class

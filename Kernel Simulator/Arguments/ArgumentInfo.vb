@@ -50,6 +50,10 @@ Public Class ArgumentInfo
     ''' Is the argument obsolete?
     ''' </summary>
     Public ReadOnly Property Obsolete As Boolean
+    ''' <summary>
+    ''' An extra help action intended to show extra information
+    ''' </summary>
+    Public ReadOnly Property AdditionalHelpAction As Action
 
     ''' <summary>
     ''' Installs a new instance of argument info class
@@ -62,7 +66,8 @@ Public Class ArgumentInfo
     ''' <param name="MinimumArguments">User must specify at least this number of arguments</param>
     ''' <param name="ArgumentBase">Kernel argument base for execution</param>
     ''' <param name="Obsolete">Is the command obsolete?</param>
-    Public Sub New(Argument As String, Type As ArgumentType, HelpDefinition As String, HelpUsage As String, ArgumentsRequired As Boolean, MinimumArguments As Integer, ArgumentBase As ArgumentExecutor, Optional Obsolete As Boolean = False)
+    ''' <param name="AdditionalHelpAction">An extra help action intended to show extra information</param>
+    Public Sub New(Argument As String, Type As ArgumentType, HelpDefinition As String, HelpUsage As String, ArgumentsRequired As Boolean, MinimumArguments As Integer, ArgumentBase As ArgumentExecutor, Optional Obsolete As Boolean = False, Optional AdditionalHelpAction As Action = Nothing)
         Me.Argument = Argument
         Me.Type = Type
         Me.HelpDefinition = HelpDefinition
@@ -71,6 +76,7 @@ Public Class ArgumentInfo
         Me.MinimumArguments = MinimumArguments
         Me.ArgumentBase = ArgumentBase
         Me.Obsolete = Obsolete
+        Me.AdditionalHelpAction = AdditionalHelpAction
     End Sub
 
     ''' <summary>

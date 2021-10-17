@@ -46,4 +46,17 @@ Class WrapCommand
         End If
     End Sub
 
+    Public Sub HelpHelper()
+        Dim UsageLength As Integer = DoTranslation("Usage:").Length
+
+        'Get wrappable commands
+        Dim WrappableCmds As New ArrayList
+        For Each CommandInfo As CommandInfo In Commands.Values
+            If CommandInfo.Wrappable Then WrappableCmds.Add(CommandInfo.Command)
+        Next
+
+        'Print them along with help description
+        W(" ".Repeat(UsageLength) + " " + DoTranslation("Wrappable commands:") + " {0}", True, ColTypes.Neutral, String.Join(", ", WrappableCmds.ToArray))
+    End Sub
+
 End Class

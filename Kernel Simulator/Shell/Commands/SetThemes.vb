@@ -36,4 +36,9 @@ Class SetThemesCommand
         End If
     End Sub
 
+    Public Sub HelpHelper()
+        Dim UsageLength As Integer = DoTranslation("Usage:").Length
+        W(" ".Repeat(UsageLength) + "<Theme>: ThemeName.json, " + String.Join(", ", Themes.Keys), True, ColTypes.Neutral)
+    End Sub
+
 End Class

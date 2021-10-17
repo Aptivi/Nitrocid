@@ -16,6 +16,8 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
+
 Class ReloadSaverCommand
     Inherits CommandExecutor
     Implements ICommand
@@ -26,6 +28,17 @@ Class ReloadSaverCommand
         Else
             W(DoTranslation("Reloading not allowed in safe mode."), True, ColTypes.Error)
         End If
+    End Sub
+
+    Public Sub HelpHelper()
+        'Populate screensaver files
+        Dim ScreensaverFiles As New List(Of String)
+        ScreensaverFiles.AddRange(Directory.GetFiles(GetKernelPath(KernelPathType.Mods), "*.ss.vb", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))
+        ScreensaverFiles.AddRange(Directory.GetFiles(GetKernelPath(KernelPathType.Mods), "*.ss.cs", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))
+
+        'Print available screensavers
+        Dim UsageLength As Integer = DoTranslation("Usage:").Length
+        W(" ".Repeat(UsageLength) + " " + DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", ScreensaverFiles))
     End Sub
 
 End Class

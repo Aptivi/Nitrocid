@@ -43,11 +43,6 @@ Public Module HelpSystem
     ''' <param name="CommandType">A specified command type</param>
     ''' <param name="DebugDeviceSocket">Only for remote debug shell. Specifies the debug device socket.</param>
     Public Sub ShowHelp(command As String, CommandType As ShellCommandType, Optional DebugDeviceSocket As StreamWriter = Nothing)
-        'Populate screensaver files
-        Dim ScreensaverFiles As New List(Of String)
-        ScreensaverFiles.AddRange(Directory.GetFiles(GetKernelPath(KernelPathType.Mods), "*.ss.vb", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))
-        ScreensaverFiles.AddRange(Directory.GetFiles(GetKernelPath(KernelPathType.Mods), "*.ss.cs", SearchOption.TopDirectoryOnly).Select(Function(x) Path.GetFileName(x)))
-
         'Determine command type
         Dim CommandList As Dictionary(Of String, CommandInfo) = Commands
         Dim ModCommandList As Dictionary(Of String, String) = ModDefs
@@ -108,47 +103,9 @@ Public Module HelpSystem
                 DebugDeviceSocket.WriteLine(DoTranslation("Usage:") + $" /{command} {HelpUsage}: {HelpDefinition}")
             End If
 
-            'Extra information for specific commands to be printed
-            If CommandType = ShellCommandType.Shell Then
-                Select Case command
-                    Case "arginj"
-                        W(" ".Repeat(UsageLength) + " " + DoTranslation("where arguments will be {0}"), True, ColTypes.Neutral, String.Join(", ", AvailableArgs.Keys))
-                    Case "chattr"
-                        W(DoTranslation("where <attributes> is one of the following:") + vbNewLine, True, ColTypes.Neutral)
-                        W("- Normal: ", False, ColTypes.ListEntry) : W(DoTranslation("The file is a normal file"), True, ColTypes.ListValue)                   'Normal   = 128
-                        W("- ReadOnly: ", False, ColTypes.ListEntry) : W(DoTranslation("The file is a read-only file"), True, ColTypes.ListValue)              'ReadOnly = 1
-                        W("- Hidden: ", False, ColTypes.ListEntry) : W(DoTranslation("The file is a hidden file"), True, ColTypes.ListValue)                   'Hidden   = 2
-                        W("- Archive: ", False, ColTypes.ListEntry) : W(DoTranslation("The file is an archive. Used for backups."), True, ColTypes.ListValue)  'Archive  = 32
-                    Case "chlang"
-                        W(" ".Repeat(UsageLength) + " " + " <language>: " + String.Join("/", Languages.Keys), True, ColTypes.Neutral)
-                    Case "choice"
-                        W(" ".Repeat(UsageLength) + " " + DoTranslation("where <$variable> is any variable that will be used to store response") + vbNewLine +
-                          " ".Repeat(UsageLength) + " " + DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"), True, ColTypes.Neutral)
-                    Case "hwinfo"
-                        W(" ".Repeat(UsageLength) + " " + DoTranslation("where HardwareType will be") + " HDD, LogicalParts, CPU, GPU, Sound, Network, System, Machine, BIOS, RAM, all.", True, ColTypes.Neutral)
-                    Case "reloadconfig"
-                        W(" ".Repeat(UsageLength) + " " + DoTranslation("Colors doesn't require a restart, but most of the settings require you to restart."), True, ColTypes.Neutral)
-                    Case "reloadsaver"
-                        W(" ".Repeat(UsageLength) + " " + DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", ScreensaverFiles))
-                    Case "setsaver"
-                        If CustomSavers.Count > 0 Then
-                            W(" ".Repeat(UsageLength) + " " + DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", CustomSavers.Keys))
-                        End If
-                        W(" ".Repeat(UsageLength) + " " + DoTranslation("where builtinsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", Screensavers.Keys))
-                    Case "setthemes"
-                        W(" ".Repeat(UsageLength) + "<Theme>: ThemeName.json, " + String.Join(", ", Themes.Keys), True, ColTypes.Neutral)
-                    Case "weather"
-                        W(" ".Repeat(UsageLength) + " " + DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.") + " " + DoTranslation("Or, pass ""listcities"" to this command."), True, ColTypes.Neutral)
-                    Case "wrap"
-                        'Get wrappable commands
-                        Dim WrappableCmds As New ArrayList
-                        For Each CommandInfo As CommandInfo In Commands.Values
-                            If CommandInfo.Wrappable Then WrappableCmds.Add(CommandInfo.Command)
-                        Next
-
-                        'Print them along with help description
-                        W(" ".Repeat(UsageLength) + " " + DoTranslation("Wrappable commands:") + " {0}", True, ColTypes.Neutral, String.Join(", ", WrappableCmds.ToArray))
-                End Select
+            'Extra help action for some commands
+            If CommandList(command).AdditionalHelpAction IsNot Nothing Then
+                CommandList(command).AdditionalHelpAction.DynamicInvoke()
             End If
         ElseIf String.IsNullOrWhiteSpace(command) Then
             'List the available commands
