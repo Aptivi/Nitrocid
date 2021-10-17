@@ -25,7 +25,8 @@ Module ArgumentPrompt
                                                                           {"debug", New ArgumentInfo("debug", ArgumentType.KernelArgs, "Enables debug mode", "", False, 0, New DebugArgument)},
                                                                           {"maintenance", New ArgumentInfo("maintenance", ArgumentType.KernelArgs, "Like safe mode, but also disables multi-user and some customization", "", False, 0, New MaintenanceArgument)},
                                                                           {"safe", New ArgumentInfo("safe", ArgumentType.KernelArgs, "Starts the kernel in safe mode, disabling all mods", "", False, 0, New SafeArgument)},
-                                                                          {"testInteractive", New ArgumentInfo("testInteractive", ArgumentType.KernelArgs, "Opens a test shell", "", False, 0, New TestInteractiveArgument)}}
+                                                                          {"testInteractive", New ArgumentInfo("testInteractive", ArgumentType.KernelArgs, "Opens a test shell", "", False, 0, New TestInteractiveArgument)},
+                                                                          {"help", New ArgumentInfo("help", ArgumentType.KernelArgs, "Help page", "", False, 0, New HelpArgument)}}
 
     ''' <summary>
     ''' Prompts user for arguments
