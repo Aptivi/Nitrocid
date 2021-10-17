@@ -472,7 +472,7 @@
     <Compile Include="Shell\Commands\List.vb" />
     <Compile Include="Shell\Commands\LockScreen.vb" />
     <Compile Include="Shell\Commands\Logout.vb" />
-    <Compile Include="Shell\Commands\LoteResp.vb" />
+    <Compile Include="Shell\Commands\LoveHate.vb" />
     <Compile Include="Shell\Commands\LsDbgDev.vb" />
     <Compile Include="Shell\Commands\Mail.vb" />
     <Compile Include="Shell\Commands\MathBee.vb" />
