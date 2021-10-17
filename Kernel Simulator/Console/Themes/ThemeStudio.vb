@@ -66,12 +66,12 @@ Module ThemeStudio
             W("28) " + DoTranslation("Stage time color") + ": [{0}] ", True, ColTypes.Option, SelectedStageTimeColor.PlainSequence)
             W("29) " + DoTranslation("Progress color") + ": [{0}] ", True, ColTypes.Option, SelectedProgressColor.PlainSequence)
             W("30) " + DoTranslation("Back option color") + ": [{0}] ", True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
-            W("31) " + DoTranslation("Low priority border color") + ": [{0}] ", True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
-            W("32) " + DoTranslation("Medium priority border color") + ": [{0}] ", True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
-            W("33) " + DoTranslation("High priority border color") + ": [{0}] ", True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
-            W("34) " + DoTranslation("Table separator color") + ": [{0}] ", True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
-            W("35) " + DoTranslation("Table header color") + ": [{0}] ", True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
-            W("36) " + DoTranslation("Table value color") + ": [{0}] ", True, ColTypes.Option, SelectedBackOptionColor.PlainSequence)
+            W("31) " + DoTranslation("Low priority border color") + ": [{0}] ", True, ColTypes.Option, SelectedLowPriorityBorderColor.PlainSequence)
+            W("32) " + DoTranslation("Medium priority border color") + ": [{0}] ", True, ColTypes.Option, SelectedMediumPriorityBorderColor.PlainSequence)
+            W("33) " + DoTranslation("High priority border color") + ": [{0}] ", True, ColTypes.Option, SelectedHighPriorityBorderColor.PlainSequence)
+            W("34) " + DoTranslation("Table separator color") + ": [{0}] ", True, ColTypes.Option, SelectedTableSeparatorColor.PlainSequence)
+            W("35) " + DoTranslation("Table header color") + ": [{0}] ", True, ColTypes.Option, SelectedTableHeaderColor.PlainSequence)
+            W("36) " + DoTranslation("Table value color") + ": [{0}] ", True, ColTypes.Option, SelectedTableValueColor.PlainSequence)
             Console.WriteLine()
 
             'List saving and loading options
