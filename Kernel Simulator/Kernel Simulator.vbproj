@@ -156,19 +156,19 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arguments\ArgumentParse.vb" />
+    <Compile Include="Arguments\ArgumentBase\ArgumentParse.vb" />
     <Compile Include="Arguments\ArgumentPrompt.vb" />
-    <Compile Include="Arguments\ArgumentInfo.vb" />
-    <Compile Include="Arguments\ArgumentType.vb" />
-    <Compile Include="Arguments\ArgumentExecutor.vb" />
-    <Compile Include="Arguments\CommandLineArgsParse.vb" />
+    <Compile Include="Arguments\ArgumentBase\ArgumentInfo.vb" />
+    <Compile Include="Arguments\ArgumentBase\ArgumentType.vb" />
+    <Compile Include="Arguments\ArgumentBase\ArgumentExecutor.vb" />
+    <Compile Include="Arguments\ArgumentBase\CommandLineArgsParse.vb" />
     <Compile Include="Arguments\CommandLineArguments\Help.vb" />
     <Compile Include="Arguments\CommandLineArguments\Args.vb" />
     <Compile Include="Arguments\CommandLineArguments\TestMod.vb" />
     <Compile Include="Arguments\CommandLineArguments\Debug.vb" />
     <Compile Include="Arguments\CommandLineArguments\TestInteractive.vb" />
-    <Compile Include="Arguments\ArgumentHelpSystem.vb" />
-    <Compile Include="Arguments\IArgument.vb" />
+    <Compile Include="Arguments\ArgumentBase\ArgumentHelpSystem.vb" />
+    <Compile Include="Arguments\ArgumentBase\IArgument.vb" />
     <Compile Include="Arguments\KernelArguments\CmdInject.vb" />
     <Compile Include="Arguments\KernelArguments\Help.vb" />
     <Compile Include="Arguments\KernelArguments\TestInteractive.vb" />
@@ -176,7 +176,7 @@
     <Compile Include="Arguments\KernelArguments\Maintenance.vb" />
     <Compile Include="Arguments\KernelArguments\Debug.vb" />
     <Compile Include="Arguments\KernelArguments\Quiet.vb" />
-    <Compile Include="Arguments\ProvidedArgumentArgumentsInfo.vb" />
+    <Compile Include="Arguments\ArgumentBase\ProvidedArgumentArgumentsInfo.vb" />
     <Compile Include="Console\Color.vb" />
     <Compile Include="Console\Color255.vb" />
     <Compile Include="Console\ColorTools.vb" />
