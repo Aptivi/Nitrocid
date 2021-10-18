@@ -21,15 +21,19 @@ Class ChoiceCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Dim Titles As New List(Of String)
+        If ListArgsOnly.Length > 3 Then
+            Titles.AddRange(ListArgsOnly.Skip(3))
+        End If
         If ListSwitchesOnly.Length > 0 Then
             Dim OutputType As ChoiceOutputType
             If ListSwitchesOnly(0) = "-o" Then OutputType = ChoiceOutputType.OneLine
             If ListSwitchesOnly(0) = "-t" Then OutputType = ChoiceOutputType.TwoLines
             If ListSwitchesOnly(0) = "-m" Then OutputType = ChoiceOutputType.Modern
             If ListSwitchesOnly(0) = "-a" Then OutputType = ChoiceOutputType.Table
-            PromptChoice(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1), OutputType)
+            PromptChoice(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1), Titles.ToArray, OutputType)
         Else
-            PromptChoice(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1))
+            PromptChoice(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1), Titles.ToArray)
         End If
     End Sub
 

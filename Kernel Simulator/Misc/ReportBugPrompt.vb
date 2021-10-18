@@ -30,9 +30,9 @@ Module ReportBugPrompt
         'First, select what kind of bug you're reporting
         While [Step] = 1
             W(DoTranslation("Thank you for raising a ticket to us! Select what kind of request do you have.") + vbNewLine, True, ColTypes.Neutral)
-            W("1) " + DoTranslation("A problem"), True, ColTypes.Option)
-            W("2) " + DoTranslation("A feature request"), True, ColTypes.Option)
-            W("3) " + DoTranslation("A question") + vbNewLine, True, ColTypes.Option)
+            W(" 1) " + DoTranslation("A problem"), True, ColTypes.Option)
+            W(" 2) " + DoTranslation("A feature request"), True, ColTypes.Option)
+            W(" 3) " + DoTranslation("A question") + vbNewLine, True, ColTypes.Option)
             W(">> ", False, ColTypes.Input)
             If Integer.TryParse(Console.ReadLine, AnswerKind) Then
                 Wdbg(DebugLevel.I, "Answer: {0}", AnswerKind)

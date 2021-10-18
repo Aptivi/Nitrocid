@@ -48,10 +48,27 @@ Public Module UESHCommands
     ''' <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
     ''' <param name="OutputType">Output type of choices</param>
     Public Sub PromptChoice(Question As String, ScriptVariable As String, AnswersStr As String, Optional OutputType As ChoiceOutputType = ChoiceOutputType.OneLine)
+        PromptChoice(Question, ScriptVariable, AnswersStr, {}, OutputType)
+    End Sub
+
+    ''' <summary>
+    ''' Prompts user for choice
+    ''' </summary>
+    ''' <param name="Question">A question</param>
+    ''' <param name="ScriptVariable">An $variable</param>
+    ''' <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
+    ''' <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+    ''' <param name="OutputType">Output type of choices</param>
+    Public Sub PromptChoice(Question As String, ScriptVariable As String, AnswersStr As String, AnswersTitles() As String, Optional OutputType As ChoiceOutputType = ChoiceOutputType.OneLine)
         While True
             'Variables
             Dim answers As String() = AnswersStr.Split("/")
             Dim answer As String
+
+            'Check to see if the answer titles are the same
+            If answers.Length <> AnswersTitles.Length Then
+                ReDim Preserve AnswersTitles(answers.Length - 1)
+            End If
 
             'Ask a question
             Select Case OutputType
@@ -63,16 +80,19 @@ Public Module UESHCommands
                     W("<{0}> ", False, ColTypes.Input, AnswersStr)
                 Case ChoiceOutputType.Modern
                     W(Question + vbNewLine, True, ColTypes.Question)
-                    For Each AnswerInstance As String In answers
-                        W($"{AnswerInstance})", True, ColTypes.Option)
+                    For AnswerIndex As Integer = 0 To answers.Length - 1
+                        Dim AnswerInstance As String = answers(AnswerIndex)
+                        Dim AnswerTitle As String = AnswersTitles(AnswerIndex)
+                        W($" {AnswerInstance}) {AnswerTitle}", True, ColTypes.Option)
                     Next
                     W(vbNewLine + ">> ", False, ColTypes.Input)
                 Case ChoiceOutputType.Table
-                    Dim ChoiceHeader As String() = {DoTranslation("Possible answers")}
-                    Dim ChoiceData(answers.Length - 1, 0) As String
+                    Dim ChoiceHeader As String() = {DoTranslation("Possible answers"), DoTranslation("Answer description")}
+                    Dim ChoiceData(answers.Length - 1, 1) As String
                     W(Question, True, ColTypes.Question)
                     For AnswerIndex As Integer = 0 To answers.Length - 1
                         ChoiceData(AnswerIndex, 0) = answers(AnswerIndex)
+                        ChoiceData(AnswerIndex, 1) = AnswersTitles(AnswerIndex)
                     Next
                     WriteTable(ChoiceHeader, ChoiceData, 2)
                     W(vbNewLine + ">> ", False, ColTypes.Input)
