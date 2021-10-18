@@ -283,7 +283,9 @@
     <Compile Include="Misc\TextEdit\Commands\Print.vb" />
     <Compile Include="Misc\TextEdit\Commands\QueryChar.vb" />
     <Compile Include="Misc\TextEdit\Commands\QueryWord.vb" />
+    <Compile Include="Misc\TextEdit\Commands\ReplaceRegex.vb" />
     <Compile Include="Misc\TextEdit\Commands\Replace.vb" />
+    <Compile Include="Misc\TextEdit\Commands\ReplaceInlineRegex.vb" />
     <Compile Include="Misc\TextEdit\Commands\ReplaceInline.vb" />
     <Compile Include="Misc\TextEdit\Commands\Save.vb" />
     <Compile Include="Misc\TextEdit\TextEditShell.vb" />

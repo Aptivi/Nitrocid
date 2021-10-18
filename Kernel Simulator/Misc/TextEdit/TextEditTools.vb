@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.Text
+Imports System.Text.RegularExpressions
 
 Public Module TextEditTools
 
@@ -159,6 +160,47 @@ Public Module TextEditTools
             If LineNumber <= TextEdit_FileLines.Count Then
                 TextEdit_FileLines.RemoveAt(LineIndex)
                 Wdbg(DebugLevel.I, "New file lines: {0}", TextEdit_FileLines.Count)
+            Else
+                Throw New ArgumentOutOfRangeException(NameOf(LineNumber), LineNumber, DoTranslation("The specified line number may not be larger than the last file line number."))
+            End If
+        Else
+            Throw New InvalidOperationException(DoTranslation("The text editor hasn't opened a file stream yet."))
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Replaces every occurence of a string with the replacement using regular expressions
+    ''' </summary>
+    ''' <param name="From">Regular expression to be replaced</param>
+    ''' <param name="[With]">String to replace with</param>
+    Public Sub TextEdit_ReplaceRegex(From As String, [With] As String)
+        If String.IsNullOrEmpty(From) Then Throw New ArgumentNullException(NameOf(From))
+        If TextEdit_FileStream IsNot Nothing Then
+            Wdbg(DebugLevel.I, "Source: {0}, Target: {1}", From, [With])
+            For LineIndex As Integer = 0 To TextEdit_FileLines.Count - 1
+                Wdbg(DebugLevel.I, "Replacing ""{0}"" with ""{1}"" in line {2}", From, [With], LineIndex + 1)
+                TextEdit_FileLines(LineIndex) = Regex.Replace(TextEdit_FileLines(LineIndex), From, [With])
+            Next
+        Else
+            Throw New InvalidOperationException(DoTranslation("The text editor hasn't opened a file stream yet."))
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Replaces every occurence of a string with the replacement using regular expressions
+    ''' </summary>
+    ''' <param name="From">Regular expression to be replaced</param>
+    ''' <param name="[With]">String to replace with</param>
+    ''' <param name="LineNumber">The line number</param>
+    Public Sub TextEdit_ReplaceRegex(From As String, [With] As String, LineNumber As Integer)
+        If String.IsNullOrEmpty(From) Then Throw New ArgumentNullException(NameOf(From))
+        If TextEdit_FileStream IsNot Nothing Then
+            Wdbg(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", From, [With], LineNumber)
+            Wdbg(DebugLevel.I, "File lines: {0}", TextEdit_FileLines.Count)
+            Dim LineIndex As Long = LineNumber - 1
+            If LineNumber <= TextEdit_FileLines.Count Then
+                Wdbg(DebugLevel.I, "Replacing ""{0}"" with ""{1}"" in line {2}", From, [With], LineIndex + 1)
+                TextEdit_FileLines(LineIndex) = Regex.Replace(TextEdit_FileLines(LineIndex), From, [With])
             Else
                 Throw New ArgumentOutOfRangeException(NameOf(LineNumber), LineNumber, DoTranslation("The specified line number may not be larger than the last file line number."))
             End If
