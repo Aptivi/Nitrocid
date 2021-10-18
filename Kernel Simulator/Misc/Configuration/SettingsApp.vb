@@ -25,15 +25,45 @@ Public Module SettingsApp
     ''' Key type for settings entry
     ''' </summary>
     Enum SettingsKeyType
+        ''' <summary>
+        ''' Unknown type
+        ''' </summary>
         SUnknown
+        ''' <summary>
+        ''' The value is of <see cref="Boolean"/>
+        ''' </summary>
         SBoolean
+        ''' <summary>
+        ''' The value is of <see cref="Integer"/>
+        ''' </summary>
         SInt
+        ''' <summary>
+        ''' The value is of <see cref="String"/>, but accepts less than or equal to 255 characters
+        ''' </summary>
         SString
+        ''' <summary>
+        ''' The value is of <see cref="String"/>, but accepts more than 255 characters
+        ''' </summary>
         SLongString
+        ''' <summary>
+        ''' The value is of the selection, which can either come from enums, or from <see cref="IEnumerable"/>, like <see cref="Generic.List(Of T)"/>
+        ''' </summary>
         SSelection
+        ''' <summary>
+        ''' The value is of <see cref="IEnumerable"/>, like <see cref="Generic.List(Of T)"/>
+        ''' </summary>
         SList
+        ''' <summary>
+        ''' The value is variant and comes from a function
+        ''' </summary>
         SVariant
+        ''' <summary>
+        ''' The value is of <see cref="Color"/> and comes from the color wheel
+        ''' </summary>
         SColor
+        ''' <summary>
+        ''' The value is of <see cref="String"/>, but masked. Useful for passwords.
+        ''' </summary>
         SMaskedString
     End Enum
 
