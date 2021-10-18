@@ -26,61 +26,50 @@ Module GlitterMatrixDisplay
     ''' Handles the code of Glitter Matrix
     ''' </summary>
     Sub GlitterMatrix_DoWork(sender As Object, e As DoWorkEventArgs) Handles GlitterMatrix.DoWork
-        Try
-            'Variables
-            Dim RandomDriver As New Random()
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
+        'Variables
+        Dim RandomDriver As New Random()
+        Dim CurrentWindowWidth As Integer = Console.WindowWidth
+        Dim CurrentWindowHeight As Integer = Console.WindowHeight
+        Dim ResizeSyncing As Boolean
 
-            'Preparations
-            SetConsoleColor(New Color(GlitterMatrixBackgroundColor), True)
-            SetConsoleColor(New Color(GlitterMatrixForegroundColor))
-            Console.Clear()
-            Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
+        'Preparations
+        SetConsoleColor(New Color(GlitterMatrixBackgroundColor), True)
+        SetConsoleColor(New Color(GlitterMatrixForegroundColor))
+        Console.Clear()
+        Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
-                If GlitterMatrix.CancellationPending = True Then
-                    Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
-                    e.Cancel = True
-                    SetInputColor()
-                    LoadBack()
-                    Console.CursorVisible = True
-                    Wdbg(DebugLevel.I, "All clean. Glitter Matrix screensaver stopped.")
-                    SaverAutoReset.Set()
-                    Exit Do
+        'Screensaver logic
+        Do While True
+            Console.CursorVisible = False
+            If GlitterMatrix.CancellationPending = True Then
+                HandleSaverCancel()
+                Exit Do
+            Else
+                SleepNoBlock(GlitterMatrixDelay, GlitterMatrix)
+                Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
+                Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
+                Console.SetCursorPosition(Left, Top)
+                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                If Not ResizeSyncing Then
+                    Console.Write(CStr(RandomDriver.Next(2)))
                 Else
-                    SleepNoBlock(GlitterMatrixDelay, GlitterMatrix)
-                    Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
-                    Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
-                    Console.SetCursorPosition(Left, Top)
-                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                    If Not ResizeSyncing Then
-                        Console.Write(CStr(RandomDriver.Next(2)))
-                    Else
-                        Console.Clear()
-                    End If
-
-                    'Reset resize sync
-                    ResizeSyncing = False
-                    CurrentWindowWidth = Console.WindowWidth
-                    CurrentWindowHeight = Console.WindowHeight
+                    Console.Clear()
                 End If
-            Loop
-        Catch ex As Exception
-            Wdbg(DebugLevel.W, "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
-            WStkTrc(ex)
-            e.Cancel = True
-            SetInputColor()
-            LoadBack()
-            Console.CursorVisible = True
-            Wdbg(DebugLevel.I, "All clean. Glitter Matrix screensaver stopped.")
-            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
-            SaverAutoReset.Set()
-        End Try
+
+                'Reset resize sync
+                ResizeSyncing = False
+                CurrentWindowWidth = Console.WindowWidth
+                CurrentWindowHeight = Console.WindowHeight
+            End If
+        Loop
+    End Sub
+
+    ''' <summary>
+    ''' Checks for any screensaver error
+    ''' </summary>
+    Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles GlitterMatrix.RunWorkerCompleted
+        HandleSaverError(e.Error)
     End Sub
 
 End Module

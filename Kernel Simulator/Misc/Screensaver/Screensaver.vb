@@ -168,4 +168,27 @@ Public Module Screensaver
         Next
     End Function
 
+    ''' <summary>
+    ''' Screensaver error handler
+    ''' </summary>
+    Friend Sub HandleSaverError(Exception As Exception)
+        If Exception IsNot Nothing Then
+            Wdbg(DebugLevel.W, "Screensaver experienced an error: {0}.", Exception.Message)
+            HandleSaverCancel()
+            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, Exception.Message)
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Screensaver cancellation handler
+    ''' </summary>
+    Friend Sub HandleSaverCancel()
+        Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
+        SetInputColor()
+        LoadBack()
+        Console.CursorVisible = True
+        Wdbg(DebugLevel.I, "All clean. Screensaver stopped.")
+        SaverAutoReset.Set()
+    End Sub
+
 End Module

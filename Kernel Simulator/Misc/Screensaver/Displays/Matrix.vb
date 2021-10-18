@@ -26,56 +26,45 @@ Module MatrixDisplay
     ''' Handles the code of Matrix
     ''' </summary>
     Sub Matrix_DoWork(sender As Object, e As DoWorkEventArgs) Handles Matrix.DoWork
-        Try
-            'Variables
-            Dim random As New Random()
-            Dim CurrentWindowWidth As Integer = Console.WindowWidth
-            Dim CurrentWindowHeight As Integer = Console.WindowHeight
-            Dim ResizeSyncing As Boolean
+        'Variables
+        Dim random As New Random()
+        Dim CurrentWindowWidth As Integer = Console.WindowWidth
+        Dim CurrentWindowHeight As Integer = Console.WindowHeight
+        Dim ResizeSyncing As Boolean
 
-            'Preparations
-            Console.BackgroundColor = ConsoleColor.Black
-            Console.ForegroundColor = ConsoleColor.Green
-            Console.Clear()
+        'Preparations
+        Console.BackgroundColor = ConsoleColor.Black
+        Console.ForegroundColor = ConsoleColor.Green
+        Console.Clear()
 
-            'Screensaver logic
-            Do While True
-                Console.CursorVisible = False
-                If Matrix.CancellationPending = True Then
-                    Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
-                    e.Cancel = True
-                    SetInputColor()
-                    LoadBack()
-                    Console.CursorVisible = True
-                    Wdbg(DebugLevel.I, "All clean. Matrix screensaver stopped.")
-                    SaverAutoReset.Set()
-                    Exit Do
+        'Screensaver logic
+        Do While True
+            Console.CursorVisible = False
+            If Matrix.CancellationPending = True Then
+                HandleSaverCancel()
+                Exit Do
+            Else
+                SleepNoBlock(MatrixDelay, Matrix)
+                If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                If Not ResizeSyncing Then
+                    Console.Write(CStr(random.Next(2)))
                 Else
-                    SleepNoBlock(MatrixDelay, Matrix)
-                    If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                    If Not ResizeSyncing Then
-                        Console.Write(CStr(random.Next(2)))
-                    Else
-                        Console.Clear()
-                    End If
-
-                    'Reset resize sync
-                    ResizeSyncing = False
-                    CurrentWindowWidth = Console.WindowWidth
-                    CurrentWindowHeight = Console.WindowHeight
+                    Console.Clear()
                 End If
-            Loop
-        Catch ex As Exception
-            Wdbg(DebugLevel.W, "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
-            WStkTrc(ex)
-            e.Cancel = True
-            SetInputColor()
-            LoadBack()
-            Console.CursorVisible = True
-            Wdbg(DebugLevel.I, "All clean. Matrix screensaver stopped.")
-            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
-            SaverAutoReset.Set()
-        End Try
+
+                'Reset resize sync
+                ResizeSyncing = False
+                CurrentWindowWidth = Console.WindowWidth
+                CurrentWindowHeight = Console.WindowHeight
+            End If
+        Loop
+    End Sub
+
+    ''' <summary>
+    ''' Checks for any screensaver error
+    ''' </summary>
+    Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Matrix.RunWorkerCompleted
+        HandleSaverError(e.Error)
     End Sub
 
 End Module

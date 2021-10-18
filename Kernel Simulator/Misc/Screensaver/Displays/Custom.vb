@@ -30,42 +30,31 @@ Public Module CustomDisplay
         '                           Set colors, write welcome message, etc. with the exception of infinite loop and the effect code in preDisplay() sub
         '                           Recommended: Turn off console cursor, and clear the screen in preDisplay() sub.
         '                           Substitute: TextWriterColor.W() with System.Console.WriteLine() or System.Console.Write().
-        Try
-            'Preparations
-            Console.CursorVisible = False
+        'Preparations
+        Console.CursorVisible = False
 
-            'Screensaver logic
-            CustomSaver.PreDisplay()
-            Do While True
-                If Not CustomSaver.DelayForEachWrite = Nothing Then
-                    SleepNoBlock(CustomSaver.DelayForEachWrite, Custom)
-                End If
-                If Custom.CancellationPending = True Then
-                    Wdbg(DebugLevel.W, "Cancellation requested. Showing ending...")
-                    CustomSaver.PostDisplay()
-                    Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
-                    e.Cancel = True
-                    SetInputColor()
-                    LoadBack()
-                    Console.CursorVisible = True
-                    Wdbg(DebugLevel.I, "All clean. Custom screensaver stopped.")
-                    SaverAutoReset.Set()
-                    Exit Do
-                Else
-                    CustomSaver.ScrnSaver()
-                End If
-            Loop
-        Catch ex As Exception
-            Wdbg(DebugLevel.W, "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
-            WStkTrc(ex)
-            e.Cancel = True
-            SetInputColor()
-            LoadBack()
-            Console.CursorVisible = True
-            Wdbg(DebugLevel.I, "All clean. Custom screensaver stopped.")
-            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
-            SaverAutoReset.Set()
-        End Try
+        'Screensaver logic
+        CustomSaver.PreDisplay()
+        Do While True
+            If Not CustomSaver.DelayForEachWrite = Nothing Then
+                SleepNoBlock(CustomSaver.DelayForEachWrite, Custom)
+            End If
+            If Custom.CancellationPending = True Then
+                Wdbg(DebugLevel.W, "Cancellation requested. Showing ending...")
+                CustomSaver.PostDisplay()
+                HandleSaverCancel()
+                Exit Do
+            Else
+                CustomSaver.ScrnSaver()
+            End If
+        Loop
+    End Sub
+
+    ''' <summary>
+    ''' Checks for any screensaver error
+    ''' </summary>
+    Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Custom.RunWorkerCompleted
+        HandleSaverError(e.Error)
     End Sub
 
 End Module

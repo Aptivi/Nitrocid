@@ -26,36 +26,25 @@ Module PlainDisplay
     ''' Handles the code of Plain
     ''' </summary>
     Sub Plain_DoWork(sender As Object, e As DoWorkEventArgs) Handles Plain.DoWork
-        Try
-            'Preparations
-            Console.BackgroundColor = ConsoleColor.Black
-            Console.ForegroundColor = ConsoleColor.White
-            Console.Clear()
-            Console.CursorVisible = False
-            Do While True
-                SleepNoBlock(10, Plain)
-                If Plain.CancellationPending = True Then
-                    Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
-                    e.Cancel = True
-                    SetInputColor()
-                    LoadBack()
-                    Console.CursorVisible = True
-                    Wdbg(DebugLevel.I, "All clean. Plain screensaver stopped.")
-                    SaverAutoReset.Set()
-                    Exit Do
-                End If
-            Loop
-        Catch ex As Exception
-            Wdbg(DebugLevel.W, "Screensaver experienced an error: {0}. Cleaning everything up...", ex.Message)
-            WStkTrc(ex)
-            e.Cancel = True
-            SetInputColor()
-            LoadBack()
-            Console.CursorVisible = True
-            Wdbg(DebugLevel.I, "All clean. Plain screensaver stopped.")
-            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, ex.Message)
-            SaverAutoReset.Set()
-        End Try
+        'Preparations
+        Console.BackgroundColor = ConsoleColor.Black
+        Console.ForegroundColor = ConsoleColor.White
+        Console.Clear()
+        Console.CursorVisible = False
+        Do While True
+            SleepNoBlock(10, Plain)
+            If Plain.CancellationPending = True Then
+                HandleSaverCancel()
+                Exit Do
+            End If
+        Loop
+    End Sub
+
+    ''' <summary>
+    ''' Checks for any screensaver error
+    ''' </summary>
+    Sub CheckForError(sender As Object, e As RunWorkerCompletedEventArgs) Handles Plain.RunWorkerCompleted
+        HandleSaverError(e.Error)
     End Sub
 
 End Module
