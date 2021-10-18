@@ -111,14 +111,25 @@ Public Module Notifications
 
                     'Optionally, draw a border
                     If DrawBorderNotification Then
-                        WriteWhere(NotifyUpperLeftCornerChar + NotifyUpperFrameChar.Repeat(38) + NotifyUpperRightCornerChar, Console.WindowWidth - 41, Console.WindowTop, True, NotifyBorderColor)
-                        WriteWhere(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 1, True, NotifyBorderColor)
-                        WriteWhere(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 2, True, NotifyBorderColor)
-                        WriteWhere(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 3, True, NotifyBorderColor)
-                        WriteWhere(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 1, True, NotifyBorderColor)
-                        WriteWhere(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 2, True, NotifyBorderColor)
-                        WriteWhere(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 3, True, NotifyBorderColor)
-                        WriteWhere(NotifyLowerLeftCornerChar + NotifyLowerFrameChar.Repeat(38) + NotifyLowerRightCornerChar, Console.WindowWidth - 41, Console.WindowTop + 4, True, NotifyBorderColor)
+                        If NewNotification.NotificationBorderColor IsNot Nothing Then
+                            WriteWhereC(NotifyUpperLeftCornerChar + NotifyUpperFrameChar.Repeat(38) + NotifyUpperRightCornerChar, Console.WindowWidth - 41, Console.WindowTop, True, NewNotification.NotificationBorderColor)
+                            WriteWhereC(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 1, True, NewNotification.NotificationBorderColor)
+                            WriteWhereC(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 2, True, NewNotification.NotificationBorderColor)
+                            WriteWhereC(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 3, True, NewNotification.NotificationBorderColor)
+                            WriteWhereC(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 1, True, NewNotification.NotificationBorderColor)
+                            WriteWhereC(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 2, True, NewNotification.NotificationBorderColor)
+                            WriteWhereC(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 3, True, NewNotification.NotificationBorderColor)
+                            WriteWhereC(NotifyLowerLeftCornerChar + NotifyLowerFrameChar.Repeat(38) + NotifyLowerRightCornerChar, Console.WindowWidth - 41, Console.WindowTop + 4, True, NewNotification.NotificationBorderColor)
+                        Else
+                            WriteWhere(NotifyUpperLeftCornerChar + NotifyUpperFrameChar.Repeat(38) + NotifyUpperRightCornerChar, Console.WindowWidth - 41, Console.WindowTop, True, NotifyBorderColor)
+                            WriteWhere(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 1, True, NotifyBorderColor)
+                            WriteWhere(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 2, True, NotifyBorderColor)
+                            WriteWhere(NotifyLeftFrameChar, Console.WindowWidth - 41, Console.WindowTop + 3, True, NotifyBorderColor)
+                            WriteWhere(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 1, True, NotifyBorderColor)
+                            WriteWhere(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 2, True, NotifyBorderColor)
+                            WriteWhere(NotifyRightFrameChar, Console.WindowWidth - 2, Console.WindowTop + 3, True, NotifyBorderColor)
+                            WriteWhere(NotifyLowerLeftCornerChar + NotifyLowerFrameChar.Repeat(38) + NotifyLowerRightCornerChar, Console.WindowWidth - 41, Console.WindowTop + 4, True, NotifyBorderColor)
+                        End If
                     End If
 
                     'Beep according to priority

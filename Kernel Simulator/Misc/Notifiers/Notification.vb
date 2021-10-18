@@ -76,6 +76,11 @@ Public Class Notification
     End Property
 
     ''' <summary>
+    ''' The notification border color
+    ''' </summary>
+    Property NotificationBorderColor As Color
+
+    ''' <summary>
     ''' Creates a new notification
     ''' </summary>
     ''' <param name="Title">Title of notification</param>
