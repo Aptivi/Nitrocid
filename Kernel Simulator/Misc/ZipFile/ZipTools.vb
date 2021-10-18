@@ -73,6 +73,27 @@ Public Module ZipTools
     End Function
 
     ''' <summary>
+    ''' Packs a local file to the ZIP archive
+    ''' </summary>
+    ''' <param name="Target">Target local file</param>
+    ''' <param name="Where">Where in the archive to extract?</param>
+    Public Function PackFile(Target As String, Where As String) As Boolean
+        If String.IsNullOrWhiteSpace(Target) Then Throw New ArgumentException(DoTranslation("Can't pack nothing."))
+        If String.IsNullOrWhiteSpace(Where) Then Where = ZipShell_CurrentDirectory
+
+        'Define absolute archive target
+        Dim ArchiveTarget As String = ZipShell_CurrentArchiveDirectory + "/" + Target
+        If ArchiveTarget.StartsWith("/") Then ArchiveTarget = ArchiveTarget.RemoveLetter(0)
+        Wdbg(DebugLevel.I, "Where: {0}, ArchiveTarget: {1}", Where, ArchiveTarget)
+
+        'Define local destination while getting an entry from target
+        Target = NeutralizePath(Target, Where)
+        Wdbg(DebugLevel.I, "Where: {0}", Target)
+        Dim ZipEntry As ZipArchiveEntry = ZipShell_ZipArchive.CreateEntryFromFile(Target, ArchiveTarget)
+        Return True
+    End Function
+
+    ''' <summary>
     ''' Changes the working archive directory
     ''' </summary>
     ''' <param name="Target">Target directory</param>

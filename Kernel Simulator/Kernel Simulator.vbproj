@@ -309,6 +309,7 @@
     <Compile Include="Misc\ZipFile\Commands\ChADir.vb" />
     <Compile Include="Misc\ZipFile\Commands\ChDir.vb" />
     <Compile Include="Misc\ZipFile\Commands\Exit.vb" />
+    <Compile Include="Misc\ZipFile\Commands\Pack.vb" />
     <Compile Include="Misc\ZipFile\Commands\Get.vb" />
     <Compile Include="Misc\ZipFile\Commands\Help.vb" />
     <Compile Include="Misc\ZipFile\Commands\List.vb" />
