@@ -403,4 +403,56 @@ Public Module TextEditTools
         End If
     End Function
 
+    ''' <summary>
+    ''' Queries a word in all lines using regular expressions
+    ''' </summary>
+    ''' <param name="Word">The regular expression to query</param>
+    Public Function TextEdit_QueryWordRegex(Word As String) As Dictionary(Of Integer, Dictionary(Of Integer, String))
+        If TextEdit_FileStream IsNot Nothing Then
+            Dim Lines As New Dictionary(Of Integer, Dictionary(Of Integer, String))
+            Dim Results As New Dictionary(Of Integer, String)
+            Wdbg(DebugLevel.I, "Word: {0}", Word)
+            Wdbg(DebugLevel.I, "File lines: {0}", TextEdit_FileLines.Count)
+            For LineIndex As Integer = 0 To TextEdit_FileLines.Count - 1
+                Dim LineMatches As MatchCollection = Regex.Matches(TextEdit_FileLines(LineIndex), Word)
+                For MatchIndex As Integer = 0 To LineMatches.Count - 1
+                    Dim LineMatch As Match = LineMatches(MatchIndex)
+                    Results.Add(MatchIndex, TextEdit_FileLines(LineIndex))
+                Next
+                Lines.Add(LineIndex, New Dictionary(Of Integer, String)(Results))
+                Results.Clear()
+            Next
+            Return Lines
+        Else
+            Throw New InvalidOperationException(DoTranslation("The text editor hasn't opened a file stream yet."))
+        End If
+    End Function
+
+    ''' <summary>
+    ''' Queries a word in specific line using regular expressions
+    ''' </summary>
+    ''' <param name="Word">The regular expression to query</param>
+    ''' <param name="LineNumber">The line number</param>
+    Public Function TextEdit_QueryWordRegex(Word As String, LineNumber As Integer) As Dictionary(Of Integer, String)
+        If TextEdit_FileStream IsNot Nothing Then
+            Dim LineIndex As Integer = LineNumber - 1
+            Dim Results As New Dictionary(Of Integer, String)
+            Wdbg(DebugLevel.I, "Word: {0}, Line: {1}", Word, LineNumber)
+            Wdbg(DebugLevel.I, "Got line index: {0}", LineIndex)
+            Wdbg(DebugLevel.I, "File lines: {0}", TextEdit_FileLines.Count)
+            If LineNumber <= TextEdit_FileLines.Count Then
+                Dim LineMatches As MatchCollection = Regex.Matches(TextEdit_FileLines(LineIndex), Word)
+                For MatchIndex As Integer = 0 To LineMatches.Count - 1
+                    Dim LineMatch As Match = LineMatches(MatchIndex)
+                    Results.Add(MatchIndex, TextEdit_FileLines(LineIndex))
+                Next
+            Else
+                Throw New ArgumentOutOfRangeException(NameOf(LineNumber), LineNumber, DoTranslation("The specified line number may not be larger than the last file line number."))
+            End If
+            Return Results
+        Else
+            Throw New InvalidOperationException(DoTranslation("The text editor hasn't opened a file stream yet."))
+        End If
+    End Function
+
 End Module

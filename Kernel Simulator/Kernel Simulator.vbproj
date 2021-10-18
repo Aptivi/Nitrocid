@@ -282,6 +282,7 @@
     <Compile Include="Misc\TextEdit\Commands\Help.vb" />
     <Compile Include="Misc\TextEdit\Commands\Print.vb" />
     <Compile Include="Misc\TextEdit\Commands\QueryChar.vb" />
+    <Compile Include="Misc\TextEdit\Commands\QueryWordRegex.vb" />
     <Compile Include="Misc\TextEdit\Commands\QueryWord.vb" />
     <Compile Include="Misc\TextEdit\Commands\ReplaceRegex.vb" />
     <Compile Include="Misc\TextEdit\Commands\Replace.vb" />
