@@ -27,7 +27,7 @@ Public Module HTTPTools
     ''' <param name="ContentUri">Content URI (starts after the HTTP hostname, e.g. "filetodelete.html")</param>
     Public Async Function HttpDelete(ContentUri As String) As Task
         If HTTPConnected Then
-            Dim TargetUri As New Uri(HTTPSite + ContentUri)
+            Dim TargetUri As New Uri(NeutralizeUri(ContentUri))
             Await ClientHTTP.DeleteAsync(TargetUri)
         Else
             Throw New InvalidOperationException(DoTranslation("You must connect to server with administrative privileges before performing the deletion."))
@@ -40,7 +40,7 @@ Public Module HTTPTools
     ''' <param name="ContentUri">Content URI (starts after the HTTP hostname, e.g. "filetoget.html")</param>
     Public Async Function HttpGetString(ContentUri As String) As Task(Of String)
         If HTTPConnected Then
-            Dim TargetUri As New Uri(HTTPSite + ContentUri)
+            Dim TargetUri As New Uri(NeutralizeUri(ContentUri))
             Return Await ClientHTTP.GetStringAsync(TargetUri)
         Else
             Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
@@ -53,11 +53,22 @@ Public Module HTTPTools
     ''' <param name="ContentUri">Content URI (starts after the HTTP hostname, e.g. "filetoget.html")</param>
     Public Async Function HttpGet(ContentUri As String) As Task(Of HttpResponseMessage)
         If HTTPConnected Then
-            Dim TargetUri As New Uri(HTTPSite + ContentUri)
+            Dim TargetUri As New Uri(NeutralizeUri(ContentUri))
             Return Await ClientHTTP.GetAsync(TargetUri)
         Else
             Throw New InvalidOperationException(DoTranslation("You must connect to server before performing transmission."))
         End If
+    End Function
+
+    ''' <summary>
+    ''' Neutralize the URI so the host name, <see cref="HTTPSite"/>, doesn't appear twice.
+    ''' </summary>
+    ''' <param name="ContentUri">Content URI (starts after the HTTP hostname, e.g. "filetoget.html")</param>
+    Public Function NeutralizeUri(ContentUri As String) As String
+        Dim NeutralizedUri As String = ""
+        If Not ContentUri.StartsWith(HTTPSite) Then NeutralizedUri += HTTPSite
+        NeutralizedUri += ContentUri
+        Return NeutralizedUri
     End Function
 
 End Module

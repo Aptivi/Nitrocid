@@ -36,6 +36,9 @@ Class HTTP_GetStringCommand
                 W(aex.Message + ":", True, ColTypes.Error)
                 For Each InnerException As Exception In aex.InnerExceptions
                     W("- " + InnerException.Message, True, ColTypes.Error)
+                    If InnerException.InnerException IsNot Nothing Then
+                        W("- " + InnerException.InnerException.Message, True, ColTypes.Error)
+                    End If
                 Next
             Catch ex As Exception
                 W(ex.Message, True, ColTypes.Error)
