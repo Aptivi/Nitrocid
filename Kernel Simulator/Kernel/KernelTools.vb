@@ -24,11 +24,16 @@ Imports Newtonsoft.Json.Linq
 
 Public Module KernelTools
 
-    ' A dictionary for storing paths and files (used for mods, screensavers, etc.)
+    'Variables
     Friend RPCPowerListener As New Thread(AddressOf PowerManage) With {.Name = "RPC Power Listener Thread"}
     Friend LastKernelErrorException As Exception
+    Friend StopPanicAndGoToDoublePanic As Boolean
+    Friend InstanceChecked As Boolean
 
-    ' ----------------------------------------------- Kernel errors -----------------------------------------------
+    'Windows function pinvokes
+    Private Declare Function SetProcessWorkingSetSize Lib "kernel32.dll" (hProcess As IntPtr, dwMinimumWorkingSetSize As Integer, dwMaximumWorkingSetSize As Integer) As Integer
+
+    '----------------------------------------------- Kernel errors -----------------------------------------------
 
     ''' <summary>
     ''' Indicates that there's something wrong with the kernel.
@@ -101,6 +106,7 @@ Public Module KernelTools
                 PowerManage(PowerMode.Reboot)
             ElseIf StopPanicAndGoToDoublePanic = True Then
                 'Switch to Double Panic
+                StopPanicAndGoToDoublePanic = False
                 Exit Sub
             ElseIf ErrorType = KernelErrorLevel.C And Reboot = True Then
                 'Check if error is Continuable and reboot is enabled
@@ -221,7 +227,7 @@ Public Module KernelTools
         End Try
     End Sub
 
-    ' ----------------------------------------------- Power management -----------------------------------------------
+    '----------------------------------------------- Power management -----------------------------------------------
 
     ''' <summary>
     ''' Manage computer's (actually, simulated computer) power
@@ -277,14 +283,13 @@ Public Module KernelTools
         End Select
     End Sub
 
-    ' ----------------------------------------------- Init and reset -----------------------------------------------
+    '----------------------------------------------- Init and reset -----------------------------------------------
     ''' <summary>
     ''' Reset everything for the next restart
     ''' </summary>
     Sub ResetEverything()
         'Reset every variable below
         If ArgsInjected = False Then EnteredArguments.Clear()
-        StopPanicAndGoToDoublePanic = False
         Test_ExitFlag = False
         Aliases.Clear()
         RemoteDebugAliases.Clear()
@@ -397,10 +402,12 @@ Public Module KernelTools
         If Not Timeout.IsBusy Then Timeout.RunWorkerAsync()
     End Sub
 
-    ' ----------------------------------------------- Misc -----------------------------------------------
+    '----------------------------------------------- Misc -----------------------------------------------
 
+    ''' <summary>
+    ''' Check to see if multiple Kernel Simulator processes are running.
+    ''' </summary>
     Sub MultiInstance()
-        'Check to see if multiple Kernel Simulator processes are running.
         Static ksInst As Mutex
         Dim ksOwner As Boolean
         ksInst = New Mutex(True, "Kernel Simulator", ksOwner)
@@ -416,16 +423,22 @@ Public Module KernelTools
     ''' <returns>A list which contains both the version and the URL</returns>
     Public Function FetchKernelUpdates() As List(Of String)
         Try
+            'Variables
             Dim UpdateSpecifier As New List(Of String)
             Dim UpdateDown As New WebClient
-            UpdateDown.Headers.Add(HttpRequestHeader.UserAgent, "EoflaOE") 'Because api.github.com requires the UserAgent header to be put, else, 403 error occurs.
+
+            'Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "EoflaOE" is enough.
+            UpdateDown.Headers.Add(HttpRequestHeader.UserAgent, "EoflaOE")
+
+            'Populate the following variables with information
             Dim UpdateStr As String = UpdateDown.DownloadString("https://api.github.com/repos/EoflaOE/Kernel-Simulator/releases")
             Dim UpdateToken As JToken = JToken.Parse(UpdateStr)
             Dim UpdateVer As New Version(UpdateToken.First.SelectToken("tag_name").ToString.ReplaceAll({"v", "-alpha"}, ""))
             Dim UpdateURL As String = UpdateToken.First.SelectToken("html_url")
             Dim CurrentVer As New Version(KernelVersion)
+
+            'Check to see if the updated version is newer than the current version
             If UpdateVer > CurrentVer Then
-                'Found a new version
                 UpdateSpecifier.Add(UpdateVer.ToString)
                 UpdateSpecifier.Add(UpdateURL)
             End If
@@ -437,6 +450,9 @@ Public Module KernelTools
         Return Nothing
     End Function
 
+    ''' <summary>
+    ''' Prompt for checking for kernel updates
+    ''' </summary>
     Sub CheckKernelUpdates()
         W(DoTranslation("Checking for system updates..."), True, ColTypes.Neutral)
         Dim AvailableUpdates As List(Of String) = FetchKernelUpdates()
@@ -450,7 +466,10 @@ Public Module KernelTools
         End If
     End Sub
 
-    Function GetCompileDate() As DateTime 'Always successful, no need to put Try Catch
+    ''' <summary>
+    ''' Gets the Kernel Simulator compilation date.
+    ''' </summary>
+    Function GetCompileDate() As Date 'Always successful, no need to put Try Catch
         'Variables and Constants
         Const Offset As Integer = 60 : Const LTOff As Integer = 8
         Dim asmByte(2047) As Byte : Dim asmStream As Stream
@@ -472,13 +491,10 @@ Public Module KernelTools
         Return dt
     End Function
 
-    Private Declare Function SetProcessWorkingSetSize Lib "kernel32.dll" (hProcess As IntPtr, dwMinimumWorkingSetSize As Int32, dwMaximumWorkingSetSize As Int32) As Int32
-
     ''' <summary>
     ''' Disposes all unused memory.
     ''' </summary>
     Public Sub DisposeAll()
-
         Try
             Dim proc As Process = GetCurrentProcess()
             Wdbg(DebugLevel.I, "Before garbage collection: {0} bytes", proc.PrivateMemorySize64)
@@ -497,7 +513,6 @@ Public Module KernelTools
                 W(ex.StackTrace, True, ColTypes.Neutral) : Wdbg("Error freeing RAM: {0}", ex.Message) : WStkTrc(ex)
             End If
         End Try
-
     End Sub
 
     ''' <summary>
@@ -518,24 +533,31 @@ Public Module KernelTools
     ''' Notifies the user of any startup faults occuring
     ''' </summary>
     Friend Sub NotifyStartupFaults()
+        'Configuration error (loading)
         If NotifyConfigError Then
             NotifyConfigError = False
             NotifySend(New Notification(DoTranslation("Error loading settings"),
                                         DoTranslation("There is an error while loading settings. You may need to check the settings file."),
                                         NotifPriority.Medium, NotifType.Normal))
         End If
+
+        'Debug data download error
         If NotifyDebugDownloadError Then
             NotifyDebugDownloadError = False
             NotifySend(New Notification(DoTranslation("Error downloading debug data"),
                                         DoTranslation("There is an error while downloading debug data. Check your internet connection."),
                                         NotifPriority.Medium, NotifType.Normal))
         End If
+
+        'Debug data download when network unavailable
         If NotifyDebugDownloadNetworkUnavailable Then
             NotifyDebugDownloadNetworkUnavailable = False
             NotifySend(New Notification(DoTranslation("No network while downloading debug data"),
                                         DoTranslation("Check your internet connection and try again."),
                                         NotifPriority.Medium, NotifType.Normal))
         End If
+
+        'Previous boot failure
         If NotifyKernelError Then
             NotifyKernelError = False
             NotifySend(New Notification(DoTranslation("Previous boot failed"),

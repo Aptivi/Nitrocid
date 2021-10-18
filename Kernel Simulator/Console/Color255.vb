@@ -22,6 +22,11 @@ Imports Newtonsoft.Json.Linq
 Public Module Color255
 
     ''' <summary>
+    ''' The 255 console colors data JSON token to get information about these colors
+    ''' </summary>
+    Public ReadOnly ColorDataJson As JToken = JToken.Parse(My.Resources.ConsoleColorsData)
+
+    ''' <summary>
     ''' [Windows] Sets console mode
     ''' </summary>
     ''' <param name="hConsoleHandle">Console Handle</param>
@@ -49,11 +54,6 @@ Public Module Color255
     <DllImport("kernel32.dll", SetLastError:=True)>
     Public Function GetStdHandle(handle As Integer) As IntPtr
     End Function
-
-    ''' <summary>
-    ''' The 255 console colors data JSON token to get information about these colors
-    ''' </summary>
-    Public ReadOnly ColorDataJson As JToken = JToken.Parse(My.Resources.ConsoleColorsData)
 
     ''' <summary>
     ''' All 255 console colors

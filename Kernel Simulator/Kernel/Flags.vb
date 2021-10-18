@@ -20,10 +20,6 @@ Public Module Flags
 
     'Variables
     ''' <summary>
-    ''' Trigger double panic
-    ''' </summary>
-    Public StopPanicAndGoToDoublePanic As Boolean
-    ''' <summary>
     ''' Toggle Debugging mode
     ''' </summary>
     Public DebugMode As Boolean
@@ -83,10 +79,6 @@ Public Module Flags
     ''' Show Time/Date on corner
     ''' </summary>
     Public CornerTimeDate As Boolean
-    ''' <summary>
-    ''' Instance checking
-    ''' </summary>
-    Public InstanceChecked As Boolean
     ''' <summary>
     ''' A signal when user logs out.
     ''' </summary>
@@ -242,7 +234,7 @@ Public Module Flags
     ''' </summary>
     Friend CancelRequested As Boolean
     ''' <summary>
-    ''' Show MOTD every LoginPrompt() call
+    ''' Show MOTD every <see cref="LoginPrompt()"/> call
     ''' </summary>
     Friend ShowMOTDOnceFlag As Boolean = True
     ''' <summary>

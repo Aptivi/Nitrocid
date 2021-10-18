@@ -62,7 +62,7 @@ Public Module Login
                 FirstUserTrigger()
             End If
 
-            'Clear console if clsOnLogin is set to True (If a user has enabled Clear Screen on Login)
+            'Clear console if ClearOnLogin is set to True (If a user has enabled Clear Screen on Login)
             If ClearOnLogin = True Then
                 Wdbg(DebugLevel.I, "Clearing screen...")
                 Console.Clear()
