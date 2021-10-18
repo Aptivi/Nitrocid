@@ -320,7 +320,7 @@
             {
                 "Name": "Clear Screen on Log-in",
                 "Type": "SBoolean",
-                "Variable": "ClsOnLogin",
+                "Variable": "ClearOnLogin",
                 "Description": "Clear screen before displaying login screen."
             },
             {
