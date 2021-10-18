@@ -29,6 +29,18 @@ Public Module FTPFilesystem
     ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
     ''' <exception cref="InvalidOperationException"></exception>
     Public Function FTPListRemote(Path As String) As List(Of String)
+        FTPListRemote(Path, FtpShowDetailsInList)
+    End Function
+
+    ''' <summary>
+    ''' Lists remote folders and files
+    ''' </summary>
+    ''' <param name="Path">Path to folder</param>
+    ''' <param name="ShowDetails">Shows the details of the file</param>
+    ''' <returns>The list if successful; null if unsuccessful</returns>
+    ''' <exception cref="Exceptions.FTPFilesystemException"></exception>
+    ''' <exception cref="InvalidOperationException"></exception>
+    Public Function FTPListRemote(Path As String, ShowDetails As Boolean) As List(Of String)
         If FtpConnected Then
             Dim EntryBuilder As New StringBuilder
             Dim Entries As New List(Of String)
@@ -53,7 +65,7 @@ Public Module FTPFilesystem
 
                     If DirListFTP IsNot Nothing Then
                         If DirListFTP.Type = FtpFileSystemObjectType.File Then
-                            If FtpShowDetailsInList Then
+                            If ShowDetails Then
                                 EntryBuilder.Append(": ")
                                 FileSize = ClientFTP.GetFileSize(DirListFTP.FullName)
                                 ModDate = ClientFTP.GetModifiedTime(DirListFTP.FullName)

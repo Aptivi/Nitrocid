@@ -21,7 +21,8 @@ Class FTP_LsrCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        Dim Entries As List(Of String) = FTPListRemote(If(ListArgs IsNot Nothing, ListArgs(0), ""))
+        Dim ShowFileDetails As Boolean = ListSwitchesOnly.Contains("-showdetails") OrElse FtpShowDetailsInList
+        Dim Entries As List(Of String) = FTPListRemote(If(ListArgs IsNot Nothing, ListArgs(0), ""), ShowFileDetails)
         Entries.Sort()
         For Each Entry As String In Entries
             W(Entry, True, ColTypes.ListEntry)

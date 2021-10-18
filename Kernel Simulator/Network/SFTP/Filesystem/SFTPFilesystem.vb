@@ -29,6 +29,18 @@ Module SFTPFilesystem
     ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
     ''' <exception cref="InvalidOperationException"></exception>
     Public Function SFTPListRemote(Path As String) As List(Of String)
+        SFTPListRemote(Path, SFTPShowDetailsInList)
+    End Function
+
+    ''' <summary>
+    ''' Lists remote folders and files
+    ''' </summary>
+    ''' <param name="Path">Path to folder</param>
+    ''' <param name="ShowDetails">Shows the details of the file</param>
+    ''' <returns>The list if successful; null if unsuccessful</returns>
+    ''' <exception cref="Exceptions.SFTPFilesystemException"></exception>
+    ''' <exception cref="InvalidOperationException"></exception>
+    Public Function SFTPListRemote(Path As String, ShowDetails As Boolean) As List(Of String)
         If SFTPConnected Then
             Dim EntryBuilder As New StringBuilder
             Dim Entries As New List(Of String)
@@ -52,7 +64,7 @@ Module SFTPFilesystem
 
                     If DirListSFTP.IsRegularFile Then
                         EntryBuilder.Append(": ")
-                        If SFTPShowDetailsInList Then
+                        If ShowDetails Then
                             FileSize = DirListSFTP.Length
                             ModDate = DirListSFTP.LastWriteTime
                             EntryBuilder.Append(New Color(ListValueColor).VTSequenceForeground + DoTranslation("{0} KB | Modified in: {1}").FormatString(FormatNumber(FileSize / 1024, 2), ModDate.ToString))

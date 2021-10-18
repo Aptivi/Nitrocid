@@ -21,10 +21,15 @@ Class SFTP_LslCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If ListArgs?.Length > 0 And ListArgs IsNot Nothing Then
-            List(ListArgs(0))
+        Dim ShowFileDetails As Boolean = ListSwitchesOnly.Contains("-showdetails") OrElse ShowFileDetailsList
+        Dim SuppressUnauthorizedMessage As Boolean = ListSwitchesOnly.Contains("-suppressmessages") OrElse SuppressUnauthorizedMessages
+        If ListArgsOnly?.Length = 0 Or ListArgsOnly Is Nothing Then
+            List(SFTPCurrDirect, ShowFileDetails, SuppressUnauthorizedMessage)
         Else
-            List(SFTPCurrDirect)
+            For Each Directory As String In ListArgsOnly
+                Dim direct As String = NeutralizePath(Directory)
+                List(direct, ShowFileDetails, SuppressUnauthorizedMessage)
+            Next
         End If
     End Sub
 
