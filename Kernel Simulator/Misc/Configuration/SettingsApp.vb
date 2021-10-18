@@ -17,6 +17,7 @@
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 Imports System.Reflection
+Imports System.Text.RegularExpressions
 Imports Newtonsoft.Json.Linq
 
 Public Module SettingsApp
@@ -91,8 +92,9 @@ Public Module SettingsApp
                 End If
             Next
             Console.WriteLine()
-            W(" {0}) " + DoTranslation("Save Settings"), True, ColTypes.BackOption, MaxSections + 1)
-            W(" {0}) " + DoTranslation("Exit"), True, ColTypes.BackOption, MaxSections + 2)
+            W(" {0}) " + DoTranslation("Find a Setting"), True, ColTypes.BackOption, MaxSections + 1)
+            W(" {0}) " + DoTranslation("Save Settings"), True, ColTypes.BackOption, MaxSections + 2)
+            W(" {0}) " + DoTranslation("Exit"), True, ColTypes.BackOption, MaxSections + 3)
 
             'Prompt user and check for input
             Console.WriteLine()
@@ -108,7 +110,38 @@ Public Module SettingsApp
                     Dim SelectedSection As JProperty = SettingsToken.ToList(AnswerInt - 1)
                     Wdbg(DebugLevel.I, "Opening section {0}...", SelectedSection.Name)
                     OpenSection(SelectedSection.Name, SettingsToken)
-                ElseIf AnswerInt = MaxSections + 1 Then 'Save Settings
+                ElseIf AnswerInt = MaxSections + 1 Then 'Find a Setting
+                    Dim SearchFor As String
+                    Dim Results As New List(Of String)
+
+                    'Prompt the user
+                    W(DoTranslation("Write what do you want to search for."), True, ColTypes.Neutral)
+                    Wdbg(DebugLevel.I, "Prompting user for searching...")
+                    W(">> ", False, ColTypes.Input)
+                    SearchFor = Console.ReadLine
+
+                    'Search for the setting
+                    For SectionIndex As Integer = 0 To SettingsToken.Count - 1
+                        Dim SectionToken As JToken = SettingsToken.ToList(SectionIndex)
+                        For SettingIndex As Integer = 0 To SectionToken.Count - 1
+                            Dim SettingToken As JToken = SectionToken.ToList(SettingIndex)("Keys")
+                            For KeyIndex As Integer = 0 To SettingToken.Count - 1
+                                Dim KeyName As String = DoTranslation(SettingToken.ToList(KeyIndex)("Name"))
+                                If Regex.IsMatch(KeyName, SearchFor, RegexOptions.IgnoreCase) Then
+                                    Results.Add($"[{SectionIndex + 1}/{KeyIndex + 1}] {KeyName}")
+                                End If
+                            Next
+                        Next
+                    Next
+
+                    'Write the settings
+                    If Not Results.Count = 0 Then
+                        WriteList(Results)
+                    Else
+                        W(DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), True, ColTypes.Error)
+                    End If
+                    Console.ReadKey()
+                ElseIf AnswerInt = MaxSections + 2 Then 'Save Settings
                     Wdbg(DebugLevel.I, "Saving settings...")
                     Try
                         CreateConfig()
@@ -118,7 +151,7 @@ Public Module SettingsApp
                         WStkTrc(ex)
                         Console.ReadKey()
                     End Try
-                ElseIf AnswerInt = MaxSections + 2 Then 'Exit
+                ElseIf AnswerInt = MaxSections + 3 Then 'Exit
                     Wdbg(DebugLevel.W, "Exiting...")
                     PromptFinished = True
                     Console.Clear()
