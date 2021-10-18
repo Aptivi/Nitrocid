@@ -61,7 +61,7 @@ Public Module CustomSaverCompiler
                     Wdbg(DebugLevel.I, "{0} compiled correctly. Starting...", file)
                     CustomSaver.InitSaver()
                     Dim SaverName As String = CustomSaver.SaverName
-                    Dim SaverInstance As ScreensaverInfo
+                    Dim SaverInstance As CustomSaverInfo
                     If CustomSaver.Initialized = True Then
                         'Check to see if the screensaver is already found
                         Dim IsFound As Boolean
@@ -75,12 +75,12 @@ Public Module CustomSaverCompiler
                             If Not SaverName = "" Then
                                 W(DoTranslation("{0} has been initialized properly."), True, ColTypes.Neutral, SaverName)
                                 Wdbg(DebugLevel.I, "{0} ({1}) compiled correctly. Starting...", SaverName, file)
-                                SaverInstance = New ScreensaverInfo(SaverName, file, NeutralizePath(file, modPath), CustomSaver)
+                                SaverInstance = New CustomSaverInfo(SaverName, file, NeutralizePath(file, modPath), CustomSaver)
                                 CustomSavers.Add(SaverName, SaverInstance)
                             Else
                                 W(DoTranslation("{0} has been initialized properly."), True, ColTypes.Neutral, file)
                                 Wdbg(DebugLevel.I, "{0} compiled correctly. Starting...", file)
-                                SaverInstance = New ScreensaverInfo(SaverName, file, NeutralizePath(file, modPath), CustomSaver)
+                                SaverInstance = New CustomSaverInfo(SaverName, file, NeutralizePath(file, modPath), CustomSaver)
                                 CustomSavers.Add(file, SaverInstance)
                             End If
                         Else

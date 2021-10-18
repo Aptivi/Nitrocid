@@ -16,7 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Public Class ScreensaverInfo
+Public Class CustomSaverInfo
 
     ''' <summary>
     ''' Name of the screensaver

@@ -267,7 +267,7 @@
     <Compile Include="Misc\Screensaver\Displays\Wipe.vb" />
     <Compile Include="Misc\Screensaver\ICustomSaver.vb" />
     <Compile Include="Misc\Screensaver\Screensaver.vb" />
-    <Compile Include="Misc\Screensaver\ScreensaverInfo.vb" />
+    <Compile Include="Misc\Screensaver\Customized\CustomSaverInfo.vb" />
     <Compile Include="Misc\Screensaver\ScreensaverSettings.vb" />
     <Compile Include="Misc\Reflection\StringEvaluators.vb" />
     <Compile Include="Misc\TextEdit\Commands\AddLines.vb" />

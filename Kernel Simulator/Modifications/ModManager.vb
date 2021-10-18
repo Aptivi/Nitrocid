@@ -200,7 +200,7 @@ Public Module ModManager
 
                     'Iterate through all the screensavers
                     For SaverIndex As Integer = CustomSavers.Count - 1 To 0 Step -1
-                        Dim TargetScreensaver As ScreensaverInfo = CustomSavers.Values(SaverIndex)
+                        Dim TargetScreensaver As CustomSaverInfo = CustomSavers.Values(SaverIndex)
                         Wdbg(DebugLevel.I, "Checking screensaver {0}", TargetScreensaver.SaverName)
 
                         'Check to see if we're dealign with the same screensaver

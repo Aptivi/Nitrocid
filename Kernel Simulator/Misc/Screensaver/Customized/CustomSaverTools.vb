@@ -21,7 +21,7 @@ Imports Newtonsoft.Json.Linq
 
 Public Module CustomSaverTools
 
-    Public CustomSavers As New Dictionary(Of String, ScreensaverInfo)
+    Public CustomSavers As New Dictionary(Of String, CustomSaverInfo)
     Public CustomSaverSettingsToken As JObject
     Public CustomSaver As ICustomSaver
 
