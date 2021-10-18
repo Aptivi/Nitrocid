@@ -312,6 +312,7 @@
     <Compile Include="Misc\ZipFile\ZipTools.vb" />
     <Compile Include="Misc\ZipFile\ZipShell.vb" />
     <Compile Include="Console\Themes\ThemeSetErrorReasons.vb" />
+    <Compile Include="Modifications\IScript.vb" />
     <Compile Include="Modifications\ModExecutor.vb" />
     <Compile Include="Modifications\PartInfo.vb" />
     <Compile Include="Modifications\ModInfo.vb" />

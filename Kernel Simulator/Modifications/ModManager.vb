@@ -22,6 +22,10 @@ Imports Newtonsoft.Json.Linq
 
 Public Module ModManager
 
+    ''' <summary>
+    ''' Mods with their parts and scripts.
+    ''' </summary>
+    Public scripts As New Dictionary(Of String, ModInfo)
     Public BlacklistedModsString As String = ""
     Friend ReadOnly ModPath As String = GetKernelPath(KernelPathType.Mods)
 

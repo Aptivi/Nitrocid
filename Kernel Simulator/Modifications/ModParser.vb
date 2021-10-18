@@ -24,69 +24,6 @@ Imports Microsoft.CSharp
 Public Module ModParser
 
     ''' <summary>
-    ''' Interface for mods
-    ''' </summary>
-    Public Interface IScript
-        ''' <summary>
-        ''' List of commands for mod
-        ''' </summary>
-        Property Commands As Dictionary(Of String, CommandInfo)
-        ''' <summary>
-        ''' Mod name
-        ''' </summary>
-        Property Name As String
-        ''' <summary>
-        ''' Name of part of mod
-        ''' </summary>
-        Property ModPart As String
-        ''' <summary>
-        ''' Mod version
-        ''' </summary>
-        Property Version As String
-        ''' <summary>
-        ''' Code executed when starting mod
-        ''' </summary>
-        Sub StartMod()
-        ''' <summary>
-        ''' Code executed when stopping mod
-        ''' </summary>
-        Sub StopMod()
-        ''' <summary>
-        ''' Code executed when performing command
-        ''' </summary>
-        ''' <param name="Command">A command.</param>
-        ''' <param name="args">Arguments. Make sure to split your arguments if necessary.</param>
-        Sub PerformCmd(Command As CommandInfo, Optional Args As String = "")
-        ''' <summary>
-        ''' Code executed when initializing events
-        ''' </summary>
-        ''' <param name="ev">Event name. Look it up on <see cref="Events"/></param>
-        Sub InitEvents(ev As String)
-        ''' <summary>
-        ''' Code executed when initializing events
-        ''' </summary>
-        ''' <param name="ev">Event name. Look it up on <see cref="Events"/></param>
-        ''' <param name="Args">Arguments.</param>
-        Sub InitEvents(ev As String, ParamArray Args() As Object)
-    End Interface
-
-    ''' <summary>
-    ''' Mods with their parts and scripts.
-    ''' </summary>
-    Public scripts As New Dictionary(Of String, ModInfo)
-    Public ModDefs As New Dictionary(Of String, String)
-    Public TestModDefs As New Dictionary(Of String, String)
-    Public SFTPModDefs As New Dictionary(Of String, String)
-    Public RSSModDefs As New Dictionary(Of String, String)
-    Public RDebugModDefs As New Dictionary(Of String, String)
-    Public MailModDefs As New Dictionary(Of String, String)
-    Public FTPModDefs As New Dictionary(Of String, String)
-    Public ZipShell_ModHelpEntries As New Dictionary(Of String, String)
-    Public TextEdit_ModHelpEntries As New Dictionary(Of String, String)
-    Public JsonShell_ModDefs As New Dictionary(Of String, String)
-    Public HTTPModDefs As New Dictionary(Of String, String)
-
-    ''' <summary>
     ''' Compiles the script and returns the instance of script interface
     ''' </summary>
     ''' <param name="PLang">Specified programming language for scripts (C# or VB.NET)</param>

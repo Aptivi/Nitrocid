@@ -20,6 +20,19 @@ Imports System.IO
 
 Public Module HelpSystem
 
+    'Mod definitions
+    Public ModDefs As New Dictionary(Of String, String)
+    Public TestModDefs As New Dictionary(Of String, String)
+    Public SFTPModDefs As New Dictionary(Of String, String)
+    Public RSSModDefs As New Dictionary(Of String, String)
+    Public RDebugModDefs As New Dictionary(Of String, String)
+    Public MailModDefs As New Dictionary(Of String, String)
+    Public FTPModDefs As New Dictionary(Of String, String)
+    Public ZipShell_ModHelpEntries As New Dictionary(Of String, String)
+    Public TextEdit_ModHelpEntries As New Dictionary(Of String, String)
+    Public JsonShell_ModDefs As New Dictionary(Of String, String)
+    Public HTTPModDefs As New Dictionary(Of String, String)
+
     ''' <summary>
     ''' Shows the help of a command, or command list if nothing is specified
     ''' </summary>
