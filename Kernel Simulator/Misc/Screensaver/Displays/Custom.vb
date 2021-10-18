@@ -35,14 +35,14 @@ Public Module CustomDisplay
             Console.CursorVisible = False
 
             'Screensaver logic
-            FinalSaver.PreDisplay()
+            CustomSaver.PreDisplay()
             Do While True
-                If Not FinalSaver.DelayForEachWrite = Nothing Then
-                    SleepNoBlock(FinalSaver.DelayForEachWrite, Custom)
+                If Not CustomSaver.DelayForEachWrite = Nothing Then
+                    SleepNoBlock(CustomSaver.DelayForEachWrite, Custom)
                 End If
                 If Custom.CancellationPending = True Then
                     Wdbg(DebugLevel.W, "Cancellation requested. Showing ending...")
-                    FinalSaver.PostDisplay()
+                    CustomSaver.PostDisplay()
                     Wdbg(DebugLevel.W, "Cancellation is pending. Cleaning everything up...")
                     e.Cancel = True
                     SetInputColor()
@@ -52,7 +52,7 @@ Public Module CustomDisplay
                     SaverAutoReset.Set()
                     Exit Do
                 Else
-                    FinalSaver.ScrnSaver()
+                    CustomSaver.ScrnSaver()
                 End If
             Loop
         Catch ex As Exception
