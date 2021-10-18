@@ -109,16 +109,21 @@ Public Module SFTPTools
         If File.Exists(GetKernelPath(KernelPathType.SFTPSpeedDial)) Then
             Dim SpeedDialLines As Dictionary(Of String, JToken) = ListSpeedDialEntries(SpeedDialType.SFTP)
             Wdbg(DebugLevel.I, "Speed dial length: {0}", SpeedDialLines.Count)
-            Dim Counter As Integer = 1
             Dim Answer As String
             Dim Answering As Boolean = True
+            Dim SpeedDialHeaders As String() = {"#", DoTranslation("Host Name"), DoTranslation("Host Port"), DoTranslation("Username")}
+            Dim SpeedDialData(SpeedDialLines.Count - 1, 3) As String
             If Not SpeedDialLines.Count = 0 Then
-                W(DoTranslation("Select an address to connect to:") + vbNewLine, True, ColTypes.Neutral)
-                For Each SpeedDialAddress As String In SpeedDialLines.Keys
+                W(DoTranslation("Select an address to connect to:"), True, ColTypes.Neutral)
+                For i As Integer = 0 To SpeedDialLines.Count - 1
+                    Dim SpeedDialAddress As String = SpeedDialLines.Keys(i)
                     Wdbg(DebugLevel.I, "Speed dial address: {0}", SpeedDialAddress)
-                    W("{0}) {1}, {2}, {3}", True, ColTypes.Option, Counter, SpeedDialAddress, SpeedDialLines(SpeedDialAddress)("Port"), SpeedDialLines(SpeedDialAddress)("User"))
-                    Counter += 1
+                    SpeedDialData(i, 0) = i + 1
+                    SpeedDialData(i, 1) = SpeedDialAddress
+                    SpeedDialData(i, 2) = SpeedDialLines(SpeedDialAddress)("Port")
+                    SpeedDialData(i, 3) = SpeedDialLines(SpeedDialAddress)("User")
                 Next
+                WriteTable(SpeedDialHeaders, SpeedDialData, 2, ColTypes.Option)
                 Console.WriteLine()
                 While Answering
                     W(">> ", False, ColTypes.Input)
