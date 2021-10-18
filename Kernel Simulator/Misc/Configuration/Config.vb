@@ -712,7 +712,9 @@ Public Module Config
                     {"Lower frame character for notification border", NotifyLowerFrameChar},
                     {"Left frame character for notification border", NotifyLeftFrameChar},
                     {"Right frame character for notification border", NotifyRightFrameChar},
-                    {"Manual page information style", ManpageInfoStyle}
+                    {"Manual page information style", ManpageInfoStyle},
+                    {"Default difficulty for SpeedPress", SpeedPressCurrentDifficulty},
+                    {"Keypress timeout for SpeedPress", SpeedPressTimeout}
             }
             ConfigurationObject.Add("Misc", MiscConfig)
 
@@ -1308,6 +1310,8 @@ Public Module Config
             NotifyLeftFrameChar = If(ConfigToken("Misc")?("Left frame character for notification border"), "║")
             NotifyRightFrameChar = If(ConfigToken("Misc")?("Right frame character for notification border"), "║")
             ManpageInfoStyle = If(ConfigToken("Misc")?("Manual page information style"), "")
+            SpeedPressCurrentDifficulty = If(ConfigToken("Misc")?("Default difficulty for SpeedPress") IsNot Nothing, If([Enum].TryParse(ConfigToken("Misc")?("Default difficulty for SpeedPress"), SpeedPressCurrentDifficulty), SpeedPressCurrentDifficulty, SpeedPressDifficulty.Medium), SpeedPressDifficulty.Medium)
+            SpeedPressTimeout = If(Integer.TryParse(ConfigToken("Misc")?("Keypress timeout for SpeedPress"), 0), ConfigToken("Misc")?("Keypress timeout for SpeedPress"), 3000)
 
             'Check to see if the config needs fixes
             RepairConfig()

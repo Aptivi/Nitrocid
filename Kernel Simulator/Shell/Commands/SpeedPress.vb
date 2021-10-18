@@ -21,11 +21,17 @@ Class SpeedPressCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        If ListArgs(0) = "e" Or ListArgs(0) = "m" Or ListArgs(0) = "h" Then
-            InitializeSpeedPress(ListArgs(0))
-        Else
-            W(DoTranslation("Invalid difficulty") + " {0}", True, ColTypes.Error, ListArgs(0))
+        Dim Difficulty As SpeedPressDifficulty = SpeedPressDifficulty.Medium
+        Dim CustomTimeout As Integer = SpeedPressTimeout
+        If ListSwitchesOnly.Contains("-e") Then Difficulty = SpeedPressDifficulty.Easy
+        If ListSwitchesOnly.Contains("-m") Then Difficulty = SpeedPressDifficulty.Medium
+        If ListSwitchesOnly.Contains("-h") Then Difficulty = SpeedPressDifficulty.Hard
+        If ListSwitchesOnly.Contains("-v") Then Difficulty = SpeedPressDifficulty.VeryHard
+        If ListSwitchesOnly.Contains("-c") And ListArgsOnly.Count > 0 AndAlso ListArgsOnly(0).IsNumeric Then
+            Difficulty = SpeedPressDifficulty.Custom
+            CustomTimeout = ListArgsOnly(0)
         End If
+        InitializeSpeedPress(Difficulty, CustomTimeout)
     End Sub
 
 End Class

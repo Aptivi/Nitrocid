@@ -16,13 +16,42 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Module SpeedPress
+Public Module SpeedPress
+
+    Public SpeedPressCurrentDifficulty As SpeedPressDifficulty = SpeedPressDifficulty.Medium
+    Public SpeedPressTimeout As Integer = 3000
+
+    ''' <summary>
+    ''' SpeedPress difficulty
+    ''' </summary>
+    Public Enum SpeedPressDifficulty
+        ''' <summary>
+        ''' Easy difficulty (timeout for three seconds)
+        ''' </summary>
+        Easy
+        ''' <summary>
+        ''' Medium difficulty (timeout for a second and a half)
+        ''' </summary>
+        Medium
+        ''' <summary>
+        ''' Hard difficulty (timeout for a half second)
+        ''' </summary>
+        Hard
+        ''' <summary>
+        ''' Very hard difficulty (timeout for a quarter of a second)
+        ''' </summary>
+        VeryHard
+        ''' <summary>
+        ''' Custom difficulty (custom timeout according to either a switch or the kernel settings)
+        ''' </summary>
+        Custom
+    End Enum
 
     ''' <summary>
     ''' Initializes the SpeedPress game
     ''' </summary>
-    ''' <param name="Difficulty">Whether it's (e)asy, (m)edium, or (h)ard</param>
-    Sub InitializeSpeedPress(Difficulty As Char)
+    ''' <param name="Difficulty">The difficulty of the game</param>
+    Sub InitializeSpeedPress(Difficulty As SpeedPressDifficulty, Optional CustomTimeout As Integer = 0)
         Dim SpeedTimeout As Integer
         Dim SelectedChar As Char
         Dim WrittenChar As ConsoleKeyInfo
@@ -30,16 +59,26 @@ Module SpeedPress
 
         'Change timeout based on difficulty
         Select Case Difficulty
-            Case "e"c
+            Case SpeedPressDifficulty.Easy
                 SpeedTimeout = 3000
-            Case "m"c
+            Case SpeedPressDifficulty.Medium
                 SpeedTimeout = 1500
-            Case "h"c
+            Case SpeedPressDifficulty.Hard
                 SpeedTimeout = 500
+            Case SpeedPressDifficulty.VeryHard
+                SpeedTimeout = 250
+            Case SpeedPressDifficulty.Custom
+                If CustomTimeout > 0 Then
+                    SpeedTimeout = Math.Abs(CustomTimeout)
+                ElseIf SpeedPressTimeout > 0 Then
+                    SpeedTimeout = Math.Abs(SpeedPressTimeout)
+                Else
+                    SpeedTimeout = 1500
+                End If
         End Select
 
         'Enter the loop until the user presses ESC
-        W(DoTranslation("Press ESC to exit.") + vbNewLine, True, ColTypes.Neutral)
+        W(DoTranslation("Press ESC to exit.") + vbNewLine, True, ColTypes.Tip)
         While Not WrittenChar.Key = ConsoleKey.Escape Or Not WrittenChar.Modifiers = ConsoleModifiers.Control And WrittenChar.Key = ConsoleKey.C
             'Select a random character
             SelectedChar = Convert.ToChar(RandomEngine.Next(97, 122))
@@ -53,7 +92,7 @@ Module SpeedPress
 
                 'Check to see if the user has pressed the correct character
                 If WrittenChar.KeyChar = SelectedChar Then
-                    W(DoTranslation("You've pressed the right character!"), True, ColTypes.Neutral)
+                    W(DoTranslation("You've pressed the right character!"), True, ColTypes.Success)
                 ElseIf Not WrittenChar.Key = ConsoleKey.Escape Or Not WrittenChar.Modifiers = ConsoleModifiers.Control And WrittenChar.Key = ConsoleKey.C Then
                     W(DoTranslation("You've pressed the wrong character."), True, ColTypes.Warning)
                 End If

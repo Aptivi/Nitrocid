@@ -1012,6 +1012,22 @@
                 "Type": "SString",
                 "Variable": "ManpageInfoStyle",
                 "Description": "Write how you want your manpage information to be. Leave blank to use default style. Placeholders are parsed. {0} for manual title, {1} for revision."
+            },
+            {
+                "Name": "Default difficulty for SpeedPress",
+                "Type": "SSelection",
+                "Variable": "SpeedPressCurrentDifficulty",
+                "IsEnumeration": true,
+                "EnumerationInternal": true,
+                "Enumeration": "SpeedPressDifficulty",
+                "EnumerationZeroBased": true,
+                "Description": "Select your preferred difficulty."
+            },
+            {
+                "Name": "Keypress timeout for SpeedPress",
+                "Type": "SInt",
+                "Variable": "SpeedPressTimeout",
+                "Description": "How many milliseconds to wait for the keypress before the timeout? (In custom difficulty)"
             }
         ]
     }
