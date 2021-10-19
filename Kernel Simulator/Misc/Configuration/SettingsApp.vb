@@ -522,6 +522,58 @@ Public Module SettingsApp
     End Sub
 
     ''' <summary>
+    ''' Checks all the settings variables to see if they can be parsed
+    ''' </summary>
+    ''' <returns></returns>
+    Public Function CheckSettingsVariables() As Dictionary(Of String, Boolean)
+        Dim SettingsToken As JToken = JToken.Parse(My.Resources.SettingsEntries)
+        Dim SaverSettingsToken As JToken = JToken.Parse(My.Resources.ScreensaverSettingsEntries)
+        Dim Results As New Dictionary(Of String, Boolean)
+
+        'Parse all the settings
+        For Each Section As JProperty In SettingsToken
+            Dim SectionToken As JToken = SettingsToken(Section.Name)
+            For Each Key As JToken In SectionToken("Keys")
+                Dim KeyName As String = Key("Name")
+                Dim KeyVariable As String = Key("Variable")
+                Dim KeyEnumeration As String = Key("Enumeration")
+                Dim KeyEnumerationInternal As Boolean = If(Key("EnumerationInternal"), False)
+                Dim KeyEnumerationAssembly As String = Key("EnumerationAssembly")
+
+                'Check the variable field
+                Results.Add($"{KeyName}, {KeyVariable}", CheckField(KeyVariable))
+
+                'Check the enumeration field
+                If KeyEnumeration IsNot Nothing Then
+                    Dim Result As Boolean
+                    If KeyEnumerationInternal Then
+                        'Apparently, we need to have a full assembly name for getting types.
+                        Result = Type.GetType("KS." + KeyEnumeration + ", " + Assembly.GetExecutingAssembly.FullName) IsNot Nothing
+                    Else
+                        Result = Type.GetType(KeyEnumeration + ", " + KeyEnumerationAssembly) IsNot Nothing
+                    End If
+                    Results.Add($"{KeyName}, {KeyVariable}, {KeyEnumeration}", Result)
+                End If
+            Next
+        Next
+
+        'Return the results
+        Return Results
+    End Function
+
+    ''' <summary>
+    ''' Checks the specified variable if it exists
+    ''' </summary>
+    ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
+    Public Function CheckField(Variable As String) As Boolean
+        'Get field for specified variable
+        Dim TargetField As FieldInfo = GetField(Variable)
+
+        'Set the variable if found
+        Return TargetField IsNot Nothing
+    End Function
+
+    ''' <summary>
     ''' Sets the value of a variable to the new value dynamically
     ''' </summary>
     ''' <param name="Variable">Variable name. Use operator NameOf to get name.</param>
