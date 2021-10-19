@@ -22,19 +22,26 @@ Class ChoiceCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim Titles As New List(Of String)
+        Dim PressEnter As Boolean
+        Dim OutputType As ChoiceOutputType = DefaultChoiceOutputType
+        If ListSwitchesOnly.Contains("-multiple") Then PressEnter = True
+        If ListSwitchesOnly.Contains("-single") Then PressEnter = False
+
+        'Add the provided working titles
         If ListArgsOnly.Length > 3 Then
             Titles.AddRange(ListArgsOnly.Skip(3))
         End If
+
+        'Check for output type switches
         If ListSwitchesOnly.Length > 0 Then
-            Dim OutputType As ChoiceOutputType
             If ListSwitchesOnly(0) = "-o" Then OutputType = ChoiceOutputType.OneLine
             If ListSwitchesOnly(0) = "-t" Then OutputType = ChoiceOutputType.TwoLines
             If ListSwitchesOnly(0) = "-m" Then OutputType = ChoiceOutputType.Modern
             If ListSwitchesOnly(0) = "-a" Then OutputType = ChoiceOutputType.Table
-            PromptChoice(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1), Titles.ToArray, OutputType)
-        Else
-            PromptChoice(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1), Titles.ToArray)
         End If
+
+        'Prompt for choice
+        PromptChoice(ListArgsOnly(2), ListArgsOnly(0), ListArgsOnly(1), Titles.ToArray, OutputType, PressEnter)
     End Sub
 
     Public Sub HelpHelper()

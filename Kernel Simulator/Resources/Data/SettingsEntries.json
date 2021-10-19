@@ -456,6 +456,16 @@
                 "Type": "SBoolean",
                 "Variable": "ColorWheelTrueColor",
                 "Description": "Start color wheel in true color mode"
+            },
+            {
+                "Name": "Default choice output type",
+                "Type": "SSelection",
+                "Variable": "DefaultChoiceOutputType",
+                "IsEnumeration": true,
+                "EnumerationInternal": true,
+                "Enumeration": "UESHCommands.ChoiceOutputType",
+                "EnumerationZeroBased": true,
+                "Description": "Default choice output type"
             }
         ]
     },

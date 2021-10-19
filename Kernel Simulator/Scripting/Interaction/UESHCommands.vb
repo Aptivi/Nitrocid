@@ -18,6 +18,8 @@
 
 Public Module UESHCommands
 
+    Public DefaultChoiceOutputType As ChoiceOutputType = ChoiceOutputType.Modern
+
     ''' <summary>
     ''' The enumeration for the choice command output type
     ''' </summary>
@@ -47,8 +49,9 @@ Public Module UESHCommands
     ''' <param name="ScriptVariable">An $variable</param>
     ''' <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
     ''' <param name="OutputType">Output type of choices</param>
-    Public Sub PromptChoice(Question As String, ScriptVariable As String, AnswersStr As String, Optional OutputType As ChoiceOutputType = ChoiceOutputType.OneLine)
-        PromptChoice(Question, ScriptVariable, AnswersStr, {}, OutputType)
+    ''' <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+    Public Sub PromptChoice(Question As String, ScriptVariable As String, AnswersStr As String, Optional OutputType As ChoiceOutputType = ChoiceOutputType.OneLine, Optional PressEnter As Boolean = False)
+        PromptChoice(Question, ScriptVariable, AnswersStr, {}, OutputType, PressEnter)
     End Sub
 
     ''' <summary>
@@ -59,7 +62,8 @@ Public Module UESHCommands
     ''' <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
     ''' <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
     ''' <param name="OutputType">Output type of choices</param>
-    Public Sub PromptChoice(Question As String, ScriptVariable As String, AnswersStr As String, AnswersTitles() As String, Optional OutputType As ChoiceOutputType = ChoiceOutputType.OneLine)
+    ''' <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
+    Public Sub PromptChoice(Question As String, ScriptVariable As String, AnswersStr As String, AnswersTitles() As String, Optional OutputType As ChoiceOutputType = ChoiceOutputType.OneLine, Optional PressEnter As Boolean = False)
         While True
             'Variables
             Dim answers As String() = AnswersStr.Split("/")
@@ -99,8 +103,12 @@ Public Module UESHCommands
             End Select
 
             'Wait for an answer
-            answer = Console.ReadKey.KeyChar
-            Console.WriteLine()
+            If PressEnter Then
+                answer = Console.ReadLine
+            Else
+                answer = Console.ReadKey.KeyChar
+                Console.WriteLine()
+            End If
 
             'Check if answer if correct.
             If answers.Contains(answer) Then

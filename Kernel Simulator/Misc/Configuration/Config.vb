@@ -179,7 +179,8 @@ Public Module Config
                     {"Test Shell Prompt Style", Test_PromptStyle},
                     {"JSON Shell Prompt Style", JsonShell_PromptStyle},
                     {"Probe injected commands", ProbeInjectedCommands},
-                    {"Start color wheel in true color mode", ColorWheelTrueColor}
+                    {"Start color wheel in true color mode", ColorWheelTrueColor},
+                    {"Default choice output type", DefaultChoiceOutputType}
             }
             ConfigurationObject.Add("Shell", ShellConfig)
 
@@ -846,6 +847,7 @@ Public Module Config
             JsonShell_PromptStyle = If(ConfigToken("Shell")?("JSON Shell Prompt Style"), "")
             ProbeInjectedCommands = If(ConfigToken("Shell")?("Probe injected commands"), True)
             ColorWheelTrueColor = If(ConfigToken("Shell")?("Start color wheel in true color mode"), True)
+            DefaultChoiceOutputType = If(ConfigToken("Shell")?("Default choice output type") IsNot Nothing, If([Enum].TryParse(ConfigToken("Shell")?("Default choice output type"), DefaultChoiceOutputType), DefaultChoiceOutputType, ChoiceOutputType.Modern), ChoiceOutputType.Modern)
 
             'Filesystem Section
             Wdbg(DebugLevel.I, "Parsing filesystem section...")
