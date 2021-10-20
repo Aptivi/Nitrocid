@@ -41,7 +41,6 @@ Module TypoDisplay
         'Screensaver logic
         Do While True
             Console.CursorVisible = False
-            SleepNoBlock(TypoDelay, Typo)
             If Typo.CancellationPending = True Then
                 HandleSaverCancel()
                 Exit Do
@@ -122,6 +121,7 @@ Module TypoDisplay
                 CurrentWindowHeight = Console.WindowHeight
                 Throw New Exception
             End If
+            SleepNoBlock(TypoDelay, Typo)
         Loop
     End Sub
 

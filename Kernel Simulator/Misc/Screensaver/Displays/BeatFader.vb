@@ -78,7 +78,6 @@ Module BeatFaderDisplay
 
                 'If we're cycling colors, set them. Else, use the user-provided color
                 Dim RedColorNum, GreenColorNum, BlueColorNum As Integer
-                Dim SelectedColorType As ColorType = ColorType._255Color
                 If BeatFaderCycleColors Then
                     'We're cycling. Select the color mode, starting from true color
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Cycling colors...")
@@ -86,7 +85,6 @@ Module BeatFaderDisplay
                         RedColorNum = RandomDriver.Next(BeatFaderMinimumRedColorLevel, BeatFaderMinimumRedColorLevel)
                         GreenColorNum = RandomDriver.Next(BeatFaderMinimumGreenColorLevel, BeatFaderMaximumGreenColorLevel)
                         BlueColorNum = RandomDriver.Next(BeatFaderMinimumBlueColorLevel, BeatFaderMaximumBlueColorLevel)
-                        SelectedColorType = ColorType.TrueColor
                     ElseIf BeatFader255Colors Then
                         Dim ConsoleColor As New ConsoleColorsInfo(RandomDriver.Next(BeatFaderMinimumColorLevel, BeatFaderMaximumColorLevel))
                         RedColorNum = ConsoleColor.R
@@ -107,7 +105,6 @@ Module BeatFaderDisplay
                         RedColorNum = UserColor.R
                         GreenColorNum = UserColor.G
                         BlueColorNum = UserColor.B
-                        SelectedColorType = ColorType.TrueColor
                     ElseIf UserColor.Type = ColorType._255Color Then
                         Dim ConsoleColor As New ConsoleColorsInfo(UserColor.PlainSequence)
                         RedColorNum = ConsoleColor.R

@@ -45,7 +45,6 @@ Module MarqueeDisplay
                 HandleSaverCancel()
                 Exit Do
             Else
-                SleepNoBlock(MarqueeDelay, Marquee)
                 Console.Clear()
 
                 'Sanity checks for color levels
@@ -149,6 +148,7 @@ Module MarqueeDisplay
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
             End If
+            SleepNoBlock(MarqueeDelay, Marquee)
         Loop
     End Sub
 

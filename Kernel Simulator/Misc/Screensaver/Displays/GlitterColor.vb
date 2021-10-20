@@ -70,7 +70,6 @@ Module GlitterColorDisplay
                 End If
 
                 'Select position
-                SleepNoBlock(GlitterColorDelay, GlitterColor)
                 Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                 Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
@@ -105,6 +104,7 @@ Module GlitterColorDisplay
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
             End If
+            SleepNoBlock(GlitterColorDelay, GlitterColor)
         Loop
     End Sub
 

@@ -40,7 +40,6 @@ Module ColorMixDisplay
         'Screensaver logic
         Do While True
             Console.CursorVisible = False
-            SleepNoBlock(ColorMixDelay, ColorMix)
             If ColorMix.CancellationPending = True Then
                 HandleSaverCancel()
                 Exit Do
@@ -100,6 +99,7 @@ Module ColorMixDisplay
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
             End If
+            SleepNoBlock(ColorMixDelay, ColorMix)
         Loop
     End Sub
 

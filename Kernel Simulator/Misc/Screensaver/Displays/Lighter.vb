@@ -71,7 +71,6 @@ Module LighterDisplay
                 End If
 
                 'Select a position
-                SleepNoBlock(LighterDelay, Lighter)
                 Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                 Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
@@ -138,6 +137,7 @@ Module LighterDisplay
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
             End If
+            SleepNoBlock(LighterDelay, Lighter)
         Loop
     End Sub
 

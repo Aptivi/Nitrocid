@@ -52,7 +52,6 @@ Module BouncingBlockDisplay
                 Exit Do
             Else
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Row block: {0} | Column block: {1}", RowBlock, ColumnBlock)
-                SleepNoBlock(BouncingBlockDelay, BouncingBlock)
 
                 'Sanity checks for color levels
                 If BouncingBlockTrueColor Or BouncingBlock255Colors Then
@@ -161,6 +160,7 @@ Module BouncingBlockDisplay
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
             End If
+            SleepNoBlock(BouncingBlockDelay, BouncingBlock)
         Loop
     End Sub
 

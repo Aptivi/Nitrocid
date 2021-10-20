@@ -36,7 +36,6 @@ Module ProgressClockDisplay
         'Screensaver logic
         Do While True
             Console.CursorVisible = False
-            SleepNoBlock(ProgressClockDelay, ProgressClock)
             Console.Clear()
             If ProgressClock.CancellationPending = True Then
                 HandleSaverCancel()
@@ -394,6 +393,7 @@ Module ProgressClockDisplay
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
             End If
+            SleepNoBlock(ProgressClockDelay, ProgressClock)
         Loop
     End Sub
 

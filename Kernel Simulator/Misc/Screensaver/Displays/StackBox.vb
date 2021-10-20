@@ -41,7 +41,6 @@ Module StackBoxDisplay
         'Screensaver logic
         Do While True
             Console.CursorVisible = False
-            SleepNoBlock(StackBoxDelay, StackBox)
             If StackBox.CancellationPending = True Then
                 HandleSaverCancel()
                 Exit Do
@@ -124,6 +123,7 @@ Module StackBoxDisplay
                     End If
                 End If
             End If
+            SleepNoBlock(StackBoxDelay, StackBox)
         Loop
     End Sub
 

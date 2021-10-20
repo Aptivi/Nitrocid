@@ -45,7 +45,6 @@ Module FlashColorDisplay
                 Exit Do
             Else
                 'Select position
-                SleepNoBlock(FlashColorDelay, FlashColor)
                 Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                 Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
@@ -107,6 +106,7 @@ Module FlashColorDisplay
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
             End If
+            SleepNoBlock(FlashColorDelay, FlashColor)
         Loop
     End Sub
 

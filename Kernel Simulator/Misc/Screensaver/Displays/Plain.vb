@@ -32,11 +32,11 @@ Module PlainDisplay
         Console.Clear()
         Console.CursorVisible = False
         Do While True
-            SleepNoBlock(10, Plain)
             If Plain.CancellationPending = True Then
                 HandleSaverCancel()
                 Exit Do
             End If
+            SleepNoBlock(10, Plain)
         Loop
     End Sub
 

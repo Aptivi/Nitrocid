@@ -49,7 +49,6 @@ Module BouncingTextDisplay
                 HandleSaverCancel()
                 Exit Do
             Else
-                SleepNoBlock(BouncingTextDelay, BouncingText)
                 Console.Clear()
 
                 'Sanity checks for color levels
@@ -146,6 +145,7 @@ Module BouncingTextDisplay
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
             End If
+            SleepNoBlock(BouncingTextDelay, BouncingText)
         Loop
     End Sub
 

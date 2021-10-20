@@ -43,7 +43,6 @@ Module TypewriterDisplay
         'Screensaver logic
         Do While True
             Console.CursorVisible = False
-            SleepNoBlock(TypewriterDelay, Typewriter)
             If Typewriter.CancellationPending = True Then
                 HandleSaverCancel()
                 Exit Do
@@ -153,6 +152,7 @@ Module TypewriterDisplay
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
             End If
+            SleepNoBlock(TypewriterDelay, Typewriter)
         Loop
     End Sub
 

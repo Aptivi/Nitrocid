@@ -95,7 +95,6 @@ Module RampDisplay
                 HandleSaverCancel()
                 Exit Do
             Else
-                SleepNoBlock(RampDelay, Ramp)
                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
 
                 'Select a color range for the ramp
@@ -221,6 +220,7 @@ Module RampDisplay
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
             End If
+            SleepNoBlock(RampDelay, Ramp)
         Loop
     End Sub
 

@@ -61,8 +61,6 @@ Module FaderBackDisplay
                 HandleSaverCancel()
                 Exit Do
             Else
-                SleepNoBlock(FaderBackDelay, FaderBack)
-
                 'Set thresholds
                 Dim ThresholdRed As Double = RedColorNum / FaderBackMaxSteps
                 Dim ThresholdGreen As Double = GreenColorNum / FaderBackMaxSteps
@@ -119,6 +117,7 @@ Module FaderBackDisplay
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
             End If
+            SleepNoBlock(FaderBackDelay, FaderBack)
         Loop
     End Sub
 

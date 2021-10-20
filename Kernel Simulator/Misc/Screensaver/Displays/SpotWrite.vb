@@ -39,7 +39,6 @@ Module SpotWriteDisplay
         'Screensaver logic
         Do While True
             Console.CursorVisible = False
-            SleepNoBlock(SpotWriteDelay, SpotWrite)
             If SpotWrite.CancellationPending = True Then
                 HandleSaverCancel()
                 Exit Do
@@ -132,6 +131,7 @@ Module SpotWriteDisplay
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
             End If
+            SleepNoBlock(SpotWriteDelay, SpotWrite)
         Loop
     End Sub
 

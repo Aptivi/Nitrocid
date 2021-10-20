@@ -44,7 +44,6 @@ Module MatrixDisplay
                 HandleSaverCancel()
                 Exit Do
             Else
-                SleepNoBlock(MatrixDelay, Matrix)
                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                 If Not ResizeSyncing Then
                     Console.Write(CStr(random.Next(2)))
@@ -57,6 +56,7 @@ Module MatrixDisplay
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
             End If
+            SleepNoBlock(MatrixDelay, Matrix)
         Loop
     End Sub
 

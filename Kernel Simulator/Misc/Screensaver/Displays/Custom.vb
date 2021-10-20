@@ -36,9 +36,6 @@ Public Module CustomDisplay
         'Screensaver logic
         CustomSaver.PreDisplay()
         Do While True
-            If Not CustomSaver.DelayForEachWrite = Nothing Then
-                SleepNoBlock(CustomSaver.DelayForEachWrite, Custom)
-            End If
             If Custom.CancellationPending = True Then
                 Wdbg(DebugLevel.W, "Cancellation requested. Showing ending...")
                 CustomSaver.PostDisplay()
@@ -46,6 +43,9 @@ Public Module CustomDisplay
                 Exit Do
             Else
                 CustomSaver.ScrnSaver()
+            End If
+            If Not CustomSaver.DelayForEachWrite = Nothing Then
+                SleepNoBlock(CustomSaver.DelayForEachWrite, Custom)
             End If
         Loop
     End Sub

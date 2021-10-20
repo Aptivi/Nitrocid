@@ -80,7 +80,6 @@ Public Module LinotypoDisplay
 
         'Logic. As always.
         Do While True
-            SleepNoBlock(LinotypoDelay, Linotypo)
             If Linotypo.CancellationPending = True Then
                 HandleSaverCancel()
                 Exit Do
@@ -365,6 +364,7 @@ Public Module LinotypoDisplay
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
             End If
+            SleepNoBlock(LinotypoDelay, Linotypo)
         Loop
     End Sub
 

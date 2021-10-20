@@ -36,7 +36,6 @@ Module LinesDisplay
         'Screensaver logic
         Do While True
             Console.CursorVisible = False
-            SleepNoBlock(LinesDelay, Lines)
             If Lines.CancellationPending = True Then
                 HandleSaverCancel()
                 Exit Do
@@ -108,6 +107,7 @@ Module LinesDisplay
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
             End If
+            SleepNoBlock(LinesDelay, Lines)
         Loop
     End Sub
 

@@ -44,7 +44,6 @@ Module WipeDisplay
                 HandleSaverCancel()
                 Exit Do
             Else
-                SleepNoBlock(WipeDelay, Wipe)
                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
 
                 'Sanity checks for color levels
@@ -162,6 +161,7 @@ Module WipeDisplay
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
             End If
+            SleepNoBlock(WipeDelay, Wipe)
         Loop
     End Sub
 

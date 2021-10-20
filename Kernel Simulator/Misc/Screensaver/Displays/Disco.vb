@@ -39,16 +39,6 @@ Module DiscoDisplay
         Do While True
             Console.CursorVisible = False
 
-            'Check to see if we're dealing with beats per minute
-            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Using BPM: {0}", DiscoUseBeatsPerMinute)
-            If DiscoUseBeatsPerMinute Then
-                Dim BeatInterval As Integer = 60000 / DiscoDelay
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1} ms", DiscoDelay, BeatInterval)
-                SleepNoBlock(BeatInterval, Disco)
-            Else
-                SleepNoBlock(DiscoDelay, Disco)
-            End If
-
             'Make the disco light!
             If Disco.CancellationPending = True Then
                 HandleSaverCancel()
@@ -130,6 +120,16 @@ Module DiscoDisplay
                         CurrentColor += 1
                     End If
                 End If
+            End If
+
+            'Check to see if we're dealing with beats per minute
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Using BPM: {0}", DiscoUseBeatsPerMinute)
+            If DiscoUseBeatsPerMinute Then
+                Dim BeatInterval As Integer = 60000 / DiscoDelay
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1} ms", DiscoDelay, BeatInterval)
+                SleepNoBlock(BeatInterval, Disco)
+            Else
+                SleepNoBlock(DiscoDelay, Disco)
             End If
         Loop
     End Sub

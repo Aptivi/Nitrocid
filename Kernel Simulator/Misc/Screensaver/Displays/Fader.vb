@@ -61,7 +61,6 @@ Module FaderDisplay
                 HandleSaverCancel()
                 Exit Do
             Else
-                SleepNoBlock(FaderDelay, Fader)
                 Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                 Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top)
@@ -126,6 +125,7 @@ Module FaderDisplay
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
             End If
+            SleepNoBlock(FaderDelay, Fader)
         Loop
     End Sub
 
