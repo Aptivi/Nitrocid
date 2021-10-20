@@ -119,7 +119,7 @@
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
-                "Variable": "Disco255Colors",
+                "Variable": "DiscoTrueColor",
                 "Description": "Activates the true color support."
             },
             {
@@ -202,7 +202,7 @@
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
-                "Variable": "Lines255Colors",
+                "Variable": "LinesTrueColor",
                 "Description": "Activates the true color support."
             },
             {
@@ -284,7 +284,7 @@
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
-                "Variable": "GlitterColor255Colors",
+                "Variable": "GlitterColorTrueColor",
                 "Description": "Activates the true color support."
             },
             {
@@ -355,7 +355,7 @@
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
-                "Variable": "BouncingText255Colors",
+                "Variable": "BouncingTextTrueColor",
                 "Description": "Activates the true color support."
             },
             {
@@ -442,7 +442,7 @@
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
-                "Variable": "Dissolve255Colors",
+                "Variable": "DissolveTrueColor",
                 "Description": "Activates the true color support."
             },
             {
@@ -517,7 +517,7 @@
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
-                "Variable": "BouncingBlock255Colors",
+                "Variable": "BouncingBlockTrueColor",
                 "Description": "Activates the true color support."
             },
             {
@@ -598,7 +598,7 @@
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
-                "Variable": "ProgressClock255Colors",
+                "Variable": "ProgressClockTrueColor",
                 "Description": "Activates the true color support."
             },
             {
@@ -1007,7 +1007,7 @@
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
-                "Variable": "Lighter255Colors",
+                "Variable": "LighterTrueColor",
                 "Description": "Activates the true color support."
             },
             {
@@ -1211,7 +1211,7 @@
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
-                "Variable": "Wipe255Colors",
+                "Variable": "WipeTrueColor",
                 "Description": "Activates the true color support."
             },
             {
@@ -1293,7 +1293,7 @@
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
-                "Variable": "Marquee255Colors",
+                "Variable": "MarqueeTrueColor",
                 "Description": "Activates the true color support."
             },
             {
@@ -1447,7 +1447,7 @@
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
-                "Variable": "BeatFader255Colors",
+                "Variable": "BeatFaderTrueColor",
                 "Description": "Activates the true color support."
             },
             {
@@ -1660,7 +1660,7 @@
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
-                "Variable": "FlashColor255Colors",
+                "Variable": "FlashColorTrueColor",
                 "Description": "Activates the true color support."
             },
             {
@@ -1765,7 +1765,7 @@
             {
                 "Name": "Activate true colors",
                 "Type": "SBoolean",
-                "Variable": "Ramp255Colors",
+                "Variable": "RampTrueColor",
                 "Description": "Activates the true color support."
             },
             {
