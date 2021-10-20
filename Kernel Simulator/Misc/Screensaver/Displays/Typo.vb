@@ -119,7 +119,6 @@ Module TypoDisplay
                 ResizeSyncing = False
                 CurrentWindowWidth = Console.WindowWidth
                 CurrentWindowHeight = Console.WindowHeight
-                Throw New Exception
             End If
             SleepNoBlock(TypoDelay, Typo)
         Loop
