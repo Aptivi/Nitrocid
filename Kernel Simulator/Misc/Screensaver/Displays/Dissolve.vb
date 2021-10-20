@@ -36,7 +36,7 @@ Module DissolveDisplay
         Dim ResizeSyncing As Boolean
 
         'Preparations
-        SetConsoleColor(New Color(ColorMixBackgroundColor), True)
+        SetConsoleColor(New Color(DissolveBackgroundColor), True)
         Console.Clear()
         Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
@@ -96,7 +96,7 @@ Module DissolveDisplay
                             Else
                                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're refilling...")
                                 ColorFilled = False
-                                SetConsoleColor(New Color(ColorMixBackgroundColor), True)
+                                SetConsoleColor(New Color(DissolveBackgroundColor), True)
                                 Console.Clear()
                                 CoveredPositions.Clear()
                             End If
@@ -109,20 +109,20 @@ Module DissolveDisplay
                             Else
                                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're refilling...")
                                 ColorFilled = False
-                                SetConsoleColor(New Color(ColorMixBackgroundColor), True)
+                                SetConsoleColor(New Color(DissolveBackgroundColor), True)
                                 Console.Clear()
                                 CoveredPositions.Clear()
                             End If
                         Else
                             If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                             If Not ResizeSyncing Then
-                                SetConsoleColor(New Color(ColorMixBackgroundColor), True)
+                                SetConsoleColor(New Color(DissolveBackgroundColor), True)
                                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                                 Console.Write(" ")
                             Else
                                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're refilling...")
                                 ColorFilled = False
-                                SetConsoleColor(New Color(ColorMixBackgroundColor), True)
+                                SetConsoleColor(New Color(DissolveBackgroundColor), True)
                                 Console.Clear()
                                 CoveredPositions.Clear()
                             End If
@@ -140,19 +140,19 @@ Module DissolveDisplay
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                     If Not ResizeSyncing Then
                         Console.SetCursorPosition(Left, Top)
-                        SetConsoleColor(New Color(ColorMixBackgroundColor), True)
+                        SetConsoleColor(New Color(DissolveBackgroundColor), True)
                         Console.Write(" ")
                         If CoveredPositions.Count = (EndLeft + 1) * (EndTop + 1) Then
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're refilling...")
                             ColorFilled = False
-                            SetConsoleColor(New Color(ColorMixBackgroundColor), True)
+                            SetConsoleColor(New Color(DissolveBackgroundColor), True)
                             Console.Clear()
                             CoveredPositions.Clear()
                         End If
                     Else
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're refilling...")
                         ColorFilled = False
-                        SetConsoleColor(New Color(ColorMixBackgroundColor), True)
+                        SetConsoleColor(New Color(DissolveBackgroundColor), True)
                         Console.Clear()
                         CoveredPositions.Clear()
                     End If
