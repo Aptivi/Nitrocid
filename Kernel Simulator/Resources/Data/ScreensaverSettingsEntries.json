@@ -1971,5 +1971,76 @@
                 "Description": "Use the border colors for the ramp bar. If disabled, will generate a grey bar."
             }
         ]
+    },
+    "StackBox": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "StackBox255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "StackBoxTrueColor",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "StackBoxDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "StackBoxMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "StackBoxMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "StackBoxMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SInt",
+                "Variable": "StackBoxMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "StackBoxMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "StackBoxMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "StackBoxMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SInt",
+                "Variable": "StackBoxMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+        ]
     }
 }

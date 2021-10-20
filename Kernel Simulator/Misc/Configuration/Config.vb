@@ -688,6 +688,22 @@ Public Module Config
             }
             ScreensaverConfig.Add("Ramp", RampConfig)
 
+            'StackBox config json object
+            Dim StackBoxConfig As New JObject From {
+                    {"Activate 255 Color Mode", StackBox255Colors},
+                    {"Activate True Color Mode", StackBoxTrueColor},
+                    {"Delay in Milliseconds", StackBoxDelay},
+                    {"Minimum red color level", StackBoxMinimumRedColorLevel},
+                    {"Minimum green color level", StackBoxMinimumGreenColorLevel},
+                    {"Minimum blue color level", StackBoxMinimumBlueColorLevel},
+                    {"Minimum color level", StackBoxMinimumColorLevel},
+                    {"Maximum red color level", StackBoxMaximumRedColorLevel},
+                    {"Maximum green color level", StackBoxMaximumGreenColorLevel},
+                    {"Maximum blue color level", StackBoxMaximumBlueColorLevel},
+                    {"Maximum color level", StackBoxMaximumColorLevel}
+            }
+            ScreensaverConfig.Add("StackBox", StackBoxConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -1288,6 +1304,19 @@ Public Module Config
             RampLeftFrameColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Left frame color for ramp bar"), ConsoleColors.Gray)).PlainSequence
             RampRightFrameColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Right frame color for ramp bar"), ConsoleColors.Gray)).PlainSequence
             RampUseBorderColors = If(ConfigToken("Screensaver")?("Ramp")?("Use border colors for ramp bar"), False)
+
+            '> StackBox
+            StackBox255Colors = If(ConfigToken("Screensaver")?("StackBox")?("Activate 255 Color Mode"), False)
+            StackBoxTrueColor = If(ConfigToken("Screensaver")?("StackBox")?("Activate True Color Mode"), True)
+            StackBoxDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("StackBox")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("StackBox")?("Delay in Milliseconds"), 10)
+            StackBoxMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("StackBox")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("StackBox")?("Minimum red color level"), 0)
+            StackBoxMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("StackBox")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("StackBox")?("Minimum green color level"), 0)
+            StackBoxMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("StackBox")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("StackBox")?("Minimum blue color level"), 0)
+            StackBoxMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("StackBox")?("Minimum color level"), 0), ConfigToken("Screensaver")?("StackBox")?("Minimum color level"), 0)
+            StackBoxMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("StackBox")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("StackBox")?("Maximum red color level"), 255)
+            StackBoxMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("StackBox")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("StackBox")?("Maximum green color level"), 255)
+            StackBoxMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("StackBox")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("StackBox")?("Maximum blue color level"), 255)
+            StackBoxMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("StackBox")?("Maximum color level"), 0), ConfigToken("Screensaver")?("StackBox")?("Maximum color level"), 255)
 
             'Misc Section
             Wdbg(DebugLevel.I, "Parsing misc section...")

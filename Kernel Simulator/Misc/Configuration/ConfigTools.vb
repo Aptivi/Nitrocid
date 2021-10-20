@@ -52,7 +52,7 @@ Public Module ConfigTools
             FixesNeeded = True
         End If
         If ConfigToken("Screensaver") IsNot Nothing Then
-            If ConfigToken("Screensaver").Count <> 22 + 4 Then 'Screensavers + Keys
+            If ConfigToken("Screensaver").Count <> 23 + 4 Then 'Screensavers + Keys
                 Wdbg(DebugLevel.W, "Missing sections and/or keys in Screensaver. Config fix needed set to true.")
                 FixesNeeded = True
             End If
@@ -231,6 +231,12 @@ Public Module ConfigTools
             If ConfigToken("Screensaver")("Ramp") IsNot Nothing Then
                 If ConfigToken("Screensaver")("Ramp").Count <> 37 Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Ramp. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("StackBox") IsNot Nothing Then
+                If ConfigToken("Screensaver")("StackBox").Count <> 11 Then
+                    Wdbg(DebugLevel.W, "Missing keys in Screensaver > StackBox. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If

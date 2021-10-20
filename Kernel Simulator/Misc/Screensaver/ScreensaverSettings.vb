@@ -1318,4 +1318,50 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public RampUseBorderColors As Boolean
 
+    '-> StackBox
+    ''' <summary>
+    ''' [StackBox] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public StackBox255Colors As Boolean
+    ''' <summary>
+    ''' [StackBox] Enable truecolor support. Has a higher priority than 255 color support.
+    ''' </summary>
+    Public StackBoxTrueColor As Boolean = True
+    ''' <summary>
+    ''' [StackBox] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public StackBoxDelay As Integer = 10
+    ''' <summary>
+    ''' [StackBox] The minimum red color level (true color)
+    ''' </summary>
+    Public StackBoxMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [StackBox] The minimum green color level (true color)
+    ''' </summary>
+    Public StackBoxMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [StackBox] The minimum blue color level (true color)
+    ''' </summary>
+    Public StackBoxMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [StackBox] The minimum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public StackBoxMinimumColorLevel As Integer = 0
+    ''' <summary>
+    ''' [StackBox] The maximum red color level (true color)
+    ''' </summary>
+    Public StackBoxMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [StackBox] The maximum green color level (true color)
+    ''' </summary>
+    Public StackBoxMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [StackBox] The maximum blue color level (true color)
+    ''' </summary>
+    Public StackBoxMaximumBlueColorLevel As Integer = 255
+    ''' <summary>
+    ''' [StackBox] The maximum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public StackBoxMaximumColorLevel As Integer = 255
+
 End Module

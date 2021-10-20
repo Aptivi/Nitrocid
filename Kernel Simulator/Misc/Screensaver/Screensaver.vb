@@ -53,6 +53,7 @@ Public Module Screensaver
                                                                                       {"progressclock", ProgressClock},
                                                                                       {"ramp", Ramp},
                                                                                       {"spotwrite", SpotWrite},
+                                                                                      {"stackbox", StackBox},
                                                                                       {"typewriter", Typewriter},
                                                                                       {"typo", Typo},
                                                                                       {"windowslogo", WindowsLogo},
