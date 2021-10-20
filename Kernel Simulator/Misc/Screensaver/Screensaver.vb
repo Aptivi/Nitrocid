@@ -33,29 +33,29 @@ Public Module Screensaver
     Public PasswordLock As Boolean = True
     Public ReadOnly colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())        '15 Console Colors
     Public ReadOnly colors255() As ConsoleColors = CType([Enum].GetValues(GetType(ConsoleColors)), ConsoleColors())  '255 Console Colors
-    Public ReadOnly Screensavers As New Dictionary(Of String, BackgroundWorker) From {{"beatFader", BeatFader},
-                                                                                      {"bouncingBlock", BouncingBlock},
-                                                                                      {"bouncingText", BouncingText},
-                                                                                      {"colorMix", ColorMix},
+    Public ReadOnly Screensavers As New Dictionary(Of String, BackgroundWorker) From {{"beatfader", BeatFader},
+                                                                                      {"bouncingblock", BouncingBlock},
+                                                                                      {"bouncingtext", BouncingText},
+                                                                                      {"colormix", ColorMix},
                                                                                       {"disco", Disco},
                                                                                       {"dissolve", Dissolve},
                                                                                       {"fader", Fader},
-                                                                                      {"faderBack", FaderBack},
-                                                                                      {"flashColor", FlashColor},
-                                                                                      {"glitterColor", GlitterColor},
-                                                                                      {"glitterMatrix", GlitterMatrix},
+                                                                                      {"faderback", FaderBack},
+                                                                                      {"flashcolor", FlashColor},
+                                                                                      {"glittercolor", GlitterColor},
+                                                                                      {"glittermatrix", GlitterMatrix},
                                                                                       {"lighter", Lighter},
                                                                                       {"lines", Lines},
                                                                                       {"linotypo", Linotypo},
                                                                                       {"marquee", Marquee},
                                                                                       {"matrix", Matrix},
                                                                                       {"plain", Plain},
-                                                                                      {"progressClock", ProgressClock},
+                                                                                      {"progressclock", ProgressClock},
                                                                                       {"ramp", Ramp},
-                                                                                      {"spotWrite", SpotWrite},
+                                                                                      {"spotwrite", SpotWrite},
                                                                                       {"typewriter", Typewriter},
                                                                                       {"typo", Typo},
-                                                                                      {"windowsLogo", WindowsLogo},
+                                                                                      {"windowslogo", WindowsLogo},
                                                                                       {"wipe", Wipe}}
 
     'Private variables
@@ -92,6 +92,7 @@ Public Module Screensaver
         Try
             InSaver = True
             ScrnTimeReached = True
+            saver = saver.ToLower()
             EventManager.RaisePreShowScreensaver(saver)
             Wdbg(DebugLevel.I, "Requested screensaver: {0}", saver)
             If Screensavers.ContainsKey(saver) Then
@@ -147,6 +148,7 @@ Public Module Screensaver
     ''' </summary>
     ''' <param name="saver">Specified screensaver</param>
     Public Sub SetDefaultScreensaver(saver As String)
+        saver = saver.ToLower
         If Screensavers.ContainsKey(saver) Or CustomSavers.ContainsKey(saver) Then
             Wdbg(DebugLevel.I, "{0} is found. Setting it to default...", saver)
             DefSaverName = saver

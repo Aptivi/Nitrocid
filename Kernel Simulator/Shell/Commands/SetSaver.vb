@@ -24,6 +24,7 @@ Class SetSaverCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim modPath As String = GetKernelPath(KernelPathType.Mods)
+        StringArgs = StringArgs.ToLower
         If Screensavers.ContainsKey(StringArgs) Or CustomSavers.ContainsKey(StringArgs) Then
             SetDefaultScreensaver(StringArgs)
             W(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, StringArgs)
