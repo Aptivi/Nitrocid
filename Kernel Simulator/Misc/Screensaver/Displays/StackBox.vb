@@ -84,10 +84,10 @@ Module StackBoxDisplay
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
 
                     'Get the required positions for the box
-                    Dim BoxStartX As Integer = RandomDriver.Next(Console.WindowWidth - 2)
-                    Dim BoxEndX As Integer = RandomDriver.Next(Console.WindowWidth - 2)
-                    Dim BoxStartY As Integer = RandomDriver.Next(Console.WindowHeight - 2)
-                    Dim BoxEndY As Integer = RandomDriver.Next(Console.WindowHeight - 2)
+                    Dim BoxStartX As Integer = RandomDriver.Next(Console.WindowWidth - IsOnUnix())
+                    Dim BoxEndX As Integer = RandomDriver.Next(Console.WindowWidth - IsOnUnix())
+                    Dim BoxStartY As Integer = RandomDriver.Next(Console.WindowHeight)
+                    Dim BoxEndY As Integer = RandomDriver.Next(Console.WindowHeight)
 
                     'Check to see if start is less than or equal to end
                     BoxStartX.SwapIfSourceLarger(BoxEndX)
