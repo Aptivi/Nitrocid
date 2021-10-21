@@ -152,10 +152,7 @@ Public Module FTPFilesystem
         If Directory <> "" Then
             Dim targetDir As String
             targetDir = $"{FtpCurrentDirectory}/{Directory}"
-
-#If NTFSCorruptionFix Then
             ThrowOnInvalidPath(targetDir)
-#End If
 
             'Check if folder exists
             If FolderExists(targetDir) Then

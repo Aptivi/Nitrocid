@@ -37,9 +37,7 @@ Public Module Filesystem
     ''' <returns>True if successful, False if unsuccessful.</returns>
     ''' <exception cref="DirectoryNotFoundException"></exception>
     Public Function SetCurrDir(dir As String) As Boolean
-#If NTFSCorruptionFix Then
         ThrowOnInvalidPath(dir)
-#End If
         dir = NeutralizePath(dir)
         Wdbg(DebugLevel.I, "Directory exists? {0}", FolderExists(dir))
         If FolderExists(dir) Then
@@ -68,11 +66,8 @@ Public Module Filesystem
     ''' </summary>
     ''' <param name="filename">Full path to file</param>
     Public Sub PrintContents(filename As String, PrintLineNumbers As Boolean)
-#If NTFSCorruptionFix Then
-        ThrowOnInvalidPath(filename)
-#End If
-
         'Read the contents
+        ThrowOnInvalidPath(filename)
         filename = NeutralizePath(filename)
         Dim Contents As String() = ReadContents(filename)
         For ContentIndex As Integer = 0 To Contents.Length - 1
@@ -89,11 +84,8 @@ Public Module Filesystem
     ''' <param name="filename">Full path to file</param>
     ''' <returns>An array full of file contents</returns>
     Public Function ReadContents(filename As String) As String()
-#If NTFSCorruptionFix Then
-        ThrowOnInvalidPath(filename)
-#End If
-
         'Read the contents
+        ThrowOnInvalidPath(filename)
         Dim FileContents As New List(Of String)
         filename = NeutralizePath(filename)
         Using FStream As New StreamReader(filename)
@@ -118,42 +110,38 @@ Public Module Filesystem
     ''' </summary>
     ''' <param name="folder">Full path to folder</param>
     Public Sub List(folder As String, ShowFileDetails As Boolean, SuppressUnauthorizedMessage As Boolean)
-        Wdbg(DebugLevel.I, "Folder {0} will be listed...", folder)
-
-#If NTFSCorruptionFix Then
         ThrowOnInvalidPath(folder)
-#End If
+        Wdbg(DebugLevel.I, "Folder {0} will be listed...", folder)
 
         'List files and folders
         folder = NeutralizePath(folder)
         If FolderExists(folder) Then
-            Dim enumeration As New List(Of FileSystemInfo)
+            Dim enumeration As List(Of FileSystemInfo)
             WriteSeparator(folder, True)
 
             'Try to create a list
             Try
                 enumeration = CreateList(folder, True)
                 If enumeration.Count = 0 Then W(DoTranslation("Folder is empty."), True, ColTypes.Warning)
+
+                'Enumerate each entry
+                For Each Entry As FileSystemInfo In enumeration
+                    Wdbg(DebugLevel.I, "Enumerating {0}...", Entry.FullName)
+                    Try
+                        If FileExists(Entry.FullName) Then
+                            PrintFileInfo(Entry)
+                        ElseIf FolderExists(Entry.FullName) Then
+                            PrintDirectoryInfo(Entry)
+                        End If
+                    Catch ex As UnauthorizedAccessException
+                        If Not SuppressUnauthorizedMessage Then W("- " + DoTranslation("You are not authorized to get info for {0}."), True, ColTypes.Error, Entry.Name)
+                        WStkTrc(ex)
+                    End Try
+                Next
             Catch ex As Exception
                 W(DoTranslation("Unknown error while listing in directory: {0}"), True, ColTypes.Error, ex.Message)
                 WStkTrc(ex)
-                Exit Sub
             End Try
-
-            'Enumerate each entry
-            For Each Entry As FileSystemInfo In enumeration
-                Wdbg(DebugLevel.I, "Enumerating {0}...", Entry.FullName)
-                Try
-                    If FileExists(Entry.FullName) Then
-                        PrintFileInfo(Entry)
-                    ElseIf FolderExists(Entry.FullName) Then
-                        PrintDirectoryInfo(Entry)
-                    End If
-                Catch ex As UnauthorizedAccessException
-                    If Not SuppressUnauthorizedMessage Then W("- " + DoTranslation("You are not authorized to get info for {0}."), True, ColTypes.Error, Entry.Name)
-                    WStkTrc(ex)
-                End Try
-            Next
         ElseIf FileExists(folder) Then
             Try
                 PrintFileInfo(New FileInfo(folder), ShowFileDetails)
@@ -244,11 +232,9 @@ Public Module Filesystem
     ''' <returns>List of filesystem entries if any. Empty list if folder is not found or is empty.</returns>
     ''' <exception cref="Exceptions.FilesystemException"></exception>
     Public Function CreateList(folder As String, Optional Sorted As Boolean = False) As List(Of FileSystemInfo)
+        ThrowOnInvalidPath(folder)
         Wdbg(DebugLevel.I, "Folder {0} will be listed...", folder)
         Dim FilesystemEntries As New List(Of FileSystemInfo)
-#If NTFSCorruptionFix Then
-        ThrowOnInvalidPath(folder)
-#End If
 
         'List files and folders
         folder = NeutralizePath(folder)
@@ -320,9 +306,7 @@ Public Module Filesystem
     ''' <param name="File">Target file</param>
     ''' <returns>True if exists; False if not. Throws on trying to trigger the Windows 10/11 BSOD/corruption bug</returns>
     Public Function FileExists(File As String)
-#If NTFSCorruptionFix Then
         ThrowOnInvalidPath(File)
-#End If
         Return IO.File.Exists(File)
     End Function
 
@@ -332,9 +316,7 @@ Public Module Filesystem
     ''' <param name="Folder">Target folder</param>
     ''' <returns>True if exists; False if not. Throws on trying to trigger the Windows 10/11 BSOD/corruption bug</returns>
     Public Function FolderExists(Folder As String)
-#If NTFSCorruptionFix Then
         ThrowOnInvalidPath(Folder)
-#End If
         Return Directory.Exists(Folder)
     End Function
 
@@ -345,9 +327,7 @@ Public Module Filesystem
     ''' <returns>Absolute path</returns>
     ''' <exception cref="FileNotFoundException"></exception>
     Public Function NeutralizePath(Path As String, Optional Strict As Boolean = False) As String
-#If NTFSCorruptionFix Then
         ThrowOnInvalidPath(Path)
-#End If
 
         'Replace backslashes with slashes if any.
         Path = Path.Replace("\", "/")
@@ -388,10 +368,8 @@ Public Module Filesystem
     ''' <returns>Absolute path</returns>
     ''' <exception cref="FileNotFoundException"></exception>
     Public Function NeutralizePath(Path As String, Source As String, Optional Strict As Boolean = False) As String
-#If NTFSCorruptionFix Then
         ThrowOnInvalidPath(Path)
         ThrowOnInvalidPath(Source)
-#End If
 
         'Replace backslashes with slashes if any.
         Path = Path.Replace("\", "/")
@@ -434,10 +412,8 @@ Public Module Filesystem
     ''' <exception cref="IOException"></exception>
     Public Function CopyFileOrDir(Source As String, Destination As String) As Boolean
         Try
-#If NTFSCorruptionFix Then
             ThrowOnInvalidPath(Source)
             ThrowOnInvalidPath(Destination)
-#End If
             Source = NeutralizePath(Source)
             Wdbg(DebugLevel.I, "Source directory: {0}", Source)
             Destination = NeutralizePath(Destination)
@@ -493,6 +469,8 @@ Public Module Filesystem
     ''' <param name="Destination">Target directory</param>
     ''' <param name="ShowProgress">Whether or not to show what files are being copied</param>
     Public Sub CopyDirectory(Source As String, Destination As String, ShowProgress As Boolean)
+        ThrowOnInvalidPath(Source)
+        ThrowOnInvalidPath(Destination)
         If Not FolderExists(Source) Then Throw New IOException(DoTranslation("Directory {0} not found.").FormatString(Source))
 
         'Get all source directories and files
@@ -550,9 +528,7 @@ Public Module Filesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="IOException"></exception>
     Public Function MakeDirectory(NewDirectory As String) As Boolean
-#If NTFSCorruptionFix Then
         ThrowOnInvalidPath(NewDirectory)
-#End If
         NewDirectory = NeutralizePath(NewDirectory)
         Wdbg(DebugLevel.I, "New directory: {0} ({1})", NewDirectory, FolderExists(NewDirectory))
         If Not FolderExists(NewDirectory) Then
@@ -574,9 +550,7 @@ Public Module Filesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="IOException"></exception>
     Public Function MakeFile(NewFile As String) As Boolean
-#If NTFSCorruptionFix Then
         ThrowOnInvalidPath(NewFile)
-#End If
         NewFile = NeutralizePath(NewFile)
         Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", NewFile, FileExists(NewFile))
         If Not FileExists(NewFile) Then
@@ -606,9 +580,7 @@ Public Module Filesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="IOException"></exception>
     Public Function MakeJsonFile(NewFile As String) As Boolean
-#If NTFSCorruptionFix Then
         ThrowOnInvalidPath(NewFile)
-#End If
         NewFile = NeutralizePath(NewFile)
         Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", NewFile, FileExists(NewFile))
         If Not FileExists(NewFile) Then
@@ -643,10 +615,8 @@ Public Module Filesystem
     ''' <exception cref="IOException"></exception>
     Public Function MoveFileOrDir(Source As String, Destination As String) As Boolean
         Try
-#If NTFSCorruptionFix Then
             ThrowOnInvalidPath(Source)
             ThrowOnInvalidPath(Destination)
-#End If
             Source = NeutralizePath(Source)
             Wdbg(DebugLevel.I, "Source directory: {0}", Source)
             Destination = NeutralizePath(Destination)
@@ -693,9 +663,7 @@ Public Module Filesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function RemoveDirectory(Target As String) As Boolean
         Try
-#If NTFSCorruptionFix Then
             ThrowOnInvalidPath(Target)
-#End If
             Dim Dir As String = NeutralizePath(Target)
             Directory.Delete(Dir, True)
 
@@ -716,9 +684,7 @@ Public Module Filesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function RemoveFile(Target As String) As Boolean
         Try
-#If NTFSCorruptionFix Then
             ThrowOnInvalidPath(Target)
-#End If
             Dim Dir As String = NeutralizePath(Target)
             File.Delete(Dir)
 
@@ -741,9 +707,7 @@ Public Module Filesystem
     ''' <exception cref="IOException"></exception>
     Public Function SearchFileForString(FilePath As String, StringLookup As String) As List(Of String)
         Try
-#If NTFSCorruptionFix Then
             ThrowOnInvalidPath(FilePath)
-#End If
             FilePath = NeutralizePath(FilePath)
             Dim Matches As New List(Of String)
             Dim Filebyte() As String = File.ReadAllLines(FilePath)
@@ -773,9 +737,7 @@ Public Module Filesystem
     ''' <exception cref="IOException"></exception>
     Public Function SearchFileForStringRegexp(FilePath As String, StringLookup As Regex) As List(Of String)
         Try
-#If NTFSCorruptionFix Then
             ThrowOnInvalidPath(FilePath)
-#End If
             FilePath = NeutralizePath(FilePath)
             Dim Matches As New List(Of String)
             Dim Filebyte() As String = File.ReadAllLines(FilePath)
@@ -815,9 +777,7 @@ Public Module Filesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function AddAttributeToFile(FilePath As String, Attributes As FileAttributes) As Boolean
         Try
-#If NTFSCorruptionFix Then
             ThrowOnInvalidPath(FilePath)
-#End If
             FilePath = NeutralizePath(FilePath)
             Wdbg(DebugLevel.I, "Setting file attribute to {0}...", Attributes)
             File.SetAttributes(FilePath, Attributes)
@@ -840,9 +800,7 @@ Public Module Filesystem
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function RemoveAttributeFromFile(FilePath As String, Attributes As FileAttributes) As Boolean
         Try
-#If NTFSCorruptionFix Then
             ThrowOnInvalidPath(FilePath)
-#End If
             FilePath = NeutralizePath(FilePath)
             Dim Attrib As FileAttributes = File.GetAttributes(FilePath)
             Wdbg(DebugLevel.I, "File attributes: {0}", Attrib)
@@ -900,9 +858,7 @@ Public Module Filesystem
     ''' <param name="path">Path to file</param>
     ''' <returns>Array of lines</returns>
     Public Function ReadAllLinesNoBlock(path As String) As String()
-#If NTFSCorruptionFix Then
         ThrowOnInvalidPath(path)
-#End If
 
         'Read all the lines, bypassing the restrictions.
         path = NeutralizePath(path)
@@ -926,9 +882,7 @@ Public Module Filesystem
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function AddToPathLookup(Path As String) As Boolean
-#If NTFSCorruptionFix Then
         ThrowOnInvalidPath(Path)
-#End If
         Dim LookupPaths As List(Of String) = GetPathList()
         Path = NeutralizePath(Path)
         LookupPaths.Add(Path)
@@ -941,10 +895,8 @@ Public Module Filesystem
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function AddToPathLookup(Path As String, RootPath As String) As Boolean
-#If NTFSCorruptionFix Then
         ThrowOnInvalidPath(Path)
         ThrowOnInvalidPath(RootPath)
-#End If
         Dim LookupPaths As List(Of String) = GetPathList()
         Path = NeutralizePath(Path, RootPath)
         LookupPaths.Add(Path)
@@ -957,9 +909,7 @@ Public Module Filesystem
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function RemoveFromPathLookup(Path As String) As Boolean
-#If NTFSCorruptionFix Then
         ThrowOnInvalidPath(Path)
-#End If
         Dim LookupPaths As List(Of String) = GetPathList()
         Dim Returned As Boolean
         Path = NeutralizePath(Path)
@@ -973,10 +923,8 @@ Public Module Filesystem
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function RemoveFromPathLookup(Path As String, RootPath As String) As Boolean
-#If NTFSCorruptionFix Then
         ThrowOnInvalidPath(Path)
         ThrowOnInvalidPath(RootPath)
-#End If
         Dim LookupPaths As List(Of String) = GetPathList()
         Dim Returned As Boolean
         Path = NeutralizePath(Path, RootPath)
@@ -992,9 +940,7 @@ Public Module Filesystem
     ''' <param name="Result">The neutralized path</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function FileExistsInPath(FilePath As String, ByRef Result As String) As Boolean
-#If NTFSCorruptionFix Then
         ThrowOnInvalidPath(FilePath)
-#End If
         Dim LookupPaths As List(Of String) = GetPathList()
         Dim ResultingPath As String
         For Each LookupPath As String In LookupPaths
@@ -1031,9 +977,7 @@ Public Module Filesystem
     ''' <returns>True if successful; false if unsuccessful</returns>
     Public Function TryParsePath(Path As String) As Boolean
         Try
-#If NTFSCorruptionFix Then
             ThrowOnInvalidPath(Path)
-#End If
             Return Not Path.IndexOfAny(IO.Path.GetInvalidPathChars()) >= 0
         Catch ex As Exception
             WStkTrc(ex)
@@ -1049,9 +993,7 @@ Public Module Filesystem
     ''' <returns>True if successful; false if unsuccessful</returns>
     Public Function TryParseFileName(Name As String) As Boolean
         Try
-#If NTFSCorruptionFix Then
             ThrowOnInvalidPath(Name)
-#End If
             Return Not Name.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0
         Catch ex As Exception
             WStkTrc(ex)
@@ -1060,7 +1002,6 @@ Public Module Filesystem
         Return False
     End Function
 
-#If NTFSCorruptionFix Then
     ''' <summary>
     ''' Mitigates Windows 10/11 NTFS corruption/Blue Screen of Death (BSOD) bug
     ''' </summary>
@@ -1071,11 +1012,12 @@ Public Module Filesystem
     ''' This sub will try to prevent access to these paths on unpatched systems and patched systems by throwing <see cref="ArgumentException"/>
     ''' </remarks>
     Public Sub ThrowOnInvalidPath(Path As String)
+#If NTFSCorruptionFix Then
         If IsOnWindows() And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Wdbg(DebugLevel.F, "Trying to access invalid path. Path was {0}", Path)
             Throw New ArgumentException(DoTranslation("Trying to access invalid path."), NameOf(Path))
         End If
-    End Sub
 #End If
+    End Sub
 
 End Module

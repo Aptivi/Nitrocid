@@ -146,10 +146,7 @@ Module SFTPFilesystem
         If Directory <> "" Then
             Dim targetDir As String
             targetDir = $"{SFTPCurrDirect}/{Directory}"
-
-#If NTFSCorruptionFix Then
             ThrowOnInvalidPath(targetDir)
-#End If
 
             'Check if folder exists
             If FolderExists(targetDir) Then
