@@ -24,7 +24,7 @@ Class FTP_PutFolderCommand
         W(DoTranslation("Uploading folder {0}..."), True, ColTypes.Progress, ListArgs(0))
 
         'Begin the uploading process
-        If FTPUploadFile(ListArgs(0)) Then
+        If FTPUploadFolder(ListArgs(0)) Then
             Console.WriteLine()
             W(vbNewLine + DoTranslation("Uploaded folder {0}"), True, ColTypes.Success, ListArgs(0))
         Else
