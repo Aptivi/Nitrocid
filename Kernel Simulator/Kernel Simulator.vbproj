@@ -508,6 +508,7 @@
     <Compile Include="Shell\Commands\SaveScreen.vb" />
     <Compile Include="Shell\Commands\Search.vb" />
     <Compile Include="Shell\Commands\SearchWord.vb" />
+    <Compile Include="Shell\Commands\SetRange.vb" />
     <Compile Include="Shell\Commands\Set.vb" />
     <Compile Include="Shell\Commands\SetSaver.vb" />
     <Compile Include="Shell\Commands\SetThemes.vb" />

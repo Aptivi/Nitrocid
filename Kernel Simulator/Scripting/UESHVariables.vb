@@ -77,4 +77,25 @@ Public Module UESHVariables
         Return False
     End Function
 
+    ''' <summary>
+    ''' Makes an array of a $variable with the chosen number of values (e.g. $variable[0] = first value, $variable[1] = second value, ...)
+    ''' </summary>
+    ''' <param name="var">A $variable array name</param>
+    ''' <param name="values">A set of values to set</param>
+    Public Function SetVariables(var As String, values() As String) As Boolean
+        Try
+            For ValueIndex As Integer = 0 To values.Length - 1
+                Dim VarName As String = $"{var}[{ValueIndex}]"
+                Dim VarValue As String = values(ValueIndex)
+                If Not ShellVariables.ContainsKey(VarName) Then InitializeVariable(VarName)
+                ShellVariables(VarName) = VarValue
+                Wdbg(DebugLevel.I, "Set variable {0} to {1}", VarName, VarValue)
+            Next
+            Return True
+        Catch ex As Exception
+            Wdbg(DebugLevel.E, "Error creating variable array {0}: {1}", var, ex.Message)
+        End Try
+        Return False
+    End Function
+
 End Module
