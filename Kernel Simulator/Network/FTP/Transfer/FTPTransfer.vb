@@ -49,7 +49,7 @@ Public Module FTPTransfer
 
                 'Try to download 3 times
                 Dim LocalFilePath As String = NeutralizePath(LocalFile, FtpCurrentDirectory)
-                Dim Result As FtpStatus = ClientFTP.DownloadFile(LocalFilePath, File, True, FtpVerify.Retry + FtpVerify.Throw, FileProgress)
+                Dim Result As FtpStatus = ClientFTP.DownloadFile(LocalFilePath, File, FtpLocalExists.Resume, FtpVerify.Retry + FtpVerify.Throw, FileProgress)
 
                 'Show a message that it's downloaded
                 Wdbg(DebugLevel.I, "Downloaded file {0}.", File)
@@ -152,12 +152,13 @@ Public Module FTPTransfer
         If FtpConnected Then
             'Show a message to download
             EventManager.RaiseFTPPreUpload(File)
-            Wdbg(DebugLevel.I, "Uploading file {0}...", File)
+            Wdbg(DebugLevel.I, "Uploading file {0}...", LocalFile)
+            Wdbg(DebugLevel.I, "Where in the remote: {0}", File)
 
             'Try to upload
             Dim LocalFilePath As String = NeutralizePath(LocalFile, FtpCurrentDirectory)
-            Dim Success As Boolean = ClientFTP.UploadFile(LocalFilePath, File, True, True, FtpVerify.Retry, FileProgress)
-            Wdbg(DebugLevel.I, "Uploaded file {0} with status {1}.", File, Success)
+            Dim Success As Boolean = ClientFTP.UploadFile(LocalFilePath, File, FtpRemoteExists.Resume, True, FtpVerify.Retry, FileProgress)
+            Wdbg(DebugLevel.I, "Uploaded file {0} to {1} with status {2}.", LocalFile, File, Success)
             EventManager.RaiseFTPPostUpload(File, Success)
             Return Success
         Else
