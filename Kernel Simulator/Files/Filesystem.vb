@@ -145,50 +145,94 @@ Public Module Filesystem
                 Wdbg(DebugLevel.I, "Enumerating {0}...", Entry.FullName)
                 Try
                     If File.Exists(Entry.FullName) Then
-                        'Print information
-                        If (Entry.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not Entry.Attributes.HasFlag(FileAttributes.Hidden) Then
-                            If (IsOnWindows() And (Not Entry.Name.StartsWith(".") Or (Entry.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
-                                If Entry.Name.EndsWith(".uesh") Then
-                                    W("- " + Entry.Name, False, ColTypes.Stage)
-                                    If ShowFileDetails Then W(": ", False, ColTypes.Stage)
-                                Else
-                                    W("- " + Entry.Name, False, ColTypes.ListEntry)
-                                    If ShowFileDetails Then W(": ", False, ColTypes.ListEntry)
-                                End If
-                                If ShowFileDetails Then
-                                    W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), False, ColTypes.ListValue,
-                                                    DirectCast(Entry, FileInfo).Length.FileSizeToString, Entry.CreationTime.ToShortDateString, Entry.CreationTime.ToShortTimeString,
-                                                                                                         Entry.LastWriteTime.ToShortDateString, Entry.LastWriteTime.ToShortTimeString)
-                                End If
-                                Console.WriteLine()
-                            End If
-                        End If
+                        PrintFileInfo(Entry)
                     ElseIf Directory.Exists(Entry.FullName) Then
-                        'Get all file sizes in a folder
-                        Dim TotalSize As Long = GetAllSizesInFolder(DirectCast(Entry, DirectoryInfo))
-
-                        'Print information
-                        If (Entry.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not Entry.Attributes.HasFlag(FileAttributes.Hidden) Then
-                            If (IsOnWindows() And (Not Entry.Name.StartsWith(".") Or (Entry.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
-                                W("- " + Entry.Name + "/", False, ColTypes.ListEntry)
-                                If ShowFileDetails Then
-                                    W(": ", False, ColTypes.ListEntry)
-                                    W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), False, ColTypes.ListValue,
-                                                    TotalSize.FileSizeToString, Entry.CreationTime.ToShortDateString, Entry.CreationTime.ToShortTimeString,
-                                                                                Entry.LastWriteTime.ToShortDateString, Entry.LastWriteTime.ToShortTimeString)
-                                End If
-                                Console.WriteLine()
-                            End If
-                        End If
+                        PrintDirectoryInfo(Entry)
                     End If
-                Catch ex As UnauthorizedAccessException 'Error while getting info
+                Catch ex As UnauthorizedAccessException
                     If Not SuppressUnauthorizedMessage Then W("- " + DoTranslation("You are not authorized to get info for {0}."), True, ColTypes.Error, Entry.Name)
                     WStkTrc(ex)
                 End Try
             Next
+        ElseIf File.Exists(folder) Then
+            Try
+                PrintFileInfo(New FileInfo(folder), ShowFileDetails)
+            Catch ex As UnauthorizedAccessException
+                If Not SuppressUnauthorizedMessage Then W("- " + DoTranslation("You are not authorized to get info for {0}."), True, ColTypes.Error, folder)
+                WStkTrc(ex)
+            End Try
         Else
             W(DoTranslation("Directory {0} not found"), True, ColTypes.Error, folder)
             Wdbg(DebugLevel.I, "IO.Directory.Exists = {0}", Directory.Exists(folder))
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Prints the file information to the console
+    ''' </summary>
+    Public Sub PrintFileInfo(FileInfo As FileSystemInfo)
+        PrintFileInfo(FileInfo, ShowFileDetailsList)
+    End Sub
+
+    ''' <summary>
+    ''' Prints the file information to the console
+    ''' </summary>
+    Public Sub PrintFileInfo(FileInfo As FileSystemInfo, ShowFileDetails As Boolean)
+        If File.Exists(FileInfo.FullName) Then
+            If (FileInfo.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not FileInfo.Attributes.HasFlag(FileAttributes.Hidden) Then
+                If (IsOnWindows() And (Not FileInfo.Name.StartsWith(".") Or (FileInfo.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
+                    If FileInfo.Name.EndsWith(".uesh") Then
+                        W("- " + FileInfo.Name, False, ColTypes.Stage)
+                        If ShowFileDetails Then W(": ", False, ColTypes.Stage)
+                    Else
+                        W("- " + FileInfo.Name, False, ColTypes.ListEntry)
+                        If ShowFileDetails Then W(": ", False, ColTypes.ListEntry)
+                    End If
+                    If ShowFileDetails Then
+                        W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), False, ColTypes.ListValue,
+                                        DirectCast(FileInfo, FileInfo).Length.FileSizeToString, FileInfo.CreationTime.ToShortDateString, FileInfo.CreationTime.ToShortTimeString,
+                                                                                                FileInfo.LastWriteTime.ToShortDateString, FileInfo.LastWriteTime.ToShortTimeString)
+                    End If
+                    Console.WriteLine()
+                End If
+            End If
+        Else
+            W(DoTranslation("File {0} not found"), True, ColTypes.Error, FileInfo.FullName)
+            Wdbg(DebugLevel.I, "IO.File.Exists = {0}", File.Exists(FileInfo.FullName))
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Prints the directory information to the console
+    ''' </summary>
+    Public Sub PrintDirectoryInfo(DirectoryInfo As FileSystemInfo)
+        PrintDirectoryInfo(DirectoryInfo, ShowFileDetailsList)
+    End Sub
+
+    ''' <summary>
+    ''' Prints the directory information to the console
+    ''' </summary>
+    Public Sub PrintDirectoryInfo(DirectoryInfo As FileSystemInfo, ShowDirectoryDetails As Boolean)
+        If Directory.Exists(DirectoryInfo.FullName) Then
+            'Get all file sizes in a folder
+            Dim TotalSize As Long = GetAllSizesInFolder(DirectCast(DirectoryInfo, DirectoryInfo))
+
+            'Print information
+            If (DirectoryInfo.Attributes = FileAttributes.Hidden And HiddenFiles) Or Not DirectoryInfo.Attributes.HasFlag(FileAttributes.Hidden) Then
+                If (IsOnWindows() And (Not DirectoryInfo.Name.StartsWith(".") Or (DirectoryInfo.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
+                    W("- " + DirectoryInfo.Name + "/", False, ColTypes.ListEntry)
+                    If ShowDirectoryDetails Then
+                        W(": ", False, ColTypes.ListEntry)
+                        W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), False, ColTypes.ListValue,
+                          TotalSize.FileSizeToString, DirectoryInfo.CreationTime.ToShortDateString, DirectoryInfo.CreationTime.ToShortTimeString,
+                                                      DirectoryInfo.LastWriteTime.ToShortDateString, DirectoryInfo.LastWriteTime.ToShortTimeString)
+                    End If
+                    Console.WriteLine()
+                End If
+            End If
+        Else
+            W(DoTranslation("Directory {0} not found"), True, ColTypes.Error, DirectoryInfo.FullName)
+            Wdbg(DebugLevel.I, "IO.Directory.Exists = {0}", Directory.Exists(DirectoryInfo.FullName))
         End If
     End Sub
 
