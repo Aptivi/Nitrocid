@@ -60,22 +60,26 @@ Public Module UESHParse
                 Wdbg(DebugLevel.I, "Line {0}: ""{1}""", LineNo, Line)
 
                 'See if the line contains variable, and replace every instance of it with its value
-                Dim SplitWords() As String = Line.Split(" ")
-                For i As Integer = 0 To SplitWords.Length - 1
-                    If SplitWords(i).StartsWith("$") Then
-                        Line = GetVariableCommand(SplitWords(i).Replace("""", ""), Line)
-                    End If
-                Next
-
-                'See if the line contains argument placeholder, and replace every instance of it with its value
-                Dim SplitArguments() As String = scriptarguments.Split(" ")
-                For i As Integer = 0 To SplitWords.Length - 1
-                    For j As Integer = 0 To SplitArguments.Length - 1
-                        If SplitWords(i) = $"{{{j}}}" Then
-                            Line = Line.Replace(SplitWords(i), SplitArguments(j))
+                Dim SplitWords() As String = Line.SplitEncloseDoubleQuotes(" ")
+                If SplitWords IsNot Nothing Then
+                    For i As Integer = 0 To SplitWords.Length - 1
+                        If SplitWords(i).StartsWith("$") Then
+                            Line = GetVariableCommand(SplitWords(i), Line)
                         End If
                     Next
-                Next
+                End If
+
+                'See if the line contains argument placeholder, and replace every instance of it with its value
+                Dim SplitArguments() As String = scriptarguments.SplitEncloseDoubleQuotes(" ")
+                If SplitArguments IsNot Nothing Then
+                    For i As Integer = 0 To SplitWords.Length - 1
+                        For j As Integer = 0 To SplitArguments.Length - 1
+                            If SplitWords(i) = $"{{{j}}}" Then
+                                Line = Line.Replace(SplitWords(i), SplitArguments(j))
+                            End If
+                        Next
+                    Next
+                End If
 
                 'See if the line is a comment or command
                 If Not Line.StartsWith("#") And Not Line.StartsWith(" ") Then
