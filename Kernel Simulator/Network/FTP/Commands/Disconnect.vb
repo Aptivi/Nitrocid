@@ -24,6 +24,7 @@ Class FTP_DisconnectCommand
         If FtpConnected = True Then
             'Set a connected flag to False
             FtpConnected = False
+            ClientFTP.UngracefullDisconnection = ListSwitchesOnly.Contains("-f")
             ClientFTP.Disconnect()
             W(DoTranslation("Disconnected from {0}"), True, ColTypes.Success, FtpSite)
 
