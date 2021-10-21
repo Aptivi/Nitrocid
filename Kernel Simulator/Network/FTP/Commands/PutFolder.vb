@@ -21,10 +21,11 @@ Class FTP_PutFolderCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
+        Dim LocalFolder As String = ListArgs(0)
+        Dim RemoteFolder As String = If(ListArgs.Count > 1, ListArgs(1), "")
         W(DoTranslation("Uploading folder {0}..."), True, ColTypes.Progress, ListArgs(0))
-
-        'Begin the uploading process
-        If FTPUploadFolder(ListArgs(0)) Then
+        Dim Result As Boolean = If(Not String.IsNullOrWhiteSpace(LocalFolder), FTPUploadFolder(RemoteFolder, LocalFolder), FTPUploadFolder(RemoteFolder))
+        If Result Then
             Console.WriteLine()
             W(vbNewLine + DoTranslation("Uploaded folder {0}"), True, ColTypes.Success, ListArgs(0))
         Else
