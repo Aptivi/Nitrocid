@@ -34,7 +34,7 @@ Public Module CustomSaverCompiler
         file = file.Replace("\", "/").Replace(modPath, "")
 
         'Start parsing screensaver
-        If IO.File.Exists(modPath + file) Then
+        If FileExists(modPath + file) Then
             Wdbg(DebugLevel.I, "Parsing {0}...", file)
             If file.EndsWith(".ss.vb") Or file.EndsWith(".ss.cs") Or file.EndsWith(".dll") Then
                 Wdbg(DebugLevel.W, "{0} is a valid screensaver. Generating...", file)
@@ -174,7 +174,7 @@ Public Module CustomSaverCompiler
                     'Add reference
                     If LocationCheckRequired Then
                         'Check to see if the reference file exists
-                        If Not File.Exists(Reference) Then
+                        If Not FileExists(Reference) Then
                             Wdbg(DebugLevel.E, "File {0} not found to reference.", Reference)
                             W(DoTranslation("Referenced file {0} not found. This mod might not work properly without this file."), True, ColTypes.Warning, Reference)
                         Else

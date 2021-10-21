@@ -27,7 +27,7 @@ Class JsonMinifyCommand
         Dim JsonOutputFile As String
         Dim MinifiedJson As String
 
-        If File.Exists(JsonFile) Then
+        If FileExists(JsonFile) Then
             'Minify the JSON and display it on screen
             MinifiedJson = MinifyJson(JsonFile)
             W(MinifiedJson, True, ColTypes.Neutral)

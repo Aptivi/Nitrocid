@@ -30,7 +30,7 @@ Class SumFileCommand
         If Not ListArgs.Length < 3 Then
             out = NeutralizePath(ListArgs(2))
         End If
-        If IO.File.Exists(file) Then
+        If FileExists(file) Then
             Dim AlgorithmEnum As Algorithms
             If ListArgs(0) = "all" Then
                 For Each Algorithm As String In [Enum].GetNames(GetType(Algorithms))

@@ -41,8 +41,8 @@ Public Module Filesystem
         ThrowOnInvalidPath(dir)
 #End If
         dir = NeutralizePath(dir)
-        Wdbg(DebugLevel.I, "Directory exists? {0}", Directory.Exists(dir))
-        If Directory.Exists(dir) Then
+        Wdbg(DebugLevel.I, "Directory exists? {0}", FolderExists(dir))
+        If FolderExists(dir) Then
             Dim Parser As New DirectoryInfo(dir)
             CurrDir = Parser.FullName.Replace("\", "/")
 
@@ -126,7 +126,7 @@ Public Module Filesystem
 
         'List files and folders
         folder = NeutralizePath(folder)
-        If Directory.Exists(folder) Then
+        If FolderExists(folder) Then
             Dim enumeration As New List(Of FileSystemInfo)
             WriteSeparator(folder, True)
 
@@ -144,9 +144,9 @@ Public Module Filesystem
             For Each Entry As FileSystemInfo In enumeration
                 Wdbg(DebugLevel.I, "Enumerating {0}...", Entry.FullName)
                 Try
-                    If File.Exists(Entry.FullName) Then
+                    If FileExists(Entry.FullName) Then
                         PrintFileInfo(Entry)
-                    ElseIf Directory.Exists(Entry.FullName) Then
+                    ElseIf FolderExists(Entry.FullName) Then
                         PrintDirectoryInfo(Entry)
                     End If
                 Catch ex As UnauthorizedAccessException
@@ -154,7 +154,7 @@ Public Module Filesystem
                     WStkTrc(ex)
                 End Try
             Next
-        ElseIf File.Exists(folder) Then
+        ElseIf FileExists(folder) Then
             Try
                 PrintFileInfo(New FileInfo(folder), ShowFileDetails)
             Catch ex As UnauthorizedAccessException
@@ -163,7 +163,7 @@ Public Module Filesystem
             End Try
         Else
             W(DoTranslation("Directory {0} not found"), True, ColTypes.Error, folder)
-            Wdbg(DebugLevel.I, "IO.Directory.Exists = {0}", Directory.Exists(folder))
+            Wdbg(DebugLevel.I, "IO.FolderExists = {0}", FolderExists(folder))
         End If
     End Sub
 
@@ -178,7 +178,7 @@ Public Module Filesystem
     ''' Prints the file information to the console
     ''' </summary>
     Public Sub PrintFileInfo(FileInfo As FileSystemInfo, ShowFileDetails As Boolean)
-        If File.Exists(FileInfo.FullName) Then
+        If FileExists(FileInfo.FullName) Then
             If (FileInfo.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not FileInfo.Attributes.HasFlag(FileAttributes.Hidden) Then
                 If (IsOnWindows() And (Not FileInfo.Name.StartsWith(".") Or (FileInfo.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
                     If FileInfo.Name.EndsWith(".uesh") Then
@@ -198,7 +198,7 @@ Public Module Filesystem
             End If
         Else
             W(DoTranslation("File {0} not found"), True, ColTypes.Error, FileInfo.FullName)
-            Wdbg(DebugLevel.I, "IO.File.Exists = {0}", File.Exists(FileInfo.FullName))
+            Wdbg(DebugLevel.I, "IO.FileExists = {0}", FileExists(FileInfo.FullName))
         End If
     End Sub
 
@@ -213,7 +213,7 @@ Public Module Filesystem
     ''' Prints the directory information to the console
     ''' </summary>
     Public Sub PrintDirectoryInfo(DirectoryInfo As FileSystemInfo, ShowDirectoryDetails As Boolean)
-        If Directory.Exists(DirectoryInfo.FullName) Then
+        If FolderExists(DirectoryInfo.FullName) Then
             'Get all file sizes in a folder
             Dim TotalSize As Long = GetAllSizesInFolder(DirectCast(DirectoryInfo, DirectoryInfo))
 
@@ -232,7 +232,7 @@ Public Module Filesystem
             End If
         Else
             W(DoTranslation("Directory {0} not found"), True, ColTypes.Error, DirectoryInfo.FullName)
-            Wdbg(DebugLevel.I, "IO.Directory.Exists = {0}", Directory.Exists(DirectoryInfo.FullName))
+            Wdbg(DebugLevel.I, "IO.FolderExists = {0}", FolderExists(DirectoryInfo.FullName))
         End If
     End Sub
 
@@ -252,7 +252,7 @@ Public Module Filesystem
 
         'List files and folders
         folder = NeutralizePath(folder)
-        If Directory.Exists(folder) Then
+        If FolderExists(folder) Then
             Dim enumeration As IEnumerable(Of String)
             Try
                 enumeration = Directory.EnumerateFileSystemEntries(folder)
@@ -264,10 +264,10 @@ Public Module Filesystem
             For Each Entry As String In enumeration
                 Wdbg(DebugLevel.I, "Enumerating {0}...", Entry)
                 Try
-                    If File.Exists(Entry) Then
+                    If FileExists(Entry) Then
                         Wdbg(DebugLevel.I, "Entry is a file. Adding {0} to list...", Entry)
                         FilesystemEntries.Add(New FileInfo(Entry))
-                    ElseIf Directory.Exists(Entry) Then
+                    ElseIf FolderExists(Entry) Then
                         Wdbg(DebugLevel.I, "Entry is a folder. Adding {0} to list...", Entry)
                         FilesystemEntries.Add(New DirectoryInfo(Entry))
                     End If
@@ -315,6 +315,30 @@ Public Module Filesystem
     End Function
 
     ''' <summary>
+    ''' Checks to see if the file exists. Windows 10/11 bug aware.
+    ''' </summary>
+    ''' <param name="File">Target file</param>
+    ''' <returns>True if exists; False if not. Throws on trying to trigger the Windows 10/11 BSOD/corruption bug</returns>
+    Public Function FileExists(File As String)
+#If NTFSCorruptionFix Then
+        ThrowOnInvalidPath(File)
+#End If
+        Return IO.File.Exists(File)
+    End Function
+
+    ''' <summary>
+    ''' Checks to see if the folder exists. Windows 10/11 bug aware.
+    ''' </summary>
+    ''' <param name="Folder">Target folder</param>
+    ''' <returns>True if exists; False if not. Throws on trying to trigger the Windows 10/11 BSOD/corruption bug</returns>
+    Public Function FolderExists(Folder As String)
+#If NTFSCorruptionFix Then
+        ThrowOnInvalidPath(Folder)
+#End If
+        Return Directory.Exists(Folder)
+    End Function
+
+    ''' <summary>
     ''' Simplifies the path to the correct one. It converts the path format to the unified format.
     ''' </summary>
     ''' <param name="Path">Target path, be it a file or a folder</param>
@@ -346,7 +370,7 @@ Public Module Filesystem
 
         'If strict, checks for existence of file or directory
         If Strict Then
-            If File.Exists(Path) Or Directory.Exists(Path) Then
+            If FileExists(Path) Or FolderExists(Path) Then
                 Return Path
             Else
                 Throw New FileNotFoundException(DoTranslation("Neutralized a non-existent path.") + " {0}".FormatString(Path))
@@ -391,7 +415,7 @@ Public Module Filesystem
 
         'If strict, checks for existence of file
         If Strict Then
-            If File.Exists(Path) Or Directory.Exists(Path) Then
+            If FileExists(Path) Or FolderExists(Path) Then
                 Return Path
             Else
                 Throw New FileNotFoundException(DoTranslation("Neutralized a non-existent path.") + " {0}".FormatString(Path))
@@ -420,21 +444,21 @@ Public Module Filesystem
             Wdbg(DebugLevel.I, "Target directory: {0}", Destination)
             Dim FileName As String = Path.GetFileName(Source)
             Wdbg(DebugLevel.I, "Source file name: {0}", FileName)
-            If Directory.Exists(Source) Then
+            If FolderExists(Source) Then
                 Wdbg(DebugLevel.I, "Source and destination are directories")
                 CopyDirectory(Source, Destination)
 
                 'Raise event
                 EventManager.RaiseDirectoryCopied(Source, Destination)
                 Return True
-            ElseIf File.Exists(Source) And Directory.Exists(Destination) Then
+            ElseIf FileExists(Source) And FolderExists(Destination) Then
                 Wdbg(DebugLevel.I, "Source is a file and destination is a directory")
                 File.Copy(Source, Destination + "/" + FileName, True)
 
                 'Raise event
                 EventManager.RaiseFileCopied(Source, Destination + "/" + FileName)
                 Return True
-            ElseIf File.Exists(Source) Then
+            ElseIf FileExists(Source) Then
                 Wdbg(DebugLevel.I, "Source is a file and destination is a file")
                 File.Copy(Source, Destination, True)
 
@@ -469,7 +493,7 @@ Public Module Filesystem
     ''' <param name="Destination">Target directory</param>
     ''' <param name="ShowProgress">Whether or not to show what files are being copied</param>
     Public Sub CopyDirectory(Source As String, Destination As String, ShowProgress As Boolean)
-        If Not Directory.Exists(Source) Then Throw New IOException(DoTranslation("Directory {0} not found.").FormatString(Source))
+        If Not FolderExists(Source) Then Throw New IOException(DoTranslation("Directory {0} not found.").FormatString(Source))
 
         'Get all source directories and files
         Dim SourceDirInfo As New DirectoryInfo(Source)
@@ -479,7 +503,7 @@ Public Module Filesystem
         Wdbg(DebugLevel.I, "Source files: {0}", SourceFiles.Length)
 
         'Make a destination directory if it doesn't exist
-        If Not Directory.Exists(Destination) Then
+        If Not FolderExists(Destination) Then
             Wdbg(DebugLevel.I, "Destination directory {0} doesn't exist. Creating...", Destination)
             Directory.CreateDirectory(Destination)
         End If
@@ -530,8 +554,8 @@ Public Module Filesystem
         ThrowOnInvalidPath(NewDirectory)
 #End If
         NewDirectory = NeutralizePath(NewDirectory)
-        Wdbg(DebugLevel.I, "New directory: {0} ({1})", NewDirectory, Directory.Exists(NewDirectory))
-        If Not Directory.Exists(NewDirectory) Then
+        Wdbg(DebugLevel.I, "New directory: {0} ({1})", NewDirectory, FolderExists(NewDirectory))
+        If Not FolderExists(NewDirectory) Then
             Directory.CreateDirectory(NewDirectory)
 
             'Raise event
@@ -554,8 +578,8 @@ Public Module Filesystem
         ThrowOnInvalidPath(NewFile)
 #End If
         NewFile = NeutralizePath(NewFile)
-        Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", NewFile, File.Exists(NewFile))
-        If Not File.Exists(NewFile) Then
+        Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", NewFile, FileExists(NewFile))
+        If Not FileExists(NewFile) Then
             Try
                 Dim NewFileStream As FileStream = File.Create(NewFile)
                 Wdbg(DebugLevel.I, "File created")
@@ -586,8 +610,8 @@ Public Module Filesystem
         ThrowOnInvalidPath(NewFile)
 #End If
         NewFile = NeutralizePath(NewFile)
-        Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", NewFile, File.Exists(NewFile))
-        If Not File.Exists(NewFile) Then
+        Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", NewFile, FileExists(NewFile))
+        If Not FileExists(NewFile) Then
             Try
                 Dim NewFileStream As FileStream = File.Create(NewFile)
                 Wdbg(DebugLevel.I, "File created")
@@ -629,21 +653,21 @@ Public Module Filesystem
             Wdbg(DebugLevel.I, "Target directory: {0}", Destination)
             Dim FileName As String = Path.GetFileName(Source)
             Wdbg(DebugLevel.I, "Source file name: {0}", FileName)
-            If Directory.Exists(Source) Then
+            If FolderExists(Source) Then
                 Wdbg(DebugLevel.I, "Source and destination are directories")
                 Directory.Move(Source, Destination)
 
                 'Raise event
                 EventManager.RaiseDirectoryMoved(Source, Destination)
                 Return True
-            ElseIf File.Exists(Source) And Directory.Exists(Destination) Then
+            ElseIf FileExists(Source) And FolderExists(Destination) Then
                 Wdbg(DebugLevel.I, "Source is a file and destination is a directory")
                 File.Move(Source, Destination + "/" + FileName)
 
                 'Raise event
                 EventManager.RaiseFileMoved(Source, Destination + "/" + FileName)
                 Return True
-            ElseIf File.Exists(Source) Then
+            ElseIf FileExists(Source) Then
                 Wdbg(DebugLevel.I, "Source is a file and destination is a file")
                 File.Move(Source, Destination)
 
@@ -975,7 +999,7 @@ Public Module Filesystem
         Dim ResultingPath As String
         For Each LookupPath As String In LookupPaths
             ResultingPath = NeutralizePath(FilePath, LookupPath)
-            If File.Exists(ResultingPath) Then
+            If FileExists(ResultingPath) Then
                 Result = ResultingPath
                 Return True
             End If
@@ -1038,13 +1062,18 @@ Public Module Filesystem
 
 #If NTFSCorruptionFix Then
     ''' <summary>
-    ''' Mitigates Windows 10/11 NTFS corruption or Windows 10/11 BSOD bug
+    ''' Mitigates Windows 10/11 NTFS corruption/Blue Screen of Death (BSOD) bug
     ''' </summary>
     ''' <param name="Path">Target path</param>
+    ''' <remarks>
+    ''' - When we try to access the secret NTFS bitmap path, which contains <b>$i30</b>, from the partition root path, we'll trigger the "Your disk is corrupt." <br></br>
+    ''' - When we try to access the <b>kernelconnect</b> secret device from the system partition root path, we'll trigger the BSOD. <br></br><br></br>
+    ''' This sub will try to prevent access to these paths on unpatched systems and patched systems by throwing <see cref="ArgumentException"/>
+    ''' </remarks>
     Public Sub ThrowOnInvalidPath(Path As String)
         If IsOnWindows() And (Path.Contains("$i30") Or Path.Contains("\\.\globalroot\device\condrv\kernelconnect")) Then
             Wdbg(DebugLevel.F, "Trying to access invalid path. Path was {0}", Path)
-            Throw New ArgumentException(DoTranslation("Trying to access invalid path."))
+            Throw New ArgumentException(DoTranslation("Trying to access invalid path."), NameOf(Path))
         End If
     End Sub
 #End If

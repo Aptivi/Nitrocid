@@ -130,7 +130,7 @@ Public Module UserManagement
     ''' Loads user token
     ''' </summary>
     Sub LoadUserToken()
-        If Not File.Exists(GetKernelPath(KernelPathType.Users)) Then File.Create(GetKernelPath(KernelPathType.Users)).Close()
+        If Not FileExists(GetKernelPath(KernelPathType.Users)) Then File.Create(GetKernelPath(KernelPathType.Users)).Close()
         Dim UsersTokenContent As String = File.ReadAllText(GetKernelPath(KernelPathType.Users))
         UsersToken = JArray.Parse(If(Not String.IsNullOrEmpty(UsersTokenContent), UsersTokenContent, "[]"))
     End Sub
@@ -315,7 +315,7 @@ Public Module UserManagement
     Sub InitializeSystemAccount()
         If SetRootPassword Then
             InitializeUser("root", RootPassword, True, True)
-        ElseIf File.Exists(GetKernelPath(KernelPathType.Users)) Then
+        ElseIf FileExists(GetKernelPath(KernelPathType.Users)) Then
             If GetUserProperty("root", UserProperty.Password) IsNot Nothing Then
                 InitializeUser("root", GetUserProperty("root", UserProperty.Password), False, True)
             Else

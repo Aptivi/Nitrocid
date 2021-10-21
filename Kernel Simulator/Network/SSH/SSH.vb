@@ -93,7 +93,7 @@ Public Module SSH
                     W(DoTranslation("Enter the location of the private key for {0}. Write ""q"" to finish adding keys: "), False, ColTypes.Input, Username)
                     PrivateKeyFile = Console.ReadLine()
                     PrivateKeyFile = NeutralizePath(PrivateKeyFile)
-                    If File.Exists(PrivateKeyFile) Then
+                    If FileExists(PrivateKeyFile) Then
                         'Ask for passphrase
                         W(DoTranslation("Enter the passphrase for key {0}: "), False, ColTypes.Input, PrivateKeyFile)
                         PrivateKeyPassphrase = ReadLineNoInput("*")

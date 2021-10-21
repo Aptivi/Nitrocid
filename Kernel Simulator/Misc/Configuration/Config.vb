@@ -1369,7 +1369,7 @@ Public Module Config
     ''' </summary>
     Sub InitializeConfig()
         'Make a config file if not found
-        If Not File.Exists(GetKernelPath(KernelPathType.Configuration)) Then
+        If Not FileExists(GetKernelPath(KernelPathType.Configuration)) Then
             Wdbg(DebugLevel.E, "No config file found. Creating...")
             CreateConfig()
         End If

@@ -106,7 +106,7 @@ Public Module SFTPTools
     ''' Opens speed dial prompt
     ''' </summary>
     Sub SFTPQuickConnect()
-        If File.Exists(GetKernelPath(KernelPathType.SFTPSpeedDial)) Then
+        If FileExists(GetKernelPath(KernelPathType.SFTPSpeedDial)) Then
             Dim SpeedDialLines As Dictionary(Of String, JToken) = ListSpeedDialEntries(SpeedDialType.SFTP)
             Wdbg(DebugLevel.I, "Speed dial length: {0}", SpeedDialLines.Count)
             Dim Answer As String

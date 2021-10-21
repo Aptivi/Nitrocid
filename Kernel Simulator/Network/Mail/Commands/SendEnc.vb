@@ -61,7 +61,7 @@ Class Mail_SendEncCommand
                 If Not PathLine = "" Then
                     PathLine = NeutralizePath(PathLine)
                     Wdbg(DebugLevel.I, "Path line: {0} ({1} chars)", PathLine, PathLine.Length)
-                    If File.Exists(PathLine) Then
+                    If FileExists(PathLine) Then
                         Body.Attachments.Add(PathLine)
                     End If
                 End If

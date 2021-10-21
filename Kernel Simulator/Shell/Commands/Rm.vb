@@ -25,10 +25,10 @@ Class RmCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         For Each Path As String In ListArgs
             Dim NeutPath As String = NeutralizePath(Path)
-            If File.Exists(NeutPath) Then
+            If FileExists(NeutPath) Then
                 Wdbg(DebugLevel.I, "{0} is a file. Removing...", Path)
                 RemoveFile(Path)
-            ElseIf Directory.Exists(NeutPath) Then
+            ElseIf FolderExists(NeutPath) Then
                 Wdbg(DebugLevel.I, "{0} is a folder. Removing...", Path)
                 RemoveDirectory(Path)
             Else

@@ -25,9 +25,9 @@ Class DirInfoCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         For Each Dir As String In ListArgs
             Dim DirectoryPath As String = NeutralizePath(Dir)
-            Wdbg(DebugLevel.I, "Neutralized directory path: {0} ({1})", DirectoryPath, Directory.Exists(DirectoryPath))
+            Wdbg(DebugLevel.I, "Neutralized directory path: {0} ({1})", DirectoryPath, FolderExists(DirectoryPath))
             WriteSeparator(Dir, True)
-            If Directory.Exists(DirectoryPath) Then
+            If FolderExists(DirectoryPath) Then
                 Dim DirInfo As New DirectoryInfo(DirectoryPath)
                 W(DoTranslation("Name: {0}"), True, ColTypes.Neutral, DirInfo.Name)
                 W(DoTranslation("Full name: {0}"), True, ColTypes.Neutral, NeutralizePath(DirInfo.FullName))

@@ -39,7 +39,7 @@ Public Module HashVerifier
         HashesFile = NeutralizePath(HashesFile)
         Wdbg(DebugLevel.I, "File name: {0}", FileName)
         Wdbg(DebugLevel.I, "Hashes file name: {0}", HashesFile)
-        If File.Exists(FileName) Then
+        If FileExists(FileName) Then
             Wdbg(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString)
             Select Case HashType
                 Case Algorithms.SHA512
@@ -59,7 +59,7 @@ Public Module HashVerifier
             End Select
 
             'Verify the hash
-            If File.Exists(HashesFile) Then
+            If FileExists(HashesFile) Then
                 Dim HashStream As New StreamReader(HashesFile)
                 Wdbg(DebugLevel.I, "Stream length: {0}", HashStream.BaseStream.Length)
                 Do While Not HashStream.EndOfStream
@@ -122,7 +122,7 @@ Public Module HashVerifier
         ExpectedHash = ExpectedHash.ToUpper
         ActualHash = ActualHash.ToUpper
         Wdbg(DebugLevel.I, "File name: {0}", FileName)
-        If File.Exists(FileName) Then
+        If FileExists(FileName) Then
             Wdbg(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString)
             Select Case HashType
                 Case Algorithms.SHA512
@@ -180,7 +180,7 @@ Public Module HashVerifier
         HashesFile = NeutralizePath(HashesFile)
         Wdbg(DebugLevel.I, "File name: {0}", FileName)
         Wdbg(DebugLevel.I, "Hashes file name: {0}", HashesFile)
-        If File.Exists(FileName) Then
+        If FileExists(FileName) Then
             Wdbg(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString)
             Select Case HashType
                 Case Algorithms.SHA512
@@ -200,7 +200,7 @@ Public Module HashVerifier
             End Select
 
             'Verify the hash
-            If File.Exists(HashesFile) Then
+            If FileExists(HashesFile) Then
                 Dim HashStream As New StreamReader(HashesFile)
                 Wdbg(DebugLevel.I, "Stream length: {0}", HashStream.BaseStream.Length)
                 Do While Not HashStream.EndOfStream
@@ -261,7 +261,7 @@ Public Module HashVerifier
         FileName = NeutralizePath(FileName)
         ExpectedHash = ExpectedHash.ToUpper
         Wdbg(DebugLevel.I, "File name: {0}", FileName)
-        If File.Exists(FileName) Then
+        If FileExists(FileName) Then
             Wdbg(DebugLevel.I, "Hash type: {0} ({1})", HashType, HashType.ToString)
             Select Case HashType
                 Case Algorithms.SHA512

@@ -25,7 +25,7 @@ Class SetThemesCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If ColoredShell Then
             Dim ThemePath As String = NeutralizePath(ListArgs(0))
-            If File.Exists(ThemePath) Then
+            If FileExists(ThemePath) Then
                 ApplyThemeFromFile(ThemePath)
             Else
                 ApplyThemeFromResources(ListArgs(0))

@@ -25,9 +25,9 @@ Class FileInfoCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         For Each FileName As String In ListArgs
             Dim FilePath As String = NeutralizePath(FileName)
-            Wdbg(DebugLevel.I, "Neutralized file path: {0} ({1})", FilePath, File.Exists(FilePath))
+            Wdbg(DebugLevel.I, "Neutralized file path: {0} ({1})", FilePath, FileExists(FilePath))
             WriteSeparator(FileName, True)
-            If File.Exists(FilePath) Then
+            If FileExists(FilePath) Then
                 Dim FileInfo As New FileInfo(FilePath)
                 W(DoTranslation("Name: {0}"), True, ColTypes.Neutral, FileInfo.Name)
                 W(DoTranslation("Full name: {0}"), True, ColTypes.Neutral, NeutralizePath(FileInfo.FullName))

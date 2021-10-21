@@ -25,7 +25,7 @@ Class VerifyCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Try
             Dim HashFile As String = NeutralizePath(ListArgs(2))
-            If File.Exists(HashFile) Then
+            If FileExists(HashFile) Then
                 If VerifyHashFromHashesFile(ListArgs(3), [Enum].Parse(GetType(Algorithms), ListArgs(0)), ListArgs(2), ListArgs(1)) Then
                     W(DoTranslation("Hashes match."), True, ColTypes.Neutral)
                 Else

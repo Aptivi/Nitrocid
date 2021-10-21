@@ -30,7 +30,7 @@ Module PageParser
     ''' <param name="ManualFile">A manual file path (neutralized)</param>
     Public Sub InitMan(ManualFile As String)
         ManualFile = NeutralizePath(ManualFile)
-        If File.Exists(ManualFile) Then
+        If FileExists(ManualFile) Then
             'File found, but we need to verify that we're actually dealing with the manual page
             If Path.GetExtension(ManualFile) = ".man" Then
                 'We found the manual, but we need to check its contents.

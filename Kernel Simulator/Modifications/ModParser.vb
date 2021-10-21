@@ -78,7 +78,7 @@ Public Module ModParser
                 'Add reference
                 If LocationCheckRequired Then
                     'Check to see if the reference file exists
-                    If Not File.Exists(Reference) Then
+                    If Not FileExists(Reference) Then
                         Wdbg(DebugLevel.E, "File {0} not found to reference.", Reference)
                         W(DoTranslation("Referenced file {0} not found. This mod might not work properly without this file."), True, ColTypes.Warning, Reference)
                     Else
@@ -402,7 +402,7 @@ Public Module ModParser
 
                 'Check for accompanying manual pages for mods
                 Dim ModManualPath As String = NeutralizePath(modFile + ".manual", ModPath)
-                If Directory.Exists(ModManualPath) Then
+                If FolderExists(ModManualPath) Then
                     Wdbg(DebugLevel.I, "Found manual page collection in {0}", ModManualPath)
                     For Each ModManualFile As String In Directory.EnumerateFiles(ModManualPath, "*.man", SearchOption.AllDirectories)
                         InitMan(ModManualFile)

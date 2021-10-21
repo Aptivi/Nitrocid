@@ -27,7 +27,7 @@ Class JsonBeautifyCommand
         Dim JsonOutputFile As String
         Dim BeautifiedJson As String
 
-        If File.Exists(JsonFile) Then
+        If FileExists(JsonFile) Then
             'Beautify the JSON and display it on screen
             BeautifiedJson = BeautifyJson(JsonFile)
             W(BeautifiedJson, True, ColTypes.Neutral)

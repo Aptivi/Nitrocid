@@ -34,7 +34,7 @@ Class ModManCommand
                     If ListArgsOnly.Length > 1 Then
                         TargetMod = ListArgsOnly(1)
                         TargetModPath = NeutralizePath(TargetMod, GetKernelPath(KernelPathType.Mods))
-                        If Not (TryParsePath(TargetModPath) AndAlso File.Exists(TargetModPath)) Then
+                        If Not (TryParsePath(TargetModPath) AndAlso FileExists(TargetModPath)) Then
                             W(DoTranslation("Mod not found or file has invalid characters."), True, ColTypes.Error)
                             Exit Sub
                         End If

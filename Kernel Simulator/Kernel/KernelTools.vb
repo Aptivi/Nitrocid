@@ -520,7 +520,7 @@ Public Module KernelTools
     ''' </summary>
     Sub FactoryReset()
         For Each PathName As String In KernelPaths.Keys
-            If File.Exists(KernelPaths(PathName)) Then
+            If FileExists(KernelPaths(PathName)) Then
                 File.Delete(KernelPaths(PathName))
             Else
                 Directory.Delete(KernelPaths(PathName), True)

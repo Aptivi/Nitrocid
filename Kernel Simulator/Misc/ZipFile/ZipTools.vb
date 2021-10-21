@@ -166,7 +166,7 @@ Public Module ZipTools
     ''' <param name="Target">Target directory</param>
     Public Function ChangeWorkingZipLocalDirectory(Target As String) As Boolean
         If String.IsNullOrWhiteSpace(Target) Then Target = ZipShell_CurrentDirectory
-        If Directory.Exists(NeutralizePath(Target, ZipShell_CurrentDirectory)) Then
+        If FolderExists(NeutralizePath(Target, ZipShell_CurrentDirectory)) Then
             Wdbg(DebugLevel.I, "{0} found. Changing...", Target)
             ZipShell_CurrentDirectory = Target
             Return True

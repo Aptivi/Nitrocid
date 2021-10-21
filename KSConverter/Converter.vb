@@ -61,8 +61,8 @@ Module Converter
             'Make backup directory
             WriteSeparator("[1/7] Making backup directory", True, ColTypes.Stage)
             Debug.WriteLine($"Backup directory: {GetHomeDirectory() + "/KSBackup"}")
-            Debug.WriteLine($"Directory.Exists = {Directory.Exists(GetHomeDirectory() + "/KSBackup")}")
-            If Not Directory.Exists(GetHomeDirectory() + "/KSBackup") Then
+            Debug.WriteLine($"FolderExists = {FolderExists(GetHomeDirectory() + "/KSBackup")}")
+            If Not FolderExists(GetHomeDirectory() + "/KSBackup") Then
                 'Just make it!
                 W("  - Backup directory not found. Creating directory...", True, ColTypes.Progress)
                 Debug.WriteLine("Creating directory...")
@@ -78,14 +78,14 @@ Module Converter
             WriteSeparator("[2/7] Making backup of old configuration files", True, ColTypes.Stage)
             For Each ConfigEntry As String In ListOfOldPaths.Keys
                 Debug.WriteLine($"Old path config entry: {ConfigEntry}")
-                Debug.WriteLine($"Old path exists: {File.Exists(ListOfOldPaths(ConfigEntry))}")
-                Debug.WriteLine($"Backup exists: {File.Exists(ListOfBackups(ConfigEntry))}")
-                If File.Exists(ListOfOldPaths(ConfigEntry)) And Not File.Exists(ListOfBackups(ConfigEntry)) Then
+                Debug.WriteLine($"Old path exists: {FileExists(ListOfOldPaths(ConfigEntry))}")
+                Debug.WriteLine($"Backup exists: {FileExists(ListOfBackups(ConfigEntry))}")
+                If FileExists(ListOfOldPaths(ConfigEntry)) And Not FileExists(ListOfBackups(ConfigEntry)) Then
                     'Move the old config file to backup
                     Debug.WriteLine($"Moving {ConfigEntry} from {ListOfOldPaths(ConfigEntry)} to {ListOfBackups(ConfigEntry)}...")
                     W("  - {0}: {1} -> {2}", True, ColTypes.Neutral, ConfigEntry, ListOfOldPaths(ConfigEntry), ListOfBackups(ConfigEntry))
                     File.Move(ListOfOldPaths(ConfigEntry), ListOfBackups(ConfigEntry))
-                ElseIf File.Exists(ListOfBackups(ConfigEntry)) Then
+                ElseIf FileExists(ListOfBackups(ConfigEntry)) Then
                     Debug.WriteLine("We already have backup!")
                     W("  - Warning: {0} already exists", True, ColTypes.Warning, ListOfBackups(ConfigEntry))
                 Else
@@ -98,8 +98,8 @@ Module Converter
 
             'Import all blocked devices to DebugDeviceNames.json
             WriteSeparator("[3/7] Importing all blocked devices to DebugDeviceNames.json", True, ColTypes.Stage)
-            Debug.WriteLine($"Blocked device backup exists = {File.Exists(ListOfBackups("BlockedDevices"))}")
-            If File.Exists(ListOfBackups("BlockedDevices")) Then
+            Debug.WriteLine($"Blocked device backup exists = {FileExists(ListOfBackups("BlockedDevices"))}")
+            If FileExists(ListOfBackups("BlockedDevices")) Then
                 'Read blocked devices from old file
                 W("  - Reading blocked devices from blocked_devices.csv...", True, ColTypes.Progress)
                 Debug.WriteLine($"Calling File.ReadAllLines on {ListOfBackups("BlockedDevices")}...")
@@ -124,8 +124,8 @@ Module Converter
 
             'Import all FTP speed dial settings to JSON
             WriteSeparator("[4/7] Importing all FTP speed dial addresses to FTP_SpeedDial.json", True, ColTypes.Stage)
-            Debug.WriteLine($"Speed dial addresses exists = {File.Exists(ListOfBackups("FTPSpeedDial"))}")
-            If File.Exists(ListOfBackups("FTPSpeedDial")) Then
+            Debug.WriteLine($"Speed dial addresses exists = {FileExists(ListOfBackups("FTPSpeedDial"))}")
+            If FileExists(ListOfBackups("FTPSpeedDial")) Then
                 'Read FTP speed dial addresses from old file
                 W("  - Reading FTP speed dial addresses from ftp_speeddial.csv...", True, ColTypes.Progress)
                 Debug.WriteLine($"Calling File.ReadAllLines on {ListOfBackups("FTPSpeedDial")}...")
@@ -160,8 +160,8 @@ Module Converter
 
             'Import all users to JSON
             WriteSeparator("[5/7] Importing all users to Users.json", True, ColTypes.Stage)
-            Debug.WriteLine($"Users file exists = {File.Exists(ListOfBackups("Users"))}")
-            If File.Exists(ListOfBackups("Users")) Then
+            Debug.WriteLine($"Users file exists = {FileExists(ListOfBackups("Users"))}")
+            If FileExists(ListOfBackups("Users")) Then
                 'Read all users from old file
                 W("  - Reading users from users.csv...", True, ColTypes.Progress)
                 Debug.WriteLine($"Calling File.ReadAllLines on {ListOfBackups("Users")}...")
@@ -211,8 +211,8 @@ Module Converter
 
             'Import all aliases to JSON
             WriteSeparator("[6/7] Importing all aliases to Aliases.json", True, ColTypes.Stage)
-            Debug.WriteLine($"Aliases file exists = {File.Exists(ListOfBackups("Aliases"))}")
-            If File.Exists(ListOfBackups("Aliases")) Then
+            Debug.WriteLine($"Aliases file exists = {FileExists(ListOfBackups("Aliases"))}")
+            If FileExists(ListOfBackups("Aliases")) Then
                 'Read all aliases from old file
                 W("  - Reading users from aliases.csv...", True, ColTypes.Progress)
                 Debug.WriteLine($"Calling File.ReadAllLines on {ListOfBackups("Aliases")}...")
@@ -278,8 +278,8 @@ Module Converter
 
             'Import all config to JSON
             WriteSeparator("[7/7] Importing all kernel config to KernelConfig.json", True, ColTypes.Stage)
-            Debug.WriteLine($"Config file exists = {File.Exists(ListOfBackups("Configuration"))}")
-            If File.Exists(ListOfBackups("Configuration")) Then
+            Debug.WriteLine($"Config file exists = {FileExists(ListOfBackups("Configuration"))}")
+            If FileExists(ListOfBackups("Configuration")) Then
                 'Read all config from old file
                 W("  - Reading config from kernelConfig.ini...", True, ColTypes.Progress)
                 Debug.WriteLine("Reading configuration...")

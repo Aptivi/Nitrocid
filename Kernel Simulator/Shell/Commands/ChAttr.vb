@@ -25,7 +25,7 @@ Class ChAttrCommand
     'Warning: Don't use ListSwitchesOnly to replace ListArgs(1); the removal signs of ChAttr are treated as switches and will cause unexpected behavior if changed.
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim NeutralizedFilePath As String = NeutralizePath(ListArgs(0))
-        If File.Exists(NeutralizedFilePath) Then
+        If FileExists(NeutralizedFilePath) Then
             If ListArgs(1).EndsWith("Normal") Or ListArgs(1).EndsWith("ReadOnly") Or ListArgs(1).EndsWith("Hidden") Or ListArgs(1).EndsWith("Archive") Then
                 If ListArgs(1).StartsWith("+") Then
                     Dim Attrib As FileAttributes = [Enum].Parse(GetType(FileAttributes), ListArgs(1).Remove(0, 1))

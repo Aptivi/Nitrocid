@@ -244,7 +244,7 @@ Public Module FTPTools
     ''' Opens speed dial prompt
     ''' </summary>
     Sub QuickConnect()
-        If File.Exists(GetKernelPath(KernelPathType.FTPSpeedDial)) Then
+        If FileExists(GetKernelPath(KernelPathType.FTPSpeedDial)) Then
             Dim SpeedDialLines As Dictionary(Of String, JToken) = ListSpeedDialEntries(SpeedDialType.FTP)
             Wdbg(DebugLevel.I, "Speed dial length: {0}", SpeedDialLines.Count)
             Dim Answer As String

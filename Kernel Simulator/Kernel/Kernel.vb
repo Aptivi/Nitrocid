@@ -65,7 +65,7 @@ Public Module Kernel
 #If SPECIFIER <> "DEV" And SPECIFIER <> "RC" Then
                 NotifyDebugDownloadNetworkUnavailable = Not NetworkAvailable
                 If NetworkAvailable Then
-                    If Not File.Exists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
+                    If Not FileExists(GetExecutingAssembly.Location.Replace(".exe", ".pdb")) Then
                         Dim pdbdown As New WebClient
                         Try
                             pdbdown.DownloadFile($"https://github.com/EoflaOE/Kernel-Simulator/raw/archive/dbgsyms/{KernelVersion}.pdb", GetExecutingAssembly.Location.Replace(".exe", ".pdb"))
@@ -94,8 +94,8 @@ Public Module Kernel
                 StartRPC()
 
                 'If the two files are not found, create two MOTD files with current config.
-                If Not File.Exists(GetKernelPath(KernelPathType.MOTD)) Then SetMOTD(DoTranslation("Welcome to Kernel!"), MessageType.MOTD)
-                If Not File.Exists(GetKernelPath(KernelPathType.MAL)) Then SetMOTD(DoTranslation("Logged in successfully as <user>"), MessageType.MAL)
+                If Not FileExists(GetKernelPath(KernelPathType.MOTD)) Then SetMOTD(DoTranslation("Welcome to Kernel!"), MessageType.MOTD)
+                If Not FileExists(GetKernelPath(KernelPathType.MAL)) Then SetMOTD(DoTranslation("Logged in successfully as <user>"), MessageType.MAL)
 
                 'Check for kernel updates
 #If SPECIFIER <> "DEV" And SPECIFIER <> "RC" Then

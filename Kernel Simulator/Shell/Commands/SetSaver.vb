@@ -29,7 +29,7 @@ Class SetSaverCommand
             SetDefaultScreensaver(StringArgs)
             W(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, StringArgs)
         Else
-            If File.Exists($"{modPath}{StringArgs}") And Not SafeMode Then
+            If FileExists($"{modPath}{StringArgs}") And Not SafeMode Then
                 SetDefaultScreensaver(StringArgs)
                 W(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, StringArgs)
             Else

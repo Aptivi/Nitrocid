@@ -341,7 +341,7 @@ Public Module Shell
                             StartCommandThread.Join()
                         End If
                     ElseIf TryParsePath(TargetFile) Then
-                        If File.Exists(TargetFile) And Not TargetFile.EndsWith(".uesh") Then
+                        If FileExists(TargetFile) And Not TargetFile.EndsWith(".uesh") Then
                             Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because file is found.", strcommand)
                             Try
                                 'Create a new instance of process
@@ -382,7 +382,7 @@ Public Module Shell
                                 W(DoTranslation("Failed to start ""{0}"": {1}"), True, ColTypes.Error, strcommand, ex.Message)
                                 WStkTrc(ex)
                             End Try
-                        ElseIf File.Exists(TargetFile) And TargetFile.EndsWith(".uesh") Then
+                        ElseIf FileExists(TargetFile) And TargetFile.EndsWith(".uesh") Then
                             Wdbg(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", strcommand)
                             Execute(TargetFile, scriptArgs.Join(" "))
                         Else

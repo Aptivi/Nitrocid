@@ -30,7 +30,7 @@ Class SumFilesCommand
         If Not ListArgs.Length < 3 Then
             out = NeutralizePath(ListArgs(2))
         End If
-        If Directory.Exists(folder) Then
+        If FolderExists(folder) Then
             For Each file As String In Directory.EnumerateFiles(folder, "*", SearchOption.TopDirectoryOnly)
                 file = NeutralizePath(file)
                 WriteSeparator(file, True)

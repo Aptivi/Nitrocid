@@ -152,7 +152,7 @@ Module SFTPFilesystem
 #End If
 
             'Check if folder exists
-            If IO.Directory.Exists(targetDir) Then
+            If FolderExists(targetDir) Then
                 'Parse written directory
                 Dim parser As New IO.DirectoryInfo(targetDir)
                 SFTPCurrDirect = parser.FullName

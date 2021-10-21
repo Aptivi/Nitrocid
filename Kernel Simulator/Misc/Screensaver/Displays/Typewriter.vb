@@ -48,7 +48,7 @@ Module TypewriterDisplay
                 Exit Do
             Else
                 'Typewriter can also deal with files written on the field that is used for storing text, so check to see if the path exists.
-                If TryParsePath(TypewriterWrite) AndAlso File.Exists(TypewriterWrite) Then
+                If TryParsePath(TypewriterWrite) AndAlso FileExists(TypewriterWrite) Then
                     'File found! Now, write the contents of it to the local variable that stores the actual written text.
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", TypewriterWrite)
                     TypeWrite = File.ReadAllText(TypewriterWrite)

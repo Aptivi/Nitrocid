@@ -36,7 +36,7 @@ Public Module ModManager
         Wdbg(DebugLevel.I, "Safe mode: {0}", SafeMode)
         If Not SafeMode Then
             'We're not in safe mode. We're good now.
-            If Not Directory.Exists(ModPath) Then Directory.CreateDirectory(ModPath)
+            If Not FolderExists(ModPath) Then Directory.CreateDirectory(ModPath)
             Dim count As Integer = Directory.EnumerateFiles(ModPath).Count
             Wdbg(DebugLevel.I, "Files count: {0}", count)
 
@@ -74,7 +74,7 @@ Public Module ModManager
         Wdbg(DebugLevel.I, "Mod file path: {0}", ModFilename)
 
         If Not SafeMode Then
-            If File.Exists(ModFilename) Then
+            If FileExists(ModFilename) Then
                 Wdbg(DebugLevel.I, "Mod file exists! Starting...")
                 If Not HasModStarted(ModFilename) Then
                     If Not GetBlacklistedMods.Contains(ModFilename) Then
@@ -103,7 +103,7 @@ Public Module ModManager
         Wdbg(DebugLevel.I, "Safe mode: {0}", SafeMode)
         If Not SafeMode Then
             'We're not in safe mode. We're good now.
-            If Not Directory.Exists(ModPath) Then Directory.CreateDirectory(ModPath)
+            If Not FolderExists(ModPath) Then Directory.CreateDirectory(ModPath)
             Dim count As Integer = Directory.EnumerateFiles(ModPath).Count
             Wdbg(DebugLevel.I, "Files count: {0}", count)
 
@@ -193,7 +193,7 @@ Public Module ModManager
         Wdbg(DebugLevel.I, "Mod file path: {0}", ModFilename)
 
         If Not SafeMode Then
-            If File.Exists(ModFilename) Then
+            If FileExists(ModFilename) Then
                 'Determine if we're dealing with screensaver
                 If Path.GetExtension(ModFilename) = ".ss." Then
                     Wdbg(DebugLevel.I, "Target mod is a screensaver.")
@@ -403,7 +403,7 @@ Public Module ModManager
         Wdbg(DebugLevel.I, "Installing mod {0} to {1}...", ModPath, TargetModPath)
 
         'Check for upgrade
-        If File.Exists(TargetModPath) Then
+        If FileExists(TargetModPath) Then
             W(DoTranslation("Trying to install an already-installed mod. Updating mod..."), True, ColTypes.Warning)
             StopMod(Path.GetFileName(TargetModPath))
         End If
@@ -443,7 +443,7 @@ Public Module ModManager
             File.Copy(ModPath, TargetModPath, True)
 
             'Check for the manual pages
-            If Directory.Exists(ModPath + ".manual") Then
+            If FolderExists(ModPath + ".manual") Then
                 Wdbg(DebugLevel.I, "Found manual page directory. {0}.manual exists. Installing manual pages...", ModPath)
                 Directory.CreateDirectory(TargetModPath + ".manual")
                 For Each ModManualFile As String In Directory.EnumerateFiles(ModPath + ".manual", "*.man", SearchOption.AllDirectories)
@@ -480,7 +480,7 @@ Public Module ModManager
             File.Delete(TargetModPath)
 
             'Finally, check for the manual pages and remove them
-            If Directory.Exists(ModPath + ".manual") Then
+            If FolderExists(ModPath + ".manual") Then
                 Wdbg(DebugLevel.I, "Found manual page directory. {0}.manual exists. Removing manual pages...", ModPath)
                 For Each ModManualFile As String In Directory.EnumerateFiles(ModPath + ".manual", "*.man", SearchOption.AllDirectories)
                     Dim ManualFileName As String = Path.GetFileNameWithoutExtension(ModManualFile)
