@@ -49,12 +49,11 @@ Public Module RemoteDebugTools
             If Found Then
                 Exit Sub
             Else
-                If IPAddr = DebugDevices.Values(i) Then
-                    Wdbg(DebugLevel.I, "Debug device {0} disconnected.", DebugDevices.Values(i))
+                If IPAddr = DebugDevices(i).ClientIP Then
+                    Wdbg(DebugLevel.I, "Debug device {0} disconnected.", DebugDevices(i).ClientIP)
                     Found = True
-                    DebugDevices.Keys(i).Disconnect(True)
-                    DebugConnections.Remove(DebugConnections.Keys(i))
-                    DebugDevices.Remove(DebugDevices.Keys(i))
+                    DebugDevices(i).ClientSocket.Disconnect(True)
+                    DebugDevices.RemoveAt(i)
                     EventManager.RaiseRemoteDebugConnectionDisconnected(IPAddr)
                 End If
             End If

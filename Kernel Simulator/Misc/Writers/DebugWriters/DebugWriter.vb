@@ -60,11 +60,11 @@ Public Module DebugWriter
             If Source IsNot Nothing And Not LineNum = 0 Then
                 'Debug to file and all connected debug devices (raw mode)
                 DebugWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
-                For i As Integer = 0 To DebugConnections.Count - 1
+                For i As Integer = 0 To DebugDevices.Count - 1
                     Try
-                        DebugConnections.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
+                        DebugDevices(i).ClientStreamWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
                     Catch ex As Exception
-                        OffendingIndex.Add(GetSWIndex(DebugConnections.Keys(i)))
+                        OffendingIndex.Add(i)
                         WStkTrc(ex)
                     End Try
                 Next
@@ -73,11 +73,11 @@ Public Module DebugWriter
 #End If
             Else 'Rare case, unless debug symbol is not found on archives.
                 DebugWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
-                For i As Integer = 0 To DebugConnections.Count - 1
+                For i As Integer = 0 To DebugDevices.Count - 1
                     Try
-                        DebugConnections.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
+                        DebugDevices(i).ClientStreamWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
                     Catch ex As Exception
-                        OffendingIndex.Add(GetSWIndex(DebugConnections.Keys(i)))
+                        OffendingIndex.Add(i)
                         WStkTrc(ex)
                     End Try
                 Next
@@ -89,11 +89,10 @@ Public Module DebugWriter
             'Disconnect offending clients who are disconnected
             For Each i As Integer In OffendingIndex
                 If i <> -1 Then
-                    DebugDevices.Keys(i).Disconnect(True)
-                    EventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices.Values(i))
-                    Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", DebugConnections.Values(i), DebugDevices.Values(i))
-                    DebugConnections.Remove(DebugConnections.Keys(i))
-                    DebugDevices.Remove(DebugDevices.Keys(i))
+                    DebugDevices(i).ClientSocket.Disconnect(True)
+                    EventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices(i).ClientIP)
+                    Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", DebugDevices(i).ClientName, DebugDevices(i).ClientIP)
+                    DebugDevices.RemoveAt(i)
                 End If
             Next
             OffendingIndex.Clear()
@@ -119,12 +118,12 @@ Public Module DebugWriter
         If DebugMode Then
             Dim OffendingIndex As New List(Of String)
 
-            'For contributors who are testing new code: Uncomment the two Debug.WriteLine lines for immediate debugging (Immediate Window)
-            For i As Integer = 0 To DebugConnections.Count - 1
+            'For contributors who are testing new code: Define ENABLEIMMEDIATEWINDOWDEBUG for immediate debugging (Immediate Window)
+            For i As Integer = 0 To DebugDevices.Count - 1
                 Try
-                    DebugConnections.Keys(i).WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
+                    DebugDevices(i).ClientStreamWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
                 Catch ex As Exception
-                    OffendingIndex.Add(GetSWIndex(DebugConnections.Keys(i)))
+                    OffendingIndex.Add(i)
                     WStkTrc(ex)
                 End Try
             Next
@@ -135,11 +134,10 @@ Public Module DebugWriter
             'Disconnect offending clients who are disconnected
             For Each i As Integer In OffendingIndex
                 If i <> -1 Then
-                    DebugDevices.Keys(i).Disconnect(True)
-                    EventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices.Values(i))
-                    Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", DebugConnections.Values(i), DebugDevices.Values(i))
-                    DebugConnections.Remove(DebugConnections.Keys(i))
-                    DebugDevices.Remove(DebugDevices.Keys(i))
+                    DebugDevices(i).ClientSocket.Disconnect(True)
+                    EventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices(i).ClientIP)
+                    Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", DebugDevices(i).ClientName, DebugDevices(i).ClientIP)
+                    DebugDevices.RemoveAt(i)
                 End If
             Next
             OffendingIndex.Clear()

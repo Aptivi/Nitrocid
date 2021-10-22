@@ -21,8 +21,9 @@ Class LsDbgDevCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        For Each DebugDevice As String In DebugDevices.Values
-            W($"- {DebugDevice}", True, ColTypes.ListEntry)
+        For Each DebugDevice As RemoteDebugDevice In DebugDevices
+            W($"- {DebugDevice.ClientIP}: ", False, ColTypes.ListEntry)
+            W(DebugDevice.ClientName, True, ColTypes.ListValue)
         Next
     End Sub
 

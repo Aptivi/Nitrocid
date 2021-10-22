@@ -390,6 +390,7 @@
     <Compile Include="Network\RemoteDebug\Commands\Username.vb" />
     <Compile Include="Network\RemoteDebug\Interface\IRemoteDebugCommand.vb" />
     <Compile Include="Network\RemoteDebug\Interface\RemoteDebugCommandExecutor.vb" />
+    <Compile Include="Network\RemoteDebug\RemoteDebugDevice.vb" />
     <Compile Include="Network\RSS\Commands\ArticleInfo.vb" />
     <Compile Include="Network\RSS\Commands\ChFeed.vb" />
     <Compile Include="Network\RSS\Commands\Exit.vb" />

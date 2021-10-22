@@ -25,13 +25,13 @@ Public Module RemoteDebugger
     Public DebugPort As Integer = 3014
     Public RDebugClient As Socket
     Public DebugTCP As TcpListener
-    Public DebugDevices As New Dictionary(Of Socket, String)
-    Public DebugConnections As New Dictionary(Of StreamWriter, String)
+    Public DebugDevices As New List(Of RemoteDebugDevice)
     Public RDebugThread As New Thread(AddressOf StartRDebugger) With {.IsBackground = True, .Name = "Remote Debug Thread"}
     Public RDebugBlocked As New List(Of String) 'Blocked IP addresses
     Public RDebugStopping As Boolean
     Public RDebugAutoStart As Boolean = True
     Public RDebugMessageFormat As String = ""
+    Private ReadOnly RDebugVersion As String = "0.7.0"
 
     ''' <summary>
     ''' Whether to start or stop the remote debugger
@@ -72,39 +72,57 @@ Public Module RemoteDebugger
         RStream.Start()
         W(DoTranslation("Debug listening on all addresses using port {0}."), True, ColTypes.Neutral, DebugPort)
 
+        'Run forever! Until the remote debugger is stopping.
         While Not RDebugStopping
             Thread.Sleep(1)
             Try
+                'Variables
                 Dim RDebugStream As NetworkStream
                 Dim RDebugSWriter As StreamWriter
                 Dim RDebugClient As Socket
                 Dim RDebugIP As String
                 Dim RDebugEndpoint As String
                 Dim RDebugName As String
+                Dim RDebugInstance As RemoteDebugDevice
+
+                'Check for pending connections
                 If DebugTCP.Pending Then
+                    'Populate the device variables with the information
                     RDebugClient = DebugTCP.AcceptSocket
                     RDebugStream = New NetworkStream(RDebugClient)
-                    RDebugSWriter = New StreamWriter(RDebugStream) With {.AutoFlush = True}
+
+                    'Add the device to JSON
                     RDebugEndpoint = RDebugClient.RemoteEndPoint.ToString
                     RDebugIP = RDebugEndpoint.Remove(RDebugClient.RemoteEndPoint.ToString.IndexOf(":"))
                     AddDeviceToJson(RDebugIP, False)
+
+                    'Get the remaining properties
                     RDebugName = GetDeviceProperty(RDebugIP, DeviceProperty.Name)
+                    RDebugInstance = New RemoteDebugDevice(RDebugClient, RDebugStream, RDebugIP, RDebugName)
+                    RDebugSWriter = RDebugInstance.ClientStreamWriter
+
+                    'Check the name
                     If String.IsNullOrEmpty(RDebugName) Then
                         Wdbg(DebugLevel.W, "Debug device {0} has no name. Prompting for name...", RDebugIP)
                     End If
+
+                    'Check to see if the device is blocked
                     If RDebugBlocked.Contains(RDebugIP) Then
+                        'Blocked! Disconnect it.
                         Wdbg(DebugLevel.W, "Debug device {0} ({1}) tried to join remote debug, but blocked.", RDebugName, RDebugIP)
                         RDebugClient.Disconnect(True)
                     Else
-                        DebugConnections.Add(RDebugSWriter, RDebugName)
-                        DebugDevices.Add(RDebugClient, RDebugIP)
-                        RDebugSWriter.WriteLine(DoTranslation(">> Remote Debug and Chat: version") + " 0.6.3") 'Increment each minor/major change(s)
+                        'Not blocked yet. Add the connection.
+                        DebugDevices.Add(RDebugInstance)
+                        RDebugSWriter.WriteLine(DoTranslation(">> Remote Debug and Chat: version") + " {0}", RDebugVersion)
                         RDebugSWriter.WriteLine(DoTranslation(">> Your address is {0}."), RDebugIP)
                         If String.IsNullOrEmpty(RDebugName) Then
                             RDebugSWriter.WriteLine(DoTranslation(">> Welcome! This is your first time entering remote debug and chat. Use ""/register <name>"" to register.") + " ", RDebugName)
                         Else
                             RDebugSWriter.WriteLine(DoTranslation(">> Your name is {0}."), RDebugName)
                         End If
+
+                        'Acknowledge the debugger
                         Wdbg(DebugLevel.I, "Debug device ""{0}"" ({1}) connected.", RDebugName, RDebugIP)
                         RDebugSWriter.Flush()
                         EventManager.RaiseRemoteDebugConnectionAccepted(RDebugIP)
@@ -120,7 +138,7 @@ Public Module RemoteDebugger
 
         RDebugStopping = False
         DebugTCP.Stop()
-        DebugConnections.Clear()
+        DebugDevices.Clear()
         Thread.CurrentThread.Abort()
     End Sub
 
@@ -134,40 +152,64 @@ Public Module RemoteDebugger
             If i > DebugDevices.Count - 1 Then
                 i = 0
             Else
-                Dim buff(65536) As Byte
-                Dim streamnet As New NetworkStream(DebugDevices.Keys(i))
-                Dim ip As String = DebugDevices.Values(i)
-                Dim name As String = DebugConnections.Values(i)
-                streamnet.ReadTimeout = 10 'Seems to have fixed it
+                'Variables
+                Dim MessageBuffer(65536) As Byte
+                Dim SocketStream As New NetworkStream(DebugDevices(i).ClientSocket)
+                Dim SocketStreamWriter As StreamWriter = DebugDevices(i).ClientStreamWriter
+                Dim SocketIP As String = DebugDevices(i).ClientIP
+                Dim SocketName As String = DebugDevices(i).ClientName
+
+                'Set the timeout of ten milliseconds to ensure that no device "take turns in messaging"
+                SocketStream.ReadTimeout = 10
+
+                'Increment.
                 i += 1
                 Try
-                    streamnet.Read(buff, 0, 65536)
-                    Dim msg As String = Text.Encoding.Default.GetString(buff)
-                    msg = msg.Replace(vbCr, vbNullChar) 'Remove all instances of vbCr (macOS newlines) } Windows hosts are affected, too, because it uses
-                    msg = msg.Replace(vbLf, vbNullChar) 'Remove all instances of vbLf (Linux newlines) } vbCrLf, which means (vbCr + vbLf)
-                    If Not msg.StartsWith(vbNullChar) Then 'Don't post message if it starts with a null character.
-                        If msg.StartsWith("/") Then 'Message is a command
-                            Dim cmd As String = msg.Replace("/", "").Replace(vbNullChar, "")
-                            If DebugCommands.ContainsKey(cmd.Split(" ")(0)) Then 'Command is found or not
+                    'Read a message from the stream
+                    SocketStream.Read(MessageBuffer, 0, 65536)
+                    Dim Message As String = Text.Encoding.Default.GetString(MessageBuffer)
+
+                    'Make some fixups regarding newlines, which means remove all instances of vbCr (Mac OS 9 newlines) and vbLf (Linux newlines).
+                    'Windows hosts are affected, too, because it uses vbCrLf, which means (vbCr + vbLf)
+                    Message = Message.Replace(vbCr, vbNullChar)
+                    Message = Message.Replace(vbLf, vbNullChar)
+
+                    'Don't post message if it starts with a null character.
+                    If Not Message.StartsWith(vbNullChar) Then
+                        'Fix the value of the message
+                        Message = Message.Replace(vbNullChar, "")
+
+                        'Now, check the message
+                        If Message.StartsWith("/") Then
+                            'Message is a command
+                            Dim FullCommand As String = Message.Replace("/", "").Replace(vbNullChar, "")
+                            Dim Command As String = FullCommand.Split(" ")(0)
+                            If DebugCommands.ContainsKey(Command) Then
                                 'Parsing starts here.
-                                ParseCmd(cmd, DebugConnections.Keys(i - 1), ip)
-                            ElseIf RemoteDebugAliases.Keys.Contains(cmd.Split(" ")(0)) Then
+                                ParseCmd(FullCommand, SocketStreamWriter, SocketIP)
+                            ElseIf RemoteDebugAliases.Keys.Contains(Command) Then
                                 'Alias parsing starts here.
-                                ExecuteRDAlias(cmd, DebugConnections.Keys(i - 1), ip)
+                                ExecuteRDAlias(FullCommand, SocketStreamWriter, SocketIP)
                             Else
-                                DebugConnections.Keys(i - 1).WriteLine(DoTranslation("Command {0} not found. Use ""/help"" to see the list."), cmd.Split(" ")(0))
+                                SocketStreamWriter.WriteLine(DoTranslation("Command {0} not found. Use ""/help"" to see the list."), Command)
                             End If
                         Else
-                            If Not String.IsNullOrEmpty(name) Then 'Prevent no-name people from chatting
+                            'Check to see if the unnamed stranger is trying to send a message
+                            If Not String.IsNullOrEmpty(SocketName) Then
+                                'Check the message format
                                 If String.IsNullOrWhiteSpace(RDebugMessageFormat) Then
                                     RDebugMessageFormat = "{0}> {1}"
                                 End If
+
+                                'Decide if we're recording the chat to the debug log
                                 If RecordChatToDebugLog Then
-                                    Wdbg(DebugLevel.I, ProbePlaces(RDebugMessageFormat), name, msg.Replace(vbNullChar, ""))
+                                    Wdbg(DebugLevel.I, ProbePlaces(RDebugMessageFormat), SocketName, Message)
                                 Else
-                                    WdbgDevicesOnly(DebugLevel.I, ProbePlaces(RDebugMessageFormat), name, msg.Replace(vbNullChar, ""))
+                                    WdbgDevicesOnly(DebugLevel.I, ProbePlaces(RDebugMessageFormat), SocketName, Message)
                                 End If
-                                SetDeviceProperty(ip, DeviceProperty.ChatHistory, "[" + Render() + "] " + msg.Replace(vbNullChar, ""))
+
+                                'Add the message to the chat history
+                                SetDeviceProperty(SocketIP, DeviceProperty.ChatHistory, "[" + Render() + "] " + Message)
                             End If
                         End If
                     End If
@@ -175,29 +217,16 @@ Public Module RemoteDebugger
                     Dim SE As SocketException = CType(ex.InnerException, SocketException)
                     If SE IsNot Nothing Then
                         If Not SE.SocketErrorCode = SocketError.TimedOut And Not SE.SocketErrorCode = SocketError.WouldBlock Then
-                            Wdbg(DebugLevel.E, "Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
+                            Wdbg(DebugLevel.E, "Error from host {0}: {1}", SocketIP, SE.SocketErrorCode.ToString)
                             WStkTrc(ex)
                         End If
                     Else
+                        Wdbg(DebugLevel.E, "Unknown error of remote debug: {0}", ex.Message)
                         WStkTrc(ex)
                     End If
                 End Try
             End If
         End While
     End Sub
-
-    ''' <summary>
-    ''' Gets the index from an instance of StreamWriter
-    ''' </summary>
-    ''' <param name="SW">A stream writer</param>
-    ''' <returns>An index of it, or -1 if not found.</returns>
-    Function GetSWIndex(SW As StreamWriter) As Integer
-        For i As Integer = 0 To DebugConnections.Count - 1
-            If SW.Equals(DebugConnections.Keys(i)) Then
-                Return i
-            End If
-        Next
-        Return -1
-    End Function
 
 End Module
