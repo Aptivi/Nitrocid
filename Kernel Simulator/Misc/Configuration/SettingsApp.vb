@@ -504,6 +504,7 @@ Public Module SettingsApp
     ''' </summary>
     Sub VariableFinder(SettingsToken As JToken)
         Dim SearchFor As String
+        Dim SettingsNumber As String
         Dim Results As List(Of String)
 
         'Prompt the user
@@ -518,10 +519,27 @@ Public Module SettingsApp
         'Write the settings
         If Not Results.Count = 0 Then
             WriteList(Results)
+
+            'Prompt for the number of setting to go to
+            W(DoTranslation("Write the number of the setting to go to. Any other character means go back."), True, ColTypes.Neutral)
+            Wdbg(DebugLevel.I, "Prompting user for writing...")
+            W(">> ", False, ColTypes.Input)
+            SettingsNumber = Console.ReadLine
+
+            'Parse the input and go to setting
+            If SettingsNumber.IsNumeric Then
+                Dim ChosenSettingIndex As Integer = CInt(SettingsNumber) - 1
+                Dim ChosenSetting As String = Results(ChosenSettingIndex)
+                Dim SectionIndex As Integer = CInt(ChosenSetting.AsSpan.Slice(1, ChosenSetting.IndexOf("/") - 1).ToString) - 1
+                Dim KeyNumber As Integer = ChosenSetting.AsSpan.Slice(ChosenSetting.IndexOf("/") + 1, ChosenSetting.IndexOf("]") - (ChosenSetting.IndexOf("/") + 1)).ToString
+                Dim Section As JProperty = SettingsToken.ToList()(SectionIndex)
+                Dim SectionName As String = Section.Name
+                OpenKey(SectionName, KeyNumber, SettingsToken)
+            End If
         Else
             W(DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), True, ColTypes.Error)
+            Console.ReadKey()
         End If
-        Console.ReadKey()
     End Sub
 
     ''' <summary>
