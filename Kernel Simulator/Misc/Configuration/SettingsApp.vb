@@ -197,14 +197,21 @@ Public Module SettingsApp
                     Dim CurrentValue As Object
                     Dim Variable As String = Setting("Variable")
                     Dim VariableProperty As String = Setting("VariableProperty")
+                    Dim VariableType As SettingsKeyType = [Enum].Parse(GetType(SettingsKeyType), Setting("Type"))
 
-                    'Determine how to get the current value
-                    If VariableProperty Is Nothing Then
-                        CurrentValue = GetConfigValueField(Variable)
+                    'Print the option
+                    If VariableType = SettingsKeyType.SMaskedString Then
+                        'Don't print the default value! We don't want to reveal passwords.
+                        W(" {0}) " + DoTranslation(Setting("Name")), True, ColTypes.Option, SectionIndex + 1)
                     Else
-                        CurrentValue = GetConfigPropertyValueInVariableField(Variable, VariableProperty)
+                        'Determine how to get the current value
+                        If VariableProperty Is Nothing Then
+                            CurrentValue = GetConfigValueField(Variable)
+                        Else
+                            CurrentValue = GetConfigPropertyValueInVariableField(Variable, VariableProperty)
+                        End If
+                        W(" {0}) " + DoTranslation(Setting("Name")) + " [{1}]", True, ColTypes.Option, SectionIndex + 1, CurrentValue)
                     End If
-                    W(" {0}) " + DoTranslation(Setting("Name")) + " [{1}]", True, ColTypes.Option, SectionIndex + 1, CurrentValue)
                 Next
                 Console.WriteLine()
                 W(" {0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.BackOption, MaxOptions + 1)
@@ -386,7 +393,7 @@ Public Module SettingsApp
                             End If
                         Loop
                     Else
-                        W(If(KeyType = SettingsKeyType.SUnknown, "> ", "[{0}] > "), False, ColTypes.Input, KeyDefaultValue)
+                        W(If(KeyType = SettingsKeyType.SUnknown Or KeyType = SettingsKeyType.SMaskedString, "> ", "[{0}] > "), False, ColTypes.Input, KeyDefaultValue)
                         If KeyType = SettingsKeyType.SLongString Then
                             AnswerString = ReadLineLong()
                         ElseIf KeyType = SettingsKeyType.SMaskedString Then
