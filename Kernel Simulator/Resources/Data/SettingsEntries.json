@@ -463,7 +463,7 @@
                 "Variable": "DefaultChoiceOutputType",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
-                "Enumeration": "UESHCommands.ChoiceOutputType",
+                "Enumeration": "UESHCommands+ChoiceOutputType",
                 "EnumerationZeroBased": true,
                 "Description": "Default choice output type"
             }
@@ -1029,7 +1029,7 @@
                 "Variable": "SpeedPressCurrentDifficulty",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
-                "Enumeration": "SpeedPressDifficulty",
+                "Enumeration": "SpeedPress+SpeedPressDifficulty",
                 "EnumerationZeroBased": true,
                 "Description": "Select your preferred difficulty."
             },
