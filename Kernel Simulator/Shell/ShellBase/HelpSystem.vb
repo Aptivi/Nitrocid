@@ -111,7 +111,8 @@ Public Module HelpSystem
 
             'Print usage information
             If Not CommandType = ShellCommandType.RemoteDebugShell Then
-                W(DoTranslation("Usage:") + $" {command} {HelpUsage}: {HelpDefinition}", True, ColTypes.Neutral)
+                W(DoTranslation("Usage:") + $" {command} {HelpUsage}: ", False, ColTypes.ListEntry)
+                W($"{HelpDefinition}", True, ColTypes.ListValue)
             ElseIf DebugDeviceSocket IsNot Nothing Then
                 DebugDeviceSocket.WriteLine(DoTranslation("Usage:") + $" /{command} {HelpUsage}: {HelpDefinition}")
             End If

@@ -51,7 +51,7 @@ Class ChAttrCommand
     End Sub
 
     Public Sub HelpHelper()
-        W(DoTranslation("where <attributes> is one of the following:") + vbNewLine, True, ColTypes.Neutral)
+        W(DoTranslation("where <attributes> is one of the following:"), True, ColTypes.Neutral)
         W("- Normal: ", False, ColTypes.ListEntry) : W(DoTranslation("The file is a normal file"), True, ColTypes.ListValue)                   'Normal   = 128
         W("- ReadOnly: ", False, ColTypes.ListEntry) : W(DoTranslation("The file is a read-only file"), True, ColTypes.ListValue)              'ReadOnly = 1
         W("- Hidden: ", False, ColTypes.ListEntry) : W(DoTranslation("The file is a hidden file"), True, ColTypes.ListValue)                   'Hidden   = 2
