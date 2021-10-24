@@ -1,15 +1,6 @@
 Qoldanbalı pärmender: {0}
-Jazw parmeni:
 Komandalıq ïnekcïya joyıldı.
-Bos orınsız ütirmen bölek jüktew argwmentteri, säykes, 'motd, gpuprobe'
-«Cmdinject» boyınşa bos orındar är türli komandalar boyınşa, «cmdinject setthemes Hacker: beep 1024 0.5»
-Nazar awdarıñız, 'otladka' argwmenti yadronı tolıq qamtımaydı.
-barg: {0} suralğan argwment tabılmadı.
-bargs: Argwmentte qalay keltirilmeydi qate:
-Qoldanw argwmentteri: {0}
-Argwmentter (kömek üşin 'kömek'):
 Engizilgen argwmentter kelesi qayta jüktew kezinde iske qosıladı.
-Argwment ïnekcïyasınıñ küşi joyıldı.
 Naqtı pärmen jolı argwmentteriniñ taldaw kezindegi qate: {0}
 Tüs ülgisi jaramsız {0}
 hwprobe: sizdiñ apparattıq quralıñız tekseriledi. Ötinemin küte turıñız ...
@@ -82,7 +73,6 @@ Basqa serverge qosılmas burın serverden ajıratw kerek
 {0} qosıldı
 {0} qosılw kezinde qate payda boldı: {1}
 Stek izdew: {2}
-FTP serverin engiziñiz.
 {0} jergilikti katalogı joq.
 Jergilikti katalogtı jasañız. «..» qaytw üşin.
 {0} katalogı tabılmadı.
@@ -97,16 +87,12 @@ Siz äli jaña serverge qosılmağansız
 {0} faylı jüktelwde ...
 Jüktelgen fayl: {0}.
 Tasımaldawdı orındamas burın serverge qosılw kerek.
-Jergilikti katalogqa jüktew üşin fayldı engiziñiz.
 {0} KB | Özgertilgen waqıtı: {1}
 Barlıq qaşıqtağı fayldardı anıqtawğa mümkindik beretin barlıq serverge qosılw kerek.
 {0} faylı jüktelwde ...
 Jüktelgen fayl: {0}
-Qatısw katalogına jüktew üşin fayldı engiziñiz. <fayl> <katalog> jüktew
-(Işki:
 Ağımdağı jergilikti katalogtı alwğa boladı
 Ağımdağı qaşıqtağı katalogtı aladı
-FTP serverine qosıladı (ol «ftp://» nemese «ftps://» dep bastalwı kerek)
 Jüktew nemese jüktew üşin jergilikti katalogtı özgertedi
 Jüktew nemese jüktew üşin qaşıqtağı katalogtı özgertedi
 Serverden qaşıqtağı fayldı joyadı
@@ -147,7 +133,6 @@ Konfïgwracïya qayta jükteldi. Özgerister küşine enwi üşin sizge yadronı
 Bir nemese basqa tüster jaramsız.
 Tüster qol jetimdi emes. Yadro konfïgwracïyasında tüsti qabıqtı jiberw.
 Ékran saqtağış {0} tabılmadı.
-[Yadro parametrleri ({0} jumıs istew)]]
 Yadro nusqası:
 Jöndew rejïmi:
 Tüpki qabıq:
@@ -155,8 +140,6 @@ Boot twralı argwmentter:
 Anıqtama pärmeni jeñildetilgen:
 Kirw kezinde MOTD:
 Waqıt/kün waqıtı:
-[Jumıs parametrleri]
-[Paydalanwşı parametrleri]
 Ağımdağı paydalanwşınıñ atı:
 Qazirgi xost atawı:
 Qoldanwşı attarı:
@@ -183,31 +166,14 @@ Jüyelik aqparat
 * Komandalar arasındağı qos nükteni qoldanwdı jalğastırw qajet boladı.
 Qoldanılwı:
 onda argwmentter {0} boladı
-FTP qabatın ïnïcïalïzacïyalaydı.
-Dostarı
 customsaver qay jerde boladı
-Ékrandı parolmen qulıptaydı.
-Sizdi qoldanwşıdan şığaradı.
-Jeli twralı barlıq aqparattı alıñız
-Sïmwlyacïyalanğan kompyuterdi qayta qosadı.
-Konfïgwracïyası qayta jükteledi.
-Tüster qayta jüktelwi qajet etpeydi, äri qaray tolıq kölemde qayta jüktelwi qajet.
-ékranıñızdı küyip qalwdan qorğap, tañdalğan ékran saqtawşılığın saqtañız.
-Kün men waqıttı bilw.
-Kün men waqıttı aymaqtarda jalğastırw.
-Sïmwlyacïyalanğan kompyuterdi öşiredi.
-Jüyelik aqparat pen nusqalardı körsetedi.
 Qabıqta qate boldı.
 {0} basqarwıñız joq
 Qabıq twralı xabar: Suralğan {0} texnïkalıq qızmet körsetw rejïminde jumıs istemeydi.
 Qabıq twralı xabar: Suralğan {0} pärmeni tabılmadı. 'Anıqtamanı' qoldanw üşin pärmender qoldanwı.
 Shell xabarı: kirw kezinde {0} pärmendi iske qoswğa bolmaydı.
 Pärmendi orındawğa qate.
-datetime: Waqıt: {0}
-datetime: Bügin - {0}
-datetime: Waqıt beldewi: {0}
 - {0} waqıtı: {1}
-ékrandı tazartw üşin.
 {0} küni jügirw
 {0} twralı aqparat alwıñızğa bolmaydı.
 Bul pärmen eskirgen jäne aldağı şığarılımda joyıladı.
@@ -233,8 +199,6 @@ Tildi özgertedi
 >> Freymder, fayldar, joldar men bağandar <<
 > Kadr {0}: Fayl: {1} | Jol: {2} | Bağan: {3}
 > Ramalıq aqparat alwğa tırısqanda qate payda boladı. {0}: {1}
-Modwlderdi qayta jükteydi.
-Modwlder qayta jükteldi.
 Yadroğa qoş keldiñiz!
 <Paydalanwşı> retinde sätti kirdiñiz
 MOTD/MAL jaramdı, basqa xabar türi jaramsız. MOTD dep oylaymın ...
@@ -267,27 +231,19 @@ IPv6 twralı aqparat:
 {0} adapteri IPv4 qoldamaydı. Tekserw sätsiz ayaqtaldı.
 Siz yadronıñ damw nusqasın iske qosqan sïyaqtısız. Siz mümkin bolasız, biraq ol jïi jañartılıp, qatelikterimen qamtamasız etilwi mümkin. Turaqtı nusqada qalw jetekşisi.
 Siz tañdağan tilde eki nusqa bar. Birewin alwğa:
-1. Awdarılğan
-2. Awdarılğan
-Öz tañdawıñızdı alwğa boladı:
 Jaramsız tañdaw. Qaytadan köriñiz.
 Ağımdağı katalogtı {0} dep ornatwğa qosılıñız: {1}
 Siz körsetken jol tım uzaq.
-CPU: ESKERTW: SSE2 bolaşaq damw mindettemelerinde qajet boladı.
 {0} aqparat alwğa tırısqanda, dempïngtik aqparat jïnawşı isten şıqtı: {1}
-Qurastırw künin jïnaw kezinde qate payda boldı {0}: {1}
 MOTD/MAL procesinde qate: {0}
 MOTD/MAL alwğa tırısqandağı qate: {0}
 Jaramsız äreketke baylanıstı ékran saqtağıştı iske asırw kezinde qate.
 Qawipsiz rejïmde qayta jüktewge bolmaydı.
 Qawipsiz rejïmde taldaw rejïmderi orındalmaydı.
-Barlıq özgertwler tizbegi.
 Qate taldaw rejïmin ornatwğa tırısqanda. Mändi tekserip, qaytalap köriñiz. Eger bul durıs bolsa, yadro ​​tüzetw kezinde kezdestirwge boladı.
 Jol fayl nemese katalog emes.
 Är türli katalog nemese atawmen fayldıñ basqa köşirmesin jasañız.
 Fayldı basqa katalogqa jıljıtadı
-Fayldardı basqa katalogqa nemese basqa atqa köşirw üşin
-Fayldardı basqa katalogqa jıljıtw üşin
 Säykes kelwi: {0} ({1}): {2}
 {0} dayındıq: {1}
 Ötkizilgen waqıt: {0} mïllïsekwnd
@@ -302,9 +258,6 @@ Süyispenşilikke nemese jek körwge jawap beriñiz.
 Eger birew seniñ beyneñizge osı pikirdi jazsa:
 Siz qalay jawap berer ediñiz?
 Jaramsız tañdaw. Kelesi tüsinikteme ötwde ...
-Siz jaña ğana maxabbat twralı tüsinikteme berdiñiz!
-Siz jay ğana jek köretin pikirge jawap berdiñiz!
-Tamaşa! Ol üşin {0} pikir joyıldı.
 Tamaşa! {0} sizdiñ alğısıñızdı bağalaydı.
 Keremet jazılğan!
 Qate jazılğan.
@@ -318,7 +271,6 @@ SSH serverine qosıladı.
 SSH ajıratıldı.
 Kod alw mümkin emes. Til durıs körsetilmewi mümkin.
 Otladka qosılmadı.
-{0} endi ädepki ékran saqtağışqa ornatılmağan.
 Raxmet! Bul qızıqtı.
 Bul sizdiñ beyneñizdi tolıq qoldanadı.
 Men sizge kelesi beyneñizdiñ élektrondı poştasındağı arnayı fayldı berdim.
@@ -364,7 +316,6 @@ Siz ümitkerdiñ şığarılım nusqasın iske qosqan sïyaqtısız. Turaqtı nu
 {0} qosılw kezinde qate: Baylanıs kütw waqıtı nemese baylanıs üzildi
 Örnekterdi eseptewge arnalğan kalkwlyator.
 Eseptewdegi qate.
-Siz şığarılımnıñ jaqındağan nusqasın iske qosqan sïyaqtısız. Qazirgi paydalanw qawipsiz bolsa da, turaqtı nusqawlıqta qalw.
 Jüyeni jañartw
 Jüye jañartwları tekserilwde ...
 Jaña nusqası tabıldı:
@@ -372,7 +323,6 @@ Siz onı mına jerden jüktey alasız:
 Kelesi xabarlandırwlar joq
 Berilgen faylda joldı izdeydi
 Körsetilgen katalogtağı fayldardıñ somasın esepteydi.
-Naqtı paydalanwşınıñ barlıq xattarın taratwşılar.
 Paydalanwşı atın nemese poşta mekenjayın jasañız:
 Qupïya sözdi engiziñiz:
 {0} qosılw kezinde qate: {1}
@@ -382,7 +332,6 @@ IMAP qabığınan şığadı
 Komandalar tizimi
 Xabarlamalardı jükteydi jäne olardıñ dïzaynerleri
 Xabardı aşadı
-Bet jüzi jaña mümkin emes.
 Bet sandıq män emes.
 Xabarlama berilw mümkin emes.
 Xabarlama negizi sandıq män emes.
@@ -392,7 +341,6 @@ Xabarlama negizi sandıq män emes.
 Körsetilgen xabar tabılmadı.
 Qaşıqtan qurılıstı bastaw sätsiz ayaqtaldı: {0}
 Profïlder dayarwda ... Bir mïnwttıq ketwi mümkin ...
-Xost atawı, paydalanwşı atı, derekter türi, kodtaw, şïfrlaw, protokoldar
 Scenarïydi orındawğa qate: {0}
 Konsolge mätin jazadı
 Paydalanwşılardıñ tañdawın jasaw
@@ -417,7 +365,6 @@ Jıldam terw bos. Adres üşin serverge qosılıñız.
 Jıldam terw joq. Adres üşin serverge qosılıñız.
 IMAP serveriniñ mekenjayı men portın engiziñiz (<adres> ya <adres>: [port]):
 SMTP serveriniñ mekenjayı men portın engiziñiz (<adres> ya <adres>: [port]):
-Mekenjayğa xabarlama jiberw üşin, onıñ öristerin toltırwdı suraydı
 Adreske jiberw jiberildi
 Alwşınıñ poştası mekenjayın jasañız:
 Taqırıptı engiziñiz:
@@ -445,8 +392,6 @@ Jol kelisinen sözdi nemese söz tirkesin joyadı
 Belgilengen joldağı sïmvol bolwınan tañbanı joyadı
 Joyılğan sızıq.
 Körsetilgen jol negizi {0} jaramdı emes.
-Qajetti argwmentter {0} komandasına berilmeydi
-Pärmendi iske qoswda qate payda boldı: {0}
 Qawipsiz rejïmde jumıs istew. Ötkizw kezeñi ...
 >> Qaşıqtan jumıs jäne çat: nusqawlıq
 >> sizdiñ mekenjayıñız: {0}.
@@ -464,19 +409,12 @@ IP -adres boyınşa otladtawdı uyımdastırwdı buğattañız
 Parametrler jüktelmedi
 Parametrlerdi jüktew kezinde qate bar. Parametrler fayldı tekserw qajet bolwı mümkin.
 Bölimdi tañdaw:
-Jalpı tärtip ...
-Jumıs parametrleri ...
-Kirw parametrleri ...
-Shell parametrleri ...
-Jeli parametrleri ...
-Är türli ...
 Parametrlerdi saqtaw
 Şığw
 Körsetilgen {0} opcïyası jaramsız.
 Jawap sandıq bolwı kerek.
 Jüktew jüyesindegi argwmentterdi şaqırw
 Texnïkalıq qızmet körsetw rejïminiñ trïggeri
-Qupïya sözdi qoldanw ...
 Eske alw kezinde jañartwlardı tekseriñiz
 Tınış zond
 MOTD qızmeti kezinde
@@ -500,9 +438,7 @@ Jaramsız bölim engizildi. Ötinemin, qaytıñız.
 Qaytıp kelw ...
 Qosw
 Öşirw
-Jaramsız kilt negizdeldi. Ötinemin, qaytıñız.
 Ornatılatın tübirlik qupïya sözdi jazıñız. Wayımdamañız; parol juldızşa sïyaqtı.
-«Tübirlik paroldi özgertw» kezeñinde qoldanw üşin. Ötinemin, qaytıñız.
 Qupïya sözdi qoldanw kerek pe?
 Tübirlik qupïya sözdi qurastırw ...
 Qaşıqtağı otladçïk portın jazıñız. Ol cïfrlıq bolw kerek jäne qoldanılmawı kerek. Äytpese, qaşıqtağı otladçïk porttı aşa almaydı.
@@ -513,7 +449,6 @@ Jawap berwge boladı.
 Jawap jaramsız. Jawap retinde sandar qajet konfïgwracïya jazbaları üşin jawaptıñ sandıq ekenine köz jetkiziñiz.
 {0} aynımalısı modwlderdiñ qoldawaysısında joq.
 Yadro konfïgwracïyasın özgertedi
-Ékran saqtağış parametrleri ...
 255 tüsti belsendilendirw
 Baylanıstı jalğastırğıñız kele me?
 Jaramsız tañdaw. Bolmasa ...
@@ -549,7 +484,6 @@ Fayldı nemese katalogtı jıljıtw mümkin bolmaydı: {0}
 «{0}» jolına kelesi fayl tabılmadı: {1}
 {0} faylı üşin jüktew sätsiz ayaqtaldı.
 Qarastırılğan fayldar tizimi: {0}
-Jayılatın fayldı nemese qaltanı jasañız. Joyu üşin sizdiñ eseptik jazbañızda bağdarlamanıñ orındalwı tïis.
 {0} <y/n> joyğıñız kelgenine senimdisiz be?
 {0} joyılwda ...
 {0} serverde tabılmadı.
@@ -560,7 +494,6 @@ Xabar jiberw qateligi.
 Sätti jıljıtıldı
 Fayldı nemese katalogtı basqa faylğa nemese katalogqa jıljıtadı. Siz onı fayldardıñ atın bile alasız.
 {0} {1} qaltasına jıljıtılmadı.
-Bastapqı jol men baratın joldı engiziñiz.
 {0} {1} qaltasına köşirilwde ...
 Sätti köşti
 Fayldı nemese katalogtı basqa faylğa nemese katalogqa köşiredi.
@@ -578,9 +511,6 @@ Ilğaldılıq: {0}
 Sizdiñ tañdawıñızdıñ API kiltiñizdi https://home.openweathermap.org/api_keys saytınan ala alasız.
 Ärqaşan http://bulk.openweathermap.org/sample/city.list.json.gz saytında jeke kwälikter bar qalalar tizbegi boyınşa jügine aladı.
 Temperatwra üşin qolaylı birlik
-Kelvïn
-Ïmperïyalıq (Farengeyt)
-Metrïka (Celsïy boyınşa)
 Yadronı ornatadı, osılayşa ol jüktew kezinde argwment şaqıradı.
 Texnïkalıq qızmet körsetw rejïmin qosadı. Bul eseptik jazbanı öşiredi.
 Är iske kiris kezde ol jañartwlardı tekseredi.
@@ -595,10 +525,6 @@ Barlıq qabattar üşin jeñildetilgen kömek pärmeni
 FTP paydalanwşı atın tirkew kerek pe, joq pa.
 FTP IP mekenjayın tirkew kerek pe, joq pa.
 Birinşi profïl tek qosılw kezinde boladı.
-ColorMix üşin 255 tüsti qoldawdı belsendiredi.
-Dïsko üşin 255 tüsti qoldawdı belsendiredi.
-GlitterColor üşin 255 tüsti qoldawdı belsendiredi.
-Joldar üşin 255 tüsti qoldawdı belsendiredi.
 Waqıt pen kün ékrannıñ joğarğı oñ jaqtarında qızmet etw
 Eger bolsa, yadro ​​barlıq qaltanı jalpı ölşemi boyınşa taldaydı. Äytpese, tek betti taldaydı.
 Eske kelgende kezdegi közdiñ sänin qosadı
@@ -608,7 +534,6 @@ Temperatwra üşin qajet qondırğını qoldanw (bul tek «awa rayı» komandas�
 {0} rejïmi toqtadı
 {0} v {1} toqtadı
 {0} rejïminde bölşek atawı joq. Modwldi taldaw sätsiz ayaqtaldı. Bastapqı kodtı qarap şığıñız.
-{0} rejïminde pärmen joq. Modwldi taldaw sätsiz ayaqtaldı. Bastapqı kodtı qarap şığıñız.
 Jöndew jwrnalı aşılmay turwı kerek.
 {0} jaña xabar kirispe jäşigine keldi.
 «mail» aşıñız.
@@ -645,10 +570,6 @@ Qızıl tüs erikken astı. Bul {0} boldı.
 Jasıl tüs därejesi astı. Bul {0} boldı.
 Kök tüs eriktigi. Bul {0} boldı.
 Nağız tüsterdi iske qosw
-ColorMix üşin şınayı tüs qoldawın belsendiredi.
-Dïsko üşin şınayı tüsti qoldawdı belsendiredi.
-GlitterColor üşin şınayı tüs qoldawın belsendiredi.
-Lines üşin şınayı tüs qoldawın belsendiredi.
 {0} bögewden şığarılmadı.
 {0} buğattalğan.
 {0} qazirgi qaşıqtan basqarw jönindegi qosıla almaydı.
@@ -659,7 +580,6 @@ Tirkemelerge fayl joldarın engiziñiz. Rastaw üşin bos jolda ENTER pernesin b
 Şïfrlengen xabardı aşadı
 {0} qupïya sözdi jazw üşin kilt ïdentïfïkatorı
 Adreske şïfrlanğan xabar jiberiledi
-Adreske şïfrlanğan xabar jiberw üşin, sonımen qatar, orıstardı toltırwdı suraydı
 {0} saytınan jüktelwde ...
 «Alw» nemese «qoyu» pärmeninen jüktew nemese jüktew kezinde orındaladı
 Eger bul bolsa, ol jüktew nemese jüktew kezinde orındalwı mümkin bolatın joldı körsetwge «alw» nemese «qoyu» kerek.
@@ -678,8 +598,6 @@ Sezim: {0}
 Temperatwra: {0}
 Jeldiñ jıldamdığı: {0}
 Jel bağıtı: {0}
-Dissolve for 255 tüsti qoldawdı belsendiredi.
-Şınayı tüs qoldawın belsendiredi.
 Qaytw üşin kez kelgen perneni jiberw.
 Poşta qaltasın jasaw mümkin emes {0}: {1}
 Ağımdağı jumıs katalogında katalog jasaydı
@@ -692,22 +610,11 @@ Xeşter durıs emes.
 Xeşter mektebi kelmeydi.
 Xéş kelwşi keledi.
 Qaltanıñ atın özgertedi
-Bul jalpı yadrolıq parametrlerge arnalğan.
-Bul bölim apparattıq zondtıñ äreketin özgertedi.
-Bul bölim kirw maqsatına baylanıstı. Özgerister küşine enwi üşin eseptik jazbañızdan şığıñız.
-Bul bölimde negizgi erejelerdi anıqtaydı.
-Bul bölimde FTP qabatı, jelige qatıstı parametrler parametrleri men qaşıqtan küyge keltirw parametrleri basqa jeli parametrleri keltirilgen.
-Bul bölimde barlıq ékrandar men mümkindikterdiñ parametrlerin özgertw.
-Säykes bölimderge säykes kelmeytinin bilwge ​​bolmaydı.
-Modelderdiñ rejïmi rejïmderdi tekseredi
 Sınaq qabığın aşadı
-Otladka rejïmin qosadı
-Argwmentterdi şaqıradı
 * Yadronı iske qosw üşin kez kelgen perneni jiberw üşin şığw üşin ESC.
 «{0}» iske qosılmadı: {1}
 Aldın ala qarawdı usınw
 Negizgi körinisti körsetiñiz.
-Arnayı tüster ...
 Engizw tüsi
 Lïcenzïyanıñ tüsi
 Üzdiksiz yadro ​​qatesiniñ tüsi
@@ -721,8 +628,6 @@ Qate tüsi
 FTP şaqırw stïli
 Poşta xabarınıñ stïli
 SFTP şaqırw stïli
-BouncingBlock üşin 255 qoldawdı belsendiredi.
-BouncingBlock üşin şınayı tüsti qoldawdı belsendiredi.
 Jaramsız jolğa kirwge tırıswda.
 Mätindik fayldı tazalaw
 Mätindik redaktordan şığadı
@@ -745,8 +650,6 @@ Eñ az jolağınıñ tüsi
 Sağat tüsi jolağı
 Aqparattıñ tüsi
 Tüsti mektepke arnalğan keneler
-ProgressClock üşin 255 tüsti qoldaw körsetildi.
-ProgressClock üşin şınayı tüsti qoldawdı belsendiredi.
 Eger tüsti velosïped qoswlı bolsa, ProgressClock -ta tüsterdi özgertwge boladı. 1 belgi = 0,5 sekwnd
 ProgressClock ol kezdeysoq tüsterdi tañdaydı. Äytpese, konfïgwracïyadan tüsterdi qoldanıñız.
 Jaña taqırıp
@@ -761,39 +664,10 @@ Opcïya tüsi
 Tüsinikti 0 -den 255 -ke deyin jetkiziñiz:
 Jumıs twralı qosımşa aqparat alw üşin «hwinfo» paydalanıñız.
 Apparattıq quraldar twralı aqparattı basıp şığaradı
-Aqparattıq processor twralı:
 Processordıñ atawı:
-Processordıñ jıldamdığı:
 Processordıñ bïtteri:
-Processordıñ aynalısı:
-Processordıñ topologïyası:
-Processor türi:
-Processordıñ mañızdı kezeñi:
-BogoMips processorları:
-Processor L2 keşiniñ kölemi:
-Processor L3 keşiniñ kölemi:
-Processordıñ erekşelikteri:
-HDD twralı aqparat:
-Drayv atawı:
-Jetek modeli:
-Jürgizwşi:
-Jürgizw jıldamdığı:
-Dïsk ölşemi:
-Dïsk serïyası:
-Drayver kwäligi:
-Dïsk bölimderiniñ sanı:
-Bölim ïdentïfïkatorı:
 Bölim fayldıq jüyesi:
 Bölimniñ ülkendigi:
-Qoldanılğan bölim:
-JJQ twralı aqparat:
-JJQ bos:
-Jalpı RAM:
-Qoldanılatın jedel jadı:
-GPU twralı aqparat:
-GPU atawı:
-GPU drayveri:
-GPU nusqası:
 GPU: bir nemese jaña grafïkalıq kartalardı tekserw mümkin bolmaydı. Aqparat bäribir körsetilwde ...
 >> Qoş keldiñiz! Bul qaşıqtan otladtaw men çatqa birinşi ret kirwiñiz kerek. Tirkew üşin «/register <name>» paydalanıñız.
 Qurılğı tolıqnan bar.
@@ -825,8 +699,6 @@ Taqırıp atawın körsetiñiz:
 {0} qoldanwşısı «{1}» bağdarlamasına qosıldı.
 {0} qoldanwşısı «{1}» bağdarlamasınan jarïyalandı.
 Jaramsız rejïm {0}
-Qoldanwşı tolıqnan bar
-Taqırıptı kelesiden jüktew ...
 Aldın ala jasalğan taqırıptardan taqırıptı jüktew ...
 .Json formatınsız taqırıp faylınıñ atawın körsetiñiz:
 ZIP murağatın aşadı
@@ -839,12 +711,9 @@ Körsetilgen ZIP qabığınıñ pärmeni tabılmadı.
 {0} murağat katalogı joq
 Pozïcïyalardıñ maksïmaldı sanı
 Qarañğıda qanday pozïcïya jarıqtandırıladı?
-Lighter üşin 255 tüsti qoldawdı belsendiredi.
-Lighter üşin şınayı tüsti qoldawdı belsendiredi.
 Tizimge tüs tüsi
 Tizim mäniniñ tüsi
 SSH serverine tapsırmalar qosıldı.
-Bul bölimde ékran saqtağışınıñ parametrleri boyınşa
 Tüs specïfïkatorı jaramsız. Bizdiñ durıs formatta ekenine köz jetkiziñiz, 255 ret qoldanılsa 0-255 deñgeyindegi san nemese şınayı tüs kelesidey qoldanılsa VT rettelwi:
 Sınaq qabığındağı qate: {0}
 Aynımalını scenarïyindegi mänge ornatıldı
@@ -866,13 +735,11 @@ Tüpnusqalıqtı qalay rastağıñız keledi?
 Jeke kilt faylı
 Qupïya sözi
 {0} kiltiniñ frazasın jasañız:
-{0} qupïya kiltiniñ ornın engiziñiz. Kiltterdi qoswdı ayaqtaw üşin «q» dep jazıñız:
 Neytralïzacïyalanğan joq jol.
 {0} kilt faylı joq.
 Jeke kiltti qoswda qate payda boldı:
 255 tüs rejïmine awısw üşin «t» tüymesin basıñız.
 Şınayı tüs rejïmine üyrenw üşin «t» tüymesin basıñız.
-Bul bölim sizge tüs türin özgertwge mümkindik beredi.
 Sizde tübirden basqa qoldanwşı joq sïyaqtı. Bul jaman. Biz sizge onı qalay jasaw kerektigin aytamız.
 Paydalanwşı jazbañızdı jazıñız.
 Sizdiñ közqarasıñızdıñ logïnin jazwıñız kerek.
@@ -882,7 +749,6 @@ Eseptik jazbanıñ orındalwı.
 Äkimşi: Bul eseptik jazba jüyesi bağdarlamalıq qamtamasız etwdiñ qosımşa mümkindik beretin yadrosı eñ köp qwatqa ïe.
 Qalıptı paydalanwşı: Bul tirkewdiñ äkimşilerge sälemdeswi qajet.
 Quttıqtaymın! Siz jaña eseptik jazba jasadıñız! Munı ayaqtaw üşin jaña eseptik jazba retinde kiriñiz.
-Aqparat alw üşin ékran saqtawşı nusqawlığınıñ jaña kodın körsetedi.
 mod: jaña rejïm anıqtalmadı.
 Jalpı komandïrler:
 Modwl komandaları:
@@ -906,7 +772,6 @@ Yadrolıq qatelik nısananıñ formatı qoldawımen tekseriledi
 Reswrstarda bar joldı bilw bir tilge awdarwdı tekseredi
 Joldı konsolge basıp şığaradı jäne tabılğan toltırğıştardı taldaydı
 Turaqtı söz tirkesin tekseredi
-Kömegimen joldı şïfrlaydı
 Barlıq rejïmderdi basqarw
 Barlıq rejïmdi toqtatadı
 Jöndewdi qosadı nemese öşiredi
@@ -941,7 +806,6 @@ Mädenïetter tizimi qoldaw taptı
 Berilgen faylda turaqtı örnekterdi qoldanw joldarın izdeydi
 Perneni waqıtında baswğa bolatının bilw
 Paydalanwşı waqıtında jaña aqparat berilmeydi.
-Jaramsız mektep
 Tañba waqıtında basılmağan.
 Siz qalay tañbañız bastıñız!
 Siz qate tañbanı bastañız.
@@ -985,7 +849,6 @@ Qoldanbalı önimdilikke jetw
 Qoldanbalı ünemdew negizin ornatw
 Ékran saqtağış üşin tolıq sätti ornatıldı
 Ékran saqtağış parametrin iske asırw mümkin bolmaydı
-Bul bölim tübirlik qupïya söz qurwdı basqarwğa mümkindik beredi.
 Arnalardı oqw üşin RSS qabiletin aşadı
 RSS qabığınan şığıp, yadroğa oraldı
 Fïd siltemesin özgertedi
@@ -1012,13 +875,6 @@ Fayldıq jüyeni surıptaw rejïmi
 Fayldıq jüyeni surıptaw bağıtı
 Fayldardıñ surıptalwın baqılaydı.
 Fayldıq jüyeniñ ösw nemese kemw boyınşa surıptalw bağıtın baqılaydı.
-Ösw tärtibi
-Kemw tärtibi
-Tolıq atı
-Fayl ölşemi
-Jasalw waqıtı
-Jaña jazw waqıt
-Qayta kirw waqıtı
 Keşiktirwdi mïllïsekwndtarda qayta jazıñız
 Mätindi qayta jazar aldında qanşa mïllïsekwnd kütw kerek?
 Körsetkiñiz kelgen kez kelgen mätindi jazıñız. Uzaq bolğan jaqsı.
@@ -1027,35 +883,26 @@ WPM -de maksïmaldı jazw jıldamdığı
 Qatelik ıqtïmaldığı payızben
 Ağımdağı katalog saqtalmadı: {0}
 Bağıttı oqıtw üşin maylıqtar
-Öşirw üşin 255 tüsti qoldaw körsetildi.
-Wipe üşin şınayı tüsti qoldawdı belsendiredi.
 Bağıttı kezdeysoq özgertpes soñğısın qalay surtw kerek?
 Saxna ayaqtaldı
 Işki ïnïcïalïzacïya ayaqtaldı
 {0} jiberilgen fayl tabılmadı. Bul fayl durıs jumıs istemewi mümkin.
 Modwldi iske qosw
-Aqparat twralı mod twralı
 Parmen atawı:
 Komandanıñ anıqtaması:
 Pärmen türi:
 Qatañ buyrıq?
 Model nusqası:
 {0} modwli tabılmadı.
-Mädenïeti
-{0} qay nusqası ay atawların, küntizbeni jäne t.b. üşin üşin?
 Mätindik redaktor äli fayl ağınıñ aşqan joq.
 Jol awıstırıldı.
 Sandardıñ birewi nemese ekewi de sandıq emes.
 Söz joyıldı.
 Tañba joyıldı.
-Fayldıq jüye parametrleri ...
-Bul bölim fayldıq jüyeniñ parametrlerin körsetedi.
 Parametrlerge kel keldiñiz!
 SSH tapsırmalarınıñ orındalwı
 SSH qabattarındağı qate
 - Qoldanba twralı aqparat
-BouncingText üşin 255 tüsti qoldaw körsetildi.
-BouncingText üşin anıqtalğan qoldawdı belsendiredi.
 Sözdik jazwşını jolmen jäne joldıq massïvpen tekseredi
 Sözdik jazwşını char jäne char massïvimen tekseredi
 Sözdik jazwşını bütin jäne tolıq massïvpen tekseredi
@@ -1072,21 +919,15 @@ onda HardwareType boladı
 {0} apparattıq türi tekserilmegen nemese jaramsız.
 {0} apparattıq türi äli tekserilmegen. Eger onıñ tekserilgenine senimdi bolsañız, yadrolıq jüyeni qayta iske qosıñız.
 Bölimderge nusqawğa taldanbağan.
-Xaker rejïmi
-Qosılğan bolsa, jasıl konsol qosıladı.
 Bölgişti basıp şığaradı
 Pişim qoldawımen bölgişti basıp şığaradı
 Tüsti qoldawımen bölgişti basıp şığaradı
 Tüsi men pişimi bar bölgişti basıp şığaradı
 Ärqaşan ortalıqtandırılğan
-Marquee üşin 255 tüsti qoldawdı belsendiredi.
-Marquee üşin şınayı tüsti qoldawdı belsendiredi.
 Körsetkiñiz kelgen kez kelgen mätindi jazıñız.
 Mätin mätini ortalıq ortalıqta ma.
-şığw üşin 'q'.
 {0} argwmenti ïnekcïyalanbadı.
 Pärmen jolınıñ argwmenti {0} tabılmadı.
-Barlıq jospardı dayındadı
 Ékran saqtağıştı körsetw kezinde qate payda boldı: {0}. Şığw üşin kez kelgen perneni jiberiñiz.
 Aldın ala qaraw ...
 Kelesidey boladı:
@@ -1124,20 +965,15 @@ Beats Per Minute birligin qoldanw kerek pe.
 Mïnwtına soqqılardıñ keşigwi
 Beat Color
 Kelesi jazbanı jasamas burın mïnwtına qanşa soqı kütw kerek?
-BeatFader üşin 255 tüsti qoldawdı belsendiredi.
-BeatFader üşin naqtı qoldawdı belsendiredi.
 BeatFader kezdeysoq tüsterdi tañdaydı, eger ol bolsa. Äytpese, konfïgwracïyadan tüsterdi qoldanıñız.
 Arnayı iske qosw banneri
-Eger körsetilse, ol tolıqtay qoldawımen teñşelgen iske qosw bannerin qoldaydı. Siz bul söylemdi yadro ​​nusqası üşin alasız:
 Qaşıqtağı qaltanı ekilik nemese mätindi paydalanıp jergilikti katalogqa jükteydi
 Jergilikti qaltanı ekilik nemese mätindi paydalanıp qaşıqtağı katalogqa jükteydi
-Jergilikti katalogqa jükteletin qaltanı engiziñiz.
 {0} qaltası jüktelwde ...
 {0} qaltası jükteldi.
 {0} qaltası üşin jüktew sätsiz ayaqtaldı.
 {0} qaltası jüktelwde ...
 {0} qaltası jükteldi
-Qaşıqtağı katalogqa jükteletin qaltanı engiziñiz.
 Tolıq tüs kodın jazw üşin «c» tüymesin basıñız.
 Osı formattarğa säykes keletin tüs kodın engiziñiz:
 JSON faylın kişireytedi
@@ -1151,13 +987,9 @@ Basıp şığarılatın mätin bağandarı.
 «Joldı toltırwdı» bastamas burın qanşa tañba jazw kerek?
 Joldı toltırw ülgisi barlıq bas äriptermen payızben basıp şığarılwı mümkin
 Sızıq toltırw ülgisiniñ türi
-Ortaq örnek
-Tolıq ülgi
-Kezdeysoq ülgi
 Jawap nölge teñ bolmawı mümkin.
 Jawap körsetilgen jazbadan aspawı kerek.
 Özgeristerdi saqtaw...
-Bul ékran saqtawşı fayldağı jazbaşa mätindi qoldaydı. Fayldıñ tolıq jolın osı öriske jiberiñiz, sonda ékran saqtawşı fayldıñ mazmunın tïisti türde körsetedi.
 Modwlderdi basqarıñız
 Modwldi basqarw qawipsiz rejïmde öşirilgen.
 Jaramsız {0} pärmeni. Qoldanwdı tömende tekseriñiz:
@@ -1173,5 +1005,3 @@ Nusqawlıq betin oqw üşin kez kelgen perneni basıñız ...
 Bul nusqawlıq bet jumıs üşin qajet:
 Qolmen jasalğan bet {0} tabılmadı.
 Mod nusqawlığı
-FlashColor üşin 255 tüsti qoldawdı belsendiredi.
-FlashColor üşin şınayı tüs qoldawın belsendiredi.

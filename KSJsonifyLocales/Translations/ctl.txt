@@ -1,15 +1,6 @@
 Ordres disponibles: {0}
-Escriu l'ordre:
 La injecció d’ordres s’ha cancel·lat.
-Separeu els arguments d'arrencada amb comes sense espais, per exemple, 'motd, gpuprobe'
-Separeu les ordres de 'cmdinject' amb dos punts amb espais, per exemple, 'cmdinject setthemes Hacker: beep 1024 0.5'
-Tingueu en compte que l'argument "depuració" no cobreix completament el nucli.
-bargs: no s'ha trobat l'argument sol·licitat {0}.
-bargs: Error irrecuperable en l'argument:
-Arguments disponibles: {0}
-Arguments ("help" per obtenir ajuda):
 Els arguments injectats es programaran per executar-se al proper reinici.
-La injecció d'arguments s'ha cancel·lat.
 Error en analitzar arguments de línia de comandes reals: {0}
 Plantilla de color no vàlida {0}
 hwprobe: es revisarà el vostre maquinari. Espera ...
@@ -82,7 +73,6 @@ Contrasenya per a {0}:
 Connectat a {0}
 Error en intentar connectar-vos a {0}: {1}
 Traça de la pila: {2}
-Introduïu un servidor FTP.
 El directori local {0} no existeix.
 Introduïu un directori local. ".." tornar.
 No s'ha trobat el directori {0}.
@@ -97,16 +87,12 @@ Encara no us heu connectat a cap servidor
 S'està baixant el fitxer {0} ...
 Fitxer descarregat {0}.
 Heu de connectar-vos al servidor abans de realitzar la transmissió.
-Introduïu un fitxer per descarregar al directori local.
 {0} KB | Modificat a: {1}
 Heu de connectar-vos al servidor abans d’enumerar tots els fitxers remots.
 S'està carregant el fitxer {0} ...
 Fitxer carregat {0}
-Introduïu un fitxer per penjar-lo al directori remot. pengeu <fitxer> <directori>
-(Interior:
 Obté el directori local actual
 Obté el directori remot actual
-Es connecta a un servidor FTP (ha de començar amb "ftp://" o "ftps://")
 Canvia el directori local per baixar-lo o carregar-lo
 Canvia el directori remot per descarregar-lo o carregar-lo
 Suprimeix el fitxer remot del servidor
@@ -147,7 +133,6 @@ Configuració recarregada. És possible que hàgiu de reiniciar el nucli perquè
 Un o més colors no són vàlids.
 Els colors no estan disponibles. Activeu l'intèrpret d'ordres de colors a la configuració del nucli.
 No s'ha trobat l'estalvi de pantalla {0}.
-[ Configuració del nucli (funcionant a {0}) ]
 Versió del nucli:
 Mode de depuració:
 Carcassa de colors:
@@ -155,8 +140,6 @@ Arguments en arrencar:
 Comanda d'ajuda simplificada:
 MOTD en iniciar sessió:
 Hora / data a la cantonada:
-[ Configuració del maquinari ]
-[ Configuració de l'usuari ]
 Nom d'usuari actual:
 Nom d'amfitrió actual:
 Noms d'usuari disponibles:
@@ -183,31 +166,14 @@ Informació del sistema
 * Podeu utilitzar diverses ordres mitjançant els dos punts entre les ordres.
 Ús:
 on hi haurà arguments {0}
-Inicialitza l'intèrpret d'ordres FTP.
-Amics de
 on hi haurà customsaver
-Bloqueja la pantalla amb la contrasenya.
-Us desconnecta de l’usuari.
-Obteniu tota la informació de la xarxa
-Reinicia l'ordinador simulat.
-Torna a carregar la configuració que l'usuari final o l'eina canvien.
-Els colors no requereixen un reinici, però la majoria de la configuració requereix que reinicieu.
-us mostra un estalvi de pantalla seleccionat, alhora que protegiu la pantalla dels burnouts.
-Mostra la data i l'hora.
-Mostra la data i l'hora en zones.
-Apaga l’ordinador simulat.
-Mostra informació i versions del sistema.
 S'ha produït un error a l'intèrpret d'ordres.
 No teniu permís per utilitzar {0}
 Missatge de l'intèrpret d'ordres: l'ordre sol·licitada {0} no es pot executar en mode de manteniment.
 Missatge de l'intèrpret d'ordres: l'ordre sol·licitada {0} no s'ha trobat. Vegeu 'ajuda' per obtenir ordres disponibles.
 Missatge de l'intèrpret d'ordres: no es pot executar l'ordre {0} en iniciar la sessió.
 Error en intentar executar l'ordre.
-datetime: l'hora és {0}
-datetime: avui és {0}
-datetime: zona horària: {0}
 - Hora de {0}: {1}
-per esborrar la pantalla.
 S'està executant a {0}
 No teniu autorització per obtenir informació sobre {0}.
 Aquesta ordre està obsoleta i s'eliminarà en una versió futura.
@@ -233,8 +199,6 @@ Canvia l'idioma
 >> Marcs, fitxers, línies i columnes <<
 > Marc {0}: fitxer: {1} | Línia: {2} | Columna: {3}
 > Hi ha un error en intentar obtenir informació del marc. {0}: {1}
-Recarrega modificacions.
-Les modificacions es van tornar a carregar.
 Benvingut al nucli!
 Heu iniciat la sessió correctament com a <usuari>
 MOTD / MAL és vàlid, però el tipus de missatge no és vàlid. Suposant MOTD ...
@@ -267,27 +231,19 @@ L'adaptador {0} no admet IPv6. Continuant ...
 L'adaptador {0} no admet IPv4. La sonda ha fallat.
 Sembla que executaves la versió de desenvolupament del nucli. Tot i que podeu veure els aspectes, sovint s’actualitza i pot introduir errors. Es recomana mantenir la versió estable.
 L'idioma que heu seleccionat conté dues variants. Tria una:
-1. Transliterat
-2. Traduït
-Seleccioneu la vostra opció:
 Elecció no vàlida. Torna-ho a provar.
 No està autoritzat a establir el directori actual a {0}: {1}
 El camí que heu especificat és massa llarg.
-CPU: ADVERTÈNCIA: es requerirà SSE2 en futurs compromisos de desenvolupament.
 El recopilador d'informació d'abocament s'ha bloquejat en intentar obtenir informació sobre {0}: {1}
-Error en intentar obtenir la data de compilació del muntatge {0}: {1}
 Error en intentar configurar MOTD / MAL: {0}
 Error en intentar obtenir MOTD / MAL: {0}
 S'ha produït un error en intentar iniciar l'estalvi de pantalla a causa d'una operació no vàlida.
 No es permet la recàrrega en mode segur.
 No es permet analitzar les modificacions en mode segur.
-Mostra tots els dispositius de depuració connectats.
 S'ha produït un error en intentar configurar el mode d'anàlisi. Comproveu el valor i torneu-ho a provar. Si això és correcte, consulteu la traça de la pila quan la depuració del nucli estigui activada.
 El camí no és ni un fitxer ni un directori.
 Crea una altra còpia d’un fitxer amb un directori o un nom diferents.
 Moveu un fitxer a un altre directori
-Per copiar fitxers a un altre directori o a un altre nom
-Per moure fitxers a un altre directori
 Coincidència {0} ({1}): {2}
 Coincidència {0}: {1}
 Temps dedicat: {0} mil·lisegons
@@ -302,9 +258,6 @@ Respondre als comentaris d’amor o odi.
 Si algú ha fet aquest comentari al teu vídeo:
 Com respondríeu?
 La selecció no és vàlida. Anem al següent comentari ...
-Acabes d’informar del comentari d’amor.
-Acabes de respondre al comentari de l’odi.
-Genial! Per a això, se suprimirà el comentari de {0}.
 Genial! {0} agrairé el vostre agraïment.
 Escrit perfectament!
 Ortografia incorrecta.
@@ -318,7 +271,6 @@ Introduïu la contrasenya per a {0}:
 SSH desconnectat.
 No es pot definir la pàgina de codis. És possible que l’idioma no es mostri correctament.
 La depuració no està habilitada.
-{0} ja no està configurat com a estalvi de pantalla predeterminat.
 Gràcies! Això és interessant.
 Tothom donarà suport al vostre vídeo per això.
 Us vaig donar l'arxiu especial al vostre correu electrònic per al vostre proper vídeo.
@@ -364,7 +316,6 @@ El directori {0} ja existeix.
 Error en intentar connectar-vos a {0}: temps d'espera de connexió o connexió perduda
 Calculadora per calcular expressions.
 Error en el càlcul.
-Sembla que executaves la versió de llançament proper. Tot i que ara és més segur d’utilitzar-lo, es recomana mantenir la versió estable.
 Actualització del sistema
 S'està comprovant si hi ha actualitzacions del sistema ...
 S'ha trobat una nova versió:
@@ -372,7 +323,6 @@ El podeu descarregar a:
 No hi ha notificacions recents
 Cerca la cadena especificada al fitxer proporcionat
 Calcula les sumes de fitxers del directori especificat.
-Llista tots els correus de l'usuari específic.
 Introduïu el nom d'usuari o l'adreça de correu electrònic:
 Introduir la contrasenya:
 Error en connectar-se a {0}: {1}
@@ -382,7 +332,6 @@ Surt de l'intèrpret d'ordres IMAP
 Llista d'ordres
 Descarrega missatges i els llista
 Obre un missatge
-La pàgina pot no ser negativa ni zero.
 La pàgina no és un valor numèric.
 El número del missatge pot no ser negatiu ni zero.
 El número del missatge no és un valor numèric.
@@ -392,7 +341,6 @@ El número del missatge no és un valor numèric.
 No s'ha trobat el missatge especificat.
 No s'ha pogut iniciar la depuració remota: {0}
 Preparant perfils ... Podrien trigar uns quants minuts ...
-Nom de l’amfitrió, nom d’usuari, tipus de dades, codificació, xifratge, protocols
 Error en intentar executar l'script: {0}
 Escriu text a la consola
 Pren decisions d’usuari
@@ -417,7 +365,6 @@ El marcatge ràpid està buit. Connecteu-vos a un servidor per afegir-hi una adr
 El marcatge ràpid no existeix. Connecteu-vos a un servidor per afegir-hi una adreça.
 Introduïu l'adreça i el port del servidor IMAP (<adreça> o <adreça>:[port]):
 Introduïu l'adreça i el port del servidor SMTP (<adreça> o <adreça>:[port]):
-Us demana que empleneu els camps obligatoris per enviar un missatge a una adreça
 Envia un missatge a una adreça
 Introduïu l'adreça de correu electrònic del destinatari:
 Introduïu l'assumpte:
@@ -445,8 +392,6 @@ Suprimeix una paraula o frase del número de línia
 Suprimeix un caràcter del número de caràcter de la línia especificada
 Línia eliminada.
 El número de línia especificat {0} no és un número vàlid.
-Els arguments necessaris no es passen a l'ordre {0}
-Error en intentar executar l'ordre: {0}
 S’executa en mode segur. S'està saltant l'etapa ...
 >> Depuració remota i xat: versió
 >> La vostra adreça és {0}.
@@ -464,19 +409,12 @@ Bloqueja un dispositiu de depuració per adreça IP
 S'ha produït un error en carregar la configuració
 Hi ha un error en carregar la configuració. Pot ser que hagueu de comprovar el fitxer de configuració.
 Seleccioneu la secció:
-Configuració general...
-Configuració del maquinari ...
-Configuració d'inici de sessió ...
-Configuració de l'intèrpret d'ordres ...
-Configuració de xarxa ...
-Paràmetres diversos ...
 Desa la configuració
 Surt
 L'opció especificada {0} no és vàlida.
 La resposta ha de ser numèrica.
 Sol·licitud d'arguments a l'arrencada
 Activador del mode de manteniment
-Canvia la contrasenya arrel ...
 Comproveu si hi ha actualitzacions a l’inici
 Sonda tranquil·la
 Mostra MOTD a l’inici de sessió
@@ -500,9 +438,7 @@ S'ha introduït una secció no vàlida. Si us plau, torneu enrere.
 Torna...
 Activa
 Desactivar
-S'ha introduït un número de clau no vàlid. Si us plau, torneu enrere.
 Escriviu la contrasenya de root que cal establir. No us preocupeu; la contrasenya es mostra com a estrelles.
-Activeu "Canvia la contrasenya d'arrel" per utilitzar aquesta opció. Si us plau, torneu enrere.
 Voleu canviar la contrasenya arrel?
 Estableix la contrasenya arrel ...
 Escriviu un port de depurador remot. Ha de ser numèric i no s’ha d’utilitzar ja. En cas contrari, el depurador remot no obrirà el port.
@@ -513,7 +449,6 @@ La resposta pot no ser negativa.
 La resposta no és vàlida. Comproveu que la resposta sigui numèrica per a les entrades de configuració que necessiten números com a respostes.
 La variable {0} no es troba a cap dels mòduls.
 Canvia la configuració del nucli
-Configuració del salvapantalles ...
 Activeu 255 colors
 Vols estar connectat?
 Elecció no vàlida. Suposant que no ...
@@ -549,7 +484,6 @@ No s'ha pogut moure el fitxer o el directori: {0}
 No es pot trobar el fitxer que coincideixi amb la cadena "{0}": {1}
 No s'ha pogut baixar el fitxer {0}.
 No s'ha pogut enumerar els fitxers remots: {0}
-Introduïu un fitxer o carpeta que vulgueu eliminar. Per poder eliminar-lo, heu de tenir permisos administratius al vostre compte.
 Esteu segur que voleu suprimir {0} <y / n>?
 S'està suprimint {0} ...
 {0} no es troba al servidor.
@@ -560,7 +494,6 @@ S'està movent {0} a {1} ...
 S'ha mogut correctament
 Moveu el fitxer o el directori a un altre fitxer o directori. També podeu utilitzar-lo per canviar el nom dels fitxers.
 No s'ha pogut moure {0} a {1}.
-Introduïu un camí d'origen i un de destinació.
 S'està copiant {0} a {1} ...
 S'ha copiat correctament
 Copia un fitxer o directori a un altre fitxer o directori.
@@ -578,9 +511,6 @@ Humitat: {0}
 Podeu obtenir la vostra pròpia clau API a https://home.openweathermap.org/api_keys.
 Sempre podeu consultar http://bulk.openweathermap.org/sample/city.list.json.gz per obtenir la llista de ciutats amb els seus identificadors.
 Unitat preferida per a la temperatura
-Kelvin
-Imperial (Fahrenheit)
-Mètrica (centígrads)
 Configura el nucli de manera que us demani arguments en arrencar.
 Activa el mode de manteniment. Això desactiva diversos comptes.
 Cada inici, comprovarà si hi ha actualitzacions.
@@ -595,10 +525,6 @@ Comanda d'ajuda simplificada per a totes les petxines
 Si es registra o no el nom d’usuari FTP.
 Si es registra o no l'adreça IP FTP.
 Trieu el primer perfil només quan us connecteu.
-Activa el suport de 255 colors per ColorMix.
-Activa el suport de 255 colors per a Disco.
-Activa el suport de 255 colors per a GlitterColor.
-Activa el suport de 255 colors per a les línies.
 L'hora i la data es mostraran a l'extrem superior dret de la pantalla
 Si està activat, el nucli analitzarà tota la carpeta per obtenir la seva mida total. Altrament, només analitzarà la superfície.
 Activa l'ocular a l'inici
@@ -608,7 +534,6 @@ Seleccioneu la unitat preferida per a la temperatura (això només s'aplica a l'
 La modificació {0} s'ha aturat
 {0} v {1} s'ha aturat
 Mod {0} no té el nom de la peça. S'ha produït un error en analitzar les modificacions. Reviseu el codi font.
-Mod {0} no té l'ordre. S'ha produït un error en analitzar les modificacions. Reviseu el codi font.
 Per activar el registre de depuració, heu d'activar el mode de depuració.
 Han arribat {0} missatges nous a la safata d'entrada.
 Obriu "mail" per veure'ls.
@@ -645,10 +570,6 @@ S'ha superat el nivell de color vermell. Era {0}.
 S'ha superat el nivell de color verd. Era {0}.
 S'ha superat el nivell de color blau. Era {0}.
 Activeu els colors reals
-Activa el suport del color real per a ColorMix.
-Activa el suport del color real per a Disco.
-Activa el suport del color real per a GlitterColor.
-Activa el suport del color real per a les línies.
 No s'ha pogut desbloquejar {0}.
 {0} ja està bloquejat.
 {0} ara no es pot unir a la depuració remota.
@@ -659,7 +580,6 @@ Introduïu camins de fitxers als fitxers adjunts. Premeu ENTRAR en un camí en b
 Obre un missatge xifrat
 Escriviu una contrasenya per a l'identificador de clau {0}
 Envia un missatge xifrat a una adreça
-Us demana que empleneu els camps obligatoris per enviar un missatge xifrat a una adreça
 S'està baixant de {0} ...
 Mostra la barra de progrés mentre baixeu o pengeu des de l'ordre "get" o "put"
 Si és cert, fa que "obtenir" o "posar" mostri la barra de progrés mentre es descarrega o es penja.
@@ -678,8 +598,6 @@ Se sent com: {0}
 Temperatura: {0}
 Velocitat del vent: {0}
 Direcció del vent: {0}
-Activa el suport de 255 colors per Dissoldre.
-Activa el suport del color real per Dissoldre.
 Premeu qualsevol tecla per tornar enrere.
 No es pot crear la carpeta de correu {0}: {1}
 Crea un directori al directori de treball actual
@@ -692,22 +610,11 @@ Els hash estan mal formats.
 Els hash no coincideixen.
 Hash coincideix.
 Canvia el nom d’una carpeta
-Aquesta secció llista tots els paràmetres generals del nucli, principalment per mantenir el nucli.
-Aquesta secció canvia el comportament de la sonda de maquinari.
-Aquesta secció representa la configuració d'inici de sessió. Tanqueu la sessió del compte perquè els canvis entrin en vigor.
-Aquesta secció llista els paràmetres de l'intèrpret d'ordres.
-En aquesta secció s'enumeren els paràmetres de xarxa, com ara l'intèrpret d'ordres FTP, els paràmetres d'ordres relacionats amb la xarxa i els paràmetres de depuració remota.
-En aquesta secció s’enumeren tots els estalvis de pantalla i els seus paràmetres disponibles.
-Aquí apareixen les opcions de configuració que no encaixen a les seccions adequades.
-Prova les modificacions proporcionant fitxers mod
 Obre un intèrpret d'ordres de prova
-Activa el mode de depuració
-Sol·licituds d'arguments
 * Premeu qualsevol tecla per iniciar el nucli o ESC per sortir.
 No s'ha pogut iniciar "{0}": {1}
 Mostra la previsualització del missatge de correu electrònic
 En llistar missatges de correu electrònic, mostreu la previsualització del cos.
-Colors personalitzats ...
 Color d'entrada
 Color de la llicència
 Color d'error del nucli continuable
@@ -721,8 +628,6 @@ Color d'error
 Estil de sol·licitud FTP
 Estil de sol·licitud de correu electrònic
 Estil de sol·licitud SFTP
-Activa el suport de 255 colors per a BouncingBlock.
-Activa el suport del color real per a BouncingBlock.
 S'està intentant accedir a un camí no vàlid.
 Esborra el fitxer de text
 Surt de l'editor de text
@@ -745,8 +650,6 @@ Barra del color dels minuts
 Barra del color de les hores
 Color de la informació
 Marques per canviar de color
-Activa el suport de 255 colors per a ProgressClock.
-Activa el suport del color real per a ProgressClock.
 Si la funció de ciclisme de colors està habilitada, quantes marques abans de canviar els colors a ProgressClock? 1 tick = 0,5 segons
 ProgressClock seleccionarà colors aleatoris si està activat. En cas contrari, utilitzeu colors de config.
 Crea un tema nou
@@ -761,39 +664,10 @@ Opció de color
 Introduïu el número de color del 0 al 255:
 Utilitzeu "hwinfo" per obtenir informació ampliada sobre el maquinari.
 Imprimeix informació de maquinari
-Informació de la CPU:
 Nom del processador:
-Velocitat del processador:
 Bits de processador:
-Rev. processador:
-Topologia del processador:
-Tipus de processador:
-Fita del processador:
-Processador BogoMips:
-Mida de la memòria cau del processador L2:
-Mida de la memòria cau del processador L3:
-Característiques del processador:
-Informació del disc dur:
-Nom de la unitat:
-Model d'unitat:
-Proveïdor de discos:
-Velocitat de conducció:
-Mida de la unitat:
-Unitat de sèrie:
-Identificador de la unitat:
-Recompte de particions de Drive:
-Identificador de partició:
 Sistema de fitxers de partició:
 Mida de la partició:
-Partició utilitzada:
-Informació de RAM:
-Sense memòria RAM:
-RAM total:
-RAM utilitzada:
-Informació de la GPU:
-Nom de la GPU:
-Controlador de GPU:
-Versió de la GPU:
 GPU: no s'ha pogut examinar una o més de les targetes gràfiques. S'està mostrant informació de totes maneres ...
 >> Benvingut! Aquesta és la primera vegada que introduïu xat i depuració remota. Utilitzeu "/ register <name>" per registrar-vos.
 El dispositiu ja existeix.
@@ -825,8 +699,6 @@ Especifiqueu el nom del tema:
 S'ha afegit l'usuari {0} a la llista "{1}".
 L'usuari {0} s'ha eliminat de la llista "{1}".
 Mode no vàlid {0}
-L'usuari ja existeix
-Carrega el tema des de ...
 Carrega el tema a partir de temes predefinits ...
 Especifiqueu el nom del fitxer de tema sense l'extensió .json:
 Obre un arxiu ZIP
@@ -839,12 +711,9 @@ El directori {0} no existeix
 El directori d'arxiu {0} no existeix
 Nombre màxim de posicions
 Quantes posicions s’il·luminen abans d’enfosquir?
-Activa el suport de 255 colors per a més clar.
-Activa el suport del color real per a més clar.
 Color d'entrada de llista
 Color del valor de llista
 Es connecta a un servidor SSH per executar una ordre.
-Aquesta secció llista els paràmetres del salvapantalles de
 Especificador de color no vàlid. Assegureu-vos que tingui el format correcte, que significa un número de 0 a 255 si utilitzeu 255 colors o una seqüència de TV si utilitzeu el color veritable de la següent manera:
 Error a l'intèrpret d'ordres de prova: {0}
 Estableix una variable en un valor en un script
@@ -866,13 +735,11 @@ Com voleu autenticar-vos?
 Fitxer de clau privada
 Contrasenya
 Introduïu la contrasenya de la clau {0}:
-Introduïu la ubicació de la clau privada per a {0}. Escriviu "q" per acabar d'afegir claus:
 Neutralitzat un camí inexistent.
 El fitxer clau {0} no existeix.
 Error en provar d'afegir una clau privada:
 Premeu "t" per canviar al mode de color 255.
 Premeu "t" per canviar al mode de color real.
-Aquesta secció us permet triar quin tipus de color voleu canviar.
 Sembla que no teniu cap usuari excepte root. Això és dolent. Us guiarem com crear-ne un.
 Escriviu el vostre nom d’usuari.
 Heu d’escriure el vostre nom d’usuari.
@@ -882,7 +749,6 @@ Seleccioneu el tipus de compte.
 Administrador: aquest tipus de compte té més potència al nucli, cosa que us permet utilitzar programes de gestió del sistema.
 Usuari normal: aquest tipus de compte és una mica més restringit que els administradors.
 Enhorabona! Ja heu creat un compte nou. Per acabar això, inicieu la sessió com a compte nou.
-Consulteu el manual del protector de pantalla o el codi font per obtenir informació.
 mod: no s'ha detectat cap modificació.
 Ordres generals:
 Ordres de modificació:
@@ -906,7 +772,6 @@ Prova la facilitat d'errors del nucli amb suport de format
 Prova de traduir una cadena que existeix en recursos a un idioma específic
 Imprimeix una cadena per consolar i analitza els espais reservats trobats
 Prova la instal·lació d’expressió regular
-Xifra una cadena mitjançant
 Inicia totes les modificacions
 Atura totes les modificacions
 Activa o desactiva la depuració
@@ -941,7 +806,6 @@ Les llistes admeten cultures
 Cerca la cadena especificada al fitxer proporcionat mitjançant expressions regulars
 Mireu si podeu prémer una tecla a temps
 L'usuari no ha proporcionat cap aportació a temps.
-Dificultat no vàlida
 Caràcter no premut a temps.
 Heu premut el personatge adequat.
 Heu premut el personatge equivocat.
@@ -985,7 +849,6 @@ Obté una configuració d'estalvi personalitzada
 Estableix la configuració d'estalvi personalitzada
 La configuració s'ha establert correctament per al salvapantalles
 No s'ha pogut establir una configuració per al salvapantalles
-Aquesta secció us permet gestionar la creació de contrasenyes d’arrel.
 Obre un intèrpret d'ordres RSS per llegir els canals d'informació
 Surt de l'intèrpret d'ordres RSS i torna al nucli
 Canvia l'enllaç del feed
@@ -1012,13 +875,6 @@ Mode d'ordenació del sistema de fitxers
 Direcció d'ordenació del sistema de fitxers
 Controla com s’ordenaran els fitxers.
 Controla la direcció de l'ordenació del sistema de fitxers, ja sigui ascendent o descendent.
-Ordre ascendent
-Ordre descendent
-Nom complet
-Mida de l'arxiu
-Temps de creació
-Darrera hora d’escriptura
-Darrera hora d'accés
 Torna a escriure Retard en mil·lisegons
 Quants mil·lisegons cal esperar abans de tornar a escriure text?
 Escriviu el text que vulgueu que es mostri. Més llarg és millor.
@@ -1027,35 +883,26 @@ Velocitat màxima d’escriptura en WPM
 Probabilitat d'error tipogràfic en percentatge
 No s'ha pogut desar el directori actual: {0}
 Tovalloletes per canviar de direcció
-Activa el suport de 255 colors per a Esborrar.
-Activa el suport del color real per a Wipe.
 Quantes tovalloletes per fer abans de canviar de direcció a l'atzar?
 Etapa acabada a
 S'ha acabat la inicialització interna
 No s'ha trobat el fitxer de referència {0}. És possible que aquest mod no funcioni correctament sense aquest fitxer.
 Mod inicial
-Obté informació sobre modificacions
 Nom de l'ordre:
 Definició de l'ordre:
 Tipus d'ordre:
 Comanda estricta?
 Versió Mod:
 No s'ha trobat la modificació {0}.
-Cultura de
-Quina variant de {0} s’utilitza per canviar els noms de mes, calendari, etc.?
 L'editor de text encara no ha obert cap flux de fitxers.
 S'ha substituït la cadena.
 Un o tots dos números no són numèrics.
 Paraula suprimida.
 Caràcter suprimit.
-Configuració del sistema de fitxers ...
-Aquesta secció llista els paràmetres del sistema de fitxers.
 Benvingut a Configuració.
 Error en executar l'ordre SSH
 Error a l'intèrpret d'ordres SSH
 - Informació de l'aplicació
-Activa el suport de 255 colors per a BouncingText.
-Activa el suport del color real per a BouncingText.
 Prova l’escriptor del diccionari amb la cadena i la matriu de cadenes
 Prova l’escriptor del diccionari amb la matriu char i char
 Prova l’escriptor del diccionari amb l’interior i la matriu sencera
@@ -1072,21 +919,15 @@ on hi haurà HardwareType
 El tipus de maquinari {0} no està provat o no és vàlid.
 El tipus de maquinari {0} encara no s'ha investigat. Si esteu segur que està provat, reinicieu el nucli amb la depuració activada.
 Particions no analitzades a la llista.
-Mode pirata informàtic
-Si està activat, s'activarà la consola verda.
 Imprimeix un separador
 Imprimeix un separador amb suport de formats
 Imprimeix un separador amb suport de color
 Imprimeix un separador amb suport de color i format
 Sempre centrat
-Activa el suport de 255 colors per a Carpa.
-Activa el suport del color real per a Carpa.
 Escriviu el text que vulgueu que es mostri.
 Si el text que es mostra a l’envelat està sempre centrat.
-'q' per deixar de fumar.
 No s'ha trobat l'argument {0} per injectar.
 No s'ha trobat l'argument de línia d'ordres {0}.
-Esborra tota la configuració
 El protector de pantalla ha experimentat un error en mostrar: {0}. Premeu qualsevol tecla per sortir.
 Vista prèvia...
 A continuació, es mostrarà el vostre tema:
@@ -1124,20 +965,15 @@ Si s’utilitza la unitat de batecs per minut per escriure el següent color.
 Retard en batecs per minut
 Beat Color
 Quantes pulsacions per minut esperar abans de fer la següent escriptura?
-Activa el suport de 255 colors per a BeatFader.
-Activa el suport del color real per a BeatFader.
 BeatFader seleccionarà colors aleatoris si està activat. En cas contrari, utilitzeu colors de config.
 Bàner d’inici personalitzat
-Si s’especifica, es mostrarà un bàner d’inici personalitzat amb suport d’espais reservats. Podeu utilitzar aquesta frase per a la versió del nucli:
 Baixa la carpeta remota al directori local mitjançant text binari o binari
 Penja la carpeta local al directori remot mitjançant text binari o binari
-Introduïu una carpeta per descarregar-la al directori local.
 S'està baixant la carpeta {0} ...
 Carpeta descarregada {0}.
 No s'ha pogut baixar la carpeta {0}.
 S'està penjant la carpeta {0} ...
 Carpeta penjada {0}
-Introduïu una carpeta per penjar-la al directori remot.
 Premeu "c" per escriure el codi a tot color.
 Introduïu el codi de color que compleixi aquests formats:
 Minimitza el fitxer JSON
@@ -1151,13 +987,9 @@ Les columnes de text que s’imprimiran.
 Quants caràcters cal escriure abans d'activar el "farciment de línia"?
 Possibilitat que el patró d’ompliment de línia s’imprimeixi en majúscules i en majúscules
 Tipus de patró d’ompliment de línia
-Patró comú
-Patró complet
-Patró aleatori
 La resposta pot no ser nul·la.
 La resposta no pot superar les entrades mostrades.
 Guardar canvis...
-Aquest estalvi de pantalla admet text escrit en un fitxer. Passeu el camí complet del fitxer a aquest camp i el protector de pantalla mostrarà el contingut del fitxer adequadament.
 Gestioneu les vostres modificacions
 La gestió de modificacions està desactivada en mode segur.
 Ordre no vàlida {0}. Consulteu l'ús següent:
@@ -1173,5 +1005,3 @@ Premeu qualsevol tecla per llegir la pàgina del manual ...
 Aquesta pàgina del manual necessita treballar per a:
 No s'ha trobat la pàgina del manual {0}.
 Manual de modificacions
-Activa el suport de 255 colors per a FlashColor.
-Activa el suport del color real per a FlashColor.

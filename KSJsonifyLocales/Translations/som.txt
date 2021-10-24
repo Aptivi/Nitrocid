@@ -1,15 +1,6 @@
 Amarada la heli karo: {0}
-Qor amar:
 Cirbadda taliska waa la joojiyay.
-Kala sooc dooda muranka leh hakad la'aan, tusaale ahaan, 'motd, gpuprobe'
-Kala amar gaar ah oo ku saabsan 'cmdinject' oo leh xiidmooyin leh meelo bannaan, tusaale ahaan, 'cmdinject setthemes Hacker: beep 1024 0.5'
-Xusuusnow in doodda 'debug' aysan si buuxda u daboolayn firida.
-baararka: Doodda la codsaday {0} lama helin.
-khaladaad: Khalad aan laga soo kaban karin dood ahaan:
-Doodaha la heli karo: {0}
-Doodaha ('help' caawimaad):
 Doodaha la isku duro ayaa loo qorsheyn doonaa inay dib u bilaabaan xiga.
-Cirbadaha Doodda waa la joojiyay.
 Cilad markii la turjumayo doodaha dhabta ah ee amarka-tooska ah: {0}
 Muunad midab aan ansax ahayn {0}
 hwprobe: Qalabkaaga ayaa la baarayaa. Fadlan sug...
@@ -82,7 +73,6 @@ Erayga sirta ah ee {0}:
 Kuxiran {0}
 Cilad markii la isku dayayay in lagu xiro {0}: {1}
 Raad raacsan: {2}
-Gali server FTP ah.
 Buugga deegaanka {0} ma jiro
 Gali tusaha deegaanka. ".." inaad dib ugu noqoto.
 Tusaha {0} lama helin.
@@ -97,16 +87,12 @@ Wali kuma xirmin wax adeeg ah
 Soo degsada feylka {0} ...
 Faylka la soo degay {0}.
 Waa inaad ku xirnaataa server ka hor intaadan gudbin.
-Gali feyl si aad ugala soo baxdo diiwaanka deegaanka.
 {0} KB | Wax laga beddelay: {1}
 Waa inaad ku xirnaataa server ka hor intaadan taxin dhammaan faylasha fog.
 Fayl gelinaya {0} ...
 Faylka la soo galiyay {0}
-Gali fayl aad ku shubato diiwaanka fog. geliyaan <file> <directory>
-(Gudaha:
 Hesho buugga deegaanka ee hadda jira
 Wuxuu helaa tusaha fog ee hadda jira
-Waxay kuxirantahay adeegaha FTP (waa inay kubilaabataa "ftp://" ama "ftps://")
 Wuxuu beddelaa buugga hagaha maxalliga ah si aad uga soo dejiso ama uga soo dejiso
 Waxay badashaa galka fog ee laga soo dejisto ama loo soo raro
 Tirtiraa faylka fog ee serverka
@@ -147,7 +133,6 @@ Qaab dhismeedka dib ayaa loo cusbooneysiiyay. Waxaa laga yaabaa inaad u baahato 
 Mid ama kabadan midabada mid aan ansax ahayn.
 Midabbo lama heli karo. Daar qolof midab leh oo ku jira qaybta 'kernel'.
 Sawir-qaadaha {0} lama helin.
-[ Dejinta uurka (Waxay socotaa {0}) ]
 Nooca Kernel:
 Habka khaladka:
 Shell midab leh:
@@ -155,8 +140,6 @@ Doodaha ku saabsan Boot:
 Caawinta amarka la fududeeyay:
 MOTD Soo Gal:
 Waqtiga/Taariikhda geeska:
-[ Dejinta qalabka ]
-[ Dejinta isticmaaleyaasha ]
 Magaca isticmaalaha hadda:
 Magaca martigaliyaha hadda:
 Magacyo adeegsi oo la heli karo:
@@ -183,31 +166,14 @@ Macluumaadka nidaamka
 * Waxaad isticmaali kartaa amarro badan adoo adeegsanaya xiidmaha u dhexeeya amarrada.
 Isticmaalka:
 halka doodaha ay noqon doonaan {0}
-Wuxuu bilaabaa qolofka FTP.
-Asxaabta
 meesha customsaver uu jiri doono
-Wuxuu ku xiraa shaashadda lambarka sirta ah.
-Kaa saarey isticmaaleha.
-Hel macluumaad kasta oo shabakad ah
-Dib ayuu u bilaabayaa kombiyuutarkaaga jilicsan.
-Waxay dib u soo cusbooneysiisaa qaabeynta oo loo beddelay isticmaale-dhamaadka ama aalad.
-Midabbo uma baahna dib-u-bilaabid, laakiin inta badan dejintu waxay u baahan yihiin inaad dib u bilowdo.
-wuxuu ku tusayaa shaashad la soo xulay, iyadoo laga ilaalinayo shaashaddaada gubashada guryaha.
-Wuxuu muujinayaa taariikhda iyo waqtiga.
-Waxay ku tusaysaa taariikhda iyo waqtiga aagagga.
-Wuxuu xidhayaa kombiyuutarkaaga aad moodid.
-Wuxuu muujiyaa macluumaadka nidaamka iyo noocyada.
 Khalad ayaa ka jiray qolofka.
 Ma haysatid rukhsad aad ku isticmaasho {0}
 Fariinta Shell: Amarka la codsaday {0} looma oggola inuu ku socdo qaabka dayactirka.
 Farriinta Shell: Amarkii la codsaday {0} lama helin. Ka eeg 'caawimaad' amarrada la heli karo.
 Fariinta Shell: Amarka {0} looma oggola inuu ku shaqeeyo barta laga soo galo.
 Cilad isku day ah fulinta amarka.
-Waqtiga: Waqtiga waa {0}
-waqti: Maanta waa {0}
-Waqtiga: Wakhtiga: {0}
 - Waqtiga {0}: {1}
-si loo nadiifiyo shaashadda.
 Ku ordaya {0}
 Adigu awood uma lihid inaad hesho macluumaad ku saabsan {0}.
 Amarkani waa mid duugoobay oo waxaa laga saari doonaa mustaqbalka sii deynta.
@@ -233,8 +199,6 @@ Wuxuu beddelaa luqadda
 >> Frames, faylasha, khadadka, iyo tiirarka <<
 > Qaabka {0}: Fayl: {1} | Safka: {2} | Safka: {3}
 > Waxaa jira qalad marka la isku dayayo in la helo macluumaadka qaabka. {0}: {1}
-Reloads mods.
-Mods ayaa dib loo soo rogay.
 Ku soo dhowow Kernel!
 Kusoo gasho si guul ah <user>
 MOTD / MAL waa ansax, laakiin nooca farriintu ansax maaha. Haddii loo maleeyo MOTD ...
@@ -267,27 +231,19 @@ Adapter {0} ma taageerayo IPv6. Sii socda ...
 Adapter {0} ma taageerayo IPv4. Baaritaanku wuu fashilmay.
 Waxay u egtahay inaad wadayso nooca horumarinta ee kernel-ka. In kasta oo aad arki karto dhinacyada, si joogto ah ayaa loo cusbooneysiiyaa waxaana laga yaabaa inuu soo bandhigo cayayaanka. Waxaa lagugula talinayaa inaad ku ekaato nooca xasilloon.
 Luqadda aad dooratay waxay ka kooban tahay laba nooc. Dooro mid:
-1. Tarjumid
-2. Tarjumay
-Xulo doorashadaada:
 Xulasho aan ansax ahayn Mar kale isku day.
 Adigu ma lihid inaad dejiso cinwaanka hadda {0}: {1}
 Jidka aad tilmaamtay aad buu u dheer yahay.
-Processor: DIGNIIN: SSE2 waxaa looga baahan doonaa howlaha horumarinta mustaqbalka.
 Soo uruuriyaha macluumaadka qashinka ayaa burburay markii uu isku dayayay inuu helo macluumaad ku saabsan {0}: {1}
-Cilad markii la isku dayayay in la helo taariikh ururin {0}: {1}
 Cilad markii la iskudayay inaad dejiso MOTD/MAL: {0}
 Cilad markii la isku dayayay in la helo MOTD/MAL: {0}
 Cilad markii la isku dayayay in la bilaabo kaydinta shaashadda, hawlgal aan ansax ahayn awgeed.
 Dib u soo rarida looma oggola qaab nabdoon.
 Hababka kala-saarista lama oggola hab aamin ah.
-Liisaska dhammaan aaladaha khaladka ka baxa.
 Cillad markaad iskudayeyso inaad dejiso qaab qallooca. Hubi qiimaha oo iskuday markale. Haddii tani sax tahay, eeg raadadka xargaha markii khafiifinta khafiifka la awoodo.
 Jidku maahan fayl ama diiwaanka.
 Waxay abuurtaa nuqul kale oo fayl ah oo hoos imanaya buugga ama magac ka duwan.
 U guurisaa feyl galka kale
-Si aad ugu nuquliso feylasha galka kale ama magac kale
-Si aad ugu wareejiso faylasha galka kale
 Tartan {0} ({1}): {2}
 Tartan {0}: {1}
 Waqtiga lagu qaatay: {0} milliseconds
@@ -302,9 +258,6 @@ Kajawaab jacaylka ama nacaybka faallooyinka.
 Haddii qof uu faallooyinkan ka bixiyo fiidiyowgaaga:
 Sideed ugu jawaabi lahayd
 Xulitaan aan ansax ahayn Aadida faallada xigta ...
-Waxaad soo gudbisay faallooyinka jacaylka!
-Waxaad ku jawaabtay faallooyinka nacaybka!
-Wanaagsan! Faallooyinka {0} waa laga saari doonaa taas.
 Wanaagsan! {0} wuu qadarin doonaa mahadsanidaada.
 Higaad hufan!
 Higaad khaldan
@@ -318,7 +271,6 @@ Gali lambarka sirta ah ee {0}:
 SSH wuu jaray.
 Awoodin karin sameynta koodh Luqadda waxaa laga yaabaa inaysan si fiican u soo bixin.
 Debugging ma awoodin.
-{0} dib looma sii deynayo keyd-joojiye ahaan.
 Mahadsanid! Tani waa mid xiiso leh.
 Qof walba wuu ku taageeri doonaa fiidiyahaaga tan.
 Waxaan ku siiyay feylka gaarka ah e-mailkaaga fiidiyowgaaga soo socda.
@@ -364,7 +316,6 @@ Tusaha {0} horeyba wuu u jiray
 Cilad markii la isku dayayay in lagu xiro {0}: Waqtiga xiritaanka xiriirka ama xiriir lumay
 Xisaabiyaha si loo xisaabiyo tibaaxaha.
 Cilad xisaabeed.
-Waxay u egtahay inaad wadayso nuqulka sii-deynta ah. In kasta oo ay ammaan tahay in la isticmaalo hadda, waxaa lagugula talinayaa inaad ku sii jirtid nooca xasilloon.
 Cusboonaysiinta nidaamka
 Hubinta cusbooneysiinta nidaamka ...
 La helay nooc cusub:
@@ -372,7 +323,6 @@ Waxaad ka soo dejisan kartaa:
 Ma jiro ogeysiisyo dhowaanahan
 Raadinta xarig cayiman faylka la bixiyay
 Xisaabiyaa isu geynta faylasha galka cayiman.
-Wuxuu liis gareeyaa dhammaan waraaqaha isticmaalaha gaarka ah.
 Gali username ama cinwaanka boostada:
 Gali lambarka sirta ah:
 Cilad markii lagu xidhayay {0}: {1}
@@ -382,7 +332,6 @@ Ka bax qolofka IMAP
 Liiska amarrada
 Soo dejista farriimaha oo liis garaynaysa
 Furaa farriin
-Bogga ma noqon karo mid taban ama eber ah.
 Bogga ma aha qiime tiro.
 Lambarka fariinta ma noqon karo mid taban ama eber ah.
 Lambarka farriinta ma aha qiime tiro.
@@ -392,7 +341,6 @@ Lambarka farriinta ma aha qiime tiro.
 Farriinta la cayimay lama helin.
 Ka bixitaan fog ayaa ku guuldareystay inuu bilowdo: {0}
 Diyaarinta astaamaha ... Waxay qaadan kartaa dhowr daqiiqo ...
-Magaca martida, Magaca isticmaalaha, Nooca Xogta, Diiwaangelinta, Qarsoodiga, Nidaamyada
 Cilad isku day ah in lagu fuliyo qoraalka: {0}
 Wuxuu qoraal ugu qoraa qunsulka
 Waxay ka dhigtaa xulashooyinka isticmaalaha
@@ -417,7 +365,6 @@ Garaacida xawaaraha waa faaruq Ku xirmaan server si aad ugu darto cinwaan.
 Wicitaanka xawaaraha ma jiro. Ku xirmaan server si aad ugu darto cinwaan.
 Gali cinwaanka IMAP ee serverka iyo dekedda (<address> ama <address>:[port]):
 Gali cinwaanka server-ka SMTP iyo dekedda (<address> ama <address>:[port]):
-Wuxuu kaa codsanayaa inaad buuxiso meelaha loo baahan yahay si aad ugu dirto farriin cinwaan
 Farriin ayuu cinwaan ugu dirayaa
 Gali cinwaanka boostada:
 Gali mawduuca:
@@ -445,8 +392,6 @@ Tirtir eray ama weedh lambarka xariiqda
 Tirtir xaraf nambarka xarafka xariiq cayiman
 Khad laga saaray
 Lambarka la cayimay ee {0} ma aha tiro ansax ah.
-Doodaha loobaahanyahay looma gudbin amarka {0}
-Cilad isku day ah in amarka la wado: {0}
 Ku socoshada qaab nabdoon. Ka gudubka marxaladda ...
 >> Dib-u-habeynta Remote iyo Chat: nooca
 >> Cinwaankaagu waa {0}.
@@ -464,19 +409,12 @@ Ku xir qalabka khaladka cinwaanka IP
 Cilad raritaanka dejinta
 Khalad ayaa jira intaad dejineyso dejinta. Waxaa laga yaabaa inaad u baahato inaad fiiriso faylka dejinta.
 Xulo qaybta:
-Goobaha Guud ...
-Dejinta Qalabka ...
-Dejinta Galitaanka ...
-Qalabka Shell ...
-Dejinta Shabakada ...
-Meelo kala duwan ...
 Keydso Dejinta
 Ka bax
 Ikhtiyaarka la cayimay {0} ma ansax yahay.
 Jawaabtu waa inay noqotaa tiro.
 Degdeg u ah doodaha kabaha
 Habka Dayactirka Kiciya
-Beddel Sirta xididka ...
 Hubi Cusboonaysiinta Bilawga
 Baaritaan Degan
 Ku muuji MOTD Galitaanka
@@ -500,9 +438,7 @@ Qayb aan ansax ahayn ayaa la galay. Fadlan dib u noqo.
 Dib u laabo ...
 Daar
 Hawl gab
-Lambarka furaha aan ansax ahayn ayaa la galay. Fadlan dib u noqo.
 Qor lambarka sirta ah ee lagu dejinayo. Ha welwelin; lambarka sirta ah waxaa loo muujiyaa xiddigo.
-Awoodi "Beddel Sirta Root" si aad u adeegsato ikhtiyaarkan. Fadlan dib u noqo.
 Beddel erayga sirta ah?
 Calan Password xididka ...
 Qor deked khafiifisa fog. Waa inuu noqdaa lambar, waana inaan horay loo isticmaalin. Haddii kale, qalabka wax baabiiya ee fog ayaa ku guuldareysan doona inuu furo dekedda.
@@ -513,7 +449,6 @@ Jawaabtu ma noqon karto mid taban.
 Jawaabtu waa baadil. Hubi si aad u hubiso in jawaabtu ay tiro ahaan tahay gelitaanka isku xidhka ee u baahan lambarrada jawaabo ahaan.
 Isbadal {0} laguma helo mid ka mid ah modullada.
 Waxay bedeshaa qaabeynta kernel
-Dejinta Shaashadda ...
 Dhaqaaq 255 midab
 Ma rabtaa inaad isku xirnaato?
 Doorashada aan ansax ahayn Maya oo ...
@@ -549,7 +484,6 @@ Waa lagu guuldaraystay in la dhaqaajiyo faylka ama galka: {0}
 Awoodin in la helo fayl u dhigma xarig "{0}": {1}
 Soo dejinta ayaa ku fashilantay faylka {0}.
 Fashilantay liistada faylasha fog: {0}
-Gali fayl ama fayl si aad uga saarto. Waa inaad ku haysataa rukhsad maamul koontadaada si aad uga saari karto.
 Ma hubtaa inaad rabto inaad tirtirto {0} <y / n>?
 Tirtirayaa {0} ...
 {0} lagama helo serverka.
@@ -560,7 +494,6 @@ U guurista {0} ilaa {1} ...
 Si guul leh ayaa loo dhaqaaqay
 Waxay u guurisaa faylka ama galka faylka ama galka kale. Waxa kale oo aad u isticmaali kartaa in magaca faylasha.
 Ku guuldarreystay inuu u dhaqaaqo {0} illaa {1}.
-Gali dariiqa isha iyo wadada loo socdo.
 Nuqul ka ah {0} illaa {1} ...
 Guuriyay si guul leh
 Nuqulada faylka ama galka faylka ama galka kale.
@@ -578,9 +511,6 @@ Uumi: {0}
 Waxaad ka heli kartaa furahaaga gaarka ah API https://home.openweathermap.org/api_keys.
 Waxaad had iyo jeer la tashan kartaa http://bulk.openweathermap.org/sample/city.list.json.gz liiska magaalooyinka wata aqoonsigooda.
 Qaybta laga doorbiday heerkulka
-Kelvin
-Imperial (Fahrenheit)
-Mitir (Celsius)
 Dejisaa guntinta si ay kuugu kallifto inaad ku doodo kabaha.
 Waxay kicineysaa habka dayactirka. Tani waxay joojineysaa koontooyin badan.
 Bilaabasho kasta, waxay hubin doontaa wixii cusbooneysiin ah.
@@ -595,10 +525,6 @@ Amarka caawimaadda fudud ee dhammaan qolofka
 Inuu galo ama aanad galin magaca usbuuca FTP.
 Inuu galo iyo inkale cinwaanka FTP IP.
 Xulo muuqaalka koowaad marka aad isku xirmeyso.
-Waxay kicisaa taageerada midabka 255 ee ColorMix.
-Waxay kicisaa taageerada midabka 255 ee Diskoo.
-Waxay kicisaa 255 taageero midab ah GlitterColor.
-Waxay kicisaa 255 taageero midab Khadadka.
 Waqtiga iyo taariikhda waxaa lagu muujin doonaa geeska kore ee midig ee shaashadda
 Haddii la kartiyeeyo, firku wuxuu kala shaandheyn doonaa galka oo dhan cabbirkiisa guud. Haddii kale, kaliya ayaa marin doonta dusha sare.
 Waxay awood u siinaysaa indhashareerka bilowga
@@ -608,7 +534,6 @@ Xullo qeybta aad doorbideyso heerkulka (tani kaliya waxay khuseysaa amarka "cimi
 Habka {0} waa istaagay
 {0} v {1} istaagay
 Qaabka {0} ma laha magaca qeybta. Baaritaankii Mod ayaa fashilmay. Dib u eeg koodhka isha.
-Mod {0} ma laha amarka. Baaritaankii Mod ayaa fashilmay. Dib u eeg koodhka isha.
 Waa inaad daartaa qaabka khalad ka hor intaadan nadiifin qoritaanka khaladka.
 {0} farriimo cusub ayaa soo galay sanduuqa.
 Fur "mail" si aad u aragto.
@@ -645,10 +570,6 @@ Heerka midabka cas ayaa dhaafay. Waxay ahayd {0}.
 Heerka midabka cagaaran wuu dhaafay. Waxay ahayd {0}.
 Heerka midabka buluuga ah ayaa dhaafay. Waxay ahayd {0}.
 Dhaqaajiso midabada runta ah
-Waxay kicisaa taageerada midabka runta ah ee ColorMix.
-Waxay kicisaa taageerada midabka runta ah ee Diskooga.
-Waxay u ololeysaa taageerada midabka dhabta ah ee GlitterColor.
-Waxay kicisaa taageerada midabka runta ah ee Khadadka.
 Waa lagu guuldareystay in laga furo {0}.
 {0} horay baa loo xiray
 {0} kama mid noqon karo qalabixinta fog fog.
@@ -659,7 +580,6 @@ Gali dariiqyada faylalka ku lifaaqan. Guji ENTER waddo maran si aad u xaqiijiso.
 Furaa farriin sir ah
 U qor ereyga sirta ah aqoonsiga furaha {0}
 Waxay cinwaan u dirtaa farriin sir ah
-Wuxuu kaa codsanayaa inaad buuxiso meelaha loo baahan yahay si aad cinwaan ugu dirto farriin sir ah
 Ka soo degsanaya {0} ...
 Muuji baarka horumarka intaad soo dejineyso ama aad wax ka soo dejineyso "get" ama "put" amarka
 Hadday run tahay, waxay ka dhigaysaa "hel" ama "dhig" muujisaa baarka horumarka intaad soo dejineyso ama aad wax soo dejiso
@@ -678,8 +598,6 @@ Dareemo sida: {0}
 Heerkulka: {0}
 Xawaaraha dabaysha: {0}
 Jihada dabaysha: {0}
-Waxay kicisaa 255 taageero midab ah Kala-diridda.
-Waxay u ololeysaa taageerada midabka runta ah ee Kala-dirista.
 Riix fure kasta si aad dib ugu noqoto.
 Aan la abuuri karin galka boostada {0}: {1}
 Waxay ka dhigaysaa tusaha galka shaqada ee hadda jira
@@ -692,22 +610,11 @@ Hashes waa cilladaysan tahay.
 Hashu isma waafaqdo.
 Xashiishka ayaa isku aada.
 Magacaabay fayl
-Qaybtani waxay taxaysaa dhammaan goobaha guud ee kernel, inta badan si loo ilaaliyo firida.
-Qaybtani waxay bedeshaa habdhaqanka baaritaanka qalabka.
-Qaybtani waxay u taagan tahay goobaha gelitaanka. Ka bax koontadaada si isbeddeladu u dhaqan galaan.
-Qaybtani waxay liis garaysaa goobaha qolofta.
-Qaybtani waxay liis garaysaa goobaha shabakadda, sida qolofka FTP, goobaha amarka ee shabakadda la xiriira, iyo dejinta qaladka fog.
-Qaybtani waxay taxaysaa dhammaan shaashadda iyo dejintooda la heli karo.
-Dejinta aan ku habboonayn qaybtooda ku habboon halkan ayey ku degtaa.
-Tijaabinta mods adoo siinaya feylasha moodeelka
 Wuxuu furaa qolof tijaabo ah
-Waxay u sahlaysaa qaabka cilad-bixinta
-Doodaha doodaha
 * Riix fure kasta si aad u bilowdid kernel ama ESC si aad uga baxdo.
 Wuu ku guuldareystay inuu bilaabo "{0}": {1}
 Muuji aragtida fariinta boostada
 Marka aad taxayso farriimaha boostada, muuji muuqaalka jirka.
-Midabada khaaska ah ...
 Midabka galinta
 Midabka shatiga
 Midab qalad kernel la sii wadi karo
@@ -721,8 +628,6 @@ Midab khaldan
 Nooca FTP Degdega ah
 Nooca Boostada Degdega ah
 Nooca SFTP Degdega ah
-Waxay kicisaa taageerada midabka 255 ee BouncingBlock.
-Waxay kicisaa taageerada midabka runta ah ee BouncingBlock.
 Isku dayga marinka marin aan sax ahayn.
 Wuxuu tirtirayaa feylka qoraalka
 Ka baxa tifaftiraha qoraalka
@@ -745,8 +650,6 @@ Midabka Daqiiqadaha Bar
 Midabka Saacadaha Bar
 Midabka Macluumaadka
 Shilinta si aad u bedesho midabka
-Waxay kicisaa taageerada midabka 255 ee loogu talagalay ProgressClock.
-Dhaqaajiyaa taageerada midabka runta ah ee ProgressClock.
 Haddii midabka baaskiil wadista la hawlgeliyo, immisa shilina ka hor intaanad midabbada ka beddelanin ProgressClock? 1 sax = 0.5 ilbiriqsi
 ProgressClock waxay dooran doontaa midabyo aan kala sooc lahayn haddii ay karti yeelato. Haddii kale, u isticmaal midabyada isku xidhka.
 Ka dhigaysa mawduuc cusub
@@ -761,39 +664,10 @@ Midabka xulashada
 Gali lambarka midabka 0 ilaa 255:
 U adeegso "hwinfo" wixii macluumaad dheeri ah ee ku saabsan qalabka.
 Daabacaa macluumaadka qalabka
-Macluumaadka CPU:
 Magaca processor:
-Xawaaraha processor:
 Gabdhaha processor-ka:
-Processor-ka:
-Topology-ga waxqabadka:
-Nooca processor:
-Talaabada ugu wanaagsan ee processor-ka:
-Processor BogoMips:
-Cabbirka processor-ka L2:
-Qiyaasta processor-ka L3:
-Astaamaha processor:
-Macluumaadka HDD:
-Magaca wadista:
-Qaabka wadista:
-Wade iibiyaha:
-Xawaaraha wadista:
-Cabbirka wadista:
-Wad taxane:
-Aqoonsiga Wadista:
-Tirinta tirinta qaybta:
-Aqoonsiga Qaybta:
 Nidaamka faylasha
 Cabbirka xijaab:
-Qeybta loo adeegsaday:
-Macluumaadka RAM:
-RAM bilaash ah:
-Wadarta RAM:
-RAM loo adeegsaday:
-Macluumaadka GPU:
-Magaca GPU:
-Darawalka GPU:
-Nooca GPU:
 Mid ama in ka badan oo kaararka muuqaallada ah ayaa ku guuldareystay in la baaro. Si kasta oo macluumaadka loo muujinayo ...
 >> Soo dhowow! Tani waa markii ugu horreysay ee aad gasho khalad fog oo aad ku sheekaysato. Adeegso "/ diiwaangeli <name>" si aad isuqorto.
 Qalab horeyba wuu u jiray
@@ -825,8 +699,6 @@ Sheeg magaca mawduuca:
 Isticmaalaha {0} ayaa lagu daray liiska "{1}".
 Isticmaalaha {0} ayaa laga saaray liiska "{1}".
 Qaab aan ansax ahayn {0}
-Isticmaale ayaa horey ujiray
-Dulucda Mawduuca Laga ...
 Dulucda Mawduuca Ka Dulucda Mawduucyada ...
 Sheeg magaca faylka mawduuca oo aan lahayn kordhinta .json:
 Wuxuu furayaa diiwaan ZIP ah
@@ -839,12 +711,9 @@ Tusaha {0} ma jiro
 Diiwaanka Diiwaanka {0} ma jiro
 Meeleynta Max Meelaha
 Immisa boos ayaa la shidaa intaan la nuurin ka hor?
-Waxay kicinaysaa 255 taageero midab ah oo loogu talagalay Laydhka.
-Waxay kicisaa taageerada midabka dhabta ah ee Lighter.
 Liiska midabka gelitaanka
 Liiska midabka qiimaha
 Waxay kuxirantahay adeegaha SSH si loo fuliyo amar.
-Qaybtani waxay taxayaan dejimaha keydinta shaashadda loogu talagalay
 Sifeeyaha midabka aan ansax ahayn Hubso inay ku socoto qaabka saxda ah, oo macnaheedu yahay lambar laga bilaabo 0-255 haddii la adeegsanayo 255 midab ama taxane VT ah haddii midab run ah la adeegsanayo sida soo socota:
 Cilad ku jirta qolofka tijaabada: {0}
 U dejinayaa doorsoomaha qiimihiisa qoraalka
@@ -866,13 +735,11 @@ Sideed u rabtaa inaad xaqiijiso?
 Faylka furaha gaarka ah
 Furaha
 Gali erayga ereyga ee furaha {0}:
-Gali meesha fure fure u ah {0}. Qor "q" si aad udhameyso ku darista furayaasha:
 Waa lakala saaray waddo aan jirin.
 Faylka furaha {0} ma jiro.
 Cilad isku day ah in lagu daro fure gaar ah:
 Taabo "t" si aad ugu bedesho 255 hab midab leh.
 Taabo "t" si aad ugu beddesho qaabka midabka runta ah.
-Qaybtani waxay kuu oggolaaneysaa inaad doorato nooca midabka aad rabto inaad beddesho.
 Waxay umuuqataa inaadan helin isticmaale marka laga reebo xididka. Tani waa xun. Waxaan kugu hagi doonaa sida loo abuuro mid.
 Qor magacaaga isticmaale.
 Waa inaad qortaa magacaaga isticmaale.
@@ -882,7 +749,6 @@ Xulo nooca koontada.
 Maamulaha: Noocan koontadaani wuxuu leeyahay awoodda ugu badan ee xarkaha, taasoo kuu oggolaaneysa inaad isticmaasho barnaamijyada maaraynta nidaamka.
 Isticmaalaha Caadiga ah: Nooca koontadan ayaa xoogaa ka xaddidan maamulayaasha.
 Hambalyo! Waxaad sameysay akoon cusub! Si tan loo dhammeeyo, gal koontadaada cusub.
-La tasho buuga kaydinta shaashadda ama koodhka ilaha wixii macluumaad ah.
 qaab: Ma jiro wax la ogaadey.
 Amarrada guud:
 Amarada moodeelka:
@@ -906,7 +772,6 @@ Tijaabinta xarunta qaladka khafiifka iyadoo lagu taageerayo qaabka
 Imtixaannada loo turjumayo xarig ka jira ilaha macluumaadka luqad gaar ah
 Daabacaa xarig si loogu tacsiyeeyo loona turxaan bixiyo meelihii la helay
 Tijaabisaa xarunta muujinta caadiga ah
-Qarsoodi xargaha iyadoo la adeegsanayo
 Wuxuu bilaabaa dhammaan noocyada
 Joojiya dhammaan noocyada
 Awood siiya ama joojiya soo-saarka
@@ -941,7 +806,6 @@ Liisaska ayaa taageeray dhaqamada
 Raadinta xarigga cayiman ee feylka la bixiyay iyadoo la adeegsanayo muujinta caadiga ah
 Eeg haddii aad riixi kartid furaha waqtiga
 Isticmaaluhu ma uusan keenin wax talo bixin ah waqtigii loogu talagalay.
-Dhibaato aan sax ahayn
 Dabeecad aan lagu riixin waqtiga.
 Waxaad riixday dabeecada saxda ah!
 Waxaad riixday dabeecad qaldan.
@@ -985,7 +849,6 @@ Waxay heshaa dejin u gaar ah
 Dejisaa dejimaha keydiyaha
 Dejinta ayaa si guul leh loogu dajiyay kaydinta shaashadda
 Waa lagu guuldareystay in la dejiyo goob loogu tala galay shaashadda
-Qaybtani waxay kuu oggolaaneysaa inaad maamusho abuurista ereyga sirta ah.
 Wuxuu furaa qolof RSS si aad u aqriso quudinta
 Ka bax qolofka RSS kuna laaban kernel
 Waxay badashaa iskuxirka quudinta
@@ -1012,13 +875,6 @@ Nooca faylasha faylasha
 Jihada faylasha
 Waxay xakameysaa sida faylasha loo kala soocayo.
 Waxay xakamaysaa jihada kala-soocida faylasha hadday kor u kacayso iyo inay soo degayso.
-Amarka kor u kaca
-Amar ka soo degaya
-Magaca oo buuxa
-Cabirka faylka
-Waqtiga abuurka
-Waqtiga qorista ee ugu dambeeya
-Waqtiga helitaanka ugu dambeeya
 Dib-u-qor Mar Kale Dib-u-dhigis ku yimaada Millisekonds
 Imisa millisecond ayaa la sugayaa ka hor inta aan qoraalka la qorin markale?
 Qor qoraal kasta oo aad rabto inaad tusto. Dheer baa ka fiican.
@@ -1027,35 +883,26 @@ Xawaaraha qorista ugu badan ee WPM
 Suurtagalnimada typo boqolkiiba
 Ku guuldareystay inuu kaydiyo kaydinta hadda jirta: {0}
 Tirtiraa si aad u badasho jihada
-Waxay kicisaa 255 taageero midab ah Wipe.
-Dareysaa taageerada midabka runta ah ee Wipe.
 Immisa tirtira oo la sameeyo ka hor intaan jihada loo beddelin si nasiib ah?
 Marxaladda ayaa lagu dhammeeyay
 Bilaabidda gudaha ayaa ku dhammaatay
 Faylka la tixraacay {0} lama helin. Habkaani si sax ah uma shaqeyn karo feylkaan la'aantiisa.
 Bilaabida habka
-Hesho macluumaad casri ah
 Magaca taliska:
 Qeexitaanka amarka:
 Nooca taliska:
 Amarka adag?
 Nooc Mod:
 Qaab {0} lama helin.
-Dhaqanka
-Noocee ah oo ah {0} ayaa loo isticmaalaa in lagu beddelo magacyada bisha, kalandarka, iwm.
 Tifatiraha qoraalka wali ma uusan furin wabiyaal file ah.
 Xadhig ayaa la beddelay
 Mid ama labadaba lambarradu tiro ma aha.
 Ereygii waa la tirtiray
 Astaamaha ayaa la tirtiray
-Dejinta Faylasha
-Qaybtani waxay liis garaysaa hababka faylasha.
 Ku soo dhowow Dejinta!
 Cilad ah fulinta amarka SSH
 Khalad ku yaal qoorta SSH
 - Macluumaadka barnaamijka
-Waxay kicisaa taageerada midabka 255 ee BouncingText.
-Waxay u ololeysaa taageerada midabka dhabta ah ee BouncingText.
 Tijaabiyaha qoraha qaamuuska ee xariga iyo xariga xariga
 Tijaabinta qoraha qaamuuska ee char iyo char array
 Tijaabiyaha qoraha qaamuuska ee leh tiro iyo tiro isku dhafan
@@ -1072,21 +919,15 @@ halka ay noqon doonto nooca loo yaqaan 'HardwareType'
 Ama nooca qalabka {0} lama baarayo, ama ansax ma ahan.
 Nooca qalabka {0} wali lama baarayo. Haddii aad hubto in la baaray, dib u billow kernel adoo adeegsanaya khalad ka saaraya.
 Qeeybinta aan lagu darin liistada.
-Hoodka Hoodka
-Haddii la shaqeysiiyo, konsol cagaaran waa la shaqeyn doonaa.
 Daabacaa kalasaare
 Daabacaa kala-sooc leh qaab taageero
 Daabacaa kala-bixiyaha leh midab taageero
 Daabacaa kala-sooca leh midab iyo taageero qaab
 Had iyo jeer udub dhexaad
-Waxay u ololeysaa taageerada midabka 255 ee Marquee.
-Waxay u ololeysaa taageerada midabka dhabta ah ee Marquee.
 Qor qoraal kasta oo aad rabto inaad tusto.
 Haddii qoraalka lagu muujiyey marquee markasta udub dhexaad u yahay.
-'q' inaad joojiso
 Doodda {0} lama helin in la duro.
 Doodda xariiqda taliska {0} lama helin.
-Wuxuu tirtirayaa dhammaan goobaha
 Sawir-qaadaha ayaa khalad la kulmay intii uu soo bandhigayay: {0}. Riix fure kasta si aad uga baxdo.
 Hordhac ...
 Waa tan sida mawduucaagu u ekaan doono:
@@ -1124,20 +965,15 @@ Haddii aad isticmaasho cutubka Beats Per Minute si aad u qorto midabka xiga.
 Dib -u -dhaca Beats Daqiiqad kasta
 Midabka Garaaca
 Immisa garaac daqiiqaddii ayaa la sugayaa ka hor inta aan la qorin qormada xigta?
-Wuxuu dhaqaajiyaa taageerada midabka 255 ee BeatFader.
-Wuxuu dhaqaajiyaa taageerada midabka runta ah ee BeatFader.
 BeatFader ayaa dooran doonta midabada aan kala sooca lahayn haddii la kartiyeeyo. Haddii kale, isticmaal midabyo ka yimid config.
 Calanka Bilowga Khaaska ah
-Haddii la cayimay, waxay soo bandhigi doontaa banner bilow ah oo la habeeyay oo leh taageero goob -haye. Waxaad u adeegsan kartaa weedhan nooca kernel:
 Waxay u soo dejisaa faylka fog diiwaanka maxalliga ah iyadoo la adeegsanayo binary ama qoraal
 Waxay kor ugu qaaddaa faylka maxalliga ah tusaha fog iyadoo la adeegsanayo binary ama qoraal
-Geli gal si aad ugu soo dejiso tusaha deegaanka.
 Soo dejinaya faylka {0} ...
 Faylka la soo dejiyay {0}.
 Soo dejinta ayaa ku fashilantay galka {0}.
 Faylka soo raraya {0} ...
 Faylka la soo raray {0}
-Geli gal si aad ugu rarto tusaha fog.
 Riix "c" si aad u qorto koodh midab oo buuxa.
 Geli koodhka midabka ee qanciya qaababkaan:
 Wuxuu yareeyaa faylka JSON
@@ -1151,13 +987,9 @@ Tiirrada qoraalka ah ee la daabacayo.
 Immisa xaraf ayaa la qori karaa ka hor inta aan la kicin "buuxinta xariiqda"?
 Suurtagalnimada in qaabka buuxinta khadka lagu daabici doono dhammaan koofiyadaha boqolkiiba
 Nooca qaabka buuxinta khadka
-Qaabka Guud
-Qaab Dhamaystiran
-Qaabka Random
 Jawaabtu ma noqon karto eber.
 Jawaabtu ma dhaafi karto gelitaannada la muujiyay.
 Kaydi Isbedelada ...
-Badbaadiyahaan wuxuu taageeraa qoraalka qoran ee faylka. U gudbi waddada faylka oo dhammaystiran goobtan, shaashad -ilaaliyaha ayaa si habboon u soo bandhigi doona waxyaabaha ku jira faylka.
 Maamul hababkaaga
 Maaraynta moodeelka ayaa ku naafoobay hab nabdoon.
 Amarka aan ansax ahayn {0}. Hubi adeegsiga hoose:
@@ -1173,5 +1005,3 @@ Guji furaha kasta si aad u akhrido bogga gacanta ...
 Boggan gacanta ah wuxuu u baahan yahay shaqo:
 Bogga gacanta {0} lama helin.
 Buugga Mod
-Wuxuu dhaqaajiyaa taageerada midabka 255 ee FlashColor.
-Wuxuu dhaqaajiyaa taageerada midabka runta ah ee FlashColor.

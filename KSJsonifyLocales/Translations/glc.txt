@@ -1,15 +1,6 @@
 Comandos dispoñibles: {0}
-Escribir comando:
 Cancelouse a inxección de ordes.
-Separe os argumentos de arranque con comas sen espazos, por exemplo, 'motd, gpuprobe'
-Separe os comandos de 'cmdinject' con dous puntos con espazos, por exemplo, 'cmdinject setthemes Hacker : beep 1024 0.5'
-Teña en conta que o argumento "depuración" non cobre completamente o núcleo.
-bargs: non se atopou o argumento solicitado {0}.
-bargs: Erro irrecuperable no argumento:
-Argumentos dispoñibles: {0}
-Argumentos ("help" para obter axuda):
 Os argumentos inxectados programaranse para executarse no seguinte reinicio.
-A inxección de argumentos cancelouse.
 Erro ao analizar argumentos reais de liña de comandos: {0}
 Modelo de cor non válido {0}
 hwprobe: probarase o seu hardware. Agarda ...
@@ -82,7 +73,6 @@ Contrasinal para {0}:
 Conectado a {0}
 Erro ao tentar conectarse a {0}: {1}
 Rastrexo de pila: {2}
-Introduza un servidor FTP.
 O directorio local {0} non existe.
 Insira un directorio local. ".." para volver.
 Non se atopou o directorio {0}.
@@ -97,16 +87,12 @@ Aínda non te conectaches a ningún servidor
 Descargando o ficheiro {0} ...
 Arquivo descargado {0}.
 Debe conectarse ao servidor antes de realizar a transmisión.
-Insira un ficheiro para descargar no directorio local.
 {0} KB | Modificado en: {1}
 Debería conectarse ao servidor antes de enumerar todos os ficheiros remotos.
 Cargando ficheiro {0} ...
 Ficheiro cargado {0}
-Insira un ficheiro para cargar no directorio remoto. cargar <ficheiro> <directorio>
-(Interior:
 Obtén o directorio local actual
 Obtén o directorio remoto actual
-Conéctase a un servidor FTP (debe comezar con "ftp://" ou "ftps://")
 Cambia o directorio local para descargar ou cargar desde
 Cambia o directorio remoto para descargar ou cargar
 Elimina o ficheiro remoto do servidor
@@ -147,7 +133,6 @@ Configuración recargada. É posible que deba reiniciar o núcleo para que algú
 Unha ou máis das cores non son válidas.
 As cores non están dispoñibles. Activa a cuncha de cores na configuración do núcleo.
 Non se atopou o protector de pantalla {0}.
-[ Configuración do núcleo (executándose en {0}) ]
 Versión do núcleo:
 Modo de depuración:
 Concha de cor:
@@ -155,8 +140,6 @@ Argumentos no arranque:
 Comando de axuda simplificado:
 MOTD ao iniciar sesión:
 Hora / data na esquina:
-[ Configuración de hardware ]
-[ Configuración do usuario ]
 Nome de usuario actual:
 Nome de host actual:
 Nomes de usuario dispoñibles:
@@ -183,31 +166,14 @@ Información do sistema
 * Podes usar varios comandos usando os dous puntos entre os comandos.
 Uso:
 onde estarán os argumentos {0}
-Inicializa o shell FTP.
-Amigos de
 onde estará customsaver
-Bloquea a pantalla co contrasinal.
-Pecha sesión no usuario.
-Obtén toda a información da rede
-Reinicia o ordenador simulado.
-Recarga a configuración que cambia o usuario final ou a ferramenta.
-As cores non requiren un reinicio, pero a maioría das opcións requiren que reinicie.
-móstrache un protector de pantalla seleccionado, ao tempo que protexes a pantalla contra os burnouts.
-Mostra a data e a hora.
-Mostra a data e a hora en zonas.
-Apaga o ordenador simulado.
-Mostra información e versións do sistema.
 Houbo un erro no intérprete de comandos.
 Non tes permiso para usar {0}
 Mensaxe de shell: o comando solicitado {0} non está autorizado a executarse en modo de mantemento.
 Mensaxe de shell: non se atopou o comando solicitado {0}. Vexa "axuda" para os comandos dispoñibles.
 Mensaxe de shell: o comando {0} non está autorizado a executarse ao iniciar sesión.
 Erro ao tentar executar o comando.
-datetime: a hora é {0}
-datetime: hoxe é {0}
-datetime: Fuso horario: {0}
 - Hora de {0}: {1}
-para borrar a pantalla.
 Funcionando en {0}
 Non estás autorizado para obter información de {0}.
 Este comando está obsoleto e eliminarase nunha futura versión.
@@ -233,8 +199,6 @@ Cambia de idioma
 >> Marcos, ficheiros, liñas e columnas <<
 > Marco {0}: Ficheiro: {1} | Liña: {2} | Columna: {3}
 > Produciuse un erro ao tentar obter información de cadros. {0}: {1}
-Recarga mods.
-Mods recargados.
 Benvido a Kernel.
 Conectouse correctamente como <usuario>
 MOTD/MAL é válido, pero o tipo de mensaxe non é válido. Supoñendo MOTD ...
@@ -267,27 +231,19 @@ O adaptador {0} non admite IPv6. Continuando ...
 O adaptador {0} non admite IPv4. Fallou a sonda.
 Parece que executabas a versión de desenvolvemento do núcleo. Aínda que podes ver os aspectos, actualízase con frecuencia e pode introducir erros. Recoméndase manter a versión estable.
 O idioma que seleccionou contén dúas variantes. Escolle un:
-1. Transliterado
-2. Traducido
-Selecciona a túa elección:
 Elección non válida. Téntao de novo.
 Non ten autorización para establecer o directorio actual en {0}: {1}
 O camiño que especificou é demasiado longo.
-CPU: AVISO: requirirase SSE2 nos futuros compromisos de desenvolvemento.
 O recompilador de información de vertido fallou ao tentar obter información sobre {0}: {1}
-Erro ao tentar obter a data de compilación da montaxe {0}: {1}
 Erro ao tentar configurar MOTD / MAL: {0}
 Erro ao tentar obter MOTD / MAL: {0}
 Erro ao intentar iniciar o protector de pantalla por mor dunha operación non válida.
 Non se permite recargar no modo seguro.
 Non se permiten analizar mods en modo seguro.
-Lista todos os dispositivos de depuración conectados.
 Erro ao tentar configurar o modo de análise. Comprobe o valor e ténteo de novo. Se isto é correcto, consulte a traza da pila cando a depuración do núcleo estea activada.
 O camiño non é un ficheiro nin un directorio.
 Crea outra copia dun ficheiro con directorio ou nome diferente.
 Move un ficheiro a outro directorio
-Para copiar ficheiros a outro directorio ou outro nome
-Para mover ficheiros a outro directorio
 Coincidencia {0} ({1}): {2}
 Coincidencia {0}: {1}
 Tempo empregado: {0} milisegundos
@@ -302,9 +258,6 @@ Responde a comentarios de amor ou odio.
 Se alguén fixo este comentario no teu vídeo:
 Como responderías?
 A selección non é válida. Pasando ao seguinte comentario ...
-Acabas de informar do comentario de amor.
-Acabas de responder ao comentario de odio.
-Estupendo! O comentario de {0} eliminarase para iso.
 Estupendo! {0} agradecerá o seu agradecemento.
 Letra perfecta!
 Ortografía incorrecta.
@@ -318,7 +271,6 @@ Introduza o contrasinal para {0}:
 SSH desconectado.
 Non se puido establecer a páxina de códigos. É posible que o idioma non se amose correctamente.
 A depuración non está habilitada.
-{0} xa non está configurado como protector de pantalla predeterminado.
 Grazas! Isto é interesante.
 Todo o mundo apoiará o teu vídeo para iso.
 Regaleille o ficheiro especial no seu correo electrónico para o seu seguinte vídeo.
@@ -364,7 +316,6 @@ O directorio {0} xa existe.
 Erro ao tentar conectarse a {0}: tempo de espera da conexión ou perdida a conexión
 Calculadora para calcular expresións.
 Erro no cálculo.
-Parece que estabas executando a versión próxima. Aínda que é máis seguro de usar agora, recoméndase que se manteña na versión estable.
 Actualización do sistema
 Buscando actualizacións do sistema ...
 Nova versión atopada:
@@ -372,7 +323,6 @@ Podes descargalo en:
 Non hai notificacións recentes
 Busca a cadea especificada no ficheiro proporcionado
 Calcula sumas de ficheiros no directorio especificado.
-Lista todos os correos do usuario específico.
 Insira o nome de usuario ou o enderezo de correo electrónico:
 Escriba o contrasinal:
 Erro ao conectarse a {0}: {1}
@@ -382,7 +332,6 @@ Sae do shell IMAP
 Lista de comandos
 Descarga as mensaxes e enuméraas
 Abre unha mensaxe
-A páxina pode non ser negativa nin cero.
 A páxina non é un valor numérico.
 O número da mensaxe pode non ser negativo ou cero.
 O número da mensaxe non é un valor numérico.
@@ -392,7 +341,6 @@ O número da mensaxe non é un valor numérico.
 Non se atopou a mensaxe especificada.
 Non se puido iniciar a depuración remota: {0}
 Preparando perfís ... Pode levar varios minutos ...
-Nome de host, nome de usuario, tipo de datos, codificación, cifrado, protocolos
 Erro ao tentar executar o script: {0}
 Escribe texto na consola
 Elixe os usuarios
@@ -417,7 +365,6 @@ A marcación rápida está baleira. Conéctate a un servidor para engadirlle un 
 A marcación rápida non existe. Conéctate a un servidor para engadirlle un enderezo.
 Introduza o enderezo e o porto do servidor IMAP (<dirección> ou <dirección>:[porto]):
 Introduza o enderezo e o porto do servidor SMTP (<dirección> ou <dirección>:[porto]):
-Pídelle que cubra os campos obrigatorios para enviar unha mensaxe a un enderezo
 Envía unha mensaxe a un enderezo
 Introduza o enderezo de correo electrónico do destinatario:
 Introduce o asunto:
@@ -445,8 +392,6 @@ Elimina unha palabra ou frase do número de liña
 Elimina un carácter do número de carácter na liña especificada
 Eliminouse a liña.
 O número de liña especificado {0} non é un número válido.
-Os argumentos necesarios non se pasan ao comando {0}
-Erro ao tentar executar o comando: {0}
 Funcionando en modo seguro. Saltando etapa ...
 >> Depuración e chat remoto: versión
 >> O seu enderezo é {0}.
@@ -464,19 +409,12 @@ Bloquear un dispositivo de depuración por enderezo IP
 Erro ao cargar a configuración
 Produciuse un erro ao cargar a configuración. É posible que deba comprobar o ficheiro de configuración.
 Selecciona sección:
-Configuración xeral...
-Configuración de hardware ...
-Configuración de inicio de sesión ...
-Configuración de shell ...
-Configuración de rede ...
-Axustes varios ...
 Gardar configuración
 Saír
 A opción especificada {0} non é válida.
 A resposta debe ser numérica.
 Solicitude de argumentos no arranque
 Activador do modo de mantemento
-Cambiar contrasinal raíz ...
 Comprobe se hai actualizacións ao iniciar
 Sonda Tranquila
 Mostrar MOTD ao iniciar sesión
@@ -500,9 +438,7 @@ Introduciuse unha sección non válida. Volve atrás.
 Volver atrás ...
 Activar
 Desactivar
-Introduciu un número de chave non válido. Volve atrás.
 Escribe o contrasinal de root que se vai definir. Non te preocupes; o contrasinal móstrase como estrelas.
-Habilite "Cambiar contrasinal raíz" para usar esta opción. Volve atrás.
 Cambiar contrasinal raíz?
 Establecer contrasinal raíz ...
 Escribe un porto de depurador remoto. Debe ser numérico e non debe estar xa usado. Se non, o depurador remoto non poderá abrir o porto.
@@ -513,7 +449,6 @@ A resposta pode non ser negativa.
 A resposta non é válida. Asegúrese de que a resposta é numérica para as entradas de configuración que precisan números como respostas.
 A variable {0} non se atopa en ningún dos módulos.
 Cambia a configuración do núcleo
-Configuración do protector de pantalla ...
 Activa 255 cores
 ¿Queres estar conectado?
 Elección non válida. Supoñendo que non ...
@@ -549,7 +484,6 @@ Produciuse un erro ao mover o ficheiro ou o directorio: {0}
 Non se puido atopar o ficheiro que coincida coa cadea "{0}": {1}
 Fallou a descarga do ficheiro {0}.
 Produciuse un erro ao listar os ficheiros remotos: {0}
-Insira un ficheiro ou cartafol para eliminar. Debe ter permisos administrativos na súa conta para poder eliminalo.
 Seguro que queres eliminar {0} <y/n>?
 Eliminando {0} ...
 {0} non se atopa no servidor.
@@ -560,7 +494,6 @@ Movendo {0} a {1} ...
 Moveuse con éxito
 Move o ficheiro ou directorio a outro ficheiro ou directorio. Tamén pode usalo para renomear ficheiros.
 Produciuse un erro ao mover {0} a {1}.
-Insira un camiño de orixe e outro de destino.
 Copiando {0} a {1} ...
 Copiouse correctamente
 Copia o ficheiro ou directorio a outro ficheiro ou directorio.
@@ -578,9 +511,6 @@ Humidade: {0}
 Podes obter a túa propia clave API en https://home.openweathermap.org/api_keys.
 Sempre podes consultar http://bulk.openweathermap.org/sample/city.list.json.gz para ver a lista de cidades cos seus ID.
 Unidade preferida de temperatura
-Kelvin
-Imperial (Fahrenheit)
-Métrico (centígrado)
 Configura o núcleo para que lle solicite argumentos no arranque.
 Desencadea o modo de mantemento. Isto desactiva varias contas.
 Cada inicio comprobará se hai actualizacións.
@@ -595,10 +525,6 @@ Comando de axuda simplificado para todas as cunchas
 Se rexistra ou non o nome de usuario FTP.
 Indica se rexistra ou non o enderezo IP FTP.
 Escolle o primeiro perfil só cando te conectes.
-Activa a compatibilidade con 255 cores para ColorMix.
-Activa a compatibilidade con 255 cores para Disco.
-Activa a compatibilidade con 255 cores para GlitterColor.
-Activa o soporte de 255 cores para as liñas.
 A hora e a data amosaranse na esquina superior dereita da pantalla
 Se está activado, o núcleo analizará todo o cartafol co seu tamaño total. Doutro xeito, só analizará a superficie.
 Habilita o eyecandy ao iniciar
@@ -608,7 +534,6 @@ Seleccione a unidade que prefire para a temperatura (isto só se aplica ao coman
 Mod {0} detido
 {0} v {1} detido
 Mod {0} non ten o nome da peza. Produciuse un erro ao analizar as modificacións. Revisa o código fonte.
-Mod {0} non ten o comando. Produciuse un erro ao analizar as modificacións. Revisa o código fonte.
 Debe activar o modo de depuración para poder borrar o rexistro de depuración.
 {0} novas mensaxes chegaron á caixa de entrada.
 Abre "mail" para velos.
@@ -645,10 +570,6 @@ Superouse o nivel de cor vermella. Foi {0}.
 Superouse o nivel de cor verde. Foi {0}.
 Superouse o nivel de cor azul. Foi {0}.
 Activa as cores verdadeiras
-Activa a compatibilidade coa cor verdadeira para ColorMix.
-Activa a compatibilidade coa verdadeira cor para Disco.
-Activa o soporte de cor verdadeira para GlitterColor.
-Activa o soporte de cor verdadeira para as liñas.
 Non se puido desbloquear {0}.
 {0} xa está bloqueado.
 {0} agora non se pode unir á depuración remota.
@@ -659,7 +580,6 @@ Introduza as rutas dos ficheiros aos anexos. Prema ENTRAR nun camiño en branco 
 Abre unha mensaxe cifrada
 Escribe o contrasinal para o ID de chave {0}
 Envía unha mensaxe cifrada a un enderezo
-Pídelle que cubra os campos necesarios para enviar unha mensaxe cifrada a un enderezo
 Descargando desde {0} ...
 Mostrar a barra de progreso mentres se descarga ou carga desde o comando "get" ou "put"
 Se é verdadeiro, fai que "obter" ou "poñer" mostre a barra de progreso mentres se descarga ou carga.
@@ -678,8 +598,6 @@ Parece que: {0}
 Temperatura: {0}
 Velocidade do vento: {0}
 Dirección do vento: {0}
-Activa o soporte de 255 cores para Disolver.
-Activa a compatibilidade coa cor verdadeira para disolver.
 Preme calquera tecla para retroceder.
 Non se puido crear o cartafol de correo {0}: {1}
 Crea un directorio no directorio de traballo actual
@@ -692,22 +610,11 @@ Os hash están mal formados.
 Os hash non coinciden.
 Partido de hash.
 Cambia o nome dun cartafol
-Esta sección lista todos os axustes xerais do núcleo, principalmente para manter o núcleo.
-Esta sección cambia o comportamento da sonda de hardware.
-Esta sección representa a configuración de inicio de sesión. Pecha sesión na túa conta para que os cambios entren en vigor.
-Esta sección lista a configuración do intérprete de comandos.
-Esta sección lista a configuración de rede, como o shell FTP, a configuración de comandos relacionados coa rede e a configuración de depuración remota.
-Esta sección lista todos os protectores de pantalla e as súas opcións dispoñibles.
-Aquí atópanse as configuracións que non encaixan nas súas seccións apropiadas.
-Proba os mods proporcionando ficheiros mod
 Abre un shell de proba
-Activa o modo de depuración
-Preguntas para argumentos
 * Prema calquera tecla para iniciar o núcleo ou ESC para saír.
 Non se puido iniciar "{0}": {1}
 Mostrar vista previa da mensaxe de correo
 Ao listar mensaxes de correo electrónico, mostra a vista previa do corpo.
-Cores personalizadas ...
 Cor de entrada
 Cor da licenza
 Cor de erro do núcleo continuable
@@ -721,8 +628,6 @@ Cor de erro
 Estilo de solicitude FTP
 Estilo de solicitude de correo
 Estilo de solicitude SFTP
-Activa a compatibilidade con 255 cores para BouncingBlock.
-Activa o soporte de cor verdadeira para BouncingBlock.
 Tentando acceder a un camiño non válido.
 Borra o ficheiro de texto
 Sae do editor de texto
@@ -745,8 +650,6 @@ Barra de cor de minutos
 Barra de cor de horas
 Cor da información
 Ticks para cambiar de cor
-Activa a compatibilidade con 255 cores para ProgressClock.
-Activa a compatibilidade coa cor verdadeira para ProgressClock.
 Se o ciclo de cores está activado, cantas marcas antes de cambiar as cores en ProgressClock? 1 marca = 0,5 segundos
 ProgressClock seleccionará cores aleatorias se está activado. Se non, usa as cores da configuración.
 Crea un novo tema
@@ -761,39 +664,10 @@ Cor da opción
 Introduza o número de cor de 0 a 255:
 Use "hwinfo" para obter información extensa sobre hardware.
 Imprime información de hardware
-Información da CPU:
 Nome do procesador:
-Velocidade do procesador:
 Bits de procesador:
-Rev. procesador:
-Topoloxía do procesador:
-Tipo de procesador:
-Fito do procesador:
-Procesador BogoMips:
-Tamaño da caché L2 do procesador:
-Tamaño da caché L3 do procesador:
-Características do procesador:
-Información do disco duro:
-Nome da unidade:
-Modelo de unidade:
-Proveedor de unidades:
-Velocidade de condución:
-Tamaño da unidade:
-Serie da unidade:
-ID da unidade:
-Número de particións de Drive:
-ID da partición:
 Sistema de ficheiros de partición:
 Tamaño da partición:
-Partición usada:
-Información RAM:
-RAM libre:
-RAM total:
-RAM empregada:
-Información da GPU:
-Nome da GPU:
-Controlador de GPU:
-Versión da GPU:
 GPU: fallou ao probar unha ou máis tarxetas gráficas. Mostrando información de todos os xeitos ...
 >> Benvido! Esta é a túa primeira vez que entras a depuración e chat remoto. Use "/ register <name>" para rexistrarse.
 O dispositivo xa existe.
@@ -825,8 +699,6 @@ Especifique o nome do tema:
 O usuario {0} engadiuse á lista "{1}".
 Eliminouse o usuario {0} da lista "{1}".
 Modo non válido {0}
-O usuario xa existe
-Cargar tema desde ...
 Cargar tema a partir de temas predefinidos ...
 Especifique o nome do ficheiro de tema sen a extensión .json:
 Abre un arquivo ZIP
@@ -839,12 +711,9 @@ O directorio {0} non existe
 O directorio de arquivo {0} non existe
 Número máximo de posicións
 Cantas posicións están iluminadas antes de atenuar?
-Activa a compatibilidade con 255 cores para Chisqueiro.
-Activa a verdadeira compatibilidade coa cor para máis claro.
 Cor da entrada da lista
 Cor do valor da lista
 Conéctase a un servidor SSH para executar un comando.
-Esta sección lista a configuración do protector de pantalla para
 Especificador de cor non válido. Asegúrese de que está no formato correcto, o que significa un número de 0 a 255 se usa 255 cores ou unha secuencia de TV se usa cor verdadeira do seguinte xeito:
 Erro no intérprete de comandos: {0}
 Establece unha variable nun valor nun script
@@ -866,13 +735,11 @@ Como se quere autenticar?
 Ficheiro de chave privada
 Contrasinal
 Introduza a frase de contrasinal para a clave {0}:
-Introduza a situación da clave privada para {0}. Escribe "q" para rematar de engadir claves:
 Neutralizou un camiño inexistente.
 O ficheiro clave {0} non existe.
 Erro ao tentar engadir unha chave privada:
 Preme "t" para cambiar ao modo de cor 255.
 Preme "t" para cambiar ao modo de cor verdadeira.
-Esta sección permítelle escoller que tipo de cor desexa cambiar.
 Parece que non tes ningún usuario agás root. Isto é malo. Guiarémosche como crear un.
 Escribe o teu nome de usuario.
 Debes escribir o teu nome de usuario.
@@ -882,7 +749,6 @@ Selecciona o tipo de conta.
 Administrador: este tipo de conta ten máis potencia no núcleo, o que lle permite usar programas de xestión do sistema.
 Usuario normal: este tipo de conta é un pouco máis restrinxido que os administradores.
 Parabéns! Creaches unha nova conta. Para rematar isto, inicie sesión como a súa nova conta.
-Consulte o manual do protector de pantalla ou o código fonte para obter información.
 mod: Non se detectaron modificacións.
 Comandos xerais:
 Comandos Mod:
@@ -906,7 +772,6 @@ Proba a facilidade de erro do núcleo co soporte de formato
 Proba a tradución dunha cadea que existe en recursos a un idioma específico
 Imprime unha cadea para consolar e analiza os marcadores de posición atopados
 Proba a facilidade de expresión regular
-Cifra unha cadea usando
 Inicia todas as modificacións
 Detén todos os mods
 Activa ou desactiva a depuración
@@ -941,7 +806,6 @@ As listas apoian as culturas
 Busca a cadea especificada no ficheiro proporcionado usando expresións regulares
 Vexa se pode premer unha tecla a tempo
 O usuario non proporcionou ningunha entrada ao tempo.
-Dificultade non válida
 O personaxe non se preme a tempo.
 Premiches o personaxe correcto.
 Premiches o personaxe incorrecto.
@@ -985,7 +849,6 @@ Obtén axustes de aforro personalizados
 Define axustes de aforro personalizados
 A configuración configurouse correctamente para o protector de pantalla
 Produciuse un erro ao establecer unha configuración para o protector de pantalla
-Esta sección permítelle xestionar a creación do contrasinal root.
 Abre un shell RSS para ler as fontes
 Sae do shell RSS e volve ao núcleo
 Cambia a ligazón do feed
@@ -1012,13 +875,6 @@ Modo de ordenación do sistema de ficheiros
 Dirección de ordenación do sistema de ficheiros
 Controla como se ordenarán os ficheiros.
 Controla a dirección da ordenación do sistema de ficheiros se é ascendente ou descendente.
-Orde ascendente
-Orde descendente
-Nome completo
-Tamaño do ficheiro
-Tempo de creación
-Última hora de escritura
-Último acceso
 Escribe de novo atraso en milisegundos
 Cantos milisegundos agardar antes de escribir de novo o texto?
 Escribe o texto que queiras amosar. Máis tempo é mellor.
@@ -1027,35 +883,26 @@ Velocidade máxima de escritura en WPM
 Probabilidade de erros tipográficos en porcentaxe
 Non se puido gardar o directorio actual: {0}
 Toallitas para cambiar de dirección
-Activa a compatibilidade con 255 cores para Wipe.
-Activa a verdadeira compatibilidade coa cor para Wipe.
 Cantas toallitas hai que facer antes de cambiar de dirección ao azar?
 Etapa rematada en
 Finalizou a inicialización interna en
 Non se atopou o ficheiro referenciado {0}. É posible que este mod non funcione correctamente sen este ficheiro.
 Mod de inicio
-Obtén información sobre mod
 Nome do comando:
 Definición do comando:
 Tipo de comando:
 Un comando estricto?
 Versión Mod:
 Non se atopou o Mod {0}.
-Cultura de
-Que variante de {0} se usa para cambiar os nomes do mes, o calendario, etc.?
 O editor de texto aínda non abriu un fluxo de ficheiros.
 Cadea substituída.
 Un ou os dous números non son numéricos.
 Eliminouse a palabra.
 Eliminouse o carácter.
-Configuración do sistema de ficheiros ...
-Esta sección lista a configuración do sistema de ficheiros.
 Benvido a Configuración.
 Erro ao executar o comando SSH
 Erro no shell SSH
 - Información da aplicación
-Activa a compatibilidade de 255 cores para BouncingText.
-Activa a compatibilidade coa cor verdadeira para BouncingText.
 Proba o escritor do dicionario coa cadea e a matriz de cadeas
 Proba o escritor do dicionario coa matriz char e char
 Proba o escritor do dicionario co número enteiro e a matriz enteira
@@ -1072,21 +919,15 @@ onde estará HardwareType
 Ou o tipo de hardware {0} non está probado ou non é válido.
 Aínda non se probou o tipo de hardware {0}. Se está seguro de que está probado, reinicie o núcleo coa depuración activada.
 Particións non analizadas na lista.
-Modo pirata informático
-Se está activado, habilitarase a consola verde.
 Imprime un separador
 Imprime un separador con soporte de formato
 Imprime un separador con soporte de cor
 Imprime un separador con soporte de cor e formato
 Sempre centrado
-Activa o soporte de 255 cores para Marquee.
-Activa o soporte de cor verdadeira para Marquee.
 Escribe o texto que queiras amosar.
 Se o texto mostrado na marquesiña está sempre centrado.
-'q' para saír.
 Non se atopou o argumento {0} para inxectar.
 Non se atopou o argumento da liña de comandos {0}.
-Borra toda a configuración
 O protector de pantalla experimentou un erro ao amosar: {0}. Preme calquera tecla para saír.
 Vista previa ...
 Así será o teu tema:
@@ -1124,20 +965,15 @@ Kit pou itilize inite bat chak minit pou ekri pwochen koulè a.
 Reta nan bat pou chak minit
 Bat Koulè
 Konbyen bat pou chak minit yo rete tann anvan yo fè ekri nan pwochen an?
-Aktive 255 sipò koulè pou BeatFader.
-Aktive vrè sipò koulè pou BeatFader.
 BeatFader pral chwazi koulè o aza si li pèmèt. Sinon, sèvi ak koulè ki soti nan config.
 Custom Banner demaraj
-Si yo espesifye, li pral montre banyè demaraj Customized ak sipò plas. Ou ka itilize fraz sa a pou vèsyon Kernel:
 Descarga o cartafol remoto ao directorio local usando binario ou texto
 Carga o cartafol local ao directorio remoto usando binario ou texto
-Insira un cartafol para descargar no directorio local.
 Descargando o cartafol {0} ...
 Cartafol descargado {0}.
 Fallou a descarga do cartafol {0}.
 Cargando cartafol {0} ...
 Cartafol cargado {0}
-Insira un cartafol para cargar no directorio remoto.
 Preme "c" para escribir o código a toda cor.
 Introduza o código de cor que cumpra estes formatos:
 Minimiza o ficheiro JSON
@@ -1151,13 +987,9 @@ As columnas de texto que se van imprimir.
 Cantos caracteres escribir antes de activar o "recheo de liña"?
 Posibilidade de que o patrón de recheo de liña se imprima en maiúsculas en porcentaxe
 Tipo de patrón de recheo de liña
-Patrón común
-Patrón completo
-Patrón aleatorio
 A resposta pode non ser cero.
 A resposta non pode exceder as entradas mostradas.
 Gardar cambios...
-Este protector de pantalla admite texto escrito no ficheiro. Pasa a ruta completa do ficheiro a este campo e o protector de pantalla amosará o contido do ficheiro de xeito adecuado.
 Xestiona os teus mods
 A xestión de mods está desactivada en modo seguro.
 Comando {0} non válido. Comprobe o uso a continuación:
@@ -1173,5 +1005,3 @@ Preme calquera tecla para ler a páxina do manual ...
 Esta páxina do manual precisa traballar para:
 Non se atopou a páxina do manual {0}.
 Manual de mod
-Activa a compatibilidade con 255 cores para FlashColor.
-Activa a compatibilidade coa cor verdadeira para FlashColor.

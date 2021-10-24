@@ -1,15 +1,6 @@
 Dostupné příkazy: {0}
-Příkaz Write:
 Příkazové injekce byla zrušena.
-Argumenty spouštění oddělte čárkami bez mezer, například 'motd, gpuprobe'
-Samostatné příkazy na 'cmdinject' s dvojtečkami s mezerami, například 'cmdinject setthemes Hacker: beep 1024 0.5'
-Povšimněte si, že argument 'debug' zcela nepokrývá jádro.
-bargs: Požadovaný argument {0} nebyl nalezen.
-bargs: Neodstranitelná chyba v argumentu:
-Dostupné argumenty: {0}
-Argumenty (nápověda „help“):
 Vložené argumenty budou naplánovány na další restart.
-Argument Injection byl zrušen.
 Chyba při analýze reálných argumentů příkazového řádku: {0}
 Neplatná šablona barev {0}
 hwprobe: Váš hardware bude testován. Prosím, čekejte...
@@ -82,7 +73,6 @@ Heslo pro {0}:
 Připojeno k {0}
 Chyba při pokusu o připojení k {0}: {1}
 Stoh Trace: {2}
-Zadejte FTP server.
 Místní adresář {0} neexistuje.
 Zadejte místní adresář. ".." vrátit se.
 Adresář {0} nebyl nalezen.
@@ -97,16 +87,12 @@ Ještě jste se nepřipojili k žádnému serveru
 Stažení souboru {0} ...
 Stažený soubor {0}.
 Před přenosem se musíte připojit k serveru.
-Zadejte soubor ke stažení do lokálního adresáře.
 {0} KB | Upraveno v: {1}
 Před zápisem všech vzdálených souborů byste se měli připojit k serveru.
 Soubor pro nahrání {0} ...
 Nahraný soubor {0}
-Zadejte soubor, který chcete nahrát do vzdáleného adresáře. upload <soubor> <adresář>
-(Vnitřní:
 Získá aktuální místní adresář
 Získá aktuální vzdálený adresář
-Připojuje se k FTP serveru (musí začínat "ftp://" nebo "ftps://")
 Změní místní adresář ke stažení nebo nahrávání
 Změní vzdálený adresář ke stažení z nebo nahrajte na
 Odstraní vzdálený soubor ze serveru
@@ -147,7 +133,6 @@ Konfigurace byla znovu načtena. Některé změny se projeví až po restartová
 Jedna nebo více barev je neplatná.
 Barvy nejsou k dispozici. Zapněte barevný shell v konfiguraci jádra.
 Spořič obrazovky {0} nebyl nalezen.
-[ Nastavení jádra (běží na {0}) ]
 Verze jádra:
 Debugovací mód:
 Barevná skořepina:
@@ -155,8 +140,6 @@ Argumenty při spouštění:
 Zjednodušený příkaz nápovědy:
 MOTD při přihlášení:
 Čas / datum v rohu:
-[ Hardwarová nastavení ]
-[ Uživatelské nastavení ]
 Aktuální uživatelské jméno:
 Aktuální název hostitele:
 Dostupná uživatelská jména:
@@ -183,31 +166,14 @@ Systémové informace
 * Můžete použít více příkazů pomocí dvojtečky mezi příkazy.
 Používání:
 kde argumenty budou {0}
-Inicializuje prostředí FTP.
-Přátelé uživatele
 kde customsaver bude
-Uzamkne obrazovku heslem.
-Odhlásí vás z uživatele.
-Získejte všechny informace o síti
-Restartuje simulovaný počítač.
-Znovu načte konfiguraci, kterou změnil koncový uživatel nebo nástroj.
-Barvy nevyžadují restart, ale většina nastavení vyžaduje restart.
-zobrazí vybraný spořič obrazovky a zároveň chrání obrazovku před vypálením.
-Zobrazuje datum a čas.
-Zobrazuje datum a čas v zónách.
-Vypne simulovaný počítač.
-Zobrazuje informace o systému a verze.
 Ve skořápce došlo k chybě.
 Nemáte oprávnění k použití {0}
 Zpráva Shell: Požadovaný příkaz {0} není povolen v režimu údržby.
 Zpráva Shell: Požadovaný příkaz {0} nebyl nalezen. Dostupné příkazy naleznete v tématu Nápověda.
 Zpráva Shell: Příkaz {0} není povolen pro přihlášení.
 Chyba při pokusu o provedení příkazu.
-datetime: Čas je {0}
-datetime: Dnes je {0}
-datetime: Časové pásmo: {0}
 - Čas {0}: {1}
-pro vymazání obrazovky.
 Běží na {0}
 Nemáte oprávnění získat informace pro {0}.
 Tento příkaz je zastaralý a bude odstraněn v budoucí verzi.
@@ -233,8 +199,6 @@ Změní jazyk
 >> Rámečky, soubory, řádky a sloupce <<
 > Rámeček {0}: Soubor: {1} | Řádek: {2} | Sloupec: {3}
 > Při pokusu o získání rámových informací došlo k chybě. {0}: {1}
-Znovu načte úpravy.
-Režimy byly znovu načteny.
 Vítejte v Kernelu!
 Úspěšně přihlášeno jako <user>
 MOTD / MAL je platný, ale typ zprávy není platný. 
@@ -267,27 +231,19 @@ Adaptér {0} nepodporuje IPv6. Pokračování ...
 Adaptér {0} nepodporuje IPv4. Sonda selhala.
 Vypadá to, že jste provozovali vývojovou verzi jádra. I když vidíte aspekty, je často aktualizován a může představovat chyby. Doporučujeme, abyste zůstali ve stabilní verzi.
 Zvolený jazyk obsahuje dvě varianty. Vyber jeden:
-1. Přepis
-2. Přeloženo
-Vyberte si svůj výběr:
 Neplatná volba. Zkus to znovu.
 Nemáte oprávnění nastavit aktuální adresář na {0}: {1}
 Cesta, kterou jste zadali, je příliš dlouhá.
-CPU: VAROVÁNÍ: SSE2 bude vyžadován v budoucích vývojových závazcích.
 Při pokusu získat informace o {0}: {1} došlo k selhání sběrače informací o výpisu
-Chyba při pokusu získat kompilační datum sestavení {0}: {1}
 Chyba při pokusu o nastavení MOTD / MAL: {0}
 Chyba při pokusu získat MOTD / MAL: {0}
 Chyba při pokusu o spuštění spořiče obrazovky z důvodu neplatné operace.
 Obnovení není povoleno v nouzovém režimu.
 Režimy analýzy nejsou v bezpečném režimu povoleny.
-Vypíše všechna připojená ladicí zařízení.
 Chyba při pokusu o nastavení režimu analýzy. Zkontrolujte hodnotu a akci opakujte. Pokud je to správné, podívejte se na trasování zásobníku, když je povoleno ladění jádra.
 Cesta není ani soubor, ani adresář.
 Vytvoří další kopii souboru pod jiným adresářem nebo názvem.
 Přesune soubor do jiného adresáře
-Kopírování souborů do jiného adresáře nebo jiného názvu
-Přesunutí souborů do jiného adresáře
 Zápas {0} ({1}): {2}
 Zápas {0}: {1}
 Čas strávený: {0} milisekund
@@ -302,9 +258,6 @@ Reagujte na milostné nebo nenávistné komentáře.
 Pokud někdo k vašemu videu přidal tento komentář:
 Jak byste reagoval?
 Neplatný výběr. Přejít na další komentář ...
-Právě jste nahlásili milostný komentář!
-Právě jste odpověděli na komentář k nenávisti!
-Skvělý! Za tímto účelem bude odstraněn komentář {0}.
 Skvělý! {0} ocení vaše poděkování.
 Napsáno dokonale!
 Pravopisně nesprávně.
@@ -318,7 +271,6 @@ Zadejte heslo pro {0}:
 SSH odpojen.
 Nelze nastavit kódovou stránku. Jazyk se nemusí zobrazit správně.
 Ladění není povoleno.
-{0} již není nastaven na výchozí spořič obrazovky.
 Dík! To je zajímavé.
 Vaše video bude podporovat každý.
 Dal jsem vám speciální soubor ve vašem e-mailu pro vaše další video.
@@ -364,7 +316,6 @@ Adresář {0} již existuje.
 Chyba při pokusu o připojení k {0}: Prodleva připojení nebo ztracené připojení
 Kalkulačka pro výpočet výrazů.
 Chyba ve výpočtu.
-Vypadá to, že jste používali verzi blížící se verze. I když je nyní bezpečnější používat, doporučujeme vám zůstat ve stabilní verzi.
 Aktualizace systému
 Probíhá kontrola aktualizací systému ...
 Nalezeno nové verze: 
@@ -372,7 +323,6 @@ Můžete si ji stáhnout na:
 Žádná nedávná oznámení
 Hledá konkrétní řetězec v zadaném souboru
 Vypočítá součty souborů v zadaném adresáři.
-Vypíše všechny e-maily u konkrétního uživatele.
 Zadejte uživatelské jméno nebo e-mailovou adresu:
 Zadejte heslo:
 Chyba při připojení k {0}: {1}
@@ -382,7 +332,6 @@ Ukončí prostředí IMAP
 Seznam příkazů
 Stáhne zprávy a vypíše je
 Otevře zprávu
-Stránka nesmí být záporná nebo nulová.
 Stránka není číselná hodnota.
 Číslo zprávy nesmí být záporné nebo nulové.
 Číslo zprávy není číselná hodnota.
@@ -392,7 +341,6 @@ Stránka není číselná hodnota.
 Zadaná zpráva nebyla nalezena.
 Spuštění vzdáleného ladění se nezdařilo: {0}
 Příprava profilů ... Může to trvat několik minut ...
-Název hostitele, uživatelské jméno, typ dat, kódování, šifrování, protokoly
 Chyba při pokusu o spuštění skriptu: {0}
 Zapíše text do konzole
 Umožňuje výběr uživatelů
@@ -417,7 +365,6 @@ Rychlá volba je prázdná. Připojte se k serveru a přidejte na něj adresu.
 Rychlá volba neexistuje. Připojte se k serveru a přidejte na něj adresu.
 Zadejte adresu a port serveru IMAP (<adresa> nebo <adresa>:[port]):
 Zadejte adresu a port serveru SMTP (<adresa> nebo <adresa>:[port]):
-Požádá o vyplnění povinných polí pro odeslání zprávy na adresu
 Odešle zprávu na adresu
 Zadejte e-mailovou adresu příjemce:
 Zadejte předmět:
@@ -445,8 +392,6 @@ Odstraní slovo nebo frázi z čísla řádku
 Odstraní znak z čísla znaku na zadaném řádku
 Řádek byl odstraněn.
 Zadané číslo řádku {0} není platné číslo.
-Požadované argumenty nejsou předány příkazu {0}
-Chyba při pokusu o spuštění příkazu: {0}
 Běží v nouzovém režimu. Přeskočení fáze ...
 >> Vzdálený ladění a chat: verze
 >> Vaše adresa je {0}.
@@ -464,19 +409,12 @@ Blokovat ladicí zařízení pomocí adresy IP
 Chyba při načítání nastavení
 Při načítání nastavení došlo k chybě. Možná budete muset zkontrolovat soubor nastavení.
 Vyberte sekci:
-Obecné nastavení...
-Nastavení hardwaru ...
-Nastavení přihlášení ...
-Nastavení prostředí ...
-Nastavení sítě...
-Různá nastavení ...
 Uložit nastavení
 Výstup
 Zadaná možnost {0} je neplatná.
 Odpověď musí být číselná.
 Výzva k argumentům při spuštění
 Spouštěcí režim údržby
-Změnit root heslo ...
 Zkontrolujte aktualizace při spuštění
 Tichá sonda
 Zobrazit MOTD při přihlášení
@@ -500,9 +438,7 @@ Zadána neplatná část. Vraťte se zpět.
 Vraťte se zpět ...
 Umožnit
 Zakázat
-Bylo zadáno neplatné číslo klíče. Vraťte se zpět.
 Napište heslo uživatele root, které chcete nastavit. Nebojte se; heslo se zobrazí jako hvězdičky.
-Chcete-li použít tuto možnost, povolte možnost „Změnit heslo uživatele root“. Vraťte se zpět.
 Změnit root heslo?
 Nastavit root heslo ...
 Napište vzdálený port ladicího programu. Musí být číselné a nesmí být již použito. Jinak vzdálený ladicí program neotevře port.
@@ -513,7 +449,6 @@ Odpověď nemusí být záporná.
 Odpověď je neplatná. Zkontrolujte, zda je číselná odpověď pro položky konfigurace, které jako odpověď vyžadují čísla.
 Proměnná {0} se nenachází na žádném z modulů.
 Změní konfiguraci jádra
-Nastavení spořiče obrazovky ...
 Aktivujte 255 barev
 Chcete zůstat ve spojení?
 Neplatná volba. Za předpokladu, že ne ...
@@ -549,7 +484,6 @@ Nepodařilo se přesunout soubor nebo adresář: {0}
 Nelze najít soubor, který by odpovídal řetězci „{0}“: {1}
 Stažení souboru {0} se nezdařilo.
 Seznam vzdálených souborů se nezdařil: {0}
-Zadejte soubor nebo složku, kterou chcete odebrat. Abyste mohli účet odebrat, musíte mít oprávnění správce.
 Opravdu chcete smazat {0} <y / n>?
 Mazání {0} ...
 {0} nebyl na serveru nalezen.
@@ -560,7 +494,6 @@ Přesouvání {0} do {1} ...
 Úspěšně přesunuto
 Přesune soubor nebo adresář do jiného souboru nebo adresáře. Můžete jej také použít k přejmenování souborů.
 Přesunutí {0} do {1} se nezdařilo.
-Zadejte cestu ke zdroji a cestu k cíli.
 Kopírování {0} do {1} ...
 Zkopírováno úspěšně
 Zkopíruje soubor nebo adresář do jiného souboru nebo adresáře.
@@ -578,9 +511,6 @@ Vlhkost: {0}
 Svůj vlastní klíč API můžete získat na adrese https://home.openweathermap.org/api_keys.
 Seznam měst s jejich ID můžete vždy vyhledat na adrese http://bulk.openweathermap.org/sample/city.list.json.gz.
 Preferovaná jednotka teploty
-Kelvin
-Imperial (Fahrenheit)
-Metrické (Celsia)
 Nastaví jádro, takže vás vyzve k argumentu při spuštění.
 Spustí režim údržby. Tím se deaktivuje více účtů.
 Každé spuštění zkontroluje aktualizace.
@@ -595,10 +525,6 @@ Zjednodušený příkaz nápovědy pro všechny granáty
 Zda se má přihlásit uživatelské jméno FTP.
 Zda se má protokolovat adresa IP FTP.
 První profil vyberte pouze při připojování.
-Aktivuje podporu 255 barev pro ColorMix.
-Aktivuje podporu 255 barev pro Disco.
-Aktivuje podporu 255 barev pro GlitterColor.
-Aktivuje podporu 255 barev pro řádky.
 Čas a datum se zobrazí v pravém horním rohu obrazovky
 Pokud je povoleno, jádro analyzuje celou složku na její celkovou velikost. Jinak bude analyzovat pouze povrch.
 Umožňuje eyecandy při spuštění
@@ -608,7 +534,6 @@ Vyberte preferovanou jednotku teploty (to platí pouze pro příkaz „počasí�
 Mod {0} se zastavil
 {0} v {1} se zastavilo
 Mod {0} nemá název součásti. Analýza modů se nezdařila. Zkontrolujte zdrojový kód.
-Mod {0} nemá příkaz. Analýza modů se nezdařila. Zkontrolujte zdrojový kód.
 Než budete moci vymazat protokol ladění, musíte zapnout režim ladění.
 {0} nové zprávy dorazily do doručené pošty.
 Chcete-li je zobrazit, otevřete „mail“.
@@ -645,10 +570,6 @@ Byla překročena úroveň červené barvy. Bylo to {0}.
 Byla překročena úroveň zelené barvy. Bylo to {0}.
 Úroveň modré barvy překročena. Bylo to {0}.
 Aktivujte věrné barvy
-Aktivuje podporu skutečných barev pro ColorMix.
-Aktivuje podporu skutečných barev pro Disco.
-Aktivuje podporu skutečné barvy pro GlitterColor.
-Aktivuje podporu skutečných barev pro řádky.
 Odblokování uživatele {0} se nezdařilo.
 Web {0} je již zablokován.
 {0} se nyní nemůže připojit ke vzdálenému ladění.
@@ -659,7 +580,6 @@ Zadejte cesty k přílohám. Pro potvrzení stiskněte ENTER na prázdné cestě
 Otevře zašifrovanou zprávu
 Napište heslo pro ID klíče {0}
 Odešle zašifrovanou zprávu na adresu
-Požádá vás o vyplnění požadovaných polí pro odeslání šifrované zprávy na adresu
 Stahování z {0} ...
 Zobrazit indikátor průběhu při stahování nebo nahrávání z příkazu „get“ nebo „put“
 Pokud je to pravda, způsobí to, že „get“ nebo „put“ zobrazí indikátor průběhu během stahování nebo nahrávání.
@@ -678,8 +598,6 @@ Pocit jako: {0}
 Teplota: {0}
 Rychlost větru: {0}
 Směr větru: {0}
-Aktivuje podporu 255 barev pro Dissolve.
-Aktivuje podporu skutečných barev pro Dissolve.
 Stisknutím libovolné klávesy se vrátíte zpět.
 Nelze vytvořit poštovní složku {0}: {1}
 Vytvoří adresář v aktuálním pracovním adresáři
@@ -692,22 +610,11 @@ Mřížky jsou nesprávně tvarované.
 Hash se neshodují.
 Hashes zápas.
 Přejmenuje složku
-Tato část uvádí všechna obecná nastavení jádra, zejména pro údržbu jádra.
-Tato část mění chování hardwarové sondy.
-Tato část představuje nastavení přihlášení. Změny se projeví až po odhlášení z účtu.
-V této části je uvedeno nastavení prostředí.
-Tato část obsahuje seznam nastavení sítě, jako je prostředí FTP, nastavení příkazů souvisejících se sítí a nastavení vzdáleného ladění.
-V této části jsou uvedeny všechny spořiče obrazovky a jejich dostupná nastavení.
-Přistane zde nastavení, které se nevejde do příslušných částí.
-Testuje mody poskytováním mod souborů
 Otevře testovací prostředí
-Povolí režim ladění
-Výzvy pro argumenty
 * Stisknutím libovolné klávesy spustíte jádro nebo klávesu ESC opustíte.
 Nepodařilo se spustit „{0}“: {1}
 Zobrazit náhled e-mailové zprávy
 Při výpisu e-mailových zpráv zobrazte náhled těla.
-Vlastní barvy ...
 Vstupní barva
 Barva licence
 Pokračovatelná barva chyby jádra
@@ -721,8 +628,6 @@ Barva chyby
 Styl výzvy FTP
 Styl výzvy
 Styl výzvy SFTP
-Aktivuje podporu 255 barev pro BouncingBlock.
-Aktivuje podporu skutečných barev pro BouncingBlock.
 Pokus o přístup k neplatné cestě.
 Vymaže textový soubor
 Ukončí textový editor
@@ -745,8 +650,6 @@ Kleur van minutenbalk
 Kleur urenbalk
 Kleur van informatie
 Tikken om van kleur te veranderen
-Activeert 255 kleurenondersteuning voor ProgressClock.
-Activeert ondersteuning voor ware kleuren voor ProgressClock.
 Als kleurcyclus is ingeschakeld, hoeveel vinkjes voordat kleuren worden gewijzigd in ProgressClock? 1 vinkje = 0,5 seconden
 ProgressClock selecteert willekeurige kleuren als dit is ingeschakeld. Gebruik anders kleuren uit config.
 Maakt een nieuw thema
@@ -761,39 +664,10 @@ Optie kleur
 Voer het kleurnummer in van 0 tot 255:
 Gebruik "hwinfo" voor uitgebreide informatie over hardware.
 Drukt hardware-informatie af
-CPU-informatie:
 Naam processor:
-Processor snelheid:
 Processorbits:
-Processor rev:
-Processortopologie:
-Processortype:
-Mijlpaal van processor:
-Verwerker BogoMips:
-Processor L2-cachegrootte:
-Processor L3-cachegrootte:
-Processorfuncties:
-HDD-informatie:
-Schijfnaam:
-Aandrijvingsmodel:
-Drive-leverancier:
-Rijsnelheid:
-Aandrijvingsgrootte:
-Serieel station:
-Drive-ID:
-Aantal schijfpartities:
-Partitie-ID:
 Partitie bestandssysteem:
 partitie grootte:
-Gebruikte partitie:
-RAM-informatie:
-RAM vrij:
-RAM-totaal:
-RAM gebruikt:
-GPU-informatie:
-GPU-naam:
-GPU-stuurprogramma:
-GPU-versie:
 GPU: het testen van een of meer grafische kaarten is mislukt. Toch informatie weergeven...
 >> Welkom! Dit is de eerste keer dat u op afstand debuggen en chatten. Gebruik "/register <naam>" om te registreren.
 Apparaat bestaat al.
@@ -825,8 +699,6 @@ Geef themanaam op:
 De gebruiker {0} is toegevoegd aan de lijst "{1}".
 De gebruiker {0} is verwijderd uit de lijst "{1}".
 Ongeldige modus {0}
-Gebruiker bestaat al
-Thema laden van...
 Thema laden vanuit vooraf gemaakte thema's...
 Geef de naam van het themabestand op zonder de .json-extensie:
 Opent een ZIP-archief
@@ -839,12 +711,9 @@ Directory {0} bestaat niet
 Archiefmap {0} bestaat niet
 Max aantal posities
 Hoeveel standen branden er voordat er wordt gedimd?
-Activeert 255 kleurenondersteuning voor aansteker.
-Activeert ondersteuning voor ware kleuren voor aansteker.
 Kleur van lijstinvoer
 Lijstwaarde kleur
 Maakt verbinding met een SSH-server om een ​​opdracht uit te voeren.
-In dit gedeelte worden de schermbeveiligingsinstellingen voor
 Ongeldige kleurspecificatie. Zorg ervoor dat het de juiste indeling heeft, wat een getal van 0-255 betekent als u 255 kleuren gebruikt of een VT-reeks als u ware kleuren als volgt gebruikt:
 Fout in testshell: {0}
 Stelt een variabele in op een waarde in een script
@@ -866,13 +735,11 @@ Hoe wil je authenticeren?
 Privé sleutel bestand
 Wachtwoord
 Voer de wachtwoordzin in voor sleutel {0}:
-Voer de locatie van de privésleutel in voor {0}. Schrijf "q" om het toevoegen van sleutels te voltooien:
 Een niet-bestaand pad geneutraliseerd.
 Sleutelbestand {0} bestaat niet.
 Fout bij het toevoegen van een persoonlijke sleutel:
 Druk op "t" om over te schakelen naar de 255 kleurmodus.
 Druk op "t" om over te schakelen naar de modus voor ware kleuren.
-In dit gedeelte kunt u kiezen welk type kleur u wilt wijzigen.
 Het lijkt erop dat je geen gebruiker hebt behalve root. Dit is slecht. We zullen u begeleiden hoe u er een kunt maken.
 Schrijf uw gebruikersnaam.
 U moet uw gebruikersnaam schrijven.
@@ -882,7 +749,6 @@ Selecteer accounttype.
 Beheerder: Dit accounttype heeft de meeste kracht in de kernel, waardoor je systeembeheerprogramma's kunt gebruiken.
 Normale gebruiker: dit accounttype is iets beperkter dan beheerders.
 Gefeliciteerd! Je hebt een nieuw account gemaakt! Om dit af te ronden, logt u in als uw nieuwe account.
-Raadpleeg de handleiding van de screensaver of de broncode voor informatie.
 mod: Geen mods gedetecteerd.
 Algemene commando's:
 Mod-commando's:
@@ -906,7 +772,6 @@ Test de kernelfoutfaciliteit met formaatondersteuning
 Tests die een tekenreeks vertalen die in bronnen voorkomt naar een specifieke taal
 Drukt een string af naar console en analyseert de gevonden tijdelijke aanduidingen
 Test de reguliere expressie-faciliteit
-Versleutelt een string met behulp van
 Start alle mods
 Stopt alle mods
 Schakelt foutopsporing in of uit
@@ -941,7 +806,6 @@ Geeft ondersteunde culturen weer
 Zoekt naar opgegeven tekenreeks in het opgegeven bestand met behulp van reguliere expressies
 Kijk of je op tijd op een toets kunt drukken
 Gebruiker heeft niet tijdig input geleverd.
-Ongeldige moeilijkheid
 Karakter niet op tijd gedrukt.
 Je hebt op het juiste personage gedrukt!
 Je hebt op het verkeerde teken gedrukt.
@@ -985,7 +849,6 @@ Krijgt aangepaste spaarinstellingen
 Stelt aangepaste spaarinstellingen in
 Instellingen succesvol ingesteld voor screensaver
 Kan geen instelling voor screensaver instellen
-In deze sectie kunt u het aanmaken van root-wachtwoorden beheren.
 Opent een RSS-shell om de feeds te lezen
 Sluit de RSS-shell af en keert terug naar de kernel
 Wijzigt de feedlink
@@ -1012,13 +875,6 @@ Sorteermodus bestandssysteem
 Sorteerrichting bestandssysteem
 Bepaalt hoe de bestanden worden gesorteerd.
 Bepaalt de richting van het sorteren van het bestandssysteem, of het nu oplopend of aflopend is.
-Oplopende volgorde
-Aflopende volgorde
-Voor-en achternaam
-Bestandsgrootte
-Aanmaaktijd
-Laatste schrijftijd
-Laatste toegangstijd
 Schrijfvertraging in milliseconden
 Hoeveel milliseconden moet je wachten voordat je weer tekst schrijft?
 Schrijf elke tekst die u wilt laten zien. Langer is beter.
@@ -1027,35 +883,26 @@ Maximale schrijfsnelheid in WPM
 Kans op typefout in procent
 Kan huidige map niet opslaan: {0}
 Doekjes om van richting te veranderen
-Activeert 255 kleurenondersteuning voor Wipe.
-Activeert ondersteuning voor ware kleuren voor Wipe.
 Hoeveel doekjes moet je doen voordat je willekeurig van richting verandert?
 Stage geëindigd in
 Interne initialisatie voltooid in
 Verwezen bestand {0} niet gevonden. Deze mod werkt mogelijk niet goed zonder dit bestand.
 Startmodus
-Krijgt mod-informatie
 Commando naam:
 Commando definitie:
 Opdrachttype:
 Strikte opdracht?
 Mod-versie:
 Mod {0} niet gevonden.
-Cultuur van
-Welke variant van {0} wordt gebruikt om de maandnamen, kalender, enz. te wijzigen?
 De teksteditor heeft nog geen bestandsstream geopend.
 Snaar vervangen.
 Een of beide nummers zijn niet numeriek.
 Woord verwijderd.
 Karakter verwijderd.
-Bestandssysteeminstellingen...
-In deze sectie worden de instellingen van het bestandssysteem vermeld.
 Welkom bij Instellingen!
 Fout bij uitvoeren van SSH-opdracht
 Fout op SSH-shell
 - App-informatie
-Activeert 255 kleurenondersteuning voor BouncingText.
-Activeert ondersteuning voor ware kleuren voor BouncingText.
 Test de woordenboekschrijver met de tekenreeks en tekenreeksarray
 Test de woordenboekschrijver met de char en char array
 Test de woordenboekschrijver met de integer en integer array
@@ -1072,21 +919,15 @@ waar HardwareType zal zijn
 Het hardwaretype {0} is niet onderzocht of is niet geldig.
 Het hardwaretype {0} is nog niet onderzocht. Als je zeker weet dat het wordt onderzocht, herstart dan de kernel met debugging ingeschakeld.
 Partities niet geparseerd naar lijst.
-Hacker-modus
-Indien ingeschakeld, wordt de groene console ingeschakeld.
 Drukt een scheidingsteken af
 Drukt een scheidingsteken af ​​met formaatondersteuning
 Drukt een scheidingsteken af ​​met kleurondersteuning
 Drukt een scheidingsteken af ​​met ondersteuning voor kleur en formaat
 Altijd gecentreerd
-Activeert 255 kleurenondersteuning voor selectiekader.
-Activeert ondersteuning voor ware kleuren voor selectiekader.
 Schrijf elke tekst die u wilt laten zien.
 Of de tekst op het selectiekader altijd gecentreerd is.
-'q' om te stoppen.
 Argument {0} niet gevonden om te injecteren.
 Opdrachtregelargument {0} niet gevonden.
-Wist alle instellingen
 Er is een fout opgetreden in de screensaver bij het weergeven van: {0}. Druk op een willekeurige toets om af te sluiten.
 Voorbeeld...
 Zo ziet je thema eruit:
@@ -1124,20 +965,15 @@ Zda použít jednotku Beats Per Minute k napsání další barvy.
 Zpoždění v úderech za minutu
 Porazte barvu
 Kolik úderů za minutu počkat, než začnete psát další?
-Aktivuje podporu 255 barev pro BeatFader.
-Aktivuje podporu skutečných barev pro BeatFader.
 BeatFader vybere náhodné barvy, pokud je povolen. Jinak použijte barvy z config.
 Vlastní banner pro spuštění
-Pokud je zadán, zobrazí přizpůsobený spouštěcí banner s podporou zástupného symbolu. Pro verzi jádra můžete použít tuto frázi:
 Stahuje vzdálenou složku do místního adresáře pomocí binárního souboru nebo textu
 Odesílá místní složku do vzdáleného adresáře pomocí binárního souboru nebo textu
-Zadejte složku, kterou chcete stáhnout do místního adresáře.
 Stahování složky {0} ...
 Stažená složka {0}.
 Stahování složky {0} se nezdařilo.
 Nahrávání složky {0} ...
 Nahraná složka {0}
-Zadejte složku, kterou chcete nahrát do vzdáleného adresáře.
 Stisknutím „c“ zapíšete barevný kód.
 Zadejte kód barvy, který odpovídá těmto formátům:
 Minimalizuje soubor JSON
@@ -1151,13 +987,9 @@ Sloupce textu, které se mají vytisknout.
 Kolik znaků napsat před spuštěním „vyplnění řádku“?
 Možnost, že vzor výplně čáry bude vytištěn všemi velkými písmeny v procentech
 Typ vzoru čáry
-Společný vzor
-Kompletní vzor
-Náhodný vzor
 Odpověď nemusí být nulová.
 Odpověď nesmí překročit zobrazené položky.
 Uložit změny...
-Tento spořič obrazovky podporuje psaný text v souboru. Do tohoto pole předejte úplnou cestu k souboru a spořič obrazovky odpovídajícím způsobem zobrazí obsah souboru.
 Spravujte své mody
 Správa režimu je v nouzovém režimu zakázána.
 Neplatný příkaz {0}. Zkontrolujte použití níže:
@@ -1173,5 +1005,3 @@ Stránku manuálu si přečtete stisknutím libovolné klávesy ...
 Tato příručka vyžaduje práci pro:
 Stránka manuálu {0} nebyla nalezena.
 Mod manuál
-Aktivuje podporu 255 barev pro FlashColor.
-Aktivuje podporu skutečných barev pro FlashColor.

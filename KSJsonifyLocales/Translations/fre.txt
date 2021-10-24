@@ -1,15 +1,6 @@
 Commandes disponibles: {0}
-Commande d'écriture: 
 L'injection de commande a été annulée.
-Séparez les arguments de démarrage par des virgules sans espaces, par exemple "motd,gpuprobe"
-Séparez les commandes sur 'cmdinject' avec les deux points avec des espaces, par exemple, 'cmdinject setthemes Hacker : beep 1024 0.5'
-Notez que l'argument 'debug' ne couvre pas complètement le noyau.
-bargs: l'argument demandé {0} est introuvable.
-bargs: erreur irrécupérable dans l'argument:
-Arguments disponibles: {0}
-Arguments ('help' pour l'aide):
 Les arguments injectés seront programmés pour s'exécuter au prochain redémarrage.
-L'injection d'argument a été annulée.
 Erreur lors de l'analyse des arguments de ligne de commande réels: {0}
 Modèle de couleur non valide {0}
 hwprobe: Votre matériel sera sondé. S'il vous plaît, attendez...
@@ -82,7 +73,6 @@ Mot de passe pour {0}:
 Connecté à {0}
 Erreur lors de la tentative de connexion à {0}: {1}
 Trace de pile: {2}
-Entrez un serveur FTP.
 Le répertoire local {0} n'existe pas.
 Entrez un répertoire local. ".." retourner.
 Répertoire {0} introuvable.
@@ -97,16 +87,12 @@ Vous n'avez encore connecté à aucun serveur
 Téléchargement du fichier {0} ...
 Fichier téléchargé {0}.
 Vous devez vous connecter au serveur avant d'effectuer la transmission.
-Entrez un fichier à télécharger dans le répertoire local.
 {0} KB | Modifié dans: {1}
 Vous devez vous connecter au serveur avant de répertorier tous les fichiers distants.
 Téléchargement du fichier {0} ...
 Fichier téléchargé {0}
-Entrez un fichier à télécharger dans le répertoire distant. upload <file> <directory>
-(Interne:
 Obtient le répertoire local actuel
 Obtient le répertoire distant actuel
-Se connecte à un serveur FTP (il doit commencer par "ftp://" ou "ftps://")
 Modifie le répertoire local à télécharger ou à télécharger
 Modifie le répertoire distant vers lequel télécharger ou télécharger
 Supprime le fichier distant du serveur
@@ -147,7 +133,6 @@ Configuration rechargée. Vous devrez peut-être redémarrer le noyau pour que c
 Une ou plusieurs des couleurs sont invalides.
 Les couleurs ne sont pas disponibles. Activer le shell coloré dans la configuration du noyau.
 Économiseur d'écran {0} introuvable.
-[ Paramètres du noyau (en cours d'exécution sur {0}) ]
 Version du noyau:
 Mode débogage:
 Coquille Colorée:
@@ -155,8 +140,6 @@ Arguments au démarrage:
 Commande d'aide simplifiée:
 MOTD sur Login:
 Heure / Date sur le coin:
-[ Paramètres matériels ]
-[ Paramètres utilisateur ]
 Nom d'utilisateur actuel:
 Nom d'hôte actuel:
 Noms d'utilisateur disponibles:
@@ -183,31 +166,14 @@ Informations système
 * Vous pouvez utiliser plusieurs commandes en utilisant les deux points entre les commandes.
 Usage:
 où les arguments seront {0}
-Initialise le shell FTP.
-Les amis de
 où customsaver sera
-Verrouille votre écran avec le mot de passe.
-Vous déconnecte de l'utilisateur.
-Obtenir toutes les informations du réseau
-Redémarre votre ordinateur simulé.
-Recharge la configuration modifiée par l'utilisateur final ou par l'outil.
-Les couleurs ne nécessitent pas de redémarrage, mais la plupart des paramètres nécessitent un redémarrage.
-vous montre un économiseur d'écran sélectionné, tout en protégeant votre écran des épuisements.
-Affiche la date et l'heure.
-Affiche la date et l'heure dans les zones.
-Arrête votre ordinateur simulé.
-Affiche les informations système et les versions.
 Il y avait une erreur dans le shell.
 Vous n'êtes pas autorisé à utiliser {0}
 Message Shell: La commande demandée {0} n'est pas autorisée à être exécutée en mode maintenance.
 Message shell: La commande demandée {0} est introuvable. Voir 'help' pour les commandes disponibles.
 Message Shell: La commande {0} n'est pas autorisée à s'exécuter lors de la connexion.
 Erreur lors de la tentative d'exécution de la commande.
-datetime: le temps est {0}
-datetime: aujourd'hui, {0}
-datetime: fuseau horaire: {0}
 - Heure de {0}: {1}
-pour effacer l'écran.
 en cours d'exécution sur {0}
 Vous n'êtes pas autorisé à obtenir des informations pour {0}.
 Cette commande est obsolète et sera supprimée dans une prochaine version.
@@ -233,8 +199,6 @@ Change de langue
 >> Cadres, fichiers, lignes et colonnes <<
 > Cadre {0}: Fichier: {1} | Ligne: {2} | Colonne: {3}
 > Il y a une erreur en essayant d'obtenir des informations sur le cadre. {0}: {1}
-Recharge les modifications.
-Mods rechargés.
 Bienvenue sur Kernel!
 Connecté avec succès en tant que <utilisateur>
 MOTD / MAL est valide, mais le type de message n'est pas valide. 
@@ -267,27 +231,19 @@ L'adaptateur {0} ne prend pas en charge IPv6. En continuant ...
 L'adaptateur {0} ne prend pas en charge IPv4. La sonde a échoué.
 Il semble que vous exécutiez la version de développement du noyau. Bien que vous puissiez voir les aspects, il est fréquemment mis à jour et peut introduire des bogues. Il est recommandé de rester sur la version stable.
 La langue que vous avez sélectionnée contient deux variantes. Sélectionnez-en un:
-1. Translittéré
-2. Traduit
-Sélectionnez votre choix:
 Choix invalide. Réessayer.
 Vous n'êtes pas autorisé à définir le répertoire actuel sur {0}: {1}
 Le chemin que vous avez spécifié est trop long.
-CPU: AVERTISSEMENT: SSE2 sera requis dans les futures validations de développement.
 Le regroupeur d'informations de vidage s'est arrêté lors de la tentative d'obtention d'informations sur {0}: {1}
-Erreur lors de la tentative d'obtention de la date de compilation de l'assembly {0}: {1}
 Erreur lors de la tentative de définition de MOTD / MAL: {0}
 Erreur lors de la tentative d'obtention de MOTD / MAL: {0}
 Erreur lors de la tentative de démarrage de l'économiseur d'écran, en raison d'une opération non valide.
 Le rechargement n'est pas autorisé en mode sans échec.
 L'analyse des mods n'est pas autorisée en mode sans échec.
-Répertorie tous les périphériques de débogage connectés.
 Erreur lors de la tentative de définition du mode d'analyse. Vérifiez la valeur et réessayez. Si cela est correct, consultez la trace de la pile lorsque le débogage du noyau est activé.
 Le chemin n'est ni un fichier ni un répertoire.
 Crée une autre copie d'un fichier sous un répertoire ou un nom différent.
 Déplace un fichier vers un autre répertoire
-Pour copier des fichiers dans un autre répertoire ou un nom différent
-Pour déplacer des fichiers vers un autre répertoire
 Correspondance {0} ({1}): {2}
 Correspondance {0}: {1}
 Temps passé: {0} millisecondes
@@ -302,9 +258,6 @@ Répondez aux commentaires d'amour ou de haine.
 Si quelqu'un a fait ce commentaire sur votre vidéo:
 Comment répondriez-vous?
 Selection invalide. Passer au commentaire suivant ...
-Vous venez de signaler le commentaire d'amour!
-Vous venez de répondre au commentaire de haine!
-Génial! Le commentaire de {0} sera supprimé pour cela.
 Génial! {0} appréciera vos remerciements.
 Épelé parfaitement!
 Orthographe incorrecte.
@@ -318,7 +271,6 @@ Entrez le mot de passe pour {0}:
 SSH déconnecté.
 Impossible de définir la page de code. La langue peut ne pas s'afficher correctement.
 Le débogage n'est pas activé.
-{0} n'est plus défini sur l'économiseur d'écran par défaut.
 Merci! C'est intéressant.
 Tout le monde soutiendra votre vidéo pour cela.
 Je vous ai donné le fichier spécial dans votre e-mail pour votre prochaine vidéo.
@@ -364,7 +316,6 @@ Le répertoire {0} existe déjà.
 Erreur lors de la tentative de connexion à {0}: délai de connexion ou connexion perdue
 Calculatrice pour calculer les expressions.
 Erreur de calcul.
-On dirait que vous exécutiez la version imminente. Bien qu'il soit plus sûr d'utiliser maintenant, il est recommandé de rester sur la version stable.
 Mise à jour du système
 Vérification des mises à jour du système ...
 Nouvelle version trouvée: 
@@ -372,7 +323,6 @@ Vous pouvez le télécharger sur:
 Aucune notification récente
 Recherche une chaîne spécifique dans le fichier fourni
 Calcule les sommes des fichiers dans le répertoire spécifié.
-Répertorie tous les e-mails de l'utilisateur spécifique.
 Entrez votre nom d'utilisateur ou votre adresse e-mail:
 Entrer le mot de passe:
 Erreur lors de la connexion à {0}: {1}
@@ -382,7 +332,6 @@ Quitte le shell IMAP
 Liste des commandes
 Télécharge les messages et les répertorie
 Ouvre un message
-La page peut ne pas être négative ou nulle.
 La page n'est pas une valeur numérique.
 Le numéro du message peut ne pas être négatif ou nul.
 Le numéro de message n'est pas une valeur numérique.
@@ -392,7 +341,6 @@ Le numéro de message n'est pas une valeur numérique.
 Le message spécifié est introuvable.
 Le débogage à distance n'a pas pu démarrer: {0}
 Préparation des profils ... Cela peut prendre plusieurs minutes ...
-Nom d'hôte, nom d'utilisateur, type de données, codage, cryptage, protocoles
 Erreur lors de la tentative d'exécution du script: {0}
 Écrit du texte dans la console
 Fait des choix d'utilisateur
@@ -417,7 +365,6 @@ Le numéro abrégé est vide. Connectez-vous à un serveur pour y ajouter une ad
 La numérotation abrégée n'existe pas. Connectez-vous à un serveur pour y ajouter une adresse.
 Entrez l'adresse et le port du serveur IMAP (<adresse> ou <adresse>: [port]):
 Entrez l'adresse et le port du serveur SMTP (<adresse> ou <adresse>: [port]):
-Vous demande de remplir les champs obligatoires pour envoyer un message à une adresse
 Envoie un message à une adresse
 Saisissez l'adresse e-mail du destinataire:
 Entrez le sujet:
@@ -445,8 +392,6 @@ Supprime un mot ou une phrase du numéro de ligne
 Supprime un caractère du numéro de caractère dans la ligne spécifiée
 Ligne supprimée.
 Le numéro de ligne spécifié {0} n'est pas un nombre valide.
-Les arguments requis ne sont pas transmis à la commande {0}
-Erreur lors de la tentative d'exécution de la commande: {0}
 Exécution en mode sans échec. Sauter l'étage ...
 >> Débogage et discussion à distance: version
 >> Votre adresse est {0}.
@@ -464,19 +409,12 @@ Bloquer un périphérique de débogage par adresse IP
 Erreur lors du chargement des paramètres
 Une erreur s'est produite lors du chargement des paramètres. Vous devrez peut-être vérifier le fichier de paramètres.
 Sélectionnez la section:
-Réglages généraux...
-Paramètres matériels ...
-Paramètres de connexion ...
-Paramètres du shell ...
-Paramètres réseau...
-Paramètres divers ...
 Enregistrer les paramètres
 Sortie
 L'option spécifiée {0} n'est pas valide.
 La réponse doit être numérique.
 Demander des arguments au démarrage
 Déclencheur du mode maintenance
-Changer le mot de passe root ...
 Rechercher des mises à jour au démarrage
 Sonde silencieuse
 Afficher MOTD lors de la connexion
@@ -500,9 +438,7 @@ Section non valide saisie. Veuillez revenir en arrière.
 Retourner...
 Activer
 Désactiver
-Numéro de clé non valide saisi. Veuillez revenir en arrière.
 Écrivez le mot de passe root à définir. Ne t'inquiète pas; le mot de passe est affiché sous forme d'étoiles.
-Activez «Modifier le mot de passe racine» pour utiliser cette option. Veuillez revenir en arrière.
 Changer le mot de passe root?
 Définir le mot de passe root ...
 Ecrivez un port de débogage distant. Il doit être numérique et ne doit pas être déjà utilisé. Sinon, le débogueur distant ne parviendra pas à ouvrir le port.
@@ -513,7 +449,6 @@ La réponse n'est peut-être pas négative.
 La réponse est invalide. Assurez-vous que la réponse est numérique pour les entrées de configuration qui nécessitent des nombres comme réponses.
 La variable {0} n'est trouvée sur aucun des modules.
 Modifie la configuration du noyau
-Paramètres de l'économiseur d'écran ...
 Activer 255 couleurs
 Voulez-vous rester connecté?
 Choix invalide. En supposant que non ...
@@ -549,7 +484,6 @@ Utilisateur non trouvé
 Impossible de trouver le fichier correspondant à la chaîne "{0}": {1}
 Le téléchargement a échoué pour le fichier {0}.
 Échec de la liste des fichiers distants: {0}
-Entrez un fichier ou un dossier à supprimer. Vous devez disposer des autorisations administratives sur votre compte pour pouvoir supprimer.
 Voulez-vous vraiment supprimer {0} <y / n>?
 Suppression de {0} ...
 {0} est introuvable sur le serveur.
@@ -560,7 +494,6 @@ Déplacement de {0} vers {1}…
 Déplacé avec succès
 Déplace le fichier ou le répertoire vers un autre fichier ou répertoire. Vous pouvez également l'utiliser pour renommer des fichiers.
 Échec du déplacement de {0} vers {1}.
-Entrez un chemin source et un chemin de destination.
 Copie de {0} vers {1}…
 Copié avec succès
 Copie le fichier ou le répertoire dans un autre fichier ou répertoire.
@@ -578,9 +511,6 @@ Humidité: {0}
 Vous pouvez obtenir votre propre clé API sur https://home.openweathermap.org/api_keys.
 Vous pouvez toujours consulter http://bulk.openweathermap.org/sample/city.list.json.gz pour la liste des villes avec leurs identifiants.
 Unité préférée pour la température
-Kelvin
-Impérial (Fahrenheit)
-Métrique (Celsius)
 Configure le noyau pour qu'il vous demande un argument au démarrage.
 Déclenche le mode maintenance. Cela désactive plusieurs comptes.
 À chaque démarrage, il vérifiera les mises à jour.
@@ -595,10 +525,6 @@ Commande d'aide simplifiée pour tous les shells
 S'il faut ou non enregistrer le nom d'utilisateur FTP.
 S'il faut ou non enregistrer l'adresse IP FTP.
 Choisissez le premier profil uniquement lors de la connexion.
-Active la prise en charge de 255 couleurs pour ColorMix.
-Active la prise en charge de 255 couleurs pour Disco.
-Active la prise en charge de 255 couleurs pour GlitterColor.
-Active la prise en charge de 255 couleurs pour les lignes.
 L'heure et la date seront affichées dans le coin supérieur droit de l'écran
 Si activé, le noyau analysera le dossier entier pour sa taille totale. Sinon, analysera uniquement la surface.
 Active eyecandy au démarrage
@@ -608,7 +534,6 @@ Sélectionnez votre unité préférée pour la température (cela s'applique uni
 Mod {0} arrêté
 {0} v {1} arrêté
 Le mod {0} n'a pas le nom de la pièce. L'analyse du mod a échoué. Vérifiez le code source.
-Le mod {0} n'a pas la commande. L'analyse du mod a échoué. Vérifiez le code source.
 Vous devez activer le mode débogage avant de pouvoir effacer le journal de débogage.
 {0} nouveaux messages sont arrivés dans la boîte de réception.
 Ouvrez «mail» pour les voir.
@@ -645,10 +570,6 @@ Niveau de couleur rouge dépassé. C'était {0}.
 Niveau de couleur verte dépassé. C'était {0}.
 Niveau de couleur bleue dépassé. C'était {0}.
 Activez les vraies couleurs
-Active la vraie prise en charge des couleurs pour ColorMix.
-Active la vraie prise en charge des couleurs pour Disco.
-Active la vraie prise en charge des couleurs pour GlitterColor.
-Active la vraie prise en charge des couleurs pour les lignes.
 Échec du déblocage de {0}.
 {0} est déjà bloqué.
 {0} ne peut pas rejoindre le débogage à distance pour le moment.
@@ -659,7 +580,6 @@ Entrez les chemins de fichiers vers les pièces jointes. Appuyez sur ENTRÉE sur
 Ouvre un message chiffré
 Écrivez le mot de passe pour l'ID de clé {0}
 Envoie un message chiffré à une adresse
-Vous demande de remplir les champs obligatoires pour envoyer un message chiffré à une adresse
 Téléchargement depuis {0}…
 Afficher la barre de progression lors du téléchargement ou du téléversement à partir de la commande «get» ou «put»
 Si c'est vrai, cela fait "get" ou "put" afficher la barre de progression lors du téléchargement ou du téléchargement.
@@ -678,8 +598,6 @@ Ressenti comme: {0}
 Température: {0}
 Vitesse du vent: {0}
 Direction du vent: {0}
-Active la prise en charge de 255 couleurs pour Dissoudre.
-Active la prise en charge des couleurs réelles pour Dissoudre.
 Appuyez sur n'importe quelle touche pour revenir en arrière.
 Impossible de créer le dossier de messagerie {0}: {1}
 Crée un répertoire dans le répertoire de travail courant
@@ -692,22 +610,11 @@ Les hachages sont mal formés.
 Les hachages ne correspondent pas.
 Les hachages correspondent.
 Renomme un dossier
-Cette section répertorie tous les paramètres généraux du noyau, principalement pour la maintenance du noyau.
-Cette section modifie le comportement de la sonde matérielle.
-Cette section représente les paramètres de connexion. Déconnectez-vous de votre compte pour que les modifications prennent effet.
-Cette section répertorie les paramètres du shell.
-Cette section répertorie les paramètres réseau, comme le shell FTP, les paramètres de commande liés au réseau et les paramètres de débogage à distance.
-Cette section répertorie tous les économiseurs d'écran et leurs paramètres disponibles.
-Les paramètres qui ne correspondent pas à leurs sections appropriées arrivent ici.
-Teste les mods en fournissant des fichiers mod
 Ouvre un shell de test
-Active le mode de débogage
-Invite des arguments
 * Appuyez sur n'importe quelle touche pour démarrer le noyau ou sur ESC pour quitter.
 Échec du démarrage de «{0}»: {1}
 Afficher l'aperçu du message électronique
 Lors de la liste des messages électroniques, affichez l'aperçu du corps.
-Couleurs personnalisées...
 Couleur d'entrée
 Couleur de la licence
 Couleur d'erreur continue du noyau
@@ -721,8 +628,6 @@ Couleur d'erreur
 Style d'invite FTP
 Style d'invite de courrier
 Style d'invite SFTP
-Active la prise en charge de 255 couleurs pour BouncingBlock.
-Active la vraie prise en charge des couleurs pour BouncingBlock.
 Tentative d'accès à un chemin non valide.
 Efface le fichier texte
 Quitte l'éditeur de texte
@@ -745,8 +650,6 @@ Couleur de la barre des minutes
 Barre de couleur des heures
 Couleur des informations
 Tiques pour changer de couleur
-Active la prise en charge de 255 couleurs pour ProgressClock.
-Active la prise en charge des couleurs vraies pour ProgressClock.
 Si le cycle des couleurs est activé, combien de ticks avant de changer les couleurs dans ProgressClock ? 1 tick = 0,5 seconde
 ProgressClock sélectionnera des couleurs aléatoires si elle est activée. Sinon, utilisez les couleurs de config.
 Crée un nouveau thème
@@ -761,39 +664,10 @@ Couleur de l'option
 Entrez le numéro de couleur de 0 à 255 :
 Utilisez "hwinfo" pour des informations détaillées sur le matériel.
 Imprime les informations sur le matériel
-Informations sur le processeur :
 Nom du processeur :
-La vitesse du processeur:
 Bits du processeur :
-Rév du processeur :
-Topologie du processeur :
-Type de processeur :
-Étape du processeur :
-Processeur BogoMips :
-Taille du cache du processeur L2 :
-Taille du cache du processeur L3 :
-Caractéristiques du processeur :
-Informations sur le disque dur :
-Nom du lecteur :
-Modèle d'entraînement :
-Fournisseur d'entraînement :
-Vitesse d'entraînement :
-Taille du lecteur :
-Série du lecteur :
-Identifiant du lecteur :
-Nombre de partitions de lecteur :
-Identifiant de partition :
 Partitionner le système de fichiers :
 Taille de la partition:
-Partition utilisée :
-Informations sur la RAM :
-RAM libre :
-RAM totale :
-RAM utilisée :
-Informations sur le GPU :
-Nom du GPU :
-Pilote GPU :
-Version GPU :
 GPU : une ou plusieurs des cartes graphiques n'ont pas pu être testées. Affichage des informations quand même...
 >> Bienvenue ! C'est la première fois que vous entrez dans le débogage et le chat à distance. Utilisez "/register <nom>" pour vous inscrire.
 L'appareil existe déjà.
@@ -825,8 +699,6 @@ Spécifiez le nom du thème :
 L'utilisateur {0} a été ajouté à la liste "{1}".
 L'utilisateur {0} a été supprimé de la liste "{1}".
 Mode invalide {0}
-L'utilisateur existe déjà
-Charger le thème à partir de...
 Charger le thème à partir des thèmes prédéfinis...
 Spécifiez le nom du fichier de thème sans l'extension .json :
 Ouvre une archive ZIP
@@ -839,12 +711,9 @@ Le répertoire {0} n'existe pas
 Le répertoire d'archive {0} n'existe pas
 Nombre maximal de positions
 Combien de positions sont allumées avant la gradation ?
-Active la prise en charge de 255 couleurs pour le briquet.
-Active la prise en charge des vraies couleurs pour le briquet.
 Couleur de l'entrée de liste
 Couleur de la valeur de liste
 Se connecte à un serveur SSH pour exécuter une commande.
-Cette section répertorie les paramètres de l'économiseur d'écran pour
 Spécificateur de couleur non valide. Assurez-vous qu'il est au bon format, ce qui signifie un nombre de 0 à 255 si vous utilisez 255 couleurs ou une séquence VT si vous utilisez de vraies couleurs comme suit :
 Erreur dans le shell de test : {0}
 Définit une variable à une valeur dans un script
@@ -866,13 +735,11 @@ Comment voulez-vous vous authentifier ?
 Fichier de clé privée
 Mot de passe
 Saisissez la phrase secrète pour la clé {0} :
-Saisissez l'emplacement de la clé privée pour {0}. Écrivez "q" pour terminer l'ajout des clés :
 Neutralisé un chemin inexistant.
 Le fichier de clé {0} n'existe pas.
 Erreur lors de la tentative d'ajout de clé privée :
 Appuyez sur "t" pour passer en mode 255 couleurs.
 Appuyez sur "t" pour passer en mode couleurs vraies.
-Cette section vous permet de choisir le type de couleur que vous souhaitez modifier.
 Il semble que vous n'ayez aucun utilisateur à part root. C'est mauvais. Nous vous expliquerons comment en créer un.
 Écrivez votre nom d'utilisateur.
 Vous devez écrire votre nom d'utilisateur.
@@ -882,7 +749,6 @@ Sélectionnez le type de compte.
 Administrateur : ce type de compte a le plus de puissance dans le noyau, vous permettant d'utiliser des programmes de gestion de système.
 Utilisateur normal : ce type de compte est légèrement plus restreint que les administrateurs.
 Toutes nos félicitations! Vous avez créé un nouveau compte ! Pour terminer, connectez-vous en tant que nouveau compte.
-Consultez le manuel de l'économiseur d'écran ou le code source pour plus d'informations.
 mod : aucun mod détecté.
 Commandes générales :
 Commandes de modules :
@@ -906,7 +772,6 @@ Teste la fonction d'erreur du noyau avec la prise en charge du format
 Teste la traduction d'une chaîne qui existe dans les ressources vers une langue spécifique
 Imprime une chaîne dans la console et analyse les espaces réservés trouvés
 Teste la fonction d'expression régulière
-Chiffre une chaîne en utilisant
 Démarre tous les mods
 Arrête tous les mods
 Active ou désactive le débogage
@@ -941,7 +806,6 @@ Répertorie les cultures prises en charge
 Recherche la chaîne spécifiée dans le fichier fourni à l'aide d'expressions régulières
 Voyez si vous pouvez appuyer sur une touche à temps
 L'utilisateur n'a fourni aucune entrée en temps opportun.
-Difficulté invalide
 Personnage pas pressé à temps.
 Vous avez appuyé sur le bon caractère !
 Vous avez appuyé sur le mauvais caractère.
@@ -985,7 +849,6 @@ Obtient des paramètres d'économiseur personnalisés
 Définit les paramètres d'économiseur personnalisés
 Paramètres définis avec succès pour l'économiseur d'écran
 Échec de la définition d'un paramètre pour l'économiseur d'écran
-Cette section vous permet de gérer la création de mot de passe root.
 Ouvre un shell RSS pour lire les flux
 Quitte le shell RSS et retourne au noyau
 Modifie le lien de flux
@@ -1012,13 +875,6 @@ Mode de tri du système de fichiers
 Sens de tri du système de fichiers
 Contrôle la façon dont les fichiers seront triés.
 Contrôle le sens du tri du système de fichiers, qu'il soit ascendant ou descendant.
-Ordre croissant
-Ordre décroissant
-Nom et prénom
-Taille du fichier
-Temps de creation
-Heure de la dernière écriture
-Heure du dernier accès
 Délai d'écriture à nouveau en millisecondes
 Combien de millisecondes attendre avant de réécrire du texte ?
 Écrivez le texte que vous souhaitez afficher. Plus c'est long, mieux c'est.
@@ -1027,35 +883,26 @@ Vitesse d'écriture maximale en WPM
 Probabilité de faute de frappe en pourcentage
 Échec de l'enregistrement du répertoire actuel : {0}
 Lingettes pour changer de direction
-Active la prise en charge de 255 couleurs pour Wipe.
-Active la prise en charge des vraies couleurs pour Wipe.
 Combien de balayages faire avant de changer de direction au hasard ?
 Étape terminée en
 Initialisation interne terminée en
 Fichier référencé {0} introuvable. Ce mod pourrait ne pas fonctionner correctement sans ce fichier.
 Mode de démarrage
-Obtient des informations sur le mod
 Nom de la commande :
 Définition de la commande :
 Type de commande :
 Commande stricte ?
 Version du module :
 Mod {0} introuvable.
-Culture de
-Quelle variante de {0} est utilisée pour modifier les noms de mois, le calendrier, etc. ?
 L'éditeur de texte n'a pas encore ouvert de flux de fichiers.
 Chaîne remplacée.
 Un ou les deux nombres ne sont pas numériques.
 Mot supprimé.
 Caractère supprimé.
-Paramètres du système de fichiers...
-Cette section répertorie les paramètres du système de fichiers.
 Bienvenue dans Paramètres !
 Erreur lors de l'exécution de la commande SSH
 Erreur sur le shell SSH
 - Informations sur l'application
-Active la prise en charge de 255 couleurs pour BouncingText.
-Active la prise en charge des vraies couleurs pour BouncingText.
 Teste le rédacteur de dictionnaire avec la chaîne et le tableau de chaînes
 Teste le rédacteur de dictionnaire avec le tableau char et char
 Teste le rédacteur de dictionnaire avec l'entier et le tableau d'entiers
@@ -1072,21 +919,15 @@ où HardwareType sera
 Soit le type de matériel {0} n'est pas testé, soit il n'est pas valide.
 Le type de matériel {0} n'est pas encore sondé. Si vous êtes sûr qu'il est testé, redémarrez le noyau avec le débogage activé.
 Partitions non analysées pour la liste.
-Mode pirate
-Si activé, la console verte sera activée.
 Imprime un séparateur
 Imprime un séparateur avec prise en charge du format
 Imprime un séparateur avec prise en charge des couleurs
 Imprime un séparateur avec prise en charge des couleurs et des formats
 Toujours centré
-Active la prise en charge de 255 couleurs pour Marquee.
-Active la prise en charge des couleurs vraies pour Marquee.
 Écrivez le texte que vous souhaitez afficher.
 Si le texte affiché sur le rectangle de sélection est toujours centré.
-'q' pour arrêter.
 Argument {0} introuvable pour l'injection.
 Argument de ligne de commande {0} introuvable.
-Efface tous les paramètres
 L'économiseur d'écran a rencontré une erreur lors de l'affichage : {0}. Appuyez sur une touche pour quitter.
 Aperçu...
 Voici à quoi ressemblera votre thème :
@@ -1124,20 +965,15 @@ Ob die Einheit Beats Per Minute verwendet werden soll, um die nächste Farbe zu 
 Verzögerung in Schlägen pro Minute
 Beatfarbe
 Wie viele Schläge pro Minute muss man warten, bevor der nächste Schreibvorgang ausgeführt wird?
-Aktiviert die 255-Farben-Unterstützung für BeatFader.
-Aktiviert True Color-Unterstützung für BeatFader.
 BeatFader wählt zufällige Farben aus, wenn es aktiviert ist. Verwenden Sie andernfalls Farben aus config.
 Benutzerdefiniertes Startup-Banner
-Falls angegeben, wird ein benutzerdefiniertes Startbanner mit Platzhalterunterstützung angezeigt. Sie können diesen Ausdruck für die Kernel-Version verwenden:
 Télécharge le dossier distant dans le répertoire local à l'aide de binaire ou de texte
 Télécharge le dossier local dans le répertoire distant à l'aide de binaire ou de texte
-Entrez un dossier à télécharger dans le répertoire local.
 Téléchargement du dossier {0}...
 Dossier téléchargé {0}.
 Échec du téléchargement pour le dossier {0}.
 Téléchargement du dossier {0}...
 Dossier téléchargé {0}
-Entrez un dossier à télécharger dans le répertoire distant.
 Appuyez sur "c" pour écrire le code couleur complet.
 Saisissez le code couleur correspondant à ces formats :
 Minimise le fichier JSON
@@ -1151,13 +987,9 @@ Les colonnes de texte à imprimer.
 Combien de caractères écrire avant de déclencher le "remplissage de ligne" ?
 Possibilité que le motif de remplissage de ligne soit imprimé en majuscules en pourcentage
 Type de motif de remplissage de ligne
-Modèle commun
-Modèle complet
-Motif aléatoire
 La réponse peut ne pas être zéro.
 La réponse ne doit pas dépasser les entrées affichées.
 Sauvegarder les modifications...
-Cet économiseur d'écran prend en charge le texte écrit sur fichier. Transmettez le chemin complet du fichier à ce champ et l'économiseur d'écran affichera le contenu du fichier de manière appropriée.
 Gérez vos modules
 La gestion des mods est désactivée en mode sans échec.
 Commande {0} non valide. Vérifiez l'utilisation ci-dessous :
@@ -1173,5 +1005,3 @@ Appuyez sur n'importe quelle touche pour lire la page de manuel...
 Cette page de manuel a besoin de travail pour :
 Page de manuel {0} introuvable.
 Mode d'emploi
-Active la prise en charge de 255 couleurs pour FlashColor.
-Active la prise en charge des vraies couleurs pour FlashColor.

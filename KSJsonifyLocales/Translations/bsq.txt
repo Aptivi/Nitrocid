@@ -1,15 +1,6 @@
 Eskuragarri dauden komandoak: {0}
-Idatzi komandoa:
 Komando injekzioa bertan behera utzi da.
-Bereiztu abio-argumentuak komarik zuriunerik gabe, adibidez, 'motd, gpuprobe'
-Bereiztu komandoak 'cmdinject'-en bi zuriunekin, adibidez,' cmdinject setthemes Hacker : beep 1024 0.5 '
-Kontuan izan 'arazketa' argumentuak ez duela kernela guztiz estaltzen.
-bargs: ez da eskatutako {0} argumentua aurkitu.
-bargs: Errorea berreskuraezina argumentuan:
-Argumentu erabilgarriak: {0}
-Argudioak (laguntza 'help'):
 Injektatutako argumentuak hurrengo berrabiaraztean exekutatzeko programatuta egongo da.
-Argudio injekzioa bertan behera utzi da.
 Errorea benetako komando-lerroko argumentuak analizatzean: {0}
 Kolore txantiloia baliogabea {0}
 hwprobe: Zure hardwarea probatuko da. Itxaron mesedez...
@@ -82,7 +73,6 @@ Zerbitzaritik deskonektatu beharko zenuke beste zerbitzari batera konektatu aurr
 {0} -ra konektatuta
 Errorea {0}-rekin konektatzen saiatzean: {1}
 Pilaren aztarna: {2}
-Sartu FTP zerbitzari bat.
 {0} direktorio lokala ez dago.
 Sartu direktorio lokala. ".." atzera egiteko.
 {0} direktorioa ez da aurkitu.
@@ -97,16 +87,12 @@ Oraindik ez zara konektatu inongo zerbitzarirekin
 {0} fitxategia deskargatzen ...
 {0} deskargatutako fitxategia.
 Transmisioa egin aurretik zerbitzarira konektatu behar duzu.
-Sartu fitxategi bat direktorio lokalera deskargatzeko.
 {0} KB | Hemen aldatua: {1}
 Zerbitzarira konektatu beharko zenuke urruneko fitxategi guztiak zerrendatu aurretik.
 {0} fitxategia kargatzen ...
 Kargatutako fitxategia {0}
-Sartu fitxategi bat urruneko direktoriora kargatzeko. kargatu <fitxategia> <direktorioa>
-(Barrualdea:
 Uneko direktorio lokala lortzen du
 Uneko urruneko direktorioa lortzen du
-FTP zerbitzari batera konektatzen da ("ftp://" edo "ftps://" batekin hasi behar du)
 Deskargatu edo kargatzeko direktorio lokala aldatzen du
 Urruneko direktorioa aldatzen du deskargatzeko edo kargatzeko
 Urruneko fitxategia zerbitzaritik ezabatzen du
@@ -147,7 +133,6 @@ Konfigurazioa berriro kargatu da. Agian, nukleoa berrabiarazi beharko zenuke ald
 Kolore bat edo gehiago baliogabeak dira.
 Koloreak ez daude eskuragarri. Aktibatu koloretako oskola nukleoaren konfigurazioan.
 {0} pantaila-babeslea ez da aurkitu.
-[ Kernel ezarpenak (exekutatzen {0}) ]
 Kernel bertsioa:
 Arazketa modua:
 Koloretako maskorra:
@@ -155,8 +140,6 @@ Abiarazteko argudioak:
 Laguntza komandoa sinplifikatua:
 MOTD Saioa hastean:
 Izkinako ordua / data:
-[ Hardwarearen ezarpenak ]
-[ Erabiltzailearen ezarpenak ]
 Uneko erabiltzaile izena:
 Uneko ostalariaren izena:
 Erabilgarri dauden izenak:
@@ -183,31 +166,14 @@ Sistemaren informazioa
 * Komando anitzak erabil ditzakezu bi puntuak komandoen artean.
 Erabilera:
 argumentuak non egongo diren {0}
-FTP shell hasieratzen du.
-Lagunak
 non egongo da customsaver
-Pasahitzarekin pantaila blokeatzen du.
-Erabiltzailearen saioa amaitzen du.
-Lortu sareko informazio bakoitza
-Berrabiarazi simulatutako ordenagailua.
-Azken erabiltzaileak edo tresnak aldatzen duen konfigurazioa berriro kargatzen du.
-Koloreek ez dute berrabiarazi behar, baina ezarpen gehienek berrabiaraztea eskatzen dute.
-hautatutako pantaila-babeslea erakusten dizu, pantaila erreduretatik babesten duzun bitartean.
-Data eta ordua erakusten ditu.
-Data eta ordua zonetan erakusten ditu.
-Itxita simulatutako ordenagailua.
-Sistemaren informazioa eta bertsioak erakusten ditu.
 Errore bat gertatu da shellean.
 Ez duzu {0} erabiltzeko baimenik
 Shell mezua: eskatutako {0} komandoak ez du mantenimendu moduan exekutatzea onartzen.
 Shell mezua: ez da eskatutako {0} komandoa aurkitu. Ikusi 'help' eskuragarri dauden komandoak lortzeko.
 Shell mezua: {0} komandoak ezin du saioa hastean exekutatu.
 Errorea komandoa exekutatzen saiatzean.
-datetime: ordua {0} da
-datetime: Gaur {0} da
-datetime: Ordu eremua: {0}
 - {0} ordua: {1}
-pantaila garbitzeko.
 {0} -n exekutatzen
 Ez duzu baimenik {0} -ri buruzko informazioa lortzeko.
 Komando hau zaharkituta dago eta etorkizuneko bertsio batean kenduko da.
@@ -233,8 +199,6 @@ Hizkuntza aldatzen du
 >> Markoak, fitxategiak, lerroak eta zutabeak <<
 > Markoa {0}: Fitxategia: {1} | Lerroa: {2} | Zutabea: {3}
 > Akats bat dago fotogramen informazioa lortu nahian. {0}: {1}
-Mods birkargatzen ditu.
-Modak berriro kargatu dira.
 Ongi etorri Kernelera!
 <Erabiltzailea> bezala hasi duzu saioa
 MOTD / MAL baliozkoa da, baina mezu motak ez du balio. MOTD suposatuz ...
@@ -267,27 +231,19 @@ IPv6 informazioa:
 {0} egokitzaileak ez du IPv4 onartzen. Probak huts egin du.
 Badirudi kernelaren garapen bertsioa exekutatzen ari zinela. Alderdiak ikusi ditzakezun arren, maiz eguneratzen da eta akatsak sor ditzake. Bertsio egonkorrean jarraitzea gomendatzen da.
 Aukeratu duzun hizkuntzak bi aldaera ditu. Aukeratu bat:
-1. Transliteratua
-2. Itzulia
-Aukeratu zure aukera:
 Aukera baliogabea. Saiatu berriro.
 Ez duzu baimenik uneko direktorioa {0} gisa ezartzeko: {1}
 Zehaztu duzun bidea luzeegia da.
-CPU: ABISUA: SSE2 beharrezkoa izango da etorkizuneko garapen konpromisoetan.
 Irauli informazio biltzaileak huts egin du {0} -ri buruzko informazioa lortu nahian: {1}
-Errore bat gertatu da bilketa-data {0} biltzeko data lortzen saiatzean: {1}
 Errorea MOTD / MAL ezartzen saiatzean: {0}
 Errorea MOTD / MAL lortzen saiatzean: {0}
 Errorea pantaila-babeslea abiaraztean, eragiketa baliogabea delako.
 Modu seguruan birkargatzea ez da onartzen.
 Modak aztertzea ez da onartzen modu seguruan.
-Konektatutako arazketa gailu guztiak zerrendatzen ditu.
 Errorea analisi modua ezartzen saiatzean. Egiaztatu balioa eta saiatu berriro. Hori zuzena bada, ikusi pilaren traza nukleoaren arazketa gaituta dagoenean.
 Bidea ez da fitxategi bat edo direktorio bat.
 Fitxategiaren beste kopia bat sortzen du direktorio edo izen desberdinekin.
 Fitxategia beste direktorio batera eramaten du
-Fitxategiak beste direktorio batera edo beste izen batera kopiatzeko
-Fitxategiak beste direktorio batera eramateko
 Bat etorri {0} ({1}): {2}
 Partidua {0}: {1}
 Emandako denbora: {0} milisegundo
@@ -302,9 +258,6 @@ Erantzun maitasun edo gorroto iruzkinak.
 Norbaitek zure bideoan iruzkin hau egin badu:
 Nola erantzungo zenuke?
 Aukeraketa baliogabea. Hurrengo iruzkinera joaten ...
-Maitasun iruzkinaren berri eman berri duzu!
-Gorrotoaren iruzkinari erantzun berri diozu!
-Primeran! {0} ren iruzkina kenduko da horretarako.
 Primeran! {0}-k eskerrak emango dizkizu.
 Primeran idatzita!
 Gaizki idatzita.
@@ -318,7 +271,6 @@ Idatzi {0} pasahitza:
 SSH Deskonektatuta.
 Ezin da kodeko orria ezarri. Baliteke hizkuntza behar bezala ez bistaratzea.
 Arazketa araztea ez dago gaituta.
-{0} ez dago pantaila-babesle lehenetsian.
 Eskerrik asko! Hau interesgarria da.
 Denek lagunduko dute zure bideoa horretarako.
 Zure posta elektronikoan fitxategi berezia eman dizut zure hurrengo bideorako.
@@ -364,7 +316,6 @@ Tamaina: {0}
 Errorea {0}-rekin konektatzen saiatzean: konexioaren denbora-muga edo konexio galdua
 Esapideak kalkulatzeko kalkulagailua.
 Errorea kalkuluan.
-Badirudi bertsio hurbileko bertsioa exekutatzen ari zinela. Orain erabiltzea seguruagoa den arren, bertsio egonkorrean jarraitzea gomendatzen da.
 Sistemaren eguneratzea
 Sistemaren eguneratzeak egiaztatzen ...
 Bertsio berria aurkitu da:
@@ -372,7 +323,6 @@ Deskargatu hemen:
 Ez dago azken jakinarazpenik
 Emandako fitxategian zehaztutako katea bilatzen du
 Zehaztutako direktorioko fitxategi batuketak kalkulatzen ditu.
-Erabiltzaile zehatzeko mezu guztiak zerrendatzen ditu.
 Idatzi erabiltzaile izena edo posta helbidea:
 Idatzi pasahitza:
 Errorea {0} konektatzean: {1}
@@ -382,7 +332,6 @@ IMAP shell-etik irteten da
 Komandoen zerrenda
 Mezuak deskargatu eta zerrendatzen ditu
 Mezu bat irekitzen du
-Orria agian ez da negatiboa edo nulua izan.
 Orria ez da zenbakizko balioa.
 Baliteke mezu zenbakia negatiboa edo zero ez izatea.
 Mezuaren zenbakia ez da zenbakizko balioa.
@@ -392,7 +341,6 @@ Mezuaren zenbakia ez da zenbakizko balioa.
 Ez da zehaztutako mezua aurkitu.
 Urruneko arazketa huts egin du abiaraztean: {0}
 Profilak prestatzen ... Zenbait minutu behar izan ditzake ...
-Ostalariaren izena, erabiltzaile izena, datu mota, kodetzea, enkriptatzea, protokoloak
 Errorea scripta exekutatzen saiatzean: {0}
 Testua kontsolan idazten du
 Erabiltzaileen aukerak egiten ditu
@@ -417,7 +365,6 @@ Markatze bizkorra hutsik dago. Konektatu zerbitzari batera helbide bat gehitzeko
 Markatze bizkorra ez da existitzen. Konektatu zerbitzari batera helbide bat gehitzeko.
 Idatzi IMAP zerbitzariaren helbidea eta ataka (<helbidea> edo <helbidea>:[ataka]):
 Idatzi SMTP zerbitzariaren helbidea eta ataka (<helbidea> edo <helbidea>:[ataka]):
-Helbide batera mezua bidaltzeko beharrezko eremuak betetzeko eskatzen dizu
 Mezu bat helbide batera bidaltzen du
 Idatzi hartzailearen helbide elektronikoa:
 Idatzi gaia:
@@ -445,8 +392,6 @@ Hitz edo esaldi bat lerro zenbakitik ezabatzen du
 Karaktere bat ezabatzen du zehaztutako lerroko karaktere zenbakitik
 Linea kendu da.
 Zehaztutako {0} lerro zenbakia ez da baliozko zenbakia.
-Eskatutako argudioak ez dira {0} agindura pasatzen.
-Errorea komandoa exekutatzen saiatzean: {0}
 Modu seguruan exekutatzen. Etapa saltatzen ...
 >> Urruneko arazketa eta txata: bertsioa
 >> Zure helbidea {0} da.
@@ -464,19 +409,12 @@ Blokatu arazketa gailua IP helbidearen arabera
 Errorea ezarpenak kargatzean
 Ezarpenak kargatzean errore bat gertatu da. Agian ezarpenen fitxategia egiaztatu beharko duzu.
 Aukeratu atala:
-Ezarpen orokorrak ...
-Hardware ezarpenak ...
-Saioa hasteko ezarpenak ...
-Shell ezarpenak ...
-Sareko ezarpenak ...
-Hainbat ezarpen ...
 Gorde ezarpenak
 Irten
 {0} zehaztutako aukera baliogabea da.
 Erantzunak zenbakizkoa izan behar du.
 Galdetu argudioak abioan
 Mantentze-moduaren abiarazlea
-Aldatu Erro Pasahitza ...
 Begiratu eguneratzeak abiaraztean
 Lasai Probe
 Erakutsi MOTD saio hasieran
@@ -500,9 +438,7 @@ Atal baliogabea sartu da. Itzuli mesedez.
 Atzera egin...
 Gaitu
 Desgaitu
-Gako zenbaki baliogabea sartu da. Itzuli mesedez.
 Idatzi ezarri beharreko root pasahitza. Ez kezkatu; pasahitza izar gisa agertzen da.
-Gaitu "Aldatu erro pasahitza" aukera hau erabiltzeko. Itzuli mesedez.
 Erroaren pasahitza aldatu nahi duzu?
 Ezarri root pasahitza ...
 Idatzi urruneko arazketa ataka. Zenbakizkoa izan behar du, eta ez da dagoeneko erabili behar. Bestela, urruneko arazleak huts egingo du ataka irekitzean.
@@ -513,7 +449,6 @@ Erantzuna ez da negatiboa izango.
 Erantzuna baliogabea da. Egiaztatu erantzuna zenbakizkoa dela erantzun gisa zenbakiak behar dituzten konfigurazio sarreretarako.
 {0} aldagaia ez da moduluetan aurkitzen.
 Nukleoaren konfigurazioa aldatzen du
-Pantaila-babeslearen ezarpenak ...
 Aktibatu 255 kolore
 Nahi al duzu konektatuta egon?
 Aukera baliogabea. Ezetz suposatuz ...
@@ -549,7 +484,6 @@ Ezin izan da fitxategia edo direktorioa mugitu: {0}
 Ezin da aurkitu "{0}" katearekin bat datorren fitxategia: {1}
 Ezin izan da deskargatu {0} fitxategian.
 Ezin izan dira urruneko fitxategiak zerrendatu: {0}
-Idatzi kentzeko fitxategi edo karpeta bat. Kendu ahal izateko administrazio baimenak izan behar dituzu kontuan.
 Ziur {0} <y/n> ezabatu nahi duzula?
 {0} ezabatzen ...
 {0} ez da zerbitzarian aurkitu.
@@ -560,7 +494,6 @@ Errorea mezua bidaltzean.
 Ongi mugitu da
 Fitxategia edo direktorioa beste fitxategi edo direktorio batera mugitzen du. Hori ere erabil dezakezu fitxategiak berrizendatzeko.
 Ezin izan da {0} {1} mugitu.
-Idatzi iturburu bidea eta helmuga bidea.
 {0} {1} kopiatzen ...
 Behar bezala kopiatu da
 Fitxategia edo direktorioa beste fitxategi edo direktorio batera kopiatzen du.
@@ -578,9 +511,6 @@ Hezetasuna: {0}
 Zure API gakoa lor dezakezu https://home.openweathermap.org/api_keys helbidean.
 Beti kontsulta dezakezu http://bulk.openweathermap.org/sample/city.list.json.gz beren IDak dituzten hirien zerrenda ikusteko.
 Tenperaturarako lehentasunezko unitatea
-Kelvin
-Inperiala (Fahrenheit)
-Metrikoa (Celsius)
 Nukleoa konfiguratzen du abioan argumentua eskatzeko.
 Mantentze-modua aktibatzen du. Hainbat kontu desgaitzen ditu.
 Abiarazte bakoitzean eguneratzeak egiaztatuko ditu.
@@ -595,10 +525,6 @@ Laguntza komando sinplifikatua maskor guztientzat
 FTP erabiltzaile izena erregistratu edo ez.
 FTP IP helbidea erregistratu edo ez.
 Aukeratu lehenengo profila konektatzerakoan soilik.
-ColorMix-en 255 kolore laguntza aktibatzen du.
-255 koloreko euskarria aktibatzen du Disco-rako.
-GlitterColor-en 255 kolore laguntza aktibatzen du.
-Lerroentzako 255 kolore laguntza aktibatzen du.
 Ordua eta data pantailaren goiko eskuineko izkinan erakutsiko dira
 Gaituta badago, nukleoak karpeta osoa aztertuko du bere tamaina osorako. Bestela, gainazala aztertuko du soilik.
 Eyecandy gaitzen du abiaraztean
@@ -608,7 +534,6 @@ Aukeratu tenperaturarako nahi duzun unitatea (hau "eguraldia" komandoari bakarri
 {0} modua gelditu da
 {0} v {1} gelditu da
 {0} moduak ez du piezaren izena. Mod analisiak huts egin du. Berrikusi iturburu kodea.
-{0} Mod-ek ez du komandoa. Mod analisiak huts egin du. Berrikusi iturburu kodea.
 Arazketa modua aktibatu behar duzu arazketa erregistroa garbitu aurretik.
 {0} mezu berri iritsi dira sarrera-ontzira.
 Ireki "mail" ikusteko.
@@ -645,10 +570,6 @@ Kolore gorri maila gainditu da. {0} zen.
 Kolore berde maila gainditu da. {0} zen.
 Kolore urdinaren maila gainditu da. {0} zen.
 Aktibatu benetako koloreak
-ColorMix-en benetako kolorearen laguntza aktibatzen du.
-Diskoaren benetako kolorearen laguntza aktibatzen du.
-GlitterColor-en benetako kolorearen laguntza aktibatzen du.
-Lerroen benetako kolorearen laguntza aktibatzen du.
 Ezin izan da {0} desblokeatu.
 {0} blokeatuta dago dagoeneko.
 {0} ezin da urruneko arazketan sartu orain.
@@ -659,7 +580,6 @@ Sartu eranskinetarako fitxategien bideak. Sakatu ENTER bide huts batean berreste
 Mezu enkriptatu bat irekitzen du
 Idatzi pasahitza gako IDaren {0}
 Enkriptatutako mezu bat helbide batera bidaltzen du
-Helbide batera enkriptatutako mezu bat bidaltzeko beharrezko eremuak betetzeko eskatzen dizu
 {0} tik deskargatzen ...
 Erakutsi aurrerapen barra "get" edo "put" agindutik deskargatzen edo kargatzen ari zaren bitartean
 Egia bada, "lortu" edo "jarri" erakusten du aurrerapen barra deskargatzean edo kargatzean.
@@ -678,8 +598,6 @@ Honela sentitzen da: {0}
 Tenperatura: {0}
 Haizearen abiadura: {0}
 Haizearen norabidea: {0}
-Disolbatzeko 255 kolore laguntza aktibatzen du.
-Disolbatzeko benetako kolorearen euskarria aktibatzen du.
 Sakatu edozein tekla atzera egiteko.
 Ezin da posta-karpeta sortu {0}: {1}
 Uneko laneko direktorioan direktorio bat egiten du
@@ -692,22 +610,11 @@ Hash gaizki eratuta daude.
 Hash-ak ez datoz bat.
 Hash partida.
 Karpeta bati izena aldatu
-Atal honetan nukleoaren ezarpen orokor guztiak agertzen dira, batez ere nukleoa mantentzeko.
-Atal honek hardware zundaketaren portaera aldatzen du.
-Atal honek saio hasierako ezarpenak adierazten ditu. Saioa amaitu zure kontuan aldaketak indarrean jartzeko.
-Atal honetan shell ezarpenak zerrendatzen dira.
-Atal honetan sareko ezarpenak zerrendatzen dira, hala nola FTP shell-a, sareko komando ezarpenak eta urruneko arazketa ezarpenak.
-Atal honetan pantaila-babesle guztiak eta horien ezarpen erabilgarriak zerrendatzen dira.
-Bere atal egokietan sartzen ez diren ezarpenak hemen gelditzen dira.
-Modak probatzen ditu mod fitxategiak eskainiz
 Probako shell bat irekitzen du
-Arazketa modua gaitzen du
-Argudioetarako gonbita
 * Sakatu edozein tekla kernela edo ESC irteteko hasteko.
 Ezin izan da "{0}" abiarazi: {1}
 Erakutsi mezu elektronikoen aurrebista
 Mezu elektronikoak zerrendatzerakoan, erakutsi gorputzaren aurrebista.
-Kolore pertsonalizatuak ...
 Sarrerako kolorea
 Lizentziaren kolorea
 Nukleoaren errore kolore jarraitua
@@ -721,8 +628,6 @@ Errorearen kolorea
 FTP gonbita estiloa
 Posta abisuaren estiloa
 SFTP Prompt Style
-255 kolore laguntza aktibatzen du BouncingBlock-erako.
-BouncingBlock-en benetako kolorearen laguntza aktibatzen du.
 Bide baliogabea sartu nahian.
 Testu fitxategia garbitzen du
 Testu editoretik irteten da
@@ -745,8 +650,6 @@ Minutuen barra kolorea
 Orduen kolorea barra
 Informazioaren kolorea
 Kolorea aldatzeko akainak
-255 kolore laguntza aktibatzen du ProgressClock-erako.
-ProgressClock-en benetako kolorearen laguntza aktibatzen du.
 Koloreen bizikleta gaituta badago, zenbat markatu koloreak aldatu aurretik ProgressClock-en? 1 tick = 0,5 segundo
 ProgressClock-ek ausazko koloreak hautatuko ditu gaituta badago. Bestela, erabili config-eko koloreak.
 Gai berria egiten du
@@ -761,39 +664,10 @@ Aukeraren kolorea
 Idatzi 0 eta 255 arteko kolore zenbakia:
 Erabili "hwinfo" hardwareari buruzko informazio zabalagoa lortzeko.
 Hardwarearen informazioa inprimatzen du
-PUZaren informazioa:
 Prozesadorearen izena:
-Prozesadorearen abiadura:
 Prozesadorearen bitak:
-Prozesadorearen itzulpena:
-Prozesadorearen topologia:
-Prozesadore mota:
-Prozesadorearen mugarria:
-BogoMips prozesadorea:
-L2 prozesadorearen cache tamaina:
-L3 prozesadorearen cache tamaina:
-Prozesadorearen ezaugarriak:
-HDD informazioa:
-Unitatearen izena:
-Gidatzeko modeloa:
-Drive saltzailea:
-Gidatzeko abiadura:
-Unitatearen tamaina:
-Unitatearen seriea:
-Gidariaren IDa:
-Gidatu partizio kopurua:
-Partizioaren IDa:
 Partizio fitxategi sistema:
 Partizioaren tamaina:
-Erabilitako partizioa:
-RAM informazioa:
-RAM librea:
-RAM guztira:
-Erabilitako RAM memoria:
-GPU informazioa:
-GPU izena:
-GPU kontrolatzailea:
-GPU bertsioa:
 GPU: txartel grafiko bat edo gehiago ezin izan dira probatu. Informazioa erakusten hala ere ...
 >> Ongi etorri! Urruneko arazketa eta berriketan sartzen zaren lehenengo aldia da. Erabili "/ register <name>" izena emateko.
 Gailua lehendik dago.
@@ -825,8 +699,6 @@ Zehaztu gaiaren izena:
 {0} erabiltzailea "{1}" zerrendan gehitu da.
 {0} erabiltzailea "{1}" zerrendatik kendu da.
 Modu baliogabea {0}
-Erabiltzailea existitzen da jada
-Kargatu gaia ...
 Kargatu gaia aurrez eraikitako gaietatik ...
 Zehaztu gaiaren fitxategiaren izena .json luzapenean:
 ZIP artxiboa irekitzen du
@@ -839,12 +711,9 @@ Ez da zehaztutako ZIP shell komandoa aurkitu.
 Artxiboen direktorioa {0} ez dago
 Gehienezko posizioen kopurua
 Zenbat posizio argitzen dira ilundu aurretik?
-Argiagoentzako 255 koloreen euskarria aktibatzen du.
-Argiagoentzako benetako kolorearen laguntza aktibatzen du.
 Zerrendako sarrera kolorea
 Zerrendaren balioa kolorea
 SSH zerbitzari batera konektatzen da komando bat exekutatzeko.
-Atal honetan pantaila - babeslearen ezarpenak agertzen dira
 Kolore zehaztapen baliogabea. Ziurtatu formatu egokian dagoela, hau da, 0-255 arteko zenbakia 255 kolore erabiltzen badituzu edo LH sekuentzia hau benetako kolorea erabiltzen baduzu honela:
 Errorea probako shellean: {0}
 Gidoi bateko aldagai bat balio gisa ezartzen du
@@ -866,13 +735,11 @@ Nola autentifikatu nahi duzu?
 Gako pribatuen fitxategia
 Pasahitza
 Idatzi {0} gakoaren pasaesaldia:
-Idatzi {0} gako pribatuaren kokapena. Idatzi "q" teklak gehitzen amaitzeko:
 Existitzen ez zen bide bat neutralizatu zuen.
 {0} gako fitxategia ez dago.
 Errorea gako pribatua gehitzen saiatzean:
 255 kolore modura aldatzeko, sakatu "t".
 Sakatu "t" benetako kolore modura aldatzeko.
-Atal honek zer kolore mota aldatu nahi duzun aukeratzeko aukera ematen dizu.
 Badirudi ez duzula erabiltzailerik root izan ezik. Hau txarra da. Bat nola sortu gidatuko dizugu.
 Idatzi zure erabiltzaile izena.
 Zure erabiltzaile izena idatzi behar duzu.
@@ -882,7 +749,6 @@ Aukeratu kontu mota.
 Administratzailea: kontu mota honek du kerneleko indarrik gehien, sistema kudeatzeko programak erabiltzea ahalbidetuz.
 Erabiltzaile normala: kontu mota hau administratzaileak baino zertxobait mugatuagoa da.
 Zorionak! Kontu berria egin duzu! Hau amaitzeko, hasi saioa zure kontu berri gisa.
-Informazio gehiagorako pantaila-babeslearen eskuliburua edo iturburu kodea kontsultatu.
 mod: Ez da modik hauteman.
 Komando orokorrak:
 Mod komandoak:
@@ -906,7 +772,6 @@ Nukleoaren errore instalazioa formatuaren laguntzarekin probatzen du
 Baliabideetan dagoen katea hizkuntza jakin batera itzultzen du
 Kate bat inprimatzen du kontsolatzeko eta aurkitutako leku-markak analizatzen ditu
 Adierazpen erregularraren instalazioa probatzen du
-Kate bat enkriptatzen du
 Mods guztiak hasten ditu
 Mods guztiak gelditzen ditu
 Arazketa gaitzen edo desgaitzen du
@@ -941,7 +806,6 @@ Zerrendek onartzen zituzten kulturak
 Emandako fitxategian zehaztutako katea bilatzen du adierazpen erregularrak erabiliz
 Ikusi tekla bat garaiz sakatu dezakezun
 Erabiltzaileak ez du sarrera garaiz eman.
-Zailtasun baliogabea
 Pertsonaia ez da garaiz sakatzen.
 Karaktere egokia sakatu duzu!
 Okerreko pertsonaia sakatu duzu.
@@ -985,7 +849,6 @@ Aurrezteko ezarpen pertsonalizatuak lortzen ditu
 Aurrezteko ezarpen pertsonalizatuak ezartzen ditu
 Ezarpenak pantaila-babeserako ongi ezarri dira
 Ezin izan da pantaila-babeslearen ezarpena ezarri
-Atal honek root pasahitzaren sorrera kudeatzea ahalbidetzen du.
 RSS shell bat irekitzen du iturriak irakurtzeko
 RSS shell-etik irten eta kernelera itzultzen da
 Jarioaren esteka aldatzen du
@@ -1012,13 +875,6 @@ Fitxategi sistema ordenatzeko modua
 Fitxategi sistemaren ordenazio norabidea
 Fitxategiak nola ordenatuko diren kontrolatzen du.
 Fitxategi-sistemaren ordenazioaren norabidea kontrolatzen du goranzkoa edo beherakoa den.
-Goranzko ordena
-Beheranzko ordena
-Izen osoa
-Fitxategiaren tamaina
-Sortze denbora
-Azken idazteko denbora
-Azken sarbide denbora
 Idatzi berriro Atzerapena Milisegundotan
 Zenbat milisegundo itxaron behar da berriro testua idatzi aurretik?
 Idatzi erakutsi nahi duzun testua. Luzeagoa hobea da.
@@ -1027,35 +883,26 @@ Idazteko gehieneko abiadura WPM-tan
 Errota motako probabilitatea ehunekoan
 Ezin izan da uneko direktorioa gorde: {0}
 Norabidea aldatzeko toailatxoak
-255 koloreko euskarria aktibatzen du Garbitzeko.
-Ezabatzeko benetako kolorearen laguntza aktibatzen du.
 Zenbat toailatxo egin behar dira norabidea ausaz aldatu aurretik?
 Etapa amaituta
 Barne hasieraketa amaitu zen
 Ez da {0} aipatutako fitxategia aurkitu. Mod honek agian ez du behar bezala funtzionatuko fitxategi hau gabe.
 Mod hasita
-Moden informazioa lortzen du
 Komandoaren izena:
 Komandoaren definizioa:
 Komando mota:
 Agindu zorrotza?
 Mod bertsioa:
 {0} modua ez da aurkitu.
-Kultura
-{0} ren zein aldaera erabiltzen ari da hilabetearen izenak, egutegia eta abar aldatzeko?
 Testu editoreak oraindik ez du fitxategi korronterik ireki.
 Katea ordezkatu da.
 Zenbaki bat edo biak ez dira zenbakizkoak.
 Ezabatu da hitza.
 Karaktere ezabatu da.
-Fitxategi sistemaren ezarpenak ...
-Atal honetan fitxategi sistemaren ezarpenak zerrendatzen dira.
 Ongi etorri Ezarpenetara!
 Errorea SSH komandoa exekutatzean
 Errorea SSH shellean
 - Aplikazioen informazioa
-Errebote-testurako 255 kolore-laguntza aktibatzen du.
-BouncingText-erako benetako kolorearen laguntza aktibatzen du.
 Hiztegi idazlea katearekin eta kate-arrayarekin probatzen du
 Hiztegi idazlea char eta char arrayarekin probatzen du
 Hiztegi idazlea zenbaki oso eta osoko arrayarekin probatzen du
@@ -1072,21 +919,15 @@ non egongo da HardwareType
 Edo {0} hardware mota ez dago probatuta edo ez du balio.
 {0} hardware mota oraindik ez da probatu. Probatuta dagoela ziur bazaude, berrabiarazi nukleoa arazketa gaituta.
 Zerrendan analizatu gabeko partizioak.
-Hacker modua
-Gaituta badago, kontsola berdea gaituta egongo da.
 Bereizle bat inprimatzen du
 Bereizle bat inprimatzen du formatuaren laguntzarekin
 Kolore euskarria duen bereizgailua inprimatzen du
 Kolore eta formatu euskarriekin bereizle bat inprimatzen du
 Beti zentratuta
-255 koloreko euskarria aktibatzen du Markeserako.
-Markesaren benetako kolorearen euskarria aktibatzen du.
 Idatzi erakutsi nahi duzun testua.
 Markesinean agertzen den testua beti zentratuta dagoen ala ez adierazten du.
-'q' uzteko.
 {0} argumentua ez da injektatzeko aurkitu.
 Ez da aurkitu {0} komando-lerroko argumentua.
-Ezarpen guztiak ezabatzen ditu
 Pantaila-babesleak errore bat izan du bistaratzean: {0}. Sakatu edozein tekla irteteko.
 Aurrebista ...
 Hona hemen itxura izango duen gaia:
@@ -1124,20 +965,15 @@ Minutu bakoitzeko taupadak hurrengo kolorea idazteko erabili behar den ala ez.
 Atzerapena minutuko taupadetan
 Beat Kolorea
 Zenbat taupada minutuko itxaron behar da hurrengo idazketa egin aurretik?
-255 kolore euskarri aktibatzen ditu BeatFader-entzat.
-Benetako kolorearen euskarria aktibatzen du BeatFader-entzat.
 BeatFader-ek ausazko koloreak hautatuko ditu gaituta badago. Bestela, erabili config-eko koloreak.
 Abiarazte Banner pertsonalizatua
-Zehazten bada, hasierako bandera pertsonalizatua erakutsiko du leku-markaren laguntzarekin. Esaldi hau kernel bertsiorako erabil dezakezu:
 Urruneko karpeta direktorio lokalera deskargatzen du bitarra edo testua erabiliz
 Karpeta lokala urruneko direktoriora kargatzen du bitarra edo testua erabiliz
-Sartu karpeta bat direktorio lokalera deskargatzeko.
 {0} karpeta deskargatzen ...
 Deskargatutako {0} karpeta.
 Ezin izan da deskargatu {0} karpetan.
 {0} karpeta kargatzen ...
 Kargatutako {0} karpeta
-Sartu karpeta bat urruneko direktoriora kargatzeko.
 Sakatu "c" kolore osoa idazteko.
 Idatzi formatu hauek betetzen dituen kolore kodea:
 JSON fitxategia minimizatzen du
@@ -1151,13 +987,9 @@ Inprimatu beharreko testu-zutabeak.
 Zenbat karaktere idatzi "lerro betetzea" aktibatu aurretik?
 Lerroa betetzeko eredua ehuneko maiuskula guztietan inprimatzeko aukera
 Linea betetzeko eredu mota
-Eredu arrunta
-Eredu osoa
-Ausazko eredua
 Baliteke erantzuna ez izatea zero.
 Erantzunak ezin izango ditu bistaratutako sarrerak baino gehiago izan.
 Aldaketak gorde...
-Pantaila-babesle honek fitxategian idatzitako testua onartzen du. Pasa ezazu fitxategi bide osoa eremu honetara, eta pantaila-babesleak fitxategiaren edukia modu egokian erakutsiko du.
 Kudeatu zure modak
 Moduen kudeaketa modu seguruan desgaituta dago.
 {0} komando baliogabea. Begiratu beheko erabilera:
@@ -1173,5 +1005,3 @@ Sakatu edozein tekla eskuliburu orria irakurtzeko ...
 Eskuliburu orri honek hauetarako lan egin behar du:
 Ez da aurkitu {0} eskuliburu orria.
 Mod eskuliburua
-FlashColor-en 255 kolore laguntza aktibatzen du.
-FlashColor-en benetako kolorearen laguntza aktibatzen du.

@@ -1,15 +1,6 @@
 Tillgängliga kommandon: {0}
-Skriv kommando:
 Kommandoinjektion har avbrutits.
-Separata startargument med kommatecken utan mellanslag, till exempel "motd, gpuprobe"
-Separata kommandon på 'cmdinject' med kolonner med mellanslag, till exempel 'cmdinject setthemes Hacker: pip 1024 0.5'
-Observera att argumentet "debug" inte helt täcker kärnan.
-pråmar: Det begärda argumentet {0} hittades inte.
-pråmar: Oåterkalleligt fel i argument:
-Tillgängliga argument: {0}
-Argument ('help' för hjälp):
 Injicerade argument kommer att schemaläggas att köras vid nästa omstart.
-Argumentinjektion har avbrutits.
 Ett fel uppstod när man analyserade riktiga kommandoradsargument: {0}
 Ogiltig färgmall {0}
 hwprobe: Din hårdvara kommer att undersökas. Vänta...
@@ -82,7 +73,6 @@ Lösenord för {0}:
 Ansluten till {0}
 Fel vid försök att ansluta till {0}: {1}
 Stack Trace: {2}
-Ange en FTP-server.
 Lokal katalog {0} existerar inte.
 Ange en lokal katalog. ".." att gå tillbaka.
 Directory {0} not found.
@@ -97,16 +87,12 @@ Du har inte anslutit till någon server än
 Hämtar fil {0} ...
 Nedladdad fil {0}.
 Du måste ansluta till servern innan du utför överföring.
-Ange en fil som ska hämtas till den lokala katalogen.
 {0} KB | Ändrad i: {1}
 Du bör ansluta till servern innan du listar alla fjärrfiler.
 Överför fil {0} ...
 Uppladdad fil {0}
-Ange en fil för att ladda upp till fjärrkatalogen. ladda upp <fil> <katalog>
-(Inre:
 Hämtar nuvarande lokala katalog
 Hämtar nuvarande fjärrkatalog
-Ansluter till en FTP-server (den måste börja med "ftp://" eller "ftps://")
 Ändrar lokal katalog för att ladda ner till eller ladda upp från
 Ändrar fjärrkatalog för att ladda ner från eller ladda upp till
 Tar bort fjärrfil från server
@@ -147,7 +133,6 @@ Konfigurationen laddas om. Det kan hända att du måste starta om kärnan för a
 En eller flera av färgerna är ogiltiga.
 Färger är inte tillgängliga. Slå på det färgade skalet i kärnans konfiguration.
 Skärmsläckare {0} hittades inte.
-[ Kärnan inställningar (körs på {0}) ]
 Kernelversion:
 Debugläge:
 Färgad Shell:
@@ -155,8 +140,6 @@ Argument på Boot:
 Hjälpkommandot förenklat:
 MOTD på inloggning:
 Tid / datum på hörnet:
-[ Hårdvaruinställningar ]
-[ Användarinställningar ]
 Nuvarande användarnamn:
 Nuvarande värdnamn:
 Tillgängliga användarnamn:
@@ -183,31 +166,14 @@ Systeminformation
 * Du kan använda flera kommandon med kolon mellan kommandon.
 Användande:
 där argument kommer att vara {0}
-Initialiserar FTP-skalet.
-Vänner av
 där customsaver kommer att vara
-Låser skärmen med lösenordet.
-Loggar dig ur användaren.
-Få varje nätverksinformation
-Startar om din simulerade dator.
-Uppdaterar konfigurationen som ändras av slutanvändaren eller verktyget.
-Färger kräver ingen omstart, men de flesta inställningarna kräver att du startar om.
-visar dig en vald skärmsläckare, samtidigt som du skyddar din skärm från burn outs.
-Visar datum och tid.
-Visar datum och tid i zoner.
-Stänger ner din simulerade dator.
-Visar systeminformation och versioner.
 Det uppstod ett fel i skalet.
 Du har inte behörighet att använda {0}
 Shell meddelande: Det begärda kommandot {0} får inte köras i underhållsläge.
 Shell meddelande: Det begärda kommandot {0} hittades inte. Se "hjälp" för tillgängliga kommandon.
 Shell meddelande: Kommandot {0} får inte köra på inloggning.
 Ett fel på att försöka utföra kommandot.
-datetime: Tiden är {0}
-datetime: Idag är {0}
-datetime: Tidzon: {0}
 - Tid för {0}: {1}
-för att rensa skärmen.
 Kör på {0}
 Du är inte behörig att få information för {0}.
 Detta kommando är föråldrat och kommer att tas bort i en framtida release.
@@ -233,8 +199,6 @@ Ogiltigt språk
 >> Ramar, filer, linjer och kolumner <<
 > Ram {0}: Fil: {1} | Rad: {2} | Kolumn: {3}
 > Det finns ett fel när du försöker få raminformation. {0}: {1}
-Laddar om ändringar.
-Mods laddade om framgångsrikt.
 Välkommen till Kernel!
 Inloggad framgångsrik som <användare>
 MOTD / MAL är giltig, men meddelandetypen är inte giltig. 
@@ -267,27 +231,19 @@ Adapter {0} stöder inte IPv6. Fortlöpande...
 Adapter {0} stöder inte IPv4. Sonden misslyckades.
 Det verkar som att du kör utvecklingsversionen av kärnan. Medan du kan se aspekterna uppdateras den ofta och kan introducera buggar. Vi rekommenderar att du håller dig på den stabila versionen.
 Det språk du har valt innehåller två varianter. Välj en:
-1. Translitererad
-2. Översatt
-Välj ditt val:
 Ogiltigt val. Försök igen.
 Du är obehörig att ställa den aktuella katalogen till {0}: {1}
 Sökvägen du har angett är för lång.
-CPU: VARNING: SSE2 kommer att krävas i framtida utvecklingsåtaganden.
 Dump-informationssamlare kraschade när han försökte få information om {0}: {1}
-Fel vid försök att få sammanställningsdatum för montering {0}: {1}
 Fel vid försök att ställa in MOTD / MAL: {0}
 Fel vid försök att få MOTD / MAL: {0}
 Fel vid försök att starta skärmsläckare på grund av en ogiltig åtgärd.
 Ladda om inte tillåtet i säkert läge.
 Parsningslägen är inte tillåtna i säkert läge.
-Listar alla anslutna felsökningsenheter.
 Fel vid försök att ställa in analysläge. Kontrollera värdet och försök igen. Om detta är korrekt, se stapelspåret när felsökning av kärnor är aktiverad.
 Sökvägen är varken en fil eller en katalog.
 Skapar en annan kopia av en fil under annan katalog eller namn.
 Flyttar en fil till en annan katalog
-För att kopiera filer till en annan katalog eller annat namn
-För att flytta filer till en annan katalog
 Match {0} ({1}): {2}
 Match {0}: {1}
 Tid: {0} millisekunder
@@ -302,9 +258,6 @@ Svara på kommentarer om kärlek eller hat.
 Om någon kommenterade din video:
 Hur skulle du svara?
 Ogiltigt val. Gå till nästa kommentar ...
-Du rapporterade just kärlekskommentaren!
-Du svarade just på hatkommentaren!
-Bra! {0 }s kommentar kommer att tas bort för det.
 Bra! {0} kommer att uppskatta ditt tack.
 Stava perfekt!
 Stava fel.
@@ -318,7 +271,6 @@ Ange lösenordet för {0}:
 SSH frånkopplad.
 Det går inte att ställa in kodsidan. Språket visas kanske inte korrekt.
 Felsökning inte aktiverad.
-{0} är inte längre inställd på standard skärmsläckare.
 Tack! Det här är intressant.
 Alla kommer att stödja din video för detta.
 Jag gav dig den speciella filen i ditt e-postmeddelande till din nästa video.
@@ -364,7 +316,6 @@ Katalog {0} finns redan.
 Fel vid försök att ansluta till {0}: Timeout för anslutning eller förlorad anslutning
 Kalkylator för att beräkna uttryck.
 Fel vid beräkningen.
-Det verkar som att du kör versionen för närmande utgåva. Det är säkrare att använda nu, men vi rekommenderar att du håller dig på den stabila versionen.
 Systemuppdatering
 Söker efter systemuppdateringar ...
 Hittade ny version: 
@@ -372,7 +323,6 @@ Du kan ladda ner den på:
 Inga senaste aviseringar
 Söker efter en specifik sträng i den medföljande filen
 Beräknar summan av filer i specificerad katalog.
-Listar alla e-postmeddelanden i den specifika användaren.
 Ange användarnamn eller e-postadress:
 Skriv in lösenord:
 Fel vid anslutning till {0}: {1}
@@ -382,7 +332,6 @@ Utgår från IMAP-skalet
 Lista över kommandon
 Hämtar meddelanden och listar dem
 Öppnar ett meddelande
-Sidan kanske inte är negativ eller noll.
 Sidan är inte ett numeriskt värde.
 Meddelandenumret kanske inte är negativt eller noll.
 Meddelandenumret är inte ett numeriskt värde.
@@ -392,7 +341,6 @@ Meddelandenumret är inte ett numeriskt värde.
 Meddelandet som anges hittades inte.
 Fjärrfelsökning kunde inte starta: {0}
 Förbereder profiler ... Det kan ta flera minuter ...
-Värdnamn, användarnamn, datatyp, kodning, kryptering, protokoll
 Fel vid försök att köra skript: {0}
 Skriver text i konsolen
 Gör användarval
@@ -417,7 +365,6 @@ Kortnummer är tom. Anslut till en server för att lägga till en adress till de
 Kortnummer finns inte. Anslut till en server för att lägga till en adress till den.
 Ange IMAP-serverns adress och port (<adress> eller <adress>: [port]):
 Ange SMTP-serverns adress och port (<adress> eller <adress>: [port]):
-Ber dig att fylla i de fält som krävs för att skicka ett meddelande till en adress
 Skickar ett meddelande till en adress
 Ange mottagarens e-postadress:
 Ange ämnet:
@@ -445,8 +392,6 @@ Tar bort ett ord eller en fras från radnumret
 Tar bort ett tecken från teckennummer i den angivna raden
 Borttagen rad.
 Det specificerade radnumret {0} är inte ett giltigt nummer.
-Obligatoriska argument skickas inte till kommandot {0}
-Fel vid försök att köra kommandot: {0}
 Kör i säkert läge. Hoppar över scenen ...
 >> Fjärrfelsökning och chatt: version
 >> Din adress är {0}.
@@ -464,19 +409,12 @@ Blockera en felsökningsenhet med IP-adress
 Fel vid inläsning av inställningar
 Det finns ett fel när du laddar inställningar. Du kan behöva kontrollera inställningsfilen.
 Välj avsnitt:
-Allmänna Inställningar...
-Hårdvaruinställningar ...
-Inloggningsinställningar ...
-Shell-inställningar ...
-Nätverksinställningar...
-Diverse inställningar ...
 Spara inställningar
 Utgång
 Det angivna alternativet {0} är ogiltigt.
 Svaret måste vara numeriskt.
 Fråga efter argument vid start
 Trigger för underhållsläge
-Ändra rotlösenord ...
 Sök efter uppdateringar vid start
 Tyst sond
 Visa MOTD vid inloggning
@@ -500,9 +438,7 @@ Ogiltigt avsnitt angett. Snälla gå tillbaka.
 Gå tillbaka...
 Gör det möjligt
 Inaktivera
-Ogiltigt nyckelnummer har angetts. Snälla gå tillbaka.
 Skriv root-lösenordet som ska ställas in. Oroa dig inte; lösenordet visas som stjärnor.
-Aktivera "Ändra rotlösenord" för att använda detta alternativ. Snälla gå tillbaka.
 Ändra rotlösenord?
 Ställ in rotlösenord ...
 Skriv en extern felsökningsport. Det måste vara numeriskt och får inte redan användas. I annat fall kommer fjärrfelsökaren inte att öppna porten.
@@ -513,7 +449,6 @@ Svaret kanske inte är negativt.
 Svaret är ogiltigt. Kontrollera att svaret är numeriskt för konfigurationsposter som behöver siffror som svar.
 Variabel {0} finns inte på någon av modulerna.
 Ändrar kärnkonfiguration
-Skärmsläckarinställningar ...
 Aktivera 255 färger
 Vill du hålla kontakten?
 Ogiltigt val. Antar nej ...
@@ -549,7 +484,6 @@ Det gick inte att flytta filen eller katalogen: {0}
 Det gick inte att hitta filen som matchar strängen "{0}": {1}
 Nedladdningen misslyckades för filen {0}.
 Det gick inte att lista fjärrfiler: {0}
-Ange en fil eller mapp som ska tas bort. Du måste ha administrativa behörigheter på ditt konto för att kunna ta bort.
 Är du säker på att du vill ta bort {0} <y / n>?
 Tar bort {0} ...
 {0} hittades inte på servern.
@@ -560,7 +494,6 @@ Flyttar {0} till {1} ​​...
 Flyttade framgångsrikt
 Flyttar fil eller katalog till en annan fil eller katalog. Du kan också använda det för att byta namn på filer.
 Det gick inte att flytta {0} till {1}.
-Ange en källväg och en destinationsväg.
 Kopierar {0} till {1} ​​...
 Kopierades framgångsrikt
 Kopierar fil eller katalog till en annan fil eller katalog.
@@ -578,9 +511,6 @@ Luftfuktighet: {0}
 Du kan få din egen API-nyckel på https://home.openweathermap.org/api_keys.
 Du kan alltid besöka http://bulk.openweathermap.org/sample/city.list.json.gz för en lista över städer med deras ID.
 Föredragen enhet för temperatur
-Kelvin
-Imperial (Fahrenheit)
-Metrisk (Celsius)
 Ställer in kärnan så att du uppmanas till argument vid start.
 Utlöser underhållsläge. Detta inaktiverar flera konton.
 Varje start kommer det att söka efter uppdateringar.
@@ -595,10 +525,6 @@ Förenklat hjälpkommando för alla skal
 Om du vill logga in FTP-användarnamn eller inte.
 Om du vill logga in FTP IP-adress eller inte.
 Välj bara den första profilen när du ansluter.
-Aktiverar 255 färgstöd för ColorMix.
-Aktiverar 255 färgstöd för Disco.
-Aktiverar 255 färgstöd för GlitterColor.
-Aktiverar 255 färgstöd för linjer.
 Tid och datum visas längst upp till höger på skärmen
 Om det är aktiverat analyserar kärnan hela mappen för dess totala storlek. Annars, kommer bara att analysera ytan.
 Aktiverar ögonblick vid start
@@ -608,7 +534,6 @@ Välj önskad temperaturenhet (detta gäller endast kommandot "väder")
 Mod {0} stoppade
 {0} v {1} stoppat
 Mod {0} har inte artikelnamnet. Modtolkning misslyckades. Granska källkoden.
-Mod {0} har inte kommandot. Modtolkning misslyckades. Granska källkoden.
 Du måste aktivera felsökningsläget innan du kan rensa felsökningsloggen.
 {0} nya meddelanden kom till inkorgen.
 Öppna "mail" för att se dem.
@@ -645,10 +570,6 @@ Röd färgnivå överskred. Det var {0}.
 Grön färg har överskridits. Det var {0}.
 Blå färgnivå överskridits. Det var {0}.
 Aktivera sanna färger
-Aktiverar äkta färgstöd för ColorMix.
-Aktiverar äkta färgstöd för Disco.
-Aktiverar äkta färgstöd för GlitterColor.
-Aktiverar äkta färgstöd för linjer.
 Det gick inte att avblockera {0}.
 {0} är redan blockerad.
 {0} kan inte gå med i fjärrfelsökning nu.
@@ -659,7 +580,6 @@ Ange filvägar till bilagor. Tryck på ENTER på en tom sökväg för att bekrä
 Öppnar ett krypterat meddelande
 Skriv lösenord för nyckel-ID {0}
 Skickar ett krypterat meddelande till en adress
-Be dig fylla i de obligatoriska fälten för att skicka ett krypterat meddelande till en adress
 Hämtar från {0} ...
 Visa förloppsfältet medan du laddar ner eller laddar upp från kommandot "get" eller "put"
 Om det är sant, får det "get" eller "put" att visa förloppsindikatorn under nedladdning eller uppladdning.
@@ -678,8 +598,6 @@ Känns som: {0}
 Temperatur: {0}
 Vindhastighet: {0}
 Vindriktning: {0}
-Aktiverar 255 färgstöd för upplösning.
-Aktiverar äkta färgstöd för upplösning.
 Tryck på valfri knapp för att gå tillbaka.
 Det gick inte att skapa e-postmappen {0}: {1}
 Gör en katalog i den aktuella arbetskatalogen
@@ -692,22 +610,11 @@ Hash är missbildade.
 Hashes matchar inte.
 Hashes matchar.
 Byt namn på en mapp
-Detta avsnitt listar alla allmänna kärninställningar, huvudsakligen för att underhålla kärnan.
-Det här avsnittet ändrar beteendet för maskinvarusonden.
-Detta avsnitt representerar inloggningsinställningarna. Logga ut från ditt konto för att ändringarna ska träda i kraft.
-Detta avsnitt listar skalinställningarna.
-Detta avsnitt listar nätverksinställningarna, som FTP-skalet, de nätverksrelaterade kommandoinställningarna och fjärrfelsökningsinställningarna.
-Detta avsnitt listar alla skärmsläckare och deras tillgängliga inställningar.
-Inställningar som inte passar i deras lämpliga sektioner landar här.
-Testar mods genom att tillhandahålla modfiler
 Öppnar ett testskal
-Aktiverar felsökningsläge
-Uppmanar till argument
 * Tryck på valfri knapp för att starta kärnan eller ESC för att avsluta.
 Det gick inte att starta "{0}": {1}
 Visa förhandsgranskning av e-postmeddelande
 Visa kroppsförhandsgranskning när du listar e-postmeddelanden.
-Anpassade färger ...
 Inmatningsfärg
 Licensfärg
 Fortsätt kärnfelfärg
@@ -721,8 +628,6 @@ Felfärg
 FTP-meddelandestil
 E-postmeddelandestil
 SFTP Prompt Style
-Aktiverar 255 färgstöd för BouncingBlock.
-Aktiverar äkta färgstöd för BouncingBlock.
 Försöker komma åt ogiltig sökväg.
 Rensar textfilen
 Avslutar textredigeraren
@@ -745,8 +650,6 @@ Color of Minutes Bar
 Color of Hours Bar
 Färg på information
 Fästingar för att ändra färg
-Aktiverar 255 färgstöd för ProgressClock.
-Aktiverar äkta färgstöd för ProgressClock.
 Om färgcykling är aktiverad, hur många fästingar innan du byter färg i ProgressClock? 1 bock = 0,5 sekunder
 ProgressClock väljer slumpmässiga färger om den är aktiverad. Använd annars färger från config.
 Gör ett nytt tema
@@ -761,39 +664,10 @@ Alternativfärg
 Ange färgnummer från 0 till 255:
 Använd "hwinfo" för utökad information om hårdvara.
 Skriver ut maskinvaruinformation
-CPU-information:
 Processornamn:
-Processorhastighet:
 Processorbitar:
-Processor rev:
-Processortopologi:
-Processortyp:
-Processorns milstolpe:
-Processor BogoMips:
-Processor L2-cache-storlek:
-Processor L3 cache-storlek:
-Processorfunktioner:
-HDD-information:
-Enhetsnamn:
-Drivmodell:
-Drive-leverantör:
-Körhastighet:
-Drivstorlek:
-Enhetsserie:
-Drive ID:
-Drive partition count:
-Partitions-ID:
 Partition filsystem:
 Partitionsstorlek:
-Använd partition:
-RAM-information:
-RAM-fri:
-RAM totalt:
-RAM som används:
-GPU-information:
-GPU-namn:
-GPU-drivrutin:
-GPU-version:
 GPU: Ett eller flera av grafikkorten kunde inte sonderas. Visar information ändå ...
 >> Välkommen! Det här är första gången du går in i fjärrfelsökning och chatt. Använd "/ register <name>" för att registrera.
 Enheten finns redan.
@@ -825,8 +699,6 @@ Ange temanamn:
 Användaren {0} har lagts till i listan "{1}".
 Användaren {0} har tagits bort från listan "{1}".
 Ogiltigt läge {0}
-Användare finns redan
-Ladda tema från ...
 Ladda tema från förbyggda teman ...
 Ange temafilnamn utan .json-tillägget:
 Öppnar ett ZIP-arkiv
@@ -839,12 +711,9 @@ Katalogen {0} finns inte
 Arkivkatalogen {0} finns inte
 Max antal positioner
 Hur många positioner tänds innan de dimras?
-Aktiverar 255 färgstöd för tändare.
-Aktiverar äkta färgstöd för Tändare.
 Listans postfärg
 Listvärdesfärg
 Ansluter till en SSH-server för att utföra ett kommando.
-Detta avsnitt visar skärmsläckarinställningar för
 Ogiltig färgspecifikator. Se till att det har rätt format, vilket betyder ett nummer från 0-255 om du använder 255 färger eller en VT-sekvens om du använder sann färg enligt följande:
 Fel i testskalet: {0}
 Ställer in en variabel till ett värde i ett skript
@@ -866,13 +735,11 @@ Hur vill du autentisera?
 Privat nyckelfil
 Lösenord
 Ange lösenfrasen för nyckeln {0}:
-Ange platsen för den privata nyckeln för {0}. Skriv "q" för att slutföra tillägget av nycklar:
 Neutraliserade en obefintlig väg.
 Nyckelfilen {0} finns inte.
 Fel vid försök att lägga till privat nyckel:
 Tryck på "t" för att växla till 255 färgläge.
 Tryck på "t" för att växla till sant färgläge.
-I det här avsnittet kan du välja vilken typ av färg du vill ändra.
 Det verkar som om du inte har någon användare utom root. Det här är dåligt. Vi guidar dig hur du skapar en.
 Skriv ditt användarnamn.
 Du måste skriva ditt användarnamn.
@@ -882,7 +749,6 @@ Välj kontotyp.
 Administratör: Den här kontotypen har mest kraft i kärnan, så att du kan använda systemhanteringsprogram.
 Normal användare: Den här kontotypen är något mer begränsad än administratörer.
 Grattis! Du har skapat ett nytt konto! För att avsluta detta, logga in som ditt nya konto.
-Se skärmsläckarhandboken eller källkoden för information.
 mod: Inga mods upptäcktes.
 Allmänna kommandon:
 Mod-kommandon:
@@ -906,7 +772,6 @@ Testar kärnfelfaciliteten med formatstöd
 Tester som översätter en sträng som finns i resurser till specifikt språk
 Skriver ut en sträng för att konsolera och analyserar de platshållare som hittats
 Testar den reguljära uttrycksfaciliteten
-Krypterar en sträng med
 Startar alla mods
 Stoppar alla mods
 Aktiverar eller inaktiverar felsökning
@@ -941,7 +806,6 @@ Listar stödda kulturer
 Söker efter angiven sträng i den angivna filen med reguljära uttryck
 Se om du kan trycka på en knapp i tid
 Användaren lämnade inga inmatningar i tid.
-Ogiltig svårighet
 Karaktär trycks inte i tid.
 Du har tryckt på rätt karaktär!
 Du har tryckt på fel karaktär.
@@ -985,7 +849,6 @@ Får anpassade spararinställningar
 Ställer in anpassade spararinställningar
 Inställningarna har ställts in för skärmsläckare
 Det gick inte att ställa in en inställning för skärmsläckare
-I det här avsnittet kan du hantera root-lösenordskapande.
 Öppnar ett RSS-skal för att läsa flödena
 Avslutar RSS-skalet och återgår till kärnan
 Ändrar matningslänken
@@ -1012,13 +875,6 @@ Filsystem sorteringsläge
 Sorteringsriktning för filsystem
 Styr hur filerna ska sorteras.
 Kontrollerar riktningen för filsystemsortering oavsett om den är stigande eller fallande.
-Stigande ordning
-Fallande ordning
-Fullständiga namn
-Filstorlek
-Skapningstid
-Senaste skrivtid
-Senaste åtkomsttid
 Skriv igen fördröjning i millisekunder
 Hur många millisekunder väntar du innan du skriver text igen?
 Skriv vilken text du vill visa. Längre är bättre.
@@ -1027,35 +883,26 @@ Maximal skrivhastighet i WPM
 Sannolikheten för skrivfel i procent
 Det gick inte att spara aktuell katalog: {0}
 Torkar för att ändra riktning
-Aktiverar 255 färgstöd för Wipe.
-Aktiverar äkta färgstöd för Wipe.
 Hur många våtservetter ska du göra innan du slumpmässigt byter riktning?
 Scenen slutade i
 Intern initialisering avslutad år
 Den refererade filen {0} hittades inte. Denna mod fungerar kanske inte ordentligt utan den här filen.
 Startar mod
-Får modinformation
 Kommandonamn:
 Kommando definition:
 Kommandotyp:
 Strikt kommando?
 Mod-version:
 Mod {0} hittades inte.
-Kultur av
-Vilken variant av {0} används för att ändra månadens namn, kalender etc.?
 Textredigeraren har inte öppnat en filström ännu.
 Sträng ersatt.
 Ett eller båda siffrorna är inte numeriska.
 Ordet har tagits bort.
 Tecken borttaget.
-Filsysteminställningar ...
-Detta avsnitt listar filsysteminställningarna.
 Välkommen till Inställningar!
 Fel vid körning av SSH-kommando
 Fel på SSH-skal
 - Appinformation
-Aktiverar 255 färgstöd för BouncingText.
-Aktiverar äkta färgstöd för BouncingText.
 Testar ordboksförfattaren med sträng och strängmatris
 Testar ordboksförfattaren med char och char array
 Testar ordboksförfattaren med heltal och heltal
@@ -1072,21 +919,15 @@ där HardwareType kommer att vara
 Antingen är hårdvarutypen {0} inte sonderad eller är inte giltig.
 Hårdvarutypen {0} har inte undersökts ännu. Om du är säker på att den är sonderad startar du om kärnan med felsökning aktiverat.
 Partitioner som inte analyseras för att listas.
-Hacker-läge
-Om den är aktiverad kommer den gröna konsolen att aktiveras.
 Skriver ut en separator
 Skriver ut en separator med formatstöd
 Skriver ut en separator med färgstöd
 Skriver ut en separator med stöd för färg och format
 Alltid centrerad
-Aktiverar 255 färgstöd för partytält.
-Aktiverar äkta färgstöd för partytält.
 Skriv vilken text du vill visa.
 Om texten som visas på partytältet alltid är centrerad.
-'q' för att sluta.
 Argumentet {0} hittades inte att injiceras.
 Argumentet för kommandoraden {0} hittades inte.
-Rensar alla inställningar
 Skärmsläckaren upplevde ett fel när den visade: {0}. Tryck på valfri tangent för att avsluta.
 Förhandsvisning...
 Så här ser ditt tema ut:
@@ -1124,20 +965,15 @@ Om du vill använda Beats Per Minute -enheten för att skriva nästa färg.
 Fördröjning i slag per minut
 Slå färg
 Hur många slag per minut ska man vänta innan man skriver nästa?
-Aktiverar 255 färgstöd för BeatFader.
-Aktiverar äkta färgstöd för BeatFader.
 BeatFader väljer slumpmässiga färger om det är aktiverat. Använd annars färger från config.
 Anpassad startbanner
-Om det anges kommer det att visa anpassad startbanner med platshållarsupport. Du kan använda denna fras för kärnversion:
 Hämtar fjärrmapp till lokal katalog med binär eller text
 Överför lokal mapp till fjärrkatalog med binär eller text
-Ange en mapp för nedladdning till lokal katalog.
 Hämtar mapp {0} ...
 Nedladdad mapp {0}.
 Nedladdningen misslyckades för mappen {0}.
 Överför mapp {0} ...
 Uppladdad mapp {0}
-Ange en mapp för att ladda upp till fjärrkatalogen.
 Tryck på "c" för att skriva fullfärgskod.
 Ange färgkod som uppfyller följande format:
 Förminskar JSON -filen
@@ -1151,13 +987,9 @@ Textkolumnerna som ska skrivas ut.
 Hur många tecken ska skrivas innan "radfyllningen" aktiveras?
 Möjlighet att linjefyllningsmönstret kommer att skrivas ut i alla versaler i procent
 Linjefyllningsmönstertyp
-Vanligt mönster
-Komplett mönster
-Slumpmässigt mönster
 Svaret kanske inte är noll.
 Svaret får inte överstiga de angivna posterna.
 Spara ändringar...
-Denna skärmsläckare stöder skriven text på fil. Skicka hela filsökvägen till det här fältet, och skärmsläckaren visar innehållet i filen på lämpligt sätt.
 Hantera dina mods
 Modhantering är inaktiverad i säkert läge.
 Ogiltigt kommando {0}. Kontrollera användningen nedan:
@@ -1173,5 +1005,3 @@ Tryck på valfri knapp för att läsa den manuella sidan ...
 Denna manuella sida behöver arbete för:
 Manuell sida {0} hittades inte.
 Mod manuell
-Aktiverar 255 färgstöd för FlashColor.
-Aktiverar äkta färgstöd för FlashColor.

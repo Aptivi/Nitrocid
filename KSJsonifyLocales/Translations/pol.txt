@@ -1,15 +1,6 @@
-﻿Dost?pne polecenia: {0}
-Napisz polecenie:
+Dost?pne polecenia: {0}
 Wprowadzanie polece? zosta?o anulowane.
-Oddziel argumenty rozruchowe przecinkami bez spacji, na przyk?ad „motd, gpuprobe”
-Oddzielne polecenia na „cmdinject” z dwukropkami ze spacjami, na przyk?ad „cmdinject setthemes Hacker: beep 1024 0,5”
-Zauwa?, ?e argument „debugowanie” nie obejmuje w pe?ni j?dra.
-bargs: ??dany argument {0} nie zosta? znaleziony.
-bargs: Nieodwracalny b??d w argumencie:
-Dost?pne argumenty: {0}
-Argumenty („pomoc” dla pomocy):
 Wstrzykni?te argumenty zostan? zaplanowane do uruchomienia przy nast?pnym restarcie.
-Wtrysk argumentu zosta? anulowany.
 B??d podczas analizowania rzeczywistych argument?w wiersza polecenia: {0}
 Nieprawid?owy szablon kolor?w {0}
 hwprobe: Tw?j sprz?t zostanie przetestowany. Prosz? czeka?...
@@ -82,7 +73,6 @@ Has?o do {0}:
 Po??czono z {0}
 B??d podczas pr?by po??czenia z {0}: {1}
 ?lad stosu: {2}
-Wprowad? serwer FTP.
 Katalog lokalny {0} nie istnieje.
 Wprowad? lokalny katalog. ".." wr?ci?.
 Katalog {0} nie zosta? znaleziony.
@@ -97,16 +87,12 @@ Nie masz jeszcze po??czenia z ?adnym serwerem
 Pobieranie pliku {0} ...
 Pobrany plik {0}.
 Musisz po??czy? si? z serwerem przed wykonaniem transmisji.
-Wprowad? plik do pobrania do lokalnego katalogu.
 {0} KB | Zmodyfikowano w: {1}
 Powiniene? po??czy? si? z serwerem przed wy?wietleniem wszystkich zdalnych plik?w.
 Przesy?anie pliku {0} ...
 Przes?any plik {0}
-Wprowad? plik do przes?ania do zdalnego katalogu. prze?lij <plik> <katalog>
-(Wewn?trzny:
 Pobiera bie??cy katalog lokalny
 Pobiera bie??cy zdalny katalog
-??czy si? z serwerem FTP (musi zaczyna? si? od „ftp: //” lub „ftps: //”)
 Zmienia lokalny katalog do pobrania lub przes?ania z
 Zmienia zdalny katalog do pobrania lub przes?ania do
 Usuwa zdalny plik z serwera
@@ -117,7 +103,7 @@ Wy?wietla ekran pomocy
 Wy?wietla lokalny katalog
 Wy?wietla zdalny katalog
 Przesy?a plik lokalny do zdalnego katalogu za pomoc? pliku binarnego lub tekstowego
-Komunikat FTP: ??dane polecenie {0} nie zosta?o znalezione. Zobacz „pomoc”, aby uzyska? list? dost?pnych polece? okre?lonych w pow?oce FTP.
+Komunikat FTP: ??dane polecenie {0} nie zosta?o znalezione. Zobacz �pomoc�, aby uzyska? list? dost?pnych polece? okre?lonych w pow?oce FTP.
 Nie mo?na uzyska? w?a?ciwo?ci adaptera {0}
 Numer adaptera:
 Nazwa adaptera:
@@ -128,7 +114,7 @@ Pakiety Unicast:
 B??d pakiet?w przychodz?cych / wychodz?cych:
 Alias ??nie mo?e mie? takiej samej nazwy jak polecenie.
 Nie znaleziono polecenia do aliasu do {0}.
-Mo?esz teraz uruchomi? „{0}” jako polecenie: „{1}”.
+Mo?esz teraz uruchomi? �{0}� jako polecenie: �{1}�.
 Alias ??{0} nie zosta? usuni?ty.
 Nieprawid?owy tryb {0}.
 Wstrzykni?te argumenty {0} zostan? zaplanowane do uruchomienia przy nast?pnym uruchomieniu.
@@ -147,7 +133,6 @@ Konfiguracja zosta?a ponownie za?adowana. Konieczne mo?e by? ponowne uruchomieni
 Jeden lub wi?cej kolor?w jest nieprawid?owy.
 Kolory nie s? dost?pne. W??cz kolorow? pow?ok? w konfiguracji j?dra.
 Nie znaleziono wygaszacza ekranu {0}.
-[ Ustawienia j?dra (dzia?aj?ce na {0}) ]
 Wersja j?dra:
 Tryb debugowania:
 Kolorowa skorupa:
@@ -155,8 +140,6 @@ Argumenty podczas uruchamiania:
 Uproszczone polecenie pomocy:
 MOTD przy logowaniu:
 Czas / data w rogu:
-[ Ustawienia sprz?tu ]
-[ Ustawienia u?ytkownika ]
 Obecna nazwa u?ytkownika:
 Aktualna nazwa hosta:
 Dost?pne nazwy u?ytkownika:
@@ -183,31 +166,14 @@ Informacje o systemie
 * Mo?esz u?ywa? wielu polece? za pomoc? dwukropka mi?dzy poleceniami.
 Stosowanie:
 gdzie argumentami b?dzie {0}
-Inicjuje pow?ok? FTP.
-Przyjaciele
 gdzie b?dzie customsaver
-Blokuje ekran has?em.
-Wylogowuje ci? z u?ytkownika.
-Uzyskaj wszystkie informacje o sieci
-Ponownie uruchamia symulowany komputer.
-Ponownie ?aduje konfiguracj?, kt?ra zosta?a zmieniona przez u?ytkownika ko?cowego lub narz?dzie.
-Kolory nie wymagaj? ponownego uruchomienia, ale wi?kszo?? ustawie? wymaga ponownego uruchomienia.
-pokazuje wybrany wygaszacz ekranu, jednocze?nie chroni?c ekran przed wypaleniem.
-Pokazuje dat? i godzin?.
-Pokazuje dat? i godzin? w strefach.
-Zamyka symulowany komputer.
-Pokazuje informacje o systemie i wersje.
 Wyst?pi? b??d w pow?oce.
 Nie masz uprawnie? do korzystania z {0}
 Komunikat pow?oki: ??dane polecenie {0} nie mo?e dzia?a? w trybie konserwacji.
-Komunikat pow?oki: ??dane polecenie {0} nie zosta?o znalezione. Zobacz „pomoc” dla dost?pnych polece?.
+Komunikat pow?oki: ??dane polecenie {0} nie zosta?o znalezione. Zobacz �pomoc� dla dost?pnych polece?.
 Komunikat pow?oki: Komenda {0} nie mo?e by? uruchamiana podczas logowania.
 B??d podczas pr?by wykonania polecenia.
-datetime: czas to {0}
-datetime: Dzisiaj jest {0}
-datetime: Strefa czasowa: {0}
 - Czas {0}: {1}
-wyczy?ci? ekran.
 Dzia?a na {0}
 Nie masz uprawnie? do uzyskania informacji o {0}.
 To polecenie jest przestarza?e i zostanie usuni?te w przysz?ej wersji.
@@ -233,15 +199,13 @@ Zmienia j?zyk
 >> Ramy, pliki, linie i kolumny <<
 > Ramka {0}: Plik: {1} | Wiersz: {2} | Kolumna: {3}
 > Wyst?pi? b??d podczas pr?by uzyskania informacji o ramce. {0}: {1}
-Prze?adowuje mody.
-Mody ponownie za?adowane.
 Witaj w j?drze!
 Zalogowano pomy?lnie jako <u?ytkownik>
 MOTD / MAL jest poprawny, ale typ komunikatu jest niepoprawny. Zak?adaj?c MOTD ...
 Pr?bowa?em odczyta? MOTD / MAL, kt?ry jest niepoprawnego typu komunikatu.
 Pobieranie zosta?o zako?czone.
 Pobieranie nie powiod?o si? w pr?bie {0}: {1}
-U?yj „ftp”, je?li zamierzasz pobiera? pliki z serwera FTP.
+U?yj �ftp�, je?li zamierzasz pobiera? pliki z serwera FTP.
 Pobiera plik do bie??cego katalogu roboczego
 Od??cz urz?dzenie debuguj?ce
 Wy?wietla list? pod??czonych urz?dze? do debugowania
@@ -259,7 +223,7 @@ Nie mo?na usun?? katalogu: {0}
 Strefa czasowa jest niepoprawnie okre?lona.
 Nieprawid?owy wyb?r profilu.
 Pr?buj? po??czy? si? z {0} z profilem {1} ...
-Nie znaleziono polecenia {0}. Zobacz polecenie „help”, aby uzyska? list? polece?.
+Nie znaleziono polecenia {0}. Zobacz polecenie �help�, aby uzyska? list? polece?.
 Nie mo?na pobra? w?a?ciwo?ci IPv6 dla adaptera {0}. Kontynuacja ...
 Informacje o IPv4:
 Informacje o IPv6:
@@ -267,27 +231,19 @@ Adapter {0} nie obs?uguje IPv6. Kontynuacja ...
 Adapter {0} nie obs?uguje IPv4. Sonda nie powiod?a si?.
 Wygl?da na to, ?e korzysta?e? z wersji rozwojowej j?dra. Chocia? wida? aspekty, jest cz?sto aktualizowane i mo?e wprowadza? b??dy. Zaleca si? pozostanie w stabilnej wersji.
 Wybrany j?zyk zawiera dwa warianty. Wybierz jeden:
-1. Transliterowane
-2. Przet?umaczone
-Wybierz sw?j wyb?r:
 Nieprawid?owy wyb?r. Spr?buj ponownie.
 Nie masz uprawnie?, aby ustawi? bie??cy katalog na {0}: {1}
 Podana ?cie?ka jest za d?uga.
-CPU: OSTRZE?ENIE: SSE2 b?dzie wymagane w przysz?ych zatwierdzeniach programistycznych.
 Zbieranie informacji o zrzutach uleg?o awarii podczas pr?by uzyskania informacji o {0}: {1}
-B??d podczas pr?by uzyskania daty kompilacji zestawu {0}: {1}
 B??d podczas pr?by ustawienia MOTD / MAL: {0}
 B??d podczas pr?by uzyskania MOTD / MAL: {0}
 B??d podczas pr?by uruchomienia wygaszacza ekranu z powodu nieprawid?owej operacji.
 Ponowne ?adowanie nie jest dozwolone w trybie awaryjnym.
 Parsowanie mod?w jest niedozwolone w trybie awaryjnym.
-Wy?wietla list? wszystkich pod??czonych urz?dze? debuguj?cych.
 B??d podczas pr?by ustawienia trybu analizy. Sprawd? warto?? i spr?buj ponownie. Je?li jest to poprawne, zobacz ?ledzenie stosu, gdy debugowanie j?dra jest w??czone.
 ?cie?ka nie jest ani plikiem, ani katalogiem.
 Tworzy kolejn? kopi? pliku w innym katalogu lub nazwie.
 Przenosi plik do innego katalogu
-Aby skopiowa? pliki do innego katalogu lub innej nazwy
-Aby przenie?? pliki do innego katalogu
 Dopasuj {0} ({1}): {2}
 Dopasuj {0}: {1}
 Czas sp?dzony: {0} milisekund
@@ -302,9 +258,6 @@ Odpowiadaj na komentarze mi?o?ci i nienawi?ci.
 Je?li kto? skomentowa? ten film:
 Jak by? zareagowa??
 Nieprawid?owy wyb?r. Przechodz? do nast?pnego komentarza ...
-W?a?nie zg?osi?e? komentarz o mi?o?ci!
-W?a?nie odpowiedzia?e? na komentarz do nienawi?ci!
-?wietny! Komentarz {0} zostanie z tego powodu usuni?ty.
 ?wietny! {0} doceni twoje podzi?kowania.
 Perfekcyjnie napisane!
 B??dnie napisane.
@@ -318,7 +271,6 @@ Wpisz has?o dla {0}:
 SSH Disconnected.
 Nie mo?na ustawi? strony kodowej. J?zyk mo?e by? wy?wietlany niepoprawnie.
 Debugowanie nie jest w??czone.
-{0} nie jest ju? ustawiony na domy?lny wygaszacz ekranu.
 Dzi?ki! To jest interesuj?ce.
 W tym celu wszyscy b?d? wspiera? Tw?j film.
 W e-mailu da?em ci specjalny plik do nast?pnego filmu.
@@ -364,7 +316,6 @@ Katalog {0} ju? istnieje.
 B??d podczas pr?by po??czenia z {0}: Przekroczono limit czasu po??czenia lub utracono po??czenie
 Kalkulator do obliczania wyra?e?.
 B??d w obliczeniach.
-Wygl?da na to, ?e korzystasz z wersji zbli?aj?cej si? do wydania. Chocia? korzystanie z niego jest teraz bezpieczniejsze, zaleca si? pozostanie w wersji stabilnej.
 Aktualizacja systemu
 Sprawdzanie aktualizacji systemu ...
 Znaleziono now? wersj?: 
@@ -372,7 +323,6 @@ Mo?esz pobra? go z:
 Brak ostatnich powiadomie?
 Wyszukuje okre?lony ci?g w podanym pliku
 Oblicza sumy plik?w w okre?lonym katalogu.
-Wy?wietla wszystkie wiadomo?ci e-mail okre?lonego u?ytkownika.
 Wpisz nazw? u?ytkownika lub adres e-mail:
 Wprowad? has?o:
 B??d podczas ??czenia z {0}: {1}
@@ -382,7 +332,6 @@ Wychodzi z pow?oki IMAP
 Lista polece?
 Pobiera wiadomo?ci i wy?wietla je
 Otwiera wiadomo??
-Strona nie mo?e by? ujemna ani zero.
 Strona nie jest warto?ci? liczbow?.
 Numer wiadomo?ci nie mo?e by? ujemny ani zero.
 Numer wiadomo?ci nie jest warto?ci? liczbow?.
@@ -392,7 +341,6 @@ Numer wiadomo?ci nie jest warto?ci? liczbow?.
 Okre?lona wiadomo?? nie zosta?a znaleziona.
 Nie mo?na uruchomi? zdalnego debugowania: {0}
 Przygotowywanie profili ... Mo?e to potrwa? kilka minut ...
-Nazwa hosta, nazwa u?ytkownika, typ danych, kodowanie, szyfrowanie, protoko?y
 B??d podczas pr?by wykonania skryptu: {0}
 Zapisuje tekst w konsoli
 Dokonuje wybor?w u?ytkownika
@@ -417,11 +365,10 @@ Szybkie wybieranie jest puste. Po??cz si? z serwerem, aby doda? do niego adres.
 Szybkie wybieranie nie istnieje. Po??cz si? z serwerem, aby doda? do niego adres.
 Wprowad? adres i port serwera IMAP (<adres> lub <address>: [port]):
 Wprowad? adres i port serwera SMTP (<adres> lub <address>: [port]):
-Prosi o wype?nienie wymaganych p?l, aby wys?a? wiadomo?? na adres
 Wysy?a wiadomo?? na adres
 Wprowad? adres e-mail odbiorcy:
 Wpisz temat:
-Wpisz swoj? wiadomo?? poni?ej. Wpisz „EOF”, aby potwierdzi?.
+Wpisz swoj? wiadomo?? poni?ej. Wpisz �EOF�, aby potwierdzi?.
 Wysy?anie wiadomo?ci...
 Wiadomo?? wys?ana.
 Niepoprawny adres email. Upewnij si?, ?e adres zosta? wpisany poprawnie i pasuje do formatu z pokazanego przyk?adu:
@@ -445,13 +392,11 @@ Usuwa s?owo lub fraz? z numeru wiersza
 Usuwa znak z numeru znaku w okre?lonej linii
 Usuni?ta linia.
 Okre?lony numer wiersza {0} nie jest prawid?owym numerem.
-Wymagane argumenty nie s? przekazywane do polecenia {0}
-B??d podczas pr?by uruchomienia polecenia: {0}
 Dzia?a w trybie awaryjnym. Pomijanie etapu ...
 >> Zdalne debugowanie i czat: wersja
 >> Tw?j adres to {0}.
 >> Nazywasz si? {0}.
-Nie znaleziono polecenia {0}. U?yj „/help”, aby wy?wietli? list?.
+Nie znaleziono polecenia {0}. U?yj �/help�, aby wy?wietli? list?.
 Indeks {0} jest nieprawid?owy. Istnieje {1} ?lad?w stosu. Indeks jest liczony od zera, wi?c spr?buj odj?? go o 1.
 Brak ?ladu stosu
 Pokazuje ostatni ?lad stosu w przypadku wyj?tku
@@ -464,19 +409,12 @@ Numer {0} nie jest jeszcze zablokowany.
 B??d podczas ?adowania ustawie?
 Wyst?pi? b??d podczas ?adowania ustawie?. Konieczne mo?e by? sprawdzenie pliku ustawie?.
 Wybierz sekcj?:
-Ustawienia g??wne...
-Ustawienia sprz?tu ...
-Ustawienia logowania ...
-Ustawienia pow?oki ...
-Ustawienia sieci...
-R??ne ustawienia...
 Zapisz ustawienia
 Wyj?cie
 Okre?lona opcja {0} jest nieprawid?owa.
 Odpowied? musi by? liczbowa.
 Monituj o argumenty podczas rozruchu
 Wyzwalacz trybu konserwacji
-Zmie? has?o roota ...
 Sprawd? aktualizacje podczas uruchamiania
 Cicha sonda
 Poka? MOTD po zalogowaniu
@@ -500,20 +438,17 @@ Wprowadzono nieprawid?ow? sekcj?. Wr??, prosz?.
 Wr??...
 W??czy?
 Wy??czy?
-Wprowadzono nieprawid?owy numer klucza. Wr??, prosz?.
 Wpisz has?o roota, kt?re chcesz ustawi?. Nie martw si?; has?a s? wy?wietlane jako gwiazdki.
-W??cz opcj? „Zmie? has?o roota”, aby u?y? tej opcji. Wr??, prosz?.
 Zmieni? has?o roota?
 Ustaw has?o roota ...
 Napisz port zdalnego debugera. Musi by? numeryczny i nie mo?e by? ju? u?ywany. W przeciwnym razie zdalny debugger nie otworzy portu.
-Napisz, ile razy polecenie „„ get ”” powinno ponawia? nieudane pobieranie. Musi by? liczb?.
+Napisz, ile razy polecenie �� get �� powinno ponawia? nieudane pobieranie. Musi by? liczb?.
 Napisz, kiedy uruchomi? wygaszacz ekranu po okre?lonych milisekundach. Musi by? liczb?.
 Napisz, ile bajt?w mo?e przechowywa? dziennik debugowania. Musi by? liczb?.
 Odpowied? nie mo?e by? przecz?ca.
 Odpowied? jest nieprawid?owa. Sprawd?, czy odpowied? jest numeryczna w przypadku wpis?w konfiguracji, kt?re wymagaj? liczb jako odpowiedzi.
 Zmienna {0} nie zosta?a znaleziona w ?adnym z modu??w.
 Zmienia konfiguracj? j?dra
-Ustawienia wygaszacza ekranu ...
 Aktywuj 255 kolor?w
 Chcesz pozosta? w kontakcie?
 Nieprawid?owy wyb?r. Zak?adaj?c, ?e nie ...
@@ -546,10 +481,9 @@ U?ytkownik nie znaleziony
 Nie uda?o si? zmieni? has?a dla nazwy u?ytkownika: {0}
 Nie uda?o si? skopiowa? pliku lub katalogu: {0}
 Nie uda?o si? przenie?? pliku lub katalogu: {0}
-Nie mo?na znale?? pliku pasuj?cego do ci?gu „{0}”: {1}
+Nie mo?na znale?? pliku pasuj?cego do ci?gu �{0}�: {1}
 Pobieranie pliku {0} nie powiod?o si?.
 Nie uda?o si? wy?wietli? plik?w zdalnych: {0}
-Wprowad? plik lub folder do usuni?cia. Aby m?c usun??, musisz mie? uprawnienia administracyjne na swoim koncie.
 Czy na pewno chcesz usun?? {0} <y / n>?
 Usuwanie {0} ...
 Nie znaleziono {0} na serwerze.
@@ -560,7 +494,6 @@ Przenosz? {0} do {1} ...
 Przeniesiono pomy?lnie
 Przenosi plik lub katalog do innego pliku lub katalogu. Mo?esz tak?e u?y? tego do zmiany nazw plik?w.
 Nie uda?o si? przenie?? {0} do {1}.
-Wprowad? ?cie?k? ?r?d?ow? i ?cie?k? docelow?.
 Kopiowanie {0} do {1} ...
 Skopiowano pomy?lnie
 Kopiuje plik lub katalog do innego pliku lub katalogu.
@@ -578,9 +511,6 @@ Wilgotno??: {0}
 Mo?esz uzyska? w?asny klucz API na https://home.openweathermap.org/api_keys.
 Zawsze mo?esz zajrze? na http://bulk.openweathermap.org/sample/city.list.json.gz, aby uzyska? list? miast wraz z ich identyfikatorami.
 Preferowana jednostka temperatury
-kelwin
-Imperialne (Fahrenheit)
-Metryczne (stopnie Celsjusza)
 Ustawia j?dro tak, aby wy?wietla?o monit o podanie argumentu przy starcie.
 Tryb konserwacji wyzwalaczy. To wy??cza wiele kont.
 Przy ka?dym uruchomieniu b?dzie sprawdza? dost?pno?? aktualizacji.
@@ -595,23 +525,18 @@ Uproszczone polecenie pomocy dla wszystkich pow?ok
 Czy rejestrowa? nazw? u?ytkownika FTP, czy nie.
 Czy rejestrowa? adres IP protoko?u FTP.
 Wybierz pierwszy profil tylko podczas ??czenia.
-Aktywuje obs?ug? 255 kolor?w dla ColorMix.
-Aktywuje obs?ug? 255 kolor?w dla Disco.
-Aktywuje obs?ug? 255 kolor?w dla GlitterColor.
-W??cza obs?ug? 255 kolor?w dla linii.
 Godzina i data zostan? wy?wietlone w prawym g?rnym rogu ekranu
 Je?li jest w??czona, j?dro przeanalizuje ca?y folder pod k?tem jego ca?kowitego rozmiaru. W przeciwnym razie przeanalizuje tylko powierzchni?.
 W??cza lampk? przy uruchomieniu
 Czas i data b?d? d?u?sze, pokazuj?c pe?ne nazwy miesi?cy itp.
 Pokazuje ukryte pliki.
-Wybierz preferowan? jednostk? temperatury (dotyczy to tylko polecenia „pogoda”)
+Wybierz preferowan? jednostk? temperatury (dotyczy to tylko polecenia �pogoda�)
 Mod {0} zosta? zatrzymany
 Zatrzymano {0} v {1}
 Mod {0} nie ma nazwy cz??ci. Analiza mod?w nie powiod?a si?. Przejrzyj kod ?r?d?owy.
-Mod {0} nie ma polecenia. Analiza mod?w nie powiod?a si?. Przejrzyj kod ?r?d?owy.
 Aby wyczy?ci? dziennik debugowania, musisz w??czy? tryb debugowania.
 Do skrzynki odbiorczej dotar?o {0} nowych wiadomo?ci.
-Otw?rz „mail”, aby je zobaczy?.
+Otw?rz �mail�, aby je zobaczy?.
 Nie mo?na usun?? pliku: {0}
 Usuwa katalog lub plik
 Nie mo?na usun?? {0}, poniewa? nie istnieje.
@@ -635,7 +560,7 @@ Plik jest zwyk?ym plikiem
 Plik jest plikiem tylko do odczytu
 Plik jest plikiem ukrytym
 Plik jest archiwum. U?ywany do tworzenia kopii zapasowych.
-Atrybut „{0}” jest nieprawid?owy.
+Atrybut �{0}� jest nieprawid?owy.
 Atrybut zosta? pomy?lnie dodany.
 Atrybut zosta? pomy?lnie usuni?ty.
 Nie uda?o si? doda? atrybutu.
@@ -645,10 +570,6 @@ Przekroczono poziom koloru czerwonego. To by?o {0}.
 Przekroczono poziom koloru zielonego. To by?o {0}.
 Przekroczono poziom koloru niebieskiego. To by?o {0}.
 Aktywuj prawdziwe kolory
-Aktywuje obs?ug? prawdziwego koloru dla ColorMix.
-Aktywuje obs?ug? prawdziwych kolor?w dla Disco.
-Aktywuje obs?ug? prawdziwych kolor?w dla GlitterColor.
-W??cza obs?ug? prawdziwych kolor?w dla linii.
 Nie uda?o si? odblokowa? {0}.
 Numer {0} jest ju? zablokowany.
 {0} nie mo?e teraz do??czy? do zdalnego debugowania.
@@ -659,17 +580,16 @@ Wprowad? ?cie?ki plik?w do za??cznik?w. Naci?nij klawisz ENTER na pustej ?cie?ce
 Otwiera zaszyfrowan? wiadomo??
 Wpisz has?o dla identyfikatora klucza {0}
 Wysy?a zaszyfrowan? wiadomo?? na adres
-Prosi o wype?nienie wymaganych p?l, aby wys?a? zaszyfrowan? wiadomo?? na adres
 Pobieranie z {0} ...
-Poka? pasek post?pu podczas pobierania lub wysy?ania za pomoc? polecenia „pobierz” lub „umie??”
-Je?li tak, to powoduje, ?e „pobierz” lub „umie??” wy?wietla pasek post?pu podczas pobierania lub przesy?ania.
+Poka? pasek post?pu podczas pobierania lub wysy?ania za pomoc? polecenia �pobierz� lub �umie??�
+Je?li tak, to powoduje, ?e �pobierz� lub �umie??� wy?wietla pasek post?pu podczas pobierania lub przesy?ania.
 Przesy?a plik do okre?lonej witryny internetowej
 Pinguje adres
 Przesy?anie {0} do {1} ...
 Przesy?anie zako?czone.
 U?yj "ftp", je?li zamierzasz przesy?a? pliki na serwer FTP.
 Przesy?anie nie powiod?o si? w pr?bie {0}: {1}
-Napisz, ile razy polecenie „put” powinno ponawia? nieudane przesy?anie. Musi by? liczb?.
+Napisz, ile razy polecenie �put� powinno ponawia? nieudane przesy?anie. Musi by? liczb?.
 Adres nie mo?e by? pusty.
 B??d pingowania {0}: {1}
 Ping powi?d? si? za {0} ms.
@@ -678,8 +598,6 @@ Czuje si? jak: {0}
 Temperatura: {0}
 Pr?dko?? wiatru: {0}
 Kierunek wiatru: {0}
-Aktywuje obs?ug? 255 kolor?w dla Rozpuszczania.
-Aktywuje obs?ug? prawdziwych kolor?w dla funkcji Dissolve.
 Naci?nij dowolny klawisz, aby wr?ci?.
 Nie mo?na utworzy? folderu poczty {0}: {1}
 Tworzy katalog w bie??cym katalogu roboczym
@@ -692,22 +610,11 @@ Hashe s? zniekszta?cone.
 Hashe nie pasuj?.
 Hashe pasuj?.
 Zmienia nazw? folderu
-Ta sekcja zawiera wszystkie og?lne ustawienia j?dra, g??wnie dotycz?ce jego obs?ugi.
-Ta sekcja zmienia zachowanie sondy sprz?towej.
-Ta sekcja przedstawia ustawienia logowania. Wyloguj si? ze swojego konta, aby zmiany zacz??y obowi?zywa?.
-Ta sekcja zawiera list? ustawie? pow?oki.
-W tej sekcji wymieniono ustawienia sieciowe, takie jak pow?oka FTP, ustawienia polece? zwi?zanych z sieci? oraz ustawienia zdalnego debugowania.
-Ta sekcja zawiera list? wszystkich wygaszaczy ekranu i ich dost?pnych ustawie?.
-Znajduj? si? tutaj ustawienia, kt?re nie pasuj? do odpowiednich sekcji.
-Testuje mody, dostarczaj?c pliki mod?w
 Otwiera pow?ok? testow?
-W??cza tryb debugowania
-Monity o argumenty
 * Naci?nij dowolny klawisz, aby uruchomi? j?dro lub ESC, aby wyj??.
-Nie uda?o si? uruchomi? „{0}”: {1}
+Nie uda?o si? uruchomi? �{0}�: {1}
 Poka? podgl?d wiadomo?ci e-mail
 Wy?wietlaj?c wiadomo?ci e-mail, poka? podgl?d tre?ci.
-Kolory niestandardowe ...
 Kolor wej?ciowy
 Kolor licencji
 Ci?g?y kolor b??du j?dra
@@ -721,15 +628,13 @@ Kolor b??du
 Styl podpowiedzi FTP
 Styl monit?w pocztowych
 Styl monitu SFTP
-Aktywuje obs?ug? 255 kolor?w dla BouncingBlock.
-Aktywuje obs?ug? prawdziwego koloru dla BouncingBlock.
 Pr?buj? uzyska? dost?p do nieprawid?owej ?cie?ki.
 Czy?ci plik tekstowy
 Wychodzi z edytora tekstu
 Zapytanie o znak w okre?lonym wierszu lub we wszystkich wierszach
 Sprawdzanie dost?pno?ci aktualizacji jest wy??czone, poniewa? u?ywasz wersji rozwojowej.
 W??cza lub wy??cza funkcj? automatycznego zapisywania w edytorze tekstu.
-Je?li automatyczne zapisywanie jest w??czone, plik tekstowy b?dzie zapisywany co „n” sekund.
+Je?li automatyczne zapisywanie jest w??czone, plik tekstowy b?dzie zapisywany co �n� sekund.
 W??cz automatyczne zapisywanie w edytorze tekstu
 Interwa? automatycznego zapisywania w edytorze tekstu
 Zapisuje plik
@@ -738,440 +643,365 @@ Rejestruje zdalny czat debugowania, aby dziennik debugowania.
 Op??nienie w milisekundach
 Ile milisekund trzeba czeka? przed wykonaniem nast?pnego zapisu?
 Umo?liwia korzystanie z serwera FTP SSH
-Brak pomocy dla polecenia „{0}”.
-Nieprawidłowa sekwencja VT dla koloru RGB.
+Brak pomocy dla polecenia �{0}�.
+Nieprawid?owa sekwencja VT dla koloru RGB.
 Kolor paska sekund
 Pasek koloru minut
 Pasek koloru godzin
 Kolor informacji
-Kleszcze, aby zmienić kolor
-Aktywuje obsługę 255 kolorów dla ProgressClock.
-Aktywuje prawdziwe wsparcie kolorów dla ProgressClock.
-Jeśli włączona jest cykliczna zmiana kolorów, ile zaznaczeń przed zmianą kolorów w ProgressClock? 1 tik = 0,5 sekundy
-ProgressClock wybierze losowe kolory, jeśli jest włączony. W przeciwnym razie użyj kolorów z konfiguracji.
+Kleszcze, aby zmieni? kolor
+Je?li w??czona jest cykliczna zmiana kolor?w, ile zaznacze? przed zmian? kolor?w w ProgressClock? 1 tik = 0,5 sekundy
+ProgressClock wybierze losowe kolory, je?li jest w??czony. W przeciwnym razie u?yj kolor?w z konfiguracji.
 Tworzy nowy motyw
-Tworzenie nowego motywu „{0}”.
-Zapisz motyw w bieżącym katalogu
+Tworzenie nowego motywu �{0}�.
+Zapisz motyw w bie??cym katalogu
 Zapisz motyw w innym katalogu...
-Wybierz kolor za pomocą klawiszy "<-" i "->". Naciśnij ENTER, aby wyjść. Naciśnij „i”, aby ręcznie wstawić numer koloru.
-Wybierz kolor za pomocą klawiszy "<-" i "->". Użyj strzałek w górę i strzałek w dół, aby wybrać między zakresami kolorów. Naciśnij ENTER, aby wyjść. Naciśnij „i”, aby ręcznie wstawić numer koloru.
-Witamy w jądrze! - Wersja {0}
-Kolor ostrzeżenia
+Wybierz kolor za pomoc? klawiszy "<-" i "->". Naci?nij ENTER, aby wyj??. Naci?nij �i�, aby r?cznie wstawi? numer koloru.
+Wybierz kolor za pomoc? klawiszy "<-" i "->". U?yj strza?ek w g?r? i strza?ek w d??, aby wybra? mi?dzy zakresami kolor?w. Naci?nij ENTER, aby wyj??. Naci?nij �i�, aby r?cznie wstawi? numer koloru.
+Witamy w j?drze! - Wersja {0}
+Kolor ostrze?enia
 Kolor opcji
-Wprowadź numer koloru od 0 do 255:
-Użyj "hwinfo", aby uzyskać rozszerzone informacje o sprzęcie.
-Drukuje informacje o sprzęcie
-Informacje o procesorze:
+Wprowad? numer koloru od 0 do 255:
+U?yj "hwinfo", aby uzyska? rozszerzone informacje o sprz?cie.
+Drukuje informacje o sprz?cie
 Nazwa procesora:
-Szybkość procesora:
 Bity procesora:
-Wersja procesora:
-Topologia procesora:
-Typ procesora:
-Kamień milowy procesora:
-Procesor BogoMips:
-Rozmiar pamięci podręcznej L2 procesora:
-Rozmiar pamięci podręcznej L3 procesora:
-Cechy procesora:
-Informacje o dysku:
-Nazwa dysku:
-Model napędu:
-Dostawca Dysku:
-Prędkość jazdy:
-Rozmiar dysku:
-Numer seryjny napędu:
-Identyfikator dysku:
-Liczba partycji dysku:
-Identyfikator partycji:
-System plików partycji:
+System plik?w partycji:
 Rozmiar partycji:
-Użyta partycja:
-Informacje o pamięci RAM:
-Bez pamięci RAM:
-Całkowita pamięć RAM:
-Używana pamięć RAM:
-Informacje o GPU:
-Nazwa GPU:
-Sterownik GPU:
-Wersja GPU:
-GPU: Co najmniej jedna karta graficzna nie została przebadana. Mimo to pokazuję informacje...
->> Witamy! Po raz pierwszy wchodzisz do zdalnego debugowania i czatu. Użyj "/register <nazwa>", aby się zarejestrować.
-Urządzenie już istnieje.
-Nie ma takiego urządzenia.
-Ustawia nazwę użytkownika urządzenia
-Jesteś już zarejestrowany.
-Cześć, {0}!
-Wyświetla zawartość pliku do konsoli
+GPU: Co najmniej jedna karta graficzna nie zosta?a przebadana. Mimo to pokazuj? informacje...
+>> Witamy! Po raz pierwszy wchodzisz do zdalnego debugowania i czatu. U?yj "/register <nazwa>", aby si? zarejestrowa?.
+Urz?dzenie ju? istnieje.
+Nie ma takiego urz?dzenia.
+Ustawia nazw? u?ytkownika urz?dzenia
+Jeste? ju? zarejestrowany.
+Cze??, {0}!
+Wy?wietla zawarto?? pliku do konsoli
 Lub wpisz "listcities" do tego polecenia.
-Wpis już istnieje.
-Owija wyjście konsoli
-Polecenia nie można zawijać. Te polecenia można zawijać:
-Wyodrębnia archiwum ZIP
+Wpis ju? istnieje.
+Owija wyj?cie konsoli
+Polecenia nie mo?na zawija?. Te polecenia mo?na zawija?:
+Wyodr?bnia archiwum ZIP
 Tworzy archiwum ZIP
 Zbudowany w {0}
-Błąd podczas pobierania danych debugowania
-Wystąpił błąd podczas pobierania danych debugowania. Sprawdź swoje łącze internetowe.
-Nie udało się sfinalizować modu {0}: {1}
-Wyświetla listę wszystkich zwolnionych zdarzeń
+B??d podczas pobierania danych debugowania
+Wyst?pi? b??d podczas pobierania danych debugowania. Sprawd? swoje ??cze internetowe.
+Nie uda?o si? sfinalizowa? modu {0}: {1}
+Wy?wietla list? wszystkich zwolnionych zdarze?
 Aktualny katalog
-Ustawia bieżący katalog powłoki. Napisz bezwzględną ścieżkę do dowolnego istniejącego katalogu.
-Zawijaj listę wyjść
-Zawija wyniki listy, jeśli wydaje się zbyt długa dla bieżącej geometrii konsoli.
-Świst!
-{0} wysłał Ci wiadomość ping.
-Zapisz motyw w bieżącym katalogu jako...
+Ustawia bie??cy katalog pow?oki. Napisz bezwzgl?dn? ?cie?k? do dowolnego istniej?cego katalogu.
+Zawijaj list? wyj??
+Zawija wyniki listy, je?li wydaje si? zbyt d?uga dla bie??cej geometrii konsoli.
+?wist!
+{0} wys?a? Ci wiadomo?? ping.
+Zapisz motyw w bie??cym katalogu jako...
 Zapisz motyw w innym katalogu jako...
-Podaj nazwę motywu:
-Użytkownik {0} został dodany do listy „{1}”.
-Użytkownik {0} został usunięty z listy „{1}”.
-Nieprawidłowy tryb {0}
-Użytkownik już istnieje
-Załaduj motyw z...
-Załaduj motyw z gotowych motywów...
-Określ nazwę pliku motywu bez rozszerzenia .json:
+Podaj nazw? motywu:
+U?ytkownik {0} zosta? dodany do listy �{1}�.
+U?ytkownik {0} zosta? usuni?ty z listy �{1}�.
+Nieprawid?owy tryb {0}
+Za?aduj motyw z gotowych motyw?w...
+Okre?l nazw? pliku motywu bez rozszerzenia .json:
 Otwiera archiwum ZIP
-Wychodzi z powłoki ZIP
-Wyświetla wszystkie pliki w archiwum
-Rozpakowuje plik do określonego katalogu lub bieżącego katalogu
+Wychodzi z pow?oki ZIP
+Wy?wietla wszystkie pliki w archiwum
+Rozpakowuje plik do okre?lonego katalogu lub bie??cego katalogu
 Zmienia katalog archiwum
-Nie znaleziono podanego polecenia powłoki ZIP.
+Nie znaleziono podanego polecenia pow?oki ZIP.
 Katalog {0} nie istnieje
 Katalog archiwum {0} nie istnieje
 Maksymalna liczba pozycji
-Ile pozycji jest oświetlonych przed ściemnianiem?
-Aktywuje obsługę 255 kolorów dla jaśniejszego.
-Aktywuje obsługę prawdziwych kolorów dla Lighter.
-Kolor wpisu na liście
-Kolor wartości listy
-Łączy się z serwerem SSH w celu wykonania polecenia.
-Ta sekcja zawiera listę ustawień wygaszacza ekranu dla
-Nieprawidłowy specyfikator koloru. Upewnij się, że jest w prawidłowym formacie, co oznacza liczbę od 0 do 255, jeśli używasz 255 kolorów lub sekwencję VT, jeśli używasz True Color w następujący sposób:
-Błąd w powłoce testowej: {0}
-Ustawia zmienną na wartość w skrypcie
-Monit o zgłoszenie błędu.
-Dziękujemy za zgłoszenie nam mandatu! Wybierz, jaki rodzaj prośby masz.
+Ile pozycji jest o?wietlonych przed ?ciemnianiem?
+Kolor wpisu na li?cie
+Kolor warto?ci listy
+??czy si? z serwerem SSH w celu wykonania polecenia.
+Nieprawid?owy specyfikator koloru. Upewnij si?, ?e jest w prawid?owym formacie, co oznacza liczb? od 0 do 255, je?li u?ywasz 255 kolor?w lub sekwencj? VT, je?li u?ywasz True Color w nast?puj?cy spos?b:
+B??d w pow?oce testowej: {0}
+Ustawia zmienn? na warto?? w skrypcie
+Monit o zg?oszenie b??du.
+Dzi?kujemy za zg?oszenie nam mandatu! Wybierz, jaki rodzaj pro?by masz.
 Problem
-Prośba o funkcję
+Pro?ba o funkcj?
 Pytanie
-Musisz określić funkcję.
-Zadaj pytanie, zanotuj swój pomysł lub zgłoś problem.
-Musisz napisać swoją prośbę.
-Wystąpił błąd w powłoce FTP:
-Nieznany błąd powłoki FTP:
-Wystąpił błąd w powłoce SFTP:
-Nieznany błąd powłoki SFTP:
-Pokaż baner SSH
-Pokazuje baner serwera SSH przy połączeniu.
-Jak chcesz się uwierzytelnić?
+Musisz okre?li? funkcj?.
+Zadaj pytanie, zanotuj sw?j pomys? lub zg?o? problem.
+Musisz napisa? swoj? pro?b?.
+Wyst?pi? b??d w pow?oce FTP:
+Nieznany b??d pow?oki FTP:
+Wyst?pi? b??d w pow?oce SFTP:
+Nieznany b??d pow?oki SFTP:
+Poka? baner SSH
+Pokazuje baner serwera SSH przy po??czeniu.
+Jak chcesz si? uwierzytelni??
 Plik klucza prywatnego
-Hasło
-Wprowadź hasło dla klucza {0}:
-Wprowadź lokalizację klucza prywatnego dla {0}. Napisz "q", aby zakończyć dodawanie kluczy:
-Zneutralizował nieistniejącą ścieżkę.
+Has?o
+Wprowad? has?o dla klucza {0}:
+Zneutralizowa? nieistniej?c? ?cie?k?.
 Plik klucza {0} nie istnieje.
-Błąd podczas próby dodania klucza prywatnego:
-Naciśnij "t", aby przełączyć na tryb 255 kolorów.
-Naciśnij "t", aby przejść do trybu True Color.
-Ta sekcja pozwala wybrać rodzaj koloru, który chcesz zmienić.
-Wygląda na to, że nie masz żadnego użytkownika poza rootem. To jest złe. Podpowiemy Ci, jak go stworzyć.
-Wpisz swoją nazwę użytkownika.
-Musisz wpisać swoją nazwę użytkownika.
-Wpisz swoje hasło.
-Musisz wpisać swoje hasło.
+B??d podczas pr?by dodania klucza prywatnego:
+Naci?nij "t", aby prze??czy? na tryb 255 kolor?w.
+Naci?nij "t", aby przej?? do trybu True Color.
+Wygl?da na to, ?e nie masz ?adnego u?ytkownika poza rootem. To jest z?e. Podpowiemy Ci, jak go stworzy?.
+Wpisz swoj? nazw? u?ytkownika.
+Musisz wpisa? swoj? nazw? u?ytkownika.
+Wpisz swoje has?o.
+Musisz wpisa? swoje has?o.
 Wybierz typ konta.
-Administrator: Ten typ konta ma największą moc w jądrze, umożliwiając korzystanie z programów do zarządzania systemem.
-Normalny użytkownik: Ten typ konta jest nieco bardziej ograniczony niż administratorzy.
-Gratulacje! Założyłeś nowe konto! Aby to zakończyć, zaloguj się jako nowe konto.
-Więcej informacji można znaleźć w instrukcji wygaszacza ekranu lub w kodzie źródłowym.
-mod: Nie wykryto modów.
-Polecenia ogólne:
-Polecenia modów:
-Polecenia aliasów:
+Administrator: Ten typ konta ma najwi?ksz? moc w j?drze, umo?liwiaj?c korzystanie z program?w do zarz?dzania systemem.
+Normalny u?ytkownik: Ten typ konta jest nieco bardziej ograniczony ni? administratorzy.
+Gratulacje! Za?o?y?e? nowe konto! Aby to zako?czy?, zaloguj si? jako nowe konto.
+mod: Nie wykryto mod?w.
+Polecenia og?lne:
+Polecenia mod?w:
+Polecenia alias?w:
 tryb konserwacji
 Katalogi wyszukiwania
-Grupa ścieżek oddzielonych dwukropkiem. Działa tak samo jak PATH. Napisz pełną ścieżkę do folderu lub nazwę folderu. Kiedy skończysz, napisz „q”. Wpisz znak minus obok ścieżki, aby usunąć istniejący katalog.
-Brak poleceń modów.
-Brak poleceń aliasów.
-Wartość koloru jest poza zakresem 0-255.
+Grupa ?cie?ek oddzielonych dwukropkiem. Dzia?a tak samo jak PATH. Napisz pe?n? ?cie?k? do folderu lub nazw? folderu. Kiedy sko?czysz, napisz �q�. Wpisz znak minus obok ?cie?ki, aby usun?? istniej?cy katalog.
+Brak polece? mod?w.
+Brak polece? alias?w.
+Warto?? koloru jest poza zakresem 0-255.
 Nie znaleziono polecenia do owijania.
-Pyta o słowo w określonym wierszu lub we wszystkich wierszach
+Pyta o s?owo w okre?lonym wierszu lub we wszystkich wierszach
 Pobrano {0} z {1}.
-Przesłano {0} z {1}.
-Wypisuje ciąg do konsoli przy użyciu typu koloru i druku liniowego
-Drukuje ciąg do konsoli przy użyciu koloru i druku liniowego z obsługą formatu
-Wyświetla ciąg do debugera
-Wyświetla ciąg do debugera z obsługą formatu format
-Testuje funkcję błędu jądra
-Testuje funkcję błędu jądra z obsługą formatów
-Testy tłumaczące ciąg znaków, który istnieje w zasobach, na określony język
-Wyświetla ciąg do konsoli i analizuje znalezione symbole zastępcze
-Testuje funkcję wyrażeń regularnych
-Szyfruje ciąg za pomocą
+Przes?ano {0} z {1}.
+Wypisuje ci?g do konsoli przy u?yciu typu koloru i druku liniowego
+Drukuje ci?g do konsoli przy u?yciu koloru i druku liniowego z obs?ug? formatu
+Wy?wietla ci?g do debugera
+Wy?wietla ci?g do debugera z obs?ug? formatu format
+Testuje funkcj? b??du j?dra
+Testuje funkcj? b??du j?dra z obs?ug? format?w
+Testy t?umacz?ce ci?g znak?w, kt?ry istnieje w zasobach, na okre?lony j?zyk
+Wy?wietla ci?g do konsoli i analizuje znalezione symbole zast?pcze
+Testuje funkcj? wyra?e? regularnych
 Uruchamia wszystkie mody
 Zatrzymuje wszystkie mody
-Włącza lub wyłącza debugowanie
-Włącza lub wyłącza zdalne debugowanie
-Testuje sekwencję VT dla 255 kolorów
-Testuje sekwencję VT pod kątem prawdziwego koloru
-Wysyła powiadomienie w celu przetestowania odbiornika
-Testuje drukowanie daty przy użyciu różnych kalendarzy
-Wyświetla listę wszystkich obsługiwanych stron kodowych
-Jakie zmienne kompilatora są włączone w aplikacji?
-Testy podnoszące konkretne wydarzenie
-Testy sondujące sprzęt
-Testuje odśmiecacz
-Wychodzi z testowej powłoki i uruchamia jądro
-Wychodzi z testowej powłoki i wyłącza jądro
-Zapisuje bieżący katalog do pliku konfiguracyjnego jądra
-Testuje program zapisujący listy z ciągiem i tablicą ciągów
-Testuje program zapisujący listy z tablicą liczb całkowitych i całkowitych
-Testuje program zapisujący listy za pomocą tablicy char i char
-Normalna lista ciągów:
-Lista ciągów tablicy:
-Normalna lista liczb całkowitych:
-Lista liczb całkowitych tablicy:
-Normalna lista znaków:
-Lista znaków tablicowych:
-Włącz RPC
+W??cza lub wy??cza debugowanie
+W??cza lub wy??cza zdalne debugowanie
+Testuje sekwencj? VT dla 255 kolor?w
+Testuje sekwencj? VT pod k?tem prawdziwego koloru
+Wysy?a powiadomienie w celu przetestowania odbiornika
+Testuje drukowanie daty przy u?yciu r??nych kalendarzy
+Wy?wietla list? wszystkich obs?ugiwanych stron kodowych
+Jakie zmienne kompilatora s? w??czone w aplikacji?
+Testy podnosz?ce konkretne wydarzenie
+Testy sonduj?ce sprz?t
+Testuje od?miecacz
+Wychodzi z testowej pow?oki i uruchamia j?dro
+Wychodzi z testowej pow?oki i wy??cza j?dro
+Zapisuje bie??cy katalog do pliku konfiguracyjnego j?dra
+Testuje program zapisuj?cy listy z ci?giem i tablic? ci?g?w
+Testuje program zapisuj?cy listy z tablic? liczb ca?kowitych i ca?kowitych
+Testuje program zapisuj?cy listy za pomoc? tablicy char i char
+Normalna lista ci?g?w:
+Lista ci?g?w tablicy:
+Normalna lista liczb ca?kowitych:
+Lista liczb ca?kowitych tablicy:
+Normalna lista znak?w:
+Lista znak?w tablicowych:
+W??cz RPC
 Port RPC
-Czy włączyć RPC.
-Napisz port RPC. Musi być liczbowy i nie może być już używany. W przeciwnym razie RPC nie otworzy portu.
-Nie uruchamiam RPC, ponieważ jest wyłączone.
+Czy w??czy? RPC.
+Napisz port RPC. Musi by? liczbowy i nie mo?e by? ju? u?ywany. W przeciwnym razie RPC nie otworzy portu.
+Nie uruchamiam RPC, poniewa? jest wy??czone.
 Lista wspieranych kultur
-Wyszukuje określony ciąg w dostarczonym pliku za pomocą wyrażeń regularnych
-Sprawdź, czy możesz nacisnąć klawisz na czas
-Użytkownik nie dostarczył żadnych danych w odpowiednim czasie.
-Nieprawidłowa trudność
-Postać nie wciśnięta na czas.
-Nacisnąłeś właściwy znak!
-Nacisnąłeś zły znak.
-Naciśnij ESC, aby wyjść.
+Wyszukuje okre?lony ci?g w dostarczonym pliku za pomoc? wyra?e? regularnych
+Sprawd?, czy mo?esz nacisn?? klawisz na czas
+U?ytkownik nie dostarczy? ?adnych danych w odpowiednim czasie.
+Posta? nie wci?ni?ta na czas.
+Nacisn??e? w?a?ciwy znak!
+Nacisn??e? z?y znak.
+Naci?nij ESC, aby wyj??.
 Pobiera informacje o dacie i godzinie
 Milisekundy:
 Sekundy:
 Minuty:
 Godziny:
 Dni:
-Miesięcy:
+Miesi?cy:
 Rok:
-Dzień Roku:
-Dzień tygodnia:
-Dwójkowy:
+Dzie? Roku:
+Dzie? tygodnia:
+Dw?jkowy:
 Czas lokalny:
 Czas uniwersalny:
 Czas uniksowy:
-Nie udało się przeanalizować informacji o dacie dla
-Upewnij się, że format jest poprawny.
+Nie uda?o si? przeanalizowa? informacji o dacie dla
+Upewnij si?, ?e format jest poprawny.
 Data:
 Czas:
-Ustawia uprawnienia do plików. Jest to obsługiwane tylko na serwerach FTP z systemem Unix.
+Ustawia uprawnienia do plik?w. Jest to obs?ugiwane tylko na serwerach FTP z systemem Unix.
 Ustawia typ dla tej sesji
-Musisz połączyć się z serwerem przed wykonaniem operacji na systemie plików.
-Nie udało się ustawić uprawnień {0} na {1}.
-Uprawnienia zostały pomyślnie ustawione dla pliku
+Musisz po??czy? si? z serwerem przed wykonaniem operacji na systemie plik?w.
+Nie uda?o si? ustawi? uprawnie? {0} na {1}.
+Uprawnienia zosta?y pomy?lnie ustawione dla pliku
 Typ danych ustawiony na ASCII!
 Typ danych ustawiony na Binarny!
-Nieprawidłowy typ danych.
-Pamiętaj, że większość plików nie zostanie poprawnie pobrana lub przesłana w tym trybie, dlatego w większości sytuacji zalecamy korzystanie z trybu binarnego.
-Próba wysłania polecenia RPC, gdy RPC się nie uruchomiło.
-Opóźnienie zanikania w milisekundach
+Nieprawid?owy typ danych.
+Pami?taj, ?e wi?kszo?? plik?w nie zostanie poprawnie pobrana lub przes?ana w tym trybie, dlatego w wi?kszo?ci sytuacji zalecamy korzystanie z trybu binarnego.
+Pr?ba wys?ania polecenia RPC, gdy RPC si? nie uruchomi?o.
+Op??nienie zanikania w milisekundach
 Maks. kroki zanikania
-Ile milisekund trzeba czekać, zanim tekst zniknie?
-Ile kroków zanikania do zrobienia?
-Pełna sonda
-Jeśli prawda, sprawdza cały sprzęt; w przeciwnym razie będzie tylko sondować potrzebny sprzęt.
-Nie udało się usunąć wygaszacza ekranu {0} z konfiguracji.
+Ile milisekund trzeba czeka?, zanim tekst zniknie?
+Ile krok?w zanikania do zrobienia?
+Pe?na sonda
+Je?li prawda, sprawdza ca?y sprz?t; w przeciwnym razie b?dzie tylko sondowa? potrzebny sprz?t.
+Nie uda?o si? usun?? wygaszacza ekranu {0} z konfiguracji.
 Pobiera niestandardowe ustawienia wygaszacza
 Ustawia niestandardowe ustawienia wygaszacza
-Ustawienia ustawione pomyślnie dla wygaszacza ekranu
-Nie udało się ustawić ustawienia wygaszacza ekranu
-Ta sekcja pozwala zarządzać tworzeniem hasła roota.
-Otwiera powłokę RSS, aby czytać kanały
-Wychodzi z powłoki RSS i wraca do jądra
-Zmienia link do kanału
-Wyświetla wszystkie kanały
-Czyta kanał w przeglądarce internetowej
-Nie znaleziono określonego polecenia powłoki RSS.
-Nieprawidłowy kanał RSS2.
-Nieprawidłowy kanał RSS1.
-Nieprawidłowy kanał Atom.
-Wprowadź adres URL kanału RSS:
-Nieprawidłowy typ kanału RSS.
-Nieznany błąd powłoki:
+Ustawienia ustawione pomy?lnie dla wygaszacza ekranu
+Nie uda?o si? ustawi? ustawienia wygaszacza ekranu
+Otwiera pow?ok? RSS, aby czyta? kana?y
+Wychodzi z pow?oki RSS i wraca do j?dra
+Zmienia link do kana?u
+Wy?wietla wszystkie kana?y
+Czyta kana? w przegl?darce internetowej
+Nie znaleziono okre?lonego polecenia pow?oki RSS.
+Nieprawid?owy kana? RSS2.
+Nieprawid?owy kana? RSS1.
+Nieprawid?owy kana? Atom.
+Wprowad? adres URL kana?u RSS:
+Nieprawid?owy typ kana?u RSS.
+Nieznany b??d pow?oki:
 Pobiera informacje o artykule
-Numer artykułu nie może być większy niż dostępne artykuły.
-Tytuł:
-Połączyć:
+Numer artyku?u nie mo?e by? wi?kszy ni? dost?pne artyku?y.
+Tytu?:
+Po??czy?:
 Pobiera informacje o kanale
 Opis:
 Rodzaj paszy:
-Liczba artykułów:
-Artykuł nie zawiera linku!
-Nie udało się utworzyć listy wpisów systemu plików dla katalogu
-Tryb sortowania systemu plików
-Kierunek sortowania systemu plików
-Kontroluje sposób sortowania plików.
-Kontroluje kierunek sortowania systemu plików, niezależnie od tego, czy jest rosnące, czy malejące.
-Rosnąco
-Kolejność malejąca
-Pełne imię i nazwisko
-Rozmiar pliku
-Czas utworzenia
-Czas ostatniego zapisu
-Czas ostatniego dostępu
-Napisz ponownie, opóźnienie w milisekundach
-Ile milisekund czekać przed ponownym napisaniem tekstu?
-Napisz dowolny tekst, który chcesz pokazać. Im dłużej tym lepiej.
-Minimalna prędkość zapisu w WPM
-Maksymalna prędkość zapisu w WPM
-Prawdopodobieństwo literówki w procentach
-Nie udało się zapisać bieżącego katalogu: {0}
+Liczba artyku??w:
+Artyku? nie zawiera linku!
+Nie uda?o si? utworzy? listy wpis?w systemu plik?w dla katalogu
+Tryb sortowania systemu plik?w
+Kierunek sortowania systemu plik?w
+Kontroluje spos?b sortowania plik?w.
+Kontroluje kierunek sortowania systemu plik?w, niezale?nie od tego, czy jest rosn?ce, czy malej?ce.
+Napisz ponownie, op??nienie w milisekundach
+Ile milisekund czeka? przed ponownym napisaniem tekstu?
+Napisz dowolny tekst, kt?ry chcesz pokaza?. Im d?u?ej tym lepiej.
+Minimalna pr?dko?? zapisu w WPM
+Maksymalna pr?dko?? zapisu w WPM
+Prawdopodobie?stwo liter?wki w procentach
+Nie uda?o si? zapisa? bie??cego katalogu: {0}
 Chusteczki do zmiany kierunku
-Aktywuje obsługę 255 kolorów dla funkcji Wipe.
-Aktywuje obsługę prawdziwych kolorów dla funkcji Wipe.
-Ile wycierań należy wykonać przed losową zmianą kierunku?
-Etap ukończony za
-Inicjalizacja wewnętrzna zakończona za
-Nie znaleziono pliku odniesienia {0}. Ten mod może nie działać poprawnie bez tego pliku.
+Ile wyciera? nale?y wykona? przed losow? zmian? kierunku?
+Etap uko?czony za
+Inicjalizacja wewn?trzna zako?czona za
+Nie znaleziono pliku odniesienia {0}. Ten mod mo?e nie dzia?a? poprawnie bez tego pliku.
 Tryb startowy
-Pobiera informacje o modzie
 Nazwa polecenia:
 Definicja polecenia:
 Typ polecenia:
 Surowe polecenie?
 Wersja modyfikacji:
 Nie znaleziono modu {0}.
-Kultura
-Który wariant {0} jest używany do zmiany nazw miesięcy, kalendarza itp.?
-Edytor tekstu nie otworzył jeszcze strumienia plików.
-Ciąg zastąpiony.
-Jedna lub obie liczby nie są numeryczne.
-Słowo usunięte.
-Postać usunięta.
-Ustawienia systemu plików...
-Ta sekcja zawiera listę ustawień systemu plików.
+Edytor tekstu nie otworzy? jeszcze strumienia plik?w.
+Ci?g zast?piony.
+Jedna lub obie liczby nie s? numeryczne.
+S?owo usuni?te.
+Posta? usuni?ta.
 Witamy w Ustawieniach!
-Błąd podczas wykonywania polecenia SSH
-Błąd w powłoce SSH
+B??d podczas wykonywania polecenia SSH
+B??d w pow?oce SSH
 - Informacje o aplikacji
-Aktywuje obsługę 255 kolorów dla BounceingText.
-Aktywuje obsługę prawdziwych kolorów dla BounceingText.
-Testuje program piszący słownik z tablicą ciągów i ciągów znaków
-Testuje program piszący słownik za pomocą tablicy char i char
-Testuje program piszący słownik z tablicą liczb całkowitych i liczb całkowitych
-Słownik normalnych ciągów:
-Słownik ciągów tablicowych:
-Normalny słownik liczb całkowitych:
-Słownik liczb całkowitych tablicy:
-Normalny słownik znaków:
-Słownik tablicowych znaków:
-Witamy w testowej powłoce!
-Pokaż postęp operacji na systemie plików
-Pokazuje, jaki plik jest przetwarzany podczas operacji na systemie plików
-gdzie będzie HardwareType
-Albo typ sprzętu {0} nie jest sondowany, albo jest nieprawidłowy.
-Typ sprzętu {0} nie został jeszcze zbadany. Jeśli jesteś pewien, że jest sondowany, uruchom ponownie jądro z włączonym debugowaniem.
+Testuje program pisz?cy s?ownik z tablic? ci?g?w i ci?g?w znak?w
+Testuje program pisz?cy s?ownik za pomoc? tablicy char i char
+Testuje program pisz?cy s?ownik z tablic? liczb ca?kowitych i liczb ca?kowitych
+S?ownik normalnych ci?g?w:
+S?ownik ci?g?w tablicowych:
+Normalny s?ownik liczb ca?kowitych:
+S?ownik liczb ca?kowitych tablicy:
+Normalny s?ownik znak?w:
+S?ownik tablicowych znak?w:
+Witamy w testowej pow?oce!
+Poka? post?p operacji na systemie plik?w
+Pokazuje, jaki plik jest przetwarzany podczas operacji na systemie plik?w
+gdzie b?dzie HardwareType
+Albo typ sprz?tu {0} nie jest sondowany, albo jest nieprawid?owy.
+Typ sprz?tu {0} nie zosta? jeszcze zbadany. Je?li jeste? pewien, ?e jest sondowany, uruchom ponownie j?dro z w??czonym debugowaniem.
 Partycje nie przeanalizowane do listy.
-Tryb hakera
-Jeśli włączone, zielona konsola będzie włączona.
 Drukuje separator
-Wyświetla separator z obsługą formatu
-Drukuje separator z obsługą kolorów
-Drukuje separator z obsługą kolorów i formatów
-Zawsze wyśrodkowany
-Aktywuje obsługę 255 kolorów dla markizy.
-Aktywuje obsługę prawdziwego koloru dla Marquee.
-Napisz dowolny tekst, który chcesz pokazać.
-Czy tekst wyświetlany na markizie jest zawsze wyśrodkowany.
-'q', aby zakończyć.
-Nie znaleziono argumentu {0} do wstrzyknięcia.
-Nie znaleziono argumentu wiersza poleceń {0}.
-Czyści wszystkie ustawienia
-Wygaszacz ekranu napotkał błąd podczas wyświetlania: {0}. Naciśnij dowolny klawisz aby zamknąć.
-Zapowiedź...
-Oto jak będzie wyglądał Twój motyw:
+Wy?wietla separator z obs?ug? formatu
+Drukuje separator z obs?ug? kolor?w
+Drukuje separator z obs?ug? kolor?w i format?w
+Zawsze wy?rodkowany
+Napisz dowolny tekst, kt?ry chcesz pokaza?.
+Czy tekst wy?wietlany na markizie jest zawsze wy?rodkowany.
+Nie znaleziono argumentu {0} do wstrzykni?cia.
+Nie znaleziono argumentu wiersza polece? {0}.
+Wygaszacz ekranu napotka? b??d podczas wy?wietlania: {0}. Naci?nij dowolny klawisz aby zamkn??.
+Zapowied?...
+Oto jak b?dzie wygl?da? Tw?j motyw:
 Polecenia do owijania:
-Mod {0} ma nieprawidłowe polecenie. Analiza modów nie powiodła się. Sprawdź kod źródłowy.
-Części modów:
-Użyj interfejsu API konsoli
-Czy użyć konsoli API do czyszczenia tekstu, czy użyć szybszej sekwencji czyszczenia wierszy VT. Jeśli False, Marquee użyje odpowiedniej sekwencji VT. W przeciwnym razie użyje prawdopodobnie wolniejszego interfejsu API konsoli.
-Otwieranie adresu URL... Upewnij się, że postępujesz zgodnie z instrukcjami wyświetlanymi na ekranie.
-W modzie nie ma części.
+Mod {0} ma nieprawid?owe polecenie. Analiza mod?w nie powiod?a si?. Sprawd? kod ?r?d?owy.
+Cz??ci mod?w:
+U?yj interfejsu API konsoli
+Czy u?y? konsoli API do czyszczenia tekstu, czy u?y? szybszej sekwencji czyszczenia wierszy VT. Je?li False, Marquee u?yje odpowiedniej sekwencji VT. W przeciwnym razie u?yje prawdopodobnie wolniejszego interfejsu API konsoli.
+Otwieranie adresu URL... Upewnij si?, ?e post?pujesz zgodnie z instrukcjami wy?wietlanymi na ekranie.
+W modzie nie ma cz??ci.
 Nazwa modu:
 Nazwa pliku modyfikacji:
-Ścieżka pliku modów:
-Wersja części:
-Minimalna liczba wymaganych argumentów:
+?cie?ka pliku mod?w:
+Wersja cz??ci:
+Minimalna liczba wymaganych argument?w:
 Wymagane argumenty?
 Polecenie do pakowania?
-Ustawiasz zmienną powłoki?
-Nie można uruchomić w trybie konserwacji?
-Przestarzały?
+Ustawiasz zmienn? pow?oki?
+Nie mo?na uruchomi? w trybie konserwacji?
+Przestarza?y?
 Styl podpowiedzi RSS
 Styl monitu edycji tekstu
-Styl monitu powłoki zip
+Styl monitu pow?oki zip
 Folder jest pusty.
-Pomyślnie sondowano {0}.
-Szczegółowa sonda
-Spraw, aby komunikaty dotyczące sondowania sprzętu były nieco rozmowne.
+Pomy?lnie sondowano {0}.
+Szczeg??owa sonda
+Spraw, aby komunikaty dotycz?ce sondowania sprz?tu by?y nieco rozmowne.
 > Brak informacji o ramkach.
-Musisz napisać swoje imię.
-Upiększa plik JSON
+Musisz napisa? swoje imi?.
+Upi?ksza plik JSON
 Nie znaleziono kategorii konfiguracji {0}.
 Nie znaleziono wpisu konfiguracji {0}.
-Użyj uderzeń na minutę
-Czy użyć jednostki uderzeń na minutę do zapisania następnego koloru.
-Opóźnienie w uderzeniach na minutę
+U?yj uderze? na minut?
+Czy u?y? jednostki uderze? na minut? do zapisania nast?pnego koloru.
+Op??nienie w uderzeniach na minut?
 Pokonaj kolor
-Ile uderzeń na minutę należy odczekać przed kolejnym zapisem?
-Aktywuje obsługę 255 kolorów dla BeatFader.
-Aktywuje prawdziwą obsługę kolorów dla BeatFader.
-BeatFader wybierze losowe kolory, jeśli jest włączony. W przeciwnym razie użyj kolorów z konfiguracji.
+Ile uderze? na minut? nale?y odczeka? przed kolejnym zapisem?
+BeatFader wybierze losowe kolory, je?li jest w??czony. W przeciwnym razie u?yj kolor?w z konfiguracji.
 Niestandardowy baner startowy
-Jeśli zostanie określony, wyświetli dostosowany baner startowy z obsługą symboli zastępczych. Możesz użyć tego wyrażenia dla wersji jądra:
-Pobiera zdalny folder do katalogu lokalnego za pomocą pliku binarnego lub tekstowego
-Wysyła lokalny folder do zdalnego katalogu za pomocą pliku binarnego lub tekstowego
-Wprowadź folder do pobrania do katalogu lokalnego.
+Pobiera zdalny folder do katalogu lokalnego za pomoc? pliku binarnego lub tekstowego
+Wysy?a lokalny folder do zdalnego katalogu za pomoc? pliku binarnego lub tekstowego
 Pobieranie folderu {0}...
 Pobrany folder {0}.
-Pobieranie nie powiodło się dla folderu {0}.
-Przesyłanie folderu {0}...
-Przesłany folder {0}
-Wprowadź folder, który chcesz przesłać do katalogu zdalnego.
-Naciśnij "c", aby napisać kod w pełnym kolorze.
-Wprowadź kod koloru, który spełnia te formaty:
+Pobieranie nie powiod?o si? dla folderu {0}.
+Przesy?anie folderu {0}...
+Przes?any folder {0}
+Naci?nij "c", aby napisa? kod w pe?nym kolorze.
+Wprowad? kod koloru, kt?ry spe?nia te formaty:
 Minimalizuje plik JSON
-Nowe opóźnienie ekranu w milisekundach
+Nowe op??nienie ekranu w milisekundach
 Liczba kolumn
-Próg wypełnienia linii
-Prawdopodobieństwo ograniczenia wypełnienia linii w procentach
-Typ wypełnienia linii
-Ile milisekund trzeba czekać, zanim ponownie napiszesz tekst na nowym ekranie?
+Pr?g wype?nienia linii
+Prawdopodobie?stwo ograniczenia wype?nienia linii w procentach
+Typ wype?nienia linii
+Ile milisekund trzeba czeka?, zanim ponownie napiszesz tekst na nowym ekranie?
 Kolumny tekstu do wydrukowania.
-Ile znaków napisać przed uruchomieniem „wypełniania linii”?
-Możliwość, że wzór wypełnienia linii zostanie wydrukowany we wszystkich wersalikach w procentach
-Typ wzoru wypełnienia linii
-Wspólny wzór
-Kompletny wzór
-Losowy wzór
-Odpowiedź może nie być zerem.
-Odpowiedź nie może przekraczać wskazanych wpisów.
+Ile znak?w napisa? przed uruchomieniem �wype?niania linii�?
+Mo?liwo??, ?e wz?r wype?nienia linii zostanie wydrukowany we wszystkich wersalikach w procentach
+Typ wzoru wype?nienia linii
+Odpowied? mo?e nie by? zerem.
+Odpowied? nie mo?e przekracza? wskazanych wpis?w.
 Zapisz zmiany...
-Ten wygaszacz ekranu obsługuje tekst pisany w pliku. Podaj pełną ścieżkę pliku do tego pola, a wygaszacz ekranu odpowiednio wyświetli zawartość pliku.
-Zarządzaj swoimi modami
-Zarządzanie modami jest wyłączone w trybie awaryjnym.
-Nieprawidłowe polecenie {0}. Sprawdź użycie poniżej:
-Nie znaleziono modu lub plik zawiera nieprawidłowe znaki.
-Prawdopodobieństwo chybienia w procentach
-Włącz debugowanie wygaszacza ekranu
-Włącza debugowanie wygaszaczy ekranu. Należy pamiętać, że może to szybko zapełnić dziennik debugowania i nieco spowolnić wygaszacz ekranu, w zależności od używanego wygaszacza ekranu. Działa tylko wtedy, gdy debugowanie jądra jest włączone do celów diagnostycznych.
+Zarz?dzaj swoimi modami
+Zarz?dzanie modami jest wy??czone w trybie awaryjnym.
+Nieprawid?owe polecenie {0}. Sprawd? u?ycie poni?ej:
+Nie znaleziono modu lub plik zawiera nieprawid?owe znaki.
+Prawdopodobie?stwo chybienia w procentach
+W??cz debugowanie wygaszacza ekranu
+W??cza debugowanie wygaszaczy ekranu. Nale?y pami?ta?, ?e mo?e to szybko zape?ni? dziennik debugowania i nieco spowolni? wygaszacz ekranu, w zale?no?ci od u?ywanego wygaszacza ekranu. Dzia?a tylko wtedy, gdy debugowanie j?dra jest w??czone do cel?w diagnostycznych.
 Brak sieci podczas pobierania danych debugowania
-Sprawdź połączenie internetowe i spróbuj ponownie.
-Strona podręcznika {0} jest nieprawidłowa.
-Rozważ wypełnienie tej strony podręcznika.
-Naciśnij dowolny klawisz, aby przeczytać stronę podręcznika...
-Ta strona podręcznika wymaga pracy dla:
-Nie znaleziono strony podręcznika {0}.
+Sprawd? po??czenie internetowe i spr?buj ponownie.
+Strona podr?cznika {0} jest nieprawid?owa.
+Rozwa? wype?nienie tej strony podr?cznika.
+Naci?nij dowolny klawisz, aby przeczyta? stron? podr?cznika...
+Ta strona podr?cznika wymaga pracy dla:
+Nie znaleziono strony podr?cznika {0}.
 Instrukcja mod
-Aktywuje obsługę 255 kolorów dla FlashColor.
-Aktywuje prawdziwe wsparcie kolorów dla FlashColor.

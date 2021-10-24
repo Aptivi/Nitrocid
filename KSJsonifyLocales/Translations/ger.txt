@@ -1,15 +1,6 @@
 Verfügbare Befehle: {0}
-Schreibbefehl: 
 Die Befehlsinjektion wurde abgebrochen.
-Trennen Sie Boot-Argumente durch Kommas ohne Leerzeichen, z. B. "motd, gpuprobe"
-Trennen Sie Befehle in 'cmdinject' mit Doppelpunkten mit Leerzeichen, z. B. 'cmdinject setthemes Hacker: beep 1024 0,5'
-Beachten Sie, dass das Debug-Argument den Kernel nicht vollständig abdeckt.
-bargs: Das angeforderte Argument {0} wurde nicht gefunden.
-bargs: Nicht behebbarer Fehler im Argument:
-Verfügbare Argumente: {0}
-Argumente ('Hilfe' für Hilfe):
 Injizierte Argumente werden für den nächsten Neustart geplant.
-Argument Injektion wurde abgebrochen.
 Fehler beim Analysieren von echten Befehlszeilenargumenten: {0}
 Ungültige Farbvorlage {0}
 hwprobe: Ihre Hardware wird geprüft. Bitte warten ...
@@ -82,7 +73,6 @@ Passwort für {0}:
 Verbunden mit {0}
 Fehler beim Versuch, eine Verbindung zu {0} herzustellen: {1}
 Stack Trace: {2}
-Geben Sie einen FTP-Server ein.
 Das lokale Verzeichnis {0} existiert nicht.
 Geben Sie ein lokales Verzeichnis ein. ".." zurück zu gehen.
 Das Verzeichnis {0} wurde nicht gefunden.
@@ -97,16 +87,12 @@ Sie haben noch keine Verbindung zu einem Server hergestellt
 Download der Datei {0} ...
 Heruntergeladene Datei {0}.
 Sie müssen eine Verbindung zum Server herstellen, bevor Sie die Übertragung durchführen.
-Geben Sie eine Datei zum Herunterladen in das lokale Verzeichnis ein.
 {0} KB | Geändert in: {1}
 Sie sollten eine Verbindung zum Server herstellen, bevor Sie alle Remote-Dateien auflisten.
 Upload der Datei {0} ...
 Hochgeladene Datei {0}
-hoch
-(Inner:
 Ruft das aktuelle lokale Verzeichnis ab
 Ruft das aktuelle ferne Verzeichnis ab
-Verbindet sich mit einem FTP-Server (er muss mit "ftp: //" oder "ftps: //" beginnen)
 Ändert das lokale Verzeichnis zum Herunterladen oder Hochladen von
 Ändert das Remote-Verzeichnis zum Herunterladen von oder Hochladen zu
 Löscht die entfernte Datei vom Server
@@ -147,7 +133,6 @@ Konfiguration neu geladen Möglicherweise müssen Sie den Kernel neu starten, da
 Eine oder mehrere Farben sind ungültig.
 Farben sind nicht verfügbar. Aktivieren Sie die farbige Shell in der Kernel-Konfiguration.
 Bildschirmschoner {0} nicht gefunden.
-[ Kernel-Einstellungen (läuft auf {0}) ]
 Kernel-Version:
 Debug-Modus:
 Farbige Shell:
@@ -155,8 +140,6 @@ Argumente beim Booten:
 Hilfebefehl vereinfacht:
 MOTD beim Login:
 Uhrzeit / Datum an der Ecke:
-[ Hardwareeinstellungen ]
-[ Benutzereinstellungen ]
 Aktueller Benutzername:
 Aktueller Hostname:
 Verfügbare Benutzernamen:
@@ -183,31 +166,14 @@ Systeminformationen
 * Sie können mehrere Befehle verwenden, indem Sie den Doppelpunkt zwischen den Befehlen verwenden.
 Verwendung:
 Die Argumente lauten {0}
-Initialisiert die FTP-Shell.
-Freunde von
 wo customsaver wird
-Sperrt den Bildschirm mit dem Passwort.
-Meldet dich vom Benutzer ab.
-Holen Sie sich alle Netzwerkinformationen
-Startet den simulierten Computer neu.
-Lädt die Konfiguration neu, die vom Endbenutzer oder vom Tool geändert wurde.
-Farben erfordern keinen Neustart, aber die meisten Einstellungen erfordern einen Neustart.
-zeigt Ihnen einen ausgewählten Bildschirmschoner und schützt gleichzeitig Ihren Bildschirm vor Burnouts.
-Zeigt das Datum und die Uhrzeit an.
-Zeigt Datum und Uhrzeit in Zonen an.
-Fährt deinen simulierten Computer herunter.
-Zeigt Systeminformationen und -versionen an.
 In der Shell ist ein Fehler aufgetreten.
 Sie sind nicht berechtigt, {0} zu verwenden
 Shell-Nachricht: Der angeforderte Befehl {0} darf nicht im Wartungsmodus ausgeführt werden.
 Shell-Nachricht: Der angeforderte Befehl {0} wurde nicht gefunden. Siehe 'Hilfe' für verfügbare Befehle.
 Shell-Nachricht: Der Befehl {0} darf beim Anmelden nicht ausgeführt werden.
 Fehler beim Ausführen des Befehls.
-datetime: Zeit ist {0}
-datetime: Heute ist {0}
-datetime: Zeitzone: {0}
 - Zeit von {0}: {1}
-um den Bildschirm zu löschen.
 läuft auf {0}
 Sie sind nicht berechtigt, Informationen für {0} abzurufen.
 Dieser Befehl ist veraltet und wird in einer zukünftigen Version entfernt.
@@ -233,8 +199,6 @@ Ungültige Sprache
 >> Rahmen, Dateien, Zeilen und Spalten <<
 > Frame {0}: Datei: {1} | Zeile: {2} | Spalte: {3}
 > Beim Versuch, Frame-Informationen abzurufen, ist ein Fehler aufgetreten. {0}: {1}
-Lädt Änderungen neu.
-Mods neu geladen.
 Willkommen im Kernel!
 Erfolgreich als <Benutzer> angemeldet
 MOTD / MAL ist gültig, aber der Nachrichtentyp ist ungültig. 
@@ -267,27 +231,19 @@ Adapter {0} unterstützt IPv6 nicht. Auch weiterhin...
 Adapter {0} unterstützt IPv4 nicht. Test fehlgeschlagen.
 Anscheinend haben Sie die Entwicklungsversion des Kernels ausgeführt. Sie sehen zwar die Aspekte, diese werden jedoch häufig aktualisiert und führen möglicherweise zu Fehlern. Es wird empfohlen, auf der stabilen Version zu bleiben.
 Die von Ihnen ausgewählte Sprache enthält zwei Varianten. Wähle eins:
-1. Transliteriert
-2. Übersetzt
-Wählen Sie Ihre Wahl:
 Ungültige Wahl. Versuch es noch einmal.
 Sie sind nicht berechtigt, das aktuelle Verzeichnis auf {0} zu setzen: {1}
 Der angegebene Pfad ist zu lang.
-CPU: WARNUNG: SSE2 wird für zukünftige Entwicklungs-Commits benötigt.
 Speicherauszugsinformationssammler stürzte ab, als versucht wurde, Informationen zu {0} abzurufen: {1}
-Fehler beim Abrufen des Kompilierungsdatums von Assembly {0}: {1}
 Fehler beim Versuch, MOTD / MAL einzustellen: {0}
 Fehler beim Abrufen von MOTD / MAL: {0}
 Fehler beim Versuch, den Bildschirmschoner zu starten, aufgrund eines ungültigen Vorgangs.
 Nachladen im abgesicherten Modus nicht erlaubt.
 Parsing-Mods im abgesicherten Modus nicht erlaubt.
-Listet alle angeschlossenen Debugging-Geräte auf.
 Fehler beim Versuch, den Analysemodus einzustellen. Überprüfen Sie den Wert und versuchen Sie es erneut. Wenn dies korrekt ist, lesen Sie den Stack-Trace, wenn das Kernel-Debugging aktiviert ist.
 Der Pfad ist weder eine Datei noch ein Verzeichnis.
 Erstellt eine weitere Kopie einer Datei unter einem anderen Verzeichnis oder Namen.
 Verschiebt eine Datei in ein anderes Verzeichnis
-Kopieren von Dateien in ein anderes Verzeichnis oder einen anderen Namen
-Dateien in ein anderes Verzeichnis verschieben
 Übereinstimmung {0} ({1}): {2}
 Übereinstimmung {0}: {1}
 Zeitaufwand: {0} Millisekunden
@@ -302,9 +258,6 @@ Antworten Sie auf Kommentare, die Sie lieben oder hassen.
 Wenn jemand diesen Kommentar zu deinem Video abgegeben hat:
 Wie würden Sie antworten?
 Ungültige Auswahl. Zum nächsten Kommentar gehen ...
-Du hast gerade den Liebeskommentar gemeldet!
-Sie haben gerade auf den Hasskommentar geantwortet!
-Groß! Der Kommentar von {0} wird dafür entfernt.
 Groß! {0} freut sich über Ihren Dank.
 Perfekt geschrieben!
 Falsch geschrieben.
@@ -318,7 +271,6 @@ Geben Sie das Passwort für {0} ein:
 SSH getrennt.
 Codepage kann nicht festgelegt werden. Die Sprache wird möglicherweise nicht richtig angezeigt.
 Debugging nicht aktiviert.
-{0} ist nicht mehr auf den Standard-Bildschirmschoner eingestellt.
 Vielen Dank! Das ist interessant.
 Jeder wird dein Video dafür unterstützen.
 Ich habe dir die spezielle Datei in deiner E-Mail für dein nächstes Video gegeben.
@@ -364,7 +316,6 @@ Das Verzeichnis {0} ist bereits vorhanden.
 Fehler beim Versuch, eine Verbindung zu {0} herzustellen: Verbindungszeitlimit oder Verbindungsverlust
 Rechner zur Berechnung von Ausdrücken.
 Fehler bei der Berechnung.
-Sieht so aus, als hätten Sie die Nearing-Release-Version ausgeführt. Die Verwendung ist jetzt sicherer, es wird jedoch empfohlen, die stabile Version beizubehalten.
 Systemupdate
 Nach Systemupdates suchen ...
 Neue Version gefunden: 
@@ -372,7 +323,6 @@ Sie können es herunterladen unter:
 Keine aktuellen Benachrichtigungen
 Sucht nach einer bestimmten Zeichenfolge in der bereitgestellten Datei
 Berechnet die Dateisummen im angegebenen Verzeichnis.
-Listet alle E-Mails des jeweiligen Benutzers auf.
 Geben Sie den Benutzernamen oder die E-Mail-Adresse ein:
 Passwort eingeben:
 Fehler beim Herstellen einer Verbindung zu {0}: {1}
@@ -382,7 +332,6 @@ Beendet die IMAP-Shell
 Liste der Befehle
 Lädt Nachrichten herunter und listet sie auf
 Öffnet eine Nachricht
-Die Seite darf nicht negativ oder null sein.
 Seite ist kein numerischer Wert.
 Die Nachrichtennummer darf nicht negativ oder null sein.
 Die Nachrichtennummer ist kein numerischer Wert.
@@ -392,7 +341,6 @@ Die Nachrichtennummer ist kein numerischer Wert.
 Die angegebene Nachricht wurde nicht gefunden.
 Remote-Debug konnte nicht gestartet werden: {0}
 Profile vorbereiten ... Es kann einige Minuten dauern ...
-Hostname, Benutzername, Datentyp, Codierung, Verschlüsselung, Protokolle
 Fehler beim Ausführen des Skripts: {0}
 Schreibt Text in die Konsole
 Trifft Benutzerauswahl
@@ -417,7 +365,6 @@ Kurzwahl ist leer. Stellen Sie eine Verbindung zu einem Server her, um ihm eine 
 Kurzwahl existiert nicht. Stellen Sie eine Verbindung zu einem Server her, um ihm eine Adresse hinzuzufügen.
 Geben Sie die Adresse und den Port des IMAP-Servers ein (<Adresse> oder <Adresse>: [Port]):
 Geben Sie die Adresse und den Port des SMTP-Servers ein (<Adresse> oder <Adresse>: [Port]):
-Bittet Sie, die erforderlichen Felder auszufüllen, um eine Nachricht an eine Adresse zu senden
 Sendet eine Nachricht an eine Adresse
 Geben Sie die E-Mail-Adresse des Empfängers ein:
 Geben Sie den Betreff ein:
@@ -445,8 +392,6 @@ Löscht ein Wort oder eine Phrase aus der Zeilennummer
 Löscht ein Zeichen aus der Zeichennummer in der angegebenen Zeile
 Zeile entfernt.
 Die angegebene Zeilennummer {0} ist keine gültige Nummer.
-Erforderliche Argumente werden nicht an den Befehl {0} übergeben.
-Fehler beim Ausführen des Befehls: {0}
 Laufen im abgesicherten Modus. Überspringphase ...
 >> Remote Debug und Chat: Version
 >> Ihre Adresse ist {0}.
@@ -464,19 +409,12 @@ Blockieren Sie ein Debug-Gerät anhand der IP-Adresse
 Fehler beim Laden der Einstellungen
 Beim Laden der Einstellungen ist ein Fehler aufgetreten. Möglicherweise müssen Sie die Einstellungsdatei überprüfen.
 Abschnitt auswählen:
-Allgemeine Einstellungen...
-Hardwareeinstellungen ...
-Login-Einstellungen ...
-Shell-Einstellungen ...
-Netzwerkeinstellungen...
-Verschiedene Einstellungen...
 Einstellungen speichern
 Ausgang
 Die angegebene Option {0} ist ungültig.
 Die Antwort muss numerisch sein.
 Beim Booten nach Argumenten fragen
 Wartungsmodus-Trigger
-Root-Passwort ändern ...
 Suchen Sie beim Start nach Updates
 Leise Sonde
 MOTD beim Anmelden anzeigen
@@ -500,9 +438,7 @@ Ungültiger Abschnitt eingegeben. Bitte geh zurück.
 Geh zurück...
 Aktivieren
 Deaktivieren
-Ungültige Schlüsselnummer eingegeben. Bitte geh zurück.
 Schreiben Sie das einzustellende Root-Passwort. Mach dir keine Sorgen; Das Passwort wird als Sterne angezeigt.
-Aktivieren Sie "Root-Passwort ändern", um diese Option zu verwenden. Bitte geh zurück.
 Root-Passwort ändern?
 Root-Passwort festlegen ...
 Schreiben Sie einen Remote-Debugger-Port. Es muss numerisch sein und darf nicht bereits verwendet werden. Andernfalls kann der Remote-Debugger den Port nicht öffnen.
@@ -513,7 +449,6 @@ Die Antwort darf nicht negativ sein.
 Die Antwort ist ungültig. Stellen Sie sicher, dass die Antwort für Konfigurationseinträge, für die Zahlen als Antworten erforderlich sind, numerisch ist.
 Die Variable {0} wurde in keinem der Module gefunden.
 Ändert die Kernelkonfiguration
-Bildschirmschoner-Einstellungen ...
 Aktiviere 255 Farben
 Möchten Sie in Verbindung bleiben?
 Ungültige Wahl. Vorausgesetzt nein ...
@@ -549,7 +484,6 @@ Datei oder Verzeichnis konnte nicht verschoben werden: {0}
 Datei kann nicht gefunden werden, die der Zeichenfolge "{0}" entspricht: {1}
 Download für Datei {0} fehlgeschlagen.
 Remote-Dateien konnten nicht aufgelistet werden: {0}
-Geben Sie eine Datei oder einen Ordner zum Entfernen ein. Sie müssen über Administratorrechte für Ihr Konto verfügen, um es entfernen zu können.
 Möchten Sie {0} <j / n> wirklich löschen?
 {0} löschen ...
 {0} wurde auf dem Server nicht gefunden.
@@ -560,7 +494,6 @@ Verschieben von {0} nach {1} ...
 Erfolgreich umgezogen
 Verschiebt Datei oder Verzeichnis in eine andere Datei oder ein anderes Verzeichnis. Sie können damit auch Dateien umbenennen.
 {0} konnte nicht nach {1} verschoben werden.
-Geben Sie einen Quell- und einen Zielpfad ein.
 Kopieren von {0} nach {1} ...
 Erfolgreich kopiert
 Kopiert eine Datei oder ein Verzeichnis in eine andere Datei oder ein anderes Verzeichnis.
@@ -578,9 +511,6 @@ Luftfeuchtigkeit: {0}
 Sie können Ihren eigenen API-Schlüssel unter https://home.openweathermap.org/api_keys erhalten.
 Die Liste der Städte mit ihren IDs finden Sie jederzeit unter http://bulk.openweathermap.org/sample/city.list.json.gz.
 Bevorzugte Einheit für die Temperatur
-Kelvin
-Imperial (Fahrenheit)
-Metrisch (Celsius)
 Richtet den Kernel so ein, dass Sie beim Booten zur Argumentation aufgefordert werden.
 Löst den Wartungsmodus aus. Dadurch werden mehrere Konten deaktiviert.
 Bei jedem Start wird nach Updates gesucht.
@@ -595,10 +525,6 @@ Vereinfachter Hilfebefehl für alle Shells
 Gibt an, ob der FTP-Benutzername protokolliert werden soll.
 Gibt an, ob die FTP-IP-Adresse protokolliert werden soll.
 Wählen Sie das erste Profil nur beim Verbinden.
-Aktiviert die 255-Farbunterstützung für ColorMix.
-Aktiviert die 255-Farbunterstützung für Disco.
-Aktiviert die 255-Farbunterstützung für GlitterColor.
-Aktiviert die 255-Farbunterstützung für Linien.
 Uhrzeit und Datum werden in der oberen rechten Ecke des Bildschirms angezeigt
 Wenn aktiviert, analysiert der Kernel den gesamten Ordner auf seine Gesamtgröße. Andernfalls wird nur die Oberfläche analysiert.
 Aktiviert Eyecandy beim Start
@@ -608,7 +534,6 @@ Wählen Sie Ihre bevorzugte Einheit für die Temperatur (dies gilt nur für den 
 Mod {0} gestoppt
 {0} v {1} gestoppt
 Mod {0} hat keinen Teilenamen. Mod-Analyse fehlgeschlagen. Überprüfen Sie den Quellcode.
-Mod {0} hat den Befehl nicht. Mod-Analyse fehlgeschlagen. Überprüfen Sie den Quellcode.
 Sie müssen den Debug-Modus aktivieren, bevor Sie das Debug-Protokoll löschen können.
 {0} Neue Nachrichten sind im Posteingang eingetroffen.
 Öffnen Sie "mail", um sie zu sehen.
@@ -645,10 +570,6 @@ Rote Farbe überschritten. Es war {0}.
 Grüne Farbe überschritten. Es war {0}.
 Blauer Farbpegel überschritten. Es war {0}.
 Aktivieren Sie echte Farben
-Aktiviert die Echtfarbenunterstützung für ColorMix.
-Aktiviert die Echtfarbenunterstützung für Disco.
-Aktiviert die Echtfarbenunterstützung für GlitterColor.
-Aktiviert die Echtfarbenunterstützung für Linien.
 {0} konnte nicht entsperrt werden.
 {0} ist bereits blockiert.
 {0} kann jetzt nicht am Remote-Debug teilnehmen.
@@ -659,7 +580,6 @@ Geben Sie Dateipfade zu Anhängen ein. Drücken Sie zur Bestätigung ENTER auf e
 Öffnet eine verschlüsselte Nachricht
 Schreiben Sie das Passwort für die Schlüssel-ID {0}
 Sendet eine verschlüsselte Nachricht an eine Adresse
-Fordert Sie auf, die erforderlichen Felder auszufüllen, um eine verschlüsselte Nachricht an eine Adresse zu senden
 Herunterladen von {0} ...
 Zeige den Fortschrittsbalken beim Herunterladen oder Hochladen vom Befehl "get" oder "put"
 Wenn dies der Fall ist, wird beim Herunterladen oder Hochladen "get" oder "put" der Fortschrittsbalken angezeigt.
@@ -678,8 +598,6 @@ Fühlt sich an wie: {0}
 Temperatur: {0}
 Windgeschwindigkeit: {0}
 Windrichtung: {0}
-Aktiviert die 255-Farbunterstützung für Auflösen.
-Aktiviert die True Color-Unterstützung für Dissolve.
 Drücken Sie eine beliebige Taste, um zurückzukehren.
 E-Mail-Ordner {0} kann nicht erstellt werden: {1}
 Erstellt ein Verzeichnis im aktuellen Arbeitsverzeichnis
@@ -692,22 +610,11 @@ Hashes sind missgebildet.
 Hashes passen nicht zusammen.
 Hashes passen zusammen.
 Benennt einen Ordner um
-In diesem Abschnitt werden alle allgemeinen Kerneleinstellungen aufgelistet, hauptsächlich zur Wartung des Kernels.
-Dieser Abschnitt ändert das Verhalten der Hardware-Sonde.
-Dieser Abschnitt enthält die Anmeldeeinstellungen. Melden Sie sich von Ihrem Konto ab, damit die Änderungen wirksam werden.
-Dieser Abschnitt listet die Shell-Einstellungen auf.
-In diesem Abschnitt werden die Netzwerkeinstellungen wie die FTP-Shell, die netzwerkbezogenen Befehlseinstellungen und die Remote-Debug-Einstellungen aufgelistet.
-In diesem Abschnitt werden alle Bildschirmschoner und ihre verfügbaren Einstellungen aufgelistet.
-Hier landen Einstellungen, die nicht in die entsprechenden Abschnitte passen.
-Testet Mods durch Bereitstellung von Mod-Dateien
 Öffnet eine Testhülle
-Aktiviert den Debug-Modus
-Fordert zur Eingabe von Argumenten auf
 * Drücken Sie eine beliebige Taste, um den Kernel zu starten, oder ESC, um den Vorgang zu beenden.
 Fehler beim Starten von "{0}": {1}
 Vorschau der E-Mail-Nachricht anzeigen
 Zeigen Sie beim Auflisten von E-Mail-Nachrichten die Vorschau des Körpers an.
-Benutzerdefinierte Farben...
 Eingabefarbe
 Lizenzfarbe
 Kontinuierliche Kernelfehlerfarbe
@@ -721,8 +628,6 @@ Fehlerfarbe
 FTP-Eingabeaufforderungsstil
 Mail Prompt Style
 SFTP-Eingabeaufforderungsstil
-Aktiviert die 255-Farbunterstützung für BouncingBlock.
-Aktiviert die Echtfarbenunterstützung für BouncingBlock.
 Versuch, auf einen ungültigen Pfad zuzugreifen.
 Löscht die Textdatei
 Beendet den Texteditor
@@ -745,8 +650,6 @@ Farbe des Minutenbalkens
 Farbe der Stundenleiste
 Farbe der Informationen
 Zecken, um die Farbe zu ändern
-Aktiviert die Unterstützung von 255 Farben für ProgressClock.
-Aktiviert die True-Color-Unterstützung für ProgressClock.
 Wenn der Farbwechsel aktiviert ist, wie viele Ticks, bevor die Farben in ProgressClock geändert werden? 1 Tick = 0,5 Sekunden
 ProgressClock wählt zufällige Farben aus, wenn es aktiviert ist. Verwenden Sie andernfalls Farben aus config.
 Macht ein neues Thema
@@ -761,39 +664,10 @@ Optionsfarbe
 Farbnummer von 0 bis 255 eingeben:
 Verwenden Sie "hwinfo" für erweiterte Informationen zur Hardware.
 Druckt Hardwareinformationen
-CPU-Informationen:
 Prozessorname:
-Prozessorgeschwindigkeit:
 Prozessorbits:
-Prozessordrehzahl:
-Prozessortopologie:
-Prozessortyp:
-Meilenstein des Prozessors:
-Prozessor BogoMips:
-Prozessor-L2-Cache-Größe:
-Cachegröße des Prozessors L3:
-Prozessoreigenschaften:
-HDD-Informationen:
-Laufwerksname:
-Antriebsmodell:
-Laufwerksanbieter:
-Fahrgeschwindigkeit:
-Laufwerksgröße:
-Laufwerksserie:
-Laufwerk-ID:
-Anzahl der Laufwerkspartitionen:
-Partitions-ID:
 Partitionsdateisystem:
 Partitionsgröße:
-Verwendete Partition:
-RAM-Informationen:
-RAM frei:
-RAM gesamt:
-Verwendeter Arbeitsspeicher:
-GPU-Informationen:
-GPU-Name:
-GPU-Treiber:
-GPU-Version:
 GPU: Eine oder mehrere Grafikkarten konnten nicht überprüft werden. Informationen werden trotzdem angezeigt...
 >> Willkommen! Dies ist das erste Mal, dass Sie Remote-Debugging und -Chat aufrufen. Verwenden Sie "/register <name>", um sich zu registrieren.
 Gerät ist bereits vorhanden.
@@ -825,8 +699,6 @@ Geben Sie den Themennamen an:
 Der Benutzer {0} wurde der Liste "{1}" hinzugefügt.
 Der Benutzer {0} wurde aus der Liste "{1}" entfernt.
 Ungültiger Modus {0}
-Benutzer existiert bereits
-Thema laden von...
 Theme aus vorgefertigten Themes laden...
 Geben Sie den Namen der Designdatei ohne die Erweiterung .json an:
 Öffnet ein ZIP-Archiv
@@ -839,12 +711,9 @@ Verzeichnis {0} existiert nicht
 Archivverzeichnis {0} existiert nicht
 Anzahl der maximalen Positionen
 Wie viele Positionen werden vor dem Dimmen beleuchtet?
-Aktiviert die Unterstützung von 255 Farben für Lighter.
-Aktiviert die True-Color-Unterstützung für Lighter.
 Farbe des Listeneintrags
 Listenwertfarbe
 Verbindet sich mit einem SSH-Server, um einen Befehl auszuführen.
-Dieser Abschnitt listet Bildschirmschonereinstellungen für
 Ungültiger Farbspezifizierer. Stellen Sie sicher, dass das richtige Format vorliegt, d. h. eine Zahl von 0-255 bei Verwendung von 255 Farben oder eine VT-Sequenz bei Verwendung von True Color wie folgt:
 Fehler in der Test-Shell: {0}
 Setzt eine Variable auf einen Wert in einem Skript
@@ -866,13 +735,11 @@ Wie möchten Sie sich authentifizieren?
 Datei mit privatem Schlüssel
 Passwort
 Geben Sie die Passphrase für den Schlüssel {0} ein:
-Geben Sie den Speicherort des privaten Schlüssels für {0} ein. Schreiben Sie "q", um das Hinzufügen von Schlüsseln abzuschließen:
 Neutralisiert einen nicht existierenden Pfad.
 Schlüsseldatei {0} existiert nicht.
 Fehler beim Hinzufügen des privaten Schlüssels:
 Drücken Sie "t", um in den 255-Farbmodus zu wechseln.
 Drücken Sie "t", um in den True Color-Modus zu wechseln.
-In diesem Abschnitt können Sie auswählen, welche Art von Farbe Sie ändern möchten.
 Es sieht so aus, als ob Sie außer root keinen Benutzer haben. Das ist schlecht. Wir zeigen Ihnen, wie Sie einen erstellen.
 Schreiben Sie Ihren Benutzernamen.
 Sie müssen Ihren Benutzernamen schreiben.
@@ -882,7 +749,6 @@ Kontotyp auswählen.
 Administrator: Dieser Kontotyp hat die meiste Macht im Kernel und ermöglicht Ihnen die Verwendung von Systemverwaltungsprogrammen.
 Normaler Benutzer: Dieser Kontotyp ist etwas eingeschränkter als Administratoren.
 Herzliche Glückwünsche! Sie haben ein neues Konto erstellt! Um dies abzuschließen, melden Sie sich als Ihr neues Konto an.
-Weitere Informationen finden Sie im Handbuch zum Bildschirmschoner oder im Quellcode.
 mod: Keine Mods erkannt.
 Allgemeine Befehle:
 Mod-Befehle:
@@ -906,7 +772,6 @@ Testet die Kernel-Fehlerfunktion mit Formatunterstützung
 Testet die Übersetzung einer in Ressourcen vorhandenen Zeichenfolge in eine bestimmte Sprache
 Gibt eine Zeichenfolge zur Konsole aus und analysiert die gefundenen Platzhalter
 Testet die Funktion für reguläre Ausdrücke
-Verschlüsselt eine Zeichenfolge mit
 Startet alle Mods
 Stoppt alle Mods
 Aktiviert oder deaktiviert die Fehlersuche
@@ -941,7 +806,6 @@ Listet unterstützte Kulturen auf
 Sucht nach der angegebenen Zeichenfolge in der bereitgestellten Datei mit regulären Ausdrücken
 Sehen Sie, ob Sie rechtzeitig eine Taste drücken können
 Der Benutzer hat keine rechtzeitige Eingabe gemacht.
-Ungültiger Schwierigkeitsgrad
 Zeichen nicht rechtzeitig gedrückt.
 Sie haben das richtige Zeichen gedrückt!
 Sie haben das falsche Zeichen gedrückt.
@@ -985,7 +849,6 @@ Ruft benutzerdefinierte Spareinstellungen ab
 Legt benutzerdefinierte Spareinstellungen fest
 Einstellungen für Bildschirmschoner erfolgreich eingestellt
 Einstellung für Bildschirmschoner fehlgeschlagen
-In diesem Abschnitt können Sie die Erstellung des Root-Passworts verwalten.
 Öffnet eine RSS-Shell zum Lesen der Feeds
 Beendet die RSS-Shell und kehrt zum Kernel zurück
 Ändert den Feed-Link
@@ -1012,13 +875,6 @@ Sortiermodus des Dateisystems
 Sortierrichtung des Dateisystems
 Steuert, wie die Dateien sortiert werden.
 Steuert die Richtung der Dateisystemsortierung, ob aufsteigend oder absteigend.
-Aufsteigende Reihenfolge
-Absteigende Reihenfolge
-Vollständiger Name
-Dateigröße
-Erstellungszeitpunkt
-Letzte Schreibzeit
-Letzte Zugriffszeit
 Schreibverzögerung in Millisekunden
 Wie viele Millisekunden müssen Sie warten, bevor Sie wieder Text schreiben?
 Schreiben Sie einen beliebigen Text, der angezeigt werden soll. Länger ist besser.
@@ -1027,35 +883,26 @@ Maximale Schreibgeschwindigkeit in WPM
 Tippfehlerwahrscheinlichkeit in Prozent
 Fehler beim Speichern des aktuellen Verzeichnisses: {0}
 Wischt zum Richtungswechsel
-Aktiviert die Unterstützung von 255 Farben für Wipe.
-Aktiviert die True-Color-Unterstützung für Wipe.
 Wie viele Wischvorgänge müssen durchgeführt werden, bevor die Richtung zufällig geändert wird?
 Etappe fertig in
 Interne Initialisierung abgeschlossen in
 Referenzierte Datei {0} nicht gefunden. Ohne diese Datei funktioniert dieser Mod möglicherweise nicht richtig.
 Startmodus
-Ruft Mod-Informationen ab
 Befehlsname:
 Befehlsdefinition:
 Befehlstyp:
 Strenger Befehl?
 Mod-Version:
 Mod {0} nicht gefunden.
-Kultur von
-Welche Variante von {0} wird verwendet, um die Monatsnamen, den Kalender usw. zu ändern?
 Der Texteditor hat noch keinen Dateistream geöffnet.
 Zeichenfolge ersetzt.
 Eine oder beide Zahlen sind nicht numerisch.
 Wort gelöscht.
 Zeichen gelöscht.
-Dateisystemeinstellungen...
-Dieser Abschnitt listet die Dateisystemeinstellungen auf.
 Willkommen bei den Einstellungen!
 Fehler beim Ausführen des SSH-Befehls
 Fehler in der SSH-Shell
 - App-Informationen
-Aktiviert die Unterstützung von 255 Farben für BouncingText.
-Aktiviert True Color-Unterstützung für BouncingText.
 Testet den Dictionary-Writer mit dem String und dem String-Array
 Testet den Dictionary-Writer mit dem char- und char-Array
 Testet den Wörterbuchschreiber mit dem Integer- und Integer-Array
@@ -1072,21 +919,15 @@ wo HardwareType sein wird
 Entweder wird der Hardwaretyp {0} nicht geprüft oder er ist ungültig.
 Der Hardwaretyp {0} wird noch nicht untersucht. Wenn Sie sicher sind, dass es sondiert wurde, starten Sie den Kernel mit aktiviertem Debugging neu.
 Partitionen nicht in die Liste geparst.
-Hacker-Modus
-Wenn aktiviert, wird die grüne Konsole aktiviert.
 Druckt ein Trennzeichen
 Druckt ein Trennzeichen mit Formatunterstützung
 Druckt ein Trennzeichen mit Farbunterstützung
 Druckt ein Trennzeichen mit Farb- und Formatunterstützung
 Immer zentriert
-Aktiviert die 255-Farben-Unterstützung für Marquee.
-Aktiviert True Color-Unterstützung für Marquee.
 Schreiben Sie einen beliebigen Text, der angezeigt werden soll.
 Ob der auf dem Laufschriftrahmen angezeigte Text immer zentriert ist.
-'q' zum Beenden.
 Argument {0} zum Einfügen nicht gefunden.
 Befehlszeilenargument {0} nicht gefunden.
-Löscht alle Einstellungen
 Beim Bildschirmschoner ist bei der Anzeige ein Fehler aufgetreten: {0}. Zum Verlassen eine beliebige Taste drücken.
 Vorschau...
 So sieht Ihr Theme aus:
@@ -1124,20 +965,15 @@ Ob die Einheit Beats Per Minute verwendet werden soll, um die nächste Farbe zu 
 Verzögerung in Schlägen pro Minute
 Beatfarbe
 Wie viele Schläge pro Minute muss man warten, bevor der nächste Schreibvorgang ausgeführt wird?
-Aktiviert die 255-Farben-Unterstützung für BeatFader.
-Aktiviert True Color-Unterstützung für BeatFader.
 BeatFader wählt zufällige Farben aus, wenn es aktiviert ist. Verwenden Sie andernfalls Farben aus config.
 Benutzerdefiniertes Startup-Banner
-Falls angegeben, wird ein benutzerdefiniertes Startbanner mit Platzhalterunterstützung angezeigt. Sie können diesen Ausdruck für die Kernel-Version verwenden:
 Lädt den Remote-Ordner mithilfe von Binär- oder Textdateien in das lokale Verzeichnis herunter
 Lädt den lokalen Ordner mit Binärdatei oder Text in das Remote-Verzeichnis hoch
-Geben Sie einen Ordner zum Herunterladen in das lokale Verzeichnis ein.
 Ordner {0} wird heruntergeladen...
 Heruntergeladener Ordner {0}.
 Download für Ordner {0} fehlgeschlagen.
 Ordner {0} wird hochgeladen...
 Hochgeladener Ordner {0}
-Geben Sie einen Ordner ein, der in das Remote-Verzeichnis hochgeladen werden soll.
 Drücken Sie "c", um den vollständigen Farbcode zu schreiben.
 Geben Sie einen Farbcode ein, der diese Formate erfüllt:
 Minimiert die JSON-Datei
@@ -1151,13 +987,9 @@ Die zu druckenden Textspalten.
 Wie viele Zeichen müssen geschrieben werden, bevor die "Zeilenfüllung" ausgelöst wird?
 Möglichkeit, dass das Linienfüllmuster in Großbuchstaben in Prozent gedruckt wird
 Linienfüllmustertyp
-Bekanntes Muster
-Komplettes Muster
-Zufälliges Muster
 Die Antwort darf nicht null sein.
 Die Antwort darf die angezeigten Einträge nicht überschreiten.
 Änderungen speichern...
-Dieser Bildschirmschoner unterstützt geschriebenen Text in einer Datei. Übergeben Sie den vollständigen Dateipfad an dieses Feld, und der Bildschirmschoner zeigt den Inhalt der Datei entsprechend an.
 Verwalten Sie Ihre Mods
 Die Mod-Verwaltung ist im abgesicherten Modus deaktiviert.
 Ungültiger Befehl {0}. Überprüfen Sie die Verwendung unten:
@@ -1173,5 +1005,3 @@ Drücken Sie eine beliebige Taste, um die Handbuchseite zu lesen...
 Diese Handbuchseite benötigt Arbeit für:
 Handbuchseite {0} nicht gefunden.
 Mod-Handbuch
-Aktiviert die Unterstützung von 255 Farben für FlashColor.
-Aktiviert die True-Color-Unterstützung für FlashColor.

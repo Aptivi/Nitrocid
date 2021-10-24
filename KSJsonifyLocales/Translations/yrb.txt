@@ -1,15 +1,6 @@
 Awọn pipaṣẹ to wa: {0}
-Kọ aṣẹ:
 Abẹrẹ aṣẹ ti paarẹ.
-Lọtọ awọn ariyanjiyan bata pẹlu aami idẹsẹ laisi awọn alafo, fun apẹẹrẹ, 'motd, gpuprobe'
-Awọn pipaṣẹ lọtọ lori 'cmdinject' pẹlu awọn oluṣafihan pẹlu awọn alafo, fun apẹẹrẹ, 'cmdinject setthemes Hacker: beep 1024 0.5'
-Akiyesi pe ariyanjiyan 'yokokoro' ko bo ekuro ni kikun.
-bargs: A ko ri ariyanjiyan {0} ti a beere fun.
-bargs: Aṣiṣe ti ko ṣee ṣe ni ariyanjiyan:
-Awọn ariyanjiyan to wa: {0}
-Awọn ariyanjiyan ('iranlọwọ' fun iranlọwọ):
 Awọn ariyanjiyan abẹrẹ yoo jẹ eto lati ṣiṣẹ ni atunbere atẹle.
-A ti fagile Ijiyan ariyanjiyan.
 Aṣiṣe lakoko sisọ awọn ariyanjiyan laini aṣẹ gidi: {0}
 Awoṣe awọ ti ko tọna {0}
 hwprobe: Ohun elo rẹ yoo ṣe iwadii. Jọwọ duro...
@@ -82,7 +73,6 @@ Orukọ olumulo fun {0}:
 Ti sopọ mọ {0}
 Aṣiṣe nigba igbiyanju lati sopọ si {0}: {1}
 Àtòjọ Àpapọ̀: {2}
-Tẹ olupin FTP kan sii.
 Itọsọna agbegbe {0} ko si.
 Tẹ itọsọna agbegbe kan sii. ".." lati pada sẹhin.
 A ko ri itọsọna {0}.
@@ -97,16 +87,12 @@ Iwọ ko ti sopọ si eyikeyi olupin sibẹsibẹ
 Faili gbigba lati ayelujara {0} ...
 Faili ti a gba wọle {0}.
 O gbọdọ sopọ si olupin ṣaaju ṣiṣe gbigbe.
-Tẹ faili kan lati ṣe igbasilẹ si itọsọna agbegbe.
 {0} KB | Ṣatunṣe ni: {1}
 O yẹ ki o sopọ si olupin ṣaaju kikojọ gbogbo awọn faili latọna jijin.
 Faili ti n ṣe ikojọpọ {0} ...
 Faili ti a kojọpọ {0}
-Tẹ faili sii lati gbe si itọsọna latọna jijin. po si <file>> <iwaju>
-(Inner:
 Ngba itọsọna agbegbe lọwọlọwọ
 Ngba itọsọna latọna jijin lọwọlọwọ
-Sopọ si olupin FTP kan (o gbọdọ bẹrẹ pẹlu “ftp: //” tabi “ftps: //”)
 Awọn ayipada itọsọna agbegbe lati ṣe igbasilẹ si tabi gbejade lati
 Awọn ayipada itọsọna latọna jijin lati ṣe igbasilẹ lati tabi gbe si
 Npa faili latọna jijin lati ọdọ olupin
@@ -147,7 +133,6 @@ Iṣeto ni atunto. O le nilo atunbere ekuro fun diẹ ninu awọn ayipada lati m
 Ọkan tabi diẹ ẹ sii ti awọn awọ ko wulo.
 Awọn awọ ko si. Tan ikarahun awọ ni atunto ekuro.
 Oluṣeto iboju {0} ko si.
-[Awọn eto ekuro (Nṣiṣẹ ni {0})]
 Ẹda ekuro:
 Ipo yokokoro:
 Ikarahun Awọ:
@@ -155,8 +140,6 @@ Awọn ariyanjiyan lori Bata:
 Pipe iranlọwọ iranlọwọ ni irọrun:
 MOTD lori Wiwọle:
 Aago/Ọjọ lori igun:
-[Awọn eto ohun elo]
-[Eto olumulo]
 Orukọ olumulo lọwọlọwọ:
 Orukọ agbalejo lọwọlọwọ:
 Awọn orukọ olumulo to wa:
@@ -183,31 +166,14 @@ Alaye eto
 * O le lo awọn pipaṣẹ lọpọlọpọ nipa lilo oluṣafihan laarin awọn aṣẹ.
 Lilo:
 nibiti awọn ariyanjiyan yoo wa {0}
-Bibẹrẹ ikarahun FTP.
-Awọn ọrẹ ti
 nibiti ibi ipamọ aṣa yoo wa
-Titii iboju rẹ pẹlu ọrọ igbaniwọle.
-Buwolu wọle lati ọdọ olumulo naa.
-Gba gbogbo alaye nẹtiwọọki
-Tun bẹrẹ kọnputa ti o ro.
-Ṣe atunto iṣeto ti o yipada nipasẹ olumulo ipari tabi nipasẹ ọpa.
-Awọn awọ ko nilo atunbere, ṣugbọn pupọ julọ awọn eto nilo ki o tun bẹrẹ.
-fihan ọ ni ipamọ iboju ti o yan, lakoko ti o daabobo iboju rẹ lati awọn ijona ina.
-Ṣe afihan ọjọ ati akoko.
-Ṣe afihan ọjọ ati akoko ni awọn agbegbe.
-Pa kọmputa rẹ ti o ro.
-Ṣe afihan alaye eto ati awọn ẹya.
 Aṣiṣe kan wa ninu ikarahun naa.
 O ko ni igbanilaaye lati lo {0}
 Ifiranṣẹ ikarahun: Aṣẹ ti a beere fun {0} ko gba laaye lati ṣiṣẹ ni ipo itọju.
 Ifiranṣẹ ikarahun: A ko rii aṣẹ ti a beere fun {0}. Wo 'iranlọwọ' fun awọn pipaṣẹ to wa.
 Ifiranṣẹ ikarahun: Aṣẹ {0} ko gba laaye lati ṣiṣẹ lori iwọle.
 Aṣiṣe gbiyanju lati ṣiṣẹ pipaṣẹ.
-akoko asiko: Aago ni {0}
-akoko asiko: Oni ni {0}
-akoko: Agbegbe Aago: {0}
 - Akoko ti {0}: {1}
-lati ko iboju kuro.
 Nṣiṣẹ ni {0}
 A ko fun ọ ni aṣẹ lati gba alaye fun {0}.
 Aṣẹ yii jẹ igba atijọ ati pe yoo yọkuro ni itusilẹ ọjọ iwaju.
@@ -233,8 +199,6 @@ Yipada ede
 >> Awọn fireemu, awọn faili, awọn laini, ati awọn ọwọn <<
 > Fireemu {0}: Faili: {1} | Ila: {2} | Iwe: {3}
 > Aṣiṣe kan wa nigbati o n gbiyanju lati gba alaye fireemu. {0}: {1}
-Reloads Mods.
-Mods tun gbejade.
 Kaabọ si ekuro!
 Wọle ni aṣeyọri bi <olumulo>
 MOTD/MAL wulo, ṣugbọn iru ifiranṣẹ ko wulo. A ro MOTD ...
@@ -267,27 +231,19 @@ Adaparọ {0} ko ṣe atilẹyin IPv6. Tesiwaju ...
 Adaparọ {0} ko ṣe atilẹyin IPv4. Iwadi kuna.
 O dabi pe o nṣiṣẹ ẹya idagbasoke ti ekuro. Lakoko ti o le rii awọn abala, o jẹ imudojuiwọn nigbagbogbo ati pe o le ṣafihan awọn idun. A ṣe iṣeduro pe ki o duro lori ẹya iduroṣinṣin.
 Ede ti o ti yan ni awọn iyatọ meji. Mu ọkan:
-1. Ti tumọ
-2. Itumọ
-Yan aṣayan rẹ:
 Aṣayan ti ko wulo. Gbiyanju lẹẹkansi.
 A ko fun ọ laṣẹ lati ṣeto itọsọna lọwọlọwọ si {0}: {1}
 Ona ti o ti sọ pe o ti gun ju
-Sipiyu: IKILO: SSE2 yoo nilo ni awọn iṣẹ idagbasoke ọjọ iwaju.
 Olùkó ìsọfúnni pàjáwìrì kọlu nígbà tí o ń gbìyànjú láti gba ìwífún nípa {0}: {1}
-Aṣiṣe lakoko igbiyanju lati gba ọjọ ikojọpọ {0}: {1}
 Aṣiṣe nigba igbiyanju lati ṣeto MOTD/MAL: {0}
 Aṣiṣe nigba igbiyanju lati gba MOTD/MAL: {0}
 Aṣiṣe nigba igbiyanju lati bẹrẹ ifipamọ iboju, nitori iṣẹ ṣiṣe ti ko wulo.
 A ko gba gbigba wọle ni ipo ailewu.
 Parsing mods ko gba laaye ni ipo ailewu.
-Ṣe atokọ gbogbo awọn ẹrọ n ṣatunṣe aṣiṣe.
 Aṣiṣe nigba igbiyanju lati ṣeto ipo itupalẹ. Ṣayẹwo iye naa ki o tun gbiyanju lẹẹkansi. Ti eyi ba jẹ deede, wo kaakiri akopọ nigba ti n ṣatunṣe aṣiṣe ekuro ṣiṣẹ.
 Ọna naa kii ṣe faili tabi itọsọna kan.
 Ṣẹda ẹda miiran ti faili labẹ itọsọna tabi orukọ oriṣiriṣi.
 Gbe faili lọ si itọsọna miiran
-Lati daakọ awọn faili si itọsọna miiran tabi orukọ oriṣiriṣi
-Lati gbe awọn faili lọ si itọsọna miiran
 Baramu {0} ({1}): {2}
 Baramu {0}: {1}
 Akoko ti a lo: {0} milliseconds
@@ -302,9 +258,6 @@ Dahun si ifẹ tabi awọn asọye ikorira.
 Ti ẹnikan ba ṣe asọye yii si fidio rẹ:
 Bawo ni iwọ yoo ṣe dahun?
 Aṣayan ti ko tọna. Lilọ si asọye atẹle ...
-O kan royin asọye ifẹ!
-O kan dahun si asọye ikorira!
-Nla! A o yọ asọye {0} kuro fun iyẹn.
 Nla! {0} yoo mọrírì ọpẹ́ rẹ.
 Sipeli pipe!
 Akọtọ ni aṣiṣe.
@@ -318,7 +271,6 @@ Tẹ ọrọ igbaniwọle fun {0}:
 Ti ge asopọ SSH.
 Ko le ṣeto oju -iwe koodu. Ede naa le ma han daradara.
 N ṣatunṣe aṣiṣe ko ṣiṣẹ.
-A ko ṣeto {0} si ipamọ iboju aiyipada.
 O ṣeun! Eleyi jẹ awon.
 Gbogbo eniyan yoo ṣe atilẹyin fidio rẹ fun eyi.
 Mo fun ọ ni faili pataki ninu imeeli rẹ fun fidio atẹle rẹ.
@@ -364,7 +316,6 @@ Itọsọna {0} ti wa tẹlẹ.
 Aṣiṣe nigba ti o n gbiyanju lati sopọ si {0}: Akoko isopọ tabi asopọ ti o sọnu
 Ẹrọ iṣiro lati ṣe iṣiro awọn ọrọ.
 Aṣiṣe ni iṣiro.
-O dabi pe o nṣiṣẹ ẹya isunmọ itusilẹ. Lakoko ti o jẹ ailewu lati lo ni bayi, o ni iṣeduro pe ki o duro lori ẹya iduroṣinṣin.
 Imudojuiwọn eto
 Ṣiṣayẹwo fun awọn imudojuiwọn eto ...
 Ti ri ẹya tuntun:
@@ -372,7 +323,6 @@ O le ṣe igbasilẹ rẹ ni:
 Ko si awọn iwifunni aipẹ
 Awọrọojulówo fun okun pàtó kan ninu faili ti a pese
 Ṣe iṣiro awọn akopọ awọn faili ni itọsọna ti o sọtọ.
-Ṣe atokọ gbogbo awọn meeli ninu olumulo kan pato.
 Tẹ orukọ olumulo tabi adirẹsi imeeli:
 Tẹ ọrọ igbaniwọle sii:
 Aṣiṣe nigba ti o n sopọ si {0}: {1}
@@ -382,7 +332,6 @@ Ti jade ikarahun IMAP
 Akojọ ti awọn ofin
 Ṣe igbasilẹ awọn ifiranṣẹ ati ṣe atokọ wọn
 Ṣii ifiranṣẹ kan
-Oju -iwe le ma jẹ odi tabi odo.
 Oju -iwe kii ṣe iye nọmba.
 Nọmba ifiranṣẹ le ma jẹ odi tabi odo.
 Nọmba ifiranṣẹ kii ṣe iye nọmba kan.
@@ -392,7 +341,6 @@ Nọmba ifiranṣẹ kii ṣe iye nọmba kan.
 Ifiranṣẹ ti o sọ tẹlẹ ko ri.
 Yiyọkuro latọna jijin kuna lati bẹrẹ: {0}
 Ngbaradi awọn profaili ... O le gba awọn iṣẹju pupọ ...
-Orukọ ogun, Orukọ olumulo, Iru data, Koodu, fifi ẹnọ kọ nkan, Awọn Ilana
 Aṣiṣe gbiyanju lati ṣiṣẹ akosile: {0}
 O kọ ọrọ sinu console
 Ṣe awọn yiyan olumulo
@@ -417,7 +365,6 @@ Titẹ kiakia jẹ ofo. Sopọ si olupin lati ṣafikun adirẹsi si.
 Titẹ kiakia ko si. Sopọ si olupin lati ṣafikun adirẹsi si.
 Tẹ adirẹsi olupin IMAP ati ibudo (<ressress> tabi <address>: [ibudo]):
 Tẹ adirẹsi olupin SMTP ati ibudo (<adirẹsi> tabi <adirẹsi>: [ibudo]):
-Nbeere ọ lati kun awọn aaye ti o nilo lati firanṣẹ si adirẹsi kan
 Firanṣẹ ifiranṣẹ kan si adirẹsi kan
 Tẹ adirẹsi imeeli olugba sii:
 Tẹ koko -ọrọ naa:
@@ -445,8 +392,6 @@ Npa ọrọ kan tabi gbolohun lati nọmba laini
 Npa ohun kikọ kuro lati nọmba ohun kikọ ni laini pàtó kan
 Laini ti a yọ kuro.
 Nọmba laini pàtó kan {0} kii ṣe nọ́mbà ti o wulo.
-Awọn ariyanjiyan ti a beere ko kọja lati paṣẹ {0}
-Aṣiṣe gbiyanju lati ṣiṣẹ aṣẹ: {0}
 Nṣiṣẹ ni ipo ailewu. Ipele fifo ...
 >> Atunṣe latọna jijin ati Wiregbe: ẹya
 >> Adirẹsi rẹ ni {0}.
@@ -464,19 +409,12 @@ Dina ẹrọ yokokoro nipasẹ adiresi IP
 Awọn eto ikojọpọ aṣiṣe
 Aṣiṣe kan wa lakoko awọn eto ikojọpọ. O le nilo lati ṣayẹwo faili eto naa.
 Yan apakan:
-Eto Gbogbogbo ...
-Eto Hardware ...
-Eto Iwọle ...
-Eto Eto ikarahun ...
-Eto Nẹtiwọọki ...
-Awọn Eto Orisirisi ...
 Fipamọ Awọn Eto
 Jade
 Aṣayan ti a ti sọ ni pato {0} ko wulo.
 Idahun gbọdọ jẹ nomba.
 Tọ fun Awọn ariyanjiyan lori Bata
 Itọju Mode nfa
-Yi Ọrọ igbaniwọle Gbongbo pada ...
 Ṣayẹwo fun Awọn imudojuiwọn lori Ibẹrẹ
 Idakẹjẹ Iwadi
 Fi MOTD han lori Wiwọle
@@ -500,9 +438,7 @@ A ti tẹ aba ti ko tọna. Jọwọ lọ pada.
 Pada...
 Muu ṣiṣẹ
 Muu ṣiṣẹ
-Nọmba bọtini ti ko wulo ti tẹ sii. Jọwọ lọ pada.
 Kọ ọrọ igbaniwọle gbongbo lati ṣeto. Maṣe yọ ara rẹ lẹnu; ọrọ igbaniwọle ti han bi irawọ.
-Mu ṣiṣẹ “Yi Ọrọ igbaniwọle gbongbo pada” lati lo aṣayan yii. Jọwọ lọ pada.
 Yi Ọrọigbaniwọle Gbongbo bi?
 Ṣeto Ọrọigbaniwọle Gbongbo ...
 Kọ ibudo isakoṣo latọna jijin. O gbọdọ jẹ nọmba, ati pe ko gbọdọ lo tẹlẹ. Bibẹẹkọ, oluṣatunṣe latọna jijin yoo kuna lati ṣii ibudo naa.
@@ -513,7 +449,6 @@ Idahun le ma jẹ odi.
 Idahun ko wulo. Ṣayẹwo lati rii daju pe idahun jẹ nomba fun awọn titẹ sii atunto ti o nilo awọn nọmba bi awọn idahun.
 Oniyipada {0} ko si lori eyikeyi awọn modulu.
 Ayipada ekuro iṣeto ni
-Eto Eto Iboju ...
 Mu awọn awọ 255 ṣiṣẹ
 Ṣe o fẹ lati wa ni asopọ?
 Aṣayan ti ko wulo. A ro pe ko si ...
@@ -549,7 +484,6 @@ Ko kuna lati gbe faili tabi itọsọna: {0}
 Ko le ri faili ti o baamu okun "{0}": {1}
 Gbigba lati ayelujara kuna fun faili {0}.
 O kuna lati ṣe atokọ awọn faili latọna jijin: {0}
-Tẹ faili kan tabi folda lati yọ kuro. O gbọdọ ni awọn igbanilaaye iṣakoso lori akọọlẹ rẹ lati ni anfani lati yọ kuro.
 Ṣe o da ọ loju pe o fẹ paarẹ {0} <y/n>?
 Npaarẹ {0} ...
 {0} ko si ninu olupin naa.
@@ -560,7 +494,6 @@ Nlọ {0} si {1} ...
 Ti gbe ni aṣeyọri
 Gbe faili tabi itọsọna lọ si faili miiran tabi itọsọna. O tun le lo iyẹn lati tunrukọ awọn faili.
 O kuna lati gbe {0} si {1}.
-Tẹ ọna orisun ati ọna opin irin ajo.
 Didakọ {0} si {1} ...
 Ti dakọ ni aṣeyọri
 Awọn faili ẹda tabi itọsọna si faili miiran tabi itọsọna.
@@ -578,9 +511,6 @@ Titẹ: {0}
 O le gba bọtini API tirẹ ni https://home.openweathermap.org/api_keys.
 O le kan si alagbawo nigbagbogbo http://bulk.openweathermap.org/sample/city.list.json.gz fun atokọ awọn ilu pẹlu awọn idanimọ wọn.
 Ayanfẹ ti a fẹ fun Iwọn otutu
-Kelvin
-Ijoba (Fahrenheit)
-Ricwọ̀n (Celsius)
 Ṣeto ekuro ki o tọ ọ fun ariyanjiyan lori bata.
 Nfa itọju mode. Eleyi disables ọpọ àpamọ.
 Ibẹrẹ kọọkan, yoo ṣayẹwo fun awọn imudojuiwọn.
@@ -595,10 +525,6 @@ Aṣẹ iranlọwọ irọrun fun gbogbo awọn ikarahun
 Boya tabi kii ṣe wọle orukọ olumulo FTP.
 Boya tabi rara lati wọle si adiresi IP FTP.
 Mu profaili akọkọ nikan nigbati o ba sopọ.
-Nṣiṣẹ atilẹyin awọ 255 fun ColorMix.
-Nṣiṣẹ atilẹyin awọ 255 fun Disiko.
-Nṣiṣẹ atilẹyin awọ 255 fun GlitterColor.
-Nṣiṣẹ atilẹyin awọ 255 fun Awọn laini.
 Aago ati ọjọ yoo han ni igun apa ọtun oke iboju naa
 Ti o ba ṣiṣẹ, ekuro naa yoo fọ gbogbo folda fun iwọn lapapọ rẹ. Bibẹẹkọ, yoo kan fọ dada nikan.
 Ṣe agbara idimu lori ibẹrẹ
@@ -608,7 +534,6 @@ Yan ẹyọkan ti o fẹ fun iwọn otutu (eyi kan si aṣẹ “oju ojo”)
 Mod {0} duro
 {0} v {1} duro
 Mod {0} ko ni orukọ apakan. Ṣiṣapẹrẹ Mod kuna. Ṣayẹwo koodu orisun.
-Mod {0} ko ni aṣẹ naa. Ṣiṣapẹrẹ Mod kuna. Ṣayẹwo koodu orisun.
 O gbọdọ tan ipo n ṣatunṣe aṣiṣe ṣaaju ki o to nu iwe ifagile yokokoro kuro.
 {0} awọn ifiranṣẹ tuntun ti de inu apo -iwọle.
 Ṣii “mail” lati rii wọn.
@@ -645,10 +570,6 @@ Ipele awọ pupa ti kọja. {0} ni.
 Ipele awọ alawọ ewe ti kọja. {0} ni.
 Ipele awọ buluu ti kọja. {0} ni.
 Mu awọn awọ otitọ ṣiṣẹ
-Nṣiṣẹ atilẹyin awọ otitọ fun ColorMix.
-Nṣiṣẹ atilẹyin awọ otitọ fun Disiko.
-Nṣiṣẹ atilẹyin awọ otitọ fun GlitterColor.
-Nṣiṣẹ atilẹyin awọ otitọ fun Awọn laini.
 Kùnà láti ṣí ìdènà {0}.
 Ti dina mọ {0} tẹlẹ.
 {0} ko le darapọ mọ aṣiṣe isakoṣo latọna jijin ni bayi.
@@ -659,7 +580,6 @@ Tẹ awọn ọna faili si awọn asomọ. Tẹ Tẹ lori ọna òfo lati jẹri
 Ṣi ifiranṣẹ ti paroko
 Kọ ọrọ igbaniwọle fun ID bọtini {0}
 Rán ifiranṣẹ ti paroko si adirẹsi kan
-Nbeere ọ lati kun awọn aaye ti o nilo lati firanṣẹ ifiranṣẹ ti paroko si adirẹsi kan
 Gbigba lati ayelujara lati {0} ...
 Fi igi ilọsiwaju han lakoko igbasilẹ tabi ikojọpọ lati “gba” tabi “fi” pipaṣẹ
 Ti o ba jẹ otitọ, o jẹ ki “gba” tabi “fi” ṣafihan igi ilọsiwaju lakoko igbasilẹ tabi ikojọpọ.
@@ -678,8 +598,6 @@ O kan lara bi: {0}
 Otutu: {0}
 Iyara afẹfẹ: {0}
 Itọsọna afẹfẹ: {0}
-Nṣiṣẹ atilẹyin awọ 255 fun Tu.
-Nṣiṣẹ atilẹyin awọ otitọ fun Tu.
 Tẹ bọtini eyikeyi lati pada sẹhin.
 Ko le ṣẹda folda meeli {0}: {1}
 Ṣe itọsọna kan ninu itọsọna iṣẹ lọwọlọwọ
@@ -692,22 +610,11 @@ Hashes ti bajẹ.
 Hashes ko baramu.
 Hashes baramu.
 Tunrukọ folda kan
-Abala yii ṣe atokọ gbogbo awọn eto ekuro gbogbogbo, ni pataki fun mimu ekuro duro.
-Abala yii yipada ihuwasi iwadii ohun elo.
-Abala yii ṣe aṣoju awọn eto iwọle. Jade kuro ninu akọọlẹ rẹ fun awọn ayipada lati mu ipa.
-Abala yii ṣe atokọ awọn eto ikarahun.
-Abala yii ṣe atokọ awọn eto nẹtiwọọki, bii ikarahun FTP, awọn eto pipaṣẹ ti o ni ibatan nẹtiwọọki, ati awọn eto isakoṣo latọna jijin.
-Abala yii ṣe atokọ gbogbo awọn iboju iboju ati awọn eto to wa.
-Awọn eto ti ko baamu ni awọn apakan ti o yẹ wọn de ibi.
-Awọn idanwo idanwo nipa fifun awọn faili mod
 Ṣi ikarahun idanwo kan
-Mu ipo aṣiṣe ṣiṣẹ
-Awọn igbero fun awọn ariyanjiyan
 * Tẹ bọtini eyikeyi lati bẹrẹ ekuro tabi ESC lati jade.
 O kuna lati bẹrẹ "{0}": {1}
 Ṣe afihan awotẹlẹ ifiranṣẹ meeli
 Nigbati kikojọ awọn ifiranṣẹ meeli, ṣafihan awotẹlẹ ara.
-Awọn awọ aṣa ...
 Awọ titẹ sii
 Awọ iwe -aṣẹ
 Ilọsiwaju aṣiṣe ekuro awọ
@@ -721,8 +628,6 @@ Aṣiṣe aṣiṣe
 FTP Tọ Style
 Style Ifiranṣẹ Meeli
 StTP Tọ Style
-Nṣiṣẹ atilẹyin awọ 255 fun BouncingBlock.
-Nṣiṣẹ atilẹyin awọ otitọ fun BouncingBlock.
 N gbiyanju lati wọle si ọna ti ko wulo.
 Pa iwe ọrọ kuro
 Jade olootu ọrọ
@@ -745,8 +650,6 @@ Awọ ti Iṣẹju Bar
 Awọ ti Wakati Bar
 Awọ ti Alaye
 Ticks lati yi awọ pada
-Nṣiṣẹ atilẹyin awọ 255 fun ProgressClock.
-Nṣiṣẹ atilẹyin awọ otitọ fun ProgressClock.
 Ti gigun kẹkẹ awọ ba ṣiṣẹ, awọn ami -ami melo ni ṣaaju iyipada awọn awọ ni ProgressClock? Ami 1 = 0,5 aaya
 ProgressClock yoo yan awọn awọ laileto ti o ba ti ṣiṣẹ. Bibẹẹkọ, lo awọn awọ lati atunto.
 Ṣe akori tuntun
@@ -761,39 +664,10 @@ Aṣayan awọ
 Tẹ nọmba awọ lati 0 si 255:
 Lo “hwinfo” fun alaye ti o gbooro nipa ohun elo.
 Alaye alaye hardware
-Alaye Sipiyu:
 Orukọ ero isise:
-Iyara isise:
 Bits isise:
-Isọdọtun isise:
-Topology isise:
-Iru isise:
-Ipari isise:
-Isise BogoMips:
-Iwọn kaṣe isise L2:
-Iwọn kaṣe isise L3:
-Awọn ẹya isise:
-Alaye HDD:
-Orukọ awakọ:
-Wakọ awoṣe:
-Oniṣowo awakọ:
-Iyara awakọ:
-Iwakọ iwọn:
-Wakọ ni tẹlentẹle:
-Wakọ ID:
-Wakọ ipin ipin:
-ID ipin:
 Eto faili ipin:
 Iwọn ipin:
-Ipin ti a lo:
-Alaye Ramu:
-Ramu ọfẹ:
-Ramu lapapọ:
-Ramu ti lo:
-Alaye GPU:
-Orukọ GPU:
-Awakọ GPU:
-Ẹya GPU:
 GPU: Ọkan tabi diẹ ẹ sii ti awọn kaadi awọn aworan kuna lati ṣe iwadii. Nfihan alaye lọnakọna ...
 >> Kaabo! Eyi ni igba akọkọ rẹ ti nwọle yokokoro latọna jijin ati iwiregbe. Lo "/forukọsilẹ <orukọ>" lati forukọsilẹ.
 Ẹrọ ti wa tẹlẹ.
@@ -825,8 +699,6 @@ Pato orukọ akori:
 Olumulo {0} ti ṣafikun si “{1}” atokọ naa.
 Olumulo {0} ti yọ kuro ninu atokọ "{1}".
 Ipo ti ko tọna {0}
-Olumulo ti wa tẹlẹ
-Koko Akori Lati ...
 Akori Fifuye Lati Awọn akori Ti a Ti Kọ tẹlẹ ...
 Pato orukọ faili akori laisi itẹsiwaju .json:
 Ṣi ibi ipamọ ZIP kan
@@ -839,12 +711,9 @@ Itọsọna {0} ko si
 {0} ko si iwe ipamọ
 Awọn ipo Awọn ipo Max
 Awọn ipo melo ni o tan ṣaaju ki o to dinku?
-Nṣiṣẹ atilẹyin awọ 255 fun fẹẹrẹfẹ.
-Nṣiṣẹ atilẹyin awọ otitọ fun fẹẹrẹfẹ.
 Akojọ titẹsi awọ
 Akojọ awọ iye
 Sopọ si olupin SSH lati ṣe pipaṣẹ kan.
-Abala yii ṣe atokọ awọn eto ipamọ iboju fun
 Onipejuwe awọ ti ko tọna. Rii daju pe o wa lori ọna kika to tọ, eyiti o tumọ si nọmba kan lati 0-255 ti o ba lo awọn awọ 255 tabi ọkọọkan VT ti o ba lo awọ tootọ bii atẹle:
 Aṣiṣe ninu ikarahun idanwo: {0}
 Ṣeto oniyipada si iye kan ninu iwe afọwọkọ kan
@@ -866,13 +735,11 @@ Bawo ni o ṣe fẹ jẹrisi?
 Faili bọtini ikọkọ
 Ọrọigbaniwọle
 Tẹ ọrọ igbaniwọle fun bọtini {0}:
-Tẹ ipo ti bọtini ikọkọ fun {0}. Kọ "q" lati pari fifi awọn bọtini kun:
 Neutralized ọna ti ko si tẹlẹ.
 Faili bọtini {0} ko si.
 Aṣiṣe gbiyanju lati ṣafikun bọtini ikọkọ:
 Tẹ “t” lati yipada si ipo awọ 255.
 Tẹ “t” lati yipada si ipo awọ otitọ.
-Abala yii jẹ ki o yan iru awọ ti o fẹ yipada.
 O dabi pe o ko ni olumulo ayafi gbongbo. Eyi buru. A yoo tọ ọ bi o ṣe le ṣẹda ọkan.
 Kọ orukọ olumulo rẹ.
 O gbọdọ kọ orukọ olumulo rẹ.
@@ -882,7 +749,6 @@ Yan iru akọọlẹ.
 Alakoso: Iru akọọlẹ yii ni agbara pupọ julọ ninu ekuro, gbigba ọ laaye lati lo awọn eto iṣakoso eto.
 Olumulo deede: Iru akọọlẹ yii jẹ ihamọ diẹ diẹ sii ju awọn alakoso lọ.
 Oriire! O ti ṣe akọọlẹ tuntun kan! Lati pari eyi, wọle bi iwe apamọ tuntun rẹ.
-Kan si iwe afọwọkọ iboju tabi koodu orisun fun alaye.
 moodi: Ko si awọn Mods ti a rii.
 Awọn pipaṣẹ gbogbogbo:
 Awọn pipaṣẹ Mod:
@@ -906,7 +772,6 @@ Awọn ibeere ọrọ kan ni laini kan tabi gbogbo awọn laini
 Awọn idanwo ti n tumọ okun ti o wa ninu awọn orisun si ede kan pato
 Ṣe atẹjade okun kan lati ṣe itunu ati itupalẹ awọn aaye ti a rii
 Idanwo ile -iṣẹ ikosile deede
-Encrypts a okun lilo
 Bẹrẹ gbogbo awọn Mods
 Da gbogbo awọn Mods duro
 Mu ṣiṣẹ tabi mu aṣiṣe ṣiṣẹ
@@ -941,7 +806,6 @@ Awọn atokọ ṣe atilẹyin awọn aṣa
 Awọn wiwa fun okun ti a sọtọ ninu faili ti a pese nipa lilo awọn asọye deede
 Wo boya o le tẹ bọtini kan ni akoko
 Olumulo ko pese eyikeyi titẹ sii ni ọna asiko.
-Iṣoro ti ko wulo
 Ohun kikọ ko tẹ ni akoko.
 O ti tẹ ohun kikọ ti o tọ!
 O ti tẹ ihuwasi ti ko tọ.
@@ -985,7 +849,6 @@ Ngba awọn eto ipamọ aṣa
 Ṣeto awọn eto ipamọ aṣa
 A ṣeto awọn eto ni ifijišẹ fun ipamọ iboju
 Kuna lati ṣeto eto fun ipamọ iboju
-Abala yii jẹ ki o ṣakoso ẹda ọrọ igbaniwọle gbongbo.
 Ṣi ikarahun RSS kan lati ka awọn kikọ sii
 Ti jade ikarahun RSS ati pada si ekuro
 Yi ọna asopọ kikọ sii pada
@@ -1012,13 +875,6 @@ Ipo tito lẹsẹsẹ faili
 Itọsọna iru faili
 Ṣakoso bi awọn faili yoo ṣe to lẹsẹsẹ.
 Ṣe iṣakoso itọsọna ti sisẹ eto faili boya o n gòke tabi sọkalẹ.
-Ascending ibere
-Sokale ibere
-Akokun Oruko
-Iwọn faili
-Akoko ẹda
-Akoko kikọ ikẹhin
-Akoko iwọle ikẹhin
 Kọ Idaduro Lẹẹkansi ni Miliseconds
 Awọn millisecond melo ni lati duro ṣaaju kikọ ọrọ lẹẹkansi?
 Kọ eyikeyi ọrọ ti o fẹ han. Gigun ni o dara julọ.
@@ -1027,35 +883,26 @@ Iyara kikọ kikọ ti o pọju ni WPM
 Iṣeeṣe ti typo ni ogorun
 O kuna lati ṣafipamọ liana lọwọlọwọ: {0}
 Wipẹ lati yi itọsọna pada
-Nṣiṣẹ atilẹyin awọ 255 fun Wipe.
-Nṣiṣẹ atilẹyin awọ otitọ fun Wipe.
 Awọn wipes melo ni lati ṣe ṣaaju iyipada itọsọna laileto?
 Ipele ti pari ni
 Ipilẹṣẹ inu ti pari ni
 Faili itọkasi {0} ko si. Mod yii le ma ṣiṣẹ daradara laisi faili yii.
 Bibẹrẹ moodi
-Ngba alaye moodi
 Orukọ aṣẹ:
 Itumọ aṣẹ:
 Iru aṣẹ:
 Aṣẹ to muna?
 Ẹya Mod:
 Mod {0} ko si.
-Asa ti
-Eyi iyatọ ti {0} ti a nlo lati yi awọn orukọ oṣu pada, kalẹnda, abbl?
 Olootu ọrọ ko ṣi ṣiṣan faili sibẹsibẹ.
 Ti rọpo okun.
 Ọkan tabi mejeeji ti awọn nọmba kii ṣe nọmba.
 Paarẹ ọrọ.
 Ohun kikọ ti paarẹ.
-Eto Eto faili ...
-Abala yii ṣe atokọ awọn eto eto faili.
 Kaabọ si Awọn Eto!
 Aṣiṣe ṣiṣe pipaṣẹ SSH
 Aṣiṣe lori ikarahun SSH
 - Alaye ohun elo
-Nṣiṣẹ atilẹyin awọ 255 fun BouncingText.
-Nṣiṣẹ atilẹyin awọ otitọ fun BouncingText.
 Ṣe idanwo onkọwe iwe -itumọ pẹlu okun ati akojọpọ okun
 Ṣe idanwo onkọwe iwe -itumọ pẹlu iṣupọ ati iṣupọ char
 Ṣe idanwo onkọwe iwe -itumọ pẹlu odidi ati akojọpọ odidi
@@ -1072,21 +919,15 @@ nibiti HardwareType yoo wa
 Boya iru ohun elo {0} ko ṣe iwadii, tabi ko wulo.
 Iru ohun elo {0} ko ṣe iwadii sibẹsibẹ. Ti o ba ni idaniloju pe o jẹ iwadii, tun ekuro naa bẹrẹ pẹlu ṣiṣiṣẹ n ṣatunṣe aṣiṣe.
 Awọn ipin ti ko ṣe itupalẹ si atokọ.
-Ipo agbonaeburuwole
-Ti o ba ṣiṣẹ, console alawọ ewe yoo ṣiṣẹ.
 Sita a separator
 Ṣe atẹjade ipinya pẹlu atilẹyin ọna kika
 Ṣe atẹjade ipinya pẹlu atilẹyin awọ
 Ṣe atẹjade ipinya pẹlu atilẹyin awọ ati ọna kika
 Ti dojukọ nigbagbogbo
-Nṣiṣẹ atilẹyin awọ 255 fun Marquee.
-Nṣiṣẹ atilẹyin awọ otitọ fun Marquee.
 Kọ eyikeyi ọrọ ti o fẹ han.
 Boya ọrọ ti o han lori marquee nigbagbogbo wa ni aarin.
-'q' lati dawọ duro.
 Ariyanjiyan {0} ko ri lati ṣe abẹrẹ.
 Ariyanjiyan laini aṣẹ {0} ko si.
-Pa gbogbo awọn eto kuro
 Iboju iboju ni iriri aṣiṣe nigba fifihan: {0}. Tẹ bọtini eyikeyi lati jade.
 Awotẹlẹ ...
 Eyi ni bii akori rẹ yoo dabi:
@@ -1124,20 +965,15 @@ Boya lati lo ẹrọ Beats Per Minute lati kọ awọ atẹle.
 Idaduro ni Awọn lu Fun Iṣẹju
 Lu Awọ
 Awọn lilu melo ni iṣẹju kan lati duro ṣaaju ṣiṣe kikọ atẹle?
-Nṣiṣẹ atilẹyin awọ 255 fun BeatFader.
-Nṣiṣẹ atilẹyin awọ otitọ fun BeatFader.
 BeatFader yoo yan awọn awọ laileto ti o ba ṣiṣẹ. Bibẹẹkọ, lo awọn awọ lati atunto.
 Aṣa Ibẹrẹ Aṣa
-Ti o ba jẹ pato, yoo ṣafihan asia ibẹrẹ ti adani pẹlu atilẹyin ibi. O le lo gbolohun yii fun ẹya ekuro:
 Ṣe igbasilẹ folda latọna jijin si itọsọna agbegbe nipa lilo alakomeji tabi ọrọ
 Ṣe ikojọpọ folda agbegbe si itọsọna latọna jijin nipa lilo alakomeji tabi ọrọ
-Tẹ folda kan lati ṣe igbasilẹ si itọsọna agbegbe.
 Gbigba folda {0} ...
 Faili ti a gba wọle {0}.
 Gbigba lati ayelujara kuna fun folda {0}.
 Ikojọpọ folda {0} ...
 Apo ti a kojọpọ {0}
-Tẹ folda kan lati gbe si itọsọna latọna jijin.
 Tẹ “c” lati kọ koodu awọ ni kikun.
 Tẹ koodu awọ ti o ni itẹlọrun awọn ọna kika wọnyi:
 Ṣe idinku faili JSON
@@ -1151,13 +987,9 @@ Awọn ọwọn ọrọ lati tẹjade.
 Awọn ohun kikọ melo ni lati kọ ṣaaju ki o to ma nfa “laini kun”?
 O ṣeeṣe pe ilana ti o kun laini yoo tẹ ni gbogbo awọn bọtini ni ogorun
 Iru apẹẹrẹ ila
-Àpẹẹrẹ ti o wọpọ
-Apẹrẹ pipe
-ID Àpẹẹrẹ
 Idahun le ma jẹ odo.
 Idahun le ma kọja awọn titẹ sii ti o han.
 Fipamọ Awọn Ayipada ...
-Iboju iboju ṣe atilẹyin ọrọ kikọ lori faili. Ṣe ọna ọna faili ni pipe si aaye yii, ati oluṣeto iboju yoo ṣafihan awọn akoonu inu faili ni deede.
 Ṣakoso awọn mods rẹ
 Isakoso Mod jẹ alaabo ni ipo ailewu.
 Aṣẹ ti ko tọna {0}. Ṣayẹwo lilo ni isalẹ:
@@ -1173,5 +1005,3 @@ Tẹ bọtini eyikeyi lati ka oju -iwe Afowoyi ...
 Oju -iwe Afowoyi nilo iṣẹ fun:
 Oju -iwe Afowoyi {0} ko ri.
 Afowoyi Mod
-Yenza kusebenze ukwesekwa kombala okungama-255 kweFlashColor.
-Yenza kusebenze ukwesekwa kombala kweqiniso kweFlashColor.

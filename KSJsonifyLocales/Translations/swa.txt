@@ -1,15 +1,6 @@
 Amri zinazopatikana: {0}
-Andika amri:
 Sindano ya amri imefutwa.
-Tenga hoja za buti na koma bila nafasi, kwa mfano, 'motd, gpuprobe'
-Tenga amri kwenye 'cmdinject' na koloni zilizo na nafasi, kwa mfano, 'cmdinject setthemes Hacker: beep 1024 0.5'
-Kumbuka kuwa hoja ya 'utatuzi' haifuniki kabisa kernel.
-bargs: Hoja iliyoombwa {0} haipatikani.
-bargs: Hitilafu isiyoweza kupatikana katika hoja:
-Hoja zinazopatikana: {0}
-Hoja ('msaada' kwa msaada):
 Hoja za sindano zitapangiwa kuanza wakati wa kuwasha tena.
-Sindano ya Hoja imefutwa.
 Hitilafu wakati wa kuchanganua hoja halisi za mstari wa amri: {0}
 Kiolezo batili cha rangi {0}
 hwprobe: Vifaa vyako vitachunguzwa. Tafadhali subiri...
@@ -82,7 +73,6 @@ Nenosiri la {0}:
 Imeunganishwa kwenye {0}
 Hitilafu wakati wa kujaribu kuungana na {0}: {1}
 Ufuatiliaji wa Baki
-Ingiza seva ya FTP.
 Saraka ya eneo {0} haipo.
 Ingiza saraka ya karibu. ".." kurudi nyuma.
 Saraka {0} haipatikani.
@@ -97,16 +87,12 @@ Bado hujaunganisha kwenye seva yoyote
 Inapakua faili {0} ...
 Faili iliyopakuliwa {0}.
 Lazima uunganishe kwenye seva kabla ya kufanya usambazaji.
-Ingiza faili kupakua kwa saraka ya karibu.
 {0} KB | Imebadilishwa katika: {1}
 Unapaswa kuungana na seva kabla ya kuorodhesha faili zote za mbali.
 Inapakia faili {0} ...
 Faili iliyopakiwa {0}
-Ingiza faili ya kupakia kwenye saraka ya mbali. pakia <faili> <kuongoza>
-(Ndani:
 Inapata saraka ya sasa ya karibu
 Inapata saraka ya sasa ya mbali
-Inaunganisha kwa seva ya FTP (lazima ianze na "ftp://" au "ftps://")
 Inabadilisha saraka ya eneo kupakua au kupakia kutoka
 Inabadilisha saraka ya mbali ili kupakua kutoka au kupakia hadi
 Inafuta faili ya mbali kutoka kwa seva
@@ -147,7 +133,6 @@ Usanidi umepakiwa upya. Unaweza kuhitaji kuwasha tena kernel ili mabadiliko meng
 Rangi moja au zaidi ni batili.
 Rangi hazipatikani. Washa ganda la rangi kwenye usanidi wa kernel.
 Bongo {0} haipatikani.
-[ Mipangilio ya Kernel (Inaendelea {0}) ]
 Toleo la Kernel:
 Njia ya Kutatua:
 Ganda la rangi:
@@ -155,8 +140,6 @@ Hoja kwenye Boot:
 Amri ya usaidizi imetengenezwa:
 MOTD kwenye Kuingia:
 Saa / Tarehe kwenye kona:
-[ Mipangilio ya vifaa ]
-[ Mipangilio ya Mtumiaji ]
 Jina la mtumiaji la sasa:
 Jina la mwenyeji wa sasa:
 Majina ya watumiaji yanayopatikana:
@@ -183,31 +166,14 @@ Habari ya mfumo
 * Unaweza kutumia amri nyingi ukitumia koloni kati ya amri.
 Matumizi:
 ambapo hoja zitakuwa {0}
-Inazindua ganda la FTP.
-Marafiki wa
 ambapo customsaver itakuwa
-Inafunga skrini yako na nywila.
-Hukuweka nje ya mtumiaji.
-Pata kila habari ya mtandao
-Huanzisha tena kompyuta yako iliyoiga.
-Inapakia tena usanidi ambao hubadilishwa na mtumiaji wa mwisho au zana.
-Rangi hauhitaji kuanza upya, lakini mipangilio mingi inahitaji uanze tena.
-inaonyesha skrini ya skrini iliyochaguliwa, huku ikilinda skrini yako kutoka kwa sehemu za kuchoma.
-Inaonyesha tarehe na saa.
-Inaonyesha tarehe na saa katika maeneo.
-Inazima kompyuta yako iliyoiga.
-Inaonyesha habari za mfumo na matoleo.
 Kulikuwa na hitilafu kwenye ganda.
 Huna ruhusa ya kutumia {0}
 Ujumbe wa Shell: Amri iliyoombwa {0} hairuhusiwi kutekeleza katika hali ya matengenezo.
 Ujumbe wa Shell: Amri iliyoombwa {0} haipatikani. Tazama 'msaada' kwa amri zinazopatikana.
 Ujumbe wa Shell: Amri {0} hairuhusiwi kuingia kwenye akaunti.
 Hitilafu wakati wa kujaribu kutekeleza amri.
-wakati: saa ni {0}
-wakati wa saa: Leo ni {0}
-wakati: Eneo la Wakati: {0}
 - Wakati wa {0}: {1}
-kufuta skrini.
 Inaendelea {0}
 Hujaruhusiwa kupata maelezo ya {0}.
 Amri hii imepitwa na wakati na itaondolewa katika toleo lijalo.
@@ -233,8 +199,6 @@ Inabadilisha lugha
 Muafaka, faili, mistari, na nguzo <<
 > Fremu {0}: Faili: {1} | Mstari: {2} | Safu wima: {3}
 > Kuna hitilafu wakati wa kujaribu kupata habari ya sura. {0}: {1}
-Upakiaji upya mods.
-Mods zimepakiwa tena.
 Karibu Kernel!
 Umeingia kwa mafanikio kama <user>
 MOTD / MAL ni halali, lakini aina ya ujumbe sio halali. Kudhani MOTD ...
@@ -267,27 +231,19 @@ Adapter {0} haitumiki IPv6. Inaendelea ...
 Adapter {0} haitumiki IPv4. Uchunguzi umeshindwa.
 Inaonekana ulikuwa unatumia toleo la maendeleo la punje. Wakati unaweza kuona vipengele, inasasishwa mara kwa mara na inaweza kuanzisha mende. Inashauriwa ukae kwenye toleo thabiti.
 Lugha uliyochagua ina aina mbili. Chagua moja:
-1. Imefasiriwa
-2. Ilitafsiriwa
-Chagua chaguo lako:
 Chaguo batili. Jaribu tena.
 Hujaruhusiwa kuweka saraka ya sasa kwa {0}: {1}
 Njia uliyobainisha ni ndefu sana.
-CPU: ONYO: SSE2 itahitajika katika ahadi za maendeleo zijazo.
 Mkusanyaji wa habari wa dampo ameanguka wakati anajaribu kupata habari kuhusu {0}: {1}
-Hitilafu wakati wa kujaribu kukusanya tarehe ya kusanyiko {0}: {1}
 Hitilafu wakati wa kujaribu kuweka MOTD / MAL: {0}
 Hitilafu wakati wa kujaribu kupata MOTD / MAL: {0}
 Hitilafu wakati wa kujaribu kuanzisha kiwambo cha skrini, kwa sababu ya operesheni batili.
 Kupakia upya hakuruhusiwi katika hali salama.
 Kutumia mods hairuhusiwi kwenye hali salama.
-Orodhesha vifaa vyote vya utatuaji vilivyounganishwa.
 Hitilafu wakati wa kujaribu kuweka hali ya kuchanganua. Angalia thamani na ujaribu tena. Ikiwa hii ni sahihi, angalia ufuatiliaji wa stack wakati utatuaji wa kernel umewezeshwa.
 Njia sio faili wala saraka.
 Inaunda nakala nyingine ya faili chini ya saraka tofauti au jina.
 Husogeza faili kwa saraka nyingine
-Ili kunakili faili kwenye saraka nyingine au jina tofauti
-Kuhamisha faili kwenye saraka nyingine
 Mechi {0} ({1}): {2}
 Mechi {0}: {1}
 Muda uliotumika: {0} milliseconds
@@ -302,9 +258,6 @@ Jibu maoni ya upendo au chuki.
 Ikiwa mtu alitoa maoni haya kwenye video yako:
 Je! Ungejibu vipi?
 Chaguo batili. Kwenda maoni yanayofuata ...
-Umeripoti maoni ya upendo tu!
-Umejibu tu maoni ya chuki!
-Kubwa! Maoni ya {0} yataondolewa kwa hilo.
 Kubwa! {0} itathamini shukrani zako.
 Imeandikwa kikamilifu!
 Imeandikwa vibaya.
@@ -318,7 +271,6 @@ Ingiza nywila ya {0}:
 SSH Imetenganishwa.
 Imeshindwa kuweka ukodishaji. Lugha inaweza isionyeshwe vizuri.
 Utatuzi haujawashwa.
-{0} haijawekwa tena kuwa kiokoa skrini chaguo-msingi.
 Asante! Hii inavutia.
 Kila mtu atasaidia video yako kwa hili.
 Nilikupa faili maalum katika barua pepe yako kwa video yako inayofuata.
@@ -364,7 +316,6 @@ Saraka {0} tayari ipo.
 Hitilafu wakati wa kujaribu kuunganisha kwenye {0}: Muda wa muunganisho umeisha au muunganisho uliopotea
 Calculator kuhesabu maneno.
 Hitilafu katika hesabu.
-Inaonekana ulikuwa unatumia toleo la kukaribia kutolewa. Ingawa ni salama kutumia sasa, inashauriwa ukae kwenye toleo thabiti.
 Sasisho la mfumo
 Inatafuta sasisho za mfumo ...
 Tumepata toleo jipya:
@@ -372,7 +323,6 @@ Unaweza kuipakua kwa:
 Hakuna arifa za hivi majuzi
 Utafutaji wa mfuatano uliobainishwa katika faili iliyotolewa
 Huhesabu hesabu za faili katika saraka maalum.
-Orodha zote barua pepe katika mtumiaji maalum.
 Ingiza jina la mtumiaji au anwani ya barua:
 Ingiza nywila:
 Hitilafu wakati wa kuunganisha kwenye {0}: {1}
@@ -382,7 +332,6 @@ Inatoka kwenye ganda la IMAP
 Orodha ya amri
 Inapakua ujumbe na kuziorodhesha
 Hufungua ujumbe
-Ukurasa unaweza kuwa hasi au sifuri.
 Ukurasa sio thamani ya nambari.
 Nambari ya ujumbe inaweza kuwa hasi au sifuri.
 Nambari ya ujumbe sio thamani ya nambari.
@@ -392,7 +341,6 @@ Nambari ya ujumbe sio thamani ya nambari.
 Ujumbe uliobainishwa haupatikani.
 Utatuzi wa mbali umeshindwa kuanza: {0}
 Kuandaa maelezo mafupi ... Inaweza kuchukua dakika kadhaa ...
-Jina la Mwenyeji, Jina la mtumiaji, Aina ya Takwimu, Usimbuaji, Usimbaji fiche, Itifaki
 Hitilafu wakati wa kujaribu kutekeleza hati: {0}
 Anaandika maandishi kwenye koni
 Inafanya uchaguzi wa mtumiaji
@@ -417,7 +365,6 @@ Upigaji wa kasi hauna kitu. Unganisha kwenye seva ili uongeze anwani yake.
 Upigaji wa kasi haupo. Unganisha kwenye seva ili uongeze anwani yake.
 Ingiza anwani ya seva ya IMAP na bandari (<adress> au <adress>:[bandari]):
 Ingiza anwani ya seva ya SMTP na bandari (<adress> au <anwani>:[bandari]):
-Inakuuliza ujaze sehemu zinazohitajika kutuma ujumbe kwa anwani
 Inatuma ujumbe kwa anwani
 Ingiza anwani ya barua ya mpokeaji:
 Ingiza mada:
@@ -445,8 +392,6 @@ Inafuta neno au kifungu kutoka kwa nambari ya laini
 Inafuta herufi kutoka kwa nambari ya herufi kwenye laini maalum
 Mstari umeondolewa.
 Nambari ya laini iliyobainishwa {0} sio nambari halali.
-Hoja zinazohitajika hazijapitishwa kuagiza {0}
-Hitilafu wakati wa kujaribu kutumia amri: {0}
 Inaendesha katika hali salama. Kuruka hatua ...
 >> Utatuzi wa mbali na Gumzo: toleo
 >> Anwani yako ni {0}.
@@ -464,19 +409,12 @@ Zuia kifaa cha utatuzi kwa anwani ya IP
 Hitilafu katika kupakia mipangilio
 Kuna hitilafu wakati wa kupakia mipangilio. Unaweza kuhitaji kukagua faili ya mipangilio.
 Chagua sehemu:
-Mipangilio ya Jumla ...
-Mipangilio ya vifaa ...
-Mipangilio ya Kuingia ...
-Mipangilio ya Shell ...
-Mipangilio ya Mtandao ...
-Mipangilio anuwai ...
 Hifadhi Mipangilio
 Utgång
 Chaguo maalum {0} ni batili.
 Jibu lazima liwe nambari.
 Haraka kwa Hoja kwenye Boot
 Njia ya Matengenezo Kusababisha
-Badilisha Nenosiri la Mizizi ...
 Angalia Sasisho kwenye Mwanzo
 Kuchunguza kwa utulivu
 Onyesha MOTD kwenye Ingia
@@ -500,9 +438,7 @@ Sehemu isiyo sahihi imeingizwa. Tafadhali rudi nyuma.
 Rudi nyuma...
 Washa
 Lemaza
-Nambari ya kitufe batili imeingizwa. Tafadhali rudi nyuma.
 Andika nenosiri la mizizi litakalowekwa. Usijali; nywila zinaonyeshwa kama nyota.
-Wezesha "Badilisha Nenosiri la Mizizi" kutumia chaguo hili. Tafadhali rudi nyuma.
 Badilisha Nenosiri la Mizizi?
 Weka Nenosiri la Mizizi ...
 Andika bandari ya utatuzi wa mbali. Lazima iwe nambari, na haipaswi kutumiwa tayari. Vinginevyo, mtatuaji wa mbali atashindwa kufungua bandari.
@@ -513,7 +449,6 @@ Jibu linaweza lisiwe hasi.
 Jibu ni batili. Angalia kuhakikisha kuwa jibu ni nambari kwa viingilio vya usanidi ambavyo vinahitaji nambari kama majibu.
 Variable {0} haipatikani kwenye moduli yoyote.
 Inabadilisha usanidi wa kernel
-Mipangilio ya Bongo ...
 Amilisha rangi 255
 Je! Unataka kuendelea kushikamana?
 Chaguo batili. Kwa kudhani hapana ...
@@ -549,7 +484,6 @@ Imeshindwa kusogeza faili au saraka: {0}
 Imeshindwa kupata faili inayolingana na kamba "{0}": {1}
 Upakuaji umeshindwa kwa faili {0}.
 Imeshindwa kuorodhesha faili za mbali: {0}
-Ingiza faili au folda ili uondoe. Lazima uwe na ruhusa za kiutawala kwenye akaunti yako ili uweze kuondoa.
 Je! Una uhakika unataka kufuta {0} <y/n>?
 Inafuta {0} ...
 {0} haipatikani kwenye seva.
@@ -560,7 +494,6 @@ Inahamisha {0} hadi {1} ...
 Imesogezwa kwa mafanikio
 Husogeza faili au saraka hadi faili nyingine au saraka. Unaweza pia kutumia hiyo kubadilisha jina la faili.
 Imeshindwa kuhamisha {0} hadi {1}.
-Ingiza njia ya chanzo na njia ya marudio.
 Inanakili {0} kwa {1} ...
 Imenakiliwa kwa mafanikio
 Inakili faili au saraka kwa faili nyingine au saraka.
@@ -578,9 +511,6 @@ Unyevu: {0}
 Unaweza kupata ufunguo wako wa API kwa https://home.openweathermap.org/api_keys.
 Daima unaweza kushauriana na http://bulk.openweathermap.org/sample/city.list.json.gz kwa orodha ya miji iliyo na vitambulisho vyake.
 Kitengo kinachopendelewa kwa Joto
-Kelvin
-Imperial (Fahrenheit)
-Kiwango (Celsius)
 Inaweka kernel kwa hivyo inakuchochea kwa hoja kwenye buti.
 Inasababisha hali ya matengenezo. Hii inalemaza akaunti nyingi.
 Kila kuanza, itakagua visasisho.
@@ -595,10 +525,6 @@ Amri rahisi ya msaada kwa makombora yote
 Ikiwa au la kuingia jina la mtumiaji la FTP.
 Ikiwa ni au usiandike anwani ya IP ya FTP.
 Chagua wasifu wa kwanza tu wakati wa kuunganisha.
-Inamsha msaada wa rangi 255 kwa ColourMix.
-Inamsha msaada wa rangi 255 kwa Disco.
-Inamsha msaada wa rangi 255 kwa GlitterColor.
-Inamsha msaada wa rangi 255 kwa Mistari.
 Saa na tarehe zitaonyeshwa kwenye kona ya juu kulia ya skrini
 Ikiwa imewezeshwa, kernel itasambaza folda nzima kwa ukubwa wake wote. Nyingine, itaonyesha tu uso.
 Huwasha mwonekano wa macho wakati wa kuanza
@@ -608,7 +534,6 @@ Chagua kitengo unachopendelea kwa joto (hii inatumika tu kwa amri ya "hali ya he
 Mod {0} imesimamishwa
 {0} v {1} ilisimama
 Mod {0} haina jina la sehemu. Uchanganuzi wa Mod umeshindwa. Pitia nambari ya chanzo.
-Mod {0} haina amri. Uchanganuzi wa Mod umeshindwa. Pitia nambari ya chanzo.
 Lazima uwashe hali ya utatuaji kabla ya kufuta logi ya utatuzi.
 Ujumbe {0} mpya umewasili kwenye kikasha.
 Fungua "mail" ili uwaone.
@@ -645,10 +570,6 @@ Kiwango cha rangi nyekundu kilizidi. Ilikuwa {0}.
 Kiwango cha rangi ya kijani kilizidi. Ilikuwa {0}.
 Kiwango cha rangi ya hudhurungi kilizidi. Ilikuwa {0}.
 Anzisha rangi za kweli
-Inamsha msaada wa rangi ya kweli kwa ColourMix.
-Inamsha msaada wa rangi ya kweli kwa Disco.
-Inamsha msaada wa kweli wa rangi kwa GlitterColor.
-Inamsha msaada wa rangi ya kweli kwa Mistari.
 Imeshindwa kufungulia {0}.
 {0} tayari imezuiwa.
 {0} haiwezi kujiunga na utatuzi wa mbali sasa.
@@ -659,7 +580,6 @@ Ingiza njia za faili kwa viambatisho. Bonyeza ENTER kwenye njia tupu ili uthibit
 Hufungua ujumbe uliosimbwa kwa njia fiche
 Andika nenosiri la kitambulisho {0}
 Inatuma ujumbe uliosimbwa kwa njia fiche kwa anwani
-Inakuuliza ujaze sehemu zinazohitajika kutuma ujumbe uliosimbwa kwa anwani
 Inapakua kutoka {0} ...
 Onyesha mwambaa wa maendeleo wakati unapakua au kupakia kutoka kwa amri ya "pata" au "weka"
 Ikiwa ni kweli, inafanya "kupata" au "kuweka" kuonyesha mwambaa wa maendeleo wakati unapakua au kupakia.
@@ -678,8 +598,6 @@ Anahisi kama: {0}
 Joto: {0}
 Kasi ya upepo: {0}
 Uelekeo wa upepo: {0}
-Inamsha msaada wa rangi 255 kwa Kufuta.
-Inamsha msaada wa rangi ya kweli kwa Kufuta.
 Bonyeza kitufe chochote kurudi nyuma.
 Imeshindwa kuunda folda ya barua {0}: {1}
 Inafanya saraka katika saraka ya sasa ya kazi
@@ -692,22 +610,11 @@ Hashes zimeharibika.
 Hashes hazilingani.
 Hashes mechi.
 Inabadilisha jina folda
-Sehemu hii inaorodhesha mipangilio yote ya kernel, haswa kwa kudumisha punje.
-Sehemu hii inabadilisha tabia ya uchunguzi wa maunzi.
-Sehemu hii inawakilisha mipangilio ya kuingia. Ondoka kwenye akaunti yako ili mabadiliko yatekelezwe.
-Sehemu hii inaorodhesha mipangilio ya ganda.
-Sehemu hii inaorodhesha mipangilio ya mtandao, kama ganda la FTP, mipangilio ya amri inayohusiana na mtandao, na mipangilio ya utatuzi wa mbali.
-Sehemu hii inaorodhesha viwambo vya skrini na mipangilio yao inayopatikana.
-Mipangilio ambayo haitoshei katika sehemu zao zinazofaa inatua hapa.
-Inapima mods kwa kutoa faili za mod
 Hufungua ganda la jaribio
-Huwasha hali ya utatuaji
-Vidokezo vya hoja
 * Bonyeza kitufe chochote kuanza kernel au ESC ili kutoka.
 Imeshindwa kuanza "{0}": {1}
 Onyesha hakikisho la ujumbe wa barua
 Unapoorodhesha ujumbe wa barua, onyesha hakikisho la mwili.
-Rangi maalum ...
 Rangi ya kuingiza
 Rangi ya leseni
 Rangi ya hitilafu inayoendelea ya punje
@@ -721,8 +628,6 @@ Rangi ya makosa
 Mtindo wa Haraka wa FTP
 Mtindo wa Haraka wa Barua
 Mtindo wa Haraka wa SFTP
-Inamsha msaada wa rangi 255 kwa BouncingBlock.
-Inamsha msaada wa rangi ya kweli kwa BouncingBlock.
 Kujaribu kufikia njia batili.
 Hufuta faili ya maandishi
 Toka kihariri cha maandishi
@@ -745,8 +650,6 @@ Rangi ya Baa ya Dakika
 Rangi ya Baa ya Masaa
 Rangi ya Habari
 Tiketi kubadilisha rangi
-Inamsha msaada wa rangi 255 kwa ProgressClock.
-Inamsha msaada wa kweli wa rangi kwa ProgressClock.
 Ikiwa baiskeli ya rangi imewezeshwa, ni kupe ngapi kabla ya kubadilisha rangi kwenye ProgressClock? Jibu 1 = sekunde 0.5
 ProgressClock itachagua rangi bila mpangilio ikiwa imewezeshwa. Vinginevyo, tumia rangi kutoka kwa usanidi.
 Hufanya mandhari mpya
@@ -761,39 +664,10 @@ Rangi ya chaguo
 Ingiza nambari ya rangi kutoka 0 hadi 255:
 Tumia "hwinfo" kwa habari iliyopanuliwa juu ya vifaa.
 Inachapisha habari ya vifaa
-Habari ya CPU:
 Jina la wasindikaji:
-Kasi ya usindikaji:
 Vipindi vya wasindikaji:
-Msindikaji rev:
-Usindikaji topolojia:
-Aina ya wasindikaji:
-Hatua ya usindikaji:
-Programu ya BogoMips:
-Ukubwa wa kashe ya processor L2:
-Ukubwa wa kashe ya processor L3:
-Vipengele vya processor:
-Maelezo ya HDD:
-Jina la Hifadhi:
-Mfano wa Hifadhi:
-Mwuzaji wa Hifadhi:
-Kasi ya kuendesha:
-Ukubwa wa Hifadhi:
-Gari mfululizo:
-Kitambulisho cha Hifadhi:
-Hesabu ya kizigeu cha Hifadhi:
-Kitambulisho cha kizigeu:
 Mfumo wa faili wa kizigeu:
 Ukubwa wa kizigeu:
-Kitengo kilichotumiwa:
-Habari ya RAM:
-RAM bila malipo:
-Jumla ya RAM:
-RAM imetumika:
-Maelezo ya GPU:
-Jina la GPU:
-Dereva wa GPU:
-Toleo la GPU:
 GPU: Kadi moja au zaidi ya picha imeshindwa kuchunguzwa. Inaonyesha habari hata hivyo ...
 >> Karibu! Hii ni mara yako ya kwanza kuingia utatuzi wa mbali na kupiga gumzo. Tumia "/ kujiandikisha <name>" kujiandikisha.
 Kifaa tayari kipo.
@@ -825,8 +699,6 @@ Bainisha jina la mandhari:
 Mtumiaji {0} ameongezwa kwenye orodha ya "{1}".
 Mtumiaji {0} ameondolewa kwenye orodha ya "{1}".
 Hali batili {0}
-Mtumiaji tayari yupo
-Pakia Mada Kutoka ...
 Pakia Mada kutoka kwa Mada zilizojengwa awali ...
 Bainisha jina la faili ya mandhari bila ugani wa .json:
 Hufungua kumbukumbu ya ZIP
@@ -839,12 +711,9 @@ Saraka {0} haipo
 Saraka ya kumbukumbu {0} haipo
 Nafasi za Max Hesabu
 Nafasi ngapi zinawashwa kabla ya kufifia?
-Inamsha msaada wa rangi 255 kwa Nyepesi.
-Inamsha msaada wa kweli wa rangi kwa Nyepesi.
 Rangi ya kuingia kwenye orodha
 Rangi ya thamani ya orodha
 Inaunganisha kwa seva ya SSH kutekeleza amri.
-Sehemu hii inaorodhesha mipangilio ya Bongo
 Kibainishi batili cha rangi. Hakikisha kuwa iko kwenye muundo sahihi, ambayo inamaanisha nambari kutoka 0-255 ikiwa unatumia rangi 255 au mlolongo wa VT ikiwa unatumia rangi ya kweli kama ifuatavyo:
 Hitilafu katika ganda la jaribio: {0}
 Inaweka kutofautisha kwa thamani katika hati
@@ -866,13 +735,11 @@ Je! Unataka kuthibitishaje?
 Faili ya ufunguo wa kibinafsi
 Nenosiri
 Ingiza kaulisiri ya ufunguo {0}:
-Ingiza eneo la ufunguo wa faragha wa {0}. Andika "q" ili kumaliza kuongeza vitufe:
 Ilirekebisha njia ambayo haipo.
 Faili muhimu {0} haipo.
 Hitilafu wakati wa kujaribu kuongeza kitufe cha faragha:
 Bonyeza "t" kubadili hali ya rangi 255.
 Bonyeza "t" kubadili hali halisi ya rangi.
-Sehemu hii inakuwezesha kuchagua aina gani ya rangi ambayo unataka kubadilisha.
 Inaonekana hauna mtumiaji isipokuwa mzizi. Hii ni mbaya. Tutakuongoza jinsi ya kuunda moja.
 Andika jina lako la mtumiaji.
 Lazima uandike jina lako la mtumiaji.
@@ -882,7 +749,6 @@ Chagua aina ya akaunti.
 Msimamizi: Aina hii ya akaunti ina nguvu zaidi katika kernel, hukuruhusu utumie programu za usimamizi wa mfumo.
 Mtumiaji wa Kawaida: Aina hii ya akaunti imezuiliwa kidogo kuliko wasimamizi.
 Hongera! Umeunda akaunti mpya! Ili kumaliza hii, ingia kama akaunti yako mpya.
-Wasiliana na mwongozo wa kiwambo cha skrini au nambari ya chanzo kwa habari.
 mod: Hakuna mods zilizogunduliwa.
 Amri za jumla:
 Amri za Mod:
@@ -906,7 +772,6 @@ Hujaribu kituo cha hitilafu ya kernel na msaada wa muundo
 Inajaribu kutafsiri kamba iliyopo katika rasilimali kwa lugha maalum
 Chapa kamba ili kufariji na kuchanganua vishika nafasi vilivyopatikana
 Hujaribu kituo cha usemi wa kawaida
-Husimba fimbo kwa kutumia
 Inaanza mods zote
 Inasimama mods zote
 Huwasha au kulemaza utatuaji
@@ -941,7 +806,6 @@ Orodha ziliunga mkono tamaduni
 Utafutaji wa mfuatano uliobainishwa katika faili iliyotolewa ukitumia misemo ya kawaida
 Angalia ikiwa unaweza kubonyeza kitufe kwa wakati
 Mtumiaji hakutoa mchango wowote kwa wakati unaofaa.
-Ugumu batili
 Tabia haikubanwa kwa wakati.
 Umesisitiza mhusika sahihi!
 Umebonyeza tabia isiyo sahihi.
@@ -985,7 +849,6 @@ Inapata mipangilio ya kiokoa desturi
 Inaweka mipangilio ya kiokoa desturi
 Mipangilio imewekwa kwa mafanikio kwa kiokoa skrini
 Imeshindwa kuweka mipangilio ya kiokoa skrini
-Sehemu hii inakuwezesha kudhibiti uundaji wa nywila ya mizizi.
 Hufungua ganda la RSS kusoma milisho
 Inatoka kwenye ganda la RSS na kurudi kwenye kernel
 Inabadilisha kiunga cha kulisha
@@ -1012,13 +875,6 @@ Hali ya mfumo wa faili
 Mfumo wa mfumo wa faili
 Inadhibiti jinsi faili zitakavyopangwa.
 Inadhibiti mwelekeo wa mfumo wa faili kuchagua ikiwa inapanda au inashuka.
-Kupanda kwa utaratibu
-Utaratibu wa kushuka
-Jina kamili
-Ukubwa wa faili
-Wakati wa uumbaji
-Wakati wa mwisho wa kuandika
-Wakati wa kufikia mwisho
 Andika tena Kuchelewesha kwa Milisekunde
 Ni millisecond ngapi kusubiri kabla ya kuandika maandishi tena?
 Andika maandishi yoyote unayotaka kuonyeshwa. Kwa muda mrefu ni bora zaidi.
@@ -1027,35 +883,26 @@ Kiwango cha juu cha kuandika katika WPM
 Uwezekano wa typo kwa asilimia
 Imeshindwa kuhifadhi saraka ya sasa: {0}
 Futa kubadilisha mwelekeo
-Inamsha msaada wa rangi 255 kwa Futa.
-Inamsha msaada wa rangi ya kweli kwa Futa.
 Je! Unafuta vipi kabla ya kubadilisha mwelekeo bila mpangilio?
 Hatua imekamilika
 Uanzishaji wa ndani umemalizika kwa
 Faili inayorejelewa {0} haipatikani. Mod hii inaweza isifanye kazi vizuri bila faili hii.
 Kuanzia mod
-Inapata habari ya mod
 Jina la amri:
 Ufafanuzi wa Amri:
 Aina ya amri:
 Amri kali?
 Toleo la Mod:
 Mod {0} haipatikani.
-Utamaduni wa
-Ni aina gani ya {0} inayotumiwa kubadilisha majina ya mwezi, kalenda, nk?
 Kihariri cha maandishi hakijafungua mtiririko wa faili bado.
 Kamba imebadilishwa.
 Nambari moja au zote mbili sio nambari.
 Neno limefutwa.
 Tabia imefutwa.
-Mipangilio ya Mfumo wa Faili ...
-Sehemu hii inaorodhesha mipangilio ya mfumo wa faili.
 Karibu kwenye Mipangilio!
 Hitilafu wakati wa kutekeleza amri ya SSH
 Hitilafu kwenye ganda la SSH
 - Habari ya programu
-Inamsha msaada wa rangi 255 kwa BouncingText.
-Inamsha msaada wa rangi ya kweli kwa BouncingText.
 Hujaribu mwandishi wa kamusi na safu ya kamba na kamba
 Hujaribu mwandishi wa kamusi na safu ya char na char
 Hujaribu mwandishi wa kamusi na safu kamili na nambari
@@ -1072,21 +919,15 @@ ambapo HardwareType itakuwa
 Aina ya maunzi {0} haijachunguzwa, au sio halali.
 Aina ya maunzi {0} bado haijachunguzwa. Ikiwa una hakika kuwa imechunguzwa, anzisha kiini upya na utatuaji umewezeshwa.
 Sehemu ambazo hazijachanganuliwa kuorodheshwa.
-Njia ya Hacker
-Ikiwa imewezeshwa, dashibodi ya kijani itawezeshwa.
 Kuchapisha kitenganishi
 Chapa kitenganishi na msaada wa fomati
 Printa kitenganishi na msaada wa rangi
 Chapa kitenganishi na msaada wa rangi na muundo
 Inazingatia kila wakati
-Inamsha msaada wa rangi 255 kwa Marquee.
-Inamsha msaada wa kweli wa rangi kwa Marquee.
 Andika maandishi yoyote unayotaka kuonyeshwa.
 Ikiwa maandishi yaliyoonyeshwa kwenye jumba huwekwa katikati kila wakati.
-'q' kuacha.
 Hoja {0} haipatikani kuingiza.
 Hoja ya mstari wa amri {0} haipatikani.
-Hufuta mipangilio yote
 Screensaver ilipata hitilafu wakati wa kuonyesha: {0}. Bonyeza kitufe chochote ili utoke.
 Chungulia kwanza ...
 Hivi ndivyo mada yako itaonekana kama:
@@ -1124,20 +965,15 @@ Ikiwa utatumia kitengo cha Beats kwa Dakika kuandika rangi inayofuata.
 Kuchelewesha Kupigwa kwa Dakika
 Rangi ya Beat
 Beats ngapi kwa dakika kusubiri kabla ya kuandika ijayo?
-Inamsha msaada wa rangi 255 kwa BeatFader.
-Inamsha msaada wa kweli wa rangi kwa BeatFader.
 BeatFader itachagua rangi bila mpangilio ikiwa imewezeshwa. Vinginevyo, tumia rangi kutoka kwa usanidi.
 Bango la Kuanzisha Maalum
-Ikiwa imeainishwa, itaonyesha bendera ya kuanza ya kukufaa na msaada wa kishikilia nafasi. Unaweza kutumia kifungu hiki kwa toleo la kernel:
 Inapakua folda ya mbali kwa saraka ya karibu kwa kutumia binary au maandishi
 Inapakia folda ya ndani kwa saraka ya mbali kwa kutumia binary au maandishi
-Ingiza folda kupakua kwenye saraka ya karibu.
 Inapakua folda {0} ...
 Folda iliyopakuliwa {0}.
 Folda imepotea {0}.
 Inapakia folda {0} ...
 Folda iliyopakiwa {0}
-Ingiza folda kupakia kwenye saraka ya mbali.
 Bonyeza "c" kuandika nambari kamili ya rangi.
 Ingiza msimbo wa rangi ambao unaridhisha fomati hizi:
 Inasafisha faili ya JSON
@@ -1151,13 +987,9 @@ Safu wima za maandishi zitakazochapishwa.
 Ni wahusika wangapi wa kuandika kabla ya kuchochea "ujazaji wa laini"?
 Uwezekano kwamba muundo wa kujaza laini utachapishwa kwa kofia zote kwa asilimia
 Aina ya muundo wa kujaza mstari
-Mfano wa kawaida
-Mfano kamili
-Sampuli isiyo ya kawaida
 Jibu linaweza lisiwe sifuri.
 Jibu haliwezi kuzidi viingizo vilivyoonyeshwa.
 Hifadhi mabadiliko...
-Screensaver hii inasaidia maandishi yaliyoandikwa kwenye faili. Pitisha njia kamili ya faili kwenda kwenye uwanja huu, na mtunzi wa skrini ataonyesha yaliyomo kwenye faili ipasavyo.
 Dhibiti mods zako
 Usimamizi wa Mod umezimwa katika hali salama.
 Amri batili {0}. Angalia matumizi hapa chini:
@@ -1173,5 +1005,3 @@ Bonyeza kitufe chochote kusoma ukurasa wa mwongozo ..
 Ukurasa huu wa mwongozo unahitaji kufanya kazi kwa:
 Ukurasa wa mwongozo {0} haupatikani.
 Mwongozo wa mod
-Inamsha msaada wa rangi 255 kwa FlashColor.
-Inamsha msaada wa rangi ya kweli kwa FlashColor.

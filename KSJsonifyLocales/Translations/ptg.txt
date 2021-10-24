@@ -1,15 +1,6 @@
 Comandos disponíveis: {0}
-Comando de gravação: 
 A injeção de comando foi cancelada.
-Separe os argumentos de inicialização com vírgulas sem espaços, por exemplo, 'motd, gpuprobe'
-Comandos separados em 'cmdinject' com dois-pontos com espaços, por exemplo, 'cmdinject setthemes Hacker: beep 1024 0.5'
-Note que o argumento 'debug' não cobre completamente o kernel.
-bargs: O argumento solicitado {0} não foi encontrado.
-bargs: Erro irrecuperável no argumento:
-Argumentos disponíveis: {0}
-Argumentos ('help' for help):
 Argumentos injetados serão agendados para serem executados na próxima reinicialização.
-Injeção de Argumento foi cancelada.
 Erro ao analisar argumentos de linha de comando reais: {0}
 Modelo de cor inválido {0}
 hwprobe: Seu hardware será testado. Por favor aguarde ...
@@ -82,7 +73,6 @@ Senha para {0}:
 Conectado a {0}
 Erro ao tentar se conectar a {0}: {1}
 Rastreamento de pilha: {2}
-Digite um servidor FTP.
 O diretório local {0} não existe.
 Digite um diretório local. ".." voltar.
 Diretório {0} não encontrado.
@@ -97,16 +87,12 @@ Você ainda não se conectou a nenhum servidor
 Fazendo o download do arquivo {0} ...
 Arquivo baixado {0}.
 Você deve se conectar ao servidor antes de realizar a transmissão.
-Digite um arquivo para baixar no diretório local.
 {0} KB | Modificado em: {1}
 Você deve se conectar ao servidor antes de listar todos os arquivos remotos.
 Fazendo upload do arquivo {0} ...
 Arquivo enviado {0}
-Insira um arquivo para carregar no diretório remoto. upload <file> <directory>
-(Interno:
 Obtém o diretório local atual
 Obtém o diretório remoto atual
-Conecta-se a um servidor FTP (deve começar com "ftp://" ou "ftps://")
 Altera o diretório local para download ou upload de
 Altera o diretório remoto para download ou upload para
 Exclui o arquivo remoto do servidor
@@ -147,7 +133,6 @@ Configuração recarregada. Pode ser necessário reinicializar o kernel para que
 Uma ou mais cores são inválidas.
 Cores não estão disponíveis. Ative o shell colorido na configuração do kernel.
 Protetor de tela {0} não encontrado.
-[ Configurações do kernel (executando em {0}) ]
 Versão do Kernel:
 Modo de Depuração:
 Concha Colorida:
@@ -155,8 +140,6 @@ Argumentos na inicialização:
 Comando de ajuda simplificado:
 MOTD no Login:
 Hora/Data no canto:
-[ Configurações de hardware ]
-[ Configurações do usuário ]
 Nome de usuário atual:
 Nome do host atual:
 Usernames disponíveis:
@@ -183,31 +166,14 @@ Informação do sistema
 * Você pode usar vários comandos usando os dois pontos entre os comandos.
 Uso:
 onde os argumentos serão {0}
-Inicializa o shell do FTP.
-Amigos de
 onde customsaver será
-Bloqueia sua tela com a senha.
-Logs você fora do usuário.
-Obter todas as informações da rede
-Reinicia o seu computador simulado.
-Recarrega a configuração que é alterada pelo usuário final ou pela ferramenta.
-As cores não exigem reinicialização, mas a maioria das configurações exige que você reinicie.
-mostra um protetor de tela selecionado, enquanto protege sua tela contra queimaduras.
-Mostra a data e a hora.
-Mostra a data e a hora nas zonas.
-Desliga o seu computador simulado.
-Mostra informações e versões do sistema.
 Houve um erro no shell.
 Você não tem permissão para usar {0}
 Mensagem do shell: O comando solicitado {0} não pode ser executado no modo de manutenção.
 Mensagem do shell: O comando solicitado {0} não foi encontrado. Veja 'help' para os comandos disponíveis.
 Mensagem do shell: O comando {0} não pode ser executado no log in.
 Erro ao tentar executar o comando.
-datetime: o tempo é {0}
-datetime: Hoje é {0}
-datetime: fuso horário: {0}
 - Tempo de {0}: {1}
-para limpar a tela.
 executando em {0}
 Você não está autorizado a obter informações para {0}.
 Este comando é obsoleto e será removido em uma versão futura.
@@ -233,8 +199,6 @@ Muda de idioma
 >> Quadros, arquivos, linhas e colunas <<
 > Frame {0}: Arquivo: {1} | Linha: {2} | Coluna: {3}
 > Ocorreu um erro ao tentar obter informações sobre o quadro. {0}: {1}
-Recarrega as modificações.
-Mods recarregados.
 Bem vindo ao Kernel!
 Conectado com sucesso como <user>
 MOTD / MAL é válido, mas o tipo de mensagem não é válido. 
@@ -267,27 +231,19 @@ O adaptador {0} não suporta IPv6. Continuando...
 O adaptador {0} não suporta IPv4. Falha na análise.
 Parece que você estava executando a versão de desenvolvimento do kernel. Embora você possa ver os aspectos, ele é frequentemente atualizado e pode apresentar bugs. É recomendável que você permaneça na versão estável.
 O idioma que você selecionou contém duas variantes. Selecione um:
-1. transliterado
-2. Traduzido
-Seleccione a sua escolha:
 Escolha inválida. Tente novamente.
 Você não está autorizado a definir o diretório atual como {0}: {1}
 O caminho que você especificou é muito longo.
-CPU: AVISO: o SSE2 será necessário em confirmações de desenvolvimento futuras.
 O coletor de informações de despejo falhou ao tentar obter informações sobre {0}: {1}
-Erro ao tentar obter a data de compilação do assembly {0}: {1}
 Erro ao tentar definir MOTD / MAL: {0}
 Erro ao tentar obter MOTD / MAL: {0}
 Erro ao tentar iniciar o protetor de tela devido a uma operação inválida.
 Recarregar não permitido no modo de segurança.
 Mods de análise não permitidos no modo de segurança.
-Lista todos os dispositivos de depuração conectados.
 Erro ao tentar definir o modo de análise. Verifique o valor e tente novamente. Se isso estiver correto, consulte o rastreamento de pilha quando a depuração do kernel estiver ativada.
 O caminho não é um arquivo nem um diretório.
 Cria outra cópia de um arquivo em um diretório ou nome diferente.
 Move um arquivo para outro diretório
-Para copiar arquivos para outro diretório ou nome diferente
-Para mover arquivos para outro diretório
 Correspondência {0} ({1}): {2}
 Correspondência {0}: {1}
 Tempo gasto: {0} milissegundos
@@ -302,9 +258,6 @@ Responda a comentários de amor ou ódio.
 Se alguém fez este comentário no seu vídeo:
 Como você responderia?
 Seleção inválida. Indo para o próximo comentário ...
-Você acabou de relatar o comentário de amor!
-Você acabou de responder ao comentário de ódio!
-Ótimo! O comentário de {0} será removido para isso.
 Ótimo! {0} agradecerá seu agradecimento.
 Soletrado perfeitamente!
 Escrito incorretamente.
@@ -318,7 +271,6 @@ Digite a senha para {0}:
 SSH desconectado.
 Não foi possível definir a página de código. O idioma pode não ser exibido corretamente.
 Depuração não ativada.
-{0} não está mais definido como protetor de tela padrão.
 Obrigado! Isto é interessante.
 Todos apoiarão seu vídeo para isso.
 Eu lhe dei o arquivo especial em seu e-mail para o seu próximo vídeo.
@@ -364,7 +316,6 @@ O diretório {0} já existe.
 Erro ao tentar se conectar a {0}: Tempo limite da conexão ou conexão perdida
 Calculadora para calcular expressões.
 Erro no cálculo.
-Parece que você estava executando a versão de lançamento próximo. Embora seja mais seguro usar agora, é recomendável que você permaneça na versão estável.
 Atualização do sistema
 Verificando atualizações do sistema ...
 Nova versão encontrada: 
@@ -372,7 +323,6 @@ Você pode baixá-lo em:
 Nenhuma notificação recente
 Procura por sequência específica no arquivo fornecido
 Calcula somas de arquivos no diretório especificado.
-Lista todos os emails no usuário específico.
 Digite o nome de usuário ou endereço de email:
 Digite a senha:
 Erro ao conectar-se a {0}: {1}
@@ -382,7 +332,6 @@ Sai do shell IMAP
 Lista de comandos
 Faz o download das mensagens e as lista
 Abre uma mensagem
-A página pode não ser negativa ou zero.
 Página não é um valor numérico.
 O número da mensagem pode não ser negativo ou zero.
 O número da mensagem não é um valor numérico.
@@ -392,7 +341,6 @@ O número da mensagem não é um valor numérico.
 A mensagem especificada não foi encontrada.
 A depuração remota falhou ao iniciar: {0}
 Preparando perfis ... Pode levar alguns minutos ...
-Nome do host, nome de usuário, tipo de dados, codificação, criptografia, protocolos
 Erro ao tentar executar o script: {0}
 Grava texto no console
 Faz escolhas do usuário
@@ -417,7 +365,6 @@ A discagem rápida está vazia. Conecte-se a um servidor para adicionar um ender
 A discagem rápida não existe. Conecte-se a um servidor para adicionar um endereço a ele.
 Digite o endereço e a porta do servidor IMAP (<endereço> ou <endereço>: [porta]):
 Digite o endereço e a porta do servidor SMTP (<endereço> ou <endereço>: [porta]):
-Solicita que você preencha os campos obrigatórios para enviar uma mensagem para um endereço
 Envia uma mensagem para um endereço
 Digite o endereço de e-mail do destinatário:
 Digite o assunto:
@@ -445,8 +392,6 @@ Exclui uma palavra ou frase do número da linha
 Exclui um caractere do número de caracteres na linha especificada
 Linha removida.
 O número da linha especificado {0} não é um número válido.
-Os argumentos necessários não são passados ​​para o comando {0}
-Erro ao tentar executar o comando: {0}
 Executando no modo de segurança. Ignorando o estágio ...
 >> Depuração remota e bate-papo: versão
 >> Seu endereço é {0}.
@@ -464,19 +409,12 @@ Bloquear um dispositivo de depuração pelo endereço IP
 Erro ao carregar as configurações
 Ocorreu um erro ao carregar as configurações. Pode ser necessário verificar o arquivo de configurações.
 Selecione a seção:
-Configurações Gerais...
-Configurações de hardware ...
-Configurações de login ...
-Configurações de Shell ...
-Configurações de rede...
-Configurações Diversas...
 Salvar configurações
 Saída
 A opção especificada {0} é inválida.
 A resposta deve ser numérica.
 Solicitar argumentos na inicialização
 Gatilho do modo de manutenção
-Alterar senha de root ...
 Verifique se há atualizações na inicialização
 Quiet Probe
 Mostrar MOTD no login
@@ -500,9 +438,7 @@ Seção inválida inserida. Por favor, volte.
 Volte...
 Habilitar
 Desabilitar
-Número de chave inválido inserido. Por favor, volte.
 Escreva a senha de root a ser definida. Não se preocupe; as senhas são mostradas como estrelas.
-Habilite "Alterar Senha Root" para usar esta opção. Por favor, volte.
 Alterar a senha do root?
 Definir senha raiz ...
 Escreva uma porta de depurador remoto. Deve ser numérico e ainda não deve ser usado. Caso contrário, o depurador remoto não conseguirá abrir a porta.
@@ -513,7 +449,6 @@ A resposta pode não ser negativa.
 A resposta é inválida. Certifique-se de que a resposta seja numérica para entradas de configuração que precisam de números como respostas.
 A variável {0} não foi encontrada em nenhum dos módulos.
 Altera a configuração do kernel
-Configurações do protetor de tela ...
 Ative 255 cores
 Você quer se manter conectado?
 Escolha inválida. Supondo que não ...
@@ -549,7 +484,6 @@ Falha ao mover arquivo ou diretório: {0}
 Não foi possível localizar o arquivo para a string "{0}": {1}
 Falha no download do arquivo {0}.
 Falha ao listar arquivos remotos: {0}
-Insira um arquivo ou pasta para remover. Você deve ter permissões administrativas em sua conta para poder remover.
 Tem certeza que deseja excluir {0} <y / n>?
 Excluindo {0} ...
 {0} não foi encontrado no servidor.
@@ -560,7 +494,6 @@ Movendo {0} para {1} ...
 Movido com sucesso
 Move o arquivo ou diretório para outro arquivo ou diretório. Você também pode usar isso para renomear arquivos.
 Falha ao mover {0} para {1}.
-Insira um caminho de origem e um caminho de destino.
 Copiando {0} para {1} ...
 Copiado com sucesso
 Copia o arquivo ou diretório para outro arquivo ou diretório.
@@ -578,9 +511,6 @@ Umidade: {0}
 Você pode obter sua própria chave de API em https://home.openweathermap.org/api_keys.
 Você sempre pode consultar http://bulk.openweathermap.org/sample/city.list.json.gz para obter a lista de cidades com seus IDs.
 Unidade preferida para temperatura
-Kelvin
-Imperial (Fahrenheit)
-Métrico (Celsius)
 Configura o kernel para que ele solicite argumentos na inicialização.
 Modo de manutenção de gatilhos. Isso desativa várias contas.
 A cada inicialização, ele verificará se há atualizações.
@@ -595,10 +525,6 @@ Comando de ajuda simplificado para todos os shells
 Se deve ou não registrar o nome de usuário do FTP.
 Se deve ou não registrar o endereço IP do FTP.
 Escolha o primeiro perfil apenas ao conectar.
-Ativa o suporte de 255 cores para ColorMix.
-Ativa o suporte a 255 cores para Disco.
-Ativa o suporte de 255 cores para GlitterColor.
-Ativa o suporte de 255 cores para linhas.
 A hora e a data serão mostradas no canto superior direito da tela
 Se habilitado, o kernel analisará a pasta inteira para seu tamanho total. Caso contrário, analisará apenas a superfície.
 Ativa o eyecandy na inicialização
@@ -608,7 +534,6 @@ Selecione sua unidade preferida de temperatura (isso se aplica apenas ao comando
 Mod {0} parou
 {0} v {1} parado
 O mod {0} não tem o nome da peça. A análise do mod falhou. Revise o código-fonte.
-O mod {0} não possui o comando. A análise do mod falhou. Revise o código-fonte.
 Você deve ativar o modo de depuração antes de limpar o log de depuração.
 {0} novas mensagens chegaram à caixa de entrada.
 Abra "mail" para vê-los.
@@ -645,10 +570,6 @@ Nível de cor vermelha excedido. Era {0}.
 Nível de cor verde excedido. Era {0}.
 Nível de cor azul excedido. Era {0}.
 Ative cores verdadeiras
-Ativa o suporte true color para ColorMix.
-Ativa o suporte true color para Disco.
-Ativa o suporte true color para GlitterColor.
-Ativa o suporte true color para linhas.
 Falha ao desbloquear {0}.
 {0} já está bloqueado.
 {0} não pode ingressar na depuração remota agora.
@@ -659,7 +580,6 @@ Insira caminhos de arquivo para anexos. Pressione ENTER em um caminho em branco 
 Abre uma mensagem criptografada
 Escreva a senha para o ID da chave {0}
 Envia uma mensagem criptografada para um endereço
-Solicita que você preencha os campos obrigatórios para enviar uma mensagem criptografada para um endereço
 Baixando de {0} ...
 Mostra a barra de progresso ao baixar ou enviar do comando "get" ou "put"
 Se verdadeiro, faz "get" ou "put" mostrar a barra de progresso durante o download ou upload.
@@ -678,8 +598,6 @@ Parece: {0}
 Temperatura: {0}
 Velocidade do vento: {0}
 Direção do vento: {0}
-Ativa o suporte de 255 cores para Dissolver.
-Ativa o suporte true color para Dissolve.
 Pressione qualquer tecla para voltar.
 Não foi possível criar a pasta de e-mail {0}: {1}
 Cria um diretório no diretório de trabalho atual
@@ -692,22 +610,11 @@ Hashes estão malformados.
 Hashes não correspondem.
 Hashes correspondem.
 Renomeia uma pasta
-Esta seção lista todas as configurações gerais do kernel, principalmente para manter o kernel.
-Esta seção altera o comportamento da detecção de hardware.
-Esta seção representa as configurações de login. Saia da sua conta para que as alterações tenham efeito.
-Esta seção lista as configurações do shell.
-Esta seção lista as configurações de rede, como o shell do FTP, as configurações de comando relacionadas à rede e as configurações de depuração remota.
-Esta seção lista todos os protetores de tela e suas configurações disponíveis.
-Configurações que não se encaixam em suas seções apropriadas são colocadas aqui.
-Testa mods fornecendo arquivos mod
 Abre um shell de teste
-Ativa o modo de depuração
-Solicita argumentos
 * Pressione qualquer tecla para iniciar o kernel ou ESC para sair.
 Falha ao iniciar "{0}": {1}
 Mostrar visualização da mensagem de e-mail
 Ao listar mensagens de correio, mostre a visualização do corpo.
-Cores personalizadas...
 Cor de entrada
 Cor da licença
 Cor de erro de kernel continuável
@@ -721,8 +628,6 @@ Cor do erro
 Estilo de solicitação de FTP
 Estilo do prompt de correio
 Estilo de solicitação de SFTP
-Ativa o suporte de 255 cores para BouncingBlock.
-Ativa o suporte true color para BouncingBlock.
 Tentando acessar um caminho inválido.
 Limpa o arquivo de texto
 Sai do editor de texto
@@ -745,8 +650,6 @@ Cor da barra de minutos
 Cor da barra de horas
 Cor da Informação
 Carrapatos para mudar de cor
-Ativa o suporte de 255 cores para ProgressClock.
-Ativa o suporte true color para ProgressClock.
 Se o ciclo de cores estiver ativado, quantos tiques antes de alterar as cores no ProgressClock? 1 tick = 0,5 segundos
 ProgressClock selecionará cores aleatórias se estiver habilitado. Caso contrário, use as cores da configuração.
 Cria um novo tema
@@ -761,39 +664,10 @@ Cor da opção
 Digite o número da cor de 0 a 255:
 Use "hwinfo" para obter informações estendidas sobre hardware.
 Imprime informações de hardware
-Informações da CPU:
 Nome do processador:
-Velocidade do processador:
 Bits do processador:
-Rev do processador:
-Topologia do processador:
-Tipo de processador:
-Marco do processador:
-Processador BogoMips:
-Tamanho do cache L2 do processador:
-Tamanho do cache L3 do processador:
-Recursos do processador:
-Informações de HDD:
-Nome da unidade:
-Modelo de unidade:
-Fornecedor do Drive:
-Velocidade do drive:
-Tamanho da unidade:
-Série da unidade:
-ID da unidade:
-Contagem de partição da unidade:
-ID da partição:
 Sistema de arquivos de partição:
 Tamanho da partição:
-Partição usada:
-Informações de RAM:
-RAM livre:
-RAM total:
-RAM usada:
-Informações de GPU:
-Nome da GPU:
-Driver GPU:
-Versão GPU:
 GPU: uma ou mais placas gráficas não foram sondadas. Mostrando informações mesmo assim ...
 >> Bem-vindo! Esta é a primeira vez que você entra no bate-papo e depuração remota. Use "/ register <nome>" para se registrar.
 O dispositivo já existe.
@@ -825,8 +699,6 @@ Especifique o nome do tema:
 O usuário {0} foi adicionado à lista "{1}".
 O usuário {0} foi removido da lista "{1}".
 Modo inválido {0}
-Usuário já existe
-Carregar tema de ...
 Carregar tema de temas pré-construídos ...
 Especifique o nome do arquivo do tema sem a extensão .json:
 Abre um arquivo ZIP
@@ -839,12 +711,9 @@ Diretório {0} não existe
 O diretório de arquivo {0} não existe
 Contagem de posições máximas
 Quantas posições são iluminadas antes do escurecimento?
-Ativa o suporte de 255 cores para o Isqueiro.
-Ativa o suporte para true color para o Isqueiro.
 Cor de entrada da lista
 Cor do valor da lista
 Conecta-se a um servidor SSH para executar um comando.
-Esta seção lista as configurações do protetor de tela para
 Especificador de cor inválido. Certifique-se de que está no formato correto, o que significa um número de 0 a 255 se usar 255 cores ou uma sequência VT se usar true color da seguinte maneira:
 Erro no shell de teste: {0}
 Define uma variável para um valor em um script
@@ -866,13 +735,11 @@ Como você deseja se autenticar?
 Arquivo de chave privada
 Senha
 Digite a senha longa para a chave {0}:
-Insira a localização da chave privada para {0}. Escreva "q" para terminar de adicionar as chaves:
 Neutralizou um caminho inexistente.
 O arquivo de chave {0} não existe.
 Erro ao tentar adicionar chave privada:
 Pressione "t" para mudar para o modo de 255 cores.
 Pressione "t" para mudar para o modo true color.
-Esta seção permite que você escolha o tipo de cor que deseja alterar.
 Parece que você não tem nenhum usuário, exceto o root. Isto é mau. Iremos guiá-lo como criar um.
 Escreva seu nome de usuário.
 Você deve escrever seu nome de usuário.
@@ -882,7 +749,6 @@ Selecione o tipo de conta.
 Administrador: este tipo de conta tem mais poder no kernel, permitindo que você use programas de gerenciamento de sistema.
 Usuário normal: este tipo de conta é um pouco mais restrito do que administradores.
 Parabéns! Você fez uma nova conta! Para terminar, faça login como sua nova conta.
-Consulte o manual do protetor de tela ou o código-fonte para obter informações.
 mod: Nenhum mod detectado.
 Comandos gerais:
 Comandos mod:
@@ -906,7 +772,6 @@ Testa a facilidade de erro do kernel com suporte de formato
 Testa a tradução de uma string existente em recursos para um idioma específico
 Imprime uma string para o console e analisa os marcadores encontrados
 Testa a facilidade de expressão regular
-Criptografa uma string usando
 Inicia todos os mods
 Para todos os mods
 Ativa ou desativa a depuração
@@ -941,7 +806,6 @@ Lista culturas suportadas
 Pesquisa a string especificada no arquivo fornecido usando expressões regulares
 Veja se você consegue pressionar uma tecla na hora certa
 O usuário não forneceu nenhuma entrada em tempo hábil.
-Dificuldade inválida
 Personagem não pressionado a tempo.
 Você pressionou o personagem certo!
 Você pressionou o caractere errado.
@@ -985,7 +849,6 @@ Obtém configurações de proteção personalizadas
 Define configurações de proteção personalizadas
 Configurações definidas com sucesso para o protetor de tela
 Falha ao definir uma configuração para o protetor de tela
-Esta seção permite gerenciar a criação de senha root.
 Abre um shell RSS para ler os feeds
 Sai do shell RSS e retorna ao kernel
 Altera o link do feed
@@ -1012,13 +875,6 @@ Modo de classificação do sistema de arquivos
 Direção de classificação do sistema de arquivos
 Controla como os arquivos serão classificados.
 Controla a direção da classificação do sistema de arquivos, seja crescente ou decrescente.
-Ordem ascendente
-Ordem decrescente
-Nome completo
-Tamanho do arquivo
-Tempo de criação
-Última hora de escrita
-Última hora de acesso
 Atraso de gravação de novo em milissegundos
 Quantos milissegundos esperar antes de escrever o texto novamente?
 Escreva qualquer texto que você deseja mostrar. Quanto mais tempo, melhor.
@@ -1027,35 +883,26 @@ Velocidade máxima de gravação em WPM
 Probabilidade de erro de digitação em porcentagem
 Falha ao salvar o diretório atual: {0}
 Limpa para mudar de direção
-Ativa o suporte de 255 cores para Wipe.
-Ativa o suporte true color para Wipe.
 Quantas limpezas a serem feitas antes de mudar de direção aleatoriamente?
 Etapa finalizada em
 A inicialização interna terminou em
 Arquivo referenciado {0} não encontrado. Este mod pode não funcionar corretamente sem este arquivo.
 Mod começando
-Obtém informações sobre mod
 Nome do comando:
 Definição de comando:
 Tipo de comando:
 Comando estrito?
 Versão mod:
 Mod {0} não encontrado.
-Cultura de
-Qual variante de {0} está sendo usada para alterar os nomes dos meses, calendário, etc.?
 O editor de texto ainda não abriu um fluxo de arquivo.
 String substituída.
 Um ou ambos os números não são numéricos.
 Palavra excluída.
 Personagem excluído.
-Configurações do sistema de arquivos ...
-Esta seção lista as configurações do sistema de arquivos.
 Bem-vindo às configurações!
 Erro ao executar o comando SSH
 Erro no shell SSH
 - Informações do aplicativo
-Ativa o suporte de 255 cores para BouncingText.
-Ativa o suporte true color para BouncingText.
 Testa o escritor do dicionário com a string e o array de strings
 Testa o escritor do dicionário com a matriz char e char
 Testa o escritor do dicionário com a matriz de inteiros e inteiros
@@ -1072,21 +919,15 @@ onde HardwareType estará
 O tipo de hardware {0} não foi testado ou não é válido.
 O tipo de hardware {0} ainda não foi testado. Se você tiver certeza de que foi testado, reinicie o kernel com a depuração habilitada.
 Partições não analisadas para a lista.
-Modo Hacker
-Se habilitado, o console verde será habilitado.
 Imprime um separador
 Imprime um separador com suporte de formato
 Imprime um separador com suporte de cor
 Imprime um separador com suporte a cores e formatos
 Sempre centrado
-Ativa o suporte de 255 cores para Marquee.
-Ativa o suporte true color para Marquee.
 Escreva qualquer texto que você deseja mostrar.
 Se o texto mostrado no letreiro está sempre centralizado.
-'q' para sair.
 Argumento {0} não encontrado para injetar.
 Argumento da linha de comando {0} não encontrado.
-Limpa todas as configurações
 O protetor de tela encontrou um erro ao exibir: {0}. Aperte qualquer tecla para sair.
 Pré-visualizar ...
 Veja como será o seu tema:
@@ -1124,20 +965,15 @@ Se deve usar a unidade de batidas por minuto para escrever a próxima cor.
 Atraso em batidas por minuto
 Beat Color
 Quantas batidas por minuto devemos esperar antes de fazer a próxima gravação?
-Ativa o suporte de 255 cores para BeatFader.
-Ativa o suporte true color para BeatFader.
 O BeatFader selecionará cores aleatórias se estiver habilitado. Caso contrário, use as cores da configuração.
 Banner de inicialização personalizado
-Se especificado, ele exibirá um banner de inicialização personalizado com suporte para espaço reservado. Você pode usar esta frase para a versão do kernel:
 Faz o download da pasta remota para o diretório local usando binário ou texto
 Carrega pasta local para diretório remoto usando binário ou texto
-Insira uma pasta para baixar no diretório local.
 Baixando pasta {0} ...
 Pasta baixada {0}.
 O download falhou para a pasta {0}.
 Fazendo upload da pasta {0} ...
 Pasta enviada {0}
-Insira uma pasta para carregar no diretório remoto.
 Pressione "c" para escrever o código de cores completo.
 Insira um código de cor que atenda a estes formatos:
 Minimiza o arquivo JSON
@@ -1151,13 +987,9 @@ As colunas de texto a serem impressas.
 Quantos caracteres escrever antes de acionar o "preenchimento de linha"?
 Possibilidade de que o padrão de preenchimento de linha seja impresso em letras maiúsculas em porcentagem
 Tipo de padrão de preenchimento de linha
-Padrão Comum
-Padrão Completo
-Padrão Aleatório
 A resposta pode não ser zero.
 A resposta não pode exceder as entradas mostradas.
 Salvar alterações ...
-Este protetor de tela oferece suporte a texto escrito em arquivo. Passe o caminho completo do arquivo para este campo e o protetor de tela exibirá o conteúdo do arquivo apropriadamente.
 Gerenciar seus mods
 O gerenciamento de mod é desabilitado no modo de segurança.
 Comando inválido {0}. Verifique o uso abaixo:
@@ -1173,5 +1005,3 @@ Pressione qualquer tecla para ler a página do manual ...
 Esta página do manual precisa ser trabalhada para:
 Página do manual {0} não encontrada.
 Manual do Mod
-Ativa o suporte de 255 cores para FlashColor.
-Ativa o suporte true color para FlashColor.

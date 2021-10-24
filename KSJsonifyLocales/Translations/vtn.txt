@@ -1,15 +1,6 @@
 Các lệnh khả dụng: {0}
-Viết lệnh:
 Lệnh tiêm đã bị hủy bỏ.
-Các đối số khởi động riêng biệt với dấu phẩy không có dấu cách, ví dụ: 'motd,gpuprobe'
-Các lệnh riêng biệt trên 'cmdinject' với dấu hai chấm có dấu cách, ví dụ: 'cmdinject setthemes Hacker: beep 1024 0.5'
-Lưu ý rằng đối số 'gỡ lỗi' không bao gồm đầy đủ kernel.
-xà lan: Không tìm thấy đối số được yêu cầu {0}.
-xà lan: Lỗi không thể phục hồi trong đối số:
-Đối số khả dụng: {0}
-Đối số ('trợ giúp' để được giúp đỡ):
 Các đối số được tiêm sẽ được lên lịch để chạy trong lần khởi động lại tiếp theo.
-Đối số tiêm đã bị hủy bỏ.
 Lỗi trong khi phân tích cú pháp đối số dòng lệnh thực: {0}
 Mẫu màu không hợp lệ {0}
 hwprobe: Phần cứng của bạn sẽ được thăm dò. Xin vui lòng chờ ...
@@ -82,7 +73,6 @@ Mật khẩu cho {0}:
 Đã kết nối với {0}
 Lỗi khi cố gắng kết nối với {0}: {1}
 Dấu vết ngăn xếp: {2}
-Nhập một máy chủ FTP.
 Thư mục cục bộ {0} không tồn tại.
 Nhập một thư mục địa phương. ".." quay trở lại.
 Không tìm thấy thư mục {0}.
@@ -97,16 +87,12 @@ Bạn chưa kết nối với bất kỳ máy chủ nào
 Đang tải xuống tệp {0} ...
 Đã tải xuống tệp {0}.
 Bạn phải kết nối với máy chủ trước khi thực hiện truyền.
-Nhập một tập tin để tải về thư mục địa phương.
 {0} KB | Được sửa đổi trong: {1}
 Bạn nên kết nối với máy chủ trước khi liệt kê tất cả các tệp từ xa.
 Đang tải lên tệp {0} ...
 Tệp đã tải lên {0}
-Nhập một tập tin để tải lên thư mục từ xa. tải lên <file> <thư mục>
-(Bên trong:
 Nhận thư mục địa phương hiện tại
 Nhận thư mục từ xa hiện tại
-Kết nối với máy chủ FTP (phải bắt đầu bằng "ftp://" hoặc "ftps://")
 Thay đổi thư mục cục bộ để tải xuống hoặc tải lên từ
 Thay đổi thư mục từ xa để tải xuống từ hoặc tải lên
 Xóa tập tin từ xa khỏi máy chủ
@@ -147,7 +133,6 @@ Cấu hình tải lại. Bạn có thể cần phải khởi động lại kerne
 Một hoặc nhiều màu không hợp lệ.
 Màu sắc không có sẵn. Bật vỏ màu trong cấu hình kernel.
 Trình bảo vệ màn hình {0} không tìm thấy.
-[ Cài đặt kernel (Chạy trên {0}) ]
 Phiên bản hạt nhân:
 Chế độ kiểm tra sửa lỗi:
 Vỏ màu:
@@ -155,8 +140,6 @@ Vỏ màu:
 Lệnh trợ giúp được đơn giản hóa:
 MOTD khi đăng nhập:
 Thời gian / Ngày ở góc:
-[Cài đặt phần cứng ]
-[ Cài đặt người dùng ]
 Tên người dùng hiện tại:
 Tên máy chủ hiện tại:
 Tên người dùng có sẵn:
@@ -183,31 +166,14 @@ Thông tin hệ thống
 * Bạn có thể sử dụng nhiều lệnh bằng cách sử dụng dấu hai chấm giữa các lệnh.
 Sử dụng:
 trong đó các đối số sẽ là {0}
-Khởi tạo vỏ FTP.
-Bạn của
 customsaver sẽ ở đâu
-Khóa màn hình của bạn bằng mật khẩu.
-Đăng xuất bạn ra khỏi người dùng.
-Nhận mọi thông tin mạng
-Khởi động lại máy tính mô phỏng của bạn.
-Tải lại cấu hình được thay đổi bởi người dùng cuối hoặc bởi công cụ.
-Màu sắc không yêu cầu khởi động lại, nhưng hầu hết các cài đặt đều yêu cầu bạn khởi động lại.
-hiển thị cho bạn một trình bảo vệ màn hình đã chọn, đồng thời bảo vệ màn hình của bạn khỏi bị cháy.
-Hiển thị ngày và thời gian.
-Hiển thị ngày và thời gian trong khu vực.
-Tắt máy tính mô phỏng của bạn.
-Hiển thị thông tin hệ thống và phiên bản.
 Có một lỗi trong vỏ.
 Bạn không có quyền sử dụng {0}
 Thông báo Shell: Lệnh được yêu cầu {0} không được phép chạy trong chế độ bảo trì.
 Thông báo Shell: Không tìm thấy lệnh được yêu cầu {0}. Xem 'trợ giúp' cho các lệnh có sẵn.
 Thông báo Shell: Lệnh {0} không được phép chạy khi đăng nhập.
 Lỗi khi cố thực thi lệnh.
-datetime: Thời gian là {0}
-datetime: Hôm nay là {0}
-datetime: Múi giờ: {0}
 - Thời gian của {0}: {1}
-để xóa màn hình.
 Chạy trên {0}
 Bạn không được phép lấy thông tin cho {0}.
 Lệnh này đã lỗi thời và sẽ bị xóa trong phiên bản tương lai.
@@ -233,8 +199,6 @@ Thay đổi ngôn ngữ
 >> Khung, tệp, dòng và cột <<
 > Khung {0}: Tệp: {1} | Dòng: {2} | Cột: {3}
 > Có lỗi khi cố lấy thông tin khung. {0}: {1}
-Tải lại mod.
-Mod tải lại.
 Chào mừng bạn đến với hạt nhân!
 Đăng nhập thành công với tư cách là <user>
 MOTD / MAL là hợp lệ, nhưng loại tin nhắn không hợp lệ. Giả sử ...
@@ -267,27 +231,19 @@ Bộ điều hợp {0} không hỗ trợ IPv6. Tiếp tục ...
 Bộ điều hợp {0} không hỗ trợ IPv4. Thăm dò thất bại.
 Có vẻ như bạn đang chạy phiên bản phát triển của kernel. Mặc dù bạn có thể thấy các khía cạnh, nó thường xuyên được cập nhật và có thể giới thiệu các lỗi. Bạn nên ở phiên bản ổn định.
 Ngôn ngữ bạn đã chọn chứa hai biến thể. Chọn một:
-1. Phiên âm
-2. Đã dịch
-Chọn sự lựa chọn của bạn:
 Lựa chọn không hợp lệ. Thử lại.
 Bạn không được phép đặt thư mục hiện tại thành {0}: {1}
 Đường dẫn bạn đã chỉ định quá dài.
-CPU: CẢNH BÁO: SSE2 sẽ được yêu cầu trong các cam kết phát triển trong tương lai.
 Trình thu thập thông tin kết xuất bị hỏng khi cố gắng lấy thông tin về {0}: {1}
-Lỗi trong khi cố gắng lấy ngày biên dịch lắp ráp {0}: {1}
 Lỗi khi cố gắng đặt MOTD / MAL: {0}
 Lỗi khi cố lấy MOTD / MAL: {0}
 Lỗi khi cố gắng khởi động trình bảo vệ màn hình, do hoạt động không hợp lệ.
 Tải lại không được phép trong chế độ an toàn.
 Phân tích cú pháp mod không được phép trên chế độ an toàn.
-Liệt kê tất cả các thiết bị gỡ lỗi được kết nối.
 Lỗi khi cố gắng đặt chế độ phân tích cú pháp. Kiểm tra giá trị và thử lại. Nếu điều này là chính xác, hãy xem theo dõi ngăn xếp khi gỡ lỗi kernel được kích hoạt.
 Đường dẫn không phải là một tập tin hay một thư mục.
 Tạo một bản sao khác của một tập tin dưới thư mục hoặc tên khác nhau.
 Di chuyển một tập tin vào thư mục khác
-Để sao chép tập tin vào thư mục khác hoặc tên khác
-Để di chuyển tập tin sang thư mục khác
 Khớp {0} ({1}): {2}
 Khớp {0}: {1}
 Thời gian sử dụng: {0} mili giây
@@ -302,9 +258,6 @@ Trả lời yêu hay ghét bình luận.
 Nếu ai đó đưa ra nhận xét này cho video của bạn:
 Làm thế nào bạn sẽ trả lời?
 Lựa chọn không hợp lệ. Đi đến bình luận tiếp theo ...
-Bạn vừa báo cáo bình luận tình yêu!
-Bạn chỉ trả lời bình luận ghét!
-Tuyệt quá! Nhận xét của {0} sẽ bị xóa vì điều đó.
 Tuyệt quá! {0} sẽ đánh giá cao lời cảm ơn của bạn.
 Đánh vần hoàn hảo!
 Viết sai chính tả.
@@ -318,7 +271,6 @@ Nhập mật khẩu cho {0}:
 SSH bị ngắt kết nối.
 Không thể đặt codepage. Ngôn ngữ có thể không hiển thị đúng.
 Gỡ lỗi không được kích hoạt.
-{0} không còn được đặt thành trình bảo vệ màn hình mặc định.
 Cảm ơn! Hay đấy.
 Mọi người sẽ ủng hộ video của bạn cho việc này.
 Tôi đã đưa cho bạn tệp đặc biệt trong e-mail cho video tiếp theo của bạn.
@@ -364,7 +316,6 @@ Thư mục {0} đã tồn tại.
 Lỗi khi cố gắng kết nối với {0}: Hết thời gian kết nối hoặc mất kết nối
 Máy tính để tính biểu thức.
 Lỗi trong tính toán.
-Có vẻ như bạn đang chạy phiên bản phát hành gần. Mặc dù hiện tại an toàn hơn để sử dụng, nhưng bạn nên duy trì phiên bản ổn định.
 Cập nhật hệ thống
 Đang kiểm tra cập nhật hệ thống ...
 Tìm thấy phiên bản mới: 
@@ -372,7 +323,6 @@ Bạn có thể tải xuống tại:
 Không có thông báo gần đây
 Tìm kiếm chuỗi cụ thể trong tệp được cung cấp
 Tính tổng các tập tin trong thư mục được chỉ định.
-Liệt kê tất cả các thư trong người dùng cụ thể.
 Nhập tên người dùng hoặc địa chỉ thư:
 Nhập mật khẩu:
 Lỗi khi kết nối với {0}: {1}
@@ -382,7 +332,6 @@ Thoát khỏi vỏ IMAP
 Danh sách các lệnh
 Tải tin nhắn và liệt kê chúng
 Mở một tin nhắn
-Trang có thể không âm hoặc bằng không.
 Trang không phải là một giá trị số.
 Số tin nhắn có thể không âm hoặc bằng không.
 Số tin nhắn không phải là một giá trị số.
@@ -392,7 +341,6 @@ Số tin nhắn không phải là một giá trị số.
 Tin nhắn được chỉ định không được tìm thấy.
 Gỡ lỗi từ xa không bắt đầu: {0}
 Chuẩn bị hồ sơ ... Có thể mất vài phút ...
-Tên máy chủ, tên người dùng, loại dữ liệu, mã hóa, mã hóa, giao thức
 Lỗi khi cố thực thi tập lệnh: {0}
 Viết văn bản vào bảng điều khiển
 Làm cho người dùng lựa chọn
@@ -417,7 +365,6 @@ Quay số nhanh là trống rỗng. Kết nối với một máy chủ để th�
 Quay số nhanh không tồn tại. Kết nối với một máy chủ để thêm một địa chỉ cho nó.
 Nhập địa chỉ máy chủ IMAP và cổng (<địa chỉ> hoặc <địa chỉ>: [cổng]):
 Nhập địa chỉ và cổng máy chủ SMTP (<địa chỉ> hoặc <địa chỉ>: [cổng]):
-Yêu cầu bạn điền vào các trường bắt buộc để gửi tin nhắn đến một địa chỉ
 Gửi tin nhắn đến một địa chỉ
 Nhập địa chỉ thư người nhận:
 Nhập chủ đề:
@@ -445,8 +392,6 @@ Xóa một từ hoặc cụm từ từ số dòng
 Xóa một ký tự khỏi số ký tự trong dòng được chỉ định
 Đã xóa dòng.
 Số dòng được chỉ định {0} không phải là số hợp lệ.
-Các đối số bắt buộc không được truyền cho lệnh {0}
-Lỗi khi chạy lệnh: {0}
 Chạy ở chế độ an toàn. Bỏ qua giai đoạn ...
 >> Gỡ lỗi và trò chuyện từ xa: phiên bản
 >> Địa chỉ của bạn là {0}.
@@ -464,19 +409,12 @@ Chặn thiết bị gỡ lỗi theo địa chỉ IP
 Lỗi tải cài đặt
 Có lỗi trong khi tải cài đặt. Bạn có thể cần kiểm tra tập tin cài đặt.
 Chọn phần:
-Cài đặt chung ...
-Cài đặt phần cứng ...
-Cài đặt Đăng nhập ...
-Cài đặt Shell ...
-Thiết lạp mạng lưới...
-Cài đặt linh tinh...
 Lưu các thiết lập
 Lối ra
 Tùy chọn đã chỉ định {0} không hợp lệ.
 Câu trả lời phải là số.
 Nhắc đối số khi khởi động
 Kích hoạt chế độ bảo trì
-Thay đổi mật khẩu gốc ...
 Kiểm tra các bản cập nhật khi khởi động
 Thăm dò yên lặng
 Hiển thị MOTD khi đăng nhập
@@ -500,9 +438,7 @@ Hiển thị cac file bị ẩn
 Quay lại...
 Kích hoạt
 Vô hiệu hóa
-Số khóa đã nhập không hợp lệ. Hãy quay lại.
 Viết mật khẩu gốc cần đặt. Đừng lo lắng; mật khẩu được hiển thị dưới dạng dấu sao.
-Bật "Thay đổi mật khẩu gốc" để sử dụng tùy chọn này. Hãy quay lại.
 Thay đổi mật khẩu gốc?
 Đặt mật khẩu gốc ...
 Viết một cổng gỡ lỗi từ xa. Nó phải là số và không được sử dụng. Nếu không, trình gỡ lỗi từ xa sẽ không mở được cổng.
@@ -513,7 +449,6 @@ Câu trả lời có thể không phủ định.
 Câu trả lời là không hợp lệ. Kiểm tra để đảm bảo rằng câu trả lời là số cho các mục nhập cấu hình cần số làm câu trả lời.
 Biến {0} không được tìm thấy trên bất kỳ mô-đun nào.
 Thay đổi cấu hình hạt nhân
-Cài đặt trình bảo vệ màn hình ...
 Kích hoạt 255 màu
 Bạn có muốn giữ kết nối không?
 Lựa chọn không hợp lệ. Giả sử không ...
@@ -549,7 +484,6 @@ Không di chuyển được tệp hoặc thư mục: {0}
 Không thể tìm thấy tệp để khớp với chuỗi "{0}": {1}
 Không tải xuống được tệp {0}.
 Không liệt kê được các tệp từ xa: {0}
-Nhập một tệp hoặc thư mục để xóa. Bạn phải có quyền quản trị trên tài khoản của mình để có thể xóa.
 Bạn có chắc chắn muốn xóa {0} <y / n> không?
 Đang xóa {0} ...
 {0} không được tìm thấy trong máy chủ.
@@ -560,7 +494,6 @@ Lỗi khi gửi tin nhắn.
 Đã chuyển thành công
 Di chuyển tệp hoặc thư mục sang tệp hoặc thư mục khác. Bạn cũng có thể sử dụng nó để đổi tên tệp.
 Không chuyển được {0} sang {1}.
-Nhập đường dẫn nguồn và đường dẫn đích.
 Đang sao chép {0} sang {1} ...
 Đã sao chép thành công
 Sao chép tệp hoặc thư mục sang tệp hoặc thư mục khác.
@@ -578,9 +511,6 @@ Thời tiết: {0}
 Bạn có thể lấy khóa API của riêng mình tại https://home.openweathermap.org/api_keys.
 Bạn luôn có thể tham khảo http://bulk.openweathermap.org/sample/city.list.json.gz để biết danh sách các thành phố có ID của họ.
 Đơn vị ưu tiên cho nhiệt độ
-Kelvin
-Imperial (Fahrenheit)
-Hệ mét (độ C)
 Thiết lập hạt nhân để nó nhắc bạn đối số khi khởi động.
 Kích hoạt chế độ bảo trì. Điều này vô hiệu hóa nhiều tài khoản.
 Mỗi lần khởi động, nó sẽ kiểm tra các bản cập nhật.
@@ -595,10 +525,6 @@ Lệnh trợ giúp đơn giản hóa cho tất cả các shell
 Có đăng nhập tên người dùng FTP hay không.
 Có đăng nhập địa chỉ IP FTP hay không.
 Chỉ chọn hồ sơ đầu tiên khi kết nối.
-Kích hoạt hỗ trợ 255 màu cho ColorMix.
-Kích hoạt hỗ trợ 255 màu cho Disco.
-Kích hoạt hỗ trợ 255 màu cho GlitterColor.
-Kích hoạt hỗ trợ 255 màu cho Lines.
 Ngày và giờ sẽ được hiển thị ở góc trên bên phải của màn hình
 Nếu được bật, hạt nhân sẽ phân tích cú pháp toàn bộ thư mục cho tổng kích thước của nó. Khác, sẽ chỉ phân tích bề mặt.
 Bật chế độ mỏi mắt khi khởi động
@@ -608,7 +534,6 @@ Chọn đơn vị ưa thích của bạn cho nhiệt độ (điều này chỉ �
 Mod {0} đã dừng
 {0} v {1} đã dừng
 Mod {0} không có tên bộ phận. Phân tích cú pháp mod không thành công. Xem lại mã nguồn.
-Mod {0} không có lệnh. Phân tích cú pháp mod không thành công. Xem lại mã nguồn.
 Bạn phải bật chế độ gỡ lỗi trước khi có thể xóa nhật ký gỡ lỗi.
 {0} thư mới đã đến hộp thư đến.
 Mở "mail" để xem chúng.
@@ -645,10 +570,6 @@ Thay thế một từ hoặc cụm từ bằng một từ hoặc cụm từ khá
 Đã vượt quá mức màu xanh lục. Đó là {0}.
 Đã vượt quá mức màu xanh lam. Đó là {0}.
 Kích hoạt màu sắc trung thực
-Kích hoạt hỗ trợ màu thực cho ColorMix.
-Kích hoạt hỗ trợ màu sắc trung thực cho Disco.
-Kích hoạt hỗ trợ màu sắc trung thực cho GlitterColor.
-Kích hoạt hỗ trợ màu thực cho Đường kẻ.
 Không thể bỏ chặn {0}.
 {0} đã bị chặn.
 {0} hiện không thể tham gia gỡ lỗi từ xa.
@@ -659,7 +580,6 @@ Nhập đường dẫn tệp đến tệp đính kèm. Nhấn ENTER trên một 
 Mở một tin nhắn được mã hóa
 Viết mật khẩu cho ID khóa {0}
 Gửi một tin nhắn được mã hóa đến một địa chỉ
-Yêu cầu bạn điền vào các trường bắt buộc để gửi một tin nhắn được mã hóa đến một địa chỉ
 Đang tải xuống từ {0} ...
 Hiển thị thanh tiến trình trong khi tải xuống hoặc tải lên từ lệnh "get" hoặc "put"
 Nếu đúng, nó làm cho "get" hoặc "put" hiển thị thanh tiến trình trong khi tải xuống hoặc tải lên.
@@ -678,8 +598,6 @@ Cảm thấy như: {0}
 Nhiệt độ: {0}
 Tốc độ gió: {0}
 Hướng gió: {0}
-Kích hoạt hỗ trợ 255 màu cho Hòa tan.
-Kích hoạt hỗ trợ màu sắc trung thực cho Hòa tan.
 Nhấn phím bất kỳ để quay lại.
 Không thể tạo thư mục thư {0}: {1}
 Tạo một thư mục trong thư mục làm việc hiện tại
@@ -692,22 +610,11 @@ Hàm băm không đúng định dạng.
 Hàm băm không khớp.
 Kết hợp băm.
 Đổi tên một thư mục
-Phần này liệt kê tất cả các cài đặt hạt nhân chung, chủ yếu để duy trì hạt nhân.
-Phần này thay đổi hành vi thăm dò phần cứng.
-Phần này đại diện cho cài đặt đăng nhập. Đăng xuất khỏi tài khoản của bạn để các thay đổi có hiệu lực.
-Phần này liệt kê các cài đặt shell.
-Phần này liệt kê các cài đặt mạng, như FTP shell, cài đặt lệnh liên quan đến mạng và cài đặt gỡ lỗi từ xa.
-Phần này liệt kê tất cả các trình bảo vệ màn hình và các cài đặt có sẵn của chúng.
-Các cài đặt không phù hợp với các phần thích hợp của chúng sẽ xuất hiện ở đây.
-Thử nghiệm các bản mod bằng cách cung cấp các tập tin mod
 Mở vỏ thử nghiệm
-Bật chế độ gỡ lỗi
-Lời nhắc đối số
 * Nhấn phím bất kỳ để khởi động nhân hoặc phím ESC để thoát.
 Không khởi động được "{0}": {1}
 Hiển thị bản xem trước thư
 Khi liệt kê các thư, hãy hiển thị phần xem trước nội dung.
-Màu sắc tùy chỉnh...
 Màu đầu vào
 Màu giấy phép
 Màu lỗi hạt nhân liên tục
@@ -721,8 +628,6 @@ Màu lỗi
 Kiểu lời nhắc FTP
 Kiểu Lời nhắc Thư
 Kiểu nhắc SFTP
-Kích hoạt hỗ trợ 255 màu cho BouncingBlock.
-Kích hoạt hỗ trợ màu sắc trung thực cho BouncingBlock.
 Đang cố gắng truy cập đường dẫn không hợp lệ.
 Xóa tệp văn bản
 Thoát khỏi trình soạn thảo văn bản
@@ -745,8 +650,6 @@ Màu của thanh phút
 Màu của thanh giờ
 Màu sắc của thông tin
 Bọ ve để thay đổi màu sắc
-Kích hoạt hỗ trợ 255 màu cho ProgressClock.
-Kích hoạt hỗ trợ màu sắc trung thực cho ProgressClock.
 Nếu tính năng xoay vòng màu được bật, có bao nhiêu tích tắc trước khi thay đổi màu sắc trong ProgressClock? 1 tích tắc = 0,5 giây
 ProgressClock sẽ chọn các màu ngẫu nhiên nếu nó được bật. Nếu không, hãy sử dụng màu từ cấu hình.
 Tạo chủ đề mới
@@ -761,39 +664,10 @@ Màu tùy chọn
 Nhập số màu từ 0 đến 255:
 Sử dụng "hwinfo" để biết thông tin mở rộng về phần cứng.
 In thông tin phần cứng
-Thông tin CPU:
 Tên bộ xử lý:
-Tốc độ bộ xử lý:
 Bộ xử lý bit:
-Phiên bản bộ xử lý:
-Cấu trúc liên kết bộ xử lý:
-Loại bộ xử lý:
-Mốc của bộ xử lý:
-Bộ xử lý BogoMips:
-Kích thước bộ nhớ cache L2 của bộ xử lý:
-Kích thước bộ nhớ cache L3 của bộ xử lý:
-Các tính năng của bộ xử lý:
-Thông tin ổ cứng:
-Tên ổ:
-Mô hình ổ đĩa:
-Nhà cung cấp ổ đĩa:
-Tốc độ truyền động:
-Kích thước ổ đĩa:
-Ổ nối tiếp:
-ID ổ đĩa:
-Số phân vùng ổ đĩa:
-ID phân vùng:
 Hệ thống tệp phân vùng:
 Kích thước phân vùng:
-Phân vùng được sử dụng:
-Thông tin RAM:
-RAM trống:
-Tổng RAM:
-RAM được sử dụng:
-Thông tin GPU:
-Tên GPU:
-Trình điều khiển GPU:
-Phiên bản GPU:
 GPU: Không thể thăm dò một hoặc nhiều cạc đồ họa. Vẫn hiển thị thông tin ...
 >> Chào mừng bạn! Đây là lần đầu tiên bạn vào gỡ lỗi và trò chuyện từ xa. Sử dụng "/ register <name>" để đăng ký.
 Thiết bị đã tồn tại.
@@ -825,8 +699,6 @@ Chỉ định tên chủ đề:
 Người dùng {0} đã được thêm vào danh sách "{1}".
 Người dùng {0} đã bị xóa khỏi danh sách "{1}".
 Chế độ không hợp lệ {0}
-Người dùng đã tồn tại
-Tải chủ đề từ ...
 Tải chủ đề từ chủ đề dựng sẵn ...
 Chỉ định tên tệp chủ đề mà không có phần mở rộng .json:
 Mở kho lưu trữ ZIP
@@ -839,12 +711,9 @@ Thư mục {0} không tồn tại
 Thư mục lưu trữ {0} không tồn tại
 Số lượng vị trí tối đa
 Có bao nhiêu vị trí sáng trước khi mờ?
-Kích hoạt hỗ trợ 255 màu cho Nhẹ hơn.
-Kích hoạt hỗ trợ màu sắc trung thực cho Lighter.
 Màu mục nhập danh sách
 Màu giá trị danh sách
 Kết nối với máy chủ SSH để thực hiện lệnh.
-Phần này liệt kê các cài đặt bảo vệ màn hình cho
 Bộ chỉ định màu không hợp lệ. Đảm bảo rằng nó ở đúng định dạng, có nghĩa là một số từ 0-255 nếu sử dụng 255 màu hoặc chuỗi VT nếu sử dụng màu thực như sau:
 Lỗi trong trình bao thử nghiệm: {0}
 Đặt một biến thành một giá trị trong một tập lệnh
@@ -866,13 +735,11 @@ Bạn muốn xác thực như thế nào?
 Tệp khóa cá nhân
 Mật khẩu
 Nhập cụm mật khẩu cho khóa {0}:
-Nhập vị trí của khóa cá nhân cho {0}. Viết "q" để kết thúc việc thêm khóa:
 Đã trung hòa một con đường không tồn tại.
 Tệp khóa {0} không tồn tại.
 Lỗi khi cố thêm khóa cá nhân:
 Nhấn "t" để chuyển sang chế độ 255 màu.
 Nhấn "t" để chuyển sang chế độ màu thực.
-Phần này cho phép bạn chọn loại màu bạn muốn thay đổi.
 Có vẻ như bạn không có người dùng nào ngoại trừ root. Điều này thật tệ. Chúng tôi sẽ hướng dẫn bạn cách tạo một tài khoản.
 Viết tên người dùng của bạn.
 Bạn phải viết tên người dùng của mình.
@@ -882,7 +749,6 @@ Chọn loại tài khoản.
 Quản trị viên: Loại tài khoản này có nhiều quyền lực nhất trong nhân, cho phép bạn sử dụng các chương trình quản lý hệ thống.
 Người dùng bình thường: Loại tài khoản này bị hạn chế hơn một chút so với quản trị viên.
 Xin chúc mừng! Bạn đã tạo một tài khoản mới! Để hoàn tất việc này, hãy đăng nhập bằng tài khoản mới của bạn.
-Tham khảo hướng dẫn sử dụng bảo vệ màn hình hoặc mã nguồn để biết thông tin.
 mod: Không có mod nào được phát hiện.
 Các lệnh chung:
 Lệnh mod:
@@ -906,7 +772,6 @@ Kiểm tra cơ sở lỗi hạt nhân với hỗ trợ định dạng
 Kiểm tra dịch một chuỗi tồn tại trong tài nguyên sang ngôn ngữ cụ thể
 In một chuỗi vào bảng điều khiển và phân tích cú pháp các trình giữ chỗ được tìm thấy
 Kiểm tra cơ sở biểu thức chính quy
-Mã hóa một chuỗi bằng cách sử dụng
 Bắt đầu tất cả các mod
 Dừng tất cả các mod
 Bật hoặc tắt gỡ lỗi
@@ -941,7 +806,6 @@ Liệt kê các nền văn hóa được hỗ trợ
 Tìm kiếm chuỗi được chỉ định trong tệp được cung cấp bằng cách sử dụng biểu thức chính quy
 Xem liệu bạn có thể bấm phím đúng lúc không
 Người dùng đã không cung cấp bất kỳ đầu vào nào kịp thời.
-Khó khăn không hợp lệ
 Nhân vật không được ép đúng thời gian.
 Bạn đã nhấn đúng ký tự!
 Bạn đã nhấn sai ký tự.
@@ -985,7 +849,6 @@ Nhận cài đặt trình tiết kiệm tùy chỉnh
 Đặt cài đặt trình tiết kiệm tùy chỉnh
 Đã đặt thành công cài đặt cho trình bảo vệ màn hình
 Không đặt được cài đặt cho trình bảo vệ màn hình
-Phần này cho phép bạn quản lý việc tạo mật khẩu gốc.
 Mở trình bao RSS để đọc nguồn cấp dữ liệu
 Thoát khỏi trình bao RSS và quay trở lại hạt nhân
 Thay đổi liên kết nguồn cấp dữ liệu
@@ -1012,13 +875,6 @@ Chế độ sắp xếp hệ thống tập tin
 Hướng sắp xếp hệ thống tập tin
 Kiểm soát cách sắp xếp các tệp.
 Kiểm soát hướng sắp xếp hệ thống tệp cho dù nó tăng dần hay giảm dần.
-Thứ tự tăng dần
-Thứ tự giảm dần
-Họ và tên
-Kích thước tập tin
-Thời gian sáng tạo
-Lần viết cuối cùng
-Lần truy cập cuối cùng
 Viết lại độ trễ tính bằng mili giây
 Phải đợi bao nhiêu mili giây trước khi viết lại văn bản?
 Viết bất kỳ văn bản nào bạn muốn hiển thị. Dài hơn là tốt hơn.
@@ -1027,35 +883,26 @@ Tốc độ ghi tối đa trong WPM
 Xác suất lỗi đánh máy tính bằng phần trăm
 Không lưu được thư mục hiện tại: {0}
 Lau để thay đổi hướng
-Kích hoạt hỗ trợ 255 màu cho Wipe.
-Kích hoạt hỗ trợ màu sắc trung thực cho Wipe.
 Có bao nhiêu lần lau phải làm trước khi đổi hướng ngẫu nhiên?
 Giai đoạn kết thúc trong
 Khởi tạo nội bộ đã hoàn thành trong
 Tệp được tham chiếu {0} không được tìm thấy. Bản mod này có thể không hoạt động bình thường nếu không có tệp này.
 Bắt đầu mod
-Nhận thông tin mod
 Tên lệnh:
 Định nghĩa lệnh:
 Loại lệnh:
 Lệnh nghiêm minh?
 Phiên bản mod:
 Không tìm thấy bản mod {0}.
-Văn hóa của
-Biến thể nào của {0} đang được sử dụng để thay đổi tên tháng, lịch, v.v.?
 Trình soạn thảo văn bản chưa mở luồng tệp.
 Đã thay thế chuỗi.
 Một hoặc cả hai số không phải là số.
 Đã xóa từ.
 Ký tự đã bị xóa.
-Cài đặt hệ thống tập tin ...
-Phần này liệt kê các cài đặt hệ thống tệp.
 Chào mừng bạn đến với Cài đặt!
 Lỗi khi thực hiện lệnh SSH
 Lỗi trên SSH shell
 - Thông tin ứng dụng
-Kích hoạt hỗ trợ 255 màu cho BouncingText.
-Kích hoạt hỗ trợ màu thực cho BouncingText.
 Kiểm tra trình viết từ điển với chuỗi và mảng chuỗi
 Kiểm tra trình viết từ điển với mảng char và char
 Kiểm tra trình viết từ điển với mảng số nguyên và số nguyên
@@ -1072,21 +919,15 @@ HardwareType sẽ ở đâu
 Loại phần cứng {0} không được thăm dò hoặc không hợp lệ.
 Loại phần cứng {0} chưa được thăm dò. Nếu bạn chắc chắn rằng nó đã được thăm dò, hãy khởi động lại hạt nhân với tính năng gỡ lỗi được bật.
 Các phần không được phân tích cú pháp thành danh sách.
-Chế độ tin tặc
-Nếu được bật, bảng điều khiển màu xanh lá cây sẽ được bật.
 In dấu phân tách
 In dấu phân tách có hỗ trợ định dạng
 In dấu phân cách với hỗ trợ màu
 In dấu phân tách với hỗ trợ màu và định dạng
 Luôn luôn tập trung
-Kích hoạt hỗ trợ 255 màu cho Marquee.
-Kích hoạt hỗ trợ màu thực cho Marquee.
 Viết bất kỳ văn bản nào bạn muốn hiển thị.
 Cho dù văn bản được hiển thị trên bảng điều khiển luôn được căn giữa.
-'q' để thoát.
 Đối số {0} không được tìm thấy để đưa vào.
 Không tìm thấy đối số dòng lệnh {0}.
-Xóa tất cả các cài đặt
 Trình bảo vệ màn hình gặp lỗi khi hiển thị: {0}. Nhấn bất kì phím nào để thoát.
 Xem trước ...
 Đây là cách chủ đề của bạn sẽ trông như thế nào:
@@ -1124,20 +965,15 @@ Có sử dụng đơn vị Nhịp mỗi phút để viết màu tiếp theo hay 
 Độ trễ theo nhịp mỗi phút
 Đánh bại màu
 Phải đợi bao nhiêu nhịp mỗi phút trước khi viết tiếp?
-Kích hoạt hỗ trợ 255 màu cho BeatFader.
-Kích hoạt hỗ trợ màu sắc trung thực cho BeatFader.
 BeatFader sẽ chọn màu ngẫu nhiên nếu nó được bật. Nếu không, hãy sử dụng màu từ cấu hình.
 Biểu ngữ khởi động tùy chỉnh
-Nếu được chỉ định, nó sẽ hiển thị biểu ngữ khởi động tùy chỉnh với hỗ trợ giữ chỗ. Bạn có thể sử dụng cụm từ này cho phiên bản hạt nhân:
 Tải thư mục từ xa xuống thư mục cục bộ bằng mã nhị phân hoặc văn bản
 Tải lên thư mục cục bộ vào thư mục từ xa bằng cách sử dụng nhị phân hoặc văn bản
-Nhập một thư mục để tải xuống thư mục cục bộ.
 Đang tải xuống thư mục {0} ...
 Thư mục đã tải xuống {0}.
 Tải xuống không thành công cho thư mục {0}.
 Đang tải lên thư mục {0} ...
 Thư mục đã tải lên {0}
-Nhập một thư mục để tải lên thư mục từ xa.
 Nhấn "c" để viết mã màu đầy đủ.
 Nhập mã màu đáp ứng các định dạng sau:
 Thu nhỏ tệp JSON
@@ -1151,13 +987,9 @@ Các cột văn bản sẽ được in.
 Cần viết bao nhiêu ký tự trước khi kích hoạt "điền dòng"?
 Khả năng mẫu tô dòng sẽ được in hoa toàn bộ tính bằng phần trăm
 Kiểu điền dòng
-Mẫu chung
-Mẫu hoàn chỉnh
-Mẫu ngẫu nhiên
 Câu trả lời có thể không phải là số không.
 Câu trả lời không được vượt quá các mục được hiển thị.
 Lưu thay đổi...
-Trình bảo vệ màn hình này hỗ trợ văn bản được viết trên tệp. Chuyển đường dẫn tệp hoàn chỉnh đến trường này và trình bảo vệ màn hình sẽ hiển thị nội dung của tệp một cách thích hợp.
 Quản lý mod của bạn
 Quản lý mod bị tắt ở chế độ an toàn.
 Lệnh không hợp lệ {0}. Kiểm tra việc sử dụng bên dưới:
@@ -1173,5 +1005,3 @@ Nhấn phím bất kỳ để đọc trang hướng dẫn sử dụng ...
 Trang hướng dẫn này cần hoạt động cho:
 Không tìm thấy trang thủ công {0}.
 Hướng dẫn mod
-Kích hoạt hỗ trợ 255 màu cho FlashColor.
-Kích hoạt hỗ trợ màu sắc trung thực cho FlashColor.

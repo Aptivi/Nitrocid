@@ -1,15 +1,6 @@
 Perintah yang tersedia: {0}
-Tulis perintah:
 Suntikan arahan telah dibatalkan.
-Hantarkan butiran boot dengan koma tanpa ruang, sebagai contoh, 'motd, gpuprobe'
-Perintah berasingan pada 'cmdinject' dengan titik-titik dengan ruang, contohnya, 'cmdinject setthemes Hacker: bip 1024 0.5'
-Perhatikan bahawa hujah 'debug' tidak meliputi kernel sepenuhnya.
-Bargs: Hujah yang diminta {0} tidak dijumpai.
-bargs: Kesalahan yang tidak dapat dipulihkan dalam hujah:
-Hujah yang tersedia: {0}
-Argumen ('help' untuk mendapatkan bantuan):
 Argumen yang disuntik akan dijadualkan dijalankan pada reboot seterusnya.
-Suntikan Argumen telah dibatalkan.
 Ralat semasa menghuburkan hujah baris perintah sebenar: {0}
 Templat warna tidak sah {0}
 hwprobe: Perkakasan anda akan disiasat. Sila tunggu...
@@ -82,7 +73,6 @@ Kata laluan untuk {0}:
 Disambungkan ke {0}
 Ralat ketika cuba menyambung ke {0}: {1}
 Stack Trace: {2}
-Masukkan pelayan FTP.
 Direktori setempat {0} tidak wujud.
 Masukkan direktori setempat. ".." untuk kembali semula.
 Direktori {0} tidak dijumpai.
@@ -97,16 +87,12 @@ Anda belum lagi menyambung kepada mana-mana pelayan
 Memuat turun fail {0} ...
 Fail yang dimuat turun {0}.
 Anda mesti menyambung ke pelayan sebelum melakukan penghantaran.
-Masukkan fail untuk dimuat turun ke direktori setempat.
 {0} KB | Diubah suai dalam: {1}
 Anda harus menyambung ke pelayan sebelum menyenaraikan semua fail terpencil.
 Memuat naik fail {0} ...
 Fail yang dimuat naik {0}
-Masukkan fail untuk dimuat naik ke direktori jauh. muat naik <file> <directory>
-(Inner:
 Mendapatkan direktori setempat semasa
 Mendapatkan direktori jarak jauh semasa
-Menyambung ke pelayan FTP (ia mesti bermula dengan "ftp://" atau "ftps://")
 Mengubah direktori setempat untuk muat turun atau muat naik dari
 Tukar direktori jauh untuk dimuat turun atau muat naik ke
 Menghapus fail jauh dari pelayan
@@ -147,7 +133,6 @@ Konfigurasi dimuat semula. Anda mungkin perlu reboot kernel untuk beberapa perub
 Satu atau lebih warna tidak sah.
 Warna tidak tersedia. Hidupkan shell berwarna dalam konfigurasi kernel.
 Screensaver {0} tidak dijumpai.
-[ Tetapan kernel (Running on {0}) ]
 Versi Kernel:
 Mod Debug:
 Shell berwarna:
@@ -155,8 +140,6 @@ Argumen pada Boot:
 Perintah membantu dipermudahkan:
 MOTD pada Login:
 Masa / Tarikh di sudut:
-[ Tetapan perkakasan ]
-[ Tetapan pengguna ]
 Nama pengguna semasa:
 Nama hos semasa:
 Nama pengguna yang tersedia:
@@ -183,31 +166,14 @@ Maklumat sistem
 * Anda boleh menggunakan pelbagai arahan menggunakan titik antara perintah.
 Penggunaan:
 di mana argumen akan {0}
-Inisialisasi shell FTP.
-Rakan-rakan
 di mana customsaver akan berada
-Mengunci skrin anda dengan kata laluan.
-Log keluar daripada pengguna.
-Dapatkan setiap maklumat rangkaian
-Mulakan semula komputer simulasi anda.
-Muat semula konfigurasi yang ditukar oleh pengguna akhir atau dengan alat.
-Warna tidak memerlukan restart, tetapi kebanyakan tetapan memerlukan anda untuk memulakan semula.
-menunjukkan kepada anda screensaver yang dipilih, sambil melindungi skrin anda dari kebakaran.
-Menunjukkan tarikh dan masa.
-Menunjukkan tarikh dan masa di zon.
-Mematikan komputer simulasi anda.
-Menunjukkan maklumat dan versi sistem.
 Terdapat ralat dalam shell.
 Anda tidak mempunyai kebenaran menggunakan {0}
 Mesej Shell: Perintah yang diminta {0} tidak dibenarkan dijalankan dalam mod penyelenggaraan.
 Mesej Shell: Perintah yang diminta {0} tidak dijumpai. Lihat 'bantuan' untuk arahan yang ada.
 Mesej Shell: Perintah {0} tidak dibenarkan berjalan masuk.
 Ralat cuba melaksanakan arahan.
-datetime: Masa adalah {0}
-datetime: Today is {0}
-datetime: Zon Waktu: {0}
 - Masa {0}: {1}
-untuk membersihkan skrin.
 Berjalan di {0}
 Anda tidak dibenarkan mendapatkan info untuk {0}.
 Perintah ini sudah usang dan akan dikeluarkan dalam pelepasan masa depan.
@@ -233,8 +199,6 @@ Perubahan bahasa
 >> Bingkai, fail, baris, dan lajur <<
 > Bingkai {0}: Fail: {1} | Baris: {2} | Lajur: {3}
 > Terdapat ralat apabila cuba mendapatkan maklumat bingkai. {0}: {1}
-Pengubahsuaian semula.
-Mod dimuat semula.
 Selamat datang ke Kernel!
 Log masuk berjaya sebagai <pengguna>
 MOTD / MAL adalah sah, tetapi jenis mesej tidak sah. 
@@ -267,27 +231,19 @@ Adapter {0} tidak menyokong IPv6. Meneruskan ...
 Adapter {0} tidak menyokong IPv4. Probe gagal.
 Nampaknya anda sedang menjalankan versi pembangunan kernel. Walaupun anda dapat melihat aspek, ia sering dikemas kini dan mungkin memperkenalkan pepijat. Adalah disyorkan agar anda tetap pada versi yang stabil.
 Bahasa yang telah anda pilih mengandungi dua varian. Pilih satu:
-1. Transliterated
-2. Diterjemahkan
-Pilih pilihan anda:
 Pilihan tidak sah. Cuba lagi.
 Anda tidak dibenarkan untuk menetapkan direktori semasa ke {0}: {1}
 Jalan yang anda tentukan terlalu panjang.
-CPU: AMARAN: SSE2 diperlukan dalam pembangunan masa depan.
 Pengumpul maklumat sampah terhempas ketika cuba mendapatkan maklumat mengenai {0}: {1}
-Ralat semasa cuba mendapatkan tarikh kompilasi pemasangan {0}: {1}
 Ralat semasa cuba menetapkan MOTD / MAL: {0}
 Ralat semasa cuba mendapatkan MOTD / MAL: {0}
 Ralat ketika cuba memulakan screensaver, kerana operasi tidak sah.
 Muat semula tidak dibenarkan dalam mod selamat.
 Mod parsing tidak dibenarkan pada mod selamat.
-Menyenaraikan semua peranti debug yang berkaitan.
 Ralat semasa cuba menetapkan mod parse. Semak nilai dan cuba lagi. Jika ini betul, lihat jejak tindanan apabila debugging kernel diaktifkan.
 Laluan bukan satu fail atau direktori.
 Membuat salinan fail lain di bawah direktori atau nama yang berlainan.
 Memindahkan fail ke direktori lain
-Untuk menyalin fail ke direktori lain atau nama lain
-Untuk memindahkan fail ke direktori lain
 Padan {0} ({1}): {2}
 Padan {0}: {1}
 Masa yang dibelanjakan: {0} milisaat
@@ -302,9 +258,6 @@ Berikan tanggapan terhadap cinta atau kebencian.
 Jika seseorang membuat ulasan ini pada video anda:
 Bagaimana anda akan bertindak balas?
 Pemilihan tidak sah. Pergi ke komen seterusnya ...
-Anda baru melaporkan ulasan cinta!
-Anda hanya membalas komen yang membenci!
-Hebat! Komen {0} akan dikeluarkan untuk itu.
 Hebat! {0} akan menghargai terima kasih anda.
 Dikosongkan dengan sempurna!
 Spelled incorrectly.
@@ -318,7 +271,6 @@ Masukkan kata laluan untuk {0}:
 SSH diputuskan.
 Tidak dapat menetapkan codepage. Bahasa tidak boleh dipaparkan dengan betul.
 Debugging tidak didayakan.
-{0} tidak lagi ditetapkan kepada penggera lalai.
 Terima kasih! Ini menarik.
 Semua orang akan menyokong video anda untuk ini.
 Saya memberi anda fail khas dalam e-mel anda untuk video seterusnya.
@@ -364,7 +316,6 @@ Direktori {0} sudah wujud.
 Ralat semasa cuba menyambung ke {0}: Ralat sambungan atau sambungan hilang
 Kalkulator untuk mengira ungkapan.
 Ralat dalam pengiraan.
-Nampaknya anda sedang menjalankan versi yang hampir dilepaskan. Walaupun selamat untuk digunakan sekarang, disarankan agar anda tetap pada versi yang stabil.
 Kemas kini sistem
 Memeriksa kemas kini sistem ...
 Menemui versi baru: 
@@ -372,7 +323,6 @@ Anda boleh memuat turunnya di:
 Tiada pemberitahuan baru-baru ini
 Mencari rentetan tertentu dalam fail yang disediakan
 Mengira jumlah fail dalam direktori yang ditentukan.
-Menyenaraikan semua e-mel dalam pengguna tertentu.
 Masukkan nama pengguna atau alamat e-mel:
 Masukkan kata laluan:
 Ralat semasa menyambung ke {0}: {1}
@@ -382,7 +332,6 @@ Keluar dari shell IMAP
 Senarai arahan
 Muat turun mesej dan senaraikannya
 Membuka mesej
-Halaman mungkin tidak negatif atau sifar.
 Halaman bukan nilai berangka.
 Nombor mesej mungkin tidak negatif atau sifar.
 Nombor mesej bukan nilai angka.
@@ -392,7 +341,6 @@ Nombor mesej bukan nilai angka.
 Mesej yang ditentukan tidak dijumpai.
 Debug jarak jauh gagal dimulakan: {0}
 Menyiapkan profil ... Mungkin memerlukan beberapa minit ...
-Nama Hos, Nama Pengguna, Jenis Data, Pengekodan, Penyulitan, Protokol
 Ralat semasa menjalankan skrip: {0}
 Menulis teks ke dalam konsol
 Membuat pilihan pengguna
@@ -417,7 +365,6 @@ Dail cepat kosong. Sambungkan ke pelayan untuk menambahkan alamat kepadanya.
 Dail cepat tidak wujud. Sambungkan ke pelayan untuk menambahkan alamat kepadanya.
 Masukkan alamat dan port pelayan IMAP (<address> atau <address>: [port]):
 Masukkan alamat dan port pelayan SMTP (<address> atau <address>: [port]):
-Meminta anda mengisi medan yang diperlukan untuk menghantar mesej ke alamat
 Menghantar mesej ke alamat
 Masukkan alamat e-mel penerima:
 Masukkan subjek:
@@ -445,8 +392,6 @@ Memadamkan perkataan atau frasa dari nombor baris
 Memadamkan watak dari nombor watak dalam baris yang ditentukan
 Talian dikeluarkan.
 Nombor baris yang ditentukan {0} bukan nombor yang sah.
-Argumen yang diperlukan tidak diserahkan kepada perintah {0}
-Ralat semasa menjalankan perintah: {0}
 Berjalan dalam mod selamat. Melangkau tahap ...
 >> Debug Jauh dan Sembang: versi
 >> Alamat anda ialah {0}.
@@ -464,19 +409,12 @@ Sekat peranti debug mengikut alamat IP
 Ralat memuatkan tetapan
 Terdapat ralat semasa memuatkan tetapan. Anda mungkin perlu memeriksa fail tetapan.
 Pilih bahagian:
-Tetapan umum...
-Tetapan Perkakasan ...
-Tetapan Masuk ...
-Tetapan Shell ...
-Tetapan rangkaian...
-Tetapan Pelbagai ...
 Simpan Tetapan
 Keluar
 Pilihan yang ditentukan {0} tidak sah.
 Jawapannya mestilah berangka.
 Permintaan untuk berhujah di Boot
 Pencetus Mod Penyelenggaraan
-Tukar Kata Laluan Akar ...
 Periksa Kemas kini pada Permulaan
 Probe Sunyi
 Tunjukkan MOTD semasa Log Masuk
@@ -500,9 +438,7 @@ Bahagian tidak sah dimasukkan. Tolong balik.
 Pergi balik...
 Aktifkan
 Lumpuhkan
-Nombor kunci tidak dimasukkan. Tolong balik.
 Tulis kata laluan root yang akan ditetapkan. Jangan bimbang; kata laluan ditunjukkan sebagai bintang.
-Aktifkan "Ubah Kata Laluan Akar" untuk menggunakan pilihan ini. Tolong balik.
 Tukar Kata Laluan Akar?
 Tetapkan Kata Laluan Akar ...
 Tulis port debugger jauh. Ia mesti berangka, dan tidak boleh digunakan. Jika tidak, debugger jarak jauh akan gagal membuka port.
@@ -513,7 +449,6 @@ Jawapannya mungkin tidak negatif.
 Jawapannya tidak sah. Periksa untuk memastikan bahawa jawapannya berangka untuk entri konfigurasi yang memerlukan nombor sebagai jawapan.
 Pemboleh ubah {0} tidak dijumpai di mana-mana modul.
 Menukar konfigurasi kernel
-Tetapan Penjaga Skrin ...
 Aktifkan 255 warna
 Adakah anda mahu terus berhubung?
 Pilihan tidak sah. Dengan andaian tidak ...
@@ -549,7 +484,6 @@ Gagal memindahkan fail atau direktori: {0}
 Tidak dapat mencari fail yang sesuai dengan rentetan "{0}": {1}
 Muat turun gagal untuk fail {0}.
 Gagal menyenaraikan fail jauh: {0}
-Masukkan fail atau folder untuk dikeluarkan. Anda mesti mempunyai kebenaran pentadbiran pada akaun anda untuk dapat mengalih keluar.
 Adakah anda pasti mahu memadamkan {0} <y/n>?
 Memadamkan {0} ...
 {0} tidak dijumpai di pelayan.
@@ -560,7 +494,6 @@ Beralih {0} ke {1} ...
 Bergerak dengan jayanya
 Memindahkan fail atau direktori ke fail atau direktori lain. Anda juga boleh menggunakannya untuk menamakan semula fail.
 Gagal memindahkan {0} ke {1}.
-Masukkan jalan sumber dan jalan tujuan.
 Menyalin {0} ke {1} ...
 Berjaya disalin
 Menyalin fail atau direktori ke fail atau direktori lain.
@@ -578,9 +511,6 @@ Kelembapan: {0}
 Anda boleh mendapatkan kunci API anda sendiri di https://home.openweathermap.org/api_keys.
 Anda sentiasa boleh merujuk http://bulk.openweathermap.org/sample/city.list.json.gz untuk senarai bandar dengan ID mereka.
 Unit Pilihan untuk Suhu
-Kelvin
-Imperial (Fahrenheit)
-Metrik (Celsius)
 Menyiapkan kernel sehingga meminta anda untuk berdebat semasa boot.
 Mencetuskan mod penyelenggaraan. Ini melumpuhkan banyak akaun.
 Setiap permulaan, ia akan memeriksa kemas kini.
@@ -595,10 +525,6 @@ Perintah bantuan ringkas untuk semua cengkerang
 Adakah mahu log masuk nama pengguna FTP atau tidak.
 Adakah mahu log masuk alamat IP FTP atau tidak.
 Pilih profil pertama hanya semasa menyambung.
-Mengaktifkan sokongan warna 255 untuk ColorMix.
-Mengaktifkan sokongan warna 255 untuk Disco.
-Mengaktifkan sokongan warna 255 untuk GlitterColor.
-Mengaktifkan sokongan warna 255 untuk Lines.
 Waktu dan tarikh akan ditunjukkan di sudut kanan atas skrin
 Sekiranya diaktifkan, kernel akan mengurai keseluruhan folder untuk ukuran keseluruhannya. Lain, hanya akan mengurai permukaan.
 Membolehkan eyecandy pada permulaan
@@ -608,7 +534,6 @@ Pilih unit pilihan anda untuk suhu (ini hanya berlaku untuk perintah "cuaca")
 Mod {0} dihentikan
 {0} v {1} dihentikan
 Mod {0} tidak mempunyai nama bahagian. Penguraian mod gagal. Semak kod sumber.
-Mod {0} tidak mempunyai arahan. Penguraian mod gagal. Semak kod sumber.
 Anda mesti menghidupkan mod debug sebelum anda dapat membersihkan log debug.
 {0} mesej baru tiba di peti masuk.
 Buka "mail" untuk melihatnya.
@@ -645,10 +570,6 @@ Tahap warna merah melebihi. Ia adalah {0}.
 Tahap warna hijau melebihi. Ia adalah {0}.
 Tahap warna biru melebihi. Ia adalah {0}.
 Aktifkan warna sebenar
-Mengaktifkan sokongan warna sebenar untuk ColorMix.
-Mengaktifkan sokongan warna sebenar untuk Disco.
-Mengaktifkan sokongan warna sebenar untuk GlitterColor.
-Mengaktifkan sokongan warna sebenar untuk Lines.
 Gagal menyahsekat {0}.
 {0} sudah disekat.
 {0} tidak dapat menyertai debug jarak jauh sekarang.
@@ -659,7 +580,6 @@ Masukkan laluan fail ke lampiran. Tekan ENTER pada jalan kosong untuk mengesahka
 Membuka mesej yang disulitkan
 Tulis kata laluan untuk ID kunci {0}
 Menghantar mesej yang disulitkan ke alamat
-Meminta anda untuk mengisi bidang yang diperlukan untuk menghantar mesej yang disulitkan ke alamat
 Memuat turun dari {0} ...
 Tunjukkan bar kemajuan semasa memuat turun atau memuat naik dari perintah "get" atau "put"
 Sekiranya benar, ini menjadikan "get" atau "put" menunjukkan bar kemajuan semasa memuat turun atau memuat naik.
@@ -678,8 +598,6 @@ Rasanya seperti: {0}
 Suhu: {0}
 Kelajuan angin: {0}
 Arah angin: {0}
-Mengaktifkan sokongan warna 255 untuk Dissolve.
-Mengaktifkan sokongan warna sebenar untuk Larutkan.
 Tekan sebarang kekunci untuk kembali.
 Tidak dapat membuat folder mel {0}: {1}
 Membuat direktori dalam direktori kerja semasa
@@ -692,22 +610,11 @@ Hash tidak betul.
 Tudung tidak sepadan.
 Pertandingan bulu mata.
 Menamakan semula folder
-Bahagian ini menyenaraikan semua tetapan kernel umum, terutama untuk menjaga kernel.
-Bahagian ini mengubah tingkah laku probe perkakasan.
-Bahagian ini menunjukkan tetapan masuk. Log keluar dari akaun anda untuk perubahan tersebut berlaku.
-Bahagian ini menyenaraikan tetapan shell.
-Bahagian ini menyenaraikan tetapan rangkaian, seperti shell FTP, tetapan perintah yang berkaitan dengan rangkaian, dan tetapan debug jarak jauh.
-Bahagian ini menyenaraikan semua screensaver dan tetapannya yang tersedia.
-Tetapan yang tidak sesuai dengan bahagian yang sesuai terdapat di sini.
-Menguji mod dengan menyediakan fail mod
 Membuka shell ujian
-Mendayakan mod debug
-Permintaan untuk hujah
 * Tekan sebarang kekunci untuk memulakan kernel atau ESC untuk keluar.
 Gagal memulakan "{0}": {1}
 Tunjukkan pratonton mesej mel
 Semasa menyenaraikan mesej mel, tunjukkan pratonton badan.
-Warna tersuai ...
 Warna input
 Warna lesen
 Warna ralat kernel yang berterusan
@@ -721,8 +628,6 @@ Warna ralat
 Gaya Prompt FTP
 Gaya Permintaan Mel
 Gaya Prompt SFTP
-Mengaktifkan sokongan warna 255 untuk BouncingBlock.
-Mengaktifkan sokongan warna sebenar untuk BouncingBlock.
 Mencuba jalan masuk yang tidak sah.
 Kosongkan fail teks
 Keluar dari penyunting teks
@@ -745,8 +650,6 @@ Warna Bar Minit
 Warna Bar Jam
 Warna Maklumat
 Kutu untuk menukar warna
-Mengaktifkan sokongan warna 255 untuk ProgressClock.
-Mengaktifkan sokongan warna sebenar untuk ProgressClock.
 Sekiranya kitaran warna diaktifkan, berapa banyak tanda sebelum menukar warna di ProgressClock? 1 tandakan = 0.5 saat
 ProgressClock akan memilih warna rawak jika diaktifkan. Jika tidak, gunakan warna dari config.
 Menjadikan tema baru
@@ -761,39 +664,10 @@ Warna pilihan
 Masukkan nombor warna dari 0 hingga 255:
 Gunakan "hwinfo" untuk maklumat lanjut mengenai perkakasan.
 Mencetak maklumat perkakasan
-Maklumat CPU:
 Nama pemproses:
-Kelajuan pemproses:
 Bit pemproses:
-Pemprosesan rev:
-Topologi pemproses:
-Jenis pemproses:
-Tonggak pemproses:
-Pemproses BogoMips:
-Saiz cache L2 pemproses:
-Saiz cache pemproses L3:
-Ciri pemproses:
-Maklumat HDD:
-Nama memandu:
-Model pemanduan:
-Penjual pemacu:
-Kelajuan memandu:
-Saiz pemanduan:
-Siri pemacu:
-ID Pemacu:
-Kira partition drive:
-ID partition:
 Sistem fail partition:
 Saiz partition:
-Partition yang digunakan:
-Maklumat RAM:
-RAM percuma:
-Jumlah RAM:
-RAM yang digunakan:
-Maklumat GPU:
-Nama GPU:
-Pemacu GPU:
-Versi GPU:
 GPU: Satu atau lebih kad grafik gagal disiasat. Bagaimanapun, menunjukkan maklumat ...
 >> Selamat Datang! Ini adalah kali pertama anda memasuki debug dan sembang jarak jauh. Gunakan "/ register <name>" untuk mendaftar.
 Peranti sudah ada.
@@ -825,8 +699,6 @@ Nyatakan nama tema:
 Pengguna {0} telah ditambahkan ke senarai "{1}".
 Pengguna {0} telah dikeluarkan dari senarai "{1}".
 Mod tidak sah {0}
-Pengguna sudah wujud
-Muat Tema Dari ...
 Muat Tema Dari Tema Buatan ...
 Tentukan nama fail tema tanpa pelanjutan .json:
 Membuka arkib ZIP
@@ -839,12 +711,9 @@ Direktori {0} tidak wujud
 Direktori arkib {0} tidak wujud
 Kiraan Posisi Maks
 Berapa banyak kedudukan yang dinyalakan sebelum redup?
-Mengaktifkan sokongan warna 255 untuk Lighter.
-Mengaktifkan sokongan warna sebenar untuk Lighter.
 Senaraikan warna entri
 Menyenaraikan warna nilai
 Menyambung ke pelayan SSH untuk melaksanakan perintah.
-Bahagian ini menyenaraikan tetapan screensaver untuk
 Penentu warna tidak sah. Pastikan formatnya tepat, yang bermaksud angka dari 0-255 jika menggunakan 255 warna atau urutan VT jika menggunakan warna benar seperti berikut:
 Ralat pada shell ujian: {0}
 Menetapkan pemboleh ubah ke nilai dalam skrip
@@ -866,13 +735,11 @@ Bagaimana anda mahu mengesahkan?
 Fail kunci peribadi
 Kata Laluan
 Masukkan frasa laluan untuk kunci {0}:
-Masukkan lokasi kunci peribadi untuk {0}. Tulis "q" untuk menyelesaikan penambahan kunci:
 Meneutralkan jalan yang tidak wujud.
 Fail utama {0} tidak wujud.
 Ralat semasa menambahkan kunci peribadi:
 Tekan "t" untuk beralih ke mod warna 255.
 Tekan "t" untuk beralih ke mod warna sebenar.
-Bahagian ini membolehkan anda memilih jenis warna yang ingin anda ubah.
 Nampaknya anda tidak mempunyai pengguna kecuali root. Ini tidak baik. Kami akan membimbing anda cara membuatnya.
 Tulis nama pengguna anda.
 Anda mesti menulis nama pengguna anda.
@@ -882,7 +749,6 @@ Pilih jenis akaun.
 Pentadbir: Jenis akaun ini memiliki kekuatan paling banyak dalam kernel, yang membolehkan anda menggunakan program pengurusan sistem.
 Pengguna Biasa: Jenis akaun ini sedikit lebih terhad daripada pentadbir.
 Tahniah! Anda telah membuat akaun baru! Untuk menyelesaikannya, log masuk sebagai akaun baru anda.
-Rujuk manual screensaver atau kod sumber untuk maklumat.
 mod: Tidak ada mod yang dikesan.
 Perintah am:
 Perintah mod:
@@ -906,7 +772,6 @@ Menguji kemudahan ralat kernel dengan sokongan format
 Uji menterjemahkan rentetan yang terdapat dalam sumber ke bahasa tertentu
 Mencetak rentetan untuk menghiburkan dan menguraikan tempat letak yang dijumpai
 Menguji kemudahan ungkapan biasa
-Menyulitkan rentetan menggunakan
 Memulakan semua mod
 Menghentikan semua mod
 Mendayakan atau mematikan debug
@@ -941,7 +806,6 @@ Menyenaraikan budaya yang disokong
 Mencari rentetan yang ditentukan dalam fail yang disediakan menggunakan ungkapan biasa
 Lihat jika anda boleh menekan kekunci tepat pada waktunya
 Pengguna tidak memberikan input tepat pada masanya.
-Kesukaran tidak sah
 Perwatakan tidak ditekan tepat pada waktunya.
 Anda telah menekan watak yang betul!
 Anda telah menekan watak yang salah.
@@ -985,7 +849,6 @@ Mendapat tetapan penjimat tersuai
 Menetapkan tetapan penjimat tersuai
 Tetapan berjaya ditetapkan untuk screensaver
 Gagal menetapkan tetapan untuk screensaver
-Bahagian ini membolehkan anda mengurus pembuatan kata laluan root.
 Membuka shell RSS untuk membaca suapan
 Keluar dari shell RSS dan kembali ke kernel
 Menukar pautan suapan
@@ -1012,13 +875,6 @@ Mod jenis sistem fail
 Arah jenis sistem fail
 Mengawal bagaimana fail akan disusun.
 Mengawal arah menyusun sistem fail sama ada menaik atau menurun.
-Susunan menaik
-Dalam susunan menurun
-Nama penuh
-Saiz fail
-Masa penciptaan
-Masa menulis terakhir
-Masa akses terakhir
 Tulis Lagi Kelewatan dalam Milisaat
 Berapa milisaat yang perlu ditunggu sebelum menulis teks lagi?
 Tulis teks yang anda mahu ditunjukkan. Lebih lama lebih baik.
@@ -1027,35 +883,26 @@ Kelajuan penulisan maksimum dalam WPM
 Kebarangkalian typo dalam peratus
 Gagal menyimpan direktori semasa: {0}
 Lap untuk menukar arah
-Mengaktifkan sokongan warna 255 untuk Lap.
-Mengaktifkan sokongan warna sebenar untuk Lap.
 Berapa banyak tisu yang perlu dilakukan sebelum menukar arah secara rawak?
 Pentas selesai dalam
 Permulaan dalaman selesai pada
 Fail yang dirujuk {0} tidak dijumpai. Mod ini mungkin tidak berfungsi dengan baik tanpa fail ini.
 Memulakan mod
-Mendapat maklumat mod
 Nama arahan:
 Definisi arahan:
 Jenis arahan:
 Perintah tegas?
 Versi mod:
 Mod {0} tidak dijumpai.
-Budaya dari
-Varian {0} mana yang digunakan untuk mengubah nama bulan, kalendar, dll.?
 Penyunting teks belum membuka aliran fail.
 Rentetan diganti.
 Satu atau kedua-dua nombor itu tidak berangka.
 Perkataan dipadamkan.
 Aksara dipadamkan.
-Tetapan Sistem Fail ...
-Bahagian ini menyenaraikan tetapan sistem fail.
 Selamat Datang ke Tetapan!
 Ralat semasa melaksanakan arahan SSH
 Ralat pada shell SSH
 - Maklumat aplikasi
-Mengaktifkan sokongan warna 255 untuk BouncingText.
-Mengaktifkan sokongan warna sebenar untuk BouncingText.
 Menguji penulis kamus dengan rentetan dan rentetan rentetan
 Menguji penulis kamus dengan susunan char dan char
 Menguji penulis kamus dengan susunan integer dan integer
@@ -1072,21 +919,15 @@ di mana HardwareType akan berada
 Sama ada jenis perkakasan {0} tidak disiasat, atau tidak sah.
 Jenis perkakasan {0} belum disiasat. Sekiranya anda yakin ia disiasat, mulakan semula kernel dengan penyahpepijatan diaktifkan.
 Partition tidak dihuraikan untuk disenaraikan.
-Mod Penggodam
-Sekiranya diaktifkan, konsol hijau akan diaktifkan.
 Mencetak pemisah
 Mencetak pemisah dengan sokongan format
 Mencetak pemisah dengan sokongan warna
 Mencetak pemisah dengan sokongan warna dan format
 Sentiasa berpusat
-Mengaktifkan sokongan warna 255 untuk Marquee.
-Mengaktifkan sokongan warna sebenar untuk Marquee.
 Tulis teks yang anda mahu ditunjukkan.
 Sama ada teks yang ditunjukkan pada tenda sentiasa berpusat.
-'q' untuk berhenti.
 Hujah {0} tidak dijumpai untuk disuntik.
 Argumen baris perintah {0} tidak dijumpai.
-Kosongkan semua tetapan
 Penjaga Skrin mengalami ralat semasa memaparkan: {0}. Tekan sebarang kekunci untuk keluar.
 Pratonton ...
 Begini rupa tema anda:
@@ -1124,20 +965,15 @@ Sama ada menggunakan unit Beats Per Minute untuk menulis warna seterusnya.
 Kelewatan dalam Beats Setiap Minit
 Pukul Warna
 Berapa denyutan seminit untuk menunggu sebelum membuat penulisan seterusnya?
-Mengaktifkan sokongan warna 255 untuk BeatFader.
-Mengaktifkan sokongan warna sebenar untuk BeatFader.
 BeatFader akan memilih warna rawak jika diaktifkan. Jika tidak, gunakan warna dari config.
 Sepanduk Permulaan Tersuai
-Sekiranya dinyatakan, ia akan memaparkan sepanduk permulaan yang disesuaikan dengan sokongan pemegang tempat. Anda boleh menggunakan frasa ini untuk versi kernel:
 Muat turun folder jauh ke direktori tempatan menggunakan perduaan atau teks
 Muat naik folder tempatan ke direktori jauh menggunakan perduaan atau teks
-Masukkan folder untuk memuat turun ke direktori tempatan.
 Memuat turun folder {0} ...
 Folder yang dimuat turun {0}.
 Muat turun gagal untuk folder {0}.
 Memuat naik folder {0} ...
 Folder yang dimuat naik {0}
-Masukkan folder untuk dimuat ke direktori jauh.
 Tekan "c" untuk menulis kod warna penuh.
 Masukkan kod warna yang memenuhi format berikut:
 Mengurangkan fail JSON
@@ -1151,13 +987,9 @@ Lajur teks yang akan dicetak.
 Berapa banyak watak untuk ditulis sebelum mencetuskan "mengisi baris"?
 Kemungkinan corak pengisian baris akan dicetak dalam huruf besar dalam bentuk peratus
 Jenis corak pengisian garisan
-Corak Biasa
-Corak Lengkap
-Corak Rawak
 Jawapannya mungkin tidak sifar.
 Jawapannya mungkin tidak melebihi entri yang ditunjukkan.
 Simpan Perubahan ...
-Penjimat skrin ini menyokong teks bertulis dalam fail. Lewati jalan fail yang lengkap ke bidang ini, dan screensaver akan memaparkan isi fail dengan tepat.
 Urus mod anda
 Pengurusan mod dilumpuhkan dalam mod selamat.
 Perintah tidak sah {0}. Periksa penggunaan di bawah:
@@ -1173,5 +1005,3 @@ Tekan sebarang kekunci untuk membaca halaman manual ...
 Halaman manual ini memerlukan kerja untuk:
 Halaman manual {0} tidak dijumpai.
 Manual mod
-Mengaktifkan sokongan warna 255 untuk FlashColor.
-Mengaktifkan sokongan warna sebenar untuk FlashColor.

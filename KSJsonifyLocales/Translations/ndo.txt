@@ -1,15 +1,6 @@
 Perintah yang tersedia: {0}
-Tulis perintah:
 Perintah injeksi telah dibatalkan.
-Pisahkan argumen boot dengan koma tanpa spasi, misalnya, 'motd, gpuprobe'
-Pisahkan perintah pada 'cmdinject' dengan titik dua dengan spasi, misalnya, 'cmdinject setthemes Hacker: beep 1024 0.5'
-Perhatikan bahwa argumen 'debug' tidak sepenuhnya mencakup kernel.
-bargs: Argumen yang diminta {0} tidak ditemukan.
-bargs: Kesalahan yang tidak dapat dipulihkan dalam argumen:
-Argumen yang tersedia: {0}
-Argumen ('bantuan' untuk bantuan):
 Argumen yang disuntikkan akan dijadwalkan untuk dijalankan pada reboot berikutnya.
-Injeksi Argumen telah dibatalkan.
 Galat saat mem-parsing argumen baris perintah nyata: {0}
 Templat warna tidak valid {0}
 hwprobe: Perangkat keras Anda akan diperiksa. Tunggu sebentar...
@@ -82,7 +73,6 @@ Kata sandi untuk {0}:
 Terhubung ke {0}
 Kesalahan saat mencoba terhubung ke {0}: {1}
 Stack Trace: {2}
-Masukkan server FTP.
 Direktori lokal {0} tidak ada.
 Masukkan direktori lokal. ".." untuk kembali.
 Direktori {0} tidak ditemukan.
@@ -97,16 +87,12 @@ Anda belum terhubung ke server mana pun
 Mengunduh file {0} ...
 File yang diunduh {0}.
 Anda harus terhubung ke server sebelum melakukan transmisi.
-Masukkan file untuk diunduh ke direktori lokal.
 {0} KB | Dimodifikasi dalam: {1}
 Anda harus terhubung ke server sebelum mendaftar semua file jarak jauh.
 Mengunggah file {0} ...
 File yang diunggah {0}
-Masukkan file untuk diunggah ke direktori jarak jauh. unggah <file> <direktori>
-(Batin:
 Mendapat direktori lokal saat ini
 Mendapat direktori jarak jauh saat ini
-Terhubung ke server FTP (harus dimulai dengan "ftp: //" atau "ftps: //")
 Mengubah direktori lokal untuk diunduh atau diunggah dari
 Mengubah direktori jarak jauh untuk mengunduh dari atau mengunggah ke
 Menghapus file jarak jauh dari server
@@ -147,7 +133,6 @@ Konfigurasi dimuat ulang. Anda mungkin perlu mem-boot ulang kernel agar beberapa
 Satu atau lebih warna tidak valid.
 Warna tidak tersedia. Hidupkan cangkang berwarna di konfigurasi kernel.
 Screensaver {0} tidak ditemukan.
-[ Pengaturan kernel (Berjalan pada {0}) ]
 Versi Kernel:
 Mode Debug:
 Shell berwarna:
@@ -155,8 +140,6 @@ Argumen tentang Boot:
 Perintah bantuan disederhanakan:
 MOTD saat Masuk:
 Waktu / Tanggal di sudut:
-[ Pengaturan perangkat keras ]
-[ Pengaturan pengguna ]
 Nama pengguna saat ini:
 Nama host saat ini:
 Nama pengguna yang tersedia:
@@ -183,31 +166,14 @@ Sistem Informasi
 * Anda dapat menggunakan banyak perintah menggunakan titik dua di antara perintah.
 Pemakaian:
 di mana argumen akan menjadi {0}
-Menginisialisasi shell FTP.
-Teman dari
 di mana customsaver akan
-Mengunci layar Anda dengan kata sandi.
-Keluar Anda dari pengguna.
-Dapatkan setiap informasi jaringan
-Mulai ulang komputer Anda yang disimulasikan.
-Memuat ulang konfigurasi yang diubah oleh pengguna akhir atau oleh alat.
-Warna tidak memerlukan restart, tetapi sebagian besar pengaturan mengharuskan Anda untuk memulai kembali.
-menampilkan screensaver yang dipilih, sekaligus melindungi layar Anda dari burn out.
-Menunjukkan tanggal dan waktu.
-Menunjukkan tanggal dan waktu dalam zona.
-Matikan komputer Anda yang disimulasikan.
-Memperlihatkan informasi dan versi sistem.
 Ada kesalahan di shell.
 Anda tidak memiliki izin untuk menggunakan {0}
 Pesan shell: Perintah yang diminta {0} tidak diizinkan dijalankan dalam mode pemeliharaan.
 Pesan shell: Perintah yang diminta {0} tidak ditemukan. Lihat 'bantuan' untuk perintah yang tersedia.
 Pesan shell: Perintah {0} tidak diizinkan berjalan saat masuk.
 Kesalahan saat mencoba menjalankan perintah.
-datetime: Waktu adalah {0}
-datetime: Hari ini adalah {0}
-datetime: Zona Waktu: {0}
 - Waktu {0}: {1}
-untuk menghapus layar.
 Berjalan pada {0}
 Anda tidak berwenang untuk mendapatkan info untuk {0}.
 Perintah ini sudah usang dan akan dihapus di rilis mendatang.
@@ -233,8 +199,6 @@ Mengubah bahasa
 >> Bingkai, file, garis, dan kolom <<
 > Bingkai {0}: File: {1} | Baris: {2} | Kolom: {3}
 > Ada kesalahan ketika mencoba untuk mendapatkan informasi bingkai. {0}: {1}
-Muat ulang mod.
-Mod dimuat ulang.
 Selamat datang di Kernel!
 Berhasil masuk sebagai <user>
 MOTD / MAL valid, tetapi jenis pesannya tidak valid. Dengan asumsi MOTD ...
@@ -267,27 +231,19 @@ Adaptor {0} tidak mendukung IPv6. Melanjutkan ...
 Adaptor {0} tidak mendukung IPv4. Penyelidikan gagal.
 Sepertinya Anda menjalankan versi pengembangan dari kernel. Meskipun Anda dapat melihat aspek-aspeknya, sering diperbarui dan mungkin menimbulkan bug. Disarankan agar Anda tetap pada versi stabil.
 Bahasa yang Anda pilih mengandung dua varian. Pilih satu:
-1. Diterjemahkan
-2. Diterjemahkan
-Pilih pilihan Anda:
 Pilihan tidak valid. Coba lagi.
 Anda tidak berwenang mengatur direktori saat ini ke {0}: {1}
 Jalur yang Anda tentukan terlalu panjang.
-CPU: PERINGATAN: SSE2 akan diperlukan dalam pengembangan di masa depan.
 Pengumpul informasi sampah jatuh ketika mencoba mendapatkan informasi tentang {0}: {1}
-Kesalahan saat mencoba mendapatkan tanggal kompilasi perakitan {0}: {1}
 Kesalahan saat mencoba mengatur MOTD / MAL: {0}
 Kesalahan saat mencoba mendapatkan MOTD / MAL: {0}
 Kesalahan ketika mencoba memulai screensaver, karena operasi yang tidak valid.
 Memuat ulang tidak diizinkan dalam mode aman.
 Mod parsing tidak diizinkan pada mode aman.
-Daftar semua perangkat debug yang terhubung.
 Kesalahan saat mencoba mengatur mode parse. Periksa nilainya dan coba lagi. Jika ini benar, lihat jejak stack ketika debugging kernel diaktifkan.
 Path bukanlah file atau direktori.
 Membuat salinan file lain di bawah direktori atau nama yang berbeda.
 Memindahkan file ke direktori lain
-Untuk menyalin file ke direktori lain atau nama lain
-Untuk memindahkan file ke direktori lain
 Cocok {0} ({1}): {2}
 Cocokkan {0}: {1}
 Waktu yang dihabiskan: {0} milidetik
@@ -302,9 +258,6 @@ Menanggapi komentar cinta atau benci.
 Jika seseorang membuat komentar ini ke video Anda:
 Bagaimana tanggapan Anda?
 Pilihan tidak valid. Pergi ke komentar selanjutnya ...
-Anda baru saja melaporkan komentar cinta!
-Anda baru saja membalas komentar benci!
-Bagus! Komentar {0} akan dihapus untuk itu.
 Bagus! {0} akan menghargai terima kasih Anda.
 Dieja dengan sempurna!
 Dieja dengan salah.
@@ -318,7 +271,6 @@ Masukkan kata sandi untuk {0}:
 SSH Terputus.
 Tidak dapat mengatur codepage. Bahasa mungkin tidak ditampilkan dengan benar.
 Debugging tidak diaktifkan.
-{0} tidak lagi disetel ke screensaver default.
 Terima kasih! Ini menarik.
 Semua orang akan mendukung video Anda untuk ini.
 Saya memberi Anda file khusus dalam email Anda untuk video Anda berikutnya.
@@ -364,7 +316,6 @@ Direktori {0} sudah ada.
 Kesalahan saat mencoba terhubung ke {0}: Waktu habis koneksi atau koneksi terputus
 Kalkulator untuk menghitung ekspresi.
 Kesalahan dalam perhitungan.
-Sepertinya Anda menjalankan versi rilis-dekat. Meskipun lebih aman untuk digunakan sekarang, Anda disarankan untuk tetap menggunakan versi stabil.
 Pembaruan sistem
 Memeriksa pembaruan sistem ...
 Menemukan versi baru: 
@@ -372,7 +323,6 @@ Anda dapat mengunduhnya di:
 Tidak ada pemberitahuan terbaru
 Mencari string tertentu dalam file yang disediakan
 Menghitung jumlah file dalam direktori yang ditentukan.
-Daftar semua email di pengguna tertentu.
 Masukkan nama pengguna atau alamat surat:
 Masukkan kata kunci:
 Kesalahan saat menyambung ke {0}: {1}
@@ -382,7 +332,6 @@ Keluar dari shell IMAP
 Daftar perintah
 Unduh pesan dan daftarkan mereka
 Buka pesan
-Halaman mungkin tidak negatif atau nol.
 Halaman bukan nilai numerik.
 Nomor pesan mungkin tidak negatif atau nol.
 Nomor pesan bukan nilai numerik.
@@ -392,7 +341,6 @@ Nomor pesan bukan nilai numerik.
 Pesan yang ditentukan tidak ditemukan.
 Debug jarak jauh gagal memulai: {0}
 Mempersiapkan profil ... Mungkin perlu beberapa menit ...
-Nama Host, Nama Pengguna, Tipe Data, Pengkodean, Enkripsi, Protokol
 Kesalahan saat mencoba menjalankan skrip: {0}
 Menulis teks ke konsol
 Membuat pilihan pengguna
@@ -417,7 +365,6 @@ Panggilan cepat kosong. Sambungkan ke server untuk menambahkan alamat ke dalamny
 Panggilan cepat tidak ada. Sambungkan ke server untuk menambahkan alamat ke dalamnya.
 Masukkan alamat dan port server IMAP (<address> atau <address>: [port]):
 Masukkan alamat dan port server SMTP (<address> atau <address>: [port]):
-Meminta Anda untuk mengisi bidang yang diperlukan untuk mengirim pesan ke alamat
 Mengirim pesan ke alamat
 Masukkan alamat email penerima:
 Masukkan subjek:
@@ -445,8 +392,6 @@ Menghapus kata atau frasa dari nomor baris
 Menghapus karakter dari nomor karakter pada baris yang ditentukan
 Garis yang dihapus.
 Nomor baris yang ditentukan {0} bukan nomor yang valid.
-Argumen yang diperlukan tidak diteruskan ke perintah {0}
-Kesalahan saat mencoba menjalankan perintah: {0}
 Berjalan dalam mode aman. Melewati panggung ...
 >> Remote Debug dan Obrolan: versi
 >> Alamat Anda adalah {0}.
@@ -464,19 +409,12 @@ Blokir perangkat debug berdasarkan alamat IP
 Kesalahan memuat pengaturan
 Terjadi kesalahan saat memuat pengaturan. Anda mungkin perlu memeriksa file pengaturan.
 Pilih bagian:
-Pengaturan Umum...
-Pengaturan Perangkat Keras ...
-Pengaturan Login ...
-Pengaturan Shell ...
-Pengaturan jaringan...
-Pengaturan Miscellaneous ...
 Simpan Pengaturan
 Keluar
 Opsi yang ditentukan {0} tidak valid.
 Jawabannya harus numerik.
 Konfirmasi Argumen saat Boot
 Pemicu Mode Pemeliharaan
-Ubah Kata Sandi Root ...
 Periksa Pembaruan pada Startup
 Probe Tenang
 Tunjukkan MOTD saat Masuk
@@ -500,9 +438,7 @@ Bagian yang dimasukkan tidak valid. Tolong kembali.
 Kembali...
 Memungkinkan
 Nonaktifkan
-Nomor kunci yang dimasukkan tidak valid. Tolong kembali.
 Tulis kata sandi root yang akan disetel. Jangan khawatir; kata sandi ditampilkan sebagai bintang.
-Aktifkan "Ubah Kata Sandi Root" untuk menggunakan opsi ini. Tolong kembali.
 Ubah Kata Sandi Root?
 Setel Kata Sandi Root ...
 Tulis port debugger jarak jauh. Ini harus numerik, dan belum pernah digunakan. Jika tidak, debugger jarak jauh akan gagal membuka port.
@@ -513,7 +449,6 @@ Jawabannya mungkin tidak negatif.
 Jawabannya salah. Periksa untuk memastikan bahwa jawabannya adalah numerik untuk entri config yang membutuhkan angka sebagai jawaban.
 Variabel {0} tidak ditemukan di salah satu modul.
 Mengubah konfigurasi kernel
-Pengaturan Screensaver ...
 Aktifkan 255 warna
 Apakah Anda ingin tetap terhubung?
 Pilihan tidak valid. Dengan asumsi tidak ...
@@ -549,7 +484,6 @@ Gagal memindahkan file atau direktori: {0}
 Tidak dapat menemukan berkas yang cocok dengan string "{0}": {1}
 Download gagal untuk file {0}.
 Gagal mencantumkan file jarak jauh: {0}
-Masukkan file atau folder untuk dihapus. Anda harus memiliki izin administratif pada akun Anda untuk dapat menghapus.
 Anda yakin ingin menghapus {0} <y / n>?
 Menghapus {0} ...
 {0} tidak ditemukan di server.
@@ -560,7 +494,6 @@ Pindah {0} ke {1} ...
 Berhasil dipindahkan
 Memindahkan file atau direktori ke file atau direktori lain. Anda juga dapat menggunakannya untuk mengganti nama file.
 Gagal memindahkan {0} ke {1}.
-Masukkan jalur sumber dan jalur tujuan.
 Menyalin {0} ke {1} ...
 Berhasil disalin
 Menyalin file atau direktori ke file atau direktori lain.
@@ -578,9 +511,6 @@ Kelembaban: {0}
 Anda bisa mendapatkan kunci API Anda sendiri di https://home.openweathermap.org/api_keys.
 Anda selalu dapat melihat http://bulk.openweathermap.org/sample/city.list.json.gz untuk daftar kota dengan ID-nya.
 Unit yang Disukai untuk Suhu
-Kelvin
-Imperial (Fahrenheit)
-Metrik (Celsius)
 Siapkan kernel agar meminta Anda memberikan argumen saat boot.
 Memicu mode pemeliharaan. Ini menonaktifkan banyak akun.
 Setiap startup, itu akan memeriksa pembaruan.
@@ -595,10 +525,6 @@ Perintah bantuan yang disederhanakan untuk semua shell
 Apakah akan mencatat nama pengguna FTP atau tidak.
 Apakah akan mencatat alamat IP FTP atau tidak.
 Pilih profil pertama hanya saat menghubungkan.
-Mengaktifkan 255 dukungan warna untuk ColorMix.
-Mengaktifkan 255 dukungan warna untuk Disco.
-Mengaktifkan 255 dukungan warna untuk GlitterColor.
-Mengaktifkan 255 dukungan warna untuk Garis.
 Waktu dan tanggal akan ditampilkan di sudut kanan atas layar
 Jika diaktifkan, kernel akan mengurai seluruh folder untuk ukuran totalnya. Lain, hanya akan mengurai permukaan.
 Mengaktifkan eyecandy saat memulai
@@ -608,7 +534,6 @@ Pilih satuan suhu yang Anda sukai (ini hanya berlaku untuk perintah "cuaca")
 Mod {0} berhenti
 {0} v {1} berhenti
 Mod {0} tidak memiliki nama bagian. Penguraian mod gagal. Tinjau kode sumbernya.
-Mod {0} tidak memiliki perintah. Penguraian mod gagal. Tinjau kode sumbernya.
 Anda harus mengaktifkan mode debug sebelum Anda dapat menghapus log debug.
 {0} pesan baru tiba di kotak masuk.
 Buka "mail" untuk melihatnya.
@@ -645,10 +570,6 @@ Tingkat warna merah terlampaui. Itu adalah {0}.
 Tingkat warna hijau terlampaui. Itu adalah {0}.
 Tingkat warna biru terlampaui. Itu adalah {0}.
 Aktifkan warna asli
-Mengaktifkan dukungan warna sebenarnya untuk ColorMix.
-Mengaktifkan dukungan warna sejati untuk Disco.
-Mengaktifkan dukungan warna sejati untuk GlitterColor.
-Mengaktifkan dukungan warna sebenarnya untuk Garis.
 Gagal membebaskan {0}.
 {0} sudah diblokir.
 {0} tidak dapat bergabung dengan debug jarak jauh sekarang.
@@ -659,7 +580,6 @@ Masukkan jalur file ke lampiran. Tekan ENTER di jalur kosong untuk mengonfirmasi
 Membuka pesan terenkripsi
 Tulis sandi untuk ID kunci {0}
 Mengirim pesan terenkripsi ke sebuah alamat
-Meminta Anda mengisi kolom wajib untuk mengirim pesan terenkripsi ke sebuah alamat
 Mendownload dari {0} ...
 Tampilkan bilah kemajuan saat mengunduh atau mengunggah dari perintah "get" atau "put"
 Jika benar, itu membuat "get" atau "put" menunjukkan bilah kemajuan saat mengunduh atau mengunggah.
@@ -678,8 +598,6 @@ Terasa seperti: {0}
 Suhu: {0}
 Kecepatan angin: {0}
 Arah angin: {0}
-Mengaktifkan 255 dukungan warna untuk Dissolve.
-Mengaktifkan dukungan warna asli untuk Dissolve.
 Tekan sembarang tombol untuk kembali.
 Tidak dapat membuat folder surat {0}: {1}
 Membuat direktori di direktori kerja saat ini
@@ -692,22 +610,11 @@ Bentuk hash salah.
 Hash tidak cocok.
 Hash cocok.
 Ubah nama folder
-Bagian ini mencantumkan semua pengaturan kernel umum, terutama untuk memelihara kernel.
-Bagian ini mengubah perilaku probe perangkat keras.
-Bagian ini mewakili pengaturan login. Keluar dari akun Anda agar perubahan diterapkan.
-Bagian ini mencantumkan pengaturan shell.
-Bagian ini mencantumkan pengaturan jaringan, seperti shell FTP, pengaturan perintah terkait jaringan, dan pengaturan debug jarak jauh.
-Bagian ini mencantumkan semua screensaver dan pengaturan yang tersedia.
-Pengaturan yang tidak sesuai di bagian yang sesuai akan dibawa ke sini.
-Menguji mod dengan menyediakan file mod
 Membuka cangkang uji
-Mengaktifkan mode debug
-Perintah untuk argumen
 * Tekan sembarang tombol untuk memulai kernel atau ESC untuk keluar.
 Gagal memulai "{0}": {1}
 Tampilkan pratinjau pesan email
 Saat mencantumkan pesan email, tunjukkan pratinjau isi.
-Warna khusus ...
 Warna masukan
 Warna lisensi
 Warna kesalahan kernel yang berkelanjutan
@@ -721,8 +628,6 @@ Warna kesalahan
 Gaya Prompt FTP
 Gaya Konfirmasi Surat
 Gaya Perintah SFTP
-Mengaktifkan 255 dukungan warna untuk BouncingBlock.
-Mengaktifkan dukungan warna sebenarnya untuk BouncingBlock.
 Mencoba mengakses jalur yang tidak valid.
 Menghapus file teks
 Keluar dari editor teks
@@ -745,8 +650,6 @@ Warna Bilah Menit
 Warna Jam Bar
 Warna Informasi
 Centang untuk mengubah warna
-Mengaktifkan 255 dukungan warna untuk ProgressClock.
-Mengaktifkan dukungan warna sebenarnya untuk ProgressClock.
 Jika siklus warna diaktifkan, berapa banyak centang sebelum mengubah warna di ProgressClock? 1 centang = 0,5 detik
 ProgressClock akan memilih warna acak jika diaktifkan. Jika tidak, gunakan warna dari config.
 Membuat tema baru
@@ -761,39 +664,10 @@ Warna pilihan
 Masukkan nomor warna dari 0 hingga 255:
 Gunakan "hwinfo" untuk informasi tambahan tentang perangkat keras.
 Mencetak informasi perangkat keras
-informasi CPU:
 Nama prosesor:
-Kecepatan prosesor:
 Bit prosesor:
-Putaran prosesor:
-Topologi prosesor:
-Jenis prosesor:
-Pencapaian prosesor:
-Prosesor BogoMips:
-Ukuran cache prosesor L2:
-Ukuran cache prosesor L3:
-Fitur prosesor:
-Informasi HDD:
-Nama drive:
-Model penggerak:
-Vendor penggerak:
-Kecepatan berkendara:
-Ukuran drive:
-Seri penggerak:
-ID Drive:
-Jumlah partisi drive:
-ID Partisi:
 Sistem file partisi:
 Ukuran partisi:
-Partisi yang digunakan:
-informasi RAM:
-bebas RAM:
-jumlah RAM:
-RAM yang digunakan:
-informasi GPU:
-nama GPU:
-driver GPU:
-versi GPU:
 GPU: Satu atau beberapa kartu grafis gagal diperiksa. Tetap menampilkan informasi...
 >> Selamat datang! Ini adalah pertama kalinya Anda memasuki debug dan obrolan jarak jauh. Gunakan "/daftar <nama>" untuk mendaftar.
 Perangkat sudah ada.
@@ -825,8 +699,6 @@ Tentukan nama tema:
 Pengguna {0} telah ditambahkan ke daftar "{1}".
 Pengguna {0} telah dihapus dari daftar "{1}".
 Mode tidak valid {0}
-Pengguna sudah ada
-Muat Tema Dari...
 Muat Tema Dari Tema Prebuilt...
 Tentukan nama file tema tanpa ekstensi .json:
 Membuka arsip ZIP
@@ -839,12 +711,9 @@ Direktori {0} tidak ada
 Direktori arsip {0} tidak ada
 Jumlah Posisi Maks
 Berapa banyak posisi yang menyala sebelum peredupan?
-Mengaktifkan 255 dukungan warna untuk Lighter.
-Mengaktifkan dukungan warna sebenarnya untuk Lighter.
 Warna entri daftar
 Warna daftar nilai
 Terhubung ke server SSH untuk menjalankan perintah.
-Bagian ini mencantumkan pengaturan screensaver untuk
 Penentu warna tidak valid. Pastikan formatnya benar, artinya angka 0-255 jika menggunakan 255 warna atau urutan VT jika menggunakan warna asli sebagai berikut:
 Kesalahan dalam cangkang pengujian: {0}
 Menetapkan variabel ke nilai dalam skrip
@@ -866,13 +735,11 @@ Bagaimana Anda ingin mengautentikasi?
 File kunci pribadi
 Kata sandi
 Masukkan frasa sandi untuk kunci {0}:
-Masukkan lokasi kunci pribadi untuk {0}. Tulis "q" untuk menyelesaikan penambahan kunci:
 Menetralisir jalur yang tidak ada.
 File kunci {0} tidak ada.
 Kesalahan saat mencoba menambahkan kunci pribadi:
 Tekan "t" untuk beralih ke 255 mode warna.
 Tekan "t" untuk beralih ke mode warna sebenarnya.
-Bagian ini memungkinkan Anda memilih jenis warna apa yang ingin Anda ubah.
 Sepertinya Anda tidak memiliki pengguna kecuali root. Ini buruk. Kami akan memandu Anda cara membuatnya.
 Tulis nama pengguna Anda.
 Anda harus menulis nama pengguna Anda.
@@ -882,7 +749,6 @@ Pilih jenis akun.
 Administrator: Jenis akun ini memiliki kekuatan paling besar di kernel, memungkinkan Anda untuk menggunakan program manajemen sistem.
 Pengguna Normal: Jenis akun ini sedikit lebih dibatasi daripada administrator.
 Selamat! Anda telah membuat akun baru! Untuk menyelesaikan ini, masuk sebagai akun baru Anda.
-Lihat manual screensaver atau kode sumber untuk informasi.
 mod: Tidak ada mod yang terdeteksi.
 Perintah umum:
 Perintah mod:
@@ -906,7 +772,6 @@ Menguji fasilitas kesalahan kernel dengan dukungan format
 Tes menerjemahkan string yang ada di sumber daya ke bahasa tertentu
 Mencetak string untuk menghibur dan mem-parsing placeholder yang ditemukan
 Menguji fasilitas ekspresi reguler
-Mengenkripsi string menggunakan
 Mulai semua mod
 Hentikan semua mod
 Mengaktifkan atau menonaktifkan debug
@@ -941,7 +806,6 @@ Daftar budaya yang didukung
 Mencari string yang ditentukan dalam file yang disediakan menggunakan ekspresi reguler
 Lihat apakah Anda dapat menekan tombol tepat waktu
 Pengguna tidak memberikan masukan apa pun secara tepat waktu.
-Kesulitan tidak valid
 Karakter tidak ditekan tepat waktu.
 Anda telah menekan karakter yang tepat!
 Anda telah menekan karakter yang salah.
@@ -985,7 +849,6 @@ Dapatkan pengaturan penghemat khusus
 Menyetel pengaturan penghemat khusus
 Pengaturan berhasil diatur untuk screensaver
 Gagal menyetel setelan untuk screensaver
-Bagian ini memungkinkan Anda mengelola pembuatan kata sandi root.
 Buka shell RSS untuk membaca feed
 Keluar dari shell RSS dan kembali ke kernel
 Mengubah tautan umpan
@@ -1012,13 +875,6 @@ Mode pengurutan sistem file
 Arah pengurutan sistem file
 Mengontrol bagaimana file akan diurutkan.
 Mengontrol arah penyortiran sistem file apakah itu naik atau turun.
-urutan naik
-Urutan menurun
-Nama lengkap
-Ukuran file
-Waktu penciptaan
-Waktu menulis terakhir
-Waktu akses terakhir
 Tulis Lagi Delay dalam Milidetik
 Berapa milidetik untuk menunggu sebelum menulis teks lagi?
 Tulis teks yang ingin ditampilkan. Lebih lama lebih baik.
@@ -1027,35 +883,26 @@ Kecepatan menulis maksimum dalam WPM
 Probabilitas salah ketik dalam persen
 Gagal menyimpan direktori saat ini: {0}
 Lap untuk mengubah arah
-Mengaktifkan 255 dukungan warna untuk Hapus.
-Mengaktifkan dukungan warna sebenarnya untuk Hapus.
 Berapa banyak tisu yang harus dilakukan sebelum mengubah arah secara acak?
 Panggung selesai di
 Inisialisasi internal selesai di
 File referensi {0} tidak ditemukan. Mod ini mungkin tidak berfungsi dengan baik tanpa file ini.
 Mulai mod
-Mendapat informasi mod
 Nama perintah:
 Definisi perintah:
 Jenis perintah:
 Perintah yang ketat?
 Versi mod:
 Mod {0} tidak ditemukan.
-budaya dari
-Varian mana dari {0} yang digunakan untuk mengubah nama bulan, kalender, dll.?
 Editor teks belum membuka aliran file.
 Tali diganti.
 Salah satu atau kedua angka tersebut bukan numerik.
 Kata dihapus.
 Karakter dihapus.
-Pengaturan sistem file...
-Bagian ini mencantumkan pengaturan sistem file.
 Selamat datang di Pengaturan!
 Kesalahan menjalankan perintah SSH
 Kesalahan pada shell SSH
 - Informasi aplikasi
-Mengaktifkan 255 dukungan warna untuk BouncingText.
-Mengaktifkan dukungan warna sebenarnya untuk BouncingText.
 Menguji penulis kamus dengan string dan array string
 Menguji penulis kamus dengan array char dan char
 Menguji penulis kamus dengan array integer dan integer
@@ -1072,21 +919,15 @@ di mana HardwareType akan berada
 Jenis perangkat keras {0} tidak diperiksa, atau tidak valid.
 Jenis perangkat keras {0} belum diperiksa. Jika Anda yakin telah diperiksa, mulai ulang kernel dengan debugging diaktifkan.
 Partisi tidak diuraikan ke daftar.
-Modus Peretas
-Jika diaktifkan, konsol hijau akan diaktifkan.
 Mencetak pemisah
 Mencetak pemisah dengan dukungan format
 Mencetak pemisah dengan dukungan warna
 Mencetak pemisah dengan dukungan warna dan format
 Selalu terpusat
-Mengaktifkan 255 dukungan warna untuk Marquee.
-Mengaktifkan dukungan warna sebenarnya untuk Marquee.
 Tulis teks yang ingin ditampilkan.
 Apakah teks yang ditampilkan di tenda selalu berada di tengah.
-'q' untuk berhenti.
 Argumen {0} tidak ditemukan untuk disuntikkan.
 Argumen baris perintah {0} tidak ditemukan.
-Menghapus semua pengaturan
 Screensaver mengalami kesalahan saat menampilkan: {0}. Tekan sembarang tombol untuk keluar.
 Pratinjau...
 Begini tampilan tema Anda:
@@ -1124,20 +965,15 @@ Apakah akan menggunakan unit Beats Per Minute untuk menulis warna berikutnya.
 Keterlambatan dalam Ketukan Per Menit
 Mengalahkan Warna
 Berapa banyak ketukan per menit untuk menunggu sebelum membuat tulisan berikutnya?
-Mengaktifkan 255 dukungan warna untuk BeatFader.
-Mengaktifkan dukungan warna sebenarnya untuk BeatFader.
 BeatFader akan memilih warna acak jika diaktifkan. Jika tidak, gunakan warna dari config.
 Spanduk Startup Kustom
-Jika ditentukan, itu akan menampilkan spanduk startup yang disesuaikan dengan dukungan placeholder. Anda dapat menggunakan frasa ini untuk versi kernel:
 Unduh folder jarak jauh ke direktori lokal menggunakan biner atau teks
 Unggah folder lokal ke direktori jarak jauh menggunakan biner atau teks
-Masukkan folder untuk mengunduh ke direktori lokal.
 Mengunduh map {0}...
 Folder yang diunduh {0}.
 Unduhan gagal untuk folder {0}.
 Mengunggah map {0}...
 Folder yang diunggah {0}
-Masukkan folder untuk diunggah ke direktori jarak jauh.
 Tekan "c" untuk menulis kode penuh warna.
 Masukkan kode warna yang memenuhi format berikut:
 Memperkecil file JSON
@@ -1151,13 +987,9 @@ Kolom teks yang akan dicetak.
 Berapa banyak karakter yang harus ditulis sebelum memicu "pengisian baris"?
 Kemungkinan pola isian garis akan dicetak dalam huruf besar semua dalam persen
 Jenis pola pengisian garis
-Pola Umum
-Pola Lengkap
-Pola Acak
 Jawabannya mungkin tidak nol.
 Jawabannya tidak boleh melebihi entri yang ditampilkan.
 Simpan perubahan...
-Screensaver ini mendukung teks tertulis pada file. Lewati jalur file lengkap ke bidang ini, dan screensaver akan menampilkan konten file dengan tepat.
 Kelola mod Anda
 Manajemen mod dinonaktifkan dalam mode aman.
 Perintah tidak valid {0}. Periksa penggunaan di bawah ini:
@@ -1173,5 +1005,3 @@ Tekan sembarang tombol untuk membaca halaman manual...
 Halaman manual ini perlu bekerja untuk:
 Halaman manual {0} tidak ditemukan.
 Panduan mod
-Mengaktifkan 255 dukungan warna untuk FlashColor.
-Mengaktifkan dukungan warna sebenarnya untuk FlashColor.

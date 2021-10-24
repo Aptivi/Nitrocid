@@ -1,15 +1,6 @@
 Comandos disponibles: {0}
-Comando de escritura: 
 La inyección de comandos ha sido cancelada.
-Separe los argumentos de arranque con comas sin espacios, por ejemplo, 'motd, gpuprobe'
-Comandos separados en 'cmdinject' con dos puntos con espacios, por ejemplo, 'cmdinject setthemes Hacker: beep 1024 0.5'
-Tenga en cuenta que el argumento 'depurar' no cubre completamente el kernel.
-bargs: el argumento solicitado {0} no se encuentra.
-bargs: error irrecuperable en el argumento: 
-Argumentos disponibles: {0}
-Argumentos ('help' para ayuda): 
 Los argumentos inyectados se programarán para ejecutarse en el próximo reinicio.
-Argumento de inyección ha sido cancelado.
 Error al analizar los argumentos de línea de comando reales: {0}
 Plantilla de color no válida {0}
 hwprobe: Su hardware será probado. Por favor espere ...
@@ -82,7 +73,6 @@ Contraseña para {0}:
 Conectado a {0}
 Error al intentar conectarse a {0}: {1}
 Seguimiento de pila: {2}
-Ingrese un servidor FTP.
 El directorio local {0} no existe.
 Introduzca un directorio local. ".." para volver.
 Directorio {0} no encontrado.
@@ -97,16 +87,12 @@ Aún no te has conectado a ningún servidor
 Descargando el archivo {0} ...
 Archivo descargado {0}.
 Debe conectarse al servidor antes de realizar la transmisión.
-Introduzca un archivo para descargar en el directorio local.
 {0} KB | Modificado en: {1}
 Debe conectarse al servidor antes de listar todos los archivos remotos.
 Subiendo archivo {0} ...
 Archivo subido {0}
-Ingrese un archivo para cargar en el directorio remoto. upload <archivo> <directorio>
-(Interno:
 Obtiene el directorio local actual
 Obtiene el directorio remoto actual
-Se conecta a un servidor FTP (debe comenzar con "ftp://" o "ftps://")
 Cambia el directorio local para descargar o subir desde
 Cambia el directorio remoto para descargar o subir a
 Borra el archivo remoto del servidor
@@ -147,7 +133,6 @@ Configuración recargada. Es posible que deba reiniciar el kernel para que algun
 Uno o más de los colores no son válidos.
 Los colores no están disponibles. Activar shell coloreado en la configuración del kernel.
 Protector de pantalla {0} no encontrado.
-[ Configuraciones del kernel (ejecutándose en {0}) ]
 Versión del kernel:
 Modo de depuración:
 Concha de color:
@@ -155,8 +140,6 @@ Argumentos en el arranque:
 Comando de ayuda simplificado:
 MOTD en el inicio de sesión:
 Hora / Fecha en la esquina:
-[ Configuración de hardware ]
-[ Configuración de usuario ]
 Nombre de usuario actual:
 Nombre de host actual:
 Nombres de usuario disponibles:
@@ -183,31 +166,14 @@ Información del sistema
 * Puedes usar varios comandos usando los dos puntos entre los comandos.
 Uso:
 donde los argumentos serán {0}
-Inicializa el shell FTP.
-Amigos de
 donde customsaver será
-Bloquea tu pantalla con la contraseña
-Te desconecta del usuario.
-Obtenga toda la información de la red
-Reinicia tu computadora simulada.
-Vuelve a cargar la configuración que ha cambiado el usuario final o la herramienta.
-Los colores no requieren reinicio, pero la mayoría de las configuraciones requieren que reinicies.
-le muestra un protector de pantalla seleccionado, mientras protege su pantalla de quemados.
-Muestra la fecha y la hora.
-Muestra la fecha y hora en zonas.
-Apaga tu computadora simulada.
-Muestra información y versiones del sistema.
 Hubo un error en el shell.
 No tienes permiso para usar {0}
 Mensaje de shell: el comando solicitado {0} no se puede ejecutar en modo de mantenimiento.
 Mensaje de shell: el comando solicitado {0} no se encuentra. Ver 'ayuda' para los comandos disponibles.
 Mensaje de shell: el comando {0} no se puede ejecutar al iniciar sesión.
 Error al intentar ejecutar el comando.
-datetime: el tiempo es {0}
-datetime: Hoy es {0}
-datetime: Zona horaria: {0}
 - Tiempo de {0}: {1}
-para borrar la pantalla.
 ejecutándose en {0}
 No estás autorizado para obtener información para {0}.
 Este comando está obsoleto y se eliminará en una versión futura.
@@ -233,8 +199,6 @@ Cambia el idioma
 >> Marcos, archivos, líneas y columnas <<
 > Cuadro {0}: Archivo: {1} | Línea: {2} | Columna: {3}
 > Hay un error al intentar obtener información de marco. {0}: {1}
-Recarga modificaciones.
-Mods recargados.
 ¡Bienvenido a Kernel!
 Se inició sesión correctamente como <usuario>
 MOTD / MAL es válido, pero el tipo de mensaje no es válido. 
@@ -267,27 +231,19 @@ El adaptador {0} no es compatible con IPv6. Continuo...
 El adaptador {0} no es compatible con IPv4. La sonda falló.
 Parece que estabas ejecutando la versión de desarrollo del kernel. Si bien puede ver los aspectos, se actualiza con frecuencia y puede introducir errores. Se recomienda que permanezca en la versión estable.
 El idioma que ha seleccionado contiene dos variantes. Seleccione uno:
-1. Transliterado
-2. Traducido
-Selecciona tu elección:
 Elección inválida. Inténtalo de nuevo.
 No está autorizado para establecer el directorio actual en {0}: {1}
 La ruta que ha especificado es demasiado larga.
-CPU: ADVERTENCIA: SSE2 será necesario en futuras confirmaciones de desarrollo.
 El recopilador de información de volcado se bloqueó al intentar obtener información sobre {0}: {1}
-Error al intentar obtener la fecha de compilación del ensamblado {0}: {1}
 Error al intentar configurar MOTD / MAL: {0}
 Error al intentar obtener MOTD / MAL: {0}
 Error al intentar iniciar el protector de pantalla, debido a una operación no válida.
 La recarga no está permitida en modo seguro.
 No se permiten las modificaciones de análisis en modo seguro.
-Enumera todos los dispositivos de depuración conectados.
 Error al intentar establecer el modo de análisis. Verifique el valor e intente nuevamente. Si esto es correcto, vea el seguimiento de la pila cuando la depuración del núcleo está habilitada.
 La ruta no es ni un archivo ni un directorio.
 Crea otra copia de un archivo en un directorio o nombre diferente.
 Mueve un archivo a otro directorio
-Para copiar archivos a otro directorio o nombre diferente
-Para mover archivos a otro directorio
 Coincidencia {0} ({1}): {2}
 Coincidencia {0}: {1}
 Tiempo empleado: {0} milisegundos
@@ -302,9 +258,6 @@ Responda a los comentarios de amor u odio.
 Si alguien hizo este comentario a tu video:
 ¿Cómo responderías?
 Selección invalida. Pasando al siguiente comentario ...
-¡Acabas de informar el comentario de amor!
-¡Acabas de responder al comentario de odio!
-¡Excelente! El comentario de {0} se eliminará para eso.
 ¡Excelente! {0} apreciará tu agradecimiento.
 Deletreado perfectamente!
 Deletreado incorrectamente.
@@ -318,7 +271,6 @@ Ingrese la contraseña para {0}:
 SSH desconectado.
 No se puede establecer la página de códigos. Es posible que el idioma no se muestre correctamente.
 Depuración no habilitada.
-{0} ya no está configurado como protector de pantalla predeterminado.
 ¡Gracias! Esto es interesante.
 Todos apoyarán tu video para esto.
 Te di el archivo especial en tu correo electrónico para tu próximo video.
@@ -364,7 +316,6 @@ El directorio {0} ya existe.
 Error al intentar conectarse a {0}: tiempo de espera de conexión o conexión perdida
 Calculadora para calcular expresiones.
 Error en el cálculo.
-Parece que estabas ejecutando la versión de lanzamiento cercano. Si bien es más seguro usarlo ahora, se recomienda que permanezca en la versión estable.
 Actualizacion del sistema
 Buscando actualizaciones del sistema ...
 Nueva versión encontrada: 
@@ -372,7 +323,6 @@ Puedes descargarlo en:
 No hay notificaciones recientes.
 Busca una cadena específica en el archivo proporcionado
 Calcula sumas de archivos en el directorio especificado.
-Enumera todos los correos del usuario específico.
 Ingrese nombre de usuario o dirección de correo electrónico:
 Introducir la contraseña:
 Error al conectarse a {0}: {1}
@@ -382,7 +332,6 @@ Sale del shell IMAP
 Lista de comandos
 Descarga mensajes y los enumera
 Abre un mensaje
-La página puede no ser negativa o cero.
 La página no es un valor numérico.
 El número de mensaje puede no ser negativo o cero.
 El número de mensaje no es un valor numérico.
@@ -392,7 +341,6 @@ El número de mensaje no es un valor numérico.
 El mensaje especificado no se encuentra.
 Error al iniciar la depuración remota: {0}
 Preparando perfiles ... Podría tomar varios minutos ...
-Nombre de host, nombre de usuario, tipo de datos, codificación, cifrado, protocolos
 Error al intentar ejecutar el script: {0}
 Escribe texto en la consola
 Hace elecciones de usuario
@@ -417,7 +365,6 @@ La marcación rápida está vacía. Conéctese a un servidor para agregarle una 
 La marcación rápida no existe. Conéctese a un servidor para agregarle una dirección.
 Ingrese la dirección del servidor IMAP y el puerto (<dirección> o <dirección>: [puerto]):
 Ingrese la dirección del servidor SMTP y el puerto (<dirección> o <dirección>: [puerto]):
-Le pide que complete los campos obligatorios para enviar un mensaje a una dirección.
 Envía un mensaje a una dirección
 Ingrese la dirección de correo del destinatario:
 Ingrese el tema:
@@ -445,8 +392,6 @@ Elimina una palabra o frase del número de línea.
 Elimina un carácter del número de carácter en la línea especificada
 Línea eliminada
 El número de línea especificado {0} no es un número válido.
-Los argumentos requeridos no se pasan al comando {0}
-Error al intentar ejecutar el comando: {0}
 Corriendo en modo seguro. Saltando la etapa ...
 >> Depuración remota y chat: versión
 >> Su dirección es {0}.
@@ -464,19 +409,12 @@ Bloquear un dispositivo de depuración por dirección IP
 Error al cargar la configuración
 Hay un error al cargar la configuración. Es posible que deba verificar el archivo de configuración.
 Seleccionar sección:
-Configuración general...
-Configuración de hardware ...
-Configuración de inicio de sesión ...
-Configuración de Shell ...
-Configuración de la red...
-Otras configuraciones...
 Guardar ajustes
 Salida
 La opción {0} especificada no es válida.
 La respuesta debe ser numérica.
 Solicitud de argumentos en el arranque
 Activador del modo de mantenimiento
-Cambiar la contraseña de root ...
 Buscar actualizaciones al iniciar
 Sonda silenciosa
 Mostrar MOTD al iniciar sesión
@@ -500,9 +438,7 @@ Se ingresó una sección no válida. Por favor regrese.
 Regresa...
 Habilitar
 Inhabilitar
-Se ingresó un número de clave no válido. Por favor regrese.
 Escriba la contraseña de root que se establecerá. No se preocupe; la contraseña se muestra como estrellas.
-Habilite "Cambiar contraseña de root" para usar esta opción. Por favor regrese.
 ¿Cambiar la contraseña de root?
 Establecer contraseña de root ...
 Escribe un puerto depurador remoto. Debe ser numérico y no debe estar ya en uso. De lo contrario, el depurador remoto no podrá abrir el puerto.
@@ -513,7 +449,6 @@ Puede que la respuesta no sea negativa.
 La respuesta no es válida. Verifique para asegurarse de que la respuesta sea numérica para las entradas de configuración que necesitan números como respuestas.
 La variable {0} no se encuentra en ninguno de los módulos.
 Cambia la configuración del kernel
-Configuración del salvapantallas ...
 Activar 255 colores
 ¿Quieres mantenerte conectado?
 Elección no válida Suponiendo que no ...
@@ -549,7 +484,6 @@ No se pudo mover el archivo o directorio: {0}
 No se pudo encontrar el archivo que coincida con la cadena "{0}": {1}
 Error al descargar el archivo {0}.
 No se pudieron enumerar los archivos remotos: {0}
-Ingrese un archivo o carpeta para eliminar. Debe tener permisos administrativos en su cuenta para poder eliminar.
 ¿Está seguro de que desea eliminar {0} <y / n>?
 Eliminando {0} ...
 {0} no se encuentra en el servidor.
@@ -560,7 +494,6 @@ Moviendo {0} a {1} ...
 Movido exitosamente
 Mueve el archivo o directorio a otro archivo o directorio. También puede usar eso para cambiar el nombre de los archivos.
 No se pudo mover {0} a {1}.
-Introduzca una ruta de origen y una ruta de destino.
 Copiando {0} a {1} ...
 Copiado exitosamente
 Copia archivo o directorio a otro archivo o directorio.
@@ -578,9 +511,6 @@ Humedad: {0}
 Puede obtener su propia clave API en https://home.openweathermap.org/api_keys.
 Siempre puede consultar http://bulk.openweathermap.org/sample/city.list.json.gz para obtener la lista de ciudades con sus ID.
 Unidad preferida para temperatura
-Kelvin
-Imperial (Fahrenheit)
-Métrico (Celsius)
 Configura el kernel para que le solicite un argumento al arrancar.
 Activa el modo de mantenimiento. Esto deshabilita varias cuentas.
 Cada inicio, buscará actualizaciones.
@@ -595,10 +525,6 @@ Comando de ayuda simplificado para todos los proyectiles
 Si se registra o no el nombre de usuario de FTP.
 Si se registra o no la dirección IP de FTP.
 Elija el primer perfil solo cuando se conecte.
-Activa la compatibilidad con 255 colores para ColorMix.
-Activa el soporte de 255 colores para Disco.
-Activa la compatibilidad con 255 colores para GlitterColor.
-Activa el soporte de 255 colores para líneas.
 La hora y la fecha se mostrarán en la esquina superior derecha de la pantalla.
 Si está habilitado, el kernel analizará la carpeta completa para su tamaño total. De lo contrario, solo analizará la superficie.
 Habilita eyecandy en el inicio
@@ -608,7 +534,6 @@ Seleccione su unidad preferida para la temperatura (esto solo se aplica al coman
 Mod {0} detenido
 {0} v {1} detenido
 El mod {0} no tiene el nombre de la pieza. Error al analizar el mod. Revise el código fuente.
-El mod {0} no tiene el comando. Error al analizar el mod. Revise el código fuente.
 Debe activar el modo de depuración antes de poder borrar el registro de depuración.
 {0} mensajes nuevos llegaron a la bandeja de entrada.
 Abra "mail" para verlos.
@@ -645,10 +570,6 @@ Se superó el nivel de color rojo. Fue {0}.
 Se superó el nivel de color verde. Fue {0}.
 Se superó el nivel de color azul. Fue {0}.
 Activar colores verdaderos
-Activa el soporte de color verdadero para ColorMix.
-Activa el soporte de color verdadero para Disco.
-Activa la compatibilidad con colores verdaderos para GlitterColor.
-Activa el soporte de color verdadero para líneas.
 No se pudo desbloquear {0}.
 {0} ya está bloqueado.
 {0} no puede unirse a la depuración remota ahora.
@@ -659,7 +580,6 @@ Ingrese las rutas de los archivos a los adjuntos. Presione ENTER en una ruta en 
 Abre un mensaje encriptado
 Escriba la contraseña para el ID de clave {0}
 Envía un mensaje cifrado a una dirección
-Le pide que complete los campos obligatorios para enviar un mensaje cifrado a una dirección
 Descargando desde {0} ...
 Mostrar barra de progreso al descargar o cargar desde el comando "get" o "put"
 Si es verdadero, hace que "get" o "put" muestre la barra de progreso mientras se descarga o carga.
@@ -678,8 +598,6 @@ Se siente como: {0}
 Temperatura: {0}
 Velocidad del viento: {0}
 Dirección del viento: {0}
-Activa la compatibilidad con 255 colores para Disolver.
-Activa el soporte de color verdadero para Disolver.
 Presione cualquier tecla para regresar.
 No se pudo crear la carpeta de correo {0}: {1}
 Hace un directorio en el directorio de trabajo actual
@@ -692,22 +610,11 @@ Los hashes están mal formados.
 Los hash no coinciden.
 Hashes coincide.
 Cambia el nombre de una carpeta
-Esta sección enumera todas las configuraciones generales del kernel, principalmente para mantener el kernel.
-Esta sección cambia el comportamiento de la sonda de hardware.
-Esta sección representa la configuración de inicio de sesión. Cierre sesión en su cuenta para que los cambios surtan efecto.
-Esta sección enumera la configuración del shell.
-Esta sección enumera la configuración de red, como el shell de FTP, la configuración de los comandos relacionados con la red y la configuración de depuración remota.
-Esta sección enumera todos los protectores de pantalla y sus configuraciones disponibles.
-Las configuraciones que no encajan en sus secciones apropiadas aterrizan aquí.
-Prueba mods proporcionando archivos mod
 Abre una carcasa de prueba
-Habilita el modo de depuración
-Solicitudes de argumentos
 * Presione cualquier tecla para iniciar el kernel o ESC para salir.
 No se pudo iniciar "{0}": {1}
 Mostrar vista previa del mensaje de correo
 Cuando enumere los mensajes de correo, muestre la vista previa del cuerpo.
-Colores personalizados...
 Color de entrada
 Color de la licencia
 Color de error de kernel continuable
@@ -721,8 +628,6 @@ Color de error
 Estilo de solicitud de FTP
 Estilo de mensaje de correo
 Estilo de mensaje SFTP
-Activa el soporte de 255 colores para BouncingBlock.
-Activa el soporte de color verdadero para BouncingBlock.
 Intentando acceder a una ruta no válida.
 Borra el archivo de texto
 Sale del editor de texto.
@@ -745,8 +650,6 @@ Barra de color de minutos
 Barra de color de horas
 Color de la información
 Garrapatas para cambiar de color
-Activa la compatibilidad con 255 colores para ProgressClock.
-Activa el soporte de color verdadero para ProgressClock.
 Si el ciclo de color está habilitado, ¿cuántos tics antes de cambiar los colores en ProgressClock? 1 tic = 0,5 segundos
 ProgressClock seleccionará colores aleatorios si está habilitado. De lo contrario, use los colores de config.
 Hace un nuevo tema
@@ -761,39 +664,10 @@ Color de la opción
 Ingrese el número de color de 0 a 255:
 Utilice "hwinfo" para obtener información ampliada sobre el hardware.
 Imprime información de hardware
-Información de la CPU:
 Nombre del procesador:
-Velocidad del procesador:
 Bits del procesador:
-Rev del procesador:
-Topología del procesador:
-Tipo de procesador:
-Hito del procesador:
-Procesador BogoMips:
-Tamaño de la caché del procesador L2:
-Tamaño de la caché del procesador L3:
-Características del procesador:
-Información del disco duro:
-Nombre de la unidad:
-Modelo de unidad:
-Proveedor de unidades:
-Velocidad de conducción:
-Tamaño de la unidad:
-Unidad de serie:
-ID de unidad:
-Recuento de particiones de la unidad:
-ID de partición:
 Sistema de archivos de partición:
 Tamaño de la partición:
-Partición utilizada:
-Información RAM:
-RAM libre:
-Total de RAM:
-RAM utilizada:
-Información de la GPU:
-Nombre de la GPU:
-Controlador de GPU:
-Versión de GPU:
 GPU: no se pudieron probar una o más de las tarjetas gráficas. Mostrando información de todos modos ...
 >> ¡Bienvenidos! Esta es la primera vez que ingresa a la depuración y el chat remotos. Utilice "/ register <nombre>" para registrarse.
 El dispositivo ya existe.
@@ -825,8 +699,6 @@ Especifique el nombre del tema:
 El usuario {0} se ha agregado a la lista "{1}".
 El usuario {0} se ha eliminado de la lista "{1}".
 Modo no válido {0}
-El usuario ya existe
-Cargar tema desde ...
 Cargar tema desde temas prediseñados ...
 Especifique el nombre del archivo del tema sin la extensión .json:
 Abre un archivo ZIP
@@ -839,12 +711,9 @@ El directorio {0} no existe
 El directorio de archivo {0} no existe
 Número máximo de posiciones
 ¿Cuántas posiciones se encienden antes de atenuar?
-Activa la compatibilidad con 255 colores para más claro.
-Activa la compatibilidad con colores verdaderos para el encendedor.
 Color de entrada de lista
 Color del valor de lista
 Se conecta a un servidor SSH para ejecutar un comando.
-Esta sección enumera la configuración del protector de pantalla para
 Especificador de color no válido. Asegúrese de que esté en el formato correcto, lo que significa un número de 0 a 255 si usa 255 colores o una secuencia VT si usa color verdadero de la siguiente manera:
 Error en el shell de prueba: {0}
 Establece una variable en un valor en un script
@@ -866,13 +735,11 @@ Muestra el banner del servidor SSH en la conexión.
 Archivo de clave privada
 Contraseña
 Ingrese la frase de contraseña para la clave {0}:
-Ingrese la ubicación de la clave privada para {0}. Escribe "q" para terminar de agregar claves:
 Neutralizó un camino inexistente.
 El archivo de clave {0} no existe.
 Error al intentar agregar la clave privada:
 Presione "t" para cambiar al modo de 255 colores.
 Presione "t" para cambiar al modo de color verdadero.
-Esta sección le permite elegir qué tipo de color desea cambiar.
 Parece que no tienes ningún usuario excepto root. Esto es malo. Te guiaremos sobre cómo crear uno.
 Escribe tu nombre de usuario.
 Debes escribir tu nombre de usuario.
@@ -882,7 +749,6 @@ Seleccione el tipo de cuenta.
 Administrador: este tipo de cuenta tiene la mayor potencia en el kernel, lo que le permite utilizar programas de administración del sistema.
 Usuario normal: este tipo de cuenta está un poco más restringido que los administradores.
 ¡Felicidades! ¡Has creado una nueva cuenta! Para finalizar, inicie sesión como su nueva cuenta.
-Consulte el manual del protector de pantalla o el código fuente para obtener información.
 mod: No se detectaron mods.
 Comandos generales:
 Comandos de mod:
@@ -906,7 +772,6 @@ Prueba la función de error del kernel con soporte de formato
 Prueba la traducción de una cadena que existe en recursos a un idioma específico
 Imprime una cadena en la consola y analiza los marcadores de posición encontrados
 Prueba la facilidad de expresión regular
-Cifra una cadena usando
 Inicia todas las modificaciones
 Detiene todas las modificaciones
 Habilita o deshabilita la depuración
@@ -941,7 +806,6 @@ Enumera las culturas admitidas
 Busca una cadena especificada en el archivo proporcionado usando expresiones regulares
 Vea si puede presionar una tecla a tiempo
 El usuario no proporcionó ninguna entrada de manera oportuna.
-Dificultad no válida
 Personaje no presionado a tiempo.
 ¡Has presionado el personaje correcto!
 Ha pulsado el carácter equivocado.
@@ -985,7 +849,6 @@ Obtiene configuraciones de protector personalizadas
 Establece la configuración del protector personalizado
 La configuración se estableció correctamente para el protector de pantalla
 No se pudo establecer una configuración para el protector de pantalla
-Esta sección le permite administrar la creación de contraseñas de root.
 Abre un shell RSS para leer los feeds.
 Sale del shell RSS y vuelve al kernel
 Cambia el enlace del feed
@@ -1012,13 +875,6 @@ Modo de ordenación del sistema de archivos
 Dirección de ordenación del sistema de archivos
 Controla cómo se ordenarán los archivos.
 Controla la dirección de la clasificación del sistema de archivos, ya sea ascendente o descendente.
-Orden ascendente
-Orden descendiente
-Nombre completo
-Tamaño del archivo
-Tiempo de creación
-Hora de la última escritura
-Hora del último acceso
 Retraso de escritura de nuevo en milisegundos
 ¿Cuántos milisegundos esperar antes de volver a escribir el texto?
 Escriba el texto que desee que se muestre. Cuanto más largo, mejor.
@@ -1027,35 +883,26 @@ Velocidad máxima de escritura en WPM
 Probabilidad de error tipográfico en porcentaje
 No se pudo guardar el directorio actual: {0}
 Toallitas para cambiar de dirección
-Activa la compatibilidad con 255 colores para Wipe.
-Activa el soporte de color verdadero para Wipe.
 ¿Cuántas toallitas hacer antes de cambiar de dirección al azar?
 Etapa terminada en
 La inicialización interna finalizó en
 No se encontró el archivo de referencia {0}. Es posible que este mod no funcione correctamente sin este archivo.
 Mod de inicio
-Obtiene información de la modificación
 Nombre del comando:
 Definición de comando:
 Tipo de comando:
 ¿Comando estricto?
 Versión mod:
 Mod {0} no encontrado.
-Cultura de
-¿Qué variante de {0} se está utilizando para cambiar los nombres de los meses, el calendario, etc.?
 El editor de texto aún no ha abierto un flujo de archivos.
 Cadena reemplazada.
 Uno o ambos números no son numéricos.
 Palabra eliminada.
 Personaje eliminado.
-Configuración del sistema de archivos ...
-Esta sección enumera la configuración del sistema de archivos.
 ¡Bienvenido a Configuración!
 Error al ejecutar el comando SSH
 Error en el shell SSH
 - Información de la aplicación
-Activa la compatibilidad con 255 colores para BouncingText.
-Activa el soporte de color verdadero para BouncingText.
 Prueba el escritor del diccionario con la cadena y la matriz de cadenas
 Prueba el escritor del diccionario con la matriz char y char
 Prueba el escritor del diccionario con la matriz de enteros y enteros
@@ -1072,21 +919,15 @@ donde será HardwareType
 El tipo de hardware {0} no está probado o no es válido.
 El tipo de hardware {0} aún no se ha probado. Si está seguro de que está probado, reinicie el kernel con la depuración habilitada.
 Particiones no analizadas para listar.
-Modo hacker
-Si está habilitada, se habilitará la consola verde.
 Imprime un separador
 Imprime un separador con soporte de formato
 Imprime un separador con soporte de color
 Imprime un separador compatible con colores y formatos.
 Siempre centrado
-Activa la compatibilidad con 255 colores para Marquesina.
-Activa el soporte de color verdadero para Marquesina.
 Escriba el texto que desee que se muestre.
 Si el texto que se muestra en el recuadro siempre está centrado.
-'q' para salir.
 No se encontró el argumento {0} para inyectar.
 No se encontró el argumento de la línea de comando {0}.
-Borra todos los ajustes
 El protector de pantalla experimentó un error al mostrar: {0}. Presiona cualquier tecla para salir.
 Avance...
 Así es como se verá su tema:
@@ -1124,20 +965,15 @@ Ya sea para usar la unidad Beats Per Minute para escribir el siguiente color.
 Retraso en latidos por minuto
 Batir color
 ¿Cuántos latidos por minuto hay que esperar antes de realizar la siguiente escritura?
-Activa la compatibilidad con 255 colores para BeatFader.
-Activa la compatibilidad con colores verdaderos para BeatFader.
 BeatFader seleccionará colores aleatorios si está habilitado. De lo contrario, use los colores de config.
 Banner de inicio personalizado
-Si se especifica, mostrará un banner de inicio personalizado con soporte de marcador de posición. Puede usar esta frase para la versión del kernel:
 Descarga la carpeta remota al directorio local usando binario o texto
 Carga la carpeta local al directorio remoto usando binario o texto
-Ingrese una carpeta para descargar al directorio local.
 Descargando carpeta {0} ...
 Carpeta descargada {0}.
 Error al descargar la carpeta {0}.
 Subiendo carpeta {0} ...
 Carpeta cargada {0}
-Ingrese una carpeta para cargar en el directorio remoto.
 Presione "c" para escribir el código a todo color.
 Ingrese un código de color que satisfaga estos formatos:
 Minifica el archivo JSON
@@ -1151,13 +987,9 @@ Las columnas de texto que se imprimirán.
 ¿Cuántos caracteres escribir antes de activar el "relleno de línea"?
 Posibilidad de que el patrón de relleno de línea se imprima en mayúsculas en porcentaje
 Tipo de patrón de relleno de línea
-Patrón común
-Patrón completo
-Patrón aleatorio
 Puede que la respuesta no sea cero.
 La respuesta no puede exceder las entradas mostradas.
 Guardar cambios...
-Este protector de pantalla admite texto escrito en archivo. Pase la ruta completa del archivo a este campo y el protector de pantalla mostrará el contenido del archivo de manera adecuada.
 Administra tus modificaciones
 La gestión de mod está deshabilitada en modo seguro.
 Comando no válido {0}. Compruebe el uso a continuación:
@@ -1173,5 +1005,3 @@ Presione cualquier tecla para leer la página del manual ...
 Esta página de manual necesita trabajo para:
 No se encontró la página manual {0}.
 Mod manual
-Activa la compatibilidad con 255 colores para FlashColor.
-Activa la compatibilidad con colores verdaderos para FlashColor.

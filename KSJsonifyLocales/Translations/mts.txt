@@ -1,15 +1,6 @@
 Kmandi disponibbli: {0}
-Ikteb kmand:
 L-injezzjoni tal-kmand ġiet ikkanċellata.
-Issepara argumenti tal-ibbutjar b'virgoli mingħajr spazji, per eżempju, 'motd, gpuprobe'
-Kmandi separati fuq 'cmdinject' bi kolonji bi spazji, per eżempju, 'cmdinject setthemes Hacker: beep 1024 0.5'
-Innota li l-argument 'debug' ma jkoprix kompletament il-qalba.
-bargs: L-argument mitlub {0} ma jinstabx.
-bargs: Żball li ma jistax jiġi rkuprat fl-argument:
-Argumenti disponibbli: {0}
-Argumenti ('għajnuna' għall-għajnuna):
 L-argumenti injettati se jkunu skedati li jibdew fir-reboot li jmiss.
-L-Injezzjoni tal-Argumenti ġiet ikkanċellata.
 Żball waqt li analizza argumenti reali tal-linja tal-kmand: {0}
 Mudell tal-kulur mhux validu {0}
 hwprobe: Il-ħardwer tiegħek se jiġi investigat. Stenna...
@@ -82,7 +73,6 @@ Password għal {0}:
 Konness ma '{0}
 Żball meta tipprova tikkonnettja ma '{0}: {1}
 Stack Trace: {2}
-Daħħal server FTP.
 Direttorju lokali {0} ma jeżistix.
 Daħħal direttorju lokali. ".." biex immur lura.
 Direttorju {0} ma nstabx.
@@ -97,16 +87,12 @@ Int għadek ma konnessi ma 'ebda server
 Tniżżil tal-fajl {0} ...
 Fajl imniżżel {0}.
 Int trid tikkonnettja mas-server qabel ma twettaq it-trasmissjoni.
-Daħħal fajl biex tniżżlu fid-direttorju lokali.
 {0} KB | Immodifikat fi: {1}
 Għandek tikkonnettja mas-server qabel ma telenka l-fajls remoti kollha.
 Tella 'l-fajl {0} ...
 Fajl imtella '{0}
-Daħħal fajl biex ittella 'fid-direttorju remot. ittella <fajl> <direttorju>
-(Ġewwa:
 Tikseb id-direttorju lokali kurrenti
 Iġib direttorju remot kurrenti
-Jikkonnettja ma 'server FTP (għandu jibda b' "ftp://" jew "ftps://")
 Ibdel id-direttorju lokali biex tniżżlu jew ttellgħu minnu
 Tibdil fid-direttorju remot biex tniżżel minn jew ittella 'fuq
 Tħassar fajl remot mis-server
@@ -147,7 +133,6 @@ Konfigurazzjoni mgħobbija mill-ġdid. Jista 'jkollok bżonn terġa' tibda l-għ
 Wieħed jew aktar mill-kuluri huwa invalidu.
 Il-kuluri mhumiex disponibbli. Ixgħel qoxra kkulurita fil-konfigurazzjoni tal-qalba.
 Screensaver {0} ma nstabx.
-[Settings tal-Kernel (Tħaddem fuq {0}) ]
 Verżjoni tal-Kernel:
 Mod ta 'Debug:
 Qoxra kkulurita:
@@ -155,8 +140,6 @@ Argumenti fuq Boot:
 Kmand tal-għajnuna ssimplifikat:
 MOTD meta tidħol:
 Ħin / Data fuq il-kantuniera:
-[ Settings tal-ħardwer ]
-[ Settings tal-utent ]
 Isem tal-utent kurrenti:
 Isem ospitanti attwali:
 Usernames disponibbli:
@@ -183,31 +166,14 @@ Informazzjoni tas-sistema
 * Tista 'tuża kmandi multipli billi tuża l-kolon bejn il-kmandi.
 Użu:
 fejn l-argumenti jkunu {0}
-Inizjalizza l-qoxra FTP.
-Ħbieb ta '
 fejn se jkun customsaver
-Jillokkja l-iskrin tiegħek bil-password.
-Tilloggja lilek mill-utent.
-Ikseb kull informazzjoni dwar in-netwerk
-Nerġa 'jibda l-kompjuter simulat tiegħek.
-Jerġa 'jġorr il-konfigurazzjoni li tinbidel mill-utent aħħari jew mill-għodda.
-Il-kuluri ma jeħtiġux li terġa 'tibda, iżda ħafna mis-settings jeħtieġu li terġa' tibda.
-jurik screensaver magħżul, waqt li tipproteġi l-iskrin tiegħek mill-burn burns.
-Juri d-data u l-ħin.
-Juri d-data u l-ħin f'żoni.
-Itfi l-kompjuter simulat tiegħek.
-Turi informazzjoni tas-sistema u verżjonijiet.
 Kien hemm żball fil-qoxra.
 M'għandekx permess biex tuża {0}
 Messaġġ tal-qoxra: Il-kmand mitlub {0} mhux permess li jaħdem fil-modalità ta 'manutenzjoni.
 Messaġġ tal-qoxra: Il-kmand mitlub {0} ma jinstabx. Ara 'għajnuna' għal kmandi disponibbli.
 Messaġġ tal-qoxra: Kmand {0} mhux permess li jimxi fuq log in.
 Żball meta ppruvajt twettaq il-kmand.
-datetime: Il-ħin huwa {0}
-datetime: Illum hija {0}
-datetime: Żona tal-Ħin: {0}
 - Ħin ta '{0}: {1}
-biex tnaddaf l-iskrin.
 Jaħdem fuq {0}
 M'intix awtorizzat li tikseb informazzjoni għal {0}.
 Dan il-kmand m'għadux jintuża u se jitneħħa f'ħarġa futura.
@@ -233,8 +199,6 @@ Tibdil fil-lingwa
 >> Gwarniċi, fajls, linji, u kolonni <<
 > Qafas {0}: Fajl: {1} | Linja: {2} | Kolonna: {3}
 > Hemm żball meta tipprova tikseb informazzjoni dwar il-qafas. {0}: {1}
-Jgħaddi mill-ġdid mods.
-Mods mgħobbija mill-ġdid.
 Merħba fil-Kernel!
 Illoggjajt b'suċċess bħala <utent>
 MOTD / MAL huwa validu, iżda t-tip ta 'messaġġ mhuwiex validu. Jekk nassumu MOTD ...
@@ -267,27 +231,19 @@ L-adapter {0} ma jappoġġjax l-IPv6. Ikompli ...
 L-adapter {0} ma jappoġġjax l-IPv4. Is-sonda falliet.
 Jidher li kont qed tmexxi l-verżjoni tal-iżvilupp tal-qalba. Filwaqt li tista 'tara l-aspetti, huwa spiss aġġornat u jista' jintroduċi bugs. Huwa rrakkomandat li tibqa 'fuq il-verżjoni stabbli.
 Il-lingwa li għażilt fiha żewġ varjanti. Għazel waħda:
-1. Traslitterat
-2. Tradott
-Agħżel l-għażla tiegħek:
 Għażla invalida. Erġa 'pprova.
 M'intix awtorizzat li tissettja d-direttorju kurrenti għal {0}: {1}
 It-triq li speċifikajt hija twila wisq.
-CPU: TWISSIJA: SSE2 ikun meħtieġ f'impenji ta 'żvilupp fil-ġejjieni.
 Id-dump collecter ta 'informazzjoni ġġarraf meta ppruvat tikseb informazzjoni dwar {0}: {1}
-Żball waqt li ppruvajt tikseb id-data tal-ġbir tal-assemblaġġ {0}: {1}
 Żball meta tipprova tissettja l-MOTD / MAL: {0}
 Żball meta tipprova tikseb MOTD / MAL: {0}
 Żball meta tipprova tibda screensaver, minħabba operazzjoni invalida.
 It-tagħbija mill-ġdid mhix permessa fil-modalità sikura.
 L-analizzar ta 'mods mhux permess fuq modalità sigura.
-Jelenka l-apparati konnessi kollha tad-debugging.
 Żball meta tipprova tissettja l-modalità analisi. Iċċekkja l-valur u erġa 'pprova. Jekk dan huwa korrett, ara t-traċċa tal-munzell meta d-debugging tal-qalba jkun attivat.
 It-triq la hija fajl u lanqas direttorju.
 Joħloq kopja oħra ta 'fajl taħt direttorju jew isem differenti.
 Iċċaqlaq fajl għal direttorju ieħor
-Biex tikkopja fajls għal direttorju ieħor jew isem differenti
-Biex tmexxi fajls għal direttorju ieħor
 Taqbila {0} ({1}): {2}
 Taqbila {0}: {1}
 Ħin mgħoddi: {0} millisekondi
@@ -302,9 +258,6 @@ Irrispondi għal kummenti ta ’mħabba jew mibegħda.
 Jekk xi ħadd għamel dan il-kumment għall-vidjow tiegħek:
 Kif tirrispondi?
 Għażla invalida. Sejjer għall-kumment li jmiss ...
-Għadek kemm irrapportajt il-kumment tal-imħabba!
-Għadek kif weġibt għall-kumment tal-mibegħda!
-Kbira! Il-kumment ta '{0} se jitneħħa għal dak.
 Kbira! {0} se japprezza r-ringrazzjament tiegħek.
 Spelt perfettament!
 Spelt ħażin.
@@ -318,7 +271,6 @@ Daħħal il-password għal {0}:
 SSH Skonnettjat.
 Ma tistax tissettja l-paġna tal-kodiċi. Il-lingwa tista 'ma tidhirx sewwa.
 Id-debugging mhux attivat.
-{0} m'għadux issettjat għal skreensaver default.
 Grazzi! Dan huwa interessanti.
 Kulħadd se jappoġġja l-vidjow tiegħek għal dan.
 Jiena tajtek il-fajl speċjali fl-e-mail tiegħek għall-vidjo li jmiss tiegħek.
@@ -364,7 +316,6 @@ Direttorju {0} diġà jeżisti.
 Żball meta tipprova tikkonnettja ma '{0}: Konnessjoni mitlufa jew konnessjoni mitlufa
 Kalkulatur biex tikkalkula espressjonijiet.
 Żball fil-kalkolu.
-Jidher li kont qed tmexxi l-verżjoni kważi-rilaxxata. Filwaqt li huwa aktar sikur li tuża issa, huwa rrakkomandat li tibqa 'fuq il-verżjoni stabbli.
 Aġġornament tas-sistema
 Iċċekkjar għal aġġornamenti tas-sistema ...
 Verżjoni ġdida misjuba:
@@ -372,7 +323,6 @@ Tista 'tniżżilha fuq:
 L-ebda notifika reċenti
 Tiftix għal sekwenza speċifikata fil-fajl ipprovdut
 Ikkalkula somom ta 'fajls f'direttorju speċifikat.
-Jelenka l-emails kollha fl-utent speċifiku.
 Daħħal username jew indirizz tal-posta:
 Daħħal il-password:
 Żball waqt il-konnessjoni ma '{0}: {1}
@@ -382,7 +332,6 @@ Joħroġ mill-qoxra IMAP
 Lista ta 'kmandi
 Tniżżel messaġġi u telenkahom
 Tiftaħ messaġġ
-Il-paġna tista 'ma tkunx negattiva jew żero.
 Il-paġna mhix valur numeriku.
 In-numru tal-messaġġ jista 'ma jkunx negattiv jew żero.
 In-numru tal-messaġġ mhuwiex valur numeriku.
@@ -392,7 +341,6 @@ In-numru tal-messaġġ mhuwiex valur numeriku.
 Messaġġ speċifikat ma jinstabx.
 Id-debug mill-bogħod naqas milli jibda: {0}
 Tħejjija tal-profili ... Jista 'jieħu diversi minuti ...
-Isem Ospitanti, Username, Tip ta 'Dejta, Kodifikazzjoni, Kriptaġġ, Protokolli
 Żball meta ppruvajt tesegwixxi l-iskript: {0}
 Jikteb test fil-console
 Jagħżel l-għażliet tal-utent
@@ -417,7 +365,6 @@ L-arloġġ veloċi huwa vojt. Qabbad ma 'server biex iżżid indirizz miegħu.
 Speed ​​dial ma jeżistix. Qabbad ma 'server biex iżżid indirizz miegħu.
 Daħħal l-indirizz u l-port tas-server IMAP (<indirizz> jew <indirizz>: [port]):
 Daħħal l-indirizz u l-port tas-server SMTP (<indirizz> jew <indirizz>: [port]):
-Jitolbok timla l-oqsma meħtieġa biex tibgħat messaġġ lil indirizz
 Jibgħat messaġġ lil indirizz
 Daħħal l-indirizz tal-posta tar-riċevitur:
 Daħħal is-suġġett:
@@ -445,8 +392,6 @@ Tħassar kelma jew frażi minn numru tal-linja
 Tħassar karattru minn numru ta 'karattru f'linja speċifikata
 Linja mneħħija.
 Numru tal-linja speċifikat {0} mhuwiex numru validu.
-L-argumenti meħtieġa mhumiex mgħoddija lill-kmand {0}
-Żball meta ppruvajt tmexxi l-kmand: {0}
 Tħaddim fil-modalità sikura. Taqbeż il-palk ...
 >> Remote Debug u Chat: verżjoni
 >> L-indirizz tiegħek huwa {0}.
@@ -464,19 +409,12 @@ Imblokka apparat ta 'debug bl-indirizz IP
 Żball fit-tagħbija tas-settings
 Hemm żball waqt it-tagħbija tas-settings. Jista 'jkollok bżonn tiċċekkja l-fajl tas-settings.
 Agħżel sezzjoni:
-Settings Ġenerali ...
-Settings tal-Hardware ...
-Settings tal-Login ...
-Settings tal-Qoxra ...
-Settings tan-Netwerk ...
-Settings Mixxellanji ...
 Save Settings
 Ħruġ
 L-għażla speċifikata {0} mhijiex valida.
 It-tweġiba għandha tkun numerika.
 Prompt għal Argumenti fuq Boot
 Trigger tal-Mod ta 'Manutenzjoni
-Ibdel il-Password tal-Għerq ...
 Iċċekkja għal Aġġornamenti mal-Istartjar
 Sonda Kwieta
 Uri MOTD fuq il-Log-in
@@ -500,9 +438,7 @@ Sezzjoni invalida mdaħħla. Jekk jogħġbok mur lura.
 Mur lura...
 Enable
 Itfi
-Numru ewlieni invalidu mdaħħal. Jekk jogħġbok mur lura.
 Ikteb il-password tal-għerq li trid tiġi ssettjata. Tinkwetax; il-password tidher bħala stilel.
-Enable "Change Root Password" biex tuża din l-għażla. Jekk jogħġbok mur lura.
 Ibdel il-Password tal-Għerq?
 Issettja l-Password tal-Għerq ...
 Ikteb port debugger remot. Għandu jkun numeriku, u m'għandux ikun diġà użat. Inkella, id-debugger remot jonqos milli jiftaħ il-port.
@@ -513,7 +449,6 @@ It-tweġiba tista 'ma tkunx negattiva.
 It-tweġiba mhix valida. Iċċekkja biex tiżgura li t-tweġiba hija numerika għal entrati ta 'konfigurazzjoni li jeħtieġu numri bħala tweġibiet.
 Il-varjabbli {0} ma tinstab fl-ebda modulu.
 Tibdil fil-konfigurazzjoni tal-qalba
-Settings ta 'Screensaver ...
 Attiva 255 kulur
 Trid tibqa 'konness?
 Għażla invalida. Jekk nassumu le ...
@@ -549,7 +484,6 @@ Ma rnexxilekx tmexxi l-fajl jew id-direttorju: {0}
 Ma tistax issib fajl li jaqbel mas-sekwenza "{0}": {1}
 It-tniżżil ma rnexxiex għall-fajl {0}.
 Ma rnexxilekx telenka fajls remoti: {0}
-Daħħal fajl jew folder biex tneħħi. Irid ikollok permessi amministrattivi fuq il-kont tiegħek biex tkun tista 'tneħħi.
 Int żgur li trid tħassar {0} <y/n>?
 Tħassar {0} ...
 {0} ma tinstabx fis-server.
@@ -560,7 +494,6 @@ Nimxu {0} għal {1} ​​...
 Imċaqlaq b'suċċess
 Iċċaqlaq fajl jew direttorju għal fajl jew direttorju ieħor. Tista 'wkoll tuża dak biex tibdel isem il-fajls.
 Ma rnexxilekx timxi {0} għal {1}.
-Daħħal triq tas-sors u triq tad-destinazzjoni.
 Kopja {0} għal {1} ​​...
 Ikkupjat b'suċċess
 Ikkopja fajl jew direttorju għal fajl jew direttorju ieħor.
@@ -578,9 +511,6 @@ Umdità: {0}
 Tista 'tikseb iċ-ċavetta API tiegħek stess fuq https://home.openweathermap.org/api_keys.
 Dejjem tista 'tikkonsulta http://bulk.openweathermap.org/sample/city.list.json.gz għal-lista ta' bliet bl-IDs tagħhom.
 Unità Preferuta għat-Temperatura
-Kelvin
-Imperjali (Fahrenheit)
-Metrika (Celsius)
 Issettja l-għadma sabiex iġġiegħlek l-argument fuq l-ibbutjar.
 Triggers modalità ta 'manutenzjoni. Dan jiddiżattiva kontijiet multipli.
 Kull istartjar, jiċċekkja għal aġġornamenti.
@@ -595,10 +525,6 @@ Kmand tal-għajnuna ssimplifikat għall-qxur kollha
 Kemm jekk tilloggja l-username tal-FTP jew le.
 Jekk tirreġistrax l-indirizz IP FTP jew le.
 Agħżel l-ewwel profil biss meta tikkonnettja.
-Jattiva 255 appoġġ tal-kulur għal ColorMix.
-Jattiva 255 appoġġ tal-kulur għal Disco.
-Jattiva 255 appoġġ tal-kulur għal GlitterColor.
-Jattiva 255 appoġġ tal-kulur għal-Linji.
 Il-ħin u d-data se jintwerew fir-rokna ta 'fuq tal-lemin tal-iskrin
 Jekk ikun attivat, il-qalba se teżamina l-folder kollu għad-daqs totali tiegħu. Inkella, se tittratta biss il-wiċċ.
 Jippermetti l-għajnejn fl-istartjar
@@ -608,7 +534,6 @@ Agħżel l-unità preferuta tiegħek għat-temperatura (dan japplika biss għall
 Mod {0} waqaf
 {0} v {1} waqfet
 Mod {0} m'għandux l-isem tal-parti. L-analiżi tal-mod falliet. Irrevedi l-kodiċi tas-sors.
-Mod {0} m'għandux il-kmand. L-analiżi tal-mod falliet. Irrevedi l-kodiċi tas-sors.
 Int trid tixgħel il-modalità ta 'debug qabel ma tkun tista' tnaddaf id-debug log.
 {0} messaġġi ġodda waslu fl-inbox.
 Iftaħ "mail" biex tarahom.
@@ -645,10 +570,6 @@ Inqabeż il-livell tal-kulur aħmar. Kien {0}.
 Inqabeż il-livell tal-kulur aħdar. Kien {0}.
 Inqabeż il-livell tal-kulur blu. Kien {0}.
 Attiva kuluri vera
-Jattiva l-appoġġ tal-kulur veru għal ColorMix.
-Jattiva l-appoġġ tal-kulur veru għal Disco.
-Jattiva l-appoġġ tal-kulur veru għal GlitterColor.
-Jattiva l-appoġġ tal-kulur veru għal-Linji.
 Naqas milli jiżblokka {0}.
 {0} huwa diġà mblukkat.
 {0} ma jistax jingħaqad ma 'debug remot issa.
@@ -659,7 +580,6 @@ Daħħal il-mogħdijiet tal-fajl għall-annessi. Agħfas ENTER fuq triq vojta bi
 Tiftaħ messaġġ kriptat
 Ikteb il-password għall-ID taċ-ċavetta {0}
 Jibgħat messaġġ kriptat lil indirizz
-Jitolbok timla l-oqsma meħtieġa biex tibgħat messaġġ kriptat lil indirizz
 Tniżżil minn {0} ...
 Uri l-istrixxa tal-progress waqt li tniżżel jew ittella 'mill-kmand "ġib" jew "tpoġġi"
 Jekk veru, jagħmel "get" jew "put" juri l-istrixxa tal-progress waqt it-tniżżil jew it-tlugħ.
@@ -678,8 +598,6 @@ Tħoss bħal: {0}
 Temperatura: {0}
 Veloċità tar-riħ: {0}
 Direzzjoni tar-riħ: {0}
-Jattiva 255 appoġġ tal-kulur għal Ħoll.
-Jattiva l-appoġġ tal-kulur veru għal Ħoll.
 Agħfas kwalunkwe ċavetta biex tmur lura.
 Ma jistax joħloq folder tal-posta {0}: {1}
 Jagħmel direttorju fid-direttorju tax-xogħol kurrenti
@@ -692,22 +610,11 @@ Hash huma malformati.
 Hash ma jaqblux.
 Logħba tal-ħaxix.
 Semmi mill-ġdid folder
-Din it-taqsima telenka l-issettjar ġenerali tal-qalba, l-aktar biex iżżomm il-qalba.
-Din it-taqsima tbiddel l-imġieba tas-sonda tal-ħardwer.
-Din it-taqsima tirrappreżenta l-issettjar tal-login. Log out mill-kont tiegħek biex il-bidliet jidħlu fis-seħħ.
-Din it-taqsima telenka l-issettjar tal-qoxra.
-Din it-taqsima telenka l-issettjar tan-netwerk, bħall-qoxra FTP, l-issettjar tal-kmand relatat man-netwerk, u s-settings tal-iddibaggjar mill-bogħod.
-Din it-taqsima telenka l-iskreensavers kollha u s-settings disponibbli tagħhom.
-Is-settings li ma joqogħdux fit-taqsimiet xierqa tagħhom jinżlu hawn.
-Testijiet tal-mods billi tipprovdi mod files
 Tiftaħ qoxra tat-test
-Jippermetti l-mod ta 'debug
-Prompti għal argumenti
 * Agħfas kwalunkwe ċavetta biex tibda l-għadma jew l-ESC biex toħroġ.
 Naqas milli jibda "{0}": {1}
 Uri preview tal-messaġġ bil-posta
 Meta telenka messaġġi bil-posta, uri preview tal-ġisem.
-Kuluri apposta ...
 Kulur tal-input
 Kulur tal-liċenzja
 Kulur ta 'żball kontinwu tal-qalba
@@ -721,8 +628,6 @@ Kulur ta 'żball
 Stil ta 'Prompt FTP
 Mail Prompt Style
 Stil ta 'Prompt SFTP
-Jattiva 255 appoġġ tal-kulur għal BouncingBlock.
-Jattiva l-appoġġ tal-kulur veru għal BouncingBlock.
 Tipprova taċċessa triq invalida.
 Tħassar il-fajl tat-test
 Joħroġ mill-editur tat-test
@@ -745,8 +650,6 @@ Kulur tal-Bar tal-Minuti
 Bar tal-Kulur tas-Sigħat
 Kulur ta 'Informazzjoni
 Qurdien biex tbiddel il-kulur
-Jattiva 255 appoġġ tal-kulur għal ProgressClock.
-Jattiva l-appoġġ tal-kulur veru għal ProgressClock.
 Jekk iċ-ċiklar tal-kulur huwa attivat, kemm qurdien qabel ma tbiddel il-kuluri fi ProgressClock? Immarka 1 = 0.5 sekondi
 ProgressClock jagħżel kuluri każwali jekk ikun attivat. Inkella, uża kuluri minn config.
 Tagħmel tema ġdida
@@ -761,39 +664,10 @@ Kulur tal-għażla
 Daħħal in-numru tal-kulur minn 0 sa 255:
 Uża "hwinfo" għal informazzjoni estiża dwar il-hardware.
 Stampa informazzjoni dwar il-hardware
-Informazzjoni tas-CPU:
 Isem tal-proċessur:
-Veloċità tal-proċessur:
 Bits tal-proċessur:
-Rev tal-proċessur:
-Topoloġija tal-proċessur:
-Tip ta 'proċessur:
-Pass importanti tal-proċessur:
-Proċessur BogoMips:
-Daqs tal-cache tal-proċessur L2:
-Daqs tal-cache tal-proċessur L3:
-Karatteristiċi tal-proċessur:
-Informazzjoni HDD:
-Isem tas-sewqan:
-Mudell tas-sewqan:
-Bejjiegħ tas-sewqan:
-Veloċità tas-sewqan:
-Daqs tas-sewqan:
-Serje tas-sewqan:
-ID tas-sewqan:
-Għadd ta 'partizzjoni tas-sewqan:
-ID tal-partizzjoni:
 Sistema ta 'fajls tal-partizzjoni:
 Daqs tal-partizzjoni:
-Partizzjoni użata:
-Informazzjoni RAM:
-RAM ħielsa:
-RAM totali:
-RAM użat:
-Informazzjoni tal-GPU:
-Isem GPU:
-Sewwieq tal-GPU:
-Verżjoni tal-GPU:
 GPU: Karta tal-grafika waħda jew aktar ma rnexxilhomx jiġu investigati. Li turi informazzjoni xorta waħda ...
 >> Merħba! Din hija l-ewwel darba li ddaħħal debug remot u chat. Uża "/ register <name>" biex tirreġistra.
 L-apparat diġà jeżisti.
@@ -825,8 +699,6 @@ Speċifika l-isem tat-tema:
 L-utent {0} ġie miżjud mal-lista "{1}".
 L-utent {0} tneħħa mil-lista "{1}".
 Modalità invalida {0}
-L-utent diġà jeżisti
-Tagħbija Tema Minn ...
 Tagħbija Tema Minn Temi Mibnija minn qabel ...
 Speċifika l-isem tal-fajl tat-tema mingħajr l-estensjoni .json:
 Tiftaħ arkivju ZIP
@@ -839,12 +711,9 @@ Direttorju {0} ma jeżistix
 Id-direttorju tal-arkivju {0} ma jeżistix
 Għadd ta 'Pożizzjonijiet Max
 Kemm hemm pożizzjonijiet mixgħula qabel ma jbaxxu?
-Jattiva 255 appoġġ tal-kulur għal Lajters.
-Jattiva l-appoġġ tal-kulur veru għal Lajters.
 Kulur tad-dħul tal-lista
 Kulur tal-valur tal-lista
 Jikkonnettja ma 'server SSH biex jeżegwixxi kmand.
-Din it - taqsima telenka l - issettjar ta '
 Speċifikatur tal-kulur mhux validu. Kun żgur li huwa fuq il-format korrett, li jfisser numru minn 0-255 jekk tuża 255 kulur jew sekwenza VT jekk tuża kulur veru kif ġej:
 Żball fil-qoxra tat-test: {0}
 Issettja varjabbli għal valur fi skript
@@ -866,13 +735,11 @@ Kif trid tawtentika?
 Fajl taċ-ċavetta privata
 Password
 Daħħal il-passphrase għaċ-ċavetta {0}:
-Daħħal il-post taċ-ċavetta privata għal {0}. Ikteb "q" biex tispiċċa żżid iċ-ċwievet:
 Newtralizzat triq li ma teżistix.
 Il-fajl ewlieni {0} ma jeżistix.
 Żball meta ppruvajt iżżid ċavetta privata:
 Agħfas "t" biex taqleb għall-modalità tal-kulur 255.
 Agħfas "t" biex taqleb għall-modalità tal-kulur veru.
-Din it-taqsima tħallik tagħżel liema tip ta 'kulur trid tibdel.
 Jidher li m’għandek l-ebda utent ħlief root. Dan huwa ħażin. Aħna niggwidawk kif toħloq waħda.
 Ikteb l-username tiegħek.
 Int trid tikteb l-username tiegħek.
@@ -882,7 +749,6 @@ Agħżel it-tip ta 'kont.
 Amministratur: Dan it-tip ta 'kont għandu l-iktar qawwa fil-qalba, li jippermettilek tuża programmi ta' ġestjoni tas-sistema.
 Utent Normali: Dan it-tip ta 'kont huwa kemmxejn aktar ristrett mill-amministraturi.
 Prosit! Int għamilt kont ġdid! Biex tispiċċa dan, idħol bħala l-kont il-ġdid tiegħek.
-Ikkonsulta l-iskreensaver manwali jew il-kodiċi tas-sors għall-informazzjoni.
 mod: L-ebda mods ma nstab.
 Kmandi ġenerali:
 Mod jikkmanda:
@@ -906,7 +772,6 @@ Jittestja l-faċilità tal-iżball tal-qalba bl-appoġġ tal-format
 Testijiet li jittraduċu sekwenza li teżisti f'riżorsi għal lingwa speċifika
 Stampa sekwenza biex tikkonsola u teżamina l-ispazji li nstabu
 Jittestja l-faċilità ta 'espressjoni regolari
-Iċċifra string billi tuża
 Tibda l-mods kollha
 Waqqaf il-mods kollha
 Jippermetti jew iwaqqaf id-debug
@@ -941,7 +806,6 @@ Listi appoġġaw kulturi
 Tiftix għal sekwenza speċifikata fil-fajl ipprovdut billi tuża espressjonijiet regolari
 Ara jekk tistax tagħfas ċavetta fil-ħin
 L-utent ma pprovda l-ebda kontribut fil-ħin.
-Diffikultà invalida
 Karattru mhux ippressat fil-ħin.
 Int ippressajt il-karattru t-tajjeb!
 Int ippressajt il-karattru ħażin.
@@ -985,7 +849,6 @@ Tikseb settings ta 'ffrankar tad-dwana
 Issettja settings ta 'ffrankar tad-dwana
 Is-settings issettjati b'suċċess għall-iscreensaver
 Ma rnexxilekx tissettja settings għal Screensaver
-Din it-taqsima tħallik timmaniġġja l-ħolqien tal-password root.
 Tiftaħ qoxra RSS biex taqra l-feeds
 Joħroġ mill-qoxra RSS u jirritorna fil-qalba
 Ibdel il-link tal-għalf
@@ -1012,13 +875,6 @@ Mod ta 'tip ta' sistema ta 'fajls
 Direzzjoni tat-tip ta 'sistema ta' fajls
 Jikkontrolla kif il-fajls jiġu magħżula.
 Jikkontrolla d-direzzjoni tal-issortjar tas-sistema tal-fajls kemm jekk tkun axxendenti jew dixxendenti.
-Ordni axxendenti
-Ordni dixxendenti
-Isem sħiħ
-Daqs tal-fajl
-Ħin tal-ħolqien
-L-aħħar ħin tal-kitba
-Ħin tal-aħħar aċċess
 Ikteb għal darb'oħra Dewmien f'millisekondi
 Kemm millisekondi tistenna qabel ma terġa tikteb it-test?
 Ikteb kwalunkwe test li trid tidher. Itwal huwa aħjar.
@@ -1027,35 +883,26 @@ Veloċità massima tal-kitba f'WPM
 Probabbiltà ta 'typo f'perċentwali
 Ma rnexxilekx issalva d-direttorju kurrenti: {0}
 Imsaħ biex tbiddel id-direzzjoni
-Jattiva 255 appoġġ tal-kulur għal Imsaħ.
-Jattiva l-appoġġ tal-kulur veru għal Imsaħ.
 Kemm timsaħ x'tagħmel qabel ma tbiddel id-direzzjoni b'mod każwali?
 Stadju lest ġewwa
 L-inizjalizzazzjoni interna spiċċat fl
 Il-fajl referenzjat {0} ma nstabx. Dan il-mod jista 'ma jaħdimx sewwa mingħajr dan il-fajl.
 Tibda mod
-Tikseb informazzjoni mod
 Isem tal-kmand:
 Definizzjoni tal-kmand:
 Tip ta 'kmand:
 Kmand strett?
 Verżjoni Mod:
 Mod {0} ma nstabx.
-Kultura ta '
-Liema varjant ta '{0} qed jintuża biex jibdel l-ismijiet tax-xahar, il-kalendarju, eċċ?
 L-editur tat-test għadu ma fetaħx stream tal-fajl.
 String mibdul.
 Numru wieħed jew it-tnejn mhumiex numeriċi.
 Kelma mħassra.
 Karattru mħassar.
-Settings tas-Sistema tal-Fajls ...
-Din it-taqsima telenka l-issettjar tas-sistema tal-fajls.
 Merħba fis-Settings!
 Żball waqt l-eżekuzzjoni tal-kmand SSH
 Żball fuq il-qoxra SSH
 - Informazzjoni dwar l-applikazzjoni
-Jattiva 255 appoġġ tal-kulur għal BouncingText.
-Jattiva l-appoġġ tal-kulur veru għal BouncingText.
 Jittestja l-kittieb tad-dizzjunarju bis-sekwenza u l-firxa ta 'spag
 Jittestja l-kittieb tad-dizzjunarju bil-char u char array
 Jittestja l-kittieb tad-dizzjunarju bid-numru sħiħ u l-firxa tan-numru sħiħ
@@ -1072,21 +919,15 @@ fejn ikun HardwareType
 Jew it-tip ta 'hardware {0} mhuwiex investigat, jew mhux validu.
 It-tip ta 'hardware {0} għadu mhux investigat. Jekk int ċert li huwa probat, erġa 'ibda l-għadma bid-debugging attivat.
 Ħitan diviżorji mhux analizzati għall-lista.
-Mod Hacker
-Jekk attivat, il-console aħdar ikun attivat.
 Stampa separatur
 Stampa separatur bl-appoġġ tal-format
 Stampa separatur bl-appoġġ tal-kulur
 Stampa separatur b'appoġġ tal-kulur u tal-format
 Dejjem iċċentrat
-Jattiva 255 appoġġ tal-kulur għal Marquee.
-Jattiva l-appoġġ tal-kulur veru għal Marquee.
 Ikteb kwalunkwe test li trid tidher.
 Jekk it-test muri fuq il-marquee huwiex dejjem iċċentrat.
-'q' biex tieqaf.
 L-argument {0} ma nstabx biex jinjetta.
 L-argument tal-linja tal-kmand {0} ma nstabx.
-Tħassar is-settings kollha
 Screensaver esperjenza żball waqt li wera: {0}. Agħfas kwalunkwe ċavetta biex toħroġ.
 Preview ...
 Hawnhekk se tidher it-tema tiegħek:
@@ -1124,20 +965,15 @@ Jekk tużax l-unità Beats Per Minute biex tikteb il-kulur li jmiss.
 Dewmien f'Beats Fil-Minuta
 Ħabbat il-Kulur
 Kemm taħbit kull minuta tistenna qabel ma tagħmel il-kitba li jmiss?
-Jattiva 255 appoġġ tal-kulur għal BeatFader.
-Jattiva l-appoġġ tal-kulur veru għal BeatFader.
 BeatFader jagħżel kuluri każwali jekk ikun attivat. Inkella, uża kuluri minn config.
 Banner tal-Istartjar Personalizzat
-Jekk speċifikat, se juri banner tal-istartjar apposta bl-appoġġ tal-placeholder. Tista 'tuża din il-frażi għall-verżjoni tal-qalba:
 Tniżżel folder remot għal direttorju lokali billi tuża binarju jew test
 Tella 'folder lokali għal direttorju remot billi tuża binarju jew test
-Daħħal folder biex tniżżel fid-direttorju lokali.
 Tniżżil tal-folder {0} ...
 Fowlder imniżżel {0}.
 It-tniżżil falla għall-folder {0}.
 Tella 'folder {0} ...
 Fowlder imtella '{0}
-Daħħal folder biex ittella 'fid-direttorju remot.
 Agħfas "c" biex tikteb kodiċi tal-kulur sħiħ.
 Daħħal kodiċi tal-kulur li jissodisfa dawn il-formati:
 Jimminimizza l-fajl JSON
@@ -1151,13 +987,9 @@ Il-kolonni tat-test li għandhom jiġu stampati.
 Kemm karattri tikteb qabel ma tiskatta l- "mili tal-linja"?
 Possibbiltà li l-mudell tal-mili tal-linja jiġi stampat fit-tappijiet kollha f'perċentwali
 Tip ta 'mudell tal-mili tal-linja
-Disinn Komuni
-Disinn sħiħ
-Disinn Każwali
 It-tweġiba tista 'ma tkunx żero.
 It-tweġiba ma tistax taqbeż l-entrati murija.
 Iffranka l-Bidliet ...
-Dan l-iscreensaver jappoġġja test bil-miktub fuq fajl. Għaddi t-triq sħiħa tal-fajl għal dan il-qasam, u l-iscreensaver juri l-kontenut tal-fajl b'mod xieraq.
 Immaniġġja l-mods tiegħek
 Il-ġestjoni tal-mod hija diżattivata fil-modalità sikura.
 Kmand invalidu {0}. Iċċekkja l-użu hawn taħt:
@@ -1173,5 +1005,3 @@ Agħfas kwalunkwe ċavetta biex taqra l-paġna tal-manwal ...
 Din il-paġna tal-manwal teħtieġ xogħol għal:
 Paġna tal-manwal {0} ma nstabitx.
 Manwal tal-mod
-Jattiva 255 appoġġ tal-kulur għal FlashColor.
-Jattiva l-appoġġ tal-kulur veru għal FlashColor.

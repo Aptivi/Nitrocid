@@ -1,15 +1,6 @@
 Dostupne komande: {0}
-Napišite komandu:
 Injekcija naredbe je otkazana.
-Odvojeni argumenti za pokretanje sa zarezima bez razmaka, na primjer, 'motd, gpuprobe'
-Odvojene naredbe na 'cmdinject' s dvotačkama s razmacima, na primjer, 'cmdinject setthemes Hacker: bip 1024 0,5'
-Imajte na umu da argument 'debug' ne pokriva u potpunosti jezgru.
-bargs: Traženi argument {0} nije pronađen.
-bargs: Nepopravljiva greška u argumentu:
-Dostupni argumenti: {0}
-Argumenti ('pomoć' za pomoć):
 Ubrizgani argumenti će biti zakazani za izvođenje pri sljedećem ponovnom pokretanju.
-Injekcija argumenta je otkazana.
 Greška prilikom raščlanjivanja stvarnih argumenata naredbenog retka: {0}
 Nevažeći predložak boje {0}
 hwprobe: Ispitaće se vaš hardver. Sačekajte ...
@@ -82,7 +73,6 @@ Lozinka za {0}:
 Povezano na {0}
 Greška pri pokušaju povezivanja na {0}: {1}
 Praćenje snopa: {2}
-Unesite FTP server.
 Lokalni direktorij {0} ne postoji.
 Unesite lokalni direktorij. ".." za povratak.
 Direktorij {0} nije pronađen.
@@ -97,16 +87,12 @@ Još se niste povezali ni sa jednim serverom
 Preuzimanje datoteke {0} ...
 Preuzeta datoteka {0}.
 Morate se povezati sa serverom prije obavljanja prijenosa.
-Unesite datoteku za preuzimanje u lokalni direktorij.
 {0} KB | Izmijenjeno u: {1}
 Prije povezivanja svih udaljenih datoteka trebali biste se povezati sa serverom.
 Otpremanje datoteke {0} ...
 Otpremljena datoteka {0}
-Unesite datoteku za učitavanje u udaljeni direktorij. upload <file> <directory>
-(Unutrašnje:
 Dobiva trenutni lokalni direktorij
 Dobiva trenutni udaljeni direktorij
-Povezuje se sa FTP serverom (mora početi sa "ftp: //" ili "ftps: //")
 Mijenja lokalni direktorij za preuzimanje ili prijenos
 Mijenja udaljeni direktorij za preuzimanje ili prijenos u
 Briše udaljenu datoteku sa servera
@@ -147,7 +133,6 @@ Konfiguracija je ponovo učitana. Možda ćete morati ponovo pokrenuti kernel da
 Jedna ili više boja su nevažeće.
 Boje nisu dostupne. Uključite obojenu ljusku u konfiguraciji jezgre.
 Čuvar zaslona {0} nije pronađen.
-[Postavke jezgre (izvodi se {0})]
 Verzija jezgre:
 Način otklanjanja grešaka:
 Obojena ljuska:
@@ -155,8 +140,6 @@ Argumenti pri pokretanju:
 Pojednostavljena naredba za pomoć:
 MOTD pri prijavi:
 Vrijeme/Datum na uglu:
-[Postavke hardvera]
-[Korisničke postavke]
 Trenutno korisničko ime:
 Trenutni naziv hosta:
 Dostupna korisnička imena:
@@ -183,31 +166,14 @@ Informacije o sistemu
 * Možete koristiti više naredbi koristeći dvotočku između naredbi.
 Upotreba:
 gdje će argumenti biti {0}
-Inicijalizira FTP ljusku.
-Friends of
 gdje će biti customsaver
-Zaključava vaš ekran lozinkom.
-Odjavljuje vas sa korisnika.
-Dobijte informacije o svakoj mreži
-Ponovo pokreće vaš simulirani računar.
-Ponovno učitava konfiguraciju koju je promijenio krajnji korisnik ili alat.
-Boje ne zahtijevaju ponovno pokretanje, ali većina postavki zahtijeva ponovno pokretanje.
-prikazuje odabrani čuvar zaslona, ​​a istovremeno štiti vaš zaslon od izgaranja.
-Prikazuje datum i vrijeme.
-Prikazuje datum i vrijeme u zonama.
-Isključuje vaš simulirani računar.
-Prikazuje informacije o sistemu i verzije.
 Došlo je do greške u ljusci.
 Nemate dozvolu za korištenje usluge {0}
 Shell poruka: Tražena naredba {0} nije dopuštena za pokretanje u načinu održavanja.
 Shell poruka: Tražena naredba {0} nije pronađena. Pogledajte 'pomoć' za dostupne komande.
 Poruka ljuske: Naredbi {0} nije dopušteno pokretanje pri prijavi.
 Greška pri pokušaju izvršavanja naredbe.
-datetime: Vrijeme je {0}
-datetime: Danas je {0}
-datetime: Vremenska zona: {0}
 - Vrijeme {0}: {1}
-za brisanje ekrana.
 Pokreće se {0}
 Niste ovlašteni za dobivanje informacija za {0}.
 Ova naredba je zastarjela i bit će uklonjena u budućem izdanju.
@@ -233,8 +199,6 @@ Promijeni jezik
 >> Okviri, datoteke, linije i kolone <<
 > Okvir {0}: Datoteka: {1} | Red: {2} | Kolona: {3}
 > Došlo je do greške pri pokušaju dobijanja informacija o okviru. {0}: {1}
-Ponovno učitava modove.
-Modovi su ponovo učitani.
 Dobro došli u Kernel!
 Uspješno ste se prijavili kao <korisnik>
 MOTD/MAL je važeći, ali tip poruke nije važeći. Pod pretpostavkom MOTD ...
@@ -267,27 +231,19 @@ Adapter {0} ne podržava IPv6. Nastavak ...
 Adapter {0} ne podržava IPv4. Sonda nije uspela.
 Izgleda da ste koristili razvojnu verziju kernela. Iako možete vidjeti aspekte, često se ažurira i može uvesti greške. Preporučuje se da ostanete na stabilnoj verziji.
 Jezik koji ste odabrali sadrži dvije varijante. Izaberi jedno:
-1. Transliterovano
-2. Prevedeno
-Odaberite vaš izbor:
 Nevažeći izbor. Pokušaj ponovo.
 Niste ovlašteni postaviti trenutni direktorij na {0}: {1}
 Put koji ste naveli je predugačak.
-CPU: UPOZORENJE: SSE2 će biti potreban u budućim razvojnim uređenjima.
 Skupljač informacija o dumpu se srušio prilikom pokušaja dobijanja informacija o {0}: {1}
-Greška pri pokušaju dobijanja datuma sastavljanja montaže {0}: {1}
 Greška pri pokušaju postavljanja MOTD/MAL: {0}
 Greška pri pokušaju preuzimanja MOTD/MAL: {0}
 Greška pri pokušaju pokretanja čuvara zaslona zbog nevažeće operacije.
 U sigurnom načinu rada nije dopušteno ponovno punjenje.
 Modovi raščlanjivanja nisu dopušteni u sigurnom načinu rada.
-Navodi sve povezane uređaje za otklanjanje grešaka.
 Greška pri pokušaju postavljanja načina raščlanjivanja. Provjerite vrijednost i pokušajte ponovo. Ako je to točno, pogledajte trag steka kada je omogućeno otklanjanje grešaka u jezgri.
 Putanja nije datoteka niti direktorij.
 Kreira drugu kopiju datoteke pod drugim imenikom ili imenom.
 Premješta datoteku u drugi direktorij
-Za kopiranje datoteka u drugi direktorij ili drugo ime
-Za premještanje datoteka u drugi direktorij
 Podudaranje {0} ({1}): {2}
 Podudaranje {0}: {1}
 Utrošeno vrijeme: {0} milisekundi
@@ -302,9 +258,6 @@ Odgovorite na komentare ljubavi ili mrznje.
 Ako je neko ostavio ovaj komentar na vaš video:
 Kako biste odgovorili?
 Nevažeći odabir. Prelazimo na sledeći komentar ...
-Upravo ste prijavili ljubavni komentar!
-Upravo ste odgovorili na komentar mržnje!
-Odlično! Komentar korisnika {0} će zbog toga biti uklonjen.
 Odlično! {0} će vam zahvaliti.
 Sriši savršeno!
 Pravopis pogrešno.
@@ -318,7 +271,6 @@ Unesite lozinku za {0}:
 SSH je isključen.
 Omogući za postavljanje kodne stranice. Jezik se možda neće ispravno prikazati.
 Otklanjanje grešaka nije omogućeno.
-{0} više nije postavljen na zadani čuvar zaslona.
 Hvala! Ovo je zanimljivo.
 Za ovo će svi podržati vaš video.
 Dao sam vam posebnu datoteku u vašoj e-pošti za vaš sljedeći video.
@@ -364,7 +316,6 @@ Direktorij {0} već postoji.
 Greška pri pokušaju povezivanja na {0}: Isteklo je vrijeme veze ili je veza prekinuta
 Kalkulator za izračunavanje izraza.
 Greška u proračunu.
-Izgleda da ste koristili verziju koja je skoro izašla. Iako je sada sigurnije za upotrebu, preporučuje se da ostanete na stabilnoj verziji.
 Ažuriranje sistema
 Provjera ažuriranja sistema ...
 Pronađena nova verzija:
@@ -372,7 +323,6 @@ Možete ga preuzeti na:
 Nema nedavnih obavještenja
 Traži navedeni niz u datoj datoteci
 Izračunava zbroj datoteka u navedenom direktoriju.
-Navodi sve poruke e -pošte od određenog korisnika.
 Unesite korisničko ime ili adresu e -pošte:
 Unesite lozinku:
 Greška pri povezivanju na {0}: {1}
@@ -382,7 +332,6 @@ Izlazi iz ljuske IMAP
 Lista naredbi
 Preuzima poruke i navodi ih
 Otvara poruku
-Stranica ne smije biti negativna ili nula.
 Stranica nije numerička vrijednost.
 Broj poruke ne smije biti negativan ili nula.
 Broj poruke nije numerička vrijednost.
@@ -392,7 +341,6 @@ Broj poruke nije numerička vrijednost.
 Navedena poruka nije pronađena.
 Pokretanje daljinskog otklanjanja grešaka nije uspjelo: {0}
 Priprema profila ... Može potrajati nekoliko minuta ...
-Ime hosta, korisničko ime, tip podataka, kodiranje, šifriranje, protokoli
 Greška pri pokušaju izvršavanja skripte: {0}
 Zapisuje tekst u konzolu
 Pravi korisnički izbor
@@ -417,7 +365,6 @@ Brzo biranje je prazno. Povežite se sa serverom da biste mu dodali adresu.
 Brzo biranje ne postoji. Povežite se sa serverom da biste mu dodali adresu.
 Unesite adresu i port IMAP servera (<adresa> ili <adresa>: [port]):
 Unesite adresu i port SMTP servera (<adresa> ili <adresa>: [port]):
-Traži od vas da popunite potrebna polja za slanje poruke na adresu
 Šalje poruku na adresu
 Unesite adresu primaoca:
 Unesite temu:
@@ -445,8 +392,6 @@ Briše riječ ili izraz iz broja retka
 Briše znak iz broja znaka u navedenoj liniji
 Uklonjena linija.
 Navedeni broj retka {0} nije važeći broj.
-Potrebni argumenti se ne prosljeđuju naredbi {0}
-Greška pri pokušaju pokretanja naredbe: {0}
 Rad u sigurnom načinu rada. Preskakanje faze ...
 >> Daljinsko otklanjanje grešaka i chat: verzija
 >> Vaša adresa je {0}.
@@ -464,19 +409,12 @@ Blokirajte uređaj za otklanjanje grešaka prema IP adresi
 Greška pri učitavanju postavki
 Došlo je do greške pri učitavanju postavki. Možda ćete morati provjeriti datoteku s postavkama.
 Odaberite odjeljak:
-Opće postavke ...
-Postavke hardvera ...
-Postavke prijave ...
-Postavke ljuske ...
-Mrežne postavke ...
-Ostale postavke ...
 Sačuvaj postavke
 Izlaz
 Navedena opcija {0} je nevažeća.
 Odgovor mora biti numerički.
 Upit za argumente pri pokretanju
 Okidač načina održavanja
-Promijeni root lozinku ...
 Potražite ažuriranja pri pokretanju
 Quiet Probe
 Prikaži MOTD pri prijavljivanju
@@ -500,9 +438,7 @@ Unesen je nevažeći odjeljak. Molim vas, vratite se.
 Vrati se...
 Omogući
 Onemogući
-Unesen je nevažeći broj ključa. Molim vas, vratite se.
 Napišite root lozinku koju želite postaviti. Ne brinite; lozinka je prikazana zvjezdicom.
-Omogućite "Promijeni root lozinku" da biste koristili ovu opciju. Molim vas, vratite se.
 Promijeniti root lozinku?
 Postavi root lozinku ...
 Napišite port za udaljeni debager. Mora biti numerički i ne smije se već koristiti. U suprotnom udaljeni debager neće uspjeti otvoriti port.
@@ -513,7 +449,6 @@ Odgovor možda nije negativan.
 Odgovor je nevažeći. Provjerite je li odgovor numerički za stavke konfiguracije kojima su potrebni brojevi kao odgovori.
 Varijabla {0} nije pronađena ni na jednom modulu.
 Mijenja konfiguraciju jezgre
-Postavke čuvara zaslona ...
 Aktivirajte 255 boja
 Želite li ostati povezani?
 Nevažeći izbor. Pod pretpostavkom da ne ...
@@ -549,7 +484,6 @@ Premještanje datoteke ili direktorija nije uspjelo: {0}
 Nije moguće pronaći datoteku koja odgovara nizu "{0}": {1}
 Preuzimanje datoteke {0} nije uspjelo.
 Popis udaljenih datoteka nije uspio: {0}
-Unesite datoteku ili mapu za uklanjanje. Morate imati administratorske dozvole na svom računu da biste mogli ukloniti.
 Jeste li sigurni da želite izbrisati {0} <y/n>?
 Brisanje {0} ...
 {0} nije pronađen na serveru.
@@ -560,7 +494,6 @@ Premještanje {0} u {1} ...
 Uspješno premješteno
 Premješta datoteku ili direktorij u drugu datoteku ili direktorij. To možete koristiti i za preimenovanje datoteka.
 Premještanje {0} u {1} nije uspjelo.
-Unesite izvornu putanju i odredišnu putanju.
 Kopiranje {0} u {1} ...
 Kopirano uspješno
 Kopira datoteku ili direktorij u drugu datoteku ili direktorij.
@@ -578,9 +511,6 @@ Vlažnost: {0}
 Možete dobiti svoj vlastiti API ključ na https://home.openweathermap.org/api_keys.
 Za listu gradova sa ličnim dokumentima uvijek se možete obratiti na http://bulk.openweathermap.org/sample/city.list.json.gz.
 Preferirana jedinica za temperaturu
-Kelvin
-Carski (Fahrenheit)
-Metrički (Celzijus)
 Postavlja kernel tako da vas pita za argument pri pokretanju.
 Pokreće način održavanja. Ovo onemogućava više računa.
 Svaki pokretač će provjeravati ima li ažuriranja.
@@ -595,10 +525,6 @@ Pojednostavljena naredba za pomoć za sve ljuske
 Da li ćete prijaviti FTP korisničko ime ili ne.
 Da li ćete prijaviti FTP IP adresu ili ne.
 Odaberite prvi profil samo prilikom povezivanja.
-Aktivira podršku 255 boja za ColorMix.
-Aktivira podršku 255 boja za Disco.
-Aktivira podršku 255 boja za GlitterColor.
-Aktivira podršku 255 boja za linije.
 Vrijeme i datum bit će prikazani u gornjem desnom kutu ekrana
 Ako je omogućeno, jezgro će raščlaniti cijelu mapu na ukupnu veličinu. U suprotnom će analizirati samo površinu.
 Omogućava eyecandy pri pokretanju
@@ -608,7 +534,6 @@ Odaberite željenu jedinicu za temperaturu (ovo se odnosi samo na naredbu "vreme
 Mod {0} je zaustavljen
 {0} v {1} zaustavljeno
 Mod {0} nema naziv dijela. Raščlanjivanje modova nije uspjelo. Pregledajte izvorni kod.
-Mod {0} nema naredbu. Raščlanjivanje modova nije uspjelo. Pregledajte izvorni kod.
 Morate uključiti način otklanjanja grešaka da biste mogli očistiti dnevnik otklanjanja grešaka.
 {0} novih poruka je stiglo u pristiglu poštu.
 Otvorite "mail" da biste ih vidjeli.
@@ -645,10 +570,6 @@ Nivo crvene boje je premašen. Bilo je {0}.
 Prekoračen nivo zelene boje. Bilo je {0}.
 Prekoračen nivo plave boje. Bilo je {0}.
 Aktivirajte prave boje
-Aktivira podršku za prave boje za ColorMix.
-Aktivira podršku za prave boje za Disco.
-Aktivira podršku za prave boje za GlitterColor.
-Aktivira podršku za prave linije za linije.
 Deblokiranje {0} nije uspjelo.
 {0} je već blokiran.
 {0} se sada ne može pridružiti udaljenom otklanjanju grešaka.
@@ -659,7 +580,6 @@ Unesite putanje datoteka do priloga. Pritisnite ENTER na praznoj putanji za potv
 Otvara šifriranu poruku
 Upišite lozinku za ID ključa {0}
 Šalje šifriranu poruku na adresu
-Traži od vas da popunite potrebna polja za slanje šifrirane poruke na adresu
 Preuzimanje sa {0} ...
 Prikažite traku napretka tokom preuzimanja ili otpremanja iz naredbe "get" ili "put"
 Ako je tačno, znači "get" ili "put" prikazuje traku napretka tokom preuzimanja ili otpremanja.
@@ -678,8 +598,6 @@ Osjeća se kao: {0}
 Temperatura: {0}
 Brzina vjetra: {0}
 Smjer vjetra: {0}
-Aktivira podršku 255 boja za Dissolve.
-Aktivira podršku za prave boje za Dissolve.
 Pritisnite bilo koji taster za povratak.
 Nije moguće kreirati folder pošte {0}: {1}
 Pravi direktorij u trenutnom radnom direktoriju
@@ -692,22 +610,11 @@ Heševi su pogrešno oblikovani.
 Raspršivači se ne podudaraju.
 Hash match.
 Preimenuje fasciklu
-Ovaj odjeljak navodi sve opće postavke jezgre, uglavnom za održavanje jezgre.
-Ovaj odjeljak mijenja ponašanje sonde hardvera.
-Ovaj odjeljak predstavlja postavke prijave. Odjavite se sa svog računa da bi promjene stupile na snagu.
-Ovaj odjeljak navodi postavke ljuske.
-Ovaj odjeljak navodi mrežne postavke, poput FTP ljuske, postavki naredbi koje se odnose na mrežu i udaljenih postavki za otklanjanje grešaka.
-Ovaj odjeljak navodi sve čuvare zaslona i njihove dostupne postavke.
-Ovdje padaju postavke koje se ne uklapaju u odgovarajuće odjeljke.
-Testira modove pružajući mod datoteke
 Otvara probnu ljusku
-Omogućava način otklanjanja grešaka
-Traži argumente
 * Pritisnite bilo koji taster za pokretanje jezgre ili ESC za izlaz.
 Pokretanje "{0}" nije uspjelo: {1}
 Prikaži pregled poruke e -pošte
 Kada ispisujete poruke e -pošte, pokažite pregled tijela.
-Prilagođene boje ...
 Boja unosa
 Boja licence
 Boja greške kontinuiranog jezgra
@@ -721,8 +628,6 @@ boja greške
 Stil FTP upita
 Stil upita za poštu
 Stil SFTP upita
-Aktivira podršku 255 boja za BouncingBlock.
-Aktivira podršku za prave boje za BouncingBlock.
 Pokušavam pristupiti nevažećoj putanji.
 Briše tekstualnu datoteku
 Izlazi iz uređivača teksta
@@ -745,8 +650,6 @@ Boja trake minuta
 Boja sati Bar
 Boja informacija
 Kvačice za promjenu boje
-Aktivira podršku 255 boja za ProgressClock.
-Aktivira podršku za prave boje za ProgressClock.
 Ako je omogućeno mijenjanje boje, koliko oznaka prije promjene boje u ProgressClock -u? 1 kvačica = 0,5 sekundi
 ProgressClock će odabrati nasumične boje ako je omogućen. U suprotnom, koristite boje iz konfiguracije.
 Pravi novu temu
@@ -761,39 +664,10 @@ Boja opcije
 Unesite broj boje od 0 do 255:
 Koristite "hwinfo" za dodatne informacije o hardveru.
 Štampajte informacije o hardveru
-Podaci o CPU -u:
 Naziv procesora:
-Brzina procesora:
 Bitovi procesora:
-Broj obrtaja procesora:
-Topologija procesora:
-Tip procesora:
-Prekretnica procesora:
-Procesor BogoMips:
-Veličina predmemorije procesora L2:
-Veličina predmemorije procesora L3:
-Karakteristike procesora:
-Podaci o HDD -u:
-Naziv pogona:
-Model pogona:
-Prodavac diska:
-Brzina vožnje:
-Veličina pogona:
-Serijski pogon:
-ID pogona:
-Broj particija na disku:
-ID particije:
 Particioni sistem datoteka:
 Veličina particije:
-Korištena particija:
-RAM informacije:
-RAM bez:
-RAM ukupno:
-RAM koji se koristi:
-Podaci o GPU -u:
-Naziv GPU -a:
-GPU upravljački program:
-Verzija GPU -a:
 GPU: Jedna ili više grafičkih kartica nisu ispitane. U svakom slučaju prikazuju se informacije ...
 >> Dobrodošli! Ovo vam je prvi put da ulazite u daljinsko otklanjanje grešaka i chat. Za registraciju koristite "/register <name>".
 Uređaj već postoji.
@@ -825,8 +699,6 @@ Odredite naziv teme:
 Korisnik {0} je dodan na listu "{1}".
 Korisnik {0} je uklonjen sa liste "{1}".
 Nevažeći način rada {0}
-Korisnik već postoji
-Učitaj temu sa ...
 Učitaj temu iz unaprijed izgrađenih tema ...
 Navedite naziv datoteke teme bez ekstenzije .json:
 Otvara ZIP arhivu
@@ -839,12 +711,9 @@ Direktorij {0} ne postoji
 Arhivski direktorij {0} ne postoji
 Maks. Broj pozicija
 Koliko pozicija je osvijetljeno prije zatamnjenja?
-Aktivira podršku 255 boja za upaljač.
-Aktivira podršku za prave boje za upaljač.
 Boja unosa liste
 Boja liste vrijednosti
 Povezuje se na SSH server radi izvršavanja naredbe.
-U ovom odjeljku navedene su postavke čuvara zaslona za
 Nevažeći specifikator boje. Uvjerite se da je u ispravnom formatu, što znači broj od 0-255 ako koristite 255 boja ili VT niz ako koristite pravu boju, kako slijedi:
 Greška u testnoj ljusci: {0}
 Postavlja varijablu na vrijednost u skripti
@@ -866,13 +735,11 @@ Kako želite provjeriti autentičnost?
 datoteka privatnog ključa
 Lozinka
 Unesite zaporku za ključ {0}:
-Unesite lokaciju privatnog ključa za {0}. Napišite "q" da biste dovršili dodavanje ključeva:
 Neutralizirao nepostojeći put.
 Fajl ključa {0} ne postoji.
 Greška pri pokušaju dodavanja privatnog ključa:
 Pritisnite "t" za prebacivanje na 255 način rada u boji.
 Pritisnite "t" za prebacivanje u režim prave boje.
-Ovaj odjeljak vam omogućava da odaberete vrstu boje koju želite promijeniti.
 Izgleda da nemate korisnika osim root -a. Ovo je loše. Vodićemo vas kako da ga kreirate.
 Napišite svoje korisničko ime.
 Morate napisati svoje korisničko ime.
@@ -882,7 +749,6 @@ Odaberite vrstu računa.
 Administrator: Ovaj tip računa ima najveću snagu u kernelu, omogućavajući vam korištenje programa za upravljanje sistemom.
 Normalni korisnik: Ova vrsta računa je malo ograničenija od administratora.
 Čestitamo! Napravili ste novi račun! Da biste ovo dovršili, prijavite se kao novi račun.
-Informacije potražite u priručniku čuvara zaslona ili izvornom kodu.
 mod: Nisu otkriveni modovi.
 Opšte komande:
 Naredbe moda:
@@ -906,7 +772,6 @@ Testira mogućnost pogreške jezgre s podrškom za format
 Testira prevođenje niza koji postoji u resursima na određeni jezik
 Štampa niz za konzolu i raščlanjuje pronađena čuvara mesta
 Testira mogućnost regularnog izražavanja
-Šifrira niz pomoću
 Pokreće sve modove
 Zaustavlja sve modove
 Omogućava ili onemogućava otklanjanje grešaka
@@ -941,7 +806,6 @@ Popisi podržanih kultura
 Traži navedeni niz u datoj datoteci koristeći regularne izraze
 Proverite možete li pritisnuti taster na vreme
 Korisnik nije blagovremeno dao bilo kakve podatke.
-Neispravna poteškoća
 Znak nije pritisnut na vrijeme.
 Utisnuli ste pravi znak!
 Utisnuli ste pogrešan znak.
@@ -985,7 +849,6 @@ Dobiva prilagođene postavke čuvara
 Postavlja prilagođene postavke čuvara
 Postavke su uspješno postavljene za čuvar zaslona
 Postavka čuvara zaslona nije uspjela
-U ovom odjeljku možete upravljati kreiranjem root lozinke.
 Otvara RSS ljusku za čitanje izvora
 Izlazi iz ljuske RSS i vraća se u jezgru
 Mijenja vezu do feeda
@@ -1012,13 +875,6 @@ Način sortiranja datotečnog sistema
 Smjer sortiranja datotečnog sistema
 Kontrolira kako će datoteke biti sortirane.
 Kontrolira smjer sortiranja datotečnog sistema, bilo uzlazno ili silazno.
-Uzlazni poredak
-Opadajućim redoslijedom
-Puno ime
-Veličina fajla
-Vrijeme stvaranja
-Poslednje vreme pisanja
-Vrijeme zadnjeg pristupa
 Kašnjenje ponovnog pisanja u milisekundama
 Koliko milisekundi čekati prije ponovnog pisanja teksta?
 Napišite bilo koji tekst koji želite prikazati. Dulje je bolje.
@@ -1027,35 +883,26 @@ Maksimalna brzina pisanja u WPM
 Vjerovatnoća pogreške pri upisu u postocima
 Spremanje trenutnog direktorija nije uspjelo: {0}
 Maramice za promjenu smjera
-Aktivira podršku 255 boja za brisanje.
-Aktivira podršku za istinske boje za Wipe.
 Koliko brisanja treba napraviti prije nasumičnog mijenjanja smjera?
 Scena završena
 Interna inicijalizacija je završena
 Referentna datoteka {0} nije pronađena. Ovaj mod možda neće raditi ispravno bez ove datoteke.
 start mod
-Dobija informacije o modu
 Naziv komande:
 Definicija naredbe:
 Vrsta naredbe:
 Stroga komanda?
 Mod verzija:
 Mod {0} nije pronađen.
-Culture of
-Koja varijanta {0} se koristi za promjenu naziva mjeseci, kalendara itd.?
 Uređivač teksta još nije otvorio tok datoteka.
 Niz je zamenjen.
 Jedan ili oba broja nisu numerički.
 Riječ je izbrisana.
 Znak je izbrisan.
-Postavke sistema datoteka ...
-U ovom odjeljku navedene su postavke sistema datoteka.
 Dobro došli u Postavke!
 Greška pri izvršavanju SSH naredbe
 Greška u SSH ljusci
 - Informacije o aplikaciji
-Aktivira podršku 255 boja za BouncingText.
-Aktivira podršku za prave boje za BouncingText.
 Testira pisac rječnika sa nizom i nizom nizova
 Testira pisac rječnika s nizom char i char
 Testira pisac rječnika s nizom integer i integer
@@ -1072,21 +919,15 @@ gdje će biti HardwareType
 Tip hardvera {0} nije ispitan ili nije važeći.
 Vrsta hardvera {0} još nije ispitana. Ako ste sigurni da je testiran, ponovo pokrenite kernel s omogućenim otklanjanjem grešaka.
 Particije nisu raščlanjene na listu.
-Hakerski način rada
-Ako je omogućeno, zelena konzola će biti omogućena.
 Štampa separator
 Štampa separator sa podrškom za format
 Štampa separator sa podrškom za boju
 Štampa separator sa podrškom za boju i format
 Uvijek centrirano
-Aktivira podršku 255 boja za Marquee.
-Aktivira podršku za prave boje za Marquee.
 Napišite bilo koji tekst koji želite prikazati.
 Je li tekst prikazan na okviru za izbor uvijek centriran.
-'q' za odustajanje.
 Nije pronađen argument {0} za ubrizgavanje.
 Argument komandne linije {0} nije pronađen.
-Briše sve postavke
 Došlo je do greške pri čuvanju zaslona prilikom prikaza: {0}. Pritisnite bilo koji taster za izlaz.
 Pregled ...
 Evo kako će vaša tema izgledati:
@@ -1124,20 +965,15 @@ Treba li koristiti jedinicu otkucaja u minuti za pisanje sljedeće boje.
 Odgoda u otkucajima u minuti
 Beat Color
 Koliko otkucaja u minuti morate čekati prije sljedećeg pisanja?
-Aktivira podršku 255 boja za BeatFader.
-Aktivira podršku za prave boje za BeatFader.
 BeatFader će odabrati nasumične boje ako je omogućen. U suprotnom, koristite boje iz konfiguracije.
 Prilagođeni početni banner
-Ako je navedeno, prikazat će prilagođeni početni banner s podrškom za rezervirano mjesto. Ovu frazu možete koristiti za verziju jezgre:
 Preuzima udaljenu mapu u lokalni direktorij pomoću binarnog ili tekstualnog teksta
 Otprema lokalnu mapu u udaljeni direktorij pomoću binarnog zapisa ili teksta
-Unesite fasciklu za preuzimanje u lokalni direktorij.
 Preuzimanje mape {0} ...
 Preuzeti folder {0}.
 Preuzimanje nije uspjelo za folder {0}.
 Otpremanje foldera {0} ...
 Otpremljeni folder {0}
-Unesite fasciklu za učitavanje u udaljeni direktorij.
 Pritisnite "c" za pisanje koda u boji.
 Unesite kôd boje koji zadovoljava ove formate:
 Umanjuje JSON datoteku
@@ -1151,13 +987,9 @@ Tekstualni stupci za štampanje.
 Koliko znakova napisati prije pokretanja "popunjavanja retka"?
 Mogućnost da se uzorak za popunjavanje redaka odštampa velikim slovima u postocima
 Vrsta uzorka za popunjavanje linije
-Common Pattern
-Complete Pattern
-Slučajni uzorak
 Odgovor možda nije nula.
 Odgovor ne smije premašiti prikazane unose.
 Sačuvaj promjene...
-Ovaj čuvar zaslona podržava pisani tekst u datoteci. Prenesite kompletnu putanju datoteke do ovog polja i čuvar zaslona će na odgovarajući način prikazati sadržaj datoteke.
 Upravljajte svojim modovima
 Upravljanje načinom rada je onemogućeno u sigurnom načinu rada.
 Nevažeća naredba {0}. Upotrebu provjerite u nastavku:
@@ -1173,5 +1005,3 @@ Pritisnite bilo koji taster da pročitate stranicu sa priručnikom ...
 Ova stranica s priručnikom treba raditi za:
 Stranica s priručnikom {0} nije pronađena.
 Mod manual
-Aktivira podršku 255 boja za FlashColor.
-Aktivira podršku za prave boje za FlashColor.

@@ -1,15 +1,6 @@
 Dostupné príkazy: {0}
-Príkaz na napísanie:
 Injekcia príkazu bola zrušená.
-Oddeľte zavádzacie argumenty čiarkami bez medzier, napríklad „motd, gpuprobe“
-Oddeľte príkazy na 'cmdinject' dvojbodkami s medzerami, napríklad 'cmdinject setthemes Hacker: pípnutie 1024 0,5'
-Všimnite si, že argument 'debug' nepokrýva celé jadro.
-bargs: Požadovaný argument {0} nebol nájdený.
-Bargs: Neopraviteľná chyba v argumente:
-Dostupné argumenty: {0}
-Argumenty („pomoc“ pre pomoc):
 Injektované argumenty budú naplánované na spustenie pri nasledujúcom reštarte.
-Vstrekovanie argumentu bolo zrušené.
 Chyba pri analýze skutočných argumentov príkazového riadku: {0}
 Neplatná farebná šablóna {0}
 hwprobe: Váš hardvér bude skúšaný. Prosím čakajte...
@@ -82,7 +73,6 @@ Heslo pre {0}:
 Pripojené k {0}
 Chyba pri pokuse o pripojenie k službe {0}: {1}
 Stopa zásobníka: {2}
-Zadajte FTP server.
 Miestny adresár {0} neexistuje.
 Zadajte miestny adresár. ".." ísť späť.
 Adresár {0} sa nenašiel.
@@ -97,16 +87,12 @@ Zatiaľ ste sa nepripojili k žiadnemu serveru
 Sťahuje sa súbor {0} ...
 Stiahnutý súbor {0}.
 Pred prenosom sa musíte pripojiť k serveru.
-Zadajte súbor na stiahnutie do miestneho adresára.
 {0} KB | Upravené v: {1}
 Pred vypísaním všetkých vzdialených súborov by ste sa mali pripojiť k serveru.
 Odovzdáva sa súbor {0} ...
 Nahraný súbor {0}
-Zadajte súbor, ktorý chcete nahrať do vzdialeného adresára. nahrajte <súbor> <adresár>
-(Vnútorné:
 Získa aktuálny miestny adresár
 Získa aktuálny vzdialený adresár
-Pripája sa k FTP serveru (musí začínať reťazcom „ftp://“ alebo „ftps://“)
 Zmení miestny adresár, z ktorého sa bude sťahovať alebo odosielať
 Zmení vzdialený adresár, z ktorého sa bude sťahovať alebo nahrávať
 Odstráni vzdialený súbor zo servera
@@ -147,7 +133,6 @@ Konfigurácia bola obnovená. Aby sa niektoré zmeny prejavili, bude možno potr
 Jedna alebo viac farieb je neplatná.
 Farby nie sú k dispozícii. Zapnite farebnú škrupinu v konfigurácii jadra.
 Šetrič obrazovky {0} sa nenašiel.
-[ Nastavenia jadra (beží na {0}) ]
 Verzia jadra:
 Režim ladenia:
 Farebná škrupina:
@@ -155,8 +140,6 @@ Argumenty pri zavádzaní:
 Zjednodušený príkaz pomocníka:
 MOTD pri prihlásení:
 Čas / dátum na rohu:
-[ Hardvérové ​​nastavenia ]
-[ Nastavenia používateľa ]
 Aktuálne užívateľské meno:
 Aktuálny názov hostiteľa:
 Dostupné používateľské mená:
@@ -183,31 +166,14 @@ Systémové informácie
 * Pomocou dvojbodky medzi príkazmi môžete použiť viacero príkazov.
 využitie:
 kde argumenty budú {0}
-Inicializuje shell FTP.
-Priatelia
 kde bude customsaver
-Uzamkne obrazovku pomocou hesla.
-Odhlási vás od používateľa.
-Získajte všetky informácie o sieti
-Reštartuje simulovaný počítač.
-Znovu načíta konfiguráciu, ktorú zmenil koncový používateľ alebo nástroj.
-Farby nevyžadujú reštart, ale väčšina nastavení vyžaduje reštart.
-vám ukáže vybraný šetrič obrazovky a zároveň chráni obrazovku pred vypálením.
-Zobrazuje dátum a čas.
-Zobrazuje dátum a čas v zónach.
-Vypne simulovaný počítač.
-Zobrazuje systémové informácie a verzie.
 V plášti sa vyskytla chyba.
 Nemáte povolenie na použitie {0}
 Shell message: Požadovaný príkaz {0} nie je povolený na vykonávanie v režime údržby.
 Shell message: Požadovaný príkaz {0} nebol nájdený. Dostupné príkazy nájdete v časti „pomoc“.
 Shell message: Príkaz {0} nie je povolený na prihlásenie.
 Pri pokuse o vykonanie príkazu sa vyskytla chyba.
-datetime: Čas je {0}
-datetime: Dnes je {0}
-datetime: Časové pásmo: {0}
 - Čas {0}: {1}
-vymazať obrazovku.
 Beží na {0}
 Nemáte oprávnenie na získanie informácií pre {0}.
 Tento príkaz je zastaraný a v budúcom vydaní bude odstránený.
@@ -233,8 +199,6 @@ Zmena jazyka
 >> Rámčeky, súbory, riadky a stĺpce <<
 > Frame {0}: File: {1} | Riadok: {2} | Stĺpec: {3}
 > Pri pokuse o získanie rámcových informácií došlo k chybe. {0}: {1}
-Obnoví režimy.
-Režimy sa znova načítali.
 Vitajte v jadre!
 Úspešne sa prihlásil ako používateľ
 MOTD / MAL je platný, ale typ správy nie je platný. Za predpokladu, že ...
@@ -267,27 +231,19 @@ Adaptér {0} nepodporuje IPv6. Pokračovanie ...
 Adaptér {0} nepodporuje IPv4. Sonda zlyhala.
 Zdá sa, že ste spúšťali vývojovú verziu jadra. Aj keď vidíte aspekty, sú často aktualizované a môžu predstavovať chyby. Odporúča sa, aby ste zostali na stabilnej verzii.
 Jazyk, ktorý ste vybrali, obsahuje dve varianty. Vyber jeden:
-1. Prepis
-2. Preložené
-Vyberte si svoj výber:
 Neplatná voľba. Skúste to znova.
 Nemáte oprávnenie nastaviť aktuálny adresár na {0}: {1}
 Cesta, ktorú ste zadali, je príliš dlhá.
-CPU: VAROVANIE: SSE2 sa bude vyžadovať v budúcich vývojových záväzkoch.
 Zberač výpisu informácií zlyhal pri pokuse získať informácie o {0}: {1}
-Chyba pri pokuse získať kompilačný dátum zostavenia {0}: {1}
 Chyba pri pokuse o nastavenie MOTD/MAL: {0}
 Chyba pri pokuse získať MOTD/MAL: {0}
 Chyba pri pokuse o spustenie šetriča obrazovky z dôvodu neplatnej operácie.
 Obnovenie nie je povolené v bezpečnom režime.
 Režimy analýzy nie sú v bezpečnom režime povolené.
-Zoznam všetkých pripojených ladiacich zariadení.
 Chyba pri pokuse o nastavenie režimu analýzy. Skontrolujte hodnotu a skúste to znova. Ak je to správne, pozrite si stopu zásobníka, keď je aktivované ladenie jadra.
 Cesta nie je ani súbor, ani adresár.
 Vytvorí ďalšiu kópiu súboru pod iným adresárom alebo menom.
 Presunie súbor do iného adresára
-Kopírovanie súborov do iného adresára alebo iného názvu
-Presunutie súborov do iného adresára
 Zhoda {0} ({1}): {2}
 Zhoda {0}: {1}
 Čas strávený: {0} milisekúnd
@@ -302,9 +258,6 @@ Reagujte na milostné alebo nenávistné komentáre.
 Ak niekto k vášmu videu pridal komentár:
 Ako by si odpovedal?
 Neplatný výber. Prejdem na ďalší komentár ...
-Práve ste nahlásili milostný komentár!
-Práve ste odpovedali na komentár k nenávisti!
-Skvelé! Komentár {0} bude odstránený.
 Skvelé! {0} ocení vaše poďakovanie.
 Napísané dokonale!
 Nesprávne napísané slovo.
@@ -318,7 +271,6 @@ Zadajte heslo pre {0}:
 SSH odpojený.
 Nie je možné nastaviť kódovú stránku. Jazyk sa nemusí zobraziť správne.
 Ladenie nie je povolené.
-{0} už nie je nastavený na predvolený šetrič obrazovky.
 Vďaka! Toto je zaujímavé.
 Vaše video to bude podporovať každý.
 Dal som ti špeciálny súbor vo vašom e-maile pre ďalšie video.
@@ -364,7 +316,6 @@ Adresár {0} už existuje.
 Chyba pri pokuse o pripojenie k {0}: Časový limit pripojenia alebo stratené pripojenie
 Kalkulačka na výpočet výrazov.
 Chyba pri výpočte.
-Zdá sa, že ste spustili verziu blížiaceho sa vydania. Aj keď je teraz bezpečnejšie používať, odporúčame vám, aby ste zostali na stabilnej verzii.
 Aktualizácia systému
 Prebieha kontrola aktualizácií systému ...
 Nájdená nová verzia:
@@ -372,7 +323,6 @@ Môžete si ho stiahnuť na adrese:
 Žiadne posledné oznámenia
 Vyhľadá zadaný reťazec v poskytnutom súbore
 Vypočíta sumy súborov v zadanom adresári.
-Zoznam všetkých správ konkrétneho používateľa.
 Zadajte používateľské meno alebo e-mailovú adresu:
 Zadajte heslo:
 Chyba pri pripájaní k {0}: {1}
@@ -382,7 +332,6 @@ Ukončí shell IMAP
 Zoznam príkazov
 Stiahne správy a zobrazí ich zoznam
 Otvorí správu
-Stránka nesmie byť záporná alebo nulová.
 Stránka nie je číselná hodnota.
 Číslo správy nesmie byť záporné alebo nulové.
 Číslo správy nie je číselná hodnota.
@@ -392,7 +341,6 @@ Stránka nie je číselná hodnota.
 Zadaná správa sa nenašla.
 Spustenie vzdialeného ladenia zlyhalo: {0}
 Priprava profilov ... Lahko traja nekaj minut ...
-Ime gostitelja, uporabniško ime, vrsta podatkov, kodiranje, šifriranje, protokoli
 Napaka pri poskusu izvajanja skripta: {0}
 Besedilo napiše v konzolo
 Izbira uporabnika
@@ -417,7 +365,6 @@ Rýchla voľba je prázdna. Pripojte sa k serveru a pridajte naň adresu.
 Rýchla voľba neexistuje. Pripojte sa k serveru a pridajte naň adresu.
 Zadajte adresu a port servera IMAP (<adresa> alebo <adresa>: [port]):
 Zadajte adresu a port servera SMTP (<adresa> alebo <adresa>: [port]):
-Požiada o vyplnenie požadovaných polí na odoslanie správy na adresu
 Odošle správu na adresu
 Zadajte e-mailovú adresu príjemcu:
 Zadajte predmet:
@@ -445,8 +392,6 @@ Odstráni slovo alebo frázu z čísla riadku
 Odstráni znak z čísla znaku na zadanom riadku
 Odstránená čiara.
 Zadané číslo riadku {0} nie je platné číslo.
-Povinné argumenty sa neodovzdajú príkazu {0}
-Chyba pri pokuse o spustenie príkazu: {0}
 Prevádzka v bezpečnom režime. Vynecháva sa fáza ...
 >> Vzdialený ladenie a chat: verzia
 >> Vaša adresa je {0}.
@@ -464,19 +409,12 @@ Zablokujte ladiace zariadenie podľa adresy IP
 Pri načítavaní nastavení sa vyskytla chyba
 Pri načítavaní nastavení došlo k chybe. Možno budete musieť skontrolovať súbor nastavení.
 Izberite razdelek:
-Splošne nastavitve...
-Nastavitve strojne opreme ...
-Nastavitve prijave ...
-Nastavitve lupine ...
-Omrežne nastavitve...
-Razne nastavitve ...
 Shrani nastavitve
 Izhod
 Navedena možnost {0} ni veljavna.
 Odgovor mora biti številčen.
 Poziv za argumente ob zagonu
 Sprožilec načina vzdrževanja
-Spremeni root geslo ...
 Preverite, ali so na voljo posodobitve ob zagonu
 Tiha sonda
 Pokaži MOTD ob prijavi
@@ -500,9 +438,7 @@ Vnesen neveljaven razdelek. Pojdi nazaj.
 Pojdi nazaj...
 Omogoči
 Onemogoči
-Vnesena je neveljavna številka ključa. Pojdi nazaj.
 Napišite root geslo, ki ga želite nastaviti. Ne skrbite; geslo so prikazane kot zvezdice.
-Če želite uporabiti to možnost, omogočite "Spremeni root geslo". Pojdi nazaj.
 Želite spremeniti root geslo?
 Nastavi root geslo ...
 Napišite vrata oddaljenega napak. Mora biti številčno in ne sme biti že uporabljeno. V nasprotnem primeru oddaljeni razhroščevalec ne bo mogel odpreti vrat.
@@ -513,7 +449,6 @@ Odgovor morda ni negativen.
 Odgovor je neveljaven. Preverite, ali je odgovor številčen za vnose konfiguracije, ki kot odgovore potrebujejo številke.
 Spremenljivke {0} ni mogoče najti v nobenem od modulov.
 Spremeni konfiguracijo jedra
-Nastavitve ohranjevalnika zaslona ...
 Aktivirajte 255 barv
 Ali želite ostati povezani?
 Neveljavna izbira. Ob predpostavki, da ne ...
@@ -549,7 +484,6 @@ Datoteke ali imenika ni bilo mogoče premakniti: {0}
 Ni mogoče najti datoteke, ki bi se ujemala z nizom "{0}": {1}
 Prenos datoteke {0} ni uspel.
 Oddaljenih datotek ni bilo mogoče našteti: {0}
-Vnesite datoteko ali mapo, ki jo želite odstraniti. Če želite odstraniti račun, morate imeti skrbniška dovoljenja.
 Ali ste prepričani, da želite izbrisati {0} <y / n>?
 Brisanje {0} ...
 {0} ni mogoče najti v strežniku.
@@ -560,7 +494,6 @@ Premikanje {0} v {1} ...
 Premaknjeno uspešno
 Premakne datoteko ali imenik v drugo datoteko ali imenik. To lahko uporabite tudi za preimenovanje datotek.
 {0} ni bilo mogoče premakniti v {1}.
-Vnesite izvorno in ciljno pot.
 Kopiranje {0} v {1} ...
 Uspešno kopirano
 Kopira datoteko ali imenik v drugo datoteko ali imenik.
@@ -578,9 +511,6 @@ Vlažnost: {0}
 Svoj ključ API lahko dobite na https://home.openweathermap.org/api_keys.
 Seznam mest z njihovimi ID-ji se lahko vedno obrnete na http://bulk.openweathermap.org/sample/city.list.json.gz.
 Prednostna enota za temperaturo
-Kelvin
-Imperial (Fahrenheit)
-Metrična (Celzija)
 Nastavi jedro, tako da vas pozove k argumentu ob zagonu.
 Sproži način vzdrževanja. To onemogoči več računov.
 Pri vsakem zagonu bo preveril, ali so na voljo posodobitve.
@@ -595,10 +525,6 @@ Poenostavljeni ukaz za pomoč za vse lupine
 Ali želite prijaviti uporabniško ime za FTP ali ne.
 Ali želite zapisati naslov FTP IP ali ne.
 Izberite prvi profil samo pri povezovanju.
-Aktivira 255 barvnih podpor za ColorMix.
-Aktivira 255 barvnih podpor za Disco.
-Aktivira 255 barvnih podpor za GlitterColor.
-Aktivira 255 barvnih podpor za vrstice.
 Čas in datum bosta prikazana v zgornjem desnem kotu zaslona
 Če je omogočeno, bo jedro razčlenilo celotno mapo glede na njeno skupno velikost. V nasprotnem primeru bo le razčlenil površino.
 Omogoča eyecandy ob zagonu
@@ -608,7 +534,6 @@ Izberite želeno enoto za temperaturo (to velja samo za ukaz "vreme")
 Mod {0} je ustavljen
 {0} v {1} se je ustavil
 Mod {0} nima imena dela. Razčlenjevanje modov ni uspelo. Preglejte izvorno kodo.
-Mod {0} nima ukaza. Razčlenjevanje modov ni uspelo. Preglejte izvorno kodo.
 Preden lahko počistite dnevnik odpravljanja napak, morate vklopiti način za odpravljanje napak.
 V mapo »Prejeto« je prispelo {0} novih sporočil
 Odprite "mail", da jih vidite.
@@ -645,10 +570,6 @@ Rdeča barva je presežena. Bilo je {0}.
 Raven zelene barve presežena. Bilo je {0}.
 Presežena raven modre barve. Bilo je {0}.
 Aktivirajte prave barve
-Aktivira resnično barvno podporo za ColorMix.
-Aktivira resnično barvno podporo za Disco.
-Aktivira resnično barvno podporo za GlitterColor.
-Aktivira resnično barvno podporo za Lines.
 Odblokiranja {0} ni uspelo.
 {0} je že blokiran.
 {0} se zdaj ne more pridružiti oddaljenemu odpravljanju napak.
@@ -659,7 +580,6 @@ Vnesite poti datotek do prilog. Za potrditev pritisnite ENTER na prazni poti.
 Odpre šifrirano sporočilo
 Napišite geslo za ID ključa {0}
 Pošlje šifrirano sporočilo na naslov
-Zahteva, da izpolnite zahtevana polja za pošiljanje šifriranega sporočila na naslov
 Prenos iz {0} ...
 Med prenosom ali nalaganjem iz ukaza "get" ali "put" prikaži vrstico napredovanja
 Če je res, med prenosom ali nalaganjem prikaže vrstico napredovanja »get« ali »put«.
@@ -678,8 +598,6 @@ Počutite se kot: {0}
 Temperatura: {0}
 Hitrost vetra: {0}
 Smer vetra: {0}
-Aktivira 255 barvnih podpor za Dissolve.
-Aktivira resnično barvno podporo za Dissolve.
 Za vrnitev pritisnite katero koli tipko.
 Nie je možné vytvoriť priečinok pošty {0}: {1}
 Vytvorí adresár v aktuálnom pracovnom adresári
@@ -692,22 +610,11 @@ Haše sú chybne tvarované.
 Hashes sa nezhodujú.
 Hashš zápas.
 Premenuje priečinok
-Táto sekcia obsahuje zoznam všetkých všeobecných nastavení jadra, hlavne pre údržbu jadra.
-Táto časť mení správanie hardvérovej sondy.
-Táto časť predstavuje nastavenia prihlásenia. Aby sa zmeny prejavili, odhláste sa z účtu.
-Táto časť uvádza zoznam nastavení shellu.
-Táto časť obsahuje zoznam sieťových nastavení, ako je napríklad shell FTP, nastavenie príkazov týkajúcich sa siete a nastavenie vzdialeného ladenia.
-V tejto časti sú uvedené všetky šetriče obrazovky a ich dostupné nastavenia.
-Tu pristávajú nastavenia, ktoré sa nezmestia do príslušných sekcií.
-Testuje mody poskytnutím súborov mod
 Otvára testovaciu škrupinu
-Povolí režim ladenia
-Výzvy na argumentáciu
 * Stlačením ľubovoľnej klávesy spustíte jadro alebo klávesom ESC ukončíte program.
 Nepodarilo sa spustiť „{0}“: {1}
 Zobraziť ukážku e-mailovej správy
 Pri zostavovaní zoznamu e-mailových správ sa zobrazí ukážka tela.
-Vlastné farby ...
 Vstupná farba
 Farba preukazu
 Pokračujúca farba chyby jadra
@@ -721,8 +628,6 @@ Chyba farby
 Štýl výzvy FTP
 Štýl výzvy
 Štýl výzvy SFTP
-Aktivuje podporu 255 farieb pre BouncingBlock.
-Aktivuje podporu skutočných farieb pre BouncingBlock.
 Pokúšam sa získať prístup k neplatnej ceste.
 Počisti besedilno datoteko
 Zapre urejevalnik besedila
@@ -745,8 +650,6 @@ Farba panela minút
 Farba pruhu hodín
 Farba informácií
 Kliešte na zmenu farby
-Aktivuje podporu 255 farieb pre ProgressClock.
-Aktivuje podporu skutočných farieb pre ProgressClock.
 Ak je povolené cyklovanie farieb, koľko zaškrtne pred zmenou farieb v ProgressClock? 1 zaškrtnutie = 0,5 sekundy
 Ak je to povolené, ProgressClock vyberie náhodné farby. V opačnom prípade použite farby z konfigurácie.
 Vytvorí novú tému
@@ -761,39 +664,10 @@ Farba možnosti
 Zadajte číslo farby od 0 do 255:
 Pre ďalšie informácie o hardvéri použite „hwinfo“.
 Vypíše informácie o hardvéri
-Informácie o CPU:
 Názov procesora:
-Rýchlosť procesora:
 Bity procesora:
-Otáčky procesora:
-Topológia procesora:
-Typ procesora:
-Míľnik procesora:
-Procesor BogoMips:
-Veľkosť vyrovnávacej pamäte L2 procesora:
-Veľkosť pamäte cache procesora L3:
-Vlastnosti procesora:
-Informácie o HDD:
-Názov disku:
-Model pohonu:
-Predajca diskov:
-Rýchlosť pohonu:
-Veľkosť disku:
-Sériový disk:
-ID jednotky:
-Počet oddielov disku:
-ID oddielu:
 Diskový systém súborov:
 Veľkosť oddielu:
-Použitý oddiel:
-Informácie o RAM:
-RAM zadarmo:
-RAM celkom:
-Použitá RAM:
-Informácie o GPU:
-Názov GPU:
-Ovládač GPU:
-Verzia GPU:
 GPU: Nepodarilo sa sondovať jednu alebo viac grafických kariet. Aj tak sa zobrazujú informácie ...
 >> Vitajte! Toto je vaše prvé zadanie vzdialeného ladenia a rozhovoru. Na registráciu použite „/ register <name>“.
 Zariadenie už existuje.
@@ -825,8 +699,6 @@ Zadajte názov témy:
 Používateľ {0} bol pridaný do zoznamu „{1}“.
 Používateľ {0} bol odstránený zo zoznamu „{1}“.
 Neplatný režim {0}
-Používateľ už existuje
-Načítať tému z ...
 Načítať tému z vopred pripravených tém ...
 Zadajte názov súboru témy bez prípony .json:
 Otvorí archív ZIP
@@ -839,12 +711,9 @@ Adresár {0} neexistuje
 Adresár archívu {0} neexistuje
 Max. Počet pozícií
 Koľko pozícií je osvetlených pred stmievaním?
-Aktivuje podporu 255 farieb pre zapaľovač.
-Aktivuje skutočnú podporu farieb pre zapaľovač.
 Farba položky zoznamu
 Farba hodnoty zoznamu
 Pripojí sa k serveru SSH na vykonanie príkazu.
-V tejto časti je uvedené nastavenie šetriča obrazovky pre
 Neplatný špecifikátor farieb. Uistite sa, že je v správnom formáte, čo znamená číslo od 0 do 255, ak používa 255 farieb, alebo postupnosť VT, ak používa skutočnú farbu nasledovne:
 Chyba v testovacom prostredí: {0}
 Nastaví premennú na hodnotu v skripte
@@ -866,13 +735,11 @@ Ako chcete vykonať autentizáciu?
 Súbor so súkromným kľúčom
 Heslo
 Zadajte prístupovú frázu pre kľúč {0}:
-Zadajte umiestnenie súkromného kľúča pre {0}. Na doplnenie klávesov napíšte „q“:
 Neutralizovaná neexistujúca cesta.
 Súbor kľúčov {0} neexistuje.
 Chyba pri pokuse o pridanie súkromného kľúča:
 Stlačením „t“ prepnete na 255 farebný režim.
 Stlačením klávesu „t“ prepnete do skutočného farebného režimu.
-V tejto časti si môžete zvoliť, aký typ farby chcete zmeniť.
 Zdá sa, že okrem root nemáte žiadneho používateľa. Je to zlé. Poradíme vám, ako ho vytvoriť.
 Napíšte svoje užívateľské meno.
 Musíte napísať svoje užívateľské meno.
@@ -882,7 +749,6 @@ Vyberte typ účtu.
 Správca: Tento typ účtu má najväčšiu moc v jadre, čo vám umožňuje používať programy na správu systému.
 Normálny používateľ: Tento typ účtu je o niečo obmedzenejší ako správcovia.
 Blahoželáme! Vytvorili ste si nový účet! Ak to chcete dokončiť, prihláste sa ako nový účet.
-Ďalšie informácie nájdete v príručke k šetriču obrazovky alebo vo zdrojovom kóde.
 mod: Neboli zistené žiadne mody.
 Všeobecné príkazy:
 Príkazy módu:
@@ -906,7 +772,6 @@ Testuje funkciu chyby jadra s podporou formátu
 Testuje preklad reťazca, ktorý existuje v prostriedkoch, do konkrétneho jazyka
 Vytlačí reťazec do konzoly a analyzuje nájdené zástupné symboly
 Testuje regulárny výraz
-Šifruje reťazec pomocou
 Spustí všetky režimy
 Zastaví všetky mody
 Povolí alebo zakáže ladenie
@@ -941,7 +806,6 @@ Zoznamy podporovali kultúry
 Vyhľadá zadaný reťazec v poskytnutom súbore pomocou regulárnych výrazov
 Skontrolujte, či môžete stlačiť klávesu včas
 Používateľ neposkytol včas žiadny vstup.
-Neplatná obtiažnosť
 Znak nebol stlačený včas.
 Stlačili ste správnu postavu!
 Stlačili ste nesprávny znak.
@@ -985,7 +849,6 @@ Získava vlastné nastavenia šetriča
 Nastaví vlastné nastavenia šetriča
 Nastavenia pre šetrič obrazovky boli úspešne nastavené
 Nepodarilo sa nastaviť nastavenie šetriča obrazovky
-Táto časť umožňuje spravovať vytváranie hesiel root.
 Otvára shell RSS na čítanie informačných kanálov
 Ukončí RSS shell a vráti sa do jadra
 Zmení odkaz na informačný kanál
@@ -1012,13 +875,6 @@ Režim triedenia súborového systému
 Smer triedenia súborového systému
 Určuje, ako sa budú súbory triediť.
 Riadi smer triedenia súborového systému bez ohľadu na to, či stúpa alebo klesá.
-Vzostupné poradie
-Zostupne
-Celé meno
-Veľkosť súboru
-Čas stvorenia
-Čas posledného zápisu
-Čas posledného prístupu
 Opätovné zapisovanie s oneskorením v milisekundách
 Koľko milisekúnd čakať pred ďalším napísaním textu?
 Napíšte ľubovoľný text, ktorý chcete zobraziť. Dlhšia je lepšia.
@@ -1027,35 +883,26 @@ Maximálna rýchlosť zápisu vo WPM
 Pravdepodobnosť preklepu v percentách
 Aktuálny adresár sa nepodarilo uložiť: {0}
 Utierky na zmenu smeru
-Aktivuje podporu 255 farieb pre Wipe.
-Aktivuje podporu skutočných farieb pre Wipe.
 Koľko utierok urobiť pred náhodnou zmenou smeru?
 Fáza skončila v
 Interná inicializácia dokončená v
 Odkazovaný súbor {0} sa nenašiel. Bez tohto súboru tento mod nemusí fungovať správne.
 Začína sa mod
-Získava informácie o móde
 Názov príkazu:
 Definícia príkazu:
 Typ príkazu:
 Prísny príkaz?
 Modová verzia:
 Mod {0} sa nenašiel.
-Kultúra
-Ktorý variant kódu {0} sa používa na zmenu názvov mesiacov, kalendára atď.?
 Textový editor zatiaľ neotvoril prúd súborov.
 Reťazec nahradený.
 Jedno alebo obe čísla nie sú číselné.
 Slovo bolo odstránené.
 Znak bol odstránený.
-Nastavenia súborového systému ...
-Táto časť obsahuje zoznam nastavení súborového systému.
 Vitajte v nastaveniach!
 Chyba pri vykonávaní príkazu SSH
 Chyba na prostredí SSH
 - Informácie o aplikácii
-Aktivuje podporu 255 farieb pre BouncingText.
-Aktivuje podporu skutočných farieb pre BouncingText.
 Testuje zapisovač slovníkov s reťazcom a poľom reťazcov
 Testuje slovníka s poľom char a char
 Testuje zapisovač slovníkov s celočíselným a celočíselným poľom
@@ -1072,21 +919,15 @@ kde bude HardwareType
 Buď typ hardvéru {0} nie je sondovaný, alebo je neplatný.
 Typ hardvéru {0} ešte nie je sondovaný. Ak ste si istí, že je to overené, reštartujte jadro s povoleným ladením.
 Skupiny, ktoré nie sú analyzované v zozname.
-Hackerský režim
-Ak je povolená, bude povolená zelená konzola.
 Vytlačí oddeľovač
 Vytlačí oddeľovač s podporou formátu
 Vytlačí oddeľovač s podporou farieb
 Vytlačí oddeľovač s podporou farieb a formátov
 Vždy na stred
-Aktivuje podporu 255 farieb pre Marquee.
-Aktivuje podporu skutočných farieb pre značku.
 Napíšte ľubovoľný text, ktorý chcete zobraziť.
 To, či je text zobrazený na ráme vždy zarovnaný na stred.
-'q' na ukončenie.
 Argument {0} sa nenašiel pre injekciu.
 Argument príkazového riadku {0} sa nenašiel.
-Vymaže všetky nastavenia
 Pri zobrazovaní šetriča obrazovky sa vyskytla chyba: {0}. Stlačte hocaké tlačidlo pre ukončenie.
 Náhľad...
 Takto bude vyzerať vaša téma:
@@ -1124,20 +965,15 @@ Ali naj za zapis naslednje barve uporabite enoto utripov na minuto.
 Zamuda v utripih na minuto
 Beat Barva
 Koliko utripov na minuto morate počakati, preden naredite naslednji zapis?
-Aktivira 255 barvno podporo za BeatFader.
-Aktivira podporo za prave barve za BeatFader.
 BeatFader bo izbral naključne barve, če je omogočen. V nasprotnem primeru uporabite barve iz konfiguracije.
 Začetna pasica po meri
-Če je določeno, bo prikazana prilagojena zagonska pasica s podporo za nadomestna mesta. Za različico jedra lahko uporabite ta stavek:
 Sťahuje vzdialený priečinok do lokálneho adresára pomocou binárneho alebo textu
 Odošle lokálny priečinok do vzdialeného adresára pomocou binárneho súboru alebo textu
-Zadajte priečinok, ktorý chcete stiahnuť do miestneho adresára.
 Sťahuje sa priečinok {0} ...
 Stiahnutý priečinok {0}.
 Sťahovanie zlyhalo pre priečinok {0}.
 Nahráva sa priečinok {0} ...
 Nahraný priečinok {0}
-Zadajte priečinok, ktorý chcete nahrať do vzdialeného adresára.
 Stlačením „c“ napíšte farebný kód.
 Zadajte kód farby, ktorý vyhovuje týmto formátom:
 Minimalizuje súbor JSON
@@ -1151,13 +987,9 @@ Textové stĺpce, ktoré sa majú vytlačiť.
 Koľko znakov napísať pred spustením „vyplnenia riadka“?
 Možnosť, že vzor výplne čiary bude vytlačený všetkými veľkými písmenami v percentách
 Typ vzoru čiary
-Spoločný vzor
-Kompletný vzor
-Náhodný vzor
 Odpoveď nemusí byť nulová.
 Odpoveď nesmie prekročiť uvedené položky.
 Uložiť zmeny...
-Tento šetrič obrazovky podporuje napísaný text v súbore. Do tohto poľa zadajte úplnú cestu k súboru a šetrič obrazovky primerane zobrazí obsah súboru.
 Spravujte svoje režimy
 Správa režimu je v núdzovom režime zakázaná.
 Neplatný príkaz {0}. Skontrolujte použitie nižšie:
@@ -1173,5 +1005,3 @@ Stránku manuálu si prečítate stlačením ľubovoľného klávesu ...
 Táto stránka s manuálom potrebuje prácu pre:
 Manuálna stránka {0} nebola nájdená.
 Mod manuál
-Aktivuje podporu 255 farieb pre FlashColor.
-Aktivuje podporu skutočných farieb pre FlashColor.
