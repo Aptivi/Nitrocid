@@ -149,7 +149,6 @@ Public Module Kernel
                     StageTimer.Reset()
                 End If
                 Console.WriteLine()
-                LoginFlag = True
                 If EnteredArguments IsNot Nothing Then
                     If EnteredArguments.Contains("quiet") Then
                         Console.SetOut(DefConsoleOut)
@@ -164,23 +163,20 @@ Public Module Kernel
 
                 'Initialize login prompt
                 DisposeAll()
-                If LoginFlag Then
-                    If Not Maintenance Then
-                        LoginPrompt()
+                If Not Maintenance Then
+                    LoginPrompt()
+                Else
+                    ReadMOTD(MessageType.MOTD)
+                    ReadMOTD(MessageType.MAL)
+                    W(DoTranslation("Enter the admin password for maintenance."), True, ColTypes.Neutral)
+                    If Users.ContainsKey("root") Then
+                        Wdbg(DebugLevel.I, "Root account found. Prompting for password...")
+                        ShowPasswordPrompt("root")
                     Else
-                        ReadMOTD(MessageType.MOTD)
-                        ReadMOTD(MessageType.MAL)
-                        LoginFlag = False
-                        W(DoTranslation("Enter the admin password for maintenance."), True, ColTypes.Neutral)
-                        If Users.ContainsKey("root") Then
-                            Wdbg(DebugLevel.I, "Root account found. Prompting for password...")
-                            ShowPasswordPrompt("root")
-                        Else
-                            'Some malicious mod removed the root account, or rare situation happened and it was gone.
-                            Wdbg(DebugLevel.W, "Root account not found for maintenance. Initializing it...")
-                            InitializeSystemAccount()
-                            ShowPasswordPrompt("root")
-                        End If
+                        'Some malicious mod removed the root account, or rare situation happened and it was gone.
+                        Wdbg(DebugLevel.W, "Root account not found for maintenance. Initializing it...")
+                        InitializeSystemAccount()
+                        ShowPasswordPrompt("root")
                     End If
                 End If
             Catch kee As Exceptions.KernelErrorException

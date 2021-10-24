@@ -24,10 +24,6 @@ Public Module Flags
     ''' </summary>
     Public DebugMode As Boolean
     ''' <summary>
-    ''' Flag for log-in
-    ''' </summary>
-    Public LoginFlag As Boolean
-    ''' <summary>
     ''' A signal for command kernel argument
     ''' </summary>
     Public CommandFlag As Boolean

@@ -195,9 +195,6 @@ Public Module Login
             Exit Sub
         End If
 
-        'Get out of login mode
-        LoginFlag = False
-
         'Notifies the kernel that the user has signed in
         LoggedIn = True
 
