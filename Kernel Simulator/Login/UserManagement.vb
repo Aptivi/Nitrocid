@@ -377,6 +377,19 @@ Public Module UserManagement
     End Function
 
     ''' <summary>
+    ''' Selects a user from the <see cref="ListAllUsers(Boolean, Boolean)"/> list
+    ''' </summary>
+    ''' <param name="UserNumber">The user number. This is NOT an index!</param>
+    ''' <param name="IncludeAnonymous">Include anonymous users</param>
+    ''' <param name="IncludeDisabled">Include disabled users</param>
+    ''' <returns>The username which is selected</returns>
+    Public Function SelectUser(UserNumber As Integer, Optional IncludeAnonymous As Boolean = False, Optional IncludeDisabled As Boolean = False) As String
+        Dim UsersList As List(Of String) = ListAllUsers(IncludeAnonymous, IncludeDisabled)
+        Dim SelectedUsername As String = UsersList(UserNumber - 1)
+        Return Users.Keys.First(Function(x) x = SelectedUsername)
+    End Function
+
+    ''' <summary>
     ''' Handles the prompts for setting up a first user
     ''' </summary>
     Sub FirstUserTrigger()

@@ -211,6 +211,10 @@ Public Module Flags
     ''' Print the line numbers while listing file contents
     ''' </summary>
     Public PrintLineNumbers As Boolean
+    ''' <summary>
+    ''' Whether to let the user choose which user they want to sign in or write it themselves
+    ''' </summary>
+    Public ChooseUser As Boolean
 
     'Private flags
     ''' <summary>

@@ -68,9 +68,6 @@ Public Module Login
                 Console.Clear()
             End If
 
-            'Generate user list
-            If ShowAvailableUsers Then W(DoTranslation("Available usernames: {0}"), True, ColTypes.Neutral, String.Join(", ", ListAllUsers))
-
             'Read MOTD and MAL
             ReadMOTD(MessageType.MOTD)
             ReadMOTD(MessageType.MAL)
@@ -82,37 +79,74 @@ Public Module Login
             End If
             ShowMOTDOnceFlag = False
 
-            'Prompt user to login
-            If Not String.IsNullOrWhiteSpace(UsernamePrompt) Then
-                W(ProbePlaces(UsernamePrompt), False, ColTypes.Input)
-            Else
-                W(DoTranslation("Username: "), False, ColTypes.Input)
-            End If
-            Dim answeruser As String = Console.ReadLine()
+            'How do we prompt user to login?
+            Dim UsersList As List(Of String) = ListAllUsers()
+            If ChooseUser Then
+                'Generate user list
+                WriteList(UsersList)
+                Dim AnswerUserInt As Integer = 0
 
-            'Parse input
-            If InStr(answeruser, " ") > 0 Then
-                Wdbg(DebugLevel.W, "Spaces found in username.")
-                W(DoTranslation("Spaces are not allowed."), True, ColTypes.Error)
-                EventManager.RaiseLoginError(answeruser, LoginErrorReasons.Spaces)
-            ElseIf answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
-                Wdbg(DebugLevel.W, "Unknown characters found in username.")
-                W(DoTranslation("Special characters are not allowed."), True, ColTypes.Error)
-                EventManager.RaiseLoginError(answeruser, LoginErrorReasons.SpecialCharacters)
-            ElseIf Users.ContainsKey(answeruser) Then
-                Wdbg(DebugLevel.I, "Username correct. Finding if the user is disabled...")
-                If Not HasPermission(answeruser, PermissionType.Disabled) Then
-                    Wdbg(DebugLevel.I, "User can log in. (User is not in disabled list)")
-                    ShowPasswordPrompt(answeruser)
-                Else
-                    Wdbg(DebugLevel.W, "User can't log in. (User is in disabled list)")
-                    W(DoTranslation("User is disabled."), True, ColTypes.Error)
-                    EventManager.RaiseLoginError(answeruser, LoginErrorReasons.Disabled)
-                End If
+                'Prompt user to choose a user
+                Do Until AnswerUserInt <> 0
+                    W(">> ", False, ColTypes.Input)
+                    Dim AnswerUserString As String = Console.ReadLine
+
+                    'Parse input
+                    If Not String.IsNullOrWhiteSpace(AnswerUserString) Then
+                        If Integer.TryParse(AnswerUserString, AnswerUserInt) Then
+                            Dim SelectedUser As String = SelectUser(AnswerUserInt)
+                            Wdbg(DebugLevel.I, "Username correct. Finding if the user is disabled...")
+                            If Not HasPermission(SelectedUser, PermissionType.Disabled) Then
+                                Wdbg(DebugLevel.I, "User can log in. (User is not in disabled list)")
+                                ShowPasswordPrompt(SelectedUser)
+                            Else
+                                Wdbg(DebugLevel.W, "User can't log in. (User is in disabled list)")
+                                W(DoTranslation("User is disabled."), True, ColTypes.Error)
+                                EventManager.RaiseLoginError(SelectedUser, LoginErrorReasons.Disabled)
+                            End If
+                        Else
+                            W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                        End If
+                    Else
+                        W(DoTranslation("Please enter a user number."), True, ColTypes.Error)
+                    End If
+                Loop
             Else
-                Wdbg(DebugLevel.E, "Username not found.")
-                W(DoTranslation("Wrong username."), True, ColTypes.Error)
-                EventManager.RaiseLoginError(answeruser, LoginErrorReasons.NotFound)
+                'Generate user list
+                If ShowAvailableUsers Then W(DoTranslation("Available usernames: {0}"), True, ColTypes.Neutral, String.Join(", ", UsersList))
+
+                'Prompt user to login
+                If Not String.IsNullOrWhiteSpace(UsernamePrompt) Then
+                    W(ProbePlaces(UsernamePrompt), False, ColTypes.Input)
+                Else
+                    W(DoTranslation("Username: "), False, ColTypes.Input)
+                End If
+                Dim answeruser As String = Console.ReadLine()
+
+                'Parse input
+                If InStr(answeruser, " ") > 0 Then
+                    Wdbg(DebugLevel.W, "Spaces found in username.")
+                    W(DoTranslation("Spaces are not allowed."), True, ColTypes.Error)
+                    EventManager.RaiseLoginError(answeruser, LoginErrorReasons.Spaces)
+                ElseIf answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
+                    Wdbg(DebugLevel.W, "Unknown characters found in username.")
+                    W(DoTranslation("Special characters are not allowed."), True, ColTypes.Error)
+                    EventManager.RaiseLoginError(answeruser, LoginErrorReasons.SpecialCharacters)
+                ElseIf Users.ContainsKey(answeruser) Then
+                    Wdbg(DebugLevel.I, "Username correct. Finding if the user is disabled...")
+                    If Not HasPermission(answeruser, PermissionType.Disabled) Then
+                        Wdbg(DebugLevel.I, "User can log in. (User is not in disabled list)")
+                        ShowPasswordPrompt(answeruser)
+                    Else
+                        Wdbg(DebugLevel.W, "User can't log in. (User is in disabled list)")
+                        W(DoTranslation("User is disabled."), True, ColTypes.Error)
+                        EventManager.RaiseLoginError(answeruser, LoginErrorReasons.Disabled)
+                    End If
+                Else
+                    Wdbg(DebugLevel.E, "Username not found.")
+                    W(DoTranslation("Wrong username."), True, ColTypes.Error)
+                    EventManager.RaiseLoginError(answeruser, LoginErrorReasons.NotFound)
+                End If
             End If
         End While
     End Sub
