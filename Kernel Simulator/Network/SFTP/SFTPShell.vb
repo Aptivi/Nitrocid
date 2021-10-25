@@ -20,20 +20,20 @@ Imports System.Threading
 
 Public Module SFTPShell
 
-    Public ReadOnly SFTPCommands As New Dictionary(Of String, CommandInfo) From {{"connect", New CommandInfo("connect", ShellCommandType.SFTPShell, "Connects to an SFTP server (it must start with ""sftp://"")", "<server>", True, 1, New SFTP_ConnectCommand)},
-                                                                                 {"cdl", New CommandInfo("cdl", ShellCommandType.SFTPShell, "Changes local directory to download to or upload from", "<directory>", True, 1, New SFTP_CdlCommand)},
-                                                                                 {"cdr", New CommandInfo("cdr", ShellCommandType.SFTPShell, "Changes remote directory to download from or upload to", "<directory>", True, 1, New SFTP_CdrCommand)},
-                                                                                 {"del", New CommandInfo("del", ShellCommandType.SFTPShell, "Deletes remote file from server", "<file>", True, 1, New SFTP_DelCommand)},
-                                                                                 {"disconnect", New CommandInfo("disconnect", ShellCommandType.SFTPShell, "Disconnects from server", "", False, 0, New SFTP_DisconnectCommand)},
-                                                                                 {"exit", New CommandInfo("exit", ShellCommandType.SFTPShell, "Exits SFTP shell and returns to kernel", "", False, 0, New SFTP_ExitCommand)},
-                                                                                 {"get", New CommandInfo("get", ShellCommandType.SFTPShell, "Downloads remote file to local directory using binary or text", "<file>", True, 1, New SFTP_GetCommand)},
-                                                                                 {"help", New CommandInfo("help", ShellCommandType.SFTPShell, "Shows help screen", "", False, 0, New SFTP_HelpCommand)},
-                                                                                 {"lsl", New CommandInfo("lsl", ShellCommandType.SFTPShell, "Lists local directory", "[-showdetails|-suppressmessages] [dir]", False, 0, New SFTP_LslCommand)},
-                                                                                 {"lsr", New CommandInfo("lsr", ShellCommandType.SFTPShell, "Lists remote directory", "[-showdetails] [dir]", False, 0, New SFTP_LsrCommand)},
-                                                                                 {"put", New CommandInfo("put", ShellCommandType.SFTPShell, "Uploads local file to remote directory using binary or text", "<file>", True, 1, New SFTP_PutCommand)},
-                                                                                 {"pwdl", New CommandInfo("pwdl", ShellCommandType.SFTPShell, "Gets current local directory", "", False, 0, New SFTP_PwdlCommand)},
-                                                                                 {"pwdr", New CommandInfo("pwdr", ShellCommandType.SFTPShell, "Gets current remote directory", "", False, 0, New SFTP_PwdrCommand)},
-                                                                                 {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.SFTPShell, "Uses information from Speed Dial to connect to any network quickly", "", False, 0, New SFTP_QuickConnectCommand)}}
+    Public ReadOnly SFTPCommands As New Dictionary(Of String, CommandInfo) From {{"connect", New CommandInfo("connect", ShellCommandType.SFTPShell, "Connects to an SFTP server (it must start with ""sftp://"")", {"<server>"}, True, 1, New SFTP_ConnectCommand)},
+                                                                                 {"cdl", New CommandInfo("cdl", ShellCommandType.SFTPShell, "Changes local directory to download to or upload from", {"<directory>"}, True, 1, New SFTP_CdlCommand)},
+                                                                                 {"cdr", New CommandInfo("cdr", ShellCommandType.SFTPShell, "Changes remote directory to download from or upload to", {"<directory>"}, True, 1, New SFTP_CdrCommand)},
+                                                                                 {"del", New CommandInfo("del", ShellCommandType.SFTPShell, "Deletes remote file from server", {"<file>"}, True, 1, New SFTP_DelCommand)},
+                                                                                 {"disconnect", New CommandInfo("disconnect", ShellCommandType.SFTPShell, "Disconnects from server", {}, False, 0, New SFTP_DisconnectCommand)},
+                                                                                 {"exit", New CommandInfo("exit", ShellCommandType.SFTPShell, "Exits SFTP shell and returns to kernel", {}, False, 0, New SFTP_ExitCommand)},
+                                                                                 {"get", New CommandInfo("get", ShellCommandType.SFTPShell, "Downloads remote file to local directory using binary or text", {"<file>"}, True, 1, New SFTP_GetCommand)},
+                                                                                 {"help", New CommandInfo("help", ShellCommandType.SFTPShell, "Shows help screen", {}, False, 0, New SFTP_HelpCommand)},
+                                                                                 {"lsl", New CommandInfo("lsl", ShellCommandType.SFTPShell, "Lists local directory", {"[-showdetails|-suppressmessages] [dir]"}, False, 0, New SFTP_LslCommand)},
+                                                                                 {"lsr", New CommandInfo("lsr", ShellCommandType.SFTPShell, "Lists remote directory", {"[-showdetails] [dir]"}, False, 0, New SFTP_LsrCommand)},
+                                                                                 {"put", New CommandInfo("put", ShellCommandType.SFTPShell, "Uploads local file to remote directory using binary or text", {"<file>"}, True, 1, New SFTP_PutCommand)},
+                                                                                 {"pwdl", New CommandInfo("pwdl", ShellCommandType.SFTPShell, "Gets current local directory", {}, False, 0, New SFTP_PwdlCommand)},
+                                                                                 {"pwdr", New CommandInfo("pwdr", ShellCommandType.SFTPShell, "Gets current remote directory", {}, False, 0, New SFTP_PwdrCommand)},
+                                                                                 {"quickconnect", New CommandInfo("quickconnect", ShellCommandType.SFTPShell, "Uses information from Speed Dial to connect to any network quickly", {}, False, 0, New SFTP_QuickConnectCommand)}}
     Public SFTPConnected As Boolean
     Public SFTPSite As String
     Public SFTPCurrDirect As String

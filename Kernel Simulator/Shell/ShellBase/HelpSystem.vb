@@ -106,15 +106,32 @@ Public Module HelpSystem
         'Check to see if command exists
         If Not String.IsNullOrWhiteSpace(command) And CommandList.ContainsKey(command) Then
             Dim HelpDefinition As String = CommandList(command).GetTranslatedHelpEntry
-            Dim HelpUsage As String = CommandList(command).HelpUsage
             Dim UsageLength As Integer = DoTranslation("Usage:").Length
+            Dim HelpUsages() As String = CommandList(command).HelpUsages
 
             'Print usage information
             If Not CommandType = ShellCommandType.RemoteDebugShell Then
-                W(DoTranslation("Usage:") + $" {command} {HelpUsage}: ", False, ColTypes.ListEntry)
+                If HelpUsages.Length <> 0 Then
+                    W(DoTranslation("Usage:") + $" {command} {HelpUsages(0)}", False, ColTypes.ListEntry)
+                    If HelpUsages.Length > 1 Then
+                        For Each HelpUsage As String In HelpUsages.Skip(1)
+                            W(vbNewLine + " ".Repeat(UsageLength) + $" {command} {HelpUsage}", False, ColTypes.ListEntry)
+                        Next
+                    End If
+                    W(": ", False, ColTypes.ListEntry)
+                End If
                 W($"{HelpDefinition}", True, ColTypes.ListValue)
             ElseIf DebugDeviceSocket IsNot Nothing Then
-                DebugDeviceSocket.WriteLine(DoTranslation("Usage:") + $" /{command} {HelpUsage}: {HelpDefinition}")
+                If HelpUsages.Length <> 0 Then
+                    DebugDeviceSocket.WriteLine(DoTranslation("Usage:") + $" /{command} {HelpUsages(0)}")
+                    If HelpUsages.Length > 1 Then
+                        For Each HelpUsage As String In HelpUsages.Skip(1)
+                            DebugDeviceSocket.WriteLine(vbNewLine + " ".Repeat(UsageLength) + $" /{command} {HelpUsage}")
+                        Next
+                    End If
+                    DebugDeviceSocket.WriteLine(": ")
+                End If
+                DebugDeviceSocket.WriteLine($"{HelpDefinition}")
             End If
 
             'Extra help action for some commands

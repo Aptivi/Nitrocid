@@ -21,12 +21,12 @@ Imports System.Threading
 
 Public Module HTTPShell
 
-    Public ReadOnly HTTPCommands As New Dictionary(Of String, CommandInfo) From {{"delete", New CommandInfo("delete", ShellCommandType.HTTPShell, "Deletes content from HTTP server", "<request>", True, 1, New HTTP_DeleteCommand)},
-                                                                                 {"exit", New CommandInfo("exit", ShellCommandType.HTTPShell, "Exits HTTP shell and returns to kernel", "", False, 0, New HTTP_ExitCommand)},
-                                                                                 {"get", New CommandInfo("get", ShellCommandType.HTTPShell, "Gets the response from the HTTP server using the specified request", "<request>", True, 1, New HTTP_GetCommand)},
-                                                                                 {"getstring", New CommandInfo("getstring", ShellCommandType.HTTPShell, "Gets the string from the HTTP server using the specified request", "<request>", True, 1, New HTTP_GetStringCommand)},
-                                                                                 {"help", New CommandInfo("help", ShellCommandType.HTTPShell, "Shows help screen", "[command]", False, 0, New HTTP_HelpCommand)},
-                                                                                 {"setsite", New CommandInfo("setsite", ShellCommandType.HTTPShell, "Sets the HTTP site. Must be a valid URI.", "<uri>", True, 1, New HTTP_SetSiteCommand)}}
+    Public ReadOnly HTTPCommands As New Dictionary(Of String, CommandInfo) From {{"delete", New CommandInfo("delete", ShellCommandType.HTTPShell, "Deletes content from HTTP server", {"<request>"}, True, 1, New HTTP_DeleteCommand)},
+                                                                                 {"exit", New CommandInfo("exit", ShellCommandType.HTTPShell, "Exits HTTP shell and returns to kernel", {}, False, 0, New HTTP_ExitCommand)},
+                                                                                 {"get", New CommandInfo("get", ShellCommandType.HTTPShell, "Gets the response from the HTTP server using the specified request", {"<request>"}, True, 1, New HTTP_GetCommand)},
+                                                                                 {"getstring", New CommandInfo("getstring", ShellCommandType.HTTPShell, "Gets the string from the HTTP server using the specified request", {"<request>"}, True, 1, New HTTP_GetStringCommand)},
+                                                                                 {"help", New CommandInfo("help", ShellCommandType.HTTPShell, "Shows help screen", {"[command]"}, False, 0, New HTTP_HelpCommand)},
+                                                                                 {"setsite", New CommandInfo("setsite", ShellCommandType.HTTPShell, "Sets the HTTP site. Must be a valid URI.", {"<uri>"}, True, 1, New HTTP_SetSiteCommand)}}
     Public HTTPSite As String
     Public HTTPExit As Boolean
     Public HTTPModCommands As New ArrayList

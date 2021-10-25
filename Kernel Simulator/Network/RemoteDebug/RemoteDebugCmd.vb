@@ -20,11 +20,11 @@ Imports System.IO
 
 Module RemoteDebugCmd
 
-    Public ReadOnly DebugCommands As New Dictionary(Of String, CommandInfo) From {{"exit", New CommandInfo("exit", ShellCommandType.RemoteDebugShell, "Disconnects you from the debugger", "", False, 0, New Debug_ExitCommand)},
-                                                                                  {"help", New CommandInfo("help", ShellCommandType.RemoteDebugShell, "Shows help screen", "[command]", False, 0, New Debug_HelpCommand)},
-                                                                                  {"register", New CommandInfo("register", ShellCommandType.RemoteDebugShell, "Sets device username", "<username>", True, 1, New Debug_RegisterCommand)},
-                                                                                  {"trace", New CommandInfo("trace", ShellCommandType.RemoteDebugShell, "Shows last stack trace on exception", "<tracenumber>", True, 1, New Debug_TraceCommand)},
-                                                                                  {"username", New CommandInfo("username", ShellCommandType.RemoteDebugShell, "Shows current username in the session", "", False, 0, New Debug_UsernameCommand)}}
+    Public ReadOnly DebugCommands As New Dictionary(Of String, CommandInfo) From {{"exit", New CommandInfo("exit", ShellCommandType.RemoteDebugShell, "Disconnects you from the debugger", {}, False, 0, New Debug_ExitCommand)},
+                                                                                  {"help", New CommandInfo("help", ShellCommandType.RemoteDebugShell, "Shows help screen", {"[command]"}, False, 0, New Debug_HelpCommand)},
+                                                                                  {"register", New CommandInfo("register", ShellCommandType.RemoteDebugShell, "Sets device username", {"<username>"}, True, 1, New Debug_RegisterCommand)},
+                                                                                  {"trace", New CommandInfo("trace", ShellCommandType.RemoteDebugShell, "Shows last stack trace on exception", {"<tracenumber>"}, True, 1, New Debug_TraceCommand)},
+                                                                                  {"username", New CommandInfo("username", ShellCommandType.RemoteDebugShell, "Shows current username in the session", {}, False, 0, New Debug_UsernameCommand)}}
     Public DebugModCmds As New ArrayList
 
     ''' <summary>

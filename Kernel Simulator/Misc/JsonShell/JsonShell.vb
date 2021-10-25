@@ -24,14 +24,14 @@ Public Module JsonShell
 
     'Variables
     Public JsonShell_Exiting As Boolean
-    Public ReadOnly JsonShell_Commands As New Dictionary(Of String, CommandInfo) From {{"addproperty", New CommandInfo("addproperty", ShellCommandType.JsonShell, "Adds a new property at the end of the JSON file", "<parentProperty> <propertyName> <propertyValue>", True, 3, New JsonShell_AddPropertyCommand)},
-                                                                                       {"clear", New CommandInfo("clear", ShellCommandType.JsonShell, "Clears the JSON file", "", False, 0, New JsonShell_ClearCommand)},
-                                                                                       {"delproperty", New CommandInfo("delproperty", ShellCommandType.JsonShell, "Removes a property from the JSON file", "<propertyName>", True, 1, New JsonShell_DelPropertyCommand)},
-                                                                                       {"exit", New CommandInfo("exit", ShellCommandType.JsonShell, "Exits the JSON shell", "", False, 0, New JsonShell_ExitCommand)},
-                                                                                       {"exitnosave", New CommandInfo("exitnosave", ShellCommandType.JsonShell, "Exits the JSON shell without saving the changes", "", False, 0, New JsonShell_ExitNoSaveCommand)},
-                                                                                       {"help", New CommandInfo("help", ShellCommandType.JsonShell, "Lists available commands", "[command]", False, 0, New JsonShell_HelpCommand)},
-                                                                                       {"print", New CommandInfo("print", ShellCommandType.JsonShell, "Prints the JSON file", "[property]", False, 0, New JsonShell_PrintCommand)},
-                                                                                       {"save", New CommandInfo("save", ShellCommandType.JsonShell, "Saves the JSON file", "", False, 0, New JsonShell_SaveCommand)}}
+    Public ReadOnly JsonShell_Commands As New Dictionary(Of String, CommandInfo) From {{"addproperty", New CommandInfo("addproperty", ShellCommandType.JsonShell, "Adds a new property at the end of the JSON file", {"<parentProperty> <propertyName> <propertyValue>"}, True, 3, New JsonShell_AddPropertyCommand)},
+                                                                                       {"clear", New CommandInfo("clear", ShellCommandType.JsonShell, "Clears the JSON file", {}, False, 0, New JsonShell_ClearCommand)},
+                                                                                       {"delproperty", New CommandInfo("delproperty", ShellCommandType.JsonShell, "Removes a property from the JSON file", {"<propertyName>"}, True, 1, New JsonShell_DelPropertyCommand)},
+                                                                                       {"exit", New CommandInfo("exit", ShellCommandType.JsonShell, "Exits the JSON shell", {}, False, 0, New JsonShell_ExitCommand)},
+                                                                                       {"exitnosave", New CommandInfo("exitnosave", ShellCommandType.JsonShell, "Exits the JSON shell without saving the changes", {}, False, 0, New JsonShell_ExitNoSaveCommand)},
+                                                                                       {"help", New CommandInfo("help", ShellCommandType.JsonShell, "Lists available commands", {"[command]"}, False, 0, New JsonShell_HelpCommand)},
+                                                                                       {"print", New CommandInfo("print", ShellCommandType.JsonShell, "Prints the JSON file", {"[property]"}, False, 0, New JsonShell_PrintCommand)},
+                                                                                       {"save", New CommandInfo("save", ShellCommandType.JsonShell, "Saves the JSON file", {}, False, 0, New JsonShell_SaveCommand)}}
     Public JsonShell_ModCommands As New ArrayList
     Public JsonShell_FileStream As FileStream
     Public JsonShell_FileToken As JToken = JToken.Parse("{}")

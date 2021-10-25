@@ -31,9 +31,9 @@ Public Class CommandInfo
     ''' </summary>
     Public Property HelpDefinition As String
     ''' <summary>
-    ''' The help usage of command.
+    ''' The help usages of command.
     ''' </summary>
-    Public ReadOnly Property HelpUsage As String
+    Public ReadOnly Property HelpUsages As String()
     ''' <summary>
     ''' Does the command require arguments?
     ''' </summary>
@@ -77,7 +77,7 @@ Public Class CommandInfo
     ''' <param name="Command">Command</param>
     ''' <param name="Type">Shell command type</param>
     ''' <param name="HelpDefinition">Command help definition</param>
-    ''' <param name="HelpUsage">Command help usage</param>
+    ''' <param name="HelpUsages">Command help usages</param>
     ''' <param name="ArgumentsRequired">Does the command require arguments?</param>
     ''' <param name="MinimumArguments">User must specify at least this number of arguments</param>
     ''' <param name="CommandBase">Command base for execution</param>
@@ -87,11 +87,11 @@ Public Class CommandInfo
     ''' <param name="Obsolete">Is the command obsolete?</param>
     ''' <param name="SettingVariable">Does the command set a UESH $variable?</param>
     ''' <param name="AdditionalHelpAction">An extra help action intended to show extra information</param>
-    Public Sub New(Command As String, Type As ShellCommandType, HelpDefinition As String, HelpUsage As String, ArgumentsRequired As Boolean, MinimumArguments As Integer, CommandBase As CommandExecutor, Optional Strict As Boolean = False, Optional Wrappable As Boolean = False, Optional NoMaintenance As Boolean = False, Optional Obsolete As Boolean = False, Optional SettingVariable As Boolean = False, Optional AdditionalHelpAction As Action = Nothing)
+    Public Sub New(Command As String, Type As ShellCommandType, HelpDefinition As String, HelpUsages As String(), ArgumentsRequired As Boolean, MinimumArguments As Integer, CommandBase As CommandExecutor, Optional Strict As Boolean = False, Optional Wrappable As Boolean = False, Optional NoMaintenance As Boolean = False, Optional Obsolete As Boolean = False, Optional SettingVariable As Boolean = False, Optional AdditionalHelpAction As Action = Nothing)
         Me.Command = Command
         Me.Type = Type
         Me.HelpDefinition = HelpDefinition
-        Me.HelpUsage = HelpUsage
+        Me.HelpUsages = HelpUsages
         Me.ArgumentsRequired = ArgumentsRequired
         Me.MinimumArguments = MinimumArguments
         Me.CommandBase = CommandBase

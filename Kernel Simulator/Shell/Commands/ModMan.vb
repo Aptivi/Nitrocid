@@ -70,7 +70,9 @@ Class ModManCommand
                                         WriteSeparator("--- {0}", False, ModCommand)
                                         W("- " + DoTranslation("Command name:") + " ", False, ColTypes.ListEntry) : W(ModCommand, True, ColTypes.ListValue)
                                         W("- " + DoTranslation("Command definition:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).HelpDefinition, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Command usage:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).HelpUsage, True, ColTypes.ListValue)
+                                        For Each Usage As String In scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).HelpUsages
+                                            W("- " + DoTranslation("Command usage:") + " ", False, ColTypes.ListEntry) : W(Usage, True, ColTypes.ListValue)
+                                        Next
                                         W("- " + DoTranslation("Command type:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).Type, True, ColTypes.ListValue)
                                         W("- " + DoTranslation("Strict command?") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).Strict, True, ColTypes.ListValue)
                                         W("- " + DoTranslation("Arguments required?") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).ArgumentsRequired, True, ColTypes.ListValue)
