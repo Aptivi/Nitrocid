@@ -46,7 +46,7 @@ Public Module UESHCommands
     ''' Prompts user for choice
     ''' </summary>
     ''' <param name="Question">A question</param>
-    ''' <param name="ScriptVariable">An $variable</param>
+    ''' <param name="ScriptVariable">A $variable</param>
     ''' <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
     ''' <param name="OutputType">Output type of choices</param>
     ''' <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
@@ -58,7 +58,7 @@ Public Module UESHCommands
     ''' Prompts user for choice
     ''' </summary>
     ''' <param name="Question">A question</param>
-    ''' <param name="ScriptVariable">An $variable</param>
+    ''' <param name="ScriptVariable">A $variable</param>
     ''' <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
     ''' <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
     ''' <param name="OutputType">Output type of choices</param>
@@ -110,12 +110,79 @@ Public Module UESHCommands
                 Console.WriteLine()
             End If
 
-            'Check if answer if correct.
+            'Check if answer is correct.
             If answers.Contains(answer) Then
                 SetVariable(ScriptVariable, answer)
                 Exit While
             End If
         End While
+    End Sub
+
+    ''' <summary>
+    ''' Prompts user for selection
+    ''' </summary>
+    ''' <param name="Question">A question</param>
+    ''' <param name="ScriptVariable">A $variable</param>
+    ''' <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
+    Public Sub PromptSelection(Question As String, ScriptVariable As String, AnswersStr As String)
+        PromptSelection(Question, ScriptVariable, AnswersStr, {})
+    End Sub
+
+    ''' <summary>
+    ''' Prompts user for Selection
+    ''' </summary>
+    ''' <param name="Question">A question</param>
+    ''' <param name="ScriptVariable">A $variable</param>
+    ''' <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
+    ''' <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
+    Public Sub PromptSelection(Question As String, ScriptVariable As String, AnswersStr As String, AnswersTitles() As String)
+        Dim HighlightedAnswer As Integer = 1
+        Dim SelectedAnswer As Integer
+        While True
+            'Variables
+            Dim answers As String() = AnswersStr.Split("/")
+            Dim Answer As ConsoleKeyInfo
+            Console.Clear()
+
+            'Check to see if the answer titles are the same
+            If answers.Length <> AnswersTitles.Length Then
+                ReDim Preserve AnswersTitles(answers.Length - 1)
+            End If
+
+            'Ask a question
+            W(Question + vbNewLine, True, ColTypes.Question)
+            For AnswerIndex As Integer = 0 To answers.Length - 1
+                Dim AnswerInstance As String = answers(AnswerIndex)
+                Dim AnswerTitle As String = AnswersTitles(AnswerIndex)
+                W($" {AnswerInstance}) {AnswerTitle}", True, If(AnswerIndex + 1 = HighlightedAnswer, ColTypes.Neutral, ColTypes.Option))
+            Next
+
+            'Wait for an answer
+            Answer = Console.ReadKey(True)
+            Console.WriteLine()
+
+            'Check the answer
+            Select Case Answer.Key
+                Case ConsoleKey.UpArrow
+                    HighlightedAnswer -= 1
+                    If HighlightedAnswer = 0 Then
+                        HighlightedAnswer = answers.Length
+                    End If
+                Case ConsoleKey.DownArrow
+                    If HighlightedAnswer = answers.Length Then
+                        HighlightedAnswer = 0
+                    End If
+                    HighlightedAnswer += 1
+                Case ConsoleKey.Enter
+                    SelectedAnswer = HighlightedAnswer
+                    Exit While
+                Case ConsoleKey.Escape
+                    Exit Sub
+            End Select
+        End While
+
+        'Set the value
+        SetVariable(ScriptVariable, SelectedAnswer)
     End Sub
 
     ''' <summary>
