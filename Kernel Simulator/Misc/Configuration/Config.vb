@@ -196,7 +196,8 @@ Public Module Config
                     {"Show progress on filesystem operations", ShowFilesystemProgress},
                     {"Show file details in list", ShowFileDetailsList},
                     {"Suppress unauthorized messages", SuppressUnauthorizedMessages},
-                    {"Print line numbers on printing file contents", PrintLineNumbers}
+                    {"Print line numbers on printing file contents", PrintLineNumbers},
+                    {"Sort the list", SortList}
             }
             ConfigurationObject.Add("Filesystem", FilesystemConfig)
 
@@ -880,6 +881,7 @@ Public Module Config
             ShowFileDetailsList = If(ConfigToken("Filesystem")?("Show file details in list"), True)
             SuppressUnauthorizedMessages = If(ConfigToken("Filesystem")?("Suppress unauthorized messages"), True)
             PrintLineNumbers = If(ConfigToken("Filesystem")?("Print line numbers on printing file contents"), False)
+            SortList = If(ConfigToken("Filesystem")?("Sort the list"), True)
 
             'Hardware Section
             Wdbg(DebugLevel.I, "Parsing hardware section...")

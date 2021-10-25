@@ -90,7 +90,7 @@ Public Module ConfigTools
             End If
         End If
         If ConfigToken("Filesystem") IsNot Nothing Then
-            If ConfigToken("Filesystem").Count <> 9 Then
+            If ConfigToken("Filesystem").Count <> 10 Then
                 Wdbg(DebugLevel.W, "Missing keys in Filesystem. Config fix needed set to true.")
                 FixesNeeded = True
             End If

@@ -26,6 +26,7 @@ Public Module Filesystem
     'Variables
     Public CurrDir As String = GetOtherPath(OtherPathType.Home)
     Public ShowFilesystemProgress As Boolean = True
+    Public SortList As Boolean = True
     Public SortMode As FilesystemSortOptions = FilesystemSortOptions.FullName
     Public SortDirection As FilesystemSortDirection = FilesystemSortDirection.Ascending
     Public ShowFileDetailsList As Boolean = True
@@ -102,7 +103,15 @@ Public Module Filesystem
     ''' </summary>
     ''' <param name="folder">Full path to folder</param>
     Public Sub List(folder As String)
-        List(folder, ShowFileDetailsList, SuppressUnauthorizedMessages)
+        List(folder, ShowFileDetailsList, SuppressUnauthorizedMessages, SortList)
+    End Sub
+
+    ''' <summary>
+    ''' List all files and folders in a specified folder
+    ''' </summary>
+    ''' <param name="folder">Full path to folder</param>
+    Public Sub List(folder As String, Sort As Boolean)
+        List(folder, ShowFileDetailsList, SuppressUnauthorizedMessages, Sort)
     End Sub
 
     ''' <summary>
@@ -110,6 +119,14 @@ Public Module Filesystem
     ''' </summary>
     ''' <param name="folder">Full path to folder</param>
     Public Sub List(folder As String, ShowFileDetails As Boolean, SuppressUnauthorizedMessage As Boolean)
+        List(folder, ShowFileDetails, SuppressUnauthorizedMessage, SortList)
+    End Sub
+
+    ''' <summary>
+    ''' List all files and folders in a specified folder
+    ''' </summary>
+    ''' <param name="folder">Full path to folder</param>
+    Public Sub List(folder As String, ShowFileDetails As Boolean, SuppressUnauthorizedMessage As Boolean, Sort As Boolean)
         ThrowOnInvalidPath(folder)
         Wdbg(DebugLevel.I, "Folder {0} will be listed...", folder)
 
@@ -121,7 +138,7 @@ Public Module Filesystem
 
             'Try to create a list
             Try
-                enumeration = CreateList(folder, True)
+                enumeration = CreateList(folder, Sort)
                 If enumeration.Count = 0 Then W(DoTranslation("Folder is empty."), True, ColTypes.Warning)
 
                 'Enumerate each entry

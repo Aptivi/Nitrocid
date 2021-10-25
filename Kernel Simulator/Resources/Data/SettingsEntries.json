@@ -545,6 +545,12 @@
                 "Type": "SBoolean",
                 "Variable": "PrintLineNumbers",
                 "Description": "Makes the \"cat\" command print the file's line numbers."
+            },
+            {
+                "Name": "Sort the list",
+                "Type": "SBoolean",
+                "Variable": "SortList",
+                "Description": "Sorts the filesystem list professionally."
             }
         ]
     },
