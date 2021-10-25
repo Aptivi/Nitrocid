@@ -138,7 +138,7 @@ Public Module Screensaver
         ShowSavers(DefSaverName)
         EventManager.RaisePreUnlock(DefSaverName)
         If PasswordLock Then
-            ShowPasswordPrompt(CurrentUser)
+            ShowPasswordPrompt(CurrentUser.Username)
         Else
             LockMode = False
         End If

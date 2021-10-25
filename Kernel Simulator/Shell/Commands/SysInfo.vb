@@ -59,7 +59,7 @@ Class SysInfoCommand
         If ShowUserInfo Then
             'User section
             WriteSeparator(DoTranslation("User settings"), True)
-            W(DoTranslation("Current user name:") + " ", False, ColTypes.ListEntry) : W(CurrentUser, True, ColTypes.ListValue)
+            W(DoTranslation("Current user name:") + " ", False, ColTypes.ListEntry) : W(CurrentUser.Username, True, ColTypes.ListValue)
             W(DoTranslation("Current host name:") + " ", False, ColTypes.ListEntry) : W(HostName, True, ColTypes.ListValue)
             W(DoTranslation("Available usernames:") + " ", False, ColTypes.ListEntry) : W(String.Join(", ", Users.Keys), True, ColTypes.ListValue)
             Console.WriteLine()

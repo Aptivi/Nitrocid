@@ -239,7 +239,7 @@ Public Module UserManagement
             If Users.Keys.ToArray.Contains(user) And user = "root" Then
                 Wdbg(DebugLevel.W, "User is root, and is a system account")
                 Throw New Exceptions.UserManagementException(DoTranslation("User {0} isn't allowed to be removed."), user)
-            ElseIf Users.Keys.ToArray.Contains(user) And user = CurrentUser Then
+            ElseIf Users.Keys.ToArray.Contains(user) And user = CurrentUser.Username Then
                 Wdbg(DebugLevel.W, "User has logged in, so can't delete self.")
                 Throw New Exceptions.UserManagementException(DoTranslation("User {0} is already logged in. Log-out and log-in as another admin."), user)
             ElseIf Users.Keys.ToArray.Contains(user) And user <> "root" Then
@@ -338,7 +338,7 @@ Public Module UserManagement
     Public Function ChangePassword(Target As String, CurrentPass As String, NewPass As String) As Boolean
         CurrentPass = GetEncryptedString(CurrentPass, Algorithms.SHA256)
         If CurrentPass = Users(Target) Then
-            If HasPermission(CurrentUser, PermissionType.Administrator) And Users.ContainsKey(Target) Then
+            If HasPermission(CurrentUser.Username, PermissionType.Administrator) And Users.ContainsKey(Target) Then
                 'Change password locally
                 NewPass = GetEncryptedString(NewPass, Algorithms.SHA256)
                 Users.Item(Target) = NewPass
@@ -349,9 +349,9 @@ Public Module UserManagement
                 'Raise event
                 EventManager.RaiseUserPasswordChanged(Target)
                 Return True
-            ElseIf HasPermission(CurrentUser, PermissionType.Administrator) And Not Users.ContainsKey(Target) Then
+            ElseIf HasPermission(CurrentUser.Username, PermissionType.Administrator) And Not Users.ContainsKey(Target) Then
                 Throw New Exceptions.UserManagementException(DoTranslation("User not found"))
-            ElseIf HasPermission(Target, PermissionType.Administrator) And Not HasPermission(CurrentUser, PermissionType.Administrator) Then
+            ElseIf HasPermission(Target, PermissionType.Administrator) And Not HasPermission(CurrentUser.Username, PermissionType.Administrator) Then
                 Throw New Exceptions.UserManagementException(DoTranslation("You are not authorized to change password of {0} because the target was an admin."), Target)
             End If
         Else

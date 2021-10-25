@@ -239,18 +239,18 @@ Public Module Shell
             Dim ParsedPromptStyle As String = ProbePlaces(ShellPromptStyle)
             ParsedPromptStyle.ConvertVTSequences
             W(ParsedPromptStyle, False, ColTypes.Gray)
-            If HasPermission(CurrentUser, PermissionType.Administrator) = True Then
+            If HasPermission(CurrentUser.Username, PermissionType.Administrator) = True Then
                 W(" # ", False, ColTypes.UserDollarSign)
             Else
                 W(" $ ", False, ColTypes.UserDollarSign)
             End If
         ElseIf ShellPromptStyle = "" And Not Maintenance Then
-            If HasPermission(CurrentUser, PermissionType.Administrator) = True Then
-                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, CurrentUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HostName) : W("]{0}", False, ColTypes.Gray, CurrDir) : W(" # ", False, ColTypes.UserDollarSign)
+            If HasPermission(CurrentUser.Username, PermissionType.Administrator) = True Then
+                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, CurrentUser.Username) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HostName) : W("]{0}", False, ColTypes.Gray, CurrDir) : W(" # ", False, ColTypes.UserDollarSign)
             ElseIf Maintenance Then
                 W(DoTranslation("Maintenance Mode") + "> ", False, ColTypes.Gray)
             Else
-                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, CurrentUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HostName) : W("]{0}", False, ColTypes.Gray, CurrDir) : W(" $ ", False, ColTypes.Gray, CurrDir)
+                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, CurrentUser.Username) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HostName) : W("]{0}", False, ColTypes.Gray, CurrDir) : W(" $ ", False, ColTypes.Gray, CurrDir)
             End If
         Else
             W(DoTranslation("Maintenance Mode") + "> ", False, ColTypes.Gray)
@@ -325,7 +325,7 @@ Public Module Shell
 
                     'Check to see if a user is able to execute a command
                     If Commands.ContainsKey(strcommand) Then
-                        If HasPermission(CurrentUser, PermissionType.Administrator) = False And Commands(strcommand).Strict Then
+                        If HasPermission(CurrentUser.Username, PermissionType.Administrator) = False And Commands(strcommand).Strict Then
                             Wdbg(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", strcommand)
                             W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, strcommand)
                         ElseIf Maintenance = True And Commands(strcommand).NoMaintenance Then
@@ -334,7 +334,7 @@ Public Module Shell
                         ElseIf IsInvokedByKernelArgument And (strcommand.StartsWith("logout") Or strcommand.StartsWith("shutdown") Or strcommand.StartsWith("reboot")) Then
                             Wdbg(DebugLevel.W, "Cmd exec {0} failed: cmd is one of ""logout"" or ""shutdown"" or ""reboot""", strcommand)
                             W(DoTranslation("Shell message: Command {0} is not allowed to run on log in."), True, ColTypes.Error, strcommand)
-                        ElseIf (HasPermission(CurrentUser, PermissionType.Administrator) And Commands(strcommand).Strict) Or Commands.ContainsKey(strcommand) Then
+                        ElseIf (HasPermission(CurrentUser.Username, PermissionType.Administrator) And Commands(strcommand).Strict) Or Commands.ContainsKey(strcommand) Then
                             Wdbg(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", strcommand, cmdArgs)
                             Dim Params As New ExecuteCommandThreadParameters(EntireCommand, ShellCommandType.Shell, Nothing)
                             StartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Shell Command Thread"}

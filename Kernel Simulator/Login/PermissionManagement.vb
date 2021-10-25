@@ -143,7 +143,7 @@ Public Module PermissionManagement
     ''' <exception cref="Exceptions.PermissionManagementException"></exception>
     Public Function RemovePermission(PermType As PermissionType, Username As String) As Boolean
         'Sets the required permissions to false.
-        If Users.Keys.ToArray.Contains(Username) And Username <> CurrentUser Then
+        If Users.Keys.ToArray.Contains(Username) And Username <> CurrentUser.Username Then
             Wdbg(DebugLevel.I, "Type is {0}", PermType)
             Select Case PermType
                 Case PermissionType.Administrator
@@ -158,7 +158,7 @@ Public Module PermissionManagement
                     Return False
             End Select
             Wdbg(DebugLevel.I, "User {0} permission removed; value is now: {1}", Username, UserPermissions(Username))
-        ElseIf Username = CurrentUser Then
+        ElseIf Username = CurrentUser.Username Then
             Throw New Exceptions.PermissionManagementException(DoTranslation("You are already logged in."))
             Return False
         Else

@@ -22,7 +22,7 @@ Public Module Login
     ''' <summary>
     ''' Current username
     ''' </summary>
-    Public CurrentUser As String
+    Public CurrentUser As UserInfo
     ''' <summary>
     ''' Username prompt
     ''' </summary>
@@ -233,14 +233,14 @@ Public Module Login
         LoggedIn = True
 
         'Sign in to user.
-        CurrentUser = signedInUser
+        CurrentUser = New UserInfo(signedInUser)
         If LockMode = True Then LockMode = False
         Wdbg(DebugLevel.I, "Lock released.")
         ShowMOTDOnceFlag = True
         If ShowMAL Then W(ProbePlaces(MAL), True, ColTypes.Banner)
 
         'Fire event PostLogin
-        EventManager.RaisePostLogin(CurrentUser)
+        EventManager.RaisePostLogin(CurrentUser.Username)
 
         'Initialize shell
         Wdbg(DebugLevel.I, "Shell is being initialized...")

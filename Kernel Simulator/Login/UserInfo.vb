@@ -16,16 +16,23 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class ChUsrNameCommand
-    Inherits CommandExecutor
-    Implements ICommand
+Public Class UserInfo
 
-    Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        ChangeUsername(ListArgs(0), ListArgs(1))
-        W(DoTranslation("Username has been changed to {0}!"), True, ColTypes.Neutral, ListArgs(1))
-        If ListArgs(0) = CurrentUser.Username Then
-            LogoutRequested = True
-        End If
+    ''' <summary>
+    ''' The username
+    ''' </summary>
+    Public ReadOnly Property Username As String
+    ''' <summary>
+    ''' The user permissions
+    ''' </summary>
+    Public ReadOnly Property Permissions As PermissionType
+
+    ''' <summary>
+    ''' Makes a new class instance of current user info
+    ''' </summary>
+    Protected Friend Sub New(Username As String)
+        Me.Username = Username
+        Permissions = UserPermissions(Username)
     End Sub
 
 End Class

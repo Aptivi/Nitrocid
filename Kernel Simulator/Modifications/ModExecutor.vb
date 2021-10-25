@@ -61,13 +61,13 @@ Public Module ModExecutor
                 If Script.Commands.ContainsKey(parts(0)) Then
                     If Script.Commands(parts(0)).Type = ShellCommandType.Shell Then
                         'Command type is of shell. Check the user privileges for restricted commands.
-                        If (Script.Commands(parts(0)).Strict And HasPermission(CurrentUser, PermissionType.Administrator)) Or Not Script.Commands(parts(0)).Strict Then
+                        If (Script.Commands(parts(0)).Strict And HasPermission(CurrentUser.Username, PermissionType.Administrator)) Or Not Script.Commands(parts(0)).Strict Then
                             'User was authorized to use the command, or the command wasn't strict
                             Wdbg(DebugLevel.I, "Using command {0} from {1} to be executed...", parts(0), ModPart)
                             Script.PerformCmd(Script.Commands(parts(0)), args)
                         Else
                             'User wasn't authorized.
-                            Wdbg(DebugLevel.E, "User {0} doesn't have permission to use {1} from {2}!", CurrentUser, parts(0), ModPart)
+                            Wdbg(DebugLevel.E, "User {0} doesn't have permission to use {1} from {2}!", CurrentUser.Username, parts(0), ModPart)
                             W(DoTranslation("You don't have permission to use {0}"), True, ColTypes.Error, parts(0))
                         End If
                     Else

@@ -202,6 +202,7 @@
     <Compile Include="Kernel\PowerMode.vb" />
     <Compile Include="Languages\LanguageInfo.vb" />
     <Compile Include="Languages\Translate.vb" />
+    <Compile Include="Login\UserInfo.vb" />
     <Compile Include="Login\LoginErrorReasons.vb" />
     <Compile Include="Login\PermissionManagement.vb" />
     <Compile Include="ManPages\Manual.vb" />
