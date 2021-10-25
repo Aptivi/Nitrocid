@@ -27,6 +27,14 @@ Public Module UserManagement
     ''' The users token
     ''' </summary>
     Public UsersToken As JArray
+    ''' <summary>
+    ''' Include anonymous users in list
+    ''' </summary>
+    Public IncludeAnonymous As Boolean
+    ''' <summary>
+    ''' Include disabled users in list
+    ''' </summary>
+    Public IncludeDisabled As Boolean
 
     ''' <summary>
     ''' A user property
@@ -363,6 +371,13 @@ Public Module UserManagement
     ''' <summary>
     ''' Lists all users and includes anonymous and disabled users if enabled.
     ''' </summary>
+    Public Function ListAllUsers() As List(Of String)
+        Return ListAllUsers(IncludeAnonymous, IncludeDisabled)
+    End Function
+
+    ''' <summary>
+    ''' Lists all users and includes anonymous and disabled users if enabled.
+    ''' </summary>
     ''' <param name="IncludeAnonymous">Include anonymous users</param>
     ''' <param name="IncludeDisabled">Include disabled users</param>
     Public Function ListAllUsers(Optional IncludeAnonymous As Boolean = False, Optional IncludeDisabled As Boolean = False) As List(Of String)
@@ -374,6 +389,15 @@ Public Module UserManagement
             UsersList.RemoveAll(New Predicate(Of String)(Function(x) HasPermission(x, PermissionType.Disabled) = True))
         End If
         Return UsersList
+    End Function
+
+    ''' <summary>
+    ''' Selects a user from the <see cref="ListAllUsers(Boolean, Boolean)"/> list
+    ''' </summary>
+    ''' <param name="UserNumber">The user number. This is NOT an index!</param>
+    ''' <returns>The username which is selected</returns>
+    Public Function SelectUser(UserNumber As Integer) As String
+        Return SelectUser(UserNumber, IncludeAnonymous, IncludeDisabled)
     End Function
 
     ''' <summary>

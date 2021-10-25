@@ -159,7 +159,9 @@ Public Module Config
                     {"MAL Path", MALFilePath},
                     {"Username prompt style", UsernamePrompt},
                     {"Password prompt style", PasswordPrompt},
-                    {"Show MAL on Log-in", ShowMAL}
+                    {"Show MAL on Log-in", ShowMAL},
+                    {"Include anonymous users", IncludeAnonymous},
+                    {"Include disabled users", IncludeDisabled}
             }
             ConfigurationObject.Add("Login", LoginConfig)
 
@@ -846,6 +848,8 @@ Public Module Config
             UsernamePrompt = If(ConfigToken("Login")?("Username prompt style"), "")
             PasswordPrompt = If(ConfigToken("Login")?("Password prompt style"), "")
             ShowMAL = If(ConfigToken("Login")?("Show MAL on Log-in"), True)
+            IncludeAnonymous = If(ConfigToken("Login")?("Include anonymous users"), False)
+            IncludeDisabled = If(ConfigToken("Login")?("Include disabled users"), False)
 
             'Shell Section
             Wdbg(DebugLevel.I, "Parsing shell section...")

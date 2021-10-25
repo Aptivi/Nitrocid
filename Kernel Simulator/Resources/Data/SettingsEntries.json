@@ -358,6 +358,18 @@
                 "Type": "SBoolean",
                 "Variable": "ShowMAL",
                 "Description": "Shows Message of the Day after displaying login screen."
+            },
+            {
+                "Name": "Include anonymous users",
+                "Type": "SBoolean",
+                "Variable": "IncludeAnonymous",
+                "Description": "Includes the anonymous users in the list"
+            },
+            {
+                "Name": "Include disabled users",
+                "Type": "SBoolean",
+                "Variable": "IncludeDisabled",
+                "Description": "Includes the disabled users in the list"
             }
         ]
     },
