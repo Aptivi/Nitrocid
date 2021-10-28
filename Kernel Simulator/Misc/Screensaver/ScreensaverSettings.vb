@@ -1364,4 +1364,54 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public StackBoxMaximumColorLevel As Integer = 255
 
+    '-> Snaker
+    ''' <summary>
+    ''' [Snaker] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public Snaker255Colors As Boolean
+    ''' <summary>
+    ''' [Snaker] Enable truecolor support. Has a higher priority than 255 color support.
+    ''' </summary>
+    Public SnakerTrueColor As Boolean = True
+    ''' <summary>
+    ''' [Snaker] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public SnakerDelay As Integer = 10
+    ''' <summary>
+    ''' [Snaker] How many milliseconds to wait before making the next stage?
+    ''' </summary>
+    Public SnakerStageDelay As Integer = 5000
+    ''' <summary>
+    ''' [Snaker] The minimum red color level (true color)
+    ''' </summary>
+    Public SnakerMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Snaker] The minimum green color level (true color)
+    ''' </summary>
+    Public SnakerMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Snaker] The minimum blue color level (true color)
+    ''' </summary>
+    Public SnakerMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Snaker] The minimum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public SnakerMinimumColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Snaker] The maximum red color level (true color)
+    ''' </summary>
+    Public SnakerMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Snaker] The maximum green color level (true color)
+    ''' </summary>
+    Public SnakerMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Snaker] The maximum blue color level (true color)
+    ''' </summary>
+    Public SnakerMaximumBlueColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Snaker] The maximum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public SnakerMaximumColorLevel As Integer = 255
+
 End Module

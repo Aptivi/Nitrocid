@@ -52,6 +52,7 @@ Public Module Screensaver
                                                                                       {"plain", Plain},
                                                                                       {"progressclock", ProgressClock},
                                                                                       {"ramp", Ramp},
+                                                                                      {"snaker", Snaker},
                                                                                       {"spotwrite", SpotWrite},
                                                                                       {"stackbox", StackBox},
                                                                                       {"typewriter", Typewriter},
