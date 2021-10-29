@@ -151,23 +151,28 @@ Public Module DebugWriter
     Public Sub WStkTrc(Ex As Exception)
         If DebugMode Then
             'These two vbNewLines are padding for accurate stack tracing.
-            DebugStackTraces.Add($"{vbNewLine}{Ex.ToString.Substring(0, Ex.ToString.IndexOf(":"))}: {Ex.Message}{vbNewLine}{Ex.StackTrace}{vbNewLine}")
             Dim Inner As Exception = Ex.InnerException
             Dim InnerNumber As Integer = 1
+            Dim NewStackTraces As New List(Of String) From {
+                $"{vbNewLine}{Ex.ToString.Substring(0, Ex.ToString.IndexOf(":"))}: {Ex.Message}{vbNewLine}{Ex.StackTrace}{vbNewLine}"
+            }
+
+            'Get all the inner exceptions
             Do Until Inner Is Nothing
-                DebugStackTraces.Add($"{vbNewLine}[{InnerNumber}] {Inner.ToString.Substring(0, Inner.ToString.IndexOf(":"))}: {Inner.Message}{vbNewLine}{Inner.StackTrace}{vbNewLine}")
+                NewStackTraces.Add($"[{InnerNumber}] {Inner.ToString.Substring(0, Inner.ToString.IndexOf(":"))}: {Inner.Message}{vbNewLine}{Inner.StackTrace}{vbNewLine}")
                 InnerNumber += 1
                 Inner = Inner.InnerException
             Loop
 
             'Print stack trace to debugger
             Dim StkTrcs As New List(Of String)
-            For i As Integer = 0 To DebugStackTraces.Count - 1
-                StkTrcs.AddRange(DebugStackTraces(i).SplitNewLines)
+            For i As Integer = 0 To NewStackTraces.Count - 1
+                StkTrcs.AddRange(NewStackTraces(i).SplitNewLines)
             Next
             For i As Integer = 0 To StkTrcs.Count - 1
                 Wdbg(DebugLevel.E, StkTrcs(i))
             Next
+            DebugStackTraces.AddRange(NewStackTraces)
         End If
     End Sub
 
