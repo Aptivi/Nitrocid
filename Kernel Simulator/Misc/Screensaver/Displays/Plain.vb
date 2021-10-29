@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module PlainDisplay
 
-    Public WithEvents Plain As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents Plain As New NamedBackgroundWorker("Plain screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Plain

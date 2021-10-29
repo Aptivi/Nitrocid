@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module LinesDisplay
 
-    Public WithEvents Lines As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents Lines As New NamedBackgroundWorker("Lines screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Lines

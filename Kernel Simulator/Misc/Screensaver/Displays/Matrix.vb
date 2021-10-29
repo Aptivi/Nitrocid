@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module MatrixDisplay
 
-    Public WithEvents Matrix As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents Matrix As New NamedBackgroundWorker("Matrix screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Matrix

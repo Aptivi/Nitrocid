@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module LighterDisplay
 
-    Public WithEvents Lighter As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents Lighter As New NamedBackgroundWorker("Lighter screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Lighter

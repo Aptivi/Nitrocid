@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module ColorMixDisplay
 
-    Public WithEvents ColorMix As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents ColorMix As New NamedBackgroundWorker("ColorMix screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of ColorMix

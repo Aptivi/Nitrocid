@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module FaderBackDisplay
 
-    Public WithEvents FaderBack As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents FaderBack As New NamedBackgroundWorker("FaderBack screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of FaderBack

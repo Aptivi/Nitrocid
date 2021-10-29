@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module MarqueeDisplay
 
-    Public WithEvents Marquee As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents Marquee As New NamedBackgroundWorker("Marquee screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Marquee

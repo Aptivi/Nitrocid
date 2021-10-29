@@ -22,7 +22,7 @@ Imports System.Text
 
 Module TypewriterDisplay
 
-    Public WithEvents Typewriter As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents Typewriter As New NamedBackgroundWorker("Typewriter screensaver thread") With {.WorkerSupportsCancellation = True}
 
     Sub Typewriter_DoWork(sender As Object, e As DoWorkEventArgs) Handles Typewriter.DoWork
         'Variables

@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module BeatFaderDisplay
 
-    Public WithEvents BeatFader As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents BeatFader As New NamedBackgroundWorker("BeatFader screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of FaderBack

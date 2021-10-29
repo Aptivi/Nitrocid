@@ -21,7 +21,7 @@ Imports Extensification.IntegerExts
 
 Module StackBoxDisplay
 
-    Public WithEvents StackBox As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents StackBox As New NamedBackgroundWorker("StackBox screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of StackBox

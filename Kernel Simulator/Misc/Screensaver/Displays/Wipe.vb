@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module WipeDisplay
 
-    Public WithEvents Wipe As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents Wipe As New NamedBackgroundWorker("Wipe screensaver thread") With {.WorkerSupportsCancellation = True}
 
     Sub Wipe_DoWork(sender As Object, e As DoWorkEventArgs) Handles Wipe.DoWork
         'Variables

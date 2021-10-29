@@ -21,7 +21,7 @@ Imports System.Threading
 
 Module DissolveDisplay
 
-    Public WithEvents Dissolve As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents Dissolve As New NamedBackgroundWorker("Dissolve screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Dissolve

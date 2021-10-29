@@ -294,6 +294,9 @@
     <Compile Include="Misc\TextEdit\Commands\Save.vb" />
     <Compile Include="Misc\TextEdit\TextEditShell.vb" />
     <Compile Include="Misc\TextEdit\TextEditTools.vb" />
+    <Compile Include="Misc\Threading\NamedBackgroundWorker.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Misc\Threading\ThreadManager.vb" />
     <Compile Include="Misc\Writers\DebugWriters\DebugLevels.vb" />
     <Compile Include="Misc\Writers\DebugWriters\DebugManager.vb" />

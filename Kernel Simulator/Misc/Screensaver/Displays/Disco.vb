@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module DiscoDisplay
 
-    Public WithEvents Disco As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents Disco As New NamedBackgroundWorker("Disco screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Disco

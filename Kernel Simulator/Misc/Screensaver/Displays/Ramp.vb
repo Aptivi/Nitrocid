@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module RampDisplay
 
-    Public WithEvents Ramp As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents Ramp As New NamedBackgroundWorker("Ramp screensaver thread") With {.WorkerSupportsCancellation = True}
 
     Sub Ramp_DoWork(sender As Object, e As DoWorkEventArgs) Handles Ramp.DoWork
         'Sanity checks for color levels

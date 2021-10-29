@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module WindowsLogoDisplay
 
-    Public WithEvents WindowsLogo As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents WindowsLogo As New NamedBackgroundWorker("WindowsLogo screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of WindowsLogo

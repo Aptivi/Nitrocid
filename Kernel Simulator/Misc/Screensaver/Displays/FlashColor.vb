@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module FlashColorDisplay
 
-    Public WithEvents FlashColor As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents FlashColor As New NamedBackgroundWorker("FlashColor screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Flash Colors

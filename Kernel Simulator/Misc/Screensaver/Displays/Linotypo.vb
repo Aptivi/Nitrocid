@@ -22,7 +22,7 @@ Imports System.Text
 
 Public Module LinotypoDisplay
 
-    Friend WithEvents Linotypo As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Friend WithEvents Linotypo As New NamedBackgroundWorker("Linotypo screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Linotypo

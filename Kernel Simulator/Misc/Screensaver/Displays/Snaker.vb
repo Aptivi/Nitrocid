@@ -21,7 +21,7 @@ Imports Extensification.ListExts
 
 Module SnakerDisplay
 
-    Public WithEvents Snaker As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents Snaker As New NamedBackgroundWorker("Snaker screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Snaker

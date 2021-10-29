@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module GlitterMatrixDisplay
 
-    Public WithEvents GlitterMatrix As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents GlitterMatrix As New NamedBackgroundWorker("GlitterMatrix screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Glitter Matrix

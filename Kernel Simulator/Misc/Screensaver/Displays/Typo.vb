@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module TypoDisplay
 
-    Public WithEvents Typo As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents Typo As New NamedBackgroundWorker("Typo screensaver thread") With {.WorkerSupportsCancellation = True}
 
     Sub Typo_DoWork(sender As Object, e As DoWorkEventArgs) Handles Typo.DoWork
         'Variables

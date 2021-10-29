@@ -22,7 +22,7 @@ Imports System.Text
 
 Module SpotWriteDisplay
 
-    Public WithEvents SpotWrite As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents SpotWrite As New NamedBackgroundWorker("SpotWrite screensaver thread") With {.WorkerSupportsCancellation = True}
 
     Sub SpotWrite_DoWork(sender As Object, e As DoWorkEventArgs) Handles SpotWrite.DoWork
         'Variables

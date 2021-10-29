@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Module BouncingBlockDisplay
 
-    Public WithEvents BouncingBlock As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents BouncingBlock As New NamedBackgroundWorker("BouncingBlock screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles the code of Bouncing Block

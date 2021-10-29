@@ -20,7 +20,7 @@ Imports System.ComponentModel
 
 Public Module CustomDisplay
 
-    Public WithEvents Custom As New BackgroundWorker With {.WorkerSupportsCancellation = True}
+    Public WithEvents Custom As New NamedBackgroundWorker("Custom screensaver thread") With {.WorkerSupportsCancellation = True}
 
     ''' <summary>
     ''' Handles custom screensaver code
