@@ -119,6 +119,22 @@ Module BouncingBlockDisplay
                     End If
                 End If
 
+                If RowBlock = Console.WindowHeight - 2 Then
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the bottom.")
+                    Direction = Direction.Replace("Bottom", "Top")
+                ElseIf RowBlock = 1 Then
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the top.")
+                    Direction = Direction.Replace("Top", "Bottom")
+                End If
+
+                If ColumnBlock = Console.WindowWidth - 1 Then
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the right.")
+                    Direction = Direction.Replace("Right", "Left")
+                ElseIf ColumnBlock = 1 Then
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the left.")
+                    Direction = Direction.Replace("Left", "Right")
+                End If
+
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Block is facing {0}.", Direction)
                 If Direction = "BottomRight" Then
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Increasing row and column block position")
@@ -136,22 +152,6 @@ Module BouncingBlockDisplay
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Decreasing row and column block position")
                     RowBlock -= 1
                     ColumnBlock -= 1
-                End If
-
-                If RowBlock = Console.WindowHeight - 2 Then
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the bottom.")
-                    Direction = Direction.Replace("Bottom", "Top")
-                ElseIf RowBlock = 1 Then
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the top.")
-                    Direction = Direction.Replace("Top", "Bottom")
-                End If
-
-                If ColumnBlock = Console.WindowWidth - 1 Then
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the right.")
-                    Direction = Direction.Replace("Right", "Left")
-                ElseIf ColumnBlock = 1 Then
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're on the left.")
-                    Direction = Direction.Replace("Left", "Right")
                 End If
 
                 'Reset resize sync
