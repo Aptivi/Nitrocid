@@ -76,7 +76,7 @@ Module ThemeStudioTools
     ''' <summary>
     ''' Selected option color for new theme
     ''' </summary>
-    Friend SelectedOptionColor As New Color(OptionColor)
+    Friend _SelectedOptionColor As New Color(OptionColor)
     ''' <summary>
     ''' Selected banner color for new theme
     ''' </summary>
@@ -165,6 +165,10 @@ Module ThemeStudioTools
     ''' Selected Table value color for new theme
     ''' </summary>
     Friend SelectedTableValueColor As New Color(TableValueColor)
+    ''' <summary>
+    ''' Selected selected option color for new theme
+    ''' </summary>
+    Friend SelectedSelectedOptionColor As New Color(ColorTools.SelectedOptionColor)
 
     ''' <summary>
     ''' Saves theme to current directory under "<paramref name="Theme"/>.json."
@@ -218,7 +222,7 @@ Module ThemeStudioTools
         SelectedStageColor = ThemeInfo.ThemeStageColor
         SelectedErrorColor = ThemeInfo.ThemeErrorColor
         SelectedWarningColor = ThemeInfo.ThemeWarningColor
-        SelectedOptionColor = ThemeInfo.ThemeOptionColor
+        _SelectedOptionColor = ThemeInfo.ThemeOptionColor
         SelectedBannerColor = ThemeInfo.ThemeBannerColor
         SelectedNotificationTitleColor = ThemeInfo.ThemeNotificationTitleColor
         SelectedNotificationDescriptionColor = ThemeInfo.ThemeNotificationDescriptionColor
@@ -241,6 +245,7 @@ Module ThemeStudioTools
         SelectedTableSeparatorColor = ThemeInfo.ThemeTableSeparatorColor
         SelectedTableHeaderColor = ThemeInfo.ThemeTableHeaderColor
         SelectedTableValueColor = ThemeInfo.ThemeTableValueColor
+        SelectedSelectedOptionColor = ThemeInfo.ThemeSelectedOptionColor
     End Sub
 
     ''' <summary>
@@ -265,7 +270,7 @@ Module ThemeStudioTools
         SelectedStageColor = ThemeInfo.ThemeStageColor
         SelectedErrorColor = ThemeInfo.ThemeErrorColor
         SelectedWarningColor = ThemeInfo.ThemeWarningColor
-        SelectedOptionColor = ThemeInfo.ThemeOptionColor
+        _SelectedOptionColor = ThemeInfo.ThemeOptionColor
         SelectedBannerColor = ThemeInfo.ThemeBannerColor
         SelectedNotificationTitleColor = ThemeInfo.ThemeNotificationTitleColor
         SelectedNotificationDescriptionColor = ThemeInfo.ThemeNotificationDescriptionColor
@@ -288,6 +293,7 @@ Module ThemeStudioTools
         SelectedTableSeparatorColor = ThemeInfo.ThemeTableSeparatorColor
         SelectedTableHeaderColor = ThemeInfo.ThemeTableHeaderColor
         SelectedTableValueColor = ThemeInfo.ThemeTableValueColor
+        SelectedSelectedOptionColor = ThemeInfo.ThemeSelectedOptionColor
     End Sub
 
     ''' <summary>
@@ -308,7 +314,7 @@ Module ThemeStudioTools
                            New JProperty("StageColor", SelectedStageColor.PlainSequence),
                            New JProperty("ErrorColor", SelectedErrorColor.PlainSequence),
                            New JProperty("WarningColor", SelectedWarningColor.PlainSequence),
-                           New JProperty("OptionColor", SelectedOptionColor.PlainSequence),
+                           New JProperty("OptionColor", _SelectedOptionColor.PlainSequence),
                            New JProperty("BannerColor", SelectedBannerColor.PlainSequence),
                            New JProperty("NotificationTitleColor", SelectedNotificationTitleColor.PlainSequence),
                            New JProperty("NotificationDescriptionColor", SelectedNotificationDescriptionColor.PlainSequence),
@@ -330,7 +336,8 @@ Module ThemeStudioTools
                            New JProperty("HighPriorityBorderColor", SelectedHighPriorityBorderColor.PlainSequence),
                            New JProperty("TableSeparatorColor", SelectedTableSeparatorColor.PlainSequence),
                            New JProperty("TableHeaderColor", SelectedTableHeaderColor.PlainSequence),
-                           New JProperty("TableValueColor", SelectedTableValueColor.PlainSequence))
+                           New JProperty("TableValueColor", SelectedTableValueColor.PlainSequence),
+                           New JProperty("SelectedOptionColor", SelectedSelectedOptionColor.PlainSequence))
     End Function
 
     ''' <summary>
@@ -395,7 +402,7 @@ Module ThemeStudioTools
 
         'Option color
         W("*) " + DoTranslation("Option color") + ": ", False, ColTypes.Option)
-        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedOptionColor)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, _SelectedOptionColor)
 
         'Banner color
         W("*) " + DoTranslation("Banner color") + ": ", False, ColTypes.Option)
@@ -483,6 +490,10 @@ Module ThemeStudioTools
 
         'Table value color
         W("*) " + DoTranslation("Table value color") + ": ", False, ColTypes.Option)
+        WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedTableValueColor)
+
+        'Selected option color
+        W("*) " + DoTranslation("Selected option color") + ": ", False, ColTypes.Option)
         WriteC("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", True, SelectedTableValueColor)
 
         'Pause until a key is pressed

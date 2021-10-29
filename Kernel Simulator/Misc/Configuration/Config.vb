@@ -136,7 +136,8 @@ Public Module Config
                     {"High Priority Border Color", If(New Color(HighPriorityBorderColor).Type = ColorType.TrueColor, HighPriorityBorderColor.EncloseByDoubleQuotes, HighPriorityBorderColor)},
                     {"Table Separator Color", If(New Color(TableSeparatorColor).Type = ColorType.TrueColor, TableSeparatorColor.EncloseByDoubleQuotes, TableSeparatorColor)},
                     {"Table Header Color", If(New Color(TableHeaderColor).Type = ColorType.TrueColor, TableHeaderColor.EncloseByDoubleQuotes, TableHeaderColor)},
-                    {"Table Value Color", If(New Color(TableValueColor).Type = ColorType.TrueColor, TableValueColor.EncloseByDoubleQuotes, TableValueColor)}
+                    {"Table Value Color", If(New Color(TableValueColor).Type = ColorType.TrueColor, TableValueColor.EncloseByDoubleQuotes, TableValueColor)},
+                    {"Selected Option Color", If(New Color(SelectedOptionColor).Type = ColorType.TrueColor, SelectedOptionColor.EncloseByDoubleQuotes, SelectedOptionColor)}
             }
             ConfigurationObject.Add("Colors", ColorConfig)
 
@@ -822,6 +823,7 @@ Public Module Config
                 TableSeparatorColor = New Color(If(ConfigToken("Colors")?("Table Separator Color"), ConsoleColors.DarkGray).ToString).PlainSequence
                 TableHeaderColor = New Color(If(ConfigToken("Colors")?("Table Header Color"), ConsoleColors.White).ToString).PlainSequence
                 TableValueColor = New Color(If(ConfigToken("Colors")?("Table Value Color"), ConsoleColors.Gray).ToString).PlainSequence
+                SelectedOptionColor = New Color(If(ConfigToken("Colors")?("Selected Option Color"), ConsoleColors.Yellow).ToString).PlainSequence
                 LoadBack()
             End If
 

@@ -165,6 +165,10 @@ Public Class ThemeInfo
     ''' Table value color set by theme
     ''' </summary>
     Public ReadOnly Property ThemeTableValueColor As Color
+    ''' <summary>
+    ''' Selected option color set by theme
+    ''' </summary>
+    Public ReadOnly Property ThemeSelectedOptionColor As Color
 
     ''' <summary>
     ''' Generates a new theme info from KS resources
@@ -208,6 +212,7 @@ Public Class ThemeInfo
         ThemeTableSeparatorColor = New Color(ThemeResourceJson.SelectToken("TableSeparatorColor").ToString)
         ThemeTableHeaderColor = New Color(ThemeResourceJson.SelectToken("TableHeaderColor").ToString)
         ThemeTableValueColor = New Color(ThemeResourceJson.SelectToken("TableValueColor").ToString)
+        ThemeSelectedOptionColor = New Color(ThemeResourceJson.SelectToken("SelectedOptionColor").ToString)
     End Sub
 
     ''' <summary>
@@ -252,6 +257,7 @@ Public Class ThemeInfo
         ThemeTableSeparatorColor = New Color(ThemeResourceJson.SelectToken("TableSeparatorColor").ToString)
         ThemeTableHeaderColor = New Color(ThemeResourceJson.SelectToken("TableHeaderColor").ToString)
         ThemeTableValueColor = New Color(ThemeResourceJson.SelectToken("TableValueColor").ToString)
+        ThemeSelectedOptionColor = New Color(ThemeResourceJson.SelectToken("SelectedOptionColor").ToString)
     End Sub
 
 End Class

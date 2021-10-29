@@ -276,6 +276,11 @@
                 "Name": "Table value color",
                 "Type": "SColor",
                 "Variable": "TableValueColor"
+            },
+            {
+                "Name": "Selected option color",
+                "Type": "SColor",
+                "Variable": "SelectedOptionColor"
             }
         ]
     },

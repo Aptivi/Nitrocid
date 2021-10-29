@@ -154,7 +154,7 @@ Public Module UESHCommands
             For AnswerIndex As Integer = 0 To answers.Length - 1
                 Dim AnswerInstance As String = answers(AnswerIndex)
                 Dim AnswerTitle As String = AnswersTitles(AnswerIndex)
-                W($" {AnswerInstance}) {AnswerTitle}", True, If(AnswerIndex + 1 = HighlightedAnswer, ColTypes.Neutral, ColTypes.Option))
+                W($" {AnswerInstance}) {AnswerTitle}", True, If(AnswerIndex + 1 = HighlightedAnswer, ColTypes.SelectedOption, ColTypes.Option))
             Next
 
             'Wait for an answer

@@ -34,5 +34,6 @@
     "HighPriorityBorderColor": "202",
     "TableSeparatorColor": "80",
     "TableHeaderColor": "177",
-    "TableValueColor": "80"
+    "TableValueColor": "80",
+    "SelectedOptionColor": "202"
 }

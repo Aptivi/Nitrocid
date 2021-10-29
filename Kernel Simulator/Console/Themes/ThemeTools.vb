@@ -177,6 +177,7 @@ Public Module ThemeTools
                 TableSeparatorColor = ThemeInfo.ThemeTableSeparatorColor.PlainSequence
                 TableHeaderColor = ThemeInfo.ThemeTableHeaderColor.PlainSequence
                 TableValueColor = ThemeInfo.ThemeTableValueColor.PlainSequence
+                SelectedOptionColor = ThemeInfo.ThemeSelectedOptionColor.PlainSequence
                 LoadBack()
                 MakePermanent()
 

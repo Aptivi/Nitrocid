@@ -168,6 +168,10 @@ Public Module ColorTools
         ''' Table value
         ''' </summary>
         TableValue
+        ''' <summary>
+        ''' Selected option
+        ''' </summary>
+        SelectedOption
     End Enum
 
     ''' <summary>
@@ -221,6 +225,7 @@ Public Module ColorTools
     Public TableSeparatorColor As String = New Color(ConsoleColors.DarkGray).PlainSequence
     Public TableHeaderColor As String = New Color(ConsoleColors.White).PlainSequence
     Public TableValueColor As String = New Color(ConsoleColors.Gray).PlainSequence
+    Public SelectedOptionColor As String = New Color(ConsoleColors.Yellow).PlainSequence
 
     ''' <summary>
     ''' Resets all colors to default
@@ -264,6 +269,7 @@ Public Module ColorTools
         TableSeparatorColor = DefInfo.ThemeTableSeparatorColor.PlainSequence
         TableHeaderColor = DefInfo.ThemeTableHeaderColor.PlainSequence
         TableValueColor = DefInfo.ThemeTableValueColor.PlainSequence
+        SelectedOptionColor = DefInfo.ThemeSelectedOptionColor.PlainSequence
         LoadBack()
 
         'Raise event
@@ -324,6 +330,7 @@ Public Module ColorTools
         ConfigToken("Colors")("Table Separator Color") = If(New Color(TableSeparatorColor).Type = ColorType.TrueColor, TableSeparatorColor.EncloseByDoubleQuotes, TableSeparatorColor)
         ConfigToken("Colors")("Table Header Color") = If(New Color(TableHeaderColor).Type = ColorType.TrueColor, TableHeaderColor.EncloseByDoubleQuotes, TableHeaderColor)
         ConfigToken("Colors")("Table Value Color") = If(New Color(TableValueColor).Type = ColorType.TrueColor, TableValueColor.EncloseByDoubleQuotes, TableValueColor)
+        ConfigToken("Colors")("Selected Option Color") = If(New Color(SelectedOptionColor).Type = ColorType.TrueColor, SelectedOptionColor.EncloseByDoubleQuotes, SelectedOptionColor)
         File.WriteAllText(GetKernelPath(KernelPathType.Configuration), JsonConvert.SerializeObject(ConfigToken, Formatting.Indented))
     End Sub
 
@@ -366,6 +373,7 @@ Public Module ColorTools
     ''' <param name="TableSeparatorColor">Table separator color</param>
     ''' <param name="TableHeaderColor">Table header color</param>
     ''' <param name="TableValueColor">Table value color</param>
+    ''' <param name="SelectedOptionColor">Selected option color</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="InvalidOperationException"></exception>
     ''' <exception cref="Exceptions.ColorException"></exception>
@@ -375,7 +383,7 @@ Public Module ColorTools
                               NotificationFailureColor As String, QuestionColor As String, SuccessColor As String, UserDollarColor As String, TipColor As String, SeparatorTextColor As String,
                               SeparatorColor As String, ListTitleColor As String, DevelopmentWarningColor As String, StageTimeColor As String, ProgressColor As String, BackOptionColor As String,
                               LowPriorityBorderColor As String, MediumPriorityBorderColor As String, HighPriorityBorderColor As String, TableSeparatorColor As String, TableHeaderColor As String,
-                              TableValueColor As String) As Boolean
+                              TableValueColor As String, SelectedOptionColor As String) As Boolean
         'Check colors for null and set them to "def" if found
         If String.IsNullOrEmpty(OptionColor) Then OptionColor = "def"
         If String.IsNullOrEmpty(WarningColor) Then WarningColor = "def"
@@ -413,6 +421,7 @@ Public Module ColorTools
         If String.IsNullOrEmpty(TableSeparatorColor) Then TableSeparatorColor = "def"
         If String.IsNullOrEmpty(TableHeaderColor) Then TableHeaderColor = "def"
         If String.IsNullOrEmpty(TableValueColor) Then TableValueColor = "def"
+        If String.IsNullOrEmpty(SelectedOptionColor) Then SelectedOptionColor = "def"
 
         'Set colors
         If ColoredShell = True Then
@@ -453,6 +462,7 @@ Public Module ColorTools
             If TableSeparatorColor = "def" Then TableSeparatorColor = New Color(ConsoleColors.DarkGray).PlainSequence
             If TableHeaderColor = "def" Then TableHeaderColor = New Color(ConsoleColors.White).PlainSequence
             If TableValueColor = "def" Then TableValueColor = New Color(ConsoleColors.Gray).PlainSequence
+            If SelectedOptionColor = "def" Then OptionColor = New Color(ConsoleColors.Yellow).PlainSequence
             If BackgroundColor = "def" Then
                 BackgroundColor = New Color(ConsoleColors.Black).PlainSequence
                 LoadBack()
@@ -496,6 +506,7 @@ Public Module ColorTools
                 ColorTools.TableSeparatorColor = New Color(TableSeparatorColor).PlainSequence
                 ColorTools.TableHeaderColor = New Color(TableHeaderColor).PlainSequence
                 ColorTools.TableValueColor = New Color(TableValueColor).PlainSequence
+                ColorTools.SelectedOptionColor = New Color(SelectedOptionColor).PlainSequence
                 LoadBack()
                 MakePermanent()
 
@@ -609,6 +620,8 @@ Public Module ColorTools
                     SetConsoleColor(New Color(TableHeaderColor))
                 Case ColTypes.TableValue
                     SetConsoleColor(New Color(TableValueColor))
+                Case ColTypes.SelectedOption
+                    SetConsoleColor(New Color(SelectedOptionColor))
                 Case Else
                     Exit Select
             End Select

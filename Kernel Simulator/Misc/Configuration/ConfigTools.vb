@@ -66,7 +66,7 @@ Public Module ConfigTools
             End If
         End If
         If ConfigToken("Colors") IsNot Nothing Then
-            If ConfigToken("Colors").Count <> 36 Then
+            If ConfigToken("Colors").Count <> 37 Then
                 Wdbg(DebugLevel.W, "Missing keys in Colors. Config fix needed set to true.")
                 FixesNeeded = True
             End If
