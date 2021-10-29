@@ -563,7 +563,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Shell\ShellBase\HelpInfo.vb" />
     <Compile Include="Shell\ShellBase\HelpSystem.vb" />
     <Compile Include="Shell\ShellBase\ProvidedCommandArgumentsInfo.vb" />
     <Compile Include="Shell\Shell.vb" />
