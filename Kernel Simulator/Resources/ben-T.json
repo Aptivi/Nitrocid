@@ -903,7 +903,7 @@
   "Welcome to Settings!": "সেটিংসে স্বাগতম!",
   "Error executing SSH command": "এসএসএইচ কমান্ড কার্যকর করার সময় ত্রুটি",
   "Error on SSH shell": "এসএসএইচ শেলের ত্রুটি",
-  "- App information": "- অ্যাপ তথ্য",
+  "App information": "অ্যাপ তথ্য",
   "Tests the dictionary writer with the string and string array": "স্ট্রিং এবং স্ট্রিং অ্যারে দিয়ে অভিধান লেখকের পরীক্ষা করে",
   "Tests the dictionary writer with the char and char array": "চর এবং চর অ্যারে দিয়ে অভিধান লেখকের পরীক্ষা করে",
   "Tests the dictionary writer with the integer and integer array": "পূর্ণসংখ্যা এবং পূর্ণসংখ্য অ্যারের সাহায্যে অভিধানের লেখক পরীক্ষা করে",

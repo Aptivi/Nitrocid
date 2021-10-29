@@ -903,7 +903,7 @@
   "Welcome to Settings!": "mrhbana bik fi al'iiedadati!",
   "Error executing SSH command": "khataan fi tanfidh 'amr SSH",
   "Error on SSH shell": "khataan fi qadhifat SSH",
-  "- App information": "- maelumat altatbiq",
+  "App information": "maelumat altatbiq",
   "Tests the dictionary writer with the string and string array": "yakhtabir katib alqamus bimasfufat alsilsilat walsilsila",
   "Tests the dictionary writer with the char and char array": "yakhtabir katib alqamus bimasfufat char w char",
   "Tests the dictionary writer with the integer and integer array": "yakhtabir katib alqamus bimasfufat al'aedad alsahihat walsahiha",

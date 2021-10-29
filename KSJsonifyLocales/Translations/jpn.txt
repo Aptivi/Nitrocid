@@ -902,7 +902,7 @@ Kyara sakujo.
 Settei e yōkoso!
 SSH komando no jikkō-chū ni erā ga hassei shimashita
 SSH sheru no erā
-- apuri jōhō
+apuri jōhō
 Mojiretsu to mojiretsu hairetsu de jisho raitā o tesuto shimasu
 char oyobi char hairetsu o shiyō shite dikushonari raitā o tesuto shimasu.
 Seisū to seisū no hairetsu de jisho raitā o tesuto shimasu

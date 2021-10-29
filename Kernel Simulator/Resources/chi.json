@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Huānyíng lái dào shèzhì!",
   "Error executing SSH command": "Zhíxíng SSH mìnglìng shí chūcuò",
   "Error on SSH shell": "SSH wàiké cuòwù",
-  "- App information": "- yìngyòng xìnxī",
+  "App information": "Yìngyòng xìnxī",
   "Tests the dictionary writer with the string and string array": "Shǐyòng zìfú chuàn hé zìfú chuàn shùzǔ cèshì zìdiǎn biānxiě qì",
   "Tests the dictionary writer with the char and char array": "shǐyòng char hé char shùzǔ cèshì zìdiǎn biānxiě qì",
   "Tests the dictionary writer with the integer and integer array": "shǐyòng zhěngshù hé zhěngshù shùzǔ cèshì zìdiǎn biānxiě qì",

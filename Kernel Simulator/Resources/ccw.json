@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Takulandirani ku Mapangidwe!",
   "Error executing SSH command": "Panali vuto polemba SSH",
   "Error on SSH shell": "Cholakwika pa chipolopolo cha SSH",
-  "- App information": "- Zambiri zamapulogalamu",
+  "App information": "Zambiri zamapulogalamu",
   "Tests the dictionary writer with the string and string array": "Iyesa wolemba dikishonale ndi zingwe ndi zingwe",
   "Tests the dictionary writer with the char and char array": "Iyesa wolemba dikishonale ndi gulu la char ndi char",
   "Tests the dictionary writer with the integer and integer array": "Iyesa wolemba dikishonale ndi magulu ochuluka komanso ochuluka",

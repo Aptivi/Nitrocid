@@ -902,7 +902,7 @@ kaeligteoga sagjedoeeossseubnida.
 seoljeong-e osin geos-eul hwan-yeonghabnida!
 SSH myeonglyeong silhaeng olyu
 SSH syel olyu
--aeb jeongbo
+aeb jeongbo
 munjayeol mich munjayeol baeyeol-eul sayonghayeo sajeon jagseong-gileul teseuteuhabnida.
 char mich char baeyeol-eul sayonghayeo sajeon jagseong-gileul teseuteuhabnida.
 jeongsu mich jeongsu baeyeol-eul sayonghayeo sajeon jagseong-gileul teseuteuhabnida.

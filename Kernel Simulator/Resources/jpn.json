@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Settei e yōkoso!",
   "Error executing SSH command": "SSH komando no jikkō-chū ni erā ga hassei shimashita",
   "Error on SSH shell": "SSH sheru no erā",
-  "- App information": "- apuri jōhō",
+  "App information": "apuri jōhō",
   "Tests the dictionary writer with the string and string array": "Mojiretsu to mojiretsu hairetsu de jisho raitā o tesuto shimasu",
   "Tests the dictionary writer with the char and char array": "char oyobi char hairetsu o shiyō shite dikushonari raitā o tesuto shimasu.",
   "Tests the dictionary writer with the integer and integer array": "Seisū to seisū no hairetsu de jisho raitā o tesuto shimasu",

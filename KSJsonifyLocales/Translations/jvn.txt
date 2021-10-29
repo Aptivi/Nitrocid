@@ -902,7 +902,7 @@ Karakter dibusak
 Sugeng rawuh ing Setelan!
 Kesalahan nalika nglakokake perintah SSH
 Kesalahan ing cangkang SSH
-- Informasi app
+Informasi app
 Nguji panulis kamus nganggo rangkai senar lan senar
 Nguji panulis kamus kanthi susunan char lan char
 Nguji panulis kamus nganggo rangking ongko lan ongko

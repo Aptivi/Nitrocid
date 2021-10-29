@@ -903,7 +903,7 @@
   "Welcome to Settings!": "ਸੈਟਿੰਗ ਵਿੱਚ ਤੁਹਾਡਾ ਸਵਾਗਤ ਹੈ!",
   "Error executing SSH command": "SSH ਕਮਾਂਡ ਚਲਾਉਣ ਦੌਰਾਨ ਗਲਤੀ",
   "Error on SSH shell": "SSH ਸ਼ੈੱਲ ਤੇ ਗਲਤੀ",
-  "- App information": "- ਐਪ ਦੀ ਜਾਣਕਾਰੀ",
+  "App information": "ਐਪ ਦੀ ਜਾਣਕਾਰੀ",
   "Tests the dictionary writer with the string and string array": "ਡਿਕਸ਼ਨਰੀ ਲੇਖਕ ਨੂੰ ਸਟਰਿੰਗ ਅਤੇ ਸਟਰਿੰਗ ਐਰੇ ਨਾਲ ਟੈਸਟ ਕਰਦਾ ਹੈ",
   "Tests the dictionary writer with the char and char array": "ਸ਼ਬਦਕੋਸ਼ ਦੇ ਲੇਖਕ ਨੂੰ ਅੱਖਰ ਅਤੇ ਚਾਰ ਐਰੇ ਨਾਲ ਟੈਸਟ ਕਰੋ",
   "Tests the dictionary writer with the integer and integer array": "ਸ਼ਬਦਕੋਸ਼ ਲੇਖਕ ਦੀ ਪੂਰਨ ਅੰਕ ਅਤੇ ਪੂਰਨ ਅੰਕ ਦੇ ਨਾਲ ਜਾਂਚ ਕਰਦਾ ਹੈ",

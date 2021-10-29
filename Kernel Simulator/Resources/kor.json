@@ -903,7 +903,7 @@
   "Welcome to Settings!": "seoljeong-e osin geos-eul hwan-yeonghabnida!",
   "Error executing SSH command": "SSH myeonglyeong silhaeng olyu",
   "Error on SSH shell": "SSH syel olyu",
-  "- App information": "-aeb jeongbo",
+  "App information": "aeb jeongbo",
   "Tests the dictionary writer with the string and string array": "munjayeol mich munjayeol baeyeol-eul sayonghayeo sajeon jagseong-gileul teseuteuhabnida.",
   "Tests the dictionary writer with the char and char array": "char mich char baeyeol-eul sayonghayeo sajeon jagseong-gileul teseuteuhabnida.",
   "Tests the dictionary writer with the integer and integer array": "jeongsu mich jeongsu baeyeol-eul sayonghayeo sajeon jagseong-gileul teseuteuhabnida.",

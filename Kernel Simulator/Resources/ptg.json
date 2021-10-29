@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Bem-vindo às configurações!",
   "Error executing SSH command": "Erro ao executar o comando SSH",
   "Error on SSH shell": "Erro no shell SSH",
-  "- App information": "- Informações do aplicativo",
+  "App information": "Informações do aplicativo",
   "Tests the dictionary writer with the string and string array": "Testa o escritor do dicionário com a string e o array de strings",
   "Tests the dictionary writer with the char and char array": "Testa o escritor do dicionário com a matriz char e char",
   "Tests the dictionary writer with the integer and integer array": "Testa o escritor do dicionário com a matriz de inteiros e inteiros",

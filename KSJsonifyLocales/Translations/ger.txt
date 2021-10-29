@@ -902,7 +902,7 @@ Zeichen gelöscht.
 Willkommen bei den Einstellungen!
 Fehler beim Ausführen des SSH-Befehls
 Fehler in der SSH-Shell
-- App-Informationen
+App-Informationen
 Testet den Dictionary-Writer mit dem String und dem String-Array
 Testet den Dictionary-Writer mit dem char- und char-Array
 Testet den Wörterbuchschreiber mit dem Integer- und Integer-Array

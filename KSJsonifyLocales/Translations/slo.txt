@@ -902,7 +902,7 @@ Znak bol odstránený.
 Vitajte v nastaveniach!
 Chyba pri vykonávaní príkazu SSH
 Chyba na prostredí SSH
-- Informácie o aplikácii
+Informácie o aplikácii
 Testuje zapisovač slovníkov s reťazcom a poľom reťazcov
 Testuje slovníka s poľom char a char
 Testuje zapisovač slovníkov s celočíselným a celočíselným poľom

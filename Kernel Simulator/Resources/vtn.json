@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Chào mừng bạn đến với Cài đặt!",
   "Error executing SSH command": "Lỗi khi thực hiện lệnh SSH",
   "Error on SSH shell": "Lỗi trên SSH shell",
-  "- App information": "- Thông tin ứng dụng",
+  "App information": "Thông tin ứng dụng",
   "Tests the dictionary writer with the string and string array": "Kiểm tra trình viết từ điển với chuỗi và mảng chuỗi",
   "Tests the dictionary writer with the char and char array": "Kiểm tra trình viết từ điển với mảng char và char",
   "Tests the dictionary writer with the integer and integer array": "Kiểm tra trình viết từ điển với mảng số nguyên và số nguyên",

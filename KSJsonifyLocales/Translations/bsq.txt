@@ -902,7 +902,7 @@ Karaktere ezabatu da.
 Ongi etorri Ezarpenetara!
 Errorea SSH komandoa exekutatzean
 Errorea SSH shellean
-- Aplikazioen informazioa
+Aplikazioen informazioa
 Hiztegi idazlea katearekin eta kate-arrayarekin probatzen du
 Hiztegi idazlea char eta char arrayarekin probatzen du
 Hiztegi idazlea zenbaki oso eta osoko arrayarekin probatzen du

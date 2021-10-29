@@ -902,7 +902,7 @@ Personaggio cancellato.
 Benvenuto in Impostazioni!
 Errore durante l'esecuzione del comando SSH
 Errore sulla shell SSH
-- Informazioni sull'app
+Informazioni sull'app
 Verifica il writer del dizionario con la stringa e l'array di stringhe
 Testa lo scrittore del dizionario con l'array char e char
 Testa lo scrittore del dizionario con l'intero e l'array intero

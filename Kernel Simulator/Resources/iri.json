@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Fáilte go Socruithe!",
   "Error executing SSH command": "Earráid agus ordú SSH á fhorghníomhú",
   "Error on SSH shell": "Earráid ar bhlaosc SSH",
-  "- App information": "- Faisnéis faoin aip",
+  "App information": "Faisnéis faoin aip",
   "Tests the dictionary writer with the string and string array": "Tástálacha ar an scríbhneoir foclóir leis an tsraith sreang agus sreang",
   "Tests the dictionary writer with the char and char array": "Tástálacha ar scríbhneoir an fhoclóra leis an eagar char agus char",
   "Tests the dictionary writer with the integer and integer array": "Tástálacha ar an scríbhneoir foclóir leis an tsraith slánuimhir agus slánuimhir",

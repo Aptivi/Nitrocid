@@ -902,7 +902,7 @@ Ký tự đã bị xóa.
 Chào mừng bạn đến với Cài đặt!
 Lỗi khi thực hiện lệnh SSH
 Lỗi trên SSH shell
-- Thông tin ứng dụng
+Thông tin ứng dụng
 Kiểm tra trình viết từ điển với chuỗi và mảng chuỗi
 Kiểm tra trình viết từ điển với mảng char và char
 Kiểm tra trình viết từ điển với mảng số nguyên và số nguyên

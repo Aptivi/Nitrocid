@@ -902,7 +902,7 @@ Ohun kikọ ti paarẹ.
 Kaabọ si Awọn Eto!
 Aṣiṣe ṣiṣe pipaṣẹ SSH
 Aṣiṣe lori ikarahun SSH
-- Alaye ohun elo
+Alaye ohun elo
 Ṣe idanwo onkọwe iwe -itumọ pẹlu okun ati akojọpọ okun
 Ṣe idanwo onkọwe iwe -itumọ pẹlu iṣupọ ati iṣupọ char
 Ṣe idanwo onkọwe iwe -itumọ pẹlu odidi ati akojọpọ odidi

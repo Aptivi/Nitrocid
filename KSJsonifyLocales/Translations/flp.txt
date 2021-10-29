@@ -902,7 +902,7 @@ Tinanggal ang character.
 Maligayang pagdating sa Mga Setting!
 Error sa pagpapatupad ng utos ng SSH
 Error sa SSH shell
-- Impormasyon ng app
+Impormasyon ng app
 Sinusubukan ang manunulat ng diksyonaryo gamit ang string at string array
 Sinusubukan ang manunulat ng diksyonaryo gamit ang char at char array
 Sinusubukan ang manunulat ng diksyunaryo sa integer at integer array

@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Welkom bij Instellingen!",
   "Error executing SSH command": "Fout bij uitvoeren van SSH-opdracht",
   "Error on SSH shell": "Fout op SSH-shell",
-  "- App information": "- App-informatie",
+  "App information": "App-informatie",
   "Tests the dictionary writer with the string and string array": "Test de woordenboekschrijver met de tekenreeks en tekenreeksarray",
   "Tests the dictionary writer with the char and char array": "Test de woordenboekschrijver met de char en char array",
   "Tests the dictionary writer with the integer and integer array": "Test de woordenboekschrijver met de integer en integer array",

@@ -902,7 +902,7 @@ Personazh udalen.
 Dobro pozhalovat' v nastroyki!
 Oshibka pri vypolnenii komandy SSH
 Oshibka v obolochke SSH
-- Informatsiya o prilozhenii
+Informatsiya o prilozhenii
 Proveryayet sredstvo zapisi slovarya so strokoy i massivom strok
 Proveryayet sredstvo zapisi slovarya s pomoshch'yu massiva char i char
 Proveryayet sredstvo zapisi slovarya s tselochislennym i tselochislennym massivami

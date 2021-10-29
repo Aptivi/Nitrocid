@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Benvingut a Configuració.",
   "Error executing SSH command": "Error en executar l'ordre SSH",
   "Error on SSH shell": "Error a l'intèrpret d'ordres SSH",
-  "- App information": "- Informació de l'aplicació",
+  "App information": "Informació de l'aplicació",
   "Tests the dictionary writer with the string and string array": "Prova l’escriptor del diccionari amb la cadena i la matriu de cadenes",
   "Tests the dictionary writer with the char and char array": "Prova l’escriptor del diccionari amb la matriu char i char",
   "Tests the dictionary writer with the integer and integer array": "Prova l’escriptor del diccionari amb l’interior i la matriu sencera",

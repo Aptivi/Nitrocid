@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Ayarlara xoş gəlmisiniz!",
   "Error executing SSH command": "SSH əmrini icra edərkən xəta baş verdi",
   "Error on SSH shell": "SSH qabığında səhv",
-  "- App information": "- Tətbiq məlumatları",
+  "App information": "Tətbiq məlumatları",
   "Tests the dictionary writer with the string and string array": "Lüğət yazıçısını simli və simli sıra ilə sınaqdan keçirir",
   "Tests the dictionary writer with the char and char array": "Lüğət yazarını char və char massivi ilə sınaqdan keçirir",
   "Tests the dictionary writer with the integer and integer array": "Lüğət yazıçısını tam və tam sıra ilə sınayır",

@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Dobro pozhalovat' v nastroyki!",
   "Error executing SSH command": "Oshibka pri vypolnenii komandy SSH",
   "Error on SSH shell": "Oshibka v obolochke SSH",
-  "- App information": "- Informatsiya o prilozhenii",
+  "App information": "Informatsiya o prilozhenii",
   "Tests the dictionary writer with the string and string array": "Proveryayet sredstvo zapisi slovarya so strokoy i massivom strok",
   "Tests the dictionary writer with the char and char array": "Proveryayet sredstvo zapisi slovarya s pomoshch'yu massiva char i char",
   "Tests the dictionary writer with the integer and integer array": "Proveryayet sredstvo zapisi slovarya s tselochislennym i tselochislennym massivami",

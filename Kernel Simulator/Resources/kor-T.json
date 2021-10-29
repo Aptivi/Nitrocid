@@ -903,7 +903,7 @@
   "Welcome to Settings!": "설정에 오신 것을 환영합니다!",
   "Error executing SSH command": "SSH 명령 실행 오류",
   "Error on SSH shell": "SSH 셸 오류",
-  "- App information": "-앱 정보",
+  "App information": "앱 정보",
   "Tests the dictionary writer with the string and string array": "문자열 및 문자열 배열을 사용하여 사전 작성기를 테스트합니다.",
   "Tests the dictionary writer with the char and char array": "char 및 char 배열을 사용하여 사전 작성기를 테스트합니다.",
   "Tests the dictionary writer with the integer and integer array": "정수 및 정수 배열을 사용하여 사전 작성기를 테스트합니다.",

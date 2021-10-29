@@ -902,7 +902,7 @@ tama hadhf alhirafa.
 mrhbana bik fi al'iiedadati!
 khataan fi tanfidh 'amr SSH
 khataan fi qadhifat SSH
-- maelumat altatbiq
+maelumat altatbiq
 yakhtabir katib alqamus bimasfufat alsilsilat walsilsila
 yakhtabir katib alqamus bimasfufat char w char
 yakhtabir katib alqamus bimasfufat al'aedad alsahihat walsahiha

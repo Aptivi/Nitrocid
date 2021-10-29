@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Uyemukelwa kuzilungiselelo!",
   "Error executing SSH command": "Iphutha lokusebenzisa umyalo we-SSH",
   "Error on SSH shell": "Iphutha kugobolondo le-SSH",
-  "- App information": "- Imininingwane yohlelo lokusebenza",
+  "App information": "Imininingwane yohlelo lokusebenza",
   "Tests the dictionary writer with the string and string array": "Ihlola umbhali wesichazamazwi ngentambo nentambo",
   "Tests the dictionary writer with the char and char array": "Ihlola umbhali wesichazamazwi nge-char ne-char array",
   "Tests the dictionary writer with the integer and integer array": "Ihlola umbhali wesichazamazwi nge-integer ne-integer array",

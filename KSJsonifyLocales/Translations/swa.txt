@@ -902,7 +902,7 @@ Tabia imefutwa.
 Karibu kwenye Mipangilio!
 Hitilafu wakati wa kutekeleza amri ya SSH
 Hitilafu kwenye ganda la SSH
-- Habari ya programu
+Habari ya programu
 Hujaribu mwandishi wa kamusi na safu ya kamba na kamba
 Hujaribu mwandishi wa kamusi na safu ya char na char
 Hujaribu mwandishi wa kamusi na safu kamili na nambari

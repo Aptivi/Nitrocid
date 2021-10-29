@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Vitajte v nastaveniach!",
   "Error executing SSH command": "Chyba pri vykonávaní príkazu SSH",
   "Error on SSH shell": "Chyba na prostredí SSH",
-  "- App information": "- Informácie o aplikácii",
+  "App information": "Informácie o aplikácii",
   "Tests the dictionary writer with the string and string array": "Testuje zapisovač slovníkov s reťazcom a poľom reťazcov",
   "Tests the dictionary writer with the char and char array": "Testuje slovníka s poľom char a char",
   "Tests the dictionary writer with the integer and integer array": "Testuje zapisovač slovníkov s celočíselným a celočíselným poľom",

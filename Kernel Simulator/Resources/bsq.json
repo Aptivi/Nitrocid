@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Ongi etorri Ezarpenetara!",
   "Error executing SSH command": "Errorea SSH komandoa exekutatzean",
   "Error on SSH shell": "Errorea SSH shellean",
-  "- App information": "- Aplikazioen informazioa",
+  "App information": "Aplikazioen informazioa",
   "Tests the dictionary writer with the string and string array": "Hiztegi idazlea katearekin eta kate-arrayarekin probatzen du",
   "Tests the dictionary writer with the char and char array": "Hiztegi idazlea char eta char arrayarekin probatzen du",
   "Tests the dictionary writer with the integer and integer array": "Hiztegi idazlea zenbaki oso eta osoko arrayarekin probatzen du",

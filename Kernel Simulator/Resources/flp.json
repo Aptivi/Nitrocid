@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Maligayang pagdating sa Mga Setting!",
   "Error executing SSH command": "Error sa pagpapatupad ng utos ng SSH",
   "Error on SSH shell": "Error sa SSH shell",
-  "- App information": "- Impormasyon ng app",
+  "App information": "Impormasyon ng app",
   "Tests the dictionary writer with the string and string array": "Sinusubukan ang manunulat ng diksyonaryo gamit ang string at string array",
   "Tests the dictionary writer with the char and char array": "Sinusubukan ang manunulat ng diksyonaryo gamit ang char at char array",
   "Tests the dictionary writer with the integer and integer array": "Sinusubukan ang manunulat ng diksyunaryo sa integer at integer array",

@@ -902,7 +902,7 @@ Makhalidwe achotsedwa.
 Takulandirani ku Mapangidwe!
 Panali vuto polemba SSH
 Cholakwika pa chipolopolo cha SSH
-- Zambiri zamapulogalamu
+Zambiri zamapulogalamu
 Iyesa wolemba dikishonale ndi zingwe ndi zingwe
 Iyesa wolemba dikishonale ndi gulu la char ndi char
 Iyesa wolemba dikishonale ndi magulu ochuluka komanso ochuluka

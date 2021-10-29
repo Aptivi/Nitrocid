@@ -902,7 +902,7 @@ Tecken borttaget.
 Välkommen till Inställningar!
 Fel vid körning av SSH-kommando
 Fel på SSH-skal
-- Appinformation
+Appinformation
 Testar ordboksförfattaren med sträng och strängmatris
 Testar ordboksförfattaren med char och char array
 Testar ordboksförfattaren med heltal och heltal

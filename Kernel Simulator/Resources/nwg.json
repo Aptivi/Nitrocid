@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Velkommen til Innstillinger!",
   "Error executing SSH command": "Feil ved utførelse av SSH-kommando",
   "Error on SSH shell": "Feil på SSH-skall",
-  "- App information": "- Appinformasjon",
+  "App information": "Appinformasjon",
   "Tests the dictionary writer with the string and string array": "Tester ordboksforfatteren med streng og strengmatrise",
   "Tests the dictionary writer with the char and char array": "Tester ordbokforfatteren med røye og røye",
   "Tests the dictionary writer with the integer and integer array": "Tester ordboksforfatteren med heltall og heltall",

@@ -902,7 +902,7 @@ Zìfú yǐ shānchú.
 Huānyíng lái dào shèzhì!
 Zhíxíng SSH mìnglìng shí chūcuò
 SSH wàiké cuòwù
-- yìngyòng xìnxī
+Yìngyòng xìnxī
 Shǐyòng zìfú chuàn hé zìfú chuàn shùzǔ cèshì zìdiǎn biānxiě qì
 shǐyòng char hé char shùzǔ cèshì zìdiǎn biānxiě qì
 shǐyòng zhěngshù hé zhěngshù shùzǔ cèshì zìdiǎn biānxiě qì

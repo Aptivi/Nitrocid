@@ -902,7 +902,7 @@ Uhlamvu lususiwe.
 Uyemukelwa kuzilungiselelo!
 Iphutha lokusebenzisa umyalo we-SSH
 Iphutha kugobolondo le-SSH
-- Imininingwane yohlelo lokusebenza
+Imininingwane yohlelo lokusebenza
 Ihlola umbhali wesichazamazwi ngentambo nentambo
 Ihlola umbhali wesichazamazwi nge-char ne-char array
 Ihlola umbhali wesichazamazwi nge-integer ne-integer array

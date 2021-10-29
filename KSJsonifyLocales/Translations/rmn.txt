@@ -902,7 +902,7 @@ Caracter ?ters.
 Bun venit la Set?ri!
 Eroare la executarea comenzii SSH
 Eroare pe shell SSH
-- Informa?ii despre aplica?ie
+Informa?ii despre aplica?ie
 Testeaz? scriitorul dic?ionarului cu ?irul ?i matricea de ?iruri
 Testeaz? scriitorul dic?ionarului cu matricea char ?i char
 Testeaz? scriitorul dic?ionarului cu întreg ?i matricea întregi

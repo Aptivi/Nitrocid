@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Sozlamalarga xush kelibsiz!",
   "Error executing SSH command": "SSH buyrug'ini bajarishda xato",
   "Error on SSH shell": "SSH qobig'ida xato",
-  "- App information": "- Ilova haqida ma'lumot",
+  "App information": "Ilova haqida ma'lumot",
   "Tests the dictionary writer with the string and string array": "String va string qatori bilan lug'at yozuvchisini sinovdan o'tkazadi",
   "Tests the dictionary writer with the char and char array": "Lug'at yozuvchisini char va char massivi bilan sinovdan o'tkazadi",
   "Tests the dictionary writer with the integer and integer array": "Lug'at yozuvchisini butun va butun qator bilan sinab ko'radi",

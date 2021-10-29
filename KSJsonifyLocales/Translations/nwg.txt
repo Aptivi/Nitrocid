@@ -902,7 +902,7 @@ Tegn slettet.
 Velkommen til Innstillinger!
 Feil ved utførelse av SSH-kommando
 Feil på SSH-skall
-- Appinformasjon
+Appinformasjon
 Tester ordboksforfatteren med streng og strengmatrise
 Tester ordbokforfatteren med røye og røye
 Tester ordboksforfatteren med heltall og heltall

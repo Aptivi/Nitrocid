@@ -902,7 +902,7 @@ Karaktè efase.
 Byenveni nan Anviwònman!
 Erè nan egzekite lòd SSH
 Erè sou koki SSH
-- Enfòmasyon App
+Enfòmasyon App
 Tès ekriven an diksyonè ak fisèl la ak etalaj fisèl
 Tès ekriven an diksyonè ak etalaj la Char ak Char
 Tès ekriven an diksyonè ak etalaj la antye relatif ak antye relatif

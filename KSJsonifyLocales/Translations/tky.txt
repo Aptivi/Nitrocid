@@ -902,7 +902,7 @@ Karakter silindi.
 Ayarlar'a hoş geldiniz!
 SSH komutu yürütülürken hata oluştu
 SSH kabuğunda hata
-- Uygulama bilgileri
+Uygulama bilgileri
 Sözlük yazarını dize ve dize dizisiyle test eder
 Sözlük yazarını char ve char dizisiyle test eder
 Sözlük yazıcısını tamsayı ve tamsayı dizisiyle test eder

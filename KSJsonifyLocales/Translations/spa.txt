@@ -902,7 +902,7 @@ Personaje eliminado.
 ¡Bienvenido a Configuración!
 Error al ejecutar el comando SSH
 Error en el shell SSH
-- Información de la aplicación
+Información de la aplicación
 Prueba el escritor del diccionario con la cadena y la matriz de cadenas
 Prueba el escritor del diccionario con la matriz char y char
 Prueba el escritor del diccionario con la matriz de enteros y enteros

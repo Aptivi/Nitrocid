@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Добродошли у Подешавања!",
   "Error executing SSH command": "Грешка у извршавању ССХ наредбе",
   "Error on SSH shell": "Грешка на ССХ љусци",
-  "- App information": "- Информације о апликацији",
+  "App information": "Информације о апликацији",
   "Tests the dictionary writer with the string and string array": "Тестира писац речника помоћу низа и низа низова",
   "Tests the dictionary writer with the char and char array": "Тестира писац речника помоћу поља цхар и цхар",
   "Tests the dictionary writer with the integer and integer array": "Тестира писац речника целобројним и целобројним низом",

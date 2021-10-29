@@ -902,7 +902,7 @@ Belgilar o'chirildi.
 Sozlamalarga xush kelibsiz!
 SSH buyrug'ini bajarishda xato
 SSH qobig'ida xato
-- Ilova haqida ma'lumot
+Ilova haqida ma'lumot
 String va string qatori bilan lug'at yozuvchisini sinovdan o'tkazadi
 Lug'at yozuvchisini char va char massivi bilan sinovdan o'tkazadi
 Lug'at yozuvchisini butun va butun qator bilan sinab ko'radi

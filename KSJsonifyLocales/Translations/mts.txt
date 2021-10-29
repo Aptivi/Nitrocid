@@ -902,7 +902,7 @@ Karattru mħassar.
 Merħba fis-Settings!
 Żball waqt l-eżekuzzjoni tal-kmand SSH
 Żball fuq il-qoxra SSH
-- Informazzjoni dwar l-applikazzjoni
+Informazzjoni dwar l-applikazzjoni
 Jittestja l-kittieb tad-dizzjunarju bis-sekwenza u l-firxa ta 'spag
 Jittestja l-kittieb tad-dizzjunarju bil-char u char array
 Jittestja l-kittieb tad-dizzjunarju bid-numru sħiħ u l-firxa tan-numru sħiħ

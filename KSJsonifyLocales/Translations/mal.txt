@@ -902,7 +902,7 @@ Aksara dipadamkan.
 Selamat Datang ke Tetapan!
 Ralat semasa melaksanakan arahan SSH
 Ralat pada shell SSH
-- Maklumat aplikasi
+Maklumat aplikasi
 Menguji penulis kamus dengan rentetan dan rentetan rentetan
 Menguji penulis kamus dengan susunan char dan char
 Menguji penulis kamus dengan susunan integer dan integer

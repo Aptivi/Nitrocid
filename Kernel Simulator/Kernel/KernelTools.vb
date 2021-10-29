@@ -364,7 +364,7 @@ Public Module KernelTools
 
         'Some information
         If ShowAppInfoOnBoot Then
-            WriteSeparator(DoTranslation("- App information"), False)
+            WriteSeparator(DoTranslation("App information"), True, ColTypes.Stage)
             W("OS: " + DoTranslation("Running on {0}"), True, ColTypes.Neutral, Environment.OSVersion.ToString)
             W("KS: " + DoTranslation("Built in {0}"), True, ColTypes.Neutral, Render(GetCompileDate()))
         End If

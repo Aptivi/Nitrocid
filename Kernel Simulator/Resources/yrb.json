@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Kaabọ si Awọn Eto!",
   "Error executing SSH command": "Aṣiṣe ṣiṣe pipaṣẹ SSH",
   "Error on SSH shell": "Aṣiṣe lori ikarahun SSH",
-  "- App information": "- Alaye ohun elo",
+  "App information": "Alaye ohun elo",
   "Tests the dictionary writer with the string and string array": "Ṣe idanwo onkọwe iwe -itumọ pẹlu okun ati akojọpọ okun",
   "Tests the dictionary writer with the char and char array": "Ṣe idanwo onkọwe iwe -itumọ pẹlu iṣupọ ati iṣupọ char",
   "Tests the dictionary writer with the integer and integer array": "Ṣe idanwo onkọwe iwe -itumọ pẹlu odidi ati akojọpọ odidi",

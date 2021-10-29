@@ -902,7 +902,7 @@ Astaamaha ayaa la tirtiray
 Ku soo dhowow Dejinta!
 Cilad ah fulinta amarka SSH
 Khalad ku yaal qoorta SSH
-- Macluumaadka barnaamijka
+Macluumaadka barnaamijka
 Tijaabiyaha qoraha qaamuuska ee xariga iyo xariga xariga
 Tijaabinta qoraha qaamuuska ee char iyo char array
 Tijaabiyaha qoraha qaamuuska ee leh tiro iyo tiro isku dhafan

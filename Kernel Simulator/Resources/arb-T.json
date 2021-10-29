@@ -903,7 +903,7 @@
   "Welcome to Settings!": "مرحبًا بك في الإعدادات!",
   "Error executing SSH command": "خطأ في تنفيذ أمر SSH",
   "Error on SSH shell": "خطأ في قذيفة SSH",
-  "- App information": "- معلومات التطبيق",
+  "App information": "معلومات التطبيق",
   "Tests the dictionary writer with the string and string array": "يختبر كاتب القاموس بمصفوفة السلسلة والسلسلة",
   "Tests the dictionary writer with the char and char array": "يختبر كاتب القاموس بمصفوفة char و char",
   "Tests the dictionary writer with the integer and integer array": "يختبر كاتب القاموس بمصفوفة الأعداد الصحيحة والصحيحة",

@@ -902,7 +902,7 @@ Holoi ʻia ke ʻano.
 Welina i nā hoʻonohonoho!
 Hewa i ka hoʻokō ʻana i ke kauoha SSH
 Hewa ma ka pūpū SSH
-- ʻIkepili ʻike
+ʻIkepili ʻike
 Hōʻaia ka mea kākau puke wehewehe ʻōlelo me ke aho a me ke aho
 Hōʻaia ka mea kākau puke wehewehe ʻōlelo me ka char a me ka char char
 Hōʻaia ka mea kākau puke wehewehe huahelu me ka huina integer a me integer

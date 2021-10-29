@@ -902,7 +902,7 @@ Znak je izbrisan.
 Dobrodo?li u Pode?avanja!
 Gre?ka u izvr?avanju SSH naredbe
 Gre?ka na SSH ljusci
-- Informacije o aplikaciji
+Informacije o aplikaciji
 Testira pisac re?nika pomoc?u niza i niza nizova
 Testira pisac re?nika pomoc?u polja char i char
 Testira pisac re?nika celobrojnim i celobrojnim nizom

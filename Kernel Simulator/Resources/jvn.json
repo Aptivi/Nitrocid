@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Sugeng rawuh ing Setelan!",
   "Error executing SSH command": "Kesalahan nalika nglakokake perintah SSH",
   "Error on SSH shell": "Kesalahan ing cangkang SSH",
-  "- App information": "- Informasi app",
+  "App information": "Informasi app",
   "Tests the dictionary writer with the string and string array": "Nguji panulis kamus nganggo rangkai senar lan senar",
   "Tests the dictionary writer with the char and char array": "Nguji panulis kamus kanthi susunan char lan char",
   "Tests the dictionary writer with the integer and integer array": "Nguji panulis kamus nganggo rangking ongko lan ongko",

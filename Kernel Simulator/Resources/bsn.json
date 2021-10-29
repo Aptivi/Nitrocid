@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Dobro došli u Postavke!",
   "Error executing SSH command": "Greška pri izvršavanju SSH naredbe",
   "Error on SSH shell": "Greška u SSH ljusci",
-  "- App information": "- Informacije o aplikaciji",
+  "App information": "Informacije o aplikaciji",
   "Tests the dictionary writer with the string and string array": "Testira pisac rječnika sa nizom i nizom nizova",
   "Tests the dictionary writer with the char and char array": "Testira pisac rječnika s nizom char i char",
   "Tests the dictionary writer with the integer and integer array": "Testira pisac rječnika s nizom integer i integer",

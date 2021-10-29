@@ -902,7 +902,7 @@ Karakter verwijderd.
 Welkom bij Instellingen!
 Fout bij uitvoeren van SSH-opdracht
 Fout op SSH-shell
-- App-informatie
+App-informatie
 Test de woordenboekschrijver met de tekenreeks en tekenreeksarray
 Test de woordenboekschrijver met de char en char array
 Test de woordenboekschrijver met de integer en integer array

@@ -902,7 +902,7 @@ Xarakter silindi.
 Ayarlara xoş gəlmisiniz!
 SSH əmrini icra edərkən xəta baş verdi
 SSH qabığında səhv
-- Tətbiq məlumatları
+Tətbiq məlumatları
 Lüğət yazıçısını simli və simli sıra ilə sınaqdan keçirir
 Lüğət yazarını char və char massivi ilə sınaqdan keçirir
 Lüğət yazıçısını tam və tam sıra ilə sınayır

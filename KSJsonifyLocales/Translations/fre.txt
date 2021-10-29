@@ -902,7 +902,7 @@ Caractère supprimé.
 Bienvenue dans Paramètres !
 Erreur lors de l'exécution de la commande SSH
 Erreur sur le shell SSH
-- Informations sur l'application
+ Informations sur l'application
 Teste le rédacteur de dictionnaire avec la chaîne et le tableau de chaînes
 Teste le rédacteur de dictionnaire avec le tableau char et char
 Teste le rédacteur de dictionnaire avec l'entier et le tableau d'entiers

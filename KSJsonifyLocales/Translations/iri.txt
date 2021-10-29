@@ -902,7 +902,7 @@ Carachtar scriosta.
 Fáilte go Socruithe!
 Earráid agus ordú SSH á fhorghníomhú
 Earráid ar bhlaosc SSH
-- Faisnéis faoin aip
+Faisnéis faoin aip
 Tástálacha ar an scríbhneoir foclóir leis an tsraith sreang agus sreang
 Tástálacha ar scríbhneoir an fhoclóra leis an eagar char agus char
 Tástálacha ar an scríbhneoir foclóir leis an tsraith slánuimhir agus slánuimhir

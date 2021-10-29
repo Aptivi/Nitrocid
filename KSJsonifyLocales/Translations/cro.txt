@@ -902,7 +902,7 @@ Carattere eliminatu.
 Benvenutu in Impostazioni!
 Errore durante l'esecuzione di u cumandimu SSH
 Errore nantu à u cunchju SSH
-- infurmazione App
+Infurmazione App
 Pruvede u scrittore di dizziunariu cù a stringa è a string array
 Pruvede u scrittore di dizziunariu cù u char è char array
 Prova u scrittore di dizziunariu cù u numeru interu è u numeru interu

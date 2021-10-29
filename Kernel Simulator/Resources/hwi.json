@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Welina i nā hoʻonohonoho!",
   "Error executing SSH command": "Hewa i ka hoʻokō ʻana i ke kauoha SSH",
   "Error on SSH shell": "Hewa ma ka pūpū SSH",
-  "- App information": "- ʻIkepili ʻike",
+  "App information": "ʻIkepili ʻike",
   "Tests the dictionary writer with the string and string array": "Hōʻaia ka mea kākau puke wehewehe ʻōlelo me ke aho a me ke aho",
   "Tests the dictionary writer with the char and char array": "Hōʻaia ka mea kākau puke wehewehe ʻōlelo me ka char a me ka char char",
   "Tests the dictionary writer with the integer and integer array": "Hōʻaia ka mea kākau puke wehewehe huahelu me ka huina integer a me integer",

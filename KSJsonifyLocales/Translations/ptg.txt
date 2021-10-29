@@ -902,7 +902,7 @@ Personagem excluído.
 Bem-vindo às configurações!
 Erro ao executar o comando SSH
 Erro no shell SSH
-- Informações do aplicativo
+Informações do aplicativo
 Testa o escritor do dicionário com a string e o array de strings
 Testa o escritor do dicionário com a matriz char e char
 Testa o escritor do dicionário com a matriz de inteiros e inteiros

@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Karibu kwenye Mipangilio!",
   "Error executing SSH command": "Hitilafu wakati wa kutekeleza amri ya SSH",
   "Error on SSH shell": "Hitilafu kwenye ganda la SSH",
-  "- App information": "- Habari ya programu",
+  "App information": "Habari ya programu",
   "Tests the dictionary writer with the string and string array": "Hujaribu mwandishi wa kamusi na safu ya kamba na kamba",
   "Tests the dictionary writer with the char and char array": "Hujaribu mwandishi wa kamusi na safu ya char na char",
   "Tests the dictionary writer with the integer and integer array": "Hujaribu mwandishi wa kamusi na safu kamili na nambari",

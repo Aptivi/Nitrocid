@@ -903,7 +903,7 @@
   "Welcome to Settings!": "欢迎来到设置！",
   "Error executing SSH command": "执行 SSH 命令时出错",
   "Error on SSH shell": "SSH 外壳错误",
-  "- App information": "- 应用信息",
+  "App information": "应用信息",
   "Tests the dictionary writer with the string and string array": "使用字符串和字符串数组测试字典编写器",
   "Tests the dictionary writer with the char and char array": "使用 char 和 char 数组测试字典编写器",
   "Tests the dictionary writer with the integer and integer array": "使用整数和整数数组测试字典编写器",

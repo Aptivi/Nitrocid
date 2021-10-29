@@ -903,7 +903,7 @@
   "Welcome to Settings!": "設定へようこそ！",
   "Error executing SSH command": "SSH コマンドの実行中にエラーが発生しました",
   "Error on SSH shell": "SSH シェルのエラー",
-  "- App information": "- アプリ情報",
+  "App information": "アプリ情報",
   "Tests the dictionary writer with the string and string array": "文字列と文字列配列で辞書ライターをテストします",
   "Tests the dictionary writer with the char and char array": "char および char 配列を使用してディクショナリ ライターをテストします。",
   "Tests the dictionary writer with the integer and integer array": "整数と整数の配列で辞書ライターをテストします",

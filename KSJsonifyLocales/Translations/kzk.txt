@@ -902,7 +902,7 @@ Tañba joyıldı.
 Parametrlerge kel keldiñiz!
 SSH tapsırmalarınıñ orındalwı
 SSH qabattarındağı qate
-- Qoldanba twralı aqparat
+Qoldanba twralı aqparat
 Sözdik jazwşını jolmen jäne joldıq massïvpen tekseredi
 Sözdik jazwşını char jäne char massïvimen tekseredi
 Sözdik jazwşını bütin jäne tolıq massïvpen tekseredi

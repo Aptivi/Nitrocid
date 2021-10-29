@@ -903,7 +903,7 @@
   "Welcome to Settings!": "setings mein aapaka svaagat hai!",
   "Error executing SSH command": "ssh kamaand nishpaadit karane mein truti",
   "Error on SSH shell": "ssh shel mein truti",
-  "- App information": "- aip kee jaanakaaree",
+  "App information": "aip kee jaanakaaree",
   "Tests the dictionary writer with the string and string array": "string aur string saranee ke saath shabdakosh lekhak ka pareekshan karen",
   "Tests the dictionary writer with the char and char array": "shabdakosh lekhak ka pareekshan chaar aur chaar saranee ke saath karata hai",
   "Tests the dictionary writer with the integer and integer array": "poornaank aur poornaank saranee ke saath shabdakosh lekhak ka pareekshan karen",

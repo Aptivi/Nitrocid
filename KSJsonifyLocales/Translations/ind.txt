@@ -902,7 +902,7 @@ charitr hata diya gaya.
 setings mein aapaka svaagat hai!
 ssh kamaand nishpaadit karane mein truti
 ssh shel mein truti
-- aip kee jaanakaaree
+aip kee jaanakaaree
 string aur string saranee ke saath shabdakosh lekhak ka pareekshan karen
 shabdakosh lekhak ka pareekshan chaar aur chaar saranee ke saath karata hai
 poornaank aur poornaank saranee ke saath shabdakosh lekhak ka pareekshan karen

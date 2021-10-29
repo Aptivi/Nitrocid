@@ -902,7 +902,7 @@ Merkki poistettu.
 Tervetuloa Asetuksiin!
 Virhe SSH-komennon suorittamisessa
 Virhe SSH-kuoressa
-- Sovellustiedot
+Sovellustiedot
 Testaa sanakirjan kirjoittajan merkkijonolla ja merkkijonoryhmällä
 Testaa sanakirjan kirjoittajan char- ja char-taulukolla
 Testaa sanakirjan kirjoittajan kokonaisluku- ja kokonaislukumatriisillä

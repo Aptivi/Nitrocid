@@ -902,7 +902,7 @@ Cymeriad wedi'i ddileu.
 Croeso i Gosodiadau!
 Gwall wrth weithredu gorchymyn SSH
 Gwall ar gragen SSH
-- Gwybodaeth ap
+Gwybodaeth ap
 Yn profi ysgrifennwr y geiriadur gyda'r arae llinyn a llinyn
 Yn profi ysgrifennwr y geiriadur gyda'r arae torgoch a torgoch
 Yn profi awdur y geiriadur gyda'r cyfanrif a'r arae gyfanrif

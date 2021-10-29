@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Ayarlar'a hoş geldiniz!",
   "Error executing SSH command": "SSH komutu yürütülürken hata oluştu",
   "Error on SSH shell": "SSH kabuğunda hata",
-  "- App information": "- Uygulama bilgileri",
+  "App information": "Uygulama bilgileri",
   "Tests the dictionary writer with the string and string array": "Sözlük yazarını dize ve dize dizisiyle test eder",
   "Tests the dictionary writer with the char and char array": "Sözlük yazarını char ve char dizisiyle test eder",
   "Tests the dictionary writer with the integer and integer array": "Sözlük yazıcısını tamsayı ve tamsayı dizisiyle test eder",

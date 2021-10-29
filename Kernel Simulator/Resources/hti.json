@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Byenveni nan Anviwònman!",
   "Error executing SSH command": "Erè nan egzekite lòd SSH",
   "Error on SSH shell": "Erè sou koki SSH",
-  "- App information": "- Enfòmasyon App",
+  "App information": "Enfòmasyon App",
   "Tests the dictionary writer with the string and string array": "Tès ekriven an diksyonè ak fisèl la ak etalaj fisèl",
   "Tests the dictionary writer with the char and char array": "Tès ekriven an diksyonè ak etalaj la Char ak Char",
   "Tests the dictionary writer with the integer and integer array": "Tès ekriven an diksyonè ak etalaj la antye relatif ak antye relatif",

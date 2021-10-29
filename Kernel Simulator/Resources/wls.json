@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Croeso i Gosodiadau!",
   "Error executing SSH command": "Gwall wrth weithredu gorchymyn SSH",
   "Error on SSH shell": "Gwall ar gragen SSH",
-  "- App information": "- Gwybodaeth ap",
+  "App information": "Gwybodaeth ap",
   "Tests the dictionary writer with the string and string array": "Yn profi ysgrifennwr y geiriadur gyda'r arae llinyn a llinyn",
   "Tests the dictionary writer with the char and char array": "Yn profi ysgrifennwr y geiriadur gyda'r arae torgoch a torgoch",
   "Tests the dictionary writer with the integer and integer array": "Yn profi awdur y geiriadur gyda'r cyfanrif a'r arae gyfanrif",

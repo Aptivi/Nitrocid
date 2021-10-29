@@ -902,7 +902,7 @@ Eliminouse o carácter.
 Benvido a Configuración.
 Erro ao executar o comando SSH
 Erro no shell SSH
-- Información da aplicación
+Información da aplicación
 Proba o escritor do dicionario coa cadea e a matriz de cadeas
 Proba o escritor do dicionario coa matriz char e char
 Proba o escritor do dicionario co número enteiro e a matriz enteira

@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Параметрлерге қош келдіңіз!",
   "Error executing SSH command": "SSH пәрменін орындау қатесі",
   "Error on SSH shell": "SSH қабығындағы қате",
-  "- App information": "- Қолданба туралы ақпарат",
+  "App information": "Қолданба туралы ақпарат",
   "Tests the dictionary writer with the string and string array": "Сөздік жазушыны жолмен және жолдық массивпен тексереді",
   "Tests the dictionary writer with the char and char array": "Сөздік жазушыны char және char массивімен тексереді",
   "Tests the dictionary writer with the integer and integer array": "Сөздік жазушыны бүтін және бүтін массивпен тексереді",

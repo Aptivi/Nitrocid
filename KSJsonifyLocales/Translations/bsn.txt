@@ -902,7 +902,7 @@ Znak je izbrisan.
 Dobro došli u Postavke!
 Greška pri izvršavanju SSH naredbe
 Greška u SSH ljusci
-- Informacije o aplikaciji
+Informacije o aplikaciji
 Testira pisac rječnika sa nizom i nizom nizova
 Testira pisac rječnika s nizom char i char
 Testira pisac rječnika s nizom integer i integer

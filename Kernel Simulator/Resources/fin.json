@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Tervetuloa Asetuksiin!",
   "Error executing SSH command": "Virhe SSH-komennon suorittamisessa",
   "Error on SSH shell": "Virhe SSH-kuoressa",
-  "- App information": "- Sovellustiedot",
+  "App information": "Sovellustiedot",
   "Tests the dictionary writer with the string and string array": "Testaa sanakirjan kirjoittajan merkkijonolla ja merkkijonoryhmällä",
   "Tests the dictionary writer with the char and char array": "Testaa sanakirjan kirjoittajan char- ja char-taulukolla",
   "Tests the dictionary writer with the integer and integer array": "Testaa sanakirjan kirjoittajan kokonaisluku- ja kokonaislukumatriisillä",

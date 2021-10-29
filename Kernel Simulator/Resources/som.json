@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Ku soo dhowow Dejinta!",
   "Error executing SSH command": "Cilad ah fulinta amarka SSH",
   "Error on SSH shell": "Khalad ku yaal qoorta SSH",
-  "- App information": "- Macluumaadka barnaamijka",
+  "App information": "Macluumaadka barnaamijka",
   "Tests the dictionary writer with the string and string array": "Tijaabiyaha qoraha qaamuuska ee xariga iyo xariga xariga",
   "Tests the dictionary writer with the char and char array": "Tijaabinta qoraha qaamuuska ee char iyo char array",
   "Tests the dictionary writer with the integer and integer array": "Tijaabiyaha qoraha qaamuuska ee leh tiro iyo tiro isku dhafan",

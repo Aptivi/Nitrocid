@@ -902,7 +902,7 @@ Posta? usuni?ta.
 Witamy w Ustawieniach!
 B??d podczas wykonywania polecenia SSH
 B??d w pow?oce SSH
-- Informacje o aplikacji
+Informacje o aplikacji
 Testuje program pisz?cy s?ownik z tablic? ci?g?w i ci?g?w znak?w
 Testuje program pisz?cy s?ownik za pomoc? tablicy char i char
 Testuje program pisz?cy s?ownik z tablic? liczb ca?kowitych i liczb ca?kowitych

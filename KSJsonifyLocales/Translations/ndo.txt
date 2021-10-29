@@ -902,7 +902,7 @@ Karakter dihapus.
 Selamat datang di Pengaturan!
 Kesalahan menjalankan perintah SSH
 Kesalahan pada shell SSH
-- Informasi aplikasi
+Informasi aplikasi
 Menguji penulis kamus dengan string dan array string
 Menguji penulis kamus dengan array char dan char
 Menguji penulis kamus dengan array integer dan integer

@@ -903,7 +903,7 @@
   "Welcome to Settings!": "Добро пожаловать в настройки!",
   "Error executing SSH command": "Ошибка при выполнении команды SSH",
   "Error on SSH shell": "Ошибка в оболочке SSH",
-  "- App information": "- Информация о приложении",
+  "App information": "Информация о приложении",
   "Tests the dictionary writer with the string and string array": "Проверяет средство записи словаря со строкой и массивом строк",
   "Tests the dictionary writer with the char and char array": "Проверяет средство записи словаря с помощью массива char и char",
   "Tests the dictionary writer with the integer and integer array": "Проверяет средство записи словаря с целочисленным и целочисленным массивами",
