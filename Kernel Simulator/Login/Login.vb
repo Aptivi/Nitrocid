@@ -238,6 +238,7 @@ Public Module Login
         Wdbg(DebugLevel.I, "Lock released.")
         ShowMOTDOnceFlag = True
         If ShowMAL Then W(ProbePlaces(MAL), True, ColTypes.Banner)
+        ShowHeadlineLogin()
 
         'Fire event PostLogin
         EventManager.RaisePostLogin(CurrentUser.Username)

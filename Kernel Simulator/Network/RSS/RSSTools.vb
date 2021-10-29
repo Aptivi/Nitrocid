@@ -23,6 +23,15 @@ Imports System.Xml
 Public Module RSSTools
 
     ''' <summary>
+    ''' Whether to show the RSS headline each login
+    ''' </summary>
+    Public ShowHeadlineOnLogin As Boolean
+    ''' <summary>
+    ''' RSS headline URL
+    ''' </summary>
+    Public RssHeadlineUrl As String = ""
+
+    ''' <summary>
     ''' Make instances of RSS Article from feed node and type
     ''' </summary>
     ''' <param name="FeedNode">Feed XML node</param>
@@ -177,6 +186,25 @@ Public Module RSSTools
             End If
             Thread.Sleep(RSSRefreshInterval)
         End While
+    End Sub
+
+    ''' <summary>
+    ''' Show a headline on login
+    ''' </summary>
+    Sub ShowHeadlineLogin()
+        If ShowHeadlineOnLogin Then
+            Try
+                Dim Feed As New RSSFeed(RssHeadlineUrl, RSSFeedType.Infer)
+                If Not Feed.FeedArticles.Count = 0 Then
+                    W(DoTranslation("Latest news:") + " ", False, ColTypes.ListEntry)
+                    W(Feed.FeedArticles(0).ArticleTitle, True, ColTypes.ListValue)
+                End If
+            Catch ex As Exception
+                Wdbg(DebugLevel.E, "Failed to get latest news: {0}", ex.Message)
+                WStkTrc(ex)
+                W(DoTranslation("Failed to get the latest news."), True, ColTypes.Error)
+            End Try
+        End If
     End Sub
 
 End Module

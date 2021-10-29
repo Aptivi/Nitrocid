@@ -734,7 +734,9 @@ Public Module Config
                     {"Right frame character for notification border", NotifyRightFrameChar},
                     {"Manual page information style", ManpageInfoStyle},
                     {"Default difficulty for SpeedPress", SpeedPressCurrentDifficulty},
-                    {"Keypress timeout for SpeedPress", SpeedPressTimeout}
+                    {"Keypress timeout for SpeedPress", SpeedPressTimeout},
+                    {"Show latest RSS headline on login", ShowHeadlineOnLogin},
+                    {"RSS headline URL", RssHeadlineUrl}
             }
             ConfigurationObject.Add("Misc", MiscConfig)
 
@@ -1349,6 +1351,8 @@ Public Module Config
             ManpageInfoStyle = If(ConfigToken("Misc")?("Manual page information style"), "")
             SpeedPressCurrentDifficulty = If(ConfigToken("Misc")?("Default difficulty for SpeedPress") IsNot Nothing, If([Enum].TryParse(ConfigToken("Misc")?("Default difficulty for SpeedPress"), SpeedPressCurrentDifficulty), SpeedPressCurrentDifficulty, SpeedPressDifficulty.Medium), SpeedPressDifficulty.Medium)
             SpeedPressTimeout = If(Integer.TryParse(ConfigToken("Misc")?("Keypress timeout for SpeedPress"), 0), ConfigToken("Misc")?("Keypress timeout for SpeedPress"), 3000)
+            ShowHeadlineOnLogin = If(ConfigToken("Misc")?("Show latest RSS headline on login"), False)
+            RssHeadlineUrl = If(ConfigToken("Misc")?("RSS headline URL"), "")
 
             'Check to see if the config needs fixes
             RepairConfig()

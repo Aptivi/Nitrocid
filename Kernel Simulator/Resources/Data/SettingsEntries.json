@@ -1056,6 +1056,18 @@
                 "Type": "SInt",
                 "Variable": "SpeedPressTimeout",
                 "Description": "How many milliseconds to wait for the keypress before the timeout? (In custom difficulty)"
+            },
+            {
+                "Name": "Show latest RSS headline on login",
+                "Type": "SBoolean",
+                "Variable": "ShowHeadlineOnLogin",
+                "Description": "Each login, it will show the latest RSS headline from the selected headline URL."
+            },
+            {
+                "Name": "RSS headline URL",
+                "Type": "SString",
+                "Variable": "RssHeadlineUrl",
+                "Description": "RSS headline URL to be used when showing the latest headline. This is usually your favorite feed."
             }
         ]
     }
