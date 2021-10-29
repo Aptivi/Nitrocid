@@ -61,6 +61,10 @@ Public Module HelpSystem
         Dim ModCommandList As Dictionary(Of String, String) = ModDefs
         Dim AliasedCommandList As Dictionary(Of String, String) = Aliases
         Select Case CommandType
+            Case ShellCommandType.Shell
+                CommandList = Commands
+                ModCommandList = ModDefs
+                AliasedCommandList = Aliases
             Case ShellCommandType.FTPShell
                 CommandList = FTPCommands
                 ModCommandList = FTPModDefs
@@ -143,6 +147,9 @@ Public Module HelpSystem
             If Not SimHelp Then
                 'The built-in commands
                 DecisiveWrite(CommandType, DebugDeviceSocket, DoTranslation("General commands:"), True, ColTypes.ListTitle)
+
+                'Check the command list count and print not implemented. This is an extremely rare situation.
+                If CommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, "* " + DoTranslation("Shell commands not implemented!!!"), True, ColTypes.Warning)
                 For Each cmd As String In CommandList.Keys
                     If (Not CommandList(cmd).Strict) Or (CommandList(cmd).Strict And HasPermission(CurrentUser.Username, PermissionType.Administrator)) Then
                         DecisiveWrite(CommandType, DebugDeviceSocket, "- {0}: ", False, ColTypes.ListEntry, cmd)
@@ -152,7 +159,7 @@ Public Module HelpSystem
 
                 'The mod commands
                 DecisiveWrite(CommandType, DebugDeviceSocket, vbNewLine + DoTranslation("Mod commands:"), True, ColTypes.ListTitle)
-                If ModCommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, DoTranslation("No mod commands."), True, ColTypes.Neutral)
+                If ModCommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, "* " + DoTranslation("No mod commands."), True, ColTypes.Warning)
                 For Each cmd As String In ModCommandList.Keys
                     DecisiveWrite(CommandType, DebugDeviceSocket, "- {0}: ", False, ColTypes.ListEntry, cmd)
                     DecisiveWrite(CommandType, DebugDeviceSocket, "{0}", True, ColTypes.ListValue, ModCommandList(cmd))
@@ -160,7 +167,7 @@ Public Module HelpSystem
 
                 'The alias commands
                 DecisiveWrite(CommandType, DebugDeviceSocket, vbNewLine + DoTranslation("Alias commands:"), True, ColTypes.ListTitle)
-                If AliasedCommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, DoTranslation("No alias commands."), True, ColTypes.Neutral)
+                If AliasedCommandList.Count = 0 Then DecisiveWrite(CommandType, DebugDeviceSocket, "* " + DoTranslation("No alias commands."), True, ColTypes.Warning)
                 For Each cmd As String In AliasedCommandList.Keys
                     DecisiveWrite(CommandType, DebugDeviceSocket, "- {0}: ", False, ColTypes.ListEntry, cmd)
                     DecisiveWrite(CommandType, DebugDeviceSocket, "{0}", True, ColTypes.ListValue, CommandList(AliasedCommandList(cmd)).GetTranslatedHelpEntry)
