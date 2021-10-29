@@ -127,13 +127,13 @@ Public Module HelpSystem
                 W($"{HelpDefinition}", True, ColTypes.ListValue)
             ElseIf DebugDeviceSocket IsNot Nothing Then
                 If HelpUsages.Length <> 0 Then
-                    DebugDeviceSocket.WriteLine(DoTranslation("Usage:") + $" /{command} {HelpUsages(0)}")
+                    DebugDeviceSocket.Write(DoTranslation("Usage:") + $" /{command} {HelpUsages(0)}")
                     If HelpUsages.Length > 1 Then
                         For Each HelpUsage As String In HelpUsages.Skip(1)
-                            DebugDeviceSocket.WriteLine(vbNewLine + " ".Repeat(UsageLength) + $" /{command} {HelpUsage}")
+                            DebugDeviceSocket.Write(vbNewLine + " ".Repeat(UsageLength) + $" /{command} {HelpUsage}")
                         Next
                     End If
-                    DebugDeviceSocket.WriteLine(": ")
+                    DebugDeviceSocket.Write(": ")
                 End If
                 DebugDeviceSocket.WriteLine($"{HelpDefinition}")
             End If
