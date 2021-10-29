@@ -53,6 +53,10 @@ Public Class Color
     ''' Is the color bright?
     ''' </summary>
     Public ReadOnly Property IsBright As Boolean
+    ''' <summary>
+    ''' Is the color dark?
+    ''' </summary>
+    Public ReadOnly Property IsDark As Boolean
 
     ''' <summary>
     ''' Makes a new instance of color class from specifier.
@@ -69,6 +73,7 @@ Public Class Color
                 VTSequenceBackground = GetEsc() + $"[48;2;{PlainSequence}m"
                 Type = ColorType.TrueColor
                 IsBright = ColorSpecifierArray(0) + 0.2126 + ColorSpecifierArray(1) + 0.7152 + ColorSpecifierArray(2) + 0.0722 > 255 / 2
+                IsDark = ColorSpecifierArray(0) + 0.2126 + ColorSpecifierArray(1) + 0.7152 + ColorSpecifierArray(2) + 0.0722 < 255 / 2
                 R = ColorSpecifierArray(0)
                 G = ColorSpecifierArray(1)
                 B = ColorSpecifierArray(2)
@@ -83,6 +88,7 @@ Public Class Color
             VTSequenceBackground = GetEsc() + $"[48;5;{PlainSequence}m"
             Type = ColorType._255Color
             IsBright = ColorsInfo.IsBright
+            IsDark = ColorsInfo.IsDark
             R = ColorsInfo.R
             G = ColorsInfo.G
             B = ColorsInfo.B
@@ -104,6 +110,7 @@ Public Class Color
         VTSequenceBackground = GetEsc() + $"[48;2;{PlainSequence}m"
         Type = ColorType.TrueColor
         IsBright = R + 0.2126 + G + 0.7152 + B + 0.0722 > 255 / 2
+        IsDark = R + 0.2126 + G + 0.7152 + B + 0.0722 < 255 / 2
         Me.R = R
         Me.G = G
         Me.B = B
@@ -121,6 +128,7 @@ Public Class Color
         VTSequenceBackground = GetEsc() + $"[48;5;{PlainSequence}m"
         Type = ColorType._255Color
         IsBright = ColorsInfo.IsBright
+        IsDark = ColorsInfo.IsDark
         R = ColorsInfo.R
         G = ColorsInfo.G
         B = ColorsInfo.B
