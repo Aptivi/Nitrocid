@@ -313,7 +313,7 @@ Public Module SettingsApp
 
                 'If the type is a color, initialize the color wheel
                 If KeyType = SettingsKeyType.SColor Then
-                    ColorValue = ColorWheel(New Color(KeyDefaultValue).Type = ColorType.TrueColor, If(New Color(KeyDefaultValue).Type = ColorType._255Color, New Color(KeyDefaultValue).PlainSequence, ConsoleColors.White), New Color(KeyDefaultValue).R, New Color(KeyDefaultValue).G, New Color(KeyDefaultValue).B)
+                    ColorValue = ColorWheel(New Color(KeyDefaultValue.ToString).Type = ColorType.TrueColor, If(New Color(KeyDefaultValue.ToString).Type = ColorType._255Color, New Color(KeyDefaultValue.ToString).PlainSequence, ConsoleColors.White), New Color(KeyDefaultValue.ToString).R, New Color(KeyDefaultValue.ToString).G, New Color(KeyDefaultValue.ToString).B)
                 End If
 
                 If KeyType = SettingsKeyType.SSelection Then
@@ -477,7 +477,7 @@ Public Module SettingsApp
                     Wdbg(DebugLevel.I, "User requested exit. Returning...")
                     KeyFinished = True
                 ElseIf KeyType = SettingsKeyType.SColor Then
-                    SetConfigValueField(KeyVar, New Color(ColorValue).PlainSequence)
+                    SetConfigValueField(KeyVar, New Color(ColorValue.ToString).PlainSequence)
                     Wdbg(DebugLevel.I, "User requested exit. Returning...")
                     KeyFinished = True
                 Else

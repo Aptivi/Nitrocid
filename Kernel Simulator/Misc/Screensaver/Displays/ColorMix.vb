@@ -77,9 +77,9 @@ Module ColorMixDisplay
                     Dim GreenColorNum As Integer = colorrand.Next(ColorMixMinimumGreenColorLevel, ColorMixMaximumGreenColorLevel)
                     Dim BlueColorNum As Integer = colorrand.Next(ColorMixMinimumBlueColorLevel, ColorMixMaximumBlueColorLevel)
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                    Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
+                    Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                    If Not ResizeSyncing Then Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
+                    If Not ResizeSyncing Then Console.Write(ColorStorage.VTSequenceBackground + " ")
                 ElseIf ColorMix255Colors Then
                     Dim ColorNum As Integer = colorrand.Next(ColorMixMinimumColorLevel, ColorMixMaximumColorLevel)
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)

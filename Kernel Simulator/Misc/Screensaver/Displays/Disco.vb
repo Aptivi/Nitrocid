@@ -53,12 +53,12 @@ Module DiscoDisplay
                         Dim GreenColorNum As Integer = random.Next(255)
                         Dim BlueColorNum As Integer = random.Next(255)
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                        Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-                        Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m")
+                        Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
+                        Console.Write(ColorStorage.VTSequenceBackground)
                     Else
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", CurrentColorR, CurrentColorG, CurrentColorB)
-                        Dim ColorStorage As New RGB(CurrentColorR, CurrentColorG, CurrentColorB)
-                        Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m")
+                        Dim ColorStorage As New Color(CurrentColorR, CurrentColorG, CurrentColorB)
+                        Console.Write(ColorStorage.VTSequenceBackground)
                     End If
                 ElseIf Disco255Colors Then
                     If Not DiscoCycleColors Then

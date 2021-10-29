@@ -18,7 +18,7 @@
 
 Imports KS
 
-<TestClass()> Public Class RGBInitializationTests
+<TestClass()> <Obsolete("RGB is obsolete.")> Public Class RGBInitializationTests
 
     ''' <summary>
     ''' Tests initializing the RGB instance from color levels (R, G, B)

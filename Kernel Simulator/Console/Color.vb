@@ -91,4 +91,39 @@ Public Class Color
         End If
     End Sub
 
+    ''' <summary>
+    ''' Makes a new instance of color class from specifier.
+    ''' </summary>
+    ''' <param name="R">The red level</param>
+    ''' <param name="G">The green level</param>
+    ''' <param name="B">The blue level</param>
+    ''' <exception cref="Exceptions.ColorException"></exception>
+    Public Sub New(R As Integer, G As Integer, B As Integer)
+        PlainSequence = $"{R};{G};{B}"
+        VTSequenceForeground = GetEsc() + $"[38;2;{PlainSequence}m"
+        VTSequenceBackground = GetEsc() + $"[48;2;{PlainSequence}m"
+        Type = ColorType.TrueColor
+        IsBright = R + 0.2126 + G + 0.7152 + B + 0.0722 > 255 / 2
+        Me.R = R
+        Me.G = G
+        Me.B = B
+    End Sub
+
+    ''' <summary>
+    ''' Makes a new instance of color class from specifier.
+    ''' </summary>
+    ''' <param name="ColorNum">The color number</param>
+    ''' <exception cref="Exceptions.ColorException"></exception>
+    Public Sub New(ColorNum As Integer)
+        Dim ColorsInfo As New ConsoleColorsInfo(ColorNum)
+        PlainSequence = ColorNum
+        VTSequenceForeground = GetEsc() + $"[38;5;{PlainSequence}m"
+        VTSequenceBackground = GetEsc() + $"[48;5;{PlainSequence}m"
+        Type = ColorType._255Color
+        IsBright = ColorsInfo.IsBright
+        R = ColorsInfo.R
+        G = ColorsInfo.G
+        B = ColorsInfo.B
+    End Sub
+
 End Class

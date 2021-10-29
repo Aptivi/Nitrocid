@@ -159,8 +159,7 @@ Module BouncingTextDisplay
             Dim RedColorNum As Integer = RandomDriver.Next(BouncingTextMinimumRedColorLevel, BouncingTextMaximumRedColorLevel)
             Dim GreenColorNum As Integer = RandomDriver.Next(BouncingTextMinimumGreenColorLevel, BouncingTextMaximumGreenColorLevel)
             Dim BlueColorNum As Integer = RandomDriver.Next(BouncingTextMinimumBlueColorLevel, BouncingTextMaximumBlueColorLevel)
-            Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-            ColorInstance = New Color(ColorStorage.ToString)
+            ColorInstance = New Color(RedColorNum, GreenColorNum, BlueColorNum)
         ElseIf BouncingText255Colors Then
             Dim ColorNum As Integer = RandomDriver.Next(BouncingTextMinimumColorLevel, BouncingTextMaximumColorLevel)
             ColorInstance = New Color(ColorNum)

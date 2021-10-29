@@ -784,42 +784,42 @@ Public Module Config
             Wdbg(DebugLevel.I, "Loading colors...")
             If ColoredShell Then
                 'We use New Color() to parse entered color. This is to ensure that the kernel can use the correct VT sequence.
-                UserNameShellColor = New Color(If(ConfigToken("Colors")?("User Name Shell Color"), ConsoleColors.Green)).PlainSequence
-                HostNameShellColor = New Color(If(ConfigToken("Colors")?("Host Name Shell Color"), ConsoleColors.DarkGreen)).PlainSequence
-                ContKernelErrorColor = New Color(If(ConfigToken("Colors")?("Continuable Kernel Error Color"), ConsoleColors.Yellow)).PlainSequence
-                UncontKernelErrorColor = New Color(If(ConfigToken("Colors")?("Uncontinuable Kernel Error Color"), ConsoleColors.Red)).PlainSequence
-                NeutralTextColor = New Color(If(ConfigToken("Colors")?("Text Color"), ConsoleColors.Gray)).PlainSequence
-                LicenseColor = New Color(If(ConfigToken("Colors")?("License Color"), ConsoleColors.White)).PlainSequence
-                BackgroundColor = New Color(If(ConfigToken("Colors")?("Background Color"), ConsoleColors.Black)).PlainSequence
-                InputColor = New Color(If(ConfigToken("Colors")?("Input Color"), ConsoleColors.White)).PlainSequence
-                ListEntryColor = New Color(If(ConfigToken("Colors")?("List Entry Color"), ConsoleColors.DarkYellow)).PlainSequence
-                ListValueColor = New Color(If(ConfigToken("Colors")?("List Value Color"), ConsoleColors.DarkGray)).PlainSequence
-                StageColor = New Color(If(ConfigToken("Colors")?("Kernel Stage Color"), ConsoleColors.Green)).PlainSequence
-                ErrorColor = New Color(If(ConfigToken("Colors")?("Error Text Color"), ConsoleColors.Red)).PlainSequence
-                WarningColor = New Color(If(ConfigToken("Colors")?("Warning Text Color"), ConsoleColors.Yellow)).PlainSequence
-                OptionColor = New Color(If(ConfigToken("Colors")?("Option Color"), ConsoleColors.DarkYellow)).PlainSequence
-                BannerColor = New Color(If(ConfigToken("Colors")?("Banner Color"), ConsoleColors.Green)).PlainSequence
-                NotificationTitleColor = New Color(If(ConfigToken("Colors")?("Notification Title Color"), ConsoleColors.White)).PlainSequence
-                NotificationDescriptionColor = New Color(If(ConfigToken("Colors")?("Notification Description Color"), ConsoleColors.Gray)).PlainSequence
-                NotificationProgressColor = New Color(If(ConfigToken("Colors")?("Notification Progress Color"), ConsoleColors.DarkYellow)).PlainSequence
-                NotificationFailureColor = New Color(If(ConfigToken("Colors")?("Notification Failure Color"), ConsoleColors.Red)).PlainSequence
-                QuestionColor = New Color(If(ConfigToken("Colors")?("Question Color"), ConsoleColors.Yellow)).PlainSequence
-                SuccessColor = New Color(If(ConfigToken("Colors")?("Success Color"), ConsoleColors.Green)).PlainSequence
-                UserDollarColor = New Color(If(ConfigToken("Colors")?("User Dollar Color"), ConsoleColors.Gray)).PlainSequence
-                TipColor = New Color(If(ConfigToken("Colors")?("Tip Color"), ConsoleColors.Gray)).PlainSequence
-                SeparatorTextColor = New Color(If(ConfigToken("Colors")?("Separator Text Color"), ConsoleColors.White)).PlainSequence
-                SeparatorColor = New Color(If(ConfigToken("Colors")?("Separator Color"), ConsoleColors.Gray)).PlainSequence
-                ListTitleColor = New Color(If(ConfigToken("Colors")?("List Title Color"), ConsoleColors.White)).PlainSequence
-                DevelopmentWarningColor = New Color(If(ConfigToken("Colors")?("Development Warning Color"), ConsoleColors.Yellow)).PlainSequence
-                StageTimeColor = New Color(If(ConfigToken("Colors")?("Stage Time Color"), ConsoleColors.Gray)).PlainSequence
-                ProgressColor = New Color(If(ConfigToken("Colors")?("Progress Color"), ConsoleColors.DarkYellow)).PlainSequence
-                BackOptionColor = New Color(If(ConfigToken("Colors")?("Back Option Color"), ConsoleColors.DarkRed)).PlainSequence
-                LowPriorityBorderColor = New Color(If(ConfigToken("Colors")?("Low Priority Border Color"), ConsoleColors.White)).PlainSequence
-                MediumPriorityBorderColor = New Color(If(ConfigToken("Colors")?("Medium Priority Border Color"), ConsoleColors.Yellow)).PlainSequence
-                HighPriorityBorderColor = New Color(If(ConfigToken("Colors")?("High Priority Border Color"), ConsoleColors.Red)).PlainSequence
-                TableSeparatorColor = New Color(If(ConfigToken("Colors")?("Table Separator Color"), ConsoleColors.DarkGray)).PlainSequence
-                TableHeaderColor = New Color(If(ConfigToken("Colors")?("Table Header Color"), ConsoleColors.White)).PlainSequence
-                TableValueColor = New Color(If(ConfigToken("Colors")?("Table Value Color"), ConsoleColors.Gray)).PlainSequence
+                UserNameShellColor = New Color(If(ConfigToken("Colors")?("User Name Shell Color"), ConsoleColors.Green).ToString).PlainSequence
+                HostNameShellColor = New Color(If(ConfigToken("Colors")?("Host Name Shell Color"), ConsoleColors.DarkGreen).ToString).PlainSequence
+                ContKernelErrorColor = New Color(If(ConfigToken("Colors")?("Continuable Kernel Error Color"), ConsoleColors.Yellow).ToString).PlainSequence
+                UncontKernelErrorColor = New Color(If(ConfigToken("Colors")?("Uncontinuable Kernel Error Color"), ConsoleColors.Red).ToString).PlainSequence
+                NeutralTextColor = New Color(If(ConfigToken("Colors")?("Text Color"), ConsoleColors.Gray).ToString).PlainSequence
+                LicenseColor = New Color(If(ConfigToken("Colors")?("License Color"), ConsoleColors.White).ToString).PlainSequence
+                BackgroundColor = New Color(If(ConfigToken("Colors")?("Background Color"), ConsoleColors.Black).ToString).PlainSequence
+                InputColor = New Color(If(ConfigToken("Colors")?("Input Color"), ConsoleColors.White).ToString).PlainSequence
+                ListEntryColor = New Color(If(ConfigToken("Colors")?("List Entry Color"), ConsoleColors.DarkYellow).ToString).PlainSequence
+                ListValueColor = New Color(If(ConfigToken("Colors")?("List Value Color"), ConsoleColors.DarkGray).ToString).PlainSequence
+                StageColor = New Color(If(ConfigToken("Colors")?("Kernel Stage Color"), ConsoleColors.Green).ToString).PlainSequence
+                ErrorColor = New Color(If(ConfigToken("Colors")?("Error Text Color"), ConsoleColors.Red).ToString).PlainSequence
+                WarningColor = New Color(If(ConfigToken("Colors")?("Warning Text Color"), ConsoleColors.Yellow).ToString).PlainSequence
+                OptionColor = New Color(If(ConfigToken("Colors")?("Option Color"), ConsoleColors.DarkYellow).ToString).PlainSequence
+                BannerColor = New Color(If(ConfigToken("Colors")?("Banner Color"), ConsoleColors.Green).ToString).PlainSequence
+                NotificationTitleColor = New Color(If(ConfigToken("Colors")?("Notification Title Color"), ConsoleColors.White).ToString).PlainSequence
+                NotificationDescriptionColor = New Color(If(ConfigToken("Colors")?("Notification Description Color"), ConsoleColors.Gray).ToString).PlainSequence
+                NotificationProgressColor = New Color(If(ConfigToken("Colors")?("Notification Progress Color"), ConsoleColors.DarkYellow).ToString).PlainSequence
+                NotificationFailureColor = New Color(If(ConfigToken("Colors")?("Notification Failure Color"), ConsoleColors.Red).ToString).PlainSequence
+                QuestionColor = New Color(If(ConfigToken("Colors")?("Question Color"), ConsoleColors.Yellow).ToString).PlainSequence
+                SuccessColor = New Color(If(ConfigToken("Colors")?("Success Color"), ConsoleColors.Green).ToString).PlainSequence
+                UserDollarColor = New Color(If(ConfigToken("Colors")?("User Dollar Color"), ConsoleColors.Gray).ToString).PlainSequence
+                TipColor = New Color(If(ConfigToken("Colors")?("Tip Color"), ConsoleColors.Gray).ToString).PlainSequence
+                SeparatorTextColor = New Color(If(ConfigToken("Colors")?("Separator Text Color"), ConsoleColors.White).ToString).PlainSequence
+                SeparatorColor = New Color(If(ConfigToken("Colors")?("Separator Color"), ConsoleColors.Gray).ToString).PlainSequence
+                ListTitleColor = New Color(If(ConfigToken("Colors")?("List Title Color"), ConsoleColors.White).ToString).PlainSequence
+                DevelopmentWarningColor = New Color(If(ConfigToken("Colors")?("Development Warning Color"), ConsoleColors.Yellow).ToString).PlainSequence
+                StageTimeColor = New Color(If(ConfigToken("Colors")?("Stage Time Color"), ConsoleColors.Gray).ToString).PlainSequence
+                ProgressColor = New Color(If(ConfigToken("Colors")?("Progress Color"), ConsoleColors.DarkYellow).ToString).PlainSequence
+                BackOptionColor = New Color(If(ConfigToken("Colors")?("Back Option Color"), ConsoleColors.DarkRed).ToString).PlainSequence
+                LowPriorityBorderColor = New Color(If(ConfigToken("Colors")?("Low Priority Border Color"), ConsoleColors.White).ToString).PlainSequence
+                MediumPriorityBorderColor = New Color(If(ConfigToken("Colors")?("Medium Priority Border Color"), ConsoleColors.Yellow).ToString).PlainSequence
+                HighPriorityBorderColor = New Color(If(ConfigToken("Colors")?("High Priority Border Color"), ConsoleColors.Red).ToString).PlainSequence
+                TableSeparatorColor = New Color(If(ConfigToken("Colors")?("Table Separator Color"), ConsoleColors.DarkGray).ToString).PlainSequence
+                TableHeaderColor = New Color(If(ConfigToken("Colors")?("Table Header Color"), ConsoleColors.White).ToString).PlainSequence
+                TableValueColor = New Color(If(ConfigToken("Colors")?("Table Value Color"), ConsoleColors.Gray).ToString).PlainSequence
                 LoadBack()
             End If
 
@@ -958,7 +958,7 @@ Public Module Config
             ColorMix255Colors = If(ConfigToken("Screensaver")?("ColorMix")?("Activate 255 Color Mode"), False)
             ColorMixTrueColor = If(ConfigToken("Screensaver")?("ColorMix")?("Activate True Color Mode"), True)
             ColorMixDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("ColorMix")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("ColorMix")?("Delay in Milliseconds"), 1)
-            ColorMixBackgroundColor = New Color(If(ConfigToken("Screensaver")?("ColorMix")?("Background color"), ConsoleColors.Red)).PlainSequence
+            ColorMixBackgroundColor = New Color(If(ConfigToken("Screensaver")?("ColorMix")?("Background color"), ConsoleColors.Red).ToString).PlainSequence
             ColorMixMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("ColorMix")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("ColorMix")?("Minimum red color level"), 0)
             ColorMixMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("ColorMix")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("ColorMix")?("Minimum green color level"), 0)
             ColorMixMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("ColorMix")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("ColorMix")?("Minimum blue color level"), 0)
@@ -998,15 +998,15 @@ Public Module Config
 
             '> GlitterMatrix
             GlitterMatrixDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("GlitterMatrix")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("GlitterMatrix")?("Delay in Milliseconds"), 1)
-            GlitterMatrixBackgroundColor = New Color(If(ConfigToken("Screensaver")?("GlitterMatrix")?("Background color"), ConsoleColors.Black)).PlainSequence
-            GlitterMatrixForegroundColor = New Color(If(ConfigToken("Screensaver")?("GlitterMatrix")?("Foreground color"), ConsoleColors.Green)).PlainSequence
+            GlitterMatrixBackgroundColor = New Color(If(ConfigToken("Screensaver")?("GlitterMatrix")?("Background color"), ConsoleColors.Black).ToString).PlainSequence
+            GlitterMatrixForegroundColor = New Color(If(ConfigToken("Screensaver")?("GlitterMatrix")?("Foreground color"), ConsoleColors.Green).ToString).PlainSequence
 
             '> Lines
             Lines255Colors = If(ConfigToken("Screensaver")?("Lines")?("Activate 255 Color Mode"), False)
             LinesTrueColor = If(ConfigToken("Screensaver")?("Lines")?("Activate True Color Mode"), True)
             LinesDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Lines")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Lines")?("Delay in Milliseconds"), 500)
             LinesLineChar = If(ConfigToken("Screensaver")?("Lines")?("Line character"), "-")
-            LinesBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Lines")?("Background color"), ConsoleColors.Black)).PlainSequence
+            LinesBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Lines")?("Background color"), ConsoleColors.Black).ToString).PlainSequence
             LinesMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lines")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Lines")?("Minimum red color level"), 0)
             LinesMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lines")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Lines")?("Minimum green color level"), 0)
             LinesMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lines")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("Lines")?("Minimum blue color level"), 0)
@@ -1019,7 +1019,7 @@ Public Module Config
             '> Dissolve
             Dissolve255Colors = If(ConfigToken("Screensaver")?("Dissolve")?("Activate 255 Color Mode"), False)
             DissolveTrueColor = If(ConfigToken("Screensaver")?("Dissolve")?("Activate True Color Mode"), True)
-            DissolveBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Dissolve")?("Background color"), ConsoleColors.Black)).PlainSequence
+            DissolveBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Dissolve")?("Background color"), ConsoleColors.Black).ToString).PlainSequence
             DissolveMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Dissolve")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Dissolve")?("Minimum red color level"), 0)
             DissolveMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Dissolve")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Dissolve")?("Minimum green color level"), 0)
             DissolveMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Dissolve")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("Dissolve")?("Minimum blue color level"), 0)
@@ -1033,8 +1033,8 @@ Public Module Config
             BouncingBlock255Colors = If(ConfigToken("Screensaver")?("BouncingBlock")?("Activate 255 Color Mode"), False)
             BouncingBlockTrueColor = If(ConfigToken("Screensaver")?("BouncingBlock")?("Activate True Color Mode"), True)
             BouncingBlockDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingBlock")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("BouncingBlock")?("Delay in Milliseconds"), 10)
-            BouncingBlockBackgroundColor = New Color(If(ConfigToken("Screensaver")?("BouncingBlock")?("Background color"), ConsoleColors.Black)).PlainSequence
-            BouncingBlockForegroundColor = New Color(If(ConfigToken("Screensaver")?("BouncingBlock")?("Foreground color"), ConsoleColors.White)).PlainSequence
+            BouncingBlockBackgroundColor = New Color(If(ConfigToken("Screensaver")?("BouncingBlock")?("Background color"), ConsoleColors.Black).ToString).PlainSequence
+            BouncingBlockForegroundColor = New Color(If(ConfigToken("Screensaver")?("BouncingBlock")?("Foreground color"), ConsoleColors.White).ToString).PlainSequence
             BouncingBlockMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingBlock")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("BouncingBlock")?("Minimum red color level"), 0)
             BouncingBlockMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingBlock")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("BouncingBlock")?("Minimum green color level"), 0)
             BouncingBlockMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingBlock")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("BouncingBlock")?("Minimum blue color level"), 0)
@@ -1049,8 +1049,8 @@ Public Module Config
             BouncingTextTrueColor = If(ConfigToken("Screensaver")?("BouncingText")?("Activate True Color Mode"), True)
             BouncingTextDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingText")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("BouncingText")?("Delay in Milliseconds"), 10)
             BouncingTextWrite = If(ConfigToken("Screensaver")?("BouncingText")?("Text Shown"), "Kernel Simulator")
-            BouncingTextBackgroundColor = New Color(If(ConfigToken("Screensaver")?("BouncingText")?("Background color"), ConsoleColors.Black)).PlainSequence
-            BouncingTextForegroundColor = New Color(If(ConfigToken("Screensaver")?("BouncingText")?("Foreground color"), ConsoleColors.White)).PlainSequence
+            BouncingTextBackgroundColor = New Color(If(ConfigToken("Screensaver")?("BouncingText")?("Background color"), ConsoleColors.Black).ToString).PlainSequence
+            BouncingTextForegroundColor = New Color(If(ConfigToken("Screensaver")?("BouncingText")?("Foreground color"), ConsoleColors.White).ToString).PlainSequence
             BouncingTextMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingText")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("BouncingText")?("Minimum red color level"), 0)
             BouncingTextMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingText")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("BouncingText")?("Minimum green color level"), 0)
             BouncingTextMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("BouncingText")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("BouncingText")?("Minimum blue color level"), 0)
@@ -1135,7 +1135,7 @@ Public Module Config
             LighterTrueColor = If(ConfigToken("Screensaver")?("Lighter")?("Activate True Color Mode"), True)
             LighterDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Lighter")?("Delay in Milliseconds"), 100)
             LighterMaxPositions = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Max Positions Count"), 0), ConfigToken("Screensaver")?("Lighter")?("Max Positions Count"), 10)
-            LighterBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Lighter")?("Background color"), ConsoleColors.Black)).PlainSequence
+            LighterBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Lighter")?("Background color"), ConsoleColors.Black).ToString).PlainSequence
             LighterMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Lighter")?("Minimum red color level"), 0)
             LighterMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Lighter")?("Minimum green color level"), 0)
             LighterMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Lighter")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("Lighter")?("Minimum blue color level"), 0)
@@ -1150,7 +1150,7 @@ Public Module Config
             WipeTrueColor = If(ConfigToken("Screensaver")?("Wipe")?("Activate True Color Mode"), True)
             WipeDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Wipe")?("Delay in Milliseconds"), 10)
             WipeWipesNeededToChangeDirection = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Wipes to change direction"), 0), ConfigToken("Screensaver")?("Wipe")?("Wipes to change direction"), 10)
-            WipeBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Wipe")?("Background color"), ConsoleColors.Black)).PlainSequence
+            WipeBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Wipe")?("Background color"), ConsoleColors.Black).ToString).PlainSequence
             WipeMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Wipe")?("Minimum red color level"), 0)
             WipeMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Wipe")?("Minimum green color level"), 0)
             WipeMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Wipe")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("Wipe")?("Minimum blue color level"), 0)
@@ -1165,7 +1165,7 @@ Public Module Config
             FaderFadeOutDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Fade Out Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Fader")?("Fade Out Delay in Milliseconds"), 3000)
             FaderWrite = If(ConfigToken("Screensaver")?("Fader")?("Text Shown"), "Kernel Simulator")
             FaderMaxSteps = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Max Fade Steps"), 0), ConfigToken("Screensaver")?("Fader")?("Max Fade Steps"), 25)
-            FaderBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Fader")?("Background color"), ConsoleColors.Black)).PlainSequence
+            FaderBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Fader")?("Background color"), ConsoleColors.Black).ToString).PlainSequence
             FaderMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Fader")?("Minimum red color level"), 0)
             FaderMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Fader")?("Minimum green color level"), 0)
             FaderMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fader")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("Fader")?("Minimum blue color level"), 0)
@@ -1208,7 +1208,7 @@ Public Module Config
             TypoWritingSpeedMax = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Maximum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Typo")?("Maximum writing speed in WPM"), 80)
             TypoMissStrikePossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Probability of typo in percent"), 0), ConfigToken("Screensaver")?("Typo")?("Probability of typo in percent"), 20)
             TypoMissPossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Typo")?("Probability of miss in percent"), 0), ConfigToken("Screensaver")?("Typo")?("Probability of miss in percent"), 10)
-            TypoTextColor = New Color(If(ConfigToken("Screensaver")?("Typo")?("Text color"), ConsoleColors.White)).PlainSequence
+            TypoTextColor = New Color(If(ConfigToken("Screensaver")?("Typo")?("Text color"), ConsoleColors.White).ToString).PlainSequence
 
             '> Marquee
             Marquee255Colors = If(ConfigToken("Screensaver")?("Marquee")?("Activate 255 Color Mode"), False)
@@ -1225,7 +1225,7 @@ Public Module Config
             MarqueeMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Marquee")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Marquee")?("Maximum green color level"), 255)
             MarqueeMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Marquee")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Marquee")?("Maximum blue color level"), 255)
             MarqueeMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Marquee")?("Maximum color level"), 0), ConfigToken("Screensaver")?("Marquee")?("Maximum color level"), 255)
-            MarqueeBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Marquee")?("Background color"), ConsoleColors.Black)).PlainSequence
+            MarqueeBackgroundColor = New Color(If(ConfigToken("Screensaver")?("Marquee")?("Background color"), ConsoleColors.Black).ToString).PlainSequence
 
             '> Matrix
             MatrixDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Matrix")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Matrix")?("Delay in Milliseconds"), 1)
@@ -1242,7 +1242,7 @@ Public Module Config
             LinotypoEtaoinCappingPossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("Line Fill Capping Probability in percent"), 0), ConfigToken("Screensaver")?("Linotypo")?("Line Fill Capping Probability in percent"), 5)
             LinotypoEtaoinType = If(ConfigToken("Screensaver")?("Linotypo")?("Line Fill Type") IsNot Nothing, If([Enum].TryParse(ConfigToken("Screensaver")?("Linotypo")?("Line Fill Type"), LinotypoEtaoinType), LinotypoEtaoinType, FillType.EtaoinPattern), FillType.EtaoinPattern)
             LinotypoMissPossibility = If(Integer.TryParse(ConfigToken("Screensaver")?("Linotypo")?("Probability of miss in percent"), 0), ConfigToken("Screensaver")?("Linotypo")?("Probability of miss in percent"), 10)
-            LinotypoTextColor = New Color(If(ConfigToken("Screensaver")?("Linotypo")?("Text color"), ConsoleColors.White)).PlainSequence
+            LinotypoTextColor = New Color(If(ConfigToken("Screensaver")?("Linotypo")?("Text color"), ConsoleColors.White).ToString).PlainSequence
 
             '> Typewriter
             TypewriterDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Typewriter")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Typewriter")?("Delay in Milliseconds"), 50)
@@ -1250,13 +1250,13 @@ Public Module Config
             TypewriterWrite = If(ConfigToken("Screensaver")?("Typewriter")?("Text Shown"), "Kernel Simulator")
             TypewriterWritingSpeedMin = If(Integer.TryParse(ConfigToken("Screensaver")?("Typewriter")?("Minimum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Typewriter")?("Minimum writing speed in WPM"), 50)
             TypewriterWritingSpeedMax = If(Integer.TryParse(ConfigToken("Screensaver")?("Typewriter")?("Maximum writing speed in WPM"), 0), ConfigToken("Screensaver")?("Typewriter")?("Maximum writing speed in WPM"), 80)
-            TypewriterTextColor = New Color(If(ConfigToken("Screensaver")?("Typewriter")?("Text color"), ConsoleColors.White)).PlainSequence
+            TypewriterTextColor = New Color(If(ConfigToken("Screensaver")?("Typewriter")?("Text color"), ConsoleColors.White).ToString).PlainSequence
 
             '> FlashColor
             FlashColor255Colors = If(ConfigToken("Screensaver")?("FlashColor")?("Activate 255 Color Mode"), False)
             FlashColorTrueColor = If(ConfigToken("Screensaver")?("FlashColor")?("Activate True Color Mode"), True)
             FlashColorDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashColor")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("FlashColor")?("Delay in Milliseconds"), 1)
-            FlashColorBackgroundColor = New Color(If(ConfigToken("Screensaver")?("FlashColor")?("Background color"), ConsoleColors.Black)).PlainSequence
+            FlashColorBackgroundColor = New Color(If(ConfigToken("Screensaver")?("FlashColor")?("Background color"), ConsoleColors.Black).ToString).PlainSequence
             FlashColorMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashColor")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("FlashColor")?("Minimum red color level"), 0)
             FlashColorMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashColor")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("FlashColor")?("Minimum green color level"), 0)
             FlashColorMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("FlashColor")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("FlashColor")?("Minimum blue color level"), 0)
@@ -1270,7 +1270,7 @@ Public Module Config
             SpotWriteDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("SpotWrite")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("SpotWrite")?("Delay in Milliseconds"), 50)
             SpotWriteNewScreenDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("SpotWrite")?("New Screen Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("SpotWrite")?("New Screen Delay in Milliseconds"), 3000)
             SpotWriteWrite = If(ConfigToken("Screensaver")?("SpotWrite")?("Text Shown"), "Kernel Simulator")
-            SpotWriteTextColor = New Color(If(ConfigToken("Screensaver")?("SpotWrite")?("Text color"), ConsoleColors.White)).PlainSequence
+            SpotWriteTextColor = New Color(If(ConfigToken("Screensaver")?("SpotWrite")?("Text color"), ConsoleColors.White).ToString).PlainSequence
 
             '> Ramp
             Ramp255Colors = If(ConfigToken("Screensaver")?("Ramp")?("Activate 255 Color Mode"), False)
@@ -1301,14 +1301,14 @@ Public Module Config
             RampMaximumGreenColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Maximum green color level for end color"), 0), ConfigToken("Screensaver")?("Ramp")?("Maximum green color level for end color"), 255)
             RampMaximumBlueColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Maximum blue color level for end color"), 0), ConfigToken("Screensaver")?("Ramp")?("Maximum blue color level for end color"), 255)
             RampMaximumColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("Ramp")?("Maximum color level for end color"), 0), ConfigToken("Screensaver")?("Ramp")?("Maximum color level for end color"), 255)
-            RampUpperLeftCornerColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Upper left corner color for ramp bar"), ConsoleColors.Gray)).PlainSequence
-            RampUpperRightCornerColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Upper right corner color for ramp bar"), ConsoleColors.Gray)).PlainSequence
-            RampLowerLeftCornerColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Lower left corner color for ramp bar"), ConsoleColors.Gray)).PlainSequence
-            RampLowerRightCornerColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Lower right corner color for ramp bar"), ConsoleColors.Gray)).PlainSequence
-            RampUpperFrameColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Upper frame color for ramp bar"), ConsoleColors.Gray)).PlainSequence
-            RampLowerFrameColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Lower frame color for ramp bar"), ConsoleColors.Gray)).PlainSequence
-            RampLeftFrameColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Left frame color for ramp bar"), ConsoleColors.Gray)).PlainSequence
-            RampRightFrameColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Right frame color for ramp bar"), ConsoleColors.Gray)).PlainSequence
+            RampUpperLeftCornerColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Upper left corner color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+            RampUpperRightCornerColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Upper right corner color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+            RampLowerLeftCornerColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Lower left corner color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+            RampLowerRightCornerColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Lower right corner color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+            RampUpperFrameColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Upper frame color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+            RampLowerFrameColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Lower frame color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+            RampLeftFrameColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Left frame color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+            RampRightFrameColor = New Color(If(ConfigToken("Screensaver")?("Ramp")?("Right frame color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
             RampUseBorderColors = If(ConfigToken("Screensaver")?("Ramp")?("Use border colors for ramp bar"), False)
 
             '> StackBox

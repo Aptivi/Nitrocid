@@ -74,8 +74,8 @@ Module LinesDisplay
                     Dim GreenColorNum As Integer = random.Next(LinesMinimumGreenColorLevel, LinesMaximumGreenColorLevel)
                     Dim BlueColorNum As Integer = random.Next(LinesMinimumBlueColorLevel, LinesMaximumBlueColorLevel)
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                    Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
-                    Console.Write(esc + "[38;2;" + ColorStorage.ToString + "m")
+                    Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
+                    Console.Write(ColorStorage.VTSequenceForeground)
                 ElseIf Lines255Colors Then
                     SetConsoleColor(New Color(LinesBackgroundColor), True)
                     Console.Clear()

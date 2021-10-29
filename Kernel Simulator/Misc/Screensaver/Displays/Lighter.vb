@@ -88,10 +88,10 @@ Module LighterDisplay
                     Dim GreenColorNum As Integer = RandomDriver.Next(LighterMinimumGreenColorLevel, LighterMaximumGreenColorLevel)
                     Dim BlueColorNum As Integer = RandomDriver.Next(LighterMinimumBlueColorLevel, LighterMaximumBlueColorLevel)
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
-                    Dim ColorStorage As New RGB(RedColorNum, GreenColorNum, BlueColorNum)
+                    Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                     If Not ResizeSyncing Then
-                        Console.Write(esc + "[48;2;" + ColorStorage.ToString + "m ")
+                        Console.Write(ColorStorage.VTSequenceBackground + " ")
                     Else
                         CoveredPositions.Clear()
                     End If
