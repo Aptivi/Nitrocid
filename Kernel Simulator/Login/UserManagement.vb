@@ -247,7 +247,7 @@ Public Module UserManagement
             If Users.Keys.ToArray.Contains(user) And user = "root" Then
                 Wdbg(DebugLevel.W, "User is root, and is a system account")
                 Throw New Exceptions.UserManagementException(DoTranslation("User {0} isn't allowed to be removed."), user)
-            ElseIf Users.Keys.ToArray.Contains(user) And user = CurrentUser.Username Then
+            ElseIf Users.Keys.ToArray.Contains(user) And user = CurrentUser?.Username Then
                 Wdbg(DebugLevel.W, "User has logged in, so can't delete self.")
                 Throw New Exceptions.UserManagementException(DoTranslation("User {0} is already logged in. Log-out and log-in as another admin."), user)
             ElseIf Users.Keys.ToArray.Contains(user) And user <> "root" Then

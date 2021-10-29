@@ -48,7 +48,7 @@ Public Module UESHVariables
                 NewCommand += $"{Word} "
             Next
             Wdbg(DebugLevel.I, "Replaced variable {0} with their values. Result: {1}", var, NewCommand)
-            Return NewCommand
+            Return NewCommand.TrimEnd(" ")
         End If
         Return cmd
     End Function

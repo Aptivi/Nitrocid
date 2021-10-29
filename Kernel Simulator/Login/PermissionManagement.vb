@@ -143,7 +143,7 @@ Public Module PermissionManagement
     ''' <exception cref="Exceptions.PermissionManagementException"></exception>
     Public Function RemovePermission(PermType As PermissionType, Username As String) As Boolean
         'Sets the required permissions to false.
-        If Users.Keys.ToArray.Contains(Username) And Username <> CurrentUser.Username Then
+        If Users.Keys.ToArray.Contains(Username) And Username <> CurrentUser?.Username Then
             Wdbg(DebugLevel.I, "Type is {0}", PermType)
             Select Case PermType
                 Case PermissionType.Administrator
