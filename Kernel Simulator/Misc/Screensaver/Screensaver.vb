@@ -28,7 +28,7 @@ Public Module Screensaver
     Public InSaver As Boolean
     Public ScreensaverDebug As Boolean
     Public DefSaverName As String = "matrix"
-    Public WithEvents Timeout As New BackgroundWorker
+    Public WithEvents Timeout As New NamedBackgroundWorker("Screensaver timeout thread")
     Public ScrnTimeout As Integer = 300000
     Public PasswordLock As Boolean = True
     Public ReadOnly colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())        '15 Console Colors

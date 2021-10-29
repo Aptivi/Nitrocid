@@ -24,7 +24,7 @@ Public Module TimeDate
     'Variables
     Public KernelDateTime As New Date
     Public KernelDateTimeUtc As New Date
-    Public WithEvents TimeDateChange As New BackgroundWorker
+    Public WithEvents TimeDateChange As New NamedBackgroundWorker("Time/date updater thread")
 
     ''' <summary>
     ''' Specifies the time/date format type.
