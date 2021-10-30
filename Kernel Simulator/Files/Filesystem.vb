@@ -55,7 +55,7 @@ Public Module Filesystem
     End Function
 
     ''' <summary>
-    ''' Prints to the console
+    ''' Prints the contents of a file to the console
     ''' </summary>
     ''' <param name="filename">Full path to file</param>
     Public Sub PrintContents(filename As String)
@@ -63,7 +63,7 @@ Public Module Filesystem
     End Sub
 
     ''' <summary>
-    ''' Prints to the console
+    ''' Prints the contents of a file to the console
     ''' </summary>
     ''' <param name="filename">Full path to file</param>
     Public Sub PrintContents(filename As String, PrintLineNumbers As Boolean)
