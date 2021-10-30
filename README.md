@@ -145,27 +145,29 @@ The packing and distribution procedures are now easier by executing this script 
 
 **Fabian Neuschmidt:** https://github.com/fneu/breezy
 
+**TechRepublic:** Articles RSS feed URL
+
 **All contributors:** Contribution
 
 ## Open Source Libraries
 
 Below entries are the open source libraries that is used by KS. They are required for execution.
 
-### MadMilkman.Ini
+### CRC32.NET
 
-Source code: https://github.com/MarioZ/MadMilkman.Ini
+Source code: https://github.com/force-net/CRC32.NET
 
-Copyright (c) 2016, Mario Zorica
+Copyright (c) 2017, force
 
-License (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE
+License (MIT): https://github.com/force-net/Crc32.NET/blob/develop/LICENSE
 
-### Newtonsoft.Json
+### Extensification
 
-Source code: https://github.com/JamesNK/Newtonsoft.Json
+Source code: https://github.com/EoflaOE/Extensification/
 
-Copyright (c) 2007, James Newton-King
+Copyright (c) 2020-present EoflaOE and its companies
 
-License (MIT): https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
+License (GNU GPL 3.0 or later): https://github.com/EoflaOE/Extensification/blob/master/LICENSE
 
 ### FluentFTP
 
@@ -177,29 +179,13 @@ Copyright (c) 2016-present, Robin Rodricks
 
 License (MIT): https://github.com/robinrodricks/FluentFTP/blob/master/LICENSE.TXT
 
-### MailKit
+### HtmlAgilityPack
 
-Source code: https://github.com/jstedfast/MailKit/
+Source code: https://github.com/zzzprojects/html-agility-pack/
 
-Copyright (c) 2013-present, .NET Foundation and Contributors
+Copyright (c) ZZZ Projects Inc. 2014 - 2021. All rights reserved.
 
-License (MIT): https://github.com/jstedfast/MailKit/blob/master/LICENSE
-
-### SSH.NET
-
-Source code: https://github.com/sshnet/SSH.NET/
-
-Copyright (c) Renci
-
-License (MIT): https://github.com/sshnet/SSH.NET/blob/develop/LICENSE
-
-### Extensification
-
-Source code: https://github.com/EoflaOE/Extensification/
-
-Copyright (c) 2020-present EoflaOE and its companies
-
-License (GNU GPL 3.0 or later): https://github.com/EoflaOE/Extensification/blob/master/LICENSE
+License (MIT): https://github.com/zzzprojects/html-agility-pack/blob/master/LICENSE
 
 ### Inxi.NET
 
@@ -209,13 +195,29 @@ Copyright (c) 2020-present EoflaOE and its companies
 
 License (GNU GPL 3.0 or later): https://github.com/EoflaOE/Inxi.NET/blob/master/LICENSE
 
-### HtmlAgilityPack
+### MadMilkman.Ini
 
-Source code: https://github.com/zzzprojects/html-agility-pack/
+Source code: https://github.com/MarioZ/MadMilkman.Ini
 
-Copyright (c) ZZZ Projects Inc. 2014 - 2021. All rights reserved.
+Copyright (c) 2016, Mario Zorica
 
-License (MIT): https://github.com/zzzprojects/html-agility-pack/blob/master/LICENSE
+License (Apache 2.0): https://github.com/MarioZ/MadMilkman.Ini/blob/master/LICENSE
+
+### MailKit
+
+Source code: https://github.com/jstedfast/MailKit/
+
+Copyright (c) 2013-present, .NET Foundation and Contributors
+
+License (MIT): https://github.com/jstedfast/MailKit/blob/master/LICENSE
+
+### Newtonsoft.Json
+
+Source code: https://github.com/JamesNK/Newtonsoft.Json
+
+Copyright (c) 2007, James Newton-King
+
+License (MIT): https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
 
 ### Nuget.Build.Tasks.Pack (build dependency)
 
@@ -224,6 +226,14 @@ Source code: https://github.com/NuGet/NuGet.Client
 Copyright (c) .NET Foundation. All rights reserved.
 
 License (Apache 2.0): https://github.com/NuGet/NuGet.Client/blob/dev/LICENSE.txt
+
+### SSH.NET
+
+Source code: https://github.com/sshnet/SSH.NET/
+
+Copyright (c) Renci
+
+License (MIT): https://github.com/sshnet/SSH.NET/blob/develop/LICENSE
 
 ## License
 
