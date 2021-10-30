@@ -29,7 +29,7 @@ Public Module RSSTools
     ''' <summary>
     ''' RSS headline URL
     ''' </summary>
-    Public RssHeadlineUrl As String = ""
+    Public RssHeadlineUrl As String = "https://www.techrepublic.com/rssfeeds/articles/"
 
     ''' <summary>
     ''' Make instances of RSS Article from feed node and type

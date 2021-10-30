@@ -1354,7 +1354,7 @@ Public Module Config
             SpeedPressCurrentDifficulty = If(ConfigToken("Misc")?("Default difficulty for SpeedPress") IsNot Nothing, If([Enum].TryParse(ConfigToken("Misc")?("Default difficulty for SpeedPress"), SpeedPressCurrentDifficulty), SpeedPressCurrentDifficulty, SpeedPressDifficulty.Medium), SpeedPressDifficulty.Medium)
             SpeedPressTimeout = If(Integer.TryParse(ConfigToken("Misc")?("Keypress timeout for SpeedPress"), 0), ConfigToken("Misc")?("Keypress timeout for SpeedPress"), 3000)
             ShowHeadlineOnLogin = If(ConfigToken("Misc")?("Show latest RSS headline on login"), False)
-            RssHeadlineUrl = If(ConfigToken("Misc")?("RSS headline URL"), "")
+            RssHeadlineUrl = If(ConfigToken("Misc")?("RSS headline URL"), "https://www.techrepublic.com/rssfeeds/articles/")
 
             'Check to see if the config needs fixes
             RepairConfig()
