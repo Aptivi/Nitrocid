@@ -81,14 +81,9 @@ Public Module PermissionManagement
                 W(DoTranslation("Invalid mode {0}"), True, ColTypes.Error, PermissionMode)
             End If
         Catch ex As Exception
-            If DebugMode = True Then
-                W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.") + vbNewLine +
-                  DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Error, ex.GetType.FullName, ex.Message, ex.StackTrace)
-                WStkTrc(ex)
-            Else
-                W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.") + vbNewLine +
-                  DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message)
-            End If
+            W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.") + vbNewLine +
+              DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message)
+            WStkTrc(ex)
         End Try
     End Sub
 

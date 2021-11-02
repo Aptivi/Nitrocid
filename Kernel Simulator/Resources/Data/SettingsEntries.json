@@ -91,6 +91,12 @@
                 "Type": "SBoolean",
                 "Variable": "NotifyFaultsBoot",
                 "Description": "If there is a minor fault during kernel boot, notifies the user about it."
+            },
+            {
+                "Name": "Show stack trace on kernel error",
+                "Type": "SBoolean",
+                "Variable": "ShowStackTraceOnKernelError",
+                "Description": "If there is any kernel error, choose whether or not to print the stack trace to the console."
             }
         ]
     },

@@ -95,7 +95,8 @@ Public Module Config
                     {"Show stage finish times", ShowStageFinishTimes},
                     {"Start kernel modifications on boot", StartKernelMods},
                     {"Show current time before login", ShowCurrentTimeBeforeLogin},
-                    {"Notify for any fault during boot", NotifyFaultsBoot}
+                    {"Notify for any fault during boot", NotifyFaultsBoot},
+                    {"Show stack trace on kernel error", ShowStackTraceOnKernelError}
             }
             ConfigurationObject.Add("General", GeneralConfig)
 
@@ -747,12 +748,8 @@ Public Module Config
             Return True
         Catch ex As Exception
             EventManager.RaiseConfigSaveError(ex)
-            If DebugMode = True Then
-                WStkTrc(ex)
-                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration: {0}."), ex, ex.Message)
-            Else
-                Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration."), ex)
-            End If
+            WStkTrc(ex)
+            Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration."), ex)
         End Try
         Return False
     End Function
@@ -841,6 +838,7 @@ Public Module Config
             StartKernelMods = If(ConfigToken("General")?("Start kernel modifications on boot"), True)
             ShowCurrentTimeBeforeLogin = If(ConfigToken("General")?("Show current time before login"), True)
             NotifyFaultsBoot = If(ConfigToken("General")?("Notify for any fault during boot"), True)
+            ShowStackTraceOnKernelError = If(ConfigToken("General")?("Show stack trace on kernel error"), False)
 
             'Login Section
             Wdbg(DebugLevel.I, "Parsing login section...")

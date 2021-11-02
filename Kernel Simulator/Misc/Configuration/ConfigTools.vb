@@ -60,7 +60,7 @@ Public Module ConfigTools
 
         'Now, check for missing keys in each section that ARE available.
         If ConfigToken("General") IsNot Nothing Then
-            If ConfigToken("General").Count <> 15 Then
+            If ConfigToken("General").Count <> 16 Then
                 Wdbg(DebugLevel.W, "Missing keys in General. Config fix needed set to true.")
                 FixesNeeded = True
             End If

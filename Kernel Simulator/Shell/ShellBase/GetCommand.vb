@@ -107,13 +107,8 @@ Public Module GetCommand
             Exit Sub
         Catch ex As Exception
             EventManager.RaiseCommandError(RequestedCommand, ex)
-            If DebugMode = True Then
-                DecisiveWrite(ShellType, DebugDeviceSocket, DoTranslation("Error trying to execute command") + " {3}." + vbNewLine + DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Error,
-                              ex.GetType.FullName, ex.Message, ex.StackTrace, RequestedCommand)
-                WStkTrc(ex)
-            Else
-                DecisiveWrite(ShellType, DebugDeviceSocket, DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message, RequestedCommand)
-            End If
+            WStkTrc(ex)
+            DecisiveWrite(ShellType, DebugDeviceSocket, DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message, RequestedCommand)
         End Try
     End Sub
 

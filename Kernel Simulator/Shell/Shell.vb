@@ -405,13 +405,9 @@ Public Module Shell
                 End If
             End If
         Catch ex As Exception
-            If DebugMode = True Then
-                W(DoTranslation("Error trying to execute command.") + vbNewLine + DoTranslation("Error {0}: {1}") + vbNewLine + "{2}", True, ColTypes.Error,
-                  ex.GetType.FullName, ex.Message, ex.StackTrace)
-                WStkTrc(ex)
-            Else
-                W(DoTranslation("Error trying to execute command.") + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message)
-            End If
+            WStkTrc(ex)
+            W(DoTranslation("Error trying to execute command.") + vbNewLine +
+              DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message)
         End Try
         Console.Title = ConsoleTitle
 

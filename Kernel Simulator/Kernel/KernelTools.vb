@@ -113,32 +113,32 @@ Public Module KernelTools
                 Wdbg(DebugLevel.W, "Continuable kernel errors shouldn't have Reboot = True.")
                 W(DoTranslation("[{0}] panic: Reboot disabled due to error level being {0}.") + vbNewLine +
                   DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), True, ColTypes.Continuable, ErrorType, Description)
+                If ShowStackTraceOnKernelError And Exc IsNot Nothing Then W(Exc.StackTrace, True, ColTypes.Continuable)
                 Console.ReadKey()
             ElseIf ErrorType = KernelErrorLevel.C And Reboot = False Then
                 'Check if error is Continuable and reboot is disabled
                 EventManager.RaiseContKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
                 W(DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), True, ColTypes.Continuable, ErrorType, Description)
+                If ShowStackTraceOnKernelError And Exc IsNot Nothing Then W(Exc.StackTrace, True, ColTypes.Continuable)
                 Console.ReadKey()
             ElseIf (Reboot = False And ErrorType <> KernelErrorLevel.D) Or (Reboot = False And ErrorType <> KernelErrorLevel.C) Then
                 'If rebooting is disabled and the error type does not equal Double or Continuable
                 Wdbg(DebugLevel.W, "Reboot is False, ErrorType is not double or continuable.")
                 W(DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), True, ColTypes.Uncontinuable, ErrorType, Description)
+                If ShowStackTraceOnKernelError And Exc IsNot Nothing Then W(Exc.StackTrace, True, ColTypes.Uncontinuable)
                 Console.ReadKey()
                 PowerManage(PowerMode.Shutdown)
             Else
                 'Everything else.
                 Wdbg(DebugLevel.F, "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType)
                 W(DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds..."), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
+                If ShowStackTraceOnKernelError And Exc IsNot Nothing Then W(Exc.StackTrace, True, ColTypes.Uncontinuable)
                 Thread.Sleep(RebootTime * 1000)
                 PowerManage(PowerMode.Reboot)
             End If
         Catch ex As Exception
-            If DebugMode = True Then
-                W(ex.StackTrace, True, ColTypes.Uncontinuable) : WStkTrc(ex)
-                KernelError(KernelErrorLevel.D, True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message)
-            Else
-                KernelError(KernelErrorLevel.D, True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message)
-            End If
+            WStkTrc(ex)
+            KernelError(KernelErrorLevel.D, True, 5, DoTranslation("DOUBLE PANIC: Kernel bug: {0}"), ex, ex.Message)
         End Try
     End Sub
 
@@ -508,10 +508,9 @@ Public Module KernelTools
             proc.Dispose()
             EventManager.RaiseGarbageCollected()
         Catch ex As Exception
+            Wdbg("Error freeing RAM: {0}", ex.Message)
+            WStkTrc(ex)
             W(DoTranslation("Error trying to free RAM: {0} - Continuing..."), True, ColTypes.Error, ex.Message)
-            If DebugMode = True Then
-                W(ex.StackTrace, True, ColTypes.Neutral) : Wdbg("Error freeing RAM: {0}", ex.Message) : WStkTrc(ex)
-            End If
         End Try
     End Sub
 

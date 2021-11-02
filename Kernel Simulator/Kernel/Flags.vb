@@ -215,6 +215,10 @@ Public Module Flags
     ''' Whether to let the user choose which user they want to sign in or write it themselves
     ''' </summary>
     Public ChooseUser As Boolean
+    ''' <summary>
+    ''' Whether to print the stack trace on kernel error
+    ''' </summary>
+    Public ShowStackTraceOnKernelError As Boolean
 
     'Private flags
     ''' <summary>

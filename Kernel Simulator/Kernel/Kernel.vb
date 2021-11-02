@@ -149,6 +149,8 @@ Public Module Kernel
                     StageTimer.Reset()
                 End If
                 Console.WriteLine()
+
+                'Unquiet the kernel if quieted
                 If EnteredArguments IsNot Nothing Then
                     If EnteredArguments.Contains("quiet") Then
                         Console.SetOut(DefConsoleOut)
@@ -186,9 +188,7 @@ Public Module Kernel
                 LogoutRequested = False
                 SafeMode = False
             Catch ex As Exception
-                If DebugMode = True Then
-                    W(ex.StackTrace, True, ColTypes.Error) : WStkTrc(ex)
-                End If
+                WStkTrc(ex)
                 KernelError(KernelErrorLevel.U, True, 5, DoTranslation("Kernel Error while booting: {0}"), ex, ex.Message)
             End Try
         End While

@@ -102,12 +102,7 @@ Public Module FTPTools
             Catch ex As Exception
                 Wdbg(DebugLevel.W, "Error connecting to {0}: {1}", address, ex.Message)
                 WStkTrc(ex)
-                If DebugMode = True Then
-                    W(DoTranslation("Error when trying to connect to {0}: {1}") + vbNewLine +
-                      DoTranslation("Stack Trace: {2}"), True, ColTypes.Error, address, ex.Message, ex.StackTrace)
-                Else
-                    W(DoTranslation("Error when trying to connect to {0}: {1}"), True, ColTypes.Error, address, ex.Message)
-                End If
+                W(DoTranslation("Error when trying to connect to {0}: {1}"), True, ColTypes.Error, address, ex.Message)
             End Try
         End If
     End Sub
