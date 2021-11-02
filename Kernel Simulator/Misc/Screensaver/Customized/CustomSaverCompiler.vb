@@ -126,7 +126,6 @@ Public Module CustomSaverCompiler
     Function GenSaver(PLang As String, code As String, ByRef DoneFlag As Boolean) As ICustomSaver
         'Check language
         Dim provider As CodeDomProvider
-        Dim execCustomSaver As CompilerResults
         Wdbg(DebugLevel.I, $"Language detected: {PLang}")
         If PLang = "C#" Then
             provider = New CSharpCodeProvider
@@ -195,15 +194,30 @@ Public Module CustomSaverCompiler
                 modCode = {$"using {namespc};{vbNewLine}{code}"}
             End If
             Wdbg(DebugLevel.I, "Compiling...")
-            execCustomSaver = provider.CompileAssemblyFromSource(prm, modCode)
+            Dim execCustomSaver As CompilerResults = provider.CompileAssemblyFromSource(prm, modCode)
 
             'Check to see if there are compilation errors
             Wdbg(DebugLevel.I, "Compilation results: Errors? {0}, Warnings? {1} | Total: {2}", execCustomSaver.Errors.HasErrors, execCustomSaver.Errors.HasWarnings, execCustomSaver.Errors.Count)
+            If execCustomSaver.Errors.HasWarnings Then
+                W(DoTranslation("Screensaver can be loaded, but these warnings may impact the way the screensaver works:"), True, ColTypes.Warning)
+                Wdbg(DebugLevel.W, "Warnings when compiling:")
+                For Each errorName As CompilerError In execCustomSaver.Errors
+                    If errorName.IsWarning Then
+                        W(errorName.ToString, True, ColTypes.Warning)
+                        PrintLineWithHandle(modCode(0).SplitNewLines, errorName.Line, errorName.Column, ColTypes.Warning)
+                        Wdbg(DebugLevel.W, errorName.ToString)
+                    End If
+                Next
+            End If
             If execCustomSaver.Errors.HasErrors Then
                 W(DoTranslation("Screensaver can't be loaded because of the following: "), True, ColTypes.Error)
                 Wdbg(DebugLevel.E, "Errors when compiling:")
-                For Each errorName In execCustomSaver.Errors
-                    W(errorName.ToString, True, ColTypes.Error) : Wdbg(DebugLevel.E, errorName.ToString, True)
+                For Each errorName As CompilerError In execCustomSaver.Errors
+                    If Not errorName.IsWarning Then
+                        W(errorName.ToString, True, ColTypes.Error)
+                        PrintLineWithHandle(modCode(0).SplitNewLines, errorName.Line, errorName.Column, ColTypes.Error)
+                        Wdbg(DebugLevel.E, errorName.ToString)
+                    End If
                 Next
                 Exit Function
             Else

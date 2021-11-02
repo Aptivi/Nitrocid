@@ -99,6 +99,77 @@ Public Module Filesystem
     End Function
 
     ''' <summary>
+    ''' Prints the line of a text file with the specified line number and the column number
+    ''' </summary>
+    ''' <param name="Filename">Path to text file</param>
+    ''' <param name="LineNumber">Line number (not index)</param>
+    ''' <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+    Public Sub PrintLineWithHandle(Filename As String, LineNumber As Integer, ColumnNumber As Integer)
+        PrintLineWithHandle(Filename, LineNumber, ColumnNumber, ColTypes.Neutral)
+    End Sub
+
+    ''' <summary>
+    ''' Prints the line of a text file with the specified line number and the column number
+    ''' </summary>
+    ''' <param name="Filename">Path to text file</param>
+    ''' <param name="LineNumber">Line number (not index)</param>
+    ''' <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+    ''' <param name="ColorType">The type of color</param>
+    Public Sub PrintLineWithHandle(Filename As String, LineNumber As Integer, ColumnNumber As Integer, ColorType As ColTypes)
+        'Read the contents
+        ThrowOnInvalidPath(Filename)
+        Filename = NeutralizePath(Filename)
+        Dim FileContents() As String = ReadContents(Filename)
+
+        'Get the line index from number
+        If LineNumber <= 0 Then LineNumber = 1
+        If LineNumber > FileContents.Length Then LineNumber = FileContents.Length
+        Dim LineIndex As Integer = LineNumber - 1
+
+        'Get the line
+        Dim LineContent As String = FileContents(LineIndex)
+        W(" | " + LineContent, True, ColorType)
+
+        'Place the column handle
+        Dim RepeatBlanks As Integer = ColumnNumber - 1
+        If RepeatBlanks < 0 Then RepeatBlanks = 0
+        W(" | " + " ".Repeat(RepeatBlanks) + "^", True, ColorType)
+    End Sub
+
+    ''' <summary>
+    ''' Prints the line of a text file with the specified line number and the column number
+    ''' </summary>
+    ''' <param name="Array">A string array containing the contents of the file</param>
+    ''' <param name="LineNumber">Line number (not index)</param>
+    ''' <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+    Public Sub PrintLineWithHandle(Array() As String, LineNumber As Integer, ColumnNumber As Integer)
+        PrintLineWithHandle(Array, LineNumber, ColumnNumber, ColTypes.Neutral)
+    End Sub
+
+    ''' <summary>
+    ''' Prints the line of a text file with the specified line number and the column number
+    ''' </summary>
+    ''' <param name="Array">A string array containing the contents of the file</param>
+    ''' <param name="LineNumber">Line number (not index)</param>
+    ''' <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+    ''' <param name="ColorType">The type of color</param>
+    Public Sub PrintLineWithHandle(Array() As String, LineNumber As Integer, ColumnNumber As Integer, ColorType As ColTypes)
+        'Get the line index from number
+        If LineNumber <= 0 Then LineNumber = 1
+        If LineNumber > Array.Length Then LineNumber = Array.Length
+        Dim LineIndex As Integer = LineNumber - 1
+
+        'Get the line
+        Dim LineContent As String = Array(LineIndex)
+        W(" | " + LineContent, True, ColorType)
+
+        'Place the column handle
+        Dim RepeatBlanks As Integer = ColumnNumber - 1
+        If RepeatBlanks < 0 Then RepeatBlanks = 0
+        W(" | " + " ".Repeat(RepeatBlanks) + "^", True, ColorType)
+    End Sub
+
+    ''' <summary>
     ''' List all files and folders in a specified folder
     ''' </summary>
     ''' <param name="folder">Full path to folder</param>

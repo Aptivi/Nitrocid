@@ -29,7 +29,6 @@ Public Module ModParser
     ''' <param name="PLang">Specified programming language for scripts (C# or VB.NET)</param>
     ''' <param name="code">Code blocks from script</param>
     Friend Function GenMod(PLang As String, code As String) As IScript
-
         'Check language
         Dim provider As CodeDomProvider
         Wdbg(DebugLevel.I, $"Language detected: {PLang}")
@@ -106,11 +105,26 @@ Public Module ModParser
         'Check to see if there are compilation errors
         Wdbg(DebugLevel.I, "Has errors: {0}", res.Errors.HasErrors)
         Wdbg(DebugLevel.I, "Has warnings: {0}", res.Errors.HasWarnings)
+        If res.Errors.HasWarnings Then
+            W(DoTranslation("Mod can be loaded, but these warnings may impact the way the mod works:"), True, ColTypes.Warning)
+            Wdbg(DebugLevel.W, "Warnings when compiling:")
+            For Each errorName As CompilerError In res.Errors
+                If errorName.IsWarning Then
+                    W(errorName.ToString, True, ColTypes.Warning)
+                    PrintLineWithHandle(modCode(0).SplitNewLines, errorName.Line, errorName.Column, ColTypes.Warning)
+                    Wdbg(DebugLevel.W, errorName.ToString)
+                End If
+            Next
+        End If
         If res.Errors.HasErrors Then
             W(DoTranslation("Mod can't be loaded because of the following: "), True, ColTypes.Error)
-            For Each errorName In res.Errors
-                W(errorName.ToString, True, ColTypes.Error)
-                Wdbg(DebugLevel.E, errorName.ToString)
+            Wdbg(DebugLevel.E, "Errors when compiling:")
+            For Each errorName As CompilerError In res.Errors
+                If Not errorName.IsWarning Then
+                    W(errorName.ToString, True, ColTypes.Error)
+                    PrintLineWithHandle(modCode(0).SplitNewLines, errorName.Line, errorName.Column, ColTypes.Error)
+                    Wdbg(DebugLevel.E, errorName.ToString)
+                End If
             Next
             Exit Function
         End If
