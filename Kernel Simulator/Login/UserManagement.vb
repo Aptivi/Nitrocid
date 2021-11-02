@@ -332,7 +332,7 @@ Public Module UserManagement
         Else
             InitializeUser("root", "", True, True)
         End If
-        Permission(PermissionType.Administrator, "root", PermissionManagementMode.Allow)
+        AddPermission(PermissionType.Administrator, "root")
     End Sub
 
     ''' <summary>
