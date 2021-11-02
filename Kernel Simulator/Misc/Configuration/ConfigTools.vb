@@ -46,13 +46,54 @@ Public Module ConfigTools
         'Variables
         Dim FixesNeeded As Boolean
 
+        'General sections
+        Dim ExpectedSections As Integer = 9
+        Dim ExpectedGeneralKeys As Integer = 16
+        Dim ExpectedColorsKeys As Integer = 37
+        Dim ExpectedHardwareKeys As Integer = 4
+        Dim ExpectedLoginKeys As Integer = 11
+        Dim ExpectedShellKeys As Integer = 16
+        Dim ExpectedFilesystemKeys As Integer = 10
+        Dim ExpectedNetworkKeys As Integer = 54
+        Dim ExpectedMiscKeys As Integer = 25
+
+        'Screensaver keys and sections
+        Dim ExpectedScreensaverKeys As Integer = 4
+        Dim ExpectedScreensavers As Integer = 23
+        Dim ExpectedScreensaverSections As Integer = ExpectedScreensavers + ExpectedScreensaverKeys
+
+        'Individual screensaver keys
+        Dim ExpectedScreensaverColorMixKeys As Integer = 12
+        Dim ExpectedScreensaverDiscoKeys As Integer = 13
+        Dim ExpectedScreensaverGlitterColorKeys As Integer = 11
+        Dim ExpectedScreensaverLinesKeys As Integer = 13
+        Dim ExpectedScreensaverDissolveKeys As Integer = 11
+        Dim ExpectedScreensaverBouncingBlockKeys As Integer = 13
+        Dim ExpectedScreensaverBouncingTextKeys As Integer = 14
+        Dim ExpectedScreensaverProgressClockKeys As Integer = 68
+        Dim ExpectedScreensaverLighterKeys As Integer = 13
+        Dim ExpectedScreensaverWipeKeys As Integer = 13
+        Dim ExpectedScreensaverMatrixKeys As Integer = 1
+        Dim ExpectedScreensaverGlitterMatrixKeys As Integer = 3
+        Dim ExpectedScreensaverFaderKeys As Integer = 11
+        Dim ExpectedScreensaverFaderBackKeys As Integer = 9
+        Dim ExpectedScreensaverBeatFaderKeys As Integer = 14
+        Dim ExpectedScreensaverTypoKeys As Integer = 8
+        Dim ExpectedScreensaverMarqueeKeys As Integer = 15
+        Dim ExpectedScreensaverLinotypoKeys As Integer = 12
+        Dim ExpectedScreensaverTypewriterKeys As Integer = 6
+        Dim ExpectedScreensaverFlashColorKeys As Integer = 12
+        Dim ExpectedScreensaverSpotWriteKeys As Integer = 4
+        Dim ExpectedScreensaverRampKeys As Integer = 37
+        Dim ExpectedScreensaverStackBoxKeys As Integer = 11
+
         'Check for missing sections
-        If ConfigToken.Count <> 9 Then
+        If ConfigToken.Count <> ExpectedSections Then
             Wdbg(DebugLevel.W, "Missing sections. Config fix needed set to true.")
             FixesNeeded = True
         End If
         If ConfigToken("Screensaver") IsNot Nothing Then
-            If ConfigToken("Screensaver").Count <> 23 + 4 Then 'Screensavers + Keys
+            If ConfigToken("Screensaver").Count <> ExpectedScreensaverSections Then
                 Wdbg(DebugLevel.W, "Missing sections and/or keys in Screensaver. Config fix needed set to true.")
                 FixesNeeded = True
             End If
@@ -60,189 +101,189 @@ Public Module ConfigTools
 
         'Now, check for missing keys in each section that ARE available.
         If ConfigToken("General") IsNot Nothing Then
-            If ConfigToken("General").Count <> 16 Then
+            If ConfigToken("General").Count <> ExpectedGeneralKeys Then
                 Wdbg(DebugLevel.W, "Missing keys in General. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
         If ConfigToken("Colors") IsNot Nothing Then
-            If ConfigToken("Colors").Count <> 37 Then
+            If ConfigToken("Colors").Count <> ExpectedColorsKeys Then
                 Wdbg(DebugLevel.W, "Missing keys in Colors. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
         If ConfigToken("Hardware") IsNot Nothing Then
-            If ConfigToken("Hardware").Count <> 4 Then
+            If ConfigToken("Hardware").Count <> ExpectedHardwareKeys Then
                 Wdbg(DebugLevel.W, "Missing keys in Hardware. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
         If ConfigToken("Login") IsNot Nothing Then
-            If ConfigToken("Login").Count <> 11 Then
+            If ConfigToken("Login").Count <> ExpectedLoginKeys Then
                 Wdbg(DebugLevel.W, "Missing keys in Login. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
         If ConfigToken("Shell") IsNot Nothing Then
-            If ConfigToken("Shell").Count <> 16 Then
+            If ConfigToken("Shell").Count <> ExpectedShellKeys Then
                 Wdbg(DebugLevel.W, "Missing keys in Shell. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
         If ConfigToken("Filesystem") IsNot Nothing Then
-            If ConfigToken("Filesystem").Count <> 10 Then
+            If ConfigToken("Filesystem").Count <> ExpectedFilesystemKeys Then
                 Wdbg(DebugLevel.W, "Missing keys in Filesystem. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
         If ConfigToken("Network") IsNot Nothing Then
-            If ConfigToken("Network").Count <> 54 Then
+            If ConfigToken("Network").Count <> ExpectedNetworkKeys Then
                 Wdbg(DebugLevel.W, "Missing keys in Network. Config fix needed set to true.")
                 FixesNeeded = True
             End If
         End If
         If ConfigToken("Screensaver") IsNot Nothing Then
             If ConfigToken("Screensaver")("ColorMix") IsNot Nothing Then
-                If ConfigToken("Screensaver")("ColorMix").Count <> 12 Then
+                If ConfigToken("Screensaver")("ColorMix").Count <> ExpectedScreensaverColorMixKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > ColorMix. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Disco") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Disco").Count <> 13 Then
+                If ConfigToken("Screensaver")("Disco").Count <> ExpectedScreensaverDiscoKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Disco. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("GlitterColor") IsNot Nothing Then
-                If ConfigToken("Screensaver")("GlitterColor").Count <> 11 Then
+                If ConfigToken("Screensaver")("GlitterColor").Count <> ExpectedScreensaverGlitterColorKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > GlitterColor. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Lines") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Lines").Count <> 13 Then
+                If ConfigToken("Screensaver")("Lines").Count <> ExpectedScreensaverLinesKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Lines. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Dissolve") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Dissolve").Count <> 11 Then
+                If ConfigToken("Screensaver")("Dissolve").Count <> ExpectedScreensaverDissolveKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Dissolve. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("BouncingBlock") IsNot Nothing Then
-                If ConfigToken("Screensaver")("BouncingBlock").Count <> 13 Then
+                If ConfigToken("Screensaver")("BouncingBlock").Count <> ExpectedScreensaverBouncingBlockKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > BouncingBlock. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("BouncingText") IsNot Nothing Then
-                If ConfigToken("Screensaver")("BouncingText").Count <> 14 Then
+                If ConfigToken("Screensaver")("BouncingText").Count <> ExpectedScreensaverBouncingTextKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > BouncingText. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("ProgressClock") IsNot Nothing Then
-                If ConfigToken("Screensaver")("ProgressClock").Count <> 68 Then
+                If ConfigToken("Screensaver")("ProgressClock").Count <> ExpectedScreensaverProgressClockKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > ProgressClock. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Lighter") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Lighter").Count <> 13 Then
+                If ConfigToken("Screensaver")("Lighter").Count <> ExpectedScreensaverLighterKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Lighter. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Wipe") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Wipe").Count <> 13 Then
+                If ConfigToken("Screensaver")("Wipe").Count <> ExpectedScreensaverWipeKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Wipe. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Matrix") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Matrix").Count <> 1 Then
+                If ConfigToken("Screensaver")("Matrix").Count <> ExpectedScreensaverMatrixKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Matrix. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("GlitterMatrix") IsNot Nothing Then
-                If ConfigToken("Screensaver")("GlitterMatrix").Count <> 3 Then
+                If ConfigToken("Screensaver")("GlitterMatrix").Count <> ExpectedScreensaverGlitterMatrixKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > GlitterMatrix. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Fader") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Fader").Count <> 11 Then
+                If ConfigToken("Screensaver")("Fader").Count <> ExpectedScreensaverFaderKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Fader. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("FaderBack") IsNot Nothing Then
-                If ConfigToken("Screensaver")("FaderBack").Count <> 9 Then
+                If ConfigToken("Screensaver")("FaderBack").Count <> ExpectedScreensaverFaderBackKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > FaderBack. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("BeatFader") IsNot Nothing Then
-                If ConfigToken("Screensaver")("BeatFader").Count <> 14 Then
+                If ConfigToken("Screensaver")("BeatFader").Count <> ExpectedScreensaverBeatFaderKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > BeatFader. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Typo") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Typo").Count <> 8 Then
+                If ConfigToken("Screensaver")("Typo").Count <> ExpectedScreensaverTypoKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Typo. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Marquee") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Marquee").Count <> 15 Then
+                If ConfigToken("Screensaver")("Marquee").Count <> ExpectedScreensaverMarqueeKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Marquee. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Linotypo") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Linotypo").Count <> 12 Then
+                If ConfigToken("Screensaver")("Linotypo").Count <> ExpectedScreensaverLinotypoKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Linotypo. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Typewriter") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Typewriter").Count <> 6 Then
+                If ConfigToken("Screensaver")("Typewriter").Count <> ExpectedScreensaverTypewriterKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Typewriter. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("FlashColor") IsNot Nothing Then
-                If ConfigToken("Screensaver")("FlashColor").Count <> 12 Then
+                If ConfigToken("Screensaver")("FlashColor").Count <> ExpectedScreensaverFlashColorKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > FlashColor. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("SpotWrite") IsNot Nothing Then
-                If ConfigToken("Screensaver")("SpotWrite").Count <> 4 Then
+                If ConfigToken("Screensaver")("SpotWrite").Count <> ExpectedScreensaverSpotWriteKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > SpotWrite. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("Ramp") IsNot Nothing Then
-                If ConfigToken("Screensaver")("Ramp").Count <> 37 Then
+                If ConfigToken("Screensaver")("Ramp").Count <> ExpectedScreensaverRampKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > Ramp. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
             If ConfigToken("Screensaver")("StackBox") IsNot Nothing Then
-                If ConfigToken("Screensaver")("StackBox").Count <> 11 Then
+                If ConfigToken("Screensaver")("StackBox").Count <> ExpectedScreensaverStackBoxKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > StackBox. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If
         End If
         If ConfigToken("Misc") IsNot Nothing Then
-            If ConfigToken("Misc").Count <> 25 Then
+            If ConfigToken("Misc").Count <> ExpectedMiscKeys Then
                 Wdbg(DebugLevel.W, "Missing keys in Misc. Config fix needed set to true.")
                 FixesNeeded = True
             End If
