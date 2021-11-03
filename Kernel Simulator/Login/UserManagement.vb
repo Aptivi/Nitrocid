@@ -425,7 +425,7 @@ Public Module UserManagement
         'First, select user name
         W(DoTranslation("It looks like you've got no user except root. This is bad. We'll guide you how to create one."), True, ColTypes.Neutral)
         While [Step] = 1
-            W(DoTranslation("Write your username.") + vbNewLine, True, ColTypes.Neutral)
+            W(DoTranslation("Write your username."), True, ColTypes.Neutral)
             W(">> ", False, ColTypes.Input)
             AnswerUsername = Console.ReadLine
             Wdbg(DebugLevel.I, "Answer: {0}", AnswerUsername)
@@ -441,7 +441,7 @@ Public Module UserManagement
 
         'Second, write password
         While [Step] = 2
-            W(DoTranslation("Write your password.") + vbNewLine, True, ColTypes.Neutral)
+            W(DoTranslation("Write your password."), True, ColTypes.Neutral)
             W(">> ", False, ColTypes.Input)
             AnswerPassword = ReadLineNoInput("*"c)
             Console.WriteLine()
@@ -459,8 +459,8 @@ Public Module UserManagement
         'Third, select account type
         While [Step] = 3
             W(DoTranslation("Select account type.") + vbNewLine, True, ColTypes.Neutral)
-            W("1) " + DoTranslation("Administrator: This account type has the most power in the kernel, allowing you to use system management programs."), True, ColTypes.Option)
-            W("2) " + DoTranslation("Normal User: This account type is slightly more restricted than administrators."), True, ColTypes.Option)
+            W(" 1) " + DoTranslation("Administrator: This account type has the most power in the kernel, allowing you to use system management programs."), True, ColTypes.Option)
+            W(" 2) " + DoTranslation("Normal User: This account type is slightly more restricted than administrators."), True, ColTypes.Option)
             W(vbNewLine + ">> ", False, ColTypes.Input)
             If Integer.TryParse(Console.ReadLine, AnswerType) Then
                 Wdbg(DebugLevel.I, "Answer: {0}", AnswerType)
@@ -483,7 +483,7 @@ Public Module UserManagement
 
         'Finally, create an account
         AddUser(AnswerUsername, AnswerPassword)
-        If AnswerType = 1 Then Permission(PermissionType.Administrator, AnswerUsername, PermissionManagementMode.Allow)
+        If AnswerType = 1 Then AddPermission(PermissionType.Administrator, AnswerUsername)
         W(DoTranslation("Congratulations! You've made a new account! To finish this off, log in as your new account."), True, ColTypes.Neutral)
     End Sub
 
