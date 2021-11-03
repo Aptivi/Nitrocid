@@ -114,12 +114,17 @@ Public Module PageViewer
 
                 'Check to see if we're at the end
                 If Console.CursorTop = InfoPlace - 1 Then
-                    Console.ReadKey()
-                    Console.Clear()
-                    If Not String.IsNullOrWhiteSpace(ManpageInfoStyle) Then
-                        WriteWhereC(ProbePlaces(ManpageInfoStyle), Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+                    Dim PressedKey As ConsoleKeyInfo = Console.ReadKey()
+                    If PressedKey.Key = ConsoleKey.Escape Then
+                        Console.Clear()
+                        Exit Sub
                     Else
-                        WriteWhereC(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+                        Console.Clear()
+                        If Not String.IsNullOrWhiteSpace(ManpageInfoStyle) Then
+                            WriteWhereC(ProbePlaces(ManpageInfoStyle), Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+                        Else
+                            WriteWhereC(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+                        End If
                     End If
                 End If
             Next
