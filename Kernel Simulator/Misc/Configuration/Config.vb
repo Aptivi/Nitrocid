@@ -268,7 +268,8 @@ Public Module Config
                     {"Mail transfer progress", Mail_ProgressStyle},
                     {"Mail transfer progress (single)", Mail_ProgressStyleSingle},
                     {"Show notification for download progress", DownloadNotificationProvoke},
-                    {"Show notification for upload progress", UploadNotificationProvoke}
+                    {"Show notification for upload progress", UploadNotificationProvoke},
+                    {"RSS feed fetch timeout", RSSFetchTimeout}
             }
             ConfigurationObject.Add("Network", NetworkConfig)
 
@@ -968,6 +969,7 @@ Public Module Config
             Mail_ProgressStyleSingle = If(ConfigToken("Network")?("Mail transfer progress (single)"), "")
             DownloadNotificationProvoke = If(ConfigToken("Network")?("Show notification for download progress"), False)
             UploadNotificationProvoke = If(ConfigToken("Network")?("Show notification for upload progress"), False)
+            RSSFetchTimeout = If(Integer.TryParse(ConfigToken("Network")?("RSS feed fetch timeout"), 0), ConfigToken("Network")?("RSS feed fetch timeout"), 60000)
 
             'Screensaver Section
             DefSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")

@@ -890,6 +890,12 @@
                 "Type": "SBoolean",
                 "Variable": "UploadNotificationProvoke",
                 "Description": "Shows the notification showing the download progress."
+            },
+            {
+                "Name": "RSS feed fetch timeout",
+                "Type": "SInt",
+                "Variable": "RSSFetchTimeout",
+                "Description": "How many milliseconds to wait before RSS feed fetch timeout?"
             }
         ]
     },

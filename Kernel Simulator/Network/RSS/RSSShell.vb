@@ -33,6 +33,7 @@ Public Module RSSShell
     Public RSSFeedInstance As RSSFeed
     Public RSSShellPromptStyle As String = ""
     Public RSSFeedUrlPromptStyle As String = ""
+    Public RSSFetchTimeout As Integer = 60000
     Public RSSRefreshFeeds As Boolean = True
     Public RSSRefreshInterval As Integer = 60000
     Friend RSSRefresher As New Thread(AddressOf RefreshFeeds) With {.Name = "RSS Feed Refresher"}
