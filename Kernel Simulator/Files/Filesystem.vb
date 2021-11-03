@@ -1091,6 +1091,34 @@ Public Module Filesystem
     End Function
 
     ''' <summary>
+    ''' Combines the files and puts the combined output to the array
+    ''' </summary>
+    ''' <param name="Input">An input file</param>
+    ''' <param name="TargetInputs">The target inputs to merge</param>
+    Public Function CombineFiles(Input As String, TargetInputs() As String) As String()
+        Try
+            Dim CombinedContents As New List(Of String)
+
+            'Add the input contents
+            ThrowOnInvalidPath(Input)
+            CombinedContents.AddRange(ReadContents(Input))
+
+            'Enumerate the target inputs
+            For Each TargetInput As String In TargetInputs
+                ThrowOnInvalidPath(TargetInput)
+                CombinedContents.AddRange(ReadContents(TargetInput))
+            Next
+
+            'Return the combined contents
+            Return CombinedContents.ToArray
+        Catch ex As Exception
+            WStkTrc(ex)
+            Wdbg(DebugLevel.E, "Failed to combine files: {0}", ex.Message)
+            Throw New Exceptions.FilesystemException(DoTranslation("Failed to combine files."), ex)
+        End Try
+    End Function
+
+    ''' <summary>
     ''' Mitigates Windows 10/11 NTFS corruption/Blue Screen of Death (BSOD) bug
     ''' </summary>
     ''' <param name="Path">Target path</param>
