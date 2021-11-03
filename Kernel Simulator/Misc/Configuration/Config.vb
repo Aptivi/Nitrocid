@@ -1416,6 +1416,13 @@ Public Module Config
     ''' <summary>
     ''' Initializes the config token
     ''' </summary>
+    Sub InitializeConfigToken()
+        InitializeConfigToken(GetKernelPath(KernelPathType.Configuration))
+    End Sub
+
+    ''' <summary>
+    ''' Initializes the config token
+    ''' </summary>
     Sub InitializeConfigToken(ConfigPath As String)
         ThrowOnInvalidPath(ConfigPath)
         ConfigToken = JObject.Parse(File.ReadAllText(ConfigPath))
