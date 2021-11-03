@@ -114,12 +114,33 @@ Module StackBoxDisplay
                         End If
 
                         'Draw the box
-                        For X As Integer = BoxStartX To BoxEndX
-                            For Y As Integer = BoxStartY To BoxEndY
-                                Console.SetCursorPosition(X, Y)
+                        If StackBoxFill Then
+                            'Cover all the positions
+                            For X As Integer = BoxStartX To BoxEndX
+                                For Y As Integer = BoxStartY To BoxEndY
+                                    Console.SetCursorPosition(X, Y)
+                                    Console.Write(" ")
+                                Next
+                            Next
+                        Else
+                            'Draw the upper and lower borders
+                            For X As Integer = BoxStartX To BoxEndX
+                                Console.SetCursorPosition(X, BoxStartY)
+                                Console.Write(" ")
+                                Console.SetCursorPosition(X, BoxEndY)
                                 Console.Write(" ")
                             Next
-                        Next
+
+                            'Draw the left and right borders
+                            For Y As Integer = BoxStartY To BoxEndY
+                                Console.SetCursorPosition(BoxStartX, Y)
+                                Console.Write(" ")
+                                If Not BoxStartX >= Console.WindowWidth - 1 Then Console.Write(" ")
+                                Console.SetCursorPosition(BoxEndX, Y)
+                                Console.Write(" ")
+                                If Not BoxEndX >= Console.WindowWidth - 1 Then Console.Write(" ")
+                            Next
+                        End If
                     End If
                 End If
             End If

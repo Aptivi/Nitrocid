@@ -1332,6 +1332,10 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public StackBoxDelay As Integer = 10
     ''' <summary>
+    ''' [StackBox] Whether to fill in the boxes drawn, or only draw the outline
+    ''' </summary>
+    Public StackBoxFill As Boolean = True
+    ''' <summary>
     ''' [StackBox] The minimum red color level (true color)
     ''' </summary>
     Public StackBoxMinimumRedColorLevel As Integer = 0

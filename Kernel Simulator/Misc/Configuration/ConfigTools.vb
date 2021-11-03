@@ -85,7 +85,7 @@ Public Module ConfigTools
         Dim ExpectedScreensaverFlashColorKeys As Integer = 12
         Dim ExpectedScreensaverSpotWriteKeys As Integer = 4
         Dim ExpectedScreensaverRampKeys As Integer = 37
-        Dim ExpectedScreensaverStackBoxKeys As Integer = 11
+        Dim ExpectedScreensaverStackBoxKeys As Integer = 12
 
         'Check for missing sections
         If ConfigToken.Count <> ExpectedSections Then

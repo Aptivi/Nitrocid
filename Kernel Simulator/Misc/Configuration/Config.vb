@@ -716,7 +716,8 @@ Public Module Config
                     {"Maximum red color level", StackBoxMaximumRedColorLevel},
                     {"Maximum green color level", StackBoxMaximumGreenColorLevel},
                     {"Maximum blue color level", StackBoxMaximumBlueColorLevel},
-                    {"Maximum color level", StackBoxMaximumColorLevel}
+                    {"Maximum color level", StackBoxMaximumColorLevel},
+                    {"Fill the boxes", StackBoxFill}
             }
             ScreensaverConfig.Add("StackBox", StackBoxConfig)
 
@@ -1347,6 +1348,7 @@ Public Module Config
             StackBoxMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("StackBox")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("StackBox")?("Maximum green color level"), 255)
             StackBoxMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("StackBox")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("StackBox")?("Maximum blue color level"), 255)
             StackBoxMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("StackBox")?("Maximum color level"), 0), ConfigToken("Screensaver")?("StackBox")?("Maximum color level"), 255)
+            StackBoxFill = If(ConfigToken("Screensaver")?("StackBox")?("Fill the boxes"), True)
 
             'Misc Section
             Wdbg(DebugLevel.I, "Parsing misc section...")

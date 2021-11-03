@@ -2040,6 +2040,12 @@
                 "Type": "SInt",
                 "Variable": "StackBoxMaximumColorLevel",
                 "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Fill the boxes",
+                "Type": "SBoolean",
+                "Variable": "StackBoxFill",
+                "Description": "Do we draw the box as a whole or do we draw only the border?"
             }
         ]
     }
