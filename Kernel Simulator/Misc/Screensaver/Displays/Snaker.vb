@@ -34,6 +34,7 @@ Module SnakerDisplay
         Dim ResizeSyncing As Boolean
         Dim SnakeLength As Integer = 1
         Dim SnakeMassPositions As New List(Of String)
+        Dim Direction As SnakeDirection = SnakeDirection.Bottom
 
         'Preparations
         Console.BackgroundColor = ConsoleColor.Black
@@ -122,20 +123,28 @@ Module SnakerDisplay
                 'A typical snake usually starts in the middle.
                 If Not ResizeSyncing Then
                     Dim Dead As Boolean
-                    Dim FloorTopEdge As Integer = 2
+                    Dim FloorTopEdge As Integer = 1
                     Dim FloorBottomEdge As Integer = Console.WindowHeight - 2
-                    Dim FloorLeftEdge As Integer = 4
+                    Dim FloorLeftEdge As Integer = 3
                     Dim FloorRightEdge As Integer = Console.WindowWidth - 4
                     Dim SnakeCurrentX As Integer = Console.WindowWidth / 2
                     Dim SnakeCurrentY As Integer = Console.WindowHeight / 2
                     Dim SnakeAppleX As Integer = RandomDriver.Next(FloorLeftEdge + 1, FloorRightEdge - 1)
                     Dim SnakeAppleY As Integer = RandomDriver.Next(FloorTopEdge + 1, FloorBottomEdge - 1)
+                    Dim DidHorizontal As Boolean
+                    Dim DidVertical As Boolean
 
                     Do Until Dead
+                        'Delay
+                        SleepNoBlock(SnakerDelay, Snaker)
+                        If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
+                        If Snaker.CancellationPending Then Exit Do
+                        If ResizeSyncing Then Exit Do
+
                         'Clear the stage
                         Console.BackgroundColor = ConsoleColor.Black
-                        For x As Integer = 5 To FloorRightEdge - 1
-                            For y As Integer = 3 To FloorBottomEdge - 1
+                        For x As Integer = 4 To FloorRightEdge - 1
+                            For y As Integer = 2 To FloorBottomEdge - 1
                                 Console.SetCursorPosition(x, y)
                                 Console.Write(" ")
                             Next
@@ -157,17 +166,34 @@ Module SnakerDisplay
                         Next
 
                         'Change the snake direction
-                        Dim Direction As SnakeDirection = SnakeDirection.Bottom
+                        Dim PossibilityToChange As Single = Rnd()
+                        Dim SnakePreviousX As Integer = SnakeCurrentX
+                        Dim SnakePreviousY As Integer = SnakeCurrentY
+                        If CInt(PossibilityToChange) = 1 Then
+                            If DidHorizontal Then
+                                Direction = [Enum].Parse(GetType(SnakeDirection), RandomDriver.Next(2))
+                            ElseIf DidVertical Then
+                                Direction = [Enum].Parse(GetType(SnakeDirection), RandomDriver.Next(2, 4))
+                            End If
+                        End If
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Snake is facing {0}.", Direction.ToString)
                         Select Case Direction
                             Case SnakeDirection.Bottom
                                 SnakeCurrentY += 1
+                                DidHorizontal = False
+                                DidVertical = True
                             Case SnakeDirection.Top
                                 SnakeCurrentY -= 1
+                                DidHorizontal = False
+                                DidVertical = True
                             Case SnakeDirection.Left
                                 SnakeCurrentX -= 1
+                                DidHorizontal = True
+                                DidVertical = False
                             Case SnakeDirection.Right
                                 SnakeCurrentX += 1
+                                DidHorizontal = True
+                                DidVertical = False
                         End Select
                         Dead = SnakeMassPositions.Contains($"{SnakeCurrentX}/{SnakeCurrentY}")
                         SnakeMassPositions.AddIfNotFound($"{SnakeCurrentX}/{SnakeCurrentY}")
@@ -181,6 +207,10 @@ Module SnakerDisplay
 
                         'If dead, show dead face
                         If Dead Then
+                            Dim PositionStrings() As String = SnakeMassPositions(SnakeMassPositions.Count - 1).Split("/")
+                            Dim PositionX As Integer = PositionStrings(0)
+                            Dim PositionY As Integer = PositionStrings(1)
+                            Console.SetCursorPosition(SnakePreviousX, SnakePreviousY)
                             Console.Write("X")
                         End If
 
