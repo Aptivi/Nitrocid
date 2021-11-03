@@ -447,7 +447,7 @@ Public Module SettingsApp
                         SetConfigValueField(KeyVar, Selections(AnswerIndex))
                     ElseIf (KeyType = SettingsKeyType.SSelection And AnswerInt > 0) Or
                            (KeyType = SettingsKeyType.SInt And AnswerInt >= 0) Then
-                        If (KeyType = SettingsKeyType.SSelection And Not AnswerInt > MaxKeyOptions) Or KeyType = SettingsKeyType.SInt Then
+                        If KeyType = SettingsKeyType.SSelection And Not AnswerInt > MaxKeyOptions Then
                             If Not SelectionEnum Then
                                 Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
                                 KeyFinished = True
@@ -457,6 +457,10 @@ Public Module SettingsApp
                                 KeyFinished = True
                                 SetConfigValueField(KeyVar, AnswerInt)
                             End If
+                        ElseIf KeyType = SettingsKeyType.SInt Then
+                            Wdbg(DebugLevel.I, "Setting variable {0} to {1}...", KeyVar, AnswerInt)
+                            KeyFinished = True
+                            SetConfigValueField(KeyVar, AnswerInt)
                         ElseIf KeyType = SettingsKeyType.SSelection Then
                             Wdbg(DebugLevel.W, "Answer is not valid.")
                             W(DoTranslation("The answer may not exceed the entries shown."), True, ColTypes.Error)

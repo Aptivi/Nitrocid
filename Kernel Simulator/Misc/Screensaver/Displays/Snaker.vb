@@ -122,7 +122,7 @@ Module SnakerDisplay
 
                 'A typical snake usually starts in the middle.
                 If Not ResizeSyncing Then
-                    Dim Dead As Boolean
+                    Dim Dead As Boolean = False
                     Dim FloorTopEdge As Integer = 1
                     Dim FloorBottomEdge As Integer = Console.WindowHeight - 2
                     Dim FloorLeftEdge As Integer = 3
@@ -131,8 +131,8 @@ Module SnakerDisplay
                     Dim SnakeCurrentY As Integer = Console.WindowHeight / 2
                     Dim SnakeAppleX As Integer = RandomDriver.Next(FloorLeftEdge + 1, FloorRightEdge - 1)
                     Dim SnakeAppleY As Integer = RandomDriver.Next(FloorTopEdge + 1, FloorBottomEdge - 1)
-                    Dim DidHorizontal As Boolean
-                    Dim DidVertical As Boolean
+                    Dim DidHorizontal As Boolean = False
+                    Dim DidVertical As Boolean = False
 
                     Do Until Dead
                         'Delay
