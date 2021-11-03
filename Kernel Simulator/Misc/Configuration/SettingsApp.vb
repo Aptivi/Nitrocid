@@ -94,7 +94,9 @@ Public Module SettingsApp
             Console.WriteLine()
             W(" {0}) " + DoTranslation("Find a Setting"), True, ColTypes.BackOption, MaxSections + 1)
             W(" {0}) " + DoTranslation("Save Settings"), True, ColTypes.BackOption, MaxSections + 2)
-            W(" {0}) " + DoTranslation("Exit"), True, ColTypes.BackOption, MaxSections + 3)
+            W(" {0}) " + DoTranslation("Save Settings As"), True, ColTypes.BackOption, MaxSections + 3)
+            W(" {0}) " + DoTranslation("Load Settings From"), True, ColTypes.BackOption, MaxSections + 4)
+            W(" {0}) " + DoTranslation("Exit"), True, ColTypes.BackOption, MaxSections + 5)
 
             'Prompt user and check for input
             Console.WriteLine()
@@ -122,7 +124,38 @@ Public Module SettingsApp
                         WStkTrc(ex)
                         Console.ReadKey()
                     End Try
-                ElseIf AnswerInt = MaxSections + 3 Then 'Exit
+                ElseIf AnswerInt = MaxSections + 3 Then 'Save Settings As
+                    W(DoTranslation("Where do you want to save the current kernel settings?"), True, ColTypes.Question)
+                    Dim Location As String = NeutralizePath(Console.ReadLine)
+                    If Not FileExists(Location) Then
+                        Try
+                            CreateConfig(Location)
+                        Catch ex As Exception
+                            W(ex.Message, True, ColTypes.Error)
+                            WStkTrc(ex)
+                            Console.ReadKey()
+                        End Try
+                    Else
+                        W(DoTranslation("Can't save kernel settings on top of existing file."), True, ColTypes.Error)
+                        Console.ReadKey()
+                    End If
+                ElseIf AnswerInt = MaxSections + 4 Then 'Load Settings From
+                    W(DoTranslation("Where do you want to load the current kernel settings from?"), True, ColTypes.Question)
+                    Dim Location As String = NeutralizePath(Console.ReadLine)
+                    If FileExists(Location) Then
+                        Try
+                            ReadConfig(Location)
+                            CreateConfig()
+                        Catch ex As Exception
+                            W(ex.Message, True, ColTypes.Error)
+                            WStkTrc(ex)
+                            Console.ReadKey()
+                        End Try
+                    Else
+                        W(DoTranslation("File not found."), True, ColTypes.Error)
+                        Console.ReadKey()
+                    End If
+                ElseIf AnswerInt = MaxSections + 5 Then 'Exit
                     Wdbg(DebugLevel.W, "Exiting...")
                     PromptFinished = True
                     Console.Clear()

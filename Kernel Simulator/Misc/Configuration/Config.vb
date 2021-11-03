@@ -76,8 +76,18 @@ Public Module Config
     ''' <returns>True if successful; False if unsuccessful.</returns>
     ''' <exception cref="Exceptions.ConfigException"></exception>
     Public Function CreateConfig() As Boolean
+        Return CreateConfig(GetKernelPath(KernelPathType.Configuration))
+    End Function
+
+    ''' <summary>
+    ''' Creates the kernel configuration file with custom path
+    ''' </summary>
+    ''' <returns>True if successful; False if unsuccessful.</returns>
+    ''' <exception cref="Exceptions.ConfigException"></exception>
+    Function CreateConfig(ConfigPath As String) As Boolean
         Try
             Dim ConfigurationObject As New JObject
+            ThrowOnInvalidPath(ConfigPath)
 
             'The General Section
             Dim GeneralConfig As New JObject From {
@@ -743,7 +753,7 @@ Public Module Config
             ConfigurationObject.Add("Misc", MiscConfig)
 
             'Save Config
-            File.WriteAllText(GetKernelPath(KernelPathType.Configuration), JsonConvert.SerializeObject(ConfigurationObject, Formatting.Indented))
+            File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(ConfigurationObject, Formatting.Indented))
             EventManager.RaiseConfigSaved()
             Return True
         Catch ex As Exception
@@ -760,9 +770,19 @@ Public Module Config
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="Exceptions.ConfigException"></exception>
     Public Function ReadConfig() As Boolean
+        Return ReadConfig(GetKernelPath(KernelPathType.Configuration))
+    End Function
+
+    ''' <summary>
+    ''' Configures the kernel according to the custom kernel configuration file
+    ''' </summary>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    ''' <exception cref="Exceptions.ConfigException"></exception>
+    Function ReadConfig(ConfigPath As String) As Boolean
         Try
             'Parse configuration. NOTE: Question marks between parentheses are for nullable types.
-            InitializeConfigToken()
+            ThrowOnInvalidPath(ConfigPath)
+            InitializeConfigToken(ConfigPath)
             Wdbg(DebugLevel.I, "Config loaded with {0} sections", ConfigToken.Count)
 
             '----------------------------- Important configuration -----------------------------
@@ -1396,8 +1416,9 @@ Public Module Config
     ''' <summary>
     ''' Initializes the config token
     ''' </summary>
-    Sub InitializeConfigToken()
-        ConfigToken = JObject.Parse(File.ReadAllText(GetKernelPath(KernelPathType.Configuration)))
+    Sub InitializeConfigToken(ConfigPath As String)
+        ThrowOnInvalidPath(ConfigPath)
+        ConfigToken = JObject.Parse(File.ReadAllText(ConfigPath))
     End Sub
 
 End Module
