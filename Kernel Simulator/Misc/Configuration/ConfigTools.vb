@@ -59,7 +59,7 @@ Public Module ConfigTools
 
         'Screensaver keys and sections
         Dim ExpectedScreensaverKeys As Integer = 4
-        Dim ExpectedScreensavers As Integer = 23
+        Dim ExpectedScreensavers As Integer = 24
         Dim ExpectedScreensaverSections As Integer = ExpectedScreensavers + ExpectedScreensaverKeys
 
         'Individual screensaver keys
@@ -86,6 +86,7 @@ Public Module ConfigTools
         Dim ExpectedScreensaverSpotWriteKeys As Integer = 4
         Dim ExpectedScreensaverRampKeys As Integer = 37
         Dim ExpectedScreensaverStackBoxKeys As Integer = 12
+        Dim ExpectedScreensaverSnakerKeys As Integer = 12
 
         'Check for missing sections
         If ConfigToken.Count <> ExpectedSections Then
@@ -278,6 +279,12 @@ Public Module ConfigTools
             If ConfigToken("Screensaver")("StackBox") IsNot Nothing Then
                 If ConfigToken("Screensaver")("StackBox").Count <> ExpectedScreensaverStackBoxKeys Then
                     Wdbg(DebugLevel.W, "Missing keys in Screensaver > StackBox. Config fix needed set to true.")
+                    FixesNeeded = True
+                End If
+            End If
+            If ConfigToken("Screensaver")("Snaker") IsNot Nothing Then
+                If ConfigToken("Screensaver")("Snaker").Count <> ExpectedScreensaverSnakerKeys Then
+                    Wdbg(DebugLevel.W, "Missing keys in Screensaver > Snaker. Config fix needed set to true.")
                     FixesNeeded = True
                 End If
             End If

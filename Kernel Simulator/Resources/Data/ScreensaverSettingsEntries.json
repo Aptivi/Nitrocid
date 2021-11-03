@@ -2048,5 +2048,82 @@
                 "Description": "Do we draw the box as a whole or do we draw only the border?"
             }
         ]
+    },
+    "Snaker": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "Snaker255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "SnakerTrueColor",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "SnakerDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Stage delay in milliseconds",
+                "Type": "SInt",
+                "Variable": "SnakerStageDelay",
+                "Description": "How many milliseconds to wait before drawing the next stage?"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "SnakerMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "SnakerMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "SnakerMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SInt",
+                "Variable": "SnakerMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "SnakerMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "SnakerMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "SnakerMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SInt",
+                "Variable": "SnakerMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+        ]
     }
 }

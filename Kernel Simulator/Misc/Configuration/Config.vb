@@ -721,6 +721,23 @@ Public Module Config
             }
             ScreensaverConfig.Add("StackBox", StackBoxConfig)
 
+            'Snaker config json object
+            Dim SnakerConfig As New JObject From {
+                    {"Activate 255 Color Mode", Snaker255Colors},
+                    {"Activate True Color Mode", SnakerTrueColor},
+                    {"Delay in Milliseconds", SnakerDelay},
+                    {"Stage delay in milliseconds", SnakerStageDelay},
+                    {"Minimum red color level", SnakerMinimumRedColorLevel},
+                    {"Minimum green color level", SnakerMinimumGreenColorLevel},
+                    {"Minimum blue color level", SnakerMinimumBlueColorLevel},
+                    {"Minimum color level", SnakerMinimumColorLevel},
+                    {"Maximum red color level", SnakerMaximumRedColorLevel},
+                    {"Maximum green color level", SnakerMaximumGreenColorLevel},
+                    {"Maximum blue color level", SnakerMaximumBlueColorLevel},
+                    {"Maximum color level", SnakerMaximumColorLevel}
+            }
+            ScreensaverConfig.Add("Snaker", SnakerConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -1349,6 +1366,20 @@ Public Module Config
             StackBoxMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("StackBox")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("StackBox")?("Maximum blue color level"), 255)
             StackBoxMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("StackBox")?("Maximum color level"), 0), ConfigToken("Screensaver")?("StackBox")?("Maximum color level"), 255)
             StackBoxFill = If(ConfigToken("Screensaver")?("StackBox")?("Fill the boxes"), True)
+
+            '> Snaker
+            Snaker255Colors = If(ConfigToken("Screensaver")?("Snaker")?("Activate 255 Color Mode"), False)
+            SnakerTrueColor = If(ConfigToken("Screensaver")?("Snaker")?("Activate True Color Mode"), True)
+            SnakerDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Snaker")?("Delay in Milliseconds"), 10)
+            SnakerStageDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Stage delay in milliseconds"), 0), ConfigToken("Screensaver")?("Snaker")?("Stage delay in milliseconds"), 5000)
+            SnakerMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Snaker")?("Minimum red color level"), 0)
+            SnakerMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Snaker")?("Minimum green color level"), 0)
+            SnakerMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("Snaker")?("Minimum blue color level"), 0)
+            SnakerMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Minimum color level"), 0), ConfigToken("Screensaver")?("Snaker")?("Minimum color level"), 0)
+            SnakerMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("Snaker")?("Maximum red color level"), 255)
+            SnakerMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Snaker")?("Maximum green color level"), 255)
+            SnakerMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Snaker")?("Maximum blue color level"), 255)
+            SnakerMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Maximum color level"), 0), ConfigToken("Screensaver")?("Snaker")?("Maximum color level"), 255)
 
             'Misc Section
             Wdbg(DebugLevel.I, "Parsing misc section...")
