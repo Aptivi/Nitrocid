@@ -95,10 +95,10 @@ Public Module Screensaver
         Try
             InSaver = True
             ScrnTimeReached = True
-            saver = saver.ToLower()
             EventManager.RaisePreShowScreensaver(saver)
             Wdbg(DebugLevel.I, "Requested screensaver: {0}", saver)
-            If Screensavers.ContainsKey(saver) Then
+            If Screensavers.ContainsKey(saver.ToLower()) Then
+                saver = saver.ToLower()
                 Screensavers(saver).RunWorkerAsync()
                 Wdbg(DebugLevel.I, "{0} started", saver)
                 Console.ReadKey()
