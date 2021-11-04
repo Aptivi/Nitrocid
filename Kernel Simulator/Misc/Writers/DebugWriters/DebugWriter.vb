@@ -20,7 +20,7 @@ Imports System.IO
 
 Public Module DebugWriter
 
-    Public DebugWriter As StreamWriter
+    Public DebugStreamWriter As StreamWriter
     Public DebugStackTraces As New List(Of String)
 
     ''' <summary>
@@ -31,7 +31,7 @@ Public Module DebugWriter
     Public Sub Wdbg(Level As DebugLevel, text As String, ParamArray vars() As Object)
         If DebugMode Then
             'Open debugging stream
-            If DebugWriter Is Nothing Or DebugWriter?.BaseStream Is Nothing Then DebugWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging), True) With {.AutoFlush = True}
+            If DebugStreamWriter Is Nothing Or DebugStreamWriter?.BaseStream Is Nothing Then DebugStreamWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging), True) With {.AutoFlush = True}
 
             Dim STrace As New StackTrace(True)
             Dim Source As String = Path.GetFileName(STrace.GetFrame(1).GetFileName)
@@ -59,7 +59,7 @@ Public Module DebugWriter
             'For contributors who are testing new code: Define ENABLEIMMEDIATEWINDOWDEBUG for immediate debugging (Immediate Window)
             If Source IsNot Nothing And Not LineNum = 0 Then
                 'Debug to file and all connected debug devices (raw mode)
-                DebugWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
+                DebugStreamWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
                 For i As Integer = 0 To DebugDevices.Count - 1
                     Try
                         DebugDevices(i).ClientStreamWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
@@ -72,7 +72,7 @@ Public Module DebugWriter
                 Debug.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] ({Func} - {Source}:{LineNum}): {text}", vars)
 #End If
             Else 'Rare case, unless debug symbol is not found on archives.
-                DebugWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
+                DebugStreamWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)
                 For i As Integer = 0 To DebugDevices.Count - 1
                     Try
                         DebugDevices(i).ClientStreamWriter.WriteLine($"{KernelDateTime.ToShortDateString} {KernelDateTime.ToShortTimeString} [{Level}] {text}", vars)

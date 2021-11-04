@@ -319,7 +319,7 @@ Public Module KernelTools
         If DebugMode Then
             Wdbg(DebugLevel.I, "Shutting down debugger")
             DebugMode = False
-            DebugWriter.DebugWriter.Close() : DebugWriter.DebugWriter.Dispose()
+            DebugStreamWriter.Close() : DebugStreamWriter.Dispose()
         End If
 
         'Stop RPC

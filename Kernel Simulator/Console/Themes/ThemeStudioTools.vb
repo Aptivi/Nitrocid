@@ -168,7 +168,7 @@ Module ThemeStudioTools
     ''' <summary>
     ''' Selected selected option color for new theme
     ''' </summary>
-    Friend SelectedSelectedOptionColor As New Color(ColorTools.SelectedOptionColor)
+    Friend SelectedSelectedOptionColor As New Color(SelectedOptionColor)
 
     ''' <summary>
     ''' Saves theme to current directory under "<paramref name="Theme"/>.json."
