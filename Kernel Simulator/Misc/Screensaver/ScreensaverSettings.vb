@@ -1418,4 +1418,138 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public SnakerMaximumColorLevel As Integer = 255
 
+    '-> BarRot
+    ''' <summary>
+    ''' [BarRot] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public BarRot255Colors As Boolean
+    ''' <summary>
+    ''' [BarRot] Enable truecolor support. Has a higher priority than 255 color support.
+    ''' </summary>
+    Public BarRotTrueColor As Boolean = True
+    ''' <summary>
+    ''' [BarRot] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public BarRotDelay As Integer = 10
+    ''' <summary>
+    ''' [BarRot] How many milliseconds to wait before rotting the next ramp's one end?
+    ''' </summary>
+    Public BarRotNextRampDelay As Integer = 250
+    ''' <summary>
+    ''' [BarRot] Upper left corner character 
+    ''' </summary>
+    Public BarRotUpperLeftCornerChar As String = "╔"
+    ''' <summary>
+    ''' [BarRot] Upper right corner character 
+    ''' </summary>
+    Public BarRotUpperRightCornerChar As String = "╗"
+    ''' <summary>
+    ''' [BarRot] Lower left corner character 
+    ''' </summary>
+    Public BarRotLowerLeftCornerChar As String = "╚"
+    ''' <summary>
+    ''' [BarRot] Lower right corner character 
+    ''' </summary>
+    Public BarRotLowerRightCornerChar As String = "╝"
+    ''' <summary>
+    ''' [BarRot] Upper frame character 
+    ''' </summary>
+    Public BarRotUpperFrameChar As String = "═"
+    ''' <summary>
+    ''' [BarRot] Lower frame character 
+    ''' </summary>
+    Public BarRotLowerFrameChar As String = "═"
+    ''' <summary>
+    ''' [BarRot] Left frame character 
+    ''' </summary>
+    Public BarRotLeftFrameChar As String = "║"
+    ''' <summary>
+    ''' [BarRot] Right frame character 
+    ''' </summary>
+    Public BarRotRightFrameChar As String = "║"
+    ''' <summary>
+    ''' [BarRot] The minimum red color level (true color - start)
+    ''' </summary>
+    Public BarRotMinimumRedColorLevelStart As Integer = 0
+    ''' <summary>
+    ''' [BarRot] The minimum green color level (true color - start)
+    ''' </summary>
+    Public BarRotMinimumGreenColorLevelStart As Integer = 0
+    ''' <summary>
+    ''' [BarRot] The minimum blue color level (true color - start)
+    ''' </summary>
+    Public BarRotMinimumBlueColorLevelStart As Integer = 0
+    ''' <summary>
+    ''' [BarRot] The maximum red color level (true color - start)
+    ''' </summary>
+    Public BarRotMaximumRedColorLevelStart As Integer = 255
+    ''' <summary>
+    ''' [BarRot] The maximum green color level (true color - start)
+    ''' </summary>
+    Public BarRotMaximumGreenColorLevelStart As Integer = 255
+    ''' <summary>
+    ''' [BarRot] The maximum blue color level (true color - start)
+    ''' </summary>
+    Public BarRotMaximumBlueColorLevelStart As Integer = 255
+    ''' <summary>
+    ''' [BarRot] The minimum red color level (true color - end)
+    ''' </summary>
+    Public BarRotMinimumRedColorLevelEnd As Integer = 0
+    ''' <summary>
+    ''' [BarRot] The minimum green color level (true color - end)
+    ''' </summary>
+    Public BarRotMinimumGreenColorLevelEnd As Integer = 0
+    ''' <summary>
+    ''' [BarRot] The minimum blue color level (true color - end)
+    ''' </summary>
+    Public BarRotMinimumBlueColorLevelEnd As Integer = 0
+    ''' <summary>
+    ''' [BarRot] The maximum red color level (true color - end)
+    ''' </summary>
+    Public BarRotMaximumRedColorLevelEnd As Integer = 255
+    ''' <summary>
+    ''' [BarRot] The maximum green color level (true color - end)
+    ''' </summary>
+    Public BarRotMaximumGreenColorLevelEnd As Integer = 255
+    ''' <summary>
+    ''' [BarRot] The maximum blue color level (true color - end)
+    ''' </summary>
+    Public BarRotMaximumBlueColorLevelEnd As Integer = 255
+    ''' <summary>
+    ''' [BarRot] Upper left corner color.
+    ''' </summary>
+    Public BarRotUpperLeftCornerColor As String = "192;192;192"
+    ''' <summary>
+    ''' [BarRot] Upper right corner color.
+    ''' </summary>
+    Public BarRotUpperRightCornerColor As String = "192;192;192"
+    ''' <summary>
+    ''' [BarRot] Lower left corner color.
+    ''' </summary>
+    Public BarRotLowerLeftCornerColor As String = "192;192;192"
+    ''' <summary>
+    ''' [BarRot] Lower right corner color.
+    ''' </summary>
+    Public BarRotLowerRightCornerColor As String = "192;192;192"
+    ''' <summary>
+    ''' [BarRot] Upper frame color.
+    ''' </summary>
+    Public BarRotUpperFrameColor As String = "192;192;192"
+    ''' <summary>
+    ''' [BarRot] Lower frame color.
+    ''' </summary>
+    Public BarRotLowerFrameColor As String = "192;192;192"
+    ''' <summary>
+    ''' [BarRot] Left frame color.
+    ''' </summary>
+    Public BarRotLeftFrameColor As String = "192;192;192"
+    ''' <summary>
+    ''' [BarRot] Right frame color.
+    ''' </summary>
+    Public BarRotRightFrameColor As String = "192;192;192"
+    ''' <summary>
+    ''' [BarRot] Use the border colors.
+    ''' </summary>
+    Public BarRotUseBorderColors As Boolean
+
 End Module

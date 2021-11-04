@@ -738,6 +738,44 @@ Public Module Config
             }
             ScreensaverConfig.Add("Snaker", SnakerConfig)
 
+            'BarRot config json object
+            Dim BarRotConfig As New JObject From {
+                    {"Activate 255 Color Mode", BarRot255Colors},
+                    {"Activate True Color Mode", BarRotTrueColor},
+                    {"Delay in Milliseconds", BarRotDelay},
+                    {"Next ramp rot interval", BarRotNextRampDelay},
+                    {"Upper left corner character for ramp bar", BarRotUpperLeftCornerChar},
+                    {"Upper right corner character for ramp bar", BarRotUpperRightCornerChar},
+                    {"Lower left corner character for ramp bar", BarRotLowerRightCornerChar},
+                    {"Lower right corner character for ramp bar", BarRotLowerRightCornerChar},
+                    {"Upper frame character for ramp bar", BarRotUpperFrameChar},
+                    {"Lower frame character for ramp bar", BarRotLowerFrameChar},
+                    {"Left frame character for ramp bar", BarRotLeftFrameChar},
+                    {"Right frame character for ramp bar", BarRotRightFrameChar},
+                    {"Minimum red color level for start color", BarRotMinimumRedColorLevelStart},
+                    {"Minimum green color level for start color", BarRotMinimumGreenColorLevelStart},
+                    {"Minimum blue color level for start color", BarRotMinimumBlueColorLevelStart},
+                    {"Maximum red color level for start color", BarRotMaximumRedColorLevelStart},
+                    {"Maximum green color level for start color", BarRotMaximumGreenColorLevelStart},
+                    {"Maximum blue color level for start color", BarRotMaximumBlueColorLevelStart},
+                    {"Minimum red color level for end color", BarRotMinimumRedColorLevelEnd},
+                    {"Minimum green color level for end color", BarRotMinimumGreenColorLevelEnd},
+                    {"Minimum blue color level for end color", BarRotMinimumBlueColorLevelEnd},
+                    {"Maximum red color level for end color", BarRotMaximumRedColorLevelEnd},
+                    {"Maximum green color level for end color", BarRotMaximumGreenColorLevelEnd},
+                    {"Maximum blue color level for end color", BarRotMaximumBlueColorLevelEnd},
+                    {"Upper left corner color for ramp bar", BarRotUpperLeftCornerColor},
+                    {"Upper right corner color for ramp bar", BarRotUpperRightCornerColor},
+                    {"Lower left corner color for ramp bar", BarRotLowerLeftCornerColor},
+                    {"Lower right corner color for ramp bar", BarRotLowerRightCornerColor},
+                    {"Upper frame color for ramp bar", BarRotUpperFrameColor},
+                    {"Lower frame color for ramp bar", BarRotLowerFrameColor},
+                    {"Left frame color for ramp bar", BarRotLeftFrameColor},
+                    {"Right frame color for ramp bar", BarRotRightFrameColor},
+                    {"Use border colors for ramp bar", BarRotUseBorderColors}
+            }
+            ScreensaverConfig.Add("BarRot", BarRotConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -1380,6 +1418,41 @@ Public Module Config
             SnakerMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Snaker")?("Maximum green color level"), 255)
             SnakerMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Snaker")?("Maximum blue color level"), 255)
             SnakerMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Snaker")?("Maximum color level"), 0), ConfigToken("Screensaver")?("Snaker")?("Maximum color level"), 255)
+
+            '> BarRot
+            BarRot255Colors = If(ConfigToken("Screensaver")?("BarRot")?("Activate 255 Color Mode"), False)
+            BarRotTrueColor = If(ConfigToken("Screensaver")?("BarRot")?("Activate True Color Mode"), True)
+            BarRotDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BarRot")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("BarRot")?("Delay in Milliseconds"), 10)
+            BarRotNextRampDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("BarRot")?("Next ramp rot interval"), 0), ConfigToken("Screensaver")?("BarRot")?("Next ramp rot interval"), 250)
+            BarRotUpperLeftCornerChar = If(ConfigToken("Screensaver")?("BarRot")?("Upper left corner character for ramp bar"), "╔")
+            BarRotUpperRightCornerChar = If(ConfigToken("Screensaver")?("BarRot")?("Upper right corner character for ramp bar"), "╗")
+            BarRotLowerLeftCornerChar = If(ConfigToken("Screensaver")?("BarRot")?("Lower left corner character for ramp bar"), "╚")
+            BarRotLowerRightCornerChar = If(ConfigToken("Screensaver")?("BarRot")?("Lower right corner character for ramp bar"), "╝")
+            BarRotUpperFrameChar = If(ConfigToken("Screensaver")?("BarRot")?("Upper frame character for ramp bar"), "═")
+            BarRotLowerFrameChar = If(ConfigToken("Screensaver")?("BarRot")?("Lower frame character for ramp bar"), "═")
+            BarRotLeftFrameChar = If(ConfigToken("Screensaver")?("BarRot")?("Left frame character for ramp bar"), "║")
+            BarRotRightFrameChar = If(ConfigToken("Screensaver")?("BarRot")?("Right frame character for ramp bar"), "║")
+            BarRotMinimumRedColorLevelStart = If(Integer.TryParse(ConfigToken("Screensaver")?("BarRot")?("Minimum red color level for start color"), 0), ConfigToken("Screensaver")?("BarRot")?("Minimum red color level for start color"), 0)
+            BarRotMinimumGreenColorLevelStart = If(Integer.TryParse(ConfigToken("Screensaver")?("BarRot")?("Minimum green color level for start color"), 0), ConfigToken("Screensaver")?("BarRot")?("Minimum green color level for start color"), 0)
+            BarRotMinimumBlueColorLevelStart = If(Integer.TryParse(ConfigToken("Screensaver")?("BarRot")?("Minimum blue color level for start color"), 0), ConfigToken("Screensaver")?("BarRot")?("Minimum blue color level for start color"), 0)
+            BarRotMaximumRedColorLevelStart = If(Integer.TryParse(ConfigToken("Screensaver")?("BarRot")?("Maximum red color level for start color"), 0), ConfigToken("Screensaver")?("BarRot")?("Maximum red color level for start color"), 255)
+            BarRotMaximumGreenColorLevelStart = If(Integer.TryParse(ConfigToken("Screensaver")?("BarRot")?("Maximum green color level for start color"), 0), ConfigToken("Screensaver")?("BarRot")?("Maximum green color level for start color"), 255)
+            BarRotMaximumBlueColorLevelStart = If(Integer.TryParse(ConfigToken("Screensaver")?("BarRot")?("Maximum blue color level for start color"), 0), ConfigToken("Screensaver")?("BarRot")?("Maximum blue color level for start color"), 255)
+            BarRotMinimumRedColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("BarRot")?("Minimum red color level for end color"), 0), ConfigToken("Screensaver")?("BarRot")?("Minimum red color level for end color"), 0)
+            BarRotMinimumGreenColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("BarRot")?("Minimum green color level for end color"), 0), ConfigToken("Screensaver")?("BarRot")?("Minimum green color level for end color"), 0)
+            BarRotMinimumBlueColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("BarRot")?("Minimum blue color level for end color"), 0), ConfigToken("Screensaver")?("BarRot")?("Minimum blue color level for end color"), 0)
+            BarRotMaximumRedColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("BarRot")?("Maximum red color level for end color"), 0), ConfigToken("Screensaver")?("BarRot")?("Maximum red color level for end color"), 255)
+            BarRotMaximumGreenColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("BarRot")?("Maximum green color level for end color"), 0), ConfigToken("Screensaver")?("BarRot")?("Maximum green color level for end color"), 255)
+            BarRotMaximumBlueColorLevelEnd = If(Integer.TryParse(ConfigToken("Screensaver")?("BarRot")?("Maximum blue color level for end color"), 0), ConfigToken("Screensaver")?("BarRot")?("Maximum blue color level for end color"), 255)
+            BarRotUpperLeftCornerColor = New Color(If(ConfigToken("Screensaver")?("BarRot")?("Upper left corner color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+            BarRotUpperRightCornerColor = New Color(If(ConfigToken("Screensaver")?("BarRot")?("Upper right corner color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+            BarRotLowerLeftCornerColor = New Color(If(ConfigToken("Screensaver")?("BarRot")?("Lower left corner color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+            BarRotLowerRightCornerColor = New Color(If(ConfigToken("Screensaver")?("BarRot")?("Lower right corner color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+            BarRotUpperFrameColor = New Color(If(ConfigToken("Screensaver")?("BarRot")?("Upper frame color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+            BarRotLowerFrameColor = New Color(If(ConfigToken("Screensaver")?("BarRot")?("Lower frame color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+            BarRotLeftFrameColor = New Color(If(ConfigToken("Screensaver")?("BarRot")?("Left frame color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+            BarRotRightFrameColor = New Color(If(ConfigToken("Screensaver")?("BarRot")?("Right frame color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
+            BarRotUseBorderColors = If(ConfigToken("Screensaver")?("BarRot")?("Use border colors for ramp bar"), False)
 
             'Misc Section
             Wdbg(DebugLevel.I, "Parsing misc section...")

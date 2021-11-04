@@ -33,7 +33,8 @@ Public Module Screensaver
     Public PasswordLock As Boolean = True
     Public ReadOnly colors() As ConsoleColor = CType([Enum].GetValues(GetType(ConsoleColor)), ConsoleColor())        '15 Console Colors
     Public ReadOnly colors255() As ConsoleColors = CType([Enum].GetValues(GetType(ConsoleColors)), ConsoleColors())  '255 Console Colors
-    Public ReadOnly Screensavers As New Dictionary(Of String, BackgroundWorker) From {{"beatfader", BeatFader},
+    Public ReadOnly Screensavers As New Dictionary(Of String, BackgroundWorker) From {{"barrot", BarRot},
+                                                                                      {"beatfader", BeatFader},
                                                                                       {"bouncingblock", BouncingBlock},
                                                                                       {"bouncingtext", BouncingText},
                                                                                       {"colormix", ColorMix},
