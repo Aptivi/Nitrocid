@@ -576,6 +576,7 @@
     <Compile Include="TestShell\Commands\CheckSettingsEntryVars.vb" />
     <Compile Include="TestShell\Commands\CheckLocalLines.vb" />
     <Compile Include="TestShell\Commands\CheckStrings.vb" />
+    <Compile Include="TestShell\Commands\SleepTook.vb" />
     <Compile Include="TestShell\Commands\TestCRC32.vb" />
     <Compile Include="TestShell\Commands\TestTable.vb" />
     <Compile Include="TestShell\Commands\CheckString.vb" />
