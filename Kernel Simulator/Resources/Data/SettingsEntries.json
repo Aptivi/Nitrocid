@@ -97,6 +97,12 @@
                 "Type": "SBoolean",
                 "Variable": "ShowStackTraceOnKernelError",
                 "Description": "If there is any kernel error, choose whether or not to print the stack trace to the console."
+            },
+            {
+                "Name": "Check debug quota",
+                "Type": "SBoolean",
+                "Variable": "CheckDebugQuota",
+                "Description": "Do we check if the debug system needs to check for quota before writing to the debugger?"
             }
         ]
     },

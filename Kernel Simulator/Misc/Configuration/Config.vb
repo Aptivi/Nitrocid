@@ -106,7 +106,8 @@ Public Module Config
                     {"Start kernel modifications on boot", StartKernelMods},
                     {"Show current time before login", ShowCurrentTimeBeforeLogin},
                     {"Notify for any fault during boot", NotifyFaultsBoot},
-                    {"Show stack trace on kernel error", ShowStackTraceOnKernelError}
+                    {"Show stack trace on kernel error", ShowStackTraceOnKernelError},
+                    {"Check debug quota", CheckDebugQuota}
             }
             ConfigurationObject.Add("General", GeneralConfig)
 
@@ -916,6 +917,7 @@ Public Module Config
             ShowCurrentTimeBeforeLogin = If(ConfigToken("General")?("Show current time before login"), True)
             NotifyFaultsBoot = If(ConfigToken("General")?("Notify for any fault during boot"), True)
             ShowStackTraceOnKernelError = If(ConfigToken("General")?("Show stack trace on kernel error"), False)
+            CheckDebugQuota = If(ConfigToken("General")?("Check debug quota"), True)
 
             'Login Section
             Wdbg(DebugLevel.I, "Parsing login section...")

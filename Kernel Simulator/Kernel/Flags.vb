@@ -219,6 +219,10 @@ Public Module Flags
     ''' Whether to print the stack trace on kernel error
     ''' </summary>
     Public ShowStackTraceOnKernelError As Boolean
+    ''' <summary>
+    ''' Whether to check the debug log to see if it exceeds the quota
+    ''' </summary>
+    Public CheckDebugQuota As Boolean = True
 
     'Private flags
     ''' <summary>

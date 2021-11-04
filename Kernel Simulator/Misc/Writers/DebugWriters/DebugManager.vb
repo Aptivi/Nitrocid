@@ -25,7 +25,7 @@ Public Module DebugManager
     ''' <summary>
     ''' Checks to see if the debug file exceeds the quota
     ''' </summary>
-    Public Sub CheckForExceed()
+    Public Sub CheckForDebugQuotaExceed()
         Try
             Dim FInfo As New FileInfo(GetKernelPath(KernelPathType.Debugging))
             Dim OldSize As Double = FInfo.Length
