@@ -36,4 +36,30 @@ Public Module ThreadManager
         Loop
     End Sub
 
+    ''' <summary>
+    ''' Gets the actual milliseconds time from the sleep time provided
+    ''' </summary>
+    ''' <param name="Time">Sleep time</param>
+    ''' <returns>How many milliseconds did it really sleep?</returns>
+    Public Function GetActualMilliseconds(Time As Integer) As Integer
+        Dim SleepStopwatch As New Stopwatch
+        SleepStopwatch.Start()
+        Threading.Thread.Sleep(Time)
+        SleepStopwatch.Stop()
+        Return SleepStopwatch.ElapsedMilliseconds
+    End Function
+
+    ''' <summary>
+    ''' Gets the actual ticks from the sleep time provided
+    ''' </summary>
+    ''' <param name="Time">Sleep time</param>
+    ''' <returns>How many ticks did it really sleep?</returns>
+    Public Function GetActualTicks(Time As Integer) As Long
+        Dim SleepStopwatch As New Stopwatch
+        SleepStopwatch.Start()
+        Threading.Thread.Sleep(Time)
+        SleepStopwatch.Stop()
+        Return SleepStopwatch.ElapsedTicks
+    End Function
+
 End Module

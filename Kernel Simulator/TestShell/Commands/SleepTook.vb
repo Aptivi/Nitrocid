@@ -22,11 +22,12 @@ Class Test_SleepTookCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim SleepMs As Integer = ListArgsOnly(0)
-        Dim SleepStopwatch As New Stopwatch
-        SleepStopwatch.Start()
-        Threading.Thread.Sleep(SleepMs)
-        SleepStopwatch.Stop()
-        W("{0} ms => {1} ms", True, ColTypes.Neutral, SleepMs, SleepStopwatch.ElapsedMilliseconds)
+        Dim Ticks As Boolean = ListSwitchesOnly.Contains("-t")
+        If Ticks Then
+            W("{0} ms => {1} ticks", True, ColTypes.Neutral, SleepMs, GetActualTicks(SleepMs))
+        Else
+            W("{0} ms => {1} ms", True, ColTypes.Neutral, SleepMs, GetActualMilliseconds(SleepMs))
+        End If
     End Sub
 
 End Class
