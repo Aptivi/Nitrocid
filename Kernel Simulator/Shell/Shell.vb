@@ -54,6 +54,7 @@ Public Module Shell
                                                                              {"beep", New CommandInfo("beep", ShellCommandType.Shell, "Beep in 'n' Hz and time in 'n' milliseconds", {"<37-32767 Hz> <milliseconds>"}, True, 2, New BeepCommand)},
                                                                              {"blockdbgdev", New CommandInfo("blockdbgdev", ShellCommandType.Shell, "Block a debug device by IP address", {"<ipaddress>"}, True, 1, New BlockDbgDevCommand, True)},
                                                                              {"calc", New CommandInfo("calc", ShellCommandType.Shell, "Calculator to calculate expressions.", {"<expression>"}, True, 1, New CalcCommand)},
+                                                                             {"calendar", New CommandInfo("calendar", ShellCommandType.Shell, "Calendar, event, and reminder manager", {"<show> [year] [month]", "<event> <add> <date> <title>", "<event> <remove> <date> <eventid>", "<event> <list>", "<event> <saveall>", "<reminder> <add> <dateandtime> <title>", "<reminder> <remove> <dateandtime> <reminderid>", "<reminder> <list>", "<reminder> <saveall>"}, True, 1, New CalendarCommand)},
                                                                              {"cat", New CommandInfo("cat", ShellCommandType.Shell, "Prints content of file to console", {"[-lines|-nolines] <file>"}, True, 1, New CatCommand, False, True)},
                                                                              {"cdbglog", New CommandInfo("cdbglog", ShellCommandType.Shell, "Deletes everything in debug log", {}, False, 0, New CdbgLogCommand, True)},
                                                                              {"chattr", New CommandInfo("chattr", ShellCommandType.Shell, "Changes attribute of a file", {"<file> +/-<attributes>"}, True, 2, New ChAttrCommand, False, False, False, False, False, New Action(AddressOf (New ChAttrCommand).HelpHelper))},
@@ -182,12 +183,12 @@ Public Module Shell
 
                     'Wait for command
                     Wdbg(DebugLevel.I, "Waiting for command")
-                    EventManager.RaiseShellInitialized()
+                    Kernel.EventManager.RaiseShellInitialized()
                     Dim strcommand As String = Console.ReadLine()
 
                     If Not InSaver Then
                         'Fire event of PreRaiseCommand
-                        EventManager.RaisePreExecuteCommand(strcommand)
+                        Kernel.EventManager.RaisePreExecuteCommand(strcommand)
 
                         'Check for a type of command
                         If Not (strcommand = Nothing Or strcommand?.StartsWith(" ") = True) Then
@@ -220,7 +221,7 @@ Public Module Shell
                         End If
 
                         'Fire an event of PostExecuteCommand
-                        EventManager.RaisePostExecuteCommand(strcommand)
+                        Kernel.EventManager.RaisePostExecuteCommand(strcommand)
                     End If
                 Catch ex As Exception
                     WStkTrc(ex)

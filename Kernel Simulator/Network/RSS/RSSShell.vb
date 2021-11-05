@@ -105,7 +105,7 @@ Begin:
                 SetInputColor()
 
                 'Prompt for command
-                EventManager.RaiseRSSShellInitialized(RSSFeedLink)
+                Kernel.EventManager.RaiseRSSShellInitialized(RSSFeedLink)
                 Dim WrittenCommand As String = Console.ReadLine
 
                 'Check to see if the command doesn't start with spaces or if the command is nothing
@@ -118,11 +118,11 @@ Begin:
                             Wdbg(DebugLevel.I, "Command {0} found in the list of {1} commands.", Command, RSSCommands.Count)
                             Dim Params As New ExecuteCommandThreadParameters(WrittenCommand, ShellCommandType.RSSShell, Nothing)
                             RSSCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "RSS Shell Command Thread"}
-                            EventManager.RaiseRSSPreExecuteCommand(RSSFeedLink, WrittenCommand)
+                            Kernel.EventManager.RaiseRSSPreExecuteCommand(RSSFeedLink, WrittenCommand)
                             Wdbg(DebugLevel.I, "Made new thread. Starting with argument {0}...", WrittenCommand)
                             RSSCommandThread.Start(Params)
                             RSSCommandThread.Join()
-                            EventManager.RaiseRSSPostExecuteCommand(RSSFeedLink, WrittenCommand)
+                            Kernel.EventManager.RaiseRSSPostExecuteCommand(RSSFeedLink, WrittenCommand)
                         ElseIf RSSModCommands.Contains(Command) Then
                             Wdbg(DebugLevel.I, "Mod command {0} executing...", Command)
                             ExecuteModCommand(WrittenCommand)

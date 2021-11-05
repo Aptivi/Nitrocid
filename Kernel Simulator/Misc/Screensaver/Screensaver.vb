@@ -95,7 +95,7 @@ Public Module Screensaver
         Try
             InSaver = True
             ScrnTimeReached = True
-            EventManager.RaisePreShowScreensaver(saver)
+            Kernel.EventManager.RaisePreShowScreensaver(saver)
             Wdbg(DebugLevel.I, "Requested screensaver: {0}", saver)
             If Screensavers.ContainsKey(saver.ToLower()) Then
                 saver = saver.ToLower()
@@ -119,7 +119,7 @@ Public Module Screensaver
 
             'Raise event
             Wdbg(DebugLevel.I, "Screensaver really stopped.")
-            EventManager.RaisePostShowScreensaver(saver)
+            Kernel.EventManager.RaisePostShowScreensaver(saver)
         Catch ex As InvalidOperationException
             W(DoTranslation("Error when trying to start screensaver, because of an invalid operation."), True, ColTypes.Error)
             WStkTrc(ex)
@@ -138,7 +138,7 @@ Public Module Screensaver
     Public Sub LockScreen()
         LockMode = True
         ShowSavers(DefSaverName)
-        EventManager.RaisePreUnlock(DefSaverName)
+        Kernel.EventManager.RaisePreUnlock(DefSaverName)
         If PasswordLock Then
             ShowPasswordPrompt(CurrentUser.Username)
         Else

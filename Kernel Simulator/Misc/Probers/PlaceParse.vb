@@ -27,7 +27,7 @@ Public Module PlaceParse
     ''' <returns>A string that has the parsed placeholders</returns>
     Public Function ProbePlaces(text As String) As String
 
-        EventManager.RaisePlaceholderParsing(text)
+        Kernel.EventManager.RaisePlaceholderParsing(text)
         Try
             Wdbg(DebugLevel.I, "Parsing text for placeholders...")
             If text.Contains("<user>") Then
@@ -178,7 +178,7 @@ Public Module PlaceParse
                     text = text.Replace(ShellVariableSubstring, GetVariable(PlainShellVariable))
                 Loop
             End If
-            EventManager.RaisePlaceholderParsed(text)
+            Kernel.EventManager.RaisePlaceholderParsed(text)
         Catch ex As Exception
             WStkTrc(ex)
             W(DoTranslation("Error trying to parse placeholders. {0}"), True, ColTypes.Error, ex.Message)

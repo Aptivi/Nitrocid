@@ -34,7 +34,7 @@ Module RemoteDebugCmd
     ''' <param name="SocketStreamWriter">A socket stream writer</param>
     ''' <param name="Address">An IP address</param>
     Sub ParseCmd(CmdString As String, SocketStreamWriter As StreamWriter, Address As String)
-        EventManager.RaiseRemoteDebugExecuteCommand(Address, CmdString)
+        Kernel.EventManager.RaiseRemoteDebugExecuteCommand(Address, CmdString)
         Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(CmdString, ShellCommandType.RemoteDebugShell)
         Dim Command As String = ArgumentInfo.Command
         Dim eqargs() As String = ArgumentInfo.ArgumentsList
@@ -46,7 +46,7 @@ Module RemoteDebugCmd
             DebugCommandBase.Execute(strArgs, eqargs, SocketStreamWriter, Address)
         Catch ex As Exception
             SocketStreamWriter.WriteLine(DoTranslation("Error executing remote debug command {0}: {1}"), Command, ex.Message)
-            EventManager.RaiseRemoteDebugCommandError(Address, CmdString, ex)
+            Kernel.EventManager.RaiseRemoteDebugCommandError(Address, CmdString, ex)
         End Try
     End Sub
 End Module

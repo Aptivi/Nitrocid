@@ -210,6 +210,11 @@
     <Compile Include="ManPages\PageViewer.vb" />
     <Compile Include="Misc\Beautifiers\JsonBeautifier.vb" />
     <Compile Include="Misc\Beautifiers\JsonMinifier.vb" />
+    <Compile Include="Misc\Calendar\CalendarPrint.vb" />
+    <Compile Include="Misc\Calendar\Events\EventManager.vb" />
+    <Compile Include="Misc\Calendar\Reminders\ReminderInfo.vb" />
+    <Compile Include="Misc\Calendar\Events\EventInfo.vb" />
+    <Compile Include="Misc\Calendar\Reminders\ReminderManager.vb" />
     <Compile Include="Misc\Configuration\ConfigTools.vb" />
     <Compile Include="Misc\Configuration\SettingsApp.vb" />
     <Compile Include="Misc\Encryption\Encryption.vb" />
@@ -452,6 +457,7 @@
     <Compile Include="Shell\Commands\ArgInj.vb" />
     <Compile Include="Shell\Commands\Beep.vb" />
     <Compile Include="Shell\Commands\BlockDbgDev.vb" />
+    <Compile Include="Shell\Commands\Calendar.vb" />
     <Compile Include="Shell\Commands\Calc.vb" />
     <Compile Include="Shell\Commands\Cat.vb" />
     <Compile Include="Shell\Commands\CdbgLog.vb" />

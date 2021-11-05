@@ -64,6 +64,14 @@ Public Enum KernelPathType
     ''' Custom screensaver settings file.
     ''' </summary>
     CustomSaverSettings
+    ''' <summary>
+    ''' Events folder
+    ''' </summary>
+    Events
+    ''' <summary>
+    ''' Reminders folder
+    ''' </summary>
+    Reminders
 End Enum
 
 ''' <summary>

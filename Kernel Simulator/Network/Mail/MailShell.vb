@@ -77,7 +77,7 @@ Public Module MailShell
 
         'Add handler for IMAP and SMTP
         SwitchCancellationHandler(ShellCommandType.MailShell)
-        EventManager.RaiseIMAPShellInitialized()
+        Kernel.EventManager.RaiseIMAPShellInitialized()
 
         While Not ExitRequested
             'Populate messages
@@ -101,7 +101,7 @@ Public Module MailShell
             'Listen for a command
             Dim cmd As String = Console.ReadLine
             If Not (cmd = Nothing Or cmd?.StartsWithAnyOf({" ", "#"}) = True) Then
-                EventManager.RaiseIMAPPreExecuteCommand(cmd)
+                Kernel.EventManager.RaiseIMAPPreExecuteCommand(cmd)
                 Dim words As String() = cmd.SplitEncloseDoubleQuotes(" ")
                 Wdbg(DebugLevel.I, $"Is the command found? {MailCommands.ContainsKey(words(0))}")
                 If MailCommands.ContainsKey(words(0)) Then
@@ -121,7 +121,7 @@ Public Module MailShell
                     Wdbg(DebugLevel.E, "Command not found. Reopening shell...")
                     W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Error, words(0))
                 End If
-                EventManager.RaiseIMAPPostExecuteCommand(cmd)
+                Kernel.EventManager.RaiseIMAPPostExecuteCommand(cmd)
             Else
                 Thread.Sleep(30) 'This is to fix race condition between mail shell initialization and starting the event handler thread
             End If

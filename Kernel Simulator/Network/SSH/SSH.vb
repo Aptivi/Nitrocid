@@ -168,7 +168,7 @@ Public Module SSH
                 OpenCommand(SSH, Command)
             End If
         Catch ex As Exception
-            EventManager.RaiseSSHError(ex)
+            Kernel.EventManager.RaiseSSHError(ex)
             W(DoTranslation("Error trying to connect to SSH server: {0}"), True, ColTypes.Error, ex.Message)
             WStkTrc(ex)
         End Try
@@ -198,7 +198,7 @@ Public Module SSH
             'Add handler for SSH
             AddHandler Console.CancelKeyPress, AddressOf SSHDisconnect
             RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-            EventManager.RaiseSSHConnected(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port))
+            Kernel.EventManager.RaiseSSHConnected(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port))
 
             'Shell creation. Note that $TERM is what kind of terminal being used (vt100, xterm, ...). Always vt100 on Windows.
             Wdbg(DebugLevel.I, "Opening shell...")
@@ -237,11 +237,11 @@ Public Module SSH
             'Add handler for SSH
             AddHandler Console.CancelKeyPress, AddressOf SSHDisconnect
             RemoveHandler Console.CancelKeyPress, AddressOf CancelCommand
-            EventManager.RaiseSSHConnected(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port))
+            Kernel.EventManager.RaiseSSHConnected(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port))
 
             'Shell creation
             Wdbg(DebugLevel.I, "Opening shell...")
-            EventManager.RaiseSSHPreExecuteCommand(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port), Command)
+            Kernel.EventManager.RaiseSSHPreExecuteCommand(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port), Command)
             Dim SSHC As SshCommand = SSHClient.CreateCommand(Command)
             Dim SSHCAsyncResult As IAsyncResult = SSHC.BeginExecute()
             'TODO: SshCommand doesn't have input support.
@@ -266,12 +266,12 @@ Public Module SSH
             Wdbg(DebugLevel.E, "Error trying to execute SSH command ""{0}"" to {1}: {2}", Command, SSHClient.ConnectionInfo.Host, ex.Message)
             WStkTrc(ex)
             W(DoTranslation("Error executing SSH command") + " {0}: {1}", True, ColTypes.Error, Command, ex.Message)
-            EventManager.RaiseSSHCommandError(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port), Command, ex)
+            Kernel.EventManager.RaiseSSHCommandError(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port), Command, ex)
         Finally
             Wdbg(DebugLevel.I, "Connected: {0}", SSHClient.IsConnected)
             W(vbNewLine + DoTranslation("SSH Disconnected."), True, ColTypes.Neutral)
             DisconnectionRequested = False
-            EventManager.RaiseSSHPostExecuteCommand(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port), Command)
+            Kernel.EventManager.RaiseSSHPostExecuteCommand(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port), Command)
 
             'Remove handler for SSH
             AddHandler Console.CancelKeyPress, AddressOf CancelCommand
@@ -283,7 +283,7 @@ Public Module SSH
         If e.SpecialKey = ConsoleSpecialKey.ControlC Then
             e.Cancel = True
             DisconnectionRequested = True
-            EventManager.RaiseSSHDisconnected()
+            Kernel.EventManager.RaiseSSHDisconnected()
         End If
     End Sub
 

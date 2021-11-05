@@ -25,7 +25,7 @@ Public Module TableColor
     ''' <param name="Rows">Rows to insert to the table.</param>
     ''' <param name="Margin">Safe threshold from left</param>
     ''' <param name="ColTypes">A type of colors that will be changed.</param>
-    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, ColTypes As ColTypes)
+    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, ColTypes As ColTypes, Optional SeparateRows As Boolean = True)
         Dim ColumnCapacity As Integer = Console.WindowWidth / Headers.Length
         Dim ColumnPositions As New List(Of Integer)
         Dim RepeatTimes As Integer
@@ -70,6 +70,20 @@ Public Module TableColor
                 WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes)
             Next
             Console.WriteLine()
+
+            'Separate the rows optionally
+            If SeparateRows Then
+                'Write the closing minus sign.
+                OldTop = Console.CursorTop
+                RepeatTimes = Console.WindowWidth - Console.CursorLeft - (Margin * 2)
+                If Margin > 0 Then W(" ".Repeat(Margin), False, ColTypes)
+                W("-".Repeat(RepeatTimes), True, ColTypes)
+
+                'Fix CursorTop value on Unix systems.
+                If IsOnUnix() Then
+                    If Not Console.CursorTop = Console.WindowHeight - 1 Or OldTop = Console.WindowHeight - 3 Then Console.CursorTop -= 1
+                End If
+            End If
         Next
     End Sub
 
@@ -79,7 +93,7 @@ Public Module TableColor
     ''' <param name="Headers">Headers to insert to the table.</param>
     ''' <param name="Rows">Rows to insert to the table.</param>
     ''' <param name="Margin">Safe threshold from left</param>
-    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer)
+    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, Optional SeparateRows As Boolean = True)
         Dim ColumnCapacity As Integer = Console.WindowWidth / Headers.Length
         Dim ColumnPositions As New List(Of Integer)
         Dim RepeatTimes As Integer
@@ -124,6 +138,20 @@ Public Module TableColor
                 WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes.TableValue)
             Next
             Console.WriteLine()
+
+            'Separate the rows optionally
+            If SeparateRows Then
+                'Write the closing minus sign.
+                OldTop = Console.CursorTop
+                RepeatTimes = Console.WindowWidth - Console.CursorLeft - (Margin * 2)
+                If Margin > 0 Then W(" ".Repeat(Margin), False, ColTypes.Neutral)
+                W("-".Repeat(RepeatTimes), True, ColTypes.TableSeparator)
+
+                'Fix CursorTop value on Unix systems.
+                If IsOnUnix() Then
+                    If Not Console.CursorTop = Console.WindowHeight - 1 Or OldTop = Console.WindowHeight - 3 Then Console.CursorTop -= 1
+                End If
+            End If
         Next
     End Sub
 
@@ -131,7 +159,7 @@ Public Module TableColor
     ''' Draw a table with text
     ''' </summary>
     ''' <param name="Color">A color that will be changed to.</param>
-    Public Sub WriteTableC16(Headers() As String, Rows(,) As String, Margin As Integer, Color As ConsoleColor)
+    Public Sub WriteTableC16(Headers() As String, Rows(,) As String, Margin As Integer, Color As ConsoleColor, Optional SeparateRows As Boolean = True)
         Dim ColumnCapacity As Integer = Console.WindowWidth / Headers.Length
         Dim ColumnPositions As New List(Of Integer)
         Dim RepeatTimes As Integer
@@ -176,6 +204,20 @@ Public Module TableColor
                 WriteWhereC16(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, Color)
             Next
             Console.WriteLine()
+
+            'Separate the rows optionally
+            If SeparateRows Then
+                'Write the closing minus sign.
+                OldTop = Console.CursorTop
+                RepeatTimes = Console.WindowWidth - Console.CursorLeft - (Margin * 2)
+                If Margin > 0 Then WriteC16(" ".Repeat(Margin), False, Color)
+                WriteC16("-".Repeat(RepeatTimes), True, Color)
+
+                'Fix CursorTop value on Unix systems.
+                If IsOnUnix() Then
+                    If Not Console.CursorTop = Console.WindowHeight - 1 Or OldTop = Console.WindowHeight - 3 Then Console.CursorTop -= 1
+                End If
+            End If
         Next
     End Sub
 
@@ -184,7 +226,7 @@ Public Module TableColor
     ''' </summary>
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    Public Sub WriteTableC16(Headers() As String, Rows(,) As String, Margin As Integer, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor)
+    Public Sub WriteTableC16(Headers() As String, Rows(,) As String, Margin As Integer, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, Optional SeparateRows As Boolean = True)
         Dim ColumnCapacity As Integer = Console.WindowWidth / Headers.Length
         Dim ColumnPositions As New List(Of Integer)
         Dim RepeatTimes As Integer
@@ -229,6 +271,20 @@ Public Module TableColor
                 WriteWhereC16(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ForegroundColor, BackgroundColor)
             Next
             Console.WriteLine()
+
+            'Separate the rows optionally
+            If SeparateRows Then
+                'Write the closing minus sign.
+                OldTop = Console.CursorTop
+                RepeatTimes = Console.WindowWidth - Console.CursorLeft - (Margin * 2)
+                If Margin > 0 Then WriteC16(" ".Repeat(Margin), False, ForegroundColor, BackgroundColor)
+                WriteC16("-".Repeat(RepeatTimes), True, ForegroundColor, BackgroundColor)
+
+                'Fix CursorTop value on Unix systems.
+                If IsOnUnix() Then
+                    If Not Console.CursorTop = Console.WindowHeight - 1 Or OldTop = Console.WindowHeight - 3 Then Console.CursorTop -= 1
+                End If
+            End If
         Next
     End Sub
 
@@ -236,7 +292,7 @@ Public Module TableColor
     ''' Draw a table with text
     ''' </summary>
     ''' <param name="Color">A color that will be changed to.</param>
-    Public Sub WriteTableC(Headers() As String, Rows(,) As String, Margin As Integer, Color As Color)
+    Public Sub WriteTableC(Headers() As String, Rows(,) As String, Margin As Integer, Color As Color, Optional SeparateRows As Boolean = True)
         Dim ColumnCapacity As Integer = Console.WindowWidth / Headers.Length
         Dim ColumnPositions As New List(Of Integer)
         Dim RepeatTimes As Integer
@@ -281,6 +337,20 @@ Public Module TableColor
                 WriteWhereC(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, Color)
             Next
             Console.WriteLine()
+
+            'Separate the rows optionally
+            If SeparateRows Then
+                'Write the closing minus sign.
+                OldTop = Console.CursorTop
+                RepeatTimes = Console.WindowWidth - Console.CursorLeft - (Margin * 2)
+                If Margin > 0 Then WriteC(" ".Repeat(Margin), False, Color)
+                WriteC("-".Repeat(RepeatTimes), True, Color)
+
+                'Fix CursorTop value on Unix systems.
+                If IsOnUnix() Then
+                    If Not Console.CursorTop = Console.WindowHeight - 1 Or OldTop = Console.WindowHeight - 3 Then Console.CursorTop -= 1
+                End If
+            End If
         Next
     End Sub
 
@@ -289,7 +359,7 @@ Public Module TableColor
     ''' </summary>
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    Public Sub WriteTableC(Headers() As String, Rows(,) As String, Margin As Integer, ForegroundColor As Color, BackgroundColor As Color)
+    Public Sub WriteTableC(Headers() As String, Rows(,) As String, Margin As Integer, ForegroundColor As Color, BackgroundColor As Color, Optional SeparateRows As Boolean = True)
         Dim ColumnCapacity As Integer = Console.WindowWidth / Headers.Length
         Dim ColumnPositions As New List(Of Integer)
         Dim RepeatTimes As Integer
@@ -334,6 +404,20 @@ Public Module TableColor
                 WriteWhereC(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ForegroundColor, BackgroundColor)
             Next
             Console.WriteLine()
+
+            'Separate the rows optionally
+            If SeparateRows Then
+                'Write the closing minus sign.
+                OldTop = Console.CursorTop
+                RepeatTimes = Console.WindowWidth - Console.CursorLeft - (Margin * 2)
+                If Margin > 0 Then WriteC(" ".Repeat(Margin), False, ForegroundColor, BackgroundColor)
+                WriteC("-".Repeat(RepeatTimes), True, ForegroundColor, BackgroundColor)
+
+                'Fix CursorTop value on Unix systems.
+                If IsOnUnix() Then
+                    If Not Console.CursorTop = Console.WindowHeight - 1 Or OldTop = Console.WindowHeight - 3 Then Console.CursorTop -= 1
+                End If
+            End If
         Next
     End Sub
 

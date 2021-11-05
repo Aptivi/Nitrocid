@@ -76,12 +76,12 @@ Public Module HTTPShell
                 'Prompt for command
                 Wdbg(DebugLevel.I, "Normal shell")
                 HTTPCommand = Console.ReadLine()
-                EventManager.RaiseHTTPPreExecuteCommand(HTTPCommand)
+                Kernel.EventManager.RaiseHTTPPreExecuteCommand(HTTPCommand)
 
                 'Parse command
                 If Not (HTTPCommand = Nothing Or HTTPCommand?.StartsWithAnyOf({" ", "#"})) Then
                     HTTPGetLine()
-                    EventManager.RaiseHTTPPostExecuteCommand(HTTPCommand)
+                    Kernel.EventManager.RaiseHTTPPostExecuteCommand(HTTPCommand)
                 End If
 
                 'This is to fix race condition between HTTP shell initialization and starting the event handler thread

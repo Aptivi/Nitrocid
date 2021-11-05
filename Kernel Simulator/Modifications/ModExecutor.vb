@@ -23,7 +23,7 @@ Public Module ModExecutor
     ''' </summary>
     ''' <param name="cmd">A mod command with arguments</param>
     Sub ExecuteModCommand(cmd As String)
-        EventManager.RaisePreExecuteModCommand(cmd)
+        Kernel.EventManager.RaisePreExecuteModCommand(cmd)
 
         'Variables
         Dim parts As String() = cmd.SplitEncloseDoubleQuotes(" ")
@@ -80,7 +80,7 @@ Public Module ModExecutor
         Next
 
         'Raise event
-        EventManager.RaisePostExecuteModCommand(cmd)
+        Kernel.EventManager.RaisePostExecuteModCommand(cmd)
         Wdbg(DebugLevel.I, "Command executed successfully.")
     End Sub
 

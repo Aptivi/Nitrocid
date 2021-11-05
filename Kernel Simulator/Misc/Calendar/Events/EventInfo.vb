@@ -16,31 +16,36 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports KS
+<Serializable>
+Public Class EventInfo
 
-<TestClass()> Public Class KernelMiscTests
-
+    Private EventNotified As Boolean
     ''' <summary>
-    ''' Tests update fetching
+    ''' Event date
     ''' </summary>
-    <TestMethod()> <TestCategory("Misc")> Public Sub TestFetchKernelUpdates()
-        Dim Updates As List(Of String) = FetchKernelUpdates()
-        Updates.ShouldNotBeNull
+    Public ReadOnly Property EventDate As Date
+    ''' <summary>
+    ''' Event title
+    ''' </summary>
+    Public ReadOnly Property EventTitle As String
+
+    Public Sub New()
+    End Sub
+
+    Public Sub New(EventDate As Date, EventTitle As String)
+        Me.EventDate = EventDate
+        Me.EventTitle = EventTitle
     End Sub
 
     ''' <summary>
-    ''' Tests garbage collection
+    ''' Notifies the user about the event
     ''' </summary>
-    <TestMethod()> <TestCategory("Misc")> Public Sub TestGarbageCollect()
-        DisposeAll()
-    End Sub
-
-    ''' <summary>
-    ''' Tests raising an event and adding it to the fired events list
-    ''' </summary>
-    <TestMethod()> <TestCategory("Misc")> Public Sub TestRaiseEvent()
-        Kernel.EventManager.RaiseStartKernel()
-        Kernel.EventManager.FiredEvents.ShouldContainKey("KernelStarted (" + CStr(Kernel.EventManager.FiredEvents.Count - 1) + ")")
+    Protected Friend Sub NotifyEvent()
+        If Not EventNotified Then
+            Dim EventNotification As New Notification(EventTitle, DoTranslation("Now it's an event day!"), NotifPriority.Medium, NotifType.Normal)
+            NotifySend(EventNotification)
+            EventNotified = True
+        End If
     End Sub
 
 End Class

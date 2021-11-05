@@ -91,7 +91,7 @@ Public Module KernelTools
             Description = String.Format(Description, Variables)
 
             'Fire an event
-            EventManager.RaiseKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
+            Kernel.EventManager.RaiseKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
 
             'Make a dump file
             GeneratePanicDump(Description, ErrorType, Exc)
@@ -117,7 +117,7 @@ Public Module KernelTools
                 Console.ReadKey()
             ElseIf ErrorType = KernelErrorLevel.C And Reboot = False Then
                 'Check if error is Continuable and reboot is disabled
-                EventManager.RaiseContKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
+                Kernel.EventManager.RaiseContKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
                 W(DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), True, ColTypes.Continuable, ErrorType, Description)
                 If ShowStackTraceOnKernelError And Exc IsNot Nothing Then W(Exc.StackTrace, True, ColTypes.Continuable)
                 Console.ReadKey()
@@ -253,25 +253,25 @@ Public Module KernelTools
         Wdbg(DebugLevel.I, "Power management has the argument of {0}", PowerMode)
         Select Case PowerMode
             Case PowerMode.Shutdown
-                EventManager.RaisePreShutdown()
+                Kernel.EventManager.RaisePreShutdown()
                 W(DoTranslation("Shutting down..."), True, ColTypes.Neutral)
                 ResetEverything()
-                EventManager.RaisePostShutdown()
+                Kernel.EventManager.RaisePostShutdown()
                 Environment.Exit(0)
             Case PowerMode.Reboot
-                EventManager.RaisePreReboot()
+                Kernel.EventManager.RaisePreReboot()
                 W(DoTranslation("Rebooting..."), True, ColTypes.Neutral)
                 ResetEverything()
-                EventManager.RaisePostReboot()
+                Kernel.EventManager.RaisePostReboot()
                 Console.Clear()
                 RebootRequested = True
                 LogoutRequested = True
                 SafeMode = False
             Case PowerMode.RebootSafe
-                EventManager.RaisePreReboot()
+                Kernel.EventManager.RaisePreReboot()
                 W(DoTranslation("Rebooting..."), True, ColTypes.Neutral)
                 ResetEverything()
-                EventManager.RaisePostReboot()
+                Kernel.EventManager.RaisePostReboot()
                 Console.Clear()
                 RebootRequested = True
                 LogoutRequested = True
@@ -297,6 +297,8 @@ Public Module KernelTools
         SFTPShellAliases.Clear()
         MailShellAliases.Clear()
         UserPermissions.Clear()
+        Reminders.Clear()
+        CalendarEvents.Clear()
         Wdbg(DebugLevel.I, "General variables reset")
 
         'Reset hardware info
@@ -343,6 +345,10 @@ Public Module KernelTools
     Sub InitEverything(Args() As String)
         'Initialize notifications
         If Not NotifThread.IsAlive Then NotifThread.Start()
+
+        'Initialize events and reminders
+        If Not ReminderThread.IsAlive Then ReminderThread.Start()
+        If Not EventThread.IsAlive Then EventThread.Start()
 
         'Initialize aliases
         InitAliases()
@@ -400,6 +406,10 @@ Public Module KernelTools
 
         'Start screensaver timeout
         If Not Timeout.IsBusy Then Timeout.RunWorkerAsync()
+
+        'Load all events and reminders
+        LoadEvents()
+        LoadReminders()
     End Sub
 
     '----------------------------------------------- Misc -----------------------------------------------
@@ -506,7 +516,7 @@ Public Module KernelTools
             End If
             Wdbg(DebugLevel.I, "After garbage collection: {0} bytes", proc.PrivateMemorySize64)
             proc.Dispose()
-            EventManager.RaiseGarbageCollected()
+            Kernel.EventManager.RaiseGarbageCollected()
         Catch ex As Exception
             Wdbg("Error freeing RAM: {0}", ex.Message)
             WStkTrc(ex)

@@ -46,7 +46,7 @@ Public Module Filesystem
             CurrDir = Parser.FullName.Replace("\", "/")
 
             'Raise event
-            EventManager.RaiseCurrentDirectoryChanged()
+            Kernel.EventManager.RaiseCurrentDirectoryChanged()
             Return True
         Else
             Throw New DirectoryNotFoundException(DoTranslation("Directory {0} not found").FormatString(dir))
@@ -513,21 +513,21 @@ Public Module Filesystem
                 CopyDirectory(Source, Destination)
 
                 'Raise event
-                EventManager.RaiseDirectoryCopied(Source, Destination)
+                Kernel.EventManager.RaiseDirectoryCopied(Source, Destination)
                 Return True
             ElseIf FileExists(Source) And FolderExists(Destination) Then
                 Wdbg(DebugLevel.I, "Source is a file and destination is a directory")
                 File.Copy(Source, Destination + "/" + FileName, True)
 
                 'Raise event
-                EventManager.RaiseFileCopied(Source, Destination + "/" + FileName)
+                Kernel.EventManager.RaiseFileCopied(Source, Destination + "/" + FileName)
                 Return True
             ElseIf FileExists(Source) Then
                 Wdbg(DebugLevel.I, "Source is a file and destination is a file")
                 File.Copy(Source, Destination, True)
 
                 'Raise event
-                EventManager.RaiseFileCopied(Source, Destination)
+                Kernel.EventManager.RaiseFileCopied(Source, Destination)
                 Return True
             Else
                 Wdbg(DebugLevel.E, "Source or destination are invalid.")
@@ -623,7 +623,7 @@ Public Module Filesystem
             Directory.CreateDirectory(NewDirectory)
 
             'Raise event
-            EventManager.RaiseDirectoryCreated(NewDirectory)
+            Kernel.EventManager.RaiseDirectoryCreated(NewDirectory)
             Return True
         Else
             Throw New IOException(DoTranslation("Directory {0} already exists.").FormatString(NewDirectory))
@@ -649,7 +649,7 @@ Public Module Filesystem
                 Wdbg(DebugLevel.I, "File closed")
 
                 'Raise event
-                EventManager.RaiseFileCreated(NewFile)
+                Kernel.EventManager.RaiseFileCreated(NewFile)
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
@@ -682,7 +682,7 @@ Public Module Filesystem
                 Wdbg(DebugLevel.I, "File closed")
 
                 'Raise event
-                EventManager.RaiseFileCreated(NewFile)
+                Kernel.EventManager.RaiseFileCreated(NewFile)
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
@@ -716,21 +716,21 @@ Public Module Filesystem
                 Directory.Move(Source, Destination)
 
                 'Raise event
-                EventManager.RaiseDirectoryMoved(Source, Destination)
+                Kernel.EventManager.RaiseDirectoryMoved(Source, Destination)
                 Return True
             ElseIf FileExists(Source) And FolderExists(Destination) Then
                 Wdbg(DebugLevel.I, "Source is a file and destination is a directory")
                 File.Move(Source, Destination + "/" + FileName)
 
                 'Raise event
-                EventManager.RaiseFileMoved(Source, Destination + "/" + FileName)
+                Kernel.EventManager.RaiseFileMoved(Source, Destination + "/" + FileName)
                 Return True
             ElseIf FileExists(Source) Then
                 Wdbg(DebugLevel.I, "Source is a file and destination is a file")
                 File.Move(Source, Destination)
 
                 'Raise event
-                EventManager.RaiseFileMoved(Source, Destination)
+                Kernel.EventManager.RaiseFileMoved(Source, Destination)
                 Return True
             Else
                 Wdbg(DebugLevel.E, "Source or destination are invalid.")
@@ -756,7 +756,7 @@ Public Module Filesystem
             Directory.Delete(Dir, True)
 
             'Raise event
-            EventManager.RaiseDirectoryRemoved(Target)
+            Kernel.EventManager.RaiseDirectoryRemoved(Target)
             Return True
         Catch ex As Exception
             WStkTrc(ex)
@@ -777,7 +777,7 @@ Public Module Filesystem
             File.Delete(Dir)
 
             'Raise event
-            EventManager.RaiseFileRemoved(Target)
+            Kernel.EventManager.RaiseFileRemoved(Target)
             Return True
         Catch ex As Exception
             WStkTrc(ex)
@@ -871,7 +871,7 @@ Public Module Filesystem
             File.SetAttributes(FilePath, Attributes)
 
             'Raise event
-            EventManager.RaiseFileAttributeAdded(FilePath, Attributes)
+            Kernel.EventManager.RaiseFileAttributeAdded(FilePath, Attributes)
             Return True
         Catch ex As Exception
             Wdbg(DebugLevel.E, "Failed to add attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message)
@@ -897,7 +897,7 @@ Public Module Filesystem
             File.SetAttributes(FilePath, Attrib)
 
             'Raise event
-            EventManager.RaiseFileAttributeRemoved(FilePath, Attributes)
+            Kernel.EventManager.RaiseFileAttributeRemoved(FilePath, Attributes)
             Return True
         Catch ex As Exception
             Wdbg(DebugLevel.E, "Failed to remove attribute {0} for file {1}: {2}", Attributes, Path.GetFileName(FilePath), ex.Message)

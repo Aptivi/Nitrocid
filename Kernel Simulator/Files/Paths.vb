@@ -37,6 +37,8 @@ Public Module Paths
             KernelPaths.AddIfNotFound("MOTD", Environment.GetEnvironmentVariable("HOME") + "/MOTD.txt")
             KernelPaths.AddIfNotFound("MAL", Environment.GetEnvironmentVariable("HOME") + "/MAL.txt")
             KernelPaths.AddIfNotFound("CustomSaverSettings", Environment.GetEnvironmentVariable("HOME") + "/CustomSaverSettings.json")
+            KernelPaths.AddIfNotFound("Events", Environment.GetEnvironmentVariable("HOME") + "/KSEvents/")
+            KernelPaths.AddIfNotFound("Reminders", Environment.GetEnvironmentVariable("HOME") + "/KSReminders/")
             OtherPaths.AddIfNotFound("Home", Environment.GetEnvironmentVariable("HOME"))
             OtherPaths.AddIfNotFound("Temp", "/tmp")
         Else
@@ -51,6 +53,8 @@ Public Module Paths
             KernelPaths.AddIfNotFound("MOTD", Environment.GetEnvironmentVariable("USERPROFILE") + "/MOTD.txt")
             KernelPaths.AddIfNotFound("MAL", Environment.GetEnvironmentVariable("USERPROFILE") + "/MAL.txt")
             KernelPaths.AddIfNotFound("CustomSaverSettings", Environment.GetEnvironmentVariable("USERPROFILE") + "/CustomSaverSettings.json")
+            KernelPaths.AddIfNotFound("Events", Environment.GetEnvironmentVariable("USERPROFILE") + "/KSEvents/")
+            KernelPaths.AddIfNotFound("Reminders", Environment.GetEnvironmentVariable("USERPROFILE") + "/KSReminders/")
             OtherPaths.AddIfNotFound("Home", Environment.GetEnvironmentVariable("USERPROFILE"))
             OtherPaths.AddIfNotFound("Temp", Environment.GetEnvironmentVariable("TEMP"))
         End If

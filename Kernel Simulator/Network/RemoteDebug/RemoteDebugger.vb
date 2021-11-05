@@ -125,7 +125,7 @@ Public Module RemoteDebugger
                         'Acknowledge the debugger
                         Wdbg(DebugLevel.I, "Debug device ""{0}"" ({1}) connected.", RDebugName, RDebugIP)
                         RDebugSWriter.Flush()
-                        EventManager.RaiseRemoteDebugConnectionAccepted(RDebugIP)
+                        Kernel.EventManager.RaiseRemoteDebugConnectionAccepted(RDebugIP)
                     End If
                 End If
             Catch ae As ThreadAbortException

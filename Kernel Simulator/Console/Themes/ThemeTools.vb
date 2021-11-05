@@ -89,13 +89,13 @@ Public Module ThemeTools
             End If
 
             'Raise event
-            EventManager.RaiseThemeSet(theme)
+            Kernel.EventManager.RaiseThemeSet(theme)
         Else
             W(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, theme)
             Wdbg(DebugLevel.E, "Theme not found.")
 
             'Raise event
-            EventManager.RaiseThemeSetError(theme, ThemeSetErrorReasons.NotFound)
+            Kernel.EventManager.RaiseThemeSetError(theme, ThemeSetErrorReasons.NotFound)
         End If
     End Sub
 
@@ -118,13 +118,13 @@ Public Module ThemeTools
             End If
 
             'Raise event
-            EventManager.RaiseThemeSet(ThemeFile)
+            Kernel.EventManager.RaiseThemeSet(ThemeFile)
         Catch ex As Exception
             W(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, ThemeFile)
             Wdbg(DebugLevel.E, "Theme not found.")
 
             'Raise event
-            EventManager.RaiseThemeSetError(ThemeFile, ThemeSetErrorReasons.NotFound)
+            Kernel.EventManager.RaiseThemeSetError(ThemeFile, ThemeSetErrorReasons.NotFound)
         End Try
     End Sub
 
@@ -182,15 +182,15 @@ Public Module ThemeTools
                 MakePermanent()
 
                 'Raise event
-                EventManager.RaiseColorSet()
+                Kernel.EventManager.RaiseColorSet()
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
-                EventManager.RaiseColorSetError(ColorSetErrorReasons.InvalidColors)
+                Kernel.EventManager.RaiseColorSetError(ColorSetErrorReasons.InvalidColors)
                 Throw New Exceptions.ColorException(DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message)
             End Try
         Else
-            EventManager.RaiseColorSetError(ColorSetErrorReasons.NoColors)
+            Kernel.EventManager.RaiseColorSetError(ColorSetErrorReasons.NoColors)
             Throw New InvalidOperationException(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."))
         End If
         Return False

@@ -62,7 +62,7 @@ Public Module SFTPShell
                 If SFTPInitialized = False Then
                     Wdbg(DebugLevel.I, $"Completing initialization of SFTP: {SFTPInitialized}")
                     SFTPCurrDirect = GetOtherPath(OtherPathType.Home)
-                    EventManager.RaiseSFTPShellInitialized()
+                    Kernel.EventManager.RaiseSFTPShellInitialized()
                     SwitchCancellationHandler(ShellCommandType.SFTPShell)
                     SFTPInitialized = True
                 End If
@@ -119,12 +119,12 @@ Public Module SFTPShell
                     Wdbg(DebugLevel.I, "Normal shell")
                     SFTPStrCmd = Console.ReadLine()
                 End If
-                EventManager.RaiseSFTPPreExecuteCommand(SFTPStrCmd)
+                Kernel.EventManager.RaiseSFTPPreExecuteCommand(SFTPStrCmd)
 
                 'Parse command
                 If Not (SFTPStrCmd = Nothing Or SFTPStrCmd?.StartsWithAnyOf({" ", "#"})) Then
                     SFTPGetLine()
-                    EventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd)
+                    Kernel.EventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd)
                 End If
 
                 'This is to fix race condition between SFTP shell initialization and starting the event handler thread

@@ -60,7 +60,7 @@ Module ArgumentPrompt
             Else
                 If InjMode Then
                     ArgsInjected = True
-                    EventManager.RaiseArgumentsInjected(EnteredArguments)
+                    Kernel.EventManager.RaiseArgumentsInjected(EnteredArguments)
                     W(DoTranslation("Injected arguments will be scheduled to run at next reboot."), True, ColTypes.Neutral)
                 Else
                     W(DoTranslation("Starting the kernel with:") + " {0}", True, ColTypes.Neutral, String.Join(", ", EnteredArguments))

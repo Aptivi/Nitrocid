@@ -82,7 +82,7 @@ Public Module FTPShell
                     FtpTrace.LogPassword = False 'Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
                     FtpTrace.LogIP = FTPLoggerIP
                     FtpCurrentDirectory = GetOtherPath(OtherPathType.Home)
-                    EventManager.RaiseFTPShellInitialized()
+                    Kernel.EventManager.RaiseFTPShellInitialized()
                     SwitchCancellationHandler(ShellCommandType.FTPShell)
                     FtpInitialized = True
                 End If
@@ -139,12 +139,12 @@ Public Module FTPShell
                     Wdbg(DebugLevel.I, "Normal shell")
                     FtpCommand = Console.ReadLine()
                 End If
-                EventManager.RaiseFTPPreExecuteCommand(FtpCommand)
+                Kernel.EventManager.RaiseFTPPreExecuteCommand(FtpCommand)
 
                 'Parse command
                 If Not (FtpCommand = Nothing Or FtpCommand?.StartsWithAnyOf({" ", "#"})) Then
                     FTPGetLine()
-                    EventManager.RaiseFTPPostExecuteCommand(FtpCommand)
+                    Kernel.EventManager.RaiseFTPPostExecuteCommand(FtpCommand)
                 End If
 
                 'This is to fix race condition between FTP shell initialization and starting the event handler thread

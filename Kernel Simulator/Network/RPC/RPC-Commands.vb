@@ -88,7 +88,7 @@ Public Module RPC_Commands
                 If Not Malformed Then
                     Wdbg(DebugLevel.I, "Sending response to device...")
                     RPCListen.Send(ByteMsg, ByteMsg.Length, IP, Port)
-                    EventManager.RaiseRPCCommandSent(Cmd)
+                    Kernel.EventManager.RaiseRPCCommandSent(Cmd)
                 End If
             End If
         Else
@@ -109,7 +109,7 @@ Public Module RPC_Commands
                 buff = RPCListen.Receive(endp)
                 msg = Text.Encoding.Default.GetString(buff)
                 Wdbg("RPC: Received message {0}", msg)
-                EventManager.RaiseRPCCommandReceived(msg)
+                Kernel.EventManager.RaiseRPCCommandReceived(msg)
                 If msg.StartsWith("ShutdownConfirm") Then
                     Wdbg(DebugLevel.I, "Shutdown confirmed from remote access.")
                     RPCPowerListener.Start("shutdown")
@@ -151,7 +151,7 @@ Public Module RPC_Commands
                 Else
                     Wdbg(DebugLevel.E, "Fatal error: {0}", ex.Message)
                     WStkTrc(ex)
-                    EventManager.RaiseRPCCommandError(msg, ex)
+                    Kernel.EventManager.RaiseRPCCommandError(msg, ex)
                 End If
             End Try
         End While

@@ -29,7 +29,7 @@ Public Module HardwareProbe
         If Not QuietHardwareProbe Then W(DoTranslation("hwprobe: Your hardware will be probed. Please wait..."), True, ColTypes.Progress)
 
         'We will probe hardware
-        EventManager.RaiseHardwareProbing()
+        Kernel.EventManager.RaiseHardwareProbing()
         Try
             AddHandler DebugDataReceived, AddressOf WriteInxiDebugData
             AddHandler HardwareParsed, AddressOf WriteWhatProbed
@@ -78,7 +78,7 @@ Public Module HardwareProbe
         End If
 
         'Raise event
-        EventManager.RaiseHardwareProbed()
+        Kernel.EventManager.RaiseHardwareProbed()
     End Sub
 
     ''' <summary>
