@@ -393,7 +393,7 @@ Public Module Filesystem
     ''' </summary>
     ''' <param name="File">Target file</param>
     ''' <returns>True if exists; False if not. Throws on trying to trigger the Windows 10/11 BSOD/corruption bug</returns>
-    Public Function FileExists(File As String)
+    Public Function FileExists(File As String) As Boolean
         ThrowOnInvalidPath(File)
         Return IO.File.Exists(File)
     End Function
@@ -403,7 +403,7 @@ Public Module Filesystem
     ''' </summary>
     ''' <param name="Folder">Target folder</param>
     ''' <returns>True if exists; False if not. Throws on trying to trigger the Windows 10/11 BSOD/corruption bug</returns>
-    Public Function FolderExists(Folder As String)
+    Public Function FolderExists(Folder As String) As Boolean
         ThrowOnInvalidPath(Folder)
         Return Directory.Exists(Folder)
     End Function
