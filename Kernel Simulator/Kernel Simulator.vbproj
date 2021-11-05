@@ -304,6 +304,8 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Misc\Threading\ThreadManager.vb" />
+    <Compile Include="Misc\Timers\LapDisplayInfo.vb" />
+    <Compile Include="Misc\Timers\StopwatchScreen.vb" />
     <Compile Include="Misc\Writers\DebugWriters\DebugLevels.vb" />
     <Compile Include="Misc\Writers\DebugWriters\DebugManager.vb" />
     <Compile Include="Misc\Writers\FancyWriters\SeparatorColor.vb" />
@@ -529,6 +531,7 @@
     <Compile Include="Shell\Commands\SetThemes.vb" />
     <Compile Include="Shell\Commands\SaverSettings.vb" />
     <Compile Include="Shell\Commands\Settings.vb" />
+    <Compile Include="Shell\Commands\Stopwatch.vb" />
     <Compile Include="Shell\Commands\TestShell.vb" />
     <Compile Include="Shell\Commands\Sftp.vb" />
     <Compile Include="Shell\Commands\ShowNotifs.vb" />
