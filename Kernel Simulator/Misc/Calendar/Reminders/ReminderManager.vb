@@ -141,16 +141,32 @@ Public Module ReminderManager
     ''' Saves all the reminders from the reminder list to their individual files
     ''' </summary>
     Public Sub SaveReminders()
-        SaveReminders(GetKernelPath(KernelPathType.Reminders))
+        SaveReminders(GetKernelPath(KernelPathType.Reminders), SaveEventsRemindersDestructively)
     End Sub
 
     ''' <summary>
     ''' Saves all the reminders from the reminder list to their individual files
     ''' </summary>
-    Public Sub SaveReminders(Path As String)
+    Public Sub SaveReminders(Path As String, Destructive As Boolean)
         ThrowOnInvalidPath(Path)
         Path = NeutralizePath(Path)
         Wdbg(DebugLevel.I, "Saving reminders to {0}...", Path)
+
+        'Remove all events from path, if running destructively
+        If Destructive Then
+            Dim ReminderFiles As String() = Directory.EnumerateFiles(Path, "*", SearchOption.AllDirectories)
+            Dim ReminderFolders As String() = Directory.EnumerateDirectories(Path, "*", SearchOption.AllDirectories)
+
+            'First, remove all files
+            For Each FilePath As String In ReminderFiles
+                RemoveFile(FilePath)
+            Next
+
+            'Then, remove all empty folders
+            For Each FolderPath As String In ReminderFolders
+                RemoveDirectory(FolderPath)
+            Next
+        End If
 
         'Enumerate through every reminder and save them
         For ReminderIndex As Integer = 0 To Reminders.Count - 1

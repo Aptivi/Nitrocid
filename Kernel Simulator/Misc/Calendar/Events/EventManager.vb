@@ -97,7 +97,7 @@ Public Module EventManager
         'Load all the events
         For Each EventFile As String In EventFiles
             Dim LoadedEvent As EventInfo = LoadEvent(EventFile)
-            AddEvent(LoadedEvent)
+            If LoadedEvent IsNot Nothing Then AddEvent(LoadedEvent)
         Next
     End Sub
 
@@ -129,16 +129,32 @@ Public Module EventManager
     ''' Saves all the events from the event list to their individual files
     ''' </summary>
     Public Sub SaveEvents()
-        SaveEvents(GetKernelPath(KernelPathType.Events))
+        SaveEvents(GetKernelPath(KernelPathType.Events), SaveEventsRemindersDestructively)
     End Sub
 
     ''' <summary>
     ''' Saves all the events from the event list to their individual files
     ''' </summary>
-    Public Sub SaveEvents(Path As String)
+    Public Sub SaveEvents(Path As String, Destructive As Boolean)
         ThrowOnInvalidPath(Path)
         Path = NeutralizePath(Path)
         Wdbg(DebugLevel.I, "Saving events to {0}...", Path)
+
+        'Remove all events from path, if running destructively
+        If Destructive Then
+            Dim EventFiles As String() = Directory.EnumerateFiles(Path, "*", SearchOption.AllDirectories).ToArray
+            Dim EventFolders As String() = Directory.EnumerateDirectories(Path, "*", SearchOption.AllDirectories).ToArray
+
+            'First, remove all files
+            For Each FilePath As String In EventFiles
+                RemoveFile(FilePath)
+            Next
+
+            'Then, remove all empty folders
+            For Each FolderPath As String In EventFolders
+                RemoveDirectory(FolderPath)
+            Next
+        End If
 
         'Enumerate through every event and save them
         For EventIndex As Integer = 0 To CalendarEvents.Count - 1

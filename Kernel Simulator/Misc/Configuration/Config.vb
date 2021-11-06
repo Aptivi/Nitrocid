@@ -806,7 +806,8 @@ Public Module Config
                     {"Default difficulty for SpeedPress", SpeedPressCurrentDifficulty},
                     {"Keypress timeout for SpeedPress", SpeedPressTimeout},
                     {"Show latest RSS headline on login", ShowHeadlineOnLogin},
-                    {"RSS headline URL", RssHeadlineUrl}
+                    {"RSS headline URL", RssHeadlineUrl},
+                    {"Save all events and/or reminders destructively", SaveEventsRemindersDestructively}
             }
             ConfigurationObject.Add("Misc", MiscConfig)
 
@@ -1483,6 +1484,7 @@ Public Module Config
             SpeedPressTimeout = If(Integer.TryParse(ConfigToken("Misc")?("Keypress timeout for SpeedPress"), 0), ConfigToken("Misc")?("Keypress timeout for SpeedPress"), 3000)
             ShowHeadlineOnLogin = If(ConfigToken("Misc")?("Show latest RSS headline on login"), False)
             RssHeadlineUrl = If(ConfigToken("Misc")?("RSS headline URL"), "https://www.techrepublic.com/rssfeeds/articles/")
+            SaveEventsRemindersDestructively = If(ConfigToken("Misc")?("Save all events and/or reminders destructively"), False)
 
             'Check to see if the config needs fixes
             RepairConfig()

@@ -1091,6 +1091,12 @@
                 "Type": "SString",
                 "Variable": "RssHeadlineUrl",
                 "Description": "RSS headline URL to be used when showing the latest headline. This is usually your favorite feed."
+            },
+            {
+                "Name": "Save all events and/or reminders destructively",
+                "Type": "SBoolean",
+                "Variable": "SaveEventsRemindersDestructively",
+                "Description": "If enabled, deletes all events and/or reminders before saving all of them using the calendar command."
             }
         ]
     }

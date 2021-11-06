@@ -50,7 +50,7 @@ Class CalendarCommand
                     'User provided any of add, remove, and list. However, the first two arguments need minimum arguments of three parameters, so check.
                     Dim ActionType As String = ActionArguments(0)
                     Select Case ActionType
-                        Case "add", "remove"
+                        Case "add"
                             'Parse the arguments to check to see if enough arguments are passed to those parameters
                             ActionMinimumArguments = 3
                             If ActionArguments.Length >= ActionMinimumArguments Then
@@ -59,21 +59,29 @@ Class CalendarCommand
                                     Dim StringDate As String = ActionArguments(1)
                                     Dim EventTitle As String = ActionArguments(2)
                                     Dim ParsedDate As Date = Date.Parse(StringDate)
-
-                                    'Choose whether to add or remove
-                                    Select Case ActionType
-                                        Case "add"
-                                            AddEvent(ParsedDate, EventTitle)
-                                        Case "remove"
-                                            Dim EventId As Integer = EventTitle
-                                            RemoveEvent(ParsedDate, EventId)
-                                    End Select
+                                    AddEvent(ParsedDate, EventTitle)
                                 Catch ex As Exception
                                     WStkTrc(ex)
-                                    W(DoTranslation("Failed to add or remove an event.") + " {0}", True, ColTypes.Error, ex.Message)
+                                    W(DoTranslation("Failed to add an event.") + " {0}", True, ColTypes.Error, ex.Message)
                                 End Try
                             Else
-                                W(DoTranslation("Not enough arguments provided to add or remove an event."), True, ColTypes.Error)
+                                W(DoTranslation("Not enough arguments provided to add an event."), True, ColTypes.Error)
+                            End If
+                        Case "remove"
+                            'Parse the arguments to check to see if enough arguments are passed to those parameters
+                            ActionMinimumArguments = 2
+                            If ActionArguments.Length >= ActionMinimumArguments Then
+                                'Enough arguments provided.
+                                Try
+                                    Dim EventId As Integer = ActionArguments(1)
+                                    Dim EventInstance As EventInfo = CalendarEvents(EventId - 1)
+                                    RemoveEvent(EventInstance.EventDate, EventId)
+                                Catch ex As Exception
+                                    WStkTrc(ex)
+                                    W(DoTranslation("Failed to remove an event.") + " {0}", True, ColTypes.Error, ex.Message)
+                                End Try
+                            Else
+                                W(DoTranslation("Not enough arguments provided to remove an event."), True, ColTypes.Error)
                             End If
                         Case "list"
                             'User chose to list. No parse needed as we're only listing.
@@ -94,7 +102,7 @@ Class CalendarCommand
                     'User provided any of add, remove, and list. However, the first two arguments need minimum arguments of three parameters, so check.
                     Dim ActionType As String = ActionArguments(0)
                     Select Case ActionType
-                        Case "add", "remove"
+                        Case "add"
                             'Parse the arguments to check to see if enough arguments are passed to those parameters
                             ActionMinimumArguments = 3
                             If ActionArguments.Length >= ActionMinimumArguments Then
@@ -103,21 +111,29 @@ Class CalendarCommand
                                     Dim StringDate As String = ActionArguments(1)
                                     Dim ReminderTitle As String = ActionArguments(2)
                                     Dim ParsedDate As Date = Date.Parse(StringDate)
-
-                                    'Choose whether to add or remove
-                                    Select Case ActionType
-                                        Case "add"
-                                            AddReminder(ParsedDate, ReminderTitle)
-                                        Case "remove"
-                                            Dim ReminderId As Integer = ReminderTitle
-                                            RemoveReminder(ParsedDate, ReminderId)
-                                    End Select
+                                    AddReminder(ParsedDate, ReminderTitle)
                                 Catch ex As Exception
                                     WStkTrc(ex)
-                                    W(DoTranslation("Failed to add or remove a reminder.") + " {0}", True, ColTypes.Error, ex.Message)
+                                    W(DoTranslation("Failed to add a reminder.") + " {0}", True, ColTypes.Error, ex.Message)
                                 End Try
                             Else
-                                W(DoTranslation("Not enough arguments provided to add or remove a reminder."), True, ColTypes.Error)
+                                W(DoTranslation("Not enough arguments provided to add a reminder."), True, ColTypes.Error)
+                            End If
+                        Case "remove"
+                            'Parse the arguments to check to see if enough arguments are passed to those parameters
+                            ActionMinimumArguments = 2
+                            If ActionArguments.Length >= ActionMinimumArguments Then
+                                'Enough arguments provided.
+                                Try
+                                    Dim ReminderId As Integer = ActionArguments(1)
+                                    Dim ReminderInstance As ReminderInfo = Reminders(ReminderId - 1)
+                                    RemoveReminder(ReminderInstance.ReminderDate, ReminderId)
+                                Catch ex As Exception
+                                    WStkTrc(ex)
+                                    W(DoTranslation("Failed to remove a reminder.") + " {0}", True, ColTypes.Error, ex.Message)
+                                End Try
+                            Else
+                                W(DoTranslation("Not enough arguments provided to remove a reminder."), True, ColTypes.Error)
                             End If
                         Case "list"
                             'User chose to list. No parse needed as we're only listing.
