@@ -150,9 +150,14 @@ Public Class Events
     Public Sub RespondStartKernel() Handles Me.KernelStarted
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event KernelStarted()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("KernelStarted")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event KernelStarted()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("KernelStarted")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -162,9 +167,14 @@ Public Class Events
     Public Sub RespondPreLogin() Handles Me.PreLogin
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PreLogin()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PreLogin")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PreLogin()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PreLogin")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -174,9 +184,14 @@ Public Class Events
     Public Sub RespondPostLogin(Username As String) Handles Me.PostLogin
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PostLogin()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PostLogin", Username)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PostLogin()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PostLogin", Username)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -186,9 +201,14 @@ Public Class Events
     Public Sub RespondLoginError(Username As String, Reason As String) Handles Me.LoginError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event LoginError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("LoginError", Username, Reason)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event LoginError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("LoginError", Username, Reason)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -198,9 +218,14 @@ Public Class Events
     Public Sub RespondShellInitialized() Handles Me.ShellInitialized
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ShellInitialized()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ShellInitialized")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ShellInitialized()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ShellInitialized")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -210,9 +235,14 @@ Public Class Events
     Public Sub RespondPreExecuteCommand(Command As String) Handles Me.PreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PreExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PreExecuteCommand", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PreExecuteCommand", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -222,9 +252,14 @@ Public Class Events
     Public Sub RespondPostExecuteCommand(Command As String) Handles Me.PostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PostExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PostExecuteCommand", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PostExecuteCommand", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -234,9 +269,14 @@ Public Class Events
     Public Sub RespondKernelError(ErrorType As KernelErrorLevel, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object) Handles Me.KernelError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event KernelError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("KernelError", ErrorType, Reboot, RebootTime, Description, Exc, Variables)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event KernelError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("KernelError", ErrorType, Reboot, RebootTime, Description, Exc, Variables)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -246,9 +286,14 @@ Public Class Events
     Public Sub RespondContKernelError(ErrorType As KernelErrorLevel, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, Variables() As Object) Handles Me.ContKernelError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ContKernelError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ContKernelError", ErrorType, Reboot, RebootTime, Description, Exc, Variables)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ContKernelError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ContKernelError", ErrorType, Reboot, RebootTime, Description, Exc, Variables)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -258,9 +303,14 @@ Public Class Events
     Public Sub RespondPreShutdown() Handles Me.PreShutdown
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PreShutdown()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PreShutdown")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PreShutdown()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PreShutdown")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -270,9 +320,14 @@ Public Class Events
     Public Sub RespondPostShutdown() Handles Me.PostShutdown
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PostShutdown()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PostShutdown")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PostShutdown()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PostShutdown")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -282,9 +337,14 @@ Public Class Events
     Public Sub RespondPreReboot() Handles Me.PreReboot
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PreReboot()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PreReboot")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PreReboot()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PreReboot")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -294,9 +354,14 @@ Public Class Events
     Public Sub RespondPostReboot() Handles Me.PostReboot
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PostReboot()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PostReboot")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PostReboot()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PostReboot")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -306,9 +371,14 @@ Public Class Events
     Public Sub RespondPreShowScreensaver(Screensaver As String) Handles Me.PreShowScreensaver
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PreShowScreensaver()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PreShowScreensaver", Screensaver)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PreShowScreensaver()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PreShowScreensaver", Screensaver)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -318,9 +388,14 @@ Public Class Events
     Public Sub RespondPostShowScreensaver(Screensaver As String) Handles Me.PostShowScreensaver
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PostShowScreensaver()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PostShowScreensaver", Screensaver)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PostShowScreensaver()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PostShowScreensaver", Screensaver)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -330,9 +405,14 @@ Public Class Events
     Public Sub RespondPreUnlock(Screensaver As String) Handles Me.PreUnlock
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PreUnlock()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PreUnlock", Screensaver)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PreUnlock()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PreUnlock", Screensaver)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -342,9 +422,14 @@ Public Class Events
     Public Sub RespondPostUnlock(Screensaver As String) Handles Me.PostUnlock
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PostUnlock()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PostUnlock", Screensaver)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PostUnlock()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PostUnlock", Screensaver)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -354,9 +439,14 @@ Public Class Events
     Public Sub RespondCommandError(Command As String, Exception As Exception) Handles Me.CommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event CommandError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("CommandError", Command, Exception)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event CommandError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("CommandError", Command, Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -366,9 +456,13 @@ Public Class Events
     Public Sub RespondPreReloadConfig() Handles Me.PreReloadConfig
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PreReloadConfig()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PreReloadConfig")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PreReloadConfig()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PreReloadConfig")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                End Try
             Next
         Next
     End Sub
@@ -378,9 +472,14 @@ Public Class Events
     Public Sub RespondPostReloadConfig() Handles Me.PostReloadConfig
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PostReloadConfig()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PostReloadConfig")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PostReloadConfig()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PostReloadConfig")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -390,9 +489,14 @@ Public Class Events
     Public Sub RespondPlaceholderParsing(Target As String) Handles Me.PlaceholderParsing
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PlaceholderParsing()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PlaceholderParsing", Target)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PlaceholderParsing()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PlaceholderParsing", Target)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -402,9 +506,14 @@ Public Class Events
     Public Sub RespondPlaceholderParsed(Target As String) Handles Me.PlaceholderParsed
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PlaceholderParsed()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PlaceholderParsed", Target)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PlaceholderParsed()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PlaceholderParsed", Target)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -414,9 +523,14 @@ Public Class Events
     Public Sub RespondGarbageCollected() Handles Me.GarbageCollected
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event GarbageCollected()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("GarbageCollected")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event GarbageCollected()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("GarbageCollected")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -426,9 +540,14 @@ Public Class Events
     Public Sub RespondFTPShellInitialized() Handles Me.FTPShellInitialized
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPShellInitialized()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FTPShellInitialized")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPShellInitialized()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("FTPShellInitialized")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -438,9 +557,14 @@ Public Class Events
     Public Sub RespondFTPPreExecuteCommand(Command As String) Handles Me.FTPPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FTPPreExecuteCommand", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("FTPPreExecuteCommand", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -450,9 +574,14 @@ Public Class Events
     Public Sub RespondFTPPostExecuteCommand(Command As String) Handles Me.FTPPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FTPPostExecuteCommand", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("FTPPostExecuteCommand", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -462,9 +591,14 @@ Public Class Events
     Public Sub RespondFTPCommandError(Command As String, Exception As Exception) Handles Me.FTPCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPCommandError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FTPCommandError", Command, Exception)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPCommandError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("FTPCommandError", Command, Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -474,9 +608,14 @@ Public Class Events
     Public Sub RespondFTPPreDownload(File As String) Handles Me.FTPPreDownload
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPreDownload()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FTPPreDownload", File)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPreDownload()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("FTPPreDownload", File)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -486,9 +625,14 @@ Public Class Events
     Public Sub RespondFTPPostDownload(File As String, Success As Boolean) Handles Me.FTPPostDownload
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPostDownload()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FTPPostDownload", File, Success)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPostDownload()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("FTPPostDownload", File, Success)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -498,9 +642,14 @@ Public Class Events
     Public Sub RespondFTPPreUpload(File As String) Handles Me.FTPPreUpload
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPreUpload()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FTPPreUpload", File)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPreUpload()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("FTPPreUpload", File)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -510,9 +659,14 @@ Public Class Events
     Public Sub RespondFTPPostUpload(File As String, Success As Boolean) Handles Me.FTPPostUpload
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPostUpload()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FTPPostUpload", File, Success)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FTPPostUpload()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("FTPPostUpload", File, Success)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -522,9 +676,14 @@ Public Class Events
     Public Sub RespondIMAPShellInitialized() Handles Me.IMAPShellInitialized
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPShellInitialized()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("IMAPShellInitialized")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPShellInitialized()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("IMAPShellInitialized")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -534,9 +693,14 @@ Public Class Events
     Public Sub RespondIMAPPreExecuteCommand(Command As String) Handles Me.IMAPPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("IMAPPreExecuteCommand", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("IMAPPreExecuteCommand", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -546,9 +710,14 @@ Public Class Events
     Public Sub RespondIMAPPostExecuteCommand(Command As String) Handles Me.IMAPPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("IMAPPostExecuteCommand", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("IMAPPostExecuteCommand", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -558,9 +727,14 @@ Public Class Events
     Public Sub RespondIMAPCommandError(Command As String, Exception As Exception) Handles Me.IMAPCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPCommandError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("IMAPCommandError", Command, Exception)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event IMAPCommandError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("IMAPCommandError", Command, Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -570,9 +744,14 @@ Public Class Events
     Public Sub RespondRemoteDebugConnectionAccepted(IP As String) Handles Me.RemoteDebugConnectionAccepted
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RemoteDebugConnectionAccepted()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RemoteDebugConnectionAccepted", IP)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RemoteDebugConnectionAccepted()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("RemoteDebugConnectionAccepted", IP)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -582,9 +761,14 @@ Public Class Events
     Public Sub RespondRemoteDebugConnectionDisconnected(IP As String) Handles Me.RemoteDebugConnectionDisconnected
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RemoteDebugConnectionDisconnected()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RemoteDebugConnectionDisconnected", IP)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RemoteDebugConnectionDisconnected()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("RemoteDebugConnectionDisconnected", IP)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -594,9 +778,14 @@ Public Class Events
     Public Sub RespondRemoteDebugExecuteCommand(IP As String, Command As String) Handles Me.RemoteDebugExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RemoteDebugExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RemoteDebugExecuteCommand", IP, Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RemoteDebugExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("RemoteDebugExecuteCommand", IP, Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -606,9 +795,14 @@ Public Class Events
     Public Sub RespondRemoteDebugCommandError(IP As String, Command As String, Exception As Exception) Handles Me.RemoteDebugCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RemoteDebugCommandError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RemoteDebugCommandError", IP, Command, Exception)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RemoteDebugCommandError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("RemoteDebugCommandError", IP, Command, Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -618,9 +812,14 @@ Public Class Events
     Public Sub RespondRPCCommandSent(Command As String) Handles Me.RPCCommandSent
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RPCCommandSent()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RPCCommandSent", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RPCCommandSent()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("RPCCommandSent", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -630,9 +829,14 @@ Public Class Events
     Public Sub RespondRPCCommandReceived(Command As String) Handles Me.RPCCommandReceived
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RPCCommandReceived()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RPCCommandReceived", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RPCCommandReceived()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("RPCCommandReceived", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -642,9 +846,14 @@ Public Class Events
     Public Sub RespondRPCCommandError(Command As String, Exception As Exception) Handles Me.RPCCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RPCCommandError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RPCCommandError", Command, Exception)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RPCCommandError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("RPCCommandError", Command, Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -654,9 +863,14 @@ Public Class Events
     Public Sub RespondRSSShellInitialized(FeedUrl As String) Handles Me.RSSShellInitialized
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSShellInitialized()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RSSShellInitialized", FeedUrl)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSShellInitialized()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("RSSShellInitialized", FeedUrl)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -666,9 +880,14 @@ Public Class Events
     Public Sub RespondRSSPreExecuteCommand(FeedUrl As String, Command As String) Handles Me.RSSPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RSSPreExecuteCommand", FeedUrl, Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("RSSPreExecuteCommand", FeedUrl, Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -678,9 +897,14 @@ Public Class Events
     Public Sub RespondRSSPostExecuteCommand(FeedUrl As String, Command As String) Handles Me.RSSPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RSSPostExecuteCommand", FeedUrl, Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("RSSPostExecuteCommand", FeedUrl, Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -690,9 +914,14 @@ Public Class Events
     Public Sub RespondRSSCommandError(FeedUrl As String, Command As String, Exception As Exception) Handles Me.RSSCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSCommandError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("RSSCommandError", FeedUrl, Command, Exception)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RSSCommandError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("RSSCommandError", FeedUrl, Command, Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -702,9 +931,14 @@ Public Class Events
     Public Sub RespondSFTPShellInitialized() Handles Me.SFTPShellInitialized
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPShellInitialized()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SFTPShellInitialized")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPShellInitialized()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("SFTPShellInitialized")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -714,9 +948,14 @@ Public Class Events
     Public Sub RespondSFTPPreExecuteCommand(Command As String) Handles Me.SFTPPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SFTPPreExecuteCommand", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("SFTPPreExecuteCommand", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -726,9 +965,14 @@ Public Class Events
     Public Sub RespondSFTPPostExecuteCommand(Command As String) Handles Me.SFTPPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SFTPPostExecuteCommand", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("SFTPPostExecuteCommand", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -738,9 +982,14 @@ Public Class Events
     Public Sub RespondSFTPCommandError(Command As String, Exception As Exception) Handles Me.SFTPCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPCommandError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SFTPCommandError", Command, Exception)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPCommandError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("SFTPCommandError", Command, Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -750,9 +999,14 @@ Public Class Events
     Public Sub RespondSFTPPreDownload(File As String) Handles Me.SFTPPreDownload
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPreDownload()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SFTPPreDownload", File)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPreDownload()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("SFTPPreDownload", File)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -762,9 +1016,14 @@ Public Class Events
     Public Sub RespondSFTPPostDownload(File As String) Handles Me.SFTPPostDownload
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPostDownload()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SFTPPostDownload", File)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPostDownload()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("SFTPPostDownload", File)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -774,9 +1033,14 @@ Public Class Events
     Public Sub RespondSFTPDownloadError(File As String, Exception As Exception) Handles Me.SFTPDownloadError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPDownloadError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SFTPDownloadError", File, Exception)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPDownloadError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("SFTPDownloadError", File, Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -786,9 +1050,14 @@ Public Class Events
     Public Sub RespondSFTPPreUpload(File As String) Handles Me.SFTPPreUpload
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPreUpload()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SFTPPreUpload", File)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPreUpload()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("SFTPPreUpload", File)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -798,9 +1067,14 @@ Public Class Events
     Public Sub RespondSFTPPostUpload(File As String) Handles Me.SFTPPostUpload
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPostUpload()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SFTPPostUpload", File)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPPostUpload()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("SFTPPostUpload", File)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -810,9 +1084,14 @@ Public Class Events
     Public Sub RespondSFTPUploadError(File As String, Exception As Exception) Handles Me.SFTPUploadError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPUploadError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SFTPUploadError", File, Exception)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SFTPUploadError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("SFTPUploadError", File, Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -822,9 +1101,14 @@ Public Class Events
     Public Sub RespondSSHConnected(Target As String) Handles Me.SSHConnected
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHConnected()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SSHConnected", Target)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHConnected()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("SSHConnected", Target)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -834,9 +1118,14 @@ Public Class Events
     Public Sub RespondSSHDisconnected() Handles Me.SSHDisconnected
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHDisconnected()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SSHDisconnected")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHDisconnected()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("SSHDisconnected")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -846,9 +1135,14 @@ Public Class Events
     Public Sub RespondSSHPreExecuteCommand(Target As String, Command As String) Handles Me.SSHPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SSHPreExecuteCommand", Target, Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("SSHPreExecuteCommand", Target, Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -858,9 +1152,14 @@ Public Class Events
     Public Sub RespondSSHPostExecuteCommand(Target As String, Command As String) Handles Me.SSHPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SSHPostExecuteCommand", Target, Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("SSHPostExecuteCommand", Target, Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -870,9 +1169,14 @@ Public Class Events
     Public Sub RespondSSHCommandError(Target As String, Command As String, Exception As Exception) Handles Me.SSHCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHCommandError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SSHCommandError", Target, Command, Exception)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHCommandError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("SSHCommandError", Target, Command, Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -882,9 +1186,14 @@ Public Class Events
     Public Sub RespondSSHError(Exception As Exception) Handles Me.SSHError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("SSHError", Exception)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event SSHError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("SSHError", Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -894,9 +1203,14 @@ Public Class Events
     Public Sub RespondUESHPreExecute(Command As String) Handles Me.UESHPreExecute
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event UESHPreExecute()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("UESHPreExecute", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event UESHPreExecute()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("UESHPreExecute", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -906,9 +1220,14 @@ Public Class Events
     Public Sub RespondUESHPostExecute(Command As String) Handles Me.UESHPostExecute
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event UESHPostExecute()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("UESHPostExecute", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event UESHPostExecute()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("UESHPostExecute", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -918,9 +1237,14 @@ Public Class Events
     Public Sub RespondUESHError(Command As String, Exception As Exception) Handles Me.UESHError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event UESHError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("UESHError", Command, Exception)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event UESHError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("UESHError", Command, Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -930,9 +1254,14 @@ Public Class Events
     Public Sub RespondTextShellInitialized() Handles Me.TextShellInitialized
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event TextShellInitialized()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("TextShellInitialized")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event TextShellInitialized()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("TextShellInitialized")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -942,9 +1271,14 @@ Public Class Events
     Public Sub RespondTextPreExecuteCommand(Command As String) Handles Me.TextPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event TextPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("TextPreExecuteCommand", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event TextPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("TextPreExecuteCommand", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -954,9 +1288,14 @@ Public Class Events
     Public Sub RespondTextPostExecuteCommand(Command As String) Handles Me.TextPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event TextPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("TextPostExecuteCommand", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event TextPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("TextPostExecuteCommand", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -966,9 +1305,14 @@ Public Class Events
     Public Sub RespondTextCommandError(Command As String, Exception As Exception) Handles Me.TextCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event TextCommandError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("TextCommandError", Command, Exception)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event TextCommandError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("TextCommandError", Command, Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -978,9 +1322,14 @@ Public Class Events
     Public Sub RespondNotificationSent(Notification As Notification) Handles Me.NotificationSent
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationSent()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("NotificationSent", Notification)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationSent()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("NotificationSent", Notification)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -990,9 +1339,14 @@ Public Class Events
     Public Sub RespondNotificationsSent(Notifications As List(Of Notification)) Handles Me.NotificationsSent
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationsSent()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("NotificationsSent", Notifications)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationsSent()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("NotificationsSent", Notifications)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1002,9 +1356,14 @@ Public Class Events
     Public Sub RespondNotificationReceived(Notification As Notification) Handles Me.NotificationReceived
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationReceived()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("NotificationReceived", Notification)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationReceived()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("NotificationReceived", Notification)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1014,9 +1373,14 @@ Public Class Events
     Public Sub RespondNotificationsReceived(Notifications As List(Of Notification)) Handles Me.NotificationsReceived
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationsReceived()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("NotificationsReceived", Notifications)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationsReceived()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("NotificationsReceived", Notifications)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1026,9 +1390,14 @@ Public Class Events
     Public Sub RespondNotificationDismissed() Handles Me.NotificationDismissed
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationDismissed()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("NotificationDismissed")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event NotificationDismissed()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("NotificationDismissed")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1038,9 +1407,14 @@ Public Class Events
     Public Sub RespondConfigSaved() Handles Me.ConfigSaved
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ConfigSaved()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ConfigSaved")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ConfigSaved()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ConfigSaved")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1050,9 +1424,14 @@ Public Class Events
     Public Sub RespondConfigSaveError(Exception As Exception) Handles Me.ConfigSaveError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ConfigSaveError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ConfigSaveError", Exception)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ConfigSaveError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ConfigSaveError", Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1062,9 +1441,14 @@ Public Class Events
     Public Sub RespondConfigRead() Handles Me.ConfigRead
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ConfigRead()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ConfigRead")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ConfigRead()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ConfigRead")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1074,9 +1458,14 @@ Public Class Events
     Public Sub RespondConfigReadError(Exception As Exception) Handles Me.ConfigReadError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ConfigReadError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ConfigReadError", Exception)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ConfigReadError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ConfigReadError", Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1086,9 +1475,14 @@ Public Class Events
     Public Sub RespondPreExecuteModCommand(Command As String) Handles Me.PreExecuteModCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PreExecuteModCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PreExecuteModCommand", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PreExecuteModCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PreExecuteModCommand", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1098,9 +1492,14 @@ Public Class Events
     Public Sub RespondPostExecuteModCommand(Command As String) Handles Me.PostExecuteModCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PostExecuteModCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("PostExecuteModCommand", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event PostExecuteModCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("PostExecuteModCommand", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1110,9 +1509,14 @@ Public Class Events
     Public Sub RespondModParsed(ModFileName As String) Handles Me.ModParsed
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ModParsed()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ModParsed", ModFileName)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ModParsed()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ModParsed", ModFileName)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1122,9 +1526,14 @@ Public Class Events
     Public Sub RespondModParseError(ModFileName As String) Handles Me.ModParseError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ModParseError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ModParseError", ModFileName)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ModParseError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ModParseError", ModFileName)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1134,9 +1543,14 @@ Public Class Events
     Public Sub RespondModFinalized(ModFileName As String) Handles Me.ModFinalized
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ModFinalized()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ModFinalized", ModFileName)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ModFinalized()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ModFinalized", ModFileName)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1146,9 +1560,14 @@ Public Class Events
     Public Sub RespondModFinalizationFailed(ModFileName As String, Reason As String) Handles Me.ModFinalizationFailed
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ModFinalizationFailed()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ModFinalizationFailed", ModFileName, Reason)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ModFinalizationFailed()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ModFinalizationFailed", ModFileName, Reason)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1158,9 +1577,14 @@ Public Class Events
     Public Sub RespondUserAdded(Username As String) Handles Me.UserAdded
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event UserAdded()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("UserAdded", Username)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event UserAdded()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("UserAdded", Username)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1170,9 +1594,14 @@ Public Class Events
     Public Sub RespondUserRemoved(Username As String) Handles Me.UserRemoved
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event UserRemoved()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("UserRemoved", Username)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event UserRemoved()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("UserRemoved", Username)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1182,9 +1611,14 @@ Public Class Events
     Public Sub RespondUsernameChanged(OldUsername As String, NewUsername As String) Handles Me.UsernameChanged
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event UsernameChanged()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("UsernameChanged", OldUsername, NewUsername)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event UsernameChanged()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("UsernameChanged", OldUsername, NewUsername)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1194,9 +1628,14 @@ Public Class Events
     Public Sub RespondUserPasswordChanged(Username As String) Handles Me.UserPasswordChanged
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event UserPasswordChanged()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("UserPasswordChanged", Username)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event UserPasswordChanged()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("UserPasswordChanged", Username)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1206,9 +1645,14 @@ Public Class Events
     Public Sub RespondHardwareProbing() Handles Me.HardwareProbing
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event HardwareProbing()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("HardwareProbing")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event HardwareProbing()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("HardwareProbing")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1218,9 +1662,14 @@ Public Class Events
     Public Sub RespondHardwareProbed() Handles Me.HardwareProbed
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event HardwareProbed()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("HardwareProbed")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event HardwareProbed()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("HardwareProbed")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1230,9 +1679,14 @@ Public Class Events
     Public Sub RespondCurrentDirectoryChanged() Handles Me.CurrentDirectoryChanged
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event CurrentDirectoryChanged()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("CurrentDirectoryChanged")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event CurrentDirectoryChanged()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("CurrentDirectoryChanged")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1242,9 +1696,14 @@ Public Class Events
     Public Sub RespondFileCreated(File As String) Handles Me.FileCreated
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FileCreated()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FileCreated", File)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FileCreated()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("FileCreated", File)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1254,9 +1713,14 @@ Public Class Events
     Public Sub RespondDirectoryCreated(Directory As String) Handles Me.DirectoryCreated
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event DirectoryCreated()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("DirectoryCreated", Directory)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event DirectoryCreated()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("DirectoryCreated", Directory)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1266,9 +1730,14 @@ Public Class Events
     Public Sub RespondFileCopied(Source As String, Destination As String) Handles Me.FileCopied
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FileCopied()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FileCopied", Source, Destination)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FileCopied()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("FileCopied", Source, Destination)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1278,9 +1747,14 @@ Public Class Events
     Public Sub RespondDirectoryCopied(Source As String, Destination As String) Handles Me.DirectoryCopied
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event DirectoryCopied()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("DirectoryCopied", Source, Destination)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event DirectoryCopied()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("DirectoryCopied", Source, Destination)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1290,9 +1764,14 @@ Public Class Events
     Public Sub RespondFileMoved(Source As String, Destination As String) Handles Me.FileMoved
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FileMoved()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FileMoved", Source, Destination)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FileMoved()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("FileMoved", Source, Destination)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1302,9 +1781,14 @@ Public Class Events
     Public Sub RespondDirectoryMoved(Source As String, Destination As String) Handles Me.DirectoryMoved
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event DirectoryMoved()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("DirectoryMoved", Source, Destination)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event DirectoryMoved()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("DirectoryMoved", Source, Destination)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1314,9 +1798,14 @@ Public Class Events
     Public Sub RespondFileRemoved(File As String) Handles Me.FileRemoved
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FileRemoved()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FileRemoved", File)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FileRemoved()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("FileRemoved", File)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1326,9 +1815,14 @@ Public Class Events
     Public Sub RespondDirectoryRemoved(Directory As String) Handles Me.DirectoryRemoved
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event DirectoryRemoved()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("DirectoryRemoved", Directory)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event DirectoryRemoved()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("DirectoryRemoved", Directory)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1338,9 +1832,14 @@ Public Class Events
     Public Sub RespondFileAttributeAdded(File As String, Attributes As FileAttributes) Handles Me.FileAttributeAdded
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FileAttributeAdded()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FileAttributeAdded", File, Attributes)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FileAttributeAdded()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("FileAttributeAdded", File, Attributes)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1350,9 +1849,14 @@ Public Class Events
     Public Sub RespondFileAttributeRemoved(File As String, Attributes As FileAttributes) Handles Me.FileAttributeRemoved
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FileAttributeRemoved()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("FileAttributeRemoved", File, Attributes)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event FileAttributeRemoved()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("FileAttributeRemoved", File, Attributes)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1362,9 +1866,14 @@ Public Class Events
     Public Sub RespondColorReset() Handles Me.ColorReset
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ColorReset()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ColorReset")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ColorReset()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ColorReset")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1374,9 +1883,14 @@ Public Class Events
     Public Sub RespondThemeSet(Theme As String) Handles Me.ThemeSet
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ThemeSet()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ThemeSet", Theme)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ThemeSet()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ThemeSet", Theme)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1386,9 +1900,14 @@ Public Class Events
     Public Sub RespondThemeSetError(Theme As String, Reason As String) Handles Me.ThemeSetError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ThemeSetError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ThemeSetError", Theme, Reason)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ThemeSetError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ThemeSetError", Theme, Reason)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1398,9 +1917,14 @@ Public Class Events
     Public Sub RespondColorSet() Handles Me.ColorSet
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ColorSet()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ColorSet")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ColorSet()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ColorSet")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1410,9 +1934,14 @@ Public Class Events
     Public Sub RespondColorSetError(Reason As String) Handles Me.ColorSetError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ColorSetError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ColorSetError", Reason)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ColorSetError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ColorSetError", Reason)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1422,9 +1951,14 @@ Public Class Events
     Public Sub RespondThemeStudioStarted() Handles Me.ThemeStudioStarted
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ThemeStudioStarted()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ThemeStudioStarted")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ThemeStudioStarted()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ThemeStudioStarted")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1434,9 +1968,14 @@ Public Class Events
     Public Sub RespondThemeStudioExit() Handles Me.ThemeStudioExit
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ThemeStudioExit()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ThemeStudioExit")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ThemeStudioExit()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ThemeStudioExit")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1446,9 +1985,14 @@ Public Class Events
     Public Sub RespondArgumentsInjected(InjectedArguments As List(Of String)) Handles Me.ArgumentsInjected
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ArgumentsInjected()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ArgumentsInjected", InjectedArguments)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ArgumentsInjected()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ArgumentsInjected", InjectedArguments)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1458,9 +2002,14 @@ Public Class Events
     Public Sub RespondZipShellInitialized() Handles Me.ZipShellInitialized
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipShellInitialized()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ZipShellInitialized")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipShellInitialized()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ZipShellInitialized")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1470,9 +2019,14 @@ Public Class Events
     Public Sub RespondZipPreExecuteCommand(Command As String) Handles Me.ZipPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ZipPreExecuteCommand", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ZipPreExecuteCommand", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1482,9 +2036,14 @@ Public Class Events
     Public Sub RespondZipPostExecuteCommand(Command As String) Handles Me.ZipPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ZipPostExecuteCommand", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ZipPostExecuteCommand", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1494,9 +2053,14 @@ Public Class Events
     Public Sub RespondZipCommandError(Command As String, Exception As Exception) Handles Me.ZipCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipCommandError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("ZipCommandError", Command, Exception)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ZipCommandError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ZipCommandError", Command, Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1506,9 +2070,14 @@ Public Class Events
     Public Sub RespondHTTPShellInitialized() Handles Me.HTTPShellInitialized
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPShellInitialized()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("HTTPShellInitialized")
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPShellInitialized()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("HTTPShellInitialized")
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1518,9 +2087,14 @@ Public Class Events
     Public Sub RespondHTTPPreExecuteCommand(Command As String) Handles Me.HTTPPreExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("HTTPPreExecuteCommand", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPPreExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("HTTPPreExecuteCommand", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1530,9 +2104,14 @@ Public Class Events
     Public Sub RespondHTTPPostExecuteCommand(Command As String) Handles Me.HTTPPostExecuteCommand
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("HTTPPostExecuteCommand", Command)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPPostExecuteCommand()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("HTTPPostExecuteCommand", Command)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
@@ -1542,9 +2121,14 @@ Public Class Events
     Public Sub RespondHTTPCommandError(Command As String, Exception As Exception) Handles Me.HTTPCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
-                Dim script As IScript = PartInfo.PartScript
-                Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPCommandError()...", script.ModPart, script.Name, script.Version)
-                script.InitEvents("HTTPCommandError", Command, Exception)
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event HTTPCommandError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("HTTPCommandError", Command, Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
             Next
         Next
     End Sub
