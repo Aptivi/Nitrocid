@@ -38,19 +38,7 @@ Public Module TextWriterColor
                 SetConsoleColor(colorType)
 
                 'Write the text to console
-                If Line Then
-                    If Not vars.Length = 0 Then
-                        Console.WriteLine(Text, vars)
-                    Else
-                        Console.WriteLine(Text)
-                    End If
-                Else
-                    If Not vars.Length = 0 Then
-                        Console.Write(Text, vars)
-                    Else
-                        Console.Write(Text)
-                    End If
-                End If
+                WritePlain(Text, Line, vars)
 
                 'Reset the colors
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
@@ -81,19 +69,7 @@ Public Module TextWriterColor
                 Console.ForegroundColor = color
 
                 'Write the text to console
-                If Line Then
-                    If Not vars.Length = 0 Then
-                        Console.WriteLine(Text, vars)
-                    Else
-                        Console.WriteLine(Text)
-                    End If
-                Else
-                    If Not vars.Length = 0 Then
-                        Console.Write(Text, vars)
-                    Else
-                        Console.Write(Text)
-                    End If
-                End If
+                WritePlain(Text, Line, vars)
 
                 'Reset the colors
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
@@ -125,19 +101,7 @@ Public Module TextWriterColor
                 Console.ForegroundColor = ForegroundColor
 
                 'Write the text to console
-                If Line Then
-                    If Not vars.Length = 0 Then
-                        Console.WriteLine(Text, vars)
-                    Else
-                        Console.WriteLine(Text)
-                    End If
-                Else
-                    If Not vars.Length = 0 Then
-                        Console.Write(Text, vars)
-                    Else
-                        Console.Write(Text)
-                    End If
-                End If
+                WritePlain(Text, Line, vars)
 
                 'Reset the colors
                 If BackgroundColor = ConsoleColor.Black Then Console.ResetColor()
@@ -170,19 +134,7 @@ Public Module TextWriterColor
                 End If
 
                 'Write the text to console
-                If Line Then
-                    If Not vars.Length = 0 Then
-                        Console.WriteLine(Text, vars)
-                    Else
-                        Console.WriteLine(Text)
-                    End If
-                Else
-                    If Not vars.Length = 0 Then
-                        Console.Write(Text, vars)
-                    Else
-                        Console.Write(Text)
-                    End If
-                End If
+                WritePlain(Text, Line, vars)
 
                 'Reset the colors
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
@@ -216,6 +168,31 @@ Public Module TextWriterColor
                 End If
 
                 'Write the text to console
+                WritePlain(Text, Line, vars)
+
+                'Reset the colors
+                If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
+                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                WStkTrc(ex)
+                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+            End Try
+#If Not NOWRITELOCK Then
+        End SyncLock
+#End If
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt without colors
+    ''' </summary>
+    ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+    ''' <param name="Line">Whether to print a new line or not</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
+    Public Sub WritePlain(Text As String, Line As Boolean, ParamArray vars() As Object)
+#If Not NOWRITELOCK Then
+        SyncLock WriteLock
+#End If
+            Try
                 If Line Then
                     If Not vars.Length = 0 Then
                         Console.WriteLine(Text, vars)
@@ -229,10 +206,6 @@ Public Module TextWriterColor
                         Console.Write(Text)
                     End If
                 End If
-
-                'Reset the colors
-                If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
-                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)

@@ -24,75 +24,6 @@ Public Module TableColor
     ''' <param name="Headers">Headers to insert to the table.</param>
     ''' <param name="Rows">Rows to insert to the table.</param>
     ''' <param name="Margin">Safe threshold from left</param>
-    ''' <param name="ColTypes">A type of colors that will be changed.</param>
-    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, ColTypes As ColTypes, Optional SeparateRows As Boolean = True)
-        Dim ColumnCapacity As Integer = Console.WindowWidth / Headers.Length
-        Dim ColumnPositions As New List(Of Integer)
-        Dim RepeatTimes As Integer
-
-        'Populate the positions
-        Console.WriteLine()
-        For ColumnPosition As Integer = Margin To Console.WindowWidth Step ColumnCapacity
-            If Not ColumnPosition >= Console.WindowWidth Then
-                ColumnPositions.Add(ColumnPosition)
-                If ColumnPositions.Count = 1 Then ColumnPosition = 0
-            Else
-                Exit For
-            End If
-        Next
-
-        'Write the headers
-        For HeaderIndex As Integer = 0 To Headers.Length - 1
-            Dim Header As String = Headers(HeaderIndex)
-            Dim ColumnPosition As Integer = ColumnPositions(HeaderIndex)
-            If Header Is Nothing Then Header = ""
-            WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes)
-        Next
-        Console.WriteLine()
-
-        'Write the closing minus sign.
-        Dim OldTop As Integer = Console.CursorTop
-        RepeatTimes = Console.WindowWidth - Console.CursorLeft - (Margin * 2)
-        If Margin > 0 Then Write(" ".Repeat(Margin), False, ColTypes)
-        Write("-".Repeat(RepeatTimes), True, ColTypes)
-
-        'Fix CursorTop value on Unix systems.
-        If IsOnUnix() Then
-            If Not Console.CursorTop = Console.WindowHeight - 1 Or OldTop = Console.WindowHeight - 3 Then Console.CursorTop -= 1
-        End If
-
-        'Write the rows
-        For RowIndex As Integer = 0 To Rows.GetLength(0) - 1
-            For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
-                Dim RowValue As String = Rows(RowIndex, RowValueIndex)
-                Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
-                If RowValue Is Nothing Then RowValue = ""
-                WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes)
-            Next
-            Console.WriteLine()
-
-            'Separate the rows optionally
-            If SeparateRows Then
-                'Write the closing minus sign.
-                OldTop = Console.CursorTop
-                RepeatTimes = Console.WindowWidth - Console.CursorLeft - (Margin * 2)
-                If Margin > 0 Then Write(" ".Repeat(Margin), False, ColTypes)
-                Write("-".Repeat(RepeatTimes), True, ColTypes)
-
-                'Fix CursorTop value on Unix systems.
-                If IsOnUnix() Then
-                    If Not Console.CursorTop = Console.WindowHeight - 1 Or OldTop = Console.WindowHeight - 3 Then Console.CursorTop -= 1
-                End If
-            End If
-        Next
-    End Sub
-
-    ''' <summary>
-    ''' Draw a table with text
-    ''' </summary>
-    ''' <param name="Headers">Headers to insert to the table.</param>
-    ''' <param name="Rows">Rows to insert to the table.</param>
-    ''' <param name="Margin">Safe threshold from left</param>
     Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, Optional SeparateRows As Boolean = True)
         Dim ColumnCapacity As Integer = Console.WindowWidth / Headers.Length
         Dim ColumnPositions As New List(Of Integer)
@@ -279,6 +210,75 @@ Public Module TableColor
                 RepeatTimes = Console.WindowWidth - Console.CursorLeft - (Margin * 2)
                 If Margin > 0 Then Write(" ".Repeat(Margin), False, ForegroundColor, BackgroundColor)
                 Write("-".Repeat(RepeatTimes), True, ForegroundColor, BackgroundColor)
+
+                'Fix CursorTop value on Unix systems.
+                If IsOnUnix() Then
+                    If Not Console.CursorTop = Console.WindowHeight - 1 Or OldTop = Console.WindowHeight - 3 Then Console.CursorTop -= 1
+                End If
+            End If
+        Next
+    End Sub
+
+    ''' <summary>
+    ''' Draw a table with text
+    ''' </summary>
+    ''' <param name="Headers">Headers to insert to the table.</param>
+    ''' <param name="Rows">Rows to insert to the table.</param>
+    ''' <param name="Margin">Safe threshold from left</param>
+    ''' <param name="ColTypes">A type of colors that will be changed.</param>
+    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, ColTypes As ColTypes, Optional SeparateRows As Boolean = True)
+        Dim ColumnCapacity As Integer = Console.WindowWidth / Headers.Length
+        Dim ColumnPositions As New List(Of Integer)
+        Dim RepeatTimes As Integer
+
+        'Populate the positions
+        Console.WriteLine()
+        For ColumnPosition As Integer = Margin To Console.WindowWidth Step ColumnCapacity
+            If Not ColumnPosition >= Console.WindowWidth Then
+                ColumnPositions.Add(ColumnPosition)
+                If ColumnPositions.Count = 1 Then ColumnPosition = 0
+            Else
+                Exit For
+            End If
+        Next
+
+        'Write the headers
+        For HeaderIndex As Integer = 0 To Headers.Length - 1
+            Dim Header As String = Headers(HeaderIndex)
+            Dim ColumnPosition As Integer = ColumnPositions(HeaderIndex)
+            If Header Is Nothing Then Header = ""
+            WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes)
+        Next
+        Console.WriteLine()
+
+        'Write the closing minus sign.
+        Dim OldTop As Integer = Console.CursorTop
+        RepeatTimes = Console.WindowWidth - Console.CursorLeft - (Margin * 2)
+        If Margin > 0 Then Write(" ".Repeat(Margin), False, ColTypes)
+        Write("-".Repeat(RepeatTimes), True, ColTypes)
+
+        'Fix CursorTop value on Unix systems.
+        If IsOnUnix() Then
+            If Not Console.CursorTop = Console.WindowHeight - 1 Or OldTop = Console.WindowHeight - 3 Then Console.CursorTop -= 1
+        End If
+
+        'Write the rows
+        For RowIndex As Integer = 0 To Rows.GetLength(0) - 1
+            For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
+                Dim RowValue As String = Rows(RowIndex, RowValueIndex)
+                Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
+                If RowValue Is Nothing Then RowValue = ""
+                WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes)
+            Next
+            Console.WriteLine()
+
+            'Separate the rows optionally
+            If SeparateRows Then
+                'Write the closing minus sign.
+                OldTop = Console.CursorTop
+                RepeatTimes = Console.WindowWidth - Console.CursorLeft - (Margin * 2)
+                If Margin > 0 Then Write(" ".Repeat(Margin), False, ColTypes)
+                Write("-".Repeat(RepeatTimes), True, ColTypes)
 
                 'Fix CursorTop value on Unix systems.
                 If IsOnUnix() Then

@@ -19,22 +19,18 @@
 Public Module TextWriterWrappedColor
 
     ''' <summary>
-    ''' Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
+    ''' Outputs the text into the terminal prompt, wraps the long terminal output if needed.
     ''' </summary>
     ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
     ''' <param name="Line">Whether to print a new line or not</param>
-    ''' <param name="colorType">A type of colors that will be changed.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteWrapped(Text As String, Line As Boolean, colorType As ColTypes, ParamArray vars() As Object)
+    Public Sub WriteWrappedPlain(Text As String, Line As Boolean, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
             Dim LinesMade As Integer
             Dim OldTop As Integer
             Try
-                'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                SetConsoleColor(colorType)
-
                 'Format string as needed
                 If Not vars.Length = 0 Then Text = String.Format(Text, vars)
 
@@ -49,6 +45,34 @@ Public Module TextWriterWrappedColor
                     End If
                 Next
                 If Line Then Console.WriteLine()
+            Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
+                WStkTrc(ex)
+                KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
+            End Try
+#If Not NOWRITELOCK Then
+        End SyncLock
+#End If
+    End Sub
+
+    ''' <summary>
+    ''' Outputs the text into the terminal prompt, wraps the long terminal output if needed, and sets colors as needed.
+    ''' </summary>
+    ''' <param name="text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+    ''' <param name="Line">Whether to print a new line or not</param>
+    ''' <param name="colorType">A type of colors that will be changed.</param>
+    ''' <param name="vars">Variables to format the message before it's written.</param>
+    Public Sub WriteWrapped(Text As String, Line As Boolean, colorType As ColTypes, ParamArray vars() As Object)
+#If Not NOWRITELOCK Then
+        SyncLock WriteLock
+#End If
+            Try
+                'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
+                SetConsoleColor(colorType)
+
+                'Write wrapped output
+                WriteWrappedPlain(Text, Line, vars)
+
+                'Reset the colors
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
                 If colorType = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
@@ -71,27 +95,15 @@ Public Module TextWriterWrappedColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim LinesMade As Integer
-            Dim OldTop As Integer
             Try
                 'Try to write to console
                 Console.BackgroundColor = If(New Color(BackgroundColor).PlainSequence.IsNumeric AndAlso BackgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor), ConsoleColor.Black)
                 Console.ForegroundColor = color
 
-                'Format string as needed
-                If Not vars.Length = 0 Then Text = String.Format(Text, vars)
+                'Write wrapped output
+                WriteWrappedPlain(Text, Line, vars)
 
-                OldTop = Console.CursorTop
-                For Each TextChar As Char In Text.ToString.ToCharArray
-                    Console.Write(TextChar)
-                    LinesMade += Console.CursorTop - OldTop
-                    If LinesMade = Console.WindowHeight - 1 Then
-                        If Console.ReadKey(True).Key = ConsoleKey.Escape Then Exit For
-                        OldTop = Console.CursorTop
-                        LinesMade = 0
-                    End If
-                Next
-                If Line Then Console.WriteLine()
+                'Reset the colors
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
                 If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
@@ -115,27 +127,15 @@ Public Module TextWriterWrappedColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim LinesMade As Integer
-            Dim OldTop As Integer
             Try
                 'Try to write to console
                 Console.BackgroundColor = BackgroundColor
                 Console.ForegroundColor = ForegroundColor
 
-                'Format string as needed
-                If Not vars.Length = 0 Then Text = String.Format(Text, vars)
+                'Write wrapped output
+                WriteWrappedPlain(Text, Line, vars)
 
-                OldTop = Console.CursorTop
-                For Each TextChar As Char In Text.ToString.ToCharArray
-                    Console.Write(TextChar)
-                    LinesMade += Console.CursorTop - OldTop
-                    If LinesMade = Console.WindowHeight - 1 Then
-                        If Console.ReadKey(True).Key = ConsoleKey.Escape Then Exit For
-                        OldTop = Console.CursorTop
-                        LinesMade = 0
-                    End If
-                Next
-                If Line Then Console.WriteLine()
+                'Reset the colors
                 If BackgroundColor = ConsoleColor.Black Then Console.ResetColor()
                 If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
@@ -158,8 +158,6 @@ Public Module TextWriterWrappedColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim LinesMade As Integer
-            Dim OldTop As Integer
             Try
                 'Try to write to console
                 If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
@@ -167,20 +165,10 @@ Public Module TextWriterWrappedColor
                     SetConsoleColor(New Color(BackgroundColor), True)
                 End If
 
-                'Format string as needed
-                If Not vars.Length = 0 Then Text = String.Format(Text, vars)
+                'Write wrapped output
+                WriteWrappedPlain(Text, Line, vars)
 
-                OldTop = Console.CursorTop
-                For Each TextChar As Char In Text.ToString.ToCharArray
-                    Console.Write(TextChar)
-                    LinesMade += Console.CursorTop - OldTop
-                    If LinesMade = Console.WindowHeight - 1 Then
-                        If Console.ReadKey(True).Key = ConsoleKey.Escape Then Exit For
-                        OldTop = Console.CursorTop
-                        LinesMade = 0
-                    End If
-                Next
-                If Line Then Console.WriteLine()
+                'Reset the colors
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
                 If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
@@ -204,8 +192,6 @@ Public Module TextWriterWrappedColor
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
-            Dim LinesMade As Integer
-            Dim OldTop As Integer
             Try
                 'Try to write to console
                 If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
@@ -213,20 +199,10 @@ Public Module TextWriterWrappedColor
                     SetConsoleColor(BackgroundColor, True)
                 End If
 
-                'Format string as needed
-                If Not vars.Length = 0 Then Text = String.Format(Text, vars)
+                'Write wrapped output
+                WriteWrappedPlain(Text, Line, vars)
 
-                OldTop = Console.CursorTop
-                For Each TextChar As Char In Text.ToString.ToCharArray
-                    Console.Write(TextChar)
-                    LinesMade += Console.CursorTop - OldTop
-                    If LinesMade = Console.WindowHeight - 1 Then
-                        If Console.ReadKey(True).Key = ConsoleKey.Escape Then Exit For
-                        OldTop = Console.CursorTop
-                        LinesMade = 0
-                    End If
-                Next
-                If Line Then Console.WriteLine()
+                'Reset the colors
                 If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
                 If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"

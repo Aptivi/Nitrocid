@@ -27,7 +27,7 @@ Module TextWriterSlowColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, ParamArray vars() As Object)
+    Public Sub WriteSlowlyPlain(msg As String, Line As Boolean, MsEachLetter As Double, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -69,18 +69,10 @@ Module TextWriterSlowColor
                 'Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
                 SetConsoleColor(colorType)
 
-                'Format string as needed
-                If Not vars.Length = 0 Then msg = String.Format(msg, vars)
-
                 'Write text slowly
-                Dim chars As List(Of Char) = msg.ToCharArray.ToList
-                For Each ch As Char In chars
-                    Thread.Sleep(MsEachLetter)
-                    Console.Write(ch)
-                Next
-                If Line Then
-                    Console.WriteLine()
-                End If
+                WriteSlowlyPlain(msg, Line, MsEachLetter, vars)
+
+                'Reset the colors
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
                 If colorType = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
@@ -108,18 +100,10 @@ Module TextWriterSlowColor
                 Console.BackgroundColor = If(New Color(BackgroundColor).PlainSequence.IsNumeric AndAlso BackgroundColor <= 15, [Enum].Parse(GetType(ConsoleColor), BackgroundColor), ConsoleColor.Black)
                 Console.ForegroundColor = color
 
-                'Format string as needed
-                If Not vars.Length = 0 Then msg = String.Format(msg, vars)
-
                 'Write text slowly
-                Dim chars As List(Of Char) = msg.ToCharArray.ToList
-                For Each ch As Char In chars
-                    Thread.Sleep(MsEachLetter)
-                    Console.Write(ch)
-                Next
-                If Line Then
-                    Console.WriteLine()
-                End If
+                WriteSlowlyPlain(msg, Line, MsEachLetter, vars)
+
+                'Reset the colors
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
                 If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
@@ -148,18 +132,10 @@ Module TextWriterSlowColor
                 Console.BackgroundColor = BackgroundColor
                 Console.ForegroundColor = ForegroundColor
 
-                'Format string as needed
-                If Not vars.Length = 0 Then msg = String.Format(msg, vars)
-
                 'Write text slowly
-                Dim chars As List(Of Char) = msg.ToCharArray.ToList
-                For Each ch As Char In chars
-                    Thread.Sleep(MsEachLetter)
-                    Console.Write(ch)
-                Next
-                If Line Then
-                    Console.WriteLine()
-                End If
+                WriteSlowlyPlain(msg, Line, MsEachLetter, vars)
+
+                'Reset the colors
                 If BackgroundColor = ConsoleColor.Black Then Console.ResetColor()
                 If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
@@ -189,18 +165,10 @@ Module TextWriterSlowColor
                     SetConsoleColor(New Color(BackgroundColor), True)
                 End If
 
-                'Format string as needed
-                If Not vars.Length = 0 Then msg = String.Format(msg, vars)
-
                 'Write text slowly
-                Dim chars As List(Of Char) = msg.ToCharArray.ToList
-                For Each ch As Char In chars
-                    Thread.Sleep(MsEachLetter)
-                    Console.Write(ch)
-                Next
-                If Line Then
-                    Console.WriteLine()
-                End If
+                WriteSlowlyPlain(msg, Line, MsEachLetter, vars)
+
+                'Reset the colors
                 If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
                 If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
@@ -231,18 +199,10 @@ Module TextWriterSlowColor
                     SetConsoleColor(BackgroundColor, True)
                 End If
 
-                'Format string as needed
-                If Not vars.Length = 0 Then msg = String.Format(msg, vars)
-
                 'Write text slowly
-                Dim chars As List(Of Char) = msg.ToCharArray.ToList
-                For Each ch As Char In chars
-                    Thread.Sleep(MsEachLetter)
-                    Console.Write(ch)
-                Next
-                If Line Then
-                    Console.WriteLine()
-                End If
+                WriteSlowlyPlain(msg, Line, MsEachLetter, vars)
+
+                'Reset the colors
                 If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
                 If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"

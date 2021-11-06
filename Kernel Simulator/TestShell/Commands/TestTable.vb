@@ -26,7 +26,8 @@ Class Test_TestTableCommand
                                  {"14.04 (Trusty Tahr)", Render(New Date(2014, 4, 17)), Render(New Date(2019, 4, 25)), Render(New Date(2024, 4, 25))},
                                  {"16.04 (Xenial Xerus)", Render(New Date(2016, 4, 21)), Render(New Date(2021, 4, 30)), Render(New Date(2026, 4, 30))},
                                  {"18.04 (Bionic Beaver)", Render(New Date(2018, 4, 26)), Render(New Date(2023, 4, 30)), Render(New Date(2028, 4, 30))},
-                                 {"20.04 (Focal Fossa)", Render(New Date(2020, 4, 23)), Render(New Date(2025, 4, 25)), Render(New Date(2030, 4, 25))}}
+                                 {"20.04 (Focal Fossa)", Render(New Date(2020, 4, 23)), Render(New Date(2025, 4, 25)), Render(New Date(2030, 4, 25))},
+                                 {"22.04 (Jammy Jellyfish)", Render(New Date(2022, 4, 26)), Render(New Date(2027, 4, 25)), Render(New Date(2032, 4, 25))}}
         Dim Margin As Integer = If(ListArgsOnly.Count > 0, ListArgsOnly(0), 2)
         WriteTable(Headers, Rows, Margin)
     End Sub
