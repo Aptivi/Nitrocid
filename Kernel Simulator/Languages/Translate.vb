@@ -156,12 +156,12 @@ Public Module Translate
                         ElseIf AlwaysTranslated Then
                             If Not lang.EndsWith("-T") Then lang += "-T"
                         Else
-                            W(DoTranslation("The language you've selected contains two variants. Select one:") + vbNewLine, True, ColTypes.Neutral)
-                            W(" 1) " + DoTranslation("Transliterated version", lang), True, ColTypes.Option)
-                            W(" 2) " + DoTranslation("Translated version", lang + "-T") + vbNewLine, True, ColTypes.Option)
+                            Write(DoTranslation("The language you've selected contains two variants. Select one:") + vbNewLine, True, ColTypes.Neutral)
+                            Write(" 1) " + DoTranslation("Transliterated version", lang), True, ColTypes.Option)
+                            Write(" 2) " + DoTranslation("Translated version", lang + "-T") + vbNewLine, True, ColTypes.Option)
                             Dim LanguageSet As Boolean
                             While Not LanguageSet
-                                W(">> ", False, ColTypes.Input)
+                                Write(">> ", False, ColTypes.Input)
                                 Dim Answer As Integer
                                 If Integer.TryParse(Console.ReadLine, Answer) Then
                                     Wdbg(DebugLevel.I, "Choice: {0}", Answer)
@@ -170,10 +170,10 @@ Public Module Translate
                                             If Answer = 2 Then lang += "-T"
                                             LanguageSet = True
                                         Case Else
-                                            W(DoTranslation("Invalid choice. Try again."), True, ColTypes.Error)
+                                            Write(DoTranslation("Invalid choice. Try again."), True, ColTypes.Error)
                                     End Select
                                 Else
-                                    W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                                    Write(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
                                 End If
                             End While
                         End If
@@ -181,15 +181,15 @@ Public Module Translate
                 End If
             End If
 
-            W(DoTranslation("Changing from: {0} to {1}..."), True, ColTypes.Neutral, CurrentLanguage, lang)
+            Write(DoTranslation("Changing from: {0} to {1}..."), True, ColTypes.Neutral, CurrentLanguage, lang)
             If Not SetLang(lang) Then
-                W(DoTranslation("Failed to set language."), True, ColTypes.Error)
+                Write(DoTranslation("Failed to set language."), True, ColTypes.Error)
             End If
             If NotifyCodepageError Then
-                W(DoTranslation("Unable to set codepage. The language may not display properly."), True, ColTypes.Error)
+                Write(DoTranslation("Unable to set codepage. The language may not display properly."), True, ColTypes.Error)
             End If
         Else
-            W(DoTranslation("Invalid language") + " {0}", True, ColTypes.Error, lang)
+            Write(DoTranslation("Invalid language") + " {0}", True, ColTypes.Error, lang)
         End If
     End Sub
 

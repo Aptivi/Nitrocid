@@ -24,9 +24,9 @@ Class Test_CheckStringCommand
         Dim Text As String = ListArgsOnly(0)
         Dim LocalizedStrings As Dictionary(Of String, String) = PrepareDict("eng")
         If LocalizedStrings.Keys.Contains(Text) Then
-            W(DoTranslation("String found in the localization resources."), True, ColTypes.Success)
+            Write(DoTranslation("String found in the localization resources."), True, ColTypes.Success)
         Else
-            W(DoTranslation("String not found in the localization resources."), True, ColTypes.Neutral)
+            Write(DoTranslation("String not found in the localization resources."), True, ColTypes.Neutral)
         End If
     End Sub
 

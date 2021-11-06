@@ -90,11 +90,11 @@ Public Module MailShell
             End If
             Wdbg(DebugLevel.I, "MailShellPromptStyle = {0}", MailShellPromptStyle)
             If MailShellPromptStyle = "" Then
-                W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, Mail_Authentication.UserName) : W("|", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, Address) : W("] ", False, ColTypes.Gray) : W("{0} > ", False, ColTypes.Gray, IMAP_CurrentDirectory)
+                Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, Mail_Authentication.UserName) : Write("|", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, Address) : Write("] ", False, ColTypes.Gray) : Write("{0} > ", False, ColTypes.Gray, IMAP_CurrentDirectory)
             Else
                 Dim ParsedPromptStyle As String = ProbePlaces(MailShellPromptStyle)
                 ParsedPromptStyle.ConvertVTSequences
-                W(ParsedPromptStyle, False, ColTypes.Gray)
+                Write(ParsedPromptStyle, False, ColTypes.Gray)
             End If
             SetInputColor()
 
@@ -119,7 +119,7 @@ Public Module MailShell
                     ExecuteMailAlias(cmd)
                 ElseIf Not cmd.StartsWith(" ") Then
                     Wdbg(DebugLevel.E, "Command not found. Reopening shell...")
-                    W(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Error, words(0))
+                    Write(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Error, words(0))
                 End If
                 Kernel.EventManager.RaiseIMAPPostExecuteCommand(cmd)
             Else

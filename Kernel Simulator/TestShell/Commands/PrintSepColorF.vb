@@ -25,7 +25,7 @@ Class Test_PrintSepColorFCommand
         For i As Integer = 0 To Vars.Length - 1
             Vars(i) = Evaluate(Vars(i)).ToString
         Next
-        WriteSeparatorC(ListArgs(2), True, New Color(ListArgs(0)), Vars)
+        WriteSeparator(ListArgs(2), True, New Color(ListArgs(0)), Vars)
     End Sub
 
 End Class

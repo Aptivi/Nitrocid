@@ -21,16 +21,16 @@ Class RSS_FeedInfoCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        W("- " + DoTranslation("Title:") + " ", False, ColTypes.ListEntry)
-        W(RSSFeedInstance.FeedTitle, True, ColTypes.ListValue)
-        W("- " + DoTranslation("Link:") + " ", False, ColTypes.ListEntry)
-        W(RSSFeedInstance.FeedUrl, True, ColTypes.ListValue)
-        W("- " + DoTranslation("Description:") + " ", False, ColTypes.ListEntry)
-        W(RSSFeedInstance.FeedDescription, True, ColTypes.ListValue)
-        W("- " + DoTranslation("Feed type:") + " ", False, ColTypes.ListEntry)
-        W(RSSFeedInstance.FeedType.ToString, True, ColTypes.ListValue)
-        W("- " + DoTranslation("Number of articles:") + " ", False, ColTypes.ListEntry)
-        W(RSSFeedInstance.FeedArticles.Count, True, ColTypes.ListValue)
+        Write("- " + DoTranslation("Title:") + " ", False, ColTypes.ListEntry)
+        Write(RSSFeedInstance.FeedTitle, True, ColTypes.ListValue)
+        Write("- " + DoTranslation("Link:") + " ", False, ColTypes.ListEntry)
+        Write(RSSFeedInstance.FeedUrl, True, ColTypes.ListValue)
+        Write("- " + DoTranslation("Description:") + " ", False, ColTypes.ListEntry)
+        Write(RSSFeedInstance.FeedDescription, True, ColTypes.ListValue)
+        Write("- " + DoTranslation("Feed type:") + " ", False, ColTypes.ListEntry)
+        Write(RSSFeedInstance.FeedType.ToString, True, ColTypes.ListValue)
+        Write("- " + DoTranslation("Number of articles:") + " ", False, ColTypes.ListEntry)
+        Write(RSSFeedInstance.FeedArticles.Count.ToString, True, ColTypes.ListValue)
     End Sub
 
 End Class

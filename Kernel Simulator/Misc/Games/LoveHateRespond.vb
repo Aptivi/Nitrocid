@@ -73,7 +73,7 @@ Module LoveHateRespond
         Dim Type As CommentType
         Dim ExitRequested As Boolean
         Dim Score, CommentNumber As Long
-        W(DoTranslation("Press A on hate comments to apologize. Press T on love comments to thank. Press Q to quit the game."), True, ColTypes.Tip)
+        Write(DoTranslation("Press A on hate comments to apologize. Press T on love comments to thank. Press Q to quit the game."), True, ColTypes.Tip)
 
         'Game logic
         While Not ExitRequested
@@ -88,10 +88,10 @@ Module LoveHateRespond
 
             'Ask the user the question
             WriteSeparator("[{0}/{1}]", True, Score, CommentNumber)
-            W(DoTranslation("If someone made this comment to your video:"), True, ColTypes.Neutral)
-            W("- {0}:", False, ColTypes.ListEntry, RandomUser)
-            W(" {0}", True, ColTypes.ListValue, RandomComment)
-            W(DoTranslation("How would you respond?") + " <A/T/Q> ", False, ColTypes.Input)
+            Write(DoTranslation("If someone made this comment to your video:"), True, ColTypes.Neutral)
+            Write("- {0}:", False, ColTypes.ListEntry, RandomUser)
+            Write(" {0}", True, ColTypes.ListValue, RandomComment)
+            Write(DoTranslation("How would you respond?") + " <A/T/Q> ", False, ColTypes.Input)
             Response = Console.ReadKey.KeyChar
             Console.WriteLine()
             Wdbg(DebugLevel.I, "Response: {0}", Response)
@@ -102,22 +102,22 @@ Module LoveHateRespond
                     Select Case Type
                         Case CommentType.Love
                             Wdbg(DebugLevel.I, "Apologized to love comment")
-                            W(DoTranslation("Apologized to love comment. Not good enough."), True, ColTypes.Neutral)
+                            Write(DoTranslation("Apologized to love comment. Not good enough."), True, ColTypes.Neutral)
                             Score -= 1
                         Case CommentType.Hate
                             Wdbg(DebugLevel.I, "Apologized to hate comment")
-                            W(DoTranslation("You've apologized to a hate comment! Excellent!"), True, ColTypes.Neutral)
+                            Write(DoTranslation("You've apologized to a hate comment! Excellent!"), True, ColTypes.Neutral)
                             Score += 1
                     End Select
                 Case "T", "t" 'Thank
                     Select Case Type
                         Case CommentType.Love
                             Wdbg(DebugLevel.I, "Thanked love comment")
-                            W(DoTranslation("Great! {0} will appreciate your thanks."), True, ColTypes.Neutral, RandomUser)
+                            Write(DoTranslation("Great! {0} will appreciate your thanks."), True, ColTypes.Neutral, RandomUser)
                             Score += 1
                         Case CommentType.Hate
                             Wdbg(DebugLevel.I, "Thanked hate comment")
-                            W(DoTranslation("You just thanked the hater for the hate comment!"), True, ColTypes.Neutral)
+                            Write(DoTranslation("You just thanked the hater for the hate comment!"), True, ColTypes.Neutral)
                             Score -= 1
                     End Select
                 Case "Q", "q" 'Quit
@@ -125,7 +125,7 @@ Module LoveHateRespond
                     ExitRequested = True
                 Case Else
                     Wdbg(DebugLevel.I, "No such selection")
-                    W(DoTranslation("Invalid selection. Going to the next comment..."), True, ColTypes.Error)
+                    Write(DoTranslation("Invalid selection. Going to the next comment..."), True, ColTypes.Error)
             End Select
         End While
     End Sub

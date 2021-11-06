@@ -29,21 +29,21 @@ Class ArgInjCommand
                 FinalArgs.Add(arg)
             Else
                 Wdbg(DebugLevel.W, "Argument {0} not found.", arg)
-                W(DoTranslation("Argument {0} not found to inject."), True, ColTypes.Warning, arg)
+                Write(DoTranslation("Argument {0} not found to inject."), True, ColTypes.Warning, arg)
             End If
         Next
         If FinalArgs.Count = 0 Then
-            W(DoTranslation("No arguments specified. Hint: Specify multiple arguments separated by spaces"), True, ColTypes.Error)
+            Write(DoTranslation("No arguments specified. Hint: Specify multiple arguments separated by spaces"), True, ColTypes.Error)
         Else
             EnteredArguments = New List(Of String)(FinalArgs)
             ArgsInjected = True
-            W(DoTranslation("Injected arguments, {0}, will be scheduled to run at next reboot."), True, ColTypes.Neutral, String.Join(", ", EnteredArguments))
+            Write(DoTranslation("Injected arguments, {0}, will be scheduled to run at next reboot."), True, ColTypes.Neutral, String.Join(", ", EnteredArguments))
         End If
     End Sub
 
     Public Sub HelpHelper()
         Dim UsageLength As Integer = DoTranslation("Usage:").Length
-        W(" ".Repeat(UsageLength) + " " + DoTranslation("where arguments will be {0}"), True, ColTypes.Neutral, String.Join(", ", AvailableArgs.Keys))
+        Write(" ".Repeat(UsageLength) + " " + DoTranslation("where arguments will be {0}"), True, ColTypes.Neutral, String.Join(", ", AvailableArgs.Keys))
     End Sub
 
 End Class

@@ -57,10 +57,10 @@ Public Module SSH
         Dim Answer As Integer
         While True
             'Ask for authentication method
-            W(DoTranslation("How do you want to authenticate?") + vbNewLine, True, ColTypes.Question)
-            W("1) " + DoTranslation("Private key file"), True, ColTypes.Option)
-            W("2) " + DoTranslation("Password") + vbNewLine, True, ColTypes.Option)
-            W(">> ", False, ColTypes.Input)
+            Write(DoTranslation("How do you want to authenticate?") + vbNewLine, True, ColTypes.Question)
+            Write("1) " + DoTranslation("Private key file"), True, ColTypes.Option)
+            Write("2) " + DoTranslation("Password") + vbNewLine, True, ColTypes.Option)
+            Write(">> ", False, ColTypes.Input)
             If Integer.TryParse(Console.ReadLine, Answer) Then
                 'Check for answer
                 Select Case Answer
@@ -68,14 +68,14 @@ Public Module SSH
                         Exit While
                     Case Else
                         Wdbg(DebugLevel.W, "Option is not valid. Returning...")
-                        W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, Answer)
-                        W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                        Write(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, Answer)
+                        Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                         Console.ReadKey()
                 End Select
             Else
                 Wdbg(DebugLevel.W, "Answer is not numeric.")
-                W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
-                W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                Write(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
             End If
         End While
@@ -90,12 +90,12 @@ Public Module SSH
                     Dim PrivateKeyAuth As PrivateKeyFile
 
                     'Ask for location
-                    W(DoTranslation("Enter the location of the private key for {0}. Write ""q"" to finish adding keys: "), False, ColTypes.Input, Username)
+                    Write(DoTranslation("Enter the location of the private key for {0}. Write ""q"" to finish adding keys: "), False, ColTypes.Input, Username)
                     PrivateKeyFile = Console.ReadLine()
                     PrivateKeyFile = NeutralizePath(PrivateKeyFile)
                     If FileExists(PrivateKeyFile) Then
                         'Ask for passphrase
-                        W(DoTranslation("Enter the passphrase for key {0}: "), False, ColTypes.Input, PrivateKeyFile)
+                        Write(DoTranslation("Enter the passphrase for key {0}: "), False, ColTypes.Input, PrivateKeyFile)
                         PrivateKeyPassphrase = ReadLineNoInput("*")
                         Console.WriteLine()
 
@@ -110,12 +110,12 @@ Public Module SSH
                         Catch ex As Exception
                             WStkTrc(ex)
                             Wdbg(DebugLevel.E, "Error trying to add private key authentication method: {0}", ex.Message)
-                            W(DoTranslation("Error trying to add private key:") + " {0}", True, ColTypes.Error, ex.Message)
+                            Write(DoTranslation("Error trying to add private key:") + " {0}", True, ColTypes.Error, ex.Message)
                         End Try
                     ElseIf PrivateKeyFile.EndsWith("/q") Then
                         Exit While
                     Else
-                        W(DoTranslation("Key file {0} doesn't exist."), True, ColTypes.Error, PrivateKeyFile)
+                        Write(DoTranslation("Key file {0} doesn't exist."), True, ColTypes.Error, PrivateKeyFile)
                     End If
                 End While
 
@@ -125,7 +125,7 @@ Public Module SSH
                 Dim Pass As String
 
                 'Ask for password
-                W(DoTranslation("Enter the password for {0}: "), False, ColTypes.Input, Username)
+                Write(DoTranslation("Enter the password for {0}: "), False, ColTypes.Input, Username)
                 Pass = ReadLineNoInput("*")
                 Console.WriteLine()
 
@@ -169,7 +169,7 @@ Public Module SSH
             End If
         Catch ex As Exception
             Kernel.EventManager.RaiseSSHError(ex)
-            W(DoTranslation("Error trying to connect to SSH server: {0}"), True, ColTypes.Error, ex.Message)
+            Write(DoTranslation("Error trying to connect to SSH server: {0}"), True, ColTypes.Error, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub
@@ -185,7 +185,7 @@ Public Module SSH
         Dim BannerMessageLines() As String = e.BannerMessage.SplitNewLines
         For Each BannerLine As String In BannerMessageLines
             Wdbg(DebugLevel.I, BannerLine)
-            W(BannerLine, True, ColTypes.Neutral)
+            Write(BannerLine, True, ColTypes.Neutral)
         Next
     End Sub
 
@@ -216,10 +216,10 @@ Public Module SSH
         Catch ex As Exception
             Wdbg(DebugLevel.E, "Error on SSH shell in {0}: {1}", SSHClient.ConnectionInfo.Host, ex.Message)
             WStkTrc(ex)
-            W(DoTranslation("Error on SSH shell") + ": {0}", True, ColTypes.Error, ex.Message)
+            Write(DoTranslation("Error on SSH shell") + ": {0}", True, ColTypes.Error, ex.Message)
         Finally
             Wdbg(DebugLevel.I, "Connected: {0}", SSHClient.IsConnected)
-            W(vbNewLine + DoTranslation("SSH Disconnected."), True, ColTypes.Neutral)
+            Write(vbNewLine + DoTranslation("SSH Disconnected."), True, ColTypes.Neutral)
             DisconnectionRequested = False
 
             'Remove handler for SSH
@@ -256,20 +256,20 @@ Public Module SSH
                     SSHClient.Disconnect()
                 End If
                 While Not SSHCErrorReader.EndOfStream
-                    W(SSHCErrorReader.ReadLine(), True, ColTypes.Neutral)
+                    Write(SSHCErrorReader.ReadLine(), True, ColTypes.Neutral)
                 End While
                 While Not SSHCOutputReader.EndOfStream
-                    W(SSHCOutputReader.ReadLine(), True, ColTypes.Neutral)
+                    Write(SSHCOutputReader.ReadLine(), True, ColTypes.Neutral)
                 End While
             End While
         Catch ex As Exception
             Wdbg(DebugLevel.E, "Error trying to execute SSH command ""{0}"" to {1}: {2}", Command, SSHClient.ConnectionInfo.Host, ex.Message)
             WStkTrc(ex)
-            W(DoTranslation("Error executing SSH command") + " {0}: {1}", True, ColTypes.Error, Command, ex.Message)
+            Write(DoTranslation("Error executing SSH command") + " {0}: {1}", True, ColTypes.Error, Command, ex.Message)
             Kernel.EventManager.RaiseSSHCommandError(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port), Command, ex)
         Finally
             Wdbg(DebugLevel.I, "Connected: {0}", SSHClient.IsConnected)
-            W(vbNewLine + DoTranslation("SSH Disconnected."), True, ColTypes.Neutral)
+            Write(vbNewLine + DoTranslation("SSH Disconnected."), True, ColTypes.Neutral)
             DisconnectionRequested = False
             Kernel.EventManager.RaiseSSHPostExecuteCommand(SSHClient.ConnectionInfo.Host + ":" + CStr(SSHClient.ConnectionInfo.Port), Command)
 

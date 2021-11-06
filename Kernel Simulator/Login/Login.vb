@@ -75,7 +75,7 @@ Public Module Login
             'Show MOTD once
             Wdbg(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", ShowMOTDOnceFlag, ShowMOTD)
             If ShowMOTDOnceFlag = True And ShowMOTD = True Then
-                W(vbNewLine + ProbePlaces(MOTDMessage), True, ColTypes.Banner)
+                Write(vbNewLine + ProbePlaces(MOTDMessage), True, ColTypes.Banner)
             End If
             ShowMOTDOnceFlag = False
 
@@ -88,7 +88,7 @@ Public Module Login
 
                 'Prompt user to choose a user
                 Do Until AnswerUserInt <> 0
-                    W(">> ", False, ColTypes.Input)
+                    Write(">> ", False, ColTypes.Input)
                     Dim AnswerUserString As String = Console.ReadLine
 
                     'Parse input
@@ -101,36 +101,36 @@ Public Module Login
                                 ShowPasswordPrompt(SelectedUser)
                             Else
                                 Wdbg(DebugLevel.W, "User can't log in. (User is in disabled list)")
-                                W(DoTranslation("User is disabled."), True, ColTypes.Error)
+                                Write(DoTranslation("User is disabled."), True, ColTypes.Error)
                                 Kernel.EventManager.RaiseLoginError(SelectedUser, LoginErrorReasons.Disabled)
                             End If
                         Else
-                            W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                            Write(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
                         End If
                     Else
-                        W(DoTranslation("Please enter a user number."), True, ColTypes.Error)
+                        Write(DoTranslation("Please enter a user number."), True, ColTypes.Error)
                     End If
                 Loop
             Else
                 'Generate user list
-                If ShowAvailableUsers Then W(DoTranslation("Available usernames: {0}"), True, ColTypes.Neutral, String.Join(", ", UsersList))
+                If ShowAvailableUsers Then Write(DoTranslation("Available usernames: {0}"), True, ColTypes.Neutral, String.Join(", ", UsersList))
 
                 'Prompt user to login
                 If Not String.IsNullOrWhiteSpace(UsernamePrompt) Then
-                    W(ProbePlaces(UsernamePrompt), False, ColTypes.Input)
+                    Write(ProbePlaces(UsernamePrompt), False, ColTypes.Input)
                 Else
-                    W(DoTranslation("Username: "), False, ColTypes.Input)
+                    Write(DoTranslation("Username: "), False, ColTypes.Input)
                 End If
                 Dim answeruser As String = Console.ReadLine()
 
                 'Parse input
                 If InStr(answeruser, " ") > 0 Then
                     Wdbg(DebugLevel.W, "Spaces found in username.")
-                    W(DoTranslation("Spaces are not allowed."), True, ColTypes.Error)
+                    Write(DoTranslation("Spaces are not allowed."), True, ColTypes.Error)
                     Kernel.EventManager.RaiseLoginError(answeruser, LoginErrorReasons.Spaces)
                 ElseIf answeruser.IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray) <> -1 Then
                     Wdbg(DebugLevel.W, "Unknown characters found in username.")
-                    W(DoTranslation("Special characters are not allowed."), True, ColTypes.Error)
+                    Write(DoTranslation("Special characters are not allowed."), True, ColTypes.Error)
                     Kernel.EventManager.RaiseLoginError(answeruser, LoginErrorReasons.SpecialCharacters)
                 ElseIf Users.ContainsKey(answeruser) Then
                     Wdbg(DebugLevel.I, "Username correct. Finding if the user is disabled...")
@@ -139,12 +139,12 @@ Public Module Login
                         ShowPasswordPrompt(answeruser)
                     Else
                         Wdbg(DebugLevel.W, "User can't log in. (User is in disabled list)")
-                        W(DoTranslation("User is disabled."), True, ColTypes.Error)
+                        Write(DoTranslation("User is disabled."), True, ColTypes.Error)
                         Kernel.EventManager.RaiseLoginError(answeruser, LoginErrorReasons.Disabled)
                     End If
                 Else
                     Wdbg(DebugLevel.E, "Username not found.")
-                    W(DoTranslation("Wrong username."), True, ColTypes.Error)
+                    Write(DoTranslation("Wrong username."), True, ColTypes.Error)
                     Kernel.EventManager.RaiseLoginError(answeruser, LoginErrorReasons.NotFound)
                 End If
             End If
@@ -176,9 +176,9 @@ Public Module Login
                 'Wait for input
                 Wdbg(DebugLevel.I, "Password not empty")
                 If Not String.IsNullOrWhiteSpace(PasswordPrompt) Then
-                    W(ProbePlaces(PasswordPrompt), False, ColTypes.Input)
+                    Write(ProbePlaces(PasswordPrompt), False, ColTypes.Input)
                 Else
-                    W(DoTranslation("{0}'s password: "), False, ColTypes.Input, usernamerequested)
+                    Write(DoTranslation("{0}'s password: "), False, ColTypes.Input, usernamerequested)
                 End If
 
                 'Get input
@@ -197,7 +197,7 @@ Public Module Login
                     Exit Sub
                 Else
                     Wdbg(DebugLevel.I, "Passowrd written wrong...")
-                    W(DoTranslation("Wrong password."), True, ColTypes.Error)
+                    Write(DoTranslation("Wrong password."), True, ColTypes.Error)
                     Kernel.EventManager.RaiseLoginError(usernamerequested, LoginErrorReasons.WrongPassword)
                     If Not Maintenance Then
                         If Not LockMode Then
@@ -237,7 +237,7 @@ Public Module Login
         If LockMode = True Then LockMode = False
         Wdbg(DebugLevel.I, "Lock released.")
         ShowMOTDOnceFlag = True
-        If ShowMAL Then W(ProbePlaces(MAL), True, ColTypes.Banner)
+        If ShowMAL Then Write(ProbePlaces(MAL), True, ColTypes.Banner)
         ShowHeadlineLogin()
 
         'Fire event PostLogin

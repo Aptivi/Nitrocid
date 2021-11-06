@@ -22,14 +22,14 @@ Class AddUserCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If ListArgs?.Length = 1 Then
-            W(DoTranslation("usrmgr: Creating username {0}..."), True, ColTypes.Neutral, ListArgs(0))
+            Write(DoTranslation("usrmgr: Creating username {0}..."), True, ColTypes.Neutral, ListArgs(0))
             AddUser(ListArgs(0))
         ElseIf ListArgs?.Length > 2 Then
             If ListArgs(1) = ListArgs(2) Then
-                W(DoTranslation("usrmgr: Creating username {0}..."), True, ColTypes.Neutral, ListArgs(0))
+                Write(DoTranslation("usrmgr: Creating username {0}..."), True, ColTypes.Neutral, ListArgs(0))
                 AddUser(ListArgs(0), ListArgs(1))
             Else
-                W(DoTranslation("Passwords don't match."), True, ColTypes.Error)
+                Write(DoTranslation("Passwords don't match."), True, ColTypes.Error)
             End If
         End If
     End Sub

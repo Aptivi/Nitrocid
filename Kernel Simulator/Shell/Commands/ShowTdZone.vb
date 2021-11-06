@@ -26,7 +26,7 @@ Class ShowTdZoneCommand
         If ShowAll Then
             ShowAllTimeZones()
         Else
-            If Not ShowTimeZones(ListArgsOnly(0)) Then W(DoTranslation("Timezone is specified incorrectly."), True, ColTypes.Error)
+            If Not ShowTimeZones(ListArgsOnly(0)) Then Write(DoTranslation("Timezone is specified incorrectly."), True, ColTypes.Error)
         End If
     End Sub
 

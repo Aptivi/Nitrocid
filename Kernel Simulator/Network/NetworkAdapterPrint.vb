@@ -34,19 +34,19 @@ Public Module NetworkAdapterPrint
         'Probe for adapter capabilities
         For Each adapter As NetworkInterface In adapters
             adapterNumber += 1
-            W("==========================================", True, ColTypes.Neutral)
+            Write("==========================================", True, ColTypes.Neutral)
 
             'See if it supports IPv6
             If Not adapter.Supports(NetworkInterfaceComponent.IPv6) Then
                 Wdbg(DebugLevel.W, "{0} doesn't support IPv6. Trying to get information about IPv4.", adapter.Description)
-                W(DoTranslation("Adapter {0} doesn't support IPv6. Continuing..."), True, ColTypes.Error, adapter.Description)
+                Write(DoTranslation("Adapter {0} doesn't support IPv6. Continuing..."), True, ColTypes.Error, adapter.Description)
                 NoV6 = True
             End If
 
             'See if it supports IPv4
             If Not adapter.Supports(NetworkInterfaceComponent.IPv4) Then
                 Wdbg(DebugLevel.E, "{0} doesn't support IPv4.", adapter.Description)
-                W(DoTranslation("Adapter {0} doesn't support IPv4. Probe failed."), True, ColTypes.Error, adapter.Description)
+                Write(DoTranslation("Adapter {0} doesn't support IPv4. Probe failed."), True, ColTypes.Error, adapter.Description)
                 NoV4 = True
             End If
 
@@ -65,11 +65,11 @@ Public Module NetworkAdapterPrint
 #Disable Warning BC42104
                     If p6 Is Nothing Then
                         Wdbg(DebugLevel.W, "Failed to get IPv6 properties.")
-                        W(DoTranslation("Failed to get IPv6 properties for adapter {0}. Continuing..."), True, ColTypes.Error, adapter.Description)
+                        Write(DoTranslation("Failed to get IPv6 properties for adapter {0}. Continuing..."), True, ColTypes.Error, adapter.Description)
                     End If
                     If p Is Nothing Then
                         Wdbg(DebugLevel.E, "Failed to get IPv4 properties.")
-                        W(DoTranslation("Failed to get properties for adapter {0}"), True, ColTypes.Error, adapter.Description)
+                        Write(DoTranslation("Failed to get properties for adapter {0}"), True, ColTypes.Error, adapter.Description)
                         Failed = True
                     End If
                     WStkTrc(ex)
@@ -79,7 +79,7 @@ Public Module NetworkAdapterPrint
                 'Check if statistics is nothing
                 If s Is Nothing Then
                     Wdbg(DebugLevel.E, "Failed to get statistics.")
-                    W(DoTranslation("Failed to get statistics for adapter {0}"), True, ColTypes.Error, adapter.Description)
+                    Write(DoTranslation("Failed to get statistics for adapter {0}"), True, ColTypes.Error, adapter.Description)
                     Failed = True
                 End If
 
@@ -98,7 +98,7 @@ Public Module NetworkAdapterPrint
 
         'Print general IPv4 and IPv6 information
         If GeneralNetworkInformation Then
-            W("==========================================", True, ColTypes.Neutral)
+            Write("==========================================", True, ColTypes.Neutral)
             PrintGeneralNetInfo(gs4, gs6)
         End If
     End Sub
@@ -112,7 +112,7 @@ Public Module NetworkAdapterPrint
     ''' <param name="AdapterNumber">Reference adapter number</param>
     Sub PrintAdapterIPv4Info(NInterface As NetworkInterface, Properties As IPv4InterfaceProperties, Statistics As IPv4InterfaceStatistics, AdapterNumber As Long)
         If ExtensiveAdapterInformation Then
-            W(DoTranslation("IPv4 information:") + vbNewLine +
+            Write(DoTranslation("IPv4 information:") + vbNewLine +
               DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
               DoTranslation("Adapter Name:") + " {1}" + vbNewLine +
               DoTranslation("Maximum Transmission Unit: {2} Units") + vbNewLine +
@@ -123,7 +123,7 @@ Public Module NetworkAdapterPrint
               AdapterNumber, NInterface.Description, Properties.Mtu, Properties.IsDhcpEnabled, Statistics.NonUnicastPacketsSent, Statistics.NonUnicastPacketsReceived,
               Statistics.UnicastPacketsSent, Statistics.UnicastPacketsReceived, Statistics.IncomingPacketsWithErrors, Statistics.OutgoingPacketsWithErrors)
         Else
-            W(DoTranslation("IPv4 information:") + vbNewLine +
+            Write(DoTranslation("IPv4 information:") + vbNewLine +
               DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
               DoTranslation("Adapter Name:") + " {1}", True, ColTypes.Neutral,
               AdapterNumber, NInterface.Description)
@@ -138,13 +138,13 @@ Public Module NetworkAdapterPrint
     ''' <param name="AdapterNumber">Reference adapter number</param>
     Sub PrintAdapterIPv6Info(NInterface As NetworkInterface, Properties As IPv6InterfaceProperties, AdapterNumber As Long)
         If ExtensiveAdapterInformation Then
-            W(DoTranslation("IPv6 information:") + vbNewLine +
+            Write(DoTranslation("IPv6 information:") + vbNewLine +
               DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
               DoTranslation("Adapter Name:") + " {1}" + vbNewLine +
               DoTranslation("Maximum Transmission Unit: {2} Units"), True, ColTypes.Neutral,
               AdapterNumber, NInterface.Description, Properties.Mtu)
         Else
-            W(DoTranslation("IPv6 information:") + vbNewLine +
+            Write(DoTranslation("IPv6 information:") + vbNewLine +
               DoTranslation("Adapter Number:") + " {0}" + vbNewLine +
               DoTranslation("Adapter Name:") + " {1}", True, ColTypes.Neutral,
               AdapterNumber, NInterface.Description)
@@ -157,7 +157,7 @@ Public Module NetworkAdapterPrint
     ''' <param name="IPv4Stat">IPv4 general statistics</param>
     ''' <param name="IPv6Stat">IPv6 general statistics</param>
     Sub PrintGeneralNetInfo(IPv4Stat As IPGlobalStatistics, IPv6Stat As IPGlobalStatistics)
-        W(DoTranslation("General IPv6 properties") + vbNewLine +
+        Write(DoTranslation("General IPv6 properties") + vbNewLine +
           DoTranslation("Packets (inbound):") + " {0}/{1}" + vbNewLine +
           DoTranslation("Packets (outbound):") + " {2}/{3}" + vbNewLine +
           DoTranslation("Errors in received packets:") + " {4}/{5}/{6}" + vbNewLine +

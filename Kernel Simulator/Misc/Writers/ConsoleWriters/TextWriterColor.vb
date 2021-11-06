@@ -16,8 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.Console
-
 Public Module TextWriterColor
 
 #If Not NOWRITELOCK Then
@@ -31,7 +29,7 @@ Public Module TextWriterColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="colorType">A type of colors that will be changed.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub W(Text As String, Line As Boolean, colorType As ColTypes, ParamArray vars() As Object)
+    Public Sub Write(Text As String, Line As Boolean, colorType As ColTypes, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -42,23 +40,21 @@ Public Module TextWriterColor
                 'Write the text to console
                 If Line Then
                     If Not vars.Length = 0 Then
-                        WriteLine(Text, vars)
+                        Console.WriteLine(Text, vars)
                     Else
-                        WriteLine(Text)
+                        Console.WriteLine(Text)
                     End If
                 Else
                     If Not vars.Length = 0 Then
-                        Write(Text, vars)
+                        Console.Write(Text, vars)
                     Else
-                        Write(Text)
+                        Console.Write(Text)
                     End If
                 End If
 
                 'Reset the colors
-                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
-                If colorType = ColTypes.Input And ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
-                    SetInputColor()
-                End If
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
+                If colorType = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -75,7 +71,7 @@ Public Module TextWriterColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteC16(Text As String, Line As Boolean, color As ConsoleColor, ParamArray vars() As Object)
+    Public Sub Write(Text As String, Line As Boolean, color As ConsoleColor, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -87,23 +83,21 @@ Public Module TextWriterColor
                 'Write the text to console
                 If Line Then
                     If Not vars.Length = 0 Then
-                        WriteLine(Text, vars)
+                        Console.WriteLine(Text, vars)
                     Else
-                        WriteLine(Text)
+                        Console.WriteLine(Text)
                     End If
                 Else
                     If Not vars.Length = 0 Then
-                        Write(Text, vars)
+                        Console.Write(Text, vars)
                     Else
-                        Write(Text)
+                        Console.Write(Text)
                     End If
                 End If
 
                 'Reset the colors
-                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
-                If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
-                    SetInputColor()
-                End If
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
+                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -121,7 +115,7 @@ Public Module TextWriterColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteC16(Text As String, Line As Boolean, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray vars() As Object)
+    Public Sub Write(Text As String, Line As Boolean, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -133,23 +127,21 @@ Public Module TextWriterColor
                 'Write the text to console
                 If Line Then
                     If Not vars.Length = 0 Then
-                        WriteLine(Text, vars)
+                        Console.WriteLine(Text, vars)
                     Else
-                        WriteLine(Text)
+                        Console.WriteLine(Text)
                     End If
                 Else
                     If Not vars.Length = 0 Then
-                        Write(Text, vars)
+                        Console.Write(Text, vars)
                     Else
-                        Write(Text)
+                        Console.Write(Text)
                     End If
                 End If
 
                 'Reset the colors
-                If BackgroundColor = ConsoleColor.Black Then ResetColor()
-                If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
-                    SetInputColor()
-                End If
+                If BackgroundColor = ConsoleColor.Black Then Console.ResetColor()
+                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -166,13 +158,13 @@ Public Module TextWriterColor
     ''' <param name="Line">Whether to print a new line or not</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteC(Text As String, Line As Boolean, color As Color, ParamArray vars() As Object)
+    Public Sub Write(Text As String, Line As Boolean, color As Color, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
             Try
                 'Try to write to console
-                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
+                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
                     SetConsoleColor(color)
                     SetConsoleColor(New Color(BackgroundColor), True)
                 End If
@@ -180,23 +172,21 @@ Public Module TextWriterColor
                 'Write the text to console
                 If Line Then
                     If Not vars.Length = 0 Then
-                        WriteLine(Text, vars)
+                        Console.WriteLine(Text, vars)
                     Else
-                        WriteLine(Text)
+                        Console.WriteLine(Text)
                     End If
                 Else
                     If Not vars.Length = 0 Then
-                        Write(Text, vars)
+                        Console.Write(Text, vars)
                     Else
-                        Write(Text)
+                        Console.Write(Text)
                     End If
                 End If
 
                 'Reset the colors
-                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
-                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
-                    SetInputColor()
-                End If
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
+                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -214,13 +204,13 @@ Public Module TextWriterColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteC(Text As String, Line As Boolean, ForegroundColor As Color, BackgroundColor As Color, ParamArray vars() As Object)
+    Public Sub Write(Text As String, Line As Boolean, ForegroundColor As Color, BackgroundColor As Color, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
             Try
                 'Try to write to console
-                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
+                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
                     SetConsoleColor(ForegroundColor)
                     SetConsoleColor(BackgroundColor, True)
                 End If
@@ -228,23 +218,21 @@ Public Module TextWriterColor
                 'Write the text to console
                 If Line Then
                     If Not vars.Length = 0 Then
-                        WriteLine(Text, vars)
+                        Console.WriteLine(Text, vars)
                     Else
-                        WriteLine(Text)
+                        Console.WriteLine(Text)
                     End If
                 Else
                     If Not vars.Length = 0 Then
-                        Write(Text, vars)
+                        Console.Write(Text, vars)
                     Else
-                        Write(Text)
+                        Console.Write(Text)
                     End If
                 End If
 
                 'Reset the colors
-                If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then ResetColor()
-                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
-                    SetInputColor()
-                End If
+                If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
+                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)

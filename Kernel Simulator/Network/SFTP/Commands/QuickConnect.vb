@@ -24,7 +24,7 @@ Class SFTP_QuickConnectCommand
         If Not SFTPConnected Then
             SFTPQuickConnect()
         Else
-            W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Error)
+            Write(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Error)
         End If
     End Sub
 

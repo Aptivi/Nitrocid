@@ -23,14 +23,14 @@ Class ChMotdCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If ListArgs?.Length > 0 Then
             If StringArgs = "" Then
-                W(DoTranslation("Blank message of the day."), True, ColTypes.Error)
+                Write(DoTranslation("Blank message of the day."), True, ColTypes.Error)
             Else
-                W(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
+                Write(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
                 SetMOTD(StringArgs, MessageType.MOTD)
             End If
         Else
             InitializeTextShell(GetKernelPath(KernelPathType.MOTD))
-            W(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
+            Write(DoTranslation("Changing MOTD..."), True, ColTypes.Neutral)
             ReadMOTD(MessageType.MOTD)
         End If
     End Sub

@@ -34,7 +34,7 @@ Class Test_CheckSettingsEntryVarsCommand
 
         'Warn if not found
         If NotFound.Count > 0 Then
-            W(DoTranslation("These configuration entries have invalid variables or enumerations and need to be fixed:"), True, ColTypes.Warning)
+            Write(DoTranslation("These configuration entries have invalid variables or enumerations and need to be fixed:"), True, ColTypes.Warning)
             WriteList(NotFound)
         End If
     End Sub

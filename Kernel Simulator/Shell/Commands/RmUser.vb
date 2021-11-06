@@ -22,7 +22,7 @@ Class RmUserCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         RemoveUser(ListArgs(0))
-        W(DoTranslation("User {0} removed."), True, ColTypes.Neutral, ListArgs(0))
+        Write(DoTranslation("User {0} removed."), True, ColTypes.Neutral, ListArgs(0))
     End Sub
 
 End Class

@@ -22,7 +22,7 @@ Class TextEdit_ReplaceCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         TextEdit_Replace(ListArgs(0), ListArgs(1))
-        W(DoTranslation("String replaced."), True, ColTypes.Success)
+        Write(DoTranslation("String replaced."), True, ColTypes.Success)
     End Sub
 
 End Class

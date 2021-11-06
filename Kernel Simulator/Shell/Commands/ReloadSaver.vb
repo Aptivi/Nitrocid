@@ -26,7 +26,7 @@ Class ReloadSaverCommand
         If Not SafeMode Then
             CompileCustom(ListArgs(0))
         Else
-            W(DoTranslation("Reloading not allowed in safe mode."), True, ColTypes.Error)
+            Write(DoTranslation("Reloading not allowed in safe mode."), True, ColTypes.Error)
         End If
     End Sub
 
@@ -38,7 +38,7 @@ Class ReloadSaverCommand
 
         'Print available screensavers
         Dim UsageLength As Integer = DoTranslation("Usage:").Length
-        W(" ".Repeat(UsageLength) + " " + DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", ScreensaverFiles))
+        Write(" ".Repeat(UsageLength) + " " + DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", ScreensaverFiles))
     End Sub
 
 End Class

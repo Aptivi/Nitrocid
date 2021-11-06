@@ -79,7 +79,7 @@ Public Module ModParser
                     'Check to see if the reference file exists
                     If Not FileExists(Reference) Then
                         Wdbg(DebugLevel.E, "File {0} not found to reference.", Reference)
-                        W(DoTranslation("Referenced file {0} not found. This mod might not work properly without this file."), True, ColTypes.Warning, Reference)
+                        Write(DoTranslation("Referenced file {0} not found. This mod might not work properly without this file."), True, ColTypes.Warning, Reference)
                     Else
                         prm.ReferencedAssemblies.Add(Reference)
                     End If
@@ -106,22 +106,22 @@ Public Module ModParser
         Wdbg(DebugLevel.I, "Has errors: {0}", res.Errors.HasErrors)
         Wdbg(DebugLevel.I, "Has warnings: {0}", res.Errors.HasWarnings)
         If res.Errors.HasWarnings Then
-            W(DoTranslation("Mod can be loaded, but these warnings may impact the way the mod works:"), True, ColTypes.Warning)
+            Write(DoTranslation("Mod can be loaded, but these warnings may impact the way the mod works:"), True, ColTypes.Warning)
             Wdbg(DebugLevel.W, "Warnings when compiling:")
             For Each errorName As CompilerError In res.Errors
                 If errorName.IsWarning Then
-                    W(errorName.ToString, True, ColTypes.Warning)
+                    Write(errorName.ToString, True, ColTypes.Warning)
                     PrintLineWithHandle(modCode(0).SplitNewLines, errorName.Line, errorName.Column, ColTypes.Warning)
                     Wdbg(DebugLevel.W, errorName.ToString)
                 End If
             Next
         End If
         If res.Errors.HasErrors Then
-            W(DoTranslation("Mod can't be loaded because of the following: "), True, ColTypes.Error)
+            Write(DoTranslation("Mod can't be loaded because of the following: "), True, ColTypes.Error)
             Wdbg(DebugLevel.E, "Errors when compiling:")
             For Each errorName As CompilerError In res.Errors
                 If Not errorName.IsWarning Then
-                    W(errorName.ToString, True, ColTypes.Error)
+                    Write(errorName.ToString, True, ColTypes.Error)
                     PrintLineWithHandle(modCode(0).SplitNewLines, errorName.Line, errorName.Column, ColTypes.Error)
                     Wdbg(DebugLevel.E, errorName.ToString)
                 End If
@@ -177,13 +177,13 @@ Public Module ModParser
             Catch ex As ReflectionTypeLoadException
                 Wdbg(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message)
                 WStkTrc(ex)
-                W(DoTranslation("Mod can't be loaded because of the following: "), True, ColTypes.Error)
+                Write(DoTranslation("Mod can't be loaded because of the following: "), True, ColTypes.Error)
                 For Each LoaderException As Exception In ex.LoaderExceptions
                     Wdbg(DebugLevel.E, "Loader exception: {0}", LoaderException.Message)
                     WStkTrc(LoaderException)
-                    W(LoaderException.Message, True, ColTypes.Error)
+                    Write(LoaderException.Message, True, ColTypes.Error)
                 Next
-                W(DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), True, ColTypes.Error)
+                Write(DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), True, ColTypes.Error)
             End Try
         Else
             'Ignore all mods that its file name doesn't end with .vb
@@ -212,7 +212,7 @@ Public Module ModParser
                 'See if the mod has part name
                 If String.IsNullOrWhiteSpace(script.ModPart) Then
                     Wdbg(DebugLevel.W, "No part name for {0}", modFile)
-                    W(DoTranslation("Mod {0} does not have the part name. Mod parsing failed. Review the source code."), True, ColTypes.Error, modFile)
+                    Write(DoTranslation("Mod {0} does not have the part name. Mod parsing failed. Review the source code."), True, ColTypes.Error, modFile)
                     Exit Sub
                 End If
 
@@ -221,7 +221,7 @@ Public Module ModParser
                     For Each Command As String In script.Commands.Keys
                         If String.IsNullOrWhiteSpace(Command) Then
                             Wdbg(DebugLevel.W, "No command for {0}", modFile)
-                            W(DoTranslation("Mod {0} has invalid command. Mod parsing failed. Review the source code."), True, ColTypes.Error, modFile)
+                            Write(DoTranslation("Mod {0} has invalid command. Mod parsing failed. Review the source code."), True, ColTypes.Error, modFile)
                             Exit Sub
                         End If
                     Next
@@ -233,7 +233,7 @@ Public Module ModParser
                     'Mod has no name! Give it a file name.
                     ModName = modFile
                     Wdbg(DebugLevel.W, "No name for {0}", modFile)
-                    W(DoTranslation("Mod {0} does not have the name. Review the source code."), True, ColTypes.Warning, modFile)
+                    Write(DoTranslation("Mod {0} does not have the name. Review the source code."), True, ColTypes.Warning, modFile)
                 Else
                     Wdbg(DebugLevel.I, "There is a name for {0}", modFile)
                 End If
@@ -274,10 +274,10 @@ Public Module ModParser
                 'See if the mod has version
                 If String.IsNullOrWhiteSpace(script.Version) And Not String.IsNullOrWhiteSpace(script.Name) Then
                     Wdbg(DebugLevel.I, "{0}.Version = """" | {0}.Name = {1}", modFile, script.Name)
-                    W(DoTranslation("Mod {0} does not have the version."), True, ColTypes.Warning, script.Name)
+                    Write(DoTranslation("Mod {0} does not have the version."), True, ColTypes.Warning, script.Name)
                 ElseIf Not String.IsNullOrWhiteSpace(script.Name) And Not String.IsNullOrWhiteSpace(script.Version) Then
                     Wdbg(DebugLevel.I, "{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version)
-                    W(DoTranslation("{0} v{1} started") + " ({2})", True, ColTypes.Success, script.Name, script.Version, script.ModPart)
+                    Write(DoTranslation("{0} v{1} started") + " ({2})", True, ColTypes.Success, script.Name, script.Version, script.ModPart)
                 End If
 
                 'Process the commands that are defined in a mod
@@ -347,7 +347,7 @@ Public Module ModParser
                         'See if mod can be added to command list
                         If Command <> "" Then
                             If script.Commands(ActualCommand).HelpDefinition = "" Then
-                                W(DoTranslation("No definition for command {0}."), True, ColTypes.Warning, Command)
+                                Write(DoTranslation("No definition for command {0}."), True, ColTypes.Warning, Command)
                                 Wdbg(DebugLevel.W, "{0}.Def = Nothing, {0}.Def = ""Command defined by {1} ({2})""", Command, script.Name, script.ModPart)
                                 script.Commands(ActualCommand).HelpDefinition = DoTranslation("Command defined by ") + script.Name + " (" + script.ModPart + ")"
                             End If
@@ -428,7 +428,7 @@ Public Module ModParser
             Catch ex As Exception
                 Kernel.EventManager.RaiseModFinalizationFailed(modFile, ex.Message)
                 WStkTrc(ex)
-                W(DoTranslation("Failed to finalize mod {0}: {1}"), True, ColTypes.Error, modFile, ex.Message)
+                Write(DoTranslation("Failed to finalize mod {0}: {1}"), True, ColTypes.Error, modFile, ex.Message)
             End Try
         Else
             Kernel.EventManager.RaiseModParseError(modFile)

@@ -27,12 +27,12 @@ Class TextEdit_DelLineCommand
             If IsNumeric(ListArgs(0)) Then
                 If CInt(ListArgs(0)) <= TextEdit_FileLines.Count Then
                     TextEdit_RemoveLine(ListArgs(0))
-                    W(DoTranslation("Removed line."), True, ColTypes.Success)
+                    Write(DoTranslation("Removed line."), True, ColTypes.Success)
                 Else
-                    W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                    Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                 End If
             Else
-                W(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, ListArgs(0))
+                Write(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, ListArgs(0))
                 Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(0))
             End If
         ElseIf ListArgs?.Count > 1 Then
@@ -43,13 +43,13 @@ Class TextEdit_DelLineCommand
                     LineNumberStart.SwapIfSourceLarger(LineNumberEnd)
                     For LineNumber = LineNumberStart To LineNumberEnd
                         TextEdit_RemoveLine(LineNumber)
-                        W(DoTranslation("Removed line number {0}."), True, ColTypes.Success, LineNumber)
+                        Write(DoTranslation("Removed line number {0}."), True, ColTypes.Success, LineNumber)
                     Next
                 Else
-                    W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                    Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                 End If
             Else
-                W(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, ListArgs(1))
+                Write(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, ListArgs(1))
                 Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(1))
             End If
         End If

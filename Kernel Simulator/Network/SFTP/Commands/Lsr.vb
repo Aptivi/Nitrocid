@@ -32,7 +32,7 @@ Class SFTP_LsrCommand
         End If
         Entries.Sort()
         For Each Entry As String In Entries
-            W(Entry, True, ColTypes.ListEntry)
+            Write(Entry, True, ColTypes.ListEntry)
         Next
     End Sub
 

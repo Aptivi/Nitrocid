@@ -87,7 +87,7 @@ Module BouncingTextDisplay
                 End If
                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                 If Not ResizeSyncing Then
-                    WriteWhereC(BouncingTextWrite, ColumnFirstLetter, RowText, True, BouncingColor)
+                    WriteWhere(BouncingTextWrite, ColumnFirstLetter, RowText, True, BouncingColor)
                 Else
                     RowText = Console.WindowHeight / 2
                     ColumnFirstLetter = (Console.WindowWidth / 2) - BouncingTextWrite.Length / 2

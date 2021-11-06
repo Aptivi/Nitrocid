@@ -21,7 +21,7 @@ Class Test_ShowTimeUtcCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        W(RenderTimeUtc, True, ColTypes.Neutral)
+        Write(RenderTimeUtc, True, ColTypes.Neutral)
     End Sub
 
 End Class

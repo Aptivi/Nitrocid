@@ -290,33 +290,33 @@ Public Module AliasManager
                 'User tries to add an alias.
                 Try
                     AddAlias(AliasCmd, DestCmd, Type)
-                    W(DoTranslation("You can now run ""{0}"" as a command: ""{1}""."), True, ColTypes.Neutral, AliasCmd, DestCmd)
+                    Write(DoTranslation("You can now run ""{0}"" as a command: ""{1}""."), True, ColTypes.Neutral, AliasCmd, DestCmd)
                 Catch ex As Exception
                     Wdbg(DebugLevel.E, "Failed to add alias. Stack trace written using WStkTrc(). {0}", ex.Message)
                     WStkTrc(ex)
-                    W(ex.Message, True, ColTypes.Error)
+                    Write(ex.Message, True, ColTypes.Error)
                 End Try
             ElseIf mode = "rem" Then
                 'User tries to remove an alias
                 Try
                     RemoveAlias(AliasCmd, Type)
                     PurgeAliases()
-                    W(DoTranslation("Removed alias {0} successfully."), True, ColTypes.Neutral, AliasCmd)
+                    Write(DoTranslation("Removed alias {0} successfully."), True, ColTypes.Neutral, AliasCmd)
                 Catch ex As Exception
                     Wdbg(DebugLevel.E, "Failed to remove alias. Stack trace written using WStkTrc(). {0}", ex.Message)
                     WStkTrc(ex)
-                    W(ex.Message, True, ColTypes.Error)
+                    Write(ex.Message, True, ColTypes.Error)
                 End Try
             Else
                 Wdbg(DebugLevel.E, "Mode {0} was neither add nor rem.", mode)
-                W(DoTranslation("Invalid mode {0}."), True, ColTypes.Error, mode)
+                Write(DoTranslation("Invalid mode {0}."), True, ColTypes.Error, mode)
             End If
 
             'Save all aliases
             SaveAliases()
         Else
             Wdbg(DebugLevel.E, "Type {0} not found.", Type)
-            W(DoTranslation("Invalid type {0}."), True, ColTypes.Error, Type)
+            Write(DoTranslation("Invalid type {0}."), True, ColTypes.Error, Type)
         End If
     End Sub
 

@@ -29,9 +29,9 @@ Public Class PGPContext
     ''' <returns>Entered Password</returns>
     Protected Overrides Function GetPasswordForKey(key As PgpSecretKey) As String
         If Not String.IsNullOrWhiteSpace(Mail_GPGPromptStyle) Then
-            W(ProbePlaces(Mail_GPGPromptStyle), False, ColTypes.Input, key.KeyId)
+            Write(ProbePlaces(Mail_GPGPromptStyle), False, ColTypes.Input, key.KeyId)
         Else
-            W(DoTranslation("Write password for key ID {0}") + ": ", False, ColTypes.Input, key.KeyId)
+            Write(DoTranslation("Write password for key ID {0}") + ": ", False, ColTypes.Input, key.KeyId)
         End If
         Dim Password As String = ReadLineNoInput("*")
         Console.WriteLine()

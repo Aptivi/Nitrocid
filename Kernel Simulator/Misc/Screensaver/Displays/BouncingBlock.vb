@@ -86,7 +86,7 @@ Module BouncingBlockDisplay
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                     If Not ResizeSyncing Then
-                        WriteWhereC(" ", ColumnBlock, RowBlock, True, New Color(255, 255, 255), New Color(RedColorNum, GreenColorNum, BlueColorNum))
+                        WriteWhere(" ", ColumnBlock, RowBlock, True, New Color(255, 255, 255), New Color(RedColorNum, GreenColorNum, BlueColorNum))
                     Else
                         RowBlock = Console.WindowHeight / 2
                         ColumnBlock = Console.WindowWidth / 2
@@ -96,7 +96,7 @@ Module BouncingBlockDisplay
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                     If Not ResizeSyncing Then
-                        WriteWhereC(" ", ColumnBlock, RowBlock, True, New Color(ConsoleColors.White), New Color(ColorNum))
+                        WriteWhere(" ", ColumnBlock, RowBlock, True, New Color(ConsoleColors.White), New Color(ColorNum))
                     Else
                         RowBlock = Console.WindowHeight / 2
                         ColumnBlock = Console.WindowWidth / 2

@@ -28,18 +28,18 @@ Class TextEdit_QueryWordRegexCommand
                 If CInt(ListArgs(1)) <= TextEdit_FileLines.Count Then
                     Dim QueriedChars As Dictionary(Of Integer, String) = TextEdit_QueryWordRegex(ListArgs(0), ListArgs(1))
                     For Each WordIndex As Integer In QueriedChars.Keys
-                        W("- {0}: ", False, ColTypes.ListEntry, WordIndex)
-                        W("{0} ({1})", True, ColTypes.ListValue, ListArgs(0), TextEdit_FileLines(ListArgs(1)))
+                        Write("- {0}: ", False, ColTypes.ListEntry, WordIndex)
+                        Write("{0} ({1})", True, ColTypes.ListValue, ListArgs(0), TextEdit_FileLines(ListArgs(1)))
                     Next
                 Else
-                    W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                    Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                 End If
             ElseIf ListArgs(1).ToLower = "all" Then
                 Dim QueriedWords As Dictionary(Of Integer, Dictionary(Of Integer, String)) = TextEdit_QueryWordRegex(ListArgs(0))
                 For Each LineIndex As Integer In QueriedWords.Keys
                     For Each WordIndex As Integer In QueriedWords(LineIndex).Keys
-                        W("- {0}:{1}: ", False, ColTypes.ListEntry, LineIndex, WordIndex)
-                        W("{0} ({1})", True, ColTypes.ListValue, ListArgs(0), TextEdit_FileLines(LineIndex))
+                        Write("- {0}:{1}: ", False, ColTypes.ListEntry, LineIndex, WordIndex)
+                        Write("{0} ({1})", True, ColTypes.ListValue, ListArgs(0), TextEdit_FileLines(LineIndex))
                     Next
                 Next
             End If
@@ -52,12 +52,12 @@ Class TextEdit_QueryWordRegexCommand
                     For LineNumber = LineNumberStart To LineNumberEnd
                         Dim QueriedChars As Dictionary(Of Integer, String) = TextEdit_QueryWordRegex(ListArgs(0), LineNumber)
                         For Each WordIndex As Integer In QueriedChars.Keys
-                            W("- {0}:{1}: ", False, ColTypes.ListEntry, LineNumber, WordIndex)
-                            W("{0} ({1})", True, ColTypes.ListValue, ListArgs(0), TextEdit_FileLines(ListArgs(1)))
+                            Write("- {0}:{1}: ", False, ColTypes.ListEntry, LineNumber, WordIndex)
+                            Write("{0} ({1})", True, ColTypes.ListValue, ListArgs(0), TextEdit_FileLines(ListArgs(1)))
                         Next
                     Next
                 Else
-                    W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                    Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                 End If
             End If
         End If

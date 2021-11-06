@@ -30,7 +30,7 @@ Class JsonMinifyCommand
         If FileExists(JsonFile) Then
             'Minify the JSON and display it on screen
             MinifiedJson = MinifyJson(JsonFile)
-            W(MinifiedJson, True, ColTypes.Neutral)
+            Write(MinifiedJson, True, ColTypes.Neutral)
 
             'Minify it to an output file specified (optional)
             If ListArgs.Count > 1 Then
@@ -38,7 +38,7 @@ Class JsonMinifyCommand
                 File.WriteAllText(JsonOutputFile, MinifiedJson)
             End If
         Else
-            W(DoTranslation("File {0} not found."), True, ColTypes.Error, JsonFile)
+            Write(DoTranslation("File {0} not found."), True, ColTypes.Error, JsonFile)
         End If
     End Sub
 

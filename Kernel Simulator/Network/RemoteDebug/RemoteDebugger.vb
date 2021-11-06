@@ -63,14 +63,14 @@ Public Module RemoteDebugger
             DebugTCP = New TcpListener(New IPAddress({0, 0, 0, 0}), DebugPort)
             DebugTCP.Start()
         Catch sex As SocketException
-            W(DoTranslation("Remote debug failed to start: {0}"), True, ColTypes.Error, sex.Message)
+            Write(DoTranslation("Remote debug failed to start: {0}"), True, ColTypes.Error, sex.Message)
             WStkTrc(sex)
         End Try
 
         'Start the listening thread
         Dim RStream As New Thread(AddressOf ReadAndBroadcastAsync) With {.Name = "Remote Debug Listener Thread"}
         RStream.Start()
-        W(DoTranslation("Debug listening on all addresses using port {0}."), True, ColTypes.Neutral, DebugPort)
+        Write(DoTranslation("Debug listening on all addresses using port {0}."), True, ColTypes.Neutral, DebugPort)
 
         'Run forever! Until the remote debugger is stopping.
         While Not RDebugStopping
@@ -131,7 +131,7 @@ Public Module RemoteDebugger
             Catch ae As ThreadAbortException
                 Exit While
             Catch ex As Exception
-                W(DoTranslation("Error in connection: {0}"), True, ColTypes.Error, ex.Message)
+                Write(DoTranslation("Error in connection: {0}"), True, ColTypes.Error, ex.Message)
                 WStkTrc(ex)
             End Try
         End While

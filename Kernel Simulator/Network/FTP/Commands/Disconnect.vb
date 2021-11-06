@@ -26,7 +26,7 @@ Class FTP_DisconnectCommand
             FtpConnected = False
             ClientFTP.UngracefullDisconnection = ListSwitchesOnly.Contains("-f")
             ClientFTP.Disconnect()
-            W(DoTranslation("Disconnected from {0}"), True, ColTypes.Success, FtpSite)
+            Write(DoTranslation("Disconnected from {0}"), True, ColTypes.Success, FtpSite)
 
             'Clean up everything
             FtpSite = ""
@@ -34,7 +34,7 @@ Class FTP_DisconnectCommand
             FtpUser = ""
             FtpPass = ""
         Else
-            W(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Error)
+            Write(DoTranslation("You haven't connected to any server yet"), True, ColTypes.Error)
         End If
     End Sub
 

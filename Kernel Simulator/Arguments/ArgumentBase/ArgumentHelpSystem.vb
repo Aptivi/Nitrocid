@@ -56,7 +56,7 @@ Public Module ArgumentHelpSystem
             Dim UsageLength As Integer = DoTranslation("Usage:").Length
 
             'Print usage information
-            W(DoTranslation("Usage:") + $" {Argument} {HelpUsage}: {HelpDefinition}", True, ColTypes.Neutral)
+            Write(DoTranslation("Usage:") + $" {Argument} {HelpUsage}: {HelpDefinition}", True, ColTypes.Neutral)
 
             'Extra help action for some arguments
             If ArgumentList(Argument).AdditionalHelpAction IsNot Nothing Then
@@ -66,16 +66,16 @@ Public Module ArgumentHelpSystem
             'List the available arguments
             If Not SimHelp Then
                 For Each cmd As String In ArgumentList.Keys
-                    W("- {0}: ", False, ColTypes.ListEntry, cmd)
-                    W("{0}", True, ColTypes.ListValue, ArgumentList(cmd).GetTranslatedHelpEntry)
+                    Write("- {0}: ", False, ColTypes.ListEntry, cmd)
+                    Write("{0}", True, ColTypes.ListValue, ArgumentList(cmd).GetTranslatedHelpEntry)
                 Next
             Else
                 For Each cmd As String In ArgumentList.Keys
-                    W("{0}, ", False, ColTypes.ListEntry, cmd)
+                    Write("{0}, ", False, ColTypes.ListEntry, cmd)
                 Next
             End If
         Else
-            W(DoTranslation("No help for argument ""{0}""."), True, ColTypes.Error, Argument)
+            Write(DoTranslation("No help for argument ""{0}""."), True, ColTypes.Error, Argument)
         End If
     End Sub
 

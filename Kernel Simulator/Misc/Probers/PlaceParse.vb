@@ -181,7 +181,7 @@ Public Module PlaceParse
             Kernel.EventManager.RaisePlaceholderParsed(text)
         Catch ex As Exception
             WStkTrc(ex)
-            W(DoTranslation("Error trying to parse placeholders. {0}"), True, ColTypes.Error, ex.Message)
+            Write(DoTranslation("Error trying to parse placeholders. {0}"), True, ColTypes.Error, ex.Message)
         End Try
         Return text
 

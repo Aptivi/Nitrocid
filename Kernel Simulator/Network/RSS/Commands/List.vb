@@ -22,9 +22,9 @@ Class RSS_ListCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         For Each Article As RSSArticle In RSSFeedInstance.FeedArticles
-            W("- {0}: ", False, ColTypes.ListEntry, Article.ArticleTitle)
-            W(Article.ArticleLink, True, ColTypes.ListValue)
-            W("    {0}", True, ColTypes.Neutral, Article.ArticleDescription.Truncate(200))
+            Write("- {0}: ", False, ColTypes.ListEntry, Article.ArticleTitle)
+            Write(Article.ArticleLink, True, ColTypes.ListValue)
+            Write("    {0}", True, ColTypes.Neutral, Article.ArticleDescription.Truncate(200))
         Next
     End Sub
 

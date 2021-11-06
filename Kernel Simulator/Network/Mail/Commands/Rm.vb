@@ -25,7 +25,7 @@ Class Mail_RmCommand
         If ListArgs(0).IsNumeric Then
             MailRemoveMessage(ListArgs(0))
         Else
-            W(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
+            Write(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
         End If
     End Sub
 

@@ -30,7 +30,7 @@ Class ChLangCommand
 
     Public Sub HelpHelper()
         Dim UsageLength As Integer = DoTranslation("Usage:").Length
-        W(" ".Repeat(UsageLength) + " " + " <language>: " + String.Join("/", Languages.Keys), True, ColTypes.Neutral)
+        Write(" ".Repeat(UsageLength) + " " + " <language>: " + String.Join("/", Languages.Keys), True, ColTypes.Neutral)
     End Sub
 
 End Class

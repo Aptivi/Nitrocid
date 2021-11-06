@@ -22,7 +22,7 @@ Class JsonShell_DelPropertyCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         JsonShell_RemoveProperty(ListArgs(0))
-        W(DoTranslation("Removed property."), True, ColTypes.Success)
+        Write(DoTranslation("Removed property."), True, ColTypes.Success)
     End Sub
 
 End Class

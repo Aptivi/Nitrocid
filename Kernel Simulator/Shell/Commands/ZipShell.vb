@@ -28,7 +28,7 @@ Class ZipShellCommand
         If FileExists(ListArgs(0)) Then
             InitializeZipShell(ListArgs(0))
         Else
-            W(DoTranslation("File doesn't exist."), True, ColTypes.Error)
+            Write(DoTranslation("File doesn't exist."), True, ColTypes.Error)
         End If
     End Sub
 

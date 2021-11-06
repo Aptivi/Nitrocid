@@ -83,14 +83,14 @@ Public Module Kernel
 
                 'Stage 1: Initialize the system
                 If ShowStageFinishTimes Then
-                    W(DoTranslation("Internal initialization finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
+                    Write(DoTranslation("Internal initialization finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
                     StageTimer.Restart()
                 End If
                 Console.WriteLine()
                 WriteSeparator(DoTranslation("- Stage 1: System initialization"), False, ColTypes.Stage)
                 Wdbg(DebugLevel.I, "- Kernel Phase 1: Initializing system")
                 If RDebugAutoStart Then StartRDebugThread()
-                W(DoTranslation("Starting RPC..."), True, ColTypes.Neutral)
+                Write(DoTranslation("Starting RPC..."), True, ColTypes.Neutral)
                 StartRPC()
 
                 'If the two files are not found, create two MOTD files with current config.
@@ -106,7 +106,7 @@ Public Module Kernel
 
                 'Phase 2: Probe hardware
                 If ShowStageFinishTimes Then
-                    W(DoTranslation("Stage finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
+                    Write(DoTranslation("Stage finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
                     StageTimer.Restart()
                 End If
                 Console.WriteLine()
@@ -117,7 +117,7 @@ Public Module Kernel
 
                 'Phase 3: Parse Mods and Screensavers
                 If ShowStageFinishTimes Then
-                    W(DoTranslation("Stage finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
+                    Write(DoTranslation("Stage finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
                     StageTimer.Restart()
                 End If
                 Console.WriteLine()
@@ -127,13 +127,13 @@ Public Module Kernel
                 If Not SafeMode Then
                     If StartKernelMods Then StartMods()
                 Else
-                    W(DoTranslation("Running in safe mode. Skipping stage..."), True, ColTypes.Neutral)
+                    Write(DoTranslation("Running in safe mode. Skipping stage..."), True, ColTypes.Neutral)
                 End If
                 EventManager.RaiseStartKernel()
 
                 'Phase 4: Log-in
                 If ShowStageFinishTimes Then
-                    W(DoTranslation("Stage finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
+                    Write(DoTranslation("Stage finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
                     StageTimer.Restart()
                 End If
                 Console.WriteLine()
@@ -145,7 +145,7 @@ Public Module Kernel
 
                 'Reset console state and stop stage timer
                 If ShowStageFinishTimes Then
-                    W(DoTranslation("Stage finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
+                    Write(DoTranslation("Stage finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
                     StageTimer.Reset()
                 End If
                 Console.WriteLine()
@@ -170,7 +170,7 @@ Public Module Kernel
                 Else
                     ReadMOTD(MessageType.MOTD)
                     ReadMOTD(MessageType.MAL)
-                    W(DoTranslation("Enter the admin password for maintenance."), True, ColTypes.Neutral)
+                    Write(DoTranslation("Enter the admin password for maintenance."), True, ColTypes.Neutral)
                     If Users.ContainsKey("root") Then
                         Wdbg(DebugLevel.I, "Root account found. Prompting for password...")
                         ShowPasswordPrompt("root")

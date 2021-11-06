@@ -25,7 +25,7 @@ Class Mail_ReadEncCommand
         If ListArgs(0).IsNumeric Then
             MailPrintMessage(ListArgs(0), True)
         Else
-            W(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
+            Write(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
         End If
     End Sub
 

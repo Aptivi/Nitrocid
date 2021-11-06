@@ -29,7 +29,7 @@ Class Test_PrintFCommand
         For i As Integer = 0 To Vars.Length - 1
             Vars(i) = Evaluate(Vars(i)).ToString
         Next
-        W(Text, Line, Color, Vars)
+        Write(Text, Line, Color, Vars)
     End Sub
 
 End Class

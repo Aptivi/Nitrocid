@@ -73,9 +73,9 @@ Public Module Filesystem
         Dim Contents As String() = ReadContents(filename)
         For ContentIndex As Integer = 0 To Contents.Length - 1
             If PrintLineNumbers Then
-                W("{0,4}: ", False, ColTypes.ListEntry, ContentIndex + 1)
+                Write("{0,4}: ", False, ColTypes.ListEntry, ContentIndex + 1)
             End If
-            W(Contents(ContentIndex), True, ColTypes.Neutral)
+            Write(Contents(ContentIndex), True, ColTypes.Neutral)
         Next
     End Sub
 
@@ -128,12 +128,12 @@ Public Module Filesystem
 
         'Get the line
         Dim LineContent As String = FileContents(LineIndex)
-        W(" | " + LineContent, True, ColorType)
+        Write(" | " + LineContent, True, ColorType)
 
         'Place the column handle
         Dim RepeatBlanks As Integer = ColumnNumber - 1
         If RepeatBlanks < 0 Then RepeatBlanks = 0
-        W(" | " + " ".Repeat(RepeatBlanks) + "^", True, ColorType)
+        Write(" | " + " ".Repeat(RepeatBlanks) + "^", True, ColorType)
     End Sub
 
     ''' <summary>
@@ -161,12 +161,12 @@ Public Module Filesystem
 
         'Get the line
         Dim LineContent As String = Array(LineIndex)
-        W(" | " + LineContent, True, ColorType)
+        Write(" | " + LineContent, True, ColorType)
 
         'Place the column handle
         Dim RepeatBlanks As Integer = ColumnNumber - 1
         If RepeatBlanks < 0 Then RepeatBlanks = 0
-        W(" | " + " ".Repeat(RepeatBlanks) + "^", True, ColorType)
+        Write(" | " + " ".Repeat(RepeatBlanks) + "^", True, ColorType)
     End Sub
 
     ''' <summary>
@@ -210,7 +210,7 @@ Public Module Filesystem
             'Try to create a list
             Try
                 enumeration = CreateList(folder, Sort)
-                If enumeration.Count = 0 Then W(DoTranslation("Folder is empty."), True, ColTypes.Warning)
+                If enumeration.Count = 0 Then Write(DoTranslation("Folder is empty."), True, ColTypes.Warning)
 
                 'Enumerate each entry
                 For Each Entry As FileSystemInfo In enumeration
@@ -222,23 +222,23 @@ Public Module Filesystem
                             PrintDirectoryInfo(Entry)
                         End If
                     Catch ex As UnauthorizedAccessException
-                        If Not SuppressUnauthorizedMessage Then W("- " + DoTranslation("You are not authorized to get info for {0}."), True, ColTypes.Error, Entry.Name)
+                        If Not SuppressUnauthorizedMessage Then Write("- " + DoTranslation("You are not authorized to get info for {0}."), True, ColTypes.Error, Entry.Name)
                         WStkTrc(ex)
                     End Try
                 Next
             Catch ex As Exception
-                W(DoTranslation("Unknown error while listing in directory: {0}"), True, ColTypes.Error, ex.Message)
+                Write(DoTranslation("Unknown error while listing in directory: {0}"), True, ColTypes.Error, ex.Message)
                 WStkTrc(ex)
             End Try
         ElseIf FileExists(folder) Then
             Try
                 PrintFileInfo(New FileInfo(folder), ShowFileDetails)
             Catch ex As UnauthorizedAccessException
-                If Not SuppressUnauthorizedMessage Then W("- " + DoTranslation("You are not authorized to get info for {0}."), True, ColTypes.Error, folder)
+                If Not SuppressUnauthorizedMessage Then Write("- " + DoTranslation("You are not authorized to get info for {0}."), True, ColTypes.Error, folder)
                 WStkTrc(ex)
             End Try
         Else
-            W(DoTranslation("Directory {0} not found"), True, ColTypes.Error, folder)
+            Write(DoTranslation("Directory {0} not found"), True, ColTypes.Error, folder)
             Wdbg(DebugLevel.I, "IO.FolderExists = {0}", FolderExists(folder))
         End If
     End Sub
@@ -258,14 +258,14 @@ Public Module Filesystem
             If (FileInfo.Attributes = IO.FileAttributes.Hidden And HiddenFiles) Or Not FileInfo.Attributes.HasFlag(FileAttributes.Hidden) Then
                 If (IsOnWindows() And (Not FileInfo.Name.StartsWith(".") Or (FileInfo.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
                     If FileInfo.Name.EndsWith(".uesh") Then
-                        W("- " + FileInfo.Name, False, ColTypes.Stage)
-                        If ShowFileDetails Then W(": ", False, ColTypes.Stage)
+                        Write("- " + FileInfo.Name, False, ColTypes.Stage)
+                        If ShowFileDetails Then Write(": ", False, ColTypes.Stage)
                     Else
-                        W("- " + FileInfo.Name, False, ColTypes.ListEntry)
-                        If ShowFileDetails Then W(": ", False, ColTypes.ListEntry)
+                        Write("- " + FileInfo.Name, False, ColTypes.ListEntry)
+                        If ShowFileDetails Then Write(": ", False, ColTypes.ListEntry)
                     End If
                     If ShowFileDetails Then
-                        W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), False, ColTypes.ListValue,
+                        Write(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), False, ColTypes.ListValue,
                                         DirectCast(FileInfo, FileInfo).Length.FileSizeToString, FileInfo.CreationTime.ToShortDateString, FileInfo.CreationTime.ToShortTimeString,
                                                                                                 FileInfo.LastWriteTime.ToShortDateString, FileInfo.LastWriteTime.ToShortTimeString)
                     End If
@@ -273,7 +273,7 @@ Public Module Filesystem
                 End If
             End If
         Else
-            W(DoTranslation("File {0} not found"), True, ColTypes.Error, FileInfo.FullName)
+            Write(DoTranslation("File {0} not found"), True, ColTypes.Error, FileInfo.FullName)
             Wdbg(DebugLevel.I, "IO.FileExists = {0}", FileExists(FileInfo.FullName))
         End If
     End Sub
@@ -296,10 +296,10 @@ Public Module Filesystem
             'Print information
             If (DirectoryInfo.Attributes = FileAttributes.Hidden And HiddenFiles) Or Not DirectoryInfo.Attributes.HasFlag(FileAttributes.Hidden) Then
                 If (IsOnWindows() And (Not DirectoryInfo.Name.StartsWith(".") Or (DirectoryInfo.Name.StartsWith(".") And HiddenFiles))) Or IsOnUnix() Then
-                    W("- " + DirectoryInfo.Name + "/", False, ColTypes.ListEntry)
+                    Write("- " + DirectoryInfo.Name + "/", False, ColTypes.ListEntry)
                     If ShowDirectoryDetails Then
-                        W(": ", False, ColTypes.ListEntry)
-                        W(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), False, ColTypes.ListValue,
+                        Write(": ", False, ColTypes.ListEntry)
+                        Write(DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), False, ColTypes.ListValue,
                           TotalSize.FileSizeToString, DirectoryInfo.CreationTime.ToShortDateString, DirectoryInfo.CreationTime.ToShortTimeString,
                                                       DirectoryInfo.LastWriteTime.ToShortDateString, DirectoryInfo.LastWriteTime.ToShortTimeString)
                     End If
@@ -307,7 +307,7 @@ Public Module Filesystem
                 End If
             End If
         Else
-            W(DoTranslation("Directory {0} not found"), True, ColTypes.Error, DirectoryInfo.FullName)
+            Write(DoTranslation("Directory {0} not found"), True, ColTypes.Error, DirectoryInfo.FullName)
             Wdbg(DebugLevel.I, "IO.FolderExists = {0}", FolderExists(DirectoryInfo.FullName))
         End If
     End Sub
@@ -578,7 +578,7 @@ Public Module Filesystem
         For Each SourceFile As FileInfo In SourceFiles
             Dim DestinationFilePath As String = Path.Combine(Destination, SourceFile.Name)
             Wdbg(DebugLevel.I, "Copying file {0} to destination...", DestinationFilePath)
-            If ShowProgress Then W("-> {0}", True, ColTypes.Neutral, DestinationFilePath)
+            If ShowProgress Then Write("-> {0}", True, ColTypes.Neutral, DestinationFilePath)
             SourceFile.CopyTo(DestinationFilePath, True)
         Next
 

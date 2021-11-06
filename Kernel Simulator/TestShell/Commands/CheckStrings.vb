@@ -26,9 +26,9 @@ Class Test_CheckStringsCommand
         Dim Texts() As String = ReadContents(TextPath)
         For Each Text As String In Texts
             If LocalizedStrings.Keys.Contains(Text) Then
-                W("[+] {0}", True, ColTypes.Success, Text)
+                Write("[+] {0}", True, ColTypes.Success, Text)
             Else
-                W("[-] {0}", True, ColTypes.Neutral, Text)
+                Write("[-] {0}", True, ColTypes.Neutral, Text)
             End If
         Next
     End Sub

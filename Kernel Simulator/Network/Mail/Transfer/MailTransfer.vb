@@ -36,11 +36,11 @@ Public Module MailTransfer
         Wdbg(DebugLevel.I, "Message number {0}", Message)
         If Message < 0 Then
             Wdbg(DebugLevel.E, "Trying to access message 0 or less than 0.")
-            W(DoTranslation("Message number may not be negative or zero."), True, ColTypes.Error)
+            Write(DoTranslation("Message number may not be negative or zero."), True, ColTypes.Error)
             Exit Sub
         ElseIf Message > MaxMessagesIndex Then
             Wdbg(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex)
-            W(DoTranslation("Message specified is not found."), True, ColTypes.Error)
+            Write(DoTranslation("Message specified is not found."), True, ColTypes.Error)
             Exit Sub
         End If
 
@@ -62,29 +62,29 @@ Public Module MailTransfer
             Wdbg(DebugLevel.I, "{0} senders.", Msg.From.Count)
             For Each Address As InternetAddress In Msg.From
                 Wdbg(DebugLevel.I, "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
-                W(DoTranslation("- From {0}"), True, ColTypes.ListEntry, Address.ToString)
+                Write(DoTranslation("- From {0}"), True, ColTypes.ListEntry, Address.ToString)
             Next
 
             'Print all the addresses that received the mail
             Wdbg(DebugLevel.I, "{0} receivers.", Msg.To.Count)
             For Each Address As InternetAddress In Msg.To
                 Wdbg(DebugLevel.I, "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName)
-                W(DoTranslation("- To {0}"), True, ColTypes.ListEntry, Address.ToString)
+                Write(DoTranslation("- To {0}"), True, ColTypes.ListEntry, Address.ToString)
             Next
 
             'Print the date and time when the user received the mail
             Wdbg(DebugLevel.I, "Rendering time and date of {0}.", Msg.Date.DateTime.ToString)
-            W(DoTranslation("- Sent at {0} in {1}"), True, ColTypes.ListEntry, RenderTime(Msg.Date.DateTime), RenderDate(Msg.Date.DateTime))
+            Write(DoTranslation("- Sent at {0} in {1}"), True, ColTypes.ListEntry, RenderTime(Msg.Date.DateTime), RenderDate(Msg.Date.DateTime))
 
             'Prepare subject
             Console.WriteLine()
             Wdbg(DebugLevel.I, "Subject length: {0}, {1}", Msg.Subject.Length, Msg.Subject)
-            W($"- {Msg.Subject}", False, ColTypes.ListEntry)
+            Write($"- {Msg.Subject}", False, ColTypes.ListEntry)
 
             'Write a sign after the subject if attachments are found
             Wdbg(DebugLevel.I, "Attachments count: {0}", Msg.Attachments.Count)
             If Msg.Attachments.Count > 0 Then
-                W(" - [*]", True, ColTypes.ListEntry)
+                Write(" - [*]", True, ColTypes.ListEntry)
             Else
                 Console.WriteLine()
             End If
@@ -113,7 +113,7 @@ Public Module MailTransfer
                                 Dim DecryptedByte(DecryptedStream.Length) As Byte
                                 DecryptedStream.Read(DecryptedByte, 0, DecryptedStream.Length)
                                 Wdbg(DebugLevel.I, "Written {0} bytes to buffer.", DecryptedByte.Length)
-                                W(Encoding.Default.GetString(DecryptedByte), True, ColTypes.ListValue)
+                                Write(Encoding.Default.GetString(DecryptedByte), True, ColTypes.ListValue)
                             End If
                         Next
                     End If
@@ -124,17 +124,17 @@ Public Module MailTransfer
                     Dim DecryptedByte(DecryptedStream.Length) As Byte
                     DecryptedStream.Read(DecryptedByte, 0, DecryptedStream.Length)
                     Wdbg(DebugLevel.I, "Written {0} bytes to buffer.", DecryptedByte.Length)
-                    W(Encoding.Default.GetString(DecryptedByte), True, ColTypes.ListValue)
+                    Write(Encoding.Default.GetString(DecryptedByte), True, ColTypes.ListValue)
                 End If
             Else
-                W(Msg.GetTextBody(Mail_TextFormat), True, ColTypes.ListValue)
+                Write(Msg.GetTextBody(Mail_TextFormat), True, ColTypes.ListValue)
             End If
             Console.WriteLine()
 
             'Populate attachments
 #Disable Warning BC42104
             If Msg.Attachments.Count > 0 Then
-                W(DoTranslation("Attachments:"), True, ColTypes.Neutral)
+                Write(DoTranslation("Attachments:"), True, ColTypes.Neutral)
                 Dim AttachmentEntities As New List(Of MimeEntity)
                 If Decrypt Then
                     Wdbg(DebugLevel.I, "Parsing attachments...")
@@ -166,11 +166,11 @@ Public Module MailTransfer
                     Wdbg(DebugLevel.I, "Attachment ID: {0}", Attachment.ContentId)
                     If TypeOf Attachment Is MessagePart Then
                         Wdbg(DebugLevel.I, "Attachment is a message.")
-                        W($"- {Attachment.ContentDisposition?.FileName}", True, ColTypes.Neutral)
+                        Write($"- {Attachment.ContentDisposition?.FileName}", True, ColTypes.Neutral)
                     Else
                         Wdbg(DebugLevel.I, "Attachment is a file.")
                         Dim AttachmentPart As MimePart = Attachment
-                        W($"- {AttachmentPart.FileName}", True, ColTypes.Neutral)
+                        Write($"- {AttachmentPart.FileName}", True, ColTypes.Neutral)
                     End If
                 Next
             End If

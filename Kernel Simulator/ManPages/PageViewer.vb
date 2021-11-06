@@ -42,9 +42,9 @@ Public Module PageViewer
             Wdbg(DebugLevel.I, "Todo count for ""{0}"": {1}", ManualTitle, Pages(ManualTitle).Todos.Count.ToString)
             If Pages(ManualTitle).Todos.Count <> 0 Then
                 Wdbg(DebugLevel.I, "Todos are found in manpage.")
-                W(DoTranslation("This manual page needs work for:") + vbNewLine, True, ColTypes.Warning)
+                Write(DoTranslation("This manual page needs work for:") + vbNewLine, True, ColTypes.Warning)
                 WriteList(Pages(ManualTitle).Todos, True)
-                W(vbNewLine + DoTranslation("Press any key to read the manual page..."), False, ColTypes.Warning)
+                Write(vbNewLine + DoTranslation("Press any key to read the manual page..."), False, ColTypes.Warning)
                 Console.ReadKey()
             End If
 
@@ -53,9 +53,9 @@ Public Module PageViewer
 
             'Write the information to the console
             If Not String.IsNullOrWhiteSpace(ManpageInfoStyle) Then
-                WriteWhereC(ProbePlaces(ManpageInfoStyle), Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+                WriteWhere(ProbePlaces(ManpageInfoStyle), Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
             Else
-                WriteWhereC(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+                WriteWhere(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
             End If
 
             'Disable blinking cursor
@@ -109,7 +109,7 @@ Public Module PageViewer
             For Each line As String In IncompleteSentences
                 'Write the line
                 Dim OldTop As Integer = Console.CursorTop + 1
-                W(line, True, ColTypes.Neutral)
+                Write(line, True, ColTypes.Neutral)
                 If OldTop <> Console.CursorTop Then Console.CursorTop = OldTop
 
                 'Check to see if we're at the end
@@ -121,9 +121,9 @@ Public Module PageViewer
                     Else
                         Console.Clear()
                         If Not String.IsNullOrWhiteSpace(ManpageInfoStyle) Then
-                            WriteWhereC(ProbePlaces(ManpageInfoStyle), Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+                            WriteWhere(ProbePlaces(ManpageInfoStyle), Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
                         Else
-                            WriteWhereC(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+                            WriteWhere(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
                         End If
                     End If
                 End If
@@ -137,7 +137,7 @@ Public Module PageViewer
             Wdbg(DebugLevel.I, "Exiting...")
             Console.Clear()
         Else
-            W(DoTranslation("Manual page {0} not found."), True, ColTypes.Neutral, ManualTitle)
+            Write(DoTranslation("Manual page {0} not found."), True, ColTypes.Neutral, ManualTitle)
         End If
     End Sub
 

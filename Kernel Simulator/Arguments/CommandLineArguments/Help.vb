@@ -21,7 +21,7 @@ Class CommandLine_HelpArgument
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements IArgument.Execute
         ShowArgsHelp(ArgumentType.CommandLineArgs)
-        W(DoTranslation("* Press any key to start the kernel or ESC to exit."), True, ColTypes.Tip)
+        Write(DoTranslation("* Press any key to start the kernel or ESC to exit."), True, ColTypes.Tip)
         If Console.ReadKey(True).Key = ConsoleKey.Escape Then
             Environment.Exit(0)
         End If

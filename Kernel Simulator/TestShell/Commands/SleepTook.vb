@@ -24,9 +24,9 @@ Class Test_SleepTookCommand
         Dim SleepMs As Integer = ListArgsOnly(0)
         Dim Ticks As Boolean = ListSwitchesOnly.Contains("-t")
         If Ticks Then
-            W("{0} ms => {1} ticks", True, ColTypes.Neutral, SleepMs, GetActualTicks(SleepMs))
+            Write("{0} ms => {1} ticks", True, ColTypes.Neutral, SleepMs, GetActualTicks(SleepMs))
         Else
-            W("{0} ms => {1} ms", True, ColTypes.Neutral, SleepMs, GetActualMilliseconds(SleepMs))
+            Write("{0} ms => {1} ms", True, ColTypes.Neutral, SleepMs, GetActualMilliseconds(SleepMs))
         End If
     End Sub
 

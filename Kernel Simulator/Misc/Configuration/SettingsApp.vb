@@ -82,25 +82,25 @@ Public Module SettingsApp
             Console.Clear()
             'List sections
             WriteSeparator(DoTranslation("Welcome to Settings!"), True)
-            W(vbNewLine + DoTranslation("Select section:") + vbNewLine, True, ColTypes.Neutral)
+            Write(vbNewLine + DoTranslation("Select section:") + vbNewLine, True, ColTypes.Neutral)
             For SectionIndex As Integer = 0 To MaxSections - 1
                 Dim Section As JProperty = SettingsToken.ToList(SectionIndex)
                 If Screensaver Then
-                    W(" {0}) " + Section.Name + "...", True, ColTypes.Option, SectionIndex + 1)
+                    Write(" {0}) " + Section.Name + "...", True, ColTypes.Option, SectionIndex + 1)
                 Else
-                    W(" {0}) " + DoTranslation(Section.Name + " Settings..."), True, ColTypes.Option, SectionIndex + 1)
+                    Write(" {0}) " + DoTranslation(Section.Name + " Settings..."), True, ColTypes.Option, SectionIndex + 1)
                 End If
             Next
             Console.WriteLine()
-            W(" {0}) " + DoTranslation("Find a Setting"), True, ColTypes.BackOption, MaxSections + 1)
-            W(" {0}) " + DoTranslation("Save Settings"), True, ColTypes.BackOption, MaxSections + 2)
-            W(" {0}) " + DoTranslation("Save Settings As"), True, ColTypes.BackOption, MaxSections + 3)
-            W(" {0}) " + DoTranslation("Load Settings From"), True, ColTypes.BackOption, MaxSections + 4)
-            W(" {0}) " + DoTranslation("Exit"), True, ColTypes.BackOption, MaxSections + 5)
+            Write(" {0}) " + DoTranslation("Find a Setting"), True, ColTypes.BackOption, MaxSections + 1)
+            Write(" {0}) " + DoTranslation("Save Settings"), True, ColTypes.BackOption, MaxSections + 2)
+            Write(" {0}) " + DoTranslation("Save Settings As"), True, ColTypes.BackOption, MaxSections + 3)
+            Write(" {0}) " + DoTranslation("Load Settings From"), True, ColTypes.BackOption, MaxSections + 4)
+            Write(" {0}) " + DoTranslation("Exit"), True, ColTypes.BackOption, MaxSections + 5)
 
             'Prompt user and check for input
             Console.WriteLine()
-            W("> ", False, ColTypes.Input)
+            Write("> ", False, ColTypes.Input)
             AnswerString = Console.ReadLine
             Wdbg(DebugLevel.I, "User answered {0}", AnswerString)
             Console.WriteLine()
@@ -120,39 +120,39 @@ Public Module SettingsApp
                         CreateConfig()
                         SaveCustomSaverSettings()
                     Catch ex As Exception
-                        W(ex.Message, True, ColTypes.Error)
+                        Write(ex.Message, True, ColTypes.Error)
                         WStkTrc(ex)
                         Console.ReadKey()
                     End Try
                 ElseIf AnswerInt = MaxSections + 3 Then 'Save Settings As
-                    W(DoTranslation("Where do you want to save the current kernel settings?"), True, ColTypes.Question)
+                    Write(DoTranslation("Where do you want to save the current kernel settings?"), True, ColTypes.Question)
                     Dim Location As String = NeutralizePath(Console.ReadLine)
                     If Not FileExists(Location) Then
                         Try
                             CreateConfig(Location)
                         Catch ex As Exception
-                            W(ex.Message, True, ColTypes.Error)
+                            Write(ex.Message, True, ColTypes.Error)
                             WStkTrc(ex)
                             Console.ReadKey()
                         End Try
                     Else
-                        W(DoTranslation("Can't save kernel settings on top of existing file."), True, ColTypes.Error)
+                        Write(DoTranslation("Can't save kernel settings on top of existing file."), True, ColTypes.Error)
                         Console.ReadKey()
                     End If
                 ElseIf AnswerInt = MaxSections + 4 Then 'Load Settings From
-                    W(DoTranslation("Where do you want to load the current kernel settings from?"), True, ColTypes.Question)
+                    Write(DoTranslation("Where do you want to load the current kernel settings from?"), True, ColTypes.Question)
                     Dim Location As String = NeutralizePath(Console.ReadLine)
                     If FileExists(Location) Then
                         Try
                             ReadConfig(Location)
                             CreateConfig()
                         Catch ex As Exception
-                            W(ex.Message, True, ColTypes.Error)
+                            Write(ex.Message, True, ColTypes.Error)
                             WStkTrc(ex)
                             Console.ReadKey()
                         End Try
                     Else
-                        W(DoTranslation("File not found."), True, ColTypes.Error)
+                        Write(DoTranslation("File not found."), True, ColTypes.Error)
                         Console.ReadKey()
                     End If
                 ElseIf AnswerInt = MaxSections + 5 Then 'Exit
@@ -161,14 +161,14 @@ Public Module SettingsApp
                     Console.Clear()
                 Else
                     Wdbg(DebugLevel.W, "Option is not valid. Returning...")
-                    W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerInt)
-                    W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                    Write(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerInt)
+                    Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
                 End If
             Else
                 Wdbg(DebugLevel.W, "Answer is not numeric.")
-                W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
-                W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                Write(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
             End If
         End While
@@ -193,7 +193,7 @@ Public Module SettingsApp
             While Not SectionFinished
                 Console.Clear()
                 WriteSeparator(DoTranslation(Section + " Settings..."), True)
-                W(vbNewLine + DoTranslation(SectionDescription) + vbNewLine, True, ColTypes.Neutral)
+                Write(vbNewLine + DoTranslation(SectionDescription) + vbNewLine, True, ColTypes.Neutral)
 
                 'List options
                 For SectionIndex As Integer = 0 To MaxOptions - 1
@@ -206,7 +206,7 @@ Public Module SettingsApp
                     'Print the option
                     If VariableType = SettingsKeyType.SMaskedString Then
                         'Don't print the default value! We don't want to reveal passwords.
-                        W(" {0}) " + DoTranslation(Setting("Name")), True, ColTypes.Option, SectionIndex + 1)
+                        Write(" {0}) " + DoTranslation(Setting("Name")), True, ColTypes.Option, SectionIndex + 1)
                     Else
                         'Determine how to get the current value
                         If VariableProperty Is Nothing Then
@@ -214,15 +214,15 @@ Public Module SettingsApp
                         Else
                             CurrentValue = GetConfigPropertyValueInVariableField(Variable, VariableProperty)
                         End If
-                        W(" {0}) " + DoTranslation(Setting("Name")) + " [{1}]", True, ColTypes.Option, SectionIndex + 1, CurrentValue)
+                        Write(" {0}) " + DoTranslation(Setting("Name")) + " [{1}]", True, ColTypes.Option, SectionIndex + 1, CurrentValue)
                     End If
                 Next
                 Console.WriteLine()
-                W(" {0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.BackOption, MaxOptions + 1)
+                Write(" {0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.BackOption, MaxOptions + 1)
                 Wdbg(DebugLevel.W, "Section {0} has {1} selections.", Section, MaxOptions)
 
                 'Prompt user and check for input
-                W("> ", False, ColTypes.Input)
+                Write("> ", False, ColTypes.Input)
                 AnswerString = Console.ReadLine
                 Wdbg(DebugLevel.I, "User answered {0}", AnswerString)
                 Console.WriteLine()
@@ -238,14 +238,14 @@ Public Module SettingsApp
                         SectionFinished = True
                     Else
                         Wdbg(DebugLevel.W, "Option is not valid. Returning...")
-                        W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerInt)
-                        W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                        Write(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerInt)
+                        Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                         Console.ReadKey()
                     End If
                 Else
                     Wdbg(DebugLevel.W, "Answer is not numeric.")
-                    W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
-                    W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                    Write(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                    Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
                 End If
             End While
@@ -253,9 +253,9 @@ Public Module SettingsApp
             Console.Clear()
             Wdbg(DebugLevel.I, "Error trying to open section: {0}", ex.Message)
             WriteSeparator("???", True)
-            W(vbNewLine + "X) " + DoTranslation("Invalid section entered. Please go back."), True, ColTypes.Error)
-            W("X) " + DoTranslation("If you're sure that you've opened the right section, check this message out:"), True, ColTypes.Error)
-            W("X) " + ex.Message, True, ColTypes.Error)
+            Write(vbNewLine + "X) " + DoTranslation("Invalid section entered. Please go back."), True, ColTypes.Error)
+            Write("X) " + DoTranslation("If you're sure that you've opened the right section, check this message out:"), True, ColTypes.Error)
+            Write("X) " + ex.Message, True, ColTypes.Error)
             Console.ReadKey()
         End Try
     End Sub
@@ -304,7 +304,7 @@ Public Module SettingsApp
 
                 'Make an introductory banner
                 WriteSeparator(DoTranslation(Section + " Settings...") + " > " + DoTranslation(KeyName), True)
-                W(vbNewLine + DoTranslation(KeyDescription), True, ColTypes.Neutral)
+                Write(vbNewLine + DoTranslation(KeyDescription), True, ColTypes.Neutral)
 
                 'See how to get the value
                 If Not KeyType = SettingsKeyType.SUnknown Then
@@ -339,8 +339,8 @@ Public Module SettingsApp
                 If KeyType = SettingsKeyType.SBoolean Then
                     Console.WriteLine()
                     MaxKeyOptions = 2
-                    W(" 1) " + DoTranslation("Enable"), True, ColTypes.Option)
-                    W(" 2) " + DoTranslation("Disable"), True, ColTypes.Option)
+                    Write(" 1) " + DoTranslation("Enable"), True, ColTypes.Option)
+                    Write(" 2) " + DoTranslation("Disable"), True, ColTypes.Option)
                 End If
                 Console.WriteLine()
 
@@ -350,20 +350,20 @@ Public Module SettingsApp
                 End If
 
                 If KeyType = SettingsKeyType.SSelection Then
-                    W(DoTranslation("Current items:"), True, ColTypes.ListTitle)
+                    Write(DoTranslation("Current items:"), True, ColTypes.ListTitle)
                     WriteList(SelectFrom)
                     Console.WriteLine()
                 ElseIf KeyType = SettingsKeyType.SList Then
-                    W(DoTranslation("Current items:"), True, ColTypes.ListTitle)
+                    Write(DoTranslation("Current items:"), True, ColTypes.ListTitle)
                     WriteList(TargetList)
                     Console.WriteLine()
                 End If
 
                 'Add an option to go back.
                 If Not KeyType = SettingsKeyType.SVariant And Not KeyType = SettingsKeyType.SInt And Not KeyType = SettingsKeyType.SLongString And Not KeyType = SettingsKeyType.SString And Not KeyType = SettingsKeyType.SList Then
-                    W(" {0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.BackOption, MaxKeyOptions + 1)
+                    Write(" {0}) " + DoTranslation("Go Back...") + vbNewLine, True, ColTypes.BackOption, MaxKeyOptions + 1)
                 ElseIf KeyType = SettingsKeyType.SList Then
-                    W(vbNewLine + " q) " + DoTranslation("Save Changes...") + vbNewLine, True, ColTypes.Option, MaxKeyOptions + 1)
+                    Write(vbNewLine + " q) " + DoTranslation("Save Changes...") + vbNewLine, True, ColTypes.Option, MaxKeyOptions + 1)
                 End If
 
                 'Print debugging info
@@ -372,13 +372,13 @@ Public Module SettingsApp
 
                 'Prompt user
                 If KeyType = SettingsKeyType.SVariant And Not VariantValueFromExternalPrompt Then
-                    W("> ", False, ColTypes.Input)
+                    Write("> ", False, ColTypes.Input)
                     VariantValue = Console.ReadLine
                     If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString, NeutralizeRootPath)
                     Wdbg(DebugLevel.I, "User answered {0}", VariantValue)
                 ElseIf Not KeyType = SettingsKeyType.SVariant And Not KeyType = SettingsKeyType.SColor Then
                     If KeyType = SettingsKeyType.SList Then
-                        W("> ", False, ColTypes.Input)
+                        Write("> ", False, ColTypes.Input)
                         Do Until AnswerString = "q"
                             AnswerString = Console.ReadLine
                             If Not AnswerString = "q" Then
@@ -393,11 +393,11 @@ Public Module SettingsApp
                                     TargetList = Enumerable.Except(TargetList, DeletedItems)
                                 End If
                                 Wdbg(DebugLevel.I, "Added answer {0} to list.", AnswerString)
-                                W("> ", False, ColTypes.Input)
+                                Write("> ", False, ColTypes.Input)
                             End If
                         Loop
                     Else
-                        W(If(KeyType = SettingsKeyType.SUnknown Or KeyType = SettingsKeyType.SMaskedString, "> ", "[{0}] > "), False, ColTypes.Input, KeyDefaultValue)
+                        Write(If(KeyType = SettingsKeyType.SUnknown Or KeyType = SettingsKeyType.SMaskedString, "> ", "[{0}] > "), False, ColTypes.Input, KeyDefaultValue)
                         If KeyType = SettingsKeyType.SLongString Then
                             AnswerString = ReadLineLong()
                         ElseIf KeyType = SettingsKeyType.SMaskedString Then
@@ -430,8 +430,8 @@ Public Module SettingsApp
                         KeyFinished = True
                     Else
                         Wdbg(DebugLevel.W, "Option is not valid. Returning...")
-                        W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerInt)
-                        W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                        Write(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerInt)
+                        Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                         Console.ReadKey()
                     End If
                 ElseIf (Integer.TryParse(AnswerString, AnswerInt) And KeyType = SettingsKeyType.SInt) Or
@@ -463,19 +463,19 @@ Public Module SettingsApp
                             SetConfigValueField(KeyVar, AnswerInt)
                         ElseIf KeyType = SettingsKeyType.SSelection Then
                             Wdbg(DebugLevel.W, "Answer is not valid.")
-                            W(DoTranslation("The answer may not exceed the entries shown."), True, ColTypes.Error)
-                            W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                            Write(DoTranslation("The answer may not exceed the entries shown."), True, ColTypes.Error)
+                            Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                             Console.ReadKey()
                         End If
                     ElseIf AnswerInt = 0 And Not SelectionEnumZeroBased Then
                         Wdbg(DebugLevel.W, "Zero is not allowed.")
-                        W(DoTranslation("The answer may not be zero."), True, ColTypes.Error)
-                        W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                        Write(DoTranslation("The answer may not be zero."), True, ColTypes.Error)
+                        Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                         Console.ReadKey()
                     Else
                         Wdbg(DebugLevel.W, "Negative values are disallowed.")
-                        W(DoTranslation("The answer may not be negative."), True, ColTypes.Error)
-                        W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                        Write(DoTranslation("The answer may not be negative."), True, ColTypes.Error)
+                        Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                         Console.ReadKey()
                     End If
                 ElseIf KeyType = SettingsKeyType.SUnknown Then
@@ -519,8 +519,8 @@ Public Module SettingsApp
                     KeyFinished = True
                 Else
                     Wdbg(DebugLevel.W, "Answer is not valid.")
-                    W(DoTranslation("The answer is invalid. Check to make sure that the answer is numeric for config entries that need numbers as answers."), True, ColTypes.Error)
-                    W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                    Write(DoTranslation("The answer is invalid. Check to make sure that the answer is numeric for config entries that need numbers as answers."), True, ColTypes.Error)
+                    Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                     Console.ReadKey()
                 End If
 #Enable Warning BC42104
@@ -529,9 +529,9 @@ Public Module SettingsApp
             Console.Clear()
             Wdbg(DebugLevel.I, "Error trying to open section: {0}", ex.Message)
             WriteSeparator(DoTranslation(Section + " Settings...") + " > ???", True)
-            W(vbNewLine + "X) " + DoTranslation("Invalid section entered. Please go back."), True, ColTypes.Error)
-            W("X) " + DoTranslation("If you're sure that you've opened the right section, check this message out:"), True, ColTypes.Error)
-            W("X) " + ex.Message, True, ColTypes.Error)
+            Write(vbNewLine + "X) " + DoTranslation("Invalid section entered. Please go back."), True, ColTypes.Error)
+            Write("X) " + DoTranslation("If you're sure that you've opened the right section, check this message out:"), True, ColTypes.Error)
+            Write("X) " + ex.Message, True, ColTypes.Error)
             Console.ReadKey()
         End Try
     End Sub
@@ -545,9 +545,9 @@ Public Module SettingsApp
         Dim Results As List(Of String)
 
         'Prompt the user
-        W(DoTranslation("Write what do you want to search for."), True, ColTypes.Neutral)
+        Write(DoTranslation("Write what do you want to search for."), True, ColTypes.Neutral)
         Wdbg(DebugLevel.I, "Prompting user for searching...")
-        W(">> ", False, ColTypes.Input)
+        Write(">> ", False, ColTypes.Input)
         SearchFor = Console.ReadLine
 
         'Search for the setting
@@ -558,9 +558,9 @@ Public Module SettingsApp
             WriteList(Results)
 
             'Prompt for the number of setting to go to
-            W(DoTranslation("Write the number of the setting to go to. Any other character means go back."), True, ColTypes.Neutral)
+            Write(DoTranslation("Write the number of the setting to go to. Any other character means go back."), True, ColTypes.Neutral)
             Wdbg(DebugLevel.I, "Prompting user for writing...")
-            W(">> ", False, ColTypes.Input)
+            Write(">> ", False, ColTypes.Input)
             SettingsNumber = Console.ReadLine
 
             'Parse the input and go to setting
@@ -574,7 +574,7 @@ Public Module SettingsApp
                 OpenKey(SectionName, KeyNumber, SettingsToken)
             End If
         Else
-            W(DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), True, ColTypes.Error)
+            Write(DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), True, ColTypes.Error)
             Console.ReadKey()
         End If
     End Sub
@@ -687,7 +687,7 @@ Public Module SettingsApp
         Else
             'Variable not found on any of the "flag" modules.
             Wdbg(DebugLevel.I, "Field {0} not found.", Variable)
-            W(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
+            Write(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
         End If
     End Sub
 
@@ -710,7 +710,7 @@ Public Module SettingsApp
         Else
             'Variable not found on any of the "flag" modules.
             Wdbg(DebugLevel.I, "Field {0} not found.", Variable)
-            W(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
+            Write(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
             Return Nothing
         End If
     End Function
@@ -737,13 +737,13 @@ Public Module SettingsApp
             Else
                 'Property not found on any of the "flag" modules.
                 Wdbg(DebugLevel.I, "Property {0} not found.", [Property])
-                W(DoTranslation("Property {0} is not found on any of the modules."), True, ColTypes.Error, [Property])
+                Write(DoTranslation("Property {0} is not found on any of the modules."), True, ColTypes.Error, [Property])
                 Return Nothing
             End If
         Else
             'Variable not found on any of the "flag" modules.
             Wdbg(DebugLevel.I, "Field {0} not found.", Variable)
-            W(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
+            Write(DoTranslation("Variable {0} is not found on any of the modules."), True, ColTypes.Error, Variable)
             Return Nothing
         End If
     End Function

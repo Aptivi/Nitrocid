@@ -41,10 +41,10 @@ Module ArgumentParse
                         ArgumentBase.Execute(strArgs, FullArgs, Args, Switches)
                     Else
                         Wdbg(DebugLevel.W, "User hasn't provided enough arguments for {0}", Argument)
-                        W(DoTranslation("There was not enough arguments."), True, ColTypes.Neutral)
+                        Write(DoTranslation("There was not enough arguments."), True, ColTypes.Neutral)
                     End If
                 Else
-                    W(DoTranslation("The requested argument {0} is not found."), True, ColTypes.Error, Argument)
+                    Write(DoTranslation("The requested argument {0} is not found."), True, ColTypes.Error, Argument)
                 End If
             Next
         Catch ex As Exception

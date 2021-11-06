@@ -91,7 +91,7 @@ Public Module ThemeTools
             'Raise event
             Kernel.EventManager.RaiseThemeSet(theme)
         Else
-            W(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, theme)
+            Write(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, theme)
             Wdbg(DebugLevel.E, "Theme not found.")
 
             'Raise event
@@ -120,7 +120,7 @@ Public Module ThemeTools
             'Raise event
             Kernel.EventManager.RaiseThemeSet(ThemeFile)
         Catch ex As Exception
-            W(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, ThemeFile)
+            Write(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, ThemeFile)
             Wdbg(DebugLevel.E, "Theme not found.")
 
             'Raise event

@@ -16,7 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.Console
 Imports System.Threading
 
 Module TextWriterSlowColor
@@ -40,10 +39,10 @@ Module TextWriterSlowColor
                 Dim chars As List(Of Char) = msg.ToCharArray.ToList
                 For Each ch As Char In chars
                     Thread.Sleep(MsEachLetter)
-                    Write(ch)
+                    Console.Write(ch)
                 Next
                 If Line Then
-                    WriteLine()
+                    Console.WriteLine()
                 End If
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
@@ -62,7 +61,7 @@ Module TextWriterSlowColor
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
     ''' <param name="colorType">A type of colors that will be changed.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteSlowlyC(msg As String, Line As Boolean, MsEachLetter As Double, colorType As ColTypes, ParamArray vars() As Object)
+    Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, colorType As ColTypes, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -77,15 +76,13 @@ Module TextWriterSlowColor
                 Dim chars As List(Of Char) = msg.ToCharArray.ToList
                 For Each ch As Char In chars
                     Thread.Sleep(MsEachLetter)
-                    Write(ch)
+                    Console.Write(ch)
                 Next
                 If Line Then
-                    WriteLine()
+                    Console.WriteLine()
                 End If
-                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
-                If colorType = ColTypes.Input And ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
-                    SetInputColor()
-                End If
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
+                If colorType = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -103,7 +100,7 @@ Module TextWriterSlowColor
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteSlowlyC16(msg As String, Line As Boolean, MsEachLetter As Double, color As ConsoleColor, ParamArray vars() As Object)
+    Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, color As ConsoleColor, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -118,15 +115,13 @@ Module TextWriterSlowColor
                 Dim chars As List(Of Char) = msg.ToCharArray.ToList
                 For Each ch As Char In chars
                     Thread.Sleep(MsEachLetter)
-                    Write(ch)
+                    Console.Write(ch)
                 Next
                 If Line Then
-                    WriteLine()
+                    Console.WriteLine()
                 End If
-                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
-                If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
-                    SetInputColor()
-                End If
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
+                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -145,7 +140,7 @@ Module TextWriterSlowColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteSlowlyC16(msg As String, Line As Boolean, MsEachLetter As Double, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray vars() As Object)
+    Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -160,15 +155,13 @@ Module TextWriterSlowColor
                 Dim chars As List(Of Char) = msg.ToCharArray.ToList
                 For Each ch As Char In chars
                     Thread.Sleep(MsEachLetter)
-                    Write(ch)
+                    Console.Write(ch)
                 Next
                 If Line Then
-                    WriteLine()
+                    Console.WriteLine()
                 End If
-                If BackgroundColor = ConsoleColor.Black Then ResetColor()
-                If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
-                    SetInputColor()
-                End If
+                If BackgroundColor = ConsoleColor.Black Then Console.ResetColor()
+                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -186,12 +179,12 @@ Module TextWriterSlowColor
     ''' <param name="MsEachLetter">Time in milliseconds to delay writing</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteSlowlyC(msg As String, Line As Boolean, MsEachLetter As Double, color As Color, ParamArray vars() As Object)
+    Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, color As Color, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
             Try
-                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
+                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
                     SetConsoleColor(color)
                     SetConsoleColor(New Color(BackgroundColor), True)
                 End If
@@ -203,15 +196,13 @@ Module TextWriterSlowColor
                 Dim chars As List(Of Char) = msg.ToCharArray.ToList
                 For Each ch As Char In chars
                     Thread.Sleep(MsEachLetter)
-                    Write(ch)
+                    Console.Write(ch)
                 Next
                 If Line Then
-                    WriteLine()
+                    Console.WriteLine()
                 End If
-                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
-                If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
-                    SetInputColor()
-                End If
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
+                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -230,12 +221,12 @@ Module TextWriterSlowColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteSlowlyC(msg As String, Line As Boolean, MsEachLetter As Double, ForegroundColor As Color, BackgroundColor As Color, ParamArray vars() As Object)
+    Public Sub WriteSlowly(msg As String, Line As Boolean, MsEachLetter As Double, ForegroundColor As Color, BackgroundColor As Color, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
             Try
-                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
+                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
                     SetConsoleColor(ForegroundColor)
                     SetConsoleColor(BackgroundColor, True)
                 End If
@@ -247,15 +238,13 @@ Module TextWriterSlowColor
                 Dim chars As List(Of Char) = msg.ToCharArray.ToList
                 For Each ch As Char In chars
                     Thread.Sleep(MsEachLetter)
-                    Write(ch)
+                    Console.Write(ch)
                 Next
                 If Line Then
-                    WriteLine()
+                    Console.WriteLine()
                 End If
-                If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then ResetColor()
-                If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
-                    SetInputColor()
-                End If
+                If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
+                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)

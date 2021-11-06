@@ -62,9 +62,9 @@ Module MailLogin
     Sub PromptUser()
         'Username or mail address
         If Not String.IsNullOrWhiteSpace(Mail_UserPromptStyle) Then
-            W(ProbePlaces(Mail_UserPromptStyle), False, ColTypes.Input)
+            Write(ProbePlaces(Mail_UserPromptStyle), False, ColTypes.Input)
         Else
-            W(DoTranslation("Enter username or mail address: "), False, ColTypes.Input)
+            Write(DoTranslation("Enter username or mail address: "), False, ColTypes.Input)
         End If
         PromptPassword(Console.ReadLine)
     End Sub
@@ -78,9 +78,9 @@ Module MailLogin
         Wdbg(DebugLevel.I, "Username: {0}", Username)
         Mail_Authentication.UserName = Username
         If Not String.IsNullOrWhiteSpace(Mail_PassPromptStyle) Then
-            W(ProbePlaces(Mail_PassPromptStyle), False, ColTypes.Input)
+            Write(ProbePlaces(Mail_PassPromptStyle), False, ColTypes.Input)
         Else
-            W(DoTranslation("Enter password: "), False, ColTypes.Input)
+            Write(DoTranslation("Enter password: "), False, ColTypes.Input)
         End If
         Mail_Authentication.Password = ReadLineNoInput("*")
         Console.WriteLine()
@@ -106,9 +106,9 @@ Module MailLogin
         Dim POP3_Port As Integer = 587
         'IMAP server address and port
         If Not String.IsNullOrWhiteSpace(Mail_IMAPPromptStyle) Then
-            W(ProbePlaces(Mail_IMAPPromptStyle), False, ColTypes.Input)
+            Write(ProbePlaces(Mail_IMAPPromptStyle), False, ColTypes.Input)
         Else
-            W(DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
+            Write(DoTranslation("Enter IMAP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
         End If
         IMAP_Address = Console.ReadLine
         Wdbg(DebugLevel.I, "IMAP Server: ""{0}""", IMAP_Address)
@@ -116,18 +116,18 @@ Module MailLogin
         'SMTP/POP3 server address and port
         If Not Mail_UsePop3 Then
             If Not String.IsNullOrWhiteSpace(Mail_SMTPPromptStyle) Then
-                W(ProbePlaces(Mail_SMTPPromptStyle), False, ColTypes.Input)
+                Write(ProbePlaces(Mail_SMTPPromptStyle), False, ColTypes.Input)
             Else
-                W(DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
+                Write(DoTranslation("Enter SMTP server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
             End If
             SMTP_Address = Console.ReadLine
             SMTP_Port = 587
             Wdbg(DebugLevel.I, "SMTP Server: ""{0}""", SMTP_Address)
         Else
             If Not String.IsNullOrWhiteSpace(Mail_POP3PromptStyle) Then
-                W(ProbePlaces(Mail_POP3PromptStyle), False, ColTypes.Input)
+                Write(ProbePlaces(Mail_POP3PromptStyle), False, ColTypes.Input)
             Else
-                W(DoTranslation("Enter POP3 server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
+                Write(DoTranslation("Enter POP3 server address and port (<address> or <address>:[port]): "), False, ColTypes.Input)
             End If
             POP3_Address = Console.ReadLine
             POP3_Port = 995
@@ -388,24 +388,24 @@ Module MailLogin
             CryptographyContext.Register(GetType(PGPContext))
 
             'IMAP Connection
-            W(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, Address)
+            Write(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, Address)
             Wdbg(DebugLevel.I, "Connecting to IMAP Server {0}:{1} with SSL...", Address, Port)
             IMAP_Client.Connect(Address, Port, Security.SecureSocketOptions.SslOnConnect)
             AddHandler IMAP_Client.WebAlert, AddressOf HandleWebAlert
 
             'SMTP/POP3 Connection
             If Not Mail_UsePop3 Then
-                W(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, SmtpAddress)
+                Write(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, SmtpAddress)
                 Wdbg(DebugLevel.I, "Connecting to SMTP Server {0}:{1} with SSL...", Address, Port)
                 SMTP_Client.Connect(SmtpAddress, SmtpPort, Security.SecureSocketOptions.StartTlsWhenAvailable)
             Else
-                W(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, POP3_Address)
+                Write(DoTranslation("Connecting to {0}..."), True, ColTypes.Neutral, POP3_Address)
                 Wdbg(DebugLevel.I, "Connecting to POP3 Server {0}:{1} with SSL...", Address, Port)
                 POP3_Client.Connect(POP3_Address, POP3_Port, Security.SecureSocketOptions.SslOnConnect)
             End If
 
             'IMAP Authentication
-            W(DoTranslation("Authenticating..."), True, ColTypes.Neutral)
+            Write(DoTranslation("Authenticating..."), True, ColTypes.Neutral)
             Wdbg(DebugLevel.I, "Authenticating {0} to IMAP server {1}...", Mail_Authentication.UserName, Address)
             IMAP_Client.Authenticate(Mail_Authentication)
 
@@ -423,7 +423,7 @@ Module MailLogin
             Wdbg(DebugLevel.I, "Authentication succeeded. Opening shell...")
             OpenMailShell(Address)
         Catch ex As Exception
-            W(DoTranslation("Error while connecting to {0}: {1}"), True, ColTypes.Error, Address, ex.Message)
+            Write(DoTranslation("Error while connecting to {0}: {1}"), True, ColTypes.Error, Address, ex.Message)
             WStkTrc(ex)
             IMAP_Client.Disconnect(True)
             SMTP_Client.Disconnect(True)

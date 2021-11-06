@@ -116,15 +116,15 @@ Public Module HelpSystem
             'Print usage information
             If Not CommandType = ShellCommandType.RemoteDebugShell Then
                 If HelpUsages.Length <> 0 Then
-                    W(DoTranslation("Usage:") + $" {command} {HelpUsages(0)}", False, ColTypes.ListEntry)
+                    Write(DoTranslation("Usage:") + $" {command} {HelpUsages(0)}", False, ColTypes.ListEntry)
                     If HelpUsages.Length > 1 Then
                         For Each HelpUsage As String In HelpUsages.Skip(1)
-                            W(vbNewLine + " ".Repeat(UsageLength) + $" {command} {HelpUsage}", False, ColTypes.ListEntry)
+                            Write(vbNewLine + " ".Repeat(UsageLength) + $" {command} {HelpUsage}", False, ColTypes.ListEntry)
                         Next
                     End If
-                    W(": ", False, ColTypes.ListEntry)
+                    Write(": ", False, ColTypes.ListEntry)
                 End If
-                W($"{HelpDefinition}", True, ColTypes.ListValue)
+                Write($"{HelpDefinition}", True, ColTypes.ListValue)
             ElseIf DebugDeviceSocket IsNot Nothing Then
                 If HelpUsages.Length <> 0 Then
                     DebugDeviceSocket.Write(DoTranslation("Usage:") + $" /{command} {HelpUsages(0)}")

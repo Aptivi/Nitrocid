@@ -659,13 +659,13 @@ Public Module Config
             ScreensaverConfig.Add("FlashColor", FlashColorConfig)
 
             'SpotWrite config json object
-            Dim SpotWriteConfig As New JObject From {
+            Dim SpotWriteonfig As New JObject From {
                     {"Delay in Milliseconds", SpotWriteDelay},
                     {"New Screen Delay in Milliseconds", SpotWriteNewScreenDelay},
                     {"Text Shown", SpotWriteWrite},
                     {"Text color", SpotWriteTextColor}
             }
-            ScreensaverConfig.Add("SpotWrite", SpotWriteConfig)
+            ScreensaverConfig.Add("SpotWrite", SpotWriteonfig)
 
             'Ramp config json object
             Dim RampConfig As New JObject From {
@@ -1528,7 +1528,7 @@ Public Module Config
         Try
             ReadConfig()
         Catch cex As Exceptions.ConfigException
-            W(cex.Message, True, ColTypes.Error)
+            Write(cex.Message, True, ColTypes.Error)
             WStkTrc(cex)
         End Try
     End Sub

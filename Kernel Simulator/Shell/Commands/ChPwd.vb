@@ -23,14 +23,14 @@ Class ChPwdCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Try
             If InStr(ListArgs(3), " ") > 0 Then
-                W(DoTranslation("Spaces are not allowed."), True, ColTypes.Error)
+                Write(DoTranslation("Spaces are not allowed."), True, ColTypes.Error)
             ElseIf ListArgs(3) = ListArgs(2) Then
                 ChangePassword(ListArgs(0), ListArgs(1), ListArgs(2))
             ElseIf ListArgs(3) <> ListArgs(2) Then
-                W(DoTranslation("Passwords doesn't match."), True, ColTypes.Error)
+                Write(DoTranslation("Passwords doesn't match."), True, ColTypes.Error)
             End If
         Catch ex As Exception
-            W(DoTranslation("Failed to change password of username: {0}"), True, ColTypes.Error, ex.Message)
+            Write(DoTranslation("Failed to change password of username: {0}"), True, ColTypes.Error, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub

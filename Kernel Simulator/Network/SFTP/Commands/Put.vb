@@ -21,15 +21,15 @@ Class SFTP_PutCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        W(DoTranslation("Uploading file {0}..."), True, ColTypes.Progress, ListArgs(0))
+        Write(DoTranslation("Uploading file {0}..."), True, ColTypes.Progress, ListArgs(0))
 
         'Begin the uploading process
         If SFTPUploadFile(ListArgs(0)) Then
             Console.WriteLine()
-            W(vbNewLine + DoTranslation("Uploaded file {0}"), True, ColTypes.Success, ListArgs(0))
+            Write(vbNewLine + DoTranslation("Uploaded file {0}"), True, ColTypes.Success, ListArgs(0))
         Else
             Console.WriteLine()
-            W(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Error, ListArgs(0))
+            Write(vbNewLine + DoTranslation("Failed to upload {0}"), True, ColTypes.Error, ListArgs(0))
         End If
     End Sub
 

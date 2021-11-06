@@ -25,10 +25,10 @@ Class BeepCommand
             If ListArgs(1).IsNumeric Then 'Time must be numeric
                 Console.Beep(ListArgs(0), ListArgs(1))
             Else
-                W(DoTranslation("Time must be numeric."), True, ColTypes.Error)
+                Write(DoTranslation("Time must be numeric."), True, ColTypes.Error)
             End If
         Else
-            W(DoTranslation("Frequency must be numeric. If it's numeric, ensure that it is >= 37 and <= 32767."), True, ColTypes.Error)
+            Write(DoTranslation("Frequency must be numeric. If it's numeric, ensure that it is >= 37 and <= 32767."), True, ColTypes.Error)
         End If
     End Sub
 

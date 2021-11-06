@@ -23,9 +23,9 @@ Class Test_TestDictWriterStrCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim NormalStringDict As New Dictionary(Of String, String) From {{"One", "String 1"}, {"Two", "String 2"}, {"Three", "String 3"}}
         Dim ArrayStringDict As New Dictionary(Of String, String()) From {{"One", {"String 1", "String 2", "String 3"}}, {"Two", {"String 1", "String 2", "String 3"}}, {"Three", {"String 1", "String 2", "String 3"}}}
-        W(DoTranslation("Normal string dictionary:"), True, ColTypes.Neutral)
+        Write(DoTranslation("Normal string dictionary:"), True, ColTypes.Neutral)
         WriteList(NormalStringDict)
-        W(DoTranslation("Array string dictionary:"), True, ColTypes.Neutral)
+        Write(DoTranslation("Array string dictionary:"), True, ColTypes.Neutral)
         WriteList(ArrayStringDict)
     End Sub
 

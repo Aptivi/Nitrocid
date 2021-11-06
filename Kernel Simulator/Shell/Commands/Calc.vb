@@ -25,13 +25,13 @@ Class CalcCommand
             Dim Res As String = Evaluate(StringArgs)
             Wdbg(DebugLevel.I, "Res = {0}", Res)
             If Res = "" Then 'If there is an error in calculation
-                W(DoTranslation("Error in calculation."), True, ColTypes.Error)
+                Write(DoTranslation("Error in calculation."), True, ColTypes.Error)
             Else 'Calculation done
-                W(StringArgs + " = " + Res, True, ColTypes.Neutral)
+                Write(StringArgs + " = " + Res, True, ColTypes.Neutral)
             End If
         Catch ex As Exception
             WStkTrc(ex)
-            W(DoTranslation("Error in calculation."), True, ColTypes.Error)
+            Write(DoTranslation("Error in calculation."), True, ColTypes.Error)
         End Try
     End Sub
 

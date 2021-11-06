@@ -16,8 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.Console
-
 Module TextWriterWhereColor
 
     ''' <summary>
@@ -41,32 +39,30 @@ Module TextWriterWhereColor
                 If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
                 'Write text in another place. By the way, we check the text for newlines and console width excess
-                Dim OldLeft As Integer = CursorLeft
-                Dim OldTop As Integer = CursorTop
+                Dim OldLeft As Integer = Console.CursorLeft
+                Dim OldTop As Integer = Console.CursorTop
                 Dim Paragraphs() As String = msg.SplitNewLines
-                SetCursorPosition(Left, Top)
+                Console.SetCursorPosition(Left, Top)
                 For MessageParagraphIndex As Integer = 0 To Paragraphs.Length - 1
                     'We can now check to see if we're writing a letter past the console window width
                     Dim MessageParagraph As String = Paragraphs(MessageParagraphIndex)
                     For Each ParagraphChar As Char In MessageParagraph
-                        If CursorLeft = WindowWidth - 1 Then
-                            CursorTop += 1
-                            CursorLeft = Left
+                        If Console.CursorLeft = Console.WindowWidth - 1 Then
+                            Console.CursorTop += 1
+                            Console.CursorLeft = Left
                         End If
-                        Write(ParagraphChar)
+                        Console.Write(ParagraphChar)
                     Next
 
                     'We're starting with the new paragraph, so we increase the CursorTop value by 1.
                     If Not MessageParagraphIndex = Paragraphs.Length - 1 Then
-                        CursorTop += 1
-                        CursorLeft = Left
+                        Console.CursorTop += 1
+                        Console.CursorLeft = Left
                     End If
                 Next
-                If [Return] Then SetCursorPosition(OldLeft, OldTop)
-                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
-                If colorType = ColTypes.Input And ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
-                    SetInputColor()
-                End If
+                If [Return] Then Console.SetCursorPosition(OldLeft, OldTop)
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
+                If colorType = ColTypes.Input And ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -85,7 +81,7 @@ Module TextWriterWhereColor
     ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteWhereC16(msg As String, Left As Integer, Top As Integer, [Return] As Boolean, color As ConsoleColor, ParamArray vars() As Object)
+    Public Sub WriteWhere(msg As String, Left As Integer, Top As Integer, [Return] As Boolean, color As ConsoleColor, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -97,32 +93,30 @@ Module TextWriterWhereColor
                 If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
                 'Write text in another place. By the way, we check the text for newlines and console width excess
-                Dim OldLeft As Integer = CursorLeft
-                Dim OldTop As Integer = CursorTop
+                Dim OldLeft As Integer = Console.CursorLeft
+                Dim OldTop As Integer = Console.CursorTop
                 Dim Paragraphs() As String = msg.SplitNewLines
-                SetCursorPosition(Left, Top)
+                Console.SetCursorPosition(Left, Top)
                 For MessageParagraphIndex As Integer = 0 To Paragraphs.Length - 1
                     'We can now check to see if we're writing a letter past the console window width
                     Dim MessageParagraph As String = Paragraphs(MessageParagraphIndex)
                     For Each ParagraphChar As Char In MessageParagraph
-                        If CursorLeft = WindowWidth - 1 Then
-                            CursorTop += 1
-                            CursorLeft = Left
+                        If Console.CursorLeft = Console.WindowWidth - 1 Then
+                            Console.CursorTop += 1
+                            Console.CursorLeft = Left
                         End If
-                        Write(ParagraphChar)
+                        Console.Write(ParagraphChar)
                     Next
 
                     'We're starting with the new paragraph, so we increase the CursorTop value by 1.
                     If Not MessageParagraphIndex = Paragraphs.Length - 1 Then
-                        CursorTop += 1
-                        CursorLeft = Left
+                        Console.CursorTop += 1
+                        Console.CursorLeft = Left
                     End If
                 Next
-                If [Return] Then SetCursorPosition(OldLeft, OldTop)
-                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
-                If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
-                    SetInputColor()
-                End If
+                If [Return] Then Console.SetCursorPosition(OldLeft, OldTop)
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
+                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -142,7 +136,7 @@ Module TextWriterWhereColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteWhereC16(msg As String, Left As Integer, Top As Integer, [Return] As Boolean, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray vars() As Object)
+    Public Sub WriteWhere(msg As String, Left As Integer, Top As Integer, [Return] As Boolean, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
@@ -154,32 +148,30 @@ Module TextWriterWhereColor
                 If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
                 'Write text in another place. By the way, we check the text for newlines and console width excess
-                Dim OldLeft As Integer = CursorLeft
-                Dim OldTop As Integer = CursorTop
+                Dim OldLeft As Integer = Console.CursorLeft
+                Dim OldTop As Integer = Console.CursorTop
                 Dim Paragraphs() As String = msg.SplitNewLines
-                SetCursorPosition(Left, Top)
+                Console.SetCursorPosition(Left, Top)
                 For MessageParagraphIndex As Integer = 0 To Paragraphs.Length - 1
                     'We can now check to see if we're writing a letter past the console window width
                     Dim MessageParagraph As String = Paragraphs(MessageParagraphIndex)
                     For Each ParagraphChar As Char In MessageParagraph
-                        If CursorLeft = WindowWidth - 1 Then
-                            CursorTop += 1
-                            CursorLeft = Left
+                        If Console.CursorLeft = Console.WindowWidth - 1 Then
+                            Console.CursorTop += 1
+                            Console.CursorLeft = Left
                         End If
-                        Write(ParagraphChar)
+                        Console.Write(ParagraphChar)
                     Next
 
                     'We're starting with the new paragraph, so we increase the CursorTop value by 1.
                     If Not MessageParagraphIndex = Paragraphs.Length - 1 Then
-                        CursorTop += 1
-                        CursorLeft = Left
+                        Console.CursorTop += 1
+                        Console.CursorLeft = Left
                     End If
                 Next
-                If [Return] Then SetCursorPosition(OldLeft, OldTop)
-                If BackgroundColor = ConsoleColor.Black Then ResetColor()
-                If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
-                    SetInputColor()
-                End If
+                If [Return] Then Console.SetCursorPosition(OldLeft, OldTop)
+                If BackgroundColor = ConsoleColor.Black Then Console.ResetColor()
+                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -198,12 +190,12 @@ Module TextWriterWhereColor
     ''' <param name="Return">Whether or not to return to old position</param>
     ''' <param name="color">A color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteWhereC(msg As String, Left As Integer, Top As Integer, [Return] As Boolean, color As Color, ParamArray vars() As Object)
+    Public Sub WriteWhere(msg As String, Left As Integer, Top As Integer, [Return] As Boolean, color As Color, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
             Try
-                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
+                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
                     SetConsoleColor(color)
                     SetConsoleColor(New Color(BackgroundColor), True)
                 End If
@@ -212,32 +204,30 @@ Module TextWriterWhereColor
                 If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
                 'Write text in another place. By the way, we check the text for newlines and console width excess
-                Dim OldLeft As Integer = CursorLeft
-                Dim OldTop As Integer = CursorTop
+                Dim OldLeft As Integer = Console.CursorLeft
+                Dim OldTop As Integer = Console.CursorTop
                 Dim Paragraphs() As String = msg.SplitNewLines
-                SetCursorPosition(Left, Top)
+                Console.SetCursorPosition(Left, Top)
                 For MessageParagraphIndex As Integer = 0 To Paragraphs.Length - 1
                     'We can now check to see if we're writing a letter past the console window width
                     Dim MessageParagraph As String = Paragraphs(MessageParagraphIndex)
                     For Each ParagraphChar As Char In MessageParagraph
-                        If CursorLeft = WindowWidth - 1 Then
-                            CursorTop += 1
-                            CursorLeft = Left
+                        If Console.CursorLeft = Console.WindowWidth - 1 Then
+                            Console.CursorTop += 1
+                            Console.CursorLeft = Left
                         End If
-                        Write(ParagraphChar)
+                        Console.Write(ParagraphChar)
                     Next
 
                     'We're starting with the new paragraph, so we increase the CursorTop value by 1.
                     If Not MessageParagraphIndex = Paragraphs.Length - 1 Then
-                        CursorTop += 1
-                        CursorLeft = Left
+                        Console.CursorTop += 1
+                        Console.CursorLeft = Left
                     End If
                 Next
-                If [Return] Then SetCursorPosition(OldLeft, OldTop)
-                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then ResetColor()
-                If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
-                    SetInputColor()
-                End If
+                If [Return] Then Console.SetCursorPosition(OldLeft, OldTop)
+                If BackgroundColor = New Color(ConsoleColors.Black).PlainSequence Or BackgroundColor = "0;0;0" Then Console.ResetColor()
+                If ColoredShell And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)
@@ -257,12 +247,12 @@ Module TextWriterWhereColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="vars">Variables to format the message before it's written.</param>
-    Public Sub WriteWhereC(msg As String, Left As Integer, Top As Integer, [Return] As Boolean, ForegroundColor As Color, BackgroundColor As Color, ParamArray vars() As Object)
+    Public Sub WriteWhere(msg As String, Left As Integer, Top As Integer, [Return] As Boolean, ForegroundColor As Color, BackgroundColor As Color, ParamArray vars() As Object)
 #If Not NOWRITELOCK Then
         SyncLock WriteLock
 #End If
             Try
-                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out) Then
+                If DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out) Then
                     SetConsoleColor(ForegroundColor)
                     SetConsoleColor(BackgroundColor, True)
                 End If
@@ -271,32 +261,30 @@ Module TextWriterWhereColor
                 If Not vars.Length = 0 Then msg = String.Format(msg, vars)
 
                 'Write text in another place. By the way, we check the text for newlines and console width excess
-                Dim OldLeft As Integer = CursorLeft
-                Dim OldTop As Integer = CursorTop
+                Dim OldLeft As Integer = Console.CursorLeft
+                Dim OldTop As Integer = Console.CursorTop
                 Dim Paragraphs() As String = msg.SplitNewLines
-                SetCursorPosition(Left, Top)
+                Console.SetCursorPosition(Left, Top)
                 For MessageParagraphIndex As Integer = 0 To Paragraphs.Length - 1
                     'We can now check to see if we're writing a letter past the console window width
                     Dim MessageParagraph As String = Paragraphs(MessageParagraphIndex)
                     For Each ParagraphChar As Char In MessageParagraph
-                        If CursorLeft = WindowWidth - 1 Then
-                            CursorTop += 1
-                            CursorLeft = Left
+                        If Console.CursorLeft = Console.WindowWidth - 1 Then
+                            Console.CursorTop += 1
+                            Console.CursorLeft = Left
                         End If
-                        Write(ParagraphChar)
+                        Console.Write(ParagraphChar)
                     Next
 
                     'We're starting with the new paragraph, so we increase the CursorTop value by 1.
                     If Not MessageParagraphIndex = Paragraphs.Length - 1 Then
-                        CursorTop += 1
-                        CursorLeft = Left
+                        Console.CursorTop += 1
+                        Console.CursorLeft = Left
                     End If
                 Next
-                If [Return] Then SetCursorPosition(OldLeft, OldTop)
-                If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then ResetColor()
-                If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Out)) Then
-                    SetInputColor()
-                End If
+                If [Return] Then Console.SetCursorPosition(OldLeft, OldTop)
+                If BackgroundColor.PlainSequence = "0" Or BackgroundColor.PlainSequence = "0;0;0" Then Console.ResetColor()
+                If ColoredShell = True And (DefConsoleOut Is Nothing Or Equals(DefConsoleOut, Console.Out)) Then SetInputColor()
             Catch ex As Exception When Not ex.GetType.Name = "ThreadAbortException"
                 WStkTrc(ex)
                 KernelError(KernelErrorLevel.C, False, 0, DoTranslation("There is a serious error when printing text."), ex)

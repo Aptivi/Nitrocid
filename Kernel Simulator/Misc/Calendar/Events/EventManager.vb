@@ -82,8 +82,8 @@ Public Module EventManager
     ''' </summary>
     Public Sub ListEvents()
         For Each EventInstance As EventInfo In CalendarEvents
-            W("- {0}: ", False, ColTypes.ListEntry, EventInstance.EventDate)
-            W(EventInstance.EventTitle, True, ColTypes.ListValue)
+            Write("- {0}: ", False, ColTypes.ListEntry, EventInstance.EventDate)
+            Write(EventInstance.EventTitle, True, ColTypes.ListValue)
         Next
     End Sub
 

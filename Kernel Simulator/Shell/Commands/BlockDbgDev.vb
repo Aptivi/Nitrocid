@@ -23,12 +23,12 @@ Class BlockDbgDevCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If Not RDebugBlocked.Contains(ListArgs(0)) Then
             If AddToBlockList(ListArgs(0)) Then
-                W(DoTranslation("{0} can't join remote debug now."), True, ColTypes.Neutral, ListArgs(0))
+                Write(DoTranslation("{0} can't join remote debug now."), True, ColTypes.Neutral, ListArgs(0))
             Else
-                W(DoTranslation("Failed to block {0}."), True, ColTypes.Neutral, ListArgs(0))
+                Write(DoTranslation("Failed to block {0}."), True, ColTypes.Neutral, ListArgs(0))
             End If
         Else
-            W(DoTranslation("{0} is already blocked."), True, ColTypes.Neutral, ListArgs(0))
+            Write(DoTranslation("{0} is already blocked."), True, ColTypes.Neutral, ListArgs(0))
         End If
     End Sub
 

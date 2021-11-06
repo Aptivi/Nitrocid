@@ -113,7 +113,7 @@ Public Module Screensaver
                 Custom.CancelAsync()
                 SaverAutoReset.WaitOne()
             Else
-                W(DoTranslation("The requested screensaver {0} is not found."), True, ColTypes.Error, saver)
+                Write(DoTranslation("The requested screensaver {0} is not found."), True, ColTypes.Error, saver)
                 Wdbg(DebugLevel.I, "Screensaver {0} not found in the dictionary.", saver)
             End If
 
@@ -121,10 +121,10 @@ Public Module Screensaver
             Wdbg(DebugLevel.I, "Screensaver really stopped.")
             Kernel.EventManager.RaisePostShowScreensaver(saver)
         Catch ex As InvalidOperationException
-            W(DoTranslation("Error when trying to start screensaver, because of an invalid operation."), True, ColTypes.Error)
+            Write(DoTranslation("Error when trying to start screensaver, because of an invalid operation."), True, ColTypes.Error)
             WStkTrc(ex)
         Catch ex As Exception
-            W(DoTranslation("Error when trying to start screensaver:") + " {0}", True, ColTypes.Error, ex.Message)
+            Write(DoTranslation("Error when trying to start screensaver:") + " {0}", True, ColTypes.Error, ex.Message)
             WStkTrc(ex)
         Finally
             InSaver = False
@@ -180,7 +180,7 @@ Public Module Screensaver
         If Exception IsNot Nothing Then
             Wdbg(DebugLevel.W, "Screensaver experienced an error: {0}.", Exception.Message)
             HandleSaverCancel()
-            W(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, Exception.Message)
+            Write(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, Exception.Message)
         End If
     End Sub
 

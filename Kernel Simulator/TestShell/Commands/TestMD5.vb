@@ -23,8 +23,8 @@ Class Test_TestMD5Command
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim spent As New Stopwatch
         spent.Start() 'Time when you're on a breakpoint is counted
-        W(GetEncryptedString(ListArgs(0), Algorithms.MD5), True, ColTypes.Neutral)
-        W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+        Write(GetEncryptedString(ListArgs(0), Algorithms.MD5), True, ColTypes.Neutral)
+        Write(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
         spent.Stop()
     End Sub
 

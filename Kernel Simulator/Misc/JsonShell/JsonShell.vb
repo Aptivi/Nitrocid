@@ -50,7 +50,7 @@ Public Module JsonShell
             If JsonShell_FileStream Is Nothing Then
                 Wdbg(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath)
                 If Not JsonShell_OpenJsonFile(FilePath) Then
-                    W(DoTranslation("Failed to open file. Exiting shell..."), True, ColTypes.Error)
+                    Write(DoTranslation("Failed to open file. Exiting shell..."), True, ColTypes.Error)
                     Exit While
                 End If
                 JsonShell_AutoSave.Start()
@@ -62,11 +62,11 @@ Public Module JsonShell
             End If
             Wdbg(DebugLevel.I, "JsonShell_PromptStyle = {0}", JsonShell_PromptStyle)
             If JsonShell_PromptStyle = "" Then
-                W("[", False, ColTypes.Gray) : W("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(JsonShell_WasJsonEdited(), "*", "")) : W("] > ", False, ColTypes.Gray)
+                Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(JsonShell_WasJsonEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
             Else
                 Dim ParsedPromptStyle As String = ProbePlaces(JsonShell_PromptStyle)
                 ParsedPromptStyle.ConvertVTSequences
-                W(ParsedPromptStyle, False, ColTypes.Gray)
+                Write(ParsedPromptStyle, False, ColTypes.Gray)
             End If
             SetInputColor()
 
@@ -96,7 +96,7 @@ Public Module JsonShell
                     WrittenCommand = WrittenCommand.Replace($"""{Command}""", Command)
                     ExecuteJsonAlias(WrittenCommand)
                 Else
-                    W(DoTranslation("The specified JSON shell command is not found."), True, ColTypes.Error)
+                    Write(DoTranslation("The specified JSON shell command is not found."), True, ColTypes.Error)
                     Wdbg(DebugLevel.E, "Command {0} not found in the list of {1} commands.", Command, JsonShell_Commands.Count)
                 End If
             End If

@@ -32,24 +32,24 @@ Class PutCommand
                         Dim Credentials As New NetworkCredential
                         If ListArgs.Length > 2 Then 'Username specified
                             Credentials.UserName = ListArgs(2)
-                            W(DoTranslation("Enter password: "), False, ColTypes.Input)
+                            Write(DoTranslation("Enter password: "), False, ColTypes.Input)
                             Credentials.Password = ReadLineNoInput("*")
                             Console.WriteLine()
                         End If
-                        W(DoTranslation("Uploading {0} to {1}..."), True, ColTypes.Neutral, FileName, URL)
+                        Write(DoTranslation("Uploading {0} to {1}..."), True, ColTypes.Neutral, FileName, URL)
                         If UploadFile(FileName, URL, Credentials) Then
-                            W(DoTranslation("Upload has completed."), True, ColTypes.Neutral)
+                            Write(DoTranslation("Upload has completed."), True, ColTypes.Neutral)
                         End If
                     Else
-                        W(DoTranslation("Specify the address"), True, ColTypes.Error)
+                        Write(DoTranslation("Specify the address"), True, ColTypes.Error)
                     End If
                 Else
-                    W(DoTranslation("Please use ""ftp"" if you are going to upload files to the FTP server."), True, ColTypes.Error)
+                    Write(DoTranslation("Please use ""ftp"" if you are going to upload files to the FTP server."), True, ColTypes.Error)
                 End If
                 Exit Sub
             Catch ex As Exception
                 UFinish = False
-                W(DoTranslation("Upload failed in try {0}: {1}"), True, ColTypes.Error, RetryCount, ex.Message)
+                Write(DoTranslation("Upload failed in try {0}: {1}"), True, ColTypes.Error, RetryCount, ex.Message)
                 RetryCount += 1
                 Wdbg(DebugLevel.I, "Try count: {0}", RetryCount)
                 WStkTrc(ex)

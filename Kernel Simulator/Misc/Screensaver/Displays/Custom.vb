@@ -29,7 +29,7 @@ Public Module CustomDisplay
         'To Screensaver Developers: ONLY put the effect code in your scrnSaver() sub.
         '                           Set colors, write welcome message, etc. with the exception of infinite loop and the effect code in preDisplay() sub
         '                           Recommended: Turn off console cursor, and clear the screen in preDisplay() sub.
-        '                           Substitute: TextWriterColor.W() with System.Console.WriteLine() or System.Console.Write().
+        '                           Substitute: TextWriterColor.Write() with System.Console.WriteLine() or System.Console.Write().
         'Preparations
         Console.CursorVisible = False
 

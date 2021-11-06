@@ -94,8 +94,8 @@ Public Module ReminderManager
     ''' </summary>
     Public Sub ListReminders()
         For Each Reminder As ReminderInfo In Reminders
-            W("- {0}: ", False, ColTypes.ListEntry, Reminder.ReminderDate)
-            W(Reminder.ReminderTitle, True, ColTypes.ListValue)
+            Write("- {0}: ", False, ColTypes.ListEntry, Reminder.ReminderDate)
+            Write(Reminder.ReminderTitle, True, ColTypes.ListValue)
         Next
     End Sub
 

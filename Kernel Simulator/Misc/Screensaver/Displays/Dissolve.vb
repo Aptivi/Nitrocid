@@ -92,7 +92,7 @@ Module DissolveDisplay
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                             If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                             If Not ResizeSyncing Then
-                                WriteC(" ", False, New Color("0;0;0"), New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"))
+                                Write(" ", False, New Color("0;0;0"), New Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"))
                             Else
                                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're refilling...")
                                 ColorFilled = False
@@ -105,7 +105,7 @@ Module DissolveDisplay
                             WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                             If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                             If Not ResizeSyncing Then
-                                WriteC(" ", False, New Color("0"), New Color(ColorNum))
+                                Write(" ", False, New Color("0"), New Color(ColorNum))
                             Else
                                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're refilling...")
                                 ColorFilled = False

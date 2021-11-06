@@ -35,11 +35,11 @@ Class ModManCommand
                         TargetMod = ListArgsOnly(1)
                         TargetModPath = NeutralizePath(TargetMod, GetKernelPath(KernelPathType.Mods))
                         If Not (TryParsePath(TargetModPath) AndAlso FileExists(TargetModPath)) Then
-                            W(DoTranslation("Mod not found or file has invalid characters."), True, ColTypes.Error)
+                            Write(DoTranslation("Mod not found or file has invalid characters."), True, ColTypes.Error)
                             Exit Sub
                         End If
                     Else
-                        W(DoTranslation("Mod file is not specified."), True, ColTypes.Error)
+                        Write(DoTranslation("Mod file is not specified."), True, ColTypes.Error)
                         Exit Sub
                     End If
             End Select
@@ -47,7 +47,7 @@ Class ModManCommand
             'Now, the actual logic
             Select Case CommandMode
                 Case "start"
-                    W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileNameWithoutExtension(TargetMod))
+                    Write(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileNameWithoutExtension(TargetMod))
                     StartMod(TargetModPath)
                 Case "stop"
                     StopMod(TargetModPath)
@@ -55,32 +55,32 @@ Class ModManCommand
                     For Each script As String In scripts.Keys
                         If scripts(script).ModFilePath = TargetModPath Then
                             WriteSeparator(script, True)
-                            W("- " + DoTranslation("Mod name:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModName, True, ColTypes.ListValue)
-                            W("- " + DoTranslation("Mod file name:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModFileName, True, ColTypes.ListValue)
-                            W("- " + DoTranslation("Mod file path:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModFilePath, True, ColTypes.ListValue)
-                            W("- " + DoTranslation("Mod version:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModVersion, True, ColTypes.ListValue)
-                            W("- " + DoTranslation("Mod parts:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts.Count, True, ColTypes.ListValue)
+                            Write("- " + DoTranslation("Mod name:") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModName, True, ColTypes.ListValue)
+                            Write("- " + DoTranslation("Mod file name:") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModFileName, True, ColTypes.ListValue)
+                            Write("- " + DoTranslation("Mod file path:") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModFilePath, True, ColTypes.ListValue)
+                            Write("- " + DoTranslation("Mod version:") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModVersion, True, ColTypes.ListValue)
+                            Write("- " + DoTranslation("Mod parts:") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModParts.Count.ToString, True, ColTypes.ListValue)
                             For Each ModPart As String In scripts(script).ModParts.Keys
                                 WriteSeparator("-- {0}", False, ModPart)
-                                W("- " + DoTranslation("Part version:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Version, True, ColTypes.ListValue)
-                                W("- " + DoTranslation("Part file name:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartFileName, True, ColTypes.ListValue)
-                                W("- " + DoTranslation("Part file path:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartFilePath, True, ColTypes.ListValue)
+                                Write("- " + DoTranslation("Part version:") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModParts(ModPart).PartScript.Version, True, ColTypes.ListValue)
+                                Write("- " + DoTranslation("Part file name:") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModParts(ModPart).PartFileName, True, ColTypes.ListValue)
+                                Write("- " + DoTranslation("Part file path:") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModParts(ModPart).PartFilePath, True, ColTypes.ListValue)
                                 If scripts(script).ModParts(ModPart).PartScript.Commands IsNot Nothing Then
                                     For Each ModCommand As String In scripts(script).ModParts(ModPart).PartScript.Commands.Keys
                                         WriteSeparator("--- {0}", False, ModCommand)
-                                        W("- " + DoTranslation("Command name:") + " ", False, ColTypes.ListEntry) : W(ModCommand, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Command definition:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).HelpDefinition, True, ColTypes.ListValue)
+                                        Write("- " + DoTranslation("Command name:") + " ", False, ColTypes.ListEntry) : Write(ModCommand, True, ColTypes.ListValue)
+                                        Write("- " + DoTranslation("Command definition:") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).HelpDefinition, True, ColTypes.ListValue)
                                         For Each Usage As String In scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).HelpUsages
-                                            W("- " + DoTranslation("Command usage:") + " ", False, ColTypes.ListEntry) : W(Usage, True, ColTypes.ListValue)
+                                            Write("- " + DoTranslation("Command usage:") + " ", False, ColTypes.ListEntry) : Write(Usage, True, ColTypes.ListValue)
                                         Next
-                                        W("- " + DoTranslation("Command type:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).Type, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Strict command?") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).Strict, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Arguments required?") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).ArgumentsRequired, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Minimum count of required arguments:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).MinimumArguments, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Wrappable command?") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).Wrappable, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Setting shell variable?") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).SettingVariable, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Can not run in maintenance mode?") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).NoMaintenance, True, ColTypes.ListValue)
-                                        W("- " + DoTranslation("Obsolete?") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).Obsolete, True, ColTypes.ListValue)
+                                        Write("- " + DoTranslation("Command type:") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).Type.ToString, True, ColTypes.ListValue)
+                                        Write("- " + DoTranslation("Strict command?") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).Strict.ToString, True, ColTypes.ListValue)
+                                        Write("- " + DoTranslation("Arguments required?") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).ArgumentsRequired.ToString, True, ColTypes.ListValue)
+                                        Write("- " + DoTranslation("Minimum count of required arguments:") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).MinimumArguments.ToString, True, ColTypes.ListValue)
+                                        Write("- " + DoTranslation("Wrappable command?") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).Wrappable.ToString, True, ColTypes.ListValue)
+                                        Write("- " + DoTranslation("Setting shell variable?") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).SettingVariable.ToString, True, ColTypes.ListValue)
+                                        Write("- " + DoTranslation("Can not run in maintenance mode?") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).NoMaintenance.ToString, True, ColTypes.ListValue)
+                                        Write("- " + DoTranslation("Obsolete?") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModParts(ModPart).PartScript.Commands(ModCommand).Obsolete.ToString, True, ColTypes.ListValue)
                                     Next
                                 End If
                             Next
@@ -96,11 +96,11 @@ Class ModManCommand
                 Case "list"
                     For Each script As String In scripts.Keys
                         WriteSeparator(script, True)
-                        W("- " + DoTranslation("Mod name:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModName, True, ColTypes.ListValue)
-                        W("- " + DoTranslation("Mod file name:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModFileName, True, ColTypes.ListValue)
-                        W("- " + DoTranslation("Mod file path:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModFilePath, True, ColTypes.ListValue)
-                        W("- " + DoTranslation("Mod version:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModVersion, True, ColTypes.ListValue)
-                        W("- " + DoTranslation("Mod parts:") + " ", False, ColTypes.ListEntry) : W(scripts(script).ModParts.Count, True, ColTypes.ListValue)
+                        Write("- " + DoTranslation("Mod name:") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModName, True, ColTypes.ListValue)
+                        Write("- " + DoTranslation("Mod file name:") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModFileName, True, ColTypes.ListValue)
+                        Write("- " + DoTranslation("Mod file path:") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModFilePath, True, ColTypes.ListValue)
+                        Write("- " + DoTranslation("Mod version:") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModVersion, True, ColTypes.ListValue)
+                        Write("- " + DoTranslation("Mod parts:") + " ", False, ColTypes.ListEntry) : Write(scripts(script).ModParts.Count.ToString, True, ColTypes.ListValue)
                     Next
                 Case "reloadall"
                     ReloadMods()
@@ -109,11 +109,11 @@ Class ModManCommand
                 Case "startall"
                     StartMods()
                 Case Else
-                    W(DoTranslation("Invalid command {0}. Check the usage below:"), True, ColTypes.Error, CommandMode)
+                    Write(DoTranslation("Invalid command {0}. Check the usage below:"), True, ColTypes.Error, CommandMode)
                     ShowHelp(Command)
             End Select
         Else
-            W(DoTranslation("Mod management is disabled in safe mode."), True, ColTypes.Error)
+            Write(DoTranslation("Mod management is disabled in safe mode."), True, ColTypes.Error)
         End If
     End Sub
 

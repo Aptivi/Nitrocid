@@ -93,14 +93,14 @@ Public Module SFTPShell
                     If SFTPConnected Then
                         Wdbg(DebugLevel.I, "SFTPShellPromptStyle = {0}", SFTPShellPromptStyle)
                         If SFTPShellPromptStyle = "" Then
-                            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, SFTPUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, SFTPSite) : W("]{0}> ", False, ColTypes.Gray, SFTPCurrentRemoteDir)
+                            Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, SFTPUser) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, SFTPSite) : Write("]{0}> ", False, ColTypes.Gray, SFTPCurrentRemoteDir)
                         Else
                             Dim ParsedPromptStyle As String = ProbePlaces(SFTPShellPromptStyle)
                             ParsedPromptStyle.ConvertVTSequences
-                            W(ParsedPromptStyle, False, ColTypes.Gray)
+                            Write(ParsedPromptStyle, False, ColTypes.Gray)
                         End If
                     Else
-                        W("{0}> ", False, ColTypes.Gray, SFTPCurrDirect)
+                        Write("{0}> ", False, ColTypes.Gray, SFTPCurrDirect)
                     End If
                 End If
 
@@ -160,7 +160,7 @@ Public Module SFTPShell
             ExecuteSFTPAlias(SFTPStrCmd)
         ElseIf Not SFTPStrCmd.StartsWith(" ") Then
             Wdbg(DebugLevel.E, "Command {0} not found.", SFTPStrCmd)
-            W(DoTranslation("SFTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on SFTP shell."), True, ColTypes.Error, words(0))
+            Write(DoTranslation("SFTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on SFTP shell."), True, ColTypes.Error, words(0))
         End If
     End Sub
 

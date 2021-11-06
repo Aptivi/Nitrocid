@@ -38,8 +38,8 @@ Class SumFileCommand
                     Dim spent As New Stopwatch
                     spent.Start() 'Time when you're on a breakpoint is counted
                     Dim encrypted As String = GetEncryptedFile(file, AlgorithmEnum)
-                    W("{0} ({1})", True, ColTypes.Neutral, encrypted, AlgorithmEnum)
-                    W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                    Write("{0} ({1})", True, ColTypes.Neutral, encrypted, AlgorithmEnum)
+                    Write(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                     FileBuilder.AppendLine($"- {file}: {encrypted} ({AlgorithmEnum})")
                     spent.Stop()
                 Next
@@ -47,12 +47,12 @@ Class SumFileCommand
                 Dim spent As New Stopwatch
                 spent.Start() 'Time when you're on a breakpoint is counted
                 Dim encrypted As String = GetEncryptedFile(file, AlgorithmEnum)
-                W(encrypted, True, ColTypes.Neutral)
-                W(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
+                Write(encrypted, True, ColTypes.Neutral)
+                Write(DoTranslation("Time spent: {0} milliseconds"), True, ColTypes.Neutral, spent.ElapsedMilliseconds)
                 FileBuilder.AppendLine($"- {file}: {encrypted} ({AlgorithmEnum})")
                 spent.Stop()
             Else
-                W(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
+                Write(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
             End If
             If Not out = "" Then
                 Dim FStream As New StreamWriter(out)
@@ -60,7 +60,7 @@ Class SumFileCommand
                 FStream.Flush()
             End If
         Else
-            W(DoTranslation("{0} is not found."), True, ColTypes.Error, file)
+            Write(DoTranslation("{0} is not found."), True, ColTypes.Error, file)
         End If
     End Sub
 

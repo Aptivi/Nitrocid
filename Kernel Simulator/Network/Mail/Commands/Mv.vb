@@ -25,7 +25,7 @@ Class Mail_MvCommand
         If ListArgs(0).IsNumeric Then
             MailMoveMessage(ListArgs(0), ListArgs(1))
         Else
-            W(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
+            Write(DoTranslation("Message number is not a numeric value."), True, ColTypes.Error)
         End If
     End Sub
 

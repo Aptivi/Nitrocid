@@ -39,16 +39,16 @@ Public Module RemoteProcedure
                     Wdbg(DebugLevel.I, "RPC: Listener started")
                     RPCThread.Start()
                     Wdbg(DebugLevel.I, "RPC: Thread started")
-                    W(DoTranslation("RPC listening on all addresses using port {0}."), True, ColTypes.Neutral, RPCPort)
+                    Write(DoTranslation("RPC listening on all addresses using port {0}."), True, ColTypes.Neutral, RPCPort)
                 Else
                     Throw New ThreadStateException()
                 End If
             Catch ex As ThreadStateException
-                W(DoTranslation("RPC is already running."), True, ColTypes.Error)
+                Write(DoTranslation("RPC is already running."), True, ColTypes.Error)
                 WStkTrc(ex)
             End Try
         Else
-            W(DoTranslation("Not starting RPC because it's disabled."), True, ColTypes.Neutral)
+            Write(DoTranslation("Not starting RPC because it's disabled."), True, ColTypes.Neutral)
         End If
     End Sub
 

@@ -31,24 +31,24 @@ Class Get_Command
                         Dim Credentials As New NetworkCredential
                         If ListArgs.Length > 1 Then 'Username specified
                             Credentials.UserName = ListArgs(1)
-                            W(DoTranslation("Enter password: "), False, ColTypes.Input)
+                            Write(DoTranslation("Enter password: "), False, ColTypes.Input)
                             Credentials.Password = ReadLineNoInput("*")
                             Console.WriteLine()
                         End If
-                        W(DoTranslation("Downloading from {0}..."), True, ColTypes.Neutral, URL)
+                        Write(DoTranslation("Downloading from {0}..."), True, ColTypes.Neutral, URL)
                         If DownloadFile(ListArgs(0), Credentials) Then
-                            W(DoTranslation("Download has completed."), True, ColTypes.Neutral)
+                            Write(DoTranslation("Download has completed."), True, ColTypes.Neutral)
                         End If
                     Else
-                        W(DoTranslation("Specify the address"), True, ColTypes.Error)
+                        Write(DoTranslation("Specify the address"), True, ColTypes.Error)
                     End If
                 Else
-                    W(DoTranslation("Please use ""ftp"" if you are going to download files from the FTP server."), True, ColTypes.Error)
+                    Write(DoTranslation("Please use ""ftp"" if you are going to download files from the FTP server."), True, ColTypes.Error)
                 End If
                 Exit Sub
             Catch ex As Exception
                 DFinish = False
-                W(DoTranslation("Download failed in try {0}: {1}"), True, ColTypes.Error, RetryCount, ex.Message)
+                Write(DoTranslation("Download failed in try {0}: {1}"), True, ColTypes.Error, RetryCount, ex.Message)
                 RetryCount += 1
                 Wdbg(DebugLevel.I, "Try count: {0}", RetryCount)
                 WStkTrc(ex)

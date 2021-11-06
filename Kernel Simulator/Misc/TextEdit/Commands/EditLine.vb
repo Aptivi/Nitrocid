@@ -24,14 +24,14 @@ Class TextEdit_EditLineCommand
         If IsNumeric(ListArgsOnly(0)) Then
             If CInt(ListArgsOnly(0)) <= TextEdit_FileLines.Count Then
                 Windows.Forms.SendKeys.SendWait(TextEdit_FileLines(ListArgsOnly(0) - 1))
-                W(">> ", False, ColTypes.Input)
+                Write(">> ", False, ColTypes.Input)
                 Dim EditedLine As String = Console.ReadLine
                 TextEdit_FileLines(ListArgsOnly(0) - 1) = EditedLine
             Else
-                W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
             End If
         Else
-            W(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error)
+            Write(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error)
             Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(0))
         End If
     End Sub

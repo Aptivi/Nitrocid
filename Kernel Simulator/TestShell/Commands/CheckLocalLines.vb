@@ -28,7 +28,7 @@ Class Test_CheckLocalLinesCommand
         For Each LanguageName As String In Languages.Keys
             LanguageJson = JToken.Parse(My.Resources.ResourceManager.GetString(LanguageName.Replace("-", "_")))
             If LanguageJson.Count <> EnglishJson.Count Then
-                W(DoTranslation("Line mismatch in") + " {0}: {1} <> {2}", True, ColTypes.Warning, LanguageName, LanguageJson.Count, EnglishJson.Count)
+                Write(DoTranslation("Line mismatch in") + " {0}: {1} <> {2}", True, ColTypes.Warning, LanguageName, LanguageJson.Count, EnglishJson.Count)
             End If
         Next
     End Sub

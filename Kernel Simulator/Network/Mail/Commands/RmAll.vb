@@ -22,9 +22,9 @@ Class Mail_RmAllCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If MailRemoveAllBySender(ListArgs(0)) Then
-            W(DoTranslation("All mail made by {0} are removed successfully."), True, ColTypes.Success, ListArgs(0))
+            Write(DoTranslation("All mail made by {0} are removed successfully."), True, ColTypes.Success, ListArgs(0))
         Else
-            W(DoTranslation("Failed to remove all mail made by {0}."), True, ColTypes.Error, ListArgs(0))
+            Write(DoTranslation("Failed to remove all mail made by {0}."), True, ColTypes.Error, ListArgs(0))
         End If
     End Sub
 

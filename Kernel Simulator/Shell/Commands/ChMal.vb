@@ -23,14 +23,14 @@ Class ChMalCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If ListArgs?.Length > 0 Then
             If StringArgs = "" Then
-                W(DoTranslation("Blank MAL After Login."), True, ColTypes.Error)
+                Write(DoTranslation("Blank MAL After Login."), True, ColTypes.Error)
             Else
-                W(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
+                Write(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
                 SetMOTD(StringArgs, MessageType.MAL)
             End If
         Else
             InitializeTextShell(GetKernelPath(KernelPathType.MAL))
-            W(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
+            Write(DoTranslation("Changing MAL..."), True, ColTypes.Neutral)
             ReadMOTD(MessageType.MAL)
         End If
     End Sub

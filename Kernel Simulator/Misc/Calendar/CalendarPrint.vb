@@ -37,9 +37,10 @@ Public Module CalendarPrint
         Dim DateFrom As New Date(Year, Month, 1)
         Dim DateTo As New Date(Year, Month, Date.DaysInMonth(Year, Month))
         Dim CurrentWeek As Integer = 1
+        Dim CalendarTitle As String = CalendarMonths(Month - 1) & " " & Year
 
         'Populate the calendar data
-        WriteWhere(CalendarMonths(Month - 1) & " " & Year, (Console.WindowWidth - (DateTimeFormatInfo.CurrentInfo.MonthNames(Month - 1) & " " & Year).Length) / 2, Console.CursorTop, True, ColTypes.Neutral)
+        WriteWhere(CalendarTitle, CInt((Console.WindowWidth - CalendarTitle.Length) / 2), Console.CursorTop, True, ColTypes.Neutral)
         Console.WriteLine()
         For CurrentDay As Integer = 1 To DateTo.Day
             Dim CurrentDate As New Date(Year, Month, CurrentDay, DateTimeFormatInfo.CurrentInfo.Calendar)

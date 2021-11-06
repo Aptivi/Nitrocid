@@ -380,7 +380,7 @@ Module FivePointFive
             Return ValidFormat
         Catch ex As Exception
             Debug.WriteLine($"Error while converting config! {ex.Message}")
-            W("  - Warning: Failed to completely convert config. Some of the configurations might not be fully migrated.", True, ColTypes.Warning)
+            Write("  - Warning: Failed to completely convert config. Some of the configurations might not be fully migrated.", True, ColTypes.Warning)
             Return False
         End Try
     End Function

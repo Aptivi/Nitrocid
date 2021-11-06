@@ -57,14 +57,14 @@ Public Module HTTPShell
                 If HTTPConnected Then
                     Wdbg(DebugLevel.I, "HTTPShellPromptStyle = {0}", HTTPShellPromptStyle)
                     If HTTPShellPromptStyle = "" Then
-                        W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, HTTPSite) : W("]> ", False, ColTypes.Gray)
+                        Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HTTPSite) : Write("]> ", False, ColTypes.Gray)
                     Else
                         Dim ParsedPromptStyle As String = ProbePlaces(HTTPShellPromptStyle)
                         ParsedPromptStyle.ConvertVTSequences
-                        W(ParsedPromptStyle, False, ColTypes.Gray)
+                        Write(ParsedPromptStyle, False, ColTypes.Gray)
                     End If
                 Else
-                    W("> ", False, ColTypes.Gray)
+                    Write("> ", False, ColTypes.Gray)
                 End If
 
                 'Run garbage collector
@@ -119,7 +119,7 @@ Public Module HTTPShell
             ExecuteHTTPAlias(HTTPCommand)
         ElseIf Not HTTPCommand.StartsWith(" ") Then
             Wdbg(DebugLevel.E, "Command {0} not found.", HTTPCommand)
-            W(DoTranslation("HTTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on HTTP shell."), True, ColTypes.Error, words(0))
+            Write(DoTranslation("HTTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on HTTP shell."), True, ColTypes.Error, words(0))
         End If
     End Sub
 

@@ -24,13 +24,13 @@ Class ShowNotifsCommand
         Dim Count As Integer = 1
         If Not NotifRecents.Count = 0 Then
             For Each Notif As Notification In NotifRecents
-                W($"{Count}: {Notif.Title}" + vbNewLine +
+                Write($"{Count}: {Notif.Title}" + vbNewLine +
                   $"{Count}: {Notif.Desc}" + vbNewLine +
                   $"{Count}: {Notif.Priority}", True, ColTypes.Neutral)
                 Count += 1
             Next
         Else
-            W(DoTranslation("No recent notifications"), True, ColTypes.Neutral)
+            Write(DoTranslation("No recent notifications"), True, ColTypes.Neutral)
         End If
     End Sub
 

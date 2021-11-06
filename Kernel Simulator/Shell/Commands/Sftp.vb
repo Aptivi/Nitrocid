@@ -28,10 +28,10 @@ Class SftpCommand
                 SFTPInitiateShell(True, ListArgs(0))
             End If
         Catch sftpex As Exceptions.SFTPShellException
-            W(sftpex.Message, True, ColTypes.Error)
+            Write(sftpex.Message, True, ColTypes.Error)
         Catch ex As Exception
             WStkTrc(ex)
-            W(DoTranslation("Unknown SFTP shell error:") + " {0}", True, ColTypes.Error, ex.Message)
+            Write(DoTranslation("Unknown SFTP shell error:") + " {0}", True, ColTypes.Error, ex.Message)
         End Try
     End Sub
 

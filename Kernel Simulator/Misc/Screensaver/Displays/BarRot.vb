@@ -51,12 +51,6 @@ Module BarRotDisplay
 
         'Variables
         Dim RandomDriver As New Random()
-        Dim RedColorNumFrom As Integer = RandomDriver.Next(BarRotMinimumRedColorLevelStart, BarRotMaximumRedColorLevelStart)
-        Dim GreenColorNumFrom As Integer = RandomDriver.Next(BarRotMinimumGreenColorLevelStart, BarRotMaximumGreenColorLevelStart)
-        Dim BlueColorNumFrom As Integer = RandomDriver.Next(BarRotMinimumBlueColorLevelStart, BarRotMaximumBlueColorLevelStart)
-        Dim RedColorNumTo As Integer = RandomDriver.Next(BarRotMinimumRedColorLevelEnd, BarRotMaximumRedColorLevelEnd)
-        Dim GreenColorNumTo As Integer = RandomDriver.Next(BarRotMinimumGreenColorLevelEnd, BarRotMaximumGreenColorLevelEnd)
-        Dim BlueColorNumTo As Integer = RandomDriver.Next(BarRotMinimumBlueColorLevelEnd, BarRotMaximumBlueColorLevelEnd)
         Dim CurrentWindowWidth As Integer = Console.WindowWidth
         Dim CurrentWindowHeight As Integer = Console.WindowHeight
         Dim ResizeSyncing As Boolean
@@ -76,12 +70,12 @@ Module BarRotDisplay
                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
 
                 'Select a color range for the ramp
-                RedColorNumFrom = RandomDriver.Next(BarRotMinimumRedColorLevelStart, BarRotMaximumRedColorLevelStart)
-                GreenColorNumFrom = RandomDriver.Next(BarRotMinimumGreenColorLevelStart, BarRotMaximumGreenColorLevelStart)
-                BlueColorNumFrom = RandomDriver.Next(BarRotMinimumBlueColorLevelStart, BarRotMaximumBlueColorLevelStart)
-                RedColorNumTo = RandomDriver.Next(BarRotMinimumRedColorLevelEnd, BarRotMaximumRedColorLevelEnd)
-                GreenColorNumTo = RandomDriver.Next(BarRotMinimumGreenColorLevelEnd, BarRotMaximumGreenColorLevelEnd)
-                BlueColorNumTo = RandomDriver.Next(BarRotMinimumBlueColorLevelEnd, BarRotMaximumBlueColorLevelEnd)
+                Dim RedColorNumFrom As Integer = RandomDriver.Next(BarRotMinimumRedColorLevelStart, BarRotMaximumRedColorLevelStart)
+                Dim GreenColorNumFrom As Integer = RandomDriver.Next(BarRotMinimumGreenColorLevelStart, BarRotMaximumGreenColorLevelStart)
+                Dim BlueColorNumFrom As Integer = RandomDriver.Next(BarRotMinimumBlueColorLevelStart, BarRotMaximumBlueColorLevelStart)
+                Dim RedColorNumTo As Integer = RandomDriver.Next(BarRotMinimumRedColorLevelEnd, BarRotMaximumRedColorLevelEnd)
+                Dim GreenColorNumTo As Integer = RandomDriver.Next(BarRotMinimumGreenColorLevelEnd, BarRotMaximumGreenColorLevelEnd)
+                Dim BlueColorNumTo As Integer = RandomDriver.Next(BarRotMinimumBlueColorLevelEnd, BarRotMaximumBlueColorLevelEnd)
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color from (R;G;B: {0};{1};{2}) to (R;G;B: {3};{4};{5})", RedColorNumFrom, GreenColorNumFrom, BlueColorNumFrom, RedColorNumTo, GreenColorNumTo, BlueColorNumTo)
 
                 'Set start and end widths for the ramp frame
@@ -105,18 +99,18 @@ Module BarRotDisplay
 
                 'Draw the frame
                 If Not ResizeSyncing Then
-                    WriteWhereC(BarRotUpperLeftCornerChar, RampFrameStartWidth, RampCenterPosition - 2, False, If(BarRotUseBorderColors, New Color(BarRotUpperLeftCornerColor), New Color(ConsoleColors.Gray)))
-                    WriteC(StrDup(RampFrameSpaces, BarRotUpperFrameChar), False, If(BarRotUseBorderColors, New Color(BarRotUpperFrameColor), New Color(ConsoleColors.Gray)))
-                    WriteC(BarRotUpperRightCornerChar, False, If(BarRotUseBorderColors, New Color(BarRotUpperRightCornerColor), New Color(ConsoleColors.Gray)))
-                    WriteWhereC(BarRotLeftFrameChar, RampFrameStartWidth, RampCenterPosition - 1, False, If(BarRotUseBorderColors, New Color(BarRotLeftFrameColor), New Color(ConsoleColors.Gray)))
-                    WriteWhereC(BarRotLeftFrameChar, RampFrameStartWidth, RampCenterPosition, False, If(BarRotUseBorderColors, New Color(BarRotLeftFrameColor), New Color(ConsoleColors.Gray)))
-                    WriteWhereC(BarRotLeftFrameChar, RampFrameStartWidth, RampCenterPosition + 1, False, If(BarRotUseBorderColors, New Color(BarRotLeftFrameColor), New Color(ConsoleColors.Gray)))
-                    WriteWhereC(BarRotRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition - 1, False, If(BarRotUseBorderColors, New Color(BarRotLeftFrameColor), New Color(ConsoleColors.Gray)))
-                    WriteWhereC(BarRotRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition, False, If(BarRotUseBorderColors, New Color(BarRotLeftFrameColor), New Color(ConsoleColors.Gray)))
-                    WriteWhereC(BarRotRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition + 1, False, If(BarRotUseBorderColors, New Color(BarRotLeftFrameColor), New Color(ConsoleColors.Gray)))
-                    WriteWhereC(BarRotLowerLeftCornerChar, RampFrameStartWidth, RampCenterPosition + 2, False, If(BarRotUseBorderColors, New Color(BarRotLowerLeftCornerColor), New Color(ConsoleColors.Gray)))
-                    WriteC(StrDup(RampFrameSpaces, BarRotLowerFrameChar), False, If(BarRotUseBorderColors, New Color(BarRotLowerFrameColor), New Color(ConsoleColors.Gray)))
-                    WriteC(BarRotLowerRightCornerChar, False, If(BarRotUseBorderColors, New Color(BarRotLowerRightCornerColor), New Color(ConsoleColors.Gray)))
+                    WriteWhere(BarRotUpperLeftCornerChar, RampFrameStartWidth, RampCenterPosition - 2, False, If(BarRotUseBorderColors, New Color(BarRotUpperLeftCornerColor), New Color(ConsoleColors.Gray)))
+                    Write(StrDup(RampFrameSpaces, BarRotUpperFrameChar), False, If(BarRotUseBorderColors, New Color(BarRotUpperFrameColor), New Color(ConsoleColors.Gray)))
+                    Write(BarRotUpperRightCornerChar, False, If(BarRotUseBorderColors, New Color(BarRotUpperRightCornerColor), New Color(ConsoleColors.Gray)))
+                    WriteWhere(BarRotLeftFrameChar, RampFrameStartWidth, RampCenterPosition - 1, False, If(BarRotUseBorderColors, New Color(BarRotLeftFrameColor), New Color(ConsoleColors.Gray)))
+                    WriteWhere(BarRotLeftFrameChar, RampFrameStartWidth, RampCenterPosition, False, If(BarRotUseBorderColors, New Color(BarRotLeftFrameColor), New Color(ConsoleColors.Gray)))
+                    WriteWhere(BarRotLeftFrameChar, RampFrameStartWidth, RampCenterPosition + 1, False, If(BarRotUseBorderColors, New Color(BarRotLeftFrameColor), New Color(ConsoleColors.Gray)))
+                    WriteWhere(BarRotRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition - 1, False, If(BarRotUseBorderColors, New Color(BarRotLeftFrameColor), New Color(ConsoleColors.Gray)))
+                    WriteWhere(BarRotRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition, False, If(BarRotUseBorderColors, New Color(BarRotLeftFrameColor), New Color(ConsoleColors.Gray)))
+                    WriteWhere(BarRotRightFrameChar, RampFrameEndWidth + 1, RampCenterPosition + 1, False, If(BarRotUseBorderColors, New Color(BarRotLeftFrameColor), New Color(ConsoleColors.Gray)))
+                    WriteWhere(BarRotLowerLeftCornerChar, RampFrameStartWidth, RampCenterPosition + 2, False, If(BarRotUseBorderColors, New Color(BarRotLowerLeftCornerColor), New Color(ConsoleColors.Gray)))
+                    Write(StrDup(RampFrameSpaces, BarRotLowerFrameChar), False, If(BarRotUseBorderColors, New Color(BarRotLowerFrameColor), New Color(ConsoleColors.Gray)))
+                    Write(BarRotLowerRightCornerChar, False, If(BarRotUseBorderColors, New Color(BarRotLowerRightCornerColor), New Color(ConsoleColors.Gray)))
                 End If
 
                 'Set the current colors

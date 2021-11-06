@@ -65,13 +65,13 @@ Module Converter
             Debug.WriteLine($"FolderExists = {FolderExists(GetHomeDirectory() + "/KSBackup")}")
             If Not FolderExists(GetHomeDirectory() + "/KSBackup") Then
                 'Just make it!
-                W("  - Backup directory not found. Creating directory...", True, ColTypes.Progress)
+                Write("  - Backup directory not found. Creating directory...", True, ColTypes.Progress)
                 Debug.WriteLine("Creating directory...")
                 Directory.CreateDirectory(GetHomeDirectory() + "/KSBackup")
             Else
                 'Directory found. Skip the creation.
                 Debug.WriteLine("Already found.")
-                W("  - Warning: backup directory is already found.", True, ColTypes.Warning)
+                Write("  - Warning: backup directory is already found.", True, ColTypes.Warning)
             End If
             Console.WriteLine()
 
@@ -84,15 +84,15 @@ Module Converter
                 If FileExists(ListOfOldPaths(ConfigEntry)) And Not FileExists(ListOfBackups(ConfigEntry)) Then
                     'Move the old config file to backup
                     Debug.WriteLine($"Moving {ConfigEntry} from {ListOfOldPaths(ConfigEntry)} to {ListOfBackups(ConfigEntry)}...")
-                    W("  - {0}: {1} -> {2}", True, ColTypes.Neutral, ConfigEntry, ListOfOldPaths(ConfigEntry), ListOfBackups(ConfigEntry))
+                    Write("  - {0}: {1} -> {2}", True, ColTypes.Neutral, ConfigEntry, ListOfOldPaths(ConfigEntry), ListOfBackups(ConfigEntry))
                     File.Move(ListOfOldPaths(ConfigEntry), ListOfBackups(ConfigEntry))
                 ElseIf FileExists(ListOfBackups(ConfigEntry)) Then
                     Debug.WriteLine("We already have backup!")
-                    W("  - Warning: {0} already exists", True, ColTypes.Warning, ListOfBackups(ConfigEntry))
+                    Write("  - Warning: {0} already exists", True, ColTypes.Warning, ListOfBackups(ConfigEntry))
                 Else
                     'File not found. Skip it.
                     Debug.WriteLine("We don't have config.")
-                    W("  - Warning: {0} not found in home directory.", True, ColTypes.Warning, ListOfOldPaths(ConfigEntry))
+                    Write("  - Warning: {0} not found in home directory.", True, ColTypes.Warning, ListOfOldPaths(ConfigEntry))
                 End If
             Next
             Console.WriteLine()
@@ -102,24 +102,24 @@ Module Converter
             Debug.WriteLine($"Blocked device backup exists = {FileExists(ListOfBackups("BlockedDevices"))}")
             If FileExists(ListOfBackups("BlockedDevices")) Then
                 'Read blocked devices from old file
-                W("  - Reading blocked devices from blocked_devices.csv...", True, ColTypes.Progress)
+                Write("  - Reading blocked devices from blocked_devices.csv...", True, ColTypes.Progress)
                 Debug.WriteLine($"Calling File.ReadAllLines on {ListOfBackups("BlockedDevices")}...")
                 Dim BlockedDevices As List(Of String) = File.ReadAllLines(ListOfBackups("BlockedDevices")).ToList
                 Debug.WriteLine($"We have {BlockedDevices.Count} devices.")
-                W("  - {0} devices found.", True, ColTypes.Neutral, BlockedDevices.Count)
+                Write("  - {0} devices found.", True, ColTypes.Neutral, BlockedDevices.Count)
 
                 'Add blocked devices to new format
                 Debug.WriteLine($"Iterating {BlockedDevices.Count} blocked devices...")
                 For Each BlockedDevice As String In BlockedDevices
                     Debug.WriteLine($"Adding blocked device {BlockedDevice} to the new config format...")
-                    W("  - Adding {0} to DebugDeviceNames.json...", True, ColTypes.Progress, BlockedDevice)
+                    Write("  - Adding {0} to DebugDeviceNames.json...", True, ColTypes.Progress, BlockedDevice)
                     AddDeviceToJson(BlockedDevice, False)
                     SetDeviceProperty(BlockedDevice, DeviceProperty.Blocked, True)
                 Next
             Else
                 'File not found. Skip stage.
                 Debug.WriteLine("We don't have file.")
-                W("  - Warning: blocked_devices.csv not found in home directory.", True, ColTypes.Warning)
+                Write("  - Warning: blocked_devices.csv not found in home directory.", True, ColTypes.Warning)
             End If
             Console.WriteLine()
 
@@ -128,11 +128,11 @@ Module Converter
             Debug.WriteLine($"Speed dial addresses exists = {FileExists(ListOfBackups("FTPSpeedDial"))}")
             If FileExists(ListOfBackups("FTPSpeedDial")) Then
                 'Read FTP speed dial addresses from old file
-                W("  - Reading FTP speed dial addresses from ftp_speeddial.csv...", True, ColTypes.Progress)
+                Write("  - Reading FTP speed dial addresses from ftp_speeddial.csv...", True, ColTypes.Progress)
                 Debug.WriteLine($"Calling File.ReadAllLines on {ListOfBackups("FTPSpeedDial")}...")
                 Dim SpeedDialLines As String() = File.ReadAllLines(ListOfBackups("FTPSpeedDial"))
                 Debug.WriteLine($"We have {SpeedDialLines.Length} addresses.")
-                W("  - {0} addresses found.", True, ColTypes.Neutral, SpeedDialLines.Length)
+                Write("  - {0} addresses found.", True, ColTypes.Neutral, SpeedDialLines.Length)
 
                 'Add addresses to new format
                 For Each SpeedDialLine As String In SpeedDialLines
@@ -149,13 +149,13 @@ Module Converter
                     Debug.WriteLine($"Encryption = {Encryption}")
 
                     'Add the entry!
-                    W("  - Adding {0} to FTP_SpeedDial.json...", True, ColTypes.Progress, Address)
+                    Write("  - Adding {0} to FTP_SpeedDial.json...", True, ColTypes.Progress, Address)
                     AddEntryToSpeedDial(Address, Port, Username, SpeedDialType.FTP, Encryption)
                 Next
             Else
                 'File not found. Skip stage.
                 Debug.WriteLine("We don't have file.")
-                W("  - Warning: ftp_speeddial.csv not found in home directory.", True, ColTypes.Warning)
+                Write("  - Warning: ftp_speeddial.csv not found in home directory.", True, ColTypes.Warning)
             End If
             Console.WriteLine()
 
@@ -164,11 +164,11 @@ Module Converter
             Debug.WriteLine($"Users file exists = {FileExists(ListOfBackups("Users"))}")
             If FileExists(ListOfBackups("Users")) Then
                 'Read all users from old file
-                W("  - Reading users from users.csv...", True, ColTypes.Progress)
+                Write("  - Reading users from users.csv...", True, ColTypes.Progress)
                 Debug.WriteLine($"Calling File.ReadAllLines on {ListOfBackups("Users")}...")
                 Dim UsersLines As String() = File.ReadAllLines(ListOfBackups("Users"))
                 Debug.WriteLine($"We have {UsersLines.Length} addresses.")
-                W("  - {0} users found.", True, ColTypes.Neutral, UsersLines.Length)
+                Write("  - {0} users found.", True, ColTypes.Neutral, UsersLines.Length)
 
                 'Add users to new format
                 For Each UsersLine As String In UsersLines
@@ -188,7 +188,7 @@ Module Converter
                     Debug.WriteLine($"Anonymous = {Anonymous}")
 
                     'Add the entry!
-                    W("  - Adding {0} to Users.json...", True, ColTypes.Progress, Username)
+                    Write("  - Adding {0} to Users.json...", True, ColTypes.Progress, Username)
                     InitializeUser(Username, Password, False)
                     If Administrator = "True" Then
                         Debug.WriteLine($"Adding the Administrator permission to {Username}...")
@@ -206,7 +206,7 @@ Module Converter
             Else
                 'File not found. Skip stage.
                 Debug.WriteLine("We don't have file.")
-                W("  - Warning: users.csv not found in home directory.", True, ColTypes.Warning)
+                Write("  - Warning: users.csv not found in home directory.", True, ColTypes.Warning)
             End If
             Console.WriteLine()
 
@@ -215,11 +215,11 @@ Module Converter
             Debug.WriteLine($"Aliases file exists = {FileExists(ListOfBackups("Aliases"))}")
             If FileExists(ListOfBackups("Aliases")) Then
                 'Read all aliases from old file
-                W("  - Reading users from aliases.csv...", True, ColTypes.Progress)
+                Write("  - Reading users from aliases.csv...", True, ColTypes.Progress)
                 Debug.WriteLine($"Calling File.ReadAllLines on {ListOfBackups("Aliases")}...")
                 Dim AliasesLines As String() = File.ReadAllLines(ListOfBackups("Aliases"))
                 Debug.WriteLine($"We have {AliasesLines.Length} aliases.")
-                W("  - {0} aliases found.", True, ColTypes.Neutral, AliasesLines.Length)
+                Write("  - {0} aliases found.", True, ColTypes.Neutral, AliasesLines.Length)
 
                 'Add aliases to new format
                 For Each AliasLine As String In AliasesLines
@@ -234,7 +234,7 @@ Module Converter
                     Debug.WriteLine($"AliasType = {AliasType}")
 
                     'Add the entry!
-                    W("  - Adding {0} to Aliases.json...", True, ColTypes.Progress, AliasCommand)
+                    Write("  - Adding {0} to Aliases.json...", True, ColTypes.Progress, AliasCommand)
                     Select Case AliasType
                         Case "Shell"
                             If Not Aliases.ContainsKey(AliasCommand) Then
@@ -262,18 +262,18 @@ Module Converter
                                 MailShellAliases.Add(AliasCommand, ActualCommand)
                             End If
                         Case Else
-                            W("  - Invalid type {0}", True, ColTypes.Error, AliasType)
+                            Write("  - Invalid type {0}", True, ColTypes.Error, AliasType)
                     End Select
                 Next
 
                 'Save the changes
                 Debug.WriteLine("Saving...")
-                W("  - Saving aliases to Aliases.json...", True, ColTypes.Progress)
+                Write("  - Saving aliases to Aliases.json...", True, ColTypes.Progress)
                 SaveAliases()
             Else
                 'File not found. Skip stage.
                 Debug.WriteLine("We don't have file.")
-                W("  - Warning: aliases.csv not found in home directory.", True, ColTypes.Warning)
+                Write("  - Warning: aliases.csv not found in home directory.", True, ColTypes.Warning)
             End If
             Console.WriteLine()
 
@@ -282,34 +282,34 @@ Module Converter
             Debug.WriteLine($"Config file exists = {FileExists(ListOfBackups("Configuration"))}")
             If FileExists(ListOfBackups("Configuration")) Then
                 'Read all config from old file
-                W("  - Reading config from kernelConfig.ini...", True, ColTypes.Progress)
+                Write("  - Reading config from kernelConfig.ini...", True, ColTypes.Progress)
                 Debug.WriteLine("Reading configuration...")
                 If Not ReadPreFivePointFiveConfig(ListOfBackups("Configuration")) Then
                     If Not ReadFivePointFiveConfig(ListOfBackups("Configuration")) Then
                         Debug.WriteLine("Incompatible format. Both ReadPreFivePointFiveConfig and ReadFivePointFiveConfig returned False. Regenerating...")
-                        W("  - Warning: kernelConfig.ini has incompatible format. Generating new config anyways...", True, ColTypes.Warning)
+                        Write("  - Warning: kernelConfig.ini has incompatible format. Generating new config anyways...", True, ColTypes.Warning)
                     End If
                 End If
 
                 'Save the changes
                 Debug.WriteLine("Saving...")
-                W("  - Saving configuration to KernelConfig.json...", True, ColTypes.Progress)
+                Write("  - Saving configuration to KernelConfig.json...", True, ColTypes.Progress)
                 CreateConfig()
             Else
                 'File not found. Skip stage.
                 Debug.WriteLine("We don't have file.")
-                W("  - Warning: kernelConfig.ini not found in home directory.", True, ColTypes.Warning)
+                Write("  - Warning: kernelConfig.ini not found in home directory.", True, ColTypes.Warning)
             End If
             Console.WriteLine()
 
             'Print this message:
-            W("- Successfully converted all settings to new format! Enjoy!", True, ColTypes.Success)
-            W("- Press any key to exit.", True, ColTypes.Success)
+            Write("- Successfully converted all settings to new format! Enjoy!", True, ColTypes.Success)
+            Write("- Press any key to exit.", True, ColTypes.Success)
             Console.ReadKey(True)
         Catch ex As Exception
-            W("- Error converting settings: {0}", True, ColTypes.Error, ex.Message)
-            W("- Press any key to exit. Stack trace below:", True, ColTypes.Error)
-            W(ex.StackTrace, True, ColTypes.Neutral)
+            Write("- Error converting settings: {0}", True, ColTypes.Error, ex.Message)
+            Write("- Press any key to exit. Stack trace below:", True, ColTypes.Error)
+            Write(ex.StackTrace, True, ColTypes.Neutral)
             Console.ReadKey(True)
         End Try
     End Sub

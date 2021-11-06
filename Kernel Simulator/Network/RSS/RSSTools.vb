@@ -196,13 +196,13 @@ Public Module RSSTools
             Try
                 Dim Feed As New RSSFeed(RssHeadlineUrl, RSSFeedType.Infer)
                 If Not Feed.FeedArticles.Count = 0 Then
-                    W(DoTranslation("Latest news:") + " ", False, ColTypes.ListEntry)
-                    W(Feed.FeedArticles(0).ArticleTitle, True, ColTypes.ListValue)
+                    Write(DoTranslation("Latest news:") + " ", False, ColTypes.ListEntry)
+                    Write(Feed.FeedArticles(0).ArticleTitle, True, ColTypes.ListValue)
                 End If
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to get latest news: {0}", ex.Message)
                 WStkTrc(ex)
-                W(DoTranslation("Failed to get the latest news."), True, ColTypes.Error)
+                Write(DoTranslation("Failed to get the latest news."), True, ColTypes.Error)
             End Try
         End If
     End Sub

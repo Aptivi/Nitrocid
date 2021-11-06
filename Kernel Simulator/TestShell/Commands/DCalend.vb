@@ -24,16 +24,16 @@ Class Test_DCalendCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If ListArgs(0) = "Gregorian" Then
-            W(RenderDate(New CultureInfo("en-US")), True, ColTypes.Neutral)
+            Write(RenderDate(New CultureInfo("en-US")), True, ColTypes.Neutral)
         ElseIf ListArgs(0) = "Hijri" Then
             Dim Cult As New CultureInfo("ar") : Cult.DateTimeFormat.Calendar = New HijriCalendar
-            W(RenderDate(Cult), True, ColTypes.Neutral)
+            Write(RenderDate(Cult), True, ColTypes.Neutral)
         ElseIf ListArgs(0) = "Persian" Then
-            W(RenderDate(New CultureInfo("fa")), True, ColTypes.Neutral)
+            Write(RenderDate(New CultureInfo("fa")), True, ColTypes.Neutral)
         ElseIf ListArgs(0) = "Saudi-Hijri" Then
-            W(RenderDate(New CultureInfo("ar-SA")), True, ColTypes.Neutral)
+            Write(RenderDate(New CultureInfo("ar-SA")), True, ColTypes.Neutral)
         ElseIf ListArgs(0) = "Thai-Buddhist" Then
-            W(RenderDate(New CultureInfo("th-TH")), True, ColTypes.Neutral)
+            Write(RenderDate(New CultureInfo("th-TH")), True, ColTypes.Neutral)
         End If
     End Sub
 

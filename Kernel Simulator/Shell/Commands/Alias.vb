@@ -25,13 +25,13 @@ Class AliasCommand
             If ListArgs(0) = "add" And [Enum].IsDefined(GetType(ShellCommandType), ListArgs(1)) Then
                 ManageAlias(ListArgs(0), Val([Enum].Parse(GetType(ShellCommandType), ListArgs(1))), ListArgs(2), ListArgs(3))
             Else
-                W(DoTranslation("Invalid type {0}."), True, ColTypes.Error, ListArgs(1))
+                Write(DoTranslation("Invalid type {0}."), True, ColTypes.Error, ListArgs(1))
             End If
         ElseIf ListArgs?.Length = 3 Then
             If ListArgs(0) = "rem" And [Enum].IsDefined(GetType(ShellCommandType), ListArgs(1)) Then
                 ManageAlias(ListArgs(0), Val([Enum].Parse(GetType(ShellCommandType), ListArgs(1))), ListArgs(2))
             Else
-                W(DoTranslation("Invalid type {0}."), True, ColTypes.Error, ListArgs(1))
+                Write(DoTranslation("Invalid type {0}."), True, ColTypes.Error, ListArgs(1))
             End If
         End If
     End Sub

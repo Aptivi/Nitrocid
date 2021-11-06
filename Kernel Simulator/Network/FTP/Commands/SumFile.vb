@@ -27,9 +27,9 @@ Class FTP_SumFileCommand
         'Check to see if hash is found
         If [Enum].IsDefined(GetType(FtpHashAlgorithm), Hash) Then
             Dim HashResult As FtpHash = FTPGetHash(RemoteFile, [Enum].Parse(GetType(FtpHashAlgorithm), Hash))
-            W(HashResult.Value, True, ColTypes.Neutral)
+            Write(HashResult.Value, True, ColTypes.Neutral)
         Else
-            W(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
+            Write(DoTranslation("Invalid encryption algorithm."), True, ColTypes.Error)
         End If
     End Sub
 

@@ -23,9 +23,9 @@ Class Test_TestListWriterIntCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim NormalIntegerList As New List(Of Integer) From {1, 2, 3}
         Dim ArrayIntegerList As New List(Of Integer()) From {{{1, 2, 3}}, {{1, 2, 3}}, {{1, 2, 3}}}
-        W(DoTranslation("Normal integer list:"), True, ColTypes.Neutral)
+        Write(DoTranslation("Normal integer list:"), True, ColTypes.Neutral)
         WriteList(NormalIntegerList)
-        W(DoTranslation("Array integer list:"), True, ColTypes.Neutral)
+        Write(DoTranslation("Array integer list:"), True, ColTypes.Neutral)
         WriteList(ArrayIntegerList)
     End Sub
 

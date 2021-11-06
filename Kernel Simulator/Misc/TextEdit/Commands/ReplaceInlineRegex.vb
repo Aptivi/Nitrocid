@@ -27,12 +27,12 @@ Class TextEdit_ReplaceInlineRegexCommand
             If ListArgs(2).IsNumeric Then
                 If CInt(ListArgs(2)) <= TextEdit_FileLines.Count Then
                     TextEdit_ReplaceRegex(ListArgs(0), ListArgs(1), ListArgs(2))
-                    W(DoTranslation("String replaced."), True, ColTypes.Success)
+                    Write(DoTranslation("String replaced."), True, ColTypes.Success)
                 Else
-                    W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                    Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                 End If
             Else
-                W(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, ListArgs(2))
+                Write(DoTranslation("Specified line number {0} is not a valid number."), True, ColTypes.Error, ListArgs(2))
                 Wdbg(DebugLevel.E, "{0} is not a numeric value.", ListArgs(2))
             End If
         ElseIf ListArgs?.Count > 3 Then
@@ -43,10 +43,10 @@ Class TextEdit_ReplaceInlineRegexCommand
                     LineNumberStart.SwapIfSourceLarger(LineNumberEnd)
                     For LineNumber = LineNumberStart To LineNumberEnd
                         TextEdit_ReplaceRegex(ListArgs(0), ListArgs(1), LineNumber)
-                        W(DoTranslation("String replaced in line {0}."), True, ColTypes.Success, LineNumber)
+                        Write(DoTranslation("String replaced in line {0}."), True, ColTypes.Success, LineNumber)
                     Next
                 Else
-                    W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                    Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                 End If
             End If
         End If

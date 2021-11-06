@@ -77,29 +77,29 @@ Public Module UESHCommands
             'Ask a question
             Select Case OutputType
                 Case ChoiceOutputType.OneLine
-                    W(Question, False, ColTypes.Question)
-                    W(" <{0}> ", False, ColTypes.Input, AnswersStr)
+                    Write(Question, False, ColTypes.Question)
+                    Write(" <{0}> ", False, ColTypes.Input, AnswersStr)
                 Case ChoiceOutputType.TwoLines
-                    W(Question, True, ColTypes.Question)
-                    W("<{0}> ", False, ColTypes.Input, AnswersStr)
+                    Write(Question, True, ColTypes.Question)
+                    Write("<{0}> ", False, ColTypes.Input, AnswersStr)
                 Case ChoiceOutputType.Modern
-                    W(Question + vbNewLine, True, ColTypes.Question)
+                    Write(Question + vbNewLine, True, ColTypes.Question)
                     For AnswerIndex As Integer = 0 To answers.Length - 1
                         Dim AnswerInstance As String = answers(AnswerIndex)
                         Dim AnswerTitle As String = AnswersTitles(AnswerIndex)
-                        W($" {AnswerInstance}) {AnswerTitle}", True, ColTypes.Option)
+                        Write($" {AnswerInstance}) {AnswerTitle}", True, ColTypes.Option)
                     Next
-                    W(vbNewLine + ">> ", False, ColTypes.Input)
+                    Write(vbNewLine + ">> ", False, ColTypes.Input)
                 Case ChoiceOutputType.Table
                     Dim ChoiceHeader As String() = {DoTranslation("Possible answers"), DoTranslation("Answer description")}
                     Dim ChoiceData(answers.Length - 1, 1) As String
-                    W(Question, True, ColTypes.Question)
+                    Write(Question, True, ColTypes.Question)
                     For AnswerIndex As Integer = 0 To answers.Length - 1
                         ChoiceData(AnswerIndex, 0) = answers(AnswerIndex)
                         ChoiceData(AnswerIndex, 1) = AnswersTitles(AnswerIndex)
                     Next
                     WriteTable(ChoiceHeader, ChoiceData, 2)
-                    W(vbNewLine + ">> ", False, ColTypes.Input)
+                    Write(vbNewLine + ">> ", False, ColTypes.Input)
             End Select
 
             'Wait for an answer
@@ -150,11 +150,11 @@ Public Module UESHCommands
             End If
 
             'Ask a question
-            W(Question + vbNewLine, True, ColTypes.Question)
+            Write(Question + vbNewLine, True, ColTypes.Question)
             For AnswerIndex As Integer = 0 To answers.Length - 1
                 Dim AnswerInstance As String = answers(AnswerIndex)
                 Dim AnswerTitle As String = AnswersTitles(AnswerIndex)
-                W($" {AnswerInstance}) {AnswerTitle}", True, If(AnswerIndex + 1 = HighlightedAnswer, ColTypes.SelectedOption, ColTypes.Option))
+                Write($" {AnswerInstance}) {AnswerTitle}", True, If(AnswerIndex + 1 = HighlightedAnswer, ColTypes.SelectedOption, ColTypes.Option))
             Next
 
             'Wait for an answer
@@ -196,7 +196,7 @@ Public Module UESHCommands
             Wdbg(DebugLevel.I, "Script var: {0} ({1}), Question: {2}", ScriptVariable, ShellVariables.ContainsKey(ScriptVariable), Question)
 
             'Ask a question
-            W(Question, False, ColTypes.Question)
+            Write(Question, False, ColTypes.Question)
             SetConsoleColor(New Color(InputColor))
 
             'Wait for an answer

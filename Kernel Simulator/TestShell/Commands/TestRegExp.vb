@@ -28,7 +28,7 @@ Class Test_TestRegExpCommand
         Dim Matches As MatchCollection = Reg.Matches(ListArgs(1))
         Dim MatchNum As Integer = 1
         For Each Mat As Match In Matches
-            W(DoTranslation("Match {0} ({1}): {2}"), True, ColTypes.Neutral, MatchNum, Exp, Mat)
+            Write(DoTranslation("Match {0} ({1}): {2}"), True, ColTypes.Neutral, MatchNum, Exp, Mat)
             MatchNum += 1
         Next
     End Sub

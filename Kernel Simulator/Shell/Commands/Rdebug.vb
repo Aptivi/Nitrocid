@@ -28,7 +28,7 @@ Class RdebugCommand
                 StartRDebugThread()
             End If
         Else
-            W(DoTranslation("Debugging not enabled."), True, ColTypes.Error)
+            Write(DoTranslation("Debugging not enabled."), True, ColTypes.Error)
         End If
     End Sub
 

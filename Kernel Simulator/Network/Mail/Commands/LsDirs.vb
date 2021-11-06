@@ -21,7 +21,7 @@ Class Mail_LsDirsCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        W(MailListDirectories, False, ColTypes.Neutral)
+        Write(MailListDirectories, False, ColTypes.Neutral)
     End Sub
 
 End Class

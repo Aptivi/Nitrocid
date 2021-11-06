@@ -27,13 +27,13 @@ Class CmdInjectArgument
                 CommandFlag = True
             Next
         Else
-            W(DoTranslation("Available commands: {0}"), True, ColTypes.Neutral, String.Join(", ", Commands.Keys))
-            W(">> ", False, ColTypes.Input)
+            Write(DoTranslation("Available commands: {0}"), True, ColTypes.Neutral, String.Join(", ", Commands.Keys))
+            Write(">> ", False, ColTypes.Input)
             InjectedCommands.AddRange(Console.ReadLine().Split({" : "}, StringSplitOptions.RemoveEmptyEntries))
             If String.Join(", ", InjectedCommands) <> "q" Then
                 CommandFlag = True
             Else
-                W(DoTranslation("Command injection has been cancelled."), True, ColTypes.Neutral)
+                Write(DoTranslation("Command injection has been cancelled."), True, ColTypes.Neutral)
             End If
         End If
     End Sub

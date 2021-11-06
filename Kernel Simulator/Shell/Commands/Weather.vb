@@ -28,8 +28,8 @@ Class WeatherCommand
             WriteList(Cities)
         Else
             Dim APIKey As String
-            W(DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys."), True, ColTypes.Neutral)
-            W(DoTranslation("Enter your API key:") + " ", False, ColTypes.Input)
+            Write(DoTranslation("You can get your own API key at https://home.openweathermap.org/api_keys."), True, ColTypes.Neutral)
+            Write(DoTranslation("Enter your API key:") + " ", False, ColTypes.Input)
             APIKey = ReadLineNoInput("*")
             Console.WriteLine()
             PrintWeatherInfo(ListArgsOnly(0), APIKey)
@@ -38,7 +38,7 @@ Class WeatherCommand
 
     Public Sub HelpHelper()
         Dim UsageLength As Integer = DoTranslation("Usage:").Length
-        W(" ".Repeat(UsageLength) + " " + DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.") + " " + DoTranslation("Or, pass ""listcities"" to this command."), True, ColTypes.Neutral)
+        Write(" ".Repeat(UsageLength) + " " + DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.") + " " + DoTranslation("Or, pass ""listcities"" to this command."), True, ColTypes.Neutral)
     End Sub
 
 End Class

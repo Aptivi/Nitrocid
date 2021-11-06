@@ -55,9 +55,9 @@ Begin:
                 Do While String.IsNullOrWhiteSpace(RSSFeedLink)
                     Try
                         If Not String.IsNullOrWhiteSpace(RSSFeedUrlPromptStyle) Then
-                            W(ProbePlaces(RSSFeedUrlPromptStyle), False, ColTypes.Input)
+                            Write(ProbePlaces(RSSFeedUrlPromptStyle), False, ColTypes.Input)
                         Else
-                            W(DoTranslation("Enter an RSS feed URL:") + " ", False, ColTypes.Input)
+                            Write(DoTranslation("Enter an RSS feed URL:") + " ", False, ColTypes.Input)
                         End If
                         RSSFeedLink = Console.ReadLine
                         RSSFeedInstance = New RSSFeed(RSSFeedLink, RSSFeedType.Infer)
@@ -66,7 +66,7 @@ Begin:
                     Catch ex As Exception
                         Wdbg(DebugLevel.E, "Failed to parse RSS feed URL {0}: {1}", FeedUrl, ex.Message)
                         WStkTrc(ex)
-                        W(DoTranslation("Failed to parse feed URL:") + " {0}", True, ColTypes.Error, ex.Message)
+                        Write(DoTranslation("Failed to parse feed URL:") + " {0}", True, ColTypes.Error, ex.Message)
                         RSSFeedLink = ""
                     End Try
                 Loop
@@ -81,7 +81,7 @@ Begin:
                 Catch ex As Exception
                     Wdbg(DebugLevel.E, "Failed to parse RSS feed URL {0}: {1}", RSSFeedLink, ex.Message)
                     WStkTrc(ex)
-                    W(DoTranslation("Failed to parse feed URL:") + " {0}", True, ColTypes.Error, ex.Message)
+                    Write(DoTranslation("Failed to parse feed URL:") + " {0}", True, ColTypes.Error, ex.Message)
                     RSSFeedLink = ""
                     GoTo Begin
                 End Try
@@ -96,11 +96,11 @@ Begin:
                 End If
                 Wdbg(DebugLevel.I, "RSSShellPromptStyle = {0}", RSSShellPromptStyle)
                 If RSSShellPromptStyle = "" Then
-                    W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, New Uri(RSSFeedLink).Host) : W("] > ", False, ColTypes.Gray)
+                    Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, New Uri(RSSFeedLink).Host) : Write("] > ", False, ColTypes.Gray)
                 Else
                     Dim ParsedPromptStyle As String = ProbePlaces(RSSShellPromptStyle)
                     ParsedPromptStyle.ConvertVTSequences
-                    W(ParsedPromptStyle, False, ColTypes.Gray)
+                    Write(ParsedPromptStyle, False, ColTypes.Gray)
                 End If
                 SetInputColor()
 
@@ -131,14 +131,14 @@ Begin:
                             WrittenCommand = WrittenCommand.Replace($"""{Command}""", Command)
                             ExecuteRSSAlias(WrittenCommand)
                         Else
-                            W(DoTranslation("The specified RSS shell command is not found."), True, ColTypes.Error)
+                            Write(DoTranslation("The specified RSS shell command is not found."), True, ColTypes.Error)
                             Wdbg(DebugLevel.E, "Command {0} not found in the list of {1} commands.", WrittenCommand.Split(" ")(0), RSSCommands.Count)
                         End If
                     End If
                 Catch ex As Exception
                     Wdbg(DebugLevel.E, "Unknown RSS shell error: {0}", ex.Message)
                     WStkTrc(ex)
-                    W(DoTranslation("Unknown shell error:") + " {0}", True, ColTypes.Error, ex.Message)
+                    Write(DoTranslation("Unknown shell error:") + " {0}", True, ColTypes.Error, ex.Message)
                 End Try
 
                 'This is to fix race condition between shell initialization and starting the event handler thread

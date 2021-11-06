@@ -29,16 +29,16 @@ Class FileInfoCommand
             WriteSeparator(FileName, True)
             If FileExists(FilePath) Then
                 Dim FileInfo As New FileInfo(FilePath)
-                W(DoTranslation("Name: {0}"), True, ColTypes.Neutral, FileInfo.Name)
-                W(DoTranslation("Full name: {0}"), True, ColTypes.Neutral, NeutralizePath(FileInfo.FullName))
-                W(DoTranslation("File size: {0}"), True, ColTypes.Neutral, FileInfo.Length.FileSizeToString)
-                W(DoTranslation("Creation time: {0}"), True, ColTypes.Neutral, Render(FileInfo.CreationTime))
-                W(DoTranslation("Last access time: {0}"), True, ColTypes.Neutral, Render(FileInfo.LastAccessTime))
-                W(DoTranslation("Last write time: {0}"), True, ColTypes.Neutral, Render(FileInfo.LastWriteTime))
-                W(DoTranslation("Attributes: {0}"), True, ColTypes.Neutral, FileInfo.Attributes)
-                W(DoTranslation("Where to find: {0}"), True, ColTypes.Neutral, NeutralizePath(FileInfo.DirectoryName))
+                Write(DoTranslation("Name: {0}"), True, ColTypes.Neutral, FileInfo.Name)
+                Write(DoTranslation("Full name: {0}"), True, ColTypes.Neutral, NeutralizePath(FileInfo.FullName))
+                Write(DoTranslation("File size: {0}"), True, ColTypes.Neutral, FileInfo.Length.FileSizeToString)
+                Write(DoTranslation("Creation time: {0}"), True, ColTypes.Neutral, Render(FileInfo.CreationTime))
+                Write(DoTranslation("Last access time: {0}"), True, ColTypes.Neutral, Render(FileInfo.LastAccessTime))
+                Write(DoTranslation("Last write time: {0}"), True, ColTypes.Neutral, Render(FileInfo.LastWriteTime))
+                Write(DoTranslation("Attributes: {0}"), True, ColTypes.Neutral, FileInfo.Attributes)
+                Write(DoTranslation("Where to find: {0}"), True, ColTypes.Neutral, NeutralizePath(FileInfo.DirectoryName))
             Else
-                W(DoTranslation("Can't get information about nonexistent file."), True, ColTypes.Error)
+                Write(DoTranslation("Can't get information about nonexistent file."), True, ColTypes.Error)
             End If
         Next
     End Sub

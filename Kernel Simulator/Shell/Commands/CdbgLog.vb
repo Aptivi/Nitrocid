@@ -27,13 +27,13 @@ Class CdbgLogCommand
             Try
                 DebugStreamWriter.Close()
                 DebugStreamWriter = New StreamWriter(GetKernelPath(KernelPathType.Debugging)) With {.AutoFlush = True}
-                W(DoTranslation("Debug log removed. All connected debugging devices may still view messages."), True, ColTypes.Neutral)
+                Write(DoTranslation("Debug log removed. All connected debugging devices may still view messages."), True, ColTypes.Neutral)
             Catch ex As Exception
-                W(DoTranslation("Debug log removal failed: {0}"), True, ColTypes.Error, ex.Message)
+                Write(DoTranslation("Debug log removal failed: {0}"), True, ColTypes.Error, ex.Message)
                 WStkTrc(ex)
             End Try
         Else
-            W(DoTranslation("You must turn on debug mode before you can clear debug log."), True, ColTypes.Neutral)
+            Write(DoTranslation("You must turn on debug mode before you can clear debug log."), True, ColTypes.Neutral)
         End If
     End Sub
 

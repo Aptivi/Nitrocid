@@ -22,12 +22,12 @@ Class ReloadConfigCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         ReloadConfig()
-        W(DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect."), True, ColTypes.Neutral)
+        Write(DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect."), True, ColTypes.Neutral)
     End Sub
 
     Public Sub HelpHelper()
         Dim UsageLength As Integer = DoTranslation("Usage:").Length
-        W(" ".Repeat(UsageLength) + " " + DoTranslation("Colors don't require a restart, but most of the settings require a restart."), True, ColTypes.Neutral)
+        Write(" ".Repeat(UsageLength) + " " + DoTranslation("Colors don't require a restart, but most of the settings require a restart."), True, ColTypes.Neutral)
     End Sub
 
 End Class

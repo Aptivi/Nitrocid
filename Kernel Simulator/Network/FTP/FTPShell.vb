@@ -117,14 +117,14 @@ Public Module FTPShell
                     If FtpConnected Then
                         Wdbg(DebugLevel.I, "FTPShellPromptStyle = {0}", FTPShellPromptStyle)
                         If FTPShellPromptStyle = "" Then
-                            W("[", False, ColTypes.Gray) : W("{0}", False, ColTypes.UserName, FtpUser) : W("@", False, ColTypes.Gray) : W("{0}", False, ColTypes.HostName, FtpSite) : W("]{0}> ", False, ColTypes.Gray, FtpCurrentRemoteDir)
+                            Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, FtpUser) : Write("@", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, FtpSite) : Write("]{0}> ", False, ColTypes.Gray, FtpCurrentRemoteDir)
                         Else
                             Dim ParsedPromptStyle As String = ProbePlaces(FTPShellPromptStyle)
                             ParsedPromptStyle.ConvertVTSequences
-                            W(ParsedPromptStyle, False, ColTypes.Gray)
+                            Write(ParsedPromptStyle, False, ColTypes.Gray)
                         End If
                     Else
-                        W("{0}> ", False, ColTypes.Gray, FtpCurrentDirectory)
+                        Write("{0}> ", False, ColTypes.Gray, FtpCurrentDirectory)
                     End If
                 End If
 
@@ -183,7 +183,7 @@ Public Module FTPShell
             ExecuteFTPAlias(FtpCommand)
         ElseIf Not FtpCommand.StartsWith(" ") Then
             Wdbg(DebugLevel.E, "Command {0} not found.", FtpCommand)
-            W(DoTranslation("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell."), True, ColTypes.Error, words(0))
+            Write(DoTranslation("FTP message: The requested command {0} is not found. See 'help' for a list of available commands specified on FTP shell."), True, ColTypes.Error, words(0))
         End If
     End Sub
 

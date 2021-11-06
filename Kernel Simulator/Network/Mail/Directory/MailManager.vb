@@ -81,13 +81,13 @@ Public Module MailManager
                 Wdbg(DebugLevel.I, "From {0}: {1}", MsgFrom, MsgSubject)
 
                 'Display them now.
-                W($"- [{i + 1}/{MaxMessagesIndex + 1}] {MsgFrom}: ", False, ColTypes.ListEntry) : W(MsgSubject, True, ColTypes.ListValue)
+                Write($"- [{i + 1}/{MaxMessagesIndex + 1}] {MsgFrom}: ", False, ColTypes.ListEntry) : Write(MsgSubject, True, ColTypes.ListValue)
                 If ShowPreview And Not String.IsNullOrWhiteSpace(MsgPreview) Then
                     'TODO: For more efficient preview, use the PREVIEW extension as documented in RFC-8970 (https://tools.ietf.org/html/rfc8970). However,
                     '      this is impossible at this time because no server and no client support this extension. It supports the LAZY modifier. It only
                     '      displays 200 character long body.
                     '      Concept: Msg.Preview(LazyMode:=True)
-                    W(MsgPreview, True, ColTypes.ListValue)
+                    Write(MsgPreview, True, ColTypes.ListValue)
                 End If
             Else
                 Wdbg(DebugLevel.W, "Reached max message limit. Message number {0}", i)
@@ -175,7 +175,7 @@ Public Module MailManager
                                 Wdbg(DebugLevel.I, "Removed.")
                                 Dir.Expunge()
                                 Wdbg(DebugLevel.I, "Message {0} from {1} deleted from {2}. {3} messages remaining to parse.", DeletedMsgNumber, Sender, IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
-                                W(DoTranslation("Message {0} from {1} deleted from {2}. {3} messages remaining to parse."), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
+                                Write(DoTranslation("Message {0} from {1} deleted from {2}. {3} messages remaining to parse."), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
                             Else
                                 'Remove message
                                 IMAP_Client.Inbox.Open(FolderAccess.ReadWrite)
@@ -184,7 +184,7 @@ Public Module MailManager
                                 Wdbg(DebugLevel.I, "Removed.")
                                 IMAP_Client.Inbox.Expunge()
                                 Wdbg(DebugLevel.I, "Message {0} from {1} deleted from inbox. {2} messages remaining to parse.", DeletedMsgNumber, Sender, IMAP_Messages.Count - SteppedMsgNumber)
-                                W(DoTranslation("Message {0} from {1} deleted from inbox. {2} messages remaining to parse."), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_Messages.Count - SteppedMsgNumber)
+                                Write(DoTranslation("Message {0} from {1} deleted from inbox. {2} messages remaining to parse."), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_Messages.Count - SteppedMsgNumber)
                             End If
                             DeletedMsgNumber += 1
                         End If
@@ -273,7 +273,7 @@ Public Module MailManager
                                 Dir.MoveTo(MessageId, TargetF)
                                 Wdbg(DebugLevel.I, "Moved.")
                                 Wdbg(DebugLevel.I, "Message {0} from {1} moved from {2}. {3} messages remaining to parse.", DeletedMsgNumber, Sender, IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
-                                W(DoTranslation("Message {0} from {1} moved from {2}. {3} messages remaining to parse."), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
+                                Write(DoTranslation("Message {0} from {1} moved from {2}. {3} messages remaining to parse."), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_CurrentDirectory, IMAP_Messages.Count - SteppedMsgNumber)
                             Else
                                 'Remove message
                                 Dim TargetF As MailFolder = OpenFolder(TargetFolder)
@@ -282,7 +282,7 @@ Public Module MailManager
                                 IMAP_Client.Inbox.MoveTo(MessageId, TargetF)
                                 Wdbg(DebugLevel.I, "Moved.")
                                 Wdbg(DebugLevel.I, "Message {0} from {1} moved. {2} messages remaining to parse.", DeletedMsgNumber, Sender, IMAP_Messages.Count - SteppedMsgNumber)
-                                W(DoTranslation("Message {0} from {1} moved. {2} messages remaining to parse."), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_Messages.Count - SteppedMsgNumber)
+                                Write(DoTranslation("Message {0} from {1} moved. {2} messages remaining to parse."), True, ColTypes.Neutral, DeletedMsgNumber, Sender, IMAP_Messages.Count - SteppedMsgNumber)
                             End If
                             DeletedMsgNumber += 1
                         End If

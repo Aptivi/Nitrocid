@@ -51,7 +51,7 @@ Public Module TimeZones
         Dim ZoneTimes As Dictionary(Of String, Date) = GetTimeZones()
         Dim ZoneFound As Boolean = ZoneTimes.Keys.Contains(Zone)
         If ZoneFound Then
-            W(DoTranslation("- Time of {0}: {1}") + " ({2})", True, ColTypes.Neutral, Zone, ZoneTimes(Zone).ToString(), FindSystemTimeZoneById(Zone).GetUtcOffset(KernelDateTime).ToString)
+            Write(DoTranslation("- Time of {0}: {1}") + " ({2})", True, ColTypes.Neutral, Zone, ZoneTimes(Zone).ToString(), FindSystemTimeZoneById(Zone).GetUtcOffset(KernelDateTime).ToString)
         End If
         Return ZoneFound
     End Function
@@ -67,7 +67,7 @@ Public Module TimeZones
         For Each ZoneName As String In ZoneTimes.Keys
             If ZoneName.Contains(Zone) Then
                 ZoneFound = True
-                W(DoTranslation("- Time of {0}: {1}") + " ({2})", True, ColTypes.Neutral, ZoneName, ZoneTimes(ZoneName).ToString(), FindSystemTimeZoneById(ZoneName).GetUtcOffset(KernelDateTime).ToString)
+                Write(DoTranslation("- Time of {0}: {1}") + " ({2})", True, ColTypes.Neutral, ZoneName, ZoneTimes(ZoneName).ToString(), FindSystemTimeZoneById(ZoneName).GetUtcOffset(KernelDateTime).ToString)
             End If
         Next
         Return ZoneFound
@@ -79,7 +79,7 @@ Public Module TimeZones
     Public Sub ShowAllTimeZones()
         Dim ZoneTimes As Dictionary(Of String, Date) = GetTimeZones()
         For Each TimeZone In ZoneTimes.Keys
-            W(DoTranslation("- Time of {0}: {1}") + " ({2})", True, ColTypes.Neutral, TimeZone, ZoneTimes(TimeZone).ToString(), FindSystemTimeZoneById(TimeZone).GetUtcOffset(KernelDateTime).ToString)
+            Write(DoTranslation("- Time of {0}: {1}") + " ({2})", True, ColTypes.Neutral, TimeZone, ZoneTimes(TimeZone).ToString(), FindSystemTimeZoneById(TimeZone).GetUtcOffset(KernelDateTime).ToString)
         Next
     End Sub
 

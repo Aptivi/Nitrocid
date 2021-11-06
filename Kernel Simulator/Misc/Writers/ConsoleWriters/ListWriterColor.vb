@@ -50,9 +50,9 @@ Public Module ListWriterColor
                         For Each Value In CType(List(ListEntry), IEnumerable)
                             Values.Add(Value)
                         Next
-                        W("- {0}: ", False, ColTypes.ListEntry, ListEntry) : W("{0}", True, ColTypes.ListValue, String.Join(", ", Values))
+                        Write("- {0}: ", False, ColTypes.ListEntry, ListEntry) : Write("{0}", True, ColTypes.ListValue, String.Join(", ", Values))
                     Else
-                        W("- {0}: ", False, ColTypes.ListEntry, ListEntry) : W("{0}", True, ColTypes.ListValue, List(ListEntry))
+                        Write("- {0}: ", False, ColTypes.ListEntry, ListEntry) : Write("{0}", True, ColTypes.ListValue, List(ListEntry))
                     End If
                     If Wrap Then
                         LinesMade += CursorTop - OldTop
@@ -107,9 +107,9 @@ Public Module ListWriterColor
                         For Each Value In CType(List(ListEntry), IEnumerable)
                             Values.Add(Value)
                         Next
-                        WriteC16("- {0}: ", False, ListKeyColor, ListEntry) : WriteC16("{0}", True, ListValueColor, String.Join(", ", Values))
+                        Write("- {0}: ", False, ListKeyColor, ListEntry) : Write("{0}", True, ListValueColor, String.Join(", ", Values))
                     Else
-                        WriteC16("- {0}: ", False, ListKeyColor, ListEntry) : WriteC16("{0}", True, ListValueColor, List(ListEntry))
+                        Write("- {0}: ", False, ListKeyColor, ListEntry) : Write("{0}", True, ListValueColor, List(ListEntry))
                     End If
                     If Wrap Then
                         LinesMade += CursorTop - OldTop
@@ -164,9 +164,9 @@ Public Module ListWriterColor
                         For Each Value In CType(List(ListEntry), IEnumerable)
                             Values.Add(Value)
                         Next
-                        WriteC("- {0}: ", False, ListKeyColor, ListEntry) : WriteC("{0}", True, ListValueColor, String.Join(", ", Values))
+                        Write("- {0}: ", False, ListKeyColor, ListEntry) : Write("{0}", True, ListValueColor, String.Join(", ", Values))
                     Else
-                        WriteC("- {0}: ", False, ListKeyColor, ListEntry) : WriteC("{0}", True, ListValueColor, List(ListEntry))
+                        Write("- {0}: ", False, ListKeyColor, ListEntry) : Write("{0}", True, ListValueColor, List(ListEntry))
                     End If
                     If Wrap Then
                         LinesMade += CursorTop - OldTop
@@ -219,9 +219,9 @@ Public Module ListWriterColor
                         For Each Value In CType(ListEntry, IEnumerable)
                             Values.Add(Value)
                         Next
-                        W("- [{0}] ", False, ColTypes.ListEntry, EntryNumber) : W("{0}", True, ColTypes.ListValue, String.Join(", ", Values))
+                        Write("- [{0}] ", False, ColTypes.ListEntry, EntryNumber) : Write("{0}", True, ColTypes.ListValue, String.Join(", ", Values))
                     Else
-                        W("- [{0}] ", False, ColTypes.ListEntry, EntryNumber) : W("{0}", True, ColTypes.ListValue, ListEntry)
+                        Write("- [{0}] ", False, ColTypes.ListEntry, EntryNumber) : Write("{0}", True, ColTypes.ListValue, ListEntry)
                     End If
                     EntryNumber += 1
                     If Wrap Then
@@ -278,9 +278,9 @@ Public Module ListWriterColor
                         For Each Value In CType(ListEntry, IEnumerable)
                             Values.Add(Value)
                         Next
-                        WriteC16("- [{0}] ", False, ListKeyColor, EntryNumber) : WriteC16("{0}", True, ListValueColor, String.Join(", ", Values))
+                        Write("- [{0}] ", False, ListKeyColor, EntryNumber) : Write("{0}", True, ListValueColor, String.Join(", ", Values))
                     Else
-                        WriteC16("- [{0}] ", False, ListKeyColor, EntryNumber) : WriteC16("{0}", True, ListValueColor, ListEntry)
+                        Write("- [{0}] ", False, ListKeyColor, EntryNumber) : Write("{0}", True, ListValueColor, ListEntry)
                     End If
                     EntryNumber += 1
                     If Wrap Then
@@ -337,9 +337,9 @@ Public Module ListWriterColor
                         For Each Value In CType(ListEntry, IEnumerable)
                             Values.Add(Value)
                         Next
-                        WriteC("- {0}: ", False, ListKeyColor, EntryNumber) : WriteC("{0}", True, ListValueColor, String.Join(", ", Values))
+                        Write("- {0}: ", False, ListKeyColor, EntryNumber) : Write("{0}", True, ListValueColor, String.Join(", ", Values))
                     Else
-                        WriteC("- {0}: ", False, ListKeyColor, EntryNumber) : WriteC("{0}", True, ListValueColor, ListEntry)
+                        Write("- {0}: ", False, ListKeyColor, EntryNumber) : Write("{0}", True, ListValueColor, ListEntry)
                     End If
                     EntryNumber += 1
                     If Wrap Then

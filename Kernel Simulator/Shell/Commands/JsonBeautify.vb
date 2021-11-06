@@ -30,7 +30,7 @@ Class JsonBeautifyCommand
         If FileExists(JsonFile) Then
             'Beautify the JSON and display it on screen
             BeautifiedJson = BeautifyJson(JsonFile)
-            W(BeautifiedJson, True, ColTypes.Neutral)
+            Write(BeautifiedJson, True, ColTypes.Neutral)
 
             'Beautify it to an output file specified (optional)
             If ListArgs.Count > 1 Then
@@ -38,7 +38,7 @@ Class JsonBeautifyCommand
                 File.WriteAllText(JsonOutputFile, BeautifiedJson)
             End If
         Else
-            W(DoTranslation("File {0} not found."), True, ColTypes.Error, JsonFile)
+            Write(DoTranslation("File {0} not found."), True, ColTypes.Error, JsonFile)
         End If
     End Sub
 

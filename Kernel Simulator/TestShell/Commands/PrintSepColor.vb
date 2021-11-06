@@ -21,7 +21,7 @@ Class Test_PrintSepColorCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        WriteSeparatorC(ListArgs(1), True, New Color(ListArgs(0)))
+        WriteSeparator(ListArgs(1), True, New Color(ListArgs(0)))
     End Sub
 
 End Class

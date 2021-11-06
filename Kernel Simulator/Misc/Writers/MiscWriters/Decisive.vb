@@ -31,7 +31,7 @@ Public Module Decisive
     ''' <param name="vars">Variables to format the message before it's written.</param>
     Public Sub DecisiveWrite(CommandType As ShellCommandType, DebugDeviceSocket As StreamWriter, Text As String, Line As Boolean, colorType As ColTypes, ParamArray vars() As Object)
         If Not CommandType = ShellCommandType.RemoteDebugShell Then
-            W(Text, Line, colorType, vars)
+            Write(Text, Line, colorType, vars)
         ElseIf DebugDeviceSocket IsNot Nothing Then
             If Line Then
                 DebugDeviceSocket.WriteLine(Text, vars)

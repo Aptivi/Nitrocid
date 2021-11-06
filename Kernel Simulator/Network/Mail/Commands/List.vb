@@ -26,7 +26,7 @@ Class Mail_ListCommand
             If ListArgs(0).IsNumeric Then
                 MailListMessages(ListArgs(0))
             Else
-                W(DoTranslation("Page is not a numeric value."), True, ColTypes.Error)
+                Write(DoTranslation("Page is not a numeric value."), True, ColTypes.Error)
             End If
         Else
             MailListMessages(1)

@@ -423,16 +423,16 @@ Public Module UserManagement
         Dim AnswerType As Integer
 
         'First, select user name
-        W(DoTranslation("It looks like you've got no user except root. This is bad. We'll guide you how to create one."), True, ColTypes.Neutral)
+        Write(DoTranslation("It looks like you've got no user except root. This is bad. We'll guide you how to create one."), True, ColTypes.Neutral)
         While [Step] = 1
-            W(DoTranslation("Write your username."), True, ColTypes.Neutral)
-            W(">> ", False, ColTypes.Input)
+            Write(DoTranslation("Write your username."), True, ColTypes.Neutral)
+            Write(">> ", False, ColTypes.Input)
             AnswerUsername = Console.ReadLine
             Wdbg(DebugLevel.I, "Answer: {0}", AnswerUsername)
             If String.IsNullOrWhiteSpace(AnswerUsername) Then
                 Wdbg(DebugLevel.W, "Username is not valid. Returning...")
-                W(DoTranslation("You must write your username."), True, ColTypes.Error)
-                W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                Write(DoTranslation("You must write your username."), True, ColTypes.Error)
+                Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
             Else
                 [Step] += 1
@@ -441,15 +441,15 @@ Public Module UserManagement
 
         'Second, write password
         While [Step] = 2
-            W(DoTranslation("Write your password."), True, ColTypes.Neutral)
-            W(">> ", False, ColTypes.Input)
+            Write(DoTranslation("Write your password."), True, ColTypes.Neutral)
+            Write(">> ", False, ColTypes.Input)
             AnswerPassword = ReadLineNoInput("*"c)
             Console.WriteLine()
             Wdbg(DebugLevel.I, "Answer: {0}", AnswerPassword)
             If String.IsNullOrWhiteSpace(AnswerPassword) Then
                 Wdbg(DebugLevel.W, "Password is not valid. Returning...")
-                W(DoTranslation("You must write your password."), True, ColTypes.Error)
-                W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                Write(DoTranslation("You must write your password."), True, ColTypes.Error)
+                Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
             Else
                 [Step] += 1
@@ -458,10 +458,10 @@ Public Module UserManagement
 
         'Third, select account type
         While [Step] = 3
-            W(DoTranslation("Select account type.") + vbNewLine, True, ColTypes.Neutral)
-            W(" 1) " + DoTranslation("Administrator: This account type has the most power in the kernel, allowing you to use system management programs."), True, ColTypes.Option)
-            W(" 2) " + DoTranslation("Normal User: This account type is slightly more restricted than administrators."), True, ColTypes.Option)
-            W(vbNewLine + ">> ", False, ColTypes.Input)
+            Write(DoTranslation("Select account type.") + vbNewLine, True, ColTypes.Neutral)
+            Write(" 1) " + DoTranslation("Administrator: This account type has the most power in the kernel, allowing you to use system management programs."), True, ColTypes.Option)
+            Write(" 2) " + DoTranslation("Normal User: This account type is slightly more restricted than administrators."), True, ColTypes.Option)
+            Write(vbNewLine + ">> ", False, ColTypes.Input)
             If Integer.TryParse(Console.ReadLine, AnswerType) Then
                 Wdbg(DebugLevel.I, "Answer: {0}", AnswerType)
                 Select Case AnswerType
@@ -469,14 +469,14 @@ Public Module UserManagement
                         [Step] += 1
                     Case Else '???
                         Wdbg(DebugLevel.W, "Option is not valid. Returning...")
-                        W(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerType)
-                        W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                        Write(DoTranslation("Specified option {0} is invalid."), True, ColTypes.Error, AnswerType)
+                        Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                         Console.ReadKey()
                 End Select
             Else
                 Wdbg(DebugLevel.W, "Answer is not numeric.")
-                W(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
-                W(DoTranslation("Press any key to go back."), True, ColTypes.Error)
+                Write(DoTranslation("The answer must be numeric."), True, ColTypes.Error)
+                Write(DoTranslation("Press any key to go back."), True, ColTypes.Error)
                 Console.ReadKey()
             End If
         End While
@@ -484,7 +484,7 @@ Public Module UserManagement
         'Finally, create an account
         AddUser(AnswerUsername, AnswerPassword)
         If AnswerType = 1 Then AddPermission(PermissionType.Administrator, AnswerUsername)
-        W(DoTranslation("Congratulations! You've made a new account! To finish this off, log in as your new account."), True, ColTypes.Neutral)
+        Write(DoTranslation("Congratulations! You've made a new account! To finish this off, log in as your new account."), True, ColTypes.Neutral)
     End Sub
 
 End Module

@@ -92,7 +92,7 @@ Public Module UESHParse
             Kernel.EventManager.RaiseUESHPostExecute(scriptpath + " " + scriptarguments)
         Catch ex As Exception
             Kernel.EventManager.RaiseUESHError(scriptpath + " " + scriptarguments, ex)
-            W(DoTranslation("Error trying to execute script: {0}"), True, ColTypes.Error, ex.Message)
+            Write(DoTranslation("Error trying to execute script: {0}"), True, ColTypes.Error, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub

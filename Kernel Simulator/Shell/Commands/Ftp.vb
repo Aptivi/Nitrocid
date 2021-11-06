@@ -28,10 +28,10 @@ Class FtpCommand
                 InitiateShell(True, ListArgs(0))
             End If
         Catch ftpex As Exceptions.FTPShellException
-            W(ftpex.Message, True, ColTypes.Error)
+            Write(ftpex.Message, True, ColTypes.Error)
         Catch ex As Exception
             WStkTrc(ex)
-            W(DoTranslation("Unknown FTP shell error:") + " {0}", True, ColTypes.Error, ex.Message)
+            Write(DoTranslation("Unknown FTP shell error:") + " {0}", True, ColTypes.Error, ex.Message)
         End Try
     End Sub
 

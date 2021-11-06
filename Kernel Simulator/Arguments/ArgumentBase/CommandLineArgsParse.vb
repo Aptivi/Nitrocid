@@ -47,15 +47,15 @@ Module CommandLineArgsParse
                             ArgumentBase.Execute(strArgs, FullArgs, Args, Switches)
                         Else
                             Wdbg(DebugLevel.W, "User hasn't provided enough arguments for {0}", Argument)
-                            W(DoTranslation("There was not enough arguments."), True, ColTypes.Neutral)
+                            Write(DoTranslation("There was not enough arguments."), True, ColTypes.Neutral)
                         End If
                     Else
-                        W(DoTranslation("Command line argument {0} not found."), True, ColTypes.Error, Argument)
+                        Write(DoTranslation("Command line argument {0} not found."), True, ColTypes.Error, Argument)
                     End If
                 Next
             End If
         Catch ex As Exception
-            W(DoTranslation("Error while parsing real command-line arguments: {0}") + vbNewLine + "{1}", True, ColTypes.Error, ex.Message, ex.StackTrace)
+            Write(DoTranslation("Error while parsing real command-line arguments: {0}") + vbNewLine + "{1}", True, ColTypes.Error, ex.Message, ex.StackTrace)
             If Args.Contains("testMod") Then Environment.Exit(1)
         End Try
     End Sub

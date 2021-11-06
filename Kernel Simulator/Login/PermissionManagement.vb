@@ -72,16 +72,16 @@ Public Module PermissionManagement
             Wdbg(DebugLevel.I, "Mode: {0}", PermissionMode)
             If PermissionMode = PermissionManagementMode.Allow Then
                 AddPermission(PermType, Username)
-                W(DoTranslation("The user {0} has been added to the ""{1}"" list."), True, ColTypes.Neutral, Username, PermType.ToString)
+                Write(DoTranslation("The user {0} has been added to the ""{1}"" list."), True, ColTypes.Neutral, Username, PermType.ToString)
             ElseIf PermissionMode = PermissionManagementMode.Disallow Then
                 RemovePermission(PermType, Username)
-                W(DoTranslation("The user {0} has been removed from the ""{1}"" list."), True, ColTypes.Neutral, Username, PermType.ToString)
+                Write(DoTranslation("The user {0} has been removed from the ""{1}"" list."), True, ColTypes.Neutral, Username, PermType.ToString)
             Else
                 Wdbg(DebugLevel.W, "Mode is invalid")
-                W(DoTranslation("Invalid mode {0}"), True, ColTypes.Error, PermissionMode)
+                Write(DoTranslation("Invalid mode {0}"), True, ColTypes.Error, PermissionMode)
             End If
         Catch ex As Exception
-            W(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.") + vbNewLine +
+            Write(DoTranslation("You have either found a bug, or the permission you tried to add or remove is already done, or other error.") + vbNewLine +
               DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message)
             WStkTrc(ex)
         End Try

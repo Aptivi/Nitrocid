@@ -37,15 +37,15 @@ Module ArgumentPrompt
         Dim AnswerArgs As String = ""
 
         'Shows available arguments
-        W(DoTranslation("Available kernel arguments:"), True, ColTypes.ListTitle)
+        Write(DoTranslation("Available kernel arguments:"), True, ColTypes.ListTitle)
         WriteList(AvailableArgs.Keys, True)
-        W("* " + DoTranslation("Press ""q"" if you're done."), True, ColTypes.Tip)
-        W("* " + DoTranslation("Multiple kernel arguments can be separated with commas without spaces, for example:") + " ""debug,safe""", True, ColTypes.Tip)
-        W("* " + DoTranslation("Multiple injected commands can be separated with colons with spaces, for example:") + " cmdinject ""beep 100 500 : echo Hello!""", True, ColTypes.Tip)
+        Write("* " + DoTranslation("Press ""q"" if you're done."), True, ColTypes.Tip)
+        Write("* " + DoTranslation("Multiple kernel arguments can be separated with commas without spaces, for example:") + " ""debug,safe""", True, ColTypes.Tip)
+        Write("* " + DoTranslation("Multiple injected commands can be separated with colons with spaces, for example:") + " cmdinject ""beep 100 500 : echo Hello!""", True, ColTypes.Tip)
 
         'Prompts for the arguments
         While Not AnswerArgs = "q"
-            W(">> ", False, ColTypes.Input)
+            Write(">> ", False, ColTypes.Input)
             AnswerArgs = Console.ReadLine()
 
             'Add an argument to the entered arguments list
@@ -54,16 +54,16 @@ Module ArgumentPrompt
                     If AvailableArgs.Keys.Contains(AnswerArg.Split(" "c)(0)) Then
                         EnteredArguments.Add(AnswerArg)
                     ElseIf Not String.IsNullOrWhiteSpace(AnswerArg.Split(" "c)(0)) Then
-                        W(DoTranslation("The requested argument {0} is not found."), True, ColTypes.Error, AnswerArg.Split(" "c)(0))
+                        Write(DoTranslation("The requested argument {0} is not found."), True, ColTypes.Error, AnswerArg.Split(" "c)(0))
                     End If
                 Next
             Else
                 If InjMode Then
                     ArgsInjected = True
                     Kernel.EventManager.RaiseArgumentsInjected(EnteredArguments)
-                    W(DoTranslation("Injected arguments will be scheduled to run at next reboot."), True, ColTypes.Neutral)
+                    Write(DoTranslation("Injected arguments will be scheduled to run at next reboot."), True, ColTypes.Neutral)
                 Else
-                    W(DoTranslation("Starting the kernel with:") + " {0}", True, ColTypes.Neutral, String.Join(", ", EnteredArguments))
+                    Write(DoTranslation("Starting the kernel with:") + " {0}", True, ColTypes.Neutral, String.Join(", ", EnteredArguments))
                     ParseArguments()
                 End If
             End If

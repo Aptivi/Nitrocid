@@ -42,25 +42,25 @@ Public Module ModManager
 
             'Check to see if we have mods
             If count <> 0 Then
-                W(DoTranslation("mod: Loading mods..."), True, ColTypes.Neutral)
+                Write(DoTranslation("mod: Loading mods..."), True, ColTypes.Neutral)
                 Wdbg(DebugLevel.I, "Mods are being loaded. Total mods with screensavers = {0}", count)
                 Dim CurrentCount As Integer = 1
                 For Each modFile As String In Directory.EnumerateFiles(ModPath)
                     If Not GetBlacklistedMods.Contains(modFile) Then
                         Wdbg(DebugLevel.I, "Mod {0} is not blacklisted.", Path.GetFileName(modFile))
-                        W("[{1}/{2}] " + DoTranslation("Starting mod") + " {0}...", True, ColTypes.Progress, Path.GetFileName(modFile), CurrentCount, count)
+                        Write("[{1}/{2}] " + DoTranslation("Starting mod") + " {0}...", True, ColTypes.Progress, Path.GetFileName(modFile), CurrentCount, count)
                         ParseMod(modFile)
                     Else
                         Wdbg(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", Path.GetFileName(modFile))
-                        W("[{1}/{2}] " + DoTranslation("Mod {0} is blacklisted."), True, ColTypes.Warning, Path.GetFileName(modFile), CurrentCount, count)
+                        Write("[{1}/{2}] " + DoTranslation("Mod {0} is blacklisted."), True, ColTypes.Warning, Path.GetFileName(modFile), CurrentCount, count)
                     End If
                     CurrentCount += 1
                 Next
             Else
-                W(DoTranslation("mod: No mods detected."), True, ColTypes.Neutral)
+                Write(DoTranslation("mod: No mods detected."), True, ColTypes.Neutral)
             End If
         Else
-            W(DoTranslation("Parsing mods not allowed on safe mode."), True, ColTypes.Error)
+            Write(DoTranslation("Parsing mods not allowed on safe mode."), True, ColTypes.Error)
         End If
     End Sub
 
@@ -79,20 +79,20 @@ Public Module ModManager
                 If Not HasModStarted(ModFilename) Then
                     If Not GetBlacklistedMods.Contains(ModFilename) Then
                         Wdbg(DebugLevel.I, "Mod {0} is not blacklisted.", Path.GetFileName(ModFilename))
-                        W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(ModFilename))
+                        Write(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileName(ModFilename))
                         ParseMod(ModFilename)
                     Else
                         Wdbg(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", Path.GetFileName(ModFilename))
-                        W(DoTranslation("Mod {0} is blacklisted."), True, ColTypes.Warning, Path.GetFileName(ModFilename))
+                        Write(DoTranslation("Mod {0} is blacklisted."), True, ColTypes.Warning, Path.GetFileName(ModFilename))
                     End If
                 Else
-                    W(DoTranslation("Mod has already been started!"), True, ColTypes.Error)
+                    Write(DoTranslation("Mod has already been started!"), True, ColTypes.Error)
                 End If
             Else
-                W(DoTranslation("Mod {0} not found."), True, ColTypes.Neutral, Path.GetFileName(ModFilename))
+                Write(DoTranslation("Mod {0} not found."), True, ColTypes.Neutral, Path.GetFileName(ModFilename))
             End If
         Else
-            W(DoTranslation("Parsing mods not allowed on safe mode."), True, ColTypes.Error)
+            Write(DoTranslation("Parsing mods not allowed on safe mode."), True, ColTypes.Error)
         End If
     End Sub
 
@@ -109,7 +109,7 @@ Public Module ModManager
 
             'Check to see if we have mods
             If count <> 0 Then
-                W(DoTranslation("mod: Stopping mods..."), True, ColTypes.Neutral)
+                Write(DoTranslation("mod: Stopping mods..."), True, ColTypes.Neutral)
                 Wdbg(DebugLevel.I, "Mods are being stopped. Total mods with screensavers = {0}", count)
 
                 'Enumerate and delete the script as soon as the stopping is complete
@@ -126,7 +126,7 @@ Public Module ModManager
                         'Stop the associated part
                         ScriptPartInfo.PartScript.StopMod()
                         If Not String.IsNullOrWhiteSpace(ScriptPartInfo.PartName) And Not String.IsNullOrWhiteSpace(ScriptPartInfo.PartScript.Version) Then
-                            W(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version)
+                            Write(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version)
                         End If
 
                         'Remove the part from the list
@@ -134,7 +134,7 @@ Public Module ModManager
                     Next
 
                     'Remove the mod from the list
-                    W(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, TargetMod.ModName)
+                    Write(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, TargetMod.ModName)
                     scripts.Remove(scripts.Keys(ScriptIndex))
                 Next
 
@@ -176,10 +176,10 @@ Public Module ModManager
                 'Clear the custom screensavers
                 CustomSavers.Clear()
             Else
-                W(DoTranslation("mod: No mods detected."), True, ColTypes.Neutral)
+                Write(DoTranslation("mod: No mods detected."), True, ColTypes.Neutral)
             End If
         Else
-            W(DoTranslation("Stopping mods not allowed on safe mode."), True, ColTypes.Error)
+            Write(DoTranslation("Stopping mods not allowed on safe mode."), True, ColTypes.Error)
         End If
     End Sub
 
@@ -210,7 +210,7 @@ Public Module ModManager
                     Next
                 Else
                     If HasModStarted(ModFilename) Then
-                        W(DoTranslation("mod: Stopping mod {0}..."), True, ColTypes.Neutral, Path.GetFileName(ModFilename))
+                        Write(DoTranslation("mod: Stopping mod {0}..."), True, ColTypes.Neutral, Path.GetFileName(ModFilename))
                         Wdbg(DebugLevel.I, "Mod {0} is being stopped.", Path.GetFileName(ModFilename))
 
                         'Iterate through all the mods
@@ -283,7 +283,7 @@ Public Module ModManager
                                     'Stop the associated part
                                     ScriptPartInfo.PartScript.StopMod()
                                     If Not String.IsNullOrWhiteSpace(ScriptPartInfo.PartName) And Not String.IsNullOrWhiteSpace(ScriptPartInfo.PartScript.Version) Then
-                                        W(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version)
+                                        Write(DoTranslation("{0} v{1} stopped"), True, ColTypes.Neutral, ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version)
                                     End If
 
                                     'Remove the part from the list
@@ -291,19 +291,19 @@ Public Module ModManager
                                 Next
 
                                 'Remove the mod from the list
-                                W(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, TargetMod.ModName)
+                                Write(DoTranslation("Mod {0} stopped"), True, ColTypes.Neutral, TargetMod.ModName)
                                 scripts.Remove(scripts.Keys(ScriptIndex))
                             End If
                         Next
                     Else
-                        W(DoTranslation("Mod hasn't started yet!"), True, ColTypes.Error)
+                        Write(DoTranslation("Mod hasn't started yet!"), True, ColTypes.Error)
                     End If
                 End If
             Else
-                W(DoTranslation("Mod {0} not found."), True, ColTypes.Neutral, Path.GetFileName(ModFilename))
+                Write(DoTranslation("Mod {0} not found."), True, ColTypes.Neutral, Path.GetFileName(ModFilename))
             End If
         Else
-            W(DoTranslation("Stopping mods not allowed on safe mode."), True, ColTypes.Error)
+            Write(DoTranslation("Stopping mods not allowed on safe mode."), True, ColTypes.Error)
         End If
     End Sub
 
@@ -404,7 +404,7 @@ Public Module ModManager
 
         'Check for upgrade
         If FileExists(TargetModPath) Then
-            W(DoTranslation("Trying to install an already-installed mod. Updating mod..."), True, ColTypes.Warning)
+            Write(DoTranslation("Trying to install an already-installed mod. Updating mod..."), True, ColTypes.Warning)
             StopMod(Path.GetFileName(TargetModPath))
         End If
 
@@ -425,13 +425,13 @@ Public Module ModManager
                 Catch ex As ReflectionTypeLoadException
                     Wdbg(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", ModPath, ex.Message)
                     WStkTrc(ex)
-                    W(DoTranslation("Mod can't be loaded because of the following: "), True, ColTypes.Error)
+                    Write(DoTranslation("Mod can't be loaded because of the following: "), True, ColTypes.Error)
                     For Each LoaderException As Exception In ex.LoaderExceptions
                         Wdbg(DebugLevel.E, "Loader exception: {0}", LoaderException.Message)
                         WStkTrc(LoaderException)
-                        W(LoaderException.Message, True, ColTypes.Error)
+                        Write(LoaderException.Message, True, ColTypes.Error)
                     Next
-                    W(DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), True, ColTypes.Error)
+                    Write(DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), True, ColTypes.Error)
                     Throw ex
                 End Try
             End If
@@ -455,12 +455,12 @@ Public Module ModManager
             End If
 
             'Finally, start the mod
-            W(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileNameWithoutExtension(TargetModPath))
+            Write(DoTranslation("Starting mod") + " {0}...", True, ColTypes.Neutral, Path.GetFileNameWithoutExtension(TargetModPath))
             StartMod(TargetModPath)
         Catch ex As Exception
             Wdbg(DebugLevel.E, "Installation failed for {0}: {1}", ModPath, ex.Message)
             WStkTrc(ex)
-            W(DoTranslation("Installation failed for") + " {0}: {1}", True, ColTypes.Error, ModPath, ex.Message)
+            Write(DoTranslation("Installation failed for") + " {0}: {1}", True, ColTypes.Error, ModPath, ex.Message)
         End Try
 #Enable Warning BC42104
     End Sub
@@ -496,7 +496,7 @@ Public Module ModManager
         Catch ex As Exception
             Wdbg(DebugLevel.E, "Uninstallation failed for {0}: {1}", ModPath, ex.Message)
             WStkTrc(ex)
-            W(DoTranslation("Uninstallation failed for") + " {0}: {1}", True, ColTypes.Error, ModPath, ex.Message)
+            Write(DoTranslation("Uninstallation failed for") + " {0}: {1}", True, ColTypes.Error, ModPath, ex.Message)
         End Try
     End Sub
 

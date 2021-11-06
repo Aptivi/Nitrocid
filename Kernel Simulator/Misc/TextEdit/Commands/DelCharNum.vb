@@ -24,12 +24,12 @@ Class TextEdit_DelCharNumCommand
         If IsNumeric(ListArgs(1)) And IsNumeric(ListArgs(0)) Then
             If CInt(ListArgs(1)) <= TextEdit_FileLines.Count Then
                 TextEdit_DeleteChar(ListArgs(0), ListArgs(1))
-                W(DoTranslation("Character deleted."), True, ColTypes.Success)
+                Write(DoTranslation("Character deleted."), True, ColTypes.Success)
             Else
-                W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
             End If
         Else
-            W(DoTranslation("One or both of the numbers are not numeric."), True, ColTypes.Error)
+            Write(DoTranslation("One or both of the numbers are not numeric."), True, ColTypes.Error)
             Wdbg(DebugLevel.E, "{0} and {1} are not numeric values.", ListArgs(0), ListArgs(1))
         End If
     End Sub

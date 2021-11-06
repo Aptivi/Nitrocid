@@ -28,7 +28,7 @@ Class CatCommand
             PrintContents(ListArgs(0), PrintLines)
         Catch ex As Exception
             WStkTrc(ex)
-            W(ex.Message, True, ColTypes.Error)
+            Write(ex.Message, True, ColTypes.Error)
         End Try
     End Sub
 

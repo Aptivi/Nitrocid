@@ -28,18 +28,18 @@ Class TextEdit_QueryCharCommand
                 If CInt(ListArgs(1)) <= TextEdit_FileLines.Count Then
                     Dim QueriedChars As Dictionary(Of Integer, String) = TextEdit_QueryChar(ListArgs(0), ListArgs(1))
                     For Each CharIndex As Integer In QueriedChars.Keys
-                        W("- {0}: ", False, ColTypes.ListEntry, CharIndex)
-                        W("{0} ({1})", True, ColTypes.ListValue, ListArgs(0), QueriedChars(CharIndex))
+                        Write("- {0}: ", False, ColTypes.ListEntry, CharIndex)
+                        Write("{0} ({1})", True, ColTypes.ListValue, ListArgs(0), QueriedChars(CharIndex))
                     Next
                 Else
-                    W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                    Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                 End If
             ElseIf ListArgs(1).ToLower = "all" Then
                 Dim QueriedChars As Dictionary(Of Integer, Dictionary(Of Integer, String)) = TextEdit_QueryChar(ListArgs(0))
                 For Each LineIndex As Integer In QueriedChars.Keys
                     For Each CharIndex As Integer In QueriedChars(LineIndex).Keys
-                        W("- {0}:{1}: ", False, ColTypes.ListEntry, LineIndex, CharIndex)
-                        W("{0} ({1})", True, ColTypes.ListValue, ListArgs(0), TextEdit_FileLines(LineIndex))
+                        Write("- {0}:{1}: ", False, ColTypes.ListEntry, LineIndex, CharIndex)
+                        Write("{0} ({1})", True, ColTypes.ListValue, ListArgs(0), TextEdit_FileLines(LineIndex))
                     Next
                 Next
             End If
@@ -52,12 +52,12 @@ Class TextEdit_QueryCharCommand
                     For LineNumber = LineNumberStart To LineNumberEnd
                         Dim QueriedChars As Dictionary(Of Integer, String) = TextEdit_QueryChar(ListArgs(0), LineNumber)
                         For Each CharIndex As Integer In QueriedChars.Keys
-                            W("- {0}:{1}: ", False, ColTypes.ListEntry, LineNumber, CharIndex)
-                            W("{0} ({1})", True, ColTypes.ListValue, ListArgs(0), QueriedChars(CharIndex))
+                            Write("- {0}:{1}: ", False, ColTypes.ListEntry, LineNumber, CharIndex)
+                            Write("{0} ({1})", True, ColTypes.ListValue, ListArgs(0), QueriedChars(CharIndex))
                         Next
                     Next
                 Else
-                    W(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
+                    Write(DoTranslation("The specified line number may not be larger than the last file line number."), True, ColTypes.Error)
                 End If
             End If
         End If

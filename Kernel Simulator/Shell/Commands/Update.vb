@@ -24,7 +24,7 @@ Class UpdateCommand
 #If SPECIFIER = "REL" Then
         CheckKernelUpdates()
 #Else
-        W(DoTranslation("Checking for updates is disabled because you're running a development version."), True, ColTypes.Error)
+        Write(DoTranslation("Checking for updates is disabled because you're running a development version."), True, ColTypes.Error)
 #End If
     End Sub
 

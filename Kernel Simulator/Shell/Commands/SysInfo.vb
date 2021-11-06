@@ -38,13 +38,13 @@ Class SysInfoCommand
         If ShowSystemInfo Then
             'Kernel section
             WriteSeparator(DoTranslation("Kernel settings"), True)
-            W(DoTranslation("Kernel Version:") + " ", False, ColTypes.ListEntry) : W(KernelVersion, True, ColTypes.ListValue)
-            W(DoTranslation("Debug Mode:") + " ", False, ColTypes.ListEntry) : W(DebugMode, True, ColTypes.ListValue)
-            W(DoTranslation("Colored Shell:") + " ", False, ColTypes.ListEntry) : W(ColoredShell, True, ColTypes.ListValue)
-            W(DoTranslation("Arguments on Boot:") + " ", False, ColTypes.ListEntry) : W(ArgsOnBoot, True, ColTypes.ListValue)
-            W(DoTranslation("Help command simplified:") + " ", False, ColTypes.ListEntry) : W(SimHelp, True, ColTypes.ListValue)
-            W(DoTranslation("MOTD on Login:") + " ", False, ColTypes.ListEntry) : W(ShowMOTD, True, ColTypes.ListValue)
-            W(DoTranslation("Time/Date on corner:") + " ", False, ColTypes.ListEntry) : W(CornerTimeDate, True, ColTypes.ListValue)
+            Write(DoTranslation("Kernel Version:") + " ", False, ColTypes.ListEntry) : Write(KernelVersion, True, ColTypes.ListValue)
+            Write(DoTranslation("Debug Mode:") + " ", False, ColTypes.ListEntry) : Write(DebugMode.ToString, True, ColTypes.ListValue)
+            Write(DoTranslation("Colored Shell:") + " ", False, ColTypes.ListEntry) : Write(ColoredShell.ToString, True, ColTypes.ListValue)
+            Write(DoTranslation("Arguments on Boot:") + " ", False, ColTypes.ListEntry) : Write(ArgsOnBoot.ToString, True, ColTypes.ListValue)
+            Write(DoTranslation("Help command simplified:") + " ", False, ColTypes.ListEntry) : Write(SimHelp.ToString, True, ColTypes.ListValue)
+            Write(DoTranslation("MOTD on Login:") + " ", False, ColTypes.ListEntry) : Write(ShowMOTD.ToString, True, ColTypes.ListValue)
+            Write(DoTranslation("Time/Date on corner:") + " ", False, ColTypes.ListEntry) : Write(CornerTimeDate.ToString, True, ColTypes.ListValue)
             Console.WriteLine()
         End If
 
@@ -52,29 +52,29 @@ Class SysInfoCommand
             'Hardware section
             WriteSeparator(DoTranslation("Hardware settings"), True)
             ListHardware()
-            W(DoTranslation("Use ""hwinfo"" for extended information about hardware."), True, ColTypes.Tip)
+            Write(DoTranslation("Use ""hwinfo"" for extended information about hardware."), True, ColTypes.Tip)
             Console.WriteLine()
         End If
 
         If ShowUserInfo Then
             'User section
             WriteSeparator(DoTranslation("User settings"), True)
-            W(DoTranslation("Current user name:") + " ", False, ColTypes.ListEntry) : W(CurrentUser.Username, True, ColTypes.ListValue)
-            W(DoTranslation("Current host name:") + " ", False, ColTypes.ListEntry) : W(HostName, True, ColTypes.ListValue)
-            W(DoTranslation("Available usernames:") + " ", False, ColTypes.ListEntry) : W(String.Join(", ", ListAllUsers), True, ColTypes.ListValue)
+            Write(DoTranslation("Current user name:") + " ", False, ColTypes.ListEntry) : Write(CurrentUser.Username, True, ColTypes.ListValue)
+            Write(DoTranslation("Current host name:") + " ", False, ColTypes.ListEntry) : Write(HostName, True, ColTypes.ListValue)
+            Write(DoTranslation("Available usernames:") + " ", False, ColTypes.ListEntry) : Write(String.Join(", ", ListAllUsers), True, ColTypes.ListValue)
             Console.WriteLine()
         End If
 
         If ShowMessageOfTheDay Then
             'Show MOTD
             WriteSeparator("MOTD", True)
-            W(ProbePlaces(MOTDMessage), True, ColTypes.Neutral)
+            Write(ProbePlaces(MOTDMessage), True, ColTypes.Neutral)
         End If
 
         If ShowMal Then
             'Show MAL
             WriteSeparator("MAL", True)
-            W(ProbePlaces(MAL), True, ColTypes.Neutral)
+            Write(ProbePlaces(MAL), True, ColTypes.Neutral)
         End If
     End Sub
 

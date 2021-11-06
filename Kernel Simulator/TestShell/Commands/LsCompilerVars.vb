@@ -22,7 +22,7 @@ Class Test_LsCompilerVarsCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         For Each CompilerVar As String In GetCompilerVars()
-            W("- {0}", True, ColTypes.ListEntry, CompilerVar)
+            Write("- {0}", True, ColTypes.ListEntry, CompilerVar)
         Next
     End Sub
 

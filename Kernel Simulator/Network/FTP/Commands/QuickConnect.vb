@@ -24,7 +24,7 @@ Class FTP_QuickConnectCommand
         If Not FtpConnected Then
             QuickConnect()
         Else
-            W(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Error)
+            Write(DoTranslation("You should disconnect from server before connecting to another server"), True, ColTypes.Error)
         End If
     End Sub
 

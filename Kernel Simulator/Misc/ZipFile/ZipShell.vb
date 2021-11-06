@@ -59,11 +59,11 @@ Module ZipShell
             End If
             Wdbg(DebugLevel.I, "ZipShell_PromptStyle = {0}", ZipShell_PromptStyle)
             If ZipShell_PromptStyle = "" Then
-                W("[", False, ColTypes.Gray) : W("{0}@{1}", False, ColTypes.UserName, ZipShell_CurrentArchiveDirectory, Path.GetFileName(ZipFile)) : W("] > ", False, ColTypes.Gray)
+                Write("[", False, ColTypes.Gray) : Write("{0}@{1}", False, ColTypes.UserName, ZipShell_CurrentArchiveDirectory, Path.GetFileName(ZipFile)) : Write("] > ", False, ColTypes.Gray)
             Else
                 Dim ParsedPromptStyle As String = ProbePlaces(ZipShell_PromptStyle)
                 ParsedPromptStyle.ConvertVTSequences
-                W(ParsedPromptStyle, False, ColTypes.Gray)
+                Write(ParsedPromptStyle, False, ColTypes.Gray)
             End If
             SetInputColor()
 
@@ -93,7 +93,7 @@ Module ZipShell
                     WrittenCommand = WrittenCommand.Replace($"""{Command}""", Command)
                     ExecuteZIPAlias(WrittenCommand)
                 Else
-                    W(DoTranslation("The specified ZIP shell command is not found."), True, ColTypes.Error)
+                    Write(DoTranslation("The specified ZIP shell command is not found."), True, ColTypes.Error)
                     Wdbg(DebugLevel.E, "Command {0} not found in the list of {1} commands.", Command, ZipShell_Commands.Count)
                 End If
             End If

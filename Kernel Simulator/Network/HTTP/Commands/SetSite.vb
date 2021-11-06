@@ -23,10 +23,10 @@ Class HTTP_SetSiteCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Try
             Dim SiteUri As New Uri(StringArgs)
-            W(DoTranslation("Setting site to") + " {0}...", True, ColTypes.Progress, SiteUri.ToString)
+            Write(DoTranslation("Setting site to") + " {0}...", True, ColTypes.Progress, SiteUri.ToString)
             HTTPSite = SiteUri.ToString
         Catch ex As Exception
-            W(DoTranslation("The site URI format is invalid."), True, ColTypes.Error)
+            Write(DoTranslation("The site URI format is invalid."), True, ColTypes.Error)
         End Try
     End Sub
 

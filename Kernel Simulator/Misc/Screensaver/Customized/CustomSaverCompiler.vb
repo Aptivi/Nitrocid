@@ -49,11 +49,11 @@ Public Module CustomSaverCompiler
                     Catch ex As ReflectionTypeLoadException
                         Wdbg(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", file, ex.Message)
                         WStkTrc(ex)
-                        W(DoTranslation("Screensaver can't be loaded because of the following: "), True, ColTypes.Error)
+                        Write(DoTranslation("Screensaver can't be loaded because of the following: "), True, ColTypes.Error)
                         For Each LoaderException As Exception In ex.LoaderExceptions
                             Wdbg(DebugLevel.E, "Loader exception: {0}", LoaderException.Message)
                             WStkTrc(LoaderException)
-                            W(LoaderException.Message, True, ColTypes.Error)
+                            Write(LoaderException.Message, True, ColTypes.Error)
                         Next
                     End Try
                 End If
@@ -73,12 +73,12 @@ Public Module CustomSaverCompiler
                         Wdbg(DebugLevel.I, "Is screensaver found? {0}", IsFound)
                         If Not IsFound Then
                             If Not SaverName = "" Then
-                                W(DoTranslation("{0} has been initialized properly."), True, ColTypes.Neutral, SaverName)
+                                Write(DoTranslation("{0} has been initialized properly."), True, ColTypes.Neutral, SaverName)
                                 Wdbg(DebugLevel.I, "{0} ({1}) compiled correctly. Starting...", SaverName, file)
                                 SaverInstance = New CustomSaverInfo(SaverName, file, NeutralizePath(file, modPath), CustomSaver)
                                 CustomSavers.Add(SaverName, SaverInstance)
                             Else
-                                W(DoTranslation("{0} has been initialized properly."), True, ColTypes.Neutral, file)
+                                Write(DoTranslation("{0} has been initialized properly."), True, ColTypes.Neutral, file)
                                 Wdbg(DebugLevel.I, "{0} compiled correctly. Starting...", file)
                                 SaverInstance = New CustomSaverInfo(SaverName, file, NeutralizePath(file, modPath), CustomSaver)
                                 CustomSavers.Add(file, SaverInstance)
@@ -100,10 +100,10 @@ Public Module CustomSaverCompiler
                         AddCustomSaverToSettings(If(SaverName = "", file, SaverName))
                     Else
                         If Not SaverName = "" Then
-                            W(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing."), True, ColTypes.Error, SaverName)
+                            Write(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing."), True, ColTypes.Error, SaverName)
                             Wdbg(DebugLevel.W, "{0} ({1}) is compiled, but not initialized.", SaverName, file)
                         Else
-                            W(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing."), True, ColTypes.Error, file)
+                            Write(DoTranslation("{0} did not initialize. The screensaver code might have experienced an error while initializing."), True, ColTypes.Error, file)
                             Wdbg(DebugLevel.W, "{0} is compiled, but not initialized.", file)
                         End If
                     End If
@@ -112,7 +112,7 @@ Public Module CustomSaverCompiler
                 Wdbg(DebugLevel.W, "{0} is not a screensaver. A screensaver code should have "".ss.vb"" or "".dll"" at the end.", file)
             End If
         Else
-            W(DoTranslation("Screensaver {0} does not exist."), True, ColTypes.Error, file)
+            Write(DoTranslation("Screensaver {0} does not exist."), True, ColTypes.Error, file)
             Wdbg(DebugLevel.E, "The file {0} does not exist for compilation.", file)
         End If
     End Sub
@@ -175,7 +175,7 @@ Public Module CustomSaverCompiler
                         'Check to see if the reference file exists
                         If Not FileExists(Reference) Then
                             Wdbg(DebugLevel.E, "File {0} not found to reference.", Reference)
-                            W(DoTranslation("Referenced file {0} not found. This mod might not work properly without this file."), True, ColTypes.Warning, Reference)
+                            Write(DoTranslation("Referenced file {0} not found. This mod might not work properly without this file."), True, ColTypes.Warning, Reference)
                         Else
                             prm.ReferencedAssemblies.Add(Reference)
                         End If
@@ -199,22 +199,22 @@ Public Module CustomSaverCompiler
             'Check to see if there are compilation errors
             Wdbg(DebugLevel.I, "Compilation results: Errors? {0}, Warnings? {1} | Total: {2}", execCustomSaver.Errors.HasErrors, execCustomSaver.Errors.HasWarnings, execCustomSaver.Errors.Count)
             If execCustomSaver.Errors.HasWarnings Then
-                W(DoTranslation("Screensaver can be loaded, but these warnings may impact the way the screensaver works:"), True, ColTypes.Warning)
+                Write(DoTranslation("Screensaver can be loaded, but these warnings may impact the way the screensaver works:"), True, ColTypes.Warning)
                 Wdbg(DebugLevel.W, "Warnings when compiling:")
                 For Each errorName As CompilerError In execCustomSaver.Errors
                     If errorName.IsWarning Then
-                        W(errorName.ToString, True, ColTypes.Warning)
+                        Write(errorName.ToString, True, ColTypes.Warning)
                         PrintLineWithHandle(modCode(0).SplitNewLines, errorName.Line, errorName.Column, ColTypes.Warning)
                         Wdbg(DebugLevel.W, errorName.ToString)
                     End If
                 Next
             End If
             If execCustomSaver.Errors.HasErrors Then
-                W(DoTranslation("Screensaver can't be loaded because of the following: "), True, ColTypes.Error)
+                Write(DoTranslation("Screensaver can't be loaded because of the following: "), True, ColTypes.Error)
                 Wdbg(DebugLevel.E, "Errors when compiling:")
                 For Each errorName As CompilerError In execCustomSaver.Errors
                     If Not errorName.IsWarning Then
-                        W(errorName.ToString, True, ColTypes.Error)
+                        Write(errorName.ToString, True, ColTypes.Error)
                         PrintLineWithHandle(modCode(0).SplitNewLines, errorName.Line, errorName.Column, ColTypes.Error)
                         Wdbg(DebugLevel.E, errorName.ToString)
                     End If

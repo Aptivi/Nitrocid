@@ -93,7 +93,7 @@ Module FaderDisplay
                     CurrentColorBlueIn += ThresholdBlue
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color in (R;G;B: {0};{1};{2})", CurrentColorRedIn, CurrentColorGreenIn, CurrentColorBlueIn)
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                    If Not ResizeSyncing Then WriteWhereC(FaderWrite, Left, Top, True, New Color(CurrentColorRedIn & ";" & CurrentColorGreenIn & ";" & CurrentColorBlueIn), New Color(ConsoleColors.Black))
+                    If Not ResizeSyncing Then WriteWhere(FaderWrite, Left, Top, True, New Color(CurrentColorRedIn & ";" & CurrentColorGreenIn & ";" & CurrentColorBlueIn), New Color(ConsoleColors.Black))
                 Next
 
                 'Wait until fade out
@@ -111,7 +111,7 @@ Module FaderDisplay
                     Dim CurrentColorGreenOut As Integer = GreenColorNum - ThresholdGreen * CurrentStep
                     Dim CurrentColorBlueOut As Integer = BlueColorNum - ThresholdBlue * CurrentStep
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut)
-                    If Not ResizeSyncing Then WriteWhereC(FaderWrite, Left, Top, True, New Color(CurrentColorRedOut & ";" & CurrentColorGreenOut & ";" & CurrentColorBlueOut), New Color(ConsoleColors.Black))
+                    If Not ResizeSyncing Then WriteWhere(FaderWrite, Left, Top, True, New Color(CurrentColorRedOut & ";" & CurrentColorGreenOut & ";" & CurrentColorBlueOut), New Color(ConsoleColors.Black))
                 Next
 
                 'Select new color

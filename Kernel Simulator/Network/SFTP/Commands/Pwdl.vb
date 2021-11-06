@@ -21,7 +21,7 @@ Class SFTP_PwdlCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        W(DoTranslation("Local directory: {0}"), True, ColTypes.Neutral, SFTPCurrDirect)
+        Write(DoTranslation("Local directory: {0}"), True, ColTypes.Neutral, SFTPCurrDirect)
     End Sub
 
 End Class

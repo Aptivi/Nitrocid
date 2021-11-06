@@ -24,12 +24,12 @@ Class SearchWordCommand
         Try
             Dim Matches As List(Of String) = SearchFileForString(ListArgs(1), ListArgs(0))
             For Each Match As String In Matches
-                W(Match, True, ColTypes.Neutral)
+                Write(Match, True, ColTypes.Neutral)
             Next
         Catch ex As Exception
             Wdbg(DebugLevel.E, "Error trying to search {0} for {1}", ListArgs(0), ListArgs(1))
             WStkTrc(ex)
-            W(DoTranslation("Searching {0} for {1} failed.") + " {2}", True, ColTypes.Error, ListArgs(0), ListArgs(1), ex.Message)
+            Write(DoTranslation("Searching {0} for {1} failed.") + " {2}", True, ColTypes.Error, ListArgs(0), ListArgs(1), ex.Message)
         End Try
     End Sub
 

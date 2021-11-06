@@ -22,7 +22,7 @@ Class ZipShell_ChADirCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If Not ChangeWorkingArchiveDirectory(ListArgs(0)) Then
-            W(DoTranslation("Archive directory {0} doesn't exist"), True, ColTypes.Error, ListArgs(0))
+            Write(DoTranslation("Archive directory {0} doesn't exist"), True, ColTypes.Error, ListArgs(0))
         End If
     End Sub
 

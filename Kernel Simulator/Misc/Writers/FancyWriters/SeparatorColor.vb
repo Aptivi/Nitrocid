@@ -30,7 +30,7 @@ Public Module SeparatorWriterColor
         If Not String.IsNullOrWhiteSpace(Text) Then
             If PrintSuffix Then Text = "- " + Text
             If Not Text.EndsWith("-") Then Text += " "
-            W(Text.Truncate(Console.WindowWidth - 6), False, ColTypes, Vars)
+            Write(Text.Truncate(Console.WindowWidth - 6), False, ColTypes, Vars)
         End If
 
         'See how many times to repeat the closing minus sign. We could be running this in the wrap command.
@@ -43,7 +43,7 @@ Public Module SeparatorWriterColor
 
         'Write the closing minus sign.
         Dim OldTop As Integer = Console.CursorTop
-        W("-".Repeat(RepeatTimes), True, ColTypes)
+        Write("-".Repeat(RepeatTimes), True, ColTypes)
 
         'Fix CursorTop value on Unix systems. Mono...
         If IsOnUnix() Then
@@ -60,14 +60,14 @@ Public Module SeparatorWriterColor
     Public Sub WriteSeparator(Text As String, PrintSuffix As Boolean, ParamArray Vars() As Object)
         'Print the suffix and the text
         If Not String.IsNullOrWhiteSpace(Text) Then
-            If PrintSuffix Then W("- ", False, ColTypes.Separator, Vars)
+            If PrintSuffix Then Write("- ", False, ColTypes.Separator, Vars)
             If Not Text.EndsWith("-") Then Text += " "
 
             'We need to set an appropriate color for the suffix in the text.
             If Text.StartsWith("-") Then
                 For CharIndex As Integer = 0 To Text.Length - 1
                     If Text(CharIndex) = "-" Then
-                        W(Text(CharIndex), False, ColTypes.Separator)
+                        Write(Text(CharIndex), False, ColTypes.Separator)
                     Else
                         'We're (mostly) done
                         Text = Text.Substring(CharIndex)
@@ -75,7 +75,7 @@ Public Module SeparatorWriterColor
                     End If
                 Next
             End If
-            W(Text.Truncate(Console.WindowWidth - 6), False, ColTypes.SeparatorText, Vars)
+            Write(Text.Truncate(Console.WindowWidth - 6), False, ColTypes.SeparatorText, Vars)
         End If
 
         'See how many times to repeat the closing minus sign. We could be running this in the wrap command.
@@ -88,7 +88,7 @@ Public Module SeparatorWriterColor
 
         'Write the closing minus sign.
         Dim OldTop As Integer = Console.CursorTop
-        W("-".Repeat(RepeatTimes), True, ColTypes.Separator)
+        Write("-".Repeat(RepeatTimes), True, ColTypes.Separator)
 
         'Fix CursorTop value on Unix systems. Mono...
         If IsOnUnix() Then
@@ -103,12 +103,12 @@ Public Module SeparatorWriterColor
     ''' <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
     ''' <param name="Color">A color that will be changed to.</param>
     ''' <param name="Vars">Variables to format the message before it's written.</param>
-    Public Sub WriteSeparatorC16(Text As String, PrintSuffix As Boolean, Color As ConsoleColor, ParamArray Vars() As Object)
+    Public Sub WriteSeparator(Text As String, PrintSuffix As Boolean, Color As ConsoleColor, ParamArray Vars() As Object)
         'Print the suffix and the text
         If Not String.IsNullOrWhiteSpace(Text) Then
             If PrintSuffix Then Text = "- " + Text
             If Not Text.EndsWith("-") Then Text += " "
-            WriteC16(Text.Truncate(Console.WindowWidth - 6), False, Color, Vars)
+            Write(Text.Truncate(Console.WindowWidth - 6), False, Color, Vars)
         End If
 
         'See how many times to repeat the closing minus sign. We could be running this in the wrap command.
@@ -121,7 +121,7 @@ Public Module SeparatorWriterColor
 
         'Write the closing minus sign.
         Dim OldTop As Integer = Console.CursorTop
-        WriteC16("-".Repeat(RepeatTimes), True, Color)
+        Write("-".Repeat(RepeatTimes), True, Color)
 
         'Fix CursorTop value on Unix systems. Mono...
         If IsOnUnix() Then
@@ -137,12 +137,12 @@ Public Module SeparatorWriterColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="Vars">Variables to format the message before it's written.</param>
-    Public Sub WriteSeparatorC16(Text As String, PrintSuffix As Boolean, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray Vars() As Object)
+    Public Sub WriteSeparator(Text As String, PrintSuffix As Boolean, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, ParamArray Vars() As Object)
         'Print the suffix and the text
         If Not String.IsNullOrWhiteSpace(Text) Then
             If PrintSuffix Then Text = "- " + Text
             If Not Text.EndsWith("-") Then Text += " "
-            WriteC16(Text.Truncate(Console.WindowWidth - 6), False, ForegroundColor, BackgroundColor, Vars)
+            Write(Text.Truncate(Console.WindowWidth - 6), False, ForegroundColor, BackgroundColor, Vars)
         End If
 
         'See how many times to repeat the closing minus sign. We could be running this in the wrap command.
@@ -155,7 +155,7 @@ Public Module SeparatorWriterColor
 
         'Write the closing minus sign.
         Dim OldTop As Integer = Console.CursorTop
-        WriteC16("-".Repeat(RepeatTimes), True, ForegroundColor, BackgroundColor)
+        Write("-".Repeat(RepeatTimes), True, ForegroundColor, BackgroundColor)
 
         'Fix CursorTop value on Unix systems. Mono...
         If IsOnUnix() Then
@@ -170,12 +170,12 @@ Public Module SeparatorWriterColor
     ''' <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
     ''' <param name="Color">A color that will be changed to.</param>
     ''' <param name="Vars">Variables to format the message before it's written.</param>
-    Public Sub WriteSeparatorC(Text As String, PrintSuffix As Boolean, Color As Color, ParamArray Vars() As Object)
+    Public Sub WriteSeparator(Text As String, PrintSuffix As Boolean, Color As Color, ParamArray Vars() As Object)
         'Print the suffix and the text
         If Not String.IsNullOrWhiteSpace(Text) Then
             If PrintSuffix Then Text = "- " + Text
             If Not Text.EndsWith("-") Then Text += " "
-            WriteC(Text.Truncate(Console.WindowWidth - 6), False, Color, Vars)
+            Write(Text.Truncate(Console.WindowWidth - 6), False, Color, Vars)
         End If
 
         'See how many times to repeat the closing minus sign. We could be running this in the wrap command.
@@ -188,7 +188,7 @@ Public Module SeparatorWriterColor
 
         'Write the closing minus sign.
         Dim OldTop As Integer = Console.CursorTop
-        WriteC("-".Repeat(RepeatTimes), True, Color)
+        Write("-".Repeat(RepeatTimes), True, Color)
 
         'Fix CursorTop value on Unix systems. Mono...
         If IsOnUnix() Then
@@ -204,12 +204,12 @@ Public Module SeparatorWriterColor
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
     ''' <param name="Vars">Variables to format the message before it's written.</param>
-    Public Sub WriteSeparatorC(Text As String, PrintSuffix As Boolean, ForegroundColor As Color, BackgroundColor As Color, ParamArray Vars() As Object)
+    Public Sub WriteSeparator(Text As String, PrintSuffix As Boolean, ForegroundColor As Color, BackgroundColor As Color, ParamArray Vars() As Object)
         'Print the suffix and the text
         If Not String.IsNullOrWhiteSpace(Text) Then
             If PrintSuffix Then Text = "- " + Text
             If Not Text.EndsWith("-") Then Text += " "
-            WriteC(Text.Truncate(Console.WindowWidth - 6), False, ForegroundColor, BackgroundColor, Vars)
+            Write(Text.Truncate(Console.WindowWidth - 6), False, ForegroundColor, BackgroundColor, Vars)
         End If
 
         'See how many times to repeat the closing minus sign. We could be running this in the wrap command.
@@ -222,7 +222,7 @@ Public Module SeparatorWriterColor
 
         'Write the closing minus sign.
         Dim OldTop As Integer = Console.CursorTop
-        WriteC("-".Repeat(RepeatTimes), True, ForegroundColor, BackgroundColor)
+        Write("-".Repeat(RepeatTimes), True, ForegroundColor, BackgroundColor)
 
         'Fix CursorTop value on Unix systems. Mono...
         If IsOnUnix() Then

@@ -22,9 +22,9 @@ Class SFTP_PwdrCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If SFTPConnected Then
-            W(DoTranslation("Remote directory: {0}"), True, ColTypes.Neutral, SFTPCurrentRemoteDir)
+            Write(DoTranslation("Remote directory: {0}"), True, ColTypes.Neutral, SFTPCurrentRemoteDir)
         Else
-            W(DoTranslation("You must connect to server before getting current remote directory."), True, ColTypes.Error)
+            Write(DoTranslation("You must connect to server before getting current remote directory."), True, ColTypes.Error)
         End If
     End Sub
 

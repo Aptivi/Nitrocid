@@ -38,18 +38,18 @@ Public Module WelcomeMessage
 
         'Finally, write the message
         If StartScroll Then
-            WriteSlowlyC(MessageWrite, True, 10, ColTypes.Banner, KernelVersion)
+            WriteSlowly(MessageWrite, True, 10, ColTypes.Banner, KernelVersion)
         Else
-            W(MessageWrite, True, ColTypes.Banner, KernelVersion)
+            Write(MessageWrite, True, ColTypes.Banner, KernelVersion)
         End If
 
         'Show license
-        W(vbNewLine + "    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE" + vbNewLine +
+        Write(vbNewLine + "    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE" + vbNewLine +
                       "    This program comes with ABSOLUTELY NO WARRANTY, not even " + vbNewLine +
                       "    MERCHANTABILITY or FITNESS for particular purposes." + vbNewLine +
                       "    This is free software, and you are welcome to redistribute it" + vbNewLine +
                       "    under certain conditions; See COPYING file in source code." + vbNewLine, True, ColTypes.License)
-        W("* " + DoTranslation("For more information about the terms and conditions of using this software, visit") + " http://www.gnu.org/licenses/" + vbNewLine, True, ColTypes.License)
+        Write("* " + DoTranslation("For more information about the terms and conditions of using this software, visit") + " http://www.gnu.org/licenses/" + vbNewLine, True, ColTypes.License)
     End Sub
 
 End Module

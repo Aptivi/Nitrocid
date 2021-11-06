@@ -27,14 +27,14 @@ Class ChDirCommand
             SetCurrDir(ListArgs(0))
         Catch sex As Security.SecurityException
             Wdbg(DebugLevel.E, "Security error: {0} ({1})", sex.Message, sex.PermissionType)
-            W(DoTranslation("You are unauthorized to set current directory to {0}: {1}"), True, ColTypes.Error, ListArgs(0), sex.Message)
+            Write(DoTranslation("You are unauthorized to set current directory to {0}: {1}"), True, ColTypes.Error, ListArgs(0), sex.Message)
             WStkTrc(sex)
         Catch ptlex As PathTooLongException
             Wdbg(DebugLevel.I, "Directory length: {0}", NeutralizePath(ListArgs(0)).Length)
-            W(DoTranslation("The path you've specified is too long."), True, ColTypes.Error)
+            Write(DoTranslation("The path you've specified is too long."), True, ColTypes.Error)
             WStkTrc(ptlex)
         Catch ex As Exception
-            W(DoTranslation("Changing directory has failed: {0}"), True, ColTypes.Error, ex.Message)
+            Write(DoTranslation("Changing directory has failed: {0}"), True, ColTypes.Error, ex.Message)
             WStkTrc(ex)
         End Try
     End Sub

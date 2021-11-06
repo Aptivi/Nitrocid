@@ -27,13 +27,13 @@ Class SetSaverCommand
         StringArgs = StringArgs.ToLower
         If Screensavers.ContainsKey(StringArgs) Or CustomSavers.ContainsKey(StringArgs) Then
             SetDefaultScreensaver(StringArgs)
-            W(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, StringArgs)
+            Write(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, StringArgs)
         Else
             If FileExists($"{modPath}{StringArgs}") And Not SafeMode Then
                 SetDefaultScreensaver(StringArgs)
-                W(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, StringArgs)
+                Write(DoTranslation("{0} is set to default screensaver."), True, ColTypes.Neutral, StringArgs)
             Else
-                W(DoTranslation("Screensaver {0} not found."), True, ColTypes.Error, StringArgs)
+                Write(DoTranslation("Screensaver {0} not found."), True, ColTypes.Error, StringArgs)
             End If
         End If
     End Sub
@@ -41,9 +41,9 @@ Class SetSaverCommand
     Public Sub HelpHelper()
         Dim UsageLength As Integer = DoTranslation("Usage:").Length
         If CustomSavers.Count > 0 Then
-            W(" ".Repeat(UsageLength) + " " + DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", CustomSavers.Keys))
+            Write(" ".Repeat(UsageLength) + " " + DoTranslation("where customsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", CustomSavers.Keys))
         End If
-        W(" ".Repeat(UsageLength) + " " + DoTranslation("where builtinsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", Screensavers.Keys))
+        Write(" ".Repeat(UsageLength) + " " + DoTranslation("where builtinsaver will be") + " {0}", True, ColTypes.Neutral, String.Join(", ", Screensavers.Keys))
     End Sub
 
 End Class

@@ -39,10 +39,10 @@ Class WrapCommand
                 For Each CommandInfo As CommandInfo In Commands.Values
                     If CommandInfo.Wrappable Then WrappableCmds.Add(CommandInfo.Command)
                 Next
-                W(DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", True, ColTypes.Error, String.Join(", ", WrappableCmds.ToArray))
+                Write(DoTranslation("The command is not wrappable. These commands are wrappable:") + " {0}", True, ColTypes.Error, String.Join(", ", WrappableCmds.ToArray))
             End If
         Else
-            W(DoTranslation("The wrappable command is not found."), True, ColTypes.Error)
+            Write(DoTranslation("The wrappable command is not found."), True, ColTypes.Error)
         End If
     End Sub
 
@@ -56,7 +56,7 @@ Class WrapCommand
         Next
 
         'Print them along with help description
-        W(" ".Repeat(UsageLength) + " " + DoTranslation("Wrappable commands:") + " {0}", True, ColTypes.Neutral, String.Join(", ", WrappableCmds.ToArray))
+        Write(" ".Repeat(UsageLength) + " " + DoTranslation("Wrappable commands:") + " {0}", True, ColTypes.Neutral, String.Join(", ", WrappableCmds.ToArray))
     End Sub
 
 End Class

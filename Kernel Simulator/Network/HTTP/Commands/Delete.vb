@@ -25,10 +25,10 @@ Class HTTP_DeleteCommand
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         If HTTPConnected = True Then
             'Print a message
-            W(DoTranslation("Deleting {0}..."), True, ColTypes.Progress, ListArgs(0))
+            Write(DoTranslation("Deleting {0}..."), True, ColTypes.Progress, ListArgs(0))
 
             'Make a confirmation message so user will not accidentally delete a file or folder
-            W(DoTranslation("Are you sure you want to delete {0} <y/n>?") + " ", False, ColTypes.Input, ListArgs(0))
+            Write(DoTranslation("Are you sure you want to delete {0} <y/n>?") + " ", False, ColTypes.Input, ListArgs(0))
             Dim answer As String = Console.ReadKey.KeyChar
             Console.WriteLine()
 
@@ -36,18 +36,18 @@ Class HTTP_DeleteCommand
                 Dim DeleteTask As Task = HttpDelete(ListArgs(0))
                 DeleteTask.Wait()
             Catch aex As AggregateException
-                W(aex.Message + ":", True, ColTypes.Error)
+                Write(aex.Message + ":", True, ColTypes.Error)
                 For Each InnerException As Exception In aex.InnerExceptions
-                    W("- " + InnerException.Message, True, ColTypes.Error)
+                    Write("- " + InnerException.Message, True, ColTypes.Error)
                     If InnerException.InnerException IsNot Nothing Then
-                        W("- " + InnerException.InnerException.Message, True, ColTypes.Error)
+                        Write("- " + InnerException.InnerException.Message, True, ColTypes.Error)
                     End If
                 Next
             Catch ex As Exception
-                W(ex.Message, True, ColTypes.Error)
+                Write(ex.Message, True, ColTypes.Error)
             End Try
         Else
-            W(DoTranslation("You must connect to server with administrative privileges before performing the deletion."), True, ColTypes.Error)
+            Write(DoTranslation("You must connect to server with administrative privileges before performing the deletion."), True, ColTypes.Error)
         End If
     End Sub
 
