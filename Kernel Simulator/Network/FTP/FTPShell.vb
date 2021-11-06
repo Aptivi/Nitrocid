@@ -62,6 +62,10 @@ Public Module FTPShell
     Public FtpRecursiveHashing As Boolean
     Public FtpShowMotd As Boolean = True
     Public FtpAlwaysAcceptInvalidCerts As Boolean
+    Public FtpVerifyRetryAttempts As Integer = 3
+    Public FtpConnectTimeout As Integer = 15000
+    Public FtpDataConnectTimeout As Integer = 15000
+    Public FtpProtocolVersions As FtpIpVersion = FtpIpVersion.ANY
     Friend FtpPass As String
     Private FtpCommand As String
     Private FtpInitialized As Boolean

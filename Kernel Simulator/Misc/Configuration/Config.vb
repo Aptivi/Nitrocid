@@ -270,7 +270,11 @@ Public Module Config
                     {"Mail transfer progress (single)", Mail_ProgressStyleSingle},
                     {"Show notification for download progress", DownloadNotificationProvoke},
                     {"Show notification for upload progress", UploadNotificationProvoke},
-                    {"RSS feed fetch timeout", RSSFetchTimeout}
+                    {"RSS feed fetch timeout", RSSFetchTimeout},
+                    {"Verify retry attempts for FTP transmission", FtpVerifyRetryAttempts},
+                    {"FTP connection timeout", FtpConnectTimeout},
+                    {"FTP data connection timeout", FtpDataConnectTimeout},
+                    {"FTP IP versions", FtpProtocolVersions}
             }
             ConfigurationObject.Add("Network", NetworkConfig)
 
@@ -1029,6 +1033,10 @@ Public Module Config
             DownloadNotificationProvoke = If(ConfigToken("Network")?("Show notification for download progress"), False)
             UploadNotificationProvoke = If(ConfigToken("Network")?("Show notification for upload progress"), False)
             RSSFetchTimeout = If(Integer.TryParse(ConfigToken("Network")?("RSS feed fetch timeout"), 0), ConfigToken("Network")?("RSS feed fetch timeout"), 60000)
+            FtpVerifyRetryAttempts = If(Integer.TryParse(ConfigToken("Network")?("Verify retry attempts for FTP transmission"), 0), ConfigToken("Network")?("Verify retry attempts for FTP transmission"), 3)
+            FtpConnectTimeout = If(Integer.TryParse(ConfigToken("Network")?("FTP connection timeout"), 0), ConfigToken("Network")?("FTP connection timeout"), 15000)
+            FtpDataConnectTimeout = If(Integer.TryParse(ConfigToken("Network")?("FTP data connection timeout"), 0), ConfigToken("Network")?("FTP data connection timeout"), 15000)
+            FtpProtocolVersions = If(ConfigToken("Network")?("FTP IP versions") IsNot Nothing, If([Enum].TryParse(ConfigToken("Network")?("FTP IP versions"), FtpProtocolVersions), FtpProtocolVersions, FtpIpVersion.ANY), FtpIpVersion.ANY)
 
             'Screensaver Section
             DefSaverName = If(ConfigToken("Screensaver")?("Screensaver"), "matrix")

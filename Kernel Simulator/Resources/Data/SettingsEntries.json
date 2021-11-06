@@ -902,6 +902,35 @@
                 "Type": "SInt",
                 "Variable": "RSSFetchTimeout",
                 "Description": "How many milliseconds to wait before RSS feed fetch timeout?"
+            },
+            {
+                "Name": "Verify retry attempts for FTP transmission",
+                "Type": "SInt",
+                "Variable": "FtpVerifyRetryAttempts",
+                "Description": "How many times to verify the upload and download and retry if the verification fails before the download fails as a whole?"
+            },
+            {
+                "Name": "FTP connection timeout",
+                "Type": "SInt",
+                "Variable": "FtpConnectTimeout",
+                "Description": "How many milliseconds to wait before the FTP connection timeout?"
+            },
+            {
+                "Name": "FTP data connection timeout",
+                "Type": "SInt",
+                "Variable": "FtpDataConnectTimeout",
+                "Description": "How many milliseconds to wait before the FTP data connection timeout?"
+            },
+            {
+                "Name": "FTP IP versions",
+                "Type": "SSelection",
+                "Variable": "FtpProtocolVersions",
+                "IsEnumeration": true,
+                "EnumerationInternal": false,
+                "Enumeration": "FluentFTP.FtpIpVersion",
+                "EnumerationAssembly": "FluentFTP",
+                "EnumerationZeroBased": false,
+                "Description": "Choose the version of Internet Protocol that the FTP server supports and that the FTP client uses."
             }
         ]
     },

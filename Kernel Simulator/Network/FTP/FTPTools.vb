@@ -34,8 +34,11 @@ Public Module FTPTools
             ClientFTP = New FtpClient With {
                             .Host = Address,
                             .Port = Port,
-                            .RetryAttempts = 3,
-                            .EncryptionMode = EncryptionMode
+                            .RetryAttempts = FtpVerifyRetryAttempts,
+                            .ConnectTimeout = FtpConnectTimeout,
+                            .DataConnectionConnectTimeout = FtpDataConnectTimeout,
+                            .EncryptionMode = EncryptionMode,
+                            .InternetProtocolVersions = FtpProtocolVersions
                         }
         End If
 
@@ -79,8 +82,11 @@ Public Module FTPTools
                 ClientFTP = New FtpClient With {
                     .Host = FtpHost,
                     .Port = FtpPort,
-                    .RetryAttempts = 3,
-                    .EncryptionMode = FtpEncryptionMode.Auto
+                    .RetryAttempts = FtpVerifyRetryAttempts,
+                    .ConnectTimeout = FtpConnectTimeout,
+                    .DataConnectionConnectTimeout = FtpDataConnectTimeout,
+                    .EncryptionMode = FtpEncryptionMode.Auto,
+                    .InternetProtocolVersions = FtpProtocolVersions
                 }
 
                 'Add handler for SSL validation
