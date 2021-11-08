@@ -40,7 +40,7 @@ Public Module TimerScreen
         'Populate the positions for time
         Dim HalfWidth As Integer = Console.WindowWidth / 2
         Dim HalfHeight As Integer = Console.WindowHeight / 2
-        Dim TimeLeftPosition As Integer = HalfWidth - ((Date.Now.AddMilliseconds(TimerInterval) - Date.Now).ToString("d\.hh\:mm\:ss\.fff").Length / 2)
+        Dim TimeLeftPosition As Integer = HalfWidth - ((Date.Now.AddMilliseconds(TimerInterval) - Date.Now).ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length / 2)
         Dim TimeTopPosition As Integer = HalfHeight - 2
 
         'Populate the keys text variable
@@ -53,7 +53,7 @@ Public Module TimerScreen
         WriteWhere(KeysText, KeysTextLeftPosition, KeysTextTopPosition, True, ColTypes.Tip)
 
         'Print the time interval
-        WriteWhere((Date.Now.AddMilliseconds(TimerInterval) - Date.Now).ToString("d\.hh\:mm\:ss\.fff"), TimeLeftPosition, TimeTopPosition, True, ColTypes.Neutral)
+        WriteWhere((Date.Now.AddMilliseconds(TimerInterval) - Date.Now).ToString("d\.hh\:mm\:ss\.fff", CurrentCult), TimeLeftPosition, TimeTopPosition, True, ColTypes.Neutral)
 
         While KeysKeypress <> ConsoleKey.Escape
             'Wait for a keypress
@@ -76,8 +76,8 @@ Public Module TimerScreen
                             ClearLineToRight()
                             Console.ReadKey()
                         Else
-                            TimeLeftPosition = HalfWidth - ((Date.Now.AddMilliseconds(TimerInterval) - Date.Now).ToString("d\.hh\:mm\:ss\.fff").Length / 2)
-                            WriteWhere((Date.Now.AddMilliseconds(TimerInterval) - Date.Now).ToString("d\.hh\:mm\:ss\.fff"), TimeLeftPosition, TimeTopPosition, True, ColTypes.Neutral)
+                            TimeLeftPosition = HalfWidth - ((Date.Now.AddMilliseconds(TimerInterval) - Date.Now).ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length / 2)
+                            WriteWhere((Date.Now.AddMilliseconds(TimerInterval) - Date.Now).ToString("d\.hh\:mm\:ss\.fff", CurrentCult), TimeLeftPosition, TimeTopPosition, True, ColTypes.Neutral)
                         End If
                         Console.SetCursorPosition(0, KeysTextTopPosition - 2)
                         ClearLineToRight()
@@ -102,10 +102,10 @@ Public Module TimerScreen
     Private Sub TimerElapsed(sender As Object, e As ElapsedEventArgs) Handles Timer.Elapsed
         Dim HalfWidth As Integer = Console.WindowWidth / 2
         Dim HalfHeight As Integer = Console.WindowHeight / 2
-        Dim TimeLeftPosition As Integer = HalfWidth - (New TimeSpan().ToString("d\.hh\:mm\:ss\.fff").Length / 2)
+        Dim TimeLeftPosition As Integer = HalfWidth - (New TimeSpan().ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length / 2)
         Dim TimeTopPosition As Integer = HalfHeight - 2
         If TimerUpdate.IsAlive Then TimerUpdate.Abort()
-        WriteWhere(New TimeSpan().ToString("d\.hh\:mm\:ss\.fff"), TimeLeftPosition, TimeTopPosition, True, ColTypes.Success)
+        WriteWhere(New TimeSpan().ToString("d\.hh\:mm\:ss\.fff", CurrentCult), TimeLeftPosition, TimeTopPosition, True, ColTypes.Success)
         Timer.Stop()
     End Sub
 
@@ -118,9 +118,9 @@ Public Module TimerScreen
                 Dim Until As TimeSpan = TimerStarted.AddMilliseconds(Timer.Interval) - Date.Now
                 Dim HalfWidth As Integer = Console.WindowWidth / 2
                 Dim HalfHeight As Integer = Console.WindowHeight / 2
-                Dim TimeLeftPosition As Integer = HalfWidth - (Until.ToString("d\.hh\:mm\:ss\.fff").Length / 2)
+                Dim TimeLeftPosition As Integer = HalfWidth - (Until.ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length / 2)
                 Dim TimeTopPosition As Integer = HalfHeight - 2
-                WriteWhere(Until.ToString("d\.hh\:mm\:ss\.fff"), TimeLeftPosition, TimeTopPosition, True, ColTypes.Neutral)
+                WriteWhere(Until.ToString("d\.hh\:mm\:ss\.fff", CurrentCult), TimeLeftPosition, TimeTopPosition, True, ColTypes.Neutral)
             Catch ex As ThreadAbortException
                 Exit While
             End Try

@@ -38,7 +38,7 @@ Public Module StopwatchScreen
         'Populate the positions for time
         Dim HalfWidth As Integer = Console.WindowWidth / 2
         Dim HalfHeight As Integer = Console.WindowHeight / 2
-        Dim TimeLeftPosition As Integer = (HalfWidth * 1.5 - Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff").Length) / 2
+        Dim TimeLeftPosition As Integer = (HalfWidth * 1.5 - Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length) / 2
         Dim TimeTopPosition As Integer = HalfHeight - 2
         Dim LapsCurrentLapLeftPosition As Integer = HalfWidth * 1.5 + 2
         Dim LapsCurrentLapTopPosition As Integer = Console.WindowHeight - 4
@@ -53,8 +53,8 @@ Public Module StopwatchScreen
         WriteWhere(KeysText, KeysTextLeftPosition, KeysTextTopPosition, True, ColTypes.Tip)
 
         'Print the time interval and the current lap
-        WriteWhere(Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff"), TimeLeftPosition, TimeTopPosition, True, LapColor)
-        WriteWhere(DoTranslation("Lap") + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, True, LapColor, Laps.Count + 1, LappedStopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff"))
+        WriteWhere(Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult), TimeLeftPosition, TimeTopPosition, True, LapColor)
+        WriteWhere(DoTranslation("Lap") + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, True, LapColor, Laps.Count + 1, LappedStopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult))
 
         While KeysKeypress <> ConsoleKey.Escape
             'Wait for a keypress
@@ -101,11 +101,11 @@ Public Module StopwatchScreen
 
                     'Reset the indicators
                     LapColor = New Color(NeutralTextColor)
-                    WriteWhere(DoTranslation("Lap") + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, False, LapColor, Laps.Count + 1, LappedStopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff"))
+                    WriteWhere(DoTranslation("Lap") + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, False, LapColor, Laps.Count + 1, LappedStopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult))
                     ClearLineToRight()
                     Console.SetCursorPosition(0, TimeTopPosition)
                     ClearLineToRight()
-                    WriteWhere(Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff"), TimeLeftPosition, TimeTopPosition, False, LapColor)
+                    WriteWhere(Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult), TimeLeftPosition, TimeTopPosition, False, LapColor)
                 Case ConsoleKey.Escape
                     If LappedStopwatch.IsRunning Then LappedStopwatch.Reset()
                     If Stopwatch.IsRunning Then Stopwatch.Reset()
@@ -128,7 +128,7 @@ Public Module StopwatchScreen
         'Populate the positions for time and for lap list
         Dim HalfWidth As Integer = Console.WindowWidth / 2
         Dim HalfHeight As Integer = Console.WindowHeight / 2
-        Dim TimeLeftPosition As Integer = (HalfWidth * 1.5 - Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff").Length) / 2
+        Dim TimeLeftPosition As Integer = (HalfWidth * 1.5 - Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult).Length) / 2
         Dim TimeTopPosition As Integer = HalfHeight - 2
         Dim LapsCurrentLapLeftPosition As Integer = HalfWidth * 1.5 + 2
         Dim LapsCurrentLapTopPosition As Integer = Console.WindowHeight - 4
@@ -138,8 +138,8 @@ Public Module StopwatchScreen
         While StopwatchUpdate.IsAlive
             Try
                 'Update the elapsed display
-                WriteWhere(Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff"), TimeLeftPosition, TimeTopPosition, True, LapColor)
-                WriteWhere(DoTranslation("Lap") + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, True, LapColor, Laps.Count + 1, LappedStopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff"))
+                WriteWhere(Stopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult), TimeLeftPosition, TimeTopPosition, True, LapColor)
+                WriteWhere(DoTranslation("Lap") + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, True, LapColor, Laps.Count + 1, LappedStopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult))
 
                 'Update the laps list
                 Dim LapsListEndBorder As Integer = Console.WindowHeight - 6
@@ -148,7 +148,7 @@ Public Module StopwatchScreen
                 If BorderDifference < 0 Then BorderDifference = 0
                 For LapIndex As Integer = BorderDifference To Laps.Count - 1
                     Dim Lap As LapDisplayInfo = Laps(LapIndex)
-                    LapsListBuilder.AppendLine(Lap.LapColor.VTSequenceForeground + DoTranslation("Lap") + $" {LapIndex + 1}: {Lap.LapInterval:d\.hh\:mm\:ss\.fff}")
+                    LapsListBuilder.AppendLine(Lap.LapColor.VTSequenceForeground + DoTranslation("Lap") + $" {LapIndex + 1}: {Lap.LapInterval.ToString("d\.hh\:mm\:ss\.fff", CurrentCult)}")
                 Next
                 WriteWhere(LapsListBuilder.ToString, LapsLapsListLeftPosition, LapsLapsListTopPosition, True, LapColor)
             Catch ex As ThreadAbortException
