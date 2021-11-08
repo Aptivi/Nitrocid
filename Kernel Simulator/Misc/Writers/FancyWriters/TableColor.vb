@@ -24,7 +24,7 @@ Public Module TableColor
     ''' <param name="Headers">Headers to insert to the table.</param>
     ''' <param name="Rows">Rows to insert to the table.</param>
     ''' <param name="Margin">Safe threshold from left</param>
-    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, Optional SeparateRows As Boolean = True)
+    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, Optional SeparateRows As Boolean = True, Optional CellOptions As List(Of CellOptions) = Nothing)
         Dim ColumnCapacity As Integer = Console.WindowWidth / Headers.Length
         Dim ColumnPositions As New List(Of Integer)
         Dim RepeatTimes As Integer
@@ -63,10 +63,28 @@ Public Module TableColor
         'Write the rows
         For RowIndex As Integer = 0 To Rows.GetLength(0) - 1
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
+                Dim ColoredCell As Boolean
+                Dim CellColor As New Color(NeutralTextColor)
+                Dim CellBackgroundColor As New Color(BackgroundColor)
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
                 If RowValue Is Nothing Then RowValue = ""
-                WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes.TableValue)
+
+                'Get the cell options and set them as necessary
+                For Each CellOption As CellOptions In CellOptions
+                    If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
+                        ColoredCell = CellOption.ColoredCell
+                        CellColor = CellOption.CellColor
+                        CellBackgroundColor = CellOption.CellBackgroundColor
+                    End If
+                Next
+
+                'Now, write the cell value
+                If ColoredCell Then
+                    WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, CellColor, CellBackgroundColor)
+                Else
+                    WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes.TableValue)
+                End If
             Next
             Console.WriteLine()
 
@@ -90,7 +108,7 @@ Public Module TableColor
     ''' Draw a table with text
     ''' </summary>
     ''' <param name="Color">A color that will be changed to.</param>
-    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, Color As ConsoleColor, Optional SeparateRows As Boolean = True)
+    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, Color As ConsoleColor, Optional SeparateRows As Boolean = True, Optional CellOptions As List(Of CellOptions) = Nothing)
         Dim ColumnCapacity As Integer = Console.WindowWidth / Headers.Length
         Dim ColumnPositions As New List(Of Integer)
         Dim RepeatTimes As Integer
@@ -129,10 +147,28 @@ Public Module TableColor
         'Write the rows
         For RowIndex As Integer = 0 To Rows.GetLength(0) - 1
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
+                Dim ColoredCell As Boolean
+                Dim CellColor As New Color(NeutralTextColor)
+                Dim CellBackgroundColor As New Color(BackgroundColor)
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
                 If RowValue Is Nothing Then RowValue = ""
-                WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, Color)
+
+                'Get the cell options and set them as necessary
+                For Each CellOption As CellOptions In CellOptions
+                    If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
+                        ColoredCell = CellOption.ColoredCell
+                        CellColor = CellOption.CellColor
+                        CellBackgroundColor = CellOption.CellBackgroundColor
+                    End If
+                Next
+
+                'Now, write the cell value
+                If ColoredCell Then
+                    WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, CellColor, CellBackgroundColor)
+                Else
+                    WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, Color)
+                End If
             Next
             Console.WriteLine()
 
@@ -157,7 +193,7 @@ Public Module TableColor
     ''' </summary>
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, Optional SeparateRows As Boolean = True)
+    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, ForegroundColor As ConsoleColor, BackgroundColor As ConsoleColor, Optional SeparateRows As Boolean = True, Optional CellOptions As List(Of CellOptions) = Nothing)
         Dim ColumnCapacity As Integer = Console.WindowWidth / Headers.Length
         Dim ColumnPositions As New List(Of Integer)
         Dim RepeatTimes As Integer
@@ -196,10 +232,28 @@ Public Module TableColor
         'Write the rows
         For RowIndex As Integer = 0 To Rows.GetLength(0) - 1
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
+                Dim ColoredCell As Boolean
+                Dim CellColor As New Color(NeutralTextColor)
+                Dim CellBackgroundColor As New Color(BackgroundColor)
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
                 If RowValue Is Nothing Then RowValue = ""
-                WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ForegroundColor, BackgroundColor)
+
+                'Get the cell options and set them as necessary
+                For Each CellOption As CellOptions In CellOptions
+                    If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
+                        ColoredCell = CellOption.ColoredCell
+                        CellColor = CellOption.CellColor
+                        CellBackgroundColor = CellOption.CellBackgroundColor
+                    End If
+                Next
+
+                'Now, write the cell value
+                If ColoredCell Then
+                    WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, CellColor, CellBackgroundColor)
+                Else
+                    WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ForegroundColor, BackgroundColor)
+                End If
             Next
             Console.WriteLine()
 
@@ -226,7 +280,7 @@ Public Module TableColor
     ''' <param name="Rows">Rows to insert to the table.</param>
     ''' <param name="Margin">Safe threshold from left</param>
     ''' <param name="ColTypes">A type of colors that will be changed.</param>
-    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, ColTypes As ColTypes, Optional SeparateRows As Boolean = True)
+    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, ColTypes As ColTypes, Optional SeparateRows As Boolean = True, Optional CellOptions As List(Of CellOptions) = Nothing)
         Dim ColumnCapacity As Integer = Console.WindowWidth / Headers.Length
         Dim ColumnPositions As New List(Of Integer)
         Dim RepeatTimes As Integer
@@ -265,10 +319,28 @@ Public Module TableColor
         'Write the rows
         For RowIndex As Integer = 0 To Rows.GetLength(0) - 1
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
+                Dim ColoredCell As Boolean
+                Dim CellColor As New Color(NeutralTextColor)
+                Dim CellBackgroundColor As New Color(BackgroundColor)
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
                 If RowValue Is Nothing Then RowValue = ""
-                WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes)
+
+                'Get the cell options and set them as necessary
+                For Each CellOption As CellOptions In CellOptions
+                    If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
+                        ColoredCell = CellOption.ColoredCell
+                        CellColor = CellOption.CellColor
+                        CellBackgroundColor = CellOption.CellBackgroundColor
+                    End If
+                Next
+
+                'Now, write the cell value
+                If ColoredCell Then
+                    WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, CellColor, CellBackgroundColor)
+                Else
+                    WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ColTypes)
+                End If
             Next
             Console.WriteLine()
 
@@ -292,7 +364,7 @@ Public Module TableColor
     ''' Draw a table with text
     ''' </summary>
     ''' <param name="Color">A color that will be changed to.</param>
-    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, Color As Color, Optional SeparateRows As Boolean = True)
+    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, Color As Color, Optional SeparateRows As Boolean = True, Optional CellOptions As List(Of CellOptions) = Nothing)
         Dim ColumnCapacity As Integer = Console.WindowWidth / Headers.Length
         Dim ColumnPositions As New List(Of Integer)
         Dim RepeatTimes As Integer
@@ -331,10 +403,28 @@ Public Module TableColor
         'Write the rows
         For RowIndex As Integer = 0 To Rows.GetLength(0) - 1
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
+                Dim ColoredCell As Boolean
+                Dim CellColor As New Color(NeutralTextColor)
+                Dim CellBackgroundColor As New Color(BackgroundColor)
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
                 If RowValue Is Nothing Then RowValue = ""
-                WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, Color)
+
+                'Get the cell options and set them as necessary
+                For Each CellOption As CellOptions In CellOptions
+                    If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
+                        ColoredCell = CellOption.ColoredCell
+                        CellColor = CellOption.CellColor
+                        CellBackgroundColor = CellOption.CellBackgroundColor
+                    End If
+                Next
+
+                'Now, write the cell value
+                If ColoredCell Then
+                    WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, CellColor, CellBackgroundColor)
+                Else
+                    WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, Color)
+                End If
             Next
             Console.WriteLine()
 
@@ -359,7 +449,7 @@ Public Module TableColor
     ''' </summary>
     ''' <param name="ForegroundColor">A foreground color that will be changed to.</param>
     ''' <param name="BackgroundColor">A background color that will be changed to.</param>
-    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, ForegroundColor As Color, BackgroundColor As Color, Optional SeparateRows As Boolean = True)
+    Public Sub WriteTable(Headers() As String, Rows(,) As String, Margin As Integer, ForegroundColor As Color, BackgroundColor As Color, Optional SeparateRows As Boolean = True, Optional CellOptions As List(Of CellOptions) = Nothing)
         Dim ColumnCapacity As Integer = Console.WindowWidth / Headers.Length
         Dim ColumnPositions As New List(Of Integer)
         Dim RepeatTimes As Integer
@@ -398,10 +488,28 @@ Public Module TableColor
         'Write the rows
         For RowIndex As Integer = 0 To Rows.GetLength(0) - 1
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
+                Dim ColoredCell As Boolean
+                Dim CellColor As New Color(NeutralTextColor)
+                Dim CellBackgroundColor As New Color(ColorTools.BackgroundColor)
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
                 If RowValue Is Nothing Then RowValue = ""
-                WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ForegroundColor, BackgroundColor)
+
+                'Get the cell options and set them as necessary
+                For Each CellOption As CellOptions In CellOptions
+                    If CellOption.ColumnIndex = RowValueIndex And CellOption.RowIndex = RowIndex Then
+                        ColoredCell = CellOption.ColoredCell
+                        CellColor = CellOption.CellColor
+                        CellBackgroundColor = CellOption.CellBackgroundColor
+                    End If
+                Next
+
+                'Now, write the cell value
+                If ColoredCell Then
+                    WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, CellColor, CellBackgroundColor)
+                Else
+                    WriteWhere(RowValue.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, Console.CursorTop, False, ForegroundColor, BackgroundColor)
+                End If
             Next
             Console.WriteLine()
 

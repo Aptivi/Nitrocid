@@ -320,6 +320,7 @@
     <Compile Include="Misc\Writers\DebugWriters\DebugWriter.vb" />
     <Compile Include="Misc\Writers\ConsoleWriters\TextWriterColor.vb" />
     <Compile Include="Misc\Writers\FancyWriters\TableColor.vb" />
+    <Compile Include="Misc\Writers\FancyWriters\Tools\CellOptions.vb" />
     <Compile Include="Misc\Writers\MiscWriters\Decisive.vb" />
     <Compile Include="Misc\Writers\MiscWriters\WelcomeMessage.vb" />
     <Compile Include="Misc\ZipFile\Commands\CDir.vb" />

@@ -16,8 +16,6 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Imports System.Globalization
-
 Public Module CalendarPrint
 
     ''' <summary>
@@ -38,6 +36,7 @@ Public Module CalendarPrint
         Dim DateTo As New Date(Year, Month, Date.DaysInMonth(Year, Month), CurrentCult.Calendar)
         Dim CurrentWeek As Integer = 1
         Dim CalendarTitle As String = CalendarMonths(Month - 1) & " " & Year
+        Dim CalendarCellOptions As New List(Of CellOptions)
 
         'Populate the calendar data
         WriteWhere(CalendarTitle, CInt((Console.WindowWidth - CalendarTitle.Length) / 2), Console.CursorTop, True, ColTypes.Neutral)
@@ -59,13 +58,18 @@ Public Module CalendarPrint
             Next
             For Each EventInstance As EventInfo In CalendarEvents
                 If EventInstance.EventDate = CurrentDate And Not EventMarked Then
-                    CurrentDayMark = New Color(StageColor).VTSequenceForeground + CurrentDayMark
+                    Dim EventCell As New CellOptions(CurrentDate.DayOfWeek + 1, CurrentWeek) With {
+                        .ColoredCell = True,
+                        .CellColor = New Color(StageColor),
+                        .CellBackgroundColor = New Color(BackgroundColor)
+                    }
+                    CalendarCellOptions.Add(EventCell)
                     EventMarked = True
                 End If
             Next
             CalendarData(CurrentWeekIndex, CurrentDate.DayOfWeek) = CurrentDayMark
         Next
-        WriteTable(CalendarDays, CalendarData, 2)
+        WriteTable(CalendarDays, CalendarData, 2, True, CalendarCellOptions)
     End Sub
 
 End Module
