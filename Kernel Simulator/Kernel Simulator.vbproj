@@ -200,7 +200,9 @@
     <Compile Include="Kernel\KernelErrorType.vb" />
     <Compile Include="Kernel\KernelTools.vb" />
     <Compile Include="Kernel\PowerMode.vb" />
+    <Compile Include="Languages\CultureManager.vb" />
     <Compile Include="Languages\LanguageInfo.vb" />
+    <Compile Include="Languages\LanguageManager.vb" />
     <Compile Include="Languages\Translate.vb" />
     <Compile Include="Login\UserInfo.vb" />
     <Compile Include="Login\LoginErrorReasons.vb" />
