@@ -31,11 +31,11 @@ Public Module CalendarPrint
     ''' Prints the table of the calendar
     ''' </summary>
     Public Sub PrintCalendar(Year As Integer, Month As Integer)
-        Dim CalendarDays As String() = DateTimeFormatInfo.CurrentInfo.DayNames
-        Dim CalendarMonths As String() = DateTimeFormatInfo.CurrentInfo.MonthNames
+        Dim CalendarDays As String() = CurrentCult.DateTimeFormat.DayNames
+        Dim CalendarMonths As String() = CurrentCult.DateTimeFormat.MonthNames
         Dim CalendarData(5, CalendarDays.Length - 1) As String
-        Dim DateFrom As New Date(Year, Month, 1)
-        Dim DateTo As New Date(Year, Month, Date.DaysInMonth(Year, Month))
+        Dim DateFrom As New Date(Year, Month, 1, CurrentCult.Calendar)
+        Dim DateTo As New Date(Year, Month, Date.DaysInMonth(Year, Month), CurrentCult.Calendar)
         Dim CurrentWeek As Integer = 1
         Dim CalendarTitle As String = CalendarMonths(Month - 1) & " " & Year
 
@@ -43,8 +43,8 @@ Public Module CalendarPrint
         WriteWhere(CalendarTitle, CInt((Console.WindowWidth - CalendarTitle.Length) / 2), Console.CursorTop, True, ColTypes.Neutral)
         Console.WriteLine()
         For CurrentDay As Integer = 1 To DateTo.Day
-            Dim CurrentDate As New Date(Year, Month, CurrentDay, DateTimeFormatInfo.CurrentInfo.Calendar)
-            If CurrentDate.DayOfWeek = DateTimeFormatInfo.CurrentInfo.FirstDayOfWeek Then CurrentWeek += 1
+            Dim CurrentDate As New Date(Year, Month, CurrentDay, CurrentCult.DateTimeFormat.Calendar)
+            If CurrentDate.DayOfWeek = 0 Then CurrentWeek += 1
             Dim CurrentWeekIndex As Integer = CurrentWeek - 1
             Dim CurrentDayMark As String = $" {CurrentDay} "
             Dim ReminderMarked As Boolean = False
