@@ -23,12 +23,11 @@ Public Module RemoteProcedure
 
     Public RPCListen As UdpClient
     Public RPCPort As Integer = 12345
-    Public RPCThread As New Thread(AddressOf RecCommand) With {.IsBackground = True, .Name = "RPC Thread"}
+    Public RPCThread As New Thread(AddressOf ReceiveCommand) With {.IsBackground = True, .Name = "RPC Thread"}
     Public RPCEnabled As Boolean = True
-    Public RPCStopping As Boolean
 
     ''' <summary>
-    ''' A sub to start the RPC listener
+    ''' Starts the RPC listener
     ''' </summary>
     Sub StartRPC()
         If RPCEnabled Then
@@ -49,6 +48,21 @@ Public Module RemoteProcedure
             End Try
         Else
             Write(DoTranslation("Not starting RPC because it's disabled."), True, ColTypes.Neutral)
+        End If
+    End Sub
+
+    ''' <summary>
+    ''' Stops the RPC listener
+    ''' </summary>
+    Sub StopRPC()
+        If RPCThread.IsAlive Then
+            RPCThread.Abort()
+            RPCListen?.Close()
+            RPCListen = Nothing
+            RPCThread = New Thread(AddressOf ReceiveCommand) With {.IsBackground = True, .Name = "RPC Thread"}
+            Wdbg(DebugLevel.I, "RPC stopped.")
+        Else
+            Wdbg(DebugLevel.E, "RPC hasn't started yet!")
         End If
     End Sub
 

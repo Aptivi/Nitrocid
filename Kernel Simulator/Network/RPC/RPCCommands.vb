@@ -18,17 +18,17 @@
 
 Imports System.Net.Sockets
 
-Public Module RPC_Commands
+Public Module RPCCommands
 
     ''' <summary>
     ''' List of RPC commands.<br/>
-    ''' <br/>&lt;Request:Shutdown&gt;: Request will be like this: &lt;Request:Shutdown&gt;(IP)
-    ''' <br/>&lt;Request:Reboot&gt;: Request will be like this: &lt;Request:Reboot&gt;(IP)
-    ''' <br/>&lt;Request:Lock&gt;: Request will be like this: &lt;Request:Lock&gt;(IP)
-    ''' <br/>&lt;Request:SaveScr&gt;: Request will be like this: &lt;Request:SaveScr&gt;(IP)
-    ''' <br/>&lt;Request:Exec&gt;: Request will be like this: &lt;Request:Exec&gt;(Lock)
-    ''' <br/>&lt;Request:Acknowledge&gt;: Request will be like this: &lt;Request:Acknowledge&gt;(IP)
-    ''' <br/>&lt;Request:Ping&gt;: Request will be like this: &lt;Request:Ping&gt;(IP)
+    ''' <br/>&lt;Request:Shutdown&gt;: Shuts down the remote kernel. Usage: &lt;Request:Shutdown&gt;(IP)
+    ''' <br/>&lt;Request:Reboot&gt;: Reboots the remote kernel. Usage: &lt;Request:Reboot&gt;(IP)
+    ''' <br/>&lt;Request:Lock&gt;: Locks the computer remotely. Usage: &lt;Request:Lock&gt;(IP)
+    ''' <br/>&lt;Request:SaveScr&gt;: Saves the screen remotely. Usage: &lt;Request:SaveScr&gt;(IP)
+    ''' <br/>&lt;Request:Exec&gt;: Executes a command remotely. Usage: &lt;Request:Exec&gt;(Lock)
+    ''' <br/>&lt;Request:Acknowledge&gt;: Pings the remote kernel silently. Usage: &lt;Request:Acknowledge&gt;(IP)
+    ''' <br/>&lt;Request:Ping&gt;: Pings the remote kernel with notification. Usage: &lt;Request:Ping&gt;(IP)
     ''' </summary>
     ReadOnly RPCCommands As New List(Of String) From {"<Request:Shutdown>", "<Request:Reboot>", "<Request:Lock>", "<Request:SaveScr>", "<Request:Exec>", "<Request:Acknowledge>", "<Request:Ping>"}
 
@@ -99,59 +99,60 @@ Public Module RPC_Commands
     ''' <summary>
     ''' Thread to listen to commands.
     ''' </summary>
-    Sub RecCommand()
-        Dim endp As New IPEndPoint(IPAddress.Any, RPCPort)
+    Sub ReceiveCommand()
+        Dim RemoteEndpoint As New IPEndPoint(IPAddress.Any, RPCPort)
         While RPCThread.IsAlive
-            Dim buff() As Byte
-            Dim ip As String = ""
-            Dim msg As String = ""
+            Dim MessageBuffer() As Byte
+            Dim Message As String = ""
             Try
-                buff = RPCListen.Receive(endp)
-                msg = Text.Encoding.Default.GetString(buff)
-                Wdbg("RPC: Received message {0}", msg)
-                Kernel.EventManager.RaiseRPCCommandReceived(msg)
-                If msg.StartsWith("ShutdownConfirm") Then
+                MessageBuffer = RPCListen.Receive(RemoteEndpoint)
+                Message = Text.Encoding.Default.GetString(MessageBuffer)
+                Wdbg("RPC: Received message {0}", Message)
+                Kernel.EventManager.RaiseRPCCommandReceived(Message)
+
+                'Iterate through every confirmation message
+                If Message.StartsWith("ShutdownConfirm") Then
                     Wdbg(DebugLevel.I, "Shutdown confirmed from remote access.")
                     RPCPowerListener.Start("shutdown")
-                ElseIf msg.StartsWith("RebootConfirm") Then
+                ElseIf Message.StartsWith("RebootConfirm") Then
                     Wdbg(DebugLevel.I, "Reboot confirmed from remote access.")
                     RPCPowerListener.Start("reboot")
-                ElseIf msg.StartsWith("LockConfirm") Then
+                ElseIf Message.StartsWith("LockConfirm") Then
                     Wdbg(DebugLevel.I, "Lock confirmed from remote access.")
                     LockScreen()
-                ElseIf msg.StartsWith("SaveScrConfirm") Then
+                ElseIf Message.StartsWith("SaveScrConfirm") Then
                     Wdbg(DebugLevel.I, "Save screen confirmed from remote access.")
                     ShowSavers(DefSaverName)
-                ElseIf msg.StartsWith("ExecConfirm") Then
+                ElseIf Message.StartsWith("ExecConfirm") Then
                     If LoggedIn Then
                         Wdbg(DebugLevel.I, "Exec confirmed from remote access.")
                         Console.WriteLine()
-                        GetLine(False, msg.Replace("ExecConfirm, ", "").Replace(vbNewLine, ""))
+                        GetLine(False, Message.Replace("ExecConfirm, ", "").Replace(vbNewLine, ""))
                     Else
                         Wdbg(DebugLevel.W, "Tried to exec from remote access while not logged in. Dropping packet...")
                     End If
-                ElseIf msg.StartsWith("AckConfirm") Then
-                    Wdbg(DebugLevel.I, "{0} says ""Hello.""", msg.Replace("AckConfirm, ", "").Replace(vbNewLine, ""))
-                ElseIf msg.StartsWith("PingConfirm") Then
-                    Dim IPAddr As String = msg.Replace("PingConfirm, ", "").Replace(vbNewLine, "")
+                ElseIf Message.StartsWith("AckConfirm") Then
+                    Wdbg(DebugLevel.I, "{0} says ""Hello.""", Message.Replace("AckConfirm, ", "").Replace(vbNewLine, ""))
+                ElseIf Message.StartsWith("PingConfirm") Then
+                    Dim IPAddr As String = Message.Replace("PingConfirm, ", "").Replace(vbNewLine, "")
                     Wdbg(DebugLevel.I, "{0} pinged this device!", IPAddr)
                     NotifySend(New Notification(DoTranslation("Ping!"),
                                                 DoTranslation("{0} pinged you.").FormatString(IPAddr),
                                                 NotifPriority.Low, NotifType.Normal))
                 Else
-                    Wdbg(DebugLevel.W, "Not found. Message was {0}", msg)
+                    Wdbg(DebugLevel.W, "Not found. Message was {0}", Message)
                 End If
             Catch ex As Exception
                 Dim SE As SocketException = CType(ex.InnerException, SocketException)
                 If SE IsNot Nothing Then
                     If Not SE.SocketErrorCode = SocketError.TimedOut Then
-                        Wdbg(DebugLevel.E, "Error from host {0}: {1}", ip, SE.SocketErrorCode.ToString)
+                        Wdbg(DebugLevel.E, "Error from host: {0}", SE.SocketErrorCode.ToString)
                         WStkTrc(ex)
                     End If
                 Else
                     Wdbg(DebugLevel.E, "Fatal error: {0}", ex.Message)
                     WStkTrc(ex)
-                    Kernel.EventManager.RaiseRPCCommandError(msg, ex)
+                    Kernel.EventManager.RaiseRPCCommandError(Message, ex)
                 End If
             End Try
         End While

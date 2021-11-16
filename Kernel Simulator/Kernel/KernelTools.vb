@@ -325,10 +325,7 @@ Public Module KernelTools
         End If
 
         'Stop RPC
-        RPCThread.Abort()
-        RPCListen?.Close()
-        RPCListen = Nothing
-        RPCThread = New Thread(AddressOf RecCommand) With {.IsBackground = True, .Name = "RPC Thread"}
+        StopRPC()
 
         'Disconnect from mail
         IMAP_Client.Disconnect(True)
