@@ -62,7 +62,7 @@ Module ArgumentPrompt
                     ArgsInjected = True
                     Kernel.EventManager.RaiseArgumentsInjected(EnteredArguments)
                     Write(DoTranslation("Injected arguments will be scheduled to run at next reboot."), True, ColTypes.Neutral)
-                Else
+                ElseIf EnteredArguments.Count <> 0 Then
                     Write(DoTranslation("Starting the kernel with:") + " {0}", True, ColTypes.Neutral, String.Join(", ", EnteredArguments))
                     ParseArguments()
                 End If
