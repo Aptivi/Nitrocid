@@ -80,51 +80,51 @@ Public Module MailShell
         Kernel.EventManager.RaiseIMAPShellInitialized()
 
         While Not ExitRequested
-            'Populate messages
-            PopulateMessages()
-            If Mail_NotifyNewMail Then InitializeHandlers()
+            SyncLock MailCancelSync
+                'Populate messages
+                PopulateMessages()
+                If Mail_NotifyNewMail Then InitializeHandlers()
 
-            'Initialize prompt
-            If DefConsoleOut IsNot Nothing Then
-                Console.SetOut(DefConsoleOut)
-            End If
-            Wdbg(DebugLevel.I, "MailShellPromptStyle = {0}", MailShellPromptStyle)
-            If MailShellPromptStyle = "" Then
-                Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, Mail_Authentication.UserName) : Write("|", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, Address) : Write("] ", False, ColTypes.Gray) : Write("{0} > ", False, ColTypes.Gray, IMAP_CurrentDirectory)
-            Else
-                Dim ParsedPromptStyle As String = ProbePlaces(MailShellPromptStyle)
-                ParsedPromptStyle.ConvertVTSequences
-                Write(ParsedPromptStyle, False, ColTypes.Gray)
-            End If
-            SetInputColor()
-
-            'Listen for a command
-            Dim cmd As String = Console.ReadLine
-            If Not (cmd = Nothing Or cmd?.StartsWithAnyOf({" ", "#"}) = True) Then
-                Kernel.EventManager.RaiseIMAPPreExecuteCommand(cmd)
-                Dim words As String() = cmd.SplitEncloseDoubleQuotes(" ")
-                Wdbg(DebugLevel.I, $"Is the command found? {MailCommands.ContainsKey(words(0))}")
-                If MailCommands.ContainsKey(words(0)) Then
-                    Wdbg(DebugLevel.I, "Command found.")
-                    Dim Params As New ExecuteCommandThreadParameters(cmd, ShellCommandType.MailShell, Nothing)
-                    MailStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Mail Command Thread"}
-                    MailStartCommandThread.Start(Params)
-                    MailStartCommandThread.Join()
-                ElseIf MailModCommands.Contains(words(0)) Then
-                    Wdbg(DebugLevel.I, "Mod command found.")
-                    ExecuteModCommand(cmd)
-                ElseIf MailShellAliases.Keys.Contains(words(0)) Then
-                    Wdbg(DebugLevel.I, "Mail shell alias command found.")
-                    cmd = cmd.Replace($"""{words(0)}""", words(0))
-                    ExecuteMailAlias(cmd)
-                ElseIf Not cmd.StartsWith(" ") Then
-                    Wdbg(DebugLevel.E, "Command not found. Reopening shell...")
-                    Write(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Error, words(0))
+                'Initialize prompt
+                If DefConsoleOut IsNot Nothing Then
+                    Console.SetOut(DefConsoleOut)
                 End If
-                Kernel.EventManager.RaiseIMAPPostExecuteCommand(cmd)
-            Else
-                Thread.Sleep(30) 'This is to fix race condition between mail shell initialization and starting the event handler thread
-            End If
+                Wdbg(DebugLevel.I, "MailShellPromptStyle = {0}", MailShellPromptStyle)
+                If MailShellPromptStyle = "" Then
+                    Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.UserName, Mail_Authentication.UserName) : Write("|", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, Address) : Write("] ", False, ColTypes.Gray) : Write("{0} > ", False, ColTypes.Gray, IMAP_CurrentDirectory)
+                Else
+                    Dim ParsedPromptStyle As String = ProbePlaces(MailShellPromptStyle)
+                    ParsedPromptStyle.ConvertVTSequences
+                    Write(ParsedPromptStyle, False, ColTypes.Gray)
+                End If
+                SetInputColor()
+
+                'Listen for a command
+                Dim cmd As String = Console.ReadLine
+                If Not (cmd = Nothing Or cmd?.StartsWithAnyOf({" ", "#"}) = True) Then
+                    Kernel.EventManager.RaiseIMAPPreExecuteCommand(cmd)
+                    Dim words As String() = cmd.SplitEncloseDoubleQuotes(" ")
+                    Wdbg(DebugLevel.I, $"Is the command found? {MailCommands.ContainsKey(words(0))}")
+                    If MailCommands.ContainsKey(words(0)) Then
+                        Wdbg(DebugLevel.I, "Command found.")
+                        Dim Params As New ExecuteCommandThreadParameters(cmd, ShellCommandType.MailShell, Nothing)
+                        MailStartCommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Mail Command Thread"}
+                        MailStartCommandThread.Start(Params)
+                        MailStartCommandThread.Join()
+                    ElseIf MailModCommands.Contains(words(0)) Then
+                        Wdbg(DebugLevel.I, "Mod command found.")
+                        ExecuteModCommand(cmd)
+                    ElseIf MailShellAliases.Keys.Contains(words(0)) Then
+                        Wdbg(DebugLevel.I, "Mail shell alias command found.")
+                        cmd = cmd.Replace($"""{words(0)}""", words(0))
+                        ExecuteMailAlias(cmd)
+                    ElseIf Not cmd.StartsWith(" ") Then
+                        Wdbg(DebugLevel.E, "Command not found. Reopening shell...")
+                        Write(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Error, words(0))
+                    End If
+                    Kernel.EventManager.RaiseIMAPPostExecuteCommand(cmd)
+                End If
+            End SyncLock
         End While
 
         'Disconnect the session

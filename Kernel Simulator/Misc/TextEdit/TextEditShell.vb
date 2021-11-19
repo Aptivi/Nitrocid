@@ -22,7 +22,6 @@ Imports System.Threading
 Public Module TextEditShell
 
     'Variables
-    Public TextEdit_Exiting As Boolean
     Public ReadOnly TextEdit_Commands As New Dictionary(Of String, CommandInfo) From {{"addline", New CommandInfo("addline", ShellCommandType.TextShell, "Adds a new line with text at the end of the file", {"<text>"}, True, 1, New TextEdit_AddLineCommand)},
                                                                                       {"addlines", New CommandInfo("addlines", ShellCommandType.TextShell, "Adds the new lines at the end of the file", {}, False, 0, New TextEdit_AddLinesCommand)},
                                                                                       {"clear", New CommandInfo("clear", ShellCommandType.TextShell, "Clears the text file", {}, False, 0, New TextEdit_ClearCommand)},
@@ -50,71 +49,69 @@ Public Module TextEditShell
     Public TextEdit_AutoSaveFlag As Boolean = True
     Public TextEdit_AutoSaveInterval As Integer = 60
     Public TextEdit_PromptStyle As String = ""
+    Friend TextEdit_Exiting As Boolean
 
     Public Sub InitializeTextShell(FilePath As String)
         'Add handler for text editor shell
         SwitchCancellationHandler(ShellCommandType.TextShell)
 
         While Not TextEdit_Exiting
-            'Open file if not open
-            If TextEdit_FileStream Is Nothing Then
-                Wdbg(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath)
-                If Not TextEdit_OpenTextFile(FilePath) Then
-                    Write(DoTranslation("Failed to open file. Exiting shell..."), True, ColTypes.Error)
-                    Exit While
+            SyncLock EditorCancelSync
+                'Open file if not open
+                If TextEdit_FileStream Is Nothing Then
+                    Wdbg(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath)
+                    If Not TextEdit_OpenTextFile(FilePath) Then
+                        Write(DoTranslation("Failed to open file. Exiting shell..."), True, ColTypes.Error)
+                        Exit While
+                    End If
+                    TextEdit_AutoSave.Start()
                 End If
-                TextEdit_AutoSave.Start()
-            End If
 
-            'Prepare for prompt
-            If DefConsoleOut IsNot Nothing Then
-                Console.SetOut(DefConsoleOut)
-            End If
-            Wdbg(DebugLevel.I, "TextEdit_PromptStyle = {0}", TextEdit_PromptStyle)
-            If TextEdit_PromptStyle = "" Then
-                Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(TextEdit_WasTextEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
-            Else
-                Dim ParsedPromptStyle As String = ProbePlaces(TextEdit_PromptStyle)
-                ParsedPromptStyle.ConvertVTSequences
-                Write(ParsedPromptStyle, False, ColTypes.Gray)
-            End If
-            SetInputColor()
-
-            'Prompt for command
-            Kernel.EventManager.RaiseTextShellInitialized()
-            Dim WrittenCommand As String = Console.ReadLine
-
-            'Check to see if the command doesn't start with spaces or if the command is nothing
-            Wdbg(DebugLevel.I, "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand?.StartsWith(" "), WrittenCommand Is Nothing, WrittenCommand = "")
-            If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"}) = True) Then
-                Dim Command As String = WrittenCommand.SplitEncloseDoubleQuotes(" ")(0)
-                Wdbg(DebugLevel.I, "Checking command {0} for existence.", Command)
-                If TextEdit_Commands.ContainsKey(Command) Then
-                    Wdbg(DebugLevel.I, "Command {0} found in the list of {1} commands.", Command, TextEdit_Commands.Count)
-                    Dim Params As New ExecuteCommandThreadParameters(WrittenCommand, ShellCommandType.TextShell, Nothing)
-                    TextEdit_CommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Text Edit Command Thread"}
-                    Kernel.EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
-                    Wdbg(DebugLevel.I, "Made new thread. Starting with argument {0}...", WrittenCommand)
-                    TextEdit_CommandThread.Start(Params)
-                    TextEdit_CommandThread.Join()
-                    Kernel.EventManager.RaiseTextPostExecuteCommand(WrittenCommand)
-                ElseIf TextEdit_ModCommands.Contains(Command) Then
-                    Wdbg(DebugLevel.I, "Mod command {0} executing...", Command)
-                    ExecuteModCommand(WrittenCommand)
-                ElseIf TextShellAliases.Keys.Contains(Command) Then
-                    Wdbg(DebugLevel.I, "Text shell alias command found.")
-                    WrittenCommand = WrittenCommand.Replace($"""{Command}""", Command)
-                    ExecuteTextAlias(WrittenCommand)
+                'Prepare for prompt
+                If DefConsoleOut IsNot Nothing Then
+                    Console.SetOut(DefConsoleOut)
+                End If
+                Wdbg(DebugLevel.I, "TextEdit_PromptStyle = {0}", TextEdit_PromptStyle)
+                If TextEdit_PromptStyle = "" Then
+                    Write("[", False, ColTypes.Gray) : Write("{0}{1}", False, ColTypes.UserName, Path.GetFileName(FilePath), If(TextEdit_WasTextEdited(), "*", "")) : Write("] > ", False, ColTypes.Gray)
                 Else
-                    Write(DoTranslation("The specified text editor command is not found."), True, ColTypes.Error)
-                    Wdbg(DebugLevel.E, "Command {0} not found in the list of {1} commands.", Command, TextEdit_Commands.Count)
+                    Dim ParsedPromptStyle As String = ProbePlaces(TextEdit_PromptStyle)
+                    ParsedPromptStyle.ConvertVTSequences
+                    Write(ParsedPromptStyle, False, ColTypes.Gray)
                 End If
-            End If
+                SetInputColor()
 
-            'This is to fix race condition between shell initialization and starting the event handler thread
-            If WrittenCommand Is Nothing Then
-                Thread.Sleep(30)
-            End If
+                'Prompt for command
+                Kernel.EventManager.RaiseTextShellInitialized()
+                Dim WrittenCommand As String = Console.ReadLine
+
+                'Check to see if the command doesn't start with spaces or if the command is nothing
+                Wdbg(DebugLevel.I, "Starts with spaces: {0}, Is Nothing: {1}, Is Blank {2}", WrittenCommand?.StartsWith(" "), WrittenCommand Is Nothing, WrittenCommand = "")
+                If Not (WrittenCommand = Nothing Or WrittenCommand?.StartsWithAnyOf({" ", "#"}) = True) Then
+                    Dim Command As String = WrittenCommand.SplitEncloseDoubleQuotes(" ")(0)
+                    Wdbg(DebugLevel.I, "Checking command {0} for existence.", Command)
+                    If TextEdit_Commands.ContainsKey(Command) Then
+                        Wdbg(DebugLevel.I, "Command {0} found in the list of {1} commands.", Command, TextEdit_Commands.Count)
+                        Dim Params As New ExecuteCommandThreadParameters(WrittenCommand, ShellCommandType.TextShell, Nothing)
+                        TextEdit_CommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Text Edit Command Thread"}
+                        Kernel.EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
+                        Wdbg(DebugLevel.I, "Made new thread. Starting with argument {0}...", WrittenCommand)
+                        TextEdit_CommandThread.Start(Params)
+                        TextEdit_CommandThread.Join()
+                        Kernel.EventManager.RaiseTextPostExecuteCommand(WrittenCommand)
+                    ElseIf TextEdit_ModCommands.Contains(Command) Then
+                        Wdbg(DebugLevel.I, "Mod command {0} executing...", Command)
+                        ExecuteModCommand(WrittenCommand)
+                    ElseIf TextShellAliases.Keys.Contains(Command) Then
+                        Wdbg(DebugLevel.I, "Text shell alias command found.")
+                        WrittenCommand = WrittenCommand.Replace($"""{Command}""", Command)
+                        ExecuteTextAlias(WrittenCommand)
+                    Else
+                        Write(DoTranslation("The specified text editor command is not found."), True, ColTypes.Error)
+                        Wdbg(DebugLevel.E, "Command {0} not found in the list of {1} commands.", Command, TextEdit_Commands.Count)
+                    End If
+                End If
+            End SyncLock
         End While
 
         'Close file

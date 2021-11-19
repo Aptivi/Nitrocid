@@ -22,106 +22,128 @@ Module CancellationHandlers
 
     Friend CurrentShellType As ShellCommandType = ShellCommandType.Shell
     Friend LastShellType As ShellCommandType = ShellCommandType.Shell
+    Friend CancelSync, EditorCancelSync, FTPCancelSync, HTTPCancelSync, JsonShellCancelSync, MailCancelSync, RssShellCancelSync,
+           SFTPCancelSync, TestCancelSync, ZipShellCancelSync As New Object
 
     Sub CancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-            CancelRequested = True
-            Console.WriteLine()
-            DefConsoleOut = Console.Out
-            Console.SetOut(StreamWriter.Null)
-            e.Cancel = True
-            StartCommandThread.Abort()
-        End If
+        SyncLock CancelSync
+            If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+                CancelRequested = True
+                Console.WriteLine()
+                DefConsoleOut = Console.Out
+                Console.SetOut(StreamWriter.Null)
+                e.Cancel = True
+                StartCommandThread.Abort()
+            End If
+        End SyncLock
     End Sub
 
     Sub EditorCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-            Console.WriteLine()
-            DefConsoleOut = Console.Out
-            Console.SetOut(StreamWriter.Null)
-            e.Cancel = True
-            TextEdit_CommandThread.Abort()
-        End If
+        SyncLock EditorCancelSync
+            If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+                Console.WriteLine()
+                DefConsoleOut = Console.Out
+                Console.SetOut(StreamWriter.Null)
+                e.Cancel = True
+                TextEdit_CommandThread.Abort()
+            End If
+        End SyncLock
     End Sub
 
     Sub ZipShellCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-            Console.WriteLine()
-            DefConsoleOut = Console.Out
-            Console.SetOut(StreamWriter.Null)
-            e.Cancel = True
-            ZipShell_CommandThread.Abort()
-        End If
+        SyncLock ZipShellCancelSync
+            If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+                Console.WriteLine()
+                DefConsoleOut = Console.Out
+                Console.SetOut(StreamWriter.Null)
+                e.Cancel = True
+                ZipShell_CommandThread.Abort()
+            End If
+        End SyncLock
     End Sub
 
     Sub FTPCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-            Console.WriteLine()
-            DefConsoleOut = Console.Out
-            Console.SetOut(StreamWriter.Null)
-            e.Cancel = True
-            FTPStartCommandThread.Abort()
-        End If
+        SyncLock FTPCancelSync
+            If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+                Console.WriteLine()
+                DefConsoleOut = Console.Out
+                Console.SetOut(StreamWriter.Null)
+                e.Cancel = True
+                FTPStartCommandThread.Abort()
+            End If
+        End SyncLock
     End Sub
 
     Sub MailCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-            Console.WriteLine()
-            DefConsoleOut = Console.Out
-            Console.SetOut(StreamWriter.Null)
-            e.Cancel = True
-            MailStartCommandThread.Abort()
-        End If
+        SyncLock MailCancelSync
+            If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+                Console.WriteLine()
+                DefConsoleOut = Console.Out
+                Console.SetOut(StreamWriter.Null)
+                e.Cancel = True
+                MailStartCommandThread.Abort()
+            End If
+        End SyncLock
     End Sub
 
     Sub RssShellCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-            Console.WriteLine()
-            DefConsoleOut = Console.Out
-            Console.SetOut(StreamWriter.Null)
-            e.Cancel = True
-            RSSCommandThread.Abort()
-        End If
+        SyncLock RssShellCancelSync
+            If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+                Console.WriteLine()
+                DefConsoleOut = Console.Out
+                Console.SetOut(StreamWriter.Null)
+                e.Cancel = True
+                RSSCommandThread.Abort()
+            End If
+        End SyncLock
     End Sub
 
     Sub SFTPCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-            Console.WriteLine()
-            DefConsoleOut = Console.Out
-            Console.SetOut(StreamWriter.Null)
-            e.Cancel = True
-            SFTPStartCommandThread.Abort()
-        End If
+        SyncLock SFTPCancelSync
+            If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+                Console.WriteLine()
+                DefConsoleOut = Console.Out
+                Console.SetOut(StreamWriter.Null)
+                e.Cancel = True
+                SFTPStartCommandThread.Abort()
+            End If
+        End SyncLock
     End Sub
 
-    Sub TCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-            Console.WriteLine()
-            DefConsoleOut = Console.Out
-            Console.SetOut(StreamWriter.Null)
-            e.Cancel = True
-            TStartCommandThread.Abort()
-        End If
+    Sub TestCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
+        SyncLock TestCancelSync
+            If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+                Console.WriteLine()
+                DefConsoleOut = Console.Out
+                Console.SetOut(StreamWriter.Null)
+                e.Cancel = True
+                TStartCommandThread.Abort()
+            End If
+        End SyncLock
     End Sub
 
     Sub JsonShell_CancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-            Console.WriteLine()
-            DefConsoleOut = Console.Out
-            Console.SetOut(StreamWriter.Null)
-            e.Cancel = True
-            JsonShell_CommandThread.Abort()
-        End If
+        SyncLock JsonShellCancelSync
+            If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+                Console.WriteLine()
+                DefConsoleOut = Console.Out
+                Console.SetOut(StreamWriter.Null)
+                e.Cancel = True
+                JsonShell_CommandThread.Abort()
+            End If
+        End SyncLock
     End Sub
 
     Sub HTTPCancelCommand(sender As Object, e As ConsoleCancelEventArgs)
-        If e.SpecialKey = ConsoleSpecialKey.ControlC Then
-            Console.WriteLine()
-            DefConsoleOut = Console.Out
-            Console.SetOut(StreamWriter.Null)
-            e.Cancel = True
-            HTTPCommandThread.Abort()
-        End If
+        SyncLock HTTPCancelSync
+            If e.SpecialKey = ConsoleSpecialKey.ControlC Then
+                Console.WriteLine()
+                DefConsoleOut = Console.Out
+                Console.SetOut(StreamWriter.Null)
+                e.Cancel = True
+                HTTPCommandThread.Abort()
+            End If
+        End SyncLock
     End Sub
 
 End Module

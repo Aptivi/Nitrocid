@@ -28,10 +28,10 @@ Public Module HTTPShell
                                                                                  {"help", New CommandInfo("help", ShellCommandType.HTTPShell, "Shows help screen", {"[command]"}, False, 0, New HTTP_HelpCommand)},
                                                                                  {"setsite", New CommandInfo("setsite", ShellCommandType.HTTPShell, "Sets the HTTP site. Must be a valid URI.", {"<uri>"}, True, 1, New HTTP_SetSiteCommand)}}
     Public HTTPSite As String
-    Public HTTPExit As Boolean
     Public HTTPModCommands As New ArrayList
     Public HTTPShellPromptStyle As String = ""
     Public ClientHTTP As New HttpClient()
+    Friend HTTPExit As Boolean
     Private HTTPCommand As String
 
     ''' <summary>
@@ -48,50 +48,47 @@ Public Module HTTPShell
     ''' </summary>
     Public Sub InitiateHttpShell()
         While Not HTTPExit
-            Try
-                'Prompt for command
-                If DefConsoleOut IsNot Nothing Then
-                    Console.SetOut(DefConsoleOut)
-                End If
-                Wdbg(DebugLevel.I, "Preparing prompt...")
-                If HTTPConnected Then
-                    Wdbg(DebugLevel.I, "HTTPShellPromptStyle = {0}", HTTPShellPromptStyle)
-                    If HTTPShellPromptStyle = "" Then
-                        Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HTTPSite) : Write("]> ", False, ColTypes.Gray)
-                    Else
-                        Dim ParsedPromptStyle As String = ProbePlaces(HTTPShellPromptStyle)
-                        ParsedPromptStyle.ConvertVTSequences
-                        Write(ParsedPromptStyle, False, ColTypes.Gray)
+            SyncLock HTTPCancelSync
+                Try
+                    'Prompt for command
+                    If DefConsoleOut IsNot Nothing Then
+                        Console.SetOut(DefConsoleOut)
                     End If
-                Else
-                    Write("> ", False, ColTypes.Gray)
-                End If
+                    Wdbg(DebugLevel.I, "Preparing prompt...")
+                    If HTTPConnected Then
+                        Wdbg(DebugLevel.I, "HTTPShellPromptStyle = {0}", HTTPShellPromptStyle)
+                        If HTTPShellPromptStyle = "" Then
+                            Write("[", False, ColTypes.Gray) : Write("{0}", False, ColTypes.HostName, HTTPSite) : Write("]> ", False, ColTypes.Gray)
+                        Else
+                            Dim ParsedPromptStyle As String = ProbePlaces(HTTPShellPromptStyle)
+                            ParsedPromptStyle.ConvertVTSequences
+                            Write(ParsedPromptStyle, False, ColTypes.Gray)
+                        End If
+                    Else
+                        Write("> ", False, ColTypes.Gray)
+                    End If
 
-                'Run garbage collector
-                DisposeAll()
+                    'Run garbage collector
+                    DisposeAll()
 
-                'Set input color
-                SetInputColor()
+                    'Set input color
+                    SetInputColor()
 
-                'Prompt for command
-                Wdbg(DebugLevel.I, "Normal shell")
-                HTTPCommand = Console.ReadLine()
-                Kernel.EventManager.RaiseHTTPPreExecuteCommand(HTTPCommand)
+                    'Prompt for command
+                    Wdbg(DebugLevel.I, "Normal shell")
+                    HTTPCommand = Console.ReadLine()
+                    Kernel.EventManager.RaiseHTTPPreExecuteCommand(HTTPCommand)
 
-                'Parse command
-                If Not (HTTPCommand = Nothing Or HTTPCommand?.StartsWithAnyOf({" ", "#"})) Then
-                    HTTPGetLine()
-                    Kernel.EventManager.RaiseHTTPPostExecuteCommand(HTTPCommand)
-                End If
-
-                'This is to fix race condition between HTTP shell initialization and starting the event handler thread
-                If HTTPCommand Is Nothing Then
-                    Thread.Sleep(30)
-                End If
-            Catch ex As Exception
-                WStkTrc(ex)
-                Throw New Exceptions.HTTPShellException(DoTranslation("There was an error in the HTTP shell:") + " {0}", ex, ex.Message)
-            End Try
+                    'Parse command
+                    If Not (HTTPCommand = Nothing Or HTTPCommand?.StartsWithAnyOf({" ", "#"})) Then
+                        HTTPGetLine()
+                        Kernel.EventManager.RaiseHTTPPostExecuteCommand(HTTPCommand)
+                    End If
+                Catch ex As Exception
+                    WStkTrc(ex)
+                    Throw New Exceptions.HTTPShellException(DoTranslation("There was an error in the HTTP shell:") + " {0}", ex, ex.Message)
+                End Try
+            End SyncLock
         End While
 
         'Exiting, so reset the site

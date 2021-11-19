@@ -158,79 +158,76 @@ Public Module Shell
         SwitchCancellationHandler(ShellCommandType.Shell)
 
         While True
-            If LogoutRequested Then
-                Wdbg(DebugLevel.I, "Requested log out: {0}", LogoutRequested)
-                LogoutRequested = False
-                LoggedIn = False
-                Exit Sub
-            ElseIf Not InSaver Then
-                Try
-                    'Try to probe injected commands
-                    Wdbg(DebugLevel.I, "Probing injected commands using GetLine(True)...")
-                    GetLine(True, "")
+            SyncLock CancelSync
+                If LogoutRequested Then
+                    Wdbg(DebugLevel.I, "Requested log out: {0}", LogoutRequested)
+                    LogoutRequested = False
+                    LoggedIn = False
+                    Exit Sub
+                ElseIf Not InSaver Then
+                    Try
+                        'Try to probe injected commands
+                        Wdbg(DebugLevel.I, "Probing injected commands using GetLine(True)...")
+                        GetLine(True, "")
 
-                    'Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes)
-                    Console.CursorVisible = True
+                        'Enable cursor (We put it here to avoid repeated "CursorVisible = True" statements in different command codes)
+                        Console.CursorVisible = True
 
-                    'Write a prompt
-                    If DefConsoleOut IsNot Nothing Then
-                        Console.SetOut(DefConsoleOut)
-                    End If
-                    CommandPromptWrite()
-                    DisposeAll()
-
-                    'Set an input color
-                    Wdbg(DebugLevel.I, "ColoredShell is {0}", ColoredShell)
-                    SetInputColor()
-
-                    'Wait for command
-                    Wdbg(DebugLevel.I, "Waiting for command")
-                    Kernel.EventManager.RaiseShellInitialized()
-                    Dim strcommand As String = Console.ReadLine()
-
-                    If Not InSaver Then
-                        'Fire event of PreRaiseCommand
-                        Kernel.EventManager.RaisePreExecuteCommand(strcommand)
-
-                        'Check for a type of command
-                        If Not (strcommand = Nothing Or strcommand?.StartsWith(" ") = True) Then
-                            Dim Done As Boolean = False
-                            Dim Commands As String() = strcommand.Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
-                            For Each Command As String In Commands
-                                Dim Parts As String() = Command.SplitEncloseDoubleQuotes(" ")
-                                Wdbg(DebugLevel.I, "Mod commands probing started with {0} from {1}", Command, strcommand)
-                                If ModCommands.Contains(Parts(0)) Then
-                                    Done = True
-                                    Wdbg(DebugLevel.I, "Mod command: {0}", Parts(0))
-                                    ExecuteModCommand(Command)
-                                End If
-                                Wdbg(DebugLevel.I, "Aliases probing started with {0} from {1}", Command, strcommand)
-                                If Aliases.Keys.Contains(Parts(0)) Then
-                                    Done = True
-                                    Wdbg(DebugLevel.I, "Alias: {0}", Parts(0))
-                                    ExecuteAlias(Command)
-                                End If
-                                If Done = False Then
-                                    Wdbg(DebugLevel.I, "Executing built-in command")
-                                    GetLine(False, Command)
-                                End If
-                            Next
+                        'Write a prompt
+                        If DefConsoleOut IsNot Nothing Then
+                            Console.SetOut(DefConsoleOut)
                         End If
+                        CommandPromptWrite()
+                        DisposeAll()
 
-                        'Fix race condition between shell initialization and starting the event handler thread
-                        If strcommand Is Nothing Then
-                            Thread.Sleep(30)
+                        'Set an input color
+                        Wdbg(DebugLevel.I, "ColoredShell is {0}", ColoredShell)
+                        SetInputColor()
+
+                        'Wait for command
+                        Wdbg(DebugLevel.I, "Waiting for command")
+                        Kernel.EventManager.RaiseShellInitialized()
+                        Dim strcommand As String = Console.ReadLine()
+
+                        If Not InSaver Then
+                            'Fire event of PreRaiseCommand
+                            Kernel.EventManager.RaisePreExecuteCommand(strcommand)
+
+                            'Check for a type of command
+                            If Not (strcommand = Nothing Or strcommand?.StartsWith(" ") = True) Then
+                                Dim Done As Boolean = False
+                                Dim Commands As String() = strcommand.Split({" : "}, StringSplitOptions.RemoveEmptyEntries)
+                                For Each Command As String In Commands
+                                    Dim Parts As String() = Command.SplitEncloseDoubleQuotes(" ")
+                                    Wdbg(DebugLevel.I, "Mod commands probing started with {0} from {1}", Command, strcommand)
+                                    If ModCommands.Contains(Parts(0)) Then
+                                        Done = True
+                                        Wdbg(DebugLevel.I, "Mod command: {0}", Parts(0))
+                                        ExecuteModCommand(Command)
+                                    End If
+                                    Wdbg(DebugLevel.I, "Aliases probing started with {0} from {1}", Command, strcommand)
+                                    If Aliases.Keys.Contains(Parts(0)) Then
+                                        Done = True
+                                        Wdbg(DebugLevel.I, "Alias: {0}", Parts(0))
+                                        ExecuteAlias(Command)
+                                    End If
+                                    If Done = False Then
+                                        Wdbg(DebugLevel.I, "Executing built-in command")
+                                        GetLine(False, Command)
+                                    End If
+                                Next
+
+                                'Fire an event of PostExecuteCommand
+                                Kernel.EventManager.RaisePostExecuteCommand(strcommand)
+                            End If
                         End If
-
-                        'Fire an event of PostExecuteCommand
-                        Kernel.EventManager.RaisePostExecuteCommand(strcommand)
-                    End If
-                Catch ex As Exception
-                    WStkTrc(ex)
-                    Write(DoTranslation("There was an error in the shell.") + vbNewLine + "Error {0}: {1}", True, ColTypes.Error, ex.GetType.FullName, ex.Message)
-                    Continue While
-                End Try
-            End If
+                    Catch ex As Exception
+                        WStkTrc(ex)
+                        Write(DoTranslation("There was an error in the shell.") + vbNewLine + "Error {0}: {1}", True, ColTypes.Error, ex.GetType.FullName, ex.Message)
+                        Continue While
+                    End Try
+                End If
+            End SyncLock
         End While
     End Sub
 
