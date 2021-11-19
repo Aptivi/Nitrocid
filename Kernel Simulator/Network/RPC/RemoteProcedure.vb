@@ -23,8 +23,17 @@ Public Module RemoteProcedure
 
     Public RPCListen As UdpClient
     Public RPCPort As Integer = 12345
-    Public RPCThread As New Thread(AddressOf ReceiveCommand) With {.IsBackground = True, .Name = "RPC Thread"}
     Public RPCEnabled As Boolean = True
+    Friend RPCThread As New Thread(AddressOf ReceiveCommand) With {.IsBackground = True, .Name = "RPC Thread"}
+
+    ''' <summary>
+    ''' Whether the RPC started
+    ''' </summary>
+    Public ReadOnly Property RPCStarted As Boolean
+        Get
+            Return RPCThread.IsAlive
+        End Get
+    End Property
 
     ''' <summary>
     ''' Starts the RPC listener
@@ -33,14 +42,14 @@ Public Module RemoteProcedure
         If RPCEnabled Then
             Try
                 Wdbg(DebugLevel.I, "RPC: Starting...")
-                If RPCListen Is Nothing Then
+                If Not RPCStarted Then
                     RPCListen = New UdpClient(RPCPort) With {.EnableBroadcast = True}
                     Wdbg(DebugLevel.I, "RPC: Listener started")
                     RPCThread.Start()
                     Wdbg(DebugLevel.I, "RPC: Thread started")
                     Write(DoTranslation("RPC listening on all addresses using port {0}."), True, ColTypes.Neutral, RPCPort)
                 Else
-                    Throw New ThreadStateException()
+                    Throw New ThreadStateException(DoTranslation("Trying to start RPC while it's already started."))
                 End If
             Catch ex As ThreadStateException
                 Write(DoTranslation("RPC is already running."), True, ColTypes.Error)
@@ -55,7 +64,7 @@ Public Module RemoteProcedure
     ''' Stops the RPC listener
     ''' </summary>
     Sub StopRPC()
-        If RPCThread.IsAlive Then
+        If RPCStarted Then
             RPCThread.Abort()
             RPCListen?.Close()
             RPCListen = Nothing

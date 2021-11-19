@@ -50,45 +50,38 @@ Public Module RPCCommands
     ''' <exception cref="InvalidOperationException"></exception>
     Public Sub SendCommand(Request As String, IP As String, Port As Integer)
         If RPCEnabled Then
+            'Get the command and the argument
             Dim Cmd As String = Request.Remove(Request.IndexOf("("))
             Wdbg(DebugLevel.I, "Command: {0}", Cmd)
             Dim Arg As String = Request.Substring(Request.IndexOf("(") + 1)
             Wdbg(DebugLevel.I, "Prototype Arg: {0}", Arg)
             Arg = Arg.Remove(Arg.Count - 1)
             Wdbg(DebugLevel.I, "Finished Arg: {0}", Arg)
+
+            'Check the command
             Dim Malformed As Boolean
             If RPCCommands.Contains(Cmd) Then
                 Wdbg(DebugLevel.I, "Command found.")
+
+                'Check the request type
+                Dim RequestType As String = Cmd.Substring(Cmd.IndexOf(":") + 1, Finish:=Cmd.IndexOf(">"))
                 Dim ByteMsg() As Byte = {}
-                If Cmd = "<Request:Shutdown>" Then
-                    Wdbg(DebugLevel.I, "Stream opened for device {0}", Arg)
-                    ByteMsg = Text.Encoding.Default.GetBytes("ShutdownConfirm, " + Arg + vbNewLine)
-                ElseIf Cmd = "<Request:Reboot>" Then
-                    Wdbg(DebugLevel.I, "Stream opened for device {0}", Arg)
-                    ByteMsg = Text.Encoding.Default.GetBytes("RebootConfirm, " + Arg + vbNewLine)
-                ElseIf Cmd = "<Request:Lock>" Then
-                    Wdbg(DebugLevel.I, "Stream opened for device {0}", Arg)
-                    ByteMsg = Text.Encoding.Default.GetBytes("LockConfirm, " + Arg + vbNewLine)
-                ElseIf Cmd = "<Request:SaveScr>" Then
-                    Wdbg(DebugLevel.I, "Stream opened for device {0}", Arg)
-                    ByteMsg = Text.Encoding.Default.GetBytes("SaveScrConfirm, " + Arg + vbNewLine)
-                ElseIf Cmd = "<Request:Exec>" Then
-                    Wdbg(DebugLevel.I, "Stream opened for device {0} to execute ""{1}""", IP, Arg)
-                    ByteMsg = Text.Encoding.Default.GetBytes("ExecConfirm, " + Arg + vbNewLine)
-                ElseIf Cmd = "<Request:Acknowledge>" Then
-                    Wdbg(DebugLevel.I, "Stream opened for device {0}", Arg)
-                    ByteMsg = Text.Encoding.Default.GetBytes("AckConfirm, " + Arg + vbNewLine)
-                ElseIf Cmd = "<Request:Ping>" Then
-                    Wdbg(DebugLevel.I, "Stream opened for device {0}", Arg)
-                    ByteMsg = Text.Encoding.Default.GetBytes("PingConfirm, " + Arg + vbNewLine)
-                Else
-                    Wdbg(DebugLevel.E, "Malformed request. {0}", Cmd)
-                    Malformed = True
-                End If
+                Select Case RequestType
+                    Case "Shutdown", "Reboot", "Lock", "SaveScr", "Exec", "Acknowledge", "Ping"
+                        'Populate the byte message to send the confirmation to
+                        Wdbg(DebugLevel.I, "Stream opened for device {0}", Arg)
+                        ByteMsg = Text.Encoding.Default.GetBytes($"{RequestType}Confirm, " + Arg + vbNewLine)
+                    Case Else
+                        'Rare case reached. Drop it.
+                        Wdbg(DebugLevel.E, "Malformed request. {0}", Cmd)
+                        Malformed = True
+                End Select
+
+                'Send the response
                 If Not Malformed Then
                     Wdbg(DebugLevel.I, "Sending response to device...")
                     RPCListen.Send(ByteMsg, ByteMsg.Length, IP, Port)
-                    Kernel.EventManager.RaiseRPCCommandSent(Cmd)
+                    Kernel.EventManager.RaiseRPCCommandSent(Cmd, Arg, IP, Port)
                 End If
             End If
         Else
@@ -101,14 +94,14 @@ Public Module RPCCommands
     ''' </summary>
     Sub ReceiveCommand()
         Dim RemoteEndpoint As New IPEndPoint(IPAddress.Any, RPCPort)
-        While RPCThread.IsAlive
+        While RPCStarted
             Dim MessageBuffer() As Byte
             Dim Message As String = ""
             Try
                 MessageBuffer = RPCListen.Receive(RemoteEndpoint)
                 Message = Text.Encoding.Default.GetString(MessageBuffer)
                 Wdbg("RPC: Received message {0}", Message)
-                Kernel.EventManager.RaiseRPCCommandReceived(Message)
+                Kernel.EventManager.RaiseRPCCommandReceived(Message, RemoteEndpoint.Address.ToString, RemoteEndpoint.Port)
 
                 'Iterate through every confirmation message
                 If Message.StartsWith("ShutdownConfirm") Then
@@ -152,7 +145,7 @@ Public Module RPCCommands
                 Else
                     Wdbg(DebugLevel.E, "Fatal error: {0}", ex.Message)
                     WStkTrc(ex)
-                    Kernel.EventManager.RaiseRPCCommandError(Message, ex)
+                    Kernel.EventManager.RaiseRPCCommandError(Message, ex, RemoteEndpoint.Address.ToString, RemoteEndpoint.Port)
                 End If
             End Try
         End While

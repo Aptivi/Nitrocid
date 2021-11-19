@@ -65,9 +65,9 @@ Public Class Events
     Public Event RemoteDebugConnectionDisconnected(IP As String)
     Public Event RemoteDebugExecuteCommand(IP As String, Command As String)
     Public Event RemoteDebugCommandError(IP As String, Command As String, Exception As Exception)
-    Public Event RPCCommandSent(Command As String)
-    Public Event RPCCommandReceived(Command As String)
-    Public Event RPCCommandError(Command As String, Exception As Exception)
+    Public Event RPCCommandSent(Command As String, Argument As String, IP As String, Port As Integer)
+    Public Event RPCCommandReceived(Command As String, IP As String, Port As Integer)
+    Public Event RPCCommandError(Command As String, Exception As Exception, IP As String, Port As Integer)
     Public Event RSSShellInitialized(FeedUrl As String)
     Public Event RSSPreExecuteCommand(FeedUrl As String, Command As String)
     Public Event RSSPostExecuteCommand(FeedUrl As String, Command As String)
@@ -809,13 +809,13 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of RPC command sent
     ''' </summary>
-    Public Sub RespondRPCCommandSent(Command As String) Handles Me.RPCCommandSent
+    Public Sub RespondRPCCommandSent(Command As String, Argument As String, IP As String, Port As Integer) Handles Me.RPCCommandSent
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
                     Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RPCCommandSent()...", script.ModPart, script.Name, script.Version)
-                    script.InitEvents("RPCCommandSent", Command)
+                    script.InitEvents("RPCCommandSent", Command, Argument, IP, Port)
                 Catch ex As Exception
                     Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
                     WStkTrc(ex)
@@ -826,13 +826,13 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of RPC command received
     ''' </summary>
-    Public Sub RespondRPCCommandReceived(Command As String) Handles Me.RPCCommandReceived
+    Public Sub RespondRPCCommandReceived(Command As String, IP As String, Port As Integer) Handles Me.RPCCommandReceived
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
                     Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RPCCommandReceived()...", script.ModPart, script.Name, script.Version)
-                    script.InitEvents("RPCCommandReceived", Command)
+                    script.InitEvents("RPCCommandReceived", Command, IP, Port)
                 Catch ex As Exception
                     Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
                     WStkTrc(ex)
@@ -843,13 +843,13 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of RPC command error
     ''' </summary>
-    Public Sub RespondRPCCommandError(Command As String, Exception As Exception) Handles Me.RPCCommandError
+    Public Sub RespondRPCCommandError(Command As String, Exception As Exception, IP As String, Port As Integer) Handles Me.RPCCommandError
         For Each ModPart As ModInfo In scripts.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
                     Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event RPCCommandError()...", script.ModPart, script.Name, script.Version)
-                    script.InitEvents("RPCCommandError", Command, Exception)
+                    script.InitEvents("RPCCommandError", Command, Exception, IP, Port)
                 Catch ex As Exception
                     Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
                     WStkTrc(ex)
@@ -2449,26 +2449,26 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of RPC command sent
     ''' </summary>
-    Public Sub RaiseRPCCommandSent(Command As String)
+    Public Sub RaiseRPCCommandSent(Command As String, Argument As String, IP As String, Port As Integer)
         Wdbg(DebugLevel.I, "Raising event RPCCommandSent() and responding in RespondRPCCommandSent()...")
         FiredEvents.Add("RPCCommandSent (" + CStr(FiredEvents.Count) + ")", {Command})
-        RaiseEvent RPCCommandSent(Command)
+        RaiseEvent RPCCommandSent(Command, Argument, IP, Port)
     End Sub
     ''' <summary>
     ''' Raise an event of RPC command received
     ''' </summary>
-    Public Sub RaiseRPCCommandReceived(Command As String)
+    Public Sub RaiseRPCCommandReceived(Command As String, IP As String, Port As Integer)
         Wdbg(DebugLevel.I, "Raising event RPCCommandReceived() and responding in RespondRPCCommandReceived()...")
         FiredEvents.Add("RPCCommandReceived (" + CStr(FiredEvents.Count) + ")", {Command})
-        RaiseEvent RPCCommandReceived(Command)
+        RaiseEvent RPCCommandReceived(Command, IP, Port)
     End Sub
     ''' <summary>
     ''' Raise an event of RPC command error
     ''' </summary>
-    Public Sub RaiseRPCCommandError(Command As String, Exception As Exception)
+    Public Sub RaiseRPCCommandError(Command As String, Exception As Exception, IP As String, Port As Integer)
         Wdbg(DebugLevel.I, "Raising event RPCCommandError() and responding in RespondRPCCommandError()...")
         FiredEvents.Add("RPCCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
-        RaiseEvent RPCCommandError(Command, Exception)
+        RaiseEvent RPCCommandError(Command, Exception, IP, Port)
     End Sub
     ''' <summary>
     ''' Raise an event of RSS shell initialized
