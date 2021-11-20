@@ -55,7 +55,7 @@ Public Module ConfigTools
         Dim ExpectedShellKeys As Integer = 16
         Dim ExpectedFilesystemKeys As Integer = 10
         Dim ExpectedNetworkKeys As Integer = 59
-        Dim ExpectedMiscKeys As Integer = 26
+        Dim ExpectedMiscKeys As Integer = 34
 
         'Screensaver keys and sections
         Dim ExpectedScreensaverKeys As Integer = 4

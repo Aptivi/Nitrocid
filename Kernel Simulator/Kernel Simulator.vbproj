@@ -180,6 +180,7 @@
     <Compile Include="Console\Color.vb" />
     <Compile Include="Console\Color255.vb" />
     <Compile Include="Console\ColorTools.vb" />
+    <Compile Include="Console\ColorWheelOpen.vb" />
     <Compile Include="Console\ConsoleColorsInfo.vb" />
     <Compile Include="Console\ConsoleExtensions.vb" />
     <Compile Include="Console\Input.vb" />
