@@ -76,6 +76,7 @@ Public Module Shell
                                                                              {"echo", New CommandInfo("echo", ShellCommandType.Shell, "Writes text into the console", {"<text>"}, False, 0, New EchoCommand)},
                                                                              {"edit", New CommandInfo("edit", ShellCommandType.Shell, "Edits a text file", {"<file>"}, True, 1, New EditCommand)},
                                                                              {"fileinfo", New CommandInfo("fileinfo", ShellCommandType.Shell, "Provides information about a file", {"<file>"}, True, 1, New FileInfoCommand)},
+                                                                             {"find", New CommandInfo("find", ShellCommandType.Shell, "Finds a file in the specified directory or in the current directory", {"<file> [directory]"}, True, 1, New FindCommand)},
                                                                              {"firedevents", New CommandInfo("firedevents", ShellCommandType.Shell, "Lists all fired events", {}, False, 0, New FiredEventsCommand)},
                                                                              {"ftp", New CommandInfo("ftp", ShellCommandType.Shell, "Use an FTP shell to interact with servers", {"<server>"}, False, 0, New FtpCommand)},
                                                                              {"gettimeinfo", New CommandInfo("gettimeinfo", ShellCommandType.Shell, "Gets the date and time information", {"<date>"}, True, 1, New GetTimeInfoCommand)},
