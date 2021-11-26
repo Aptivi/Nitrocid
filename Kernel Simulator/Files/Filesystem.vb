@@ -65,17 +65,19 @@ Public Module Filesystem
     ''' <summary>
     ''' Prints the contents of a file to the console
     ''' </summary>
-    ''' <param name="filename">Full path to file</param>
+    ''' <param name="filename">Full path to file with wildcards supported</param>
     Public Sub PrintContents(filename As String, PrintLineNumbers As Boolean)
         'Read the contents
         ThrowOnInvalidPath(filename)
         filename = NeutralizePath(filename)
-        Dim Contents As String() = ReadContents(filename)
-        For ContentIndex As Integer = 0 To Contents.Length - 1
-            If PrintLineNumbers Then
-                Write("{0,4}: ", False, ColTypes.ListEntry, ContentIndex + 1)
-            End If
-            Write(Contents(ContentIndex), True, ColTypes.Neutral)
+        For Each FilePath As String In GetFilesystemEntries(filename)
+            Dim Contents As String() = ReadContents(FilePath)
+            For ContentIndex As Integer = 0 To Contents.Length - 1
+                If PrintLineNumbers Then
+                    Write("{0,4}: ", False, ColTypes.ListEntry, ContentIndex + 1)
+                End If
+                Write(Contents(ContentIndex), True, ColTypes.Neutral)
+            Next
         Next
     End Sub
 
@@ -1116,6 +1118,70 @@ Public Module Filesystem
             Wdbg(DebugLevel.E, "Failed to combine files: {0}", ex.Message)
             Throw New Exceptions.FilesystemException(DoTranslation("Failed to combine files."), ex)
         End Try
+    End Function
+
+    ''' <summary>
+    ''' Gets the filesystem entries of the parent with the specified pattern (wildcards, ...)
+    ''' </summary>
+    ''' <param name="Path">The path, including the pattern</param>
+    ''' <returns>The array of full paths</returns>
+    Public Function GetFilesystemEntries(Path As String) As String()
+        Dim Entries As String() = {}
+        Try
+            ThrowOnInvalidPath(Path)
+
+            'Select the pattern index
+            Dim SelectedPatternIndex As Integer = 0
+            Dim SplitPath As String() = Path.Split("/").Skip(1).ToArray
+            Dim SplitParent As New List(Of String)
+            For PatternIndex As Integer = 0 To SplitPath.Length - 1
+                If SplitPath(PatternIndex).ContainsAnyOf(IO.Path.GetInvalidFileNameChars.Select(Function(Character) Character.ToString).ToArray) Then
+                    SelectedPatternIndex = PatternIndex
+                    Exit For
+                End If
+                SplitParent.Add(SplitPath(PatternIndex))
+            Next
+
+            'Split the path and the pattern
+            Dim Parent As String = IO.Path.GetDirectoryName(Path)
+            Dim Pattern As String = IO.Path.GetFileName(Path)
+            If SelectedPatternIndex <> 0 Then
+                Parent = String.Join("/", SplitParent)
+                Pattern = String.Join("/", SplitPath.Skip(SelectedPatternIndex))
+            End If
+
+            'Split the path and the pattern and return the final result
+            Entries = GetFilesystemEntries(IO.Path.GetDirectoryName(Path), IO.Path.GetFileName(Path))
+        Catch ex As Exception
+            WStkTrc(ex)
+            Wdbg(DebugLevel.E, "Failed to combine files: {0}", ex.Message)
+        End Try
+        Return Entries
+    End Function
+
+    ''' <summary>
+    ''' Gets the filesystem entries of the parent with the specified pattern (wildcards, ...)
+    ''' </summary>
+    ''' <param name="Parent">The parent path. It can be neutralized if necessary</param>
+    ''' <param name="Pattern">The pattern</param>
+    ''' <returns>The array of full paths</returns>
+    Public Function GetFilesystemEntries(Parent As String, Pattern As String) As String()
+        Dim Entries As String() = {}
+        Try
+            ThrowOnInvalidPath(Parent)
+            ThrowOnInvalidPath(Pattern)
+            Parent = NeutralizePath(Parent)
+
+            'Get the entries
+            If Directory.Exists(Parent) Then
+                Entries = Directory.EnumerateFileSystemEntries(Parent, Pattern).ToArray
+                Wdbg(DebugLevel.I, "Enumerated {0} entries from parent {1} using pattern {2}", Entries.Length, Parent, Pattern)
+            End If
+        Catch ex As Exception
+            WStkTrc(ex)
+            Wdbg(DebugLevel.E, "Failed to combine files: {0}", ex.Message)
+        End Try
+        Return Entries
     End Function
 
     ''' <summary>
