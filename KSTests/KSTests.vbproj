@@ -178,10 +178,10 @@
       <Version>2021.9.1</Version>
     </PackageReference>
     <PackageReference Include="MSTest.TestAdapter">
-      <Version>2.2.7</Version>
+      <Version>2.2.8</Version>
     </PackageReference>
     <PackageReference Include="MSTest.TestFramework">
-      <Version>2.2.7</Version>
+      <Version>2.2.8</Version>
     </PackageReference>
     <PackageReference Include="Shouldly">
       <Version>4.0.3</Version>
