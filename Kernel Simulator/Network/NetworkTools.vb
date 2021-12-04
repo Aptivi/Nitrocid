@@ -118,7 +118,7 @@ Public Module NetworkTools
     Public Function AddEntryToSpeedDial(Address As String, Port As Integer, User As String, SpeedDialType As SpeedDialType, Optional EncryptionMode As FtpEncryptionMode = FtpEncryptionMode.None, Optional ThrowException As Boolean = True) As Boolean
         Dim PathName As String = If(SpeedDialType = SpeedDialType.SFTP, "SFTPSpeedDial", "FTPSpeedDial")
         Dim SpeedDialEnum As KernelPathType = [Enum].Parse(GetType(KernelPathType), PathName)
-        If Not FileExists(GetKernelPath(SpeedDialEnum)) Then MakeFile(GetKernelPath(SpeedDialEnum))
+        MakeFile(GetKernelPath(SpeedDialEnum), False)
         Dim SpeedDialJsonContent As String = File.ReadAllText(GetKernelPath(SpeedDialEnum))
         If SpeedDialJsonContent.StartsWith("[") Then
             ConvertSpeedDialEntries(SpeedDialType)
@@ -154,7 +154,7 @@ Public Module NetworkTools
     Public Function ListSpeedDialEntries(SpeedDialType As SpeedDialType) As Dictionary(Of String, JToken)
         Dim PathName As String = If(SpeedDialType = SpeedDialType.SFTP, "SFTPSpeedDial", "FTPSpeedDial")
         Dim SpeedDialEnum As KernelPathType = [Enum].Parse(GetType(KernelPathType), PathName)
-        If Not FileExists(GetKernelPath(SpeedDialEnum)) Then MakeFile(GetKernelPath(SpeedDialEnum))
+        MakeFile(GetKernelPath(SpeedDialEnum), False)
         Dim SpeedDialJsonContent As String = File.ReadAllText(GetKernelPath(SpeedDialEnum))
         If SpeedDialJsonContent.StartsWith("[") Then
             ConvertSpeedDialEntries(SpeedDialType)

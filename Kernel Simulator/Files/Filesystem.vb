@@ -617,7 +617,7 @@ Public Module Filesystem
     ''' <param name="NewDirectory">New directory</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="IOException"></exception>
-    Public Function MakeDirectory(NewDirectory As String) As Boolean
+    Public Function MakeDirectory(NewDirectory As String, Optional ThrowIfDirectoryExists As Boolean = True) As Boolean
         ThrowOnInvalidPath(NewDirectory)
         NewDirectory = NeutralizePath(NewDirectory)
         Wdbg(DebugLevel.I, "New directory: {0} ({1})", NewDirectory, FolderExists(NewDirectory))
@@ -627,7 +627,7 @@ Public Module Filesystem
             'Raise event
             Kernel.EventManager.RaiseDirectoryCreated(NewDirectory)
             Return True
-        Else
+        ElseIf ThrowIfDirectoryExists Then
             Throw New IOException(DoTranslation("Directory {0} already exists.").FormatString(NewDirectory))
         End If
         Return False
@@ -639,7 +639,7 @@ Public Module Filesystem
     ''' <param name="NewFile">New file</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="IOException"></exception>
-    Public Function MakeFile(NewFile As String) As Boolean
+    Public Function MakeFile(NewFile As String, Optional ThrowIfFileExists As Boolean = True) As Boolean
         ThrowOnInvalidPath(NewFile)
         NewFile = NeutralizePath(NewFile)
         Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", NewFile, FileExists(NewFile))
@@ -657,7 +657,7 @@ Public Module Filesystem
                 WStkTrc(ex)
                 Throw New IOException(DoTranslation("Error trying to create a file: {0}").FormatString(ex.Message))
             End Try
-        Else
+        ElseIf ThrowIfFileExists Then
             Throw New IOException(DoTranslation("File already exists."))
         End If
         Return False
@@ -669,7 +669,7 @@ Public Module Filesystem
     ''' <param name="NewFile">New JSON file</param>
     ''' <returns>True if successful; False if unsuccessful</returns>
     ''' <exception cref="IOException"></exception>
-    Public Function MakeJsonFile(NewFile As String) As Boolean
+    Public Function MakeJsonFile(NewFile As String, Optional ThrowIfFileExists As Boolean = True) As Boolean
         ThrowOnInvalidPath(NewFile)
         NewFile = NeutralizePath(NewFile)
         Wdbg(DebugLevel.I, "File path is {0} and .Exists is {0}", NewFile, FileExists(NewFile))
@@ -690,7 +690,7 @@ Public Module Filesystem
                 WStkTrc(ex)
                 Throw New IOException(DoTranslation("Error trying to create a file: {0}").FormatString(ex.Message))
             End Try
-        Else
+        ElseIf ThrowIfFileExists Then
             Throw New IOException(DoTranslation("File already exists."))
         End If
         Return False

@@ -103,7 +103,7 @@ Public Module ReminderManager
     ''' Loads all the reminders from the KSReminders directory and adds them to the reminder list
     ''' </summary>
     Public Sub LoadReminders()
-        If Not FolderExists(GetKernelPath(KernelPathType.Reminders)) Then MakeDirectory(GetKernelPath(KernelPathType.Reminders))
+        MakeDirectory(GetKernelPath(KernelPathType.Reminders), False)
         Dim ReminderFiles As List(Of String) = Directory.EnumerateFileSystemEntries(GetKernelPath(KernelPathType.Reminders), "*", SearchOption.AllDirectories).ToList
         Wdbg(DebugLevel.I, "Got {0} reminders.", ReminderFiles.Count)
 

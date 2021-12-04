@@ -29,7 +29,7 @@ Class CombineCommand
 
         'Make a combined content array
         Dim CombinedContents() As String = CombineFiles(InputPath, CombineInputPaths)
-        If Not FileExists(OutputPath) Then MakeFile(OutputPath)
+        MakeFile(OutputPath, False)
         File.WriteAllLines(OutputPath, CombinedContents)
     End Sub
 

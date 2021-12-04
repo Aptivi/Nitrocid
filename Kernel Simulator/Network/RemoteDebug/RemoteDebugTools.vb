@@ -200,7 +200,7 @@ Public Module RemoteDebugTools
     ''' <param name="ThrowException">Optionally throw exception</param>
     ''' <returns>True if successful; False if unsuccessful.</returns>
     Public Function AddDeviceToJson(DeviceIP As String, Optional ThrowException As Boolean = True) As Boolean
-        If Not FileExists(GetKernelPath(KernelPathType.DebugDevNames)) Then MakeFile(GetKernelPath(KernelPathType.DebugDevNames))
+        MakeFile(GetKernelPath(KernelPathType.DebugDevNames), False)
         Dim DeviceJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.DebugDevNames))
         Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
         If DeviceNameToken(DeviceIP) Is Nothing Then
@@ -238,7 +238,7 @@ Public Module RemoteDebugTools
     ''' Lists all devices and puts them into an array
     ''' </summary>
     Public Function ListDevices() As String()
-        If Not FileExists(GetKernelPath(KernelPathType.DebugDevNames)) Then MakeFile(GetKernelPath(KernelPathType.DebugDevNames))
+        MakeFile(GetKernelPath(KernelPathType.DebugDevNames), False)
         Dim DeviceJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.DebugDevNames))
         Dim DeviceNameToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(DeviceJsonContent), DeviceJsonContent, "{}"))
         Return DeviceNameToken.Properties.Select(Function(p) p.Name).ToArray

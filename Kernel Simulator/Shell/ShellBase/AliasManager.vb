@@ -82,7 +82,7 @@ Public Module AliasManager
     ''' </summary>
     Public Sub InitAliases()
         'Get all aliases from file
-        If Not FileExists(GetKernelPath(KernelPathType.Aliases)) Then MakeFile(GetKernelPath(KernelPathType.Aliases))
+        MakeFile(GetKernelPath(KernelPathType.Aliases), False)
         Dim AliasJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.Aliases))
         Dim AliasNameToken As JToken = JToken.Parse(If(Not String.IsNullOrEmpty(AliasJsonContent), AliasJsonContent, "{}"))
         Dim AliasCmd, ActualCmd, AliasType As String
@@ -148,7 +148,7 @@ Public Module AliasManager
     ''' </summary>
     Public Sub SaveAliases()
         'Get all aliases from file
-        If Not FileExists(GetKernelPath(KernelPathType.Aliases)) Then MakeFile(GetKernelPath(KernelPathType.Aliases))
+        MakeFile(GetKernelPath(KernelPathType.Aliases), False)
         Dim AliasJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.Aliases))
         Dim AliasNameToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(AliasJsonContent), AliasJsonContent, "[]"))
 
@@ -443,7 +443,7 @@ Public Module AliasManager
     ''' </summary>
     Public Sub PurgeAliases()
         'Get all aliases from file
-        If Not FileExists(GetKernelPath(KernelPathType.Aliases)) Then MakeFile(GetKernelPath(KernelPathType.Aliases))
+        MakeFile(GetKernelPath(KernelPathType.Aliases), False)
         Dim AliasJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.Aliases))
         Dim AliasNameToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(AliasJsonContent), AliasJsonContent, "[]"))
 
@@ -494,7 +494,7 @@ Public Module AliasManager
     ''' <returns>True if it exists; false if it doesn't exist</returns>
     Public Function DoesAliasExist(TargetAlias As String, Type As ShellCommandType) As Boolean
         'Get all aliases from file
-        If Not FileExists(GetKernelPath(KernelPathType.Aliases)) Then MakeFile(GetKernelPath(KernelPathType.Aliases))
+        MakeFile(GetKernelPath(KernelPathType.Aliases), False)
         Dim AliasJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.Aliases))
         Dim AliasNameToken As JArray = JArray.Parse(If(Not String.IsNullOrEmpty(AliasJsonContent), AliasJsonContent, "[]"))
 

@@ -29,7 +29,7 @@ Public Module CustomSaverTools
     ''' Initializes and reads the custom saver settings
     ''' </summary>
     Public Sub InitializeCustomSaverSettings()
-        If Not FileExists(GetKernelPath(KernelPathType.CustomSaverSettings)) Then MakeFile(GetKernelPath(KernelPathType.CustomSaverSettings))
+        MakeFile(GetKernelPath(KernelPathType.CustomSaverSettings), False)
         Dim CustomSaverJsonContent As String = File.ReadAllText(GetKernelPath(KernelPathType.CustomSaverSettings))
         Dim CustomSaverToken As JObject = JObject.Parse(If(Not String.IsNullOrEmpty(CustomSaverJsonContent), CustomSaverJsonContent, "{}"))
         For Each Saver As String In CustomSavers.Keys
