@@ -91,6 +91,7 @@ Public Module EventManager
     ''' Loads all the events from the KSEvents directory and adds them to the event list
     ''' </summary>
     Public Sub LoadEvents()
+        If Not FolderExists(GetKernelPath(KernelPathType.Events)) Then MakeDirectory(GetKernelPath(KernelPathType.Events))
         Dim EventFiles As List(Of String) = Directory.EnumerateFileSystemEntries(GetKernelPath(KernelPathType.Events), "*", SearchOption.AllDirectories).ToList
         Wdbg(DebugLevel.I, "Got {0} events.", EventFiles.Count)
 
