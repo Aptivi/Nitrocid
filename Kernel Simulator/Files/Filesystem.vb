@@ -18,6 +18,7 @@
 
 Imports System.IO
 Imports System.Runtime.CompilerServices
+Imports System.Text
 Imports System.Text.RegularExpressions
 Imports Newtonsoft.Json.Linq
 
@@ -30,6 +31,24 @@ Public Module Filesystem
     Public SortMode As FilesystemSortOptions = FilesystemSortOptions.FullName
     Public SortDirection As FilesystemSortDirection = FilesystemSortDirection.Ascending
     Public ShowFileDetailsList As Boolean = True
+
+    ''' <summary>
+    ''' The new line style used for the current platform
+    ''' </summary>
+    Public ReadOnly Property NewlineStyle As FilesystemNewlineStyle
+        Get
+            Select Case Environment.NewLine
+                Case vbCrLf
+                    Return FilesystemNewlineStyle.CRLF
+                Case vbLf
+                    Return FilesystemNewlineStyle.LF
+                Case vbCr
+                    Return FilesystemNewlineStyle.CR
+                Case Else
+                    Return FilesystemNewlineStyle.CRLF
+            End Select
+        End Get
+    End Property
 
     ''' <summary>
     ''' Sets the current working directory
@@ -1182,6 +1201,58 @@ Public Module Filesystem
             Wdbg(DebugLevel.E, "Failed to combine files: {0}", ex.Message)
         End Try
         Return Entries
+    End Function
+
+    ''' <summary>
+    ''' Converts the line endings to the newline style for the current platform
+    ''' </summary>
+    ''' <param name="TextFile">Text file name with extension or file path</param>
+    Public Sub ConvertLineEndings(TextFile As String)
+        ConvertLineEndings(TextFile, NewlineStyle)
+    End Sub
+
+    ''' <summary>
+    ''' Converts the line endings to the specified newline style
+    ''' </summary>
+    ''' <param name="TextFile">Text file name with extension or file path</param>
+    ''' <param name="LineEndingStyle">Line ending style</param>
+    Public Sub ConvertLineEndings(TextFile As String, LineEndingStyle As FilesystemNewlineStyle)
+        ThrowOnInvalidPath(TextFile)
+        TextFile = NeutralizePath(TextFile)
+        If Not FileExists(TextFile) Then Throw New IOException(DoTranslation("File {0} not found.").FormatString(TextFile))
+
+        'Get all the file lines, regardless of the new line style on the target file
+        Dim FileContents() As String = ReadAllLinesNoBlock(TextFile)
+        Wdbg(DebugLevel.I, "Got {0} lines. Converting newlines in {1} to {2}...", FileContents.Length, TextFile, LineEndingStyle.ToString)
+
+        'Get the newline string according to the current style
+        Dim NewLineString As String = GetLineEndingString(LineEndingStyle)
+
+        'Convert the newlines now
+        Dim Result As New StringBuilder
+        For Each FileContent As String In FileContents
+            Result.Append(FileContent + NewLineString)
+        Next
+
+        'Save the changes
+        File.WriteAllText(TextFile, Result.ToString)
+    End Sub
+
+    ''' <summary>
+    ''' Gets the line ending string from the specified line ending style
+    ''' </summary>
+    ''' <param name="LineEndingStyle">Line ending style</param>
+    Public Function GetLineEndingString(LineEndingStyle As FilesystemNewlineStyle) As String
+        Select Case LineEndingStyle
+            Case FilesystemNewlineStyle.CRLF
+                Return vbCrLf
+            Case FilesystemNewlineStyle.LF
+                Return vbLf
+            Case FilesystemNewlineStyle.CR
+                Return vbCr
+            Case Else
+                Return Environment.NewLine
+        End Select
     End Function
 
     ''' <summary>

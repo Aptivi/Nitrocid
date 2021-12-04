@@ -55,3 +55,21 @@ Public Enum FilesystemSortDirection
     ''' </summary>
     Descending
 End Enum
+
+''' <summary>
+''' Line ending styles
+''' </summary>
+Public Enum FilesystemNewlineStyle
+    ''' <summary>
+    ''' Carriage return character. Used in Mac OS 9 or earlier.
+    ''' </summary>
+    CR
+    ''' <summary>
+    ''' Line feed character. Used in Linux, Unix, macOS, ...
+    ''' </summary>
+    LF
+    ''' <summary>
+    ''' Carriage return + line feed character. Used in Windows.
+    ''' </summary>
+    CRLF
+End Enum
