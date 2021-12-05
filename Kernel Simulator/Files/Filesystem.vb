@@ -436,37 +436,7 @@ Public Module Filesystem
     ''' <returns>Absolute path</returns>
     ''' <exception cref="FileNotFoundException"></exception>
     Public Function NeutralizePath(Path As String, Optional Strict As Boolean = False) As String
-        ThrowOnInvalidPath(Path)
-
-        'Replace backslashes with slashes if any.
-        Path = Path.Replace("\", "/")
-
-        'Append current directory to path
-        If (IsOnWindows() And Not Path.Contains(":/")) Or (IsOnUnix() And Not Path.StartsWith("/")) Then
-            If Not CurrDir.EndsWith("/") Then
-                Path = $"{CurrDir}/{Path}"
-            Else
-                Path = $"{CurrDir}{Path}"
-            End If
-        End If
-
-        'Replace last occurrences of current directory of path with nothing.
-        If Not CurrDir = "" Then
-            If Path.Contains(CurrDir.Replace("\", "/")) And Path.AllIndexesOf(CurrDir.Replace("\", "/")).Count > 1 Then
-                Path = ReplaceLastOccurrence(Path, CurrDir, "")
-            End If
-        End If
-
-        'If strict, checks for existence of file or directory
-        If Strict Then
-            If FileExists(Path) Or FolderExists(Path) Then
-                Return Path
-            Else
-                Throw New FileNotFoundException(DoTranslation("Neutralized a non-existent path.") + " {0}".FormatString(Path))
-            End If
-        Else
-            Return Path
-        End If
+        Return NeutralizePath(Path, CurrDir, Strict)
     End Function
 
     ''' <summary>
@@ -477,6 +447,9 @@ Public Module Filesystem
     ''' <returns>Absolute path</returns>
     ''' <exception cref="FileNotFoundException"></exception>
     Public Function NeutralizePath(Path As String, Source As String, Optional Strict As Boolean = False) As String
+        If Path Is Nothing Then Path = ""
+        If Source Is Nothing Then Source = ""
+
         ThrowOnInvalidPath(Path)
         ThrowOnInvalidPath(Source)
 
