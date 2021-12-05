@@ -210,7 +210,8 @@ Public Module Config
                     {"Show file details in list", ShowFileDetailsList},
                     {"Suppress unauthorized messages", SuppressUnauthorizedMessages},
                     {"Print line numbers on printing file contents", PrintLineNumbers},
-                    {"Sort the list", SortList}
+                    {"Sort the list", SortList},
+                    {"Show total size in list", ShowTotalSizeInList}
             }
             ConfigurationObject.Add("Filesystem", FilesystemConfig)
 
@@ -976,6 +977,7 @@ Public Module Config
             SuppressUnauthorizedMessages = If(ConfigToken("Filesystem")?("Suppress unauthorized messages"), True)
             PrintLineNumbers = If(ConfigToken("Filesystem")?("Print line numbers on printing file contents"), False)
             SortList = If(ConfigToken("Filesystem")?("Sort the list"), True)
+            ShowTotalSizeInList = If(ConfigToken("Filesystem")?("Show total size in list"), False)
 
             'Hardware Section
             Wdbg(DebugLevel.I, "Parsing hardware section...")

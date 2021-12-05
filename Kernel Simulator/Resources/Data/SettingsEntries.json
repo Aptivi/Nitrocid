@@ -568,6 +568,12 @@
                 "Type": "SBoolean",
                 "Variable": "SortList",
                 "Description": "Sorts the filesystem list professionally."
+            },
+            {
+                "Name": "Show total size in list",
+                "Type": "SBoolean",
+                "Variable": "ShowTotalSizeInList",
+                "Description": "If enables, shows the total folder size in list, depending on how to calculate the folder sizes according to the configuration."
             }
         ]
     },

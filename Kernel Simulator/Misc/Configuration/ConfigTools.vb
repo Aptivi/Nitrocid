@@ -53,7 +53,7 @@ Public Module ConfigTools
         Dim ExpectedHardwareKeys As Integer = 4
         Dim ExpectedLoginKeys As Integer = 11
         Dim ExpectedShellKeys As Integer = 16
-        Dim ExpectedFilesystemKeys As Integer = 10
+        Dim ExpectedFilesystemKeys As Integer = 11
         Dim ExpectedNetworkKeys As Integer = 59
         Dim ExpectedMiscKeys As Integer = 34
 

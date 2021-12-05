@@ -31,6 +31,7 @@ Public Module Filesystem
     Public SortMode As FilesystemSortOptions = FilesystemSortOptions.FullName
     Public SortDirection As FilesystemSortDirection = FilesystemSortDirection.Ascending
     Public ShowFileDetailsList As Boolean = True
+    Public ShowTotalSizeInList As Boolean
 
     ''' <summary>
     ''' The new line style used for the current platform
@@ -247,6 +248,9 @@ Public Module Filesystem
                         WStkTrc(ex)
                     End Try
                 Next
+
+                'Show total size in list optionally
+                If ShowTotalSizeInList Then Write(vbNewLine + DoTranslation("Total size in folder:") + " {0}", True, ColTypes.Neutral, GetAllSizesInFolder(New DirectoryInfo(folder)).FileSizeToString)
             Catch ex As Exception
                 Write(DoTranslation("Unknown error while listing in directory: {0}"), True, ColTypes.Error, ex.Message)
                 WStkTrc(ex)
