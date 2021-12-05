@@ -37,6 +37,31 @@ Module BeatFaderDisplay
         Console.Clear()
         Wdbg(DebugLevel.I, "Console geometry: {0}x{1}", Console.WindowWidth, Console.WindowHeight)
 
+        'Sanity checks for color levels
+        If BeatFaderTrueColor Or BeatFader255Colors Then
+            BeatFaderMinimumRedColorLevel = If(BeatFaderMinimumRedColorLevel >= 0 And BeatFaderMinimumRedColorLevel <= 255, BeatFaderMinimumRedColorLevel, 0)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", BeatFaderMinimumRedColorLevel)
+            BeatFaderMinimumGreenColorLevel = If(BeatFaderMinimumGreenColorLevel >= 0 And BeatFaderMinimumGreenColorLevel <= 255, BeatFaderMinimumGreenColorLevel, 0)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", BeatFaderMinimumGreenColorLevel)
+            BeatFaderMinimumBlueColorLevel = If(BeatFaderMinimumBlueColorLevel >= 0 And BeatFaderMinimumBlueColorLevel <= 255, BeatFaderMinimumBlueColorLevel, 0)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", BeatFaderMinimumBlueColorLevel)
+            BeatFaderMinimumColorLevel = If(BeatFaderMinimumColorLevel >= 0 And BeatFaderMinimumColorLevel <= 255, BeatFaderMinimumColorLevel, 0)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", BeatFaderMinimumColorLevel)
+            BeatFaderMaximumRedColorLevel = If(BeatFaderMaximumRedColorLevel >= 0 And BeatFaderMaximumRedColorLevel <= 255, BeatFaderMaximumRedColorLevel, 255)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", BeatFaderMaximumRedColorLevel)
+            BeatFaderMaximumGreenColorLevel = If(BeatFaderMaximumGreenColorLevel >= 0 And BeatFaderMaximumGreenColorLevel <= 255, BeatFaderMaximumGreenColorLevel, 255)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", BeatFaderMaximumGreenColorLevel)
+            BeatFaderMaximumBlueColorLevel = If(BeatFaderMaximumBlueColorLevel >= 0 And BeatFaderMaximumBlueColorLevel <= 255, BeatFaderMaximumBlueColorLevel, 255)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", BeatFaderMaximumBlueColorLevel)
+            BeatFaderMaximumColorLevel = If(BeatFaderMaximumColorLevel >= 0 And BeatFaderMaximumColorLevel <= 255, BeatFaderMaximumColorLevel, 255)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", BeatFaderMaximumColorLevel)
+        Else
+            BeatFaderMinimumColorLevel = If(BeatFaderMinimumColorLevel >= 0 And BeatFaderMinimumColorLevel <= 15, BeatFaderMinimumColorLevel, 0)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", BeatFaderMinimumColorLevel)
+            BeatFaderMaximumColorLevel = If(BeatFaderMaximumColorLevel >= 0 And BeatFaderMaximumColorLevel <= 15, BeatFaderMaximumColorLevel, 15)
+            WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", BeatFaderMaximumColorLevel)
+        End If
+
         'Screensaver logic
         Do While True
             Console.CursorVisible = False
@@ -49,32 +74,6 @@ Module BeatFaderDisplay
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1}", BeatFaderDelay, BeatInterval)
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Beat steps: {0} ms", BeatFaderDelay, BeatIntervalStep)
                 SleepNoBlock(BeatIntervalStep, BeatFader)
-
-                'Sanity checks for color levels
-                If BeatFaderTrueColor Or BeatFader255Colors Then
-                    BeatFaderMinimumRedColorLevel = If(BeatFaderMinimumRedColorLevel >= 0 And BeatFaderMinimumRedColorLevel <= 255, BeatFaderMinimumRedColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum red color level: {0}", BeatFaderMinimumRedColorLevel)
-                    BeatFaderMinimumGreenColorLevel = If(BeatFaderMinimumGreenColorLevel >= 0 And BeatFaderMinimumGreenColorLevel <= 255, BeatFaderMinimumGreenColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum green color level: {0}", BeatFaderMinimumGreenColorLevel)
-                    BeatFaderMinimumBlueColorLevel = If(BeatFaderMinimumBlueColorLevel >= 0 And BeatFaderMinimumBlueColorLevel <= 255, BeatFaderMinimumBlueColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum blue color level: {0}", BeatFaderMinimumBlueColorLevel)
-                    BeatFaderMinimumColorLevel = If(BeatFaderMinimumColorLevel >= 0 And BeatFaderMinimumColorLevel <= 255, BeatFaderMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", BeatFaderMinimumColorLevel)
-                    BeatFaderMaximumRedColorLevel = If(BeatFaderMaximumRedColorLevel >= 0 And BeatFaderMaximumRedColorLevel <= 255, BeatFaderMaximumRedColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum red color level: {0}", BeatFaderMaximumRedColorLevel)
-                    BeatFaderMaximumGreenColorLevel = If(BeatFaderMaximumGreenColorLevel >= 0 And BeatFaderMaximumGreenColorLevel <= 255, BeatFaderMaximumGreenColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum green color level: {0}", BeatFaderMaximumGreenColorLevel)
-                    BeatFaderMaximumBlueColorLevel = If(BeatFaderMaximumBlueColorLevel >= 0 And BeatFaderMaximumBlueColorLevel <= 255, BeatFaderMaximumBlueColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum blue color level: {0}", BeatFaderMaximumBlueColorLevel)
-                    BeatFaderMaximumColorLevel = If(BeatFaderMaximumColorLevel >= 0 And BeatFaderMaximumColorLevel <= 255, BeatFaderMaximumColorLevel, 255)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", BeatFaderMaximumColorLevel)
-                Else
-                    BeatFaderMinimumColorLevel = If(BeatFaderMinimumColorLevel >= 0 And BeatFaderMinimumColorLevel <= 15, BeatFaderMinimumColorLevel, 0)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Minimum color level: {0}", BeatFaderMinimumColorLevel)
-                    BeatFaderMaximumColorLevel = If(BeatFaderMaximumColorLevel >= 0 And BeatFaderMaximumColorLevel <= 15, BeatFaderMaximumColorLevel, 15)
-                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Maximum color level: {0}", BeatFaderMaximumColorLevel)
-                End If
-
 
                 'If we're cycling colors, set them. Else, use the user-provided color
                 Dim RedColorNum, GreenColorNum, BlueColorNum As Integer
