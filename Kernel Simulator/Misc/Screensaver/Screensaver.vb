@@ -179,6 +179,7 @@ Public Module Screensaver
     Friend Sub HandleSaverError(Exception As Exception)
         If Exception IsNot Nothing Then
             Wdbg(DebugLevel.W, "Screensaver experienced an error: {0}.", Exception.Message)
+            WStkTrc(Exception)
             HandleSaverCancel()
             Write(DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), True, ColTypes.Error, Exception.Message)
         End If
