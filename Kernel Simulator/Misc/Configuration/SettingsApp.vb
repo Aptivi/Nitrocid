@@ -293,11 +293,13 @@ Public Module SettingsApp
             Dim ListJoinStringVariable As String = KeyToken("DelimiterVariable")
             Dim ListFunctionName As String = KeyToken("SelectionFunctionName")
             Dim ListFunctionType As String = KeyToken("SelectionFunctionType")
+            Dim ListIsPathCurrentPath As Boolean = If(KeyToken("IsPathCurrentPath"), False)
+            Dim ListValuePathType As KernelPathType = If(KeyToken("ValuePathType") IsNot Nothing, [Enum].Parse(GetType(KernelPathType), KeyToken("ValuePathType")), KernelPathType.Mods)
             Dim TargetList As IEnumerable(Of Object)
             Dim SelectFrom As IEnumerable(Of Object)
             Dim Selections As Object
-            Dim NeutralizePaths As Boolean
-            Dim NeutralizeRootPath As String = CurrDir
+            Dim NeutralizePaths As Boolean = If(KeyToken("IsValuePath"), False)
+            Dim NeutralizeRootPath As String = If(ListIsPathCurrentPath, CurrDir, GetKernelPath(ListValuePathType))
 
             While Not KeyFinished
                 Console.Clear()
@@ -374,7 +376,7 @@ Public Module SettingsApp
                 If KeyType = SettingsKeyType.SVariant And Not VariantValueFromExternalPrompt Then
                     Write("> ", False, ColTypes.Input)
                     VariantValue = Console.ReadLine
-                    If NeutralizePaths Then AnswerString = NeutralizePath(AnswerString, NeutralizeRootPath)
+                    If NeutralizePaths Then VariantValue = NeutralizePath(VariantValue, NeutralizeRootPath)
                     Wdbg(DebugLevel.I, "User answered {0}", VariantValue)
                 ElseIf Not KeyType = SettingsKeyType.SVariant And Not KeyType = SettingsKeyType.SColor Then
                     If KeyType = SettingsKeyType.SList Then
