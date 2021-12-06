@@ -427,11 +427,10 @@ Public Module KernelTools
     ''' <summary>
     ''' Fetches the GitHub repo to see if there are any updates
     ''' </summary>
-    ''' <returns>A list which contains both the version and the URL</returns>
-    Public Function FetchKernelUpdates() As List(Of String)
+    ''' <returns>A kernel update instance</returns>
+    Public Function FetchKernelUpdates() As KernelUpdate
         Try
             'Variables
-            Dim UpdateSpecifier As New List(Of String)
             Dim UpdateDown As New WebClient
 
             'Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "EoflaOE" is enough.
@@ -440,16 +439,10 @@ Public Module KernelTools
             'Populate the following variables with information
             Dim UpdateStr As String = UpdateDown.DownloadString("https://api.github.com/repos/EoflaOE/Kernel-Simulator/releases")
             Dim UpdateToken As JToken = JToken.Parse(UpdateStr)
-            Dim UpdateVer As New Version(UpdateToken.First.SelectToken("tag_name").ToString.ReplaceAll({"v", "-alpha"}, ""))
-            Dim UpdateURL As String = UpdateToken.First.SelectToken("html_url")
-            Dim CurrentVer As New Version(KernelVersion)
+            Dim UpdateInstance As New KernelUpdate(UpdateToken)
 
-            'Check to see if the updated version is newer than the current version
-            If UpdateVer > CurrentVer Then
-                UpdateSpecifier.Add(UpdateVer.ToString)
-                UpdateSpecifier.Add(UpdateURL)
-            End If
-            Return UpdateSpecifier
+            'Return the update instance
+            Return UpdateInstance
         Catch ex As Exception
             Wdbg(DebugLevel.E, "Failed to check for updates: {0}", ex.Message)
             WStkTrc(ex)
@@ -462,13 +455,17 @@ Public Module KernelTools
     ''' </summary>
     Sub CheckKernelUpdates()
         Write(DoTranslation("Checking for system updates..."), True, ColTypes.Neutral)
-        Dim AvailableUpdates As List(Of String) = FetchKernelUpdates()
-        If AvailableUpdates IsNot Nothing AndAlso AvailableUpdates.Count > 0 Then
-            Write(DoTranslation("Found new version: "), False, ColTypes.ListEntry)
-            Write(AvailableUpdates(0), True, ColTypes.ListValue)
-            Write(DoTranslation("You can download it at: "), False, ColTypes.ListEntry)
-            Write(AvailableUpdates(1), True, ColTypes.ListValue)
-        ElseIf AvailableUpdates Is Nothing Then
+        Dim AvailableUpdate As KernelUpdate = FetchKernelUpdates()
+        If AvailableUpdate IsNot Nothing Then
+            If Not AvailableUpdate.Updated Then
+                Write(DoTranslation("Found new version: "), False, ColTypes.ListEntry)
+                Write(AvailableUpdate.UpdateVersion.ToString, True, ColTypes.ListValue)
+                Write(DoTranslation("You can download it at: "), False, ColTypes.ListEntry)
+                Write(AvailableUpdate.UpdateURL.ToString, True, ColTypes.ListValue)
+            Else
+                Write(DoTranslation("You're up to date!"), True, ColTypes.Neutral)
+            End If
+        ElseIf AvailableUpdate Is Nothing Then
             Write(DoTranslation("Failed to check for updates."), True, ColTypes.Error)
         End If
     End Sub
