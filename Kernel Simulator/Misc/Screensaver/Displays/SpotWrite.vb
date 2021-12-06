@@ -44,6 +44,7 @@ Module SpotWriteDisplay
                 Exit Do
             Else
                 'SpotWrite can also deal with files written on the field that is used for storing text, so check to see if the path exists.
+                Wdbg(DebugLevel.I, "Checking ""{0}"" to see if it's a file path", SpotWriteWrite)
                 If TryParsePath(SpotWriteWrite) AndAlso FileExists(SpotWriteWrite) Then
                     'File found! Now, write the contents of it to the local variable that stores the actual written text.
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", SpotWriteWrite)
@@ -107,6 +108,7 @@ Module SpotWriteDisplay
 
                             'If we're at the end of the page, clear the screen
                             If Console.CursorTop = Console.WindowHeight - 2 Then
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", Console.CursorTop, Console.WindowHeight - 2)
                                 SleepNoBlock(SpotWriteNewScreenDelay, SpotWrite)
                                 Console.Clear()
                                 Console.WriteLine()

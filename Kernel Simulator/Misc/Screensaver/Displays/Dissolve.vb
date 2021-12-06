@@ -77,12 +77,13 @@ Module DissolveDisplay
                 Dim EndTop As Integer = Console.WindowHeight - 1
                 Dim Left As Integer = RandomDriver.Next(Console.WindowWidth)
                 Dim Top As Integer = RandomDriver.Next(Console.WindowHeight)
-
-                'Fill the color if not filled
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Dissolving: {0}", ColorFilled)
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "End left: {0} | End top: {1}", EndLeft, EndTop)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got left: {0} | Got top: {1}", Left, Top)
+
+                'Fill the color if not filled
                 If Not ColorFilled Then
-                    'NOTICE: Mono seems to have a bug in Console.CursorLeft and Console.CursorTop when printing with VT escape sequences.
+                    'NOTICE: Mono seems to have a bug in Console.CursorLeft and Console.CursorTop when printing with VT escape sequences. For info, seek EB#2:7.
                     If Not (Console.CursorLeft >= EndLeft And Console.CursorTop >= EndTop) Then
                         Dim esc As Char = GetEsc()
                         If DissolveTrueColor Then

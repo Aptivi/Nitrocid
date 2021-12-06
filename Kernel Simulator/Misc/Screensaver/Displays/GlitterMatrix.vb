@@ -53,6 +53,7 @@ Module GlitterMatrixDisplay
                 If Not ResizeSyncing Then
                     Console.Write(CStr(RandomDriver.Next(2)))
                 Else
+                    WdbgConditional(ScreensaverDebug, DebugLevel.W, "Color-syncing. Clearing...")
                     Console.Clear()
                 End If
 

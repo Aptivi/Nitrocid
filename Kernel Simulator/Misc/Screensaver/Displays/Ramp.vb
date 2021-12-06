@@ -120,6 +120,7 @@ Module RampDisplay
                 Dim RampFrameStartWidth As Integer = 4
                 Dim RampFrameEndWidth As Integer = Console.WindowWidth - RampFrameStartWidth
                 Dim RampFrameSpaces As Integer = RampFrameEndWidth - RampFrameStartWidth
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Start width: {0}, End width: {1}, Spaces: {2}", RampFrameStartWidth, RampFrameEndWidth, RampFrameSpaces)
 
                 'Set thresholds for color ramps
                 Dim RampColorRedThreshold As Integer = RedColorNumFrom - RedColorNumTo
@@ -130,12 +131,16 @@ Module RampDisplay
                 Dim RampColorGreenSteps As Double = RampColorGreenThreshold / RampFrameSpaces
                 Dim RampColorBlueSteps As Double = RampColorBlueThreshold / RampFrameSpaces
                 Dim RampColorSteps As Double = RampColorThreshold / RampFrameSpaces
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Set thresholds (RGB: {0};{1};{2} | Normal: {3})", RampColorRedThreshold, RampColorGreenThreshold, RampColorBlueThreshold, RampColorThreshold)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces (RGB: {1};{2};{3} | Normal: {4})", RampFrameSpaces, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps, RampColorSteps)
 
                 'Let the ramp be printed in the center
                 Dim RampCenterPosition As Integer = Console.WindowHeight / 2
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Center position: {0}", RampCenterPosition)
 
                 'Set the current positions
                 Dim RampCurrentPositionLeft As Integer = RampFrameStartWidth + 1
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Current left position: {0}", RampCurrentPositionLeft)
 
                 'Draw the frame
                 If Not ResizeSyncing Then
@@ -179,6 +184,7 @@ Module RampDisplay
                         RampCurrentColorRed -= RampColorRedSteps
                         RampCurrentColorGreen -= RampColorGreenSteps
                         RampCurrentColorBlue -= RampColorBlueSteps
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampCurrentColorRed, RampCurrentColorGreen, RampCurrentColorBlue, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps)
                         RampCurrentColorInstance = New Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}")
                         SetConsoleColor(RampCurrentColorInstance, True)
 
@@ -206,6 +212,7 @@ Module RampDisplay
 
                         'Change the colors
                         RampCurrentColor -= RampColorSteps
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got new current colors (Normal: {0}) subtracting from {1}", RampCurrentColor, RampColorSteps)
                         RampCurrentColorInstance = New Color(Convert.ToInt32(RampCurrentColor))
                         SetConsoleColor(RampCurrentColorInstance, True)
 

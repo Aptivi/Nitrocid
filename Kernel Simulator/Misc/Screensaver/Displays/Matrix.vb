@@ -48,6 +48,7 @@ Module MatrixDisplay
                 If Not ResizeSyncing Then
                     Console.Write(CStr(random.Next(2)))
                 Else
+                    WdbgConditional(ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...")
                     Console.Clear()
                 End If
 

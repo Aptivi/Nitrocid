@@ -93,6 +93,7 @@ Module LighterDisplay
                     If Not ResizeSyncing Then
                         Console.Write(ColorStorage.VTSequenceBackground + " ")
                     Else
+                        WdbgConditional(ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing covered positions...")
                         CoveredPositions.Clear()
                     End If
                 ElseIf Lighter255Colors Then
@@ -102,6 +103,7 @@ Module LighterDisplay
                     If Not ResizeSyncing Then
                         Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
                     Else
+                        WdbgConditional(ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing covered positions...")
                         CoveredPositions.Clear()
                     End If
                 Else
@@ -111,6 +113,7 @@ Module LighterDisplay
                         WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", Console.BackgroundColor)
                         Console.Write(" ")
                     Else
+                        WdbgConditional(ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing covered positions...")
                         CoveredPositions.Clear()
                     End If
                 End If
@@ -128,6 +131,7 @@ Module LighterDisplay
                         Console.Write(" ")
                         CoveredPositions.RemoveAt(0)
                     Else
+                        WdbgConditional(ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing covered positions...")
                         CoveredPositions.Clear()
                     End If
                 End If

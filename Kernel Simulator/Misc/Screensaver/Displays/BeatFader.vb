@@ -117,7 +117,7 @@ Module BeatFaderDisplay
                 Dim ThresholdRed As Double = RedColorNum / BeatFaderMaxSteps
                 Dim ThresholdGreen As Double = GreenColorNum / BeatFaderMaxSteps
                 Dim ThresholdBlue As Double = BlueColorNum / BeatFaderMaxSteps
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2})", ThresholdRed, ThresholdGreen, ThresholdBlue)
 
                 'Fade out
                 For CurrentStep As Integer = 1 To BeatFaderMaxSteps

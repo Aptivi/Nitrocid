@@ -65,7 +65,7 @@ Module FaderBackDisplay
                 Dim ThresholdRed As Double = RedColorNum / FaderBackMaxSteps
                 Dim ThresholdGreen As Double = GreenColorNum / FaderBackMaxSteps
                 Dim ThresholdBlue As Double = BlueColorNum / FaderBackMaxSteps
-                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2}) using {3} steps", ThresholdRed, ThresholdGreen, ThresholdBlue, FaderBackMaxSteps)
 
                 'Fade in
                 Dim CurrentColorRedIn As Integer = 0

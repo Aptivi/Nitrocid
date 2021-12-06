@@ -135,11 +135,13 @@ Module MarqueeDisplay
                     'If we're not on the left, decrement the current left position
                     If Not CurrentLeft = 0 Then
                         CurrentLeft -= 1
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Not on left. Decremented left position {0}", CurrentLeft)
                     End If
 
                     'If we're on the left or the entire text is written, decrement the current left other end position
                     If Not Middle Then
                         CurrentLeftOtherEnd -= 1
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "On left or entire text written. Decremented left other end position {0}", CurrentLeftOtherEnd)
                     End If
                 Loop
 

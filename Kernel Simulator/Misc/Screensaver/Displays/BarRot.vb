@@ -82,6 +82,7 @@ Module BarRotDisplay
                 Dim RampFrameStartWidth As Integer = 4
                 Dim RampFrameEndWidth As Integer = Console.WindowWidth - RampFrameStartWidth
                 Dim RampFrameSpaces As Integer = RampFrameEndWidth - RampFrameStartWidth
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Start width: {0}, End width: {1}, Spaces: {2}", RampFrameStartWidth, RampFrameEndWidth, RampFrameSpaces)
 
                 'Set thresholds for color ramp
                 Dim RampColorRedThreshold As Integer = RedColorNumFrom - RedColorNumTo
@@ -90,12 +91,16 @@ Module BarRotDisplay
                 Dim RampColorRedSteps As Double = RampColorRedThreshold / RampFrameSpaces
                 Dim RampColorGreenSteps As Double = RampColorGreenThreshold / RampFrameSpaces
                 Dim RampColorBlueSteps As Double = RampColorBlueThreshold / RampFrameSpaces
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Set thresholds (RGB: {0};{1};{2})", RampColorRedThreshold, RampColorGreenThreshold, RampColorBlueThreshold)
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces (RGB: {1};{2};{3})", RampFrameSpaces, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps)
 
                 'Let the ramp be printed in the center
                 Dim RampCenterPosition As Integer = Console.WindowHeight / 2
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Center position: {0}", RampCenterPosition)
 
                 'Set the current positions
                 Dim RampCurrentPositionLeft As Integer = RampFrameStartWidth + 1
+                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Current left position: {0}", RampCurrentPositionLeft)
 
                 'Draw the frame
                 If Not ResizeSyncing Then
@@ -127,11 +132,13 @@ Module BarRotDisplay
                     Dim RampSubgradientRedColorNumTo As Integer = RampCurrentColorRed
                     Dim RampSubgradientGreenColorNumTo As Integer = RampCurrentColorGreen
                     Dim RampSubgradientBlueColorNumTo As Integer = RampCurrentColorBlue
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got subgradient color from (R;G;B: {0};{1};{2}) to (R;G;B: {3};{4};{5})", RampSubgradientRedColorNumFrom, RampSubgradientGreenColorNumFrom, RampSubgradientBlueColorNumFrom, RampSubgradientRedColorNumTo, RampSubgradientGreenColorNumTo, RampSubgradientBlueColorNumTo)
 
                     'Set the sub-gradient current colors
                     Dim RampSubgradientCurrentColorRed As Double = RampSubgradientRedColorNumFrom
                     Dim RampSubgradientCurrentColorGreen As Double = RampSubgradientGreenColorNumFrom
                     Dim RampSubgradientCurrentColorBlue As Double = RampSubgradientBlueColorNumFrom
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got subgradient current colors (R;G;B: {0};{1};{2})", RampSubgradientCurrentColorRed, RampSubgradientCurrentColorGreen, RampSubgradientCurrentColorBlue)
 
                     'Set the sub-gradient thresholds
                     Dim RampSubgradientColorRedThreshold As Integer = RampSubgradientRedColorNumFrom - RampSubgradientRedColorNumTo
@@ -140,6 +147,8 @@ Module BarRotDisplay
                     Dim RampSubgradientColorRedSteps As Double = RampSubgradientColorRedThreshold / RampFrameSpaces
                     Dim RampSubgradientColorGreenSteps As Double = RampSubgradientColorGreenThreshold / RampFrameSpaces
                     Dim RampSubgradientColorBlueSteps As Double = RampSubgradientColorBlueThreshold / RampFrameSpaces
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Set subgradient thresholds (RGB: {0};{1};{2})", RampSubgradientColorRedThreshold, RampSubgradientColorGreenThreshold, RampSubgradientColorBlueThreshold)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces for subgradient (RGB: {1};{2};{3})", RampFrameSpaces, RampSubgradientColorRedSteps, RampSubgradientColorGreenSteps, RampSubgradientColorBlueSteps)
 
                     'Make a new instance
                     Dim RampSubgradientCurrentColorInstance As New Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}")
@@ -164,6 +173,7 @@ Module BarRotDisplay
                         RampSubgradientCurrentColorRed -= RampSubgradientColorRedSteps
                         RampSubgradientCurrentColorGreen -= RampSubgradientColorGreenSteps
                         RampSubgradientCurrentColorBlue -= RampSubgradientColorBlueSteps
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got new subgradient current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampSubgradientCurrentColorRed, RampSubgradientCurrentColorGreen, RampSubgradientCurrentColorBlue, RampSubgradientColorRedSteps, RampSubgradientColorGreenSteps, RampSubgradientColorBlueSteps)
                         RampSubgradientCurrentColorInstance = New Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}")
                         SetConsoleColor(RampSubgradientCurrentColorInstance, True)
                     Loop
@@ -172,9 +182,11 @@ Module BarRotDisplay
                     RampCurrentColorRed -= RampColorRedSteps
                     RampCurrentColorGreen -= RampColorGreenSteps
                     RampCurrentColorBlue -= RampColorBlueSteps
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampCurrentColorRed, RampCurrentColorGreen, RampCurrentColorBlue, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps)
 
                     'Delay writing
                     RampCurrentPositionLeft = RampFrameStartWidth + 1
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Current left position: {0}", RampCurrentPositionLeft)
                     SleepNoBlock(BarRotDelay, BarRot)
                 Loop
                 SleepNoBlock(BarRotNextRampDelay, BarRot)

@@ -85,14 +85,17 @@ Module StackBoxDisplay
                     'Get the required positions for the box
                     Dim BoxStartX As Integer = RandomDriver.Next(Console.WindowWidth - Math.Abs(CInt(IsOnUnix())))
                     Dim BoxEndX As Integer = RandomDriver.Next(Console.WindowWidth - Math.Abs(CInt(IsOnUnix())))
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Box X position {0} -> {1}", BoxStartX, BoxEndX)
                     Dim BoxStartY As Integer = RandomDriver.Next(Console.WindowHeight)
                     Dim BoxEndY As Integer = RandomDriver.Next(Console.WindowHeight)
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Box Y position {0} -> {1}", BoxStartY, BoxEndY)
 
                     'Check to see if start is less than or equal to end
                     BoxStartX.SwapIfSourceLarger(BoxEndX)
                     BoxStartY.SwapIfSourceLarger(BoxEndY)
                     If BoxStartX = BoxEndX Or BoxStartY = BoxEndY Then
                         'Don't draw; it won't be shown anyways
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Asking StackBox not to draw. Consult above two lines.")
                         Drawable = False
                     End If
 
@@ -118,6 +121,7 @@ Module StackBoxDisplay
                             'Cover all the positions
                             For X As Integer = BoxStartX To BoxEndX
                                 For Y As Integer = BoxStartY To BoxEndY
+                                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Filling {0},{1}...", X, Y)
                                     Console.SetCursorPosition(X, Y)
                                     Console.Write(" ")
                                 Next
@@ -127,8 +131,10 @@ Module StackBoxDisplay
                             For X As Integer = BoxStartX To BoxEndX
                                 Console.SetCursorPosition(X, BoxStartY)
                                 Console.Write(" ")
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Drawn upper border at {0}", X)
                                 Console.SetCursorPosition(X, BoxEndY)
                                 Console.Write(" ")
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Drawn lower border at {0}", X)
                             Next
 
                             'Draw the left and right borders
@@ -136,9 +142,11 @@ Module StackBoxDisplay
                                 Console.SetCursorPosition(BoxStartX, Y)
                                 Console.Write(" ")
                                 If Not BoxStartX >= Console.WindowWidth - 1 Then Console.Write(" ")
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Drawn left border at {0}", Y)
                                 Console.SetCursorPosition(BoxEndX, Y)
                                 Console.Write(" ")
                                 If Not BoxEndX >= Console.WindowWidth - 1 Then Console.Write(" ")
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Drawn right border at {0}", Y)
                             Next
                         End If
                     End If

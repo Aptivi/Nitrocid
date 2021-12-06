@@ -94,7 +94,9 @@ Module LinesDisplay
                 Dim Top As Integer = New Random().Next(Console.WindowHeight)
                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got top position ({0})", Top)
                 For i As Integer = 1 To Console.WindowWidth
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Forming line using {0} or the default ""-""...", LinesLineChar)
                     Line += If(Not String.IsNullOrWhiteSpace(LinesLineChar), LinesLineChar, "-")
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Line: {0}", Line)
                 Next
                 If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                 If Not ResizeSyncing Then

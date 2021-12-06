@@ -48,6 +48,7 @@ Module TypewriterDisplay
                 Exit Do
             Else
                 'Typewriter can also deal with files written on the field that is used for storing text, so check to see if the path exists.
+                Wdbg(DebugLevel.I, "Checking ""{0}"" to see if it's a file path", TypewriterWrite)
                 If TryParsePath(TypewriterWrite) AndAlso FileExists(TypewriterWrite) Then
                     'File found! Now, write the contents of it to the local variable that stores the actual written text.
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", TypewriterWrite)
@@ -116,6 +117,7 @@ Module TypewriterDisplay
 
                             'If we're at the end of the page, clear the screen
                             If Console.CursorTop = Console.WindowHeight - 2 Then
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "We're at the end of the page! {0} = {1}", Console.CursorTop, Console.WindowHeight - 2)
                                 SleepNoBlock(TypewriterNewScreenDelay, Typewriter)
                                 Console.Clear()
                                 Console.WriteLine()
@@ -135,6 +137,7 @@ Module TypewriterDisplay
                                 WdbgConditional(ScreensaverDebug, DebugLevel.I, "Arrow drawn in {0}, {1}", Console.CursorLeft, Console.CursorTop)
                                 Console.Write(GetEsc() + "[1K^" + GetEsc() + "[K")
                                 Console.SetCursorPosition(OldLeft, OldTop)
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Returned to {0}, {1}", OldLeft, OldTop)
                             End If
 
                             'Write the final character to the console and wait

@@ -58,20 +58,35 @@ Module WindowsLogoDisplay
                     'Get the required positions for the four boxes
                     Dim UpperLeftBoxEndX As Integer = (Console.WindowWidth / 2) - 1
                     Dim UpperLeftBoxStartX As Integer = UpperLeftBoxEndX / 2
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Upper left box X position {0} -> {1}", UpperLeftBoxStartX, UpperLeftBoxEndX)
+
                     Dim UpperLeftBoxStartY As Integer = 2
                     Dim UpperLeftBoxEndY As Integer = (Console.WindowHeight / 2) - 1
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Upper left box Y position {0} -> {1}", UpperLeftBoxStartY, UpperLeftBoxEndY)
+
                     Dim LowerLeftBoxEndX As Integer = (Console.WindowWidth / 2) - 1
                     Dim LowerLeftBoxStartX As Integer = LowerLeftBoxEndX / 2
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Lower left box X position {0} -> {1}", LowerLeftBoxStartX, LowerLeftBoxEndX)
+
                     Dim LowerLeftBoxStartY As Integer = (Console.WindowHeight / 2) + 1
                     Dim LowerLeftBoxEndY As Integer = Console.WindowHeight - 2
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Lower left box X position {0} -> {1}", LowerLeftBoxStartX, LowerLeftBoxEndX)
+
                     Dim UpperRightBoxStartX As Integer = (Console.WindowWidth / 2) + 2
                     Dim UpperRightBoxEndX As Integer = (Console.WindowWidth / 2) + UpperRightBoxStartX / 2
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Upper right box X position {0} -> {1}", UpperRightBoxStartX, UpperRightBoxEndX)
+
                     Dim UpperRightBoxStartY As Integer = 2
                     Dim UpperRightBoxEndY As Integer = (Console.WindowHeight / 2) - 1
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Upper right box X position {0} -> {1}", UpperRightBoxStartX, UpperRightBoxEndX)
+
                     Dim LowerRightBoxStartX As Integer = (Console.WindowWidth / 2) + 2
                     Dim LowerRightBoxEndX As Integer = (Console.WindowWidth / 2) + LowerRightBoxStartX / 2
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Lower right box X position {0} -> {1}", LowerRightBoxStartX, LowerRightBoxEndX)
+
                     Dim LowerRightBoxStartY As Integer = (Console.WindowHeight / 2) + 1
                     Dim LowerRightBoxEndY As Integer = Console.WindowHeight - 2
+                    WdbgConditional(ScreensaverDebug, DebugLevel.I, "Lower right box X position {0} -> {1}", LowerRightBoxStartX, LowerRightBoxEndX)
 
                     'Draw the Windows 11 logo
                     If Not Drawn Then
@@ -82,6 +97,7 @@ Module WindowsLogoDisplay
                         'First, draw the upper left box
                         For X As Integer = UpperLeftBoxStartX To UpperLeftBoxEndX
                             For Y As Integer = UpperLeftBoxStartY To UpperLeftBoxEndY
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Filling upper left box {0},{1}...", X, Y)
                                 Console.SetCursorPosition(X, Y)
                                 Console.Write(" ")
                             Next
@@ -90,6 +106,7 @@ Module WindowsLogoDisplay
                         'Second, draw the lower left box
                         For X As Integer = LowerLeftBoxStartX To LowerLeftBoxEndX
                             For Y As Integer = LowerLeftBoxStartY To LowerLeftBoxEndY
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Filling lower left box {0},{1}...", X, Y)
                                 Console.SetCursorPosition(X, Y)
                                 Console.Write(" ")
                             Next
@@ -98,6 +115,7 @@ Module WindowsLogoDisplay
                         'Third, draw the upper right box
                         For X As Integer = UpperRightBoxStartX To UpperRightBoxEndX
                             For Y As Integer = UpperRightBoxStartY To UpperRightBoxEndY
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Filling upper right box {0},{1}...", X, Y)
                                 Console.SetCursorPosition(X, Y)
                                 Console.Write(" ")
                             Next
@@ -106,6 +124,7 @@ Module WindowsLogoDisplay
                         'Fourth, draw the lower right box
                         For X As Integer = LowerRightBoxStartX To LowerRightBoxEndX
                             For Y As Integer = LowerRightBoxStartY To LowerRightBoxEndY
+                                WdbgConditional(ScreensaverDebug, DebugLevel.I, "Filling lower right box {0},{1}...", X, Y)
                                 Console.SetCursorPosition(X, Y)
                                 Console.Write(" ")
                             Next
@@ -113,6 +132,7 @@ Module WindowsLogoDisplay
 
                         'Set drawn
                         Drawn = True
+                        WdbgConditional(ScreensaverDebug, DebugLevel.I, "Drawn!")
                     End If
                 End If
             End If

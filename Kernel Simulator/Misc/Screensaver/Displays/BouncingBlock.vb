@@ -88,6 +88,7 @@ Module BouncingBlockDisplay
                     If Not ResizeSyncing Then
                         WriteWhere(" ", ColumnBlock, RowBlock, True, New Color(255, 255, 255), New Color(RedColorNum, GreenColorNum, BlueColorNum))
                     Else
+                        WdbgConditional(ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowBlock and ColumnBlock to its original position...")
                         RowBlock = Console.WindowHeight / 2
                         ColumnBlock = Console.WindowWidth / 2
                     End If
@@ -98,6 +99,7 @@ Module BouncingBlockDisplay
                     If Not ResizeSyncing Then
                         WriteWhere(" ", ColumnBlock, RowBlock, True, New Color(ConsoleColors.White), New Color(ColorNum))
                     Else
+                        WdbgConditional(ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowBlock and ColumnBlock to its original position...")
                         RowBlock = Console.WindowHeight / 2
                         ColumnBlock = Console.WindowWidth / 2
                     End If
@@ -114,6 +116,7 @@ Module BouncingBlockDisplay
                         Console.BackgroundColor = ConsoleColor.Black
                         Console.Write(" ")
                     Else
+                        WdbgConditional(ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowBlock and ColumnBlock to its original position...")
                         RowBlock = Console.WindowHeight / 2
                         ColumnBlock = Console.WindowWidth / 2
                     End If

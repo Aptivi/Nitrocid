@@ -34,15 +34,21 @@ Public Module CustomDisplay
         Console.CursorVisible = False
 
         'Screensaver logic
+        Wdbg(DebugLevel.I, "Entered CustomSaver.PreDisplay().")
         CustomSaver.PreDisplay()
+        Wdbg(DebugLevel.I, "Exited CustomSaver.PreDisplay().")
         Do While True
             If Custom.CancellationPending = True Then
                 Wdbg(DebugLevel.W, "Cancellation requested. Showing ending...")
+                Wdbg(DebugLevel.I, "Entered CustomSaver.PostDisplay().")
                 CustomSaver.PostDisplay()
+                Wdbg(DebugLevel.I, "Exited CustomSaver.PostDisplay().")
                 HandleSaverCancel()
                 Exit Do
             Else
+                Wdbg(DebugLevel.I, "Entered CustomSaver.ScrnSaver().")
                 CustomSaver.ScrnSaver()
+                Wdbg(DebugLevel.I, "Exited CustomSaver.ScrnSaver().")
             End If
             If Not CustomSaver.DelayForEachWrite = Nothing Then
                 SleepNoBlock(CustomSaver.DelayForEachWrite, Custom)

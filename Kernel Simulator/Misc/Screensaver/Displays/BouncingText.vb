@@ -89,6 +89,7 @@ Module BouncingTextDisplay
                 If Not ResizeSyncing Then
                     WriteWhere(BouncingTextWrite, ColumnFirstLetter, RowText, True, BouncingColor)
                 Else
+                    WdbgConditional(ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowText, ColumnFirstLetter, and ColumnLastLetter to its original position...")
                     RowText = Console.WindowHeight / 2
                     ColumnFirstLetter = (Console.WindowWidth / 2) - BouncingTextWrite.Length / 2
                     ColumnLastLetter = (Console.WindowWidth / 2) + BouncingTextWrite.Length / 2
