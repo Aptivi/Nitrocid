@@ -151,8 +151,8 @@ Public Module KernelTools
     Sub GeneratePanicDump(Description As String, ErrorType As KernelErrorLevel, Exc As Exception)
         Try
             'Open a file stream for dump
-            Dim Dump As New StreamWriter($"{GetOtherPath(OtherPathType.Home)}/dmp_{RenderDate(FormatType.Short).Replace("/", "-")}_{RenderTime(FormatType.Short).Replace(":", "-")}.txt")
-            Wdbg(DebugLevel.I, "Opened file stream in home directory, saved as dmp_{0}.txt", $"{RenderDate(FormatType.Short).Replace("/", "-")}_{RenderTime(FormatType.Short).Replace(":", "-")}")
+            Dim Dump As New StreamWriter($"{GetOtherPath(OtherPathType.Home)}/dmp_{RenderDate(FormatType.Short).Replace("/", "-")}_{RenderTime(FormatType.Long).Replace(":", "-")}.txt")
+            Wdbg(DebugLevel.I, "Opened file stream in home directory, saved as dmp_{0}.txt", $"{RenderDate(FormatType.Short).Replace("/", "-")}_{RenderTime(FormatType.Long).Replace(":", "-")}")
 
             'Write info (Header)
             Dump.AutoFlush = True
@@ -502,12 +502,14 @@ Public Module KernelTools
         Try
             Dim proc As Process = GetCurrentProcess()
             Wdbg(DebugLevel.I, "Before garbage collection: {0} bytes", proc.PrivateMemorySize64)
+
+            'Collect garbage
             Wdbg(DebugLevel.I, "Garbage collector starting... Max generators: {0}", GC.MaxGeneration.ToString)
             GC.Collect()
             GC.WaitForPendingFinalizers()
-            If IsOnWindows() Then
-                SetProcessWorkingSetSize(GetCurrentProcess().Handle, -1, -1)
-            End If
+            If IsOnWindows() Then SetProcessWorkingSetSize(GetCurrentProcess().Handle, -1, -1)
+
+            'Finish the job
             Wdbg(DebugLevel.I, "After garbage collection: {0} bytes", proc.PrivateMemorySize64)
             proc.Dispose()
             Kernel.EventManager.RaiseGarbageCollected()
