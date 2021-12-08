@@ -74,7 +74,6 @@
     <Compile Include="Argument\ArgumentInfoInitializationTests.vb" />
     <Compile Include="Console\Color255QueryingTests.vb" />
     <Compile Include="Console\ColorInitializationTests.vb" />
-    <Compile Include="Console\RGBInitializationTests.vb" />
     <Compile Include="Console\ConsoleColorsInfoInitializationTests.vb" />
     <Compile Include="Console\ThemeInfoInitializationTests.vb" />
     <Compile Include="Files\FilesystemNeutralizationTests.vb" />

@@ -184,7 +184,6 @@
     <Compile Include="Console\ConsoleColorsInfo.vb" />
     <Compile Include="Console\ConsoleExtensions.vb" />
     <Compile Include="Console\Input.vb" />
-    <Compile Include="Console\RGB.vb" />
     <Compile Include="Console\ColorSetErrorReasons.vb" />
     <Compile Include="Console\Themes\ThemeInfo.vb" />
     <Compile Include="Console\Themes\ThemeStudio.vb" />
