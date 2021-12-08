@@ -350,12 +350,16 @@
                 "Name": "MOTD Path",
                 "Type": "SString",
                 "Variable": "MOTDFilePath",
+                "IsValuePath": true,
+                "IsPathCurrentPath": true,
                 "Description": "Which file is the MOTD text file? Write an absolute path to the text file."
             },
             {
                 "Name": "MAL Path",
                 "Type": "SString",
                 "Variable": "MALFilePath",
+                "IsValuePath": true,
+                "IsPathCurrentPath": true,
                 "Description": "Which file is the MAL text file? Write an absolute path to the text file."
             },
             {
