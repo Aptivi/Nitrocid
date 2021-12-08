@@ -7,11 +7,13 @@ assignees: ''
 
 ---
 
-### -+--> Type of question
+### Type of question
+<!-- Select the type of the question that you're going to ask here. -->
 - [ ] General
 - [ ] API
 - [ ] Commands
 - [ ] Mods
 - [ ] Others
 
-### -+--> Ask here
+### Question
+<!-- Ask us a question here. Be descriptive as much as you can. -->

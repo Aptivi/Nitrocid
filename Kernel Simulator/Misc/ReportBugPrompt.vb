@@ -86,16 +86,16 @@ Module ReportBugPrompt
         End While
 
         'Finally, pass these answers to a URL
-        Dim TargetURL As String = "https://github.com/EoflaOE/Kernel-Simulator/issues/new?assignees=&labels=&template=ask-a-question.md"
+        Dim TargetURL As String = "https://github.com/EoflaOE/Kernel-Simulator/issues/new?assignees=&labels="
         Select Case AnswerKind
             Case 1 'A problem
-                TargetURL += $"&title=%5BBUG%5D+{AnswerFeature}+-+{AnswerRequest}"
+                TargetURL += $"&template=report-an-issue.md&title=%5BBUG%5D+{AnswerFeature}+-+{AnswerRequest}"
                 Wdbg(DebugLevel.I, "Target URL: {0}", TargetURL)
             Case 2 'A feature request
-                TargetURL += $"&title=%5BADD%5D+{AnswerFeature}+-+{AnswerRequest}"
+                TargetURL += $"&template=request-a-feature.md&title=%5BADD%5D+{AnswerFeature}+-+{AnswerRequest}"
                 Wdbg(DebugLevel.I, "Target URL: {0}", TargetURL)
             Case 3 'A question
-                TargetURL += $"&title=%5BQ%26A%5D+{AnswerFeature}+-+{AnswerRequest}"
+                TargetURL += $"&template=ask-a-question.md&title=%5BQ%26A%5D+{AnswerFeature}+-+{AnswerRequest}"
                 Wdbg(DebugLevel.I, "Target URL: {0}", TargetURL)
         End Select
         Process.Start(TargetURL)
