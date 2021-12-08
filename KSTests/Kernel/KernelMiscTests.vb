@@ -24,7 +24,7 @@ Imports KS
     ''' Tests update fetching
     ''' </summary>
     <TestMethod()> <TestCategory("Misc")> Public Sub TestFetchKernelUpdates()
-        Dim Updates As List(Of String) = FetchKernelUpdates()
+        Dim Updates As KernelUpdate = FetchKernelUpdates()
         Updates.ShouldNotBeNull
     End Sub
 
