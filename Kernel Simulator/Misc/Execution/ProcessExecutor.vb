@@ -1,0 +1,103 @@
+﻿
+'    Kernel Simulator  Copyright (C) 2018-2021  EoflaOE
+'
+'    This file is part of Kernel Simulator
+'
+'    Kernel Simulator is free software: you can redistribute it and/or modify
+'    it under the terms of the GNU General Public License as published by
+'    the Free Software Foundation, either version 3 of the License, or
+'    (at your option) any later version.
+'
+'    Kernel Simulator is distributed in the hope that it will be useful,
+'    but WITHOUT ANY WARRANTY; without even the implied warranty of
+'    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+'    GNU General Public License for more details.
+'
+'    You should have received a copy of the GNU General Public License
+'    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+Imports System.Threading
+
+Public Module ProcessExecutor
+
+    Friend ProcessData As String = ""
+    Friend NewDataSpotted As Boolean
+    Friend NewDataDetector As New Thread(AddressOf DetectNewData)
+
+    ''' <summary>
+    ''' Executes a file with specified arguments
+    ''' </summary>
+    ''' <param name="File">Full path to file</param>
+    ''' <param name="Args">Arguments, if any</param>
+    Public Sub ExecuteProcess(File As String, Args As String)
+        Dim CommandProcess As New Process
+        Dim CommandProcessStart As New ProcessStartInfo With {.RedirectStandardInput = True,
+                                                              .RedirectStandardOutput = True,
+                                                              .RedirectStandardError = True,
+                                                              .FileName = File,
+                                                              .Arguments = Args,
+                                                              .WorkingDirectory = CurrDir,
+                                                              .CreateNoWindow = True,
+                                                              .WindowStyle = ProcessWindowStyle.Hidden,
+                                                              .UseShellExecute = False}
+        CommandProcess.StartInfo = CommandProcessStart
+        AddHandler CommandProcess.OutputDataReceived, AddressOf ExecutableOutput
+        AddHandler CommandProcess.ErrorDataReceived, AddressOf ExecutableOutput
+
+        'Start the process
+        Wdbg(DebugLevel.I, "Starting...")
+        CommandProcess.Start()
+        CommandProcess.BeginOutputReadLine()
+        CommandProcess.BeginErrorReadLine()
+        NewDataDetector.Start()
+
+        'Wait for process exit
+        While Not CommandProcess.HasExited Or Not CancelRequested
+            If CommandProcess.HasExited Then
+                Exit While
+            ElseIf CancelRequested Then
+                CommandProcess.Kill()
+                Exit While
+            End If
+        End While
+
+        'Wait until no more data is entered
+        While NewDataSpotted
+        End While
+
+        'Stop the new data detector
+        NewDataDetector.Abort()
+        NewDataDetector = New Thread(AddressOf DetectNewData)
+        ProcessData = ""
+
+        'Assume that we've spotted new data. This is to avoid race conditions happening sometimes if the processes are exited while output is still going.
+        'This is a workaround for some commands like netstat.exe that don't work with normal workarounds shown below.
+        NewDataSpotted = True
+    End Sub
+
+    ''' <summary>
+    ''' Handles executable output
+    ''' </summary>
+    ''' <param name="sendingProcess">Sender</param>
+    ''' <param name="outLine">Output</param>
+    Private Sub ExecutableOutput(sendingProcess As Object, outLine As DataReceivedEventArgs)
+        NewDataSpotted = True
+        Wdbg(DebugLevel.I, outLine.Data)
+        Write(outLine.Data, True, ColTypes.Neutral)
+        ProcessData += outLine.Data
+    End Sub
+
+    ''' <summary>
+    ''' Detects new data
+    ''' </summary>
+    Private Sub DetectNewData()
+        While Thread.CurrentThread.IsAlive
+            If NewDataSpotted Then
+                Dim OldLength As Long = ProcessData.LongCount
+                Thread.Sleep(50)
+                If OldLength = ProcessData.LongCount Then NewDataSpotted = False
+            End If
+        End While
+    End Sub
+
+End Module

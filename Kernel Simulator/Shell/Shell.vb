@@ -354,33 +354,7 @@ Public Module Shell
                                     cmdArgs = cmdArgs.Replace(TargetFileName, "")
                                     cmdArgs.RemoveNullsOrWhitespacesAtTheBeginning
                                     Wdbg(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, cmdArgs)
-                                    Dim CommandProcess As New Process
-                                    Dim CommandProcessStart As New ProcessStartInfo With {.RedirectStandardInput = True,
-                                                                                          .RedirectStandardOutput = True,
-                                                                                          .RedirectStandardError = True,
-                                                                                          .FileName = TargetFile,
-                                                                                          .Arguments = cmdArgs,
-                                                                                          .WorkingDirectory = CurrDir,
-                                                                                          .CreateNoWindow = True,
-                                                                                          .WindowStyle = ProcessWindowStyle.Hidden,
-                                                                                          .UseShellExecute = False}
-                                    CommandProcess.StartInfo = CommandProcessStart
-                                    AddHandler CommandProcess.OutputDataReceived, AddressOf ExecutableOutput
-                                    AddHandler CommandProcess.ErrorDataReceived, AddressOf ExecutableOutput
-
-                                    'Start the process
-                                    Wdbg(DebugLevel.I, "Starting...")
-                                    CommandProcess.Start()
-                                    CommandProcess.BeginOutputReadLine()
-                                    CommandProcess.BeginErrorReadLine()
-                                    While Not CommandProcess.HasExited Or Not CancelRequested
-                                        If CommandProcess.HasExited Then
-                                            Exit While
-                                        ElseIf CancelRequested Then
-                                            CommandProcess.Kill()
-                                            Exit While
-                                        End If
-                                    End While
+                                    ExecuteProcess(TargetFile, cmdArgs)
                                 End If
                             Catch ex As Exception
                                 Wdbg(DebugLevel.E, "Failed to start process: {0}", ex.Message)
@@ -421,16 +395,6 @@ Public Module Shell
             OutputTextWriter?.Close()
         End If
 #Enable Warning BC42104
-    End Sub
-
-    ''' <summary>
-    ''' Handles executable output
-    ''' </summary>
-    ''' <param name="sendingProcess">Sender</param>
-    ''' <param name="outLine">Output</param>
-    Private Sub ExecutableOutput(sendingProcess As Object, outLine As DataReceivedEventArgs)
-        Wdbg(DebugLevel.I, outLine.Data)
-        Write(outLine.Data, True, ColTypes.Neutral)
     End Sub
 
 End Module
