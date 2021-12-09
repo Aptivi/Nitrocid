@@ -25,6 +25,10 @@ Module ShellStartThreads
     ''' </summary>
     Public StartCommandThread As New Thread(AddressOf ExecuteCommand) With {.Name = "Shell Command Thread"}
     ''' <summary>
+    ''' Process start command thread
+    ''' </summary>
+    Public ProcessStartCommandThread As New Thread(AddressOf ExecuteProcess) With {.Name = "Executable Command Thread"}
+    ''' <summary>
     ''' Text editor start command thread
     ''' </summary>
     Public TextEdit_CommandThread As New Thread(AddressOf ExecuteCommand) With {.Name = "Text Edit Command Thread"}

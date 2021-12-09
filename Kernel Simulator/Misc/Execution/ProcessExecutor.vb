@@ -25,54 +25,89 @@ Public Module ProcessExecutor
     Friend NewDataDetector As New Thread(AddressOf DetectNewData)
 
     ''' <summary>
+    ''' Thread parameters for ExecuteProcess()
+    ''' </summary>
+    Friend Class ExecuteProcessThreadParameters
+        ''' <summary>
+        ''' Full path to file
+        ''' </summary>
+        Friend File As String
+        ''' <summary>
+        ''' Arguments, if any
+        ''' </summary>
+        Friend Args As String
+
+        Friend Sub New(File As String, Args As String)
+            Me.File = File
+            Me.Args = Args
+        End Sub
+    End Class
+
+    ''' <summary>
+    ''' Executes a file with specified arguments
+    ''' </summary>
+    Friend Sub ExecuteProcess(ThreadParams As ExecuteProcessThreadParameters)
+        ExecuteProcess(ThreadParams.File, ThreadParams.Args)
+    End Sub
+
+    ''' <summary>
     ''' Executes a file with specified arguments
     ''' </summary>
     ''' <param name="File">Full path to file</param>
     ''' <param name="Args">Arguments, if any</param>
     Public Sub ExecuteProcess(File As String, Args As String)
-        Dim CommandProcess As New Process
-        Dim CommandProcessStart As New ProcessStartInfo With {.RedirectStandardInput = True,
-                                                              .RedirectStandardOutput = True,
-                                                              .RedirectStandardError = True,
-                                                              .FileName = File,
-                                                              .Arguments = Args,
-                                                              .WorkingDirectory = CurrDir,
-                                                              .CreateNoWindow = True,
-                                                              .WindowStyle = ProcessWindowStyle.Hidden,
-                                                              .UseShellExecute = False}
-        CommandProcess.StartInfo = CommandProcessStart
-        AddHandler CommandProcess.OutputDataReceived, AddressOf ExecutableOutput
-        AddHandler CommandProcess.ErrorDataReceived, AddressOf ExecutableOutput
+        Try
+            Dim CommandProcess As New Process
+            Dim CommandProcessStart As New ProcessStartInfo With {.RedirectStandardInput = True,
+                                                                  .RedirectStandardOutput = True,
+                                                                  .RedirectStandardError = True,
+                                                                  .FileName = File,
+                                                                  .Arguments = Args,
+                                                                  .WorkingDirectory = CurrDir,
+                                                                  .CreateNoWindow = True,
+                                                                  .WindowStyle = ProcessWindowStyle.Hidden,
+                                                                  .UseShellExecute = False}
+            CommandProcess.StartInfo = CommandProcessStart
+            AddHandler CommandProcess.OutputDataReceived, AddressOf ExecutableOutput
+            AddHandler CommandProcess.ErrorDataReceived, AddressOf ExecutableOutput
 
-        'Start the process
-        Wdbg(DebugLevel.I, "Starting...")
-        CommandProcess.Start()
-        CommandProcess.BeginOutputReadLine()
-        CommandProcess.BeginErrorReadLine()
-        NewDataDetector.Start()
+            'Start the process
+            Wdbg(DebugLevel.I, "Starting...")
+            CommandProcess.Start()
+            CommandProcess.BeginOutputReadLine()
+            CommandProcess.BeginErrorReadLine()
+            NewDataDetector.Start()
 
-        'Wait for process exit
-        While Not CommandProcess.HasExited Or Not CancelRequested
-            If CommandProcess.HasExited Then
-                Exit While
-            ElseIf CancelRequested Then
-                CommandProcess.Kill()
-                Exit While
-            End If
-        End While
+            'Wait for process exit
+            While Not CommandProcess.HasExited Or Not CancelRequested
+                If CommandProcess.HasExited Then
+                    Exit While
+                ElseIf CancelRequested Then
+                    CommandProcess.Kill()
+                    Exit While
+                End If
+            End While
 
-        'Wait until no more data is entered
-        While NewDataSpotted
-        End While
+            'Wait until no more data is entered
+            While NewDataSpotted
+            End While
 
-        'Stop the new data detector
-        NewDataDetector.Abort()
-        NewDataDetector = New Thread(AddressOf DetectNewData)
-        ProcessData = ""
+            'Stop the new data detector
+            NewDataDetector.Abort()
+            NewDataDetector = New Thread(AddressOf DetectNewData)
+            ProcessData = ""
 
-        'Assume that we've spotted new data. This is to avoid race conditions happening sometimes if the processes are exited while output is still going.
-        'This is a workaround for some commands like netstat.exe that don't work with normal workarounds shown below.
-        NewDataSpotted = True
+            'Assume that we've spotted new data. This is to avoid race conditions happening sometimes if the processes are exited while output is still going.
+            'This is a workaround for some commands like netstat.exe that don't work with normal workarounds shown below.
+            NewDataSpotted = True
+        Catch taex As ThreadAbortException
+            CancelRequested = False
+            Exit Sub
+        Catch ex As Exception
+            Kernel.EventManager.RaiseProcessError(File + Args, ex)
+            WStkTrc(ex)
+            Write(DoTranslation("Error trying to execute command") + " {2}." + vbNewLine + DoTranslation("Error {0}: {1}"), True, ColTypes.Error, ex.GetType.FullName, ex.Message, File)
+        End Try
     End Sub
 
     ''' <summary>

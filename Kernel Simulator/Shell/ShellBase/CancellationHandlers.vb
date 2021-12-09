@@ -34,6 +34,7 @@ Module CancellationHandlers
                 Console.SetOut(StreamWriter.Null)
                 e.Cancel = True
                 StartCommandThread.Abort()
+                ProcessStartCommandThread.Abort()
             End If
         End SyncLock
     End Sub

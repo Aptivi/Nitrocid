@@ -143,6 +143,7 @@ Public Class Events
     Public Event HTTPPreExecuteCommand(Command As String)
     Public Event HTTPPostExecuteCommand(Command As String)
     Public Event HTTPCommandError(Command As String, Exception As Exception)
+    Public Event ProcessError(Process As String, Exception As Exception)
 
     ''' <summary>
     ''' Makes the mod respond to the event of kernel start
@@ -2132,6 +2133,23 @@ Public Class Events
             Next
         Next
     End Sub
+    ''' <summary>
+    ''' Makes the mod respond to the event of process error
+    ''' </summary>
+    Public Sub RespondProcessError(Process As String, Exception As Exception) Handles Me.ProcessError
+        For Each ModPart As ModInfo In scripts.Values
+            For Each PartInfo As PartInfo In ModPart.ModParts.Values
+                Try
+                    Dim script As IScript = PartInfo.PartScript
+                    Wdbg(DebugLevel.I, "{0} in mod {1} v{2} responded to event ProcessError()...", script.ModPart, script.Name, script.Version)
+                    script.InitEvents("ProcessError", Process, Exception)
+                Catch ex As Exception
+                    Wdbg(DebugLevel.E, "Error in event handler: {0}", ex.Message)
+                    WStkTrc(ex)
+                End Try
+            Next
+        Next
+    End Sub
 
     'These subs are for raising events
     ''' <summary>
@@ -3069,6 +3087,14 @@ Public Class Events
         Wdbg(DebugLevel.I, "Raising event HTTPCommandError() and responding in RespondHTTPCommandError()...")
         FiredEvents.Add("HTTPCommandError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
         RaiseEvent HTTPCommandError(Command, Exception)
+    End Sub
+    ''' <summary>
+    ''' Raise an event of process error
+    ''' </summary>
+    Public Sub RaiseProcessError(Process As String, Exception As Exception)
+        Wdbg(DebugLevel.I, "Raising event ProcessError() and responding in RespondProcessError()...")
+        FiredEvents.Add("ProcessError (" + CStr(FiredEvents.Count) + ")", {Process, Exception})
+        RaiseEvent ProcessError(Process, Exception)
     End Sub
 
 End Class
