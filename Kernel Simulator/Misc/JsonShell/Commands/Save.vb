@@ -21,7 +21,12 @@ Class JsonShell_SaveCommand
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        JsonShell_SaveFile(False)
+        Dim TargetFormatting As Formatting = Formatting.Indented
+        If ListSwitchesOnly.Length > 0 Then
+            If ListSwitchesOnly(0) = "-b" Then TargetFormatting = Formatting.Indented
+            If ListSwitchesOnly(0) = "-m" Then TargetFormatting = Formatting.None
+        End If
+        JsonShell_SaveFile(False, TargetFormatting)
     End Sub
 
 End Class

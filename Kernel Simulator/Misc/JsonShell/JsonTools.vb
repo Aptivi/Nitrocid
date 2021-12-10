@@ -69,12 +69,12 @@ Public Module JsonTools
     ''' Saves JSON file
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function JsonShell_SaveFile(ClearJson As Boolean) As Boolean
+    Public Function JsonShell_SaveFile(ClearJson As Boolean, Optional Formatting As Formatting = Formatting.Indented) As Boolean
         Try
             Wdbg(DebugLevel.I, "Trying to save file...")
             JsonShell_FileStream.SetLength(0)
             Wdbg(DebugLevel.I, "Length set to 0.")
-            Dim FileLinesByte() As Byte = Encoding.Default.GetBytes(JsonConvert.SerializeObject(JsonShell_FileToken, Formatting.Indented))
+            Dim FileLinesByte() As Byte = Encoding.Default.GetBytes(JsonConvert.SerializeObject(JsonShell_FileToken, Formatting))
             Wdbg(DebugLevel.I, "Converted lines to bytes. Length: {0}", FileLinesByte.Length)
             JsonShell_FileStream.Write(FileLinesByte, 0, FileLinesByte.Length)
             JsonShell_FileStream.Flush()
