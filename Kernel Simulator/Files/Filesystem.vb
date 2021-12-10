@@ -225,7 +225,7 @@ Public Module Filesystem
 
         'List files and folders
         folder = NeutralizePath(folder)
-        If FolderExists(folder) Then
+        If FolderExists(folder) Or folder.ContainsAnyOf({"?", "*"}) Then
             Dim enumeration As List(Of FileSystemInfo)
             WriteSeparator(folder, True)
 
@@ -235,10 +235,12 @@ Public Module Filesystem
                 If enumeration.Count = 0 Then Write(DoTranslation("Folder is empty."), True, ColTypes.Warning)
 
                 'Enumerate each entry
+                Dim TotalSize As Long = 0
                 For Each Entry As FileSystemInfo In enumeration
                     Wdbg(DebugLevel.I, "Enumerating {0}...", Entry.FullName)
                     Try
                         If FileExists(Entry.FullName) Then
+                            TotalSize += CType(Entry, FileInfo).Length
                             PrintFileInfo(Entry)
                         ElseIf FolderExists(Entry.FullName) Then
                             PrintDirectoryInfo(Entry)
@@ -250,7 +252,7 @@ Public Module Filesystem
                 Next
 
                 'Show total size in list optionally
-                If ShowTotalSizeInList Then Write(vbNewLine + DoTranslation("Total size in folder:") + " {0}", True, ColTypes.Neutral, GetAllSizesInFolder(New DirectoryInfo(folder)).FileSizeToString)
+                If ShowTotalSizeInList Then Write(vbNewLine + DoTranslation("Total size in folder:") + " {0}", True, ColTypes.Neutral, TotalSize.FileSizeToString)
             Catch ex As Exception
                 Write(DoTranslation("Unknown error while listing in directory: {0}"), True, ColTypes.Error, ex.Message)
                 WStkTrc(ex)
@@ -351,10 +353,10 @@ Public Module Filesystem
 
         'List files and folders
         folder = NeutralizePath(folder)
-        If FolderExists(folder) Then
+        If FolderExists(folder) Or folder.ContainsAnyOf({"?", "*"}) Then
             Dim enumeration As IEnumerable(Of String)
             Try
-                enumeration = Directory.EnumerateFileSystemEntries(folder)
+                enumeration = GetFilesystemEntries(folder)
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to make a list of filesystem entries for directory {0}: {1}", folder, ex.Message)
                 WStkTrc(ex)
@@ -1129,7 +1131,7 @@ Public Module Filesystem
             'Select the pattern index
             Dim SelectedPatternIndex As Integer = 0
             Dim SplitPath As String() = Path.Split("/").Skip(1).ToArray
-            Dim SplitParent As New List(Of String)
+            Dim SplitParent As New List(Of String) From {Path.Split("/")(0)}
             For PatternIndex As Integer = 0 To SplitPath.Length - 1
                 If SplitPath(PatternIndex).ContainsAnyOf(IO.Path.GetInvalidFileNameChars.Select(Function(Character) Character.ToString).ToArray) Then
                     SelectedPatternIndex = PatternIndex
@@ -1139,15 +1141,15 @@ Public Module Filesystem
             Next
 
             'Split the path and the pattern
-            Dim Parent As String = IO.Path.GetDirectoryName(Path)
-            Dim Pattern As String = IO.Path.GetFileName(Path)
+            Dim Parent As String = IO.Path.GetDirectoryName(Path) + "/" + IO.Path.GetFileName(Path)
+            Dim Pattern As String = "*"
             If SelectedPatternIndex <> 0 Then
                 Parent = String.Join("/", SplitParent)
                 Pattern = String.Join("/", SplitPath.Skip(SelectedPatternIndex))
             End If
 
             'Split the path and the pattern and return the final result
-            Entries = GetFilesystemEntries(IO.Path.GetDirectoryName(Path), IO.Path.GetFileName(Path))
+            Entries = GetFilesystemEntries(Parent, Pattern)
         Catch ex As Exception
             WStkTrc(ex)
             Wdbg(DebugLevel.E, "Failed to combine files: {0}", ex.Message)
