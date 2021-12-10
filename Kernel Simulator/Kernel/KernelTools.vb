@@ -258,7 +258,7 @@ Public Module KernelTools
                 ResetEverything()
                 Kernel.EventManager.RaisePostShutdown()
                 Environment.Exit(0)
-            Case PowerMode.Reboot
+            Case PowerMode.Reboot, PowerMode.RebootSafe
                 Kernel.EventManager.RaisePreReboot()
                 Write(DoTranslation("Rebooting..."), True, ColTypes.Neutral)
                 ResetEverything()
@@ -266,21 +266,12 @@ Public Module KernelTools
                 Console.Clear()
                 RebootRequested = True
                 LogoutRequested = True
-                SafeMode = False
-            Case PowerMode.RebootSafe
-                Kernel.EventManager.RaisePreReboot()
-                Write(DoTranslation("Rebooting..."), True, ColTypes.Neutral)
-                ResetEverything()
-                Kernel.EventManager.RaisePostReboot()
-                Console.Clear()
-                RebootRequested = True
-                LogoutRequested = True
-                SafeMode = True
             Case PowerMode.RemoteShutdown
                 SendCommand("<Request:Shutdown>(" + IP + ")", IP, Port)
             Case PowerMode.RemoteRestart
                 SendCommand("<Request:Reboot>(" + IP + ")", IP, Port)
         End Select
+        SafeMode = PowerMode = PowerMode.RebootSafe
     End Sub
 
     '----------------------------------------------- Init and reset -----------------------------------------------
