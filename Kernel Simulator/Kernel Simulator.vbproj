@@ -209,6 +209,7 @@
     <Compile Include="Login\LoginErrorReasons.vb" />
     <Compile Include="Login\PermissionManagement.vb" />
     <Compile Include="ManPages\Manual.vb" />
+    <Compile Include="ManPages\PageManager.vb" />
     <Compile Include="ManPages\PageParser.vb" />
     <Compile Include="ManPages\PageViewer.vb" />
     <Compile Include="Misc\Beautifiers\JsonBeautifier.vb" />

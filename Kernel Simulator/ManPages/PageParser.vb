@@ -21,9 +21,6 @@ Imports System.Text
 
 Module PageParser
 
-    'Variables
-    Public Pages As New Dictionary(Of String, Manual)
-
     ''' <summary>
     ''' Initializes a manual page
     ''' </summary>
@@ -34,17 +31,10 @@ Module PageParser
             'File found, but we need to verify that we're actually dealing with the manual page
             If Path.GetExtension(ManualFile) = ".man" Then
                 'We found the manual, but we need to check its contents.
-                Dim ManualFileName As String = Path.GetFileNameWithoutExtension(ManualFile)
-                Wdbg(DebugLevel.I, "Found manual page {0}.", ManualFileName)
+                Wdbg(DebugLevel.I, "Found manual page {0}.", ManualFile)
                 Wdbg(DebugLevel.I, "Parsing manpage...")
                 Dim ManualInstance As New Manual(ManualFile)
-                If Not Pages.ContainsKey(ManualInstance.Title) Then
-                    If ManualInstance.ValidManpage Then
-                        Pages.Add(ManualInstance.Title, ManualInstance)
-                    Else
-                        Throw New Exceptions.InvalidManpageException(DoTranslation("The manual page {0} is invalid."), ManualFileName)
-                    End If
-                End If
+                AddManualPage(ManualInstance.Title, ManualInstance)
             End If
         End If
     End Sub
