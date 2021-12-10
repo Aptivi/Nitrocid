@@ -820,7 +820,8 @@ Public Module Config
                     {"Upper frame character for RGB color wheel", WheelUpperFrameChar},
                     {"Lower frame character for RGB color wheel", WheelLowerFrameChar},
                     {"Left frame character for RGB color wheel", WheelLeftFrameChar},
-                    {"Right frame character for RGB color wheel", WheelRightFrameChar}
+                    {"Right frame character for RGB color wheel", WheelRightFrameChar},
+                    {"Default JSON formatting for JSON shell", JsonShell_Formatting}
             }
             ConfigurationObject.Add("Misc", MiscConfig)
 
@@ -1511,6 +1512,7 @@ Public Module Config
             WheelLowerFrameChar = If(ConfigToken("Misc")?("Lower frame character for RGB color wheel"), "═")
             WheelLeftFrameChar = If(ConfigToken("Misc")?("Left frame character for RGB color wheel"), "║")
             WheelRightFrameChar = If(ConfigToken("Misc")?("Right frame character for RGB color wheel"), "║")
+            JsonShell_Formatting = If(ConfigToken("Misc")?("Default JSON formatting for JSON shell") IsNot Nothing, If([Enum].TryParse(ConfigToken("Misc")?("Default JSON formatting for JSON shell"), JsonShell_Formatting), JsonShell_Formatting, Formatting.Indented), Formatting.Indented)
 
             'Check to see if the config needs fixes
             RepairConfig()

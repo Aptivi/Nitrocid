@@ -39,6 +39,7 @@ Public Module JsonShell
     Public JsonShell_AutoSaveFlag As Boolean = True
     Public JsonShell_AutoSaveInterval As Integer = 60
     Public JsonShell_PromptStyle As String = ""
+    Public JsonShell_Formatting As Formatting = Formatting.Indented
     Friend JsonShell_Exiting As Boolean
 
     Public Sub InitializeJsonShell(FilePath As String)

@@ -69,7 +69,15 @@ Public Module JsonTools
     ''' Saves JSON file
     ''' </summary>
     ''' <returns>True if successful; False if unsuccessful</returns>
-    Public Function JsonShell_SaveFile(ClearJson As Boolean, Optional Formatting As Formatting = Formatting.Indented) As Boolean
+    Public Function JsonShell_SaveFile(ClearJson As Boolean) As Boolean
+        Return JsonShell_SaveFile(ClearJson, JsonShell_Formatting)
+    End Function
+
+    ''' <summary>
+    ''' Saves JSON file
+    ''' </summary>
+    ''' <returns>True if successful; False if unsuccessful</returns>
+    Public Function JsonShell_SaveFile(ClearJson As Boolean, Formatting As Formatting) As Boolean
         Try
             Wdbg(DebugLevel.I, "Trying to save file...")
             JsonShell_FileStream.SetLength(0)

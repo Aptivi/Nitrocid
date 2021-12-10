@@ -1189,6 +1189,17 @@
                 "Type": "SString",
                 "Variable": "WheelRightFrameChar",
                 "Description": "A character that resembles the right frame. Be sure to only input one character."
+            },
+            {
+                "Name": "Default JSON formatting for JSON shell",
+                "Type": "SSelection",
+                "Variable": "JsonShell_Formatting",
+                "IsEnumeration": true,
+                "EnumerationInternal": false,
+                "Enumeration": "Newtonsoft.Json.Formatting",
+                "EnumerationAssembly": "Newtonsoft.Json",
+                "EnumerationZeroBased": true,
+                "Description": "Selects the default JSON formatting (beautified or minified) for the JSON shell to save."
             }
         ]
     }
