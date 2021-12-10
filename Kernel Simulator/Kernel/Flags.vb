@@ -227,6 +227,10 @@ Public Module Flags
     ''' Deletes all events and/or reminders before saving them using saveall
     ''' </summary>
     Public SaveEventsRemindersDestructively As Boolean
+    ''' <summary>
+    ''' Automatically downloads the kernel updates and notifies the user
+    ''' </summary>
+    Public AutoDownloadUpdate As Boolean = True
 
     'Private flags
     ''' <summary>

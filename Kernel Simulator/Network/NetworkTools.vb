@@ -188,4 +188,18 @@ Public Module NetworkTools
         Next
     End Sub
 
+    ''' <summary>
+    ''' Gets the filename from the URL
+    ''' </summary>
+    ''' <param name="Url">The target URL that contains the filename</param>
+    Public Function GetFilenameFromUrl(Url As String) As String
+        Dim FileName As String = Url.Split("/").Last()
+        Wdbg(DebugLevel.I, "Prototype Filename: {0}", FileName)
+        If FileName.Contains("?") Then
+            FileName = FileName.Remove(FileName.IndexOf("?"c))
+        End If
+        Wdbg(DebugLevel.I, "Finished Filename: {0}", FileName)
+        Return FileName
+    End Function
+
 End Module

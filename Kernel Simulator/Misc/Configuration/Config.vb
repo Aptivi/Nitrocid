@@ -107,7 +107,8 @@ Public Module Config
                     {"Show current time before login", ShowCurrentTimeBeforeLogin},
                     {"Notify for any fault during boot", NotifyFaultsBoot},
                     {"Show stack trace on kernel error", ShowStackTraceOnKernelError},
-                    {"Check debug quota", CheckDebugQuota}
+                    {"Check debug quota", CheckDebugQuota},
+                    {"Automatically download updates", AutoDownloadUpdate}
             }
             ConfigurationObject.Add("General", GeneralConfig)
 
@@ -933,6 +934,7 @@ Public Module Config
             NotifyFaultsBoot = If(ConfigToken("General")?("Notify for any fault during boot"), True)
             ShowStackTraceOnKernelError = If(ConfigToken("General")?("Show stack trace on kernel error"), False)
             CheckDebugQuota = If(ConfigToken("General")?("Check debug quota"), True)
+            AutoDownloadUpdate = If(ConfigToken("General")?("Automatically download updates"), True)
 
             'Login Section
             Wdbg(DebugLevel.I, "Parsing login section...")

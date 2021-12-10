@@ -51,17 +51,33 @@ Public Module NetworkTransfer
     ''' <param name="Credentials">Authentication information</param>
     ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
     Public Function DownloadFile(URL As String, ShowProgress As Boolean, Optional Credentials As NetworkCredential = Nothing) As Boolean
+        Dim FileName As String = GetFilenameFromUrl(URL)
+        Return DownloadFile(URL, ShowProgress, FileName, Credentials)
+    End Function
+
+    ''' <summary>
+    ''' Downloads a file to the current working directory.
+    ''' </summary>
+    ''' <param name="URL">A URL to a file</param>
+    ''' <param name="FileName">File name to download to</param>
+    ''' <param name="Credentials">Authentication information</param>
+    ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
+    Public Function DownloadFile(URL As String, FileName As String, Optional Credentials As NetworkCredential = Nothing) As Boolean
+        Return DownloadFile(URL, ShowProgress, FileName, Credentials)
+    End Function
+
+    ''' <summary>
+    ''' Downloads a file to the current working directory.
+    ''' </summary>
+    ''' <param name="URL">A URL to a file</param>
+    ''' <param name="ShowProgress">Whether or not to show progress bar</param>
+    ''' <param name="FileName">File name to download to</param>
+    ''' <param name="Credentials">Authentication information</param>
+    ''' <returns>True if successful. Throws exception if unsuccessful.</returns>
+    Public Function DownloadFile(URL As String, ShowProgress As Boolean, FileName As String, Optional Credentials As NetworkCredential = Nothing) As Boolean
         'Intialize variables
         WClient = New WebClient
         Dim FileUri As New Uri(URL)
-
-        'Limit the filename to the name without any URL arguments
-        Dim FileName As String = URL.Split("/").Last()
-        Wdbg(DebugLevel.I, "Prototype Filename: {0}", FileName)
-        If FileName.Contains("?") Then
-            FileName = FileName.Remove(FileName.IndexOf("?"c))
-        End If
-        Wdbg(DebugLevel.I, "Finished Filename: {0}", FileName)
 
         'Check the credentials
         Wdbg(DebugLevel.I, "Directory location: {0}", CurrDir)

@@ -103,6 +103,12 @@
                 "Type": "SBoolean",
                 "Variable": "CheckDebugQuota",
                 "Description": "Do we check if the debug system needs to check for quota before writing to the debugger?"
+            },
+            {
+                "Name": "Automatically download updates",
+                "Type": "SBoolean",
+                "Variable": "AutoDownloadUpdate",
+                "Description": "If there is any update, the kernel will automatically download it."
             }
         ]
     },

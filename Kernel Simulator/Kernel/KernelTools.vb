@@ -460,8 +460,13 @@ Public Module KernelTools
             If Not AvailableUpdate.Updated Then
                 Write(DoTranslation("Found new version: "), False, ColTypes.ListEntry)
                 Write(AvailableUpdate.UpdateVersion.ToString, True, ColTypes.ListValue)
-                Write(DoTranslation("You can download it at: "), False, ColTypes.ListEntry)
-                Write(AvailableUpdate.UpdateURL.ToString, True, ColTypes.ListValue)
+                If AutoDownloadUpdate Then
+                    DownloadFile(AvailableUpdate.UpdateURL.ToString, Path.Combine(Environment.CurrentDirectory, "update.zip"))
+                    Write(DoTranslation("Downloaded the update successfully!"), True, ColTypes.Success)
+                Else
+                    Write(DoTranslation("You can download it at: "), False, ColTypes.ListEntry)
+                    Write(AvailableUpdate.UpdateURL.ToString, True, ColTypes.ListValue)
+                End If
             Else
                 Write(DoTranslation("You're up to date!"), True, ColTypes.Neutral)
             End If
