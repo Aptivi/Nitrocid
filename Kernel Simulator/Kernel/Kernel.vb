@@ -147,8 +147,8 @@ Public Module Kernel
                 If ShowStageFinishTimes Then
                     Write(DoTranslation("Stage finished in") + " {0}", True, ColTypes.StageTime, StageTimer.Elapsed)
                     StageTimer.Reset()
+                    Console.WriteLine()
                 End If
-                Console.WriteLine()
 
                 'Unquiet the kernel if quieted
                 If EnteredArguments IsNot Nothing Then
