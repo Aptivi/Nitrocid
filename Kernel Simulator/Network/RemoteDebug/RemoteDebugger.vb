@@ -146,24 +146,25 @@ Public Module RemoteDebugger
     ''' Thread to listen to messages and post them to the debugger
     ''' </summary>
     Sub ReadAndBroadcastAsync()
-        Dim i As Integer = 0 'Because DebugDevices.Keys(i) is zero-based
+        Dim DeviceIndex As Integer = 0
         While True
             Thread.Sleep(1)
-            If i > DebugDevices.Count - 1 Then
-                i = 0
+            If DeviceIndex > DebugDevices.Count - 1 Then
+                'We've reached all the devices!
+                DeviceIndex = 0
             Else
                 'Variables
                 Dim MessageBuffer(65536) As Byte
-                Dim SocketStream As New NetworkStream(DebugDevices(i).ClientSocket)
-                Dim SocketStreamWriter As StreamWriter = DebugDevices(i).ClientStreamWriter
-                Dim SocketIP As String = DebugDevices(i).ClientIP
-                Dim SocketName As String = DebugDevices(i).ClientName
+                Dim SocketStream As New NetworkStream(DebugDevices(DeviceIndex).ClientSocket)
+                Dim SocketStreamWriter As StreamWriter = DebugDevices(DeviceIndex).ClientStreamWriter
+                Dim SocketIP As String = DebugDevices(DeviceIndex).ClientIP
+                Dim SocketName As String = DebugDevices(DeviceIndex).ClientName
 
                 'Set the timeout of ten milliseconds to ensure that no device "take turns in messaging"
                 SocketStream.ReadTimeout = 10
 
                 'Increment.
-                i += 1
+                DeviceIndex += 1
                 Try
                     'Read a message from the stream
                     SocketStream.Read(MessageBuffer, 0, 65536)

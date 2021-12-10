@@ -37,13 +37,13 @@ Module RemoteDebugCmd
         Kernel.EventManager.RaiseRemoteDebugExecuteCommand(Address, CmdString)
         Dim ArgumentInfo As New ProvidedCommandArgumentsInfo(CmdString, ShellCommandType.RemoteDebugShell)
         Dim Command As String = ArgumentInfo.Command
-        Dim eqargs() As String = ArgumentInfo.ArgumentsList
-        Dim strArgs As String = ArgumentInfo.ArgumentsText
+        Dim Args() As String = ArgumentInfo.ArgumentsList
+        Dim StrArgs As String = ArgumentInfo.ArgumentsText
         Dim RequiredArgumentsProvided As Boolean = ArgumentInfo.RequiredArgumentsProvided
 
         Try
             Dim DebugCommandBase As RemoteDebugCommandExecutor = DebugCommands(Command).CommandBase
-            DebugCommandBase.Execute(strArgs, eqargs, SocketStreamWriter, Address)
+            DebugCommandBase.Execute(StrArgs, Args, SocketStreamWriter, Address)
         Catch ex As Exception
             SocketStreamWriter.WriteLine(DoTranslation("Error executing remote debug command {0}: {1}"), Command, ex.Message)
             Kernel.EventManager.RaiseRemoteDebugCommandError(Address, CmdString, ex)

@@ -27,7 +27,6 @@ Public Module KernelTools
     'Variables
     Friend RPCPowerListener As New Thread(AddressOf PowerManage) With {.Name = "RPC Power Listener Thread"}
     Friend LastKernelErrorException As Exception
-    Friend StopPanicAndGoToDoublePanic As Boolean
     Friend InstanceChecked As Boolean
 
     'Windows function pinvokes
@@ -45,6 +44,7 @@ Public Module KernelTools
     ''' <param name="Exc">An exception to get stack traces, etc. Used for dump files currently.</param>
     ''' <param name="Variables">Optional. Specifies variables to get on text that will be printed.</param>
     Public Sub KernelError(ErrorType As KernelErrorLevel, Reboot As Boolean, RebootTime As Long, Description As String, Exc As Exception, ParamArray Variables() As Object)
+        Dim StopPanicAndGoToDoublePanic As Boolean
         KernelErrored = True
         LastKernelErrorException = Exc
         NotifyKernelError = True
@@ -97,8 +97,8 @@ Public Module KernelTools
             GeneratePanicDump(Description, ErrorType, Exc)
 
             'Check error capabilities
-            If Description.Contains("DOUBLE PANIC: ") And ErrorType = KernelErrorLevel.D Then
-                'If the description has a double panic tag and the error type is Double
+            If ErrorType = KernelErrorLevel.D Then
+                'If the error type is Double
                 Wdbg(DebugLevel.F, "Double panic caused by bug in kernel crash.")
                 Write(DoTranslation("[{0}] dpanic: {1} -- Rebooting in {2} seconds..."), True, ColTypes.Uncontinuable, ErrorType, Description, CStr(RebootTime))
                 Thread.Sleep(RebootTime * 1000)

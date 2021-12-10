@@ -60,7 +60,7 @@ Public Module GetCommand
             Dim FullArgs() As String = ArgumentInfo.FullArgumentsList
             Dim Args() As String = ArgumentInfo.ArgumentsList
             Dim Switches() As String = ArgumentInfo.SwitchesList
-            Dim strArgs As String = ArgumentInfo.ArgumentsText
+            Dim StrArgs As String = ArgumentInfo.ArgumentsText
             Dim RequiredArgumentsProvided As Boolean = ArgumentInfo.RequiredArgumentsProvided
             Dim TargetCommands As Dictionary(Of String, CommandInfo) = Commands
 
@@ -96,7 +96,7 @@ Public Module GetCommand
             'If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
             If (TargetCommands(Command).ArgumentsRequired And RequiredArgumentsProvided) Or Not TargetCommands(Command).ArgumentsRequired Then
                 Dim CommandBase As CommandExecutor = TargetCommands(Command).CommandBase
-                CommandBase.Execute(strArgs, FullArgs, Args, Switches)
+                CommandBase.Execute(StrArgs, FullArgs, Args, Switches)
             Else
                 Wdbg(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command)
                 DecisiveWrite(ShellType, DebugDeviceSocket, DoTranslation("There was not enough arguments. See below for usage:"), True, ColTypes.Neutral)
