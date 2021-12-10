@@ -69,8 +69,6 @@ Module ColorMixDisplay
                 HandleSaverCancel()
                 Exit Do
             Else
-                Dim esc As Char = GetEsc()
-
                 'Set colors
                 If ColorMixTrueColor Then
                     Dim RedColorNum As Integer = colorrand.Next(ColorMixMinimumRedColorLevel, ColorMixMaximumRedColorLevel)
@@ -79,12 +77,18 @@ Module ColorMixDisplay
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                     Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                    If Not ResizeSyncing Then Console.Write(ColorStorage.VTSequenceBackground + " ")
+                    If Not ResizeSyncing Then
+                        SetConsoleColor(ColorStorage, True)
+                        Console.Write(" ")
+                    End If
                 ElseIf ColorMix255Colors Then
                     Dim ColorNum As Integer = colorrand.Next(ColorMixMinimumColorLevel, ColorMixMaximumColorLevel)
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                    If Not ResizeSyncing Then Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
+                    If Not ResizeSyncing Then
+                        SetConsoleColor(New Color(ColorNum), True)
+                        Console.Write(" ")
+                    End If
                 Else
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                     If Not ResizeSyncing Then

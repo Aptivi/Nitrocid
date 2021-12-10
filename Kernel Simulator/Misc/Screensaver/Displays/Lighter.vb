@@ -91,7 +91,8 @@ Module LighterDisplay
                     Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                     If Not ResizeSyncing Then
-                        Console.Write(ColorStorage.VTSequenceBackground + " ")
+                        SetConsoleColor(ColorStorage, True)
+                        Console.Write(" ")
                     Else
                         WdbgConditional(ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing covered positions...")
                         CoveredPositions.Clear()
@@ -101,7 +102,8 @@ Module LighterDisplay
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                     If Not ResizeSyncing Then
-                        Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
+                        SetConsoleColor(New Color(ColorNum), True)
+                        Console.Write(" ")
                     Else
                         WdbgConditional(ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing covered positions...")
                         CoveredPositions.Clear()

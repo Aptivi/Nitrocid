@@ -84,12 +84,18 @@ Module GlitterColorDisplay
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                     Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                    If Not ResizeSyncing Then Console.Write(ColorStorage.VTSequenceBackground + " ")
+                    If Not ResizeSyncing Then
+                        SetConsoleColor(ColorStorage, True)
+                        Console.Write(" ")
+                    End If
                 ElseIf GlitterColor255Colors Then
                     Dim ColorNum As Integer = RandomDriver.Next(GlitterColorMinimumColorLevel, GlitterColorMaximumColorLevel)
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum)
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
-                    If Not ResizeSyncing Then Console.Write(esc + "[48;5;" + CStr(ColorNum) + "m ")
+                    If Not ResizeSyncing Then
+                        SetConsoleColor(New Color(ColorNum), True)
+                        Console.Write(" ")
+                    End If
                 Else
                     If CurrentWindowHeight <> Console.WindowHeight Or CurrentWindowWidth <> Console.WindowWidth Then ResizeSyncing = True
                     If Not ResizeSyncing Then

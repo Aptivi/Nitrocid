@@ -75,13 +75,13 @@ Module LinesDisplay
                     Dim BlueColorNum As Integer = random.Next(LinesMinimumBlueColorLevel, LinesMaximumBlueColorLevel)
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum)
                     Dim ColorStorage As New Color(RedColorNum, GreenColorNum, BlueColorNum)
-                    Console.Write(ColorStorage.VTSequenceForeground)
+                    SetConsoleColor(ColorStorage)
                 ElseIf Lines255Colors Then
                     SetConsoleColor(New Color(LinesBackgroundColor), True)
                     Console.Clear()
                     Dim color As Integer = random.Next(LinesMinimumColorLevel, LinesMaximumColorLevel)
                     WdbgConditional(ScreensaverDebug, DebugLevel.I, "Got color ({0})", color)
-                    Console.Write(esc + "[38;5;" + CStr(color) + "m")
+                    SetConsoleColor(New Color(color))
                 Else
                     Console.Clear()
                     SetConsoleColor(New Color(LinesBackgroundColor), True)

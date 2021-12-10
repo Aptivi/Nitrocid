@@ -96,7 +96,7 @@ Module SnakerDisplay
                     Dim FloorLeftEdge As Integer = 2
                     Dim FloorRightEdge As Integer = Console.WindowWidth - 4
                     Wdbg(DebugLevel.I, "Left edge: {0}, Right edge: {1}", FloorLeftEdge, FloorRightEdge)
-                    Console.Write(FloorColor.VTSequenceBackground)
+                    SetConsoleColor(FloorColor, True)
 
                     'First, draw the floor top edge
                     For x As Integer = FloorTopLeftEdge To FloorTopRightEdge
@@ -168,7 +168,7 @@ Module SnakerDisplay
                                 Console.Write(" ")
                             Next
                         Next
-                        Console.Write(SnakeColor.VTSequenceBackground)
+                        SetConsoleColor(SnakeColor, True)
 
                         'Always draw an apple
                         Console.SetCursorPosition(SnakeAppleX, SnakeAppleY)
