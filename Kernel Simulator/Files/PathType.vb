@@ -73,17 +73,3 @@ Public Enum KernelPathType
     ''' </summary>
     Reminders
 End Enum
-
-''' <summary>
-''' Specifies the other path type
-''' </summary>
-Public Enum OtherPathType
-    ''' <summary>
-    ''' The home directory.
-    ''' </summary>
-    Home
-    ''' <summary>
-    ''' The temporary directory.
-    ''' </summary>
-    Temp
-End Enum

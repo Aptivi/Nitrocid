@@ -41,16 +41,16 @@ Imports KS
     ''' Clean up everything that the unit tests made
     ''' </summary>
     <AssemblyCleanup()> Public Shared Sub CleanEverything()
-        If FileExists(GetOtherPath(OtherPathType.Home) + "/Documents/TestText.txt") Then File.Delete(GetOtherPath(OtherPathType.Home) + "/Documents/TestText.txt")
-        If FileExists(GetOtherPath(OtherPathType.Home) + "/Documents/Text.txt") Then File.Delete(GetOtherPath(OtherPathType.Home) + "/Documents/Text.txt")
-        If FileExists(GetOtherPath(OtherPathType.Home) + "/NewFile.txt") Then File.Delete(GetOtherPath(OtherPathType.Home) + "/NewFile.txt")
-        If FileExists(GetOtherPath(OtherPathType.Home) + "/1mb-test.csv") Then File.Delete(GetOtherPath(OtherPathType.Home) + "/1mb-test.csv")
-        If FolderExists(GetOtherPath(OtherPathType.Home) + "/TestMovedDir2") Then Directory.Delete(GetOtherPath(OtherPathType.Home) + "/TestMovedDir2", True)
-        If FolderExists(GetOtherPath(OtherPathType.Home) + "/NewDirectory") Then Directory.Delete(GetOtherPath(OtherPathType.Home) + "/NewDirectory", True)
-        If FolderExists(GetOtherPath(OtherPathType.Home) + "/TestDir") Then Directory.Delete(GetOtherPath(OtherPathType.Home) + "/TestDir", True)
-        If FolderExists(GetOtherPath(OtherPathType.Home) + "/TestDir2") Then Directory.Delete(GetOtherPath(OtherPathType.Home) + "/TestDir2", True)
+        If FileExists(HomePath + "/Documents/TestText.txt") Then File.Delete(HomePath + "/Documents/TestText.txt")
+        If FileExists(HomePath + "/Documents/Text.txt") Then File.Delete(HomePath + "/Documents/Text.txt")
+        If FileExists(HomePath + "/NewFile.txt") Then File.Delete(HomePath + "/NewFile.txt")
+        If FileExists(HomePath + "/1mb-test.csv") Then File.Delete(HomePath + "/1mb-test.csv")
+        If FolderExists(HomePath + "/TestMovedDir2") Then Directory.Delete(HomePath + "/TestMovedDir2", True)
+        If FolderExists(HomePath + "/NewDirectory") Then Directory.Delete(HomePath + "/NewDirectory", True)
+        If FolderExists(HomePath + "/TestDir") Then Directory.Delete(HomePath + "/TestDir", True)
+        If FolderExists(HomePath + "/TestDir2") Then Directory.Delete(HomePath + "/TestDir2", True)
         If FileExists(GetKernelPath(KernelPathType.Configuration) + ".old") Then
-            If FileExists(GetKernelPath(KernelPathType.Configuration)) Then File.Delete(GetOtherPath(OtherPathType.Home) + "/KernelConfig.json")
+            If FileExists(GetKernelPath(KernelPathType.Configuration)) Then File.Delete(HomePath + "/KernelConfig.json")
             File.Move(GetKernelPath(KernelPathType.Configuration) + ".old", GetKernelPath(KernelPathType.Configuration))
         End If
     End Sub

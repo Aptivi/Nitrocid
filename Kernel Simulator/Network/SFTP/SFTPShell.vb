@@ -62,7 +62,7 @@ Public Module SFTPShell
                     'Complete initialization
                     If SFTPInitialized = False Then
                         Wdbg(DebugLevel.I, $"Completing initialization of SFTP: {SFTPInitialized}")
-                        SFTPCurrDirect = GetOtherPath(OtherPathType.Home)
+                        SFTPCurrDirect = HomePath
                         Kernel.EventManager.RaiseSFTPShellInitialized()
                         SwitchCancellationHandler(ShellCommandType.SFTPShell)
                         SFTPInitialized = True

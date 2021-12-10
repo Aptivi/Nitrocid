@@ -18,46 +18,52 @@
 
 Public Module Paths
 
+    ''' <summary>
+    ''' Platform-dependent home path
+    ''' </summary>
+    Public ReadOnly Property HomePath As String
+        Get
+            If IsOnUnix() Then
+                Return Environment.GetEnvironmentVariable("HOME")
+            Else
+                Return Environment.GetEnvironmentVariable("USERPROFILE")
+            End If
+        End Get
+    End Property
+
+    ''' <summary>
+    ''' Platform-dependent temp path
+    ''' </summary>
+    Public ReadOnly Property TempPath As String
+        Get
+            If IsOnUnix() Then
+                Return "/tmp"
+            Else
+                Return Environment.GetEnvironmentVariable("TEMP")
+            End If
+        End Get
+    End Property
+
+    'Variables
     Friend KernelPaths As New Dictionary(Of String, String)
-    Friend OtherPaths As New Dictionary(Of String, String)
 
     ''' <summary>
     ''' Initializes the paths
     ''' </summary>
     Sub InitPaths()
-        If IsOnUnix() Then
-            KernelPaths.AddIfNotFound("Mods", Environment.GetEnvironmentVariable("HOME") + "/KSMods/")
-            KernelPaths.AddIfNotFound("Configuration", Environment.GetEnvironmentVariable("HOME") + "/KernelConfig.json")
-            KernelPaths.AddIfNotFound("Debugging", Environment.GetEnvironmentVariable("HOME") + "/kernelDbg.log")
-            KernelPaths.AddIfNotFound("Aliases", Environment.GetEnvironmentVariable("HOME") + "/Aliases.json")
-            KernelPaths.AddIfNotFound("Users", Environment.GetEnvironmentVariable("HOME") + "/Users.json")
-            KernelPaths.AddIfNotFound("FTPSpeedDial", Environment.GetEnvironmentVariable("HOME") + "/FTP_SpeedDial.json")
-            KernelPaths.AddIfNotFound("SFTPSpeedDial", Environment.GetEnvironmentVariable("HOME") + "/SFTP_SpeedDial.json")
-            KernelPaths.AddIfNotFound("DebugDevNames", Environment.GetEnvironmentVariable("HOME") + "/DebugDeviceNames.json")
-            KernelPaths.AddIfNotFound("MOTD", Environment.GetEnvironmentVariable("HOME") + "/MOTD.txt")
-            KernelPaths.AddIfNotFound("MAL", Environment.GetEnvironmentVariable("HOME") + "/MAL.txt")
-            KernelPaths.AddIfNotFound("CustomSaverSettings", Environment.GetEnvironmentVariable("HOME") + "/CustomSaverSettings.json")
-            KernelPaths.AddIfNotFound("Events", Environment.GetEnvironmentVariable("HOME") + "/KSEvents/")
-            KernelPaths.AddIfNotFound("Reminders", Environment.GetEnvironmentVariable("HOME") + "/KSReminders/")
-            OtherPaths.AddIfNotFound("Home", Environment.GetEnvironmentVariable("HOME"))
-            OtherPaths.AddIfNotFound("Temp", "/tmp")
-        Else
-            KernelPaths.AddIfNotFound("Mods", Environment.GetEnvironmentVariable("USERPROFILE") + "/KSMods/")
-            KernelPaths.AddIfNotFound("Configuration", Environment.GetEnvironmentVariable("USERPROFILE") + "/KernelConfig.json")
-            KernelPaths.AddIfNotFound("Debugging", Environment.GetEnvironmentVariable("USERPROFILE") + "/kernelDbg.log")
-            KernelPaths.AddIfNotFound("Aliases", Environment.GetEnvironmentVariable("USERPROFILE") + "/Aliases.json")
-            KernelPaths.AddIfNotFound("Users", Environment.GetEnvironmentVariable("USERPROFILE") + "/Users.json")
-            KernelPaths.AddIfNotFound("FTPSpeedDial", Environment.GetEnvironmentVariable("USERPROFILE") + "/FTP_SpeedDial.json")
-            KernelPaths.AddIfNotFound("SFTPSpeedDial", Environment.GetEnvironmentVariable("USERPROFILE") + "/SFTP_SpeedDial.json")
-            KernelPaths.AddIfNotFound("DebugDevNames", Environment.GetEnvironmentVariable("USERPROFILE") + "/DebugDeviceNames.json")
-            KernelPaths.AddIfNotFound("MOTD", Environment.GetEnvironmentVariable("USERPROFILE") + "/MOTD.txt")
-            KernelPaths.AddIfNotFound("MAL", Environment.GetEnvironmentVariable("USERPROFILE") + "/MAL.txt")
-            KernelPaths.AddIfNotFound("CustomSaverSettings", Environment.GetEnvironmentVariable("USERPROFILE") + "/CustomSaverSettings.json")
-            KernelPaths.AddIfNotFound("Events", Environment.GetEnvironmentVariable("USERPROFILE") + "/KSEvents/")
-            KernelPaths.AddIfNotFound("Reminders", Environment.GetEnvironmentVariable("USERPROFILE") + "/KSReminders/")
-            OtherPaths.AddIfNotFound("Home", Environment.GetEnvironmentVariable("USERPROFILE"))
-            OtherPaths.AddIfNotFound("Temp", Environment.GetEnvironmentVariable("TEMP"))
-        End If
+        KernelPaths.AddIfNotFound("Mods", HomePath + "/KSMods/")
+        KernelPaths.AddIfNotFound("Configuration", HomePath + "/KernelConfig.json")
+        KernelPaths.AddIfNotFound("Debugging", HomePath + "/kernelDbg.log")
+        KernelPaths.AddIfNotFound("Aliases", HomePath + "/Aliases.json")
+        KernelPaths.AddIfNotFound("Users", HomePath + "/Users.json")
+        KernelPaths.AddIfNotFound("FTPSpeedDial", HomePath + "/FTP_SpeedDial.json")
+        KernelPaths.AddIfNotFound("SFTPSpeedDial", HomePath + "/SFTP_SpeedDial.json")
+        KernelPaths.AddIfNotFound("DebugDevNames", HomePath + "/DebugDeviceNames.json")
+        KernelPaths.AddIfNotFound("MOTD", HomePath + "/MOTD.txt")
+        KernelPaths.AddIfNotFound("MAL", HomePath + "/MAL.txt")
+        KernelPaths.AddIfNotFound("CustomSaverSettings", HomePath + "/CustomSaverSettings.json")
+        KernelPaths.AddIfNotFound("Events", HomePath + "/KSEvents/")
+        KernelPaths.AddIfNotFound("Reminders", HomePath + "/KSReminders/")
     End Sub
 
     ''' <summary>
@@ -71,20 +77,6 @@ Public Module Paths
             Return NeutralizePath(KernelPaths(PathType.ToString))
         Else
             Throw New Exceptions.InvalidKernelPathException(DoTranslation("Invalid kernel path type."))
-        End If
-    End Function
-
-    ''' <summary>
-    ''' Gets the neutralized other path
-    ''' </summary>
-    ''' <param name="PathType">Path type</param>
-    ''' <returns>An "other" path</returns>
-    ''' <exception cref="Exceptions.InvalidKernelPathException"></exception>
-    Public Function GetOtherPath(PathType As OtherPathType) As String
-        If [Enum].IsDefined(GetType(OtherPathType), PathType) Then
-            Return NeutralizePath(OtherPaths(PathType.ToString))
-        Else
-            Throw New Exceptions.InvalidPathException(DoTranslation("Invalid path type."))
         End If
     End Function
 

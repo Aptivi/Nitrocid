@@ -25,7 +25,7 @@ Imports Newtonsoft.Json.Linq
 Public Module Filesystem
 
     'Variables
-    Public CurrDir As String = GetOtherPath(OtherPathType.Home)
+    Public CurrDir As String = HomePath
     Public ShowFilesystemProgress As Boolean = True
     Public SortList As Boolean = True
     Public SortMode As FilesystemSortOptions = FilesystemSortOptions.FullName

@@ -151,7 +151,7 @@ Public Module KernelTools
     Sub GeneratePanicDump(Description As String, ErrorType As KernelErrorLevel, Exc As Exception)
         Try
             'Open a file stream for dump
-            Dim Dump As New StreamWriter($"{GetOtherPath(OtherPathType.Home)}/dmp_{RenderDate(FormatType.Short).Replace("/", "-")}_{RenderTime(FormatType.Long).Replace(":", "-")}.txt")
+            Dim Dump As New StreamWriter($"{HomePath}/dmp_{RenderDate(FormatType.Short).Replace("/", "-")}_{RenderTime(FormatType.Long).Replace(":", "-")}.txt")
             Wdbg(DebugLevel.I, "Opened file stream in home directory, saved as dmp_{0}.txt", $"{RenderDate(FormatType.Short).Replace("/", "-")}_{RenderTime(FormatType.Long).Replace(":", "-")}")
 
             'Write info (Header)
@@ -466,10 +466,12 @@ Public Module KernelTools
     ''' <summary>
     ''' Gets the Kernel Simulator compilation date.
     ''' </summary>
-    Function GetCompileDate() As Date 'Always successful, no need to put Try Catch
-        'Variables and Constants
-        Const Offset As Integer = 60 : Const LTOff As Integer = 8
-        Dim asmByte(2047) As Byte : Dim asmStream As Stream
+    Function GetCompileDate() As Date
+        'Variables and constants
+        Const Offset As Integer = 60
+        Const LTOff As Integer = 8
+        Dim asmByte(2047) As Byte
+        Dim asmStream As Stream
         Dim codePath As Assembly = Assembly.GetExecutingAssembly
 
         'Get compile date

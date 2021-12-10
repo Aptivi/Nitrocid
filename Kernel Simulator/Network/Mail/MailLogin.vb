@@ -381,9 +381,9 @@ Module MailLogin
         Try
             'Register the context and initialize the loggers if debug mode is on
             If DebugMode And Mail_Debug Then
-                IMAP_Client = New ImapClient(New ProtocolLogger(GetOtherPath(OtherPathType.Home) + "/ImapDebug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
-                SMTP_Client = New SmtpClient(New ProtocolLogger(GetOtherPath(OtherPathType.Home) + "/SmtpDebug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
-                POP3_Client = New Pop3Client(New ProtocolLogger(GetOtherPath(OtherPathType.Home) + "/Pop3Debug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
+                IMAP_Client = New ImapClient(New ProtocolLogger(HomePath + "/ImapDebug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
+                SMTP_Client = New SmtpClient(New ProtocolLogger(HomePath + "/SmtpDebug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
+                POP3_Client = New Pop3Client(New ProtocolLogger(HomePath + "/Pop3Debug.log") With {.LogTimestamps = True, .RedactSecrets = True, .ClientPrefix = "KS:  ", .ServerPrefix = "SRV: "})
             End If
             CryptographyContext.Register(GetType(PGPContext))
 

@@ -26,8 +26,8 @@ Imports KS
     ''' Tests copying directory to directory
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestCopyDirectoryToDirectory()
-        CurrDir = GetOtherPath(OtherPathType.Home)
-        Directory.CreateDirectory(GetOtherPath(OtherPathType.Home) + "/TestDir")
+        CurrDir = HomePath
+        Directory.CreateDirectory(HomePath + "/TestDir")
         Dim SourcePath As String = "/TestDir"
         Dim TargetPath As String = "/TestDir2"
         CopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue
@@ -37,7 +37,7 @@ Imports KS
     ''' Tests copying file to directory
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestCopyFileToDirectory()
-        CurrDir = GetOtherPath(OtherPathType.Home)
+        CurrDir = HomePath
         Dim SourcePath As String = Path.GetFullPath("TestText.txt")
         Dim TargetPath As String = "/Documents"
         CopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue
@@ -47,7 +47,7 @@ Imports KS
     ''' Tests copying file to file
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestCopyFileToFile()
-        CurrDir = GetOtherPath(OtherPathType.Home)
+        CurrDir = HomePath
         Dim SourcePath As String = Path.GetFullPath("TestText.txt")
         Dim TargetPath As String = "/Documents/Text.txt"
         CopyFileOrDir(SourcePath, TargetPath).ShouldBeTrue
@@ -57,7 +57,7 @@ Imports KS
     ''' Tests making directory
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMakeDirectory()
-        CurrDir = GetOtherPath(OtherPathType.Home)
+        CurrDir = HomePath
         MakeDirectory("/NewDirectory").ShouldBeTrue
     End Sub
 
@@ -65,7 +65,7 @@ Imports KS
     ''' Tests making file
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMakeFile()
-        CurrDir = GetOtherPath(OtherPathType.Home)
+        CurrDir = HomePath
         MakeFile("/NewFile.txt").ShouldBeTrue
     End Sub
 
@@ -73,8 +73,8 @@ Imports KS
     ''' Tests moving directory to directory
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMoveDirectoryToDirectory()
-        CurrDir = GetOtherPath(OtherPathType.Home)
-        Directory.CreateDirectory(GetOtherPath(OtherPathType.Home) + "/TestMovedDir")
+        CurrDir = HomePath
+        Directory.CreateDirectory(HomePath + "/TestMovedDir")
         Dim SourcePath As String = "/TestMovedDir"
         Dim TargetPath As String = "/TestMovedDir2"
         MoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue
@@ -84,7 +84,7 @@ Imports KS
     ''' Tests moving file to directory
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMoveFileToDirectory()
-        CurrDir = GetOtherPath(OtherPathType.Home)
+        CurrDir = HomePath
         Dim SourcePath As String = Path.GetFullPath("TestMove.txt")
         Dim TargetPath As String = "/Documents"
         MoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue
@@ -94,7 +94,7 @@ Imports KS
     ''' Tests moving file to file
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestMoveFileToFile()
-        CurrDir = GetOtherPath(OtherPathType.Home)
+        CurrDir = HomePath
         Dim SourcePath As String = "/Documents/TestMove.txt"
         Dim TargetPath As String = Path.GetFullPath("TestMove.txt")
         MoveFileOrDir(SourcePath, TargetPath).ShouldBeTrue
@@ -104,7 +104,7 @@ Imports KS
     ''' Tests removing directory
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestRemoveDirectory()
-        CurrDir = GetOtherPath(OtherPathType.Home)
+        CurrDir = HomePath
         Dim TargetPath As String = "/TestDir2"
         RemoveDirectory(TargetPath).ShouldBeTrue
     End Sub
@@ -113,7 +113,7 @@ Imports KS
     ''' Tests removing file
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestRemoveFile()
-        CurrDir = GetOtherPath(OtherPathType.Home)
+        CurrDir = HomePath
         Dim TargetPath As String = "/Documents/Text.txt"
         RemoveFile(TargetPath).ShouldBeTrue
     End Sub
@@ -122,7 +122,7 @@ Imports KS
     ''' Tests searching file for string
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestSearchFileForString()
-        CurrDir = GetOtherPath(OtherPathType.Home)
+        CurrDir = HomePath
         Dim TargetPath As String = Path.GetFullPath("TestText.txt")
         Dim Matches As List(Of String) = SearchFileForString(TargetPath, "test")
         Matches.ShouldNotBeNull
@@ -133,7 +133,7 @@ Imports KS
     ''' Tests searching file for string using regular expressions
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestSearchFileForStringRegexp()
-        CurrDir = GetOtherPath(OtherPathType.Home)
+        CurrDir = HomePath
         Dim TargetPath As String = Path.GetFullPath("TestText.txt")
         Dim Matches As List(Of String) = SearchFileForStringRegexp(TargetPath, New Regex("test"))
         Matches.ShouldNotBeNull
@@ -144,7 +144,7 @@ Imports KS
     ''' Tests adding attribute
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestAddAttribute()
-        CurrDir = GetOtherPath(OtherPathType.Home)
+        CurrDir = HomePath
         Dim SourcePath As String = Path.GetFullPath("TestText.txt")
         AddAttributeToFile(SourcePath, FileAttributes.Hidden).ShouldBeTrue
     End Sub
@@ -153,7 +153,7 @@ Imports KS
     ''' Tests deleting attribute
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestDeleteAttribute()
-        CurrDir = GetOtherPath(OtherPathType.Home)
+        CurrDir = HomePath
         Dim SourcePath As String = Path.GetFullPath("TestText.txt")
         RemoveAttributeFromFile(SourcePath, FileAttributes.Hidden).ShouldBeTrue
     End Sub
@@ -272,7 +272,7 @@ Imports KS
     ''' Tests creating filesystem entries list
     ''' </summary>
     <TestMethod> <TestCategory("Manipulation")> Public Sub TestCreateList()
-        Dim CreatedList As List(Of FileSystemInfo) = CreateList(GetOtherPath(OtherPathType.Home))
+        Dim CreatedList As List(Of FileSystemInfo) = CreateList(HomePath)
         CreatedList.ShouldNotBeEmpty
     End Sub
 

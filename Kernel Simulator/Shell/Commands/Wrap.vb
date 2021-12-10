@@ -26,7 +26,7 @@ Class WrapCommand
         Dim CommandToBeWrapped As String = ListArgs(0).Split(" ")(0)
         If Commands.ContainsKey(CommandToBeWrapped) Then
             If Commands(CommandToBeWrapped).Wrappable Then
-                Dim WrapOutputPath As String = GetOtherPath(OtherPathType.Temp) + "/wrapoutput.txt"
+                Dim WrapOutputPath As String = TempPath + "/wrapoutput.txt"
                 GetLine(False, ListArgs(0), False, WrapOutputPath)
                 Dim WrapOutputStream As New StreamReader(WrapOutputPath)
                 Dim WrapOutput As String = WrapOutputStream.ReadToEnd

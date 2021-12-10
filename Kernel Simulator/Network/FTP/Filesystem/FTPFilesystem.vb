@@ -215,16 +215,16 @@ Public Module FTPFilesystem
             Dim SourceFile As String = Source.Split("/").Last
             Wdbg(DebugLevel.I, "Copying from {0} to {1} with the source file of {2}...", Source, Target, SourceFile)
             If ClientFTP.DirectoryExists(Source) Then
-                ClientFTP.DownloadDirectory(GetOtherPath(OtherPathType.Temp) + "/FTPTransfer", Source)
-                Result = ClientFTP.UploadDirectory(GetOtherPath(OtherPathType.Temp) + "/FTPTransfer/" + Source, Target)
+                ClientFTP.DownloadDirectory(TempPath + "/FTPTransfer", Source)
+                Result = ClientFTP.UploadDirectory(TempPath + "/FTPTransfer/" + Source, Target)
             ElseIf ClientFTP.FileExists(Source) And ClientFTP.DirectoryExists(Target) Then
-                ClientFTP.DownloadFile(GetOtherPath(OtherPathType.Temp) + "/FTPTransfer/" + SourceFile, Source)
-                Result = ClientFTP.UploadFile(GetOtherPath(OtherPathType.Temp) + "/FTPTransfer/" + SourceFile, Target + "/" + SourceFile)
+                ClientFTP.DownloadFile(TempPath + "/FTPTransfer/" + SourceFile, Source)
+                Result = ClientFTP.UploadFile(TempPath + "/FTPTransfer/" + SourceFile, Target + "/" + SourceFile)
             ElseIf ClientFTP.FileExists(Source) Then
-                ClientFTP.DownloadFile(GetOtherPath(OtherPathType.Temp) + "/FTPTransfer/" + SourceFile, Source)
-                Result = ClientFTP.UploadFile(GetOtherPath(OtherPathType.Temp) + "/FTPTransfer/" + SourceFile, Target)
+                ClientFTP.DownloadFile(TempPath + "/FTPTransfer/" + SourceFile, Source)
+                Result = ClientFTP.UploadFile(TempPath + "/FTPTransfer/" + SourceFile, Target)
             End If
-            Directory.Delete(GetOtherPath(OtherPathType.Temp) + "/FTPTransfer", True)
+            Directory.Delete(TempPath + "/FTPTransfer", True)
 
             'See if copied successfully
 #Disable Warning BC42104

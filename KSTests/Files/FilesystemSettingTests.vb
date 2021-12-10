@@ -24,8 +24,8 @@ Imports KS
     ''' Tests current directory setting
     ''' </summary>
     <TestMethod()> <TestCategory("Setting")> Public Sub TestSetCurrDir()
-        CurrDir = GetOtherPath(OtherPathType.Home)
-        Dim Path As String = GetOtherPath(OtherPathType.Home) + "/Documents"
+        CurrDir = HomePath
+        Dim Path As String = HomePath + "/Documents"
         SetCurrDir(Path).ShouldBeTrue
         Path.ShouldBe(CurrDir)
     End Sub
@@ -44,9 +44,9 @@ Imports KS
     ''' Tests saving the current directory value
     ''' </summary>
     <TestMethod()> <TestCategory("Manipulation")> Public Sub TestSaveCurrDir()
-        CurrDir = GetOtherPath(OtherPathType.Home)
+        CurrDir = HomePath
         SaveCurrDir()
-        GetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Current Directory").ToString.ShouldBe(GetOtherPath(OtherPathType.Home))
+        GetConfigValue(ConfigCategory.Shell, GetConfigCategory(ConfigCategory.Shell), "Current Directory").ToString.ShouldBe(HomePath)
     End Sub
 
 End Class

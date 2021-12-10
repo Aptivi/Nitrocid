@@ -86,7 +86,7 @@ Public Module FTPShell
                         FtpTrace.LogUserName = FTPLoggerUsername
                         FtpTrace.LogPassword = False 'Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
                         FtpTrace.LogIP = FTPLoggerIP
-                        FtpCurrentDirectory = GetOtherPath(OtherPathType.Home)
+                        FtpCurrentDirectory = HomePath
                         Kernel.EventManager.RaiseFTPShellInitialized()
                         SwitchCancellationHandler(ShellCommandType.FTPShell)
                         FtpInitialized = True

@@ -970,7 +970,7 @@ Public Module Config
             'Shell Section
             Wdbg(DebugLevel.I, "Parsing shell section...")
             SimHelp = If(ConfigToken("Shell")?("Simplified Help Command"), False)
-            CurrDir = If(ConfigToken("Shell")?("Current Directory"), GetOtherPath(OtherPathType.Home))
+            CurrDir = If(ConfigToken("Shell")?("Current Directory"), HomePath)
             PathsToLookup = If(Not String.IsNullOrEmpty(ConfigToken("Shell")?("Lookup Directories")), ConfigToken("Shell")?("Lookup Directories").ToString.ReleaseDoubleQuotes, Environ("PATH"))
             ShellPromptStyle = If(ConfigToken("Shell")?("Prompt Style"), "")
             FTPShellPromptStyle = If(ConfigToken("Shell")?("FTP Prompt Style"), "")
