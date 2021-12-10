@@ -655,6 +655,7 @@
     <Compile Include="TestShell\Commands\Translate.vb" />
     <Compile Include="TestShell\TestShell.vb" />
     <Compile Include="TimeDate\TimeDate.vb" />
+    <Compile Include="TimeDate\TimeDateConverters.vb" />
     <Compile Include="TimeDate\TimeDateRenderers.vb" />
     <Compile Include="TimeDate\TimeDateRenderersUtc.vb" />
     <Compile Include="TimeDate\TimeZones.vb" />

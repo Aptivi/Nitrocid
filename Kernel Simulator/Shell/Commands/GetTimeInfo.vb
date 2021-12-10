@@ -22,7 +22,6 @@ Class GetTimeInfoCommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
         Dim DateTimeInfo As Date
-        Dim UnixEpoch As New Date(1970, 1, 1, 0, 0, 0, 0)
         If Date.TryParse(ListArgs(0), DateTimeInfo) Then
             Write("-- " + DoTranslation("Information for") + " {0} --" + vbNewLine, True, ColTypes.Neutral, Render(DateTimeInfo))
             Write(DoTranslation("Milliseconds:") + " {0}", True, ColTypes.Neutral, DateTimeInfo.Millisecond)
@@ -39,7 +38,7 @@ Class GetTimeInfoCommand
             Write(DoTranslation("Binary:") + " {0}", True, ColTypes.Neutral, DateTimeInfo.ToBinary)
             Write(DoTranslation("Local Time:") + " {0}", True, ColTypes.Neutral, Render(DateTimeInfo.ToLocalTime))
             Write(DoTranslation("Universal Time:") + " {0}", True, ColTypes.Neutral, Render(DateTimeInfo.ToUniversalTime))
-            Write(DoTranslation("Unix Time:") + " {0}", True, ColTypes.Neutral, (DateTimeInfo - UnixEpoch).TotalSeconds)
+            Write(DoTranslation("Unix Time:") + " {0}", True, ColTypes.Neutral, DateToUnix(DateTimeInfo))
         Else
             Write(DoTranslation("Failed to parse date information for") + " {0}. " + DoTranslation("Ensure that the format is correct."), True, ColTypes.Error, ListArgs(0))
         End If
