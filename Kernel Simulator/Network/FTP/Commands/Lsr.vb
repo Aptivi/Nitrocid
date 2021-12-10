@@ -36,4 +36,9 @@ Class FTP_LsrCommand
         Next
     End Sub
 
+    Public Sub HelpHelper()
+        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+        Write("  -showdetails: ", False, ColTypes.ListEntry) : Write(DoTranslation("Shows the file details in the list"), True, ColTypes.ListValue)
+    End Sub
+
 End Class

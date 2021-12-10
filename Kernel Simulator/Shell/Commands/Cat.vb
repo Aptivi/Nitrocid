@@ -32,4 +32,10 @@ Class CatCommand
         End Try
     End Sub
 
+    Public Sub HelpHelper()
+        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+        Write("  -lines: ", False, ColTypes.ListEntry) : Write(DoTranslation("Prints the line numbers that follow the line being printed"), True, ColTypes.ListValue)
+        Write("  -nolines: ", False, ColTypes.ListEntry) : Write(DoTranslation("Prevents printing the line numbers"), True, ColTypes.ListValue)
+    End Sub
+
 End Class

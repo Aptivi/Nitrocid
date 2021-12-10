@@ -38,4 +38,9 @@ Class FTP_DisconnectCommand
         End If
     End Sub
 
+    Public Sub HelpHelper()
+        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+        Write("  -f: ", False, ColTypes.ListEntry) : Write(DoTranslation("Disconnects from server disgracefully"), True, ColTypes.ListValue)
+    End Sub
+
 End Class

@@ -30,4 +30,9 @@ Class Test_SleepTookCommand
         End If
     End Sub
 
+    Public Sub HelpHelper()
+        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+        Write("  -t: ", False, ColTypes.ListEntry) : Write(DoTranslation("Unit in ticks"), True, ColTypes.ListValue)
+    End Sub
+
 End Class

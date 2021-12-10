@@ -78,4 +78,14 @@ Class SysInfoCommand
         End If
     End Sub
 
+    Public Sub HelpHelper()
+        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+        Write("  -s: ", False, ColTypes.ListEntry) : Write(DoTranslation("Shows the system information"), True, ColTypes.ListValue)
+        Write("  -h: ", False, ColTypes.ListEntry) : Write(DoTranslation("Shows the hardware information"), True, ColTypes.ListValue)
+        Write("  -u: ", False, ColTypes.ListEntry) : Write(DoTranslation("Shows the user information"), True, ColTypes.ListValue)
+        Write("  -m: ", False, ColTypes.ListEntry) : Write(DoTranslation("Shows the message of the day"), True, ColTypes.ListValue)
+        Write("  -l: ", False, ColTypes.ListEntry) : Write(DoTranslation("Shows the message of the day after login"), True, ColTypes.ListValue)
+        Write("  -a: ", False, ColTypes.ListEntry) : Write(DoTranslation("Shows all information"), True, ColTypes.ListValue)
+    End Sub
+
 End Class

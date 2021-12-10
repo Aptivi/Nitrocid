@@ -30,4 +30,9 @@ Class ShowTdZoneCommand
         End If
     End Sub
 
+    Public Sub HelpHelper()
+        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+        Write("  -all: ", False, ColTypes.ListEntry) : Write(DoTranslation("Shows all the time zones"), True, ColTypes.ListValue)
+    End Sub
+
 End Class

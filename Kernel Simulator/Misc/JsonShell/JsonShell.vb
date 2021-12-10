@@ -30,7 +30,7 @@ Public Module JsonShell
                                                                                        {"exitnosave", New CommandInfo("exitnosave", ShellCommandType.JsonShell, "Exits the JSON shell without saving the changes", {}, False, 0, New JsonShell_ExitNoSaveCommand)},
                                                                                        {"help", New CommandInfo("help", ShellCommandType.JsonShell, "Lists available commands", {"[command]"}, False, 0, New JsonShell_HelpCommand)},
                                                                                        {"print", New CommandInfo("print", ShellCommandType.JsonShell, "Prints the JSON file", {"[property]"}, False, 0, New JsonShell_PrintCommand)},
-                                                                                       {"save", New CommandInfo("save", ShellCommandType.JsonShell, "Saves the JSON file", {"[-b|-m]"}, False, 0, New JsonShell_SaveCommand)}}
+                                                                                       {"save", New CommandInfo("save", ShellCommandType.JsonShell, "Saves the JSON file", {"[-b|-m]"}, False, 0, New JsonShell_SaveCommand, False, False, False, False, False, New Action(AddressOf (New JsonShell_SaveCommand).HelpHelper))}}
     Public JsonShell_ModCommands As New ArrayList
     Public JsonShell_FileStream As FileStream
     Public JsonShell_FileToken As JToken = JToken.Parse("{}")

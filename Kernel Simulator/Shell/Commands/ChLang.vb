@@ -31,6 +31,10 @@ Class ChLangCommand
     Public Sub HelpHelper()
         Dim UsageLength As Integer = DoTranslation("Usage:").Length
         Write(" ".Repeat(UsageLength) + " " + " <language>: " + String.Join("/", Languages.Keys), True, ColTypes.Neutral)
+        Write(DoTranslation("This command has the below switches that change how it works:"), True, ColTypes.Neutral)
+        Write("  -alwaystransliterated: ", False, ColTypes.ListEntry) : Write(DoTranslation("Always use the transliterated version"), True, ColTypes.ListValue)
+        Write("  -alwaystranslated: ", False, ColTypes.ListEntry) : Write(DoTranslation("Always use the translated version"), True, ColTypes.ListValue)
+        Write("  -force: ", False, ColTypes.ListEntry) : Write(DoTranslation("Force switching language"), True, ColTypes.ListValue)
     End Sub
 
 End Class
