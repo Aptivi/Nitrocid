@@ -48,6 +48,17 @@ Public Module CalendarPrint
             Dim CurrentDayMark As String = $" {CurrentDay} "
             Dim ReminderMarked As Boolean = False
             Dim EventMarked As Boolean = False
+            Dim IsWeekend As Boolean = CurrentDate.DayOfWeek = DayOfWeek.Friday Or CurrentDate.DayOfWeek = DayOfWeek.Saturday
+
+            'Dim out the weekends
+            If IsWeekend Then
+                Dim WeekendOptions As New CellOptions(CurrentDate.DayOfWeek + 1, CurrentWeek) With {
+                    .ColoredCell = True,
+                    .CellColor = New Color(128, 128, 128),
+                    .CellBackgroundColor = New Color(BackgroundColor)
+                }
+                CalendarCellOptions.Add(WeekendOptions)
+            End If
 
             'Know where and how to put the day number
             For Each Reminder As ReminderInfo In Reminders
