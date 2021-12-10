@@ -1552,4 +1552,54 @@ Public Module ScreensaverSettings
     ''' </summary>
     Public BarRotUseBorderColors As Boolean
 
+    '-> Fireworks
+    ''' <summary>
+    ''' [Fireworks] Enable 255 color support. Has a higher priority than 16 color support.
+    ''' </summary>
+    Public Fireworks255Colors As Boolean
+    ''' <summary>
+    ''' [Fireworks] Enable truecolor support. Has a higher priority than 255 color support.
+    ''' </summary>
+    Public FireworksTrueColor As Boolean = True
+    ''' <summary>
+    ''' [Fireworks] How many milliseconds to wait before making the next write?
+    ''' </summary>
+    Public FireworksDelay As Integer = 10
+    ''' <summary>
+    ''' [Fireworks] The radius of the explosion
+    ''' </summary>
+    Public FireworksRadius As Integer = 5
+    ''' <summary>
+    ''' [Fireworks] The minimum red color level (true color)
+    ''' </summary>
+    Public FireworksMinimumRedColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Fireworks] The minimum green color level (true color)
+    ''' </summary>
+    Public FireworksMinimumGreenColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Fireworks] The minimum blue color level (true color)
+    ''' </summary>
+    Public FireworksMinimumBlueColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Fireworks] The minimum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public FireworksMinimumColorLevel As Integer = 0
+    ''' <summary>
+    ''' [Fireworks] The maximum red color level (true color)
+    ''' </summary>
+    Public FireworksMaximumRedColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Fireworks] The maximum green color level (true color)
+    ''' </summary>
+    Public FireworksMaximumGreenColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Fireworks] The maximum blue color level (true color)
+    ''' </summary>
+    Public FireworksMaximumBlueColorLevel As Integer = 255
+    ''' <summary>
+    ''' [Fireworks] The maximum color level (255 colors or 16 colors)
+    ''' </summary>
+    Public FireworksMaximumColorLevel As Integer = 255
+
 End Module

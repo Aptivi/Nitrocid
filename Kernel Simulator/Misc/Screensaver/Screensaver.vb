@@ -42,6 +42,7 @@ Public Module Screensaver
                                                                                       {"dissolve", Dissolve},
                                                                                       {"fader", Fader},
                                                                                       {"faderback", FaderBack},
+                                                                                      {"fireworks", Fireworks},
                                                                                       {"flashcolor", FlashColor},
                                                                                       {"glittercolor", GlitterColor},
                                                                                       {"glittermatrix", GlitterMatrix},

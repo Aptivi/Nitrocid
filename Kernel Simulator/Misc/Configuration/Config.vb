@@ -783,6 +783,23 @@ Public Module Config
             }
             ScreensaverConfig.Add("BarRot", BarRotConfig)
 
+            'Fireworks config json object
+            Dim FireworksConfig As New JObject From {
+                    {"Activate 255 Color Mode", Fireworks255Colors},
+                    {"Activate True Color Mode", FireworksTrueColor},
+                    {"Delay in Milliseconds", FireworksDelay},
+                    {"Firework explosion radius", FireworksRadius},
+                    {"Minimum red color level", FireworksMinimumRedColorLevel},
+                    {"Minimum green color level", FireworksMinimumGreenColorLevel},
+                    {"Minimum blue color level", FireworksMinimumBlueColorLevel},
+                    {"Minimum color level", FireworksMinimumColorLevel},
+                    {"Maximum red color level", FireworksMaximumRedColorLevel},
+                    {"Maximum green color level", FireworksMaximumGreenColorLevel},
+                    {"Maximum blue color level", FireworksMaximumBlueColorLevel},
+                    {"Maximum color level", FireworksMaximumColorLevel}
+            }
+            ScreensaverConfig.Add("Fireworks", FireworksConfig)
+
             'Add a screensaver config json object to Screensaver section
             ConfigurationObject.Add("Screensaver", ScreensaverConfig)
 
@@ -1477,6 +1494,20 @@ Public Module Config
             BarRotLeftFrameColor = New Color(If(ConfigToken("Screensaver")?("BarRot")?("Left frame color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
             BarRotRightFrameColor = New Color(If(ConfigToken("Screensaver")?("BarRot")?("Right frame color for ramp bar"), ConsoleColors.Gray).ToString).PlainSequence
             BarRotUseBorderColors = If(ConfigToken("Screensaver")?("BarRot")?("Use border colors for ramp bar"), False)
+
+            '> Fireworks
+            Fireworks255Colors = If(ConfigToken("Screensaver")?("Fireworks")?("Activate 255 Color Mode"), False)
+            FireworksTrueColor = If(ConfigToken("Screensaver")?("Fireworks")?("Activate True Color Mode"), True)
+            FireworksDelay = If(Integer.TryParse(ConfigToken("Screensaver")?("Fireworks")?("Delay in Milliseconds"), 0), ConfigToken("Screensaver")?("Fireworks")?("Delay in Milliseconds"), 10)
+            FireworksRadius = If(Integer.TryParse(ConfigToken("Screensaver")?("Fireworks")?("Firework explosion radius"), 0), ConfigToken("Screensaver")?("Fireworks")?("Firework explosion radius"), 5)
+            FireworksMinimumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fireworks")?("Minimum red color level"), 0), ConfigToken("Screensaver")?("Fireworks")?("Minimum red color level"), 0)
+            FireworksMinimumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fireworks")?("Minimum green color level"), 0), ConfigToken("Screensaver")?("Fireworks")?("Minimum green color level"), 0)
+            FireworksMinimumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fireworks")?("Minimum blue color level"), 0), ConfigToken("Screensaver")?("Fireworks")?("Minimum blue color level"), 0)
+            FireworksMinimumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fireworks")?("Minimum color level"), 0), ConfigToken("Screensaver")?("Fireworks")?("Minimum color level"), 0)
+            FireworksMaximumRedColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fireworks")?("Maximum red color level"), 0), ConfigToken("Screensaver")?("Fireworks")?("Maximum red color level"), 255)
+            FireworksMaximumGreenColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fireworks")?("Maximum green color level"), 0), ConfigToken("Screensaver")?("Fireworks")?("Maximum green color level"), 255)
+            FireworksMaximumBlueColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fireworks")?("Maximum blue color level"), 0), ConfigToken("Screensaver")?("Fireworks")?("Maximum blue color level"), 255)
+            FireworksMaximumColorLevel = If(Integer.TryParse(ConfigToken("Screensaver")?("Fireworks")?("Maximum color level"), 0), ConfigToken("Screensaver")?("Fireworks")?("Maximum color level"), 255)
 
             'Misc Section
             Wdbg(DebugLevel.I, "Parsing misc section...")

@@ -2320,5 +2320,82 @@
                 "Description": "Use the border colors for the ramp bar. If disabled, will generate a grey bar."
             }
         ]
+    },
+    "Fireworks": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Activate 255 colors",
+                "Type": "SBoolean",
+                "Variable": "Fireworks255Colors",
+                "Description": "Activates the 255 color support."
+            },
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "FireworksTrueColor",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "FireworksDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Firework explosion radius",
+                "Type": "SInt",
+                "Variable": "FireworksRadius",
+                "Description": "How many blocks (up to 10) is the explosion radius for the firework when ignited?"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SInt",
+                "Variable": "FireworksMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SInt",
+                "Variable": "FireworksMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SInt",
+                "Variable": "FireworksMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SInt",
+                "Variable": "FireworksMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SInt",
+                "Variable": "FireworksMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SInt",
+                "Variable": "FireworksMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SInt",
+                "Variable": "FireworksMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255."
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SInt",
+                "Variable": "FireworksMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors."
+            }
+        ]
     }
 }
