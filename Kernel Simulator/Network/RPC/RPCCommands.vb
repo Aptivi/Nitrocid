@@ -24,13 +24,14 @@ Public Module RPCCommands
     ''' List of RPC commands.<br/>
     ''' <br/>&lt;Request:Shutdown&gt;: Shuts down the remote kernel. Usage: &lt;Request:Shutdown&gt;(IP)
     ''' <br/>&lt;Request:Reboot&gt;: Reboots the remote kernel. Usage: &lt;Request:Reboot&gt;(IP)
+    ''' <br/>&lt;Request:RebootSafe&gt;: Reboots the remote kernel to safe mode. Usage: &lt;Request:RebootSafe&gt;(IP)
     ''' <br/>&lt;Request:Lock&gt;: Locks the computer remotely. Usage: &lt;Request:Lock&gt;(IP)
     ''' <br/>&lt;Request:SaveScr&gt;: Saves the screen remotely. Usage: &lt;Request:SaveScr&gt;(IP)
     ''' <br/>&lt;Request:Exec&gt;: Executes a command remotely. Usage: &lt;Request:Exec&gt;(Lock)
     ''' <br/>&lt;Request:Acknowledge&gt;: Pings the remote kernel silently. Usage: &lt;Request:Acknowledge&gt;(IP)
     ''' <br/>&lt;Request:Ping&gt;: Pings the remote kernel with notification. Usage: &lt;Request:Ping&gt;(IP)
     ''' </summary>
-    ReadOnly RPCCommands As New List(Of String) From {"<Request:Shutdown>", "<Request:Reboot>", "<Request:Lock>", "<Request:SaveScr>", "<Request:Exec>", "<Request:Acknowledge>", "<Request:Ping>"}
+    ReadOnly RPCCommands As New List(Of String) From {"<Request:Shutdown>", "<Request:Reboot>", "<Request:RebootSafe>", "<Request:Lock>", "<Request:SaveScr>", "<Request:Exec>", "<Request:Acknowledge>", "<Request:Ping>"}
 
     ''' <summary>
     ''' Send an RPC command to another instance of KS using the specified address
@@ -67,7 +68,7 @@ Public Module RPCCommands
                 Dim RequestType As String = Cmd.Substring(Cmd.IndexOf(":") + 1, Finish:=Cmd.IndexOf(">"))
                 Dim ByteMsg() As Byte = {}
                 Select Case RequestType
-                    Case "Shutdown", "Reboot", "Lock", "SaveScr", "Exec", "Acknowledge", "Ping"
+                    Case "Shutdown", "Reboot", "RebootSafe", "Lock", "SaveScr", "Exec", "Acknowledge", "Ping"
                         'Populate the byte message to send the confirmation to
                         Wdbg(DebugLevel.I, "Stream opened for device {0}", Arg)
                         ByteMsg = Text.Encoding.Default.GetBytes($"{RequestType}Confirm, " + Arg + vbNewLine)
@@ -106,10 +107,13 @@ Public Module RPCCommands
                 'Iterate through every confirmation message
                 If Message.StartsWith("ShutdownConfirm") Then
                     Wdbg(DebugLevel.I, "Shutdown confirmed from remote access.")
-                    RPCPowerListener.Start("shutdown")
+                    RPCPowerListener.Start(PowerMode.Shutdown)
                 ElseIf Message.StartsWith("RebootConfirm") Then
                     Wdbg(DebugLevel.I, "Reboot confirmed from remote access.")
-                    RPCPowerListener.Start("reboot")
+                    RPCPowerListener.Start(PowerMode.Reboot)
+                ElseIf Message.StartsWith("RebootSafeConfirm") Then
+                    Wdbg(DebugLevel.I, "Reboot to safe mode confirmed from remote access.")
+                    RPCPowerListener.Start(PowerMode.RebootSafe)
                 ElseIf Message.StartsWith("LockConfirm") Then
                     Wdbg(DebugLevel.I, "Lock confirmed from remote access.")
                     LockScreen()

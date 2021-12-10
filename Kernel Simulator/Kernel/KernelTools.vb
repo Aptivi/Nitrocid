@@ -232,8 +232,8 @@ Public Module KernelTools
     ''' <summary>
     ''' Manage computer's (actually, simulated computer) power
     ''' </summary>
-    ''' <param name="PowerMode">Whether it would be "shutdown", "rebootsafe", or "reboot"</param>
-    Public Sub PowerManage(PowerMode As String)
+    ''' <param name="PowerMode">Selects the power mode</param>
+    Public Sub PowerManage(PowerMode As PowerMode)
         PowerManage(PowerMode, "0.0.0.0", RPCPort)
     End Sub
 
@@ -270,6 +270,8 @@ Public Module KernelTools
                 SendCommand("<Request:Shutdown>(" + IP + ")", IP, Port)
             Case PowerMode.RemoteRestart
                 SendCommand("<Request:Reboot>(" + IP + ")", IP, Port)
+            Case PowerMode.RemoteRestartSafe
+                SendCommand("<Request:RebootSafe>(" + IP + ")", IP, Port)
         End Select
         SafeMode = PowerMode = PowerMode.RebootSafe
     End Sub

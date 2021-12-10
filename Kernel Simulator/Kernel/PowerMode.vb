@@ -40,4 +40,8 @@ Public Enum PowerMode
     ''' Kernel will remotely reboot another kernel on the network (if RPC is running here and there)
     ''' </summary>
     RemoteRestart
+    ''' <summary>
+    ''' Kernel will remotely reboot another kernel to safe mode on the network (if RPC is running here and there)
+    ''' </summary>
+    RemoteRestartSafe
 End Enum
