@@ -77,12 +77,12 @@ Public Module HTTPShell
                     'Prompt for command
                     Wdbg(DebugLevel.I, "Normal shell")
                     HTTPCommand = Console.ReadLine()
-                    Kernel.KernelEventManager.RaiseHTTPPreExecuteCommand(HTTPCommand)
+                    KernelEventManager.RaiseHTTPPreExecuteCommand(HTTPCommand)
 
                     'Parse command
                     If Not (HTTPCommand = Nothing Or HTTPCommand?.StartsWithAnyOf({" ", "#"})) Then
                         HTTPGetLine()
-                        Kernel.KernelEventManager.RaiseHTTPPostExecuteCommand(HTTPCommand)
+                        KernelEventManager.RaiseHTTPPostExecuteCommand(HTTPCommand)
                     End If
                 Catch ex As Exception
                     WStkTrc(ex)

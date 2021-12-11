@@ -82,7 +82,7 @@ Public Module TextEditShell
                 SetInputColor()
 
                 'Prompt for command
-                Kernel.KernelEventManager.RaiseTextShellInitialized()
+                KernelEventManager.RaiseTextShellInitialized()
                 Dim WrittenCommand As String = Console.ReadLine
 
                 'Check to see if the command doesn't start with spaces or if the command is nothing
@@ -94,11 +94,11 @@ Public Module TextEditShell
                         Wdbg(DebugLevel.I, "Command {0} found in the list of {1} commands.", Command, TextEdit_Commands.Count)
                         Dim Params As New ExecuteCommandThreadParameters(WrittenCommand, ShellCommandType.TextShell, Nothing)
                         TextEdit_CommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "Text Edit Command Thread"}
-                        Kernel.KernelEventManager.RaiseTextPreExecuteCommand(WrittenCommand)
+                        KernelEventManager.RaiseTextPreExecuteCommand(WrittenCommand)
                         Wdbg(DebugLevel.I, "Made new thread. Starting with argument {0}...", WrittenCommand)
                         TextEdit_CommandThread.Start(Params)
                         TextEdit_CommandThread.Join()
-                        Kernel.KernelEventManager.RaiseTextPostExecuteCommand(WrittenCommand)
+                        KernelEventManager.RaiseTextPostExecuteCommand(WrittenCommand)
                     ElseIf TextEdit_ModCommands.Contains(Command) Then
                         Wdbg(DebugLevel.I, "Mod command {0} executing...", Command)
                         ExecuteModCommand(WrittenCommand)

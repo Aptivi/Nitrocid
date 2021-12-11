@@ -92,7 +92,7 @@ Public Module DebugWriter
                 For Each i As Integer In OffendingIndex
                     If i <> -1 Then
                         DebugDevices(i).ClientSocket.Disconnect(True)
-                        Kernel.KernelEventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices(i).ClientIP)
+                        KernelEventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices(i).ClientIP)
                         Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", DebugDevices(i).ClientName, DebugDevices(i).ClientIP)
                         DebugDevices.RemoveAt(i)
                     End If
@@ -141,13 +141,22 @@ Public Module DebugWriter
             For Each i As Integer In OffendingIndex
                 If i <> -1 Then
                     DebugDevices(i).ClientSocket.Disconnect(True)
-                    Kernel.KernelEventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices(i).ClientIP)
+                    KernelEventManager.RaiseRemoteDebugConnectionDisconnected(DebugDevices(i).ClientIP)
                     Wdbg(DebugLevel.W, "Debug device {0} ({1}) disconnected.", DebugDevices(i).ClientName, DebugDevices(i).ClientIP)
                     DebugDevices.RemoveAt(i)
                 End If
             Next
             OffendingIndex.Clear()
         End If
+    End Sub
+
+    ''' <summary>
+    ''' Conditionally writes the exception's stack trace to the debugger
+    ''' </summary>
+    ''' <param name="Condition">The condition that must be satisfied</param>
+    ''' <param name="Ex">An exception</param>
+    Public Sub WStkTrcConditional(ByRef Condition As Boolean, Ex As Exception)
+        If Condition Then WStkTrc(Ex)
     End Sub
 
     ''' <summary>

@@ -208,7 +208,7 @@ Public Module UserManagement
                     Wdbg(DebugLevel.I, "Initializing user with password")
                     InitializeUser(newUser, newPassword)
                 End If
-                Kernel.KernelEventManager.RaiseUserAdded(newUser)
+                KernelEventManager.RaiseUserAdded(newUser)
                 Return True
             Catch ex As Exception
                 Wdbg(DebugLevel.E, "Failed to create user {0}: {1}", ex.Message)
@@ -269,7 +269,7 @@ Public Module UserManagement
                     File.WriteAllText(GetKernelPath(KernelPathType.Users), JsonConvert.SerializeObject(UsersToken, Formatting.Indented))
 
                     'Raise event
-                    Kernel.KernelEventManager.RaiseUserRemoved(user)
+                    KernelEventManager.RaiseUserRemoved(user)
                     Return True
                 Catch ex As Exception
                     WStkTrc(ex)
@@ -302,7 +302,7 @@ Public Module UserManagement
                     SetUserProperty(OldName, UserProperty.Username, Username)
 
                     'Raise event
-                    Kernel.KernelEventManager.RaiseUsernameChanged(OldName, Username)
+                    KernelEventManager.RaiseUsernameChanged(OldName, Username)
                     Return True
                 Catch ex As Exception
                     WStkTrc(ex)
@@ -355,7 +355,7 @@ Public Module UserManagement
                 SetUserProperty(Target, UserProperty.Password, NewPass)
 
                 'Raise event
-                Kernel.KernelEventManager.RaiseUserPasswordChanged(Target)
+                KernelEventManager.RaiseUserPasswordChanged(Target)
                 Return True
             ElseIf HasPermission(CurrentUser.Username, PermissionType.Administrator) And Not Users.ContainsKey(Target) Then
                 Throw New Exceptions.UserManagementException(DoTranslation("User not found"))

@@ -27,9 +27,9 @@ Public Module ConfigTools
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function ReloadConfig() As Boolean
         Try
-            Kernel.KernelEventManager.RaisePreReloadConfig()
+            KernelEventManager.RaisePreReloadConfig()
             InitializeConfig()
-            Kernel.KernelEventManager.RaisePostReloadConfig()
+            KernelEventManager.RaisePostReloadConfig()
             Return True
         Catch ex As Exception
             Wdbg(DebugLevel.E, "Failed to reload config: {0}", ex.Message)
@@ -48,7 +48,7 @@ Public Module ConfigTools
 
         'General sections
         Dim ExpectedSections As Integer = 9
-        Dim ExpectedGeneralKeys As Integer = 18
+        Dim ExpectedGeneralKeys As Integer = 19
         Dim ExpectedColorsKeys As Integer = 37
         Dim ExpectedHardwareKeys As Integer = 4
         Dim ExpectedLoginKeys As Integer = 11

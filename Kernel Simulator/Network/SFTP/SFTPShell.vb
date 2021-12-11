@@ -63,7 +63,7 @@ Public Module SFTPShell
                     If SFTPInitialized = False Then
                         Wdbg(DebugLevel.I, $"Completing initialization of SFTP: {SFTPInitialized}")
                         SFTPCurrDirect = HomePath
-                        Kernel.KernelEventManager.RaiseSFTPShellInitialized()
+                        KernelEventManager.RaiseSFTPShellInitialized()
                         SwitchCancellationHandler(ShellCommandType.SFTPShell)
                         SFTPInitialized = True
                     End If
@@ -120,12 +120,12 @@ Public Module SFTPShell
                         Wdbg(DebugLevel.I, "Normal shell")
                         SFTPStrCmd = Console.ReadLine()
                     End If
-                    Kernel.KernelEventManager.RaiseSFTPPreExecuteCommand(SFTPStrCmd)
+                    KernelEventManager.RaiseSFTPPreExecuteCommand(SFTPStrCmd)
 
                     'Parse command
                     If Not (SFTPStrCmd = Nothing Or SFTPStrCmd?.StartsWithAnyOf({" ", "#"})) Then
                         SFTPGetLine()
-                        Kernel.KernelEventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd)
+                        KernelEventManager.RaiseSFTPPostExecuteCommand(SFTPStrCmd)
                     End If
                 Catch ex As Exception
                     WStkTrc(ex)

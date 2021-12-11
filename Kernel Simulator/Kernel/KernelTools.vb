@@ -91,7 +91,7 @@ Public Module KernelTools
             Description = String.Format(Description, Variables)
 
             'Fire an event
-            Kernel.KernelEventManager.RaiseKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
+            KernelEventManager.RaiseKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
 
             'Make a dump file
             GeneratePanicDump(Description, ErrorType, Exc)
@@ -117,7 +117,7 @@ Public Module KernelTools
                 Console.ReadKey()
             ElseIf ErrorType = KernelErrorLevel.C And Reboot = False Then
                 'Check if error is Continuable and reboot is disabled
-                Kernel.KernelEventManager.RaiseContKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
+                KernelEventManager.RaiseContKernelError(ErrorType, Reboot, RebootTime, Description, Exc, Variables)
                 Write(DoTranslation("[{0}] panic: {1} -- Press any key to continue using the kernel."), True, ColTypes.Continuable, ErrorType, Description)
                 If ShowStackTraceOnKernelError And Exc IsNot Nothing Then Write(Exc.StackTrace, True, ColTypes.Continuable)
                 Console.ReadKey()
@@ -253,16 +253,16 @@ Public Module KernelTools
         Wdbg(DebugLevel.I, "Power management has the argument of {0}", PowerMode)
         Select Case PowerMode
             Case PowerMode.Shutdown
-                Kernel.KernelEventManager.RaisePreShutdown()
+                KernelEventManager.RaisePreShutdown()
                 Write(DoTranslation("Shutting down..."), True, ColTypes.Neutral)
                 ResetEverything()
-                Kernel.KernelEventManager.RaisePostShutdown()
+                KernelEventManager.RaisePostShutdown()
                 Environment.Exit(0)
             Case PowerMode.Reboot, PowerMode.RebootSafe
-                Kernel.KernelEventManager.RaisePreReboot()
+                KernelEventManager.RaisePreReboot()
                 Write(DoTranslation("Rebooting..."), True, ColTypes.Neutral)
                 ResetEverything()
-                Kernel.KernelEventManager.RaisePostReboot()
+                KernelEventManager.RaisePostReboot()
                 Console.Clear()
                 RebootRequested = True
                 LogoutRequested = True
@@ -507,7 +507,7 @@ Public Module KernelTools
             'Finish the job
             Wdbg(DebugLevel.I, "After garbage collection: {0} bytes", proc.PrivateMemorySize64)
             proc.Dispose()
-            Kernel.KernelEventManager.RaiseGarbageCollected()
+            KernelEventManager.RaiseGarbageCollected()
         Catch ex As Exception
             Wdbg("Error freeing RAM: {0}", ex.Message)
             WStkTrc(ex)

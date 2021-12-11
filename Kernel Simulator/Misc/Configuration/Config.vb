@@ -108,7 +108,8 @@ Public Module Config
                     {"Notify for any fault during boot", NotifyFaultsBoot},
                     {"Show stack trace on kernel error", ShowStackTraceOnKernelError},
                     {"Check debug quota", CheckDebugQuota},
-                    {"Automatically download updates", AutoDownloadUpdate}
+                    {"Automatically download updates", AutoDownloadUpdate},
+                    {"Enable event debugging", EventDebug}
             }
             ConfigurationObject.Add("General", GeneralConfig)
 
@@ -845,10 +846,10 @@ Public Module Config
 
             'Save Config
             File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(ConfigurationObject, Formatting.Indented))
-            Kernel.KernelEventManager.RaiseConfigSaved()
+            KernelEventManager.RaiseConfigSaved()
             Return True
         Catch ex As Exception
-            Kernel.KernelEventManager.RaiseConfigSaveError(ex)
+            KernelEventManager.RaiseConfigSaveError(ex)
             WStkTrc(ex)
             Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration."), ex)
         End Try
@@ -952,6 +953,7 @@ Public Module Config
             ShowStackTraceOnKernelError = If(ConfigToken("General")?("Show stack trace on kernel error"), False)
             CheckDebugQuota = If(ConfigToken("General")?("Check debug quota"), True)
             AutoDownloadUpdate = If(ConfigToken("General")?("Automatically download updates"), True)
+            EventDebug = If(ConfigToken("General")?("Enable event debugging"), False)
 
             'Login Section
             Wdbg(DebugLevel.I, "Parsing login section...")
@@ -1551,14 +1553,14 @@ Public Module Config
             RepairConfig()
 
             'Raise event and return true
-            Kernel.KernelEventManager.RaiseConfigRead()
+            KernelEventManager.RaiseConfigRead()
             Return True
         Catch nre As NullReferenceException
             'Rare, but repair config if an NRE is caught.
             Wdbg(DebugLevel.E, "Error trying to read config: {0}", nre.Message)
             RepairConfig()
         Catch ex As Exception
-            Kernel.KernelEventManager.RaiseConfigReadError(ex)
+            KernelEventManager.RaiseConfigReadError(ex)
             WStkTrc(ex)
             NotifyConfigError = True
             Wdbg(DebugLevel.E, "Error trying to read config: {0}", ex.Message)

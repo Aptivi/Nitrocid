@@ -109,6 +109,12 @@
                 "Type": "SBoolean",
                 "Variable": "AutoDownloadUpdate",
                 "Description": "If there is any update, the kernel will automatically download it."
+            },
+            {
+                "Name": "Enable event debugging",
+                "Type": "SBoolean",
+                "Variable": "EventDebug",
+                "Description": "Enables debugging for the kernel event system"
             }
         ]
     },

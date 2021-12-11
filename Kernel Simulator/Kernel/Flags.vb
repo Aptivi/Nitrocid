@@ -231,6 +231,10 @@ Public Module Flags
     ''' Automatically downloads the kernel updates and notifies the user
     ''' </summary>
     Public AutoDownloadUpdate As Boolean = True
+    ''' <summary>
+    ''' Enables event debugging
+    ''' </summary>
+    Public EventDebug As Boolean
 
     'Private flags
     ''' <summary>
