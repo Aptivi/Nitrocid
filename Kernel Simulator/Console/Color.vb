@@ -24,6 +24,11 @@ Public Class Color
     ''' <returns></returns>
     Public ReadOnly Property PlainSequence As String
     ''' <summary>
+    ''' Either 0-255, or &lt;R&gt;;&lt;G&gt;;&lt;B&gt; enclosed in quotes if necessary
+    ''' </summary>
+    ''' <returns></returns>
+    Public ReadOnly Property PlainSequenceEnclosed As String
+    ''' <summary>
     ''' Parsable VT sequence (Foreground)
     ''' </summary>
     Public ReadOnly Property VTSequenceForeground As String
@@ -69,6 +74,7 @@ Public Class Color
             Dim ColorSpecifierArray() As String = ColorSpecifier.Split(";")
             If ColorSpecifierArray.Length = 3 Then
                 PlainSequence = $"{ColorSpecifierArray(0)};{ColorSpecifierArray(1)};{ColorSpecifierArray(2)}"
+                PlainSequenceEnclosed = $"{ColorSpecifierArray(0)};{ColorSpecifierArray(1)};{ColorSpecifierArray(2)}".EncloseByDoubleQuotes
                 VTSequenceForeground = GetEsc() + $"[38;2;{PlainSequence}m"
                 VTSequenceBackground = GetEsc() + $"[48;2;{PlainSequence}m"
                 Type = ColorType.TrueColor
@@ -84,6 +90,7 @@ Public Class Color
             ColorSpecifier = ColorSpecifier.Replace("""", "")
             Dim ColorsInfo As New ConsoleColorsInfo(ColorSpecifier)
             PlainSequence = ColorSpecifier
+            PlainSequenceEnclosed = ColorSpecifier
             VTSequenceForeground = GetEsc() + $"[38;5;{PlainSequence}m"
             VTSequenceBackground = GetEsc() + $"[48;5;{PlainSequence}m"
             Type = ColorType._255Color
@@ -106,6 +113,7 @@ Public Class Color
     ''' <exception cref="Exceptions.ColorException"></exception>
     Public Sub New(R As Integer, G As Integer, B As Integer)
         PlainSequence = $"{R};{G};{B}"
+        PlainSequenceEnclosed = $"{R};{G};{B}".EncloseByDoubleQuotes
         VTSequenceForeground = GetEsc() + $"[38;2;{PlainSequence}m"
         VTSequenceBackground = GetEsc() + $"[48;2;{PlainSequence}m"
         Type = ColorType.TrueColor
@@ -124,6 +132,7 @@ Public Class Color
     Public Sub New(ColorNum As Integer)
         Dim ColorsInfo As New ConsoleColorsInfo(ColorNum)
         PlainSequence = ColorNum
+        PlainSequenceEnclosed = ColorNum
         VTSequenceForeground = GetEsc() + $"[38;5;{PlainSequence}m"
         VTSequenceBackground = GetEsc() + $"[48;5;{PlainSequence}m"
         Type = ColorType._255Color

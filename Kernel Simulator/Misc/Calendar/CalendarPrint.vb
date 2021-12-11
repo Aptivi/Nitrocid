@@ -55,7 +55,7 @@ Public Module CalendarPrint
                 Dim WeekendOptions As New CellOptions(CurrentDate.DayOfWeek + 1, CurrentWeek) With {
                     .ColoredCell = True,
                     .CellColor = New Color(128, 128, 128),
-                    .CellBackgroundColor = New Color(BackgroundColor)
+                    .CellBackgroundColor = BackgroundColor
                 }
                 CalendarCellOptions.Add(WeekendOptions)
             End If
@@ -71,8 +71,8 @@ Public Module CalendarPrint
                 If EventInstance.EventDate = CurrentDate And Not EventMarked Then
                     Dim EventCell As New CellOptions(CurrentDate.DayOfWeek + 1, CurrentWeek) With {
                         .ColoredCell = True,
-                        .CellColor = New Color(StageColor),
-                        .CellBackgroundColor = New Color(BackgroundColor)
+                        .CellColor = StageColor,
+                        .CellBackgroundColor = BackgroundColor
                     }
                     CalendarCellOptions.Add(EventCell)
                     EventMarked = True

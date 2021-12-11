@@ -53,9 +53,9 @@ Public Module PageViewer
 
             'Write the information to the console
             If Not String.IsNullOrWhiteSpace(ManpageInfoStyle) Then
-                WriteWhere(ProbePlaces(ManpageInfoStyle), Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+                WriteWhere(ProbePlaces(ManpageInfoStyle), Console.CursorLeft, InfoPlace, True, BackgroundColor, NeutralTextColor, Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
             Else
-                WriteWhere(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+                WriteWhere(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, True, BackgroundColor, NeutralTextColor, Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
             End If
 
             'Disable blinking cursor
@@ -121,9 +121,9 @@ Public Module PageViewer
                     Else
                         Console.Clear()
                         If Not String.IsNullOrWhiteSpace(ManpageInfoStyle) Then
-                            WriteWhere(ProbePlaces(ManpageInfoStyle), Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+                            WriteWhere(ProbePlaces(ManpageInfoStyle), Console.CursorLeft, InfoPlace, True, BackgroundColor, NeutralTextColor, Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
                         Else
-                            WriteWhere(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, True, New Color(BackgroundColor), New Color(NeutralTextColor), Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
+                            WriteWhere(" {0} (v{1}) ", Console.CursorLeft, InfoPlace, True, BackgroundColor, NeutralTextColor, Pages(ManualTitle).Title, Pages(ManualTitle).Revision)
                         End If
                     End If
                 End If

@@ -69,7 +69,7 @@ Public Module FTPFilesystem
                                 EntryBuilder.Append(": ")
                                 FileSize = ClientFTP.GetFileSize(DirListFTP.FullName)
                                 ModDate = ClientFTP.GetModifiedTime(DirListFTP.FullName)
-                                EntryBuilder.Append(New Color(ListValueColor).VTSequenceForeground + DoTranslation("{0} KB | Modified in: {1}").FormatString(FormatNumber(FileSize / 1024, 2), ModDate.ToString))
+                                EntryBuilder.Append(ListValueColor.VTSequenceForeground + DoTranslation("{0} KB | Modified in: {1}").FormatString(FormatNumber(FileSize / 1024, 2), ModDate.ToString))
                             End If
                         ElseIf DirListFTP.Type = FtpFileSystemObjectType.Directory Then
                             EntryBuilder.Append("/")

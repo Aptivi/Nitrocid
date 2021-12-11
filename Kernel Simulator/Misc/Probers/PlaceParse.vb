@@ -140,11 +140,11 @@ Public Module PlaceParse
             End If
             If text.Contains("<f:reset>") Then
                 Wdbg(DebugLevel.I, "Foreground color reset placeholder found.")
-                text = text.Replace("<f:reset>", New Color(NeutralTextColor).VTSequenceForeground)
+                text = text.Replace("<f:reset>", NeutralTextColor.VTSequenceForeground)
             End If
             If text.Contains("<b:reset>") Then
                 Wdbg(DebugLevel.I, "Background color reset placeholder found.")
-                text = text.Replace("<b:reset>", New Color(BackgroundColor).VTSequenceBackground)
+                text = text.Replace("<b:reset>", BackgroundColor.VTSequenceBackground)
             End If
             If text.Contains("<f:") Then
                 Wdbg(DebugLevel.I, "Foreground color placeholder found.")

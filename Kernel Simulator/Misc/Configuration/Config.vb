@@ -115,43 +115,43 @@ Public Module Config
 
             'The Colors Section
             Dim ColorConfig As New JObject From {
-                    {"User Name Shell Color", If(New Color(UserNameShellColor).Type = ColorType.TrueColor, UserNameShellColor.EncloseByDoubleQuotes, UserNameShellColor)},
-                    {"Host Name Shell Color", If(New Color(HostNameShellColor).Type = ColorType.TrueColor, HostNameShellColor.EncloseByDoubleQuotes, HostNameShellColor)},
-                    {"Continuable Kernel Error Color", If(New Color(ContKernelErrorColor).Type = ColorType.TrueColor, ContKernelErrorColor.EncloseByDoubleQuotes, ContKernelErrorColor)},
-                    {"Uncontinuable Kernel Error Color", If(New Color(UncontKernelErrorColor).Type = ColorType.TrueColor, UncontKernelErrorColor.EncloseByDoubleQuotes, UncontKernelErrorColor)},
-                    {"Text Color", If(New Color(NeutralTextColor).Type = ColorType.TrueColor, NeutralTextColor.EncloseByDoubleQuotes, NeutralTextColor)},
-                    {"License Color", If(New Color(LicenseColor).Type = ColorType.TrueColor, LicenseColor.EncloseByDoubleQuotes, LicenseColor)},
-                    {"Background Color", If(New Color(BackgroundColor).Type = ColorType.TrueColor, BackgroundColor.EncloseByDoubleQuotes, BackgroundColor)},
-                    {"Input Color", If(New Color(InputColor).Type = ColorType.TrueColor, InputColor.EncloseByDoubleQuotes, InputColor)},
-                    {"List Entry Color", If(New Color(ListEntryColor).Type = ColorType.TrueColor, ListEntryColor.EncloseByDoubleQuotes, ListEntryColor)},
-                    {"List Value Color", If(New Color(ListValueColor).Type = ColorType.TrueColor, ListValueColor.EncloseByDoubleQuotes, ListValueColor)},
-                    {"Kernel Stage Color", If(New Color(StageColor).Type = ColorType.TrueColor, StageColor.EncloseByDoubleQuotes, StageColor)},
-                    {"Error Text Color", If(New Color(ErrorColor).Type = ColorType.TrueColor, ErrorColor.EncloseByDoubleQuotes, ErrorColor)},
-                    {"Warning Text Color", If(New Color(WarningColor).Type = ColorType.TrueColor, WarningColor.EncloseByDoubleQuotes, WarningColor)},
-                    {"Option Color", If(New Color(OptionColor).Type = ColorType.TrueColor, OptionColor.EncloseByDoubleQuotes, OptionColor)},
-                    {"Banner Color", If(New Color(BannerColor).Type = ColorType.TrueColor, BannerColor.EncloseByDoubleQuotes, BannerColor)},
-                    {"Notification Title Color", If(New Color(NotificationTitleColor).Type = ColorType.TrueColor, NotificationTitleColor.EncloseByDoubleQuotes, NotificationTitleColor)},
-                    {"Notification Description Color", If(New Color(NotificationDescriptionColor).Type = ColorType.TrueColor, NotificationDescriptionColor.EncloseByDoubleQuotes, NotificationDescriptionColor)},
-                    {"Notification Progress Color", If(New Color(NotificationProgressColor).Type = ColorType.TrueColor, NotificationProgressColor.EncloseByDoubleQuotes, NotificationProgressColor)},
-                    {"Notification Failure Color", If(New Color(NotificationFailureColor).Type = ColorType.TrueColor, NotificationFailureColor.EncloseByDoubleQuotes, NotificationFailureColor)},
-                    {"Question Color", If(New Color(QuestionColor).Type = ColorType.TrueColor, QuestionColor.EncloseByDoubleQuotes, QuestionColor)},
-                    {"Success Color", If(New Color(SuccessColor).Type = ColorType.TrueColor, SuccessColor.EncloseByDoubleQuotes, SuccessColor)},
-                    {"User Dollar Color", If(New Color(UserDollarColor).Type = ColorType.TrueColor, UserDollarColor.EncloseByDoubleQuotes, UserDollarColor)},
-                    {"Tip Color", If(New Color(TipColor).Type = ColorType.TrueColor, TipColor.EncloseByDoubleQuotes, TipColor)},
-                    {"Separator Text Color", If(New Color(SeparatorTextColor).Type = ColorType.TrueColor, SeparatorTextColor.EncloseByDoubleQuotes, SeparatorTextColor)},
-                    {"Separator Color", If(New Color(SeparatorColor).Type = ColorType.TrueColor, SeparatorColor.EncloseByDoubleQuotes, SeparatorColor)},
-                    {"List Title Color", If(New Color(ListTitleColor).Type = ColorType.TrueColor, ListTitleColor.EncloseByDoubleQuotes, ListTitleColor)},
-                    {"Development Warning Color", If(New Color(DevelopmentWarningColor).Type = ColorType.TrueColor, DevelopmentWarningColor.EncloseByDoubleQuotes, DevelopmentWarningColor)},
-                    {"Stage Time Color", If(New Color(StageTimeColor).Type = ColorType.TrueColor, StageTimeColor.EncloseByDoubleQuotes, StageTimeColor)},
-                    {"Progress Color", If(New Color(ProgressColor).Type = ColorType.TrueColor, ProgressColor.EncloseByDoubleQuotes, ProgressColor)},
-                    {"Back Option Color", If(New Color(BackOptionColor).Type = ColorType.TrueColor, BackOptionColor.EncloseByDoubleQuotes, BackOptionColor)},
-                    {"Low Priority Border Color", If(New Color(LowPriorityBorderColor).Type = ColorType.TrueColor, LowPriorityBorderColor.EncloseByDoubleQuotes, LowPriorityBorderColor)},
-                    {"Medium Priority Border Color", If(New Color(MediumPriorityBorderColor).Type = ColorType.TrueColor, MediumPriorityBorderColor.EncloseByDoubleQuotes, MediumPriorityBorderColor)},
-                    {"High Priority Border Color", If(New Color(HighPriorityBorderColor).Type = ColorType.TrueColor, HighPriorityBorderColor.EncloseByDoubleQuotes, HighPriorityBorderColor)},
-                    {"Table Separator Color", If(New Color(TableSeparatorColor).Type = ColorType.TrueColor, TableSeparatorColor.EncloseByDoubleQuotes, TableSeparatorColor)},
-                    {"Table Header Color", If(New Color(TableHeaderColor).Type = ColorType.TrueColor, TableHeaderColor.EncloseByDoubleQuotes, TableHeaderColor)},
-                    {"Table Value Color", If(New Color(TableValueColor).Type = ColorType.TrueColor, TableValueColor.EncloseByDoubleQuotes, TableValueColor)},
-                    {"Selected Option Color", If(New Color(SelectedOptionColor).Type = ColorType.TrueColor, SelectedOptionColor.EncloseByDoubleQuotes, SelectedOptionColor)}
+                    {"User Name Shell Color", UserNameShellColor.PlainSequenceEnclosed},
+                    {"Host Name Shell Color", HostNameShellColor.PlainSequenceEnclosed},
+                    {"Continuable Kernel Error Color", ContKernelErrorColor.PlainSequenceEnclosed},
+                    {"Uncontinuable Kernel Error Color", UncontKernelErrorColor.PlainSequenceEnclosed},
+                    {"Text Color", NeutralTextColor.PlainSequenceEnclosed},
+                    {"License Color", LicenseColor.PlainSequenceEnclosed},
+                    {"Background Color", BackgroundColor.PlainSequenceEnclosed},
+                    {"Input Color", InputColor.PlainSequenceEnclosed},
+                    {"List Entry Color", ListEntryColor.PlainSequenceEnclosed},
+                    {"List Value Color", ListValueColor.PlainSequenceEnclosed},
+                    {"Kernel Stage Color", StageColor.PlainSequenceEnclosed},
+                    {"Error Text Color", ErrorColor.PlainSequenceEnclosed},
+                    {"Warning Text Color", WarningColor.PlainSequenceEnclosed},
+                    {"Option Color", OptionColor.PlainSequenceEnclosed},
+                    {"Banner Color", BannerColor.PlainSequenceEnclosed},
+                    {"Notification Title Color", NotificationTitleColor.PlainSequenceEnclosed},
+                    {"Notification Description Color", NotificationDescriptionColor.PlainSequenceEnclosed},
+                    {"Notification Progress Color", NotificationProgressColor.PlainSequenceEnclosed},
+                    {"Notification Failure Color", NotificationFailureColor.PlainSequenceEnclosed},
+                    {"Question Color", QuestionColor.PlainSequenceEnclosed},
+                    {"Success Color", SuccessColor.PlainSequenceEnclosed},
+                    {"User Dollar Color", UserDollarColor.PlainSequenceEnclosed},
+                    {"Tip Color", TipColor.PlainSequenceEnclosed},
+                    {"Separator Text Color", SeparatorTextColor.PlainSequenceEnclosed},
+                    {"Separator Color", SeparatorColor.PlainSequenceEnclosed},
+                    {"List Title Color", ListTitleColor.PlainSequenceEnclosed},
+                    {"Development Warning Color", DevelopmentWarningColor.PlainSequenceEnclosed},
+                    {"Stage Time Color", StageTimeColor.PlainSequenceEnclosed},
+                    {"Progress Color", ProgressColor.PlainSequenceEnclosed},
+                    {"Back Option Color", BackOptionColor.PlainSequenceEnclosed},
+                    {"Low Priority Border Color", LowPriorityBorderColor.PlainSequenceEnclosed},
+                    {"Medium Priority Border Color", MediumPriorityBorderColor.PlainSequenceEnclosed},
+                    {"High Priority Border Color", HighPriorityBorderColor.PlainSequenceEnclosed},
+                    {"Table Separator Color", TableSeparatorColor.PlainSequenceEnclosed},
+                    {"Table Header Color", TableHeaderColor.PlainSequenceEnclosed},
+                    {"Table Value Color", TableValueColor.PlainSequenceEnclosed},
+                    {"Selected Option Color", SelectedOptionColor.PlainSequenceEnclosed}
             }
             ConfigurationObject.Add("Colors", ColorConfig)
 
@@ -896,43 +896,43 @@ Public Module Config
             Wdbg(DebugLevel.I, "Loading colors...")
             If ColoredShell Then
                 'We use New Color() to parse entered color. This is to ensure that the kernel can use the correct VT sequence.
-                UserNameShellColor = New Color(If(ConfigToken("Colors")?("User Name Shell Color"), ConsoleColors.Green).ToString).PlainSequence
-                HostNameShellColor = New Color(If(ConfigToken("Colors")?("Host Name Shell Color"), ConsoleColors.DarkGreen).ToString).PlainSequence
-                ContKernelErrorColor = New Color(If(ConfigToken("Colors")?("Continuable Kernel Error Color"), ConsoleColors.Yellow).ToString).PlainSequence
-                UncontKernelErrorColor = New Color(If(ConfigToken("Colors")?("Uncontinuable Kernel Error Color"), ConsoleColors.Red).ToString).PlainSequence
-                NeutralTextColor = New Color(If(ConfigToken("Colors")?("Text Color"), ConsoleColors.Gray).ToString).PlainSequence
-                LicenseColor = New Color(If(ConfigToken("Colors")?("License Color"), ConsoleColors.White).ToString).PlainSequence
-                BackgroundColor = New Color(If(ConfigToken("Colors")?("Background Color"), ConsoleColors.Black).ToString).PlainSequence
-                InputColor = New Color(If(ConfigToken("Colors")?("Input Color"), ConsoleColors.White).ToString).PlainSequence
-                ListEntryColor = New Color(If(ConfigToken("Colors")?("List Entry Color"), ConsoleColors.DarkYellow).ToString).PlainSequence
-                ListValueColor = New Color(If(ConfigToken("Colors")?("List Value Color"), ConsoleColors.DarkGray).ToString).PlainSequence
-                StageColor = New Color(If(ConfigToken("Colors")?("Kernel Stage Color"), ConsoleColors.Green).ToString).PlainSequence
-                ErrorColor = New Color(If(ConfigToken("Colors")?("Error Text Color"), ConsoleColors.Red).ToString).PlainSequence
-                WarningColor = New Color(If(ConfigToken("Colors")?("Warning Text Color"), ConsoleColors.Yellow).ToString).PlainSequence
-                OptionColor = New Color(If(ConfigToken("Colors")?("Option Color"), ConsoleColors.DarkYellow).ToString).PlainSequence
-                BannerColor = New Color(If(ConfigToken("Colors")?("Banner Color"), ConsoleColors.Green).ToString).PlainSequence
-                NotificationTitleColor = New Color(If(ConfigToken("Colors")?("Notification Title Color"), ConsoleColors.White).ToString).PlainSequence
-                NotificationDescriptionColor = New Color(If(ConfigToken("Colors")?("Notification Description Color"), ConsoleColors.Gray).ToString).PlainSequence
-                NotificationProgressColor = New Color(If(ConfigToken("Colors")?("Notification Progress Color"), ConsoleColors.DarkYellow).ToString).PlainSequence
-                NotificationFailureColor = New Color(If(ConfigToken("Colors")?("Notification Failure Color"), ConsoleColors.Red).ToString).PlainSequence
-                QuestionColor = New Color(If(ConfigToken("Colors")?("Question Color"), ConsoleColors.Yellow).ToString).PlainSequence
-                SuccessColor = New Color(If(ConfigToken("Colors")?("Success Color"), ConsoleColors.Green).ToString).PlainSequence
-                UserDollarColor = New Color(If(ConfigToken("Colors")?("User Dollar Color"), ConsoleColors.Gray).ToString).PlainSequence
-                TipColor = New Color(If(ConfigToken("Colors")?("Tip Color"), ConsoleColors.Gray).ToString).PlainSequence
-                SeparatorTextColor = New Color(If(ConfigToken("Colors")?("Separator Text Color"), ConsoleColors.White).ToString).PlainSequence
-                SeparatorColor = New Color(If(ConfigToken("Colors")?("Separator Color"), ConsoleColors.Gray).ToString).PlainSequence
-                ListTitleColor = New Color(If(ConfigToken("Colors")?("List Title Color"), ConsoleColors.White).ToString).PlainSequence
-                DevelopmentWarningColor = New Color(If(ConfigToken("Colors")?("Development Warning Color"), ConsoleColors.Yellow).ToString).PlainSequence
-                StageTimeColor = New Color(If(ConfigToken("Colors")?("Stage Time Color"), ConsoleColors.Gray).ToString).PlainSequence
-                ProgressColor = New Color(If(ConfigToken("Colors")?("Progress Color"), ConsoleColors.DarkYellow).ToString).PlainSequence
-                BackOptionColor = New Color(If(ConfigToken("Colors")?("Back Option Color"), ConsoleColors.DarkRed).ToString).PlainSequence
-                LowPriorityBorderColor = New Color(If(ConfigToken("Colors")?("Low Priority Border Color"), ConsoleColors.White).ToString).PlainSequence
-                MediumPriorityBorderColor = New Color(If(ConfigToken("Colors")?("Medium Priority Border Color"), ConsoleColors.Yellow).ToString).PlainSequence
-                HighPriorityBorderColor = New Color(If(ConfigToken("Colors")?("High Priority Border Color"), ConsoleColors.Red).ToString).PlainSequence
-                TableSeparatorColor = New Color(If(ConfigToken("Colors")?("Table Separator Color"), ConsoleColors.DarkGray).ToString).PlainSequence
-                TableHeaderColor = New Color(If(ConfigToken("Colors")?("Table Header Color"), ConsoleColors.White).ToString).PlainSequence
-                TableValueColor = New Color(If(ConfigToken("Colors")?("Table Value Color"), ConsoleColors.Gray).ToString).PlainSequence
-                SelectedOptionColor = New Color(If(ConfigToken("Colors")?("Selected Option Color"), ConsoleColors.Yellow).ToString).PlainSequence
+                UserNameShellColor = New Color(If(ConfigToken("Colors")?("User Name Shell Color"), ConsoleColors.Green).ToString)
+                HostNameShellColor = New Color(If(ConfigToken("Colors")?("Host Name Shell Color"), ConsoleColors.DarkGreen).ToString)
+                ContKernelErrorColor = New Color(If(ConfigToken("Colors")?("Continuable Kernel Error Color"), ConsoleColors.Yellow).ToString)
+                UncontKernelErrorColor = New Color(If(ConfigToken("Colors")?("Uncontinuable Kernel Error Color"), ConsoleColors.Red).ToString)
+                NeutralTextColor = New Color(If(ConfigToken("Colors")?("Text Color"), ConsoleColors.Gray).ToString)
+                LicenseColor = New Color(If(ConfigToken("Colors")?("License Color"), ConsoleColors.White).ToString)
+                BackgroundColor = New Color(If(ConfigToken("Colors")?("Background Color"), ConsoleColors.Black).ToString)
+                InputColor = New Color(If(ConfigToken("Colors")?("Input Color"), ConsoleColors.White).ToString)
+                ListEntryColor = New Color(If(ConfigToken("Colors")?("List Entry Color"), ConsoleColors.DarkYellow).ToString)
+                ListValueColor = New Color(If(ConfigToken("Colors")?("List Value Color"), ConsoleColors.DarkGray).ToString)
+                StageColor = New Color(If(ConfigToken("Colors")?("Kernel Stage Color"), ConsoleColors.Green).ToString)
+                ErrorColor = New Color(If(ConfigToken("Colors")?("Error Text Color"), ConsoleColors.Red).ToString)
+                WarningColor = New Color(If(ConfigToken("Colors")?("Warning Text Color"), ConsoleColors.Yellow).ToString)
+                OptionColor = New Color(If(ConfigToken("Colors")?("Option Color"), ConsoleColors.DarkYellow).ToString)
+                BannerColor = New Color(If(ConfigToken("Colors")?("Banner Color"), ConsoleColors.Green).ToString)
+                NotificationTitleColor = New Color(If(ConfigToken("Colors")?("Notification Title Color"), ConsoleColors.White).ToString)
+                NotificationDescriptionColor = New Color(If(ConfigToken("Colors")?("Notification Description Color"), ConsoleColors.Gray).ToString)
+                NotificationProgressColor = New Color(If(ConfigToken("Colors")?("Notification Progress Color"), ConsoleColors.DarkYellow).ToString)
+                NotificationFailureColor = New Color(If(ConfigToken("Colors")?("Notification Failure Color"), ConsoleColors.Red).ToString)
+                QuestionColor = New Color(If(ConfigToken("Colors")?("Question Color"), ConsoleColors.Yellow).ToString)
+                SuccessColor = New Color(If(ConfigToken("Colors")?("Success Color"), ConsoleColors.Green).ToString)
+                UserDollarColor = New Color(If(ConfigToken("Colors")?("User Dollar Color"), ConsoleColors.Gray).ToString)
+                TipColor = New Color(If(ConfigToken("Colors")?("Tip Color"), ConsoleColors.Gray).ToString)
+                SeparatorTextColor = New Color(If(ConfigToken("Colors")?("Separator Text Color"), ConsoleColors.White).ToString)
+                SeparatorColor = New Color(If(ConfigToken("Colors")?("Separator Color"), ConsoleColors.Gray).ToString)
+                ListTitleColor = New Color(If(ConfigToken("Colors")?("List Title Color"), ConsoleColors.White).ToString)
+                DevelopmentWarningColor = New Color(If(ConfigToken("Colors")?("Development Warning Color"), ConsoleColors.Yellow).ToString)
+                StageTimeColor = New Color(If(ConfigToken("Colors")?("Stage Time Color"), ConsoleColors.Gray).ToString)
+                ProgressColor = New Color(If(ConfigToken("Colors")?("Progress Color"), ConsoleColors.DarkYellow).ToString)
+                BackOptionColor = New Color(If(ConfigToken("Colors")?("Back Option Color"), ConsoleColors.DarkRed).ToString)
+                LowPriorityBorderColor = New Color(If(ConfigToken("Colors")?("Low Priority Border Color"), ConsoleColors.White).ToString)
+                MediumPriorityBorderColor = New Color(If(ConfigToken("Colors")?("Medium Priority Border Color"), ConsoleColors.Yellow).ToString)
+                HighPriorityBorderColor = New Color(If(ConfigToken("Colors")?("High Priority Border Color"), ConsoleColors.Red).ToString)
+                TableSeparatorColor = New Color(If(ConfigToken("Colors")?("Table Separator Color"), ConsoleColors.DarkGray).ToString)
+                TableHeaderColor = New Color(If(ConfigToken("Colors")?("Table Header Color"), ConsoleColors.White).ToString)
+                TableValueColor = New Color(If(ConfigToken("Colors")?("Table Value Color"), ConsoleColors.Gray).ToString)
+                SelectedOptionColor = New Color(If(ConfigToken("Colors")?("Selected Option Color"), ConsoleColors.Yellow).ToString)
                 LoadBack()
             End If
 

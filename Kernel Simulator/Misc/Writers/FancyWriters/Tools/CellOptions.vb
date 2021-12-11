@@ -41,11 +41,11 @@ Public Class CellOptions
     ''' <summary>
     ''' The custom cell color
     ''' </summary>
-    Public Property CellColor As New Color(NeutralTextColor)
+    Public Property CellColor As Color = NeutralTextColor
     ''' <summary>
     ''' The custom background cell color
     ''' </summary>
-    Public Property CellBackgroundColor As New Color(BackgroundColor)
+    Public Property CellBackgroundColor As Color = BackgroundColor
 
     ''' <summary>
     ''' Makes a new instance of the cell options class

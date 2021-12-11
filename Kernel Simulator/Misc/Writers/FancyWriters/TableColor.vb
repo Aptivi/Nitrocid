@@ -64,8 +64,8 @@ Public Module TableColor
         For RowIndex As Integer = 0 To Rows.GetLength(0) - 1
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
                 Dim ColoredCell As Boolean
-                Dim CellColor As New Color(NeutralTextColor)
-                Dim CellBackgroundColor As New Color(BackgroundColor)
+                Dim CellColor As Color = NeutralTextColor
+                Dim CellBackgroundColor As Color = BackgroundColor
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
                 If RowValue Is Nothing Then RowValue = ""
@@ -148,8 +148,8 @@ Public Module TableColor
         For RowIndex As Integer = 0 To Rows.GetLength(0) - 1
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
                 Dim ColoredCell As Boolean
-                Dim CellColor As New Color(NeutralTextColor)
-                Dim CellBackgroundColor As New Color(BackgroundColor)
+                Dim CellColor As Color = NeutralTextColor
+                Dim CellBackgroundColor As Color = BackgroundColor
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
                 If RowValue Is Nothing Then RowValue = ""
@@ -233,8 +233,8 @@ Public Module TableColor
         For RowIndex As Integer = 0 To Rows.GetLength(0) - 1
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
                 Dim ColoredCell As Boolean
-                Dim CellColor As New Color(NeutralTextColor)
-                Dim CellBackgroundColor As New Color(BackgroundColor)
+                Dim CellColor As Color = NeutralTextColor
+                Dim CellBackgroundColor As Color = ColorTools.BackgroundColor
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
                 If RowValue Is Nothing Then RowValue = ""
@@ -320,8 +320,8 @@ Public Module TableColor
         For RowIndex As Integer = 0 To Rows.GetLength(0) - 1
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
                 Dim ColoredCell As Boolean
-                Dim CellColor As New Color(NeutralTextColor)
-                Dim CellBackgroundColor As New Color(BackgroundColor)
+                Dim CellColor As Color = NeutralTextColor
+                Dim CellBackgroundColor As Color = BackgroundColor
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
                 If RowValue Is Nothing Then RowValue = ""
@@ -404,8 +404,8 @@ Public Module TableColor
         For RowIndex As Integer = 0 To Rows.GetLength(0) - 1
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
                 Dim ColoredCell As Boolean
-                Dim CellColor As New Color(NeutralTextColor)
-                Dim CellBackgroundColor As New Color(BackgroundColor)
+                Dim CellColor As Color = NeutralTextColor
+                Dim CellBackgroundColor As Color = BackgroundColor
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
                 If RowValue Is Nothing Then RowValue = ""
@@ -489,8 +489,8 @@ Public Module TableColor
         For RowIndex As Integer = 0 To Rows.GetLength(0) - 1
             For RowValueIndex As Integer = 0 To Rows.GetLength(1) - 1
                 Dim ColoredCell As Boolean
-                Dim CellColor As New Color(NeutralTextColor)
-                Dim CellBackgroundColor As New Color(ColorTools.BackgroundColor)
+                Dim CellColor As Color = NeutralTextColor
+                Dim CellBackgroundColor As Color = ColorTools.BackgroundColor
                 Dim RowValue As String = Rows(RowIndex, RowValueIndex)
                 Dim ColumnPosition As Integer = ColumnPositions(RowValueIndex)
                 If RowValue Is Nothing Then RowValue = ""

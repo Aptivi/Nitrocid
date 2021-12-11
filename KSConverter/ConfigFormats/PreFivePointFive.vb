@@ -44,27 +44,27 @@ Module PreFivePointFive
                         End If
                     End If
                     If line.Contains("User Name Shell Color = ") Then
-                        If ColoredShell = True Then UserNameShellColor = Val(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("User Name Shell Color = ", "")), ConsoleColors))
+                        If ColoredShell = True Then UserNameShellColor = New Color(Convert.ToInt32(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("User Name Shell Color = ", "")), ConsoleColors)))
                     ElseIf line.Contains("Host Name Shell Color = ") Then
-                        If ColoredShell = True Then HostNameShellColor = Val(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Host Name Shell Color = ", "")), ConsoleColors))
+                        If ColoredShell = True Then HostNameShellColor = New Color(Convert.ToInt32(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Host Name Shell Color = ", "")), ConsoleColors)))
                     ElseIf line.Contains("Continuable Kernel Error Color = ") Then
-                        If ColoredShell = True Then ContKernelErrorColor = Val(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Continuable Kernel Error Color = ", "")), ConsoleColors))
+                        If ColoredShell = True Then ContKernelErrorColor = New Color(Convert.ToInt32(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Continuable Kernel Error Color = ", "")), ConsoleColors)))
                     ElseIf line.Contains("Uncontinuable Kernel Error Color = ") Then
-                        If ColoredShell = True Then UncontKernelErrorColor = Val(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Uncontinuable Kernel Error Color = ", "")), ConsoleColors))
+                        If ColoredShell = True Then UncontKernelErrorColor = New Color(Convert.ToInt32(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Uncontinuable Kernel Error Color = ", "")), ConsoleColors)))
                     ElseIf line.Contains("Text Color = ") Then
-                        If ColoredShell = True Then NeutralTextColor = Val(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Text Color = ", "")), ConsoleColors))
+                        If ColoredShell = True Then NeutralTextColor = New Color(Convert.ToInt32(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Text Color = ", "")), ConsoleColors)))
                     ElseIf line.Contains("License Color = ") Then
-                        If ColoredShell = True Then LicenseColor = Val(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("License Color = ", "")), ConsoleColors))
+                        If ColoredShell = True Then LicenseColor = New Color(Convert.ToInt32(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("License Color = ", "")), ConsoleColors)))
                     ElseIf line.Contains("Background Color = ") Then
                         If ColoredShell = True Then
-                            BackgroundColor = Val(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Background Color = ", "")), ConsoleColors))
+                            BackgroundColor = New Color(Convert.ToInt32(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Background Color = ", "")), ConsoleColors)))
                         End If
                     ElseIf line.Contains("Input Color = ") Then
-                        If ColoredShell = True Then InputColor = Val(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Input Color = ", "")), ConsoleColors))
+                        If ColoredShell = True Then InputColor = New Color(Convert.ToInt32(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Input Color = ", "")), ConsoleColors)))
                     ElseIf line.Contains("Listed command in Help Color = ") Then
-                        If ColoredShell = True Then ListEntryColor = Val(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Listed command in Help Color = ", "")), ConsoleColors))
+                        If ColoredShell = True Then ListEntryColor = New Color(Convert.ToInt32(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Listed command in Help Color = ", "")), ConsoleColors)))
                     ElseIf line.Contains("Definition of command in Help Color = ") Then
-                        If ColoredShell = True Then ListValueColor = Val(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Definition of command in Help Color = ", "")), ConsoleColors))
+                        If ColoredShell = True Then ListValueColor = New Color(Convert.ToInt32(CType([Enum].Parse(GetType(ConsoleColors), line.Replace("Definition of command in Help Color = ", "")), ConsoleColors)))
                     ElseIf line.Contains("Change Root Password = ") Then
                         If line.Replace("Change Root Password = ", "") = "True" Then
                             SetRootPassword = True

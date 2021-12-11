@@ -224,7 +224,7 @@ Public Module FTPTools
                 Dim Answer As String = ""
                 Do Until Answer.ToLower = "y" Or Answer.ToLower = "n"
                     Write(DoTranslation("Are you sure that you want to connect?") + " (y/n) ", False, ColTypes.Question)
-                    SetConsoleColor(New Color(InputColor))
+                    SetConsoleColor(InputColor)
                     Answer = Console.ReadKey.KeyChar
                     Console.WriteLine()
                     Wdbg(DebugLevel.I, $"Answer is {Answer}")

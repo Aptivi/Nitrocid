@@ -211,6 +211,9 @@ Public Module SettingsApp
                         'Determine how to get the current value
                         If VariableProperty Is Nothing Then
                             CurrentValue = GetConfigValueField(Variable)
+                            If TypeOf CurrentValue Is Color Then
+                                CurrentValue = CurrentValue.PlainSequence
+                            End If
                         Else
                             CurrentValue = GetConfigPropertyValueInVariableField(Variable, VariableProperty)
                         End If
@@ -331,6 +334,9 @@ Public Module SettingsApp
                     End If
                     If KeyVarProperty Is Nothing Then
                         KeyDefaultValue = GetConfigValueField(KeyVar)
+                        If TypeOf KeyDefaultValue Is Color Then
+                            KeyDefaultValue = KeyDefaultValue.PlainSequence
+                        End If
                     Else
                         KeyDefaultValue = GetConfigPropertyValueInVariableField(KeyVar, KeyVarProperty)
                     End If
@@ -516,7 +522,7 @@ Public Module SettingsApp
                     Wdbg(DebugLevel.I, "User requested exit. Returning...")
                     KeyFinished = True
                 ElseIf KeyType = SettingsKeyType.SColor Then
-                    SetConfigValueField(KeyVar, New Color(ColorValue.ToString).PlainSequence)
+                    SetConfigValueField(KeyVar, New Color(ColorValue.ToString))
                     Wdbg(DebugLevel.I, "User requested exit. Returning...")
                     KeyFinished = True
                 Else

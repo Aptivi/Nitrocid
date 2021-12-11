@@ -197,7 +197,7 @@ Public Module UESHCommands
 
             'Ask a question
             Write(Question, False, ColTypes.Question)
-            SetConsoleColor(New Color(InputColor))
+            SetConsoleColor(InputColor)
 
             'Wait for an answer
             Answer = Console.ReadLine

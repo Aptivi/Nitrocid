@@ -24,7 +24,7 @@ Class Mail_ExitCommand
         ExitRequested = True
         If RSSRefreshFeeds Then
             Write(DoTranslation("Do you want to keep connected?") + " <y/n> ", False, ColTypes.Question)
-            SetConsoleColor(New Color(InputColor))
+            SetConsoleColor(InputColor)
             Dim Answer As Char = Console.ReadKey.KeyChar
             Console.WriteLine()
             If Answer = "y" Then

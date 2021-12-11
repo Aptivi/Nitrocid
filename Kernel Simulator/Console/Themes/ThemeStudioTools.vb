@@ -24,151 +24,151 @@ Module ThemeStudioTools
     ''' <summary>
     ''' Selected input color for new theme
     ''' </summary>
-    Friend SelectedInputColor As New Color(InputColor)
+    Friend SelectedInputColor As Color = InputColor
     ''' <summary>
     ''' Selected license color for new theme
     ''' </summary>
-    Friend SelectedLicenseColor As New Color(LicenseColor)
+    Friend SelectedLicenseColor As Color = LicenseColor
     ''' <summary>
     ''' Selected continuable kernel error color for new theme
     ''' </summary>
-    Friend SelectedContKernelErrorColor As New Color(ContKernelErrorColor)
+    Friend SelectedContKernelErrorColor As Color = ContKernelErrorColor
     ''' <summary>
     ''' Selected uncontinuable kernel error color for new theme
     ''' </summary>
-    Friend SelectedUncontKernelErrorColor As New Color(UncontKernelErrorColor)
+    Friend SelectedUncontKernelErrorColor As Color = UncontKernelErrorColor
     ''' <summary>
     ''' Selected host name shell color for new theme
     ''' </summary>
-    Friend SelectedHostNameShellColor As New Color(HostNameShellColor)
+    Friend SelectedHostNameShellColor As Color = HostNameShellColor
     ''' <summary>
     ''' Selected user name shell color for new theme
     ''' </summary>
-    Friend SelectedUserNameShellColor As New Color(UserNameShellColor)
+    Friend SelectedUserNameShellColor As Color = UserNameShellColor
     ''' <summary>
     ''' Selected background color for new theme
     ''' </summary>
-    Friend SelectedBackgroundColor As New Color(BackgroundColor)
+    Friend SelectedBackgroundColor As Color = BackgroundColor
     ''' <summary>
     ''' Selected neutral text color for new theme
     ''' </summary>
-    Friend SelectedNeutralTextColor As New Color(NeutralTextColor)
+    Friend SelectedNeutralTextColor As Color = NeutralTextColor
     ''' <summary>
     ''' Selected list entry color for new theme
     ''' </summary>
-    Friend SelectedListEntryColor As New Color(ListEntryColor)
+    Friend SelectedListEntryColor As Color = ListEntryColor
     ''' <summary>
     ''' Selected list value color for new theme
     ''' </summary>
-    Friend SelectedListValueColor As New Color(ListValueColor)
+    Friend SelectedListValueColor As Color = ListValueColor
     ''' <summary>
     ''' Selected stage color for new theme
     ''' </summary>
-    Friend SelectedStageColor As New Color(StageColor)
+    Friend SelectedStageColor As Color = StageColor
     ''' <summary>
     ''' Selected error color for new theme
     ''' </summary>
-    Friend SelectedErrorColor As New Color(ErrorColor)
+    Friend SelectedErrorColor As Color = ErrorColor
     ''' <summary>
     ''' Selected warning color for new theme
     ''' </summary>
-    Friend SelectedWarningColor As New Color(WarningColor)
+    Friend SelectedWarningColor As Color = WarningColor
     ''' <summary>
     ''' Selected option color for new theme
     ''' </summary>
-    Friend _SelectedOptionColor As New Color(OptionColor)
+    Friend _SelectedOptionColor As Color = OptionColor
     ''' <summary>
     ''' Selected banner color for new theme
     ''' </summary>
-    Friend SelectedBannerColor As New Color(BannerColor)
+    Friend SelectedBannerColor As Color = BannerColor
     ''' <summary>
     ''' Selected error color for new theme
     ''' </summary>
-    Friend SelectedNotificationTitleColor As New Color(ErrorColor)
+    Friend SelectedNotificationTitleColor As Color = ErrorColor
     ''' <summary>
     ''' Selected warning color for new theme
     ''' </summary>
-    Friend SelectedNotificationDescriptionColor As New Color(WarningColor)
+    Friend SelectedNotificationDescriptionColor As Color = WarningColor
     ''' <summary>
     ''' Selected option color for new theme
     ''' </summary>
-    Friend SelectedNotificationProgressColor As New Color(OptionColor)
+    Friend SelectedNotificationProgressColor As Color = OptionColor
     ''' <summary>
     ''' Selected banner color for new theme
     ''' </summary>
-    Friend SelectedNotificationFailureColor As New Color(BannerColor)
+    Friend SelectedNotificationFailureColor As Color = BannerColor
     ''' <summary>
     ''' Selected error color for new theme
     ''' </summary>
-    Friend SelectedQuestionColor As New Color(ErrorColor)
+    Friend SelectedQuestionColor As Color = ErrorColor
     ''' <summary>
     ''' Selected warning color for new theme
     ''' </summary>
-    Friend SelectedSuccessColor As New Color(WarningColor)
+    Friend SelectedSuccessColor As Color = WarningColor
     ''' <summary>
     ''' Selected option color for new theme
     ''' </summary>
-    Friend SelectedUserDollarColor As New Color(OptionColor)
+    Friend SelectedUserDollarColor As Color = OptionColor
     ''' <summary>
     ''' Selected banner color for new theme
     ''' </summary>
-    Friend SelectedTipColor As New Color(BannerColor)
+    Friend SelectedTipColor As Color = BannerColor
     ''' <summary>
     ''' Selected error color for new theme
     ''' </summary>
-    Friend SelectedSeparatorTextColor As New Color(ErrorColor)
+    Friend SelectedSeparatorTextColor As Color = ErrorColor
     ''' <summary>
     ''' Selected warning color for new theme
     ''' </summary>
-    Friend SelectedSeparatorColor As New Color(WarningColor)
+    Friend SelectedSeparatorColor As Color = WarningColor
     ''' <summary>
     ''' Selected option color for new theme
     ''' </summary>
-    Friend SelectedListTitleColor As New Color(OptionColor)
+    Friend SelectedListTitleColor As Color = OptionColor
     ''' <summary>
     ''' Selected banner color for new theme
     ''' </summary>
-    Friend SelectedDevelopmentWarningColor As New Color(BannerColor)
+    Friend SelectedDevelopmentWarningColor As Color = BannerColor
     ''' <summary>
     ''' Selected warning color for new theme
     ''' </summary>
-    Friend SelectedStageTimeColor As New Color(WarningColor)
+    Friend SelectedStageTimeColor As Color = WarningColor
     ''' <summary>
     ''' Selected option color for new theme
     ''' </summary>
-    Friend SelectedProgressColor As New Color(OptionColor)
+    Friend SelectedProgressColor As Color = OptionColor
     ''' <summary>
     ''' Selected banner color for new theme
     ''' </summary>
-    Friend SelectedBackOptionColor As New Color(BannerColor)
+    Friend SelectedBackOptionColor As Color = BannerColor
     ''' <summary>
     ''' Selected low priority notification border color for new theme
     ''' </summary>
-    Friend SelectedLowPriorityBorderColor As New Color(LowPriorityBorderColor)
+    Friend SelectedLowPriorityBorderColor As Color = LowPriorityBorderColor
     ''' <summary>
     ''' Selected medium priority notification border color for new theme
     ''' </summary>
-    Friend SelectedMediumPriorityBorderColor As New Color(MediumPriorityBorderColor)
+    Friend SelectedMediumPriorityBorderColor As Color = MediumPriorityBorderColor
     ''' <summary>
     ''' Selected high priority notification border color for new theme
     ''' </summary>
-    Friend SelectedHighPriorityBorderColor As New Color(HighPriorityBorderColor)
+    Friend SelectedHighPriorityBorderColor As Color = HighPriorityBorderColor
     ''' <summary>
     ''' Selected Table separator color for new theme
     ''' </summary>
-    Friend SelectedTableSeparatorColor As New Color(TableSeparatorColor)
+    Friend SelectedTableSeparatorColor As Color = TableSeparatorColor
     ''' <summary>
     ''' Selected Table header color for new theme
     ''' </summary>
-    Friend SelectedTableHeaderColor As New Color(TableHeaderColor)
+    Friend SelectedTableHeaderColor As Color = TableHeaderColor
     ''' <summary>
     ''' Selected Table value color for new theme
     ''' </summary>
-    Friend SelectedTableValueColor As New Color(TableValueColor)
+    Friend SelectedTableValueColor As Color = TableValueColor
     ''' <summary>
     ''' Selected selected option color for new theme
     ''' </summary>
-    Friend SelectedSelectedOptionColor As New Color(SelectedOptionColor)
+    Friend SelectedSelectedOptionColor As Color = SelectedOptionColor
 
     ''' <summary>
     ''' Saves theme to current directory under "<paramref name="Theme"/>.json."

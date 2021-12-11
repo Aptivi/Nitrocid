@@ -23,7 +23,7 @@ Public Module StopwatchScreen
 
     Friend Laps As New List(Of LapDisplayInfo)
     Friend StopwatchUpdate As New Thread(AddressOf UpdateStopwatchElapsedDisplay) With {.IsBackground = True}
-    Friend LapColor As New Color(NeutralTextColor)
+    Friend LapColor As Color = NeutralTextColor
     Friend Stopwatch As New Stopwatch
     Friend LappedStopwatch As New Stopwatch
     Friend NewLapAcknowledged As Boolean
@@ -103,7 +103,7 @@ Public Module StopwatchScreen
                     Next
 
                     'Reset the indicators
-                    LapColor = New Color(NeutralTextColor)
+                    LapColor = NeutralTextColor
                     WriteWhere(DoTranslation("Lap") + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, False, LapColor, Laps.Count + 1, LappedStopwatch.Elapsed.ToString("d\.hh\:mm\:ss\.fff", CurrentCult))
                     ClearLineToRight()
                     Console.SetCursorPosition(0, TimeTopPosition)
@@ -112,7 +112,7 @@ Public Module StopwatchScreen
                 Case ConsoleKey.Escape
                     If LappedStopwatch.IsRunning Then LappedStopwatch.Reset()
                     If Stopwatch.IsRunning Then Stopwatch.Reset()
-                    LapColor = New Color(NeutralTextColor)
+                    LapColor = NeutralTextColor
                     If StopwatchUpdate.IsAlive Then StopwatchUpdate.Abort()
             End Select
         End While
