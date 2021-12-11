@@ -170,7 +170,6 @@
     <Compile Include="Arguments\ArgumentBase\ArgumentHelpSystem.vb" />
     <Compile Include="Arguments\ArgumentBase\IArgument.vb" />
     <Compile Include="Arguments\KernelArguments\CmdInject.vb" />
-    <Compile Include="Arguments\KernelArguments\Help.vb" />
     <Compile Include="Arguments\KernelArguments\TestInteractive.vb" />
     <Compile Include="Arguments\KernelArguments\Safe.vb" />
     <Compile Include="Arguments\KernelArguments\Maintenance.vb" />

@@ -25,8 +25,7 @@ Module ArgumentPrompt
                                                                           {"debug", New ArgumentInfo("debug", ArgumentType.KernelArgs, "Enables debug mode", "", False, 0, New DebugArgument)},
                                                                           {"maintenance", New ArgumentInfo("maintenance", ArgumentType.KernelArgs, "Like safe mode, but also disables multi-user and some customization", "", False, 0, New MaintenanceArgument)},
                                                                           {"safe", New ArgumentInfo("safe", ArgumentType.KernelArgs, "Starts the kernel in safe mode, disabling all mods", "", False, 0, New SafeArgument)},
-                                                                          {"testInteractive", New ArgumentInfo("testInteractive", ArgumentType.KernelArgs, "Opens a test shell", "", False, 0, New TestInteractiveArgument)},
-                                                                          {"help", New ArgumentInfo("help", ArgumentType.KernelArgs, "Help page", "", False, 0, New HelpArgument)}}
+                                                                          {"testInteractive", New ArgumentInfo("testInteractive", ArgumentType.KernelArgs, "Opens a test shell", "", False, 0, New TestInteractiveArgument)}}
 
     ''' <summary>
     ''' Prompts user for arguments
@@ -38,7 +37,8 @@ Module ArgumentPrompt
 
         'Shows available arguments
         Write(DoTranslation("Available kernel arguments:"), True, ColTypes.ListTitle)
-        WriteList(AvailableArgs.Keys, True)
+        ShowArgsHelp(ArgumentType.KernelArgs)
+        Console.WriteLine()
         Write("* " + DoTranslation("Press ""q"" if you're done."), True, ColTypes.Tip)
         Write("* " + DoTranslation("Multiple kernel arguments can be separated with commas without spaces, for example:") + " ""debug,safe""", True, ColTypes.Tip)
         Write("* " + DoTranslation("Multiple injected commands can be separated with colons with spaces, for example:") + " cmdinject ""beep 100 500 : echo Hello!""", True, ColTypes.Tip)
