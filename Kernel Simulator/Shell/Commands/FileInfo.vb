@@ -29,6 +29,7 @@ Class FileInfoCommand
             WriteSeparator(FileName, True)
             If FileExists(FilePath) Then
                 Dim FileInfo As New FileInfo(FilePath)
+                Dim Style As FilesystemNewlineStyle = GetLineEndingFromFile(FilePath)
                 Write(DoTranslation("Name: {0}"), True, ColTypes.Neutral, FileInfo.Name)
                 Write(DoTranslation("Full name: {0}"), True, ColTypes.Neutral, NeutralizePath(FileInfo.FullName))
                 Write(DoTranslation("File size: {0}"), True, ColTypes.Neutral, FileInfo.Length.FileSizeToString)
@@ -37,6 +38,7 @@ Class FileInfoCommand
                 Write(DoTranslation("Last write time: {0}"), True, ColTypes.Neutral, Render(FileInfo.LastWriteTime))
                 Write(DoTranslation("Attributes: {0}"), True, ColTypes.Neutral, FileInfo.Attributes)
                 Write(DoTranslation("Where to find: {0}"), True, ColTypes.Neutral, NeutralizePath(FileInfo.DirectoryName))
+                Write(DoTranslation("Newline style:") + " {0}", True, ColTypes.Neutral, Style.ToString)
             Else
                 Write(DoTranslation("Can't get information about nonexistent file."), True, ColTypes.Error)
             End If

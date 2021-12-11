@@ -16,6 +16,7 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+Imports System.IO
 Imports KS
 
 <TestClass()> Public Class FilesystemQueryingTests
@@ -29,18 +30,6 @@ Imports KS
             Dim TargetKernelPath As String = GetKernelPath(PathType)
             Debug.WriteLine($"Got path: {TargetKernelPath}")
             TargetKernelPath.ShouldNotBeNullOrEmpty
-        Next
-    End Sub
-
-    ''' <summary>
-    ''' Tests getting the "other" path for each entry
-    ''' </summary>
-    <TestMethod()> <TestCategory("Querying")> Public Sub TestGetOtherPaths()
-        For Each PathType As OtherPathType In [Enum].GetValues(GetType(OtherPathType))
-            Debug.WriteLine($"Path type: {PathType}")
-            Dim TargetOtherPath As String = GetOtherPath(PathType)
-            Debug.WriteLine($"Got path: {TargetOtherPath}")
-            TargetOtherPath.ShouldNotBeNullOrEmpty
         Next
     End Sub
 
@@ -63,6 +52,15 @@ Imports KS
     <TestMethod()> <TestCategory("Querying")> Public Sub TestTryParseFileName()
         TryParseFileName("Windows").ShouldBeTrue
         TryParseFileName("Windows/System32\").ShouldBeFalse
+    End Sub
+
+    ''' <summary>
+    ''' Tests trying to get the line ending from text file
+    ''' </summary>
+    <TestMethod()> <TestCategory("Querying")> Public Sub TestGetLineEndingFromFile()
+        Dim ExpectedStyle As FilesystemNewlineStyle = FilesystemNewlineStyle.CRLF
+        Dim ActualStyle As FilesystemNewlineStyle = GetLineEndingFromFile(Path.GetFullPath("TestText.txt"))
+        ActualStyle.ShouldBe(ExpectedStyle)
     End Sub
 
 End Class

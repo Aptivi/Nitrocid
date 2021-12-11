@@ -1235,6 +1235,50 @@ Public Module Filesystem
     End Function
 
     ''' <summary>
+    ''' Gets the line ending style from file
+    ''' </summary>
+    ''' <param name="TextFile">Target text file</param>
+    Public Function GetLineEndingFromFile(TextFile As String) As FilesystemNewlineStyle
+        ThrowOnInvalidPath(TextFile)
+        TextFile = NeutralizePath(TextFile)
+        If Not FileExists(TextFile) Then Throw New IOException(DoTranslation("File {0} not found.").FormatString(TextFile))
+
+        'Open the file stream
+        Dim NewlineStyle As FilesystemNewlineStyle = Filesystem.NewlineStyle
+        Dim TextFileStream As New FileStream(TextFile, FileMode.Open, FileAccess.Read)
+        Dim CarriageReturnCode As Integer = AscW(GetLineEndingString(FilesystemNewlineStyle.CR)(0))
+        Dim LineFeedCode As Integer = AscW(GetLineEndingString(FilesystemNewlineStyle.LF)(0))
+        Dim CarriageReturnSpotted As Boolean
+        Dim LineFeedSpotted As Boolean
+        Dim ExitOnSpotted As Boolean
+
+        'Search for new line style
+        Do Until TextFileStream.Position = TextFileStream.Length
+            Dim Result As Integer = TextFileStream.ReadByte
+            If Result = LineFeedCode Then
+                LineFeedSpotted = True
+                ExitOnSpotted = True
+            End If
+            If Result = CarriageReturnCode Then
+                CarriageReturnSpotted = True
+                ExitOnSpotted = True
+            End If
+            If ExitOnSpotted And (Result <> LineFeedCode And Result <> CarriageReturnCode) Then Exit Do
+        Loop
+        TextFileStream.Close()
+
+        'Return the style used
+        If LineFeedSpotted And CarriageReturnSpotted Then
+            NewlineStyle = FilesystemNewlineStyle.CRLF
+        ElseIf LineFeedSpotted Then
+            NewlineStyle = FilesystemNewlineStyle.LF
+        ElseIf CarriageReturnSpotted Then
+            NewlineStyle = FilesystemNewlineStyle.CR
+        End If
+        Return NewlineStyle
+    End Function
+
+    ''' <summary>
     ''' Mitigates Windows 10/11 NTFS corruption/Blue Screen of Death (BSOD) bug
     ''' </summary>
     ''' <param name="Path">Target path</param>
