@@ -88,9 +88,9 @@ Public Class Events
     Public Event SSHPostExecuteCommand(Target As String, Command As String)
     Public Event SSHCommandError(Target As String, Command As String, Exception As Exception)
     Public Event SSHError(Exception As Exception)
-    Public Event UESHPreExecute(Command As String)
-    Public Event UESHPostExecute(Command As String)
-    Public Event UESHError(Command As String, Exception As Exception)
+    Public Event UESHPreExecute(Command As String, Arguments As String)
+    Public Event UESHPostExecute(Command As String, Arguments As String)
+    Public Event UESHError(Command As String, Arguments As String, Exception As Exception)
     Public Event TextShellInitialized()
     Public Event TextPreExecuteCommand(Command As String)
     Public Event TextPostExecuteCommand(Command As String)
@@ -1201,13 +1201,13 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of UESH pre-execute
     ''' </summary>
-    Public Sub RespondUESHPreExecute(Command As String) Handles Me.UESHPreExecute
+    Public Sub RespondUESHPreExecute(Command As String, Arguments As String) Handles Me.UESHPreExecute
         For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
                     WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UESHPreExecute()...", script.ModPart, script.Name, script.Version)
-                    script.InitEvents("UESHPreExecute", Command)
+                    script.InitEvents("UESHPreExecute", Command, Arguments)
                 Catch ex As Exception
                     WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
                     WStkTrcConditional(EventDebug, ex)
@@ -1218,13 +1218,13 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of UESH post-execute
     ''' </summary>
-    Public Sub RespondUESHPostExecute(Command As String) Handles Me.UESHPostExecute
+    Public Sub RespondUESHPostExecute(Command As String, Arguments As String) Handles Me.UESHPostExecute
         For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
                     WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UESHPostExecute()...", script.ModPart, script.Name, script.Version)
-                    script.InitEvents("UESHPostExecute", Command)
+                    script.InitEvents("UESHPostExecute", Command, Arguments)
                 Catch ex As Exception
                     WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
                     WStkTrcConditional(EventDebug, ex)
@@ -1235,13 +1235,13 @@ Public Class Events
     ''' <summary>
     ''' Makes the mod respond to the event of UESH post-execute
     ''' </summary>
-    Public Sub RespondUESHError(Command As String, Exception As Exception) Handles Me.UESHError
+    Public Sub RespondUESHError(Command As String, Arguments As String, Exception As Exception) Handles Me.UESHError
         For Each ModPart As ModInfo In Mods.Values
             For Each PartInfo As PartInfo In ModPart.ModParts.Values
                 Try
                     Dim script As IScript = PartInfo.PartScript
                     WdbgConditional(EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event UESHError()...", script.ModPart, script.Name, script.Version)
-                    script.InitEvents("UESHError", Command, Exception)
+                    script.InitEvents("UESHError", Command, Arguments, Exception)
                 Catch ex As Exception
                     WdbgConditional(EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message)
                     WStkTrcConditional(EventDebug, ex)
@@ -2651,26 +2651,26 @@ Public Class Events
     ''' <summary>
     ''' Raise an event of UESH pre-execute
     ''' </summary>
-    Public Sub RaiseUESHPreExecute(Command As String)
+    Public Sub RaiseUESHPreExecute(Command As String, Arguments As String)
         WdbgConditional(EventDebug, DebugLevel.I, "Raising event UESHPreExecute() and responding in RespondUESHPreExecute()...")
-        FiredEvents.Add("UESHPreExecute (" + CStr(FiredEvents.Count) + ")", {Command})
-        RaiseEvent UESHPreExecute(Command)
+        FiredEvents.Add("UESHPreExecute (" + CStr(FiredEvents.Count) + ")", {Command, Arguments})
+        RaiseEvent UESHPreExecute(Command, Arguments)
     End Sub
     ''' <summary>
     ''' Raise an event of UESH post-execute
     ''' </summary>
-    Public Sub RaiseUESHPostExecute(Command As String)
+    Public Sub RaiseUESHPostExecute(Command As String, Arguments As String)
         WdbgConditional(EventDebug, DebugLevel.I, "Raising event UESHPostExecute() and responding in RespondUESHPostExecute()...")
-        FiredEvents.Add("UESHPostExecute (" + CStr(FiredEvents.Count) + ")", {Command})
-        RaiseEvent UESHPostExecute(Command)
+        FiredEvents.Add("UESHPostExecute (" + CStr(FiredEvents.Count) + ")", {Command, Arguments})
+        RaiseEvent UESHPostExecute(Command, Arguments)
     End Sub
     ''' <summary>
     ''' Raise an event of UESH error
     ''' </summary>
-    Public Sub RaiseUESHError(Command As String, Exception As Exception)
+    Public Sub RaiseUESHError(Command As String, Arguments As String, Exception As Exception)
         WdbgConditional(EventDebug, DebugLevel.I, "Raising event UESHError() and responding in RespondUESHError()...")
-        FiredEvents.Add("UESHError (" + CStr(FiredEvents.Count) + ")", {Command, Exception})
-        RaiseEvent UESHError(Command, Exception)
+        FiredEvents.Add("UESHError (" + CStr(FiredEvents.Count) + ")", {Command, Arguments, Exception})
+        RaiseEvent UESHError(Command, Arguments, Exception)
     End Sub
     ''' <summary>
     ''' Raise an event of text shell initialized

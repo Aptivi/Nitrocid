@@ -23,15 +23,15 @@ Public Module UESHParse
     ''' <summary>
     ''' Executes the UESH script
     ''' </summary>
-    ''' <param name="scriptpath">Full path to script</param>
-    ''' <param name="scriptarguments">Script arguments</param>
-    Public Sub Execute(scriptpath As String, scriptarguments As String)
+    ''' <param name="ScriptPath">Full path to script</param>
+    ''' <param name="ScriptArguments">Script arguments</param>
+    Public Sub Execute(ScriptPath As String, ScriptArguments As String)
         Try
             'Raise event
-            KernelEventManager.RaiseUESHPreExecute(scriptpath + " " + scriptarguments)
+            KernelEventManager.RaiseUESHPreExecute(ScriptPath, ScriptArguments)
 
             'Open the script file for reading
-            Dim FileStream As New StreamReader(scriptpath)
+            Dim FileStream As New StreamReader(ScriptPath)
             Dim LineNo As Integer = 1
             Wdbg(DebugLevel.I, "Stream opened. Parsing script")
 
@@ -70,7 +70,7 @@ Public Module UESHParse
                 End If
 
                 'See if the line contains argument placeholder, and replace every instance of it with its value
-                Dim SplitArguments() As String = scriptarguments.SplitEncloseDoubleQuotes(" ")
+                Dim SplitArguments() As String = ScriptArguments.SplitEncloseDoubleQuotes(" ")
                 If SplitArguments IsNot Nothing Then
                     For i As Integer = 0 To SplitWords.Length - 1
                         For j As Integer = 0 To SplitArguments.Length - 1
@@ -89,9 +89,9 @@ Public Module UESHParse
                     Wdbg(DebugLevel.I, "Line {0} is a comment.", Line)
                 End If
             End While
-            KernelEventManager.RaiseUESHPostExecute(scriptpath + " " + scriptarguments)
+            KernelEventManager.RaiseUESHPostExecute(ScriptPath, ScriptArguments)
         Catch ex As Exception
-            KernelEventManager.RaiseUESHError(scriptpath + " " + scriptarguments, ex)
+            KernelEventManager.RaiseUESHError(ScriptPath, ScriptArguments, ex)
             Write(DoTranslation("Error trying to execute script: {0}"), True, ColTypes.Error, ex.Message)
             WStkTrc(ex)
         End Try
