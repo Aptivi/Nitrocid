@@ -24,11 +24,11 @@ Public Module Kernel
     'Variables
     Public MOTDMessage, MAL As String
     Public HostName As String = "kernel"
-    Public EventManager As New Events
     Public DefConsoleOut As TextWriter
     Public ReadOnly KernelVersion As String = GetExecutingAssembly().GetName().Version.ToString()
     Public ReadOnly ConsoleTitle As String = $"Kernel Simulator v{KernelVersion} - Milestone 4"
     Public ReadOnly vbNewLine As String = Environment.NewLine
+    Public ReadOnly KernelEventManager As New Events
     Friend StageTimer As New Stopwatch
 
     ''' <summary>
@@ -129,7 +129,7 @@ Public Module Kernel
                 Else
                     Write(DoTranslation("Running in safe mode. Skipping stage..."), True, ColTypes.Neutral)
                 End If
-                EventManager.RaiseStartKernel()
+                KernelEventManager.RaiseStartKernel()
 
                 'Phase 4: Log-in
                 If ShowStageFinishTimes Then

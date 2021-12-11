@@ -27,9 +27,9 @@ Public Module ConfigTools
     ''' <returns>True if successful; False if unsuccessful</returns>
     Public Function ReloadConfig() As Boolean
         Try
-            Kernel.EventManager.RaisePreReloadConfig()
+            Kernel.KernelEventManager.RaisePreReloadConfig()
             InitializeConfig()
-            Kernel.EventManager.RaisePostReloadConfig()
+            Kernel.KernelEventManager.RaisePostReloadConfig()
             Return True
         Catch ex As Exception
             Wdbg(DebugLevel.E, "Failed to reload config: {0}", ex.Message)

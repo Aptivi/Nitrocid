@@ -77,7 +77,7 @@ Public Module MailShell
 
         'Add handler for IMAP and SMTP
         SwitchCancellationHandler(ShellCommandType.MailShell)
-        Kernel.EventManager.RaiseIMAPShellInitialized()
+        Kernel.KernelEventManager.RaiseIMAPShellInitialized()
 
         While Not ExitRequested
             SyncLock MailCancelSync
@@ -102,7 +102,7 @@ Public Module MailShell
                 'Listen for a command
                 Dim cmd As String = Console.ReadLine
                 If Not (cmd = Nothing Or cmd?.StartsWithAnyOf({" ", "#"}) = True) Then
-                    Kernel.EventManager.RaiseIMAPPreExecuteCommand(cmd)
+                    Kernel.KernelEventManager.RaiseIMAPPreExecuteCommand(cmd)
                     Dim words As String() = cmd.SplitEncloseDoubleQuotes(" ")
                     Wdbg(DebugLevel.I, $"Is the command found? {MailCommands.ContainsKey(words(0))}")
                     If MailCommands.ContainsKey(words(0)) Then
@@ -122,7 +122,7 @@ Public Module MailShell
                         Wdbg(DebugLevel.E, "Command not found. Reopening shell...")
                         Write(DoTranslation("Command {0} not found. See the ""help"" command for the list of commands."), True, ColTypes.Error, words(0))
                     End If
-                    Kernel.EventManager.RaiseIMAPPostExecuteCommand(cmd)
+                    Kernel.KernelEventManager.RaiseIMAPPostExecuteCommand(cmd)
                 End If
             End SyncLock
         End While

@@ -54,7 +54,7 @@ Public Module RemoteDebugTools
                     Found = True
                     DebugDevices(i).ClientSocket.Disconnect(True)
                     DebugDevices.RemoveAt(i)
-                    Kernel.EventManager.RaiseRemoteDebugConnectionDisconnected(IPAddr)
+                    Kernel.KernelEventManager.RaiseRemoteDebugConnectionDisconnected(IPAddr)
                 End If
             End If
         Next

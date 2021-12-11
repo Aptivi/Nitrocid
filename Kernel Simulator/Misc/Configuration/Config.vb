@@ -845,10 +845,10 @@ Public Module Config
 
             'Save Config
             File.WriteAllText(ConfigPath, JsonConvert.SerializeObject(ConfigurationObject, Formatting.Indented))
-            Kernel.EventManager.RaiseConfigSaved()
+            Kernel.KernelEventManager.RaiseConfigSaved()
             Return True
         Catch ex As Exception
-            Kernel.EventManager.RaiseConfigSaveError(ex)
+            Kernel.KernelEventManager.RaiseConfigSaveError(ex)
             WStkTrc(ex)
             Throw New Exceptions.ConfigException(DoTranslation("There is an error trying to create configuration."), ex)
         End Try
@@ -1551,14 +1551,14 @@ Public Module Config
             RepairConfig()
 
             'Raise event and return true
-            Kernel.EventManager.RaiseConfigRead()
+            Kernel.KernelEventManager.RaiseConfigRead()
             Return True
         Catch nre As NullReferenceException
             'Rare, but repair config if an NRE is caught.
             Wdbg(DebugLevel.E, "Error trying to read config: {0}", nre.Message)
             RepairConfig()
         Catch ex As Exception
-            Kernel.EventManager.RaiseConfigReadError(ex)
+            Kernel.KernelEventManager.RaiseConfigReadError(ex)
             WStkTrc(ex)
             NotifyConfigError = True
             Wdbg(DebugLevel.E, "Error trying to read config: {0}", ex.Message)

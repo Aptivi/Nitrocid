@@ -66,6 +66,7 @@ Public Module Shell
                                                                              {"choice", New CommandInfo("choice", ShellCommandType.Shell, "Makes user choices", {"[-o|-t|-m|-a] [-multiple|-single] <$variable> <answers> <input> [answertitle1] [answertitle2] ..."}, True, 3, New ChoiceCommand, False, False, False, False, True, New Action(AddressOf (New ChoiceCommand).HelpHelper))},
                                                                              {"chpwd", New CommandInfo("chpwd", ShellCommandType.Shell, "Changes password for current user", {"<Username> <UserPass> <newPass> <confirm>"}, True, 4, New ChPwdCommand, True)},
                                                                              {"chusrname", New CommandInfo("chusrname", ShellCommandType.Shell, "Changes user name", {"<oldUserName> <newUserName>"}, True, 2, New ChUsrNameCommand, True)},
+                                                                             {"clearfiredevents", New CommandInfo("clearfiredevents", ShellCommandType.Shell, "Clears all fired events", {}, False, 0, New ClearFiredEventsCommand)},
                                                                              {"cls", New CommandInfo("cls", ShellCommandType.Shell, "Clears the screen", {}, False, 0, New ClsCommand)},
                                                                              {"combine", New CommandInfo("combine", ShellCommandType.Shell, "Combines the two text files or more into the output file.", {"<output> <input1> <input2> [input3] ..."}, True, 3, New CombineCommand)},
                                                                              {"convertlineendings", New CommandInfo("convertlineendings", ShellCommandType.Shell, "Converts the line endings to format for the current platform or to specified custom format", {"<textfile> [-w|-u|-m]"}, True, 1, New ConvertLineEndingsCommand)},
@@ -188,12 +189,12 @@ Public Module Shell
 
                         'Wait for command
                         Wdbg(DebugLevel.I, "Waiting for command")
-                        Kernel.EventManager.RaiseShellInitialized()
+                        Kernel.KernelEventManager.RaiseShellInitialized()
                         Dim strcommand As String = Console.ReadLine()
 
                         If Not InSaver Then
                             'Fire event of PreRaiseCommand
-                            Kernel.EventManager.RaisePreExecuteCommand(strcommand)
+                            Kernel.KernelEventManager.RaisePreExecuteCommand(strcommand)
 
                             'Check for a type of command
                             If Not (strcommand = Nothing Or strcommand?.StartsWith(" ") = True) Then
@@ -220,7 +221,7 @@ Public Module Shell
                                 Next
 
                                 'Fire an event of PostExecuteCommand
-                                Kernel.EventManager.RaisePostExecuteCommand(strcommand)
+                                Kernel.KernelEventManager.RaisePostExecuteCommand(strcommand)
                             End If
                         End If
                     Catch ex As Exception

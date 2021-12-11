@@ -89,13 +89,13 @@ Public Module ThemeTools
             End If
 
             'Raise event
-            Kernel.EventManager.RaiseThemeSet(theme)
+            Kernel.KernelEventManager.RaiseThemeSet(theme)
         Else
             Write(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, theme)
             Wdbg(DebugLevel.E, "Theme not found.")
 
             'Raise event
-            Kernel.EventManager.RaiseThemeSetError(theme, ThemeSetErrorReasons.NotFound)
+            Kernel.KernelEventManager.RaiseThemeSetError(theme, ThemeSetErrorReasons.NotFound)
         End If
     End Sub
 
@@ -118,13 +118,13 @@ Public Module ThemeTools
             End If
 
             'Raise event
-            Kernel.EventManager.RaiseThemeSet(ThemeFile)
+            Kernel.KernelEventManager.RaiseThemeSet(ThemeFile)
         Catch ex As Exception
             Write(DoTranslation("Invalid color template {0}"), True, ColTypes.Error, ThemeFile)
             Wdbg(DebugLevel.E, "Theme not found.")
 
             'Raise event
-            Kernel.EventManager.RaiseThemeSetError(ThemeFile, ThemeSetErrorReasons.NotFound)
+            Kernel.KernelEventManager.RaiseThemeSetError(ThemeFile, ThemeSetErrorReasons.NotFound)
         End Try
     End Sub
 
@@ -182,15 +182,15 @@ Public Module ThemeTools
                 MakePermanent()
 
                 'Raise event
-                Kernel.EventManager.RaiseColorSet()
+                Kernel.KernelEventManager.RaiseColorSet()
                 Return True
             Catch ex As Exception
                 WStkTrc(ex)
-                Kernel.EventManager.RaiseColorSetError(ColorSetErrorReasons.InvalidColors)
+                Kernel.KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.InvalidColors)
                 Throw New Exceptions.ColorException(DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message)
             End Try
         Else
-            Kernel.EventManager.RaiseColorSetError(ColorSetErrorReasons.NoColors)
+            Kernel.KernelEventManager.RaiseColorSetError(ColorSetErrorReasons.NoColors)
             Throw New InvalidOperationException(DoTranslation("Colors are not available. Turn on colored shell in the kernel config."))
         End If
         Return False

@@ -69,7 +69,7 @@ Module ZipShell
                 SetInputColor()
 
                 'Prompt for command
-                Kernel.EventManager.RaiseZipShellInitialized()
+                Kernel.KernelEventManager.RaiseZipShellInitialized()
                 Dim WrittenCommand As String = Console.ReadLine
 
                 'Check to see if the command doesn't start with spaces or if the command is nothing
@@ -81,11 +81,11 @@ Module ZipShell
                         Wdbg(DebugLevel.I, "Command {0} found in the list of {1} commands.", Command, ZipShell_Commands.Count)
                         Dim Params As New ExecuteCommandThreadParameters(WrittenCommand, ShellCommandType.ZIPShell, Nothing)
                         ZipShell_CommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "ZIP Shell Command Thread"}
-                        Kernel.EventManager.RaiseZipPreExecuteCommand(WrittenCommand)
+                        Kernel.KernelEventManager.RaiseZipPreExecuteCommand(WrittenCommand)
                         Wdbg(DebugLevel.I, "Made new thread. Starting with argument {0}...", WrittenCommand)
                         ZipShell_CommandThread.Start(Params)
                         ZipShell_CommandThread.Join()
-                        Kernel.EventManager.RaiseZipPostExecuteCommand(WrittenCommand)
+                        Kernel.KernelEventManager.RaiseZipPostExecuteCommand(WrittenCommand)
                     ElseIf ZipShell_ModCommands.Contains(Command) Then
                         Wdbg(DebugLevel.I, "Mod command {0} executing...", Command)
                         ExecuteModCommand(WrittenCommand)

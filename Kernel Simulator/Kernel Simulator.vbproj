@@ -194,6 +194,7 @@
     <Compile Include="Files\Paths.vb" />
     <Compile Include="Files\PathType.vb" />
     <Compile Include="Hardware\HardwareList.vb" />
+    <Compile Include="Kernel\EventsManager.vb" />
     <Compile Include="Kernel\Events.vb" />
     <Compile Include="Kernel\Exceptions.vb" />
     <Compile Include="Kernel\Flags.vb" />
@@ -480,6 +481,7 @@
     <Compile Include="Shell\Commands\ConvertLineEndings.vb" />
     <Compile Include="Shell\Commands\Combine.vb" />
     <Compile Include="Shell\Commands\Find.vb" />
+    <Compile Include="Shell\Commands\ClearFiredEvents.vb" />
     <Compile Include="Shell\Commands\Select.vb" />
     <Compile Include="Shell\Commands\Choice.vb" />
     <Compile Include="Shell\Commands\ChPwd.vb" />

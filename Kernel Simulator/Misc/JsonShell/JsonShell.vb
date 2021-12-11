@@ -73,7 +73,7 @@ Public Module JsonShell
                 SetInputColor()
 
                 'Prompt for command
-                Kernel.EventManager.RaiseTextShellInitialized()
+                Kernel.KernelEventManager.RaiseTextShellInitialized()
                 Dim WrittenCommand As String = Console.ReadLine
 
                 'Check to see if the command doesn't start with spaces or if the command is nothing
@@ -85,11 +85,11 @@ Public Module JsonShell
                         Wdbg(DebugLevel.I, "Command {0} found in the list of {1} commands.", Command, JsonShell_Commands.Count)
                         Dim Params As New ExecuteCommandThreadParameters(WrittenCommand, ShellCommandType.JsonShell, Nothing)
                         JsonShell_CommandThread = New Thread(AddressOf ExecuteCommand) With {.Name = "JSON Shell Command Thread"}
-                        Kernel.EventManager.RaiseTextPreExecuteCommand(WrittenCommand)
+                        Kernel.KernelEventManager.RaiseTextPreExecuteCommand(WrittenCommand)
                         Wdbg(DebugLevel.I, "Made new thread. Starting with argument {0}...", WrittenCommand)
                         JsonShell_CommandThread.Start(Params)
                         JsonShell_CommandThread.Join()
-                        Kernel.EventManager.RaiseTextPostExecuteCommand(WrittenCommand)
+                        Kernel.KernelEventManager.RaiseTextPostExecuteCommand(WrittenCommand)
                     ElseIf JsonShell_ModCommands.Contains(Command) Then
                         Wdbg(DebugLevel.I, "Mod command {0} executing...", Command)
                         ExecuteModCommand(WrittenCommand)

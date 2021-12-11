@@ -203,7 +203,7 @@ Public Module ModParser
 
         'Try to finalize mod
         If script IsNot Nothing Then
-            Kernel.EventManager.RaiseModParsed(modFile)
+            Kernel.KernelEventManager.RaiseModParsed(modFile)
             Try
                 'Start the mod
                 script.StartMod()
@@ -424,14 +424,14 @@ Public Module ModParser
                 End If
 
                 'Raise event
-                Kernel.EventManager.RaiseModFinalized(modFile)
+                Kernel.KernelEventManager.RaiseModFinalized(modFile)
             Catch ex As Exception
-                Kernel.EventManager.RaiseModFinalizationFailed(modFile, ex.Message)
+                Kernel.KernelEventManager.RaiseModFinalizationFailed(modFile, ex.Message)
                 WStkTrc(ex)
                 Write(DoTranslation("Failed to finalize mod {0}: {1}"), True, ColTypes.Error, modFile, ex.Message)
             End Try
         Else
-            Kernel.EventManager.RaiseModParseError(modFile)
+            Kernel.KernelEventManager.RaiseModParseError(modFile)
         End If
     End Sub
 

@@ -16,12 +16,12 @@
 '    You should have received a copy of the GNU General Public License
 '    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-Class FiredEventsCommand
+Class ClearFiredEventsCommand
     Inherits CommandExecutor
     Implements ICommand
 
     Public Overrides Sub Execute(StringArgs As String, ListArgs() As String, ListArgsOnly As String(), ListSwitchesOnly As String()) Implements ICommand.Execute
-        WriteList(ListAllFiredEvents())
+        ClearAllFiredEvents()
     End Sub
 
 End Class
